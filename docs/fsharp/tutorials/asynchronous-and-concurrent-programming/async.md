@@ -1,5 +1,5 @@
 ---
-title: Asynchronní programování v jazyce F#
+title: 'Asynchronní programování v jazyce F #'
 description: Zjistěte, jak F# asynchronního programování se provádí prostřednictvím programovací model na úrovni jazyka, který se snadno používá a je přirozený jazyk.
 ms.date: 06/20/2016
 ms.openlocfilehash: de07f1252df56e3dfec5ea7a34a283b1c9508523
@@ -9,7 +9,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "50195057"
 ---
-# <a name="async-programming-in-f"></a>Asynchronní programování v jazyce F# #
+# <a name="async-programming-in-f"></a>Asynchronní programování v jazyce F # #
 
 > [!NOTE]
 > Některé nepřesnosti byly zjištěny v tomto článku.  Je právě přepsán.  Zobrazit [problém #666](https://github.com/dotnet/docs/issues/666) Další informace o změnách.

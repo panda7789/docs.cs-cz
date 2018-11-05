@@ -1,6 +1,6 @@
 ---
-title: Výsledky (F#)
-description: Zjistěte, jak pomocí F# "Výsledek" typ můžete napsat kód chyby proti chybám.
+title: 'Výsledky (F #)'
+description: 'Zjistěte, jak pomocí F # "Výsledek" typ můžete napsat kód chyby proti chybám.'
 ms.date: 04/24/2017
 ms.openlocfilehash: a7ce2e1f6b8c6a32d99a2feaf9547c4b67b152b8
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "44213037"
 ---
 # <a name="results"></a>výsledky
 
-Od verze F# 4.1, je `Result<'T,'TFailure>` typ, který můžete použít k zápisu chybové proti chybám kódu, který se může skládat.
+Od verze F # 4.1, je `Result<'T,'TFailure>` typ, který můžete použít k zápisu chybové proti chybám kódu, který se může skládat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,9 +27,9 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>Poznámky
 
-Všimněte si, že je typ výsledku [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions), což je jiný, která byla zavedena v F# 4.1.  Strukturální rovnost sémantika tady.
+Všimněte si, že je typ výsledku [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions), což je jiný, která byla zavedena v F # 4.1.  Strukturální rovnost sémantika tady.
 
-`Result` Typ se obvykle používá v monadic zpracování chyb, které se často označuje jako [železniční objektově orientovaného programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci komunity F#.  Následující příklad jednoduchého dotazu ukazuje tento přístup.
+`Result` Typ se obvykle používá v monadic zpracování chyb, které se často označuje jako [železniční objektově orientovaného programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci komunity F #.  Následující příklad jednoduchého dotazu ukazuje tento přístup.
 
 ```fsharp
 // Define a simple type which has fields that can be validated

@@ -1,6 +1,6 @@
 ---
 title: Pole (F#)
-description: Zjistěte, jak vytvořit a používání polí v programovacím jazyce F#.
+description: 'Zjistěte, jak vytvořit a používání polí v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 27b73efc900ac2efc813fe66f81baa2e9ae1e843
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -57,7 +57,7 @@ Při použití zápisu řezu je vytvořena nový kopie pole.
 
 ## <a name="array-types-and-modules"></a>Typy polí a moduly
 
-Typ všech polí F# je typ rozhraní .NET Framework <xref:System.Array?displayProperty=nameWithType>. Proto pole F# podporují všechny funkce dostupné v <xref:System.Array?displayProperty=nameWithType>.
+Typ všech polí F # je typ rozhraní .NET Framework <xref:System.Array?displayProperty=nameWithType>. Proto pole F # podporují všechny funkce dostupné v <xref:System.Array?displayProperty=nameWithType>.
 
 Modul knihovny [ `Microsoft.FSharp.Collections.Array` ](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1) podporuje operace pro jednorozměrné pole. Moduly `Array2D`, `Array3D`, a `Array4D` obsahují funkce, které podporují operace pro pole dvou, tří a čtyř dimenzí, v uvedeném pořadí. Můžete vytvořit pole řádu větší než čtyři pomocí <xref:System.Array?displayProperty=nameWithType>.
 
@@ -218,7 +218,7 @@ matrix.[*, 1..3]
 matrix.[1..3, 1..3]
 ```
 
-Od verze F# 3.1 můžete rozložit vícerozměrné pole na podpole stejné nebo nižší dimenze. Vektor lze získat například z matice zadáním jednoho řádku nebo sloupce.
+Od verze F # 3.1 můžete rozložit vícerozměrné pole na podpole stejné nebo nižší dimenze. Vektor lze získat například z matice zadáním jednoho řádku nebo sloupce.
 
 ```fsharp
 // Get row 3 from a matrix as a vector:
@@ -228,7 +228,7 @@ matrix.[3, *]
 matrix.[*, 3]
 ```
 
-Můžete použít syntaxi dělení pro typy, které implementují operátory přístupu k elementu a přetížené `GetSlice` metody. Například následující kód vytvoří typ matice, která zabalí 2D pole F#, implementuje vlastnost položky pro poskytnutí podpory pro indexování pole a implementuje tři verze `GetSlice`. Pokud tento kód můžete použít jako šablonu pro vaše typy matice, můžete použít všechny operace řezů, které tato část popisuje.
+Můžete použít syntaxi dělení pro typy, které implementují operátory přístupu k elementu a přetížené `GetSlice` metody. Například následující kód vytvoří typ matice, která zabalí 2D pole F #, implementuje vlastnost položky pro poskytnutí podpory pro indexování pole a implementuje tři verze `GetSlice`. Pokud tento kód můžete použít jako šablonu pro vaše typy matice, můžete použít všechny operace řezů, které tato část popisuje.
 
 ```fsharp
 type Matrix<'T>(N: int, M: int) =
@@ -418,4 +418,4 @@ V modulu [ `Array.Parallel` ](https://msdn.microsoft.com/library/60f30b77-5af4-4
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [F#. Typy](fsharp-types.md)
+- [F #. Typy](fsharp-types.md)

@@ -1,6 +1,6 @@
 ---
 title: Dokumentace XML (F#)
-description: Další informace o podpoře v jazyce F# pro generování dokumentace z komentářů.
+description: 'Další informace o podpoře v jazyce F # pro generování dokumentace z komentářů.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 1a4cb132e65b630821e5eb2b39276c1de99aff80
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,17 +11,17 @@ ms.locfileid: "45641622"
 ---
 # <a name="xml-documentation"></a>dokumentace XML
 
-Dokumentace ke službě z třemi lomítky (/ / / / /) můžete vytvářet kód komentáře v jazyce F#. Komentáře XML můžete před deklaracemi v kódu souborů (.fs) nebo podpisem (.fsi).
+Dokumentace ke službě z třemi lomítky (/ / / / /) můžete vytvářet kód komentáře v jazyce F #. Komentáře XML můžete před deklaracemi v kódu souborů (.fs) nebo podpisem (.fsi).
 
 ## <a name="generating-documentation-from-comments"></a>Generování dokumentace z komentářů
 
-Podpora v jazyce F# pro generování dokumentace z komentářů je stejný jako v jiných jazycích rozhraní .NET Framework. Stejně jako v jiných jazycích rozhraní .NET Framework [-doc – možnost kompilátoru](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04) umožňuje vytvořit soubor XML, který obsahuje informace, které lze převést na dokumentaci, pomocí nástroje, jako je například Sandcastle. Dokumentace ke službě vygenerovat pomocí nástrojů, které jsou navrženy pro použití se sestaveními, která jsou napsané v jiných jazycích rozhraní .NET Framework, obecně vytvořit zobrazení rozhraní API, která je založena na formuláři kompilované konstrukce F#. Pokud není výslovně podporu nástrojů F# se dokumentace generovaná tyto nástroje se neshoduje s F# zobrazení rozhraní API.
+Podpora v jazyce F # pro generování dokumentace z komentářů je stejný jako v jiných jazycích rozhraní .NET Framework. Stejně jako v jiných jazycích rozhraní .NET Framework [-doc – možnost kompilátoru](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04) umožňuje vytvořit soubor XML, který obsahuje informace, které lze převést na dokumentaci, pomocí nástroje, jako je například Sandcastle. Dokumentace ke službě vygenerovat pomocí nástrojů, které jsou navrženy pro použití se sestaveními, která jsou napsané v jiných jazycích rozhraní .NET Framework, obecně vytvořit zobrazení rozhraní API, která je založena na formuláři kompilované konstrukce F #. Pokud není výslovně podporu nástrojů F # se dokumentace generovaná tyto nástroje se neshoduje s F # zobrazení rozhraní API.
 
 Další informace o tom, jak generovat dokumentaci ze souboru XML, naleznete v tématu [dokumentační komentáře XML &#40;C&#35; Průvodce programováním pro službu&#41;](https://msdn.microsoft.com/library/b2s063f7).
 
 ## <a name="recommended-tags"></a>Doporučené značky
 
-Existují dva způsoby, jak psát komentáře dokumentace XML. Jeden je zapsat dokumentaci přímo třemi lomítky komentář, bez použití značky XML. Pokud to uděláte, celý komentář je považován za souhrnné dokumentaci pro konstrukci kódu, který následuje. Tuto metodu použijte, pokud chcete zapsat jenom stručný popis pro každou konstrukci. Jiné metody je použití značky XML jako více strukturovaných dokumentace. Druhá metoda vám umožňuje určit samostatné poznámky stručně shrnuje, další poznámky, dokumentaci pro každý parametr a typ parametrů a výjimky vyvolané a popis návratovou hodnotu. Následující tabulka popisuje značky XML, které jsou rozpoznány v komentářích ke kódu XML F#.
+Existují dva způsoby, jak psát komentáře dokumentace XML. Jeden je zapsat dokumentaci přímo třemi lomítky komentář, bez použití značky XML. Pokud to uděláte, celý komentář je považován za souhrnné dokumentaci pro konstrukci kódu, který následuje. Tuto metodu použijte, pokud chcete zapsat jenom stručný popis pro každou konstrukci. Jiné metody je použití značky XML jako více strukturovaných dokumentace. Druhá metoda vám umožňuje určit samostatné poznámky stručně shrnuje, další poznámky, dokumentaci pro každý parametr a typ parametrů a výjimky vyvolané a popis návratovou hodnotu. Následující tabulka popisuje značky XML, které jsou rozpoznány v komentářích ke kódu XML F #.
 
 |Syntaxe značek|Popis|
 |----------|-----------|

@@ -1,5 +1,5 @@
 ---
-title: Kopírování a aktualizace záznamu výrazy (F#)
+title: 'Kopírování a aktualizace záznamu výrazy (F #)'
 description: Další informace o zápisu "kopírování a aktualizace záznamu výraz", který zkopíruje existující záznam, aktualizace zadaná pole a vrátí aktualizovaný záznam.
 author: ChrSteinert
 ms.date: 06/04/2016

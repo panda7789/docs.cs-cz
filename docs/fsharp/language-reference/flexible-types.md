@@ -1,6 +1,6 @@
 ---
 title: Flexibilní typy (F#)
-description: Další informace o použití F# anotaci typu flexibilní, což znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu.
+description: 'Další informace o použití F # anotaci typu flexibilní, což znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: b6c97c3cc19f15b2c8db74b2c55660a16b2858f7
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -65,7 +65,7 @@ seq [1; 2; 3; 4; ...]
 seq [1; 2; 3; 4; ...]
 ```
 
-V jazyce F# stejně jako v jiných jazycích objektově orientované existují kontextech, ve kterých odvozené typy nebo typy, které implementují rozhraní se automaticky převedou na základní typ nebo typ rozhraní. Tyto automatické převody nastanou argumenty s přímým přístupem, ale ne v případě, že typ je v podřízené pozice, jako součást více komplexní typ, jako je například návratovým typem funkce typ, nebo jako argument typu. Proto flexibilní typu notation je to užitečné hlavně Pokud aplikujete na požadovaný typ je součástí více komplexního typu.
+V jazyce F # stejně jako v jiných jazycích objektově orientované existují kontextech, ve kterých odvozené typy nebo typy, které implementují rozhraní se automaticky převedou na základní typ nebo typ rozhraní. Tyto automatické převody nastanou argumenty s přímým přístupem, ale ne v případě, že typ je v podřízené pozice, jako součást více komplexní typ, jako je například návratovým typem funkce typ, nebo jako argument typu. Proto flexibilní typu notation je to užitečné hlavně Pokud aplikujete na požadovaný typ je součástí více komplexního typu.
 
 ## <a name="see-also"></a>Viz také:
 

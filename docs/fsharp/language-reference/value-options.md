@@ -1,6 +1,6 @@
 ---
-title: Hodnota možnosti (F#)
-description: Další informace o typu hodnota možnosti F#, což je struktura verze typu možnosti.
+title: 'Hodnota možnosti (F #)'
+description: 'Další informace o typu hodnota možnosti F #, což je struktura verze typu možnosti.'
 ms.date: 06/16/2018
 ms.openlocfilehash: 978bd1713c16f7c050ccb097cb134973d10ef6f5
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,12 +11,12 @@ ms.locfileid: "50185833"
 ---
 # <a name="value-options"></a>Hodnota možnosti
 
-Typ hodnoty možnosti v jazyce F# se používá při uložení těchto dvou okolností:
+Typ hodnoty možnosti v jazyce F # se používá při uložení těchto dvou okolností:
 
-1. Scénář je vhodný pro [možnost F#](options.md).
+1. Scénář je vhodný pro [možnost F #](options.md).
 2. Pomocí struktury zvyšuje výkon ve vašem scénáři.
 
-Ne všechny scénáře náročné na výkon se "Vyřešeno" použití struktur. Je nutné zvážit další náklady na kopírování při jejich používání místo typy odkazů. Však velké programy F# obvykle vytvořit instanci mnoho doplňkové typy, které budou plout prostřednictvím horké cesty, protože struktury někdy může přinést lepší celkový výkon během životního cyklu aplikace.
+Ne všechny scénáře náročné na výkon se "Vyřešeno" použití struktur. Je nutné zvážit další náklady na kopírování při jejich používání místo typy odkazů. Však velké programy F # obvykle vytvořit instanci mnoho doplňkové typy, které budou plout prostřednictvím horké cesty, protože struktury někdy může přinést lepší celkový výkon během životního cyklu aplikace.
 
 ## <a name="definition"></a>Definice
 

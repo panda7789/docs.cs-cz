@@ -1,6 +1,6 @@
 ---
 title: Rozšíření typů (F#)
-description: Zjistěte, jak povolit rozšíření typů F#, že přidáte nové členy dříve definovaného typu objektu.
+description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy dříve definovaného typu objektu.'
 ms.date: 07/20/2018
 ms.openlocfilehash: 27238db1fd0803f62c32755fbc4ab7688f5c107e
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -127,7 +127,7 @@ Co je žádoucí jsou statické metody, které "float v prostoru" a lze zobrazit
 
 ## <a name="extension-methods"></a>Rozšiřující metody
 
-Nakonec metody rozšíření (někdy nazývané "C# styl členy rozšíření") lze deklarovat v jazyce F# jako metodu statického člena třídy.
+Nakonec metody rozšíření (někdy nazývané "C# styl členy rozšíření") lze deklarovat v jazyce F # jako metodu statického člena třídy.
 
 Rozšiřující metody jsou užitečné pro když chcete definovat rozšíření u obecného typu, který bude proměnná typu omezení. Příklad:
 
@@ -163,7 +163,7 @@ Pro rozšíření typu také existují následující omezení:
 * Rozšíření typu nelze definovat na [typ – zkratky](type-abbreviations.md).
 * Rozšíření typu nejsou platné pro `byref<'T>` (i když mohou být deklarovány).
 * Rozšíření typu nejsou platné pro atributy (i když mohou být deklarovány).
-* Můžete definovat rozšíření, která přetížit jiné metody se stejným názvem, ale kompilátor F# dává přednost metody rozšíření, pokud je nejednoznačné volání.
+* Můžete definovat rozšíření, která přetížit jiné metody se stejným názvem, ale kompilátor F # dává přednost metody rozšíření, pokud je nejednoznačné volání.
 
 Nakonec pokud existuje více rozšíření vnitřního typu pro jeden typ, všechny členy musí být jedinečný. Pro volitelná rozšíření typů členové v jiných typech rozšíření stejného typu mají stejné názvy. K chybám nejednoznačnosti dojde pouze v případě, že kód klienta otevře dva různé obory, které definují stejné názvy členů.
 

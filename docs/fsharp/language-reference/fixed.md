@@ -1,6 +1,6 @@
 ---
-title: Klíčové slovo Fixed (F#)
-description: Zjistěte, jak vám může "pin" místní do zásobníku, aby se zabránilo kolekce s F# 'fixed' – klíčové slovo.
+title: 'Klíčové slovo Fixed (F #)'
+description: "Zjistěte, jak vám může \"pin\" místní do zásobníku, aby se zabránilo kolekce s F # 'fixed' – klíčové slovo."
 ms.date: 04/24/2017
 ms.openlocfilehash: 1bf1b2ad67d2dd7f854e569cfca7c06e8aec7f4c
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "45624506"
 ---
 # <a name="the-fixed-keyword"></a>Klíčové slovo Fixed
 
-Zavádí F# 4.1 `fixed` – klíčové slovo, které umožňuje "připnout" místní do zásobníku, aby se zabránilo jejímu shromážděných nebo přesunuty během uvolňování.  Používá se pro programovacích scénářů pro nízké úrovně.
+Zavádí F # 4.1 `fixed` – klíčové slovo, které umožňuje "připnout" místní do zásobníku, aby se zabránilo jejímu shromážděných nebo přesunuty během uvolňování.  Používá se pro programovacích scénářů pro nízké úrovně.
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -1,6 +1,6 @@
 ---
 title: do – vazby (F#)
-description: Zjistěte, jak jazyka F# udělat vazby se používá k provádění kódu bez definování funkce nebo hodnota.
+description: 'Zjistěte, jak jazyka F # udělat vazby se používá k provádění kódu bez definování funkce nebo hodnota.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 78dbf8da0fe40b5af566ad98693df1109eede7e4
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2

@@ -1,6 +1,6 @@
 ---
 title: Operátory s povolenou hodnotou Null (F#)
-description: Další informace o operátorech s možnou hodnotou Null, které jsou k dispozici v programovacím jazyce F#.
+description: 'Další informace o operátorech s možnou hodnotou Null, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 42df74a56831fb0a5d6df34db4321f5b228993c2
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -15,7 +15,7 @@ Operátory s povolenou hodnotou Null jsou binární operátory aritmetický nebo
 
 ## <a name="table-of-nullable-operators"></a>Tabulka operátory s povolenou hodnotou Null
 
-V následující tabulce jsou uvedeny podporovány v jazyce F# operátory s povolenou hodnotou Null.
+V následující tabulce jsou uvedeny podporovány v jazyce F # operátory s povolenou hodnotou Null.
 
 |Na levé straně s možnou hodnotou Null|S povolenou hodnotou Null vpravo|Obě strany s možnou hodnotou Null|
 |---|---|---|
@@ -55,7 +55,7 @@ Výstup je `10.000000`.
 
 Dotazování na s možnou hodnotou Null datová pole, operátory, jako `sumByNullable`, existují také pro použití ve výrazech dotazů. Operátory dotazu pro typy neumožňující nejsou kompatibilního s typy s možnou hodnotou Null, proto při práci s hodnotami dat s možnou hodnotou null je nutné použít s možnou hodnotou Null verzi operátoru odpovídající dotaz. Další informace najdete v tématu [– výrazy dotazů](../query-expressions.md).
 
-Následující příklad ukazuje použití operátory s povolenou hodnotou Null ve výrazu dotazu F#. První dotaz zobrazí, jak byste napsat dotaz bez operátor s možnou hodnotou Null; druhý dotaz zobrazí ekvivalentní dotaz, který používá operátor s možnou hodnotou Null. Úplný kontext, včetně postupu nastavení databáze při použití tohoto ukázkového kódu, naleznete v tématu [návod: přístup k SQL Database s použitím zprostředkovatelů typů](../../tutorials/type-providers/accessing-a-sql-database.md).
+Následující příklad ukazuje použití operátory s povolenou hodnotou Null ve výrazu dotazu F #. První dotaz zobrazí, jak byste napsat dotaz bez operátor s možnou hodnotou Null; druhý dotaz zobrazí ekvivalentní dotaz, který používá operátor s možnou hodnotou Null. Úplný kontext, včetně postupu nastavení databáze při použití tohoto ukázkového kódu, naleznete v tématu [návod: přístup k SQL Database s použitím zprostředkovatelů typů](../../tutorials/type-providers/accessing-a-sql-database.md).
 
 ```fsharp
 open System

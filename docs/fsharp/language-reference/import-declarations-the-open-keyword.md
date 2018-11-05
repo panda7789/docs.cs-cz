@@ -1,6 +1,6 @@
 ---
 title: 'Deklarace importu: Klíčové slovo open (F#)'
-description: Další informace o deklarace importu F# a jak určit modulu nebo oboru názvů jejíž prvky, můžete využít bez použití plně kvalifikovaného názvu.
+description: 'Další informace o deklarace importu F # a jak určit modulu nebo oboru názvů jejíž prvky, můžete využít bez použití plně kvalifikovaného názvu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 8cae4b4f5418689bfb0933b7db4ec23a313d5ed8
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -36,7 +36,7 @@ Následující kód ukazuje použití `open` – klíčové slovo pro zjednoduš
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6801.fs)]
 
-Kompilátor F# negeneruje chybu nebo upozornění, když dojde k nejasnostem, dojde ve více než jeden otevřít modul nebo obor názvů se stejným názvem. Pokud dojde k nejasnostem, F# dává přednost naposledy otevřeným modulu nebo oboru názvů. Například v následujícím kódu `empty` znamená, že `Seq.empty`, i když `empty` se nachází v obou `List` a `Seq` moduly.
+Kompilátor F # negeneruje chybu nebo upozornění, když dojde k nejasnostem, dojde ve více než jeden otevřít modul nebo obor názvů se stejným názvem. Pokud dojde k nejasnostem, F # dává přednost naposledy otevřeným modulu nebo oboru názvů. Například v následujícím kódu `empty` znamená, že `Seq.empty`, i když `empty` se nachází v obou `List` a `Seq` moduly.
 
 ```fsharp
 open List
@@ -48,11 +48,11 @@ Proto buďte opatrní při otevření modulů nebo oborů názvů, jako `List` n
 
 ## <a name="namespaces-that-are-open-by-default"></a>Obory názvů, které jsou spuštěné ve výchozím nastavení
 
-Některé obory názvů často slouží v kódu F#, implicitně jsou otevřené bez nutnosti deklarace explicitní importu. V následující tabulce jsou uvedeny obory názvů, které jsou spuštěné ve výchozím nastavení.
+Některé obory názvů často slouží v kódu F #, implicitně jsou otevřené bez nutnosti deklarace explicitní importu. V následující tabulce jsou uvedeny obory názvů, které jsou spuštěné ve výchozím nastavení.
 
 |Obor názvů|Popis|
 |---------|-----------|
-|`Microsoft.FSharp.Core`|Obsahuje základní definice typů F# pro předdefinované typy jako `int` a `float`.|
+|`Microsoft.FSharp.Core`|Obsahuje základní definice typů F # pro předdefinované typy jako `int` a `float`.|
 |`Microsoft.FSharp.Core.Operators`|Obsahuje základní aritmetické operace, například `+` a `*`.|
 |`Microsoft.FSharp.Collections`|Neměnné kolekce tříd obsahuje například `List` a `Array`.|
 |`Microsoft.FSharp.Control`|Obsahuje typy pro ovládací prvek konstrukce, jako je například opožděné vyhodnocení a asynchronní pracovní postupy.|

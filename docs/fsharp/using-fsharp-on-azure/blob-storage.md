@@ -1,5 +1,5 @@
 ---
-title: Začínáme s Azure Blob storage s využitím F#
+title: 'Začínáme s Azure Blob storage s využitím F #'
 description: Store nestrukturovaných dat v cloudu s využitím úložiště objektů Blob v Azure.
 author: sylvanc
 ms.date: 09/20/2016
@@ -10,11 +10,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "44037279"
 ---
-# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage s využitím F# #
+# <a name="get-started-with-azure-blob-storage-using-f"></a>Začínáme s Azure Blob storage s využitím F # #
 
 Azure Blob storage je služba, která ukládá Nestrukturovaná data v cloudu jako objektů BLOB. BLOB storage dokáže ukládat jakýkoli druh textu nebo binárních dat, jako je například dokument, soubor médií nebo instalační program aplikace. Úložiště objektů blob se taky označuje jako úložiště objektů.
 
-V tomto článku se dozvíte, jak provádět běžné úlohy pomocí úložiště objektů Blob. Ukázky jsou napsané s využitím F# pomocí klientské knihovny Azure Storage pro .NET. Popsané úkoly popsané v nahrání, výpisu, stahování a odstraňování objektů BLOB.
+V tomto článku se dozvíte, jak provádět běžné úlohy pomocí úložiště objektů Blob. Ukázky jsou napsané s využitím F # pomocí klientské knihovny Azure Storage pro .NET. Popsané úkoly popsané v nahrání, výpisu, stahování a odstraňování objektů BLOB.
 
 Koncepční přehled služby blob storage, najdete v části [v příručce .NET pro úložiště objektů blob](/azure/storage/storage-dotnet-how-to-use-blobs).
 
@@ -22,9 +22,9 @@ Koncepční přehled služby blob storage, najdete v části [v příručce .NET
 
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account). Pro tento účet také potřebovat přístupový klíč k úložišti.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F # a začněte jazyka F # Interactive
 
-Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `blobs.fsx`, ve vašem vývojovém prostředí F#.
+Ukázky v tomto článku je možné v F # aplikace nebo skript F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `blobs.fsx`, ve vašem vývojovém prostředí F #.
 
 Dále používat [Správce balíčků](package-management.md) například [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` a `Microsoft.WindowsAzure.ConfigurationManager` balíčky a reference `WindowsAzure.Storage.dll` a `Microsoft.WindowsAzure.Configuration.dll` v pomocí skriptu `#r` směrnice.
 
@@ -230,8 +230,8 @@ Podrobnosti o šifrování dat objektů blob najdete v tématu [v příručce .N
 Teď, když jste se naučili základy používání Blob storage, použijte tyto odkazy na další informace.
 
 ### <a name="tools"></a>Nástroje
-- [F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/) F# typu poskytovatele, který slouží k prozkoumání objektů Blob, tabulky a fronty Azure Storage prostředky a snadno použít operace CRUD s nimi.
-- [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage) API F# za používání služby Microsoft Azure Table Storage
+- [F # AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/) F # typu poskytovatele, který slouží k prozkoumání objektů Blob, tabulky a fronty Azure Storage prostředky a snadno použít operace CRUD s nimi.
+- [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage) API F # za používání služby Microsoft Azure Table Storage
 - [Microsoft Azure Storage Explorer (MASE)](/azure/vs-azure-tools-storage-manage-with-storage-explorer) je bezplatná samostatná aplikace od Microsoftu, která umožňuje vizuálně pracovat s daty Azure Storage ve Windows, OS X a Linux.
 
 ### <a name="blob-storage-reference"></a>Odkaz na objekt BLOB úložiště

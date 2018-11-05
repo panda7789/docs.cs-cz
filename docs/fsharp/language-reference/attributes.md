@@ -1,6 +1,6 @@
 ---
 title: Atributy (F#)
-description: Zjistěte, jak povolit metadata použije programovací konstrukce F# atributy.
+description: 'Zjistěte, jak povolit metadata použije programovací konstrukce F # atributy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 3e7f1d0ff383e1070b3db72e633f80ea37150548
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -39,7 +39,7 @@ V tomto příkladu je atribut `DllImportAttribute`, zde používá ve zkrácené
 
 Atributy jsou .NET programovací konstrukce, která umožňuje označované jako objekt *atribut* má být přidružena k typu nebo jiný prvek programu. Ovládací prvek programu ke které se použije atribut se označuje jako *cíl atributu*. Atribut obvykle obsahuje metadata o cíli. V tomto kontextu může být metadata žádná data o typ jiný než jeho polí a členy.
 
-Atributy v jazyce F# můžete použít pro následující programovací konstrukce: funkce, metody, sestavení, modulů, typů (tříd, záznamy, struktury, rozhraní, delegátů, výčty, sjednocení a tak dále), konstruktory, vlastnosti, pole, parametry, Zadejte parametry a návratové hodnoty. Atributy nejsou povolené v `let` vazby uvnitř třídy, výrazy nebo výrazy pracovního postupu.
+Atributy v jazyce F # můžete použít pro následující programovací konstrukce: funkce, metody, sestavení, modulů, typů (tříd, záznamy, struktury, rozhraní, delegátů, výčty, sjednocení a tak dále), konstruktory, vlastnosti, pole, parametry, Zadejte parametry a návratové hodnoty. Atributy nejsou povolené v `let` vazby uvnitř třídy, výrazy nebo výrazy pracovního postupu.
 
 Obvykle deklarace atributu se zobrazí přímo před deklarací cíl atributu. Více atribut deklarace je možné společně, následujícím způsobem.
 
@@ -59,7 +59,7 @@ Pro atribut cíle `assembly` a `module`, použít atributy k nejvyšší úrovni
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6606.fs)]
 
-Pokud vynecháte cíl atributu pro atribut použitý k `do` vazby, kompilátor jazyka F# se pokusí určit atribut target, to dává smysl pro tento atribut. Mnoho atribut třídy mají atribut typu `System.AttributeUsageAttribute` , který obsahuje informace o možných cíle pro tento atribut nepodporuje. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje funkce jako cíle, chcete-li použít hlavní vstupní bod programu se používá atribut. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje sestavení jako cíle, kompilátor přijímá atribut, který chcete použít k sestavení. Většina atributy se nevztahují na funkce a sestavení, ale v případech, ve kterém se dělají, atribut věnovat platí pro hlavní funkce programu. Pokud cílový atribut je explicitně zadán, je atribut použit na zadané cílové.
+Pokud vynecháte cíl atributu pro atribut použitý k `do` vazby, kompilátor jazyka F # se pokusí určit atribut target, to dává smysl pro tento atribut. Mnoho atribut třídy mají atribut typu `System.AttributeUsageAttribute` , který obsahuje informace o možných cíle pro tento atribut nepodporuje. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje funkce jako cíle, chcete-li použít hlavní vstupní bod programu se používá atribut. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje sestavení jako cíle, kompilátor přijímá atribut, který chcete použít k sestavení. Většina atributy se nevztahují na funkce a sestavení, ale v případech, ve kterém se dělají, atribut věnovat platí pro hlavní funkce programu. Pokud cílový atribut je explicitně zadán, je atribut použit na zadané cílové.
 
 I když obvykle nepotřebujete zadat atribut cílit explicitně, platné hodnoty pro *cílové* v atributu jsou uvedeny v následující tabulce, spolu s příkladem použití.
 

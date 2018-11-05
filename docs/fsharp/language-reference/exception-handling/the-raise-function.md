@@ -1,6 +1,6 @@
 ---
 title: 'Výjimky: Funkce raise (F#)'
-description: Zjistěte, jak "vyvolat" funkce jazyka F# používá k označení, že došlo k chybě nebo výjimečné podmínce.
+description: 'Zjistěte, jak "vyvolat" funkce jazyka F # používá k označení, že došlo k chybě nebo výjimečné podmínce.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 537d274659d29404380bfdd56310ac267372bb98
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2

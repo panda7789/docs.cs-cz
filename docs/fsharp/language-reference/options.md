@@ -1,6 +1,6 @@
 ---
 title: Možnosti (F#)
-description: Zjistěte, jak použít možnost F#, typy, když skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná.
+description: 'Zjistěte, jak použít možnost F #, typy, když skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 0859cb42e72ef9e67551b884f5cf6130fb099a78
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "46479517"
 ---
 # <a name="options"></a>Možnosti
 
-Typ možnosti v jazyce F# se používá při skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná. Použít má základní typ a můžou obsahovat hodnotu daného typu, nebo nemusí mít hodnotu.
+Typ možnosti v jazyce F # se používá při skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná. Použít má základní typ a můžou obsahovat hodnotu daného typu, nebo nemusí mít hodnotu.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -33,7 +33,7 @@ Běžně se používají možnosti při hledání nevrací odpovídající výsl
 
 V předchozím kódu je seznam hledaný rekurzivně. Funkce `tryFindMatch` trvá funkce predikátu `pred` , který vrací logickou hodnotu a seznamu pro vyhledávání. Pokud je nalezen element, který splňuje predikát, elementy end rekurze a funkce vrátí hodnotu jako možnost ve výrazu `Some(head)`. Rekurze končí, když je nalezena shoda s prázdný seznam. V tomto okamžiku hodnotu `head` nebyl nalezen, a `None` je vrácena.
 
-Mnoho F# knihovních funkcí, které vyhledání v kolekci na hodnotu, která můžou nebo nemusí existovat vrátit `option` typu. Podle konvence, tyto funkce začínat `try` předponu, například [ `Seq.tryFindIndex` ](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a).
+Mnoho F # knihovních funkcí, které vyhledání v kolekci na hodnotu, která můžou nebo nemusí existovat vrátit `option` typu. Podle konvence, tyto funkce začínat `try` předponu, například [ `Seq.tryFindIndex` ](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a).
 
 Možnosti mohou být užitečné také při nemusí existovat hodnotu, například pokud je to možné, že při pokusu o vytvoření hodnotu bude vyvolána výjimka. Následující příklad kódu to dokládá.
 

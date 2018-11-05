@@ -1,6 +1,6 @@
 ---
 title: Literály (F#)
-description: Další informace o typy literálu v programovacím jazyce F#.
+description: 'Další informace o typy literálu v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: e6d34acd928edce8447c793105b08085ab0757b9
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -14,11 +14,11 @@ ms.locfileid: "44087622"
 > [!NOTE]
 Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN (prozatím).
 
-Toto téma obsahuje tabulku, která ukazuje, jak určit typ literály v F#.
+Toto téma obsahuje tabulku, která ukazuje, jak určit typ literály v F #.
 
 ## <a name="literal-types"></a>Typy literálu
 
-Následující tabulka uvádí typy literálu v F#. Znaky, které představují číslice v šestnáctkové soustavě nerozlišují; znaky, které označují typ rozlišují malá a velká písmena.
+Následující tabulka uvádí typy literálu v F #. Znaky, které představují číslice v šestnáctkové soustavě nerozlišují; znaky, které označují typ rozlišují malá a velká písmena.
 
 |Typ|Popis|Přípona nebo předpona|Příklady|
 |----|-----------|----------------|--------|
@@ -47,7 +47,7 @@ Následující tabulka uvádí typy literálu v F#. Znaky, které představují 
 
 Řetězce Unicode mohou obsahovat explicitní kódování, kterou lze zadat pomocí `\u` 16bitové šestnáctkové nebo UTF-32 kódování, kterou lze zadat pomocí `\U` za nímž následuje 32-bit šestnáctkový kód, který představuje Unicode náhradní pár.
 
-Od verze F# 3.1, můžete použít `+` přihlásit ke kombinování řetězcových literálů. Můžete také použít bitového nebo (`|||`) operátor kombinování příznaků výčtu. Například následující kód je platný v F# 3.1:
+Od verze F # 3.1, můžete použít `+` přihlásit ke kombinování řetězcových literálů. Můžete také použít bitového nebo (`|||`) operátor kombinování příznaků výčtu. Například následující kód je platný v F # 3.1:
 
 ```fsharp
 [<Literal>]
@@ -82,7 +82,7 @@ let Numbers = (0x9F, 0o77, 0b1010)
 
 ## <a name="underscores-in-numeric-literals"></a>Podtržítka v numerických literálech
 
-Od verze F# 4.1, můžete oddělit číslic znakem podtržítka (`_`).
+Od verze F # 4.1, můžete oddělit číslic znakem podtržítka (`_`).
 
 ```fsharp
 let DeadBeef = 0xDEAD_BEEF

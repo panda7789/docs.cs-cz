@@ -1,6 +1,6 @@
 ---
 title: Výpočetní výrazy (F#)
-description: Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F#, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.
+description: 'Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F #, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.'
 ms.date: 07/27/2018
 ms.openlocfilehash: 148d1a661fb7630782c6dc48507a66e7bdc1d56b
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "48839866"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
-Výpočetní výrazy v jazyce F# poskytuje pohodlné syntaxe pro zápis výpočty, které mohou být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby. V závislosti na typ výrazu výpočtu, můžete představit jako způsob, jak vyjádřit monády, monoids, monad transformátory a applicative funktory. Ale na rozdíl od jiných jazyků (jako například *zápis* v Haskell), nejsou vázané na jednoho odběru a nespoléhejte na makra nebo jiné formy metaprogramování k provedení pohodlný a kontextová syntaxe.
+Výpočetní výrazy v jazyce F # poskytuje pohodlné syntaxe pro zápis výpočty, které mohou být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby. V závislosti na typ výrazu výpočtu, můžete představit jako způsob, jak vyjádřit monády, monoids, monad transformátory a applicative funktory. Ale na rozdíl od jiných jazyků (jako například *zápis* v Haskell), nejsou vázané na jednoho odběru a nespoléhejte na makra nebo jiné formy metaprogramování k provedení pohodlný a kontextová syntaxe.
 
 ## <a name="overview"></a>Přehled
 
@@ -22,7 +22,7 @@ Výpočty mohou mít mnoho forem. Nejběžnější forma výpočtu je spouštěn
 * Effectful výpočty
 * Tvoří výpočty
 
-Obecně platí, existují *kontextové* výpočty, které je nutné provést v některých částí aplikace. Psaní kódu kontextové může být náročné, jako je "nevracení" výpočty mimo daný kontext bez odběrů a znemožnit vám tak snadné. Tato abstrakce jsou často náročné napsat sami, což je důvod, proč F# má zobecněné způsob, jak provést tzv **výrazech výpočtu**.
+Obecně platí, existují *kontextové* výpočty, které je nutné provést v některých částí aplikace. Psaní kódu kontextové může být náročné, jako je "nevracení" výpočty mimo daný kontext bez odběrů a znemožnit vám tak snadné. Tato abstrakce jsou často náročné napsat sami, což je důvod, proč F # má zobecněné způsob, jak provést tzv **výrazech výpočtu**.
 
 Výpočetní výrazy nabízí jednotnou syntaxi a abstrakce model pro kódování kontextové výpočty.
 
@@ -61,9 +61,9 @@ expr { return! ... }
 expr { match! ... }
 ```
 
-Každá z těchto klíčových slov a ostatní standardní F# klíčová slova jsou k dispozici pouze ve výrazu výpočtu. Pokud byla definována v základní typ Tvůrce. Jedinou výjimkou je `match!`, což je samotný syntaktické sugar pro použití `let!` následuje porovnávání na výsledek.
+Každá z těchto klíčových slov a ostatní standardní F # klíčová slova jsou k dispozici pouze ve výrazu výpočtu. Pokud byla definována v základní typ Tvůrce. Jedinou výjimkou je `match!`, což je samotný syntaktické sugar pro použití `let!` následuje porovnávání na výsledek.
 
-Typ Tvůrce je objekt, který definuje speciální metody, které řídí způsob, jakým jsou kombinované fragmenty výrazu výpočtu; To znamená její metody řídit chování výrazu výpočtu. Dalším způsobem, jak popisují třída tvůrců je Řekněme, že umožňuje přizpůsobit operace mnoho konstrukce F#, jako jsou smyčky a vazby.
+Typ Tvůrce je objekt, který definuje speciální metody, které řídí způsob, jakým jsou kombinované fragmenty výrazu výpočtu; To znamená její metody řídit chování výrazu výpočtu. Dalším způsobem, jak popisují třída tvůrců je Řekněme, že umožňuje přizpůsobit operace mnoho konstrukce F #, jako jsou smyčky a vazby.
 
 ### `let!`
 
@@ -179,7 +179,7 @@ let result = Async.RunSynchronously req
 
 ### `match!`
 
-Od verze F# 4.5, `match!` – klíčové slovo vám umožní vložení volání jiného výpočtu výrazu a vzor se vyhledala shoda podle její výsledek:
+Od verze F # 4.5, `match!` – klíčové slovo vám umožní vložení volání jiného výpočtu výrazu a vzor se vyhledala shoda podle její výsledek:
 
 ```fsharp
 let doThingsAsync url =
@@ -194,7 +194,7 @@ Při volání výrazu výpočtu s `match!`, značným výsledek volání, např�
 
 ## <a name="built-in-computation-expressions"></a>Integrované výpočetní výrazy
 
-Základní knihovny F# definuje tři předdefinované výpočetní výrazy: [výrazech pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [– výrazy dotazů](query-expressions.md).
+Základní knihovny F # definuje tři předdefinované výpočetní výrazy: [výrazech pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [– výrazy dotazů](query-expressions.md).
 
 ## <a name="creating-a-new-type-of-computation-expression"></a>Vytvoření nového typu výrazu výpočtu.
 
@@ -227,7 +227,7 @@ Vnořený výraz má následující formát:
 builder.Run(builder.Delay(fun () -> {| cexpr |}))
 ```
 
-Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je výraz F# a `cexpr` je výrazu výpočtu.
+Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je výraz F # a `cexpr` je výrazu výpočtu.
 
 |Výraz|Překlad|
 |----------|-----------|

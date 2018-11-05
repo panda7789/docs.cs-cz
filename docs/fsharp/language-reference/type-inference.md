@@ -1,6 +1,6 @@
 ---
 title: Odvození typu (F#)
-description: Zjistěte, jak kompilátor F# odvodí typy hodnot, proměnné, parametry a návratové hodnoty.
+description: 'Zjistěte, jak kompilátor F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.'
 ms.date: 05/16/2016
 ms.openlocfilehash: fd826ac48fb9a70aa6f4ff746599c11b7e21a02e
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,15 +11,15 @@ ms.locfileid: "43865693"
 ---
 # <a name="type-inference"></a>Odvození typu
 
-Toto téma popisuje, jak kompilátor F# odvodí typy hodnot, proměnné, parametry a návratové hodnoty.
+Toto téma popisuje, jak kompilátor F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.
 
 ## <a name="type-inference-in-general"></a>Odvození typu, obecné
 
-Představu o odvození typu je, že není nutné určit typy konstrukce F# s výjimkou případů, kdy kompilátor nemůže odvodit jednoznačně typ. Vynechání explicitního typu informace neznamená, že F# je jazyk dynamicky zadávaných nebo že jsou hodnoty v jazyce F# slabě typované. F# je staticky psaný jazyk, což znamená, že kompilátor odvodí přesný typ pro každou konstrukci během kompilace. Pokud není k dispozici dostatek informací pro kompilátor k odvození typů každý konstrukce, musíte zadat informace o dalších typu, obvykle tak, že přidáte anotace explicitního typu někde v kódu.
+Představu o odvození typu je, že není nutné určit typy konstrukce F # s výjimkou případů, kdy kompilátor nemůže odvodit jednoznačně typ. Vynechání explicitního typu informace neznamená, že F # je jazyk dynamicky zadávaných nebo že jsou hodnoty v jazyce F # slabě typované. F # je staticky psaný jazyk, což znamená, že kompilátor odvodí přesný typ pro každou konstrukci během kompilace. Pokud není k dispozici dostatek informací pro kompilátor k odvození typů každý konstrukce, musíte zadat informace o dalších typu, obvykle tak, že přidáte anotace explicitního typu někde v kódu.
 
 ## <a name="inference-of-parameter-and-return-types"></a>Odvozování parametrů a návratové typy
 
-V seznamu parametrů není nutné zadat typ každého parametru. A ještě, F# je staticky psaný jazyk, a proto všechny hodnoty a výrazu má jednoznačného typu v době kompilace. Pro tyto typy, které explicitně nezadáte kompilátor odvodí typ na základě kontextu. Pokud typ není jinak zadán, je odvozen je obecný. Pokud tento kód použije hodnotu nekonzistentně, tak, že neexistuje žádné jeden odvodit typ, který splňuje všechna použití hodnoty, že kompilátor nahlásí chybu.
+V seznamu parametrů není nutné zadat typ každého parametru. A ještě, F # je staticky psaný jazyk, a proto všechny hodnoty a výrazu má jednoznačného typu v době kompilace. Pro tyto typy, které explicitně nezadáte kompilátor odvodí typ na základě kontextu. Pokud typ není jinak zadán, je odvozen je obecný. Pokud tento kód použije hodnotu nekonzistentně, tak, že neexistuje žádné jeden odvodit typ, který splňuje všechna použití hodnoty, že kompilátor nahlásí chybu.
 
 Návratový typ funkce je určen podle typu posledního výrazu ve funkci.
 
@@ -59,7 +59,7 @@ Typ je odvozen bude
 
 ## <a name="additional-information"></a>Další informace
 
-Odvození typu je podrobněji popsané v ve specifikaci jazyka F#.
+Odvození typu je podrobněji popsané v ve specifikaci jazyka F #.
 
 ## <a name="see-also"></a>Viz také:
 

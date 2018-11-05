@@ -1,6 +1,6 @@
 ---
 title: Sekvence (F#)
-description: Další informace o použití F# pořadí, když máte velké, seřazené kolekce dat, ale Neočekáváme, že nemusí používat všechny elementy.
+description: 'Další informace o použití F # pořadí, když máte velké, seřazené kolekce dat, ale Neočekáváme, že nemusí používat všechny elementy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: cfe8d1e350a8ac46b7700c12aa84d250f8b35855
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -22,7 +22,7 @@ A *pořadí výrazu* je výraz, který se vyhodnotí na sekvenci. Sekvence výra
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1502.fs)]
 
-Sekvence výrazů jsou tvořené výrazy jazyka F#, které vracet hodnoty pořadí. Můžete použít `yield` – klíčové slovo k vytvoření hodnot, které se stanou součástí sekvence.
+Sekvence výrazů jsou tvořené výrazy jazyka F #, které vracet hodnoty pořadí. Můžete použít `yield` – klíčové slovo k vytvoření hodnot, které se stanou součástí sekvence.
 
 Tady je příklad.
 
@@ -62,7 +62,7 @@ Následující příklad ukazuje použití `yield!` kombinování jednotlivých 
 
 Pořadí podporují řadu stejných funkcí jako [uvádí](lists.md). Pořadí také podporují operace, jako je seskupení a počítání pomocí funkcí generování klíče. Pořadí pro extrahování dílčích sekvencí, které podporují také více různých funkcí.
 
-Mnoho datových typů, jako je například seznam, pole, nastaví a mapy jsou implicitně pořadí, protože je vyčíslitelné kolekce. Funkce, která přebírá pořadí, argument pracuje s žádným z běžných F# datových typů, kromě na libovolný datový typ rozhraní .NET Framework, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Porovnejte to funkci, která převezme seznam jako argument, který jde převzít jenom seznamy. Typ `seq<'T>` je – zkratka typu pro `IEnumerable<'T>`. To znamená, že libovolný typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, která obsahuje pole, seznamy, nastaví a mapy v F# a také většina rozhraní .NET Framework typy kolekcí, je kompatibilní s `seq` zadejte a je možné kdykoli se očekává sekvenci.
+Mnoho datových typů, jako je například seznam, pole, nastaví a mapy jsou implicitně pořadí, protože je vyčíslitelné kolekce. Funkce, která přebírá pořadí, argument pracuje s žádným z běžných F # datových typů, kromě na libovolný datový typ rozhraní .NET Framework, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Porovnejte to funkci, která převezme seznam jako argument, který jde převzít jenom seznamy. Typ `seq<'T>` je – zkratka typu pro `IEnumerable<'T>`. To znamená, že libovolný typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, která obsahuje pole, seznamy, nastaví a mapy v F # a také většina rozhraní .NET Framework typy kolekcí, je kompatibilní s `seq` zadejte a je možné kdykoli se očekává sekvenci.
 
 ## <a name="module-functions"></a>Modul funkce
 

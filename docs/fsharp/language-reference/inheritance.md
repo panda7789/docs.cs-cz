@@ -1,6 +1,6 @@
 ---
 title: Dědičnost (F#)
-description: Zjistěte, jak určit dědičnosti relací F# pomocí klíčového slova 'inherit'.
+description: "Zjistěte, jak určit dědičnosti relací F # pomocí klíčového slova 'inherit'."
 ms.date: 05/16/2016
 ms.openlocfilehash: e4d79244fb9bada5db0c5c4c7179d4bfe6e21f3d
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -34,7 +34,7 @@ Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na z�
 
 ## <a name="virtual-methods-and-overrides"></a>Virtuální metody a přepsání
 
-Virtuální metody (a vlastnosti) fungují odlišně v jazyce F# porovnání s jinými jazyky rozhraní .NET. Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo. Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu. Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:
+Virtuální metody (a vlastnosti) fungují odlišně v jazyce F # porovnání s jinými jazyky rozhraní .NET. Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo. Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu. Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:
 
 ```fsharp
 abstract member [method-name] : [type]

@@ -1,6 +1,6 @@
 ---
 title: 'Explicitní pole: Klíčové slovo val (F#)'
-description: Další informace o F# "val" klíčové slovo, které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.
+description: 'Další informace o F # "val" klíčové slovo, které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 9cd06f7e90192be79490dd0ff67f118cce4339c3
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -65,7 +65,7 @@ Následující kód ukazuje použití explicitní pole ve struktuře. Vzhledem k
 
 Výstup je `11 xyz`.
 
-Explicitní pole nejsou určené pro běžné použití. Obecně platí, pokud je to možné, abyste používali `let` vazby ve třídě místo explicitní pole. Explicitní pole jsou užitečné v některých případech interoperability, například když je třeba definovat strukturu, která se použije v vyvolání platformy volání nativního rozhraní API, nebo ve scénářích vzájemné spolupráce COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nutné explicitní pole je při práci F# generátoru kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečné pro proměnné statická na úrovni vlákna nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
+Explicitní pole nejsou určené pro běžné použití. Obecně platí, pokud je to možné, abyste používali `let` vazby ve třídě místo explicitní pole. Explicitní pole jsou užitečné v některých případech interoperability, například když je třeba definovat strukturu, která se použije v vyvolání platformy volání nativního rozhraní API, nebo ve scénářích vzájemné spolupráce COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nutné explicitní pole je při práci F # generátoru kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečné pro proměnné statická na úrovni vlákna nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
 
 Když klíčová slova `member val` pohromadě v definici typu, je to definice automaticky implementované vlastnosti. Další informace najdete v tématu [vlastnosti](properties.md).
 

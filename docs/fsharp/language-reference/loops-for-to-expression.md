@@ -1,6 +1,6 @@
 ---
 title: 'Smyčky: Výraz for...to (F#)'
-description: Naleznete v tématu Jak F# for... výraz se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.
+description: 'Naleznete v tématu Jak F # for... výraz se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 8160fd30c4f3afe8bb6b58f468802ef1c0ef32ee
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2

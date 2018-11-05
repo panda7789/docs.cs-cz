@@ -1,6 +1,6 @@
 ---
 title: Referenční dokumentace klíčových slov (F#)
-description: Odkazy na informace o všech klíčových slov jazyka F#.
+description: 'Odkazy na informace o všech klíčových slov jazyka F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 0016f68b2872183a2b4dd865ce229b6a76250b78
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,11 +11,11 @@ ms.locfileid: "43856021"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
-Toto téma obsahuje odkazy na informace o všech F# klíčová slova jazyka.
+Toto téma obsahuje odkazy na informace o všech F # klíčová slova jazyka.
 
-## <a name="f-keyword-table"></a>Tabulka F# – klíčové slovo
+## <a name="f-keyword-table"></a>Tabulka F # – klíčové slovo
 
-Následující tabulka uvádí všechny klíčová slova F# v abecedním pořadí, společně s stručný popis a odkazy na související témata, které obsahují další informace.
+Následující tabulka uvádí všechny klíčová slova F # v abecedním pořadí, společně s stručný popis a odkazy na související témata, které obsahují další informace.
 
 |Klíčové slovo|Odkaz|Popis|
 |-------|----|-----------|
@@ -90,7 +90,7 @@ Následující tabulka uvádí všechny klíčová slova F# v abecedním pořad�
 |`yield`|[Sekvence](sequences.md)|Použít ve výrazu pořadí k vytvoření hodnoty pořadí.|
 |`yield!`|[Výpočetní výrazy](computation-expressions.md)<br /><br />[Asynchronní pracovní postupy](asynchronous-workflows.md)|Použít ve výrazu výpočtu k připojení výsledku daného výpočetního výrazu ke kolekci výsledků obsahujícího výrazu výpočtu.|
 
-Následující klíčová slova v jazyce F# jsou vyhrazené, protože jsou klíčová slova v jazyce OCaml:
+Následující klíčová slova v jazyce F # jsou vyhrazené, protože jsou klíčová slova v jazyce OCaml:
 
 * `asr`
 * `land`
@@ -103,7 +103,7 @@ Následující klíčová slova v jazyce F# jsou vyhrazené, protože jsou klí�
 
 Pokud používáte `--mlcompatibility` – možnost kompilátoru, výše klíčová slova jsou k dispozici pro použití jako identifikátory.
 
-Následující klíčová slova jsou vyhrazená jako klíčová slova pro budoucí rozšíření jazyka F#:
+Následující klíčová slova jsou vyhrazená jako klíčová slova pro budoucí rozšíření jazyka F #:
 
 * `atomic`
 * `break`

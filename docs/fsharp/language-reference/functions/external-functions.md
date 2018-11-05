@@ -1,6 +1,6 @@
 ---
 title: Externí funkce (F#)
-description: Další informace o podpoře jazyka F# pro volání funkcí v nativním kódu.
+description: 'Další informace o podpoře jazyka F # pro volání funkcí v nativním kódu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: db0d3362d867b07b333951f3380c6735ff471d5e
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "45973102"
 ---
 # <a name="external-functions"></a>Externí funkce
 
-Toto téma popisuje podpora jazyka F# pro volání funkcí v nativním kódu.
+Toto téma popisuje podpora jazyka F # pro volání funkcí v nativním kódu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,7 +34,7 @@ extern "C" void __declspec(dllexport) HelloWorld()
 }
 ```
 
-Pomocí následujícího kódu můžete volat tuto funkci z jazyka F#.
+Pomocí následujícího kódu můžete volat tuto funkci z jazyka F #.
 
 ```fsharp
 open System.Runtime.InteropServices
@@ -46,7 +46,7 @@ module InteropWithNative =
 InteropWithNative.HelloWorld()
 ```
 
-Vzájemná funkční spolupráce s nativním kódem se označuje jako *vyvolání platformy* a je funkce modulu CLR. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md). Informace v této části platí pro F#.
+Vzájemná funkční spolupráce s nativním kódem se označuje jako *vyvolání platformy* a je funkce modulu CLR. Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md). Informace v této části platí pro F #.
 
 ## <a name="see-also"></a>Viz také:
 
