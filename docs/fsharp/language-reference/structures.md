@@ -1,6 +1,6 @@
 ---
 title: Struktury (F#)
-description: 'Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s menším objemem dat a jednoduché chování.'
+description: Další informace o F# strukturu, typ compact objektu, který je často efektivnější než třída pro typy s menším objemem dat a jednoduché chování.
 ms.date: 05/16/2016
 ms.openlocfilehash: 08af88132dda28883e246b94585ff4ed8bd2f16a
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -64,7 +64,7 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 `IsByRefLike` neznamená `Struct`. Oba musí být k dispozici u typu.
 
-Objekt "`byref`– stejně jako" struktura v jazyce F # je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
+Objekt "`byref`– stejně jako" struktura v jazyce F# je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
 
 * Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
 * Nemohou být statické nebo členy třídy či struktury normální instance.
@@ -86,7 +86,7 @@ type S(count1: int, count2: int) =
 
 `IsReadOnly` neznamená `Struct`. Je nutné přidat mít `IsReadOnly` struktury.
 
-Pomocí tohoto atributu vysílá metadat, umožníte tím F # a C# vědět, abyste ji považovat za `inref<'T>` a `in ref`v uvedeném pořadí.
+Pomocí tohoto atributu vysílá metadat, umožníte tím F# a C# vědět, abyste ji považovat za `inref<'T>` a `in ref`v uvedeném pořadí.
 
 Definování proměnlivé hodnoty uvnitř struktury jen pro čtení, dojde k chybě.
 

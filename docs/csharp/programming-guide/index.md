@@ -9,17 +9,17 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: a145e3e1b73db6fdfbc5f1408231e78f55b559d1
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 3827ebfe401938e4fa1b530672352123ae2ac826
+ms.sourcegitcommit: 0fbd677fcdc5bf46c4d827f492eaaa970edc07b6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45515131"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235736"
 ---
 # <a name="c-programming-guide"></a>Průvodce programovacího jazyka C#
 Tato část obsahuje podrobné informace o klíčových jazyka C#, funkce a funkce přístupné pro C# pomocí rozhraní .NET Framework.  
   
- Většinu této části se předpokládá něco už víte o jazyce C# a obecné koncepty programování. Pokud jste úplný Začátečník s programováním nebo pomocí jazyka C#, můžete navštívit [rychlé starty s C#](../quick-starts/index.md) nebo [Začínáme s jazykem C#](https://www.microsoft.com/net/tutorials/csharp/getting-started) Interaktivní kurz, ve kterém jsou vyžadována žádná předchozí znalosti programování.  
+ Většinu této části se předpokládá něco už víte o jazyce C# a obecné koncepty programování. Pokud jste úplný Začátečník s programováním nebo C#, může být potřeba navštívit [Úvod do C# kurzy](../tutorials/intro-to-csharp/index.md) nebo [Začínáme se službou C# ](https://www.microsoft.com/net/tutorials/csharp/getting-started) Interaktivní kurz, pokud ne vyžaduje se předchozí znalosti programování.  
   
  Informace o konkrétní klíčová slova, operátory a direktivy preprocesoru naleznete v tématu [referenční dokumentace jazyka C#](../../csharp/language-reference/index.md). Informace o specifikaci jazyka C# najdete v tématu [specifikace jazyka C#](../../csharp/language-reference/language-specification/index.md).  
   

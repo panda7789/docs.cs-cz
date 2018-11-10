@@ -15,11 +15,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8b934e5ee69c2e6ebd5cf4da7de2790669c68986
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 4bca8f7e172fd019ef437a4803bf5895c6bc4781
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191807"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980593"
 ---
 # <a name="datamemberlisteditor-class"></a>Třída DataMemberListEditor
 

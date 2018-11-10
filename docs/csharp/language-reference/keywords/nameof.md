@@ -5,12 +5,12 @@ f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 726abfd903f37826a247e6e98c0d11f230447550
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 01c87f8d63264aa342b04b8d3fcfc7e6f38db44b
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035250"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "50744352"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 
@@ -131,8 +131,9 @@ class C {
  Neexistuje žádný způsob, jak získat podpisy informace, jako "`Method1 (str, str)`".  Jedním ze způsobů, který je použití výrazu `Expression e = () => A.B.Method1("s1", "s2")`a o přijetí změn MemberInfo z výsledný strom výrazu.  
   
 ## <a name="language-specifications"></a>Specifikace jazyka  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
+
+Další informace najdete v tématu [výrazy Nameof](~/_csharplang/spec/expressions.md#nameof-expressions) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+ 
 ## <a name="see-also"></a>Viz také
 
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  

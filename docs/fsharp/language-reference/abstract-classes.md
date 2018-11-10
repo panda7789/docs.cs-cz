@@ -1,6 +1,6 @@
 ---
 title: Abstraktní třídy (F#)
-description: 'Další informace o F # abstraktní třídy, které ponechte některé nebo všechny členy neimplementované a představují běžné funkce různé typy objektů.'
+description: Další informace o F# abstraktní třídy, které ponechte některé nebo všechny členy neimplementované a představují běžné funkce různé typy objektů.
 ms.date: 05/16/2016
 ms.openlocfilehash: 7e1bb9daca7e8a3b442cd7fb02ef99bb6a2085cb
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -30,7 +30,7 @@ abstract member member-name : type-signature
 
 Objektově orientované programování v abstraktní třída se používá jako základní třída v hierarchii a představuje běžné funkce různé typy objektů. Jak již název "abstraktní" napovídá, abstraktní třídy často nemusí odpovídat přímo na konkrétní entity v doméně problému. Však představují co mnoho entit různých konkrétní mají společnou.
 
-Abstraktní třídy musí mít `AbstractClass` atribut. Může být implementována a neimplementované členy. Používání pojmů *abstraktní* při použití u třídy je stejný jako v jiných jazycích .NET, ale používání pojmů *abstraktní* při použití metody (a vlastnosti) je trochu jiné v jazyce F # z jeho použijte v jiných jazycích rozhraní .NET. V jazyce F #, pokud metoda je označena `abstract` – klíčové slovo, to znamená, že člen má záznam, označované jako *virtuální odeslání slotu*, do interní tabulky virtuálních funkcí pro daný typ. Jinými slovy, metoda je virtuální, i když `virtual` – klíčové slovo v jazyce F # nepoužívá. Klíčové slovo `abstract` se používá pro virtuální metody bez ohledu na to, zda je metoda implementována. Deklarace slot virtuální odeslání nesouvisí s definicí metody pro tento slot odeslání. Proto ekvivalent F # virtuální metoda deklarace a definice v jiném jazyce .NET je kombinace deklarací abstraktní metody a samostatné definice, buď `default` – klíčové slovo nebo `override` – klíčové slovo. Další informace a příklady najdete v tématu [metody](members/methods.md).
+Abstraktní třídy musí mít `AbstractClass` atribut. Může být implementována a neimplementované členy. Používání pojmů *abstraktní* při použití u třídy je stejný jako v jiných jazycích .NET, ale používání pojmů *abstraktní* při použití metody (a vlastnosti) je trochu jiné v jazyce F# z jeho použijte v jiných jazycích rozhraní .NET. V jazyce F#, pokud metoda je označena `abstract` – klíčové slovo, to znamená, že člen má záznam, označované jako *virtuální odeslání slotu*, do interní tabulky virtuálních funkcí pro daný typ. Jinými slovy, metoda je virtuální, i když `virtual` – klíčové slovo v jazyce F# nepoužívá. Klíčové slovo `abstract` se používá pro virtuální metody bez ohledu na to, zda je metoda implementována. Deklarace slot virtuální odeslání nesouvisí s definicí metody pro tento slot odeslání. Proto ekvivalent F# virtuální metoda deklarace a definice v jiném jazyce .NET je kombinace deklarací abstraktní metody a samostatné definice, buď `default` – klíčové slovo nebo `override` – klíčové slovo. Další informace a příklady najdete v tématu [metody](members/methods.md).
 
 Třída je považován za abstraktní pouze v případě, že existují abstraktní metody, které jsou deklarovány, ale není definovaný. Třídy obsahující abstraktní metody proto nejsou nutně abstraktní třídy. Pokud třída má nedefinované abstraktní metody, nepoužívejte **AbstractClass** atribut.
 

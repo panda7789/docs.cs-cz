@@ -1,6 +1,6 @@
 ---
 title: 'Rekurzivní funkce: Klíčové slovo rec (F#)'
-description: "Zjistěte, jak se používá klíčové slovo 'rec' F # pomocí klíčového slova \"let\" k definování rekurzivní funkce."
+description: Zjistěte, jak se používá klíčové slovo 'rec' F# pomocí klíčového slova "let" k definování rekurzivní funkce.
 ms.date: 05/16/2016
 ms.openlocfilehash: 5aab6ed8ab0fc3c0f0bcfc93c3ce6518ec53254f
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -30,7 +30,7 @@ function2-body
 
 ## <a name="remarks"></a>Poznámky
 
-Rekurzivní funkce, funkce, které volají samy, jsou explicitně označeny v jazyce F #. Díky tomu identifikátor, který definuje dostupné v oboru funkce.
+Rekurzivní funkce, funkce, které volají samy, jsou explicitně označeny v jazyce F#. Díky tomu identifikátor, který definuje dostupné v oboru funkce.
 
 Následující kód ukazuje rekurzivní funkci, která vypočítá *n*<sup>th</sup> Fibonacciho číslo.
 

@@ -3,11 +3,11 @@ title: AsymmetricSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 7bd3b6be-8f77-4927-93ae-6fa371893cca
 ms.openlocfilehash: 076313548828f1fbce9c68b48c0fa7db9cca095f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185115"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50982787"
 ---
 # <a name="asymmetricsecuritybindingelement"></a>AsymmetricSecurityBindingElement
 AsymmetricSecurityBindingElement  

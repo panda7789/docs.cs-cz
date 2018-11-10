@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: a5763413662d32d66e955fb0edfc6b438968720b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4c7449568ff250c8de521e7afb71178536f52657
+ms.sourcegitcommit: 4bca8f7e172fd019ef437a4803bf5895c6bc4781
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857742"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980772"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>Obecná rozhraní (Průvodce programováním v C#)
 Často je užitečné k definování rozhraní pro obecné kolekce tříd nebo pro obecné třídy, které představují položek v kolekci. Předvolby pro obecné třídy, je pomocí obecných rozhraní, jako <xref:System.IComparable%601> spíše než <xref:System.IComparable>, aby se zabránilo operace zabalení a rozbalení u typů hodnot. Definuje několik obecných rozhraní pro použití s kolekcí tříd v knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic> oboru názvů.  
@@ -31,7 +31,7 @@ ms.locfileid: "43857742"
   
  [!code-csharp[csProgGuideGenerics#32](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-interfaces_4.cs)]  
   
- Obecná rozhraní může dědit z rozhraní obecné Pokud obecného rozhraní je opravné položky ke variant, což znamená, že pouze jako návratová hodnota používá jeho typu parametru. V knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic.IEnumerable%601> dědí z <xref:System.Collections.IEnumerable> protože <xref:System.Collections.Generic.IEnumerable%601> využívat jenom takové `T` v návratové hodnotě <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a <xref:System.Collections.Generic.IEnumerator%601.Current%2A> metoda getter vlastnosti.  
+ Obecná rozhraní může dědit z rozhraní Obecné, pokud obecného rozhraní je kontravariantní, což znamená, že pouze jako návratová hodnota používá jeho typu parametru. V knihovně tříd rozhraní .NET Framework <xref:System.Collections.Generic.IEnumerable%601> dědí z <xref:System.Collections.IEnumerable> protože <xref:System.Collections.Generic.IEnumerable%601> využívat jenom takové `T` v návratové hodnotě <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a <xref:System.Collections.Generic.IEnumerator%601.Current%2A> metoda getter vlastnosti.  
   
  Konkrétní třídy mohou implementovat rozhraní uzavřený konstruovaný, následujícím způsobem:  
   

@@ -1,6 +1,6 @@
 ---
 title: Asynchronní pracovní postupy (F#)
-description: 'Další informace o podpoře F # programovací jazyk pro provádění výpočtů asynchronně, které se spustí bez blokování provádění jiné práce.'
+description: Další informace o podpoře F# programovací jazyk pro provádění výpočtů asynchronně, které se spustí bez blokování provádění jiné práce.
 ms.date: 05/16/2016
 ms.openlocfilehash: 2a6d5f8b61d63a722744f8f71a037e8bc460c64f
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -14,7 +14,7 @@ ms.locfileid: "43861559"
 > [!NOTE]
 Odkaz rozhraní API se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
-Toto téma popisuje podporu v jazyce F # pro provádění výpočtů asynchronně, to znamená bez blokování provádění jiné práce. Například asynchronních výpočtů je možné psát aplikace, které mají uživatelská rozhraní, která nadále reagovat na uživatele, jelikož aplikace provede další práci.
+Toto téma popisuje podporu v jazyce F# pro provádění výpočtů asynchronně, to znamená bez blokování provádění jiné práce. Například asynchronních výpočtů je možné psát aplikace, které mají uživatelská rozhraní, která nadále reagovat na uživatele, jelikož aplikace provede další práci.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,17 +41,17 @@ let (result1 : Async<byte[]>) = stream.AsyncRead(bufferSize)
 let! (result2 : byte[])  = stream.AsyncRead(bufferSize)
 ```
 
-Kromě `let!`, můžete použít `use!` provádět asynchronní vazby. Rozdíl mezi `let!` a `use!` je stejný jako rozdíl mezi `let` a `use`. Pro `use!`, vyřazení objektu z na konci aktuálního oboru. Všimněte si, že v aktuální verzi jazyka F # `use!` neumožňuje hodnotu má být inicializován na hodnotu null, i když `use` nepodporuje.
+Kromě `let!`, můžete použít `use!` provádět asynchronní vazby. Rozdíl mezi `let!` a `use!` je stejný jako rozdíl mezi `let` a `use`. Pro `use!`, vyřazení objektu z na konci aktuálního oboru. Všimněte si, že v aktuální verzi jazyka F# `use!` neumožňuje hodnotu má být inicializován na hodnotu null, i když `use` nepodporuje.
 
 ## <a name="asynchronous-primitives"></a>Asynchronní primitiv
 
-Je volána metoda, která provádí jednu asynchronní úlohu a vrátí výsledek *asynchronní primitivní*, a ty jsou navrženy speciálně pro použití s `let!`. Několik asynchronních primitivních elementů jsou definovány v základní knihovně F #. Tyto dvě metody pro webové aplikace, které jsou definovány v modulu [ `Microsoft.FSharp.Control.WebExtensions` ](https://msdn.microsoft.com/library/95ef17bc-ee3f-44ba-8a11-c90fcf4cf003): [ `WebRequest.AsyncGetResponse` ](https://msdn.microsoft.com/library/09a60c31-e6e2-4b5c-ad23-92a86e50060c) a [ `WebClient.AsyncDownloadString` ](https://msdn.microsoft.com/library/8a85a9b7-f712-4cac-a0ce-0a797f8ea32a). Obě primitivy stáhnout data z webové stránky, případě adresy URL. `AsyncGetResponse` vytvoří `System.Net.WebResponse` objektu, a `AsyncDownloadString` vytvoří řetězec, který představuje kód HTML na webové stránce.
+Je volána metoda, která provádí jednu asynchronní úlohu a vrátí výsledek *asynchronní primitivní*, a ty jsou navrženy speciálně pro použití s `let!`. Několik asynchronních primitivních elementů jsou definovány v základní knihovně F#. Tyto dvě metody pro webové aplikace, které jsou definovány v modulu [ `Microsoft.FSharp.Control.WebExtensions` ](https://msdn.microsoft.com/library/95ef17bc-ee3f-44ba-8a11-c90fcf4cf003): [ `WebRequest.AsyncGetResponse` ](https://msdn.microsoft.com/library/09a60c31-e6e2-4b5c-ad23-92a86e50060c) a [ `WebClient.AsyncDownloadString` ](https://msdn.microsoft.com/library/8a85a9b7-f712-4cac-a0ce-0a797f8ea32a). Obě primitivy stáhnout data z webové stránky, případě adresy URL. `AsyncGetResponse` vytvoří `System.Net.WebResponse` objektu, a `AsyncDownloadString` vytvoří řetězec, který představuje kód HTML na webové stránce.
 
 Jsou součástí několika primitivy pro asynchronní vstupně-výstupních operací [ `Microsoft.FSharp.Control.CommonExtensions` ](https://msdn.microsoft.com/library/2edb67cb-6814-4a30-849f-b6dbdd042396) modulu. Tyto metody rozšíření `System.IO.Stream` třídy jsou [ `Stream.AsyncRead` ](https://msdn.microsoft.com/library/85698aaa-bdda-47e6-abed-3730f59fda5e) a [ `Stream.AsyncWrite` ](https://msdn.microsoft.com/library/1b0a2751-e42a-47e1-bd27-020224adc618).
 
 Můžete taky psát vlastní asynchronní primitivy definováním funkce, jejíž dokončení textové uzavřen v bloku async.
 
-Pokud chcete používat asynchronní metody v rozhraní .NET Framework, které jsou určeny pro dalšími asynchronními modely s F # asynchronní programovací model, vytvoříte funkci, která vrátí jazyka F # `Async` objektu. Knihovna jazyka F # obsahuje funkce, které usnadňují to udělat.
+Pokud chcete používat asynchronní metody v rozhraní .NET Framework, které jsou určeny pro dalšími asynchronními modely s F# asynchronní programovací model, vytvoříte funkci, která vrátí jazyka F# `Async` objektu. Knihovna jazyka F# obsahuje funkce, které usnadňují to udělat.
 
 Jedním z příkladů použití asynchronních pracovních postupech je zde uveden; existuje řada dalších v dokumentaci k pro metody [asynchronní třídy](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7).
 

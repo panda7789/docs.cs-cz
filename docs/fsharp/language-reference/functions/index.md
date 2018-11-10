@@ -1,6 +1,6 @@
 ---
 title: Funkce (F#)
-description: 'Informace o funkcích v F # a jak F # podporuje běžné konstrukce funkčního programování.'
+description: Informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
 ms.openlocfilehash: 717eba7e69398048d229173e07ccc376797171bb
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "48839565"
 ---
 # <a name="functions"></a>Funkce
 
-Funkce je základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích má název funkce jazyka F #, mohou mít parametry a argumenty vzít a má tělo. F # podporuje také konstrukcí funkčního programování, jako je zpracování funkce jako hodnoty, použití nepojmenované funkce ve výrazech, složení funkcí k vytvoření nové funkce, curryfikované funkce a implicitní definice funkce prostřednictvím částečnou použití argumentů funkce.
+Funkce je základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích má název funkce jazyka F#, mohou mít parametry a argumenty vzít a má tělo. F# podporuje také konstrukcí funkčního programování, jako je zpracování funkce jako hodnoty, použití nepojmenované funkce ve výrazech, složení funkcí k vytvoření nové funkce, curryfikované funkce a implicitní definice funkce prostřednictvím částečnou použití argumentů funkce.
 
 Definování funkcí s použitím `let` – klíčové slovo, nebo v případě, funkce je rekurzivní, `let rec` – kombinace klíčových slov.
 
@@ -102,7 +102,7 @@ let vol = cylinderVolume 2.0 3.0
 
 ## <a name="partial-application-of-arguments"></a>Částečné použití argumentů
 
-Pokud zadáte méně než zadaný počet argumentů, vytvoříte novou funkci, která očekává zbývajících argumentů. Tento způsob zpracování argumentů se označuje jako *curryfikace* a je znakem funkčních programovacích jazyků, jako je F #. Předpokládejme například, že pracujete s dvou velikostech kanálu: jeden má poloměr **2.0** a druhý má poloměr **3.0**. Můžete například vytvořit funkce, které určují objem kanálu následujícím způsobem:
+Pokud zadáte méně než zadaný počet argumentů, vytvoříte novou funkci, která očekává zbývajících argumentů. Tento způsob zpracování argumentů se označuje jako *curryfikace* a je znakem funkčních programovacích jazyků, jako je F#. Předpokládejme například, že pracujete s dvou velikostech kanálu: jeden má poloměr **2.0** a druhý má poloměr **3.0**. Můžete například vytvořit funkce, které určují objem kanálu následujícím způsobem:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet106.fs)]
 
@@ -120,7 +120,7 @@ Některé rekurzivní funkce mohou přetečení zásobníku programu nebo prové
 
 ## <a name="function-values"></a>Hodnoty funkcí
 
-V jazyce F # všechny funkce jsou považovány za hodnot. ve skutečnosti jsou označovány jako *funkce hodnoty*. Protože funkce jsou hodnoty, se může sloužit jako argumenty dalších funkcí nebo v jiném kontextu použití hodnot. Tady je příklad, který přijímá hodnotu funkce jako argument funkce:
+V jazyce F# všechny funkce jsou považovány za hodnot. ve skutečnosti jsou označovány jako *funkce hodnoty*. Protože funkce jsou hodnoty, se může sloužit jako argumenty dalších funkcí nebo v jiném kontextu použití hodnot. Tady je příklad, který přijímá hodnotu funkce jako argument funkce:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet109.fs)]
 
@@ -146,7 +146,7 @@ Můžete definovat pomocí výrazů lambda `fun` – klíčové slovo. Výraz la
 
 ## <a name="function-composition-and-pipelining"></a>Skládání a paralelní zpracování funkcí
 
-Funkce jazyka F # se může skládat z dalších funkcí. Složení dvou funkcí **function1** a **function2** je další funkci, která představuje použití **function1** a potom aplikaci **function2**:
+Funkce jazyka F# se může skládat z dalších funkcí. Složení dvou funkcí **function1** a **function2** je další funkci, která představuje použití **function1** a potom aplikaci **function2**:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet113.fs)]
 

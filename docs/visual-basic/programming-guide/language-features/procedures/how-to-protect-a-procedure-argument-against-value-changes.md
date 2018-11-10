@@ -15,11 +15,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
 ms.openlocfilehash: 393127353a020c1db5df3011b2a97b1c53097f27
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50035641"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225331"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
 Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód procedury přímý odkaz na programovací prvek základní argumentu ve volajícím kódu. To umožňuje změnit hodnotu argumentu ve volajícím kódu základní postup. V některých případech volající kód může být vhodné pro ochranu před tuto změnu.  

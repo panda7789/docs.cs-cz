@@ -1,5 +1,5 @@
 ---
-title: 'Začínáme s Azure File storage s využitím F #'
+title: Začínáme s Azure File storage s využitím F#
 description: Store souborová data v cloudu s Azure File storage a připojte svou cloudovou sdílenou z virtuálního počítače Azure (VM) nebo z aplikace v místním systémem Windows.
 author: sylvanc
 ms.date: 09/20/2016
@@ -10,7 +10,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "33569340"
 ---
-# <a name="get-started-with-azure-file-storage-using-f"></a>Začínáme s Azure File storage s využitím F # #
+# <a name="get-started-with-azure-file-storage-using-f"></a>Začínáme s Azure File storage s využitím F# #
 
 Azure File storage je služba, která nabízí sdílené složky v cloudu s využitím standardu [zprávy bloku SMB (Server) protokol](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Podporují se SMB 2.1 i SMB 3.0. Se službou Azure File storage můžete migrovat starší aplikace, které spoléhají na sdílené složky Azure, rychle a bez nákladných přepisů. Aplikace běžící v cloudových službách nebo virtuálních počítačích Azure nebo z místních klientů můžou připojit sdílenou složku v cloudu, stejným způsobem jako desktopová aplikace připojí typickou sdílenou složku SMB. Libovolný počet součásti aplikace lze připojit a současně přistupují ke sdílené složce úložiště.
 
@@ -21,9 +21,9 @@ Koncepční přehled služby file storage, najdete v tématu [v příručce .NET
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account).
 Budete také potřebovat přístupový klíč k úložišti pro tento účet.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F # a začněte jazyka F # Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
 
-Ukázky v tomto článku je možné v F # aplikace nebo skript F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `files.fsx`, ve vašem vývojovém prostředí F #.
+Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `files.fsx`, ve vašem vývojovém prostředí F#.
 
 Pak pomocí [Správce balíčků](package-management.md) jako [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a odkaz na `WindowsAzure.Storage.dll` ve skriptu pomocí `#r`směrnice.
 

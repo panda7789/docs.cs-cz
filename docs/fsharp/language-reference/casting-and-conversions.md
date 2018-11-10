@@ -1,6 +1,6 @@
 ---
 title: Přetypování a převody (F#)
-description: 'Zjistěte, jak programovací jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy.'
+description: Zjistěte, jak programovací jazyk F# poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy.
 ms.date: 05/16/2016
 ms.openlocfilehash: aca1a2523130ee485a7e7c9a6a45a410904cb246
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,17 +11,17 @@ ms.locfileid: "45677926"
 ---
 # <a name="casting-and-conversions-f"></a>Přetypování a převody (F#)
 
-Toto téma popisuje podporu pro převody typů v jazyce F #.
+Toto téma popisuje podporu pro převody typů v jazyce F#.
 
 ## <a name="arithmetic-types"></a>Aritmetické typy
 
-Jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy, jako například mezi celými čísly a typy plovoucího bodu. Operátory převodu celé číslo a char kontrole a zaškrtnuté políčko formuláře; operátory s plovoucí desetinnou čárkou a `enum` operátor převodu tomu tak není. Unchecked formuláře jsou definovány v `Microsoft.FSharp.Core.Operators` a kontrolovaný formuláře jsou definovány v `Microsoft.FSharp.Core.Operators.Checked`. Checked formuláře kontrola přetečení a generovat výjimku při běhu, pokud výsledná hodnota překračuje omezení cílového typu.
+Jazyk F# poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy, jako například mezi celými čísly a typy plovoucího bodu. Operátory převodu celé číslo a char kontrole a zaškrtnuté políčko formuláře; operátory s plovoucí desetinnou čárkou a `enum` operátor převodu tomu tak není. Unchecked formuláře jsou definovány v `Microsoft.FSharp.Core.Operators` a kontrolovaný formuláře jsou definovány v `Microsoft.FSharp.Core.Operators.Checked`. Checked formuláře kontrola přetečení a generovat výjimku při běhu, pokud výsledná hodnota překračuje omezení cílového typu.
 
 Každý z těchto operátorů má stejný název jako název cílového typu. Například v následujícím kódu, ve kterém jsou typy explicitně označena, `byte` zobrazí se dvě různé významy. První výskyt je pro typ a druhý je operátor převodu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4401.fs)]
 
-V následující tabulce jsou uvedeny operátory převodu, které jsou definovány v jazyce F #.
+V následující tabulce jsou uvedeny operátory převodu, které jsou definovány v jazyce F#.
 
 |Operátor|Popis|
 |--------|-----------|
@@ -67,11 +67,11 @@ Další informace najdete v tématu [výčty](enumerations.md).
 
 Převod mezi typy v hierarchii objektů je zásadní pro objektově orientované programování. Existují dva základní typy převodů: přetypování nahoru (upcasting) a přetypování dolů (přetypování na nižší). Přetypování hierarchii znamená, že přetypování z odvozeného objektu odkaz na odkaz na základní objekt. Takový výraz přetypování zaručeně funguje jako základní třída je v hierarchii dědičnosti odvozené třídy. Přetypování dolů hierarchii z základní objekt odkazu na odkaz na objekt odvozené, bude úspěšné pouze v případě, že objekt je ve skutečnosti instance správné cíl (Odvozený) typ nebo typ odvozený z cílového typu.
 
-Jazyk F # poskytuje operátory pro tyto typy převodů. `:>` Operátor přetypování nahoru hierarchii a `:?>` operátor přetypování dolů v hierarchii.
+Jazyk F# poskytuje operátory pro tyto typy převodů. `:>` Operátor přetypování nahoru hierarchii a `:?>` operátor přetypování dolů v hierarchii.
 
 ### <a name="upcasting"></a>Upcasting
 
-V řadě jazyků orientovaných upcasting je implicitní; v jazyce F # pravidla se mírně liší. Upcasting se automaticky použije při předání argumentů metody na typu objektu. Však pro funkce vazbou let v modulu upcasting není automaticky, pokud typ parametru není deklarována jako typ flexibilní. Další informace najdete v tématu [flexibilní typy](flexible-Types.md).
+V řadě jazyků orientovaných upcasting je implicitní; v jazyce F# pravidla se mírně liší. Upcasting se automaticky použije při předání argumentů metody na typu objektu. Však pro funkce vazbou let v modulu upcasting není automaticky, pokud typ parametru není deklarována jako typ flexibilní. Další informace najdete v tématu [flexibilní typy](flexible-Types.md).
 
 `:>` Operátor provádí statickou přetypování, což znamená, že úspěch přetypování je určen v době kompilace. Pokud přetypování, která používá `:>` se zkompiluje úspěšně, je platný přetypování a nemá žádné riziko selhání za běhu.
 

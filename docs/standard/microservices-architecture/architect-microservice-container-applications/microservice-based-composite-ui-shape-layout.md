@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
 ms.openlocfilehash: 3c5f4c5a1dd1c1065be63ad916af078050c069c1
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50033646"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744493"
 ---
 # <a name="creating-composite-ui-based-on-microservices-including-visual-ui-shape-and-layout-generated-by-multiple-microservices"></a>Vytvoření složeného uživatelského rozhraní založeného na mikroslužbách, včetně visual uživatelského rozhraní tvaru a rozložení generovaných různými mikroslužbami
 

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - data requests, creating requests
 ms.assetid: faab683e-3f1e-4eee-b5e9-59f7245033d5
 ms.openlocfilehash: ff346c5b4241f7ac037088adbe068bab2232d12f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190681"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744194"
 ---
 # <a name="creating-internet-requests"></a>Vytváření internetových žádostí
 Vytvoření aplikace <xref:System.Net.WebRequest> instance prostřednictvím <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> metody. Toto je statická metoda, která vytvoří třídu odvozenou z **WebRequest** podle do něho předaný schéma identifikátoru URI.  

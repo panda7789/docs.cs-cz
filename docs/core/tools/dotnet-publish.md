@@ -4,11 +4,11 @@ description: Dotnet publikovat příkaz publikuje do adresáře projektu .NET Co
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: a60777d613573076f41fba3e5ed610b236884063
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 17bacc92eea90072b95b2d42a87cb57e9fa0be67
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43511421"
 ---
 # <a name="dotnet-publish"></a>publikování DotNet
@@ -58,7 +58,7 @@ dotnet publish [-h|--help]
 
 `PROJECT`
 
-Projekt pro publikování. Pokud není zadán, použije se výchozí do aktuálního adresáře.
+Projekt pro publikování. Je cestu a název souboru [ C# ](csproj.md), F#, nebo soubor projektu jazyka Visual Basic, nebo cestu k adresáři, který obsahuje C#, F#, nebo soubor projektu jazyka Visual Basic. Pokud není zadán, použije se výchozí do aktuálního adresáře.
 
 ## <a name="options"></a>Možnosti
 

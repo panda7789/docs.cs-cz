@@ -7,11 +7,11 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 6a98cd9f2ff6f40a200a9e30fc65de717b6e788e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 405de22ea7e48a5964de48eb20becdaf5fc5ae01
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43503630"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
@@ -64,7 +64,8 @@ Od verze C# 7.0, jak získat a přístupový objekt set mohou být implementovan
 -   [Omezení přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+Další informace najdete v tématu [indexery](~/_csharplang/spec/classes.md#indexers) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

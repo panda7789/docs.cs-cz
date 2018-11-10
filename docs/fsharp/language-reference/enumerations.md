@@ -1,6 +1,6 @@
 ---
 title: Výčty (F#)
-description: 'Další informace o použití výčty F # místo literály, aby byl kód čitelnější a udržovatelný.'
+description: Další informace o použití výčty F# místo literály, aby byl kód čitelnější a udržovatelný.
 ms.date: 05/16/2016
 ms.openlocfilehash: 47fb353c2698f8b1474834ebbd1b0eff2c7f76e7
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -40,7 +40,7 @@ Jak je znázorněno v následujícím kódu, můžete snadno převést výčty p
 
 Výčtové typy může mít jednu z následujících typů základní: `sbyte`, `byte`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint16`, `uint64`, a `char`. Typy výčtu jsou reprezentovány v rozhraní .NET Framework jako typy, které jsou zděděny z `System.Enum`, pak dědí se ze `System.ValueType`. Proto jsou typy hodnot, které jsou umístěny na zásobník nebo vloženého do nadřazeného objektu a platná hodnota výčtu je libovolná hodnota základního typu. To je důležité, když vzorec pro porovnávání na výčet hodnot, protože je nutné zadat vzor, který zachytává nepojmenovaných hodnot.
 
-`enum` Funkce v knihovně F # lze použít ke generování hodnoty výčtu, dokonce i jiná hodnota než jeden z předdefinovaných, s názvem hodnoty. Můžete použít `enum` funkce následujícím způsobem.
+`enum` Funkce v knihovně F# lze použít ke generování hodnoty výčtu, dokonce i jiná hodnota než jeden z předdefinovaných, s názvem hodnoty. Můžete použít `enum` funkce následujícím způsobem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2103.fs)]
 

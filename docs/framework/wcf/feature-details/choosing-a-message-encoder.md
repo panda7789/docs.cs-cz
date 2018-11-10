@@ -2,11 +2,11 @@
 title: Výběr kodéru zprávy
 ms.date: 03/30/2017
 ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
-ms.openlocfilehash: 5d2b55f04954cdd855ff9e224d2bc0405919f7a3
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 061869704674206739d81be24e105fc87ce0f129
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "44248927"
 ---
 # <a name="choosing-a-message-encoder"></a>Výběr kodéru zprávy
@@ -25,14 +25,14 @@ Toto téma popisuje kritéria pro výběr mezi kodérů zprávy, které jsou zah
   
 -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, kodér binárních zpráv používá kompaktní binární formát a je optimalizována pro WCF pro komunikaci WCF a proto není interoperabilní. Toto je většina kodér výkonné všechny kodérů, které poskytuje WCF.  
   
--   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> element vazby, určuje kódování znaků a správu verzí zpráv pro zprávy pomocí kódování MTOM. MTOM je efektivní technologie pro přenos zpráv WCF binární data. Kodér MTOM se pokusí vytvořit rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové formě, ale optimalizuje velkých bloků binárních dat jako ušetřený přenosem-je, bez převodu na text. Z hlediska efektivity mezi kodéry, které poskytuje WCF MTOM je mezi (nejpomalejší) textového a binárního souboru (nejrychlejší).  
+-   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, určuje element vazby na znak kódování a správu verzí zpráv pro zprávy pomocí kódování MTOM. MTOM je efektivní technologie pro přenos zpráv WCF binární data. Kodér MTOM se pokusí vytvořit rovnováhu mezi efektivitu a vzájemná funkční spolupráce. Kódování MTOM přenáší většina XML v textové formě, ale optimalizuje velkých bloků binárních dat jako ušetřený přenosem-je, bez převodu na text. Z hlediska efektivity mezi kodéry, které poskytuje WCF MTOM je mezi (nejpomalejší) textového a binárního souboru (nejrychlejší).  
   
 ## <a name="how-to-choose-a-message-encoder"></a>Výběr kodéru zprávy  
  Následující tabulka popisuje běžné faktory použitá pro výběr kodéru zprávy. Prioritizujte tyto faktory, které jsou důležité pro vaši aplikaci a klikněte na tlačítko kodérů zprávy, které pracují nejlépe faktorů. Ujistěte se, že vezměte v úvahu žádné další faktory, které nejsou uvedené v této tabulce a jakékoli vlastní zprávu kodéry, které může být nutné ve vaší aplikaci.  
   
 |faktor|Popis|Kodéry, které podporují tento faktor|  
 |------------|-----------------|---------------------------------------|  
-|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> podporují pouze UTF8 a UTF16 Unicode (*formát big-endian* a *little endian*) kódování. Pokud jiné kódování, jako je například UTF7 nebo ASCII, musíte použít vlastní kodér. Vlastní kodér vzorku, naleznete v tématu [vlastní kodér zpráv](https://go.microsoft.com/fwlink/?LinkId=119857).|Text|  
+|Podporované znakové sady|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují pouze UTF8 a UTF16 Unicode (*formát big-endian* a *little endian*) kódování. Pokud jiné kódování, jako je například UTF7 nebo ASCII, musíte použít vlastní kodér. Vlastní kodér vzorku, naleznete v tématu [vlastní kodér zpráv](https://go.microsoft.com/fwlink/?LinkId=119857).|Text|  
 |Kontrola|Kontrola je možnost k prozkoumání zpráv během přenosu. Kódování textu, s nebo bez použití protokolu SOAP, povolit zpráv ho zkontrolovat a analyzovat řada aplikací bez použití specializované nástroje. Všimněte si, že použití zabezpečení přenosu na úrovni zprávy nebo přenosu, ovlivňuje vaše schopnost kontrolovat zprávy. Důvěrnost zkoumají chrání zprávu a chrání integritu zprávu nebylo možné měnit.|Text|  
 |Spolehlivost|Spolehlivost je odolnost proti chybám kodéru pro předávání chyb. Spolehlivost se dá zadat i zpráva, přenos nebo aplikační vrstvy. Všechny standardní kodérů WCF se předpokládá, že poskytuje další vrstvu spolehlivost. Kodér má málo moci provést zotavení po chybě přenosu.|Žádné|  
 |Zjednodušení|Zjednodušení představuje snadné, pomocí kterého můžete vytvořit kodérů a dekodérů pro specifikaci kódování. Kódování textu výhodným pro zjednodušení a kódování textu POX má další výhodu v podobě není vyžadující podporu pro zpracování protokolu SOAP.|Text (POX)|  

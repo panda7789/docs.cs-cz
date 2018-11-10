@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.openlocfilehash: a2fe2c325377ec49f89199ad2e36c950ebab6a24
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49633895"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50757345"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 

@@ -7,11 +7,11 @@ ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 89724e9a322f2f28dbe5d18ae697acbdd0a32d8e
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50041619"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744467"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Postupy: Ladění problémů aktivace CLR
 Pokud narazíte na problémy při získávání aplikace na spouštění se správnou verzí modulu common language runtime (CLR), můžete zobrazit a ladit protokoly aktivace modulu CLR. Tyto protokoly mohou být velmi užitečné při určování původní příčinu chyby aktivace, když aplikace načte jinou verzi CLR, než se očekávalo nebo nebude vůbec načíst modul CLR. [Rozhraní .NET Framework – chyby inicializace: Správa uživatelskou zkušenost](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) popisuje prostředí, když pro aplikaci nebyl nalezen žádný CLR.  

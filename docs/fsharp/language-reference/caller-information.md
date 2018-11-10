@@ -1,5 +1,5 @@
 ---
-title: 'Informace o volajícím (F #)'
+title: Informace o volajícím (F#)
 description: Popisuje způsob použití atributů Argument informace o volajícím získat informace o volajícím z metody.
 ms.date: 04/25/2017
 ms.openlocfilehash: 0f2f4b16804d9156d234cc29d1f72ebe80a5b556

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
 ms.openlocfilehash: 865966a70f18c9023e4c733d82ea90aba9478753
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50135372"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50757436"
 ---
 # <a name="asynchronous-message-based-communication"></a>Asynchronní komunikace založená na zprávách
 

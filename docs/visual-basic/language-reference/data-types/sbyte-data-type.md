@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
-ms.openlocfilehash: 1b10379e626c8e53b2e1e6eddaa964f13f9e4b62
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c353aa8c5ac1d1912bc303f8f741ff0911cdf021
+ms.sourcegitcommit: 4bca8f7e172fd019ef437a4803bf5895c6bc4781
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50196918"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980817"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 
@@ -58,7 +58,7 @@ Pokud celočíselný literál je mimo rozsah `SByte` (tj. Pokud je menší než 
 
 - Zakázat kontroly rozsah celých čísel s kompilací `/removeintchecks` přepínač kompilátoru.
 
-- Použití [znak](../../programming-guide\language-features\data-types/type-characters.md) explicitně definovat, kterou chcete přiřadit k hodnotě literálu `SByte`. Následující příklad přiřadí negativní literál `Short` hodnota, která se `SByte`. Všimněte si, že pro záporná čísla, musí být nastaven bit nejvyšším vyšší řád slova číselný literál. V případě v našem příkladu to je bit 15 literálu `Short` hodnotu.
+- Použití [znak](../../programming-guide/language-features/data-types/type-characters.md) explicitně definovat, kterou chcete přiřadit k hodnotě literálu `SByte`. Následující příklad přiřadí negativní literál `Short` hodnota, která se `SByte`. Všimněte si, že pro záporná čísla, musí být nastaven bit nejvyšším vyšší řád slova číselný literál. V případě v našem příkladu to je bit 15 literálu `Short` hodnotu.
 
    [!code-vb[SByteTypeChars](../../../../samples/snippets/visualbasic/language-reference/data-types/sbyte-assignment.vb#1)]
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
 ms.openlocfilehash: 134a219acd02caa2b16c5a6e8716c3245579ecca
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50049552"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50743999"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - I literal type character [Visual Basic]
 - Integer data type
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
-ms.openlocfilehash: 989ce803849aa2dff9fc5c38a38bb356c937a945
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 8c349104ed566e9a663afe01da3838f0167dc74e
+ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193861"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50982760"
 ---
 # <a name="integer-data-type-visual-basic"></a>Integer – datový typ (Visual Basic)
 Obsahuje 32bitová (4bajtová) celá čísla se znaménkem v rozsahu od -2 147 483 648 do 2 147 483 647.  
@@ -59,7 +59,7 @@ Dim number As Integer = &H_C305_F860
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také zahrnovat `I` [znak](../../programming-guide\language-features\data-types/type-characters.md) k označení `Integer` datového typu, jak ukazuje následující příklad.
+Číselné literály může také zahrnovat `I` [znak](../../programming-guide/language-features/data-types/type-characters.md) k označení `Integer` datového typu, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_035826I

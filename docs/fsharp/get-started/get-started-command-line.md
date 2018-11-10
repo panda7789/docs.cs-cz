@@ -1,6 +1,6 @@
 ---
-title: 'Začínáme s jazykem F # pomocí nástrojů příkazového řádku'
-description: 'Informace o vytvoření jednoduchého řešení vícenásobného projektu v F # s použitím rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).'
+title: Začínáme s jazykem F# pomocí nástrojů příkazového řádku
+description: Informace o vytvoření jednoduchého řešení vícenásobného projektu v F# s použitím rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).
 ms.date: 03/26/2018
 ms.openlocfilehash: 8a82970f33c8bbe1b8cdd8fb6499b59b16d3cbf3
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "45673906"
 ---
-# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s jazykem F # pomocí rozhraní příkazového řádku .NET Core
+# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s jazykem F# pomocí rozhraní příkazového řádku .NET Core
 
-Tento článek popisuje, jak můžete začít s jazykem F # pro všechny operační systémy (Windows, macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core. Prochází přes vytváření řešení vícenásobného projektu knihovny tříd, která je volána pomocí konzolové aplikace.
+Tento článek popisuje, jak můžete začít s jazykem F# pro všechny operační systémy (Windows, macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core. Prochází přes vytváření řešení vícenásobného projektu knihovny tříd, která je volána pomocí konzolové aplikace.
 
 ## <a name="prerequisites"></a>Požadavky
 
 Pokud chcete začít, musíte nainstalovat nejnovější [.NET Core SDK](https://www.microsoft.com/net/download/).
 
-Tento článek předpokládá, že znáte postup pomocí příkazového řádku a mít upřednostňovaném textovém editoru. Pokud už nepoužíváte, [Visual Studio Code](get-started-vscode.md) je skvělou možností jako textový editor jazyka F #.
+Tento článek předpokládá, že znáte postup pomocí příkazového řádku a mít upřednostňovaném textovém editoru. Pokud už nepoužíváte, [Visual Studio Code](get-started-vscode.md) je skvělou možností jako textový editor jazyka F#.
 
 ## <a name="build-a-simple-multi-project-solution"></a>Vytvoření jednoduchého řešení vícenásobného projektu
 
@@ -151,4 +151,4 @@ I used to be World but now I'm ""World"" thanks to JSON.NET!
 
 ## <a name="next-steps"></a>Další kroky
 
-V dalším kroku se podívejte [Tour F #](../tour.md) získat další informace o různých funkcí F #.
+V dalším kroku se podívejte [Tour F#](../tour.md) získat další informace o různých funkcí F#.

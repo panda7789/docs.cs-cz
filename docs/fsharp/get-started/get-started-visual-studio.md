@@ -1,6 +1,6 @@
 ---
-title: Začínáme s F# v sadě Visual Studio
-description: 'Další informace o použití F # pomocí sady Visual Studio.'
+title: Začínáme s jazykem F# v sadě Visual Studio
+description: Další informace o použití F# pomocí sady Visual Studio.
 ms.date: 07/03/2018
 ms.openlocfilehash: 3dac8466501338873aeb308ceac9274a7934a8a9
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "43872848"
 ---
-# <a name="get-started-with-f-in-visual-studio"></a>Začínáme s F# v sadě Visual Studio
+# <a name="get-started-with-f-in-visual-studio"></a>Začínáme s jazykem F# v sadě Visual Studio
 
-F # a nástrojů Visual F # jsou podporovány v integrovaném vývojovém prostředí sady Visual Studio.
+F# a nástrojů Visual F# jsou podporovány v integrovaném vývojovém prostředí sady Visual Studio.
 
-Pokud chcete začít, ujistěte se, že máte [s jazykem F # nainstalovanou sadu Visual Studio](install-fsharp.md#install-f-with-visual-studio).
+Pokud chcete začít, ujistěte se, že máte [s jazykem F# nainstalovanou sadu Visual Studio](install-fsharp.md#install-f-with-visual-studio).
 
 ## <a name="creating-a-console-application"></a>Vytvoření konzolové aplikace
 
@@ -21,11 +21,11 @@ Jeden z nejzákladnější projektů v sadě Visual Studio je konzolová aplikac
 
 1. Na **souboru** nabídky, přejděte k **nový**a klikněte na tlačítko **projektu**.
 
-2.  V nový projekt dialogového okna, v části **šablony**, měli byste vidět **Visual F #**.  Zvolte možnost, pokud chcete zobrazit šablony F #.
+2.  V nový projekt dialogového okna, v části **šablony**, měli byste vidět **Visual F#**.  Zvolte možnost, pokud chcete zobrazit šablony F#.
 
 3. Vyberte buď **.NET Core konzolovou aplikaci** nebo **konzolovou aplikaci**.
 
-3. Zvolte **dobře** pro vytvoření projektu jazyka F #!  Teď byste měli vidět projektu F # v Průzkumníku řešení.
+3. Zvolte **dobře** pro vytvoření projektu jazyka F#!  Teď byste měli vidět projektu F# v Průzkumníku řešení.
 
 ## <a name="writing-your-code"></a>Psaní kódu
 
@@ -33,17 +33,17 @@ Začněme napsáním nějakého kódu.  Ujistěte se, že `Program.fs` soubor je
 
 [!code-fsharp[HelloSquare](../../../samples/snippets/fsharp/getting-started/hello-square.fs)]
 
-V předchozí ukázce kódu, funkce `square` byla definována desetinný vstup s názvem `x` a vynásobí samostatně.  Vzhledem k tomu F # používá [odvození typu](../language-reference/type-inference.md), typ `x` nemusí být zadán.  Kompilátor F # rozumí typy, kde je platný násobení a to typu `x` podle toho, jak `square` je volána.  Pokud najedete myší `square`, byste měli vidět následující:
+V předchozí ukázce kódu, funkce `square` byla definována desetinný vstup s názvem `x` a vynásobí samostatně.  Vzhledem k tomu F# používá [odvození typu](../language-reference/type-inference.md), typ `x` nemusí být zadán.  Kompilátor F# rozumí typy, kde je platný násobení a to typu `x` podle toho, jak `square` je volána.  Pokud najedete myší `square`, byste měli vidět následující:
 
 ```
 val square: x:int -> int
 ```
 
-Je to, co se označuje jako typ signatury funkce.  Může být číst takto: "čtverec je funkce, která přebírá celočíselným parametrem s názvem x a vytváří integer".  Všimněte si, že kompilátor přiřadil `square` `int` typ prozatím - totiž násobení není obecná napříč *všechny* typy, ale místo toho je obecný zavřené sadě typy.  Kompilátor F # vyberou `int` v tomto bodu, ale budou upraveny podpis typu při volání `square` s jiným typ vstupu, například `float`.
+Je to, co se označuje jako typ signatury funkce.  Může být číst takto: "čtverec je funkce, která přebírá celočíselným parametrem s názvem x a vytváří integer".  Všimněte si, že kompilátor přiřadil `square` `int` typ prozatím - totiž násobení není obecná napříč *všechny* typy, ale místo toho je obecný zavřené sadě typy.  Kompilátor F# vyberou `int` v tomto bodu, ale budou upraveny podpis typu při volání `square` s jiným typ vstupu, například `float`.
 
-Další funkci `main`, je definován, která je upravena pomocí `EntryPoint` atribut spuštění tohoto programu předat kompilátor F # by se měl spustit existuje.  Řídí stejnou konvencí jako ostatní [programovacích jazyků C-style](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), kde můžete předávat argumenty příkazového řádku pro tuto funkci a vrátí kód celé číslo (obvykle `0`).
+Další funkci `main`, je definován, která je upravena pomocí `EntryPoint` atribut spuštění tohoto programu předat kompilátor F# by se měl spustit existuje.  Řídí stejnou konvencí jako ostatní [programovacích jazyků C-style](https://en.wikipedia.org/wiki/Entry_point#C_and_C.2B.2B), kde můžete předávat argumenty příkazového řádku pro tuto funkci a vrátí kód celé číslo (obvykle `0`).
 
-Je v této funkce, které označujeme jako `square` funkci s argumentem `12`.  Poté přiřadí typ kompilátoru jazyka F # `square` bude `int -> int` (to znamená, funkce, která přebírá `int` a vytváří `int`).  Volání `printfn` je formátovaný tisk funkci, která používá řetězec formátu, podobně jako C-style programovacích jazyků, parametry, které odpovídají jsou uvedeny ve formátovacím řetězci a potom zobrazí výsledek a nový řádek.
+Je v této funkce, které označujeme jako `square` funkci s argumentem `12`.  Poté přiřadí typ kompilátoru jazyka F# `square` bude `int -> int` (to znamená, funkce, která přebírá `int` a vytváří `int`).  Volání `printfn` je formátovaný tisk funkci, která používá řetězec formátu, podobně jako C-style programovacích jazyků, parametry, které odpovídají jsou uvedeny ve formátovacím řetězci a potom zobrazí výsledek a nový řádek.
 
 ## <a name="running-your-code"></a>Spuštění kódu
 
@@ -55,15 +55,15 @@ Teď byste měli vidět následující zobrazeny v okně konzoly, který Visual 
 12 squared is 144!
 ```
 
-Blahopřejeme!  Jste vytvořili svůj první projekt F # v sadě Visual Studio, zapsat, že funkce jazyka F # vytisknout výsledky volání funkce a spuštění projektu zobrazíte některé výsledky.
+Blahopřejeme!  Jste vytvořili svůj první projekt F# v sadě Visual Studio, zapsat, že funkce jazyka F# vytisknout výsledky volání funkce a spuštění projektu zobrazíte některé výsledky.
 
 ## <a name="next-steps"></a>Další kroky
 
-Pokud jste to ještě neudělali, podívejte se [Tour F #](../tour.md), která uvádí i některé základní funkce jazyka F #.  Bude vám poskytnou přehled o některé funkce jazyka F # a poskytovat ukázky ukázku kódu, které můžete zkopírovat do sady Visual Studio a spustit.  Existují také některé skvělé externí prostředky můžete použít, zobrazují v [Průvodce jazykem F #](../index.md).
+Pokud jste to ještě neudělali, podívejte se [Tour F#](../tour.md), která uvádí i některé základní funkce jazyka F#.  Bude vám poskytnou přehled o některé funkce jazyka F# a poskytovat ukázky ukázku kódu, které můžete zkopírovat do sady Visual Studio a spustit.  Existují také některé skvělé externí prostředky můžete použít, zobrazují v [Průvodce jazykem F#](../index.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Prohlídka jazyka F#](../tour.md)
-- [Referenční dokumentace jazyka F #](../language-reference/index.md)
+- [Referenční dokumentace jazyka F#](../language-reference/index.md)
 - [Odvození typu](../language-reference/type-inference.md)
 - [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)

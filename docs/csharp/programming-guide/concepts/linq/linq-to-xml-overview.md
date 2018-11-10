@@ -1,12 +1,12 @@
 ---
 title: Přehled LINQ to XML (C#)
-ms.date: 07/20/2015
+ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 5b557c95993d7f1e907a8eb6ef1e5ec23a2988ab
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5e005343226b47fb843b817747ca03c49c28dbfc
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43856618"
 ---
 # <a name="linq-to-xml-overview-c"></a>Přehled LINQ to XML (C#)
@@ -30,26 +30,50 @@ XML je široce přijat jako způsob, jak formátování dat v mnoha kontextech. 
   
  Například můžete mít typické XML nákupní objednávka, jak je popsáno v [ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml-1.md). S použitím [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete spustit následující dotaz pro získání část hodnoty číselné atribut pro každý prvek položky v nákupní objednávky:  
   
-```csharp  
-IEnumerable<string> partNos =  
-from item in purchaseOrder.Descendants("Item")  
-select (string) item.Attribute("PartNumber");  
+```csharp
+// Load the XML file from our project directory containing the purchase orders
+var filename = "PurchaseOrder.xml";
+var currentDirectory = Directory.GetCurrentDirectory();
+var purchaseOrderFilepath = Path.Combine(currentDirectory, filename);
+
+XElement purchaseOrder = XElement.Load($"{purchaseOrderFilepath}");
+
+IEnumerable<string> partNos =  from item in purchaseOrder.Descendants("Item")  
+                               select (string) item.Attribute("PartNumber");  
+``` 
+To může být přepsán ve formuláři syntaxe metody:
+
+```csharp
+IEnumerable<string> partNos = purchaseOrder.Descendants("Item").Select(x => (string) x.Attribute("PartNumber"));
+```
+
+Další příklad můžete seznam seřazený podle čísel položky s hodnotou větší než 100 USD. Pro získání těchto informací, můžete spustit následující dotaz:  
+  
+```csharp 
+// Load the XML file from our project directory containing the purchase orders
+var filename = "PurchaseOrder.xml";
+var currentDirectory = Directory.GetCurrentDirectory();
+var purchaseOrderFilepath = Path.Combine(currentDirectory, filename);
+
+XElement purchaseOrder = XElement.Load($"{purchaseOrderFilepath}");
+
+IEnumerable<XElement> pricesByPartNos =  from item in purchaseOrder.Descendants("Item")  
+                                 where (int) item.Element("Quantity") * (decimal) item.Element("USPrice") > 100  
+                                 orderby (string)item.Element("PartNumber")  
+                                 select item;  
 ```  
-  
- Další příklad můžete seznam seřazený podle čísel položky s hodnotou větší než 100 USD. Pro získání těchto informací, můžete spustit následující dotaz:  
-  
-```csharp  
-IEnumerable<XElement> partNos =  
-from item in purchaseOrder.Descendants("Item")  
-where (int) item.Element("Quantity") *  
-    (decimal) item.Element("USPrice") > 100  
-orderby (string)item.Element("PartNumber")  
-select item;  
-```  
-  
+
+Znovu to může být přepsán ve formuláři syntaxe metody:
+
+```csharp
+IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
+                                        .Where(item => (int)item.Element("Quantity") * (decimal)item.Element("USPrice") > 100)
+                                        .OrderBy(order => order.Element("PartNumber"));
+```
+
  Kromě těchto [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] možnosti [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje vylepšené programovací rozhraní XML. Pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete:  
   
--   Načtení XML ze souborů nebo datových proudů.  
+-   Načtení XML ze [soubory](how-to-load-xml-from-a-file.md) nebo [datové proudy](how-to-stream-xml-fragments-from-an-xmlreader.md).  
   
 -   Serializace XML pro soubory nebo datové proudy.  
   

@@ -1,6 +1,6 @@
 ---
-title: 'Základní typy (F #)'
-description: 'Objevte základní typy, které se používají v jazyce F #.'
+title: Základní typy (F#)
+description: Objevte základní typy, které se používají v jazyce F#.
 ms.date: 07/09/2018
 ms.openlocfilehash: 8f948d066323527b09b1d3f9f4167b95b1c875cf
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "48026932"
 ---
 # <a name="basic-types"></a>Základní typy
 
-Toto téma obsahuje základní typy, které jsou definovány v jazyce F #. Tyto typy jsou nejdůležitější v jazyce F #, které tvoří základ téměř každý program F #. Jsou množinou primitivní typy .NET.
+Toto téma obsahuje základní typy, které jsou definovány v jazyce F#. Tyto typy jsou nejdůležitější v jazyce F#, které tvoří základ téměř každý program F#. Jsou množinou primitivní typy .NET.
 
 |Typ|Typ formátu .NET|Popis|
 |----|---------|-----------|

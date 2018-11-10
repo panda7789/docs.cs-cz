@@ -1,26 +1,38 @@
 ---
-title: 'Postupy: Povolení a zákaz automatického přesměrování vazby'
-ms.date: 09/12/2018
+title: Povolení nebo zakázání přesměrování vazby automaticky generované
+ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 9b9c9cbdb89ccf67942dcccee37ea410c6fa39a5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 284c2a08f2b78d2c6a1ab9752a3f2283e87fd734
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036193"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "50980830"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Postupy: Povolení a zákaz automatického přesměrování vazby
 
-Při sestavování aplikací v sadě Visual Studio, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a novější verze, přesměrování vazby může automaticky přidá do konfiguračního souboru aplikace pro přepsání sjednocení sestavení. Přesměrování vazby je přidáno, pokud vaše aplikace nebo její komponenty odkazují na více verzí stejného sestavení, i když ručně zadáte přesměrování vazby v konfiguračním souboru pro vaši aplikaci. Funkce automatického přesměrování vazby ovlivňuje aplikace klasické pracovní plochy a webové aplikace, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] nebo novější verze, ačkoli chování se mírně liší pro webovou aplikaci. Pokud máte existující aplikace, které jsou určeny pro předchozí verze rozhraní .NET Framework, můžete povolit automatické přesměrování vazby nebo tuto funkci můžete zakázat, pokud chcete zachovat ručně vytvořená přesměrování vazby.
+Při sestavování aplikací v sadě Visual Studio, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a novější verze, přesměrování vazby může automaticky přidá do konfiguračního souboru aplikace pro přepsání sjednocení sestavení. Přesměrování vazby je přidáno, pokud vaše aplikace nebo její komponenty odkazují na více verzí stejného sestavení, i když ručně zadáte přesměrování vazby v konfiguračním souboru pro vaši aplikaci. Funkce automatického přesměrování vazby ovlivňuje aplikace klasické pracovní plochy a webové aplikace, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] nebo novější verze, ačkoli chování se mírně liší pro webovou aplikaci. Pokud máte existující aplikace, které předchozí verze cílového rozhraní .NET Framework, nebo tuto funkci můžete zakázat, pokud chcete ručně vytvořit přesměrování vazby, můžete povolit automatické přesměrování vazby.
 
 ## <a name="disable-automatic-binding-redirects-in-desktop-apps"></a>Zakázat automatické přesměrování vazby v aplikacích klasické pracovní plochy
 
-Automatické přesměrování vazeb je povoleno standardně pro tradiční stolní aplikace, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a novějších verzích. Přesměrování vazby jsou přidána do výstupního souboru konfigurace (app.config) při kompilaci aplikace a přepíšou sjednocení sestavení, které jinak může probíhat. Zdrojový soubor app.config není změněn. Tuto funkci můžete zakázat úpravou souboru projektu pro aplikaci.
+Automatické přesměrování vazeb je povoleno standardně pro aplikace klasické pracovní plochy Windows, které se zaměřují [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] a novějších verzích. Přesměrování vazby jsou přidána do konfigurace výstup (**app.config**) soubor při kompilaci aplikace a přepsání sjednocení sestavení, které jinak může probíhat. Zdroj **app.config** soubor nezměnil. Tuto funkci můžete zakázat úpravou souboru projektu pro aplikaci nebo zrušením výběru zaškrtávací políčko ve vlastnostech projektu v sadě Visual Studio.
+
+### <a name="disable-through-project-properties"></a>Zakázat prostřednictvím vlastnosti projektu
+
+Pokud máte Visual Studio 2017 verze 15.7 nebo novější, můžete snadno zakázat automaticky generované přesměrování vazby na stránkách vlastností projektu.
+
+1. Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **vlastnosti**.
+
+2. Na **aplikace** stránce, zrušte zaškrtnutí políčka **automaticky generovat přesměrování vazeb** možnost.
+
+3. Stisknutím klávesy **Ctrl**+**S** uložte změnu.
+
+### <a name="disable-manually-in-the-project-file"></a>Zakázat ručně v souboru projektu
 
 1. Otevřete soubor projektu s možností úprav pomocí jedné z následujících metod:
 
@@ -75,9 +87,9 @@ Můžete povolit automatické přesměrování vazby v existujících aplikacíc
 
 ## <a name="enable-automatic-binding-redirects-in-web-apps"></a>Povolit automatické přesměrování vazby ve službě web apps
 
-Automatické přesměrování vazby je pro webové aplikace implementováno jinak. Vzhledem k tomu, že je třeba upravit zdrojový soubor konfigurace (web.config) pro webové aplikace, přesměrování vazeb nejsou automaticky přidána do konfiguračního souboru. Sada Visual Studio vás však upozorní na konflikty ve vazbách a můžete tak pomocí přesměrování vazby tyto konflikty vyřešit. Protože vždy zobrazí výzva k přidání přesměrování vazby, není nutné explicitně zakázat tuto funkci pro webovou aplikaci.
+Automatické přesměrování vazby je pro webové aplikace implementováno jinak. Protože konfigurace zdroje (**web.config**) pro webové aplikace musí být změněn soubor, přesměrování vazeb nejsou automaticky přidáni do konfiguračního souboru. Sada Visual Studio vás však upozorní na konflikty ve vazbách a můžete tak pomocí přesměrování vazby tyto konflikty vyřešit. Protože vždy zobrazí výzva k přidání přesměrování vazby, není nutné explicitně zakázat tuto funkci pro webovou aplikaci.
 
-Chcete-li přidat přesměrování vazby do souboru web.config:
+Chcete-li přidat přesměrování vazby na **web.config** souboru:
 
 1. V sadě Visual Studio zkompilujte aplikaci a zkontrolujte upozornění na sestavení.
 
@@ -85,7 +97,7 @@ Chcete-li přidat přesměrování vazby do souboru web.config:
 
 2. Pokud existují konflikty vazeb sestavení, zobrazí se upozornění. Dvakrát klikněte na upozornění, nebo vyberte upozornění a stiskněte klávesu **Enter**.
 
-   Zobrazí se dialogové okno, které umožňuje automaticky přidat nezbytná přesměrování vazby na zdrojový soubor web.config.
+   Dialogové okno, které umožňuje automaticky přidat nezbytná vazbu přesměruje do zdroje **web.config** soubor se zobrazí.
 
    ![Dialogové okno oprávnění přesměrování vazby](../../../docs/framework/configure-apps/media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 

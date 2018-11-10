@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ?? operator [C#]
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 03d81d4216dabce2ea75b9fdcf6ef0971cc32490
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: fbcfda07cc55628aeed82eb7561516f7012bc4fe
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530103"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "50980671"
 ---
 # <a name="-operator-c-reference"></a>?? – Operátor (referenční dokumentace jazyka C#)
 `??` Operátor se nazývá operátoru nulového sjednocení.  Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.  
@@ -27,6 +27,10 @@ ms.locfileid: "43530103"
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csRefOperators#53](../../../csharp/language-reference/operators/codesnippet/CSharp/null-conditional-operator_1.cs)]  
+  
+## <a name="c-language-specification"></a>Specifikace jazyka C#  
+
+Další informace najdete v tématu [null operátor sloučení](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

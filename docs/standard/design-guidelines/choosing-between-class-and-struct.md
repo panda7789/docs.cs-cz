@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06661cb2c34d1da9085fa2129cb0c3307b99097e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 7590d5628f4951a8c7c2199f0e954007ed9fa962
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865550"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "50757423"
 ---
 # <a name="choosing-between-class-and-struct"></a>Volba mezi třídou a strukturou
 Jeden základní rozhodnutí o návrhu, který čelí každý framework designer je, zda navrhnout typu třídy (odkaz na typ) nebo jako – struktura (typu hodnoty). Je velmi důležité při vytvoření tato volba dostatečné povědomí o rozdíly v chování typy odkazů a typy hodnot.  
@@ -28,7 +28,7 @@ Jeden základní rozhodnutí o návrhu, který čelí každý framework designer
   
  V dalším kroku pole odkazu na typy jsou přidělené mimo řádek, což znamená pole, které prvky jsou pouze odkazy na instance typu odkazu, které se nacházejí na haldě. Pole typu hodnota přidělují vloženě, což znamená, že prvky pole jsou přímo instance typu hodnoty. Přidělování a navrácení pole typu hodnota jsou tedy mnohem levnější než přidělování a navrácení pole typu odkazu. Kromě toho pole typu hodnota ve většině případů je mnohem lepší místo odkazu.  
   
- Další rozdíl se týká využití paměti. Typy hodnot získat zabalená, pokud přetypovat na typ odkazu nebo jednoho z rozhraní, které implementují. Vývojáři získají nezabalený Pokud přetypovat zpět na typ hodnoty. Protože pole jsou objekty, které jsou přiděleny do haldy a jsou uvolněna, příliš mnoho zabalení a rozbalení může mít negativní dopad na haldě systému uvolňování paměti a nakonec výkon aplikace.  Naproti tomu žádné takové zabalení dochází při typy odkazů jsou přetypovat.  
+ Další rozdíl se týká využití paměti. Typy hodnot získat zabalená, pokud přetypovat na typ odkazu nebo jednoho z rozhraní, které implementují. Vývojáři získají nezabalený Pokud přetypovat zpět na typ hodnoty. Protože pole jsou objekty, které jsou přiděleny do haldy a jsou uvolněna, příliš mnoho zabalení a rozbalení může mít negativní dopad na haldě systému uvolňování paměti a nakonec výkon aplikace.  Naproti tomu žádné takové zabalení dochází při typy odkazů jsou přetypovat. (Další informace najdete v tématu [zabalení a rozbalení](../../csharp/programming-guide/types/boxing-and-unboxing.md)).
   
  Přiřazení typu odkazu v dalším kroku zkopírujte odkaz, zatímco přiřazení typu hodnoty zkopírujte celou hodnotu. Proto jsou levnější než přiřazení typů velkých hodnot přiřazení velké referenční typy.  
   

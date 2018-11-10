@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 741ddd0171244daceb4d5e283c0172e71b82f3d2
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: a7fa240ea42fe1bee4011a228595e48eb163e1a9
+ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582746"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50982864"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  
@@ -172,7 +172,7 @@ ms.locfileid: "48582746"
   
  Uvolňování paměti používá tyto informace k určení, zda jsou objekty živé:  
   
--   **Kořeny zásobníku**. Proměnné zásobníku poskytované just-in-time (JIT) kompilátorem a zásobníkem.  
+-   **Kořeny zásobníku**. Proměnné zásobníku poskytované just-in-time (JIT) kompilátorem a zásobníkem. Všimněte si, že optimalizace JIT může prodloužit nebo zkrátit oblasti kódu v rámci které zásobníku proměnné hlášení do systému uvolňování paměti.
   
 -   **Obslužné rutiny uvolnění paměti**. Zajišťuje, že směrující na spravované objekty a které mohou být přiděleny podle uživatelského kódu nebo modul common language runtime.  
   

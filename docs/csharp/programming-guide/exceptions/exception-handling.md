@@ -5,11 +5,11 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: f6cc48843518a5d8791b6eda3e82a9f140039ceb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 99a61dc4125d2fe86d70d5051741a1f1f33e58d4
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43514039"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
@@ -52,7 +52,8 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem prog
  [!code-csharp[csProgGuideExceptions#11](../../../csharp/programming-guide/exceptions/codesnippet/CSharp/exception-handling_6.cs)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+Další informace najdete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkazu try](~/_csharplang/spec/statements.md#the-try-statement) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

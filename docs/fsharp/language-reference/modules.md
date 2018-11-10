@@ -1,6 +1,6 @@
 ---
 title: Moduly (F#)
-description: 'Zjistěte, jak modulu F # je seskupení kódu jazyka F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #.'
+description: Zjistěte, jak modulu F# je seskupení kódu jazyka F#, jako jsou hodnoty, typy a hodnoty funkcí v programu F#.
 ms.date: 04/24/2017
 ms.openlocfilehash: fb0aa1d508d1141933b4fbdf10633f67ed078dc7
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "45528523"
 ---
 # <a name="modules"></a>Moduly
 
-V rámci jazyka F # *modulu* je seskupení kódu jazyka F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #. Kód v modulech seskupení udržet související kód společně a pomáhá zamezilo se konfliktům názvů ve svém programu.
+V rámci jazyka F# *modulu* je seskupení kódu jazyka F#, jako jsou hodnoty, typy a hodnoty funkcí v programu F#. Kód v modulech seskupení udržet související kód společně a pomáhá zamezilo se konfliktům názvů ve svém programu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,7 +26,7 @@ module [accessibility-modifier] module-name =
 
 ## <a name="remarks"></a>Poznámky
 
-Modulu F # je seskupení kód konstrukce F # jako je například typy, hodnoty, funkce hodnot a kódu v `do` vazby. Je implementován jako common language runtime (CLR) třídu, která obsahuje pouze statické členy. Existují dva typy deklarací modulu, v závislosti na tom, jestli je celý soubor součástí modulu: nejvyšší úrovně modulu prohlášení a prohlášení místní modul. Deklarace nejvyšší úrovně modulu zahrnuje celý soubor v modulu. Deklarace nejvyšší úrovně modulu se může objevit pouze jako první deklarací v souboru.
+Modulu F# je seskupení kód konstrukce F# jako je například typy, hodnoty, funkce hodnot a kódu v `do` vazby. Je implementován jako common language runtime (CLR) třídu, která obsahuje pouze statické členy. Existují dva typy deklarací modulu, v závislosti na tom, jestli je celý soubor součástí modulu: nejvyšší úrovně modulu prohlášení a prohlášení místní modul. Deklarace nejvyšší úrovně modulu zahrnuje celý soubor v modulu. Deklarace nejvyšší úrovně modulu se může objevit pouze jako první deklarací v souboru.
 
 V syntaxi pro deklaraci nejvyšší úrovně modulu, volitelný *kvalifikovaný obor názvů* je posloupnost názvy vnořené obory názvů, který obsahuje modul. Kvalifikovaný obor názvů nemusí být deklarována.
 
@@ -44,7 +44,7 @@ Pokud máte více modulů v souboru, musíte použít místní modul deklarace p
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6603.fs)]
 
-Pokud máte více souborů v projektu nebo v jedné kompilaci nebo pokud vytváříte knihovnu, musí obsahovat deklarace oboru názvů nebo modulu deklarace v horní části souboru. Kompilátor F # pouze implicitně Určuje název modulu, pokud existuje pouze jeden soubor v příkazovém řádku projekt nebo kompilaci a vytváření aplikace.
+Pokud máte více souborů v projektu nebo v jedné kompilaci nebo pokud vytváříte knihovnu, musí obsahovat deklarace oboru názvů nebo modulu deklarace v horní části souboru. Kompilátor F# pouze implicitně Určuje název modulu, pokud existuje pouze jeden soubor v příkazovém řádku projekt nebo kompilaci a vytváření aplikace.
 
 *Modifikátor dostupnosti* může být jedna z následujících akcí: `public`, `private`, `internal`. Další informace najdete v tématu [řízení přístupu](access-control.md). Výchozí hodnota je veřejná.
 
@@ -88,7 +88,7 @@ Pokud chcete, aby veškerý kód v souboru v modulu single vnější a vnitřní
 
 ## <a name="recursive-modules"></a>Rekurzivní moduly
 
-F # 4.1 zavádí pojem moduly, které umožňují použití všechny obsažené kód je vzájemně rekurzivní.  To se provádí prostřednictvím `module rec`.  Použití `module rec` může vyřešit některé důsledně v nebude moci napsat kód vzájemně referenční typy a moduly.  Následuje příklad:
+F# 4.1 zavádí pojem moduly, které umožňují použití všechny obsažené kód je vzájemně rekurzivní.  To se provádí prostřednictvím `module rec`.  Použití `module rec` může vyřešit některé důsledně v nebude moci napsat kód vzájemně referenční typy a moduly.  Následuje příklad:
 
 ```fsharp
 module rec RecursiveModule =
@@ -128,12 +128,12 @@ module rec RecursiveModule =
             | Down -> b |> peelSides
 ```
 
-Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazovat na sebe navzájem.  To by nebylo možné vyjádřit v jazyce F #, pokud jste odebrali `rec` – klíčové slovo z `RecursiveModule` modulu.
+Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazovat na sebe navzájem.  To by nebylo možné vyjádřit v jazyce F#, pokud jste odebrali `rec` – klíčové slovo z `RecursiveModule` modulu.
 
-Tato možnost je také možné u [obory názvů](namespaces.md) s F # 4.1.
+Tato možnost je také možné u [obory názvů](namespaces.md) s F# 4.1.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)  
 - [Obory názvů](namespaces.md)  
-- [1009-F # RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci souborů](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)  
+- [1009-F# RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci souborů](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)  

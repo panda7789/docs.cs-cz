@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f646927d4ddf88ae117f6cacafc2e42df4e3abee
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 844e9e53c752be0c993255fc356ade1723109b39
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195681"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50744584"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -176,8 +176,8 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 9. Na **činnost koncového uživatele** stránku průvodce, použijte výchozí hodnoty a vyberte možnost **Další**.  
   
-    > [!WARNING]
-    >  Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech najdete v tématu [vlastnosti názvu ohlášení: Záložka plánu](https://technet.microsoft.com/library/bb694016.aspx) v knihovně TechNet.  
+> [!WARNING]
+> Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech najdete v tématu [vlastnosti názvu ohlášení: Záložka plánu](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29).
   
 10. Na **distribučních bodů** stránku průvodce, použijte výchozí hodnoty a vyberte možnost **Další**.  
   
@@ -207,7 +207,7 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
 -   [Správa lokality pro System Center 2012 Configuration Manager](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)  
   
--   [Na jednom webu nástroje Configuration Manager plánování a nasazení](https://technet.microsoft.com/library/bb680961.aspx)  
+-   [Na jednom webu nástroje Configuration Manager plánování a nasazení](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)  
   
  **Klient System Center 2012 Configuration Manager pro počítače s Windows:**  
   

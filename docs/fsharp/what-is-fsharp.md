@@ -1,6 +1,6 @@
 ---
-title: 'Co je F #'
-description: 'Další informace o jaké F # programovací jazyk je a co programování v jazyce F # je jako. Další informace o bohaté datové typy, funkce a jak jsou zapadají.'
+title: Co je F#
+description: Další informace o jaké F# programovací jazyk je a co programování v jazyce F# je jako. Další informace o bohaté datové typy, funkce a jak jsou zapadají.
 ms.date: 08/03/2018
 ms.openlocfilehash: 193747f380c61a387ed79ecca6abbcd90ee74376
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "43863293"
 ---
-# <a name="what-is-f"></a>Co je F # #
+# <a name="what-is-f"></a>Co je F# #
 
-F # je funkcionální programovací jazyk, který usnadňuje zápis správné a udržovatelný kód.
+F# je funkcionální programovací jazyk, který usnadňuje zápis správné a udržovatelný kód.
 
-Programování v jazyce F # primárně potřeba definovat typy a funkce, které se odvodit typ a automaticky zobecněný. Díky tomu váš výběr zůstat na domény a manipulace s nimi svoje data, spíše než o programování.
+Programování v jazyce F# primárně potřeba definovat typy a funkce, které se odvodit typ a automaticky zobecněný. Díky tomu váš výběr zůstat na domény a manipulace s nimi svoje data, spíše než o programování.
 
 ```fsharp
 open System // Gets access to functionality in System namespace.
@@ -35,7 +35,7 @@ let main args =
     0
 ```
 
-F # obsahuje mnoho funkcí, včetně:
+F# obsahuje mnoho funkcí, včetně:
 
 * Prostá syntaxe
 * Neměnné ve výchozím nastavení
@@ -45,7 +45,7 @@ F # obsahuje mnoho funkcí, včetně:
 * Porovnávání vzorů
 * Asynchronní programování
 
-Úplná sada funkcí jsou dokumentovány v článku [referenční dokumentace jazyka F #](language-reference/index.md).
+Úplná sada funkcí jsou dokumentovány v článku [referenční dokumentace jazyka F#](language-reference/index.md).
 
 ## <a name="rich-data-types"></a>Bohaté datové typy
 
@@ -72,11 +72,11 @@ type WithdrawalResult =
     | UndisclosedFailure
 ```
 
-F # záznamy a rozlišovaná sjednocení jsou nenulové, neměnné a srovnatelné ve výchozím nastavení, díky kterým jsou velmi snadné použití.
+F# záznamy a rozlišovaná sjednocení jsou nenulové, neměnné a srovnatelné ve výchozím nastavení, díky kterým jsou velmi snadné použití.
 
 ## <a name="enforced-correctness-with-functions-and-pattern-matching"></a>Vynucené správnosti s funkcemi a porovnávání vzorů
 
-Funkce F # jsou snadno k deklaraci a výkonné v praxi. V kombinaci s [porovnávání vzorů](language-reference/pattern-matching.md), umožňují definovat chování, jehož správnosti je vynucena kompilátorem.
+Funkce F# jsou snadno k deklaraci a výkonné v praxi. V kombinaci s [porovnávání vzorů](language-reference/pattern-matching.md), umožňují definovat chování, jehož správnosti je vynucena kompilátorem.
 
 ```fsharp
 // Returns a WithdrawalResult
@@ -93,11 +93,11 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown :("
 ```
 
-Funkce F # jsou také první třídy, což znamená, mohou být předány jako parametry a vrácená z dalších funkcí.
+Funkce F# jsou také první třídy, což znamená, mohou být předány jako parametry a vrácená z dalších funkcí.
 
 ## <a name="functions-to-define-operations-on-objects"></a>Funkce k definování operací s objekty
 
-F # obsahuje plnou podporu pro objekty, které jsou užitečné datové typy, pokud chcete kombinovat data a funkce. Funkce F # se používají k práci s objekty.
+F# obsahuje plnou podporu pro objekty, které jsou užitečné datové typy, pokud chcete kombinovat data a funkce. Funkce F# se používají k práci s objekty.
 
 ```fsharp
 type Set<[<EqualityConditionOn>] ‘T when ‘T: comparison>(elements: seq<'T>) =
@@ -119,8 +119,8 @@ module Set =
     let add value (set: Set<'T>) = set.Add(value)
 ```
 
-Místo psaní kódu, který je objektově orientované, v jazyce F #, budete často psát kód, že zpracuje objekty jako jiný typ dat pro funkce pro manipulaci s. Funkce, jako [obecných rozhraní](language-reference/interfaces.md), [výrazy objektu](language-reference/object-expressions.md)a rozumné využití [členy](language-reference/members/index.md) jsou běžné ve větších programů F #.
+Místo psaní kódu, který je objektově orientované, v jazyce F#, budete často psát kód, že zpracuje objekty jako jiný typ dat pro funkce pro manipulaci s. Funkce, jako [obecných rozhraní](language-reference/interfaces.md), [výrazy objektu](language-reference/object-expressions.md)a rozumné využití [členy](language-reference/members/index.md) jsou běžné ve větších programů F#.
 
 ## <a name="next-steps"></a>Další kroky
 
-Další informace o větší sadu funkcí F #, podívejte se [F # Tour](tour.md).
+Další informace o větší sadu funkcí F#, podívejte se [F# Tour](tour.md).

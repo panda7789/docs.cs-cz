@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: 84a3bc49b6eea047d518edc01dab7f2301854b6a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b2e09bdb16d6128d69a3eb33cf2cffd4cba60376
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43518183"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
@@ -37,9 +37,9 @@ Pokud změníte `public` úroveň přístupu k [privátní](private.md) nebo [ch
 
 "PointTest.y" je vzhledem k úrovni ochrany nepřístupný.
 
-## <a name="c-language-specification"></a>specifikace jazyka C#
+## <a name="c-language-specification"></a>specifikace jazyka C#  
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

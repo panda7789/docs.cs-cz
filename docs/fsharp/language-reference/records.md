@@ -1,6 +1,6 @@
 ---
 title: Záznamy (F#)
-description: 'Zjistěte, jak F # záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.'
+description: Zjistěte, jak F# záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.
 ms.date: 05/16/2016
 ms.openlocfilehash: 6103d96b6b80a9e2ed168755958dbe800f7fa862
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "48261287"
 ---
 # <a name="records"></a>Záznamy
 
-Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.  Od verze F # 4.1, můžete buď být typy struktur nebo odkaz.  Jsou odkazové typy ve výchozím nastavení.
+Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.  Od verze F# 4.1, můžete buď být typy struktur nebo odkaz.  Jsou odkazové typy ve výchozím nastavení.
 
 ## <a name="syntax"></a>Syntaxe
 

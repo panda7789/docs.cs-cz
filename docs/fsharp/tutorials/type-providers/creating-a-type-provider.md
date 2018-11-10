@@ -1,6 +1,6 @@
 ---
-title: 'Kurz: Vytvoření zprostředkovatele typů (F #)'
-description: 'Zjistěte, jak vytvořit vlastní poskytovatelé typu jazyka F # v jazyce F # 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.'
+title: 'Kurz: Vytvoření zprostředkovatele typů (F#)'
+description: Zjistěte, jak vytvořit vlastní poskytovatelé typu jazyka F# v jazyce F# 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.
 ms.date: 05/16/2016
 ms.openlocfilehash: c9dedbeed3ee081a6b1e1ffffe843fc962d2c60b
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,15 +11,15 @@ ms.locfileid: "50183916"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
-Mechanismus poskytovatele typu v jazyce F # je podstatnou část jeho podpory pro bohaté programování informace. Tento kurz vysvětluje, jak vytvořit vlastní typ zprostředkovatele provede vás vývoj několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů. Další informace o mechanismu poskytovatele typu v jazyce F # najdete v tématu [poskytovatelů typů](index.md).
+Mechanismus poskytovatele typu v jazyce F# je podstatnou část jeho podpory pro bohaté programování informace. Tento kurz vysvětluje, jak vytvořit vlastní typ zprostředkovatele provede vás vývoj několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů. Další informace o mechanismu poskytovatele typu v jazyce F# najdete v tématu [poskytovatelů typů](index.md).
 
-Ekosystém F # obsahuje celou řadu poskytovatelů typů pro běžně používané internetové a firemní datové služby. Příklad:
+Ekosystém F# obsahuje celou řadu poskytovatelů typů pro běžně používané internetové a firemní datové služby. Příklad:
 
 - [FSharp.Data](https://fsharp.github.io/FSharp.Data/) zahrnuje poskytovatelů typů pro formáty dokumentů JSON, XML, CSV nebo HTML.
 
-- [SQLProvider](https://fsprojects.github.io/SQLProvider/) poskytuje silného typu přístup do databáze SQL pomocí mapování objektů a F # LINQ dotazy na tyto datové zdroje.
+- [SQLProvider](https://fsprojects.github.io/SQLProvider/) poskytuje silného typu přístup do databáze SQL pomocí mapování objektů a F# LINQ dotazy na tyto datové zdroje.
 
-- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) sadu poskytovatelů typů pro kompilaci změnami vkládání T-SQL v jazyce F #.
+- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) sadu poskytovatelů typů pro kompilaci změnami vkládání T-SQL v jazyce F#.
 
 - [FSharp.Data.TypeProviders](https://fsprojects.github.io/FSharp.Data.TypeProviders/) je starší sadu poskytovatelů typů pro použití pouze s programování rozhraní .NET Framework pro přístup k datové služby typu SQL, Entity Framework, OData a WSDL.
 
@@ -27,7 +27,7 @@ V případě potřeby můžete vytvořit vlastní poskytovatele typů nebo můž
 
 ## <a name="before-you-start"></a>Než začnete
 
-Mechanismus poskytovatel typu je primárně určený pro vkládání stabilní data a služby informačních prostorů do programovací prostředí F #.
+Mechanismus poskytovatel typu je primárně určený pro vkládání stabilní data a služby informačních prostorů do programovací prostředí F#.
 
 Tento mechanismus není určená pro vkládání informačních prostorů změní jehož schéma během provádění programu způsoby, které jsou relevantní pro aplikaci logiky. Navíc mechanismu, který není určená pro meta programovací uvnitř jazyk i v případě, že této doména obsahuje mezi platné použití. Tento mechanismus byste měli použít pouze v případě potřeby a kde vývoj poskytovatele typu poskytuje velmi vysokou hodnotu.
 
@@ -35,7 +35,7 @@ Měli byste se vyhnout, zápis poskytovatele typu, kde není k dispozici schéma
 
 Než začnete, může odpovědět na tyto otázky:
 
-- Máte schéma zdroje informací? Pokud ano, co je mapování do F # a systém typů .NET?
+- Máte schéma zdroje informací? Pokud ano, co je mapování do F# a systém typů .NET?
 
 - Můžete použít existující rozhraní API (dynamicky zadávaných) jako výchozí bod pro implementaci?
 
@@ -53,7 +53,7 @@ Poskytovatelé typů jsou nejvhodnější pro situacích, kde je schéma stabiln
 
 ## <a name="a-simple-type-provider"></a>Jednoduchý typ poskytovatele
 
-Tato ukázka je Samples.HelloWorldTypeProvider, podobně jako na ukázky v `examples` adresáři [F # typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/). Zprostředkovatel zpřístupní "typ mezerou", který obsahuje 100 vymazaného typy, jak ukazuje následující kód pomocí syntaxe podpis F # a vynechání podrobnosti pro všechny s výjimkou `Type1`. Další informace o typech vymazaného, naleznete v tématu [podrobnosti o vymaže poskytuje typy](#details-about-erased-provided-types) dále v tomto tématu.
+Tato ukázka je Samples.HelloWorldTypeProvider, podobně jako na ukázky v `examples` adresáři [F# typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/). Zprostředkovatel zpřístupní "typ mezerou", který obsahuje 100 vymazaného typy, jak ukazuje následující kód pomocí syntaxe podpis F# a vynechání podrobnosti pro všechny s výjimkou `Type1`. Další informace o typech vymazaného, naleznete v tématu [podrobnosti o vymaže poskytuje typy](#details-about-erased-provided-types) dále v tomto tématu.
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -128,7 +128,7 @@ type SampleTypeProvider(config: TypeProviderConfig) as this =
 do()
 ```
 
-K používání tohoto poskytovatele, otevřete samostatnou instanci sady Visual Studio, vytvořit skript F # a potom přidejte odkaz na poskytovateli ze skriptu pomocí #r jak ukazuje následující kód:
+K používání tohoto poskytovatele, otevřete samostatnou instanci sady Visual Studio, vytvořit skript F# a potom přidejte odkaz na poskytovateli ze skriptu pomocí #r jak ukazuje následující kód:
 
 ```fsharp
 #r @".\bin\Debug\Samples.HelloWorldTypeProvider.dll"
@@ -148,7 +148,7 @@ let data1 = Samples.HelloWorldTypeProvider.Type1.NestedType.StaticProperty35
 
 Hledat typy pod `Samples.HelloWorldTypeProvider` obor názvů, který vygeneruje poskytovatele typu.
 
-Předtím, než je provedena rekompilace poskytovateli, ujistěte se, že neukončíte všechny instance sady Visual Studio a jazyka F # Interactive, které používají zprostředkovatele knihovny DLL. Chyba sestavení, jinak dojde k vzhledem k tomu, že výstupní knihovnu DLL se uzamkne.
+Předtím, než je provedena rekompilace poskytovateli, ujistěte se, že neukončíte všechny instance sady Visual Studio a jazyka F# Interactive, které používají zprostředkovatele knihovny DLL. Chyba sestavení, jinak dojde k vzhledem k tomu, že výstupní knihovnu DLL se uzamkne.
 
 Ladění tohoto zprostředkovatele pomocí příkazů tisku, skript, který zpřístupňuje potížím s poskytovatelem a pak použít následující kód:
 
@@ -175,7 +175,7 @@ Tato část vás provede hlavní části implementaci zprostředkovatele typu. N
 type SampleTypeProvider(config: TypeProviderConfig) as this =
 ```
 
-Tento typ musí být veřejné a je třeba označit ji [TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947) tak, aby kompilátor rozpozná poskytovatele typu při samostatného projektu F # odkazuje na sestavení obsahující typ atributu. *Config* parametr je nepovinný a pokud jsou k dispozici, obsahuje kontextové konfigurační informace pro instanci typu zprostředkovatele, který vytváří kompilátor F #.
+Tento typ musí být veřejné a je třeba označit ji [TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947) tak, aby kompilátor rozpozná poskytovatele typu při samostatného projektu F# odkazuje na sestavení obsahující typ atributu. *Config* parametr je nepovinný a pokud jsou k dispozici, obsahuje kontextové konfigurační informace pro instanci typu zprostředkovatele, který vytváří kompilátor F#.
 
 V dalším kroku implementujete [itypeprovider –](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f) rozhraní. V tomto případě použijete `TypeProviderForNamespaces` typ `ProvidedTypes` rozhraní API jako základní typ. Typ této pomocné rutiny můžete uvést omezená kolekce například zobrazeném obory názvů, z nichž každý přímo obsahuje konečný počet opravili, například poskytované typy. V tomto kontextu, zprostředkovatel *například* generuje typy, i když nejsou potřeba nebo použít.
 
@@ -255,7 +255,7 @@ let staticProp = ProvidedProperty(propertyName = "StaticProperty",
                                   getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
-Získání této vlastnosti bude vždy vyhodnocena jako řetězec "Hello!". `GetterCode` Pro vlastnost používá F # v citaci, která představuje kód, který kompilátor hostitele generuje pro získání vlastnosti. Další informace o nabídkách najdete v tématu [uvozovky kódu (F #)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155).
+Získání této vlastnosti bude vždy vyhodnocena jako řetězec "Hello!". `GetterCode` Pro vlastnost používá F# v citaci, která představuje kód, který kompilátor hostitele generuje pro získání vlastnosti. Další informace o nabídkách najdete v tématu [uvozovky kódu (F#)](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155).
 
 Přidáte vlastnost dokumentace XML.
 
@@ -276,7 +276,7 @@ let ctor = ProvidedConstructor(parameters = [ ],
                                invokeCode = (fun args -> <@@ "The object data" :> obj @@>))
 ```
 
-`InvokeCode` Pro konstruktor vrátí F # v citaci, která představuje kód, který kompilátor hostitele generuje při volání konstruktoru. Například můžete použít následující konstruktor:
+`InvokeCode` Pro konstruktor vrátí F# v citaci, která představuje kód, který kompilátor hostitele generuje při volání konstruktoru. Například můžete použít následující konstruktor:
 
 ```fsharp
 new Type10()
@@ -300,7 +300,7 @@ ProvidedConstructor(parameters = [ ProvidedParameter("data",typeof<string>) ],
                     invokeCode = (fun args -> <@@ (%%(args.[0]) : string) :> obj @@>))
 ```
 
-`InvokeCode` Pro konstruktor vrátí znovu F # v citaci, která představuje kód generovaný kompilátorem hostitele pro volání do metody. Například můžete použít následující konstruktor:
+`InvokeCode` Pro konstruktor vrátí znovu F# v citaci, která představuje kód generovaný kompilátorem hostitele pro volání do metody. Například můžete použít následující konstruktor:
 
 ```fsharp
 new Type10("ten")
@@ -318,7 +318,7 @@ instanceProp.AddXmlDocDelayed(fun () -> "This is an instance property")
 t.AddMember instanceProp
 ```
 
-Získávání tato vlastnost vrátí délku řetězce, který je reprezentace objektu. `GetterCode` Vlastnost vrací nabídky F #, která určuje kód, který generuje kompilátor hostitele GET pro vlastnost. Stejně jako `InvokeCode`, `GetterCode` funkce vrátí do uvozovek. Kompilátor hostitele volání této funkce se seznamem argumentů. V takovém případě argumenty zahrnout pouze jediný výraz, který představuje instanci, na kterém je volána metoda getter, kterým můžete přistupovat pomocí `args.[0]`. Provádění `GetterCode` klikněte do nabídky výsledek mazání zadejte splices `obj`, a tím se uspokojí kompilátoru mechanismus pro kontrolu typů, že objekt je řetězec se používá přetypování. V další části `makeOneProvidedType` poskytuje metodu instance s jedním parametrem.
+Získávání tato vlastnost vrátí délku řetězce, který je reprezentace objektu. `GetterCode` Vlastnost vrací nabídky F#, která určuje kód, který generuje kompilátor hostitele GET pro vlastnost. Stejně jako `InvokeCode`, `GetterCode` funkce vrátí do uvozovek. Kompilátor hostitele volání této funkce se seznamem argumentů. V takovém případě argumenty zahrnout pouze jediný výraz, který představuje instanci, na kterém je volána metoda getter, kterým můžete přistupovat pomocí `args.[0]`. Provádění `GetterCode` klikněte do nabídky výsledek mazání zadejte splices `obj`, a tím se uspokojí kompilátoru mechanismus pro kontrolu typů, že objekt je řetězec se používá přetypování. V další části `makeOneProvidedType` poskytuje metodu instance s jedním parametrem.
 
 ```fsharp
 let instanceMeth = 
@@ -370,7 +370,7 @@ Příklad v této části uvádí pouze *vymaže poskytnutých typů*, které js
 
 - Když vytváříte zprostředkovatele pro informační prostor, který je tak velký a propojených, že není technicky možné generovat skutečné typy .NET pro informační prostor.
 
-V tomto příkladu každý zadaný typ se vymažou na typ `obj`, a zobrazí se všechna použití typu jako typ `obj` v zkompilovaný kód. Ve skutečnosti příslušné objekty v těchto příkladech jsou řetězce, ale zobrazí se jako typ `System.Object` v .NET zkompilovaný kód. I s všechna použití typ vymazání, můžete použít explicitní zabalení, rozbalení a přetypování na pokazit vymazány typy. V takovém případě může dojít k výjimce přetypování, který není platný při použití objektu. Zprostředkovatel modulu runtime můžete definovat vlastní privátní reprezentace typ a pomáhá chránit před false reprezentace. Nejde definovat vymazaného typy v jazyce F # samotný. Pouze poskytnutých typů mohou být vymazány. Je třeba porozumět následky, obě praktických a sémantické, buď pomocí vymaže vymazaného typy pro poskytovatele typu nebo zprostředkovatele, který obsahuje typy. Mazání typ nemá žádný skutečný typ .NET. Proto není přesný odraz přes typ a může pokazit vymazaného typy, pokud použijete přetypování modulu runtime a další techniky, které jsou závislé na přesné modulu runtime typu sémantiku. Subversion vymazaného typy často výsledkem přetypování typu výjimky za běhu.
+V tomto příkladu každý zadaný typ se vymažou na typ `obj`, a zobrazí se všechna použití typu jako typ `obj` v zkompilovaný kód. Ve skutečnosti příslušné objekty v těchto příkladech jsou řetězce, ale zobrazí se jako typ `System.Object` v .NET zkompilovaný kód. I s všechna použití typ vymazání, můžete použít explicitní zabalení, rozbalení a přetypování na pokazit vymazány typy. V takovém případě může dojít k výjimce přetypování, který není platný při použití objektu. Zprostředkovatel modulu runtime můžete definovat vlastní privátní reprezentace typ a pomáhá chránit před false reprezentace. Nejde definovat vymazaného typy v jazyce F# samotný. Pouze poskytnutých typů mohou být vymazány. Je třeba porozumět následky, obě praktických a sémantické, buď pomocí vymaže vymazaného typy pro poskytovatele typu nebo zprostředkovatele, který obsahuje typy. Mazání typ nemá žádný skutečný typ .NET. Proto není přesný odraz přes typ a může pokazit vymazaného typy, pokud použijete přetypování modulu runtime a další techniky, které jsou závislé na přesné modulu runtime typu sémantiku. Subversion vymazaného typy často výsledkem přetypování typu výjimky za běhu.
 
 ### <a name="choosing-representations-for-erased-provided-types"></a>Výběr reprezentace pro vymazání poskytované typy
 
@@ -388,7 +388,7 @@ Pro některá použití vymazaných poskytnutých typů žádné reprezentace je
 
 - Sadu možných objektů pro mazání zadaný typ, se nazývají její reprezentace. V příkladu v tomto dokumentu, všechny k dispozici vymazaného reprezentace typů `Type1..Type100` jsou vždy řetězcových objektů.
 
-Všechny reprezentace poskytnutého typu musí být kompatibilní s mazání poskytnutého typu. (V opačném případě kompilátor jazyka F # vám poskytne chybu pro používání poskytovatele typu, nebo se vygeneruje neověřitelného kódu .NET, která není platná. Poskytovatel typu není platný, pokud vrací kód, který poskytuje reprezentaci, jež není platná.)
+Všechny reprezentace poskytnutého typu musí být kompatibilní s mazání poskytnutého typu. (V opačném případě kompilátor jazyka F# vám poskytne chybu pro používání poskytovatele typu, nebo se vygeneruje neověřitelného kódu .NET, která není platná. Poskytovatel typu není platný, pokud vrací kód, který poskytuje reprezentaci, jež není platná.)
 
 Reprezentace zadaných objektů můžete pomocí některé z následujících dvou přístupů, které jsou běžně:
 
@@ -469,7 +469,7 @@ Mějte na paměti následující body:
 
 - Každou pojmenovanou skupinu výsledkem zadaná vlastnost a přístupem k vlastnosti výsledkem použití indexer na shodu `Groups` kolekce.
 
-Následující kód je základní logiku pro implementaci těchto zprostředkovatele a v tomto příkladu vynechá přidání všem členům poskytnutého typu. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Celý kód lze stáhnout ukázku z [F # 3.0 ukázkového balíčku](https://fsharp3sample.codeplex.com) na webu Codeplex.
+Následující kód je základní logiku pro implementaci těchto zprostředkovatele a v tomto příkladu vynechá přidání všem členům poskytnutého typu. Informace o každý přidaný člen najdete v příslušné části dále v tomto tématu. Celý kód lze stáhnout ukázku z [F# 3.0 ukázkového balíčku](https://fsharp3sample.codeplex.com) na webu Codeplex.
 
 ```fsharp
 namespace Samples.FSharp.RegexTypeProvider
@@ -1052,7 +1052,7 @@ Mohou být zadány všechny instance poskytovatele typu `TypeProviderConfig` hod
 
 ### <a name="invalidation"></a>Zrušení
 
-Poskytovatelé může vyvolat zneplatnění signály upozornit službu jazyka F #, která mohlo dojít ke změně schématu předpoklady. Pokud dojde k zrušení, typecheck je znovu, pokud zprostředkovatel je hostovaná v sadě Visual Studio. Tento signál budou ignorovány, pokud zprostředkovatel je hostovaný v jazyce F # Interactive nebo kompilátorem F # (fsc.exe).
+Poskytovatelé může vyvolat zneplatnění signály upozornit službu jazyka F#, která mohlo dojít ke změně schématu předpoklady. Pokud dojde k zrušení, typecheck je znovu, pokud zprostředkovatel je hostovaná v sadě Visual Studio. Tento signál budou ignorovány, pokud zprostředkovatel je hostovaný v jazyce F# Interactive nebo kompilátorem F# (fsc.exe).
 
 ### <a name="caching-schema-information"></a>Ukládání do mezipaměti informace o schématu
 
@@ -1060,7 +1060,7 @@ Poskytovatelé musí často ukládat do mezipaměti přístup k informacím o sc
 
 ### <a name="backing-assembly"></a>Základní sestavení
 
-Pokud kompilujete `.dll` nebo `.exe` soubor, záložní soubor .dll pro generované typy je staticky propojené do výsledného sestavení. Tento odkaz se vytvoří tak, že zkopírujete definice typu Intermediate Language (IL) a všechny spravované prostředky z zálohování sestavení do konečného sestavení. Při použití jazyka F # Interactive, záložní soubor DLL není zkopírován a místo toho načtení přímo do procesu F # Interactive.
+Pokud kompilujete `.dll` nebo `.exe` soubor, záložní soubor .dll pro generované typy je staticky propojené do výsledného sestavení. Tento odkaz se vytvoří tak, že zkopírujete definice typu Intermediate Language (IL) a všechny spravované prostředky z zálohování sestavení do konečného sestavení. Při použití jazyka F# Interactive, záložní soubor DLL není zkopírován a místo toho načtení přímo do procesu F# Interactive.
 
 ### <a name="exceptions-and-diagnostics-from-type-providers"></a>Výjimky a Diagnostika ze zprostředkovatelů typů
 
@@ -1070,11 +1070,11 @@ Všechny výskyty všechny členy z poskytnutých typů může vyvolat výjimky.
 
 - Zprostředkovatelé typů nejde hlásit upozornění.
 
-- Pokud zprostředkovatele typů je hostovaný v kompilátoru F #, F #. vývojové prostředí nebo F # Interactive, jsou zachyceny všechny výjimky z tohoto zprostředkovatele. Vlastnost Message je vždy text chyby a zobrazí se žádná trasování zásobníku. Pokud se chystáte vytvořit výjimku, může vyvolat následující příklady: `System.NotSupportedException`, `System.IO.IOException`, `System.Exception`.
+- Pokud zprostředkovatele typů je hostovaný v kompilátoru F#, F#. vývojové prostředí nebo F# Interactive, jsou zachyceny všechny výjimky z tohoto zprostředkovatele. Vlastnost Message je vždy text chyby a zobrazí se žádná trasování zásobníku. Pokud se chystáte vytvořit výjimku, může vyvolat následující příklady: `System.NotSupportedException`, `System.IO.IOException`, `System.Exception`.
 
 #### <a name="providing-generated-types"></a>Poskytuje generované typy
 
-Tento dokument má zatím vysvětlil, jak poskytnout vymazaného typy. Zajistit generované typy, které se přidají jako skutečné definice typů .NET do programu uživatelů můžete také použít mechanismus poskytovatele typu v jazyce F #. Musíte odkazovat na vygenerované poskytované typy pomocí definice typu.
+Tento dokument má zatím vysvětlil, jak poskytnout vymazaného typy. Zajistit generované typy, které se přidají jako skutečné definice typů .NET do programu uživatelů můžete také použít mechanismus poskytovatele typu v jazyce F#. Musíte odkazovat na vygenerované poskytované typy pomocí definice typu.
 
 ```fsharp
 open Microsoft.FSharp.TypeProviders 
@@ -1082,7 +1082,7 @@ open Microsoft.FSharp.TypeProviders
 type Service = ODataService<"http://services.odata.org/Northwind/Northwind.svc/">
 ```
 
-Kód ProvidedTypes-0.2 pomocné rutiny, která je součástí verze F # 3.0 má omezenou podporu pro poskytování generované typy. Generovaný typ definice musí platit následující příkazy:
+Kód ProvidedTypes-0.2 pomocné rutiny, která je součástí verze F# 3.0 má omezenou podporu pro poskytování generované typy. Generovaný typ definice musí platit následující příkazy:
 
 - `isErased` musí být nastaveno na `false`.
 
@@ -1102,9 +1102,9 @@ Například někteří poskytovatelé, jako mají statickou třídu `DataTypes` 
 
 ### <a name="limitations-of-the-type-provider-mechanism"></a>Omezení mechanismu pro zprostředkovatele typů
 
-Mechanismus poskytovatele typu v jazyce F # má následující omezení:
+Mechanismus poskytovatele typu v jazyce F# má následující omezení:
 
-- Základní infrastruktury pro poskytovatele typu v jazyce F # nepodporuje obecné typy nebo obecné metody k dispozici.
+- Základní infrastruktury pro poskytovatele typu v jazyce F# nepodporuje obecné typy nebo obecné metody k dispozici.
 
 - Mechanismus nepodporuje vnořené typy se statické parametry.
 
@@ -1120,9 +1120,9 @@ Můžete vyvíjet v jedné instanci poskytovatele typu a testovat zprostředkova
 
 Zprostředkovatelé typů lze vyvolat pomocí následujících nástrojů:
 
-- FSC.exe (příkazového řádku kompilátoru jazyka F #)
+- FSC.exe (příkazového řádku kompilátoru jazyka F#)
 
-- fsi.exe (jazyce F # Interactive kompilátoru)
+- fsi.exe (jazyce F# Interactive kompilátoru)
 
 - devenv.exe (Visual Studio)
 

@@ -1,6 +1,6 @@
 ---
 title: 'Správa prostředků: Klíčové slovo use (F#)'
-description: 'Další informace o F # – klíčové slovo "použití" a "pomocí" funkce, která můžete řídit, inicializace a uvolnění prostředků.'
+description: Další informace o F# – klíčové slovo "použití" a "pomocí" funkce, která můžete řídit, inicializace a uvolnění prostředků.
 ms.date: 05/16/2016
 ms.openlocfilehash: ffa1cb515139a3705920d9d9f79be1a69602f7d8
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -19,7 +19,7 @@ Termín *prostředků* se používá více než jedním způsobem. Ano, prostře
 
 ## <a name="managing-resources"></a>Správa prostředků
 
-Pokud chcete efektivně a zodpovědně spravovat prostředky v aplikaci, musí uvolnit prostředky o tom bezodkladně informuje a předvídatelným způsobem. Můžete to provést tím, že poskytuje rozhraní .NET Framework pomáhá `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Kvalitně napsané aplikace zaručit, že `System.IDisposable.Dispose` se okamžitě volá, když už nepotřebujete libovolný objekt, který obsahuje prostředek omezený. Naštěstí Většina jazyků .NET poskytují podporu pro lepší pochopení a F # není žádná výjimka. Existují dvě užitečné jazykovým konstrukcím, které podporují vzor dispose: `use` vazby a `using` funkce.
+Pokud chcete efektivně a zodpovědně spravovat prostředky v aplikaci, musí uvolnit prostředky o tom bezodkladně informuje a předvídatelným způsobem. Můžete to provést tím, že poskytuje rozhraní .NET Framework pomáhá `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Kvalitně napsané aplikace zaručit, že `System.IDisposable.Dispose` se okamžitě volá, když už nepotřebujete libovolný objekt, který obsahuje prostředek omezený. Naštěstí Většina jazyků .NET poskytují podporu pro lepší pochopení a F# není žádná výjimka. Existují dvě užitečné jazykovým konstrukcím, které podporují vzor dispose: `use` vazby a `using` funkce.
 
 ## <a name="use-binding"></a>Použít vazbu
 

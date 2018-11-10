@@ -1,6 +1,6 @@
 ---
 title: Parametry a argumenty (F#)
-description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
+description: Další informace o podpora jazyka F# pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.
 ms.date: 05/16/2016
 ms.openlocfilehash: 6ccef89fe411096ed66f481dd4ae2d91259fe1c4
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -105,11 +105,11 @@ Ve volání konstruktoru třídy můžete nastavit hodnoty vlastností třídy p
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet3506.fs)]
 
-Další informace najdete v tématu [konstruktory (F #)](https://msdn.microsoft.com/library/2cd0ed07-d214-4125-8317-4f288af99f05).
+Další informace najdete v tématu [konstruktory (F#)](https://msdn.microsoft.com/library/2cd0ed07-d214-4125-8317-4f288af99f05).
 
 ## <a name="optional-parameters"></a>Volitelné parametry
 
-Můžete zadat volitelný parametr pro metodu s použitím otazník před název parametru. Volitelné parametry jsou interpretovány jako typ možnost jazyka F #, proto dotazování těchto běžným způsobem, že typy možností jsou dotazovat, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povolené jenom na členy, nikoli na funkce, které jsou vytvářeny instalační sadou `let` vazby.
+Můžete zadat volitelný parametr pro metodu s použitím otazník před název parametru. Volitelné parametry jsou interpretovány jako typ možnost jazyka F#, proto dotazování těchto běžným způsobem, že typy možností jsou dotazovat, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povolené jenom na členy, nikoli na funkce, které jsou vytvářeny instalační sadou `let` vazby.
 
 Můžete předat existující volitelné hodnoty metoda podle názvu parametru, jako například `?arg=None` nebo `?arg=Some(3)` nebo `?arg=arg`. To může být užitečné při sestavování metodu, která předá volitelné argumenty na jinou metodu.
 
@@ -151,7 +151,7 @@ V tomto případě kompilátor vygeneruje upozornění a bude ignorovat oba atri
 
 ## <a name="passing-by-reference"></a>Předávání odkazem.
 
-Předávání odkazem na hodnotu F # zahrnuje [ByRef](byrefs.md), které jsou typy spravovaného ukazatele. Pokyny, který typ použít vypadá takto:
+Předávání odkazem na hodnotu F# zahrnuje [ByRef](byrefs.md), které jsou typy spravovaného ukazatele. Pokyny, který typ použít vypadá takto:
 
 * Použití `inref<'T>` potřebujete pouze ke čtení ukazatel.
 * Použití `outref<'T>` Pokud potřebujete napsat k ukazateli.
@@ -186,11 +186,11 @@ Protože parametru je ukazatel a hodnota je proměnlivá, všechny změny hodnot
 
 Někdy je potřeba definovat funkci, která přijímá libovolný počet parametrů typu heterogenní. Nemusí být praktické k vytvoření všech možných přetížených metod pro všechny typy, které by bylo možné použít. Implementace .NET poskytují podporu pro tyto metody prostřednictvím pole funkce parametr. Metodu, která přebírá parametr pole v jeho podpisu může zobrazovat libovolný počet parametrů. Parametry jsou vloženy do pole. Typ prvků pole určuje typy parametrů, které může být předán funkci. Při definování pole parametrů s `System.Object` jako typ elementu, pak klient může kód předat hodnoty libovolného typu.
 
-V jazyce F # je pole parametrů definovat pouze v metodách. Nelze je použít v samostatné funkce nebo funkce, které jsou definovány v modulech.
+V jazyce F# je pole parametrů definovat pouze v metodách. Nelze je použít v samostatné funkce nebo funkce, které jsou definovány v modulech.
 
 Definování pole parametrů s použitím `ParamArray` atribut. `ParamArray` Atribut lze použít pouze pro poslední parametr.
 
-Následující kód ukazuje obě volání metody rozhraní .NET, která přijímá pole parametrů a definice typu v jazyce F #, která obsahuje metodu, která přebírá parametr pole.
+Následující kód ukazuje obě volání metody rozhraní .NET, která přijímá pole parametrů a definice typu v jazyce F#, která obsahuje metodu, která přebírá parametr pole.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-2/snippet3811.fs)]
 

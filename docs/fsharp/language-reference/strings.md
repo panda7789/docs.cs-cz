@@ -1,6 +1,6 @@
 ---
 title: Řetězce (F#)
-description: 'Zjistěte, jak typ "řetězec" jazyka F # představuje neměnné text jako posloupnost znaků Unicode.'
+description: Zjistěte, jak typ "řetězec" jazyka F# představuje neměnné text jako posloupnost znaků Unicode.
 ms.date: 05/16/2016
 ms.openlocfilehash: 21971602093bc84b0df47d4ae46a14fb936c28bb
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -18,7 +18,7 @@ Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.
 
 ## <a name="remarks"></a>Poznámky
 
-Řetězcové literály jsou oddělené znakem uvozovky ("). Znak zpětného lomítka ( \\ ) slouží ke kódování některé speciální znaky. Zpětné lomítko a další znak společně se nazývají *sekvence escape*. Řídicí sekvence, které jsou podporované v F # řetězec, který literály jsou uvedeny v následující tabulce.
+Řetězcové literály jsou oddělené znakem uvozovky ("). Znak zpětného lomítka ( \\ ) slouží ke kódování některé speciální znaky. Zpětné lomítko a další znak společně se nazývají *sekvence escape*. Řídicí sekvence, které jsou podporované v F# řetězec, který literály jsou uvedeny v následující tabulce.
 
 |Znak|Řídicí sekvence|
 |---------|---------------|
@@ -78,7 +78,7 @@ Následující příklad ukazuje zřetězení řetězců.
 
 ## <a name="string-class"></a>Třída String
 
-Protože typ řetězce v jazyce F # je ve skutečnosti na rozhraní .NET Framework `System.String` typ, všechny `System.String` členy jsou k dispozici. Jedná se o `+` operátor, který slouží k řetězení řetězců, `Length` vlastnost a `Chars` vlastnost, která vrací řetězec jako pole znaků Unicode. Další informace o řetězcích naleznete v tématu `System.String`.
+Protože typ řetězce v jazyce F# je ve skutečnosti na rozhraní .NET Framework `System.String` typ, všechny `System.String` členy jsou k dispozici. Jedná se o `+` operátor, který slouží k řetězení řetězců, `Length` vlastnost a `Chars` vlastnost, která vrací řetězec jako pole znaků Unicode. Další informace o řetězcích naleznete v tématu `System.String`.
 
 S použitím `Chars` vlastnost `System.String`, dostanete jednotlivých znaků v řetězci tak, že zadáte indexu, jak je znázorněno v následujícím kódu.
 

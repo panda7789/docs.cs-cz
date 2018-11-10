@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: ff483c9b555fdf394d11626536c28e7e07516d05
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: ae141b3d60a9968ee3fe59474e32a174bdb77e3b
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404629"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50757449"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -97,7 +97,7 @@ Nejjednodušším přístupem při škálování webové aplikace v Azure je nak
 
 ## <a name="clean-architecture"></a>Vyčištění architektury
 
-Můžete přejít na podobnou architekturu mají tendenci aplikací podle principu inverzi závislostí, jakož i principů návrhu Domain-Driven (DDD). Tato architektura se dostaly celou řadu názvů v průběhu let. Jeden z názvů první byl šestiúhelníkový architektury, za nímž následuje adaptéry a porty. Nedávno, je byl uvedený jako [průsvitek architektura](http://jeffreypalermo.com/blog/the-onion-architecture-part-1/) nebo [čisté architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Tento název, vyčistit architektury, se používá jako název pro tuto architekturu v této e knihy.
+Můžete přejít na podobnou architekturu mají tendenci aplikací podle principu inverzi závislostí, jakož i principů návrhu Domain-Driven (DDD). Tato architektura se dostaly celou řadu názvů v průběhu let. Jeden z názvů první byl šestiúhelníkový architektury, za nímž následuje adaptéry a porty. Nedávno, je byl uvedený jako [průsvitek architektura](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) nebo [čisté architektura](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Tento název, vyčistit architektury, se používá jako název pro tuto architekturu v této e knihy.
 
 > [!NOTE]
 > Termín čisté architekturu je možné použít pro aplikace, které se vytvářejí pomocí DDD zásady stejně jako ty, které nejsou sestavené pomocí DDD. V případě nejprve, může být tato kombinace označovány jako "Architektuře čistého DDD".
@@ -173,7 +173,7 @@ Vrstva uživatelské rozhraní v aplikaci ASP.NET Core MVC je vstupním bodem pr
 - Filtry
 - Zobrazení
 - Modely ViewModels
-- Po spuštění
+- Třída pro spuštění
 
 Třída při spuštění je zodpovědný pro konfiguraci aplikace a pro její implementaci typů rozhraní, což injektáž závislostí do za běhu správně fungovat.
 
@@ -307,7 +307,7 @@ Pokud chcete přidat podporu Dockeru do vaší aplikace pomocí sady Visual Stud
 > - **Vyčištění architektury**  
 >   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **Architektura průsvitek**  
->   <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
+>   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 > - **Model úložiště**  
 >   <https://deviq.com/repository-pattern/>
 > - **Vyčistit ukázkové architektury řešení**  

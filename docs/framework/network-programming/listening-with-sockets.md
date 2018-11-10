@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Internet, sockets
 ms.assetid: 40e426cc-13db-4371-95eb-f7388bd23ebf
 ms.openlocfilehash: 2b19b6d29d0117d4822f370dcc9abc840a18ad3d
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50045037"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50982747"
 ---
 # <a name="listening-with-sockets"></a>Naslouchání pomocí soketů
 Naslouchací proces nebo server sockets otevření portu v síti a potom počkejte klienta pro připojení k tomuto portu. I když existují jiné rodiny adres sítě a protokoly, tento příklad ukazuje, jak vytvořit vzdálené služby pro sítě TCP/IP.  

@@ -1,5 +1,5 @@
 ---
-title: 'Začínáme s Azure Queue storage s využitím F #'
+title: Začínáme s Azure Queue storage s využitím F#
 description: Fronty Azure Queue poskytují spolehlivý asynchronní přenos zpráv mezi součástmi aplikace. Cloudový přenos zpráv umožňuje nezávislé škálování součástí vaší aplikace.
 author: sylvanc
 ms.date: 09/20/2016
@@ -10,7 +10,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "33569411"
 ---
-# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage s využitím F # #
+# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage s využitím F# #
 
 Úložiště Azure Queue zajišťuje cloudový přenos zpráv mezi součástmi aplikace. Při navrhování aplikací pro škálování, komponenty aplikace bývají často oddělené, tak, aby se mohly škálovat nezávisle. Queue storage zajišťuje asynchronní přenos zpráv pro komunikaci mezi komponentami aplikace, ať už jsou spuštěné v cloudu, v klientských počítačích, na místním serveru nebo na mobilním zařízení. Queue storage také podporuje správu asynchronních úloh a vytváření pracovních postupů pro procesy.
 
@@ -25,9 +25,9 @@ Koncepční přehled služby queue storage, najdete v tématu [v příručce .NE
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account).
 Budete také potřebovat přístupový klíč k úložišti pro tento účet.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F # a začněte jazyka F # Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
 
-Ukázky v tomto článku je možné v F # aplikace nebo skript F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`, ve vašem vývojovém prostředí F #.
+Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`, ve vašem vývojovém prostředí F#.
 
 Pak pomocí [Správce balíčků](package-management.md) jako [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a odkaz na `WindowsAzure.Storage.dll` ve skriptu pomocí `#r`směrnice.
 

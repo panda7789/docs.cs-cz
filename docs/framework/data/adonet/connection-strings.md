@@ -2,12 +2,12 @@
 title: Připojovací řetězce v ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 4dab2656ae8f39976b21f949c9548a3f718dfafc
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 078fdab257115296f9ff00330265cb14ff8674c8
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347939"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50409454"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 
@@ -19,7 +19,7 @@ Připojovací řetězec se středníkem oddělený seznam dvojic klíč/hodnota 
   
     keyword1=value; keyword2=value;
   
-Klíčová slova nerozlišují malá a velká písmena. Hodnoty, ale mohou být velká a malá písmena, v závislosti na zdroji dat. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Úvodní a koncové mezery bude ignorován v klíčových slov a nekotované hodnoty.
+Klíčová slova nerozlišují malá a velká písmena. Hodnoty, ale mohou být velká a malá písmena, v závislosti na zdroji dat. Klíčová slova a hodnoty mohou obsahovat [prázdné znaky](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Počáteční a koncové mezery bude ignorován v klíčových slov a nekotované hodnoty.
 
 Obsahuje-li hodnota středník, [řídící znaky Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters), nebo úvodní a koncové prázdné znaky, musí být uzavřen v jednoduchých nebo dvojitých uvozovek. Příklad:
 

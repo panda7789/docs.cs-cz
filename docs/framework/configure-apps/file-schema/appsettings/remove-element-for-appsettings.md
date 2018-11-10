@@ -10,11 +10,11 @@ ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: e9b79a8319b320289f43adac5a82ef22fa5e32b0
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 0fbd677fcdc5bf46c4d827f492eaaa970edc07b6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199692"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235775"
 ---
 # <a name="remove-element-for-appsettings"></a>\<Odebrat > – element pro \<appSettings >
 

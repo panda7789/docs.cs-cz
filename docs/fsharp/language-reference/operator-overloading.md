@@ -1,6 +1,6 @@
 ---
 title: Přetížení operátoru (F#)
-description: 'Zjistěte, jak přetěžovat aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F #.'
+description: Zjistěte, jak přetěžovat aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F#.
 ms.date: 05/16/2016
 ms.openlocfilehash: 6232ebf215289e6a22b9d77fbd5fa67b82460486
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -47,7 +47,7 @@ Znak operátoru `.` neovlivňuje prioritu, takže pokud je například třeba de
 
 Pouze operátory `?` a `?<-` může začínat `?`.
 
-Tabulku, která ukazuje priority všech operátorů v jazyce F # lze nalézt v [operátor referenční dokumentace symbolů a](symbol-and-operator-reference/index.md).
+Tabulku, která ukazuje priority všech operátorů v jazyce F# lze nalézt v [operátor referenční dokumentace symbolů a](symbol-and-operator-reference/index.md).
 
 ## <a name="overloaded-operator-names"></a>Názvy přetíženého operátoru
 

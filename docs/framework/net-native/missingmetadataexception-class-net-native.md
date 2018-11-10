@@ -5,11 +5,11 @@ ms.assetid: 408f25c4-6d60-475c-92b1-7b52b777c6db
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f68304b06c502672ae1aac9693a966ea546ee4dd
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 4bca8f7e172fd019ef437a4803bf5895c6bc4781
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50049422"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980856"
 ---
 # <a name="missingmetadataexception-class-net-native"></a>Třída MissingMetadataException (.NET Native)
 **.NET pro aplikace pro Windows pro Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] pouze**  

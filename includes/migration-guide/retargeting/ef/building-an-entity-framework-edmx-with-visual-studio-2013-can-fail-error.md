@@ -1,10 +1,10 @@
-### <a name="building-an-entity-framework-edmx-with-visual-studio-2013-can-fail-with-error-msb4062-if-using-the-entitydeploysplit-or-entityclean-tasks"></a>Sestavování Entity Framework edmx pomocí sady Visual Studio 2013 může selhat s chybou MSB4062, pokud používáte úkoly EntityDeploySplit nebo EntityClean
+### <a name="building-an-entity-framework-edmx-with-visual-studio-2013-can-fail-with-error-msb4062-if-using-the-entitydeploysplit-or-entityclean-tasks"></a>Sestavení souboru Entity Framework EDMX v sadě Visual Studio 2013 může při použití úloh EntityDeploySplit nebo EntityClean selhat s chybou MSB4062
 
 |   |   |
 |---|---|
-|Podrobnosti|Nástroj MSBuild 12.0 nástroje (zahrnutý v sadě Visual Studio 2013) změnit umístění souborů nástroje MSBuild, způsobí starší soubory cíle Entity Framework je neplatná. Důsledkem toho pak bude <code>EntityDeploySplit</code> a <code>EntityClean</code> úloha nebude úspěšná, protože se nepodařilo najít <code>Microsoft.Data.Entity.Build.Tasks.dll</code>. Upozorňujeme, že toto přerušení z důvodu změny sady nástrojů (MSBuild/VS), není kvůli změně rozhraní .NET Framework. Tato hodnota se vrátí pouze při upgradu nástroje pro vývojáře, ne v případě upgrade pouze rozhraní .NET Framework.|
-|Návrh|Entity Framework cíle soubory odstraněny pro práci s novinkou systému rozložení MSBuild v rozhraní .NET Framework 4.6. Upgrade na tuto verzi rozhraní Framework bude tento problém vyřešit. Alternativně [to](http://stackoverflow.com/a/24249247/131944) řešení je možné opravovat soubory cíle přímo.|
+|Podrobnosti|U nástrojů MSBuild 12.0 (zahrnutých v sadě Visual Studio 2013) se změnilo umístění souborů MSBuild, což vede k tomu, že starší soubory cílů Entity Framework jsou neplatné. Úlohy <code>EntityDeploySplit</code> a <code>EntityClean</code> v důsledku toho selhávají, protože nenajdou knihovnu <code>Microsoft.Data.Entity.Build.Tasks.dll</code>. K tomuto narušení vazby nedochází změnou v rozhraní .NET Framework, ale změnou v sadě nástrojů MSBuild / Visual Studio. Projeví se jen při upgradu nástrojů při vývojáře, ne při samotném upgradu rozhraní .NET Framework.|
+|Doporučení|Soubory cílů Entity Framework jsou ve verzi .NET Framework 4.6 opraveny tak, aby fungovaly s novým rozložením nástrojů MSBuild. Upgradem na tuto verzi rozhraní Framework se problém vyřeší. Případně můžete opravit soubory cílů přímo pomocí [tohoto](http://stackoverflow.com/a/24249247/131944) alternativního řešení.|
 |Rozsah|Hlavní|
-|Version|4.5.1|
-|Typ|Mění se cílení|
+|Verze|4.5.1|
+|Typ|Změna cílení|
 

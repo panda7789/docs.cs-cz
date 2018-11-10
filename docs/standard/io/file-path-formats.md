@@ -9,12 +9,12 @@ helpviewer_keywords:
 - path formats, Windows
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5821d15e71492bd54fa6b5d891f2ff38a2902a06
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 05146467f321a3c83f3637e2eecc4c7c42dc4ba0
+ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424386"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "51214191"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 
@@ -202,7 +202,7 @@ Všimněte si, že je možné cesty více než `MAX_PATH` znaků [GetFullPathNam
 Zvláštností systému souborů Windows, který není Windows uživatele a vývojáře najít matoucí této cesty a názvy adresářů jsou malá a velká písmena. To znamená adresáře a souboru názvy odrážet malých a velkých písmen řetězců používané při jejich vytváření. Například volání metody
 
 ```csharp
-Directory.Create(TeStDiReCtOrY);
+Directory.Create("TeStDiReCtOrY");
 ```
 Vytvoří adresář s názvem TeStDiReCtOrY. Pokud přejmenujete adresář nebo soubor změnit jeho velikost písmen, názvu adresáře nebo souboru odráží případ řetězec použitý při jeho přejmenování. Následující kód například přejmenuje soubor s názvem test.txt do Test.txt:
 

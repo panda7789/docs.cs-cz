@@ -1,62 +1,62 @@
 ---
-title: Framework knihovny
-description: Zjistěte, jak knihovny poskytovat implementace pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroj.
+title: Knihovny rozhraní
+description: Zjistěte, jak knihoven poskytuje implementaci pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroj.
 author: richlander
 ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: dd8baa481e51aa44c4c884b4b165bdf319ac1c4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1b5099c73264f3175aa05094f4460c1c97774533
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576279"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50743960"
 ---
-# <a name="framework-libraries"></a>Framework knihovny
+# <a name="framework-libraries"></a>Knihovny rozhraní
 
-Rozhraní .NET má obsáhlou standardní sadu knihovny tříd, označuje jako základní třída knihovny (základní sady) nebo knihovny tříd framework (kompletní sada). Tyto knihovny poskytují implementace pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroj. Sestavení knihovny komerční i komunity nad knihovny tříd framework, poskytuje snadno použitelný dodávaných knihovny pro celou sadu výpočetních úloh.
+.NET má obsáhlém standardní sadu knihoven tříd, označované jako knihovny základních tříd (základní nastavení) nebo knihovny tříd rozhraní framework (úplná sada). Tyto knihovny poskytují implementace pro mnoho konkrétní aplikace a obecné typy, algoritmy a funkce nástroje. Knihovny pro komerční i komunitní postaveny knihovny tříd rozhraní, poskytuje snadno použitelný předem připravená knihovny pro celou sadu výpočetních úloh.
 
-Podmnožinu tyto knihovny jsou k dispozici s každou implementace rozhraní .NET. Protože vývojáři budou chcete a protože Oblíbené knihovny budete potřebovat, aby se spouštěly, očekává se základní třídy knihovny (BCL) rozhraní API s žádnou implementaci rozhraní .NET. Konkrétní aplikaci knihovny výše BCL, jako je ASP.NET, nebudete mít k dispozici na všech implementace rozhraní .NET.
+Podmnožinu těchto knihoven jsou součástí každého implementace .NET. Vzhledem k tomu, že se mají vývojáři a protože Oblíbené knihovny budete potřebovat ke spuštění, očekává se základní rozhraní API knihovny tříd (BCL) s žádnou implementaci rozhraní .NET. Knihovny pro konkrétní aplikace nad BCL, jako je ASP.NET, nebudou k dispozici na všech implementace .NET.
 
-## <a name="base-class-libraries"></a>Základní třída knihovny
+## <a name="base-class-libraries"></a>Knihovny základních tříd
 
-BCL poskytuje nejvíc základní typy a funkce nástroje a jsou základem všechny ostatní knihovny tříd rozhraní .NET. Jejich cílem je poskytovat velmi obecné implementace bez jakékoli odchylka žádné zatížení. Výkon je vždy důležitý faktor, vzhledem k tomu, že aplikace preferovat konkrétní zásady, například s nízkou latencí pro vysokou propustností nebo nedostatku paměti pro využití procesoru nízká. Tyto knihovny jsou určeny k obecně být vysoce výkonné a střední základů přístup podle těchto různé aspekty výkonu. Pro většinu aplikací byl tento přístup poměrně úspěšné.
+BCL poskytuje nejvíce základní typy a funkce nástroje a jsou základní všechny další knihovny tříd .NET. Jejich cílem je poskytovat velmi obecná implementace bez jakékoli posun do jakékoli pracovní zátěže. Výkon je vždy což je důležité, protože aplikace dát přednost konkrétní zásady, třeba s nízkou latencí pro vysoce propustné nebo nedostatku paměti pro využití procesoru s nízkou. Tyto knihovny jsou určeny pro obecně být vysoce výkonné a střední základu přístup podle těchto různých dopadům na výkon. Pro většinu aplikací byl tento přístup úplně úspěšný.
 
 ## <a name="primitive-types"></a>Primitivní typy
 
-Rozhraní .NET zahrnuje sadu primitivní typy, které se používají (na různých úrovních) ve všech aplikacích. Tyto typy obsahovat data, jako je například čísla, řetězce, bajtů a libovolné objekty. Jazyk C# obsahuje klíčová slova pro tyto typy. Ukázkové sady tyto typy je uveden níže, s odpovídající C# klíčová slova.
+.NET obsahuje sadu primitivní typy, které se používají (na různých úrovních) ve všech aplikacích. Tyto typy obsahovat data, jako jsou čísla, řetězce, bajtů a libovolné objekty. C# Jazyk obsahuje klíčová slova pro tyto typy. Sadu ukázkových těchto typů je uvedený níže, s odpovídající C# klíčová slova.
 
-* <xref:System.Object?displayProperty=nameWithType> ([objekt](../csharp/language-reference/keywords/object.md)) – systém typů ultimate základní třídy v modulu CLR. Je kořenem hierarchie typu.
-* <xref:System.Int16?displayProperty=nameWithType> ([krátké](../csharp/language-reference/keywords/short.md))-16bitové A podepsaný typ integer. Nepodepsané <xref:System.UInt16> také existuje.
-* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md))-32bitová podepsaná typ integer. Nepodepsané [UInt32](../csharp/language-reference/keywords/uint.md) také existuje.
-* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md))-32bitová typů s plovoucí desetinnou čárkou.
-* <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/keywords/decimal.md))-128bitové A typ decimal.
-* <xref:System.Byte?displayProperty=nameWithType> ([bajtů](../csharp/language-reference/keywords/byte.md))-nepodepsané 8bitové celé číslo, představující bajtů paměti.
-* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md))-typem logická hodnota, která představuje `true` nebo `false`.
-* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md))-16bitové A číselný typ, který reprezentuje znak Unicode.
-* <xref:System.String?displayProperty=nameWithType> ([řetězec](../csharp/language-reference/keywords/string.md))-představuje posloupnost znaků. Jiné než `char[]`, ale umožňuje indexování do každého uživatele `char` v `string`.
+* <xref:System.Object?displayProperty=nameWithType> ([objekt](../csharp/language-reference/keywords/object.md)) – systém typů ultimate základní třídy v CLR. Je kořenem hierarchie typu.
+* <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/keywords/short.md)) – typ celé číslo se znaménkem A 16 bitů. Bez znaménka <xref:System.UInt16> také existuje.
+* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)) – typ celé číslo se znaménkem A 32-bit. Bez znaménka [UInt32](../csharp/language-reference/keywords/uint.md) také existuje.
+* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)) – typ s plovoucí desetinnou čárkou A 32-bit.
+* <xref:System.Decimal?displayProperty=nameWithType> ([desítkové](../csharp/language-reference/keywords/decimal.md)) – typ desetinné čárky A 128 bitů.
+* <xref:System.Byte?displayProperty=nameWithType> ([bajtů](../csharp/language-reference/keywords/byte.md))-8bitové celé číslo bez znaménka představující bajt paměti.
+* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md))-logický typ, který představuje `true` nebo `false`.
+* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md))-číselného typu A 16-bit, který představuje znak Unicode.
+* <xref:System.String?displayProperty=nameWithType> ([řetězec](../csharp/language-reference/keywords/string.md)) – představuje posloupnost znaků. Jiné než `char[]`, ale umožňuje indexování do jednotlivých `char` v `string`.
 
 ## <a name="data-structures"></a>Datové struktury
 
-Rozhraní .NET zahrnuje sadu datové struktury, které jsou workhorses téměř jakoukoli aplikací .NET. Ty jsou nejčastěji kolekce, ale také zahrnovat jiné typy.
+.NET obsahuje sadu datových struktur, které jsou workhorses téměř všechny aplikace .NET. Tyto jsou většinou kolekce, ale taky obsahovat další typy.
 
-*   <xref:System.Array> -Představuje pole důrazně typy objektů, kterým lze přistupovat pomocí indexu. Má pevnou velikost, na jeho vytváření.
-*   <xref:System.Collections.Generic.List%601> -Představuje seznam objektů, kterým lze přistupovat pomocí indexu silného typu. Velikost automaticky podle potřeby.
-*   <xref:System.Collections.Generic.Dictionary%602> -Reprezentuje kolekci hodnot, které jsou indexované podle klíče. Hodnoty jsou přístupné prostřednictvím klíč. Velikost automaticky podle potřeby.
-*   <xref:System.Uri> -Poskytuje reprezentaci objektu identifikátor URI (URI) a snadný přístup k části identifikátoru URI.
-*   <xref:System.DateTime> -Představuje okamžik v čase, obvykle vyjádřený jako datum a čas, den.
+*   <xref:System.Array> -Představuje pole objektů silnými typy, které lze využívat pomocí indexu. Má pevnou velikost, na jeho vytváření.
+*   <xref:System.Collections.Generic.List%601> -Představuje výrazným seznamem objektů, které lze využívat pomocí indexu. Velikost automaticky podle potřeby.
+*   <xref:System.Collections.Generic.Dictionary%602> -Představuje kolekci hodnot, které jsou indexovány pomocí klíče. Hodnoty lze přistupovat pomocí klíče. Velikost automaticky podle potřeby.
+*   <xref:System.Uri> -Poskytuje reprezentaci objektu identifikátor URI (URI) a snadný přístup k různým částem identifikátoru URI.
+*   <xref:System.DateTime> -Představuje okamžik v čase, obvykle vyjádřený jako datum a čas.
 
-## <a name="utility-apis"></a>Rozhraní API pro nástroj
+## <a name="utility-apis"></a>Nástroje rozhraní API
 
-Rozhraní .NET zahrnuje sadu nástrojů rozhraní API, které poskytují funkce pro celou řadu důležitých úloh.
+.NET obsahuje sadu nástrojů rozhraní API, která poskytuje funkce pro celou řadu důležitých úloh.
 
-*   <xref:System.Net.Http.HttpClient> -Rozhraní API pro odesílání požadavků HTTP a příjem odpovědí HTTP ze zdroje identifikovaného identifikátorem URI.
-*   <xref:System.Xml.Linq.XDocument> -Rozhraní API pro načítání a dotazování dokumentů XML pomocí LINQ.
-*   <xref:System.IO.StreamReader> -Rozhraní API pro čtení souborů (<xref:System.IO.StringWriter>) lze použít k zápisu souborů.
+*   <xref:System.Net.Http.HttpClient> – Rozhraní API pro odesílání požadavků HTTP a příjem odpovědí HTTP ze zdroje identifikovaného identifikátorem URI.
+*   <xref:System.Xml.Linq.XDocument> – Rozhraní API pro načítání a dotazování na dokumenty XML pomocí jazyka LINQ.
+*   <xref:System.IO.StreamReader> – Rozhraní API pro čtení souborů (<xref:System.IO.StringWriter>) lze použít k zápisu souborů.
 
-## <a name="app-model-apis"></a>Rozhraní API modelu aplikace
+## <a name="app-model-apis"></a>Model aplikace API
 
-Existuje mnoho modely aplikace, které lze použít s .NET, poskytuje několik společností.
+Existuje mnoho – modely aplikace, které lze použít s .NET poskytuje více společností.
 
-*   [ASP.NET](http://asp.net) -poskytuje webové rozhraní pro vytváření webů a služeb. Podporované v systému Windows, Linux a systému macOS (závisí na verzi technologie ASP.NET).
+*   [ASP.NET](https://www.asp.net) – poskytuje webovou architekturu pro vytváření webů a služeb. Podporováno ve Windows, Linuxu a macOS (závisí na verzi technologie ASP.NET).

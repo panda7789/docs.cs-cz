@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Grid control [WPF], creating [WPF], complex grid
 ms.assetid: 4ce3040a-a156-4364-9596-98ca1eca5550
 ms.openlocfilehash: e2356113457e8c9a6737132e9779e49c05a23d77
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199978"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50743921"
 ---
 # <a name="how-to-create-a-complex-grid"></a>Vytvoření komplexní mřížky
 

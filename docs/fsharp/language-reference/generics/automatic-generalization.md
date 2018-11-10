@@ -1,6 +1,6 @@
 ---
 title: Automatická generalizace (F#)
-description: 'Zjistěte, jak F # automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy, pokud je to možné.'
+description: Zjistěte, jak F# automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy, pokud je to možné.
 ms.date: 05/16/2016
 ms.openlocfilehash: 84de9cbb2b9fcf2488393f7dbdfc3b610cdcffb0
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,11 +11,11 @@ ms.locfileid: "43855774"
 ---
 # <a name="automatic-generalization"></a>Automatická generalizace
 
-F # používá k vyhodnocení typy funkce a výrazy odvození typu proměnné. Toto téma popisuje, jak F # automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy kdykoli je to možné.
+F# používá k vyhodnocení typy funkce a výrazy odvození typu proměnné. Toto téma popisuje, jak F# automaticky zobecňuje argumenty a typy funkce tak, aby fungovaly s více typy kdykoli je to možné.
 
 ## <a name="automatic-generalization"></a>Automatická generalizace
 
-Kompilátor F #, v případě odvození typu na funkci, určuje, zda lze daný parametr obecného. Kompilátor zkontroluje každý parametr a určuje, zda funkce má závislosti na konkrétní typ tohoto parametru. Pokud tomu tak není, typ je odvozen je obecný.
+Kompilátor F#, v případě odvození typu na funkci, určuje, zda lze daný parametr obecného. Kompilátor zkontroluje každý parametr a určuje, zda funkce má závislosti na konkrétní typ tohoto parametru. Pokud tomu tak není, typ je odvozen je obecný.
 
 Následující příklad kódu ukazuje funkci, která kompilátor odvodí z nich je obecný.
 

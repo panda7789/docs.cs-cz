@@ -3,11 +3,11 @@ title: XmlDictionaryReaderQuotas
 ms.date: 03/30/2017
 ms.assetid: 9b4ca8b4-0a89-4758-97ab-528a8ce18f07
 ms.openlocfilehash: 9bc519509b00383be333ac605688950d2709117c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 4bca8f7e172fd019ef437a4803bf5895c6bc4781
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199471"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "50980528"
 ---
 # <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 XmlDictionaryReaderQuotas  

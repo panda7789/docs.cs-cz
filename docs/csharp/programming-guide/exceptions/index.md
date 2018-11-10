@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: a0ec7b1a91dc701093131b8807b25e66d291a746
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6cacf3cc613ffb23c6656d5d5718064a91b777a6
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188315"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "50744220"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  
@@ -61,7 +61,8 @@ Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným ne
 -   [Postupy: Spuštění kódu čištění pomocí příkazu finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+Další informace najdete v tématu [výjimky](~/_csharplang/spec/exceptions.md) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

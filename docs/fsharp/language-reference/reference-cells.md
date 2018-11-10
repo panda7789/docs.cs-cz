@@ -1,6 +1,6 @@
 ---
 title: Referenční buňky (F#)
-description: 'Zjistěte, jak F # odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.'
+description: Zjistěte, jak F# odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.
 ms.date: 05/16/2016
 ms.openlocfilehash: e2e1a91c62fd76e4992bc5ae11bb672766850718
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -74,7 +74,7 @@ Výstup je následující.
 
 Pole `contents` zajišťuje kompatibilitu s jinými verzemi ML a během kompilace zobrazí upozornění. Chcete-li toto upozornění zakážete, použijte `--mlcompatibility` – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
 
-Programátoři v C# měli vědět, že `ref` v jazyce C# není totéž jako `ref` v jazyce F #. Ekvivalentní konstrukce v jazyce F # jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
+Programátoři v C# měli vědět, že `ref` v jazyce C# není totéž jako `ref` v jazyce F#. Ekvivalentní konstrukce v jazyce F# jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
 
 Hodnoty označeny jako `mutable`může automaticky povýšen na `'a ref` nezachytává uzavření; naleznete v tématu [hodnoty](values/index.md).
 
