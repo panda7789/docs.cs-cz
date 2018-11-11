@@ -1,49 +1,40 @@
 ---
 title: '&amp;&amp; – Operátor (referenční dokumentace jazyka C#)'
-ms.date: 07/20/2015
+ms.date: 11/06/2018
 f1_keywords:
 - '&&_CSharpKeyword'
 helpviewer_keywords:
 - '&& operator [C#]'
 - logical AND operator [C#]
 ms.assetid: 2e4f0a1c-92a3-40f8-8e3b-17b607f20c31
-ms.openlocfilehash: 459b791fde3e4d3940dbd3d916f940e81f365da6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d0e6d9a5aedc7dc87393e3dea070bf442b3268dc
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "43529232"
 ---
-# <a name="ampamp-operator-c-reference"></a><span data-ttu-id="b694b-102">&amp;&amp; – Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="b694b-102">&amp;&amp; Operator (C# Reference)</span></span>
-<span data-ttu-id="b694b-103">Podmíněným – a – operátor (`&&`) provádí logické- a jeho `bool` operandy, ale pouze vyhodnocuje svým druhým operandem, v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="b694b-103">The conditional-AND operator (`&&`) performs a logical-AND of its `bool` operands, but only evaluates its second operand if necessary.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="b694b-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b694b-104">Remarks</span></span>  
- <span data-ttu-id="b694b-105">Operace</span><span class="sxs-lookup"><span data-stu-id="b694b-105">The operation</span></span>  
-  
-```csharp  
-x && y  
-```  
-  
- <span data-ttu-id="b694b-106">odpovídá operaci</span><span class="sxs-lookup"><span data-stu-id="b694b-106">corresponds to the operation</span></span>  
-  
-```csharp  
-x & y  
-```  
-  
- <span data-ttu-id="b694b-107">s výjimkou, že pokud `x` je `false`, `y` není vyhodnocen, protože výsledek operace AND je `false` bez ohledu na to, jaké hodnoty `y` je.</span><span class="sxs-lookup"><span data-stu-id="b694b-107">except that if `x` is `false`, `y` is not evaluated, because the result of the AND operation is `false` no matter what the value of `y`  is.</span></span> <span data-ttu-id="b694b-108">To se označuje jako "zkrácené" vyhodnocení.</span><span class="sxs-lookup"><span data-stu-id="b694b-108">This is known as "short-circuit" evaluation.</span></span>  
-  
- <span data-ttu-id="b694b-109">Podmíněným – a operátor nemůže být přetížená, ale přetíženími pravidelné logické operátory a operátory [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md) , s určitými omezeními také považují přetížení Podmíněné logické operátory.</span><span class="sxs-lookup"><span data-stu-id="b694b-109">The conditional-AND operator cannot be overloaded, but overloads of the regular logical operators and operators [true](../../../csharp/language-reference/keywords/true.md) and [false](../../../csharp/language-reference/keywords/false.md) are, with certain restrictions, also considered overloads of the conditional logical operators.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="b694b-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="b694b-110">Example</span></span>  
- <span data-ttu-id="b694b-111">V následujícím příkladu, podmíněný výraz ve druhém `if` příkaz vyhodnocuje pouze první operand, protože operand vrací `false`.</span><span class="sxs-lookup"><span data-stu-id="b694b-111">In the following example, the conditional expression in the second `if` statement evaluates only the first operand because the operand returns `false`.</span></span>  
-  
- [!code-csharp[csRefOperators#48](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-and-operator_1.cs)]  
-  
-## <a name="c-language-specification"></a><span data-ttu-id="b694b-112">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b694b-112">C# Language Specification</span></span>  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a><span data-ttu-id="b694b-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="b694b-113">See Also</span></span>
+# <a name="ampamp-operator-c-reference"></a><span data-ttu-id="72493-102">&amp;&amp; – Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="72493-102">&amp;&amp; Operator (C# Reference)</span></span>
 
-- [<span data-ttu-id="b694b-114">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b694b-114">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="b694b-115">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b694b-115">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="b694b-116">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b694b-116">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
+<span data-ttu-id="72493-103">Podmíněné logického operátoru AND `&&`, označované také jako "krátký cyklus" logického operátoru AND, vypočítá logický operátor AND z jeho [bool](../keywords/bool.md) operandy.</span><span class="sxs-lookup"><span data-stu-id="72493-103">The conditional logical AND operator `&&`, also known as the "short-circuiting" logical AND operator, computes the logical AND of its [bool](../keywords/bool.md) operands.</span></span> <span data-ttu-id="72493-104">Výsledek `x && y` je `true` Pokud mají oba `x` a `y` vyhodnotit `true`.</span><span class="sxs-lookup"><span data-stu-id="72493-104">The result of `x && y` is `true` if both `x` and `y` evaluate to `true`.</span></span> <span data-ttu-id="72493-105">V opačném případě je výsledek `false`.</span><span class="sxs-lookup"><span data-stu-id="72493-105">Otherwise, the result is `false`.</span></span> <span data-ttu-id="72493-106">Pokud je první operand vyhodnocen jako `false`, druhý operand není vyhodnocen a výsledek operace `false`.</span><span class="sxs-lookup"><span data-stu-id="72493-106">If the first operand evaluates to `false`, the second operand is not evaluated and the result of operation is `false`.</span></span> <span data-ttu-id="72493-107">Následující příklad ukazuje toto chování:</span><span class="sxs-lookup"><span data-stu-id="72493-107">The following example demonstrates that behavior:</span></span>
+
+[!code-csharp-interactive[conditional logical AND](~/samples/snippets/csharp/language-reference/operators/ConditionalLogicalOperatorsExamples.cs#And)]
+
+<span data-ttu-id="72493-108">[Logického operátoru AND](and-operator.md) `&` také vypočítá logický operátor AND z jeho `bool` operandy, ale vždy vyhodnotí oba operandy.</span><span class="sxs-lookup"><span data-stu-id="72493-108">The [logical AND operator](and-operator.md) `&` also computes the logical AND of its `bool` operands, but always evaluates both operands.</span></span>
+
+## <a name="operator-overloadability"></a><span data-ttu-id="72493-109">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="72493-109">Operator overloadability</span></span>
+
+<span data-ttu-id="72493-110">Uživatelem definovaný typ nejde přetížit podmíněné logického operátoru AND.</span><span class="sxs-lookup"><span data-stu-id="72493-110">A user-defined type cannot overload the conditional logical AND operator.</span></span> <span data-ttu-id="72493-111">Ale pokud přetížení uživatelem definovaného typu [logický operátor AND](and-operator.md), [true](../keywords/true-operator.md), a [false](../keywords/false-operator.md) operátory určitým způsobem, `&&` operace může být vyhodnocen pro operandy typu.</span><span class="sxs-lookup"><span data-stu-id="72493-111">However, if a user-defined type overloads the [logical AND](and-operator.md), [true](../keywords/true-operator.md), and [false](../keywords/false-operator.md) operators in a certain way, the `&&` operation can be evaluated for the operands of that type.</span></span> <span data-ttu-id="72493-112">Další informace najdete v tématu [podmíněné logické operátory definované uživatelem](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="72493-112">For more information, see the [User-defined conditional logical operators](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="72493-113">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="72493-113">C# language specification</span></span>
+
+<span data-ttu-id="72493-114">Další informace najdete v tématu [podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="72493-114">For more information, see the [Conditional logical operators](~/_csharplang/spec/expressions.md#conditional-logical-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="72493-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="72493-115">See also</span></span>
+
+- [<span data-ttu-id="72493-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="72493-116">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="72493-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="72493-117">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="72493-118">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="72493-118">C# Operators</span></span>](index.md)
+- [<span data-ttu-id="72493-119">|| – operátor</span><span class="sxs-lookup"><span data-stu-id="72493-119">|| operator</span></span>](conditional-or-operator.md)
+- [! – operátor]<span data-ttu-id="72493-120">(logical-negation-operator.md)</span><span class="sxs-lookup"><span data-stu-id="72493-120">(logical-negation-operator.md)</span></span>
+- [<span data-ttu-id="72493-121">& – operátor</span><span class="sxs-lookup"><span data-stu-id="72493-121">& operator</span></span>](and-operator.md)

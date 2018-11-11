@@ -7,7 +7,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "25864521"
 ---
-# <a name="f-tutorials"></a><span data-ttu-id="6287c-101">F#Kurzy</span><span class="sxs-lookup"><span data-stu-id="6287c-101">F# Tutorials</span></span>
+# <a name="f-tutorials"></a><span data-ttu-id="0980e-101">F#Kurzy</span><span class="sxs-lookup"><span data-stu-id="0980e-101">F# Tutorials</span></span>
 
 > [!NOTE]
-<span data-ttu-id="6287c-102">Toto je stále probíhá.</span><span class="sxs-lookup"><span data-stu-id="6287c-102">This is still in-progress.</span></span>
+<span data-ttu-id="0980e-102">Toto je stále probíhá.</span><span class="sxs-lookup"><span data-stu-id="0980e-102">This is still in-progress.</span></span>
