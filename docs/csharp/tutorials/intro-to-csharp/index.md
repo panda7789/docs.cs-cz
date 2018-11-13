@@ -10,7 +10,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/27/2018
 ms.locfileid: "50186149"
 ---
-# <a name="introduction-to-c"></a>Úvod doC# #
+# <a name="introduction-to-c"></a>Úvod do C# #
 
 Vítá vás Úvod do C# kurzy. Tyto začínat interaktivní lekcí, které můžete spustit v prohlížeči.
 
