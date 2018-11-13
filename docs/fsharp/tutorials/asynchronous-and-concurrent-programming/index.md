@@ -7,7 +7,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "25864545"
 ---
-# <a name="asynchronous-and-concurrent-programming-in-f"></a><span data-ttu-id="b036c-101">Asynchronní a souběžné programování vF#</span><span class="sxs-lookup"><span data-stu-id="b036c-101">Asynchronous and Concurrent Programming in F#</span></span> #
+# <a name="asynchronous-and-concurrent-programming-in-f"></a><span data-ttu-id="4be3d-101">Asynchronní a souběžné programování vF#</span><span class="sxs-lookup"><span data-stu-id="4be3d-101">Asynchronous and Concurrent Programming in F#</span></span> #
 
 > [!NOTE]
-<span data-ttu-id="b036c-102">Toto je stále probíhá.</span><span class="sxs-lookup"><span data-stu-id="b036c-102">This is still in-progress.</span></span>
+<span data-ttu-id="4be3d-102">Toto je stále probíhá.</span><span class="sxs-lookup"><span data-stu-id="4be3d-102">This is still in-progress.</span></span>

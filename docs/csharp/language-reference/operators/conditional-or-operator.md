@@ -1,6 +1,6 @@
 ---
 title: '|| – operátor (Referenční dokumentace jazyka C#)'
-ms.date: 07/20/2015
+ms.date: 11/06/2018
 f1_keywords:
 - '||_CSharpKeyword'
 helpviewer_keywords:
@@ -8,40 +8,34 @@ helpviewer_keywords:
 - conditional-OR operator (||) [C#]
 - '|| operator [C#]'
 ms.assetid: 7d442d8e-400d-421f-b4d2-034bf82bcbdc
-ms.openlocfilehash: 58e5fd72a3748e7af0894093fc461c4efb543608
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: a391078372e4ec0a3882bed4515733adedffb547
+ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
+ms.lasthandoff: 11/07/2018
 ms.locfileid: "42925537"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="b4f23-102">|| – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="b4f23-102">|| Operator (C# Reference)</span></span>
-<span data-ttu-id="b4f23-103">Operátor podmíněného OR (`||`) provádí logický OR jeho `bool` operandy.</span><span class="sxs-lookup"><span data-stu-id="b4f23-103">The conditional-OR operator (`||`) performs a logical-OR of its `bool` operands.</span></span> <span data-ttu-id="b4f23-104">Pokud je první operand vyhodnocen jako `true`, není vyhodnocen Druhý operand.</span><span class="sxs-lookup"><span data-stu-id="b4f23-104">If the first operand evaluates to `true`, the second operand isn't evaluated.</span></span> <span data-ttu-id="b4f23-105">Pokud je první operand vyhodnocen jako `false`, druhý operátor určuje, jestli jako celek výraz OR vyhodnocen `true` nebo `false`.</span><span class="sxs-lookup"><span data-stu-id="b4f23-105">If the first operand evaluates to `false`, the second operator determines whether the OR expression as a whole evaluates to `true` or `false`.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="b4f23-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b4f23-106">Remarks</span></span>  
- <span data-ttu-id="b4f23-107">Operace</span><span class="sxs-lookup"><span data-stu-id="b4f23-107">The operation</span></span>  
-  
-```csharp  
-x || y  
-```  
-  
- <span data-ttu-id="b4f23-108">odpovídá operaci</span><span class="sxs-lookup"><span data-stu-id="b4f23-108">corresponds to the operation</span></span>  
-  
-```csharp  
-x | y  
-```  
-  
- <span data-ttu-id="b4f23-109">s výjimkou, že pokud `x` je `true`, `y` není vyhodnocen, protože operace OR `true` bez ohledu na hodnotu `y`.</span><span class="sxs-lookup"><span data-stu-id="b4f23-109">except that if `x` is `true`, `y` is not evaluated because the OR operation is `true` regardless of the value of `y`.</span></span> <span data-ttu-id="b4f23-110">Tento koncept se označuje jako "zkrácené" vyhodnocení.</span><span class="sxs-lookup"><span data-stu-id="b4f23-110">This concept is known as "short-circuit" evaluation.</span></span>  
-  
- <span data-ttu-id="b4f23-111">Operátor podmíněného OR nemůže být přetížená, ale přetíženími pravidelné logických operátorů a [true](../../../csharp/language-reference/keywords/true.md) a [false](../../../csharp/language-reference/keywords/false.md) operátorů, s určitými omezeními také považují za přetížení Podmíněné logické operátory.</span><span class="sxs-lookup"><span data-stu-id="b4f23-111">The conditional-OR operator cannot be overloaded, but overloads of the regular logical operators and the [true](../../../csharp/language-reference/keywords/true.md) and [false](../../../csharp/language-reference/keywords/false.md) operators are, with certain restrictions, also considered to be overloads of the conditional logical operators.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="b4f23-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="b4f23-112">Example</span></span>  
- <span data-ttu-id="b4f23-113">V následujících příkladech, výraz, který používá `||` pouze první operand vyhodnocen jako.</span><span class="sxs-lookup"><span data-stu-id="b4f23-113">In the following examples, the expression that uses `||` evaluates only the first operand.</span></span> <span data-ttu-id="b4f23-114">Výraz, který používá `|` vyhodnotí oba operandy.</span><span class="sxs-lookup"><span data-stu-id="b4f23-114">The expression that uses `|` evaluates both operands.</span></span> <span data-ttu-id="b4f23-115">V druhém příkladu dojde k výjimce za běhu je-li oba operandy vyhodnocují.</span><span class="sxs-lookup"><span data-stu-id="b4f23-115">In the second example, a run-time exception occurs if both operands are evaluated.</span></span>  
-  
- [!code-csharp[csRefOperators#52](../../../csharp/language-reference/operators/codesnippet/CSharp/conditional-or-operator_1.cs)]  
-  
-## <a name="see-also"></a><span data-ttu-id="b4f23-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="b4f23-116">See Also</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="2ed6d-102">|| – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="2ed6d-102">|| Operator (C# Reference)</span></span>
 
-- [<span data-ttu-id="b4f23-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b4f23-117">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="b4f23-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b4f23-118">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="b4f23-119">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b4f23-119">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
+<span data-ttu-id="2ed6d-103">Podmíněné logického operátoru OR `||`, označované také jako "krátký cyklus" logického operátoru OR, vypočítá logický operátor OR z jeho [bool](../keywords/bool.md) operandy.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-103">The conditional logical OR operator `||`, also known as the "short-circuiting" logical OR operator, computes the logical OR of its [bool](../keywords/bool.md) operands.</span></span> <span data-ttu-id="2ed6d-104">Výsledek `x || y` je `true` Pokud `x` nebo `y` vyhodnotí jako `true`.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-104">The result of `x || y` is `true` if either `x` or `y` evaluates to `true`.</span></span> <span data-ttu-id="2ed6d-105">V opačném případě je výsledek `false`.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-105">Otherwise, the result is `false`.</span></span> <span data-ttu-id="2ed6d-106">Pokud je první operand vyhodnocen jako `true`, druhý operand není vyhodnocen a výsledek operace `true`.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-106">If the first operand evaluates to `true`, the second operand is not evaluated and the result of operation is `true`.</span></span> <span data-ttu-id="2ed6d-107">Následující příklad ukazuje toto chování:</span><span class="sxs-lookup"><span data-stu-id="2ed6d-107">The following example demonstrates that behavior:</span></span>
+
+[!code-csharp-interactive[conditional logical OR](~/samples/snippets/csharp/language-reference/operators/ConditionalLogicalOperatorsExamples.cs#Or)]
+
+<span data-ttu-id="2ed6d-108">[Logického operátoru OR](or-operator.md) `|` také vypočítá logický operátor OR z jeho `bool` operandy, ale vždy vyhodnotí oba operandy.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-108">The [logical OR operator](or-operator.md) `|` also computes the logical OR of its `bool` operands, but always evaluates both operands.</span></span>
+
+## <a name="operator-overloadability"></a><span data-ttu-id="2ed6d-109">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="2ed6d-109">Operator overloadability</span></span>
+
+<span data-ttu-id="2ed6d-110">Uživatelem definovaný typ nejde přetížit podmíněné logický operátor OR.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-110">A user-defined type cannot overload the conditional logical OR operator.</span></span> <span data-ttu-id="2ed6d-111">Ale pokud přetížení uživatelem definovaného typu [logický operátor OR](or-operator.md), [true](../keywords/true-operator.md), a [false](../keywords/false-operator.md) operátory určitým způsobem, `||` operace může být vyhodnocen pro operandy typu.</span><span class="sxs-lookup"><span data-stu-id="2ed6d-111">However, if a user-defined type overloads the [logical OR](or-operator.md), [true](../keywords/true-operator.md), and [false](../keywords/false-operator.md) operators in a certain way, the `||` operation can be evaluated for the operands of that type.</span></span> <span data-ttu-id="2ed6d-112">Další informace najdete v tématu [podmíněné logické operátory definované uživatelem](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="2ed6d-112">For more information, see the [User-defined conditional logical operators](~/_csharplang/spec/expressions.md#user-defined-conditional-logical-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="2ed6d-113">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2ed6d-113">C# language specification</span></span>
+
+<span data-ttu-id="2ed6d-114">Další informace najdete v tématu [podmíněné logické operátory](~/_csharplang/spec/expressions.md#conditional-logical-operators) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="2ed6d-114">For more information, see the [Conditional logical operators](~/_csharplang/spec/expressions.md#conditional-logical-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="2ed6d-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2ed6d-115">See also</span></span>
+
+- [<span data-ttu-id="2ed6d-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2ed6d-116">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="2ed6d-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2ed6d-117">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="2ed6d-118">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2ed6d-118">C# Operators</span></span>](index.md)
+- [<span data-ttu-id="2ed6d-119">& & – operátor</span><span class="sxs-lookup"><span data-stu-id="2ed6d-119">&& operator</span></span>](conditional-and-operator.md)
+- [! – operátor]<span data-ttu-id="2ed6d-120">(logical-negation-operator.md)</span><span class="sxs-lookup"><span data-stu-id="2ed6d-120">(logical-negation-operator.md)</span></span>
+- [<span data-ttu-id="2ed6d-121">| – operátor</span><span class="sxs-lookup"><span data-stu-id="2ed6d-121">| operator</span></span>](or-operator.md)
