@@ -12,9 +12,9 @@ ms.locfileid: "50186149"
 ---
 # <a name="introduction-to-c"></a>Úvod do C# #
 
-Vítá vás Úvod do C# kurzy. Tyto začínat interaktivní lekcí, které můžete spustit v prohlížeči.
+Vítáme vás u kurzu Úvod do C#. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči.
 
-První lekce vysvětlují C# koncepty pomocí malé fragmenty kódu. Dozvíte se základy C# syntaxi a postupu při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je všechny interaktivní a vás bude psaní a spouštění kódu v rámci minut. První lekce předpokládají žádné předchozí znalosti programování nebo C# jazyka.
+První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
 
 Úvodní kurzy následující lekci Hello World jsou k dispozici prostřednictvím prostředí online prohlížeče nebo [ve vlastním místním vývojovém prostředí](local-environment.md). Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Je odkazů, které vám pomůžou nastavit prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
 
