@@ -36,5 +36,5 @@ Další informace najdete v tématu [podmíněné logické operátory](~/_csharp
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Operátory jazyka C#](index.md)
 - [|| – operátor](conditional-or-operator.md)
-- [! – operátor](logical-negation-operator.md)
+- [\! – operátor](logical-negation-operator.md)
 - [& – operátor](and-operator.md)
