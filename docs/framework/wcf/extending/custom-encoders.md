@@ -2,11 +2,11 @@
 title: Vlastní kodéry
 ms.date: 03/30/2017
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-ms.openlocfilehash: cd8b9172278ce5bcca2965872d697b03698bd850
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 036cbff9046df2d1179c5cc0921dd8d89757558b
+ms.sourcegitcommit: 8145ad08288bf141d68e3256cb1f7a3ad842ca33
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
+ms.lasthandoff: 11/22/2018
 ms.locfileid: "50034342"
 ---
 # <a name="custom-encoders"></a>Vlastní kodéry
@@ -60,7 +60,7 @@ Toto téma popisuje, jak vytvořit vlastní kodéry.
  Kromě zpracování dynamický slovník klíčů, jsou ve vyrovnávací paměti s relacemi zprávy přijímány jednoznačným způsobem. Místo vytváření čtečky přes dokument a její zpracování, používá vnitřní binárního kodéru `MessagePatterns` třídy dekonstruovat binárního datového proudu. Cílem je, že většina zprávy mají určitou sadu záhlaví, které se zobrazí v určitém pořadí při generování službou WCF. Zpráva této doby změny nepublikujete založené na co se očekává, že se rozdělí vzor systému. Pokud je úspěšná, inicializuje <xref:System.ServiceModel.Channels.MessageHeaders> objekt bez při parsování kódu XML. Pokud ne, vrátí se zpět na standardní metodu.  
   
 ### <a name="mtom-encoding"></a>Kódování MTOM  
- <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> Třída nemá další konfigurační vlastnost s názvem <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`.MaxBufferSize2A%>. To umístí horní mez na tom, kolik dat je povoleno ji uložit do vyrovnávací paměti při čtení zprávy. XML informace o sadě (informační sadu) nebo jiné části MIME možná muset být sestavit všechny části MIME do jedné zprávy do vyrovnávací paměti.  
+ <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> Třída nemá další konfigurační vlastnost s názvem <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement.MaxBufferSize%2A>. To umístí horní mez na tom, kolik dat je povoleno ji uložit do vyrovnávací paměti při čtení zprávy. XML informace o sadě (informační sadu) nebo jiné části MIME možná muset být sestavit všechny části MIME do jedné zprávy do vyrovnávací paměti.  
   
  Pro fungování s protokolem HTTP, poskytuje vnitřní třídu zpráv kodér MTOM některá interní rozhraní API pro `GetContentType` (což je také vnitřní) a `WriteMessage`, což je veřejná a mohou být přepsána nastaveními. Pokud chcete zajistit, aby hodnoty v hlavičkách protokolu HTTP svůj souhlas s hodnotami v hlavičky MIME se musí vyskytovat další komunikaci.  
   
