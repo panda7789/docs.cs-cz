@@ -3,11 +3,11 @@ title: CustomBindingElement
 ms.date: 03/30/2017
 ms.assetid: df959dc5-1aef-4338-a123-6ff3e7bc37af
 ms.openlocfilehash: ff0d7d8d6c6cb180043a834a60ca58159ca84c58
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183142"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296435"
 ---
 # <a name="custombindingelement"></a>CustomBindingElement
 CustomBindingElement  

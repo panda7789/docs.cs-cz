@@ -2,19 +2,18 @@
 title: Cesta formáty souborů v systémech Windows
 ms.date: 06/28/2018
 ms.technology: dotnet-standard
-ms.topic: article
 helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05146467f321a3c83f3637e2eecc4c7c42dc4ba0
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 1b79ff1991f1d9b803b0c35b4ae9565f70de0b56
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51214191"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296825"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 
@@ -90,8 +89,8 @@ Cesta systému DOS zařízení se skládá z následujících součástí:
 
    Konkrétní odkaz pro UNC, která je volána, nejsou překvapivě `UNC`. Příklad:
 
-      `\\.\UNC\Server\Share\Test\Foo.txt`
-      `\\?\UNC\Server\Share\Test\Foo.txt`
+  `\\.\UNC\Server\Share\Test\Foo.txt`  
+  `\\?\UNC\Server\Share\Test\Foo.txt`
 
     Pro zařízení UNC, část server a sdílet je formulářů svazku. Například v `\\?\server1\e:\utilities\\filecomparer\`, část server a sdílet je server1\utilities. To je důležité při volání metody, jako <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> relativní directory segmenty; se nikdy možné přejít po svazku. 
 
@@ -114,7 +113,7 @@ Jsou normalizovány téměř všechny cesty předán rozhraní Windows API. Běh
 - Vyhodnotí jako relativní directory součásti (`.` pro aktuální adresář a `..` pro nadřazený adresář).
 - Ořízne určitých znaků.
 
-Implicitně se stane toto normalizace, ale můžete to provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metoda, která zabalí volání [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).aspx). Můžete také volat Windows [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).aspx) přímo pomocí deklarace P/Invoke. Můžete také volat 
+Implicitně se stane toto normalizace, ale můžete to provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metoda, která zabalí volání [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea). Můžete také volat Windows [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) přímo pomocí deklarace P/Invoke.
 
 ### <a name="identifying-the-path"></a>Určení cesty
 

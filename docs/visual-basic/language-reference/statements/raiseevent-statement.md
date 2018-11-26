@@ -10,12 +10,12 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-ms.openlocfilehash: ef4dce290a7a7f6340b15aa4083cd40518e37d0d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ba4c05b3ef69d180f43ac3b90aa8fd6dee9c80fb
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507389"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296864"
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent – příkaz
 Spustí událost deklarovanou na úrovni modulu uvnitř třídy, formuláře nebo dokumentu.  
@@ -73,7 +73,7 @@ RaiseEvent eventname[( argumentlist )]
  Stisknutím klávesy F5 spusťte v předchozím příkladu a klikněte na tlačítko s popiskem **Start**. Prvního textového pole spustí odpočet sekundy. Po uplynutí doby úplné (10 sekund), se zobrazí "Hotovo" prvního textového pole.  
   
 > [!NOTE]
->  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [zřetězení](../../programming-guide/concepts/threading/index.md).  
+>  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [dělení na spravovaná vlákna](../../../standard/threading/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)  

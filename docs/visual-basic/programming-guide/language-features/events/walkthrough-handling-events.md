@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 35680c7476f48ca11ac4ddeda208c46c6b36c724
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fe797885a9063a19efc3f35da9cdf62d7f271693
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44191990"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297163"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
 Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
@@ -95,7 +95,7 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
 3.  Klikněte na tlačítko **zrušit** tlačítko Zastavit úlohy. Všimněte si, že vzhled **zrušit** ihned po kliknutí nezmění tlačítko. `Click` Událostí nemůže dojít až `My.Application.DoEvents` příkaz umožňuje zpracování událostí.  
   
     > [!NOTE]
-    >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Například v tomto podrobném návodu, musíte kliknout na **zrušit** dvakrát na tlačítko. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [zřetězení](../../../../visual-basic/programming-guide/concepts/threading/index.md).
+    >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Například v tomto podrobném návodu, musíte kliknout na **zrušit** dvakrát na tlačítko. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [dělení na spravovaná vlákna](../../../../standard/threading/index.md).
   
  Může být pro vás poučné spusťte program s F11 a krokovat kód řádku najednou. Jasně vidíte, jak provádění zadá `LongTask`a potom stručně znovu zadá `Form1` pokaždé, když `PercentDone` událost se vyvolá.  
   

@@ -3,12 +3,12 @@ title: Standardní vzory událostí .NET
 description: Další informace o vzory událostí .NET a vytvoření zdroje událostí úrovně standard a odběru a zpracování standardní události ve vašem kódu.
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: 0b10c440f4d05533032aa94819ec879f6a1ca2a4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 16a091dabe34a064ab3ee65a6d9f3e0ab36f1db4
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266764"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297033"
 ---
 # <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 
@@ -117,7 +117,7 @@ EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
 
 ## <a name="adding-another-event-declaration"></a>Přidání další deklarace událostí
 
-Pojďme přidat jeden další funkce a ukazují další idiomy jazyk pro události. Přidejme přetížení `Search()` metodu, která prochází přes všechny podadresáře při hledání souborů.
+Pojďme přidat jeden další funkce a ukazují další idiomy jazyk pro události. Přidejme přetížení `Search` metodu, která prochází přes všechny podadresáře při hledání souborů.
 
 To mohl být dlouhotrvající operace v adresáři s mnoha podadresáře. Přidejme událost, která získá vyvolá, když začne každé nové prohledávání adresáře. To umožňuje předplatitelům sledování průběhu a aktualizaci uživatele jde o průběhu. Všechny ukázky, které jste vytvořili zatím byly veřejné. Vnitřní událost vytvoříme tohoto objektu. To znamená, že můžete provést také typy používané pro interní argumenty také.
 
@@ -133,7 +133,7 @@ Dále definujte události. Tentokrát použijeme odlišnou syntaxi. Kromě použ
 
 V mnoha směrech kód, který napíšete zde zrcadlení, že kód, kompilátor vygeneruje pro definice pole událostí jste viděli dříve. Vytvořit událost pomocí syntaxe velmi podobné, který používá pro [vlastnosti](properties.md). Všimněte si, že obslužných rutin mají odlišné názvy: `add` a `remove`. Nazývají se přihlášení k odběru události, nebo zrušit odběr události. Všimněte si, že je také třeba deklarovat privátní pomocné pole k uložení proměnné události. Je inicializován na hodnotu null.
 
-V dalším kroku přidejme přetížení metody Search(), který prochází skrz podadresářů a vyvolává události, i. Nejjednodušší způsob, jak to provést, je výchozí argument použít k určení, zda chcete vyhledávat všechny adresáře:
+V dalším kroku přidejme přetížení `Search` metodu, která prochází přes podadresářů a vyvolává obou událostí. Nejjednodušší způsob, jak to provést, je výchozí argument použít k určení, zda chcete vyhledávat všechny adresáře:
 
 [!code-csharp[SearchImplementation](../../samples/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
 

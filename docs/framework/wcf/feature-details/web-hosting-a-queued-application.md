@@ -2,43 +2,44 @@
 title: Webhosting frontové aplikace
 ms.date: 03/30/2017
 ms.assetid: c7a539fa-e442-4c08-a7f1-17b7f5a03e88
-ms.openlocfilehash: f396ffadeca81d86d867842b63cad3c63d67ff3a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa50b3b66230930f9553d6f0238b0a5f9178f7a5
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297410"
 ---
 # <a name="web-hosting-a-queued-application"></a>Webhosting frontové aplikace
-Služba aktivace procesů systému Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují aplikace služby Windows Communication Foundation (WCF) tohoto hostitele. Model procesu WAS umožňuje zobecnit [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelské prostředí, které podporuje aktivaci na základě zpráv a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
+Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například net.msmq a msmq.formatname v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací v daném počítači.  
   
- BYL zahrnuje služba Aktivace řízení front zpráv (MSMQ), která aktivuje aplikace ve frontě, když jeden nebo více zpráv ukládány v jednom z fronty používá aplikace. Aktivace služby MSMQ je služby NT, který se automaticky spustí ve výchozím nastavení.  
+ BYL zahrnuje služba Aktivace řízení front zpráv (MSMQ), která aktivuje frontové aplikace, když jeden nebo více zpráv jsou umístěné v jednom z fronty v aplikaci použít. Aktivační služba MSMQ je služba NT se automaticky spustí ve výchozím nastavení.  
   
- Další informace o WAS a výhod najdete v tématu [hostování v aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md). Další informace o MSMQ najdete v tématu [fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ Další informace o WAS a jeho výhodách najdete v tématu [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md). Další informace o MSMQ najdete v tématu [fronty – přehled](../../../../docs/framework/wcf/feature-details/queues-overview.md).
   
 ## <a name="queue-addressing-in-was"></a>Fronty adresování ve WAS  
- BYLA aplikací mít adresy identifikátor URI (Uniform Resource). Adresy aplikací mít dvě části: základní předpony identifikátoru URI a specifické pro aplikaci, relativní adresu (cesta). Tyto dvě části zadejte externí adresu pro aplikaci, když propojeny. Základní předpony identifikátoru URI je vytvořený z vazby webu a používá se pro všechny aplikace v rámci lokality, například "net.msmq://localhost", "msmq.formatname://localhost" nebo "net.tcp://localhost". Aplikace adresy se pak vytvářejí provedením fragmenty cesta specifické pro aplikaci (například "/ applicationOne") a jejich připojení k základní identifikátor URI předpona, která přicházejí na úplný identifikátor URI aplikace, například "net.msmq://localhost/applicationOne".  
+ BYLO, že aplikace k dispozici identifikátor URI (Uniform Resource) adres. Aplikace adresy mít dvě části: základní identifikátor URI předponu a specifické pro aplikaci, relativní adresa (cesta). Tyto dvě části zadejte externí adresu aplikace, když propojeny. Základní identifikátor URI předponu je vytvořen z vazby webu a používá se pro všechny aplikace v rámci webu, například "net.msmq://localhost", "msmq.formatname://localhost" nebo "NET.TCP://localhost". Aplikace adresy jsou pak vytvořeny pomocí fragmentů cesty specifické pro aplikaci (například "/ applicationOne") a připojení k základní identifikátor URI předponu můžete přejít na úplný identifikátor URI aplikace, například "net.msmq://localhost/applicationOne".  
   
- Aktivace služby MSMQ používá identifikátor URI aplikace tak, aby odpovídaly fronta, kterou je třeba sledovat aktivace služby MSMQ pro zprávy. Při spuštění aktivační služby MSMQ, zobrazí všechny veřejné a soukromé fronty v počítači je nakonfigurovaný pro příjem z a monitoruje jejich pro zprávy. Každých 10 minut, aktivace služby MSMQ aktualizuje seznam fronty pro monitorování. Když se najde zprávu ve frontě, službu Aktivace odpovídá názvu fronty do aplikace nejdéle odpovídající identifikátor URI pro vazbu net.msmq a aktivuje aplikaci.  
-  
-> [!NOTE]
->  Aplikace aktivované musí odpovídat (nejdelší shody) předponu názvu fronty.  
-  
- Je třeba název fronty: msmqWebHost/orderProcessing/service.svc. Pokud /msmqWebHost/orderProcessing virtuálního adresáře s service.svc v něm má aplikace 1 a 2 aplikace má /msmqWebHost virtuálního adresáře s orderProcessing.svc v něm, je aktivovaná aplikace 1. Pokud se odstraní aplikaci 1, 2 aplikace je aktivována.  
+ Aktivační služba MSMQ používá identifikátor URI aplikace tak, aby odpovídaly frontě aktivační služba MSMQ musí sledovat pro zprávy. Při zahájení aktivace služby MSMQ, vypíše všechny veřejné a privátní fronty v počítači je nakonfigurovaný pro příjem z a monitoruje jejich zprávy. Každých 10 minut, aktivace služby MSMQ aktualizuje seznam front pro monitorování. Po nalezení zprávu ve frontě aktivační služby odpovídá názvu fronty na nejdelší odpovídající identifikátor URI aplikace pro vazbu net.msmq a aktivuje aplikace.  
   
 > [!NOTE]
->  Při vytvoření fronty, všechny zprávy do něj odeslané Neaktivujte aplikace dokud aktivace služby MSMQ aktualizuje seznam fronty, který je maximálně 10 minut od okamžiku, kdy fronta byla vytvořena. Restartování služby Aktivace aktualizuje seznamu fronty.  
+>  Aplikace aktivované musí odpovídat předponu názvu fronty (nejdelší shody).  
   
-### <a name="the-effect-of-private-and-public-queues-on-addressing"></a>Účinek privátní a veřejné fronty na adresování  
- Aktivace služby MSMQ nerozlišuje mezi monitorování privátní a veřejné fronty. Jako takový nemůže mít veřejné a soukromé fronty se stejným názvem. Pokud tak učiníte, může získat k hostované webové aplikaci aktivovat čtení pomocí kteréhokoli z fronty.  
+ Například je název fronty: msmqWebHost/orderProcessing/service.svc. Pokud má aplikace 1 /msmqWebHost/orderProcessing virtuální adresář s service.svc pod ním a 2 aplikace má /msmqWebHost virtuálního adresáře pomocí orderProcessing.svc pod ním, se aktivuje aplikace 1. Pokud se odstraní aplikace 1, 2 aplikace se aktivuje.  
+  
+> [!NOTE]
+>  Když se do fronty, všechny zprávy odeslané do ní neaktivovat aplikaci až do aktivace služby MSMQ aktualizuje seznam front, což je maximálně 10 minut od okamžiku vytvoření fronty. Restartuje se služba Aktivace aktualizuje seznamu fronty.  
+  
+### <a name="the-effect-of-private-and-public-queues-on-addressing"></a>Efekt privátní a veřejné fronty adresování  
+ Aktivační služba MSMQ nerozlišuje mezi monitorování privátní a veřejné fronty. V důsledku toho nemůže mít veřejné a soukromé fronty se stejným názvem. Pokud tak učiníte, může aplikace hostované webové aktivovat pomocí kteréhokoli z fronty pro čtení.  
   
 ### <a name="queue-configuration-for-activation"></a>Konfigurace fronty pro aktivaci  
- Aktivace služby MSMQ spouští jako síťová služba. Je služba, která monitoruje fronty k aktivaci aplikace. Pro něj k aktivaci aplikací z fronty musíte zadat fronty pro SÍŤOVOU službu přístup k prohlížení zpráv ve svém seznamu řízení přístupu (ACL).  
+ Aktivační služba MSMQ spouští jako síťová služba. Je služba, která monitoruje fronty k aktivaci aplikací. Pro ni k aktivaci aplikací z fronty musíte zadat fronty NETWORK SERVICE přístup ke prohlížet zprávy ve svém seznamu řízení přístupu (ACL).  
   
 ### <a name="poison-messaging"></a>Zacházení s nezpracovatelnými zasílání zpráv  
- Zpracování ve WCF poškozených zpráv se zpracovává souborem kanál, který není pouze zjistí, že zprávy je poškozen, ale vybírá dispozice, v závislosti na konfiguraci uživatele. Ve frontě v důsledku toho není do jedné zprávy. Aplikace hostované webové zruší následných časy a zpráva bude přesunuta do fronty opakování. V okamžiku, závisí na zpoždění opakování cyklus zpráva se přesune ze fronty opakování hlavní fronty a zkuste to znovu. Ale vyžaduje zařazených do fronty kanálu jako aktivní. Pokud je aplikace recyklované službou WAS, pak zpráva zůstane v fronty opakování dokud dorazí další zprávu ve frontě hlavní aktivovat aplikaci ve frontě. Alternativní řešení v tomto případě je přesunout zprávu ručně z fronty opakování zpět do hlavní fronty se znovu aktivovat aplikaci.  
+ Nezpracovatelná zpráva byla zpracování ve službě WCF zařizuje služba kanál, který nejen zjistí, že zprávy je poškozen, ale vybere dispozice v závislosti na konfiguraci uživatele. Ve frontě je proto do jedné zprávy. Hostované webové aplikace zruší po sobě jdoucích časy a zpráva bude přesunuta do fronty zkuste to znovu. V okamžiku, závisí zpoždění opakování cyklu zpráva bude přesunuta z fronty opakování do hlavní fronty a akci opakujte. Ale to vyžaduje, aby kanálu ve frontě jako aktivní. Pokud aplikace je recyklovány WAS, pak zpráva zůstane ve frontě opakovat až do další zpráva dorazí do hlavní fronty k aktivaci frontové aplikace. Alternativním řešením je v tomto případě přesuňte zprávu ručně z fronty opakování zpět do hlavní fronty se znovu aktivovat aplikace.  
   
-### <a name="subqueue-and-system-queue-caveat"></a>Dílčí fronta a přímý přístup fronty paměti systému  
- Aplikace hostované WAS nelze aktivovat, na základě zpráv ve frontě systému, jako jsou systémové fronty nedoručených zpráv nebo dílčí fronty, jako je například poškozených dílčí fronty. Jedná se o omezení pro tuto verzi produktu.  
+### <a name="subqueue-and-system-queue-caveat"></a>Dílčí fronty a systému fronty výstrahou  
+ Aplikace hostovaná služba WAS nejde aktivovat na základě zpráv ve frontě systému, jako jsou fronty nedoručených zpráv pro celý systém nebo dílčí fronty, jako jsou poškozené dílčí fronty. Jedná se o omezení pro tuto verzi produktu.  
   
 ## <a name="see-also"></a>Viz také  
  [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)  

@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: d9992c65b2f5f0f73af9f3234ac389b1c8647337
-  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.openlocfilehash: 7d6029e48c67259dc2fb28151196223f2490962f
+  ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/28/2018
-  ms.locfileid: "50200215"
+  ms.lasthandoff: 11/26/2018
+  ms.locfileid: "52297046"
 items:
 - durationInMinutes: 1
   content: >
@@ -98,10 +98,4 @@ items:
     > [!NOTE]
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- content: >-
-    Dokončili jste "Hello C#" Úvod do C# kurzu.
-
-
-    Další informace o práci s `string` zadejte [Průvodce programováním v C#](../../programming-guide/index.md) téma na [řetězce](../../programming-guide/strings/index.md).
-
-    [Jak tipy pro práci s řetězci](../../how-to/index.md#working-with-strings).
+- content: "Dokončili jste \"Hello C#\" Úvod do C# kurzu. Můžete kliknout **čísla ve C# ** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok \"Zachovat učení\" přináší zpět do těchto kurzů.\n\nDalší informace o `string` typu:\n- [C#Průvodce programováním v](../../programming-guide/index.md) téma na [řetězce](../../programming-guide/strings/index.md). \n- [Jak tipy pro práci s řetězci](../../how-to/index.md#working-with-strings)."

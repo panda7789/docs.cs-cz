@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 09/10/2018
 ms.technology: dotnet-cli
-ms.openlocfilehash: b31a0324c0d762e9898c681cc6581b3860d41f89
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 89839596509e1ffabd28b8903600a431b5a0ed9c
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025568"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296786"
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -47,7 +47,7 @@ Pojďme si rychlý návod:
    Soubor projektu určuje vše, co je potřeba k obnovení závislostí a sestavit program.
 
    * `OutputType` Značka Určuje, že vytváříme spustitelný soubor, jinými slovy konzolové aplikace.
-   * `TargetFramework` Značky Určuje, jaké implementace .NET jsme cílíte. V pokročilém scénáři, můžete zadat více cílových platforem a sestavit pro všechny ty v rámci jedné operace. V tomto kurzu se budeme držet sestavení pouze pro .NET Core 1.0.
+   * `TargetFramework` Značky Určuje, jaké implementace .NET jsme cílíte. V pokročilém scénáři, můžete zadat více cílových platforem a sestavit pro všechny ty v rámci jedné operace. V tomto kurzu se budeme držet sestavení pouze pro .NET Core 2.1.
 
    `Program.cs`:
 

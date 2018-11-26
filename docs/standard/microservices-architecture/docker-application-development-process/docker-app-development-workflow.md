@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/05/2018
-ms.openlocfilehash: 16e539af2ab503bddbd958ae4b60662b5923b1f1
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 00cffde7e7eb548f755b60f64aa596210b570d07
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035380"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297514"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -35,7 +35,7 @@ Aplikace se skládá z vlastní služby a další knihovny (závislosti). Níže
 
 V této příručce je podrobně popsán tento celý proces a všemi hlavními kroky jsou vysvětleny se zaměříte na prostředí Visual Studio.
 
-Při použití metodiky vývoj editoru a rozhraní příkazového řádku (například Visual Studio Code a rozhraní příkazového řádku Dockeru v systému macOS nebo Windows), musíte znát každý krok, obecně podrobnější než při použití sady Visual Studio. Další informace o práci v prostředí rozhraní příkazového řádku, najdete v e kniha [životního cyklu Kontejnerizovaných aplikací Dockeru pomocí nástrojů a Microsoft Platforms](http://aka.ms/dockerlifecycleebook/).
+Při použití metodiky vývoj editoru a rozhraní příkazového řádku (například Visual Studio Code a rozhraní příkazového řádku Dockeru v systému macOS nebo Windows), musíte znát každý krok, obecně podrobnější než při použití sady Visual Studio. Další informace o práci v prostředí rozhraní příkazového řádku, najdete v e kniha [životního cyklu Kontejnerizovaných aplikací Dockeru pomocí nástrojů a Microsoft Platforms](https://aka.ms/dockerlifecycleebook/).
 
 Při používání sady Visual Studio, mnoho z těchto kroků se postará služba za vás, což výrazně zvyšuje vaši produktivitu. To platí zejména při používání sady Visual Studio 2017 a cílení vícekontejnerových aplikací. Například s jediným klepnutím myši, sada Visual Studio přidá *soubor Dockerfile* a *docker-compose.yml* souborů pro projekty s konfigurací pro vaši aplikaci. Při spuštění aplikace v sadě Visual Studio vytvoří image Dockeru a spustí vícekontejnerová aplikace přímo v Dockeru. Dokonce i umožňuje ladit několik kontejnerů najednou. Tyto funkce zvýšit rychlost vývoje.
 
@@ -360,7 +360,7 @@ Důležitý bod je, že, jak je znázorněno v obrázek 5 – 12, v sadě Visual
 
 Docker-compose up a příkazy dockeru spustit (nebo spouštění a ladění kontejnerů v sadě Visual Studio) jsou dostatečné pro testování kontejnerů ve vašem vývojovém prostředí. Ale tento přístup byste neměli používat, pokud cílíte na clustery Dockeru a orchestrátorů, jako je Docker Swarm, Mesosphere DC/OS nebo Kubernetes. Pokud používáte cluster jako [režim Docker Swarm](https://docs.docker.com/engine/swarm/) (k dispozici v Docker CE pro Windows a Mac od verze 1.12), musíte nasadit a testovat pomocí dalších příkazů, jako jsou [vytvoření služby docker](https://docs.docker.com/engine/reference/commandline/service_create/) pro jednotné služby. Pokud nasazujete aplikace skládá z několika kontejnerů, můžete použít [docker compose sady](https://docs.docker.com/compose/reference/bundle/) a [docker nasazení myBundleFile](https://docs.docker.com/engine/reference/commandline/deploy/) se nasazení skládá aplikace jako *zásobníku*. Další informace naleznete v příspěvku blogu [Představujeme experimentální distribuované aplikace sady](https://blog.docker.com/2016/06/docker-app-bundle/) v dokumentaci k Dockeru. na serveru Docker.
 
-Pro [DC/OS](https://mesosphere.com/blog/2015/09/02/dcos-cli-command-line-tool-datacenter/) a [Kubernetes](http://kubernetes.io/docs/user-guide/deployments/) použijete jiné nasazení příkazy a skripty také.
+Pro [DC/OS](https://mesosphere.com/blog/2015/09/02/dcos-cli-command-line-tool-datacenter/) a [Kubernetes](https://kubernetes.io/docs/user-guide/deployments/) použijete jiné nasazení příkazy a skripty také.
 
 ![Krok 6 grafiky](./media/image17.png)
 
@@ -422,7 +422,7 @@ Kromě toho budete muset provést krok 2 (Přidání podpory Dockeru do vašich 
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>Pomocí příkazů prostředí PowerShell v souboru Dockerfile k nastavení kontejnery Windows
 
-[Kontejnery Windows](/virtualization/windowscontainers/about/index) umožňují převést svoje stávající aplikace pro Windows do Image Dockeru a nasadit je pomocí stejných nástrojů jako ostatní ekosystému Dockeru. Pokud chcete používat kontejnery Windows, spusťte příkazy Powershellu v souboru Dockerfile, jak je znázorněno v následujícím příkladu:
+[Kontejnery Windows](/virtualization/windowscontainers/about/) umožňují převést svoje stávající aplikace pro Windows do Image Dockeru a nasadit je pomocí stejných nástrojů jako ostatní ekosystému Dockeru. Pokud chcete používat kontejnery Windows, spusťte příkazy Powershellu v souboru Dockerfile, jak je znázorněno v následujícím příkladu:
 
 ```Dockerfile
 FROM microsoft/windowsservercore

@@ -3,11 +3,11 @@ title: Koncepty zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 944fa5ca-2c34-4268-8897-e005a61b470d
 ms.openlocfilehash: cdac8ab2ee257924327cc082a55839903c32f80c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185586"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296513"
 ---
 # <a name="security-concepts"></a>Koncepty zabezpečení
 V této části stručně popisuje pojmy související se zabezpečením Windows Communication Foundation (WCF).  

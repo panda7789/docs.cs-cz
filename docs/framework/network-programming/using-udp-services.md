@@ -17,164 +17,146 @@ helpviewer_keywords:
 - sending data, UDP
 - application protocols, UDP
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
-ms.openlocfilehash: 8f0c34b2226863bc04800ac4558c07e969f02154
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 40cf14936fef7c29f00112a143203ced605f482b
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191126"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296812"
 ---
 # <a name="using-udp-services"></a>Použití služeb UDP
-<xref:System.Net.Sockets.UdpClient> Třídy komunikuje se síťovými službami pomocí protokolu UDP. Vlastnosti a metody <xref:System.Net.Sockets.UdpClient> třídy abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu UDP.  
-  
- Protokolu UDP (User Datagram) je jednoduchý protokol, který se pokusí k doručování dat vzdáleného hostitele. Ale protože protokolu UDP je protokol pro přenos, odeslané na vzdálený koncový bod datagramy UDP zaručené doručení ani jsou zaručeně dorazí ve stejném pořadí, ve které se odesílají. Aplikace, které používají UDP musí být připravena ke zpracování datagramy chybí, duplicitní a mimo pořadí.  
-  
- K odeslání datagram pomocí protokolu UDP, musíte znát síťová adresa síťového zařízení, který je hostitelem služby, které potřebujete a číslo portu UDP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz [název služby a registru číslo portu protokolu přenosu](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.  
-  
- Speciální síťové adresy se používají pro podporu všesměrového vysílání zpráv UDP v sítích založených na protokolu IP. Následující diskuse používá rodina IP verze 4 adres jako příklad je použita na Internetu.  
-  
- Adresy IP verze 4 použijte k určení síťová adresa 32 bitů. Pomocí síťová maska 255.255.255.0 adres třídy C tyto bity jsou rozdělené do čtyř oktetech. Když vyjádřené v desítkové soustavě, tvoří čtyři oktety známými notacemi čtyřmi tečkami, jako je například 192.168.100.2. Číslo sítě tvoří první dva oktety (192.168 v tomto příkladu), třetí octet (100) definuje podsíť a poslední oktet (2) je identifikátor hostitele.  
-  
- Nastavení všechny bity IP adresy na jeden nebo 255.255.255.255 tvoří omezené adresa všesměrového vysílání. Odesílání UDP datagram na tuto adresu doručí do libovolného hostitele v místní síti segmentu. Protože směrovače nikdy předávat zprávy na tuto adresu, zobrazí se pouze hostitelé v segmentu sítě všesměrového vysílání zpráva.  
-  
- Vysílání mohou přesměrováni na konkrétní části sítě tak, že nastavíte všechny bity identifikátor hostitele. Například k odesílání vysílání pro všechny hostitele v síti identifikovaných podle IP adresy, počínaje 192.168.1 použijte adresu 192.168.1.255.  
-  
- Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> pro naslouchání odeslané na směrovanou adresu vysílání 192.168.1.255 na portu 11 000 datagramy UDP. Klient obdrží řetězec zprávy a zapisuje zprávy do konzoly.  
-  
-```vb  
-Imports System  
-Imports System.Net  
-Imports System.Net.Sockets  
-Imports System.Text  
-  
-Public Class UDPListener  
-   Private Const listenPort As Integer = 11000  
-  
-   Private Shared Sub StartListener()  
-      Dim done As Boolean = False  
-      Dim listener As New UdpClient(listenPort)  
-      Dim groupEP As New IPEndPoint(IPAddress.Any, listenPort)  
-      Try  
-         While Not done  
-            Console.WriteLine("Waiting for broadcast")  
-            Dim bytes As Byte() = listener.Receive(groupEP)  
-            Console.WriteLine("Received broadcast from {0} :", _  
-                groupEP.ToString())   
-            Console.WriteLine( _  
-                Encoding.ASCII.GetString(bytes, 0, bytes.Length))  
-            Console.WriteLine()  
-         End While  
-      Catch e As Exception  
-         Console.WriteLine(e.ToString())  
-      Finally  
-         listener.Close()  
-      End Try  
-   End Sub 'StartListener  
-  
-   Public Shared Function Main() As Integer  
-      StartListener()  
-      Return 0  
-   End Function 'Main  
-End Class 'UDPListener  
-```  
-  
-```csharp  
-using System;  
-using System.Net;  
-using System.Net.Sockets;  
-using System.Text;  
-  
-public class UDPListener   
-{  
-    private const int listenPort = 11000;  
-  
-    private static void StartListener()   
-    {  
-        bool done = false;  
-  
-        UdpClient listener = new UdpClient(listenPort);  
-        IPEndPoint groupEP = new IPEndPoint(IPAddress.Any,listenPort);  
-  
-        try   
-        {  
-            while (!done)   
-            {  
-                Console.WriteLine("Waiting for broadcast");  
-                byte[] bytes = listener.Receive( ref groupEP);  
-  
-                Console.WriteLine("Received broadcast from {0} :\n {1}\n",  
-                    groupEP.ToString(),  
-                    Encoding.ASCII.GetString(bytes,0,bytes.Length));  
-            }  
-  
-        }   
-        catch (Exception e)   
-        {  
-            Console.WriteLine(e.ToString());  
-        }  
-        finally  
-        {  
-            listener.Close();  
-        }  
-    }  
-  
-    public static int Main()   
-    {  
-        StartListener();  
-  
-        return 0;  
-    }  
-}  
-```  
-  
- Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> odesílat datagramů UDP na směrovanou adresu vysílání 192.168.1.255, pomocí portů 11 000. Klient odešle zprávu řetězci zadanému na příkazovém řádku.  
-  
-```vb  
-Imports System  
-Imports System.Net  
-Imports System.Net.Sockets  
-Imports System.Text  
-  
-Public Class Program  
-  
-    Overloads Public Shared Function Main(args() As [String]) As Integer  
-      Dim s As New Socket(AddressFamily.InterNetwork, SocketType.Dgram,  
-          ProtocolType.Udp)  
-      Dim broadcast As IPAddress = IPAddress.Parse("192.168.1.255")  
-      Dim sendbuf As Byte() = Encoding.ASCII.GetBytes(args(0))  
-      Dim ep As New IPEndPoint(broadcast, 11000)  
-      s.SendTo(sendbuf, ep)  
-      Console.WriteLine("Message sent to the broadcast address")  
-   End Function 'Main  
-End Class   
-```  
-  
-```csharp  
-using System;  
-using System.Net;  
-using System.Net.Sockets;  
-using System.Text;  
-  
-class Program   
-{  
-    static void Main(string[] args)   
-    {  
-        Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,  
-            ProtocolType.Udp);  
-  
-        IPAddress broadcast = IPAddress.Parse("192.168.1.255");  
-  
-        byte[] sendbuf = Encoding.ASCII.GetBytes(args[0]);  
-        IPEndPoint ep = new IPEndPoint(broadcast, 11000);  
-  
-        s.SendTo(sendbuf, ep);  
-  
-        Console.WriteLine("Message sent to the broadcast address");  
-    }  
-}  
-```  
-  
-## <a name="see-also"></a>Viz také  
- <xref:System.Net.Sockets.UdpClient>  
- <xref:System.Net.IPAddress>  
- 
+<xref:System.Net.Sockets.UdpClient> Třídy komunikuje se síťovými službami pomocí protokolu UDP. Vlastnosti a metody <xref:System.Net.Sockets.UdpClient> třídy abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu UDP.
+
+Protokolu UDP (User Datagram) je jednoduchý protokol, který se pokusí k doručování dat vzdáleného hostitele. Ale protože protokolu UDP je protokol pro přenos, odeslané na vzdálený koncový bod datagramy UDP zaručené doručení ani jsou zaručeně dorazí ve stejném pořadí, ve které se odesílají. Aplikace, které používají UDP musí být připravena ke zpracování datagramy chybí, duplicitní a mimo pořadí.
+
+K odeslání datagram pomocí protokolu UDP, musíte znát síťová adresa síťového zařízení, který je hostitelem služby, které potřebujete a číslo portu UDP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz [název služby a registru číslo portu protokolu přenosu](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.
+
+Speciální síťové adresy se používají pro podporu všesměrového vysílání zpráv UDP v sítích založených na protokolu IP. Následující diskuse používá rodina IP verze 4 adres jako příklad je použita na Internetu.
+
+Adresy IP verze 4 použijte k určení síťová adresa 32 bitů. Pomocí síťová maska 255.255.255.0 adres třídy C tyto bity jsou rozdělené do čtyř oktetech. Když vyjádřené v desítkové soustavě, tvoří čtyři oktety známými notacemi čtyřmi tečkami, jako je například 192.168.100.2. Číslo sítě tvoří první dva oktety (192.168 v tomto příkladu), třetí octet (100) definuje podsíť a poslední oktet (2) je identifikátor hostitele.
+
+Nastavení všechny bity IP adresy na jeden nebo 255.255.255.255 tvoří omezené adresa všesměrového vysílání. Odesílání UDP datagram na tuto adresu doručí do libovolného hostitele v místní síti segmentu. Protože směrovače nikdy předávat zprávy na tuto adresu, zobrazí se pouze hostitelé v segmentu sítě všesměrového vysílání zpráva.
+
+Vysílání mohou přesměrováni na konkrétní části sítě tak, že nastavíte všechny bity identifikátor hostitele. Například k odesílání vysílání pro všechny hostitele v síti identifikovaných podle IP adresy, počínaje 192.168.1 použijte adresu 192.168.1.255.
+
+Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> pro naslouchání datagramů UDP port 11 000. Klient obdrží řetězec zprávy a zapisuje zprávy do konzoly.
+
+```vb
+Imports System.Net
+Imports System.Net.Sockets
+Imports System.Text
+
+Public Class UDPListener
+   Private Const listenPort As Integer = 11000
+   
+   Private Shared Sub StartListener()
+      Dim listener As New UdpClient(listenPort)
+      Dim groupEP As New IPEndPoint(IPAddress.Any, listenPort)
+      Try
+         While True
+            Console.WriteLine("Waiting for broadcast")
+            Dim bytes As Byte() = listener.Receive(groupEP)
+            Console.WriteLine("Received broadcast from {0} :", groupEP)
+            Console.WriteLine(Encoding.ASCII.GetString(bytes, 0, bytes.Length))
+         End While
+      Catch e As SocketException
+         Console.WriteLine(e)
+      Finally
+         listener.Close()
+      End Try
+   End Sub 'StartListener
+   
+   Public Shared Sub Main()
+      StartListener()
+   End Sub 'Main
+End Class 'UDPListener
+```
+
+```csharp
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+
+public class UDPListener
+{
+    private const int listenPort = 11000;
+    
+    private static void StartListener()
+    {
+        UdpClient listener = new UdpClient(listenPort);
+        IPEndPoint groupEP = new IPEndPoint(IPAddress.Any, listenPort);
+        
+        try
+        {
+            while (true)
+            {
+                Console.WriteLine("Waiting for broadcast");
+                byte[] bytes = listener.Receive(ref groupEP);
+                
+                Console.WriteLine($"Received broadcast from {groupEP} :");
+                Console.WriteLine($" {Encoding.ASCII.GetString(bytes, 0, bytes.Length)}");
+            }
+        }
+        catch (SocketException e)
+        {
+            Console.WriteLine(e);
+        }
+        finally
+        {
+            listener.Close();
+        }
+    }
+    
+    public static void Main()
+    {
+        StartListener();
+    }
+}
+```
+
+Následující příklad kódu používá <xref:System.Net.Sockets.Socket> odesílat datagramů UDP na směrovanou adresu vysílání 192.168.1.255, pomocí portů 11 000. Klient odešle zprávu řetězci zadanému na příkazovém řádku.
+
+```vb
+Imports System.Net
+Imports System.Net.Sockets
+Imports System.Text
+
+Public Class Program
+    Public Shared Sub Main(args() As [String])
+      Dim s As New Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp)
+      Dim broadcast As IPAddress = IPAddress.Parse("192.168.1.255")
+      Dim sendbuf As Byte() = Encoding.ASCII.GetBytes(args(0))
+      Dim ep As New IPEndPoint(broadcast, 11000)
+      s.SendTo(sendbuf, ep)
+      Console.WriteLine("Message sent to the broadcast address")
+   End Sub 'Main
+End Class
+```
+
+```csharp
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+        
+        IPAddress broadcast = IPAddress.Parse("192.168.1.255");
+        
+        byte[] sendbuf = Encoding.ASCII.GetBytes(args[0]);
+        IPEndPoint ep = new IPEndPoint(broadcast, 11000);
+        
+        s.SendTo(sendbuf, ep);
+        
+        Console.WriteLine("Message sent to the broadcast address");
+    }
+}
+```
+
+## <a name="see-also"></a>Viz také
+ <xref:System.Net.Sockets.UdpClient><xref:System.Net.IPAddress>

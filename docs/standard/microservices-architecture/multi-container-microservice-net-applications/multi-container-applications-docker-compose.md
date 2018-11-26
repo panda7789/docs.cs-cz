@@ -1,28 +1,28 @@
 ---
 title: Definování vícekontejnerové aplikace pomocí docker-compose.yml
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Definování vícekontejnerové aplikace pomocí docker-compose.yml
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jak určit složení mikroslužeb pro vícekontejnerových aplikací pomocí docker-compose.yml.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/30/2017
-ms.openlocfilehash: d1c4166129716ccbbc86855e38d631f493b82290
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.date: 10/02/2018
+ms.openlocfilehash: 9ce8d64dbd481d30c6687b8747b2091733ea76db
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46937602"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297176"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
 
-V této příručce [docker-compose.yml](https://docs.docker.com/compose/compose-file/) souboru byla zavedena v části [kroku 4. Definování vašich služeb v docker-compose.yml při sestavování aplikace více kontejnerů Dockeru](#step4_define_svcs_in_docker_compose_yml). Existují však další způsoby, jak používat docker-compose soubory, které stojí za prozkoumání podrobněji.
+V této příručce [docker-compose.yml](https://docs.docker.com/compose/compose-file/) souboru byla zavedena v části [kroku 4. Definování vašich služeb v docker-compose.yml při sestavování aplikace více kontejnerů Dockeru](../docker-application-development-process/docker-app-development-workflow.md#step-4-define-your-services-in-docker-composeyml-when-building-a-multi-container-docker-application). Existují však další způsoby, jak používat docker-compose soubory, které stojí za prozkoumání podrobněji.
 
 Například můžete výslovně popsat, jak chcete nasadit vícekontejnerové aplikace v souboru docker-compose.yml. Volitelně může také popisovat, jak chcete sestavit vlastní Image Dockeru. (Vlastní Image Dockeru se dají taky vytvářet pomocí rozhraní příkazového řádku Dockeru.)
 
-V podstatě definování všech kontejnerů, které chcete nasadit, a navíc určité vlastnosti pro každý kontejner nasazení. Jakmile budete mít soubor s popisem nasazení více kontejnerů, můžete nasadit celé řešení v rámci jedné akce orchestrované systémem [docker-compose up](https://docs.docker.com/compose/overview/) příkazu rozhraní příkazového řádku, nebo ji můžete nasadit transparentně ze sady Visual Studio. V opačném případě musíte použít rozhraní příkazového řádku Dockeru k nasazení kontejnerů pomocí kontejneru v několika krocích pomocí dockeru, spusťte příkaz z příkazového řádku. Jednotlivé služby definované v docker-compose.yml proto musíte zadat právě jednu image nebo sestavení. Další klíče jsou volitelné a odpovídají jejich docker, spusťte příkazový řádek protějšky.
+V podstatě definování všech kontejnerů, které chcete nasadit, a navíc určité vlastnosti pro každý kontejner nasazení. Jakmile budete mít soubor s popisem nasazení více kontejnerů, můžete nasadit celé řešení v rámci jedné akce orchestrované systémem [docker-compose up](https://docs.docker.com/compose/overview/) příkazu rozhraní příkazového řádku, nebo ji můžete nasadit transparentně ze sady Visual Studio. V opačném případě je třeba použít k nasazení kontejnerů pomocí kontejneru v několika krocích pomocí rozhraní příkazového řádku Dockeru `docker run` příkazu z příkazového řádku. Jednotlivé služby definované v docker-compose.yml proto musíte zadat právě jednu image nebo sestavení. Další klíče jsou volitelné a odpovídají jejich `docker run` příkazového řádku protějšky.
 
 Následující kód YAML je definice je to možné globální, ale jeden soubor docker-compose.yml pro vzorovou aplikaci eShopOnContainers. Toto není skutečný docker-compose soubor v aplikaci eShopOnContainers. Místo toho je zjednodušený a konsolidované verze jednoho souboru, který není nejlepší způsob, jak pracovat s souborů docker-compose, jak budou vysvětlena dále.
 
 ```yml
-version: '2'
+version: '3.4'
 
 services:
   webmvc:
@@ -84,19 +84,16 @@ services:
     image: redis
 ```
 
-Kořenový klíč z tohoto souboru se služby. Pod tímto klíčem definujete služby chcete nasadit a spustit při spouštění docker-compose up příkaz nebo při nasazení ze sady Visual Studio s použitím tohoto souboru docker-compose.yml. V tomto případě soubor docker-compose.yml má několik služeb, které jsou definovány, jak je popsáno v následujícím seznamu.
+Kořenový klíč z tohoto souboru se služby. Pod tímto klíčem definujete služby chcete nasadit a spustit při spouštění `docker-compose up` příkaz nebo při nasazení ze sady Visual Studio s použitím tohoto souboru docker-compose.yml. V tomto případě soubor docker-compose.yml má několik služeb, které jsou definovány, jak je popsáno v následující tabulce.
 
--   webmvc kontejneru, včetně aplikací ASP.NET Core MVC využívání mikroslužeb from C na straně serveru\#
-
--   CATALOG.API kontejneru, včetně katalogu ASP.NET Core webového rozhraní API mikroslužby
-
--   Ordering.API kontejneru, včetně řazení ASP.NET Core webového rozhraní API mikroslužby
-
--   SQL.data kontejneru systémem SQL Server pro Linux, uchovávající databází mikroslužeb
-
--   basket.API kontejneru s nákupní košík ASP.NET Core webového rozhraní API mikroslužby
-
--   basket.data kontejneru Služba mezipaměti REDIS s databází nákupní košík jako mezipaměť REDIS
+| Název služby | Popis |
+|--------------|-------------|
+| webmvc       | Kontejneru, včetně aplikací ASP.NET Core MVC využívání mikroslužeb from C na straně serveru\#|
+| CATALOG.API  | Kontejner včetně katalogu ASP.NET Core webového rozhraní API mikroslužby |
+| Ordering.API | Kontejner včetně řazení ASP.NET Core webového rozhraní API mikroslužby |
+| SQL.data     | Kontejner systémem SQL Server pro Linux, uchovávající databází mikroslužeb |
+| basket.API   | Kontejner s nákupní košík ASP.NET Core webového rozhraní API mikroslužby |
+| basket.data  | Spuštění REDIS kontejneru služby cache service, s databází nákupní košík jako mezipaměť REDIS |
 
 ### <a name="a-simple-web-service-api-container"></a>Jednoduchý kontejner rozhraní API webové služby
 
@@ -140,7 +137,7 @@ Existují také jiné, pokročilejší docker-compose.yml nastavení, které se 
 
 ### <a name="using-docker-compose-files-to-target-multiple-environments"></a>Pomocí souborů docker-compose cílit na více prostředí
 
-Soubory docker-compose.yml jsou soubory definic a mohou být využívána více infrastruktury, které rozumí formátu. Nástroj nejjednodušší je docker-compose příkazu, ale další nástroje, jako je srozuměni tento soubor s orchestrátory (například Docker Swarm).
+Soubory docker-compose.yml jsou soubory definic a mohou být využívána více infrastruktury, které rozumí formátu. Nástroj nejjednodušší je příkazu docker-compose.
 
 Proto se s použitím příkazu je možné cílit na následující hlavní scénáře docker-compose.
 
@@ -159,16 +156,16 @@ Důležitou součástí procesu kontinuální integrace (CI) ani průběžného 
 Pomocí Docker Compose můžete vytvořit a odstranit izolované prostředí velmi snadno v několika příkazů z příkazového řádku nebo skripty, například následující příkazy:
 
 ```
-docker-compose up -d
+docker-compose -f docker-compose.yml -f docker-compose-test.override.yml up -d
 ./run_unit_tests
-docker-compose down
+docker-compose -f docker-compose.yml -f docker-compose.test.override.yml down
 ```
 
 #### <a name="production-deployments"></a>Nasazení v produkčním prostředí
 
-Compose můžete použít také k nasazení na vzdálený modul Docker. Obvyklý případ je nasadit do jedné instance hostitele Docker (jako jsou produkční virtuální počítač nebo server opatřena [Docker Machine](https://docs.docker.com/machine/overview/)). Ale mohou být také celý [Docker Swarm](https://docs.docker.com/swarm/overview/) clusteru, protože v clusterech, budou také kompatibilní se soubory docker-compose.yml.
+Compose můžete použít také k nasazení na vzdálený modul Docker. Obvyklý případ je nasadit do jedné instance hostitele Docker (jako jsou produkční virtuální počítač nebo server opatřena [Docker Machine](https://docs.docker.com/machine/overview/)).
 
-Pokud používáte jiné orchestrator (Azure Service Fabric, Mesos DC/OS, Kubernetes, atd.), můžete potřebovat přidat instalační program a metadata nastavení konfigurace podobné těm v docker-compose.yml, ale ve formátu vyžaduje další nástroje orchestrator.
+Pokud používáte jiné orchestrator (Azure Service Fabric, Kubernetes, atd.), můžete potřebovat přidat instalační program a metadata nastavení konfigurace podobné těm v docker-compose.yml, ale ve formátu vyžaduje další nástroje orchestrator.
 
 V každém případě docker-compose je vhodné nástroje a metadata formát pro vývoj, testování a produkční pracovní postupy, i když pracovním postupu se může lišit na orchestrátoru, který používáte.
 
@@ -180,11 +177,11 @@ Při cílení na jiné prostředí, byste měli použít více soubory compose. 
 
 Můžete použít soubor jednoho docker-compose.yml jako zjednodušené příkladů uvedených v předchozí části. Který však není doporučeno pro většinu aplikací.
 
-Ve výchozím nastavení přečte vytvořit dva soubory, docker-compose.yml a docker-compose.override.yml volitelné soubor. Jak ukazuje obrázek 8-11, když pomocí sady Visual Studio a povolení podpory Dockeru, Visual Studio také vytvoří soubor docker-compose.ci.build,yml další pro použití z vašich kanálů CI/CD jako ve službách Azure DevOps.
+Ve výchozím nastavení přečte vytvořit dva soubory, docker-compose.yml a docker-compose.override.yml volitelné soubor. Jak je znázorněno v obrázek 6 – 11, když používáte aplikaci Visual Studio a povolení podpory Dockeru, Visual Studio také vytvoří soubor docker-compose.vs.debug.g.yml další ladění aplikace, si můžete prohlédnout tohoto souboru ve složce obj.\\Dockeru \\ ve složce hlavní řešení.
 
-![](./media/image12.png)
+![docker-compose strukturu souboru projektu: .dockerignore ignorovat soubory. docker-compose.yml, k vytváření mikroslužeb; docker-compose.override.yml ke konfiguraci prostředí mikroslužeb.](./media/image12.png)
 
-**Obrázek 8-11**. docker-compose soubory v sadě Visual Studio 2017
+**Obrázek 6 – 11**. docker-compose soubory v sadě Visual Studio 2017
 
 Můžete upravit docker-compose soubory v libovolném editoru, jako je Visual Studio Code nebo Sublime a spusťte aplikaci docker-compose up příkazu.
 
@@ -194,23 +191,23 @@ Soubor docker-compose.override.yml jako její název napovídá, obsahuje konfig
 
 #### <a name="targeting-multiple-environments"></a>Cílení na více prostředí
 
-Typický případ použití je při definování více compose soubory, je možné cílit na více prostředí, jako jsou výroba, Fázování importu, průběžná integrace a vývoje. Pro podporu těchto rozdílů, můžete rozdělit konfiguraci psaní do více souborů, jak ukazuje obrázek 8 – 12.
+Typický případ použití je při definování více compose soubory, je možné cílit na více prostředí, jako jsou výroba, Fázování importu, průběžná integrace a vývoje. Pro podporu těchto rozdílů, můžete rozdělit konfiguraci psaní do více souborů, jak je znázorněno v obrázek 6-12.
 
-![](./media/image13.png)
+![Můžete kombinovat několik souborů docker-compose*.fml pro zpracování různých prostředí.](./media/image13.png)
 
-**Obrázek 8-12**. Několik souborů docker-compose přepsání hodnot v souboru docker-compose.yml základní
+**Obrázek 6-12**. Několik souborů docker-compose přepsání hodnot v souboru docker-compose.yml základní
 
-Začněte s soubor základní docker-compose.yml. Tuto základní soubor musí obsahovat nastavení konfigurace základní nebo statické, které se nemění v závislosti na prostředí. Například aplikaci eShopOnContainers má následující soubor docker-compose.yml jako základního souboru.
+Začněte s soubor základní docker-compose.yml. Tuto základní soubor musí obsahovat nastavení konfigurace základní nebo statické, které se nemění v závislosti na prostředí. Například aplikaci eShopOnContainers má následující soubor docker-compose.yml (zjednodušená méně službami) jako základního souboru.
 
 ```yml
 #docker-compose.yml (Base)
-version: '3'
+version: '3.4'
 services:
   basket.api:
     image: eshop/basket.api:${TAG:-latest}
     build:
-      context: ./src/Services/Basket/Basket.API
-      dockerfile: Dockerfile    
+      context: .
+      dockerfile: src/Services/Basket/Basket.API/Dockerfile    
     depends_on:
       - basket.data
       - identity.api
@@ -219,8 +216,8 @@ services:
   catalog.api:
     image: eshop/catalog.api:${TAG:-latest}
     build:
-      context: ./src/Services/Catalog/Catalog.API
-      dockerfile: Dockerfile    
+      context: .
+      dockerfile: src/Services/Catalog/Catalog.API/Dockerfile    
     depends_on:
       - sql.data
       - rabbitmq
@@ -228,8 +225,8 @@ services:
   marketing.api:
     image: eshop/marketing.api:${TAG:-latest}
     build:
-      context: ./src/Services/Marketing/Marketing.API
-      dockerfile: Dockerfile    
+      context: .
+      dockerfile: src/Services/Marketing/Marketing.API/Dockerfile    
     depends_on:
       - sql.data
       - nosql.data
@@ -239,8 +236,8 @@ services:
   webmvc:
     image: eshop/webmvc:${TAG:-latest}
     build:
-      context: ./src/Web/WebMVC
-      dockerfile: Dockerfile    
+      context: .
+      dockerfile: src/Web/WebMVC/Dockerfile    
     depends_on:
       - catalog.api
       - ordering.api
@@ -280,7 +277,7 @@ Docker-compose.override.yml se obvykle používá pro vaše vývojové prostřed
 
 ```yml
 #docker-compose.override.yml (Extended config for DEVELOPMENT env.)
-version: '3'
+version: '3.4'
 
 services: 
 # Simplified number of services here: 
@@ -308,7 +305,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - ConnectionString=${ESHOP_AZURE_CATALOG_DB:-Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word}
-      - PicBaseUrl=${ESHOP_AZURE_STORAGE_CATALOG_URL:-http://localhost:5101/api/v1/catalog/items/[0]/pic/}   
+      - PicBaseUrl=${ESHOP_AZURE_STORAGE_CATALOG_URL:-http://localhost:5202/api/v1/catalog/items/[0]/pic/}   
       - EventBusConnection=${ESHOP_AZURE_SERVICE_BUS:-rabbitmq}
       - EventBusUserName=${ESHOP_SERVICE_BUS_USERNAME}
       - EventBusPassword=${ESHOP_SERVICE_BUS_PASSWORD}         
@@ -350,18 +347,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - CatalogUrl=http://catalog.api
-      - OrderingUrl=http://ordering.api
-      - BasketUrl=http://basket.api
-      - LocationsUrl=http://locations.api
+      - PurchaseUrl=http://webshoppingapigw
       - IdentityUrl=http://10.0.75.1:5105
-      - MarketingUrl=http://marketing.api                                                    
+      - MarketingUrl=http://webmarketingapigw
       - CatalogUrlHC=http://catalog.api/hc
       - OrderingUrlHC=http://ordering.api/hc
-      - IdentityUrlHC=http://identity.api/hc     
+      - IdentityUrlHC=http://identity.api/hc
       - BasketUrlHC=http://basket.api/hc
       - MarketingUrlHC=http://marketing.api/hc
       - PaymentUrlHC=http://payment.api/hc
+      - SignalrHubUrl=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5202
       - UseCustomizationData=True
       - ApplicationInsights__InstrumentationKey=${INSTRUMENTATION_KEY}
       - OrchestratorType=${ORCHESTRATOR_TYPE}
@@ -370,9 +365,8 @@ services:
       - "5100:80"
   sql.data:
     environment:
-      - MSSQL_SA_PASSWORD=Pass@word
+      - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
-      - MSSQL_PID=Developer
     ports:
       - "5433:1433"
   nosql.data:
@@ -390,7 +384,7 @@ services:
 
 V tomto příkladu konfigurace přepisování vývoj uvádí některé porty na hostitele, definuje proměnných prostředí pomocí adresy URL pro přesměrování a určuje připojovací řetězce pro vývojové prostředí. Tato nastavení jsou všechny jenom pro vývojové prostředí.
 
-Při spuštění `docker-compose up` (nebo ji spustit ze sady Visual Studio), tento příkaz načte přepsání automaticky jako kdyby to byly sloučení oba soubory.
+Při spuštění `docker-compose up` (nebo ji spustit ze sady Visual Studio), tento příkaz načte přepsání automaticky jako kdyby to byly sloučení oba soubory.
 
 Předpokládejme, že má jiný soubor Compose pro produkční prostředí s jinou konfiguraci hodnoty, porty nebo připojovací řetězce. Můžete vytvořit soubor přepsání, jako je soubor s názvem `docker-compose.prod.yml` s různými nastaveními a proměnných prostředí.  Tento soubor může být uložená v různých úložiště Git nebo spravovat a zabezpečit jiný tým.
 
@@ -404,7 +398,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 #### <a name="using-environment-variables-in-docker-compose-files"></a>Použití proměnných prostředí v souborů docker-compose
 
-Je vhodné, zejména v produkčním prostředí, abyste mohli získat informace o konfiguraci z proměnných prostředí, jak budeme mít je znázorněno v předchozích příkladech. Odkaz na proměnnou prostředí v souborech docker-compose pomocí syntaxe \${MY\_VAR}. Následující řádek ze souboru dockeru compose.prod.yml ukazuje, jak odkazovat na hodnotu proměnné prostředí.
+Je vhodné, zejména v produkčním prostředí, abyste mohli získat informace o konfiguraci z proměnných prostředí, jak budeme mít je znázorněno v předchozích příkladech. Proměnné prostředí odkazovat ve vašich souborech docker-compose pomocí syntaxe ${MY\_VAR}. Následující řádek ze souboru dockeru compose.prod.yml ukazuje, jak odkazovat na hodnotu proměnné prostředí.
 
 ```yml
 IdentityUrl=http://${ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP}:5105
@@ -422,16 +416,16 @@ ESHOP_EXTERNAL_DNS_NAME_OR_IP=localhost
 ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=10.121.122.92
 ```
 
-Docker-compose očekává, že každý řádek v souboru .env být ve formátu &lt;proměnnou&gt;=&lt;hodnota&gt;.
+Docker-compose očekává, že každý řádek v souboru .env být ve formátu \<proměnnou\>=\<hodnota\>.
 
 Všimněte si, že hodnoty nastavené v běhovém prostředí vždy přepsat hodnoty definované v souboru .env. Podobným způsobem hodnoty předané prostřednictvím argumentů příkazového řádku příkaz také přepsat výchozí hodnoty nastavené v souboru .env.
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Přehled služby Docker Compose**
+-   **Přehled služby Docker Compose** <br/>
     [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
--   **Více soubory Compose**
+-   **Více soubory Compose** <br/>
     [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### <a name="building-optimized-aspnet-core-docker-images"></a>Vytváření optimalizované Image Dockeru ASP.NET Core
@@ -440,112 +434,41 @@ Pokud zkoumáte Dockeru a .NET Core na zdroje v síti Internet, zjistíte soubor
 
 ```
 FROM microsoft/dotnet
-
 WORKDIR /app
-
 ENV ASPNETCORE_URLS http://+:80
-
 EXPOSE 80
-
 COPY . .
-
 RUN dotnet restore
-
 ENTRYPOINT ["dotnet", "run"]
 ```
 
 Soubor Dockerfile takto bude fungovat. Je ale podstatně optimalizovat Image, zejména produkčních imagí.
 
-V modelu mikroslužeb a kontejnerů jsou neustále spouštění kontejnerů. Typické způsob, jak pomocí kontejnerů nerestartuje spící kontejner, protože kontejneru je jedno použití. Orchestrátory (jako je Docker Swarm, Kubernetes, DC/OS nebo Azure Service Fabric) jednoduše vytvořte nové instance z imagí. To znamená, že potřebujete optimalizovat předkompilace aplikace, když je sestaven tak proces vytváření instancí bude rychlejší. Při spuštění kontejneru musí být připraveny ke spuštění. Nesmí obnovit a kompilaci za běhu, dotnet restore a dotnet sestavovací příkazy z rozhraní příkazového řádku dotnet, jak vidíte v mnoha blogové příspěvky o .NET Core a Docker.
+V modelu mikroslužeb a kontejnerů jsou neustále spouštění kontejnerů. Typické způsob, jak pomocí kontejnerů nerestartuje spící kontejner, protože kontejneru je jedno použití. Orchestrátory (jako je Kubernetes a Azure Service Fabric) jednoduše vytvořte nové instance z imagí. To znamená, že potřebujete optimalizovat předkompilace aplikace, když je sestaven tak proces vytváření instancí bude rychlejší. Při spuštění kontejneru musí být připraveny ke spuštění. Nesmí obnovit a kompilaci za běhu použití `dotnet restore` a `dotnet build` příkazy z rozhraní příkazového řádku dotnet to, jak vidíte v mnoha blogové příspěvky o .NET Core a Docker.
 
-Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na výkon při spouštění a vytváří některé optimalizované Image Dockeru, jako je třeba [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) bitové kopie, které jsou k dispozici na [Docker Hubu](https://hub.docker.com/r/microsoft/aspnetcore/), porovnání standardní [ Microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) nebo [microsoft/nanoserver](https://github.com/dotnet/dotnet-docker/blob/master/1.0/nanoserver/runtime/Dockerfile) bitové kopie. [Microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) image poskytuje automatické nastavení aspnetcore\_adresy URL na port 80 a mezipaměti pre-ngend sestavení; obě nastavení za následek rychlejší spuštění.
+Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v <span class="underline">microsoft/dotnet</span>, začínající s verzí 2.1:
+
+1.  **Vývoj**: kde se priorita je schopnost rychle interate a ladění změnám a velikosti je sekundární.
+
+2.  **Sestavení**: priorita je při kompilaci aplikace a obsahuje binární soubory a další závislosti optimalizovat binární soubory.
+
+3.  **Produkční**: tam, kde je zaměřena tak rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsahu nedded ke spuštění aplikace.
+
+Za tím účelem týmu .NET nabízí tři základní varianty v [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) (v Docker Hubu):
+
+1.  **Sada SDK**: pro scénáře vývoje a sestavení.
+2.  **modul runtime**: pro produkční scénář a
+3.  **modul runtime deps**: pro produkční scénáře [samostatná aplikace](https://docs.microsoft.com/dotnet/core/deploying/index#self-contained-deployments-scd).
+
+Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy URL na port 80 a pre-ngend mezipaměti sestavení, které vám pomůžou získat rychlejší spuštění.
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Vytváření optimalizované Image Dockeru s ASP.NET Core**
+-   **Vytváření optimalizované Image Dockeru s ASP.NET Core** <br/>
     [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
-### <a name="building-the-application-from-a-build-ci-container"></a>Vytvoření aplikace z kontejneru sestavení (CI)
-
-Další výhodou Dockeru je, že můžete vytvářet aplikace z předkonfigurovaných kontejneru, jak je znázorněno v obrázek 8-13, takže není nutné k vytvoření sestavení počítače nebo virtuálního počítače pro sestavení aplikace. Můžete použít nebo otestování tohoto sestavení kontejneru spuštěním na vývojovém počítači. Ale co je ještě zajímavější, které můžete použít stejný kontejner sestavení z vašeho kanálu CI (průběžná integrace).
-
-![](./media/image14.png)
-
-**Obrázek 8-13**. Sestavení – kontejner docker kompilace .NET binární soubory 
-
-V tomto scénáři zajišťuje [microsoft/aspnetcore-build](https://hub.docker.com/r/microsoft/aspnetcore-build/) image, kterou můžete použít ke kompilaci a vytváření aplikací ASP.NET Core. Výstup se umístí do image založenou na [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) bitovou kopii, která je obrázek optimalizovaný modul runtime, jako v předchozí části.
-
-Image aspnetcore-build obsahuje všechno, co potřebujete, aby bylo možné zkompilovat aplikaci ASP.NET Core, včetně .NET Core, sady SDK technologie ASP.NET, npm, Bower, Gulp, atd.
-
-Potřebujeme tyto závislosti v okamžiku sestavení. Ale jsme nechcete, aby tyto aplikace provádět za běhu, protože by byla image zbytečně velký. V aplikaci eShopOnContainers aplikaci, můžete vytvořit aplikaci z kontejneru jednoduše spuštěním tohoto příkazu docker-compose.
-
-```
-  docker-compose -f docker-compose.ci.build.yml up
-```
-
-Obrázek 8-14 ukazuje tento příkaz spouštění na příkazovém řádku.
-
-![](./media/image15.png)
-
-**Obrázek 8-14.** Vytvoření aplikace .NET v kontejneru
-
-Jak vidíte, je kontejner, na kterém běží sestavení ci\_počet kontejnerů: 1. To je založené na image aspnetcore-build tak, aby jeho kompilace a sestavení celé aplikace z v rámci tohoto kontejneru, nikoli z vašeho počítače. To znamená Proč ve skutečnosti je sestavení a kompilace projektů .NET Core v systému Linux, protože tento kontejner běží na hostiteli systému Linux Docker výchozí.
-
-[Docker-compose.ci.build.yml](https://github.com/dotnet/eShopOnContainers/blob/master/docker-compose.ci.build.yml) soubor pro tuto bitovou kopii (součást aplikaci eShopOnContainers) obsahuje následující kód. Uvidíte, že začne sestavení kontejneru pomocí [microsoft/aspnetcore-build](https://hub.docker.com/r/microsoft/aspnetcore-build/) bitové kopie.
-
-```yml
-version: '3'
-
-services:
-
-  ci-build:
-
-    image: microsoft/aspnetcore-build:2.0
-
-    volumes:
-      - .:/src
-
-    working_dir: /src
-
-    command: /bin/bash -c "pushd ./src/Web/WebSPA && npm rebuild node-sass && popd && dotnet restore ./eShopOnContainers-ServicesAndWebApps.sln && dotnet publish ./eShopOnContainers-ServicesAndWebApps.sln -c Release -o ./obj/Docker/publish"
-
-```
-
-* Počínaje **.NET Core 2.0**, `dotnet restore` příkaz spustí automaticky při `dotnet publish` spuštění příkazu.
-
-Po sestavení kontejneru je v provozu, spouští příkaz dotnet restore sady .NET SDK a dotnet publikovat příkazy spouštěly pro všechny projekty v řešení mohli zkompilovat .NET bits. V takovém případě aplikaci eShopOnContainers také obsahuje SPA podle TypeScript a Angular pro klientský kód, a proto potřebuje také kontrolovat závislosti jazyka JavaScript pomocí npm, ale tato akce není v relaci s bity .NET.
-
-Dotnet publikovat příkaz sestavení a publikuje kompilovaný výstup v rámci složky projektu, každý... Složka /obj/Docker/Publish, jak ukazuje obrázek 8 – 15.
-
-![](./media/image16.png)
-
-**Obrázek 8 – 15.** Binární soubory generované záznamem pro dotnet příkazu pro publikování
-
-#### <a name="creating-the-docker-images-from-the-cli"></a>Vytvoření Image Dockeru z rozhraní příkazového řádku
-
-Po publikování výstup aplikace do souvisejících složek (v rámci každého projektu), dalším krokem je ve skutečnosti sestavit Image Dockeru. K tomuto účelu použijte docker-compose sestavení a docker-compose up příkazy, jak ukazuje obrázek 8 – 16.
-
-![](./media/image17.png)
-
-**Obrázek 8 – 16.** Vytváření imagí Dockeru a spuštění kontejnerů
-
-Obrázek 8-17 můžete zobrazit, jak vytvářet docker-compose spuštění příkazu.
-
-![](./media/image18.png)
-
-**Obrázek 8-17**. Vytváření imagí Dockeru docker-compose příkaz sestavení
-
-Rozdíl mezi docker-compose sestavení a docker-compose up příkazy je, že docker-compose up sestavení a spuštění imagí.
-
-Při použití sady Visual Studio jsou všechny tyto kroky provést na pozadí. Visual Studio zkompiluje aplikaci .NET, vytvoří Image Dockeru a umožňuje nasazení kontejnerů do hostitele Dockeru. Visual Studio nabízí další funkce, jako je schopnost ladit vaše kontejnery spuštěné v Dockeru, přímo ze sady Visual Studio.
-
-Celkové takeway zde je, že se můžete k sestavení aplikace stejný způsobem by měl svůj kanál CI/CD sestavte ho – z kontejneru místo z místního počítače. Po s obrázky vytvořené, pak stačí pro spuštění imagí Dockeru pomocí dockeru-compose up příkazu.
-
-#### <a name="additional-resources"></a>Další zdroje
-
--   **Vytváření bitů z kontejneru: nastavení řešení aplikaci eShopOnContainers v prostředí Windows CLI (rozhraní příkazového řádku dotnet, rozhraní příkazového řádku Dockeru a VS Code)**
-    [*https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI, - Docker – rozhraní příkazového řádku- a -VS-kódu)*](https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code))
-
+-   **Vytváření imagí Dockeru pro aplikace .NET Core** <br/>
+    [*https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images*](https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images)
 
 >[!div class="step-by-step"]
 [Předchozí](data-driven-crud-microservice.md)

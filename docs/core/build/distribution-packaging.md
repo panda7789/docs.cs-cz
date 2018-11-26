@@ -4,12 +4,12 @@ description: Zjistěte, jak zabalit, název a verzi .NET Core pro distribuci.
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.openlocfilehash: df1ba6a93106cd6b3ceafa93b7c548287878c3fe
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 41e8729d3058c2e3e1ea1cab9a8f28b3062bb93c
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840485"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297215"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET core
 
@@ -46,7 +46,7 @@ Při instalaci .NET Core se skládá z několika komponent, které jsou layed si
 
 - (1) **dotnet** hostitele (označované také jako "multiplexor") má dvě odlišné role: Aktivace modulu runtime pro spuštění aplikace a aktivovat sadu SDK a odesílat příkazy do něj. Hostitel je nativní spustitelný soubor (`dotnet.exe`).
 
-Během jednoho hostitele se většina jiných komponent jsou v označené verzí adresáře (2,3,5,6). Tyto prostředky více verzí může být k dispozici v systému, protože jsou nainstalované vedle sebe.
+Během jednoho hostitele se většina jiných komponent jsou v označené verzí adresáře (2,3,5,6). To znamená, že více verzí může být k dispozici v systému, protože jsou nainstalované vedle sebe.
 
 - (2) **hostitele/fxr/\<fxr verze >** obsahuje logiku rozlišení framework používá hostitel. Hostitel používá nejnovější hostfxr, který je nainstalován. Hostfxr zodpovídá za výběr vhodné runtime při spuštění aplikace .NET Core. Například aplikace vytvořené pro .NET Core 2.0.0 použije 2.0.5 modulu runtime, až bude k dispozici. Obdobně hostfxr vybere vhodnou sadu SDK během vývoje.
 
