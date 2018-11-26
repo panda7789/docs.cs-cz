@@ -1,20 +1,20 @@
 ---
 title: Výrazy dotazu (F#)
-description: Další informace o podpoře výrazu dotazu LINQ v JAZYKU programovací jazyk F#.
+description: Další informace o podpoře výrazu dotazu LINQ v JAZYKU F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6586d991dde550380d04c4d9831bb954eb94a715
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 00398e7cb8876f9bbe11606b7a1024da9d2c35f3
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48033490"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297150"
 ---
 # <a name="query-expressions"></a>Výrazy dotazu
 
 > [!NOTE]
-Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
-Výrazy dotazů umožňují dotazování na zdroj dat a umístit data v požadované podobě. Výrazy dotazů poskytovat podporu pro funkci LINQ v jazyce F#.
+Výrazy dotazů umožňují dotazování na zdroj dat a umístit data v požadované podobě. Výrazy dotazů poskytovat podporu pro LINQ v JAZYKU F#.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -56,7 +56,7 @@ Operátory dotazů umožňují určit podrobnosti o dotazu, jako např. Chcete z
 
 Ve výrazech dotazů jsou povoleny pouze výrazy, které lze do kódu SQL. Například žádná volání funkce jsou povoleny ve výrazech při použití `where` – operátor dotazu.
 
-Tabulka 1 zobrazuje dostupných operátorů dotazu. Kromě toho najdete v článku tabulka2, která porovná dotazy SQL a odpovídající výrazy dotazu F# dále v tomto tématu. Někteří poskytovatelé typů nejsou podporovány některé operátory dotazu. Zejména poskytovatele typu OData má zobrazení omezenou operátorů dotazu, které podporuje z důvodu omezení v prostředí OData. Další informace najdete v tématu [odataservice – zprostředkovatel typu (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
+Tabulka 1 zobrazuje dostupných operátorů dotazu. Kromě toho najdete v článku tabulka2, která porovná dotazy SQL a ekvivalent F# dotazování dále v tomto tématu. Někteří poskytovatelé typů nejsou podporovány některé operátory dotazu. Zejména poskytovatele typu OData má zobrazení omezenou operátorů dotazu, které podporuje z důvodu omezení v prostředí OData. Další informace najdete v tématu [odataservice – zprostředkovatel typu (F#)](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e).
 
 Tato tabulka předpokládá databáze v následujícím tvaru:
 
@@ -499,7 +499,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 </table>
 
 ## <a name="comparison-of-transact-sql-and-f-query-expressions"></a>Porovnání výrazů dotazů v jazycích Transact-SQL a F#
-V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v jazyce F#. Kód v této tabulce také předpokládá stejné databázi jako v předchozí tabulce a stejné počáteční kód pro nastavení poskytovatele typu.
+V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a jejich ekvivalenty v F#. Kód v této tabulce také předpokládá stejné databázi jako v předchozí tabulce a stejné počáteční kód pro nastavení poskytovatele typu.
 
 
 ### <a name="table-2-transact-sql-and-f-query-expressions"></a>Tabulka 2. Výrazy dotazů v jazycích Transact-SQL a F#
@@ -508,7 +508,7 @@ V následující tabulce jsou uvedeny některé běžné dotazy Transact-SQL a j
 <table style="width:100%">
   <tr>
     <th>Příkaz Transact-SQL (nerozlišuje velikost písmen)</th>
-    <th>F# výrazu dotazu (rozlišuje velikost písmen)</th>
+    <th>F#Dotazování výrazu (rozlišuje velikost písmen)</th>
   </tr>
 <tr><td>
 Vyberte všechna pole z tabulky.</br>
@@ -1864,7 +1864,7 @@ query {
 |> Seq.iter (fun (studentName, courseName) -> printfn "%s %s" studentName courseName)
 ```
 
-A tady je úplný výstup při spuštění tohoto kódu v jazyce F# Interactive.
+A tady je úplný výstup, když je tento kód spuštěný F# interaktivní.
 
 ```
 --> Referenced 'C:\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\Type Providers\FSharp.Data.TypeProviders.dll'

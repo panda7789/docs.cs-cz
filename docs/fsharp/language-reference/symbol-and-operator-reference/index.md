@@ -1,29 +1,29 @@
 ---
 title: Referenční dokumentace symbolů a operátorů (F#)
-description: Další informace o symbolů a operátorů, které se používají v programovacím jazyce F#.
+description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
 ms.date: 04/04/2018
-ms.openlocfilehash: 0e36f6cfc75b7d2e79bcf7acb89d260fd4e9b1ad
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: f6f99f8fa563b71c935122c6f8597599c59b5c7f
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "47216823"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297302"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
 > [!NOTE]
-Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
-Toto téma obsahuje tabulky symbolů a operátorů, které se používají v jazyce F#.
+Toto téma obsahuje tabulky symbolů a operátorů, které se používají v F# jazyka.
 
 ## <a name="table-of-symbols-and-operators"></a>Tabulka symbolů a operátorů
 
-Následující tabulka popisuje symboly použité v jazyce F#, obsahuje odkazy na témata, která poskytují další informace a obsahuje stručný popis některých používá symbolu. Symboly jsou řazeny podle sadu pořadí znaků ASCII.
+Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy na témata, která poskytují další informace a obsahuje stručný popis některých používá symbolu. Symboly jsou řazeny podle sadu pořadí znaků ASCII.
 
 |Symbol nebo – operátor|Odkazy|Popis|
 |------------------|-----|-----------|
 |`!`|[Referenční buňky](../reference-cells.md)<br /><br />[Výpočetní výrazy](../computation-expressions.md)|<ul><li>Přístupů přes ukazatel odkazovou buňku.<br /></li><li>Za klíčovým slovem označuje upravenou verzi chování klíčového slova jako řídí pracovního postupu.<br /></li></ul>|
-|`!=`|Nelze použít.|<ul><li>V jazyce F# nepoužívá. Použití `<>` pro operace nerovnost.<br /></li></ul>|
+|`!=`|Nelze použít.|<ul><li>Nepoužito v F#. Použití `<>` pro operace nerovnost.<br /></li></ul>|
 |`"`|[Literály](../literals.md)<br /><br />[Řetězce](../strings.md)|<ul><li>Odděluje citaci textový řetězec.<br /></li></ul>|
 |`"""`|[Řetězce](../strings.md)|Odděluje citaci doslovný řetězec. Se liší od `@"..."` , můžete určit znak uvozovky pomocí jednoduchá uvozovka v řetězci.|
 |`#`|[Direktivy kompilátoru](../compiler-directives.md)<br /><br />[Flexibilní typy](../flexible-types.md)|<ul><li>Předpony adres direktiva preprocesoru nebo kompilátor, jako například `#light`.<br /></li><li>Při použití s typem, znamená to *flexibilní typ*, který odkazuje na typ nebo v jednom z jeho odvozených typů.<br /></li></ul>|
@@ -81,7 +81,7 @@ Následující tabulka popisuje symboly použité v jazyce F#, obsahuje odkazy n
 |`<@@...@@>`|[Citace kódu](../code-quotations.md)|<ul><li>Odděluje citaci nabídky netypového kódu.<br /></li></ul>|
 |`=`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud rovná na levé straně na pravou stranu; v opačném případě vrátí `false`.<br /></li></ul>|
 |`=?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá "rovno" operaci po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
-|`==`|Nelze použít.|<ul><li>V jazyce F# nepoužívá. Použití `=` pro operace rovnosti.<br /></li></ul>|
+|`==`|Nelze použít.|<ul><li>Nepoužito v F#. Použití `=` pro operace rovnosti.<br /></li></ul>|
 |`>`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vrátí `true` Pokud levé straně je větší než pravé straně; jinak vrátí hodnotu, vrátí `false`.<br /></li></ul>|
 |`>?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vypočítá "větší než" operaci po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
 |`>>`|[Funkce](../functions/index.md)|<ul><li>Vytvoří dvě funkce (operátor přesměrování sestavení).<br /></li></ul>|
@@ -116,7 +116,7 @@ Následující tabulka popisuje symboly použité v jazyce F#, obsahuje odkazy n
 
 ## <a name="operator-precedence"></a>Priorita operátorů
 
-V následující tabulce jsou uvedeny pořadí podle priority operátorů a dalších klíčových slovech výrazu v jazyce F#, v pořadí od nejnižší, nejvyšší priority. Také je asociativita operátorů, pokud je k dispozici.
+V následující tabulce jsou uvedeny pořadí podle priority operátorů a dalších klíčových slovech výrazu z F# jazyk, v pořadí od nejnižší, nejvyšší priority. Také je asociativita operátorů, pokud je k dispozici.
 
 |Operátor|Asociativita|
 |--------|-------------|
@@ -146,7 +146,7 @@ V následující tabulce jsou uvedeny pořadí podle priority operátorů a dal�
 |`.`|doleva|
 |`f(x)`|doleva|
 |`f<`*Typy*`>`|doleva|
-Jazyk F# podporuje vlastní přetížení operátoru. To znamená, že můžete definovat vlastní operátory. V předchozí tabulce *op* může být libovolná platná (pravděpodobně prázdná) sekvence znaků operátoru, předdefinovaných nebo uživatelem definovaný. Proto můžete tuto tabulku určit, jaké posloupnost znaků, které mají použít pro vlastní operátor k dosažení požadované úrovně priority. Úvodní `.` znaky jsou ignorovány, pokud kompilátor určuje prioritu.
+F#podporuje vlastní přetížení operátoru. To znamená, že můžete definovat vlastní operátory. V předchozí tabulce *op* může být libovolná platná (pravděpodobně prázdná) sekvence znaků operátoru, předdefinovaných nebo uživatelem definovaný. Proto můžete tuto tabulku určit, jaké posloupnost znaků, které mají použít pro vlastní operátor k dosažení požadované úrovně priority. Úvodní `.` znaky jsou ignorovány, pokud kompilátor určuje prioritu.
 
 ## <a name="see-also"></a>Viz také:
 

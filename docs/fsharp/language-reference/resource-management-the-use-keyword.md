@@ -1,13 +1,13 @@
 ---
 title: 'Správa prostředků: Klíčové slovo use (F#)'
-description: Další informace o F# – klíčové slovo "použití" a "pomocí" funkce, která můžete řídit, inicializace a uvolnění prostředků.
+description: Další informace o F# – klíčové slovo "používá se" a "pomocí" funkce, která můžete řídit, inicializace a uvolnění prostředků.
 ms.date: 05/16/2016
-ms.openlocfilehash: ffa1cb515139a3705920d9d9f79be1a69602f7d8
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 300fb4113019f676625f75541d117458eab3f6ab
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45616059"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52296877"
 ---
 # <a name="resource-management-the-use-keyword"></a>Správa prostředků: Klíčové slovo use
 
@@ -19,7 +19,7 @@ Termín *prostředků* se používá více než jedním způsobem. Ano, prostře
 
 ## <a name="managing-resources"></a>Správa prostředků
 
-Pokud chcete efektivně a zodpovědně spravovat prostředky v aplikaci, musí uvolnit prostředky o tom bezodkladně informuje a předvídatelným způsobem. Můžete to provést tím, že poskytuje rozhraní .NET Framework pomáhá `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Kvalitně napsané aplikace zaručit, že `System.IDisposable.Dispose` se okamžitě volá, když už nepotřebujete libovolný objekt, který obsahuje prostředek omezený. Naštěstí Většina jazyků .NET poskytují podporu pro lepší pochopení a F# není žádná výjimka. Existují dvě užitečné jazykovým konstrukcím, které podporují vzor dispose: `use` vazby a `using` funkce.
+Pokud chcete efektivně a zodpovědně spravovat prostředky v aplikaci, musí uvolnit prostředky o tom bezodkladně informuje a předvídatelným způsobem. Můžete to provést tím, že poskytuje rozhraní .NET Framework pomáhá `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Kvalitně napsané aplikace zaručit, že `System.IDisposable.Dispose` se okamžitě volá, když už nepotřebujete libovolný objekt, který obsahuje prostředek omezený. Naštěstí Většina jazyků .NET poskytují podporu pro lepší pochopení, a F# není žádná výjimka. Existují dvě užitečné jazykovým konstrukcím, které podporují vzor dispose: `use` vazby a `using` funkce.
 
 ## <a name="use-binding"></a>Použít vazbu
 
@@ -33,8 +33,8 @@ Následující příklad ukazuje, jak automaticky zavřete soubor stisknutím ko
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6301.fs)]
 
->[!NOTE]
-Můžete použít `use` ve výrazech výpočtu. v takovém případě přizpůsobenou verzi `use` výraz je použit. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).
+> [!NOTE]
+> Můžete použít `use` ve výrazech výpočtu. v takovém případě přizpůsobenou verzi `use` výraz je použit. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).
 
 ## <a name="using-function"></a>pomocí funkce
 

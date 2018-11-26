@@ -1,20 +1,20 @@
 ---
 title: Seznamy (F#)
-description: Další informace o seznamech F#, seřazený, neměnné řadu prvků stejného typu.
+description: Další informace o F# seznam seřazený, neměnné řadu prvků stejného typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: b48bf04f5ec490b49e63462affc0d4eadebe10ef
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: f7b9054226a1dd004ac78673a059bd1c35e325a5
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50201621"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297501"
 ---
 # <a name="lists"></a>Seznamy
 
 > [!NOTE]
-Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
-Seznam v jazyce F# je seřazený, neměnné řadu prvků stejného typu. K provádění základních operací v seznamech, použijte funkci v [modulu seznamu](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
+V seznamu v F# je seřazený, neměnné řadu prvků stejného typu. K provádění základních operací v seznamech, použijte funkci v [modulu seznamu](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
 
 ## <a name="creating-and-initializing-lists"></a>Vytváření a inicializaci seznamy
 
@@ -54,9 +54,9 @@ Můžete zřetězit seznamy, které mají nekompatibilní typy s použitím `@` 
 
 Funkce pro provádění operací na seznamy jsou k dispozici v [modulu seznamu](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788).
 
-Protože jsou neměnné seznamy v jazyce F#, všechny změny operace generovat nové seznamy místo úpravy existujících seznamů.
+Protože jsou uvedeny v F# jsou neměnné, všechny změny operace generovat nové seznamy místo úpravy existujících seznamů.
 
-Seznamy v jazyce F# jsou implementovány jako jednotlivě propojený seznam, což znamená, že operace, které přistupují k začátku seznamu jsou O(1), a je O přístup k prvkům (*n*).
+Seznamy v F# jsou implementovány jako jednotlivě propojený seznam, což znamená, že operace, které přistupují k začátku seznamu jsou O(1), a je O přístup k prvkům (*n*).
 
 ## <a name="properties"></a>Vlastnosti
 
@@ -290,7 +290,7 @@ Výstup vypadá takto:
 
 ### <a name="operating-on-list-elements"></a>Práce na seznamu elementů
 
-Jazyk F# podporuje širokou škálu operace na seznamu elementů. Nejjednodušší je [List.iter](https://msdn.microsoft.com/library/f778d075-81a9-4994-af60-cddcc53a201f), což vám umožní volat funkci na každý prvek seznamu. Zahrnovat odchylky [List.iter2](https://msdn.microsoft.com/library/ea3b7761-916c-4016-9bd8-651124c98b40), což vám umožní provést operaci s prvky dvou seznamů [List.iteri](https://msdn.microsoft.com/library/6dd21ae6-5c00-41cd-8306-821e513d8f60), což je třeba `List.iter` s tím rozdílem, že indexu každého prvku je předán jako argument pro funkci, která je volána pro každý prvek a [List.iteri2](https://msdn.microsoft.com/library/9658d740-9be5-4bf7-b663-c8ab2b3e196c), což je kombinací funkce `List.iter2` a `List.iteri`. Následující příklad kódu ukazuje tyto funkce.
+F#podporuje různé operace na seznamu elementů. Nejjednodušší je [List.iter](https://msdn.microsoft.com/library/f778d075-81a9-4994-af60-cddcc53a201f), což vám umožní volat funkci na každý prvek seznamu. Zahrnovat odchylky [List.iter2](https://msdn.microsoft.com/library/ea3b7761-916c-4016-9bd8-651124c98b40), což vám umožní provést operaci s prvky dvou seznamů [List.iteri](https://msdn.microsoft.com/library/6dd21ae6-5c00-41cd-8306-821e513d8f60), což je třeba `List.iter` s tím rozdílem, že indexu každého prvku je předán jako argument pro funkci, která je volána pro každý prvek a [List.iteri2](https://msdn.microsoft.com/library/9658d740-9be5-4bf7-b663-c8ab2b3e196c), což je kombinací funkce `List.iter2` a `List.iteri`. Následující příklad kódu ukazuje tyto funkce.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet17.fs)]
 
