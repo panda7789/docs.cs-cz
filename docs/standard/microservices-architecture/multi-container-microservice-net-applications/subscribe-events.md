@@ -1,15 +1,15 @@
 ---
 title: Přihlášení k odběru událostí
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Přihlášení k odběru událostí
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Zjistěte podrobnosti o publikování a přihlášení k odběru událostí integrace.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 12/11/2017
-ms.openlocfilehash: 5e53e0a3578c19b09f5327f444d1a5c013ad4cd9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.date: 10/02/2018
+ms.openlocfilehash: d32c643e553dfe3ce52e3e2ce8aaf1ea3a296de6
+ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194069"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "52297300"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -61,7 +61,7 @@ public class CatalogController : ControllerBase
 Pak použijete jej z metody vašeho kontroleru, stejně jako v metodě UpdateProduct:
 
 ```csharp
-[Route("update")]
+[Route("items")]
 [HttpPost]
 public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem product)
 {
@@ -91,14 +91,13 @@ V takovém případě původu mikroslužeb je jednoduché mikroslužby CRUD, ten
  
 V pokročilejších mikroslužeb, stejně jako při použití modelu CQRS přístupy, se dá implementovat v `CommandHandler` třídy v rámci `Handle()` metody. 
 
-
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>Navrhování atomicitu a odolnost proti chybám při publikování událostí Service bus
 
-Při publikování události integrace prostřednictvím distribuované zasílání zpráv systému, jako je vaše událostí Service bus, budete mít problém atomicky aktualizuje původní databáze a publikování události. Například v zjednodušený příklad je uvedeno výše, kód potvrdí data do databáze při cena produktu se změnilo a pak publikuje zprávu ProductPriceChangedIntegrationEvent. Na začátku může vypadat základní atomicky provést tyto dvě operace. Ale pokud používáte distribuovaných transakcí týkajících se databáze a zprávy zprostředkovatele, stejně jako v starší systémy, jako je [Microsoft Message Queuing (MSMQ)](https://msdn.microsoft.com/library/ms711472(v=vs.85).aspx), toto nastavení nedoporučujeme důvodů popsaného [Věty](https://www.quora.com/What-Is-CAP-Theorem-1).
+Při publikování události integrace prostřednictvím distribuované zasílání zpráv systému, jako je vaše událostí Service bus, budete mít problém atomicky aktualizuje původní databáze a publikování události (to znamená, jak dokončení operace nebo žádná z nich). Například v zjednodušený příklad je uvedeno výše, kód potvrdí data do databáze při cena produktu se změnilo a pak publikuje zprávu ProductPriceChangedIntegrationEvent. Na začátku může vypadat základní atomicky provést tyto dvě operace. Ale pokud používáte distribuovaných transakcí týkajících se databáze a zprávy zprostředkovatele, stejně jako v starší systémy, jako je [Microsoft Message Queuing (MSMQ)](https://msdn.microsoft.com/library/ms711472\(v=vs.85\).aspx), toto nastavení nedoporučujeme důvodů popsaného [Věty](https://www.quora.com/What-Is-CAP-Theorem-1).
 
-V podstatě mikroslužeb použijete k sestavení škálovatelné a vysoce dostupné systémy. Zjednodušení trochu, věty říká, že nemůže vytvořit databázi (nebo mikroslužeb, který vlastní svůj model), který je neustále k dispozici, silně konzistentních *a* vůči žádný oddíl. Musíte zvolit dvě z těchto tří vlastností.
+V podstatě mikroslužeb použijete k sestavení škálovatelné a vysoce dostupné systémy. Zjednodušení trochu, věty říká, že nemůže vytvořit databázi (distribuovaným) (nebo mikroslužeb, který vlastní svůj model), který je neustále k dispozici, silně konzistentních *a* vůči žádný oddíl. Musíte zvolit dvě z těchto tří vlastností.
 
-V architekturách založených na mikroslužbách byste měli zvolit dostupnost a odolnost a měli omezit silnou konzistenci. Proto se ve většině moderních aplikací založených na mikroslužbách, obvykle nechcete používat distribuovaných transakcí v zasílání zpráv, stejně jako při implementaci [distribuované transakce](https://msdn.microsoft.com/library/ms978430.aspx#bdadotnetasync2_topic3c) založené na Windows distribuované transakce Koordinátor (DTC) s [MSMQ](https://msdn.microsoft.com/library/ms711472(v=vs.85).aspx).
+V architekturách založených na mikroslužbách byste měli zvolit dostupnost a odolnost a měli omezit silnou konzistenci. Proto se ve většině moderních aplikací založených na mikroslužbách, obvykle nechcete používat distribuovaných transakcí v zasílání zpráv, stejně jako při implementaci [distribuované transakce](https://msdn.microsoft.com/library/ms681205\(v=vs.85\).aspx) založené na Windows distribuované transakce Koordinátor (DTC) s [MSMQ](https://msdn.microsoft.com/library/ms711472\(v=vs.85\).aspx).
 
 Vraťme se k počáteční problému a jeho příklad. Pokud po aktualizaci databáze dojde k chybě služby (v tomto případě klikněte pravým tlačítkem za řádkem kódu pomocí \_kontextu. SaveChangesAsync()), ale před publikováním integrace událostí může nekonzistenci celého systému. To může být pro důležité obchodní informace, v závislosti na konkrétní obchodní operace, které se zabývají.
 
@@ -110,7 +109,7 @@ Jak je uvedeno výše v části architektura, může mít několik přístupů p
 
 -   Použití [pošta k odeslání vzoru](http://gistlabs.com/2014/05/the-outbox/). Toto je transakční tabulku pro ukládání událostí integrace (rozšíření místní transakce).
 
-V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, *není-li* nejlepší. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://geteventstore.com/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
+V tomto scénáři použití úplné modelu Event Sourcing (ES) je jedním z osvědčených postupů, není-li *nejlepší*. V mnoha scénářích aplikací, ale nemusí být schopni implementovat úplnou ES operace. ES znamená, že ukládání pouze události domény v transakční databáze, místo uložení aktuální data o stavu. Uložení pouze událostí domény může mít skvělé výhody, jako je například s historii vašeho systému, které jsou k dispozici a nebudou moct určení stavu systému v každém okamžiku v minulosti. Ale implementace úplnou ES vyžaduje, abyste úprava architektury většina vašeho systému a přináší mnoho dalších složitosti a požadavky. Například můžete chcete použít databázi vytvořené speciálně pro model event sourcing, například [události Store](https://eventstore.org/), nebo databáze dokumentově orientované, jako je Azure Cosmos DB, MongoDB, Cassandra, CouchDB nebo RavenDB. ES je skvělé přístup k tomuto problému, ale ne Nejjednodušším řešením, pokud jste již obeznámeni s modelem event sourcing.
 
 Možnost použití transakční protokol dolování zpočátku vypadá velmi transparentní. Ale pro tuto metodu použijte mikroslužbách musí být vázány na protokol transakce relační databázový systém, jako je například protokolu transakcí serveru SQL Server. To je pravděpodobně není žádoucí. Jiné nevýhodou je, že nízké úrovně aktualizací zaznamenaných v transakčním protokolu nemusí být na stejné úrovni jako základní integrace událostí. Pokud ano, proces zpětnou tyto operace protokolu transakcí může být obtížné.
 
@@ -124,7 +123,15 @@ Proto tento vyvážené přístup je zjednodušené ES. Potřebujete seznam inte
 
 Pokud už používáte relační databáze, můžete transakční tabulku pro ukládání událostí integrace. K dosažení atomicitu ve vaší aplikaci, použít dvoustupňový proces založené na místní transakce. V podstatě máte tabulku IntegrationEvent ve stejné databázi, ve které máte doménu entity. Tuto tabulku funguje jako pojištění pro dosažení atomicitu tak, že zahrnete trvalé události integrace do stejné transakce, které se potvrzují data vaší domény.
 
-Krok za krokem probíhá takto: aplikace začne místní databázové transakce. Pak aktualizuje stav entity domény a vloží do tabulky události integrace událost. Nakonec potvrzení transakce. Získáte požadovanou atomicitu.
+Krok za krokem procesu prochází tímto způsobem:
+
+1.  Aplikace spustí místní databázové transakce.
+
+2.  Pak aktualizuje stav entity domény a vloží do tabulky události integrace událost.
+
+3.  Nakonec svého potvrzení transakce, tak, abyste dosáhli požadovaného atomicitu a pak
+
+4.  Nějakým způsobem publikovat událost (Další).
 
 Při implementaci kroky k publikování událostí, máte tyto možnosti:
 
@@ -132,21 +139,21 @@ Při implementaci kroky k publikování událostí, máte tyto možnosti:
 
 -   Tabulku použijte jako typ fronty. Vlákna samostatné aplikace nebo proces dotazuje tabulku události integrace, publikuje události pro události Service bus a pak používá k označení události publikování místní transakce.
 
-22. obrázek 8 ukazuje architekturu první z těchto přístupů.
+Obrázek 6 – 22 ukazuje architekturu první z těchto přístupů.
 
-![](./media/image23.png)
+![Jeden ze způsobů zpracování atomicitu při publikování události: pomocí jedné transakce na potvrzení události do protokolu událostí tabulky a pak opět transakce publikovat (používané v aplikaci eShopOnContainers)](./media/image23.png)
 
-**Obrázek 8 do 22**. Atomicitu při publikování událostí do událostí Service bus
+**Obrázek 6 – 22**. Atomicitu při publikování událostí do událostí Service bus
 
-Přístup znázorněný v obrázku 8 do 22 chybí pracovní mikroslužeb, který má na starosti kontrole a potvrzení úspěšné publikované integrace událostí. V případě selhání můžete tuto další kontrolu pracovního procesu mikroslužeb číst události z tabulky a znovu publikovat.
+Přístup znázorněný v obrázku 6 – 22 chybí pracovní mikroslužeb, který má na starosti kontrole a potvrzení úspěšné publikované integrace událostí. V případě selhání můžete tuto další kontrolu pracovního procesu mikroslužeb číst události z tabulky a znovu publikovat, tedy číslo opakujte krok 2.
 
-O druhým přístupem: protokol událostí tabulku použijte jako fronty a vždy použijte mikroslužbě pracovního procesu k publikování zpráv. V takovém případě proces se tímto způsobem zobrazí obrázek 8-23. Zobrazí se další mikroslužeb a v tabulce je jediným zdrojem při publikování události.
+O druhým přístupem: protokol událostí tabulku použijte jako fronty a vždy použijte mikroslužbě pracovního procesu k publikování zpráv. V takovém případě proces se tímto způsobem zobrazí obrázek 6 – 23. Zobrazí se další mikroslužeb a v tabulce je jediným zdrojem při publikování události.
 
-![](./media/image24.png)
+![Další možností pro zpracování atomicitu: publikovat do tabulky protokolu událostí a pak další mikroslužeb (pracovník na pozadí) publikování události.](./media/image24.png)
 
-**Obrázek 8-23**. Atomicitu při publikování událostí do sběrnice událostí pomocí mikroslužeb pracovního procesu
+**Obrázek 6 – 23**. Atomicitu při publikování událostí do sběrnice událostí pomocí mikroslužeb pracovního procesu
 
-Pro zjednodušení používá ukázková aplikaci eShopOnContainers první přístup (s žádné další procesy nebo prerequisite checker mikroslužeb) plus událostí Service bus. Aplikaci eShopOnContainers však neošetřuje všechny případy možného selhání. V reálné aplikaci nasadit do cloudu musí si osvojí skutečnost, že bude vzniku nakonec a je nutné implementovat, zkontrolujte a znovu odeslat logiku. Pokud máte danou tabulku jako jediný zdroj událostí při publikování přes Service bus události může být efektivnější než první přístup pomocí tabulky jako do fronty.
+Pro zjednodušení používá ukázková aplikaci eShopOnContainers první přístup (s žádné další procesy nebo prerequisite checker mikroslužeb) plus událostí Service bus. Aplikaci eShopOnContainers však neošetřuje všechny případy možného selhání. V reálné aplikaci nasadit do cloudu musí si osvojí skutečnost, že bude vzniku nakonec a je nutné implementovat, zkontrolujte a znovu odeslat logiku. Pokud máte danou tabulku jako jediný zdroj událostí při jejich publikování přes Service bus události (s pracovním procesem) může být efektivnější než první přístup pomocí tabulky jako do fronty.
 
 ### <a name="implementing-atomicity-when-publishing-integration-events-through-the-event-bus"></a>Implementace atomicitu při publikování události integrace přes Service bus události
 
@@ -217,7 +224,7 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem productToUp
 
 Po vytvoření události integrace ProductPriceChangedIntegrationEvent transakce, která ukládá původní operace domény (aktualizace položky katalogu) také zahrnuje trvalou dostupnost události v tabulce protokolu událostí. Díky tomu jedné transakce a bude vždy možné zkontrolovat, zda byly odesílány zprávy o událostech.
 
-Tabulka protokolu událostí se aktualizuje atomicky původní databáze, pomocí operace místní transakce na stejnou databázi. Pokud všechny operace selžou, je vyvolána výjimka a transakce vrátí zpět všechny dokončené operace, proto zachování konzistence mezi operacemi domény a odeslání zprávy o událostech.
+Tabulka protokolu událostí se aktualizuje atomicky původní databáze, pomocí operace místní transakce na stejnou databázi. Pokud všechny operace selžou, je vyvolána výjimka a transakce vrátí zpět všechny dokončené operace, proto zachování konzistence mezi operacemi domény a zprávy o událostech uloží do tabulky.
 
 ### <a name="receiving-messages-from-subscriptions-event-handlers-in-receiver-microservices"></a>Příjem zpráv z předplatného: obslužných rutin událostí v mikroslužbách příjemce
 
@@ -272,11 +279,11 @@ namespace Microsoft.eShopOnContainers.Services.Basket.API.IntegrationEvents.Even
 }
 ```
 
-Obslužná rutina události je potřeba ověřit, zda existuje produktu v některé z instancí nákupní košík. Aktualizuje také ceny položky pro každou položku řádku související nákupního košíku. Nakonec vytvoří výstrahu, který se má zobrazit uživateli o změny cen, jak ukazuje obrázek 8-24.
+Obslužná rutina události je potřeba ověřit, zda existuje produktu v některé z instancí nákupní košík. Aktualizuje také ceny položky pro každou položku řádku související nákupního košíku. Nakonec vytvoří výstrahu, který se má zobrazit uživateli o změny cen, jak je znázorněno v obrázek 6 – 24.
 
-![](./media/image25.png)
+![Zobrazení prohlížeče s proce změnit oznámení v košíku uživatele.](./media/image25.png)
 
-**Obrázek 8-24**. Zobrazení o změnu cena zboží v košíku, oznámené události integrace
+**Obrázek 6 – 24**. Zobrazení o změnu cena zboží v košíku, oznámené události integrace
 
 ## <a name="idempotency-in-update-message-events"></a>Idempotence v události zpráva aktualizace
 
@@ -286,7 +293,7 @@ Jak bylo uvedeno dříve, idempotence znamená, že operaci lze provést více n
 
 Příklad idempotentní operace je příkaz jazyka SQL, který vkládá data do tabulky pouze v případě, že data, která už není v tabulce. Není důležité, kolikrát spuštění, které vkládají příkaz SQL Výsledkem bude stejná – tabulce bude obsahovat data. Idempotence tímto způsobem může být také nezbytné při práci s zprávy, pokud se zprávy můžou potenciálně a tudíž zpracovanými více než jednou. Například pokud logika opakovaných pokusů způsobí, že odesílatel odesílat přesně stejné zprávy více než jednou, budete muset Ujistěte se, že je idempotentní.
 
-Je možné návrhu idempotentní zprávy. Můžete například vytvořit událost, která říká "určovali ceny produktu \$25" místo "Přidat \$5 s cenou při produktu." Vám může bezpečně první zprávu zpracovat libovolný počet pokusů a výsledky budou stejné. To není PRAVDA pro druhé zprávy. Ale i v prvním případě nebudete chtít zpracovat první událost, protože systém může také odeslali novější události Změna ceny a by přepsání nová cena.
+Je možné návrhu idempotentní zprávy. Můžete například vytvořit událost, která uvádí, že "určovali ceny produktu do 25 USD" místo "Přidání $5 s cenou při produktu." Vám může bezpečně první zprávu zpracovat libovolný počet pokusů a výsledky budou stejné. To není PRAVDA pro druhé zprávy. Ale i v prvním případě nebudete chtít zpracovat první událost, protože systém může také odeslali novější události Změna ceny a by přepsání nová cena.
 
 Dalším příkladem můžou být objednávka dokončena událost se rozšíří na několik předplatitelů. Je důležité, že informace o objednávkách aktualizují v jiných systémech pouze jednou, i v případě, že existují duplicitní zpráva události pro stejnou událost objednávka dokončena.
 
@@ -296,7 +303,8 @@ Některé zpracování zprávy je ze své podstaty idempotentní. Například po
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Aby byla dodržena zpráv, idempotence** (podnadpisu na této stránce) [*https://msdn.microsoft.com/library/jj591565.aspx*](https://msdn.microsoft.com/library/jj591565.aspx)
+-   **Aby byla dodržena zpráv, idempotence** <br/>
+    [*https://msdn.microsoft.com/library/jj591565.aspx#honoring_message_idempotency*](https://msdn.microsoft.com/library/jj591565.aspx)
 
 ## <a name="deduplicating-integration-event-messages"></a>Odstranění duplicit dat zprávy o událostech integrace
 
@@ -304,7 +312,7 @@ Zajistíte, že události zprávy odeslané a zpracuje jenom jednou na předplat
 
 ### <a name="deduplicating-message-events-at-the-eventhandler-level"></a>Odstranění duplicit dat v události zpráv na úrovni obslužná rutina události
 
-Jedním ze způsobů, abyste měli jistotu, že události budou zpracovány pouze jednou všechny příjemce je implementace určité logiky při zpracování zprávy událostí v obslužných rutinách událostí. Například, který je použitý v aplikaci eShopOnContainers aplikaci přístup jak je vidět v [zdrojový kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Controllers/OrdersController.cs) OrdersController třídy, když přijme příkaz CreateOrderCommand. (V tomto případě používáme příkaz požadavku HTTP není založená na zprávách příkaz, ale je podobná logika, je třeba provést příkaz založenou na zprávách idempotentní.)
+Jedním ze způsobů, abyste měli jistotu, že události budou zpracovány pouze jednou všechny příjemce je implementace určité logiky při zpracování zprávy událostí v obslužných rutinách událostí. Například, který je použitý v aplikaci eShopOnContainers aplikaci přístup jak je vidět v [zdrojový kód třídy UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) při přijetí UserCheckoutAcceptedIntegrationEvent integrace událostí. (V tomto případě jsme zalamování CreateOrderCommand s IdentifiedCommand pomocí eventMsg.RequestId jako identifikátor, před odesláním obslužná rutina příkazu).
 
 ### <a name="deduplicating-messages-when-using-rabbitmq"></a>Při používání RabbitMQ odstranění duplicit dat zprávy
 
@@ -316,63 +324,71 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)**
+-   **Rozvětveného aplikaci eShopOnContainers pomocí NServiceBus (určitého softwaru)** <br/>
     [*https://go.particular.net/eShopOnContainers*](https://go.particular.net/eShopOnContainers)
 
--   **Řízené zasílání zpráv**
+-   **Řízené zasílání zpráv** <br/>
     [*http://soapatterns.org/design\_patterns/event\_driven\_messaging*](http://soapatterns.org/design_patterns/event_driven_messaging)
 
--   **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocení párování**
+-   **Jimmy Bogard. Refaktoring směrem k odolnosti: Vyhodnocení párování** <br/>
     [*https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/*](https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/)
 
--   **Publikování a odběru kanálu**
+-   **Publikování a odběru kanálu** <br/>
     [*https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html*](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PublishSubscribeChannel.html)
 
--   **Komunikace mezi ohraničené kontexty**
+-   **Komunikace mezi ohraničené kontexty** <br/>
     [*https://msdn.microsoft.com/library/jj591572.aspx*](https://msdn.microsoft.com/library/jj591572.aspx)
 
--   **Konzistence typu případné**
+-   **Konzistence typu případné** <br/>
     [*https://en.wikipedia.org/wiki/Eventual\_consistency*](https://en.wikipedia.org/wiki/Eventual_consistency)
 
--   **Philip Brown. Strategie pro integraci ohraničených kontextech**
-    [*http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](http://culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
+-   **Philip Brown. Strategie pro integraci ohraničených kontextech** <br/>
+    [*https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/*](https://www.culttt.com/2014/11/26/strategies-integrating-bounded-contexts/)
 
--   **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace, modelu Event Sourcing a CQRS – část 2**
+-   **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace, modelu Event Sourcing a CQRS – část 2** <br/>
     [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-2-richardson)
 
--   **Chris Richardson. Model Event Sourcing**
+-   **Chris Richardson. Model Event Sourcing** <br/>
     [*https://microservices.io/patterns/data/event-sourcing.html*](https://microservices.io/patterns/data/event-sourcing.html)
 
--   **Úvod do modelu Event Sourcing**
+-   **Úvod do modelu Event Sourcing** <br/>
     [*https://msdn.microsoft.com/library/jj591559.aspx*](https://msdn.microsoft.com/library/jj591559.aspx)
 
--   **Událost Store databáze**. Oficiální web.
+-   **Událost Store databáze**. Oficiální web. <br/>
     [*https://geteventstore.com/*](https://geteventstore.com/)
 
--   **Patrick Nommensen. Správa dat založené na událostech pro Mikroslužby**
+-   **Patrick Nommensen. Správa dat založené na událostech pro Mikroslužby** <br/>
     *<https://dzone.com/articles/event-driven-data-management-for-microservices-1> *
 
--   **Věty**
+-   **Věty** <br/>
     [*https://en.wikipedia.org/wiki/CAP\_theorem*](https://en.wikipedia.org/wiki/CAP_theorem)
 
--   **Co je věty?**
+-   **Co je věty?** <br/>
     [*https://www.quora.com/What-Is-CAP-Theorem-1*](https://www.quora.com/What-Is-CAP-Theorem-1)
 
--   **Úvod do konzistence dat**
+-   **Úvod do konzistence dat** <br/>
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
--   **Rick Saling. Věty: Proč "Všechno, co jsou různé" bez cloudu a Internetu**
+-   **Rick Saling. Věty: Proč "Všechno, co jsou různé" bez cloudu a Internetu** <br/>
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
 
--   **Eric Bureš. Zakončení později 12 letech: jak se mění "Pravidla"**
+-   **Eric Bureš. Zakončení později 12 letech: jak se mění "Pravidla"** <br/>
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
--   **Účastní transakce (DTC) externí** (MSMQ) [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
-
--   **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**
+-   **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**  <br/>
     [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
 
--   **Průvodce spolehlivost** (RabbitMQ dokumentace) [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
+-   **Průvodce spolehlivost** (RabbitMQ dokumentace) * <br/>
+    [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html#consumer)
+
+-   **Účastní transakce (DTC) externí** (MSMQ) <br/>
+    [*https://msdn.microsoft.com/library/ms978430.aspx\#bdadotnetasync2\_topic3c*](https://msdn.microsoft.com/library/ms978430.aspx%23bdadotnetasync2_topic3c)
+
+-   **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit** <br/>
+    [*https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25*](https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25)
+
+-   **Průvodce spolehlivost** (RabbitMQ dokumentace) <br/>
+    [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
 
 
 
