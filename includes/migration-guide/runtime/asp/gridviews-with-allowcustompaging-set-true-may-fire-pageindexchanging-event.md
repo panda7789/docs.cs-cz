@@ -3,9 +3,9 @@
 |   |   |
 |---|---|
 |Podrobnosti|Způsobí chybu v rozhraní .NET Framework 4.5 <xref:System.Web.UI.WebControls.GridView.PageIndexChanging?displayProperty=name> k někdy neaktivuje pro <xref:System.Web.UI.WebControls.GridView?displayProperty=name>, které jste povolili <xref:System.Web.UI.WebControls.GridView.AllowCustomPaging?displayProperty=name>.|
-|Návrh|Tento problém jsme opravili v rozhraní .NET Framework 4.6 a může vyřešit upgradem na verzi rozhraní .NET Framework. Jako alternativní, můžete aplikaci provést explicitní BindGrid na žádném <code>Page_Load</code> narazí, který tyto podmínky ( <xref:System.Web.UI.WebControls.GridView?displayProperty=name> je na poslední stránce a poslední<xref:System.Web.UI.WebControls.GridView.PageSize?displayProperty=name> se liší od <xref:System.Web.UI.WebControls.GridView.PageSize?displayProperty=name>). Aplikaci můžete také upravit tak, aby povolit stránkování (namísto vlastní stránkování), jak tento scénář neukazuje problém.|
+|Doporučení|Tento problém jsme opravili v rozhraní .NET Framework 4.6 a může vyřešit upgradem na verzi rozhraní .NET Framework. Jako alternativní, můžete aplikaci provést explicitní BindGrid na žádném <code>Page_Load</code> narazí, který tyto podmínky ( <xref:System.Web.UI.WebControls.GridView?displayProperty=name> je na poslední stránce a poslední<xref:System.Web.UI.WebControls.GridView.PageSize?displayProperty=name> se liší od <xref:System.Web.UI.WebControls.GridView.PageSize?displayProperty=name>). Aplikaci můžete také upravit tak, aby povolit stránkování (namísto vlastní stránkování), jak tento scénář neukazuje problém.|
 |Rozsah|Vedlejší|
 |Version|4.5|
 |Typ|Modul runtime|
-|Ovlivněné rozhraní API|<ul><li><xref:System.Web.UI.WebControls.GridView.AllowCustomPaging?displayProperty=nameWithType></li></ul>|
+|Ovlivněná rozhraní API|<ul><li><xref:System.Web.UI.WebControls.GridView.AllowCustomPaging?displayProperty=nameWithType></li></ul>|
 

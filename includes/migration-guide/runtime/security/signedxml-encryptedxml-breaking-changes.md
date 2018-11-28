@@ -3,9 +3,9 @@
 |   |   |
 |---|---|
 |Podrobnosti|V rozhraní .NET Framework 4.6.2, opravy zabezpečení v <xref:System.Security.Cryptography.Xml.SignedXml?displayProperty=name> a <xref:System.Security.Cryptography.Xml.EncryptedXml?displayProperty=name> může vést k jiné chování za běhu. Například<ul><li>Pokud dokument má více elementů se stejnou <code>id</code> atribut a podpis cílí na jeden z těchto elementů jako kořenový podpis, dokument se nyní být považované za neplatné.</li><li>Dokumenty pomocí jiné kanonické algoritmy transformace XPath v odkazech jsou nyní považovány za neplatné.</li><li>Dokumenty pomocí jiné kanonické algoritmy transformace XSLT v odkazech se teď se podíváme neplatný.</li><li>Provedete to tak nebude možné jakékoli program využívající podpisy externí prostředek odpojit.</li></ul>|
-|Návrh|Vývojáři chtít Zkontrolujte použití <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform> a <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>, stejně jako typy odvozené z <xref:System.Security.Cryptography.Xml.Transform> od dokumentu příjemce nemusí být možné zpracovat.|
+|Doporučení|Vývojáři chtít Zkontrolujte použití <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform> a <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>, stejně jako typy odvozené z <xref:System.Security.Cryptography.Xml.Transform> od dokumentu příjemce nemusí být možné zpracovat.|
 |Rozsah|Vedlejší|
 |Version|4.6.2|
 |Typ|Modul runtime|
-|Ovlivněné rozhraní API|<ul><li><xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
+|Ovlivněná rozhraní API|<ul><li><xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
 
