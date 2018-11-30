@@ -3,9 +3,9 @@
 |   |   |
 |---|---|
 |Podrobnosti|Pravým tlačítkem myši vybrané <xref:System.Windows.Controls.DataGrid?displayProperty=name> záhlaví řádku jsou vybrané výsledky do více řádků <xref:System.Windows.Controls.DataGrid?displayProperty=name>pouze tento řádek Změna výběru.|
-|Návrh|Tento problém jsme opravili v rozhraní .NET Framework 4.6 a může vyřešit upgradem na verzi rozhraní .NET Framework.|
+|Doporučení|Tento problém jsme opravili v rozhraní .NET Framework 4.6 a může vyřešit upgradem na verzi rozhraní .NET Framework.|
 |Rozsah|Edge|
 |Version|4.5|
 |Typ|Modul runtime|
-|Ovlivněné rozhraní API|<ul><li><xref:System.Windows.Controls.DataGrid.%23ctor?displayProperty=nameWithType></li></ul>|
+|Ovlivněná rozhraní API|<ul><li><xref:System.Windows.Controls.DataGrid.%23ctor?displayProperty=nameWithType></li></ul>|
 

@@ -8,11 +8,11 @@ ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5cb0d058cd1ade65bfdc966819c0c41d9c1a9750
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185989"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672118"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Přidání konfiguračního prvku Windows Forms
 

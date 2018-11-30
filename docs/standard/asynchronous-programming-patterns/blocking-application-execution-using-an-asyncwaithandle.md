@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 3e32daf2-8161-4e8f-addd-9fd9ff101b03
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 054af36987d60c8aeb752c9c711f1cce19733efc
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 1afe5a13c5994ac1c807407fac8792f6a7d13a2e
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033282"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672105"
 ---
 # <a name="blocking-application-execution-using-an-asyncwaithandle"></a>Blokování provádění aplikací pomocí vlastnosti AsyncWaitHandle
 Aplikace, které nemůže pokračovat v další práci při čekání na výsledcích asynchronní operaci musí blokovat až do dokončení operace. Blokování hlavního vlákna aplikace při čekání na dokončení asynchronní operace, použijte jednu z následujících možností:  
   
--   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít *** OperationName* metody. Tento přístup je ukázáno v tomto tématu.  
+-   Použití <xref:System.IAsyncResult.AsyncWaitHandle%2A> vlastnost <xref:System.IAsyncResult> vrácený asynchronní operace **začít**_OperationName_ metody. Tento přístup je ukázáno v tomto tématu.  
   
--   Volání asynchronní operace **End *** OperationName* metody. Příklad, který ukazuje tento přístup, najdete v části [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
+-   Volání asynchronní operace **End**_OperationName_ metody. Příklad, který ukazuje tento přístup, najdete v části [blokování provádění aplikace ukončením asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md).  
   
- Aplikace, které používají jeden nebo více <xref:System.Threading.WaitHandle> objekty zablokována až do dokončení asynchronní operace se bude obvykle volat **začít *** OperationName* metody provádět každé dílo, který se dá udělat bez výsledky operace a potom bloku až do dokončení asynchronní operace. Aplikace může blokovat v rámci jedné operace vyvoláním některé z <xref:System.Threading.WaitHandle.WaitOne%2A> metod pomocí <xref:System.IAsyncResult.AsyncWaitHandle%2A>. Blokovat čekání na sadu na dokončení asynchronních operací, ukládání přidruženého <xref:System.IAsyncResult.AsyncWaitHandle%2A> objektů v poli a volání jeden <xref:System.Threading.WaitHandle.WaitAll%2A> metody. Blokovat čekání na některou z sadu na dokončení asynchronních operací, ukládání přidruženého <xref:System.IAsyncResult.AsyncWaitHandle%2A> objektů v poli a volání jeden <xref:System.Threading.WaitHandle.WaitAny%2A> metody.  
+ Aplikace, které používají jeden nebo více <xref:System.Threading.WaitHandle> objekty zablokována až do dokončení asynchronní operace se bude obvykle volat **začít**_OperationName_ metody provádět každé dílo, které lze provést bez výsledky operace a potom bloku až do asynchronní operace dokončí. Aplikace může blokovat v rámci jedné operace vyvoláním některé z <xref:System.Threading.WaitHandle.WaitOne%2A> metod pomocí <xref:System.IAsyncResult.AsyncWaitHandle%2A>. Blokovat čekání na sadu na dokončení asynchronních operací, ukládání přidruženého <xref:System.IAsyncResult.AsyncWaitHandle%2A> objektů v poli a volání jeden <xref:System.Threading.WaitHandle.WaitAll%2A> metody. Blokovat čekání na některou z sadu na dokončení asynchronních operací, ukládání přidruženého <xref:System.IAsyncResult.AsyncWaitHandle%2A> objektů v poli a volání jeden <xref:System.Threading.WaitHandle.WaitAny%2A> metody.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje použití asynchronních metod ve třídě DNS pro načtení informací Domain Name System pro počítače zadané uživatelem. Tento příklad ukazuje blokování používání <xref:System.Threading.WaitHandle> přidružené k asynchronní operaci. Všimněte si, že `null` (`Nothing` v jazyce Visual Basic) je předán <xref:System.Net.Dns.BeginGetHostByName%2A> `requestCallback` a `stateObject` parametry vzhledem k tomu, že se nejedná vyžaduje při tomto postupu.  

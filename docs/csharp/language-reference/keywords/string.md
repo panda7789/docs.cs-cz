@@ -10,12 +10,12 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-ms.openlocfilehash: ab2e69c60872aed19d46450f17becc918ffe2a38
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 66b1729363878f69f868b8b8fd6e9e7011426f27
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181456"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672001"
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
 
@@ -108,7 +108,6 @@ Další informace o řetězcích v jazyce C# najdete v tématu [řetězce](../..
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Doporučené postupy pro používání řetězců](../../../standard/base-types/best-practices-strings.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 - [Odkazové typy](reference-types.md)
 - [Typy hodnot](value-types.md)
 - [Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)

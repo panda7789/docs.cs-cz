@@ -10,11 +10,11 @@ helpviewer_keywords:
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
 ms.openlocfilehash: 94a64efcd7b4f354eaa22d1b646f36212f9c8fbb
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50042295"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672290"
 ---
 # <a name="interpreting-network-tracing"></a>Interpretace trasování sítě
 Pokud je povoleno trasování sítě, můžete použít trasování pro zachycení volání, které vaše aplikace odešle do různých <xref:System.Net> členy třídy. Výstup z těchto volání může být podobně jako v následujících příkladech.  

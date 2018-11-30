@@ -4,12 +4,12 @@ description: Doporučení osvědčených postupů pro publikování knihovny .NE
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: e0244d2a9d09382c289c74a45969bca0a1311445
-ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
+ms.openlocfilehash: 036aa99c89790274628c40824be7e230d81850fe
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50757306"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672066"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 
@@ -43,5 +43,5 @@ Je důležité, že nelze přístup k vašemu účtu NuGet a odeslat škodlivý 
 **PROVEĎTE ✔️** povolit e-mailové oznámení, když se publikuje balíček.
 
 >[!div class="step-by-step"]
-[Předchozí](./sourcelink.md)
-[další](./versioning.md)
+>[Předchozí](sourcelink.md)
+>[další](versioning.md)

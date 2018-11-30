@@ -1,37 +1,36 @@
 ---
-title: Programování konceptů (Visual Basic)
+title: Koncepty programování (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-ms.openlocfilehash: 85e23fcca0607e9f42daa94334c983462f6cf881
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fbdf2d6de7abf1d8d80ca3e88621fa569248996c
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643353"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672053"
 ---
-# <a name="programming-concepts-visual-basic"></a>Programování konceptů (Visual Basic)
-Tato část vysvětluje koncepty programování v jazyce Visual Basic.  
+# <a name="programming-concepts-visual-basic"></a>Koncepty programování (Visual Basic)
+Tato část popisuje koncepty programování v jazyce Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)|Popisuje postup vytvoření a použití sestavení.|  
-|[Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)|Popisuje, jak zapsat asynchronní řešení pomocí [asynchronní](../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../visual-basic/language-reference/operators/await-operator.md) klíčová slova. Obsahuje návod.|  
-|[Přehled atributy (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metod a vlastností pomocí atributů.|  
-|[Informace o subjektu volajícím (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metodu. Tyto informace zahrnují cesta k souboru, číslo řádku zdrojový kód a název člena volajícího.|  
-|[Kolekce (Visual Basic)](../../../visual-basic/programming-guide/concepts/collections.md)|Popisuje některé typy kolekcí poskytované rozhraní .NET Framework. Demonstruje použití jednoduchých kolekcí a kolekcí dvojic klíč/hodnota.|  
-|[Kovariance a kontravariance (Visual Basic)](../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametry obecného typu v rozhraní a delegáti.|  
-|[Stromy výrazů (Visual Basic)](../../../visual-basic/programming-guide/concepts/expression-trees/index.md)|Vysvětluje, jak použití stromů výrazů k povolení dynamické úpravu spustitelného kódu.|  
-|[Iterátory (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)|Popisuje, iterátory, které se používají k krok prostřednictvím kolekcí a při návratu elementy jeden.|  
-|[Language-Integrated Query (LINQ) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/index.md)|Popisuje možnosti účinný dotazovací v syntaxi jazyka Visual Basic a themodel pro dotazování relačních databází, dokumentů XML, datové sady a kolekce v paměti.|  
-|[Objektově orientované programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné koncepty objektově orientované, včetně zapouzdření, dědičnost a polymorfismus.|  
-|[Reflexe (Visual Basic)](../../../visual-basic/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí reflexe dynamicky vytvořit instanci typu, typ vazby s existujícím objektem, nebo z existujícího objektu získat typ a volat její metody nebo přístup k jeho polí a vlastností.|
-|[Serializace (Visual Basic)](../../../visual-basic/programming-guide/concepts/serialization/index.md)|Popisuje klíčové koncepty v binárním, XML a serializace SOAP.|  
-|[Dělení na vlákna (Visual Basic)](../../../visual-basic/programming-guide/concepts/threading/index.md)|Poskytuje přehled o modelu vláken .NET a ukazuje, jak napsat kód, který provádí více úloh ve stejnou dobu pro zvýšení výkonu a reakce aplikací.|  
+|[Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)|Popisuje, jak vytvořit a používat sestavení.|  
+|[Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)|Popisuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../../../visual-basic/language-reference/modifiers/async.md) a [Await](../../../visual-basic/language-reference/operators/await-operator.md) klíčová slova. Obsahuje návod.|  
+|[Přehled atributů (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md)|Popisuje, jak poskytnout další informace o programování elementů, jako jsou typy, pole, metody a vlastnosti pomocí atributů.|  
+|[Informace o volajícím (Visual Basic)](../../../visual-basic/programming-guide/concepts/caller-information.md)|Popisuje, jak získat informace o volajícím metody. Tyto informace patří cesta k souboru a číslo řádku zdrojového kódu a členské jméno volajícího.|  
+|[Kolekce (Visual Basic)](../../../visual-basic/programming-guide/concepts/collections.md)|Popisuje typy kolekcí, které poskytuje rozhraní .NET Framework. Ukazuje, jak použít jednoduché kolekce a kolekce párů klíč/hodnota.|  
+|[Kovariance a kontravariance (Visual Basic)](../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)|Ukazuje, jak povolit implicitní převod parametrů obecného typu v rozhraních a delegátech.|  
+|[Stromy výrazů (Visual Basic)](../../../visual-basic/programming-guide/concepts/expression-trees/index.md)|Vysvětluje, jak lze pomocí stromů výrazů povolit dynamickou změnu spustitelného kódu.|  
+|[Iterátory (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)|Popisuje iterátory, které se používají ke krokování kolekcemi a při návratu elementů.|  
+|[Language-Integrated Query (LINQ) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/index.md)|Tento článek popisuje výkonné funkce dotazů v syntaxi jazyka Visual Basic a themodel pro dotazování na relačních databází, dokumenty XML, datové sady a kolekce v paměti.|  
+|[Objektově orientované programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné objektově orientovaný jazyk, včetně zapouzdření, dědičnosti a polymorfismu.|  
+|[Reflexe (Visual Basic)](../../../visual-basic/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím.|
+|[Serializace (Visual Basic)](../../../visual-basic/programming-guide/concepts/serialization/index.md)|Popisuje klíčové pojmy v binárním formátu XML a serializaci SOAP.|  
   
 ## <a name="related-sections"></a>Související oddíly  
   
 |||  
 |---|---|  
-|[Tipy pro zvýšení výkonu](../../../framework/performance/performance-tips.md) | Popisuje několik základních pravidel, které mohou pomoci zvýšit výkon aplikace.|
+|[Tipy pro zvýšení výkonu](../../../framework/performance/performance-tips.md) | Tento článek popisuje několik základních pravidel, které vám mohou pomoci zvýšit výkon vaší aplikace.|

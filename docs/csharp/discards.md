@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/21/2017
 ms.openlocfilehash: 761fb69d3bc774975caf63b8aa665f8c19c0430a
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50045649"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671922"
 ---
 # <a name="discards---c-guide"></a>Zahození - průvodce v C#
 

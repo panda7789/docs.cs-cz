@@ -2,15 +2,15 @@
 title: 'Návod: Generování SQL'
 ms.date: 03/30/2017
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
-ms.openlocfilehash: 5551eb4088e7529c61d5c517fed6877c23ae12f2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cbc400671e5194494772580e77316af07b5669ff
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510497"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672014"
 ---
 # <a name="walkthrough-sql-generation"></a>Návod: Generování SQL
-Toto téma ukazuje, jak probíhá generování SQL [zprostředkovateli ukázek](https://go.microsoft.com/fwlink/?LinkId=180616). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  
+Toto téma ukazuje, jak probíhá generování SQL [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  
   
 ```  
 SELECT  j1.ProductId, j1.ProductName, j1.CategoryName, j2.ShipCountry, j2.ProductId  

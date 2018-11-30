@@ -1,33 +1,33 @@
 ---
-title: C# delegáti - přehled používání jazyka C#
-description: Další informace pozdní vazba s C# delegáti
+title: C#Delegáti – připravuje C# jazyka
+description: Přečtěte si pozdní vazbu s C# delegátů
 ms.date: 08/10/2016
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
-ms.openlocfilehash: 1dcd078b275d951b049b0c5bb6e084a4083d042d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2744f774392ef021974535de535b063264ae9a54
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360567"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672033"
 ---
 # <a name="delegates"></a>Delegáty
 
-A ***delegovat typ*** seznamu představuje odkazy na metody s konkrétní parametr a návratovým typem. Delegáti umožňují považovat za entit, které může být přiřazena k proměnné a předány jako parametry metody. Delegáti jsou podobná koncept ukazatelů na funkce najít v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, jsou delegáti objektově orientované a bezpečnost typů.
+A ***typ delegáta*** seznamu představuje odkazy na metody pomocí konkrétních parametrů a návratový typ. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 
 Následující příklad deklaruje a používá typ delegáta s názvem `Function`.
 
 [!code-csharp[DelegateExample](../../../samples/snippets/csharp/tour/delegates/Program.cs#L3-L37)]
 
-Instance `Function` typ delegáta může odkazovat všechny metody, která přijímá `double` argument a vrátí `double` hodnotu. `Apply` Metoda platí pro elementy danou funkci `double[]`, vracejících `double[]` s výsledky. V `Main` metody `Apply` se používá k aplikování tři různé funkce `double[]`.
+Instance `Function` typ delegáta může odkazovat na jakoukoli metodu, která přijímá `double` argument a vrátí `double` hodnotu. `Apply` Metoda použije danou funkci na elementy `double[]`, vrácení `double[]` s výsledky. V `Main` metody `Apply` slouží k použití tří různých funkcí `double[]`.
 
-Delegáta může odkazovat buď statickou metodu (například `Square` nebo `Math.Sin` v předchozím příkladu) nebo metodu instance (například `m.Multiply` v předchozím příkladu). Delegát, který odkazuje na metodu instance také odkazuje na konkrétní objekt, a když prostřednictvím delegáta je volána metoda instance, stane se tento objekt `this` v volání.
+Delegát může odkazovat na statickou metodu (například `Square` nebo `Math.Sin` v předchozím příkladu) nebo metodu instance (například `m.Multiply` v předchozím příkladu). Delegát, který odkazuje na metodu instance také odkazuje na konkrétní objekt, a když uživatel vyvolá metodu instance prostřednictvím delegáta, tento objekt se stane `this` ve volání.
 
-Delegáti lze vytvořit také pomocí anonymní funkce, které jsou "vložené metody", které jsou vytvořené za chodu. Anonymní funkce můžete zobrazit místní proměnné okolního metody. Proto je možné v předchozím příkladu násobitel zapsat snadněji bez použití třídy násobitel:
+Delegáty lze vytvořit také pomocí anonymní funkce, které jsou "inline metod", které jsou vytvořeny v reálném čase. Anonymní funkce můžete zobrazit místní proměnné okolního metody. Díky tomu se výše uvedený příklad multiplikátor může být zapsán snadněji bez použití multiplikátor třídy:
 
 [!code-csharp[LambdaExample](../../../samples/snippets/csharp/tour/delegates/Program.cs#L44-L44)]
 
-Podle zajímavé a užitečné vlastnosti delegáta je, že ho není vědět, nebo jsou pro vás o třídě metody, na které odkazuje; všechno, co záleží je, že má metodu odkazované stejnými parametry a návratový typ jako delegát.
+Zajímavé a užitečné vlastnictví delegáta je, že ho neznáte nebo postaral o třídě, na které odkazuje; metody vše, co je důležité je, že odkazované metody má stejné parametry a návratový typ jako delegát.
 
 >[!div class="step-by-step"]
-[Předchozí](enums.md)
-[další](attributes.md)
+>[Předchozí](enums.md)
+>[další](attributes.md)

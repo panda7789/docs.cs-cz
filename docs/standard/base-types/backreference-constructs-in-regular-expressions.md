@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7953e34f76e23e3f9f4913726adc4b2176b172c9
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 1f86ed838e1333a5475d72eabc4d4248fc256211
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615323"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672028"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Konstrukce zpětných odkazů v regulárních výrazech
 Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných nebo podřetězec v rámci řetězce. Například pokud vstupní řetězec obsahuje více výskytů libovolného dílčí řetězec, můžete porovnat první výskyt zachytávající skupinou a pak použijte zpětný odkaz tak, aby odpovídaly další výskyty tohoto dílčí řetězec.  
@@ -103,7 +103,7 @@ Nicméně pokud *název* je řetězcové vyjádření čísla a zachytávající
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`(?<1>a)`|Porovná znak "a" a přiřadit výsledek, který má zachytávající skupina s názvem `1`.|  
-|`(?<1>\1b)*`|0 nebo 1 shoda výskyt skupina s názvem `1` spolu s "b" a přiřadit výsledek, který má zachytávající skupina s názvem `1`.|  
+|`(?<1>\1b)*`|Porovná žádný nebo několik výskytů skupina s názvem `1` spolu s "b" a přiřadit výsledek, který má zachytávající skupina s názvem `1`.|  
   
  [!code-csharp[RegularExpressions.Language.Backreferences#4](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference4.cs#4)]
  [!code-vb[RegularExpressions.Language.Backreferences#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference4.vb#4)]  
@@ -114,7 +114,7 @@ Nicméně pokud *název* je řetězcové vyjádření čísla a zachytávající
   
 2.  Přejde na druhém znaku a úspěšně shoduje s řetězcem "ab" s výrazem `\1b`, nebo "ab". Poté přiřadí výsledek, "ab" k `\1`.  
   
-3.  Přejde na čtvrté znak. Výraz `(?<1>\1b)` je porovnán nula nebo vícekrát, takže úspěšně odpovídá řetězci "abb" s výrazem `\1b`. Přiřadí výsledek "abb", zpět do `\1`.  
+3.  Přejde na čtvrté znak. Výraz `(?<1>\1b)*` je porovnán nula nebo vícekrát, takže úspěšně odpovídá řetězci "abb" s výrazem `\1b`. Přiřadí výsledek "abb", zpět do `\1`.  
   
  V tomto příkladu `*` je kvantifikátor opakování je vyhodnocen jako opakovaně dokud modul regulárních výrazů neodpovídá vzoru definuje. Kvantifikátory opakování nerušte zaškrtnutí políčka definice skupiny.  
   

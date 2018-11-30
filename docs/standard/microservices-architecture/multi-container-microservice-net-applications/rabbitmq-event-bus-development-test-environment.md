@@ -1,29 +1,29 @@
 ---
-title: Implementace sběrnici událostí s RabbitMQ pro vývojové nebo testovací prostředí
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Implementace sběrnici událostí s RabbitMQ pro vývojové nebo testovací prostředí
+title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace zasílání zpráv, integrace událostí za vývojová nebo testovací prostředí sběrnice událostí pomocí RabbitMQ.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 12/11/2017
-ms.openlocfilehash: fb9bf51d947774cddd7b42ade0f05abc8fb3d7e9
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 10/02/2018
+ms.openlocfilehash: 6d855b56a7fd00b316dde599683900ad2db758d7
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104750"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672342"
 ---
-# <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnici událostí s RabbitMQ pro vývojové nebo testovací prostředí
+# <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
-Jsme měli začít informacemi o tom, že pokud vaše vlastní události sběrnice eShopOnContainers aplikace v závislosti na RabbitMQ spuštěné v kontejneru, vytvoříte, by být používána pouze pro vývoj a testovací prostředí. Nepoužívejte ho pro produkční prostředí, pokud vytváříte ho jako součást sběrnici služby produkční prostředí. Sběrnice jednoduché vlastní události mohou chybět řadu funkcí kritické produkční prostředí, které má komerční služby service bus.
+Jsme měli nejprve informacemi o tom, že pokud vaše vlastní události Service bus podle RabbitMQ spuštění v kontejneru, stejně jako aplikaci eShopOnContainers aplikaci vytvoříte, ji by měla sloužit pouze pro vývojová a testovací prostředí. Nepoužívejte ho pro vaše produkční prostředí, pokud nevytváříte ho jako součást připravené pro produkční prostředí služby Service bus. Service bus jednoduchý vlastní události mohou chybět mnoho funkcí důležité produkční prostředí, které má komerční služby Service bus.
 
-Jedním z vlastní implementaci sběrnice událostí v eShopOnContainers je v podstatě knihovny pomocí rozhraní API RabbitMQ (je jiné implementace založené na Azure Service Bus). 
+Jednou z vlastní implementace sběrnice událostí v aplikaci eShopOnContainers je v podstatě knihovny pomocí rozhraní API RabbitMQ (existuje jiné implementace založené na Azure Service Bus).
 
-Implementace sběrnice událostí s RabbitMQ umožňuje mikroslužeb přihlásit k odběru událostí, publikování událostí a přijímat události, jak ukazuje obrázek 8-21.
+Implementace sběrnice událostí pomocí RabbitMQ umožňuje mikroslužeb přihlášení k odběru událostí, publikování událostí a příjem událostí, jak je znázorněno v obrázek 6 – 21.
 
-![](./media/image22.png)
+![RabbitMQ funguje jako prostředník mezi zprávy vydavatele a odběratele, zpracování distribuce.](./media/image22.png)
 
-**Obrázek 8-21.** Implementace RabbitMQ sběrnici událostí
+**Obrázek 6 – 21.** RabbitMQ implementace sběrnice událostí
 
-V kódu EventBusRabbitMQ třída implementuje obecné rozhraní IEventBus. To je založené na vkládání závislostí, takže můžete zaměnit z této verze pro vývoj/testování pro produkční verzi.
+V kódu EventBusRabbitMQ třída implementuje obecné rozhraní IEventBus. Takže můžete zaměnit z této verze pro vývoj/testování pro produkční verze je založená na vkládání závislostí.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -32,11 +32,11 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
     //...
 ```
 
-Implementace RabbitMQ sběrnicí ukázka vývoje/testování událostí je často používaný kód. Má ke zpracování připojení k serveru RabbitMQ a zadejte kód pro publikování na událost zprávy do fronty. Je také nutné implementovat slovník kolekcí integrace obslužných rutin událostí pro každý typ události; Tyto typy událostí může mít různé vytváření instancí a různých předplatných pro každý příjemce mikroslužbu, jak ukazuje obrázek 8-21.
+RabbitMQ implementace sběrnice událostí ukázky pro vývoj/testování je často používaný kód. Má ke zpracování připojení k serveru RabbitMQ a zadejte kód pro publikování událostí zpráv do front. Je také k implementaci slovníku kolekcí integrace obslužné rutiny událostí pro každý typ události; Tyto typy událostí mohou mít různé vytváření instancí a různých předplatných u jednotlivých mikroslužeb příjemce, jak je znázorněno v obrázek 6 – 21.
 
-## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>Implementace jednoduchou metodu s RabbitMQ publikování
+## <a name="implementing-a-simple-publish-method-with-rabbitmq"></a>Metoda s RabbitMQ Implementing jednoduchý publikování.
 
-Následující kód je součástí je implementace sběrnice zjednodušené událostí pro RabbitMQ, vylepšené v [kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) z eShopOnContainers. Obvykle není potřeba ho kódu, pokud se něco vylepšovat. Kód získá připojení a kanál, ke RabbitMQ, vytvoří zprávu a pak publikuje zprávu do fronty.
+Následující kód je součástí provádění zjednodušené událostí Service bus pro RabbitMQ Vylepšený [skutečný kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) z aplikaci eShopOnContainers. Obvykle není potřeba kód, pokud jsou vylepšovat. Kód získá připojení a kanál RabbitMQ, vytvoří zprávu a pak publikuje zprávu do fronty.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -64,13 +64,13 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 }
 ```
 
-[Kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) publikování je metoda v aplikaci eShopOnContainers vylepšen pomocí [Polly](https://github.com/App-vNext/Polly) opakujte zásady, které úkol stanovený počet opakuje, v případě, že je RabbitMQ kontejner není připraven. Tato situace může nastat při docker compose zahajuje kontejnery; například kontejneru RabbitMQ může spustit pomaleji než jiných kontejnerů.
+[Skutečný kód](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/BuildingBlocks/EventBus/EventBusRabbitMQ/EventBusRabbitMQ.cs) publikování metodu v aplikaci eShopOnContainers aplikace je vylepšen pomocí [Polly](https://github.com/App-vNext/Polly) zásady, bude úloha s určitým počtem opakování se v případě, že je kontejner RabbitMQ opakování není připraven. Tato situace může nastat při docker-compose se spouští kontejnery; kontejner RabbitMQ například může začít pomaleji než jiné kontejnery.
 
-Jak už bylo zmíněno dříve, existuje celá řada možných konfigurací v RabbitMQ, takže tento kód by měl použít pouze pro prostředí pro vývoj/testování.
+Jak už bylo zmíněno dříve, existuje celá řada možných konfigurací v RabbitMQ, tak tento kód by měla sloužit pouze pro prostředí pro vývoj/testování.
 
-## <a name="implementing-the-subscription-code-with-the-rabbitmq-api"></a>Implementace kód odběru s rozhraním API RabbitMQ
+## <a name="implementing-the-subscription-code-with-the-rabbitmq-api"></a>Implementace kódu předplatného pomocí rozhraní API RabbitMQ
 
-Jako kód publikovat, následující kód je zjednodušení součástí implementaci sběrnice událostí pro RabbitMQ. Znovu obvykle není nutné ho měnit, pokud jsou vylepšení ho.
+Stejně jako u kódu, publikovat, následující kód je zjednodušení součástí implementace sběrnice událostí pro RabbitMQ. Znovu můžete obvykle nemusíte ho měnit, pokud ho vylepšujeme.
 
 ```csharp
 public class EventBusRabbitMQ : IEventBus, IDisposable
@@ -105,11 +105,10 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 }
 ```
 
-Každý typ události má související kanálu pro získání událostí z RabbitMQ. Potom může mít libovolný počet obslužných rutin událostí podle typu kanál a událostí podle potřeby.
+Každý typ událost má související kanálu chcete získávat události z RabbitMQ. Potom může mít libovolný počet obslužných rutin událostí na typ kanálu a události podle potřeby.
 
-Přihlásit k odběru metoda přijímá objekt IIntegrationEventHandler, což je jako metody zpětného volání v aktuálním mikroslužbu, a její související objekt IntegrationEvent. Kód pak přidá do seznamu obslužných rutin událostí, které může mít každý typ události integrace za klienta mikroslužbu této obslužné rutiny události. Pokud kód klienta nebyl byl již naslouchá na události, kód vytvoří kanál pro typ události, aby mohl přijímat události ve stylu nabízené z RabbitMQ této události je při publikování z jiné služby.
-
+Metoda přihlásit k odběru přijímá objekt IIntegrationEventHandler, což je jako metody zpětného volání v aktuálním mikroslužeb, a její související objekt IntegrationEvent. Tato obslužná rutina události kód pak přidá do seznamu obslužných rutin událostí, které může mít každý typ události integrace jednotlivých mikroslužbách klienta. Pokud klientský kód nebyl již přihlášení k odběru události, vytvoří kód kanálu pro typ události, takže může přijímat události ve stylu nabízených oznámení z RabbitMQ při publikování této události z jakékoli služby.
 
 >[!div class="step-by-step"]
-[Předchozí](integration-event-based-microservice-communications.md)
-[další](subscribe-events.md)
+>[Předchozí](integration-event-based-microservice-communications.md)
+>[další](subscribe-events.md)

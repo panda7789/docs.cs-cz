@@ -9,11 +9,11 @@ helpviewer_keywords:
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
 ms.openlocfilehash: 87a944eca6ea4158f15c9911c6b13fd4d3c0921d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191950"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672355"
 ---
 # <a name="ltsettingsgt-element-network-settings"></a>&lt;nastavení&gt; – Element (nastavení sítě)
 Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=nameWithType> oboru názvů.  

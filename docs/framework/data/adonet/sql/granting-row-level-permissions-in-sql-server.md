@@ -2,12 +2,12 @@
 title: Udělení oprávnění na úrovni řádků na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
-ms.openlocfilehash: 4a4b45e13a16b357be28a1383648e98890567ea9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0ec68f013d08e3939d48a820b9fd52ce27a4f12d
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43873702"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52671965"
 ---
 # <a name="granting-row-level-permissions-in-sql-server"></a>Udělení oprávnění na úrovni řádků na SQL serveru
 V některých případech je potřeba řídit přístup k datům na podrobnější úrovni, než jaké jednoduše udělení, odvolání nebo odepření oprávnění poskytuje. Nemocnice databázové aplikace může například vyžadovat jednotlivé lékařů omezit přístup k informacím o související s pouze pacientů. Podobné požadavky nejsou v mnoha prostředích, včetně finance, zákonem, government a aplikacím armády. K řešení scénářů, SQL Server 2016 poskytuje [zabezpečení na úrovní řádků](https://msdn.microsoft.com/library/dn765131.aspx) funkce, která zjednodušuje a centralizuje logiky přístupu na úrovni řádku v zásadách zabezpečení. U starších verzí systému SQL Server můžete dosáhnout podobné funkce vydává filtrování na úrovni řádků pomocí zobrazení.  
@@ -58,13 +58,6 @@ V některých případech je potřeba řídit přístup k datům na podrobnějš
 -   Zakázat všechna oprávnění pro tabulky (a zobrazení, pokud je k dispozici) na `public` role. Uživatelé nebudou mít dědění oprávnění z jiné databázové role, protože predikát filtru je založena na uživatele nebo přihlašovací jména, ne na role.  
   
 -   Udělení spustit na uložené procedury pro databázové role. Data mohou uživatelé přistupovat pouze prostřednictvím uložené procedury, které jsou k dispozici.  
-  
-## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v následujících prostředků.  
-  
-|||  
-|-|-|  
-|[Implementace zabezpečení na úrovní řádků a buňky v klasifikované databáze pomocí SQL Server 2005](https://go.microsoft.com/fwlink/?LinkId=98227) na webu TechCenter pro SQL Server lokality.|Popisuje způsob použití zabezpečení na úrovní řádků a buňky pro splnění požadavků zabezpečení klasifikované databáze.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení na úrovní řádků](https://msdn.microsoft.com/library/dn765131.aspx)  

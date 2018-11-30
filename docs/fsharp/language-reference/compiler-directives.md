@@ -3,11 +3,11 @@ title: Direktivy kompilátoru (F#)
 description: Další informace o F# direktivy preprocesoru jazyka, direktivy podmíněné kompilace, direktivy line a direktivy kompilátoru.
 ms.date: 05/16/2016
 ms.openlocfilehash: bb23096e03584f2a50cfe069075ba94a35c4753c
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296491"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672092"
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
