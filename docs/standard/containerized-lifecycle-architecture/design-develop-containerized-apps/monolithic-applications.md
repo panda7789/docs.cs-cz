@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: a2fe2c325377ec49f89199ad2e36c950ebab6a24
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 17dabb143a1948cbcfa748b4c3bbcff5a57d2c24
+ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50757345"
+ms.lasthandoff: 12/02/2018
+ms.locfileid: "52743266"
 ---
 # <a name="monolithic-applications"></a>Monolitické aplikace
 
@@ -69,7 +69,6 @@ Obrázek 4-4: publikování kontejneru do služby Azure App Service ze sady Visu
 
 Obrázek 4-4 také ukazuje, že tok publikovat nabízených oznámení image do registru kontejneru, který může být Azure Container Registry (registr téměř svá nasazení v Azure a zabezpečené pomocí skupin Azure Active Directory a účty) nebo jiné registru Dockeru například Docker Hub nebo v místním Registry.
 
-
 >[!div class="step-by-step"]
-[Předchozí](common-container-design-principles.md)
-[další](state-and-data-in-docker-applications.md)
+>[Předchozí](common-container-design-principles.md)
+>[další](state-and-data-in-docker-applications.md)
