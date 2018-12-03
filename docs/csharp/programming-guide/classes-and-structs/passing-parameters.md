@@ -9,10 +9,10 @@ helpviewer_keywords:
 - C# language, method parameters
 ms.assetid: a5c3003f-7441-4710-b8b1-c79de77e0b77
 ms.openlocfilehash: 241beb56b0e0f00dae63e12ea775b2b982200efc
-ms.sourcegitcommit: 302908367e82742d3e5ef7e5f3ce190a39300d64
+ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2018
+ms.lasthandoff: 12/03/2018
 ms.locfileid: "44194848"
 ---
 # <a name="passing-parameters-c-programming-guide"></a>Předávání parametrů (Průvodce programováním v C#)

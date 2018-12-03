@@ -4,16 +4,16 @@ description: Průvodce architekturou bez serveru. Když, zjistěte, proč a jak 
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 6/26/2018
-ms.openlocfilehash: 89e5f387e218703a2f6311ef848b3d613a9279f7
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: a19784f42c63914e9cf8f42ee6408ec9aa46e4f3
+ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404898"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52745313"
 ---
-![](./media/Cover.jpg)
-
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Aplikace bez serveru: architektury, vzory a implementace Azure
+
+![](./media/Cover.jpg)
 
 > Ke stažení je k dispozici na: <https://aka.ms/serverless-ebook>
 
@@ -61,7 +61,7 @@ Editory:
 
 ## <a name="introduction"></a>Úvod
 
-Bez serveru je vývoj cloudových platformách ve směru cloud čistě nativní kód. Bez serveru přináší vývojáři blíže na obchodní logiku při izolační starostí o infrastrukturu. Je vzor, který není neznamená "žádný server" ale spíše "méně server". Kód bez serveru je řízená událostmi. Kód může být aktivované vše od tradiční webový požadavek HTTP na časovač, nebo výsledek po nahrání souboru. Umožňuje rychlé škálování s cílem splnit požadavky elastických infrastrukturu za bez serveru a nabízí fakturaci micro skutečně "za to, co používáte." Bez serveru vyžaduje nový způsob myšlení a přístup k vytváření aplikací a má to pravé řešení pro každý problém není. Jako vývojář musíte se rozhodnout:
+[Bez serveru](https://azure.microsoft.com/solutions/serverless/) je vývoj cloudových platformách ve směru cloud čistě nativní kód. Bez serveru přináší vývojáři blíže na obchodní logiku při izolační starostí o infrastrukturu. Je vzor, který není neznamená "žádný server" ale spíše "méně server". Kód bez serveru je řízená událostmi. Kód může být aktivované vše od tradiční webový požadavek HTTP na časovač, nebo výsledek po nahrání souboru. Umožňuje rychlé škálování s cílem splnit požadavky elastických infrastrukturu za bez serveru a nabízí fakturaci micro skutečně "za to, co používáte." Bez serveru vyžaduje nový způsob myšlení a přístup k vytváření aplikací a má to pravé řešení pro každý problém není. Jako vývojář musíte se rozhodnout:
 
 * Jaké jsou výhody a nevýhody bez serveru?
 * Proč bych můžete uvažovat o bez serveru pro vaše vlastní aplikace?
@@ -138,4 +138,4 @@ První část tohoto průvodce zkontroluje důvod, proč bez serveru je vhodným
 Příručka a ukázky související se neustále vyvíjí, takže uvítali váš názor! Pokud máte připomínky jak se tento průvodce může zlepšit, použijte část zpětná vazba v dolní části libovolné stránky založená na [problémy Githubu](https://github.com/dotnet/docs/issues).
 
 >[!div class="step-by-step"]
-[Next](architecture-approaches.md)
+>[Next](architecture-approaches.md)

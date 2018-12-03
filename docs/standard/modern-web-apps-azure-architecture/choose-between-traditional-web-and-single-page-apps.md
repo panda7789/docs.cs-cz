@@ -5,11 +5,11 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 6/28/2018
 ms.openlocfilehash: abeee719c15263fea04a3bcf80a6e41c43b640d2
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671900"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "52745300"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>Volba mezi tradičními webovými aplikacemi a jednostránkové aplikace (SPA)
 
