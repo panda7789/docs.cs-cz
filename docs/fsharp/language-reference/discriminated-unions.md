@@ -2,12 +2,12 @@
 title: Rozlišovaná sjednocení (F#)
 description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
-ms.openlocfilehash: 06d6c154790f659c0c7ff73290357ab50a134362
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: f833539f2e31ffc6db4182bdbd2088e6dc2bb2cc
+ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43788120"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52672242"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -51,7 +51,7 @@ let prism = Prism(5., 2.0, height = 3.0)
 
 Tento kód ukazuje, že můžete použít buď pojmenovaná pole v inicializaci, nebo můžete spoléhat na pořadí polí v deklaraci a stačí zadat hodnoty pro každé pole zase. Volání konstruktoru pro `rect` v předcházejícím kódu používá pojmenovaná pole, ale volání konstruktoru pro `circ` používá řazení. Můžete kombinovat objednaná pole a pojmenovaná pole jako v konstrukci `prism`.
 
-`option` Typ je jednoduchým diskriminovaným sjednocením v základní knihovně F#. `option` Typ je deklarován následujícím způsobem.
+`option` Typ je jednoduchým diskriminovaným sjednocením v F# základní knihovny. `option` Typ je deklarován následujícím způsobem.
 
 ```fsharp
 // The option type is a discriminated union.
@@ -84,7 +84,7 @@ Za normálních okolností lze identifikátory velikosti písmen použít bez je
 
 ### <a name="unwrapping-discriminated-unions"></a>Rozbalení rozlišovaná sjednocení
 
-V Rozlišované sjednocení F# se často používají v doméně modelování pro obtékání jednoho typu. Je snadné získání základní hodnoty přes porovnávání vzorů také. Není nutné použít odpovídající výraz pro jeden případ:
+V F# Rozlišované sjednocení se často používají v doméně modelování pro obtékání jednoho typu. Je snadné získání základní hodnoty přes porovnávání vzorů také. Není nutné použít odpovídající výraz pro jeden případ:
 
 ```fsharp
 let ([UnionCaseName] [values]) = [UnionValue]
@@ -95,15 +95,23 @@ Následující příklad ukazuje toto:
 ```fsharp
 type ShaderProgram = | ShaderProgram of id:int
 
-let someMethodUsingShaderProgram shaderProgram =
+let someFunctionUsingShaderProgram shaderProgram =
     let (ShaderProgram id) = shaderProgram
     // Use the unwrapped value
-    ..
+    ...
+```
+
+Porovnávání vzorů je povolen také přímo v parametry funkce, takže můžete rozbalit jeden případ:
+
+```fsharp
+let someFunctionUsingShaderProgram (ShaderProgram id) =
+    // Use the unwrapped value
+    ...
 ```
 
 ## <a name="struct-discriminated-unions"></a>Rozlišovaná sjednocení – struktura
 
-Od verze F# 4.1, může také představovat Rozlišované sjednocení jako struktury.  Používá se k tomu `[<Struct>]` atribut.
+Počínaje F# 4.1, může také představovat Rozlišované sjednocení jako struktury.  Používá se k tomu `[<Struct>]` atribut.
 
 ```fsharp
 [<Struct>]
