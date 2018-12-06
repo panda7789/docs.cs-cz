@@ -1,17 +1,17 @@
 ---
 title: Aritmetické operátory (F#)
-description: Další informace o aritmetických operátorů, které jsou k dispozici v programovacím jazyce F#.
+description: Další informace o aritmetických operátorů, které jsou k dispozici v F# programovací jazyk.
 ms.date: 04/04/2018
-ms.openlocfilehash: 008aa84b8736bb3a734ce8bb9713d34c17f1b76e
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 2c0e2e25a4f79d00455d978e235e4bef16b52586
+ms.sourcegitcommit: 6ae7cdd0437a32884556dd4826ca90e957b7a4e3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
+ms.lasthandoff: 12/06/2018
 ms.locfileid: "45597424"
 ---
 # <a name="arithmetic-operators"></a>Aritmetické operátory
 
-Toto téma popisuje aritmetických operátorů, které jsou k dispozici v jazyce F#.
+Toto téma popisuje aritmetických operátorů, které jsou k dispozici v F# jazyka.
 
 ## <a name="summary-of-binary-arithmetic-operators"></a>Souhrn binární aritmetické operátory
 
@@ -34,6 +34,7 @@ Následující tabulka shrnuje unární aritmetické operátory, které jsou k d
 |--------------|-----|
 |`+` (pozitivní)|Můžete použít pro jakékoli aritmetický výraz. Znaménko hodnoty nezmění.|
 |`-` (negace, negativní)|Můžete použít pro jakékoli aritmetický výraz. Změní znaménku hodnoty.|
+
 Obtékání je chování při přetečení nebo podtečení pro integrální typy. To způsobí, že nesprávný výsledek. Přetečení celého čísla je potenciálně vážný problém, který může přispět k problémy se zabezpečením při softwaru není zapsána do účtu pro něj. Pokud je to důležité pro vaši aplikaci, zvažte použití kontrolované operátory v `Microsoft.FSharp.Core.Operators.Checked`.
 
 ## <a name="summary-of-binary-comparison-operators"></a>Souhrn binární relační operátory
@@ -53,13 +54,13 @@ V následující tabulce jsou uvedeny binární relační operátory, které jso
 
 ## <a name="overloaded-and-generic-operators"></a>Obecné a přetížené operátory
 
-Všechny operátory jsou popsané v tomto tématu jsou definovány v **Microsoft.FSharp.Core.Operators** oboru názvů. Některé operátory jsou definovány pomocí staticky rozpoznávané parametry typu. To znamená, že jsou jednotlivé definice pro každý konkrétní typ, který funguje s operátor. Všechny jednočlenné a binární aritmetické a bitové operátory jsou v této kategorii. Operátory porovnání jsou obecné a proto fungovat s jakýmkoli typem aritmetické pouze primitivní typy. Rozlišovaná sjednocení a typy záznamů mají své vlastní vlastní implementace, které jsou generovány v kompilátoru F#. Typy tříd pomocí metody <xref:System.Object.Equals%2A>.
+Všechny operátory jsou popsané v tomto tématu jsou definovány v **Microsoft.FSharp.Core.Operators** oboru názvů. Některé operátory jsou definovány pomocí staticky rozpoznávané parametry typu. To znamená, že jsou jednotlivé definice pro každý konkrétní typ, který funguje s operátor. Všechny jednočlenné a binární aritmetické a bitové operátory jsou v této kategorii. Operátory porovnání jsou obecné a proto fungovat s jakýmkoli typem aritmetické pouze primitivní typy. Rozlišovaná sjednocení a typy záznamů mají své vlastní vlastní implementace, které se vygenerovaly F# kompilátoru. Typy tříd pomocí metody <xref:System.Object.Equals%2A>.
 
 Obecný operátory jsou přizpůsobitelné. Chcete-li přizpůsobit funkce porovnání, přepište <xref:System.Object.Equals%2A> poskytnout vlastní porovnání rovnosti vlastní, a potom implementovat <xref:System.IComparable>. <xref:System.IComparable?displayProperty=nameWithType> Rozhraní obsahuje jedinou metodu, <xref:System.IComparable.CompareTo%2A> metody.
 
 ## <a name="operators-and-type-inference"></a>Operátory a odvození typu
 
-Použití operátoru ve výrazu omezí odvození typu na tento operátor. Použití operátorů zabrání také, automatická generalizace, protože použití operátorů znamená aritmetického typu. Chybí nějakých jiných informací, kompilátor F# odvodí `int` jako typ aritmetických výrazech. Toto chování můžete přepsat zadáním jiného typu. Proto typy argumentů a návratový typ `function1` v následujícím kódu, které jsou odvozeny bude `int`, ale typy pro `function2` jsou odvozena jako `float`.
+Použití operátoru ve výrazu omezí odvození typu na tento operátor. Použití operátorů zabrání také, automatická generalizace, protože použití operátorů znamená aritmetického typu. Chybí nějakých jiných informací F# kompilátor odvodí `int` jako typ aritmetických výrazech. Toto chování můžete přepsat zadáním jiného typu. Proto typy argumentů a návratový typ `function1` v následujícím kódu, které jsou odvozeny bude `int`, ale typy pro `function2` jsou odvozena jako `float`.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3501.fs)]
 
