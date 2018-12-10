@@ -30,8 +30,6 @@
 ### [Použití Azure Service Fabricu](architect-microservice-container-applications/using-azure-service-fabric.md)
 ## [Proces vývoje aplikací založených na Dockeru](docker-application-development-process/index.md)
 ### [Pracovní postup vývoje aplikací Dockeru](docker-application-development-process/docker-app-development-workflow.md)
-## [Nasazení webových aplikací .NET Core založených na jednom kontejnerů na hostitele se systémem Linux nebo Windows Nano Server](net-core-single-containers-linux-windows-server-hosts/index.md)
-## [Migrace starších monolitických aplikací .NET Framework do kontejnerů Windows](containerize-net-framework-applications/index.md)
 ## [Návrh a vývoj aplikací .NET založených na více kontejnerech a mikroslužbách](multi-container-microservice-net-applications/index.md)
 ### [Návrh aplikace orientované na mikroslužby](multi-container-microservice-net-applications/microservice-application-design.md)
 ### [Vytvoření jednoduché mikroslužby CRUD řízené daty](multi-container-microservice-net-applications/data-driven-crud-microservice.md)
