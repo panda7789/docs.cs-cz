@@ -3,11 +3,11 @@ title: Seznamy (F#)
 description: Další informace o F# seznam seřazený, neměnné řadu prvků stejného typu.
 ms.date: 05/16/2016
 ms.openlocfilehash: f7b9054226a1dd004ac78673a059bd1c35e325a5
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297501"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152744"
 ---
 # <a name="lists"></a>Seznamy
 
@@ -96,7 +96,7 @@ Funkce `RemoveAllMultiples` je rekurzivní funkci, která přijímá dva seznamy
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1308.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 Primes Up To 100:
@@ -117,7 +117,7 @@ Následující kód demonstruje použití `List.exists`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet1.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 For list [0; 1; 2; 3], contains zero is true
@@ -127,7 +127,7 @@ Následující příklad ukazuje použití `List.exists2`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet2.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 Lists [1; 2; 3; 4; 5] and [5; 4; 3; 2; 1] have at least one equal element at the same position.
@@ -137,7 +137,7 @@ Můžete použít [List.forall](https://msdn.microsoft.com/library/e11a5233-d612
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet3.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 true
@@ -148,7 +148,7 @@ Obdobně [List.forall2](https://msdn.microsoft.com/library/bb611f02-8277-48f5-9a
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet4.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 true
@@ -165,7 +165,7 @@ Následující příklad ukazuje použití `List.sort`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet5.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [-2; 1; 4; 5; 8]
@@ -175,7 +175,7 @@ Následující příklad ukazuje použití `List.sortBy`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet6.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [1; -2; 4; 5; 8]
@@ -185,7 +185,7 @@ Následující příklad ukazuje použití `List.sortWith`. V tomto příkladu v
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet7.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [{ID = 92;
@@ -210,7 +210,7 @@ Pokud nejprve musí transformované prvky, zavolejte [List.pick](https://msdn.mi
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet9.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 "b"
@@ -220,7 +220,7 @@ Jiná skupina operace hledání [List.tryFind](https://msdn.microsoft.com/librar
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet10.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 The first even value is 22.
@@ -249,7 +249,7 @@ Seznamy, které obsahují řazené kolekce členů může manipulovat zip a rozb
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet13.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [(1, -1); (2, -2); (3; -3)]
@@ -259,7 +259,7 @@ Následující příklad kódu ukazuje použití `List.zip3`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet14.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [(1, -1, 0); (2, -2, 0); (3, -3, 0)]
@@ -271,7 +271,7 @@ Následující příklad kódu ukazuje použití [List.unzip](https://msdn.micro
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet15.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 ([1; 3], [2; 4])
@@ -282,7 +282,7 @@ Následující příklad kódu ukazuje použití [List.unzip3](https://msdn.micr
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet16.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 ([1; 4], [2; 5], [3; 6])
@@ -294,7 +294,7 @@ F#podporuje různé operace na seznamu elementů. Nejjednodušší je [List.iter
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet17.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 List.iter: element is 1
@@ -315,7 +315,7 @@ Další často používané funkci, která transformuje prvky seznamu je [List.m
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet18.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [2; 3; 4]
@@ -325,7 +325,7 @@ Následující příklad ukazuje použití `List.map2`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet19.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [5; 7; 9]
@@ -335,7 +335,7 @@ Následující příklad ukazuje použití `List.map3`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet20.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [7; 10; 13]
@@ -345,7 +345,7 @@ Následující příklad ukazuje použití `List.mapi`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet21.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [1; 3; 5]
@@ -355,7 +355,7 @@ Následující příklad ukazuje použití `List.mapi2`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet22.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [0; 7; 18]
@@ -365,7 +365,7 @@ Výstup vypadá takto:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet23.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 [1; 2; 3; 2; 4; 6; 3; 6; 9]
@@ -383,7 +383,7 @@ Následující kód demonstruje použití `List.choose` vyberte ze seznamu slov 
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lists/snippet25.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 ["Rome's"; "Bob's"]

@@ -1,26 +1,24 @@
 ---
-title: Ladění aplikace C# nebo Visual Basic Hello World .NET Core pomocí sady Visual Studio 2017
+title: Ladění aplikace Hello World .NET Core pomocí sady Visual Studio 2017
 description: Zjistěte, jak ladit aplikaci Hello World v jazyce C# nebo Visual Basic pomocí sady Visual Studio 2017.
-author: BillWagner
-ms.author: wiwagn
 ms.date: 12/15/2017
-ms.custom: vs-dotnet
-ms.openlocfilehash: 53e4549f4790bc0756cd0ad0b903b3dc25d2f66a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: b08744e784ffdde6682a6271888ae55d3fbd242b
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200121"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170662"
 ---
-# <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World pomocí sady Visual Studio 2017
+# <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Ladit vaše C# nebo Visual Basic .NET Core aplikace Hello World pomocí sady Visual Studio 2017
 
-Zatím jste postupovali podle kroků v [sestavení Hello World aplikaci v C# pomocí platformy .NET Core v sadě Visual Studio 2017](.\with-visual-studio.md) nebo [sestavení jazyka Visual Basic Hello World aplikace s .NET Core v sadě Visual Studio 2017](vb-with-visual-studio.md) k vytvoření a spusťte jednoduchou konzolovou aplikaci. Po zapisují a zkompilovat aplikaci, můžete začít testování. Visual Studio zahrnuje komplexní sadu ladicí nástroje, které můžete použít při testování a řešení potíží s vaší aplikací.
+Zatím jste postupovali podle kroků v [sestavení Hello World aplikaci v C# pomocí platformy .NET Core v sadě Visual Studio 2017](with-visual-studio.md) nebo [sestavení jazyka Visual Basic Hello World aplikace s .NET Core v sadě Visual Studio 2017](vb-with-visual-studio.md) k vytvoření a spusťte jednoduchou konzolovou aplikaci. Po zapisují a zkompilovat aplikaci, můžete začít testování. Visual Studio zahrnuje komplexní sadu ladicí nástroje, které můžete použít při testování a řešení potíží s vaší aplikací.
 
 ## <a name="debugging-in-debug-mode"></a>Ladění v režimu ladění
 
 *Ladění* a *vydání* jsou dvě sady Visual Studio výchozí konfigurace sestavení. Aktuální konfigurace sestavení se zobrazí na panelu nástrojů. Následující obrázek panelu nástrojů zobrazí, že Visual Studio je nakonfigurovaný pro vaši aplikaci v kompilaci **ladění** režimu.
 
-   ![Panel nástrojů Visual Studio](./media/debugging-with-visual-studio/toolbar1.png)
+   ![panel nástrojů sady Visual Studio výchozí ladicí program zvýrazní](./media/debugging-with-visual-studio/visual-studio-toolbar-debug.png)
 
 By měl vždy začínají při testování aplikace v režimu ladění. Ladění režimu vypne většina optimalizace kompilátoru a poskytuje rozsáhlejší informace během procesu sestavení.
 
@@ -33,7 +31,7 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
    Nastavit zarážku na řádek, který čte `Console.WriteLine($"\nHello, {name}, on {date:d} at {date:t}!");` kliknutím na levém okraji okna kódu na tomto řádku nebo kliknutím **ladění** > **Přepnout zarážku** položky nabídky řádku Vybrat. Jak ukazuje následující obrázek, Visual Studio určuje řádek, na kterém je nastavena zarážka ho zvýrazníte a zobrazením červené kolečko v jeho levého okraje.
 
-   ![Visual Studio okna sadou zarážku](./media/debugging-with-visual-studio/setbreakpoint.png)
+   ![Visual Studio okna sadou zarážku](./media/debugging-with-visual-studio/set-breakpoint-in-editor.png)
 
 1. Spusťte program v režimu ladění tak, že vyberete **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů, stisknutím klávesy F5 nebo výběrem **ladění** > **spustit ladění**.
 
@@ -51,11 +49,11 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
    **Podokna** se zobrazí hodnota proměnné řetězce a vlastnosti <xref:System.DateTime> hodnotu. Kromě toho se aktualizuje hodnotu proměnné v **automatické hodnoty** a **lokální** systému windows.
 
-   ![Okno Automatické hodnoty a příkazové podokno](./media/debugging-with-visual-studio/autosimmediate.png)
+   ![Okno Automatické hodnoty a příkazové podokno](./media/debugging-with-visual-studio/autos-immediate-window.png)
 
 1. Pokračovat v provádění programu tak, že vyberete **pokračovat** tlačítko na panelu nástrojů nebo tak, že vyberete **ladění** > **pokračovat** položky nabídky. Hodnoty zobrazené v okně konzoly odpovídají změny provedené v **podokna**.
 
-   ![Okno konzoly zadaná hodnota konektoru na to, co je vaše jméno? řádek následovaný Hello Gracie 11/1/2016 v 11:59](./media/debugging-with-visual-studio/changed.png)
+   ![Okno konzoly hodnotě Jack na to, co je vaše jméno? řádek následovaný Hello Gracie](./media/debugging-with-visual-studio/debug-changed-value.png)
 
 1. Stisknutím libovolné klávesy ukončete aplikaci a ukončení režimu ladění.
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
@@ -63,7 +61,7 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
    Nastavit zarážku na řádek, který čte `Console.WriteLine(vbCrLf + $"Hello, {name}, on {currentDate:d} at {currentDate:t}!")` kliknutím na levém okraji okna kódu na tomto řádku nebo kliknutím **ladění** > **Přepnout zarážku** položky nabídky řádku Vybrat. Jak ukazuje následující obrázek, Visual Studio určuje řádek, na kterém je nastavena zarážka ho zvýrazníte a zobrazením červené kolečko v jeho levého okraje.
 
-   ![Visual Studio okna sadou zarážku](./media/debugging-with-visual-studio/vb-setbreakpoint.png)
+   ![Visual Studio okna sadou zarážku](./media/debugging-with-visual-studio/vb-set-breakpoint-in-editor.png)
 
 1. Spusťte program v režimu ladění tak, že vyberete **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů, stisknutím klávesy F5 nebo výběrem **ladění** > **spustit ladění**.
 
@@ -71,7 +69,7 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
 1. Zastaví spuštění programu při dosažení zarážky a před `Console.WriteLine` metody. **Automatické hodnoty** okně zobrazí hodnoty proměnných, které se používají kolem aktuálního řádku. **Lokální** okno (které můžete zobrazit kliknutím **místní hodnoty** kartu) zobrazuje hodnoty proměnné, které jsou definovány v aktuálně prováděné metody.
 
-   ![Okno aplikace Visual Studio](./media/debugging-with-visual-studio/vb-break.png)
+   ![Okno aplikace Visual Studio na zarážce](./media/debugging-with-visual-studio/vb-stop-at-breakpoint.png)
 
 1. Můžete změnit hodnotu proměnné, chcete-li zjistit, jak to ovlivní váš program. Pokud **podokna** není viditelný, ho zobrazit výběrem **ladění** > **Windows** > **okamžité**položky nabídky. **Podokna** umožňuje pracovat s aplikací, kterou ladíte.
 
@@ -81,7 +79,7 @@ Spusťte svůj program v režimu ladění a zkuste několik funkcí ladění:
 
 1. Pokračovat v provádění programu tak, že vyberete **pokračovat** tlačítko na panelu nástrojů nebo tak, že vyberete **ladění** > **pokračovat** položky nabídky. Hodnoty zobrazené v okně konzoly odpovídají změny provedené v **podokna**.
 
-   ![Zobrazuje změněné hodnoty zadané v příkazovém okně konzoly](./media/debugging-with-visual-studio/changed.png)
+   ![Zobrazuje změněné hodnoty zadané v příkazovém okně konzoly](./media/debugging-with-visual-studio/debug-changed-value.png)
 
 1. Stisknutím libovolné klávesy ukončete aplikaci a ukončení režimu ladění.
 ---
@@ -95,7 +93,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. Klikněte pravým tlačítkem na červenou tečku představující zarážku. V místní nabídce vyberte **podmínky** otevřít **nastavení zarážek** dialogového okna. Zaškrtněte políčko u **podmínky**.
 
-   ![Panel nastavení zarážky](./media/debugging-with-visual-studio/breakpointsettings.png)
+   ![Editor panelu nastavení zarážky zobrazující –C#](./media/debugging-with-visual-studio/breakpoint-settings.png)
 
 1. Pro **podmíněný výraz** nahradit "např. x == 5" následujícím kódem:
 
@@ -121,7 +119,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
    ? name == String.Empty
    ```
 
-   ![Příkazové podokno vrací hodnotu true, po provedení příkazu](./media/debugging-with-visual-studio/emptystring.png)
+   ![Příkazové podokno vrací hodnotu PRAVDA po provedení příkazu -C#](./media/debugging-with-visual-studio/immediate-window-output.png)
 
 1. Vyberte **pokračovat** tlačítko na panelu nástrojů můžete pokračovat v provádění programu.
 
@@ -131,7 +129,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 1. Klikněte pravým tlačítkem na červenou tečku představující zarážku. V místní nabídce vyberte **podmínky** otevřít **nastavení zarážek** dialogového okna. Zaškrtněte políčko u **podmínky**.
 
-   ![Panel nastavení zarážky](./media/debugging-with-visual-studio/vb-breakpointsettings.png)
+   ![Panel nastavení editoru zobrazující zarážku - jazyka Visual Basic](./media/debugging-with-visual-studio/vb-breakpointsettings.png)
 
 1. Pro **podmíněný výraz** nahradit "např. x = 5" následujícím kódem:
 
@@ -156,7 +154,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
    ```vb
    ? String.IsNullOrEmpty(name)
    ```
-  ![Příkazové podokno vrací hodnotu true, po provedení příkazu](./media/debugging-with-visual-studio/vb-emptystring.png)
+  ![Příkazové podokno vrací hodnotu true, po příkazu je provedeno – Visual Basic](./media/debugging-with-visual-studio/vb-immediate-window-output.png)
 
 1. Vyberte **pokračovat** tlačítko na panelu nástrojů můžete pokračovat v provádění programu.
 
@@ -171,13 +169,13 @@ Visual Studio také umožňuje kroku řádek po řádku prostřednictvím progra
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. V panelu nabídky zvolte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio zvýrazní a zobrazí šipky vedle položky na další řádek provádění.
 
-   ![Okno Visual Studio](./media/debugging-with-visual-studio/stepinto1.png)
+   ![Visual Studio krokování s vnořením – – metodaC#](./media/debugging-with-visual-studio/step-into-method.png)
 
    V tomto okamžiku **automatické hodnoty** okno zobrazuje, že váš program má definovaný pouze jednu proměnnou, `args`. Protože jakékoli argumenty příkazového řádku nebyly předány do programu, jeho hodnota je prázdné pole řetězce. Kromě toho Visual Studio otevření okna konzoly prázdné.
 
 1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio nyní zvýrazňuje další řádek provádění. Jak ukazuje obrázek, vždycky trvalo nejméně jeden milisekund ke spouštění kódu vytvořeného mezi poslední příkaz a ten. `args` zůstane pouze deklarované proměnné a v okně konzoly se zůstává prázdné.
 
-   ![Okno Visual Studio](./media/debugging-with-visual-studio/stepinto2.png)
+   ![Visual Studio vstoupit metoda zdroje –C#](./media/debugging-with-visual-studio/step-into-source-method.png)
 
 1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio zvýrazní příkazu, který zahrnuje `name` přiřazení proměnné. **Automatické hodnoty** okno ukazuje, že `name` je `null`, a v okně konzoly se zobrazí řetězec "Jaký je název vašeho?".
 
@@ -195,13 +193,13 @@ Visual Studio také umožňuje kroku řádek po řádku prostřednictvím progra
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 1. V panelu nabídky zvolte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio zvýrazní a zobrazí šipky vedle položky na další řádek provádění.
 
-   ![Okno Visual Studio](./media/debugging-with-visual-studio/vb-stepinto1.png)
+   ![Visual Studio krokování s vnořením do metody – Visual Basic](./media/debugging-with-visual-studio/vb-step-into-method.png)
 
    AT tento bod, protože nebyly předány jakékoli argumenty příkazového řádku k programu, **automatické hodnoty** okno zobrazuje hodnotu `args` proměnná je pole prázdný řetězec. Kromě toho Visual Studio otevření okna konzoly prázdné.
 
 1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio nyní zvýrazňuje další řádek provádění. Jak ukazuje obrázek, vždycky trvalo nejméně jeden milisekund ke spouštění kódu vytvořeného mezi poslední příkaz a ten. `args` zůstane pouze deklarované proměnné a v okně konzoly se zůstává prázdné.
 
-   ![Okno Visual Studio](./media/debugging-with-visual-studio/vb-stepinto2.png)
+   ![Visual Studio krokování s vnořením do metody zdroje – Visual Basic](./media/debugging-with-visual-studio/vb-step-into-source-method.png)
 
 1. Vyberte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio zvýrazní příkazu, který zahrnuje `name` přiřazení proměnné. **Automatické hodnoty** okno ukazuje, že `name` je `Nothing`, a v okně konzoly se zobrazí řetězec "Jaký je název vašeho?".
 
@@ -224,8 +222,8 @@ Jakmile jste otestovali sestavení pro ladění vaší aplikace, by měl také z
 
 Pro vytváření a testování verze vaší konzolové aplikace, změňte konfiguraci buildu na panelu nástrojů z **ladění** k **vydání**.
 
-![Image](./media/debugging-with-visual-studio/toolbar2.png)
+![panel nástrojů sady Visual Studio výchozí ladicí program zvýrazní](./media/debugging-with-visual-studio/visual-studio-toolbar-release.png)
 
 Při stisknutí klávesy F5 nebo vyberte **sestavit řešení** z **sestavení** nabídky sady Visual Studio zkompiluje verze vaší konzolové aplikace. Ji můžete otestovat, jako jste to udělali ladicí verze aplikace.
 
-Po dokončení ladění vaší aplikace, dalším krokem je publikovat nasaditelný verzi vaší aplikace. Informace o tom, jak to provést, najdete v tématu [publikování aplikace Hello World pomocí sady Visual Studio 2017](./publishing-with-visual-studio.md).
+Po dokončení ladění vaší aplikace, dalším krokem je publikovat nasaditelný verzi vaší aplikace. Informace o tom, jak to provést, najdete v tématu [publikování aplikace Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).

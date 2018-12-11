@@ -2,12 +2,12 @@
 title: '&lt;netHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: b0d81ca0-87c5-4090-8baa-e390fd3656d2
-ms.openlocfilehash: 22e010957b59759d60747e32ab226af6615df7c4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 33ba00bbc695b1cbec0c246c72dc86c8de1b3e5c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841590"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151249"
 ---
 # <a name="ltnethttpbindinggt"></a>&lt;netHttpBinding&gt;
 Představuje vazbu, která služby Windows Communication Foundation (WCF) můžete použít ke konfiguraci a zpřístupňují koncové body, které jsou schopné komunikovat prostřednictvím protokolu HTTP. Při použití s duplexní kontrakt, se použije webové sokety, jinak se použije protokol HTTP.  
@@ -77,7 +77,7 @@ Představuje vazbu, která služby Windows Communication Foundation (WCF) může
 |`proxyAddress`|Identifikátor URI, který obsahuje adresu proxy serveru HTTP. Pokud `useSystemWebProxy` je nastavena na `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
 |`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
 |`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: BigEndian kódování Unicode kódování.<br />-Unicode: kódování 16 bitů.<br />– UTF8: kódování 8bitové<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
+|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
 |`transferMode`|Platný <xref:System.ServiceModel.TransferMode> hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu na požadavku nebo odpovědi.|  
 |`useDefaultWebProxy`|Logická hodnota, která určuje, zda má být použita automaticky nakonfigurovaný proxy HTTP systému, pokud je k dispozici. Výchozí hodnota je `true`.|  
 |||  
@@ -139,7 +139,7 @@ Představuje vazbu, která služby Windows Communication Foundation (WCF) může
 ```  
   
 ## <a name="example"></a>Příklad  
- Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Funkce z předchozího příkladu dosáhnete tak, že odeberete bindingConfiguration z adresy koncového bodu a frm název vazby.  
+ Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název. Funkce z předchozího příkladu dosáhnete tak, že odeberete bindingConfiguration z adresy koncového bodu a název z vazby.  
   
 ```xml  
 <system.serviceModel>   

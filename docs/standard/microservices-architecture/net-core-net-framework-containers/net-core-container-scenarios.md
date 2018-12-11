@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: fa5efd3c2478965ef01efc39b57918ec2d35962a
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: b283916d6ae4d19fdc6a4f7976a3adbb66d26b2c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873372"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143400"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 
@@ -53,7 +53,6 @@ Pokud váš systém založených na kontejnerech potřebuje nejlepší možné h
 
 To je obzvláště důležité pro architekturu mikroslužeb, ve které jste mohli stovky mikroslužby (kontejnerů) spuštěná. S ASP.NET Core Image (na platformě .NET Core runtime) v systému Linux nebo Windows Nano můžete spustit váš systém s mnohem menším počtem serverů nebo virtuálních počítačů, takže v konečném důsledku ušetří náklady v infrastruktuře a hostování.
 
-
 >[!div class="step-by-step"]
-[Předchozí](general-guidance.md)
-[další](net-framework-container-scenarios.md)
+>[Předchozí](general-guidance.md)
+>[další](net-framework-container-scenarios.md)

@@ -1,21 +1,21 @@
 ---
 title: Výpočetní výrazy (F#)
-description: Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F#, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.
+description: Zjistěte, jak vytvořit pohodlné syntaxe pro zápis výpočty v F# , můžete být sekvencované a kombinované pomocí řídit tok konstrukcí a vazby.
 ms.date: 07/27/2018
-ms.openlocfilehash: 148d1a661fb7630782c6dc48507a66e7bdc1d56b
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: b1fee11f68e99e53d19b47bef9eca6298cce2f45
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48839866"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169843"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
-Výpočetní výrazy v jazyce F# poskytuje pohodlné syntaxe pro zápis výpočty, které mohou být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby. V závislosti na typ výrazu výpočtu, můžete představit jako způsob, jak vyjádřit monády, monoids, monad transformátory a applicative funktory. Ale na rozdíl od jiných jazyků (jako například *zápis* v Haskell), nejsou vázané na jednoho odběru a nespoléhejte na makra nebo jiné formy metaprogramování k provedení pohodlný a kontextová syntaxe.
+Výpočetní výrazy v F# poskytuje pohodlné syntaxe pro zápis výpočty, které mohou být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby. V závislosti na typ výrazu výpočtu, můžete představit jako způsob, jak vyjádřit monády, monoids, monad transformátory a applicative funktory. Ale na rozdíl od jiných jazyků (jako například *zápis* v Haskell), nejsou vázané na jednoho odběru a nespoléhejte na makra nebo jiné formy metaprogramování k provedení pohodlný a kontextová syntaxe.
 
 ## <a name="overview"></a>Přehled
 
-Výpočty mohou mít mnoho forem. Nejběžnější forma výpočtu je spouštění s jedním vláknem, které je snadno srozumitelný a upravit. Ne všechny formy výpočet jsou však tak přímočaré jako spuštění s jedním vláknem. Mezi příklady patří:
+Výpočty mohou mít mnoho forem. Nejběžnější forma výpočtu je spouštění s jedním vláknem, které je snadno srozumitelný a upravit. Ne všechny formy výpočet jsou však tak přímočaré jako spuštění s jedním vláknem. Možné příklady:
 
 * Nedeterministické výpočty
 * Asynchronní výpočty
@@ -61,9 +61,9 @@ expr { return! ... }
 expr { match! ... }
 ```
 
-Každá z těchto klíčových slov a ostatní standardní F# klíčová slova jsou k dispozici pouze ve výrazu výpočtu. Pokud byla definována v základní typ Tvůrce. Jedinou výjimkou je `match!`, což je samotný syntaktické sugar pro použití `let!` následuje porovnávání na výsledek.
+Každá z těchto klíčových slov a ostatní standardní F# klíčová slova jsou k dispozici ve výrazu výpočtu, pouze pokud byla definována v základní typ Tvůrce. Jedinou výjimkou je `match!`, což je samotný syntaktické sugar pro použití `let!` následuje porovnávání na výsledek.
 
-Typ Tvůrce je objekt, který definuje speciální metody, které řídí způsob, jakým jsou kombinované fragmenty výrazu výpočtu; To znamená její metody řídit chování výrazu výpočtu. Dalším způsobem, jak popisují třída tvůrců je Řekněme, že umožňuje přizpůsobit operace mnoho konstrukce F#, jako jsou smyčky a vazby.
+Typ Tvůrce je objekt, který definuje speciální metody, které řídí způsob, jakým jsou kombinované fragmenty výrazu výpočtu; To znamená její metody řídit chování výrazu výpočtu. Jiný způsob k popisu třídy tvůrce je Řekněme, že umožňuje přizpůsobit operace mnoha F# konstrukce, jako jsou smyčky a vazby.
 
 ### `let!`
 
@@ -179,7 +179,7 @@ let result = Async.RunSynchronously req
 
 ### `match!`
 
-Od verze F# 4.5, `match!` – klíčové slovo vám umožní vložení volání jiného výpočtu výrazu a vzor se vyhledala shoda podle její výsledek:
+Počínaje F# 4.5, `match!` – klíčové slovo vám umožní vložení volání jiného výpočtu výrazu a vzor se vyhledala shoda podle její výsledek:
 
 ```fsharp
 let doThingsAsync url =
@@ -194,7 +194,7 @@ Při volání výrazu výpočtu s `match!`, značným výsledek volání, např�
 
 ## <a name="built-in-computation-expressions"></a>Integrované výpočetní výrazy
 
-Základní knihovny F# definuje tři předdefinované výpočetní výrazy: [výrazech pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [– výrazy dotazů](query-expressions.md).
+F# Základní knihovna definuje tři předdefinované výpočetní výrazy: [Sekvence výrazů](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech dotazů](query-expressions.md).
 
 ## <a name="creating-a-new-type-of-computation-expression"></a>Vytvoření nového typu výrazu výpočtu.
 
@@ -227,7 +227,7 @@ Vnořený výraz má následující formát:
 builder.Run(builder.Delay(fun () -> {| cexpr |}))
 ```
 
-Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je výraz F# a `cexpr` je výrazu výpočtu.
+Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je F# výraz a `cexpr` je výrazu výpočtu.
 
 |Výraz|Překlad|
 |----------|-----------|
@@ -251,6 +251,7 @@ Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou
 |<code>{&#124; cexpr1; cexpr2 &#124;}</code>|<code>builder.Combine({&#124;cexpr1 &#124;}, {&#124; cexpr2 &#124;})</code>|
 |<code>{&#124; other-expr; cexpr &#124;}</code>|<code>expr; {&#124; cexpr &#124;}</code>|
 |<code>{&#124; other-expr &#124;}</code>|`expr; builder.Zero()`|
+
 V předchozí tabulce `other-expr` popisuje výraz, který není jinak uvedená v tabulce. Třída tvůrců není potřeba implementovat všechny metody a podporují všechny převody uvedené v předchozí tabulce. Tyto konstrukce, které nejsou implementované nejsou k dispozici ve výrazech výpočtu daného typu. Například, pokud nechcete podporu `use` – klíčové slovo ve výrazech výpočtu, můžete vynechat definici `Use` ve své třídě Tvůrce.
 
 Následující příklad kódu ukazuje, který zapouzdřuje výpočtu jako sérii kroků, které lze vyhodnotit jeden krok po jednom výrazu výpočtu. Rozlišované sjednocení typu A `OkOrException`, jak vyhodnotit zatím kóduje chybový stav výrazu. Tento kód ukazuje některé typické postupy, které můžete použít ve výrazech výpočtu, jako je například implementace často používaný text některé metody Tvůrce.
@@ -266,7 +267,7 @@ module Eventually =
     // computation.
     let rec bind func expr =
         match expr with
-        | Done value -> NotYetDone (fun () -> func value)
+        | Done value -> func value
         | NotYetDone work -> NotYetDone (fun () -> bind func (work()))
 
     // Return the final value wrapped in the Eventually type.
@@ -372,13 +373,8 @@ comp |> step |> step
 
 // prints "x = 1"
 // prints "x = 2"
-// returns "NotYetDone <closure>"
-comp |> step |> step |> step |> step |> step |> step
-
-// prints "x = 1"
-// prints "x = 2"
 // returns "Done 7"
-comp |> step |> step |> step |> step |> step |> step |> step |> step
+comp |> step |> step |> step |> step 
 ```
 
 Výrazu výpočtu má základní typ, který vrací výraz. Nadřazený typ může představovat vypočítaný výsledek nebo opožděné výpočty, které lze provést nebo může poskytnout způsob, jak k iteraci v rámci nějaký typ kolekce. V předchozím příkladu byl nadřazený typ **nakonec**. Pro výraz pořadí základní typ je <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>. Pro výraz dotazu, je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType>. Pro asynchronní pracovní postup, je základní typ [ `Async` ](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7). `Async` Objekt představuje práce, která musí provést k výpočtu výsledku. Například volání [ `Async.RunSynchronously` ](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) k provedení výpočtu a vrátí výsledek.

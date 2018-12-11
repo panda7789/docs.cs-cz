@@ -1,6 +1,6 @@
 ---
 title: Doporučené postupy spravovaného dělení na vlákna
-ms.date: 11/30/2017
+ms.date: 10/15/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -12,20 +12,20 @@ helpviewer_keywords:
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f95fb3ccab7362021a7a195ea199a1370e003dd2
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: ab33474fa8f3d62fb21c86a0699bbfcb75e7a270
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562369"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150612"
 ---
-# <a name="managed-threading-best-practices"></a>Doporučené postupy spravovaného dělení na vlákna
+# <a name="managed-threading-best-practices"></a>Dělení na spravovaná vlákna osvědčené postupy
 Multithreading vyžaduje pečlivé programování. V případě většiny úkolů lze omezit složitost umístěním požadavků do fronty pro spuštění pomocí vláken fondu vláken. Toto téma řeší obtížnější situace, například koordinaci práce více vláken nebo zpracování vláken, která se blokují.  
   
 > [!NOTE]
 > Od verze rozhraní .NET Framework 4, Task Parallel Library a PLINQ poskytuje rozhraní API, která snižuje do hry složitost a rizika vícevláknového programování. Další informace najdete v tématu [paralelní programování v .NET](../../../docs/standard/parallel-programming/index.md).  
   
-## <a name="deadlocks-and-race-conditions"></a>Zablokování a konflikty časování  
+## <a name="deadlocks-and-race-conditions"></a>Zablokování a konflikty časování  
  Multithreading řeší problémy s propustností a rychlostí odezvy, ale zároveň přináší nové problémy: zablokování a konflikty časování.  
   
 ### <a name="deadlocks"></a>Zablokování  
@@ -70,37 +70,18 @@ else {
   
  Ke konfliktům časování může docházet také tehdy, pokud synchronizujete aktivity více vláken. Při každém zápisu řádku kódu je nutné zvážit, co může nastat, pokud by vlákno bylo před provedením daného řádku (nebo před provedením jakéhokoliv jednotlivého pokynu počítače, který řádek tvoří) přerušeno a jiné vlákno by jej nahradilo.  
   
-## <a name="number-of-processors"></a>Počet procesorů  
- Většina počítačů dnes již obsahuje více procesorů (také nazývané jádra), dokonce i v malých zařízeních, jako jsou tablety a telefony. Víte-li, že vyvíjíte software, který bude spouštěn také na jednoprocesorových počítačích, je zapotřebí si uvědomit, že multithreading řeší odlišné problémy pro jednoprocesorové a víceprocesorové počítače.  
-  
-### <a name="multiprocessor-computers"></a>Počítače s více procesory  
- Multithreading poskytuje větší propustnost. Deset procesorů může provést desetkrát více práce než jeden procesor, ale pouze pokud je práce rozdělena tak, aby všech deset procesorů mohlo pracovat současně. Vlákna poskytují snadný způsob rozdělení práce a využití tohoto vysokého výkonu. Pokud používáte multithreading na počítači s více procesory:  
-  
--   Počet vláken, která mohou být prováděna současně, je omezen počtem procesorů.  
-  
--   Vlákno na pozadí se provádí pouze v případě, že počet vláken v popředí je menší než počet procesorů.  
-  
--   Pokud voláte metodu <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> na vlákno, pak dané vlákno může, ale nemusí, okamžitě spustit provádění, a to v závislosti na počtu procesorů a počtu vláken, která čekají na provedení.  
-  
--   Ke konfliktům časování nemusí dojít pouze v případě, že jsou vlákna neočekávaně přerušena, ale i v situaci, kdy jsou prováděna dvě vlákna na různých procesorech a soupeří o dosažení stejného bloku kódu.  
-  
-### <a name="single-processor-computers"></a>Počítače s jedním procesorem  
- Multithreading poskytuje větší rychlost odezvy na činnost uživatele a pro úkoly na pozadí využívá čas nečinnosti. Pokud používáte multithreading na počítači s jedním procesorem:  
-  
--   V jednom okamžiku se provádí pouze jedno vlákno.  
-  
--   Vlákno na pozadí se spustí pouze tehdy, pokud je nečinné hlavní uživatelské vlákno. Vlákno na popředí, které se provádí nepřetržitě, ubírá vláknům na pozadí čas procesoru.  
-  
--   Pokud voláte metodu <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> na vlákno, pak se dané vlákno nespustí, dokud se provádí aktuální vlákno nebo dokud není přerušeno operačním systémem.  
-  
--   Ke konfliktům časování obvykle dochází tehdy, pokud programátor nepředpokládal skutečnost, že vlákno může být přerušeno v nevhodnou chvíli, což někdy umožní jinému vláknu dosáhnout určitého bloku kódu jako první.  
-  
-## <a name="static-members-and-static-constructors"></a>Statické členy a statické konstruktory  
+## <a name="static-members-and-static-constructors"></a>Statické členy a statické konstruktory  
  Třída není inicializována až do té doby, dokud příslušný konstruktor třídy (konstruktor `static` v jazyce C#, konstruktor `Shared Sub New` v jazyce Visual Basic) nedokončí provádění. Aby nedošlo ke spuštění kódu pro typ, který není inicializován, blokuje modul CLR všechna volání členů `static` dané třídy (`Shared` v jazyce Visual Basic) z jiných vláken až do dokončení konstruktoru třídy.  
   
  Pokud například konstruktor třídy začíná nové vlákno a procedura vlákna volá člen `static` dané třídy, je nové vlákno blokováno do doby, než je konstruktor třídy dokončen.  
   
  To platí pro jakýkoli typ, který může mít konstruktor `static`.  
+
+## <a name="number-of-processors"></a>Počet procesorů
+
+Ať už nejsou jenom jeden procesor nebo více procesorů k dispozici v systému mohou mít vliv na architekturu s více vlákny. Další informace najdete v tématu [počet procesorů](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/1c9txz50(v%3dvs.71)#number-of-processors).
+
+Použití <xref:System.Environment.ProcessorCount?displayProperty=nameWithType> vlastnosti k určení počtu procesorů, které jsou k dispozici za běhu.
   
 ## <a name="general-recommendations"></a>Obecná doporučení  
  Při používání více vláken zvažte následující pokyny:  
@@ -145,7 +126,7 @@ else {
     ```  
   
     > [!NOTE]
-    >  V rozhraní .NET Framework verze 2.0 poskytuje metoda <xref:System.Threading.Interlocked.Add%2A> atomické aktualizace v přírůstcích větších než 1.  
+    > V rozhraní .NET Framework 2.0 nebo novější, použijte <xref:System.Threading.Interlocked.Add%2A> metodu pro atomické přírůstcích větších než 1.  
   
      Ve druhém příkladu je proměnná referenčního typu aktualizována pouze tehdy, pokud má odkaz hodnotu null (`Nothing` v jazyce Visual Basic).  
   
@@ -183,7 +164,7 @@ else {
     ```  
   
     > [!NOTE]
-    >  V rozhraní .NET Framework verze 2.0 má metoda <xref:System.Threading.Interlocked.CompareExchange%2A> obecné přetížení, které může být použito pro typově bezpečné nahrazení jakéhokoliv odkazového typu.  
+    > Od verze rozhraní .NET Framework 2.0, <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29> přetížení metody poskytuje alternativu typově bezpečný pro typy odkazů.
   
 ## <a name="recommendations-for-class-libraries"></a>Doporučení pro knihovny tříd  
  Při navrhování knihoven tříd pro multithreading zvažte následující pokyny:  

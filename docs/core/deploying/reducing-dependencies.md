@@ -2,14 +2,14 @@
 title: Omezení závislosti balíčku s project.json
 description: Omezte závislosti balíčků, při vytváření knihovny project.json založené.
 author: cartermp
-ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 6da7404415e8d485533fc1c9a619cb0706a26aca
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.custom: seodec18
+ms.openlocfilehash: 932344ff40dd32793727fbce7bc0d6cd02592f8b
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50040878"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168271"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 

@@ -1,6 +1,6 @@
 ---
 title: Výjimky a výkon
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - tester-doer pattern
@@ -9,14 +9,13 @@ helpviewer_keywords:
 - exceptions, performance
 - throwing exceptions, performance
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d664b7b61394bd9bfe6d0abd7130f9f0191e7a03
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+author: KrzysztofCwalina
+ms.openlocfilehash: ab125117836545b9a2436347375ed0e08c591c7b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083543"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153745"
 ---
 # <a name="exceptions-and-performance"></a>Výjimky a výkon
 Jeden společný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelná. Toto je platný žádný problém. Pokud člen vyvolá výjimku, jeho výkon a může být řádů pomalejší. Je však možné dosáhnout dobrý výkon při výhradně týkajícími se výjimka pokyny, které zakáže použití se kódy chyb. Dva způsoby, které jsou popsané v této části navrhujeme způsoby, jak to provést.  
@@ -71,7 +70,7 @@ public struct DateTime {
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

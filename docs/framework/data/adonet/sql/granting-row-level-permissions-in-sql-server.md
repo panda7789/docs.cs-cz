@@ -3,11 +3,11 @@ title: Udělení oprávnění na úrovni řádků na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
 ms.openlocfilehash: 0ec68f013d08e3939d48a820b9fd52ce27a4f12d
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671965"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127287"
 ---
 # <a name="granting-row-level-permissions-in-sql-server"></a>Udělení oprávnění na úrovni řádků na SQL serveru
 V některých případech je potřeba řídit přístup k datům na podrobnější úrovni, než jaké jednoduše udělení, odvolání nebo odepření oprávnění poskytuje. Nemocnice databázové aplikace může například vyžadovat jednotlivé lékařů omezit přístup k informacím o související s pouze pacientů. Podobné požadavky nejsou v mnoha prostředích, včetně finance, zákonem, government a aplikacím armády. K řešení scénářů, SQL Server 2016 poskytuje [zabezpečení na úrovní řádků](https://msdn.microsoft.com/library/dn765131.aspx) funkce, která zjednodušuje a centralizuje logiky přístupu na úrovni řádku v zásadách zabezpečení. U starších verzí systému SQL Server můžete dosáhnout podobné funkce vydává filtrování na úrovni řádků pomocí zobrazení.  

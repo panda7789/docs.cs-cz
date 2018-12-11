@@ -1,15 +1,15 @@
 ---
-title: Cílení na více platforem
+title: Cílení na .NET knihoven napříč platformami
 description: Doporučené osvědčené postupy pro vytváření knihovny pro různé platformy .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 72fa891d5b1054af485a98d89b4efb11d6b0018b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6bd310f2e4b7a9bd7bb550ed9c7da9ebabdf64ba
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50202813"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129711"
 ---
 # <a name="cross-platform-targeting"></a>Cílení na více platforem
 
@@ -59,7 +59,7 @@ K ochraně zákazníci nebudou muset sestavení pro jednotlivá rozhraní, je nu
 >
 > Když toto provedete, neuvolňují podpora pro .NET Standard. Místo toho vyvolat od implementace rozhraní a nabízejí funkce rozhraní API. Tímto způsobem své knihovny lze je použít kdekoli a podporuje runtime světla shrnutí těchto funkcí.
 
-**❌ Nepoužívejte** pomocí cílení na více platforem pomocí .NET Standard, pokud se zdrojový kód je stejný pro všechny cíle.
+**❌ Nepoužívejte** cílení na více platforem a také cílí na .NET Standard, pokud váš zdrojový kód je stejný pro všechny cíle.
 
 > .NET Standard sestavení se automaticky použije balíčkem NuGet. Cílení na jednotlivé implementace .NET zvýší `*.nupkg` velikost bez jakékoli výhody.
 
@@ -88,12 +88,12 @@ K ochraně zákazníci nebudou muset sestavení pro jednotlivá rozhraní, je nu
 
 .NET podporuje cílení verze rozhraní .NET Framework, které jsou dlouhé mimo podporu, jakož i platformy, které se už běžně používají. Pokud hodnota při vytvoření knihovny práce na mnoho cíle jako je to možné, museli obejít chybí rozhraní API můžete přidávat významné režie. Jsme přesvědčeni jisti, že rozhraní stojí za to už cílení, zvažujete jeho dosah a omezení.
 
-**❌ NEPODPORUJÍ** zahrnout cíl Přenosná knihovna tříd (PCL). Například `portable-net45+win8+wpa81+wp8`.
+**❌ NEPODPORUJÍ** zahrnout cíl Přenosná knihovna tříd (PCL). Například, `portable-net45+win8+wpa81+wp8`.
 
 > .NET standard je moderní způsob, jak podpora knihovny pro různé platformy .NET a nahradí PCLs.
 
 **❌ NEPODPORUJÍ** obsahovat cílové hodnoty pro platformy .NET, které již nejsou podporovány. Například `SL4`, `WP`.
 
 >[!div class="step-by-step"]
-[Předchozí](./get-started.md)
-[další](./strong-naming.md)
+>[Předchozí](get-started.md)
+>[další](strong-naming.md)

@@ -4,12 +4,12 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: d76c14aa83fcf47faea41946614e83cfbc8ad57b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c0198cde88b66f5e115c82b5454bd8a32db7ef96
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195499"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143711"
 ---
 # <a name="tuples-visual-basic"></a>Řazené kolekce členů (Visual Basic)
 
@@ -50,7 +50,7 @@ Protože elementy a proměnné mají stejný název, Visual Basic kompilátor m�
 
 [!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
-Pokud chcete povolit názvy elementů řazené kolekce členů interred, je nutné definovat verzi kompilátoru jazyka Visual Basic pro použití v projektu jazyka Visual Basic (\*.vbproj) souboru: 
+Povolit názvy elementů řazené kolekce členů odvozené, je nutné definovat verzi kompilátoru jazyka Visual Basic pro použití v projektu jazyka Visual Basic (\*.vbproj) souboru: 
 
 ```xml 
 <PropertyGroup> 
@@ -87,7 +87,7 @@ Pokud vlastními členy, vlastnost a pole ověření nebo neměnnosti jsou důle
 | Člen | Popis |
 | ---|---|
 | CompareTo | Porovná aktuální řazenou kolekci členů na jiné řazené kolekce členů se stejný počet prvků. |
-| rovná se | Určuje, zda se k jinému řazené kolekce členů nebo objekt rovná aktuální řazenou kolekci členů. |
+| Je rovno | Určuje, zda se k jinému řazené kolekce členů nebo objekt rovná aktuální řazenou kolekci členů. |
 | Metoda GetHashCode | Vypočítá kód hash pro aktuální instanci. |
 | ToString | Vrátí řetězcovou reprezentaci této řazené kolekce členů, který má podobu `(Item1, Item2...)`, kde `Item1` a `Item2` představují hodnoty řazené pole. |
 

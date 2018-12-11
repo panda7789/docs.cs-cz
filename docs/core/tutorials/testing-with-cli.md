@@ -2,14 +2,14 @@
 title: Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 description: Tento kurz vysvětluje, jak uspořádat a Testovací projekty .NET Core z příkazového řádku.
 author: cartermp
-ms.author: mairaw
 ms.date: 09/10/2018
-ms.openlocfilehash: 9984b4f43ca8c09cc0948cad7e6c176127384361
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.custom: seodec18
+ms.openlocfilehash: 960d6e98f39b1d1d07c980c021b1029201f1f631
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49415221"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169651"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -97,13 +97,13 @@ Woof!
 Meow!
 ```
 
-Volitelné cvičení: můžete přidat nový domácí mazlíčky typ, například `Bird`, rozšířením tento projekt. Ujistěte se, zobrazení z ptačí perspektivy `TalkToOwner` Poskytněte metodu `Tweet!` na vlastníka. Znovu spusťte aplikaci. Výstup bude zahrnovat `Tweet!`
+Volitelné cvičení: Můžete přidat nový domácí mazlíčky typ, například `Bird`, rozšířením tento projekt. Ujistěte se, zobrazení z ptačí perspektivy `TalkToOwner` Poskytněte metodu `Tweet!` na vlastníka. Znovu spusťte aplikaci. Výstup bude zahrnovat `Tweet!`
 
 ### <a name="testing-the-sample"></a>Testování ukázky
 
 `NewTypes` Projekt je na místě a uspořádán udržováním mazlíčci související typy ve složce. V dalším kroku vytvoření testovacího projektu a začít psát testy s [xUnit](https://xunit.github.io/) rozhraní pro testování. Testování částí umožňuje automaticky zjišťovat chování domácí mazlíčky typů potvrďte, že funguje správně.
 
-Vytvoření *testování* složka s *NewTypesTests* složky v něm. Na příkazovém řádku z *NewTypesTests* složce spusťte `dotnet new xunit`. Tímto se vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.
+Vytvoření *testování* složka s *NewTypesTests* složky v něm. Na příkazovém řádku z *NewTypesTests* složce spusťte `dotnet new xunit`. To vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.
 
 Projekt testů nelze aktuálně typy v testu `NewTypes` a vyžaduje odkaz na projekt `NewTypes` projektu. Chcete-li přidat odkaz na projekt, použijte [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
 
@@ -159,7 +159,7 @@ public class PetTests
 }
 ```
 
-Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který provede `Tweet!` vlastníkovi, přidejte testovací metody pro *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda se dá použít správně `Bird` typu.
+Volitelné cvičení: Pokud jste přidali `Bird` dříve typ, který provede `Tweet!` vlastníkovi, přidejte testovací metody pro *PetTests.cs* souboru, `BirdTalkToOwnerReturnsTweet`, zkontroluje, jestli `TalkToOwner` metoda se dá použít správně `Bird` Zadejte.
 
 > [!NOTE]
 > I když můžete očekávat, že `expected` a `actual` jsou hodnoty stejné, počáteční kontrolní výraz se `Assert.NotEqual` kontroly Určuje, že tyto hodnoty jsou *nerovná*. Vždy nejprve vytvořte test selhání za účelem ověření logiky testu. Jakmile potvrdíte, že se test nezdaří, upravte kontrolní výraz, aby test proběhl úspěšně.

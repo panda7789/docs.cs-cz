@@ -5,12 +5,12 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/12/2018
 ms.custom: vs-dotnet
-ms.openlocfilehash: c58c680c6500bc3b9adec50e18c26af3329122c9
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 79e9b5cc9bac317a368583013abbc5124ef2c9ac
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086385"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151210"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí sady Visual Studio Tools for Docker (Visual Studio na Windows)
 
@@ -41,7 +41,7 @@ Můžete přidat podporu Dockeru do existujícího projektu webové aplikace .NE
 
 ![Povolit podporu Dockeru pro novou webovou aplikaci ASP.NET Core v sadě Visual Studio](./media/enable-docker-support-visual-studio.png)
 
-Obrázek 4 – 27: povolte podporu Dockeru během vytváření projektu v sadě Visual Studio 2017
+Obrázek 4 – 27: Povolit podporu Dockeru během vytváření projektu v sadě Visual Studio 2017
 
 Když přidáváte nebo povolit podporu Dockeru, sada Visual Studio přidá *soubor Dockerfile* soubor do projektu.
 
@@ -62,7 +62,7 @@ Poté, co přidáte do projektu podporu Orchestrace kontejnerů, se zobrazí sou
 
 ![Soubory docker v Průzkumníku řešení v sadě Visual Studio](media/docker-support-solution-explorer.png)
 
-Obrázek 4 – 29: Docker soubory v Průzkumníku řešení v sadě Visual Studio 2017
+Obrázek 4 – 29: Soubory docker v Průzkumníku řešení v sadě Visual Studio 2017
 
 Pokud *docker-compose.yml* již existuje, požadovaných řádků kódu, konfigurace sady Visual Studio právě přidá k němu.
 
@@ -72,7 +72,7 @@ V hlavní nabídce zvolte **nástroje** > **možnosti**a rozbalte **kontejnerov�
 
 ![](./media/visual-studio-docker-tools-options.png)
 
-Obrázek 4-30: Možnosti nástrojů Dockeru
+Obrázek 4-30: Možnosti nástrojů dockeru
 
 V následující tabulce může pomoct při rozhodování, jak nastavit tyto možnosti.
 
@@ -93,5 +93,5 @@ Vytváření, ladění, aktualizovat a aktualizovat aplikace v místním kontejn
 Nasazení kontejneru ASP.NET Core Dockeru do registru kontejneru: [https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker/](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 
 >[!div class="step-by-step"]
-[Předchozí](docker-apps-inner-loop-workflow.md)
-[další](set-up-windows-containers-with-powershell.md)
+>[Předchozí](docker-apps-inner-loop-workflow.md)
+>[další](set-up-windows-containers-with-powershell.md)

@@ -1,23 +1,25 @@
 ---
-title: 'Testování jednotek knihovny jazyka F # v .NET Core pomocí příkazu dotnet test a NUnit'
-description: 'Další koncepty testů jednotek pro F # v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a NUnit.'
+title: Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a NUnit
+description: Další koncepty testů jednotek pro F# v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a NUnit.
 author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - fsharp
-ms.openlocfilehash: adadfc0358814f4600255aac7076f9ba6fbb4feb
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.custom: seodec18
+ms.openlocfilehash: 4135ef1a0f3ef86ae8ab344d27ee8968944bb728
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308402"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169089"
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování jednotek knihovny jazyka F # v .NET Core pomocí příkazu dotnet test a NUnit
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a NUnit
 
 Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů. Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-nunit/) předtím, než začnete. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Požadavky 
-- [.NET core SDK 2.1 (vs. 2.1.400)](https://www.microsoft.com/net/download) nebo novější verze. 
+## <a name="prerequisites"></a>Požadavky
+
+- [Sady SDK .NET core 2.1](https://www.microsoft.com/net/download) nebo novější verze.
 - Textového editoru nebo editoru kódu podle vašeho výběru.
 
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje

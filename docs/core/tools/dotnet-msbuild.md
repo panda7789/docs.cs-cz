@@ -1,15 +1,13 @@
 ---
-title: příkaz DotNet msbuild – rozhraní příkazového řádku .NET Core
+title: příkaz DotNet msbuild
 description: Příkaz dotnet msbuild poskytuje přístup k příkazovému řádku nástroje MSBuild.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: 76165590478b0e76d19d546c87e012da4716b6db
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.date: 12/03/2018
+ms.openlocfilehash: f025b5b92e57c7b804b9bdd59c8b4a4a806796da
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583706"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169076"
 ---
 # <a name="dotnet-msbuild"></a>DotNet msbuild
 
@@ -27,22 +25,32 @@ ms.locfileid: "48583706"
 
 `dotnet msbuild` Příkaz umožňuje přístup k plně funkční nástroj MSBuild.
 
-Příkaz má přesně stejné funkce jako existující klient příkazového řádku MSBuild. Možnosti jsou stejné. Další informace o dostupných možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).
+Příkaz má přesně stejné funkce jako existující klient příkazového řádku MSBuild pro SDK – vizuální styl pouze aplikace project. Možnosti jsou stejné. Další informace o dostupných možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).
+
+[Dotnet sestavení](dotnet-build.md) je ekvivalentní příkazu `dotnet msbuild -restore -target:Build`. `dotnet build` častěji se používá k sestavení projektů, ale `dotnet msbuild` vám dává větší kontrolu. Například pokud máte konkrétní cíl, který chcete spustit (bez spuštění cíl sestavení), pravděpodobně chcete použít `dotnet msbuild`.
 
 ## <a name="examples"></a>Příklady
 
-Sestavení projektu a jeho závislosti:
+* Sestavení projektu a jeho závislosti:
 
-`dotnet msbuild`
+  ```console
+  dotnet msbuild
+  ```
 
-Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:
+* Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:
 
-`dotnet msbuild -p:Configuration=Release`
+  ```console
+  dotnet msbuild -p:Configuration=Release
+  ```
 
-Spustit cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:
+* Spustit cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:
 
-`dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64`
+  ```console
+  dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64
+  ```
 
-Zobrazit celý projekt s všechny cíle, které jsou součástí sady SDK:
+* Zobrazit celý projekt s všechny cíle, které jsou součástí sady SDK:
 
-`dotnet msbuild -pp`
+  ```console
+  dotnet msbuild -pp
+  ```

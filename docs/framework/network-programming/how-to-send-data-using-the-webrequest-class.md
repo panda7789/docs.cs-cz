@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: odesílání dat pomocí třídy WebRequest'
+title: 'Postupy: Odesílání dat pomocí třídy WebRequest'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,13 +9,13 @@ helpviewer_keywords:
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
 ms.openlocfilehash: 1f10c5e0c6c266b7b31d658ec561bd8d6d85697b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192652"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129464"
 ---
-# <a name="how-to-send-data-using-the-webrequest-class"></a>Postupy: odesílání dat pomocí třídy WebRequest
+# <a name="how-to-send-data-using-the-webrequest-class"></a>Postupy: Odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky, které používají k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku.  
   
 ### <a name="to-send-data-to-a-host-server"></a>K odesílání dat na hostitelský server  
@@ -260,4 +260,4 @@ End Namespace
  [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
  [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
  [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)  
- [Postupy:Vyžádání dat pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+ [Jak: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)

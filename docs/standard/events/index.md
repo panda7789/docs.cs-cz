@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5d106dd3b7b9a7a0aeedca86e63a6fccbb1cc27
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 9572a203336aa32f1a37a834b99bf0dac35c7f1c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192480"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127924"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegáta následuje návrhový vzor pozorovatele, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Odesílatel události posune oznámení, že k události došlo, a příjemce události obdrží toto oznámení a definuje odpověď na ně. Tento článek popisuje hlavní součásti modelu delegáta, zacházení s událostmi v aplikacích a implementaci událostí ve vašem kódu.  
@@ -76,16 +76,16 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
 ## <a name="raising-multiple-events"></a>Vyvolání více událostí  
  Pokud vaše třída vyvolá více událostí, kompilátor vygeneruje jedno pole pro každou instanci delegáta události. Pokud je počet událostí velký, nemusí být přijatelné náklady na uložení jednoho pole pro každého delegáta. Pro tyto situace rozhraní .NET Framework poskytuje vlastnosti událostí, můžete použít s jinou datovou strukturou vašeho výběru k ukládání delegátů událostí.  
   
- Vlastnosti událostí se skládají z deklarace události společně s přístupovými objekty události. Přístupové objekty událostí jsou metody, které definujete přidat nebo odebrat instance delegátů událostí z datové struktury úložiště. Všimněte si, že vlastnosti událostí jsou pomalejší než pole události, protože každý delegát události musí být načten dříve, než může být vyvolána. Nutný kompromis je mezi pamětí a rychlostí. Pokud vaše třída definuje mnoho událostí, které jsou vyvolávány, můžete implementovat vlastnosti událostí. Další informace najdete v tématu [postupy: zpracování více událostí pomocí vlastností události](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md).  
+ Vlastnosti událostí se skládají z deklarace události společně s přístupovými objekty události. Přístupové objekty událostí jsou metody, které definujete přidat nebo odebrat instance delegátů událostí z datové struktury úložiště. Všimněte si, že vlastnosti událostí jsou pomalejší než pole události, protože každý delegát události musí být načten dříve, než může být vyvolána. Nutný kompromis je mezi pamětí a rychlostí. Pokud vaše třída definuje mnoho událostí, které jsou vyvolávány, můžete implementovat vlastnosti událostí. Další informace najdete v tématu [jak: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md).  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Postupy: Vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolávajících a spotřebovávajících událostí.|  
-|[Postupy: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak použít vlastnosti událostí pro zpracování více událostí.|  
+|[Jak: Vyvolávání a zpracovávání událostí](../../../docs/standard/events/how-to-raise-and-consume-events.md)|Obsahuje příklady vyvolávajících a spotřebovávajících událostí.|  
+|[Jak: Zpracování více událostí pomocí vlastností událostí](../../../docs/standard/events/how-to-handle-multiple-events-using-event-properties.md)|Ukazuje, jak použít vlastnosti událostí pro zpracování více událostí.|  
 |[Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)|Popisuje vzor návrhu, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele.|  
-|[Postupy: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost vyvolanou ovládacím prvkem webových formulářů.|  
+|[Jak: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost vyvolanou ovládacím prvkem webových formulářů.|  
   
 ## <a name="see-also"></a>Viz také:
 

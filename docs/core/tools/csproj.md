@@ -2,14 +2,13 @@
 title: Dodatky k formátu csproj pro .NET Core
 description: Další informace o rozdílech mezi stávající a soubory csproj .NET Core
 author: blackdwarf
-ms.author: mairaw
 ms.date: 09/22/2017
-ms.openlocfilehash: 3de168b8cebeb435a45861138aea26580663c135
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6dff2544d58d9907d0105dd5e5ff6a84ad3fbdb3
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50203953"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169609"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -50,7 +49,7 @@ V následující tabulce jsou uvedeny které elementy a které [globy](https://e
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
 | Kompilace           | \*\*/\*.cs (nebo jiných jazykových rozšíření) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc  | Není k dispozici                        |
 | EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | Není k dispozici                        |
-| Žádné              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | - \*\*/\*.cs; \*\*/\*.resx |
+| Žádná              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | - \*\*/\*.cs; \*\*/\*.resx |
 
 Pokud máte globy ve vašem projektu a zkusíte sestavit pomocí nejnovější SDK, zobrazí se vám chybová zpráva:
 
@@ -75,9 +74,6 @@ Chcete-li zakázat **všechny implicitní globy**, můžete nastavit `<EnableDef
     <EnableDefaultItems>false</EnableDefaultItems>
 </PropertyGroup>
 ```
-
-### <a name="recommendation"></a>Doporučení
-S csproj doporučujeme, abyste výchozí globy odeberte z projektu a přidat jenom cesty k souborům s globy pro tyto artefakty, které vaše aplikace/knihovna potřebuje pro různé scénáře (například modul runtime a zabalení NuGet).
 
 ## <a name="how-to-see-the-whole-project-as-msbuild-sees-it"></a>Zobrazení celého projektu, jak ho uvidí MSBuild
 
@@ -195,8 +191,12 @@ Lidské popisný název balíčku, obvykle používaných v uživatelském rozhr
 ### <a name="authors"></a>Autoři
 Středníkem oddělený seznam autorů balíčků, odpovídající názvy profilů na nuget.org. Tyto jsou zobrazeny v galerii NuGet na nuget.org a slouží k křížový odkaz balíčky stejné autory.
 
-### <a name="description"></a>Popis
+### <a name="packagedescription"></a>PackageDescription
+
 Dlouhý popis balíčku zobrazí v uživatelském rozhraní.
+
+### <a name="description"></a>Popis
+Dlouhý popis pro sestavení. Pokud `PackageDescription` není zadán, pak tato vlastnost slouží také jako popis balíčku.
 
 ### <a name="copyright"></a>Copyright
 Podrobnosti o autorských právech pro balíček.

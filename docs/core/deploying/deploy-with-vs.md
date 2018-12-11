@@ -1,21 +1,21 @@
 ---
-title: Nasazení aplikace .NET core pomocí sady Visual Studio
-description: Zjistěte, nasazení aplikace .NET Core pomocí sady Visual Studio
+title: Nasazení .NET Core aplikací pomocí sady Visual Studio
+description: Zjistěte, jak nasadit aplikaci .NET Core pomocí sady Visual Studio.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: 7a9410ca99f621ee6d0e8b263354ebc536f71a4a
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: 095c0f02df0de0b276c3677095e224316ac76cff
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584380"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127105"
 ---
-# <a name="deploying-net-core-apps-with-visual-studio"></a>Nasazení .NET Core aplikací pomocí sady Visual Studio
+# <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení .NET Core aplikací pomocí sady Visual Studio
 
 Můžete nasadit aplikaci .NET Core buď jako *nasazení závisí na architektuře*, který obsahuje binární soubory vaší aplikace, ale závisí na přítomnosti .NET Core v cílovém systému, nebo jako *samostatná nasazení*, což zahrnuje aplikace a .NET Core binární soubory. Přehled nasazení aplikace .NET Core, naleznete v tématu [nasazení aplikace .NET Core](index.md).
 
@@ -34,7 +34,7 @@ Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vy
 
 1. Vytvoření projektu.
 
-   Vyberte **souboru** > **nové** > **projektu**. V **nový projekt** dialogového okna, rozšířit vaše jazyka (C# nebo Visual Basic) kategorie projektů v **nainstalováno** podokně typů projektů, zvolte **.NET Core**a pak vyberte **Konzolová aplikace (.NET Core)** šablon v prostředním podokně. Zadejte název projektu, jako je například "Chyba" v **název** textového pole. Vyberte **OK** tlačítko.
+   Vyberte **Soubor** > **Nový** > **Projekt**. V **nový projekt** dialogového okna, rozšířit vaše jazyka (C# nebo Visual Basic) kategorie projektů v **nainstalováno** podokně typů projektů, zvolte **.NET Core**a pak vyberte **Konzolová aplikace (.NET Core)** šablon v prostředním podokně. Zadejte název projektu, jako je například "Chyba" v **název** textového pole. Vyberte tlačítko **OK**.
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -85,7 +85,7 @@ Samostatná nasazení bez závislostí třetích stran zahrnuje vytvoření proj
 
 1. Vytvoření projektu.
 
-   Vyberte **souboru** > **nové** > **projektu**. V **nový projekt** dialogového okna, rozšířit vaše jazyka (C# nebo Visual Basic) kategorie projektů v **nainstalováno** podokně typů projektů, zvolte **.NET Core**a pak vyberte **Konzolová aplikace (.NET Core)** šablon v prostředním podokně. Zadejte název projektu, jako je například "SCD" **název** textového pole a vyberte **OK** tlačítko.
+   Vyberte **Soubor** > **Nový** > **Projekt**. V **nový projekt** dialogového okna, rozšířit vaše jazyka (C# nebo Visual Basic) kategorie projektů v **nainstalováno** podokně typů projektů, zvolte **.NET Core**a pak vyberte **Konzolová aplikace (.NET Core)** šablon v prostředním podokně. Zadejte název projektu, jako je například "SCD" **název** textového pole a vyberte **OK** tlačítko.
 
 1. Přidejte zdrojový kód aplikace.
 
@@ -216,7 +216,7 @@ Pro každou platformu, že vaše aplikace cílí, postupujte takto:
 
 Opakujte tyto kroky, chcete-li definovat žádné další cílové platformy, které vaše aplikace cílí.
 
-Konfigurované profily a jste připraveni publikovat vaši aplikaci. To uděláte takto:
+Konfigurované profily a jste připraveni publikovat vaši aplikaci. Použijte následující postup:
 
    1. Pokud **publikovat** okno není otevřený, klikněte pravým tlačítkem na projekt (nikoli řešení) v **Průzkumníka řešení** a vyberte **publikovat**.
 

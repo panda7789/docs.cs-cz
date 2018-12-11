@@ -1,15 +1,15 @@
 ---
-title: Pokyny pro open-source knihovnu
+title: Pokyny v knihovně .NET Open source
 description: Doporučení osvědčených postupů pro vývojáře k vytvoření vysoce kvalitní knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/17/2018
-ms.openlocfilehash: ca95cb5ba1ebf27464397b7850ac02aabded1a5b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a656094066eb43ffe64ab405784f4577621b5c46
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188622"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128067"
 ---
 # <a name="open-source-library-guidance"></a>Pokyny pro open-source knihovnu
 
@@ -29,7 +29,7 @@ Vysoce kvalitní knihoven .NET open-source aspekty:
 
 ## <a name="types-of-recommendations"></a>Typů doporučení
 
-Každý článek představuje čtyři typy doporučení: **proveďte**, **zvažte**, **nepoužívejte**, a **nepodporují**. Typ doporučení se jedná Určuje, jak důrazně má následovat.
+Každý článek představuje čtyři typy doporučení: **Proveďte**, **vezměte v úvahu**, **vyhnout**, a **nepodporují**. Typ doporučení se jedná Určuje, jak důrazně má následovat.
 
 Téměř vždy měli byste postupovat podle **proveďte** doporučení. Příklad:
 
@@ -48,4 +48,4 @@ A nakonec **nejsou** doporučení znamenat něco téměř nikdy byste měli děl
 **❌ NEPODPORUJÍ** publikování silným názvem a jiných silným názvem verzí knihovny. Například `Contoso.Api` a `Contoso.Api.StrongNamed`.
 
 >[!div class="step-by-step"]
-[Next](./get-started.md)
+>[Next](get-started.md)

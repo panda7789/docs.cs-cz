@@ -17,12 +17,12 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: 8b8237a09b36114f7100c90cee0bd753236789fd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 60b9e1862c7ffd212f19cdc331930e3b5d120763
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522617"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131291"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
 Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů výrazy a některé typické druhy operací, které provedete v dotazu. Podrobnější informace jsou v následujících tématech:  
@@ -31,7 +31,7 @@ Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq
   
  [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
   
- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ [Návod: Zápis dotazů vC#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
 >  Pokud jste již obeznámeni s dotazovací jazyk, jako je SQL nebo výraz XQuery, můžete přeskočit většinu v tomto tématu. Přečtěte si informace o "`from` klauzule" v další části a informace o pořadí ustanovení [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů.  
@@ -44,7 +44,7 @@ Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq
  Proměnná rozsahu je jako proměnné iterace ve `foreach` opakovat s tím rozdílem, že dojde k žádné skutečné iterace ve výrazu dotazu. Při spuštění dotazu rozsah proměnné bude sloužit jako odkaz na každý prvek po sobě jdoucích `customers`. Protože kompilátor může odvodit typ `cust`, není potřeba explicitně zadat. Další rozsah proměnné může být zavedené prostřednictvím `let` klauzuli. Další informace najdete v tématu [let – klauzule](../../../../csharp/language-reference/keywords/let-clause.md).  
   
 > [!NOTE]
->  U neobecných zdrojů dat, jako například <xref:System.Collections.ArrayList>, proměnná rozsahu musí být explicitně určeny typy. Další informace najdete v tématu [postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md) a [klauzule from](../../../../csharp/language-reference/keywords/from-clause.md).  
+>  U neobecných zdrojů dat, jako například <xref:System.Collections.ArrayList>, proměnná rozsahu musí být explicitně určeny typy. Další informace najdete v tématu [jak: Vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md) a [klauzule from](../../../../csharp/language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrování  
  Pravděpodobně nejběžnější operace dotazu je použití filtru ve formě logický výraz. Filtr způsobí, že se dotaz, který vrací pouze prvky, pro které má výraz hodnotu true. Výsledkem je vytvořen pomocí `where` klauzuli. Filtr v platnosti určuje prvky, které chcete vyloučit ze zdrojové sekvence. V následujícím příkladu, pouze na ty `customers` kdo mít adresu v Londýně se vrátí.  
@@ -90,7 +90,7 @@ Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq
   
  V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] není nutné používat `join` tak často, jak máte v SQL, protože cizí klíče v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] jsou reprezentovány v objektovém modelu ve formě vlastnosti, které obsahují kolekci položek. Například `Customer` objekt obsahuje kolekci `Order` objekty. Místo provedení spojení, přistupovat pomocí zápisu s tečkou objednávky:  
   
-```  
+```csharp
 from order in Customer.Orders...  
 ```  
   
@@ -103,6 +103,6 @@ from order in Customer.Orders...
 
 - [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
 - [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
-- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+- [Návod: Zápis dotazů vC#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
 - [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)  
 - [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

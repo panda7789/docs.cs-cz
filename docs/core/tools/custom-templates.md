@@ -2,14 +2,13 @@
 title: Vlastních šablon pro dotnet nové
 description: Další informace o vlastních šablon pro jakýkoli druh projektu .NET nebo soubory.
 author: guardrex
-ms.author: mairaw
 ms.date: 08/11/2017
-ms.openlocfilehash: 5cb160683ad373f1192945163495bf3e7957567b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 60ae9a6f0af7e75ba721a739ec51d77c59d7792e
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525964"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169418"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
@@ -129,7 +128,7 @@ dotnet new -u <NUGET_PACKAGE_ID>
 
 ### <a name="to-uninstall-a-template-from-a-local-nupkg-file"></a>Chcete-li odinstalovat šablony ze souboru místní nupkg
 
-Pokud chcete odinstalovat šablony, nepokoušejte se použít cestu k *nupkg* souboru. *Pokus o odinstalaci šablony pomocí `dotnet new -u <PATH_TO_NUPKG_FILE>` selže.* Odkázat na balíček podle jeho `id`:
+K odinstalaci šablony, nepokoušejte se použít cestu k *nupkg* souboru. Pokus o odinstalaci šablony pomocí `dotnet new -u <PATH_TO_NUPKG_FILE>` selže. Odkázat na balíček podle jeho `id`:
 
 ```console
 dotnet new -u <NUGET_PACKAGE_ID>
@@ -137,7 +136,7 @@ dotnet new -u <NUGET_PACKAGE_ID>
 
 ### <a name="to-uninstall-a-template-from-a-file-system-directory"></a>Chcete-li odinstalovat šablonu z adresáře systému souborů
 
-`FILE_SYSTEM_DIRECTORY` Je projekt složku obsahující projekt a *. template.config* složky:
+`FILE_SYSTEM_DIRECTORY` Je projekt složku obsahující projekt a *. template.config* složky. Zadaná cesta musí být absolutní cesta. Pokus odinstalovat sadu pomocí šablony, relativní cesta selhání. Další informace najdete v tématu [dotnet nové](dotnet-new.md) článku.
 
 ```console
 dotnet new -u <FILE_SYSTEM_DIRECTORY>
@@ -153,8 +152,8 @@ dotnet new <TEMPLATE>
 
 ## <a name="see-also"></a>Viz také:
 
-* [Vytvoření vlastní šablony pro dotnet new (kurz)](../tutorials/create-custom-template.md)  
-* [úložiště GitHub DotNet/šablonování Wiki](https://github.com/dotnet/templating/wiki)  
-* [úložiště GitHub DotNet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
-* [Jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
-* [*Template.JSON* schématu na Store schématu JSON](http://json.schemastore.org/template)  
+* [Vytvoření vlastní šablony pro dotnet new (kurz)](../tutorials/create-custom-template.md)
+* [úložiště GitHub DotNet/šablonování Wiki](https://github.com/dotnet/templating/wiki)
+* [úložiště GitHub DotNet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)
+* [Jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)
+* [*Template.JSON* schématu na Store schématu JSON](http://json.schemastore.org/template)

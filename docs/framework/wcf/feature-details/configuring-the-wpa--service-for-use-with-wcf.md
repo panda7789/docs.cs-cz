@@ -2,12 +2,12 @@
 title: Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 1d50712e-53cd-4773-b8bc-a1e1aad66b78
-ms.openlocfilehash: 6e74c81aa26ba7f8d093b8b3ec52f19eb3519905
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 388907f847d40ad5634a27ac6b350638ddc5a45e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216064"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53125831"
 ---
 # <a name="configuring-the-windows-process-activation-service-for-use-with-windows-communication-foundation"></a>Konfigurace služby aktivace procesu Windows pro použití s Windows Communication Foundation
 Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windows (WAS) v [!INCLUDE[wv](../../../../includes/wv-md.md)] k hostování Windows Communication Foundation (WCF) služby, které nekomunikují přes protokol HTTP síťových protokolů. Následující oddíly popisují kroky pro tuto konfiguraci:  
@@ -27,7 +27,7 @@ Toto téma popisuje kroky potřebné k nastavení služby Aktivace procesu Windo
   
  Následující příkaz přidá vazbu webu net.tcp výchozí webový server pomocí appcmd.exe (Tento příkaz je zadat jako jeden řádek).  
   
-```  
+```console  
 appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']  
 ```  
   
@@ -48,7 +48,7 @@ appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInf
 ## <a name="enabling-an-application-to-use-non-http-protocols"></a>Povolení aplikace pro použití jiných protokolů než HTTP  
  Můžete povolit nebo zakázat jednotlivým síťovým protocolsat na úrovni aplikace. Následující příkaz ukazuje, jak povolit protokoly HTTP i net.tcp pro aplikace, která běží v `Default Web Site`.  
   
-```  
+```console  
 appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp  
 ```  
   
@@ -85,16 +85,16 @@ appcmd.exe set app "Default Web Site/appOne" /enabledProtocols:net.tcp
   
  Pokud při pokusu o aktivaci služby pomocí služby WAS Aktivace jiným protokolem než HTTP a ještě nainstalovaná a nakonfigurovaná služba WAS může se zobrazit následující chyba:  
   
-```Output  
+```output  
 [InvalidOperationException: The protocol 'net.tcp' does not have an implementation of HostedTransportConfiguration type registered.]   System.ServiceModel.AsyncResult.End(IAsyncResult result) +15778592   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.End(IAsyncResult result) +15698937   System.ServiceModel.Activation.HostedHttpRequestAsyncResult.ExecuteSynchronous(HttpApplication context, Boolean flowContext) +265   System.ServiceModel.Activation.HttpModule.ProcessRequest(Object sender, EventArgs e) +227   System.Web.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute() +80   System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) +171  
 ```  
   
- Pokud se zobrazí tato chyba, zkontrolujte WAS pro aktivace jiným protokolem než HTTP je nainstalován a nakonfigurován správně. Další informace najdete v tématu [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ Pokud se zobrazí tato chyba, zkontrolujte WAS pro aktivace jiným protokolem než HTTP je nainstalován a nakonfigurován správně. Další informace najdete v tématu [jak: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
   
 ## <a name="building-a-wcf-service-that-uses-was-for-non-http-activation"></a>Vytváření WCF službě, používá se pro aktivace jiným protokolem než HTTP  
- Jakmile provedete kroky instalace a konfigurace služby WAS (naleznete v tématu [postupy: instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), konfigurace služby WAS použít aktivace je podobné konfigurace služby, která je hostovaná ve službě IIS.  
+ Jakmile provedete kroky instalace a konfigurace WAS (viz [jak: Instalace a konfigurace aktivačních komponent WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)), konfigurace služby WAS použít aktivace je podobné konfigurace služby, která je hostovaná ve službě IIS.  
   
- Podrobné pokyny k vytvoření služby WCF aktivaci WAS, naleznete v tématu [postupy: hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
+ Podrobné pokyny k vytvoření služby WCF aktivaci WAS, naleznete v tématu [jak: Hostování služby WCF ve WAS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Hostování v Aktivační službě procesů systému Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md)  

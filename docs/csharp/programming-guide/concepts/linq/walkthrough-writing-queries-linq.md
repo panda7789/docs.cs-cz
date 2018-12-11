@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Zápis dotazů v C# (LINQ)'
+title: 'Průvodce: Zápis dotazů v jazyce C# (LINQ)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], walkthroughs
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 2cac07c8eb02465334af47fd46702b60f1371c68
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: ffff8317e6524acc877b7d0851e5a1b37967b1f0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745320"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154073"
 ---
-# <a name="walkthrough-writing-queries-in-c-linq"></a>Návod: Zápis dotazů v C# (LINQ)
+# <a name="walkthrough-writing-queries-in-c-linq"></a>Průvodce: Zápis dotazů v jazyce C# (LINQ)
 Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – výrazy dotazů.  
   
 ## <a name="create-a-c-project"></a>Vytvoření projektu v jazyce C#  
@@ -24,7 +24,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 #### <a name="to-create-a-project-in-visual-studio"></a>Vytvoření projektu v sadě Visual Studio  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
@@ -87,7 +87,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Můžete zkombinovat více logických podmínek v `where` klauzuli pro další upřesnění dotazu. Následující kód přidává podmínku tak, že dotaz vrací ty studenty, jehož první skóre bylo víc než 90 a jejichž poslední skóre nižší než 80. `where` Klauzule by měla vypadat podobně jako následující kód.  
   
-    ```  
+    ```csharp
     where student.Scores[0] > 90 && student.Scores[3] < 80  
     ```  
   
@@ -99,19 +99,19 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 1.  Ji bude snazší výsledky kontroly, pokud se nějaký druh pořadí. Můžete si objednat vrácená sekvence podle jakékoli přístupné pole ve zdrojové elementy. Například následující `orderby` klauzule řadí výsledky v abecedním pořadí od A až Z podle poslední název každého studenta. Přidejte následující `orderby` klauzule dotazu, hned po `where` příkazu a před `select` – příkaz:  
   
-    ```  
+    ```csharp
     orderby student.Last ascending  
     ```  
   
 2.  Teď změňte `orderby` klauzule tak, že v obráceném pořadí řadí výsledky podle skóre v prvním testu z nejvyšším skóre skóre.  
   
-    ```  
+    ```csharp
     orderby student.Scores[0] descending  
     ```  
   
 3.  Změnit `WriteLine` řetězec formátu, kde lze zobrazit skóre:  
   
-    ```  
+    ```csharp
     Console.WriteLine("{0}, {1} {2}", student.Last, student.First, student.Scores[0]);  
     ```  
   
@@ -157,7 +157,7 @@ Tento návod ukazuje funkce jazyka C#, které se používá k zápisu LINQ – v
   
 #### <a name="to-use-method-syntax-in-a-query-expression"></a>Použití syntaxe využívající metody ve výrazu dotazu  
   
-1.  Jak je popsáno v [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md), nějakých operací dotazů lze vyjádřit pouze pomocí syntaxe metody. Následující kód vypočítá celkové skóre pro každou `Student` ve zdrojové sekvence a poté zavolá `Average()` metodu na výsledky dotazu pro výpočet průměrné skóre třídy. Poznamenejte si umístění závorek okolo výrazu dotazu.  
+1.  Jak je popsáno v [syntaxi dotazů a syntaxe využívající metody v jazyce LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md), nějakých operací dotazů lze vyjádřit pouze pomocí syntaxe metody. Následující kód vypočítá celkové skóre pro každou `Student` ve zdrojové sekvence a poté zavolá `Average()` metodu na výsledky dotazu pro výpočet průměrné skóre třídy.
   
      [!code-csharp[csLINQGettingStarted#19](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/walkthrough-writing-queries-linq_9.cs)]  
   

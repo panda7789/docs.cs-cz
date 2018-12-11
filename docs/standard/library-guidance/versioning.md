@@ -3,19 +3,19 @@ title: Knihovny správy verzí a .NET
 description: Doporučené osvědčené postupy pro správu verzí knihovny .NET.
 author: jamesnk
 ms.author: mairaw
-ms.date: 10/02/2018
-ms.openlocfilehash: f95c8ade1f91af5c13184b839b327c9397c6fe5a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.date: 12/10/2018
+ms.openlocfilehash: e47b8a5ccad7c57d125e16f6e1d37fb91de31161
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187855"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169596"
 ---
 # <a name="versioning"></a>Správa verzí
 
 Softwarová knihovna je jen zřídka dokončena ve verzi 1.0. Dobré knihovny postupně měnit, přidává funkce, opravy chyb a zvýšení výkonu. Je důležité, že vydání nové verze knihovny .NET, zadání další hodnoty s jednotlivými verzemi, aniž by vás to stávající uživatele.
 
-## <a name="breaking-changes"></a>Rozbíjející změny v
+## <a name="breaking-changes"></a>Změny způsobující chyby
 
 Informace o zpracování zásadní změny mezi verzí najdete v tématu [Rozbíjející změny v](./breaking-changes.md).
 
@@ -77,12 +77,13 @@ Verze souboru sestavení se používá k zobrazení verze souboru ve Windows a n
 
 ![Průzkumník Windows](./media/versioning/win-properties.png "Průzkumníka Windows")
 
-> [!NOTE]
-> Sestavení neškodného upozornění je vyvoláno, pokud tato verze formát nedodržuje `Major.Minor.Build.Revision`. Upozornění můžete ignorovat.
-
 **✔️ ZVAŽTE** číslo jako revize AssemblyFileVersion včetně kontinuální integrace sestavení.
 
 > Například vytváříte verze 1.0.0 vašeho projektu a číslo sestavení kontinuální integrace je 99, takže vaše AssemblyFileVersion je 1.0.0.99.
+
+**PROVEĎTE ✔️** použijte formát `Major.Minor.Build.Revision` verze souboru.
+
+> Zatímco pomocí .NET, nikdy použita verze souboru [Windows očekává, že verze souboru](/windows/desktop/menurc/versioninfo-resource) v `Major.Minor.Build.Revision` formátu. Upozornění je vyvolána, pokud verze nebude mít tento formát.
 
 ### <a name="assembly-informational-version"></a>Informační verze sestavení
 
@@ -92,10 +93,13 @@ Informační verze sestavení se používá k zaznamenání Další informace o 
 <AssemblyInformationalVersion>The quick brown fox jumped over the lazy dog.</AssemblyInformationalVersion>
 ```
 
+> [!NOTE]
+> Starší verze sady Visual Studio vyvolat upozornění sestavení, pokud tato verze není postupujte z formátu `Major.Minor.Build.Revision`. Upozornění můžete ignorovat.
+
 **❌ Nepoužívejte** nastavení informační verze sestavení sami.
 
 > Povolte SourceLink automaticky generovat verze obsahuje NuGet a zdrojový ovládací prvek metadat.
 
 >[!div class="step-by-step"]
-[Předchozí](./publish-nuget-package.md)
-[další](./breaking-changes.md)
+>[Předchozí](publish-nuget-package.md)
+>[další](breaking-changes.md)

@@ -1,20 +1,21 @@
 ---
-title: Nasazení aplikace .NET core pomocí nástrojů CLI
-description: Zjistěte, nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
+title: Nasazení aplikací .NET Core s využitím nástroje rozhraní příkazového řádku (CLI)
+description: Naučte se nasazovat aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 author: rpetrusha
 ms.author: ronpet
 ms.date: 09/05/2018
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 6c0eb82b6be5d65c70287dd601bb97868af1c943
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.custom: seodec18
+ms.openlocfilehash: 05460174e9b8472a2862c829cd58b72aec26b549
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49454444"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151093"
 ---
-# <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
+# <a name="deploy-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikací .NET Core s využitím nástroje rozhraní příkazového řádku (CLI)
 
 Můžete nasadit aplikaci .NET Core buď jako *nasazení závisí na architektuře*, který obsahuje binární soubory vaší aplikace, ale závisí na přítomnosti .NET Core v cílovém systému, nebo jako *samostatná nasazení*, což zahrnuje aplikace a binární soubory .NET Core. Přehled najdete v tématu [nasazení aplikace .NET Core](index.md).
 

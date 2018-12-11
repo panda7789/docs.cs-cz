@@ -3,12 +3,12 @@ title: Typy řazené kolekce členů – průvodce v C#
 description: Další informace o typech pojmenované a nepojmenované řazené kolekce členů v C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 572e926b6345fc27278f78d1faf2e3b27f017f2e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 32d089d36328d30de344e14fb7e88e80eacf5ed0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186028"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155129"
 ---
 # <a name="c-tuple-types"></a>Typy řazené kolekce členů v C# #
 
@@ -88,7 +88,7 @@ Těmito situacemi nezpůsobí chyby kompilátoru, protože, která by byla k zá
 
 ## <a name="equality-and-tuples"></a>Rovnost a řazené kolekce členů
 
-Od verze C# 7.3, typy řazené kolekce členů podpory `==` a `!=` operátory. Tyto operátory pracují na základě porovnání každý člen levý argument pro každého člena pravý argument v pořadí. Tato porovnání zkrácenou. `==` Operátor zastaví jako jednu dvojici se nerovná vyhodnocování členů. `!=` Operátor zastaví ihned poté, co se rovná jednu dvojici vyhodnocování členů. Následující příklady kódu používají `==`, ale pravidla porovnání všech platí pro `!=`. Následující příklad kódu ukazuje porovnání rovnosti pro dvě dvojice celých čísel:
+Od verze C# 7.3, typy řazené kolekce členů podpory `==` a `!=` operátory. Tyto operátory pracují na základě porovnání každý člen levý argument pro každého člena pravý argument v pořadí. Tato porovnání zkrácenou. Přestanou vyhodnocování členy jako jednu dvojici není rovno. Následující příklady kódu používají `==`, ale pravidla porovnání všech platí pro `!=`. Následující příklad kódu ukazuje porovnání rovnosti pro dvě dvojice celých čísel:
 
 [!code-csharp[TupleEquality](../../samples/snippets/csharp/tuples/tuples/program.cs#Equality "Testing tuples for equality")]
 
@@ -146,7 +146,7 @@ Jedním z nejběžnějších používá pro řazené kolekce členů je jako ná
 > Tyto příklady výpočetní směrodatná odchylka neopraveno vzorku.
 > Vzorec směrodatné odchylky opravený ukázka by rozdělit součet kvadratických odchylek od střední hodnoty podle (N-1) namísto N, jako `Average` metodu rozšíření. Statistiky textu najdete podrobné informace o rozdílech mezi tyto vzorce pro směrodatnou odchylku.
 
-Předchozí kód se řídí učebnice vzorec směrodatné odchylky. Vytvoří správnou odpověď, ale je neefektivní implementace. Tato metoda vytvoří výčet sekvence dvakrát: jednou k vytvoření průměr a jednou pro vytvoření průměr druhou mocninu rozdíl průměr.
+Předchozí kód se řídí učebnice vzorec směrodatné odchylky. Vytvoří správnou odpověď, ale je neefektivní implementace. Tato metoda vytvoří výčet sekvence dvakrát: Jednou k vytvoření průměr a jednou pro vytvoření průměr druhou mocninu rozdíl průměr.
 (Mějte na paměti, že LINQ dotazů jsou vyhodnocovány laxně, tak výpočet rozdíl oproti průměr a průměr těchto rozdílů je pouze jeden výčet.)
 
 Existuje alternativní vzorec, který vypočítá směrodatnou odchylku pomocí pouze jeden výčet pořadí.  Tento výpočet vytváří dvě hodnoty při výčtu sekvence: součet všech položek v sekvenci a součet jednotlivých hodnot spolehlivosti:

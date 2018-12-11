@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
-ms.openlocfilehash: e1071261f45c56655f8e6fb5fec6fccb08fd13c6
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: a8767ca492a514f3ee7a2d4688858282ec706ef7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584296"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150833"
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Generování příkazů s CommandBuilders
 Když `SelectCommand` vlastnost dynamicky určena v době běhu, jako je přes nástroj pro dotaz, který přijímá textový příkaz od uživatele, nemusí být schopen zadejte odpovídající `InsertCommand`, `UpdateCommand`, nebo `DeleteCommand` v době návrhu. Pokud vaše <xref:System.Data.DataTable> mapuje nebo je generován z jedné tabulky databáze, které můžete využít <xref:System.Data.Common.DbCommandBuilder> objektu automaticky generuje `DeleteCommand`, `InsertCommand`, a `UpdateCommand` z <xref:System.Data.Common.DbDataAdapter>.  
@@ -82,9 +82,13 @@ builder.QuoteSuffix = "]";
   
  Následující příklad kódu zapíše do konzoly pro příkaz update, která byla automaticky vygenerována.  
   
-```  
+```vb
 Console.WriteLine(builder.GetUpdateCommand().CommandText)  
-```  
+```
+
+```csharp
+Console.WriteLine(builder.GetUpdateCommand().CommandText);
+```
   
  Znovu vytvoří v následujícím příkladu `Customers` v tabulku `custDS` datové sady. **RefreshSchema** metoda je volána k aktualizaci automaticky generované příkazy pomocí této nové informace o sloupci.  
   

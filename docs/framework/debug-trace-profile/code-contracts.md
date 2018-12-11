@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 569be83b902e7634a0c22e78c3f3c3a23985076c
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 721693166c561babb9d7825f480e92d14a5f347c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308549"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154434"
 ---
 # <a name="code-contracts"></a>Kontrakty kódu
 Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstupních objekt podmínek ve vašem kódu. Předběžné podmínky jsou požadavky, které musí být splněny, při zadávání metody nebo vlastnosti. Vstupních popisují očekávání v době, kdy kód metody nebo vlastnosti se ukončí. Objekt výstupních podmínek popisují očekávaný stav pro třídu, která je v dobrém stavu.  
@@ -23,13 +23,13 @@ Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstu
   
  Kontrakty kódu mezi výhody patří následující:  
   
--   Vylepšené testování: kontrakty kódu poskytovat statické ověření kontraktu, kontrola modulu runtime a generování dokumentace.  
+-   Vylepšené testování: Kontrakty kódu poskytovat statické ověření kontraktu, kontrola modulu runtime a generování dokumentace.  
   
--   Automatické testovací nástroje: kontrakty kódu můžete použít ke generování lépe vystihuje testování částí filtrováním význam testu argumenty, které nesplňují podmínky.  
+-   Nástroje pro automatické testování: Kontrakty kódu můžete použít ke generování lépe vystihuje testování částí filtrováním význam testu argumenty, které nesplňují podmínky.  
   
--   Statické ověření: statické kontroly můžete rozhodnout, jestli se porušení smlouvy bez spuštění programu. Zkontroluje pro implicitní smlouvy, jako je například null přístupů přes ukazatel a pole hranice a explicitní smluv.  
+-   Statické ověření: Statické požadovaných součástí se můžete rozhodnout, jestli se porušení smlouvy bez spuštění programu. Zkontroluje pro implicitní smlouvy, jako je například null přístupů přes ukazatel a pole hranice a explicitní smluv.  
   
--   Referenční dokumentace: dokumentace generátor rozšiřuje existující soubory dokumentace XML s informacemi o smlouvě. Existují také šablony stylů, které lze použít s [Sandcastle](https://github.com/EWSoftware/SHFB) tak, aby stránky dokumentace generovaného kontraktu oddíly.  
+-   Referenční dokumentace: Dokumentace ke službě generátor argumentech existující soubory dokumentace XML s informacemi o smlouvě. Existují také šablony stylů, které lze použít s [Sandcastle](https://github.com/EWSoftware/SHFB) tak, aby stránky dokumentace generovaného kontraktu oddíly.  
   
  Všechny jazyky rozhraní .NET Framework mohou okamžitě využívat smluv; nemusíte psát speciální analyzátoru nebo kompilátoru. Doplněk sady Visual Studio vám umožní určit úroveň smlouvy analýzy kódu mají být provedeny. Analyzátory můžou ověřte, zda smlouvách ve správném formátu (kontrolu typu a překlad názvů) a může vytvářet kompilovaný formy smluv ve formátu Microsoft intermediate language (MSIL). Vytváření kontraktů v sadě Visual Studio vám umožní využít standardní informace IntelliSense poskytované nástrojem.  
   
@@ -42,11 +42,15 @@ Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstu
   
  Například následující předpoklad vyjadřuje tento parametr `x` musí mít hodnotu null.  
   
- `Contract.Requires( x != null );`  
+ ```csharp
+ Contract.Requires(x != null);
+ ```
   
  Pokud váš kód musí vyvolat zvláštní výjimku při selhání předběžné podmínky, můžete použít obecné přetížení <xref:System.Diagnostics.Contracts.Contract.Requires%2A> následujícím způsobem.  
   
- `Contract.Requires<ArgumentNullException>( x != null, "x" );`  
+ ```csharp
+ Contract.Requires<ArgumentNullException>(x != null, "x");
+ ```
   
 ### <a name="legacy-requires-statements"></a>Starší verze #requires.  
  Většinu kódu obsahuje nějaké ověření parametru v podobě `if` - `then` - `throw` kódu. Nástroje pro kontrakt rozpoznat tyto příkazy jako předpoklady v následujících případech:  
@@ -57,12 +61,12 @@ Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstu
   
  Když `if` - `then` - `throw` příkazy se zobrazí v tomto formuláři nástroje rozpoznat jako starší verze `requires` příkazy. Pokud žádné jiné smlouvy, postupujte podle `if` - `then` - `throw` pořadí, -end kód <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType> metoda.  
   
-```  
-if ( x == null ) throw new ...  
-Contract.EndContractBlock(); // All previous "if" checks are preconditions  
-```  
+```csharp
+if (x == null) throw new ...
+Contract.EndContractBlock(); // All previous "if" checks are preconditions
+```
   
- Všimněte si, že je podmínka v předchozím testu negovaným čítačem předběžné podmínky. (Skutečné Předběžná podmínka by `x != null`.) Předpokladem negovaným čítačem je vysoce omezenou: musí být napsaná, jak je znázorněno v předchozím příkladu; To znamená, měl by obsahovat žádné `else` klauzule a text `then` klauzule musí být jediný `throw` příkazu. `if` Test je v souladu s čistoty a viditelnost pravidla (naleznete v tématu [pokyny k používání](#usage_guidelines)), ale `throw` výraz se vztahuje pouze na čistotě pravidla. Typ výjimky vyvolané však musí být jako viditelný jako způsob, ve kterém dochází kontrakt.  
+ Všimněte si, že je podmínka v předchozím testu negovaným čítačem předběžné podmínky. (Skutečné Předběžná podmínka by `x != null`.) Předpokladem negovaným čítačem je vysoce omezenou: Musí být napsaná, jak je znázorněno v předchozím příkladu; To znamená, měl by obsahovat žádné `else` klauzule a text `then` klauzule musí být jediný `throw` příkazu. `if` Test je v souladu s čistoty a viditelnost pravidla (naleznete v tématu [pokyny k používání](#usage_guidelines)), ale `throw` výraz se vztahuje pouze na čistotě pravidla. Typ výjimky vyvolané však musí být jako viditelný jako způsob, ve kterém dochází kontrakt.  
   
 ## <a name="postconditions"></a>Vstupních  
  Vstupních jsou kontrakty pro stav metody při jeho ukončení. Neplatná následná se kontroluje jenom před ukončením metody. Chování za běhu se nezdařilo vstupních určuje analyzátor modulu runtime.  
@@ -72,12 +76,16 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ### <a name="standard-postconditions"></a>Standardní vstupních  
  Standardní vstupních můžete vyjádřit pomocí <xref:System.Diagnostics.Contracts.Contract.Ensures%2A> metody. Vstupních express podmínku, která musí být `true` při normálním ukončení metody.  
   
- `Contract.Ensures( this.F > 0 );`  
+ ```csharp
+ Contract.Ensures(this.F > 0);
+ ```
   
 ### <a name="exceptional-postconditions"></a>Mimořádné vstupních  
  Mimořádné vstupních jsou následným podmínkám, které by měly být `true` při konkrétní výjimka je vyvolána metoda. Určíte tyto vstupních pomocí <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=nameWithType> metody, stejně jako v následujícím příkladu.  
   
- `Contract.EnsuresOnThrow<T>( this.F > 0 );`  
+ ```csharp
+ Contract.EnsuresOnThrow<T>(this.F > 0);
+ ```
   
  Argument je podmínka, která musí být `true` pokaždé, když výjimka, která je podtypem typu `T` je vyvolána výjimka.  
   
@@ -86,7 +94,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ### <a name="special-postconditions"></a>Speciální vstupních  
  Pouze v rámci vstupních lze použít následující metody:  
   
--   Mohou odkazovat na návratové hodnoty metod ve vstupních pomocí výrazu `Contract.Result<T>()`, kde `T` nahrazuje návratový typ metody. Pokud kompilátor nemůže odvodit typ, je nutné ho zadat explicitně. Například nelze odvodit typy pro metody, které nepřebírají žádné argumenty, takže vyžaduje následující neplatná následná kompilátor jazyka C#: `Contract.Ensures(0 <Contract.Result<int>())` metody s návratovým typem `void` nemůže odkazovat na `Contract.Result<T>()` v jejich následným podmínkám.  
+-   Mohou odkazovat na návratové hodnoty metod ve vstupních pomocí výrazu `Contract.Result<T>()`, kde `T` nahrazuje návratový typ metody. Pokud kompilátor nemůže odvodit typ, je nutné ho zadat explicitně. Například C# se kompilátor nemůže odvodit typy pro metody, které nepřebírají žádné argumenty, takže vyžaduje následující neplatná následná: `Contract.Ensures(0 <Contract.Result<int>())` Metody s návratovým typem `void` nemůže odkazovat na `Contract.Result<T>()` v jejich následným podmínkám.  
   
 -   Hodnotu prestate neplatná následná odkazuje na hodnotu výrazu na začátku metody nebo vlastnosti. Používá výraz `Contract.OldValue<T>(e)`, kde `T` je typ `e`. Pokaždé, když je kompilátor může odvodit typ, můžete vynechat argument obecného typu. (Například kompilátor jazyka C# vždy odvodí typ protože přebírá argument.) Existuje několik omezení na co může dojít v `e` a kontext, ve kterých může zobrazit staré výrazu. Původní výraz nemůže obsahovat jiný výraz staré. Co je nejdůležitější staré výrazu musí odkazovat na hodnotu, která byla uložena ve stavu Předběžná podmínka metody. Jinými slovy, musí být výraz, který může být vyhodnocen, dokud je předběžná podmínka metody `true`. Tady je několik instancí tohoto pravidla.  
   
@@ -94,7 +102,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
   
     -   Nelze se odkazovat na návratovou hodnotu metody v původní výraz:  
   
-        ```  
+        ```csharp
         Contract.OldValue(Contract.Result<int>() + x) // ERROR  
         ```  
   
@@ -102,30 +110,31 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
   
     -   Původní výraz nemůže záviset na vazby proměnné kvantifikátor rozsah kvantifikátor závislých na návratovou hodnotu metody:  
   
-        ```  
-        Contract. ForAll (0,Contract. Result<int>(),  
-        i => Contract.OldValue(xs[i]) > 3); // ERROR  
+        ```csharp
+        Contract.ForAll(0, Contract.Result<int>(), i => Contract.OldValue(xs[i]) > 3); // ERROR
         ```  
   
     -   Původní výraz nemůže odkazovat na parametr anonymního delegáta v <xref:System.Diagnostics.Contracts.Contract.ForAll%2A> nebo <xref:System.Diagnostics.Contracts.Contract.Exists%2A> volat, pokud se používá jako indexer nebo argument volání metody:  
   
-        ```  
-        Contract. ForAll (0, xs .Length, i => Contract.OldValue(xs[i]) > 3); // OK  
-        Contract. ForAll (0, xs .Length, i => Contract.OldValue(i) > 3); // ERROR  
+        ```csharp
+        Contract.ForAll(0, xs.Length, i => Contract.OldValue(xs[i]) > 3); // OK
+        Contract.ForAll(0, xs.Length, i => Contract.OldValue(i) > 3); // ERROR
         ```  
   
     -   Původní výraz nelze provést, v těle anonymního delegáta hodnotou staré výrazu závislých na některý z parametrů anonymního delegáta, pokud anonymního delegáta je argument <xref:System.Diagnostics.Contracts.Contract.ForAll%2A> nebo <xref:System.Diagnostics.Contracts.Contract.Exists%2A> metody:  
   
-        ```  
-        Method( ... (T t) => Contract.OldValue(... t ...) ... ); // ERROR  
+        ```csharp
+        Method(... (T t) => Contract.OldValue(... t ...) ...); // ERROR
         ```  
   
     -   `Out` Parametry představovat problém, protože kontrakty předcházet tělo metody a většina kompilátorů nejsou povoleny odkazy na `out` ve vstupních parametrů. Pro vyřešení tohoto problému <xref:System.Diagnostics.Contracts.Contract> třída poskytuje <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn%2A> metodu, která umožňuje neplatná následná na základě `out` parametru.  
   
-        ```  
-        public void OutParam(out int x) f  
-        Contract.Ensures(Contract.ValueAtReturn(out x) == 3);  
-        x = 3;  
+        ```csharp
+        public void OutParam(out int x)
+        {
+            Contract.Ensures(Contract.ValueAtReturn(out x) == 3);
+            x = 3;
+        }
         ```  
   
          Stejně jako u <xref:System.Diagnostics.Contracts.Contract.OldValue%2A> metodu, můžete vynechat parametr obecného typu pokaždé, když je kompilátor může odvodit typ. Kontrakt RW nahradí volání metody s hodnotou `out` parametru. <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn%2A> Metoda může vyskytovat jenom ve vstupních. Argument metody musí být `out` parametru nebo pole struktury `out` parametru. Je také užitečná při odkazu na pole v neplatná následná struktura konstruktoru.  
@@ -138,14 +147,14 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
   
  Invariantní metody jsou označeny se označené <xref:System.Diagnostics.Contracts.ContractInvariantMethodAttribute> atribut. Invariantní metody musejí obsahovat žádný kód s výjimkou pořadí volání <xref:System.Diagnostics.Contracts.Contract.Invariant%2A> metoda jednotlivé invariantní, z nichž každý určuje, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 [ContractInvariantMethod]  
 protected void ObjectInvariant ()   
 {  
-Contract.Invariant(this.y >= 0);  
-Contract.Invariant(this.x > this.y);  
-...  
-}  
+    Contract.Invariant(this.y >= 0);
+    Contract.Invariant(this.x > this.y);
+    ...
+}
 ```  
   
  Výstupních podmínek jsou definovány podmíněně preprocesoru symbol CONTRACTS_FULL. Během kontroly za běhu, jsou kontrolovány výstupních podmínek na konci každé veřejné metody. Pokud invariantní uvádí veřejnou metodu ve stejné třídě, je zakázané invariantní zkontrolujte, jestli by normálně mohlo dojít na konci této veřejné metody. Místo toho kontrola probíhá pouze na konci volání vnější metody dané třídy. Také se to stane, když je třída opětovný vstup z důvodu volání metody na jinou třídu. Výstupních podmínek se kontroluje finalizační metodu objektu a <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace.  

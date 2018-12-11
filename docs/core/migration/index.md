@@ -1,23 +1,25 @@
 ---
-title: .NET core migrace na formát csproj
-description: .NET core project.json na csproj migrace
+title: .NET core migrace z project.json
+description: Zjistěte, jak migrovat starší aplikace project .NET Core pomocí project.json
 author: blackdwarf
-ms.author: mairaw
 ms.date: 07/19/2017
-ms.openlocfilehash: da1995ed3b77cb802d1f3d04e6d741809de20927
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.custom: seodec18
+ms.openlocfilehash: 40a0aaf9d687a580b83e11811effad458f708a85
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584321"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170688"
 ---
-# <a name="migrating-net-core-projects-to-the-csproj-format"></a>Migrace projektů .NET Core na formát csproj
+# <a name="migrating-net-core-projects-from-projectjson"></a>Migrace projektů .NET Core ze souboru project.json
 
 V tomto dokumentu se týkají scénářů migrace pro projekty .NET Core a půjdou přes následující scénáře migrace tři:
 
 1. [Migrace z platné schéma nejnovější *project.json* k *csproj*](#migration-from-projectjson-to-csproj)
 2. [Migrace z DNX na csproj](#migration-from-dnx-to-csproj)
 3. [Migrace z předchozích projektů csproj .NET Core a RC3 do konečné](#migration-from-earlier-net-core-csproj-formats-to-rtm-csproj)
+
+V tomto dokumentu platí pouze pro starší projekty .NET Core, které dál používat project.json. To neplatí pro migraci z rozhraní .NET Framework do .NET Core.
 
 ## <a name="migration-from-projectjson-to-csproj"></a>Migrace z project.json na csproj
 
@@ -58,7 +60,7 @@ Zobrazit [mapování mezi project.json a csproj vlastnosti](../tools/project-jso
 
 ### <a name="common-issues"></a>Běžné problémy
 
-- Pokud dojde k chybě: "žádná spustitelný soubor se nenašel odpovídající příkaz dotnet-migrace":
+- Pokud dojde k chybě: "Žádná spustitelný soubor se nenašel odpovídající příkaz dotnet-migrace":
 
 Spustit `dotnet --version` zobrazíte kterou verzi používáte. [`dotnet migrate`](../tools/dotnet-migrate.md) vyžaduje RC3 rozhraní příkazového řádku .NET Core nebo vyšší.
 Pokud máte, zobrazí se tato chyba *global.json* soubor v aktuálním nebo nadřazeném adresáři a `sdk` verze je nastaveno na starší verze.

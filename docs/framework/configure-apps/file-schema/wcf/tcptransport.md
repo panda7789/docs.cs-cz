@@ -2,12 +2,12 @@
 title: '&lt;tcpTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 92590f556d93859e8681eea8f8f05da4f560e150
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 39fb57af6ad97c1a0e51a2c5dcf06245ddf293ba
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43738168"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152461"
 ---
 # <a name="lttcptransportgt"></a>&lt;tcpTransport&gt;
 Definuje přenos TCP, který mohou využívat pro vlastní vazbu kanálu pro přenos zpráv.  

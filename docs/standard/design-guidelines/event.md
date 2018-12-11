@@ -1,6 +1,6 @@
 ---
 title: Návrh události
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - pre-events
@@ -10,14 +10,13 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: b257da73d33fae54ef464e9dd69906316b87fd88
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+author: KrzysztofCwalina
+ms.openlocfilehash: 54f98b3c685b77ecb9fe659522c599662aa8243c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261365"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129087"
 ---
 # <a name="event-design"></a>Návrh události
 Události jsou nejčastěji používané formuláři zpětná volání (konstrukce, které umožňují rozhraní pro volání do uživatelského kódu). Jiné mechanismy zpětné volání zahrnout členy, přičemž delegáty, virtuální členy a založeny na rozhraní modulů plug-in. Data z použitelnost studie označuje, že většina vývojářů je pohodlnější použití událostí, než které využívají jiné mechanismy zpětné volání. Události jsou krásně součástí sady Visual Studio a mnoha jazyků.  
@@ -69,7 +68,7 @@ Události jsou nejčastěji používané formuláři zpětná volání (konstruk
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

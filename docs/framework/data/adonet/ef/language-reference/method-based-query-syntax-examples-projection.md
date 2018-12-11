@@ -1,19 +1,19 @@
 ---
-title: 'Příklady syntaxe dotazů založených na volání metody: projekce'
+title: 'Příklady syntaxe dotazů založených na volání metody: Projekce'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 505491fa-5920-43ce-8a96-c25389e125d8
-ms.openlocfilehash: 81484f729b2282678b3fa1a92b5050cf7a502db5
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c1cad442ba2e6d2567c2e4936d7d8b3cd49b0424
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43739152"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152413"
 ---
-# <a name="method-based-query-syntax-examples-projection"></a>Příklady syntaxe dotazů založených na volání metody: projekce
-Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> a <xref:System.Linq.Enumerable.SelectMany%2A> methodsto dotaz [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
+# <a name="method-based-query-syntax-examples-projection"></a>Příklady syntaxe dotazů založených na volání metody: Projekce
+Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Select%2A> a <xref:System.Linq.Enumerable.SelectMany%2A> metody k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
   
  V příkladech v tomto tématu se používá následující `using` / `Imports` příkazy:  
   

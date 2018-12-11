@@ -1,5 +1,6 @@
 ---
-title: Konstrukce alternace v regulárních výrazech
+title: Konstrukce alternace v regulárních výrazech .NET
+description: Další informace o použití konstrukce alternace v regulárních výrazech podmíněné odpovídající.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,13 @@ helpviewer_keywords:
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b653972fad71ce3a89c35598513b94f71fb4bf0
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: 6d9761d2e9904e865e7f6a17526327e1b04a1597
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839748"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53142922"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Konstrukce alternace v regulárních výrazech
 <a name="top"></a> Konstrukce alternace upravují regulární výraz, aby buď / nebo podmíněného přiřazování nebo. .NET podporuje tři konstrukcí alternace:  

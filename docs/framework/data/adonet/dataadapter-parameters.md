@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: e633c7cdd105125fc5fb595566d15cf5f5fe4e6f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: ad0045f926b05b6a73dd64089290f4b8937004ca
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845612"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150989"
 ---
 # <a name="dataadapter-parameters"></a>Parametry adaptéru dat
 <xref:System.Data.Common.DbDataAdapter> Má čtyři vlastnosti, které slouží k načtení dat z a aktualizovat data do zdroje dat: <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> vlastnost vrací data ze zdroje dat; a <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A> , <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A>, a <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> vlastnosti se používají ke správě změny ve zdroji dat. `SelectCommand` Vlastnost musí být nastavena dříve než zavoláte `Fill` metodu `DataAdapter`. `InsertCommand`, `UpdateCommand`, Nebo `DeleteCommand` vlastnosti musí být nastavena před `Update` metodu `DataAdapter` je volána, v závislosti na tom, jaké změny byly provedeny s daty v <xref:System.Data.DataTable>. Například, pokud byl přidán počet řádků `InsertCommand` musí být nastavena dříve než zavoláte `Update`. Když `Update` zpracovává vložený, aktualizovaných nebo odstraněných řádků, `DataAdapter` používá funkcím `Command` vlastnost zpracovat akci. Aktuální informace o upravené řádku je předán `Command` objektu `Parameters` kolekce.  
   
  Při aktualizaci řádků ve zdroji dat zavoláte příkaz UPDATE, který používá k identifikaci odpovídající řádek v tabulce jedinečný identifikátor aktualizovat. Jedinečný identifikátor se obvykle hodnota primárního klíče. Příkaz UPDATE používá parametry, které obsahují jedinečný identifikátor a sloupců a hodnot má být aktualizován, jak je znázorněno v následujícím příkazu jazyka Transact-SQL.  
   
-```  
+```sql
 UPDATE Customers SET CompanyName = @CompanyName   
   WHERE CustomerID = @CustomerID  
 ```  
@@ -27,7 +27,7 @@ UPDATE Customers SET CompanyName = @CompanyName
   
  V tomto příkladu jazyka Visual Basic `CompanyName` pole se aktualizuje s hodnotou `@CompanyName` parametr řádku kde `CustomerID` se rovná hodnotě `@CustomerID` parametr. Parametry načíst informace z řádku upravené pomocí <xref:System.Data.SqlClient.SqlParameter.SourceColumn%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter> objektu. Následují parametry pro předchozí ukázka příkazu UPDATE. Kód předpokládá, že proměnná `adapter` představuje platnou <xref:System.Data.SqlClient.SqlDataAdapter> objektu.  
   
-```  
+```vb
 adapter.Parameters.Add( _  
   "@CompanyName", SqlDbType.NChar, 15, "CompanyName")  
 Dim parameter As SqlParameter = _  

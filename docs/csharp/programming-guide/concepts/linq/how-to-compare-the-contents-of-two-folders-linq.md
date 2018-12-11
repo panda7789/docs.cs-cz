@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: porovnání obsahu dvou složek (LINQ) (C#)'
+title: 'Postupy: Porovnání obsahu dvou složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 1517d1f9e451306e40835e6032e2aff2fe3e60ab
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 61ae9b56e983e5ca05c3dd99d4db4797b67b3452
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035146"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153511"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: porovnání obsahu dvou složek (LINQ) (C#)
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnání obsahu dvou složek (LINQ) (C#)
 Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  
   
 -   Pomocí dotazu na logickou hodnotu, která určuje, zda dva seznamy souborů jsou identické.  
@@ -118,7 +118,7 @@ namespace QueryCompareTwoDirs
         // hash code.  
         public int GetHashCode(System.IO.FileInfo fi)  
         {  
-            string s = String.Format("{0}{1}", fi.Name, fi.Length);  
+            string s = $"{fi.Name}{fi.Length}";
             return s.GetHashCode();  
         }  
     }  

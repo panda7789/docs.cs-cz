@@ -3,11 +3,11 @@ title: Protokol PNRP
 ms.date: 03/30/2017
 ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
 ms.openlocfilehash: f04b0b2e27c03ed477c6ceb10a5cbe41e1c7ce7c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185154"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129154"
 ---
 # <a name="peer-name-resolution-protocol"></a>Protokol PNRP
 V prostředích peer-to-peer partnerské uzly použít konkrétní název řešení systémy druhé strany umístění v síti (adresy, protokoly a porty) z názvů nebo jiných typů identifikátorů. V minulosti má bylo složité peer name resolution Protocol ze své podstaty přechodné připojení, stejně jako ostatní nedostatky v v systému DNS (Domain Name).  
@@ -44,7 +44,7 @@ Protokol Peer Name Resolution demonstruje následující vlastnosti:
   
 -   <xref:System.Net.PeerToPeer.PeerNameRegistration>: Definuje proces registrace pro název partnerského zařízení, včetně metod ke spuštění a zastavení registrace názvu partnera.  
   
--   <xref:System.Net.PeerToPeer.PeerNameResolver>: Definuje procesu k vyřešení název partnerského zařízení do jeho koncových bodů sítě, včetně synchronní a asynchronní metody pro překlad.  
+-   <xref:System.Net.PeerToPeer.PeerNameResolver>: Definuje proces pro vyřešení název partnerského zařízení do jeho koncových bodů sítě, včetně synchronní a asynchronní metody pro překlad.  
   
 ## <a name="see-also"></a>Viz také:  
 - <xref:System.ServiceModel.PeerResolvers>  

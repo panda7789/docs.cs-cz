@@ -4,12 +4,12 @@ description: Pochopení rozdílů a používá model brány rozhraní API a př�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 36b95f8b6308773dbb49cc68e4f8e2099bdd1ff0
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: c0c98733271e74e119373fe359b9aa6121930a40
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297299"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152640"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -55,13 +55,13 @@ V architektuře mikroslužeb klientské aplikace obvykle potřebují využívat 
 
 Proto úrovní dereference (brány) nebo pokročilou úroveň může být velmi vhodné pro aplikace založené na mikroslužbách. Pokud nemáte brány rozhraní API, klientské aplikace musíte odeslat požadavků přímo na mikroslužby a, která vyvolává problémy, jako je například následující problémy:
 
-- **Párování**: bez vzor brány rozhraní API, klientské aplikace jsou spojeny s interní mikroslužeb. Klientské aplikace potřebujete vědět, jak se více oblastí aplikace rozloží v mikroslužeb. Když se vyvíjejí a refaktoring interní mikroslužeb, tyto akce vliv údržby to je chybně protože mohou způsobit změny způsobující chyby do klientské aplikace z důvodu přímý odkaz na vnitřní mikroslužeb z klienta aplikace. Klientské aplikace potřeba aktualizovat často, což obtížnější vyvíjí řešení.
+- **Párování**: Bez vzor brány rozhraní API klientské aplikace jsou spojeny s interní mikroslužeb. Klientské aplikace potřebujete vědět, jak se více oblastí aplikace rozloží v mikroslužeb. Když se vyvíjejí a refaktoring interní mikroslužeb, tyto akce vliv údržby to je chybně protože mohou způsobit změny způsobující chyby do klientské aplikace z důvodu přímý odkaz na vnitřní mikroslužeb z klienta aplikace. Klientské aplikace potřeba aktualizovat často, což obtížnější vyvíjí řešení.
 
-- **Moc velký počet zpátečních cest**: jednu stránku, obrazovky v klientské aplikaci může vyžadovat několik volání více služeb. Že výsledkem více síťových zaokrouhlit zkracuje dobu odezvy mezi klientem a serverem, přidání velkou latenci. Agregace v pokročilou úroveň zpracovává může zlepšit výkon a uživatelské prostředí pro klientské aplikace.
+- **Moc velký počet zpátečních cest**: Na jedné stránce/obrazovce v klientské aplikaci může vyžadovat několik volání více služeb. Že výsledkem více síťových zaokrouhlit zkracuje dobu odezvy mezi klientem a serverem, přidání velkou latenci. Agregace v pokročilou úroveň zpracovává může zlepšit výkon a uživatelské prostředí pro klientské aplikace.
 
-- **Problémy se zabezpečením**: bez brány, musí být vystavené všechny mikroslužby "externí World", provedení útoku větší než-li skrýt interní mikroslužeb, které nejsou přímo používány klientské aplikace. Čím menší je útok, tím lépe zabezpečit vaše aplikace může být.
+- **Problémy se zabezpečením**: Bez brány musí být vystavené všechny mikroslužby "externí World", provedení útoku větší než-li skrýt interní mikroslužeb, které nejsou přímo používány klientské aplikace. Čím menší je útok, tím lépe zabezpečit vaše aplikace může být.
 
-- **Převeďte společné aspekty**: každá mikroslužba veřejně publikovaného musí zpracovat aspekty jako je například autorizace, SSL atd. V mnoha situacích můžou tyto obavy zpracovat, v jedné vrstvě tak vnitřní mikroslužeb jsou zjednodušené.
+- **Převeďte společné aspekty**: Každá mikroslužba veřejně publikovaného musí zpracovat aspekty jako je například autorizace, SSL atd. V mnoha situacích můžou tyto obavy zpracovat, v jedné vrstvě tak vnitřní mikroslužeb jsou zjednodušené.
 
 ## <a name="what-is-the-api-gateway-pattern"></a>Co je vzor brány rozhraní API?
 
@@ -172,7 +172,7 @@ Po počáteční architektury a vysvětlení části vzorce, následující čá
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Charles Richardson. Vzor: Brána rozhraní API / back-endu pro front-endu** \
+- **Charles Richardson. Vzor: Brána rozhraní API a back-endu pro front-endu** \
   [*https://microservices.io/patterns/apigateway.html*](https://microservices.io/patterns/apigateway.html)
 
 - **Vzor brány rozhraní API** \
@@ -194,5 +194,5 @@ Po počáteční architektury a vysvětlení části vzorce, následující čá
   [*https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html*](https://www.pogsdotnet.com/2018/08/api-gateway-in-nutshell.html)
 
 >[!div class="step-by-step"]
-[Předchozí](identify-microservice-domain-model-boundaries.md)
-[další](communication-in-microservice-architecture.md)
+>[Předchozí](identify-microservice-domain-model-boundaries.md)
+>[další](communication-in-microservice-architecture.md)

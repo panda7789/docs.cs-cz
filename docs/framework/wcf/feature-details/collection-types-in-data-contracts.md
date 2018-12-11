@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: a2528699387a86ca276cb3ba63eab39544552a4f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 0399c89e926611b076072e6475c52bf31ae83637
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850873"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155181"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tyto seznamy můžou být vyjádřeny pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
@@ -87,7 +87,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
 -   Když <xref:System.Runtime.Serialization.CollectionDataContractAttribute> atribut není použit, výchozí název a obor názvů pro typy kolekcí, závisí na názvy a obory názvů typů, které jsou obsaženy v rámci kolekce. Nejsou ovlivněny podle názvu a oboru názvů samotného typu kolekce. Příklad najdete v následujících typů.  
   
-    ```  
+    ```csharp  
     public CustomerList1 : Collection<string> {}  
     public StringList1 : Collection<string> {}  
     ```  
@@ -249,7 +249,7 @@ A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../.
   
  Například způsobit, že všechny seznamy, které se mají importovat jako obecný <xref:System.Collections.Generic.List%601>.  
   
-```  
+```console  
 svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\System.dll /ct:System.Collections.Generic.List`1  
 ```  
   

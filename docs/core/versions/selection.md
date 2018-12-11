@@ -1,17 +1,18 @@
 ---
-title: Výběr verze .NET core
-description: Zjistěte, jak .NET Core vyhledá a vybere verze modulu runtime pro váš program.
+title: Vyberte verzi .NET Core, která se má použít
+description: Zjistěte, jak .NET Core automaticky vyhledá a vybere verze modulu runtime pro váš program. Kromě toho tento článek vás naučí, jak vynutit konkrétní verzi.
 author: billwagner
 ms.author: wiwagn
 ms.date: 06/27/2018
-ms.openlocfilehash: 5f6ec628a93dd349b003dfc9b89f84ff7a93a05a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: 3e9a60221a5769d124bcc137d9401367a7713abb
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841537"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127235"
 ---
-# <a name="net-core-version-selection"></a>Výběr verze .NET core
+# <a name="select-the-net-core-version-to-use"></a>Vyberte verzi .NET Core používat
 
 [!INCLUDE [topic-appliesto-net-core-2plus](../../../includes/topic-appliesto-net-core-2plus.md)]
 
@@ -80,7 +81,7 @@ Cílové rozhraní .NET standard jsou omezené i pro cílové prostředí modulu
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Dopředné posunutí závisí na architektuře aplikací
 
-Spuštění aplikace ze zdroje s [ `dotnet run` ](../tools/dotnet-run.md). `dotnet run` jak sestaví a spustí aplikaci. `dotnet` Spustitelný soubor je **hostitele** pro aplikaci ve vývojovém prostředí.
+Při spuštění aplikace ze zdroje s [ `dotnet run` ](../tools/dotnet-run.md), z [ **nasazení závisí na architektuře** ](../deploying/index.md#framework-dependent-deployments-fdd) s [ `dotnet myapp.dll` ](../tools/dotnet.md#description), nebo [ **spustitelného souboru závisí na architektuře** ](../deploying/index.md#framework-dependent-executables-fde) s `myapp.exe`, `dotnet` spustitelný soubor je **hostitele** pro aplikaci.
 
 Hostitel vybere nejnovější verze opravy na počítači nainstalovaný. Například, pokud jste zadali `netcoreapp2.0` v souboru projektu a `2.0.4` nejnovější modul .NET runtime nainstalovaný, je `2.0.4` modul runtime se používá.
 

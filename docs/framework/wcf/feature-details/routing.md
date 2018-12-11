@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows communication Foundation [WCF], routing
 ms.assetid: bd56516c-420d-4c4e-97f9-f72d28d149a9
 ms.openlocfilehash: 50b6cb78f5fb20344d5f682d268b6e646c17fb9e
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50048603"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150853"
 ---
 # <a name="routing"></a>Směrování
 Témata v této části se týkají služby směrování. Směrovací služba je obecného konfigurovatelné SOAP zprostředkovatele, že umožňuje, aby obsah směrování na základě, nastavení protokolu přemostění Datacenter, zpracování chyb, které komunikace a dynamicky aktualizovat logiku směrování v době běhu.  

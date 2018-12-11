@@ -1,16 +1,15 @@
 ---
 title: Serialization1
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: bebb27ac-9712-4196-9931-de19fc04dbac
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fd66f8d8589baaa6fc5e22ce0b68beafac916fdf
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+author: KrzysztofCwalina
+ms.openlocfilehash: 3e21251710a44764bd06fbce83f97288b6925bc2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087115"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155103"
 ---
 # <a name="serialization"></a>Serializace
 Serializace je proces převodu objektu do formátu, který lze snadno zachovat nebo přenášet. Například může serializovat objekt, přenosu je prostřednictvím Internetu pomocí protokolu HTTP a deserializovat ho na cílovém počítači.  
@@ -85,14 +84,14 @@ Serializace je proces převodu objektu do formátu, který lze snadno zachovat n
   
  **✓ DO** proveďte konstruktor serializace chráněný a zadat dva parametry typu a s názvem přesně tak, jak je znázorněno v ukázce zde.  
   
-```  
+```csharp
 [Serializable]  
 public class Person : ISerializable {  
     protected Person(SerializationInfo info, StreamingContext context) {  
         ...  
     }  
 }  
-```  
+```
   
  **✓ DO** implementovat `ISerializable` členy explicitně.  
   
@@ -100,7 +99,7 @@ public class Person : ISerializable {
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

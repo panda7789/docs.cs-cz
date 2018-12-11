@@ -4,12 +4,13 @@ description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím
 author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
-ms.openlocfilehash: 560ba58076fedbb1174da2cfe93796030aa9d46f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: af2ae5e1b0f9e6146975c6838cca8b22837bb012
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507827"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168985"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Testování jednotek C# v .NET Core pomocí příkazu dotnet test a xUnit
 
@@ -104,7 +105,7 @@ dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresář a vytvořit nový soubor jazyka C# s názvem *PrimeService_IsPrimeShould.cs*. Přidejte následující kód:
+Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresáře a vytvořte nový C# soubor s názvem *PrimeService_IsPrimeShould.cs*. Přidejte následující kód:
 
 ```csharp
 using Xunit;

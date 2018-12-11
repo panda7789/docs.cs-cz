@@ -7,11 +7,11 @@ ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
 ms.openlocfilehash: 3fb926683de90516bcf67d99026a0134d82cb683
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296942"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152198"
 ---
 # <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 

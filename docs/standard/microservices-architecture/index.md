@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 7113a229726368a65f4372b14c28da1165c22eee
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 8304e4d0b06e7137c42e669191c4e9f0dd946dbb
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193913"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152679"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
 
@@ -43,7 +43,7 @@ Kromě toho [mikroslužeb](https://martinfowler.com/articles/microservices.html)
 
 Tato příručka slouží jako úvod k vývoji aplikací založených na mikroslužbách a správu kontejnerů. Tento článek popisuje kontrol architektonického návrhu a implementace přístupy pomocí .NET Core a kontejnery Dockeru. Aby bylo snazší začít pracovat s kontejnery a mikroslužby, průvodce se zaměřuje na odkaz kontejnerizovaných a aplikací založených na mikroslužbách, kterou můžete prozkoumat. Ukázková aplikace je k dispozici na [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) úložiště GitHub.
 
-Tato příručka obsahuje základní vývoj a doprovodné materiály k architektuře primárně na úrovni prostředí vývoj se zaměřením na technologie: Docker a .NET Core. Naším úmyslem je, že si přečtete tuto příručku při posuzování návrhu aplikace, nemusíte se soustředit na infrastrukturu (v cloudu nebo místních) vašeho produkčního prostředí. Bude rozhodnutí o infrastruktuře později, při vytváření aplikace připravené pro produkční prostředí. Proto tato příručka je určena být nezávislá a více vývojové prostředí – zaměřené na infrastrukturu.
+Tato příručka obsahuje základní vývoj a doprovodné materiály k architektuře primárně na úrovni prostředí vývoj se zaměřením na technologie: .NET Core a docker. Naším úmyslem je, že si přečtete tuto příručku při posuzování návrhu aplikace, nemusíte se soustředit na infrastrukturu (v cloudu nebo místních) vašeho produkčního prostředí. Bude rozhodnutí o infrastruktuře později, při vytváření aplikace připravené pro produkční prostředí. Proto tato příručka je určena být nezávislá a více vývojové prostředí – zaměřené na infrastrukturu.
 
 Po zkoumali této příručce, bude dalším krokem je další informace o mikroslužbách připravené pro produkční prostředí v Microsoft Azure.
 
@@ -84,13 +84,13 @@ Jsme napsali této příručce, které vám pomůžou porozumět architektuře m
 
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 
-## <a name="credits"></a>Kredity
+## <a name="credits"></a>Závěrečné titulky
 
 Spoluautoři:
 
-> **De la Torre Cesarovi**, vyšší ODP., .NET produktový tým Microsoft Corp.
+> **De la Torre Cesarovi**, Senior PM, .NET produktový tým Microsoft Corp.
 >
-> **Bill Wagnera**, vyšší Obsahu pro vývojáře v jazyce C + E, Microsoft Corp.
+> **Bill Wagnera**, Senior obsahu pro vývojáře, C + E, Microsoft Corp.
 >
 > **Mike Rousos**, hlavní softwarový inženýr, týmu DevDiv CAT, Microsoft
 
@@ -110,15 +110,15 @@ Editory:
 >
 > **Jimmy Nilsson**, Spoluzakladatel a generální Factor10
 >
-> **Glenn Condron**, vyšší Programový manažer týmu ASP.NET
+> **Glenn Condron**, Senior Program Manager tým ASP.NET
 >
 > **Označit Fussell**, hlavní Projektový manažer zájemce, tým Azure Service Fabric, Microsoft
 >
 > **Diego Vega**, PM zájemce, Entity Framework týmu, Microsoft
 >
-> **Jiří Dorrans**, vyšší Zabezpečení programový manažer
+> **Jiří Dorrans**, hlavní manažer programu zabezpečení
 >
-> **Rowan Miller**, vyšší Programový manažer Microsoftu
+> **Rowan Miller**, Senior Program Manager, Microsoft
 >
 > **Ankit Asthana**, hlavní manažer PM, týmu .NET, Microsoft
 >
@@ -140,13 +140,13 @@ Editory:
 >
 > **Javier Valero**, hlavní, provozní ředitel ve Grupo řešení
 >
-> **Pierre proso**, vyšší Konzultant, Microsoft
+> **Pierre proso**, Senior konzultant, Microsoft
 >
 > **Michael Friis**, správce produktu, Inc Dockeru
 >
 > **Charles Lowell**, softwarový inženýr, týmu VS CAT, Microsoft
 >
-> **Miguel Veloso**, vyšší Na výzvu Turing konzultant
+> **Miguel Veloso**, Senior konzultant na Turing výzvy
 
 
 ## <a name="copyright"></a>Copyright
@@ -179,6 +179,5 @@ Velryba logo Dockeru je registrovaná ochranná známka společnosti Docker, Inc
 
 Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
-
 >[!div class="step-by-step"]
-[Next](container-docker-introduction/index.md)
+>[Next](container-docker-introduction/index.md)

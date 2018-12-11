@@ -1,5 +1,6 @@
 ---
-title: Kotvy v regulárních výrazech
+title: Kotvy v regulárních výrazech .NET
+description: Další informace o použití kotvy ve vzorech regulárního výrazu.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,12 +18,13 @@ helpviewer_keywords:
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ae07afa2ad2110591139d395ffd8e8cfa5e2347
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.custom: seodec18
+ms.openlocfilehash: d5d07dd290a857a0c6dbfcd9074d8d16ff47e6cd
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085183"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155035"
 ---
 # <a name="anchors-in-regular-expressions"></a>Kotvy v regulárních výrazech
 <a name="top"></a> Kotvy vztahů nebo atomické kontrolní výrazy s nulovou šířkou, určit pozici v řetězci, kde ke shodě musí dojít. Při použití ukotvení v hledaný výraz, modul regulárních výrazů v řetězci nebo spotřebovával znaky; Vyhledá shodu pouze na určené pozici. Například `^` Určuje, že porovnání musí začít na začátku řetězce nebo řádku. Proto regulárního výrazu `^http:` odpovídá "http:" pouze pokud se nachází na začátku řádku. V následující tabulce jsou uvedeny kotvy podporované regulárními výrazy v rozhraní .NET.  
@@ -56,7 +58,7 @@ ms.locfileid: "44085183"
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`^`|Zahájí porovnávání na začátku vstupního řetězce (nebo na začátku řádku, pokud je metoda volána s <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> možnost).|  
-|`((\w+(\s?)){2,}`|Porovná jeden nebo více znaků slova, následovaný nulou nebo o jednu mezeru přesně dvakrát. Toto je první zachytávající skupina. Tento výraz definuje také druhý a třetí zachytávající skupina: druhý se skládá ze zachyceného slova a třetí se skládá z zachycené mezery.|  
+|`((\w+(\s?)){2,}`|Porovná jeden nebo více znaků slova, následovaný nulou nebo o jednu mezeru přesně dvakrát. Toto je první zachytávající skupina. Tento výraz definuje také druhý a třetí zachytávající skupina: Druhý se skládá ze zachyceného slova a třetí se skládá z zachycené mezery.|  
 |`,\s`|Porovná čárkou následovanou prázdným znakem.|  
 |`(\w+\s\w+)`|Porovná jeden nebo více znaků slova, za nímž následuje mezera, za nímž následuje jedna nebo více znaků slova. Toto je čtvrtý zachytávající skupina.|  
 |`,`|Porovná čárku.|  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: d3c59b667c05be083e44de8cc3e7e44d50fefc71
-ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
+ms.openlocfilehash: c97c30d77551f519777afa6efd31d507b3f21851
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "43516788"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155350"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Načtení dat pomocí čtečky dat
 K načtení dat pomocí **DataReader**, vytvoření instance **příkaz** objektu a pak vytvořte **DataReader** voláním **Command.ExecuteReader**  načíst ze zdroje dat řádků. **DataReader** poskytuje bez vyrovnávací paměti datového proudu dat, která umožňuje procedurální logiku pro efektivní zpracování výsledků ze zdroje dat postupně. **DataReader** je dobrou volbou, pokud načítáte velkých objemů dat, protože data neukládají do mezipaměti v paměti.
@@ -144,7 +144,7 @@ using (OleDbConnection connection = new OleDbConnection(
   
  Představte si třeba následující balíček Oracle a tělo balíčku.  
   
-```  
+```sql
 CREATE OR REPLACE PACKAGE CURSPKG AS   
   TYPE T_CURSOR IS REF CURSOR;   
   PROCEDURE OPEN_TWO_CURSORS (EMPCURSOR OUT T_CURSOR,   

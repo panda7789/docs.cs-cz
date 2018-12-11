@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 63f3714fce317d915b65075922b323f2aa5061f0
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0493e7c08a742abed26ff00ce84b9d77da73ea63
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185924"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153862"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -83,5 +83,5 @@ Si můžete představit bitovou kopii jako pomocné jen pro čtení pevný disk 
 Kontejner můžete podobně představit jako "počítač" s pevným diskem bitové kopie nainstalovány. Kontejner, stejně jako počítač, můžete s využitím zapnutí nebo vypnutí.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](docker-terminology.md)
+>[Předchozí](index.md)
+>[další](docker-terminology.md)

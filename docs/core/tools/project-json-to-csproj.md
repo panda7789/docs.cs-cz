@@ -1,15 +1,15 @@
 ---
-title: porovnání Project.JSON a csproj – .NET Core
+title: porovnání Project.JSON a csproj
 description: Zobrazit mapování mezi project.json a csproj prvky.
 author: natemcmaster
-ms.author: mairaw
 ms.date: 03/13/2017
-ms.openlocfilehash: 0079164470f87df665be6f9de62bc98d3fb51696
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.custom: seodec18
+ms.openlocfilehash: 581ff7cd3fe02e22d481c8386776317a5251cc5c
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397709"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168895"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi project.json a csproj vlastnosti
 
@@ -39,7 +39,7 @@ Nový formát \*.csproj, je ve formátu založený na formátu XML. Následujíc
 }
 ```
 
-Již nejsou podporovány. V souboru csproj se určuje podle názvu souboru projektu, který je definovaný název adresáře. Například `MyProjectName.csproj`.
+Již nejsou podporovány. V souboru csproj se určuje podle názvu souboru projektu, který je definovaný název adresáře. Například, `MyProjectName.csproj`.
 
 Ve výchozím souboru projektu také určuje hodnotu `<AssemblyName>` a `<PackageId>` vlastnosti.
 

@@ -2,14 +2,14 @@
 title: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede vytvořením jednoduchou konzolovou aplikaci pomocí sady Visual Studio pro Mac a .NET Core.
 author: guardrex
-ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: f751e7532e9627de3d3733476f7214654089e468
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.custom: seodec18
+ms.openlocfilehash: 471bdfdaa10b2d66c19177ae36b8bd18ce19e468
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50744111"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169570"
 ---
 # <a name="getting-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -34,25 +34,25 @@ Stáhněte si [Visual Studio for Mac installer](https://visualstudio.microsoft.c
 
 1. Vyberte **nový projekt** na úvodní obrazovce.
 
-   ![Tlačítko Nový projekt v sadě Visual Studio pro Mac úvodní obrazovka](./media/using-on-mac-vs/vsmac1.png)
+   ![Tlačítko Nový projekt v sadě Visual Studio pro Mac úvodní obrazovka](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
 
 1. V **nový projekt** dialogového okna, vyberte **aplikace** pod **.NET Core** uzlu. Vyberte **konzolovou aplikaci** šablony následovaný **Další**.
 
-   ![Nový seznam šablon projektu](./media/using-on-mac-vs/vsmac2.png)
+   ![Nový seznam šablon projektu](./media/using-on-mac-vs/visual-studio-mac-new-dialog.png)
 
-1. Zadejte "HelloWorld" **název projektu**. Vyberte **vytvořit**.
+1. Zadejte "HelloWorld" **název projektu**. Vyberte **Vytvořit**.
 
-   ![Konfigurace nových konzolovou aplikaci dialogové okno](./media/using-on-mac-vs/vsmac3.png)
+   ![Konfigurace nových konzolovou aplikaci dialogové okno](./media/using-on-mac-vs/visual-studio-mac-new-options.png)
 
 1. Počkejte, dokud se obnoví závislosti projektu. Projekt má jeden C# souboru, *Program.cs*, obsahující `Program` třídy s `Main` metoda. `Console.WriteLine` Příkaz bude output "Hello World!" do konzoly při spuštění aplikace.
 
-   ![Hlavní okno s souboru Program.cs](./media/using-on-mac-vs/vsmac4.png)
+   ![Hlavní okno s souboru Program.cs](./media/using-on-mac-vs/visual-studio-mac-editor.png)
 
 ## <a name="run-the-application"></a>Spuštění aplikace
 
 Spusťte aplikaci pomocí režimu ladění <kbd>F5</kbd> nebo v režimu pro vydávání pomocí <kbd>CTRL</kbd>+<kbd>F5</kbd>.
 
-![V podokně výstup aplikace se zobrazí Hello World!](./media/using-on-mac-vs/vsmac5.png)
+![V podokně výstup aplikace se zobrazí Hello World!](./media/using-on-mac-vs/visual-studio-mac-output.png)
 
 ## <a name="next-step"></a>Další krok
 

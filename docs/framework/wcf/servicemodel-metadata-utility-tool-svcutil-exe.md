@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 01a30ac6cb252eba51cfff8a221c28425f347b0a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 10a5be16ef27aedf86f391b661750a953262d29b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837257"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155207"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -29,13 +29,13 @@ Následující tabulka shrnuje různé funkce tak, že tento nástroj a příslu
 |Úloha|Téma|
 |----------|-----------|
 |Generuje kód ze spuštěné služby nebo statických dokumentů metadat.|[Generování klienta WCF z metadat služby](../../../docs/framework/wcf/feature-details/generating-a-wcf-client-from-service-metadata.md)|
-|Exportuje dokumentů metadat z kompilovaného kódu.|[Postupy: Použití nástroje Svcutil.exe k exportu metadat z kompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|
-|Ověří kompilovaného kódu služby.|[Postupy: Ověření zkompilovaného kódu služby pomocí nástroje Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|
-|Soubory ke stažení dokumentů metadat od spuštění služby.|[Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|
-|Generuje kód serializace.|[Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|
+|Exportuje dokumentů metadat z kompilovaného kódu.|[Jak: Použití Svcutil.exe pro Export metadat z kompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)|
+|Ověří kompilovaného kódu služby.|[Jak: Pomocí Svcutil.exe k ověření zkompilovaného kódu služby](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-validate-compiled-service-code.md)|
+|Soubory ke stažení dokumentů metadat od spuštění služby.|[Jak: Stažení dokumentů metadat pomocí Svcutil.exe](../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-download-metadata-documents.md)|
+|Generuje kód serializace.|[Jak: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)|
 
 > [!CAUTION]
-> Svcutil přepíše existující soubory na disku, pokud jsou identické názvy zadané jako parametry. To může zahrnovat soubory kódu, konfigurace nebo soubory metadat. Chcete-li předejít při generování kódu a konfigurace čarou, použijte `/mergeConfig` přepnout.
+> Svcutil přepíše existující soubory na disku, pokud jsou identické názvy zadané jako parametry. To může zahrnovat soubory kódu, konfigurace nebo soubory metadat. Chcete-li předejít při generování kódu a konfigurační soubory, použijte `/mergeConfig` přepnout.
 >
 > Kromě toho `/r` a `/ct` přepínače pro odkazování na typy jsou určeny pro vygenerování kontraktů dat. Tyto přepínače nefungují při používání třídy XmlSerializer.
 
@@ -59,7 +59,7 @@ V následující tabulce jsou uvedeny některé běžně používané možnosti 
 
 |Možnost|Popis|
 |------------|-----------------|
-|/ directory:\<adresáře >|Adresář, které mají být vytvořeny soubory.<br /><br /> Výchozí: Aktuální adresář.<br /><br /> Krátký tvar: `/d`|
+|/ directory:\<adresáře >|Adresář, které mají být vytvořeny soubory.<br /><br /> Výchozí hodnota: Aktuální adresář.<br /><br /> Krátký tvar: `/d`|
 |/help|Zobrazí syntaxi příkazu a možnosti nástroje.<br /><br /> Krátký tvar: `/?`|
 |/ nologo|Potlačí zprávu o autorských právech a úvodní nápis.|
 |/svcutilConfig:\<configFile>|Určuje vlastní konfigurační soubor, který chcete použít místo souboru App.config. To lze použít k registraci rozšíření system.serviceModel beze změny konfiguračního souboru nástroje.|
@@ -69,7 +69,7 @@ V následující tabulce jsou uvedeny některé běžně používané možnosti 
 
 Svcutil.exe lze generovat kód pro typy kontraktů, klientů a dat služby z dokumentů metadat. Tyto dokumenty metadat mohou být odolné úložiště nebo načítá online. Načítání online následuje protokol WS-Metadata Exchange nebo protokol Roz (podrobné informace najdete v části stáhnout Metadata).
 
-Můžete použít *SvcUtil.exe* nástroj generovat kontrakty služby a dat na základě předdefinovaných dokumentu WSDL. Použijte přepínač /serviceContract a zadejte adresu URL nebo soubor umístění, kam dokument WSDL si můžete stáhnout nebo najít. Tím se vygeneruje kontrakty služby a data definovaný v dokumentu WSDL, který lze použít k implementaci služby předpisy. Další informace najdete v tématu [postup: načítání metadat a implementace kompatibilní služby](../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md).
+Můžete použít *SvcUtil.exe* nástroj generovat kontrakty služby a dat na základě předdefinovaných dokumentu WSDL. Použijte přepínač /serviceContract a zadejte adresu URL nebo soubor umístění, kam dokument WSDL si můžete stáhnout nebo najít. Tím se vygeneruje kontrakty služby a data definovaný v dokumentu WSDL, který lze použít k implementaci služby předpisy. Další informace najdete v tématu [jak: Načítání metadat a implementace kompatibilní služby](../../../docs/framework/wcf/feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md).
 
 Pro službu s koncovým bodem třída BasicHttpContextbinding *Svcutil.exe* generuje BasicHttpBinding s `allowCookies` atribut nastaven na `true` místo. Soubory cookie se používají pro kontext na serveru. Pokud chcete ke správě kontextu na straně klienta, pokud služba používá soubory cookie, můžete ručně upravit konfigurace, aby používala kontextu vazby.
 
@@ -97,17 +97,17 @@ Pro službu s koncovým bodem třída BasicHttpContextbinding *Svcutil.exe* gene
 |/Language:\<jazyk >|Určuje programovací jazyk, který má použít pro generování kódu. By měla poskytnout buď název jazyka zaregistrovaný v souboru Machine.config, nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, csharp, vb, visualbasic, c ++, cpp<br /><br /> Výchozí: csharp<br /><br /> Krátký tvar: `/l`|
 |/mergeConfig|Sloučí existující soubor, místo abyste přepsali tu stávající soubor vygenerovanou konfiguraci.|
 |/messageContract|Generuje typy kontraktů zpráv.<br /><br /> Krátký tvar: `/mc`|
-|/ NAMESPACE:\<string, string >|Určuje mapování z targetNamespace schématu WSDL nebo XML na názvový prostor CLR. Použití "\*" pro targetNamespace bez explicitního mapování všech lze mapovat na tento obor názvů CLR.<br /><br /> Pokud chcete mít jistotu, že název kontraktu zprávy nejsou v konfliktu s názvem operace, by měly buď kvalifikovat odkaz na typ s `::`, nebo se ujistěte, názvy musí být jedinečné.<br /><br /> Výchozí hodnota: Odvozen z cílového oboru názvů dokumentu schématu pro kontrakty dat. Výchozí obor názvů je používán pro všechny ostatní generované typy.<br /><br /> Krátký tvar: `/n` **Poznámka:** při generování typů pro použití s pomocí třídy XmlSerializer, se podporuje jenom mapování jednoho oboru názvů. Všechny typy generovaného bude buď ve výchozí obor názvů nebo oboru názvů určeném "*".|
+|/ NAMESPACE:\<string, string >|Určuje mapování z targetNamespace schématu WSDL nebo XML na názvový prostor CLR. Použití "\*" pro targetNamespace bez explicitního mapování všech lze mapovat na tento obor názvů CLR.<br /><br /> Pokud chcete mít jistotu, že název kontraktu zprávy nejsou v konfliktu s názvem operace, by měly buď kvalifikovat odkaz na typ s `::`, nebo se ujistěte, názvy musí být jedinečné.<br /><br /> Výchozí hodnota: Odvozenou z cílového oboru názvů dokumentu schématu pro kontrakty dat. Výchozí obor názvů je používán pro všechny ostatní generované typy.<br /><br /> Krátký tvar: `/n` **Poznámka:**  Při generování typů pro použití s pomocí třídy XmlSerializer, se podporuje jenom mapování jednoho oboru názvů. Všechny typy generovaného bude buď ve výchozí obor názvů nebo oboru názvů určeném "*".|
 |/ noconfig|Konfigurační soubory nejsou generovány.|
-|/ nostdlib|Neodkazovat na standardní knihovny.<br /><br /> Výchozí hodnota: Mscorlib.dll a System.servicemodel.dll odkazují.|
-|/ out:\<souboru >|Určuje název souboru pro vygenerovaný kód.<br /><br /> WSDL výchozí: Odvozeno z názvu definice WSDL, název služby nebo cílový obor názvů jednoho ze schémat.<br /><br /> Krátký tvar: `/o`|
+|/ nostdlib|Neodkazovat na standardní knihovny.<br /><br /> Výchozí hodnota: Soubor mscorlib.dll a System.servicemodel.dll odkazují.|
+|/ out:\<souboru >|Určuje název souboru pro vygenerovaný kód.<br /><br /> Výchozí hodnota: WSDL odvozeno z názvu definice WSDL, název služby nebo cílový obor názvů jednoho ze schémat.<br /><br /> Krátký tvar: `/o`|
 |/ reference:\<cesta k souboru >|Typy odkazů v zadaném sestavení. Při generování klientů, pokud pomocí této možnosti zadejte sestavení, která může obsahovat typy představující importovaná metadata.<br /><br /> Nelze zadat kontraktů zpráv a <xref:System.Xml.Serialization.XmlSerializer> typy pomocí tohoto přepínače.<br /><br /> Pokud <xref:System.DateTimeOffset> odkazuje, tento typ se používá místo generování nového typu. Pokud aplikace je zapsáno s použitím [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)], odkazy SvcUtil.exe <xref:System.DateTimeOffset> automaticky.<br /><br /> Krátký tvar: `/r`|
 |/ serializovatelný|Vygeneruje třídy označené atributem serializovatelný.<br /><br /> Krátký tvar: `/s`|
 |/serviceContract|Generování kódu pro pouze kontraktů služby. Třída klienta a konfigurace nebude vytvořen<br /><br /> Krátký tvar: `/sc`|
 |/serializer:Auto|Automatický výběr serializátoru. To se pokusí použít serializátor kontraktu dat. není a používá XmlSerializer, pokud se nezdaří.<br /><br /> Krátký tvar: `/ser`|
 |/serializer:dataContractSerializer|Datové typy, které k serializaci a deserializaci používají serializátor kontraktu dat generuje.<br /><br /> Krátký tvar: `/ser:DataContractSerializer`|
 |/serializer:XmlSerializer|Generuje datové typy, které používají <xref:System.Xml.Serialization.XmlSerializer> k serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:XmlSerializer`|
-|/targetClientVersion|Určit používanou verzi [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] cílení aplikace. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použijte v případě `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].<br /><br /> `Version35`: Použijte v případě `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
+|/targetClientVersion|Určit používanou verzi [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] cílení aplikace. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: Použít `/tcv:Version30` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)].<br /><br /> `Version35`: Použít `/tcv:Version35` Pokud jsou generování kódu pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Při použití `/tcv:Version35` s `/async` přepnout, obě založený na událostech a jsou generovány založený/zpětného volání asynchronní metody. Kromě toho podporují podporující LINQ datových sad a <xref:System.DateTimeOffset> je povolená.|
 |/ zabalené|Určuje, zda zvláštní případy se používá pro literál dokumentu ve stylu dokumenty s zabalené parametry. Použití **/ zabalené** přepněte se [Service Model metadat Tool Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj pro určení normální velká a malá písmena.|
 
 > [!NOTE]
@@ -176,7 +176,7 @@ Služby a klientské aplikace, které používají datové typy, které jsou ser
 > [!NOTE]
 > Předem generovaného Serializační kód jde použít jenom v klientských aplikacích a ne v služeb.
 
-Svcutil.exe lze generovat nezbytné kód serializace C# z zkompilovaná sestavení pro aplikaci, proto zlepšení výkonu spouštění pro tyto aplikace. Další informace najdete v tématu [postupy: vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
+Svcutil.exe lze generovat nezbytné kód serializace C# z zkompilovaná sestavení pro aplikaci, proto zlepšení výkonu spouštění pro tyto aplikace. Další informace najdete v tématu [jak: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
 
 > [!NOTE]
 > Svcutil.exe pouze generuje kód pro typy používané kontrakty služeb, které jsou součástí vstupní sestavení.
@@ -191,7 +191,7 @@ Svcutil.exe lze generovat nezbytné kód serializace C# z zkompilovaná sestaven
 |------------|-----------------|
 |/ reference:\<cesta k souboru >|Přidá zadané sestavení na sadu sestavení, které používá k vyřešení odkazů na typy.<br /><br /> Krátký tvar: `/r`|
 |/excludeType:\<typ >|Určuje plně kvalifikovaný nebo sestavením kvalifikovaný název typu, které se mají vyloučit z ověření nebo export.<br /><br /> Krátký tvar: `/et`|
-|/ out:\<souboru >|Určuje název souboru pro vygenerovaný kód. Tato možnost se ignoruje, pokud více sestavení jsou předány jako vstup do nástroje.<br /><br /> Výchozí hodnota: Odvozen od názvu sestavení.<br /><br /> Krátký tvar: `/o`|
+|/ out:\<souboru >|Určuje název souboru pro vygenerovaný kód. Tato možnost se ignoruje, pokud více sestavení jsou předány jako vstup do nástroje.<br /><br /> Výchozí hodnota: Odvozený od názvu sestavení.<br /><br /> Krátký tvar: `/o`|
 |/ UseSerializerForFaults|Určuje, že <xref:System.Xml.Serialization.XmlSerializer> by měl sloužit pro čtení a zápis chyb, místo výchozího <xref:System.Runtime.Serialization.DataContractSerializer>.|
 
 ## <a name="examples"></a>Příklady
@@ -280,4 +280,4 @@ Nakonec byste neměli používat nástroj ve střední vrstvě vaší aplikace, 
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
-- [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
+- [Jak: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)

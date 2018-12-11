@@ -4,12 +4,12 @@ description: Zkoumání různých architekturách a aplikace, které podporuje a
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: ea944a172154a1cff2b8f830cb8fc3fa24a15028
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 5f22f8b9894a23e5920adb2af3fdf02bce2877d7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404901"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150300"
 ---
 # <a name="serverless-architecture"></a>Architektura bez serveru
 
@@ -42,7 +42,7 @@ Běžné výzvy je migrace stávající monolitické aplikace do cloudu. Minimá
 
 ![Migrace monolitu bez serveru](./media/serverless-monolith-migration.png)
 
-Další informace o tento přístup, podívejte se na video: [přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/Events/Connect/2017/E102).
+Další informace o tento přístup, podívejte se na video: [Přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/Events/Connect/2017/E102).
 
 ## <a name="web-apps"></a>Webové aplikace
 
@@ -74,5 +74,5 @@ K velkému množství zařízení a informace o často přikazuje architektura z
 Pronikavostí IoT přinesl několik produktů bez serveru, které se zaměřují konkrétně na IoT obavy, jako například [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub). Bez serveru automatizuje úlohy, jako je registrace zařízení, vynucení zásad, sledování a dokonce i nasazení kódu do zařízení v *na hraničních zařízeních*. Na hraničních zařízeních odkazuje na zařízení, senzory a Pohony, které jsou připojeny k, avšak není aktivní součástí z Internetu.
 
 >[!div class="step-by-step"]
-[Předchozí](architecture-approaches.md)
-[další](serverless-architecture-considerations.md)
+>[Předchozí](architecture-approaches.md)
+>[další](serverless-architecture-considerations.md)

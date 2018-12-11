@@ -10,14 +10,14 @@ helpviewer_keywords:
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
 ms.openlocfilehash: fe797885a9063a19efc3f35da9cdf62d7f271693
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297163"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153381"
 ---
-# <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
-Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
+# <a name="walkthrough-handling-events-visual-basic"></a>Průvodce: Zpracování událostí (Visual Basic)
+Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: Deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
   
  `Widget` Třídy příkladu tradiční příkazy pro zpracování událostí. Visual Basic obsahuje jiné techniky pro práci s událostmi. Jako cvičení, můžete upravit tento příkladu pro použití `AddHandler` a `Handles` příkazy.  
   

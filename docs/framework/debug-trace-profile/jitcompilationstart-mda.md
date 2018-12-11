@@ -9,37 +9,37 @@ helpviewer_keywords:
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9643a2d2ea0967b8cf6d8e18ce2e9073ae583f71
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d73c299231a588a5ae0b252dd2b5a0a834685f2d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387033"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150664"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart – pomocník spravovaného ladění (MDA)
-`jitCompilationStart` Pomocník spravovaného ladění (MDA) se při spuštění v běhu (JIT) kompilátor zkompilovat funkci aktivuje do sestavy.  
+`jitCompilationStart` Pomocníka spravovaného ladění (MDA) je aktivován do sestavy, když začne kompilátor just-in-time (JIT) kompilaci funkce.  
   
 ## <a name="symptoms"></a>Příznaky  
- Pracovní sada větší velikostí pro program, který je již ve formátu nativních bitových kopií, protože mscorjit.dll je načten do procesu.  
+ Pracovní sada pro program, který je již ve formátu nativní bitové kopie, protože mscorjit.dll je načten do procesu se zvětší.  
   
 ## <a name="cause"></a>příčina  
- Ne všechny sestavení, které program závisí na byly vygenerovány do nativní formát nebo ty, které mají nejsou správně zaregistrovány.  
+ Ne všechna sestavení, které program závisí na byly vytvořeny v nativním formátu, nebo ty, které mají nejsou správně registrovány.  
   
 ## <a name="resolution"></a>Rozlišení  
- Povolení této MDA umožňuje určit, které funkce, která má být kompilována. Určete, jestli je sestavení obsahující funkce je generována do nativní formát a řádně zaregistrován.  
+ Povolení toto MDA umožňuje určit, které funkce, která má být zkompilovaný pomocí kompilátoru JIT. Určete, zda je sestavení, které obsahuje funkce generované nativním formátu a správně registrována.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA zaznamená zprávu těsně před metodu je kompilována, takže povolení této MDA má významný dopad na výkon. Všimněte si, že pokud vložené je metoda, nevygeneruje tento MDA samostatnou zprávu.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA zaznamená zprávu těsně před plánovaným metodu zkompilovaný pomocí kompilátoru JIT, takže umožňuje toto MDA má významný dopad na výkon. Všimněte si, že pokud je metoda vložené, nevygeneruje toto MDA samostatnou zprávu.  
   
 ## <a name="output"></a>Výstup  
- Následující příklad kódu ukazuje ukázkový výstup. Výstup ukazuje, které se v sestavení Test metody "m" na třídu "ns2.CO" v tomto případě se kompilována.  
+ Následující příklad kódu ukazuje příklad výstupu. V tomto případě ukazuje výstup, které v sestavení testovací metoda "m" ve třídě "ns2.CO" byl zkompilován JIT Kompilátorem.  
   
 ```  
 method name="Test!ns2.C0::m"  
 ```  
   
 ## <a name="configuration"></a>Konfigurace  
- Následujícího konfiguračního souboru ukazuje různé filtry, které mohou být použity pro odfiltrování které metody jsou hlášené, když jsou nejprve kompilována. Můžete určit, že všechny metody hlášené nastavením hodnoty atributu název tak, aby *.  
+ Následující konfigurační soubor ukazuje různé filtry, které mohou být použity pro filtrování, které metody jsou hlášeny, když jsou nejprve zkompilován JIT Kompilátorem. Můžete určit, že všechny metody oznámený tak, že nastavíte hodnotu atributu název \*.  
   
 ```xml  
 <mdaConfig>  
@@ -62,7 +62,7 @@ method name="Test!ns2.C0::m"
 ## <a name="example"></a>Příklad  
  Následující ukázka kódu je určena pro použití s předchozím konfigurační soubor.  
   
-```  
+```csharp
 using System;  
 using System.Reflection;  
 using System.Runtime.CompilerServices;  

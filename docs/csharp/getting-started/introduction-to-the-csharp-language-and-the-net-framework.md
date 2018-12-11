@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 75ef14032ee2211d3b8d355f050ced67b4a04930
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: ff0845f7d15a7b65cee755110d26a1e56a9b94af
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46579843"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153940"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -38,7 +38,7 @@ C# je elegantní a typově bezpečný objektově orientované jazyka, který umo
   
 - [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] které poskytuje předdefinované možnosti různých datových zdrojů.  
   
- Pokud potřebujete pracovat s jiným softwarem Windows, jako jsou objekty COM nebo nativními knihovnami DLL Win32, musíte v jazyce C# prostřednictvím procesu nazývaného "Interoperabilita". Interoperabilita umožňuje programům C# provádět téměř cokoli, co můžete dělat nativní aplikace C++. C# podporuje i ukazatele a koncept "nebezpečného" kódu pro případy, ve kterých je nezbytně nutný přímý přístup do paměti.  
+ Pokud potřebujete pracovat s jiným softwarem Windows, jako jsou objekty COM nebo nativními knihovnami DLL Win32, můžete to provést C# prostřednictvím procesu nazývaného "Interoperabilita". Interoperabilita umožňuje programům C# provádět téměř cokoli, co můžete dělat nativní aplikace C++. C# podporuje i ukazatele a koncept "nebezpečného" kódu pro případy, ve kterých je nezbytně nutný přímý přístup do paměti.  
   
  Proces sestavení C# je jednoduchý jazycích C a C++ a flexibilnější než v jazyce Java. Neexistují žádné samostatné hlavičkové soubory a žádný požadavek, metody a typy byly deklarovány v určitém pořadí. Zdrojový soubor jazyka C# může definovat libovolný počet tříd, struktur, rozhraní a události.  
   

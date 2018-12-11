@@ -1,52 +1,51 @@
 ---
-title: Vývojové prostředí pro Docker aplikace
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Vývojové prostředí pro aplikace Dockeru
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 3da7816127982c3657129561975eed6d1f5aad5a
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 471b52fd577e5560bd93e6da50f2032d63eb2e6f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104504"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152407"
 ---
-# <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro Docker aplikace
+# <a name="development-environment-for-docker-apps"></a>Vývojové prostředí pro aplikace Dockeru
 
-## <a name="development-tools-choices-ide-or-editor"></a>Vývojových nástrojů volby: IDE nebo editoru
+## <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojářských nástrojů: Prostředím IDE nebo editorem
 
-Bez ohledu Pokud dáváte přednost úplné a výkonné IDE nebo jednoduchý a agilní editor, společnost Microsoft nemá je popsané, pokud jde o vývoj aplikací Docker.
+Bez ohledu na to pokud dáváte přednost úplné a výkonné IDE nebo editorem jednoduchý a flexibilní, Microsoft vám kryje záda při rozhodování o vývoji aplikací Dockeru.
 
-### <a name="visual-studio-code-and-docker-cli-cross-platform-tools-for-mac-linux-and-windows"></a>Visual Studio Code a příkazového řádku Dockeru (nástroje a platformy pro Mac, Linux a Windows)
+### <a name="visual-studio-code-and-docker-cli-cross-platform-tools-for-mac-linux-and-windows"></a>Visual Studio Code a rozhraní příkazového řádku Dockeru (nástrojů pro různé platformy pro Windows, Mac a Linux)
 
-Pokud dáváte přednost lightweight, napříč platformami editor podpora žádný jazyk vývoj, můžete použít Visual Studio Code a příkazového řádku Dockeru. Tyto produkty poskytují jednoduché, ale robustní prostředí, což je velmi důležitá pro zjednodušení pracovního postupu developer. Nainstalováním "Docker pro Mac" nebo "Docker pro systém Windows" (vývojové prostředí) Docker mohou vývojáři jednoho příkazového řádku Dockeru pro vývoj aplikací pro Windows nebo Linux (prostředí runtime). Navíc Visual Studio Code podporuje rozšíření pro Docker pomocí IntelliSense pro Dockerfiles a zástupce úlohy ke spuštění příkazů Docker v editoru.
+Pokud dáváte přednost zjednodušené, multiplatformní editor podporuje libovolný jazyk vývoj, můžete použít Visual Studio Code a rozhraní příkazového řádku Dockeru. Tyto produkty poskytují jednoduché a přitom robustní prostředí, což je velmi důležité pro zjednodušení pracovních postupů vývojářů. Nainstalováním "Dockeru pro Mac" nebo "Docker pro Windows" (vývojové prostředí) Dockeru mohou vývojáři jednotné rozhraní příkazového řádku Dockeru k vytváření aplikací pro Windows nebo Linuxem (prostředí runtime). Kromě toho Visual Studio Code podporuje rozšíření Dockeru s podporou technologie IntelliSense pro soubory Dockerfile a místní úlohy spouštět příkazy Dockeru z editoru.
 
 > [!NOTE]
-> Chcete-li stáhnout Visual Studio Code, přejděte na <https://code.visualstudio.com/download>.
+> Pokud chcete stáhnout Visual Studio Code, přejděte na <https://code.visualstudio.com/download>.
 
 Chcete-li stáhnout Docker pro Mac a Windows, přejděte na <https://www.docker.com/products/docker>.
 
-### <a name="visual-studio-with-docker-tools"></a>Visual Studio s nástroji Docker
+### <a name="visual-studio-with-docker-tools"></a>Visual Studio s nástroji Dockeru
 
-Pokud používáte Visual Studio 2015 můžete nainstalovat nástroje rozšíření "Docker Tools pro sadu Visual Studio". Pro Visual Studio 2017 nástroje Docker pocházet integrované již. V obou případech můžete vyvíjet, spuštění a ověření aplikace přímo ve zvolené Docker prostředí. F5 vaší aplikace (kontejner jednoho nebo několika kontejnerů) přímo do Docker hostitele s laděním nebo stiskněte klávesu Ctrl + F5 upravte a aktualizujte aplikaci bez nutnosti znovu sestavit kontejneru. Toto je nejjednodušší a výkonnější volba pro vývojáře systému Windows vytváření Docker kontejnery pro Linux nebo Windows.
+Pokud používáte Visual Studio 2015 můžete nainstalovat nástroje doplňků "Docker Tools for Visual Studio". Pro Visual Studio 2017 nástroje Dockeru pocházet integrované již. V obou případech můžete vyvíjet spouštět a ověřovat aplikace přímo ve zvoleném prostředí Dockeru. F5 aplikaci (jedním kontejnerem nebo více kontejnerů) přímo do Docker hostování s laděním, nebo stisknutím kláves Ctrl + F5, upravit a aktualizovat aplikace bez nutnosti znovu sestavovat kontejner. Toto je nejjednodušší a výkonnější volbou pro vývojáře Windows vytváření kontejnerů Dockeru pro Linux nebo Windows.
 
 > [!NOTE]
-> Chcete-li stáhnout Docker nástrojů pro Visual Studio, přejděte na <https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4>.
+> Chcete-li stáhnout Docker Tools for Visual Studio, přejděte na <https://visualstudiogallery.msdn.microsoft.com/0f5b2caa-ea00-41c8-b8a2-058c7da0b3e4>.
 
-## <a name="language-and-framework-choices"></a>Možnosti jazyka a framework
+## <a name="language-and-framework-choices"></a>Volby jazyka a framework
 
-Můžete vyvíjet aplikace Docker a nástroje Microsoft s většina moderních jazyků. Toto je počáteční seznam, ale nejste omezeni na ni:
+Můžete vyvíjet Docker aplikacím a nástrojům společnosti Microsoft s většinou moderních jazyků. Toto je počáteční seznam, ale nejste omezeni na něj:
 
--   .NET core a ASP.NET Core
+-   .NET Core a ASP.NET Core
 -   Node.js
 -   Golang
 -   Java
 -   Ruby
 -   Python
 
-V podstatě můžete použít jakýkoli moderní jazyk podporuje Docker v systému Linux nebo Windows.
-
+V podstatě můžete použít libovolný moderní jazyk podporuje Docker v Linuxu nebo Windows.
 
 >[!div class="step-by-step"]
-[Předchozí](orchestrate-high-scalability-availability.md)
-[další](docker-apps-inner-loop-workflow.md)
+>[Předchozí](orchestrate-high-scalability-availability.md)
+>[další](docker-apps-inner-loop-workflow.md)

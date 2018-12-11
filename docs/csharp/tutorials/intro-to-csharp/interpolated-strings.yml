@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: Kolekce v jazyce C#
-  ms.openlocfilehash: f1262beab39b78966d2be10fc983dfe1d4be998b
-  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.openlocfilehash: c8f93bd922b1003aafd50d5e95d92bcb492106c1
+  ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/28/2018
-  ms.locfileid: "50200216"
+  ms.lasthandoff: 12/10/2018
+  ms.locfileid: "53149208"
 items:
 - durationInMinutes: 2
   content: >
@@ -96,4 +96,8 @@ items:
     > [!NOTE]
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- content: "Dokončili jste rychlý start interpolace řetězce. \n\nV těchto rychlých startech můžete pokračovat ve vlastním místním vývojovém prostředí. Seznamte se se základy [místního vývojového](local-environment.md) a potom si vyberte rychlý start. V tomto rychlém startu se stejnou akci, přejít přímo k dalšímu rychlému startu nebo znovu začít [čísla v C#](numbers-in-csharp-local.md) rychlý start.\n\nDalší informace najdete v tématu [interpolace](../../language-reference/tokens/interpolated.md) tématu a [interpolace v jazyce C#](../../tutorials/string-interpolation.md) kurzu."
+- content: >-
+    Dokončili jste kurz interaktivní interpolace řetězce. Můžete kliknout **kolekce v C# ** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování . Krok "Zachovat učení" přináší zpět do těchto kurzů.
+
+
+    Další informace najdete v tématu [interpolace](../../language-reference/tokens/interpolated.md).

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - UI literal type characters [Visual Basic]
 - data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
-ms.openlocfilehash: 660e51338d274bbe25da800ca701e6fb9eccbcda
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c63b9a25c1830f142002e9854e9ce275f55ef54b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183201"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154816"
 ---
 # <a name="uinteger-data-type"></a>UInteger – datový typ
 
@@ -56,7 +56,7 @@ Dim number As UInteger = &H_0F8C_0326
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také zahrnovat `UI` nebo `ui` [znak](../../programming-guide\language-features\data-types/type-characters.md) k označení `UInteger` datového typu, jak ukazuje následující příklad.
+Číselné literály může také zahrnovat `UI` nebo `ui` [znak](../../programming-guide/language-features/data-types/type-characters.md) k označení `UInteger` datového typu, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_0FAC_14D7ui
@@ -83,5 +83,5 @@ Dim number = &H_0FAC_14D7ui
  [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Jak: Volání funkce Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

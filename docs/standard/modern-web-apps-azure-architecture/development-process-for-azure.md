@@ -4,25 +4,25 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 487a303e5cf572cf4173423588ee7fb5a93cb394
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 932d3869483b6c96f2394ec308d3aa014b8650d4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185615"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152596"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
 > _"S cloudem, jednotlivce a malé firmy můžete Přichytit jejich prsty a okamžitě nastavit služby na podnikové úrovni."_  
 > _-Roy Stephan_
 
- ## <a name="vision"></a>Pro zpracování obrazu
+ ## <a name="vision"></a>Obraz
 
 > *Vyvíjejte aplikace dobře navržené ASP .NET Core způsobem, který vám vyhovuje, pomocí sady Visual Studio nebo rozhraní příkazového řádku dotnet a Visual Studio Code nebo vašem editoru podle výběru.*
 
 ## <a name="development-environment-for-aspnet-core-apps"></a>Vývojové prostředí pro aplikace ASP.NET Core
 
-### <a name="development-tools-choices-ide-or-editor"></a>Vývojářské nástroje, možnosti: IDE nebo editorem
+### <a name="development-tools-choices-ide-or-editor"></a>Možnosti vývojářských nástrojů: Prostředím IDE nebo editorem
 
 Ať už dáváte přednost úplné a výkonné IDE nebo editoru jednoduchý a flexibilní, Microsoft vám kryje záda při vývoji aplikací ASP.NET Core.
 
@@ -88,11 +88,11 @@ Vývoj aplikace ASP.NET Core pro nasazení do Azure se nijak neliší od vývoje
 
 Pokaždé, když budete připraveni sdílet svůj kód se svým týmem, by měl své změny odeslat z místního zdroje úložiště do úložiště sdílené zdrojového kódu vašeho týmu. Pokud jste pracovali na vlastní větvi, tento krok obvykle zahrnuje, sloučení kódu do větve sdílené (třeba podle zprávy z [žádosti o přijetí změn](https://docs.microsoft.com/azure/devops/git/pull-requests)).
 
-#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Server sestavení: Průběžné integrace. sestavení, testování, balíček
+#### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Buildovací Server: Průběžná integrace. sestavení, testování, balíček
 
 Nové sestavení se aktivuje na server sestavení pokaždé, když je do úložiště kódu sdílené aplikace provede nové potvrzení. Jako součást procesu CI musí toto sestavení plně který aplikaci zkompiluje a spuštění automatizovaných testů, abychom potvrdili, že vše funguje podle očekávání. Konečný výsledek procesu CI by měl být zabalené verze webové aplikace připravené na nasazení.
 
-#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Sestavení serveru: Průběžné doručování
+#### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Buildovací Server: Průběžné doručování
 
 Po úspěšném sestavení proces průběžného Doručování vyzvedne, až bude vytvořen artefaktů sestavení. Bude se jednat webové nasazení balíčku. Server sestavení se nasadí do služby Azure App Service, nahradí všechny existující služby nově vytvořené sadou tento balíček. Obvykle tento krok, zaměřuje přípravné prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím proces průběžného Doručování.
 
@@ -110,5 +110,5 @@ Zatímco webová aplikace běží, můžete sledovat stav aplikace a shromažďo
 <https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>
 
 >[!div class="step-by-step"]
-[Předchozí](test-asp-net-core-mvc-apps.md)
-[další](azure-hosting-recommendations-for-asp-net-web-apps.md)
+>[Předchozí](test-asp-net-core-mvc-apps.md)
+>[další](azure-hosting-recommendations-for-asp-net-web-apps.md)

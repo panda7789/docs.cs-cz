@@ -10,28 +10,30 @@ helpviewer_keywords:
 ms.assetid: 1595e1bc-2492-421f-8384-7f382eb8eb57
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 93fdb548882422634e1d2456b4d37f434b278f8d
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 9e0a23411f4bc37a1e09460113d15f4861e0a190
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845369"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151158"
 ---
 # <a name="ltaddgt-element-for-ltsharedlistenersgt"></a>&lt;Přidat&gt; – Element pro &lt;sharedListeners&gt;
 Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je kolekce naslouchacích procesů, aby každá [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md) můžete odkazovat.  Ve výchozím nastavení, moduly pro naslouchání v `sharedListeners` kolekce nejsou umístěny v `Listeners` kolekce. Musí se přidat název, který [ \<zdroj >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md) nebo [ \<trasování >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md). Není možné získat naslouchacím procesům `sharedListeners` kolekce v kódu v době běhu.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
-\<sharedListeners > – Element  
-\<add>  
+&nbsp;&nbsp;\<System.Diagnostics >  
+&nbsp;&nbsp;&nbsp;&nbsp;\<sharedListeners > – Element  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Přidat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <add name="name"   
   type="TraceListenerClassName, Version, Culture, PublicKeyToken"  
-  initializeData="data"/>  
-```  
+  initializeData="data"
+  traceOutputOptions = "None"
+/>  
+```
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
  Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
@@ -43,7 +45,8 @@ Přidá naslouchací proces pro `sharedListeners` kolekce. `sharedListeners` je 
 |`name`|Požadovaný atribut.<br /><br /> Určuje název, který se používá k přidání sdílené naslouchací proces pro naslouchací proces `Listeners` kolekce.|  
 |`type`|Požadovaný atribut.<br /><br /> Určuje typ naslouchací proces. Je nutné použít řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro zadanou třídu.|  
-  
+|`traceOutputOptions`|Nepovinný atribut.<br/><br/>Řetězcové vyjádření jednoho nebo víc <xref:System.Diagnostics.TraceOptions> členy výčtu, které určuje dat zapisovaných do výstupu trasování. Více položek jsou odděleny čárkami. Výchozí hodnota je "None".|
+
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  

@@ -19,17 +19,17 @@ helpviewer_keywords:
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 98423e6c103f7eb93b4bfa35ef19b6551c0df0e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 806ccb1d33d9a7b66c740099864decd651c9213f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399591"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144881"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (nástroj globální mezipaměti sestavení)
 Nástroj Global Assembly Cache umožňuje zobrazit a měnit obsah globální mezipaměti sestavení (GAC) a mezipaměti pro stahování.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -43,30 +43,30 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
   
 |Argument|Popis|  
 |--------------|-----------------|  
-|*assemblyName*|Název sestavení. Můžete například zadat buď částečně zadaného sestavení název `myAssembly` nebo název plně zadané sestavení jako `myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5`.|  
+|*assemblyName*|Název sestavení. Lze zadat buď částečný název sestavení, například `myAssembly` nebo úplný název sestavení jako `myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5`.|  
 |*AssemblyPath*|Název souboru obsahujícího manifest sestavení.|  
-|*assemblyListFile*|Cesta k textovému souboru ANSI obsahujícímu sestavení, která mají být nainstalována nebo odinstalována. Chcete-li použít textový soubor pro instalaci sestavení, zadejte cestu ke každému sestavení na samostatný řádek souboru. Nástroj interpretuje relativní cesty relativní k umístění *assemblyListFile*. Chcete-li použít textový soubor k odinstalování sestavení, zadejte plně kvalifikovaný název každého sestavení na samostatném řádku v souboru. Najdete v článku *assemblyListFile* obsah příklady později v tomto tématu.|  
+|*assemblyListFile*|Cesta k textovému souboru ANSI obsahujícímu sestavení, která mají být nainstalována nebo odinstalována. Chcete-li použít textový soubor pro instalaci sestavení, zadejte cestu ke každému sestavení na samostatný řádek souboru. Nástroj interpretuje relativní cesty vůči umístění *assemblyListFile*. Chcete-li použít textový soubor k odinstalování sestavení, zadejte plně kvalifikovaný název každého sestavení na samostatném řádku v souboru. Zobrazit *assemblyListFile* obsah příklady dále v tomto tématu.|  
   
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/cdl**|Odstraní obsah mezipaměti pro stahování.|  
-|**/f**|Zadejte tato možnost se **/i** nebo **/il** vynuťte sestavení, které chcete znovu nainstalovat. Pokud sestavení se stejným názvem již v globální mezipaměti sestavení (GAC) existuje, nástroj je přepíše.|  
+|**/f**|Tato možnost se **/i** nebo **/il** možnosti, jak vynutit přeinstalování sestavení. Pokud sestavení se stejným názvem již v globální mezipaměti sestavení (GAC) existuje, nástroj je přepíše.|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/i** *assemblyPath*|Nainstaluje sestavení do globální mezipaměti sestavení (GAC).|  
-|**/IF***assemblyPath* |Nainstaluje sestavení do globální mezipaměti sestavení (GAC). Pokud sestavení se stejným názvem již v globální mezipaměti sestavení (GAC) existuje, nástroj je přepíše.<br /><br /> Určení Tato možnost odpovídá zadání **/i** a **/f** možnosti společně.|  
-|**/IL** *assemblyListFile*|Nainstaluje jeden nebo více sestavení zadaný v *assemblyListFile* do globální mezipaměti sestavení.|  
-|**/IR***assemblyPath* <br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Nainstaluje sestavení do globální mezipaměti sestavení a přidá odkaz pro jeho započítání. Je nutné zadat *assemblyPath*, *schéma*, *id*, a *popis* parametry s touto možností. Popis platné hodnoty pro tyto parametry můžete určit, najdete **/r** možnost.<br /><br /> Určení Tato možnost odpovídá zadání **/i** a **/r** možnosti společně.|  
-|**/l** [*assemblyName*]|Zobrazí obsah globální mezipaměti sestavení (GAC). Pokud zadáte *assemblyName* parametr nástroj uvádí jenom sestavení odpovídající tímto názvem.|  
+|**/IF***assemblyPath* |Nainstaluje sestavení do globální mezipaměti sestavení (GAC). Pokud sestavení se stejným názvem již v globální mezipaměti sestavení (GAC) existuje, nástroj je přepíše.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/i** a **/f** najednou.|  
+|**/IL** *assemblyListFile*|Nainstaluje jednu nebo více sestavení zadaných v *assemblyListFile* do globální mezipaměti sestavení.|  
+|**/IR***assemblyPath* <br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Nainstaluje sestavení do globální mezipaměti sestavení a přidá odkaz pro jeho započítání. Je nutné zadat *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/i** a **/r** najednou.|  
+|**/l** [*assemblyName*]|Zobrazí obsah globální mezipaměti sestavení (GAC). Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu.|  
 |**/Ldl**|Vypíše obsah mezipaměti stažených souborů.|  
-|**/ld** [*assemblyName*]|Vypíše všechna sestavení a jim odpovídající počty odkazů. Pokud zadáte *assemblyName* parametr, nástroj uvádí jenom sestavení odpovídající tohoto názvu a jejich odpovídající odkaz počty.|  
+|**/ld** [*assemblyName*]|Vypíše všechna sestavení a jim odpovídající počty odkazů. Pokud zadáte *assemblyName* parametr, nástroj vypíše pouze sestavení daného názvu a jim odpovídající počty odkazů.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Určuje trasovaný odkaz na sestavení, která mají být nainstalována nebo odinstalována. Zadejte tato možnost se **/i**, **/il**, **/u**, nebo **/ul** možnosti.<br /><br /> Chcete-li nainstalovat sestavení, zadejte *assemblyPath*, *schéma*, *id*, a *popis* parametry s touto možností. Chcete-li odinstalovat sestavení, zadejte *assemblyName*, *schéma*, *id*, a *popis* parametry.<br /><br /> Chcete-li odebrat odkaz na sestavení, musíte zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir**) možnosti při instalaci sestavení. Provádíte-li odinstalování sestavení, nástroj odstraní sestavení také z globální mezipaměti sestavení (GAC) za předpokladu, že jde o poslední odstraňovaný odkaz a že Instalační služba systému Windows nemá na sestavení žádné zbývající odkazy.<br /><br /> *Schéma* parametr určuje typ instalační schéma. Můžete určit jednu z následujících hodnot:<br /><br /> -UNINSTALL_KEY: Tuto hodnotu zadejte, pokud instalační program přidá aplikaci do přidat nebo odebrat programy v Microsoft Windows. Aplikace se přidávají do ovládacího panelu Přidat nebo odebrat programy přidáním klíče registru HKLM\Software\Microsoft\Windows\CurrentVersion.<br />-FILEPATH: Tuto hodnotu zadejte, pokud instalační program nepřidá aplikaci přidat nebo odebrat programy.<br />-NEPRŮHLEDNÉ: Tuto hodnotu zadat, pokud zadávání klíče registru nebo cesta k souboru nebude použitelná pro váš scénář instalace. Tuto hodnotu můžete zadat vlastní informace o *id* parametr.<br /><br /> Hodnota pro zadejte *id* parametr závisí na hodnotu zadanou pro *schéma* parametr:<br /><br /> – Pokud zadáte UNINSTALL_KEY pro *schéma* parametr, zadejte název aplikace, nastavte v klíči registru HKLM\Software\Microsoft\Windows\CurrentVersion. Například pokud je klíč registru HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, zadejte Moje aplikace pro *id* parametr.<br />– Pokud zadáte cestu k souboru pro *schéma* parametr, zadejte úplnou cestu ke spustitelnému souboru, který nainstaluje sestavení jako *id* parametr.<br />– Pokud zadáte NEPRŮHLEDNÉ pro *schéma* parametr, můžete zadat všechny část dat, jako *id* parametr. Zadaná data musí být uzavřena do uvozovek ("").<br /><br /> *Popis* parametru můžete zadat popisný text o aplikaci pro instalaci. Tyto informace se zobrazují při výčtu odkazů.|  
-|**/ tichou**|Potlačí zobrazování všech výstupů.|  
+|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Určuje trasovaný odkaz na sestavení, která mají být nainstalována nebo odinstalována. Tato možnost se **/i**, **/il**, **/u**, nebo **/ul** možnosti.<br /><br /> Chcete-li nainstalovat sestavení, zadejte *assemblyPath*, *schéma*, *id*, a *popis* s touto možností parametry. Chcete-li odinstalovat sestavení, zadejte *assemblyName*, *schéma*, *id*, a *popis* parametry.<br /><br /> Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir**) možnosti při instalaci sestavení. Provádíte-li odinstalování sestavení, nástroj odstraní sestavení také z globální mezipaměti sestavení (GAC) za předpokladu, že jde o poslední odstraňovaný odkaz a že Instalační služba systému Windows nemá na sestavení žádné zbývající odkazy.<br /><br /> *Schéma* parametr určuje typ instalačního schématu. Můžete určit jednu z následujících hodnot:<br /><br /> -UNINSTALL_KEY: Tuto hodnotu zadejte, pokud instalační program přidá aplikaci do panelu Přidat nebo odebrat programy v Microsoft Windows. Aplikace se přidávají do ovládacího panelu Přidat nebo odebrat programy přidáním klíče registru HKLM\Software\Microsoft\Windows\CurrentVersion.<br />– CESTA K SOUBORU: Tuto hodnotu zadejte, pokud instalační program nepřidá aplikaci do panelu Přidat nebo odebrat programy.<br />-NEPRŮHLEDNÉ: Zadejte tuto hodnotu, pokud dodání klíče registru nebo cesta k souboru se nedá použít u instalačního scénáře. Tato hodnota umožňuje určit vlastní informace pro *id* parametru.<br /><br /> Hodnotu pro *id* parametr závisí na hodnotě zadané pro *schéma* parametr:<br /><br /> – Pokud zadáte hodnotu UNINSTALL_KEY *schéma* parametr, zadejte název aplikace nastavený v klíči registru HKLM\Software\Microsoft\Windows\CurrentVersion. Například pokud je klíč registru HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, zadejte MyApp *id* parametru.<br />– Pokud zadáte cestu k souboru pro *schéma* parametr, zadejte úplnou cestu ke spustitelnému souboru, který sestavení nainstaluje *id* parametru.<br />– Pokud zadáte OPAQUE *schéma* parametr, můžete zadat nějakou část dat, jako *id* parametru. Zadaná data musí být uzavřena do uvozovek ("").<br /><br /> *Popis* parametrů můžete zadat popisný text o aplikaci pro instalaci. Tyto informace se zobrazují při výčtu odkazů.|  
+|**/ silent**|Potlačí zobrazování všech výstupů.|  
 |**/u***assemblyName* |Odinstaluje sestavení z globální mezipaměti sestavení (GAC).|  
-|**/UF***assemblyName* |Vynutí odinstalování zadaného sestavení odstraněním všech odkazů na něj.<br /><br /> Určení Tato možnost odpovídá zadání **/u** a **/f** možnosti společně. **Poznámka:** tuto možnost nelze použít pro odebrání sestavení, která byla nainstalována pomocí Instalační služby systému Windows. Pokud se o tuto operaci pokusíte, nástroj zobrazí chybovou zprávu.|  
-|**/UL** *assemblyListFile*|Odinstaluje jeden nebo více sestavení zadaný v *assemblyListFile* z globální mezipaměti sestavení.|  
-|**/u**[**ngen**] *assemblyName*|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC). Existují-li pro zadané sestavení počty odkazů, nástroj tyto počty zobrazí a neodstraní sestavení z globální mezipaměti sestavení (GAC). **Poznámka:** v rozhraní .NET Framework verze 2.0, `/ungen` není podporován. Místo toho použijte `uninstall` příkaz z [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). <br /><br /> V rozhraní .NET Framework verze 1.0 a 1.1 zadání **/ ungen** způsobí, že Gacutil.exe odebrání sestavení z mezipaměť nativních bitových kopií. Tato mezipaměť ukládá nativní bitové kopie pro sestavení, které byly vytvořeny pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
-|**/UR***assemblyName* <br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Odinstaluje odkaz na zadané sestavení z globální mezipaměti sestavení (GAC). Chcete-li odebrat odkaz na sestavení, musíte zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir)** možností při instalaci sestavení. Popis platné hodnoty pro tyto parametry můžete určit, najdete **/r** možnost.<br /><br /> Určení Tato možnost odpovídá zadání **/u** a **/r** možnosti společně.|  
+|**/UF***assemblyName* |Vynutí odinstalování zadaného sestavení odstraněním všech odkazů na něj.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/f** najednou. **Poznámka:**  Tuto možnost nelze použít k odstranění sestavení nainstalovaného pomocí Instalační služby systému Windows společnosti Microsoft. Pokud se o tuto operaci pokusíte, nástroj zobrazí chybovou zprávu.|  
+|**/UL** *assemblyListFile*|Odinstaluje jeden nebo více sestavení zadaných v *assemblyListFile* z globální mezipaměti sestavení.|  
+|**/u**[**ngen**] *assemblyName*|Odinstaluje zadané sestavení z globální mezipaměti sestavení (GAC). Existují-li pro zadané sestavení počty odkazů, nástroj tyto počty zobrazí a neodstraní sestavení z globální mezipaměti sestavení (GAC). **Poznámka:**  V rozhraní .NET Framework verze 2.0 `/ungen` se nepodporuje. Místo toho použijte `uninstall` příkaz [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). <br /><br /> V rozhraní .NET Framework verze 1.0 a 1.1 určení **/ ungen** způsobí, že Gacutil.exe k odebrání sestavení z mezipaměti nativních bitových kopií. Tato mezipaměť ukládá nativní bitové kopie pro sestavení, které byly vytvořeny pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
+|**/UR***assemblyName* <br /><br /> *Schéma*<br /><br /> *id*<br /><br /> *Popis*|Odinstaluje odkaz na zadané sestavení z globální mezipaměti sestavení (GAC). Chcete-li odebrat odkaz na sestavení, je nutné zadat stejný *schéma*, *id*, a *popis* parametry, které byly zadány s **/i** a **/r** (nebo **/ir)** možnosti při instalaci sestavení. Popis platných hodnot pro tyto parametry můžete zadat, najdete v článku **/r** možnost.<br /><br /> Zadání této možnosti je ekvivalentní se zadáním **/u** a **/r** najednou.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -76,9 +76,9 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
   
  Nástroj Gacutil.exe konkrétně umožňuje nainstalovat sestavení do mezipaměti, odstranit je z mezipaměti a vypsat obsah mezipaměti.  
   
- Nástroj Gacutil.exe poskytuje možnosti, které podporují počítání odkazů podobné schématu počítání odkazů podporovanému Instalační službou systému Windows. Nástroj Gacutil.exe lze použít k instalaci dvou aplikací, které instalují stejné sestavení. Nástroj sleduje počet odkazů na sestavení. V důsledku toho zůstane sestavení v počítači, dokud nejsou obě aplikace odinstalovány. Používáte-li nástroj Gacutil.exe k instalacím skutečných produktů, použijte možnosti podporující počítání odkazů. Použití **/i** a **/r** možnosti instalace sestavení a přidejte odkaz na počet ho. Použití **/u** a **/r** možnosti společně můžete odebrat počet odkazů pro sestavení. Uvědomte si, že pomocí **/i** a **/u** možnosti samostatně nepodporuje počítání odkazů. Tyto možnosti je vhodné použít při vývoji produktu, ale nikoli pro jeho skutečnou instalaci.  
+ Nástroj Gacutil.exe poskytuje možnosti, které podporují počítání odkazů podobné schématu počítání odkazů podporovanému Instalační službou systému Windows. Nástroj Gacutil.exe lze použít k instalaci dvou aplikací, které instalují stejné sestavení. Nástroj sleduje počet odkazů na sestavení. V důsledku toho zůstane sestavení v počítači, dokud nejsou obě aplikace odinstalovány. Používáte-li nástroj Gacutil.exe k instalacím skutečných produktů, použijte možnosti podporující počítání odkazů. Použití **/i** a **/r** možnosti společně, chcete-li nainstalovat sestavení a přidejte odkaz na započítat jej. Použití **/u** a **/r** možnosti dohromady a odeberte počet odkazů pro sestavení. Mějte na paměti, že při použití **/i** a **/u** možnosti samostatně nepodporuje počítání odkazů. Tyto možnosti je vhodné použít při vývoji produktu, ale nikoli pro jeho skutečnou instalaci.  
   
- Použití **/il** nebo **/ul** možnosti pro instalaci nebo odinstalaci seznam sestavení, které jsou uložené v textový soubor s ANSI. Obsah textového souboru musí být správně naformátován. Chcete-li použít textový soubor pro instalaci sestavení, zadejte cestu ke každému sestavení na samostatný řádek souboru. Následující příklad ukazuje obsah souboru obsahujícího sestavení, která mají být nainstalována.  
+ Použití **/il** nebo **/ul** možnosti, jak nainstalovat nebo odinstalovat seznam sestavení uložený v textovém souboru ANSI. Obsah textového souboru musí být správně naformátován. Chcete-li použít textový soubor pro instalaci sestavení, zadejte cestu ke každému sestavení na samostatný řádek souboru. Následující příklad ukazuje obsah souboru obsahujícího sestavení, která mají být nainstalována.  
   
 ```  
 myAssembly1.dll  
@@ -93,53 +93,69 @@ myAssembly1,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
 myAssembly2,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab  
 myAssembly3,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab  
 ```  
-  
+
+> [!NOTE]
+>  Pokus o instalaci sestavení s názvem souboru delší než 79 a 91 znaků (kromě přípony souboru) může způsobit následující chybu:
+> ```
+> Failure adding assembly to the cache:   The file name is too long.
+> ```
+> Toto je vzhledem k tomu, že interně Gacutil.exe vytvoří cestu maximálně MAX_PATH znaků, která se skládá z následujících elementů:
+> - GAC Root - 34 znaků (tj. `C:\Windows\Microsoft.NET\assembly\`)
+> - Architektura – 7 nebo 9 znaků (tj. `GAC_32\`, `GAC_64\`, `GAC_MSIL`)
+> - AssemblyName – až 91 znaků, v závislosti na velikosti další prvky (např.) `System.Xml.Linq\`)
+> - AssemblyInfo - 31 až 48 znaků nebo více skládající se z:
+>   - Framework – 5 znaků (např.) `v4.0_`)
+>   - AssemblyVersion – 8 až 24 znaků (např.) `9.0.1000.0_`)
+>   - AssemblyLanguage - 1 do 8 znaků (např.) `de_`, `sr-Cyrl_`)
+>   - PublicKey - 17 znaků (např.) `31bf3856ad364e35\`)
+> - DllFileName – až 91 + 4 znaky (tj. `<AssemblyName>.dll`)
+
 ## <a name="examples"></a>Příklady  
- Následující příklad nainstaluje sestavení `mydll.dll` do globální mezipaměti sestavení.  
+ Následující příkaz nainstaluje sestavení `mydll.dll` do globální mezipaměti sestavení.  
   
 ```  
 gacutil /i mydll.dll  
 ```  
   
- Tento příkaz odebere sestavení `hello` ze sestavení v globální mezipaměti, dokud počty žádný odkaz existovat pro sestavení.  
+ Následující příkaz odstraní sestavení `hello` ze sestavení globální mezipaměti tak dlouho, dokud se počítá žádný odkaz pro sestavení neexistují.  
   
 ```  
 gacutil /u hello  
 ```  
   
- Předchozí příkaz může z mezipaměti sestavení odebrat více než jedno sestavení, protože název sestavení není zadán úplně. Například, pokud obě verze 1.0.0.0 a 3.2.2.1 z `hello` jsou nainstalovány v mezipaměti, příkaz `gacutil /u hello` odebere obě sestavení.  
+ Předchozí příkaz může z mezipaměti sestavení odebrat více než jedno sestavení, protože název sestavení není zadán úplně. Například, pokud obě verze 1.0.0.0 a 3.2.2.1 `hello` jsou nainstalovány v mezipaměti, příkaz `gacutil /u hello` odebere obě sestavení.  
   
- Chcete-li zabránit odebrání více než jednoho sestavení, použijte následující příkaz. Tento příkaz odebere pouze `hello` sestavení, které odpovídá plně zadaná verze číslo, jazykovou verzi a veřejný klíč.  
+ Chcete-li zabránit odebrání více než jednoho sestavení, použijte následující příkaz. Tento příkaz odebere pouze `hello` sestavení, které odpovídá plně zadanému číslu verze, jazykovou verzi a veřejný klíč.  
   
 ```  
 gacutil /u hello, Version=1.0.0.1, Culture="de",PublicKeyToken=45e343aae32233ca  
 ```  
   
- Následující příklad nainstaluje sestavení zadaný v souboru `assemblyList.txt` do globální mezipaměti sestavení.  
+ Následující příkaz nainstaluje sestavení zadaná v souboru `assemblyList.txt` do globální mezipaměti sestavení.  
   
  `gacutil /il assemblyList.txt`  
   
- Tento příkaz odebere zadaný v souboru sestavení `assemblyList.txt` z globální mezipaměti sestavení.  
+ Následující příkaz odstraní sestavení zadaná v souboru `assemblyList.txt` z globální mezipaměti sestavení.  
   
  `gacutil /ul assemblyList.txt`  
   
- Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na počet ho. Sestavení `myDll.dll` používá aplikace `MyApp`. `UNINSTALL_KEY MyApp` Parametr určuje klíč registru, který přidá `MyApp` přidat nebo odebrat programy v systému Windows. Parametr Popis je zadán jako `My Application Description`.  
+ Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na započítat jej. Sestavení `myDll.dll` používá aplikace `MyApp`. `UNINSTALL_KEY MyApp` Parametr určuje klíč registru, který přidá `MyApp` přidat nebo odebrat programy v Windows. Popis parametru je zadán jako `My Application Description`.  
   
 ```  
 gacutil /i /r myDll.dll UNINSTALL_KEY MyApp "My Application Description"  
 ```  
   
- Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na počet ho. Parametr schéma `FILEPATH`a parametr id `c:\applications\myApp\myApp.exe`, zadejte cestu k aplikaci, která se instaluje `myDll.dll.` parametr Popis je zadán jako `MyApp`.  
+ Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na započítat jej. Parametr scheme `FILEPATH`a parametr id `c:\applications\myApp\myApp.exe`, zadejte cestu k aplikaci, která se instaluje `myDll.dll.` popis parametru je zadán jako `MyApp`.  
   
  `gacutil /i /r myDll.dll FILEPATH c:\applications\myApp\myApp.exe MyApp`  
   
- Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na počet ho. Parametr schéma `OPAQUE`, umožňuje přizpůsobit parametry id a popis.  
+ Následující příkaz nainstaluje `myDll.dll` do globální mezipaměti sestavení a přidá odkaz na započítat jej. Parametr scheme `OPAQUE`, vám umožní přizpůsobit parametry id a description.  
   
 ```  
 gacutil /i /r mydll.dll OPAQUE "Insert custom application details here" "Insert Custom description information here"  
 ```  
   
- Tento příkaz odebere odkaz na `myDll.dll` aplikací `myApp`. Jde-li o poslední odkaz na sestavení, příkaz toto sestavení zároveň odebere z globální mezipaměti sestavení (GAC).  
+ Následující příkaz odebere odkaz na `myDll.dll` aplikací `myApp`. Jde-li o poslední odkaz na sestavení, příkaz toto sestavení zároveň odebere z globální mezipaměti sestavení (GAC).  
   
  `gacutil /u /r myDll.dll FILEPATH c:\applications\myApp\myApp.exe MyApp`  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 2b0d7968ce2cf8f326004c9e564cb2e7912c1a0a
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 2d82aed13e185b2957a22f097b60e12265a5f190
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025607"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128203"
 ---
 # <a name="ltassemblyidentitygt-element-for-ltruntimegt"></a>&lt;Vlastnost assemblyIdentity&gt; – Element pro &lt;modulu runtime&gt;
 Obsahuje identifikační informace o sestavení.  
@@ -46,16 +46,16 @@ culture="assembly culture"/>
 |`name`|Požadovaný atribut.<br /><br /> Název sestavení|  
 |`culture`|Nepovinný atribut.<br /><br /> Řetězec, který určuje jazyk a zemi/oblast sestavení.|  
 |`publicKeyToken`|Nepovinný atribut.<br /><br /> Šestnáctková hodnota, která udává silný název sestavení.|  
-|`processorArchitecture`|Nepovinný atribut.<br /><br /> Jedna z hodnot "x86", "amd64", "msil" nebo "ia64" zadání sestavení, která obsahuje kód závislý na procesoru na architektuře procesoru. Hodnoty nerozlišují malá a velká písmena. Pokud je atribut přiřadit jinou hodnotu, celý `<assemblyIdentity>` prvek je ignorován. Zobrazit <xref:System.Reflection.ProcessorArchitecture>.|  
+|`processorArchitecture`|Nepovinný atribut.<br /><br /> Jedna z hodnot "x86", "amd64", "msil" nebo "ia64" zadání sestavení, která obsahuje kód závislý na procesoru na architektuře procesoru. Hodnoty nerozlišují malá a velká písmena. Pokud je atribut přiřadit jinou hodnotu, celý `<assemblyIdentity>` prvek je ignorován. Viz <xref:System.Reflection.ProcessorArchitecture>.|  
   
 ## <a name="processorarchitecture-attribute"></a>Vlastnost processorArchitecture atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`amd64`|64-bit AMD procesor pouze.|  
-|`ia64`|64-bit Intel procesor pouze.|  
-|`msil`|Neutrální s ohledem na procesor a bits slova|  
-|`x86`|Procesor Intel 32-bit, buď native nebo ve Windows v prostředí Windows (WOW) na 64bitové platformě.|  
+|`amd64`|AMD pouze architektura x86 – x 64.|  
+|`ia64`|Pouze Intel Itanium architekturu.|  
+|`msil`|Neutrální s ohledem na procesor a bits slova.|  
+|`x86`|32-bit x86 procesor, buď native nebo ve Windows v prostředí Windows (WOW) na 64bitové platformě.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

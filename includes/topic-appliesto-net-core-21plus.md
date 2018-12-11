@@ -1,1 +1,1 @@
-**Toto téma platí pro: ✓** .NET Core SDK 2.1.300 a novějších verzích
+**Toto téma platí pro: ✓** sady SDK .NET Core 2.1 a novějších verzích

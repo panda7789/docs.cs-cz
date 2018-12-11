@@ -4,12 +4,12 @@ description: Znát rozdíly mezi logické a fyzické architektury.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: fe3833a4b65317e2ebbeb562e19b473ff0374ddd
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: e8ed375899637d06db8eb9b12a0e1cb0c05591f9
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296123"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129919"
 ---
 # <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
 
@@ -36,5 +36,5 @@ Služby v příkladu sdílet stejný datový model, protože služba webového r
 Stručně řečeno logickou architekturu mikroslužeb vždy nemusí shodovat s architekturou fyzického nasazení. V této příručce se pokaždé, když jsme zmínili, mikroslužby, představuje obchodní nebo logické mikroslužeb, která může mapovat na jednu nebo víc služeb (fyzické). Ve většině případů to bude jedinou službou, ale může být více.
 
 >[!div class="step-by-step"]
-[Předchozí](data-sovereignty-per-microservice.md)
-[další](distributed-data-management.md)
+>[Předchozí](data-sovereignty-per-microservice.md)
+>[další](distributed-data-management.md)

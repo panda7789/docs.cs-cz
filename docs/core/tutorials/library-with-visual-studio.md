@@ -1,18 +1,18 @@
 ---
-title: Vytvoření knihovny tříd .NET Standard s C# a .NET Core v sadě Visual Studio 2017
+title: Sestavení C# .NET Standard knihovny tříd pomocí sady Visual Studio 2017
 description: Zjistěte, jak vytvořit knihovnu tříd .NET Standard napsané v jazyce C# pomocí sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
-ms.custom: vs-dotnet
-ms.openlocfilehash: 101cb8b9134f7e64e5489f5bc7abb6a9570d2131
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: 0c98f8c8fc4847570964d8d4ea8deb221164441d
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45638818"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168933"
 ---
-# <a name="building-a-class-library-with-c-and-net-core-in-visual-studio-2017"></a>Vytvoření knihovny tříd pomocí jazyka C# a .NET Core v sadě Visual Studio 2017
+# <a name="build-a-net-standard-class-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny tříd .NET Standard s C# a .NET Core SDK v sadě Visual Studio 2017
 
 A *knihovny tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, který cílí na .NET Standard 2.0 umožňuje knihovny, které jsou volány žádné implementace .NET, která podporuje danou verzi .NET Standard. Po dokončení knihovnu tříd, můžete se rozhodnout, zda chcete distribuovat jako součást jiného výrobce nebo určuje, zda chcete zahrnout jako součást připojené pomocí jedné nebo více aplikací.
 
@@ -29,7 +29,7 @@ Začněte vytvořením řešení pro váš projekt knihovny tříd a její souvi
 
 1. V **nový projekt** dialogového okna, rozbalte **ostatní typy projektů** uzel a vyberte možnost **řešení sady Visual Studio**. Název řešení "ClassLibraryProjects" a vyberte **OK** tlačítko.
 
-   ![Dialogové okno nového projektu](./media/library-with-visual-studio/newproject.png)
+   ![Dialogové okno Nový projekt se zvýrazněným nové prázdné řešení](./media/library-with-visual-studio/new-project-dialog.png)
 
 ## <a name="creating-the-class-library-project"></a>Vytvoření projektu knihovny tříd
 
@@ -39,15 +39,15 @@ Vytvoření projektu knihovny třídy:
 
 1. V **přidat nový projekt** dialogového okna, rozbalte **Visual C#** uzlu, vyberte **.NET Standard** uzel, za nímž následuje **knihovna tříd (.NET Standard)** šablony projektu. V **název** textové pole, zadejte "StringLibrary" jako název projektu. Vyberte **OK** vytvořte projekt knihovny tříd.
 
-   ![Přidání dialogového okna Nový projekt](./media/library-with-visual-studio/libproject.png)
+   ![Přidat dialogové okno Nový projekt knihovny](./media/library-with-visual-studio/add-new-library-project.png)
 
    Potom otevře se okno kódu ve vývojovém prostředí sady Visual Studio.
 
-   ![Visual Studio okno aplikace zobrazuje kód výchozí knihovny třídy šablony](./media/library-with-visual-studio/stringlibrary.png)
+   ![Visual Studio okno aplikace zobrazuje kód výchozí knihovny třídy šablony](./media/library-with-visual-studio/string-library-project.png)
 
 1. Zkontrolujte, že naše knihovny, zaměřuje správná verze modulu .NET Standard. Klikněte pravým tlačítkem na projekt knihovny v **Průzkumníka řešení** windows, vyberte **vlastnosti**. **Cílová architektura** textovém poli se zobrazí, že jsme cílíte .NET Standard 2.0.
 
-   ![Vlastnosti projektu pro knihovny tříd](./media/library-with-visual-studio/properties.png)
+   ![Vlastnosti projektu pro knihovny tříd](./media/library-with-visual-studio/library-project-properties.png)
 
 1. Nahraďte kód v okně kód následujícím kódem a soubor uložte:
 
@@ -57,7 +57,7 @@ Vytvoření projektu knihovny třídy:
 
 1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Projekt by měl zkompiluje bez chyb.
 
-   ![Podokno výstup zobrazuje, že sestavení bylo úspěšné](./media/library-with-visual-studio/buildsucceeds.png)
+   ![Podokno výstup zobrazuje, že sestavení bylo úspěšné](./media/library-with-visual-studio/output-pane-successful-build.png)
 
 ## <a name="next-step"></a>Další krok
 

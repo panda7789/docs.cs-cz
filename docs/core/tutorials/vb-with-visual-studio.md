@@ -1,20 +1,20 @@
 ---
-title: Vytvoření aplikace Hello World pomocí .NET Core a Visual Basic v sadě Visual Studio 2017
+title: .NET core aplikace Hello World v jazyce Visual Basic v sadě Visual Studio 2017
 description: Zjistěte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí sady Visual Basic pomocí sady Visual Studio 2017.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
 dev_langs:
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: d6b58e491b2857f83fe9b2e55ed35630c42b79ed
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: e743cb496aca101b4594435c86e48951870cf8ef
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969873"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170025"
 ---
-# <a name="build-a-visual-basic-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvoření aplikace Hello World jazyka Visual Basic pomocí .NET Core v sadě Visual Studio 2017
+# <a name="build-a-net-core-visual-basic-hello-world-application-in-visual-studio-2017"></a>Vytvoření aplikace .NET Core jazyka Visual Basic Hello World v sadě Visual Studio 2017
 
 Toto téma obsahuje podrobný Úvod k vytváření, ladění a publikování jednoduchou konzolovou aplikaci .NET Core pomocí jazyka Visual Basic v sadě Visual Studio 2017. Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro sestavování aplikací .NET Core. Za předpokladu, aplikace nemá závislosti pro konkrétní platformu, aplikaci můžete spustit na libovolné platformě, který cílí na .NET Core a na jakémkoli počítači, který má nainstalovaný .NET Core.
 
@@ -28,13 +28,13 @@ Další informace najdete v tématu [předpoklady pro .NET Core ve Windows](../.
 
 Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte podle těchto kroků:
 
-1. Spusťte Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **jazyka Visual Basic** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textové pole, zadejte "Hello World". Vyberte **OK** tlačítko.
+1. Spusťte Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **jazyka Visual Basic** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textové pole, zadejte "Hello World". Vyberte tlačítko **OK**.
 
-   ![Dialogové okno nového projektu s vybraná aplikace konzoly](./media/vb-with-visual-studio/new-project.png)
+   ![Dialogové okno nového projektu s vybraná aplikace konzoly](./media/vb-with-visual-studio/visual-studio-new-project.png)
    
 1. Visual Studio používá šablony k vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu, `Main`, která přijímá <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace metodu, která je automaticky volána modulem runtime při spuštění aplikace. Jsou k dispozici v jakékoli argumenty příkazového řádku při spuštění aplikace *args* pole.
 
-   ![Visual Studio a nový projekt Hello World](./media/vb-with-visual-studio/devenv.png)
+   ![Visual Studio a nový projekt Hello World](./media/vb-with-visual-studio/visual-studio-main-window.png)
 
    Šablona vytvoří jednoduchou aplikaci "Hello World". Volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení řetězcový literál "Hello World!" v okně konzoly. Výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů můžete spustit program v režimu ladění. Pokud tak učiníte, v okně konzoly je viditelná pro jenom stručný časový interval předtím, než se toto okno zavře. K tomu dochází, `Main` metoda se ukončí a ukončení aplikace co nejdříve jeden příkaz v `Main` metody.
 
@@ -50,7 +50,7 @@ Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte
 
 1. Spusťte program tak, že vyberete **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů.
 
-   ![Okna konzoly zobrazuje Hello World stisknutím libovolné klávesy pokračovat](./media/with-visual-studio/helloworld1.png)
+   ![Okna konzoly zobrazuje Hello World stisknutím libovolné klávesy pokračovat](./media/with-visual-studio/hello-world-console.png)
 
 1. Stisknutím jakékoli klávesy zavřete okno konzoly.
 
@@ -64,7 +64,7 @@ Vylepšete vaše aplikace vyzve uživatele k jeho název a zobrazit společně s
 
    Tento kód nahradí stávající <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, <xref:System.Console.Write%2A?displayProperty=nameWithType>, a <xref:System.Console.ReadKey%2A?displayProperty=nameWithType> příkazy.
 
-   ![Visual Studio programový soubor s aktualizovanou metodu Main](./media/vb-with-visual-studio/codewindow.png)
+   ![Visual Studio programový soubor s aktualizovanou metodu Main](./media/vb-with-visual-studio/visual-basic-code-window.png)
 
    Tento kód zobrazí "Jaký je název vašeho?" v okně konzoly a počká, dokud uživatel zadá řetězec, za nímž následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnota <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `currentDate`. Nakonec se používá [interpolovaný řetězec](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) k zobrazení tyto hodnoty v okně konzoly.
 
@@ -72,7 +72,7 @@ Vylepšete vaše aplikace vyzve uživatele k jeho název a zobrazit společně s
 
 1. Spusťte program v režimu ladění v sadě Visual Studio vyberte zelenou šipku na panelu nástrojů, stisknutím klávesy F5 nebo výběrem položky **ladění** > **spustit ladění** položky nabídky. Na výzvy odpovíte zadáním názvu a stisknutím klávesy Enter.
 
-   ![Okno konzoly s výstupem upravené programu](./media/with-visual-studio/helloworld2.png)
+   ![Okno konzoly s výstupem upravené programu](./media/with-visual-studio/hello-world-update.png)
 
 1. Stisknutím jakékoli klávesy zavřete okno konzoly.
 

@@ -1,15 +1,13 @@
 ---
-title: příkaz DotNet test – rozhraní příkazového řádku .NET Core
+title: příkaz DotNet test
 description: Příkaz dotnet test slouží ke spuštění testů jednotek v daném projektu.
-author: mairaw
-ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 73b1d832b855798dd053187bbb24e8fb989fedf1
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 2cfe96b24e5f46ae679c970a1df028d38ebf6037
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "46696453"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170839"
 ---
 # <a name="dotnet-test"></a>DotNet test
 
@@ -138,7 +136,7 @@ Argumenty předány jako RunSettings Konfigurace testu. Argumenty se zadávají 
 
 Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-Další informace o nastavení běhu, naleznete v tématu [vstest.console.exe: předání RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
+Další informace o nastavení běhu, naleznete v tématu [vstest.console.exe: Předávání argumentů RunSettings](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 # <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
 

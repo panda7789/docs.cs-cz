@@ -4,11 +4,11 @@ description: Další informace o vzory událostí .NET a vytvoření zdroje udá
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
 ms.openlocfilehash: 16a091dabe34a064ab3ee65a6d9f3e0ab36f1db4
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297033"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129399"
 ---
 # <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 
@@ -69,7 +69,7 @@ Kód mimo třídy nemohou vyvolat události, ani provádět jiné operace.
 
 ## <a name="returning-values-from-event-subscribers"></a>Vrací hodnoty od odběratelů událostí
 
-Jednoduchá verze funguje správně. Přidáme další funkce: zrušení.
+Jednoduchá verze funguje správně. Přidáme další funkce: Zrušení.
 
 Při zvýšení nalezených událostí naslouchacích procesů měl zastaví další zpracování, pokud tento soubor je, že žádá o poslední z nich.
 

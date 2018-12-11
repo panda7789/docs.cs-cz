@@ -1,21 +1,22 @@
 ---
-title: 'Postupy: Přírůstek a úbytek ukazatelů (Průvodce programováním v C#)'
+title: 'Postupy: přírůstek a úbytek ukazatelů (C# Programming Guide)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], increment and decrement
 - pointer expressions [C#], increment and decrement
 ms.assetid: 1b8b9281-44ee-485a-9045-3db38a4b4b89
-ms.openlocfilehash: 39cefc5dcebf1331a5e0ac0fadb8284e9041eb27
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: c75432d88a1e96742573a6e69a4e035066a387c4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44206468"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128333"
 ---
-# <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>Postupy: Přírůstek a úbytek ukazatelů (Průvodce programováním v C#)
-Použít přírůstek a snížení operátory `++` a `--`, chcete-li změnit umístění ukazatele podle [sizeof](../../../csharp/language-reference/keywords/sizeof.md) (`pointer-type`) pro ukazatele typu ukazatele – typ *. Výrazy Inkrementace a dekrementace následující podobu:  
+# <a name="how-to-increment-and-decrement-pointers-c-programming-guide"></a>Postupy: přírůstek a úbytek ukazatelů (C# Programming Guide)
+
+Použít přírůstek a snížení operátory `++` a `--`, chcete-li změnit umístění ukazatele podle `sizeof(pointer-type)` ukazatele typu `pointer-type*`. Výrazy Inkrementace a dekrementace následující podobu:  
   
-```  
+```csharp
 ++p;  
 p++;  
 --p;  
@@ -24,9 +25,9 @@ p--;
   
  Operátory přírůstku a snížení lze použít u libovolného typu s výjimkou typu ukazatele `void*`.  
   
- Efekt použití operátoru Inkrementace na ukazatel typu `pointer-type` je přidání [sizeof](../../../csharp/language-reference/keywords/sizeof.md) (`pointer-type`) na adresu, která je obsažena v proměnné ukazatele.  
+ Efekt použití operátoru Inkrementace na ukazatel typu `pointer-type*` je přidání `sizeof(pointer-type)` na adresu, která je obsažena v proměnné ukazatele.  
   
- Efekt použití operátoru dekrementace na ukazatel typu `pointer-type` se má odečíst `sizeof` (`pointer-type`) z adresy, které jsou obsaženy v proměnné ukazatele.  
+ Efekt použití operátoru dekrementace na ukazatel typu `pointer-type*` se má odečíst `sizeof(pointer-type)` z adresy, které jsou obsaženy v proměnné ukazatele.  
   
  Nejsou generovány žádné výjimky, když došlo k přetečení domény ukazatele a výsledek závisí na implementaci.  
   
@@ -43,7 +44,7 @@ p--;
 **hodnota: 3 @ adresa : 12860284**
 **hodnota: 4 @ adresa: 12860288**
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
 - [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
@@ -54,3 +55,4 @@ p--;
 - [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
 - [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
 - [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
+- [sizeof](../../../csharp/language-reference/keywords/sizeof.md)

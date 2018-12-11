@@ -4,12 +4,12 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: bc31ae202ccbfee467dc0f6fa2cf515c751825ed
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 58654133b7bd7197502ec1550bc78c99aeb0bf0e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837877"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155298"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
 `out` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Je třeba [ref](ref.md) – klíčové slovo, s výjimkou, že `ref` vyžaduje, aby před jeho předáním inicializovat proměnnou. Je také třeba [v](in-parameter-modifier.md) – klíčové slovo, s výjimkou, že `in` neumožňuje volané metody, chcete-li změnit hodnotu argumentu. Použití `out` parametr definici metody a volající metody musíte explicitně použít `out` – klíčové slovo. Příklad:  
@@ -53,7 +53,7 @@ Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy me
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#3)]  
 
- [Zkuste vzor](/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods.md) zahrnuje vrácení `bool` označující, zda operace úspěšné nebo neúspěšné, a vrátí hodnotu, vytvořený při operaci v `out` argument. Počet analýze metody, například [DateTime.TryParse](xref:System.DateTime.TryParse(System.String,System.DateTime@)) metoda, tento model se používá.
+ [Zkuste vzor](/visualstudio/code-quality/ca1021-avoid-out-parameters#try-pattern-methods) zahrnuje vrácení `bool` označující, zda operace úspěšné nebo neúspěšné, a vrátí hodnotu, vytvořený při operaci v `out` argument. Počet analýze metody, například [DateTime.TryParse](xref:System.DateTime.TryParse(System.String,System.DateTime@)) metoda, tento model se používá.
    
 ## <a name="calling-a-method-with-an-out-argument"></a>Volání metody s `out` argument
 

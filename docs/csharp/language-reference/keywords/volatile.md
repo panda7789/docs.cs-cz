@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: 9950bb0e32787306dc34e2c006099332c06bda2b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fd81c0c36cb88b971539e843e3e1f2096a73d40e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199965"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152774"
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "50199965"
 
 Jiné typy, včetně `double` a `long`, nemohou být označeny `volatile` protože čtení a zápis do polí těchto typů nelze zaručit bylo atomické. Chcete-li chránit vícevláknový přístup k těmto typům pole, použijte <xref:System.Threading.Interlocked> členy třídy nebo chránit pomocí přístupu [ `lock` ](lock-statement.md) příkazu.
 
-Volatile – klíčové slovo lze použít pouze pro pole `class` nebo `struct`. Místní proměnné nelze použít deklaraci `volatile`.
+`volatile` – Klíčové slovo lze použít pouze pro pole `class` nebo `struct`. Místní proměnné nelze použít deklaraci `volatile`.
   
 ## <a name="example"></a>Příklad
 
@@ -37,7 +37,7 @@ Následující příklad ukazuje, jak deklarovat proměnnou veřejné pole jako 
   
 [!code-csharp[declareVolatile](~/samples/snippets/csharp/language-reference/keywords/volatile/Program.cs#Declaration)]
 
-Následující příklad ukazuje, jak můžete vytvořit a používá ke zpracování paralelní s ním primární vlákno pomocné nebo pracovní vlákno. Základní informace o multithreading, viz [dělení na spravovaná vlákna](../../../standard/threading/index.md) a [zřetězení (C#)](../../programming-guide/concepts/threading/index.md).  
+Následující příklad ukazuje, jak můžete vytvořit a používá ke zpracování paralelní s ním primární vlákno pomocné nebo pracovní vlákno. Další informace o multithreading, viz [dělení na spravovaná vlákna](../../../standard/threading/index.md).
   
 [!code-csharp[declareVolatile](~/samples/snippets/csharp/language-reference/keywords/volatile/Program.cs#Volatile)]
 

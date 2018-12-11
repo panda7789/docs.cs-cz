@@ -1,22 +1,22 @@
 ---
-title: Úvod k .NET a Dockeru
-description: Principy Dockeru a .NET Core
+title: Seznámení s Dockerem
+description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplikace .NET Core.
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
-ms.custom: mvc
-ms.openlocfilehash: d578ec5a25dbb5de3c88386e212e68cf3b267749
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 46f7dcd9d13606bc388edee0563163479e2c9987
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970640"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170675"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
 Tento článek poskytuje úvod a koncepční znalosti potřebné k práci s využitím .NET v Dockeru.
 
-## <a name="docker-packaging-your-apps-to-deploy-and-run-anywhere"></a>Docker: Vytváření balíčků aplikací k nasazení a spouštění kdekoli
+## <a name="docker-packaging-your-apps-to-deploy-and-run-anywhere"></a>Docker: Vytváření balíčků aplikací k nasazení a spuštění kdekoli
 
 [Docker](../../standard/microservices-architecture/container-docker-introduction/docker-defined.md) je otevřená platforma, která umožňuje vývojářům a správcům sestavení [image](https://docs.docker.com/glossary/?term=image), dodávat a spouštět distribuované aplikace v volně izolovaného prostředí volá [kontejneru](https://www.docker.com/what-container). Tento přístup umožňuje správu životního cyklu aplikací efektivní mezi vývojovým, dotazů a odpovědí a produkční prostředí.
  
@@ -28,7 +28,7 @@ Můžete buď vytvořit svoje vlastní [Image na základě úrovní](https://doc
 
 ### <a name="further-reading-and-watching"></a>Další čtení (a sledování)
 
-* [Kontejnery založené na Windows: vývoj moderních aplikací s ovládacím prvkem na podnikové úrovni.](https://www.youtube.com/watch?v=Ryx3o0rD5lY&feature=youtu.be)
+* [Kontejnery založené na Windows: Vývoj moderních aplikací s ovládacím prvkem na podnikové úrovni.](https://www.youtube.com/watch?v=Ryx3o0rD5lY&feature=youtu.be)
 * [Přehled dockeru](https://docs.docker.com/engine/docker-overview/)
 * [Soubor Docker na kontejnery Windows](/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
 * [Osvědčené postupy pro psaní soubory Dockerfile](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)

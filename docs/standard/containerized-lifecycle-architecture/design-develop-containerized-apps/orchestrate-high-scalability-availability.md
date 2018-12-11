@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/19/2017
-ms.openlocfilehash: 993f1d18637f39b6df4d876db8a0fe86e34391e3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fa64562808bba9c9dea5a5eedc367af7decf83b7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192717"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126897"
 ---
 # <a name="orchestrating-microservices-and-multicontainer-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -19,7 +19,7 @@ Obrázek 4 až 6 ukazuje nasazení do clusteru aplikace skládá z několika mik
 
 ![](./media/image6.png)
 
-Obrázek 4 – 6: cluster kontejnery
+Obrázek 4 – 6: Cluster kontejnerů
 
 Vypadá jako logický přístup. Ale jak můžete zvládají Vyrovnávání zatížení, směrování a orchestraci těchto aplikací skládá?
 
@@ -35,7 +35,7 @@ Z pro architekturu a vývoj pohledu Pokud je sestavení velké, enterprise, zalo
 
 Koncepty cluster a Plánovač jsou úzce souvisí, takže produkty k dispozici od různých dodavatelů často zadat obě sady funkcí. Tabulka 4-1 obsahuje nejdůležitější platformy a software volby, které máte pro clustery a plánovače. Tyto clustery se obvykle nabízejí ve veřejných cloudech, jako je Azure.
 
-Tabulka 4-1: softwarové platformy pro kontejner clustering, orchestraci a plánování
+Tabulka 4-1: Softwarové platformy pro kontejner clustering, orchestraci a plánování
 
 | Platforma | Popis |
 |---|---|
@@ -64,7 +64,7 @@ Se službou Azure Container Service můžete využít výhod funkcí Azure na po
 
 ![](./media/image11.png)
 
-Obrázek 4 – 7: Clustering možnosti ve službě Azure Container Service
+Obrázek 4 – 7: Clustering s možností ve službě Azure Container Service
 
 Jak je znázorněno v obrázek 4. – 8, Container Service je jednoduše infrastruktury poskytovaný platformou Azure, abyste mohli nasadit DC/OS, Kubernetes a Docker Swarm, ale neimplementuje žádné další nástroje orchestrator. Container Service je proto není orchestrátor, jako například; je jenom infrastruktura, která využívá existující open source orchestrátorů kontejnerů.
 
@@ -121,7 +121,7 @@ Obrázek 4 – 9 ukazuje, jak můžete vytvořit a spouštět mikroslužby v Ser
 
 ![](./media/image13.png)
 
-Obrázek 4 – 9: nasazuje mikroslužby jako procesů nebo kontejnerů v Azure Service Fabric
+Obrázek 4 – 9: Nasazuje mikroslužby jako procesů nebo kontejnerů v Azure Service Fabric
 
 Clustery Service Fabric, které jsou založené na hostitele se systémy Linux a Windows můžete spouštět kontejnery Linuxu Docker a kontejnery Windows.
 
@@ -133,7 +133,7 @@ Jak ukazuje obrázek 4 – 10 a přemýšlení z hlediska obchodní logiky/mikro
 
 ![](./media/image14.png)
 
-Obrázek 4 – 10: obchodní mikroslužeb s několika stavové a bezstavové služby v Service Fabric
+Obrázek 4 – 10: Obchodní mikroslužeb s několika stavové a bezstavové služby v Service Fabric
 
 V každém případě použijete Service Fabric stavové služby Reliable Services, máte také logické nebo obchodní mikroslužbě (objektu Context ohraničená), který se obvykle skládá z několika fyzických služeb. Každá z jejich, služba brány a oddílu služby může možné implementovat jako rozhraní ASP.NET Web API služby, jak ukazuje obrázek 4 – 10.
 
@@ -145,7 +145,7 @@ Jde o kontejnerů v Service Fabric také můžete nasadit služby v imagí konte
 
 ![](./media/image15.png)
 
-Obrázek 4 – 11: obchodní mikroslužeb s několika službami (kontejnerů) v Service Fabric
+Obrázek 4 – 11: Obchodní mikroslužeb s několika službami (kontejnerů) v Service Fabric
 
 Kontejnery takzvané "sajdkára" (dva kontejnery, které musí být nasazeny společně jako součást logické služby) ale také možné v Service Fabric. Důležité je, že obchodní mikroslužeb je logické hranicí kolem několika získá na ucelenosti prvků. V mnoha případech může být jedinou službou s jediným datovým modelem, ale v některých případech můžete mít fyzické několik služeb a také.
 
@@ -153,7 +153,7 @@ V době vytváření tohoto dokumentu (duben 2017), v Service Fabric nelze nasad
 
 ![](./media/image16.png)
 
-Obrázek 4-12: obchodní mikroslužeb mapovány na aplikaci Service Fabric s kontejnery a stavové služby
+Obrázek 4-12: Obchodní mikroslužeb mapovány na aplikaci Service Fabric s kontejnery a stavové služby
 
 Podpora je taky liší v závislosti na tom, zda používáte kontejnery Dockeru v Linuxu nebo kontejnery Windows. Podpora kontejnerů v Service Fabric se rozšíření v budoucích verzích. Aktuální novinky o podporu kontejnerů v Service Fabric na webu Azure, přečtěte si [Service Fabric a kontejnery](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
 
@@ -165,7 +165,7 @@ Ale vlastních služeb také může být stavový, což znamená, že jsou data 
 
 ![](./media/image17.png)
 
-Obrázek 4 – 13: bezstavových a stavových mikroslužeb
+Obrázek 4 – 13: Bezstavových a stavových mikroslužeb
 
 Bezstavové přístup dokonale platný a je jednodušší než stavových mikroslužeb implementace, protože tento přístup je podobný tradiční a dobře známé vzory. Ale bezstavové mikroslužby kladou latence mezi zdroji procesy a data. Zahrnují také několik pohyblivých částí, pokud se pokoušíte zlepšení výkonu pomocí dalších mezipaměť a fronty. Výsledkem je, že můžete skončit s komplexní architektury, které mají moc úrovní.
 
@@ -179,7 +179,6 @@ Další architektury mikroslužeb, umožňujících stavové služby, které pod
 
 Všimněte si, že kontejnery Dockeru jsou bezstavové sami. Pokud chcete implementovat stavové služby, budete potřebovat další doporučené postupy a chcete získat podrobnější popis architektury jste si předtím poznamenali. V době psaní tohoto návodu, ale stavové služby v Service Fabric nejsou podporovány jako kontejnery, pouze jako obyčejný mikroslužeb. Služby Reliable Service podporují v kontejnerech, bude k dispozici v budoucích verzích Service Fabric.
 
-
 >[!div class="step-by-step"]
-[Předchozí](soa-applications.md)
-[další](docker-apps-development-environment.md)
+>[Předchozí](soa-applications.md)
+>[další](docker-apps-development-environment.md)

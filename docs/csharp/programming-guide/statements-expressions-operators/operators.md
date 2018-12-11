@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, operators
 - operators [C#], about operators
 ms.assetid: 214e7b83-1a41-4f7c-9867-64e9c0bab39f
-ms.openlocfilehash: 025510782551c058c3b80eff3045138476e031b9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bf453d5770967f26999b8537339f1b690646b97d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514182"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150964"
 ---
 # <a name="operators-c-programming-guide"></a>Operátory (Průvodce programováním v C#)
 V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo několik *operandy* ve výrazu nebo příkazu. Operátory, které používají jeden operand, jako je operátor Inkrementace (`++`) nebo `new`, jsou označovány jako *unární* operátory. Operátory, které používají dva operandy, jako jsou aritmetické operátory (`+`,`-`,`*`,`/`), jsou označovány jako *binární* operátory. Jeden z operátorů, podmiňovací operátor (`?:`), má tři operandy a je jediným ternárním operátorem v jazyce C#.  
@@ -111,8 +111,8 @@ V jazyce C# *operátor* je prvek programu, který se použije pro jeden nebo ně
 |Kategorie|Výraz|Popis|  
 |--------------|----------------|-----------------|  
 |Logický operátor AND|x [ & ](../../../csharp/language-reference/operators/and-operator.md) y|Bitový operátor AND celého čísla, logická hodnota operátoru AND|  
-|Logický operátor XOR|x [ ^ ](../../../csharp/language-reference/operators/xor-operator.md) y|Bitový operátor XOR celého čísla, logická hodnota operátoru XOR|  
-|Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Bitový operátor OR celého čísla, logická hodnota operátoru OR|  
+|Logický operátor XOR|x [ ^ ](../../../csharp/language-reference/operators/xor-operator.md) y|Bitové operace XOR celého čísla, logická logický operátor XOR|  
+|Logický operátor OR|x [&#124;](../../../csharp/language-reference/operators/or-operator.md) y|Celé číslo bitového nebo logické logický operátor OR|  
 |Podmiňovací operátor AND|x [ && ](../../../csharp/language-reference/operators/conditional-and-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu true|  
 |Podmiňovací operátor OR|x [ &#124; &#124; ](../../../csharp/language-reference/operators/conditional-or-operator.md) y|Vyhodnocuje y pouze v případě, že x má hodnotu false|  
 |Nulové sloučení|x [??](../../../csharp/language-reference/operators/null-coalescing-operator.md) y|Vyhodnotí y, pokud x má hodnotu null, jinak vyhodnotí x|  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: b79c3246b7c12a3a99a5c68586387fc30573dcb6
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 710ccd69d7b0f8cd8cd3e04729fd952308a3fb4a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562291"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129373"
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service
 
@@ -149,7 +149,7 @@ End Module
 
 **Krok 4** – povolit výměny metadat. Klienti použijí ke generování proxy servery, které se použije k volání operací služby metadata exchange. Umožňuje vytvořit výměny metadat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> instance, nastavte ho na <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`a přidat chování při <!--zz <xref:System.ServiceModel.ServiceHost.Behaviors%2A>  --> `System.ServiceModel.ServiceHost.Behaviors%2A` kolekce <xref:System.ServiceModel.ServiceHost> instance.
 
-**Krok 5** – otevře <xref:System.ServiceModel.ServiceHost> k naslouchání pro příchozí zprávy. Všimněte si, že kód čeká uživatelem zadejte. Pokud to neprovedete, bude aplikace okamžitě ukončena a služby se vypne. Všimněte si také bloku try/catch použít. Po <xref:System.ServiceModel.ServiceHost> byla vytvořena instance, jiný kód je umístěn v bloku try/catch. Další informace o bezpečně zachycování výjimek vyvolaných <xref:System.ServiceModel.ServiceHost>, naleznete v tématu [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)
+**Krok 5** – otevře <xref:System.ServiceModel.ServiceHost> k naslouchání pro příchozí zprávy. Všimněte si, že kód čeká uživatelem zadejte. Pokud to neprovedete, bude aplikace okamžitě ukončena a služby se vypne. Všimněte si také bloku try/catch použít. Po <xref:System.ServiceModel.ServiceHost> byla vytvořena instance, jiný kód je umístěn v bloku try/catch. Další informace o bezpečně zachycování výjimek vyvolaných <xref:System.ServiceModel.ServiceHost>, naleznete v tématu [použití zavřít a Abort k uvolnění prostředků klienta WCF](../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md)
 
 > [!IMPORTANT]
 > Úpravy souboru App.config v GettingStartedLib tak, aby odrážely změny provedené v kódu:
@@ -403,7 +403,7 @@ End Module
 Nyní je služba spuštěna. V dalším krokem vytvoření klienta WCF.
 
 > [!div class="nextstepaction"]
-> [Postupy: vytvoření klienta WCF](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
+> [Jak: Vytvořte klienta WCF](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 
 Informace o odstraňování potíží naleznete v tématu [řešení potíží s kurzu Začínáme](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).
 

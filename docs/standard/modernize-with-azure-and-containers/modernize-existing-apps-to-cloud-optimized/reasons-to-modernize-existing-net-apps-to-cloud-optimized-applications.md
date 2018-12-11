@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 17838381f42a760caa7fba7e09ab798c6284bccb
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 8a59a78bbf7ec38f32b14e67d4cb35a9c2375e94
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45683200"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151057"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Důvody pro modernizovat existující aplikace .NET pro aplikace optimalizované pro Cloud
 
@@ -23,7 +23,7 @@ Dolní řádek je, že když organizace vytváří a spravuje aplikace, které j
 
 ## <a name="cloud-optimized-application-principles-and-tenets"></a>Principy optimalizovaných pro cloudové aplikace a zásady 
 
-Vylepšení v cloudu se většinou zaměřuje na splňuje dva cíle: snížení nákladů a zvýšení obchodní růst, což zlepšuje flexibilitu. Těchto cílů dosáhnout zjednodušení procesů a omezení případná problémová místa při vydání a dodávání aplikací.
+Vylepšení v cloudu se většinou zaměřuje na splňuje dva cíle: Snížení nákladů a zvýšení obchodní růst, což zlepšuje flexibilitu. Těchto cílů dosáhnout zjednodušení procesů a omezení případná problémová místa při vydání a dodávání aplikací.
 
 Vaše aplikace je optimalizované pro Cloud při může v agile způsobem vyvíjet aplikace samostatně z jiných místních aplikací a uvolněte, nasazování, automatické škálování, monitorování a řešení potíží s vaší aplikací v cloudu.
 
@@ -68,5 +68,5 @@ Všechny tyto výhody nakonec zadejte snížení nákladů klíče pro váš ži
 V následující části tyto výhody jsou vysvětlené podrobněji a jsou spojeny s konkrétní technologie.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](microsoft-technologies-in-cloud-optimized-applications.md)
+>[Předchozí](index.md)
+>[další](microsoft-technologies-in-cloud-optimized-applications.md)

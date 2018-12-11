@@ -2,17 +2,17 @@
 title: Architektura a návrh
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-ms.openlocfilehash: 5a0d8aac401a3485bc5f158bcda893ad9ab424e8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 281f321e45b019178aa82946eb451e56f5c04841
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530467"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154259"
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
-Modul generování SQL v [zprostředkovateli ukázek](https://go.microsoft.com/fwlink/?LinkId=180616) je implementovaný jako návštěvníky na strom výrazu, který představuje strom příkazů. Generování se provádí v jednom průchodu přes strom výrazu.  
+Modul generování SQL v [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) je implementovaný jako návštěvníky na strom výrazu, který představuje strom příkazů. Generování se provádí v jednom průchodu přes strom výrazu.  
   
- Uzly stromu jsou zpracovávány zdola nahoru. Nejprve je vytvořen zprostředkující struktura: SqlSelectStatement nebo SqlBuilder, obě implementující ISqlFragment. V dalším kroku řetězec příkazu SQL je vytvořený z této struktury. Existují dva důvody pro zprostředkující strukturu:  
+ Uzly stromu jsou zpracovávány zdola nahoru. Nejprve je vytvořen zprostředkující struktury: SqlSelectStatement nebo SqlBuilder, obě implementující ISqlFragment. V dalším kroku řetězec příkazu SQL je vytvořený z této struktury. Existují dva důvody pro zprostředkující strukturu:  
   
 -   Příkaz SELECT se vyplní logicky, mimo pořadí. Uzly, které jsou součástí v klauzuli FROM jsou zobrazeny před uzly, které jsou součástí WHERE, GROUP BY a ORDER BY – klauzule.  
   
@@ -25,7 +25,7 @@ Modul generování SQL v [zprostředkovateli ukázek](https://go.microsoft.com/f
  V druhé fáze, při vytváření aktuální řetězcovou jsou přejmenované aliasy.  
   
 ## <a name="data-structures"></a>Datové struktury  
- Tato část popisuje typy používané [zprostředkovateli ukázek](https://go.microsoft.com/fwlink/?LinkId=180616) , který používáte k vytvoření příkazu SQL.  
+ Tato část popisuje typy používané [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) , který používáte k vytvoření příkazu SQL.  
   
 ### <a name="isqlfragment"></a>ISqlFragment  
  Tato část popisuje třídy, které implementují rozhraní ISqlFragment, které má dva účely:  
@@ -226,9 +226,9 @@ private bool IsParentAJoin{get}
  Připojení k vyrovnání alias se dosáhne, když návštěv DbPropertyExpression, jak je popsáno v části s názvem DbPropertyExpression.  
   
 ### <a name="column-name-and-extent-alias-renaming"></a>Název sloupce a míry Alias přejmenování  
- Řeší problém název sloupce a míry alias přejmenování pomocí symbolů, které pouze získat nahrazeny s aliasy ve druhé fázi generování je popsáno v části s názvem druhou fázi generování SQL: generování příkaz String.  
+ Problém název sloupce a míry přejmenování alias je určeno pomocí symbolů, které pouze získat nahrazeny s aliasy ve druhé fázi generování je popsáno v části s názvem druhou fázi generování SQL: Generování příkazu řetězec.  
   
-## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>První fázi generování SQL: na strom výrazu  
+## <a name="first-phase-of-the-sql-generation-visiting-the-expression-tree"></a>První fáze generování SQL: Navštívit stromu výrazů  
  Tato část popisuje první fázi generování SQL, když je vytvořen představující výraz, který navštívil dotaz a zprostředkujících strukturu, buď SqlSelectStatement nebo SqlBuilder.  
   
  Tato část popisuje zásady hostujícími kategorie uzlu jiný výraz a podrobnosti hostujících typy konkrétní výrazů.  
@@ -405,7 +405,7 @@ Not(All(input, x) => Not (Not Exists(Filter(input, not(x))) => Exists(Filter(inp
 IsEmpty(inut) = Not Exists(input)  
 ```  
   
-## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: generování příkaz String  
+## <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: Generování příkazu řetězec  
  Při generování řetězec příkazu SQL, SqlSelectStatement vytvoří skutečné aliasy pro symboly, které řeší problém název sloupce a míry přejmenování alias.  
   
  Přejmenování alias rozsahu vyvolá se při zápisu objektu SqlSelectStatement do řetězce. Nejprve vytvořte seznam všechny aliasy, které používá vnější rozsah. Pokud koliduje s žádným z rozsahů vnější, získá každý symbol FromExtents (nebo AllJoinExtents, pokud je jiná než null), přejmenovat. V případě potřeby přejmenování to nebude v konfliktu s žádným z rozsahů shromážděných v AllExtentNames.  

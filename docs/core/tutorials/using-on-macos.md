@@ -2,27 +2,27 @@
 title: Začínáme s .NET Core v systému macOS
 description: Tento dokument obsahuje kroky a pracovní postup k vytvoření řešení .NET Core používat Visual Studio Code.
 author: bleroy
-ms.author: mairaw
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a4b2734137f59b29535f302dd17fb94329d676f
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.custom: seodec18
+ms.openlocfilehash: ad403ed96435f162899e600a317d00bab00638f2
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245583"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170268"
 ---
 # <a name="getting-started-with-net-core-on-macos"></a>Začínáme s .NET Core v systému macOS
 
 Tento dokument obsahuje kroky a pracovní postup pro vytvoření řešení .NET Core pro macOS. Zjistěte, jak vytvářet projekty testování částí, použijte ladicí nástroje a začlenit knihovny třetích stran přes [NuGet](https://www.nuget.org/).
 
 > [!NOTE]
-> Tento článek používá [Visual Studio Code](http://code.visualstudio.com) v systému macOS.
+> Tento článek používá [Visual Studio Code](https://code.visualstudio.com) v systému macOS.
 
 ## <a name="prerequisites"></a>Požadavky
 
 Nainstalujte [.NET Core SDK](https://www.microsoft.com/net/core). .NET Core SDK obsahuje nejnovější verzi rozhraní .NET Core framework a modulu runtime.
 
-Nainstalujte [Visual Studio Code](http://code.visualstudio.com). V průběhu tohoto článku můžete také nainstalovat rozšíření, které zlepšují .NET Core. vývojové prostředí Visual Studio Code.
+Nainstalujte [Visual Studio Code](https://code.visualstudio.com). V průběhu tohoto článku můžete také nainstalovat rozšíření, které zlepšují .NET Core. vývojové prostředí Visual Studio Code.
 
 Instalace rozšíření Visual Studio kódu C# otevřete Visual Studio Code a stisknutím klávesy <kbd>F1</kbd> otevřete paletu Visual Studio Code. Typ **ext, přípona instalace** zobrazíte seznam přípon. Vyberte rozšíření jazyka C#. Restartujte Visual Studio Code k aktivaci rozšíření. Další informace najdete v tématu [dokumentaci kódu C# rozšíření sady Visual Studio](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 

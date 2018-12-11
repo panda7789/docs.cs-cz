@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4ca6109a61fb32cd148e69081da0772277743b6e
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: f4c6d10fad075a70d80bf6e5aa32edf0f89c42dc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873729"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151288"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Standardní řetězce formátu data a času
 Řetězec standardního formátu data a času používá pro definování textového vyjádření hodnoty data a času jeden specifikátor formátu. Formátovací řetězec data a času, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní data a času formátovací řetězec; Další informace najdete v tématu [vlastní data a řetězce formátu časových](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Řetězec standardního nebo vlastního formátu lze používat dvěma způsoby:  
@@ -43,19 +43,19 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
 |----------------------|-----------------|--------------|  
 |"d"|Vzor krátkého formátu data.<br /><br /> Další informace:[The krátkého formátu data ("d") specifikátor formátu](#ShortDate).|2009-06-15T13:45:30 -> 6/15/2009 (en US)<br /><br /> 2009-06-15T13:45:30 -> 15/06/2009 (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> 2009/06/15 (ja-JP)|  
 |"D"|Vzor dlouhého formátu data.<br /><br /> Další informace:[The dlouhého data ("D") formátu specifikátor](#LongDate).|2009-06-15T13:45:30 -> Monday, June 15, 2009 (en US)<br /><br /> 2009-06-15 г июня 2009-15T13:45:30 >. (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> Montag, 15. Juni 2009 (de-DE)|  
-|"f"|Vzor úplného formátu data/času (krátkého formátu času).<br /><br /> Další informace: [The úplná data a krátkého času ("f") specifikátor formátu](#FullDateShortTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 13:45 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)|  
-|"F"|Vzor úplného formátu data/času (dlouhého formátu času).<br /><br /> Další informace: [The úplné datum specifikátor dlouhého času ("F") formátu](#FullDateLongTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 13:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)|  
-|"g"|Vzor obecného formátu data/času (krátkého formátu času).<br /><br /> Další informace: [The obecné data a krátkého času ("g") specifikátor formátu](#GeneralDateShortTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30-06/15/2009 > 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)|  
-|"G"|Vzor obecného formátu data a času (dlouhého formátu času).<br /><br /> Další informace: [The Obecné datum specifikátor dlouhého času ("G") formátu](#GeneralDateLongTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45:30 odp (en US)<br /><br /> 2009-06-06/15/2009-15T13:45:30 > 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)|  
-|"M", "m"|Vzor formátu měsíce/dne.<br /><br /> Další informace: [specifikátor formátu měsíce ("M", "m")](#MonthDay).|2009-06-15T13:45:30 -> June 15 (en US)<br /><br /> 2009-06-15-15T13:45:30 &GT;. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 15 (id-ID)|  
-|"O", "o"|Vzor formátu data/času zpátečního převodu.<br /><br /> Další informace: [specifikátor formátu zpátečního převodu ("O", "o")](#Roundtrip).|<xref:System.DateTime> Hodnoty:<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc)--> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> Hodnoty:<br /><br /> 2009-06-15T13:45:30-07:00--&GT; 2009-06-15T13:45:30.0000000-07:00|  
+|"f"|Vzor úplného formátu data/času (krátkého formátu času).<br /><br /> Další informace: [Specifikátor krátkého formátu času ("f") formátu úplné datum](#FullDateShortTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 13:45 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)|  
+|"F"|Vzor úplného formátu data/času (dlouhého formátu času).<br /><br /> Další informace: [Úplného data a dlouhého času ("F") formátu specifikátor](#FullDateLongTime).|2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 13:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)|  
+|"g"|Vzor obecného formátu data/času (krátkého formátu času).<br /><br /> Další informace: [Specifikátor obecného data a krátkého času ("g") formátu](#GeneralDateShortTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30-06/15/2009 > 13:45 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)|  
+|"G"|Vzor obecného formátu data a času (dlouhého formátu času).<br /><br /> Další informace: [Specifikátor obecného data a dlouhého času ("G") formátu](#GeneralDateLongTime).|2009-06-15T13:45:30 -> 6/15/2009 1:45:30 odp (en US)<br /><br /> 2009-06-06/15/2009-15T13:45:30 > 13:45:30 (es-ES)<br /><br /> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)|  
+|"M", "m"|Vzor formátu měsíce/dne.<br /><br /> Další informace: [Specifikátor formátu měsíce ("M", "m")](#MonthDay).|2009-06-15T13:45:30 -> June 15 (en US)<br /><br /> 2009-06-15-15T13:45:30 &GT;. juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> Juni 15 (id-ID)|  
+|"O", "o"|Vzor formátu data/času zpátečního převodu.<br /><br /> Další informace: [Specifikátor formátu zpátečního převodu ("O", "o")](#Roundtrip).|<xref:System.DateTime> Hodnoty:<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Local)--> 2009-06-15T13:45:30.0000000-07:00<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc)--> 2009-06-15T13:45:30.0000000Z<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Unspecified)--> 2009-06-15T13:45:30.0000000<br /><br /> <xref:System.DateTimeOffset> Hodnoty:<br /><br /> 2009-06-15T13:45:30-07:00--&GT; 2009-06-15T13:45:30.0000000-07:00|  
 |"R", "r"|Vzor RFC1123.<br /><br /> Další informace: [RFC1123 ("R", "r") specifikátor formátu](#RFC1123).|2009-06-15T13:45:30 -> pondělí, 15 Jun 2009 20:45:30 GMT|  
-|"s"|Vzor seřaditelného formátu data/času.<br /><br /> Další informace: [Seřaditelného ("s") specifikátor formátu](#Sortable).|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|  
-|"t"|Vzor krátkého formátu času.<br /><br /> Další informace: [The krátkého formátu času ("t") specifikátor formátu](#ShortTime).|2009-06-15T13:45:30 -> 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (hr-HR)<br /><br /> 2009-06-01:45-15T13:45:30 > م (ar – třeba)|  
-|"T"|Vzor dlouhého formátu času.<br /><br /> Další informace: [specifikátor formátu ("T") dlouhou dobu](#LongTime).|2009-06-15T13:45:30 -> 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-01:45:30-15T13:45:30 > م (ar – třeba)|  
-|"u"|Vzor univerzálního seřaditelného formátu data/času.<br /><br /> Další informace: [univerzálního Seřaditelného ("u") specifikátor formátu](#UniversalSortable).|S <xref:System.DateTime> hodnota: 2009-06-2009-06-15-15T13:45:30 > 13:45:30Z<br /><br /> S <xref:System.DateTimeOffset> hodnota: 2009-06-2009-06-15-15T13:45:30 > 20:45:30Z|  
-|"U"|Vzor univerzálního úplného formátu data/času.<br /><br /> Další informace: [specifikátor univerzálního úplného ("U") formátu](#UniversalFull).|2009-06-15T13:45:30 -> Monday, June 15, 2009 20:45:30: 00 (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|  
-|"Y", "y"|Vzor formátu roku a měsíce.<br /><br /> Další informace: [specifikátor formátu roku a měsíce ("Y")](#YearMonth).|2009-06-15T13:45:30 -> June, 2009 (en US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK) 2009<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|  
+|"s"|Vzor seřaditelného formátu data/času.<br /><br /> Další informace: [Specifikátor Seřaditelného ("s") formátu](#Sortable).|2009-06-15T13:45:30 (DateTimeKind.Local) -> 2009-06-15T13:45:30<br /><br /> 2009-06-15T13:45:30 (DateTimeKind.Utc) -> 2009-06-15T13:45:30|  
+|"t"|Vzor krátkého formátu času.<br /><br /> Další informace: [Specifikátor krátkého formátu času ("t") formátu](#ShortTime).|2009-06-15T13:45:30 -> 1:45 PM (en US)<br /><br /> 2009-06-15T13:45:30 -> 13:45 (hr-HR)<br /><br /> 2009-06-01:45-15T13:45:30 > م (ar – třeba)|  
+|"T"|Vzor dlouhého formátu času.<br /><br /> Další informace: [Specifikátor dlouhého času ("T") formátu](#LongTime).|2009-06-15T13:45:30 -> 1:45:30 odp (en US)<br /><br /> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR)<br /><br /> 2009-06-01:45:30-15T13:45:30 > م (ar – třeba)|  
+|"u"|Vzor univerzálního seřaditelného formátu data/času.<br /><br /> Další informace: [Specifikátor formátu Univerzální seřaditelný ("u")](#UniversalSortable).|S <xref:System.DateTime> hodnotu: 2009-06-2009-06-15-15T13:45:30 &GT; 13:45:30Z<br /><br /> S <xref:System.DateTimeOffset> hodnotu: 2009-06-2009-06-15-15T13:45:30 &GT; 20:45:30Z|  
+|"U"|Vzor univerzálního úplného formátu data/času.<br /><br /> Další informace: [Specifikátor univerzálního úplného ("U") formátu](#UniversalFull).|2009-06-15T13:45:30 -> Monday, June 15, 2009 20:45:30: 00 (en US)<br /><br /> 2009-06-15T13:45:30 -> juni den 15, 2009 20:45:30 (sv-SE)<br /><br /> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)|  
+|"Y", "y"|Vzor formátu roku a měsíce.<br /><br /> Další informace: [Specifikátor formátu měsíce ("Y") rok](#YearMonth).|2009-06-15T13:45:30 -> June, 2009 (en US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK) 2009<br /><br /> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)|  
 |Jakýkoli jiný samostatný znak|Neznámý specifikátor.|Vyvolá výjimku za běhu <xref:System.FormatException>.|  
   
 ## <a name="how-standard-format-strings-work"></a>Jak fungují řetězce standardního formátu  
@@ -85,7 +85,7 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
 |Řetězec standardního formátu|Definovaný vlastností DateTimeFormatInfo.InvariantInfo|Řetězec vlastního formátu|  
 |----------------------------|----------------------------------------------------------|--------------------------|  
-|"O" nebo "o"|Žádné|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
+|"O" nebo "o"|Žádná|yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz|  
 |"R" nebo "r"|<xref:System.Globalization.DateTimeFormatInfo.RFC1123Pattern%2A>|ddd, dd MMM yyyy HH':'mm':'ss 'GMT'|  
 |"s"|<xref:System.Globalization.DateTimeFormatInfo.SortableDateTimePattern%2A>|yyyy'-'MM'-'dd'T'HH':'mm':'ss|  
 |"u"|<xref:System.Globalization.DateTimeFormatInfo.UniversalSortableDateTimePattern%2A>|yyyy'-'MM'-'dd HH':'mm':'ss'Z'|  
@@ -255,7 +255,7 @@ Standardní hodnoty data a času formátovací řetězce lze použít s oběma <
   
 -   <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType> hodnoty data a času mít žádné informace o časovém pásmu.  
   
- Vzhledem k tomu, O "nebo"o"standardní specifikátor formátu odpovídá mezinárodní standard, formátování nebo analýzy operace, která používá specifikátor vždy používá invariantní jazyková verze a gregoriánský kalendář.  
+ Protože specifikátor standardního formátu "O" nebo "o" odpovídá mezinárodní standard, formátování nebo analýzy operace, která používá specifikátor vždy používá invariantní jazyková verze a gregoriánský kalendář.  
   
  Řetězce, které jsou předány `Parse`, `TryParse`, `ParseExact`, a `TryParseExact` metody <xref:System.DateTime> a <xref:System.DateTimeOffset> může být analyzován pomocí specifikátoru formátu "O" nebo "o", když jsou v jednom z následujících formátů. V případě třídy <xref:System.DateTime> objekty, analýzy, na které můžete volat přetížení by mělo rovněž zahrnovat `styles` parametr s hodnotou <xref:System.Globalization.DateTimeStyles.RoundtripKind?displayProperty=nameWithType>. Všimněte si, že pokud zavoláte metodu analýzy s řetězci vlastního formátu, který odpovídá "O" nebo "o" specifikátorem formátu, nebudete získáte stejné výsledky jako "O" nebo "o". Je to proto, že analýza metody, které používají vlastní formátovací řetězec nelze analyzovat řetězcové vyjádření hodnoty data a času, které nemají komponentu časového pásma, nebo použijte "Z" označuje čas UTC.  
   

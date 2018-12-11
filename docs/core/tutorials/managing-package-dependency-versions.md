@@ -1,33 +1,33 @@
 ---
-title: Správa verze závislosti balíčku pro .NET Core 1.0
-description: Další informace o správě verze závislosti balíčku pro knihovny .NET Core a aplikace.
+title: Správa verzí závislosti balíčků pro .NET Core 1.0
+description: Další informace o Správa verzí závislosti balíčků pro knihovny .NET Core a aplikace.
 author: cartermp
-ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 96d154f045303e32de606475e77ab2e6b4f7bcda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: seodec18
+ms.openlocfilehash: 7d7133ddb8717db1b830e531955454925c31a728
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33211335"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168608"
 ---
-# <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>Správa verze závislosti balíčku pro .NET Core 1.0
+# <a name="how-to-manage-package-dependency-versions-for-net-core-10"></a>Správa verzí závislosti balíčků pro .NET Core 1.0
 
 Tento článek popisuje, co potřebujete vědět o verze balíčku pro knihovny .NET Core a aplikace.
 
 ## <a name="glossary"></a>Slovníček
 
-**Opravte** -opravě závislosti znamená používáte stejná "rodina" balíčků vydala NuGet pro rozhraní .NET Core 1.0.
+**Oprava** – oprava závislostí znamená, že používáte stejné "řady" balíčků vydaných na webu NuGet pro .NET Core 1.0.
 
-**Metapackage** -A NuGet balíček, který představuje sadu balíčků NuGet.
+**Microsoft.aspnetcore.all** -balíčku A NuGet, který představuje sadu balíčků NuGet.
 
-**Ořezávání** -operace odebrání balíčků není závislá na z metapackage.  Toto je něco relevantní pro autory balíček NuGet.  V tématu [snižuje závislosti balíčků s project.json](../deploying/reducing-dependencies.md) Další informace. 
+**Ořezávání** – v rámci balíčky, které nezávisí na odebrání Microsoft.aspnetcore.all.  To je něco, které jsou relevantní pro autory balíčku NuGet.  Zobrazit [omezení závislosti balíčku s project.json](../deploying/reducing-dependencies.md) Další informace. 
 
-## <a name="fix-your-dependencies-to-net-core-10"></a>Opravte svoje závislosti na .NET Core 1.0
+## <a name="fix-your-dependencies-to-net-core-10"></a>Oprava závislostí pro .NET Core 1.0
 
-Pokud chcete spolehlivě obnovení balíčků a zápis spolehlivého kódu, je důležité opravili závislostmi verzích balíčky přesouvání spolu s .NET Core 1.0.  To znamená, že každý balíček musí mít jednu verzi s žádné další kvalifikátory.
+Spolehlivě obnovení balíčků a zápis spolehlivého kódu, je důležité, že oprava závislostí na verze balíčků přesouvání spolu s .NET Core 1.0.  To znamená, že každého balíčku by měl mít jednu verzi se žádné další kvalifikátory.
 
-**Příklady balíčků pevné hodnotě 1.0**
+**Příklady balíčků pevně 1.0**
 
 `"System.Collections":"4.0.11"`
 
@@ -35,7 +35,7 @@ Pokud chcete spolehlivě obnovení balíčků a zápis spolehlivého kódu, je d
 
 `"Microsoft.NETCore.App":"1.0.0"`
 
-**Příklady balíčky, které není nastaven na 1.0**
+**Příklady balíčky, které jsou neopraveno 1.0**
 
 `"Microsoft.NETCore.App":"1.0.0-rc4-00454-00"`
 
@@ -43,40 +43,40 @@ Pokud chcete spolehlivě obnovení balíčků a zápis spolehlivého kódu, je d
 
 `"System.Text.RegularExpressions":"4.0.10-rc3-24021-00"`
 
-### <a name="why-does-this-matter"></a>Proč této věci?
+### <a name="why-does-this-matter"></a>Proč to důležité?
 
-Zaručujeme, že pokud neopravíte svoje závislosti na co se dodává spolu s .NET Core 1.0, tyto balíčky, budou všechny spolupracovat. Neexistuje žádná taková záruka, pokud používáte balíčky, které nejsou pevné tímto způsobem.
+Garantujeme, že pokud je oprava závislostí na co se dodává spolu s .NET Core 1.0, tyto balíčky budou všechny spolupracovat. Pokud používáte balíčky, které nejsou pevné tímto způsobem, není zaručeno takové.
 
 ### <a name="scenarios"></a>Scénáře
 
-I když je velký seznam všech balíčků a jejich verze vydané s .NET Core 1.0, nemusí mít si můžete prohlédnout, pokud kód klesne pod určité scénáře.
+I když existuje velké objemy seznam všechny balíčky a jejich verzí vydané s .NET Core 1.0, pravděpodobně nemáte prohledávat, pokud váš kód v určitých situacích.
 
 **Jste si v závislosti na pouze** `NETStandard.Library` **?**
 
-Pokud ano, problém byste měli odstranit vaší `NETStandard.Library` balíček verze `1.6`.  Protože je to kurátorované metapackage, jeho uzavření balíček také vyřešili 1.0.
+Pokud ano, by měla vyřešit váš `NETStandard.Library` balíček verze `1.6`.  Protože je to kurátorované Microsoft.aspnetcore.all, jeho uzavření balíčku je také pevně 1.0.
 
 **Jste si v závislosti na pouze** `Microsoft.NETCore.App` **?**
 
-Pokud ano, problém byste měli odstranit vaší `Microsoft.NETCore.App` balíček verze `1.0.0`.  Protože je to kurátorované metapackage, jeho uzavření balíček také vyřešili 1.0.
+Pokud ano, by měla vyřešit váš `Microsoft.NETCore.App` balíček verze `1.0.0`.  Protože je to kurátorované Microsoft.aspnetcore.all, jeho uzavření balíčku je také pevně 1.0.
 
-**Jste si [oříznutí](../deploying/reducing-dependencies.md) vaše** `NETStandard.Library` **nebo** `Microsoft.NETCore.App` **metapackage závislosti?**
+**Jste si [oříznutí](../deploying/reducing-dependencies.md) vaše** `NETStandard.Library` **nebo** `Microsoft.NETCore.App` **Microsoft.aspnetcore.all závislosti?**
 
-Pokud ano, měli byste zajistit, že metapackage se vyřešen 1.0.  Jednotlivé balíčky, které závisí na po oříznutí odstraněny také 1.0.
+Pokud ano, měli byste zajistit, že je Microsoft.aspnetcore.all, které můžete začít s pevně 1.0.  Jednotlivé balíčky, které závisí na po oříznutí odstraněny také 1.0.
 
-**Jste si v závislosti na balíčky mimo** `NETStandard.Library` **nebo** `Microsoft.NETCore.App` **metapackages?**
+**Jste si v závislosti na balíčky mimo** `NETStandard.Library` **nebo** `Microsoft.NETCore.App` **metabalíčky?**
 
-Pokud ano, budete muset vyřešit svoje závislosti do 1.0.  Zjistit verzi správný balíček a sestavte čísla na konci tohoto článku.
+Pokud ano, budete muset opravit další závislosti 1.0.  Zobrazit verze správný balíček a sestaví čísel na konci tohoto článku.
 
-### <a name="a-note-on-using-a-splat-string--when-versioning"></a>Poznámka: na pomocí řetězce splat (\*) při Správa verzí
+### <a name="a-note-on-using-a-splat-string--when-versioning"></a>Poznámka týkající se použití splat řetězce (\*) při vytváření verzí
 
-Přijaly vzor Správa verzí, která používá splat (\*) řetězec takto: `"System.Collections":"4.0.11-*"`.
+Přijali vzor správy verzí, který používá splat (\*) řetězce tímto způsobem: `"System.Collections":"4.0.11-*"`.
 
-**Neměli byste**.  Pomocí řetězce splat, může mít za následek obnovují se balíčky z různých sestavení pro některé z nich může být, že se vám dál než .NET Core 1.0.  Výsledkem by mohlo pak některé balíčky se nekompatibilní.
+**Neměli byste**.  Pomocí řetězce splat by mohlo způsobit obnovují se balíčky z různých sestavení, z nichž některé mohou být dál než .NET Core 1.0.  To může vést některých balíčků není kompatibilních.
 
-## <a name="packages-and-version-numbers-organized-by-metapackage"></a>Balíčky a uspořádané podle Metapackage čísla verzí
+## <a name="packages-and-version-numbers-organized-by-metapackage"></a>Balíčky a čísel verzí uspořádané podle Microsoft.aspnetcore.all
 
-[Seznam všech balíčků .NET Standard a jejich verze 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt).
+[Seznam všech balíčků pro .NET Standard a jejich verze 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/corefx/release/1.0.0/Latest_Packages.txt).
 
-[Seznam všech balíčků runtime a jejich verze 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt).
+[Seznam všech balíčků modulu runtime a jejich verze 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/coreclr/release/1.0.0/LKG_Packages.txt).
 
 [Seznam všech balíčků aplikací .NET Core a jejich verze 1.0](https://github.com/dotnet/versions/blob/master/build-info/dotnet/core-setup/release/1.0.0/Latest_Packages.txt).

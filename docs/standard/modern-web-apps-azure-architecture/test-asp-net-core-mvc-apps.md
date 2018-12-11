@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: b6c881a445f5848829ab5ccc6ce8547a390d89f3
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 96a004cc49773346eeb8f88e2ba99beebf8598bf
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404616"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154200"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>ASP.NET Core MVC testování aplikace
 
@@ -66,7 +66,7 @@ Integrační testy se zapisují z pohledu vývojáře, chcete-li ověřit, že n
 
 > "V mnoha případech vývoj systému je připodobnit sestavování z domu. Zatímco tato analogie není úplně správná, teď ho můžeme rozšířit pro účely vysvětlení rozdílu mezi částí a funkčních testů. Testování jednotek je obdobou vytváření inspektoru konstrukce společnosti organizace. Má se zaměřuje na různých interních systémů house základ vypracování, elektrický, domovních instalací a tak dále. Má zajišťuje (testů), součástí dům bude fungovat správně a bezpečně, to znamená, že splňují sestavování kódu. Funkční testy v tomto scénáři jsou podobná na základě návštěvě tohoto webu stejné konstrukce. Má se předpokládá, že se bude odpovídajícím způsobem chovat interních systémů, inspektor vytváření fungování jeho úlohy. Základě se zaměřuje na co je třeba to je toto porušuje. Problémem vzhledu dům, jsou různé místnosti pohodlné velikost, nemá dům podle potřeb vaší rodiny, jsou windows nevhodná situace pro zachycení sun ráno. Na dům provádí základě funkčních testů. Má pohledu uživatele. Inspektor sestavení na dům provádí testy jednotek. Má Tvůrce perspektivy."
 
-Zdroj: [testování a funkční testy jednotek](https://www.softwaretestingtricks.com/2007/01/unit-testing-versus-functional-tests.html)
+Zdroj: [Testování a funkční testy jednotek](https://www.softwaretestingtricks.com/2007/01/unit-testing-versus-functional-tests.html)
 
 Jsem rádi o tom, že "jako vývojáři služeb při selhání dvěma způsoby: jsme integrovali věc nesprávné nebo integrujeme špatného." Testování částí zajišťuje, že vytváříte věc, kterou vpravo; funkční testy – Ujistěte se, že vytváříte správné věci.
 
@@ -219,7 +219,7 @@ public class LocalFileImageServiceGetImageBytesById
 
 Pro aplikace ASP.NET Core třída TestServer usnadňuje funkční testy poměrně pro zápis. Konfigurace TestServer přímo pomocí WebHostBuilder (pouze pro vaši aplikaci obvyklým způsobem), nebo s typem WebApplicationFactory (k dispozici v 2.1). Měli byste vyzkoušet, co nejpřesněji souhlasit s hostitelem vašeho testu na produkční hostitele tak, že testy budou vykonávat chování podobné co aplikace provádět v produkčním prostředí. Třída WebApplicationFactory je užitečné pro konfiguraci objekt TestServer ContentRoot, který používá ASP.NET Core najít jako zobrazení statických prostředků.
 
-Vytvoříte jednoduchou funkční testy tak, že vytvoříte testovací třídě, která implementuje IClassFixture < WebApplicationFactory<TEntry>> kde je TEntry třídu pro spuštění vaší webové aplikace. S tímto na místě můžete vytvořit testovací přípravek klienta pomocí metody CreateClient factory pro:
+Vytvoříte jednoduchou funkční testy tak, že vytvoříte testovací třídě, která implementuje IClassFixture\<WebApplicationFactory\<TEntry >> kde TEntry je třída při spuštění vaší webové aplikace. S tímto na místě můžete vytvořit testovací přípravek klienta pomocí metody CreateClient factory pro:
 
 ```cs
 public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
@@ -347,5 +347,5 @@ namespace FunctionalTests.WebRazorPages
 Tato funkční testování vykonává úplné ASP.NET Core MVC / zásobníku aplikace Razor Pages, včetně middleware, filtry, vazače, atd., které mohou být na místě. Ověřuje, že danou trasou ("/") vrátí stavový kód úspěchu očekávané a výstupu protokolu HTML. Provádí se bez nastavování skutečné webový server a proto zabraňuje velkou část brittleness, který používá skutečné webového serveru pro účely testování můžete vyzkoušet (například problémy s nastavením brány firewall). Funkční testy, které spustily TestServer jsou obvykle nižší než integraci a testy jednotek, ale jsou mnohem rychleji než testy, které se spustí v síti k serveru webového testu. Abyste používali funkční testy k zajištění, že zásobník front-endu vaší aplikace funguje podle očekávání. Tyto testy jsou zvláště užitečné při najít duplicity ve vašich kontrolerech nebo stránky a adresy duplicity přidáním filtrů. V ideálním případě by tento refaktoring nedojde ke změně chování aplikace a sadu funkční testy se ověří, že jde o tento případ.
 
 >[!div class="step-by-step"]
-[Předchozí](work-with-data-in-asp-net-core-apps.md)
-[další](development-process-for-azure.md)
+>[Předchozí](work-with-data-in-asp-net-core-apps.md)
+>[další](development-process-for-azure.md)

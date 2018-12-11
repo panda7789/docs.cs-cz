@@ -1,18 +1,17 @@
 ---
 title: Pokyny k používání
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 8e583bf7768c60477effb6c1cf9b838ae4c8c182
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+author: KrzysztofCwalina
+ms.openlocfilehash: 761570b899a2a36391eb81dc7f42e13fff1f14ef
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197935"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155402"
 ---
 # <a name="usage-guidelines"></a>Pokyny k používání
 
@@ -34,7 +33,7 @@ Tato část obsahuje pokyny k používání běžných typů ve veřejně dostup
 
 *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*
 
-*Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*
+*Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*
   
 ## <a name="see-also"></a>Viz také:
 

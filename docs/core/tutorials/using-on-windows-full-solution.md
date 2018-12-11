@@ -2,15 +2,14 @@
 title: Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
 description: Zjistěte, jak k vytvoření kompletního řešení .NET Core v sadě Visual Studio 2017 na Windows.
 author: bleroy
-ms.author: mairaw
 ms.date: 11/16/2016
-ms.custom: vs-dotnet
-ms.openlocfilehash: b3e466511fcae447f5bb54b83f13b25bc90c6539
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: 0130ae10cc3bac445892faf0f9a18cf2f23dc036
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296838"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170519"
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
 
@@ -26,7 +25,7 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
 
 1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.NET Standard](../../standard/net-standard.md).
 
-2. Název projektu "Library" a "Golden" řešení. Ponechte **vytvořit adresář pro řešení** zaškrtnuto. Klikněte na tlačítko **OK**.
+2. Název projektu "Library" a "Golden" řešení. Ponechte **vytvořit adresář pro řešení** zaškrtnuto. Klikněte na **OK**.
 
 3. V Průzkumníku řešení otevřete kontextovou nabídku **závislosti** uzlu a zvolte **spravovat balíčky NuGet**.
 

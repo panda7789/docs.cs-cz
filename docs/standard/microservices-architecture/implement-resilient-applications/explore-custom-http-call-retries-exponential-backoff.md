@@ -4,18 +4,18 @@ description: Zjistěte, jak je možné implementovat, od začátku, opakování 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/08/2018
-ms.openlocfilehash: c323b8c4e783ed18c601562cfb25e1ca4986d499
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: b7aaad9199bb275f45fd088a6207d707e8e5751c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37878800"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145095"
 ---
 # <a name="explore-custom-http-call-retries-with-exponential-backoff"></a>Prozkoumejte vlastních opakování volání HTTP pomocí exponenciálního omezení rychlosti
 
 K vytvoření odolné mikroslužeb, potřebujete zpracovávat možných scénářů chyby protokolu HTTP. Jedním ze způsobů zpracování těchto chyb, však není doporučena, je vytvořit vlastní implementace opakování pomocí exponenciálního omezení rychlosti.
 
-**Důležitá poznámka:** v této části se dozvíte, jak můžete vytvořit vlastní kód pro implementaci opakování volání HTTP. Ale nedoporučujeme to udělat příkazem vlastní, ale výkonné a spolehlivé, zatímco je jednodušší použít mechanismy, jako například `HttpClientFactory` pomocí knihovny Polly dostupné od verze rozhraní .NET Core 2.1. Tyto doporučené postupy jsou vysvětlené v následujících částech. 
+**Důležitá poznámka:** Tato část popisuje, jak můžete vytvořit vlastní kód pro implementaci opakování volání HTTP. Ale nedoporučujeme to udělat příkazem vlastní, ale výkonné a spolehlivé, zatímco je jednodušší použít mechanismy, jako například `HttpClientFactory` pomocí knihovny Polly dostupné od verze rozhraní .NET Core 2.1. Tyto doporučené postupy jsou vysvětlené v následujících částech. 
 
 Jako počáteční zkoumání, je možné implementovat vlastního kódu s využitím třídy nástrojů pro exponenciálního omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus kód podobný tomuto (což je také k dispozici na tomto [Githubu úložiště](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).
 
@@ -116,7 +116,6 @@ public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? t
 Mějte na paměti, že tento kód je vhodný pouze jako testování konceptu. Další části popisují, jak používat složitější přístupy, zatímco je jednodušší, pomocí HttpClientFactory.
 HttpClientFactory je k dispozici od verze rozhraní .NET Core 2.1 s knihovnami osvědčené odolnost proti chybám, jako je Polly. 
 
-
 >[!div class="step-by-step"]
-[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)
-[další](use-httpclientfactory-to-implement-resilient-http-requests.md)
+>[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)
+>[další](use-httpclientfactory-to-implement-resilient-http-requests.md)

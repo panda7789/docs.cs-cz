@@ -7,44 +7,45 @@ dev_langs:
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-ms.openlocfilehash: 5a4b4dc79b0f0dad661d99fae6377d1c86b673b6
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 0bcab736aad1df84713c7a111d23b82a54ec4334
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154044"
 ---
 # <a name="sending-and-receiving-faults"></a>Chyby odesílání a přijímání
-Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z klienta ke službě umožňuje vzájemnou spolupráci způsobem. Obvykle služby definuje vlastní chyby obsahu a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klienta může poslat tyto chyby při odpovídající chybový stav a jak klienta nebo aplikace služby zpracovává tyto chyby. Přehled zpracování chyb v aplikacích Windows Communication Foundation (WCF) najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+Chyb SOAP sdělit podmínku informace o chybě ze služby do klienta a v případě duplexní z klienta ke službě interoperabilní způsobem. Obvykle služby definuje vlastní chyby obsah a určuje, které operace vrátit. (Další informace najdete v tématu [definiční a určení chyb](../../../docs/framework/wcf/defining-and-specifying-faults.md).) Toto téma popisuje, jak služba nebo duplexní klient může poslat tyto chyby došlo k odpovídající chybovou podmínku a způsob klienta nebo aplikace služby zpracovává tyto chyby. Přehled v aplikacích Windows Communication Foundation (WCF) pro zpracování chyb, naleznete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
 ## <a name="sending-soap-faults"></a>Odesílání chyb SOAP  
- Deklarovaný chyb SOAP jsou ty, ve kterých se operace <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> určující vlastního typu chybu protokolu SOAP. Nedeklarovaný chyb SOAP jsou ty, které nejsou uvedené ve smlouvě operace.  
+ Deklarovat chyb SOAP jsou ty, ve kterých se má operace <xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> , která určuje vlastního typu chybu protokolu SOAP. Nedeklarovaný chyb SOAP jsou ty, které nejsou uvedené ve smlouvě operace.  
   
-### <a name="sending-declared-faults"></a>Odesílání deklarované chyb  
- Pokud chcete odeslat deklarované chybu protokolu SOAP, zjistit chybový stav, pro které je vhodné chybu protokolu SOAP a throw novou <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> kde parametr typu je vytvoření nového objektu s typem zadaným v <xref:System.ServiceModel.FaultContractAttribute> pro tuto operaci. Následující příklad kódu ukazuje použití <xref:System.ServiceModel.FaultContractAttribute> určíte, že `SampleMethod` operace může vrátit chybu protokolu SOAP s typem podrobností `GreetingFault`.  
+### <a name="sending-declared-faults"></a>Odesílání chyb deklarovaný  
+ K odeslání deklarované nastala chyba protokolu SOAP, detekovat chybový stav, pro které je vhodné chybu protokolu SOAP a vyvolat nový <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> kde je vytvoření nového objektu na typ určený v parametru typu <xref:System.ServiceModel.FaultContractAttribute> pro danou operaci. Následující příklad kódu ukazuje použití <xref:System.ServiceModel.FaultContractAttribute> určit, že `SampleMethod` operace může vrátit chybu protokolu SOAP s typem podrobností `GreetingFault`.  
   
  [!code-csharp[FaultContractAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#4)]
  [!code-vb[FaultContractAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#4)]  
   
- Pro vyjádření `GreetingFault` informace o chybě klient zachytit příslušné chybový stav a vyvolat novou <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault` s novou `GreetingFault` objektu jako argument, jako v následujícím příkladu kódu. Pokud je klient aplikace klienta WCF, je to vyskytne jako spravované výjimky, kde je typ <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault`.  
+ K předání `GreetingFault` klienta, informace o chybě zachytit příslušné chybový stav a vyvolat nový <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault` s novou `GreetingFault` objektu jako argument, jako v následujícím příkladu kódu. Pokud klienta je klientská aplikace WCF, je to prostředí jako spravované výjimky, kde je typ <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> typu `GreetingFault`.  
   
  [!code-csharp[FaultContractAttribute#5](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#5)]
  [!code-vb[FaultContractAttribute#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#5)]  
   
 ### <a name="sending-undeclared-faults"></a>Odesílání chyb nebyla deklarována  
- Odesílání nedeklarované chyb může být velmi užitečná rychle diagnostikovat a ladit problémy s aplikací služby WCF, ale jeho užitečnost jako nástroj pro ladění je omezená. Obecně platí, když ho ladění je doporučeno používat <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost. Když tuto hodnotu nastavíte na hodnotu true, klienti prostředí takové chyby jako <xref:System.ServiceModel.FaultException%601> výjimky typu <xref:System.ServiceModel.ExceptionDetail>.  
+ Odesílání nedeklarovaný chyby může být velmi užitečné pro rychlá Diagnostika a ladění problémů v aplikací služby WCF, ale jeho užitečnost jako nástroj pro ladění je omezený. Obecně platí, pokud její ladění je doporučeno používat <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost. Když nastavíte tuto hodnotu na hodnotu true, klientů docházet k takové chyby jako <xref:System.ServiceModel.FaultException%601> výjimky typu <xref:System.ServiceModel.ExceptionDetail>.  
   
 > [!IMPORTANT]
->  Protože spravované výjimky mohou být informace o interní aplikace, nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> k `true` můžete povolit klientům WCF získat informace o operaci výjimky interní služby, včetně osobní osobní a dalších citlivých informací.  
+>  Vzhledem k tomu, že spravované výjimky můžete zveřejnit informace o interní aplikace, nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> k `true` můžete povolit WCF klientům získat informace o výjimkách operace vnitřní chybě služby, včetně osobně identifikovat nebo další citlivé informace.  
 >   
->  Proto nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> k `true` doporučujeme použít pouze jako způsob dočasně ladění aplikace služby. Kromě toho schématu WSDL pro metodu, která vrátí neošetřené se spravovanými výjimkami tímto způsobem neobsahuje kontrakt <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienti měli očekávat možnost neznámé chybě protokolu SOAP (klientům WCF jako <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objekty) získat informace o ladění správně.  
+>  Proto nastavení <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> k `true` se doporučuje jen jako způsob, jak dočasně ladění aplikace služby. Kromě toho rozhraní jazyka WSDL pro metodu, která vrátí nezpracované se spravovanými výjimkami tímto způsobem neobsahuje smlouvu pro <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienti musí očekávat možnost Neznámá chyba protokolu SOAP (klientům WCF jako <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objekty) správně získat informace o ladění.  
   
- Pokud chcete odeslat nedeklarované chybu protokolu SOAP, throw <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objektu (tedy ne obecný typ <xref:System.ServiceModel.FaultException%601>) a předejte řetězec do konstruktoru. To je vystaven klientských aplikací WCF jako výjimce dojde <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> výjimky, kde řetězec je k dispozici při volání <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> metoda.  
+ K odeslání nebyla deklarována chybu protokolu SOAP, throw <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objektu (to znamená, není generický typ <xref:System.ServiceModel.FaultException%601>) a předat řetězec konstruktoru. To je přístupný klientských aplikací WCF jako vyvolané výjimce <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> výjimky, kde je k dispozici řetězec voláním <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> metody.  
   
 > [!NOTE]
->  Pokud deklarace chybu protokolu SOAP typu řetězec a poté to vyvolat ve službě jako <xref:System.ServiceModel.FaultException%601> kde parametr typu je <xref:System.String?displayProperty=nameWithType> je přiřazena hodnota řetězce <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> vlastnost a není k dispozici z <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType>.  
+>  Pokud deklarujete řetězcového typu nastala chyba protokolu SOAP a to poté vyvolají ve své službě jako <xref:System.ServiceModel.FaultException%601> kde je parametr typu <xref:System.String?displayProperty=nameWithType> přiřazena hodnota řetězce <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> vlastnost a není k dispozici <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType>.  
   
 ## <a name="handling-faults"></a>Zpracování chyb  
- V klientech WCF SOAP chyb, ke kterým došlo během komunikace, které jsou důležité pro klientské aplikace jsou vyvolány jako spravované výjimky. Existuje mnoho výjimky, které se můžou vyskytnout během provádění žádné program, můžete očekávat, že aplikace pomocí programovacího modelu WCF klienta zpracování výjimek následující dva typy v důsledku komunikace.  
+ Klienti WCF SOAP chyb, ke kterým dochází při komunikaci, které jsou zajímavé pro klientské aplikace jsou vyvolány jako spravované výjimky. I když existují mnoho výjimek, které se mohou vyskytnout při spuštění libovolné aplikace, pomocí programovacího modelu WCF klientské aplikace můžou očekávat pro zpracování výjimek z následujících dvou typů v důsledku komunikace.  
   
 -   <xref:System.TimeoutException>  
   
@@ -52,53 +53,53 @@ Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z 
   
  <xref:System.TimeoutException> objekty jsou vyvolány, když překročí zadaný časový limit operace.  
   
- <xref:System.ServiceModel.CommunicationException> objekty jsou vyvolány po nějaké chyby použitelná pro obnovení komunikace na službu nebo klienta.  
+ <xref:System.ServiceModel.CommunicationException> objekty jsou vyvolány, když určitý chybový stav obnovit komunikaci na službu nebo klienta.  
   
- <xref:System.ServiceModel.CommunicationException> Třída má dva důležité odvozené typy <xref:System.ServiceModel.FaultException> a Obecné <xref:System.ServiceModel.FaultException%601> typu.  
+ <xref:System.ServiceModel.CommunicationException> Třída má dvě důležité odvozené typy <xref:System.ServiceModel.FaultException> a Obecné <xref:System.ServiceModel.FaultException%601> typu.  
   
- <xref:System.ServiceModel.FaultException> jsou výjimky vyvolány, když naslouchací proces obdrží chybu, která není očekávané nebo uvedených ve smlouvě operace; obvykle proběhne, když je laděné aplikace a služby má <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true`.  
+ <xref:System.ServiceModel.FaultException> výjimky jsou vyvolány při naslouchací proces obdrží chybu, která není očekáván nebo se musí zadat v kontrakt; obvykle k tomu dochází při ladění aplikace a že má služba <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nastavenou na `true`.  
   
- <xref:System.ServiceModel.FaultException%601> Při obdržení chybu, která je zadána v operaci kontraktu v reakci na obousměrný operace jsou výjimky vyvolány v klientovi (to znamená, metoda s <xref:System.ServiceModel.OperationContractAttribute> atribut s <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastavena na `false`).  
-  
-> [!NOTE]
->  Pokud má služby WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true` klienta vyskytne to jako nedeklarované <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienti můžou catch této konkrétní chyby nebo zpracování chyb v bloku catch pro <xref:System.ServiceModel.FaultException>.  
-  
- Obvykle pouze <xref:System.ServiceModel.FaultException%601>, <xref:System.TimeoutException>, a <xref:System.ServiceModel.CommunicationException> výjimky jsou důležité pro klienty a služby.  
+ <xref:System.ServiceModel.FaultException%601> vyvolávání výjimek na straně klienta při přijetí chybu, která je uvedené ve smlouvě operace v reakci na operaci obousměrný (to znamená, metoda se <xref:System.ServiceModel.OperationContractAttribute> atributem <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> nastavena na `false`).  
   
 > [!NOTE]
->  Samozřejmě, ostatní výjimky dojít. Neočekávané výjimky patří závažné chyby jako <xref:System.OutOfMemoryException?displayProperty=nameWithType>; obvykle aplikace by neměl catch těchto metod.  
+>  Pokud má služby WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> vlastnost nastavena na hodnotu `true` klienta toto prostředí jako nedeklarovaný <xref:System.ServiceModel.FaultException%601> typu <xref:System.ServiceModel.ExceptionDetail>. Klienty můžete zachytit toto specifické selhání nebo zpracování chyb v bloku catch pro <xref:System.ServiceModel.FaultException>.  
+  
+ Obvykle pouze <xref:System.ServiceModel.FaultException%601>, <xref:System.TimeoutException>, a <xref:System.ServiceModel.CommunicationException> výjimky jsou zajímavé pro klienty a služby.  
+  
+> [!NOTE]
+>  Jiné, samozřejmě, dojít k výjimkám. Neočekávané výjimky zahrnují katastrofických selhání jako <xref:System.OutOfMemoryException?displayProperty=nameWithType>; obvykle aplikace, neměli byste zachytit tyto metody.  
   
 ### <a name="catch-fault-exceptions-in-the-correct-order"></a>Zachytit výjimky selhání ve správném pořadí  
- Protože <xref:System.ServiceModel.FaultException%601> je odvozena z <xref:System.ServiceModel.FaultException>, a <xref:System.ServiceModel.FaultException> je odvozena z <xref:System.ServiceModel.CommunicationException>, je důležité k zachycení tyto výjimky ve správném pořadí. Pokud například máte try/catch – blok, ve kterém jste nejdřív catch <xref:System.ServiceModel.CommunicationException>neurčené chyb SOAP jsou zpracovávány není; všechny bloky catch následné zpracování vlastní, a všechny zadané <xref:System.ServiceModel.FaultException%601> se nikdy vyvolána výjimka.  
+ Protože <xref:System.ServiceModel.FaultException%601> je odvozena z <xref:System.ServiceModel.FaultException>, a <xref:System.ServiceModel.FaultException> je odvozena z <xref:System.ServiceModel.CommunicationException>, je důležité k zachytávání těchto výjimek ve správném pořadí. Pokud například máte try/catch blok, ve kterém při prvním zachycení <xref:System.ServiceModel.CommunicationException>neurčené chyb SOAP jsou zpracovávány existuje; všechny bloky catch následné zpracování vlastní, a všechny zadané <xref:System.ServiceModel.FaultException%601> nikdy vyvolají výjimku.  
   
- Mějte na paměti, že jednu operaci může vracet libovolný počet zadaný chyb. Každý selhání je typu jedinečný a musí být zpracován samostatně.  
+ Mějte na paměti, že jedna operace může vracet libovolný počet zadaný chyb. Každá chyba je jedinečný typ a musí být zpracovány samostatně.  
   
-### <a name="handle-exceptions-when-closing-the-channel"></a>Při zavření v kanálu zpracování výjimek  
- Většina výše uvedené informace má dělat s chyb odeslaných v průběhu zpracování zpráv s aplikací, který je zprávy explicitně klientem po klientské aplikace volá operace u objektu klienta WCF.  
+### <a name="handle-exceptions-when-closing-the-channel"></a>Zpracování výjimek při zavření kanálu  
+ Většina předchozím diskusí souvisí se chyby odeslané během zpracování zpráv s aplikací, to znamená, zprávy explicitně odeslané klientem, když klientská aplikace volá operace u objektu klienta WCF.  
   
- I s místní objekty uvolnění objektu můžete zvýšit nebo maskování výjimky, ke kterým došlo během recyklace procesu. Něco podobného může dojít, když používáte objekty klienta WCF. Při volání operací odesíláte zprávy přes navázané připojení. Zavření kanálu může vyvolat výjimky Pokud připojení nelze zavřít, řádně nebo již byl uzavřen, i v případě, že všechny operace se vrátila správně.  
+ I přes místní objekty uvolnění objektu můžete zvýšit nebo maskovat výjimky, které se vyskytují během recyklace procesu. Podobně může dojít, když používáte objekty klienta WCF. Při volání operací odesílají zprávy přes navázané připojení. Zavření kanálu může vyvolat výjimky Pokud připojení nelze zavřít, čistě nebo je už zavřený, i v případě, že všechny operace vrátila správně.  
   
- Kanály objekt klienta jsou obvykle uzavřeny v jednom z následujících způsobů:  
+ Obvykle kanály klientů objektů jsou uzavřeny v jednom z následujících způsobů:  
   
--   Když je objekt klienta WCF recykluje.  
+-   Pokud objekt klienta WCF recykluje.  
   
--   Když klientské aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>.  
+-   Když klientská aplikace volá <xref:System.ServiceModel.ClientBase%601.Close%2A?displayProperty=nameWithType>.  
   
--   Když klientské aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>.  
+-   Když klientská aplikace volá <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType>.  
   
--   Když klientské aplikace volá operaci, je ukončující operace pro relaci.  
+-   Když klientská aplikace volá operaci, která je ukončující operace pro relaci.  
   
- Ve všech případech zavření kanálu dá pokyn kanál pro ukončení všechny základní kanály, které může být odesílání zpráv pro podporu komplexní funkcí na úrovni aplikace. Například pokud kontraktu vyžaduje relací vazbu se pokusí vytvořit relaci výměnou zpráv s kanálem služby, dokud nebude navázáno relaci. Při zavření kanálu základní kanál relace upozorní službu a ukončení relace. V takovém případě pokud kanál již přerušena, zavřená, nebo je jinak nepoužitelná (například když je odpojen síťový kabel), nelze informujte kanálem klienta služby kanálu, který relace je ukončena a může vést k výjimce.  
+ Ve všech případech zavření kanálu nastaví kanál pro ukončení všechny základní kanály, které mohou být odesílání zpráv komplexní funkci na úrovni aplikace. Například pokud kontrakt vyžaduje relace vazbu se pokusí navázat relaci výměnou zpráv pomocí služby kanálu, dokud se relace. Při zavření kanálu základním kanálu relace upozorní službu, že je relace ukončena. V takovém případě pokud kanál již přerušena, zavřeno, nebo je jinak nepůjdou použít (například, když je odpojen síťový kabel), nelze informovat kanálu klienta služby kanál, který je relace ukončena a může dojít k výjimce.  
   
-### <a name="abort-the-channel-if-necessary"></a>Abort kanál v případě potřeby  
- Protože zavření kanálu můžete také vyvolat výjimky, pak se doporučuje, aby kromě zachytávání výjimek chyby ve správném pořadí, je důležité k přerušení kanálu, který byl použitý při vytvoření volání v bloku catch.  
+### <a name="abort-the-channel-if-necessary"></a>Přerušení kanálu v případě potřeby  
+ Protože zavření kanálu, může vyvolat výjimky, pak se doporučuje, že kromě zachycování výjimek chyby ve správném pořadí, je důležité pro přerušení kanál, který byl použitý při vytvoření volání v bloku catch.  
   
- Pokud selhání přenese tak informace o chybě specifické pro operace a zůstane možné, že jiné můžete použít, není třeba k přerušení kanál (i když tyto případy vyskytují jen vzácně). Ve všech ostatních případech se doporučuje, že můžete přerušit kanál. Ukázka, všechny tyto body, najdete v části [očekává výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md).  
+ Pokud se dá pořád, aby ho ostatní mohli používat v době přenáší informace o chybě specifické pro operace, není nutné pro přerušení kanálu (i když se tyto případy vyskytují jen vzácně). Ve všech ostatních případech se doporučuje, aby abort kanálu. Příklad, který předvádí všechny tyto body, naleznete v tématu [očekávané výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md).  
   
- Následující příklad kódu ukazuje, jak zpracování výjimek chybu protokolu SOAP v základní klientskou aplikaci, včetně deklarované chybu a nedeklarované selhání.  
+ Následující příklad kódu ukazuje, jak zpracování výjimek chyby SOAP ve základní klientskou aplikaci, včetně chybu deklarované a nedeklarované selhání.  
   
 > [!NOTE]
->  Tento ukázkový kód nepoužívá `using` vytvořit. Protože zavřením kanály můžete vyvolat výjimky, doporučujeme, aby aplikace vytvořte použití WCF klienta první a pak otevřete a zavřete klienta WCF ve stejné akci bloku. Podrobnosti najdete v tématu [klienta WCF – přehled](../../../docs/framework/wcf/wcf-client-overview.md) a [vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
+>  Tento ukázkový kód nepoužívá `using` vytvořit. Protože zavření kanály může vyvolat výjimky, je doporučeno, že aplikace vytvořte klienta WCF použití první a potom otevřete a zavřít klienta WCF ve stejném blok try. Podrobnosti najdete v tématu [přehled klientů WCF](../../../docs/framework/wcf/wcf-client-overview.md) a [použití zavřít a Abort k uvolnění prostředků klienta WCF](../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md).  
   
  [!code-csharp[FaultContractAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
  [!code-vb[FaultContractAttribute#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  
@@ -108,4 +109,4 @@ Chyb SOAP popisným podmínku ze služby pro klienta a v případě duplexní z 
  <xref:System.ServiceModel.FaultException%601>  
  <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>  
  [Očekávané výjimky](../../../docs/framework/wcf/samples/expected-exceptions.md)  
- [Jak se vyhnout problémům s příkazem Using](../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)
+ [Použít zavřít a přerušení k uvolnění prostředků klienta WCF](../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md)

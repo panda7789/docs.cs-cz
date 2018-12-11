@@ -1,23 +1,23 @@
 ---
 title: Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
+description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost a možnosti Azure Dev mezer při vývoji životního cyklu aplikací Kubernetes.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: 25175e2a4409d53be412ae72be5af1c07c3ec68d
-ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
+ms.date: 09/20/2018
+ms.openlocfilehash: c3a40d5a9229ec754f5a5c2e2637af964f25ba08
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50982773"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152715"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
-Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo jednoduše rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budou mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; Proto pokud chcete mít vícekontejnerová aplikace připravené pro produkční prostředí a škálovatelné se naprosto je nutné orchestrátor.
+Využitím orchestrátorů, pro aplikace připravené pro produkční prostředí je nezbytné, pokud je vaše aplikace založené na mikroslužbách nebo jednoduše rozdělit mezi několik kontejnerů. Zavedeném dříve, v rámci přístupu založených na mikroslužbách vlastní jednotlivých mikroslužeb jeho modelu a datům tak, aby ho autonomní od vývoje a nasazení pohledu. Ale i v případě, že máte více tradiční aplikace, který se skládá z několika služeb (např. SOA), budete mít také více kontejnerů nebo služby vytvářející jednu obchodní aplikaci, která je nutné nasadit jako distribuovaný systém. Tyto druhy systémy jsou komplexní horizontální navýšení kapacity a Správa; Proto pokud chcete mít vícekontejnerová aplikace připravené pro produkční prostředí a škálovatelné se naprosto je nutné orchestrátor.
 
 Obrázek 4 – 23 ukazuje nasazení do clusteru aplikace skládá z několika mikroslužeb (kontejnery).
 
-![](./media/image23.PNG)
+![Složené aplikací Dockeru v clusteru: Použijete jeden kontejner pro každou repliku služby. Kontejnery dockeru jsou "jednotkách nasazení" a kontejner je, že instance hostitele Docker.A zpracovává mnoho kontejnerů](./media/image23.png)
 
 **Obrázek 4 – 23**. Cluster kontejnerů
 
@@ -27,113 +27,133 @@ Prostý modul Docker v jedné hostitelů Docker splňuje potřeby správu instan
 
 Se dostat nad rámec správu jednotlivých kontejnerů nebo velmi jednoduché složené aplikace a přesun směrem k větší podnikové aplikace s využitím mikroslužeb, musíte povolit orchestraci a clustering platformy.
 
-Z pro architekturu a vývoj pohledu Pokud vytváříte velký podnik skládá z aplikací založených na mikroslužbách, je důležité pochopit následující platformy a produkty, které podporují pokročilé scénáře:
+Z pro architekturu a vývoj pohledu Pokud vytváříte velký podnik skládá z aplikací založených na mikroslužbách, je důležité znát následující platformy a produkty, které podporují pokročilé scénáře:
 
-**Clustery a orchestrátorů**. Když potřebujete pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako při velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Azure Service Fabric, Kubernetes, Docker Swarm a Mesosphere DC/OS. Poslední tři open source orchestrátorů jsou dostupné v Azure pomocí Azure Container Service.
+**Clustery a orchestrátorů.** Když potřebujete pro horizontální navýšení kapacity aplikace v mnoha hostitelích Dockeru, jako při velkých aplikací založených na mikroslužbách, je důležité mít možnost spravovat všechny tyto hostitele jako jeden cluster podle abstrahovat složitost základní platformy. Je to, co nabízejí clustery kontejnerů a orchestrátorů. Příklady orchestrátorů: Azure Service Fabric a Kubernetes. Kubernetes je k dispozici v Azure pomocí služby Azure Kubernetes Service.
 
-**Plánovači**. *Plánování* znamená, že chcete mít možnost pro správce ke spuštění kontejnerů v clusteru, tak také poskytují uživatelské rozhraní. Plánovač clusteru má několik odpovědnosti: efektivně využívat prostředky clusteru, omezení zadaná uživatelem pro efektivní kontejnery pro vyrovnávání zatížení napříč uzly nebo hostitele a být odolnější proti chybám při zajištění vysoké dostupnost.
+**Plánovači.** *Plánování* znamená, že chcete mít možnost pro správce ke spuštění kontejnerů v clusteru, tak také poskytují uživatelské rozhraní. Plánovač clusteru má několik odpovědnosti: efektivně využívat prostředky clusteru, omezení zadaná uživatelem pro efektivní kontejnery pro vyrovnávání zatížení napříč uzly nebo hostitele a být odolnější proti chybám při zajištění vysoké dostupnost.
 
 Koncepty cluster a Plánovač jsou úzce souvisí, takže produkty k dispozici od různých dodavatelů často zadat obě sady funkcí. Následující seznam obsahuje nejdůležitější platformy a software volby, které máte pro clustery a plánovače. Tyto orchestrátorů se obvykle nabízejí ve veřejných cloudech, jako je Azure.
 
 ## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Softwarové platformy pro kontejner clustering, orchestraci a plánování
 
-Kubernetes
+### <a name="kubernetes"></a>Kubernetes
 
 ![Kubernetes logo](./media/image24.png)
 
-> Kubernetes je opensourcový produkt, který poskytuje funkce, které od infrastruktura clusteru a plánování k funkcím orchestrací kontejnerů. Umožňuje vám automatizovat nasazování, škálování a provoz kontejnerů aplikací napříč clustery hostitelů.
+> [*Kubernetes* ](https://kubernetes.io/) je opensourcový produkt, který poskytuje funkce, které od infrastruktura clusteru a kontejnerů plánování a orchestraci možnosti. Umožňuje vám automatizovat nasazování, škálování a provoz kontejnerů aplikací napříč clustery hostitelů.
 >
-> Kubernetes poskytuje infrastrukturu zaměřené na kontejner, který seskupuje kontejnerů aplikací do logické jednotky pro snadnou správu a zjišťování.
+> *Kubernetes* poskytuje infrastrukturu zaměřené na kontejner, který seskupuje kontejnerů aplikací do logické jednotky pro snadnou správu a zjišťování.
 >
-> Kubernetes je zavedený v systému Linux, méně až po zralé ve Windows.
+> *Kubernetes* je zavedený v systému Linux, méně až po zralé ve Windows.
 
-Docker Swarm
+### <a name="azure-kubernetes-service-aks"></a>Azure Kubernetes Service (AKS)
 
-![Docker Swarm logo](./media/image25.png)
+![Logo Azure Kubernetes Service](./media/image41.png)
 
-> Docker Swarm umožňuje clusteru a plánovat kontejnery Dockeru. Pomocí Swarm můžete zapnout fondu hostitelů Docker do jednoho, virtuálního hostitele Dockeru. Klienti mohli požadavků rozhraní API pro Swarm stejným způsobem, že se že dělají na hostitele, což znamená, že Swarm usnadňuje aplikacím škálování na více hostitelích.
->
-> Docker Swarm je produkt z Dockeru, společnost.
->
-> Docker v1.12 nebo novější můžete spouštět nativní a integrované režimu Swarm.
+> [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) je spravovaná služba Orchestrace kontejnerů Kubernetes v Azure, která zjednodušuje správu clusteru Kubernetes, nasazení a provoz.
 
-Mesosphere DC/OS
-
-![Logo mesosphere DC/OS](./media/image26.png)
-
-> Mesosphere Enterprise DC/OS (založená na Apache Mesos) je platforma pro produkční prostředí pro spouštění kontejnerů a distribuovaných aplikací.
->
-> DC/OS, funguje tak, že poskytuje abstrakci kolekci prostředků, které jsou k dispozici v clusteru a zpřístupnění těchto prostředků komponenty sestavené dojde k jeho zvýraznění. Marathon se obvykle používá jako Plánovač integrovaná s DC/OS.
->
-> DC/OS je zavedený v systému Linux, méně až po zralé ve Windows.
-
-Azure Service Fabric
+### <a name="azure-service-fabric"></a>Azure Service Fabric
 
 ![Logo Azure Service Fabric](./media/image27.png)
 
-> [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma mikroslužeb Microsoftu pro sestavování aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) ze služeb a vytváří clustery počítačů. Service Fabric dokáže nasadit služby, kontejnery nebo jako obyčejný procesy. Může dokonce kombinaci služby v procesech se službami v kontejnerech v rámci stejné aplikace a clusteru.
+> [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) je platforma mikroslužeb Microsoftu pro sestavování aplikací. Je [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) ze služeb a vytváří clustery počítačů. Service Fabric dokáže nasadit služby, kontejnery nebo jako obyčejný procesy. Může dokonce kombinaci služby v procesech se službami v kontejnerech v rámci stejné aplikace a clusteru.
 >
-> Service Fabric nabízí další a volitelné doporučené [programovacích modelů Service Fabric ](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+> *Service Fabric* clustery je možné nasadit v Azure, místně nebo v libovolném cloudu. Nasazení v Azure je však zjednodušen spravovaný přístup.
 >
-> Service Fabric je zavedený ve Windows (roky vyvíjejí Windows), méně až po zralé v systému Linux. 
+> *Service Fabric* poskytuje další a volitelné doporučené [programovacích modelů Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) jako [stavové služby](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) a [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction) .
+>
+> *Service Fabric* je zavedený ve Windows (roky vyvíjejí Windows), méně až po zralé v systému Linux.
+>
 > Od verze 2017 jsou podporovány kontejnery Linux i Windows v Service Fabric.
+
+### <a name="azure-service-fabric-mesh"></a>Síť Azure Service Fabric
+
+![Logo Azure Service Fabric mřížky](./media/image35.png)
+
+> [*Azure Service Fabric mřížky* ](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-overview) nabízí stejnou spolehlivost, kritických pro chod výkonu a škálování než Service Fabric, ale nabízí plně spravované a bez serveru platformy. Není nutné ke správě clusteru, virtuální počítače, úložiště nebo síťové konfigurace. Můžete soustředit jen na vývoj vaší aplikace.
+>
+> *Service Fabric mřížky* podporuje kontejnery Windows i Linuxem díky tomu umožňuje vývoj s využitím libovolný programovací jazyk a rozhraní dle vlastního výběru.
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Pomocí orchestrátorů kontejneru ve službě Microsoft Azure
 
-Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Microsoft Azure, Amazon EC2 Container Service a modul kontejnerů Google. Microsoft Azure podporuje Docker clusteru a orchestrator prostřednictvím Azure Container Service (ACS), jak je vysvětleno v další části.
+Několik dodavatelů cloud nabízí podporu kontejnerů Dockeru a Docker clusterů a podporu Orchestrace, včetně Microsoft Azure, Amazon EC2 Container Service a modul kontejnerů Google. Microsoft Azure podporuje Docker clusteru a orchestrator prostřednictvím Azure Kubernetes Service (AKS) a Azure Service Fabric a Azure Service Fabric mřížky.
 
-Další volbou je použití Microsoft Azure Service Fabric (platforma mikroslužeb), který podporuje také založené na Linuxu a Windows kontejnery Dockeru. Service Fabric běží v Azure nebo na jiný cloud a povolí, poběží i [místní](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-anywhere).
+## <a name="using-azure-kubernetes-service"></a>Používání služby Azure Kubernetes
 
-## <a name="using-azure-container-service"></a>Pomocí služby Azure Container Service
+Kubernetes cluster fondy více hostitelů Docker a zpřístupňuje jako jednoho virtuálního hostitele Docker, abyste mohli nasadit několik kontejnerů do clusteru a horizontální navýšení kapacity s libovolným počtem instancí kontejneru. Cluster bude zpracovávat složité správy základní, jako je škálovatelnost, stavu a tak dále.
 
-Docker cluster fondy více hostitelů Docker a zpřístupňuje jako jednoho virtuálního hostitele Docker, abyste mohli nasadit několik kontejnerů do clusteru. Cluster bude zpracovávat složité správy základní, jako je škálovatelnost, stavu a tak dále. Obrázek 4 – 24 představuje, jak mapuje clusteru Docker pro složené aplikace do Azure Container Service (ACS).
+AKS zajišťuje zjednodušení vytváření, konfiguraci a správu clusterů virtuálních počítačů v Azure, které je předem nakonfigurované spouštění kontejnerizovaných aplikací. Použití optimalizovanou konfiguraci oblíbených nástrojů open source plánování a orchestraci, AKS vám umožní využívat své stávající dovednosti nebo nakreslit velké a stále se rozšiřujících odborných znalostech komunity k nasazení a správě kontejnerových aplikací v Microsoft Azure .
 
-ACS poskytuje způsob, jak zjednodušit vytváření, konfiguraci a správu clusterů virtuálních počítačů, které je předem nakonfigurované spouštění kontejnerizovaných aplikací. Použití optimalizovanou konfiguraci oblíbených nástrojů open source plánování a orchestraci, ACS vám umožní využívat své stávající dovednosti nebo nakreslit velké a stále se rozšiřujících odborných znalostech komunity k nasazení a správě kontejnerových aplikací v Microsoft Azure .
+Azure Kubernetes Service optimalizuje konfiguraci oblíbených Docker clusteringu open source nástrojů a technologií konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Vyberete velikost, počet hostitelů a orchestrační nástroje a AKS postará o všechno ostatní.
 
-Služba Azure Container Service optimalizuje konfiguraci oblíbených opensourcových nástrojů clusteringu Dockeru a technologií konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Vyberete velikost, počet hostitelů a orchestrační nástroje a služby Container Service se postará o všechno ostatní.
+![Struktura clusteru Kubernetes: Existuje jeden hlavní uzel, který zpracovává DNS, Plánovač, proxy server a podobně a několik pracovních uzlů, které jsou hostiteli kontejnerů.](media/image36.png)
 
-![](./media/image28.png)
+**Obrázek 4 – 24**. Zjednodušenou strukturu a topologii clusteru Kubernetes
 
-**Obrázek 4 – 24**. Clustering s možností ve službě Azure Container Service
+Pokud obrázek 4 – 24 se zobrazí strukturu cluster Kubernetes, kde hlavní uzel (VM) řídí většina koordinace clusteru a kontejnerů můžete nasadit na zbývající uzly, které se spravují jako jeden fond z hlediska aplikací a umožňuje y organizačních jednotek škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
 
-ACS využívá Image Dockeru k zajištění, že plné přenositelnosti kontejnerů vaší aplikace. Podporuje možnost Orchestrace open-source platformy jako (používá technologii Apache Mesos) DC/OS, Kubernetes (původně vytvořil Google) a Docker Swarm, ujistěte se, že je možné tyto aplikace škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
+## <a name="development-environment-for-kubernetes"></a>Vývojové prostředí pro Kubernetes
 
-Azure Container service můžete využívat výhody funkcí Azure na podnikové úrovni a přitom zachovávat přenositelnost aplikací, včetně v orchestračních vrstvách.
+Ve vývojovém prostředí [Dockeru v červenci 2018 jsme oznámili](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) , Kubernetes můžete také spustit v rámci jediného vývojového počítače (Windows 10 nebo macOS) jednoduše nainstalováním [Docker Desktop](https://docs.docker.com/install/). Můžete ji později nasadit do cloudu (AKS) pro další testů integrace, jak je znázorněno na obrázku 4-25.
 
-![](./media/image29.png)
+![Docker oznámilo podporu počítač dev pro clustery Kubernetes na dne. 2018 v Desktopu Dockeru.](media/image37.png) 
 
-**Obrázek 4 – 25**. Orchestrátorů v ACS
+**Obrázek 4 – 25**. Ve vývojovém počítači i v cloudu s Kubernetes
 
-Jak ukazuje obrázek 4 – 25, Azure Container Service je jednoduše infrastruktury poskytovaný platformou Azure, abyste mohli nasadit DC/OS, Kubernetes a Docker Swarm, ale ACS neimplementuje žádné další nástroje orchestrator. Proto ACS není v důsledku toho orchestrátor jenom infrastruktura, která využívá existující open source orchestrátorů kontejnerů.
+## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Začínáme s Azure Kubernetes Service (AKS) 
 
-Z hlediska využití cílem služby Azure Container Service je poskytnout hostitelské prostředí kontejneru pomocí oblíbených opensourcových nástrojů a technologií. Za tímto účelem zpřístupňuje standardní koncové body rozhraní API pro zvolený orchestrátor. Pomocí těchto koncových bodů můžete využívat veškerý software, který může komunikovat s těmito koncovými body. V případě koncového bodu Docker Swarm můžete například použít rozhraní příkazového řádku (CLI) Dockeru. Pro DC/OS můžete zvolit použití rozhraní příkazového řádku DC/OS.
+Pokud chcete začít používat AKS, nasaďte cluster AKS z webu Azure portal nebo pomocí th rozhraní příkazového řádku. Další informace o nasazení clusteru Azure Container Service najdete v tématu [Nasaďte cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
-### <a name="getting-started-with-azure-container-service"></a>Začínáme se službou Azure Container Service 
+Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást AKS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru. AKS je k dispozici pro několik virtuálních počítačů v Azure. Platíte jenom za výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro AKS, samotného.
 
-Pokud chcete začít používat službu Azure Container Service, nasaďte cluster Azure Container Service z webu Azure portal s použitím šablony Azure Resource Manageru nebo [CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Dostupné šablony zahrnují [Docker Swarm](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm), [Kubernetes](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-kubernetes), a [DC/OS](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-dcos). Šablony rychlý start můžete upravit tak, aby zahrnout další nebo rozšířenou konfiguraci Azure. Další informace o nasazení clusteru Azure Container Service najdete v tématu [nasazení clusteru Azure Container Service](https://docs.microsoft.com/azure/container-service/container-service-deployment) na webu Azure.
+Pro další informace o implementaci při nasazení Kubernetes na základě kubectl a původní .yaml soubory, podívejte se na příspěvek na [aplikaci eShopOnContainers nastavení ve službě AKS (služby Azure Kubernetes Service)](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.-Setting-the-solution-up-in-AKS-(Azure-Kubernetes-Service)).
 
-Neexistují žádné poplatky za software ve výchozím nastavení nainstalované jako součást služby ACS. Všechny výchozí možnosti jsou implementovány pomocí open source softwaru.
+## <a name="deploying-with-helm-charts-into-kubernetes-clusters"></a>Nasazení pomocí helmu do clusterů Kubernetes
 
-ACS je momentálně dostupná pro standardní A, D, DS, G a GS řady virtuálních počítačů s Linuxem v Azure. Se vám účtovat jenom výpočetní instance, kterou zvolíte, jakož i jiné infrastruktury spotřebované základní prostředky, jako je například úložiště a sítě. Neúčtují žádné dodatečné poplatky pro ACS samotnou.
+Při nasazení aplikace do clusteru Kubernetes, můžete použít původní nástroj rozhraní příkazového řádku kubectl.exe pomocí soubory nasazení na základě nativním formátu (.yaml soubory), jak již bylo uvedeno v předchozí části. Nicméně u složitějších aplikací Kubernetes, jako při nasazení složitých aplikací založených na mikroslužbách, doporučuje se použít [Helm](https://helm.sh/).
+
+Grafy Helm umožňuje definovat, verzi, instalace, sdílené složky, upgrade nebo vrácení zpět i nejsložitější aplikaci Kubernetes.
+
+Když budete pokračovat, Helm využití se také doporučuje, protože další prostředí Kubernetes v Azure, jako například [prostory Azure Dev](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) jsou také založeny na helmu.
+
+Helm je spravován [Foundation nativní computingu na Cloud (CNCF)](https://www.cncf.io/) – ve spolupráci s Microsoftem, Google, Bitnami a Přispěvatel komunity Helm.
+
+Implementace Další informace o helmu a Kubernetes najdete v příspěvku na [pomocí helmu k nasazení do AKS aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.1-Deploying-to-AKS-using-Helm-Charts).
+
+## <a name="use-azure-dev-spaces-for-your-kubernetes-application-lifecycle"></a>Použití Azure Dev prostorů Kubernetes životním cyklu aplikací
+
+[Azure Dev prostory](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) poskytuje rychlý a iterativní Kubernetes vývojové prostředí pro týmy. S nastavením minimální dev počítače můžete interaktivně spustit a ladit kontejnery přímo ve službě Azure Kubernetes Service (AKS). Vývoj pro Windows, Mac nebo Linux pomocí známých nástrojů, jako je Visual Studio, Visual Studio Code nebo příkazového řádku.
+
+Jak už bylo zmíněno, používá Azure Dev prostory helmu při nasazování aplikací založených na kontejnerech.
+
+Azure Dev prostorech vývojové týmy být produktivnější s Kubernetes, protože umožňuje rychle iterovat a ladění kódu přímo v globální clusteru Kubernetes v Azure můžete jednoduše pomocí sady Visual Studio 2017 nebo Visual Studio Code. Že cluster Kubernetes v Azure sdílené spravuje clusteru Kubernetes, takže váš tým může spolupracovat spolupracují. Vývoj kódu v izolaci, pak můžete nasadit do clusteru globální a provést začátku do konce testování s ostatními součástmi bez replikace nebo napodobování nahoru závislosti.
+
+Jak je znázorněno na obrázku 4-26, je většina rozdílové funkce v Azure Dev prostory funkce vytváření mezery' ", které můžou běžet integrované do zbytku globálního nasazení v clusteru.
+
+![Azure Dev prostory můžete transparentně kombinovat a párovat produkční mikroslužeb s vývoj instance kontejneru, do testování nových verzí.](media/image38.png)
+
+**Obrázek 4 – 26**. Použití více mezer v Azure Dev mezery
+
+V podstatě můžete nastavit prostor sdíleném vývojovém v Azure. Každý Vývojář můžete zaměřit na pouze jejich součástí aplikace a můžete využít iterativní vývoj předběžné potvrzení změn kódu v prostoru dev, která už obsahuje všechny ostatní služby a cloudové prostředky, které jejich scénářů závisí na. Závislosti jsou vždy aktuální a vývojáři už pracují tak, aby zrcadlí produkčního prostředí.
+
+Azure Dev prostory nabízí koncepci místa, což umožňuje pracovat v izolaci a bez obav z přerušení členy týmu. Tato funkce je založena na adresu URL před opravy, takže pokud používáte jakoukoli předponu dev místa v adrese URL, pro každý kontejner požadavek, poběží speciální verzi kontejner nasazuje pro, který místo existuje. V opačném případě poběží verze globální nebo konsolidované.
+
+Zobrazí se [aplikaci eShopOnContainers wiki stránky v Azure Dev prostorech](https://github.com/dotnet-architecture/eShopOnContainers/wiki/10.2-Using-Azure-Dev-Spaces-and-AKS), abyste získali praktické zobrazení na konkrétní příklad.
+
+Další informace najdete v článku na [týmový vývoj pomocí Azure Dev prostory](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore).
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Úvod do řešení pomocí služby Azure Container Service pro hostování kontejnerů Docker**
-    [*https://docs.microsoft.com/azure/container-service/container-service-intro*](https://docs.microsoft.com/azure/container-service/container-service-intro)
+- **Začínáme s Azure Kubernetes Service (AKS)** \
+  [*https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal*](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)
 
--   **Přehled dockeru Swarm**
-    [*https://docs.docker.com/swarm/overview/*](https://docs.docker.com/swarm/overview/)
+- **Azure Dev mezery** \
+  [*https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces*](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces)
 
--   **Přehled režimu swarm**
-    [*https://docs.docker.com/engine/swarm/*](https://docs.docker.com/engine/swarm/)
-
--   **Přehled mesosphere DC/OS**
-    [*https://docs.mesosphere.com/1.7/overview/*](https://docs.mesosphere.com/1.7/overview/)
-
--   **Kubernetes.** Oficiální web. \
-    [*https://kubernetes.io/*](https://kubernetes.io/)
-
+- **Kubernetes** oficiální web. \
+  [*https://kubernetes.io/*](https://kubernetes.io/)
 
 >[!div class="step-by-step"]
-[Předchozí](resilient-high-availability-microservices.md)
-[další](using-azure-service-fabric.md)
+>[Předchozí](resilient-high-availability-microservices.md)
+>[další](using-azure-service-fabric.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytváření rozšiřitelné aplikace'
+title: 'Průvodce: Vytváření rozšiřitelné aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,13 +14,13 @@ ms.assetid: 694a33c5-a040-450d-aed5-ac49fc88ce61
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 63780583d035d6fab6b3a79424857b82a910ef09
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50744610"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155074"
 ---
-# <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
+# <a name="walkthrough-creating-an-extensible-application"></a>Průvodce: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk, který provádí funkce jednoduchou kalkulačku. Nepředvádí reálný scénář; Místo toho ukazuje základní funkce kanálu a jak doplněk může poskytovat služby hostitele.  
   
  Tento návod popisuje následující úlohy:  
@@ -43,11 +43,11 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk, který provádí funkc
   
 -   Spuštění aplikace hostitele.  
   
- Tento kanál předá pouze Serializovatelné typy (<xref:System.Double> a <xref:System.String>), mezi hostitelem a doplňku. Příklad, který ukazuje, jak předat kolekce komplexních datových typů, najdete v části [návod: předávání kolekcí mezi hostiteli a doplňky](https://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5).  
+ Tento kanál předá pouze Serializovatelné typy (<xref:System.Double> a <xref:System.String>), mezi hostitelem a doplňku. Příklad, který ukazuje, jak předat kolekce komplexních datových typů, najdete v části [názorný postup: Předání kolekcí mezi hostiteli a doplňky](https://msdn.microsoft.com/library/b532c604-548e-4fab-b11c-377257dd0ee5).  
   
  Definuje smlouvu pro tento kanál objektový model, čtyři aritmetických operací: Přidání, odečíst, násobení a dělení. Hostitel poskytuje doplněk rovnice k výpočtu, jako je například 2 + 2, a doplněk vrátí výsledek do hostitele.  
   
- Verze 2-in Kalkulačka poskytuje více výpočtu možnosti a ukazuje, správu verzí. Je popsána v [návod: povolení zpětné kompatibility při změně vašeho hostitele](https://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+ Verze 2-in Kalkulačka poskytuje více výpočtu možnosti a ukazuje, správu verzí. Je popsána v [názorný postup: Umožnění zpětné kompatibility při změně vašeho hostitele](https://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="prerequisites"></a>Požadavky  
  Budete potřebovat k dokončení tohoto návodu:  
@@ -86,7 +86,7 @@ Tento návod popisuje, jak vytvořit kanál pro doplněk, který provádí funkc
      Není nutné do kanálu strukturu složek ve složce vaší aplikace. Zde je použito pouze ke zvýšení pohodlí. Na příslušný krok průvodce vysvětluje, jak změnit kód v případě strukturu složek kanálu je v jiném umístění. Viz diskuze požadavky adresáře kanálu v [požadavky na vývoj kanálu](https://msdn.microsoft.com/library/ef9fa986-e80b-43e1-868b-247f4c1d9da5).  
   
     > [!NOTE]
-    >  `CalcV2` Složky se nepoužívá v tomto názorném postupu; je zástupný symbol pro [návod: povolení zpětné kompatibility při změně vašeho hostitele](https://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
+    >  `CalcV2` Složky se nepoužívá v tomto názorném postupu; je zástupný symbol pro [názorný postup: Umožnění zpětné kompatibility při změně vašeho hostitele](https://msdn.microsoft.com/library/6fa15bb5-8f04-407d-bd7d-675dc043c848).  
   
 ## <a name="creating-the-contract-and-views"></a>Vytvoření kontraktu a zobrazení  
  Definuje kontrakt segmentu pro tento kanál `ICalc1Contract` rozhraní, která definuje čtyři metody: `add`, `subtract`, `multiply`, a `divide`.  

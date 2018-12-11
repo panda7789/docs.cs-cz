@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 9b048beb0eb913fc6587dcc639a16df8153c550b
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 7454b25cdb1bede87c6f0bd179fcabd489922263
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123225"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154174"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
@@ -39,7 +39,7 @@ Obrázek 4 až 5 ukazuje regulárních svazky Dockeru, můžete umístit na úlo
 
 ![](./media/image5.png)
 
-Obrázek 4 – 5: datové svazky a externích zdrojů dat pro kontejnery aplikací/kontejnery
+Obrázek 4 – 5: Datové svazky a externích zdrojů dat pro kontejnery aplikací/kontejnery
 
 Lokalizovat ke správě dat sdílet mezi kontejnery, které běží na samostatných fyzických hostitelů, doporučujeme je velmi riskantní používat svazky pro obchodní data není-li hostitele Docker pevnou hostitelů/virtuálních počítačů, protože při použití kontejneru Dockeru do orchestrator Očekává se, že kontejnery přesunout z jednoho do jiného hostitele, v závislosti na optimalizace, které se provádí clusteru.
 
@@ -49,7 +49,6 @@ Proto pravidelně datové svazky jsou mechanismus dobrý postup při trasovací 
 
 Vzdálené zdroje dat. a mezipamětí, jako je SQL Database, DocumentDB nebo vzdálené mezipaměti, jako jsou Redis by být stejný jako vývoj bez kontejnery. Toto je jedním ze způsobů upřednostňovaný a prověřených, k ukládání dat obchodní aplikace.
 
-
 >[!div class="step-by-step"]
-[Předchozí](monolithic-applications.md)
-[další](soa-applications.md)
+>[Předchozí](monolithic-applications.md)
+>[další](soa-applications.md)

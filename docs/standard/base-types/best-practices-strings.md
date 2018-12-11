@@ -1,5 +1,6 @@
 ---
 title: Osvědčené postupy pro používání řetězců v .NET
+description: Zjistěte, jak efektivní používání řetězců v aplikacích .NET.
 ms.date: 09/13/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -19,12 +20,13 @@ helpviewer_keywords:
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6114553c6bcdac8521c80c10f470d4c38b15e738
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.custom: seodec18
+ms.openlocfilehash: f5ed250df1c8d4d96dee5a0561f952193078ddda
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080335"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150970"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
@@ -120,7 +122,7 @@ ms.locfileid: "47080335"
   
 <a name="the_details_of_string_comparison"></a>   
 ## <a name="the-details-of-string-comparison"></a>Podrobnosti o porovnání řetězců  
- Porovnání řetězců je srdcem mnoho řetězec operací souvisejících se zabezpečením, zejména řazení a testování rovnosti. V určeném pořadí řazení řetězců: Pokud "my" před "string" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "string". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí hodnotu 0 pro řetězce, které považuje za stejné. Dobré výkladu je, že žádný řetězec není menší než ten druhý. Smysluplných operací zahrnujících řetězce obsahuje jedno nebo obě z následujících postupů: Výsledkem porovnání s jiným řetězcem a provádění operace jasně definované řazení.  
+ Porovnání řetězců je srdcem mnoho řetězec operací souvisejících se zabezpečením, zejména řazení a testování rovnosti. Řazení řetězců v určeném pořadí: Pokud se "my" před "string" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "string". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí hodnotu 0 pro řetězce, které považuje za stejné. Dobré výkladu je, že žádný řetězec není menší než ten druhý. Smysluplných operací zahrnujících řetězce obsahuje jedno nebo obě z následujících postupů: Výsledkem porovnání s jiným řetězcem a provádění operace jasně definované řazení.  
 
 > [!NOTE]
 > Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verze tabulky váhy řazení pro systémy Linux a macOS. Konkrétní verze tabulky váhy řazení v Linuxu a macOS závisí na verzi [mezinárodní součásti pro kódování Unicode](http://site.icu-project.org/) knihovny nainstalované v systému. Informace o verzích ICU a Unicode verze, které implementují najdete v tématu [stahování ICU](http://site.icu-project.org/download).
@@ -335,7 +337,7 @@ Porovnání řetězců pomocí různých verzí rozhraní .NET nebo pomocí rozh
  [!code-csharp[Conceptual.Strings.BestPractices#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/indirect1.cs#9)]
  [!code-vb[Conceptual.Strings.BestPractices#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/indirect1.vb#9)]  
   
-### <a name="collections-example-hashtable-constructor"></a>Příklad kolekcí: konstruktor zatřiďovací tabulky  
+### <a name="collections-example-hashtable-constructor"></a>Příklad kolekcí: Konstruktor zatřiďovací tabulky  
  Druhý příklad: operace, která je tím ovlivněná tím, jak ve kterém jsou řetězce porovnány algoritmu hash řetězců poskytuje.  
   
  Následující příklad vytvoří <xref:System.Collections.Hashtable> objekt ji <xref:System.StringComparer> objekt, který je vrácený <xref:System.StringComparer.OrdinalIgnoreCase%2A?displayProperty=nameWithType> vlastnost. Protože třída <xref:System.StringComparer> , která je odvozena od <xref:System.StringComparer> implementuje <xref:System.Collections.IEqualityComparer> rozhraní, jeho <xref:System.Collections.IEqualityComparer.GetHashCode%2A> metoda se používá k výpočtu kódů hash řetězců v zatřiďovací tabulce.  

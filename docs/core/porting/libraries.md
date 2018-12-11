@@ -1,19 +1,19 @@
 ---
-title: Přenos aplikací .NET Core – knihovny
+title: Port knihoven pro .NET Core
 description: Zjistěte, jak přenést projekty knihovny z rozhraní .NET Framework do .NET Core.
 author: cartermp
-ms.author: mairaw
 ms.date: 07/14/2017
-ms.openlocfilehash: eb6b8506d8df218a053242cd0b8d3097fa6d9fd3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.custom: seodec18
+ms.openlocfilehash: 4002f7d0f98398163df1c4d02ff0e157584c2655
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199848"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169676"
 ---
-# <a name="porting-to-net-core---libraries"></a>Přenos aplikací .NET Core – knihovny
+# <a name="port-net-framework-libraries-to-net-core"></a>Port knihovny rozhraní .NET Framework do .NET Core
 
-Tento článek popisuje přenosem kód knihovny pro .NET Core tak, aby běžel napříč platformami.
+Zjistěte, jak přenést kód knihovny rozhraní .NET Framework do .NET Core, ke spuštění napříč platformami a rozšiřte dosah aplikací, které ji používají.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -59,7 +59,7 @@ Vzdálené komunikace .NET byla identifikována jako problematické architektury
 
 Komunikace mezi procesy, vezměte v úvahu mechanismus meziprocesové komunikace (IPC) jako alternativu k vzdálené komunikace, jako <xref:System.IO.Pipes> nebo <xref:System.IO.MemoryMappedFiles.MemoryMappedFile> třídy.
 
-V počítačích použijte jako alternativu řešení založené na síti. Pokud možno použijte protokol s nízkou režií prostého textu, jako je například HTTP. [Kestrel webový server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), webový server používá ASP.NET Core, je možnost tady. Také zvážit použití <xref:System.Net.Sockets> pro scénáře založené na síti, mezi počítači. Další možnosti najdete v tématu [.NET Open Source projektů pro vývojáře: zasílání zpráv](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
+V počítačích použijte jako alternativu řešení založené na síti. Pokud možno použijte protokol s nízkou režií prostého textu, jako je například HTTP. [Kestrel webový server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), webový server používá ASP.NET Core, je možnost tady. Také zvážit použití <xref:System.Net.Sockets> pro scénáře založené na síti, mezi počítači. Další možnosti najdete v tématu [.NET Open Source projektů pro vývojáře: Zasílání zpráv](https://github.com/Microsoft/dotnet/blob/master/dotnet-developer-projects.md#messaging).
 
 ### <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)
 
@@ -73,34 +73,17 @@ Podobně jako u certifikační Autority, transparentnost zabezpečení umožňuj
 
 Volit raději hranice zabezpečení poskytované operačního systému, například virtualizace, kontejnerů nebo uživatelské účty pro spouštění procesů s nejmenší sadu oprávnění.
 
-## <a name="converting-a-pcl-project"></a>Převod projekt PCL
+## <a name="retargeting-your-net-framework-code-to-net-framework-472"></a>Mění se cílení na rozhraní .NET Framework 4.7.2 kódu rozhraní .NET Framework
 
-Cíle projektu PCL můžete převést do .NET Standard načítání knihovny v sadě Visual Studio 2017 a provedením následujících kroků:
-
-1. Klikněte pravým tlačítkem na soubor projektu a vyberte **vlastnosti**.
-1. V části **knihovny**vyberte **Standard platformy cílové .NET**.
-
-Pokud vaše balíčky podpory NuGet 3.0, projektu změnit cílení na .NET Standard.
-
-Pokud vaše balíčky bez podpory NuGet 3.0, zobrazí se dialogové okno ze sady Visual Studio s výzvou k odinstalovat aktuální balíčky. Pokud se zobrazí toto upozornění, proveďte následující kroky:
-
-1. Klikněte pravým tlačítkem na projekt, vyberte **spravovat balíčky NuGet**.
-1. Poznamenejte si projektu balíčky.
-1. Odinstalace balíčků jeden po druhém.
-1. Může být potřeba restartovat Visual Studio a dokončete proces odinstalace. Pokud ano, **restartovat** tlačítko je v článku **Správce balíčků NuGet** okna.
-1. Když projekt znovu načte, zaměřuje .NET Standard. Přidáte balíčky, které jsou vyžadovány pro odinstalaci.
-
-## <a name="retargeting-your-net-framework-code-to-net-framework-462"></a>Mění se cílení kód rozhraní .NET Framework do .NET Framework 4.6.2
-
-Pokud je váš kód není zaměřen na rozhraní .NET Framework 4.6.2, doporučujeme změnit cílení na rozhraní .NET Framework 4.6.2. Tím se zajistí dostupnosti nejnovější alternativy rozhraní API pro případy, kdy .NET Standard nepodporuje existující rozhraní API.
+Pokud je váš kód není zaměřen na rozhraní .NET Framework 4.7.2, doporučujeme změnit cílení na rozhraní .NET Framework 4.7.2. Tím se zajistí dostupnosti nejnovější alternativy rozhraní API pro případy, kdy .NET Standard nepodporuje existující rozhraní API.
 
 Pro každý ze svých projektů v sadě Visual Studio, budete chtít port, postupujte takto:
 
-1. Klikněte pravým tlačítkem na projekt a vyberte vlastnosti.
-1. V **Cílová architektura** rozevíracího seznamu vyberte **rozhraní .NET Framework 4.6.2**.
+1. Klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**.
+1. V **Cílová architektura** rozevíracího seznamu vyberte **rozhraní .NET Framework 4.7.2**.
 1. Znovu zkompilujte vaše projekty.
 
-Protože projekty teď cílí na rozhraní .NET Framework 4.6.2, použijte tuto verzi rozhraní .NET Framework jako základu pro portování kódu.
+Protože projekty teď cílí na rozhraní .NET Framework 4.7.2, použijte tuto verzi rozhraní .NET Framework jako základu pro portování kódu.
 
 ## <a name="determining-the-portability-of-your-code"></a>Určení přenositelnost kódu
 
@@ -151,7 +134,7 @@ Tento přístup může být nejvhodnější pro projekty větší a složitějš
  
 Z analytické fáze může chvíli trvat v závislosti na velikosti vašeho základu kódu. Výdaje v této fázi chcete důkladně porozumět rozsahu, změny potřebné a obvykle při vytváření plánu vám ušetří čas čas v dlouhodobém horizontu, zejména v případě, že máte komplexní základ kódu.
 
-Váš plán může zahrnovat provedení významných změn do vašeho základu kódu zároveň stále cílí na rozhraní .NET Framework 4.6.2, takže jde strukturovanějších verzi předchozí postup. Jak přejít o spuštění vašeho plánu je závislá na vašem základu kódu.
+Váš plán může zahrnovat provedení významných změn do vašeho základu kódu zároveň stále cílí na rozhraní .NET Framework 4.7.2, takže jde strukturovanějších verzi předchozí postup. Jak přejít o spuštění vašeho plánu je závislá na vašem základu kódu.
 
 ### <a name="mixing-approaches"></a>Kombinováním přístupů
 

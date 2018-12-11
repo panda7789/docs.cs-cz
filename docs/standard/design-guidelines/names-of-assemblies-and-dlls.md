@@ -1,6 +1,6 @@
 ---
 title: Názvy sestavení a knihoven DLL
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], DLLs
@@ -8,14 +8,13 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 97bd152cff53fb1c2edb107b6d6b34bd91ca1c49
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+author: KrzysztofCwalina
+ms.openlocfilehash: 8e20d77c20be8dc74723117f3b0910ecc2090ef7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972056"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130972"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Názvy sestavení a knihoven DLL
 Sestavení je jednotka nasazení a identity pro programy pro spravovaný kód. I když sestavení může zahrnovat jeden nebo více souborů, obvykle sestavení mapování 1: 1 s knihovnou DLL. Proto tato část popisuje pouze knihovny DLL konvence, které pak můžou být mapované na zásady vytváření názvů sestavení.  
@@ -34,7 +33,7 @@ Sestavení je jednotka nasazení a identity pro programy pro spravovaný kód. I
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

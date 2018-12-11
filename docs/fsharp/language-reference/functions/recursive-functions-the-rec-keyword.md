@@ -1,13 +1,13 @@
 ---
 title: 'Rekurzivní funkce: Klíčové slovo rec (F#)'
-description: Zjistěte, jak se používá klíčové slovo 'rec' F# pomocí klíčového slova "let" k definování rekurzivní funkce.
+description: Zjistěte, jak F# – klíčové slovo "dop." pomocí klíčového slova "let" slouží k definování rekurzivní funkce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 5aab6ed8ab0fc3c0f0bcfc93c3ce6518ec53254f
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 0db3ed7f85a1380654f2827b4773985b661589c7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48024516"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127729"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Rekurzivní funkce: Klíčové slovo rec
 
@@ -30,14 +30,14 @@ function2-body
 
 ## <a name="remarks"></a>Poznámky
 
-Rekurzivní funkce, funkce, které volají samy, jsou explicitně označeny v jazyce F#. Díky tomu identifikátor, který definuje dostupné v oboru funkce.
+Rekurzivní funkce, funkce, které volají samy, jsou uvedené v explicitně F# jazyka. Díky tomu identifikátor, který definuje dostupné v oboru funkce.
 
 Následující kód ukazuje rekurzivní funkci, která vypočítá *n*<sup>th</sup> Fibonacciho číslo.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
 
->[!NOTE]
-V praxi jako je například výše uvedený kód totiž plýtváním paměti a času procesoru zahrnuje kterémkoli dříve vypočítané hodnoty.
+> [!NOTE]
+> V praxi jako je například výše uvedený kód totiž plýtváním paměti a času procesoru zahrnuje kterémkoli dříve vypočítané hodnoty.
 
 Metody jsou implicitně rekurzivní v rámci typu; není nutné přidat `rec` – klíčové slovo. Vazby let v rámci třídy nejsou implicitně rekurzivní.
 

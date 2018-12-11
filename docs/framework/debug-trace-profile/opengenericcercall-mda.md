@@ -12,36 +12,36 @@ helpviewer_keywords:
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 486c3c44b69c69a472b7405b6c14f9d27a29d756
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2cb99a1bda8223ddece4b4aff4a87d95357d90e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387517"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153693"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall – pomocník spravovaného ladění (MDA)
-`openGenericCERCall` Upozornit, že graf omezeného provádění oblast (CER) s proměnné obecného typu v kořenové metoda je zpracovávaný v JIT – kompilace nebo nativních bitových kopií časem vygenerování a alespoň jeden z obecná se aktivuje Pomocník spravovaného ladění Typ proměnné je odkaz na typ objektu.  
+`openGenericCERCall` Upozornit, oblast (CER) graf omezeného provádění s proměnnými obecného typu v metodě kořenové je zpracovávána v kompilaci JIT nebo nativní bitové kopie generování a alespoň jeden z obecného se aktivuje pomocníka spravovaného ladění Typ proměnné je odkaz na typ objektu.  
   
 ## <a name="symptoms"></a>Příznaky  
- CER kód není spuštěn, když byl přerušen vlákna nebo když je odpojen domény aplikace.  
+ CER kód nejde spustit, když je přerušeno vlákno nebo když je doména aplikace uvolněna.  
   
 ## <a name="cause"></a>příčina  
- Během JIT – kompilace vytvoření instance obsahující odkaz na typ objektu, který je pouze zástupce, protože výsledná kód jsou sdílena a každý typ proměnné objektových referencí mohou být jakéhokoli typu odkaz na objekt. To může zabránit přípravy některé prostředky běhu předem.  
+ V době kompilace JIT je instance obsahující odkaz na typ objektu, který pouze zástupce, protože výsledný kód je sdílet, a každý typ proměnné odkazu na objekt může být libovolný typ objektu odkaz. To může zabránit přípravy několik zdrojů informací za běhu, předem.  
   
- Metody s proměnné obecného typu můžete konkrétně líné přidělení prostředků na pozadí. Tyto jsou označovány jako položky obecné slovníku. Například pro příkaz `List<T> list = new List<T>();` kde `T` je proměnná obecného typu modulu runtime musí vyhledat a případně vytvořit přesný instance za běhu, například `List<Object>, List<String>`, a tak dále. To může selhat z různých důvodů mimo kontrolu vývojáře, například spuštění nedostatek paměti.  
+ Zejména metody s proměnnými obecného typu laxně přidělení prostředků na pozadí. Tyto jsou označovány jako položky generický slovník. Například pro příkaz `List<T> list = new List<T>();` kde `T` je obecný typem proměnné modul runtime musí vyhledat a případně také mohli vytvářet přesné vytváření instancí v době běhu, třeba `List<Object>, List<String>`a tak dále. To může selhat z různých důvodů mimo kontrolu vývojáře, jako je například spuštění nedostatek paměti.  
   
- Tato MDA by měl být aktivován pouze během JIT – kompilace, ne při přesné vytváření instancí.  
+ Toto MDA by měl být aktivována pouze v době kompilace JIT, ne po přesné vytváření instancí.  
   
- Po aktivaci tato MDA pravděpodobně příznaky jsou, že CERs nejsou funkční pro chybný konkretizací. Modul runtime nebyla ve skutečnosti se pokusil implementovat CER okolností, které způsobily MDA chcete aktivovat. Takže pokud vývojář používá sdílené vytváření instancí z CER, pak JIT – kompilace chyby, Obecné zadejte chyby při načítání nebo zrušení vláken v rámci oblasti určený CER nejsou zachycena.  
+ Když je toto MDA aktivováno, pravděpodobně příznaky jsou, že CERs nejsou funkční pro chybný instancí. Ve skutečnosti modul runtime nezačaly k implementaci CER za okolností, které způsobily MDA aktivaci. Pokud vývojář používá sdílené instance CER, pak chyby kompilace JIT, obecných typů zadejte chyby při načítání nebo zrušení vláken v oblasti určené CER proto nejsou zachyceny.  
   
 ## <a name="resolution"></a>Rozlišení  
- Nepoužívejte proměnné obecného typu, které jsou typu odkaz objektu pro metody, které mohou obsahovat CER.  
+ Nepoužívejte proměnné obecného typu, které jsou objekt odkazového typu pro metody, které mohou obsahovat CER.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- Zde je ukázkový výstup z této (mda).  
+ Následuje ukázkový výstup z tohoto MDA.  
   
  `Method 'GenericMethodWithCer', which contains at least one constrained execution region, cannot be prepared automatically since it has one or more unbound generic type parameters.`  
   
@@ -62,9 +62,9 @@ ms.locfileid: "33387517"
 ```  
   
 ## <a name="example"></a>Příklad  
- CER kód není spuštěn.  
+ Kód CER není spuštěn.  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Runtime.CompilerServices;  

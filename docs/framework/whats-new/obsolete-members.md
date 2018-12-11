@@ -10,11 +10,11 @@ ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8a0679dafda7935034d3a3ab0f4c43656ab5668b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185245"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151405"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralé členy a doporučené alternativy v každé sestavení pomocí následujících odkazů. Toto téma neobsahuje členy zastaralých typů. Seznam zastaralých typů najdete v tématu [zastaralých typů](../../../docs/framework/whats-new/obsolete-types.md).  
@@ -177,12 +177,12 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Reflection.AssemblyFlagsAttribute?displayProperty=nameWithType>|<xref:System.Reflection.AssemblyFlagsAttribute.%23ctor%28System.UInt32%29>|Tento konstruktor je zastaralý. Použijte prosím <xref:System.Reflection.AssemblyFlagsAttribute.%23ctor%28System.Reflection.AssemblyNameFlags%29?displayProperty=nameWithType> místo.|  
 |<xref:System.Reflection.AssemblyFlagsAttribute?displayProperty=nameWithType>|<xref:System.Reflection.AssemblyFlagsAttribute.Flags%2A>|Tato vlastnost je zastaralá. Použijte prosím <xref:System.Reflection.AssemblyFlagsAttribute.AssemblyFlags%2A?displayProperty=nameWithType> místo.|  
 |<xref:System.Reflection.Emit.ConstructorBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.ConstructorBuilder.ReturnType%2A>|Tato vlastnost je zastaralá.|  
-|<xref:System.Reflection.Emit.FieldBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.FieldBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
+|<xref:System.Reflection.Emit.FieldBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.FieldBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: Generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
 |<xref:System.Reflection.Emit.FlowControl?displayProperty=nameWithType>|<xref:System.Reflection.Emit.FlowControl.Phi>|Toto rozhraní API je zastaralá.|  
-|<xref:System.Reflection.Emit.MethodBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.MethodBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
+|<xref:System.Reflection.Emit.MethodBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.MethodBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: Generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
 |<xref:System.Reflection.Emit.OpCodeType?displayProperty=nameWithType>|<xref:System.Reflection.Emit.OpCodeType.Annotation>|Toto rozhraní API je zastaralá.|  
 |<xref:System.Reflection.Emit.OperandType?displayProperty=nameWithType>|<xref:System.Reflection.Emit.OperandType.InlinePhi>|Toto rozhraní API je zastaralá.|  
-|<xref:System.Reflection.Emit.ParameterBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.ParameterBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
+|<xref:System.Reflection.Emit.ParameterBuilder?displayProperty=nameWithType>|<xref:System.Reflection.Emit.ParameterBuilder.SetMarshal%2A>|Alternativní rozhraní API je k dispozici: Generování <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> vlastního atributu místo.|  
 |<xref:System.Resources.ResourceManager?displayProperty=nameWithType>|<xref:System.Resources.ResourceManager.ResourceSets>|Volání <xref:System.Resources.ResourceManager.InternalGetResourceSet%28System.Globalization.CultureInfo%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=nameWithType> místo.|  
 |<xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.GetManagedThunkForUnmanagedMethodPtr%2A>|<xref:System.Runtime.InteropServices.Marshal.GetManagedThunkForUnmanagedMethodPtr%2A> Metoda je zastaralá a bude v budoucí verzi odebrána.|  
 |<xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.GetThreadFromFiberCookie%2A>|<xref:System.Runtime.InteropServices.Marshal.GetThreadFromFiberCookie%2A> Metoda je zastaralá. Použijte hostujícího rozhraní API k provedení této operace.|  
@@ -291,7 +291,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Windows.Media.Media3D.Viewport3DVisual?displayProperty=nameWithType>|<xref:System.Windows.Media.Media3D.Viewport3DVisual.BitmapEffectInput%2A>|Bitmapové efekty jsou zastaralé a už se funkce. Zvažte použití <xref:System.Windows.Media.Effects.Effect?displayProperty=nameWithType> příslušné místo.|  
   
 <a name="PresFW"></a>   
-### <a name="assembly-presentationframeworkdll"></a>Sestavení: knihovně PresentationFramework.dll  
+### <a name="assembly-presentationframeworkdll"></a>Sestavení: Knihovně PresentationFramework.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -324,7 +324,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Activities.Presentation.Services.ModelChangedEventArgs?displayProperty=nameWithType>|<xref:System.Activities.Presentation.Services.ModelChangedEventArgs.PropertiesChanged%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Nepoužívejte tuto vlastnost. Místo nich se používá <xref:System.Activities.Presentation.Services.ModelChangedEventArgs.ModelChangeInfo%2A>.|  
   
 <a name="core"></a>   
-### <a name="assembly-systemcoredll"></a>Assembly: System.Core.dll  
+### <a name="assembly-systemcoredll"></a>Sestavení: System.Core.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -367,7 +367,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Runtime.CompilerServices.RuntimeOps?displayProperty=nameWithType>|<xref:System.Runtime.CompilerServices.RuntimeOps.Quote%2A>|Použití tohoto členu vygeneruje chybu kompilátoru.<br /><br /> Nepoužívejte tuto metodu.|  
   
 <a name="data"></a>   
-### <a name="assembly-systemdatadll"></a>Assembly: System.Data.dll  
+### <a name="assembly-systemdatadll"></a>Sestavení: System.Data.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -389,7 +389,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Data.SqlClient.SqlParameterCollection?displayProperty=nameWithType>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29>|<xref:System.Data.SqlClient.SqlParameterCollection.Add%28System.String%2CSystem.Object%29> se už nepoužívá. Použití <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A?displayProperty=nameWithType>.|  
   
 <a name="entity"></a>   
-### <a name="assembly-systemdataentitydll"></a>Sestavení: knihovně System.Data.Entity.dll  
+### <a name="assembly-systemdataentitydll"></a>Sestavení: Knihovně System.Data.Entity.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -399,7 +399,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Data.Objects.ObjectContext?displayProperty=nameWithType>|<xref:System.Data.Objects.ObjectContext.SaveChanges%28System.Boolean%29>|Místo nich se používá <xref:System.Data.Objects.ObjectContext.SaveChanges%28System.Data.Objects.SaveOptions%29>.|  
   
 <a name="oracleclient"></a>   
-### <a name="assembly-systemdataoracleclientdll"></a>Assembly: System.Data.OracleClient.dll  
+### <a name="assembly-systemdataoracleclientdll"></a>Sestavení: System.Data.OracleClient.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -589,7 +589,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Messaging.MessageQueue?displayProperty=nameWithType>|<xref:System.Messaging.MessageQueue.GetMessageEnumerator%2A>|Tato metoda vrátí hodnotu <xref:System.Messaging.MessageEnumerator?displayProperty=nameWithType> , který implementuje <xref:System.Messaging.MessageEnumerator.RemoveCurrent%2A?displayProperty=nameWithType> řady metod nesprávně. Použijte prosím <xref:System.Messaging.MessageQueue.GetMessageEnumerator2%2A?displayProperty=nameWithType> místo.|  
   
 <a name="servicemodel"></a>   
-### <a name="assembly-systemservicemodeldll"></a>Assembly: System.ServiceModel.dll  
+### <a name="assembly-systemservicemodeldll"></a>Sestavení: System.ServiceModel.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -601,7 +601,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.ServiceModel.Security.WindowsClientCredential?displayProperty=nameWithType>|<xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>|Tato vlastnost je zastaralá a je zachována pouze z důvodů zpětné kompatibility. Zásady místního počítače se použije k určení, pokud by měl být použit protokol NTLM.|  
   
 <a name="smDisc"></a>   
-### <a name="assembly-systemservicemodeldiscoverydll"></a>Assembly: System.ServiceModel.Discovery.dll  
+### <a name="assembly-systemservicemodeldiscoverydll"></a>Sestavení: System.ServiceModel.Discovery.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -609,14 +609,14 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint?displayProperty=nameWithType>|<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A>|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint.TransportSettings%2A> Vlastnost je zastaralá. Zvažte použití <xref:System.ServiceModel.Channels.UdpTransportBindingElement?displayProperty=nameWithType> pro nastavení vlastností přenosu.|  
   
 <a name="datavisualization"></a>   
-### <a name="assembly-systemwebdatavisualizationdll"></a>Assembly: System.Web.DataVisualization.dll  
+### <a name="assembly-systemwebdatavisualizationdll"></a>Sestavení: System.Web.DataVisualization.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
 |<xref:System.Web.UI.DataVisualization.Charting.Chart?displayProperty=nameWithType>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A>|<xref:System.Web.UI.DataVisualization.Charting.Chart.ViewStateData%2A> se už nepoužívá. Zjistěte <xref:System.Web.UI.Control.ViewState%2A?displayProperty=nameWithType> místo.|  
   
 <a name="web"></a>   
-### <a name="assembly-systemwebdll"></a>Assembly: System.Web.dll  
+### <a name="assembly-systemwebdll"></a>Sestavení: System.Web.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -651,14 +651,14 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Web.UI.WebControls.Xml?displayProperty=nameWithType>|<xref:System.Web.UI.WebControls.Xml.Document%2A>|Doporučenou alternativou je <xref:System.Web.UI.WebControls.Xml.XPathNavigator%2A?displayProperty=nameWithType> vlastnost. Vytvoření <xref:System.Xml.XPath.XPathDocument?displayProperty=nameWithType> a volat <xref:System.Xml.XPath.XPathDocument.CreateNavigator%2A?displayProperty=nameWithType> k vytvoření <xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>.|  
   
 <a name="dynamicdata"></a>   
-### <a name="assembly-systemwebdynamicdatadll"></a>Assembly: System.Web.DynamicData.dll  
+### <a name="assembly-systemwebdynamicdatadll"></a>Sestavení: System.Web.DynamicData.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
 |<xref:System.Web.DynamicData.DynamicDataExtensions?displayProperty=nameWithType>|<xref:System.Web.DynamicData.DynamicDataExtensions.EnablePersistedSelection%2A>|Použití `EnablePersistedSelection` vlastnosti u ovládacího prvku, jako <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> nebo <xref:System.Web.UI.WebControls.ListView?displayProperty=nameWithType>.|  
   
 <a name="extensions"></a>   
-### <a name="assembly-systemwebextensionsdll"></a>Assembly: System.Web.Extensions.dll  
+### <a name="assembly-systemwebextensionsdll"></a>Sestavení: System.Web.Extensions.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -672,7 +672,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Web.UI.ScriptResourceAttribute?displayProperty=nameWithType>|<xref:System.Web.UI.ScriptResourceAttribute.TypeName%2A>|Tato vlastnost je zastaralá. Místo nich se používá <xref:System.Web.UI.ScriptResourceAttribute.StringResourceClientTypeName%2A?displayProperty=nameWithType>.|  
   
 <a name="services"></a>   
-### <a name="assembly-systemwebservicesdll"></a>Assembly: System.Web.Services.dll  
+### <a name="assembly-systemwebservicesdll"></a>Sestavení: System.Web.Services.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -680,7 +680,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Web.Services.Protocols.SoapHeaderAttribute?displayProperty=nameWithType>|<xref:System.Web.Services.Protocols.SoapHeaderAttribute.Required%2A>|Tato vlastnost se odebere z budoucí verze. Přítomnost konkrétní záhlaví ve zprávě SOAP je už nebudou vynucené.|  
   
 <a name="forms"></a>   
-### <a name="assembly-systemwindowsformsdll"></a>Assembly: System.Windows.Forms.dll  
+### <a name="assembly-systemwindowsformsdll"></a>Sestavení: System.Windows.Forms.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -697,7 +697,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Windows.Forms.PrintPreviewDialog?displayProperty=nameWithType>|<xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A>|Tato vlastnost je zastaralá. Použití <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A?displayProperty=nameWithType> vlastnost místo.|  
   
 <a name="xaml"></a>   
-### <a name="assembly-systemxamldll"></a>Assembly: System.Xaml.dll  
+### <a name="assembly-systemxamldll"></a>Sestavení: System.Xaml.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -705,7 +705,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute?displayProperty=nameWithType>|<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.%23ctor%28System.Type%2CSystem.Type%29>|`expressionType` Argument není používán analyzátoru XAML. Pokud chcete zadat, očekávaný návratový typ, použijte <xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute.%23ctor%28System.Type%29?displayProperty=nameWithType>. Pokud chcete zadat vlastní zpracování pro typy výrazů, použijte <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType>.|  
   
 <a name="xml"></a>   
-### <a name="assembly-systemxmldll"></a>Assembly: System.Xml.dll  
+### <a name="assembly-systemxmldll"></a>Sestavení: System.Xml.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  
@@ -781,7 +781,7 @@ Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhran
 |`Microsoft.Data.Entity.Build.Tasks.EntityDeploy`|`EntityDataModelEmbeddedResources`|Nejprve zastaralé v rozhraní .NET Framework 4.5.<br /><br /> Používá pouze pro zpětnou kompatibilitu verze 3.5.|  
   
 <a name="visualbasic"></a>   
-### <a name="assembly-microsoftvisualbasicdll"></a>Assembly: Microsoft.VisualBasic.dll  
+### <a name="assembly-microsoftvisualbasicdll"></a>Sestavení: Microsoft.VisualBasic.dll  
   
 |Typ|Člen|Zpráva|  
 |----------|------------|-------------|  

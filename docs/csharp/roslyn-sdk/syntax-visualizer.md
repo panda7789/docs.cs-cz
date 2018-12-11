@@ -3,12 +3,12 @@ title: Prozkoumání kódu pomocí vizualizéru syntaxe Roslyn v sadě Visual St
 description: Vizualizéru syntaxe poskytuje vizuální nástroj, který chcete prozkoumat modelů, který generuje sada SDK platformy kompilátoru .NET pro kód.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: 97a058eed8c0babebd3a41ec91875bef83ac3527
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 9b283f656b5c468a2270abe9818a89218ce63d16
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45750203"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143558"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Prozkoumání kódu pomocí vizualizéru syntaxe Roslyn v sadě Visual Studio
 
@@ -32,7 +32,7 @@ Vytvořte nový projekt pomocí **souboru** > **nový projekt** příkazu. Můž
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 ![Vizualizace stromu syntaxe jazyka C#](media/syntax-visualizer/visualize-csharp.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 ![Vizualizace stromu syntaxe jazyka Visual Basic](media/syntax-visualizer/visualize-visual-basic.png)
 
 ---
@@ -41,7 +41,7 @@ Jak je znázorněno v předchozí obrázky, zobrazí okno nástroje vizualizáto
 
 Syntaxe stromové struktury tvoří tři typy položek – *uzly*, *tokeny*, a *triviální prvek*. Můžete si přečíst další informace o těchto typů v [práce se syntaxí](work-with-syntax.md) článku. Položky jednotlivých typů jsou reprezentovány pomocí různých barev. Klikněte na tlačítko 'Legendy' získáte přehled o barvy použité.
 
-Každé položky ve stromové struktuře také zobrazí jeho vlastní **span**. **Span** je indexy (pozice počáteční a koncové) v textovém souboru tohoto uzlu.  V předchozím příkladu C#, vybrané "UsingKeyword [0..5)" token má **rozpětí** široké, to znamená 5 znaků [0..5). "[.)" Zápis znamená, že počáteční index je součástí rozsahu, ale koncové index není.
+Každé položky ve stromové struktuře také zobrazí jeho vlastní **span**. **Span** je indexy (pozice počáteční a koncové) v textovém souboru tohoto uzlu.  V předchozím C# například, vybrané "UsingKeyword [0..5)" token má **rozpětí** široké, to znamená 5 znaků [0..5). "[.)" Zápis znamená, že počáteční index je součástí rozsahu, ale koncové index není.
 
 Existují dva způsoby, jak procházet stromu:
 * Rozbalit nebo klikněte na položky ve stromové struktuře. Vizualizér automaticky vybere text odpovídá rozpětí pro tuto položku v editoru kódu.
@@ -62,7 +62,7 @@ Klikněte pravým tlačítkem na libovolné položky ve stromové struktuře a k
 Vizualizér zobrazí grafické znázornění podstrom umístěných na vybranou položku. Zkuste tyto kroky pro **MethodDeclaration** uzlu odpovídající `Main()` metoda ve příklad jazyka C#. Vizualizér zobrazuje graf s syntaxe vypadá takto:
 
 ![Zobrazení grafu syntaxe jazyka C#](media/syntax-visualizer/csharp-syntax-graph.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 
 Zkuste to stejné pro **SubBlock** uzlu odpovídající `Main()` metoda v předchozím příkladu jazyka Visual Basic. Vizualizér zobrazuje graf s syntaxe vypadá takto:
 
@@ -84,7 +84,7 @@ Další možností je umístit okno grafu syntaxe na druhém monitoru, v nastave
 
 Syntax Visualizer umožňuje základní kontroly symbolů a sémantické informace. Typ `double x = 1 + 1;` uvnitř Main() v příklad jazyka C#. Vyberte výraz `1 + 1` v okně editoru kódu. Zvýrazní vizualizéru **AddExpression** uzlu ve vizualizátoru. Klikněte pravým tlačítkem myši na tomto **AddExpression** a klikněte na **zobrazení symbolů (pokud existuje)**. Všimněte si, že většina položek nabídky má kvalifikátor "je-li k dispozici". Syntax Visualizer zkontroluje, zda obsahuje vlastnosti uzlu, včetně vlastnosti, které nemusí být k dispozici pro všechny uzly. 
 
-Vlastnost mřížky ve vizualizéru aktualizací, jak je znázorněno na následujícím obrázku: symbol výrazu je **SynthesizedIntrinsicOperatorSymbol** s **druh = metoda**.
+Vlastnost mřížky ve vizualizéru aktualizací, jak je znázorněno na následujícím obrázku: Symbol pro výraz je **SynthesizedIntrinsicOperatorSymbol** s **druh = metoda**.
 
 ![Vlastnosti symbolu](media/syntax-visualizer/symbol-properties.png)
 
@@ -128,7 +128,7 @@ Zkontrolujte, zda symbol odpovídá jakékoli deklarovaného typu, metoda, vlast
 
 Výše uvedené příklady VB je možné snadno replikovat v jazyce C#. Typ `using C = System.Console;` místo `Imports C = System.Console` aliasu. Předchozí kroky v jazyce C# poskytují shodné výsledky v okně vizualizér.
 
-Sémantické kontroly operace jsou dostupné jenom pro uzly. Nejsou k dispozici na tokeny nebo triviální prvek. Ne všechny uzly měly zajímavé sémantické informace ke kontrole. Pokud uzel není zajímavé sémantické informace, že kliknete na **zobrazení * Symbol (pokud existuje)** zobrazí mřížku prázdnou vlastnost.
+Sémantické kontroly operace jsou dostupné jenom pro uzly. Nejsou k dispozici na tokeny nebo triviální prvek. Ne všechny uzly měly zajímavé sémantické informace ke kontrole. Pokud uzel není zajímavé sémantické informace, že kliknete na **zobrazení \* Symbol (pokud existuje)** zobrazí mřížku prázdnou vlastnost.
 
 Další informace o rozhraních API pro sémantické analýzy v [práce se sémantikou](work-with-semantics.md) přehled dokumentu.
 

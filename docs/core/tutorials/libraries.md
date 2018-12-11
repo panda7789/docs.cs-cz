@@ -1,15 +1,15 @@
 ---
 title: Vývoj knihoven pomocí nástrojů pro různé platformy
-description: Zjistěte, jak vytvořit knihovny pro .NET pomocí nástrojů rozhraní příkazového řádku .NET Core.
+description: Zjistěte, jak vytvářet knihovny .NET Core pomocí nástroje příkazového řádku .NET Core. Vytvoříte knihovnu, která podporuje více platforem.
 author: cartermp
-ms.author: mairaw
 ms.date: 05/01/2017
-ms.openlocfilehash: eb1dc404f9a08940464eca83a6848076b589afa8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
-ms.translationtype: HT
+ms.custom: seodec18
+ms.openlocfilehash: f93c39d6225eef180634b238414fcda99750189f
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188258"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169362"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
@@ -19,9 +19,9 @@ Tento článek popisuje, jak napsat knihoven pro .NET pomocí nástrojů příka
 
 Potřebujete [.NET Core SDK a rozhraní příkazového řádku](https://www.microsoft.com/net/core) na vašem počítači nainstalovaný.
 
-V částech tohoto dokumentu se zabývá verze rozhraní .NET Framework, je nutné [rozhraní .NET Framework](http://getdotnet.azurewebsites.net/) nainstalovaná na počítači s Windows.
+V částech tohoto dokumentu se zabývá verze rozhraní .NET Framework, je nutné [rozhraní .NET Framework](https://dotnet.microsoft.com) nainstalovaná na počítači s Windows.
 
-Kromě toho pokud chcete podporovat starší cíle rozhraní .NET Framework, je potřeba nainstalovat cílení/developer Pack pro starší verze rozhraní framework z [.NET cílové platformy stránky](http://getdotnet.azurewebsites.net/target-dotnet-platforms.html). Najdete v této tabulce:
+Kromě toho pokud chcete podporovat starší cíle rozhraní .NET Framework, je potřeba nainstalovat cílení/developer Pack pro starší verze rozhraní framework z [stáhnout .NET archivuje stránky](https://dotnet.microsoft.com/download/archives). Najdete v této tabulce:
 
 | Verze rozhraní .NET framework | Co se má stáhnout                                       |
 | ---------------------- | ------------------------------------------------------ |
@@ -39,7 +39,7 @@ Pokud si nejste zcela obeznámeni s .NET Standard, přečtěte si [.NET Standard
 
 V tomto článku je tabulka, která mapuje na různé implementace .NET Standard verze:
 
-[!INCLUDE [net-standard-table](~/includes/net-standard-table.md)]
+[!INCLUDE [net-standard-table](../../../includes/net-standard-table.md)]
 
 Zde je, co tato tabulka znamená, že pro účely vytvoření knihovny:
 
@@ -136,7 +136,7 @@ Všimněte si tři hlavní změny tady:
 
 Systém sestavení je seznámen následující symboly preprocesoru používané `#if` direktivy:
 
-[!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
+[!INCLUDE [Preprocessor symbols](../../../includes/preprocessor-symbols.md)]
 
 Tady je příklad provedete použití podmíněné kompilace na cíle:
 
@@ -253,7 +253,7 @@ Je důležité mít možnost Testovat napříč platformami. Můžete použít b
    dotnet build
    ```
 
-   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+   [!INCLUDE[DotNet Restore Note](../../../includes/dotnet-restore-note.md)]
 
 1. Ověřte, že xUnit běží spuštěním `dotnet test` příkazu. Pokud jste se rozhodli použít MSTest, byste místo toho spustit MSTest runner konzoly.
     
@@ -268,7 +268,7 @@ Váš kód bude automaticky znovu vytvořen při vyvolání `dotnet test` přík
 
 Běžné potřebu větší knihovny, je umístit funkce v různých projektech.
 
-Představte si, že jste si přáli sestavit knihovnu, která by mohla využívat idiomatickou jazyků C# a F #. To by znamenalo, že spotřebitelé knihovny je využívat způsoby, které jsou přirozené pro C# nebo F #. Například v jazyce C# může využívat knihovny takto:
+Představte si nepřejí vytvoří knihovnu, která by mohla využívat v idiomatickou C# a F#. To by znamenalo, že spotřebitelé knihovny je využívat způsoby, které jsou přirozené C# nebo F#. Například v jazyce C# může využívat knihovny takto:
 
 ```csharp
 using AwesomeLibrary.CSharp;
@@ -281,7 +281,7 @@ public Task DoThings(Data data)
 }
 ```
 
-V jazyce F # může vypadat například takto:
+V F#, může vypadat třeba takto:
 
 ```fsharp
 open AwesomeLibrary.FSharp
@@ -292,11 +292,11 @@ let doWork data = async {
 }
 ```
 
-Scénáře využití, jako je to znamená, že rozhraní API, ke kterému přistupujete musí mít odlišnou strukturu pro C# a F #.  Běžným přístupem k provádění to je faktor veškerou logiku knihovny do projektu core, s projekty C# a F # definice rozhraní API vrstvy, které volají do tohoto projektu core.  Zbytek části budete používat následující názvy:
+Scénáře využití, jako je to znamená, že rozhraní API, ke kterému přistupujete musí mít odlišnou strukturu pro C# a F#.  Běžným přístupem k provádění to je zohlednit veškerou logiku knihovny do projektu core s C# a F# projekty definice rozhraní API vrstvy toto volání do tohoto projektu core.  Zbytek části budete používat následující názvy:
 
 * **AwesomeLibrary.Core** – základní projekt, který bude obsahovat veškerou logiku pro knihovnu
 * **AwesomeLibrary.CSharp** – projekt pomocí veřejných rozhraní API určené pro použití v jazyce C#
-* **AwesomeLibrary.FSharp** – projekt pomocí veřejných rozhraní API určené pro použití v jazyce F #
+* **AwesomeLibrary.FSharp** – projekt pomocí veřejného rozhraní API určené pro využití vF#
 
 Spuštěním následujících příkazů v terminálu vytvořit stejnou strukturu jako vodítko při tom tato:
 

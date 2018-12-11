@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: de6b2e6650d173d325b2a717f5ee47506c307de7
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 7459173f21bd5219c2aa7b994ac2b2b44857375f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308588"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152773"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
 
@@ -83,7 +83,7 @@ Má integrovanou podporu pro ASP.NET Core a interně využívá techniky označo
 
 Plevami statický nastane, pokud volání statické metody třídy nebo přistupovat ke statické vlastnosti, které mají vedlejší účinky nebo závislosti na infrastruktuře. Například pokud máte metodu, která volá statická metoda, která pak zapisuje do databáze, vaše metoda je těsně spjat s databáze. Cokoli, co toto volání databáze přestane fungovat přeruší metodu. Testování těchto metod je známo, že obtížné, protože tyto testy vyžadují komerční napodobování knihovny k napodobení volání statické, nebo pouze jde testovat pomocí testovací databázi na místě. Statické volání, které nemají žádné závislosti na infrastruktuře, zejména těch, které jsou zcela bezstavové, se dají volat a mít žádný vliv na párování nebo testovatelnosti (nad rámec spojovacího kódu na statické volání sebe sama).
 
-Mnoho vývojářů pochopení rizik statické plevami a globální stav, ale bude stále úzce spojit svůj kód pro konkrétní implementace prostřednictvím přímé vytváření instancí. "Nové je připevnit" má být připomenutí toto párování a ne obecné odsouzení použijte klíčové slovo new. Stejně jako s volání statické metody, nové instance typů, které nemají žádné externí závislosti obvykle není úzce spárovat kód podrobnosti implementace nebo ztížit testování. Ale pokaždé, když je vytvořena instance třídy, pouze krátkou chvíli trvat zvažte, jestli má smysl pevně kódovat této konkrétní instance v této konkrétní umístění, nebo pokud by bylo lepší návrh požádat o tuto instanci jako závislost.
+Mnoho vývojářů pochopení rizik statické plevami a globální stav, ale bude stále úzce spojit svůj kód pro konkrétní implementace prostřednictvím přímé vytváření instancí. "Nové je připevnit" má být připomenutí toto párování a obecné odsouzení využívání `new` – klíčové slovo. Stejně jako s volání statické metody, nové instance typů, které nemají žádné externí závislosti obvykle není úzce spárovat kód podrobnosti implementace nebo ztížit testování. Ale pokaždé, když je vytvořena instance třídy, pouze krátkou chvíli trvat zvažte, jestli má smysl pevně kódovat této konkrétní instance v této konkrétní umístění, nebo pokud by bylo lepší návrh požádat o tuto instanci jako závislost.
 
 ### <a name="declare-your-dependencies"></a>Deklarace závislostí
 
@@ -138,7 +138,7 @@ Dalším přístupem k oddělení aplikace od podrobností implementace je mikro
 
 ### <a name="feature-organization"></a>Funkce organizace
 
-Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako složky funkce nebo funkce řezů (viz také: [svislé řezy](https://deviq.com/vertical-slices/)).
+Aplikace ASP.NET Core ve výchozím nastavení, uspořádejte jejich strukturu složek Kontrolerů a zobrazení a často modely ViewModel. Kód na straně klienta pro podporu těchto struktur na straně serveru jsou obvykle uložená samostatně ve složce wwwroot. Však velké aplikace setkat s problémy u této organizace, protože pracující na jakékoli dané funkce často vyžaduje přechod mezi tyto složky. Načte mnohem obtížnější, roste počet souborů a podsložek v každé složky, což vede k spoustu posouvání se v Průzkumníku řešení. Jedním řešením tohoto problému, je uspořádat kód aplikace podle _funkce_ místo podle typu souboru. Tento styl organizace se obvykle označuje jako složky funkce nebo funkce řezů (viz také: [Svislé řezy](https://deviq.com/vertical-slices/)).
 
 ASP.NET Core MVC podporuje oblasti pro tento účel. Pomocí oblastí, můžete vytvořit samostatné sady Kontrolerů a zobrazení složek (stejně jako jakékoli přidružených modelech) v každé oblasti složky. Obrázek 7-1 znázorňuje strukturu složky příklad používat.
 
@@ -403,7 +403,7 @@ Kromě poskytování stránky a reagování na žádosti o data prostřednictví
 
 Funkce SignalR technologie ASP.NET Core je k dispozici s ASP.NET Core 2.1.
 
-Komunikace v reálném čase klienta, jestli přes WebSockets přímo nebo jinými technikami, jsou užitečné v různých scénářích aplikací. Mezi příklady patří:
+Komunikace v reálném čase klienta, jestli přes WebSockets přímo nebo jinými technikami, jsou užitečné v různých scénářích aplikací. Možné příklady:
 
 - Konverzační živých aplikací
 
@@ -559,5 +559,5 @@ _Další informace o možnostech nasazení Azure v [kapitoly 10](development-pro
 >   <https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction>
 
 >[!div class="step-by-step"]
-[Předchozí](common-client-side-web-technologies.md)
-[další](work-with-data-in-asp-net-core-apps.md)
+>[Předchozí](common-client-side-web-technologies.md)
+>[další](work-with-data-in-asp-net-core-apps.md)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - protocols, sockets
 - Internet, sockets
 ms.assetid: 813489a9-3efd-41b6-a33f-371d55397676
-ms.openlocfilehash: d51553b34f221283429d40a65e08f5ba58faf36a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 24bbbc304111b3735bc6e8f3965ef37e9374bda6
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198860"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152510"
 ---
 # <a name="using-an-asynchronous-server-socket"></a>Použití asynchronního serverového soketu
 Asynchronního serverového sokety používají asynchronní programovací model rozhraní .NET Framework pro zpracování žádostí o služby sítě. <xref:System.Net.Sockets.Socket> Třídy vyplývá ze standardních rozhraní .NET Framework asynchronní vzor pro pojmenování; například synchronní <xref:System.Net.Sockets.Socket.Accept%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginAccept%2A> a <xref:System.Net.Sockets.Socket.EndAccept%2A> metody.  
@@ -32,13 +32,14 @@ Asynchronního serverového sokety používají asynchronní programovací model
  V následujícím příkladu, chcete-li začít přijímat žádosti o připojení ze sítě, metoda `StartListening` inicializuje **soketu** a použije je **BeginAccept** metoda začněte přijímat nové připojení. Přijmout metoda zpětného volání je volána, když obdrží nový požadavek na připojení soketu. Je zodpovědná za získání **soketu** instanci, která bude zpracovávat připojení a zpracování, která **soketu** vypnout na vlákno, které bude zpracovávat žádosti. Implementuje metody zpětného volání přijmout <xref:System.AsyncCallback> delegovat; vrátí hodnotu typu void a přijímá jeden parametr typu <xref:System.IAsyncResult>. V následujícím příkladu je prostředí přijmout metody zpětného volání.  
   
 ```vb  
-Sub acceptCallback(ar As IAsyncResult)  
+Sub AcceptCallback(ar As IAsyncResult)  
     ' Add the callback code here.  
-End Sub 'acceptCallback  
+End Sub 'AcceptCallback  
 ```  
   
 ```csharp  
-void acceptCallback( IAsyncResult ar) {  
+void AcceptCallback(IAsyncResult ar)
+{  
     // Add the callback code here.  
 }  
 ```  
@@ -47,26 +48,24 @@ void acceptCallback( IAsyncResult ar) {
   
 ```vb  
 listener.BeginAccept( _  
-    New AsyncCallback(SocketListener.acceptCallback),_  
+    New AsyncCallback(SocketListener.AcceptCallback),_  
     listener)  
 ```  
   
 ```csharp  
-listener.BeginAccept(  
-    new AsyncCallback(SocketListener.acceptCallback),   
-    listener);  
+listener.BeginAccept(new AsyncCallback(SocketListener.AcceptCallback), listener);  
 ```  
   
  Asynchronní sokety používají podprocesy z fondu podprocesů systém ke zpracování příchozích připojení. Jedno vlákno je zodpovědný za přijímat připojení, jiné vlákno se používá ke zpracování jednotlivých příchozí připojení a jiné vlákno zodpovídá za příjem dat z připojení. To může být stejném vlákně, v závislosti na tom, které vlákno je přiřazeno ve fondu vláken. V následujícím příkladu <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> třídy pozastaví provádění z hlavního vlákna a signalizuje, že provádění může pokračovat.  
   
- Následující příklad ukazuje asynchronní metodu, která vytvoří asynchronní soket TCP/IP v místním počítači a začne přijímat připojení. Předpokládá, že je globální **ManualResetEvent** s názvem `allDone`, že metoda je členem třídy s názvem `SocketListener`, a že s názvem metody zpětného volání `acceptCallback` je definována.  
+ Následující příklad ukazuje asynchronní metodu, která vytvoří asynchronní soket TCP/IP v místním počítači a začne přijímat připojení. Předpokládá, že je globální **ManualResetEvent** s názvem `allDone`, že metoda je členem třídy s názvem `SocketListener`, a že s názvem metody zpětného volání `AcceptCallback` je definována.  
   
 ```vb  
 Public Sub StartListening()  
     Dim ipHostInfo As IPHostEntry = Dns.Resolve(Dns.GetHostName())  
     Dim localEP = New IPEndPoint(ipHostInfo.AddressList(0), 11000)  
   
-    Console.WriteLine("Local address and port : {0}", localEP.ToString())  
+    Console.WriteLine($"Local address and port : {localEP.ToString()}")  
   
     Dim listener As New Socket(localEP.Address.AddressFamily, _  
        SocketType.Stream, ProtocolType.Tcp)  
@@ -80,7 +79,7 @@ Public Sub StartListening()
   
             Console.WriteLine("Waiting for a connection...")  
             listener.BeginAccept(New _  
-                AsyncCallback(SocketListener.acceptCallback), _  
+                AsyncCallback(SocketListener.AcceptCallback), _  
                 listener)  
   
             allDone.WaitOne()  
@@ -93,52 +92,55 @@ End Sub 'StartListening
 ```  
   
 ```csharp  
-public void StartListening() {  
+public void StartListening()
+{  
     IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());  
-    IPEndPoint localEP = new IPEndPoint(ipHostInfo.AddressList[0],11000);  
+    IPEndPoint localEP = new IPEndPoint(ipHostInfo.AddressList[0], 11000);  
   
-    Console.WriteLine("Local address and port : {0}",localEP.ToString());  
+    Console.WriteLine($"Local address and port : {localEP.ToString()}");  
   
-    Socket listener = new Socket( localEP.Address.AddressFamily,  
-        SocketType.Stream, ProtocolType.Tcp );  
+    Socket listener = new Socket(localEP.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);  
   
-    try {  
+    try 
+    {  
         listener.Bind(localEP);  
         listener.Listen(10);  
   
-        while (true) {  
+        while (true)
+        {  
             allDone.Reset();  
   
             Console.WriteLine("Waiting for a connection...");  
-            listener.BeginAccept(  
-                new AsyncCallback(SocketListener.acceptCallback),   
-                listener );  
+            listener.BeginAccept(new AsyncCallback(SocketListener.AcceptCallback), listener);  
   
             allDone.WaitOne();  
         }  
-    } catch (Exception e) {  
+    }
+    catch (Exception e)
+    {  
         Console.WriteLine(e.ToString());  
     }  
   
-    Console.WriteLine( "Closing the listener...");  
+    Console.WriteLine("Closing the listener...");  
 }  
 ```  
   
- Metoda zpětného volání přijmout (`acceptCallback` v předchozím příkladu) zodpovídá za signalizace hlavního vlákna aplikace pokračovat zpracování, navazování připojení s klientem a spouští se asynchronní čtení dat z klienta. Následující příklad je první část implementace `acceptCallback` metody. Tato část metody signály hlavního vlákna aplikace chcete pokračovat ve zpracování a naváže připojení ke klientovi. Předpokládá globální **ManualResetEvent** s názvem `allDone`.  
+ Metoda zpětného volání přijmout (`AcceptCallback` v předchozím příkladu) zodpovídá za signalizace hlavního vlákna aplikace pokračovat zpracování, navazování připojení s klientem a spouští se asynchronní čtení dat z klienta. Následující příklad je první část implementace `AcceptCallback` metody. Tato část metody signály hlavního vlákna aplikace chcete pokračovat ve zpracování a naváže připojení ke klientovi. Předpokládá globální **ManualResetEvent** s názvem `allDone`.  
   
 ```vb  
-Public Sub acceptCallback(ar As IAsyncResult)  
+Public Sub AcceptCallback(ar As IAsyncResult)  
     allDone.Set()  
   
     Dim listener As Socket = CType(ar.AsyncState, Socket)  
     Dim handler As Socket = listener.EndAccept(ar)  
   
     ' Additional code to read data goes here.  
-End Sub 'acceptCallback  
+End Sub 'AcceptCallback  
 ```  
   
 ```csharp  
-public void acceptCallback(IAsyncResult ar) {  
+public void AcceptCallback(IAsyncResult ar) 
+{  
     allDone.Set();  
   
     Socket listener = (Socket) ar.AsyncState;  
@@ -160,7 +162,8 @@ End Class 'StateObject
 ```  
   
 ```csharp  
-public class StateObject {  
+public class StateObject 
+{  
     public Socket workSocket = null;  
     public const int BufferSize = 1024;  
     public byte[] buffer = new byte[BufferSize];  
@@ -168,12 +171,12 @@ public class StateObject {
 }  
 ```  
   
- Část `acceptCallback` metodu, která začne dostávat data z klientského soketu nejprve inicializuje novou instanci `StateObject` třídy a poté zavolá <xref:System.Net.Sockets.Socket.BeginReceive%2A> metoda začne asynchronně číst data z klientského soketu.  
+ Část `AcceptCallback` metodu, která začne dostávat data z klientského soketu nejprve inicializuje novou instanci `StateObject` třídy a poté zavolá <xref:System.Net.Sockets.Socket.BeginReceive%2A> metoda začne asynchronně číst data z klientského soketu.  
   
- Následující příklad ukazuje kompletní `acceptCallback` metody. Předpokládá, že je globální **ManualResetEvent** s názvem `allDone,` , který `StateObject` třída je definována a že `readCallback` je definována metoda v třídě s názvem `SocketListener`.  
+ Následující příklad ukazuje kompletní `AcceptCallback` metody. Předpokládá, že je globální **ManualResetEvent** s názvem `allDone,` , který `StateObject` třída je definována a že `ReadCallback` je definována metoda v třídě s názvem `SocketListener`.  
   
 ```vb  
-Public Shared Sub acceptCallback(ar As IAsyncResult)  
+Public Shared Sub AcceptCallback(ar As IAsyncResult)  
     ' Get the socket that handles the client request.  
     Dim listener As Socket = CType(ar.AsyncState, Socket)  
     Dim handler As Socket = listener.EndAccept(ar)  
@@ -185,12 +188,13 @@ Public Shared Sub acceptCallback(ar As IAsyncResult)
     Dim state As New StateObject()  
     state.workSocket = handler  
     handler.BeginReceive(state.buffer, 0, state.BufferSize, 0, _  
-        AddressOf AsynchronousSocketListener.readCallback, state)  
-End Sub 'acceptCallback  
+        AddressOf AsynchronousSocketListener.ReadCallback, state)  
+End Sub 'AcceptCallback  
 ```  
   
 ```csharp  
-public static void acceptCallback(IAsyncResult ar) {  
+public static void AcceptCallback(IAsyncResult ar)
+{  
     // Get the socket that handles the client request.  
     Socket listener = (Socket) ar.AsyncState;  
     Socket handler = listener.EndAccept(ar);  
@@ -201,17 +205,17 @@ public static void acceptCallback(IAsyncResult ar) {
     // Create the state object.  
     StateObject state = new StateObject();  
     state.workSocket = handler;  
-    handler.BeginReceive( state.buffer, 0, StateObject.BufferSize, 0,  
-        new AsyncCallback(AsynchronousSocketListener.readCallback), state);  
+    handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,  
+        new AsyncCallback(AsynchronousSocketListener.ReadCallback), state);  
 }  
 ```  
   
  Poslední metodu, kterou je potřeba implementovat pro server websocket asynchronní je metoda čtení zpětného volání, která vrací data odeslaná klientem. Podobně jako metody zpětného volání přijmout, je metoda zpětného volání pro čtení **AsyncCallback** delegovat. Tato metoda načte jeden nebo více bajtů z klientského soketu do vyrovnávací paměti dat a pak zavolá **BeginReceive** metoda znovu, dokud data odeslaná klientem je dokončena. Po celá zpráva byla přečtena z klienta, řetězec se zobrazí v konzole a zavření serverového soketu zpracování připojení ke klientovi.  
   
- Následující ukázkový implementuje `readCallback` metody. Předpokládá, `StateObject` třída je definována.  
+ Následující ukázkový implementuje `ReadCallback` metody. Předpokládá, `StateObject` třída je definována.  
   
 ```vb  
-Public Shared Sub readCallback(ar As IAsyncResult)  
+Public Shared Sub ReadCallback(ar As IAsyncResult)  
     Dim state As StateObject = CType(ar.AsyncState, StateObject)  
     Dim handler As Socket = state.workSocket  
   
@@ -222,21 +226,21 @@ Public Shared Sub readCallback(ar As IAsyncResult)
     If read > 0 Then  
         state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, read))  
         handler.BeginReceive(state.buffer, 0, state.BufferSize, 0, _  
-            AddressOf readCallback, state)  
+            AddressOf ReadCallback, state)  
     Else  
         If state.sb.Length > 1 Then  
             ' All the data has been read from the client;  
             ' display it on the console.  
             Dim content As String = state.sb.ToString()  
-            Console.WriteLine("Read {0} bytes from socket." + _  
-                ControlChars.Cr + " Data : {1}", content.Length, content)  
+            Console.WriteLine($"Read {content.Length} bytes from socket. {ControlChars.Cr} Data : {content}")  
         End If  
     End If  
-End Sub 'readCallback  
+End Sub 'ReadCallback  
 ```  
   
 ```csharp  
-public static void readCallback(IAsyncResult ar) {  
+public static void ReadCallback(IAsyncResult ar)
+{  
     StateObject state = (StateObject) ar.AsyncState;  
     Socket handler = state.WorkSocket;  
   
@@ -244,17 +248,20 @@ public static void readCallback(IAsyncResult ar) {
     int read = handler.EndReceive(ar);  
   
     // Data was read from the client socket.  
-    if (read > 0) {  
+    if (read > 0)
+    {  
         state.sb.Append(Encoding.ASCII.GetString(state.buffer,0,read));  
-        handler.BeginReceive(state.buffer,0,StateObject.BufferSize, 0,  
-            new AsyncCallback(readCallback), state);  
-    } else {  
-        if (state.sb.Length > 1) {  
+        handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0,  
+            new AsyncCallback(ReadCallback), state);  
+    } 
+    else 
+    {  
+        if (state.sb.Length > 1) 
+        {  
             // All the data has been read from the client;  
             // display it on the console.  
             string content = state.sb.ToString();  
-            Console.WriteLine("Read {0} bytes from socket.\n Data : {1}",  
-               content.Length, content);  
+            Console.WriteLine($"Read {content.Length} bytes from socket.\n Data : {content}");
         }  
         handler.Close();  
     }  

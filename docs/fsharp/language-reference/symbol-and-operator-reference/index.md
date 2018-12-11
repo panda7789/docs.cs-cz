@@ -2,12 +2,12 @@
 title: Referenční dokumentace symbolů a operátorů (F#)
 description: Další informace o symbolů a operátorů, které se používají v F# programovací jazyk.
 ms.date: 04/04/2018
-ms.openlocfilehash: f6f99f8fa563b71c935122c6f8597599c59b5c7f
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: a382400213aa288bb134faefd8ce747a7319a76f
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297302"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169869"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 
@@ -50,8 +50,8 @@ Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy n
 |`-`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Odečte od levého okraje pravé straně po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
 |`->`|[Funkce](../functions/index.md)<br /><br />[Výrazy shody](../match-expressions.md)|<ul><li>Ve funkci typy, vymezuje argumenty a návratové hodnoty.<br /></li><li>Výsledkem výrazu (ve výrazech pořadí); ekvivalentní `yield` – klíčové slovo.<br /></li><li>Použít ve výrazech porovnání<br /></li></ul>|
 |`.`|[Členové](../members/index.md)<br /><br />[Primitivní typy](../primitive-types.md)|<ul><li>Zpřístupňuje člen a odděluje jednotlivé názvy v plně kvalifikovaném názvu.<br /></li><li>Určuje desetinné čárky v plovoucí desetinnou čárkou.<br /></li></ul>|
-|`..`|[Smyčky: `for...in` výraz](../loops-for-in-expression.md)|<ul><li>Určuje rozsah.<br /></li></ul>|
-|`.. ..`|[Smyčky: `for...in` výraz](../loops-for-in-expression.md)|<ul><li>Určuje rozsah spolu s přírůstek.<br /></li></ul>|
+|`..`|[Smyčky: `for...in` Výraz](../loops-for-in-expression.md)|<ul><li>Určuje rozsah.<br /></li></ul>|
+|`.. ..`|[Smyčky: `for...in` Výraz](../loops-for-in-expression.md)|<ul><li>Určuje rozsah spolu s přírůstek.<br /></li></ul>|
 |`.[...]`|[Pole](../arrays.md)|<ul><li>Přistupuje k prvku pole.<br /></li></ul>|
 |`/`|[Aritmetické operátory](arithmetic-operators.md)<br /><br />[Měrné jednotky](../units-of-measure.md)|<ul><li>Vydělí na levé straně (Čítač) pravé straně (jmenovatel).<br /></li><li>Použít v jednotkách, které typy měr.<br /></li></ul>|
 |`/?`|[Operátory s povolenou hodnotou Null](nullable-operators.md)|<ul><li>Vydělí na levé straně pravé straně po pravé straně je typ připouštějící hodnotu Null.<br /></li></ul>|
@@ -61,7 +61,7 @@ Následující tabulka popisuje symboly použité v F# jazyka, obsahuje odkazy n
 |`::`|[Seznamy](../lists.md)<br /><br />[Výrazy shody](../match-expressions.md)|<ul><li>Vytvoří seznam. Před element na levé straně se zobrazí v seznamu na pravé straně.<br /></li><li>K oddělení částí seznamu se používá v porovnávání vzorů.<br /></li></ul>|
 |`:=`|[Referenční buňky](../reference-cells.md)|<ul><li>Přiřadí hodnotu odkazovou buňku.<br /></li></ul>|
 |`:>`|[Přetypování a převody](../casting-and-conversions.md)|<ul><li>Převede daný typ na typ, který je výše v hierarchii.<br /></li></ul>|
-|`:?`|[Výrazy shody](../match-expressions.md)|<ul><li>Vrátí `true` Pokud hodnota neodpovídá zadanému typu; v opačném případě vrátí `false` (operátor testu typu).<br /></li></ul>|
+|`:?`|[Výrazy shody](../match-expressions.md)|<ul><li>Vrátí `true` Pokud hodnota neodpovídá zadanému typu (včetně, pokud je podtyp); v opačném případě vrátí `false` (operátor testu typu).<br /></li></ul>|
 |`:?>`|[Přetypování a převody](../casting-and-conversions.md)|<ul><li>Převede daný typ na typ, který je níže v hierarchii.<br /></li></ul>|
 |`;`|[Podrobná syntaxe](../verbose-syntax.md)<br /><br />[Seznamy](../lists.md)<br /><br />[Záznamy](../records.md)|<ul><li>Odděluje výrazy (většinou v podrobné syntaxi).<br /></li><li>Odděluje prvky seznamu.<br /></li><li>Odděluje polí záznamu.<br /></li></ul>|
 |`<`|[Aritmetické operátory](arithmetic-operators.md)|<ul><li>Vypočítá větší-než operace.<br /></li></ul>|
@@ -120,32 +120,33 @@ V následující tabulce jsou uvedeny pořadí podle priority operátorů a dal�
 
 |Operátor|Asociativita|
 |--------|-------------|
-|`as`|doprava|
-|`when`|doprava|
+|`as`|Pravé|
+|`when`|Pravé|
 |<code>&#124;</code> (kanál)|doleva|
-|`;`|doprava|
+|`;`|Pravé|
 |`let`|Neasociativní|
 |`function`, `fun`, `match`, `try`|Neasociativní|
 |`if`|Neasociativní|
-|`->`|doprava|
-|`:=`|doprava|
+|`->`|Pravé|
+|`:=`|Pravé|
 |`,`|Neasociativní|
 |`or`, <code>&#124;&#124;</code>|doleva|
 |`&`, `&&`|doleva|
-|`:>`, `:?>`|doprava|
+|`:>`, `:?>`|Pravé|
 |`!=`*op*, `<` *op*, `>` *op*, `=`, <code>&#124;</code> *op*, `&` *op* , `&`<br /><br />(včetně `<<<`, `>>>`, <code>&#124;&#124;&#124;</code>, `&&&`)|doleva|
-|`^`*OP*<br /><br />(včetně `^^^`)|doprava|
-|`::`|doprava|
+|`^`*OP*<br /><br />(včetně `^^^`)|Pravé|
+|`::`|Pravé|
 |`:?`|Není asociativní|
 |`-`*op*, `+` *op*|Platí pro infix používá tyto symboly|
 |`*`*op*, `/` *op*, `%` *op*|doleva|
-|`**`*OP*|doprava|
+|`**`*OP*|Pravé|
 |`f x` (použití funkce)|doleva|
-|<code>&#124;</code> (Porovnávací)|doprava|
+|<code>&#124;</code> (Porovnávací)|Pravé|
 |operátory předpony (`+`*op*, `-` *op*, `%`, `%%`, `&`, `&&`, `!` *op*, `~` *op*)|doleva|
 |`.`|doleva|
 |`f(x)`|doleva|
 |`f<`*Typy*`>`|doleva|
+
 F#podporuje vlastní přetížení operátoru. To znamená, že můžete definovat vlastní operátory. V předchozí tabulce *op* může být libovolná platná (pravděpodobně prázdná) sekvence znaků operátoru, předdefinovaných nebo uživatelem definovaný. Proto můžete tuto tabulku určit, jaké posloupnost znaků, které mají použít pro vlastní operátor k dosažení požadované úrovně priority. Úvodní `.` znaky jsou ignorovány, pokud kompilátor určuje prioritu.
 
 ## <a name="see-also"></a>Viz také:

@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Wi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: c4d3eaa50f6c7645c954ca65bf42c6c1eab3a68d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: c4eeb5606d3ea93b76efee58ddfecae0abbbd743
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070783"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128177"
 ---
 # <a name="modernize-your-apps-lifecycle-with-cicd-pipelines-and-devops-tools-in-the-cloud"></a>Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 
@@ -36,5 +36,5 @@ Obrázek 4-12 znázorňuje kanál průběžného nasazování, který se nasadí
 > **Obrázek 4 – 12.** Azure kanálu průběžného nasazování služby DevOps nasazením do clusteru Kubernetes
 
 >[!div class="step-by-step"]
-[Předchozí](modernize-your-apps-with-monitoring-and-telemetry.md)
-[další](migrate-to-hybrid-cloud-scenarios.md)
+>[Předchozí](modernize-your-apps-with-monitoring-and-telemetry.md)
+>[další](migrate-to-hybrid-cloud-scenarios.md)

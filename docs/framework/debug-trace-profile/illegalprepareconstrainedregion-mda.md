@@ -10,30 +10,30 @@ helpviewer_keywords:
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 59a2b7f7ed855cd6b7d363ea5d4723c7d7b8d629
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4623e8060b93c9331c99f9713598e177b6807472
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33386350"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131310"
 ---
 # <a name="illegalprepareconstrainedregion-mda"></a>illegalPrepareConstrainedRegion – pomocník spravovaného ladění (MDA)
-`illegalPrepareConstrainedRegion` Pomocník spravovaného ladění (MDA) se aktivuje při <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> volání metody nepředchází okamžitě `try` prohlášení o obslužná rutina výjimky. Toto omezení je na MSIL úroveň, tak, aby byl povolený mít jiný kód generování zdroj mezi volání a `try`, jako je například komentáře.  
+`illegalPrepareConstrainedRegion` Pomocníka spravovaného ladění (MDA) se aktivuje při <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> volání metody bezprostředně nepředchází `try` příkaz obslužné rutiny výjimky. Toto omezení je na jazyk MSIL úrovně, takže je přípustné, aby bez kódu generování zdroje mezi volání a `try`, například pro komentáře.  
   
 ## <a name="symptoms"></a>Příznaky  
- Oblasti omezeného provádění (CER), která se nikdy považuje jako takový, ale jako jednoduchý výjimka zpracování blok (`finally` nebo `catch`). V důsledku toho oblasti nespouští v události podmínku nedostatku paměti nebo přerušení přístup z více vláken.  
+ Oblasti omezeného provádění (CER), který se nikdy zpracováván jako takové, ale jako jednoduchý výjimka bloku zpracování (`finally` nebo `catch`). V důsledku toho oblast nejde spustit v případě podmínku paměti nebo přerušení vlákna.  
   
 ## <a name="cause"></a>příčina  
- Tento vzor přípravy CER nedodržíte správně.  Toto je událost chyby. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Volání metody, které používá se k označení obslužné rutiny výjimek jako představení CER v jejich `catch` / `finally` / `fault` / `filter` bloky se musí použít bezprostředně před `try` příkaz.  
+ Vzor přípravy CER nedodrží správně.  Toto je událost chyby. <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> Volání metody používá k označení obslužné rutiny výjimek jako Představujeme CER v jejich `catch` / `finally` / `fault` / `filter` bloky musí být použita bezprostředně před `try` příkazu.  
   
 ## <a name="resolution"></a>Rozlišení  
- Ujistěte se, že volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> se stane bezprostředně před `try` příkaz.  
+ Ujistěte se, že volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> se stane, bezprostředně před `try` příkazu.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- MDA zobrazí název volání metody <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> metodu, posun MSIL a zprávu s upozorněním, volání nepředchází okamžitě začátku bloku try.  
+ MDA zobrazí název metoda – volání <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> metodu, posun jazyk MSIL a zprávu s oznámením, volání okamžitě nepředchází začátek bloku try.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -46,9 +46,9 @@ ms.locfileid: "33386350"
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje vzor, který způsobuje, že tento MDA chcete aktivovat.  
+ Následující příklad kódu ukazuje vzor, který způsobí, že toto MDA aktivaci.  
   
-```  
+```csharp
 void MethodWithInvalidPCR()  
 {  
     RuntimeHelpers.PrepareConstrainedRegions();  

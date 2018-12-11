@@ -2,14 +2,14 @@
 title: Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 description: Toto téma vás provede sestavení řešení .NET Core, která obsahuje opakovaně použitelné knihovny a testování částí.
 author: guardrex
-ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: fbbbbc20b45981a41695eac73dcc251ef74a0cb6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.custom: seodec18
+ms.openlocfilehash: 710ce4c26bf06f7f7a9b1dc633fa55ddb3477dd6
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186015"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169707"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -24,7 +24,7 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá hledaným s
 
 ## <a name="prerequisites"></a>Požadavky
 
-- OpenSSL (je-li spuštěna .NET Core 1.1): najdete v článku [předpoklady pro .NET Core v počítačích Mac](../macos-prerequisites.md) tématu.
+- OpenSSL (je-li spuštěna .NET Core 1.1): Najdete v článku [předpoklady pro .NET Core v počítačích Mac](../macos-prerequisites.md) tématu.
 - [.NET core SDK 1.1 nebo vyšší](https://www.microsoft.com/net/core#macos)
 - [Visual Studio 2017 for Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/)
 
@@ -34,11 +34,11 @@ Další informace o požadavky najdete v článku [předpoklady pro .NET Core v 
 
 1. Na úvodní obrazovce vyberte **nový projekt**. V **nový projekt** dialogového okna v části **.NET Core** uzlu, vyberte **knihovna .NET Standard** šablony. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.NET Standard](../../standard/net-standard.md). Vyberte **Další**.
 
-   ![Dialogové okno nového projektu](./media/using-on-mac-vs-full-solution/vsmacfull01.png)
+   ![Visual Studio pro Mac nové dialogové okno projektu](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project.png)
 
-1. Pojmenujte projekt "TextUtils" (krátký název pro "Nástroje Text") a řešení "WordCounter". Ponechte **vytvořit adresář projektu v adresáři řešení** zaškrtnuto. Vyberte **vytvořit**.
+1. Pojmenujte projekt "TextUtils" (krátký název pro "Nástroje Text") a řešení "WordCounter". Ponechte **vytvořit adresář projektu v adresáři řešení** zaškrtnuto. Vyberte **Vytvořit**.
 
-   ![Dialogové okno nového projektu](./media/using-on-mac-vs-full-solution/vsmacfull02.png)
+   ![Visual Studio pro Mac nové dialogové okno Možnosti projektu](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project-options.png)
 
 1. V **řešení** postranního panelu, rozbalte `TextUtils` uzel zobrazí soubor třídy poskytovanou šablonou, *Class1.cs*. Klikněte pravým tlačítkem na soubor, vyberte **přejmenovat** v místní nabídce a přejmenujte soubor na *WordCount.cs*. Otevřete soubor a nahraďte obsah následujícím kódem:
 
@@ -46,17 +46,17 @@ Další informace o požadavky najdete v článku [předpoklady pro .NET Core v 
 
 1. Uložte soubor pomocí některé z třemi způsoby: použijte klávesovou zkratku <kbd> &#8984; </kbd> + <kbd>s</kbd>vyberte **souboru**  >  **Uložit** z nabídky, nebo klikněte pravým tlačítkem na kartu souboru a vyberte **Uložit** z kontextové nabídky. Následující obrázek ukazuje okno integrovaného vývojového prostředí:
 
-   ![Okno integrovaného vývojového prostředí TextUtils třídy knihovny, soubor třídy WordCount, statické třídy WordCount a GetWordCount – metoda](./media/using-on-mac-vs-full-solution/vsmacfull03.png)
+   ![Visual Studio pro Mac IDE okno s soubor knihovny třídy a metody](./media/using-on-mac-vs-full-solution/visual-studio-mac-editor.png)
 
 1. Vyberte **chyby** na okraji v dolní části okna integrovaného vývojového prostředí, které otevřete **chyby** panelu. Vyberte **výstupu sestavení** tlačítko.
 
-   ![Dolní okraj IDE zobrazuje tlačítko chyby](./media/using-on-mac-vs-full-solution/vsmacfull03b.png)
+   ![Dolní okraj Mac IDE sady Visual Studio zobrazuje tlačítko chyby](./media/using-on-mac-vs-full-solution/visual-studio-mac-error-button.png)
 
 1. Vyberte **sestavení** > **sestavení všechny** z nabídky.
 
    Řešení je sestaveno. Panel výstupu sestavení ukazuje úspěšném dokončení sestavení.
 
-   ![Vytvořit výstupní podokna panelu chyby zobrazení zprávy úspěšné sestavení](./media/using-on-mac-vs-full-solution/vsmacfull04.png)
+   ![Visual Studio Mac Build výstup podokně panelu chyby se zprávou úspěšné sestavení](./media/using-on-mac-vs-full-solution/visual-studio-mac-build-panel.png)
 
 ## <a name="creating-a-test-project"></a>Vytvoření testovacího projektu
 
@@ -66,17 +66,17 @@ Testování částí poskytuje software automatizované testování během vývo
 
 1. V **nový projekt** dialogového okna, vyberte **testy** z **.NET Core** uzlu. Vyberte **projekt testů xUnit** následovaný **Další**.
 
-   ![Dialogové okno nového projektu vytvořit projekt testů xUnit](./media/using-on-mac-vs-full-solution/vsmacfull05.png)
+   ![Visual Studio Mac nový projekt dialogové okno Vytvořit projekt testů xUnit](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-project.png)
 
 1. Zadejte název nového projektu "TestLibrary" a vyberte **vytvořit**.
 
-   ![Dialogové okno Nový projekt poskytuje název projektu](./media/using-on-mac-vs-full-solution/vsmacfull06.png)
+   ![Visual Studio Mac nový projekt – dialogové okno poskytnutí názvu projektu](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project-name.png)
 
 1. V pořadí pro knihovnu testu pro práci s `WordCount` třídy, přidejte odkaz na `TextUtils` projektu. V **řešení** postranního panelu, klikněte pravým tlačítkem na **závislosti** pod **TestLibrary**. Vyberte **upravit odkazy** v místní nabídce.
 
 1. V **upravit odkazy** dialogového okna, vyberte **TextUtils** projekt **projekty** kartu. Vyberte **OK**.
 
-   ![Odkazy na dialogové okno Upravit](./media/using-on-mac-vs-full-solution/vsmacfull07.png)
+   ![Dialogové okno Visual Studio Mac upravit odkazy](./media/using-on-mac-vs-full-solution/visual-studio-mac-edit-references.png)
 
 1. V **TestLibrary** projektu, přejmenovat *UnitTest1.cs* do souboru *TextUtilsTests.cs*.
 
@@ -104,29 +104,29 @@ Testování částí poskytuje software automatizované testování během vývo
 
    Následující obrázek ukazuje integrované vývojové prostředí s kódu testování částí na místě. Věnujte pozornost `Assert.NotEqual` příkazu.
 
-   ![Počáteční Jednotkový test ke kontrole GetWordCount v hlavním okně integrovaného vývojového prostředí](./media/using-on-mac-vs-full-solution/vsmacfull08.png)
+   ![Visual Studio pro Mac počáteční jednotky testování v hlavním okně integrovaného vývojového prostředí](./media/using-on-mac-vs-full-solution/visual-studio-mac-assert-test.png)
 
    Je důležité, aby nového testu po selhání potvrďte, že se že jeho testování logika je správný. Metoda předává název "Jan" (velká písmena) a řetězec "Jan" a "Jan" (velká a malá písmena). Pokud `GetWordCount` metoda pracuje správně, vrátí počet dvě instance s hledaným slovem. Pokud chcete tento test záměrně selžou, nejprve implementujete test potvrzující, že se dvě instance s hledaným slovem "Jan" vrácené `GetWordCount` metody. Pokračujte k dalšímu kroku záměrně selhání testu.
 
 1. Otevřít **testování částí** panel na pravé straně obrazovky.
 
-   ![Panel testy jednotek](./media/using-on-mac-vs-full-solution/vsmacfull_UnitTestPanel.png)
+   ![Visual Studio pro Mac jednotkové testy panel](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-panel.png)
 
 1. Klikněte na tlačítko **Dock** ikonu panelu nechat otevřené.
 
-   ![Ikona ukotvení panelu testy jednotek](./media/using-on-mac-vs-full-solution/vsmacfull_UnitTestPanelDockIcon.png)
+   ![Visual Studio pro Mac jednotkové testy panel ukotvení ikonu](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-dock-icon.png)
 
 1. Klikněte na tlačítko **spustit všechny** tlačítko.
 
    Test se nezdaří, což je správný výsledek. Testovací metoda uplatňuje této dvě instance `inputString`, "Jan", nebudou zobrazeny z řetězce "Konektor jack" k dispozici na `GetWordCount` metoda. Protože slov velká a malá písmena se dostaneme out `GetWordCount` metody, jsou vráceny dvě instance. Výraz, který 2 *není roven* 2 selže. Toto je správný výsledek a logiku testovacím je dobrá.
 
-   ![Selhání testu](./media/using-on-mac-vs-full-solution/vsmacfull09.png)
+   ![Visual Studio pro Mac zobrazení selhání testu](./media/using-on-mac-vs-full-solution/visual-studio-for-mac-unit-test-failure.png)
 
 1. Upravit `IgnoreCasing` testovací metoda tak, že změníte `Assert.NotEqual` k `Assert.Equal`. Uložte soubor pomocí klávesové zkratky <kbd> &#8984; </kbd> + <kbd>s</kbd>, **souboru** > **Uložit** v nabídce nebo na kartě soubor pravým tlačítkem myši a vyberete **Uložit** v místní nabídce.
 
    Můžete očekávat, že `searchWord` "Jan" vrátí dvě instance s `inputString` "Jan jack" předán `GetWordCount`. Znovu spusťte test kliknutím **spustit testy** tlačítko **testování částí** panelu nebo **znovu spustit testy** tlačítko v **výsledky testu** panel v dolní části obrazovky. Test byl úspěšný. Existují dvě instance "Jan" v řetězci "Jan jack" (bez rozlišování malých a velkých písmen) a je kontrolní výraz test `true`.
 
-   ![Průchod testu](./media/using-on-mac-vs-full-solution/vsmacfull10.png)
+   ![Visual Studio pro Mac zobrazení průchodu testu](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-pass.png)
 
 1. Testování jednotlivých návratové hodnoty `Fact` je jenom začátek můžete dělat s testováním částí. Další efektivní technikou využijete k otestování několik hodnot současně pomocí `Theory`. Přidejte následující metodu do vaší `TextUtils_GetWordCountShould` třídy. Máte dvě metody ve třídě po přidání této metody:
 
@@ -148,11 +148,11 @@ Testování částí poskytuje software automatizované testování během vývo
 
 1. Uložte soubor a znovu spusťte testy. Velká a malá písmena test úspěšný, ale selže tři počet testů. To je přesně to co očekáváte, které se provedou.
 
-   ![Selhání testu](./media/using-on-mac-vs-full-solution/vsmacfull11.png)
+   ![Visual Studio pro Mac očekávané selhání testu](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-failure.png)
 
 1. Upravit `CountInstancesCorrectly` testovací metoda tak, že změníte `Assert.NotEqual` k `Assert.Equal`. Uložte soubor. Spusťte testy znovu. Všechny testy byly úspěšné.
 
-   ![Průchod testu](./media/using-on-mac-vs-full-solution/vsmacfull12.png)
+   ![Visual Studio pro Mac očekává průchodu testu](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-pass.png)
 
 ## <a name="adding-a-console-app"></a>Přidává se aplikace konzoly
 
@@ -166,29 +166,29 @@ Testování částí poskytuje software automatizované testování během vývo
 
 1. Spuštění aplikace v okně konzoly namísto rozhraní IDE, klikněte pravým tlačítkem myši `WordCounterApp` projekt, vyberte **možnosti**a otevřete **výchozí** pod uzlem **konfigurace**. Zaškrtněte políčko u **spouštět na externí konzole**. Nechte **pozastavit výstup konzoly** zaškrtnutým políčkem. Toto nastavení způsobí, že aplikace nejde vytvořit podřízený v okně konzoly tak, že zadáte pro vstup `Console.ReadLine` příkazy. Ponecháte-li aplikaci pro spuštění v integrovaném vývojovém prostředí, můžete jenom zobrazit výstup `Console.WriteLine` příkazy. `Console.ReadLine` příkazy v rozhraní IDE nefungují **výstup aplikace** panelu.
 
-   ![Okno Možnosti projektu](./media/using-on-mac-vs-full-solution/vsmacfull13.png)
+   ![Visual Studio pro Mac okno Možnosti projektu](./media/using-on-mac-vs-full-solution/visual-studio-mac-project-options.png)
 
 1. Protože testy nemůžete spustit aktuální verzi sady Visual Studio pro Mac, při spuštění řešení, spustíte aplikaci konzoly přímo. Klikněte pravým tlačítkem na `WordCounterApp` projektu a vyberte **spustit položky** v místní nabídce. Při pokusu o spuštění aplikace s tlačítko Přehrát, nástroj test runner a aplikace nezdaří spustit. Další informace o stavu práce na tento problém, naleznete v tématu [xunit/xamarinstudio.xunit (60)](https://github.com/xunit/xamarinstudio.xunit/issues/60). Při spuštění aplikace, zadejte hodnoty pro vstupní řetězec na vyzvání v okně konzoly a hledaným slovem. Aplikace udává, že počet pokusů, které se zobrazí hledaným slovem v řetězci.
 
-   ![Okna konzoly zobrazuje slovo oliv vyhledávat v řetězci: "Iro snědli oliv podle jezera a oliv byly vynikající." Aplikace reaguje, "oliv word search se zobrazí časy 2."](./media/using-on-mac-vs-full-solution/vsmacfull14.png)
+   ![Visual Studio pro Mac okna konzoly zobrazuje vaše aplikace spuštěná](./media/using-on-mac-vs-full-solution/visual-studio-mac-console-window.png)
 
-1. Poslední funkci k prozkoumání je ladění pomocí sady Visual Studio pro Mac. Nastavit zarážku na `Console.WriteLine` – příkaz: vyberte levý okraj řádku 23, a zobrazí červené kolečko vedle řádku kódu. Alternativně klikněte kamkoli na řádek kódu a vyberte **spustit** > **Přepnout zarážku** z nabídky.
+1. Poslední funkci k prozkoumání je ladění pomocí sady Visual Studio pro Mac. Nastavit zarážku na `Console.WriteLine` – příkaz: Vyberte levý okraj řádku 23, a zobrazí červené kolečko vedle řádku kódu. Alternativně klikněte kamkoli na řádek kódu a vyberte **spustit** > **Přepnout zarážku** z nabídky.
 
-   ![Nastavit zarážku na řádku 23, příkaz Console.WriteLine](./media/using-on-mac-vs-full-solution/vsmacfull15.png)
+   ![Nastavení sady Visual Studio pro Mac zarážku](./media/using-on-mac-vs-full-solution/visual-studio-mac-breakpoint.png)
 
 1. Klikněte pravým tlačítkem myši `WordCounterApp` projektu. Vyberte **spustit ladění položky** v místní nabídce. Při spuštění aplikace hledání zadejte slovo "cat" a "pes sledováno kočky, ale kočky uvozeny řídicími znaky." pro hledaný řetězec. Když `Console.WriteLine` je dosažen příkaz, zastaví spuštění programu před provedením příkazu. V **lokální** kartě, zobrazí se `searchWord`, `inputString`, `wordCount`, a `pluralChar` hodnoty.
 
-   ![Spuštění programu byla zastavena v příkazu Console.WriteLine s místní okno zobrazuje hodnoty bezprostředně před provedením příkazu Console.WriteLine.](./media/using-on-mac-vs-full-solution/vsmacfull16.png)
+   ![Zastavení sady Visual Studio pro Mac provádění programu ladicí program](./media/using-on-mac-vs-full-solution/visual-studio-mac-debugger.png)
 
 1. V **okamžité** podokně, zadejte "wordCount = 999;" a stiskněte klávesu Enter. Toto přiřadí hodnotu nesmysl 999 k `wordCount` proměnné znázorňující, že při ladění můžete nahradit hodnoty proměnných.
 
-   ![Naše zarážkou. WordCount se změní na hodnotu 999 do okna Příkazy](./media/using-on-mac-vs-full-solution/vsmacfull17.png)
+   ![Visual Studio pro Mac změna hodnot v okně immediate](./media/using-on-mac-vs-full-solution/visual-studio-mac-immediate-window.png)
 
 1. Na panelu nástrojů klikněte na tlačítko *pokračovat* šipku. Podívejte se na výstup v okně konzoly. Oznámí nesprávnou hodnotu 999, které jste nastavili při byly ladění aplikace.
 
-   ![Pokračovat tlačítko na panelu nástrojů](./media/using-on-mac-vs-full-solution/vsmacfull18.png)
+   ![Visual Studio pro Mac pokračovat tlačítko na panelu nástrojů](./media/using-on-mac-vs-full-solution/visual-studio-mac-toolbar.png)
 
-   ![Počet slov vyhledávání se změní na hodnotu 999 ve výstupu aplikace](./media/using-on-mac-vs-full-solution/vsmacfull19.png)
+   ![Visual Studio pro Mac výstup okna konzoly](./media/using-on-mac-vs-full-solution/visual-studio-mac-output.png)
 
 ## <a name="see-also"></a>Viz také:
 

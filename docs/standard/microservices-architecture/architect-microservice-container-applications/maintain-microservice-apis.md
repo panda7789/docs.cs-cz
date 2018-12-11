@@ -1,42 +1,41 @@
 ---
-title: Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
+title: Kontraktů a kontraktů mikroslužeb vytváření, vývoj a správa verzí rozhraní API
+description: Vytváření mikroslužeb rozhraní API a kontraktů zvažujete vývoj a správu verzí, protože změní.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: a2ec577a12cf677c2ec5e20a6f3e862911c82fbb
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/20/2018
+ms.openlocfilehash: 5d3e031217159a695b67f67859b8cf412a4419c2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105690"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152536"
 ---
-# <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Mikroslužbu vytváření, vyvíjejí a správa verzí rozhraní API a kontrakty
+# <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Kontraktů a kontraktů mikroslužeb vytváření, vývoj a správa verzí rozhraní API
 
-Mikroslužbu rozhraní API je smlouva mezi službou a jeho klienty. Bude možné nezávisle vyvíjí mikroslužbu pouze v případě, že nedojde k narušení jeho rozhraní API kontrakt, který je důvod, proč je tak důležité kontrakt. Pokud změníte kontrakt, ovlivní klientské aplikace nebo vaší bránu rozhraní API.
+Mikroslužba rozhraní API je kontrakt mezi službou a klienty. Budete moct vyvíjet mikroslužby nezávisle na sobě jenom v případě, že nedojde k narušení jeho kontrakt rozhraní API, který je důvod, proč je proto důležité kontrakt. Pokud změníte kontrakt, bude to mít vliv klientských aplikací nebo brány rozhraní API.
 
-Povaha definice rozhraní API, závisí na protokol, který používáte. Například pokud používáte zasílání zpráv (jako je [AMQP](https://www.amqp.org/)), rozhraní API se skládá z typů zpráv. Pokud používáte protokol HTTP a služeb RESTful, rozhraní API se skládá z adresy URL a JSON formáty požadavků a odpovědí.
+Druh definice rozhraní API závisí na protokol, který používáte. Například pokud používáte zasílání zpráv (například [AMQP](https://www.amqp.org/)), rozhraní API se skládá z typy zpráv. Pokud používáte protokol HTTP a služby typu REST, se skládá z JSON formáty požadavků a odpovědí a adresy URL rozhraní API.
 
-Ale i v případě, že jste žádný jazyk o vaší počáteční kontrakt, rozhraní API služby bude nutné změnit v čase. Pokud k tomu dojde – a zejména v případě, že vaše rozhraní API je veřejné rozhraní API spotřebovávají více klientských aplikací – obvykle nemůže vynutit všichni klienti k upgradu vaší nové smlouvy rozhraní API. Obvykle je nutné přírůstkově nasazení nových verzí služby tak, že starý a nový verzích kontraktu služby běží současně. Proto je důležité mít strategii verze vaší služby.
+Nicméně i v případě, že je pro vás důkladné o počáteční smlouvy, rozhraní API služby muset v průběhu času měnit. Když se to stane – a zejména v případě, že vaše rozhraní API je veřejné rozhraní API používané více klientských aplikací – obvykle nemůžou vynutit všichni klienti k upgradu na nové smlouvy rozhraní API. Obvykle je nutné přírůstkově nasazovat nové verze služby tak, aby staré a nové verze kontraktu služby jsou spuštěny souběžně. Proto je důležité mít strategii pro vaši službu správy verzí.
 
-Když změny rozhraní API jsou malé, jako když přidáte k vašemu rozhraní API atributy nebo parametry, klienty, kteří používají starší rozhraní API by měl přepínače a pracovat s novou verzi služby. Je možné zadat výchozí hodnoty pro všechny chybějící atributy, které jsou požadovány a klienti pravděpodobně moci ignorovat žádné atributy. navíc odpovědi.
+Při změn rozhraní API jsou malé, například pokud můžete přidat atributy nebo parametry do vašeho rozhraní API, klienty, kteří používají starší rozhraní API by měla přepnutí a pracovat s novou verzi služby. Je možné zadat výchozí hodnoty pro všechny chybějící atributy, které jsou požadovány, a klienti možná půjde ignorovat jakékoli další odpovědi atributy.
 
-Však někdy je nutné provést změny hlavní a kompatibilní rozhraní API služby. Vzhledem k tomu, že není možné vynutit klientské aplikace nebo služby k upgradu ihned na novou verzi, služba musí podporovat starší verze rozhraní API po nějakou dobu. Pokud používáte mechanismus založený na protokolu HTTP, jako je například REST, jeden z přístupů je pro vložení číslo verze rozhraní API v adrese URL nebo do hlavičky protokolu HTTP. Pak si můžete vybrat implementace obě verze služby současně v rámci stejné instance služby nebo nasazování různé instance, že každý zpracovat verzi rozhraní API. Je dobrým přístupem pro tento [zprostředkovatel vzor](https://en.wikipedia.org/wiki/Mediator_pattern) (například [MediatR knihovny](https://github.com/jbogard/MediatR)) oddělit různé implementace verze do nezávislé obslužné rutiny.
+Ale někdy potřebujete provádět změny hlavní a nekompatibilní rozhraní API služby. Vzhledem k tomu, že nebudete moci vynutit klientských aplikací nebo služeb hned upgradovat na novou verzi, musí podporovat službu starší verze rozhraní API pro určitou dobu. Pokud používáte mechanismus založený na protokolu HTTP, jako je REST, jedním z přístupů je vložit číslo verze rozhraní API v adrese URL, nebo do hlavičky protokolu HTTP. Pak se můžete rozhodnout mezi implementace obě verze služby současně v rámci stejné instance služby nebo nasazení různých instancích, každý zpracovat verzi rozhraní API. Je dobrý přístup pro toto [zprostředkovatel vzor](https://en.wikipedia.org/wiki/Mediator_pattern) (například [MediatR knihovny](https://github.com/jbogard/MediatR)) oddělit různé implementace verze do nezávislé obslužné rutiny.
 
-Nakonec, pokud používáte architekturu REST, [hypermédií](https://www.infoq.com/articles/mark-baker-hypermedia) je nejlepší řešení pro správu verzí, služeb a umožní evolvable rozhraní API.
+Nakonec, pokud používáte s architekturou REST [Hypermédia](https://www.infoq.com/articles/mark-baker-hypermedia) je nejlepší řešení pro správu verzí, služeb a umožní evolvable rozhraní API.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Scott Hanselman. Správa verzí RESTful webová rozhraní API ASP.NET Core umožněno**
-    <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
+- **Scott Hanselman. Správa verzí RESTful webového rozhraní API ASP.NET Core snadné** \
+  [*https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx*](https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 
--   **Správa verzí RESTful webového rozhraní API**
-    [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+- **Správa verzí RESTful webového rozhraní API** \
+  [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **Royi Fielding. Správa verzí, hypermédií a REST**
-    <https://www.infoq.com/articles/roy-fielding-on-versioning>
-
+- **Roy Fielding. Správa verzí, Hypermédia a REST** \
+  [*https://www.infoq.com/articles/roy-fielding-on-versioning*](https://www.infoq.com/articles/roy-fielding-on-versioning)
 
 >[!div class="step-by-step"]
-[Předchozí](asynchronous-message-based-communication.md)
-[další](microservices-addressability-service-registry.md)
+>[Předchozí](asynchronous-message-based-communication.md)
+>[další](microservices-addressability-service-registry.md)

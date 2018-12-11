@@ -2,15 +2,15 @@
 title: Začínáme s .NET Core pomocí rozhraní příkazového řádku
 description: Podrobný návod ukazuje, jak začít pracovat s .NET Core ve Windows, Linux nebo macOS pomocí rozhraní příkazového řádku .NET Core (CLI).
 author: cartermp
-ms.author: mairaw
 ms.date: 09/10/2018
 ms.technology: dotnet-cli
-ms.openlocfilehash: 89839596509e1ffabd28b8903600a431b5a0ed9c
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.custom: seodec18
+ms.openlocfilehash: 11d8a4d1841a1d161c4aed233a025813374556d6
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296786"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169986"
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 

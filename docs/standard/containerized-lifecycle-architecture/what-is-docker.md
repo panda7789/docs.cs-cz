@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 056fb613c078cc407380060dc11890406ac8cffd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 360a404e38651b78acc3a52d8102a4dae71f3e30
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197675"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152706"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -49,9 +49,8 @@ Při použití Dockeru, Řekněme, že vývojáři nebudou slyšet, "to funguje 
 
 ![](./media/image3.png)
 
-Obrázek 1 – 3: porovnání tradičních virtuálních počítačů pro kontejnery Dockeru
-
+Obrázek 1 – 3: Porovnání tradičních virtuálních počítačů pro kontejnery Dockeru
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](docker-terminology.md)
+>[Předchozí](index.md)
+>[další](docker-terminology.md)

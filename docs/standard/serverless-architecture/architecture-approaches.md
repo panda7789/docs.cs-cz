@@ -4,12 +4,12 @@ description: Úvod do architektury přístupů pro podnikové cloudové aplikace
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 21e191f17e7d0b4f2d64454fb14c46a4831a8375
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 04ad383586f974bb2dccc4623a9a254f5668dab4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084005"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126742"
 ---
 # <a name="architecture-approaches"></a>Přístupy k architektuře
 
@@ -49,7 +49,7 @@ Aplikací vrstvy N oddílu aplikace logiky do konkrétní vrstvy. Nejběžnějš
 
 * Uživatelské rozhraní
 * Obchodní logika
-* Přístup k datům
+* Přístup k datům
 
 Middleware, dávkové zpracování a rozhraní API může obsahovat další vrstvy. Je důležité si uvědomit, že jsou logické vrstvy. I když jsou už vyvinuté v izolaci, jsou všechny jde nasadit do stejné cílové platformy.
 
@@ -97,5 +97,5 @@ Mikroslužby jsou součástí vlastní výzvy, včetně:
 Nakonec jsou všechny tyto výzvy, včetně proniknutí do výhod prostředí bez serveru, které jsou uvedeny dále vícebodových řešení.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](architecture-deployment-approaches.md)
+>[Předchozí](index.md)
+>[další](architecture-deployment-approaches.md)

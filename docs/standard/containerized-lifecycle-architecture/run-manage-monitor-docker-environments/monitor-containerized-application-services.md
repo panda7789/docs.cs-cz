@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 4bdc4470624ce6e905ab858a2bd8b607c8d3d646
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 5630bfcc3173def670e2fa780d28024799b7c2a1
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47232921"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153916"
 ---
 # <a name="monitor-containerized-application-services"></a>Monitorování kontejnerizovaných aplikačních služeb
 
@@ -31,7 +31,7 @@ Při spuštění [image Dockeru Application Insights](https://hub.docker.com/r/m
 
 -   Životní cyklus telemetrická data o všechny kontejnery běží na hostiteli, spuštění, zastavení a tak dále.
 
--   Čítače výkonu pro všechny kontejnery: procesoru, paměti, využití sítě a další.
+-   Čítače výkonu pro všechny kontejnery: Procesoru, paměti, využití sítě a další.
 
 -   Pokud jste nainstalovali také [Application Insights SDK](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net) v aplikace spuštěné v kontejnerech, bude mít veškerá telemetrická data těchto aplikací další vlastnosti identifikující kontejner a hostitele počítače. Ano například pokud máte instancí aplikace běžící ve více než jednoho hostitele, snadno budete mít k filtrování telemetrie vaší aplikace hostitel.
 
@@ -60,7 +60,7 @@ Kromě poskytování přínosných služeb sama o sobě, kontejner řešení Ope
 
 ![](./media/image2.png)
 
-Obrázek 6 – 2: informace o kontejnerech Dockeru zobrazené Operations Management Suite
+Obrázek 6 – 2: Informace o kontejnerech Dockeru zobrazené Operations Management Suite
 
 Application Insights a Operations Management Suite zaměřit na monitorování aktivit; ale Application Insights se zaměřuje více o sledování aplikací sami díky jeho SDK v rámci aplikace. Ale Operations Management Suite se mnohem více zaměřuje na infrastruktuře kolem hostitele, a navíc nabízí hloubkovou analýzu protokolů ve velkém měřítku současně poskytují velmi flexibilní řízené daty hledání nebo dotaz systému.
 
@@ -90,12 +90,12 @@ Zobrazí se informace o výkonu spouštěním dotazů, jako je typ = Perf, jak j
 
 ![DockerPerfMetricsView](./media/image3.png){width = "5.78625 v" height = "3,25 v"}
 
-Obrázek 6 – 3: metriky výkonu hostitele Docker zobrazené Operations Management Suite
+Obrázek 6 – 3: Metriky výkonu hostitele Docker zobrazené Operations Management Suite
 
 Ukládání dotazů je také standardní funkce v Operations Management Suite a jak vám pomůže uchovávat dotazy připadají užitečné a zjišťovat tak trendy ve vašem systému.
 
 **Další informace o** najdete informace o instalaci a konfiguraci Dockeru řešení kontejnerů v [Operations Management Suite](https://microsoft.com/oms), přejděte na stránku <https://docs.microsoft.com/azure/log-analytics/log-analytics-containers>.
 
 >[!div class="step-by-step"]
-[Předchozí](manage-production-docker-environments.md)
-[další](../key-takeaways/index.md)
+>[Předchozí](manage-production-docker-environments.md)
+>[další](../key-takeaways/index.md)

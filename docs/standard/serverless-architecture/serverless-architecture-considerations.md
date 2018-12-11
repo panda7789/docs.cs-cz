@@ -4,12 +4,12 @@ description: Vysvětlení obtíže spojené s aplikační architektura založen�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 5f175351cf42f3d9966add72750d64a4efe14e07
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: b12a09c0fcef7e7ff954a3f959fb9e3080a6e859
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42754687"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155061"
 ---
 # <a name="serverless-architecture-considerations"></a>Aspekty architektury bez serveru
 
@@ -82,5 +82,5 @@ Další informace najdete v tématu [implementace vzoru Circuit Breaker](../micr
 Hlavní výhodou bez serveru je možný upgrade konkrétní funkce, aniž byste museli znovu nasadit celou aplikaci. Pro upgrade proběhne úspěšně musí být funkce označené verzí tak, aby jejich volání služby jsou směrovány na správnou verzi kódu. Strategie pro zavedení nové verze je také důležité. Běžným přístupem je použití "zelené a modré nasazení." Zeleného nasazení je aktuální funkce. Nová verze "blue" je nasazená do produkčního prostředí a testování. Při testování PASS, zelené a modré verze jsou přehozeny tak novou verzi se dodává za provozu. Pokud nedojde k žádné problémy, je možné Prohodit zpět. Podpora správy verzí a nasazení zelené a modré vyžaduje kombinaci funkcí a vyřešit tak změny verze pro vytváření a práci s architekturou pro zpracování nasazení. Jedním z možných způsobů je použít proxy servery, které jsou popsány v [platformy Azure bez serverů](azure-functions.md#proxies) kapitoly.
 
 >[!div class="step-by-step"]
-[Předchozí](serverless-architecture.md)
-[další](serverless-design-examples.md)
+>[Předchozí](serverless-architecture.md)
+>[další](serverless-design-examples.md)

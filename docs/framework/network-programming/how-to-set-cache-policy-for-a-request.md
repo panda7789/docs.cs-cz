@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: nastavení zásad mezipaměti pro žádost'
+title: 'Postupy: Nastavení zásad mezipaměti pro žádost'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,13 +8,13 @@ helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 ms.openlocfilehash: f2e3e7ccc16dc24cf79574f8607245b66ea53cb1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190655"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155009"
 ---
-# <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: nastavení zásad mezipaměti pro žádost
+# <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: Nastavení zásad mezipaměti pro žádost
 Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI `http://www.contoso.com/`.  
   
 ## <a name="example"></a>Příklad  

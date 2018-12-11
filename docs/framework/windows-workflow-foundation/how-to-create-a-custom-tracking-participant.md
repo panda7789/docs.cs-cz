@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: vytvoření vlastního účastníka sledování'
+title: 'Postupy: Vytvoření vlastního účastníka sledování'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: a9a83f64b7ea0de275631d7d3b8d2755671223ce
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0f8d21ca4f08ad4dc2e5f5e62695b9b14aff13d5
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864479"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53156704"
 ---
-# <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: vytvoření vlastního účastníka sledování
+# <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: Vytvoření vlastního účastníka sledování
 Pracovní postup sledování poskytuje přehled o stavu pracovního postupu provádění. Modul runtime pracovního postupu vysílá záznamy sledování, které popisují pracovního postupu události životního cyklu, události životního cyklu aktivit, záložku obnovení a chyb. Tyto záznamy sledování se spotřebovávají sledování účastníci. Windows Workflow Foundation (WF) zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje postup vytvoření vlastního účastníka sledování a sledování profil, který zachytit výstup `WriteLine` aktivity, aby mohly být zobrazeny uživateli.  
   
 > [!NOTE]
@@ -334,8 +334,9 @@ Pracovní postup sledování poskytuje přehled o stavu pracovního postupu prov
  **Zadejte prosím číslo mezi 1 a 10**  
 **Váš odhad je příliš vysoká.**   
 **Zadejte prosím číslo mezi 1 a 10**    
+
     > [!NOTE]
-    >  Tyto informace jsou užitečné pro určení rozsahu náhodné číslo, ale neobsahuje žádné informace o tom, jaké pokusů mít dříve provedeny. Tyto informace jsou v dalším kroku [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
+    >  Tyto informace jsou užitečné pro určení rozsahu náhodné číslo, ale neobsahuje žádné informace o tom, jaké pokusů mít dříve provedeny. Tyto informace jsou v dalším kroku [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
   
      Poznamenejte si id instance pracovního postupu a Zahrajte si hru na jeho dokončení.  
   
@@ -345,4 +346,4 @@ Pracovní postup sledování poskytuje přehled o stavu pracovního postupu prov
 **Váš odhad je příliš vysoká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
 **Váš odhad je příliš vysoká.**   
-**Zadejte prosím číslo mezi 1 a 10** kromě chybí pokusů uživatele, tato data sledování neobsahuje informace o posledním odhad pracovního postupu. Důvodem je, že informace o sledování se skládá pouze z `WriteLine` výstup z pracovního postupu, a z Probíhá závěrečná zpráva, která se zobrazí `Completed` obslužná rutina po dokončení pracovního postupu. V dalším kroku kurzu [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existující `WriteLine` aktivity jsou upraveny pro zobrazení uživatele pokusů a dalších `WriteLine` , který je aktivita přidána Zobrazí konečných výsledků. Až tyto změny jsou integrované, [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) ukazuje, jak hostování několika verzí pracovního postupu ve stejnou dobu.
+**Zadejte prosím číslo mezi 1 a 10** kromě chybí pokusů uživatele, tato data sledování neobsahuje informace o posledním odhad pracovního postupu. Důvodem je, že informace o sledování se skládá pouze z `WriteLine` výstup z pracovního postupu, a z Probíhá závěrečná zpráva, která se zobrazí `Completed` obslužná rutina po dokončení pracovního postupu. V dalším kroku kurzu [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existující `WriteLine` aktivity jsou upraveny pro zobrazení uživatele pokusů a dalších `WriteLine` je aktivita přidána, který zobrazí konečných výsledků. Jakmile tyto změny jsou integrované, [jak: Hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) ukazuje, jak hostování několika verzí pracovního postupu ve stejnou dobu.

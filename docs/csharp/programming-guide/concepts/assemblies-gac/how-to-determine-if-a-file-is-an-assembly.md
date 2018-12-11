@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: určení, zda je soubor sestavení (C#)'
+title: 'Postupy: Určení, zda je soubor sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
-ms.openlocfilehash: ee2313677fba21624ccdb44db779633f6c4503bf
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0cf9258aa4a5a1a633ee0bb04808d384de8f48d0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861007"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53125532"
 ---
-# <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Postupy: určení, zda je soubor sestavení (C#)
+# <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Postupy: Určení, zda je soubor sestavení (C#)
 Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svých metadatech, je soubor sestavení. Další informace o sestavení a metadata, naleznete v tématu [Manifest sestavení](../../../../../docs/framework/app-domains/assembly-manifest.md).  
   
 ### <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Jak ručně určit, zda je soubor sestavení  
@@ -18,7 +18,7 @@ Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svýc
   
 2.  Načtěte soubor, který chcete testovat.  
   
-3.  Pokud **ILDASM** sestavy, že soubor není soubor (PE portable executable) a pak se nejedná o sestavení. Další informace naleznete v tématu [postupy: zobrazení obsahu sestavení](../../../../framework/app-domains/how-to-view-assembly-contents.md).  
+3.  Pokud **ILDASM** sestavy, že soubor není soubor (PE portable executable) a pak se nejedná o sestavení. Další informace naleznete v tématu [jak: Zobrazení obsahu sestavení](../../../../framework/app-domains/how-to-view-assembly-contents.md).  
   
 ### <a name="how-to-programmatically-determine-if-a-file-is-an-assembly"></a>Jak prostřednictvím kódu programu určit, zda je soubor sestavení  
   
@@ -29,7 +29,7 @@ Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svýc
 ## <a name="example"></a>Příklad  
  V tomto příkladu ověřuje knihovnu DLL zjistěte, zda je sestavení.  
   
-```  
+```csharp
 class TestAssembly  
 {  
     static void Main()  

@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: ae141b3d60a9968ee3fe59474e32a174bdb77e3b
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 3b0b109b0910eb5763ecab228115b7bc932d4a10
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50757449"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129932"
 ---
 # <a name="common-web-application-architectures"></a>Běžné architektury webových aplikací
 
@@ -316,5 +316,5 @@ Pokud chcete přidat podporu Dockeru do vaší aplikace pomocí sady Visual Stud
 >   <https://aka.ms/MicroservicesEbook>
 
 >[!div class="step-by-step"]
-[Předchozí](architectural-principles.md)
-[další](common-client-side-web-technologies.md)
+>[Předchozí](architectural-principles.md)
+>[další](common-client-side-web-technologies.md)

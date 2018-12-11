@@ -1,131 +1,131 @@
 ---
 title: Migrace relačních databází do azure
-description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery | migrace relačních databází do azure
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | migrace relačních databází do azure
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: fe1bf5820c2306beb380749b34d5a56964e016e4
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: a2aedc9729c674a7b4958506b90c285e54d8d724
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33956082"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153758"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do azure
 
-Vizi: Azure nabízí nejúplnější migrace databáze.
+Pro zpracování obrazu: Azure nabízí nejkomplexnější migrace databáze.
 
-V Azure můžete migrovat databázové servery přímo do virtuálních počítačů IaaS (čistý navýšení a shift), nebo můžete migrovat do Azure SQL Database pro další výhody. Azure SQL Database nabízí spravované instance a možnosti úplné databáze jako služba (DBaaS). Obrázek 3-1 zobrazuje více relační databáze cesty migrace, které jsou k dispozici v Azure.
+V Azure můžete migrovat vaše databázové servery přímo do virtuálních počítačů IaaS (čistě výtah a posunout), nebo můžete migrovat do služby Azure SQL Database, nabízí další výhody. Azure SQL Database nabízí spravované instance a možnosti úplné database-as-a-service (DBaaS). Obrázek 3-1 zobrazuje více relační databáze cesty migrace jsou dostupné v Azure.
 
 ![Cesty migrace databáze v Azure](./media/image3-1.png)
 
 > **Obrázek 3-1.** Cesty migrace databáze v Azure
 
-## <a name="when-to-migrate-to-azure-sql-database-managed-instance"></a>Když k migraci na Azure spravované Instance databáze SQL
+## <a name="when-to-migrate-to-azure-sql-database-managed-instance"></a>Kdy migrovat do Azure SQL Database Managed Instance
 
-Ve většině případů bude Azure SQL Database spravované Instance nejlepší možnost vzít v úvahu při migraci dat do Azure. Pokud provádíte migraci databáze systému SQL Server a potřebujete téměř 100 % záruku toho, že nebudete muset rearchitect aplikace nebo provést změny dat nebo dat přístupový kód, zvolte funkci spravované Instance databáze SQL Azure.
+Ve většině případů bude Azure SQL Database Managed Instance je nejlepší možnost vzít v úvahu při migraci dat do Azure. Pokud provádíte migraci databází systému SQL Server a potřebujete téměř 100 % záruku, že nebudete muset úprava architektury aplikace nebo provést změny dat nebo kód přístupu k datům, zvolte funkci Azure SQL Database Managed Instance.
 
-Azure SQL Database spravované Instance je nejlepší možnost, pokud máte další požadavky pro funkci na úrovni instance systému SQL Server nebo požadavky na izolaci kromě funkcí uvedených v standardní databáze SQL Azure (model jedné databáze). Tato naposledy je volba orientované PaaS, ale nenabízí stejné funkce jako u tradiční SQL server. Migrace může surface frictions.
+Pokud máte další požadavky pro funkci na úrovni instance systému SQL Server nebo požadavky na izolaci nad rámec funkcí v Azure SQL Database úrovně standard (model s izolovanými databázemi), Azure SQL Database Managed Instance je nejlepší možností. Tento poslední z nich je volba orientované PaaS, ale nenabízí stejné funkce jako u tradiční SQL serveru. Migrace může přinášet frictions.
 
-Organizace, která udělal hloubkové investice v úrovni instance systému SQL Server funkce by například těžit z migrace na spravované Instance systému SQL. Příklady možností úrovni instance systému SQL Server patří SQL common language runtime (CLR) integrace agenta systému SQL Server a mezidatabázové dotazování. Podpora pro tyto funkce není k dispozici v standardní Azure SQL Database (model jednotlivé databáze).
+Například organizace, který má k hloubkové investice do funkce na úrovni instance serveru SQL Server, budou těžit z migrace na spravované instanci SQL. Příklady možností na úrovni instance serveru SQL Server SQL common language runtime (CLR) integraci agenta systému SQL Server a dotazování napříč databázemi. Podpora pro tyto funkce není k dispozici v SQL Database úrovně standard Azure (jeden databázový model).
 
-V organizaci, která funguje ve vysoce regulovaná odvětví, které je udržovat izolace z bezpečnostních důvodů, mohou také těžit z Výběr modelu spravovat instanci SQL.
+Organizace, který pracuje ve vysoce regulované odvětví a které je potřeba udržovat izolaci z bezpečnostních důvodů také by mohlo prospět Výběr modelu spravované instanci SQL.
 
-Spravované Instance ve službě Azure SQL Database má následující vlastnosti:
+Ve službě Azure SQL Database Managed Instance má následující vlastnosti:
 
-- Izolace zabezpečení prostřednictvím Azure Virtual Network
+- Izolace zabezpečení pomocí Azure Virtual Network
 
-- Prostor kompatibilita aplikací, se tyto funkce:
+- Zařízení surface kompatibility aplikací, s těmito funkcemi:
 
   - Agent systému SQL Server a SQL Server Profiler
 
-  - Mezidatabázové odkazy a dotazy SQL CLR replikace, shromažďování dat změn (CDC) a služby Service Broker
+  - Mezidatabázové dotazy SQL CLR a odkazy na replikaci, změnit data capture (CDC) a služby Service Broker
 
-- Až 35 TB velikosti databáze
+- Databáze velikosti až 35 TB
 
-- Migrace výpadky minimální, se tyto funkce:
+- Migrace s minimální výpadků, s těmito funkcemi:
 
-  - Služba Azure databáze migrace
+  - Azure Database Migration Service
 
   - Nativní zálohování a obnovení a přesouvání protokolu
 
-S těmito možnostmi když migrujete existující databáze aplikace do Azure SQL Database, spravované Instance modelu nabízí téměř 100 % výhod Paas pro SQL Server. Spravované Instance je prostředí serveru SQL Server, kde můžete pokračovat pomocí možností na úrovni instance beze změny návrhu aplikace.
+S těmito možnostmi při migraci stávajících databází aplikace ke službě Azure SQL Database Managed Instance model nabízí téměř 100 % výhody Paas pro SQL Server. Managed Instance je prostředí serveru SQL Server, kde můžete pokračovat pomocí možností na úrovni instance beze změny návrhu vaší aplikace.
 
-Spravované Instance je pravděpodobně nejlepší podnikům, které aktuálně používáte SQL Server, a které vyžadují flexibilitu při jejich zabezpečení sítě v cloudu. Je to jako mít privátní virtuální sítě pro vaše databáze SQL.
+Managed Instance je pravděpodobně nejvhodnější pro podniky, které aktuálně používáte SQL Server, a které vyžadují flexibilitu při jejich zabezpečení sítě v cloudu. Je to jako mít privátní virtuální sítě pro vaše databáze SQL.
 
-## <a name="when-to-migrate-to-azure-sql-database"></a>Při migraci do Azure SQL Database
+## <a name="when-to-migrate-to-azure-sql-database"></a>Kdy migrovat do služby Azure SQL Database
 
-Jak je uvedeno, standardní Azure SQL Database je plně spravovaná, relační DBaaS. Databáze SQL aktuálně spravuje miliony provozních databází mezi 38 datových centrech po celém světě. Podporuje širokou škálu aplikace a úlohy, Správa přehledné transakčních dat, řízení nejvíce datově náročné, kritické aplikace, které vyžadují pokročilé zpracování dat v globálním měřítku.
+Jak už bylo zmíněno, standardní Azure SQL Database je plně spravovaná, relační DBaaS. SQL Database spravuje miliony provozních databází, aktuálně v 38 datových centrech po celém světě. Podporuje širokou škálu aplikací a úloh, od správy jednoduché transakčních dat, podpora nejvíce oborovými výzkumníky, kritické aplikace, které vyžadují pokročilé zpracování dat v globálním měřítku.
 
-Z důvodu jeho úplné funkce PaaS lépe ceny- a nakonec snížení nákladů – měli byste přejít na standardní databáze SQL Azure "výchozím možnost" Pokud máte aplikaci, že používá databáze systému SQL basic, standard a žádné další instance funkce. Funkce systému SQL Server jako integrace modulu CLR SQL, Agent serveru SQL Server a mezi databázové dotazy nejsou podporovány v standardní databáze SQL Azure. Tyto funkce jsou k dispozici pouze v modelu Azure spravované Instance databáze SQL.
+Z důvodu jeho funkcemi PaaS lépe ceny – a nakonec snížit náklady na-byste měli přejít na standardní Azure SQL Database jako zvoleného"Výchozí" Pokud máte aplikaci, že používá basic, standard a databázím SQL, žádné další instanci funkce. Funkce SQL serveru jako integrace modulu CLR SQL Agent systému SQL Server a dotazování napříč databázemi nejsou podporovány ve standardní databázi SQL Azure. Tyto funkce jsou k dispozici pouze v modelu Azure SQL Database Managed Instance.
 
-Databáze SQL Azure je pouze inteligentního Cloudová služba databáze, která je sestavená pro vývojáře aplikace. Je také pouze cloudové služby databáze, která se přizpůsobí na průběžně, bez výpadku, můžete efektivně poskytovat víceklientské aplikace. Nakonec Azure SQL Database vám zůstane víc času mohou a ho zrychluje doby uvedení na trh. Můžete vytvářet aplikace, zabezpečení a připojení k vaší databázi SQL pomocí jazyky a platformy, které dáváte přednost.
+Azure SQL Database je pouze inteligentní Cloudová databázová služba, která je vytvořená pro vývojáře aplikací. Je také jediným Cloudová databázová služba, která se škáluje na průběžné, bez jakýchkoli prostojů, abychom vám efektivně doručovat víceklientské aplikace. Nakonec Azure SQL Database opustí, více času na inovace a zrychluje dobu uvedení na trh. Můžete vytvářet zabezpečené aplikace a připojení k SQL database s použitím jazyků a platforem, které dáváte přednost.
 
 Azure SQL Database nabízí následující výhody:
 
-- Vestavěné inteligentní (machine learning), který zjišťuje a přizpůsobuje do vaší aplikace
+- Integrované inteligentní funkce (strojové učení), která se učí a adaptuje se pro vaši aplikaci
 
-- Zřizování databáze na vyžádání
+- Zřízení databáze na vyžádání
 
-- Rozsah nabízí pro všechny úlohy
+- Rozsah nabídky pro všechny úlohy
 
-- 99,99 % dostupnost SLA, nulové údržby
+- dostupnost 99,99 % smlouva SLA, žádná Údržba díky samosprávě
 
 - Geografická replikace a obnovení služby ochrany dat
 
-- Azure SQL Database bodu v funkce čas obnovení
+- Azure SQL Database bod obnovení funkce
 
-- Kompatibilita s SQL Server 2016, včetně hybridních a migrace
+- Kompatibilita s SQL serverem 2016, včetně hybridních a migrace
 
-Standardní databáze SQL Azure je blíž ke PaaS než Azure spravované Instance databáze SQL. Dáváte přednost standardní databáze SQL Azure, protože získáte další výhody z spravované cloudu. Ale Azure SQL Database má některé hlavní rozdíly z regulární a místní instance systému SQL Server. V závislosti na vaší stávající aplikaci požadavky na databázi a vaše podnikové požadavky a zásady nemusí být nejlepší volbou při plánování migrace do cloudu.
+Standardní Azure SQL Database je blíže k PaaS než Azure SQL Database Managed Instance. Upřednostňují standardní Azure SQL Database, protože ze spravovaného cloudu dostanete další výhody. Ale Azure SQL Database má několik klíčových rozdílů v pravidelných a místní instance systému SQL Server. V závislosti na vaší stávající databáze podle požadavků vaší aplikace a vaše podnikové požadavky a zásady nemusí být nejlepší volbou při plánování migrace do cloudu.
 
-## <a name="when-to-move-your-original-rdbms-to-a-vm-iaas"></a>Při přesunutí vašeho původního RDBMS k virtuálnímu počítači (IaaS)
+## <a name="when-to-move-your-original-rdbms-to-a-vm-iaas"></a>Kdy se má přesunout váš původním relační databázový systém na virtuálním počítači (IaaS)
 
-Mezi možnosti migrace je přesunout vašeho původního systému správy relačních databází (RDBMS), včetně Oracle, IBM DB2, MySQL, PostgreSQL a SQL Server, podobně jako server, který běží na virtuálním počítači Azure. Pokud máte existující aplikace, které vyžadují nejrychlejší migraci do cloudu s minimálními změnami nebo žádné změny ve všech, může být přímé migrace IaaS v cloudu správného možnost. Nemusí být nejlepší způsob, jak využít výhod všech cloudu, ale je pravděpodobně nejrychlejší počáteční cestu.
+Jednou z možností migrace je přesunout váš původním relační databázový systém (RDBMS), včetně Oracle, IBM DB2, MySQL, PostgreSQL nebo SQL Server, podobně jako server, na kterém běží na Virtuálním počítači Azure. Pokud máte aplikace požadující nejrychlejší migrace do cloudu s minimálními změnami nebo žádnými změnami vůbec přímé migrace na IaaS v cloudu může být reálnou možnost. Nejlepší způsob, jak využít výhod všech cloudu nemusí být, ale je pravděpodobně nejrychlejší počáteční cesty.
 
-V současné době podporuje až do Microsoft Azure [331 různých databázové servery](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) nasazená jako virtuální počítače IaaS. Jedná se o oblíbených RDBMS jako SQL Server, Oracle, MySQL, PostgreSQL a IBM DB2 a mnoho dalších databáze NoSQL jako MongoDB, Cassandra, DataStax, MariaDB a Cloudera.
+V současné době podporuje Microsoft Azure do [331 jiné databázové servery](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) nasazená jako virtuální počítače IaaS. Patří mezi ně oblíbených relační databázový systém, jako je SQL Server, Oracle, MySQL, PostgreSQL a IBM DB2 a mnoha dalších databáze NoSQL jako MongoDB Cassandra, DataStax, MariaDB a Cloudera.
 
 > [!NOTE]
-> I když přesunutí vaší RDBMS na virtuální počítač Azure může být nejrychlejší způsob, jak migrovat data do cloudu (protože je IaaS), tento postup vyžaduje významné investice do týmům IT (správce databáze a IT profesionály). Enterprise týmy musí být schopni nastavit a spravovat vysokou dostupnost, zotavení po havárii a opravy pro SQL Server. Také je nutné tento kontext přizpůsobené prostředí, s plná práva pro správu.
+> Ačkoli přesunutí vaše relační databázový systém na Virtuálním počítači Azure může být nejrychlejší způsob, jak migrovat data do cloudu (protože je IaaS), tento přístup vyžaduje značné investice při vaše týmy IT (správci databází a IT Profesionálové). Enterprise týmy musí být schopni nastavit a spravovat vysokou dostupnost, zotavení po havárii a opravy pro SQL Server. Tento kontext musí také přizpůsobené prostředí s úplnými právy.
 
-## <a name="when-to-migrate-to-sql-server-as-a-vm-iaas"></a>Pokud chcete migrovat do systému SQL Server jako virtuální počítač (IaaS)
+## <a name="when-to-migrate-to-sql-server-as-a-vm-iaas"></a>Kdy migrovat do systému SQL Server jako virtuální počítač (IaaS)
 
-Může být několik případů, kde je stále nutné migrovat do systému SQL Server jako regulární virtuální počítač. Příklad scénáře je, pokud budete muset použít SQL Server Reporting Services. Ve většině případů ale Azure SQL Database spravované Instance může poskytnout vše potřebné k migraci z místních serverů SQL, takže migrace virtuálního počítače s SQL Server by mělo být vaší poslední možnost pokusit.
+Může existovat několik případů, kdy stále potřebujete migrovat na SQL Server jako regulární virtuální počítač. Příklad scénáře je, pokud budete muset použít SQL Server Reporting Services. Ve většině případů však Azure SQL Database Managed Instance můžete zadat všechno, co je potřeba migrovat z místních SQL serverech, migrace do virtuálního počítače s SQL serverem by tak měly být vaší poslední možnost vyzkoušet.
 
-## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do Azure pomocí služby migrace databáze Azure 
+## <a name="use-azure-database-migration-service-to-migrate-your-relational-databases-to-azure"></a>Migrace relačních databází do Azure pomocí Azure Database Migration Service 
 
-Migrace relační databáze jako SQL Server a Oracle, MySQL do Azure, můžete použít služba migrace databáze Azure, zda je cílová databáze Azure SQL Database, spravované Instance serveru Azure SQL Database nebo SQL Server na virtuálním počítači Azure.
+Azure Database Migration Service můžete použít k migraci do Azure, relační databáze jako SQL Server, Oracle nebo MySQL, jestli je cílová databáze Azure SQL Database, Azure SQL Database Managed Instance nebo SQL Server na Virtuálním počítači Azure.
 
-Automatizované pracovní postup, s vytvářením sestav hodnocení, vás provede změny, které je potřeba udělat před zahájením migrace databáze. Jakmile budete připraveni, služba migruje zdrojové databáze Azure.
+Automatizovaný workflow, generování sestav posouzení, vás provede změny, které je třeba provést před zahájením migrace databáze. Až budete připravení, služba migraci zdrojové databáze do Azure.
 
-Vždy, když změníte původní RDBMS, možná budete muset testování. Vám může také muset změnit věty SQL nebo relační objekt mapování (ORM) kód ve vaší aplikaci, v závislosti na výsledcích testování.
+Pokaždé, když změníte původní relační databázový systém, můžete potřebovat k testování. Potřebujete také změnit věty SQL nebo kód objektově-relační mapování (ORM) určené ve vaší aplikaci, v závislosti na výsledcích testování.
 
-Pokud máte jakékoli jiné databáze (například IBM DB2) a požádáte o navýšení a shift přístupu, můžete chtít používat tyto databáze jako virtuální počítače IaaS v Azure, pokud chcete provádět složitější dat migrace. Složitější migrace dat bude vyžadovat další úsilí, protože jste by migrace na jiné databázi typu se schématem a různé programovací knihovny.
+Pokud máte jakékoli jiné databáze (například IBM DB2) a pokud se rozhodnete výtah a posunout přístup, můžete chtít pokračovat v používání těchto databází jako virtuální počítače IaaS v Azure, pokud se nechcete provádět složitější data migrace. Složitější data migrace bude vyžadovat další úsilí, protože jste by migrace na jinou databázi typu se nové schéma a různé programovací knihovny.
 
-Další postupy k migraci databáze pomocí služba migrace databáze Azure najdete v tématu [získat do cloudu s Azure spravované Instance databáze SQL a služba migrace databáze Azure rychlejší](https://channel9.msdn.com/Events/Build/2017/P4008).
+Zjistěte, jak migrovat databáze s využitím Azure Database Migration Service, najdete v článku [na cloud rychleji s využitím Azure SQL Database Managed Instance a Azure Database Migration Service](https://channel9.msdn.com/Events/Build/2017/P4008).
 
 ## <a name="additional-resources"></a>Další zdroje
 
-- **Volba cloudového řešení SQL serveru: Azure SQL Database (PaaS) nebo SQL Server na virtuální počítač Azure (IaaS)**
+- **Volba cloudového řešení systému SQL Server: Azure SQL Database (PaaS) nebo SQL Server na virtuálním počítači Azure (IaaS)**
 
     [https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)
 
-- **Získat rychlejší s Azure SQL DB spravované Instance a služba migrace databáze do cloudu**
+- **Na cloud rychleji s využitím Azure SQL DB mi a Database Migration Service**
 
     [https://channel9.msdn.com/Events/Build/2017/P4008](https://channel9.msdn.com/Events/Build/2017/P4008)
 
-- **Migrace databáze SQL serveru do databáze SQL v cloudu**
+- **Migrace databáze SQL serveru do služby SQL Database v cloudu**
 
     [https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate)
 
-- **Databáze Azure SQL**
+- **Azure SQL Database**
 
     [https://azure.microsoft.com/services/sql-database/?v=16.50](https://azure.microsoft.com/services/sql-database/?v=16.50)
 
-- **SQL Server na virtuální počítače**
+- **SQL Server na virtuálních počítačích**
 
     [https://azure.microsoft.com/services/virtual-machines/sql-server/](https://azure.microsoft.com/services/virtual-machines/sql-server/)
 
 >[!div class="step-by-step"]
-[Předchozí](lift-and-shift-existing-apps-azure-iaas.md)
-[další](modernize-existing-apps-to-cloud-optimized/index.md)
+>[Předchozí](lift-and-shift-existing-apps-azure-iaas.md)
+>[další](modernize-existing-apps-to-cloud-optimized/index.md)

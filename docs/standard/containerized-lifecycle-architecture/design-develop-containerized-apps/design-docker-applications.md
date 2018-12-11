@@ -1,23 +1,22 @@
 ---
-title: Návrh aplikace Docker
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Návrh aplikací Dockeru
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 2f4a3b7675365aa4d1e33328f756439398f3a4de
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: d02cec0595024eb7bd7c0ac46df093359680da74
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105234"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155376"
 ---
-# <a name="design-docker-applications"></a>Návrh aplikace Docker
+# <a name="design-docker-applications"></a>Návrh aplikací Dockeru
 
-Kapitola 1 zavedly základní koncepty týkající se kontejnery a Docker. Tyto informace je základní úroveň informace, které potřebujete, abyste mohli začít. Ale podnikové aplikace, které může být složité a skládat z několika služeb místo jednu službu nebo kontejneru. Pro případy nepovinným použitím musíte znát další přístupy k návrhu, jako je architektura Service-Oriented (SOA) a pokročilejší mikroslužeb koncepty a kontejner koncepty orchestration. Rámec tohoto dokumentu se neomezuje na mikroslužeb, ale žádné Docker aplikace životní cyklus, proto ji není prozkoumat mikroslužeb architektura podrobněji, protože také můžete použít kontejnery a Docker pomocí regulárních SAO, úlohy na pozadí nebo úlohy, nebo dokonce i s přístupy k nasazení monolitický aplikace.
+Kapitoly 1 jsme zavedli základní koncepty týkající se kontejnerů a Dockeru. Tyto informace je základní úroveň informací, které potřebujete, abyste mohli začít. Ale podnikových aplikací mohou být složité a skládá z několika služeb namísto jedné služby nebo kontejneru. Pro tyto případy použití volitelné je potřeba vědět další přístupy k návrhu, jako je architektura Service-Oriented (SOA) a pokročilejší koncepty mikroslužeb a kontejnerů koncepty Orchestrace. Rámec tohoto dokumentu se neomezuje na mikroslužby ale do jakékoli Docker aplikace životního cyklu, proto ho není prozkoumat architektury mikroslužeb do hloubky protože také můžete použít kontejnerům a Dockeru s regulární SAO, úlohy na pozadí nebo úlohy, nebo dokonce i s monolitickými aplikacemi způsoby nasazení.
 
-Ale předtím, než se nám získat do životního cyklu aplikace a DevOps, je důležité vědět, jak se chystáte návrhu a vytvořit aplikace a jaké jsou vaše volby návrhu.
-
+Ale předtím, než se dostaneme k životního cyklu aplikace a DevOps, je důležité vědět, jak chcete navrhnout a sestavit aplikaci a jaké jsou vaše volby při návrhu.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](common-container-design-principles.md)
+>[Předchozí](index.md)
+>[další](common-container-design-principles.md)

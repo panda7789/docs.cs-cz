@@ -1,46 +1,46 @@
 ---
-title: příkaz nápovědy DotNet - .NET Core rozhraní příkazového řádku
-description: Příkaz help dotnet ukazuje podrobnější dokumentaci online zadaný příkaz.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: ed152717e32ffb294f5d5bd8e5eb74d55e33e506
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+title: příkaz DotNet nápovědy
+description: Příkaz dotnet help Zobrazí podrobnější online dokumentaci pro zadaný příkaz.
+ms.date: 12/04/2018
+ms.openlocfilehash: 44274b698ed83bd3cdb58787f433eeb5c555bc6d
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696595"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168948"
 ---
-# <a name="dotnet-help-reference"></a>odkaz na nápovědu DotNet.
+# <a name="dotnet-help-reference"></a>odkaz na nápovědu DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet help` -Li zobrazit podrobnější dokumentaci online zadaný příkaz.
+`dotnet help` – Zobrazí podrobnější online dokumentaci pro zadaný příkaz.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 `dotnet help <COMMAND_NAME> [-h|--help]`
 
 ## <a name="description"></a>Popis
 
-`dotnet help` Příkaz otevře stránka s referencemi podrobné informace o zadaný příkaz na docs.microsoft.com.
+`dotnet help` Příkaz otevře stránku pro odkaz na podrobné informace o zadaném příkazu na webu docs.microsoft.com.
 
 ## <a name="arguments"></a>Arguments
 
-`COMMAND_NAME`
+* **`COMMAND_NAME`**
 
-Název příkazu .NET Core rozhraní příkazového řádku. Seznam platné příkazy rozhraní příkazového řádku najdete v tématu [rozhraní příkazového řádku](index.md#cli-commands).
+  Název příkazu rozhraní příkazového řádku .NET Core. Seznam platných příkazů rozhraní příkazového řádku najdete v tématu [příkazy rozhraní příkazového řádku](index.md#cli-commands).
 
 ## <a name="options"></a>Možnosti
 
-`-h|--help`
+* **`-h|--help`**
 
-Vytiskne krátké nápovědy pro příkaz.
+  Vytiskne krátký nápovědy pro příkaz.
 
 ## <a name="examples"></a>Příklady
 
-Otevře se stránka dokumentace pro [dotnet nové](dotnet-new.md) příkaz:
+* Otevře se stránka dokumentace pro [dotnet nové](dotnet-new.md) příkaz:
 
-`dotnet help new`
+  ```console
+  dotnet help new
+  ```

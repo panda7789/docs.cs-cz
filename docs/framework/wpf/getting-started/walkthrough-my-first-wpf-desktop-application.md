@@ -1,6 +1,6 @@
 ---
 title: Vytvoření aplikace WPF v sadě Visual Studio
-ms.date: 04/12/2018
+ms.date: 10/26/2018
 dev_langs:
 - csharp
 - vb
@@ -11,16 +11,16 @@ ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
 ms.custom: vs-dotnet
-ms.openlocfilehash: 1a9c82a0bca25fa1242b29393e41e6eb4ce7f3b9
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.openlocfilehash: 6ea5997906c0bf34de67a6a125552d2b2c4e1a43
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46007253"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150742"
 ---
-# <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
+# <a name="walkthrough-my-first-wpf-desktop-application"></a>Průvodce: Moje první desktopová aplikace WPF
 
-V tomto článku se dozvíte, jak vyvíjet jednoduchou aplikaci Windows Presentation Foundation (WPF), která obsahuje elementy, které jsou společné pro většinu aplikací WPF: značek Extensible Application Markup Language (XAML), použití modelu code-behind, definice aplikací ovládací prvky, rozložení, datové vazby a styly.
+V tomto článku se dozvíte, jak vyvíjet jednoduchou aplikaci Windows Presentation Foundation (WPF), která obsahuje elementy, které jsou společné pro většinu aplikací WPF: Extensible Application Markup Language (XAML) značky, použití modelu code-behind, definice aplikací, ovládací prvky, rozložení, datové vazby a styly.
 
 Tento návod zahrnuje následující kroky:
 
@@ -43,7 +43,7 @@ Na konci návodu budete sestavíte samostatnou aplikaci Windows, která umožňu
 
 ## <a name="prerequisites"></a>Požadavky
 
-- Visual Studio 2012 nebo novější (Tento článek je založen na Visual Studio 2017)
+- Visual Studio 2017 nebo novější
 
    Další informace o instalaci nejnovější verze sady Visual Studio najdete v tématu [instalace sady Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -57,7 +57,7 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
 
       **Nový projekt** otevře se dialogové okno.
 
-   2. V části **nainstalováno** kategorie, rozbalte buď **Visual C#** nebo **jazyka Visual Basic** uzlu a pak vyberte **klasická plocha Windows**.
+   2. V části **nainstalováno** kategorie, rozbalte buď **Visual C#**  nebo **jazyka Visual Basic** uzlu a pak vyberte **Windows Desktop**.
 
    3. Vyberte **aplikace WPF (.NET Framework)** šablony. Zadejte název **`ExpenseIt`** a pak vyberte **OK**.
 
@@ -66,7 +66,7 @@ Prvním krokem je vytvoření aplikační infrastruktury, který obsahuje defini
       Visual Studio vytvoří projekt a otevře se návrhář pro výchozí okno aplikace s názvem **souboru MainWindow.xaml**.
 
    > [!NOTE]
-   > Tento návod používá <xref:System.Windows.Controls.DataGrid> ovládací prvek, který je k dispozici v rozhraní .NET Framework 4 a novější. Být jisti, že váš projekt cílí na rozhraní .NET Framework 4 nebo novější. Další informace najdete v tématu [postupy: cílení na určitou verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
+   > Tento návod používá <xref:System.Windows.Controls.DataGrid> ovládací prvek, který je k dispozici v rozhraní .NET Framework 4 a novější. Být jisti, že váš projekt cílí na rozhraní .NET Framework 4 nebo novější. Další informace najdete v tématu [jak: Cílení na určitou verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
 
 2. Otevřít *Application.xaml* (Visual Basic) nebo *App.xaml* (C#).
 
@@ -254,7 +254,7 @@ V části vytvoříte tabulku s jedním sloupcem se třemi řádky a 10 pixel ok
 
     [!code-xaml[ExpenseIt#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt3/ExpenseItHome.xaml#8)]
 
-    <xref:System.Windows.Controls.RowDefinition.Height%2A> Dva řádky se nastaví na <xref:System.Windows.GridLength.Auto%2A>, což znamená, že je nastavena velikost řádků založit na obsah v řádcích. Výchozí hodnota <xref:System.Windows.Controls.RowDefinition.Height%2A> je <xref:System.Windows.GridUnitType.Star> velikosti, což znamená, že vážený poměr volného místa výšku řádku. Například pokud máte dva řádky <xref:System.Windows.Controls.RowDefinition.Height%2A> z "*", každý z nich výška polovinu dostupné místo.
+    <xref:System.Windows.Controls.RowDefinition.Height%2A> Dva řádky se nastaví na <xref:System.Windows.GridLength.Auto%2A>, což znamená, že je nastavena velikost řádků na základě obsahu v řádcích. Výchozí hodnota <xref:System.Windows.Controls.RowDefinition.Height%2A> je <xref:System.Windows.GridUnitType.Star> velikosti, což znamená, že vážený poměr volného místa výšku řádku. Například pokud máte dva řádky <xref:System.Windows.Controls.RowDefinition.Height%2A> z "*", každý z nich výška polovinu dostupné místo.
 
     Vaše <xref:System.Windows.Controls.Grid> by teď měl vypadat podobně jako následující XAML:
 
@@ -327,7 +327,7 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 1. Otevřít *`ExpenseItHome.xaml`*.
 
-2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužnou](https://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480).
+2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [jak: Vytvořte obslužnou rutinu události jednoduché](https://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480).
 
     [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]
 
@@ -353,7 +353,7 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 3. Sestavte a spusťte aplikaci.
 
     > [!NOTE]
-    > Pokud dojde k chybě <xref:System.Windows.Controls.DataGrid> se nepovedlo najít nebo neexistuje, ujistěte se, že váš projekt cílí na .NET Framework 4 nebo novější. Další informace najdete v tématu [postupy: cílení na určitou verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
+    > Pokud dojde k chybě <xref:System.Windows.Controls.DataGrid> se nepovedlo najít nebo neexistuje, ujistěte se, že váš projekt cílí na .NET Framework 4 nebo novější. Další informace najdete v tématu [jak: Cílení na určitou verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
 
 4. Vyberte **zobrazení** tlačítko.
 
@@ -375,7 +375,7 @@ Vzhled různé prvky je často stejný pro všechny prvky v uživatelském rozhr
 
     Tento XAML přidá následující styly:
 
-    - `headerTextStyle`: K formátování se název stránky <xref:System.Windows.Controls.Label>.
+    - `headerTextStyle`: Formátování názvu stránky <xref:System.Windows.Controls.Label>.
 
     - `labelStyle`: K formátování <xref:System.Windows.Controls.Label> ovládacích prvků.
 

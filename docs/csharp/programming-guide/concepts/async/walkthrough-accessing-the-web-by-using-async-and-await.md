@@ -1,15 +1,15 @@
 ---
-title: 'Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)'
+title: 'Průvodce: Přístup k webu pomocí modifikátoru async a operátoru await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 8a97521bae7f5f16841aa4c8e4a157384739ee61
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: f06bf93f1de4de2aa70c761e1bfb101d4dde48a2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453278"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127144"
 ---
-# <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)
+# <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Průvodce: Přístup k webu pomocí modifikátoru async a operátoru await (C#)
 
 Asynchronní programy můžete napsat snadno a intuitivně s použitím funkce async/await. Můžete psát asynchronní kód, který vypadá jako synchronní kód a nechte kompilátor obtížné zpětného volání funkce a pokračování, které obvykle zahrnuje asynchronního kódu.
 
@@ -17,14 +17,14 @@ Další informace o funkci Async naleznete v tématu [asynchronní programován�
 
 Tento názorný postup začíná synchronní aplikace Windows Presentation Foundation (WPF), který sumarizuje počet bajtů v seznamu webů. Návodu poté převádí aplikaci, aby asynchronní řešení pomocí nové funkce.
 
-Pokud nechcete, aby k vytváření aplikací, si můžete stáhnout [asynchronní vzorek: přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
+Pokud nechcete, aby k vytváření aplikací, si můžete stáhnout [asynchronní vzorek: Přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 
 > [!NOTE]
 > Chcete-li spustit příklady, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.
 
 ## <a name="create-a-wpf-application"></a>Vytvoření aplikace WPF
 
-1.  Spusťte sadu Visual Studio.
+1.  Spusťte Visual Studio.
 
 2.  V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
 
@@ -137,8 +137,7 @@ Pokud nechcete, aby k vytváření aplikací, si můžete stáhnout [asynchronn�
         }
 
         // Display the total count for all of the web addresses.
-        resultsTextBox.Text +=
-            string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);
+        resultsTextBox.Text += $"\r\n\r\nTotal bytes returned:  {total}\r\n";
     }
 
     private List<string> SetUpURLList()
@@ -192,7 +191,7 @@ Pokud nechcete, aby k vytváření aplikací, si můžete stáhnout [asynchronn�
         var bytes = content.Length;
         // Strip off the "https://".
         var displayURL = url.Replace("https://", "");
-        resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);
+        resultsTextBox.Text += $"\n{displayURL,-58} {bytes,8}";
     }
     ```
 
@@ -255,7 +254,7 @@ Všimněte si, že trvá několik sekund zobrazí počty. Během této doby vlá
 
      Volání `webReq.GetResponseAsync` vrátí `Task(Of WebResponse)` nebo `Task<WebResponse>`. Pak operátor await se použije na úlohu k načtení `WebResponse` hodnotu.
 
-     Pokud asynchronní metoda má práce, která nezávisí na dokončení úlohy, metoda může pokračovat v práci mezi tyto dva příkazy po volání metody async a před `await` je použit operátor. Příklady najdete v tématu [postupy: paralelní provádění více webových požadavků pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) a [postupy: rozšíření návodu úloh pomocí metody Task.whenall (C#) asynchronních](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+     Pokud asynchronní metoda má práce, která nezávisí na dokončení úlohy, metoda může pokračovat v práci mezi tyto dva příkazy po volání metody async a před `await` je použit operátor. Příklady najdete v tématu [jak: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) a [jak: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
 3.  Vzhledem k tomu, že jste přidali `await` dojde k chybě kompilátoru operátor v předchozím kroku. Operátor, který lze použít pouze v metodách, které jsou označené [asynchronní](../../../../csharp/language-reference/keywords/async.md) modifikátor. Ignorovat chybu, zatímco nahraďte volání kroky převod `CopyTo` voláním `CopyToAsync`.
 
@@ -500,7 +499,7 @@ namespace AsyncExampleWPF
             }
             // Display the total count for all of the websites.
             resultsTextBox.Text +=
-                string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);
+                $"\r\n\r\nTotal bytes returned:  {total}\r\n";
         }
 
         private List<string> SetUpURLList()
@@ -566,7 +565,7 @@ namespace AsyncExampleWPF
             var bytes = content.Length;
             // Strip off the "https://".
             var displayURL = url.Replace("https://", "");
-            resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);
+            resultsTextBox.Text += $"\n{displayURL,-58} {bytes,8}";
         }
     }
 }
@@ -654,7 +653,7 @@ namespace AsyncExampleWPF
 
             // Display the total count for all of the websites.
             resultsTextBox.Text +=
-                string.Format("\r\n\r\nTotal bytes returned:  {0}\r\n", total);
+                $"\r\n\r\nTotal bytes returned:  {total}\r\n";
         }
 
         private List<string> SetUpURLList()
@@ -683,7 +682,7 @@ namespace AsyncExampleWPF
             var bytes = content.Length;
             // Strip off the "https://".
             var displayURL = url.Replace("https://", "");
-            resultsTextBox.Text += string.Format("\n{0,-58} {1,8}", displayURL, bytes);
+            resultsTextBox.Text += $"\n{displayURL,-58} {bytes,8}";
         }
     }
 }
@@ -691,11 +690,11 @@ namespace AsyncExampleWPF
 
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní vzorek: Přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Ukázka asynchronní metody: Přístup k webovému návodu (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [async](../../../../csharp/language-reference/keywords/async.md)
 - [await](../../../../csharp/language-reference/keywords/await.md)
 - [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
 - [Asynchronní návratové typy (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
 - [Asynchronní programování založené na úlohách (TAP)](https://www.microsoft.com/en-us/download/details.aspx?id=19957)
-- [Postupy: rozšíření návodu úloh pomocí metody Task.whenall (C#) asynchronních](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Postupy: paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Jak: Rozšíření návodu úloh pomocí metody Task.whenall asynchronních (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Jak: Paralelní provádění vícenásobných webových pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

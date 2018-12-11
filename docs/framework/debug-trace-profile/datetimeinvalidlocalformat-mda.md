@@ -14,47 +14,47 @@ helpviewer_keywords:
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bb5777e275fd7c48f7125b9e0315b08d3095c373
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54ce0f75ddfbf9f3b62917aa67f4d97140bbdc42
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33357803"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153334"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat – pomocník spravovaného ladění (MDA)
-`dateTimeInvalidLocalFormat` MDA se aktivuje při <xref:System.DateTime> instanci, která je uloženo jako světového koordinovaného času (UTC) je formátován pomocí formátu, který je určen pro použití pouze pro místní <xref:System.DateTime> instance. Tato MDA není aktivován pro tento parametr nezadáte, nebo výchozí <xref:System.DateTime> instance.  
+`dateTimeInvalidLocalFormat` MDA aktivováno, když <xref:System.DateTime> instanci, která je uloženo jako koordinovaný světový čas (UTC), je naformátována pomocí formátu, který je určen pro použití pouze pro místní <xref:System.DateTime> instancí. Toto MDA aktivováno pro tento parametr zadán, nebo výchozí <xref:System.DateTime> instancí.  
   
-## <a name="symptom"></a>Příznaky  
- Aplikace je ručně serializaci UTC <xref:System.DateTime> pomocí místního formátu:  
+## <a name="symptom"></a>Příznak  
+ Aplikace je ruční serializaci UTC <xref:System.DateTime> instance pomocí místního formátu:  
   
-```  
+```csharp
 DateTime myDateTime = DateTime.UtcNow;  
 Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));  
 ```  
   
 ### <a name="cause"></a>příčina  
- 'z' formátu pro <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> metoda zahrnuje posun místního času zóny, například "+ 10:00" Sydney dobu. Jako takový ho pouze vytvoří smysluplný výsledku Pokud hodnota <xref:System.DateTime> je místní. Pokud je hodnota času UTC <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> zahrnuje místního času posun zóny, ale nemá zobrazit nebo upravit specifikátor časové pásmo.  
+ "z" formát pro <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> metoda obsahuje posunu místního časového pásma, například "+ 10:00" Sydney dobu. V důsledku toho se jen vytvoří smysluplný výsledek Pokud hodnota <xref:System.DateTime> je místní. Pokud je hodnota času UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> místní čas zahrnuje posun zóny, ale ne zobrazit nebo upravit specifikátor časové pásmo.  
   
 ### <a name="resolution"></a>Rozlišení  
- UTC <xref:System.DateTime> instancí musí být formátována způsobem, který označuje, že jsou UTC. Doporučený formát UTC – časové hodnoty a Z používat k označení čas UTC:  
+ Čas UTC <xref:System.DateTime> instance by měly být formátovány způsobem, který označuje, že jsou UTC. Doporučený formát UTC časy na použití "Z" k označení čas UTC:  
   
-```  
+```csharp
 DateTime myDateTime = DateTime.UtcNow;  
 Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffZ"));  
 ```  
   
- Je také formátu "o", který serializuje <xref:System.DateTime> , které využívají <xref:System.DateTime.Kind%2A> vlastnost, která serializuje správně bez ohledu na to, zda je místní, instance UTC, nebo nezadanou:  
+ Je také ve formátu "o", který serializuje <xref:System.DateTime> využívání <xref:System.DateTime.Kind%2A> vlastnost, která serializuje správně bez ohledu na to, jestli je instance místní, UTC, nebo neurčenou:  
   
-```  
+```csharp
 DateTime myDateTime = DateTime.UtcNow;  
 Serialize(myDateTime.ToString("o"));  
 ```  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA neovlivňuje modulu runtime.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá vliv na modul runtime.  
   
 ## <a name="output"></a>Výstup  
- Neexistuje žádný speciální výstup v důsledku této aktivace MDA., ale zásobník volání slouží k určení umístění <xref:System.DateTime.ToString%2A> volání, které aktivuje (mda).  
+ Neexistuje žádný zvláštní výstup v důsledku tohoto MDA aktivace., ale zásobník volání slouží k určení umístění <xref:System.DateTime.ToString%2A> volání, které MDA aktivováno.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -67,20 +67,20 @@ Serialize(myDateTime.ToString("o"));
 ```  
   
 ## <a name="example"></a>Příklad  
- Zvažte aplikaci, která je nepřímo serializaci UTC <xref:System.DateTime> hodnotu pomocí <xref:System.Xml.XmlConvert> nebo <xref:System.Data.DataSet> třída tímto způsobem.  
+ Vezměte v úvahu aplikace, která je nepřímo serializace UTC <xref:System.DateTime> hodnotu s použitím <xref:System.Xml.XmlConvert> nebo <xref:System.Data.DataSet> třídy následujícím způsobem.  
   
-```  
+```csharp
 DateTime myDateTime = DateTime.UtcNow;  
 String serialized = XMLConvert.ToString(myDateTime);  
 ```  
   
- <xref:System.Xml.XmlConvert> a <xref:System.Data.DataSet> serializations ve výchozím nastavení používá místní formáty pro serializaci. Další možnosti jsou vyžadována k serializaci jiné typy z <xref:System.DateTime> hodnoty, například UTC.  
+ <xref:System.Xml.XmlConvert> a <xref:System.Data.DataSet> serializations ve výchozím nastavení použít místní formáty serializace. Další možnosti jsou vyžadována k serializaci jiných typů z <xref:System.DateTime> hodnoty, jako je například UTC.  
   
- V tomto konkrétním příkladu předat `XmlDateTimeSerializationMode.RoundtripKind` k `ToString` volání na `XmlConvert`. To serializuje data jako čas UTC.  
+ V tomto konkrétním příkladu předat `XmlDateTimeSerializationMode.RoundtripKind` k `ToString` volat `XmlConvert`. Toto serializuje data jako čas UTC.  
   
- Pokud se používá <xref:System.Data.DataSet>, nastavte <xref:System.Data.DataColumn.DateTimeMode%2A> vlastnost na <xref:System.Data.DataColumn> do objektu <xref:System.Data.DataSetDateTime.Utc>.  
+ Pokud používáte <xref:System.Data.DataSet>, nastavte <xref:System.Data.DataColumn.DateTimeMode%2A> vlastnost <xref:System.Data.DataColumn> objektu <xref:System.Data.DataSetDateTime.Utc>.  
   
-```  
+```csharp
 DateTime myDateTime = DateTime.UtcNow;  
 String serialized = XmlConvert.ToString(myDateTime,   
     XmlDateTimeSerializationMode.RoundtripKind);  

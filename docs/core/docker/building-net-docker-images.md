@@ -1,21 +1,21 @@
 ---
-title: Vytváření Imagí Dockeru .NET Core
-description: Principy imagí Dockeru a .NET Core
+title: Přehled Image dockeru
+description: Další informace o použití publikovaných imagí Dockeru .NET Core z registru Dockeru. Také se dozvíte, jak o přijetí změn imagí a vytvoření vlastních imagí.
 author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: 675b6821588f8d0dd9495346a13665a32986f060
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: mvc, seodec18
+ms.openlocfilehash: dbe509269c1dc5868c44b12b025bbdd9faaa3508
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841161"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169336"
 ---
-# <a name="building-docker-images-for-net-core-applications"></a>Vytváření Imagí Dockeru pro aplikace .NET Core
+# <a name="learn-about-docker-images-for-net-core"></a>Další informace o imagích Dockeru pro .NET Core
 
- V tomto kurzu se zaměříme na tom, jak pomocí .NET Core v Dockeru. Nejprve podíváme na různé imagí Dockeru k dispozici a spravován společností Microsoft a případy použití. Potom jsme zjistěte, jak sestavit a dockerizace aplikace ASP.NET Core.
+V tomto kurzu se zaměříme na tom, jak pomocí .NET Core v Dockeru. Nejprve podíváme na různé imagí Dockeru k dispozici a spravován společností Microsoft a případy použití. Potom jsme zjistěte, jak sestavit a dockerizace aplikace ASP.NET Core.
 
 V průběhu tohoto kurzu se dozvíte:
 > [!div class="checklist"]
@@ -36,11 +36,11 @@ Při vytváření imagí Dockeru pro vývojáře, jsme se zaměřili na třech h
 Proč tři Image?
 Při vývoji, vytváření a spouštění kontejnerizovaných aplikací, jsme mají různé priority.
 
-* **Vývoj:** prioritou se zaměřuje na rychle iterovat změny a možnost ladit změny. Velikost bitové kopie není důležité, místo toho můžete provést změny kódu a rychle vidět?
+* **Vývoj aplikací:**  Priorita se zaměřuje na rychle iterovat změny a možnost ladit změny. Velikost bitové kopie není důležité, místo toho můžete provést změny kódu a rychle vidět?
 
-* **Sestavení:** tento obrázek obsahuje vše potřebné pro kompilaci aplikace, které zahrnují kompilátor a další závislosti optimalizovat binární soubory.  Sestavení image použijete k vytvoření majetek, který umístíte do produkčního prostředí image. Sestavení image se použije pro průběžnou integraci, nebo v prostředí sestavení. Tento přístup umožňuje agenta sestavení pro zkompilování a vybuildování aplikace (s všechny požadované závislosti) v instanci bitové kopie sestavení. Agenta sestavení stačí vědět, jak ke spuštění této image Dockeru.
+* **Sestavení:** Tato image obsahuje vše potřebné pro kompilaci aplikace, které zahrnují kompilátor a další závislosti optimalizovat binární soubory.  Sestavení image použijete k vytvoření majetek, který umístíte do produkčního prostředí image. Sestavení image se použije pro průběžnou integraci, nebo v prostředí sestavení. Tento přístup umožňuje agenta sestavení pro zkompilování a vybuildování aplikace (s všechny požadované závislosti) v instanci bitové kopie sestavení. Agenta sestavení stačí vědět, jak ke spuštění této image Dockeru.
 
-* **Produkční:** jak rychle můžete nasadit a spustit image? Tato image je malé, takže je optimalizován výkon sítě z registru Dockeru do Docker hostitelů. Obsah je připraven ke spuštění povolení nejrychlejší doba od Dockeru, spusťte na zpracování výsledků. Dynamický kód kompilace, není nutná v modelu Dockeru. Obsah, který umístíte do této bitové kopie omezeny na binární soubory a obsah potřebný ke spuštění aplikace.
+* **Produkční:** Jak rychle můžete nasadit a spustit image? Tato image je malé, takže je optimalizován výkon sítě z registru Dockeru do Docker hostitelů. Obsah je připraven ke spuštění povolení nejrychlejší doba od Dockeru, spusťte na zpracování výsledků. Dynamický kód kompilace, není nutná v modelu Dockeru. Obsah, který umístíte do této bitové kopie omezeny na binární soubory a obsah potřebný ke spuštění aplikace.
 
     Například `dotnet publish` výstup obsahuje:
 
@@ -63,7 +63,7 @@ K dosažení cílů výše, poskytujeme varianty image v rámci [ `microsoft/dot
 > [!TIP]
 > Pokud si nejste jistí o vašim potřebám, kterou chcete použít `microsoft/dotnet:<version>-sdk` bitové kopie. Jako "de facto stane" image, je určený pro použití jako throw tokeny kontejneru (připojit svůj zdrojový kód a spustit kontejner pro spuštění vaší aplikace) a jako základní image k vytvoření další Image z.
 
-* `microsoft/dotnet:<version>-runtime`: Tento obrázek obsahuje .NET Core (prostředí runtime a knihovny) a je optimalizovaná pro spouštění aplikací .NET Core **produkční**.
+* `microsoft/dotnet:<version>-runtime`: Tato image obsahuje .NET Core (prostředí runtime a knihovny) a je optimalizovaná pro spouštění aplikací .NET Core **produkční**.
 
 ## <a name="alternative-images"></a>Alternativní imagí
 
@@ -115,7 +115,7 @@ Sestavte a spusťte, nainstalujte následující položky:
 
 #### <a name="net-core-21-sdk"></a>.NET core 2.1 SDK
 
-* Nainstalujte [.NET Core SDK 2.1](https://www.microsoft.com/net/core).
+* Nainstalujte [.NET Core 2.1 SDK](https://www.microsoft.com/net/core).
 
 * Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
@@ -209,7 +209,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 
 * Otevřete jiného příkazového řádku.
 * Spustit `docker ps` zobrazte spuštěné kontejnery. Kontejner "aspnetcore_sample" by měl být existuje.
-* Spustit `docker exec aspnetcore_sample ipconfig`.
+* Spusťte `docker exec aspnetcore_sample ipconfig`.
 * Zkopírujte IP adresu kontejneru a vložte do prohlížeče (například 172.29.245.43).
 
 > [!NOTE]

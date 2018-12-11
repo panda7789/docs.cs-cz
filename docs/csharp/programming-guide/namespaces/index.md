@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: c4011092a6c605137053b544d4b9f14cce2fdb4c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c5431e5141b1b4b1981f4a1399ca11939fe7dc45
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002811"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151106"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
 
@@ -38,8 +38,8 @@ Obory názvů mají následující vlastnosti:
   
 - Organizují velkých kódových projektů.  
 - Jsou oddělené pomocí `.` operátor.  
-- `using directive` Požadavku k určení názvu oboru názvů pro každou třídu, vyloučí.  
-- `global` "Kořenový" obor názvů je obor názvů: `global::System` bude vždycky odkazovat na obor názvů rozhraní .NET Framework `System`.  
+- `using` Směrnice, vyloučí požadavku k určení názvu oboru názvů pro každou třídu.  
+- `global` "Kořenový" obor názvů je obor názvů: `global::System` bude vždycky odkazovat na rozhraní .NET <xref:System> oboru názvů.  
 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#
 
@@ -48,12 +48,11 @@ Obory názvů mají následující vlastnosti:
 ## <a name="see-also"></a>Viz také
 
 - [Použití oboru názvů](using-namespaces.md)
-- [Postupy: Použití aliasu globálního oboru názvů](how-to-use-the-global-namespace-alias.md)
-- [Postupy: Použití oboru názvů My](how-to-use-the-my-namespace.md)
+- [Jak: Použití aliasu globálního Namespace](how-to-use-the-global-namespace-alias.md)
+- [Jak: Použití My Namespace](how-to-use-the-my-namespace.md)
 - [Průvodce programováním v jazyce C#](../index.md)  
 - [Názvy identifikátorů](../inside-a-program/identifier-names.md)
 - [Klíčová slova oboru názvů](../../language-reference/keywords/namespace-keywords.md)  
 - [using – direktiva](../../language-reference/keywords/using-directive.md)  
 - [:: – operátor](../../language-reference/operators/namespace-alias-qualifer.md)  
 - [. – operátor](../../language-reference/operators/member-access-operator.md)
->>>>>>> Přidejte identifikátor pravidla pojmenování

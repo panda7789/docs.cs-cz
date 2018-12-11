@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/05/2018
-ms.openlocfilehash: 00cffde7e7eb548f755b60f64aa596210b570d07
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: bc6b1796ed7b12a04affc521ac2efee515c48ae2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297514"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150547"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 
@@ -101,7 +101,7 @@ Chcete-li přidat *docker-compose.yml* souboru pro celé řešení, klikněte pr
 
 V následujících částech popisujeme informace, které přejde do každé z těchto souborů. Visual Studio může provést tuto práci za vás, ale je užitečné k pochopení, co je potřeba k souboru Dockerfile.
 
-### <a name="option-a-creating-a-project-using-an-existing-official-net-docker-image"></a>Odpověď: možnost Vytvoření projektu pomocí existující oficiální image .NET Dockeru
+### <a name="option-a-creating-a-project-using-an-existing-official-net-docker-image"></a>Možnost A: Vytvoření projektu pomocí existující oficiální image .NET Dockeru
 
 Obvykle vytvoříte vlastní image kontejneru nad základní image, můžete získat z oficiální úložiště na [Docker Hubu](https://hub.docker.com/) registru. To je přesně co se stane na pozadí, když povolíte podporu Dockeru v sadě Visual Studio. Soubor Dockerfile použije existující image aspnetcore.
 
@@ -161,7 +161,7 @@ Ale a toto je nový od poloviny 2017, pokud zadáte stejný název image, i se s
 
 Tímto způsobem, když si stáhnete obrázek z hostitele Windows, je přetáhne Windows variant a přebírání z hostitele platformy Linux stejný název image přetáhne varianty Linuxu.
 
-### <a name="option-b-creating-your-base-image-from-scratch"></a>Možnost B: vytvoříte základní image od začátku
+### <a name="option-b-creating-your-base-image-from-scratch"></a>Možnost B: Vytvoření základní image od začátku
 
 Vlastní základní image Dockeru můžete vytvořit úplně od začátku. Tento scénář se nedoporučuje pro uživatele, který se spouští s Dockerem, ale pokud chcete nastavit konkrétní bity základní image, můžete tak učinit.
 
@@ -300,7 +300,7 @@ Vícekontejnerové aplikace pomocí docker-compose.yml jednoho souboru můžete 
 
 Pokud vaše aplikace má pouze jeden kontejner, můžete ji spustit po nasazení na hostitele Docker (virtuální počítač nebo fyzický server). Nicméně pokud vaše aplikace obsahuje několik služeb, můžete nasadit ho jako aplikace skládá buď pomocí jediného příkazu rozhraní příkazového řádku (docker-compose up), nebo pomocí sady Visual Studio, které budou používat tento příkaz na pozadí. Podívejme se na různé možnosti.
 
-### <a name="option-a-run-a-single-container-app"></a>Možnost odpověď: Spusťte aplikaci jeden kontejner
+### <a name="option-a-run-a-single-container-app"></a>Možnost A: Spuštění aplikace jeden kontejner
 
 #### <a name="docker-cli"></a>Rozhraní příkazového řádku dockeru
 
@@ -320,7 +320,7 @@ Příkaz v tomto případě váže interní port 5000 z kontejneru na port 80 ho
 
 Pokud jste nepřidali podporu orchestrátoru kontejnerů, můžete použít také aplikaci s jedním kontejnerem v sadě Visual Studio stisknutím klávesy **F5**. Kontejner spustí v místním prostředí s využitím dockeru, spusťte.
 
-### <a name="option-b-run-a-multi-container-app"></a>Možnost B: spuštění aplikace s více kontejnerů
+### <a name="option-b-run-a-multi-container-app"></a>Možnost B: Spuštění aplikace s více kontejnerů
 
 Ve většině scénářů organizace aplikaci v Dockeru se skládá z více služeb, což znamená, že budete muset spustit vícekontejnerové aplikace, jak je znázorněno v obrázek 5 až 10.
 
@@ -447,5 +447,5 @@ RUN powershell add-windowsfeature web-asp-net45
    [*https://github.com/Microsoft/aspnet-docker/blob/master/4.6.2/Dockerfile*](https://github.com/Microsoft/aspnet-docker/blob/master/4.6.2/Dockerfile)
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](../net-core-single-containers-linux-windows-server-hosts/index.md)
+>[Předchozí](index.md)
+>[další](../multi-container-microservice-net-applications/index.md)

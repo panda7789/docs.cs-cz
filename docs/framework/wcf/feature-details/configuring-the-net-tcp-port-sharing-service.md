@@ -2,29 +2,27 @@
 title: Konfigurace Služby sdílení portů Net.TCP
 ms.date: 03/30/2017
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
-ms.openlocfilehash: 99585bb05364b6b0b3ee093823dc599519c8a12a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7232fc587aa7f63167034f7474d6c5e7476048ed
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489515"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153472"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Konfigurace Služby sdílení portů Net.TCP
-Samoobslužné hostované služby, které používají přenos Net.TCP můžete řídit několik upřesňujícího nastavení, jako například `ListenBacklog` a `MaxPendingAccepts`, kterými se řídí chování základní soket TCP používá pro síťovou komunikaci. Však tato nastavení pro každou soketu použije pouze na úrovni vazby pokud vazba přenosu zakázal sdílení portů, který je ve výchozím nastavení povolené.  
+Několik upřesňující nastavení, můžete řídit, jako v místním prostředí služby, které používají přenos Net.TCP `ListenBacklog` a `MaxPendingAccepts`, které řídí chování základní soket TCP používá pro síťovou komunikaci. Však tato nastavení pro každý soket použije pouze na úrovni vazby Pokud vazby přenosu se vypne sdílení portů, která je ve výchozím nastavení povolené.  
   
- Když vazbu net.tcp umožňuje sdílení portů (nastavením `portSharingEnabled =true` na element vazby přenosu), umožňuje implicitně externího procesu (konkrétně SMSvcHost.exe, který hostuje službu Sdílení portů Net.TCP) ke správě soketu TCP jeho jménem. Například při použití protokolu TCP, zadejte:  
+ Když net.tcp vazba umožňuje sdílení portů (nastavením `portSharingEnabled =true` na element vazby přenosu), umožňuje implicitně externího procesu (konkrétně SMSvcHost.exe, který je hostitelem služby Sdílení portů Net.TCP) ke správě soket TCP svým jménem. Například při použití protokolu TCP, zadejte:  
   
 ```xml  
-    <tcpTransport   
-        portSharingEnabled="true"  
-/>  
+<tcpTransport portSharingEnabled="true"  />  
 ```  
   
- Při konfiguraci tímto způsobem, soketu nastaveno na element vazby služby přenosu se ignorují považuje nastavení soketu určeného SMSvcHost.exe.  
+ Při konfiguraci tímto způsobem, jsou soketu nastavené na element vazby přenosu služby ignorovat ve prospěch soketu nastavení určené SMSvcHost.exe.  
   
  Pokud chcete nakonfigurovat SMSvcHost.exe, vytvořte konfigurační soubor XML s názvem konfigurace SmSvcHost.exe.config a umístěte jej ve stejném fyzickém adresáři jako spustitelný soubor SMSvcHost.exe (například C:\Windows\Microsoft.NET\Framework\v4.5).  
   
- Následující příklad ilustruje ukázka konfigurace SMSvcHost.exe.config, výchozí nastavení pro všechny konfigurovatelné hodnoty výslovně uvedeny.  
+ Následující příklad ukazuje příklad konfigurace SMSvcHost.exe.config, s výchozí nastavení pro všechny konfigurovatelné hodnoty explicitně nastavená.  
   
 ```xml  
 <configuration>  
@@ -50,18 +48,18 @@ Samoobslužné hostované služby, které používají přenos Net.TCP můžete 
 </configuration>  
 ```  
   
-## <a name="when-to-modify-smsvchostexeconfig"></a>Když k úpravě konfigurace SMSvcHost.exe.config  
- Obecně platí potřeba dát pozor při změně obsahu soubor konfigurace SMSvcHost.exe.config, protože všechna nastavení zadané v tomto souboru vliv na všechny služby v počítači, který používá služba Net.TCP Port Sharing. To zahrnuje aplikace na [!INCLUDE[wv](../../../../includes/wv-md.md)] používající Aktivace protokolem TCP funkce služby pro aktivace procesů systému Windows (WAS).  
+## <a name="when-to-modify-smsvchostexeconfig"></a>Kdy k úpravě konfigurace SMSvcHost.exe.config  
+ Obecně platí je třeba při úpravě obsahu souboru konfigurace SMSvcHost.exe.config, protože nějaká nastavení zadaná v tomto souboru vliv na všechny služby v počítači, který používá služba Sdílení portů Net.TCP. To zahrnuje i aplikace na [!INCLUDE[wv](../../../../includes/wv-md.md)] , které používají funkce Aktivace protokolem TCP služby pro aktivace procesů Windows (WAS).  
   
- Ale někdy může musíte změnit výchozí konfiguraci služby Sdílení portů Net.TCP. Například výchozí hodnota pro `maxPendingAccepts` je 4 * počet procesorů. Servery, které jsou hostiteli velký počet služeb, které používají sdílení portů může zvýšit tato hodnota k dosažení maximální propustnost. Výchozí hodnota pro `maxPendingConnections` je 100. Měli byste zvážit také zvýšení hodnoty tuto, pokud existuje více souběžných klientů volání služby a služby zahazuje připojení klientů.  
+ Nicméně v některých případech budete muset změnit výchozí konfigurace služby Sdílení portů Net.TCP. Například výchozí hodnota pro `maxPendingAccepts` je 4 * počet procesorů. Tuto hodnotu k dosažení maximální propustnost může zvýšit servery, které hostují velké množství služeb, které používají sdílení portů. Výchozí hodnota pro `maxPendingConnections` je 100. Měli byste zvážit také zvýšení této hodnoty, pokud existuje více souběžných klientů volání služby a služby se vyřadit připojení klientů.  
   
- Konfigurace SMSvcHost.exe.config také obsahuje informace o proces, který identity, které může být pomocí služby Sdílení portů. Když se tento proces se připojí k služby nutné používat sdílené TCP sdílení portů port, připojení identity procesu proces bude zkontrolován, seznam identit, které jsou povoleny, aby použití služby Sdílení portů. Tyto identity jsou určené jako identifikátory zabezpečení (SID) v \<allowAccounts > v souboru konfigurace SMSvcHost.exe.config. Ve výchozím nastavení oprávnění k používání služby Sdílení portů oprávnění k účtům systému (LocalService, LocalSystem a NetworkService) a také členové skupiny Administrators. Aplikace, které umožňují proces, který běží jako jiný identity (například identitu uživatele) pro připojení k služby Sdílení portů musíte explicitně přidat odpovídající SID konfigurace SMSvcHost.exe.config (tyto změny nebudou použity, dokud je proces SMSvc.exe restartovat).  
+ Konfigurace SMSvcHost.exe.config také obsahuje informace o procesu, který identity, které mohou používat služby Sdílení portů. Při procesu je připojen k portu služby k využití sdílené TCP sdílení portu, identitu procesu připojení procesu bude zkontrolován, seznam identit, které jsou povoleny, aby využívání služby Sdílení portů. Tyto identity jsou určené jako identifikátory zabezpečení (SID) v \<allowAccounts > část souboru konfigurace SMSvcHost.exe.config. Ve výchozím nastavení jsou udělena oprávnění k používání služby Sdílení portů u systémových účtů (LocalService, LocalSystem nebo NetworkService) a také členy skupiny Administrators. Aplikace, které umožní procesu spuštěnému jako jiný identity (třeba identitu uživatele) pro připojení do služby Sdílení portů musíte explicitně přidat odpovídající identifikátor SID konfigurace SMSvcHost.exe.config (tyto změny se neprojeví až do procesu SMSvc.exe restartovat).  
   
 > [!NOTE]
->  Na [!INCLUDE[wv](../../../../includes/wv-md.md)] systémy s řízení uživatelských účtů (UAC) povoleno, místní uživatelé vyžadují vyšší oprávnění, i když jejich účet je členem skupiny Administrators. Povolit tyto uživatele, aby použití služby bez zvýšení oprávnění, identifikátor SID uživatele (nebo identifikátor SID skupiny, ve které je uživatel členem) sdílení portů musí být explicitně přidán do \<allowAccounts > část konfigurace SMSvcHost.exe.config.  
+>  Na [!INCLUDE[wv](../../../../includes/wv-md.md)] systémy s řízení uživatelských účtů (UAC), pak se místní uživatelé vyžadují zvýšená oprávnění, i když svůj účet je členem skupiny Administrators. Chcete-li povolit tyto uživatele bude možné provést využívání služby bez zvýšení oprávnění, identifikátor SID uživatele (nebo SID skupiny, ve kterém je uživatel členem) sdílení portů musí být explicitně přidány do \<allowAccounts > oddíl konfigurace SMSvcHost.exe.config.  
   
 > [!WARNING]
->  Výchozí konfigurace SMSvcHost.exe.config soubor Určuje vlastní `etwProviderId` aby SMSvcHost.exe trasování zasahování trasování služby.  
+>  Výchozí konfigurace SMSvcHost.exe.config soubor Určuje vlastní `etwProviderId` chcete zakázat SMSvcHost.exe trasování z zasahovala do trasování služby.  
   
 ## <a name="see-also"></a>Viz také  
  [\<NET.TCP >](../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)

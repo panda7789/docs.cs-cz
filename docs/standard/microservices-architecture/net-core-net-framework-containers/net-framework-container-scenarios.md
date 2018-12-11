@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: 128801fbe49a3f7618b1cedc814b7663d57df624
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1a91f645aa6f9ce8652fb18243c2e2775abe87d1
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195330"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128749"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -65,9 +65,6 @@ Do té doby Pokud jakoukoli platformu nebo služby Azure stále nepodporuje .NET
 -   **.NET – přehled komponenty**  
     [https://docs.microsoft.com/dotnet/standard/components](../../components.md)
 
-
-
-
 >[!div class="step-by-step"]
-[Předchozí](net-core-container-scenarios.md)
-[další](container-framework-choice-factors.md)
+>[Předchozí](net-core-container-scenarios.md)
+>[další](container-framework-choice-factors.md)

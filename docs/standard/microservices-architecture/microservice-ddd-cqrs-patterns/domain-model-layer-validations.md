@@ -1,31 +1,31 @@
 ---
 title: Návrh ověřování ve vrstvě doménového modelu
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Návrh ověřování ve vrstvě doménového modelu
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Klíčové koncepce ověření modelu domény.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 6ff325bb062da2ebff815fc847d2247707a0bf7f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.date: 10/08/2018
+ms.openlocfilehash: f348e1dbb65f37f625c1dec243364af683c99b8a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188050"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153680"
 ---
-# <a name="designing-validations-in-the-domain-model-layer"></a>Návrh ověřování ve vrstvě doménového modelu
+# <a name="design-validations-in-the-domain-model-layer"></a>Návrh ověřování ve vrstvě doménového modelu
 
 V DDD ověřovacích pravidel si lze představit jako výstupních podmínek. Hlavní zodpovědností agregace je vynucovat změny stavu pro všechny entity v rámci této agregaci výstupních podmínek.
 
 Domény entity musí být vždy platný entity. Existuje je určitý počet výstupních podmínek pro objekt, který by měl mít hodnotu true. Například objekt pořadí položek má vždy mít množství, které musí být kladné celé číslo a název článku a ceny. Proto zodpovídá za vynucování výstupních podmínek entit domény (zejména z agregační root) a objekt entity by neměla být schopná existovat bez platné. Výchozí pravidla se jednoduše vyjádřený jako smluv a výjimky nebo oznámení jsou vyvolány, když je porušena.
 
-Zdůvodnění to je, že mnoho chyb dojít, protože objekty jsou ve stavu, který by měl mít nikdy nebyla v. Tady je dobrý popis z Grega Younga: v [diskuse](https://jeffreypalermo.com/blog/the-fallacy-of-the-always-valid-entity/):
+Zdůvodnění to je, že mnoho chyb dojít, protože objekty jsou ve stavu, který by měl mít nikdy nebyla v. Tady je dobrý popis z Grega Younga: v [diskuse](https://jeffreypalermo.com/2009/05/the-fallacy-of-the-always-valid-entity/):
 
 Navrhnout Řekněme, že nyní máme SendUserCreationEmailService, která přebírá... UserProfile jak můžete jsme racionalizovat dané služby, název není null? Zkontrolujeme ho znovu? Nebo vyšší pravděpodobnost... je právě není Nepokoušejte se ke kontrole a "doufat těch nejlepších" – Doufáme, že někdo bothered abyste ověřili, že před odesláním. Samozřejmě použití vývoje Řízeného, jeden první testů, které jsme se zápis, je, že pokud poslat zákazníkovi s názvem hodnotu null, že by měla vyvolat chybu. Ale když jsme začali psát tyto druhy testů tytéž Uvědomujeme... "Počkejte, pokud jsme název se může nikdy null by máme všechny tyto testy"
 
-## <a name="implementing-validations-in-the-domain-model-layer"></a>Implementace ověření ve vrstvě doménového modelu
+## <a name="implement-validations-in-the-domain-model-layer"></a>Implementace ověřování ve vrstvě doménového modelu
 
 Ověření jsou obvykle implementovány v konstruktorech entita domény nebo v metodách, které můžete aktualizovat entitu. Existuje několik způsobů, jak implementovat ověřování, jako je například ověřování dat a vyvolání výjimky, pokud se ověření nezdaří. Existují také pokročilejší vzory, třeba pomocí vzoru specifikace pro ověření a vzor oznámení k vrácení kolekce chyb místo vrácení výjimky pro každé ověření, protože k ní dojde.
 
-### <a name="validating-conditions-and-throwing-exceptions"></a>Ověření podmínek a vyvolávání výjimek
+### <a name="validate-conditions-and-throw-exceptions"></a>Ověření podmínek a vyvolávat výjimky
 
 Následující příklad kódu ukazuje nejjednodušším přístupem k ověření v entita domény vyvoláním výjimky. V tabulce odkazy na konci této části se zobrazí odkazy na pokročilejší implementací na základě vzorců, které mají jsme probírali dříve.
 
@@ -53,51 +53,29 @@ Pokud je neplatná hodnota stavu, první řádek adresy a Město již byly změn
 
 Podobný přístup je možné v konstruktoru entity, vyvolá výjimku, abyste měli jistotu, že entita je platný po jeho vytvoření.
 
-### <a name="using-validation-attributes-in-the-model-based-on-data-annotations"></a>Pomocí atributů ověření v modelu, podle datových poznámek
+### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Použití atributů ověření v modelu na základě dat poznámky
 
-Další možností je použití atributů ověření založené na datových poznámek. Ověření atributy poskytují způsob, jak konfigurovat ověření modelu, které se koncepčně podobá ověření na pole v databázové tabulky. To zahrnuje omezení, jako je například přiřazení datových typů nebo povinná pole. Jiné typy ověření, které zahrnuje použití vzorců k datům a vynucování obchodních pravidel, jako je číslo platební karty, telefonní číslo nebo e-mailovou adresu. Ověřování atributů usnadňují vynucují požadavky.
+Anotací dat, jako jsou požadované nebo MaxLength atributy lze použít ke konfiguraci vlastností pole databáze EF Core, jak je podrobně popsaný v části [mapování tabulky](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping) oddílu, ale [už nebude fungovat pro entitu ověřování v EF Core](https://github.com/aspnet/EntityFrameworkCore/issues/3680) (ani nemá <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType> metoda), jak to máte všechno od EF v rozhraní .NET Framework 4.x.
 
-Ale jak je znázorněno v následujícím kódu, tento přístup může být příliš nežádoucí v modelu DDD, protože to je závislá na ModelState.IsValid z Microsoft.AspNetCore.Mvc.ModelState, které je nutné volat z vašeho řadiče MVC. Ověření modelu nastává před každou volaná akce kontroleru a zodpovídá za metoda kontroleru ke kontrole výsledku volání ModelState.IsValid a reagují odpovídajícím způsobem. Závisí na tom, rozhodnout a použít ho úzce párované chcete modelu, který má být s tuto infrastrukturu.
+Datové poznámky a <xref:System.ComponentModel.DataAnnotations.IValidatableObject> rozhraní je stále možné k ověření modelu během vazby modelu, před vyvolání akce kontroleru obvyklým způsobem, ale je model určen ViewModel nebo objekt DTO a, který je MVC nebo rozhraní API není doménový model žádný problém.
 
-```csharp
-using System.ComponentModel.DataAnnotations;
-// Other using statements ...
-// Entity is a custom base class which has the ID
-public class Product : Entity
-{
-    [Required]
-    [StringLength(100)]
-    public string Title { get; private set; }
+Po provedení koncepční rozdíly vymazat, můžete dál používat datových poznámek a `IValidatableObject` ve třídě entity pro ověření, pokud vaše akce zobrazí parametr objektu entity třídy, což se nedoporučuje. V takovém případě dojde k ověření při vazby modelu, těsně před vyvolání akce a můžete zkontrolovat vlastnost ModelState.IsValid kontroleru zkontrolujte výsledek, ale pak znovu dojde v kontroleru, ne před uložením objektu entity v Kontext databáze, protože provedli od EF 4.x.
 
-    [Required]
-    [Range(0, 999.99)]
-    public decimal Price { get; private set; }
+Stále můžete implementovat vlastní ověřování ve třídě entity pomocí datových poznámek a `IValidatableObject.Validate` metodu tak, že přepíšete metodu SaveChanges DbContext.
 
-    [Required]
-    [VintageProduct(1970)]
-    [DataType(DataType.Date)]
-    public DateTime ReleaseDate { get; private set; }
+Zobrazí se ukázková implementace pro ověření `IValidatableObject` entity v [tento komentář na Githubu](https://github.com/aspnet/EntityFrameworkCore/issues/3680#issuecomment-155502539). Ukázky neprovádí ověřování založených na atributech, ale měly by být snadno se implementuje pomocí reflexe ve stejném přepsání.
 
-    [Required]
-    [StringLength(1000)]
-    public string Description { get; private set; }
-
-    // Constructor...
-    // Additional methods for entity logic and constructor...
-}
-```
-
-Nicméně z DDD hlediska, doménový model nejlépe, zůstane lean se použití výjimek v metodách chování vaší entity, nebo prostřednictvím implementace vzorů specifikaci a oznámení k vynucení pravidel ověřování. Ověření architektury, jako jsou datové poznámky v ASP.NET Core nebo jakékoli jiné ověření architektur, jako třeba FluentValidation provádění požadavku k vyvolání aplikační platformu. Například při volání metody ModelState.IsValid anotacemi dat, budete muset vyvolat kontrolery ASP.NET.
+Nicméně z DDD hlediska, doménový model nejlépe, zůstane lean se použití výjimek v metodách chování vaší entity, nebo prostřednictvím implementace vzorů specifikaci a oznámení k vynucení pravidel ověřování.
 
 Může být vhodné k použití anotací dat v aplikační vrstvě v tříd ViewModel (namísto domény entity), které bude přijímat vstup, aby se ověření modelu ve vrstvě uživatelského rozhraní. Ale to by neměl být provedeno v vyloučení ověřování v rámci modelu domény.
 
-### <a name="validating-entities-by-implementing-the-specification-pattern-and-the-notification-pattern"></a>Ověřování entity díky implementaci vzoru specifikaci a vzor oznámení
+### <a name="validate-entities-by-implementing-the-specification-pattern-and-the-notification-pattern"></a>Ověření entity díky implementaci vzoru specifikaci a vzor oznámení
 
 Nakonec komplikovanějších přístupem k implementaci ověření v doménovém modelu je implementace vzoru specifikace ve spojení se vzorem oznámení, jak je vysvětleno v některé z dalších prostředků najdete dál.
 
 Stojí za zmínku, že můžete použít také pouze jedna z těchto vzorců – například ověřování ručně řídicí příkazy, ale pomocí vzoru oznámení do zásobníku a vrátí seznam chyb při ověřování.
 
-### <a name="using-deferred-validation-in-the-domain"></a>Použití odložené ověřování v doméně
+### <a name="use-deferred-validation-in-the-domain"></a>Používají odložené ověřování v doméně
 
 Existují různé přístupy k řešení odložené ověření v doméně. Ve své knize [Implementing Domain-Driven návrhu](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577), Vaughn Vernon probírají v části v ověřování.
 
@@ -109,28 +87,27 @@ Pomocí pole ověřování s anotacemi dat, například nereplikujete ověření
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Rachel Appel. Úvod k ověření modelu v ASP.NET Core MVC**
-    [*https://docs.microsoft.com/aspnet/core/mvc/models/validation*](https://docs.microsoft.com/aspnet/core/mvc/models/validation)
+- **Rachel Appel. Úvod k ověření modelu v ASP.NET Core MVC** \
+  [*https://docs.microsoft.com/aspnet/core/mvc/models/validation*](https://docs.microsoft.com/aspnet/core/mvc/models/validation)
 
--   **Rick Anderson. Přidání ověřování**
-    [*https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation*](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
+- **Rick Anderson. Přidání ověřování** \
+  [*https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation*](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation)
 
--   **Martina Fowlera. Nahrazení vyvolávání výjimek s oznámením v ověření**
-    [*https://martinfowler.com/articles/replaceThrowWithNotification.html*](https://martinfowler.com/articles/replaceThrowWithNotification.html)
+- **Martina Fowlera. Nahrazení vyvolávání výjimek s oznámením v ověření** \
+  [*https://martinfowler.com/articles/replaceThrowWithNotification.html*](https://martinfowler.com/articles/replaceThrowWithNotification.html)
 
--   **Specifikace a vzory oznámení**
-    [*https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns*](https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns)
+- **Specifikace a vzory oznámení** \
+  [*https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns*](https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns)
 
--   **Lev Gorodinski. Ověřování v návrhu řízeného doménou (DDD)**
-    [*http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/*](http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/)
+- **Lev Gorodinski. Ověřování v návrhu řízeného doménou (DDD)** \
+  [*http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/*](http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/)
 
--   **Colin konektoru. Ověření modelu domény**
-    [*http://colinjack.blogspot.com/2008/03/domain-model-validation.html*](http://colinjack.blogspot.com/2008/03/domain-model-validation.html)
+- **Colin konektoru. Ověření modelu domény** \
+  [*http://colinjack.blogspot.com/2008/03/domain-model-validation.html*](http://colinjack.blogspot.com/2008/03/domain-model-validation.html)
 
--   **Jimmy Bogard. Ověření ve světě DDD**
-    [*https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/*](https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/)
-
+- **Jimmy Bogard. Ověření ve světě DDD** \
+  [*https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/*](https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/)
 
 >[!div class="step-by-step"]
-[Předchozí](enumeration-classes-over-enum-types.md)
-[další](client-side-validation.md)
+>[Předchozí](enumeration-classes-over-enum-types.md)
+>[další](client-side-validation.md)

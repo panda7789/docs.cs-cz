@@ -8,12 +8,12 @@ helpviewer_keywords:
 - from clause [C#]
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
-ms.openlocfilehash: c8c124f44df292b8323560cce541cca2765e2790
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 9af24d9c2a99a9c763c6ad3aac9895e7dddcf8ee
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033399"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129035"
 ---
 # <a name="from-clause-c-reference"></a>from clause (Referenční dokumentace jazyka C#)
 
@@ -31,11 +31,11 @@ V následujícím příkladu `numbers` je zdrojem dat a `num` je proměnná rozs
 
 ## <a name="the-range-variable"></a>Proměnná rozsahu
 
-Kompilátor odvodí typ proměnné rozsahu, když zdroj dat implementuje <xref:System.Collections.Generic.IEnumerable%601>. Například, pokud zdroji má typ `IEnumerable<Customer>`, pak proměnná rozsahu je odvozena jako `Customer`. Který je nutné zadat typ je explicitně při zdroji se pouze neobecnou `IEnumerable` jako <xref:System.Collections.ArrayList>. Další informace najdete v tématu [postupy: vytvoření dotazu na ArrayList pomocí LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
+Kompilátor odvodí typ proměnné rozsahu, když zdroj dat implementuje <xref:System.Collections.Generic.IEnumerable%601>. Například, pokud zdroji má typ `IEnumerable<Customer>`, pak proměnná rozsahu je odvozena jako `Customer`. Který je nutné zadat typ je explicitně při zdroji se pouze neobecnou `IEnumerable` jako <xref:System.Collections.ArrayList>. Další informace najdete v tématu [jak: Vytvoření dotazu na ArrayList pomocí LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
 
-V předchozím příkladu `num` odvodit typ `int`. Vzhledem k tomu, že proměnná rozsahu je silně typováno, můžete volat metody nebo použít v jiné operace. Například místo zápisu `select num`, můžete napsat `select num.ToString()` způsobit výrazu dotazu k vrácení sekvence řetězců místo celých čísel. Nebo můžete napsat `select n + 10` způsobit výraz k vrácení sekvence 14, 11, 13, 12, 10. Další informace najdete v tématu [klauzule select](select-clause.md).
+V předchozím příkladu `num` odvodit typ `int`. Vzhledem k tomu, že proměnná rozsahu je silně typováno, můžete volat metody nebo použít v jiné operace. Například místo zápisu `select num`, můžete napsat `select num.ToString()` způsobit výrazu dotazu k vrácení sekvence řetězců místo celých čísel. Nebo můžete napsat `select num + 10` způsobit výraz k vrácení sekvence 14, 11, 13, 12, 10. Další informace najdete v tématu [klauzule select](select-clause.md).
 
-Proměnná rozsahu je jako proměnná iterace v [foreach](foreach-in.md) příkaz s výjimkou jednoho velmi důležitý rozdíl: Proměnná rozsahu nikdy ve skutečnosti ukládá data ze zdroje. To, kterou právě syntaktické pohodlí, které umožňuje dotaz tak, aby popište, co dojde při spuštění dotazu. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](../../programming-guide/concepts/linq/introduction-to-linq-queries.md).
+Proměnná rozsahu je jako proměnná iterace v [foreach](foreach-in.md) příkaz s výjimkou jednoho velmi důležitý rozdíl: Proměnná rozsahu nikdy ve skutečnosti ukládá data ze zdroje. Je to právě syntaktické pohodlí, které umožňuje dotazu popsat, co se stane při spuštění dotazu. Další informace najdete v tématu [Úvod do dotazů LINQ (C#)](../../programming-guide/concepts/linq/introduction-to-linq-queries.md).
 
 ## <a name="compound-from-clauses"></a>Složené z klauzule
 

@@ -1,5 +1,5 @@
 ---
-title: '.NET Framework – chyby inicializace: správa zkušeností uživatele'
+title: 'Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - no framework found experience
@@ -9,16 +9,16 @@ ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 21dd9926684f51412384235d7b3af1aac280957a
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50035745"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155168"
 ---
-# <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework – chyby inicializace: správa zkušeností uživatele
+# <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Rozhraní .NET framework – chyby inicializace: Správa zkušeností uživatele
 Common language runtime (CLR) aktivačního systému určuje verzi modulu CLR, který se použije ke spuštění kódu spravované aplikace. V některých případech nemusí být schopen nalézt verzi modulu CLR pro načtení aktivačního systému. Tuto situaci obvykle dochází, když aplikace vyžaduje verzi CLR, která je neplatná nebo nebyla nainstalována v daném počítači. Pokud se nenajde na požadovanou verzi, CLR aktivačního systému vrátí kód chyby HRESULT z funkce nebo rozhraní, které byla volána a může zobrazit chybová zpráva pro uživatele, který je spuštěna aplikace. Tento článek obsahuje seznam kódů HRESULT a vysvětluje, jak můžete zabránit chybová zpráva se zobrazí.  
   
- CLR poskytuje infrastrukturu protokolování si můžete usnadnit ladění problémů aktivace CLR, jak je popsáno v [postupy: ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md). Tato infrastruktura neměly by být zaměňovány s [protokoly vazeb sestavení](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou úplně jiného.  
+ CLR poskytuje infrastrukturu protokolování si můžete usnadnit ladění problémů aktivace CLR, jak je popsáno v [jak: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md). Tato infrastruktura neměly by být zaměňovány s [protokoly vazeb sestavení](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou úplně jiného.  
   
 ## <a name="clr-activation-hresult-codes"></a>Kódy HRESULT aktivace CLR  
  Aktivace modulu CLR rozhraní API návratové kódy HRESULT nahlásit výsledek operace aktivace na hostitele. CLR hostitele by se měli obrátit vždy tyto návratové hodnoty, než budete pokračovat s další operace.  
@@ -84,10 +84,10 @@ Výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání
   
  Při instalaci rozhraní .NET Framework 3.5, můžou uživatelé spouštět aplikace, které závisí na rozhraní .NET Framework 2.0, 3.0 nebo 3.5 na jejich [!INCLUDE[win8](../../../includes/win8-md.md)] počítače. Rozhraní .NET Framework 1.0 a 1.1 aplikace můžou běžet také za předpokladu, že tyto aplikace nejsou explicitně nakonfigurováno pro běh pouze v rozhraní .NET Framework 1.0 nebo 1.1. Zobrazit [migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md).  
   
- Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vylepšili jsme protokolování aktivace CLR zahrnout položky protokolu, které zaznamenávají, kdy a proč se zobrazí chybová zpráva inicializace. Další informace najdete v tématu [postupy: ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md).  
+ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vylepšili jsme protokolování aktivace CLR zahrnout položky protokolu, které zaznamenávají, kdy a proč se zobrazí chybová zpráva inicializace. Další informace najdete v tématu [jak: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md).  
   
 ## <a name="see-also"></a>Viz také  
 - [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
-- [Postupy: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
-- [Postupy: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
+- [Jak: Konfigurace aplikace pro podporu rozhraní .NET Framework 4 nebo 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
+- [Jak: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
 - [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)

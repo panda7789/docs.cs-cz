@@ -8,11 +8,11 @@ helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
 ms.openlocfilehash: df40d8dbd5af9acf9e9484ee7694df2bba7ad9f1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181131"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155246"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které můžete konfigurovat, ale neposkytují úplnou flexibilitu při konfiguraci všechny možnosti zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazbu přímo z elementů vazby jednotlivých a zvýrazní některá nastavení zabezpečení, které můžete nastavit při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb naleznete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -25,7 +25,7 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
  Naproti tomu k vytvoření vlastní vazby, elementy vazby jsou vytvoření a konfiguraci a <xref:System.ServiceModel.Channels.CustomBinding> je vytvořený z elementů vazby.  
   
- K tomu přidat prvky jednotlivých vazby do kolekce reprezentována instance <xref:System.ServiceModel.Channels.BindingElementCollection> třídy a pak nastavte `Elements` vlastnost `CustomBinding` rovná tohoto objektu. Je nutné přidat prvky vazby v následujícím pořadí: tok transakce, stabilní relace, zabezpečení, kompozitní duplexní, jednosměrný Stream zabezpečení, kódování zpráv a přenosu. Všimněte si, že jsou všechny prvky vazby uvedené nezbytné Každá vazba.  
+ K tomu přidat prvky jednotlivých vazby do kolekce reprezentována instance <xref:System.ServiceModel.Channels.BindingElementCollection> třídy a pak nastavte `Elements` vlastnost `CustomBinding` rovná tohoto objektu. Je nutné přidat prvky vazby v následujícím pořadí: Tok transakcí, stabilní relace, zabezpečení, kompozitní duplexní, jednosměrný Stream zabezpečení, kódování zpráv a přenosu. Všimněte si, že jsou všechny prvky vazby uvedené nezbytné Každá vazba.  
   
 ## <a name="securitybindingelement"></a>SecurityBindingElement  
  Tři prvky vazby se vztahují k úrovni zabezpečení zpráv, které jsou odvozeny z <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Jsou tři <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, a <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> Slouží k zajištění zabezpečení smíšeného režimu. Dva elementy se používají při vrstva zpráv poskytuje zabezpečení.  

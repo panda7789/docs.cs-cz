@@ -1,23 +1,32 @@
 ---
-title: Odebrání modulu runtime .NET a sady SDK
-description: Pokyny k odebrání součásti modulu Runtime .NET Core a sady SDK Windows, Mac a Linux
+title: Odebrání modulu runtime .NET Core a sady SDK
+description: Tento článek popisuje, jak určit, které verze modulu Runtime .NET Core a sady SDK jsou aktuálně nainstalované a poté jak odebrat Windows, Mac a Linux.
 ms.date: 07/28/2018
 author: billwagner
 ms.author: wiwagn
-ms.openlocfilehash: 1806d1af3b10e44ccc2eff788d8958ca976fe85b
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.custom: seodec18
+ms.openlocfilehash: 6204a28200f1db6350e695a9ab29502c46c25590
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45989810"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129698"
 ---
 # <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Odebrání modulu Runtime .NET Core a sady SDK
 
 V průběhu času při instalaci aktualizované verze modulu runtime .NET Core a sady SDK, můžete chtít odebrat zastaralé verzích .NET Core z vašeho počítače. Odebírají se starší verze modulu runtime se může změnit modul runtime se rozhodli spustit sdílené architektuře aplikací podle popisu v článku na [výběr verze .NET Core](selection.md).
 
+## <a name="should-i-remove-a-version"></a>Můžu odebrat verzi?
+
+[Výběr verze .NET Core](selection.md) chování a kompatibilitu modulu runtime .NET Core napříč aktualizace umožňuje bezpečné odebrání předchozí verze. Aktualizace modulu runtime .NET core jsou kompatibilní v rámci hlavní verzi "vzdálené", jako je například 1.x a 2.x. Kromě toho novější verze sady .NET Core SDK obecně zachována možnost vytvářet aplikace, které jsou cílové předchozí verze modulu runtime kompatibilní způsobem.
+
+Obecně stačí pouze nejnovější sadu SDK a nejnovější opravy verzi modulů runtime, požadované pro vaší aplikaci. Pokud zachování starší verze sady SDK nebo modul Runtime patří Údržba instancí **project.json**– na základě aplikací. Pokud aplikace nemá konkrétní důvod pro starší verzi sady SDK nebo modulů runtime, můžete bezpečně odstranit starší verze.
+
+## <a name="determine-what-is-installed"></a>Zjistit, co je nainstalována
+
 Počínaje .NET Core 2.1, rozhraní příkazového řádku .NET poskytuje možnosti, které slouží k výpisu verze sady SDK a modulu runtime, který je na vašem počítači nainstalovaný.  Použití [ `dotnet --list-sdks` ](../tools/dotnet.md#options) zobrazíte seznam sad SDK na vašem počítači nainstalovaný. Použití [ `dotnet --list-runtimes` ](../tools/dotnet.md#options) zobrazíte seznam modulů runtime na vašem počítači nainstalovaný. Následující text uvádí typické výstup pro Windows, macOS nebo Linux:
 
-# <a name="windowstabwindows"></a>[Windows](#tab/Windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 ```console
 C:\> dotnet --list-sdks
@@ -55,7 +64,7 @@ Microsoft.NETCore.App 2.1.1 [C:\Program Files\dotnet\shared\Microsoft.NETCore.Ap
 Microsoft.NETCore.App 2.1.2 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/Linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 ```console
 $ dotnet --list-sdks
@@ -89,7 +98,7 @@ Microsoft.NETCore.App 2.1.0 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.1 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 ```
 
-# <a name="macostabmacos"></a>[macOS](#tab/macOS)
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 ```console
 $ dotnet --list-sdks
@@ -127,7 +136,7 @@ Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ## <a name="uninstalling-net-core"></a>Odinstalování rozhraní .NET Core
 
-# <a name="windowstabwindows"></a>[Windows](#tab/Windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 .NET core používá Windows **přidat nebo odebrat programy** dialogové okno odebrat verze modulu runtime .NET Core a sady SDK. Následující obrázek ukazuje **přidat nebo odebrat programy** dialogové okno s několika verzí modulu runtime .NET a nainstalované sady SDK.
 
@@ -135,7 +144,7 @@ Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 Vyberte všechny verze, kterou chcete odebrat z počítače a klikněte na tlačítko **odinstalovat**.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/Linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 Existují další možnosti odinstalace .NET Core (SDK nebo modul runtime) v Linuxu. Nejlepší způsob pro vás k odinstalaci .NET Core je zrcadlení akci, kterou jste použili k instalaci .NET Core. Specifika závisí na zvoleném distribuce a metodu instalace.
 
@@ -178,7 +187,7 @@ sudo rm -rf /usr/share/dotnet/host/fxr/1.0.1
 
 Nadřazené adresáře sady SDK a modulu runtime jsou uvedené ve výstupu `dotnet --list-sdks` a `dotnet --list-runtimes` příkaz, jak je znázorněno v předchozí tabulce.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macOS)
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 Na počítači Mac je nutné odstranit sady SDK a moduly runtime samostatně, tak, že odeberete adresáře, který obsahuje tuto verzi. Například, chcete-li odebrat 1.0.1 SDK a modul runtime, použili byste následující příkazy bash:
 
@@ -190,7 +199,5 @@ sudo rm -rf /usr/local/share/dotnet/host/fxr/1.0.1
 ```
 
 Nadřazené adresáře sady SDK a modulu runtime jsou uvedené ve výstupu `dotnet --list-sdks` a `dotnet --list-runtimes` příkaz, jak je znázorněno v předchozí tabulce.
-
-Počínaje .NET Core 2.1, není nutné odinstalovat sadu .NET Core SDK, při upgradu pomocí Správce balíčků. Správce balíčků `update` nebo `refresh` příkazy automaticky odebere starší verze po úspěšné instalaci novější verze.
 
 ---

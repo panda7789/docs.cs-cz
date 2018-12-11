@@ -1,15 +1,13 @@
 ---
-title: nový příkaz DotNet – rozhraní příkazového řádku .NET Core
+title: nový příkaz DotNet
 description: Vytvoří nový příkaz dotnet nových projektů .NET Core založených na zadané šabloně.
-author: mairaw
-ms.author: mairaw
 ms.date: 10/24/2018
-ms.openlocfilehash: 56d76f1dd54097f9cf20129d74057235290c273c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3a10aaa93af57e7beb86771e7d3b00b06fca14b2
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188196"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169679"
 ---
 # <a name="dotnet-new"></a>nový příkaz DotNet
 
@@ -71,6 +69,7 @@ Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat se
 | Knihovna tříd                                | `classlib`       | [C#], F#, VB  |
 | Projekt testu jednotek                            | `mstest`         | [C#], F#, VB  |
 | Projekt testů xUnit                           | `xunit`          | [C#], F#, VB  |
+| NUnit testovacího projektu                           | `nunit`          | [C#], F#, VB  |
 | Stránka Razor                                   | `page`           | [C#]          |
 | MVC ViewImports                              | `viewimports`    | [C#]          |
 | MVC ViewStart                                | `viewstart`      | [C#]          |
@@ -507,7 +506,7 @@ Každá šablona projektu může mít k dispozici další možnosti. Základní 
 
 ## <a name="examples"></a>Příklady
 
-Vytvoření projektu aplikace konzoly F # v aktuálním adresáři:
+Vytvoření F# projekt konzolové aplikace v aktuálním adresáři:
 
 `dotnet new console -lang F#`
 

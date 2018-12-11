@@ -1,15 +1,14 @@
 ---
-title: příkaz – rozhraní příkazového řádku .NET Core DotNet nuget delete
+title: příkaz DotNet nuget delete
 description: Příkaz dotnet-nuget-delete Odstraní nebo unlists balíčku ze serveru.
 author: karann-msft
-ms.author: mairaw
-ms.date: 06/01/2018
-ms.openlocfilehash: f4aa027a465c4adea1de13853063d03e8e295411
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.date: 12/04/2018
+ms.openlocfilehash: 827d295d7a52b6c9c82adbcf3d25281bd1cc98fd
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50180874"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168309"
 ---
 # <a name="dotnet-nuget-delete"></a>DotNet nuget delete
 
@@ -21,16 +20,10 @@ ms.locfileid: "50180874"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 ```
-dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [-k|--api-key] [--no-service-endpoint]
+dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [--interactive] [-k|--api-key] [--no-service-endpoint]
     [--non-interactive] [-s|--source]
-dotnet nuget delete [-h|--help]
-```
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
-```
-dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [-k|--api-key] [--non-interactive]
-    [-s|--source]
 dotnet nuget delete [-h|--help]
 ```
 # <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
@@ -47,92 +40,80 @@ dotnet nuget delete [-h|--help]
 
 ## <a name="arguments"></a>Arguments
 
-`PACKAGE_NAME`
+* **`PACKAGE_NAME`**
 
-Název nebo ID balíčku, který se odstranit.
+  Název nebo ID balíčku, který se odstranit.
 
-`PACKAGE_VERSION`
+* **`PACKAGE_VERSION`**
 
-Verze balíčku, který se odstranit.
+  Verze balíčku, který se odstranit.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 
-`--force-english-output`
+* **`--force-english-output`**
 
- Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
+  Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
-`-h|--help`
+* **`-h|--help`**
 
-Vytiskne krátký nápovědy pro příkaz.
+  Vytiskne krátký nápovědy pro příkaz.
 
-`-k|--api-key <API_KEY>`
+* **`--interactive`**
 
-Klíč rozhraní API pro server.
+  Umožňuje příkazu blokování a vyžaduje ruční akci pro operace, jako je například ověřování. Možnost dostupné od verze sady SDK 2.2 .NET Core.
 
-`--no-service-endpoint` "Api/v2/balíček" nemá připojení k zdrojová adresa URL.
+* **`-k|--api-key <API_KEY>`**
 
-`--non-interactive`
+  Klíč rozhraní API pro server.
 
-Není výzvu k zadání uživatele o vstup ani potvrzení.
+* **`--no-service-endpoint`**
 
-`-s|--source <SOURCE>`
+  "Api/v2/balíček" nemá připojení k zdrojová adresa URL. Možnost dostupné od verze sady SDK .NET Core 2.1.
 
-Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
+* **`--non-interactive`**
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+  Není výzvu k zadání uživatele o vstup ani potvrzení.
 
-`--force-english-output`
+* **`-s|--source <SOURCE>`**
 
- Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
-
-`-h|--help`
-
-Vytiskne krátký nápovědy pro příkaz.
-
-`-k|--api-key <API_KEY>`
-
-Klíč rozhraní API pro server.
-
-`--non-interactive`
-
-Není výzvu k zadání uživatele o vstup ani potvrzení.
-
-`-s|--source <SOURCE>`
-
-Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
+  Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
-`--force-english-output`
+* **`--force-english-output`**
 
- Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
+  Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
-`-h|--help`
+* **`-h|--help`**
 
-Vytiskne krátký nápovědy pro příkaz.
+  Vytiskne krátký nápovědy pro příkaz.
 
-`-k|--api-key <API_KEY>`
+* **`-k|--api-key <API_KEY>`**
 
-Klíč rozhraní API pro server.
+  Klíč rozhraní API pro server.
 
-`--non-interactive`
+* **`--non-interactive`**
 
-Není výzvu k zadání uživatele o vstup ani potvrzení.
+  Není výzvu k zadání uživatele o vstup ani potvrzení.
 
-`-s|--source <SOURCE>`
+* **`-s|--source <SOURCE>`**
 
-Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
+  Určuje adresu URL serveru. Nepodporuje adresy URL pro zahrnutí nuget.org `https://www.nuget.org`, `https://www.nuget.org/api/v3`, a `https://www.nuget.org/api/v2/package`. Pro privátní kanály, nahraďte název hostitele (například `%hostname%/api/v3`).
 
 ---
 
 ## <a name="examples"></a>Příklady
 
-Odstraní verze 1.0 balíčku `Microsoft.AspNetCore.Mvc`:
+* Odstraní verze 1.0 balíčku `Microsoft.AspNetCore.Mvc`:
 
-`dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0`
+  ```console
+  dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0
+  ```
 
-Odstraní verze 1.0 balíčku `Microsoft.AspNetCore.Mvc`, ne výzvou pro uživatele pro přihlašovací údaje nebo druhý vstup:
+* Odstraní verze 1.0 balíčku `Microsoft.AspNetCore.Mvc`, ne výzvou pro uživatele pro přihlašovací údaje nebo druhý vstup:
 
-`dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive`
+  ```console
+  dotnet nuget delete Microsoft.AspNetCore.Mvc 1.0 --non-interactive
+  ```

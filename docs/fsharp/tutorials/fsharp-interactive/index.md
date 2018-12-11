@@ -2,20 +2,20 @@
 title: Interaktivní referenční dokumentace F# (fsi.exe)
 description: Zjistěte, jak F# Interactive (fsi.exe) se používá ke spouštění F# kódu interaktivní konzoly nebo k provádění F# skripty.
 ms.date: 05/16/2016
-ms.openlocfilehash: 459a2a4ba49ba0f55455797617781d010efecc0b
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 8f6d261c6570935b665fc8a826b0829b3953a587
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50195252"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153628"
 ---
 # <a name="interactive-programming-with-f"></a>Interaktivní programování s jazykem F# #
 
 > [!NOTE]
-Tento článek popisuje aktuálně prostředí jenom pro Windows.  Bude přepsán.
+> Tento článek popisuje aktuálně prostředí jenom pro Windows.  Bude přepsán.
 
 > [!NOTE]
-Odkaz rozhraní API se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Odkaz rozhraní API se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
 Program F# Interactive (fsi.exe) se používá pro interaktivní spuštění kódu jazyka F# v konzole nebo pro spuštění skriptů jazyka F#. Jinými slovy, interaktivní jazyk F# provede operace REPL (čtení, vyhodnocení, smyčka tisku) pro jazyk F#.
 
@@ -86,7 +86,7 @@ for arg in fsi.CommandLineArgs do
 printfn "%A" (MyAssembly.myFunction 10 40)
 ```
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 Command line arguments: 

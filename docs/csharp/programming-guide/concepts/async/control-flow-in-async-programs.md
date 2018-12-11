@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: c4f1213eb9162985170c8eb1176fe01d8c721d2e
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 45d349fa131daf3fdf39d29d53d8ec236c79f81f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347952"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150599"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Tok řízení v asynchronních programech (C#)
 
@@ -39,7 +39,7 @@ public partial class MainWindow : Window
 
         // SIX
         resultsTextBox.Text +=
-            String.Format("\r\nLength of the downloaded string: {0}.\r\n", contentLength);
+            $"\r\nLength of the downloaded string: {contentLength}.\r\n";
     }
 
     async Task<int> AccessTheWebAsync()
@@ -97,7 +97,7 @@ Kód, který se používá v tomto tématu si můžete stáhnout z webu MSDN neb
 
 ### <a name="download-the-program"></a>Stáhnout program
 
-Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.
+Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: Řízení toku v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.
 
 1.  Rozbalte stažený soubor a poté spusťte Visual Studio.
 
@@ -111,7 +111,7 @@ Následující projekt Windows Presentation Foundation (WPF) obsahuje příklad 
 
 Spusťte projekt, proveďte následující kroky:
 
-1.  Spusťte sadu Visual Studio.
+1.  Spusťte Visual Studio.
 
 2.  V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
 
@@ -199,7 +199,7 @@ Spusťte projekt, proveďte následující kroky:
                     "           About to display contentLength and exit.\r\n";
 
                 resultsTextBox.Text +=
-                    String.Format("\r\nLength of the downloaded string: {0}.\r\n", contentLength);
+                    $"\r\nLength of the downloaded string: {contentLength}.\r\n";
             }
 
             async Task<int> AccessTheWebAsync()
@@ -390,4 +390,4 @@ int contentLength = await getLengthTask;
 - [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
 - [Asynchronní návratové typy (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
 - [Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Asynchronní vzorek: Tok řízení v asynchronních programech (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)
+- [Ukázka asynchronní metody: Řízení toku v asynchronních programech (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

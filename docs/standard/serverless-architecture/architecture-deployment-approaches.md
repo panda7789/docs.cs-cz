@@ -4,12 +4,12 @@ description: Tento průvodce různé způsoby podnikové architektury jsou nasaz
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 6566971d8984ec046b8b5fa2db295c1d48c30b20
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 5477b8c4531780fdebf194e4f798564e59cd2953
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404904"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152666"
 ---
 # <a name="architecture-deployment-approaches"></a>Způsoby nasazení architektury
 
@@ -138,9 +138,9 @@ Není široké spektrum dostupné možnosti pro architekturu, včetně s hybridn
 
 |         |IaaS     |PaaS     |Kontejner|Bez serveru|
 |---------|---------|---------|---------|----------|
-|**Škálování**|VIRTUÁLNÍ POČÍTAČ       |instance |Aplikace      |Funkce  |
+|**Škálování**|Virtuální počítač       |instance |Aplikace      |Funkce  |
 |**Přehledů**|Hardware|Platforma|Operační systém hostitele|Modul runtime   |
-|**Jednotka** |VIRTUÁLNÍ POČÍTAČ       |Projekt  |Image    |Kód      |
+|**Jednotka** |Virtuální počítač       |Projekt  |Image    |Kód      |
 |**Doba platnosti**|Měsíců|Dnů, měsíců|Minut po dny|Počet milisekund minut|
 |**Odpovědnosti**|Aplikace, závislostí, modul runtime a operačního systému|Aplikace a závislosti|Aplikace, závislostí a modulu runtime|Funkce
 
@@ -166,5 +166,5 @@ Následující kapitoly zaměřit se na architektury bez serveru, případy pou�
 * [Aplikace Wingtip Tickets SaaS](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
 >[!div class="step-by-step"]
-[Předchozí](architecture-approaches.md)
-[další](serverless-architecture.md)
+>[Předchozí](architecture-approaches.md)
+>[další](serverless-architecture.md)

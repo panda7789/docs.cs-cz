@@ -4,12 +4,13 @@ description: Přečtěte si osvědčené postupy pro zápis testů jednotek, kte
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 69fe0cae141d1ed1e1281eecd78bf03e6e8be961
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: 60baa533a8f4dc2fb715b813018f8f84000777d7
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530602"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169616"
 ---
 # <a name="unit-testing-best-practices"></a>Testování osvědčených postupů
 
@@ -32,7 +33,7 @@ Vady regrese jsou chyby, které se zavedly při změně do aplikace. Je běžné
 S testováním částí je možné spustit znovu vaše celou sadu testů po každém sestavení nebo dokonce i po změně řádku kódu. Díky tomu získáte jistotu, že váš nový kód nedojde k poškození stávajících funkcí.
 
 ### <a name="executable-documentation"></a>Spustitelný soubor dokumentace
-Nemusí být vždy zřejmé čemu konkrétní metody nebo chování dané určité vstup. Může položte si otázku: jak tato metoda chovat když překročím je prázdný řetězec? Hodnota Null?
+Nemusí být vždy zřejmé čemu konkrétní metody nebo chování dané určité vstup. Vám může položte si otázku: Jak tato metoda chovat když překročím je prázdný řetězec? Hodnota Null?
 
 Pokud máte sadu dobře pojmenované jednotkové testy, měli být schopni jasně vysvětlit očekávaný výstup pro daný vstup každého testu. Kromě toho by měl být schopen ověřit, že ve skutečnosti funguje.
 
@@ -328,7 +329,7 @@ public interface IDateTimeProvider
     DayOfWeek DayOfWeek();
 }
 
-public bool GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
+public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 {
     if(dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday) 
     {

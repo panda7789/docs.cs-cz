@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Získejte přehled o nových funkcích v nadcházející verzi 7 jazyka C#.
 ms.date: 12/21/2016
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 734fdf962ef481a3b434e9ce17e535eadd52f420
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0a8b20606e5133c45f26377ea1c2eba58a1aa3af
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47237381"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155285"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
@@ -22,7 +22,7 @@ C# 7.0 přidá několik nových funkcí jazyka C#:
 * [Porovnávání vzorů](#pattern-matching)
     - Můžete vytvořit na základě libovolné typy a hodnoty členů z těchto typů logiky větvení.
 * [`ref` místní hodnoty a vrátí](#ref-locals-and-returns)
-    - Argumenty metody a lokální proměnné mohou být odkazy na další úložiště.
+    - Metoda lokálních proměnných a návratovými hodnotami může být odkazy na další úložiště.
 * [Lokální funkce](#local-functions)
     - Je možné vnořovat funkce do jiných funkcí a omezit jejich rozsah a viditelnost.
 * [Více členů s výrazem v těle](#more-expression-bodied-members)
@@ -105,7 +105,7 @@ Na levé a pravé straně přiřazení je možné zadat názvy pro pole:
 
 Řádek nad generuje upozornění, `CS8123`, o tom, že názvy na pravé straně přiřazení `Alpha` a `Beta` budou ignorováni, protože jsou v konfliktu s názvy na levé straně `First` a `Second`.
 
-Výše uvedené příklady ukazují základní syntaxe pro deklaraci řazené kolekce členů. Řazené kolekce členů jsou nejužitečnější jako typy vracených hodnot pro `private` a `internal` metody. Řazené kolekce členů poskytují jednoduché syntaxi pro tyto metody k vrácení více jednotlivých hodnot: uložit práci při vytváření `class` nebo `struct` , který definuje typ vrácený. Není nutné pro vytvoření nového typu.
+Výše uvedené příklady ukazují základní syntaxe pro deklaraci řazené kolekce členů. Řazené kolekce členů jsou nejužitečnější jako typy vracených hodnot pro `private` a `internal` metody. Řazené kolekce členů poskytují jednoduché syntaxi pro tyto metody k vrácení více diskrétní hodnoty: Uložit práci při vytváření `class` nebo `struct` , který definuje typ vrácený. Není nutné pro vytvoření nového typu.
 
 Vytvoření řazené kolekce členů je efektivnější a zvýšit produktivitu práce.
 Je jednodušší a jednoduché syntaxe pro definování datová struktura, která provede více než jednu hodnotu. Následující příklad metoda vrátí minimální a maximální hodnoty nalezené v posloupnost celých čísel:
@@ -281,6 +281,8 @@ Přidání místní referenční hodnoty a ref vrátí povolit algoritmy, které
 
 Přidání `ref` návratová hodnota je [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes). Stávající kód zkompiluje, ale ref návratové hodnoty je zkopírován při přiřazení. Volající musí aktualizovat úložiště pro návratovou hodnotu `ref` místní proměnnou pro uložení vrácení jako odkaz.
 
+Další informace najdete v tématu [ref – klíčové slovo](../language-reference/keywords/ref.md) článku.
+
 ## <a name="local-functions"></a>Lokální funkce
 
 Řada návrhů pro třídy zahrnují metody, které se volají z jediného umístění. Tyto další metody privátní zachovat každá metoda malém rozsahu a zaměřeně. Však budou mít je těžší porozumět přečtením první třídy. Tyto metody musí být srozumitelný mimo kontext z jednoho místa volání.
@@ -327,7 +329,7 @@ C# 6 zavedené [členové tvoření](csharp-6.md#expression-bodied-function-memb
 > [!NOTE]
 > V tomto příkladu nemusí finalizační metodu, ale je zobrazena na ukazují syntaxi. Finalizační metody by neměla implementovat ve své třídě, pokud to není nutné k uvolnění nespravovaných prostředků. Měli byste také zvážit použití <xref:System.Runtime.InteropServices.SafeHandle> třídy místo správy nespravované prostředky přímo.
 
-Tato nová umístění pro členy s výrazem v těle představuje důležitý milník pro jazyk C#: byly tyto funkce implementovat členy komunity open source pracovali [Roslyn](https://github.com/dotnet/Roslyn) projektu.
+Tato nová umístění pro členy s výrazem v těle představuje důležitý milník pro C# jazyka: Tyto funkce byly implementované členy komunity open source pracovali [Roslyn](https://github.com/dotnet/Roslyn) projektu.
 
 Změna metody na výrazu vozidlo člena je [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
 

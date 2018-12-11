@@ -1,31 +1,33 @@
 ---
 title: Obory názvů (F#)
-description: Zjistěte, jak obor názvů F# umožňuje organizovat kód tím, že povolíte připojení názvu k seskupení prvků programu do oblasti související funkce.
-ms.date: 04/24/2017
-ms.openlocfilehash: 769a1241f76ac32d3a6a80bd637078493119bb3c
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+description: Zjistěte, jak F# obor názvů umožňuje organizovat kód tím, že povolíte připojení názvu k seskupení prvků programu do oblasti související funkce.
+ms.date: 12/08/2018
+ms.openlocfilehash: ad5cca8947d09d8480bfa418b003c84546edc29b
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44178249"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169019"
 ---
 # <a name="namespaces"></a>Jmenné prostory
 
-Obor názvů umožňuje uspořádat kódu do související funkční oblasti tím, že jste se připojit k seskupení prvků programu název.
+Obor názvů umožňuje uspořádat kódu do související funkční oblasti tím, že povolíte připojení názvu k seskupení F# prvky programu. Obory názvů jsou obvykle nejvyšší úrovně prvky F# soubory.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```fsharp
-namespace [parent-namespaces.]identifier
+namespace [rec] [parent-namespaces.]identifier
 ```
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud chcete vložit kód v oboru názvů, je třeba deklarovat první deklarací v souboru obor názvů. Obsah celého souboru pak mohou stát součástí oboru názvů.
+Pokud chcete vložit kód v oboru názvů, je třeba deklarovat první deklarací v souboru obor názvů. Obsah pak celý soubor se stanou součástí obor názvů, pokud neexistuje žádné další deklarace oborů názvů dále v souboru. Pokud je to tento případ, veškerý kód do další deklarace oboru názvů se považuje se během prvního oboru názvů.
 
 Obory názvů nemůže přímo obsahovat hodnoty a funkce. Namísto toho hodnoty a funkce musí být součástí moduly a moduly jsou zahrnuty v oborech názvů. Obory názvů může obsahovat typy, moduly.
 
-Obory názvů lze explicitně deklarovat pomocí klíčového slova oboru názvů nebo implicitně při deklaraci modulu. Obor názvů explicitně deklarovat, použijte klíčové slovo oboru názvů, za nímž následuje název oboru názvů. Následující příklad ukazuje soubor kódu, který deklaruje pomůcky oboru názvů s typem a modul zahrnuté v tomto oboru názvů.
+Komentáře XML mohou být deklarovány nad oboru názvů, ale jsou ignorovány. Direktivy kompilátoru lze také deklarovat nad oboru názvů.
+
+Obory názvů lze explicitně deklarovat pomocí klíčového slova oboru názvů nebo implicitně při deklaraci modulu. Obor názvů explicitně deklarovat, použijte klíčové slovo oboru názvů, za nímž následuje název oboru názvů. Následující příklad ukazuje soubor kódu, který deklaruje oboru názvů `Widgets` s typem a modul zahrnuté v tomto oboru názvů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6406.fs)]
 
@@ -74,7 +76,7 @@ Můžete použít také globální k odkazu na nejvyšší úrovni obor názvů 
 
 ## <a name="recursive-namespaces"></a>Rekurzivní obory názvů
 
-F# 4.1 zavádí pojem obory názvů, které umožňují všechny obsažené kód je vzájemně rekurzivní.  To se provádí prostřednictvím `namespace rec`.  Použití `namespace rec` může vyřešit některé důsledně v nebude moci napsat kód vzájemně referenční typy a moduly.  Následuje příklad:
+Obory názvů lze také deklarovat jako rekurzivní povolit pro všechny obsažené kód je vzájemně rekurzivní.  To se provádí prostřednictvím `namespace rec`. Použití `namespace rec` může vyřešit některé důsledně v nebude moci napsat kód vzájemně referenční typy a moduly. Následuje příklad:
 
 ```fsharp
 namespace rec MutualReferences
@@ -115,12 +117,12 @@ module BananaHelpers =
         | Down -> b |> peelSides
 ```
 
-Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazovat na sebe navzájem.  To by nebylo možné vyjádřit v jazyce F#, pokud jste odebrali `rec` – klíčové slovo z `MutualReferences` oboru názvů.
+Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazovat na sebe navzájem. To by nebylo možné vyjádřit v F# Pokud jste odebrali `rec` – klíčové slovo z `MutualReferences` oboru názvů.
 
-Tato funkce je také k dispozici pro nejvyšší úrovně [moduly](modules.md) v F# 4.1 nebo vyšší.
+Tato funkce je také k dispozici pro nejvyšší úrovně [moduly](modules.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
 - [Moduly](modules.md)
-- [1009-F# RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci souborů](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)
+- [F#RFC FS-1009 - povolit vzájemně referenční typy a moduly přes větší oborů v rámci souborů](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)

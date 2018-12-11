@@ -1,96 +1,96 @@
 ---
-title: C# výrazy - přehled používání jazyka C#
-description: výrazy, operandy a operátory jsou stavební bloky jazyka C#
+title: C#Výrazy – připravuje C# jazyka
+description: výrazy, operandy a operátory jsou stavební bloky C# jazyka
 ms.date: 11/06/2016
 ms.assetid: 20d5eb10-7381-47b9-ad90-f1cc895aa27e
-ms.openlocfilehash: 8fa1c5d0464644b26eb457bca8ecaf007c288f42
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28e1d6952975c6932dc9ae40af28c7201d61d778
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33352296"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154931"
 ---
 # <a name="expressions"></a>Výrazy
 
-*Výrazy* se vytvářejí na základě *operandy* a *operátory*. Operátory výrazu znamenat operací, které chcete použít pro operandy. Příklady operátory `+`, `-`, `*`, `/`, a `new`. Příklady operandy: literály, pole, místní proměnné a výrazy.
+*Výrazy* se vytvářejí na základě *operandy* a *operátory*. Operátory výrazu označují operace, které chcete použít pro operandy. Příklady operátorů `+`, `-`, `*`, `/`, a `new`. Příklady operandy: literály, pole, místní proměnné a výrazy.
 
-Pokud některý výraz obsahuje více operátorů *přednost před* operátory ovládací prvky pořadí, ve kterém jsou jednotlivé operátory vyhodnocena. Například výraz `x + y * z` je vyhodnoceno jako `x + (y * z)` protože `*` operátor má vyšší prioritu než `+` operátor.
+Pokud výraz obsahuje více operátorů *prioritu* operátorů určuje pořadí, ve kterém jsou jednotlivé operátory vyhodnocovány. Například výraz `x + y * z` se vyhodnotí jako `x + (y * z)` protože `*` má vyšší prioritu než operátor `+` operátor.
 
-Když dojde k operand mezi dva operátory se stejnou prioritou, *asociativnost* operátory ovládací prvky pořadí, ve kterém jsou prováděny operace:
+Dojde-li operand mezi dva operátory se stejnou prioritou, *asociativita* operátorů určuje pořadí, ve kterém jsou operace prováděny:
 
-*   S výjimkou operátory přiřazení jsou všechny binární operátory *asociativní zleva*, což znamená, že operace se provádí zleva doprava. Například `x + y + z` je vyhodnoceno jako `(x + y) + z`.
-*   Operátory přiřazení a podmíněný operátor (`?:`) jsou *zprava asociativní*, což znamená, že operací zprava doleva. Například `x = y = z` je vyhodnoceno jako `x = (y = z)`.
+*   S výjimkou operátory přiřazení jsou všechny binární operátory *asociativní zleva*, což znamená, že operace se provádějí zleva doprava. Například `x + y + z` se vyhodnotí jako `(x + y) + z`.
+*   Operátory přiřazení a podmiňovací operátor (`?:`) jsou *asociativní zprava*, což znamená, že operace se provádějí zprava doleva. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
 
-Přednost a asociativnost se dá řídit pomocí závorek. Například `x + y * z` nejprve vynásobí `y` podle `z` a pak přidává výsledek, který má `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a potom vynásobí výsledek podle `z`.
+Přednost a asociativita operátorů lze ovládat pomocí závorek. Například `x + y * z` nejprve vynásobí `y` podle `z` a pak přidá výsledek, který má `x`, ale `(x + y) * z` nejprve přidá `x` a `y` a pak vynásobí výsledků `z`.
 
-Většina operátory mohou být *přetížený*. Přetížení operátoru umožňuje implementace uživatelem definovaný operátor zadat pro operace, kde jsou jedno nebo obě operandy typu uživatelem definované třídě nebo struktuře.
+Většina operátory mohou být *přetížené*. Přetížení operátoru umožňuje uživatelem definovaný operátor implementace pro operace, kde jeden nebo oba operandy jsou třídy nebo struktury typu uživatelem definované.
 
-Následující možnost shrne operátory jazyka C# na, výpis kategorií operátor v pořadí podle priority od nejvyšší po nejnižší. Operátory ve stejné kategorii nemá přednost. V rámci každé kategorie je seznam výrazů v dané kategorii společně s popisem příslušného typu výraz.
+Shrnuje následující C#pro operátory, výpis operátor kategorií v pořadí podle priority od nejvyšší k nejnižší. Operátory ve stejné kategorii mají stejnou prioritu. V rámci každé kategorie je seznamem výrazů v dané kategorii spolu s popis tohoto typu výrazu.
 
-* primární
-    - `x.m`: Přístup ke členu
-    - `x(...)`: Metoda a delegáta volání
-    - `x[...]`: Pole a indexer přístup
-    - `x++`: Přírůstek po
-    - `x--`: Po snížení
-    - `new T(...)`: Objekt a delegovat vytvoření
-    - `new T(...){...}`: Vytvoření objektu pomocí inicializátoru
-    - `new {...}`: Inicializátor anonymní objekt
-    - `new T[...]`: Při vytváření pole
+* Primární
+    - `x.m`: Přístup ke členům
+    - `x(...)`: Vyvolání metod a delegátů
+    - `x[...]`: Přístup k poli a indexeru
+    - `x++`: Postinkrementace
+    - `x--`: Postdekrementace
+    - `new T(...)`: Vytvoření objektu a delegátu
+    - `new T(...){...}`: Vytvoření objektu s inicializátorem
+    - `new {...}`:  Inicializátor anonymních objektů
+    - `new T[...]`: Vytvoření pole
     - `typeof(T)`: Získat <xref:System.Type> objekt pro `T`
-    - `checked(x)`: Výraz v kontextu zaškrtnuté vyhodnocení
-    - `unchecked(x)`: Vyhodnocení výrazu v kontextu nezaškrtnuto
-    - `default(T)`: Výchozí hodnota typu získat `T`
+    - `checked(x)`: Vyhodnocení výrazu ve zkontrolovaném kontextu
+    - `unchecked(x)`: Vyhodnocení výrazu v nezkontrolovaném kontextu
+    - `default(T)`: Získat výchozí hodnotu typu `T`
     - `delegate {...}`: Anonymní funkce (anonymní metoda)
 * Unární
-    - `+x`: Identity
+    - `+x`: Identita
     - `-x`: Negace
     - `!x`: Logická negace
-    - `~x`: Bitovou negaci
-    - `++x`: Přírůstek před
-    - `--x`: Snížení před
+    - `~x`: Bitová negace.
+    - `++x`: Preinkrementace
+    - `--x`: Predekrementace
     - `(T)x`: Explicitně převést `x` na typ `T`
     - `await x`: Asynchronně počkejte `x` k dokončení
-* Multiplikativní
+* Násobení
     - `x * y`: Násobení
     - `x / y`: Dělení
-    - `x % y`: Zbývající
-* Doplňkové
-    - `x + y`: Zřetězení řetězců přidání, kombinace delegáta
-    - `x – y`: Odčítání, odebrání delegáta
-* Posunutí
-    - `x << y`: Posunutí doleva
-    - `x >> y`: Posunutí doprava
-* Relační a typ testování
+    - `x % y`: Zbytek
+* Additive
+    - `x + y`: Sčítání, řetězení řetězců, kombinování delegátů
+    - `x – y`: Odčítání, odebrání delegátů
+* SHIFT
+    - `x << y`: Posun doleva
+    - `x >> y`: Posun doprava
+* Relační a typové zkoušky
     - `x < y`: Menší než
     - `x > y`: Větší než
-    - `x <= y`: Menší než nebo rovno
-    - `x >= y`: Větší než nebo rovno
-    - `x is T`: Návratový `true` Pokud `x` je `T`, `false` jinak
-    - `x as T`: Návratový `x` zadán jako `T`, nebo `null` Pokud `x` není `T`
+    - `x <= y`: Menší nebo rovno
+    - `x >= y`: Větší nebo rovno
+    - `x is T`: Vrátí `true` Pokud `x` je `T`, `false` jinak
+    - `x as T`: Vrátí `x` zadán jako `T`, nebo `null` Pokud `x` není `T`
 * Rovnost
-    - `x == y`: Rovná
-    - `x != y`: Není rovno
+    - `x == y`: Rovno
+    - `x != y`: Nerovná se
 * Logický operátor AND
-    - `x & y`: Celé číslo bitové a boolean logické a
+    - `x & y`: Celočíselné bitové a logických logický operátor AND
 * Logický operátor XOR
-    - `x ^ y`: Bitové operace XOR celé číslo, logickou logické XOR
+    - `x ^ y`: Bitový operátor XOR celého čísla, logická hodnota operátoru XOR
 * Logický operátor OR
-    - `x | y`: Celé číslo bitové nebo logická hodnota logické nebo
+    - `x | y`: Bitový operátor OR celého čísla, logická hodnota operátoru OR
 * Podmiňovací operátor AND
-    - `x && y`: Vyhodnotí `y` pouze v případě `x` není `false`
+    - `x && y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `false`
 * Podmiňovací operátor OR
-    - `x || y`: Vyhodnotí `y` pouze v případě `x` není `true`
+    - `x || y`: Vyhodnotí `y` pouze tehdy, pokud `x` není `true`
 * Nulové sloučení
-    - `x ?? y`: Vyhodnocen `y` Pokud `x` má hodnotu null, k `x` jinak
+    - `x ?? y`: Vyhodnotí jako `y` Pokud `x` má hodnotu null, `x` jinak
 * Podmiňovací operátor
     - `x ? y : z`: Vyhodnotí `y` Pokud `x` je `true`, `z` Pokud `x` je `false`
 * Přiřazení nebo anonymní funkce
     - `x = y`: Přiřazení
-    - `x op= y`: Složené přiřazení; jsou podporované operátory
+    - `x op= y`: Složené přiřazení. podporované operátory jsou
         - `*=`   `/=`   `%=`   `+=`   `-=`   `<<=`   `>>=`   `&=`  `^=`  `|=`
-    - `(T x) => y`: Anonymní funkce (výrazu lambda)
+    - `(T x) => y`: Anonymní funkce (výraz lambda)
 
 >[!div class="step-by-step"]
-[Předchozí](types-and-variables.md)
-[další](statements.md)
+>[Předchozí](types-and-variables.md)
+>[další](statements.md)

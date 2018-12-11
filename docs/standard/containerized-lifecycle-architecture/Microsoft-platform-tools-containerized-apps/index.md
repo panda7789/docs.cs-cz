@@ -4,27 +4,27 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: bc13a0c8d6f14b8ea7ea2017009ba074f9a96ab3
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: fe65e9036c1e0bdf2afe05426c01e75d48f93439
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580193"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152332"
 ---
-# <a name="introduction-to-the-microsoft-platform-and-tools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
+# <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Úvod do Microsoft platformu a nástroje pro kontejnerizované aplikace
 
 
 Obrázek 3-1 zobrazuje hlavní pilíře v životním cyklu aplikace Dockeru klasifikuje typu práce od několika týmů (vývoj aplikací, infrastruktury procesy DevOps a správy IT a operace). Obvykle v podnikové síti, profily "osoba" zodpovídá za každou oblast, kterou se liší. Proto jsou své dovednosti.
 
 ![](./media/image1.png)
 
-Obrázek 3-1: hlavní pilíři životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
+Obrázek 3-1: Hlavní pilíře v životní cyklus kontejnerizované aplikace Dockeru s platformou a nástroji Microsoft
 
 A kontejnerizovaných Docker životní cyklus pracovní postup může být zpočátku doporučené na základě "ve výchozím nastavení produkt voleb," usnadňuje vývojářům začít pracovat rychleji, ale je zásadní pro pod pokličkou musí obsahovat otevřené rozhraní tak, že bude flexibilní pracovní postup umožňující úpravy do různých kontextech z každé organizace nebo podniku. Pracovní postup infrastruktury (součásti a produkty) musí být dostatečně flexibilní, aby pokryl prostředí, které každá společnost má v budoucnu, i jsou schopny prohození vývoj nebo DevOps produktů pro ostatní. Této flexibility, otevřenost a širokou škálu technologií v platforma a infrastruktura jsou přesně priority společnosti Microsoft pro kontejnerizované aplikace Dockeru, jak je vysvětleno v kapitolách, které následují.
 
 Tabulka 3-1 ukazuje, že záměr Microsoft DevOps pro kontejnerizované aplikace Dockeru je poskytnout otevřený pracovních postupů DevOps tak, aby můžete zvolit, jaké produkty pro každou fázi (společnosti Microsoft nebo třetích stran) poskytuje zjednodušenou pracovního postupu který poskytuje již připojen "ve výchozí produktů"; Proto je můžete rychle začít s pracovních postupů DevOps podnikové úrovni pro aplikace Dockeru.
 
-Tabulka 3 – 1: Otevřete DevOps pracovní postup pro všechny technologie
+Tabulka 3 – 1: Otevřít pracovní postup DevOps pro všechny technologie
 
 | Hostitel | Technologie společnosti Microsoft | Třetí strany, modulární Azure |
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
@@ -59,5 +59,5 @@ Azure DevOps Services umožňuje vývojářům vytvářet zaměřené na kontejn
 Proto Microsoft nabízí kompletní foundation začátku do konce kontejnerizovaných Docker životního cyklu aplikace. Je však *kolekce produktů a technologií, které můžete volitelně vybrat a integrace s existujícím nástroje a procesy*. Flexibilitu v rámci široké přístupu spolu s sílu do hloubky možnosti umístění Microsoft strong polohy pro vývoj kontejnerizovaných aplikací Dockeru.
 
 >[!div class="step-by-step"]
-[Předchozí](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
-[další](../design-develop-containerized-apps/index.md)
+>[Předchozí](../Docker-application-lifecycle/containers-foundation-for-devops-collaboration.md)
+>[další](../design-develop-containerized-apps/index.md)

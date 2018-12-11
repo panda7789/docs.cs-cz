@@ -1,15 +1,15 @@
 ---
-title: Balíčky, metabalíčky a architektury
+title: Balíčky, metabalíčky a architektury – .NET Core
 description: Přečtěte si terminologie pro balíčky, metabalíčky a architektury.
 author: richlander
-ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: e69e9707d3984f37ebc2c1103f9d89f3cbdf5cbd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.custom: seodec18
+ms.openlocfilehash: 25247972346fb181279414a762d73d2f3218f0e0
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195278"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168816"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 
@@ -76,7 +76,7 @@ Klíče metabalíčky .NET Core jsou:
 - [Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) – zahrnuje všechny podporované balíčky od třetích stran a vnitřní závislosti používat ASP.NET Core a Entity Framework Core, Entity Framework Core a ASP.NET Core. Zobrazit [metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.x](/aspnet/core/fundamentals/metapackage) Další informace.
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) -sadu fasády kompatibility, které umožňují na základě mscorlib přenosné knihovny tříd (PCLs) ke spuštění v rozhraní .NET Core.
 
-## <a name="frameworks"></a>Rozhraní
+## <a name="frameworks"></a>Architektury
 
 .NET core balíčky podporují sadu rozhraní modulu runtime. Architektury popisují dostupné sady rozhraní API (a případně také další vlastnosti), že se můžete spolehnout na při použití prostředí dané rozhraní. Systémovou správou verzí se při přidání nového rozhraní API.
 
@@ -108,7 +108,7 @@ Dvě primární založené na balíčku architektury použít s .NET Core jsou:
 - `netstandard`
 - `netcoreapp`
 
-### <a name="net-standard"></a>.NET standard
+### <a name="net-standard"></a>.NET Standard
 
 .NET Standard ([Moniker cílového rozhraní](../standard/frameworks.md): `netstandard`) představuje rozhraní API určené a zabudovány nad rámec [.NET Standard](../standard/net-standard.md). Cílem tohoto rozhraní by měl knihovny, které jsou určeny ke spuštění ve více modulů – runtime. Se bude podporovat na jakékoli .NET Standard kompatibilní modul runtime, jako je .NET Core, .NET Framework a Mono/Xamarin. Každá z těchto modulů runtime podporuje .NET Standard verze, v závislosti na tom, které rozhraní API implementovat.
 

@@ -3,13 +3,13 @@ title: Vytvoření LINQ to DataSet projektu v sadě Visual Studio
 ms.date: 08/15/2018
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
 ms.openlocfilehash: 22763d3b9581d09d7bdda0c09480f8d36bb8e2ec
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297013"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154031"
 ---
-# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: vytvoření LINQ to DataSet projektu v sadě Visual Studio
+# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: Vytvoření LINQ to DataSet projektu v sadě Visual Studio
 
 Různé typy projektů LINQ vyžadovat některé odkazy na sestavení a importovaných oborů názvů (Visual Basic) nebo [pomocí](../../../csharp/language-reference/keywords/using-directive.md) direktivy (C#). Minimální požadavky pro funkci LINQ je odkaz na *System.Core.dll* a `using` směrnice pro <xref:System.Linq>.
 

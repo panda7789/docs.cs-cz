@@ -2,14 +2,14 @@
 title: Vytváření distribučních balíčků .NET core
 description: Zjistěte, jak zabalit, název a verzi .NET Core pro distribuci.
 author: bleroy
-ms.author: mairaw
 ms.date: 06/28/2017
-ms.openlocfilehash: 41e8729d3058c2e3e1ea1cab9a8f28b3062bb93c
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.custom: seodec18
+ms.openlocfilehash: be5767351ad1cdac15c73f718f67a0d120cf65b0
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297215"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170415"
 ---
 # <a name="net-core-distribution-packaging"></a>Vytváření distribučních balíčků .NET core
 
@@ -68,14 +68,14 @@ Během jednoho hostitele se většina jiných komponent jsou v označené verzí
 
 Správa verzí rozhraní .NET core je založen na součásti modulu runtime `[major].[minor]` čísla verzí.
 Verze sady SDK se používá stejná `[major].[minor]` a má nezávislou `[patch]` zahrnující sémantiku funkce a opravy pro sadu SDK.
-Například: Sada SDK verze 2.2.302 je 2. Oprava verzi 3. vydání funkcí sady SDK, která podporuje 2.2 modulu runtime.
+Příklad: Sada SDK verze 2.2.302 je 2. Oprava verzi 3. vydání funkcí sady SDK, která podporuje 2.2 modulu runtime.
 
 Některé balíčky v názvu zahrnují část čísla verze. To umožňuje koncového uživatele k instalaci na konkrétní verzi.
 Zbývající část verze není součástí název verze. To umožňuje balíčku, operační systém manager aktualizoval balíčky (například zabezpečení instalace automaticky opravuje).
 
 Následující tabulka ukazuje doporučené balíčky.
 
-| Název                                    | Příklad                | Případ použití: instalace...           | Obsahuje           | Závislosti                                   | Version            |
+| Název                                    | Příklad                | Případ použití: Instalace...           | Obsahuje           | Závislosti                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
 | dotnet-sdk-[major]                      | dotnet-sdk-2           | Nejnovější sadu sdk pro modul runtime hlavní    |                    | dotnet-sdk-[major].[latestminor]               | \<verze sady SDK >     |
 | dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Nejnovější sadu sdk pro konkrétní prostředí runtime |                    | DotNet - sdk-[hlavníverze]. [podverze]. [nejnovější sdk feat] xx | \<verze sady SDK >     |

@@ -2,14 +2,14 @@
 title: Telemetrická data sady SDK .NET core
 description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďují informace o využití pro analýzy, která data se shromažďují a jak ji zakázat.
 author: richlander
-ms.author: mairaw
 ms.date: 06/20/2018
-ms.openlocfilehash: a20d79e132726cb342064b681218ee568fab2c13
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: 8b0b546d70eab837c2e075f839990870ae9ea6b1
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841613"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168842"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -52,7 +52,7 @@ Funkci shromažďuje následující data:
 
 &#8224;Tato metrika je publikována.
 
-Počínaje .NET Core SDK 2.0, jsou shromažďovány nové datové body:
+Počínaje .NET Core 2.0 SDK, jsou shromažďovány nové datové body:
 
 - `dotnet` příkaz možností a argumentů: pouze známé možnosti a argumenty jsou shromážděná (ne libovolné řetězce).
 - Určuje, zda sada SDK je spuštěn v kontejneru.
@@ -68,11 +68,11 @@ Tým .NET chce vědět, jak se používají nástroje a pokud pracují dobře, n
 
 Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v tématu [Data o využití sady SDK .NET Core](https://github.com/dotnet/core/blob/master/release-notes/cli-usage-data.md). Jsou sloupce datového souboru:
 
-- Časové razítko
+- Timestamp
 - Occurrences&#8224;
 - Příkaz
 - Zeměpisné oblasti&#8225;
-- Atribut OSFamily
+- OSFamily
 - RuntimeID
 - OSVersion
 - SDKVersion
@@ -83,7 +83,7 @@ Publikovaná data čtvrtletně je k dispozici a jsou uvedeny v tématu [Data o v
 
 ### <a name="example"></a>Příklad
 
-| Časové razítko      | Výskyty | Příkaz | Zeměpisné oblasti | Atribut OSFamily | RuntimeID     | OSVersion | SDKVersion |
+| Timestamp      | Výskyty | Příkaz | Zeměpisné oblasti | OSFamily | RuntimeID     | OSVersion | SDKVersion |
 | -------------- | ----------- | ------- | --------- | -------- | ------------- | --------- | ---------- |
 | 4/16/2017 0:00 | 8           | Spuštění     | Uganda    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |
 

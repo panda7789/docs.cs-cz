@@ -2,14 +2,14 @@
 title: Model rozšíření rozhraní příkazového řádku .NET core
 description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazového řádku (CLI).
 author: blackdwarf
-ms.author: mairaw
 ms.date: 04/12/2017
-ms.openlocfilehash: 9f54479704f547ada567619a82b24a47a0b104c4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: 3aedd1d507fde1cd7402ef97fa00d0c7f13005e3
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842733"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170233"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů rozhraní příkazového řádku .NET core
 
@@ -36,7 +36,7 @@ Tyto tři mechanismy rozšíření uvedených výše se nevylučují. Můžete p
 ## <a name="per-project-based-extensibility"></a>Rozšíření na základě jednotlivých projektů
 Nástroje na projekt jsou [nasazení závisí na architektuře](../deploying/index.md#framework-dependent-deployments-fdd) , která se distribuují jako balíčky NuGet. Nástroje jsou dostupné jenom v kontextu projektu, který na ně odkazuje, a u kterého se obnoví. Volání mimo kontext projektu (například nachází mimo adresář, který obsahuje projekt) se nezdaří, protože příkaz nebyl nalezen.
 
-Tyto nástroje jsou ideální pro sestavovací servery, protože je potřeba nic mimo rámec souborů projektu. Spuštění procesu sestavení pro projekt ji obnovit sestavení a nástroje budou dostupné. Projekty jazyka, jako je například F #, jsou také v této kategorii, protože každý projekt lze zapsat pouze v jeden konkrétní jazyk.
+Tyto nástroje jsou ideální pro sestavovací servery, protože je potřeba nic mimo rámec souborů projektu. Spuštění procesu sestavení pro projekt ji obnovit sestavení a nástroje budou dostupné. Projekty jazyka, jako například F#, jsou také v této kategorii, protože každý projekt lze zapsat pouze v jeden konkrétní jazyk.
 
 Nakonec tento model rozšiřitelnosti poskytuje podporu pro vytváření nástrojů, které potřebují přístup k sestavení výstupu projektu. Například různých zobrazení Razor nástroje v [ASP.NET](https://www.asp.net/) do této kategorie patří aplikace MVC.
 

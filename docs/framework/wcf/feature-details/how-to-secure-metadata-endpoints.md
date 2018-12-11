@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
 ms.openlocfilehash: e6fbaabb97e4a8de3e4bdbcc0c105b6cf999c0d5
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50037584"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152185"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
 Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se zlými úmysly využívat. Příjemci služby budete možná muset zabezpečené mechanismus pro získání metadat o vaší služby. Proto je někdy nezbytné pro publikování metadata pomocí zabezpečeného koncového bodu.  
@@ -21,7 +21,7 @@ Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se
   
 ### <a name="to-create-a-secure-https-get-metadata-endpoint-in-code"></a>Chcete-li vytvořit zabezpečené HTTPS GET koncových bodů metadat v kódu  
   
-1.  Konfigurace portu s příslušný certifikát X.509. Certifikát musí pocházet od důvěryhodné autority a musí mít zamýšlené použití "Ověřování služby." Musíte použít nástroj HttpCfg.exe připojit certifikát na port. Zobrazit [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+1.  Konfigurace portu s příslušný certifikát X.509. Certifikát musí pocházet od důvěryhodné autority a musí mít zamýšlené použití "Ověřování služby." Musíte použít nástroj HttpCfg.exe připojit certifikát na port. Zobrazit [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
     > [!IMPORTANT]
     >  Předmět certifikátu nebo jeho systému DNS (Domain Name) musí odpovídat názvu počítače. To je nezbytné, protože jeden z prvních kroků, které provádí mechanismus HTTPS je ke kontrole, jestli se certifikát vydal do stejný identifikátor URI (Uniform Resource) jako adresu, na kterém je vyvolána.  
@@ -96,7 +96,7 @@ Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior>  
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>  
- [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [Jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
  [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

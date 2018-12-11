@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: e77065614423cd2e7fdb51258a8c7650280d0400
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 6ff6170fd1cdd0c69ecc8729cc8199cceea43ffa
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537823"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128476"
 ---
 # <a name="general-guidance"></a>Obecné pokyny
 
@@ -39,13 +39,12 @@ Pomocí rozhraní .NET Framework v Dockeru lze vylepšit prostředí pro vaše n
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **elektronická kniha: modernizace stávajících aplikací rozhraní .NET Framework s využitím Azure a kontejnery Windows**  
+-   **elektronická kniha: Modernizace stávajících aplikací rozhraní .NET Framework s využitím Azure a kontejnery Windows**  
     https://aka.ms/liftandshiftwithcontainersebook
 
--   **Ukázkové aplikace: modernizace starší verze webových aplikací ASP.NET s využitím kontejnerů Windows**  
+-   **Ukázkové aplikace: Modernizace starší verze webových aplikací ASP.NET s využitím kontejnerů Windows**  
     https://aka.ms/eshopmodernizing
 
-
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](net-core-container-scenarios.md)
+>[Předchozí](index.md)
+>[další](net-core-container-scenarios.md)

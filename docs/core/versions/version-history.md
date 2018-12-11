@@ -1,15 +1,16 @@
 ---
-title: Historie verzí .NET core
-description: Zobrazit časovou osu pro verze modulu runtime .NET Core, .NET Core SDK, kompilátor jazyka C# a VB.NET kompilátoru.
+title: Správa verzí rozhraní .NET Core SDK změnách
+description: Tento článek popisuje, jak se mění správy verzí rozhraní .NET Core SDK a modulu Runtime v období verze 2.1.
 ms.date: 07/26/2018
-ms.openlocfilehash: 90fd4ba57620a3a005f2148c0335a76a6fa54a30
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: e4b87d2ebd6dc5a0d5b874dc35dcaf746fdd4a0a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519062"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131128"
 ---
-# <a name="net-core-version-history"></a>Historie verzí .NET Core
+# <a name="net-core-version-changes-between-10-and-21"></a>Změny verze .NET Core 1.0 až 2.1
 
 Čísla verzí pro .NET Core jsou náročná, protože sady SDK .NET Core a .NET Core Runtime vydání na jinou cadences. Různé cadences znamená, že tým musela být proveďte pouze dvě následující tři věci:
 

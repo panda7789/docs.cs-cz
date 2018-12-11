@@ -1,18 +1,18 @@
 ---
-title: Glosář Machine learning
-description: Glosář termínů machine learning.
-ms.date: 05/31/2018
-ms.topic: conceptual
-ms.openlocfilehash: 22fcd4d2bdf53efd046cd594af42afe50a853f61
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+title: Machine learning Glosář - ML.NET
+description: Glosář důležité terminologie strojového učení, které jsou užitečné při vytváření vlastních modelů ML.NET.
+ms.custom: seodec18
+ms.date: 12/06/2018
+ms.openlocfilehash: 4db28a62fccca2e8bedc9f48485a61b6f4ab1801
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453200"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150573"
 ---
-# <a name="machine-learning-glossary"></a>Glosář Machine learning
+# <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 
-V následujícím seznamu je důležité machine learning termínů, které jsou užitečné při vytváření vlastních modelů kompilaci.
+V následujícím seznamu je kompilace podmínek důležité machine learning, které jsou užitečné při vytváření vlastních modelů ML.NET.
 
 ## <a name="accuracy"></a>Přesnost
 
@@ -44,7 +44,7 @@ Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionM
 
 Měřitelné vlastnosti jev se měří, obvykle číselnou hodnotu (double). Funkce jsou označovány jako **funkce vector** a většinou uložena jako `double[]`. Funkce definují důležité charakteristiky jev se měří. Další informace najdete v tématu [funkce](https://en.wikipedia.org/wiki/Feature_(machine_learning)) článku na wikipedii.
 
-## <a name="feature-engineering"></a>Vytváření funkcí
+## <a name="feature-engineering"></a>Návrh funkcí
 
 Vytváření funkcí je proces, který zahrnuje definování sady [funkce](#feature) a vývoj softwaru, který vytváří vektory funkce z dostupných jev dat, například funkce extrakce. Další informace najdete v tématu [konstruování](https://en.wikipedia.org/wiki/Feature_engineering) článku na wikipedii.
 
@@ -100,7 +100,7 @@ V [klasifikace](#classification), přesnost pro třídu je počet položek sprá
 
 Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.NegativePrecision?displayProperty=nameWithType>, <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.PositivePrecision?displayProperty=nameWithType>.
 
-## <a name="recall"></a>Odvolání
+## <a name="recall"></a>Svolat
 
 V [klasifikace](#classification), odvolání pro třídu je počet položek správně předpovědět jako patřící do této třídy dělený celkový počet položek, které ve skutečnosti patří do třídy.
 

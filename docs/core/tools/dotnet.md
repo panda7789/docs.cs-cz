@@ -1,15 +1,13 @@
 ---
-title: příkaz DotNet – rozhraní příkazového řádku .NET Core
+title: příkaz DotNet
 description: Další informace o příkazu dotnet (obecný ovladač pro nástroje .NET Core CLI) a jeho použití.
-author: mairaw
-ms.author: mairaw
 ms.date: 06/04/2018
-ms.openlocfilehash: 53e8f8bab1cbaabaa7926aa68197c18843b0b637
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 081f295cc71c3cd46de465efb12f131e7b2d36d9
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615570"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170838"
 ---
 # <a name="dotnet-command"></a>příkaz DotNet
 
@@ -176,7 +174,7 @@ Vytiskne na verzi .NET Core SDK používá.
 | [dotnet help](dotnet-help.md)                 | Zobrazí podrobnější online dokumentaci pro příkaz.           |
 | [dotnet migrate](dotnet-migrate.md)           | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
 | [dotnet msbuild](dotnet-msbuild.md)           | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)                   | Inicializuje C# a projektu F # pro danou šablonu.                |
+| [dotnet new](dotnet-new.md)                   | Inicializuje C# nebo F# projektu pro danou šablonu.                |
 | [dotnet pack](dotnet-pack.md)                 | Vytvoří balíček NuGet kódu.                               |
 | [dotnet publish](dotnet-publish.md)           | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
 | [dotnet restore](dotnet-restore.md)           | Obnoví závislosti pro danou aplikaci.                  |
@@ -194,7 +192,7 @@ Vytiskne na verzi .NET Core SDK používá.
 | [dotnet help](dotnet-help.md)       | Zobrazí podrobnější online dokumentaci pro příkaz.           |
 | [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
 | [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)         | Inicializuje C# a projektu F # pro danou šablonu.                |
+| [dotnet new](dotnet-new.md)         | Inicializuje C# nebo F# projektu pro danou šablonu.                |
 | [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
 | [dotnet publish](dotnet-publish.md) | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
 | [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro danou aplikaci.                  |
@@ -211,7 +209,7 @@ Vytiskne na verzi .NET Core SDK používá.
 | [dotnet clean](dotnet-clean.md)     | Čištění výstupy sestavení.                                              |
 | [dotnet migrate](dotnet-migrate.md) | Migruje platný projekt ve verzi Preview 2 na projekt .NET Core SDK 1.0.  |
 | [dotnet msbuild](dotnet-msbuild.md) | Poskytuje přístup k příkazovému řádku nástroje MSBuild.                        |
-| [dotnet new](dotnet-new.md)         | Inicializuje C# a projektu F # pro danou šablonu.                |
+| [dotnet new](dotnet-new.md)         | Inicializuje C# nebo F# projektu pro danou šablonu.                |
 | [dotnet pack](dotnet-pack.md)       | Vytvoří balíček NuGet kódu.                               |
 | [dotnet publish](dotnet-publish.md) | Publikuje závisí na architektuře nebo samostatné aplikaci .NET. |
 | [dotnet restore](dotnet-restore.md) | Obnoví závislosti pro danou aplikaci.                  |

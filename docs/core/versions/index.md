@@ -1,17 +1,17 @@
 ---
-title: Správa verzí rozhraní .NET core
-description: Zjistěte, jak funguje správa verzí rozhraní .NET Core.
+title: Jak se systémovou správou verzí modulu Runtime .NET Core a sady SDK
+description: V tomto článku se naučíte, jak .NET Core SDK a modulu Runtime se systémovou správou verzí (podobně jako sémantické správy verzí).
 author: bleroy
-ms.author: mairaw
 ms.date: 07/26/2018
-ms.openlocfilehash: 9f77709abf59d5346bf5e3c6f512cfabbf9e50de
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.custom: seodec18
+ms.openlocfilehash: 54b09a6b74b2cf213cea781dec95a413ac2ad059
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188466"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170714"
 ---
-# <a name="net-core-versioning"></a>Správa verzí rozhraní .NET core
+# <a name="overview-of-how-net-core-is-versioned"></a>Přehled, jak se systémovou správou verzí .NET Core
 
 .NET core odkazuje na modul Runtime .NET Core a .NET Core SDK, který obsahuje nástroje, které potřebujete k vývoji aplikací. .NET core SDK jsou navrženy pro práci s jakékoli předchozí verzi modulu Runtime .NET Core. Tento článek vysvětluje strategii verze sady SDK a modulu runtime. Vysvětlení čísla verzí pro .NET Standard najdete v článku Představujeme [.NET Standard](../../standard/net-standard.md#net-implementation-support).
 
@@ -82,11 +82,11 @@ Soubory stáhnout pro .NET Core carry verze, například `dotnet-sdk-2.1.300-win
 
 ### <a name="preview-versions"></a>Verze Preview
 
-Verze Preview `-preview[number]-([build]|"final")` připojenou k verzi. Například `2.0.0-preview1-final`.
+Verze Preview `-preview[number]-([build]|"final")` připojenou k verzi. Například, `2.0.0-preview1-final`.
 
 ### <a name="servicing-versions"></a>Údržba verze
 
-Po vydání nedostane mimo větví vydaných verzí obecně stop vytváření denně sestavení a místo zahájení výroby servisní sestavení. Servisní verze mají `-servicing-[number]` připojenou k verzi. Například `2.0.1-servicing-006924`.
+Po vydání nedostane mimo větví vydaných verzí obecně stop vytváření denně sestavení a místo zahájení výroby servisní sestavení. Servisní verze mají `-servicing-[number]` připojenou k verzi. Například, `2.0.1-servicing-006924`.
 
 ## <a name="relationship-to-net-standard-versions"></a>Relace pro verze .NET Standard
 
@@ -98,7 +98,7 @@ Může být aktualizován implementace na jednotlivých platformách, obvykle ja
 
 Implementuje každou verzi .NET Core na verzi .NET Standard. Implementace verze .NET Standard zahrnuje podporu pro předchozí verze .NET Standard. Verze .NET standard a .NET Core nezávisle na sobě. Se nezdá, že implementuje rozhraní .NET Core 2.0 rozhraní .NET Standard 2.0. .NET core 2.1 také implementuje rozhraní .NET Standard 2.0. Budoucí verze .NET Standard, jakmile budou k dispozici bude podporovat .NET core.
 
-| .NET Core | .NET standard |
+| .NET Core | .NET Standard |
 |-----------|---------------|
 | 1.0       | na verzi 1.6     |
 | 2.0       | až 2,0     |

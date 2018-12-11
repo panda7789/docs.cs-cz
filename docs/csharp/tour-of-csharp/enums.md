@@ -1,39 +1,39 @@
 ---
-title: C# výčty - přehled používání jazyka C#
-description: Další informace o výčty, diskrétní s názvem konstanty v jazyku C#
+title: C#Výčty – připravuje C# jazyka
+description: Další informace o výčtů diskrétní pojmenované konstanty vC#
 ms.date: 08/10/2016
 ms.assetid: 7faba1cc-6ea9-4a19-adb9-0335e4b132e5
-ms.openlocfilehash: 7fe2626381cb90e55842e3be17dd450eb73d5a5b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d55462f0360b6896c398d581918a9c17a87583be
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353351"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126651"
 ---
 # <a name="enums"></a>Výčty
 
-***Typ výčtu*** je typ odlišné hodnoty sadu pojmenované konstanty. Pokud potřebujete definovat typ, který může mít sadu diskrétních hodnot definujete výčty. Používají jeden z typů celočíselné hodnoty jako svoje základní úložiště. Poskytují význam sémantického diskrétní hodnoty.
+***Typ výčtu*** je typ odlišné hodnoty se sadou pojmenovaných konstant. Můžete definovat výčty, pro které je třeba definovat typ, který může mít sady jednotlivých hodnot. Používají jeden z typů celočíselné hodnoty jako svoje základní úložiště. Poskytují sémantický význam jednotlivých hodnot.
 
-Následující příklad deklaruje a používá `enum` typ s názvem `Color` s tři konstantní hodnoty, `Red`, `Green`, a `Blue`.
+Následující příklad deklaruje a používá `enum` typ s názvem `Color` pomocí tří hodnot konstanty `Red`, `Green`, a `Blue`.
 
 [!code-csharp[EnumExample](../../../samples/snippets/csharp/tour/enums/Program.cs#L3-L36)]
 
-Každý `enum` typ má odpovídající integrální typu s názvem ***základní typ*** z `enum` typu. `enum` Typ, který nedeklaruje základní typ explicitně má základní typ `int`. `enum` Formát úložiště typu a rozsahu možných hodnot určuje jeho zdrojovým typem. Sada hodnoty, které `enum` typ může trvat na není omezený jeho `enum` členy. Konkrétně žádnou hodnotu základní typ `enum` lze převést na `enum` zadejte a odlišné platná hodnota této `enum` typu.
+Každý `enum` typ má odpovídající integrální typ s názvem ***nadřízený typ*** z `enum` typu. `enum` Typ, který nedeklaruje explicitně nadřízený typ má základní typ `int`. `enum` Úložném formátu a rozsah možných hodnot typu se určují podle jeho nadřízeného typu. Sadu hodnot, které `enum` typu můžete provést na nebude omezen jeho `enum` členy. Konkrétně se libovolná hodnota základního typu `enum` lze převést na `enum` typ a je odlišné platnou hodnotou, která `enum` typu.
 
-Následující příklad deklaruje `enum` typ s názvem `Alignment` s podkladovým typem `sbyte`.
+Následující příklad deklaruje `enum` typ s názvem `Alignment` pomocí základního typu `sbyte`.
 
 [!code-csharp[EnumStorage](../../../samples/snippets/csharp/tour/enums/Program.cs#L38-L43)]
 
-Jak ukazuje předchozí příklad, `enum` deklarace členů může zahrnovat konstantní výraz, který určuje hodnotu člena. Konstantní hodnota pro každé `enum` člena musí být v rozsahu základní typ `enum`. Při `enum` deklarace členů neurčuje explicitně hodnotu, člen je zadána hodnota nula (Pokud je první člen v `enum` typu) nebo hodnotu textový předchozí `enum` člen plus jedna.
+Jak je znázorněno v předchozím příkladu, `enum` deklarace člena. může obsahovat konstantní výraz, který určuje hodnotu člena. Konstantní hodnota pro každé `enum` člen musí být v rozsahu od základního typu `enum`. Při `enum` deklarace člena explicitně neurčí hodnotu, člen je zadána hodnota nula (Pokud je první člen v `enum` typ) nebo hodnotu textový předchozí `enum` člena plus jedna.
 
-`Enum` hodnoty mohou být převeden na celočíselné hodnoty a naopak pomocí typ přetypování. Příklad:
+`Enum` hodnoty mohou být převedeny na integrální hodnoty a naopak pomocí přetypování. Příklad:
 
 [!code-csharp[EnumStorage](../../../samples/snippets/csharp/tour/enums/Program.cs#L49-L50)]
 
-Výchozí hodnota všech `enum` je integrální hodnota nula převést na typ `enum` typu. V případech, kde jsou automaticky inicializovány proměnné na výchozí hodnotu, je to hodnota zadané proměnné `enum` typy. V pořadí pro výchozí hodnotu `enum` typ, který má být snadno dostupné, skutečné `0` implicitně převede do jakéhokoli `enum` typu. Proto následující je povolená.
+Zadejte výchozí hodnotu kterékoli `enum` je celočíselná hodnota nula, převést na typ `enum` typu. V případech, kdy proměnné jsou automaticky inicializovány na výchozí hodnotu, jedná se o hodnotu k proměnné `enum` typy. Aby výchozí hodnota `enum` typ, který má být snadno k dispozici, literál `0` implicitně převede na jakýkoli `enum` typu. Proto následující je povolený.
 
 [!code-csharp[EnumZero](../../../samples/snippets/csharp/tour/enums/Program.cs#L58-L58)]
 
 >[!div class="step-by-step"]
-[Předchozí](interfaces.md)
-[další](delegates.md)
+>[Předchozí](interfaces.md)
+>[další](delegates.md)

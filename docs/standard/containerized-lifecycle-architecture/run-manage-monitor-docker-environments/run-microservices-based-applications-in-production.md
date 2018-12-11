@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 18e6cb1fb5f496b66c89cb8e009a67894b8a76ad
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 003bf794f5427e7b2f10d1e04fd27605b980cdfe
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123147"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126299"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
 
@@ -33,7 +33,6 @@ Když aplikace jsou horizontálním navýšením kapacity napříč více hostit
 
 Funkce poskytované verzí orchestrátorů a plánovači jsou velmi složité k vývoji a vytvořit úplně od začátku, a proto je obvykle vhodné provést pomocí Orchestrace řešení nabízí dodavatelů.
 
-
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](manage-production-docker-environments.md)
+>[Předchozí](index.md)
+>[další](manage-production-docker-environments.md)

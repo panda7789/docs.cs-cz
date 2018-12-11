@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 802f447e1ae01020fa80fa3048e3783ea24db3d3
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: cacc703e40f268c1dbca4174dc866ecae83cbd6c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850098"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53125753"
 ---
 # <a name="lock-statement-c-reference"></a>Lock – příkaz (referenční dokumentace jazyka C#)
 
@@ -74,5 +74,4 @@ Následující příklad definuje `Account` třídu, která se synchronizuje př
 - [Referenční dokumentace jazyka C#](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova příkazů](statement-keywords.md)
-- [Propojené operace](../../../standard/threading/interlocked-operations.md)
 - [Přehled primitiv synchronizace](../../../standard/threading/overview-of-synchronization-primitives.md)

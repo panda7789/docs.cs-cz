@@ -3,11 +3,11 @@ title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
 ms.openlocfilehash: 9aeceff9dc2b714016d2f7c379e538d885489bb9
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50744545"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154343"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  
@@ -31,7 +31,7 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
 |-----------------------------|----------|  
 |XML|[Extensible Markup Language (XML) 1.0 (čtvrtým vydáním)](https://go.microsoft.com/fwlink/?LinkId=15139)|  
 |PROTOKOL SOAP 1.1|[Simple Object Access Protocol (SOAP) 1.1](https://go.microsoft.com/fwlink/?LinkId=96687)|  
-|Ze SOAP 1.2 Core|[Verze SOAP 1.2 – část 1: Messaging Framework (Second Edition)](https://go.microsoft.com/fwlink/?LinkId=94664)|  
+|Ze SOAP 1.2 Core|[Verze SOAP 1.2 – část 1: Zasílání zpráv Framework (Second Edition)](https://go.microsoft.com/fwlink/?LinkId=94664)|  
 |WS-Addressing 2004/08|[Základní adresování (WS-Addressing) na webové služby](https://go.microsoft.com/fwlink/?LinkId=81239)|  
 |W3C webových služeb adresování Core 1.0-|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=96688)|  
 |W3C webových služeb adresování 1.0 - vazba SOAP|[Webové služby adresování 1.0 - vazba SOAP](https://go.microsoft.com/fwlink/?LinkId=96689)|  
@@ -53,15 +53,15 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
   
 |Specifikace/dokumentu|Odkaz|  
 |-----------------------------|----------|  
-|WSS: Zabezpečení zpráv SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)|  
-|Doplněk WSS: Token uživatelského jména profilu 1.0|[Webové služby UsernameToken profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|Doplněk WSS: X.509 Token profilu 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](https://go.microsoft.com/fwlink/?LinkId=95335)|  
-|Doplněk WSS: SAML 1.1 Token profilu 1.0|[Zabezpečení webové služby: Profil Token SAML](https://go.microsoft.com/fwlink/?LinkId=96693)|  
-|Doplněk WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=91240)|  
+|DOPLNĚK WSS: Zabezpečení zpráv SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)|  
+|DOPLNĚK WSS: Token uživatelského jména profilu 1.0|[Webové služby UsernameToken profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
+|DOPLNĚK WSS: Token profilu X.509 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](https://go.microsoft.com/fwlink/?LinkId=95335)|  
+|DOPLNĚK WSS: SAML 1.1 Token profilu 1.0|[Zabezpečení webové služby: Profil tokenu SAML](https://go.microsoft.com/fwlink/?LinkId=96693)|  
+|DOPLNĚK WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=91240)|  
 |Doplněk WSS uživatelské jméno Token Profile 1.1|[Webové služby zabezpečení UsernameToken Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> neimplementují založené na heslech odvození klíče;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|Doplněk WSS: X509 Token Profile 1.1|[Webové služby zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)|  
-|Doplněk WSS: Token protokolu Kerberos Profile 1.1|[Webové služby Security Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)|  
-|Doplněk WSS: SAML 1.1 Token Profile 1.1|[Webové služby zabezpečení SAML Token Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=96694)|  
+|DOPLNĚK WSS: X509 token Profile 1.1|[Webové služby zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)|  
+|DOPLNĚK WSS: Token protokolu Kerberos Profile 1.1|[Webové služby Security Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)|  
+|DOPLNĚK WSS: SAML 1.1 Token Profile 1.1|[Webové služby zabezpečení SAML Token Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=96694)|  
 |WS-Secure Conversation|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)|  
 |WS-Trust 1.4|[Důvěřovat webových služeb jazyka](https://go.microsoft.com/fwlink/?LinkId=169514)|  
 |WS-SecurityPolicy 2005/07|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Ve znění chyby odeslání technického výboru OASIS WS-SX.<br /><br /> [zprávy ws-sx](https://go.microsoft.com/fwlink/?LinkId=96700)|  

@@ -18,12 +18,12 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: 5ae25cbca73f7c8e767cad0ac332d77c306724a1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 14e70a07469d6bb2701884d8646d161c78e65dc0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43883919"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126273"
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definovanou událost.  
@@ -66,18 +66,18 @@ End Event
 |`parameterlist`|Volitelné. Seznam místních proměnných, které představují parametry této události. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
 |`Implements`|Volitelné. Označuje, že tato událost implementuje události rozhraní.|  
 |`implementslist`|Požadováno pokud `Implements` pochází. Seznam `Sub` postupy se implementuje. Několik procedur se oddělují čárkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Každý `implementedprocedure` má následující syntaxi a části:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface` -Vyžaduje. Název rozhraní, třídy nebo struktury obsahující tento postup je implementace.<br />-   `Definedname` -Vyžaduje. Název, podle kterého postupu je definován v `interface`. To nemusí být stejné jako `name`, název, který tento postup používá při implementaci definovaný postupem.|  
-|`Custom`|Požadováno. Události deklarované jako `Custom` musí definovat vlastní `AddHandler`, `RemoveHandler`, a `RaiseEvent` přistupující objekty.|  
+|`Custom`|Povinný parametr. Události deklarované jako `Custom` musí definovat vlastní `AddHandler`, `RemoveHandler`, a `RaiseEvent` přistupující objekty.|  
 |`delegatename`|Volitelné. Název delegáta, který určuje podpis obslužné rutiny události.|  
 |`AddHandler`|Požadováno. Deklaruje `AddHandler` přístupový objekt, který určuje příkazy ke spuštění při přidání obslužné rutiny události, buď explicitně pomocí `AddHandler` příkazu nebo implicitně pomocí `Handles` klauzuli.|  
-|`End AddHandler`|Požadováno. Ukončuje `AddHandler` bloku.|  
+|`End AddHandler`|Povinný parametr. Ukončuje `AddHandler` bloku.|  
 |`value`|Požadováno. Název parametru.|  
-|`RemoveHandler`|Požadováno. Deklaruje `RemoveHandler` přístupový objekt, který určuje příkazy ke spuštění při odebrání obslužné rutiny události pomocí `RemoveHandler` příkazu.|  
-|`End RemoveHandler`|Požadováno. Ukončuje `RemoveHandler` bloku.|  
-|`RaiseEvent`|Požadováno. Deklaruje `RaiseEvent` přístupový objekt, který určuje příkazy ke spuštění, když se vyvolá událost pomocí `RaiseEvent` příkazu. Tím se obvykle vyvolá seznam delegátů udržuje `AddHandler` a `RemoveHandler` přistupující objekty.|  
-|`End RaiseEvent`|Požadováno. Ukončuje `RaiseEvent` bloku.|  
-|`delegatesignature`|Požadováno. Seznam parametrů, která odpovídá parametry vyžadované `delegatename` delegovat. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
+|`RemoveHandler`|Povinný parametr. Deklaruje `RemoveHandler` přístupový objekt, který určuje příkazy ke spuštění při odebrání obslužné rutiny události pomocí `RemoveHandler` příkazu.|  
+|`End RemoveHandler`|Povinný parametr. Ukončuje `RemoveHandler` bloku.|  
+|`RaiseEvent`|Povinný parametr. Deklaruje `RaiseEvent` přístupový objekt, který určuje příkazy ke spuštění, když se vyvolá událost pomocí `RaiseEvent` příkazu. Tím se obvykle vyvolá seznam delegátů udržuje `AddHandler` a `RemoveHandler` přistupující objekty.|  
+|`End RaiseEvent`|Povinný parametr. Ukončuje `RaiseEvent` bloku.|  
+|`delegatesignature`|Povinný parametr. Seznam parametrů, která odpovídá parametry vyžadované `delegatename` delegovat. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
 |`statements`|Volitelné. Příkazy, které obsahují orgánů `AddHandler`, `RemoveHandler`, a `RaiseEvent` metody.|  
-|`End Event`|Požadováno. Ukončuje `Event` bloku.|  
+|`End Event`|Povinný parametr. Ukončuje `Event` bloku.|  
   
 ## <a name="remarks"></a>Poznámky  
  Po události je deklarovaná, použijte `RaiseEvent` příkaz pro vyvolání události. Typické události mohou být deklarovány a aktivovaná, jak je znázorněno v následující fragmenty:  
@@ -91,7 +91,7 @@ End Event
   
  Můžete použít `Event` pouze na úrovni modulu. To znamená, *kontextu deklarace* pro událost musí být třída, struktura, modul nebo rozhraní a nemůže být zdrojový soubor, obor názvů, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Ve většině případů můžete první syntaxe v oddílu Syntaxe tohoto tématu pro deklarace událostí. Některé scénáře však vyžadují, že máte větší kontrolu nad chováním podrobné události. Poslední syntaxe v oddílu Syntaxe tohoto tématu, který používá `Custom` – klíčové slovo, obsahuje tento ovládací prvek umožňuje definovat vlastní události. Ve vlastní události je zadat přesně co se stane, když kód přidá nebo odebere obslužnou rutinu události do nebo z události nebo když kód vyvolá událost. Příklady najdete v tématu [jak: deklarovat vlastní události pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) a [postupy: deklarování vlastní události do Vyhněte se blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).  
+ Ve většině případů můžete první syntaxe v oddílu Syntaxe tohoto tématu pro deklarace událostí. Některé scénáře však vyžadují, že máte větší kontrolu nad chováním podrobné události. Poslední syntaxe v oddílu Syntaxe tohoto tématu, který používá `Custom` – klíčové slovo, obsahuje tento ovládací prvek umožňuje definovat vlastní události. Ve vlastní události je zadat přesně co se stane, když kód přidá nebo odebere obslužnou rutinu události do nebo z události nebo když kód vyvolá událost. Příklady najdete v tématu [jak: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) a [jak: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá události k počet sekund od 10 do 0. Kód ukazuje několik událostí související metody, vlastnosti a příkazy. Jedná se o `RaiseEvent` příkazu.  
@@ -115,7 +115,7 @@ End Event
  Stisknutím klávesy F5 spusťte z předchozího příkladu a klikněte na tlačítko s popiskem **Start**. Prvního textového pole spustí odpočet sekundy. Po uplynutí doby úplné (10 sekund), se zobrazí "Hotovo" prvního textového pole.  
   
 > [!NOTE]
->  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem jako formulář nemá. Chcete-li povolit tento formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [zřetězení](../../programming-guide/concepts/threading/index.md).  
+>  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem jako formulář nemá. Chcete-li povolit tento formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [dělení na spravovaná vlákna](../../../standard/threading/index.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
@@ -125,7 +125,7 @@ End Event
  [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
  [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
  [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
- [Postupy: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
+ [Jak: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
+ [Jak: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
  [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
  [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)

@@ -1,25 +1,24 @@
 ---
-title: Spouštět, spravovat a monitorovat Docker produkční prostředí
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Spuštění, Správa a monitorování produkčních prostředí Dockeru
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: bc9cfe583b5e52b9bb3d089a4b12d285726d5c69
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 2f29119e102bbb62e96da6b3c00f9c53c0a270a2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106837"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130947"
 ---
-# <a name="run-manage-and-monitor-docker-production-environments"></a>Spouštět, spravovat a monitorovat Docker produkční prostředí
+# <a name="run-manage-and-monitor-docker-production-environments"></a>Spuštění, Správa a monitorování produkčních prostředí Dockeru
 
-Vizi: Podnikové aplikace, které musí spustit s vysokou dostupnost a škálovatelnost vysoké; IT oddělení musí být schopné spravovat a monitorovat prostředí a aplikace samotné.
+Pro zpracování obrazu: Podnikové aplikace je potřeba spustit s vysokou dostupností a vysokou škálovatelnost; IT oddělení musí mít možnost spravovat a monitorovat prostředí a samotnými aplikacemi.
 
-Tento poslední pilíře kontejnerizované životního cyklu aplikací Docker se jedná o tom, jak můžete spouštět, spravovat a monitorujte své aplikace v produkčním prostředí, škálovatelnou a vysoké dostupnosti (HA).
+Tento poslední pilíř v životní cyklus kontejnerizované aplikace Dockeru se jedná o jak můžete spouštět, spravovat a monitorujte své aplikace v produkčním prostředí škálovatelné, vysokou dostupnost (HA).
 
-Jak spouštět kontejnerizované aplikace v produkčním prostředí (platformu a architektura technologie infrastruktury) je také velmi dobře související a úplně založená na zvolené architektury a vývoj platformy, které jsme se podívali na v kapitole 1 tohoto objektu elektronická kniha. Tato kapitola prozkoumá konkrétní produkty a technologie společnosti Microsoft a jiných dodavatelů, které můžete efektivně provozovat vysoce škálovatelné, HA distribuované aplikace a jak můžete spravovat a monitorovat je z hlediska oddělení IT.
-
+Spouštění kontejnerizovaných aplikací v produkčním prostředí (architektury a platformy technologií infrastruktury) je také velmi související a zcela založená na zvolené pro architekturu a vývoj platforem, které jsme se podívali na v kapitole 1 tohoto objektu e kniha. Tato kapitola zkontroluje konkrétní produkty a technologiemi od Microsoftu a jiných dodavatelů, které můžete efektivně provozovat vysoce škálovatelné, vysokou dostupnost distribuované aplikace a jak můžete spravovat a monitorovat z hlediska oddělení IT.
 
 >[!div class="step-by-step"]
-[Předchozí](../docker-devops-workflow/docker-application-outer-loop-devops-workflow.md)
-[další](run-microservices-based-applications-in-production.md)
+>[Předchozí](../docker-devops-workflow/docker-application-outer-loop-devops-workflow.md)
+>[další](run-microservices-based-applications-in-production.md)

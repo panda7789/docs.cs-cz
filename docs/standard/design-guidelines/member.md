@@ -1,6 +1,6 @@
 ---
 title: Pokyny k návrhu člena
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - member design guidelines [.NET Framework], about member design guidelines
@@ -8,14 +8,13 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], members
 - member design guidelines [.NET Framework]
 ms.assetid: 0ce93180-1d7b-4f8c-9306-f828b2d66b8f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d1598ac63af38f1ca3e11104bc8e1cd6323d35ed
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+author: KrzysztofCwalina
+ms.openlocfilehash: d7023bbe59eb3590af47952a2fe24c5f40b3ca68
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44259964"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155259"
 ---
 # <a name="member-design-guidelines"></a>Pokyny k návrhu člena
 Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako členy. Členové jsou takže v konečném důsledku znamená, podle kterého je funkce rozhraní zpřístupněny koncovým uživatelům o architektuře.  
@@ -35,7 +34,7 @@ Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako 
  [Návrh parametru](../../../docs/standard/design-guidelines/parameter-design.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

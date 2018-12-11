@@ -2,12 +2,12 @@
 title: Zpracování asynchronních úloh po dokončení
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 9380be1dc24d7c147c22dbb1a362777f56a32358
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ec5729eaa8d63eb18b1ac4dea5820cbf834d001b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50202039"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152357"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 
@@ -20,7 +20,7 @@ Následující příklad používá dotaz k vytvoření kolekce úkolů. Každý
 
 ## <a name="download-an-example-solution"></a>Stáhnout příklad řešení
 
-Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+Můžete si stáhnout kompletní projekt Windows Presentation Foundation (WPF) z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
 
 > [!TIP]
 > Pokud nechcete stáhnout projekt, které můžete zkontrolovat soubor MainWindow.xaml.cs na konci tohoto tématu.
@@ -75,7 +75,7 @@ V souboru MainWindow.xaml.cs projektu proveďte následující změny `AccessThe
 
         ```csharp
         int length = await firstFinishedTask;
-        resultsTextBox.Text += String.Format("\r\nLength of the download:  {0}", length);
+        resultsTextBox.Text += $"\r\nLength of the download:  {length}";
         ```
 
 Spusťte program několikrát k ověření, že stažené délky se vždy nezobrazí ve stejném pořadí.
@@ -87,7 +87,7 @@ Spusťte program několikrát k ověření, že stažené délky se vždy nezobr
 
 Následující kód je celý text souboru MainWindow.xaml.cs pro příklad. Hvězdičky označují prvky, které byly přidány pro účely tohoto příkladu. Také poznamenejte si, který je nutné přidat odkaz pro <xref:System.Net.Http>.
 
-Stáhnete projekt z [asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
+Stáhnete projekt z [asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```csharp
 using System;
@@ -181,7 +181,7 @@ namespace ProcessTasksAsTheyFinish
 
                     // Await the completed task.
                     int length = await firstFinishedTask;
-                    resultsTextBox.Text += String.Format("\r\nLength of the download:  {0}", length);
+                    resultsTextBox.Text += $"\r\nLength of the download:  {length}";
             }
         }
 
@@ -230,4 +230,4 @@ namespace ProcessTasksAsTheyFinish
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Doladění aplikace s modifikátorem Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Ukázka asynchronní metody: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

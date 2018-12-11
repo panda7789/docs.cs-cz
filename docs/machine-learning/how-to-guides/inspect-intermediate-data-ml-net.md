@@ -4,11 +4,11 @@ description: Zjistěte, jak zkontrolovat hodnoty skutečné dočasných dat běh
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: cd229c120f7599c9a304a84a1669947e613fc917
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671920"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151535"
 ---
 # <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a>Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET
 

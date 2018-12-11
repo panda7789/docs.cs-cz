@@ -4,12 +4,12 @@ description: Kontejnerizované životní cyklus aplikace Dockeru s platformy Mic
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: d313cb8ff6762eba6534ca20b214063315a456f0
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: a78b6cbae88dcc39d7452a67a2bc5239135dedf9
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47086590"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128437"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup DevOps aplikací dockeru pomocí nástrojů Microsoftu
 
@@ -33,7 +33,6 @@ Složitost vývoje kontejnerizovaných aplikací zvyšuje neustále podle potře
 
 -   Organizace můžou snadno zřídit kontejnery Dockeru z privátních imagí uložená spolu s všechny závislosti v komponentách Azure (Data, PaaS, atd.) ve službě Azure Container Registry pomocí šablon Azure Resource Manageru pomocí nástrojů, se kterými jsou již pohodlné práce.
 
-
 >[!div class="step-by-step"]
-[Předchozí](../design-develop-containerized-apps/set-up-windows-containers-with-powershell.md)
-[další](docker-application-outer-loop-devops-workflow.md)
+>[Předchozí](../design-develop-containerized-apps/set-up-windows-containers-with-powershell.md)
+>[další](docker-application-outer-loop-devops-workflow.md)

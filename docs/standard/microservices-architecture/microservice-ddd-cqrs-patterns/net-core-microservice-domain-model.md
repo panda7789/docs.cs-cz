@@ -1,45 +1,45 @@
 ---
 title: Implementace doménového modelu mikroslužby pomocí .NET Core
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace doménového modelu mikroslužby pomocí .NET Core
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Získejte podrobnosti implementace orientované na DDD doménový model.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/09/2017
-ms.openlocfilehash: bb11d87cacf5bb6cbc980c879b0c42fae76f6246
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.date: 10/08/2018
+ms.openlocfilehash: 1c21ba1cc4c02336a204b1fe91b72e5f3e89228c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577529"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127131"
 ---
-# <a name="implementing-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core 
+# <a name="implement-a-microservice-domain-model-with-net-core"></a>Implementace doménového modelu mikroslužby pomocí .NET Core 
 
 V předchozí části byly vysvětlení principů návrhu základní a vzory pro navrhování modelu domény. Teď můžete prozkoumat možnosti, jak implementovat doménový model s využitím .NET Core (plain C\# kódu) a EF Core. Všimněte si, že doménový model se skládá pouze z kódu. Jenom požadavky modelu EF Core, ale ne skutečné závislosti bude mít na EF. Pevné závislosti nebo odkazy na EF Core nebo jiných ORM by neměl mít v doménovém modelu.
 
-## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Doménovou strukturu modelu ve vlastní knihovny .NET Standard
+## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>Doménovou strukturu modelu ve vlastní knihovna .NET Standard
 
-Složka organizaci použít aplikaci eShopOnContainers referenční aplikace ukazuje DDD modelů pro aplikaci. Můžete zjistit, že organizace jinou složku jasněji komunikuje návrhu volby provedené pro vaši aplikaci. Jak je vidět v obrázek 9-10, v pořadí doménový model existují dvě agregace, agregace pořadí a agregace odběratele. Každou agregaci je skupina domény entity a objekty hodnotu, i když jste mohli agregace také skládá z jedné domény entity (agregační kořenové nebo Kořenová entita).
+Složka organizaci použít aplikaci eShopOnContainers referenční aplikace ukazuje DDD modelů pro aplikaci. Můžete zjistit, že organizace jinou složku jasněji komunikuje návrhu volby provedené pro vaši aplikaci. Jak je vidět v obrázek 7 – 10, v pořadí doménový model existují dvě agregace, agregace pořadí a agregace odběratele. Každou agregaci je skupina domény entity a objekty hodnotu, i když jste mohli agregace také skládá z jedné domény entity (agregační kořenové nebo Kořenová entita).
 
-![](./media/image11.png)
+![Zobrazení Průzkumníka řešení pro projekt Ordering.Domain zobrazující AggregatesModel složku, která obsahuje složky BuyerAggregate a OrderAggregate každé z nich obsahující jeho tříd entit, hodnota objektových souborů a tak dále. ](./media/image11.png)
 
-**Obrázek 9-10**. Doménovou strukturu modelu pro objednávání mikroslužeb v aplikaci eShopOnContainers
+**Obrázek 7 – 10**. Doménovou strukturu modelu pro objednávání mikroslužeb v aplikaci eShopOnContainers
 
-Kromě toho zahrnuje vrstvě doménového modelu smlouvy úložiště (rozhraní), které jsou požadavky na infrastrukturu modelu domény. Jinými slovy, tato rozhraní express jaké úložiště vrstvy infrastruktury musí implementovat a jak. Je velmi důležité, že implementace úložišť umístit mimo vrstvě doménového modelu, v knihovně infrastruktury vrstvu tak vrstvě doménového modelu není "napadeny" rozhraní API nebo třídy z infrastruktury technologie, jako jsou rozhraní Entity Framework.
+Kromě toho zahrnuje vrstvě doménového modelu smlouvy úložiště (rozhraní), které jsou požadavky na infrastrukturu modelu domény. Jinými slovy tato rozhraní express, jaké úložiště a metod, které musí implementovat vrstvy infrastruktury. Je velmi důležité, že implementace úložišť umístit mimo vrstvě doménového modelu, v knihovně infrastruktury vrstvu tak vrstvě doménového modelu není "napadeny" rozhraní API nebo třídy z infrastruktury technologie, jako jsou rozhraní Entity Framework.
 
 Můžete také zobrazit [SeedWork](https://martinfowler.com/bliki/Seedwork.html) složku, která obsahuje vlastní základní třídy, které můžete použít jako základ pro entity domény a hodnota objekty, takže není nutné redundantní kód ve třídě objektu každé domény.
 
-## <a name="structuring-aggregates-in-a-custom-net-standard-library"></a>Strukturování agregace ve vlastní knihovny .NET Standard
+## <a name="structure-aggregates-in-a-custom-net-standard-library"></a>Struktura agregace ve vlastní knihovny .NET Standard
 
 Agregace odkazuje na clusteru objektů domény seskupené dohromady tak, aby odpovídaly transakční konzistence. Tyto objekty může být instancí entit (z nichž jeden je agregační kořenový server WSUS nebo Kořenová entita) plus všechny objekty další hodnotu.
 
-Transakční konzistence znamená, že agregace je zaručeno, že byly konzistentní a aktuální na konci obchodní akce. Například pořadí agregace v aplikaci eShopOnContainers řazení doménového modelu mikroslužby se skládá, jak je znázorněno v obrázek 9 – 11.
+Transakční konzistence znamená, že agregace je zaručeno, že byly konzistentní a aktuální na konci obchodní akce. Například pořadí agregace v aplikaci eShopOnContainers řazení doménového modelu mikroslužby se skládá, jak je znázorněno v obrázek 7 – 11.
 
-![](./media/image12.png)
+![Podrobné zobrazení OrderAggregate složky: Address.cs je hodnota objekt, IOrderRepository je rozhraní úložiště, Order.cs je agregační kořenové, OrderItem.cs je podřízené entity a OrderStatus.cs je třída výčtu.](./media/image12.png)
 
-**Obrázek 9 – 11**. Pořadí agregace v řešení sady Visual Studio
+**Obrázek 7 – 11**. Pořadí agregace v řešení sady Visual Studio
 
-Otevřete-li některý ze souborů ve složce aplikace agregace, zobrazí se jak je označen jako vlastní základní třídu nebo rozhraní, jako entity nebo hodnotu objektu, jak je implementován v [Seedwork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) složky.
+Otevřete-li některý ze souborů ve složce aplikace agregace, zobrazí se jak je označen jako vlastní základní třídu nebo rozhraní, jako entity nebo hodnotu objektu, jak je implementován v [SeedWork](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Services/Ordering/Ordering.Domain/SeedWork) složky.
 
-## <a name="implementing-domain-entities-as-poco-classes"></a>Implementace entity domény jako třídy POCO
+## <a name="implement-domain-entities-as-poco-classes"></a>Implementace entity domény jako třídy POCO
 
 Doménový model se implementovat v rozhraní .NET tak, že vytvoříte POCO třídy, které implementují entity domény. V následujícím příkladu je definována třída pořadí jako entity a také jako kořen agregace. Protože pořadí třída je odvozena ze základní třídy Entity, můžete znovu použít společný kód související s entitami. Berte v úvahu, že tyto základní třídy a rozhraní jsou definované uživatelem v projektu s modelem domény, tak, aby byl váš kód, ne infrastruktury kód z ORM jako je EF.
 
@@ -101,13 +101,13 @@ Rozhraní značky někdy považovat odolnou proti vzor; je však také čistý z
 
 Máte agregační kořenové znamená, že většinu kódu související s konzistence a obchodních pravidel agregaci entit by měla být implementována jako metody ve třídě kořenové agregační pořadí (například AddOrderItem při přidávání objektu OrderItem agregaci) . By neměl vytvořit nebo aktualizovat objekty OrderItems, nezávisle na sobě nebo přímo. Třída AggregateRoot uchovává ovládacího prvku a konzistence, všechny operace aktualizace s jeho podřízených entit.
 
-## <a name="encapsulating-data-in-the-domain-entities"></a>Zapouzdření dat v entitách domény
+## <a name="encapsulate-data-in-the-domain-entities"></a>Zapouzdření dat v entitách domény
 
 Běžný problém v modelech entity je, aby zveřejňovaly navigační vlastnosti kolekce jako seznam veřejně přístupné typy. To umožňuje vývojáři ocení spolupracovníka manipulovat s obsahem těchto kolekci typů, které mohou obejít důležitá obchodní pravidla pro kolekci, možná byste museli opustit objektu v neplatném stavu. Řešení, aby to je a vystavovat přístup jen pro čtení k souvisejících kolekcích explicitně poskytující metody, které definují způsoby, ve které klienty můžete s nimi manipulovat.
 
-V předchozím kódu mějte na paměti, že mnoho atributů jsou jen pro čtení nebo privátní a jsou pouze aktualizovatelné metody třídy tak všechny aktualizace trvá do výstupních účet obchodní domény podmínek a logiku určenou v rámci metod tříd.
+V předchozím kódu mějte na paměti, že mnoho atributů jsou jen pro čtení nebo privátní a jsou pouze aktualizovatelné metody třídy, takže výstupních obchodní domény podmínek a logiku určenou v rámci metod tříd bere v úvahu žádné aktualizace.
 
-Například následující vzorů DDD, měli byste *není* udělejte z libovolné příkaz rutinu metody nebo aplikace vrstvy třídy:
+Například následující vzorů DDD **byste měli *není* takto** z libovolné příkaz rutinu metody nebo aplikace vrstvy třídy (ve skutečnosti, musí být pro vás k tomu):
 
 ```csharp
 // WRONG ACCORDING TO DDD PATTERNS – CODE AT THE APPLICATION LAYER OR
@@ -152,33 +152,31 @@ Kromě toho novou operaci OrderItem(params) také být řízený a provádí met
 
 Pokud používáte Entity Framework Core 1.1 nebo později, DDD entity můžete lépe vyjádřit protože umožňuje [mapování na pole](https://docs.microsoft.com/ef/core/modeling/backing-field) kromě vlastností. To je užitečné, když chráníte kolekce podřízených entit nebo hodnota objekty. Toto vylepšení místo vlastnosti můžete použít jednoduchý privátní pole a můžete implementovat jakýmkoli aktualizacím kolekce pole ve veřejné metody a prostřednictvím metody AsReadOnly poskytují přístup jen pro čtení.
 
-V DDD, které chcete aktualizovat entitu pouze prostřednictvím metod v entity (nebo konstruktoru), aby bylo možné řídit všechny invariantní a konzistenci dat takže vlastnosti jsou definovány pouze s přistupující objekt get. Vlastnosti se zálohují na soukromé pole. Soukromé členy lze přistupovat pouze z v rámci třídy. Nicméně tady jedna výjimka: EF Core je potřeba nastavit také tato pole.
+V DDD, které chcete aktualizovat entitu pouze prostřednictvím metod v entity (nebo konstruktoru), aby bylo možné řídit všechny invariantní a konzistenci dat takže vlastnosti jsou definovány pouze s přistupující objekt get. Vlastnosti se zálohují na soukromé pole. Soukromé členy lze přistupovat pouze z v rámci třídy. Nicméně tady jedna výjimka: EF Core je potřeba nastavit také tato pole (takže se může vrátit objekt nahraďte odpovídajícími hodnotami).
 
-
-### <a name="mapping-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Mapování vlastností pomocí pouze získat přístupové objekty do polí v tabulce databáze
+### <a name="map-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>Vlastnosti mapy s pouze získat přístupové objekty do polí v tabulce databáze
 
 Mapování vlastnosti na sloupce tabulky databáze není odpovědnost domény, ale součástí infrastruktury a stálost vrstvu. Jsme zmínili, tento tady jenom, abyste měli přehled o novinkách v EF Core 1.1 nebo novější týkajících se jak lze modelovat entity. Další podrobnosti o tomto tématu jsou vysvětlené v oblasti infrastruktury a trvalost.
 
-Při použití EF Core 1.0, v rámci uvolněn objekt DbContext, budete muset mapy – vlastnosti, které jsou definovány pouze pomocí metody getter skutečné polí v tabulce databáze. To se provádí pomocí metody HasField PropertyBuilder třídy.
+Když pomocí EF Core 1.0 nebo novější, potřebujete v rámci uvolněn objekt DbContext mapy – vlastnosti, které jsou definovány pouze pomocí metody getter skutečné polí v tabulce databáze. To se provádí pomocí metody HasField PropertyBuilder třídy.
 
-### <a name="mapping-fields-without-properties"></a>Mapování polí bez vlastností
+### <a name="map-fields-without-properties"></a>Mapování polí bez vlastností
 
 S funkcí v EF Core 1.1 nebo vyšší sloupce mapovat na pole je také možné používat vlastnosti. Místo toho můžete namapovat pouze sloupce z tabulky na pole. Je běžným případem použití pro tento privátní pole pro vnitřní stav, který není potřeba přistupovat z mimo entitu.
 
-Například v předchozím příkladu kódu OrderAggregate existují několik privátní pole, jako je třeba `_paymentMethodId` pole, které mají žádné související vlastnost setter nebo getter. Toto pole také může vypočítá v rámci obchodní logiku pořadí a použití z metody pořadí, ale je potřeba nastavit jako trvalý, v databázi i. Takže v EF Core (od verze 1.1) je způsob, jak mapovat pole bez související vlastnost sloupec v databázi. To je také jsou vysvětlené v [vrstvy infrastruktury](#the-infrastructure-layer) části této příručky.
+Například v předchozím příkladu kódu OrderAggregate existují několik privátní pole, jako je třeba `_paymentMethodId` pole, které mají žádné související vlastnost setter nebo getter. Toto pole také může vypočítá v rámci obchodní logiku pořadí a použití z metody pořadí, ale je potřeba nastavit jako trvalý, v databázi i. Takže v EF Core (od verze 1.1) je způsob, jak mapovat pole bez související vlastnost sloupec v databázi. To je také jsou vysvětlené v [vrstvy infrastruktury](ddd-oriented-microservice.md#the-infrastructure-layer) části této příručky.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Vaughn Vernon. Modelování agregace s DDD a Entity Framework.** Všimněte si, že toto je *není* Entity Framework Core.
-    [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
+- **Vaughn Vernon. Modelování agregace s DDD a Entity Framework.** Všimněte si, že toto je *není* Entity Framework Core. \
+  [*https://vaughnvernon.co/?p=879*](https://vaughnvernon.co/?p=879)
 
--   **Julie Lerman. Kódování pro návrhy řízené doménou: tipy pro vývojáře, zaměřuje dat**
-    [*https://msdn.microsoft.com/en-us/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
+- **Julie Lerman. Kódování pro návrhy řízené doménou: Tipy pro vývojáře, zaměřuje dat** \
+  [*https://msdn.microsoft.com/magazine/dn342868.aspx*](https://msdn.microsoft.com/en-us/magazine/dn342868.aspx)
 
--   **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů**
-    [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
-
+- **Udi Dahan. Vytvoření plně zapouzdřené doménových modelů** \
+  [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
 >[!div class="step-by-step"]
-[Předchozí](microservice-domain-model.md)
-[další](seedwork-domain-model-base-classes-interfaces.md)
+>[Předchozí](microservice-domain-model.md)
+>[další](seedwork-domain-model-base-classes-interfaces.md)

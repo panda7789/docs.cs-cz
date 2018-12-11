@@ -23,11 +23,11 @@ helpviewer_keywords:
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
 ms.openlocfilehash: bdaa0351e288b85a3e35818c0f53ef4d772932e5
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296448"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151305"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
 Při volání `Sub` nebo `Function` postup, můžete předat argumenty *umístěním* – v pořadí, v jakém jsou uvedeny v definici procedury – nebo můžete předat je *podle názvu*, bez ohledem na pozici.  
@@ -64,7 +64,7 @@ Můžete zadat argumentů podle pozice a podle názvu ve volání jedné postupe
   
  V předchozím příkladu je nezbytné k uložení místo vynechaný žádné další čárka `age` argument, protože `birth` je předán podle názvu.  
   
-Ve verzích jazyka Visual Basic před 15.5 Pokud dodání argumentů podle pozice a názvu, poziční argumenty kombinaci musí všechny být první. Jakmile zadáte argument podle názvu, všechny zbývající argumenty musí všechny předávat podle názvu.  Například následující volání `Display` metoda zobrazí chyba kompilátoru [BC30241: očekával se pojmenovaný argument](../../../misc/bc30241.md).
+Ve verzích jazyka Visual Basic před 15.5 Pokud dodání argumentů podle pozice a názvu, poziční argumenty kombinaci musí všechny být první. Jakmile zadáte argument podle názvu, všechny zbývající argumenty musí všechny předávat podle názvu.  Například následující volání `Display` metoda zobrazí chyba kompilátoru [BC30241: Očekával se pojmenovaný argument](../../../misc/bc30241.md).
 
 [!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#6)] 
 
@@ -97,7 +97,7 @@ Pole parametrů nelze předat podle názvu. Je to proto, že při volání postu
 ## <a name="see-also"></a>Viz také  
  [Procedury](./index.md)  
  [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
+ [Jak: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
  [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
  [Nepovinné parametry](./optional-parameters.md)  
  [Pole parametrů](./parameter-arrays.md)  

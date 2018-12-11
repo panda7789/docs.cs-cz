@@ -7,11 +7,11 @@ helpviewer_keywords:
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
 ms.openlocfilehash: 8b8f92697181c76710e75d6e5a07296b1fcf9188
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297059"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126819"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Některé o terminologii používané diskuse o zabezpečení mohou být obeznámeni. Toto téma poskytuje krátký vysvětlení některých pojmů pro zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  

@@ -2,43 +2,43 @@
 title: Postup kanálu a mezipaměť
 ms.date: 03/30/2017
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
-ms.openlocfilehash: 1bf8e3fe4833b662f16bd6311056fda8609dd9d3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa333d3ffa0063e226405eb8e715f9ee99f68432
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490988"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151327"
 ---
 # <a name="channel-factory-and-caching"></a>Postup kanálu a mezipaměť
-Pomocí klientských aplikací WCF <xref:System.ServiceModel.ChannelFactory%601> třída k vytvoření kanálu komunikace se službou WCF.  Vytváření <xref:System.ServiceModel.ChannelFactory%601> instance způsobuje zvýšení zatížení, protože se týká následující operace:  
+Pomocí klientských aplikací WCF <xref:System.ServiceModel.ChannelFactory%601> třídy za účelem vytvoření komunikačního kanálu službou WCF.  Vytváření <xref:System.ServiceModel.ChannelFactory%601> instance způsobuje zvýšení zatížení, protože zahrnuje následující operace:  
   
 -   Vytváření <xref:System.ServiceModel.Description.ContractDescription> stromu  
   
--   Odrážející všechny požadované typy CLR  
+-   Odráží všechny požadované typy CLR  
   
 -   Vytváření kanálu zásobníku  
   
 -   Uvolnění prostředků  
   
- Abyste minimalizovali Tato dodatečná režie, můžete WCF mezipaměti objektů Factory kanál, když používáte proxy server klienta WCF.  
+ Abyste minimalizovali Tato dodatečná režie, WCF můžete ukládat do mezipaměti objektů pro vytváření kanálů při použití proxy serveru klienta WCF.  
   
 > [!TIP]
->  Máte přímou kontrolu nad vytvoření objektu pro vytváření kanálu při použití <xref:System.ServiceModel.ChannelFactory%601> přímo třídu.  
+>  Máte přímou kontrolu nad vytváření objekt pro vytváření kanálů, při použití <xref:System.ServiceModel.ChannelFactory%601> třídy přímo.  
   
- Proxy klienta WCF vygeneroval s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) jsou odvozeny od <xref:System.ServiceModel.ClientBase%601>. <xref:System.ServiceModel.ClientBase%601> Definuje statického <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> vlastnost, která definuje chování ukládání do mezipaměti objekt pro vytváření kanálu. Nastavení mezipaměti jsou vytvářeny pro konkrétní typ. Například nastavení `ClientBase<ITest>.CacheSettings` na jednu z hodnot fronty definovaných níže ovlivní pouze ty proxy nebo třídu ClientBase typu `ITest`. Nastavení mezipaměti pro konkrétní <xref:System.ServiceModel.ClientBase%601> se nedá změnit, jakmile se vytvoří první instance proxy nebo třídu ClientBase.  
+ Generuje s použitím proxy klienta WCF [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) jsou odvozeny z <xref:System.ServiceModel.ClientBase%601>. <xref:System.ServiceModel.ClientBase%601> definuje statickou <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> vlastnost, která definuje chování ukládání do mezipaměti kanálu objekt pro vytváření. Nastavení mezipaměti se provádí pro konkrétní typ. Například nastavení `ClientBase<ITest>.CacheSettings` na jednu z hodnot fronty definovaných pod ovlivní jenom ty proxy/objektu ClientBase typu `ITest`. Nastavení mezipaměti pro konkrétní <xref:System.ServiceModel.ClientBase%601> je neměnný, jakmile je vytvořena instance prvního proxy serveru/třídu ClientBase.  
   
 ## <a name="specifying-caching-behavior"></a>Určení chování ukládání do mezipaměti  
  Chování ukládání do mezipaměti je určený nastavením <xref:System.ServiceModel.ClientBase%601.CacheSetting> vlastnost na jednu z následujících hodnot.  
   
-|Nastavení hodnoty do mezipaměti|Popis|  
+|Nastavení hodnoty mezipaměti|Popis|  
 |-------------------------|-----------------|  
-|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|Všechny instance <xref:System.ServiceModel.ClientBase%601> v rámci domény aplikace mohou být součástí ukládání do mezipaměti. Vývojář bylo zjištěno, že neexistují žádné negativní zabezpečení dopady na ukládání do mezipaměti. Ukládání do mezipaměti nebude to i v případě "citlivé na zabezpečení" vlastnosti na vypnout <xref:System.ServiceModel.ClientBase%601> ke kterým se přistupuje. Vlastnosti "citlivé na zabezpečení" <xref:System.ServiceModel.ClientBase%601> jsou <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>, <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> a <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A>.|  
-|<xref:System.ServiceModel.CacheSetting.Default>|Pouze instance <xref:System.ServiceModel.ClientBase%601> vytvořené z koncové body definované v konfiguraci soubory účastnit ukládání do mezipaměti v rámci domény aplikace. Všechny instance <xref:System.ServiceModel.ClientBase%601> vytvořit prostřednictvím kódu programu v této doméně aplikace se neúčastní ukládání do mezipaměti. Navíc ukládání do mezipaměti bude zakázán pro instanci <xref:System.ServiceModel.ClientBase%601> po některou z jejích vlastností "citlivé na zabezpečení" přistupuje.|  
-|<xref:System.ServiceModel.CacheSetting.AlwaysOff>|Ukládání do mezipaměti je vypnuté pro všechny instance <xref:System.ServiceModel.ClientBase%601> určitého typu v rámci dotyčném domény aplikace.|  
+|<xref:System.ServiceModel.CacheSetting.AlwaysOn>|Všechny výskyty <xref:System.ServiceModel.ClientBase%601> v rámci domény aplikace, které mohl podílet na ukládání do mezipaměti. Vývojář bylo zjištěno, že neexistují žádné negativní bezpečnostní důsledky pro ukládání do mezipaměti. Ukládání do mezipaměti se vypne i v případě "zabezpečené" vlastnosti <xref:System.ServiceModel.ClientBase%601> jsou přístupné. Vlastnosti "zabezpečené" <xref:System.ServiceModel.ClientBase%601> jsou <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>, <xref:System.ServiceModel.ClientBase%601.Endpoint%2A> a <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A>.|  
+|<xref:System.ServiceModel.CacheSetting.Default>|Pouze instance podtypu <xref:System.ServiceModel.ClientBase%601> vytvořené z koncové body definované v konfiguraci soubory součástí ukládání do mezipaměti v rámci domény aplikace. Všechny instance <xref:System.ServiceModel.ClientBase%601> vytvořili prostřednictvím kódu programu v rámci této domény aplikace nebude součástí ukládání do mezipaměti. Také, ukládání do mezipaměti bude zakázán pro instanci <xref:System.ServiceModel.ClientBase%601> až některou z jejích vlastností "zabezpečené" přistupuje.|  
+|<xref:System.ServiceModel.CacheSetting.AlwaysOff>|Ukládání do mezipaměti je vypnuté pro všechny výskyty <xref:System.ServiceModel.ClientBase%601> určitého typu v rámci dotyčný domény aplikace.|  
   
  Následující fragmenty kódu ukazují, jak používat <xref:System.ServiceModel.ClientBase%601.CacheSetting%2A> vlastnost.  
   
-```  
+```csharp  
 class Program   
 {   
    static void Main(string[] args)   
@@ -59,9 +59,9 @@ class Program
 public partial class TestClient : System.ServiceModel.ClientBase, ITest { }  
 ```  
   
- Ve výše uvedeném kódu, všechny instance `TestClient` bude používat stejné kanálu.  
+ Ve výše uvedeném kódu všechny výskyty `TestClient` použije stejný objekt pro vytváření kanálů.  
   
-```  
+```csharp  
 class Program   
 {   
    static void Main(string[] args)   
@@ -87,9 +87,9 @@ class Program
 public partial class TestClient : System.ServiceModel.ClientBase, ITest {}  
 ```  
   
- V příkladu výše, všechny instance `TestClient` byste použili stejné kanálu s výjimkou instanci #4. Instance #4 využije kanálu, který je vytvořena speciálně pro jeho použití. Toto nastavení by fungovat pro scénáře, kde konkrétní koncový bod potřebuje jiné bezpečnostní nastavení z dalších koncových bodů stejný typ objektu pro vytváření kanálu (v tomto případě `ITest`).  
+ V příkladu výše, všechny výskyty `TestClient` byste použili stejný objekt pro vytváření kanálů s výjimkou instance #4. Instance #4 by použít objekt pro vytváření kanálů, která je vytvořena speciálně pro jeho použití. Toto nastavení by fungovalo pro scénáře, kdy konkrétní koncový bod potřebuje různých nastaveních zabezpečení z ostatních koncových bodů stejný typ objektu pro vytváření kanálů (v tomto případě `ITest`).  
   
-```  
+```csharp  
 class Program   
 {   
    static void Main(string[] args)   
@@ -109,11 +109,11 @@ class Program
 public partial class TestClient : System.ServiceModel.ClientBase, ITest {}  
 ```  
   
- V příkladu výše, všechny instance `TestClient` byste použili jiný kanál objekty pro vytváření. To je užitečné, když každý koncový bod má jiné požadavky na zabezpečení a nemá smysl do mezipaměti.  
+ V příkladu výše, všechny výskyty `TestClient` byste použili jiný kanál továren. To je užitečné, když každý koncový bod má jiné požadavky na zabezpečení a nemá žádný smysl do mezipaměti.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.ClientBase%601>  
  [Sestavování klientů](../../../../docs/framework/wcf/building-clients.md)  
  [Klienti](../../../../docs/framework/wcf/feature-details/clients.md)  
  [Přístup ke službám pomocí klienta WCF](../../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
- [Postupy: Použití objektu pro vytváření kanálů](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+ [Jak: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)

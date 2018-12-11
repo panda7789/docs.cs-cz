@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
 ms.openlocfilehash: ae29c8fbe8d5d87ccee4d6a43a3c9285f0c41ee1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192561"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131102"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  

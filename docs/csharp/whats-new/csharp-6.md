@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v jazyce C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: ad3515e1fc7d70e1377f007276c369d2884780f0
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6aa070d54bb1b571d4fa51538b0521a554073cbc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194030"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146736"
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
@@ -94,9 +94,9 @@ Pokud přidáte tuto syntaxi neodebere dostupná metoda, je [binární kompatibi
 
 *Inicializátory automatickou vlastnost* umožňuje deklarovat počáteční hodnotu pro automatickou vlastnost jako součást deklarace vlastností.  V dřívějších verzích byste potřebovali mít nastavení těchto vlastností a je třeba použít tuto metodu setter se inicializovat datové úložiště používané pomocným polem. Vezměte v úvahu tuto třídu pro student, který obsahuje název a seznam tříd studenta:
 
-[!code-csharp[Construction](../../../samples/snippets/csharp/new-in-6/oldcode.cs#Construction)]
+[!code-csharp[Student](../../../samples/snippets/csharp/new-in-6/oldcode.cs#Student)]
  
-S růstem této třídy může obsahovat další konstruktory. Každý konstruktor musí inicializovat toto pole, nebo budete způsobit chyby.
+S růstem této třídy může obsahovat další konstruktory. Každý konstruktor potřebuje k inicializaci vlastnosti tříd nebo budete způsobit chyby.
 
 C# 6 umožňuje přiřadit počáteční hodnotu pro úložiště využitá službou Automatické vlastnosti v deklaraci automatickou vlastnost:
 
@@ -104,7 +104,7 @@ C# 6 umožňuje přiřadit počáteční hodnotu pro úložiště využitá slu�
 
 `Grades` Člen je inicializovaný, ve kterém je deklarována. Který usnadňuje provedení inicializace přesně jednou. Inicializace je součástí deklaraci vlastnosti, což usnadňuje odpovídá přidělení úložiště pomocí veřejného rozhraní pro `Student` objekty.
 
-Vlastnosti lze použít s vlastností čtení/zápisu, jakož i vlastnosti jen pro čtení, jak je znázorněno zde.
+Vlastnosti je možné pomocí vlastnosti jen pro čtení, jak je znázorněno výše a s vlastností čtení/zápisu také, jak je znázorněno zde.
 
 [!code-csharp[ReadWriteInitialization](../../../samples/snippets/csharp/new-in-6/newcode.cs#ReadWriteInitialization)]
 

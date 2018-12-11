@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f51e3f36594a6f66c5fad32214d84a11b78726a4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: e5f683ff123652e312d4d8dacc614f8a451ccd91
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582876"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127391"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -48,54 +48,54 @@ ms.locfileid: "48582876"
 
 | Specifikátor formátu | Popis | Příklady |
 | ---------------------- | ----------------- | -------------- |
-|"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
-|"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
-|"ddd"|Zkrácený název dne v týdnu.<br /><br /> Další informace: [specifikátor vlastního formátu "ddd"](#dddSpecifier).|2009-06-15T13:45:30 -> pondělí (en US)<br /><br /> 2009-06-15T13:45:30 -> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> logickou jednotku. (fr-FR)|
-|"dddd"|Úplný název dne v týdnu.<br /><br /> Další informace: [specifikátor vlastního formátu "dddd"](#ddddSpecifier).|2009-06-15T13:45:30 -> Monday (en US)<br /><br /> 2009-06-15T13:45:30 -> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lundi (fr-FR)|
-|"f"|Desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "f"](#fSpecifier).|2009-06-15T13:45:30.6170000 -&GT; 6<br /><br /> 2009-06-15T13:45:30.05 -&GT; 0|
-|"ff"|Setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "ff"](#ffSpecifier).|2009-06-15T13:45:30.6170000 -&GT; 61<br /><br /> 2009-06-00-15T13:45:30.0050000 &GT;|
-|"fff"|Milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "fff"](#fffSpecifier).|6/15/2009 13:45:30.617 -> 617<br /><br /> 6/15/2009 13:45:30.0005 -> 000|
-|"ffff"|Desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "ffff"](#ffffSpecifier).|2009-06-15T13:45:30.6175000 -&GT; 6175<br /><br /> 2009-06-0000-15T13:45:30.0000500 &GT;|
-|"fffff"|Stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "fffff"](#fffffSpecifier).|2009-06-15T13:45:30.6175400 -&GT; 61754<br /><br /> 6/15/2009 13:45:30.000005 -> 00000|
-|"ffffff"|Miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "ffffff"](#ffffffSpecifier).|2009-06-15T13:45:30.6175420 -&GT; 617542<br /><br /> 2009-06-15T13:45:30.0000005 -&GT; 000000|
-|"fffffff"|Desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "fffffff"](#fffffffSpecifier).|2009-06-15T13:45:30.6175425 -&GT; 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -&GT; 0001150|
-|"F"|Pokud je hodnota nenulová, jedná se o desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor formátu "F" vlastního](#F_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 6<br /><br /> 2009-06-15T13:45:30.0500000 -> (žádný výstup)|
-|"FF"|Pokud je hodnota nenulová, jedná se o setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FF"](#FF_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 61<br /><br /> 2009-06-15T13:45:30.0050000 -> (žádný výstup)|
-|"FFF"|Pokud je hodnota nenulová, jedná se o milisekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FFF"](#FFF_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 617<br /><br /> 2009-06-15T13:45:30.0005000 -> (žádný výstup)|
-|"FFFF"|Pokud je hodnota nenulová, jedná se o desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFF"](#FFFF_Specifier).|2009-06-15T13:45:30.5275000 -&GT; 5275<br /><br /> 2009-06-15T13:45:30.0000500 -> (žádný výstup)|
-|"FFFFF"|Pokud je hodnota nenulová, jedná se o stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFF"](#FFFFF_Specifier).|2009-06-15T13:45:30.6175400 -&GT; 61754<br /><br /> 2009-06-15T13:45:30.0000050 -> (žádný výstup)|
-|"FFFFFF"|Pokud je hodnota nenulová, jedná se o miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFFF"](#FFFFFF_Specifier).|2009-06-15T13:45:30.6175420 -&GT; 617542<br /><br /> 2009-06-15T13:45:30.0000005 -> (žádný výstup)|
-|"FFFFFFF"|Pokud je hodnota nenulová, jedná se o desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [specifikátor vlastního formátu "FFFFFFF"](#FFFFFFF_Specifier).|2009-06-15T13:45:30.6175425 -&GT; 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -&GT; 000115|
-|"g", "gg"|Období nebo éra.<br /><br /> Další informace: ["g" nebo "gg" vlastního formátu specifikátor](#gSpecifier).|2009-06-15T13:45:30.6170000 -> A.D.|
-|"h"|Hodiny ve 12hodinovém formátu, od 1 do 12.<br /><br /> Další informace: [specifikátor vlastního formátu "h"](#hSpecifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 1|
-|"hh"|Hodiny ve 12hodinovém formátu, od 01 do 12.<br /><br /> Další informace: [specifikátor vlastního formátu "hh"](#hhSpecifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 01|
-|"H"|Hodiny ve 24hodinovém formátu, od 0 do 23.<br /><br /> Další informace: [specifikátor formátu "H" vlastního](#H_Specifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 13|
-|"HH"|Hodiny ve 24hodinovém formátu, od 00 do 23.<br /><br /> Další informace: [specifikátor vlastního formátu "HH"](#HH_Specifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 13|
-|"K"|Informace o časovém pásmu.<br /><br /> Další informace: [specifikátor vlastního formátu "K"](#KSpecifier).|S <xref:System.DateTime> hodnoty:<br /><br /> 2009-06-15T13:45:30, neurčený druh -><br /><br /> 2009-06-15T13:45:30, druh Utc -> Z<br /><br /> 2009-06-15T13:45:30, druh Local -> -07:00 (závisí na nastavení místního počítače)<br /><br /> S <xref:System.DateTimeOffset> hodnoty:<br /><br /> 2009-06-15T01:45:30-07:00 --> -07:00<br /><br /> 2009-06-15T08:45:30+00:00 --> +00:00|
-|"m"|Minuty, od 0 do 59.<br /><br /> Další informace: [specifikátor vlastního formátu "m"](#mSpecifier).|2009-06-9-15T01:09:30 &GT;<br /><br /> 2009-06-15T13:29:30 -> 29|
-|"mm"|Minuty, od 00 do 59.<br /><br /> Další informace: [specifikátor vlastního formátu "mm"](#mmSpecifier).|2009-06-15T01:09:30 -> 09<br /><br /> 2009-06-15T01:45:30 -> 45|
-|"M"|Měsíc, od 1 do 12.<br /><br /> Další informace: [specifikátor vlastního formátu "M"](#M_Specifier).|2009-06-15T13:45:30 -> 6|
-|"MM"|Měsíc, od 01 do 12.<br /><br /> Další informace: [specifikátor vlastního formátu "MM"](#MM_Specifier).|2009-06-15T13:45:30 -> 06|
-|"MMM"|Zkrácený název měsíce.<br /><br /> Další informace: [specifikátor vlastního formátu "MMM"](#MMM_Specifier).|2009-06-15T13:45:30 -> června (en US)<br /><br /> 2009-06-15T13:45:30 -> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> června (zu-ZA)|
-|"MMMM"|Úplný název měsíce.<br /><br /> Další informace: [specifikátor vlastního formátu "MMMM"](#MMMM_Specifier).|2009-06-15T13:45:30 -> June (en US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> uJuni (zu-ZA)|
-|"s"|Sekundy, od 0 do 59.<br /><br /> Další informace: [specifikátor vlastního formátu "s"](#sSpecifier).|2009-06-15T13:45:09 -> 9|
-|"ss"|Sekundy, od 00 do 59.<br /><br /> Další informace: [specifikátor vlastního formátu "ss"](#ssSpecifier).|2009-06-15T13:45:09 -> 09|
-|"t"|První znak označení pro dopoledne/odpoledne.<br /><br /> Další informace: [specifikátor vlastního formátu "t"](#tSpecifier).|2009-06-15T13:45:30 -> P (en US)<br /><br /> 2009-06-15T13:45:30 -> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30 -> (fr-FR)|
-|"tt"|Označení pro dopoledne/odpoledne.<br /><br /> Další informace: [specifikátor vlastního formátu "tt"](#ttSpecifier).|2009-06-15T13:45:30 -> PM (en US)<br /><br /> 2009-06-15T13:45:30 -> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30 -> (fr-FR)|
-|"y"|Rok, od 0 do 99.<br /><br /> Další informace: [specifikátor vlastního formátu "y"](#ySpecifier).|0001-01-01T00:00:00 -> 1<br /><br /> 0900-01-01T00:00:00 -> 0<br /><br /> 1900-01-01T00:00:00 -> 0<br /><br /> 2009-06-15T13:45:30 -> 9<br /><br /> 2019-06-15T13:45:30 -> 19|
-|"yy"|Rok, od 00 do 99.<br /><br /> Další informace: [specifikátor vlastního formátu "yy"](#yySpecifier).|0001-01-01T00:00:00 -> 01<br /><br /> 0900-01-01T00:00:00 -> 00<br /><br /> 1900-01-01T00:00:00 -> 00<br /><br /> 2019-06-15T13:45:30 -> 19|
-|"yyy"|Rok s nejméně třemi číslicemi.<br /><br /> Další informace: [specifikátor vlastního formátu "yyy"](#yyySpecifier).|0001-01-01T00:00:00 -> 001<br /><br /> 0900-01-01T00:00:00 -> 900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-2009-15T13:45:30 &GT;|
-|"yyyy"|Rok jako čtyřmístné číslo.<br /><br /> Další informace: [specifikátor vlastního formátu "yyyy"](#yyyySpecifier).|0001-01-01T00:00:00 -> 0001<br /><br /> 0900-01-01T00:00:00 -> 0900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-2009-15T13:45:30 &GT;|
-|"yyyyy"|Rok jako pětimístné číslo.<br /><br /> Další informace: [specifikátor vlastního formátu "yyyyy"](#yyyyySpecifier).|0001-01-01T00:00:00 -> 00001<br /><br /> 2009-06-15T13:45:30 -> 02009|
-|"z"|Posun hodin od času UTC, bez počátečních nul.<br /><br /> Další informace: [specifikátor vlastního formátu "z"](#zSpecifier).|2009-06-15T13:45:30-07:00 -> -7|
-|"zz"|Posun hodin od času UTC, s počáteční nulou pro jednocifernou hodnotu.<br /><br /> Další informace: [specifikátor vlastního formátu "zz"](#zzSpecifier).|2009-06-15T13:45:30-07:00 -> -07|
-|"zzz"|Posun v hodinách a minutách od času UTC.<br /><br /> Další informace: [specifikátor vlastního formátu "zzz"](#zzzSpecifier).|2009-06-15T13:45:30-07:00 -> -07:00|
-|":"|Oddělovač času.<br /><br /> Další informace: [":" specifikátor vlastního formátu](#timeSeparator).|2009-06--> 15T13:45:30: (en US)<br /><br /> 2009-06-15T13:45:30 -> . (it-IT)<br /><br /> 2009-06-15T13:45:30 -> : (ja-JP)|
-|"/"|Oddělovač data.<br /><br /> Další informace: [specifikátor vlastního formátu "/"](#dateSeparator).|2009-06-15T13:45:30 -> / (en US)<br /><br /> 2009-06-15T13:45:30 -> - (ar DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|
-|"*řetězec*"<br /><br /> "*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [literály znaků](#Literals).|2009-06-15T13:45:30 ("směrování žádostí na aplikace:" h t) -> arr: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("směrování žádostí na aplikace:' h t) -> arr: 1:45 P|
+|"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
+|"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [Specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
+|"ddd"|Zkrácený název dne v týdnu.<br /><br /> Další informace: [Specifikátor vlastního formátu "ddd"](#dddSpecifier).|2009-06-15T13:45:30 -> pondělí (en US)<br /><br /> 2009-06-15T13:45:30 -> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> logickou jednotku. (fr-FR)|
+|"dddd"|Úplný název dne v týdnu.<br /><br /> Další informace: [Specifikátor vlastního formátu "dddd"](#ddddSpecifier).|2009-06-15T13:45:30 -> Monday (en US)<br /><br /> 2009-06-15T13:45:30 -> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lundi (fr-FR)|
+|"f"|Desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "f"](#fSpecifier).|2009-06-15T13:45:30.6170000 -&GT; 6<br /><br /> 2009-06-15T13:45:30.05 -&GT; 0|
+|"ff"|Setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "ff"](#ffSpecifier).|2009-06-15T13:45:30.6170000 -&GT; 61<br /><br /> 2009-06-00-15T13:45:30.0050000 &GT;|
+|"fff"|Milisekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fff"](#fffSpecifier).|6/15/2009 13:45:30.617 -> 617<br /><br /> 6/15/2009 13:45:30.0005 -> 000|
+|"ffff"|Desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "ffff"](#ffffSpecifier).|2009-06-15T13:45:30.6175000 -&GT; 6175<br /><br /> 2009-06-0000-15T13:45:30.0000500 &GT;|
+|"fffff"|Stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffff"](#fffffSpecifier).|2009-06-15T13:45:30.6175400 -&GT; 61754<br /><br /> 6/15/2009 13:45:30.000005 -> 00000|
+|"ffffff"|Miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "ffffff"](#ffffffSpecifier).|2009-06-15T13:45:30.6175420 -&GT; 617542<br /><br /> 2009-06-15T13:45:30.0000005 -&GT; 000000|
+|"fffffff"|Desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "fffffff"](#fffffffSpecifier).|2009-06-15T13:45:30.6175425 -&GT; 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -&GT; 0001150|
+|"F"|Pokud je hodnota nenulová, jedná se o desetiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor formátu "F" vlastního](#F_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 6<br /><br /> 2009-06-15T13:45:30.0500000 -> (žádný výstup)|
+|"FF"|Pokud je hodnota nenulová, jedná se o setiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FF"](#FF_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 61<br /><br /> 2009-06-15T13:45:30.0050000 -> (žádný výstup)|
+|"FFF"|Pokud je hodnota nenulová, jedná se o milisekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFF"](#FFF_Specifier).|2009-06-15T13:45:30.6170000 -&GT; 617<br /><br /> 2009-06-15T13:45:30.0005000 -> (žádný výstup)|
+|"FFFF"|Pokud je hodnota nenulová, jedná se o desetitisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFF"](#FFFF_Specifier).|2009-06-15T13:45:30.5275000 -&GT; 5275<br /><br /> 2009-06-15T13:45:30.0000500 -> (žádný výstup)|
+|"FFFFF"|Pokud je hodnota nenulová, jedná se o stotisíciny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFF"](#FFFFF_Specifier).|2009-06-15T13:45:30.6175400 -&GT; 61754<br /><br /> 2009-06-15T13:45:30.0000050 -> (žádný výstup)|
+|"FFFFFF"|Pokud je hodnota nenulová, jedná se o miliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFF"](#FFFFFF_Specifier).|2009-06-15T13:45:30.6175420 -&GT; 617542<br /><br /> 2009-06-15T13:45:30.0000005 -> (žádný výstup)|
+|"FFFFFFF"|Pokud je hodnota nenulová, jedná se o desetimiliontiny sekundy v hodnotě data a času.<br /><br /> Další informace: [Specifikátor vlastního formátu "FFFFFFF"](#FFFFFFF_Specifier).|2009-06-15T13:45:30.6175425 -&GT; 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -&GT; 000115|
+|"g", "gg"|Období nebo éra.<br /><br /> Další informace: ["G" nebo "gg" vlastního formátu specifikátor](#gSpecifier).|2009-06-15T13:45:30.6170000 -> A.D.|
+|"h"|Hodiny ve 12hodinovém formátu, od 1 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "h"](#hSpecifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 1|
+|"hh"|Hodiny ve 12hodinovém formátu, od 01 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "hh"](#hhSpecifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 01|
+|"H"|Hodiny ve 24hodinovém formátu, od 0 do 23.<br /><br /> Další informace: [Specifikátor formátu "H" vlastního](#H_Specifier).|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 13|
+|"HH"|Hodiny ve 24hodinovém formátu, od 00 do 23.<br /><br /> Další informace: [Specifikátor vlastního formátu "HH"](#HH_Specifier).|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 13|
+|"K"|Informace o časovém pásmu.<br /><br /> Další informace: [Specifikátor vlastního formátu "K"](#KSpecifier).|S <xref:System.DateTime> hodnoty:<br /><br /> 2009-06-15T13:45:30, neurčený druh -><br /><br /> 2009-06-15T13:45:30, druh Utc -> Z<br /><br /> 2009-06-15T13:45:30, druh Local -> -07:00 (závisí na nastavení místního počítače)<br /><br /> S <xref:System.DateTimeOffset> hodnoty:<br /><br /> 2009-06-15T01:45:30-07:00 --> -07:00<br /><br /> 2009-06-15T08:45:30+00:00 --> +00:00|
+|"m"|Minuty, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "m"](#mSpecifier).|2009-06-9-15T01:09:30 &GT;<br /><br /> 2009-06-15T13:29:30 -> 29|
+|"mm"|Minuty, od 00 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "mm"](#mmSpecifier).|2009-06-15T01:09:30 -> 09<br /><br /> 2009-06-15T01:45:30 -> 45|
+|"M"|Měsíc, od 1 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "M"](#M_Specifier).|2009-06-15T13:45:30 -> 6|
+|"MM"|Měsíc, od 01 do 12.<br /><br /> Další informace: [Specifikátor vlastního formátu "MM"](#MM_Specifier).|2009-06-15T13:45:30 -> 06|
+|"MMM"|Zkrácený název měsíce.<br /><br /> Další informace: [Specifikátor vlastního formátu "MMM"](#MMM_Specifier).|2009-06-15T13:45:30 -> června (en US)<br /><br /> 2009-06-15T13:45:30 -> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> června (zu-ZA)|
+|"MMMM"|Úplný název měsíce.<br /><br /> Další informace: [Specifikátor vlastního formátu "MMMM"](#MMMM_Specifier).|2009-06-15T13:45:30 -> June (en US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> uJuni (zu-ZA)|
+|"s"|Sekundy, od 0 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "s"](#sSpecifier).|2009-06-15T13:45:09 -> 9|
+|"ss"|Sekundy, od 00 do 59.<br /><br /> Další informace: [Specifikátor vlastního formátu "ss"](#ssSpecifier).|2009-06-15T13:45:09 -> 09|
+|"t"|První znak označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "t"](#tSpecifier).|2009-06-15T13:45:30 -> P (en US)<br /><br /> 2009-06-15T13:45:30 -> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30 -> (fr-FR)|
+|"tt"|Označení pro dopoledne/odpoledne.<br /><br /> Další informace: [Specifikátor vlastního formátu "tt"](#ttSpecifier).|2009-06-15T13:45:30 -> PM (en US)<br /><br /> 2009-06-15T13:45:30 -> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30 -> (fr-FR)|
+|"y"|Rok, od 0 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "y"](#ySpecifier).|0001-01-01T00:00:00 -> 1<br /><br /> 0900-01-01T00:00:00 -> 0<br /><br /> 1900-01-01T00:00:00 -> 0<br /><br /> 2009-06-15T13:45:30 -> 9<br /><br /> 2019-06-15T13:45:30 -> 19|
+|"yy"|Rok, od 00 do 99.<br /><br /> Další informace: [Specifikátor vlastního formátu "yy"](#yySpecifier).|0001-01-01T00:00:00 -> 01<br /><br /> 0900-01-01T00:00:00 -> 00<br /><br /> 1900-01-01T00:00:00 -> 00<br /><br /> 2019-06-15T13:45:30 -> 19|
+|"yyy"|Rok s nejméně třemi číslicemi.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyy"](#yyySpecifier).|0001-01-01T00:00:00 -> 001<br /><br /> 0900-01-01T00:00:00 -> 900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-2009-15T13:45:30 &GT;|
+|"yyyy"|Rok jako čtyřmístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyyy"](#yyyySpecifier).|0001-01-01T00:00:00 -> 0001<br /><br /> 0900-01-01T00:00:00 -> 0900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-2009-15T13:45:30 &GT;|
+|"yyyyy"|Rok jako pětimístné číslo.<br /><br /> Další informace: [Specifikátor vlastního formátu "yyyyy"](#yyyyySpecifier).|0001-01-01T00:00:00 -> 00001<br /><br /> 2009-06-15T13:45:30 -> 02009|
+|"z"|Posun hodin od času UTC, bez počátečních nul.<br /><br /> Další informace: [Specifikátor vlastního formátu "z"](#zSpecifier).|2009-06-15T13:45:30-07:00 -> -7|
+|"zz"|Posun hodin od času UTC, s počáteční nulou pro jednocifernou hodnotu.<br /><br /> Další informace: [Specifikátor vlastního formátu "zz"](#zzSpecifier).|2009-06-15T13:45:30-07:00 -> -07|
+|"zzz"|Posun v hodinách a minutách od času UTC.<br /><br /> Další informace: [Specifikátor vlastního formátu "zzz"](#zzzSpecifier).|2009-06-15T13:45:30-07:00 -> -07:00|
+|":"|Oddělovač času.<br /><br /> Další informace: [":" Specifikátor vlastního formátu](#timeSeparator).|2009-06--> 15T13:45:30: (en US)<br /><br /> 2009-06-15T13:45:30 -> . (it-IT)<br /><br /> 2009-06-15T13:45:30 -> : (ja-JP)|
+|"/"|Oddělovač data.<br /><br /> Další informace: [Specifikátor vlastního formátu "/"](#dateSeparator).|2009-06-15T13:45:30 -> / (en US)<br /><br /> 2009-06-15T13:45:30 -> - (ar DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|
+|"*řetězec*"<br /><br /> "*řetězec*.|Oddělovač řetězcového literálu.<br /><br /> Další informace: [Znakové literály](#Literals).|2009-06-15T13:45:30 ("směrování žádostí na aplikace:" h t) -> arr: 1:45 P<br /><br /> 2009-06-15T13:45:30 ("směrování žádostí na aplikace:' h t) -> arr: 1:45 P|
 |%|Definuje následující znak jako specifikátor vlastního formátu.<br /><br /> Další informace:[používání jednoduchých specifikátorů vlastního formátu](#UsingSingleSpecifiers).|2009-06-1-15T13:45:30 (%h) >|
-|\\| Řídicí znak.<br /><br /> Další informace: [literály znaků](#Literals) a [používání řídicích znaků](#escape).|2009-06-15T13:45:30 (h \h) -> 1 h|
-|Jakýkoli jiný znak|Znak je zkopírován do výsledného řetězce beze změny.<br /><br /> Další informace: [literály znaků](#Literals).|2009-06-15T01:45:30 (arr hh: mm t) -> arr 01:45 a|
+|&#92;|Řídicí znak.<br /><br /> Další informace: [Znakové literály](#Literals) a [používání řídicích znaků](#escape).|2009-06-15T13:45:30 (h \h) -> 1 h|
+|Jakýkoli jiný znak|Znak je zkopírován do výsledného řetězce beze změny.<br /><br /> Další informace: [Znakové literály](#Literals).|2009-06-15T01:45:30 (arr hh: mm t) -> arr 01:45 a|
 
  Následující oddíly poskytují další informace o jednotlivých specifikátorech vlastního formátu data a času. Pokud není uvedeno jinak, každý specifikátor vytváří identickou řetězcovou reprezentaci bez ohledu na to, zda je použit s <xref:System.DateTime> hodnotu nebo <xref:System.DateTimeOffset> hodnotu.
 

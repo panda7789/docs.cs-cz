@@ -1,5 +1,6 @@
 ---
-title: Základní operace s řetězci v .NET Frameworku
+title: Základní operace s řetězci v .NET
+description: Přečtěte si o základních operací, které můžete provádět na řetězce.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,41 +9,42 @@ helpviewer_keywords:
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f7692251a00c712f93b649d4cd6fc153bb248f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: seadec18
+ms.openlocfilehash: 8621e79ad6e305f3859dc269965ecd216081f695
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567481"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150677"
 ---
 # <a name="basic-string-operations-in-net"></a>Základní operace s řetězci v .NET
-Aplikace často odpovídají uživatelům sestavením zpráv založených na vstup uživatele. Například neobvyklé pro weby reagovat na nově přihlášený uživatel s specializované pozdravu, která obsahuje jméno uživatele. Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní. Tyto metody také můžete provést některé základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.  
+Aplikace často reagovat na uživatele pomocí zprávy založené na vstup uživatele. Není například neobvyklé webových stránek a reagovat na nově přihlášeného uživatele s specializované pozdrav, který obsahuje jméno uživatele. Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní. Tyto metody také umožňují provádět základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vytváření nových řetězců](../../../docs/standard/base-types/creating-new.md)  
- Popisuje základní způsoby převést objekty do řetězců a seskupování řetězců.  
+ Popisuje základní způsoby k převedení objektů na řetězce a kombinování řetězců.  
   
  [Ořezávání a odstraňování znaků](../../../docs/standard/base-types/trimming.md)  
- Popisuje postup uvolnění dočasné paměti nebo odeberte znaky v řetězci.  
+ Popisuje, jak trim nebo odeberte znaky v řetězci.  
   
  [Doplňování řetězců](../../../docs/standard/base-types/padding.md)  
- Popisuje, jak vložit znaky nebo prázdné mezery na řetězec.  
+ Popisuje, jak vkládat znaky nebo prázdné mezery do řetězce.  
   
  [Porovnávání řetězců](../../../docs/standard/base-types/comparing.md)  
  Popisuje, jak porovnání obsahu dvou nebo více řetězců.  
   
  [Změna velikosti písmen](../../../docs/standard/base-types/changing-case.md)  
- Popisuje, jak změnit velikost znaků v řetězci.  
+ Popisuje, jak změnit velikost písmen znaků v řetězci.  
   
  [Používání třídy StringBuilder](../../../docs/standard/base-types/stringbuilder.md)  
  Popisuje, jak vytvářet a upravovat objekty dynamického řetězce <xref:System.Text.StringBuilder> třídy.  
   
- [Postupy: Základní manipulace s řetězci](../../../docs/standard/base-types/basic-manipulations.md)  
- Demonstruje použití základní operace s řetězci.  
+ [Jak: Manipulace s řetězci základní](../../../docs/standard/base-types/basic-manipulations.md)  
+ Ukazuje použití základní operace s řetězci.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Převod typů v rozhraní .NET](../../../docs/standard/base-types/type-conversion.md)  
- Popisuje, jak převést jeden typ do jiného typu.  
+ Popisuje, jak převést jednoho typu na jiný typ.  
   
  [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- Popisuje postup použití specifikátorů formátu řetězce formátu.
+ Popisuje, jak pomocí specifikátorů formátu řetězce formátu.

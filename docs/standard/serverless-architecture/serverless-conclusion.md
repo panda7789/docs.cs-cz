@@ -4,12 +4,12 @@ description: Bez serveru má spoustu výhod a má vlastní výzvy. Souhrn stěž
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 055facf7ef46c18f8cda518da9a9f3e114dec1a2
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 6f4951dc85f739b92e56e84d0bd0262166181bd4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404860"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128840"
 ---
 # <a name="conclusion"></a>Závěr
 
@@ -30,4 +30,4 @@ Následující stěžejní jsou nejdůležitější závěry v této příručce
 **Bez serveru jako nástroj, ne na panelu nástrojů.** Bez serveru není výhradní řešení pro architekturu aplikace. Je nástroj, který se dá využít jako součást hybridní aplikace, který může obsahovat tradiční úrovně monolitu back-endů a kontejnery. Bez serveru je možné k vylepšení stávajících řešení a není rigidní přístup k vývoji aplikací.
 
 >[!div class="step-by-step"]
-[Předchozí](serverless-business-scenarios.md)
+>[Předchozí](serverless-business-scenarios.md)

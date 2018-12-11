@@ -4,12 +4,13 @@ description: Zjistěte, jak spustit testy na publikované výstupu pomocí pří
 author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
-ms.openlocfilehash: e99000996f5dfa9f9d4f9b823e36ecbe325da835
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: 8930ec5c19254423fcdc9f0790ccf6748c595d6b
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508130"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170289"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s dotnet test
 
@@ -31,7 +32,7 @@ dotnet vstest out/MyProject.Tests.dll
 ```
 
 > [!NOTE]
-> Poznámka: Pokud vaše aplikace cílí na rozhraní než `netcoreapp` můžete nadále spouštět `dotnet vstest` příkaz předáním s příznakem framework cíleného rozhraní. Například `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`. Ve verzi Visual Studio 2017 Update 5 je automaticky rozpoznán požadované rozhraní.
+> Poznámka: Pokud vaše aplikace cílí na rozhraní než `netcoreapp` můžete nadále spouštět `dotnet vstest` příkaz předáním s příznakem framework cíleného rozhraní. Například, `dotnet vstest <MyPublishedTests>.dll  --Framework:".NETFramework,Version=v4.6"`. Ve verzi Visual Studio 2017 Update 5 je automaticky rozpoznán požadované rozhraní.
 
 ## <a name="see-also"></a>Viz také:
 - [Testování částí pomocí příkazu dotnet test a xUnit](unit-testing-with-dotnet-test.md)

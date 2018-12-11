@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: příkaz Ping na hostitele'
+title: 'Postupy: Příkaz ping na hostitele'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Ping
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
-ms.openlocfilehash: ffade286882608f98c8771c0bdf2c70803769e38
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: bca8fc1cb3a54be9c329dc02aa27057ad839b3d3
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183565"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127859"
 ---
-# <a name="how-to-ping-a-host"></a>Postupy: příkaz Ping na hostitele
+# <a name="how-to-ping-a-host"></a>Postupy: Příkaz ping na hostitele
 Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.  
   
 ## <a name="example"></a>Příklad  
   
-```  
+```csharp
 using System;  
 using System.Text;  
 using System.Net;  

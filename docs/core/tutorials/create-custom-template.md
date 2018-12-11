@@ -2,14 +2,14 @@
 title: Vytvoření nové vlastní šablony pro dotnet
 description: Zjistěte, jak vytvořit vlastní šablonu pro nový příkaz dotnet v tuhle zábavnou kurzu.
 author: guardrex
-ms.author: mairaw
 ms.date: 08/12/2017
-ms.openlocfilehash: 2377d894bcbf54a9c96eae1093d891080e6d11c5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: 63f8c8a4d029285a02255637c8a79358e5ef0095
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516650"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169726"
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Vytvoření nové vlastní šablony pro dotnet
 
@@ -64,7 +64,7 @@ Použití existujícího projektu, který ověření, že zkompiluje a spustí n
 1. Zkopírujte obsah složky projektu, společně s jeho *.template.config/template.json* souboru, do *obsah* složky, které jste vytvořili.
 1. Vedle položky *obsah* složky, přidejte [ *souboru nuspec* soubor](/nuget/create-packages/creating-a-package). Soubor nuspec je soubor manifestu XML, který popisuje obsah balíčku a řídí proces vytvoření balíčku NuGet.
 
-   ![Adresářová struktura znázorňující rozložení balíčku NuGet.](./media/create-custom-template/nugetdirectorylayout.png)
+   ![Adresářová struktura znázorňující rozložení balíčku NuGet.](./media/create-custom-template/nuget-directory-layout.png)
 
 1. Uvnitř  **\<packageTypes >** element v *nuspec* souboru, zahrnují  **\<packageType >** element s `name` Hodnota atributu `Template`. Oba *obsah* složky a *nuspec* soubor by měl být uložený ve stejném adresáři. V tabulce jsou uvedeny minimální *nuspec* souboru prvků vyžadovaných pro vytvoření šablony jako balíček NuGet.
 
@@ -136,7 +136,7 @@ dotnet new -i NUnit3.DotNetNew.Template
 
 Pokud uvedete šablon pomocí `dotnet new -l`, uvidíte *NUnit 3 Test projektu* s krátký název *nunit* v seznamu šablon. Jste připraveni použít šablonu v další části.
 
-![Okno konzoly NUnit šablony s další nainstalovaných šablon](./media/create-custom-template/nunit1.png)
+![Okno konzoly NUnit šablony s ostatními šablonami](./media/create-custom-template/nunit-template-console-window.png)
 
 ### <a name="create-a-project-from-the-template"></a>Vytvoření projektu ze šablony
 
@@ -148,7 +148,7 @@ dotnet new nunit
 
 Konzola ukazuje, že projekt je vytvořen a že obnovení balíčků projektu. Po spuštění příkazu projekt je připravený k použití.
 
-![Okna konzoly zobrazuje výstup nový příkaz dotnet vytvoří projekt NUnit a obnoví závislosti projektu](./media/create-custom-template/nunit2.png)
+![Okno konzoly zobrazí výstup dotnet nové nunit včetně obnovení závislostí projektu](./media/create-custom-template/dotnet-new-nunit-console-output.png)
 
 ### <a name="to-uninstall-a-template-from-a-nuget-package-stored-at-nugetorg"></a>Chcete-li odinstalovat šablonu z balíčku NuGet uloženou v nuget.org
 

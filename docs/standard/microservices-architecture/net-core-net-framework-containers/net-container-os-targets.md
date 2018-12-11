@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: b2ae1d2e732f152133dd8a8757b955e05cdd88eb
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: f6a5cf8d5e32e527977b7c142f5686310e88a068
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970822"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147197"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Jaký operační systém mají cílit kontejnery .NET
 
@@ -39,11 +39,11 @@ Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat oper
 <tbody>
 <tr>
 <td>Microsoft / dotnet:2.1 – modul runtime</td>
-<td>Více architektury .NET core 2.1: podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
+<td>Více architektury .NET core 2.1: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
 </tr>
 <tr class="odd">
 <td>Microsoft / dotnet:2.1-aspnetcore-modulu runtime</td>
-<td><p>Architektura ASP.NET Core 2.1 více: podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
+<td><p>Architektura ASP.NET Core 2.1 více: Podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
 <p>Aspnetcore image má několik optimalizací pro ASP.NET Core.</p></td>
 </tr>
 <tr class="even">
@@ -58,5 +58,5 @@ Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat oper
 </table>
 
 >[!div class="step-by-step"]
-[Předchozí](container-framework-choice-factors.md)
-[další](official-net-docker-images.md)
+>[Předchozí](container-framework-choice-factors.md)
+>[další](official-net-docker-images.md)

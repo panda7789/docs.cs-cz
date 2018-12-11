@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
 ms.openlocfilehash: eb165b69e1312363a8cc7c1a3ceea66a422d54f7
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200108"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143464"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Nezabezpečený intranetový klient a služba
 Následující obrázek znázorňuje jednoduchý služby Windows Communication Foundation (WCF) vyvinuta poskytují informace o zabezpečené privátní sítě pro aplikace WCF. Zabezpečení není povinné, protože data jsou s nízkou důležitostí, síť má být ze své podstaty bezpečné nebo poskytuje zabezpečení vrstvy pod infrastruktura WCF.  
@@ -19,13 +19,13 @@ Následující obrázek znázorňuje jednoduchý služby Windows Communication F
   
 |Vlastnost|Popis|  
 |--------------------|-----------------|  
-|Režim zabezpečení|Žádné|  
+|Režim zabezpečení|Žádná|  
 |Přenos|TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
 |Interoperabilita|Pouze WCF|  
 |Ověřování|Žádné|  
 |Integrita|Žádné|  
-|Důvěrnost|Žádné|  
+|Důvěrnost|Žádná|  
   
 ## <a name="service"></a>Služba  
  Následující kód a konfigurace mají běžet nezávisle. Proveďte jednu z těchto akcí:  

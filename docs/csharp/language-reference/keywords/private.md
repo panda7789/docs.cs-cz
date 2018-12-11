@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-ms.openlocfilehash: 0c564f38940e993bdfb93af0ec995c684be0eeb7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: a817f3f60b76b51868c5cacd8e648ec10497f64a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802713"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130998"
 ---
 # <a name="private-c-reference"></a>private (Referenční dokumentace jazyka C#)
 
@@ -42,9 +42,9 @@ V tomto příkladu `Employee` třída obsahuje dva soukromé datové členy `nam
 
 [!code-csharp[csrefKeywordsModifiers#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#10)]
 
-## <a name="c-language-specification"></a>specifikace jazyka C#
+## <a name="c-language-specification"></a>specifikace jazyka C#  
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [deklarovaná přístupnost](~/_csharplang/spec/basic-concepts.md#declared-accessibility) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

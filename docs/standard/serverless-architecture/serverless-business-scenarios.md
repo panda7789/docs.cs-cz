@@ -4,12 +4,12 @@ description: Zjistěte, bez serveru pomocí praktických přístup díky příst
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: c38d1c6c4e04f3fa38946c97af5d94758b3ed6f7
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 4299768b701336e427b22b295bc459424bfc5927
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404902"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153784"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Bez serveru obchodní scénáře a případy použití
 
@@ -27,7 +27,7 @@ Samostatné jednostránkové aplikaci (SPA) volá funkci bez serveru k získán�
 
 ![Automatizované image Galerie](./media/automated-image-gallery.png)
 
-Úplné úložiště a pokyny k sestavení aplikace logiky najdete tady: [Event grid připevnit](https://github.com/JeremyLikness/Event-Grid-Glue).
+Tady jsou k dispozici úplné úložiště a pokyny k sestavení aplikace logiky: [Event grid připevnit](https://github.com/JeremyLikness/Event-Grid-Glue).
 
 ## <a name="cross-platform-mobile-client-using-xamarinforms-and-functions"></a>– Multiplatformního mobilního klienta pomocí Xamarin.Forms a funkce
 
@@ -55,7 +55,7 @@ Aplikace používá funkci proxy služby Azure Functions umožňuje refaktoring 
 
 Proxy server poskytuje jeden koncový bod rozhraní API, která se aktualizovala na přesměrování jednotlivých požadavků, jak se přesunout do funkce bez serveru.
 
-Můžete zobrazit video, které vás provede celou migrace: [Lift and shift s využitím Azure functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102). Přístup k vzorového kódu: [přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17).
+Můžete zobrazit video, které vás provede celou migrace: [Zvedněte a shift s využitím Azure functions bez serveru](https://channel9.msdn.com/Events/Connect/2017/E102). Přístup k ukázkový kód: [Přineste si vlastní aplikaci](https://github.com/JeremyLikness/bring-own-app-connect-17).
 
 ## <a name="parse-a-csv-file-and-insert-into-a-database"></a>Analyzovat soubor CSV a vložit do databáze
 
@@ -77,7 +77,7 @@ Potom můžete vytvořit řídicí panel Power BI k získání přehledu o shrom
 
 ![Příklad Power BI](./media/power-bi-example.png)
 
-Úložiště zkracování adres se úplné propojení s pokyny je k dispozici tady: [bez serveru URL shortener](https://github.com/jeremylikness/serverless-url-shortener). Informace o zjednodušenou verzi: [Azure Storage pro .NET aplikace bez serveru v minutách](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/).
+Úložiště zkracování adres se úplné propojení s pokyny je k dispozici zde: [Bez serveru URL shortener](https://github.com/jeremylikness/serverless-url-shortener). Si můžete přečíst o zjednodušenou verzi: [Azure Storage pro .NET aplikace bez serveru v minutách](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/).
 
 ## <a name="verify-device-connectivity-using-a-ping"></a>Ověřte připojení zařízení pomocí odeslání příkazu ping
 
@@ -98,5 +98,5 @@ Další informace najdete v tématu [ping služby Azure IoT Hub](https://azure.m
 * [Bez serveru zkracování adres URL](https://github.com/jeremylikness/serverless-url-shortener)
 
 >[!div class="step-by-step"]
-[Předchozí](orchestration-patterns.md)
-[další](serverless-conclusion.md)
+>[Předchozí](orchestration-patterns.md)
+>[další](serverless-conclusion.md)

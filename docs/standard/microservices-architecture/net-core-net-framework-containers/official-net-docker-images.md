@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: 5d42ec77958e056b75b0e379f8ab520ac926c72a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: c1948693edbc197b8527ce8ce82c196206a16876
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075566"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131375"
 ---
 # <a name="official-net-docker-images"></a>Oficiální Image .NET Dockeru
 
@@ -50,7 +50,6 @@ Při prozkoumávání úložiště .NET image v Docker Hubu najdete několik ver
 | Microsoft/dotnet:**2.1 – aspnetcore-modulu runtime** | ASP.NET Core s pouze modul runtime a optimalizace ASP.NET Core v Linuxu a Windows (více arch) |
 | Microsoft/dotnet:**2.1 sdk**                | .NET core, s zahrnutých sad SDK, na Linuxu a Windows (více arch)                                  |
 
-
 >[!div class="step-by-step"]
-[Předchozí](net-container-os-targets.md)
-[další](../architect-microservice-container-applications/index.md)
+>[Předchozí](net-container-os-targets.md)
+>[další](../architect-microservice-container-applications/index.md)

@@ -1,25 +1,25 @@
 ---
-title: Potvrzení transakce v jednofázové a více fáze
+title: Potvrzení transakce v jedné fázi a více fázích
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
-ms.openlocfilehash: 0647f5aa4dd5bac054ed424780aa9fbe1c4bfa69
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ad0b639aec60fc1dc9b594ff774232699001db5d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33362815"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53142916"
 ---
-# <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Potvrzení transakce v jednofázové a více fáze
-Každý prostředek, který používá v transakci spravuje správce prostředků (SV), jejichž akce jsou koordinovaný správcem transakcí (TM). [Uvedení prostředky jako účastníky v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) téma popisuje, jak prostředku (nebo více prostředků) mohou být zařazeny v transakci. Toto téma popisuje, jak lze koordinovat mezi zařazených prostředků částku transakce.  
+# <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Potvrzení transakce v jedné fázi a více fázích
+Každý prostředek, který používá v transakci spravuje správce prostředků (SV), jejichž akce jsou koordinovaný správcem transakcí (TM). [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) téma popisuje, jak prostředek (nebo více zdrojů) může být uveden v transakci. Toto téma popisuje, jak lze koordinovat mezi zařazených prostředků částku transakce.  
   
  Na konci transakce aplikace požádá o transakce, které má být buď potvrzené nebo vrátit zpět. Správce transakcí musí odstranění ohrožení, jako je někteří správci prostředků hlasování se zapsat while ostatním uživatelům hlasování se navrátit transakci.  
   
- Pokud vaše transakce zahrnuje více než jeden prostředek, je nutné provést dvoufázového potvrzení (2PC). Protokol dvoufázového potvrzení (fáze prepare a potvrzovací fáze) zajišťuje, že při transakci skončí, všechny změny na všechny zdroje jsou buď zcela potvrzené nebo plně vrácena zpět. Všichni účastníci jsou pak informováni o konečný výsledek. Podrobné informace o protokolu dvoufázového potvrzení, naleznete v příručce "*zpracování transakcí: koncepty a techniky (řada Nováková Kaufmann v systémy správy dat) ISBN:1558601902*" podle Jima šedá.  
+ Pokud vaše transakce zahrnuje více než jeden prostředek, je nutné provést dvoufázového potvrzení (2PC). Protokol dvoufázového potvrzení (fáze prepare a potvrzovací fáze) zajišťuje, že při transakci skončí, všechny změny na všechny zdroje jsou buď zcela potvrzené nebo plně vrácena zpět. Všichni účastníci jsou pak informováni o konečný výsledek. Podrobné informace o protokolu dvoufázového potvrzení, naleznete v příručce "*zpracování transakcí: Koncepty a techniky (Nováková Kaufmann řady ve systémů pro správu dat) ISBN: 1558601902*"podle Jima šedá.  
   
- Můžete také optimalizovat vaši transakci výkon provedením součást v protokolu jedné fáze potvrzení. Další informace najdete v tématu [optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jeden oznámení fáze](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ Můžete také optimalizovat vaši transakci výkon provedením součást v protokolu jedné fáze potvrzení. Další informace najdete v tématu [optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
   
  Pokud jste právě chcete být informováni o výsledek transakce a nechcete, aby se účastnit programu hlasování, byste měli zaregistrovat pro <xref:System.Transactions.Transaction.TransactionCompleted> události.  
   
@@ -36,7 +36,7 @@ Každý prostředek, který používá v transakci spravuje správce prostředk�
   
  Váš správce prostředků, který implementuje <xref:System.Transactions.IEnlistmentNotification> by měl první implementaci rozhraní <xref:System.Transactions.IEnlistmentNotification.Prepare%28System.Transactions.PreparingEnlistment%29> jako následující jednoduchý příklad ukazuje metodu.  
   
-```  
+```csharp
 public void Prepare(PreparingEnlistment preparingEnlistment)  
 {  
      Console.WriteLine("Prepare notification received");  
@@ -75,7 +75,7 @@ public void Prepare(PreparingEnlistment preparingEnlistment)
   
  Váš správce prostředků tedy měli používat následující metody.  
   
-```  
+```csharp
 public void Commit (Enlistment enlistment)  
 {  
      // Do any work necessary when commit notification is received  
@@ -98,7 +98,7 @@ public void Rollback (Enlistment enlistment)
 ### <a name="implementing-indoubt"></a>Implementace InDoubt  
  A konečně, měli byste implementovat <xref:System.Transactions.IEnlistmentNotification.InDoubt%2A> metody pro správce těkavých prostředků. Tato metoda je volána, pokud správce transakcí ztratí kontaktu s jedním nebo více účastníky, tak jejich stav není znám. V takovém případě je zapotřebí přihlásit tuto skutečnost tak, aby si můžete později zjistit, zda některé z účastníci transakce byla ponechána v nekonzistentním stavu.  
   
-```  
+```csharp
 public void InDoubt (Enlistment enlistment)  
 {  
      // log this  
@@ -107,7 +107,7 @@ public void InDoubt (Enlistment enlistment)
 ```  
   
 ## <a name="single-phase-commit-optimization"></a>Optimalizace potvrzení jedna fáze  
- Vzhledem k tomu, že všechny aktualizace jsou provedeno bez explicitního koordinace je efektivnější v době běhu protokol jedné fáze potvrzení. Další informace o tomto protokolu naleznete v tématu [optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jeden oznámení fáze](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ Vzhledem k tomu, že všechny aktualizace jsou provedeno bez explicitního koordinace je efektivnější v době běhu protokol jedné fáze potvrzení. Další informace o tomto protokolu naleznete v tématu [optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Optimalizace pomocí jednofázového potvrzení a možné zařazení jednofázového oznámení](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  

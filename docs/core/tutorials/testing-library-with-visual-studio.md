@@ -1,19 +1,19 @@
 ---
 title: Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017
-description: Zjistěte, jak otestovat knihovny tříd napsané v jazyce C# pomocí sady Visual Studio 2017
+description: Vytvoření projektu testů jednotek pro knihovny tříd .NET Core. Zkontrolujte, jestli se knihovny tříd .NET Core s testy jednotek funguje správně.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: 04fef4f84658b3a8b82e4e71b62c3bab8537424d
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.custom: vs-dotnet, seodoc18
+ms.openlocfilehash: 9e680921a882ab1c974a7546a6e91a892288db8d
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45990970"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170792"
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017
 
@@ -28,14 +28,14 @@ Chcete-li vytvořit projekt testování částí, postupujte takto:
 
 1. V **přidat nový projekt** dialogového okna, vyberte **Visual C#** uzlu. Vyberte **.NET Core** uzel, za nímž následuje **projekt testů MSTest (.NET Core)** šablony projektu. V **název** textové pole, zadejte "StringLibraryTest" jako název projektu. Vyberte **OK** k vytvoření projektu testování částí.
 
-   ![Přidání dialogového okna Nový projekt](./media/testing-library-with-visual-studio/testproject.png)
+   ![Přidat dialogové okno Nový projekt s Zobrazí – projekt testu jednotekC#](./media/testing-library-with-visual-studio/create-new-test-project.png)
 
    > [!NOTE]  
    > Kromě projekt testů MSTest můžete také použít sady Visual Studio vytvořit projekt testů xUnit pro .NET Core.
 
 1. Visual Studio vytvoří projekt a otevře *UnitTest1.cs* souborů v okně kódu.
 
-   ![Visual Studio code okno Výchozí jednotka testovací třída UnitTest1 projektu a TestMethod1 – metoda](./media/testing-library-with-visual-studio/unittestwindow.png)
+   ![Visual Studio okno kódu jednotky testování projektu třídy a metody-C#](./media/testing-library-with-visual-studio/unit-test-editor-window.png)
 
    Zdrojový kód vytvořený pomocí šablony testu jednotek provede následující akce:
 
@@ -47,24 +47,24 @@ Chcete-li vytvořit projekt testování částí, postupujte takto:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **závislosti** uzlu **StringLibraryTest** projektu a vyberte **přidat odkaz** z kontextové nabídky.
 
-   ![Místní nabídka StringLibraryTest závislostí](./media/testing-library-with-visual-studio/addreference.png)
+   ![Místní nabídka StringLibraryTest závislosti-C#](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V **správce odkazů** dialogového okna, rozbalte **projekty** uzlu a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít **StringLibrary** metody. Vyberte **OK** tlačítko. To přidá odkaz na váš projekt knihovny tříd `StringLibrary`.
+1. V **správce odkazů** dialogového okna, rozbalte **projekty** uzlu a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít **StringLibrary** metody. Vyberte tlačítko **OK**. To přidá odkaz na váš projekt knihovny tříd `StringLibrary`.
 
-   ![Správce odkazů](./media/testing-library-with-visual-studio/referencemanager.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
+   ![Visual Studio přidejte odkaz na projekt – dialogové okno](./media/testing-library-with-visual-studio/project-reference-manager.png)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb) 
 1. V **Průzkumníka řešení**, otevřete kontextovou nabídku **ClassLibraryProjects** uzel řešení a vyberte **přidat** > **nový projekt**.
 
 1. V **přidat nový projekt** dialogového okna, vyberte **jazyka Visual Basic** uzlu. Vyberte **.NET Core** uzel, za nímž následuje **projekt testů MSTest (.NET Core)** šablony projektu. V **název** textové pole, zadejte "StringLibraryTest" jako název projektu. Vyberte **OK** k vytvoření projektu testování částí.
 
-   ![Přidání dialogového okna Nový projekt](./media/testing-library-with-visual-studio/vb-testproject.png)
+   ![Přidání dialogového okna Nový projekt s projekt jednotkového testu zobrazí – Visual Basic](./media/testing-library-with-visual-studio/vb-create-new-test-project.png)
 
    > [!NOTE]  
    > Kromě projekt testů MSTest můžete také použít sady Visual Studio vytvořit projekt testů xUnit pro .NET Core.
 
 1. Visual Studio vytvoří projekt a otevře *UnitTest1.vb* souborů v okně kódu.
 
-   ![Visual Studio code okno Výchozí jednotka testovací třída UnitTest1 projektu a TestMethod1 – metoda](./media/testing-library-with-visual-studio/vb-unittestwindow.png)
+   ![Visual Studio okno kódu jednotky testování projektu třídy a metody – Visual Basic](./media/testing-library-with-visual-studio/vb-unit-test-editor-window.png)
 
    Zdrojový kód vytvořený pomocí šablony testu jednotek provede následující akce:
 
@@ -76,11 +76,11 @@ Chcete-li vytvořit projekt testování částí, postupujte takto:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **závislosti** uzlu **StringLibraryTest** projektu a vyberte **přidat odkaz** z kontextové nabídky.
 
-   ![Místní nabídka StringLibraryTest závislostí](./media/testing-library-with-visual-studio/addreference.png)
+   ![Místní nabídka StringLibraryTest závislostí](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. V **správce odkazů** dialogového okna, rozbalte **projekty** uzlu a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít **StringLibrary** metody. Vyberte **OK** tlačítko. To přidá odkaz na váš projekt knihovny tříd `StringLibrary`.
+1. V **správce odkazů** dialogového okna, rozbalte **projekty** uzlu a zaškrtněte políčko vedle položky **StringLibrary**. Přidání odkazu na `StringLibrary` sestavení umožňuje kompilátoru najít **StringLibrary** metody. Vyberte tlačítko **OK**. To přidá odkaz na váš projekt knihovny tříd `StringLibrary`.
 
-   ![Správce odkazů](./media/testing-library-with-visual-studio/referencemanager.png)
+   ![Visual Studio přidat dialog odkaz projektu – Visual Basic](./media/testing-library-with-visual-studio/project-reference-manager.png)
 ---
 
 ## <a name="adding-and-running-unit-test-methods"></a>Přidání a spuštění jednotky testovací metody
@@ -115,8 +115,8 @@ Vytvoření testovací metody:
 
 1. Na panelu nabídek vyberte **souboru** > **uložit UnitTest1.cs jako**. V **uložit soubor jako** dialogového okna, vyberte šipku vedle **Uložit** tlačítko a vyberte **uložit s kódováním**.
 
-   ![Uložte soubor jako dialogové okno](./media/testing-library-with-visual-studio/savefileas.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic) 
+   ![Visual Studio uložit soubor jako dialogové okno –C#](./media/testing-library-with-visual-studio/save-file-as-dialog.png)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb) 
 1. V *UnitTest1.vb* okno kódu, nahraďte kód následujícím kódem:
 
     [!CODE-vb[Test#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/testlib.vb)]
@@ -125,20 +125,20 @@ Vytvoření testovací metody:
 
 1. Na panelu nabídek vyberte **souboru** > **uložit UnitTest1.vb jako**. V **uložit soubor jako** dialogového okna, vyberte šipku vedle **Uložit** tlačítko a vyberte **uložit s kódováním**.
 
-   ![Uložte soubor jako dialogové okno](./media/testing-library-with-visual-studio/savefileas.png)
+   ![Visual Studio uložit soubor jako dialogové okno – Visual Basic](./media/testing-library-with-visual-studio/save-file-as-dialog.png)
 ---
 
 1. V **potvrzení uložit jako** dialogového okna, vyberte **Ano** tlačítko pro uložení souboru.
 
 1. V **pokročilé nastavení uložení** dialogového okna, vyberte **kódování Unicode (UTF-8 s podpisem) - znaková stránka 65001** z **kódování** rozevíracího seznamu a vyberte **OK** .
 
-   ![Dialogové okno pokročilé nastavení uložení](./media/testing-library-with-visual-studio/advancedsaveoptions.png)
+   ![Dialogové okno Visual Studio pokročilé nastavení uložení](./media/testing-library-with-visual-studio/advanced-save-options.png)
 
    Pokud chcete uložit svůj zdrojový kód jako soubor kódovaný v UTF8, Visual Studio může uložit jako soubor ve formátu ASCII. Pokud k tomu dojde, modul runtime nepodporuje dekódovat přesně UTF8 znaky mimo rozsah ASCII a výsledky testů, nebude odpovídat skutečnosti.
 
 1. Na panelu nabídek vyberte **testovací** > **spustit** > **všechny testy**. **Průzkumník testů** okno otevře a zobrazí úspěšně proběhly testy. Tři testy jsou uvedeny v **úspěšné testy** části a **Souhrn** části sestavy výsledků testovacího běhu.
 
-   ![Okno Průzkumníka testu](./media/testing-library-with-visual-studio/firsttest.png)
+   ![Test Průzkumníka s předáním testy](./media/testing-library-with-visual-studio/test-explorer-window.png)
 
 ## <a name="handling-test-failures"></a>Zpracování selhání testu
 
@@ -157,11 +157,11 @@ Vašeho testovacího běhu došlo k chybám, žádné, ale mírně změnit tak, 
    ```
 1. Spuštění testu tak, že vyberete **testování** > **spustit** > **všechny testy** z řádku nabídek. **Průzkumník testů** okno označuje, že dva testy úspěšné a jeden se nezdařilo.
 
-   ![Okno Průzkumníka testu](./media/testing-library-with-visual-studio/failedtest.png)
+   ![Okno Průzkumníka testu se selhání testů](./media/testing-library-with-visual-studio/failed-test-window.png)
 
-1. V **neúspěšné testy** neúspěšných testů, vyberte `TestDoesNotStartWith`. **Průzkumník testů** okno zobrazí zprávu vytvářených assert: "Assert.IsFalse se nezdařilo. Byl očekáván pro "Chyba": false; skutečné: True ". Kvůli chybě nebyly testovány všechny řetězce v poli po "Chyba".
+1. V **neúspěšné testy** neúspěšných testů, vyberte `TestDoesNotStartWith`. **Průzkumník testů** okno zobrazí zprávu vytvářených vyhodnocení: "Assert.IsFalse se nezdařilo. Byl očekáván pro "Chyba": false; Skutečná: True". Kvůli chybě nebyly testovány všechny řetězce v poli po "Chyba".
 
-   ![Okno Průzkumníka testu je False neplatnost kontrolního výrazu](./media/testing-library-with-visual-studio/failedtestdetail.png)
+   ![Okno Průzkumníka testu je False neplatnost kontrolního výrazu](./media/testing-library-with-visual-studio/failed-test-detail.png)
 
 1. Odebrat kód, který jste přidali (`"Error", `) a opětovné spuštění testu. Testy budou úspěšné.
 
@@ -173,11 +173,11 @@ K testování verze sestavení:
 
 1. Na panelu nástrojů sady Visual Studio, změňte konfiguraci buildu z **ladění** k **vydání**.
 
-   ![Panel nástrojů Visual Studio](./media/testing-library-with-visual-studio/toolbar.png)
+   ![Nástrojů Visual Studio se zvýrazněnými sestavení pro vydání](./media/testing-library-with-visual-studio/visual-studio-toolbar-release.png)
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **StringLibrary** projektu a vyberte **sestavení** z místní nabídky znovu zkompilovat knihovny.
 
-   ![Místní nabídka StringLibrary](./media/testing-library-with-visual-studio/buildlibrary.png)
+   ![Místní nabídka StringLibrary příkazem sestavení](./media/testing-library-with-visual-studio/build-library-context-menu.png)
 
 1. Spustit testy jednotek výběrem **testovací** > **spustit** > **všechny testy** z řádku nabídek. Testy jsou úspěšné.
 

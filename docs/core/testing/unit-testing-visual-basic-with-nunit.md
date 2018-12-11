@@ -5,19 +5,21 @@ author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - vb
-ms.openlocfilehash: bed43ac6b6f918b1ee45715101f9142c1add777f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: bcddd6cbb2dc3138b8343ef5e34440a93da70d1e
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836904"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169050"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování pomocí příkazu dotnet test a NUnit knihovny jazyka Visual Basic .NET Core
 
 Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů. Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/) předtím, než začnete. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Požadavky 
-- [.NET core SDK 2.1 (vs. 2.1.400)](https://www.microsoft.com/net/download) nebo novější verze. 
+## <a name="prerequisites"></a>Požadavky
+
+- [Sady SDK .NET core 2.1](https://www.microsoft.com/net/download) nebo novější verze.
 - Textového editoru nebo editoru kódu podle vašeho výběru.
 
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje

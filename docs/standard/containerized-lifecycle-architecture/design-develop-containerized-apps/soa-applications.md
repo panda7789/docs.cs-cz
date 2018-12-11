@@ -1,25 +1,24 @@
 ---
 title: Aplikace SOA
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 276071a5d55015f2feecc27020ad614684907b4c
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 7f88daaf0787cf780e7ab9602f35ae4e6ab8308c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105208"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155311"
 ---
 # <a name="soa-applications"></a>Aplikace SOA
 
-SOA byl Nepromyšlené termín a určená mnoho různých věcí na jiné osoby. Ale minimálně a jako běžné jmenovatel, SOA, nebo orientaci na služby, střední architektuře vaší aplikace pomocí decomposing v několika služeb (nejčastěji jako služeb HTTP), které můžou být klasifikované v různých typů struktura jako subsystémy nebo v jiných případech jako úrovně.
+SOA se Nepromyšlené termín a určená tolik různé věci pro různé osoby. Ale minimálně a jako společným faktorem, SOA, nebo orientaci na služby, střední architekturu aplikace podle rozložení u více služeb (nejčastěji jako služeb HTTP), které mohou být zařazeny do různých typů struktury, jako jsou subsystémů nebo v jiných případech jako úrovní.
 
-Tyto služby můžete v současné době nasadit jako Docker kontejnery, které řeší problémy související s nasazení, protože všechny závislosti jsou zahrnuty do bitové kopie kontejneru. Ale pokud budete potřebovat pro škálované SOAs, můžete setkat výzvy Pokud nasazujete na základě jedné instance. Toto je, kde Docker, clustering softwaru nebo orchestrator vám pomůže. Podíváme to podrobněji v další části když jsme zkontrolujte mikroslužeb přístupy.
+V současné době můžete nasadit tyto služby jako kontejnery Dockeru, které řeší problémy týkající se nasazení, protože všechny závislosti jsou zahrnuté do image kontejneru. Ale pokud potřebujete SOAs horizontální navýšení kapacity, může dojít výzvy Pokud provádíte nasazení na základě jedné instance. To je, kde Docker clustering softwaru nebo produktu orchestrator vám pomůže. Podíváme na to podrobněji v další části při prozkoumáme přístupy mikroslužeb.
 
-Na konci dne jsou užitečné pro obě tradiční architektury SOA nebo pro pokročilejší architektura mikroslužeb, ve kterém každý mikroslužbu vlastní jeho datového modelu řešení clusteringu kontejneru. A díky více databází, můžete také můžete Škálováním na více systémů datové vrstvy místo práce monolitický databáze sdílené službami SOA. Diskuzi o rozdělení dat je však čistě o architektuře a designu.
-
+Na konci dne jsou užitečné pro obě tradiční architektura SOA nebo pro pokročilejší architekturu mikroslužeb, ve kterém je vlastníkem jednotlivých mikroslužeb její datový model clusteringu řešení kontejnerů. A, díky více databází, můžete také můžete škálovat datovou vrstvu, místo abyste pracovali s monolitické databází sdílí služby SOA. Diskuze o rozdělení dat je však čistě o architektuře a designu.
 
 >[!div class="step-by-step"]
-[Předchozí](state-and-data-in-docker-applications.md)
-[další](orchestrate-high-scalability-availability.md)
+>[Předchozí](state-and-data-in-docker-applications.md)
+>[další](orchestrate-high-scalability-availability.md)

@@ -1,6 +1,6 @@
 ---
 title: ~ – operátor (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+ms.date: 11/05/2018
 f1_keywords:
 - ~_CSharpKeyword
 helpviewer_keywords:
@@ -9,28 +9,41 @@ helpviewer_keywords:
 - ~ [C#], bitwise complement operator
 - bitwise complement operator [C#]
 ms.assetid: 11bc078a-50e2-4d7e-9896-67ef669dc602
-ms.openlocfilehash: 8af25217f9e7e66796192783a0b8e3415604dc90
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1bcb07c5639a098e3a8c566e92083ca0d48efb81
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510108"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153212"
 ---
 # <a name="-operator-c-reference"></a>~ – operátor (Referenční dokumentace jazyka C#)
-`~` Operátor provádí operaci s bitový doplněk svého operandu, což má za následek vrácení každý bit. Operátory bitového doplňku jsou předdefinované pro [int](../../../csharp/language-reference/keywords/int.md), [uint](../../../csharp/language-reference/keywords/uint.md), [dlouhé](../../../csharp/language-reference/keywords/long.md), a [ulong](../../../csharp/language-reference/keywords/ulong.md).  
-  
-> [!NOTE]
->  `~` Symbol se také používá k deklaraci finalizační metody. Další informace najdete v tématu [finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md).  
-  
-## <a name="remarks"></a>Poznámky  
- Lze přetěžovat uživatelsky definované typy `~` operátor. Další informace najdete v tématu [operátor](../../../csharp/language-reference/keywords/operator.md). Operace interních typů jsou obecně povoleny na výčet.  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#25](../../../csharp/language-reference/operators/codesnippet/CSharp/bitwise-complement-operator_1.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
-- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+Operátor bitového doplňku `~` je unární operátor, který vytvoří bitový doplněk svého operandu přehozením každý bit. Podporují všechny typy celých čísel `~` operátor.
+
+> [!NOTE]
+> `~` Symbol se také používá k deklaraci finalizační metody. Další informace najdete v tématu [finalizační metody](../../programming-guide/classes-and-structs/destructors.md).
+
+Následující příklad ukazuje použití `~` operátor:
+
+[!code-csharp-interactive[bitwise NOT](~/samples/snippets/csharp/language-reference/operators/BitwiseComplementExamples.cs#Example)]
+
+> [!NOTE]
+> V předchozím příkladu binární literály: [zavedený C# 7.0](../../whats-new/csharp-7.md#numeric-literal-syntax-improvements) a [rozšířené v C# 7.2](../../whats-new/csharp-7-2.md#leading-underscores-in-numeric-literals).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Uživatelem definované typy lze [přetížení](../keywords/operator.md) `~` operátor.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [operátor bitového doplňku](~/_csharplang/spec/expressions.md#bitwise-complement-operator) část [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [Finalizační metody](../../programming-guide/classes-and-structs/destructors.md)
+- [& – operátor](and-operator.md)
+- [| – operátor](or-operator.md)
+- [^ – operátor](xor-operator.md)

@@ -1,23 +1,22 @@
 ---
-title: Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: b8f2924b658b7e2eeb295adc3c89a1ed576bba60
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 2f8e969ce48a448a293efafccbce1d62b059640d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104687"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155220"
 ---
-# <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizované aplikací pomocí Docker a Microsoft Azure
+# <a name="designing-and-developing-containerized-apps-using-docker-and-microsoft-azure"></a>Návrh a vývoj kontejnerizovaných aplikací pomocí Dockeru a Microsoft Azure
 
-Vizi: Návrh a vývoj škálovatelné řešení s Docker v paměti.
+Pro zpracování obrazu: Návrh a vývoj škálovatelných řešení s Dockerem v úvahu.
 
-Existuje mnoho případů použití dobře přizpůsobit pro kontejnery, nejen pro orientované mikroslužeb architektury, ale také když máte jednoduše regulární služeb nebo webových aplikací ke spuštění a chcete snížit frictions mezi vývoj a produkční prostředí nasazení.
-
+Existuje řada případů použití skvěle hodí pro kontejnery, nejen pro architektury orientované na mikroslužby, ale také když máte jednoduše regulární služby nebo webové aplikace, které poběží a chcete snížit frictions mezi vývojovou a provozní prostředí nasazení.
 
 >[!div class="step-by-step"]
-[Prev](../Microsoft-platform-tools-containerized-apps/index.md)
-[další](design-docker-applications.md)
+>[Předchozí](../Microsoft-platform-tools-containerized-apps/index.md)
+>[další](design-docker-applications.md)

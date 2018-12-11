@@ -2,12 +2,12 @@
 title: Podpora streamování SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 7c9c7300678b9e285965a3c1b673a92b6f26973e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a393274a7cf40b01399c5909c2d5ec4097ec9310
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191036"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152887"
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
 Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory). Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.  
@@ -76,7 +76,7 @@ Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45]
 ## <a name="sample----streaming-from-sql-server"></a>Ukázka – Streaming z SQL serveru  
  Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
-```  
+```sql
 CREATE DATABASE [Demo]  
 GO  
 USE [Demo]  
@@ -105,7 +105,7 @@ GO
   
 -   Přenos velkých souborů, (objektů BLOB) z jedné databáze SQL serveru na jiný bez spuštění nedostatek paměti.  
   
-```  
+```csharp
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -297,7 +297,7 @@ namespace StreamingFromServer {
 ## <a name="sample----streaming-to-sql-server"></a>Ukázka--Streamování do systému SQL Server  
  Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
-```  
+```sql
 CREATE DATABASE [Demo2]  
 GO  
 USE [Demo2]  
@@ -330,7 +330,7 @@ GO
   
 -   Streamovat z jednoho serveru SQL Server na jiný pomocí nové asynchronní funkce.  
   
-```  
+```csharp
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -453,7 +453,7 @@ namespace StreamingToServer {
 ## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a>Ukázka – Streamovat z jednoho serveru SQL Server na jiný Server SQL  
  Tento příklad ukazuje, jak asynchronně streamování velkých objektů BLOB z jednoho serveru SQL do druhého, s podporou pro zrušení.  
   
-```  
+```csharp
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
