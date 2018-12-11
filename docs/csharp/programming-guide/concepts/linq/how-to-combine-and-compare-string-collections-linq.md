@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
+title: 'Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 679dde2d2d1607c2703468f64903f3cd9e59bcb8
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: c95736f184f3298fb7142b8f8c7b29c65b3f7227
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083570"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130729"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="9961f-102">Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="9961f-102">How to: Combine and Compare String Collections (LINQ) (C#)</span></span>
-<span data-ttu-id="9961f-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte.</span><span class="sxs-lookup"><span data-stu-id="9961f-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="9961f-104">Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.</span><span class="sxs-lookup"><span data-stu-id="9961f-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="fafab-102">Postupy: Kombinace a porovnávání kolekcí řetězců (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="fafab-102">How to: Combine and Compare String Collections (LINQ) (C#)</span></span>
+<span data-ttu-id="fafab-103">Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte.</span><span class="sxs-lookup"><span data-stu-id="fafab-103">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="fafab-104">Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.</span><span class="sxs-lookup"><span data-stu-id="fafab-104">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="9961f-105">Nastavení projektu a textové soubory</span><span class="sxs-lookup"><span data-stu-id="9961f-105">To set up the project and the text files</span></span>  
+### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="fafab-105">Nastavení projektu a textové soubory</span><span class="sxs-lookup"><span data-stu-id="fafab-105">To set up the project and the text files</span></span>  
   
-1.  <span data-ttu-id="9961f-106">Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="9961f-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1.  <span data-ttu-id="fafab-106">Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="fafab-106">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ ms.locfileid: "44083570"
     Garcia, Debra  
     ```  
   
-2.  <span data-ttu-id="9961f-107">Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="9961f-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="9961f-108">Mějte na paměti, že dva soubory mají společnou některé názvy.</span><span class="sxs-lookup"><span data-stu-id="9961f-108">Note that the two files have some names in common.</span></span>  
+2.  <span data-ttu-id="fafab-107">Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="fafab-107">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="fafab-108">Mějte na paměti, že dva soubory mají společnou některé názvy.</span><span class="sxs-lookup"><span data-stu-id="fafab-108">Note that the two files have some names in common.</span></span>  
   
     ```  
     Liu, Jinghao  
@@ -44,7 +44,7 @@ ms.locfileid: "44083570"
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="9961f-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="9961f-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="fafab-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="fafab-109">Example</span></span>  
   
 ```csharp  
 class MergeStrings  
@@ -93,7 +93,7 @@ class MergeStrings
   
             IEnumerable<string> nameMatchQuery =  
                 tempQuery1.Concat(tempQuery2).OrderBy(s => s);  
-            OutputQueryResults(nameMatchQuery, String.Format("Concat based on partial name match \"{0}\":", nameMatch));  
+            OutputQueryResults(nameMatchQuery, $"Concat based on partial name match \"{nameMatch}\":");
   
             // Keep the console window open in debug mode.  
             Console.WriteLine("Press any key to exit");  
@@ -168,10 +168,10 @@ class MergeStrings
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="9961f-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="9961f-110">Compiling the Code</span></span>  
- <span data-ttu-id="9961f-111">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="9961f-111">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="fafab-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="fafab-110">Compiling the Code</span></span>  
+ <span data-ttu-id="fafab-111">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="fafab-111">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9961f-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="9961f-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fafab-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="fafab-112">See Also</span></span>
 
-- [<span data-ttu-id="9961f-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="9961f-113">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
-- [<span data-ttu-id="9961f-114">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="9961f-114">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="fafab-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="fafab-113">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [<span data-ttu-id="fafab-114">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="fafab-114">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -4,19 +4,19 @@ description: Dozvíte se, jak pro trénování model křížového ověření po
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: 41b99415d736b6583a8d43434c031e677e6f3ac8
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297677"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145959"
 ---
-# <a name="train-a-machine-learning-model-using-cross-validation---mlnet"></a><span data-ttu-id="39a51-103">Trénování modelu strojového učení pomocí křížového ověřování - ML.NET</span><span class="sxs-lookup"><span data-stu-id="39a51-103">Train a machine learning model using cross-validation - ML.NET</span></span>
+# <a name="train-a-machine-learning-model-using-cross-validation---mlnet"></a><span data-ttu-id="e072a-103">Trénování modelu strojového učení pomocí křížového ověřování - ML.NET</span><span class="sxs-lookup"><span data-stu-id="e072a-103">Train a machine learning model using cross-validation - ML.NET</span></span>
 
-<span data-ttu-id="39a51-104">[Křížové ověření](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) je užitečná technika pro ML aplikace.</span><span class="sxs-lookup"><span data-stu-id="39a51-104">[Cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) is a useful technique for ML applications.</span></span> <span data-ttu-id="39a51-105">Pomáhá odhadnout odchylku kvalita modelu od prvního spuštění do druhého a vyhnete se tak nutnosti extrahovat samostatný test, nastavte pro hodnocení.</span><span class="sxs-lookup"><span data-stu-id="39a51-105">It helps estimate the variance of the model quality from one run to another and also eliminates the need to extract a separate test set for evaluation.</span></span>
+<span data-ttu-id="e072a-104">[Křížové ověření](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) je užitečná technika pro ML aplikace.</span><span class="sxs-lookup"><span data-stu-id="e072a-104">[Cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) is a useful technique for ML applications.</span></span> <span data-ttu-id="e072a-105">Pomáhá odhadnout odchylku kvalita modelu od prvního spuštění do druhého a vyhnete se tak nutnosti extrahovat samostatný test, nastavte pro hodnocení.</span><span class="sxs-lookup"><span data-stu-id="e072a-105">It helps estimate the variance of the model quality from one run to another and also eliminates the need to extract a separate test set for evaluation.</span></span>
 
-<span data-ttu-id="39a51-106">ML.NET automaticky (tak dlouho, dokud všechny předzpracování se nachází v jedné learning kanálu) správně platí snadné pak používají koncepci 'rozdělení sloupce' abyste měli jistotu, že není získat související příklady oddělené.</span><span class="sxs-lookup"><span data-stu-id="39a51-106">ML.NET automatically applies featurization correctly (as long as all of the preprocessing resides in one learning pipeline) then use the 'stratification column' concept to make sure that related examples don't get separated.</span></span>
+<span data-ttu-id="e072a-106">ML.NET automaticky (tak dlouho, dokud všechny předzpracování se nachází v jedné learning kanálu) správně platí snadné pak používají koncepci 'rozdělení sloupce' abyste měli jistotu, že není získat související příklady oddělené.</span><span class="sxs-lookup"><span data-stu-id="e072a-106">ML.NET automatically applies featurization correctly (as long as all of the preprocessing resides in one learning pipeline) then use the 'stratification column' concept to make sure that related examples don't get separated.</span></span>
 
-<span data-ttu-id="39a51-107">Tady je příklad školení pro datovou sadu Iris pomocí náhodného 90/10 trénování a testování rozdělení a 5-fold křížového ověřování:</span><span class="sxs-lookup"><span data-stu-id="39a51-107">Here's a training example on an Iris dataset using randomized 90/10 train-test split, and a 5-fold cross-validation:</span></span>
+<span data-ttu-id="e072a-107">Tady je příklad školení pro datovou sadu Iris pomocí náhodného 90/10 trénování a testování rozdělení a 5-fold křížového ověřování:</span><span class="sxs-lookup"><span data-stu-id="e072a-107">Here's a training example on an Iris dataset using randomized 90/10 train-test split, and a 5-fold cross-validation:</span></span>
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 

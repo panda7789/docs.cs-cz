@@ -1,6 +1,6 @@
 ---
-title: Typy hodnot (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Typy hodnot (C# odkaz)
+ms.date: 11/26/2018
 f1_keywords:
 - cs.valuetypes
 helpviewer_keywords:
@@ -8,101 +8,105 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 3bbaea9247d975c27ed6f49dedb749312f675296
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: baf0db751cd70d50d4cf440626dd405b01c8d7ad
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526460"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147714"
 ---
-# <a name="value-types-c-reference"></a><span data-ttu-id="8f96b-102">Typy hodnot (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="8f96b-102">Value Types (C# Reference)</span></span>
-<span data-ttu-id="8f96b-103">Typy hodnot se skládá ze dvou hlavních kategorií:</span><span class="sxs-lookup"><span data-stu-id="8f96b-103">The value types consist of two main categories:</span></span>  
+# <a name="value-types-c-reference"></a><span data-ttu-id="cafcf-102">Typy hodnot (C# odkaz)</span><span class="sxs-lookup"><span data-stu-id="cafcf-102">Value types (C# Reference)</span></span>
+
+<span data-ttu-id="cafcf-103">Existují dva druhy typů hodnot:</span><span class="sxs-lookup"><span data-stu-id="cafcf-103">There are two kinds of value types:</span></span>
+
+- [<span data-ttu-id="cafcf-104">Struktury</span><span class="sxs-lookup"><span data-stu-id="cafcf-104">Structs</span></span>](struct.md)
+
+- [<span data-ttu-id="cafcf-105">Výčty</span><span class="sxs-lookup"><span data-stu-id="cafcf-105">Enumerations</span></span>](enum.md)
+
+## <a name="main-features-of-value-types"></a><span data-ttu-id="cafcf-106">Hlavní funkce typů hodnot</span><span class="sxs-lookup"><span data-stu-id="cafcf-106">Main features of value types</span></span>
+
+<span data-ttu-id="cafcf-107">Proměnné hodnotového typu obsahuje hodnotu typu.</span><span class="sxs-lookup"><span data-stu-id="cafcf-107">A variable of a value type contains a value of the type.</span></span> <span data-ttu-id="cafcf-108">Například proměnná `int` typ může obsahovat hodnotu `42`.</span><span class="sxs-lookup"><span data-stu-id="cafcf-108">For example, a variable of the `int` type might contain the value `42`.</span></span> <span data-ttu-id="cafcf-109">Tím se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označované také jako objekt.</span><span class="sxs-lookup"><span data-stu-id="cafcf-109">This differs from a variable of a reference type, which contains a reference to an instance of the type, also known as an object.</span></span> <span data-ttu-id="cafcf-110">Když přiřadí novou hodnotu do proměnné typu hodnoty, tato hodnota je zkopírována.</span><span class="sxs-lookup"><span data-stu-id="cafcf-110">When you assign a new value to a variable of a value type, that value is copied.</span></span> <span data-ttu-id="cafcf-111">Když se přiřadí novou hodnotu do proměnné typu odkazu, odkaz je zkopírován, nikoli samotného objektu.</span><span class="sxs-lookup"><span data-stu-id="cafcf-111">When you assign a new value to a variable of a reference type, the reference is copied, not the object itself.</span></span>
+
+<span data-ttu-id="cafcf-112">Všechny hodnotové typy jsou implicitně odvozena z <xref:System.ValueType?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="cafcf-112">All value types are derived implicitly from the <xref:System.ValueType?displayProperty=nameWithType>.</span></span>  
   
--   [<span data-ttu-id="8f96b-104">Struktury</span><span class="sxs-lookup"><span data-stu-id="8f96b-104">Structs</span></span>](../../../csharp/language-reference/keywords/struct.md)  
+<span data-ttu-id="cafcf-113">Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="cafcf-113">Unlike with reference types, you cannot derive a new type from a value type.</span></span> <span data-ttu-id="cafcf-114">Nicméně, jako jsou typy odkazů, struktury mohou implementovat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="cafcf-114">However, like reference types, structs can implement interfaces.</span></span>  
   
--   [<span data-ttu-id="8f96b-105">Výčty</span><span class="sxs-lookup"><span data-stu-id="8f96b-105">Enumerations</span></span>](../../../csharp/language-reference/keywords/enum.md)  
+<span data-ttu-id="cafcf-115">Hodnoty typových proměnných nesmí být `null` ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="cafcf-115">Value type variables cannot be `null` by default.</span></span> <span data-ttu-id="cafcf-116">Ale proměnné k odpovídající položce [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md) může být `null`.</span><span class="sxs-lookup"><span data-stu-id="cafcf-116">However, variables of the corresponding [nullable types](../../../csharp/programming-guide/nullable-types/index.md) can be `null`.</span></span>
   
- <span data-ttu-id="8f96b-106">Struktury spadá do následujících kategorií:</span><span class="sxs-lookup"><span data-stu-id="8f96b-106">Structs fall into these categories:</span></span>  
+<span data-ttu-id="cafcf-117">Každý hodnotový typ má implicitní výchozí konstruktor, který inicializuje výchozí hodnota tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="cafcf-117">Each value type has an implicit default constructor that initializes the default value of that type.</span></span> <span data-ttu-id="cafcf-118">Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-118">For information about default values of value types, see [Default values table](default-values-table.md).</span></span>  
   
--   <span data-ttu-id="8f96b-107">Číselné typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-107">Numeric types</span></span>  
+## <a name="simple-types"></a><span data-ttu-id="cafcf-119">Jednoduché typy</span><span class="sxs-lookup"><span data-stu-id="cafcf-119">Simple types</span></span>
+
+<span data-ttu-id="cafcf-120">*Jednoduché typy* představují sadu předdefinovaných struktury typy poskytované C# a zahrnuje následující typy:</span><span class="sxs-lookup"><span data-stu-id="cafcf-120">The *simple types* are a set of predefined struct types provided by C# and comprise the following types:</span></span>
+
+- <span data-ttu-id="cafcf-121">[Integrální typy](integral-types-table.md): číselné typy celých čísel a [char](char.md) typu</span><span class="sxs-lookup"><span data-stu-id="cafcf-121">[Integral types](integral-types-table.md): integer numeric types and the [char](char.md) type</span></span>
+- [<span data-ttu-id="cafcf-122">Typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="cafcf-122">Floating-point types</span></span>](floating-point-types-table.md)
+- [<span data-ttu-id="cafcf-123">bool</span><span class="sxs-lookup"><span data-stu-id="cafcf-123">bool</span></span>](bool.md)
+
+<span data-ttu-id="cafcf-124">Jednoduché typy jsou označeny pomocí klíčových slov, ale tato klíčová slova jsou pouze aliasy pro typy předdefinované struktury v <xref:System> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cafcf-124">The simple types are identified through keywords, but these keywords are simply aliases for predefined struct types in the <xref:System> namespace.</span></span> <span data-ttu-id="cafcf-125">Například [int](int.md) je alias pro <xref:System.Int32?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="cafcf-125">For example, [int](int.md) is an alias of <xref:System.Int32?displayProperty=nameWithType>.</span></span> <span data-ttu-id="cafcf-126">Úplný seznam aliasů naleznete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-126">For a complete list of aliases, see [Built-in types table](built-in-types-table.md).</span></span>
+
+<span data-ttu-id="cafcf-127">Jednoduché typy liší od jiné typy struct, že umožňují některé další operace:</span><span class="sxs-lookup"><span data-stu-id="cafcf-127">The simple types differ from other struct types in that they permit certain additional operations:</span></span>
+
+- <span data-ttu-id="cafcf-128">Jednoduché typy může být inicializována pomocí literálů.</span><span class="sxs-lookup"><span data-stu-id="cafcf-128">Simple types can be initialized by using literals.</span></span> <span data-ttu-id="cafcf-129">Například `'A'` je literál typu `char` a `2001` je literál typu `int`.</span><span class="sxs-lookup"><span data-stu-id="cafcf-129">For example, `'A'` is a literal of the type `char` and `2001` is a literal of the type `int`.</span></span>
+
+- <span data-ttu-id="cafcf-130">Je možné deklarovat konstanty jednoduché typy s [const](const.md) – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="cafcf-130">You can declare constants of the simple types with the [const](const.md) keyword.</span></span> <span data-ttu-id="cafcf-131">Není možné mít konstanty jiné typy struct.</span><span class="sxs-lookup"><span data-stu-id="cafcf-131">It's not possible to have constants of other struct types.</span></span>
+
+- <span data-ttu-id="cafcf-132">Výrazy konstant, jehož operandy jsou všechny jednoduchý typ konstanty, jsou vyhodnocovány v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="cafcf-132">Constant expressions, whose operands are all simple type constants, are evaluated at compile time.</span></span>
+
+<span data-ttu-id="cafcf-133">Další informace najdete v tématu [jednoduché typy](~/_csharplang/spec/types.md#simple-types) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-133">For more information, see the [Simple types](~/_csharplang/spec/types.md#simple-types) section of the [C# language specification](../language-specification/index.md).</span></span>
   
-    -   [<span data-ttu-id="8f96b-108">Celočíselné typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-108">Integral types</span></span>](../../../csharp/language-reference/keywords/integral-types-table.md)  
-  
-    -   [<span data-ttu-id="8f96b-109">Typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="8f96b-109">Floating-point types</span></span>](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
-  
--   [<span data-ttu-id="8f96b-110">bool</span><span class="sxs-lookup"><span data-stu-id="8f96b-110">bool</span></span>](../../../csharp/language-reference/keywords/bool.md)  
-  
--   <span data-ttu-id="8f96b-111">Struktury definované uživatelem.</span><span class="sxs-lookup"><span data-stu-id="8f96b-111">User defined structs.</span></span>  
-  
-## <a name="main-features-of-value-types"></a><span data-ttu-id="8f96b-112">Hlavní funkce typů hodnot</span><span class="sxs-lookup"><span data-stu-id="8f96b-112">Main Features of Value Types</span></span>  
- <span data-ttu-id="8f96b-113">Proměnné, které jsou založené na hodnotách přímo obsahovat hodnoty.</span><span class="sxs-lookup"><span data-stu-id="8f96b-113">Variables that are based on value types directly contain values.</span></span> <span data-ttu-id="8f96b-114">Přiřazení jednu proměnnou typu hodnoty na jiné kopie omezením hodnoty.</span><span class="sxs-lookup"><span data-stu-id="8f96b-114">Assigning one value type variable to another copies the contained value.</span></span> <span data-ttu-id="8f96b-115">Tím se liší od přiřazení proměnné referenčního typu, který zkopíruje odkaz na objekt, ale nikoli samotného objektu.</span><span class="sxs-lookup"><span data-stu-id="8f96b-115">This differs from the assignment of reference type variables, which copies a reference to the object but not the object itself.</span></span>  
-  
- <span data-ttu-id="8f96b-116">Všechny hodnotové typy jsou implicitně odvozena z <xref:System.ValueType?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8f96b-116">All value types are derived implicitly from the <xref:System.ValueType?displayProperty=nameWithType>.</span></span>  
-  
- <span data-ttu-id="8f96b-117">Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="8f96b-117">Unlike with reference types, you cannot derive a new type from a value type.</span></span> <span data-ttu-id="8f96b-118">Nicméně, jako jsou typy odkazů, struktury mohou implementovat rozhraní.</span><span class="sxs-lookup"><span data-stu-id="8f96b-118">However, like reference types, structs can implement interfaces.</span></span>  
-  
- <span data-ttu-id="8f96b-119">Na rozdíl od typy odkazů, nemůže obsahovat typ hodnoty `null` hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8f96b-119">Unlike reference types, a value type cannot contain the `null` value.</span></span> <span data-ttu-id="8f96b-120">Ale [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md) funkci povolit pro typy hodnot má být přiřazena k `null`.</span><span class="sxs-lookup"><span data-stu-id="8f96b-120">However, the [nullable types](../../../csharp/programming-guide/nullable-types/index.md) feature does allow for value types to be assigned to `null`.</span></span>  
-  
- <span data-ttu-id="8f96b-121">Každý hodnotový typ má implicitní výchozí konstruktor, který inicializuje výchozí hodnota tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="8f96b-121">Each value type has an implicit default constructor that initializes the default value of that type.</span></span> <span data-ttu-id="8f96b-122">Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md).</span><span class="sxs-lookup"><span data-stu-id="8f96b-122">For information about default values of value types, see [Default Values Table](../../../csharp/language-reference/keywords/default-values-table.md).</span></span>  
-  
-## <a name="main-features-of-simple-types"></a><span data-ttu-id="8f96b-123">Hlavní funkce jednoduché typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-123">Main Features of Simple Types</span></span>  
- <span data-ttu-id="8f96b-124">Některé jednoduché typy – tyto celé číslo na jazyk C# – jsou aliasy typů rozhraní .NET Framework System.</span><span class="sxs-lookup"><span data-stu-id="8f96b-124">All of the simple types -- those integral to the C# language -- are aliases of the .NET Framework System types.</span></span> <span data-ttu-id="8f96b-125">Například [int](../../../csharp/language-reference/keywords/int.md) je alias pro <xref:System.Int32?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="8f96b-125">For example, [int](../../../csharp/language-reference/keywords/int.md) is an alias of <xref:System.Int32?displayProperty=nameWithType>.</span></span> <span data-ttu-id="8f96b-126">Úplný seznam aliasů naleznete v tématu [tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md).</span><span class="sxs-lookup"><span data-stu-id="8f96b-126">For a complete list of aliases, see [Built-In Types Table](../../../csharp/language-reference/keywords/built-in-types-table.md).</span></span>  
-  
- <span data-ttu-id="8f96b-127">Konstantní výrazy, jehož operandy jsou všechny jednoduchý typ konstanty, jsou vyhodnocovány v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="8f96b-127">Constant expressions, whose operands are all simple type constants, are evaluated at compilation time.</span></span>  
-  
- <span data-ttu-id="8f96b-128">Jednoduché typy může být inicializována pomocí literálů.</span><span class="sxs-lookup"><span data-stu-id="8f96b-128">Simple types can be initialized by using literals.</span></span> <span data-ttu-id="8f96b-129">Například "A" je literál typu `char` a 2001 je literál typu `int`.</span><span class="sxs-lookup"><span data-stu-id="8f96b-129">For example, 'A' is a literal of the type `char` and 2001 is a literal of the type `int`.</span></span>  
-  
-## <a name="initializing-value-types"></a><span data-ttu-id="8f96b-130">Inicializace typů hodnot</span><span class="sxs-lookup"><span data-stu-id="8f96b-130">Initializing Value Types</span></span>  
- <span data-ttu-id="8f96b-131">Lokální proměnné v jazyce C# musí být inicializován před jejich použití.</span><span class="sxs-lookup"><span data-stu-id="8f96b-131">Local variables in C# must be initialized before they are used.</span></span> <span data-ttu-id="8f96b-132">Například může prohlásit místní proměnné bez inicializace jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="8f96b-132">For example, you might declare a local variable without initialization as in the following example:</span></span>  
+## <a name="initializing-value-types"></a><span data-ttu-id="cafcf-134">Inicializace typů hodnot</span><span class="sxs-lookup"><span data-stu-id="cafcf-134">Initializing value types</span></span>
+
+ <span data-ttu-id="cafcf-135">Lokální proměnné v jazyce C# musí být inicializován před jejich použití.</span><span class="sxs-lookup"><span data-stu-id="cafcf-135">Local variables in C# must be initialized before they are used.</span></span> <span data-ttu-id="cafcf-136">Například může prohlásit místní proměnné bez inicializace jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="cafcf-136">For example, you might declare a local variable without initialization as in the following example:</span></span>  
   
 ```csharp  
 int myInt;  
 ```  
   
- <span data-ttu-id="8f96b-133">Nelze ji použít předtím, než ji inicializovat.</span><span class="sxs-lookup"><span data-stu-id="8f96b-133">You cannot use it before you initialize it.</span></span> <span data-ttu-id="8f96b-134">Můžete inicializovat pomocí následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="8f96b-134">You can initialize it using the following statement:</span></span>  
+ <span data-ttu-id="cafcf-137">Nelze ji použít předtím, než ji inicializovat.</span><span class="sxs-lookup"><span data-stu-id="cafcf-137">You cannot use it before you initialize it.</span></span> <span data-ttu-id="cafcf-138">Můžete inicializovat pomocí následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="cafcf-138">You can initialize it using the following statement:</span></span>  
   
 ```csharp  
 myInt = new int();  // Invoke default constructor for int type.  
 ```  
   
- <span data-ttu-id="8f96b-135">Tento příkaz je ekvivalentem následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="8f96b-135">This statement is equivalent to the following statement:</span></span>  
+ <span data-ttu-id="cafcf-139">Tento příkaz je ekvivalentem následujícího příkazu:</span><span class="sxs-lookup"><span data-stu-id="cafcf-139">This statement is equivalent to the following statement:</span></span>  
   
 ```csharp  
 myInt = 0;         // Assign an initial value, 0 in this example.  
 ```  
   
- <span data-ttu-id="8f96b-136">Můžete samozřejmě máte deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:</span><span class="sxs-lookup"><span data-stu-id="8f96b-136">You can, of course, have the declaration and the initialization in the same statement as in the following examples:</span></span>  
+ <span data-ttu-id="cafcf-140">Můžete samozřejmě máte deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:</span><span class="sxs-lookup"><span data-stu-id="cafcf-140">You can, of course, have the declaration and the initialization in the same statement as in the following examples:</span></span>  
   
 ```csharp  
 int myInt = new int();  
 ```  
   
- <span data-ttu-id="8f96b-137">– nebo –</span><span class="sxs-lookup"><span data-stu-id="8f96b-137">–or–</span></span>  
+ <span data-ttu-id="cafcf-141">– nebo –</span><span class="sxs-lookup"><span data-stu-id="cafcf-141">–or–</span></span>  
   
 ```csharp  
 int myInt = 0;  
 ```  
   
- <span data-ttu-id="8f96b-138">Použití [nové](../../../csharp/language-reference/keywords/new.md) operátor volá výchozí konstruktor třídy určitého typu a přiřadí výchozí hodnotu proměnné.</span><span class="sxs-lookup"><span data-stu-id="8f96b-138">Using the [new](../../../csharp/language-reference/keywords/new.md) operator calls the default constructor of the specific type and assigns the default value to the variable.</span></span> <span data-ttu-id="8f96b-139">V předchozím příkladu, výchozí konstruktor přiřazena hodnota `0` k `myInt`.</span><span class="sxs-lookup"><span data-stu-id="8f96b-139">In the preceding example, the default constructor assigned the value `0` to `myInt`.</span></span> <span data-ttu-id="8f96b-140">Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md).</span><span class="sxs-lookup"><span data-stu-id="8f96b-140">For more information about values assigned by calling default constructors, see [Default Values Table](../../../csharp/language-reference/keywords/default-values-table.md).</span></span>  
+ <span data-ttu-id="cafcf-142">Použití [nové](new.md) operátor volá výchozí konstruktor třídy určitého typu a přiřadí výchozí hodnotu proměnné.</span><span class="sxs-lookup"><span data-stu-id="cafcf-142">Using the [new](new.md) operator calls the default constructor of the specific type and assigns the default value to the variable.</span></span> <span data-ttu-id="cafcf-143">V předchozím příkladu, výchozí konstruktor přiřazena hodnota `0` k `myInt`.</span><span class="sxs-lookup"><span data-stu-id="cafcf-143">In the preceding example, the default constructor assigned the value `0` to `myInt`.</span></span> <span data-ttu-id="cafcf-144">Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-144">For more information about values assigned by calling default constructors, see [Default values table](default-values-table.md).</span></span>  
   
- <span data-ttu-id="8f96b-141">Pomocí uživatelem definované typy [nové](../../../csharp/language-reference/keywords/new.md) k vyvolání výchozího konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="8f96b-141">With user-defined types, use [new](../../../csharp/language-reference/keywords/new.md) to invoke the default constructor.</span></span> <span data-ttu-id="8f96b-142">Například následující příkaz volá výchozí konstruktor třídy `Point` struktury:</span><span class="sxs-lookup"><span data-stu-id="8f96b-142">For example, the following statement invokes the default constructor of the `Point` struct:</span></span>  
+ <span data-ttu-id="cafcf-145">Pomocí uživatelem definované typy [nové](new.md) k vyvolání výchozího konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="cafcf-145">With user-defined types, use [new](new.md) to invoke the default constructor.</span></span> <span data-ttu-id="cafcf-146">Například následující příkaz volá výchozí konstruktor třídy `Point` struktury:</span><span class="sxs-lookup"><span data-stu-id="cafcf-146">For example, the following statement invokes the default constructor of the `Point` struct:</span></span>  
   
 ```csharp  
 Point p = new Point(); // Invoke default constructor for the struct.  
 ```  
   
- <span data-ttu-id="8f96b-143">Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.</span><span class="sxs-lookup"><span data-stu-id="8f96b-143">After this call, the struct is considered to be definitely assigned; that is, all its members are initialized to their default values.</span></span>  
+ <span data-ttu-id="cafcf-147">Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.</span><span class="sxs-lookup"><span data-stu-id="cafcf-147">After this call, the struct is considered to be definitely assigned; that is, all its members are initialized to their default values.</span></span>  
   
- <span data-ttu-id="8f96b-144">Další informace o operátoru new najdete v tématu [nové](../../../csharp/language-reference/keywords/new.md).</span><span class="sxs-lookup"><span data-stu-id="8f96b-144">For more information about the new operator, see [new](../../../csharp/language-reference/keywords/new.md).</span></span>  
+ <span data-ttu-id="cafcf-148">Další informace o `new` operátoru, naleznete v tématu [nové](new.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-148">For more information about the `new` operator, see [new](new.md).</span></span>  
   
- <span data-ttu-id="8f96b-145">Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).</span><span class="sxs-lookup"><span data-stu-id="8f96b-145">For information about formatting the output of numeric types, see [Formatting Numeric Results Table](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md).</span></span>  
+ <span data-ttu-id="cafcf-149">Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).</span><span class="sxs-lookup"><span data-stu-id="cafcf-149">For information about formatting the output of numeric types, see [Formatting numeric results table](formatting-numeric-results-table.md).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8f96b-146">Viz také</span><span class="sxs-lookup"><span data-stu-id="8f96b-146">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cafcf-150">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cafcf-150">See also</span></span>
 
-- [<span data-ttu-id="8f96b-147">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8f96b-147">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="8f96b-148">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="8f96b-148">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="8f96b-149">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8f96b-149">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
-- [<span data-ttu-id="8f96b-150">Typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-150">Types</span></span>](../../../csharp/language-reference/keywords/types.md)  
-- [<span data-ttu-id="8f96b-151">Referenční tabulky pro typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-151">Reference Tables for Types</span></span>](../../../csharp/language-reference/keywords/reference-tables-for-types.md)  
-- [<span data-ttu-id="8f96b-152">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="8f96b-152">Reference Types</span></span>](../../../csharp/language-reference/keywords/reference-types.md)  
-- [<span data-ttu-id="8f96b-153">Typy s možnou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="8f96b-153">Nullable types</span></span>](../../programming-guide/nullable-types/index.md)  
+- [<span data-ttu-id="cafcf-151">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="cafcf-151">C# Reference</span></span>](../index.md)  
+- [<span data-ttu-id="cafcf-152">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="cafcf-152">C# Programming Guide</span></span>](../../programming-guide/index.md)  
+- [<span data-ttu-id="cafcf-153">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="cafcf-153">C# Keywords</span></span>](index.md)  
+- [<span data-ttu-id="cafcf-154">Typy</span><span class="sxs-lookup"><span data-stu-id="cafcf-154">Types</span></span>](types.md)  
+- [<span data-ttu-id="cafcf-155">Referenční tabulky pro typy</span><span class="sxs-lookup"><span data-stu-id="cafcf-155">Reference tables for types</span></span>](reference-tables-for-types.md)  
+- [<span data-ttu-id="cafcf-156">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="cafcf-156">Reference Types</span></span>](reference-types.md)  
+- [<span data-ttu-id="cafcf-157">Typy s možnou hodnotou Null</span><span class="sxs-lookup"><span data-stu-id="cafcf-157">Nullable types</span></span>](../../programming-guide/nullable-types/index.md)  
