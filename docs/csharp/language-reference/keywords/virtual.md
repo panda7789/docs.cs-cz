@@ -1,5 +1,6 @@
 ---
-title: virtual (Referenční dokumentace jazyka C#)
+title: virtuální - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - virtual_CSharpKeyword
@@ -7,15 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 384cc442e51ec96cafe9b44ef945bb913b0e65f6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 0a6eb7bfcd598eb54b4b0cc5661d219367da2238
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44201098"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237386"
 ---
-# <a name="virtual-c-reference"></a><span data-ttu-id="ddc48-102">virtual (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="ddc48-102">virtual (C# Reference)</span></span>
-<span data-ttu-id="ddc48-103">`virtual` – Klíčové slovo se používá k úpravě deklarace metody, vlastnost, indexer nebo událost a povolit pro přepsání v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="ddc48-103">The `virtual` keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class.</span></span> <span data-ttu-id="ddc48-104">Například tato metoda může být přepsána všechny třídy, která dědí ho:</span><span class="sxs-lookup"><span data-stu-id="ddc48-104">For example, this method can be overridden by any class that inherits it:</span></span>  
+# <a name="virtual-c-reference"></a><span data-ttu-id="2916b-102">virtual (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="2916b-102">virtual (C# Reference)</span></span>
+<span data-ttu-id="2916b-103">`virtual` – Klíčové slovo se používá k úpravě deklarace metody, vlastnost, indexer nebo událost a povolit pro přepsání v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="2916b-103">The `virtual` keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class.</span></span> <span data-ttu-id="2916b-104">Například tato metoda může být přepsána všechny třídy, která dědí ho:</span><span class="sxs-lookup"><span data-stu-id="2916b-104">For example, this method can be overridden by any class that inherits it:</span></span>  
   
 ```csharp  
 public virtual double Area()   
@@ -24,46 +25,46 @@ public virtual double Area()
 }  
 ```  
   
- <span data-ttu-id="ddc48-105">Implementace virtuální člen může změnit [přepsáním členu](../../../csharp/language-reference/keywords/override.md) v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="ddc48-105">The implementation of a virtual member can be changed by an [overriding member](../../../csharp/language-reference/keywords/override.md) in a derived class.</span></span> <span data-ttu-id="ddc48-106">Další informace o tom, jak používat `virtual` – klíčové slovo, naleznete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [vědět, když pomocí přepsání a nových klíčových slov](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).</span><span class="sxs-lookup"><span data-stu-id="ddc48-106">For more information about how to use the `virtual` keyword, see [Versioning with the Override and New Keywords](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) and [Knowing When to Use Override and New Keywords](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).</span></span>  
+ <span data-ttu-id="2916b-105">Implementace virtuální člen může změnit [přepsáním členu](../../../csharp/language-reference/keywords/override.md) v odvozené třídě.</span><span class="sxs-lookup"><span data-stu-id="2916b-105">The implementation of a virtual member can be changed by an [overriding member](../../../csharp/language-reference/keywords/override.md) in a derived class.</span></span> <span data-ttu-id="2916b-106">Další informace o tom, jak používat `virtual` – klíčové slovo, naleznete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [vědět, když pomocí přepsání a nových klíčových slov](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).</span><span class="sxs-lookup"><span data-stu-id="2916b-106">For more information about how to use the `virtual` keyword, see [Versioning with the Override and New Keywords](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) and [Knowing When to Use Override and New Keywords](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ddc48-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ddc48-107">Remarks</span></span>  
- <span data-ttu-id="ddc48-108">Při vyvolání virtuální metody run-time typu objektu se kontroluje u přepsáním členu.</span><span class="sxs-lookup"><span data-stu-id="ddc48-108">When a virtual method is invoked, the run-time type of the object is checked for an overriding member.</span></span> <span data-ttu-id="ddc48-109">Přepsáním členu v nejvíce odvozená třída je voláno, původní člen, který může být žádný odvozená třída má potlačenou člena.</span><span class="sxs-lookup"><span data-stu-id="ddc48-109">The overriding member in the most derived class is called, which might be the original member, if no derived class has overridden the member.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2916b-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2916b-107">Remarks</span></span>  
+ <span data-ttu-id="2916b-108">Při vyvolání virtuální metody run-time typu objektu se kontroluje u přepsáním členu.</span><span class="sxs-lookup"><span data-stu-id="2916b-108">When a virtual method is invoked, the run-time type of the object is checked for an overriding member.</span></span> <span data-ttu-id="2916b-109">Přepsáním členu v nejvíce odvozená třída je voláno, původní člen, který může být žádný odvozená třída má potlačenou člena.</span><span class="sxs-lookup"><span data-stu-id="2916b-109">The overriding member in the most derived class is called, which might be the original member, if no derived class has overridden the member.</span></span>  
   
- <span data-ttu-id="ddc48-110">Ve výchozím nastavení jsou nevirtuální metody.</span><span class="sxs-lookup"><span data-stu-id="ddc48-110">By default, methods are non-virtual.</span></span> <span data-ttu-id="ddc48-111">Nevirtuální metoda nelze přepsat.</span><span class="sxs-lookup"><span data-stu-id="ddc48-111">You cannot override a non-virtual method.</span></span>  
+ <span data-ttu-id="2916b-110">Ve výchozím nastavení jsou nevirtuální metody.</span><span class="sxs-lookup"><span data-stu-id="2916b-110">By default, methods are non-virtual.</span></span> <span data-ttu-id="2916b-111">Nevirtuální metoda nelze přepsat.</span><span class="sxs-lookup"><span data-stu-id="2916b-111">You cannot override a non-virtual method.</span></span>  
   
- <span data-ttu-id="ddc48-112">Nelze použít `virtual` modifikátor `static`, `abstract`, `private`, nebo `override` modifikátory.</span><span class="sxs-lookup"><span data-stu-id="ddc48-112">You cannot use the `virtual` modifier with the `static`, `abstract`, `private`, or `override` modifiers.</span></span> <span data-ttu-id="ddc48-113">Následující příklad ukazuje virtuální vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="ddc48-113">The following example shows a virtual property:</span></span>  
+ <span data-ttu-id="2916b-112">Nelze použít `virtual` modifikátor `static`, `abstract`, `private`, nebo `override` modifikátory.</span><span class="sxs-lookup"><span data-stu-id="2916b-112">You cannot use the `virtual` modifier with the `static`, `abstract`, `private`, or `override` modifiers.</span></span> <span data-ttu-id="2916b-113">Následující příklad ukazuje virtuální vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="2916b-113">The following example shows a virtual property:</span></span>  
   
  [!code-csharp[csrefKeywordsModifiers#26](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_1.cs)]  
   
- <span data-ttu-id="ddc48-114">Virtuální vlastnosti se chovají stejně jako abstraktní metody, s výjimkou rozdílů v syntaxi deklarace a volání.</span><span class="sxs-lookup"><span data-stu-id="ddc48-114">Virtual properties behave like abstract methods, except for the differences in declaration and invocation syntax.</span></span>  
+ <span data-ttu-id="2916b-114">Virtuální vlastnosti se chovají stejně jako abstraktní metody, s výjimkou rozdílů v syntaxi deklarace a volání.</span><span class="sxs-lookup"><span data-stu-id="2916b-114">Virtual properties behave like abstract methods, except for the differences in declaration and invocation syntax.</span></span>  
   
--   <span data-ttu-id="ddc48-115">Jedná se o chybu používat `virtual` modifikátor statickou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="ddc48-115">It is an error to use the `virtual` modifier on a static property.</span></span>  
+-   <span data-ttu-id="2916b-115">Jedná se o chybu používat `virtual` modifikátor statickou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="2916b-115">It is an error to use the `virtual` modifier on a static property.</span></span>  
   
--   <span data-ttu-id="ddc48-116">Virtuální zděděnou vlastnost možné přepsat v odvozené třídě včetně, která používá deklarace vlastnosti `override` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="ddc48-116">A virtual inherited property can be overridden in a derived class by including a property declaration that uses the `override` modifier.</span></span>  
+-   <span data-ttu-id="2916b-116">Virtuální zděděnou vlastnost možné přepsat v odvozené třídě včetně, která používá deklarace vlastnosti `override` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="2916b-116">A virtual inherited property can be overridden in a derived class by including a property declaration that uses the `override` modifier.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ddc48-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="ddc48-117">Example</span></span>  
- <span data-ttu-id="ddc48-118">V tomto příkladu `Shape` třída obsahuje dvě souřadnice `x`, `y`a `Area()` virtuální metody.</span><span class="sxs-lookup"><span data-stu-id="ddc48-118">In this example, the `Shape` class contains the two coordinates `x`, `y`, and the `Area()` virtual method.</span></span> <span data-ttu-id="ddc48-119">Jiný tvar třídy, jako například `Circle`, `Cylinder`, a `Sphere` dědit `Shape` třídy a útoku na počítá pro každý obrázek.</span><span class="sxs-lookup"><span data-stu-id="ddc48-119">Different shape classes such as `Circle`, `Cylinder`, and `Sphere` inherit the `Shape` class, and the surface area is calculated for each figure.</span></span> <span data-ttu-id="ddc48-120">Každá odvozená třída má svůj vlastní implementaci přepsání `Area()`.</span><span class="sxs-lookup"><span data-stu-id="ddc48-120">Each derived class has its own override implementation of `Area()`.</span></span>  
+## <a name="example"></a><span data-ttu-id="2916b-117">Příklad</span><span class="sxs-lookup"><span data-stu-id="2916b-117">Example</span></span>  
+ <span data-ttu-id="2916b-118">V tomto příkladu `Shape` třída obsahuje dvě souřadnice `x`, `y`a `Area()` virtuální metody.</span><span class="sxs-lookup"><span data-stu-id="2916b-118">In this example, the `Shape` class contains the two coordinates `x`, `y`, and the `Area()` virtual method.</span></span> <span data-ttu-id="2916b-119">Jiný tvar třídy, jako například `Circle`, `Cylinder`, a `Sphere` dědit `Shape` třídy a útoku na počítá pro každý obrázek.</span><span class="sxs-lookup"><span data-stu-id="2916b-119">Different shape classes such as `Circle`, `Cylinder`, and `Sphere` inherit the `Shape` class, and the surface area is calculated for each figure.</span></span> <span data-ttu-id="2916b-120">Každá odvozená třída má svůj vlastní implementaci přepsání `Area()`.</span><span class="sxs-lookup"><span data-stu-id="2916b-120">Each derived class has its own override implementation of `Area()`.</span></span>  
   
- <span data-ttu-id="ddc48-121">Všimněte si, že zděděné třídy `Circle`, `Sphere`, a `Cylinder` používat konstruktory, které inicializuje základní třídu, jak je znázorněno v následující deklaraci.</span><span class="sxs-lookup"><span data-stu-id="ddc48-121">Notice that the inherited classes `Circle`, `Sphere`, and `Cylinder` all use constructors that initialize the base class, as shown in the following declaration.</span></span>  
+ <span data-ttu-id="2916b-121">Všimněte si, že zděděné třídy `Circle`, `Sphere`, a `Cylinder` používat konstruktory, které inicializuje základní třídu, jak je znázorněno v následující deklaraci.</span><span class="sxs-lookup"><span data-stu-id="2916b-121">Notice that the inherited classes `Circle`, `Sphere`, and `Cylinder` all use constructors that initialize the base class, as shown in the following declaration.</span></span>  
   
 ```csharp  
 public Cylinder(double r, double h): base(r, h) {}  
 ```  
   
- <span data-ttu-id="ddc48-122">Následující program vypočítá a zobrazí příslušné oblasti pro každý obrázek vyvoláním vhodné implementaci pro `Area()` metoda podle objektu, který je přidružený k metodě.</span><span class="sxs-lookup"><span data-stu-id="ddc48-122">The following program calculates and displays the appropriate area for each figure by invoking the appropriate implementation of the `Area()` method, according to the object that is associated with the method.</span></span>  
+ <span data-ttu-id="2916b-122">Následující program vypočítá a zobrazí příslušné oblasti pro každý obrázek vyvoláním vhodné implementaci pro `Area()` metoda podle objektu, který je přidružený k metodě.</span><span class="sxs-lookup"><span data-stu-id="2916b-122">The following program calculates and displays the appropriate area for each figure by invoking the appropriate implementation of the `Area()` method, according to the object that is associated with the method.</span></span>  
   
  [!code-csharp[csrefKeywordsModifiers#23](../../../csharp/language-reference/keywords/codesnippet/CSharp/virtual_2.cs)]  
   
-## <a name="c-language-specification"></a><span data-ttu-id="ddc48-123">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ddc48-123">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="2916b-123">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2916b-123">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="ddc48-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="ddc48-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2916b-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="2916b-124">See Also</span></span>
 
-- [<span data-ttu-id="ddc48-125">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ddc48-125">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="ddc48-126">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="ddc48-126">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="ddc48-127">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="ddc48-127">Modifiers</span></span>](../../../csharp/language-reference/keywords/modifiers.md)  
-- [<span data-ttu-id="ddc48-128">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ddc48-128">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
-- [<span data-ttu-id="ddc48-129">Polymorfismus</span><span class="sxs-lookup"><span data-stu-id="ddc48-129">Polymorphism</span></span>](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
-- [<span data-ttu-id="ddc48-130">abstract</span><span class="sxs-lookup"><span data-stu-id="ddc48-130">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)  
-- [<span data-ttu-id="ddc48-131">override</span><span class="sxs-lookup"><span data-stu-id="ddc48-131">override</span></span>](../../../csharp/language-reference/keywords/override.md)  
-- [<span data-ttu-id="ddc48-132">new</span><span class="sxs-lookup"><span data-stu-id="ddc48-132">new</span></span>](../../../csharp/language-reference/keywords/new.md)
+- [<span data-ttu-id="2916b-125">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2916b-125">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="2916b-126">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2916b-126">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="2916b-127">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="2916b-127">Modifiers</span></span>](../../../csharp/language-reference/keywords/modifiers.md)  
+- [<span data-ttu-id="2916b-128">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2916b-128">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+- [<span data-ttu-id="2916b-129">Polymorfismus</span><span class="sxs-lookup"><span data-stu-id="2916b-129">Polymorphism</span></span>](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
+- [<span data-ttu-id="2916b-130">abstract</span><span class="sxs-lookup"><span data-stu-id="2916b-130">abstract</span></span>](../../../csharp/language-reference/keywords/abstract.md)  
+- [<span data-ttu-id="2916b-131">override</span><span class="sxs-lookup"><span data-stu-id="2916b-131">override</span></span>](../../../csharp/language-reference/keywords/override.md)  
+- [<span data-ttu-id="2916b-132">new</span><span class="sxs-lookup"><span data-stu-id="2916b-132">new</span></span>](../../../csharp/language-reference/keywords/new.md)

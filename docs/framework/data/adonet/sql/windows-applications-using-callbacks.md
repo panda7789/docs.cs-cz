@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: c80f65ad2a4c7c48e32615c3cfdf754996f91bc1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6fb1883812237c778e1ecfab3e86fb57de52efc5
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187868"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237958"
 ---
-# <a name="windows-applications-using-callbacks"></a><span data-ttu-id="ecdd7-102">Aplikace Windows pomocí zpětných volání</span><span class="sxs-lookup"><span data-stu-id="ecdd7-102">Windows Applications Using Callbacks</span></span>
-<span data-ttu-id="ecdd7-103">Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-103">In most asynchronous processing scenarios, you want to start a database operation and continue running other processes without waiting for the database operation to complete.</span></span> <span data-ttu-id="ecdd7-104">Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-104">However, many scenarios require doing something once the database operation has ended.</span></span> <span data-ttu-id="ecdd7-105">V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-105">In a Windows application, for example, you may want to delegate the long-running operation to a background thread while allowing the user interface thread to remain responsive.</span></span> <span data-ttu-id="ecdd7-106">Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-106">However, when the database operation is complete, you want to use the results to populate the form.</span></span> <span data-ttu-id="ecdd7-107">Tento druh scénář nejlépe implementuje pomocí zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-107">This type of scenario is best implemented with a callback.</span></span>  
+# <a name="windows-applications-using-callbacks"></a><span data-ttu-id="e9600-102">Aplikace Windows pomocí zpětných volání</span><span class="sxs-lookup"><span data-stu-id="e9600-102">Windows Applications Using Callbacks</span></span>
+<span data-ttu-id="e9600-103">Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze.</span><span class="sxs-lookup"><span data-stu-id="e9600-103">In most asynchronous processing scenarios, you want to start a database operation and continue running other processes without waiting for the database operation to complete.</span></span> <span data-ttu-id="e9600-104">Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze.</span><span class="sxs-lookup"><span data-stu-id="e9600-104">However, many scenarios require doing something once the database operation has ended.</span></span> <span data-ttu-id="e9600-105">V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat.</span><span class="sxs-lookup"><span data-stu-id="e9600-105">In a Windows application, for example, you may want to delegate the long-running operation to a background thread while allowing the user interface thread to remain responsive.</span></span> <span data-ttu-id="e9600-106">Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře.</span><span class="sxs-lookup"><span data-stu-id="e9600-106">However, when the database operation is complete, you want to use the results to populate the form.</span></span> <span data-ttu-id="e9600-107">Tento druh scénář nejlépe implementuje pomocí zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="e9600-107">This type of scenario is best implemented with a callback.</span></span>  
   
- <span data-ttu-id="ecdd7-108">Definujte zpětné volání tak, že určíte <xref:System.AsyncCallback> delegování v <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-108">You define a callback by specifying an <xref:System.AsyncCallback> delegate in the <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, or <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> method.</span></span> <span data-ttu-id="ecdd7-109">Delegát je volána po dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-109">The delegate is called when the operation is complete.</span></span> <span data-ttu-id="ecdd7-110">Můžete předat delegáta odkaz na <xref:System.Data.SqlClient.SqlCommand> samostatně, což usnadňuje přístup <xref:System.Data.SqlClient.SqlCommand> objektu a volat odpovídající `End` metody bez nutnosti použít globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-110">You can pass the delegate a reference to the <xref:System.Data.SqlClient.SqlCommand> itself, making it easy to access the <xref:System.Data.SqlClient.SqlCommand> object and call the appropriate `End` method without having to use a global variable.</span></span>  
+ <span data-ttu-id="e9600-108">Definujte zpětné volání tak, že určíte <xref:System.AsyncCallback> delegování v <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, nebo <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="e9600-108">You define a callback by specifying an <xref:System.AsyncCallback> delegate in the <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>, <xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>, or <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> method.</span></span> <span data-ttu-id="e9600-109">Delegát je volána po dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="e9600-109">The delegate is called when the operation is complete.</span></span> <span data-ttu-id="e9600-110">Můžete předat delegáta odkaz na <xref:System.Data.SqlClient.SqlCommand> samostatně, což usnadňuje přístup <xref:System.Data.SqlClient.SqlCommand> objektu a volat odpovídající `End` metody bez nutnosti použít globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="e9600-110">You can pass the delegate a reference to the <xref:System.Data.SqlClient.SqlCommand> itself, making it easy to access the <xref:System.Data.SqlClient.SqlCommand> object and call the appropriate `End` method without having to use a global variable.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ecdd7-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="ecdd7-111">Example</span></span>  
- <span data-ttu-id="ecdd7-112">Následující aplikace Windows demonstruje použití <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metoda provádí příkaz jazyka Transact-SQL, který zahrnuje trvat několik sekund (emulace příkaz dlouho probíhající).</span><span class="sxs-lookup"><span data-stu-id="ecdd7-112">The following Windows application demonstrates the use of the <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> method, executing a Transact-SQL statement that includes a delay of a few seconds (emulating a long-running command).</span></span>  
+## <a name="example"></a><span data-ttu-id="e9600-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="e9600-111">Example</span></span>  
+ <span data-ttu-id="e9600-112">Následující aplikace Windows demonstruje použití <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> metoda provádí příkaz jazyka Transact-SQL, který zahrnuje trvat několik sekund (emulace příkaz dlouho probíhající).</span><span class="sxs-lookup"><span data-stu-id="e9600-112">The following Windows application demonstrates the use of the <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> method, executing a Transact-SQL statement that includes a delay of a few seconds (emulating a long-running command).</span></span>  
   
- <span data-ttu-id="ecdd7-113">Tento příklad ukazuje několik technik důležité, včetně volání metody, která komunikuje s formuláři v samostatném vlákně.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-113">This example demonstrates a number of important techniques, including calling a method that interacts with the form from a separate thread.</span></span> <span data-ttu-id="ecdd7-114">Kromě toho tento příklad ukazuje, jak musí zablokuje uživatelům možnost souběžně spuštění příkazu více než jednou, a jak musíte zajistit, aby formuláři nezavře před postupem zpětného volání je volána.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-114">In addition, this example demonstrates how you must block users from concurrently executing a command multiple times, and how you must ensure that the form does not close before the callback procedure is called.</span></span>  
+ <span data-ttu-id="e9600-113">Tento příklad ukazuje několik technik důležité, včetně volání metody, která komunikuje s formuláři v samostatném vlákně.</span><span class="sxs-lookup"><span data-stu-id="e9600-113">This example demonstrates a number of important techniques, including calling a method that interacts with the form from a separate thread.</span></span> <span data-ttu-id="e9600-114">Kromě toho tento příklad ukazuje, jak musí zablokuje uživatelům možnost souběžně spuštění příkazu více než jednou, a jak musíte zajistit, aby formuláři nezavře před postupem zpětného volání je volána.</span><span class="sxs-lookup"><span data-stu-id="e9600-114">In addition, this example demonstrates how you must block users from concurrently executing a command multiple times, and how you must ensure that the form does not close before the callback procedure is called.</span></span>  
   
- <span data-ttu-id="ecdd7-115">Nastavit tento příklad, vytvořte novou aplikaci Windows.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-115">To set up this example, create a new Windows application.</span></span> <span data-ttu-id="ecdd7-116">Místo <xref:System.Windows.Forms.Button> ovládacího prvku a dva <xref:System.Windows.Forms.Label> ovládacích prvků na formuláři (přijmout výchozí název pro každý ovládací prvek).</span><span class="sxs-lookup"><span data-stu-id="ecdd7-116">Place a <xref:System.Windows.Forms.Button> control and two <xref:System.Windows.Forms.Label> controls on the form (accepting the default name for each control).</span></span> <span data-ttu-id="ecdd7-117">Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce podle potřeby pro vaše prostředí.</span><span class="sxs-lookup"><span data-stu-id="ecdd7-117">Add the following code to the form's class, modifying the connection string as necessary for your environment.</span></span>  
+ <span data-ttu-id="e9600-115">Nastavit tento příklad, vytvořte novou aplikaci Windows.</span><span class="sxs-lookup"><span data-stu-id="e9600-115">To set up this example, create a new Windows application.</span></span> <span data-ttu-id="e9600-116">Místo <xref:System.Windows.Forms.Button> ovládacího prvku a dva <xref:System.Windows.Forms.Label> ovládacích prvků na formuláři (přijmout výchozí název pro každý ovládací prvek).</span><span class="sxs-lookup"><span data-stu-id="e9600-116">Place a <xref:System.Windows.Forms.Button> control and two <xref:System.Windows.Forms.Label> controls on the form (accepting the default name for each control).</span></span> <span data-ttu-id="e9600-117">Přidejte následující kód do třídy formuláře, úprava připojovacího řetězce podle potřeby pro vaše prostředí.</span><span class="sxs-lookup"><span data-stu-id="e9600-117">Add the following code to the form's class, modifying the connection string as necessary for your environment.</span></span>  
   
 ```vb  
 ' Add these to the top of the class:  
@@ -127,9 +127,7 @@ Imports System.Data.SqlClient
   
             Catch ex As Exception  
                 isExecuting = False  
-                DisplayStatus( _  
-                    String.Format("Ready (last error: {0})", _  
-                    ex.Message))  
+                DisplayStatus($"Ready (last error: {ex.Message})")
                 If connection IsNot Nothing Then  
                     connection.Close()  
                 End If  
@@ -183,7 +181,7 @@ Imports System.Data.SqlClient
             ' invoke it, like this:  
             Me.Invoke(New _  
                 DisplayInfoDelegate(AddressOf DisplayStatus), _  
-                String.Format("Ready(last error: {0}", ex.Message))  
+                $"Ready (last error: {ex.Message}")
         Finally  
             isExecuting = False  
             If connection IsNot Nothing Then  
@@ -301,8 +299,7 @@ private void button1_Click(object sender, System.EventArgs e)
         catch (Exception ex)  
         {  
             isExecuting = false;  
-            DisplayStatus(   
-             string.Format("Ready (last error: {0})", ex.Message));  
+            DisplayStatus($"Ready (last error: {ex.Message})");
             if (connection != null)  
             {  
                 connection.Close();  
@@ -358,7 +355,7 @@ private void HandleCallback(IAsyncResult result)
         // You can create the delegate instance as you   
         // invoke it, like this:  
         this.Invoke(new DisplayInfoDelegate(DisplayStatus),  
-        String.Format("Ready(last error: {0}", ex.Message));  
+            $"Ready (last error: {ex.Message}");
     }  
     finally  
     {  
@@ -378,6 +375,6 @@ private void Form1_Load(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ecdd7-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="ecdd7-118">See Also</span></span>  
- [<span data-ttu-id="ecdd7-119">Asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="ecdd7-119">Asynchronous Operations</span></span>](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
- [<span data-ttu-id="ecdd7-120">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="ecdd7-120">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a><span data-ttu-id="e9600-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="e9600-118">See Also</span></span>  
+ [<span data-ttu-id="e9600-119">Asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="e9600-119">Asynchronous Operations</span></span>](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
+ [<span data-ttu-id="e9600-120">ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře</span><span class="sxs-lookup"><span data-stu-id="e9600-120">ADO.NET Managed Providers and DataSet Developer Center</span></span>](https://go.microsoft.com/fwlink/?LinkId=217917)
