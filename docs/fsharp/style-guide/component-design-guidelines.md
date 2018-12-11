@@ -74,7 +74,7 @@ V následující tabulce dodržovat konvence pojmenování a malá a velká pís
 |-----------|------|------|----------|-------|
 | Konkrétní typy | PascalCase | Podstatné jméno / tvary přídavných jmen | Seznam, Double, komplexní | Konkrétní typy jsou struktury, třídy, výčty, delegáti, záznamů a sjednocení. I když jsou tradičně malá písmena v OCaml, názvy typů F# přijala schéma pojmenování .NET pro typy.
 | knihovny DLL           | PascalCase |                 | Fabrikam.Core.dll |  |
-| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například "Zadejte týmů = TAlpha | TBeta | TDelta. " |
+| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například `Zadejte týmů = TAlpha | TBeta | TDelta.` |
 | Událost          | PascalCase | Příkaz | ValueChanged / ValueChanging |  |
 | Výjimky     | PascalCase |      | O výjimku WebException | Název by měl končit "Výjimek". |
 | Pole          | PascalCase | Podstatné jméno | CurrentName  | |
