@@ -2,12 +2,12 @@
 title: Omezení (F#)
 description: Další informace o F# omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9534db4ffd195022366af8c993658bd94f375f53
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 2dfc99e0ef41a224fbd03f325582365b7caab78b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48837348"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152485"
 ---
 # <a name="constraints"></a>Omezení
 
@@ -26,7 +26,7 @@ Existuje několik jiná omezení, které lze použít k omezení typů, které j
 |Omezení|Syntaxe|Popis|
 |----------|------|-----------|
 |Omezení typu|*parametr typu* :&gt; *typu*|Zadaný typ musí být větší nebo odvozené od typu určeného nebo, pokud je typ rozhraní, zadaný typ musí implementovat rozhraní.|
-|Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale není F# seznamu, řazené kolekce členů, funkce, třídy, záznamu nebo typy sjednocení.|
+|Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale ne F# seznamu, řazené kolekce členů, funkce, třídy, záznam nebo typy sjednocení.|
 |Omezení explicitního člena|[(]*parametr typu* [nebo... nebo *parametr typu*)]: (*signatura člena*)|Nejméně jeden z argumentů typu, který je k dispozici musí mít člena, který má zadaný podpis; nejsou určené pro obecné použití. Členy musí být buď explicitně definované u typu nebo součást rozšíření implicitních typů, bude platné cíle pro explicitní člen omezení.|
 |Omezení konstruktoru|*parametr typu* : (nové: jednotka –&gt; :)|Zadaný typ musí mít výchozí konstruktor.|
 |Omezení typu hodnoty|: – struktura|Zadaný typ musí být typem hodnoty .NET.|
@@ -36,11 +36,12 @@ Existuje několik jiná omezení, které lze použít k omezení typů, které j
 |Porovnání omezení|: porovnání|Zadaný typ musí podporovat porovnání.|
 |Omezení rovnosti|: rovnosti|Zadaný typ musí podporovat rovnosti.|
 |Nespravované omezení|: nespravovaných|Zadaný typ musí být nespravovaným typem. Nespravované typy jsou určité primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, nebo `decimal`), výčtové typy `nativeptr<_>`, nebo strukturu neobecnou jehož pole jsou všechny nespravovaných typů.|
+
 Je nutné přidat omezení, pokud má váš kód používat funkce, která je obecně dostupná v omezení typu, ale ne v typy. Například pokud používáte omezení typu k určení typu třídy, můžete použít některou z metod této třídy v typu nebo obecné funkce.
 
 Určení omezení je to někdy nezbytné při zápisu parametry typu explicitně, protože bez omezení, kompilátor neobsahuje nijak ověřit, že bude k dispozici na libovolný typ, který může být zadán v době běhu pro typ funkce, které používáte parametr.
 
-Nejběžnější omezení, které můžete použít v kódu F# se omezení typu, které určují základní třídy nebo rozhraní. Další omezení buď používají knihovny F# pro některé funkce, jako je například omezení explicitního člena, který se používá k implementaci pro aritmetické operátory přetížení operátoru nebo jsou k dispozici zejména proto, že jazyk F# podporuje úplnou implementaci Sada omezení, která je podporována modulem common language runtime.
+Nejběžnější omezení použít v F# kódu se omezení typu, které určují základní třídy nebo rozhraní. Další omezení jsou používány buď F# knihovny implementovat určité funkce, jako je například omezení explicitního člena, který se používá k implementaci pro aritmetické operátory přetížení operátoru nebo hlavně, protože jsou k dispozici F# podporuje kompletní sadu omezení, která je podporována modulem common language runtime.
 
 Během procesu odvození typu jsou některá omezení vyvozena na základě kompilátor automaticky. Například, pokud použijete `+` operátor ve funkci, kompilátor odvodí omezením explicitního člena na tyto typy proměnných, které se používají ve výrazu.
 
