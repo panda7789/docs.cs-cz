@@ -1,15 +1,16 @@
 ---
-title: Typy ukazatelů (Průvodce programováním v C#)
+title: Typy ukazatelů – C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 124cc98b6f73b6014ab845ce5b9331e9f5292757
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5474d179005742c610d29ccd9dac7bf1dc94c9d2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146834"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239406"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 

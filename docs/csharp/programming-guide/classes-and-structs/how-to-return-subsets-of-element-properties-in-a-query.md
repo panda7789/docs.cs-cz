@@ -1,17 +1,18 @@
 ---
-title: 'Postupy: Vrácení podmnožin vlastností elementu v dotazu (Průvodce programováním v C#)'
+title: 'Postupy: Vrácení podmnožin vlastností elementu v dotazu - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 22b6cc8fc8c8d9ffd1c2cf4063994ce94cea8e45
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 27f0df14fef7c261828040d905c9f624f02eddfe
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520840"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243826"
 ---
-# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Postupy: Vrácení podmnožin vlastností elementu v dotazu (Průvodce programováním v C#)
+# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Postupy: Vrácení podmnožin vlastností elementu v dotazu (C# Průvodce programováním v)
 Použijte anonymního typu ve výrazu dotazu, pokud obě tyto podmínky:  
   
 -   Chcete vrátit jenom některé vlastnosti jednotlivých zdrojových elementů.  

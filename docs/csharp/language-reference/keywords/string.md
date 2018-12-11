@@ -1,5 +1,6 @@
 ---
-title: string (Referenční dokumentace jazyka C#)
+title: String – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - string
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-ms.openlocfilehash: 66b1729363878f69f868b8b8fd6e9e7011426f27
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c13ea4c6b71e29a422c351ad37c5be342fa4ecc4
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153121"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239389"
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
 

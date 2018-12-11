@@ -1,5 +1,5 @@
 ---
-title: Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a xUnit
+title: Testování částí F# v .NET Core pomocí příkazu dotnet test a xUnit
 description: Další koncepty testů jednotek pro F# v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a xUnit.
 author: billwagner
 ms.author: wiwagn
@@ -7,12 +7,12 @@ ms.date: 08/30/2017
 dev_langs:
 - fsharp
 ms.custom: seodec18
-ms.openlocfilehash: 5f76f1b3117737616d94b3d6c9a2f397c3f66567
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 08ebe39fd6e992fdcdc10e19d87d565e76d909a2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170571"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239196"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-xunit"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a xUnit
 

@@ -1,5 +1,6 @@
 ---
-title: '&lt;Příklad&gt; (C# Programming Guide)'
+title: '&lt;Příklad&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <example>
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: 9998f64eb1dffd3441bcf02f2eb60950910f01d1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 92f28e630d18800ddea0f31adbd9f0291e06d202
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520783"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244216"
 ---
 # <a name="ltexamplegt-c-programming-guide"></a>&lt;Příklad&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

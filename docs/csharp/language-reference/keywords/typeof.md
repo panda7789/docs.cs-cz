@@ -1,5 +1,6 @@
 ---
-title: typeof (Referenční dokumentace jazyka C#)
+title: typeof – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - typeof
@@ -7,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - typeof keyword [C#]
 ms.assetid: 0c08d880-515e-46bb-8cd2-48b8dd62c08d
-ms.openlocfilehash: 039294d17d25d1d8775e7f92f46f5f57f2ac3212
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3fa82a6faee345be77fc8ea3f5aa3342adecb0f5
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146677"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244840"
 ---
 # <a name="typeof-c-reference"></a>typeof (Referenční dokumentace jazyka C#)
 
-Používá k získání `System.Type` pro typ objektu. A `typeof` výrazu má následující podobu:
+Používá k získání <xref:System.Type?displayProperty=nameWithType> pro typ objektu. A `typeof` výrazu má následující podobu:
 
 ```csharp
 System.Type type = typeof(int);

@@ -1,5 +1,6 @@
 ---
-title: short (Referenční dokumentace jazyka C#)
+title: short – C# odkaz
+ms.custom: seodec18
 ms.date: 03/14/2017
 f1_keywords:
 - short
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
-ms.openlocfilehash: d3b374c01c78a63e8341023b65dc3e57542ec1fd
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 8c38a4158f627f41d1667eb96478cd499de78772
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50184150"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238896"
 ---
 # <a name="short-c-reference"></a>short (Referenční dokumentace jazyka C#)
 

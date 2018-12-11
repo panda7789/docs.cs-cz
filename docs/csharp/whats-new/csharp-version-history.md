@@ -3,16 +3,28 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: e58f719031cc614f728226232c09f54f6b874475
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ad05e803000393800764a4b3aa1bf6288f765fd4
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145329"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245597"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
-Co jazyk vypadat v jeho nejdřívější ztělesněních? A jak vyvinula během let od?
+Tento článek obsahuje historii každé hlavní verze produktu C# jazyka. C# Týmu nepřestává vám umožní inovovat a přidání nových funkcí. Podrobný stav funkce jazyka, včetně funkcí pro nadcházejících vydáních najdete [v úložišti dotnet/roslyn](https://github.com/dotnet/roslyn/blob/master/docs/Language%20Feature%20Status.md) na Githubu.
+
+> [!IMPORTANT]
+> C# Jazyk spoléhá na typy a metody v co C# specifikace definuje jako *standardní knihovny* pro některé funkce. Na platformě .NET nabízí tyto typy a metody v počtu balíčků. Jedním z příkladů je zpracování výjimek. Každý `throw` příkaz nebo výraz je zaškrtnuto, aby objekt vyvolané je odvozen z <xref:System.Exception>. Podobně každý `catch` proběhne kontrola, že typ je zachycena je odvozen od <xref:System.Exception>. Každá verze může přidat nové požadavky. Chcete-li používat nejnovější funkce jazyků v starší prostředí, budete muset nainstalovat konkrétní knihovny. Tyto závislosti jsou popsané na stránce u každé konkrétní verze. Další informace o [vztahy mezi jazykem a knihovny](relationships-between-language-and-library.md) Další informace o této závislosti.
+
+C# Nástroje pro vytváření zvažte nejnovější verzi hlavní jazyk výchozí jazykovou verzi. Můžou existovat dílčích verzí mezi hlavními verzemi, najdete v dalších článcích v této části. Chcete-li používat nejnovější funkce ve verzi bod, je potřeba [konfigurace verze jazyka kompilátoru](../language-reference/configure-language-version.md) a vyberte verzi. Byly tří dílčích verzí od C# 7.0:
+
+* [C#7.3](csharp-7-3.md):
+  - C#7.3 je aktuálně dostupné v [Visual Studio 2017 verze 15.7](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.1 SDK 2.1.300 RC1](../../core/whats-new/index.md).
+* [C#7.2](csharp-7-2.md):
+  - C#7.2 je aktuálně dostupné v [Visual Studio 2017 verze 15.5](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
+* [C#7.1](csharp-7-1.md):
+  - Tyto funkce byly přidány v [Visual Studio 2017 verze 15.3](https://visualstudio.microsoft.com/vs/whatsnew/)a [.NET Core 2.0 SDK](../../core/whats-new/index.md).
 
 ## <a name="c-version-10"></a>C# verze 1.0
 

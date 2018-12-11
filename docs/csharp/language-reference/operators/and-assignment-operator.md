@@ -1,5 +1,6 @@
 ---
-title: '&amp;= – Operátor (referenční dokumentace jazyka C#)'
+title: '&amp;= – Operátor - C# odkaz'
+ms.custom: seodec18
 ms.date: 10/29/2018
 f1_keywords:
 - '&=_CSharpKeyword'
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - AND assignment operator (&=) [C#]
 - '&= operator [C#]'
 ms.assetid: e8d58f3f-72dd-4b5a-b995-452fcce7e6bb
-ms.openlocfilehash: 8ce27c999cf21a9059ba23ee3c86b8fa024c7341
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 223d2f30ee77457e1f9d5304ec299517932499d0
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50980606"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237022"
 ---
 # <a name="amp-operator-c-reference"></a>&amp;= – Operátor (referenční dokumentace jazyka C#)
 

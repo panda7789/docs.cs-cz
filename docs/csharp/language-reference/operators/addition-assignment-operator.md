@@ -1,5 +1,6 @@
 ---
-title: += – operátor (Referenční dokumentace jazyka C#)
+title: += – Operátor - C# odkaz
+ms.custom: seodec18
 ms.date: 10/29/2018
 f1_keywords:
 - +=_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - addition assignment operator (+=) [C#]
 - event subscription [C#]
 ms.assetid: 9cdf97e6-331d-492b-85e1-3ec3171484e9
-ms.openlocfilehash: ac9330e283cb58ae4e0ee7b644aa2c22bdf64c46
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 5d48f2fe53a9bb6f781f8d35f1e0983bcaa30f88
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50192028"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240928"
 ---
 # <a name="-operator-c-reference"></a>+= – operátor (Referenční dokumentace jazyka C#)
 
@@ -35,7 +36,7 @@ s tím rozdílem, že `x` se jenom vyhodnotí jednou.
   
 Pro číselné typy [operátor sčítání](addition-operator.md) `+` kód vypočítá součet operandů. Pokud je jeden nebo oba operandy typu [řetězec](../keywords/string.md), zřetězí řetězcové reprezentace jeho operandy. Pro typy delegátů `+` operátor vrátí novou instanci delegáta, který je kombinací operandů.
 
-Můžete také použít `+=` operátor zadat metodu obslužné rutiny události, když se přihlásíte k odběru [události](../keywords/event.md). Další informace najdete v tématu [postupy: přihlášení k odběru a zrušit její odběr události](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Můžete také použít `+=` operátor zadat metodu obslužné rutiny události, když se přihlásíte k odběru [události](../keywords/event.md). Další informace najdete v tématu [jak: Přihlaste se k odběru a zrušit její odběr události](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 Následující příklad ukazuje použití `+=` operátor:
 

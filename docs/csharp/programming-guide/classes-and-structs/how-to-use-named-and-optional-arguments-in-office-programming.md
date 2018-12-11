@@ -1,19 +1,20 @@
 ---
-title: 'Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)'
+title: 'Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office – C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: f86509b7257f25e8faaadfc107ad70ca794aeee0
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 20228886cabd47b976506509a29f6cfd50137e5f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44190972"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243800"
 ---
-# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)
+# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office (C# Průvodce programováním v)
 Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], zvyšuje pohodlí, flexibilitu a lepší čitelnost v programování v jazyce C#. Kromě toho tyto funkce výrazně usnadňují přístup k rozhraní modelu COM, jako je například rozhraní API automatizace Microsoft Office.  
   
  V následujícím příkladu metoda [ConvertToTable](<xref:Microsoft.Office.Interop.Word.Range.ConvertToTable%2A>) má šestnáct parametry, které představují vlastnosti tabulky, například počet sloupců a řádků, formátování, ohraničení, písma a barvy. Všechny šestnáct parametry jsou volitelné, protože ve většině případů nechcete zadat konkrétní hodnoty pro všechny z nich. Ale bez pojmenované a nepovinné argumenty, hodnotu nebo hodnotu zástupného symbolu musí být k dispozici pro každý parametr. U pojmenovaných a nepovinných argumentů můžete zadat pouze hodnoty parametrů, které jsou požadovány pro váš projekt.  
@@ -24,7 +25,7 @@ Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 ### <a name="to-create-a-new-console-application"></a>Vytvořte novou konzolovou aplikaci  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
@@ -36,7 +37,7 @@ Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 6.  Zadejte název pro váš projekt v **název** pole.  
   
-7.  Klikněte na tlačítko **OK**.  
+7.  Klikněte na **OK**.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
@@ -46,7 +47,7 @@ Pojmenované argumenty a nepovinné argumenty, počínaje [!INCLUDE[csharp_dev10
   
 2.  Na **.NET** stránce **Microsoft.Office.Interop.Word** v **název komponenty** seznamu.  
   
-3.  Klikněte na tlačítko **OK**.  
+3.  Klikněte na **OK**.  
   
 ### <a name="to-add-necessary-using-directives"></a>Chcete-li přidat nezbytné direktivy using  
   

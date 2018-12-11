@@ -1,5 +1,6 @@
 ---
-title: == – operátor (Referenční dokumentace jazyka C#)
+title: == – Operátor - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - ==_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - == operator [C#]
 - equality operator [C#]
 ms.assetid: 34c6b597-caa2-4855-a7cd-38ecdd11bd07
-ms.openlocfilehash: d9d7dcf3b38939e681fb51d6c674151cee78b3d0
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c6f93be4d422fe42787e36f5b86e2cccbfc645b7
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779158"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239011"
 ---
 # <a name="-operator-c-reference"></a>== – operátor (Referenční dokumentace jazyka C#)
 Pro předdefinované typy hodnot, operátor rovnosti (`==`) vrací hodnotu true, pokud jsou si rovny, hodnoty jeho operandy `false` jinak. Pro odkaz na typy jiné než [řetězec](../../../csharp/language-reference/keywords/string.md), `==` vrátí `true` Pokud dva operandy odkazují na stejný objekt. Pro `string` typ `==` porovnává hodnoty řetězce.  

@@ -1,5 +1,6 @@
 ---
-title: checked – klíčové slovo (referenční dokumentace jazyka C#)
+title: checked – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - checked_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
-ms.openlocfilehash: 892b24b0283314f5aded0405df55a93069cf91e2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d148de99d1a1fab40f01e5807d1e7d6488b3186d
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505252"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244580"
 ---
 # <a name="checked-c-reference"></a>checked (Referenční dokumentace jazyka C#)
 

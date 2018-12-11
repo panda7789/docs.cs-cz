@@ -1,5 +1,6 @@
 ---
-title: is (Referenční dokumentace jazyka C#)
+title: je - C# odkaz
+ms.custom: seodec18
 ms.date: 02/17/2017
 f1_keywords:
 - is_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 037144c47a97a44cad504882fdf8c88caf4918d7
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 4fd545ded9da20da2a6378bfdf561279cf343100
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121301"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240005"
 ---
 # <a name="is-c-reference"></a>is (Referenční dokumentace jazyka C#) #
 

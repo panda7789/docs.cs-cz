@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: Vytváření souborů nebo složek (Průvodce programováním v C#)'
+title: 'Postupy: Vytvoření souboru nebo složky - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -7,14 +8,14 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: 34919efe32730fe0db11cb881b8e07629a3094fd
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: aa5c6782b11ac89b418ac84faafaa8409ad65049
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207457"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240200"
 ---
-# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postupy: Vytváření souborů nebo složek (Průvodce programováním v C#)
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postupy: Vytvoření souboru nebo složky (C# Průvodce programováním v)
 Můžete prostřednictvím kódu programu vytvořte složku v počítači, vytvořte podsložku, vytvořit soubor v podsložce a zapisovat data do souboru.  
   
 ## <a name="example"></a>Příklad  

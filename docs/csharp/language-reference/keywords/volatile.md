@@ -1,5 +1,6 @@
 ---
-title: volatile (Referenční dokumentace jazyka C#)
+title: volatile – C# odkaz
+ms.custom: seodec18
 ms.date: 10/24/2018
 f1_keywords:
 - volatile_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
-ms.openlocfilehash: fd81c0c36cb88b971539e843e3e1f2096a73d40e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6ae5445de69e987826fb58ff50ca8d47c11eb53c
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152774"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245490"
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 

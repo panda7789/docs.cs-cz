@@ -1,5 +1,6 @@
 ---
-title: Dědičnost (Průvodce programováním v C#)
+title: Dědičnost - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - abstract methods [C#]
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: f6620562a9500885f31d1343664919f09af33861
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e69d1dba59858ff0988806dd3ed0dd22e5213313
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855891"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236593"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 

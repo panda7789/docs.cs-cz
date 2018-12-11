@@ -1,5 +1,6 @@
 ---
-title: set – klíčové slovo (C# odkaz)
+title: set – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 03/10/2017
 f1_keywords:
 - set
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
-ms.openlocfilehash: 66f0b7a709c6474b5428fe2e8faec4f068020066
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3020badc8b7873d7feb0b8133d3a181e1c051cbd
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187007"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243735"
 ---
 # <a name="set-c-reference"></a>set (Referenční dokumentace jazyka C#)
 

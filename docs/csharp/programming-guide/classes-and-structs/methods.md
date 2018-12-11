@@ -1,16 +1,17 @@
 ---
-title: Metody (Průvodce programováním v C#)
+title: Metody - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: f719dd010f2910a12b22fac10ae92f1a6bfe8438
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: df2d7837217f4267f95ed73948a4eb479cc035c1
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43741825"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244411"
 ---
 # <a name="methods-c-programming-guide"></a>Metody (Průvodce programováním v C#)
 Metoda je blok kódu, který obsahuje řadu příkazů. Program způsobí, že příkazů ke spuštění volání metody a zadáním argumentů požadovanou metodu. V jazyce C# se provádí každých provedené instrukce v rámci metody. Metoda Main je vstupním bodem pro každou aplikaci C# a je volána modulem common language runtime (CLR), když se program spustí.  

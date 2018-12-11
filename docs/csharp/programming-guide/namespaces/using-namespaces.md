@@ -1,5 +1,6 @@
 ---
-title: Použití oboru názvů (Průvodce programováním v C#)
+title: Použití oboru názvů - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cs.names
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: 81876d1818a6e82764e4aea0ae2b6f9e091f0ba3
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: d29de118e928522dcc3a4b4ab32fe2d2c4d1f2f9
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123394"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235775"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Použití oboru názvů (Průvodce programováním v C#)
 V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů. Za prvé tříd rozhraní .NET Framework pomocí oborů názvů můžete organizovat jeho mnoho tříd. Za druhé deklarující vlastní obory názvů umožňují omezit rozsah třídy a metody názvy ve větších programovací projektů.  
@@ -85,7 +86,7 @@ V aplikacích jazyka C# dvě možnosti, jak se hojně používají obory názvů
   
  Tento postup funguje, ale pokud typ s názvem `Alias` bylo následně zavést `Alias.` by místo toho vázat k danému typu. Pomocí `Alias::Exception` , která díky `Alias` je považován za aliasu oboru názvů a není pro typ zaměněny.  
   
- Naleznete v tématu [postupy: použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md) Další informace týkající `global` alias.  
+ Naleznete v tématu [jak: Použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md) Další informace týkající `global` alias.  
   
 ## <a name="see-also"></a>Viz také
 

@@ -1,5 +1,6 @@
 ---
-title: get (Referenční dokumentace jazyka C#)
+title: Get - C# odkaz
+ms.custom: seodec18
 ms.date: 03/10/2017
 f1_keywords:
 - get_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - get keyword [C#]
 ms.assetid: a52de048-fbe0-41b0-82ec-8e4ac04d3a71
-ms.openlocfilehash: 182f7164ad929232c185903a3dbf024a2e5d22a7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: e3cd4779b4f865c4c9bb46d4f25819c863de8bc2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45987783"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240031"
 ---
 # <a name="get-c-reference"></a>get (Referenční dokumentace jazyka C#)
 

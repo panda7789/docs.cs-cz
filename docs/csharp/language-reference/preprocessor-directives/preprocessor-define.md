@@ -1,17 +1,18 @@
 ---
-title: '#definování (referenční dokumentace jazyka C#)'
+title: '#definování - C# odkaz'
+ms.custom: seodec18
 ms.date: 06/30/2018
 f1_keywords:
 - '#define'
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-ms.openlocfilehash: 305d52c26fb2592874d06f2c9a75ec63b472a812
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 7be2a2d00e96b4b734e1a68f6dc63180bcbe5e82
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387253"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244964"
 ---
 # <a name="define-c-reference"></a>#define (referenční dokumentace jazyka C#)
 Použijete `#define` k definici symbolu. Při použití symbolu jako výraz, který je předán [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `true`, jak je vidět v následujícím příkladu:  
@@ -69,6 +70,6 @@ public class TestDefine
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
 - [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
 - [const](../../../csharp/language-reference/keywords/const.md)  
-- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
 - [#undef](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)  
 - [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)

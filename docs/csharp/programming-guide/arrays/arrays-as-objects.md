@@ -1,15 +1,16 @@
 ---
-title: Pole jako objekty (Průvodce programováním v C#)
+title: Pole jako objekty - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], as objects
 ms.assetid: f76d4403-bd0a-42a0-9bc8-694c55b2c926
-ms.openlocfilehash: f1abe10839c30d48f56ac6044d75d290a59b4cce
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0bbbf7ecc5eff650f7a2edc73546833afd2be094
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505556"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242331"
 ---
 # <a name="arrays-as-objects-c-programming-guide"></a>Pole jako objekty (Průvodce programováním v C#)
 

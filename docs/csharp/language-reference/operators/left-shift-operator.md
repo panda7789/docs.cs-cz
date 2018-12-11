@@ -1,5 +1,6 @@
 ---
-title: '&lt;&lt; – Operátor (referenční dokumentace jazyka C#)'
+title: '&lt;&lt; Operator - C# odkaz'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <<_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - left shift operator (<<) [C#]
 - << operator [C#]
 ms.assetid: a654eb56-1ff7-4bf3-9064-b631be0cdccc
-ms.openlocfilehash: 036acd6159bcf5ca1677ee6383c9db357625cd67
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: bd52d86c6ab84364d242e594054cfdd03dcc7e66
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45677380"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241733"
 ---
 # <a name="ltlt-operator-c-reference"></a>&lt;&lt; – Operátor (referenční dokumentace jazyka C#)
 Operátor posunutí doleva (`<<`) staffhubu jeho prvního operandu vlevo o počet bitů určený svým druhým operandem. Musí být typu druhého operandu [int](../../../csharp/language-reference/keywords/int.md) nebo typ, který má předdefinované implicitní převod čísla na `int`.  

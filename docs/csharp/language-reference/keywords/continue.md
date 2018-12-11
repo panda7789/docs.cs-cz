@@ -1,5 +1,6 @@
 ---
-title: Continue – příkaz (referenční dokumentace jazyka C#)
+title: Continue – příkaz - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - continue_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - continue keyword [C#]
 ms.assetid: 8a5ac96f-f98a-4519-b32d-345847ed7be0
-ms.openlocfilehash: 37315caf14ba829dfc91da065bc49982f21b947f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: fbb5d170f10c0a4b6c6edeae6c3f4a549de65525
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861403"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243894"
 ---
 # <a name="continue-c-reference"></a>continue (Referenční dokumentace jazyka C#)
 

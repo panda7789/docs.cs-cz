@@ -1,5 +1,6 @@
 ---
-title: ':: – operátor (Referenční dokumentace jazyka C#)'
+title: ':: Operator - C# odkaz'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - ::_CSharpKeyword
@@ -8,14 +9,14 @@ helpviewer_keywords:
 - 'namespaces [C#], :: operator'
 - namespace alias qualifier operator (::) [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
-ms.openlocfilehash: 077d5835b372897cbe797385271effc5d00bf6e3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2e456be075f3487676228244e0119ff46ed9a538
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525653"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243475"
 ---
-# <a name="-operator-c-reference"></a>:: – operátor (Referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>:: – Operátor (referenční dokumentace jazyka C#)
 Kvalifikátor aliasu oboru názvů (`::`) slouží k vyhledání identifikátory. Vždy je umístěný mezi dva identifikátory, jako v následujícím příkladu:  
   
  [!code-csharp[csRefOperators#27](../../../csharp/language-reference/operators/codesnippet/CSharp/namespace-alias-qualifer_1.cs)]  
@@ -33,7 +34,7 @@ var numbers = new Col::List<int> { 1, 2, 3 };
 ## <a name="for-more-information"></a>Další informace  
  Příklad použití `::` operátoru, najdete v následující části:  
   
--   [Postupy: Použití aliasu globálního oboru názvů](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
+-   [Postupy: Použití aliasu globálního Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

@@ -1,5 +1,6 @@
 ---
-title: Const – klíčové slovo (referenční dokumentace jazyka C#)
+title: Const – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - const_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C#]
 ms.assetid: 79eb447c-117b-4418-933f-97c50aa472db
-ms.openlocfilehash: f586b6d097a8592fd74e92df7886b519d623e478
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 63fb86ed24dd4e30d3783d70e3249b9f8e5e20bd
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513381"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245519"
 ---
 # <a name="const-c-reference"></a>const (Referenční dokumentace jazyka C#)
 

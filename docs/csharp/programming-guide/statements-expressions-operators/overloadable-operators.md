@@ -1,16 +1,17 @@
 ---
-title: Přetížitelné operátory (C# Programming Guide)
+title: Přetížitelné operátory - C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 08/27/2018
 helpviewer_keywords:
 - C# language, operator overloading
 - operator overloading [C#]
 ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
-ms.openlocfilehash: f819e94fd532c10478ac39da9485126aa4380dd5
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: b993c7873cdce60ae03e872b842f8265900442fd
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583097"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238963"
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>Přetížitelné operátory (C# Programming Guide)
 

@@ -1,5 +1,6 @@
 ---
-title: Vlastnosti (Průvodce programováním v C#)
+title: Vlastnosti – C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 03/10/2017
 f1_keywords:
 - cs.properties
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: b2ce46d4493731719ba42fb0f1175c6210d61e07
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: ec34d6f49a538ac106196c342a7ff0f9dad8b6d8
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "43857677"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242773"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 

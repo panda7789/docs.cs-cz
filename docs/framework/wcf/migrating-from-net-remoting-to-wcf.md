@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 91cbfa33c6645fbc0a8d9b513e3a59799114a710
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: cca303cf9b906fd395e594111fae808ae4ab6435
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200095"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245675"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -89,8 +89,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
     serviceHost.AddServiceEndpoint(typeof(IWCFServer), binding, baseAddress);  
     serviceHost.Open();  
   
-    Console.WriteLine(String.Format("The WCF server is ready at {0}.",  
-                                    baseAddress));  
+    Console.WriteLine($"The WCF server is ready at {baseAddress}.");
     Console.WriteLine("Press <ENTER> to terminate service...");  
     Console.WriteLine();  
     Console.ReadLine();  
@@ -121,8 +120,7 @@ RemotingServer server = (RemotingServer)Activator.GetObject(
                             "tcp://localhost:8080/RemotingServer");  
   
 RemotingCustomer customer = server.GetCustomer(42);  
-Console.WriteLine(String.Format("Customer {0} {1} received.",   
-                                 customer.FirstName, customer.LastName));  
+Console.WriteLine($"Customer {customer.FirstName} {customer.LastName} received.");
 ```  
   
  Vrácená z Activator.GetObject() RemotingServer instance se označuje jako "transparentní proxy server." Implementuje veřejné rozhraní API pro typ RemotingServer na straně klienta, ale všechny metody volání objektu server běží na jiný proces nebo počítače.  
@@ -139,8 +137,7 @@ ChannelFactory<IWCFServer> channelFactory =
 IWCFServer server = channelFactory.CreateChannel();  
   
 Customer customer = server.GetCustomer(42);  
-Console.WriteLine(String.Format("  Customer {0} {1} received.",  
-                    customer.FirstName, customer.LastName));  
+Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received.");
 ```  
   
  Tento příklad ukazuje programování na úrovni kanálu, protože je nejvíce podobně jako v příkladu vzdálené komunikace. K dispozici je také **přidat odkaz na službu** přístup v sadě Visual Studio, který generuje kód pro zjednodušení programování klienta. Další informace naleznete v následujících tématech:  
@@ -269,8 +266,7 @@ try
 }  
 catch (FaultException<CustomerServiceFault> fault)  
 {  
-    Console.WriteLine(String.Format("Fault received: {0}",  
-    fault.Detail.ErrorMessage));  
+    Console.WriteLine($"Fault received: {fault.Detail.ErrorMessage}");
 }  
 ```  
   
@@ -307,7 +303,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 -   **Vytvoření kontraktu selhání (nepovinné).** Vytvoření typů, které se vyměňují mezi serverem a klientem, pokud nedojde k chybám. Označte tyto typy s [kontraktu dat DataContract] a [DataMember], aby se daly serializovatelný. Pro všechny operace služby, které jste označili [OperationContract] také označte je pomocí [FaultContract] pro označení chyb, které můžou vrátit.  
   
--   **Konfigurace a hostitelem služby.** Po vytvoření kontraktu služby, dalším krokem je ke konfiguraci vazby pro vystavení služby na koncový bod. Další informace najdete v tématu [koncové body: adresy, vazby a kontrakty](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
+-   **Konfigurace a hostitelem služby.** Po vytvoření kontraktu služby, dalším krokem je ke konfiguraci vazby pro vystavení služby na koncový bod. Další informace najdete v tématu [koncové body: Adresy, vazby a kontrakty](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
   
  Po použití vzdálené komunikace se migroval na WCF, je stále potřeba odebrat závislosti na vzdálené komunikace .NET. Tím se zajistí, že z aplikace odeberou se všechny chyby zabezpečení vzdálené komunikace. Tyto kroky zahrnují následující:  
   
@@ -442,7 +438,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     Další informace o používání **přidat odkaz na službu**, naleznete v tématu [postupy: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).  
+     Další informace o používání **přidat odkaz na službu**, naleznete v tématu [jak: Přidání, aktualizace nebo odebrání odkazu na službu](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).  
   
 7.  Nyní jsme volat službu WCF z klienta. Můžeme to udělat tak vytvoření objektu pro vytváření kanálů pro tuto službu požadujícího kanál a přímo volat metodu, kterou chceme, aby na tomto kanálu. Můžeme to udělat, protože kanál implementuje rozhraní služby a zpracuje požadavek nebo odpověď logiku pro nás. Návratová hodnota z volání této metody je deserializovat kopie odpověď serveru.  
   
@@ -451,8 +447,7 @@ public class RemotingServer : MarshalByRefObject
        new ChannelFactory<ICustomerService>("customerservice");  
    ICustomerService service = factory.CreateChannel();  
    Customer customer = service.GetCustomer(42);  
-   Console.WriteLine(String.Format("  Customer {0} {1} received.",  
-           customer.FirstName, customer.LastName));  
+   Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received.");
    ```  
   
  Objektů vrácených službou WCF ze serveru do klienta jsou vždy podle hodnoty. Jsou objekty deserializovat kopie dat odeslaných serverem. Klient může volat metody na tyto místní kopie bez jakékoli nebezpečí vyvolání kódu serveru pomocí zpětných volání.  
@@ -657,7 +652,7 @@ public class RemotingServer : MarshalByRefObject
    CustomerId = 43,   
    AccountId = 99};  
    bool success = service.UpdateCustomer(customer);  
-   Console.WriteLine(String.Format("  Server returned {0}.", success));  
+   Console.WriteLine($"  Server returned {success}.");
    ```  
   
      Objekt zákazníka se serializovat a odeslat na server, kde je deserializovat do novou kopii tohoto objektu.  

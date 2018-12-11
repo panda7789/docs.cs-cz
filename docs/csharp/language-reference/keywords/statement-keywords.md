@@ -1,16 +1,17 @@
 ---
-title: Klíčová slova příkazů (C# odkaz)
+title: Klíčová slova příkazů - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: 7b28a81f9e9e2683e53406a247732241e3bcb15b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: edc4211818051d4be3afa02dc260f64c8f2c2d34
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125441"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237685"
 ---
 # <a name="statement-keywords-c-reference"></a>Klíčová slova příkazů (C# odkaz)
 

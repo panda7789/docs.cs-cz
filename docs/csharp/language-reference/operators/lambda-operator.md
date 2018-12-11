@@ -1,5 +1,6 @@
 ---
-title: =&gt; – Operátor (referenční dokumentace jazyka C#)
+title: =&gt; Operator - C# odkaz
+ms.custom: seodec18
 ms.date: 10/02/2017
 f1_keywords:
 - =>_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: b9216cf61b6b9368112f769d952457df4aab4297
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: c193a91eaffe2e56a5df2afa8d66989981123a48
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44183298"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238790"
 ---
 # <a name="gt-operator-c-reference"></a>=&gt; – Operátor (referenční dokumentace jazyka C#)
 

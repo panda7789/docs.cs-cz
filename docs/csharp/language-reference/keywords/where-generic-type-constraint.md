@@ -1,17 +1,18 @@
 ---
-title: where (omezení obecného typu) (Referenční dokumentace jazyka C#)
+title: kde (omezení obecného typu) - C# odkaz
+ms.custom: seodec18
 ms.date: 04/12/2018
 f1_keywords:
 - whereconstraint
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 34246824fb8ff28e47ea424c78eca38e999a30b6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8d6c1fba87ef1c4344bd150b2af2f5d1ad019695
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500821"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235710"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (omezení obecného typu) (Referenční dokumentace jazyka C#)
 

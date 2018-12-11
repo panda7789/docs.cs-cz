@@ -1,18 +1,19 @@
 ---
-title: 'Postupy: Zápis kopírovacího konstruktoru (Průvodce programováním v C#)'
+title: 'Postupy: Zápis kopírovacího konstruktoru - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: d6ecfc3659dcf533db0f4e7b67fdffd620a584fd
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: daf0683060d7df5dc5e644b4b84aac3dcdea939f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582330"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240681"
 ---
-# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Postupy: Zápis kopírovacího konstruktoru (Průvodce programováním v C#)
+# <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Postupy: Zápis kopírovacího konstruktoru (C# Průvodce programováním v)
 C# neposkytuje konstruktor kopírování pro objekty, ale můžete jej napsat sami.  
   
 ## <a name="example"></a>Příklad  

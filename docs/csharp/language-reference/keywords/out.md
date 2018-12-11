@@ -1,5 +1,6 @@
 ---
-title: out – klíčové slovo (referenční dokumentace jazyka C#)
+title: out – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 03/01/2017
 f1_keywords:
 - out_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - out [C#]
 - out keyword [C#]
 ms.assetid: 7e911a0c-3f98-4536-87be-d539b7536ca8
-ms.openlocfilehash: ecdaf8e94b3b799f41d6750d6ba5fca6895f0e93
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: eccc89d3cee687f7b6ecf7b0ce2030ef709a81b1
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030850"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235820"
 ---
 # <a name="out-c-reference"></a>out (Referenční dokumentace jazyka C#)
 

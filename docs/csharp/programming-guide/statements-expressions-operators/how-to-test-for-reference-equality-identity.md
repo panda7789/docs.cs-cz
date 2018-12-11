@@ -1,16 +1,17 @@
 ---
-title: 'Postupy: Test rovnosti (Identity) odkazů (C# Průvodce programováním v)'
+title: 'Postupy: Test rovnosti (Identity) - odkazů C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object identity [C#]
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
-ms.openlocfilehash: 4faa674f3f3d65b7c555d7feb9789637f39e9bd7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6aa3aebdc03fc54233ac1cc027241fcb36cc8535
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125468"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237048"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Postupy: Test rovnosti (Identity) odkazů (C# Průvodce programováním v)
 Pro podporu porovnání rovnosti referencí u typů není nutné implementovat žádnou vlastní logiku. Tato funkce je poskytována pro všechny typy statickou metodou <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>.  

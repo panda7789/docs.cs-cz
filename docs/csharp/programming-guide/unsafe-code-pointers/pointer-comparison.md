@@ -1,15 +1,16 @@
 ---
-title: Porovnání ukazatelů (Průvodce programováním v C#)
+title: Porovnání ukazatelů – C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], comparison
 ms.assetid: fcafd514-7405-4deb-8490-cc58efda5495
-ms.openlocfilehash: fa980c944159c477c333762ffad569332fba9402
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 72d9017064959c801bd2702ff585ee16b1592da6
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086636"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236788"
 ---
 # <a name="pointer-comparison-c-programming-guide"></a>Porovnání ukazatelů (Průvodce programováním v C#)
 Můžete použít následující operátory porovnání ukazatelů libovolného typu:  

@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: 91d126eb75c9cac2823b756010351dd692b2e24e
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: a5dae1479c9be7954b9eec1eed197f358eb48e4f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453213"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239511"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -166,14 +166,13 @@ Whoami /user
   
 1.  Klikněte na tlačítko **připojit** tlačítko v pravém horním rohu okna.  
   
-2.  V novém okně zadejte **root\ServiceModel** pro **Namespace** pole a vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**. Klikněte na tlačítko **připojit**.  
+2.  V novém okně zadejte **root\ServiceModel** pro **Namespace** pole a vyberte **paket o ochraně osobních údajů** pro **úroveň ověřování**. Klikněte na **Připojit**.  
   
 ### <a name="using-managed-code"></a>Pomocí spravovaného kódu  
  Dostanete také vzdálené instance rozhraní WMI prostřednictvím kódu programu pomocí tříd poskytovaných oborem <xref:System.Management> oboru názvů. Následující příklad kódu ukazuje, jak to provést.  
   
 ```csharp
-String wcfNamespace = String.Format(@"\\{0}\Root\ServiceModel",      
-   this.serviceMachineName);  
+String wcfNamespace = $@"\\{this.serviceMachineName}\Root\ServiceModel");
   
 ConnectionOptions connection = new ConnectionOptions();  
 connection.Authentication = AuthenticationLevel.PacketPrivacy;  

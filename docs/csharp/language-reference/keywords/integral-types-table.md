@@ -1,5 +1,6 @@
 ---
-title: Tabulka celočíselných typů (referenční dokumentace jazyka C#)
+title: Tabulka celočíselných typů - C# odkaz
+ms.custom: seodec18
 description: Přehled integrované C# integrální typy
 ms.date: 08/20/2018
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - types [C#], integral types
 - ranges of integral types [C#]
 ms.assetid: 62e86126-46ff-40b0-9028-e61d7558268c
-ms.openlocfilehash: 4ac16d185a52cdb03fcb22f57ebf7506f2fb2745
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 1815f057e5cf26d64e5ff151f161cc56214efc1b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44078845"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237984"
 ---
 # <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (referenční dokumentace jazyka C#)
 

@@ -1,16 +1,17 @@
 ---
-title: Použití typu dynamic (C# Programming Guide)
+title: Pomocí typ dynamic - C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: b1ea9240da66b77723c002c6527135339af9e352
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 7c4e2aac613397fbd44f4594f96ddebfb75d0c3f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "43502530"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243750"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu dynamic (C# Programming Guide)
 
@@ -78,4 +79,4 @@ Mnoho metod modelu COM povolit variace v typy argumentů a návratový typ podle
 |[dynamic](../../language-reference/keywords/dynamic.md)|Popisuje použití `dynamic` – klíčové slovo.|
 |[Přehled DLR (Dynamic Language Runtime)](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Přehled DLR, což je prostředí modulu runtime, který přidá sadu služeb pro dynamické jazyky common language runtime (CLR).|
 |[Návod: Vytváření a používání dynamických objektů](walkthrough-creating-and-using-dynamic-objects.md)|Obsahuje podrobné pokyny pro vytvoření vlastní dynamický objekt a pro vytvoření projektu, který přistupuje `IronPython` knihovny.|
-|[Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenovaných a nepovinných argumentů `dynamic` typ a další vylepšení, které usnadňují přístup k objektům rozhraní API Office.|
+|[Postupy: Přístup k objektům Interop sady Office pomocí Vizuálu C# funkce](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenovaných a nepovinných argumentů `dynamic` typ a další vylepšení, které usnadňují přístup k objektům rozhraní API Office.|

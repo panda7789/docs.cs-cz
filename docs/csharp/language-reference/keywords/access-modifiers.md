@@ -1,15 +1,16 @@
 ---
-title: Modifikátory přístupu (Referenční dokumentace jazyka C#)
+title: Přístup k modifikátory - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-ms.openlocfilehash: ff313df9683dbc76bab684ff484b746ad05e065a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 0fb435a35b928cb78511d8969f1dfce9f94869eb
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988189"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242019"
 ---
 # <a name="access-modifiers-c-reference"></a>Modifikátory přístupu (Referenční dokumentace jazyka C#)
 Modifikátory přístupu jsou klíčová slova používaná k určení je deklarovaná přístupnost člena nebo typu. Tato část představuje čtyři přístupu modifikátory přístupu:  
@@ -21,7 +22,7 @@ Modifikátory přístupu jsou klíčová slova používaná k určení je deklar
   
  Následujících šest úrovní přístupu se dá nastavit pomocí přístupu modifikátory přístupu:  
   
-- [`public`](public.md): Přístup k není omezen.  
+- [`public`](public.md): Přístup není omezený.  
   
 - [`protected`](protected.md): Přístup je omezený na obsahující třídu nebo typy odvozené od třídy obsahující.  
   
@@ -39,7 +40,7 @@ Modifikátory přístupu jsou klíčová slova používaná k určení je deklar
   
 -   [Doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md): Určuje, kde v částech programu může být odkazováno člena.  
   
--   [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md): Souhrn omezení týkající se použití deklarované úrovní přístupu.  
+-   [Omezení používání úrovní přístupu](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md): Souhrn omezení týkající se použití deklaraci úrovní přístupu.  
   
 ## <a name="see-also"></a>Viz také  
 - [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  

@@ -1,5 +1,6 @@
 ---
-title: unchecked – klíčové slovo (C# odkaz)
+title: unchecked – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - unchecked_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
-ms.openlocfilehash: 301e054c627ae7fc9a07c55c9d2b9a7738b9fb73
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 44301333f7a36e6b0baa6ea9e089d930bb485a45
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146696"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238452"
 ---
 # <a name="unchecked-c-reference"></a>unchecked (Referenční dokumentace jazyka C#)
 

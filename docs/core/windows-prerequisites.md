@@ -1,13 +1,13 @@
 ---
 title: Předpoklady pro .NET Core ve Windows
 description: Informace v závislosti na vaší Windows potřebujete počítač pro vývoj a spouštění aplikací .NET Core.
-ms.date: 12/05/2018
-ms.openlocfilehash: 8f9a823ab3eea15d7e33da6ff00992057c8c4e38
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 12/10/2018
+ms.openlocfilehash: 764d36300c5d3a4ae3a64e816dbc956d1a9411d4
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130878"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240642"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -37,7 +37,6 @@ Následující články obsahují úplný seznam operačních systémů nepodpor
 
 * [.NET core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
 * [.NET core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
-* [.NET core 1.1](https://github.com/dotnet/core/blob/master/release-notes/1.1/1.1-supported-os.md)
 * [.NET core 1.0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
 Odkazy ke stažení a další informace najdete v tématu [stáhne .NET](https://www.microsoft.com/net/download) ke stažení nejnovější verze nebo [.NET stáhne archivu](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.

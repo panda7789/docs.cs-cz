@@ -1,5 +1,6 @@
 ---
-title: using (Referenční dokumentace jazyka C#)
+title: pomocí parametru - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - using_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - using keyword [C#]
 ms.assetid: 124e1a63-2a4b-4132-b269-3b6d8d3ef72d
-ms.openlocfilehash: 2d96301e083b5c5340bea8b04943ca90c90e71ac
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7211894597235167510b5a4b9ff05914be55bacb
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529778"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245477"
 ---
 # <a name="using-c-reference"></a>using (Referenční dokumentace jazyka C#)
 `using` – Klíčové slovo má dvě hlavní využití:  

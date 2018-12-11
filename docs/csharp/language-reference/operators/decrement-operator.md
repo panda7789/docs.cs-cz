@@ -1,5 +1,6 @@
 ---
-title: -- – operátor (Referenční dokumentace jazyka C#)
+title: --– Operátor - C# odkaz
+ms.custom: seodec18
 ms.date: 11/26/2018
 f1_keywords:
 - --_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - -- operator [C#]
 - decrement operator (--) [C#]
 ms.assetid: 6b9cfe86-63c7-421f-9379-c9690fea8720
-ms.openlocfilehash: 0858321d6fe192a55bc548f169c558542238a981
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4fba014e8dabc13cd874e17f23515dc29d93f24b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153331"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236918"
 ---
 # <a name="---operator-c-reference"></a>-- – operátor (Referenční dokumentace jazyka C#)
 

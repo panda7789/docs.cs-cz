@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
-ms.openlocfilehash: 0086bdd41b9f87c14b3a9d0653a8f8982235b1ad
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d35798ea2cd5f2fe6285bce4e465e4c79f44cb50
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188596"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242651"
 ---
 # <a name="datacontractserializer-sample"></a>Ukázka třídy DataContractSerializer
 Ukázka třídy DataContractSerializer ukazuje <xref:System.Runtime.Serialization.DataContractSerializer>, které provádí obecné serializace a deserializace služeb pro data třídy kontraktu. Ukázka vytvoří `Record` objektu, serializuje do datového proudu paměti a deserializuje zpět do jiného datového proudu paměti `Record` objekt pro demonstraci použití <xref:System.Runtime.Serialization.DataContractSerializer>. Ukázka pak serializuje `Record` pomocí binární zapisovače k předvedení jak zapisovač, který ovlivňuje serializace.  
@@ -66,8 +66,7 @@ internal class Record
   
     public override string ToString()  
     {  
-        return string.Format("Record: {0} {1} {2} = {3}", n1,  
-            operation, n2, result);  
+        return $"Record: {n1} {operation} {n2} = {result}";
     }  
 }  
 ```  

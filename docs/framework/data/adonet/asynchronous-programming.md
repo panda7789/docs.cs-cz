@@ -2,12 +2,12 @@
 title: Asynchronní programování
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 0c16fecc9e79f36c122c13909be0eeba848b7c20
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 51adef080726c43d896cd8bb432c1a2c114a7f8b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123654"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236399"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -129,7 +129,7 @@ class A {
   
          SqlDataReader reader = command.ExecuteReader();  
          while (reader.Read())  
-            Console.WriteLine(String.Format("{0}", reader[0]));  
+            Console.WriteLine(reader[0]);
       }  
    }  
 }  

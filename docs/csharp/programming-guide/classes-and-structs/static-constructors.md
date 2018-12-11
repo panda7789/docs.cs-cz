@@ -1,16 +1,17 @@
 ---
-title: Statické konstruktory (Průvodce programováním v C#)
+title: Statické konstruktory - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 22be72547e96c66df3be115dac30a16559b23659
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: fabcbb084a74334a7a1bcddb9a04cc6705caeb29
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502765"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53234926"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci žádný [statické](../../../csharp/language-reference/keywords/static.md) data, nebo k provedení konkrétní akce, kterou je potřeba provést pouze jednou. Je volána automaticky před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy.  

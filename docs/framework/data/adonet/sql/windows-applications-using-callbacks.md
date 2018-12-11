@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: c80f65ad2a4c7c48e32615c3cfdf754996f91bc1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6fb1883812237c778e1ecfab3e86fb57de52efc5
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187868"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237958"
 ---
 # <a name="windows-applications-using-callbacks"></a>Aplikace Windows pomocí zpětných volání
 Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze. Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze. V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat. Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře. Tento druh scénář nejlépe implementuje pomocí zpětného volání.  
@@ -127,9 +127,7 @@ Imports System.Data.SqlClient
   
             Catch ex As Exception  
                 isExecuting = False  
-                DisplayStatus( _  
-                    String.Format("Ready (last error: {0})", _  
-                    ex.Message))  
+                DisplayStatus($"Ready (last error: {ex.Message})")
                 If connection IsNot Nothing Then  
                     connection.Close()  
                 End If  
@@ -183,7 +181,7 @@ Imports System.Data.SqlClient
             ' invoke it, like this:  
             Me.Invoke(New _  
                 DisplayInfoDelegate(AddressOf DisplayStatus), _  
-                String.Format("Ready(last error: {0}", ex.Message))  
+                $"Ready (last error: {ex.Message}")
         Finally  
             isExecuting = False  
             If connection IsNot Nothing Then  
@@ -301,8 +299,7 @@ private void button1_Click(object sender, System.EventArgs e)
         catch (Exception ex)  
         {  
             isExecuting = false;  
-            DisplayStatus(   
-             string.Format("Ready (last error: {0})", ex.Message));  
+            DisplayStatus($"Ready (last error: {ex.Message})");
             if (connection != null)  
             {  
                 connection.Close();  
@@ -358,7 +355,7 @@ private void HandleCallback(IAsyncResult result)
         // You can create the delegate instance as you   
         // invoke it, like this:  
         this.Invoke(new DisplayInfoDelegate(DisplayStatus),  
-        String.Format("Ready(last error: {0}", ex.Message));  
+            $"Ready (last error: {ex.Message}");
     }  
     finally  
     {  

@@ -1,5 +1,6 @@
 ---
-title: Private – klíčové slovo (referenční dokumentace jazyka C#)
+title: Private – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - private_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
-ms.openlocfilehash: a817f3f60b76b51868c5cacd8e648ec10497f64a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 62a78649a96d0a1b03758508241395d7f061504b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130998"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237191"
 ---
 # <a name="private-c-reference"></a>private (Referenční dokumentace jazyka C#)
 

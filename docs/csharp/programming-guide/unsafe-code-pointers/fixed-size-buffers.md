@@ -1,16 +1,17 @@
 ---
-title: Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
+title: Velikost vyrovnávací paměti – pevná C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 134a219acd02caa2b16c5a6e8716c3245579ecca
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2d0a4f829f6fe4d9662e25a4d8fd3936d2afd7f1
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148500"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242475"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 

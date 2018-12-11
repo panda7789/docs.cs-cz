@@ -1,5 +1,6 @@
 ---
-title: '&lt;c&gt; (C# Programming Guide)'
+title: '&lt;c&gt; - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - c
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - c C# XML tag
 - <c> C# XML tag
 ms.assetid: aad5b16e-a29e-445e-bd0d-eea0b138d7b2
-ms.openlocfilehash: 2220c42485674eaa4ba4e3b2dfb03865ad8013cb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5ebdb275ffa9b735d0d68b3d9b4685880a849a7a
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508144"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236405"
 ---
 # <a name="ltcgt-c-programming-guide"></a>&lt;c&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

@@ -1,5 +1,6 @@
 ---
-title: /= – operátor (Referenční dokumentace jazyka C#)
+title: / = – Operátor - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - /=_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - division assignment operator (/=) [C#]
 - /= (division assignment operator) [C#]
 ms.assetid: 50fc02b0-ee9c-4c3e-b58d-d591282caf1c
-ms.openlocfilehash: 8fff048cc441181aa3f0e3c0c638d501aaf9de3f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0487088fa5420f2d15541aa3f7b1d4ec604195bb
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526305"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241230"
 ---
 # <a name="-operator-c-reference"></a>/= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení dělení.  

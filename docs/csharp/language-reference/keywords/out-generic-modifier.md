@@ -1,16 +1,17 @@
 ---
-title: out – klíčové slovo (generický modifikátor) (referenční dokumentace jazyka C#)
+title: out (generický modifikátor) – klíčové slovo C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - covariance, out keyword [C#]
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
-ms.openlocfilehash: fedbdb12c1da108d17636770fb5c628195dce0d4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 8ad190e8653063f1461e4ff61a62310e59f48cf7
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582694"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239495"
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (generický modifikátor) (referenční dokumentace jazyka C#)
 

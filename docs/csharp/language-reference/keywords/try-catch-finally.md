@@ -1,5 +1,6 @@
 ---
-title: try-catch-finally (Referenční dokumentace jazyka C#)
+title: try-catch-finally – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - catch-finally_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - finally blocks [C#]
 - try-catch statement [C#]
 ms.assetid: a1b443b0-ff7a-43ab-b835-0cc9bfbd15ca
-ms.openlocfilehash: 18625838bd36d9d32079b7c72ded7ed660b8cf3a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3419ad46d5bbe13bb4308ad15b7819d615cdbe86
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130660"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244723"
 ---
 # <a name="try-catch-finally-c-reference"></a>try-catch-finally (Referenční dokumentace jazyka C#)
 
@@ -37,5 +38,5 @@ Společné využití `catch` a `finally` společně se získat a používat pros
 - [try, throw a catch – příkazy (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
 - [Příkazy zpracování výjimek](exception-handling-statements.md)
 - [throw](throw.md)
-- [Jak: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [Postupy: Explicitní generování výjimek](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
 - [using – příkaz](using-statement.md)

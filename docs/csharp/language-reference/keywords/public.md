@@ -1,5 +1,6 @@
 ---
-title: Public – klíčové slovo (referenční dokumentace jazyka C#)
+title: Public – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - public
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: b2e09bdb16d6128d69a3eb33cf2cffd4cba60376
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 15b86920736f1220553b462d103841ac98d88b7c
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "43518183"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239300"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
 

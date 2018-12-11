@@ -2,12 +2,12 @@
 title: Podpora tokenů
 ms.date: 03/30/2017
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
-ms.openlocfilehash: b5834a0ae8fa987f243617fdf291223725ed5f6d
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: b1fda39903c39811187fe3701d2a4c143b637544
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261599"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237698"
 ---
 # <a name="supporting-tokens"></a>Podpora tokenů
 Ukázka podporuje tokeny ukazuje, jak přidat další tokeny na zprávu, která používá WS-Security. V příkladu přidá token zabezpečení Binární X.509 kromě token zabezpečení uživatelské jméno. Token je předán do záhlaví zprávy WS-Security z klienta ke službě a část zprávy jsou podepsány pomocí soukromého klíče přidružené k tokenu zabezpečení X.509 prokázat získáním certifikát X.509 příjemci. To je užitečné v případě, když je potřeba mít více deklarací identity přidružené k zprávy na ověřování nebo autorizaci odesílatele. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -27,7 +27,7 @@ Ukázka podporuje tokeny ukazuje, jak přidat další tokeny na zprávu, která 
 ## <a name="client-authenticates-with-username-token-and-supporting-x509-security-token"></a>Klient se ověří pomocí Token uživatelského jména a podpůrné Token zabezpečení X.509
  Služba poskytuje jeden koncový bod pro komunikaci, která je vytvořena prostřednictvím kódu programu pomocí `BindingHelper` a `EchoServiceHost` třídy. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována s vlastními vazbami pomocí `SymmetricSecurityBindingElement` a `HttpTransportBindingElement`. Tato ukázka nastaví `SymmetricSecurityBindingElement` chránit symetrický klíč během přenosu a předat pomocí certifikátu X.509 služby `UserNameToken` spolu se podporu `X509SecurityToken` v záhlaví zprávy WS-Security. Symetrický klíč se používá k šifrování těla zprávy a token zabezpečení uživatelské jméno. Podpůrný token je předán jako token další binární zabezpečení v záhlaví zprávy WS-Security. Pravosti podpůrný token prokázat podepsáním část zprávy s privátním klíčem podpůrné X.509 zabezpečení přidružené k tokenu.
 
-```
+```csharp
 public static Binding CreateMultiFactorAuthenticationBinding()
 {
     HttpTransportBindingElement httpTransport = new HttpTransportBindingElement();
@@ -55,7 +55,7 @@ public static Binding CreateMultiFactorAuthenticationBinding()
 
  Chování Určuje přihlašovací údaje služby, které se mají použít pro ověřování klientů a také informace o certifikát služby X.509. Ukázka používá `CN=localhost` jako název subjektu v certifikátu X.509 služby.
 
-```
+```csharp
 override protected void InitializeRuntime()
 {
     // Extract the ServiceCredentials behavior or create one.
@@ -88,7 +88,7 @@ This setting is less secure than the default, ChainTrust. The security implicati
 
  Kód služby:
 
-```
+```csharp
 [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
 public class EchoService : IEchoService
 {
@@ -100,8 +100,7 @@ public class EchoService : IEchoService
             OperationContext.Current.ServiceSecurityContext,
             out userName,
             out certificateSubjectName);
-            return String.Format("Hello {0}, {1}",
-                    userName, certificateSubjectName);
+            return $"Hello {userName}, {certificateSubjectName}";
     }
 
     public void Dispose()
@@ -174,7 +173,7 @@ public class EchoService : IEchoService
 
  Podobným způsobem jako do koncového bodu služby je nakonfigurovaný koncový bod klienta. Klient používá stejný `BindingHelper` třídy za účelem vytvoření vazby. Zbývající část nastavení se nachází v `Client` třídy. Klient nastaví informace o tokenu zabezpečení jméno uživatele, podpůrný token zabezpečení X.509 a informace o certifikát služby X.509 v kódu instalační program do kolekce chování koncového bodu klienta.
 
-```
+```csharp
  static void Main()
  {
      // Create the custom binding and an endpoint address for
@@ -285,7 +284,7 @@ public class EchoService : IEchoService
 ## <a name="displaying-callers-information"></a>Zobrazení informací o volajícím.
  Chcete-li zobrazit informace volajícího, můžete použít `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak je znázorněno v následujícím kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje autorizaci deklarací identity přidružené k aktuální volajícího. Tyto deklarace identit se automaticky poskytne Windows Communication Foundation (WCF) pro každý token přijatý ve zprávě.
 
-```
+```csharp
 bool TryGetClaimValue<TClaimResource>(ClaimSet claimSet, string
                          claimType, out TClaimResource resourceValue)
     where TClaimResource : class
@@ -465,6 +464,6 @@ iisreset
 -   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 > [!NOTE]
->  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli Ukázky WCF, které certifikáty využívají napříč počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
+>  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli Ukázky WCF, které certifikáty využívají napříč počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
 ## <a name="see-also"></a>Viz také

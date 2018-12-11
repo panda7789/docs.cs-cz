@@ -1,15 +1,16 @@
 ---
-title: Jak přistupovat k elementu pole pomocí ukazatele (C# Programming Guide)
+title: Jak přistupovat k elementu pole pomocí ukazatele - C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], array access
 ms.assetid: 6c46f2af-a730-4855-8638-f136d9abaa12
-ms.openlocfilehash: 0e76ebddd8b703e8d0de4aa6825cbd6d0221079b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 57b1bebb95c1b3f24e550d554fe369d931d6f6b4
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861647"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241798"
 ---
 # <a name="how-to-access-an-array-element-with-a-pointer-c-programming-guide"></a>Jak přistupovat k elementu pole pomocí ukazatele (C# Programming Guide)
 

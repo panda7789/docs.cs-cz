@@ -1,5 +1,6 @@
 ---
-title: Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
+title: Tabulka typů s plovoucí desetinnou čárkou - C# odkaz
+ms.custom: seodec18
 description: Přehled vestavěné typy C# s plovoucí desetinnou čárkou
 ms.date: 08/20/2018
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - ranges of floating-point types [C#]
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
-ms.openlocfilehash: c292303d1cf0b72d05ae6269d63a27555d2458b5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 80c40e1b711af0dbd434d1837b9bcc1cf7c90069
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200467"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236879"
 ---
 # <a name="floating-point-types-table-c-reference"></a>Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
 

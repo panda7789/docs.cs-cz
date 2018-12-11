@@ -1,5 +1,6 @@
 ---
-title: event (Referenční dokumentace jazyka C#)
+title: události – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - event
@@ -9,18 +10,18 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 35a42692bc87da63c69d7ccbce1b49396a84f5a2
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: a0729324131c5b3d5c49618c715fc4081af40964
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44259698"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240525"
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
 `event` – Klíčové slovo se používá pro deklaraci události ve třídě vydavatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřazený typ delegáta. Pro příklad úplného kódu, který ukazuje způsob použití obecného <xref:System.EventHandler%601> delegáta typu a jak přihlásit odběr události a vytvořit metodu obslužné rutiny události, najdete v článku [postupy: publikování událostí tohoto neproporcionální vyplnění na .NET Framework – směrnice](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
+ Následující příklad ukazuje, jak deklarovat a vyvolat událost, která používá <xref:System.EventHandler> jako nadřazený typ delegáta. Pro příklad úplného kódu, který ukazuje způsob použití obecného <xref:System.EventHandler%601> delegáta typu a jak přihlásit odběr události a vytvořit metodu obslužné rutiny události, najdete v článku [jak: Publikování událostí odpovídajících směrnicím rozhraní .NET](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md).  
   
  [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
   
@@ -53,4 +54,4 @@ ms.locfileid: "44259698"
 - [add](../../../csharp/language-reference/keywords/add.md)  
 - [remove](../../../csharp/language-reference/keywords/remove.md)  
 - [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
-- [Postupy: kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)

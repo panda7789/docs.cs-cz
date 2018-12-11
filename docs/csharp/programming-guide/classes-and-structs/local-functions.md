@@ -1,16 +1,17 @@
 ---
-title: Lokální funkce (C# Programming Guide)
+title: Lokální funkce - C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42b980bcbb47ed98b9cb8d7234044ae2c92c3124
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 50dd7fbb35358ad153cfdbec62a2922fdc28775c
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529486"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240226"
 ---
 # <a name="local-functions-c-programming-guide"></a>Lokální funkce (C# Programming Guide)
 

@@ -1,5 +1,6 @@
 ---
-title: int (Referenční dokumentace jazyka C#)
+title: int – C# odkaz
+ms.custom: seodec18
 ms.date: 03/14/2017
 f1_keywords:
 - int_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - int keyword [C#]
 ms.assetid: 212447b4-5d2a-41aa-88ab-84fe710bdb52
-ms.openlocfilehash: 95ac267bc70d2e7873593c08e0b10cb50fefd8c8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3436d2ceeec9eed80f346c28231ba376cf6d5fb6
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524041"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243813"
 ---
 # <a name="int-c-reference"></a>int (Referenční dokumentace jazyka C#)
 
@@ -76,7 +77,8 @@ int y = (int)3.0;    // OK: explicit conversion.
  Další informace o aritmetických výrazech s smíšené typy s plovoucí desetinnou čárkou a celočíselných typů naleznete v tématu [float](../../../csharp/language-reference/keywords/float.md) a [double](../../../csharp/language-reference/keywords/double.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+Další informace najdete v tématu [integrální typy](~/_csharplang/spec/types.md#integral-types) v [ C# specifikace jazyka](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

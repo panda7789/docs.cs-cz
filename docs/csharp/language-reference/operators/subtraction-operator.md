@@ -1,5 +1,6 @@
 ---
-title: '- – Operátor (referenční dokumentace jazyka C#)'
+title: '- Operator - C# odkaz'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - -_CSharpKeyword
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - '- operator [C#]'
 - subtraction operator (-) [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: bd852f96ece9c8d5d5e2ec42e802596e795ce04a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 5a467e8383d7510260ad3044976601deca7cafdb
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44210101"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242227"
 ---
 # <a name="--operator-c-reference"></a>- – operátor (Referenční dokumentace jazyka C#)
 `-` Operátor může fungovat jako unární nebo binární operátor.  

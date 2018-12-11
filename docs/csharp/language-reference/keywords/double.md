@@ -1,5 +1,6 @@
 ---
-title: Double – klíčové slovo (referenční dokumentace jazyka C#)
+title: Double – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - double
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - double data type [C#]
 ms.assetid: 0980e11b-6004-4102-abcf-cfc280fc6991
-ms.openlocfilehash: 3354f22f5d1c1f1807388542c4ada5e67a9d5a14
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3c0fbe4f03edb829321971831c47f669d75f4d8c
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192704"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240369"
 ---
 # <a name="double-c-reference"></a>double (Referenční dokumentace jazyka C#)
 

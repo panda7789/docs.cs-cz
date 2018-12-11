@@ -1,5 +1,6 @@
 ---
-title: '&amp; – Operátor (referenční dokumentace jazyka C#)'
+title: '&amp; Operator - C# odkaz'
+ms.custom: seodec18
 ms.date: 10/29/2018
 f1_keywords:
 - '&_CSharpKeyword'
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - '& operator [C#]'
 - AND operator (&) [C#]
 ms.assetid: afa346d5-90ec-4b1f-a2c8-3881f018741d
-ms.openlocfilehash: a8f76ded0ef9f8e8099838a903d90f1695324991
-ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
+ms.openlocfilehash: a799c0e37d6607e8ff72ab984ff5e540a4e11063
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "43510975"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236372"
 ---
 # <a name="amp-operator-c-reference"></a>&amp; – Operátor (referenční dokumentace jazyka C#)
 

@@ -1,5 +1,6 @@
 ---
-title: if-else (Referenční dokumentace jazyka C#)
+title: if-else – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - if_CSharpKeyword
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 2cbfab57ffaf294109f9f01f228f2826097fc299
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 86a7a7aa480cec6fcaf8142a4d41e4cd188d9b80
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151392"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242201"
 ---
 # <a name="if-else-c-reference"></a>if-else (Referenční dokumentace jazyka C#)
 

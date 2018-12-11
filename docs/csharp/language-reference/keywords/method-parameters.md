@@ -1,17 +1,18 @@
 ---
-title: Parametry metody (Referenční dokumentace jazyka C#)
+title: Parametry metody - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#], parameters
 - method parameters [C#]
 - parameters [C#]
 ms.assetid: 680e39ff-775b-48b0-9f47-4186a5bfc4a1
-ms.openlocfilehash: 446a5239fa1de8559dea50f7e8b8869aed0297c5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f6d0309a91c426123be13a4302d711c92d4ea0f7
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512782"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242705"
 ---
 # <a name="method-parameters-c-reference"></a>Parametry metody (Referenční dokumentace jazyka C#)
 

@@ -1,17 +1,18 @@
 ---
-title: Kontextové klíčové slovo in (Referenční dokumentace jazyka C#)
+title: v - C# odkaz
+ms.custom: seodec18
 ms.date: 02/06/2018
 f1_keywords:
 - in
 - in_CSharpKeyword
 helpviewer_keywords:
 - in keyword [C#]
-ms.openlocfilehash: 04449d99fd3e1b573333bc11a9766e9809b44785
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 1b2b68298047f682c3ed2abf6336ca32f073f7c2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44259711"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239313"
 ---
 # <a name="in-c-reference"></a>Kontextové klíčové slovo in (Referenční dokumentace jazyka C#)
 

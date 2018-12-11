@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 11/06/2018
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a142ab98174182adf6f50cf6eedff27c82993f5e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 36da24f0cd2d2b9c4884101d97026307174f4130
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130504"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236346"
 ---
 # <a name="tutorial-predict-new-york-taxi-fares-using-a-regression-learner-with-mlnet"></a>Kurz: Předpověď tarify taxislužby města New York learner regrese pomocí ML.NET
 
@@ -112,7 +112,7 @@ Přidejte následující kód přímo nad `Main` metoda zadat tyto cesty a `_tex
 
 [!code-csharp[InitializePaths](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#2 "Define variables to store the data file paths")]
 
-Při sestavování modelů s využitím ML .NET můžete spustit tak, že vytvoříte objekt Context ML. Toto je srovnatelná s hodnotou koncepčně pomocí `DbContext` v Entity Framework. Prostředí poskytuje kontext pro úlohu machine learning, který lze použít pro sledování a protokolování výjimek.
+Při vytváření modelu s ML.NET spustíte tak, že vytvoříte objekt Context ML. Toto je srovnatelná s hodnotou koncepčně pomocí `DbContext` v Entity Framework. Prostředí poskytuje kontext pro úlohu machine learning, který lze použít pro sledování a protokolování výjimek.
 
 ### <a name="initialize-variables-in-main"></a>Inicializace proměnné ve funkci Main
 
@@ -177,7 +177,7 @@ Posledním krokem přípravy dat je kombinací všech sloupců funkce do **funkc
 
 ## <a name="choose-a-learning-algorithm"></a>Vyberte algoritmus učení
 
-Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vybereme algoritmu učení (**learner**). Learner trénovat modelu. Rozhodli jsme se **regrese** úkol pro tento problém, takže použijeme `FastTreeRegressionTrainer` learner, což je jedna studentů regrese poskytované ML .NET.
+Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vybereme algoritmu učení (**learner**). Learner trénovat modelu. Rozhodli jsme se **regrese** úkol pro tento problém, takže použijeme `FastTreeRegressionTrainer` learner, což je jedna studentů regrese poskytované ML.NET.
 
 `FastTreeRegressionTrainer` Learner využívá přechodu zvýšení skóre. Přechodu zvýšení skóre je strojové učení techniku pro regresní problémy. Sestaví každém stromu regrese způsobem podle jednotlivých kroků. Předdefinované ztráta funkce používá k měření chyb v každém kroku a opravit ho v dalším. Výsledkem je, který je ve skutečnosti kompletu sady slabší prediktivní modely prediktivní model. Další informace o přechodu zvýšení skóre, naleznete v tématu [Boosted regrese rozhodovacího stromu](/azure/machine-learning/studio-module-reference/boosted-decision-tree-regression).
 

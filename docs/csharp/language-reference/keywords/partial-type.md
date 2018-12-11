@@ -1,5 +1,6 @@
 ---
-title: částečný typ (referenční dokumentace jazyka C#)
+title: částečný typ - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - partialtype
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 365d00d2c53d3efe1cd4330bdd3ec48740a49c53
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ed3e18c5981fa52dc2c6ef09bfb666cfa705fede
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208273"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239563"
 ---
 # <a name="partial-type-c-reference"></a>částečný typ (referenční dokumentace jazyka C#)
 

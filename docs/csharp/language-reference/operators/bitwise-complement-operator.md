@@ -1,5 +1,6 @@
 ---
-title: ~ – operátor (Referenční dokumentace jazyka C#)
+title: ~ – Operátor - C# odkaz
+ms.custom: seodec18
 ms.date: 11/05/2018
 f1_keywords:
 - ~_CSharpKeyword
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - ~ [C#], bitwise complement operator
 - bitwise complement operator [C#]
 ms.assetid: 11bc078a-50e2-4d7e-9896-67ef669dc602
-ms.openlocfilehash: 1bcb07c5639a098e3a8c566e92083ca0d48efb81
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 57e5baee423c0b5d9292d0ad4cbf909646eb3a38
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153212"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235716"
 ---
 # <a name="-operator-c-reference"></a>~ – operátor (Referenční dokumentace jazyka C#)
 

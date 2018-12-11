@@ -1,16 +1,17 @@
 ---
-title: Typy (Referenční dokumentace jazyka C#)
+title: Typy – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - types [C#]
 - data types [C#], type system
 ms.assetid: 16b984df-f417-4e02-b1e6-4589d4a614ea
-ms.openlocfilehash: f5a3ad9fef108c1eec2ba63d68bc5015d2f6c430
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 41406e74a207f289968017f1f9869b23b165c34b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53142954"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236658"
 ---
 # <a name="types-c-reference"></a>Typy (Referenční dokumentace jazyka C#)
 

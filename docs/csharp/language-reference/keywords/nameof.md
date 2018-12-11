@@ -1,16 +1,17 @@
 ---
-title: nameof (referenční dokumentace jazyka C#)
+title: nameof - C# odkaz
+ms.custom: seodec18
 ms.date: 06/16/2017
 f1_keywords:
 - nameof_CSharpKeyword
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: 01c87f8d63264aa342b04b8d3fcfc7e6f38db44b
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 61c0744168a6fef0f8c8cfb589602e7aeff0c48b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50744352"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241484"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 

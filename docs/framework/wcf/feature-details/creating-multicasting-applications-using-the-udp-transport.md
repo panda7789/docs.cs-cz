@@ -2,12 +2,12 @@
 title: Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 ms.date: 03/30/2017
 ms.assetid: 7485154a-6e85-4a67-a9d4-9008e741d4df
-ms.openlocfilehash: 89ac99ffec614eeebd076f9868568dcf2c7b04fd
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: b65a277b6e76767d1e3bfdbebbac5051759986e0
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46324750"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241850"
 ---
 # <a name="creating-multicasting-applications-using-the-udp-transport"></a>Vytváření aplikací všesměrového vysílání pomocí přenosu UDP
 Vícesměrové vysílání aplikace odesílat zprávy malé velký počet příjemců ve stejnou dobu bez nutnosti vytvářet bod pro bod připojení. Zvýraznění takové aplikace je rychlost spolehlivost. Jinými slovy je důležitější zaslat včas dat, než se ujistěte se, že ve skutečnosti přijetí žádné konkrétní zprávu. WCF teď podporuje vytváření aplikací s použitím vícesměrového vysílání <xref:System.ServiceModel.UdpBinding>. Tento přenos je užitečné v situacích, kdy služba potřebuje odeslat malých zpráv na počet klientů najednou. Aplikace akciích je příkladem takové služby.  
@@ -15,7 +15,7 @@ Vícesměrové vysílání aplikace odesílat zprávy malé velký počet příj
 ## <a name="implementing-a-multicast-application"></a>Implementace aplikace pro vícesměrové vysílání  
  K implementaci aplikace vícesměrového vysílání, definování kontraktu služby a pro každý softwarová součást, kterou je potřeba reagovat na zprávy vícesměrového vysílání, implementace kontraktu služby. Například může aplikace akciích definování kontraktu služby:  
   
-```  
+```csharp
 // Shared contracts between the client and the service  
 [ServiceContract]
 interface IStockTicker
@@ -43,7 +43,7 @@ class StockInfo
   
  Každá aplikace, který chce dostávat zprávy vícesměrového vysílání musí hostovat službu, která poskytuje toto rozhraní.  Například tady je ukázka kódu, který ukazuje, jak přijmout zprávy vícesměrového vysílání:  
   
-```  
+```csharp
 // Service Address
 string serviceAddress = "soap.udp://224.0.0.1:40000";
 // Binding
@@ -63,7 +63,7 @@ Console.ReadLine();
   
  V takové situaci je klienta, který ve skutečnosti odesílá zprávy vícesměrového vysílání. Každá služba, která naslouchá na správné adrese UDP bude přijímat zprávy vícesměrového vysílání. Tady je příklad z klienta, který odesílá zprávy vícesměrového vysílání:  
   
-```  
+```csharp
 // Multicast Address
 string serviceAddress = "soap.udp://224.0.0.1:40000";
 
@@ -82,7 +82,7 @@ while (true)
 {
     // This will continue to mulicast stock information
     proxy.SendStockInfo(GetStockInfo());
-    Console.WriteLine(String.Format("sent stock info at {0}", DateTime.Now));
+    Console.WriteLine($"sent stock info at {DateTime.Now}");
     // Wait for one second before sending another update
     System.Threading.Thread.Sleep(new TimeSpan(0, 0, 1));
 }
@@ -96,7 +96,7 @@ while (true)
 ### <a name="two-way-multicast-messaging"></a>Zasílání zpráv obousměrný vícesměrového vysílání  
  Zatímco jsou obecně jednosměrné zprávy vícesměrového vysílání, UdpBinding podporuje výměně zpráv žádost odpověď. Zprávy odesílané pomocí přenosu UDP obsahovat oba From a adresu. Při použití adresa odesílatele jako nebezpečným způsobem je možné změnit en-route musí věnovat pozornost.  Adresu můžete zkontrolovat pomocí následujícího kódu:  
   
-```  
+```csharp
 if (address.AddressFamily == AddressFamily.InterNetwork)
 {
     // IPv4

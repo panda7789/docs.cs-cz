@@ -1,19 +1,20 @@
 ---
-title: Ukázka třídy COM (Průvodce programováním v C#)
+title: Ukázka třídy COM - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - examples [C#], COM classes
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
-ms.openlocfilehash: a77f022b4cf7659d506a7893923ce47270cb8c1b
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: b2e9e94f75b048dbe4ce3430c7a590f9be156e1d
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45745478"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242481"
 ---
 # <a name="example-com-class-c-programming-guide"></a>Ukázka třídy COM (Průvodce programováním v C#)
-Následuje příklad třídy, která by vystavit jako objekt modelu COM. Poté, co tento kód byl umístěn v souboru .cs a přidány do projektu, nastavte **zaregistrovat pro interoperabilitu COM** vlastnost **True**. Další informace najdete v tématu [jak: součást zaregistrovat pro interoperabilitu COM](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).
+Následuje příklad třídy, která by vystavit jako objekt modelu COM. Poté, co tento kód byl umístěn v souboru .cs a přidány do projektu, nastavte **zaregistrovat pro interoperabilitu COM** vlastnost **True**. Další informace najdete v tématu [jak: Zaregistrovat pro interoperabilitu COM komponentu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).
   
  Vystavení objektů jazyka Visual C# do modelu COM vyžaduje deklarace třídy rozhraní, pokud se vyžaduje rozhraní události a vlastní třídy. Členy třídy musí dodržovat tato pravidla být viditelné modelu COM:  
   

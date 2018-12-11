@@ -1,16 +1,17 @@
 ---
-title: Delegáti s pojmenovanými vs. Anonymní metody (Průvodce programováním v C#)
+title: Delegáti s pojmenovanými vs. Anonymní metody - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 6d7dcb3c7c6fa8f1d55237504c23cf468aa0e79d
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 586ad5a59eebb03ed9ed6bea68d232a6b249c3c9
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45678519"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241483"
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>Delegáti s pojmenovanými vs. Anonymní metody (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) lze přidružit metodu s názvem. Když vytvoříte instanci delegátu pomocí metodu s názvem, je metoda předaného jako parametr, například:  
@@ -41,5 +42,5 @@ A [delegovat](../../../csharp/language-reference/keywords/delegate.md) lze přid
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
 - [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
 - [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)  
-- [Postupy: kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
+- [Postupy: Kombinování delegátů (vícesměroví delegáti)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
 - [Události](../../../csharp/programming-guide/events/index.md)

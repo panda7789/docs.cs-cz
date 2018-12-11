@@ -1,17 +1,18 @@
 ---
-title: 'Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (Průvodce programováním v C#)'
+title: 'Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: dccf40508d4223bdef0b2fbbe5ce97f75ffb5773
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 92ac601719ccb1c5e9f769c286a1d2dd443c713a
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500983"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237802"
 ---
-# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (Průvodce programováním v C#)
+# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (C# Průvodce programováním v)
 Implicitně typované lokální proměnné lze použít, když chcete, aby kompilátor určit typ místní proměnné. Implicitně typované lokální proměnné musíte použít k ukládání anonymní typy, které se často používají ve výrazech dotazů. Následující příklady ilustrují použití povinných a volitelných implicitně typované lokální proměnné v dotazech.  
   
  Implicitně typované lokální proměnné jsou deklarovány pomocí [var](../../../csharp/language-reference/keywords/var.md) kontextové klíčové slovo. Další informace najdete v tématu [implicitně typované lokální proměnné](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) a [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  

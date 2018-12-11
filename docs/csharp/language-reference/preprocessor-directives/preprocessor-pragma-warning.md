@@ -1,17 +1,18 @@
 ---
-title: '#– Direktiva pragma upozornění (referenční dokumentace jazyka C#)'
+title: '#– Direktiva pragma upozornění - C# odkaz'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma warning'
 helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
-ms.openlocfilehash: 89ff8151d55ac58a1b114f7727297704ce26b9a7
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3b50585e0ae0964cf19379573bd85923daa552f4
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083649"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242716"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma – upozornění (Referenční dokumentace jazyka C#)
 `#pragma warning` můžete povolit nebo zakázat určité upozornění.  

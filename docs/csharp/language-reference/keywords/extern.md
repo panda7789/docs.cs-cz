@@ -1,5 +1,6 @@
 ---
-title: extern – modifikátor (referenční dokumentace jazyka C#)
+title: extern – modifikátor - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - extern_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - DllImport attribute
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
-ms.openlocfilehash: 92ba2324345a6fc196dc3702e5f84886fba09ffc
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 89c5ec7713c6420060310b5df90acec0cc3b088b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43892756"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237865"
 ---
 # <a name="extern-c-reference"></a>extern (Referenční dokumentace jazyka C#)
 
@@ -77,7 +78,7 @@ public class MainClass
 
 Tím se vytvoří spustitelný soubor `cm.exe`.
 
-5. Spustit `cm.exe`. `SampleMethod` Metoda předává hodnota 5 souboru knihovny DLL, která vrací hodnotu vynásobenou 10.  Program vygeneruje následující výstup:
+5. Spusťte `cm.exe`. `SampleMethod` Metoda předává hodnota 5 souboru knihovny DLL, která vrací hodnotu vynásobenou 10.  Program vygeneruje následující výstup:
 
 ```
 SampleMethod() returns 50.

@@ -1,5 +1,6 @@
 ---
-title: klíčové slovo params (referenční dokumentace jazyka C#)
+title: klíčové slovo params – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - params_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - parameters [C#], params
 - params keyword [C#]
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
-ms.openlocfilehash: 089e31f3aad12c2303619e2a1998d0d6a5a0ad86
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: dd9699eb50f7dffc7c2f4976a79afbf689ba2470
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48844095"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235839"
 ---
 # <a name="params-c-reference"></a>params (Referenční dokumentace jazyka C#)
 

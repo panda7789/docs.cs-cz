@@ -1,5 +1,6 @@
 ---
-title: while (Referenční dokumentace jazyka C#)
+title: while – C# odkaz
+ms.custom: seodec18
 ms.date: 05/28/2018
 f1_keywords:
 - while_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
-ms.openlocfilehash: f465bc98c0348c3b3522c062cf3be5ed90ee414a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d360db7b9b740bef997327dda9b628c1edab0f35
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143503"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242565"
 ---
 # <a name="while-c-reference"></a>while (Referenční dokumentace jazyka C#)
 

@@ -1,5 +1,6 @@
 ---
-title: ?? – Operátor (referenční dokumentace jazyka C#)
+title: ?? Operator - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - ??_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - ?? operator [C#]
 - conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: fbcfda07cc55628aeed82eb7561516f7012bc4fe
-ms.sourcegitcommit: b5cd9d5d3b75a5537fc9ad8a3f085f0bb1845ee0
+ms.openlocfilehash: 153accdc4995065563b00da0fd62992341c06cf1
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50980671"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241876"
 ---
 # <a name="-operator-c-reference"></a>?? – Operátor (referenční dokumentace jazyka C#)
 `??` Operátor se nazývá operátoru nulového sjednocení.  Vrátí levý operand, pokud hodnota operandu není null; v opačném případě vrátí pravý operand.  

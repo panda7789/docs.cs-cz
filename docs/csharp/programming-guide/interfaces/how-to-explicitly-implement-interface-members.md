@@ -1,17 +1,18 @@
 ---
-title: 'Postupy: Explicitní implementace členů rozhraní (Průvodce programováním v C#)'
+title: 'Postupy: Explicitní implementace členů rozhraní - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: 30ea58b7ef3edd757c450b9fca1cc810ff9d17c1
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 11ef4eb3e4da0166ae4753b8028edb217f2a487e
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861020"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236925"
 ---
-# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Postupy: Explicitní implementace členů rozhraní (Průvodce programováním v C#)
+# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Postupy: Explicitní implementace členů rozhraní (C# Průvodce programováním v)
 V tomto příkladu deklaruje [rozhraní](../../../csharp/language-reference/keywords/interface.md), `IDimensions`a třídu, `Box`, které explicitně implementuje členy rozhraní `getLength` a `getWidth`. Členy jsou přístupné prostřednictvím instance rozhraní `dimensions`.  
   
 ## <a name="example"></a>Příklad  

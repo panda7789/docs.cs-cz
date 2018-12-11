@@ -1,5 +1,6 @@
 ---
-title: as (Referenční dokumentace jazyka C#)
+title: jako - C# odkaz
+ms.custom: seodec18
 ms.date: 10/11/2018
 f1_keywords:
 - as_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - type conversion [C#], as keyword
 - as keyword [C#]
 ms.assetid: a9be126b-cbf4-4990-a70d-d0e1983cad0e
-ms.openlocfilehash: d6c9d44ff22881e6e5e7a542e1df41bbf77b23d8
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 7559c24151a3c9acc79c0554112c923a23a88564
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "49122710"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244346"
 ---
 # <a name="as-c-reference"></a>as (Referenční dokumentace jazyka C#)
 Můžete použít `as` operátor pro provádění určitých typů převody mezi typy kompatibilní odkazů nebo [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md). Následující kód ukazuje příklad.  

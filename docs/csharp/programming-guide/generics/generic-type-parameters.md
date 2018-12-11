@@ -1,16 +1,17 @@
 ---
-title: Obecné parametry typu (Průvodce programováním v C#)
+title: Parametry obecného typu – C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-ms.openlocfilehash: 5bb19e13a6e34e2e22ebc3f9d46edd85fbe0176e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8b9e040beea0590320a34d35ca323374f357bf2f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513706"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238192"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Obecné parametry typu (Průvodce programováním v C#)
 Parametry typu v obecném typu nebo metodě, je zástupný symbol pro konkrétní typ klienta Určuje, kdy se vytvořit instanci proměnné obecného typu. Obecný třídy, jako například `GenericList<T>` uvedené v [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md), nelze použít jako-totiž není ve skutečnosti typu; to je více než podrobný plán pro typ. Chcete-li použít `GenericList<T>`, kód klienta musí deklarovat a vytvoření instance konstruovaný typ tak, že zadáte argument typu v lomených závorkách. Argument typu pro tuto konkrétní třídu může být libovolný typ rozpoznatelným kompilátorem. Libovolný počet instancí konstruovaný typ nelze vytvořit, každý z nich jiný typ argumentu, následujícím způsobem:  

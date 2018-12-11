@@ -1,16 +1,17 @@
 ---
-title: Pole (Průvodce programováním v C#)
+title: Pole - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#]
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
-ms.openlocfilehash: 2c3f22cb2a011aea9f0fff9ef49d1fd780d6d832
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: cf684d2ec7ae7282b1ab68817357773f0f96c9ae
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125374"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245649"
 ---
 # <a name="arrays-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 

@@ -1,5 +1,6 @@
 ---
-title: sbyte (Referenční dokumentace jazyka C#)
+title: SByte – C# odkaz
+ms.custom: seodec18
 ms.date: 03/14/2017
 f1_keywords:
 - sbyte_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sbyte keyword [C#]
 ms.assetid: 1a9c7b48-73d1-4d33-b485-c4faf0a816bc
-ms.openlocfilehash: c64aae58317c54499b3d16c5643e4a473544c6a6
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: e7dc10706257b2c1fa8574f193523272339f61ff
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "50744506"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242851"
 ---
 # <a name="sbyte-c-reference"></a>sbyte (Referenční dokumentace jazyka C#)
 

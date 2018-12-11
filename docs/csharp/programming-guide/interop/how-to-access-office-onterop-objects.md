@@ -1,5 +1,6 @@
 ---
-title: 'Postupy: přístup k objektům Interop sady Office pomocí funkcí Visual C# (C# Programming Guide)'
+title: 'Postupy: Přístup k objektům Interop sady Office pomocí Vizuálu C# funkce – C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - optional parameters [C#], Office programming
@@ -9,14 +10,14 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 9d07f8e7b2f4c31af572829256065cf6aa3383bb
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 803c3bd4099b838ddc71fea530565f26bd4142df
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260214"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236567"
 ---
-# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům Interop sady Office pomocí funkcí Visual C# (C# Programming Guide)
+# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C# (Průvodce programováním v C#)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  
   
  V tomto tématu použijete nové funkce napsat kód, který vytvoří a zobrazí list aplikace Microsoft Office Excel. Potom napíšete kód pro přidání dokumentu Office Word, který obsahuje ikonu, která je propojený Excelový list.  
@@ -29,9 +30,9 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 ## <a name="to-create-a-new-console-application"></a>Vytvořte novou konzolovou aplikaci  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
-2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**. **Nový projekt** zobrazí se dialogové okno.  
+2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**. Zobrazí se dialogové okno **Nový projekt**.  
   
 3.  V **nainstalované šablony** podokně rozbalte **Visual C#** a potom klikněte na tlačítko **Windows**.  
   
@@ -41,7 +42,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 6.  Zadejte název pro váš projekt v **název** pole.  
   
-7.  Klikněte na tlačítko **OK**.  
+7.  Klikněte na **OK**.  
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
@@ -49,9 +50,9 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu a pak klikněte na tlačítko **přidat odkaz**. **Přidat odkaz** zobrazí se dialogové okno.  
   
-2.  Na **sestavení** stránce **Microsoft.Office.Interop.Word** v **název komponenty** seznamu a pak podržte klávesu CTRL, klíče a vyberte  **Microsoft.Office.Interop.Excel**.  Pokud nevidíte sestavení, budete muset zajistit, jsou nainstalované a zobrazí (naleznete v tématu [postupy: Instalace sestavení primární spolupráce Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies))  
+2.  Na **sestavení** stránce **Microsoft.Office.Interop.Word** v **název komponenty** seznamu a pak podržte klávesu CTRL, klíče a vyberte  **Microsoft.Office.Interop.Excel**.  Pokud nevidíte sestavení, budete muset zajistit, jsou nainstalované a zobrazí (viz [jak: Instalace primárních sestavení vzájemné spolupráce Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies))  
   
-3.  Klikněte na tlačítko **OK**.  
+3.  Klikněte na **OK**.  
   
 ## <a name="to-add-necessary-using-directives"></a>Chcete-li přidat nezbytné direktivy using  
   
@@ -137,7 +138,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 ## <a name="to-set-the-embed-interop-types-property"></a>Nastavení vlastnosti vložit typy spolupráce  
   
-1.  Další vylepšení je možné při volání typu COM, který nevyžaduje, aby primární definiční sestavení (PIA) v době běhu. Odebráním závislosti na výsledky sestavení PIA v nezávislosti na verzi a nasazení. Další informace o výhodách programování bez PIA, naleznete v tématu [návod: vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
+1.  Další vylepšení je možné při volání typu COM, který nevyžaduje, aby primární definiční sestavení (PIA) v době běhu. Odebráním závislosti na výsledky sestavení PIA v nezávislosti na verzi a nasazení. Další informace o výhodách programování bez PIA, naleznete v tématu [názorný postup: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
   
      Programování je navíc jednodušší, protože typy, které vyžadují a vrácené z metody modelu COM lze znázornit pomocí typu `dynamic` místo `Object`. Proměnné, které mají typ `dynamic` není u nich vyhodnoceno až do spuštění, která eliminuje potřebu explicitní přetypování. Další informace najdete v tématu [použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md).  
   
@@ -178,4 +179,4 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
 - [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
 - [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
 - [Pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)  
-- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro Office](../../../csharp/programming-guide/classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)

@@ -3,14 +3,14 @@ title: Zápis bezpečný a účinný C# kódu
 description: Poslední vylepšení C# jazyk umožňují také napsat bezpečného kódu s možností ověření, že výkon bylo dřív přidružené nezabezpečený kód.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 8e58a7f870c742f1c0a90a7b5507ac1e5d8074ea
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 35d9cf89d8ba2ddb673554a76eb33ae59b178b42
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201589"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245685"
 ---
-# <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu #
+# <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu
 
 Nové funkce v C# umožňují také napsat ověřitelný kód bezpečně s lepším výkonem. Pokud použijete pečlivě těchto technik, méně scénáře vyžadují nezabezpečený kód. Tyto funkce usnadnění použití odkazů na typy hodnot jako argumenty metody a metoda vrátí hodnotu. Po dokončení bezpečně, minimalizovat těchto technik kopírování hodnotové typy. Pomocí typů hodnot lze minimalizovat počet přidělování a uvolňování paměti kolekce předá.
 
@@ -97,7 +97,7 @@ public struct Point3D
 {
     private static Point3D origin = new Point3D(0,0,0);
 
-    public ref readonly Point3D Origin => ref origin;
+    public static ref readonly Point3D Origin => ref origin;
 
     // other members removed for space
 }
@@ -179,7 +179,7 @@ Místo toho, pokud výpočet vzdálenost používá neměnné struktury `Readonl
 
 [!code-csharp[readonlyInArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#ReadOnlyInArgument "Specifying a readonly in argument")]
 
-Kompilátor generuje kód efektivnější při volání členy `readonly struct`: `this` odkaz, namísto kopírování příjemce, je vždy `in` parametr předaný odkazem na metodu member. Tato optimalizace uloží kopírování při použití `readonly struct` jako `in` argument.
+Kompilátor generuje kód efektivnější při volání členy `readonly struct`: `this` Odkaz, namísto kopírování příjemce, je vždy `in` parametr předaný odkazem na metodu member. Tato optimalizace uloží kopírování při použití `readonly struct` jako `in` argument.
 
 Zobrazí se ukázkový program, který ukazuje, rozdíly ve výkonu pomocí [Benchmark.net](https://www.nuget.org/packages/BenchmarkDotNet/) v našich [úložiště ukázek](https://github.com/dotnet/samples/tree/master/csharp/safe-efficient-code/benchmark) na Githubu. Porovná předáním proměnlivé struktury podle hodnoty a podle reference s předáním neměnné struktury podle hodnoty a podle reference. Je nejrychlejším způsobem použití neměnné struktury a předání odkazem.
 
@@ -205,10 +205,15 @@ Oproti, typy odkazů v těchto stejných situacích:
 
 - Úložiště pro typy odkazů jsou haldy přidělené pro místní proměnné a argumenty metody. Odkaz je uložen v zásobníku.
 - Úložiště pro typy odkazů, které jsou členy jiné objekty samostatně přidělují na haldě. Objekt obsahující uchovává odkaz.
-- Úložiště pro typ hodnoty vrácené hodnoty je haldy přidělené. Odkaz na toto úložiště je uložen v zásobníku.
+- Úložiště pro odkaz na typ vrácené hodnoty je haldy přidělené. Odkaz na toto úložiště je uložen v zásobníku.
 
 Minimalizace přidělení se dodává s kompromisy. Kopírování větší množství paměti při velikost `struct` je větší než velikost odkaz. Odkaz je obvykle 64 bitů nebo 32 bitů a závisí na procesoru cílového počítače.
 
 Tyto poměry obecně mít minimální vliv zatížení vliv. Pro velké struktury nebo větší kolekce, zvyšuje dopad na výkon. Dopad mohou být velké v těsné smyčky a horké cesty pro programy.
 
 Těchto vylepšení C# jazyka jsou navrženy pro algoritmů výkon kritických-li minimalizovat přidělení paměti je hlavním faktorem při dosažení nezbytné výkonu. Může se stát, že není často používají tyto funkce v kódu, který píšete. Nicméně tato vylepšení byla přijata v celém rozhraní .NET. Provádění více rozhraní API z těchto funkcí používat, zobrazí se výkon vašich aplikací, zlepšit.
+
+## <a name="see-also"></a>Viz také:
+
+- [REF – klíčové slovo](language-reference/keywords/ref.md)
+- [Návratové a místní referenční hodnoty](programming-guide/classes-and-structs/ref-returns.md)

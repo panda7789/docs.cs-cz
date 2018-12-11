@@ -3,12 +3,12 @@ title: C# Správa verzí – Průvodce v C#
 description: Pochopení principu správy verzí v C# a .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: af81e5a8ad3165ce99a823f8b263cc798d5b6d2c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a0c75e2f1397f43fadf91d145e8b63de1d4d90eb
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183227"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243488"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C# #
 
@@ -38,12 +38,12 @@ Zdroj kompatibilní s předchozí verzí, pokud kód, který závisí na předch
 
 Tady je pár věcí k uvážení při pokusu o zachování zpětné kompatibility se staršími verzemi knihovny:
 
-* Virtuální metody: Když nastavíte virtuální metoda nevirtuální ve vaší novou verzi, znamená to, že projekty, které potlačí tuto metodu bude muset aktualizovat. To je obrovská rozbíjející změny a se důrazně nedoporučuje.
-* Podpisy metod: při aktualizaci chování metoda vyžaduje, abyste změňte její signaturu tak dobře, měli byste místo toho vytvořit přetížení tak, aby kód volání do metody budou i nadále fungovat.
+* Virtuální metody: Když vytvoříte virtuální metody v nové verzi nevirtuální, znamená to, že projekty, které potlačí tuto metodu bude mít aktualizovat. To je obrovská rozbíjející změny a se důrazně nedoporučuje.
+* Podpisy metod: Při aktualizaci chování metoda vyžaduje, abyste změňte její signaturu tak dobře, měli byste místo toho přetížení vytvořit tak, aby kód volání do metody budou i nadále fungovat.
 Vždy můžete pracovat s starý podpis metody, chcete-li volat nový podpis metody tak, aby zůstala konzistentní implementaci.
-* [Zastaralé atribut](programming-guide/concepts/attributes/common-attributes.md#Obsolete): Tento atribut v kódu můžete použít k určení třídy nebo členy třídy, které jsou zastaralé a pravděpodobně odebrán v budoucích verzích.
+* [Zastaralé atribut](programming-guide/concepts/attributes/common-attributes.md#Obsolete): Tento atribut v kódu můžete použít k určení, že třídy nebo členy třídy, které jsou zastaralé a pravděpodobně odebrán v budoucích verzích.
 Tím se zajistí, že vývojáři využívající knihovnu lépe připraveni rozbíjející změny.
-* Volitelné argumenty metody: Kdy provést povinné argumenty dříve volitelné metody nebo změnit výchozí hodnoty a veškerý kód, který neposkytuje tyto argumenty budou potřeba aktualizovat.
+* Metoda volitelné argumenty: Když provedete metoda dříve volitelné argumenty povinné nebo změnit výchozí hodnoty a veškerý kód, který neposkytuje tyto argumenty budou potřeba aktualizovat.
 > [!NOTE]
 > Provádění povinné argumenty volitelné by měl mít velmi malý vliv, zejména v případě, že ho nedojde ke změně chování metody.
 
@@ -62,7 +62,7 @@ Jako vývojář, který využívá knihovny .NET vytvořených jinými vývojá�
 
 ### <a name="assembly-binding-redirection"></a>Přesměrování vazby sestavení
 
-Můžete použít `app.config` souboru k aktualizaci verze knihovny aplikace používá. Přidáním, co se volá [ *přesměrování vazby* ](../framework/configure-apps/redirect-assembly-versions.md) vaše můžete použít na novou verzi knihovny bez nutnosti znovu kompilovat aplikace. Následující příklad ukazuje, jak by aktualizovat vaše aplikace `app.config` soubor má být použit `1.0.1` oprav verze `ReferencedLibrary` místo `1.0.0` původně byl kompilován s verzí.
+Můžete použít `app.config` souboru k aktualizaci verze knihovny aplikace používá. Přidáním, co se volá [ *přesměrování vazby* ](../framework/configure-apps/redirect-assembly-versions.md) používáte novou verzi knihovny bez nutnosti znovu kompilovat aplikace. Následující příklad ukazuje, jak by aktualizovat vaše aplikace `app.config` soubor má být použit `1.0.1` oprav verze `ReferencedLibrary` místo `1.0.0` původně byl kompilován s verzí.
 
 ```xml
 <dependentAssembly>

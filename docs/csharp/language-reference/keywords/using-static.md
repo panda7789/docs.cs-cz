@@ -1,17 +1,18 @@
 ---
-title: Using static – direktiva (referenční dokumentace jazyka C#)
+title: Using static – direktiva - C# odkaz
+ms.custom: seodec18
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04e7368a6b6a4453f2dd07c7afdc0bffa7473ed1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c17f74fc16e8c9774086c5270a66e9e9d7cc425b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506669"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237776"
 ---
 # <a name="using-static-directive-c-reference"></a>Using static – direktiva (referenční dokumentace jazyka C#)
 
@@ -21,7 +22,7 @@ ms.locfileid: "43506669"
 using static <fully-qualified-type-name>;
 ```
 
-kde *plně kvalifikovaný type-name* je název typu, jehož statické členy a vnořené typy může být odkazováno bez zadání názvu typu. Pokud nezadáte plně kvalifikovaného názvu (název oboru názvů úplné spolu s názvem typu), C# vygeneruje Chyba kompilátoru [CS0246](../compiler-messages/cs0246.md): "typ nebo obor názvů 'typ nebo obor názvů' nebyl nalezen. (nechybí using – direktiva nebo odkaz na sestavení?) ".
+kde *plně kvalifikovaný type-name* je název typu, jehož statické členy a vnořené typy může být odkazováno bez zadání názvu typu. Pokud nezadáte plně kvalifikovaného názvu (úplná obor názvů spolu s názvem typu), C# vygeneruje Chyba kompilátoru [CS0246](../compiler-messages/cs0246.md): "Nebyl nalezen typ nebo obor názvů"typ nebo obor názvů. (nechybí using – direktiva nebo odkaz na sestavení?) ".
 
 `using static` – Direktiva se vztahuje na libovolný typ, který má statické členy (nebo vnořené typy), i když má také členy instance. Však můžete členy instance volat pouze prostřednictvím instance typu.
 
@@ -37,7 +38,7 @@ Při volání statického člena, který je obvykle zadat název typu spolu s n�
 
 [!code-csharp[using-static#2](../../../../samples/snippets/csharp/language-reference/keywords/using/using-static2.cs#1)]
 
-`using static` Importuje pouze přístupné statické členy a vnořené typy deklarované v zadaném typu.  Zděděné členy nejsou naimportovány.  Můžete importovat z libovolný typ s názvem using static – direktiva, včetně modulů jazyka Visual Basic.  Pokud funkce nejvyšší úrovně F # se zobrazí v metadatech jako statické členy pojmenovaného typu, jehož název je platný identifikátor jazyka C#, je možné importovat funkcí F #.  
+`using static` Importuje pouze přístupné statické členy a vnořené typy deklarované v zadaném typu.  Zděděné členy nejsou naimportovány.  Můžete importovat z libovolný typ s názvem using static – direktiva, včetně modulů jazyka Visual Basic.  Pokud F# nejvyšší úrovně funkce se zobrazí v metadatech jako statické členy pojmenovaného typu, jehož název je platný C# identifikátor, pak bude F# funkce lze importovat.  
   
  `using static` Díky rozšiřující metody deklarované v zadaném typu, který je k dispozici pro vyhledávání v metodě rozšíření.  Nicméně názvy metod rozšíření nejsou naimportovány do oboru pro nekvalifikovaný odkaz v kódu.  
   

@@ -1,5 +1,6 @@
 ---
-title: '&lt;Viz také&gt; (C# Programming Guide)'
+title: '&lt;Viz také&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cref
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - cross-references [C#], tags
 - <seealso> C# XML tag
 ms.assetid: 8e157f3f-f220-4fcf-9010-88905b080b18
-ms.openlocfilehash: bb881c5309aaa721f12cfd60469aeeddd0a68446
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: eec4a0c2041d7d10b5887950bfec03ec8847c82b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865797"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244788"
 ---
 # <a name="ltseealsogt-c-programming-guide"></a>&lt;Viz také&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

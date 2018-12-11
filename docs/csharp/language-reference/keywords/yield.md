@@ -1,5 +1,6 @@
 ---
-title: yield (Referenční dokumentace jazyka C#)
+title: YIELD – C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - yield
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: be93b91ceaecdcf00029be57f07b9237a60c07b9
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 7b718417fc421b9024e023964c4f29478b52c4ca
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261538"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239274"
 ---
 # <a name="yield-c-reference"></a>yield (Referenční dokumentace jazyka C#)
 Při použití `yield` [kontextové klíčové slovo](../../../csharp/language-reference/keywords/index.md#contextual-keywords) v příkazu, dáváte tak najevo, metoda, operátor nebo `get` přístupový objekt, ve kterém se zobrazí, je iterátor. Pomocí `yield` k definování iterátor už není nutné explicitní extra třídy (třídy, která definuje stav výčtu, viz <xref:System.Collections.Generic.IEnumerator%601> příklad) při implementaci <xref:System.Collections.IEnumerable> a <xref:System.Collections.IEnumerator> vzor pro vlastní shromažďování Zadejte.  

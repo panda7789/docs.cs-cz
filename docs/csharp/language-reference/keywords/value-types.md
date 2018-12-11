@@ -1,5 +1,6 @@
 ---
-title: Typy hodnot (C# odkaz)
+title: Hodnota typu – C# odkaz
+ms.custom: seodec18
 ms.date: 11/26/2018
 f1_keywords:
 - cs.valuetypes
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: baf0db751cd70d50d4cf440626dd405b01c8d7ad
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9fe75cf9524f6280bc649fb3784c21e4dd88adea
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147714"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235779"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 

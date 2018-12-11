@@ -1,15 +1,16 @@
 ---
-title: Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)
+title: Klíčová slova Namespace - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - namespaces [C#], keywords
 ms.assetid: 091a66eb-b10d-4f54-9102-5ac0d4bdb84b
-ms.openlocfilehash: fa6110d3c344bfaa75f78624ef5e595e8c05642e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bfacc2fb73d4e9bc2e9c22790b89fd94ac6b8776
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513831"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236697"
 ---
 # <a name="namespace-keywords-c-reference"></a>Klíčová slova oboru názvů (Referenční dokumentace jazyka C#)
 Tato část popisuje klíčová slova a operátory, které jsou spojeny s pomocí oborů názvů:  

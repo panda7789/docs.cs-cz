@@ -1,5 +1,6 @@
 ---
-title: '&lt;typeparam&gt; (C# Programming Guide)'
+title: '&lt;typeparam&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - typeparam
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: 5db257cc655b7d9112fc4efc917f5d2175fcf665
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 87629346238e92cf95141e72d79be37f8b11e48f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143113"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241811"
 ---
 # <a name="lttypeparamgt-c-programming-guide"></a>&lt;typeparam&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

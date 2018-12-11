@@ -1,19 +1,20 @@
 ---
-title: 'Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na třídu metodě (Průvodce programováním v C#)'
+title: 'Postupy: Zjištění rozdílu mezi předáním struktury a předáním třídu odkaz na metodu - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], passing as method parameter
 - passing parameters [C#], structs vs. classes
 - methods [C#], passing classes vs. structs
 ms.assetid: 9c1313a6-32a8-4ea7-a59f-450f66af628b
-ms.openlocfilehash: 670dfad3b9fc22709a0ad7f8048a0468bce54a2e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c5963f45ee233f4413c4281a063c9c3d2a4c2a93
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45594721"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245451"
 ---
-# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na třídu metodě (Průvodce programováním v C#)
+# <a name="how-to-know-the-difference-between-passing-a-struct-and-passing-a-class-reference-to-a-method-c-programming-guide"></a>Postupy: Zjištění rozdílu mezi předáním struktury a předáním odkazu na metodu třídu (C# Průvodce programováním v)
 Následující příklad ukazuje, jak předávání [struktura](../../../csharp/language-reference/keywords/struct.md) metody se liší od předávání [třídy](../../../csharp/language-reference/keywords/class.md) instanci metody. V tomto příkladu obou argumentů (instance struktury a třídy) jsou předávány hodnotou a obě metody změňte hodnotu argumentu jedno pole. Ale výsledky ze dvou způsobů nejsou stejné vzhledem k tomu, co je předána, když je předat strukturu se liší od, co je předané při předání instance třídy.  
   
  Protože je struktura [typ hodnoty](../../../csharp/language-reference/keywords/value-types.md), když jste [předat strukturu hodnotu](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md) metody, metoda přijímá a funguje na kopii struktury argument. Metoda nemá přístup k původní struktury ve volání metody a proto ho nemůže změnit žádným způsobem. Metoda může změnit pouze kopie.  

@@ -2,15 +2,14 @@
 title: Přehled nástroje svcutil WCF
 description: Přehled nástroje dotnet svcutil Microsoft WCF, který přidá funkce pro projekty .NET Core a ASP.NET Core, podobný nástroj svcutil WCF pro projekty .NET Framework.
 author: mlacouture
-ms.author: jralexander
 ms.date: 08/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: c8240f02e97d4c0cd63efb2c30611188b1451b07
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: e42ec0d4072c56456c824a814f1b383ea70a9307
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168275"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237256"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Nástroj dotnet svcutil WCF pro .NET Core
 

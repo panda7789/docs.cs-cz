@@ -1,15 +1,16 @@
 ---
-title: Argumenty příkazového řádku (Průvodce programováním v C#)
+title: Argumenty příkazového řádku - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: a55e40a4a4880c39c74186c55b0886e06dc33bcb
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 5bc73ece0560abfde7966678518ff57a8af3733f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083946"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236073"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  
@@ -71,7 +72,7 @@ long num = Convert.ToInt64(s);
 > [!NOTE]
 >  Při spuštění aplikace v sadě Visual Studio, můžete zadat argumenty příkazového řádku [stránka ladění, Návrhář projektu](/visualstudio/ide/reference/debug-page-project-designer).  
   
- Další příklady o tom, jak používat argumenty příkazového řádku najdete v tématu [postupy: vytvoření a použití sestavení pomocí řádek příkazu](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
+ Další příklady o tom, jak používat argumenty příkazového řádku najdete v tématu [jak: Vytvoření a použití sestavení s pomocí příkazového řádku](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   
 ## <a name="see-also"></a>Viz také
 
@@ -79,6 +80,6 @@ long num = Convert.ToInt64(s);
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
 - [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
 - [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
-- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
+- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
 - [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
 - [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)

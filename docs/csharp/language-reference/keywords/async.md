@@ -1,5 +1,6 @@
 ---
-title: async (Referenční dokumentace jazyka C#)
+title: Async – C# odkaz
+ms.custom: seodec18
 ms.date: 05/22/2017
 f1_keywords:
 - async_CSharpKeyword
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 021a4291f550eca517cbdc9769c2a9f0aca99d1e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7bf45a701b10372d8cc4061db13f347eb0ddae91
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199874"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242422"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 Použití `async` modifikátor určit, že je metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor na metodu nebo výraz, to se označuje jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`: 
@@ -62,7 +63,7 @@ Chcete-li spustit kód jako aplikaci Windows Store:
 [!code-csharp[wpf-async](../../../../samples/snippets/csharp/language-reference/keywords/async/wpf/mainwindow.xaml.cs#1)]
   
 > [!IMPORTANT]
->  Další informace o úkolech a kódu, který se spustí při čekání na úlohy, naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md). Úplný příklad WPF používající podobné prvky, naleznete v tématu [návod: přístup k webu pomocí Async a Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+>  Další informace o úkolech a kódu, který se spustí při čekání na úlohy, naleznete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md). Úplný příklad WPF používající podobné prvky, naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
 ## <a name="return-types"></a>Návratové typy  
 Asynchronní metoda může mít tyto návratové typy:

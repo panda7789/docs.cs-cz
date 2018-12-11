@@ -1,5 +1,6 @@
 ---
-title: '&lt;zahrnout&gt; (C# Programming Guide)'
+title: '&lt;zahrnout&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - include
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: 854c8b61fa8164bccfc9451f2f163dab4a56388f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 05c671f029e9597db05fe2104424545d0ee2b98f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035178"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239388"
 ---
 # <a name="ltincludegt-c-programming-guide"></a>&lt;zahrnout&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
@@ -66,7 +67,7 @@ The summary for this other type.
 ```  
   
 ## <a name="program-output"></a>Výstup programu  
- Následující výstup je generována, když kompilujete třídy testu a Test2 s následujícím příkazovým řádkem: `/doc:DocFileName.xml.` v sadě Visual Studio, můžete zadat možnost komentáře dokumentu XML v podokně sestavení Návrháře projektu. Když kompilátor jazyka C# narazí \<zahrnout > značky, budou vyhledány dokumentační komentáře ve xml_include_tag.doc namísto aktuálního zdrojového souboru. Kompilátor poté vygeneruje DocFileName.xml a jedná se o soubor, který je využívána dokumentace nástroje, jako například [Sandcastle](https://github.com/EWSoftware/SHFB) vytvořit finální dokumentaci.  
+ Následující výstup je generována, když kompilujete třídy testu a Test2 s následujícím příkazovým řádkem: `/doc:DocFileName.xml.` V sadě Visual Studio zadejte možnost komentáře XML doc v podokně sestavení Návrháře projektu. Když C# kompilátor narazí \<zahrnout > značky, budou vyhledány dokumentační komentáře ve xml_include_tag.doc namísto aktuálního zdrojového souboru. Kompilátor poté vygeneruje DocFileName.xml a jedná se o soubor, který je využívána dokumentace nástroje, jako například [Sandcastle](https://github.com/EWSoftware/SHFB) vytvořit finální dokumentaci.  
   
 ```xml  
 <?xml version="1.0"?>   

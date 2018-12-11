@@ -1,5 +1,5 @@
 ---
-title: Testování částí pomocí jazyka Visual Basic v rozhraní .NET Core pomocí příkazu dotnet test a xUnit
+title: Testování částí Visual Basic v .NET Core pomocí příkazu dotnet test a xUnit
 description: Další koncepty testů jednotek v .NET Core prostřednictvím vytváření ukázkové řešení jazyka Visual Basic podrobné interaktivní prostředí pomocí příkazu dotnet test a xUnit.
 author: billwagner
 ms.author: wiwagn
@@ -7,12 +7,12 @@ ms.date: 09/01/2017
 dev_langs:
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: eae5f0727d2d75044c072e8cc1d9a1c6faf53a9a
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 47964fa27ca3b8cbc509467a9b21f942bfc7cc75
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170532"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239953"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Testování knihovny jazyka Visual Basic .NET Core pomocí příkazu dotnet test a xUnit
 

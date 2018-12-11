@@ -1,5 +1,6 @@
 ---
-title: REF – klíčové slovo (referenční dokumentace jazyka C#)
+title: REF – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 10/24/2018
 f1_keywords:
 - ref_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 9165a388122eeda5ca0499c6d75c2266780a6004
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 187d2fb7399195c544bae59927d66e9853df5fa0
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195967"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236318"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
@@ -62,7 +63,7 @@ Však metody mohou být přetíženy, když má jednu metodu `ref`, `in`, nebo `
 - Asynchronní metody, které definujete pomocí [asynchronní](async.md) modifikátor.  
 - Metody iterátorů, mezi které patří [yield return](yield.md) nebo `yield break` příkazu.  
 
-## <a name="passing-an-argument-by-reference-an-example"></a>Předání argumentu podle odkazu: příklad
+## <a name="passing-an-argument-by-reference-an-example"></a>Předání argumentu podle odkazu: Příklad
 
 V předchozích příkladech předávání typů hodnot pomocí odkazu. Můžete také použít `ref` – klíčové slovo k předání referenční typy podle odkazu. Typ odkazu předávání odkazem umožňuje volané metody k nahrazení objektu, na které odkazuje parametr odkazu volajícího. Umístění úložiště objekt je předán metodě jako hodnota parametru odkazu. Pokud změníte hodnotu v umístění úložiště parametru (tak, aby odkazoval na nový objekt), také změnit umístění úložiště, na který odkazuje volající. Následující příklad předá instance typu odkaz jako `ref` parametru.
   
@@ -92,7 +93,7 @@ Aby volající změnit stav objektu, vrátit hodnota musí být uložen do prom�
 
 Volané metody mohou také deklarovat jako návratová hodnota `ref readonly` vracet hodnotu odkazem a vynutit, aby volající kód nelze změnit vrácené hodnoty. Volání metody se můžete vyhnout kopírování vrácené oceňují uložení hodnoty v místním [jen pro čtení ref](#ref-readonly-locals) proměnné.
 
-Příklad najdete v tématu [A návratové a příklad místní hodnoty ref](#a-ref-returns-and-ref-locals-example)
+Příklad najdete v tématu [A návratové a příklad místní hodnoty ref](#a-ref-returns-and-ref-locals-example).
 
 ## <a name="ref-locals"></a>Místní referenční hodnoty
 
@@ -113,6 +114,8 @@ ref VeryLargeStruct reflocal = ref veryLargeStruct;
 ```
 
 Všimněte si, že v obou příkladech `ref` – klíčové slovo musí být použit v obou místech, nebo kompilátor vygeneruje chybu CS8172 "Nelze inicializovat proměnnou podle odkazu s hodnotou".
+
+Počínaje C# 7.3, proměnné iterace `foreach` příkaz může být lokální proměnnou nebo místní proměnná jen pro čtení ref. Další informace najdete v tématu [výraz foreach](foreach-in.md) článku.
 
 ## <a name="ref-readonly-locals"></a>místních jen pro čtení
 
@@ -152,6 +155,9 @@ Můžete kombinovat modifikátory pro deklaraci struktury jako `readonly ref`. A
 ## <a name="see-also"></a>Viz také:
 
 - [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)  
+- [Návratové a místní referenční hodnoty](../../programming-guide/classes-and-structs/ref-returns.md)
+- [Ref podmíněný výraz](../operators/conditional-operator.md#conditional-ref-expression)
+- [operátoru přiřazení odkazu](../operators/assignment-operator.md#ref-assignment-operator)
 - [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)  
 - [Parametry metody](method-parameters.md)  
 - [Referenční dokumentace jazyka C#](../index.md)  

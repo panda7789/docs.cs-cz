@@ -1,17 +1,18 @@
 ---
-title: Tabulka typů hodnot (referenční dokumentace jazyka C#)
+title: Tabulka typů hodnot - C# odkaz
+ms.custom: seodec18
 ms.date: 08/24/2018
 helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: aa37e2237ca0cffe7ff2e64aa53739b6ffafd24a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d651350f46c0ec1947be9f4f586c341514356fd2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50182746"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244151"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (referenční dokumentace jazyka C#)
 

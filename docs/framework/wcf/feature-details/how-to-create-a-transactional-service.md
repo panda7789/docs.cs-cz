@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření transakční služby'
 ms.date: 03/30/2017
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-ms.openlocfilehash: bba3a1f9c1d08e882cd5e4117c97f9f84d0c2be8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c4d2db0ca912be8840788bc363f86d621fa76e34
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509864"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245636"
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
 Tento příklad ukazuje různé aspekty vytvoření transakční služby a použití klientem iniciované transakci ke koordinaci operací služby.  
@@ -16,7 +16,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
   
 1.  Vytvoření kontraktu service a opatřovat je poznámkami operací pomocí požadovaného nastavení z <xref:System.ServiceModel.TransactionFlowOption> výčet k určení požadavků na příchozí transakce. Všimněte si, že můžete také umístit <xref:System.ServiceModel.TransactionFlowAttribute> na třídu služby se implementuje. To umožňuje jedna implementace rozhraní nahrazujícím každou implementaci těchto nastavení transakcí.  
   
-    ```  
+    ```csharp
     [ServiceContract]  
     public interface ICalculator  
     {  
@@ -33,7 +33,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
   
 2.  Vytvoření třídy implementaci a použití <xref:System.ServiceModel.ServiceBehaviorAttribute> volitelně zadat <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>. Nezapomeňte přitom, která v mnoha případech se výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> 60 sekund a výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> z `Unspecified` jsou vhodné. Pro každou operaci, můžete použít <xref:System.ServiceModel.OperationBehaviorAttribute> atribut udává, jestli pracovní provést v rámci metody se budou objevovat v rámci oboru transakce oboru podle hodnoty <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> atribut. V tomto případě používá transakce pro `Add` metodou je stejný jako povinné příchozí transakce, která je počet plynoucích z klienta a transakce pro `Subtract` metoda je buď stejná jako příchozí transakce, pokud jeden byla převedena z klienta, nebo implicitně a místně vytvořenou novou transakci.  
   
-    ```  
+    ```csharp
     [ServiceBehavior(  
         TransactionIsolationLevel = System.Transactions.IsolationLevel.Serializable,  
         TransactionTimeout = "00:00:45")]  
@@ -43,7 +43,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
         public double Add(double n1, double n2)  
         {  
             // Perform transactional operation  
-            RecordToLog(String.Format("Adding {0} to {1}", n1, n2));  
+            RecordToLog($"Adding {n1} to {n2}");
             return n1 + n2;  
         }  
   
@@ -51,7 +51,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
         public double Subtract(double n1, double n2)  
         {  
             // Perform transactional operation  
-            RecordToLog(String.Format("Subtracting {0} from {1}", n2, n1));  
+            RecordToLog($"Subtracting {n2} from {n1}");
             return n1 - n2;  
         }  
   
@@ -128,7 +128,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
   
 1.  Ve výchozím nastavení WCF operace automatického dokončení transakce, pokud nejsou vyvolány žádné neošetřené výjimky. Toto chování lze upravit pomocí <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost a <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda. Při operaci musí dojít v rámci stejné transakce jako jiná operace (například operace MD a Dal), můžete zakázat automatické dokončování chování tak, že nastavíte <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` jak je znázorněno v následujícím `Debit` příklad operace. Transakce `Debit` používá operace nedokončí až do metody s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost nastavena na `true` je volána, jak je znázorněno v operaci `Credit1`, nebo když <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> explicitně označit je volána metoda transakce jako dokončené, jak je znázorněno v operaci `Credit2`. Všimněte si, že dvě kredit operace jsou platné pro ilustraci a že jediného kredit ve výši operace by obvyklejší.  
   
-    ```  
+    ```csharp
     [ServiceBehavior]  
     public class CalculatorService : IAccount  
     {  
@@ -164,7 +164,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
   
 2.  Pro účely transakce korelace, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` vyžaduje použití vazby s relacemi. Tento požadavek není zadán s `SessionMode` vlastnost <xref:System.ServiceModel.ServiceContractAttribute>.  
   
-    ```  
+    ```csharp
     [ServiceContract(SessionMode = SessionMode.Required)]  
     public interface IAccount  
     {  
@@ -184,7 +184,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
   
 1.  Používá WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti a určit, jestli se po dokončení transakce uvolní podkladové instance služby. Protože je výchozí hodnota `true`, pokud se nenakonfiguruje, chování aktivace WCF dodatků efektivní a předvídatelné "just-in-time". Volání služby v následných transakcí je zajištěna nové instance služby s žádné zbývající součásti stav předchozí transakce. Když je často užitečné, někdy můžete udržovat stav v rámci instance služby nad rámec dokončení transakce. Příklady by po drahé načíst nebo znovuvytvoření požadovaného stavu nebo popisovače k prostředkům. Můžete to provést tak, že nastavíte <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Při tomto nastavení instance a všechny přidružené stavu budou dostupné v následných voláních. Při použití této funkce, věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to provést pomocí instance s `runningTotal` proměnné.  
   
-    ```  
+    ```csharp
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  
         ReleaseServiceInstanceOnTransactionComplete = false)]  
     public class CalculatorService : ICalculator  
@@ -195,7 +195,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
         public double Add(double n)  
         {  
             // Perform transactional operation  
-            RecordToLog(String.Format("Adding {0} to {1}", n, runningTotal));  
+            RecordToLog($"Adding {n} to {runningTotal}");
             runningTotal = runningTotal + n;  
             return runningTotal;  
         }  
@@ -204,7 +204,7 @@ Tento příklad ukazuje různé aspekty vytvoření transakční služby a použ
         public double Subtract(double n)  
         {  
             // Perform transactional operation  
-            RecordToLog(String.Format("Subtracting {0} from {1}", n, runningTotal));  
+            RecordToLog($"Subtracting {n} from {runningTotal}");
             runningTotal = runningTotal - n;  
             return runningTotal;  
         }  

@@ -1,15 +1,16 @@
 ---
-title: Omezení používání úrovní přístupu (referenční dokumentace jazyka C#)
+title: Omezení používání pro usnadnění úrovně - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 2bcf2b12d1aa1488e6d3e46f5b37ac9535b138dd
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ef1c0a93da2a53f1e199627fb7f83894d01e714a
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208838"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239326"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Omezení používání úrovní přístupu (referenční dokumentace jazyka C#)
 

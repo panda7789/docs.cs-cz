@@ -1,16 +1,17 @@
 ---
-title: Použití typů s povolenou hodnotou Null (C# Programming Guide)
+title: Použití typů s povolenou hodnotou Null – C# Průvodce programováním pro službu
+ms.custom: seodec18
 description: Zjistěte, jak pracovat s typy s možnou hodnotou Null C#
 ms.date: 08/02/2018
 helpviewer_keywords:
 - nullable types [C#], about nullable types
 ms.assetid: 0bacbe72-ce15-4b14-83e1-9c14e6380c28
-ms.openlocfilehash: 9c9ab5c3ca1dd49f011bf9c980945fa9da0d8cfc
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d2c6f2f78ed71558b71adcc1d4d8cc9a6f459d75
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148350"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235212"
 ---
 # <a name="using-nullable-types-c-programming-guide"></a>Použití typů s povolenou hodnotou Null (C# Programming Guide)
 

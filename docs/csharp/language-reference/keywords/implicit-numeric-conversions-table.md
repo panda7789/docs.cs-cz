@@ -1,5 +1,6 @@
 ---
-title: Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
+title: Tabulka implicitních číselných převodů - C# odkaz
+ms.custom: seodec18
 ms.date: 09/05/2018
 helpviewer_keywords:
 - conversions [C#], implicit numeric
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: c3c0153a0ae3e07839822c8bb978b1a09277bd53
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 98774a0f7ad86e43178c6d0216e29e7b4767f3f2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188700"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235251"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
 

@@ -1,5 +1,6 @@
 ---
-title: join – klauzule (Referenční dokumentace jazyka C#)
+title: JOIN – klauzule - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - join
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-ms.openlocfilehash: dee11c1ab754e515c69f330a5919776cbcb1e775
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c9052b4b0f1feac5aa56a7fe6745745f1afb5740
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47237160"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236281"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 
@@ -73,7 +74,7 @@ Bez equijoins, křížového spojení a dalších vlastních operací spojován�
 
 V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výraz dotazu, spojení, operace se provádějí s kolekcí objektů. Objekt kolekce nemůže být "připojené" přesně stejným způsobem jako relační tabulkami. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], explicitní `join` klauzule jsou jenom dvou zdrojových posloupností nejsou vázány podle jakékoli relaci je vyžadována. Při práci s [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], cizího klíče tabulky jsou reprezentovány v objektovém modelu ve formě vlastnosti primární tabulce. Tabulky Zákazník má v databázi Northwind vztah cizího klíče v tabulce objednávky. Při mapování tabulky k objektovému modelu třídy zákazníka má vlastnost objednávek, který obsahuje kolekci objednávek, které jsou přidružené k tohoto zákazníka. Ve skutečnosti spojení už proběhla za vás.
 
-Další informace o dotazování napříč souvisejících tabulkách v kontextu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], naleznete v tématu [postupy: mapování databázových relace](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
+Další informace o dotazování napříč souvisejících tabulkách v kontextu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], naleznete v tématu [jak: Mapování databázových relace](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
 
 ## <a name="composite-keys"></a>Složené klíče
 

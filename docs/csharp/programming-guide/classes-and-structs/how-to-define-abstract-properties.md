@@ -1,27 +1,28 @@
 ---
-title: 'Postupy: Definování abstraktních vlastností (Průvodce programováním v C#)'
+title: 'Postupy: Definování abstraktních a vlastností - C# Průvodce programováním'
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: 549867cac99784ce885b8fce8a1638c40ad88cec
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 70f344fb4e5a74940219688190324beb8183d32b
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002980"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237308"
 ---
-# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastností (Průvodce programováním v C#)
+# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních a vlastností (C# Průvodce programováním v)
 Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnost neposkytuje implementaci pro přistupující objekty vlastnosti – deklaruje, že podporuje vlastnosti třídy, ale ponechá implementace přistupujícího objektu odvozené třídy. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
   
  Tento příklad se skládá ze tří souborů, z nichž každý je kompilován samostatně a jeho výsledné sestavení se odkazuje na další kompilace:  
   
 -   abstractshape.cs: `Shape` třídy obsahující abstraktní `Area` vlastnost.  
   
--   Shapes.cs: podtřídy třídy `Shape` třídy.  
+-   Shapes.cs: Podtřídy třídy `Shape` třídy.  
   
--   shapetest.cs: testovací program do zobrazované oblasti některých `Shape`-odvozené objekty.  
+-   shapetest.cs: Testovací program do zobrazované oblasti některých `Shape`-odvozené objekty.  
   
  Chcete-li příklad zkompilovat, použijte následující příkaz:  
   
@@ -58,4 +59,4 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/la
 - [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
 - [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
 - [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
-- [Postupy: Vytváření a použití sestavení s pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)
+- [Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)

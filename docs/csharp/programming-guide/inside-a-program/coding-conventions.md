@@ -1,17 +1,18 @@
 ---
-title: Převody kódování C# (Průvodce programováním v C#)
+title: C#Konvence – kódování C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 430cf3f1bc5e0b5ebe1a05530059516f36a473a1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 598f0e75a96a43162d0c626d00320effb418c7fd
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44209456"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241428"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Převody kódování C# (Průvodce programováním v C#)
  Konvence kódování slouží k následujícím účelům:  
@@ -162,7 +163,7 @@ ms.locfileid: "44209456"
   
 ### <a name="static-members"></a>Statické členy  
   
--   Volání [statické](../../../csharp/language-reference/keywords/static.md) pomocí názvu třídy členů: *ClassName.StaticMember*. Tento postup vytvoří kód lépe čitelný tím, že statická přístup zrušte.  Nekvalifikujte statické člena definovaného v základní třídě s názvem odvozené třídy.  Tento kód se zkompiluje, je zavádějící čitelnost kódu a kód může v budoucnu přerušit, pokud chcete přidat statický člen se stejným názvem do odvozené třídy.  
+-   Volání [statické](../../../csharp/language-reference/keywords/static.md) členy pomocí názvu třídy: *ClassName.StaticMember*. Tento postup vytvoří kód lépe čitelný tím, že statická přístup zrušte.  Nekvalifikujte statické člena definovaného v základní třídě s názvem odvozené třídy.  Tento kód se zkompiluje, je zavádějící čitelnost kódu a kód může v budoucnu přerušit, pokud chcete přidat statický člen se stejným názvem do odvozené třídy.  
   
 ### <a name="linq-queries"></a>Dotazy LINQ  
   

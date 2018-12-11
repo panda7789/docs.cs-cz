@@ -4,12 +4,12 @@ description: Tento kurz vysvětluje, jak uspořádat a Testovací projekty .NET 
 author: cartermp
 ms.date: 09/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: 960d6e98f39b1d1d07c980c021b1029201f1f631
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 9ca9cd1b392912b01ed5ac37d0617d582b993ae8
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169651"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53242703"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-command-line"></a>Uspořádání a testování projektů pomocí příkazového řádku .NET Core
 
@@ -103,19 +103,19 @@ Volitelné cvičení: Můžete přidat nový domácí mazlíčky typ, napříkla
 
 `NewTypes` Projekt je na místě a uspořádán udržováním mazlíčci související typy ve složce. V dalším kroku vytvoření testovacího projektu a začít psát testy s [xUnit](https://xunit.github.io/) rozhraní pro testování. Testování částí umožňuje automaticky zjišťovat chování domácí mazlíčky typů potvrďte, že funguje správně.
 
-Vytvoření *testování* složka s *NewTypesTests* složky v něm. Na příkazovém řádku z *NewTypesTests* složce spusťte `dotnet new xunit`. To vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.
+Přejděte zpět na *src* složky a vytvořit *testování* složka s *NewTypesTests* složky v něm. Na příkazovém řádku z *NewTypesTests* složce spusťte `dotnet new xunit`. To vytvoří dva soubory: *NewTypesTests.csproj* a *UnitTest1.cs*.
 
 Projekt testů nelze aktuálně typy v testu `NewTypes` a vyžaduje odkaz na projekt `NewTypes` projektu. Chcete-li přidat odkaz na projekt, použijte [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
 
 ```
-dotnet add reference ../../src/NewTypes/NewTypes.csproj
+dotnet add reference ../../NewTypes/NewTypes.csproj
 ```
 
-Máte také možnost ručně přidáte odkaz na projekt tak, že přidáte `<ItemGroup>` uzlu *NewTypesTests.csproj* souboru:
+Nebo máte také možnost ručně přidáte odkaz na projekt tak, že přidáte `<ItemGroup>` uzlu *NewTypesTests.csproj* souboru:
 
 ```xml
 <ItemGroup>
-  <ProjectReference Include="../../src/NewTypes/NewTypes.csproj" />
+  <ProjectReference Include="../../NewTypes/NewTypes.csproj" />
 </ItemGroup>
 ```
 

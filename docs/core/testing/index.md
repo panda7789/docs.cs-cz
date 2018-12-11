@@ -1,16 +1,16 @@
 ---
 title: Testování jednotek v .NET Core a .NET Standard
-description: Testování jednotek v projektech .NET Core a .NET Standard.
+description: Tento článek poskytuje stručný přehled o testování jednotek pro projekty .NET Core a .NET Standard.
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: b63b2706a9a97413a7166c87ae25cbe964e4610b
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 3fdacd5beb2c6cbfc631d58e99a8741f7a6b233c
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170012"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243972"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování jednotek v .NET Core a .NET Standard
 
@@ -30,6 +30,8 @@ Mějte na paměti, že jsou také osvědčené postupy pro psaní testů. Např�
 > Pomocí následujícího team ASP.NET [Tato konvence](https://github.com/aspnet/Home/wiki/Engineering-guidelines#unit-tests-and-functional-tests) , což vývojářům umožňuje najít správné názvy pro testovací třídy a metody.
 
 Pokuste se zavedení závislostí na infrastruktuře při psaní testů jednotek. Tyto proveďte testy pomalé a křehký a by měl být vyhrazen pro testy integrace. Tyto závislosti ve své aplikaci můžete vyhnout podle [explicitní závislosti Princip](https://deviq.com/explicit-dependencies-principle/) a pomocí [injektáž závislostí](/aspnet/core/fundamentals/dependency-injection). Testování částí lze také zachovat v samostatném projektu z testů integrace. Tím se zajistí, že projektu jednotkového testu nemá odkazy nebo závislosti na balíčky infrastruktury.
+
+## <a name="next-steps"></a>Další kroky
 
 Další informace o testování jednotek v projektech .NET Core:
 

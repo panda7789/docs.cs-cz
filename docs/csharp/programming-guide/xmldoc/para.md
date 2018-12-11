@@ -1,5 +1,6 @@
 ---
-title: '&lt;para&gt; (C# Programming Guide)'
+title: '&lt;para&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <para>
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: e51df23db97aadddbc4c4e8c3cb38bda7ff7e3a4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 807b2297dd1b8e00aa9b646f28fefbcb1148fe83
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47192833"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237945"
 ---
 # <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

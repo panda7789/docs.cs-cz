@@ -1,21 +1,22 @@
 ---
-title: Obecné typy a reflexe (Průvodce programováním v C#)
+title: Obecné typy a reflexe - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 9bbf08161162c2d0776a066098e40b57a415da6d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 752c44bcd4ded82fb2144dca684482f30371b6aa
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187134"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244924"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>Obecné typy a reflexe (Průvodce programováním v C#)
 Protože Common Language Runtime (CLR) má přístup k informacím o obecného typu v době běhu, můžete získat informace o obecných typů v stejným způsobem jako u neobecné typy reflexe. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
   
- V [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] několik nových členů jsou přidány do <xref:System.Type> třídy umožňující běhových informací pro obecné typy. Další informace o tom, jak používat tyto metody a vlastnosti těchto tříd naleznete v dokumentaci. <xref:System.Reflection.Emit> Obor názvů obsahuje také nové členy, které podporují obecných typů. Zobrazit [postupy: definování obecného typu pomocí reflexe generování](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
+ V [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] několik nových členů jsou přidány do <xref:System.Type> třídy umožňující běhových informací pro obecné typy. Další informace o tom, jak používat tyto metody a vlastnosti těchto tříd naleznete v dokumentaci. <xref:System.Reflection.Emit> Obor názvů obsahuje také nové členy, které podporují obecných typů. Zobrazit [jak: Definování obecného typu pomocí reflexe generování](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
   
  Seznam neutrálních podmínek pro výrazy použité v obecné reflexi naleznete v tématu <xref:System.Type.IsGenericType%2A> vlastnosti.  
   

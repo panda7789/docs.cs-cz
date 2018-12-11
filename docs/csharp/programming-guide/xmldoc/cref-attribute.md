@@ -1,15 +1,16 @@
 ---
-title: cref – atribut (Průvodce programováním v C#)
+title: cref – atribut – C# Průvodce programováním pro službu
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: e9e14cf4e7051e52df20e899e9070e5b728321e5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: af83ae8c6c209886649d4eb1543c47e63bd97449
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514600"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235582"
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref – atribut (Průvodce programováním v C#)
 `cref` Atribut ve značce dokumentaci XML znamená "odkaz na kód." Určuje, že vnitřní text značky je prvek kódu, jako je typ, metodu nebo vlastnost. Dokumentace ke službě nástroje, jako je [Sandcastle](https://github.com/EWSoftware/SHFB) použít `cref` atributů, které mají automaticky generovat hypertextové odkazy na stránky, kde je zdokumentován tento typ nebo člen.  

@@ -1,13 +1,13 @@
 ---
 title: Direktivy kompilátoru (F#)
 description: Další informace o F# direktivy preprocesoru jazyka, direktivy podmíněné kompilace, direktivy line a direktivy kompilátoru.
-ms.date: 05/16/2016
-ms.openlocfilehash: bb23096e03584f2a50cfe069075ba94a35c4753c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 12/10/2018
+ms.openlocfilehash: 7344785e37454d367aa4dfcfa1bacd01b68363d5
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126949"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239693"
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
@@ -21,7 +21,7 @@ Následující tabulka uvádí direktivy preprocesoru, které jsou k dispozici v
 
 |– Direktiva|Popis|
 |---------|-----------|
-|`#if` *Symbol*|Podporuje podmíněné kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována.|
+|`#if` *Symbol*|Podporuje podmíněné kompilace. Kód v části po `#if` je zahrnuta, pokud *symbol* je definována. Můžete také bude negovat symbol s `!`.|
 |`#else`|Podporuje podmíněné kompilace. Označí části kódu, které chcete zahrnout, pokud symbol použili s předchozí `#if` není definován.|
 |`#endif`|Podporuje podmíněné kompilace. Označuje konec podmíněné části kódu.|
 |`#`[řádku] *int*,<br/>`#`[řádku] *int* *řetězec*,<br/>`#`[řádku] *int* *doslovný řetězec*|Určuje původní zdrojový kód řádku a název souboru, pro ladění. Tato funkce je k dispozici pro nástroje, které generují F# zdrojový kód.|
@@ -46,6 +46,16 @@ Neexistuje žádná `#define` direktivy preprocesoru v F#. Nastavení kompiláto
 
 Mohou být vnořené direktivy podmíněné kompilace. Odsazení není významné pro preprocesor – direktivy.
 
+Můžete také negate – symbol s `!`. V tomto příkladu je řetězcovou hodnotu něco jenom v případě _není_ ladění:
+
+```fsharp
+#if !DEBUG
+let str = "Not debugging!"
+#else
+let str = "Debugging!"
+#endif
+```
+
 ## <a name="line-directives"></a>Direktivy Line
 
 Při sestavování, kompilátor oznámí chyby v F# čísla kód pomocí odkazu na řádku, na které dojde k každé chybě. Tato čísla řádku začínají znakem 1 pro první řádek v souboru. Nicméně pokud generujete F# zdrojový kód z jiného nástroje, čísla řádků ve vygenerovaném kódu nejsou obecně zájmu, protože chyby v generované F# kódu pravděpodobně vznikají z jiného zdroje. `#line` Směrnice poskytuje způsob pro autory nástroje, které generují F# zdrojový kód k předávání informací o původní řádek čísla a zdrojové soubory do vytvořeného F# kódu.
@@ -65,6 +75,7 @@ Následující tabulka uvádí direktivy kompilátoru, která je k dispozici v F
 |– Direktiva|Popis|
 |---------|-----------|
 |`#light` ["na"&#124;"off"]|Povolí nebo zakáže jednoduché syntaxe, pro kompatibilitu s jinými verzemi ML. Prostá syntaxe je ve výchozím nastavení povolené. Podrobná syntaxe je vždy povolena. Proto můžete použít nenáročném syntaxi a podrobná syntaxe. Direktiva `#light` sám o sobě je ekvivalentní `#light "on"`. Pokud zadáte `#light "off"`, je nutné použít podrobné syntaxi pro všechny jazykové konstrukce. Syntaxe v dokumentaci k F# se předpokládá, že používáte nenáročném syntaxi. Další informace najdete v tématu [podrobná syntaxe](verbose-syntax.md).|
+
 Direktivy interpretu (fsi.exe), najdete v části [interaktivní programování s F# ](../tutorials/fsharp-interactive/index.md).
 
 ## <a name="see-also"></a>Viz také:

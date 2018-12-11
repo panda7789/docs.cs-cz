@@ -1,24 +1,24 @@
 ---
 title: Osvědčené postupy pro zápis testů jednotek
-description: Přečtěte si osvědčené postupy pro zápis testů jednotek, které řídí kvalitu kódu a odolnosti
+description: Přečtěte si osvědčené postupy pro zápis testů jednotek, které kvalitu kódu a odolnost pro projekty .NET Core a .NET Standard.
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
 ms.custom: seodec18
-ms.openlocfilehash: 60baa533a8f4dc2fb715b813018f8f84000777d7
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 7db37fd4fcb76d4bfcfb21204a191fd43c9bb6b6
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169616"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53240720"
 ---
-# <a name="unit-testing-best-practices"></a>Testování osvědčených postupů
+# <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Testování osvědčených postupů pomocí .NET Core a .NET Standard
 
-Podle [Jan Reese](http://reesespieces.io) se zvláštními k [Roy Osherove](http://osherove.com/)
-
-Existuje mnoho výhod zápis testů jednotek; pomáhají s regrese, poskytují dokumentaci a usnadňují dobrý návrh. Obtížné číst a křehký jednotkové testy lze však způsobí zmatek v vašeho základu kódu.
+Existuje mnoho výhod zápis testů jednotek; pomáhají s regrese, poskytují dokumentaci a usnadňují dobrý návrh. Obtížné číst a křehký jednotkové testy lze však způsobí zmatek v vašeho základu kódu. Tento článek popisuje některé osvědčené postupy týkající se návrhu testů jednotek pro projekty .NET Core a .NET Standard.
 
 V této příručce se dozvíte některé osvědčené postupy při psaní testů jednotek se testy odolné a snadno pochopitelná.
+
+Podle [Jan Reese](http://reesespieces.io) se zvláštními k [Roy Osherove](http://osherove.com/)
 
 ## <a name="why-unit-test"></a>Proč pro testování částí?
 

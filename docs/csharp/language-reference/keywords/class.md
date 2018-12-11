@@ -1,5 +1,6 @@
 ---
-title: Class – klíčové slovo (referenční dokumentace jazyka C#)
+title: Class – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 07/18/2017
 f1_keywords:
 - class_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 3f30fb473b486efc8381faa9076b98763935b0ae
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: b56cdd5899ab74648b203caf15c39240f4ec90ed
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086061"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53234601"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -32,7 +33,7 @@ V jazyce C# je povolena pouze jedna dědičnost. Jinými slovy třída může d�
 
 |Dědičnost|Příklad|
 |-----------------|-------------|
-|Žádné|`class ClassA { }`|
+|Žádná|`class ClassA { }`|
 |Single|`class DerivedClass: BaseClass { }`|
 |NONE, implementuje dvě rozhraní|`class ImplClass: IFace1, IFace2 { }`|
 |Jediné, jedno rozhraní implementuje|`class ImplDerivedClass: BaseClass, IFace1 { }`|

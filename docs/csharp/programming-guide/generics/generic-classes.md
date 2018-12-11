@@ -1,16 +1,17 @@
 ---
-title: Obecné třídy (Průvodce programováním v C#)
+title: Obecné třídy – C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 2568600c130847b3317aeb399541c61a050901ce
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 141da196869d3867a9a85087a073dbec095d5118
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216077"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53244398"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
 Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní data typu. Nejběžnějším využitím obecných tříd je s kolekcí jako propojené seznamy zatřiďovacích tabulek, zásobníků, front, stromy a tak dále. Operace, jako jsou přidávání a odebírání položek z kolekce jsou prováděny v podstatě stejným způsobem bez ohledu na typ data ukládat.  

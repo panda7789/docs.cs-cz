@@ -1,16 +1,17 @@
 ---
-title: Vícenásobná pole (Průvodce programováním v C#)
+title: Vícenásobná pole - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 2e4988439000712f4d1bd9b5abe412e7fd5d43eb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f517a9a6d6e10f04df70729fb9e641c1f955f28a
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47396874"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53237854"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Vícenásobná pole (Průvodce programováním v C#)
 

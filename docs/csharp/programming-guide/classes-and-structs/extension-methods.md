@@ -1,20 +1,21 @@
 ---
-title: Metody rozšíření (Průvodce programováním v C#)
+title: Rozšiřující metody - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#], adding to existing types
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 7ebd04665d91f599edcb4a5c07680216dfb8925a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8da1deec2238f74a9b594c85feab0445ec2a35b7
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840898"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241311"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
-Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Klientský kód napsaný v jazyce C#, F # a Visual Basic neexistuje žádný zjevný rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definovány v rámci typu.  
+Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro klientský kód napsaný v C#, F# a Visual Basic neexistuje žádný zjevný rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definovány v rámci typu.  
   
  Nejběžnějšími metodami rozšíření jsou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operátory standardního dotazu, které přidávají funkce dotazu ke stávající <xref:System.Collections.IEnumerable?displayProperty=nameWithType> a <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> typy. Pokud chcete použít operátory standardního dotazu, nejdříve je převeďte do rozsahu pomocí `using System.Linq` směrnice. Poté bude libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601> zřejmě má metody instance <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>, a tak dále. Zobrazí se tyto další metody v doplňování příkazů IntelliSense po zadání "tečky" za instanci typu <xref:System.Collections.Generic.IEnumerable%601> jako <xref:System.Collections.Generic.List%601> nebo <xref:System.Array>.  
   
@@ -43,7 +44,7 @@ int i = s.WordCount();
   
  V kódu je možné vyvolat metodu rozšíření pomocí syntaxe metody instance. Jazyk IL (Intermediate Language) generovaný kompilátorem však přeloží váš kód do volání statické metody. Princip zapouzdření tedy není ve skutečnosti porušen. Metody rozšíření ve skutečnosti nemají přístup k proměnným v typu, který rozšiřují.  
   
- Další informace najdete v tématu [postupy: implementace a volání vlastní metody rozšíření](../../../csharp/programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).  
+ Další informace najdete v tématu [jak: Implementace a volání vlastní metody rozšíření](../../../csharp/programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).  
   
  Metody rozšíření budete pravděpodobně mnohem častěji volat, než implementovat své vlastní. Vzhledem k tomu, že metody rozšíření jsou volány pomocí syntaxe metody instance, není vyžadována žádná zvláštní znalost, abyste je mohli použít v klientském kódu. Pokud chcete povolit rozšíření metod pro konkrétní typ, stačí přidat elementy `using` direktivu pro obor názvů, ve kterém jsou definovány metody. Například pokud chcete použít operátory standardního dotazu, přidejte tuto `using` direktiv kódu:  
   

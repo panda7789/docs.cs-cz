@@ -1,17 +1,18 @@
 ---
-title: Tabulka předdefinovaných typů (referenční dokumentace jazyka C#)
+title: Tabulka předdefinovaných typů - C# odkaz
+ms.custom: seodec18
 description: Klíčová slova pro předdefinované typy jazyka C#
 ms.date: 08/17/2018
 helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: fd9ba878d77bdb219542db55bb38023c60c7bec4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: fae0cedfe8bf675dceb9cb9d5835d923cae8b4ab
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507309"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235621"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (referenční dokumentace jazyka C#)
 

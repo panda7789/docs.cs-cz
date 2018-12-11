@@ -1,5 +1,6 @@
 ---
-title: Hello World! -- váš první program (Průvodce programováním v C#)
+title: Hello World!--Váš první Program - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cs.program
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 90f0ec6b88a2822cb3429948681c76c70f3d3f18
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 40c869d267dcabf4bd209b2ee86085f899a93231
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45593044"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53236385"
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World! -- váš první program (Průvodce programováním v C#)
 Následující postup vytvoří verzi C# tradiční "Hello World!" program. Program zobrazí řetězec `Hello World!`  
@@ -24,7 +25,7 @@ Následující postup vytvoří verzi C# tradiční "Hello World!" program. Prog
   
 ### <a name="to-create-and-run-a-console-application"></a>Vytvoření a spuštění konzolové aplikace  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
@@ -78,7 +79,7 @@ Následující postup vytvoří verzi C# tradiční "Hello World!" program. Prog
   
  Parametr `Main` metody `args`, je `string` pole obsahující argumenty příkazového řádku používané k vyvolání programu. Na rozdíl od v jazyce C++ pole neobsahuje název souboru spustitelný soubor (exe).  
   
- Další informace o tom, jak používat argumenty příkazového řádku, podívejte se na příklady v [Main() a argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md) a [postupy: vytvoření a použití sestavení pomocí řádek příkazu](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
+ Další informace o tom, jak používat argumenty příkazového řádku, podívejte se na příklady v [Main() a argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md) a [jak: Vytvoření a použití sestavení s pomocí příkazového řádku](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   
  Volání <xref:System.Console.ReadKey%2A> na konci `Main` metody zabrání v okně konzoly se ukončit dříve, než máte možnost si přečíst výstup při spuštění programu v režimu ladění, stisknutím klávesy F5.  
   
@@ -96,7 +97,7 @@ Následující postup vytvoří verzi C# tradiční "Hello World!" program. Prog
   
 #### <a name="to-compile-and-run-from-a-command-prompt"></a>Kompilace a spuštění z příkazového řádku  
   
-1.  Vložte kód z předchozího postupu do libovolného textového editoru a uložte soubor jako textový soubor. Název souboru `Hello.cs`. Soubory zdrojového kódu jazyka C# používají příponu `.cs`.  
+1.  Vložte kód z předchozího postupu do libovolného textového editoru a uložte soubor jako textový soubor. Pojmenujte soubor `Hello.cs`. Soubory zdrojového kódu jazyka C# používají příponu `.cs`.  
   
 2.  Proveďte jeden z následujících kroků a otevřete okno příkazového řádku:  
   
@@ -110,7 +111,7 @@ Následující postup vytvoří verzi C# tradiční "Hello World!" program. Prog
   
     -   Povolte sestavení příkazového řádku ze standardního okna příkazového řádku.  
   
-         Zobrazit [postupy: nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
+         Zobrazit [jak: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
   
 3.  V okně příkazového řádku přejděte do složky, která obsahuje vaše `Hello.cs` souboru.  
   

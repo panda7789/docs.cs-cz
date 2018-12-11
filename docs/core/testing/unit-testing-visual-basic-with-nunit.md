@@ -1,17 +1,17 @@
 ---
-title: Testování jednotek jazyka Visual Basic v rozhraní .NET Core pomocí příkazu dotnet test a NUnit
+title: Testování částí Visual Basic v .NET Core pomocí příkazu dotnet test a NUnit
 description: Další koncepty testů jednotek v .NET Core prostřednictvím vytváření ukázkové řešení jazyka Visual Basic podrobné interaktivní prostředí pomocí NUnit.
 author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: bcddd6cbb2dc3138b8343ef5e34440a93da70d1e
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 84f4b828bd1418f511b2bd82ef959002bc11ad0f
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169050"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53239147"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování pomocí příkazu dotnet test a NUnit knihovny jazyka Visual Basic .NET Core
 

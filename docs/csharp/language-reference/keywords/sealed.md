@@ -1,5 +1,6 @@
 ---
-title: Modifikátor sealed (C# odkaz)
+title: zapečetěné modifikátor - C# odkaz
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - sealed
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
-ms.openlocfilehash: cf6b85e2a04870b454b3bfea4d534680d22da8d1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: babad3b07c5faea1381e6af13d3c713122de2332
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188583"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235173"
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 

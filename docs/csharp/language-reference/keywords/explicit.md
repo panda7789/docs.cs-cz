@@ -1,5 +1,6 @@
 ---
-title: Explicit – klíčové slovo (referenční dokumentace jazyka C#)
+title: Explicit – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 08/24/2018
 f1_keywords:
 - explicit_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - explicit keyword [C#]
 ms.assetid: cfb8f42a-e411-4db2-af9b-796b05644846
-ms.openlocfilehash: 3567a2c5aa549aa3141ed59c3e93e7b07975da70
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1b5e03ffa0f956d7404c7c41f04aef1bfd8769df
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525458"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238556"
 ---
 # <a name="explicit-c-reference"></a>explicit (Referenční dokumentace jazyka C#)
 

@@ -1,17 +1,18 @@
 ---
-title: Implicitně typovaná pole (Průvodce programováním v C#)
+title: Implicitně typované pole - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], implicity-typed
 - implicitly-typed arrays [C#]
 - C# language, implicitly typed arrays
 ms.assetid: e05be95c-6732-403d-ae42-b35f057cbbea
-ms.openlocfilehash: 879955a7362af7dceda5767923c5e872cd0f6b5c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9c235b6084238917c2cb3f2cd745aef0264f82ce
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522586"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53238270"
 ---
 # <a name="implicitly-typed-arrays-c-programming-guide"></a>Implicitně typovaná pole (Průvodce programováním v C#)
 

@@ -1,5 +1,6 @@
 ---
-title: '&lt;typeparamref&gt; (C# Programming Guide)'
+title: '&lt;typeparamref&gt; - C# Průvodce programováním pro službu'
+ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - typeparamref
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - typeparamref C# XML tag
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
-ms.openlocfilehash: c14b3f788c474f2e345f8325d45b942d0f3008da
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bbe9bed5a32e463424b98f4066e95374401931e2
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530153"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53243917"
 ---
 # <a name="lttypeparamrefgt-c-programming-guide"></a>&lt;typeparamref&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

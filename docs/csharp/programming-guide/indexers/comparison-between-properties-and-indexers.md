@@ -1,16 +1,17 @@
 ---
-title: Porovnání mezi vlastnostmi a indexery (Průvodce programováním v C#)
+title: Porovnání mezi vlastnostmi a indexery - C# Průvodce programováním
+ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
-ms.openlocfilehash: 3a78b97f2cac1f2c49be03bc351d9b6f4b6438e6
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 053eb7ee0fe9333f049e5b4f8a8e709e42aa2119
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861439"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53234458"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Porovnání mezi vlastnostmi a indexery (Průvodce programováním v C#)
 Indexery jsou stejné jako vlastnosti. S výjimkou rozdílů je znázorněno v následující tabulce všechna pravidla, které jsou definovány pro přistupující objekty vlastnosti platí pro přistupující objekty indexer také.  
