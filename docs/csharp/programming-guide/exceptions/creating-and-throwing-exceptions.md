@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: 43d566fed4e2963489da0b7a11c78a54740b7ab1
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: c81332307542608e2c7a3f3a5fa89900862f1e84
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "44260068"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145592"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  
@@ -41,7 +41,7 @@ Výjimky jsou slouží k označení, že došlo k chybě při spuštění progra
   
  Všechny výjimky obsahovat vlastnost s názvem <xref:System.Exception.Message%2A>. Řetězec by měl být nastaven na vysvětluje důvod výjimky. Všimněte si, že informace, které jsou citlivé na zabezpečení by neměl umístěny v textu zprávy. Kromě <xref:System.Exception.Message%2A>, <xref:System.ArgumentException> obsahuje vlastnost s názvem <xref:System.ArgumentException.ParamName%2A> , který musí být nastavená na název argumentu, která způsobila vyvolání výjimky. V případě vlastnost setter <xref:System.ArgumentException.ParamName%2A> by mělo být nastavené `value`.  
   
- Členové veřejné a chráněné metody by měla vyvolat výjimky pokaždé, když se jejich odpovídající funkce, nelze provést. Třída výjimky, která je vyvolána by měla být k dispozici, který vyhovuje chybové stavy nejvíce specifické výjimky. Tyto výjimky musí být zdokumentována jako součást funkce třídy a odvozené třídy nebo aktualizace původní třídy musí zachovat stejné chování z důvodu zpětné kompatibility.  
+ Veřejné a chráněné metody by měla vyvolat výjimky pokaždé, když se jejich odpovídající funkce, nelze provést. Třída výjimky, která je vyvolána by měla být k dispozici, který vyhovuje chybové stavy nejvíce specifické výjimky. Tyto výjimky musí být zdokumentována jako součást funkce třídy a odvozené třídy nebo aktualizace původní třídy musí zachovat stejné chování z důvodu zpětné kompatibility.  
   
 ## <a name="things-to-avoid-when-throwing-exceptions"></a>Se vyvarovat při vyvolávání výjimek  
  Následující seznam uvádí nedoporučované postupy při vyvolání výjimky:  

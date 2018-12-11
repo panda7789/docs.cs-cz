@@ -1,39 +1,51 @@
 ---
-title: Průvodce ML.NET
-description: Naučte se vytvářet vlastní řešení AI a jejich integraci do aplikací .NET pomocí ML.NET.
-author: aditidugar
-ms.date: 05/07/2018
-ms.openlocfilehash: a5be91283d8b8d00b727ec43d1137a0a245175d3
-ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
+title: Průvodce ML.NET obsahem
+description: Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.
+ms.date: 11/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: 0ba32490e30051616ae5270a050d8666490c9eef
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35017270"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126247"
 ---
-# <a name="mlnet-guide"></a>Průvodce ML.NET
+# <a name="mlnet-content-guide"></a>Průvodce ML.NET obsahem
 
-ML.NET je rozhraní learning bezplatnou, open source a napříč platformami počítače, které vám umožňuje vytvářet vlastní machine learning řešení a jejich integraci do svých aplikací rozhraní .NET. Tato příručka obsahuje mnoho prostředků o práci s ML.NET.
+Tato příručka vysvětluje základní koncepty a poskytuje podrobné pokyny a referenční dokumentace rozhraní API pro práci s ML.NET.
 
-Další informace o ML.NET najdete v tématu [představení ML.NET: napříč platformami, Proven a otevřené rozhraní Machine Learning zdroj](https://blogs.msdn.microsoft.com/dotnet/2018/05/07/introducing-ml-net-cross-platform-proven-and-open-source-machine-learning-framework/) příspěvku na blogu .NET.
+> [!NOTE]
+> Tato dokumentace odkazuje na ML.NET, která je aktuálně ve verzi Preview. Materiál může být mohou změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
 ## <a name="get-started"></a>Začínáme
 
-Začít pracovat s ML.NET, podívejte se [rychlý start předpovědi Okvětní lístek Iris](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet/get-started) nebo podrobnější [kurzy](tutorials/index.md).
+K instalaci a začněte sestavovat ML.NET, postupujte [kurz Začínáme](https://www.microsoft.com/net/learn/machinelearning-ai/ml-dotnet-get-started-tutorial).
 
-Pokud jste ještě strojové učení, můžete také zkontrolovat [Machine Learning Základy](resources/basics.md), kde najdete počítač materiály vám pomůže.
+Další informace o ML.NET najdete v tématu [novinky ML.NET?](what-is-mldotnet.md)
 
-## <a name="how-the-mlnet-guide-is-organized"></a>Uspořádání ML.NET Průvodce
+Základní informace najdete v tématu [základní koncepty k tréninku modelu v ML.NET](basic-concepts-model-training-in-mldotnet.md).
 
-V Průvodci ML.NET nejsou několika oddílů. Můžete číst je popořadě, nebo přejít přímo na co vás zajímají nejvíc.
+## <a name="tutorials"></a>Kurzy
 
-**[Kurzy](tutorials/index.md)**
+[Analýza sentimentu pomocí binární klasifikační model](tutorials/sentiment-analysis.md) se dozvíte, jak vytvořit aplikaci, která určuje, zda je pozitivní nebo negativní zabarvení.
 
-V této části najdete podrobných návodů, které vás provede vytváření modelů vlastní machine learning pro běžné scénáře vývojáře.
+[Předpověď taxislužby tarif pomocí regresní model](tutorials/taxi-fare.md) se dozvíte, jak vytvořit prediktivní aplikaci, která používá mnoho faktorů, z historických dat. Chcete-li zjistit odpověď.
 
-**[Glosář](resources/glossary.md)**
+[Klasifikace iris květin funkcemi](tutorials/iris-clustering.md) se dozvíte, jak analyzovat datové sady iris pomocí model clusteringu. 
 
-Najít seznam strojového učení terminologie a jejich definice.
+## <a name="how-to-guide"></a>Průvodce postupy
+
+[Sestavení aplikace herní seznamu nahoru shoda s pravděpodobnostní programování a Infer.NET](how-to-guides/matchup-app-infer-net.md) se dozvíte, jak vytvořit zjednodušenou verzi shoda nahoru aplikaci jako se zobrazí ve hry pro Xbox.
+
+## <a name="resources"></a>Prostředky
+
+[Machine learning Glosář](resources/glossary.md) definuje klíčová terminologie.
+
+[Služby Machine learning úlohy](resources/tasks.md) popisuje úlohy, jako je například klasifikace a detekce anomálií. 
+
+[Transformace dat](resources/transforms.md) popisuje možnosti přípravy dat v ML.NET.
+
 
 ## <a name="api-reference"></a>referenční dokumentace k rozhraní API
 
-Podívejte se [referenční dokumentace rozhraní API ML.NET](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet) zobrazíte šířky rozhraní API, které jsou k dispozici.
+[Reference k rozhraní API ML.NET](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet) popisuje škálu rozhraní API, které jsou k dispozici.

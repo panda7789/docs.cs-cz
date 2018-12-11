@@ -2,12 +2,12 @@
 title: Nástroje definice schématu XML (Xsd.exe)
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: 23dea344b123b377224aad5816137aa246b8f596
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 01f980162a2d356c6c3ff31e4a0c01644b74d461
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850860"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143932"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Nástroje definice schématu XML (Xsd.exe)
 Nástroj pro definici schématu XML (Xsd.exe) generuje schématu XML nebo běžné language runtime třídy z XDR, XML a XSD souborů nebo ze třídy v sestavení modulu runtime.  
@@ -35,7 +35,7 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
 |Možnost|Popis|  
 |------------|-----------------|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**/o**[**utputdir**] **: *** adresáře*|Určuje výstupní soubory v adresáři. Tento argument může být pouze jednou. Výchozí je aktuální adresář.|  
+|**/o**[**utputdir**]**:**_adresáře_|Určuje výstupní soubory v adresáři. Tento argument může být pouze jednou. Výchozí je aktuální adresář.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/P[arameters]:** *file.xml*|Možnosti pro různé režimy operace čtení ze souboru zadaného .xml. Je zkratka "/ p:". Další informace naleznete v následující části poznámky.|  
   
@@ -51,22 +51,22 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/e**[**lement**]**:***element*|Určuje element ve schématu pro generování kódu pro. Ve výchozím nastavení jsou zadány všechny elementy. Tento parametr lze zadat více než jednou.|  
+|**/e**[**lementovat**]**:**_– element_|Určuje element ve schématu pro generování kódu pro. Ve výchozím nastavení jsou zadány všechny elementy. Tento parametr lze zadat více než jednou.|  
 |**/enableDataBinding**|Implementuje <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní na všechny typy generovaného povolit datové vazby. Je `/edb`.|  
 |**/enableLinqDataSet**|(Krátký tvar: `/eld`.) Určuje, že generované datová sada může být dotázán proti pomocí jazyka LINQ k datové. Tato možnost se používá, pokud je také zadán parametr /dataset. Další informace najdete v tématu [přehled LINQ to DataSet](../../../docs/framework/data/adonet/linq-to-dataset-overview.md) a [dotazování typované datové sady](../../../docs/framework/data/adonet/querying-typed-datasets.md). Obecné informace o použití LINQ naleznete v tématu [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).|  
 |**/f**[**ields**]|Generuje polí místo vlastností. Ve výchozím nastavení jsou generovány vlastnosti.|  
-|**/l**[**azyk**] **: *** jazyka*|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, který je ve výchozím nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název třídy implementující<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|  
-|**/n**[**amespace**]**:***namespace*|Určuje runtime obor názvů pro generovaný typy. Výchozí obor názvů je `Schemas`.|  
+|**/l**[**azyk**]**:**_jazyka_|Určuje programovací jazyk, který chcete použít. Vybrat z `CS` (C#, který je ve výchozím nastavení), `VB` (Visual Basic), `JS` (JScript), nebo `VJS` (Visual J#). Můžete také zadat plně kvalifikovaný název třídy implementující<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|  
+|**/n**[**amespace**]**:**_obor názvů_|Určuje runtime obor názvů pro generovaný typy. Výchozí obor názvů je `Schemas`.|  
 |**/nologo**|Potlačí hlavičky.|  
 |**/ ORDER**|Generuje explicitní pořadí identifikátory pro všechny členy částic.|  
 |**/o [ut]:** *NazevAdresare*|Určuje výstupní adresář pro soubory v. Výchozí je aktuální adresář.|  
-|**/u**[**ri**]**:***uri*|Určuje identifikátor URI pro elementy ve schématu pro generování kódu pro. Tento identifikátor URI, pokud je k dispozici, se vztahuje na všechny prvky určené s `/element` možnost.|  
+|**/u**[**ri**]**:**_identifikátoru uri_|Určuje identifikátor URI pro elementy ve schématu pro generování kódu pro. Tento identifikátor URI, pokud je k dispozici, se vztahuje na všechny prvky určené s `/element` možnost.|  
   
 ## <a name="dll-and-exe-file-options"></a>Knihovna DLL a EXE soubor možnosti  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/t**[**ype**]**:***typename*|Určuje název typu vytvořit schéma pro. Můžete zadat více argumentů typu. Pokud *typename* neurčuje obor názvů, odpovídá Xsd.exe všechny typy v sestavení se zadaným typem. Pokud *typename* Určuje obor názvů, pouze je nalezena shoda typu. Pokud *typename* končí znakem hvězdičky (\*), nástroj odpovídá všechny typy, které začínají řetězcem předcházející \*. V případě vynechání `/type` možnost, Xsd.exe generuje schémata pro všechny typy v sestavení.|  
+|**/t**[**yp**]**:**_typename_|Určuje název typu vytvořit schéma pro. Můžete zadat více argumentů typu. Pokud *typename* neurčuje obor názvů, odpovídá Xsd.exe všechny typy v sestavení se zadaným typem. Pokud *typename* Určuje obor názvů, pouze je nalezena shoda typu. Pokud *typename* končí znakem hvězdičky (\*), nástroj odpovídá všechny typy, které začínají řetězcem předcházející \*. V případě vynechání `/type` možnost, Xsd.exe generuje schémata pro všechny typy v sestavení.|  
   
 ## <a name="remarks"></a>Poznámky  
  V následující tabulce jsou uvedeny operace, že provede Xsd.exe.  

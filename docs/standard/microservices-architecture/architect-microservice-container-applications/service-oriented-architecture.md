@@ -1,31 +1,28 @@
 ---
 title: Architektura orientovaná na služby
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Architektura orientovaná na služby
+description: Přečtěte si základní rozdíly mezi mikroslužbami a architektura orientovaná na služby (SOA).
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 67560cc93b3d147be36a691af440bb78f2315557
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/20/2018
+ms.openlocfilehash: d19053d8296dbe75ac1e0ce037d6a713d9f5687c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105001"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148610"
 ---
-# <a name="service-oriented-architecture"></a>Architektura orientovaná na služby 
+# <a name="service-oriented-architecture"></a>Architektura orientovaná na služby
 
-Architektura orientovaná na služby (SOA) byl Nepromyšlené termín a je určena různých věcí na jiné osoby. Ale jako společný jmenovatel, SOA znamená, že struktury vaší aplikace pomocí decomposing k více službám (nejčastěji jako služeb HTTP), které můžou být klasifikované jako různé typy jako subsystémy nebo vrstvy.
+Architektura orientovaná na služby (SOA) byl Nepromyšlené období a má určené různé věci pro různé osoby. Ale jako společným faktorem SOA znamená, že struktury aplikace pomocí rozložení do více služeb (nejčastěji jako služeb HTTP), které se dají považovat za různé typy jako podsystémy nebo úrovní.
 
-Tyto služby teď můžou být nasazené jako Docker kontejnery, které řeší problémy při nasazení, protože všechny závislosti jsou součástí image kontejneru. Pokud potřebujete škálování aplikace SOA, můžete mít škálovatelnost a dostupnost výzvy, pokud nasazujete podle jednoho hostitelů Docker. Toto je, kde Docker clustering softwaru nebo orchestrator vám pomůže se, jak je popsáno v pozdějších částech, kde jsme popisují nasazení přístupy k mikroslužeb.
+Tyto služby můžete nasadit jako kontejnery Dockeru, které řeší problémy s nasazením, protože všechny závislosti jsou součástí image kontejneru. Pokud potřebujete vertikálně navýšit kapacitu aplikace SOA, bude pravděpodobně škálovatelnost a dostupnost výzvy, pokud nasazujete založené na jednoho hostitele Dockeru. To je, kde software clusteru Docker nebo orchestrátor vám umožňují, jak je popsáno v předchozích částech, kde jsou popsány přístupy k nasazení mikroslužeb.
 
-Kontejnery docker jsou užitečné (ale není požadováno) pro tradiční architektury orientované na služby a pokročilejší architektury mikroslužeb.
+Kontejnery dockeru jsou užitečné (ale nevyžadováno) pro tradiční architektury orientované na služby a pokročilejší architekturu mikroslužeb.
 
-Mikroslužeb odvozena od SOA, ale SOA se liší od architektura mikroslužeb. Funkce, například velký centrální zprostředkovatelé, centrální orchestrators na úrovni organizace a [Enterprise Service Bus (ESB)](https://en.wikipedia.org/wiki/Enterprise_service_bus) jsou typická ve SOA. Ale ve většině případů se jedná o proti vzory v komunitě mikroslužby. Ve skutečnosti někteří uživatelé uvádějí, že "architektury mikroslužby je SOA pracujete správně."
+Mikroslužby jsou odvozeny z SOA, ale SOA se liší od architekturu mikroslužeb. Funkce, jako jsou velké centrální zprostředkovatelů, centrální orchestrátorů na úrovni organizace a [Enterprise Service Bus (ESB)](https://en.wikipedia.org/wiki/Enterprise_service_bus) jsou běžná v SOA. Ale ve většině případů Toto jsou antimodely v komunitě mikroslužeb. Ve skutečnosti někteří lidé tvrdí, že "architekturu mikroslužeb je SOA pracujete správně."
 
-Tato příručka se zaměřuje na mikroslužeb, protože je doporučený méně než požadavky a postupy používané při architektury mikroslužby SOA přístup. Pokud víte, jak sestavit aplikaci na základě mikroslužbu, také znát postup sestavení jednodušší aplikace orientované na služby.
-
-
-
+Tato příručka se zaměřuje na mikroslužby, protože SOA přístup je méně než požadavky a postupy používané v architektuře mikroslužeb doporučené postupy. Pokud víte, jak vytvářet aplikace založené na mikroslužbách, také víte, jak vytvářet aplikace orientované na služby jednodušší.
 
 >[!div class="step-by-step"]
-[Předchozí](docker-application-state-data.md)
-[další](microservices-architecture.md)
+>[Předchozí](docker-application-state-data.md)
+>[další](microservices-architecture.md)

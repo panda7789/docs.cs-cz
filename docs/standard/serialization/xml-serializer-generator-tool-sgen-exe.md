@@ -2,12 +2,12 @@
 title: Nástroj XML Serializer Generator (Sgen.exe)
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: e0fee890f86f4e377a9372d7e4c47ef78effc9fa
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 1e11a4d762950b4227b0a9accef10500fd89886d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45668467"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148116"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>Nástroj XML Serializer Generator (Sgen.exe)
 Vytvoří generátor serializátor XML sestavení serializace XML pro typy v zadané sestavení s cílem zlepšit výkon při spuštění <xref:System.Xml.Serialization.XmlSerializer> při serializuje nebo deserializuje objekty zadaného typů.  
@@ -22,18 +22,18 @@ sgen [options]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/a**[**sestavení**] **: *** název souboru*|Generuje kód serializace pro všechny typy, které jsou obsaženy v sestavení nebo spustitelný soubor určený *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
+|**/a**[**sestavení**]**:**_název souboru_|Generuje kód serializace pro všechny typy, které jsou obsaženy v sestavení nebo spustitelný soubor určený *filename*. Lze zadat pouze jeden název souboru. Je-li tento argument se opakuje, se používá poslední název souboru.|  
 |**/c [ompiler]:** *možnosti*|Určuje možnosti, které mají být předána do kompilátor jazyka C#. Všechny možnosti csc.exe jsou podporovány, jako jsou předávány kompilátoru. To lze použít k určení, že by měl být podepsáno sestavení a k určení souboru s klíčem.|  
 |**/d**[**ebug**]|Generuje obrázek, který lze použít se ladicí program.|  
 |**/f [orce]**|Vynutí přepsání existující sestavení se stejným názvem. Výchozí hodnota je **false**.|  
 |**/ help nebo /?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
 |**/k**[**achovat**]|Potlačí odstranění vytvořených zdrojových souborů a jiné dočasné soubory, poté, co byl zkompilován sestavení serializace. To lze použít k určení, zda tento nástroj je generování kódu serializace pro určitý typ.|  
 |**/n**[**ologo**]|Potlačí zobrazování úvodní nápis společnosti Microsoft.|  
-|**/o**[**ut**] **: *** cesta*|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:** název generované sestavení se skládá z názvu vstupní sestavení plus "xmlSerializers.dll".|  
+|**/o**[**ut**]**:**_cesta_|Určuje adresář, do kterého chcete uložit vygenerované sestavení. **Poznámka:**  Název generované sestavení se skládá z názvu vstupní sestavení plus "xmlSerializers.dll".|  
 |**/p**[**roxytypes**]|Generuje kód serializace pouze pro typy XML webové služby proxy serveru.|  
-|**/r**[**rnovat**] **: *** assemblyfiles*|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
+|**/r**[**rnovat**]**:**_assemblyfiles_|Určuje sestavení, která je odkazováno dle typy vyžadujících serializace XML. Je možné zadat více souborů sestavení, oddělených čárkami.|  
 |**/s**[**ilent**]|Potlačí zobrazování zpráv o úspěšném dokončení.|  
-|**/t**[**yp**] **: *** typu*|Generuje kód serializace pouze u zadaného typu.|  
+|**/t**[**yp**]**:**_typu_|Generuje kód serializace pouze u zadaného typu.|  
 |**/v**[**erbose**]|Zobrazí podrobné informace pro ladění. Zobrazí seznam typů z cílového sestavení, které nelze serializovat, s <xref:System.Xml.Serialization.XmlSerializer>.|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   

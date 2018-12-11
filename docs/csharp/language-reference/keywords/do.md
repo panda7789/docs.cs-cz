@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-ms.openlocfilehash: 89c13f5b547c13052e229ff6eb3a39ae5babce41
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4dd5f4034bcd60b714071eb7eb9518e66ac0c848
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994465"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129022"
 ---
 # <a name="do-c-reference"></a>do (Referenční dokumentace jazyka C#)
 
@@ -32,13 +32,12 @@ Následující příklad ukazuje použití `do` příkazu. Vyberte **spustit** k
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [proveďte příkaz](~/_csharplang/spec/statements.md#the-do-statement) část [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)  
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-- [Klíčová slova jazyka C#](index.md)  
-- [do-while – příkaz (C++)](/cpp/cpp/do-while-statement-cpp)  
-- [Příkazy iterace](iteration-statements.md)  
-- [while – příkaz](while.md)  
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Příkazy iterace](iteration-statements.md)
+- [while – příkaz](while.md)

@@ -1,20 +1,20 @@
 ---
-title: Vytvoření knihovny tříd pomocí jazyka Visual Basic a .NET Core v sadě Visual Studio 2017
-description: Další informace o vytváření knihovny tříd napsané v jazyce Visual Basic pomocí sady Visual Studio 2017
+title: Vytvoření knihovny tříd jazyka Visual Basic .NET Core v sadě Visual Studio 2017
+description: Další informace o vytváření knihovny tříd .NET Core napsané v jazyce Visual Basic pomocí sady Visual Studio 2017
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
 dev_langs:
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: 52bbae330afe4a9ea376c6388a06941f74f6606a
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: 04d866c0615d299fe3df72553bafce2514a1c121
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035971"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168829"
 ---
-# <a name="building-a-class-library-with-visual-basic-and-net-core-in-visual-studio-2017"></a>Vytvoření knihovny tříd pomocí jazyka Visual Basic a .NET Core v sadě Visual Studio 2017
+# <a name="build-a-class-library-with-visual-basic-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny tříd pomocí jazyka Visual Basic a .NET Core SDK v sadě Visual Studio 2017
 
 A *knihovny tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, který cílí na .NET Standard 2.0 umožňuje knihovny, které jsou volány žádné implementace .NET, která podporuje danou verzi .NET Standard. Po dokončení knihovnu tříd, můžete se rozhodnout, zda chcete distribuovat jako součást jiného výrobce nebo určuje, zda chcete zahrnout jako součást připojené pomocí jedné nebo více aplikací.
 
@@ -31,7 +31,7 @@ Začněte vytvořením řešení pro váš projekt knihovny tříd a její souvi
 
 1. V **nový projekt** dialogového okna, rozbalte **ostatní typy projektů** uzel a vyberte možnost **řešení sady Visual Studio**. Název řešení "ClassLibraryProjects" a vyberte **OK** tlačítko.
 
-   ![Dialogové okno nového projektu](./media/library-with-visual-studio/newproject.png)
+   ![Visual Studio vytvořit dialogové okno Nový projekt testů](./media/library-with-visual-studio/new-project-dialog.png)
 
 ## <a name="creating-the-class-library-project"></a>Vytvoření projektu knihovny tříd
 
@@ -41,15 +41,15 @@ Vytvoření projektu knihovny třídy:
 
 1. V **přidat nový projekt** dialogového okna, rozbalte **jazyka Visual Basic** uzlu, vyberte **.NET Standard** uzel, za nímž následuje **knihovna tříd (.NET Standard)**  šablony projektu. V **název** textové pole, zadejte "StringLibrary" jako název projektu. Vyberte **OK** vytvořte projekt knihovny tříd.
 
-   ![Přidání dialogového okna Nový projekt](./media/vb-library-with-visual-studio/libproject.png)
+   ![Visual Studio přidejte dialogové okno Nový projekt knihovny](./media/vb-library-with-visual-studio/create-new-library-project.png)
 
    Potom otevře se okno kódu ve vývojovém prostředí sady Visual Studio. 
  
-   ![Visual Studio okno aplikace zobrazuje kód výchozí knihovny třídy šablony](./media/vb-library-with-visual-studio/stringlibrary.png)
+   ![Visual Studio okno aplikace zobrazuje kód výchozí knihovny třídy šablony](./media/vb-library-with-visual-studio/visual-studio-library.png)
 
 1. Zkontrolujte, že knihovny, zaměřuje na správnou verzi .NET Standard. Klikněte pravým tlačítkem na projekt knihovny v **Průzkumníka řešení** windows, vyberte **vlastnosti**. **Cílová architektura** textovém poli se zobrazí, že jsme cílíte .NET Standard 2.0.
 
-   ![Vlastnosti projektu pro knihovny tříd](./media/library-with-visual-studio/properties.png)
+   ![Vlastnosti projektu pro knihovny tříd](./media/library-with-visual-studio/library-project-properties.png)
 
 1. Také v **vlastnosti** dialogového okna, odstraňte text v **kořenový obor názvů** textového pole. Pro každý projekt jazyka Visual Basic automaticky vytvoří obor názvů, který odpovídá názvu projektu a jsou nadřazené položky tohoto oboru názvů všech oborů názvů definovaných v souborech zdrojového kódu. Chceme, aby k definování oboru nejvyšší úrovně s použitím [ `namespace` ](../../visual-basic/language-reference/statements/namespace-statement.md) – klíčové slovo.
   
@@ -61,7 +61,7 @@ Vytvoření projektu knihovny třídy:
 
 1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Projekt by měl zkompiluje bez chyb.
 
-   ![Podokno výstup zobrazuje, že sestavení bylo úspěšné](./media/library-with-visual-studio/buildsucceeds.png)
+   ![Podokno výstup zobrazuje, že sestavení bylo úspěšné](./media/library-with-visual-studio/output-pane-successful-build.png)
 
 
 

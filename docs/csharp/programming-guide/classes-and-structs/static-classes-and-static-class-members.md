@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 60a75946d30b1555aea01507d846e790dd00f767
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 6709344002ebc433c8d13d9cfa48a179fae9991b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122715"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53125990"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
@@ -39,7 +39,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Jak je tomu u všech typů tříd, informace o typu pro statické třídy načítá [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] common language runtime (CLR) při načtení programu, který odkazuje na třídu. Program nelze zadat přesně při načtení třídy. Ale je zaručeno, že má být načten a inicializován polí a jeho statický konstruktor voláno před provedením třídy odkazuje ve svém programu poprvé. Statický konstruktor je volat pouze jednou a statická třída zůstanou v paměti dobu životnosti domény aplikace, ve kterém se nachází váš program.  
   
 > [!NOTE]
->  Chcete-li vytvořit nestatické třídy, která umožňuje pouze jednu instanci sebe sama, který se má vytvořit, naleznete v tématu [implementace jednotlivý prvek v jazyce C#](https://msdn.microsoft.com/library/ms998558.aspx).  
+>  Chcete-li vytvořit nestatické třídy, která umožňuje pouze jednu instanci sebe sama, který se má vytvořit, naleznete v tématu [implementace jednotlivý prvek v jazyce C#](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29).  
   
  Následující seznam obsahuje hlavní funkce statické třídy:  
   
@@ -84,7 +84,8 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  Volání statické metody generuje instrukcí volání v jazyce Microsoft intermediate language (MSIL), že volání metody instance generuje `callvirt` instrukce, což také kontroluje odkazuje na objekt s hodnotou null. Ale ve většině případů rozdíly ve výkonnosti mezi těmito dvěma není důležité.  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+
+Další informace najdete v tématu [statické třídy](~/_csharplang/spec/classes.md#static-classes) a [statické a instance členy](~/_csharplang/spec/classes.md#static-and-instance-members) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
 ## <a name="see-also"></a>Viz také
 

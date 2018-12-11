@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření vlastního zprostředkovatele tokenů zabezpečení'
+title: 'Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,13 +8,13 @@ helpviewer_keywords:
 - security [WCF], providing credentials
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
 ms.openlocfilehash: 88200b41346a18732647602fb16774610014330c
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50744168"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131063"
 ---
-# <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření vlastního zprostředkovatele tokenů zabezpečení
+# <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkovatele tokenů zabezpečení a jak integrovat Správce tokenů zabezpečení vlastního zprostředkovatele.  
   
 > [!NOTE]
@@ -22,7 +22,7 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkova
   
  Poskytovatel tokenu zabezpečení vytvoří reprezentaci token zabezpečení na základě informací v přihlašovacích údajů klienta nebo službě. Vlastního zprostředkovatele tokenů zabezpečení používané k zabezpečení Windows Communication Foundation (WCF), musíte vytvořit vlastní přihlašovací údaje a implementace Správce tokenů zabezpečení.  
   
- Další informace o vlastní přihlašovací údaje a Správce tokenů zabezpečení najdete v článku [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+ Další informace o vlastní přihlašovací údaje a Správce tokenů zabezpečení najdete v článku [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
  Další informace o pověření, token správce, zprostředkovatele a authenticator třídy zabezpečení, najdete v článku [architektury zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
@@ -41,7 +41,7 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkova
   
 2.  Přepsat <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> metody, pokud se už je přepsaný.  
   
-     <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Metoda je zodpovědný za vrácení instance <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy vhodné <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr předaný metodě rozhraním zabezpečení WCF. Upravte metodu vrátit implementaci poskytovatele tokenu, kterého vlastní bezpečnostní (vytvořený v předchozím postupu) při volání metody s parametrem tokenu zabezpečení. Další informace o správce tokenů zabezpečení, najdete v článku [návod: vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+     <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> Metoda je zodpovědný za vrácení instance <xref:System.IdentityModel.Selectors.SecurityTokenProvider> třídy vhodné <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametr předaný metodě rozhraním zabezpečení WCF. Upravte metodu vrátit implementaci poskytovatele tokenu, kterého vlastní bezpečnostní (vytvořený v předchozím postupu) při volání metody s parametrem tokenu zabezpečení. Další informace o správce tokenů zabezpečení, najdete v článku [názorný postup: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
   
 3.  Přidat vlastní logiku do metody, který umožňuje vrátit vašeho vlastního zprostředkovatele tokenů zabezpečení na základě <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parametru. Následující příklad vrátí vlastního zprostředkovatele tokenů zabezpečení, pokud jsou splněny požadavky tokenu. Požadavky zahrnují token zabezpečení X.509 a směr zpráv (že token, který se používá pro výstup zpráv). U všech ostatních případech volá kód základní třídy, chcete-li zachovat shodné chování poskytované systémem další požadavky tokenu zabezpečení.  
   
@@ -59,6 +59,6 @@ Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkova
  <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>  
  <xref:System.IdentityModel.Selectors.SecurityTokenManager>  
  <xref:System.IdentityModel.Tokens.X509SecurityToken>  
- [Návod: Vytvoření vlastních přihlašovacích údajů klienta a služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
- [Postupy: Vytvoření vlastních ověřovacích dat tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
+ [Jak: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
  [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

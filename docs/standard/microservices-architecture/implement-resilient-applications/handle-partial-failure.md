@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/08/2018
-ms.openlocfilehash: 723719b22c1c7de63f19f68acf91e6499c1a4e43
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 94239fc30292760b2bb28849f8c6ab72c7ceb33d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37875180"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144725"
 ---
 # <a name="handling-partial-failure"></a>Zpracování částečného selhání
 
@@ -39,7 +39,6 @@ Chcete-li minimalizovat potíže, v části "*asynchronní mikroslužeb integrac
 
 Kromě toho je nezbytné, navrhnout vaše mikroslužeb a klientských aplikací pro zpracování částečného selhání – to znamená, vytvářet odolné mikroslužeb a klientské aplikace.
 
-
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](partial-failure-strategies.md)
+>[Předchozí](index.md)
+>[další](partial-failure-strategies.md)

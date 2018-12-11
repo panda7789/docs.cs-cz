@@ -1,19 +1,19 @@
 ---
-title: Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
+title: Uspořádání projektů pro rozhraní .NET Framework a .NET Core
 description: Nápovědu k projektu vlastníky, kteří chtějí kompilaci své řešení pro rozhraní .NET Framework a .NET Core side-by-side.
 author: conniey
-ms.author: mairaw
 ms.date: 04/06/2017
-ms.openlocfilehash: f8ca0d08c9e3802c71d53c831592ee4388ab5512
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: 97673e1ccaeb094bf8c7cb835a84ae9389fac502
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512263"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169128"
 ---
-# <a name="organizing-your-project-to-support-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
+# <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
 
-Tento článek pomůže vlastníci projektů, kteří chtějí ke kompilaci své řešení pro rozhraní .NET Framework a .NET Core – souběžně. Poskytuje několik možností, jak uspořádat projekty, což vývojářům umožňuje dosažení tohoto cíle. Následující seznam uvádí některé typické scénáře, které je třeba zvážit, když jste rozhodování o tom, jak nastavit rozložení projektu s .NET Core. V seznamu nemusí zahrnovat všechno, co chcete, aby; prioritizujte podle potřeb vašeho projektu.
+Zjistěte, jak vytvořit řešení, které zkompiluje pro rozhraní .NET Framework a .NET Core – souběžně. Zobrazit několik možností, jak uspořádat projektech při dosažení tohoto cíle. Tady jsou některé typické scénáře, které je třeba zvážit, když jste rozhodování o tom, jak nastavit rozložení projektu s .NET Core. V seznamu nemusí zahrnovat všechno, co chcete, aby; prioritizujte podle potřeb vašeho projektu.
 
 * [**Existující projekty a projekty .NET Core zkombinovat do jedné projekty**][option-csproj]
 
@@ -75,7 +75,7 @@ Všimněte si změny jsou:
 [example-initial-project]: media/project-structure/project.png "Existující projekt"
 [example-initial-project-code]: https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library/
 
-[example-csproj]: media/project-structure/project.csproj.png "Vytvoření csproj, který cílí na více platforem"
+[example-csproj]: media/project-structure/project.csproj.png "Vytvoření souboru csproj, který cílí na více platforem"
 [example-csproj-code]: https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/
 [example-csproj-netcore]: https://github.com/dotnet/samples/tree/master/framework/libraries/migrate-library-csproj/src/Car/Car.csproj
 

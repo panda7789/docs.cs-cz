@@ -1,18 +1,18 @@
 ---
 title: Sekvence (F#)
-description: Další informace o použití F# pořadí, když máte velké, seřazené kolekce dat, ale Neočekáváme, že nemusí používat všechny elementy.
+description: Další informace o použití F# seřazené posloupnosti, když máte velké, shromažďování dat ale Neočekáváme, že nemusí používat všechny elementy.
 ms.date: 05/16/2016
-ms.openlocfilehash: cfe8d1e350a8ac46b7700c12aa84d250f8b35855
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 835aa5fdc32f98efdc7e1795efd09541a5f1b791
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48838900"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129204"
 ---
 # <a name="sequences"></a>Sekvence
 
 > [!NOTE]
-Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
+> Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
 A *pořadí* je logické řady elementů jednoho typu. Sekvence jsou zvlášť užitečné, když máte velké, seřazené kolekce dat, ale neočekávají nutně používat všechny prvky. Jednotlivé pořadí, které prvky se zpracovávají pouze jako požadované, takže sekvenci může poskytovat lepší výkon než seznamu v situacích, v nichž jsou všechny prvky použít. Sekvence jsou reprezentovány `seq<'T>` typu, což je alias pro `System.Collections.Generic.IEnumerable`. Proto libovolný typ rozhraní .NET Framework, který implementuje `System.IEnumerable` může sloužit jako sekvenci. [Seq – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) poskytuje podporu pro manipulaci s zahrnující pořadí.
 
@@ -22,7 +22,7 @@ A *pořadí výrazu* je výraz, který se vyhodnotí na sekvenci. Sekvence výra
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1502.fs)]
 
-Sekvence výrazů jsou tvořené výrazy jazyka F#, které vracet hodnoty pořadí. Můžete použít `yield` – klíčové slovo k vytvoření hodnot, které se stanou součástí sekvence.
+Sekvence výrazů jsou tvořené F# výrazy, které vytvářejí hodnoty pořadí. Můžete použít `yield` – klíčové slovo k vytvoření hodnot, které se stanou součástí sekvence.
 
 Tady je příklad.
 
@@ -62,7 +62,7 @@ Následující příklad ukazuje použití `yield!` kombinování jednotlivých 
 
 Pořadí podporují řadu stejných funkcí jako [uvádí](lists.md). Pořadí také podporují operace, jako je seskupení a počítání pomocí funkcí generování klíče. Pořadí pro extrahování dílčích sekvencí, které podporují také více různých funkcí.
 
-Mnoho datových typů, jako je například seznam, pole, nastaví a mapy jsou implicitně pořadí, protože je vyčíslitelné kolekce. Funkce, která přebírá pořadí, argument pracuje s žádným z běžných F# datových typů, kromě na libovolný datový typ rozhraní .NET Framework, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Porovnejte to funkci, která převezme seznam jako argument, který jde převzít jenom seznamy. Typ `seq<'T>` je – zkratka typu pro `IEnumerable<'T>`. To znamená, že libovolný typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, která obsahuje pole, seznamy, nastaví a mapy v F# a také většina rozhraní .NET Framework typy kolekcí, je kompatibilní s `seq` zadejte a je možné kdykoli se očekává sekvenci.
+Mnoho datových typů, jako je například seznam, pole, nastaví a mapy jsou implicitně pořadí, protože je vyčíslitelné kolekce. Funkce, která přebírá pořadí, argument pracuje s žádným z běžné F# datových typů, kromě libovolný typ dat rozhraní .NET Framework, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Porovnejte to funkci, která převezme seznam jako argument, který jde převzít jenom seznamy. Typ `seq<'T>` je – zkratka typu pro `IEnumerable<'T>`. To znamená, že libovolný typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, která obsahuje pole, seznamy, nastaví a mapy v F#a také většina typy rozhraní .NET Framework kolekce, je kompatibilní s `seq` typ a je možné kdykoli se očekává sekvence .
 
 ## <a name="module-functions"></a>Modul funkce
 
@@ -102,7 +102,7 @@ Nekonečná sekvence můžete definovat pomocí [Seq.initInfinite](https://msdn.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssequences/snippet14.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 The sequence seq1 contains numbers from 0 to 20.
@@ -120,7 +120,7 @@ Následující kód představuje příklad, který používá mnoho funkcí modu
 
 ## <a name="searching-and-finding-elements"></a>Hledání a hledání elementů
 
-Pořadí podporu funkcí, které jsou k dispozici se seznamy: [Seq.exists](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq.exists2](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq.find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq.findIndex](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [ SEQ.Pick](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq.tryFind](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47), a [Seq.tryFindIndex](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Verze těchto funkcí, které jsou k dispozici pro pořadí vyhodnocení pořadí pouze do elementu, který má být vyhledán pro. Příklady najdete v tématu [uvádí](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
+Pořadí podporu funkcí, které jsou k dispozici se seznamy: [SEQ.EXISTS](https://msdn.microsoft.com/library/428c97bf-599d-4c39-a5b9-f8717c198ad1), [Seq.exists2](https://msdn.microsoft.com/library/efdf14a4-27f7-4dc1-9281-52639e66d565), [Seq.find](https://msdn.microsoft.com/library/02c21ecd-97e5-4e99-a4c1-b4d0b730b7d8), [Seq.findIndex](https://msdn.microsoft.com/library/96dfe86b-df15-4d92-8316-7cd6055e09f3), [Seq.pick](https://msdn.microsoft.com/library/a87bc771-55f7-43f9-94f9-33d8f9bf325d), [Seq.tryFind ](https://msdn.microsoft.com/library/ac43c6f5-4dc7-4e9a-a222-00b5736aee47), a [Seq.tryFindIndex](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a). Verze těchto funkcí, které jsou k dispozici pro pořadí vyhodnocení pořadí pouze do elementu, který má být vyhledán pro. Příklady najdete v tématu [uvádí](https://msdn.microsoft.com/library/83102799-f251-42e1-93ef-64232e8c5b1d).
 
 ## <a name="obtaining-subsequences"></a>Získání dílčích sekvencí, které
 

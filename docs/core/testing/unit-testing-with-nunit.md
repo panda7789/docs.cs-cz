@@ -3,12 +3,13 @@ title: Testování C# s použitím NUnit a .NET Core
 description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a NUnit.
 author: rprouse
 ms.date: 08/31/2018
-ms.openlocfilehash: 253e07c16740a39566cf37ee5742a32342c78c49
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.custom: seodec18
+ms.openlocfilehash: 80c831a6d8ab9aa35435d0ff8f13334f7d169a3a
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746741"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169025"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# s použitím NUnit a .NET Core
 
@@ -16,7 +17,7 @@ Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové �
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET core SDK 2.1 (vs. 2.1.400)](https://www.microsoft.com/net/download) nebo novější verze.
+- [Sady SDK .NET core 2.1](https://www.microsoft.com/net/download) nebo novější verze.
 - Textového editoru nebo editoru kódu podle vašeho výběru.
 
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje

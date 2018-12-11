@@ -1,16 +1,15 @@
 ---
 title: Pokyny pro kolekce
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3571ebb2fdd2bcdfd8be1f0087d096e01f18790a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+author: KrzysztofCwalina
+ms.openlocfilehash: 12f086ac92b449e074b9d39a563a20a3ebf2ff26
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964831"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145579"
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
 Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které mají některé běžné charakteristiky lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy implementace <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže se v této části považujeme pouze typy implementace jeden nebo oba z těchto rozhraní být kolekce.  
@@ -109,7 +108,7 @@ Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které maj
  **X DO NOT** dědit z neobecného základní kolekcí, jako `CollectionBase`. Použití `Collection<T>`, `ReadOnlyCollection<T>`, a `KeyedCollection<TKey,TItem>` místo.  
   
 ### <a name="naming-custom-collections"></a>Názvy vlastních kolekcí  
- Kolekce (typy, které implementují `IEnumerable`) jsou vytvořeny hlavně pro dva důvody: (1) Chcete-li vytvořit novou strukturu dat s operacemi specifický pro strukturu a často odlišných výkonových existujícím datovým strukturám charakteristik (například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.LinkedList%601>, <xref:System.Collections.Generic.Stack%601>) a (2) Chcete-li vytvořit kolekci specializované pro uchování konkrétní sady položek (například <xref:System.Collections.Specialized.StringCollection>). Datové struktury jsou nejčastěji používají v interní implementaci aplikací a knihoven. Specializované kolekce se hlavně zveřejněné v rozhraní API (jako typy vlastností a parametrů).  
+ Kolekce (typy, které implementují `IEnumerable`) jsou vytvořeny hlavně pro dva důvody: (1) Chcete-li vytvořit novou strukturu dat s operacemi specifický pro strukturu a často odlišných výkonových existujícím datovým strukturám charakteristik (například <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.LinkedList%601>, <xref:System.Collections.Generic.Stack%601>) a (2) Chcete-li vytvořit kolekci specializované pro drží určitou sadu položek (například <xref:System.Collections.Specialized.StringCollection>). Datové struktury jsou nejčastěji používají v interní implementaci aplikací a knihoven. Specializované kolekce se hlavně zveřejněné v rozhraní API (jako typy vlastností a parametrů).  
   
  **✓ DO** používat příponu "Slovník" v názvech abstrakce implementace `IDictionary` nebo `IDictionary<TKey,TValue>`.  
   
@@ -127,7 +126,7 @@ Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které maj
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -9,38 +9,38 @@ helpviewer_keywords:
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e1ba65194c49f76bb5c29ed28b1b038c02cf1a59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ee575cacbc51fc910770cca145a4280f97b66db
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393078"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144430"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext – pomocník spravovaného ladění (MDA)
-`loadFromContext` Pomocník spravovaného ladění (MDA) se aktivuje, pokud je načtena do sestavení `LoadFrom` kontextu. Tato situace může nastat v důsledku volání <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo jiné podobné metody.  
+`loadFromContext` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud je sestavení načteno do `LoadFrom` kontextu. Tato situace může nastat v důsledku volání <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo další podobné metody.  
   
 ## <a name="symptoms"></a>Příznaky  
- Použití některé metody zavaděč může mít za následek načítá v sestavení `LoadFrom` kontextu. Použití tohoto kontextu může způsobit neočekávané chování pro serializaci, přetypování a zjištění závislosti. Obecně se doporučuje, aby sestavení být načtena do `Load` kontext, který má se těmto problémům vyhnuli. Je obtížné určit, které kontext sestavení bylo načteno do bez této (mda).  
+ Pomocí některé metody zavaděč může vést k načítání v sestavení `LoadFrom` kontextu. Použití tohoto kontextu může způsobit neočekávané chování pro serializaci, přetypování a řešení závislostí. Obecně je vhodné, že sestavení načtena do `Load` kontext k těmto problémům vyhnout. Je obtížné určit kontext sestavení bylo načteno do bez toto MDA.  
   
 ## <a name="cause"></a>příčina  
- Obecně platí, sestavení bylo načteno do `LoadFrom` kontextu, pokud byla načtena z cesty mimo `Load` kontextu, jako je například globální mezipaměti sestavení nebo <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> vlastnost.  
+ Obecně platí, bylo načteno do sestavení `LoadFrom` kontextu, pokud byl načten z cesty `Load` kontextu, jako je například globální mezipaměti sestavení nebo <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="resolution"></a>Rozlišení  
- Konfigurace aplikací tak, aby <xref:System.Reflection.Assembly.LoadFrom%2A> volání už nejsou potřeba. Jak to udělat, můžete použít následující postupy:  
+ Konfigurace aplikací tak, aby <xref:System.Reflection.Assembly.LoadFrom%2A> volání už nejsou potřeba. Následující postupy můžete to udělat:  
   
--   Instalace sestavení v globální mezipaměti sestavení.  
+-   Nainstalujte sestavení v globální mezipaměti sestavení.  
   
--   Sestavení v umístit <xref:System.AppDomainSetup.ApplicationBase%2A> adresář pro <xref:System.AppDomain>. V případě výchozí doménu <xref:System.AppDomainSetup.ApplicationBase%2A> adresář je ta, která obsahuje spustitelný soubor, který spustil proces. To může také vyžadovat vytvoření nové <xref:System.AppDomain> Pokud není vhodné pro přesun sestavení.  
+-   Sestavení v umístit <xref:System.AppDomainSetup.ApplicationBase%2A> adresář <xref:System.AppDomain>. V případě výchozí doménu <xref:System.AppDomainSetup.ApplicationBase%2A> adresář je ten, který obsahuje spustitelný soubor, který spustil proces. To může také vyžadovat vytvoření nového <xref:System.AppDomain> Pokud není vhodné přesunout sestavení.  
   
--   Přidejte cestu k testování konfiguračním (config) souboru aplikace nebo sekundární aplikační domény, pokud jsou závislé sestavení v podřízených adresářích relativně ke spustitelnému souboru.  
+-   Přidáte cesta zjišťování (.config) konfigurační soubor aplikace nebo sekundární aplikačních doménách, pokud jsou závislé sestavení v adresářích podřízené vzhledem ke spustitelnému souboru.  
   
- V každém případě může změnit kód tak, aby použít <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda.  
+ V obou případech lze změnit kód určený <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metody.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- MDA nemá žádný vliv na modulu CLR. Oznámí kontext, který byl použit jako výsledek požadavku na zatížení.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ MDA nemá žádný vliv na CLR. Oznámí kontext, který se použil jako výsledek požadavku na zatížení.  
   
 ## <a name="output"></a>Výstup  
- MDA hlásí, že sestavení bylo načteno do `LoadFrom` kontextu. Určuje jednoduchý název sestavení a cestu. Rovněž nabízí jejich zmírnění pro nepoužívejte `LoadFrom` kontextu.  
+ MDA hlásí, že sestavení bylo načteno do `LoadFrom` kontextu. Určuje jednoduchý název sestavení a cestu. Rovněž navrhuje způsoby zmírnění rizik, abyste se vyhnuli použití `LoadFrom` kontextu.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -53,9 +53,9 @@ ms.locfileid: "33393078"
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje situace, které můžou aktivovat tuto (mda):  
+ Následující příklad kódu ukazuje situaci, která může aktivovat toto MDA:  
   
-```  
+```csharp
 using System.Reflection;  
 namespace ConsoleApplication1  
 {  

@@ -4,12 +4,12 @@ description: Zjistěte, jak implementovat brány rozhraní API s Ocelot a použi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 69b4e36d085c9121cf6d70e50214a81bb649664b
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: e6ffef646f860a07920c37d239ee7f2e379aac92
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297397"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143854"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implementace brány rozhraní API s Ocelot
 
@@ -412,7 +412,7 @@ Protože je v aplikaci eShopOnContainers více bran rozhraní API pomocí hranic
 
 Ocelot ale také podporuje sedí identita a ověřování mikroslužby v rámci hranice Brána rozhraní API, stejně jako v tomto diagramu.
 
- ![Ověřování pomocí Identity mikroslužeb pod bránu rozhraní API (AG): 1) AG požadavků ověřovací token identity mikroslužeb, 2) Identity mikroslužeb vrátí toke AG, (3 - 4) AG žádosti z mikroslužeb pomocí tokenu ověřování.](./media/image40.png)
+ ![Ověřování pomocí Identity mikroslužeb pod bránu rozhraní API (AG): (1) AG požadavků ověřovací token identity mikroslužeb, 2) Identity mikroslužeb vrátí toke AG, (3 - 4) AG žádosti z mikroslužeb pomocí tokenu ověřování.](./media/image40.png)
 
 **Obrázek 6 – 40**. Ověřování v Ocelot
 
@@ -580,5 +580,5 @@ Existují další důležité funkce pro výzkum a použít, při použití brá
   [*https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html*](https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html )
 
 >[!div class="step-by-step"]
-[Předchozí](background-tasks-with-ihostedservice.md)
-[další](../microservice-ddd-cqrs-patterns/index.md)
+>[Předchozí](background-tasks-with-ihostedservice.md)
+>[další](../microservice-ddd-cqrs-patterns/index.md)

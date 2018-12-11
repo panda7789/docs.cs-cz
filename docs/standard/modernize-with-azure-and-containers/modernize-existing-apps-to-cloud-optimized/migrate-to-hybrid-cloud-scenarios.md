@@ -1,49 +1,49 @@
 ---
-title: Migrace na hybridní cloudové scénáře
-description: Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows | Migrace na hybridní cloudové scénáře
+title: Migrace na scénáři s hybridními cloudy
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Migrace na scénáři s hybridními cloudy
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 8885ee8fce4f8c11c14ee8936f3ee0ffd89ece04
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 3d6fc272854654d890559d5db032b05667627d94
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33958206"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147343"
 ---
-# <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na hybridní cloudové scénáře
+# <a name="migrate-to-hybrid-cloud-scenarios"></a>Migrace na scénáři s hybridními cloudy
 
-Některé organizacím a podnikům umožňují nemůžete migrovat některé z aplikací a veřejných cloudů, jako je například Microsoft Azure nebo jiných veřejného cloudu z důvodu předpisy nebo vlastní zásady. Je ale pravděpodobné, že některé z organizací, mohou využít s některé jejich aplikací ve veřejném cloudu a další aplikace místně. Ale smíšeném prostředí může způsobit nadměrné složitosti v prostředích různých platforem a technologií používaných v veřejné cloudy a místními prostředími.
+Některé organizace a podniky nemůžete migrovat některé ze svých aplikací do veřejných cloudů, jako je například Microsoft Azure nebo jiného veřejného cloudu kvůli předpisy nebo vlastní zásady. Je ale pravděpodobné, že každá organizace může mít užitek z některých aplikací ve veřejném cloudu a dalších aplikací v místním prostředí s. Ale smíšeném prostředí může vést k nadměrné složitosti v prostředí kvůli různé platformy a technologie používané ve veřejných cloudech a v místních prostředích.
 
-Společnost Microsoft poskytuje nejlepší hybridní cloudové řešení, jeden ve kterém můžete optimalizovat vaše stávající prostředky místní a ve veřejném cloudu, zatímco zajistit konzistenci Azure hybridní cloud. Můžete maximalizovat existujících dovedností a získat flexibilní, jednotný přístup k sestavení aplikace, které můžou běžet v cloudu nebo místně, díky zásobník Azure (místní) a Azure (veřejný cloud).
+Společnost Microsoft poskytuje nejlepší hybridní cloudové řešení, jeden ve kterém můžete optimalizovat stávající prostředky místní a ve veřejném cloudu, zatímco zajistit konzistenci v Azure hybridního cloudu. Můžete maximalizovat stávající dovednosti a získejte flexibilní a Unifikovaný přístup k vytváření aplikací, které můžou běžet v cloudu nebo místně, díky Azure Stack (v místním prostředí) a Azure (veřejný cloud).
 
-Pokud jde o zabezpečení, můžete centralizovat správu a zabezpečení mezi hybridní cloud. Můžete získat kontrolu nad všechny prostředky z vašeho datového centra do cloudu, tím, že poskytuje jednotné přihlašování k místnímu a cloudových aplikací. Můžete dosáhnout pomocí rozšíření služby Active Directory k hybridní cloud a pomocí správy identit.
+Při rozhodování o zabezpečení, můžete centralizovat správu a zabezpečení napříč hybridním cloudu. Můžete mít kontrolu nad všemi prostředky z vašeho datového centra do cloudu a tím, že poskytuje jednotné přihlašování k místním a cloudovým aplikacím. Můžete dosáhnout pomocí rozšíření služby Active Directory na hybridní cloud a s využitím správy identit.
 
-Nakonec můžete distribuovat a bezproblémově analyzovat data, používat stejné jazyky dotazu pro cloudové a místní prostředky a použít analýzy a přímý učení v Azure a rozšíření dat, bez ohledu na její zdroj.
+Nakonec můžete distribuovat a analyzovat data bez problémů, použít stejné dotazovací jazyky pro cloudové a místní prostředky a analýz a obsáhlého learningu v Azure obohatíte vaše data bez ohledu na jeho zdroj.
 
-## <a name="azure-stack"></a>Azure zásobníku
+## <a name="azure-stack"></a>Azure Stack
 
-Zásobník Azure je hybridní cloudové platformy, která umožňuje poskytovat služby Azure z vaší organizace datového centra. Azure zásobníku je navržen pro podporu nové možnosti pro moderní aplikace v klíčových scénářů, jako je okraj a prostředích bez připojení nebo konkrétní požadavky zabezpečení a dodržování předpisů na schůzku.
+Azure Stack je hybridní Cloudová platforma, která umožňuje poskytovat služby Azure z datového centra vaší organizace. Azure Stack je navržena pro podporu nové možnosti pro moderní aplikace v klíčových scénářů, jako je edge a nepřipojené prostředí nebo specifické požadavky zabezpečení a dodržování předpisů na schůzku.
 
-Obrázek 4 – 13 ukazuje přehled true hybridní Cloudová platforma, která společnost Microsoft nabízí.
+Obrázek 4 – 13 ukazuje přehled skutečně hybridní Cloudová platforma, která nabízí Microsoft.
 
-![Hybridní Cloudová platforma Microsoft s zásobník Azure a Azure](./media/image13.jpg)
+![Hybridní Cloudová platforma Microsoftu pomocí služby Azure Stack a Azure](./media/image13.jpg)
 
-> **Obrázek 4 – 13.** Hybridní Cloudová platforma Microsoft s zásobník Azure a Azure
+> **Obrázek 4 – 13.** Hybridní Cloudová platforma Microsoftu pomocí služby Azure Stack a Azure
 
-Azure zásobník je k dispozici v dvě možnosti nasazení, aby odpovídaly vašim potřebám:
+Azure Stack se nabízí ve dvou možnosti nasazení podle svých potřeb:
 
--   Azure zásobníku integrované systémy
+-   Integrované systémy pro službu Azure Stack
 
--   Azure zásobníku Development Kit
+-   Vývojová sada pro Azure Stack
 
-### <a name="azure-stack-integrated-systems"></a>Azure zásobníku integrované systémy
+### <a name="azure-stack-integrated-systems"></a>Integrované systémy pro službu Azure Stack
 
-Azure zásobníku integrované systémy jsou nabízena prostřednictvím partnerství partnerů společnosti Microsoft a hardwaru. Spolupráci vytvoří řešení, které nabízí cloudu pracovníky inovací, který je vyvážit s jednoduchost ve správě. Protože zásobník Azure je poskytován jako integrovaný systém hardwaru a softwaru, zobrazí správného množství flexibilitu a řízení, při přijetí stále inovací z cloudu. Azure zásobníku integrované systémy rozsahu velikosti od 4 do 12 uzlů a společně podporuje hardwaru partnera a společnosti Microsoft. Použití Azure zásobníku integrované systémy implementovat nové scénáře pro produkční zatížení.
+Azure Stack integrované systémy jsou nabízeny Díky partnerství Microsoftu a hardwarových partnerů. Partnerství vytvoří řešení, které nabízí cloud tempem inovací vyrovnávaném pomocí jednoduchost ve správě. Protože Azure Stack se nabízí jako integrovaný systém softwaru a hardwaru, získáte úroveň flexibility a kontroly, při přijetí stále inovace v cloudu. Systémy ve službě Azure Stack integrované velikosti od 4 do 12 uzlů v rozsahu a společně podporuje hardwarových partnerů a Microsoft. Implementace nové scénáře pro vaše produkční úlohy pomocí integrované systémy Azure Stack.
 
-### <a name="azure-stack-development-kit"></a>Azure zásobníku Development Kit
+### <a name="azure-stack-development-kit"></a>Vývojová sada pro Azure Stack
 
-Microsoft Azure zásobníku Development Kit je jedním uzlem nasazení zásobníku Azure, který můžete použít k vyhodnocení a další informace o Azure zásobníku. Můžete také použít Azure zásobníku Development Kit jako vývojářského prostředí, kde můžete vyvíjet pomocí rozhraní API a nástrojů, které jsou konzistentní s Azure. Azure Development Kit zásobníku není určena pro použití jako provozním prostředí.
+Microsoft Azure Stack Development Kit je jedním uzlem nasazení služby Azure Stack, který můžete použít k vyhodnocení a další informace o službě Azure Stack. Jako prostředí pro vývojáře, kde můžete při vývoji využít rozhraní API a nabízí nástroje, které jsou konzistentní s Azure můžete také použít Azure Stack Development Kit. Azure Stack Development Kit není určena pro použití jako v provozním prostředí.
 
 ### <a name="additional-resources"></a>Další zdroje
 
@@ -51,11 +51,11 @@ Microsoft Azure zásobníku Development Kit je jedním uzlem nasazení zásobní
 
     [https://www.microsoft.com/cloud-platform/hybrid-cloud](https://www.microsoft.com/cloud-platform/hybrid-cloud)
 
--   **Azure zásobníku**
+-   **Azure Stack**
 
     [https://azure.microsoft.com/overview/azure-stack/](https://azure.microsoft.com/overview/azure-stack/)
 
--   **Účty služby Active Directory pro Windows kontejnery**
+-   **Účty služby Active Directory pro kontejnery Windows**
 
     [https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/manage-serviceaccounts)
 
@@ -63,10 +63,10 @@ Microsoft Azure zásobníku Development Kit je jedním uzlem nasazení zásobní
 
     [https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/](https://blogs.msdn.microsoft.com/containerstuff/2017/01/30/create-a-container-with-active-directory-support/)
 
--   **Licencování Azure hybridní výhody**
+-   **Licencování programu Azure Hybrid Benefit**
 
     [https://azure.microsoft.com/pricing/hybrid-use-benefit/](https://azure.microsoft.com/pricing/hybrid-use-benefit/)
 
 >[!div class="step-by-step"]
-[Předchozí](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
-[další](../walkthroughs-technical-get-started-overview.md)
+>[Předchozí](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
+>[další](../walkthroughs-technical-get-started-overview.md)

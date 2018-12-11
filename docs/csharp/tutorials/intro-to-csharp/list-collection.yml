@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 6b7a00a0d7ea17ab48e673b735bdd1a77328c099
-  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.openlocfilehash: 1d4ae646dfc4c96db77bee69d0b7fe0876cce85d
+  ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/28/2018
-  ms.locfileid: "50200212"
+  ms.lasthandoff: 12/10/2018
+  ms.locfileid: "53129009"
 items:
 - durationInMinutes: 1
   content: >
@@ -199,7 +199,13 @@ items:
   durationInMinutes: 3
   content: "Napsali jste kód podobný tomuto?\n\n```csharp\nvar fibonacciNumbers = new List<int> {1, 1};\n\nwhile (fibonacciNumbers.Count < 20)\n{\n    var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];\n    var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];\n    \n    fibonacciNumbers.Add(previous + previous2);\n}\nforeach(var item in fibonacciNumbers)\n    Console.WriteLine(item);\n```\n\nS každou iterací smyčky přenášíte posledních dvou celých čísel v seznamu je sčítání a přidáte tuto hodnotu do seznamu. Smyčka se opakuje dokud nepřidáte 20 položek do seznamu.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
 - content: >-
-    Dokončili jste kurz seznamu. V tomto kurzu je poslední Interaktivní kurz. Tyto kurzy můžete pokračovat ve svém vlastním vývojovém prostředí. Seznamte se se základy [místního vývojového](local-environment.md) a potom si vyberte kurz. Vyzkoušejte to samé cvičení, přejít přímo k dalšímu kurzu nebo znovu začít rychlým [čísla ve C# ](numbers-in-csharp-local.md) kurzu.
+    Dokončili jste kurz interaktivní seznamu. Který je posledním Úvod do C# interaktivního kurzu. Můžete přejít [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů k sestavení projektů na vašem počítači.
 
 
-    Další informace o práci s `List` zadejte [Průvodce technologií .NET](../../../standard/index.md) téma na [kolekce](../../../standard/collections/index.md). Také se dozvíte o mnoho jiných typů kolekce.
+    Další informace o [kolekcí .NET](../../../standard/collections/index.md) v následujících tématech:
+
+    - [Výběr typu kolekce](../../../standard/collections/selecting-a-collection-class.md)
+
+    - [Běžně používané typy kolekcí](../../../standard/collections/commonly-used-collection-types.md)
+
+    - [Kdy použít generické kolekce](../../../standard/collections/when-to-use-generic-collections.md)

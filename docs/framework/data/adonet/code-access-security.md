@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: a608b91c78808af70bd5e9188926a12b945c5604
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: a5e5826dddbf60e92a50fd4f83322e7c1062f636
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453174"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144868"
 ---
 # <a name="code-access-security-and-adonet"></a>Zabezpečení přístupu kódu a ADO.NET
 Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako zabezpečení přístupu kódu (CAS), které jsou implementovány pomocí společnou infrastrukturu pro zadaný modulem common language runtime (CLR). Většina aplikace na světě nespravovaného kódu jsou spouštěny s oprávnění uživatele nebo instanční objekt. V důsledku toho počítačových systémů může být poškozený a privátních dat dojde k ohrožení bezpečnosti při škodlivý nebo plný chyb softwaru je spuštěna uživatelem, se zvýšenými oprávněními.  
@@ -38,7 +38,7 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
 ### <a name="requesting-permissions"></a>Vyžadování oprávnění  
  Účelem o oprávnění je informovat modul runtime oprávnění, která vaše aplikace vyžaduje, aby bylo možné spustit a ujistěte se, že bude dostávat pouze oprávnění, které skutečně potřebuje. Například pokud vaše aplikace potřebuje k zápisu dat do místního disku, vyžaduje <xref:System.Security.Permissions.FileIOPermission>. Pokud nebylo uděleno oprávnění, aplikace selže, pokud chcete zapsat na disk. Nicméně pokud aplikace požaduje `FileIOPermission` a nebylo uděleno oprávnění, vygeneruje výjimku zaměřeným na aplikaci a nenačte.  
   
- V případě, kdy aplikace potřebuje pouze ke čtení dat z disku můžete požádat, aby nikdy nebylo uděleno oprávnění pro zápis. V případě chyby nebo napadením se zlými úmysly váš kód nelze poškození dat, na kterém běží. Další informace najdete v tématu [NIB: požaduje oprávnění](https://msdn.microsoft.com/library/0447c49d-8cba-45e4-862c-ff0b59bebdc2).  
+ V případě, kdy aplikace potřebuje pouze ke čtení dat z disku můžete požádat, aby nikdy nebylo uděleno oprávnění pro zápis. V případě chyby nebo napadením se zlými úmysly váš kód nelze poškození dat, na kterém běží. Další informace najdete v tématu [NIB: Vyžadování oprávnění](https://msdn.microsoft.com/library/0447c49d-8cba-45e4-862c-ff0b59bebdc2).  
   
 ## <a name="role-based-security-and-cas"></a>Na základě rolí zabezpečení a certifikační Autority  
  Implementace zabezpečení na základě rolí a zabezpečení zřídka kódu (CAS) zvyšuje celkovou zabezpečení pro vaši aplikaci. Na základě rolí zabezpečení může být založen na účtu Windows nebo vlastní identity, zpřístupnění informací o objektu zabezpečení pro aktuální vlákno. Aplikace jsou navíc často potřeba k poskytnutí přístupu k datům nebo prostředkům na základě přihlašovacích údajů zadaných uživatelem. Tyto aplikace obvykle zkontrolovat roli uživatele a poskytovat přístup k prostředkům na základě těchto rolí.  
@@ -71,8 +71,8 @@ Rozhraní .NET Framework poskytuje zabezpečení na základě rolí stejně jako
 |-----------------------------------|-----------------|  
 |`Action`|Získá nebo nastaví akci zabezpečení. Zděděno z <xref:System.Security.Permissions.SecurityAttribute>.|  
 |`AllowBlankPassword`|Povolí nebo zakáže použití prázdného hesla v připojovacím řetězci. Platné hodnoty jsou `true` (Chcete-li povolit použití prázdného hesla) a `false` (Chcete-li zakázat použití prázdného hesla). Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`ConnectionString`|Určuje povolené připojovací řetězec. Můžete identifikovat více připojovací řetězce. **Poznámka:** nezahrnují ID uživatele nebo heslo v připojovacím řetězci. V této verzi nelze změnit připojovací řetězec omezení pomocí konfiguračního nástroje rozhraní .NET Framework. <br /><br /> Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
-|`KeyRestrictions`|Identifikuje parametry připojovacího řetězce, které jsou povolené nebo zakázané. Parametry připojovacího řetězce se identifikují ve formě  *\<název parametru > =*. Lze zadat více parametrů oddělených středníkem (;). **Poznámka:** Pokud nezadáte `KeyRestrictions`, ale nastavit `KeyRestrictionBehavior` vlastnost `AllowOnly` nebo `PreventUsage`, jsou povoleny žádné další parametry připojovacího řetězce. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`ConnectionString`|Určuje povolené připojovací řetězec. Můžete identifikovat více připojovací řetězce. **Poznámka:**  V připojovacím řetězci nezahrnují ID uživatele nebo heslo. V této verzi nelze změnit připojovací řetězec omezení pomocí konfiguračního nástroje rozhraní .NET Framework. <br /><br /> Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
+|`KeyRestrictions`|Identifikuje parametry připojovacího řetězce, které jsou povolené nebo zakázané. Parametry připojovacího řetězce se identifikují ve formě  *\<název parametru > =*. Lze zadat více parametrů oddělených středníkem (;). **Poznámka:**  Pokud nezadáte `KeyRestrictions`, ale nastavit `KeyRestrictionBehavior` vlastnost `AllowOnly` nebo `PreventUsage`, jsou povoleny žádné další parametry připojovacího řetězce. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`KeyRestrictionBehavior`|Identifikuje parametry připojovacího řetězce jako povolený jenom další parametry (`AllowOnly`), nebo označuje další parametry, které nejsou povoleny (`PreventUsage`). `AllowOnly` je výchozí nastavení. Zděděno z <xref:System.Data.Common.DBDataPermissionAttribute>.|  
 |`TypeID`|Získá jedinečný identifikátor pro tento atribut při implementaci do odvozené třídy. Zděděno z <xref:System.Attribute>.|  
 |`Unrestricted`|Určuje, zda je deklarována bez omezení oprávnění k prostředku. Zděděno z <xref:System.Security.Permissions.SecurityAttribute>.|  
@@ -160,7 +160,7 @@ AllowBlankPassword="False">
 ```  
   
 ## <a name="verifying-adonet-code-access-using-security-permissions"></a>Ověřování pomocí oprávnění zabezpečení přístupu kódu ADO.NET  
- Pro scénáře částečné důvěryhodnosti, můžete vyžadovat, aby certifikační Autority oprávnění pro konkrétní metody v kódu tak, že zadáte <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Pokud tato oprávnění není povolena zásadami zabezpečení s omezeným přístupem v platnosti, je vyvolána výjimka, před spuštěním kódu. Další informace o zásadách zabezpečení najdete v tématu [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9) a [NIB: doporučené postupy zabezpečení pro zásady](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05).  
+ Pro scénáře částečné důvěryhodnosti, můžete vyžadovat, aby certifikační Autority oprávnění pro konkrétní metody v kódu tak, že zadáte <xref:System.Data.SqlClient.SqlClientPermissionAttribute>. Pokud tato oprávnění není povolena zásadami zabezpečení s omezeným přístupem v platnosti, je vyvolána výjimka, před spuštěním kódu. Další informace o zásadách zabezpečení najdete v tématu [NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9) a [NIB: Doporučené postupy zabezpečení pro zásady](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05).  
   
 ### <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak napsat kód, který vyžaduje konkrétní připojovací řetězec. Simuluje neomezená oprávnění k odepření <xref:System.Data.SqlClient>, které správce systému může implementovat pomocí zásad CAS v reálném světě.  
@@ -197,6 +197,5 @@ Failed, as expected: Request failed.
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
- [Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)  
  [Zabezpečení na základě rolí](../../../../docs/standard/security/role-based-security.md)  
  [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

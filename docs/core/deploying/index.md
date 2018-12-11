@@ -1,27 +1,30 @@
 ---
 title: Nasazení aplikace .NET core
-description: Nasazení aplikace .NET Core.
+description: Další informace o způsobech, jak nasadit aplikaci .NET Core.
 author: rpetrusha
 ms.author: ronpet
-ms.date: 09/03/2018
-ms.openlocfilehash: 390af06e81788c3f64f255e5c85efdaa167274f4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.date: 12/03/2018
+ms.custom: seodec18
+ms.openlocfilehash: bba4a76364f2951cabc3dde9866019459e9b3f06
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836625"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144712"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
-Můžete vytvořit dva typy nasazení pro aplikace .NET Core:
+Můžete vytvořit tři typy nasazení pro aplikace .NET Core:
 
 - Nasazení závisí na architektuře. Jak již název napovídá, závisí na architektuře nasazení (chyba) spoléhá na přítomnost sdílené systémová verzi .NET Core v cílovém systému. Protože .NET Core je již k dispozici, vaše aplikace je také přenosné mezi instalacemi sady .NET Core. Vaše aplikace obsahuje pouze vlastní kód a případných závislostí třetích stran, které nejsou na knihovny .NET Core. Obsahují FDDs *.dll* soubory, které se dají spouštět pomocí [nástrojů dotnet](../tools/dotnet.md) z příkazového řádku. Například `dotnet app.dll` spustí aplikaci s názvem `app`.
 
 - Samostatná nasazení. Na rozdíl od disketové jednotky samostatná nasazení (SCD) nemusí spoléhat na přítomnost sdílené komponenty v cílovém systému. Všechny komponenty, včetně knihoven .NET Core a .NET Core runtime jsou součástí aplikace a jsou izolované od jiných aplikací .NET Core. SCDs zahrnují spustitelný soubor (například *app.exe* na platformách Windows pro aplikaci s názvem `app`), což je přejmenované verze hostitele specifické pro platformu .NET Core a *.dll* souboru (například *app.dll*), což je aplikace skutečný.
 
+- Závisí na architektuře spustitelných souborů. Vytvoří spustitelný soubor, který běží na cílovou platformu. Podobně jako FDDs, závisí na architektuře spustitelných souborů (FDE) jsou specifické pro platformu a nejsou samostatné. Tato nasazení spoléhat na přítomnost sdílené systémová verzi .NET Core pro spuštění. Na rozdíl od SCD obsahuje vaši aplikaci pouze váš kód a případných závislostí třetích stran, které nejsou na knihovny .NET Core. FDEs vytvoří spustitelný soubor, který běží na cílovou platformu.
+
 ## <a name="framework-dependent-deployments-fdd"></a>Nasazení závisí na architektuře (chyba)
 
-Pro disketové jednotky nasaďte jenom aplikace a závislostí třetích stran. Není nutné k nasazení rozhraní .NET Core, protože vaše aplikace bude používat verzi .NET Core, který je k dispozici v cílovém systému. Toto je výchozí model nasazení pro aplikace .NET Core a ASP.NET Core, které cílí na .NET Core.
+Pro disketové jednotky nasaďte jenom aplikace a závislostí třetích stran. Vaše aplikace bude používat verzi .NET Core, který je k dispozici v cílovém systému. Toto je výchozí model nasazení pro aplikace .NET Core a ASP.NET Core, které cílí na .NET Core.
 
 ### <a name="why-create-a-framework-dependent-deployment"></a>Proč vytvořit nasazení závisí na architektuře?
 
@@ -31,11 +34,13 @@ Nasazení disketové jednotky má několik výhod:
 
 - Velikost nasazovaného balíčku je malá. Pouze nasazení aplikace a jeho závislosti, ne .NET Core samotný.
 
+- Pokud nejsou přepsány, FDDs použije nejnovější obsluhované runtime nainstalovaného v cílovém systému. To umožňuje vaší aplikaci použít nejnovější opravenou verzi modulu runtime .NET Core. 
+
 - Více aplikací použít stejné instalace .NET Core, což snižuje jak disku místa a využití paměti v hostitelských systémech.
 
 Existuje také několik nevýhody:
 
-- Vaše aplikace může běžet jenom v případě, že verzi .NET Core, který je cílem nebo novější, je již nainstalována v hostitelském systému.
+- Vaše aplikace může běžet jenom v případě, že verze sady .NET Core vaší aplikaci zaměřuje [nebo novější verze](../versions/selection.md#framework-dependent-apps-roll-forward), je již nainstalována v hostitelském systému.
 
 - Je možné pro modul runtime .NET Core a knihovny, které chcete změnit bez vašeho vědomí v budoucích vezích se. Ve výjimečných případech může změnit chování vaší aplikace.
 
@@ -65,9 +70,31 @@ Obsahuje také některé nevýhody:
 
 - Nasazení do systému mnoho samostatné aplikace .NET Core může spotřebovat významné množství místa na disku, od každé aplikace duplicitní soubory .NET Core.
 
+## <a name="framework-dependent-executables-fde"></a>Závisí na architektuře spustitelných souborů (FDE)
+
+Spouští se s nástroji .NET Core 2.2, můžete nasadit aplikaci jako FDE, včetně případných požadovaných závislostí třetích stran. Vaše aplikace bude používat verzi .NET Core, který je nainstalován v cílovém systému.
+
+### <a name="why-deploy-a-framework-dependent-executable"></a>Proč nasazení závisí na architektuře spustitelného souboru?
+
+Nasazení FDE má několik výhod:
+
+- Velikost nasazovaného balíčku je malá. Pouze nasazení aplikace a jeho závislosti, ne .NET Core samotný.
+
+- Více aplikací použít stejné instalace .NET Core, což snižuje jak disku místa a využití paměti v hostitelských systémech.
+
+- Vaše aplikace může být spuštěna voláním publikované spustitelný soubor bez vyvolání `dotnet` nástroj přímo.
+
+Existuje také několik nevýhody:
+
+- Vaše aplikace může běžet jenom v případě, že verze sady .NET Core vaší aplikaci zaměřuje [nebo novější verze](../versions/selection.md#framework-dependent-apps-roll-forward), je již nainstalována v hostitelském systému.
+
+- Je možné pro modul runtime .NET Core a knihovny, které chcete změnit bez vašeho vědomí v budoucích vezích se. Ve výjimečných případech může změnit chování vaší aplikace.
+
+- Je nutné publikovat aplikace pro každou cílovou platformu.
+
 ## <a name="step-by-step-examples"></a>Podrobné příklady
 
-Podrobné příklady nasazení aplikace .NET Core pomocí nástrojů příkazového řádku, naleznete v tématu [nasazení aplikace .NET Core pomocí nástrojů CLI](deploy-with-cli.md). Podrobné příklady nasazení aplikace .NET Core pomocí sady Visual Studio, najdete v článku [nasazení aplikace .NET Core pomocí sady Visual Studio](deploy-with-vs.md). Každé téma obsahuje příklady následující nasazení:
+Podrobné příklady nasazení aplikace .NET Core pomocí nástrojů příkazového řádku, naleznete v tématu [nasazení aplikace .NET Core pomocí nástrojů CLI](deploy-with-cli.md). Podrobné příklady nasazení aplikace .NET Core pomocí sady Visual Studio, najdete v článku [nasazení aplikace .NET Core pomocí sady Visual Studio](deploy-with-vs.md). Každý článek obsahuje příklady následující nasazení:
 
 - Nasazení závisí na architektuře
 - Nasazení závisí na architektuře s závislostí třetích stran

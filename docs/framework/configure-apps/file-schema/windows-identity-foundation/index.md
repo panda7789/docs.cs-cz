@@ -3,15 +3,15 @@ title: Konfigurační schéma pro Windows Identity Foundation
 ms.date: 03/30/2017
 ms.assetid: 4d4f6d76-49a5-4bad-b345-097b2e2844e9
 author: BrucePerlerMS
-ms.openlocfilehash: c081e582f4c509843c04c292ecf13b2bff2fef06
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 7d6a3b1d0a67eb349fc6c9828e74a50ed621294e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397839"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146586"
 ---
 # <a name="windows-identity-foundation-configuration-schema"></a>Konfigurační schéma pro Windows Identity Foundation
-Témata v této části poskytují informace o schématu konfigurace technologie Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci pro používání technologie WIF prostřednictvím třídy vystavené rozhraní framework. Tyto třídy jsou uvedené v následujících částech zpracovat odpovídající elementy ve schématu. Zobrazí se následující základní XML označit struktura vystavené schématu konfigurace WIF. Atributy jsou vynechány. Zvýrazněný komentáře označují hlavní komponenty schématu.  
+Témata v této části poskytují informace o schématu konfigurace technologie Windows Identity Foundation (WIF). Můžete také nakonfigurovat aplikaci pro používání technologie WIF prostřednictvím vystavit rozhraní tříd. Tyto třídy jsou uvedené v následujících částech zpracovat odpovídající elementy ve schématu. Zobrazí se následující základní XML označit struktura vystavené schématu konfigurace WIF. Atributy jsou vynechány. Zvýrazněný komentáře označují hlavní komponenty schématu.  
   
 ```xml  
 <system.identityModel>  

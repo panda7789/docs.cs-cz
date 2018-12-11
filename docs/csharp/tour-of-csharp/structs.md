@@ -3,12 +3,12 @@ title: C# struktury – prohlídka jazyka C#
 description: Přečtěte si, že se že se základy C# hodnoty typů nazývaných struktury
 ms.date: 08/10/2016
 ms.assetid: 88a74571-f741-4a31-a2b5-1ccf165535b8
-ms.openlocfilehash: 2b1870713b488f706f5f3a54413461052173bab6
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 6b165dd040213b33f91d1baf1b0fb4909101666d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49323094"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53142733"
 ---
 # <a name="structs"></a>Struktury
 
@@ -35,5 +35,5 @@ Pokud `Point` je třída, výstup je 20, protože a b odkazovat na stejný objek
 Předchozí příklad ukazuje dvě omezení struktury. Kopírování celé struktury je poprvé, obvykle méně efektivní než odkaz na objekt, kopírování, předávání přiřazení a hodnota parametru může být dražší s struktury než s typy odkazů. Druhý, s výjimkou `in`, `ref`, a `out` parametry, není možné vytvořit odkazy na struktury, který vylučuje jejich použití v mnoha situacích.
 
 >[!div class="step-by-step"]
-[Předchozí](classes-and-objects.md)
-[další](arrays.md)
+>[Předchozí](classes-and-objects.md)
+>[další](arrays.md)

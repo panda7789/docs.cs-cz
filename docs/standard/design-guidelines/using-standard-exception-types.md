@@ -1,6 +1,6 @@
 ---
 title: Použití standardních typů výjimek
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - throwing exceptions, standard types
@@ -8,14 +8,13 @@ helpviewer_keywords:
 - exceptions, catching
 - exceptions, throwing
 ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9ea4a61be3a76c30c564cbf98ba3318fc6c3e7d4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+author: KrzysztofCwalina
+ms.openlocfilehash: dbf54f602fbe4ace01b60bb57e1106d3f19ba7df
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47216092"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144218"
 ---
 # <a name="using-standard-exception-types"></a>Použití standardních typů výjimek
 Tato část popisuje standardních výjimek poskytované rozhraní Framework a podrobnosti o jejich využití. V seznamu nejsou v žádném smyslu vyčerpávající. Najdete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  
@@ -62,7 +61,7 @@ Tato část popisuje standardních výjimek poskytované rozhraní Framework a p
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

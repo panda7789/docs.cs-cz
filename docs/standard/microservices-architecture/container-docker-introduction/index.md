@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: bc99bbfc3adee4cdc7008a91f42659ebcaa7a1b1
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: cf86640456af03d4c44f537fe1ff3282521f2200
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45658428"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147936"
 ---
 # <a name="introduction-to-containers-and-docker"></a>Úvod ke kontejnerům a Dockeru
 
@@ -29,7 +29,6 @@ Další výhodou kontejnerizace je škálovatelnost. Vytvořením nové kontejne
 
 Stručně řečeno kontejnery nabízejí výhody izolace, přenositelnost, flexibilitu, škálovatelnost a ovládací prvek v pracovním postupu životního cyklu celou aplikaci. Nejdůležitější výhoda spočívá v prostředí izolace, kterou poskytuje mezi Dev a Ops.
 
-
 >[!div class="step-by-step"]
-[Předchozí](../index.md)
-[další](docker-defined.md)
+>[Předchozí](../index.md)
+>[další](docker-defined.md)

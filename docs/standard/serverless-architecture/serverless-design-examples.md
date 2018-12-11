@@ -4,12 +4,12 @@ description: Vysvětlení různých scénářích podporovaných architektur bez
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 0261b9f17f133942d635cf331d8cef414378bd90
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: cf46c601ac6aa401c7c37bd64c1f8981589ebd2e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404906"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146703"
 ---
 # <a name="serverless-design-examples"></a>Příklady návrhu bez serveru
 
@@ -57,13 +57,13 @@ Bez serveru koncové body, které aktivuje volání HTTP lze použít ke zpracov
 
 ![Bez serveru webového rozhraní API](./media/serverless-web-api.png)
 
-## <a name="data-pipeline"></a>Datový kanál
+## <a name="data-pipeline"></a>Data Pipeline
 
 Funkce bez serveru je možné pro usnadnění datového kanálu. V tomto příkladu soubor aktivuje funkci pro převod data v souboru CSV do datových řádků v tabulce. Uspořádané tabulky umožňuje řídicí panel Power BI analytics prezentovat koncovému uživateli.
 
 ![Bez serveru datového kanálu](./media/serverless-data-pipeline.png)
 
-## <a name="stream-processing"></a>Zpracování Stream
+## <a name="stream-processing"></a>Zpracování streamů
 
 Zařízení a senzorů často generovat datové proudy dat, které je potřeba zpracovat v reálném čase. Existuje mnoho technologií, které můžete zaznamenat zprávy a datové proudy [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) a [služby IoT Hub](https://docs.microsoft.com/azure/iot-hub) k [služby Service Bus](/service-bus). Bez ohledu na přenos je ideální mechanismu pro zpracování zpráv a datových proudů, jak ve bez serveru. Bez serveru se rychle škálují podle potřeby velkých svazků s daty. Kód bez serveru můžete použít obchodní logiku k analýze dat a výstupu předává ve strukturovaném formátu pro akce a analýzy.
 
@@ -89,5 +89,5 @@ Brány rozhraní API poskytuje jeden vstupní bod pro klienty a monetizace směr
 * [Práce s změnu podpora kanálu ve službě Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/change-feed)
 
 >[!div class="step-by-step"]
-[Předchozí](serverless-architecture-considerations.md)
-[další](azure-serverless-platform.md)
+>[Předchozí](serverless-architecture-considerations.md)
+>[další](azure-serverless-platform.md)

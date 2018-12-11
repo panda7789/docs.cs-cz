@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: řízení typu projekce (C#)'
+title: 'Postupy: Řízení typu projekce (C#)'
 ms.date: 07/20/2015
 ms.assetid: e4db6b7e-4cc9-4c8f-af85-94acf32aa348
-ms.openlocfilehash: 8296420a89753771b97c9ca7a489cb686d2df8b5
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 4aea9fd07ff2a128da9be0a17e5f70a25c9f3853
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45595708"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146560"
 ---
-# <a name="how-to-control-the-type-of-a-projection-c"></a>Postupy: řízení typu projekce (C#)
+# <a name="how-to-control-the-type-of-a-projection-c"></a>Postupy: Řízení typu projekce (C#)
 Projekce je proces trvá jednu sadu dat, filtrovat, změně jeho tvar a změnu i jejího typu. Většina výrazy dotazu provést sami. Většina výrazy dotazu uvedené v této části vyhodnotit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce k vytvoření kolekce jiných typů. Toto téma ukazuje, jak to provést.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad definuje nový typ `Customer`. Výraz dotazu poté vytvoří nový `Customer` objekty v `Select` klauzuli. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> z `Customer`.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 public class Customer  
@@ -38,7 +38,7 @@ public class Customer
   
     public override string ToString()  
     {  
-        return String.Format("{0}:{1}:{2}", this.customerID, this.companyName, this.contactName);  
+        return $"{this.customerID}:{this.companyName}:{this.contactName}";
     }  
 }  
   

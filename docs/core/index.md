@@ -2,15 +2,14 @@
 title: Průvodce platformou .NET Core
 description: .NET core je modulární a vysoce výkonnou implementace .NET pro vytváření aplikací pro Windows, Linux a Mac. Další informace o .NET Core, abyste mohli začít.
 author: richlander
-ms.author: mairaw
 ms.date: 08/01/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 448edabf624f04311695e8b8c224f653b9939966
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ffa58600bea1f5514b25c18aa00e6d36679f2fd9
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199458"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170261"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 

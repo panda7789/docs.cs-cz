@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-ms.openlocfilehash: a71cbdce256b1c1bd5d101d66f216fb229d70adf
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: ab533bc6b8bcff54774d849510c66ec3436ad3b5
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48844901"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146945"
 ---
  # <a name="when-c-reference"></a>Když (referenční dokumentace jazyka C#)
 
@@ -23,10 +23,10 @@ Můžete použít `when` kontextové klíčové slovo k určení podmínky filtr
 
 ## <a name="when-in-a-catch-statement"></a>`when` v `catch` – příkaz
 
-Od verze C# 6, `When` lze použít v `catch` příkaz a zadejte podmínku, která musí mít hodnotu true pro obslužnou rutinu pro určité výjimky k provedení. Syntaxe je:
+Od verze C# 6, `when` lze použít v `catch` příkaz a zadejte podmínku, která musí mít hodnotu true pro obslužnou rutinu pro určité výjimky k provedení. Syntaxe je:
 
 ```csharp
-catch ExceptionType [e] when (expr)
+catch (ExceptionType [e]) when (expr)
 ```
 kde *expr* je výraz, který se vyhodnocuje na logickou hodnotu. Vrátí-li `true`, spustí obslužnou rutinu výjimky; Pokud `false`, tomu tak není. 
 

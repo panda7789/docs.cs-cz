@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Větve a smyčky v C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7edc39e6b9d45a0f6707adf48199c9a096b8992d
-  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.openlocfilehash: d29fae5aa5a34d7a8e91e53f2005178740464827
+  ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/28/2018
-  ms.locfileid: "50198596"
+  ms.lasthandoff: 12/10/2018
+  ms.locfileid: "53131245"
 items:
 - durationInMinutes: 1
   content: >
@@ -63,7 +63,7 @@ items:
 
     int c = 2;
 
-    int d = (a  + b) * c;
+    int d = (a + b) * c;
 
     Console.WriteLine(d);
 
@@ -200,4 +200,19 @@ items:
     > [!NOTE]
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- content: "Dokončili jste \"čísla v C#\" interactie kurzu. \n\nTyto kurzy můžete pokračovat ve svém vlastním vývojovém prostředí. Seznamte se se základy [místního vývojového](local-environment.md) a potom si vyberte kurz. Můžete přímo k dalšímu kurzu, nebo znovu začít rychlým [čísla ve C# ](numbers-in-csharp-local.md) kurzu.\n\nDalší informace o číslech v jazyce C# v následujících tématech:\n\n[Tabulka celočíselných typů](../../language-reference/keywords/integral-types-table.md)   \n[Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/keywords/floating-point-types-table.md)   \n[Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)   \n[Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)   \n[Tabulka explicitních číselných převodů](../../language-reference/keywords/explicit-numeric-conversions-table.md)"
+- content: >
+    Dokončili jste "čísla v C#" interaktivního kurzu. Můžete kliknout **větve a smyčky** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů.
+
+
+    Další informace o číslech v jazyce C# v následujících tématech:
+
+
+    - [Tabulka celočíselných typů](../../language-reference/keywords/integral-types-table.md)
+
+    - [Tabulka typů s plovoucí desetinnou čárkou](../../language-reference/keywords/floating-point-types-table.md)
+
+    - [Tabulka předdefinovaných typů](../../language-reference/keywords/built-in-types-table.md)
+
+    - [Tabulka implicitních číselných převodů](../../language-reference/keywords/implicit-numeric-conversions-table.md)
+
+    - [Tabulka explicitních číselných převodů](../../language-reference/keywords/explicit-numeric-conversions-table.md)

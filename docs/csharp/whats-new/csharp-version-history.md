@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 5e8ecdd971a043dc47c50b10c974d86f836818dc
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: e58f719031cc614f728226232c09f54f6b874475
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316256"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145329"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -33,7 +33,7 @@ Hlavní funkce C# 1.0 zahrnuté:
 - [Výrazy](../programming-guide/statements-expressions-operators/expressions.md)
 - [Příkazy](../programming-guide/statements-expressions-operators/statements.md)
 - [Atributy](../programming-guide/concepts/attributes/index.md)
-- Literály
+- [Literály](../language-reference/keywords/literal-keywords.md)
 
 ## <a name="c-version-12"></a>C# verze 1.2
 
@@ -72,9 +72,9 @@ C# verze 3.0 byli zaznamenáni v pozdní 2007, spolu s Visual Studio 2008, i kdy
 - [Automaticky implementované vlastnosti](../programming-guide/classes-and-structs/auto-implemented-properties.md)
 - [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)
 - [Výrazy dotazů](../linq/query-expression-basics.md)
-- [Výraz lambda](https://www.daedtech.com/introduction-to-c-lambda-expressions/)
-- [Stromy výrazů](https://blogs.msdn.microsoft.com/charlie/2008/01/31/expression-tree-basics/)
-- [Rozšiřující metody](https://www.codeproject.com/Tips/709310/Extension-Method-In-Csharp)
+- [Výrazy lambda](../lambda-expressions.md)
+- [Stromy výrazů](../expression-trees.md)
+- [Rozšiřující metody](../programming-guide/classes-and-structs/extension-methods.md)
 - [Implicitně typované lokální proměnné](../language-reference/keywords/var.md)
 - [Částečné metody](../language-reference/keywords/partial-method.md)
 - [Inicializátory objektu a kolekce](../programming-guide/classes-and-structs/object-and-collection-initializers.md)
@@ -96,7 +96,7 @@ Další verze zavést některé zajímavé nové funkce:
 - [Dynamické vazby](../language-reference/keywords/dynamic.md)
 - [Pojmenované a nepovinné argumenty.](../programming-guide/classes-and-structs/named-and-optional-arguments.md)
 - [Obecná kovariantního a kontravariantního](../../standard/generics/covariance-and-contravariance.md)
-- [Vložené typy spolupráce](https://stackoverflow.com/questions/20514240/whats-the-difference-setting-embed-interop-types-true-and-false-in-visual-studi)
+- [Vložené typy spolupráce](../../framework/interop/type-equivalence-and-embedded-interop-types.md)
 
 Vestavěné typy spolupráce zmírnit problémy nasazení. Obecný kovariance a kontravariance získáte víc možností, jak pomocí obecných typů, ale jsou to trochu akademické instituce a pravděpodobně nejvíce si vážíme autory rozhraní a knihovny. Pojmenované a nepovinné parametry umožňují eliminovat řadu přetížení metod a zajistí pohodlí. Ale žádná z těchto funkcí jsou přesně paradigma změna.
 
@@ -113,7 +113,7 @@ C# verze 5.0 se cílené verze jazyka. Téměř všechny úsilí pro tuto verzi 
 
 ### <a name="see-also"></a>Viz také
 
-* [Kódu projektu: Atributy informace o volajícím v jazyce C# 5.0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
+* [Projekt kódu: Informace o volajícím atributů C# 5.0](https://www.codeproject.com/Tips/606379/Caller-Info-Attributes-in-Csharp)
 
 Informace o atributu volající umožňuje snadno načíst informace o kontextu, ve kterém spouštíte bez použití svislých spoustu často používaný kód reflexe. Má mnoho použití v diagnostiky a protokolování úloh.
 
@@ -123,13 +123,13 @@ Ale `async` a `await` jsou skutečné hvězdiček v této verzi. Pokud tyto funk
 
 S verze 3.0 a 5.0 C# měli přidat hlavní nové funkce v objektově orientovaný jazyk. S verzí 6.0 by přejít mimo to dominantní skvělou funkci a místo toho verzi mnoho menších funkcí, které provedli programováním v C# zvýšit produktivitu práce. Tady jsou některé z nich:
 
-- [Statické importy](../language-reference/keywords/using-static.md)
-- [Filtry výjimek](https://www.thomaslevesque.com/2015/06/21/exception-filters-in-c-6/)
-- [Vlastnosti](http://geekswithblogs.net/WinAZ/archive/2015/06/30/whatrsquos-new-in-c-6.0-auto-property-initializers.aspx)
-- [Členové s v těle výrazu](https://lostechies.com/jimmybogard/2015/12/17/c-6-feature-review-expression-bodied-function-members/)
-- [Null Šiřitel](https://davefancher.com/2014/08/14/c-6-0-null-propagation-operator/)
-- [Interpolace řetězců](../language-reference/tokens/interpolated.md)
-- [operátor nameof](https://stackoverflow.com/questions/31695900/what-is-the-purpose-of-nameof)
+- [Statické importy](./csharp-6.md#using-static)
+- [Filtry výjimek](./csharp-6.md#exception-filters)
+- [Inicializátory automatickou vlastnost](./csharp-6.md#auto-property-initializers)
+- [Členové s v těle výrazu](./csharp-6.md#expression-bodied-function-members)
+- [Null Šiřitel](./csharp-6.md#null-conditional-operators)
+- [Interpolace řetězců](./csharp-6.md#string-interpolation)
+- [operátor nameof](./csharp-6.md#the-nameof-expression)
 - [Inicializátory indexů](csharp-6.md#index-initializers)
 
 Mezi další nové funkce patří:
@@ -145,20 +145,19 @@ Když není funkce tradiční jazyk v samotné udělal jednu věc spolu s touto 
 
 Nejnovější hlavní verzi je C# verze 7.0. Tato verze má některé evoluční a zajímavé věci v vein jazyka C# 6.0, ale bez kompilátor jako služba. Tady jsou některé nové funkce:
 
-- [Navýšení kapacity proměnné](https://www.c-sharpcorner.com/article/out-variables-in-c-sharp-7-0/)
-- [Řazených kolekcí členů a dekonstrukce](https://www.thomaslevesque.com/2016/08/23/tuple-deconstruction-in-c-7/)
+- [Navýšení kapacity proměnné](./csharp-7.md#out-variables)
+- [Řazených kolekcí členů a dekonstrukce](./csharp-7.md#tuples)
 - [Porovnávání vzorů](./csharp-7.md#pattern-matching)
-- [Lokální funkce](https://www.infoworld.com/article/3182416/application-development/c-7-in-depth-exploring-local-functions.html)
+- [Lokální funkce](./csharp-7.md#local-functions)
 - [Rozšířené výraz s v těle členy](./csharp-7.md#more-expression-bodied-members)
 - [Místní referenční hodnoty a vrátí](./csharp-7.md#ref-locals-and-returns)
 
 Další funkce zahrnuté:
 
-- [Zahození](../discards.md)
-- [Binární literály:](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/binary-literals.md)
-- [Oddělovače číslic:](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/digit-separators.md)
-- Návratové a místní hodnoty
-- [Vyvolání výrazů](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.0/throw-expression.md)
+- [Zahození](./csharp-7.md#discards)
+- [Binární literály a oddělovače číslic:](./csharp-7.md#numeric-literal-syntax-improvements)
+- [Návratové a místní hodnoty](./csharp-7.md#ref-locals-and-returns)
+- [Vyvolání výrazů](./csharp-7.md#throw-expressions)
 
 Všechny tyto funkce nabízejí zajímavé nové funkce pro vývojáře a příležitosti pro zápis i čistější kód než kdy dřív. Zvýraznění je kondenzačních deklarace proměnné pro použití s `out` – klíčové slovo a tím, že více návratových hodnot přes řazené kolekce členů.
 

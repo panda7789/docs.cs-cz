@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 20dc7caa9e4c3e023bf2848b1dd8c63a9b94a01b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: cded8ce271ea0f3d1dbb8fc3d9a072ee4a23d1ee
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170006"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149169"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt pro sadu Visual Studio
 
 Developer Command Prompt pro sadu Visual Studio umožňuje snadno používat nástroje rozhraní .NET Framework. Je příkazový řádek, který automaticky nastavuje určité proměnné prostředí.
 
 > [!div class="button"]
-[Stáhněte si Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+> [Stáhněte si Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 ## <a name="search-for-the-command-prompt-on-your-machine"></a>Hledat příkazový řádek na svém počítači
 
@@ -68,7 +68,7 @@ Obvykle, klávesové zkratky pro příkaz vyzve k instalaci jsou umístěny na *
 
 ## <a name="run-the-command-prompt-from-inside-visual-studio"></a>Spusťte z příkazového řádku v sadě Visual Studio
 
-Pro snadnější přístup, můžete přidat příkazový řádek sady Visual Studio pro vývojáře, nebo jiné příkazového řádku **nástroje** nabídky v sadě Visual Studio. Zpřístupnění nástroje, přidejte ho do seznam externích nástrojů. Tady jsou kroky:
+Pro snadnější přístup, můžete přidat příkazový řádek sady Visual Studio pro vývojáře, nebo jiné příkazového řádku **nástroje** nabídky v sadě Visual Studio. Zpřístupnění nástroje, přidejte ho do seznam externích nástrojů. Postup je následující:
 
 1. Otevřít Visual Studio.
 

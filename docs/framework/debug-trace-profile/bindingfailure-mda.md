@@ -11,58 +11,58 @@ helpviewer_keywords:
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1a75efaf6703858fdb48a3f09635da1be4463d34
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6cf0c944fc904a50a5b652f666f50c457a60204
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33364695"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130830"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure – pomocník spravovaného ladění (MDA)
-`bindingFailure` Pomocník spravovaného ladění (MDA) se aktivuje, když se nepodaří načíst sestavení.  
+`bindingFailure` Pomocníka spravovaného ladění (MDA) se aktivuje, když sestavení se nepodaří načíst.  
   
 ## <a name="symptoms"></a>Příznaky  
- Kód se pokusil o načtení sestavení pomocí statické odkaz nebo jednu z metod zavaděč, jako třeba <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. Sestavení není načíst a <xref:System.IO.FileNotFoundException> nebo <xref:System.IO.FileLoadException> je vyvolána výjimka.  
+ Kód se pokusil o načtení sestavení pomocí statický odkaz nebo jednu z metod zavaděč, jako například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. Sestavení není načteno a <xref:System.IO.FileNotFoundException> nebo <xref:System.IO.FileLoadException> je vyvolána výjimka.  
   
 ## <a name="cause"></a>příčina  
- Selhání vazby nastane, když se nepodařilo načíst sestavení modulu runtime. Selhání vazby může být výsledkem jednoho z následujících situací:  
+ Když nelze načíst sestavení modulu runtime dojde k selhání vazby. Selhání vazby může být výsledkem jednoho z následujících situací:  
   
--   Modul CLR (CLR) nelze najít požadovaný sestavení. Existuje mnoho důvodů této situaci může dojít, jako je například sestavení, není nainstalována nebo není správně nakonfigurován k vyhledání sestavení aplikace.  
+-   Modul CLR (CLR) nejde najít požadované sestavení. Existuje mnoho důvodů, že tato situace může nastat, jako je například sestavení není nainstalován nebo není správně nakonfigurován k vyhledání sestavení aplikace.  
   
--   Běžný scénář problému dojde k předání typu do jiné domény aplikace, které vyžaduje CLR se načíst sestavení obsahující daný typ v jiné doméně aplikace. Nemusí být možné pro modul runtime k načtení sestavení, pokud jiné doméně aplikace je nakonfigurována jinak než původní domény aplikace. Například může mít dva aplikační domény různých <xref:System.AppDomain.BaseDirectory%2A> hodnot vlastností.  
+-   Běžný scénář, kdy problém předává typ k jiné doméně aplikace, která vyžaduje CLR pro načtení sestavení obsahující daný typ v jiné doméně aplikace. Nemusí být možné pro modul runtime k načtení sestavení, pokud jiné doméně aplikace je nakonfigurována jinak než původní domény aplikace. Například může mít dvě domény aplikace různé <xref:System.AppDomain.BaseDirectory%2A> hodnot vlastností.  
   
--   Požadovaný sestavení je poškozený nebo není sestavení.  
+-   Požadované sestavení je poškozený nebo se nejedná o sestavení.  
   
--   Kód pokusu o načtení sestavení nemá správný kód přístupová oprávnění zabezpečení k načtení sestavení.  
+-   Kód pokusu o načtení sestavení nemá oprávnění zabezpečení přístupu ke správný kód pro načtení sestavení.  
   
--   Přihlašovací údaje uživatele nemají potřebná oprávnění pro čtení tohoto souboru.  
+-   Přihlašovací údaje uživatele nemají potřebná oprávnění ke čtení souboru.  
   
 ## <a name="resolution"></a>Rozlišení  
- Prvním krokem je určit, proč modulu CLR nelze vytvořit vazbu na požadovaný sestavení. Existuje mnoho důvodů, proč nemusí mít modulu runtime nalezeno nebo bylo možné zatížení požadovaný sestavení, např. scénáře uvedené v části Příčina. K vyloučení příčinou selhání vazby doporučujeme následující akce:  
+ Prvním krokem je určit, proč nebylo možné vytvořit vazbu CLR na požadovaná sestavení. Existuje mnoho důvodů, proč nemusí mít modul runtime nalezen nebo je možné načíst požadovaná sestavení, jako je například scénáře uvedené v části Příčina. Tyto akce se doporučuje, aby eliminovat příčinou selhání vazby:  
   
--   Zjistit příčinu na základě dat poskytované `bindingFailure` (mda):  
+-   Zjistit příčinu pomocí dat poskytované `bindingFailure` MDA:  
   
-    -   Spustit [Fuslogvw.exe (sestavení vazby Log Viewer)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) ke čtení v souborech protokolů chyb vyprodukované vazač sestavení.  
+    -   Spustit [Fuslogvw.exe (Assembly Binding Log Viewer)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) číst protokoly chyb vytváří vázacím objektem sestavení.  
   
-    -   Určí, zda je sestavení v umístění požadovaný. U <xref:System.Reflection.Assembly.LoadFrom%2A> a <xref:System.Reflection.Assembly.LoadFile%2A> metody, požadované umístění se dá snadno určit. U <xref:System.Reflection.Assembly.Load%2A> metodu, která sváže pomocí identity sestavení, které hledáte sestavení, které odpovídají této identity v doméně aplikace <xref:System.AppDomain.BaseDirectory%2A> cesta testu vlastnosti a globální mezipaměti sestavení.  
+    -   Určení, zda je sestavení v požadované umístění. V případě třídy <xref:System.Reflection.Assembly.LoadFrom%2A> a <xref:System.Reflection.Assembly.LoadFile%2A> metody, požadované umístění se dá snadno určit. V případě třídy <xref:System.Reflection.Assembly.Load%2A> metodu, která vytvoří vazbu pomocí identity sestavení, musí vyhledat sestavení, která tuto identitu do domény aplikace odpovídají <xref:System.AppDomain.BaseDirectory%2A> cesta testu paměti pro vlastnost a globální mezipaměti sestavení.  
   
--   Vyřešte příčinu založena na předchozí určení. Možným řešením možnosti jsou následující:  
+-   Vyřešte příčinu podle předchozího určení. Možným řešením možnosti jsou následující:  
   
-    -   Nainstalujte požadovaný sestavení v globální mezipaměti sestavení a volání. <xref:System.Reflection.Assembly.Load%2A> Metoda pro načtení sestavení identita.  
+    -   Nainstalujte požadované sestavení v globální mezipaměti sestavení a volání. <xref:System.Reflection.Assembly.Load%2A> Metoda pro načtení sestavení podle identity.  
   
-    -   Zkopírujte požadované sestavení do adresáře aplikace a volání <xref:System.Reflection.Assembly.Load%2A> metoda pro načtení sestavení identita.  
+    -   Zkopírujte požadované sestavení do adresáře aplikace a volání <xref:System.Reflection.Assembly.Load%2A> metodu pro načtení sestavení podle identity.  
   
-    -   Znovu nakonfigurujte doménu aplikace, v němž došlo k selhání vazby zahrnout cesta k sestavení můžete buď změnit <xref:System.AppDomain.BaseDirectory%2A> vlastnost nebo přidání privátní testování cesty.  
+    -   Změna konfigurace domény aplikace 00Z došlo k chybě vazby neobsahuje cestu k sestavení tak, že buď změníte <xref:System.AppDomain.BaseDirectory%2A> vlastnost nebo přidání privátní definovaných cest.  
   
-    -   Změna seznamu řízení přístupu pro soubor umožňující přihlášeného uživatele pro čtení tohoto souboru.  
+    -   Změna seznamu řízení přístupu k souboru uživatel přihlášený ke čtení souboru.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR. Pouze sestavy data o selhání vazby.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o selhání vazby.  
   
 ## <a name="output"></a>Výstup  
- MDA sestav sestavení, které se nepodařilo načíst, včetně požadovanou cestu nebo zobrazit název, kontext vazby, doménu aplikace, ve kterém byl požadován zatížení a příčinu selhání.  
+ MDA sestavy sestavení, které se nepodařilo načíst, včetně požadovanou cestu a/nebo zobrazované jméno, kontext vazby, domény aplikace, ve kterém byl vyžádán zatížení a důvod selhání.  
   
- Zobrazovaný název nebo požadovaná cesta může být prázdná, pokud tato data nebyla k dispozici pro modulu CLR. Pokud bylo volání, který selhal <xref:System.Reflection.Assembly.Load%2A> metoda, je pravděpodobné, modul runtime nelze určit, zobrazovaný název sestavení.  
+ Zobrazovaný název nebo požadovaná cesta může být prázdné, pokud tato data nebyla k dispozici pro modul CLR. Pokud bylo volání, které se nepovedlo <xref:System.Reflection.Assembly.Load%2A> metoda, je pravděpodobné, modul runtime nelze určit, zobrazovaný název sestavení.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -75,9 +75,9 @@ ms.locfileid: "33364695"
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje situace, které můžou aktivovat tuto (mda):  
+ Následující příklad kódu ukazuje situaci, která může aktivovat toto MDA:  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Text;  

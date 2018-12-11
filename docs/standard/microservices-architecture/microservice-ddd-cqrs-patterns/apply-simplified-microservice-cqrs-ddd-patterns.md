@@ -1,41 +1,40 @@
 ---
-title: Použití zjednodušené CQRS a DDD vzorců mikroslužbu
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Použití zjednodušené CQRS a DDD vzorců mikroslužbu
+title: Použití zjednodušené vzorů CQRS a DDD v mikroslužbě
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Seznamte se s celkový vztah mezi vzorů CQRS a DDD.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 5557a3d83d1f5f3016ff411157db1652d3ac50e2
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 10/08/2018
+ms.openlocfilehash: ef3260143c91c2500becd7c8c1a6cd0b81dbf3d2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106081"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148064"
 ---
-# <a name="applying-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použití zjednodušené CQRS a DDD vzorců mikroslužbu
+# <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Použít zjednodušený vzorů CQRS a DDD v mikroslužbě
 
-CQRS je architekturní vzor, který odděluje modely pro čtení a zápis dat. Související termín [příkaz dotazu oddělení (CQS)](https://martinfowler.com/bliki/CommandQuerySeparation.html) byl původně definované Bertrand Meyer v jeho kniha *konstrukce softwaru zaměřené na konkrétní objekt*. Základní myšlenkou je operace systému do dvou kategorií prudce oddělených rozdělte:
+CQRS je schéma architektury, který odděluje modely pro čtení a zápis dat. Související výraz [příkaz dotazu oddělení (CQS)](https://martinfowler.com/bliki/CommandQuerySeparation.html) bylo původně určené Bertrand Meyer ve své knize *objekt orientované konstrukce softwaru*. Základní myšlenka je, že můžete rozdělit operací systému do dvou kategorií prudce oddělených:
 
--   Dotazy. Tyto vrácení výsledku a stav systému nemění a byly bez vedlejší účinky.
+- Dotazy. Tyto vrácení výsledku a nemění stav systému, a jsou bez vedlejších účinků.
 
--   Příkazy. Tyto změny stavu systému.
+- Příkazy. Tato změna stavu systému.
 
-CQS je jednoduchý koncept – jde o metod v rámci stejného objektu dotazy nebo příkazy. Každá metoda vrátí stav nebo mění stavu, ale ne obojí. I objekt vzor jednoho úložiště můžete v souladu se CQS. CQS lze považovat za základní princip pro CQRS.
+CQS je jednoduchý koncept – jde o metod v rámci stejného objektu dotazy nebo příkazy. Každá metoda vrátí stav nebo mění stav, ale ne obojí. Můžete dokonce objekt vzor jednoho úložiště v souladu s CQS. CQS lze považovat za základní princip pro modelu CQRS.
 
-[Příkaz a dotaz odpovědnost oddělení (CQRS)](https://martinfowler.com/bliki/CQRS.html) byl zaváděné Gregu Young a důrazně povýší Udi Dahan a jinými uživateli. I když je více podrobné je založena na principu CQS. Lze ji považovat vzor na základě na příkazy a události a volitelně na asynchronní zprávy. V mnoha případech se týká CQRS pokročilejší scénáře, jako má jiné fyzické databázi pro čtení (dotazy) než pro zápis (aktualizace). Kromě toho může implementovat více evolved systému CQRS [událostí-Sourcing (ES)](http://codebetter.com/gregyoung/2010/02/20/why-use-event-sourcing/) pro vaši databázi aktualizace, proto byste měli jenom ukládat události v modelu domény místo ukládání dat v aktuálním stavu. Je to ale není přístup používané v tomto průvodci; Používáme nejjednodušší CQRS přístup, který se skládá z právě oddělení dotazy z příkazů.
+[Příkaz a model dělení zodpovědnosti dotazů (CQRS)](https://martinfowler.com/bliki/CQRS.html) byla zavedená Grega Younga a důrazně přesunuty Udi Dahan a další. Je založen na principu CQS, i když je podrobnější. To lze považovat za vzor založený na příkazy a události a volitelně v asynchronních zpráv. V mnoha případech se týká modelu CQRS pokročilejší scénáře, jako byste měli různé fyzické databáze pro čtení (dotazy), než pro zápis (aktualizace). Kromě toho může implementovat více evolved systému CQRS [modelu Event Sourcing (ES)](http://codebetter.com/gregyoung/2010/02/20/why-use-event-sourcing/) aktualizace databáze, proto byste měli pouze ukládat události v doménovém modelu místo ukládání dat aktuální stav. Ale to není použitý v tomto průvodci; přístup Používáme nejjednodušší přístup modelu CQRS, který se skládá z právě oddělení dotazů z příkazů.
 
-Oddělení aspektů CQRS je dosaženo tím, že operace dotazů v jedné vrstvy a příkazy v jiné vrstvě. Jednotlivé úrovně má svou vlastní datový model (Všimněte si, že říkáme modelu, nemusí nutně jít do jiné databáze) a je sestaven pomocí vlastní kombinace vzory a technologie. Je důležité dvě vrstvy, které může být v rámci stejné úrovně nebo mikroslužbu, jako v příkladu (řazení mikroslužbu) používá pro tento průvodce. Nebo na jinou mikroslužeb nebo procesy jejich možná implementace v tak můžou být optimalizované a škálovat na více systémů samostatně bez ovlivnění jednu na druhou.
+Oddělení aspektů modelu CQRS se dosahuje prostřednictvím seskupování operace dotazů v jedné vrstvě a příkazy v jiné vrstvě. Každá vrstva má svůj vlastní datový model (Všimněte si, že říkáme model, ne tedy nutně jinou databázi) a je vytvořená pomocí svou vlastní kombinaci vzorů a technologie. Důležitější je může být dvě vrstvy v rámci stejné vrstvy nebo mikroslužeb, jako v příkladu (řazení mikroslužeb) použít pro tohoto průvodce. Nebo na jiný mikroslužby nebo procesy jejich možná implementace v tak může být optimalizováno a škálovat samostatně bez ovlivnění mezi sebou.
 
-CQRS znamená s dva objekty pro operace čtení/zápis, kde v jiných kontextech existuje. Existuje několik důvodů nenormalizované čtení databáze, které se dozvíte v dokumentaci pokročilejší CQRS. Ale nejsou používáme tohoto přístupu v tomto poli, kde cílem je získat větší flexibilitu v dotazech místo omezení dotazů s omezeními od DDD jako agregace.
+CQRS znamená, že s dva objekty pro operace čtení a zápis, kde v jiném kontextu existuje. Je důvodů, proč jste Nenormalizovaná čte databázi, která se dozvíte v pokročilejší CQRS dokumentace. Ale nepoužíváme tento přístup zde, kde je k dispozici větší flexibilitu v dotazech místo omezení dotazů s omezeními ze vzorů DDD, jako jsou agregace.
 
-Příkladem tento druh služby je řazení mikroslužbu z eShopOnContainers odkaz na aplikaci. Tato služba se implementuje mikroslužbu založen na zjednodušené CQRS přístup. Používá jeden zdroj dat nebo databáze, ale dva logické modely plus DDD vzory pro transakční doménu, jak je znázorněno na obrázku 9-2.
+Příklad tohoto druhu služby je řazení mikroslužeb v aplikaci eShopOnContainers referenční aplikace. Tato služba implementuje mikroslužeb podle zjednodušený přístup modelu CQRS. Použije jeden zdroj dat nebo databáze, ale dvě logické modely a vzorů DDD transakční domény, jak je znázorněno v obrázku 7-2.
 
-![](./media/image2.png)
+![Logické řazení mikroslužeb zahrnuje řazení databázi, která může být nebo není ve stejném Docker hostovat. U stejného hostitele Docker s databáze je dobrá pro vývoj, ale nikoli pro produkční účely.](./media/image2.png)
 
-**Obrázek 9-2**. Zjednodušená na základě CQRS a DDD mikroslužbu
+**Obrázek 7-2**. Zjednodušená založené na modelu CQRS a DDD mikroslužeb
 
-Aplikační vrstvu lze webového rozhraní API sám sebe. Daný důležité návrhu aspekt je, že mikroslužbu se rozdělila dotazy a ViewModels (hlavně pro klientské aplikace vytvořit modely dat) z příkazy, modelu domény a následující vzoru CQRS transakce. Tento přístup zajišťuje dotazy nezávislé na omezení a omezení pocházejících z DDD vzorů, které smysl jenom pro transakce a aktualizace, jak je popsáno v dalších oddílech.
-
+Samotné webové rozhraní API může být aplikační vrstvu. Tady aspekt návrhu důležité je, že mikroslužbách rozdělil dotazy a modely ViewModel (zejména pro klientské aplikace vytvořit modely dat) z příkazů, doménový model a transakce po model CQRS. Tento přístup zajišťuje dotazy nezávisle na omezení a omezení pocházejí z vzorů DDD, které smysl jenom pro transakce a aktualizací, jak je popsáno v předchozích částech.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](eshoponcontainers-cqrs-ddd-microservice.md)
+>[Předchozí](index.md)
+>[další](eshoponcontainers-cqrs-ddd-microservice.md)

@@ -2,12 +2,12 @@
 title: Funkce první třídy
 description: Další informace o funkce první třídy a jak jsou důležité pro funkční programování v F#.
 ms.date: 10/29/2018
-ms.openlocfilehash: 1459049c9c1c77f4eefd2a83945335b33ca22ab9
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 505ad686614b53d779cb617fc04ac74c2a88b31b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50744620"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148628"
 ---
 # <a name="first-class-functions"></a>Funkce první třídy
 
@@ -27,7 +27,7 @@ Poslední dvě opatření definují to, co jsou označovány jako *operace vyš�
 
 ## <a name="give-the-value-a-name"></a>Přiřazení názvu hodnotě
 
-Pokud je funkce hodnotou první kategorie, je třeba ji pojmenovat, stejně jako lze pojmenovat celá čísla, řetězce a další předdefinované typy. Na to je podle literatury o funkčním programování odkazováno jako na vázání identifikátoru na hodnotu. Jazyk F# používá [ `let` vazby](../language-reference/functions/let-bindings.md) pro vázání názvů a hodnot: `let <identifier> = <value>`. Následující kód ukazuje dva příklady.
+Pokud je funkce hodnotou první kategorie, je třeba ji pojmenovat, stejně jako lze pojmenovat celá čísla, řetězce a další předdefinované typy. Na to je podle literatury o funkčním programování odkazováno jako na vázání identifikátoru na hodnotu. F#používá [ `let` vazby](../language-reference/functions/let-bindings.md) pro vázání názvů a hodnot: `let <identifier> = <value>`. Následující kód ukazuje dva příklady.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet20.fs)]
 
@@ -69,7 +69,7 @@ V následujícím příkladu má funkce `applyIt` dva parametry, `op` a `arg`. P
 
 Možnost odeslat funkci jako argument do jiné funkce je základem společných abstrakcí ve funkčních programovacích jazycích, jako jsou například operace mapování nebo filtrování. Například operace mapování je funkce vyššího řádu, která zachytává výpočet sdílený funkcemi, jež prochází seznamem, u každého prvku provedou nějakou operaci a poté vrátí seznam výsledků. Může být například třeba zvýšit každý prvek v seznamu celých čísel o jedna, každý prvek umocnit na druhou nebo převést každý prvek seznamu řetězců na velká písmena. Rekurzivní proces, který prochází seznam a vytváří seznam výsledků k vrácení, je část výpočtu náchylná k chybám. Tato část je zachycena ve funkci mapování. Jediné, co je třeba napsat pro konkrétní aplikaci, je funkce, kterou chcete použít na každý jednotlivý prvek seznamu (sčítání, umocňování, změna velikosti písmen). Tato funkce je předána jako argument funkci mapování, stejně jako je v předchozím příkladu prvek `squareIt` předán do funkce `applyIt`.
 
-Jazyk F# poskytuje metody mapování pro většinu typů kolekcí, včetně [uvádí](../language-reference/lists.md), [pole](../language-reference/arrays.md), a [pořadí](../language-reference/sequences.md). Následující příklady používají seznamy. Syntaxe je `List.map <the function> <the list>`.
+F#poskytuje metody mapování pro většinu typů kolekcí, včetně [uvádí](../language-reference/lists.md), [pole](../language-reference/arrays.md), a [pořadí](../language-reference/sequences.md). Následující příklady používají seznamy. Syntaxe je `List.map <the function> <the list>`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet28.fs)]
 
@@ -103,15 +103,15 @@ Následující příklad používá pro deklaraci funkce `compose`, která vrac�
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet34.fs)]
 
->[!NOTE]
-Ještě kratší verzi naleznete v následující části „Curryfikované funkce“.
+> [!NOTE]
+> Ještě kratší verzi naleznete v následující části „Curryfikované funkce“.
 
 Následující kód předá funkci `compose` dvě funkce jako argumenty, obě přijímající jediný argument stejného typu. Vrácená hodnota je nová funkce, která je složením obou argumentů funkce.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet35.fs)]
 
->[!NOTE]
-Jazyk F# obsahuje dva operátory skládající funkce, `<<` a `>>`. Například `let squareAndDouble2 = doubleIt << squareIt` je ekvivalentní zápisu `let squareAndDouble = compose doubleIt squareIt` z předchozího příkladu.
+> [!NOTE]
+> Jazyk F# obsahuje dva operátory skládající funkce, `<<` a `>>`. Například `let squareAndDouble2 = doubleIt << squareIt` je ekvivalentní zápisu `let squareAndDouble = compose doubleIt squareIt` z předchozího příkladu.
 
 Následující příklad vrácení funkce jako hodnoty volání funkce vytvoří jednoduchou hádací hru. Pro tvorbu hry je třeba zavolat funkci `makeGame` s hodnotou, kterou má někdo uhodnout, předanou do argumentu `target`. Vrácená hodnota z funkce `makeGame` je funkce, která přijímá jeden argument (odhad) a hlásí, zda je odhad správný.
 
@@ -123,7 +123,7 @@ Následující kód volá funkci `makeGame` předávající hodnotu `7` do argum
 
 ## <a name="curried-functions"></a>Curryfikované funkce
 
-Mnoho příkladů v předchozí části lze zapsat s využitím implicitního *curryfikace* v deklaracích funkcí F#. Curryfikace je proces, jenž transformuje funkci, která má více než jeden parametr do řady vložených funkcí, z nichž každá má jeden parametr. V jazyce F# jsou funkce, které mají více než jeden parametr, ze své podstaty curryfikovány. Například funkci `compose` z předchozí části lze zapsat pomocí následujícího stručného stylu se třemi parametry.
+Mnoho příkladů v předchozí části lze zapsat s využitím implicitního *curryfikace* v F# deklarace funkcí. Curryfikace je proces, jenž transformuje funkci, která má více než jeden parametr do řady vložených funkcí, z nichž každá má jeden parametr. V jazyce F# jsou funkce, které mají více než jeden parametr, ze své podstaty curryfikovány. Například funkci `compose` z předchozí části lze zapsat pomocí následujícího stručného stylu se třemi parametry.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet38.fs)]
 
@@ -139,8 +139,8 @@ Pro ověření, zda funkce stále pracuje stejně jako dříve, lze opětovně v
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet41.fs)]
 
->[!NOTE]
-Curryfikaci lze omezit uzavřením parametrů do řazených kolekcí členů. Další informace najdete v části "Vzory parametrů" v [parametry a argumenty](../language-reference/parameters-and-arguments.md).
+> [!NOTE]
+> Curryfikaci lze omezit uzavřením parametrů do řazených kolekcí členů. Další informace najdete v části "Vzory parametrů" v [parametry a argumenty](../language-reference/parameters-and-arguments.md).
 
 Následující příklad používá implicitní curryfikaci pro zápis kratší verze funkce `makeGame`. Podrobné informace o tom, jak funkce `makeGame` konstruuje a vrací funkci `game`, jsou v tomto formátu méně explicitní, ale pomocí původních testovacích případů lze ověřit, že je výsledek stejný.
 
@@ -176,7 +176,7 @@ Příklady v předchozích částech ukazují, že funkce jazyka F# splňují kr
 - Funkci lze vrátit jako hodnotu volání funkce.
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet32.fs)]
 
-Další informace o jazyce F#, najdete v článku [referenční dokumentace jazyka F#](../language-reference/index.md).
+Další informace o F#, najdete v článku [ F# referenční informace k jazyku](../language-reference/index.md).
 
 ## <a name="example"></a>Příklad
 
@@ -194,4 +194,4 @@ Následující kód obsahuje všechny příklady v tomto tématu.
 - [Řazené kolekce členů](../language-reference/tuples.md)
 - [Funkce](../language-reference/functions/index.md)
 - [`let` Vazby](../language-reference/functions/let-bindings.md)
-- [Výrazy lambda: `fun` – klíčové slovo](../language-reference/functions/lambda-expressions-the-fun-keyword.md)
+- [Výrazy lambda: `fun` – Klíčové slovo](../language-reference/functions/lambda-expressions-the-fun-keyword.md)

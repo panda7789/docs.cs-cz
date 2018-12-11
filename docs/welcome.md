@@ -3,15 +3,14 @@ title: Vítejte v .NET
 description: Začínáme s .NET řadu technologií.
 author: mairaw
 ms.author: mairaw
-ms.date: 09/07/2018
-ms.topic: article
+ms.date: 12/03/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 020976efd12685c32c6d3a107fe403883359ed7f
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: ee4f9cd33e33006697a15f0bdafb4cc9d7ecf809
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48579096"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147207"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 
@@ -30,6 +29,7 @@ Novinky o .NET najdete v těchto blozích:
 
 Postupujte také nejnovější události .NET:
 
+- [Microsoft Connect()](https://www.microsoft.com/connectevent)
 - [Microsoft Build 2018](https://channel9.msdn.com/Events/Build/2018)
 - [.NET Conf](https://www.dotnetconf.net/)
 
@@ -50,17 +50,18 @@ Tato dokumentace popisuje škálu .NET napříč platformami a jazyky.  Můžete
 - [Průvodce jazykem C#](csharp/index.md)
 - [Průvodce jazykem F#](fsharp/index.md)
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
+- [Průvodce ML.NET](machine-learning/index.md)
 
 Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 
 ## <a name="open-source"></a>Open source
 
-Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci.  Velká část .NET samotného je navíc také otevřít zdroj:
+Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci. Velká část .NET samotného je navíc také otevřít zdroj:
 
 - [Domovská stránka .NET core](https://github.com/dotnet/core)
 - [Knihovny pro .NET](https://github.com/dotnet/corefx)
 - [.NET core Runtime](https://github.com/dotnet/coreclr)
 - [Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje](https://github.com/dotnet/roslyn)
-- [Kompilátor F # a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
+- [F#Kompilátor a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
 
 Ostatní uživatele, kteří jsou již v aktivní se můžete zapojit [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového, nebo požádat o pomoc.

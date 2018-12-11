@@ -3,11 +3,11 @@ title: '&lt;message&gt; – &lt;wsHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 621abbde-590b-454d-90ac-68dc3c69c720
 ms.openlocfilehash: db0825d0abe05564d040903304d8654fa75ed0ee
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184782"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126221"
 ---
 # <a name="ltmessagegt-of-ltwshttpbindinggt"></a>&lt;message&gt; – &lt;wsHttpBinding&gt;
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
@@ -41,7 +41,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](
 |---------------|-----------------|  
 |algorithmSuite|Nastaví zprávu algoritmy šifrování a klíč zalamování řádků. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy namapovat na uvedené ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Výchozí hodnota je `Basic256`.|  
 |Typ clientCredentialType|Volitelné. Určuje typ přihlašovacích údajů se použije při použití režimu zabezpečení rozhraní provádí ověření klienta `Message` nebo `TransportWithMessageCredentials`. Podívejte se níže uvedené hodnoty výčtu. Výchozí hodnota je `Windows`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
-|establishSecurityContext|Logická hodnota, která určuje, zda kanálu zabezpečení vytváří zabezpečenou relaci. Zabezpečené relace vytváří bezpečnostní kontext Token (SCT) před výměnou zprávy aplikace. Po vytvoření SCT nabízí zabezpečený kanál <xref:System.ServiceModel.Channels.ISession> rozhraní do horní kanálů. Další informace o použití zabezpečených relací najdete v tématu [postupy: vytvoření zabezpečené relace](../../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md).<br /><br /> Výchozí hodnota je `true`.|  
+|establishSecurityContext|Logická hodnota, která určuje, zda kanálu zabezpečení vytváří zabezpečenou relaci. Zabezpečené relace vytváří bezpečnostní kontext Token (SCT) před výměnou zprávy aplikace. Po vytvoření SCT nabízí zabezpečený kanál <xref:System.ServiceModel.Channels.ISession> rozhraní do horní kanálů. Další informace o použití zabezpečených relací najdete v tématu [jak: Vytvoření zabezpečené relace](../../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md).<br /><br /> Výchozí hodnota je `true`.|  
 |negotiateServiceCredential|Volitelné. Logická hodnota, která určuje, zda přihlašovací údaje služby je zřízený v klientovi mimo pásmo nebo se získá od služby ke klientovi procesem vyjednávání. Takové vyjednávání je předpokladem k výměně zpráv obvyklé.<br /><br /> Pokud `clientCredentialType` atributu rovná na hodnotu None, uživatelské jméno nebo certifikát, nastavení tohoto atributu na `false` znamená, že certifikát služby je k dispozici na klientovi mimo IP síť a že klient musí a určete certifikát služby (pomocí [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) v [ \<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) služeb chování. Tento režim se vzájemná spolupráce s zásobníky SOAP, které implementují WS-Trust a WS-SecureConversation.<br /><br /> Pokud `ClientCredentialType` atribut je nastaven na `Windows`, nastavení tohoto atributu na `false` Určuje ověřování na základě protokolu Kerberos. To znamená, že klient a služba musí být součástí stejné domény pomocí protokolu Kerberos. Tento režim se vzájemná spolupráce s zásobníky SOAP, které implementují profilu token protokolu Kerberos (jak jsou definovány v OASIS WSS TC) a WS-Trust a WS-SecureConversation.<br /><br /> Pokud tento atribut je `true`, dojde k vygenerování vyjednávání protokolu SOAP .NET, které tunelových propojení SPNego exchange přes zprávy protokolu SOAP.<br /><br /> Výchozí hodnota je `true`.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
@@ -69,14 +69,14 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<wsHttpBinding >](
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
+|Žádná|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečených zpráv a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být zřízená s certifikátem služby.|  
 |Třídy IssuedToken|Určuje vlastní token, obvykle vydávají služby tokenů zabezpečení.|  
 |UserName|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití pověření uživatelských jmen je zabezpečený přenos. Výsledkem interoperabilní exchange nebo -interoperabilní vyjednávání na základě tohoto režimu přihlašovacích údajů `negotiateServiceCredential` atribut.|  
 |Windows|Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. Pokud `negotiateServiceCredential` atribut je nastaven na `true`, buď provede vyjednávání SSPI nebo aplikace pomocí protokolu Kerberos (interoperabilní standard).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

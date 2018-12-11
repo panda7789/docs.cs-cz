@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 651da766bc5931f5afa06699d1ec11fa40147e82
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: f10d7d03bbf88ed8f7a89a5d3919a39b3c124ae0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45678266"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130231"
 ---
 # <a name="docker-containers-images-and-registries"></a>Kontejnery dockeru, obrázky a registry
 
@@ -34,5 +34,5 @@ Privátní image registrů, buď hostovaný místně nebo v cloudu, se doporuču
 -   Chcete mít minimální latence mezi vašich imagí a prostředí pro vybrané nasazení. Například pokud vaše produkční prostředí cloudu Azure, pravděpodobně chcete ukládat Image v [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) tak, že bude minimální latence sítě. Podobným způsobem Pokud je v místním prostředí produkčního prostředí můžete chtít mít místní Docker Trusted Registry k dispozici v rámci stejné místní síti.
 
 >[!div class="step-by-step"]
-[Předchozí](docker-terminology.md)
-[další](../net-core-net-framework-containers/index.md)
+>[Předchozí](docker-terminology.md)
+>[další](../net-core-net-framework-containers/index.md)

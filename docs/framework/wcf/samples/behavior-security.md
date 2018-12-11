@@ -3,11 +3,11 @@ title: Zabezpečení chování
 ms.date: 03/30/2017
 ms.assetid: 19710ae3-f197-4d28-ba9d-52e465006819
 ms.openlocfilehash: f5fd9cdb5fa0a84a151bc00ba63f1f5e89530629
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192808"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146898"
 ---
 # <a name="behavior-security"></a>Zabezpečení chování
 Tato část obsahuje ukázky, které předvádějí konfiguraci zabezpečení pro chování služby.  

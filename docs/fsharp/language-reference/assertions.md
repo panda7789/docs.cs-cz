@@ -3,11 +3,11 @@ title: Kontrolní výrazy (F#)
 description: Zjistěte, jak použít výraz "výraz" jako funkce ladění pro testování výrazy v F# programovací jazyk.
 ms.date: 05/16/2016
 ms.openlocfilehash: fbaf038f08cfc74e6cb262c110322dc586813c0c
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671901"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127248"
 ---
 # <a name="assertions"></a>Kontrolní výrazy
 

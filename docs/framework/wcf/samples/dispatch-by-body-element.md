@@ -2,12 +2,12 @@
 title: Přiřazování zpráv metodám podle elementu těla
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: 449c153092d80bb457a2059b80158ea665bfc645
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 58d505770a495e5e423104b9fb912d088ca56f86
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396375"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143152"
 ---
 # <a name="dispatch-by-body-element"></a>Přiřazování zpráv metodám podle elementu těla
 Tento příklad ukazuje, jak implementovat alternativní algoritmus pro přiřazení k operacím příchozí zprávy.  
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak implementovat alternativní algoritmus pro přiřaz
   
  Konstruktor třídy očekává, že vyplní dvojice slovník `XmlQualifiedName` a řetězce, kterým kvalifikované názvy odděluje název prvního podřízeného těla protokolu SOAP a řetězce označují odpovídající název operace. `defaultOperationName` Je název operace, která přijímá všechny zprávy, které nejde spárovat proti tomuto slovníku:  
   
-```  
+```csharp
 class DispatchByBodyElementOperationSelector : IDispatchOperationSelector  
 {  
     Dictionary<XmlQualifiedName, string> dispatchDictionary;  
@@ -31,13 +31,14 @@ class DispatchByBodyElementOperationSelector : IDispatchOperationSelector
         this.dispatchDictionary = dispatchDictionary;  
         this.defaultOperationName = defaultOperationName;  
     }  
+}
 ```  
   
  <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace jsou velmi jednoduché k sestavení, protože existuje jenom jedna metoda v rozhraní: <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector.SelectOperation%2A>. Úloha této metody je ke kontrole příchozích zpráv a vrátí řetězec, který se rovná název metody u kontraktu služby pro aktuální koncový bod.  
   
  V tomto příkladu získá selektor operace <xref:System.Xml.XmlDictionaryReader> pro příchozí zprávy textu v nástrojích <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A>. Tato metoda čtecí modul již umístí na prvním podřízeným těla zprávy tak, aby je dostatečné pro získání názvu a oboru názvů identifikátoru URI aktuálního elementu a zkombinujte je do `XmlQualifiedName` , která se pak použije pro vyhledávání odpovídající operace slovník drží selektor operace.  
   
-```  
+```csharp
 public string SelectOperation(ref System.ServiceModel.Channels.Message message)  
 {  
     XmlDictionaryReader bodyReader = message.GetReaderAtBodyContents();  
@@ -57,7 +58,7 @@ public string SelectOperation(ref System.ServiceModel.Channels.Message message)
   
  Přístup k textu zprávy s <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> nebo některou z metod, které poskytují přístup k obsahu těla zprávy způsobí, že zpráva, která má být označený jako "čtení", což znamená, že zpráva není platná pro další zpracování. Selektor operace proto vytvoří kopii příchozí zprávy s metodou je znázorněno v následujícím kódu. Protože při kontrole nedošlo ke změně pozice čtenáře, lze odkazovat pomocí nově vytvořeného zpráv ke kterému vlastnosti zprávy a záhlaví zpráv jsou zkopírovány také, což vede k přesné klon původní zprávy:  
   
-```  
+```csharp
 private Message CreateMessageCopy(Message message,   
                                      XmlDictionaryReader body)  
 {  
@@ -77,7 +78,7 @@ private Message CreateMessageCopy(Message message,
   
  Pro zkrácení, následující úryvek kódu se zobrazují jenom implementaci metody <xref:System.ServiceModel.Description.IContractBehavior.ApplyDispatchBehavior%2A>, což ovlivňuje změny konfigurace pro dispečera v této ukázce. Jiné metody se nezobrazují, vzhledem k tomu, aniž by každé dílo vrácení volajícímu.  
   
-```  
+```csharp
 [AttributeUsage(AttributeTargets.Class|AttributeTargets.Interface)]  
 class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior  
 {  
@@ -92,7 +93,7 @@ class DispatchByBodyElementBehaviorAttribute : Attribute, IContractBehavior
   
  Po naplnění slovníku nový `DispatchByBodyElementOperationSelector` je vytvořen pomocí těchto informací a nastavit jako selektor operace odeslání Runtime:  
   
-```  
+```csharp
 public void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.DispatchRuntime dispatchRuntime)  
 {  
     Dictionary<XmlQualifiedName,string> dispatchDictionary =   
@@ -123,7 +124,7 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
   
  Protože modulu pro výběr operace odešle výhradně podle elementu těla zprávy a ignoruje "Action", je potřeba zjistit, modul runtime není ke kontrole "Action" záhlaví odpovědi vrácené přiřazením zástupný znak "*" na `ReplyAction` vlastnost <xref:System.ServiceModel.OperationContractAttribute>. Kromě toho je potřeba mít výchozí operaci, která má vlastnost "Action" nastavenou na zástupný znak "\*". Výchozí operaci přijímá všechny zprávy, které se nedají odbavovat a nemá `DispatchBodyElementAttribute`:  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
                             DispatchByBodyElementBehavior]  
 public interface IDispatchedByBody  

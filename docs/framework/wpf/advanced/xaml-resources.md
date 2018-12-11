@@ -7,12 +7,12 @@ helpviewer_keywords:
 - reusing commonly defined objects [WPF]
 - XAML [WPF], reusing resources
 ms.assetid: 91580b89-a0a8-4889-aecb-fddf8e63175f
-ms.openlocfilehash: c43505497b947004ffb282346459967579d52375
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: e02c80f4c1fdacbfdcb50ed57d89cc9df1f277f9
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44199541"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126395"
 ---
 # <a name="xaml-resources"></a>Zdroje XAML
 Prostředek je objekt, který je možné využít v různých míst ve své aplikaci. Příklady prostředků: štětce a styly. Tento přehled popisuje, jak použít zdroje v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Můžete také vytvořit a přístup k prostředkům pomocí kódu nebo Zaměnitelně mezi kódem a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Další informace najdete v tématu [zdroje a kód](../../../../docs/framework/wpf/advanced/resources-and-code.md).  
@@ -147,7 +147,7 @@ Prostředek je objekt, který je možné využít v různých míst ve své apli
   
  Styl opravdu že klíč: implicitní klíč `typeof(` <xref:System.Windows.Controls.Button> `)`. V kódu, můžete zadat <xref:System.Windows.Style.TargetType%2A> přímo jako typ název (nebo můžete volitelně použít [{x: Type...}](../../../../docs/framework/xaml-services/x-type-markup-extension.md) Chcete-li vrátit <xref:System.Type>.  
   
- Prostřednictvím mechanismů výchozí motiv styl používaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], stylem jako styl modulu runtime <xref:System.Windows.Controls.Button> na stránce i v případě, <xref:System.Windows.Controls.Button> samotný nebude pokoušet o zadejte jeho <xref:System.Windows.FrameworkElement.Style%2A> vlastnost nebo konkrétní prostředek odkaz na styl. Vašemu stylu definované na stránce najdete výše v pořadí vyhledávání starší než styl slovníku motivu, pomocí stejného klíče, který má slovníku stylu motivu. Můžete pouze zadat `<Button>Hello</Button>` kamkoli do stránky a styl je definovaný s <xref:System.Windows.Style.TargetType%2A> z `Button` by použít na toto tlačítko. Pokud chcete, můžete stále explicitně klíče styl se stejnou hodnotou typu jako <xref:System.Windows.Style.TargetType%2A>pro přehlednost ve vašem kódu, ale je volitelný.  
+ Prostřednictvím mechanismů výchozí motiv styl používaný [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], stylem jako styl modulu runtime <xref:System.Windows.Controls.Button> na stránce i v případě, <xref:System.Windows.Controls.Button> samotný nebude pokoušet o zadejte jeho <xref:System.Windows.FrameworkElement.Style%2A> vlastnost nebo konkrétní prostředek odkaz na styl. Vašemu stylu na stránce definován najdete výše v pořadí vyhledávání než styl slovníku motivu, pomocí stejného klíče, který má slovníku stylu motivu. Můžete pouze zadat `<Button>Hello</Button>` kamkoli do stránky a styl je definovaný s <xref:System.Windows.Style.TargetType%2A> z `Button` by použít na toto tlačítko. Pokud chcete, můžete stále explicitně klíče styl se stejnou hodnotou typu jako <xref:System.Windows.Style.TargetType%2A>pro přehlednost ve vašem kódu, ale je volitelný.  
   
  Implicitní klíče pro stylů se nevztahují na ovládacím prvku Pokud <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> je `true` (Všimněte si také, <xref:System.Windows.FrameworkElement.OverridesDefaultStyle%2A> může být nastaveno jako součást nativní chování pro ovládací prvek třídy, nikoli explicitně na instanci ovládacího prvku). Také, aby bylo možné podporovat implicitní klíče pro scénáře, / / coleserveritem, musí přepsat ovládací prvek <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A> (všechny existující ovládací prvky, které jsou k dispozici jako součást [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tomu). Další informace o styly, motivy a ovládací prvek návrhu najdete v tématu [pokyny pro návrh s podporou stylů ovládací prvky](../../../../docs/framework/wpf/controls/guidelines-for-designing-stylable-controls.md).  
   

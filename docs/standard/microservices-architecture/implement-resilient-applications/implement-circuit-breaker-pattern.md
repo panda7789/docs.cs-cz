@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: b961ebd186953e614658915c7246e1c83c40e7e9
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 08467184f40611888a05c3aa1fa4783b73c6b8ee
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453148"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147258"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 
@@ -146,14 +146,11 @@ Můžete implementovat jiný logiku pro případ otevřít/přerušení okruh. N
 
 A konečně Další možností pro `CircuitBreakerPolicy` je použití `Isolate` (což vynutí otevřít barvy a obsahuje otevřené okruhu) a `Reset` (který ukončí ho znovu). Ty se používal k sestavení nástroj koncový bod HTTP, vyvolávající izolovat a obnovit přímo v této zásadě.  Takové koncový bod HTTP také lze použít řádně zabezpečená, v produkčním prostředí pro příjem dat systému, například když chcete upgradovat dočasně izolaci. Nebo ji může dojít okruh ručně, aby se ochrana systému příjem dat, které předpokládáte, chcete-li být chybující.
 
-
 ## <a name="additional-resources"></a>Další zdroje
-
 
 -   **Model jistič**
     [*https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker*](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
 
-
 >[!div class="step-by-step"]
-[Předchozí](implement-http-call-retries-exponential-backoff-polly.md)
-[další](monitor-app-health.md)
+>[Předchozí](implement-http-call-retries-exponential-backoff-polly.md)
+>[další](monitor-app-health.md)

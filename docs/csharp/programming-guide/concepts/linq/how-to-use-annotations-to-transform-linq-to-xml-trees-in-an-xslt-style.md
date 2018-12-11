@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: použití anotací transformace stromů LINQ to XML ve stylu XSLT (C#)'
+title: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek (C#)'
 ms.date: 07/20/2015
 ms.assetid: 12a95902-a6b7-4a1e-ad52-04a518db226f
-ms.openlocfilehash: 13b65b5b4e1926910ad68204fdffffd7020f07f2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: c93ba3209b80cf2467c0f3b49dc25e729c6a14c6
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864349"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144530"
 ---
-# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Postupy: použití anotací transformace stromů LINQ to XML ve stylu XSLT (C#)
+# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek (C#)
 Poznámky lze použít k usnadnění transformace stromu XML.  
   
  Některé dokumenty XML jsou "dokumentu se smíšeným obsahem na střed." Pomocí těchto dokumentů neznáte nutně tvar podřízené uzly element. Uzel, který obsahuje text může například vypadat nějak takto:  
@@ -34,7 +34,7 @@ Poznámky lze použít k usnadnění transformace stromu XML.
   
 -   Nový element, který je přidán jako nové podřízené uzly; může obsahovat anotaci mohl vytvořit podstromě s libovolný požadovaný tvar.  
   
--   Je zvláštní pravidlo: Pokud podřízený uzel nového elementu je v různých názvů, obor názvů, která je pro tento účel (v tomto příkladu je obor názvů `http://www.microsoft.com/LinqToXmlTransform/2007`), pak tento podřízený prvek není zkopírován do nového stromu. Místo toho, pokud obor názvů je uvedené výš speciální obor názvů a místní název elementu, který je `ApplyTransforms`, pak jsou podřízené uzly element ve stromové struktuře zdroj provést iteraci a zkopírovány do nového stromu (s výjimkou, která podřízené prvky jsou opatřeny poznámkami samotné transformovány podle těchto pravidel).  
+-   Existuje pravidlo speciální: Pokud je podřízený uzel nového elementu v různých názvů, obor názvů, která je pro tento účel (v tomto příkladu je obor názvů `http://www.microsoft.com/LinqToXmlTransform/2007`), pak tento podřízený prvek není zkopírován do nového stromu. Místo toho, pokud obor názvů je uvedené výš speciální obor názvů a místní název elementu, který je `ApplyTransforms`, pak jsou podřízené uzly element ve stromové struktuře zdroj provést iteraci a zkopírovány do nového stromu (s výjimkou, která podřízené prvky jsou opatřeny poznámkami samotné transformovány podle těchto pravidel).  
   
 -   To je obdobou specifikace transformace v XSL. Dotaz, který vybere sada uzlů je obdobou výraz XPath pro šablonu. Kód pro vytvoření nového <xref:System.Xml.Linq.XElement> , který je uložený jako poznámka je obdobou konstruktoru pořadí v XSL a `ApplyTransforms` element je obdobou v funkce, která se `xsl:apply-templates` prvek XSL.  
   
@@ -91,18 +91,12 @@ XElement data = new XElement("Root",
 );  
   
 // while adding annotations, you can query the source tree all you want,  
-// as the tree is not mutated while annotating.  
+// as the tree is not mutated while annotating.
+var avg = data.Elements("Data").Select(z => (Decimal)z).Average();
 data.AddAnnotation(  
     new XElement("Root",  
         new XElement(xf + "ApplyTransforms"),  
-        new XElement("Average",  
-            String.Format("{0:F4}",  
-                data  
-                .Elements("Data")  
-                .Select(z => (Decimal)z)  
-                .Average()  
-            )  
-        ),  
+        new XElement("Average", $"{avg:F4}"),
         new XElement("Sum",  
             data  
             .Elements("Data")  

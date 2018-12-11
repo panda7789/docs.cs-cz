@@ -2,12 +2,12 @@
 title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: 4678980520266879b41bea6e10f075a2df116457
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a5292914cfebc79bf8a9af1c852dd8feec99eba4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183851"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129750"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 
@@ -47,7 +47,18 @@ Dokument/specifikace:
 
 Následující obory názvů XML a přidružené předpony se používají v tomto tématu:
 
-| Předponu | Namespace Uniform Resource Identifier (URI) | [---|---| | s.11 | `http://schemas.xmlsoap.org/soap/envelope` || S12 na úrovni Standard | `http://www.w3.org/2003/05/soap-envelope` || wsa | `http://www.w3.org/2004/08/addressing` || wsam | `http://www.w3.org/2007/05/addressing/metadata` || wsap | `http://schemas.xmlsoap.org/ws/2004/09/policy/addressing` || wsa10 | `http://www.w3.org/2005/08/addressing` || wsaw10 | `http://www.w3.org/2006/05/addressing/wsdl` || xop | `http://www.w3.org/2004/08/xop/include` || xmime |`http://www.w3.org/2004/06/xmlmime`<br /><br /> `http://www.w3.org/2005/05/xmlmime` | | distribučního bodu |`http://schemas.microsoft.com/net/2006/06/duplex` |
+| Předpona | Namespace Uniform Resource Identifier (URI) |
+|------------|---------------------------------------------------|
+| s11 | `http://schemas.xmlsoap.org/soap/envelope` |
+| s12 |`http://www.w3.org/2003/05/soap-envelope` |
+| wsa |`http://www.w3.org/2004/08/addressing` |
+| wsam |`http://www.w3.org/2007/05/addressing/metadata` |
+| wsap |`http://schemas.xmlsoap.org/ws/2004/09/policy/addressing` |
+| wsa10 |`http://www.w3.org/2005/08/addressing` |
+| wsaw10 |`http://www.w3.org/2006/05/addressing/wsdl` |
+| XOP |`http://www.w3.org/2004/08/xop/include` |
+| xmime |`http://www.w3.org/2004/06/xmlmime`<br /><br /> `http://www.w3.org/2005/05/xmlmime` |
+| distribučního bodu |`http://schemas.microsoft.com/net/2006/06/duplex` |
 
 ## <a name="soap-11-and-soap-12"></a>Protokol SOAP 1.1 a SOAP 1.2
 
@@ -63,7 +74,7 @@ Zpráva, která vstupuje do zásobníku kanál WCF zpracovává jednotlivé kan�
 
 Tyto vrstvy zpracování umožňuje oddělení mezi vrstev infrastruktury a aplikací vrstvy uzlu SOAP:
 
-- B1111: Hlavičky, které nejsou rozpoznána se zjistí po zpracování zprávy zásobník infrastruktury kanálu WCF, ale předtím, než je zpracován programovacím modelem aplikace
+- B1111: Zjištění hlavičky, které nejsou rozpoznána. po zpracování zprávy zásobník infrastruktury kanálu WCF, ale předtím, než je zpracován programovacím modelem aplikace
 
      `mustUnderstand` Hodnota hlavičky se liší mezi SOAP 1.1 a SOAP 1.2. Basic Profile 1.1 vyžaduje, aby `mustUnderstand` hodnota být 0 nebo 1 pro zprávy SOAP 1.1. Protokol SOAP 1.2 umožňuje 0, 1, `false`, a `true` hodnoty, ale doporučuje generování canonical reprezentace `xs:boolean` hodnoty (`false`, `true`).
 
@@ -72,9 +83,9 @@ Tyto vrstvy zpracování umožňuje oddělení mezi vrstev infrastruktury a apli
 #### <a name="soap-faults"></a>Chyby protokolu SOAP
 Následuje seznam implementace proti konkrétní WCF SOAP.
 
-- B2121: WCF vrátí následující kódy chyb protokolu SOAP 1.1: `s11:mustUnderstand`, `s11:Client`, a `s11:Server`.
+- B2121: Vrátí následující kódy chyb protokolu SOAP 1.1 WCF: `s11:mustUnderstand`, `s11:Client`, a `s11:Server`.
 
-- B2122: WCF vrátí následující kódy chyb protokolu SOAP 1.2: `s12:MustUnderstand`, `s12:Sender`, a `s12:Receiver`.
+- B2122: Vrátí následující kódy chyb protokolu SOAP 1.2 WCF: `s12:MustUnderstand`, `s12:Sender`, a `s12:Receiver`.
 
 ### <a name="http-binding"></a>Vazbu protokolu HTTP
 
@@ -83,16 +94,16 @@ WCF implementuje vazby SOAP1.1 HTTP podle specifikace Basic Profile 1.1 s násle
 
 - B2211: Služba WCF neimplementuje přesměrování požadavků HTTP POST.
 
-- B2212: WCF klienti podporují soubory cookie protokolu HTTP v souladu s 3.4.8.
+- B2212: Klienti WCF podporují soubory cookie protokolu HTTP v souladu s 3.4.8.
 
 #### <a name="soap-12-http-binding"></a>Ze SOAP 1.2 vazbu protokolu HTTP
 WCF implementuje vazba SOAP 1.2 HTTP, jak je popsáno ve specifikaci protokolu SOAP 1.2 – část 2 (SOAP12Part2) s následující vyjasnění.
 
 Parametr volitelný akce pro zavedené SOAP 1.2 `application/soap+xml` typ média. Tento parametr je užitečný pro optimalizaci odeslání zprávy bez nutnosti analyzovat text zprávy protokolu SOAP při adresování WS-Addressing není použit.
 
-- R2221: `application/soap+xml` parametr akce, pokud je k dispozici na vyžádání SOAP 1.2, musí odpovídat `soapAction` atribut na `wsoap12:operation` element v rámci odpovídající Vazba WSDL.
+- R2221: `application/soap+xml` Parametr akce, pokud je k dispozici na vyžádání SOAP 1.2, musí odpovídat `soapAction` atribut na `wsoap12:operation` element v rámci odpovídající Vazba WSDL.
 
-- R2222: `application/soap+xml` musí odpovídat parametru akce, pokud je k dispozici na zprávu protokolu SOAP 1.2 `wsa:Action` při použití WS-Addressing 2004/08 nebo WS-Addressing 1.0.
+- R2222: `application/soap+xml` Musí odpovídat parametru akce, pokud je k dispozici na zprávu protokolu SOAP 1.2 `wsa:Action` při použití WS-Addressing 2004/08 nebo WS-Addressing 1.0.
 
 Když příchozí požadavek neobsahuje parametr akce WS-Addressing je zakázaná, zpráva `Action` je považováno za nevyhovující zadané.
 
@@ -148,7 +159,7 @@ Představte si třeba situaci, kde služba WCF vyžaduje ověřování pomocí t
 #### <a name="message-headers"></a>Záhlaví zpráv
 Pro obě verze WS-Addressing WCF používá následující záhlaví zpráv podle specifikace `wsa:To`, `wsa:ReplyTo`, `wsa:Action`, `wsa:MessageID`, a `wsa:RelatesTo`.
 
-B3211: Pro všechny verze WS-Addressing, WCF respektuje, ale nevytvoří hned po spuštění záhlaví zpráv WS-Addressing `wsa:FaultTo` a `wsa:From`.
+B3211: Pro všechny verze WS-Addressing, respektuje WCF, ale nevytvoří hned po spuštění záhlaví zpráv WS-Addressing `wsa:FaultTo` a `wsa:From`.
 
 Aplikace, které pracují s aplikací služby WCF můžete přidat že tyto hlavičky zpráv a WCF se jejich zpracování odpovídajícím způsobem.
 
@@ -166,15 +177,15 @@ V celé této části se pošle žadateli první zprávu a příjemce dostane pr
 #### <a name="one-way-message"></a>Jednosměrná zpráva
 Když koncového bodu WCF je nakonfigurována pro podporu zprávy s daný `Action` dodržovat jednosměrné vzor koncového bodu WCF následuje následující chování a požadavky. Pokud není uvedeno jinak, platí pro obě verze WS-Addressing podporované ve službě WCF chování a pravidla:
 
-- R3311: Žadatel musí obsahovat `wsa:To`, `wsa:Action`, tak i hlaviček parametrů odkaz na určeném reference koncového bodu. Když se používá WS-Addressing 2004/08 a [referenční vlastnosti] jsou určena podle reference koncového bodu odpovídající záhlaví musí být přidané do zprávy příliš.
+- R3311: Musí zahrnovat žadateli `wsa:To`, `wsa:Action`, tak i hlaviček parametrů odkaz na určeném reference koncového bodu. Když se používá WS-Addressing 2004/08 a [referenční vlastnosti] jsou určena podle reference koncového bodu odpovídající záhlaví musí být přidané do zprávy příliš.
 
-- B3312: Žadatel mohou zahrnovat `MessageID`, `ReplyTo`, a `FaultTo` záhlaví. Příjemce infrastruktury je bude ignorovat a bude předávat do aplikace.
+- B3312: Může zahrnovat žadateli `MessageID`, `ReplyTo`, a `FaultTo` záhlaví. Příjemce infrastruktury je bude ignorovat a bude předávat do aplikace.
 
 - R3313: Když se používá protokol HTTP a žádná zpráva se odesílá na větev odpovědi protokolu HTTP, musíte odeslat straně odpovídajícího odpověď HTTP s prázdným textem zprávy a stavový kód HTTP 202.
 
      Když kontrakt deklaruje zprávu jednosměrný přenos pomocí protokolu HTTP se používá, odpověď HTTP je stále možné pro odesílání zpráv infrastruktury – například můžete odesílat spolehlivé zasílání zpráv `SequenceAcknowledgement` zprávu na odpovědi HTTP.
 
-- B3314: WCF respondér neodesílá jednosměrné zprávy pro zprávu o chybě.
+- B3314: WCF respondér neodesílá zprávu o chybě v reakci na zprávu jednosměrná.
 
 #### <a name="request-reply"></a>Požadavek a odpověď
 Když koncového bodu WCF je nakonfigurován pro zprávu s danou `Action` Pokud chcete postupovat podle vzoru požadavek odpověď, koncového bodu WCF řídí chování a požadavcích na. Pokud není uvedeno jinak, platí pro obě verze WS-Addressing podporované ve službě WCF chování a pravidla:
@@ -185,7 +196,7 @@ Když koncového bodu WCF je nakonfigurován pro zprávu s danou `Action` Pokud 
 
 - R3323: Při použití WS-Addressing 1.0 a `ReplyTo` není k dispozici v požadavku, výchozí koncový bod odkaz s vlastností [address] rovna `http://www.w3.org/2005/08/addressing/anonymous` se používá.
 
-- R3324: Žadatel musí obsahovat `wsa:To`, `wsa:Action`, a `wsa:RelatesTo` záhlaví ve zprávě odpovědi a také hlavičky pro všechny parametry odkazu nebo referenční vlastnosti (nebo obojí) určené `ReplyTo` reference koncového bodu v požadavek.
+- R3324: Musí zahrnovat žadateli `wsa:To`, `wsa:Action`, a `wsa:RelatesTo` záhlaví ve zprávě odpovědi a také hlavičky pro všechny parametry odkazu nebo referenční vlastnosti (nebo obojí) určené `ReplyTo` reference koncového bodu v požadavku.
 
 ### <a name="web-services-addressing-faults"></a>Na vyřešení chyby webové služby
 R3411: WCF vytvoří následující chyby definované WS-Addressing 2004/08.
@@ -280,11 +291,11 @@ Použijte následující kontrolní výraz, který má koncový bod zásad subje
 
 Předchozí příkaz vede k následující požadavky `wsa:ReplyTo` záhlaví zpráv požadavku:
 
-- R3514: Žádost o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastnost `http://www.w3.org/2005/08/addressing/anonymous` Pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap10:UsingAddressing` nebo `wsap:UsingAddressing` s velkou provázaností kontrolní výraz `cdp:CompositeDuplex` připojen.
+- R3514: Požádat o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastnost `http://www.w3.org/2005/08/addressing/anonymous` Pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap10:UsingAddressing` nebo `wsap:UsingAddressing` kontrolního výrazu s velkou provázaností `cdp:CompositeDuplex` připojen.
 
-- R3515: Žádost o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastností `http://www.w3.org/2005/08/addressing/anonymous`, nebo není `ReplyTo` záhlaví na všechny, pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap10:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` kontrolní výraz připojen.
+- R3515: Požádat o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastností `http://www.w3.org/2005/08/addressing/anonymous`, nebo není `ReplyTo` záhlaví na všechny, pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap10:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` kontrolní výraz připojen.
 
-- R3516: Žádost o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastností `http://www.w3.org/2005/08/addressing/anonymous` Pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap:UsingAddressing` kontrolní výraz a žádné `cdp:CompositeDuplex`kontrolní výraz připojen.
+- R3516: Požádat o zprávy odeslané do koncového bodu musí mít `ReplyTo` záhlaví s `[address]` vlastností `http://www.w3.org/2005/08/addressing/anonymous` Pokud koncový bod používá vazby WSDL 1.1 SOAP 1.x HTTP a má alternativní zásady s `wsap:UsingAddressing` kontrolní výraz a ne `cdp:CompositeDuplex` kontrolní výraz připojen.
 
 Specifikace WS-addressing WSDL pokusí popisují podobnými vazbami protokol zavedením element `<wsaw:Anonymous/>` tři textové hodnoty (povinné, volitelné a zakázané) k označení požadavky na `wsa:ReplyTo` hlavičky (část 3.2). Bohužel tyto definice prvku není jako kontrolní výraz v kontextu aplikace WS-Policy, zejména použitelné, protože vyžaduje specifického pro doménu rozšíření pro podporu je určena průsečíkem alternativy pomocí takový prvek jako kontrolní výraz. Tato definice prvku také určuje hodnotu `ReplyTo` záhlaví na rozdíl od chování koncového bodu na lince, což usnadňuje konkrétní přenos pomocí protokolu HTTP.
 
@@ -302,11 +313,11 @@ B3521: Používá WCF `wsaw10:Action` atribut na `wsdl:portType/wsdl:operation/[
 #### <a name="use-endpoint-reference-inside-wsdl-port"></a>Použití koncového bodu odkaz na vnitřní WSDL portu
 WS WSDL ADDR10 oddíle 4.1 rozšiřuje `wsdl:port` prvek, který chcete zahrnout `<wsa10:EndpointReference…/>` podřízený prvek k podrobnému popisu, koncový bod WS-Addressing podmínky. Tento nástroj na WS-Addressing 2004/08 rozbalí WCF umožňuje `<wsa:EndpointReference…/>` jako podřízený prvek `wsdl:port`.
 
-- R3531: Pokud má koncový bod alternativu připojené zásady s `<wsaw10:UsingAddressing/>` kontrolního výrazu zásad odpovídající `wsdl:port` element může obsahovat podřízený element `<wsa10:EndpointReference …/>`.
+- R3531: Pokud koncový bod má alternativu připojené zásady s `<wsaw10:UsingAddressing/>` kontrolního výrazu zásad odpovídající `wsdl:port` element může obsahovat podřízený element `<wsa10:EndpointReference …/>`.
 
 - R3532: Pokud `wsdl:port` obsahuje podřízený element `<wsa10:EndpointReference …/>`, `wsa10:EndpointReference/wsa10:Address` hodnota podřízeného elementu musí odpovídat hodnotě `@address` atribut na stejné úrovni `wsdl:port` / `wsdl:location` elementu.
 
-- R3533: Pokud má koncový bod alternativu připojené zásady s `<wsap:UsingAddressing/>` kontrolního výrazu zásad odpovídající `wsdl:port` element může obsahovat podřízený element `<wsa:EndpointReference …/>`.
+- R3533: Pokud koncový bod má alternativu připojené zásady s `<wsap:UsingAddressing/>` kontrolního výrazu zásad odpovídající `wsdl:port` element může obsahovat podřízený element `<wsa:EndpointReference …/>`.
 
 - R3534: Pokud `wsdl:port` obsahuje podřízený element `<wsa:EndpointReference …/>`, `wsa:EndpointReference/wsa:Address` hodnota podřízeného elementu musí odpovídat hodnotě `@address` atribut na stejné úrovni `wsdl:port` / `wsdl:location` elementu.
 
@@ -320,9 +331,9 @@ Pokud WS-Security slouží pro ochranu integrity zprávy, musí být podepsané 
 #### <a name="one-way-message"></a>Jednosměrná zpráva
 V tomto scénáři odesílatel odešle zprávu jednosměrné příjemci. SOAP 1.2, protokol HTTP 1.1 a 1.0 W3C WS-Addressing se používají.
 
-Struktura zprávy požadavku: Hlavičky zprávy zahrnují `wsa10:To` a `wsa10:Action` elementy. Tělo zprávy obsahuje konkrétní `<app:Ping>` element z oboru aplikace.
+Struktura zprávy požadavku: Zahrnout záhlaví zpráv `wsa10:To` a `wsa10:Action` elementy. Tělo zprávy obsahuje konkrétní `<app:Ping>` element z oboru aplikace.
 
-Hlavičky protokolu HTTP: Cíl v příspěvku odpovídá identifikátoru URI v `wsa10:To` elementu.
+Hlavičky protokolu HTTP: Odpovídá identifikátoru URI v cíli v příspěvku `wsa10:To` elementu.
 
 Hlavička Content-Type má hodnotu `application/soap+xml` podle požadavku SOAP 1.2. Parametry `charset` a `action` jsou zahrnuty. `action` Odpovídá hodnotě parametru hlavičku Content-Type `wsa10:Action` záhlaví zprávy.
 
@@ -499,7 +510,7 @@ msg-id    =       [CFWS] "<" id-left "@" id-right ">" [CFWS]
 
 a je efektivně e-mailovou adresu uzavřený do složených závorek "\<" a ">". `[CFWS]` Předpon a přípon byly přidány v dokumentu RFC 2822 provádět komentáře a neměl by se zachovat vzájemná funkční spolupráce.
 
-R4143: Hodnotu hlavičky Content-ID pro část MIME informační sadu musí následovat `msg-id` produkčním prostředí z 2822 RFC s `[CFWS]` předpon a přípon částí vynechán.
+R4143: Musí následovat hodnota záhlaví Content-ID pro část MIME informační sadu `msg-id` produkčním prostředí z 2822 RFC s `[CFWS]` předpon a přípon částí vynechán.
 
 Počet implementací MIME mírnější požadavky pro hodnotu uzavřený do složených závorek "\<" a ">" bude e-mailovou adresu a použít `absoluteURI` uzavřeny v "\<", ">" Kromě e-mailovou adresu. Tato verze služby WCF používá hodnoty hlavičky MIME Content-ID ve formátu:
 
@@ -507,7 +518,7 @@ Počet implementací MIME mírnější požadavky pro hodnotu uzavřený do slo�
 Content-ID: <http://tempuri.org/0> 
 ```
 
-R4144: MTOM procesory by měla přijímat hlavička Content-ID hodnoty, které odpovídají následující mírnější `msg-id`.
+R4144: Procesory MTOM by měla přijímat hlavička Content-ID hodnoty, které odpovídají následující mírnější `msg-id`.
 
 ```
 msg-id-relaxed =     [CFWS] "<" (absoluteURI | mail-address) ">" [CFWS]
@@ -516,22 +527,22 @@ mail-address   =     id-left "@" id-right
 
 MIME (RFC 2045) obsahuje hlavičku Content-Transfer-Encoding komunikovat kódování obsahu části MIME. Definované pro Content-Transfer-Encoding výchozí hodnota je 7 bitů, což není vhodný pro většinu zprávy protokolu SOAP, takže hlavičku Content-Transfer-Encoding je potřeba větší interoperability:
 
-- R4145: Informační sadu SOAP část musí obsahovat hlavičku Content-Transfer-Encoding.
+- R4145: Část SOAP informační sadu musí obsahovat hlavičku Content-Transfer-Encoding.
 
-- R4146: Pokud kódování znaků pro obálku protokolu SOAP je UTF-8, musí být hodnota hlavičky Content-Transfer-Encoding 8 bitů.
+- R4146: Pokud kódování znaků pro obálku protokolu SOAP je UTF-8, hodnotu hlavičky Content-Transfer-Encoding musí být 8 bitů.
 
-- R4147: Pokud kódování znaků pro obálku protokolu SOAP je UTF-16, hodnota hlavičky Content-Transfer-Encoding musí být binární.
+- R4147: Pokud kódování znaků pro obálku protokolu SOAP je UTF-16, musí být binární hodnotu hlavičky Content-Transfer-Encoding.
 
 - Závislosti [XOP] části 5
 
-- R4148: Informační sadu SOAP1.1 část musí obsahovat hlavičku Content-Type s typ média application/xop + xml a parametry type = "text/xml" a znaková sada
+- R4148: SOAP1.1 informační sadu část musí obsahovat hlavičku Content-Type s typ média application/xop + xml a parametry type = "text/xml" a znaková sada
 
     ```
     Content-Type: application/xop+xml;
                   charset=utf-8;type="text/xml"
     ```
 
-- R4149: Informační sadu SOAP 1.2 část musí obsahovat hlavičku Content-Type s typem média `application/xop+xml` a parametry type = "`application/soap+xml`" a `charset`.
+- R4149: Část SOAP 1.2 informační sadu musí obsahovat hlavičku Content-Type s typem média `application/xop+xml` a parametry type = "`application/soap+xml`" a `charset`.
 
     ```
     Content-Type: application/xop+xml;
@@ -545,7 +556,7 @@ MIME (RFC 2045) obsahuje hlavičku Content-Transfer-Encoding komunikovat kódov�
 #### <a name="wcf-endpoint-support-for-mtom"></a>Podpora koncových bodů WCF MTOM
 Účelem MTOM je určený ke kódování zprávy protokolu SOAP pro optimalizaci dat s kódováním base64. Následuje seznam omezení:
 
-- R4151: Může být optimalizován libovolné položky informace o elementu, který obsahuje data zakódovaná ve formátu base64.
+- R4151: Může být optimalizován libovolnou položku informace o elementu, který obsahuje data zakódovaná ve formátu base64.
 
 - B4152: WCF optimalizuje element informačních položek, které obsahují data zakódovaná ve formátu base64 a přesáhnout délku 1024 bajtů.
 
@@ -560,7 +571,7 @@ WCF používá k označení MTOM využití koncovým bodem následující kontro
 
 - R4211: Předchozí kontrolního výrazu zásad má předmětu zásad koncového bodu a určuje, že všechny zprávy odesílané do a z koncového bodu musí být optimalizovalo pomocí MTOM.
 
-- B4212: Když konfigurován pro použití MTOM optimalizace, koncový bod WCF přidá kontrolní výraz zásad MTOM zásady připojené k odpovídající `wsdl:binding`.
+- B4212: Pokud konfigurován pro použití MTOM optimalizace, koncový bod WCF přidá kontrolní výraz zásad MTOM zásady připojené k odpovídající `wsdl:binding`.
 
 ### <a name="composition-with-ws-security"></a>Kompozice s WS-Security
 MTOM je mechanismus, který je podobný `text/xml` a WCF binární formát XML. MTOM nabízí přirozené složení s WS-Security a dalších WS-* protokoly: zpráva zabezpečena WS-Security, lze optimalizovat pomocí funkce MTOM.

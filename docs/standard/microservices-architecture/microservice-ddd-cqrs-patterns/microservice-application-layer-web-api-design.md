@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 03e08d757917b5ff658e9d4dd282a096c8dd23d5
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: f31c712143a448e12350db1ed242da7561a7a286
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296761"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147487"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Návrh aplikační vrstvy mikroslužby a webové rozhraní API
 
@@ -37,7 +37,7 @@ By to obnášelo jiného průvodce k podrobně zahrnovat PLNÝ. Proto tato pří
 
 #### <a name="additional-resources"></a>Další zdroje
 
-- **UCELENÝ: Principy základní OOP** \
+- **PLNÁ: Základní OOP zásady** \
   [*https://deviq.com/solid/*](https://deviq.com/solid/%20)
 
 - **Inverze – kontejnery ovládacích prvků a vzor injektáž závislostí** \
@@ -47,5 +47,5 @@ By to obnášelo jiného průvodce k podrobně zahrnovat PLNÝ. Proto tato pří
   [*https://ardalis.com/new-is-glue*](https://ardalis.com/new-is-glue)
 
 >[!div class="step-by-step"]
-[Předchozí](nosql-database-persistence-infrastructure.md)
-[další](microservice-application-layer-implementation-web-api.md)
+>[Předchozí](nosql-database-persistence-infrastructure.md)
+>[další](microservice-application-layer-implementation-web-api.md)

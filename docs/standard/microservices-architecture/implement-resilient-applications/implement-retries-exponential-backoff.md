@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/08/2018
-ms.openlocfilehash: a5ab15299ecb501691c26bbc6d377e22a38ee51e
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: e0758ee8fe28cb45ecd35ad07ddc738c12614973
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874361"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148766"
 ---
 # <a name="implement-retries-with-exponential-backoff"></a>Implementace opakování pomocí exponenciálního omezení rychlosti
 
@@ -17,7 +17,6 @@ ms.locfileid: "37874361"
 
 Existuje celá řada přístupů implementovat logiku opakování pomocí exponenciálního omezení rychlosti.
 
-
 >[!div class="step-by-step"]
-[Předchozí](partial-failure-strategies.md)
-[další](implement-resilient-entity-framework-core-sql-connections.md)
+>[Předchozí](partial-failure-strategies.md)
+>[další](implement-resilient-entity-framework-core-sql-connections.md)

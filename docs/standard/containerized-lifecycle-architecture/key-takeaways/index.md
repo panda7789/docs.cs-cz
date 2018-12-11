@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 24a4e826ece691a6a1221b39c164bba2eef8a059
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 3783bdde100aa83bd7fbbc2a0f2ee616ef9a729d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45646243"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148625"
 ---
 # <a name="key-takeaways"></a>Stěžejní zjištění
 
@@ -26,4 +26,4 @@ ms.locfileid: "45646243"
 Služby Azure DevOps výrazně zjednodušuje prostředí DevOps určených k prostředí Dockeru z kanálů průběžné nasazování, včetně jednoduché prostředí Dockeru nebo pokročilejší mikroslužeb a kontejnerů orchestrátorů založené na Azure.
 
 >[!div class="step-by-step"]
-[Předchozí](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+>[Předchozí](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)

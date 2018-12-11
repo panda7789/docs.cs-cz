@@ -2,12 +2,12 @@
 title: Zabezpečený přístup k datům
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: e5bb96a091dcd64f12d086d864643d00c34d8f17
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d7964a084c1d5936b034d76b8c6e46053e8dcb0a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185937"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129191"
 ---
 # <a name="secure-data-access"></a>Zabezpečený přístup k datům
 Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezpečení k dispozici v základní úložiště dat nebo databázi. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo komponenty, které vaše aplikace může obsahovat.  
@@ -19,7 +19,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
   
  Po ověření uživatele oboru jejich akce závisí na, které jste udělili oprávnění k nim. Vždy postupujte podle principu nejnižší úrovně oprávnění a udělit pouze oprávnění, která jsou naprosto nezbytná.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -42,7 +42,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 ## <a name="script-exploits"></a>Zneužití skriptu  
  Zneužití skriptu je jiná forma vkládání, který používá škodlivé znaků vložen do webové stránky. Prohlížeč nelze ověřit vložené znaky a zpracuje je v rámci stránky.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -51,7 +51,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 ## <a name="probing-attacks"></a>Zjišťování útoků  
  Informace z výjimky, jako je například název serveru, databáze nebo tabulky, útočníci často používají k připojení útoku na systém. Protože výjimky může obsahovat specifické informace o aplikaci nebo zdroj dat, můžete pomoct chránit vaše aplikace a zdroj dat lépe chráněné zveřejněním pouze základní informace o klientovi.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -66,11 +66,8 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Důležité informace a pokyny pro Access 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Popisuje postupy zabezpečení pro Access 2007 takové šifrování souborů, Správa hesel, převodu databáze na nové formáty ACCDB a ACCDE a pomocí jiné možnosti zabezpečení.|  
-|[Pomáhá chránit databázi aplikace Access s zabezpečení individuální (MDB)](https://go.microsoft.com/fwlink/?LinkId=47697)|Platí pro přístup k 2003. Obsahuje pokyny pro implementaci zabezpečení na úrovni uživatele k ochraně dat v 2003 přístup.|  
 |[Principy Role pracovní skupiny souborů informací o zabezpečení přístupu](https://support.microsoft.com/kb/305542)|Popisuje role a vztah informační soubor pracovní skupiny v zabezpečení přístupu 2003.|  
 |[Často nejčastější dotazy o Microsoft zabezpečení přístupu pro aplikace Microsoft Access verze 2.0 až 2000](https://go.microsoft.com/fwlink/?LinkId=47698)|Verzi ke stažení aplikace Microsoft Access Security – nejčastější dotazy.|  
-|[Řešení zabezpečení a ochrany](https://go.microsoft.com/fwlink/?LinkId=47703)|Představuje řešení běžných problémů se zabezpečením v aplikaci Excel 2003.|  
-  
 ## <a name="enterprise-services"></a>Enterprise Services  
  COM + obsahuje vlastní model zabezpečení, která se spoléhá na účty systému Windows NT a zosobnění, procesu nebo vlákna. <xref:System.EnterpriseServices> Obor názvů obsahuje obálky, která umožňují aplikacím .NET pro integraci spravovaného kódu pomocí modelu COM + služeb zabezpečení prostřednictvím <xref:System.EnterpriseServices.ServicedComponent> třídy.  
   
@@ -83,13 +80,13 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 ## <a name="interoperating-with-unmanaged-code"></a>Spolupráce s nespravovaným kódem  
  Rozhraní .NET Framework poskytuje pro interakci s nespravovaným kódem, včetně modelu COM komponenty modelu COM + služby, externí knihovny typů a řadě služeb operačního systému. Práce s nespravovaným kódem zahrnuje přejít mimo zónu zabezpečení pro spravovaný kód. Váš kód a jakýkoli kód, který volá musí mít povolení pro nespravovaný kód (<xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> příznak zadán). Nespravovaný kód můžou představovat ohrožení zabezpečení nežádoucí na vaší aplikace. Proto byste se měli vyhnout spolupráce s nespravovaným kódem, pokud to není nezbytně nutné.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak k vystavení komponent COM pro rozhraní .NET Framework a jak k vystavení součástí .NET Framework do modelu COM.|  
-|[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx)|Obsahuje Pokročilá témata, jako je například primárních sestavení vzájemné spolupráce, práce s vlákny a vlastní zařazování.|  
-  
+|[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak k vystavení komponent COM pro rozhraní .NET Framework a jak k vystavení součástí .NET Framework do modelu COM.|
+|[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje Pokročilá témata, jako je například primárních sestavení vzájemné spolupráce, práce s vlákny a vlastní zařazování.|
+
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  

@@ -1,56 +1,56 @@
 ---
 title: Monitorování stavu
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Monitorování stavu
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Monitorování stavu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 62d4e9a26710a5c4b191287bf76192972f7e991b
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 35f6d773d714878f56a5e9151320072ebcd51e06
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106538"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145972"
 ---
 # <a name="health-monitoring"></a>Monitorování stavu
 
-Sledování stavu můžete povolit téměř v reálném čase informací o stavu kontejnery a mikroslužeb. Sledování stavu je pro několik aspektů operačního mikroslužeb a je zvlášť důležité při orchestrators částečné aplikace upgrady provádět v fází, jak je popsáno později.
+Monitorování stavu umožňuje téměř v reálném čase informace o stavu kontejnerů a mikroslužeb. Monitorování stavu je zásadní pro několik aspektů provoz mikroslužeb a je zvlášť důležité při orchestrátorů provést upgrady částečné použití argumentů ve fázích, jak je popsáno později.
 
-Aplikace založené na Mikroslužeb často používají prezenčních signálů nebo stavu ověří jejich monitorování výkonu, plánovače a orchestrators ke sledování velkého množství services povolit. Pokud služby nelze odeslat nějaká "Jsem zachování" signálu na vyžádání nebo podle plánu, může aplikace čelí rizika při nasazení aktualizací, nebo může být jednoduše příliš pozdní rozpoznala chyby a není možné zastavit kaskádových chyb, které se můžou skončit ve hlavní výpadků.
+Aplikace založená na Mikroslužbách často používají prezenční signály nebo povolit jejich sledování výkonu, plánovače a orchestrátory můžete sledovat různé služby, doplněk pro kontroly stavu. Pokud služby nelze odeslat nějaký druh "Jsem aktivní" signálu na vyžádání nebo podle plánu, může vaše aplikace musí rizika při nasazení aktualizací, nebo může být příliš pozdě. stačí zjišťování chyb a nebylo možné zastavit kaskádové chyby, ke kterým může ukládaly do hlavní výpadků.
 
-V typické modelu služby odesílat zprávy o jejich stavu a zobrazují se tyto informace k poskytování celkový přehled o stavu stavu aplikace. Pokud používáte orchestrator, zajistíte tak, aby cluster může fungovat odpovídajícím způsobem informace o stavu vaší orchestrator clusteru. Pokud jste investovat do vysoce kvalitní stavu vytváření sestav, které je přizpůsobené pro vaši aplikaci, můžete zjistit a opravit problémy mnohem snadněji pro běžící aplikaci.
+V typické modelu služby odesílat zprávy o stavu a zobrazují se tyto informace poskytnout celkový přehled o stavu stavu aplikace. Pokud používáte orchestrator, můžete zadat informace o stavu vaší orchestrator clusteru tak, aby cluster můžete příslušně na ně reagovat. Pokud Investujete do sestav stavu vysoce kvalitní, který je přizpůsobený pro vaši aplikaci, můžete zjistit a opravit problémy pro běžící aplikaci mnohem snadněji.
 
-## <a name="implementing-health-checks-in-aspnet-core-services"></a>Implementace stavu změnami ASP.NET Core services
+## <a name="implementing-health-checks-in-aspnet-core-services"></a>Implementace stavu kontroluje služby ASP.NET Core
 
-Při vývoji aplikace ASP.NET Core mikroslužbu nebo webové aplikace, můžete použít out-of-band knihovny (není oficiální jako součást ASP.NETCore) s názvem `HealthChecks` od týmu ASP.NET. Je k dispozici v této [úložiště GitHub](https://github.com/dotnet-architecture/HealthChecks).
+Při vytváření mikroslužeb nebo webové aplikace ASP.NET Core, můžete použít knihovnu out-of-band (ne official je přínosné jako součást ASP.NETCore) s názvem `HealthChecks` od týmu služby ASP.NET. Je k dispozici na tomto [úložiště GitHub se vzorovými](https://github.com/dotnet-architecture/HealthChecks).
 
-Tato knihovna je snadno použitelný a poskytuje funkce, která umožňují, které jste ověřte, že žádné konkrétní externí prostředek pro vaši aplikaci (například databáze systému SQL Server nebo rozhraní API pro vzdálené) správně funguje. Při použití této knihovny, můžete také určit, co znamená, že je prostředek v pořádku, protože objasníme později.
+Tato knihovna se snadno používá a nabízí funkce, které umožňují, ověřte, že žádné konkrétní externího zdroje potřebné pro vaši aplikaci (například databáze systému SQL Server nebo vzdálené rozhraní API) správně funguje. Při použití této knihovny, můžete také rozhodnout, co znamená to, jestli prostředek je v pořádku, protože vám vysvětlíme, později.
 
-Chcete-li použít tuto knihovnu, musíte nejprve použít knihovnu v vaší mikroslužeb. Druhý musíte aplikace front-endu, který se dotazuje pro sestavy stavu. Který front-endu aplikace může být vlastní vytváření sestav aplikace, nebo může být orchestrator sám sebe, který můžete odpovídajícím způsobem reagovat na stav.
+Chcete-li použít tuto knihovnu, budete muset nejdřív použít knihovnu v mikroslužby. Za druhé budete potřebovat front-endové aplikace, který se dotazuje sestavy o stavu. Který aplikace front-endu může být vlastní aplikace pro vytváření sestav, nebo to může být orchestrátor samotného, můžete odpovídajícím způsobem reagovat na stav.
 
-### <a name="using-the-healthchecks-library-in-your-back-end-aspnet-microservices"></a>Použití knihovny HealthChecks v back-end vašeho mikroslužeb ASP.NET
+### <a name="using-the-healthchecks-library-in-your-back-end-aspnet-microservices"></a>Použití knihovny HealthChecks v back-endu ASP.NET mikroslužeb
 
-Uvidíte použití knihovny HealthChecks v eShopOnContainers ukázkovou aplikaci. Pokud chcete začít, musíte definovat, co se považuje za dobrý stav pro každý mikroslužby. V ukázkové aplikace jsou v pořádku, pokud mikroslužbu rozhraní API je přístupná prostřednictvím protokolu HTTP a jeho souvisejících databáze systému SQL Server je také k dispozici mikroslužeb.
+Uvidíte jak knihovny HealthChecks slouží v aplikaci eShopOnContainers ukázkovou aplikaci. Pokud chcete začít, musíte definovat, co se považuje za bezproblémového stavu u jednotlivých mikroslužeb. V ukázkové aplikaci mikroslužby jsou v pořádku, pokud mikroslužeb rozhraní API jsou přístupná přes protokol HTTP a pokud jeho související databáze systému SQL Server je také k dispozici.
 
-V budoucnu nebudete moct instalovat knihovně HealthChecks jako balíčku NuGet. Ale v době psaní tohoto textu, budete muset stáhnout a zkompilovat kód v rámci vašeho řešení. Zkopírujte kód, který je k dispozici na https://github.com/dotnet-architecture/HealthChecks a zkopírujte do řešení pro následující složky:
+V budoucnu bude možné ji nainstalovat HealthChecks jako balíček NuGet. Ale v době psaní tohoto návodu budete muset stáhnout a kompilaci kódu jako součást vašeho řešení. Klonování kódu, které jsou k dispozici na https://github.com/dotnet-architecture/HealthChecks a zkopírujte následující složky do vašeho řešení:
 
-  - src/společné
+  - src/common
   - src/Microsoft.AspNetCore.HealthChecks
   - src/Microsoft.Extensions.HealthChecks
   - src/Microsoft.Extensions.HealthChecks.SqlServer
 
-Můžete také použít další kontroly, jako jsou pro Azure (Microsoft.Extensions.HealthChecks.AzureStorage), ale vzhledem k tomu, že tato verze eShopOnContainers nemá žádné závislosti na platformě Azure, není nutné. Není nutné kontroly stavu ASP.NET, protože eShopOnContainers je založena na ASP.NET Core.
+Můžete také použít další kontroly, jako jsou pro Azure (Microsoft.Extensions.HealthChecks.AzureStorage), ale vzhledem k tomu, že tato verze aplikaci eShopOnContainers nemá závislost na Azure, není nutné. Není nutné ASP.NET kontroly stavu, protože aplikaci eShopOnContainers je založena na technologii ASP.NET Core.
 
-Obrázek 10-6 ukazuje knihovně HealthChecks v sadě Visual Studio, budete moct používat jako stavební blok ve všech mikroslužeb.
+Obrázek 10 až 6 ukazuje HealthChecks knihovny v sadě Visual Studio, můžete využívat jako stavební blok všechny mikroslužby.
 
 ![](./media/image6.png)
 
-**Obrázek 10-6**. ASP.NET Core HealthChecks knihovny zdrojový kód v řešení sady Visual Studio
+**Obrázek 10 až 6**. Zdrojový kód knihovny ASP.NET Core HealthChecks v řešení sady Visual Studio
 
-Zavádí dříve, je první věc, kterou chcete provést v jednotlivých projektů mikroslužbu se přidat odkaz na tři HealthChecks knihovny. Potom přidáte akce kontroly stavu, které chcete provést v této mikroslužby. Tyto akce jsou v podstatě závislosti na jiných mikroslužeb (HttpUrlCheck) nebo databáze (aktuálně SqlCheck\* databází systému SQL Server). Můžete přidat akce v rámci třídy spuštění každé mikroslužbu ASP.NET nebo webové aplikace ASP.NET.
+První věc, kterou provedete v každém projektu mikroslužeb zavedeném dříve, je přidejte odkaz na tři HealthChecks knihovny. Potom přidáte stav vrácení akce, které chcete provést v tomto mikroslužeb. Tyto akce jsou v podstatě závislosti na jiných mikroslužby (HttpUrlCheck) nebo databází (aktuálně SqlCheck\* databází systému SQL Server). Můžete přidat akce v rámci třídy spuštění jednotlivých mikroslužeb technologie ASP.NET nebo webové aplikace ASP.NET.
 
-Každá služba nebo webové aplikace musí být nakonfigurovaný tak, že přidáte všechny jeho závislosti protokolu HTTP nebo databáze jako jednu metodu AddHealthCheck. Například webové aplikace MVC z eShopOnContainers závisí na mnoha službách, proto má několik metod AddCheck přidány do kontroly stavu.
+Každá služba nebo webové aplikace musí být nakonfigurovaný tak, že přidáte všechny její závislosti protokolu HTTP nebo databází jako jednu metodu AddHealthCheck. Například webové aplikace MVC v aplikaci eShopOnContainers závisí na mnoha službách, proto má několik metod AddCheck přidán na kontroly stavu.
 
-Následující kód například uvidíte jak mikroslužbu katalogu přidá závislost na svou databázi systému SQL Server.
+V následujícím kódu, uvidíte jak mikroslužeb katalogu přidá závislost na jeho databáze systému SQL Server.
 
 ```csharp
 // Startup.cs from Catalog.api microservice
@@ -69,7 +69,7 @@ public class Startup
 }
 ```
 
-Webová aplikace MVC z eShopOnContainers však má více závislostí na zbytek mikroslužeb. Proto volá metodu jeden AddUrlCheck pro každý mikroslužbu, jak je znázorněno v následujícím příkladu:
+Webovou aplikaci MVC aplikaci eShopOnContainers má ale více závislostí na zbývajících mikroslužby. Proto volání metod AddUrlCheck u jednotlivých mikroslužeb, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 // Startup.cs from the MVC web app
@@ -90,9 +90,9 @@ public class Startup
 }
 ```
 
-Mikroslužbu proto nebude poskytovat "v pořádku" stav, dokud všechny jeho kontroly jsou také v pořádku.
+Mikroslužby proto neposkytne "v pořádku" stav, dokud všechny jeho kontroly jsou také v pořádku.
 
-Pokud mikroslužbu nemá závislost na službě, nebo na serveru SQL Server, měli byste přidat jenom kontrolu Healthy("Ok"). Následující kód je z mikroslužbu basket.api eShopOnContainers. (Nákupní košík mikroslužbu používá mezipaměť Redis, ale knihovny ještě nezahrnuje poskytovatele Kontrola stavu Redis.)
+Pokud mikroslužbách nemá závislost na službě nebo na serveru SQL Server, měli byste přidat jenom kontrolu Healthy("Ok"). Následující kód se z mikroslužeb basket.api aplikaci eShopOnContainers. (Nákupní košík mikroslužeb používá mezipaměť Redis, ale knihovny zatím nezahrnuje zprostředkovatele Redis stav kontroly.)
 
 ```csharp
 services.AddHealthChecks(checks =>
@@ -102,7 +102,7 @@ services.AddHealthChecks(checks =>
 });
 ```
 
-Pro službu nebo webovou aplikaci vystavit koncový bod kontrolu stavu, je povolit UseHealthChecks (\[*url\_pro\_stavu\_kontroluje*\]) rozšíření Metoda. Tato metoda přejde na WebHostBuilder úrovni v metodě hlavní třídy Program ASP.NET Core služby nebo webové aplikace, hned po UseKestrel, jak je znázorněno v následujícím kódu.
+Služby nebo webové aplikace zveřejněte koncový bod kontroly stavu, je třeba povolit UseHealthChecks (\[*url\_pro\_stavu\_kontroluje*\]) rozšíření Metoda. Tato metoda přejde na WebHostBuilder úrovně v hlavní metodě třídy aplikace ASP.NET Core service nebo webové aplikace, hned po UseKestrel, jak je znázorněno v následujícím kódu.
 
 ```csharp
 namespace Microsoft.eShopOnContainers.WebMVC
@@ -124,67 +124,67 @@ namespace Microsoft.eShopOnContainers.WebMVC
 }
 ```
 
-Probíhá proces takto: každý mikroslužbu zpřístupní HC koncový bod. Vytvoří tohoto koncového bodu se HealthChecks knihovny ASP.NET Core middleware. Po vyvolání tohoto koncového bodu spustí všechny kontroly stavu, které jsou nakonfigurované v metodě AddHealthChecks ve třídě spuštění.
+Tento proces funguje takto: jednotlivých mikroslužeb poskytuje HC koncový bod. Tento koncový bod se vytvořil HealthChecks knihovna middlewarových ASP.NET Core. Při vyvolání tohoto koncového bodu, spustí všechny kontroly stavu, které jsou nakonfigurované v metodě AddHealthChecks ve třídě spuštění.
 
-Metoda UseHealthChecks očekává, že port nebo cestu. Tento port nebo cesta je koncový bod pomocí zkontrolovat stav služby. Mikroslužbu katalogu pro instanci používá HC cestu.
+Metoda UseHealthChecks očekává, že port nebo cestu. Tento port nebo cesta jsou koncový bod, který slouží ke kontrole stavu služby. Například mikroslužeb katalogu používá HC cestu.
 
-### <a name="caching-health-check-responses"></a>Ukládání do mezipaměti odpovědi kontroly stavu
+### <a name="caching-health-check-responses"></a>Ukládání do mezipaměti odpovědi na kontrolu stavu
 
-Vzhledem k tomu, že nechcete způsobit odepření služby (DoS) v službách nebo jednoduše není chcete dopad na výkon služby kontrolou prostředky příliš často, můžete se vrátí do mezipaměti a nakonfigurovat trvání mezipaměti pro každý kontrolu stavu.
+Vzhledem k tomu, že nechcete způsobit odepření služby (DoS) ve vašich službách nebo jednoduše nechcete dopad na výkon služby tak, že zkontrolujete prostředky příliš často, můžete vrátí do mezipaměti a nakonfigurovat doba mezipaměti pro každou kontrolu stavu.
 
-Ve výchozím nastavení Doba uložení do mezipaměti interně nastavena na 5 minut, ale můžete změnit dobu trvání této mezipaměti na každou kontrolou stavu, jako v následujícím kódu:
+Ve výchozím nastavení Doba uložení do mezipaměti interně nastavena na 5 minut, ale můžete změnit této mezipaměti na každé kontrolu stavu, stejně jako v následujícím kódu:
 
 ```csharp
 checks.AddUrlCheck(Configuration["CatalogUrl"],1); // 1 min as cache duration
 ```
 
-### <a name="querying-your-microservices-to-report-about-their-health-status"></a>Dotazování vaší mikroslužeb na zprávu o jejich stav
+### <a name="querying-your-microservices-to-report-about-their-health-status"></a>Dotazování na mikroslužby na zprávu o jejich stavu
 
-Pokud jste nakonfigurovali kontroly stavu podle postupu popsaného tady, jakmile mikroslužbu běží v Docker, můžete přímo zkontrolovat z prohlížeče pokud je v pořádku. (To vyžadovat, že publikujete port kontejneru mimo Docker hostitele, dostanete kontejneru prostřednictvím místního hostitele nebo externí IP hostitelů Docker.) Obrázek 10-7 zobrazuje v prohlížeči a odpovídající reakce žádost.
+Kontroly stavu jste nakonfigurovali podle postupu popsaného tady, jakmile je spuštěna mikroslužby v Dockeru, můžete přímo zkontrolovat z prohlížeče pokud je v pořádku. (To vyžaduje, že publikujete port kontejneru Dockeru hostitele, tak prostřednictvím místního hostitele nebo externí IP adresa hostitele Docker můžete přístup ke kontejneru.) Obrázek 10-7 ukazuje požadavek v prohlížeči a odpovídající odpověď.
 
 ![](./media/image7.png)
 
-**Obrázek 10-7**. Kontroluje stav služby jednoho z prohlížeče
+**Obrázek 10-7**. Kontroluje se stav jedinou službou v prohlížeči
 
-V testu uvidíte, že je v pořádku, mikroslužbu catalog.api (spuštěn na portu 5101) vrací informace o stavu a stav protokolu HTTP 200 ve formátu JSON. Také znamená, že interně službu také zkontrolovat stav jeho závislost databáze systému SQL Server a že kontrola stavu se samo označuje jako v pořádku.
+V testu uvidíte, že je v pořádku, mikroslužbách catalog.api (spuštěné na portu 5101) vrací stav protokolu HTTP 200 a informace o stavu ve formátu JSON. To také znamená, že interně služba zkontrolovány také stav jeho závislost databáze systému SQL Server a, kontrola stavu samotné byl nahlášen jako v pořádku.
 
 ## <a name="using-watchdogs"></a>Pomocí watchdogs
 
-Sledovací zařízení je samostatný služba, která může sledovat stav a zatížení v rámci služeb a stavu sestavy o mikroslužeb dotazováním s knihovnou HealthChecks zavedená dříve. To může pomoct zabránit chybám, které by se na základě zobrazení jedné služby. Watchdogs jsou také vhodné místo pro hostitele kód, který můžete provést nápravné akce pro známé podmínky bez zásahu uživatele.
+Sledovacího zařízení je samostatná služba, která může sledovat stav a zatížení napříč službami a stavu sestavy o mikroslužby pomocí dotazu s knihovnou HealthChecks zavedené dříve. To může pomoci zabránit chybám, které nebudou zjištěny založené na zobrazení jedné služby. Watchdogs je také vhodné místo pro hostování kódu, který může provádět nápravné akce pro známé podmínky bez zásahu uživatele.
 
-Ukázka eShopOnContainers obsahuje webové stránky, která zobrazuje vzorové sestavy kontrolu stavu, jak ukazuje obrázek 10-8. Toto je nejjednodušší sledovací zařízení můžete mít, protože všechny dělá jsou ukazuje stav mikroslužeb a webové aplikace v eShopOnContainers. Sledovací zařízení obvykle také provede akce, když zjistí stavy není v pořádku.
+Ukázkové aplikaci eShopOnContainers obsahuje webovou stránku, která zobrazí ukázkové sestavy stavu zaškrtnutí, jak ukazuje obrázek 10-8. Toto je nejjednodušší sledovacího zařízení může mít, protože celá jeho se zobrazují stav mikroslužbách a webových aplikací v aplikaci eShopOnContainers. Obvykle sledovacího zařízení také provede akce při zjišťuje stavy není v pořádku.
 
 ![](./media/image8.png)
 
-**Obrázek 10-8**. Ukázková sestava kontroly stavu v eShopOnContainers
+**Obrázek 10-8**. Ukázková sestava kontroly stavu v aplikaci eShopOnContainers
 
-V souhrnu poskytuje middleware ASP.NET knihovny ASP.NET Core HealthChecks kontrola koncový bod jednoho stavu pro každý mikroslužby. Tato akce provést kontroly stavu definované v něm a vrátit celkového přehledu o stavu v závislosti na všechny tyto kontroly.
+Stručně řečeno middleware ASP.NET knihovny ASP.NET Core HealthChecks poskytuje koncový bod jednoho stavu zaškrtnutí u jednotlivých mikroslužeb. To spustí všechny kontroly stavu, v něm definovanou a vrátit celkového přehledu o stavu v závislosti na těchto kontrol.
 
-Knihovna HealthChecks je rozšiřitelný prostřednictvím nové kontroly stavu budoucí externích zdrojů. Například Očekáváme, že v budoucnosti knihovny bude mít kontroly stavu pro Redis cache a pro jiné databáze. Knihovny umožňuje stavu hlášení více závislostí služby nebo aplikace, a můžete pak proveďte akce založené na těchto kontroly stavu.
+Knihovna HealthChecks je rozšiřitelný prostřednictvím nové kontroly stavu budoucí externích prostředků. Například Očekáváme, že v budoucnu knihovny bude mít kontroly stavu pro mezipaměť Redis a pro ostatní databáze. Knihovny umožňuje zdraví, vytváření sestav ve více závislostí služby nebo aplikace, a pak můžete provádět akce založené na tyto kontroly stavu.
 
-## <a name="health-checks-when-using-orchestrators"></a>Kontroly stavu při použití orchestrators
+## <a name="health-checks-when-using-orchestrators"></a>Kontroly stavu při použití orchestrátorů
 
-Ke sledování dostupnosti vaší mikroslužeb, orchestrators jako Docker Swarm, Kubernetes a Service Fabric pravidelně provádět kontroly stavu pomocí zasílání požadavků na test mikroslužeb. Když orchestrator zjistí, že služba nebo kontejner není v pořádku, že zastaví směrování požadavků do této instance. Také obvykle vytvoří novou instanci tohoto kontejneru.
+Pokud chcete monitorovat dostupnost mikroslužby, orchestrátorů, jako je Docker Swarm, Kubernetes a Service Fabric pravidelně provádět kontroly stavu pomocí zasílání požadavků na test mikroslužby. Když orchestrátor zjistí, že služby/kontejneru není v pořádku, že zastaví směrování požadavků do této instance. Také obvykle vytvoří novou instanci kontejneru.
 
-Většina orchestrators pro instanci, můžete použít kontroly stavu pro správu nasazení nula. výpadků. Pouze v případě, že bude stav kontejneru služby nebo změny pořádku orchestrator spustit směrování provozu do kontejneru služby nebo instancí.
+Většina orchestrátorů, můžete použít kontroly stavu pro správu nasazení s nulovými výpadky. Pouze v případě, že bude stav kontejneru služby/změny v pořádku orchestrátoru start směrování provozu do služby a container instances.
 
-Sledování stavu je obzvláště důležité, když orchestrator provádí upgrade aplikace. Některé orchestrators (např. Azure Service Fabric) aktualizujte služby v fáze – například může aktualizovat jeden pátý povrchu clusteru pro každý upgradu aplikace. Sada uzlů, která se upgraduje současně se označuje jako *upgradovací doméně*. Po každé upgradované domény byl upgradován a je k dispozici pro uživatele, že upgradovací doméně musí projít kontroly stavu, než nasazení přikročí k další upgradovací doméně.
+Monitorování stavu je obzvláště důležité, když orchestrátor provádí upgrade aplikace. Některé zvolené orchestrátory (jako je Azure Service Fabric) aktualizovat služby ve fázích – například může aktualizovat jeden pátého povrchu clusteru pro každý upgrade aplikace. Sada uzlů, který se upgraduje ve stejnou dobu se označuje jako *upgradovací doména*. Po každé upgradovací doména byl upgradován a je k dispozici pro uživatele, že upgradovací doména musí uplynout kontroly stavu nasazení přejde k další upgradovací doméně.
 
-Další aspekt stav služby je generování sestav metriky ze služby. Toto je jednou z upřesňujících možností stavu modelu některé orchestrators, jako je Service Fabric. Metriky jsou důležité při použití orchestrator, protože se používají k vyrovnávání využití prostředků. Metriky taky může být indikátor stavu systému. Například můžete mít aplikace, která má mnoho mikroslužeb a každá instance sestavy metrika požadavků za sekundu (RPS). Pokud se jedna služba používá více prostředků (paměť, procesor atd.) než jiné službě, orchestrator může pohyb instance služby v clusteru, a pokuste se udržovat i využití prostředků.
+Dalším aspektem služby service health je generování sestav metrik ze služby. Toto je rozšířená možnost modelu stavu některé zvolené orchestrátory, jako je Service Fabric. Metriky jsou důležité při použití orchestrator, protože se používají k vyrovnávání využití prostředků. Metriky taky může být indikátor stavu systému. Například může mít aplikaci, která má mnoho mikroslužeb a každá instance sestav metriky požadavků za sekundu (předávajících stran). Pokud jedna služba používá další prostředky (paměť, procesor, atd.) než jiné službě, orchestrator může pohybovat instance služby v clusteru se pokouší spravovat i využití prostředků.
 
-Všimněte si, že pokud používáte Azure Service Fabric, poskytuje svou vlastní [sledování stavu modelu](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction), což je pokročilejší než kontroly stavu jednoduché.
+Všimněte si, že pokud používáte Azure Service Fabric, poskytuje vlastní [monitorování stavu modelu](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction), což je složitější než kontroly stavu jednoduché.
 
-## <a name="advanced-monitoring-visualization-analysis-and-alerts"></a>Rozšířené monitorování: vizualizace, analýzu a výstrahy
+## <a name="advanced-monitoring-visualization-analysis-and-alerts"></a>Rozšířené monitorování: vizualizace, analýzy a upozornění
 
-Poslední část monitorování je vizualizace proudu událostí, zprávy o výkonu služby a výstrahy, když se zjistí problém. Různá řešení můžete použít pro tento aspekt monitorování.
+Poslední část monitorování je vizualizace datového proudu událostí, vytváření sestav o výkonu služby a upozorní při zjištění problému. Můžete použít různá řešení pro tento aspekt monitorování.
 
-Můžete použít jednoduchý vlastních aplikací zobrazující stavu vašich služeb, jako jsou vlastní stránky jsme vám ukázal, když jsme vysvětlené [ASP.NET Core HealthChecks](https://github.com/aspnet/HealthChecks). Nebo můžete použít pokročilejší nástroje, například Azure Application Insights a Operations Management Suite budou generovány výstrahy založené na události datového proudu.
+Můžete použít jednoduchý vlastní aplikace zobrazuje stav služeb, stejně jako vlastní stránku jsme ukázali, když jsme vysvětlení [ASP.NET Core HealthChecks](https://github.com/aspnet/HealthChecks). Nebo můžete použít rozšířené nástroje, jako je Azure Application Insights a Operations Management Suite budou generovány výstrahy založené na události datového proudu.
 
-Nakonec pokud byly ukládání všech datových proudů událostí, můžete Microsoft Power BI nebo řešení třetí strany, jako je Kibana nebo Splunk můžete znázorňovat data.
+Nakonec pokud byly ukládání všech datových proudů událostí, můžete použít Microsoft Power BI nebo řešení třetí strany, jako je Kibana nebo Splunk k vizualizaci dat.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **ASP.NET Core HealthChecks** (předběžnou verzi) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
+-   **ASP.NET Core HealthChecks** (dřívější verze) [*https://github.com/aspnet/HealthChecks/*](https://github.com/aspnet/HealthChecks/)
 
 -   **Úvod do monitorování stavu Service Fabric**
     [*https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction*](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction)
@@ -196,5 +196,5 @@ Nakonec pokud byly ukládání všech datových proudů událostí, můžete Mic
     [*https://www.microsoft.com/en-us/cloud-platform/operations-management-suite*](https://www.microsoft.com/en-us/cloud-platform/operations-management-suite)
 
 >[!div class="step-by-step"]
-[Předchozí](implement-circuit-breaker-pattern.md)
-[další](../secure-net-microservices-web-applications/index.md)
+>[Předchozí](implement-circuit-breaker-pattern.md)
+>[další](../secure-net-microservices-web-applications/index.md)

@@ -1,46 +1,47 @@
 ---
-title: C# Program strukturu – přehled používání jazyka C#
-description: Další základní stavební bloky programu v C#
+title: C#Program strukturu – připravuje C# jazyka
+description: Přečtěte si základní stavební bloky C# programu
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: dee24077f9f6287780320d979c44aef5230be81e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de10cd000b4028a66ce6dd6f21e39c013e38ecd2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131024"
 ---
 # <a name="program-structure"></a>Struktura programu
 
-Klíčové koncepty organizace v jazyce C# jsou ***programy***, ***obory názvů***, ***typy***, ***členy***, a ***sestavení***. Programy C# obsahovat jeden nebo více zdrojových souborů. Programy deklarovat typy, které obsahují členy a mohou být uspořádány do oborů názvů. Třídy a rozhraní jsou příklady typů. Pole, metody, vlastnosti a události jsou příklady členů. Když jsou kompilované programy C#, jsou fyzicky zabalené do sestavení. Sestavení obvykle mají příponu souboru `.exe` nebo `.dll`, v závislosti na tom, jestli implementace ***aplikace*** nebo ***knihovny***, v uvedeném pořadí.
+Klíčové koncepty organizace v jazyce C# jsou ***programy***, ***obory názvů***, ***typy***, ***členy***, a ***sestavení***. Programy jazyka C# se skládají z jednoho nebo více zdrojových souborů. Programy deklarovat typy, které obsahují členy a mohou být uspořádány do oborů názvů. Třídy a rozhraní jsou příklady typů. Pole, metody, vlastnosti a události jsou příklady členů. Když jsou kompilovány programy jazyka C#, jsou fyzicky zabaleny do sestavení. Sestavení obvykle mít příponu souboru `.exe` nebo `.dll`, v závislosti na tom, jestli je implementovat ***aplikací*** nebo ***knihovny***v uvedeném pořadí.
 
-V příkladu deklaruje třídy s názvem `Stack` v oboru názvů názvem `Acme.Collections`:
+Příklad deklaruje třídu s názvem `Stack` v obor názvů s názvem `Acme.Collections`:
 
 [!code-csharp[Stack](../../../samples/snippets/csharp/tour/program-structure/program.cs#L1-L34)]
 
-Plně kvalifikovaný název této třídy je `Acme.Collections.Stack`. Třída obsahuje několik členů: pole s názvem `top`, dvě metody s názvem `Push` a `Pop`a vnořené třídy s názvem `Entry`. `Entry` Další třída obsahuje tři členy: pole s názvem `next`, pole s názvem `data`a konstruktor. Za předpokladu, že zdrojový kód v příkladu je uložené v souboru `acme.cs`, příkazového řádku
+Plně kvalifikovaný název této třídy je `Acme.Collections.Stack`. Třída obsahuje několik členů: pole s názvem `top`, dvě metody s názvem `Push` a `Pop`a vnořené třídy s názvem `Entry`. `Entry` Další třídy obsahuje tři členy: pole s názvem `next`, pole s názvem `data`a konstruktor. Za předpokladu, že zdrojový kód v příkladu je uložen v souboru `acme.cs`, příkazového řádku
 
 ```
 csc /t:library acme.cs
 ```
 
-zkompiluje v příkladu jako knihovny (code bez `Main` vstupního bodu) a vytvoří sestavení s názvem `acme.dll`.
+zkompiluje v příkladu jako knihovna (bez kódu `Main` vstupního bodu) a vytváří sestavení s názvem `acme.dll`.
 
 > [!IMPORTANT]
-> Příklady výše použití `csc` jako kompilátoru příkazového řádku jazyka C#. Tato kompilátoru je spustitelný soubor windows. Pokud chcete používat C# na jiných platformách, by měl pomocí nástrojů pro .NET Core. Používá ekosystému .NET Core `dotnet` rozhraní příkazového řádku pro správu sestavení příkazového řádku. To zahrnuje správu závislosti a volání do kompilátoru jazyka C#. V tématu [v tomto kurzu](../../core/tutorials/using-with-xplat-cli.md) úplný popis těchto nástrojů na platformách podporovaných aplikací .NET Core.
+> Příklady nad použití `csc` jako příkazového řádku C# kompilátoru. Tento kompilátor je spustitelný soubor Windows. Chcete-li použít C# na jiných platformách, by měly použít nástroje pro .NET Core. Používá ekosystému .NET Core `dotnet` CLI ke správě sestavení příkazového řádku. To zahrnuje správu závislostí a vyvolání C# kompilátoru. Zobrazit [v tomto kurzu](../../core/tutorials/using-with-xplat-cli.md) úplný popis těchto nástrojů na platformách podporovaných aplikací .NET Core.
 
-Sestavení obsahovat spustitelného kódu ve formě pokyny Intermediate Language (IL) a symbolické informace ve formě metadat. Před provedením, kód IL v sestavení automaticky převeden na specifické pro procesor kód kompilátorem JIT (JIT) Common Language Runtime rozhraní .NET.
+Sestavení obsahují spustitelného kódu v podobě pokynů Intermediate Language (IL) a symbolické informace ve formě metadat. Předtím, než se spustí, kód IL v sestavení automaticky převést do kódu specifického pro procesor kompilátorem za běhu (JIT) modulu .NET Common Language Runtime.
 
-Protože sestavení je popisující samy sebe jednotka funkce obsahující kód a metadata, není nutné pro `#include` direktivy a hlavičkových souborů v jazyce C#. Veřejné typy a členy obsažené v určitém sestavení jsou k dispozici v programu v C# jednoduše tak, že odkazování na sestavení při kompilaci programu. Například používá tento program `Acme.Collections.Stack` třídy z `acme.dll` sestavení:
+Protože sestavení je jednotka funkce obsahující kód a metadata popisující samy sebe, není nutné pro `#include` direktivy a soubory hlaviček v jazyce C#. Veřejné typy a členy, které jsou obsažené v konkrétní sestavení jsou k dispozici v programu v jazyce C# jednoduše tak, že odkazující na toto sestavení při kompilaci programu. Například používá tento program `Acme.Collections.Stack` třídy z `acme.dll` sestavení:
 
 [!code-csharp[UsingStack](../../../samples/snippets/csharp/tour/program-structure/Program.cs#L38-L52)]
 
-Pokud je program uložen v souboru `example.cs`, když `example.cs` je kompilovat, sestavení acme.dll můžete odkazovat pomocí /r – možnost kompilátoru:
+Pokud program je uložený v souboru `example.cs`, když `example.cs` je zkompilován, acme.dll sestavení lze odkazovat pomocí /r – možnost kompilátoru:
 
 ```
 csc /r:acme.dll example.cs
 ```
 
-Tím se vytvoří spustitelný soubor sestavení s názvem `example.exe`, které, když se spustí, vytvoří výstup:
+Tím se vytvoří sestavení spustitelného souboru s názvem `example.exe`, který při spuštění vytvoří výstup:
 
 ```
 100
@@ -48,8 +49,8 @@ Tím se vytvoří spustitelný soubor sestavení s názvem `example.exe`, které
 1
 ```
 
-C# umožňuje zdrojový text programu, který má být uložen v několika zdrojové soubory. Při kompilaci více soubory programu v C#, všechny zdrojové soubory jsou zpracovávány společně, a zdrojové soubory můžete volně odkazovat navzájem – koncepčně, je jako kdyby byly všechny zdrojové soubory zřetězen do jednoho velkého souboru před zpracováním. Předat dál deklarace jsou nikdy potřeba v jazyce C#, protože s počtu výjimek je zanedbatelný deklarace pořadí. C# neomezuje zdrojového souboru do deklarace pouze jeden typ veřejné ani nevyžaduje název zdrojového souboru tak, aby odpovídaly typu deklarovaného v souboru zdroje.
+C# umožňuje text zdrojového programu, který bude uložen do několika zdrojových souborů. Když je zkompilován více soubory programu v C#, jsou společně zpracovány všechny zdrojové soubory a zdrojové soubory můžete odkazovat na volně mezi sebou, koncepčně, je, jako kdyby byly všechny zdrojové soubory zřetězeny do jednoho velkého souboru před zpracováním. Dopředné deklarace jsou potřeba nikdy v jazyce C#, protože s několika málo výjimkami je deklarace pořadí je neplatné. C# neomezuje zdrojový soubor k deklarování pouze jeden veřejný typ taky je potřeba, aby název zdrojového souboru tak, aby odpovídaly typu deklarovaného ve zdrojovém souboru.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](types-and-variables.md)
+>[Předchozí](index.md)
+>[další](types-and-variables.md)

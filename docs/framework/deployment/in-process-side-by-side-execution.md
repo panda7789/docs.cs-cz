@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee5f223d5e92d9a60776df6bf2108a4fd14b9e0f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 83b45d5cc8424acab789b9824af887f15036488d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195200"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143841"
 ---
 # <a name="in-process-side-by-side-execution"></a>Vnitroprocesové souběžné provádění
 Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít v procesu – souběžně hostování v jediném procesu spuštění více verzí modulu common language runtime (CLR). Ve výchozím nastavení spravované komponenty modelu COM s verzí rozhraní .NET Framework, kterými byly vytvořeny, bez ohledu na verzi rozhraní .NET Framework, který je načten pro proces spuštění.  
@@ -50,17 +50,17 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
 <a name="scenarios"></a>   
 ## <a name="common-side-by-side-hosting-scenarios"></a>Běžné scénáře hostování vedle sebe  
   
--   **Scénář 1:** nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework.  
+-   **Scénář 1:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework.  
   
      Nainstalovaná verze rozhraní .NET framework: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a všechny ostatní verze rozhraní .NET Framework používá komponenty modelu COM.  
   
-     Co dělat: V tomto scénáři, neprovádějte žádnou akci. Komponenty modelu COM se spustí s verzí rozhraní .NET Framework byla zaregistrována.  
+     Co dělat: V tomto scénáři neprovádějte žádnou akci. Komponenty modelu COM se spustí s verzí rozhraní .NET Framework byla zaregistrována.  
   
--   **Scénář 2**: spravované aplikace vytvořené pomocí [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spouštět [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Pokud není k dispozici verze 2.0.  
+-   **Scénář 2**: Spravované aplikace vytvořené pomocí [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] , který chcete spustit s [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], ale mají snahu si spouštět [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] Pokud není k dispozici verze 2.0.  
   
-     Nainstalovaná verze rozhraní .NET framework: starší verzi rozhraní .NET Framework a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+     Nainstalovaná verze rozhraní .NET framework: Starší verzi rozhraní .NET Framework a [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
-     Co dělat: V [konfiguračního souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace, použijte [ \<spuštění > element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) a [ \<supportedRuntime > Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) nastavte následujícím způsobem:  
+     Co dělat: V [konfiguračního souboru aplikace](../../../docs/framework/configure-apps/index.md) v adresáři aplikace, použijte [ \<spuštění > element](../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) a [ \<supportedRuntime >–element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) nastavte následujícím způsobem:  
   
     ```xml  
     <configuration>  
@@ -71,7 +71,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
     </configuration>  
     ```  
   
--   **Scénář 3:** nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework, kterou chcete spustit s [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+-   **Scénář 3:** Nativní aplikace, který používá COM komponenty sestavené v předchozích verzích rozhraní .NET Framework, kterou chcete spustit s [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
      Nainstalovaná verze rozhraní .NET framework: [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
   
@@ -90,7 +90,7 @@ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můž
   
  Spustit v následujícím příkladu, kompilaci a registraci následující spravované pomocí komponenty modelu COM [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. K registraci komponenty, na **projektu** nabídky, klikněte na tlačítko **vlastnosti**, klikněte na tlačítko **sestavení** kartu a potom vyberte **zaregistrovat pro interoperabilitu COM**zaškrtávací políčko.  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -115,7 +115,7 @@ namespace BasicComObject
   
  Zkompilujte následující nespravovaná aplikace C++, která se aktivuje objekt modelu COM, který je vytvořen z předchozího příkladu.  
   
-```  
+```cpp
 #include "stdafx.h"  
 #include <string>  
 #include <iostream>  

@@ -1,15 +1,16 @@
 ---
-title: Transformace dat
+title: Transformace dat v ML.NET
 description: Prozkoumejte různé datové transformace v ML.NET podporována.
+author: JRAlexander
 ms.date: 10/16/2018
-ms.openlocfilehash: 5df4598de6fcd08689d72c378f51d792860ef49c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c169319937dac13747935e451952bd75d4cc174d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187738"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143945"
 ---
-# <a name="data-transforms"></a>Transformace dat
+# <a name="data-transforms-in-mlnet"></a>Transformace dat v ML.NET
 
 Následující tabulky obsahují informace o všech transformací dat nepodporuje v ML.NET (vyberte typ přejdete do příslušné tabulky transformovat data):
 
@@ -28,7 +29,7 @@ Následující tabulky obsahují informace o všech transformací dat nepodporuj
 > [!NOTE]
 > ML.NET je aktuálně ve verzi Preview. Ne všechny transformace dat se aktuálně nepodporuje. Chcete-li odeslat žádost o určitých transformace, otevřete problém ve službě [dotnet/machinelearning](https://github.com/dotnet/machinelearning/issues) úložiště GitHub.
 
-## <a name="categorical"></a>Zařazené do kategorií
+## <a name="categorical"></a>Kategorické
 
 | Transformace | Definice |
 | --- | --- |
@@ -86,7 +87,7 @@ Následující tabulky obsahují informace o všech transformací dat nepodporuj
 | --- | --- |
 | <xref:Microsoft.ML.Legacy.Transforms.BinNormalizer> | Hodnoty jsou přiřazeny do přihrádek equidensity a hodnota je namapována na jeho bin_number / number_of_bins. |
 | <xref:Microsoft.ML.Legacy.Transforms.ConditionalNormalizer> | Normalizujte sloupce pouze v případě potřeby. |
-| <xref:Microsoft.ML.Legacy.Transforms.GlobalContrastNormalizer> | Provede normalizaci globální kontrast vstupních hodnot: Y = (s * X - min) / D, kde je měřítku, s M je průměr a D je L2 norm nebo směrodatnou odchylku. | 
+| <xref:Microsoft.ML.Legacy.Transforms.GlobalContrastNormalizer> | Provede normalizaci globální kontrast vstupní hodnoty: Y = (s * X - min) / D, kde je měřítku, s M je průměr a D je L2 norm nebo směrodatnou odchylku. | 
 | <xref:Microsoft.ML.Legacy.Transforms.LogMeanVarianceNormalizer> | Normalizuje dat na základě průměr vypočítaný a odchylky logaritmus data. |
 | <xref:Microsoft.ML.Legacy.Transforms.LpNormalizer> | Normalizujte vektory (řádky) jednotlivě podle jejich změny měřítka do jednotky norm (L2, L1 nebo LInf). Provádí následující operace na vektor X: Y = (X - min) / D, kde M je průměr a D je L2 norm, L1 norm nebo LInf norm. |
 | <xref:Microsoft.ML.Legacy.Transforms.MeanVarianceNormalizer> | Normalizuje dat na základě průměr vypočítaný a odchylky data. |

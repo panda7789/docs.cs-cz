@@ -1,6 +1,6 @@
 ---
 title: Složené formátování
-ms.date: 03/30/2017
+ms.date: 10/26/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -15,31 +15,34 @@ helpviewer_keywords:
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 17ec17d3b90dc7248d1497be1f7d31a324ad10b2
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 60ccf478e974e24b437aa75bc9452033bd19a00f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397930"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126858"
 ---
 # <a name="composite-formatting"></a>Složené formátování
+
 Funkce složeného formátování .NET přebírá seznam objektů a složený řetězec formátu jako vstup. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
   
- Funkce složeného formátování je podporována například následujícími metodami:  
+> [!IMPORTANT]
+> Namísto použití složených formátovacích řetězců, můžete použít *interpolovaných řetězců* Pokud jazyk a jazykovou verzi, kterou používáte je podporují. Interpolovaný řetězec je řetězec, který obsahuje *interpolovaných výrazů*. Každý interpolovaný výraz je přeložit výraz hodnotu a zahrnuté ve výsledném řetězci, když se přiřadí řetězec. Další informace najdete v tématu [interpolace řetězců (C# odkaz)](../../csharp/language-reference/tokens/interpolated.md) a [interpolovaných řetězců (referenční dokumentace jazyka Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+
+Funkce složeného formátování je podporována například následujícími metodami:  
   
--   <xref:System.String.Format%2A?displayProperty=nameWithType>, která vrací formátovaný výsledný řetězec.  
+- <xref:System.String.Format%2A?displayProperty=nameWithType>, která vrací formátovaný výsledný řetězec.  
   
--   <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, která připojí formátovaný výsledný řetězec k <xref:System.Text.StringBuilder> objektu.  
+- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, která připojí formátovaný výsledný řetězec k <xref:System.Text.StringBuilder> objektu.   
+- Některá přetížení <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu, která zobrazí formátovaný výsledný řetězec do konzoly.  
   
--   Některá přetížení <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu, která zobrazí formátovaný výsledný řetězec do konzoly.  
+- Některá přetížení <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> metoda, která zapisují formátovaný výsledný řetězec do datového proudu nebo souboru. Třídy odvozené z <xref:System.IO.TextWriter>, jako například <xref:System.IO.StreamWriter> a <xref:System.Web.UI.HtmlTextWriter>, mají také tuto funkci.  
   
--   Některá přetížení <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType> metoda, která zapisují formátovaný výsledný řetězec do datového proudu nebo souboru. Třídy odvozené z <xref:System.IO.TextWriter>, jako například <xref:System.IO.StreamWriter> a <xref:System.Web.UI.HtmlTextWriter>, mají také tuto funkci.  
+- <xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, která vytvoří výstup formátovaných zpráv pro posluchače trasování.  
   
--   <xref:System.Diagnostics.Debug.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, která vytvoří výstup formátovaných zpráv pro posluchače trasování.  
+- <xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, A <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody, které výstup formátovaných zpráv pro posluchače trasování.  
   
--   <xref:System.Diagnostics.Trace.TraceError%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, A <xref:System.Diagnostics.Trace.TraceWarning%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody, které výstup formátovaných zpráv pro posluchače trasování.  
-  
--   <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> Metodu, která zapíše informační metodu pro posluchače trasování.  
+- <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> Metodu, která zapíše informační metodu pro posluchače trasování.  
   
 ## <a name="composite-format-string"></a>Složený řetězec formátu  
  Složený řetězec formátu a seznam objektů se používají jako argumenty metod, které podporují funkci složeného formátování. Složený řetězec formátu se skládá z žádného výskytu nebo několika výskytů pevného textu smíšeného s jednou nebo několika položkami formátu. Pevný text je jakýkoli řetězec, který si zvolíte, a jednotlivé položky formátu odpovídají objektu nebo ohraničené struktuře v seznamu. Funkce složeného formátování vrátí nový výsledný řetězec, kde každá položka formátu je nahrazena řetězcovou reprezentací odpovídajícího objektu v seznamu.  
@@ -64,7 +67,7 @@ Funkce složeného formátování .NET přebírá seznam objektů a složený ř
  [!code-csharp[Formatting.Composite#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#7)]
  [!code-vb[Formatting.Composite#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#7)]  
   
- Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Například lze formátovat stejnou číselnou hodnotu v šestnáctkovém, vědeckém a číselném formátu určením složeného řetězce formátu: "0 x{0:X} {0:E} {0:N}", jak ukazuje následující příklad.  
+ Více položek formátu může odkazovat na stejný prvek v seznamu objektů zadáním stejného specifikátoru parametru. Například můžete formátovat stejnou číselnou hodnotu v šestnáctkovém, vědeckém a číselném formátu určením složeného řetězce formátu: "0 x{0:X} {0:E} {0:N}", jak ukazuje následující příklad.  
   
  [!code-csharp[Formatting.Composite#10](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.Composite/cs/index1.cs#10)]
  [!code-vb[Formatting.Composite#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/index1.vb#10)]  

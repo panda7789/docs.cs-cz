@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytvoření vlastní šablony aktivity'
+title: 'Postupy: Vytvoření vlastní šablony aktivity'
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
 ms.openlocfilehash: 87acf0d084154c9c3e5cbc97da4af9821709f0a5
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50044837"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53131440"
 ---
-# <a name="how-to-create-a-custom-activity-template"></a>Postupy: vytvoření vlastní šablony aktivity
+# <a name="how-to-create-a-custom-activity-template"></a>Postupy: Vytvoření vlastní šablony aktivity
 
 Vlastní aktivita šablony slouží k přizpůsobení konfigurace aktivit, včetně vlastních složených aktivit, tak, aby uživatelé nebudou mít k vytvoření každé aktivity jednotlivě a nakonfigurovat jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony může být k dispozici v **nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo v návrháři se změněným hostováním, ze kterého uživatelé můžete přetáhnout na předem návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dodává se sadou dobrým příkladem takové šablony: [návrhář šablony SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [návrhář šablony ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v [návrháři aktivit zasílání zpráv](/visualstudio/workflow-designer/messaging-activity-designers) kategorie.
 

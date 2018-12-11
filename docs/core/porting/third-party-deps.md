@@ -1,27 +1,27 @@
 ---
-title: Portování do .NET Core – analýza závislostí třetích stran
-description: Zjistěte, jak analýza závislostí třetích stran k portu projektu z rozhraní .NET Framework do .NET Core.
+title: Analýza závislosti port kódu až po .NET Core
+description: Zjistěte, jak analyzovat externích závislostí k portu projektu z rozhraní .NET Framework do .NET Core.
 author: cartermp
-ms.author: mairaw
-ms.date: 02/15/2018
-ms.openlocfilehash: 06d8d36d8369680c54af4d16513b2b871b57079c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: dce8e6cd4986b15cf926154b378964db4beef398
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46000996"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170314"
 ---
-# <a name="analyze-your-third-party-dependencies"></a>Analýza závislostí třetích stran
+# <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analýza závislostí do portu kódu až po .NET Core
 
-Pokud hledáte přeneste kód do .NET Core nebo .NET Standard, je prvním krokem v procesu přenosem pochopit závislostí třetích stran. Závislostí třetích stran jsou buď [balíčky NuGet](#analyze-referenced-nuget-packages-on-your-project) nebo [knihovny DLL](#analyze-dependencies-that-arent-nuget-packages) se odkazuje v projektu. Vyhodnotit každý závislosti a vytvořte plán řešení nepředvídaných událostí pro závislosti, které nejsou kompatibilní s .NET Core. V tomto článku se dozvíte, jak určit, zda závislost je kompatibilní s .NET Core.
+K portu kódu .NET Core nebo .NET Standard, je třeba porozumět závislostí. Externí závislosti jsou [balíčky NuGet](#analyze-referenced-nuget-packages-on-your-project) nebo [knihovny DLL](#analyze-dependencies-that-arent-nuget-packages) odkazovat ve vašem projektu, ale není sestavení. Vyhodnotit každý závislosti a vytvořte plán řešení nepředvídaných událostí pro ty, které nejsou kompatibilní s .NET Core. Tady je postup, chcete-li zjistit, zda závislost je kompatibilní s .NET Core.
 
-## <a name="analyze-referenced-nuget-packages-in-your-project"></a>Analýza odkazované balíčky NuGet ve vašem projektu
+## <a name="analyze-referenced-nuget-packages-in-your-projects"></a>Analýza odkazované balíčky NuGet ve vašich projektech
 
-Pokud už odkazuje na balíčky NuGet ve vašem projektu, musíte ověřit, pokud jsou kompatibilní s .NET Core.
+Pokud odkazujete na balíčky NuGet ve vašem projektu, musíte ověřit, pokud jsou kompatibilní s .NET Core.
 Existují dva způsoby, jak to udělat:
 
-* [Pomocí Průzkumníku balíčků NuGet aplikace](#analyze-nuget-packages-using-nuget-package-explorer) (nejspolehlivější způsob).
-* [Použití webu nuget.org](#analyze-nuget-packages-using-nugetorg).
+* [Pomocí balíčku NuGet aplikaci Průzkumník balení](#analyze-nuget-packages-using-nuget-package-explorer)
+* [Použití webu nuget.org](#analyze-nuget-packages-using-nugetorg)
 
 Po analýze balíčků, pokud nejsou kompatibilní s .NET Core a pouze cílové rozhraní .NET Framework, můžete zkontrolovat Pokud [režim kompatibility rozhraní .NET Framework](#net-framework-compatibility-mode) pomáhá s přenosem procesem.
 
@@ -52,6 +52,7 @@ netcoreapp1.0
 netcoreapp1.1
 netcoreapp2.0
 netcoreapp2.1
+netcoreapp2.2
 portable-net45-win8
 portable-win8-wpa8
 portable-net451-win81
@@ -63,24 +64,6 @@ Tyto hodnoty jsou [Monikery cílového rozhraní (Tfm)](../../standard/framework
 > [!IMPORTANT]
 > Při prohlížení Tfm, které podporuje balíčku, Všimněte si, že `netcoreapp*`, zatímco kompatibilní, je pro projekty .NET Core pouze a ne pro projekty .NET Standard.
 > Knihovnu, která se zaměřuje pouze `netcoreapp*` a ne `netstandard*` může používat jenom jiné aplikace .NET Core.
-
-Existují také některé starší verze Tfm používaných pro předběžné verze sady .NET Core, který může být také kompatibilní:
-
-```
-dnxcore50
-dotnet5.0
-dotnet5.1
-dotnet5.2
-dotnet5.3
-dotnet5.4
-dotnet5.5
-```
-
-Zatímco tyto Tfm pravděpodobně fungovat s vaším kódem, není nijak zaručena kompatibilita. Balíčky s těmito Tfm byly vytvořeny s balíčky v předběžné verzi .NET Core. Poznamenejte si při (nebo pokud) balíčků s využitím těchto Tfm se aktualizují na základě .NET Standard.
-
-> [!NOTE]
-> Chcete-li používat balíčky cílí na tradiční PCL nebo cíl předběžnou verzi .NET Core, musíte použít `PackageTargetFallback` MSBuild element v souboru projektu.
-> Další informace o tomto prvku MSBuild naleznete v tématu [ `PackageTargetFallback` ](../tools/csproj.md#packagetargetfallback).
 
 ### <a name="analyze-nuget-packages-using-nugetorg"></a>Analýza balíčků NuGet pomocí nuget.org
 
@@ -109,6 +92,12 @@ Chcete-li potlačit upozornění úpravou souboru projektu, vyhledejte `PackageR
 ```
 
 Další informace o tom, jak potlačení upozornění kompilátoru v sadě Visual Studio najdete v tématu [potlačení upozornění pro balíčky NuGet](/visualstudio/ide/how-to-suppress-compiler-warnings#suppressing-warnings-for-nuget-packages).
+
+### <a name="port-your-packages-to-packagereference"></a>Přenést své balíčky do `PackageReference`
+
+.NET core používá [PackageReference](/nuget/consume-packages/package-references-in-project-files) postup určení závislostí balíčku. Pokud používáte [souboru packages.config](/nuget/reference/packages-config) k určení balíčků, budete muset převést přes `PackageReference`.
+
+Další informace na [migrace ze souboru packages.config na PackageReference](/nuget/reference/migrate-packages-config-to-package-reference).
 
 ### <a name="what-to-do-when-your-nuget-package-dependency-doesnt-run-on-net-core"></a>Co dělat, když vaše závislost balíčku NuGet není spuštěna v rozhraní .NET Core
 

@@ -1,40 +1,40 @@
 ---
-title: Pokyny pro návrh komponentu F#
+title: F#Pokyny k návrhu komponenty
 description: Přečtěte si pokyny pro zápis F# součásti určené pro využití dalších volajícími.
 ms.date: 05/14/2018
-ms.openlocfilehash: 446cba0f810af9517b655ef5741ddf7a919676d5
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: bc8d4908912c4630f649ba30593d43a557278efa
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43488284"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145670"
 ---
-# <a name="f-component-design-guidelines"></a>Pokyny pro návrh komponentu F#
+# <a name="f-component-design-guidelines"></a>F#Pokyny k návrhu komponenty
 
-Tento dokument je sada součástí pokyny návrhu pro F# programování, v závislosti na F# komponenty pokyny návrhu, v14, Microsoft Research a [jinou verzi](https://fsharp.org/specs/component-design-guidelines/) původně připravili a udržuje F# Software Foundation.
+Tento dokument je sada součástí pokyny návrhu pro F# programování, na základě F# pokyny k návrhu komponenty, v14 Microsoft Research a [jinou verzi](https://fsharp.org/specs/component-design-guidelines/) původně připravili a udržuje F# Software Foundation.
 
-Tento dokument předpokládá, že máte zkušenosti s programování v jazyce F#. Mnoho díky komunita F# pro své příspěvky a užitečné zpětné vazby na různé verze tohoto průvodce.
+Tento dokument předpokládá, že máte zkušenosti s F# programování. Mnoho k F# komunity pro své příspěvky a užitečné zpětné vazby na různé verze tohoto průvodce.
 
 ## <a name="overview"></a>Přehled
 
-Tento dokument vypadá na některé z problémů souvisejících s F# součást návrhu a kódování. Komponenta může znamenat některý z následujících akcí:
+Tento dokument vypadá na některé z problémů souvisejících s F# komponenta, návrh a psaní kódu. Komponenta může znamenat některý z následujících akcí:
 
-* Vrstvy ve vašem projektu F#, která má externí uživatele v rámci tohoto projektu.
-* Knihovna určena pro použití kódem F# přes hranice sestavení.
+* Vrstvy v vaše F# projekt, který obsahuje externí uživatele v rámci tohoto projektu.
+* Knihovna určené ke spotřebě F# kódu přes hranice sestavení.
 * Knihovna určena pro použití v jakémkoliv jazyce .NET přes hranice sestavení.
 * Knihovny určené k distribuci přes úložiště balíčků, jako například [NuGet](https://nuget.org).
 
-Použijte techniky popsané v tomto článku [pět zásady dobré kódu jazyka F#](index.md#five-principles-of-good-f-code)a proto využívají obě funkční a objekt programování podle potřeby.
+Použijte techniky popsané v tomto článku [pět zásadami dobrého F# kód](index.md#five-principles-of-good-f-code)a proto využívají obě funkční a objekt programování podle potřeby.
 
 Bez ohledu na to metodologie komponenty a knihovny návrháře čelí celou řadu praktických a prosaic problémů při pokusu o vytvoření rozhraní API, které je snadno použitelný pro vývojáře. Odepření aplikací [pokyny k návrhu knihovny .NET](../../standard/design-guidelines/index.md) bude řídit vytváření konzistentní sadu rozhraní API, která jsou příjemný využívat.
 
 ## <a name="general-guidelines"></a>Obecné pokyny
 
-Existuje několik univerzální pokyny, které platí pro knihovny jazyka F#, bez ohledu na jeho zamýšlenou cílovou skupinou pro knihovnu.
+Existuje několik univerzální pokyny, které se vztahují F# knihoven, bez ohledu na jeho zamýšlenou cílovou skupinou pro knihovnu.
 
 ### <a name="learn-the-net-library-design-guidelines"></a>Přečtěte si pokyny pro návrh knihovna .NET
 
-Bez ohledu na druh F# kódování, že provádíte, je užitečné mít praktické znalosti [pokyny k návrhu knihovny .NET](../../standard/design-guidelines/index.md). Většina jiných F# programátory na platformě .NET bude se seznamte s těmito pokyny a očekávají kód .NET a odpovídat na ně.
+Bez ohledu na typ z F# kódování provádíte, je důležité mít praktické znalosti [pokyny k návrhu knihovny .NET](../../standard/design-guidelines/index.md). Většina jiných F# a programátory na platformě .NET se seznamte s těmito pokyny a očekávají kód .NET a odpovídat na ně.
 
 Pokyny pro návrh knihovny .NET poskytují obecné pokyny týkající se názvů, navrhování tříd a rozhraní, návrhu člena (vlastnosti, metody, události atd.) a další a jsou užitečné první bod odkazu pro širokou škálu pokyny k návrhu.
 
@@ -54,27 +54,27 @@ Můžete použít buď krátký tvar XML komentáře (`/// comment`), nebo stand
 
 ### <a name="consider-using-explicit-signature-files-fsi-for-stable-library-and-component-apis"></a>Zvažte použití explicitního podpis souborů (.fsi) pro stabilní knihovny a komponenty rozhraní API
 
-Použití explicitního podpisy souborů v knihovně F# obsahuje stručné shrnutí veřejné rozhraní API, které obě pomáhá zajistit, že budete vědět úplné veřejné ploše knihovny, jakož i nabízí čisté oddělení mezi veřejné dokumentaci a interní Podrobnosti implementace. Všimněte si, že podpis souborů přidat případná problémová místa na měnící se veřejné rozhraní API, tak, že vyžaduje změny v implementaci a podpis souborů. V důsledku toho podpis souborů by měl obvykle jenom zavést při rozhraní API má stát ztuhly a již má výrazně změnit.
+Použití souborů explicitní podpisy v F# knihovna nabízí stručné shrnutí veřejné rozhraní API, které obě pomáhá zajistit, že znáte úplné veřejné povrchu vaše knihovna také poskytuje čisté oddělení mezi veřejné dokumentaci a interní Podrobnosti implementace. Všimněte si, že podpis souborů přidat případná problémová místa na měnící se veřejné rozhraní API, tak, že vyžaduje změny v implementaci a podpis souborů. V důsledku toho podpis souborů by měl obvykle jenom zavést při rozhraní API má stát ztuhly a již má výrazně změnit.
 
 ### <a name="always-follow-best-practices-for-using-strings-in-net"></a>Vždy postupujte podle osvědčené postupy pro používání řetězců v .NET
 
 Postupujte podle [osvědčené postupy pro používání řetězců v .NET](../../standard/base-types/best-practices-strings.md) pokyny. Konkrétně se vždy explicitně uvést *kulturní záměr* převod a porovnání řetězců (v případě potřeby).
 
-## <a name="guidelines-for-f-facing-libraries"></a>Pokyny pro F# – směřující knihovny
+## <a name="guidelines-for-f-facing-libraries"></a>Pokyny pro F#-směřující knihovny
 
-Tato část nabízí doporučení pro vývoj veřejné F# – směřující knihoven; To znamená, knihovny vystavení veřejných rozhraní API, které jsou určené pro vývojáře v F#. Existuje široká škála návrh knihovny doporučení platí konkrétně pro F#. Chybí konkrétní doporučení, které následují jsou pokyny pro návrh knihovny .NET pokyny pro použití náhradní lokality.
+Tato část nabízí doporučení pro vývoj veřejné F#-směřující knihoven; To znamená, knihovny vystavení veřejné rozhraní API, která mají být využívány službou F# vývojáři. Existuje široká škála návrh knihovny doporučení platí konkrétně pro F#. Chybí konkrétní doporučení, které následují jsou pokyny pro návrh knihovny .NET pokyny pro použití náhradní lokality.
 
 ### <a name="naming-conventions"></a>Zásady vytváření názvů
 
 #### <a name="use-net-naming-and-capitalization-conventions"></a>Použití .NET konvence pojmenování a malá a velká písmena
 
-V následující tabulce dodržovat konvence pojmenování a malá a velká písmena .NET. Existují malé doplňky také obsahovat konstrukce jazyka F#.
+V následující tabulce dodržovat konvence pojmenování a malá a velká písmena .NET. Existují malé doplňky také F# vytvoří.
 
 | Konstrukce | případ | Část | Příklady | Poznámky |
 |-----------|------|------|----------|-------|
-| Konkrétní typy | PascalCase | Podstatné jméno / tvary přídavných jmen | Seznam, Double, komplexní | Konkrétní typy jsou struktury, třídy, výčty, delegáti, záznamů a sjednocení. I když jsou tradičně malá písmena v OCaml názvy typů, F# přijala schéma pojmenování .NET pro typy.
+| Konkrétní typy | PascalCase | Podstatné jméno / tvary přídavných jmen | Seznam, Double, komplexní | Konkrétní typy jsou struktury, třídy, výčty, delegáti, záznamů a sjednocení. I když jsou tradičně malá písmena v OCaml, názvy typů F# přijala schéma pojmenování .NET pro typy.
 | knihovny DLL           | PascalCase |                 | Fabrikam.Core.dll |  |
-| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například "" Zadejte týmů = TAlpha | TBeta | TDelta. ". |
+| Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například "Zadejte týmů = TAlpha | TBeta | TDelta. " |
 | Událost          | PascalCase | Příkaz | ValueChanged / ValueChanging |  |
 | Výjimky     | PascalCase |      | O výjimku WebException | Název by měl končit "Výjimek". |
 | Pole          | PascalCase | Podstatné jméno | CurrentName  | |
@@ -88,7 +88,7 @@ V následující tabulce dodržovat konvence pojmenování a malá a velká pís
 
 #### <a name="avoid-abbreviations"></a>Vyhněte se zkratky
 
-Pokyny .NET bránit použití zkratky (například "použít `OnButtonClick` spíše než `OnBtnClick`"). Běžné zkratky, jako například `Async` pro "Asynchronní", jsou tolerovat. Toto pravidlo je někdy ignorován pro funkční programování. například `List.iter` používá zkratkou pro "iterovat". Z tohoto důvodu pomocí zkratky obvykle tolerovat do značné míry v jazyce F#-na-programování v F#, ale mělo by se vyhnout stále obecně veřejné součásti návrhu.
+Pokyny .NET bránit použití zkratky (například "použít `OnButtonClick` spíše než `OnBtnClick`"). Běžné zkratky, jako například `Async` pro "Asynchronní", jsou tolerovat. Toto pravidlo je někdy ignorován pro funkční programování. například `List.iter` používá zkratkou pro "iterovat". Z tohoto důvodu pomocí zkratky obvykle tolerovat do značné míry v F#- na -F# programování, ale mělo by se vyhnout stále obecně veřejné součásti návrhu.
 
 #### <a name="avoid-casing-name-collisions"></a>Vyhněte se malá a velká písmena kolize názvů
 
@@ -100,9 +100,9 @@ Zkratky, jako je například XML nejsou zkratky a běžně používané knihovny
 
 #### <a name="use-pascalcase-for-generic-parameter-names"></a>Použít pro obecný parametr názvy PascalCase
 
-Pro obecný parametr názvy ve veřejných rozhraní API, včetně jazyka F# pomocí PascalCase-směřující knihovny. Zejména použijte názvy jako `T`, `U`, `T1`, `T2` pro libovolný obecných parametrů a konkrétní názvy dávat smysl, pak jazyka F# – různé knihovny používají názvy jako `Key`, `Value`, `Arg`(ale ne třeba `TKey`).
+Pomocí PascalCase pro obecný parametr názvy ve veřejných rozhraní API, včetně F#-směřující knihovny. Zejména použijte názvy jako `T`, `U`, `T1`, `T2` pro libovolný obecných parametrů a konkrétní názvy dávat smysl, pak F#– různé knihovny používají názvy jako `Key`, `Value`, `Arg` (ale ne třeba `TKey`).
 
-#### <a name="use-either-pascalcase-or-camelcase-for-public-functions-and-values-in-f-modules"></a>Pro veřejné funkce a hodnoty v F# moduly pomocí PascalCase nebo camelCase
+#### <a name="use-either-pascalcase-or-camelcase-for-public-functions-and-values-in-f-modules"></a>Pomocí PascalCase nebo camelCase pro veřejné funkce a hodnoty v F# moduly
 
 camelCase se používá pro veřejné funkce, které jsou určeny pro použití nekvalifikované (například `invalidArg`) a pro "funkce standardní kolekce" (například List.map). V obou těchto případech se názvy funkcí fungují podobně jako klíčová slova v jazyce.
 
@@ -110,7 +110,7 @@ camelCase se používá pro veřejné funkce, které jsou určeny pro použití 
 
 #### <a name="use-namespaces-or-modules-to-contain-your-types-and-modules"></a>Použití oboru názvů nebo moduly tak, aby obsahovala modulů a typů
 
-Každý soubor F# součásti by měl začínat deklarace oboru názvů nebo modulu deklarace.
+Každý F# soubor v komponentě by měl začínat deklarace oboru názvů nebo modulu deklarace.
 
 ```fsharp
 namespace Fabrikam.BasicOperationsAndTypes
@@ -143,11 +143,11 @@ module CommonOperations =
 Rozdíly mezi použitím modulů a oborů názvů k uspořádání kódu na nejvyšší úrovni jsou následující:
 
 * Obory názvů může zahrnovat více souborů
-* Obory názvů nemůžou obsahovat funkcí F#, které nejsou v rámci vnitřní modul
+* Obory názvů nemůžou obsahovat F# funkce, které nejsou v rámci vnitřní modul
 * Kód pro libovolný daný modul musí být obsažena v rámci jednoho souboru
-* Moduly nejvyšší úrovně může obsahovat funkce F# bez nutnosti pro vnitřní modul
+* Moduly nejvyšší úrovně může obsahovat F# funkce bez nutnosti pro vnitřní modul
 
-Volba mezi nejvyšší úrovně oboru názvů nebo modulu ovlivňuje kompilovaný formy kód a proto bude mít vliv na zobrazení z jiných jazyků .NET by vaše rozhraní API nakonec využívat mimo kódu jazyka F#.
+Volba mezi nejvyšší úrovně oboru názvů nebo modulu ovlivňuje kompilovaný formy kód a proto bude mít vliv na zobrazení z jiných jazyků .NET by vaše rozhraní API nakonec využívat mimo F# kódu.
 
 #### <a name="use-methods-and-properties-for-operations-intrinsic-to-object-types"></a>Použijte metody a vlastnosti pro operace, které jsou přirozené pro typy objektů
 
@@ -173,7 +173,7 @@ Hromadné funkce pro daný člen nemusí nutně je implementovat do tohoto člen
 
 #### <a name="use-classes-to-encapsulate-mutable-state"></a>Použití tříd k zapouzdření proměnlivý stav
 
-V jazyce F# to jenom je potřeba udělat kde, stav se už zapouzdřená pomocí konstrukce jazyka, jako je například uzávěru, výrazu pořadí nebo asynchronní výpočet.
+V F#, to jenom je potřeba udělat kde, stav se už zapouzdřená pomocí konstrukce jazyka, jako je například uzávěru, výrazu pořadí nebo asynchronní výpočet.
 
 ```fsharp
 type Counter() =
@@ -256,11 +256,11 @@ let v = Vector(5.0)
 let u = v * 10.0
 ```
 
-Tyto doprovodné materiály odpovídá obecné pokyny .NET pro tyto typy. Však může být také důležité v F# psaní kódu, jako to umožňuje těchto typů, který se má použít ve spojení s funkcí F# a metody s omezeními členů, jako je například List.sumBy.
+Tyto doprovodné materiály odpovídá obecné pokyny .NET pro tyto typy. Však může být také důležité v F# psaní kódu, jako to umožňuje těchto typů, který se má použít ve spojení s F# funkcí a metod s omezeními členů, jako je například List.sumBy.
 
 #### <a name="consider-using-compiledname-to-provide-a-net-friendly-name-for-other-net-language-consumers"></a>Zvažte použití compiledname – pro zajištění. NET – popisný název pro ostatní uživatelé jazyka .NET
 
-Někdy můžete chtít název ve stylu jeden F# uživatelům (třeba statický člen malými písmeny, tak že se objeví jako by šlo modulu vázané funkce), ale mají jiný styl pro název při kompilaci do sestavení. Můžete použít `[<CompiledName>]` atribut stanovit bez kódu jazyka F# využívání sestavení jiný styl.
+Někdy můžete chtít název ve stylu jeden pro F# příjemci (třeba statický člen malými písmeny, tak že se objeví jako by šlo modulu vázané funkce), ale mají jiný styl pro název při kompilaci do sestavení. Můžete použít `[<CompiledName>]` atribut zadejte jiný styl pro jiné F# využívání sestavení kódu.
 
 ```fsharp
 type Vector(x:float, y:float) =
@@ -274,7 +274,7 @@ type Vector(x:float, y:float) =
 let v = Vector.create 5.0 3.0
 ```
 
-S použitím `[<CompiledName>]`, můžete použít zásady vytváření názvů .NET pro zákazníky bez F# sestavení.
+S použitím `[<CompiledName>]`, můžete použít zásady vytváření názvů .NET pro jiné F# příjemci sestavení.
 
 #### <a name="use-method-overloading-for-member-functions-if-doing-so-provides-a-simpler-api"></a>Použijte přetížení metody pro členské funkce, pokud to poskytuje rozhraní API jednodušší
 
@@ -289,7 +289,7 @@ type Logger() =
         ...
 ```
 
-V jazyce F# je běžné přetížení na počet argumentů, spíše než typy argumentů.
+V F#, je běžné přetížení na počet argumentů, spíše než typy argumentů.
 
 #### <a name="hide-the-representations-of-record-and-union-types-if-the-design-of-these-types-is-likely-to-evolve"></a>Skrýt reprezentace záznam a typy sjednocení, pokud návrh z těchto typů je pravděpodobně rozvoj
 
@@ -297,7 +297,7 @@ Zamezení odhalení konkrétní reprezentace objektů. Například konkrétní r
 
 #### <a name="avoid-the-use-of-implementation-inheritance-for-extensibility"></a>Vyhněte se použití implementace dědičnosti pro rozšíření
 
-V jazyce F# je používána zřídka implementace dědičnosti. Hierarchie dědičnosti jsou navíc často složité a těžko změnit příchod nové požadavky. Implementace dědičnosti stále existuje v jazyce F# pro kompatibilitu a výjimečných případech, kdy je nejlepší řešení problému, ale alternativní postupy se má hledat ve svých programech F# při návrhu pro polymorfismus, jako je například implementace rozhraní.
+V F#, implementace dědičnosti je zřídka se používá. Hierarchie dědičnosti jsou navíc často složité a těžko změnit příchod nové požadavky. Implementace dědičnosti se stále nachází v F# pro kompatibilitu a výjimečných případech, kdy je nejlepší řešení problému, ale alternativní postupy, které se má hledat v vaše F# programy při návrhu pro polymorfismus, jako je například rozhraní implementace.
 
 ### <a name="function-and-member-signatures"></a>Funkce a člen podpisy
 
@@ -311,9 +311,9 @@ val divrem : BigInteger -> BigInteger -> BigInteger * BigInteger
 
 Návratové typy obsahující mnoho komponent, nebo pokud komponenty se vztahují k jedné entity identifikovatelné, zvažte použití pojmenovaného typu namísto řazené kolekce členů.
 
-#### <a name="use-asynct-for-async-programming-at-f-api-boundaries"></a>Použití `Async<T>` pro asynchronní programování v F# API hranice
+#### <a name="use-asynct-for-async-programming-at-f-api-boundaries"></a>Použití `Async<T>` pro asynchronní programování v F# hranice rozhraní API
 
-Pokud je odpovídající synchronní operace s názvem `Operation` , která vrací `T`, pak by měl být pojmenován asynchronní operace `AsyncOperation` vrátí-li `Async<T>` nebo `OperationAsync` vrátí-li `Task<T>`. Pro běžně používané typy .NET, která zpřístupňují metody Begin/End, zvažte použití `Async.FromBeginEnd` zápis rozšiřující metody jako adaptační vrstva F# asynchronní programovací model poskytovat těmto rozhraním API .NET.
+Pokud je odpovídající synchronní operace s názvem `Operation` , která vrací `T`, pak by měl být pojmenován asynchronní operace `AsyncOperation` vrátí-li `Async<T>` nebo `OperationAsync` vrátí-li `Task<T>`. Pro běžně používané typy .NET, která zpřístupňují metody Begin/End, zvažte použití `Async.FromBeginEnd` zápis rozšiřující metody jako adaptační vrstva poskytnout F# asynchronní programovací model pro tato rozhraní API pro .NET.
 
 ```fsharp
 type SomeType =
@@ -333,9 +333,9 @@ Zobrazit [Správa chyb](conventions.md#error-management) Další informace o ř�
 
 ### <a name="extension-members"></a>Členy rozšíření
 
-#### <a name="carefully-apply-f-extension-members-in-f-to-f-components"></a>Pečlivě použít rozšíření členů F# v jazyce F#-na-F# komponenty
+#### <a name="carefully-apply-f-extension-members-in-f-to-f-components"></a>Pečlivě použít F# členy rozšíření v F#- na -F# komponenty
 
-Členy rozšíření F# obecně lze používat pouze pro operace, které jsou v tomto uzávěru vnitřní operace spojené s typem ve většině režimech použití. Jeden společný slouží k poskytování rozhraní API, která jsou více idiomatickou do jazyka F# pro různé typy .NET:
+F#členy rozšíření by měla obecně sloužit pouze pro operace, které jsou v tomto uzávěru vnitřní operace spojené s typem ve většině režimech použití. Jeden společný slouží k poskytování rozhraní API, která jsou k více idiomatickou F# pro různé typy .NET:
 
 ```fsharp
 type System.ServiceModel.Channels.IInputChannel with
@@ -368,7 +368,7 @@ Může být pro vás sami v doméně, kde je nejlepší název pro různé věci
 
 #### <a name="hide-the-representations-of-discriminated-unions-for-binary-compatible-apis-if-the-design-of-these-types-is-likely-to-evolve"></a>Skrýt reprezentace rozlišovaná sjednocení binární kompatibilních rozhraní API, pokud návrh z těchto typů je pravděpodobně rozvoj
 
-Typy sjednocení se opírají o F# porovnávání vzorů forms stručné programovací model. Jak už bylo zmíněno dříve, měli byste se vyhnout, odhalení reprezentace konkrétní data, pokud je pravděpodobné vyvíjí, návrh tyto typy.
+Typy sjednocení se opírají o F# porovnávání vzorů formulářů stručné programovací model. Jak už bylo zmíněno dříve, měli byste se vyhnout, odhalení reprezentace konkrétní data, pokud je pravděpodobné vyvíjí, návrh tyto typy.
 
 Například reprezentace diskriminované sjednocení může být skrytá používání soukromý nebo interní prohlášení, nebo pomocí souboru podpisu.
 
@@ -381,13 +381,13 @@ type Union =
 
 Pokud uvedete rozlišovaná sjednocení bez, možná bude obtížné verze knihovny bez narušení uživatelského kódu. Místo toho zvažte odhalení nejmíň jeden aktivní vzory tak, aby povolovala porovnávání vzorů přes hodnoty stejného typu.
 
-Aktivní vzory poskytnout alternativní způsob F# příjemci poskytnout porovnávání vzorů současně vám přímo vystavení typy sjednocení F#.
+Aktivní vzory poskytují alternativní způsob, jak poskytnout F# zákazníky prostřednictvím porovnávání vzorů při obcházení vystavení F# přímo typy sjednocení.
 
 ### <a name="inline-functions-and-member-constraints"></a>Vložené funkce a členská omezení
 
 #### <a name="define-generic-numeric-algorithms-using-inline-functions-with-implied-member-constraints-and-statically-resolved-generic-types"></a>Definujte obecná numerické algoritmy použití vložených funkcí s staticky řešeného obecné typy a předpokládané členská omezení
 
-Aritmetické členská omezení a omezení porovnání F# jsou standardní pro programování v jazyce F#. Zvažte například následující kód:
+Aritmetické členská omezení a F# porovnání omezení jsou standardní pro F# programování. Zvažte například následující kód:
 
 ```fsharp
 let inline highestCommonFactor a b =
@@ -412,7 +412,7 @@ Toto je vhodná funkce pro veřejné rozhraní API v matematické knihovně.
 
 #### <a name="avoid-using-member-constraints-to-simulate-type-classes-and-duck-typing"></a>Vyhněte se použití členská omezení pro simulaci typu třídy a duck psaní
 
-Je možné simulovat "divokou psát" použití omezení členů F#. Ale členy, které pomocí tohoto objektu není v obecné slouží v jazyce F#-na-návrhy knihovny F#. Je to proto, že knihovna návrhy založené na neznámého nebo nestandardní implicitní omezení vést k uživatelský kód pro nepřizpůsobitelným a vázané na jednu konkrétní architekturu vzor.
+Je možné simulovat pomocí "duck psát" F# omezeními člena. Ale členy, které pomocí tohoto objektu není v obecné je třeba použít F#- na -F# návrhy knihovny. Je to proto, že knihovna návrhy založené na neznámého nebo nestandardní implicitní omezení vést k uživatelský kód pro nepřizpůsobitelným a vázané na jednu konkrétní architekturu vzor.
 
 Kromě toho je vhodné šance, že se hojně používají členská omezení tímto způsobem může vést k velmi dlouhé kompilace časy.
 
@@ -426,13 +426,13 @@ V důsledku toho je nejvhodnější publikovat vaše funkce jako pojmenované fu
 
 ### <a name="units-of-measure"></a>Měrné jednotky
 
-#### <a name="carefully-use-units-of-measure-for-added-type-safety-in-f-code"></a>Pečlivě použijte měrné jednotky pro přidání typovou bezpečnost v kódu F#
+#### <a name="carefully-use-units-of-measure-for-added-type-safety-in-f-code"></a>Pečlivě použít měrné jednotky pro přidání typovou bezpečnost v F# kódu
 
 Další informace o psaní za jednotky měření se vymažou při prohlížení jinými jazyky rozhraní .NET. Mějte na paměti, že součásti rozhraní .NET, nástroje a reflexe se zobrazí typy sítí SAN jednotky. Například C# uživatelé uvidí `float` spíše než `float<kg>`.
 
 ### <a name="type-abbreviations"></a>Zkratky typů
 
-#### <a name="carefully-use-type-abbreviations-to-simplify-f-code"></a>Zkratky typů pečlivě slouží ke zjednodušení kódu jazyka F#
+#### <a name="carefully-use-type-abbreviations-to-simplify-f-code"></a>Zkratky typů pečlivě slouží ke zjednodušení F# kódu
 
 Součásti rozhraní .NET, nástroje a reflexe nezobrazí zkrácené názvy typů. Významné použití zkratek typů lze také nastavit domény zobrazí složitější, než kolik jich je skutečně, který by mohl zaměnit příjemci.
 
@@ -440,7 +440,7 @@ Součásti rozhraní .NET, nástroje a reflexe nezobrazí zkrácené názvy typ�
 
 V takovém případě typ, který se u zkracovaného odhalí příliš mnoho o reprezentaci skutečný typ definuje. Místo toho zvažte možnost uzavřít – zkratka typu třídy nebo diskriminované sjednocení jedním případem (nebo když zásadní je výkon, zvažte použití typu Struktura zabalit zkratky).
 
-Například je lákavé určit více mapy ve speciálním případě F# mapy, například:
+Je třeba chtěli definovat více mapy jako speciální případ F# namapovat, například:
 
 ```fsharp
 type MultiMap<'Key,'Value> = Map<'Key,'Value list>
@@ -450,7 +450,7 @@ Ale operace logického tečkami u tohoto typu nejsou stejná jako operace na map
 
 ## <a name="guidelines-for-libraries-for-use-from-other-net-languages"></a>Pokyny pro knihovny pro použití v jiných jazycích rozhraní .NET
 
-Při navrhování knihoven pro použití v jiných jazycích .NET, je potřeba dodržovat [pokyny k návrhu knihovny .NET](../../standard/design-guidelines/index.md). V tomto dokumentu tyto knihovny jsou označeny jako vanilla knihovny .NET, na rozdíl od F# – směřující knihoven, které používají F# vytvoří bez omezení. Navrhování vanilla knihovny .NET znamená, že znáte a jsou idiomatickou API, konzistentní se zbytkem rozhraní .NET Framework poskytuje minimalizací použití jazyka F# – konkrétní konstrukce ve veřejném rozhraní API. Pravidla jsou vysvětlené v následujících částech.
+Při navrhování knihoven pro použití v jiných jazycích .NET, je potřeba dodržovat [pokyny k návrhu knihovny .NET](../../standard/design-guidelines/index.md). V tomto dokumentu tyto knihovny jsou označeny jako vanilla knihovny .NET, nikoli F#-směřující knihoven, které používají F# sestaví bez omezení. Navrhování vanilla knihovny .NET znamená, že znáte a jsou idiomatickou API, konzistentní se zbytkem rozhraní .NET Framework poskytuje minimalizací použití F#-konkrétní konstrukce ve veřejném rozhraní API. Pravidla jsou vysvětlené v následujících částech.
 
 ### <a name="namespace-and-type-design-for-libraries-for-use-from-other-net-languages"></a>Navrhování Namespace a typ (pro knihovny pro použití v jiných jazycích rozhraní .NET)
 
@@ -472,7 +472,7 @@ Všechny soubory, které obsahují veřejná funkce by měl začínat `namespace
 
 Použijte neveřejné moduly pro uložení implementační kód, typy nástrojů a funkcí nástroje.
 
-Statické typy by měly být upřednostňované nad modulů, protože umožňují pro budoucí vývoj rozhraní API použít koncepty rozhraní .NET API návrhu přetížení a další, které se nedá použít v F# moduly.
+Statické typy by měly být upřednostňované nad modulů, protože umožňují pro budoucí vývoj rozhraní API použít přetížení a dalších konceptech rozhraní .NET API návrhu, které se nedá použít v F# moduly.
 
 Například místo následující veřejné rozhraní API:
 
@@ -497,11 +497,11 @@ type Utilities =
     static member Add(x,y,z) = x + y + z
 ```
 
-#### <a name="use-f-record-types-in-vanilla-net-apis-if-the-design-of-the-types-wont-evolve"></a>Typy záznamů F# v vanilla rozhraní API pro .NET, použijte v případě, že nebude vyvíjí návrhu typy
+#### <a name="use-f-record-types-in-vanilla-net-apis-if-the-design-of-the-types-wont-evolve"></a>Použití F# typy záznamů v vanilla rozhraní API pro .NET, pokud nebude vyvíjí návrhu typy
 
-Typy záznamů F# se kompilují do jednoduchého třída rozhraní .NET. Toto jsou vhodné pro některé jednoduché a stabilní typy v rozhraní API. Měli byste zvážit použití `[<NoEquality>]` a `[<NoComparison>]` atributů, které mají potlačit automatické generování rozhraní. Také Vyhněte se použití pole proměnlivé záznam v vanilla rozhraní .NET API jako tyto zpřístupňuje veřejné pole. Vždy zvažte, zda by třída poskytují pružnější možnosti pro budoucí vývoj rozhraní API.
+F#typy záznamů se kompilují do jednoduchého třída rozhraní .NET. Toto jsou vhodné pro některé jednoduché a stabilní typy v rozhraní API. Měli byste zvážit použití `[<NoEquality>]` a `[<NoComparison>]` atributů, které mají potlačit automatické generování rozhraní. Také Vyhněte se použití pole proměnlivé záznam v vanilla rozhraní .NET API jako tyto zpřístupňuje veřejné pole. Vždy zvažte, zda by třída poskytují pružnější možnosti pro budoucí vývoj rozhraní API.
 
-Například následující kód F# poskytuje veřejné rozhraní API pro příjemce C#:
+Například následující F# kód poskytuje veřejné rozhraní API C# příjemce:
 
 F#:
 
@@ -525,7 +525,7 @@ public sealed class MyRecord
 
 #### <a name="hide-the-representation-of-f-union-types-in-vanilla-net-apis"></a>Skrýt reprezentace F# sjednocovacím typům v vanilla rozhraní API pro .NET
 
-Typy sjednocení F# nejsou používány často přes hranice součástí i pro F#-na-F# psaní kódu. Jsou zařízení s vynikající implementaci při použití interně v rámci komponenty a knihovny.
+F#typy sjednocení nejsou používány často přes hranice součástí to i v případě F#- na -F# psaní kódu. Jsou zařízení s vynikající implementaci při použití interně v rámci komponenty a knihovny.
 
 Při navrhování vanilla rozhraní API .NET, vezměte v úvahu skrytí reprezentací typu union s použitím privátní prohlášení nebo soubor s podpisem.
 
@@ -588,7 +588,7 @@ type MyGoodType() =
 
 #### <a name="expose-asynchronous-operations-as-methods-which-return-net-tasks"></a>Vystavení asynchronních operací jako metody, které vracejí úlohy .NET
 
-Úkoly se používají v .NET představující aktivní asynchronní výpočty. Úlohy jsou obecně menší složení než F# `Async<T>` objekty, protože představují "již provádění" úkoly a nemůže obsahovat současně způsoby, které provádí paralelní složení nebo které skrýt šíření zrušení signály a další Kontextové parametry.
+Úkoly se používají v .NET představující aktivní asynchronní výpočty. Úlohy jsou obecně menší složení než F# `Async<T>` objekty, protože představují "již provádění" úkoly a nemůže skládat dohromady způsoby, které provádí paralelní složení nebo které skrýt šíření zrušení signály a ostatní kontextové parametry.
 
 Bez ohledu na to, jsou metody, které vracejí úlohy standardní reprezentace asynchronní programování v rozhraní .NET.
 
@@ -610,9 +610,9 @@ type MyType() =
     member this.ComputeAsTask(x, cancellationToken) = Async.StartAsTask(compute x, cancellationToken)
 ```
 
-#### <a name="use-net-delegate-types-instead-of-f-function-types"></a>Použití .NET typy delegátů namísto funkce typů F#
+#### <a name="use-net-delegate-types-instead-of-f-function-types"></a>Použití .NET typy delegátů namísto F# funkce typy
 
-Tady "typů F# funkce" znamená "šipka" typy, jako jsou `int -> int`.
+Tady "F# funkce typy" znamená "šipka" typy, jako jsou `int -> int`.
 
 Namísto toto:
 
@@ -628,13 +628,13 @@ member this.Transform(f:Func<int,int>) =
     ...
 ```
 
-Typ funkce jazyka F# se zobrazí jako `class FSharpFunc<T,U>` do jiných jazyků .NET a je méně vhodná pro jazykové funkce a nástroje, které rozumí typy delegátů. Při vytváření vyššího řádu metoda cílí na rozhraní .NET Framework 3.5 nebo vyšší, `System.Func` a `System.Action` Delegáti jsou správné rozhraní API pro publikování a umožňuje vývojářům .NET způsobem bezproblémové využití těchto rozhraní API. (Při cílení na rozhraní .NET Framework 2.0, jsou omezeny více typy definované v systému delegáta; zvažte použití delegáta předdefinované typy, jako `System.Converter<T,U>` nebo definování konkrétního delegáta typu.)
+F# Typ funkce se zobrazí jako `class FSharpFunc<T,U>` do jiných jazyků .NET a je méně vhodná pro jazykové funkce a nástroje, které rozumí typy delegátů. Při vytváření vyššího řádu metoda cílí na rozhraní .NET Framework 3.5 nebo vyšší, `System.Func` a `System.Action` Delegáti jsou správné rozhraní API pro publikování a umožňuje vývojářům .NET způsobem bezproblémové využití těchto rozhraní API. (Při cílení na rozhraní .NET Framework 2.0, jsou omezeny více typy definované v systému delegáta; zvažte použití delegáta předdefinované typy, jako `System.Converter<T,U>` nebo definování konkrétního delegáta typu.)
 
-Na druhou stranu, nejsou přirozené jazyka F# .NET delegáti-směřující knihovny (naleznete v oddílu v F# – směřující knihovny). V důsledku toho je běžné strategie implementace při vývoji vyššího řádu metody pro vanilla knihovny pro .NET k vytváření všechny implementace pomocí funkce typů F# a pak vytvořte veřejné rozhraní API pomocí delegátů jako adaptační vrstva dynamického zajišťování imitovaná skutečné F# implementace.
+Na druhou stranu, nejsou přirozené pro delegáty rozhraní .NET F#-směřující knihovny (naleznete v další části F#-směřující knihovny). V důsledku toho je běžné strategie implementace při vývoji vyššího řádu metody pro vanilla knihovny .NET pro vytváření všech na implementaci pomocí F# funkce typů a pak vytvořte veřejné rozhraní API pomocí delegátů jako adaptační vrstva dynamického zajišťování imitovaná skutečné F#implementace.
 
-#### <a name="use-the-trygetvalue-pattern-instead-of-returning-f-option-values-and-prefer-method-overloading-to-taking-f-option-values-as-arguments"></a>Použití vzoru TryGetValue místo vrácení hodnoty možnosti F# a dáváte přednost přetížení metody k pořízení F# hodnoty možností jako argumenty
+#### <a name="use-the-trygetvalue-pattern-instead-of-returning-f-option-values-and-prefer-method-overloading-to-taking-f-option-values-as-arguments"></a>Použití vzoru TryGetValue místo vrácení F# hodnot a dáváte přednost přetížení metody k pořízení F# možnost hodnoty jako argumenty
 
-Běžné způsoby použití pro typ možnosti F# v rozhraní API jsou lepší implementované v vanilla návrh rozhraní API .NET pomocí rozhraní .NET standard techniky. Místo vrácení hodnotu možnosti F#, zvažte použití návratový typ bool plus výstupní parametr jako vzor "TryGetValue". A nahradí F# možnost hodnoty jako parametry, zvažte možnost použít přetížení metody nebo nepovinné argumenty.
+Obecné vzory pro použití F# typ možnosti v rozhraní API jsou lepší implementované v vanilla návrh rozhraní API .NET pomocí rozhraní .NET standard techniky. Místo vrácení F# hodnotu možnosti, zvažte použití návratový typ bool plus výstupní parametr jako vzor "TryGetValue". A místo pořízení F# možnost hodnoty jako parametry, zvažte použití metody přetížení nebo volitelné argumenty.
 
 ```fsharp
 member this.ReturnOption() = Some 3
@@ -655,16 +655,16 @@ member this.ParamOverload(x : int, y : int) = x + y
 
 #### <a name="use-the-net-collection-interface-types-ienumerablet-and-idictionarykeyvalue-for-parameters-and-return-values"></a>Použití rozhraní .NET kolekci typů IEnumerable\<T\> a IDictionary\<klíč, hodnota\> pro parametry a návratové hodnoty
 
-Vyhněte se použití konkrétní kolekci typů jako je například pole .NET `T[]`, typů F# `list<T>`, `Map<Key,Value>` a `Set<T>`, a typy, jako konkrétní kolekci .NET `Dictionary<Key,Value>`. Pokyny pro návrh knihovny .NET mají dobrou Rady týkající se použití různé typy kolekcí, jako je `IEnumerable<T>`. Některé použití polí (`T[]`) přijatelná v některých případech z důvodů výkonu. Všimněte si, že zejména `seq<T>` je právě F# alias pro `IEnumerable<T>`, a proto je sekvence často odpovídající typ pro vanilla rozhraní .NET API.
+Vyhněte se použití konkrétní kolekci typů jako je například pole .NET `T[]`, F# typy `list<T>`, `Map<Key,Value>` a `Set<T>`, a typy, jako konkrétní kolekci .NET `Dictionary<Key,Value>`. Pokyny pro návrh knihovny .NET mají dobrou Rady týkající se použití různé typy kolekcí, jako je `IEnumerable<T>`. Některé použití polí (`T[]`) přijatelná v některých případech z důvodů výkonu. Všimněte si, že zejména `seq<T>` je jenom F# alias pro `IEnumerable<T>`, a proto je sekvence často odpovídající typ pro vanilla rozhraní .NET API.
 
-Místo seznamech F#:
+Místo F# uvádí:
 
 ```fsharp
 member this.PrintNames(names : string list) =
     ...
 ```
 
-Použití posloupnosti v F#:
+Použití F# pořadí:
 
 ```fsharp
 member this.PrintNames(names : seq<string>) =
@@ -689,7 +689,7 @@ member this.WrongUnit( x:unit, z:int) = ((), ())
 
 #### <a name="check-for-null-values-on-vanilla-net-api-boundaries"></a>Kontrola hodnot null na hranicích vanilla rozhraní .NET API
 
-Provádění kódu jazyka F# obvykle obsahují méně hodnoty null, z důvodu neměnné návrhových postupů a omezení použití literály s hodnotou null pro typy F#. Jinými jazyky rozhraní .NET často použít null jako hodnotu mnohem častěji. Z tohoto důvodu by měl kódu jazyka F#, která vystavuje vanilla rozhraní .NET API Zkontrolujte parametry pro hodnotu null na hranici rozhraní API a zabránit tyto hodnoty přenášejí hlouběji do implementace kódu jazyka F#. `isNull` Funkce nebo porovnávání vzorů `null` vzor lze použít.
+F#implementace kódu obvykle má menší počet hodnot null, z důvodu neměnné návrhových postupů a omezení použití literály s hodnotou null pro F# typy. Jinými jazyky rozhraní .NET často použít null jako hodnotu mnohem častěji. Z tohoto důvodu F# kód, který vystavuje vanilla rozhraní .NET API by měl Zkontrolujte parametry pro hodnotu null na hranici rozhraní API a zabránit toku hlouběji do těchto hodnot F# implementační kód. `isNull` Funkce nebo porovnávání vzorů `null` vzor lze použít.
 
 ```fsharp
 let checkNonNull argName (arg: obj) =
@@ -714,11 +714,11 @@ Místo toho použijte .NET konvence volání ``Method(arg1,arg2,…,argN)``.
 member this.TupledArguments(str, num) = String.replicate num str
 ```
 
-Tip: Pokud navrhování knihoven pro použití v kterémkoli jazyce platformy .NET, pak není žádná náhrada to skutečně udělali nějaké experimentální C# a Visual Basic programování a zkontrolujte, že knihoven "chování přímo" z těchto jazyků. Nástroje, jako je .NET Reflector a prohlížeče objektů služby Visual Studio můžete použít také k zajištění, že knihovny a jejich dokumentaci zobrazují podle očekávání pro vývojáře.
+Tip: Pokud vytváříte knihovny pro použití v kterémkoli jazyce platformy .NET, pak náhradu ve skutečnosti je některé experimentální C# a programování a zkontrolujte, že knihoven "chování přímo" z těchto jazyků Visual Basic. Nástroje, jako je .NET Reflector a prohlížeče objektů služby Visual Studio můžete použít také k zajištění, že knihovny a jejich dokumentaci zobrazují podle očekávání pro vývojáře.
 
 ## <a name="appendix"></a>Příloha
 
-### <a name="end-to-end-example-of-designing-f-code-for-use-by-other-net-languages"></a>Začátku do konce příklad ilustruje návrh kódu jazyka F# pro použití jinými jazyky rozhraní .NET
+### <a name="end-to-end-example-of-designing-f-code-for-use-by-other-net-languages"></a>Příklad návrhu začátku do konce F# kód pro použití jinými jazyky rozhraní .NET
 
 Vezměte v úvahu následující třídy:
 
@@ -735,7 +735,7 @@ type Point1(angle,radius) =
         [ for i in 1..n -> Point1(angle=2.0*Math.PI/float(n), radius=1.0) ]
 ```
 
-F# typu této třídy je následujícím způsobem:
+Odvozené F# typ této třídy je následujícím způsobem:
 
 ```fsharp
 type Point1 =
@@ -748,7 +748,7 @@ type Point1 =
     member Radius : double
 ```
 
-Pojďme se podívat, jak se tento typ jazyka F# Zobrazí programátor použít jiný jazyk .NET. Přibližná jazyka C# "podpis" je například následujícím způsobem:
+Pojďme se podívat na to, jak to F# typu se zobrazí na programátorovi použít jiný jazyk .NET. Přibližná jazyka C# "podpis" je například následujícím způsobem:
 
 ```csharp
 // C# signature for the unadjusted Point1 class
@@ -770,13 +770,13 @@ public class Point1
 }
 ```
 
-Existují některé důležité body, které Všimněte si, o jak F# představuje konstrukce tady. Příklad:
+Existují některé důležité body, které Všimněte si, jak F# představuje vytvoří tady. Příklad:
 
 * Byla zachována metadat – například názvy argumentů.
 
-* F# metodám, které přebírají dva argumenty se stanou C# metodám, které přebírají dva argumenty.
+* F#metody, které přebírají dva argumenty, které se stanou C# metodám, které přebírají dva argumenty.
 
-* Funkce a seznamy budou odkazy na odpovídající typy v knihovně F#.
+* Funkce a seznamy budou odkazy na odpovídající typy v F# knihovny.
 
 Následující kód ukazuje, jak upravit tento kód vzít v úvahu Tyhle věci.
 
@@ -809,7 +809,7 @@ type RadialPoint(angle:double, radius:double) =
                 RadialPoint(angle=2.0*Math.PI/float(count), radius=1.0) }
 ```
 
-F# typu kódu je následujícím způsobem:
+Odvozené F# typ kódu vypadá takto:
 
 ```fsharp
 type RadialPoint =
@@ -849,6 +849,6 @@ Tyto opravy provedli připravili k použití tohoto typu, jako součást vanilla
 
 * Používá typ vrácené hodnoty `seq<RadialPoint>` místo `RadialPoint list` změnou seznamu pomocí konstrukce `[ ... ]` pořadí konstrukce pomocí `IEnumerable<RadialPoint>`.
 
-* Používá typ delegáta .NET `System.Func` místo typem funkce F#.
+* Používá typ delegáta .NET `System.Func` místo F# typ funkce.
 
 Díky tomu je mnohem nicer využívat v kódu jazyka C#.

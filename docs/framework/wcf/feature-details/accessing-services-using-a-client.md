@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c8329832-bf66-4064-9034-bf39f153fc2d
-ms.openlocfilehash: 1369403b493683f58640047fe042708afc5d5b46
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ac7acda0b9065fde4ab04c80e9d26a1ec23fa6e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495993"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130985"
 ---
 # <a name="accessing-services-using-a-client"></a>Přístup ke službám pomocí klienta
-Klientské aplikace musí vytvořit, nakonfigurovat a použít klienta nebo kanál objektů WCF komunikovat se službami. [Klienta WCF – přehled](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základní klienta a kanál objektů a jejich používání.  
+Klientské aplikace musíte vytvořit, konfigurovat a komunikace se službami pomocí WCF klienta nebo kanál objektů. [Přehled klientů WCF](../../../../docs/framework/wcf/wcf-client-overview.md) téma obsahuje přehled objektů a kroky při vytváření základních klienta a kanál objektů a jejich používání.  
   
- Toto téma obsahuje podrobné informace o některých problémech, s klientem aplikace a klienta a kanál objekty, které mohou být užitečné, v závislosti na vašem scénáři.  
+ Toto téma obsahuje podrobné informace o některých problémů s klientem aplikace a klienta a kanál objekty, které mohou být užitečné, v závislosti na vašem scénáři.  
   
 ## <a name="overview"></a>Přehled  
- Toto téma popisuje chování a otázky týkající se:  
+ Toto téma popisuje chování a problémů souvisejících se službou:  
   
 -   Kanál a relace životnosti.  
   
@@ -28,76 +28,76 @@ Klientské aplikace musí vytvořit, nakonfigurovat a použít klienta nebo kan�
   
 -   Inicializace kanály interaktivně.  
   
-### <a name="channel-and-session-lifetimes"></a>Kanál a trvání relace  
- Aplikace Windows Communication Foundation (WCF) obsahuje dvě kategorie kanály, datagram a sessionful.  
+### <a name="channel-and-session-lifetimes"></a>Kanál a doby trvání relace  
+ Aplikace Windows Communication Foundation (WCF) obsahuje dvě kategorie kanály datagramu, který neobsahuje relace.  
   
- A *datagram* kanál je kanál, ve kterém jsou bez korelace nejsou všechny zprávy. S datagram kanál Pokud vstupních nebo výstupních operací nezdaří, je obvykle neovlivní další operace, a lze opětovně použít stejný kanál. Z toho důvodu datagram kanály obvykle není poruch.  
+ A *datagram* kanálu je kanál, ve kterém jsou bez korelace nejsou všechny zprávy. Pomocí kanálu datagramu, pokud vstupní nebo výstupní operace se nezdaří, další operaci je obvykle to neovlivní a jeden kanál je možné využít znovu. Z tohoto důvodu datagram kanály obvykle není chyb.  
   
- *Sessionful* kanály, ale jsou kanály s připojením k jiný koncový bod. Zprávy v relaci na jedné straně jsou vždy korelační s stejné relace na druhé straně. Kromě toho jak účastníky v relaci musí souhlasit, jejich konverzace byly splnění požadavků pro danou relaci do považovat za úspěšné. Pokud nelze souhlasí, dojít k chybě kanálu relací.  
+ *Který neobsahuje relace* kanály, ale jsou kanály s připojením k jiný koncový bod. Zprávy v relaci na jedné straně se vždy korelují s stejné relace na druhé straně. Kromě toho obou účastníků v relaci musí souhlasit, že byly splněny požadavky jejich konverzace pro danou relaci do považovat za úspěšné. Pokud nelze souhlasí, kanál s relacemi dojít k chybě.  
   
- Otevřete klienti explicitně nebo implicitně voláním první operaci.  
+ Otevření klienti explicitně nebo implicitně voláním první operace.  
   
 > [!NOTE]
->  Pokusu explicitně zjistit chybný relacemi kanály není obvykle užitečné, protože když jsou upozorněni závisí na implementaci relace. Například protože <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> (s spolehlivé relace zakázán) poskytuje relace připojení TCP, pokud naslouchání na <xref:System.ServiceModel.ICommunicationObject.Faulted?displayProperty=nameWithType> událostí na službu nebo klienta, budete pravděpodobně rychle upozorněni v případě selhání sítě. Ale spolehlivé relace (vymezenému vazby, ve kterém <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> je povoleno) jsou navrženy pro izolovat služby selhání malou síť. Pokud relace můžete je znovu vytvořit v přiměřené době běhu stejnou vazbu – nakonfigurovaný pro spolehlivé relace – nemusí poruch dokud narušení chodu dál pro delší časové období.  
+>  Pokusu explicitně zjišťovat chybnou duplexních kanálů s relacemi není obvykle vhodné, protože když se zobrazí oznámení, závisí na implementaci relace. Například protože <xref:System.ServiceModel.NetTcpBinding?displayProperty=nameWithType> (s ve stabilní relaci zakázané) poskytuje relace připojení TCP, pokud budete naslouchat <xref:System.ServiceModel.ICommunicationObject.Faulted?displayProperty=nameWithType> událostí na službu nebo klienta, budete pravděpodobně být rychle informovat v případě selhání sítě. Ale spolehlivé relace (stanovené vazby, ve kterém <xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType> je povoleno) jsou určeny k izolovat služby z malých síťových chyb. Pokud relace můžete je znovu vytvořit v rozumné časovém období, stejnou vazbu – nakonfigurovaný pro spolehlivé relace – nemusí selhání, dokud přerušení pokračuje po delší dobu.  
   
- Většina vazby poskytované systémem, (které vystavit kanály na aplikační vrstvu) používá relace ve výchozím nastavení, ale <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> neexistuje. Další informace najdete v tématu [pomocí relace](../../../../docs/framework/wcf/using-sessions.md).  
+ Většina vazeb poskytovaných systémem, (které zpřístupňují kanály pro aplikační vrstvu) používá relace ve výchozím nastavení, ale <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> tak není. Další informace najdete v tématu [s využitím relací](../../../../docs/framework/wcf/using-sessions.md).  
   
 ### <a name="the-proper-use-of-sessions"></a>Správné použití relací  
- Relace poskytují způsob, jak vědět, pokud skončí exchange celou zprávu, a pokud na obou stranách považuje za úspěšnou. Doporučujeme volající aplikace otevřete kanál, použijte ji a zavřete kanál uvnitř bloku try jeden. Pokud kanál relace je otevřené a <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> metoda je volána jednou a že volání vrátí úspěšně a pak relace byla úspěšná. Úspěšné v tomto případě znamená, že všechny doručení zaručuje určená vazba byly splněny, a druhá strana nezavolalo <xref:System.ServiceModel.ICommunicationObject.Abort%2A?displayProperty=nameWithType> na kanálu před voláním <xref:System.ServiceModel.ICommunicationObject.Close%2A>.  
+ Relací zadejte způsob, jak zjistit, pokud celé zprávy exchange je dokončena a obě strany považovat za úspěšné. Je doporučeno volající aplikace otevřít kanál, používat a zavřete kanál uvnitř bloku jeden pokus. Pokud kanál relace je otevřený a <xref:System.ServiceModel.ICommunicationObject.Close%2A?displayProperty=nameWithType> metoda se volá jednou a toto volání vrátí úspěšně, a relace byla úspěšná. Úspěšné v tomto případě znamená, že všechny doručování zaručuje Zadaná vazba nebyly splněny a druhá strana nezavolalo <xref:System.ServiceModel.ICommunicationObject.Abort%2A?displayProperty=nameWithType> na kanálu před voláním <xref:System.ServiceModel.ICommunicationObject.Close%2A>.  
   
- Následující část obsahuje příklady tohoto přístupu klienta.  
+ Následující část poskytuje příklad tohoto přístupu klienta.  
   
 ### <a name="handling-exceptions"></a>Zpracování výjimek  
- Zpracování výjimek v klientských aplikacích je jednoduchá. Pokud kanál, který je otevřené, používat a uzavřen uvnitř bloku try, pak konverzace proběhla úspěšně, pokud je vyvolána výjimka. Obvykle Pokud je vyvolána výjimka konverzace byl přerušen.  
+ Zpracování výjimek v klientských aplikacích je jednoduché. Pokud kanál se otevřel, používat a uzavřel uvnitř bloku try, pak konverzace proběhla úspěšně, pokud je vyvolána výjimka. Obvykle Pokud je vyvolána výjimka konverzace byl přerušen.  
   
 > [!NOTE]
->  Použití `using` – příkaz (`Using` v jazyce Visual Basic) se nedoporučuje. Důvodem je, že konci `using` příkaz může způsobit výjimky, které můžete maskování dalších výjimkách, budete muset vědět o. Další informace najdete v tématu [vyhnout problémům s příkazem Using](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md).  
+>  Použití `using` – příkaz (`Using` v jazyce Visual Basic) se nedoporučuje. Důvodem je, že na konec `using` příkaz může způsobit výjimky, které může zastínit ostatní výjimky, budete muset znát. Další informace najdete v tématu [použití zavřít a Abort k uvolnění prostředků klienta WCF](../../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md).  
   
- Následující příklad kódu ukazuje vzoru klienta doporučenou pomocí bloku try/catch a ne `using` příkaz.  
+ Následující příklad kódu ukazuje doporučený klient modelu s použitím bloku try/catch, ne `using` příkazu.  
   
  [!code-csharp[FaultContractAttribute#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/client.cs#3)]
  [!code-vb[FaultContractAttribute#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/client.vb#3)]  
   
 > [!NOTE]
->  Kontrola hodnotu <xref:System.ServiceModel.ICommunicationObject.State%2A?displayProperty=nameWithType> vlastnost je spor a nedoporučuje se používat k určení, jestli se má použít nebo zavřete kanál.  
+>  Kontrolou hodnoty <xref:System.ServiceModel.ICommunicationObject.State%2A?displayProperty=nameWithType> vlastnost je časování a nedoporučuje se používat k určení, jestli se má opakovaně používat nebo zavření kanálu.  
   
- Kanály datagram nikdy poruch i v případě výjimky dojít, když jsou uzavřeny. Kromě toho-duplexní režim klientů, které se nepodařilo ověřit pomocí zabezpečenou konverzaci obvykle throw <xref:System.ServiceModel.Security.MessageSecurityException?displayProperty=nameWithType>. Ale pokud se ověření nezdaří duplexní klienta pomocí zabezpečenou konverzaci, klient přijme <xref:System.TimeoutException?displayProperty=nameWithType> místo.  
+ Kanály datagram nikdy selhání i v případě, že výjimkám dochází, když jsou uzavřeny. Kromě toho vyvolat neduplexní klienty, kteří neumožňuje ověřovat, obvykle pomocí zabezpečené konverzace <xref:System.ServiceModel.Security.MessageSecurityException?displayProperty=nameWithType>. Ale pokud se ověření nezdaří duplexní klienta pomocí zabezpečené konverzace, klient přijme <xref:System.TimeoutException?displayProperty=nameWithType> místo.  
   
- Podrobnější informace o práci s informace o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje, jak k jejich zpracování. Další informace o tom, jak zpracovávat chyby při vývoji kanály najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
+ Podrobnější informace o práci s informacemi o chybě na úrovni aplikace, najdete v části [zadání a zpracování chyb v kontraktech a službách](../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md). [Očekávané výjimky](../../../../docs/framework/wcf/samples/expected-exceptions.md) popisuje očekávané výjimky a ukazuje způsob jejich zpracování. Další informace o tom, jak řešit chyby při vývoj kanálů najdete v tématu [zpracování výjimek a chyb](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
 ### <a name="client-blocking-and-performance"></a>Blokování klienta a výkonu  
- Když aplikace synchronně volá operaci požadavku a odpovědi, klientské bloky, dokud není přijata návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikace synchronně vyvolá operace na objektu klienta WCF nebo kanál, klient se nevrátí, dokud vrstvy kanálu můžete zapsat data do sítě, nebo dokud je vyvolána výjimka. A při vzorce výměny zpráv jednosměrný (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) můžete provést některé klienty rychlejšího, Jednosměrná operace můžete taky zablokovat, v závislosti na vazby a co zprávy již byly Odeslat. Jednosměrná operace jsou pouze o zpráva systému exchange, ne další a ne menší. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
+ Když aplikaci synchronně volá operace požadavek odpověď, bloky klienta, dokud neobdrží návratovou hodnotu nebo výjimku (například <xref:System.TimeoutException?displayProperty=nameWithType>) je vyvolána výjimka. Toto chování je podobné místní chování. Když aplikaci synchronně vyvolá operaci objektu klienta WCF nebo kanálu, klient nevrací dokud vrstvy kanálu můžete zapisovat data do sítě nebo dokud je vyvolána výjimka. A při vzoru výměny zpráv jednosměrné (Zadaná operace s označením <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> nastavena na `true`) může být někteří klienti odezvu, jednosměrné operace, můžete taky zablokovat, v závislosti na vazby a co zprávy již byly odeslání. Jednosměrná operace jsou jen o výměně zpráv, častěji a méně. Další informace najdete v tématu [One-Way služby](../../../../docs/framework/wcf/feature-details/one-way-services.md).  
   
- Bloky velkých objemů dat může zpomalit zpracování bez ohledu na to, co vzorce výměny zpráv na straně klienta. Chcete-li pochopit, jak zpracovávat tyto problémy, přečtěte si téma [velkého množství dat a Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
+ Bloky dat velkých objemů dat může zpomalit zpracování bez ohledu na to, co vzorce výměny zpráv na straně klienta. Pokud chcete pochopit, jak zpracovat tyto problémy, přečtěte si téma [velkých objemů dat a datových proudů](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
   
- Pokud vaše aplikace musí provést další práci při dokončení operace, měli byste vytvořit dvojici asynchronní metody na rozhraní kontraktu služby, který implementuje vašeho klienta WCF. Nejjednodušším způsobem je použití `/async` přepínač na [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Příklad, naleznete v části [postupy: asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
+ Pokud vaše aplikace musí provést další práce při dokončení operace, měli byste vytvořit páru asynchronní metody na rozhraní servisní smlouvy, která implementuje klienta WCF. Nejjednodušší způsob je použít `/async` zapnout [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Příklad najdete v tématu [jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
- Další informace o většího výkonu klienta najdete v tématu [klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).  
+ Další informace o zvyšování výkonu klienta najdete v tématu [klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md).  
   
-### <a name="enabling-the-user-to-select-credentials-dynamically"></a>Povolení uživatelům dynamicky vyberte přihlašovací údaje  
- <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> Rozhraní umožňuje aplikacím, které chcete zobrazit uživatelské rozhraní, které umožňuje uživatelům vyberte přihlašovací údaje, pomocí kterých se vytvoří kanál před časovače časový limit spuštění.  
+### <a name="enabling-the-user-to-select-credentials-dynamically"></a>Umožňuje uživateli vybrat dynamicky přihlašovacích údajů  
+ <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> Rozhraní umožňuje aplikacím zobrazují uživatelské rozhraní, která umožňuje uživateli zvolit přihlašovací údaje, se kterými se vytvoří kanál před zahájením časovače časový limit.  
   
- Vývojáři aplikací můžete provést použití vložené <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> dvěma způsoby. Klientská aplikace můžete volat buď <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verze) před otevření kanálu ( *explicitní* přístup), nebo volejte první operace ( *implicitní*přístup).  
+ Vývojáři aplikací mohli používat z vložené <xref:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer> dvěma způsoby. Klientská aplikace může volat <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verze) před otevření kanálu ( *explicitní* přístup) nebo volání první operace ( *implicitní*přístup).  
   
- Pokud používáte implicitní přístup, aplikace musí volat první operaci na <xref:System.ServiceModel.ClientBase%601> nebo <xref:System.ServiceModel.IClientChannel> rozšíření. Pokud volá jakoukoli jinou hodnotu než první operace, je vyvolána výjimka.  
+ Pokud používáte implicitní přístup, aplikace musí volat první operace na <xref:System.ServiceModel.ClientBase%601> nebo <xref:System.ServiceModel.IClientChannel> rozšíření. Volá-li to nic jiného než první operace, je vyvolána výjimka.  
   
- Pokud používáte explicitní přístup, musí aplikace proveďte následující kroky v pořadí:  
+ Při použití explicitní přístup, musí aplikace provádět následující kroky v pořadí:  
   
-1.  Volání buď <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verzi).  
+1.  Volání na buď <xref:System.ServiceModel.ClientBase%601.DisplayInitializationUI%2A?displayProperty=nameWithType> nebo <xref:System.ServiceModel.IClientChannel.DisplayInitializationUI%2A?displayProperty=nameWithType> (nebo asynchronní verze).  
   
-2.  Pokud máte vrátí inicializátory, volání buď <xref:System.ServiceModel.ICommunicationObject.Open%2A> metodu <xref:System.ServiceModel.IClientChannel> objektu nebo na <xref:System.ServiceModel.IClientChannel> objekt vrácený <xref:System.ServiceModel.ClientBase%601.InnerChannel%2A?displayProperty=nameWithType> vlastnost.  
+2.  Když inicializátorech vrátily, zavolejte <xref:System.ServiceModel.ICommunicationObject.Open%2A> metodu na <xref:System.ServiceModel.IClientChannel> objekt nebo na <xref:System.ServiceModel.IClientChannel> objekt vrácený z <xref:System.ServiceModel.ClientBase%601.InnerChannel%2A?displayProperty=nameWithType> vlastnost.  
   
 3.  Volání operací.  
   
- Doporučuje se, že kvalitních aplikací řídit proces uživatelského rozhraní přijetí explicitní přístup.  
+ Doporučuje se, že aplikace produkční kvality řízení procesu uživatelského rozhraní přijetím explicitní přístup.  
   
- Aplikace, které používají implicitní přístup vyvolání inicializátory uživatelského rozhraní, ale pokud uživatel aplikace přestane reagovat během časového limitu odesílání vazby, je vyvolána výjimka, když se vrátí uživatelské rozhraní.  
+ Aplikace, které používají implicitní přístup vyvolat inicializátory uživatelského rozhraní, ale pokud uživatel aplikace přestane reagovat v časovém limitu odesílání vazby, dojde k výjimce při návratu uživatelského rozhraní.  
   
 ## <a name="see-also"></a>Viz také  
  [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)  
- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů žádost-odpověď](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)  
- [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
- [Postupy: Přístup ke službě WSE 3.0](../../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)  
- [Postupy: Použití objektu pro vytváření kanálů](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)  
- [Postupy: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)  
+ [Jak: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek odpověď](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)  
+ [Jak: Přístup ke službám pomocí duplexního kontraktu](../../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)  
+ [Jak: Přístup k WSE 3.0 Service](../../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)  
+ [Jak: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)  
+ [Jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)  
  [Klientské aplikace střední vrstvy](../../../../docs/framework/wcf/feature-details/middle-tier-client-applications.md)

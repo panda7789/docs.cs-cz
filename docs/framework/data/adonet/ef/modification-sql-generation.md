@@ -2,12 +2,12 @@
 title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: 8e0568e32094b6cc27137409f3d908928d82cebb
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: bfeb4f826022d39b2a45132a5b2bf344ef4c99c6
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836910"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127066"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 Tato část popisuje, jak vyvinout úprav modulu generování SQL pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překládá úpravy stromu příkazů na příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  
@@ -83,11 +83,11 @@ The elements of the list are specified as type DbModificationClause, which speci
 -   Třída DbOrExpression  
   
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>Úpravy generování SQL ve zprostředkovateli ukázek  
- [Ukázka zprostředkovatele Entity Framework](https://go.microsoft.com/fwlink/?LinkId=180616) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Je zaměřen na databázi systému SQL Server 2005 a je implementovaný jako obálka nad zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.  
+ [Ukázka zprostředkovatele Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Je zaměřen na databázi systému SQL Server 2005 a je implementovaný jako obálka nad zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.  
   
  Modul generování SQL úpravy ukázkového poskytovatele (umístěný v souboru SQL Generation\DmlSqlGenerator.cs) přijímá vstupní DbModificationCommandTree a vytvoří jeden úprav příkazu SQL pravděpodobně následovaný příkazem SELECT se vraťte Čtečka případného DbModificationCommandTree. Všimněte si, že tvar příkazy generované je ovlivněna cílová databáze systému SQL Server.  
   
-### <a name="helper-classes-expressiontranslator"></a>Pomocné třídy: ExpressionTranslator  
+### <a name="helper-classes-expressiontranslator"></a>Pomocné rutiny třídy: ExpressionTranslator  
  ExpressionTranslator slouží jako běžné zjednodušené převaděč pro všechny úpravy příkaz stromu vlastnosti typu DbExpression. Podporuje překlad pouze typy výrazů ke kterým jsou omezeny vlastnosti stromu příkazů úpravy a vytvořené s konkrétní omezení na paměti.  
   
  Následující informace popisují navštívit typy konkrétní výrazů (uzly s triviální překlady jsou vynechány).  

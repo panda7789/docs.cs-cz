@@ -1,5 +1,6 @@
 ---
-title: Konstrukce zpětných odkazů v regulárních výrazech
+title: Konstrukce zpětných odkazů v regulárních výrazech .NET
+desription: Learn how to identify repeated text elements by using backreference constructs in a regular expression.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,13 @@ helpviewer_keywords:
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1f86ed838e1333a5475d72eabc4d4248fc256211
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.custom: seodec18
+ms.openlocfilehash: 0b3de774159e528ea782d8b450f9e596aeb0daca
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52672028"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144777"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Konstrukce zpětných odkazů v regulárních výrazech
 Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných nebo podřetězec v rámci řetězce. Například pokud vstupní řetězec obsahuje více výskytů libovolného dílčí řetězec, můžete porovnat první výskyt zachytávající skupinou a pak použijte zpětný odkaz tak, aby odpovídaly další výskyty tohoto dílčí řetězec.  

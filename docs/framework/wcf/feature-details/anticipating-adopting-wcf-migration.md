@@ -2,12 +2,12 @@
 title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace'
 ms.date: 03/30/2017
 ms.assetid: f49664d9-e9e0-425c-a259-93f0a569d01b
-ms.openlocfilehash: 171a31b375eae4c032849c2a1c2090f5d9ff856f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 306ffbae86058a2caad70d3788fb7bb4e7998eec
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837382"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129581"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-migration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí migrace
 Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte podle předchozí doporučení, jakož i následující doporučení.  
@@ -36,7 +36,7 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
 -   Zadat explicitní názvy pro operace využívání služby `MessageName` parametr <xref:System.Web.Services.WebMethodAttribute>.  
   
-    ```  
+    ```csharp  
     [WebMethod(MessageName="ExplicitName")]  
     string Echo(string input);  
     ```  
@@ -47,7 +47,7 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
 -   Použití <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> zadat explicitní hodnoty záhlaví SOAPAction HTTP, pomocí které protokolu HTTP se budou směrovat požadavky do metody.  
   
-    ```  
+    ```csharp  
     [WebMethod]  
     [SoapDocumentMethod(RequestElementName="ExplicitAction")]  
     string Echo(string input);  
@@ -63,7 +63,7 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
 ## <a name="exception-handling"></a>Zpracování výjimek  
  Při navrhování struktury datové typy na odeslané a přijaté službou, také návrh struktury tak, aby představují různé typy výjimek, které mohou nastat v rámci služby, že jedna možná budete chtít sdělit do klienta.  
   
-```  
+```csharp  
 [Serializable]  
 [XmlRoot(  
      Namespace="ExplicitNamespace", IsNullable=true)]  
@@ -84,7 +84,7 @@ Aby jednodušší budoucí migrace z nové aplikace ASP.NET na WCF, postupujte p
   
  Umožnit takové třídy sami serializaci do formátu XML:  
   
-```  
+```csharp  
 public XmlNode ToXML()  
 {  
      XmlSerializer serializer = new XmlSerializer(  
@@ -103,7 +103,7 @@ public XmlNode ToXML()
   
  Třídy pak umožňuje zadejte podrobnosti pro explicitně vyvolána <xref:System.Web.Services.Protocols.SoapException> instancí:  
   
-```  
+```csharp  
 AnctipatedException exception = new AnticipatedException();  
 exception.AnticipatedExceptionInformation = "…";  
 throw new SoapException(  
@@ -113,7 +113,7 @@ throw new SoapException(
      exception.ToXML());  
 ```  
   
- Tyto třídy výjimek bude snadno opakovaně použitelné s WCF<xref:System.ServiceModel.FaultException%601> třídy k vyvolání nové `FaultException<AnticipatedException>(anticipatedException);`  
+ Tyto třídy výjimek bude snadno opakovaně použitelné s WCF <xref:System.ServiceModel.FaultException%601> třídy k vyvolání nové `FaultException<AnticipatedException>(anticipatedException);`  
   
 ## <a name="security"></a>Zabezpečení  
  Následují některá doporučení zabezpečení.  

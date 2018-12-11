@@ -2,12 +2,12 @@
 title: Úvod do C# – Seznamte se s nástroje pro vývoj
 description: Tento článek obsahuje základní informace o nástroji budete používat pro vývoj C# a aplikací .NET na svém počítači.
 ms.date: 10/23/2018
-ms.openlocfilehash: ec7e55fbf2a89a8ec45db956fc575edeb2283f56
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: cf5bf68c1497bf62826656aa9cd2bd981128d3a2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200211"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129984"
 ---
 # <a name="become-familiar-with-the-net-development-tools"></a>Seznamte se s nástroje pro vývoj .NET
 
@@ -22,7 +22,7 @@ Budete vytvářet aplikace pomocí [ `dotnet new` ](../../../core/tools/dotnet-n
 
 Další příkazy, které budete používat jsou [ `dotnet build` ](../../../core/tools/dotnet-build.md) k sestavení spustitelného souboru, a [ `dotnet run` ](../../../core/tools/dotnet-run.md) ke spuštění spustitelného souboru.
 
-## <a name="pick-your-turorial"></a>Vyberte vaše turorial
+## <a name="pick-your-tutorial"></a>Vyberte si tento kurz
 
 Můžete začít s některou z následujících kurzů:
 

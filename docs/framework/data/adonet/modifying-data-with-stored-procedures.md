@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d8e9a46-1af6-4a02-bf61-969d77ae07e0
-ms.openlocfilehash: c975913ab5df9c2e7f792ed73f8c5d20bdca1c5a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c868528edbccfeb32e6aca02c92b87d51bb0b829
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526882"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144764"
 ---
 # <a name="modifying-data-with-stored-procedures"></a>Úpravy dat pomocí uložených procedur
 Uložené procedury může přijmout data jako vstupní parametry a vrací data jako výstupní parametry, sad výsledků dotazu nebo návratové hodnoty. Následující ukázka znázorňuje, jak ADO.NET odesílá a přijímá vstupní parametry, výstupních parametrů a návratové hodnoty. V příkladu vloží nového záznamu do tabulky, kde sloupec primárního klíče je sloupec identity v databázi serveru SQL Server.  
@@ -21,7 +21,7 @@ Uložené procedury může přijmout data jako vstupní parametry a vrací data 
 ## <a name="example"></a>Příklad  
  Ukázka používá následující uložené procedury pro vložení do nové kategorie **Northwind** **kategorie** tabulky. Uložené procedury přijímá hodnotu **CategoryName** sloupce jako vstupní parametr a použije SCOPE_IDENTITY() funkce k načtení nové hodnoty pole identity **CategoryID**a vrácení výstupní parametr. Příkaz RETURN používá @@ROWCOUNT funkce vrací počet řádků vložit.  
   
-```  
+```sql
 CREATE PROCEDURE dbo.InsertCategory  
   @CategoryName nvarchar(15),  
   @Identity int OUT  

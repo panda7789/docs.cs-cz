@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 0bd53d97cec4370adc78fc715b1cea5ee5a3fd6f
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d19f238136ed4ce1eb9b9821ef12c6305c06e429
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44208793"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150028"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -21,7 +21,7 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
 ## <a name="platform-invoke"></a>Vyvolání platformy  
  *Vyvolání platformy* je služba, umožňuje spravovaným kódu volat nespravované funkce, které jsou implementovány v dynamické knihovny (DLL), jako například sítě na rozhraní Microsoft Win32 API. Vyhledá a volá exportované funkce a zařadí argumenty (celá čísla, řetězce, pole, struktury a tak dále) napříč hranicemi podle potřeby.  
   
- Další informace najdete v tématu [používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a [postupy: použití vyvolání platformy pro přehrání souboru Wave](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md).  
+ Další informace najdete v tématu [používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a [jak: Použití vyvolání platformy pro přehrání souboru Wave](../../../csharp/programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md).  
   
 > [!NOTE]
 >  [Common Language Runtime](../../../standard/clr.md) (CLR) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo rámec platformy CLR obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, bez použití mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v rozhraní .NET](../../../standard/security/index.md).  
@@ -59,8 +59,8 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
   
 ## <a name="see-also"></a>Viz také
 
-- [Zlepšení výkonu interoperability](https://msdn.microsoft.com/library/ms998551.aspx)  
-- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](https://msdn.microsoft.com/library/office/bb610378.aspx)  
+- [Zlepšení výkonu interoperability](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)  
+- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](/office/client-developer/outlook/pia/introduction-to-interoperability-between-com-and-net)  
 - [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
 - [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)  
 - [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  

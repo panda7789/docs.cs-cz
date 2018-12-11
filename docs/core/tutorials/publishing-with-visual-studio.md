@@ -4,13 +4,13 @@ description: Publikování vytvoří sadu souborů, které jsou potřeba ke spu�
 author: BillWagner
 ms.author: wiwagn
 ms.date: 10/05/2017
-ms.custom: vs-dotnet
-ms.openlocfilehash: e44ae69c9cd8f0767e369791737cef9b4c33f963
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: 8d6d5cc7766334e10e7ae3a70af0c309c05bc98b
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036302"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169115"
 ---
 # <a name="publish-your-hello-world-application-with-visual-studio-2017"></a>Publikování aplikace Hello World pomocí sady Visual Studio 2017
 
@@ -20,14 +20,14 @@ K publikování a spuštění aplikace:
 
 1. Ujistěte se, že Visual Studio sestavuje verzi vaší aplikace. V případě potřeby změnit nastavení konfigurace sestavení na panelu nástrojů z **ladění** k **vydání**.
 
-   ![Panel nástrojů Visual Studio](media/publishing-with-visual-studio/toolbar.png)
+   ![Panel nástrojů Visual Studio s vybraná sestavení pro vydání](media/publishing-with-visual-studio/visual-studio-toolbar-release.png)
 
 1. Klikněte pravým tlačítkem na **HelloWorld** projektu (nikoli řešení HelloWorld) a vyberte **publikovat** z nabídky. Můžete také vybrat **publikovat HelloWorld** z hlavní aplikace Visual Studio **sestavení** nabídky.
 
-   ![Panel nástrojů Visual Studio](media/publishing-with-visual-studio/publish1.png)
+   ![Visual Studio publikovat místní nabídka](media/publishing-with-visual-studio/publish-context-menu.png)
 
 
-   ![Panel nástrojů Visual Studio](media/publishing-with-visual-studio/publishwindow.png)
+   ![Visual Studio publikovat okna](media/publishing-with-visual-studio/publish-settings-window.png)
 
 1. Otevřete okno konzoly. Například v **typ hledání** textové pole na hlavním panelu Windows, zadejte `Command Prompt` (nebo `cmd` zkráceně) a otevřete okno konzoly tak, že vyberete **příkazového řádku** desktop aplikace nebo stisknutím klávesy Enter, pokud je vybrána ve výsledcích hledání.
 
@@ -49,7 +49,7 @@ K publikování a spuštění aplikace:
 
          Konfigurační soubor běhu aplikace. Určuje verzi .NET Core, vaše aplikace byla vytvořena pro spuštění na. Další informace najdete v tématu [konfigurační soubory modulu Runtime](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md).  
 
-   ![Okno konzoly publikované soubory](media/publishing-with-visual-studio/publishedfiles.png)
+   ![Okno konzoly publikované soubory](media/publishing-with-visual-studio/published-files-output.png)
 
 Proces publikování vytvoří nasazení závisí na architektuře, které je typ nasazení, ve kterém se spustí publikovanou aplikaci na žádnou platformu podporovanou nástrojem .NET Core s .NET Core v systému nainstalovány. Uživatelé můžou spouštět aplikace vydáním `dotnet HelloWorld.dll` příkazu z okna konzoly.
 

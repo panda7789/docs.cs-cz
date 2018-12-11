@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: f416ae8252d9991905da7eeaf4ce6398ff0e7461
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7086bdfbbd2ebace25f2999a0787bcee48494ab8
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514960"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147669"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Připojení k SQL serveru sdružování (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  
@@ -31,7 +31,7 @@ Připojování k databázovému serveru, obvykle se skládá z několika kroků 
   
  V následujícím příkladu C#, tři nové <xref:System.Data.SqlClient.SqlConnection> jsou vytvořeny objekty, ale pouze dva fondy připojení jsou nutné k jejich správě. Všimněte si, že první a druhý připojovací řetězce se liší podle hodnoty přiřazené pro `Initial Catalog`.  
   
-```  
+```csharp
 using (SqlConnection connection = new SqlConnection(  
   "Integrated Security=SSPI;Initial Catalog=Northwind"))  
     {  
@@ -67,7 +67,7 @@ using (SqlConnection connection = new SqlConnection(
  Pro sdružování připojení splňuje požadavky pro připojení pomocí přerozdělení připojení při jejich vydání zpět do fondu. Pokud bylo dosaženo maximální velikosti fondu a není k dispozici žádné použitelné připojení, je požadavek ve frontě. Pro sdružování pokusí uvolnit všechna připojení, dokud nebude dosaženo časového limitu (výchozí hodnota je 15 sekund). Pokud pro sdružování nemůže požadavek splnit, předtím, než vyprší časový limit připojení, je vyvolána výjimka.  
   
 > [!CAUTION]
->  Důrazně doporučujeme po dokončení jeho použití tak, aby připojení bude vrácen do fondu vždy ukončení připojení. Můžete provést buď pomocí `Close` nebo `Dispose` metody `Connection` objektu, nebo otevřením všechna připojení v rámci `using` příkaz v jazyce C#, nebo `Using` v sadě Visual Studio. Připojení, které nebyly uzavřeny explicitně nemusí přidali nebo vrácen do fondu. Další informace najdete v tématu [příkaz using](~/docs/csharp/language-reference/keywords/using-statement.md) nebo [postupy: odstranění systémového prostředku](~/docs/visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) v jazyce Visual Basic.  
+>  Důrazně doporučujeme po dokončení jeho použití tak, aby připojení bude vrácen do fondu vždy ukončení připojení. Můžete provést buď pomocí `Close` nebo `Dispose` metody `Connection` objektu, nebo otevřením všechna připojení v rámci `using` příkaz v jazyce C#, nebo `Using` v sadě Visual Studio. Připojení, které nebyly uzavřeny explicitně nemusí přidali nebo vrácen do fondu. Další informace najdete v tématu [příkaz using](~/docs/csharp/language-reference/keywords/using-statement.md) nebo [jak: Odstranění prostředku systému](~/docs/visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) v jazyce Visual Basic.  
   
 > [!NOTE]
 >  Nevolejte `Close` nebo `Dispose` na `Connection`, `DataReader`, nebo jakýkoli jiný spravovaný objekt v `Finalize` metoda vaší třídy. V finalizační metodu jenom uvolnění nespravovaných prostředků, které vaše třída vlastní přímo. Pokud vaše třída není vlastníkem jakýchkoliv nespravovaných prostředků, nezahrnujte `Finalize` metoda v definici třídy. Další informace najdete v tématu [uvolňování](../../../../docs/standard/garbage-collection/index.md).  

@@ -1,27 +1,28 @@
 ---
-title: 'Jednotka knihovny F # testování v .NET Core pomocí testovacích dotnet a Mstestu'
-description: 'Další koncepty testů jednotek pro F # v .NET Core prostřednictvím interaktivní prostředí sestavování podrobné ukázkové řešení pomocí testovacích dotnet a Mstestu.'
+title: Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a MSTest
+description: Další koncepty testů jednotek pro F# v .NET Core prostřednictvím interaktivního prostředí sestavení krok za krokem ukázkové řešení pomocí příkazu dotnet test a MSTest.
 author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 dev_langs:
 - fsharp
-ms.openlocfilehash: 14e1ac54cb966e0e38c962e92cceb764fd8e9b42
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: seodec18
+ms.openlocfilehash: 9b83146afc24baa582f198200bc931dc8adaf90a
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33218855"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170337"
 ---
-# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>Jednotka knihovny F # testování v .NET Core pomocí testovacích dotnet a Mstestu
+# <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>Testování částí F# knihoven v .NET Core pomocí příkazu dotnet test a MSTest
 
-Tento kurz vás provede interaktivní prostředí vytváření ukázkové řešení podrobné další koncepty testování částí. Pokud chcete postupovat v kurzu pomocí předdefinovaných řešení, [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-mstest/) před zahájením. Pokyny ke stažení najdete v tématu [ukázky a výukové programy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz vás provede interaktivní prostředí pro sestavování ukázkové řešení podrobné další testování konceptů. Pokud chcete postupovat podle kurzu pomocí předem připravených řešení [zobrazení nebo stažení ukázkového kódu](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-with-fsharp-mstest/) předtím, než začnete. Pokyny ke stažení najdete v tématu [ukázek a kurzů](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="creating-the-source-project"></a>Vytvoření projektu zdroje
 
 Otevřete okno prostředí. Vytvořte adresář s názvem *jednotky – testování s fsharp* pro uložení řešení.
-Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) k vytvoření nové řešení. Díky tomu je snazší správa knihovny tříd a projektu testování částí.
-V adresáři řešení vytvořit *MathService* adresáře. Strukturu adresáře a souboru proto mnohem je zobrazena níže:
+Uvnitř tohoto nového adresáře, spusťte [ `dotnet new sln` ](../tools/dotnet-new.md) k vytvoření nového řešení. Díky tomu usnadňují správu knihovny tříd a projekt testu jednotek.
+V adresáři řešení, vytvářet *MathService* adresáře. Struktura adresářů a souborů je dosavadním vidíte níže:
 
 ```
 /unit-testing-with-fsharp
@@ -29,16 +30,16 @@ V adresáři řešení vytvořit *MathService* adresáře. Strukturu adresáře 
     /MathService
 ```
 
-Ujistěte se, *MathService* aktuální adresář a spusťte [ `dotnet new classlib -lang F#` ](../tools/dotnet-new.md) a vytvořte tak projekt zdroje.  Pokud chcete používat testy řízený vývoj (TDD), vytvoříte selhání implementace matematické služby:
+Ujistěte se, *MathService* aktuální adresář a spusťte [ `dotnet new classlib -lang F#` ](../tools/dotnet-new.md) vytvoření zdrojového projektu.  Použití vývoj řízený testováním (TDD), vytvoříte selhání provádění matematických služby:
 
 ```fsharp
 module MyMath =
     let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
-Změna adresáře zpět do *jednotky – testování s fsharp* adresáře. Spustit [ `dotnet sln add .\MathService\MathService.fsproj` ](../tools/dotnet-sln.md) přidání projektu knihovny tříd do řešení.
+Vraťte do adresáře *jednotky – testování s fsharp* adresáře. Spustit [ `dotnet sln add .\MathService\MathService.fsproj` ](../tools/dotnet-sln.md) přidat do řešení projekt knihovny tříd.
 
-## <a name="creating-the-test-project"></a>Vytvoření projektu testů
+## <a name="creating-the-test-project"></a>Vytvoření testovacího projektu
 
 Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova adresářovou strukturu:
 
@@ -51,7 +52,7 @@ Dále vytvořte *MathService.Tests* adresáře. Zobrazí následující osnova a
     /MathService.Tests
 ```
 
-Ujistěte se, *MathService.Tests* adresář aktuální adresář a vytvoření nového projektu pomocí [ `dotnet new mstest -lang F#` ](../tools/dotnet-new.md). Tím se vytvoří testovací projekt, který používá Mstestu jako rozhraní test. Nástroj test runner v nakonfiguruje vygenerované šablony *MathServiceTests.fsproj*:
+Ujistěte se, *MathService.Tests* adresář aktuálního adresáře a vytvořte nový projekt pomocí [ `dotnet new mstest -lang F#` ](../tools/dotnet-new.md). Tím se vytvoří projekt testů, který se používá jako testovací rozhraní MSTest. Nakonfiguruje nástroj test runner v vygenerovanou šablonu *MathServiceTests.fsproj*:
 
 ```xml
 <ItemGroup>
@@ -61,13 +62,13 @@ Ujistěte se, *MathService.Tests* adresář aktuální adresář a vytvoření n
 </ItemGroup>
 ```
 
-K testovacímu projektu vyžaduje další balíčky k vytváření a spouštění testování částí. `dotnet new` v předchozím kroku přidat Mstestu a Mstestu runner. Nyní přidejte `MathService` knihovny tříd jako další závislosti do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
+Projekt testů vyžaduje další balíčky pro vytváření a spouštění testování částí. `dotnet new` v předchozím kroku přidat MSTest a MSTest runner. Teď přidejte `MathService` knihovny tříd jako další závislost do projektu. Použití [ `dotnet add reference` ](../tools/dotnet-add-reference.md) příkaz:
 
 ```
 dotnet add reference ../MathService/MathService.fsproj
 ```
 
-Zobrazí celý soubor v [ukázky úložiště](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na Githubu.
+Zobrazí celý soubor v [úložiště ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-with-fsharp/MathService.Tests/MathService.Tests.fsproj) na Githubu.
 
 Máte následující rozložení konečné řešení:
 
@@ -82,11 +83,11 @@ Máte následující rozložení konečné řešení:
         MathServiceTests.fsproj
 ```
 
-Spuštění [ `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` ](../tools/dotnet-sln.md) v *jednotky – testování s fsharp* adresáře.
+Spustit [ `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` ](../tools/dotnet-sln.md) v *jednotky – testování s fsharp* adresáře.
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jeden selhání test, což předat a zopakováním postupu. Otevřete *Tests.fs* a přidejte následující kód:
+Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Otevřít *Tests.fs* a přidejte následující kód:
 
 ```fsharp
 namespace MathService.Tests
@@ -106,11 +107,11 @@ type TestClass () =
      member this.FailEveryTime() = Assert.IsTrue(false)
 ```
 
-`[<TestClass>]` Atribut označuje třídu, která obsahuje testy. `[<TestMethod>]` Atribut označuje testovací metodu, která spustí nástroj test runner. Z *jednotky – testování s fsharp* adresáře, provést [ `dotnet test` ](../tools/dotnet-test.md) vytvářet testy a knihovny tříd a poté spusťte testy. Nástroj test runner Mstestu obsahuje vstupní bod programu ke spuštění testů. `dotnet test` Spustí nástroj test runner pomocí projektu testů jednotek, které jste vytvořili.
+`[<TestClass>]` Atribut označuje třídu, která obsahuje testy. `[<TestMethod>]` Označuje atribut testovací metody, která se spouští pomocí nástroje test runner. Z *jednotky – testování s fsharp* adresáře, spusťte [ `dotnet test` ](../tools/dotnet-test.md) pro sestavení, testy a knihovny tříd a následné spuštění testů. Nástroj test runner MSTest obsahuje vstupní bod programu pro spouštění vašich testů. `dotnet test` Spustí nástroj test runner pomocí projektu testování částí, kterou jste vytvořili.
 
-Tyto dva testy zobrazit nejzákladnější, předávání a selhání testy. `My test` úspěšně projde, a `Fail every time` selže. Teď vytvořte testu pro `squaresOfOdds` metoda. `squaresOfOdds` Metoda vrátí seznam kvadratických hodnot liché celé číslo, které jsou součástí vstupní pořadí. Místo došlo k pokusu o zápis všechny tyto funkce najednou, můžete vytvořit interaktivně testy, které ověřit funkčnost. Provedení každého testu předat znamená vytváření potřebné funkce pro metodu.
+Tyto dva testy zobrazit naprosto základní předáním hodnoty a neúspěšné testy. `My test` úspěšně proběhne, a `Fail every time` selže. Teď vytvořte test `squaresOfOdds` metody. `squaresOfOdds` Metoda vrátí seznam hodnot druhých mocnin hodnot liché celé číslo, které jsou součástí vstupní sekvence. Namísto pokusu o zápis všechny tyto funkce současně, můžete interaktivně vytvořit testy, které ověří funkčnost. Provedení každého testu předat znamená vytvoření potřebné funkce k metodě.
 
-Nejjednodušší testu jsme může zapisovat je volání `squaresOfOdds` s všechna čísla sudé, kde výsledkem by měl být prázdnou sekvencí celých čísel.  Tady je testu:
+Nejjednodušší nám můžete napsat test je volání `squaresOfOdds` s všechna sudá čísla, kde výsledkem by měl být k prázdné sekvenci celých čísel.  Tady je tento test:
 
 ```fsharp
 [<TestMethod>]
@@ -120,20 +121,20 @@ member this.TestEvenSequence() =
     Assert.AreEqual(expected, actual)
 ```
 
-Všimněte si, že `expected` pořadí byl převeden na seznamu. Knihovna Mstestu spoléhá na mnoho standardní typy .NET. Aby závislost znamená, že veřejné rozhraní a očekávaných výsledků podporu <xref:System.Collections.ICollection> místo <xref:System.Collections.IEnumerable>.
+Všimněte si, že `expected` pořadí byl převeden do seznamu. Knihovna MSTest spoléhá na mnoho standardních typů .NET. Že závislostí znamená, že vaše veřejné rozhraní a očekávané výsledky podporu <xref:System.Collections.ICollection> spíše než <xref:System.Collections.IEnumerable>.
 
-Při spuštění testu, uvidíte, že váš test se nezdaří. Nevytvořili jste ještě implementace. Psaní kódu nejjednodušší v, aby tento test `Mathservice` třídu, která funguje:
+Při spuštění testu se zobrazí, že váš test se nezdaří. Nevytvořili jste ještě implementace. Tento test provést napsáním kódu nejjednodušší v `Mathservice` třídu, která funguje:
 
 ```csharp
 let squaresOfOdds xs =
     Seq.empty<int> |> Seq.toList
 ```
 
-V *jednotky – testování s fsharp* spusťte `dotnet test` znovu. `dotnet test` Příkaz spustí sestavení pro `MathService` projektu a pak `MathService.Tests` projektu. Po sestavení obou projektů, spustí se tento jeden test. Pak předá.
+V *jednotky – testování s fsharp* adresáře, spusťte `dotnet test` znovu. `dotnet test` Sestavení pro spuštění příkazu `MathService` projekt a potom `MathService.Tests` projektu. Po vytvoření oba projekty, poběží tento jeden test. Předá.
 
-## <a name="completing-the-requirements"></a>Požadavky na dokončení
+## <a name="completing-the-requirements"></a>Dokončuje požadavky
 
-Teď, když jste udělali jeden testovací předání, je čas zapsat informace. Další jednoduché případ funguje s pořadím, jejichž pouze liché číslo je `1`. Číslo 1 je jednodušší, protože druhou mocninu 1 je 1. Zde je další testu:
+Teď, když jste provedli, předejte jeden test, je čas zápisu informace. Další jednoduchý případ funguje s pořadím, jehož jen liché číslo je `1`. Číslo 1 je jednodušší, protože druhou mocninu 1 je 1. Tady je další testu:
 
 ```fsharp
 [<TestMethod>]
@@ -143,7 +144,7 @@ member public this.TestOnesAndEvens() =
     Assert.AreEqual(expected, actual)
 ```
 
-Provádění `dotnet test` nový test se nezdaří. Je nutné aktualizovat `squaresOfOdds` metodu ke zpracování tento nový test. Musí filtrovat všechna čísla sudé mimo pořadí, aby tento test předat. Můžete to udělat tak, že zápis funkce malé filtru a pomocí `Seq.filter`:
+Provádění `dotnet test` nový test se nezdaří. Je nutné aktualizovat `squaresOfOdds` metodu ke zpracování tohoto nového testu. Všechna sudá čísla mimo pořadí, aby tento test předat musí filtrovat. Můžete to udělat tak, že funkce malé filtru zápisu a pomocí `Seq.filter`:
 
 ```fsharp
 let private isOdd x = x % 2 <> 0
@@ -153,9 +154,9 @@ let squaresOfOdds xs =
     |> Seq.filter isOdd |> Seq.toList
 ```
 
-Všimněte si volání `Seq.toList`. Který vytvoří seznam, který implementuje <xref:System.Collections.ICollection> rozhraní.
+Všimněte si, že volání `Seq.toList`. Který vytváří seznam, který implementuje <xref:System.Collections.ICollection> rozhraní.
 
-Neexistuje jeden krok přejdete: Čtvereček každý liché čísel. Začněte vytvořením nového testu:
+Existuje jeden další krok: čtvercové všech lichých čísel. Začněte vytvořením nového testu:
 
 ```fsharp
 [<TestMethod>]
@@ -165,7 +166,7 @@ member public this.TestSquaresOfOdds() =
     Assert.AreEqual(expected, actual)
 ```
 
-Můžete je vyřešit test tím filtrované pořadí prostřednictvím operace mapy vypočítat druhou mocninu každý lichý počet:
+Test můžete vyřešit přesměrujete filtrované pořadí prostřednictvím operace mapy vypočítat druhou mocninu každý liché číslo:
 
 ```fsharp
 let private square x = x * x
@@ -178,4 +179,4 @@ let squaresOfOdds xs =
     |> Seq.toList
 ```
 
-Když jste sestavili malé knihovny a sadu testů jednotek pro danou knihovnu. Řešení si strukturovaná, tak, aby přidání nové balíčky a testy je součástí normálním pracovním postupu. Jste soustředí většinu čas a úsilí na řešení cílů aplikace.
+Začlenění malé knihovny a sadu testů jednotek pro knihovny. Řešení jsme strukturovaná, takže přidání nové balíčky a testů je součástí normálního pracovního postupu. Jste koncentrované většinu času a úsilí na řešení cíle aplikace.

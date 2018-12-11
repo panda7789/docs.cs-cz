@@ -1,15 +1,15 @@
 ---
 title: Spouštění selektivních testů jednotek
-description: Ukazuje, jak pomocí výrazu filtru spouštění selektivních testů jednotek pomocí příkazu dotnet test.
+description: Jak pomocí výrazu filtru spouštění selektivních testů jednotek pomocí příkazu dotnet test v .NET Core.
 author: smadala
-ms.author: mairaw
 ms.date: 03/22/2017
-ms.openlocfilehash: 428e31014f5d8d487deb7c4b4317ebcef13c294d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: 1a90438e3b0b2eb095124208010bbe9558424d91
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517217"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170186"
 ---
 # <a name="running-selective-unit-tests"></a>Spouštění selektivních testů jednotek
 
@@ -45,7 +45,7 @@ namespace MSTestNamespace
 | ---------- | ------ |
 | `dotnet test --filter Method` | Spustí testy, jejichž `FullyQualifiedName` obsahuje `Method`. K dispozici v `vstest 15.1+`. |
 | `dotnet test --filter Name~TestMethod1` | Spustí testy, jejichž název obsahuje `TestMethod1`. |
-| `dotnet test --filter ClassName=MSTestNamespace.UnitTest1` | Spustí testy, které jsou ve třídě `MSTestNamespace.UnitTest1`.<br>**Poznámka:** `ClassName` hodnota by měla mít oboru názvů, tak `ClassName=UnitTest1` nebude fungovat. |
+| `dotnet test --filter ClassName=MSTestNamespace.UnitTest1` | Spustí testy, které jsou ve třídě `MSTestNamespace.UnitTest1`.<br>**Poznámka:** `ClassName` Hodnota by měla mít oboru názvů, tak `ClassName=UnitTest1` nebude fungovat. |
 | `dotnet test --filter FullyQualifiedName!=MSTestNamespace.UnitTest1.TestMethod1` | Spustí všechny testy s výjimkou `MSTestNamespace.UnitTest1.TestMethod1`. |
 | `dotnet test --filter TestCategory=CategoryA` | Spustí testy, které jsou opatřeny poznámkami s `[TestCategory("CategoryA")]`. |
 | `dotnet test --filter Priority=2` | Spustí testy, které jsou opatřeny poznámkami s `[Priority(2)]`.<br>

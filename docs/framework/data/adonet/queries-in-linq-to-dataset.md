@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: da9e5bd39cebce27dbaf89ac020c2bf8f154adcc
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2b2d487484f026be7637185ef759fb87db571b3a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44211837"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145803"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
 Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce, jako je například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazy. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu, vždy pracujete s programovacích objektech.  
@@ -23,7 +23,7 @@ Dotaz je výraz, který načítá data z datového zdroje. Dotazy jsou obvykle v
   
  V dotazu, který vrací posloupnost hodnot že proměnné dotazu samy nikdy neobsahují výsledky dotazu a ukládá pouze příkazy dotazu. Provádění dotazu je odloženo, dokud proměnná dotazu je procházena `foreach` nebo `For Each` smyčky. Tento postup se nazývá *odložené provedení*; to znamená, dotaz spuštěn nějakou dobu, po dotazu je vytvořený. To znamená, že můžete spustit dotaz tak často, jak chcete. To je užitečné, pokud například máte databázi, která se aktualizuje jiné aplikace. Ve vaší aplikaci můžete vytvořit dotaz pro načtení nejnovějších informací a opakovaně spustit dotaz, vrácení aktualizované informace pokaždé, když.  
   
- Na rozdíl od odložené dotazy, které vracejí posloupnost hodnot, jsou dotazy, které vracejí hodnotu singleton spuštěna ihned. Tady je několik příkladů dotazů singleton <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A>, a <xref:System.Linq.Enumerable.First%2A>. Provádějí se okamžitě vzhledem k tomu, že výsledky dotazu jsou nutné k výpočtu jednoznačný výsledek. Například pokud chcete zjistit průměr z výsledků dotazu dotaz musí provést tak, aby průměrované funkce obsahuje vstupní data pro práci s. Můžete také použít <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> metod v dotazu, chcete-li vynutit okamžité spuštění dotazu, který nevytváří hodnotu singleton. Tyto postupy, chcete-li vynutit okamžité spuštění může být užitečné, pokud chcete výsledky dotazu do mezipaměti. Další informace o odložené a okamžité spuštění dotazu naleznete v tématu [Začínáme s dotazy LINQ](https://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9).  
+ Na rozdíl od odložené dotazy, které vracejí posloupnost hodnot, jsou dotazy, které vracejí hodnotu singleton spuštěna ihned. Tady je několik příkladů dotazů singleton <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A>, a <xref:System.Linq.Enumerable.First%2A>. Provádějí se okamžitě vzhledem k tomu, že výsledky dotazu jsou nutné k výpočtu jednoznačný výsledek. Například pokud chcete zjistit průměr z výsledků dotazu dotaz musí provést tak, aby průměrované funkce obsahuje vstupní data pro práci s. Můžete také použít <xref:System.Linq.Enumerable.ToList%2A> nebo <xref:System.Linq.Enumerable.ToArray%2A> metod v dotazu, chcete-li vynutit okamžité spuštění dotazu, který nevytváří hodnotu singleton. Tyto postupy, chcete-li vynutit okamžité spuštění může být užitečné, pokud chcete výsledky dotazu do mezipaměti.
   
 ## <a name="queries"></a>Dotazy  
  [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazy se dají formulovat ve dvou různých syntaxí: výraz syntaxe využívající dotazy a syntaxe dotazů založených na volání metody.  

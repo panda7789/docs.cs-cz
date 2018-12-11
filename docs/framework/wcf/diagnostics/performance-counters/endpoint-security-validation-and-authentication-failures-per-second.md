@@ -3,14 +3,14 @@ title: 'Koncový bod: Ověřování zabezpečení a počet selhání ověření 
 ms.date: 03/30/2017
 ms.assetid: 89a70b90-d7e4-4b03-9b84-4dc88ce3d605
 ms.openlocfilehash: 43886f79585fb9a63eeb51360cc869365c100a1d
-ms.sourcegitcommit: 5fd80619c760fa8c25d33a6f5661247cb65da465
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50744233"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129048"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures-per-second"></a>Koncový bod: Ověřování zabezpečení a počet selhání ověření za sekundu
-Název čítače: ověřování zabezpečení a ověřování chyb za sekundu  
+Název čítače: Ověřování zabezpečení a počet selhání ověření za sekundu  
   
 ## <a name="description"></a>Popis  
  Tento čítač se zvyšuje vždy, když zpráva byl odmítnut z důvodu problému zabezpečení se nevztahuje čítač "Zabezpečení volání Neautorizováno". Tyto problémy patří:  

@@ -11,11 +11,11 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8d78549d2822ad6c660fae39d458a98f23eca390
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199887"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146729"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -28,7 +28,7 @@ Tento článek obsahuje odkazy na instalaci z rozhraní .NET Framework 4.5 na v�
 
 [!INCLUDE[net-framework-4-versions](../../../includes/net-framework-4x-versions.md)]
 
-Další informace o verzích rozhraní .NET Framework a jak určit, jaké verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md) a [postupy: určení které rozhraní .NET Framework verze jsou Nainstalované](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).
+Další informace o verzích rozhraní .NET Framework a jak určit, jaké verze jsou nainstalovány v počítači, naleznete v tématu [verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md) a [jak: Zjištění nainstalovaných verzí rozhraní .NET Framework](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md).
 
 > [!NOTE]
 > Informace o rozhraní .NET Framework 3.5 najdete v tématu [nainstalovat rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](~/docs/framework/install/dotnet-35-windows-10.md).
@@ -193,10 +193,10 @@ V následující tabulce jsou uvedeny podporované jazyky.
 | --------------------- | :-----: |
 | Arabština                | ar      |
 | Čeština                 | cs      |
-| Dánština                | da      |
+| dánština                | da      |
 | Holandština                 | NL      |
 | Finština               | Fi      |
-| Angličtina (USA)         | en US   |
+| Angličtina (USA)         | en-US   |
 | Francouzština                | FR      |
 | Němčina                | de      |
 | Řečtina                 | El      |
@@ -205,14 +205,14 @@ V následující tabulce jsou uvedeny podporované jazyky.
 | Italština               | To      |
 | Japonština              | Japonsko      |
 | Korejština                | Ko      |
-| Norština             | Ne      |
+| norština             | Ne      |
 | Polština                | PL      |
 | Portugalština (Brazílie)   | pt-BR   |
 | Portugalština (Portugalsko) | pt-PT   |
 | Ruština               | RU      |
 | Zjednodušená čínština    | zh-CHS  |
 | Španělština               | ES      |
-| Švédština               | sv      |
+| švédština               | sv      |
 | Tradiční čínština   | zh-CHT  |
 | Turečtina               | tr      |
 

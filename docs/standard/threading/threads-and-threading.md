@@ -10,11 +10,11 @@ ms.assetid: 5baac3aa-e603-4fa6-9f89-0f2c1084e6b1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 095bd92921c9cd54d3a7d97ed07b35526b85c57f
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52672303"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147675"
 ---
 # <a name="threads-and-threading"></a>Vlákna a dělení na vlákna
 

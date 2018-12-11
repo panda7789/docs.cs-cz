@@ -1,19 +1,17 @@
 ---
-title: Základy Dockeru s .NET Core
-description: Základní kurz k .NET Core a Docker
-author: jralexander
-ms.author: johalex
-ms.date: 11/06/2017
+title: Kontejnerizace aplikace pomocí Dockeru
+description: V tomto kurzu se naučíte jak vytvořit základní aplikaci v .NET Core a kontejnerizace s Dockerem.
+ms.date: 10/11/2018
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: 543b9454e826022a72752d9a24bc43b77d2501f5
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.custom: mvc, seodec18
+ms.openlocfilehash: eed72553576f4154fe63b2e5cf035a781afe4b7c
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615297"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169583"
 ---
-# <a name="learn-docker-basics-with-net-core"></a>Základy Dockeru s .NET Core
+# <a name="how-to-containerize-a-net-core-application"></a>Jak kontejnerizovat aplikace .NET Core
 
 V tomto kurzu se dozvíte, jaké Docker, kontejner sestavení a nasazení úlohy pro aplikace .NET Core. [Platforma Docker](https://docs.docker.com/engine/docker-overview/#the-docker-platform) používá [modul Docker](https://docs.docker.com/engine/docker-overview/#docker-engine) k rychlému sestavování a balíčky aplikací jako [imagí Dockeru](https://docs.docker.com/glossary/?term=image). Tyto Image jsou napsané v [soubor Dockerfile](https://docs.docker.com/glossary/?term=Dockerfile) formátu k nasazení a spouštění [vrstvy kontejneru](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#container-and-layers).
 
@@ -36,40 +34,40 @@ Můžete vytvářet kontejnery Windows i Linuxu pomocí [více arch na základě
 
 ### <a name="prerequisites"></a>Požadavky
 
-K dokončení tohoto kurzu:
+K provedení kroků v tomto kurzu je potřeba:
 
-#### <a name="net-core-20-sdk"></a>.NET core 2.0 SDK
+#### <a name="net-core-sdk"></a>.NET core SDK
 
-* Nainstalujte [.NET Core SDK 2.0](https://www.microsoft.com/net/core).
+* Nainstalujte [sady SDK .NET Core 2.1](https://www.microsoft.com/net/download) nebo novější.
 
-Zobrazit [podporované verze operačního systému aplikace .NET Core 2.x](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md) pro úplný seznam .NET Core 2.x podporované operační systémy, z verze podporu operačního systému a propojení zásad životního cyklu.
+Zobrazit [podporované verze operačního systému .NET Core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) pro úplný seznam .NET Core 2.1 podporované operační systémy, z verze podporu operačního systému a propojení zásad životního cyklu.
 
 * Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
 > [!TIP]
-> Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://visualstudio.com/downloads)!
+> Je potřeba nainstalovat editor kódu? Zkuste [Visual Studio Code](https://code.visualstudio.com/download)!
 
 #### <a name="installing-docker-client"></a>Instalace klienta Dockeru
 
-Nainstalujte [Docker 17.06](https://docs.docker.com/release-notes/docker-ce/) nebo novější klienta Dockeru.
+Nainstalujte [Docker 18.06](https://docs.docker.com/release-notes/docker-ce/) nebo novější klienta Dockeru.
 
 Klienta Dockeru se dá nainstalovat ve:
 
 * Linuxové distribuce
 
-   * [CentOS](https://www.docker.com/docker-centos-distribution)
+   * [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
 
-   * [Debian](https://www.docker.com/docker-debian)
+   * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
 
-   * [Fedora](https://www.docker.com/docker-fedora)
+   * [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
 
-   * [Ubuntu](https://www.docker.com/docker-ubuntu)
+   * [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-* [macOS](https://docs.docker.com/docker-for-mac/)
+* [macOS](https://docs.docker.com/docker-for-mac/install/)
 
-* [Windows](https://docs.docker.com/docker-for-windows/).
+* [Windows](https://docs.docker.com/docker-for-windows/install/).
 
-### <a name="create-a-net-core-20-console-app-for-dockerization"></a>Vytvoření konzolové aplikace .NET Core 2.0 pro Dockerization
+### <a name="create-a-net-core-21-console-app-for-dockerization"></a>Vytvoření konzolové aplikace .NET Core 2.1 pro Dockerization
 
 Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte do složky, kterou jste vytvořili a zadejte následující příkazy:
 
@@ -83,13 +81,13 @@ Pojďme si rychlý návod:
 1. `$ dotnet new console`
 
    [`dotnet new`](../tools/dotnet-new.md) Vytvoří aktuální `Hello.csproj` soubor projektu se závislostmi, které jsou potřebné k sestavení aplikace konzoly.  Vytvoří se také `Program.cs`, základní soubor, který obsahuje vstupní bod pro aplikaci.
-   
+
    `Hello.csproj`:
 
    Soubor projektu určuje vše, co je potřeba k obnovení závislostí a sestavit program.
 
    * `OutputType` Značka Určuje, že vytváříme spustitelný soubor, jinými slovy konzolové aplikace.
-   * `TargetFramework` Značky Určuje, jaké implementace .NET jsme cílíte. V pokročilém scénáři můžete zadat více cílových platforem a od sestavení k architekturami zadanými v rámci jedné operace. V tomto kurzu jsme integrovali pro .NET Core 2.0.
+   * `TargetFramework` Značky Určuje, jaké implementace .NET jsme cílíte. V pokročilém scénáři můžete zadat více cílových platforem a od sestavení k architekturami zadanými v rámci jedné operace. V tomto kurzu jsme integrovali pro .NET Core 2.1.
 
    `Program.cs`:
 
@@ -97,26 +95,21 @@ Pojďme si rychlý návod:
 
    My pak definovat obor názvů s názvem `Hello`. Obor názvů můžete změnit na všechno, co chcete. Třída s názvem `Program` je definována v daném oboru názvů s `Main` metodu, která přijímá pole řetězců jako svůj argument. Toto pole se seznamem argumentů předaných v při volání zkompilovaný program. V našem příkladu program zapíše pouze "Hello World!" do konzoly.
 
-2. `$ dotnet restore`
-
-   V .NET Core 2.x, **dotnet nové** běží [ `dotnet restore` ](../tools/dotnet-restore.md) příkazu. **DotNet restore** strom závislostí se obnoví [NuGet](https://www.nuget.org/)volání (Správce balíčků .NET).
+   **DotNet nové** běží [ `dotnet restore` ](../tools/dotnet-restore.md) příkazu. **DotNet restore** strom závislostí se obnoví [NuGet](https://www.nuget.org/)volání (Správce balíčků .NET).
    NuGet provádí následující úlohy:
-   * analyzuje *Hello.csproj* souboru 
-   * stáhne soubor závislosti (nebo získá z mezipaměti počítače)
-   * zapíše *obj/project.assets.json* souboru
+   * analyzuje *Hello.csproj* souboru.
+   * stáhne soubor závislosti (nebo získá z mezipaměti počítače).
+   * zapíše *obj/project.assets.json* souboru.
 
-<a name="dotnet-restore-note"></a>
-[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
-   
    *Project.assets.json* soubor je kompletní sadu grafu závislostí NuGet, řešení vazby a další metadata aplikace. To vyžaduje soubor je používán jiné nástroje, jako například [ `dotnet build` ](../tools/dotnet-build.md) a [ `dotnet run` ](../tools/dotnet-run.md), správně zpracovat zdrojový kód.
-   
-3. `$ dotnet run`
+
+2. `$ dotnet run`
 
    [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) potvrďte úspěšné sestavení a volání `dotnet <assembly.dll>` ke spuštění aplikace.
-   
+
     ```console
     $ dotnet run
-    
+
     Hello World!
     ```
 
@@ -133,7 +126,7 @@ Otevřete textový editor a můžeme začít! Z adresáře Hello, kterou jsme vy
 Přidejte následující pokyny Dockeru pro buď Linux nebo [kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/about/) do nového souboru. Až budete hotovi, uložte ho v kořenovém adresáři Hello jako **soubor Dockerfile**, bez přípony (budete muset nastavit vašemu typu souboru `All types (*.*)` nebo něco podobného).
 
 ```Dockerfile
-FROM microsoft/dotnet:2.0-sdk
+FROM microsoft/dotnet:2.1-sdk
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
@@ -148,10 +141,10 @@ ENTRYPOINT ["dotnet", "out/Hello.dll"]
 
 Soubor Dockerfile obsahuje pokyny pro sestavení Dockeru, které se spouští sekvenčně.
 
-Musí být první instrukce [ **FROM**](https://docs.docker.com/engine/reference/builder/#from). Tento pokyn inicializuje nové fázi sestavení a nastaví základní Image pro pokynů. Více architektury značky kontejnery Windows nebo Linuxem v závislosti na Docker pro Windows o přijetí změn [režimu kontejneru](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers). Základní Image pro naše ukázka je 2.0 sdk image z úložiště microsoft/dotnet
+Musí být první instrukce [ **FROM**](https://docs.docker.com/engine/reference/builder/#from). Tento pokyn inicializuje nové fázi sestavení a nastaví základní Image pro pokynů. Více architektury značky kontejnery Windows nebo Linuxem v závislosti na Docker pro Windows o přijetí změn [režimu kontejneru](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers). Základní Image pro naše ukázka je 2.1 sdk image z úložiště microsoft/dotnet
 
 ```Dockerfile
-FROM microsoft/dotnet:2.0-sdk
+FROM microsoft/dotnet:2.1-sdk
 ```
 
 [ **WORKDIR** ](https://docs.docker.com/engine/reference/builder/#workdir) instrukce nastaví pracovní adresář pro všechny zbývající spuštění, CMD, ENTRYPOINT, kopírování a souboru Dockerfile přidat pokyny. Pokud adresář neexistuje, vytvoří se. V takovém případě WORKDIR nastavena na adresář aplikace.
@@ -196,7 +189,7 @@ Nyní je třeba soubor Dockerfile, který:
 * závislostí vaší aplikace do bitové kopie
 * spuštění jako spustitelný soubor aplikace sestavení
 
-### <a name="build-and-run-the-hello-net-core-20-app"></a>Sestavíte a spustíte aplikaci Hello .NET Core 2.0
+### <a name="build-and-run-the-hello-net-core-app"></a>Sestavíte a spustíte aplikaci Hello .NET Core
 
 #### <a name="essential-docker-commands"></a>Základní příkazy Dockeru
 
@@ -222,9 +215,9 @@ docker run --rm dotnetapp-dev Hello from Docker
 Výstup `docker build` příkaz by měl být podobný výstup konzoly následující:
 
 ```console
-Sending build context to Docker daemon   72.7kB
-Step 1/7 : FROM microsoft/dotnet:2.0-sdk
- ---> d84f64b126a6
+Sending build context to Docker daemon   173.1kB
+Step 1/7 : FROM microsoft/dotnet:2.1-sdk
+ ---> 288f8c45f7c2
 Step 2/7 : WORKDIR /app
  ---> Using cache
  ---> 9af1fbdc7972
@@ -243,7 +236,7 @@ Step 6/7 : RUN dotnet publish -c Release -o out
 Step 7/7 : ENTRYPOINT dotnet out/Hello.dll
  ---> Using cache
  ---> 53c337887e18
-Successfully built 53c337887e18
+Successfully built 46db075bd98d
 Successfully tagged dotnetapp-dev:latest
 ```
 
@@ -261,14 +254,12 @@ Blahopřejeme! máte jen:
 > * Vytvoření souboru Dockerfile k vytvoření prvního kontejneru služby
 > * Vytvořené a spustili aplikaci Dockerized
 
-
-
 ## <a name="next-steps"></a>Další kroky
 
 Tady jsou některé další kroky, které si můžete:
 
 * [Úvod do Video Image .NET Dockeru](https://channel9.msdn.com/Shows/Code-Conversations/Introduction-to-NET-Docker-Images-with-Kendra-Havens?term=docker)
-* [Visual Studio, Docker a Azure Container Instances společně to jde líp!](https://blogs.msdn.microsoft.com/alimaz/2017/08/17/visual-studio-docker-azure-container-instances-better-together/)
+* [Visual Studio, Docker a Azure Container Instances společně to jde líp!](https://medium.com/@AliMazaheri/visual-studio-docker-azure-container-instances-better-together-bf8c2f0419ae)
 * [Docker for rychlí průvodci Azure](https://docs.docker.com/docker-for-azure/#docker-community-edition-ce-for-azure)
 * [Nasazení vaší aplikace v Dockeru pro Azure](https://docs.docker.com/docker-for-azure/deploy/)
 
@@ -279,7 +270,7 @@ Tady jsou některé další kroky, které si můžete:
 
 V této ukázce se používají následující Image Dockeru
 
-* [`microsoft/dotnet:2.0-sdk`](https://hub.docker.com/r/microsoft/dotnet)
+* [`microsoft/dotnet:2.1-sdk`](https://hub.docker.com/r/microsoft/dotnet)
 
 ## <a name="related-resources"></a>Související prostředky
 

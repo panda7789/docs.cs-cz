@@ -1,25 +1,23 @@
 ---
-title: příkaz odkaz DotNet remove - .NET Core rozhraní příkazového řádku
-description: Příkaz dotnet odebrat odkaz poskytuje vhodnou možnost odebrat odkazy na projekt na projekt.
-author: mairaw
-ms.author: mairaw
+title: příkaz DotNet odebrat odkaz
+description: Příkaz dotnet odebrat odkaz poskytuje pohodlné možnost pro odebrání odkazů typu projekt na projekt.
 ms.date: 05/29/2018
-ms.openlocfilehash: b281b255be7f49a99a6b4928c340cd4fb085f085
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: bfac4721743babcf48fd8e86a50c8df136e1bfce
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696228"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170610"
 ---
-# <a name="dotnet-remove-reference"></a>Odebrat odkaz DotNet.
+# <a name="dotnet-remove-reference"></a>DotNet odebrat odkaz
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet remove reference` – Odebere odkazy na projekt na projekt.
+`dotnet remove reference` – Odebere odkazy typu projekt projekt.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 `dotnet remove [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
@@ -31,32 +29,32 @@ ms.locfileid: "34696228"
 
 `PROJECT`
 
-Cílový soubor projektu. Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.
+Cílový soubor projektu. Pokud není zadán, příkaz vyhledá v aktuálním adresáři pro jeden.
 
 `PROJECT_REFERENCES`
 
-Chcete-li odebrat odkazuje na projekt na projekt (P2P). Můžete určit jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systému Unix/Linux, na základě terminály.
+Chcete-li odebrat odkazuje na projekt na projekt (P2P). Můžete určit jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systému Unix/Linux na základě terminály.
 
 ## <a name="options"></a>Možnosti
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-f|--framework <FRAMEWORK>`
 
-Odebere odkaz jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
+Odebere odkaz pouze v případě cílení na konkrétní [framework](../../standard/frameworks.md).
 
 ## <a name="examples"></a>Příklady
 
-Odeberte odkaz na projekt z zadaného projektu:
+Odebrání odkazu na projekt ze zadaného projektu:
 
 `dotnet remove app/app.csproj reference lib/lib.csproj`
 
-Odebrání více odkazy na projekt na projekt v aktuálním adresáři:
+Odeberte odkazy na více projektu z projektu v aktuálním adresáři:
 
 `dotnet remove reference lib1/lib1.csproj lib2/lib2.csproj`
 
-Odebrání více odkazů projektu pomocí vzoru glob na systému Unix/Linux:
+Odeberte odkazy na více projektů pomocí vzoru pro glob v systému Unix/Linux:
 
 `dotnet remove app/app.csproj reference **/*.csproj`

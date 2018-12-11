@@ -4,12 +4,12 @@ description: Začínáme vytvářet knihovny .NET.
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 6377e3fe606bf7603b418decdd0e3f9d2de6a510
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 05466de1469fc765570b8250301e8404cd5df173
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201240"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145722"
 ---
 # <a name="get-started"></a>Začínáme
 
@@ -46,5 +46,5 @@ Dobré knihovny .NET postupně měnit, přidávat funkce, oprava chyb a vylepše
 Je důležité pro knihovnu .NET najít rovnováhu mezi stabilitu pro stávající uživatele a inovace v budoucnosti. Další informace o různých druzích zásadní změny a strategie pro přidávání nových funkcí při zachování zpětné kompatibility.
 
 >[!div class="step-by-step"]
-[Předchozí](./index.md)
-[další](./cross-platform-targeting.md)
+>[Předchozí](index.md)
+>[další](cross-platform-targeting.md)

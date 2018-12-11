@@ -16,23 +16,23 @@ helpviewer_keywords:
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c7a912386d93e727a1f4cd2253ad06be76ae3385
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc81e1e13f942f5db4fec5cc607264d499b63629
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33388339"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146076"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování
-Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozšířené trasování. Základním předpokladem je beze změny: trasování zprávy jsou odesílány prostřednictvím přepínače na naslouchací procesy, které nahlásit střední přidružené výstupní data. Základní rozdíl pro verzi 2.0 je, že trasování lze inicializovat pomocí instance <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource> je určen k fungovat jako systém rozšířené trasování a jde použít místo statických metod starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale je doporučený postup použití <xref:System.Diagnostics.TraceSource> třídu pro trasování.  
+Mezi nové funkce v rozhraní .NET Framework verze 2.0 je systém rozšířené trasování. Základní se nezmění: trasování zprávy odesílány prostřednictvím přepínače naslouchacích procesů, které nahlásit střední přidružené výstupní data. Hlavní rozdíl pro verzi 2.0 je, že můžete zahájit trasování prostřednictvím instancí <xref:System.Diagnostics.TraceSource> třídy. <xref:System.Diagnostics.TraceSource> slouží jako systém rozšířené trasování a dá se použít místo statické metody starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy stále existují, ale doporučený postup je použít <xref:System.Diagnostics.TraceSource> třídy pro trasování.  
   
- Toto téma popisuje použití <xref:System.Diagnostics.TraceSource> kombinaci s konfiguračním souboru aplikace.  Je možné, však není doporučena pomocí trasování <xref:System.Diagnostics.TraceSource> bez použití konfiguračního souboru. Informace o trasování bez konfiguračního souboru, najdete v části [postupy: vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).  
+ Toto téma popisuje použití <xref:System.Diagnostics.TraceSource> pomocí konfiguračního souboru aplikace s velkou provázaností.  Je to možné, i když není doporučeno použití trasování <xref:System.Diagnostics.TraceSource> bez použití konfiguračního souboru. Informace o sledování bez konfiguračního souboru najdete v tématu [jak: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md).  
   
-### <a name="to-create-and-initialize-your-trace-source"></a>K vytvoření a inicializace váš zdroj trasování  
+### <a name="to-create-and-initialize-your-trace-source"></a>Vytvoření a Inicializace zdroje trasování  
   
-1.  Prvním krokem k instrumentaci aplikace s trasování je vytvoření zdroje trasování. V rozsáhlých projektů s různými součástmi můžete vytvořit zdroj samostatné trasování pro každou součást. Doporučený postup je použití název aplikace pro název zdroje trasování. To bude usnadňují oddělit různé trasování. Následující kód vytvoří nový zdroj trasování (`mySource)` a volá metodu (`Activity1`) který provádí trasování událostí.  Trasovací zprávy jsou zapsány pomocí výchozí naslouchací proces trasování.  
+1.  Prvním krokem k instrumentaci aplikace pomocí trasování je vytvoření zdroje trasování. Ve velkých projektech s různými součástmi můžete vytvořit samostatné trasování zdroj pro jednotlivé komponenty. Doporučeným postupem je použít název aplikace pro název zdroje trasování. To bude usnadňují oddělovat různé trasování. Následující kód vytvoří nový zdroj trasování (`mySource)` a volá metodu (`Activity1`), který provádí trasování událostí.  Zprávy trasování jsou zapsány pomocí výchozí naslouchací služby stopy.  
   
-    ```  
+    ```csharp
     using System;  
     using System.Diagnostics;  
     using System.Threading;  
@@ -60,9 +60,9 @@ Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozší�
     }  
     ```  
   
-### <a name="to-create-and-initialize-trace-listeners-and-filters"></a>K vytvoření a inicializace modulů naslouchání trasování a filtry  
+### <a name="to-create-and-initialize-trace-listeners-and-filters"></a>Vytvoření a inicializace naslouchacích procesů trasování a filtry  
   
-1.  Kód v prvním postupu neidentifikuje prostřednictvím kódu programu, všechny trasování – moduly naslouchání nebo filtry. Kód samostatně výsledkem zapisovaný pro naslouchací proces trasování výchozí trasování zprávy. Pro konfiguraci konkrétní trasování – moduly naslouchání a jejich přidružené filtry, upravte konfigurační soubor, který odpovídá názvu vaší aplikace. V tomto souboru můžete přidat nebo odebrat naslouchací proces, nastavte vlastnosti a filtru pro naslouchací proces nebo odebrat moduly pro naslouchání. Následující příklad souboru konfigurace ukazuje, jak se inicializovat naslouchací proces trasování konzoly a naslouchací zapisovač textu pro zdroj trasování, který je vytvořen v předchozím postupu. Kromě konfigurace naslouchací procesy trasování, konfigurační soubor vytvoří filtry pro obě posluchače a vytvoří přepínač zdroje pro zdroj trasování. Pro přidání trasování – moduly naslouchání se zobrazují dvě techniky: Přidání naslouchací proces přímo na zdroj trasování a přidání naslouchací proces ke kolekci sdílené moduly pro naslouchání a následným přidáním podle názvu zdroje trasování. Filtry identifikovat pro dva naslouchací procesy jsou inicializovány s jinou zdrojovou úrovněmi. Výsledkem některé zprávy zapisovaný jenom jedna z dva naslouchací procesy.  
+1.  Filtry ani naslouchacích procesů trasování kódu v prvním postupu neidentifikuje prostřednictvím kódu programu. Samotný kód za následek zprávy trasování do výchozí naslouchací služby stopy. Pro konfiguraci naslouchacích procesů trasování konkrétní a jejich přidružené filtry, upravte konfigurační soubor, který odpovídá názvu vaší aplikace. V tomto souboru můžete přidat nebo odebrat naslouchací proces, nastavte vlastnosti a filtr pro naslouchací proces či odebrat naslouchacích procesů. Následující příklad konfigurační soubor ukazuje, jak k inicializaci naslouchacího procesu trasování konzoly a naslouchacího procesu text zapisovač trasování pro zdroj trasování, vytvořený v předchozím postupu. Kromě konfigurace posluchačů trasování, konfigurační soubor vytvoří filtry pro oba posluchače a vytvoří zdroj přepínače pro zdroj trasování. Pro přidávání posluchačů trasování jsou uvedeny dvě metody: Přidání posluchače přímo ke zdroji trasování a přidání posluchače do sdílené kolekce posluchačů a následné přidání podle názvu do zdroje trasování. Filtry identifikované pro dva naslouchací procesy jsou inicializovány s jinými zdrojovými úrovněmi. Výsledkem je některé zprávy jsou zapisovány pouze jedním ze dvou posluchačů.  
   
     ```xml  
     <configuration>  
@@ -97,11 +97,11 @@ Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozší�
     </configuration>  
     ```  
   
-### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a>Chcete-li změnit úroveň, kdy naslouchací proces zapíše zprávu trasování  
+### <a name="to-change-the-level-at-which-a-listener-writes-a-trace-message"></a>Chcete-li změnit úroveň, jakou naslouchací proces zapíše zprávu trasování  
   
-1.  Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy aplikace je inicializován. Chcete-li změnit tato nastavení musíte změnit konfigurační soubor a restartování aplikace nebo prostřednictvím kódu programu aktualizujte aplikace pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metoda. Aplikace můžete dynamicky měnit vlastnosti nastavit pomocí konfiguračního souboru pro přepsání nastavení zadaný uživatelem.  Například můžete chtít zajistit kritické zprávy vždy odesílání do textového souboru, bez ohledu na aktuální nastavení konfigurace.  
+1.  Konfigurační soubor inicializuje nastavení pro zdroj trasování v době, kdy je aplikace inicializována. Chcete-li změnit tato nastavení musíte změnit konfigurační soubor a restartovat aplikaci nebo programově aktualizovat aplikace pomocí <xref:System.Diagnostics.Trace.Refresh%2A?displayProperty=nameWithType> metody. Aplikace můžete dynamicky měnit vlastnosti nastavením konfiguračního souboru pro přepsání jakéhokoli nastavení zadaného uživatelem.  Například můžete chtít zajistit, kritické zprávy byly odesílány vždy do textového souboru, bez ohledu na aktuální nastavení konfigurace.  
   
-    ```  
+    ```csharp
     using System;  
     using System.Diagnostics;  
     using System.Threading;  
@@ -168,5 +168,5 @@ Jeden z nových funkcí v rozhraní .NET Framework verze 2.0 je systém rozší�
  <xref:System.Diagnostics.TextWriterTraceListener>  
  <xref:System.Diagnostics.ConsoleTraceListener>  
  <xref:System.Diagnostics.EventTypeFilter>  
- [Postupy: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
+ [Jak: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
  [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)

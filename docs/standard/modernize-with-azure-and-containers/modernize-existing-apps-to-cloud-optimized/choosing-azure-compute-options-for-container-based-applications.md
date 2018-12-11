@@ -1,42 +1,41 @@
 ---
-title: Výběr platformy výpočtů Azure pro aplikace založené na kontejneru
-description: Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows | Výběr platformy výpočtů Azure pro aplikace založené na kontejneru
+title: Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/04/2018
-ms.openlocfilehash: ebf022a52aaaf95ae335976f5e097921b0ac8006
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 20d8899d404ec72e3b1b9c2471524133a6428c44
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33958242"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53125493"
 ---
-# <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Výběr platformy výpočtů Azure pro aplikace založené na kontejneru
+# <a name="choosing-azure-compute-platforms-for-container-based-applications"></a>Výběr platformy výpočetní prostředky Azure pro aplikace založené na kontejnerech
 
-Jste si všimli po přečtení předchozí části, je Azure otevřete cloudu, která nabízí více možností. Můžete použít bude nejlépe vyhovovat vašim potřebám, ale se navíc zobrazí otázky o jaké produkt nebo technologii byste měli použít pro kontejnerové aplikace.
+Protože jste si všimli po přečtení v předchozích částech, Azure je otevřete cloud, který nabízí více možností. Můžete použít nejlépe vyhovovat vašim potřebám, ale se navíc zobrazí otázky o tom, jaký produkt/technologie byste měli použít pro své kontejnerizované aplikace.
 
-Jako *výchozím* doporučení, toto je hlavní kritéria doporučení v tomto návodu:
+Jako *výchozím* doporučení, tady je hlavním kritériem doporučení v tomto dokumentu:
 
-  - **Jedna monolitický aplikace:** zvolte Azure App Service
-  - **Vícevrstvé aplikace:** orchestrators například Azure Kubernetes služby (AKS), Service Fabric n nebo služby App Service zvolte, pokud máte jeden nebo několik back endové služby
-  - **Linux mikroslužeb:** zvolte AKS/Kubernetes
-  - **Windows mikroslužeb:** zvolte Service Fabric
-  - **Bez serveru funkce & obslužné rutiny událostí:** zvolte Azure Functions
-  - **Ve velkém měřítku Batch:** zvolte Azure Batch
+  - **Monolitické aplikace s jedním:** Zvolte Azure App Service
+  - **N-vrstvé aplikace:** Pokud máte jednu nebo několik back endovým službám, zvolte orchestrátorů, jako je například Azure Kubernetes Service (AKS), Service Fabric (SF) nebo služby App Service
+  - **Mikroslužby Linux:** Zvolte AKS/Kubernetes
+  - **Mikroslužby Windows:** Zvolte Service Fabric
+  - **Funkce bez serveru a obslužné rutiny události:** Zvolte Azure Functions
+  - **Ve velkém měřítku Batch:** Zvolte Azure Batch
 
-Toto doporučení však by měla být provedena s roztahováním salt, protože produktu výběr bude záviset na konkrétní aplikaci požadavky a vlastnosti. Ne všechny aplikace jsou stejné i v případě začátku může vypadat podobně jako typy.
+Toto doporučení by však provést s roztažením o hodnota salt, jako výběr produktu, bude záviset na konkrétní aplikaci požadavky a vlastnosti. Ne všechny aplikace jsou stejné, i když zpočátku může vypadat podobně jako typy.
 
-Po dokončení hlubší analýzy potřebám aplikace může být produktu vybrané jiné. Ale, jako výchozí bod, je vhodné mít počáteční pokyny, ze které můžete spustit vyhodnocování a testování podle určité priority.
+Po dokončení hlubší analýzy potřeby aplikace mohou být odlišná vybranému produktu. Ale jako výchozí bod, je dobré si základní pokyny z kde začít, vyhodnocování a testování na základě určitých priority.
 
-V následující obrázek můžete analyzovat více globální při podrobné rozhodovací tabulky.
+Následující obrázek můžete analyzovat více globální při podrobné rozhodovací tabulky.
 
 ![](./media/image8.5.png)
 
-Všimněte si jak základní operační systém (Windows vs. Linux) může být také rozhodnutí faktor jsou některé orchestrators vyspělá kontejnerům Linux a dalších kontejnerům systému Windows. Pro instanci kontejnery Linux jsou velmi vyspělá v Kubernetes (AKS v Azure) ale méně vyspělá v Service Fabric. Na druhé straně kontejnery Windows jsou víc vyspělých v Service Fabric (vydané v květnu 2017) a méně vyspělá v AKS.
+Všimněte si, že jak základní operační systém (Windows vs. Linux) může být také faktor rozhodnutí jsou některé zvolené orchestrátory až po zralé kontejnerům Linuxu a dalších v kontejnerech Windows. Například kontejnery Linuxu jsou velmi až po zralé v Kubernetes (AKS v Azure) ale méně až po zralé na platformě Service Fabric. Na druhé straně jsou kontejnery Windows vyspělejší v Service Fabric (vydané spolu. května 2017) a méně až po zralé ve službě AKS.
 
-Ale tyto rozdíly v dospělosti operačního systému bude v budoucnu objevovat a více platforem budou mít porovnatelný z hlediska vyspělosti operačního systému a rozhodnutí budou obsahovat další informace o předvolby podle konkrétních příznaků, může být nutné aplikaci nebo v závislosti na každou platformu ekosystém z důvodů.
-
+Však bude v budoucnu fade těchto rozdílů v OS vyspělosti a více platforem budou mít srovnatelné vyspělosti operačního systému a rozhodnutí budou obsahovat další informace o předvolby podle konkrétních příznaků, které vaše aplikace může být nutné nebo založené na každou platformu ekosystém z důvodů.
 
 >[!div class="step-by-step"]
-[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
-[další](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
+>[Předchozí](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+>[další](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)

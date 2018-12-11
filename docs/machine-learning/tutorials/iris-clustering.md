@@ -1,19 +1,19 @@
 ---
-title: Pomocí ML.NET květin clusteru iris (clustery)
+title: Cluster květin iris pomocí clusteringu learner - ML.NET
 description: Zjistěte, jak použít ve scénáři clusteringu ML.NET
 author: pkulikov
 ms.author: johalex
 ms.date: 07/02/2018
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: bb41fd317507c14b46aea94e1ce576e390932a65
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 5bd73c774f60466daaf52215c34e7e17b5f5cc9c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453187"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145622"
 ---
-# <a name="tutorial-use-mlnet-to-cluster-iris-flowers-clustering"></a>Kurz: Použití ML.NET do clusteru květin iris (clustery)
+# <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
 
 > [!NOTE]
 > Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
@@ -172,7 +172,7 @@ Budete také muset přidat následující `using` direktiv v horní části *Pro
 
 [!code-csharp[Add System.Threading.Tasks using](../../../samples/machine-learning/tutorials/IrisClustering/Program.cs#12)]
 
-Vzhledem k tomu, `async Main` metoda je funkce přidané v jazyce C# 7.1 a výchozí jazyková verze projektu je C# 7.0, budete muset změnit verzi jazyka C# 7.1 nebo novější. Chcete-li to mohli udělat, klikněte pravým tlačítkem na uzel projektu v **Průzkumníka řešení** a vyberte **vlastnosti**. Vyberte **sestavení** kartě a vyberte **Upřesnit** tlačítko. V rozevíracím seznamu vyberte **jazyka C# 7.1** (nebo vyšší verze). Vyberte **OK** tlačítko.
+Vzhledem k tomu, `async Main` metoda je funkce přidané v jazyce C# 7.1 a výchozí jazyková verze projektu je C# 7.0, budete muset změnit verzi jazyka C# 7.1 nebo novější. Chcete-li to mohli udělat, klikněte pravým tlačítkem na uzel projektu v **Průzkumníka řešení** a vyberte **vlastnosti**. Vyberte **sestavení** kartě a vyberte **Upřesnit** tlačítko. V rozevíracím seznamu vyberte **jazyka C# 7.1** (nebo vyšší verze). Vyberte tlačítko **OK**.
 
 ## <a name="use-the-model-for-predictions"></a>Použít model pro předpovědi
 
@@ -203,7 +203,7 @@ Blahopřejeme! Teď jste úspěšně sestaven služby machine learning model iri
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste zjistili, jak:
+V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 > - Pochopení problému
 > - Vyberte úlohu odpovídající machine learning

@@ -1,16 +1,14 @@
 ---
 title: Přehled Global.JSON
 description: Zjistěte, jak použít soubor global.json se nastavit verzi .NET Core SDK, při spuštění příkazů rozhraní příkazového řádku .NET Core.
-author: mairaw
-ms.author: mairaw
-ms.date: 07/30/2018
-ms.custom: updateeachrelease
-ms.openlocfilehash: 05ec296c4c8210c63c7c1b5ce63ef598ca6ac719
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.date: 12/03/2018
+ms.custom: updateeachrelease, seodec18
+ms.openlocfilehash: e0f929a049812cac6f62e5218629c9b0add83de8
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838075"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170766"
 ---
 # <a name="globaljson-overview"></a>Přehled Global.JSON
 
@@ -26,13 +24,13 @@ Sada .NET core SDK hledá *global.json* soubor v aktuálním pracovním adresá�
 
 ### <a name="sdk"></a>Sady SDK
 
-Typ: objekt
+Zadejte: Objekt
 
 Určuje informace o .NET Core SDK k výběru.
 
 #### <a name="version"></a>verze
 
-Typ: řetězec
+Zadejte: String
 
 Verze .NET Core SDK používat.
 
@@ -46,14 +44,14 @@ Následující příklad ukazuje obsah *global.json* souboru:
 ```json
 {
   "sdk": {
-    "version": "2.1.300"
+    "version": "2.2.100"
   }
 }
 ```
 
 ## <a name="globaljson-and-the-net-core-cli"></a>Global.JSON a .NET Core CLI
 
-Je užitečné vědět, jaké verze jsou k dispozici, aby bylo možné nastavit jednu *global.json* souboru. Najdete úplný seznam podporovaných sad SDK k dispozici na [.NET stáhne](https://www.microsoft.com/net/download/all) lokality. Spouští se sadou .NET Core SDK 2.1, můžete spustit následující příkaz k ověření, které verze sady SDK jsou již nainstalovány na vašem počítači:
+Je užitečné vědět, jaké verze jsou k dispozici, aby bylo možné nastavit jednu *global.json* souboru. Najdete úplný seznam podporovaných sad SDK k dispozici na [.NET stáhne](https://www.microsoft.com/net/download/all) lokality. Od verze sady SDK .NET Core 2.1, můžete spustit následující příkaz k ověření, které verze sady SDK jsou již nainstalovány na vašem počítači:
 
 ```console
 dotnet --list-sdks
@@ -64,7 +62,7 @@ Pokud chcete nainstalovat další verze sady SDK .NET Core na počítači, přej
 Můžete vytvořit nový *global.json* soubor v aktuálním adresáři pomocí provádí [dotnet nové](dotnet-new.md) příkazu, podobně jako v následujícím příkladu:
 
 ```console
-dotnet new globaljson --sdk-version 2.1.300
+dotnet new globaljson --sdk-version 2.2.100
 ```
 
 ## <a name="matching-rules"></a>Odpovídající pravidla
@@ -103,8 +101,8 @@ Toto upozornění signalizuje, že váš projekt se kompiluje ve verzi preview s
 > [!WARNING]
 > Při spuštění projektu "{výchozí projekt}" cíleného na rozhraní framework '. NETCoreApp' verze {targetFrameworkVersion}. Tato verze nástroje příkazového řádku .NET Core Entity Framework podporuje pouze verze 2.0 nebo vyšší. Informace o používání starší verze nástrojů najdete v tématu <https://go.microsoft.com/fwlink/?linkid=871254>
 
-Spouští se sadou .NET Core SDK 2.1 (vs. 2.1.300) `dotnet ef` příkaz je zahrnutý v sadě SDK. Toto upozornění signalizuje, že váš projekt cílí na EF Core 1.0 a 1.1, který není kompatibilní s .NET Core SDK 2.1 a novějších verzích. Chcete-li zkompilovat váš projekt, nainstalujte .NET Core SDK 2.0 (vs. 2.1.201) a starších na vašem počítači a definovat požadovanou verzi sady SDK pomocí *global.json* souboru. Další informace o `dotnet ef` naleznete [nástroje příkazového řádku .NET Core EF](/ef/core/miscellaneous/cli/dotnet).
+Spouští se sadou .NET Core 2.1 SDK (verze 2.1.300), `dotnet ef` příkaz je zahrnutý v sadě SDK. Toto upozornění signalizuje, že váš projekt cílí na EF Core 1.0 a 1.1, který není kompatibilní s .NET Core 2.1 SDK a novějších verzích. Chcete-li zkompilovat váš projekt, nainstalujte .NET Core 2.0 SDK (verze 2.1.201) a starších na vašem počítači a definovat požadovanou verzi sady SDK pomocí *global.json* souboru. Další informace o `dotnet ef` naleznete [nástroje příkazového řádku .NET Core EF](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Viz také:
 
-* [Způsob řešení projekt sady SDK](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)
+- [Způsob řešení projekt sady SDK](/visualstudio/msbuild/how-to-use-project-sdk#how-project-sdks-are-resolved)

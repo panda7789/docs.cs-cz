@@ -1,6 +1,6 @@
 ---
 title: Obecné zásady vytváření názvů
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - names [.NET Framework], conflicts
@@ -14,14 +14,13 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: cd3defd969b5f26fb95e7feca9c3d533e67272b1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+author: KrzysztofCwalina
+ms.openlocfilehash: 9febc7eed7d6dedad6655b51a96694b72b78711b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44209496"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147278"
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
 Tato část popisuje obecné zásady vytváření názvů, které se týkají podle vlastní volby slov, pokyny na pomocí zkratky a zkratky a doporučení o tom, abyste se vyhnuli použití názvů specifických pro jazyk.  
@@ -97,7 +96,7 @@ Tato část popisuje obecné zásady vytváření názvů, které se týkají po
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

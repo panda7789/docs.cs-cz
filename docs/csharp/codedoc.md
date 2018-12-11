@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 09e6b4aa75aababcebba96693d6e73b29a30fc6a
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 4b01d7989b97cbae56fc04212e6c6753fd1252a9
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453265"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129660"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -20,7 +20,7 @@ Dokumentační komentáře XML, stejně jako všechny ostatní komentáře ignor
 
 Soubor XML v době kompilace můžete vygenerovat pomocí jedné z následujících akcí:
 
-- Pokud vyvíjíte aplikaci .NET Core z příkazového řádku, můžete přidat [DocumentationFile element](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties) k `<PropertyGroup>` část souboru projektu CSPROJ. Následující příklad generuje soubor XML v adresáři projektu se stejným názvem kořenového jako sestavení:
+- Pokud vyvíjíte aplikaci .NET Core z příkazového řádku, můžete přidat [DocumentationFile element](/visualstudio/msbuild/common-msbuild-project-properties) k `<PropertyGroup>` část souboru projektu CSPROJ. Následující příklad generuje soubor XML v adresáři projektu se stejným názvem kořenového jako sestavení:
 
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
@@ -136,7 +136,7 @@ To může být libovolný typ definovaný v projektu nebo v odkazovaném sestave
 
 ### <a name="ltparamgt"></a>&lt;Param&gt;
 
-Můžete použít `<param>` značka, které popisují parametry metody. Tady je příklad, double `Add` metoda: Parametr popisuje značka je zadán v **požadované** `name` atribut.
+Můžete použít `<param>` značka, které popisují parametry metody. Tady je příklad, double `Add` metody: Je zadán parametr popisuje značky v **požadované** `name` atribut.
 
 [!code-csharp[Param Tag](../../samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
@@ -196,7 +196,7 @@ A že máte: našeho kódu je zpět ke a nebyly ztraceny žádné informace o do
 
 `filename` Atribut představuje název souboru XML, který obsahuje dokumentaci.
 
-`path` Atributu představuje [XPath](https://msdn.microsoft.com/library/ms256115.aspx) dotaz pro `tag name` k dispozici v zadaném `filename`.
+`path` Atributu představuje [XPath](../standard/data/xml/xpath-queries-and-namespaces.md) dotaz pro `tag name` k dispozici v zadaném `filename`.
 
 `name` Atribut představuje název specifikátor ve značce, který předchází komentáře.
 

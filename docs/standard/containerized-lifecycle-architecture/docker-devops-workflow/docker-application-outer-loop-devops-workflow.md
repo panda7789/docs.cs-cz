@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/10/2018
-ms.openlocfilehash: a03853a508cfb3d5dd5fbfe66e4ef484b685faaa
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 37dd5481da571be56f134a5e142b7ba46427d7d8
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45653236"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143646"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
 
@@ -17,7 +17,7 @@ Obrázek 5-1 představuje začátku do konce znázornění postup skládající 
 
 ![](./media/image1.png)
 
-Obrázek 5-1: DevOps vnější smyčky pracovní postup pro aplikace Dockeru pomocí nástrojů Microsoftu
+Obrázek 5-1: Pracovní postup DevOps vnější smyčky pro aplikace Dockeru pomocí nástrojů Microsoftu
 
 Teď se podívejme se na každý z těchto kroků podrobněji.
 
@@ -35,7 +35,7 @@ Místní Image generovaných vývojáře sami by měly být používány pouze v
 
 Azure DevOps služby a Team Foundation Server podporují Gitu a Team Foundation Version Control. Můžete zvolit mezi nimi a prostředí, použijte ho začátku do konce Microsoft. Ale také můžete spravovat svůj kód v externích úložištích (např. GitHub, v místním úložišti Git nebo Subversion) a stále se může připojit k němu a získat kód jako výchozí bod pro svůj kanál DevOps CI.
 
-## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: Sestavení, průběžná integrace, integrace a testování s Azure DevOps služby a Dockeru
+## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: Sestavení CI, integraci a testování s Azure DevOps služby a Dockeru
 
 Průběžná integrace se stal standardem pro moderní softwaru, testování a doručení. Řešení Dockeru udržuje jasně oddělené oblasti zájmu mezi týmy vývoje a provozu. Neměnnost imagí Dockeru zajišťuje opakovatelné nasazování mezi co vyvíjel, testovat pomocí položek konfigurace a spusťte v produkčním prostředí. Modul docker nasazených na přenosné počítače pro vývojáře a testovací infrastrukturu zpřístupňuje kontejnery přenosné mezi prostředími.
 
@@ -47,11 +47,11 @@ Můžete Azure DevOps Services jako základ pro vytváření aplikací a nastave
 
 Při použití Docker pro nasazení "konečné artefakty" nasazení jsou Image Dockeru s aplikací nebo služeb vložené v nich. Tyto Image jsou vloženy nebo publikovanou do *registru Dockeru* (soukromé úložiště jako ty, které můžete mít ve službě Azure Container Registry nebo veřejnou verzi jako registru Docker Hub, která se běžně používá pro oficiální základní Image).
 
-Tady je základní princip: kanál CI bude začaly vypnout potvrzení pro úložiště SCC jako je Git. Potvrzení změn způsobí služby Azure DevOps a spustit úlohu sestavení a v kontejneru Dockeru, po úspěšném dokončení této úlohy, nasdílení image Dockeru do registru Dockeru, jak je znázorněno na obrázku 5-2.
+Tady je základní princip: Zahájit schválení potvrzení pro úložiště SCC jako je Git bude kanálu CI. Potvrzení změn způsobí služby Azure DevOps a spustit úlohu sestavení a v kontejneru Dockeru, po úspěšném dokončení této úlohy, nasdílení image Dockeru do registru Dockeru, jak je znázorněno na obrázku 5-2.
 
 ![](./media/image2.png)
 
-Obrázek 5 – 2: potřebnými kroky k CI
+Obrázek 5 – 2: Kroky v CI
 
 Tady jsou základní kroky pracovního postupu CI s využitím Dockeru a Azure DevOps služby:
 
@@ -73,7 +73,7 @@ Tady jsou základní kroky pracovního postupu CI s využitím Dockeru a Azure D
 
 ![](./media/image3.png)
 
-Obrázek 5-3: kanálu Docker CI v Azure DevOps služby
+Obrázek 5-3: Kanál Docker CI v Azure DevOps služby
 
 Rozšíření Docker můžete použít koncové body služby pro hostitele Dockeru a kontejnerů nebo registry imagí. Výchozí úkoly pomocí místního hostitele Docker, pokud je k dispozici (to aktuálně vyžaduje vlastní agenta služby Azure DevOps); v opačném případě vyžadují zadání připojení hostitele Dockeru. Akce, které jsou závislé na ověřuje pomocí registru Dockeru, jako je například nahráním image, vyžadují, abyste zadali Docker připojení k registru.
 
@@ -145,7 +145,7 @@ Obvykle můžete chtít mít privátní úložiště pro vaše vlastní Image do
 
 ![](./media/image4.png)
 
-Obrázek 5 – 4: publikování vlastní Image do registru Dockeru
+Obrázek 5 – 4: Publikování vlastní Image do registru Dockeru
 
 Existuje několik nabídek registry Dockeru z cloudových vendorů, jako je Azure Container Registry, Amazon Web Services Container Registry, Google Container Registry, molo registru a tak dále.
 
@@ -153,11 +153,11 @@ Použití rozšíření Azure DevOps služby Docker, můžete nabízet sadu imag
 
 ![](./media/image5.png)
 
-Obrázek 5 – 5: publikování vlastní Image do registru Dockeru pomocí služby Azure DevOps
+Obrázek 5 – 5: Pomocí služby Azure DevOps publikování vlastní Image do registru Dockeru
 
 **Další informace o** Další informace o rozšíření Dockeru pro Azure DevOps služby, přejděte na <https://aka.ms/vstsdockerextension>. Další informace o službě Azure Container Registry, pokračujte <https://aka.ms/azurecontainerregistry>.
 
-## <a name="step-4-cd-deploy"></a>Krok 4: CD nasazení
+## <a name="step-4-cd-deploy"></a>Krok 4: CD, nasazení
 
 Neměnnost imagí Dockeru zajišťuje opakovatelné nasazování s co vyvíjel, testovat pomocí položek konfigurace a spusťte v produkčním prostředí. Až budete mít Image Dockeru aplikace publikované v registru Dockeru (privátní nebo veřejné), můžete je nasadit do několika prostředí, které bude pravděpodobně (výroba, kontrola kvality, Fázování importu, atd.) z kanálu průběžného Doručování s využitím služby Azure DevOps úlohy kanálu nebo Azure DevOps služby Release Management.
 
@@ -169,7 +169,7 @@ Podívejme se nejprve sledovat bez komplexní scénář: nasazení do jednoduch�
 
 ![](./media/image6.png)
 
-Obrázek 5 a 6: nasazení kontejnerů aplikací jednoduché registru prostředí hostitele Docker
+Obrázek 5 a 6: Nasazení kontejnerů aplikací jednoduché registru prostředí hostitele Docker
 
 Obrázek 5 – 7 ukazuje, jak připojit vaše sestavení CI pro kontrolu kvality a testovacích prostředí pomocí služby Azure DevOps kliknutím Docker Compose v dialogovém okně Přidat úkol. Ale při nasazení v přípravném nebo produkčním prostředí, obvykle použijete funkcím nástroje Release Management zpracování více prostředí (procesu kontroly kvality, jako jsou přípravným a produkčním prostředím). Pokud nasazujete na jednoho hostitele Docker, je pomocí služby Azure DevOps "Docker Compose" úloh (což je vyvolání docker-compose up příkaz pod pokličkou). Pokud nasazení provádíte do služby Azure Container Service, používá úlohy nasazení prostředí Docker, jak je vysvětleno v následující části.
 
@@ -187,7 +187,7 @@ Prostřednictvím rozšíření Azure DevOps služby můžete vytvořit novou bi
 
 ![](./media/image8.png)
 
-Obrázek 5 – 8: Konfigurace úloh Azure DevOps služby Docker Compose v Azure DevOps služby Release Management
+Obrázek 5 – 8: Konfigurace úlohy Azure DevOps služby Docker Compose v Azure DevOps služby Release Management
 
 Však mít na paměti, že scénáře uvedené v obrázek 5 a 6 a implementovat v obrázek 5 až 8 je poměrně základní (je nasazování jednoduchý hostitelů Docker a virtuálním počítačům a bude možné jedním kontejnerem nebo instance pro každý obrázek) a pravděpodobně by měla sloužit pouze pro vývoj nebo testování sc enarios. Ve většině scénářů organizace produkčního prostředí, byste měli mít vysokou dostupnost (HA) a snadno spravovat škálovatelnosti pomocí služby Vyrovnávání zatížení napříč více uzly, servery a virtuální počítače navíc "inteligentní převzetí služeb při selhání" tak, pokud server nebo uzel selže, jejích služeb a kontejnery se přesune do jiné hostitelský server nebo virtuální počítač. V takovém případě potřebujete pokročilé technologie, jako jsou clustery kontejnerů a orchestrátorů, plánovače. Proto je způsob, jak nasadit do těchto clusterů přesně prostřednictvím pokročilých scénářů je vysvětleno v další části.
 
@@ -201,13 +201,13 @@ Z hlediska CD a služeb Azure DevOps konkrétně, můžete spustit úlohy speci�
 
 ![](./media/image9.png)
 
-Obrázek 5 až 9: nasazení distribuované aplikace do služby Container Service
+Obrázek 5 až 9: Nasazení distribuované aplikace do služby Container Service
 
 Na začátku při nasazování do některých clusterů nebo orchestrátorů, obvykle použijete mechanismy jednotlivých orchestrátorů (to znamená, Mesosphere DC/OS nebo Kubernetes, mějte připravené mechanismy jiné nasazení než Docker a Docker a skriptů pro konkrétní nasazení Swarm) namísto jednodušší a snadným ovládáním docker-compose nástroj na základě definice souboru docker-compose.yml. Ale díky Microsoft Azure DevOps služby Docker nasazení úloh zobrazí obrázek 5 až 10 nyní také můžete nasadit na DC/OS pouze pomocí souboru docker-compose.yml zkušenosti, protože Microsoft za vás provádí tento "překlad" (z vašeho soubor docker-compose.yml do jiných formátů vyžadované DC/OS).
 
 ![](./media/image10.png)
 
-Obrázek 5 – 10: přidání úlohy nasazení Dockeru na váš správce prostředků prostředí
+Obrázek 5 – 10: Přidání úlohy nasazení Dockeru na váš správce prostředků prostředí
 
 Obrázek 5 – 11 předvádí, jak můžete upravit úkol nasadit Docker a zadat typ cíle (Azure Container Service DC/OS, v tomto případě), váš soubor Docker Compose a připojení k registru Dockeru (jako je Azure Container Registry nebo Docker Hubu). Je to, kde úloha načte připravené k použití imagí vlastní Dockeru umožňující nasadit ho jako kontejnery v clusteru DC/OS.
 
@@ -234,5 +234,5 @@ Toto téma také je obsaženo v následující kapitole jako součást úlohy, k
 Pouze v případě monitorování a Diagnostika jsou 100 % jeho obsahu v rámci sféry DevOps se monitorování procesů a analytics provádí vývojový tým proti testování nebo beta prostředí. To se provádí pomocí provádí zátěžové testování nebo jednoduše tak, že monitorování beta nebo dotazů a odpovědí prostředí, ve kterém jsou testerům beta verzí pokusu o nové verze.
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](../run-manage-monitor-docker-environments/index.md)
+>[Předchozí](index.md)
+>[další](../run-manage-monitor-docker-environments/index.md)

@@ -1,20 +1,20 @@
 ---
 title: Finalizační metody (C# Programming Guide)
-ms.date: 05/10/2017
+ms.date: 10/08/2018
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: b98d5eac29f498672000a7b0354734c15fd7400c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2b24884d2650a5e799eda630bc65f3c5a5c2508a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526032"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127261"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
-Finalizační metody se používají k destrukci instancí tříd.  
+Finalizační metody (také nazývané **destruktory**) jsou používány k provádění všechny nezbytné konečné vyčištění při instanci třídy se shromažďují pomocí systému uvolňování paměti.  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -82,10 +82,11 @@ protected override void Finalize()
   
  [!code-csharp[csProgGuideObjects#85](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/destructors_2.cs)]  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>specifikace jazyka C#  
+
+Další informace najdete v tématu [destruktory](~/_csharplang/spec/classes.md#destructors) část [ C# specifikace jazyka](../../language-reference/language-specification/index.md).
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.IDisposable>  
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  

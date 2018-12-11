@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: e4a4d58f154116974c7314e84f625b338cbfe204
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 73cd8b703fe30e622a849fa20e33b529ea3db61d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50038302"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127443"
 ---
 # <a name="methods"></a>Metody #
 
@@ -158,7 +158,7 @@ Následující příklad definuje metodu, `ExampleMethod`, který má vyžadují
 
 [!code-csharp[csSnippets.Methods#21](../../samples/snippets/csharp/concepts/methods/optional1.cs#21)]
 
-Pokud metoda s více volitelných argumentů je vyvolán pomocí poziční argumenty, volající musí zadat argument pro všechny volitelné parametry z první z nich pro poslední, pro který je zadán argument. V případě třídy `ExampleMethod` metody, například, pokud volající poskytuje argument `description` parametr, je nutné také jednu třídu dodat pro `optionalInt` parametru. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` je platná metoda volání; `opt.ExampleMethod(2, , "Addition of 2 and 0);` generuje "chybí Argument." chybu kompilátoru.
+Pokud metoda s více volitelných argumentů je vyvolán pomocí poziční argumenty, volající musí zadat argument pro všechny volitelné parametry z první z nich pro poslední, pro který je zadán argument. V případě třídy `ExampleMethod` metody, například, pokud volající poskytuje argument `description` parametr, je nutné také jednu třídu dodat pro `optionalInt` parametru. `opt.ExampleMethod(2, 2, "Addition of 2 and 2");` je platná metoda volání; `opt.ExampleMethod(2, , "Addition of 2 and 0");` generuje "chybí Argument." chybu kompilátoru.
 
 Pokud je metoda volána pomocí pojmenovaných argumentů nebo ke kombinaci komponent poziční a pojmenované argumenty, volající vynechat žádné argumenty, které následují poslední poziční argument ve volání metody.
 

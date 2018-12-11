@@ -1,62 +1,61 @@
 ---
-title: Pomocí databázový server, který je spuštěn jako kontejner
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Pomocí databázový server, který je spuštěn jako kontejner
+title: Použití databázového serveru běžícího jako kontejner
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Použití databázového serveru běžícího jako kontejner? pouze pro vývoj! Zjistěte, proč.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/30/2017
-ms.openlocfilehash: 42b0bf43ace00b1eb4b48c39604b89ea76c99220
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 10/02/2018
+ms.openlocfilehash: 347e6d36b7e838082f47d39c5ae67c219ec11d45
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106146"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53127716"
 ---
-# <a name="using-a-database-server-running-as-a-container"></a>Pomocí databázový server, který je spuštěn jako kontejner
+# <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru běžícího jako kontejner
 
-Vaše databáze (SQL Server, PostgreSQL, MySQL atd.) může mít regulární samostatných serverů v clusterech místně nebo v PaaS služeb v cloudu jako databázi SQL Azure. Pro vývojové a testovací prostředí s databází spuštěna jako kontejnery je však vhodné, protože nemáte žádné externí závislosti a jednoduše spuštěná docker compose příkaz spustí celou aplikaci. Tyto databáze jako kontejnery s je také výborně hodí pro integraci testy, protože databáze je spuštěna v kontejneru a vždy naplněný stejná ukázková data, aby mohli být předvídatelnější testy.
+Pravidelné samostatných serverů v místních clusterech nebo na služby modelu PaaS v cloudu jako Azure SQL DB může mít vaše databáze (SQL Server, PostgreSQL, MySQL atd.). Ale pro vývojová a testovací prostředí s databází systémem jako kontejnery je vhodné, protože nemáte žádné externí závislosti, jednoduše `docker-compose up` příkaz spustí celou aplikaci. Tyto databáze jako kontejnery je také skvěle hodí pro integrační testy, protože databáze je spuštěn v kontejneru a je vždy naplněný stejná vzorová data, tak testů může být předvídatelnější.
 
-### <a name="sql-server-running-as-a-container-with-a-microservice-related-database"></a>SQL Server běžící jako kontejner s databází související mikroslužbu
+### <a name="sql-server-running-as-a-container-with-a-microservice-related-database"></a>SQL serveru běžícího jako kontejner s databází související mikroslužeb
 
-V eShopOnContainers, je kontejner s názvem sql.data definované v [docker-compose.yml](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/docker-compose.yml) soubor, který spouští server SQL Server pro Linux s všech databází systému SQL Server potřebné pro mikroslužeb. (Můžete také mít jednoho kontejneru typu SQL Server pro každou databázi, ale které by vyžadovaly další paměť přiřazená Docker.) V mikroslužeb důležité je, že každý mikroslužbu vlastníkem souvisejících dat, proto jeho související databáze SQL v tomto případě. Ale databáze může být odkudkoli.
+V aplikaci eShopOnContainers, je kontejner s názvem sql.data definované v [docker-compose.yml](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/docker-compose.yml) soubor, který spouští SQL Server pro Linux s všech databází systému SQL Server potřebné pro mikroslužby. (Může mít také jeden kontejner systému SQL Server pro každou databázi, ale větší množství paměti, které jsou přiřazeny k Dockeru, který by vyžadovaly.) Důležité v mikroslužbách je, že každá mikroslužba je vlastníkem související data, proto jeho související databáze SQL v tomto případě. Ale databáze může být libovolného místa.
 
-Kontejner v ukázkové aplikace, které lze nastavit následující kód YAML v docker-compose.yml souboru, který se spustí při spuštění systému SQL Server docker vytvořit zálohu. Všimněte si, že má kód YAML konsolidovat informace o konfiguraci ze souboru obecného docker-compose.yml a soubor docker-compose.override.yml. (By obvykle jednotlivé nastavení prostředí základní nebo statické informace související s bitovou kopii systému SQL Server.)
+Kontejner SQL serveru v ukázkové aplikaci je nakonfigurovaný s následující kód YAML v souboru docker-compose.yml, který se spustí, až spustíte `docker-compose up`. Všimněte si, že má kód YAML konsolidovat informace o konfiguraci ze souboru obecného docker-compose.yml a docker-compose.override.yml souboru. (Obvykle by se oddělují nastavení prostředí a informace o základní nebo statické bitové kopie systému SQL Server.)
 
 ```yml
   sql.data:
-    image: microsoft/mssql-server-linux
+    image: microsoft/mssql-server-linux:2017-latest
     environment:
-      - MSSQL_SA_PASSWORD=Pass@word
+      - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
-      - MSSQL_PID=Developer
     ports:
       - "5434:1433"
 ```
 
-Podobným způsobem, nepoužívejte `docker-compose`, následující `docker run` příkaz můžete spustit tento kontejner:
+Podobným způsobem, namísto použití `docker-compose`, následující `docker run` tento kontejner můžete spustit příkaz:
 
 ```
-  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD= your@password' -p 1433:1433 -d microsoft/mssql-server-linux
+  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
 ```
 
-Pokud nasazujete aplikaci s více kontejneru jako eShopOnContainers, je však pohodlnější použití docker tvoří až příkaz tak, aby ji nasadí všechny kontejnery, které jsou požadované pro aplikaci.
+Pokud nasazujete vícekontejnerovou aplikaci jako aplikaci eShopOnContainers, je ale vhodnější použít `docker-compose up` příkaz tak, aby nasadí všechny požadované kontejnery pro aplikace.
 
-Při prvním spuštění tohoto kontejneru systému SQL Server, inicializuje kontejneru systému SQL Server s heslem, které zadáte. Jakmile systém SQL Server běží jako kontejner, můžete aktualizovat databázi připojením přes všechny regulární připojení SQL, například z SQL Server Management Studio, Visual Studio nebo C\# kódu.
+Při prvním spuštění tohoto kontejneru systému SQL Server, inicializuje kontejneru systému SQL Server s heslem, které zadáte. Jakmile systém SQL Server běží jako kontejner, můžete aktualizovat databázi připojením přes jakékoli pravidelné připojení SQL, jako například SQL Server Management Studio, Visual Studio nebo C\# kódu.
 
-Aplikace eShopOnContainers inicializuje každou mikroslužbu databázi s ukázkovými daty synchronizace replik indexů s daty při spuštění, jak je popsáno v následující části.
+Aplikaci eShopOnContainers aplikace inicializuje jednotlivých mikroslužeb databázi s ukázkovými daty synchronizace replik indexů s daty při spuštění, jak je vysvětleno v následující části.
 
-S SQL Server běžící jako kontejner není právě užitečné pro ukázku kde nebudete mít přístup k instanci systému SQL Server. Jak je uvedeno je také výborně hodí pro vývoj a testování prostředí, aby mohli snadno testy integrace od vyčištění bitové kopie systému SQL Server a známých dat seedingem nové ukázková data.
+S SQL serveru běžícího jako kontejner není právě užitečná pro ukázku kde pravděpodobně nebudete mít přístup k instanci systému SQL Server. Jak je uvedeno je také velmi vhodné pro vývojová a testovací prostředí tak, aby můžete snadno spouštět testy integrace od čistou bitovou kopii systému SQL Server a data nezná synchronizace replik indexů nová vzorová data.
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Bitovou kopii SQL serveru Docker systémem Linux, Mac nebo Windows**
+-   **Spuštění image SQL serveru Docker v Linuxu, Mac nebo Windows** <br/>
     [*https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker*](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
 
--   **Připojení a dotazování systému SQL Server v systému Linux pomocí sqlcmd**
+-   **Připojení a dotazování SQL serveru v Linuxu pomocí sqlcmd** <br/>
     [*https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd*](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
 
-### <a name="seeding-with-test-data-on-web-application-startup"></a>Synchronizace replik indexů s testovací data při spuštění webové aplikace
+### <a name="seeding-with-test-data-on-web-application-startup"></a>Předvyplnění daty testu při spuštění webové aplikace
 
-Chcete-li přidat data do databáze při spuštění aplikace, můžete přidat kód jako následující konfigurace metody ve třídě spuštění projektu webového rozhraní API:
+Přidání dat do databáze při spuštění aplikace, můžete přidat kód následujícím postupem konfigurace metody ve třídě spouštěný projekt webového rozhraní API:
 
 ```csharp
 public class Startup
@@ -126,11 +125,11 @@ public class CatalogContextSeed
 }
 ```
 
-Při spuštění testů integrace s způsob generování dat, které jsou konzistentní s testy integrace je užitečné. Schopnost vytvářet všechno od začátku, včetně instance systému SQL Server běžící na kontejner, je velmi užitečná pro testovací prostředí.
+Při spuštění testů integrace, způsob, jak vygenerovat konzistentní s testy integrace dat je užitečné. Možnost vytvoření čehokoliv od začátku, včetně instance systému SQL Server spuštěnou v kontejneru, je velmi vhodné pro testovací prostředí.
 
-### <a name="ef-core-inmemory-database-versus-sql-server-running-as-a-container"></a>EF InMemory základní databáze a SQL Server běžící jako kontejner
+### <a name="ef-core-inmemory-database-versus-sql-server-running-as-a-container"></a>EF Core InMemory databáze versus SQL serveru běžícího jako kontejner
 
-Jiné dobrou volbou při spouštění testů je použití zprostředkovatele databáze Entity Framework InMemory. Tato konfigurace můžete zadat v metodě ConfigureServices třída při spuštění v projektu webového rozhraní API:
+Další dobrou volbou při spouštění testů se má používat databázi zprostředkovatele Entity Framework InMemory. Tuto konfiguraci můžete zadat v metodě ConfigureServices třída při spuštění ve vašem projektu webového rozhraní API:
 
 ```csharp
 public class Startup
@@ -154,29 +153,29 @@ public class Startup
 }
 ```
 
-Když je důležité catch. Databázi v paměti nepodporuje mnoho omezení, které jsou specifické pro určitou databázi. Může například přidat jedinečný index na sloupci ve model EF jádra a zápis testu proti databázi v paměti zkontrolujte, že ho neumožňuje přidat duplicitní hodnota. Ale pokud používáte databázi v paměti, nemůže zpracovat jedinečné indexy na sloupec. Databázi v paměti proto není chovají stejně jako skutečné databázi systému SQL Server – ji není emulovat omezení specifické pro databázi.
+I když je důležité catch. Databáze v paměti nepodporuje spousta omezení, které jsou specifické pro konkrétní databázi. Může například přidat jedinečný index pro sloupec v modelu EF Core a napsat test na vaší databázi v paměti, zkontrolujte, že to neumožňuje přidání duplicitní hodnoty. Ale při použití databáze v paměti, nemůže zpracovat jedinečné indexy pro sloupec. Proto se databáze v paměti se nechová stejně jako skutečná databáze systému SQL Server – to není emulovat omezení konkrétních databází.
 
-I tak databázi v paměti je stále užitečné pro testování a při vytváření prototypu. Ale pokud chcete vytvořit přesný integrace testy, které vzít v úvahu chování implementace konkrétní databázi, budete muset použít skutečné databáze jako SQL Server. K tomuto účelu systémem SQL Server v kontejneru je dobře choice a přesnější, než EF InMemory základní zprostředkovatel databáze.
+I tak databázi v paměti je stále užitečná pro vytváření prototypů a testování. Ale pokud chcete vytvořit přesné integrační testy, které vezměte v úvahu chování implementace konkrétní databázi, budete muset použít skutečné databáze jako SQL Server. Pro tento účel systémem SQL Server v kontejneru je skvělý choice a přesnější, než si zprostředkovatele databáze EF Core InMemory.
 
-### <a name="using-a-redis-cache-service-running-in-a-container"></a>Pomocí služby Redis cache spuštěné v kontejneru
+### <a name="using-a-redis-cache-service-running-in-a-container"></a>Pomocí služby mezipaměti Redis spuštěné v kontejneru
 
-Redis můžete spustit na kontejner, zejména pro vývoj a testování a testování konceptu. Tento scénář je vhodné, protože může mít všechny svoje závislosti, které jsou spuštěné v kontejnery – nejen pro místní vývoj počítače, ale pro vaše testovací prostředí v nástroji CI/CD kanály.
+Redis můžete spustit v kontejneru, zejména pro vývoj a testování a pro scénáře testování konceptu. Tento scénář je vhodný, protože budete mít všechny svoje závislosti, které běží na kontejnery – ne jenom pro počítače s místním vývojovým, ale pro vaše testovací prostředí ve vašich kanálů CI/CD.
 
-Když spustíte Redis v produkčním prostředí, je však lepší vyhledejte řešení vysoké dostupnosti jako Redis Microsoft Azure, který se spouští jako PaaS (platforma jako služba). V kódu stačí změnit připojovací řetězce.
+Při spuštění Redis v produkčním prostředí, je však lepší vyhledejte řešení vysoké dostupnosti, jako je například Redis Microsoft Azure, který se spouští jako PaaS (platforma jako služba). Ve vašem kódu stačí změnit připojovací řetězce.
 
-Redis poskytuje bitovou kopii Docker s Redis. Tento obrázek k dispozici z úložiště Docker Hub na této adrese URL:
+Redis poskytuje image Dockeru s využitím Redis. Tento image je k dispozici z Docker Hubu na této adrese URL:
 
-<https://hub.docker.com/_/redis/>
+[https://hub.docker.com/_/redis/](https://hub.docker.com/_/redis/)
 
-Kontejner Docker Redis můžete spustit přímo spuštěním následujícího příkazu příkazového řádku Dockeru v příkazovém řádku:
+Kontejner Dockeru Redis můžete spustit přímo spuštěním následujícího příkazu rozhraní příkazového řádku Dockeru v příkazovém řádku:
 
 ```
   docker run --name some-redis -d redis
 ```
 
-Bitovou kopii Redis zahrnuje zveřejněte: 6379 (port je používán Redis), takže standardní propojení kontejner bude zpřístupněte ji automaticky propojené kontejnery.
+Redis image zahrnuje vystavení: 6379 (port je používán Redis), tedy standardní propojení kontejneru zpřístupníte ji automaticky propojené kontejnery.
 
-Mikroslužbu basket.api v eShopOnContainers, používá spuštěna jako kontejner mezipaměti Redis. Tento kontejner basket.data je definována v rámci více kontejner docker-compose.yml souboru, jak je znázorněno v následujícím příkladu:
+V aplikaci eShopOnContainers používá mikroslužeb basket.api běžícího jako kontejner mezipaměti redis Cache. Tento kontejner basket.data je definován jako součást souboru více kontejnerů docker-compose.yml, jak je znázorněno v následujícím příkladu:
 
 ```yml
 #docker-compose.yml file
@@ -187,9 +186,9 @@ Mikroslužbu basket.api v eShopOnContainers, používá spuštěna jako kontejne
       - "6379"
 ```
 
-Tento kód v docker-compose.yml definuje kontejner s názvem basket.data na základě bitové kopie redis a publikování port 6379 interně, což znamená, že bude dostupný pouze z jiných kontejnerů běžící v rámci hostitelů Docker.
+Tento kód v docker-compose.yml definuje kontejner s názvem basket.data na základě redis image a publikování port 6379 interně, což znamená, že je přístupný pouze z jiných kontejnerů v rámci hostitele Dockeru.
 
-Nakonec v soubor docker-compose.override.yml mikroslužbu basket.api pro ukázku eShopOnContainers definuje připojovací řetězec k použití pro tento kontejner Redis:
+Nakonec v souboru docker-compose.override.yml basket.api mikroslužeb pro vzorovou aplikaci eShopOnContainers definuje připojovací řetězec má použít pro tento kontejner Redis:
 
 ```yml
   basket.api:
@@ -199,7 +198,8 @@ Nakonec v soubor docker-compose.override.yml mikroslužbu basket.api pro ukázku
       - EventBusConnection=rabbitmq
 ```
 
+Jak jsme zmínili, název mikroslužeb "basket.data" vyřešil docker interní sítě DNS.
 
 >[!div class="step-by-step"]
-[Předchozí](multi-container-applications-docker-compose.md)
-[další](integration-event-based-microservice-communications.md)
+>[Předchozí](multi-container-applications-docker-compose.md)
+>[další](integration-event-based-microservice-communications.md)

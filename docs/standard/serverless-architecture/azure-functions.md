@@ -4,30 +4,30 @@ description: Služba Azure functions poskytuje funkce bez serveru v různých ja
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: f08ba20b485197acd3bb5cdfe5699cd6be991d7c
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 2d8729276a5797bd8b89c39d8fb03c6f20646ea0
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404897"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145160"
 ---
-# <a name="azure-functions"></a>Služba Azure Functions
+# <a name="azure-functions"></a>Azure Functions
 
 Azure functions poskytuje výpočetní prostředí prostředí. Funkce vyvolá *aktivační událost* (jako je přístup k koncový bod HTTP nebo časovače) a provede blok kódu nebo obchodní logiku. Funkce také podporu specializované *vazby* , které se připojovat k prostředkům, jako jsou úložiště a front.
 
 ![Logo Azure functions](./media/azure-functions-logo.png)
 
-Existují dvě verze architektury Azure Functions. Starší verze podporuje úplné rozhraní .NET Framework a nového modulu runtime aplikace .NET Core pro různé platformy. Další jazyky kromě jazyka C# jako je JavaScript, F # nebo Java jsou podporovány. Funkce vytvořené na portálu poskytují bohatou syntaxe skriptování. Funkce, které jsou vytvořeny jako samostatné projekty je možné nasadit s plnou platformu podporu a možnosti.
+Existují dvě verze architektury Azure Functions. Starší verze podporuje úplné rozhraní .NET Framework a nového modulu runtime aplikace .NET Core pro různé platformy. Další jazyky kromě C# jako je JavaScript, F#, a podporují Javu. Funkce vytvořené na portálu poskytují bohatou syntaxe skriptování. Funkce, které jsou vytvořeny jako samostatné projekty je možné nasadit s plnou platformu podporu a možnosti.
 
 Další informace najdete v tématu [dokumentaci ke službě Azure Functions](https://docs.microsoft.com/azure/azure-functions).
 
 ## <a name="functions-v1-vs-v2"></a>Funkce v1 a v2
 
-Existují dvě verze modulu runtime Azure Functions: 1.x a 2.x. Verzi 1.x je všeobecně dostupná (GA). Podporuje vývoj aplikací pro .NET z portálu nebo počítače Windows a používá rozhraní .NET Framework. 1.x podporuje C#, JavaScript a F #, experimentální podporu pro Python, PHP, TypeScript, Batch, Bash a PowerShell.
+Existují dvě verze modulu runtime Azure Functions: 1.x a 2.x. Verzi 1.x je všeobecně dostupná (GA). Podporuje vývoj aplikací pro .NET z portálu nebo počítače Windows a používá rozhraní .NET Framework. 1.x podporuje C#, JavaScript, a F#, experimentální podporu pro Python, PHP, TypeScript, Batch, Bash a PowerShell.
 
 Verze 2.x je ve verzi preview. Využívá rozhraní .NET Core a podporuje vývoj napříč platformami pro Windows, macOS a počítače s Linuxem. 2.x přidává prvotřídní podporu pro Javu, ale zatím nepodporuje přímo některý z následujících experimentálních jazyků. Verze 2.x používá nový model rozšiřitelnosti vazbu, která umožňuje rozšíření třetích stran na platformu, nezávislé správy verzí vazby, a vylepšené prostředí pro spuštění.
 
-> **Je známý problém s 1.x [podpory přesměrování vazby](https://github.com/Azure/azure-functions-host/issues/992).** Tento problém je specifický pro vývoj na platformě .NET. Projekty se závislostmi na knihovny, které jsou jiné verzi z knihovny zahrnuté v modulu runtime se to týká. Funkce tým zavázal vidět konkrétní pokrok na příslušný problém. Tým bude zabývat přesměrování vazby v 2.x předtím, než se ukládá do všeobecné dostupnosti. Příkaz oficiální team s návrhy jejich oprav a alternativní řešení je k dispozici tady: [sestavení řešení ve službě Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).
+> **Je známý problém s 1.x [podpory přesměrování vazby](https://github.com/Azure/azure-functions-host/issues/992).** Tento problém je specifický pro vývoj na platformě .NET. Projekty se závislostmi na knihovny, které jsou jiné verzi z knihovny zahrnuté v modulu runtime se to týká. Funkce tým zavázal vidět konkrétní pokrok na příslušný problém. Tým bude zabývat přesměrování vazby v 2.x předtím, než se ukládá do všeobecné dostupnosti. Příkaz oficiální team s návrhy jejich oprav a alternativní řešení je k dispozici zde: [Sestavení řešení ve službě Azure Functions](https://github.com/Azure/azure-functions-host/wiki/Assembly-Resolution-in-Azure-Functions).
 
 Další informace najdete v tématu [porovnání 1.x a 2.x](https://docs.microsoft.com/azure/azure-functions/functions-versions).
 
@@ -175,10 +175,10 @@ Proxy servery jsou uloženy jako definice JSON. Tady je příklad:
 
 `Root` Proxy trvá nic odeslané na adresu URL kořenového (`https://--shorturl--/`) a přesměruje na web s dokumentací.
 
-Příklad použití proxy se zobrazí ve videu [Azure: přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102). V reálném čase se aplikace ASP.NET Core běží na místním serveru SQL Server migrovat do cloudu Azure. Proxy služby slouží k refaktorování tradiční projekt webového rozhraní API pro použití funkce.
+Příklad použití proxy se zobrazí ve videu [Azure: Přeneste svoje aplikace do cloudu s využitím Azure Functions](https://channel9.msdn.com/events/Connect/2017/E102). V reálném čase se aplikace ASP.NET Core běží na místním serveru SQL Server migrovat do cloudu Azure. Proxy služby slouží k refaktorování tradiční projekt webového rozhraní API pro použití funkce.
 
 Další informace o proxy serverů najdete v tématu [pracovat s proxy služby Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-proxies).
 
 >[!div class="step-by-step"]
-[Předchozí](azure-serverless-platform.md)
-[další](application-insights.md)
+>[Předchozí](azure-serverless-platform.md)
+>[další](application-insights.md)

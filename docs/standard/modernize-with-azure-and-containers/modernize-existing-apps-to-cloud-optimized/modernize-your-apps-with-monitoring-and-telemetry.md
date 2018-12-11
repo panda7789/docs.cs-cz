@@ -1,39 +1,39 @@
 ---
-title: Modernizovat aplikace s monitorování a telemetrie
-description: Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows | Modernizovat aplikace s monitorování a telemetrie
+title: Modernizace aplikací pomocí monitorování a telemetrie
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Modernizace aplikací pomocí monitorování a telemetrie
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 8f5f9bfebf46db7b98bedc4b5b8204d23357c72e
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 7776edd91f73aa6ca74b82ae4d144635bb6c36a4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33958230"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147473"
 ---
-# <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizovat aplikace s monitorování a telemetrie
+# <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Modernizace aplikací pomocí monitorování a telemetrie
 
-Když spustíte aplikaci v produkčním prostředí, je důležité, abyste měli přehled o tom, jak je provádění vaší aplikace. Je její výkon na vysoké úrovni? Jsou uživatelé dochází k chybám, nebo je aplikace stabilní a spolehlivá? Budete potřebovat bohaté performance monitoring pro aplikace, výkonné výstrahy a řídicí panely, abyste zajistili, že aplikace je k dispozici a provádění podle očekávání. Potřebujete mít možnost rychle zjistit, zda je problém, určit, kolik zákazníkům ovlivněných a provést analýzu hlavní příčiny najít a opravit potíže.
+Když spustíte aplikaci v produkčním prostředí, je velmi důležité, abyste měli přehled o výkonu vaší aplikace. Je provádění na vysoké úrovni? Se uživatelé chyby, nebo pokud je aplikace stabilní a spolehlivá? Potřebujete bohaté performance monitoring pro aplikace, výkonné upozorňování a řídicí panely, abyste zajistili, že aplikace je k dispozici a provádí podle očekávání. Musíte také mít možnost rychle zobrazit, pokud je nějaký problém, určit, kolik zákazníků se to týká a provádět analýzy původních příčin vyhledat a opravit tento problém.
 
-## <a name="monitor-your-application-with-application-insights"></a>Monitorování vaší aplikace pomocí Application Insights
+## <a name="monitor-your-application-with-application-insights"></a>Můžete monitorovat své aplikace pomocí Application Insights
 
-Application Insights je rozšiřitelnou službu Správa výkonu aplikace (APM) pro vývojářům webů, kteří pracují ve více platformách. Použijte jej k monitorování provozu webové aplikace. Application Insights automaticky rozpozná anomálie výkonu. Obsahuje nástroje výkonné analytics při diagnostice problémů a které vám pomohou pochopit, co uživatelé ve skutečnosti dělat s vaší aplikací. Application Insights je navržená tak, abyste neustále průběžně zlepšují výkon a použitelnost. Funguje pro aplikace v celé řadě platforem, včetně .NET, Node.js a J2EE, ať hostovaný místně nebo v cloudu. Application Insights se integruje s procesy vaší DevOps a má spojovací body na celou řadu nástrojů pro vývoj.
+Application Insights je rozšiřitelná služba správu výkonu aplikací (APM) pro webové vývojáře, kteří pracují na různých platformách. Použijte ho k monitorování živé webové aplikace. Application Insights automaticky zjišťuje anomálie výkonu. Obsahuje výkonné analytické nástroje můžete diagnostikovat problémy a které vám pomohou pochopit, co uživatelé dělají s vaší aplikací. Application Insights je určena k pomáhala průběžně vylepšovat výkon a použitelnost. Funguje pro aplikace na nejrůznějších platformách, včetně .NET, Node.js a J2EE, ať už hostovaný místně nebo v cloudu. Application Insights integruje do svých procesů DevOps a má spojovací body s celou řadu nástrojů pro vývoj.
 
-Obrázek 4 – 10 ukazuje příklad jak Application Insights monitoruje vaše aplikace a jak ho na řídicí panel poskytuje tyto přehledy.
+Obrázek 4 – 10 ukazuje příklad, jak Application Insights monitoruje vaše aplikace a jak zobrazí tyto přehledy na řídicí panel.
 
-![Application Insights řídicí panel monitorování.](./media/image10.png)
+![Monitorování řídicího panelu služby Application Insights](./media/image10.png)
 
-> **Obrázek 4-10.** Application Insights řídicí panel monitorování.
+> **Obrázek 4 – 10.** Monitorování řídicího panelu služby Application Insights
 
-## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>Monitorování infrastruktury Docker s analýzy protokolů a jeho řešení monitorování kontejneru
+## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>Monitorování infrastruktury Dockeru s Log Analytics a jeho řešení pro monitorování kontejnerů
 
-[Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) je součástí [Microsoft Azure celkového řešení monitorování](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview). Je také služba v [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview). Analýzy protokolů monitoruje cloudové a místní prostředí (OMS pro místní) Chcete-li usnadnit zachování dostupnosti a výkonu. Shromáždí data generována prostředky ve vašich cloudových a místních prostředích a z dalších nástrojů pro monitorování poskytnout analýzu napříč více zdrojů.
+[Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) je součástí [celkového monitorovacího řešení Microsoft Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview). Je také služby [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview). Log Analytics monitoruje Cloudová a místní prostředí (OMS pro místní), který pomáhá zajistit dostupnost a výkon. Shromažďuje data generovaná prostředky ve vašem cloudovém a místním prostředí a také data z dalších nástrojů pro monitorování a poskytuje analýzy napříč zdroji.
 
-Ve vztahu k protokoly infrastrukturu Azure Log Analytics jako služby Azure ingestuje protokolu a metriku, data z jiných služeb systému Azure (prostřednictvím [Azure monitorování](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)), virtuální počítače Azure, Docker kontejnery a místní nebo jiných cloudových infrastruktur. Analýzy protokolů nabízí flexibilní protokol hledání a analýzy na více systémů v poli nad tato data. Nabízí bohaté nástroje, můžete použít k analýze dat napříč zdroje, umožňuje komplexní dotazy mezi všechny protokoly a proaktivně můžete výstrahy na základě zadaných podmínek. Můžete dokonce shromáždění vlastních dat v centrálním úložišti analýzy protokolů, kde se můžete dotazovat a vizualizovat ho. Také můžete využít výhod integrované řešení analýzy protokolů a okamžitě získáte přehled o zabezpečení a funkce vaší infrastruktury.
+Ve vztahu k protokolů infrastruktury Azure Log Analytics jako služby Azure a ingestuje data protokolů a metrik z ostatních služeb Azure (prostřednictvím [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)), virtuální počítače Azure, kontejnery Docker a on-premises nebo jiných cloudových infrastruktur. Log Analytics nabízí flexibilní protokol vyhledávání a analýzy out-představené na tato data. Nabízí bohaté možnosti nástrojů, můžete použít k analýze dat napříč zdroji, umožňuje složitých dotazů ve všech protokolů a proaktivně může upozornit na základě zadaných podmínek. Můžete dokonce shromáždění vlastních dat do centrálního úložiště Log Analytics, kde se můžete dotazovat a vizualizovat. Také můžete využít výhod integrovaných řešení Log Analytics umožňuje získat okamžitý přehled o zabezpečení a funkce vaší infrastruktury.
 
-Můžete přistupovat prostřednictvím portálu OMS nebo portálu Azure, který spustit v libovolném prohlížeči, analýzy protokolů a poskytnout vám přístup k nastavení konfigurace a několik nástrojů k analýze a fungovat na shromážděná data.
+Můžete používat Log Analytics na portálu OMS nebo webu Azure portal, který se spustit v jakémkoli prohlížeči, a poskytují přístup k nastavení konfigurace a několika nástrojům analyzovat a zpracovat shromážděná data.
 
-[Řešením pro monitorování kontejneru](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers) v analýzy protokolů pomáhá zobrazení a správa hostitelů Docker a kontejneru systému Windows na jednom místě. Řešení ukazuje jsou kontejnery, které běží, jaké kontejneru image se používáte, a kde kontejnery běží. Můžete zobrazit podrobné informace auditu, včetně příkazů, které se používají s kontejnery. Kontejnery také můžete řešit pomocí zobrazení a hledání centralizované protokoly, bez nutnosti Chcete-li zobrazit hostitelů Docker nebo Windows. Můžete najít kontejnery, které může být aktivní nebo využívání nadbytečné prostředky na hostiteli. Kromě toho můžete zobrazit centralizované procesoru, paměti, úložiště a síťového využití a informace o výkonu pro kontejnery. V počítačích se systémem Windows, můžete centralizovat a porovnání protokoly ze systému Windows Server, technologie Hyper-V a Docker kontejnerů. Řešení podporuje následující orchestrators kontejneru:
+[Řešení pro monitorování kontejnerů](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers) v Log Analytics vám umožňuje zobrazit a spravovat hostitele Dockeru a kontejnerech Windows na jednom místě. Toto řešení ukazuje, které kontejnery jsou spuštěná, jaké image kontejnerů běží a kde kontejnery běží. Můžete zobrazit podrobné informace auditu, včetně příkazů, které se používají s kontejnery. Kontejnery také můžete řešit pomocí zobrazení a hledání centralizované protokoly, aniž byste museli vzdáleně zobrazení hostitele Docker nebo Windows. Můžete najít kontejnery, které mohou být na hostiteli hlučného a využívání nadbytečné prostředky. Kromě toho můžete zobrazit centralizované procesoru, paměti, úložiště a využití sítě a informace o výkonu pro kontejnery. V počítačích se systémem Windows, můžete centralizovat a porovnat protokoly ze systému Windows Server Hyper-V a kontejnery Dockeru. Řešení podporuje následující orchestrátorů kontejnerů:
 
 -   Docker Swarm
 
@@ -45,25 +45,25 @@ Můžete přistupovat prostřednictvím portálu OMS nebo portálu Azure, který
 
 -   Red Hat OpenShift
 
-Obrázek 4 – 11 znázorňuje vztahy mezi různými hostiteli kontejneru a agentů a OMS.
+Obrázek 4 – 11 znázorňuje vztahy mezi různými hostitelích kontejnerů a agentů a OMS.
 
-![Řešení monitorování kontejneru analýzy protokolů](./media/image11.png)
+![Řešení log Analytics monitorování kontejnerů](./media/image11.png)
 
-> **Obrázek 4-11.** Řešení monitorování kontejneru analýzy protokolů
+> **Obrázek 4 – 11.** Řešení log Analytics monitorování kontejnerů
 
-Můžete použít řešení monitorování protokolu analýzy kontejneru:
+Řešení monitorování kontejnerů Log Analytics můžete použít:
 
--   Zobrazit informace o všech hostitelů kontejneru na jednom místě.
+-   Zobrazit informace o všech hostitelích kontejnerů na jednom místě.
 
--   Vědět, se kterou kontejnery běží, jaké bitové kopie se používáte, a pokud používáte systém.
+-   Zjistit, které kontejnery jsou spuštěná, jaké image spuštěnými, a pokud máte spuštěnou.
 
--   O kontejnery naleznete v protokolu auditu pro akce.
+-   Najdete v protokolu auditu pro akce v kontejnerech.
 
--   Vyřešte potíže se zobrazením a hledání centralizované protokoly bez vzdálené přihlášení k hostitelů Docker.
+-   Řešení potíží zobrazením a hledání centralizované protokoly bez vzdálené přihlášení na hostitele Dockeru.
 
--   Najít kontejnery, které může být "aktivní okolí" a pracovat s prostředky nadbytečné na hostiteli.
+-   Najdete kontejnerů, které mohou být "" hlučným sousedům"" a by spotřebovávalo nadbytečné prostředků na hostiteli.
 
--   Zobrazte centralizované procesoru, paměti, úložiště a síťového využití a informace o výkonu pro kontejnery.
+-   Zobrazte centralizované procesoru, paměti, úložiště a využití sítě a informace o výkonu pro kontejnery.
 
 ### <a name="additional-resources"></a>Další zdroje
 
@@ -75,15 +75,15 @@ Můžete použít řešení monitorování protokolu analýzy kontejneru:
 
 [https://docs.microsoft.com/azure/application-insights/app-insights-overview](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
 
--   **Co je Log Analytics?**
+-   **Co je služba Log Analytics?**
 
 [https://docs.microsoft.com/azure/log-analytics/log-analytics-overview](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview)
 
--   **Řešení monitorování kontejneru v analýzy protokolů**
+-   **Řešení pro monitorování kontejnerů ve službě Log Analytics**
 
 [https://docs.microsoft.com/azure/log-analytics/log-analytics-containers](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers)
 
--   **Přehled Azure monitorování**
+-   **Přehled služby Azure Monitor**
 
 [https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)
 
@@ -91,10 +91,10 @@ Můžete použít řešení monitorování protokolu analýzy kontejneru:
 
 [https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview)
 
--   **Monitorování systému Windows Server kontejnery v Service Fabric s OMS**
+-   **Monitorování kontejnerů Windows serveru v Service Fabric pomocí OMS**
 
 [https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-containers-windowsserver)
 
 >[!div class="step-by-step"]
-[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
-[další](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)
+>[Předchozí](build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud.md)
+>[další](modernize-your-apps-lifecycle-with-ci-cd-pipelines-and-devops-tools-in-the-cloud.md)

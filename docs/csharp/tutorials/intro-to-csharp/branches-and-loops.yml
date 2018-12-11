@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: interpolated-strings.yml
   nextTutorialTitle: Interpolace řetězců v jazyce C#
-  ms.openlocfilehash: 492922177cf213400629fac79da30a51bdbf46e5
-  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.openlocfilehash: a3db445f522bc3360629c17386cad4423fcd1b43
+  ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/28/2018
-  ms.locfileid: "50201677"
+  ms.lasthandoff: 12/10/2018
+  ms.locfileid: "53147158"
 items:
 - durationInMinutes: 1
   content: >
@@ -32,7 +32,7 @@ items:
   content: "Dalším důležitým konceptem pro vytváření větších programů je **smyčky**. Smyčky použijete k opakování příkazů, které chcete provést víckrát než jednou. Vyzkoušejte tento kód v interaktivním okně:\n\n```csharp\nint counter = 0;\nwhile (counter < 10)\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n  counter++;\n}\n```\n\n`while` Příkaz zkontroluje podmínku a provede příkaz následující `while`. Bude opakovaně kontrolovat podmínku a provádět příkaz, dokud podmínka není splněna.\n\nV tomto příkladu je jeden nový operátor. `++` Po `counter` proměnná je **přírůstek** operátor. Přičte 1 k hodnotě čítače a uloží hodnotu do proměnné counter.\n\n> [!IMPORTANT]\n> Ujistěte se, že `while` smyčku přepne na false, při spuštění kódu. V opačném případě můžete vytvořit **nekonečná smyčka** kde program nikdy neskončí. Není přiblížíme, protože modul, který spustí váš kód bude vypršení časového limitu a uvidíte žádný výstup z programu.\n\n`while` Smyčky otestuje podmínku před spuštěním kódu, který následuje `while`. `do` ... `while` smyčky nejdřív spustí kód a potom zkontrolujte tuto podmínku. Vypadá takto:\n\n```csharp\nint counter = 0;\ndo\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n  counter++;\n} while (counter < 10);\n```\n\nTo `do` smyčky a dřívější `while` smyčky fungují stejně. \n\nTeď přejdeme k poslednímu příkazu smyčky.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
 - title: Práce s smyčka for
   durationInMinutes: 5
-  content: "Dalím běžným příkazem smyčky, která se zobrazí v kódu jazyka C# je `for` smyčky. Vyzkoušejte tento kód v interaktivním okně:\n\n```csharp\nfor(int counter = 0; counter < 10; counter++)\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n} \n```\n\nFunguje jako `while` smyčky a `do` smyčky, které jste už použili. `for` Příkaz má tři části, které řídí, jak to funguje. \n\nPrvní část je **pro inicializátor**: `for counter = 0;` deklaruje, že `counter` je proměnná smyčky a nastavuje její počáteční hodnotu `0`.\n\nProstřední část je **pro podmínku**: `counter < 10` deklaruje, že tento `for` smyčky pokračuje v provádění za předpokladu, hodnota čítače je menší než 10.\n\nPoslední část je **iterátoru**: `counter++` Určuje, jak upravit proměnnou smyčky po provedení bloku následujícího `for` příkazu. V tomto poli, určuje, že `counter` měli zvyšuje o 1 při každém provedení bloku.\n\nVyzkoušet sami. Vyzkoušejte všechny z následujících akcí:\n\n- Změňte inicializační začínal jinou hodnotou.\n- Změňte podmínku, která má zastavit na jinou hodnotu.\n\nAž skončíte, přejdeme napsali kus kódu sami používat, co jste se naučili.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: "Dalím běžným příkazem smyčky, která se zobrazí v kódu jazyka C# je `for` smyčky. Vyzkoušejte tento kód v interaktivním okně:\n\n```csharp\nfor(int counter = 0; counter < 10; counter++)\n{\n  Console.WriteLine($\"Hello World! The counter is {counter}\");\n} \n```\n\nFunguje jako `while` smyčky a `do` smyčky, které jste už použili. `for` Příkaz má tři části, které řídí, jak to funguje. \n\nPrvní část je **pro inicializátor**: `int counter = 0;` deklaruje, že `counter` je proměnná smyčky a nastavuje její počáteční hodnotu `0`.\n\nProstřední část je **pro podmínku**: `counter < 10` deklaruje, že tento `for` smyčky pokračuje v provádění za předpokladu, hodnota čítače je menší než 10.\n\nPoslední část je **iterátoru**: `counter++` Určuje, jak upravit proměnnou smyčky po provedení bloku následujícího `for` příkazu. V tomto poli, určuje, že `counter` měli zvyšuje o 1 při každém provedení bloku.\n\nVyzkoušet sami. Vyzkoušejte všechny z následujících akcí:\n\n- Změňte inicializační začínal jinou hodnotou.\n- Změňte podmínku, která má zastavit na jinou hodnotu.\n\nAž skončíte, přejdeme napsali kus kódu sami používat, co jste se naučili.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
 - title: Kombinace větví a smyček
   durationInMinutes: 12
   content: >
@@ -80,4 +80,17 @@ items:
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Blahopřejeme!
-  content: "Dokončili jste kurz \"větve a smyčky\". \n\nTyto kurzy můžete pokračovat ve svém vlastním vývojovém prostředí. Seznamte se se základy [místního vývojového](local-environment.md) a potom si vyberte kurz. Vyzkoušejte to samé cvičení, přejít přímo k dalšímu kurzu nebo znovu začít na začátku třídílného seriálu [čísla ve C# ](numbers-in-csharp-local.md) kurzu.\n\nDalší informace o těchto konceptech v těchto tématech:\n\n[Pokud a else – příkaz](../../language-reference/keywords/if-else.md)   \n[while – příkaz](../../language-reference/keywords/while.md)   \n[do – příkaz](../../language-reference/keywords/do.md)   \n[For – příkaz](../../language-reference/keywords/for.md)"
+  content: >-
+    Dokončili jste kurz interaktivní "větve a smyčky". Můžete kliknout **interpolovaných řetězců** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů.
+
+
+    Další informace o těchto konceptech v těchto tématech:
+
+
+    - [Pokud a else – příkaz](../../language-reference/keywords/if-else.md)
+
+    - [while – příkaz](../../language-reference/keywords/while.md)
+
+    - [do – příkaz](../../language-reference/keywords/do.md)
+
+    - [For – příkaz](../../language-reference/keywords/for.md)

@@ -1,17 +1,17 @@
 ---
 title: Základní typy (F#)
-description: Objevte základní typy, které se používají v jazyce F#.
+description: Objevte základní typy, které se používají v F# jazyka.
 ms.date: 07/09/2018
-ms.openlocfilehash: 8f948d066323527b09b1d3f9f4167b95b1c875cf
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: a8a1154a211d8c87571b47cb41cb091096569472
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48026932"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145121"
 ---
 # <a name="basic-types"></a>Základní typy
 
-Toto téma obsahuje základní typy, které jsou definovány v jazyce F#. Tyto typy jsou nejdůležitější v jazyce F#, které tvoří základ téměř každý program F#. Jsou množinou primitivní typy .NET.
+Toto téma obsahuje základní typy, které jsou definovány v F# jazyka. Tyto typy jsou nejdůležitější v F#, které tvoří základ pro téměř každý F# programu. Jsou množinou primitivní typy .NET.
 
 |Typ|Typ formátu .NET|Popis|
 |----|---------|-----------|
@@ -34,8 +34,8 @@ Toto téma obsahuje základní typy, které jsou definovány v jazyce F#. Tyto t
 |`float32`, `single`|<xref:System.Single>|Bod typ s plovoucí desetinnou čárkou 32-bit.|
 |`float`, `double`|<xref:System.Double>|Bod typ s plovoucí desetinnou čárkou 64bitové.|
 
->[!NOTE]
-Můžete provést výpočty s celými čísly příliš velký pro 64bitovou celočíselnou hodnotu typu pomocí [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa) typu. `bigint` není považováno za základní typ; je zkratka pro `System.Numerics.BigInteger`.
+> [!NOTE]
+> Můžete provést výpočty s celými čísly příliš velký pro 64bitovou celočíselnou hodnotu typu pomocí [bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa) typu. `bigint` není považováno za základní typ; je zkratka pro `System.Numerics.BigInteger`.
 
 ## <a name="see-also"></a>Viz také:
 

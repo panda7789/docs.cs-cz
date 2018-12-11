@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.2
 description: Přehled nových funkcí v jazyce C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: 93b0a5281db841abdb8de0865dfe4b13be6d9ee2
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7ee6d06750f82c9529beaed3cc665f876af08888
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181170"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148172"
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
 
@@ -28,6 +28,8 @@ Nové funkce jazyků v této verzi jsou:
   - Číselné literály teď můžou mít úvodní podtržítka před všechny tištěné číslice.
 * [`private protected` Modifikátor přístupu](#private-protected-access-modifier)
   - `private protected` Modifikátor přístupu umožňuje přístup pro odvozené třídy ve stejném sestavení.
+* [Podmíněné `ref` výrazy](#conditional-ref-expressions)
+  - Výsledek podmíněného výrazu (`?:`) teď může být odkaz.
 
 ## <a name="safe-efficient-code-enhancements"></a>Vylepšení bezpečné efektivní kódu
 
@@ -56,6 +58,18 @@ int binaryValue = 0b_0101_0101;
 
 ## <a name="private-protected-access-modifier"></a>_privátní, chráněné_ modifikátor přístupu
 
-A konečně, nový modifikátor přístupu složené: `private protected` označuje, že můžou být dostupné členy obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Zatímco `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení, `private protected` omezuje přístup k odvozené typy deklarované ve stejném sestavení.
+New – modifikátor přístupu složené: `private protected` označuje, že můžou být dostupné členy obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Zatímco `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení, `private protected` omezuje přístup k odvozené typy deklarované ve stejném sestavení.
 
 Další informace najdete v části [modifikátorů přístupu](../language-reference/keywords/access-modifiers.md) v referenční dokumentaci jazyka.
+
+## <a name="conditional-ref-expressions"></a>Podmíněné `ref` výrazy
+
+Nakonec podmíněného výrazu může vytvořit výsledek ref místo hodnoty výsledku. Například měli byste napsat následující příkaz pro načtení odkazu na první prvek v jednom ze dvou polí:
+
+```csharp
+ref var r = ref (arr != null ? ref arr[0] : ref otherArr[0]);
+```
+
+Proměnná `r` je odkaz na první hodnota v jednom `arr` nebo `otherArr`.
+
+Další informace najdete v tématu [podmiňovací operátor (?:) ](../language-reference/operators/conditional-operator.md) v referenční dokumentaci jazyka.

@@ -1,67 +1,65 @@
 ---
 title: Architektura Mikroslužeb
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Architektura Mikroslužeb
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | 30.000 nohou zobrazení architektury Mikroslužeb.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: e41544a7c5f352321c3fa3e61a71568a6cf0f219
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/20/2018
+ms.openlocfilehash: dc96c5570ea829802c94c817ebd4910a090632ee
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106681"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145735"
 ---
 # <a name="microservices-architecture"></a>Architektura Mikroslužeb
 
-Jak již název napovídá, architektura mikroslužeb je přístup k vytvoření aplikace serveru jako sada malé služeb. Každá služba běží ve svém vlastním procesu a komunikuje s dalšími procesy pomocí protokolů, jako je například HTTP nebo HTTPS, Websocket, nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Každý mikroslužbu implementuje určitou začátku do konce doménu nebo obchodní schopností v určité hranici kontextu a každý musí být vyvinutá samostatně a možno nasadit nezávisle. Nakonec musí každý mikroslužbu vlastní jeho související domény datový model a logiku domény (suverenity a správa decentralizované dat) na základě různých datových technologií úložiště (SQL, NoSQL) a různé programovací jazyky.
+Jak již název napovídá, architekturu mikroslužeb je takový přístup k sestavení aplikace serveru jako sada malých služeb. To znamená, že architektura mikroslužeb je především orientované do back endu, přestože tento přístup se také používá pro front-endu. Každá služba běží ve vlastním procesu a komunikuje s dalšími procesy pomocí protokolů, jako je například HTTP/HTTPS, protokoly Websocket, nebo [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Každá mikroslužba implementuje konkrétní začátku do konce domény nebo obchodní funkci v rámci určité hranici kontextu a každý musí vyvinout samostatně a možno nasadit nezávisle na sobě. Nakonec každá mikroslužba by měl vlastní jeho související domény datový model a logiku domény (suverenitu a správu decentralizované dat) a můžou vycházet různé technologie úložišť dat (SQL, NoSQL) a různé programovací jazyky.
 
-Jaké velikost by měla být mikroslužbu? Při vývoji mikroslužbu, velikost by neměl být důležité. Důležité místo toho by měla být k vytvoření volně doplněná služby, abyste získali samostatnost vývoj, nasazení a škálování pro každou službu. Samozřejmě pokud určíte a navrhování mikroslužeb, můžete opakovat tak, aby byly co nejmenší, dokud jste příliš mnoho přímé závislosti s další mikroslužeb. Důležitější než je velikost mikroslužbu vnitřní soudržnost, které musí mít a jeho nezávislost z jiných služeb.
+Jaké velikosti má být mikroslužby? Při vývoji mikroslužby, velikost nesmí být důležité. Místo toho by měl být důležité, k vytvoření volně s velkou provázaností, služby, máte autonomie vývoje, nasazení a škálování pro každou službu. Samozřejmě při identifikaci a návrh mikroslužeb, snažte tak, aby byly co nejmenší, dokud není nutné příliš mnoho přímých závislostí s další mikroslužeb. Důležitější než velikost mikroslužby je interní soudržnosti, musí mít a jeho nezávislost od ostatních služeb.
 
-Proč architektura mikroslužeb? Stručně řečeno poskytuje dlouhodobé flexibility. Mikroslužeb povolit lepší udržovatelnosti v systémech komplexní, velký a vysoce škálovatelné umožňují vytvářet aplikace založené na mnoho nezávisle nasadit služby nichž každá má granulární a autonomní životní cykly.
+Proč architektury mikroslužeb? Stručně řečeno umožňuje dlouhodobé flexibilitu. Mikroslužby povolit lepší udržovatelnosti komplexní, velký a vysoce škálovatelné systémy umožňují vytvářet aplikace založené na mnoho samostatně nasaditelných služeb, že obsahují svazky detailní a autonomní životního cyklu.
 
-Další výhodou je mikroslužeb můžete škálovat nezávisle. Místo nutnosti jednu monolitický aplikaci, která musí horizontální navýšení kapacity jako jednotku, můžete místo toho škálovat konkrétní mikroslužeb. Tímto způsobem je možné škálovat právě funkční oblast, která potřebuje další zpracování napájení nebo síťové šířky pásma pro podporu poptávky, nikoli škálování jiných oblastí aplikace, které nemusí být změněna. To znamená úsporu nákladů, protože potřebujete méně hardwaru.
+Další výhodou je mikroslužby můžete škálovat nezávisle. Namísto toho, aby jedna monolitické aplikace musí horizontální navýšení kapacity jako celek, můžete místo toho horizontální navýšení kapacity konkrétní mikroslužeb. Tímto způsobem je možné škálovat jenom funkční oblast, která potřebuje další zpracování napájení nebo sítě šířky pásma pro podporu poptávky, nikoli horizontální navýšení kapacity dalších oblastí aplikace, které není potřeba škálovat. To znamená, že úspory nákladů, které vzhledem k tomu, že budete potřebovat méně hardwaru.
 
-![](./media/image6.png)
+![V tradičních monolitického přístupu škáluje aplikaci naklonováním celé aplikace v několika servery pro/virtuální počítač. V přístup založený mikroslužbách funkce je rozdělen do menších služeb, tak každé služby můžete škálovat nezávisle.](./media/image6.png)
 
-**Obrázek 4 až 6**. Monolitický nasazení a mikroslužeb přístup
+**Obrázek 4 až 6**. Monolitické nasazení oproti přístup založený mikroslužbách
 
-Jak ukazuje obrázek 4 až 6, mikroslužeb přístup umožňuje agilní změny a rychlé iteraci každý mikroslužbu, protože můžete změnit konkrétní, malé oblasti komplexní, velký a škálovatelné aplikace.
+Jak ukazuje obrázek 4 až 6, umožňuje přístup založený mikroslužbách agilní změny a rychlé iterace jednotlivých mikroslužeb, vzhledem k tomu, že změníte konkrétní, malé oblasti komplexní, velký a škálovatelné aplikace.
 
-Architektury podrobných aplikace založené na mikroslužeb umožňuje průběžnou integraci a postupy nastavené průběžné doručování. Také urychlí vytváření nových funkcí do aplikace. Podrobné složení aplikace také můžete spustit a otestovat mikroslužeb v izolaci a vyvíjí samostatně při zachování zrušte kontrakty mezi nimi. Tak dlouho, dokud nezměníte rozhraní nebo kontrakty, můžete změnit interní implementace žádné mikroslužbu nebo přidat další nové funkce, aniž by vás jiných mikroslužeb.
+Aplikační architektura založená na jemně aplikací založených na mikroslužbách umožňuje průběžnou integraci a průběžné doručování postupy. Také zrychluje doplňování nových funkcí do aplikace. Detailní složení aplikace také umožňuje spustit a otestovat mikroslužeb v izolaci a autonomně rozvíjet při zachování vymazat kontraktů mezi nimi. Dokud nezměníte rozhraní nebo smlouvy, můžete změnit vnitřní implementace všechny mikroslužby nebo přidat nové funkce bez narušení další mikroslužeb.
 
-Důležité aspekty povolit úspěch v přejdete do ostrého provozu je-li systém mikroslužeb jsou následující:
+Tady jsou důležité aspekty umožňující úspěch v nasadíte do produkčního prostředí se systémem založených na mikroslužbách:
 
--   Kontroluje stav a monitorování služeb a infrastruktury.
+- Monitorování a kontroly stavu služeb a infrastruktury.
 
--   Škálovatelné infrastruktury pro služby (to znamená, cloudu a orchestrators).
+- Škálovatelná infrastruktura služby (to znamená cloud a orchestrátorů).
 
--   Zabezpečení návrhu a implementace na více úrovních: ověřování, autorizace, správu tajné klíče, zabezpečenou komunikaci, atd.
+- Zabezpečení návrhu a implementace na různých úrovních: ověřování, autorizace, správu tajných kódů, zabezpečenou komunikaci, atd.
 
--   Doručení rychlé aplikace, obvykle s různými týmy zaměřené na různých mikroslužeb.
+- Doručování aplikací rychle, obvykle s různými týmy, zaměřuje se na různé mikroslužeb.
 
--   Postupy DevOps a CI/CD a infrastruktury.
+- Postupy DevOps a CI/CD a infrastruktury.
 
-Z těchto jsou pouze první tři zahrnutých nebo byla zavedená v této příručce. Poslední dva body, které se vztahují k životního cyklu aplikací, jsou popsané v další [Kontejnerizované Docker cyklu aplikací s Microsoft platforma a nástroje](https://aka.ms/dockerlifecycleebook) elektronických knih.
+Z nich jsou pouze první tři zahrnutých nebo zavedené v této příručce. Poslední dva body, které se vztahují k životního cyklu aplikací, jsou popsané v další [Kontejnerizovaných životní cyklus aplikace Dockeru s platformou a nástroji Microsoft](https://aka.ms/dockerlifecycleebook) e kniha.
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Označit Russinovichem. Mikroslužeb: Aplikaci revolution používá technologii cloudu**
-    [*https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/*](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
+- **Mark Russinovich. Mikroslužby: Revoluci aplikací založené na cloudu** \
+  [*https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/*](https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 
--   **Martin Fowler. Mikroslužeb**
-    [*https://www.martinfowler.com/articles/microservices.html*](https://www.martinfowler.com/articles/microservices.html)
+- **Martina Fowlera. Mikroslužby** \
+  [*http://www.martinfowler.com/articles/microservices.html*](http://www.martinfowler.com/articles/microservices.html)
 
--   **Martin Fowler. Mikroslužbu požadavky**
-    [*https://martinfowler.com/bliki/MicroservicePrerequisites.html*](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+- **Martina Fowlera. Požadavky na Mikroslužbách** \
+  [*http://martinfowler.com/bliki/MicroservicePrerequisites.html*](http://martinfowler.com/bliki/MicroservicePrerequisites.html)
 
--   **Jimmy Nilsson. Bloku dat Cloud Computing**
-    [*https://www.infoq.com/articles/CCC-Jimmy-Nilsson*](https://www.infoq.com/articles/CCC-Jimmy-Nilsson)
+- **Jimmy Nilsson. Spojí Cloud computingu** \
+  [*https://www.infoq.com/articles/CCC-Jimmy-Nilsson*](https://www.infoq.com/articles/CCC-Jimmy-Nilsson)
 
--   **Cesaru členka Torre. Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje** (ke stažení elektronická kniha) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
-
-
-
+- **De la Torre Cesarovi. Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha) \
+  [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 >[!div class="step-by-step"]
-[Předchozí](service-oriented-architecture.md)
-[další](data-sovereignty-per-microservice.md)
+>[Předchozí](service-oriented-architecture.md)
+>[další](data-sovereignty-per-microservice.md)

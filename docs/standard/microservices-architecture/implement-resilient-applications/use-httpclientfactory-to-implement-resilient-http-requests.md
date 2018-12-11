@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: f2be3daf1b04613fa8afc1d17cbcbca2d338e062
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 07ea85509b86eadd2c85dfe59ace674e2faae9a3
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347926"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145108"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -162,7 +162,6 @@ Až do této chvíle právě uvedeném kódu provádí pravidelné požadavky Ht
 
     [*https://github.com/aspnet/HttpClientFactory*](https://github.com/aspnet/HttpClientFactory)
 
-
-
 >[!div class="step-by-step"]
-[Předchozí] (explore-custom-http-call-retries-exponential-backoff.md) [Další] (implement-http-call-retries-exponential-backoff-polly.md)
+>[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)
+>[další](implement-http-call-retries-exponential-backoff-polly.md)

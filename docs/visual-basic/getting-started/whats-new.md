@@ -1,6 +1,6 @@
 ---
 title: Co je nového v jazyce Visual Basic
-ms.date: 10/04/2018
+ms.date: 10/24/2018
 f1_keywords:
 - VB.StartPage.WhatsNew
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 5c7786bd0dc8789d156959dcf94ac6bf8f4fb906
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e77dca6f87e5039f4aa668a8e08ec112c9eb1b9b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194056"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146154"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -21,10 +21,13 @@ Toto téma obsahuje seznam názvů klíčovou funkcí pro každou verzi jazyka V
   
 ## <a name="current-version"></a>Aktuální verze
 
-Visual Basic verzi 15.5 / Visual Studio 2017 verze 15.5  
-Nové funkce, najdete v části [15.5 jazyka Visual Basic](#visual-basic-155)
+Visual Basic 15,8 / Visual Studio 2017 verze 15.8  
+Nové funkce, najdete v části [15.8 jazyka Visual Basic](#visual-basic-158)
 
 ## <a name="previous-versions"></a>Předchozí verze
+
+Visual Basic verzi 15.5 / Visual Studio 2017 verze 15.5  
+Nové funkce, najdete v části [15.5 jazyka Visual Basic](#visual-basic-155)
 
 Visual Basic 15.3 / Visual Studio 2017 verze 15.3  
 Nové funkce, najdete v části [15.3 jazyka Visual Basic](#visual-basic-153)
@@ -55,6 +58,39 @@ Bitové posunutí – operátory, deklarace proměnné smyčky
 
 Visual Basic / Visual Studio .NET 2002   
 První verze jazyka Visual Basic .NET
+
+## <a name="visual-basic-158"></a>Visual Basic 15.8
+
+**Optimalizované pro převod celého čísla s plovoucí desetinnou čárkou**
+
+V předchozích verzích jazyka Visual Basic, převod [Double](../language-reference/data-types/double-data-type.md) a [jeden](../language-reference/data-types/single-data-type.md) hodnoty na celá čísla nabízí relativně nízký výkon. Visual Basic 15.8 významně zvyšuje výkon převody s plovoucí desetinnou čárkou na celá čísla při předání hodnoty vrácené některý z následujících metod do jednoho z [vnitřní funkce pro převod celého čísla jazyka Visual Basic](../language-reference/functions/type-conversion-functions.md) () CByte CShort, CInt, CLng, csbyte –, cushort –, cuint –, culng –), nebo pokud hodnota vrácená pomocí některé z následujících metod je implicitně přetypován na celočíselný typ při [Option Strict](~/docs/visual-basic/language-reference/statements/option-strict-statement.md) je nastavena na `Off`:
+
+- <xref:Microsoft.VisualBasic.Conversion.Fix(System.Double)?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Conversion.Fix(System.Object)?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Conversion.Fix(System.Single)?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Conversion.Int(System.Double)?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Conversion.Int(System.Object)?displayProperty=nameWithType>
+- <xref:Microsoft.VisualBasic.Conversion.Int(System.Single)?displayProperty=nameWithType>
+- <xref:System.Math.Ceiling(System.Double)?displayProperty=nameWithType>
+- <xref:System.Math.Floor(System.Double)?displayProperty=nameWithType>
+- <xref:System.Math.Round(System.Double)?displayProperty=nameWithType>
+- <xref:System.Math.Truncate(System.Double)?displayProperty=nameWithType>
+
+Tyto optimalizace umožňuje kód ke spuštění rychleji – až dvakrát jako rychlé pro kód, který nemá velký počet převody na typy celých čísel. Následující příklad ukazuje některé jednoduchý způsob volání, které jsou ovlivněny tyto optimalizace:
+
+```vb
+Dim s As Single = 173.7619
+Dim d As Double = s 
+
+Dim i1 As Integer = CInt(Fix(s))               ' Result: 173
+Dim b1 As Byte = CByte(Int(d))                 ' Result: 173
+Dim s1 AS Short = CShort(Math.Truncate(s))     ' Result: 173
+Dim i2 As Integer = CInt(Math.Ceiling(d))      ' Result: 174
+Dim i3 As Integer = CInt(Math.Round(s))        ' Result: 174
+
+```
+
+Mějte na paměti, že to zkrátí místo hodnoty zaokrouhlí číslo s plovoucí desetinnou čárkou.
 
 ## <a name="visual-basic-155"></a>Visual Basic 15.5
 

@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 6/28/2018
-ms.openlocfilehash: 2e0938fc67e02a52b99158b2ff07b9f32464e674
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 675ecc0dc6a90f3a4ab42861d850ed43a6c10bad
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404435"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146599"
 ---
 # <a name="architectural-principles"></a>Zásady architektury
 
@@ -106,7 +106,7 @@ Minimálně přiklonit jednotlivých webových aplikací na jejich vlastní ohra
 > <https://deviq.com/encapsulation/>
 > - **Princip inverzi závislostí**  
 > <https://deviq.com/dependency-inversion-principle/>
-> - **Princip explicitní závislosti.**  
+> - **Princip explicitních závislostí**  
 > <https://deviq.com/explicit-dependencies-principle/>
 > - **Neopakovat sami**  
 > <https://deviq.com/don-t-repeat-yourself/>
@@ -116,5 +116,5 @@ Minimálně přiklonit jednotlivých webových aplikací na jejich vlastní ohra
 > <https://martinfowler.com/bliki/BoundedContext.html>
 
 >[!div class="step-by-step"]
-[Předchozí](choose-between-traditional-web-and-single-page-apps.md)
-[další](common-web-application-architectures.md)
+>[Předchozí](choose-between-traditional-web-and-single-page-apps.md)
+>[další](common-web-application-architectures.md)

@@ -1,16 +1,17 @@
 ---
 title: Ukázky WPF
-ms.date: 03/30/2017
+ms.date: 11/02/2017
 helpviewer_keywords:
 - WPF samples [WPF]
 - samples [WPF]
 ms.assetid: 1fc53e12-dfe5-476e-be13-fc3714aaf640
-ms.openlocfilehash: 8cecb51ad044a8be0baab2ffd077f73c45862ec7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: fc4eb03e0488994d9e17337e56b8fa0ecbd62b56
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524436"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148272"
 ---
 # <a name="wpf-samples"></a>Ukázky WPF
-Seznam ukázek, které ukazují [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], naleznete v tématu [ukázky dokumentace WPF](https://go.microsoft.com/fwlink/?LinkID=159044) Galerie kódu MSDN.
+
+Ukázky Windows Presentation Foundation (WPF), najdete v článku [úložiště/WPF – ukázky Microsoft](https://github.com/Microsoft/WPF-Samples) na Githubu.

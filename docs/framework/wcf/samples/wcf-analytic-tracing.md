@@ -3,11 +3,11 @@ title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
 ms.openlocfilehash: a5e4b82bd28cae18f393a4143325623634d4bbaf
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181654"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147421"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka předvádí, jak přidat vlastní události trasování do datového proudu analytického trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené k tomu, aby, získat přehled o vaší služby bez nutnosti platit penalizace vysoký výkon. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis událostí, které integrace se službami WCF.  
@@ -106,7 +106,7 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
 4.  Klikněte na tlačítko **vymazat** vymazat události.  
   
 ## <a name="known-issue"></a>Známý problém  
- Existuje známý problém nástroje **Prohlížeč událostí** kde může dojít k selhání k dekódování událostí trasování událostí pro Windows. Může se zobrazit chybová zpráva s upozorněním: "Popis objektu Event ID \<id > ze zdroje aplikace Microsoft Windows Server – aplikace nebyla nalezena. Součást, která vyvolá tuto událost není nainstalována na místním počítači nebo že je poškozená instalace. Můžete nainstalovat nebo opravit součásti v místním počítači." Pokud dojde k této chybě vyberte **aktualizovat** z **akce** nabídky. Události by pak správně dekódovat.  
+ Existuje známý problém nástroje **Prohlížeč událostí** kde může dojít k selhání k dekódování událostí trasování událostí pro Windows. Může zobrazit chybová zpráva s upozorněním: "Popis objektu Event ID \<id > ze zdroje aplikace Microsoft Windows Server – aplikace nebyla nalezena. Součást, která vyvolá tuto událost není nainstalována na místním počítači nebo že je poškozená instalace. Můžete nainstalovat nebo opravit součásti v místním počítači." Pokud dojde k této chybě vyberte **aktualizovat** z **akce** nabídky. Události by pak správně dekódovat.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

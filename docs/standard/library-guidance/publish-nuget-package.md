@@ -5,11 +5,11 @@ author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
 ms.openlocfilehash: 036aa99c89790274628c40824be7e230d81850fe
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52672066"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53144066"
 ---
 # <a name="publishing-a-nuget-package"></a>Publikování balíčku NuGet
 

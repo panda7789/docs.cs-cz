@@ -1,23 +1,23 @@
 ---
 title: Předpoklady pro .NET Core ve Windows
 description: Informace v závislosti na vaší Windows potřebujete počítač pro vývoj a spouštění aplikací .NET Core.
-author: mairaw
-ms.author: mairaw
-ms.date: 08/31/2018
-ms.openlocfilehash: 63c0de2b413f38458dba89506f4070760b3f53f8
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.date: 12/05/2018
+ms.openlocfilehash: 8f9a823ab3eea15d7e33da6ff00992057c8c4e38
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747465"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130878"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
-Tento článek popisuje závislosti, které potřebujete pro vývoj aplikací .NET Core ve Windows. Podporované verze operačního systému a závislostech, které následují platí na tři způsoby, jak vyvíjet aplikace .NET Core ve Windows:
+Tento článek popisuje podporované verze operačního systému, aby bylo možné spustit aplikace .NET Core ve Windows. Podporované verze operačního systému a závislostech, které následují platí na tři způsoby, jak vyvíjet aplikace .NET Core ve Windows:
 
 * [Příkazový řádek](tutorials/using-with-xplat-cli.md)
-* [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
+* [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 * [Visual Studio Code](https://code.visualstudio.com/)
+
+Také, pokud vyvíjíte ve Windows pomocí sady Visual Studio 2017, [požadavky sady Visual Studio 2017](#prerequisites-with-visual-studio-2017) část ve více podrobností o minimální verze podporované pro vývoj v .NET Core.
 
 ## <a name="net-core-supported-windows-versions"></a>.NET core podporované verze Windows
 
@@ -35,9 +35,12 @@ Tento článek popisuje závislosti, které potřebujete pro vývoj aplikací .N
 
 Následující články obsahují úplný seznam operačních systémů nepodporuje .NET Core na verze:
 
-* [.NET core 2.1 – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
-* [.NET core 2.0 – podporované verze operačního systému](https://github.com/dotnet/core/blob/master/release-notes/2.0/2.0-supported-os.md)
-* [.NET core 1.x – verze podporovaný operační systém](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
+* [.NET core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
+* [.NET core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
+* [.NET core 1.1](https://github.com/dotnet/core/blob/master/release-notes/1.1/1.1-supported-os.md)
+* [.NET core 1.0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
+
+Odkazy ke stažení a další informace najdete v tématu [stáhne .NET](https://www.microsoft.com/net/download) ke stažení nejnovější verze nebo [.NET stáhne archivu](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
 
 ## <a name="net-core-dependencies"></a>.NET core závislosti
 
@@ -65,58 +68,39 @@ Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .
 
 Další informace o změnách v sadě Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 
-Můžete vyvíjet aplikace .NET Core 2.1 v sadě Visual Studio 2017:
+Můžete vyvíjet aplikace .NET Core v sadě Visual Studio 2017 pomocí .NET Core 2.2 SDK:
 
- 1. [Stažení a instalace sady Visual Studio 2017 verze 15.7.0 nebo vyšší](/visualstudio/install/install-visual-studio) s **vývoj pro různé platformy .NET Core** úloh (v **další sady nástrojů** části) vybrané.
+ 1. [Stáhněte a nainstalujte Visual Studio 2017 verze 15.9.0 nebo vyšší](/visualstudio/install/install-visual-studio) s **vývoj pro různé platformy .NET Core** úloh (v **další sady nástrojů** části) vybrané.
 
-![Instalace – snímek obrazovky sady Visual Studio 2017 s vybranou úlohou "Vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-15-8-workloads.jpg)
+![Instalace – snímek obrazovky sady Visual Studio 2017 s vybranou úlohou "Vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-2017-workloads.jpg)
 
-Po **vývoj pro různé platformy .NET Core** sada nástrojů je ve výchozím nastavení nainstalované, Visual Studio 2017 15.7 používá .NET Core 2.0 SDK a Visual Studio 2017 15.8 používá sadu SDK 2.1.
+Po **vývoj pro různé platformy .NET Core** je nainstalovaná sada nástrojů, Visual Studio obvykle nainstaluje předchozí verzi .NET Core SDK.
+Například Visual Studio 2017 15.9 používá .NET Core 2.1 SDK ve výchozím nastavení po instalaci zatížení.
 
- 2. Pokud používáte Visual Studio 2017 15.7, nainstalujte [sady SDK .NET Core 2.1](https://www.microsoft.com/net/download/core) nebo upgrade na Visual Studio 2017 15.8.
+Aktualizace sady Visual Studio pro použití sady .NET Core 2.2 SDK:
 
- 3. Změnit cíl existující nebo nové projekty .NET Core na .NET Core 2.1 pomocí následujících pokynů:
-    * Na **projektu** nabídce zvolit **vlastnosti**.
-    * V **Cílová architektura** nabídce pro výběr, nastavte hodnotu na **.NET Core 2.1**.
+ 1. Nainstalujte [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download).
 
-![Snímek obrazovky sady Visual Studio 2017 aplikace vlastnost projektu pomocí nabídky ".NET Core 2.0" Target framework vybrané položky](./media/windows-prerequisites/Targeting-dotnetCore2.png)
+ 1. Pokud chcete projekt pro použití nejnovější modul runtime .NET Core, jejich cíl změnit existující nebo nové projekty .NET Core na .NET Core 2.2 využitím následujících pokynů:
 
-Jakmile budete mít nakonfigurované pomocí sady SDK .NET Core 2.1 sady Visual Studio, můžete provést následující akce:
+    * Na **projektu** nabídce zvolte **vlastnosti**.
+    * V **Cílová architektura** nabídce pro výběr, nastavte hodnotu na **.NET Core 2.2**.
+
+![Snímek obrazovky sady Visual Studio 2017 aplikace vlastnost projektu pomocí nabídky ".NET Core 2.2" target framework vybrané položky](./media/windows-prerequisites/targeting-dotnet-core.jpg)
+
+Jakmile budete mít nakonfigurované s .NET Core 2.2 SDK sady Visual Studio, můžete provést následující akce:
 
 * Otevřete, sestavte a spusťte existující projekty .NET Core 1.x a 2.x.
-* Změnit cíl .NET Core 1.x a 2.0 projekty .NET Core 2.1, sestavit a spustit.
-* Vytvořte nové projekty .NET Core 2.1.
-
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
-
-Můžete vyvíjet aplikace .NET Core 2.0 v sadě Visual Studio 2017:
-
- 1. [Stáhněte a nainstalujte Visual Studio 2017 verze 15.3.0 nebo vyšší](/visualstudio/install/install-visual-studio) s **vývoj pro různé platformy .NET Core** úloh (v **další sady nástrojů** části) vybrané.
-
-![Instalace – snímek obrazovky sady Visual Studio 2017 s vybranou úlohou "Vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-15-3-workloads.jpg)
-
-Po **vývoj pro různé platformy .NET Core** je nainstalovaná sada nástrojů, Visual Studio 2017 používá .NET Core 1.x ve výchozím nastavení. Instalace .NET Core 2.0 SDK potřebujete podporu .NET Core 2.0 v sadě Visual Studio 2017.
-
- 2. Nainstalujte [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/dotnet-core/2.0).
- 3. Změnit cíl stávajícího nebo nového .NET Core 1.x projekty .NET Core 2.0 pomocí následujících pokynů:
-    * Na **projektu** nabídce zvolit **vlastnosti**.
-    * V **Cílová architektura** nabídce pro výběr, nastavte hodnotu na **.NET Core 2.0**.
-
-![Snímek obrazovky sady Visual Studio 2017 aplikace vlastnost projektu pomocí nabídky ".NET Core 2.0" Target framework vybrané položky](./media/windows-prerequisites/Targeting-dotnetCore2.png)
-
-Po instalaci rozhraní .NET Core 2.0 SDK je Visual Studio 2017 ve výchozím nastavení používá rozhraní .NET Core SDK 2.0 a podporuje následující akce:
-
-* Otevřete, sestavte a spusťte existující projekty .NET Core 1.x.
-* Změnit cíl projektů .NET Core 1.x do .NET Core 2.0, sestavení a spusťte.
-* Vytvořte nové projekty .NET Core 2.0.
+* Změnit cílení projektů .NET Core 1.x a 2.x na .NET Core 2.2, sestavení a spusťte.
+* Vytvořte nové projekty .NET Core 2.2.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 Můžete vyvíjet aplikace .NET Core 1.x v sadě Visual Studio [stáhnout a nainstalovat sadu Visual Studio 2017](/visualstudio/install/install-visual-studio) s **"Vývoj pro různé platformy .NET Core"** úloh (v **další sady nástrojů**části) vybrané.
 
-![Instalace – snímek obrazovky sady Visual Studio 2017 s vybranou úlohou "Vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs_workloads.jpg)
+![Instalace – snímek obrazovky sady Visual Studio 2017 s vybranou úlohou "Vývoj pro různé platformy .NET Core"](./media/windows-prerequisites/vs-workloads.jpg)
 
 > [!IMPORTANT]
 > Je možné použít Visual Studio 2015 pro vývoj v .NET Core 1.x, ale nedoporučuje z následujících důvodů:
@@ -124,16 +108,17 @@ Můžete vyvíjet aplikace .NET Core 1.x v sadě Visual Studio [stáhnout a nain
   > * Projekty, které jsou založeny na project.json, který je zastaralý.
 >
 > Další informace o změnách formát projektu naleznete v tématu [podrobný přehled změn](./tools/cli-msbuild-architecture.md).
+
 ---
 
 <a name="vs-mapping"></a>
 
 > [!TIP]
-> Pokud chcete ověřit vaši verzi sady Visual Studio 2017:
+> Pokud chcete ověřit vaši verzi sady Visual Studio:
 >
 > * Na **pomáhají** nabídce zvolte **o Microsoft Visual Studio**.
 > * V **o Microsoft Visual Studio** dialogového okna, zkontrolujte číslo verze.
->   * Pro aplikace .NET Core 2.2 ve verzi Preview 1, Visual Studio 2017 (aktuálně ve verzi Preview) verzi 15.9 nebo vyšší.
+>   * Pro aplikace .NET Core 3.0 ve verzi Preview 1, Visual Studio. 2019 Preview 1 nebo novější.
+>   * Pro aplikace .NET Core 2.2, Visual Studio 2017 verze 15.9 nebo vyšší.
 >   * Pro aplikace .NET Core 2.1, Visual Studio 2017 verze 15.7 nebo novější.
->   * Pro aplikace .NET Core 2.0, Visual Studio 2017 verze 15.3 nebo novější.
 >   * Pro aplikace .NET Core 1.x, Visual Studio 2017 verze 15,0 nebo vyšší.

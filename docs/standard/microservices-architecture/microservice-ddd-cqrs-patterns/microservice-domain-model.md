@@ -1,19 +1,19 @@
 ---
 title: Návrh doménového modelu mikroslužby
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Návrh doménového modelu mikroslužby
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Při návrhu modelu domény orientované na DDD porozumět klíčovým koncepcím.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 11/09/2017
-ms.openlocfilehash: 9a54679fc28bb2adf803a38fe5e43f67048a4cfd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.date: 10/08/2018
+ms.openlocfilehash: d98d0f0fee0692bb447779e7f62750931a9773ba
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50048473"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143601"
 ---
-# <a name="designing-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužby
+# <a name="design-a-microservice-domain-model"></a>Návrh doménového modelu mikroslužby
 
-*Definovat jeden bohaté doménový model pro každou obchodní mikroslužeb nebo ohraničená kontextu*
+*Definujte jeden bohaté doménový model pro každou obchodní mikroslužeb nebo ohraničená kontextu.*
 
 Vaším cílem je vytvořit jeden získá na ucelenosti doménový model pro každou obchodní mikroslužeb nebo ohraničená kontextu (BC). Mějte na paměti, ale který BC nebo obchodní mikroslužeb může někdy skládá z několika fyzických služeb, které sdílejí jeden doménový model. Doménový model nutné zaznamenat pravidla, chování, obchodní jazyka a omezení jednotlivý kontext ohraničená nebo obchodní mikroslužeb, která představuje.
 
@@ -23,19 +23,19 @@ Entity reprezentaci objektů domény a jsou jejich identitu, kontinuity podnikov
 
 *Entity identity můžete napříč několika mikroslužbami nebo ohraničených kontextech.*
 
-Stejnou identitu (i když není stejná entita) můžete modelovat napříč více ohraničených kontextech nebo mikroslužeb. Ale, neznamená, že stejnou entitu, se stejnými atributy a logiky by implementovat v několika kontextech omezená. Místo toho entity v jednotlivých ohraničených kontextech omezit jejich atributy a chování na tyto požadované v tomto ohraničená kontextu domény.
+Stejnou identitu (to znamená, že stejné `Id` hodnoty, i když možná není stejné domény entity) můžete modelovat napříč více ohraničených kontextech nebo mikroslužeb. Ale, neznamená, že stejnou entitu, se stejnými atributy a logiky by implementovat v několika kontextech omezená. Místo toho entity v jednotlivých ohraničených kontextech omezit jejich atributy a chování na tyto požadované v tomto ohraničená kontextu domény.
 
 Kupující může obsahovat většinu atributů osoby, které jsou definovány v entitě uživatele v profilu nebo identity mikroslužeb, včetně identitu. Ale kupujících entita v pořadí mikroslužeb může mít méně atributy, protože pouze určité kupujících dat má vztah k proces zpracování objednávky. Kontext jednotlivých mikroslužeb nebo ohraničená kontext ovlivňuje jeho doménový model.
 
-*Domény entity musí implementovat chování kromě provádění atributy dat.*
+*Domény entity musí implementovat chování kromě provádění atributy data.*
 
 Entita domény v DDD musí implementovat logiku domény nebo chování týkající se dat entity (objekt, kterého v paměti). Například jako součást třídu entity pořadí potřebujete obchodní logiky a implementovat jako metody pro úlohy, jako je přidání objednávky položku, ověření dat a výpočet celkového počtu operací. Metody entity zajistíme výstupních podmínek a pravidla entity namísto toho, aby tato pravidla rozloženy aplikační vrstvu.
 
-Obrázek 9-8 ukazuje domény entity, která implementuje nejen datové atributy, ale operací a metod s logikou související domény.
+Obrázek 7 – 8 ukazuje domény entity, která implementuje nejen datové atributy, ale operací a metod s logikou související domény.
 
-![](./media/image9.png)
+![Entity model domény implementuje chování pomocí metod, tedy není "anemic" modelu.](./media/image9.png)
 
-**Obrázek 9-8**. Příklad implementace data a chování entit návrhu domény
+**Obrázek 7. a 8**. Příklad implementace data a chování entit návrhu domény
 
 Samozřejmě někdy může mít entity, které nejsou implementovat jakoukoli logiku v rámci třídy entity. V podřízené entity v rámci agregace tomu může dojít, pokud podřízené entity nemá nějakou zvláštní logiku, protože většina logiku je definováno v kořenu agregace. Pokud máte složité mikroslužeb, která má spoustu logiky implementovány v třídách service místo v entitách domény, může být spadající do anemic doménový model, je vysvětleno v následující části.
 
@@ -57,15 +57,14 @@ Někteří lidé říkají, že je anemic doménový model proti vzor. Tato skut
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **DevIQ. Entita domény**
-    [*https://deviq.com/entity/*](https://deviq.com/entity/)
+- **DevIQ. Entita domény** \
+  [*https://deviq.com/entity/*](https://deviq.com/entity/)
 
--   **Martina Fowlera. Doménový Model**
-    [*https://martinfowler.com/eaaCatalog/domainModel.html*](https://martinfowler.com/eaaCatalog/domainModel.html)
+- **Martina Fowlera. Doménový Model** \
+  [*https://martinfowler.com/eaaCatalog/domainModel.html*](https://martinfowler.com/eaaCatalog/domainModel.html)
 
--   **Martina Fowlera. Anemic doménový Model**
-
-    <https://martinfowler.com/bliki/AnemicDomainModel.html>
+- **Martina Fowlera. Anemic doménový Model** \
+  [*https://martinfowler.com/bliki/AnemicDomainModel.html*](https://martinfowler.com/bliki/AnemicDomainModel.html)
 
 ### <a name="the-value-object-pattern"></a>Vzor hodnota objektu
 
@@ -79,22 +78,24 @@ Osoba s jméno a příjmení je obvykle entity vzhledem k tomu, že uživatel m�
 
 Hodnota objekty jsou náročná na správu v relačních databází a ORMs, jako je EF, zatímco v dokumentu orientovaného databázích, které jsou snadněji implementovat a používat.
 
+EF Core 2.0 obsahuje [vlastní entity](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) funkce, která usnadňuje zpracování hodnotu objektů, jak uvidíme podrobně později.
+
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Martina Fowlera. Vzor hodnota objektu**
-    [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
+- **Martina Fowlera. Vzor hodnota objektu**
+  [*https://martinfowler.com/bliki/ValueObject.html*](https://martinfowler.com/bliki/ValueObject.html)
 
--   **Hodnota objektu**
-    [*https://deviq.com/value-object/*](https://deviq.com/value-object/)
+- **Hodnota objektu**
+  [*https://deviq.com/value-object/*](https://deviq.com/value-object/)
 
--   **Hodnota objektů v vývoj řízený testováním**
-    [*https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
+- **Hodnota objektů v vývoj řízený testováním**
+  [*https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects*](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
--   **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru.** (Kniha; obsahuje diskusi hodnotu objektů) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+- **Eric Evans. Návrhy řízené doménou: Použití složitosti srdce softwaru.** (Kniha; obsahuje diskusi hodnotu objektů) [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### <a name="the-aggregate-pattern"></a>Agregační vzor
 
-Doménový model obsahuje cluster různých datových entit a procesy, které můžete řídit důležité oblasti funkcí, jako je například pořadí splnění nebo z inventáře. Další detailnější DDD jednotka je agregace, který popisuje cluster nebo skupinu entit a chování, které lze považovat za získá na ucelenosti jednotky.
+Doménový model obsahuje cluster různých datových entit a procesy, které můžete řídit důležité oblasti funkcí, jako je například vyřizování objednávek nebo z inventáře. Další detailnější DDD jednotka je agregace, který popisuje cluster nebo skupinu entit a chování, které lze považovat za získá na ucelenosti jednotky.
 
 Obvykle definujete agregace podle transakcí, které potřebujete. Klasickým příkladem je pořadí, které obsahuje také seznam pořadí položek. Objednávky položku, bude obvykle entity. Ale budou podřízené entity v rámci pořadí agregaci, která bude obsahovat také entitě objednávka jako jeho kořenové entity, obvykle nazývá kořen agregace.
 
@@ -104,15 +105,15 @@ Určení agregace může být obtížné. Agregace je skupiny objektů, které m
 
 Agregace se skládá z alespoň jedné entity: agregační kořenový adresář, označovaný taky jako kořenová entita nebo primární entity. Kromě toho může mít více podřízených entit a hodnota objekty, se všechny entity a objekty vzájemně spolupracuje při provádění požadované chování a transakce.
 
-Agregační kořenové slouží k zajištění konzistence agregace; měla by být pouze vstupní bod pro aktualizace agregaci prostřednictvím metody nebo operace v agregované kořenová třída. Entity v rámci agregace pouze pomocí agregační kořenové by měl provádět změny. Je strážce konzistence agregaci, s ohledem všechny výstupních podmínek a pravidla konzistence, které možná budete muset v souladu s vaší agregovaně. Pokud změníte podřízený objekt entity nebo hodnota nezávisle na sobě, agregační kořen nelze zkontrolujte, že agregace v platném stavu. Bylo by jako tabulka s dojde ke ztrátě větev. Udržování konzistentnosti je hlavním účelem agregace root.
+Agregační kořenové slouží k zajištění konzistence agregace; měla by být pouze vstupní bod pro aktualizace agregaci prostřednictvím metody nebo operace v agregované kořenová třída. Entity v rámci agregace pouze pomocí agregační kořenové by měl provádět změny. Je strážce konzistence agregaci, vzhledem k tomu výstupních podmínek a pravidla konzistence, které možná budete muset v souladu s vaší agregovaně. Pokud změníte podřízený objekt entity nebo hodnota nezávisle na sobě, agregační kořen nelze zkontrolujte, že agregace v platném stavu. Bylo by jako tabulka s dojde ke ztrátě větev. Udržování konzistentnosti je hlavním účelem agregace root.
 
-Obrázek 9-9 můžete zobrazit ukázky agregace jako kupujících, agregace, která obsahuje jednu entitu (kořen agregační kupujících). Agregace pořadí obsahuje více entit a hodnoty objektu.
+V obrázku 7. až 9, zobrazí se agreguje ukázkové jako kupujících, agregace, která obsahuje jednu entitu (kořen agregační kupujících). Agregace pořadí obsahuje více entit a hodnoty objektu.
 
-![](./media/image10.png)
+![Doménový model DDD se skládá z agregace, agregaci může mít pouze jednu entitu nebo více a může obsahovat také objekty hodnotu.](./media/image10.png)
 
-**Obrázek 9-9**. Příklad agregace s několika neboli jednotlivých entit
+**Obrázek 7. až 9**. Příklad agregace s několika neboli jednotlivých entit
 
-Stejně jako v pořadí mikroslužeb v aplikaci eShopOnContainers odkaz na aplikaci, mějte na paměti, že agregace kupujících může mít další podřízené entity, v závislosti na vaší domény. Obrázek 9-9 právě ukazuje případ, ve kterém má kupující jedna entita, například agregaci, která obsahuje jenom agregační kořenové.
+Stejně jako v pořadí mikroslužeb v aplikaci eShopOnContainers odkaz na aplikaci, mějte na paměti, že agregace kupujících může mít další podřízené entity, v závislosti na vaší domény. Obrázek 7. až 9 právě ukazuje případ, ve kterém má kupující jedna entita, například agregaci, která obsahuje jenom agregační kořenové.
 
 Aby bylo možné udržovat oddělení agregací a ponechat zřetelnými hranicemi mezi nimi, je vhodné v modelu domény DDD tak jak je implementován v s přímým přístupem navigace mezi agregace a pouze s poli cizí klíč (Cizíklíč) [ Řazení doménového modelu mikroslužby](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs) v aplikaci eShopOnContainers. Entity pořadí pouze má pole cizího klíče pro odběratele, ale ne EF Core navigační vlastnost, jak je znázorněno v následujícím kódu:
 
@@ -133,24 +134,24 @@ Identifikace a práce s agregacemi vyžaduje výzkum a prostředí. Další info
 
 #### <a name="additional-resources"></a>Další zdroje
 
--   **Vaughn Vernon. Efektivní návrh agregace – část I: modelování jedné agregace**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_COMMUNITY\_ESSAY\_AGGREGATES\_PART\_1.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
+- **Vaughn Vernon. Efektivní návrh agregace – část I: Modelování jedné agregace** \
+  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD\_COMMUNITY\_ESSAY\_AGGREGATES\_PART\_1.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1.pdf)
 
--   **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agregací spolupracují**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf)
+- **Vaughn Vernon. Efektivní agregační návrh – část II: Provádění agregací spolupracují** \
+  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_2.pdf)
 
--   **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehled díky zjišťování**
-    [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf)
+- **Vaughn Vernon. Efektivní agregační návrh – část III: Získání přehled díky zjišťování** \
+  [*https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf*](https://vaughnvernon.co/wordpress/wp-content/uploads/2014/10/DDD_COMMUNITY_ESSAY_AGGREGATES_PART_3.pdf)
 
--   **Sergeje Grybniak. Návrh taktických vzorů DDD**
-    [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)
+- **Sergeje Grybniak. Návrh taktických vzorů DDD** \
+  [*https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part*](https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part)
 
--   **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace**
-    [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson)
+- **Chris Richardson. Vývoj transakční Mikroslužeb pomocí agregace** \
+  [*https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson*](https://www.infoq.com/articles/microservices-aggregates-events-cqrs-part-1-richardson)
 
--   **DevIQ. Agregační vzor**
-    [*https://deviq.com/aggregate-pattern/*](https://deviq.com/aggregate-pattern/)
+- **DevIQ. Agregační vzor** \
+  [*https://deviq.com/aggregate-pattern/*](https://deviq.com/aggregate-pattern/)
 
 >[!div class="step-by-step"]
-[Předchozí](ddd-oriented-microservice.md)
-[další](net-core-microservice-domain-model.md)
+>[Předchozí](ddd-oriented-microservice.md)
+>[další](net-core-microservice-domain-model.md)

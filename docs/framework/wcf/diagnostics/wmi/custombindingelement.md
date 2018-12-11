@@ -3,11 +3,11 @@ title: CustomBindingElement
 ms.date: 03/30/2017
 ms.assetid: df959dc5-1aef-4338-a123-6ff3e7bc37af
 ms.openlocfilehash: ff0d7d8d6c6cb180043a834a60ca58159ca84c58
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671963"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146180"
 ---
 # <a name="custombindingelement"></a>CustomBindingElement
 CustomBindingElement  
@@ -30,7 +30,7 @@ class CustomBindingElement : BindingElement
 ### <a name="name"></a>Název  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Řetězec, který obsahuje konfigurační název vazby. Tato hodnota je uživatelem definovaný řetězec, který funguje jako identifikační řetězec pro vlastní vazbu.  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], ListView
 - ListView controls [WPF], about ListView control
 ms.assetid: 989e12b0-260e-4570-95c6-489284003ce2
-ms.openlocfilehash: a3b5805808ce2e84e7713f07694464b75d83a391
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 7b237d43cce9f17ea7e893188dac943bb996c752
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562278"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148909"
 ---
 # <a name="listview-overview"></a>ListView – přehled
 <xref:System.Windows.Controls.ListView> Ovládacího prvku poskytuje infrastrukturu pro zobrazení množinou datových položek v zobrazení nebo různá rozložení. Uživatel může být vhodné například pro zobrazení položek dat v tabulce a také k seřazení její sloupce.  
@@ -75,13 +75,11 @@ ms.locfileid: "46562278"
 ## <a name="sharing-the-same-view-mode"></a>Sdílení stejný režim zobrazení  
  Dvě <xref:System.Windows.Controls.ListView> ovládací prvky nelze sdílet stejný režim zobrazení ve stejnou dobu. Pokud se pokusíte použít stejný režim zobrazení s více než jednou <xref:System.Windows.Controls.ListView> řídit, dojde k výjimce.  
   
- Chcete-li určit režim zobrazení, kterého lze současně ve více než jeden <xref:System.Windows.Controls.ListView>, použijte šablony stylů. Příklad toho, jak definovat zobrazení jako <xref:System.Windows.FrameworkElement.Resources%2A>, naleznete v tématu [ListView s ukázkou více zobrazení](https://go.microsoft.com/fwlink/?LinkID=160013).  
+ Chcete-li určit režim zobrazení, kterého lze současně ve více než jeden <xref:System.Windows.Controls.ListView>, použijte šablony stylů.
   
 <a name="CreatingaCustomView"></a>   
 ## <a name="creating-a-custom-view-mode"></a>Vytvoření vlastního režimu zobrazení  
- Přizpůsobit zobrazení jako <xref:System.Windows.Controls.GridView> jsou odvozeny z <xref:System.Windows.Controls.ViewBase> abstraktní třídu, která poskytuje nástroje k zobrazení datových položek, které jsou reprezentovány ve formě <xref:System.Windows.Controls.ListViewItem> objekty.  
-  
- Příklad vlastního režimu zobrazení najdete v tématu [ListView s ukázkou více zobrazení](https://go.microsoft.com/fwlink/?LinkID=160013).  
+ Přizpůsobit zobrazení jako <xref:System.Windows.Controls.GridView> jsou odvozeny z <xref:System.Windows.Controls.ViewBase> abstraktní třídu, která poskytuje nástroje k zobrazení datových položek, které jsou reprezentovány ve formě <xref:System.Windows.Controls.ListViewItem> objekty.    
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.GridView>  

@@ -1,17 +1,16 @@
 ---
-title: příkaz místní hodnoty – DotNet nuget - .NET Core rozhraní příkazového řádku
-description: Příkaz dotnet nuget místní hodnoty – vymaže nebo vypíše místní prostředky NuGet například mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
+title: příkaz DotNet nuget místních hodnot
+description: Příkaz dotnet nuget locals vymaže nebo vypíše místní prostředky NuGet, třeba mezipaměť požadavku http, dočasná mezipaměť nebo celý počítač globální složku balíčků.
 author: karann-msft
-ms.author: mairaw
-ms.date: 05/29/2018
-ms.openlocfilehash: 799acb92d6ab7439e15c23c9f0b7b572c966adda
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 12/04/2018
+ms.openlocfilehash: d0f1c7c2e0b233c214cc48d026c19755fc047bfa
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696868"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170753"
 ---
-# <a name="dotnet-nuget-locals"></a>místní hodnoty nuget DotNet.
+# <a name="dotnet-nuget-locals"></a>DotNet nuget locals
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
@@ -19,7 +18,7 @@ ms.locfileid: "34696868"
 
 `dotnet nuget locals` -Vymaže nebo vypíše místní prostředky NuGet.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 ```
 dotnet nuget locals <CACHE_LOCATION> [(-c|--clear)|(-l|--list)] [--force-english-output]
@@ -28,59 +27,69 @@ dotnet nuget locals [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet nuget locals` Příkaz vymaže nebo vypíše místní prostředky NuGet v mezipaměti požadavek http, dočasnou vyrovnávací paměť nebo složku globální balíčky celého systému.
+`dotnet nuget locals` Příkaz vymaže nebo vypíše místní prostředky NuGet v mezipaměti požadavku http, dočasná mezipaměť nebo celý počítač globální složku balíčků.
 
 ## <a name="arguments"></a>Arguments
 
-`CACHE_LOCATION`
+* **`CACHE_LOCATION`**
 
-Umístění mezipaměti k zobrazení seznamu nebo vymazat. Přijme jeden z následujících hodnot:
+  Umístění mezipaměti seznamu nebo zrušte zaškrtnutí. Přijímá jednu z následujících hodnot:
 
-* `all` -Určuje, že zadaná operace platí pro všechny typy mezipaměti: mezipaměti požadavek http, globální balíčky mezipaměti a dočasnou vyrovnávací paměť.
-* `http-cache` -Určuje, že zadaná operace platí pouze do mezipaměti v požadavku http. Ovlivněné nejsou jiných umístění mezipaměti.
-* `global-packages` -Určuje, že zadaná operace se aplikuje jenom na globální balíčky mezipaměti. Ovlivněné nejsou jiných umístění mezipaměti.
-* `temp` -Určuje, že zadaná operace se aplikuje jenom na dočasnou vyrovnávací paměť. Ovlivněné nejsou jiných umístění mezipaměti.
+  * `all` – Označuje, že zadaná operace platí pro všechny typy mezipaměti: mezipaměť požadavku http, mezipaměť globálních balíčků a dočasná mezipaměť.
+  * `http-cache` -Označuje, že zadaná operace je použit pouze pro mezipaměť požadavku http. Jiné umístění mezipaměti nejsou ovlivněny.
+  * `global-packages` -Označuje, že zadaná operace platí pouze pro mezipaměť globálních balíčků. Jiné umístění mezipaměti nejsou ovlivněny.
+  * `temp` -Označuje, že zadaná operace platí jenom pro dočasná mezipaměť. Jiné umístění mezipaměti nejsou ovlivněny.
 
 ## <a name="options"></a>Možnosti
 
-`--force-english-output`
+* **`--force-english-output`**
 
-Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+  Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
-`-h|--help`
+* **`-h|--help`**
 
-Vytiskne krátké nápovědy pro příkaz.
+  Vytiskne krátký nápovědy pro příkaz.
 
-`-c|--clear`
+* **`-c|--clear`**
 
-Zrušte možnost provede zrušte operaci na zadaný mezipaměti typu. Obsah mezipaměti adresáře jsou odstraněné rekurzivně. Provádění uživatel nebo skupina musí mít oprávnění k souborům v adresáři mezipaměti. Pokud ne, zobrazí se chybová zpráva označující, soubory a složky, které nejsou vymazána.
+  Zrušte zaškrtnutí možnost provede operaci zrušte na typ zadaný mezipaměti. Obsah adresáře mezipaměti jsou odstraněné rekurzivně. Provádění uživatele nebo skupiny musí mít oprávnění k souborům v adresářích mezipaměti. Pokud tomu tak není, zobrazí se chyba, která souborů a složek, které nebyly vymazány.
 
-`-l|--list`
+* **`-l|--list`**
 
-V seznamu možnost se používá pro zobrazení umístění mezipaměti zadaného typu.
+  Možnost seznamu se používá k zobrazení umístění mezipaměti zadaného typu.
 
 ## <a name="examples"></a>Příklady
 
-Zobrazí cesty všechny adresáře místní mezipaměti (adresář mezipaměti protokolu http, adresář mezipaměti globální balíčky a adresář mezipaměti pro dočasné):
+* Zobrazuje cesty ke všem adresářům místní mezipaměti (http-cache adresáře, cesta k adresáři mezipaměti global-packages a cesta k adresáři mezipaměti pro dočasné):
 
-`dotnet nuget locals –l all`
+  ```console
+  dotnet nuget locals –l all
+  ```
 
-Zobrazuje cestu k adresáři místní mezipaměti http:
+* Zobrazuje cestu k adresáři místní mezipaměť http:
 
-`dotnet nuget locals --list http-cache`
+  ```console
+  dotnet nuget locals --list http-cache
+  ```
 
-Vymaže všechny soubory ze všech adresářů místní mezipaměti (adresář mezipaměti protokolu http, adresář mezipaměti globální balíčky a adresář mezipaměti pro dočasné):
+* Vymaže všechny soubory z adresáře všechny místní mezipaměti (http-cache adresáře, cesta k adresáři mezipaměti global-packages a cesta k adresáři mezipaměti pro dočasné):
 
-`dotnet nuget locals --clear all`
+  ```console
+  dotnet nuget locals --clear all
+  ```
 
-Vymaže všechny soubory v adresáři mezipaměti místní globální balíčky:
+* Vymaže všechny soubory v adresáři místního global-packages mezipaměti:
 
-`dotnet nuget locals -c global-packages`
+  ```console
+  dotnet nuget locals -c global-packages
+  ```
 
-Vymaže všechny soubory v adresáři místní dočasné mezipaměti:
+* Vymaže všechny soubory v adresáři místní dočasné mezipaměti:
 
-`dotnet nuget locals -c temp`
+  ```console
+  dotnet nuget locals -c temp
+  ```
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Informace o běžné problémy a chyby při použití `dotnet nuget locals` příkazů najdete v tématu [Správa mezipaměti NuGet](/nuget/consume-packages/managing-the-nuget-cache).
+Informace o běžných problémech a chyb při použití `dotnet nuget locals` naleznete [Správa mezipaměti Nugetu](/nuget/consume-packages/managing-the-nuget-cache).

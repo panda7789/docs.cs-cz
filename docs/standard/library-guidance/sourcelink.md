@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro používání SourceLink k vy
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: fa4af47eaa5dd1510640c2bf0ebb2187b56efae0
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 3bc72e158a5773b656095f9ce58b442469f91e67
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123873"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128922"
 ---
 # <a name="sourcelink"></a>SourceLink
 
@@ -27,10 +27,18 @@ Můžete použít [NuGet – Průzkumník balíčků](https://github.com/NuGetPa
 
 ![V Průzkumníku balíčků NuGet SourceLink](./media/sourcelink/nuget-package-explorer-sourcelink.png "SourceLink v Průzkumníku balíčků NuGet")
 
-**✔️ ZVAŽTE** pomocí SourceLink přidat metadata ovládací prvek zdroje k sestavení a balíček NuGet.
+**✔️ ZVAŽTE** pomocí SourceLink přidat metadata ovládací prvek zdroje k sestavení a balíčky NuGet.
 
-**✔️ ZVAŽTE** včetně soubory PDB v balíčku NuGet.
+> [!TIP]
+> Přidáním atributů ladicího programu na daný typ můžete dále vylepšit možnosti ladění pro vývojáře.
+> * <xref:System.Diagnostics.DebuggerDisplayAttribute> můžete přizpůsobit, jak třídy nebo pole se zobrazí v oknech proměnných ladicího programu.
+> * <xref:System.Diagnostics.DebuggerStepThroughAttribute> Dává pokyn ladicímu programu vstup do kódu místo krokování s vnořením do kódu.
+> * <xref:System.Diagnostics.DebuggerBrowsableAttribute> Určuje, zda člen je zobrazeno v oknech proměnných ladicího programu.
+
+**✔️ ZVAŽTE** včetně soubory symbolů (`*.pdb`) v balíčku NuGet.
+
+> Obvykle bude publikována soubory se symboly v [balíček symbolů](./nuget.md#symbol-packages). V současné době hlavní veřejný hostitel pro balíčky symbolů nepodporuje soubory portable symbolů (`*.pdb`) vytvořené projekty založenými na sadě SDK a symbol balíčky nejsou uloženy užitečné.
 
 >[!div class="step-by-step"]
-[Předchozí](./dependencies.md)
-[další](./publish-nuget-package.md)
+>[Předchozí](dependencies.md)
+>[další](publish-nuget-package.md)

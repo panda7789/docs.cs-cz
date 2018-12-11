@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 4c73ab59148325f66d3ee17db3fb78d397b73f15
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 6c416432f10bb93ff5012d716b2d92f13efdcd9b
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404483"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147333"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>Vlastnosti moderních webových aplikací
 
@@ -77,5 +77,5 @@ Kromě ASP.NET Core, tradiční ASP.NET 4.x i nadále robustní a spolehlivou pl
 >   <https://docs.microsoft.com/aspnet/core/testing/>
 
 >[!div class="step-by-step"]
-[Předchozí](index.md)
-[další](choose-between-traditional-web-and-single-page-apps.md)
+>[Předchozí](index.md)
+>[další](choose-between-traditional-web-and-single-page-apps.md)

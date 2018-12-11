@@ -1,44 +1,45 @@
 ---
-title: Portování do .NET Core - pomocí balíčku Windows kompatibility
-description: Další informace o Windows Pack kompatibility a jak můžete ji použít k portu existující kód rozhraní .NET Framework na .NET Core
+title: Použití sady Windows Compatibility Pack port kódu až po .NET Core
+description: Další informace o Windows Compatibility Pack a jak můžete pomocí jeho port existujícího kódu rozhraní .NET Framework do .NET Core
 author: terrajobst
-ms.author: mairaw
 ms.date: 11/13/2017
-ms.openlocfilehash: 6b25a2d5c197a6c9b0a7ead18370870ddc091e1c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: seodec18
+ms.openlocfilehash: 0a409c953ce38ed4c2959adaf4de9d3730ce37f4
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169934"
 ---
-# <a name="using-the-windows-compatibility-pack"></a>Pomocí balíčku Windows kompatibility
+# <a name="use-the-windows-compatibility-pack-to-port-code-to-net-core"></a>Použití sady Windows Compatibility Pack port kódu až po .NET Core
 
-Jednou z nejběžnějších problémů, které vývojáři čelí při portování svůj existující kód na .NET Core je, jsou závislé na rozhraní API a technologie, které existují pouze v rozhraní .NET Framework. *Windows kompatibility Pack* je o zajišťování řada těchto technologii tak, aby vytváření aplikace .NET Core a také .NET standardní knihovny stalo mnohem víc přijatelná pro existující kód.
+Některé z nejběžnějších problémů zjištěných při přenášíte stávající kód až po .NET Core jsou závislosti na rozhraní API a technologií, které se nacházejí pouze v rozhraní .NET Framework. *Windows Compatibility Pack* poskytuje mnoho z těchto technologií tak, aby byl mnohem jednodušší vytvářet aplikace .NET Core a knihovny .NET Standard.
 
-Tento balíček je logickou [rozšíření rozhraní .NET 2.0 standardní](../whats-new/index.md#api-changes-and-library-support) že výrazně zvyšuje sada rozhraní API a existující kód zkompiluje téměř beze změn. Ale chcete-li zachovat potenciálu .NET Standard ("je sada rozhraní API, které poskytují všechny implementace rozhraní .NET"), to nezahrnuli technologie, které nemůže pracovat pro všechny platformy, jako je například registr, systém Windows Management Instrumentation (WMI), nebo emitování reflexe Rozhraní API.
+Tento balíček je logické [rozšíření .NET Standard 2.0](../whats-new/dotnet-core-2-0.md#api-changes-and-library-support) , výrazně zvyšuje sada rozhraní API a existující kód zkompiluje téměř bez možnosti úprav. Ale pokud chcete zachovat uskutečnění .NET Standard ("je sada rozhraní API, která poskytují všechny implementace .NET"), to nezahrnuli technologie, které nemůže pracovat na všech platformách, jako je například registru Windows Management Instrumentation (WMI), nebo generování reflexe Rozhraní API.
 
-*Windows kompatibility Pack* je umístěna nad .NET Standard a poskytuje přístup k technologie, které jsou pouze v systému Windows. Je obzvláště užitečná pro zákazníky, které chcete přesunout do .NET Core, ale chcete zůstat v systému Windows jako první krok. V tomto scénáři nebude moci používat pouze pro systém Windows technologie je pouze mezní migrace nulové architektury výhod.
+*Windows Compatibility Pack* nachází nad .NET Standard a poskytuje přístup k technologiím, které jsou pouze Windows. To je obzvláště užitečné pro zákazníky, které chcete přesunout do .NET Core, ale plán zůstat na Windows jako první krok. V takovém scénáři nebude moct používat jenom pro Windows technologie je pouze mezní migrace s nulovou výhody architektury.
 
 ## <a name="package-contents"></a>Obsah balíčku
 
-*Windows kompatibility Pack* je k dispozici prostřednictvím balíčku NuGet [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) a můžete na něj odkazovat z projektů cílení na .NET Core nebo .NET Standard.
+*Windows Compatibility Pack* je k dispozici prostřednictvím balíčku NuGet [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility) a můžete na něj odkazovat z projektů, které cílí na .NET Core nebo .NET Standard.
 
-Poskytuje přibližně 20 000 rozhraní API, včetně pouze pro systém Windows a také napříč platformami rozhraní API z těchto oblastí technologie:
+Poskytuje informace o 20 000 rozhraní API, včetně jen pro Windows i multiplatformní rozhraní API z těchto oblastí technologie:
 
 * Znakové stránky
-* Modelu codeDom
+* CodeDom
 * Konfigurace
 * Adresářové služby
 * Kreslení
 * ODBC
 * Oprávnění
 * Porty
-* Seznamy řízení přístupu (ACL)
+* Windows seznamy řízení přístupu (ACL)
 * Windows Communication Foundation (WCF)
-* Kryptografie systému Windows
-* Protokol událostí systému Windows
+* Šifrování Windows
+* Protokol událostí Windows
 * Windows Management Instrumentation (WMI)
-* Čítače výkonu systému Windows
-* Registru systému Windows
+* Čítače výkonu Windows
+* Registru Windows
 * Ukládání do mezipaměti Windows Runtime
 * Služby systému Windows
 
@@ -46,15 +47,15 @@ Další informace najdete v tématu [specifikace sady kompatibility](https://git
 
 ## <a name="get-started"></a>Začínáme
 
-1. Před přenosem, nezapomeňte si prohlédněte [portování proces](index.md).
+1. Před přenos, ujistěte se, že se podívat na [portování procesu](index.md).
 
-2. Když portování stávajícího kódu pro .NET Core nebo .NET Standard, nainstalujte balíček NuGet [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility).
+2. Pokud přenášíte stávající kód .NET Core nebo .NET Standard, nainstalujte balíček NuGet [Microsoft.Windows.Compatibility](https://www.nuget.org/packages/Microsoft.Windows.Compatibility).
 
-3. Pokud chcete zůstat v systému Windows, je vše připraveno.
+3. Pokud budete chtít zůstat na Windows, všechno je nastavené.
 
-4. Pokud chcete spustit aplikace .NET Core nebo .NET Standard knihovny na Linuxu nebo systému macOS, použijte [API Analyzer](https://blogs.msdn.microsoft.com/dotnet/2017/10/31/introducing-api-analyzer/) najít využití rozhraní API, která nebude fungovat napříč platformami.
+4. Pokud chcete spustit aplikaci .NET Core nebo .NET Standard knihovny v Linuxu nebo macOS, použijte [analyzátor rozhraní API](https://blogs.msdn.microsoft.com/dotnet/2017/10/31/introducing-api-analyzer/) najít využití rozhraní API, která nebude fungovat napříč platformami.
 
-5. Buď odeberte použití těchto rozhraní API, je nahradit alternativami napříč platformami nebo pomocí platformy kontrolu, jako je ochrana:
+5. Odeberte použití těchto rozhraní API, je nahradit alternativami napříč platformami nebo chránit je pomocí kontroly platformy, jako jsou:
 
     ```csharp
     private static string GetLoggingPath()
@@ -76,5 +77,5 @@ Další informace najdete v tématu [specifikace sady kompatibility](https://git
     }
     ```
 
-Pro ukázku, podívejte se [Channel 9 video kompatibility sady Windows](https://channel9.msdn.com/Events/Connect/2017/T123).
+Předváděcí akci, podívejte se [videa Channel 9 sady Windows Compatibility Pack](https://channel9.msdn.com/Events/Connect/2017/T123).
 

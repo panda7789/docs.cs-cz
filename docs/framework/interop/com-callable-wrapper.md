@@ -1,6 +1,6 @@
 ---
 title: Obálka volatelná aplikacemi COM
-ms.date: 03/30/2017
+ms.date: 10/23/2018
 dev_langs:
 - csharp
 - vb
@@ -14,64 +14,64 @@ helpviewer_keywords:
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 21f7b0d56a788b4161fb7e99899b4dd15a434152
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 75a8fb01fd22a7f84fadaf355a269b3ad3de63ab
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394963"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145173"
 ---
 # <a name="com-callable-wrapper"></a>Obálka volatelná aplikacemi COM
 Jakmile klient modelu COM zavolá objekt rozhraní .NET, vytvoří modul CLR (Common Language Runtime) pro daný objekt spravovaný objekt a obálku volatelnou modelem COM (CCW). Pokud nelze odkazovat na objekt rozhraní .NET přímo, budou klienti modelu COM pro spravovaný objekt používat objekt CCW jako proxy.  
   
  Modul runtime vytvoří pro spravovaný objekt přesně jeden objekt CCW, bez ohledu na počet klientů modelu COM, kteří vyžadují služby modelu. Jak znázorňuje následující obrázek, může větší počet klientů modelu COM používat odkaz na objekt CCW, který zpřístupňuje rozhraní INew. Na druhou stranu platí, že objekt CCW obsahuje jediný odkaz na spravovaný objekt, který implementuje rozhraní a u kterého je prováděno uvolnění paměti. Klienti modelu COM a rozhraní .NET mohou vytvářet požadavky na stejný spravovaný objekt současně.  
   
- ![Obálka volatelná aplikacemi COM](./media/ccw.gif "doleva")  
+ ![Obálka volatelná aplikacemi COM](./media/ccw.gif "objekt ccw")  
 Přístup k objektům rozhraní .NET prostřednictvím obálky volatelné modelem COM  
   
  Obálky volatelné modelem COM jsou pro ostatní třídy, které jsou spuštěny v rámci rozhraní .NET Framework, neviditelné. Jejich hlavním účelem je zařadit volání mezi spravovaný a nespravovaný kód. Nicméně objekty CCW provádějí také správu identity a doby života spravovaných objektů, které zabalují.  
   
-## <a name="object-identity"></a>Identity – objekt  
+## <a name="object-identity"></a>Identita objektu  
  Modul runtime přiděluje paměť objektu rozhraní .NET z množství uvolněné paměti, což modulu runtime umožňuje přesouvat objekt v paměti podle potřeby. Naopak modul runtime přiděluje paměť pro objekt CCW z nenashromážděného množství, což klientům modelu COM umožňuje přímo odkazovat na obálku.  
   
 ## <a name="object-lifetime"></a>Doba života objektu  
  Na rozdíl od objektu, který provádí zabalení klienta rozhraní .NET, je objekt CCW založen na tradičním způsobu počítání odkazů modelu COM. Pokud v případě objektů CCW dosáhne počet odkazů nuly, uvolní obálka svůj odkaz na spravovaný objekt. Spravovaný objekt, který již nemá žádné další odkazy, je shromážděn v rámci dalšího cyklu uvolňování paměti.  
   
-## <a name="simulating-com-interfaces"></a>Simulaci COM – rozhraní
+## <a name="simulating-com-interfaces"></a>Simulace rozhraní COM
 
-DOLEVA zpřístupní všechny veřejné, rozhraní COM – viditelné, datové typy a návratové hodnoty klientům COM způsobem, který je v souladu s COM na vynucení založené na rozhraní interakce. Pro klienta COM volání metod v rozhraní .NET Framework objektu je stejný jako k vyvolání metody u objektu COM.  
+Objekt CCW zpřístupňuje všechny veřejné, viditelný modulem COM rozhraní, datových typů a návratové hodnoty klientům modelu COM způsobem, který je konzistentní s modelu COM vynucení interakce založené na rozhraní. Klient modelu COM volání metod pro objekt rozhraní .NET Framework je stejný jako volání metod na objekt modelu COM.  
   
- Pokud chcete vytvořit tento bezproblémový přístup, doleva vyrábí tradiční rozhraní modelu COM, například **IUnknown** a **IDispatch**. Jak ukazuje následující obrázek, doleva udržuje jeden odkaz na objekt .NET, který se zabalí. Klient COM i rozhraní .NET objekt vzájemně spolupracovat prostřednictvím proxy serveru a se zakázaným inzerováním konstrukce CCW.  
+ Chcete-li vytvořit tento bezproblémový přístup, objekt CCW vyrábí tradiční rozhraní modelu COM, jako například **IUnknown** a **IDispatch**. Jak ukazuje následující obrázek, objekt CCW udržuje jeden odkaz na objekt .NET, který ho zalamoval. Jak klient COM a objekt .NET umožnění vzájemné komunikace přes proxy a zástupných procedur konstrukce CCW.  
   
- ![COM – rozhraní](./media/ccwwithinterfaces.gif "ccwwithinterfaces")  
+ ![Rozhraní COM](./media/ccwwithinterfaces.gif "ccwwithinterfaces")  
 Rozhraní COM a obálka volatelná aplikacemi COM  
   
- Kromě vystavení rozhraní, které jsou explicitně implementované třídou ve spravovaném prostředí, rozhraní .NET Framework poskytuje implementace rozhraní modelu COM, které jsou uvedené v následující tabulce jménem objekt. Třída rozhraní .NET můžete přepsat výchozí chování tím, že poskytuje vlastní implementaci těchto rozhraní. Ale modulu runtime vždy poskytuje implementaci pro **IUnknown** a **IDispatch** rozhraní.  
+ Kromě zpřístupnění rozhraní, která jsou explicitně implementováno třídou ve spravovaném prostředí, rozhraní .NET Framework poskytuje implementace rozhraní modelu COM, které jsou uvedeny v následující tabulce jménem objekt. Třída rozhraní .NET výchozí chování můžete přepsat tím, že poskytuje vlastní implementaci těchto rozhraní. Nicméně vždy modul runtime poskytuje implementaci pro **IUnknown** a **IDispatch** rozhraní.  
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
 |**IDispatch**|Poskytuje mechanismus pro pozdní vazbu na typ.|  
-|**IerrorInfo**|Obsahuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro rozhraní .NET třídy).|  
-|**IprovideClassInfo**|Umožňuje klientům získat přístup k modelu COM **ITypeInfo** rozhraní implementované spravovanou třídou.|  
-|**IsupportErrorInfo**|Umožňuje klientovi COM, abyste zjistili, jestli podporuje spravovaného objektu **IErrorInfo** rozhraní. Pokud ano, umožňuje klientům získat ukazatele na nejnovější objekt výjimky. Všechny typy podpora spravovaného **IErrorInfo** rozhraní.|  
-|**ItypeInfo**|Poskytuje informace o typu pro třídu, která je stejná jako informace o typu vytvářených Tlbexp.exe.|  
-|**IUnknown**|Poskytuje standardní implementace **IUnknown** rozhraní, se kterým klient COM spravuje životnost doleva a poskytuje převod typu.|  
+|**IerrorInfo**|Poskytuje textový popis chyby, její zdroj, soubor nápovědy, kontextové nápovědy a identifikátor GUID rozhraní definované chyba (vždy **GUID_NULL** pro třídy .NET).|  
+|**IprovideClassInfo**|Umožňuje získat přístup ke klientům modelu COM **ITypeInfo** rozhraní implementovány pomocí spravované třídy.|  
+|**IsupportErrorInfo**|Umožňuje určit, zda spravovaný objekt podporuje klient modelu COM **IErrorInfo** rozhraní. Pokud ano, umožňuje klientům získat ukazatel objektu nejnovější výjimky. Všechny spravované typy podporu **IErrorInfo** rozhraní.|  
+|**ItypeInfo**|Poskytuje informace o typu pro třídu, která je stejná jako informace o typu, který je vytvořený pomocí Tlbexp.exe.|  
+|**IUnknown**|Poskytuje standardní implementace **IUnknown** rozhraní, se kterým klient modelu COM, spravuje životnost objekt CCW a obsahuje převod typu.|  
   
- Spravované třídy můžete zadat taky rozhraní modelu COM, které jsou popsané v následující tabulce.  
+ Spravované třídy můžete také zadat rozhraní modelu COM, které jsou popsány v následující tabulce.  
   
 |Rozhraní|Popis|  
 |---------------|-----------------|  
-|(\_*Classname*) rozhraní – třída|Rozhraní, vystavené modulu runtime a nejsou explicitně definovány, který zpřístupní všechny veřejné rozhraní, metody, vlastnosti a pole, která jsou explicitně zveřejněné na spravovaného objektu.|  
-|**IConnectionPoint –** a **IconnectionPointContainer**|Rozhraní pro objekty, které zdroje události na základě delegáta (rozhraní pro registraci události odběratele).|  
-|**IdispatchEx**|Zadaný modulem runtime, pokud třída implementuje rozhraní **IExpando**. **IDispatchEx** rozhraní je rozšířením **IDispatch** rozhraní, na rozdíl od **IDispatch**, umožňuje výčtu, přidání, odstranění a to malá a velká písmena volání metody členů.|  
-|**IEnumVARIANT**|Rozhraní pro typ kolekce tříd, které vytvoří výčet objektů v kolekci, pokud třída implementuje **rozhraní IEnumerable**.|  
+|(\_*Classname*) rozhraní třídy|Rozhraní vystavena modulem runtime a nejsou explicitně definovány, která poskytuje veřejná rozhraní, metody, vlastnosti a pole, která dostanou na spravovaný objekt.|  
+|**IConnectionPoint** a **IConnectionPointContainer**|Rozhraní pro objekty, které zdroj události na základě delegáta (rozhraní pro registraci odběratelů událostí).|  
+|**Rozhraní IdispatchEx**|Zadaný modul runtime, pokud třída implementuje rozhraní **IExpando**. **Rozhraní IDispatchEx** rozhraní je rozšířením **IDispatch** rozhraní, na rozdíl od **IDispatch**, umožňuje výčtu, přidání, odstranění a malá a velká písmena volání členů.|  
+|**IEnumVARIANT**|Rozhraní pro typ kolekce tříd, které vytvoří výčet objektů v kolekci, pokud třída implementuje **IEnumerable**.|  
   
-## <a name="introducing-the-class-interface"></a>Představení rozhraní – třída  
- Třída rozhraní, které nejsou výslovně definované ve spravovaném kódu, je rozhraní, které vystavuje všechny veřejné metody, vlastnosti, pole a události, které jsou explicitně zveřejněné na objekt .NET. Toto rozhraní může být dva nebo pouze pro odeslání rozhraní. Třída rozhraní obdrží název třídy rozhraní .NET, samostatně, podtržítko před sebou. Například pro třídu savec, je třída rozhraní \_savec.  
+## <a name="introducing-the-class-interface"></a>Představení rozhraní třídy  
+ Rozhraní třídy, které nejsou výslovně definované ve spravovaném kódu, je rozhraní, který zpřístupňuje všechny veřejné metody, vlastnosti, pole a události, které se dostanou na objekt .NET. Toto rozhraní může být duální nebo určené pouze pro rozhraní. Rozhraní třídy přijímá název třídy .NET, začínající podtržítkem. Například pro třídu savec, je třída rozhraní \_savec.  
   
- Odvozené třídy rozhraní třída taky zpřístupňuje všechny veřejné metody, vlastnosti a pole základní třídy. Odvozené třídy taky zpřístupňuje rozhraní třídy pro každou základní třídu. Například pokud třída savec rozšiřuje třídu MammalSuperclass, které rozšiřuje System.Object, vystavuje objekt .NET klientům COM tři třídy rozhraní s názvem \_savec, \_MammalSuperclass, a \_objektu.  
+ Odvozené třídy rozhraní třídy také zpřístupní všechny veřejné metody, vlastnosti a pole základní třídy. Odvozená třída také poskytuje rozhraní třídy pro každou ze základních tříd. Například pokud třída savec rozšiřuje třídu MammalSuperclass, které rozšiřuje System.Object, .NET zpřístupňuje objektů klienty modelu COM tři třídy rozhraní s názvem \_savec, \_MammalSuperclass, a \_objektu.  
   
- Zvažte například následující třídy rozhraní .NET:  
+ Představte si třeba následující třídy .NET:  
   
 ```vb  
 ' Applies the ClassInterfaceAttribute to set the interface to dual.  
@@ -84,19 +84,19 @@ Public Class Mammal
 End Class  
 ```  
   
-```csharp  
-// Applies the ClassInterfaceAttribute to set the interface to dual.  
-[ClassInterface(ClassInterfaceType.AutoDual)]  
-// Implicitly extends System.Object.  
-public class Mammal  
-{  
-    void  Eat();  
-    void  Breathe():  
-    void  Sleep();  
-}  
-```  
+```csharp
+// Applies the ClassInterfaceAttribute to set the interface to dual.
+[ClassInterface(ClassInterfaceType.AutoDual)]
+// Implicitly extends System.Object.
+public class Mammal
+{
+    public void Eat() {}
+    public void Breathe() {}
+    public void Sleep() {}
+}
+```
   
- Klient COM můžete získat ukazatele na třídu rozhraní s názvem `_Mammal`, který je popsaný v knihovně typu, [Exportér knihovny typů (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md) nástroj, který generuje. Pokud `Mammal` třída implementovat jednu nebo více rozhraní, rozhraní se zobrazí v části coclass.  
+ Klient modelu COM může získání ukazatele na třídy rozhraní s názvem `_Mammal`, který je popsaný v knihovně typů, které [Exportér knihovny typů (Tlbexp.exe)](../tools/tlbexp-exe-type-library-exporter.md) Nástroj generuje. Pokud `Mammal` jedno nebo více rozhraní implementované třídy, rozhraní by se zobrazí pod coclass.  
   
 ```  
 [odl, uuid(…), hidden, dual, nonextensible, oleautomation]  
@@ -119,17 +119,17 @@ coclass Mammal
 }  
 ```  
   
- Generování rozhraní třída je volitelný. Ve výchozím nastavení generuje zprostředkovatel komunikace s objekty COM rozhraní, které je určené pouze pro jednotlivé třídy, které můžete exportovat do knihovny typů. Můžete zakázat nebo upravit automatické vytvoření tohoto rozhraní s použitím <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> na třídu. I když je třída rozhraní můžete zjednodušují vystavení spravované třídy do modelu COM, jeho použití jsou omezené.  
+ Generování třídy rozhraní je volitelné. Ve výchozím nastavení spolupráci s COM generuje určené pouze pro rozhraní pro každou třídu, která exportujete do knihovny typů. Můžete zakázat nebo upravit automatické vytváření tohoto rozhraní použitím <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> do vaší třídy. Přestože rozhraní třídy můžete usnadnění vystavení spravované třídy modelu COM, jeho použití jsou omezené.  
   
 > [!CAUTION]
->  Pomocí třídy rozhraní, namísto výslovně definování vlastní, může zkomplikovat budoucí verze vaší spravované třídy. Před použitím rozhraní třída přečtěte si následující pokyny.  
+>  Pomocí třídy rozhraní, namísto explicitně definovat vlastní, může zkomplikovat budoucích verzí spravované třídy. Před použitím rozhraní si přečtěte následující pokyny.  
   
-### <a name="define-an-explicit-interface-for-com-clients-to-use-rather-than-generating-the-class-interface"></a>Zadejte explicitní rozhraní COM klientům použít nikoli generování rozhraní třídy.  
- Vzhledem k tomu, že zprostředkovatel komunikace s objekty COM automaticky vygeneruje třídu rozhraní, můžete změny po verze vaší třídy změnit rozložení rozhraní třída vystavené modul common language runtime. Vzhledem k tomu, že jsou klienti COM obvykle neupravený zpracovat změny v rozložení rozhraní, přerušení při změně rozložení člena třídy.  
+### <a name="define-an-explicit-interface-for-com-clients-to-use-rather-than-generating-the-class-interface"></a>Definujte explicitní rozhraní klientům modelu COM použít nikoli generování třídy rozhraní.  
+ Protože komunikace s objekty COM automaticky vygeneruje třídy rozhraní, můžete změnit po verzi změny do vaší třídy rozložení třídy rozhraní vystavené modul common language runtime. Protože klienti modelu COM jsou obvykle připraven zpracovat změny v rozložení rozhraní, přerušit při změně rozložení třídy.  
   
- Toto platí posiluje zápisu, rozhraní, které jsou vystavené klientům COM musí zůstat neměnný. Aby se snížilo riziko nejnovější klientů modelu COM pomocí nechtěně Změna rozložení rozhraní, izolovat všechny změny do třídy z rozhraní rozložení explicitně definováním rozhraní.  
+ Toto pravidlo zvyšuje pojem, musí zůstat jakákoliv zveřejněné klientům modelu COM rozhraní. Aby se snížilo riziko rozbíjející klientům modelu COM opětovným uspořádáním neúmyslně rozložení rozhraní, izolují všechny změny do třídy z rozložení rozhraní explicitně definováním rozhraní.  
   
- Použití **ClassInterfaceAttribute** musí vypnout automatické generování třídy rozhraní a implementace explicitního rozhraní pro třídu, jak ukazuje následující fragment kódu:  
+ Použití **ClassInterfaceAttribute** musí vypnout automatické generování rozhraní, třídy a implementace explicitního rozhraní pro třídu, jak ukazuje následující fragment kódu:  
   
 ```vb  
 <ClassInterface(ClassInterfaceType.None)>Public Class LoanApp  
@@ -139,21 +139,22 @@ coclass Mammal
 End Class  
 ```  
   
-```csharp  
-[ClassInterface(ClassInterfaceType.None)]  
-public class LoanApp : IExplicit {  
-    void M();  
-}  
-```  
+```csharp
+[ClassInterface(ClassInterfaceType.None)]
+public class LoanApp : IExplicit
+{
+    int IExplicit.M() { return 0; }
+}
+```
   
- **ClassInterfaceType.None** hodnota zabraňuje rozhraní třída generován při metadata tříd se exportují do knihovny typů. V předchozím příkladu, mohou mít přístup klienti COM `LoanApp` pouze prostřednictvím třídy `IExplicit` rozhraní.  
+ **ClassInterfaceType.None** hodnota zabraňuje rozhraní generovaných při exportu metadat třídy do knihovny typů. V předchozím příkladu, můžete přístup ke klientům modelu COM `LoanApp` pouze prostřednictvím třídy `IExplicit` rozhraní.  
   
-### <a name="avoid-caching-dispatch-identifiers-dispids"></a>Zabránit ukládání do mezipaměti identifikátorů odesílání (hodnoty DISPID)
- Pomocí třídy rozhraní je přijatelné možnost pro skriptované klientů, Microsoft Visual Basic 6.0 nebo libovolného klienta pozdní vazbou, který neukládá do mezipaměti hodnoty dispID rozhraní členů. Hodnoty dispID identifikovat členové rozhraní povolit pozdní vazba.  
+### <a name="avoid-caching-dispatch-identifiers-dispids"></a>Vyhněte se ukládání do mezipaměti identifikátory odesílání (DISPID)
+ Pomocí rozhraní třídy je přijatelný varianta pro skriptované klientů, Microsoft Visual Basic 6.0 nebo jakéhokoli klienta s pozdní vazbou, která neukládá do mezipaměti dispID členy rozhraní. Hodnoty dispID určit členy rozhraní umožňující pozdní vazbu.  
   
- Pro rozhraní třídy generování hodnoty dispID vychází z pozice člena v rozhraní. Je-li změnit pořadí člena a exportovat třídu do knihovny typů, změní se hodnoty dispID generované třídy rozhraní.  
+ Pro rozhraní třídy generování hodnoty dispID podle pozice člena v rozhraní. Je-li změnit pořadí členů a exportovat třídy do knihovny typů, změní hodnoty dispID generované třídy rozhraní.  
   
- Pokud chcete vyhnout pozastavení klienti COM pozdní vazbou při pomocí třídy rozhraní, použít **ClassInterfaceAttribute** s **ClassInterfaceType.AutoDispatch** hodnotu. Tato hodnota implementuje rozhraní, které je určené pouze pro třídy, ale vynechá popis rozhraní z knihovny typů. Bez popisu rozhraní se klienti nemohou doba kompilace hodnoty dispID v mezipaměti. Přestože je toto výchozí typ rozhraní pro třídu rozhraní, můžete použít hodnotu atributu explicitně.  
+ Chcete-li vyhnuli narušení funkčnosti klientů modelu COM s pozdní vazbou, při použití rozhraní třídy, použijte **ClassInterfaceAttribute** s **ClassInterfaceType.AutoDispatch** hodnotu. Tato hodnota implementuje rozhraní určené pouze pro třídy, ale vynechá popis rozhraní z knihovny typů. Bez případně popis rozhraní klienti nebudou moct mezipaměti hodnoty dispID v době kompilace. I když se jedná o výchozí typ rozhraní pro rozhraní, můžete explicitně použít hodnotu atributu.  
   
 ```vb  
 <ClassInterface(ClassInterfaceType.AutoDispatch)> Public Class LoanApp  
@@ -163,20 +164,31 @@ public class LoanApp : IExplicit {
 End Class  
 ```  
   
-```csharp  
-[ClassInterface(ClassInterfaceType.AutoDispatch]  
-public class LoanApp : IAnother {  
-    void M();  
-}  
-```  
+```csharp
+[ClassInterface(ClassInterfaceType.AutoDispatch)]
+public class LoanApp
+{
+    public int M() { return 0; }
+}
+```
   
- Chcete-li získat DispId člena rozhraní za běhu, klienti COM zavolat **IDispatch.GetIdsOfNames**. Pro vyvolání metody na rozhraní, předat jako argument pro vrácené DispId **IDispatch.Invoke**.  
+ Chcete-li získat identifikátor DispId člena rozhraní v době běhu, můžete volat klientům modelu COM **IDispatch.GetIdsOfNames**. K vyvolání metody v rozhraní, předat jako argument pro DispId vrácená **IDispatch.Invoke**.  
   
-### <a name="restrict-using-the-dual-interface-option-for-the-class-interface"></a>Omezte pomocí možnosti duální rozhraní pro třídu rozhraní.  
- Duální rozhraní povolit časná a pozdní vazbu na členy rozhraní COM klienty. V době návrhu a během testování může být užitečné nastavit rozhraní třídy na dva. Pro spravované třídy (a její základní třídy), nikdy nebudou změněna, tato možnost je také přijatelné. Ve všech ostatních případech Vyhněte se nastavení rozhraní třída Dual.  
+### <a name="restrict-using-the-dual-interface-option-for-the-class-interface"></a>Omezte použití možnosti duální rozhraní pro rozhraní třídy.  
+ Duální rozhraní povolit časná a pozdní vazby pro členy rozhraní modelu COM klienty. V době návrhu a během testování může být užitečné nastavit na duální rozhraní třídy. Pro spravovanou třídu (a její základní třídy), která nebude nikdy změněn, tato možnost je také přijatelné. Ve všech ostatních případech nenastavujte na duální rozhraní třídy.  
   
- Duální rozhraní automaticky generované může být vhodné ve výjimečných případech; ale častěji vytvoří verze související složitost. Například klientů modelu COM pomocí rozhraní třídy odvozené třídy můžete snadno rozdělit změn v základní třídě. Když třetích stran poskytuje základní třídu, rozložení rozhraní třída je mimo vlastního ovládacího prvku. Na rozdíl od určené pouze pro rozhraní, další dva rozhraní (**ClassInterface.AutoDual**) obsahuje popis rozhraní – třída v knihovně exportovaný typu. Tento popis doporučuje pozdní vazbou klientům mezipaměti hodnoty dispID za běhu.  
+ Automaticky generované duální rozhraní může být vhodné ve výjimečných případech; ale častěji vytvoří související verze složitost. Například klienti modelu COM pomocí rozhraní třídy odvozené třídy může snadno překročit se změnami na základní třídu. Při jiného výrobce poskytuje základní třídu, je rozložení rozhraní třídy mimo ovládací prvek. Na rozdíl od rozhraní určené pouze pro odesílání, další duální rozhraní (**ClassInterfaceType.AutoDual**) obsahuje popis rozhraní třídy v exportované knihovny typů. Tento popis podporuje klienty s pozdní vazbou do mezipaměti hodnoty dispID v době běhu.  
   
+### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Ujistěte se, že jsou všechna oznámení událostí modelu COM s pozdní vazbou.
+
+Ve výchozím nastavení informace o typu modelu COM se vloží přímo do spravovaných sestavení, která eliminuje potřebu primárního sestavení interop (PIA). Jeden z omezení vložené informace o typu je však, že volání časné vazby vtable nepodporuje doručování notiifcations událostí modelu COM, ale podporuje pouze s pozdní vazbou `IDispatch::Invoke` volání.
+
+Pokud vaše aplikace vyžaduje volání časné vazby na metody rozhraní události modelu COM, můžete nastavit **Embed Interop Types** v sadě Visual Studio k `true`, nebo obsahovat následující element v souboru projektu:
+
+```xml
+<EmbedInteropTypes>True</EmbedInteropTypes>
+```
+
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
  [COM – obálky](com-wrappers.md)  

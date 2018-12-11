@@ -1,104 +1,104 @@
 ---
-title: .NET core globální nástroje
-description: Přehled o jaké jsou .NET Core globální nástroje a příkazy .NET Core rozhraní příkazového řádku pro ně k dispozici.
+title: Globální nástroje .NET core
+description: Přehled o co jsou globální nástroje .NET Core a .NET Core CLI příkazy pro ně k dispozici.
 author: KathleenDollard
-ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 077ffd53f1ba2988c80a637aaa109a66139736b0
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.custom: seodec18
+ms.openlocfilehash: 3bbf1e7953482dc07f05570443cf640a9fab6258
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34697089"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170837"
 ---
-# <a name="net-core-global-tools-overview"></a>Přehled .NET core globální nástroje
+# <a name="net-core-global-tools-overview"></a>Přehled globální nástroje .NET core
 
 [!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
 
-Nástroj globální .NET Core je speciální balíčku NuGet, který obsahuje aplikace konzoly. Nástroj globální může být nainstalovaný na počítači, na výchozí umístění, která je zahrnutá v proměnné prostředí PATH nebo do vlastního umístění.
+Globální nástroje .NET Core je speciální balíčku NuGet, který obsahuje konzolovou aplikaci. Globální nástroj může být nainstalován na svém počítači na výchozím umístění, které je zahrnutý v proměnné prostředí PATH nebo vlastního umístění.
 
-Pokud chcete použít nástroj globální .NET Core:
+Pokud chcete použít globální nástroje .NET Core:
 
-* Najdete informace o nástroji (obvykle web nebo GitHub stránce).
-* Zkontrolujte autora a statistiky na domovské stránce pro informační kanál (obvykle NuGet.org).
+* Najdete informace o nástroji (obvykle webu nebo stránku na Githubu).
+* Zkontrolujte Autor a statistické údaje ve Domovská stránka pro kanál (obvykle NuGet.org).
 * Nainstalujte nástroj.
-* Volání nástroj.
+* Volání nástroje.
 * Aktualizujte nástroj.
 * Odinstalujte nástroj.
 
 > [!IMPORTANT]
-> .NET core globální nástroje se zobrazují v cestu a spustit v režimu plné důvěryhodnosti. .NET Core globální nástroje nainstalujte pouze v případě, že důvěřujete autorovi.
+> Globální nástroje .NET core se zobrazí na vaší cestě a spustit v režimu plné důvěryhodnosti. Neinstalujte globální nástroje .NET Core, pokud důvěřujete autorovi.
 
-## <a name="find-a-net-core-global-tool"></a>Najít nástroj globální .NET Core
+## <a name="find-a-net-core-global-tool"></a>Najít globální nástroje .NET Core
 
-V současné době není k dispozici funkce vyhledávání globální nástroj v rozhraní .NET Core rozhraní příkazového řádku (CLI).
+V současné době není k dispozici funkce Hledat globální nástroje v rozhraní příkazového řádku .NET Core (CLI).
 
-.NET Core globální nástroje můžete najít na [NuGet](https://www.nuget.org). Ale NuGet ještě neumožňuje prohledat speciálně pro .NET Core globální nástroje.
+Globální nástroje .NET Core můžete najít na [NuGet](https://www.nuget.org). Nicméně NuGet ještě neumožňuje vyhledávání speciálně pro globální nástroje .NET Core.
 
-Také je možné nástroj doporučení v příspěvcích na blogu nebo v [natemcmaster/dotnet nástroje](https://github.com/natemcmaster/dotnet-tools) úložiště GitHub.
+Můžete také zjistit v příspěvcích na blogu nebo v doporučení v nástroji [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools) úložiště GitHub.
 
-Můžete také najdete ve zdrojovém kódu pro globální nástroje vytvořený týmem ASP.NET na [aspnet/DotNetTools](https://github.com/aspnet/DotNetTools/) úložiště GitHub.
+Můžete také zobrazit zdrojový kód pro globální nástroje vytvořil tým ASP.NET na [aspnet/DotNetTools](https://github.com/aspnet/DotNetTools/) úložiště GitHub.
 
-## <a name="check-the-author-and-statistics"></a>Zkontrolujte autora a statistiky
+## <a name="check-the-author-and-statistics"></a>Zkontrolujte Autor a statistiky
 
-Vzhledem k tomu, že .NET Core globální nástroje spustit v režimu plné důvěryhodnosti a jsou obvykle instaluje na cestu, mohou být velmi mocné. Nestahovat nástroje před lidmi, kterým nedůvěřujete.
+Protože globální nástroje .NET Core spustit v režimu plné důvěryhodnosti a se obvykle instaluje na vaší cestě, můžou být velmi výkonné. Nestahovat nástroje od lidí, kterým nedůvěřujete.
 
-Pokud tento nástroj je hostovaná na NuGet, můžete zkontrolovat jejich autorovi a statistiky tak, že nástroj.
+Pokud je hostitelem nástroje NuGet, můžete zkontrolovat tak, že nástroj Autor a statistiky.
 
-## <a name="install-a-global-tool"></a>Nainstalujte nástroj globální
+## <a name="install-a-global-tool"></a>Nainstalujte nástroj Global
 
-Chcete-li nainstalovat nástroj globální, je použít [instalace nástroje pro dotnet](dotnet-tool-install.md) .NET Core rozhraní příkazového řádku příkaz. Následující příklad ukazuje, jak nainstalovat nástroj globální ve výchozím umístění:
+Instalovat nástroj globální, použijte [instalace nástrojů dotnet](dotnet-tool-install.md) rozhraní příkazového řádku .NET Core. Následující příklad ukazuje, jak nainstalovat globální nástroj ve výchozím umístění:
 
 ```console
 dotnet tool install -g dotnetsay
 ```
 
-Pokud nástroj nelze nainstalovat, zobrazí se chybové zprávy. Zkontrolujte, jsou kontrolovány informační kanály, které jste očekávali.
+Pokud nástroj nejde nainstalovat, zobrazí se chybové zprávy. Zkontrolujte, že se kontroluje informační kanály, které jste očekávali.
 
-Pokud se pokoušíte nainstalovat předběžné verze nebo na konkrétní verzi nástroje, můžete zadat číslo verze v následujícím formátu:
+Pokud se snažíte nainstalovat předběžné verzi nebo konkrétní verzi nástroje, můžete zadat číslo verze v následujícím formátu:
 
 ```console
 dotnet tool install -g <package-name> --version <version-number>
 ```
 
-Pokud je instalace úspěšná, zobrazí se zpráva zobrazující příkaz používá k volání nástroj od verze nainstalované, podobně jako v následujícím příkladu:
+Pokud je instalace úspěšná, zobrazí se zpráva zobrazující příkazu používaný k volání nástroje a verze nainstalovaná, podobně jako v následujícím příkladu:
 
 ```
 You can invoke the tool using the following command: dotnetsay
 Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 ```
 
-Ve výchozím adresáři nebo v konkrétní umístění může být nainstalované nástroje globální. Výchozí adresáře jsou:
+Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v konkrétním umístění. Výchozí adresáře jsou:
 
-| OPERAČNÍ SYSTÉM          | Cesta                          |
+| Operační systém          | Cesta                          |
 |-------------|-------------------------------|
-| Linux/systému macOS | `$HOME/.dotnet/tools`         |
+| Linux nebo macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-Tato umístění se přidají do cesty uživatele při prvním spuštění sady SDK, takže globální nástroje nainstalované existuje můžete volat přímo.
+Tato místa jsou přidány do cesty uživatele při prvním spuštění sady SDK, tak že nainstalované nástroje pro globální mohou být volány.
 
-Upozorňujeme, že globální nástroje jsou specifické pro uživatele, není ve stavu globální. Probíhá specifický pro uživatele znamená, že nemůžete nainstalovat nástroj globální, který je k dispozici pro všechny uživatele počítače. Nástroj je k dispozici pouze pro každý uživatelský profil nainstalovanou nástroj.
+Mějte na paměti, že globální nástroje jsou specifické pro uživatele, počítače nejsou globální. Jsou specifické pro uživatele znamená, že nemůžete nainstalovat globální nástroj, který je k dispozici pro všechny uživatele počítače. Nástroj je k dispozici pouze pro každý uživatelský profil ve kterém byl nainstalován nástroj.
 
-Globální nástroje lze také nainstalovat v konkrétní adresář. Při instalaci v konkrétního adresáře, musí se uživatel ujistit příkaz je k dispozici, včetně adresáře v cestě, voláním příkazu se adresář zadaný, nebo volání nástroj v rámci zadaného adresáře.
-Rozhraní příkazového řádku .NET Core není toto umístění v tomto případě automaticky přidat do proměnné prostředí PATH.
+Globální nástroje můžete také nainstalovat v konkrétní adresář. Při instalaci v konkrétní adresář, uživatel musí zajistit příkaz je k dispozici, včetně tohoto adresáře v cestě, voláním příkazu se do adresáře určeného, nebo zavolání nástroj v rámci zadaného adresáře.
+Rozhraní příkazového řádku .NET Core nepodporuje toto umístění v tomto případě automaticky přidat do proměnné prostředí PATH.
 
 ## <a name="use-the-tool"></a>Pomocí nástroje
 
-Po instalaci nástroje ho můžete volat pomocí jeho příkazu. Všimněte si, že příkaz nemusí být stejný jako název balíčku.
+Po instalaci nástroje zavoláte ho pomocí jeho příkazu. Všimněte si, že příkaz nemusí být stejný jako název balíčku.
 
-Pokud je příkaz `dotnetsay`, její volání:
+Pokud je příkaz `dotnetsay`, při volání s:
 
 ```console
 dotnetsay
 ```
 
-Pokud nástroj Autor chtěli nástroj, který se zobrazí v kontextu `dotnet` řádku, může uživatel vytvořil ho způsobem volání jej jako `dotnet <command>`, jako například:
+Pokud autor nástroj chtěli nástroj, který se zobrazí v kontextu `dotnet` řádku, může mít napsat ji tak, pojmenujte ji `dotnet <command>`, jako například:
 
 ```console
 dotnet doc
 ```
 
-Zjistíte, které nástroje jsou součástí nainstalovaným balíčkem globální nástroj tak, že uvedete nainstalované balíčky pomocí [seznam nástrojů dotnet](dotnet-tool-list.md) příkaz.
+Zjistíte, jaké nástroje jsou součástí nainstalovaným balíčkem globální nástroj uvedením nainstalované balíčky pomocí [seznam nástrojů dotnet](dotnet-tool-list.md) příkazu.
 
 Můžete také vyhledat pokyny k použití na webu nástroje nebo zadáním jednoho z následujících příkazů:
 
@@ -109,55 +109,55 @@ dotnet <command> --help
 
 ### <a name="what-could-go-wrong"></a>Co může dojít k chybě
 
-Globální nástroje jsou [framework závislé aplikace,](../deploying/index.md#framework-dependent-deployments-fdd), což znamená, že spoléhají na .NET Core runtime v počítači nainstalován. Pokud není nalezen očekávaný modulu runtime, se řídí normální .NET Core runtime úplné dopředné pravidla jako:
+Globální nástroje jsou [aplikace závisí na architektuře](../deploying/index.md#framework-dependent-deployments-fdd), což znamená, že spoléhají na .NET Core runtime na vašem počítači nainstalovaný. Pokud se nenajde očekávanou dobu běhu, sledují běžných pravidel vpřed modulu runtime .NET Core, jako:
 
-* Aplikace posunete na nejvyšší verzi opravy systému zadaná verze hlavní a podverze.
-* Pokud neexistuje žádný odpovídající runtime s odpovídající hlavní a podverze číslo, použije se další vyšší podverze.
-* Dopředné posunutí nedojde mezi verze preview modulu runtime nebo mezi verze preview a verze. Proto globální nástroje, které jsou vytvořené pomocí verze preview musí být znovu sestavit a publikovat autorem a přeinstalovat.
-* Další problémy mohou nastat u globální nástrojů vytvořené v rozhraní .NET Core 2.1 Preview 1. Další informace najdete v tématu [.NET Core 2.1 Preview 2 – známé problémy s](https://github.com/dotnet/core/blob/master/release-notes/2.1/Preview/2.1.0-preview2-known-issues.md).
+* Aplikace provede dopředné obnovení nejvyšší oprava vydanou verzi zadaný hlavní verze a podverze.
+* Pokud není žádný odpovídající modul runtime s odpovídající hlavní a vedlejší číslo verze, použije se další vyšší dílčí verze.
+* Posunutí vpřed nedojde mezi ve verzi preview verze modulu runtime nebo verze preview a verze. Díky tomu se globální nástroje vytvořené pomocí verze preview musí být znovu sestavit a znovu publikovat autorem a přeinstalovat.
+* Další problémy mohou nastat u globální nástroje vytvořené v .NET Core 2.1 Preview 1. Další informace najdete v tématu [.NET Core 2.1 Preview 2 známé problémy v sadě](https://github.com/dotnet/core/blob/master/release-notes/2.1/Preview/2.1.0-preview2-known-issues.md).
 
-Pokud aplikace nemůže najít vhodné modulu runtime, se nezdaří a zobrazí chybová zpráva.
+Pokud aplikaci nejde najít odpovídající modul runtime, selže-li a nahlásí chybu.
 
-Jiný problém, který může dojít, je, že globální nástroj, který jste vytvořili během starší verze preview nemusí s vaší aktuálně nainstalované moduly runtime .NET Core. Můžete zjistit, jaké moduly runtime jsou nainstalovány na počítači, pomocí následujícího příkazu:
+Jiný problém, který může dojít, je, že globální nástroj, který byl vytvořen starší verzi Preview se možná nespustí pomocí aktuálně nainstalované moduly runtime .NET Core. Můžete zobrazit, které moduly runtime jsou nainstalovány v počítači pomocí následujícího příkazu:
 
 ```console
 dotnet --list-runtimes
 ```
 
-Obraťte se na autora nástroj globální a zda lze znovu zkompiluje a znovu publikovat své nástroj balíček NuGet s číslem aktualizovaná verze. Jakmile budou mít aktualizovat balíček na NuGet, můžete aktualizovat svou kopii.
+Obraťte se na autora nástroj globální a podívejte se, pokud můžete znovu zkompilovat a znovu publikovat své nástroje balíček NuGet s aktualizovaným číslem verze. Až aktualizováni balíček na webu NuGet můžete aktualizovat kopii.
 
-Rozhraní příkazového řádku .NET Core se pokusí přidat výchozí umístění do proměnné prostředí PATH na jeho první použití. Existuje však několik scénářů, kde umístění nemusí být přidat cestu automaticky, jako například:
+Rozhraní příkazového řádku .NET Core se pokusí přidat výchozí umístění pro proměnné prostředí PATH na jeho prvního použití. Existuje ale několik scénářů, kde umístění pravděpodobně být přidány do cesty automaticky, jako například:
 
 * Pokud jste nastavili `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` proměnné prostředí.
-* V systému macOS, pokud jste nainstalovali pomocí rozhraní .NET Core SDK *. tar.gz* soubory a zda není *.pkg*.
-* V systému Linux musíte upravit soubor prostředí shell můžete nastavit CESTU.
+* V systému macOS, pokud jste nainstalovali aplikaci pomocí sady .NET Core SDK *. tar.gz* souborů a nikoli *.pkg*.
+* V systému Linux budete muset upravit soubor prostředí shell abyste nakonfigurovali CESTU.
 
 ## <a name="other-cli-commands"></a>Další příkazy rozhraní příkazového řádku
 
-.NET Core SDK obsahuje jinými příkazy, které podporují .NET Core globální nástroje. Použít některou z `dotnet tool` příkazy s jedním z následujících možností:
+.NET Core SDK obsahuje další příkazy, které podporují globální nástroje .NET Core. Použít některý z `dotnet tool` příkazů s jedním z následujících možností:
 
-* `--global` nebo `-g` Určuje, že příkaz se vztahuje na úrovni uživatele globální nástroje.
+* `--global` nebo `-g` Určuje, že příkaz je globální nástroje lze použít na úrovni uživatele.
 * `--tool-path` Určuje vlastní umístění pro globální nástroje.
 
-Chcete-li zjistit, které příkazy, které jsou k dispozici pro globální nástroje:
+Chcete-li zjistit, které příkazy jsou k dispozici pro globální nástroje:
 
 ```console
 dotnet tool --help
 ```
 
-Aktualizace nástroj globální zahrnuje odinstalace a opětovné instalace s nejnovější stabilní verze. Chcete-li aktualizovat nástroj globální, použijte [aktualizace nástrojů dotnet](dotnet-tool-update.md) příkaz:
+Aktualizuje se nástroj globální zahrnuje odinstalace a opětovné instalace s nejnovější stabilní verzi. Chcete-li aktualizovat globální nástroj, použijte [aktualizace nástrojů dotnet](dotnet-tool-update.md) příkaz:
 
 ```console
 dotnet tool update -g <packagename>
 ```
 
-Odeberte nástroj globální pomocí [dotnet odinstalační](dotnet-tool-uninstall.md):
+Odebrat globální nástroj pomocí [dotnet odinstalační](dotnet-tool-uninstall.md):
 
 ```console
 dotnet tool uninstall -g <packagename>
 ```
 
-Zobrazit všechny nástroje globální aktuálně nainstalovaný v počítači, spolu s jejich verzi a příkazy, pomocí [seznam nástrojů dotnet](dotnet-tool-list.md) příkaz:
+Chcete-li zobrazit všechny nástroje, globální aktuálně nainstalované na počítači, spolu s jejich verzi a příkazů, použijte [seznam nástrojů dotnet](dotnet-tool-list.md) příkaz:
 
 ```console
 dotnet tool list -g

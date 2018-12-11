@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: f381df2acdb370c6e84d3a00079578f8fceb69f3
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a6c655e260aa75504e9a445458664b11d8e4d56d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192571"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145134"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  
@@ -59,7 +59,7 @@ Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený
  Při odesílání velkých objemů dat je potřeba nastavit `maxAllowedContentLength` nastavení služby IIS (Další informace najdete v části [konfigurace omezení počtu požadavků služby IIS](https://go.microsoft.com/fwlink/?LinkId=253165)) a `maxReceivedMessageSize` vazby nastavení (například [ System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) nebo <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). `maxAllowedContentLength` Výchozí hodnoty vlastností 28.6 m a `maxReceivedMessageSize` vlastnost Výchozí hodnota je 64 KB.  
   
 ## <a name="encodings"></a>Kódování  
- *Kódování* definuje sadu pravidel o tom, jak zobrazení zpráv na lince. *Kodér* implementuje tyto kódování a odpovídá na straně odesílatele pro zapnutí <xref:System.ServiceModel.Channels.Message> zprávy v paměti do datového proudu bajtů nebo bajtová vyrovnávací paměť, kterou je možné odeslat přes síť. Na straně příjemce kodér změní pořadí bajtů do zprávy v paměti.  
+ *Kódování* definuje sadu pravidel o tom, jak zobrazení zpráv na lince. *Kodér* implementuje tyto kódování a odpovídá na straně odesílatel při zapínání v paměti <xref:System.ServiceModel.Channels.Message> do datového proudu bajtů nebo bajtová vyrovnávací paměť, kterou je možné odeslat přes síť. Na straně příjemce kodér změní pořadí bajtů do zprávy v paměti.  
   
  WCF obsahuje tři kodérů a umožní vám psát a zapojte vlastní kodéry v případě potřeby.  
   
@@ -239,4 +239,4 @@ public class UploadStreamMessage
 >  Rozhodnout a použít ve vyrovnávací paměti nebo streamovaná přenosy je místní rozhodnutí koncového bodu. Pro přenosy HTTP je režim přenosu nešíří přes připojení nebo proxy servery a jiných dodavatelů. Nastavení režimu převodu se neprojeví v popisu rozhraní služby. Po vygenerování klienta WCF na službu, musíte upravit konfigurační soubor služby určené pro použití s datovým proudem přenosy pro nastavení režimu. Pro protokoly TCP a přenosy pojmenovaný kanál se šíří je režim přenosu jako kontrolní výraz zásad.  
   
 ## <a name="see-also"></a>Viz také  
- [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+ [Jak: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

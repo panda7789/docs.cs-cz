@@ -4,12 +4,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 2950d92f877a7e99734267a3071b2bcb25ce1023
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 124cc98b6f73b6014ab845ce5b9331e9f5292757
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509275"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146834"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -20,10 +20,10 @@ type* identifier;
 void* identifier; //allowed but not recommended
 ```
 
-Typ určený před `*` na ukazatel typu nazývá **referrent typ**. Některé z následujících typů může být typem referrent:
+Typ určený před `*` na ukazatel typu nazývá **referenční typ**. Některé z následujících typů může být typu referenční:
 
 - Libovolný integrální typ: [sbyte](../../language-reference/keywords/sbyte.md), [bajtů](../../language-reference/keywords/byte.md), [krátký](../../language-reference/keywords/short.md), [ushort](../../language-reference/keywords/ushort.md), [int](../../language-reference/keywords/int.md), [uint](../../language-reference/keywords/uint.md), [dlouhé](../../language-reference/keywords/long.md), [ulong](../../language-reference/keywords/ulong.md).
-- Všechny plovoucí desetinnou čárkou typu: [float](../../language-reference/keywords/float.md), [double](../../language-reference/keywords/double.md).
+- Libovolný typ s plovoucí desetinnou čárkou: [float](../../language-reference/keywords/float.md), [double](../../language-reference/keywords/double.md).
 - [Char](../../language-reference/keywords/char.md).
 - [BOOL](../../language-reference/keywords/bool.md).
 - [desetinné](../../language-reference/keywords/decimal.md).

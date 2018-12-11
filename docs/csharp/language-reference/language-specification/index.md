@@ -8,18 +8,18 @@ helpviewer_keywords:
 - Visual C#, C# language specification
 - language specification [C#]
 ms.assetid: e5d5a5cc-636b-4bff-b9c8-a8edc6207c22
-ms.openlocfilehash: 976282ab51ec3e9990161abf2dd089798bd949dd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0a108e9e625fed3801c283c84a58ea0b503101ff
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529871"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147946"
 ---
 # <a name="c-60-draft-language-specification"></a>Specifikace konceptu jazyka C# 6.0
 
 Specifikace jazyka C# je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#. Tato specifikace obsahuje podrobné informace o všech aspektech jazyka, včetně počtu bodů, které nepokrývá dokumentace pro jazyk C#.
 
-Specifikace verze 5.0 vydala v prosinci 2017 jako [Standard ECMA-334 5th Edition](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf) dokumentu.
+Specifikace verze 5.0 vydala v prosinci 2017 jako [Standard ECMA-334 5th Edition](https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-334.pdf) dokumentu.
 
 Specifikace verze 6.0 nebyla schválena jako standard. Tento web obsahuje [ *koncept* specifikace jazyka C# 6.0](../../../../_csharplang/spec/introduction.md). Je sestaven z součástí souborů markdownu [úložiště GitHub dotnet/csharplang](https://github.com/dotnet/csharplang/blob/master/spec/README.md).
 
@@ -31,4 +31,4 @@ Problémy na specifikace konceptu by měl být vytvořen v [dotnet/csharplang](h
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
 
 >[!div class="step-by-step"]
-[Next](../../../../_csharplang/spec/introduction.md)
+>[Next](../../../../_csharplang/spec/introduction.md)

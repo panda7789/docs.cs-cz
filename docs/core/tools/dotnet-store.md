@@ -2,14 +2,14 @@
 title: příkaz DotNet úložiště
 description: "'Dotnet Restore' příkaz uloží na zadaná sestavení do úložiště balíčků modulu runtime."
 author: bleroy
-ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: a12738d0cc8edcbb65d5b6fab6e7c8b209b0f4b5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.custom: seodec18
+ms.openlocfilehash: db1af95150a8949f218169b2999c92c00ac94d56
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48029892"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170727"
 ---
 # <a name="dotnet-store"></a>DotNet Restore
 
@@ -35,7 +35,7 @@ Určuje, [Cílová architektura](../../standard/frameworks.md).
 
 `-m|--manifest <PATH_TO_MANIFEST_FILE>`
 
-*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení. Formát souboru manifestu je kompatibilní s formátem SDK – vizuální styl projektu. Ano, soubor projektu, který odkazuje na požadované balíčky je možné s `-m|--manifest` možnosti k uložení sestavení v úložiště balíčků modulu runtime. Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu. Příklad: `--manifest packages1.csproj --manifest packages2.csproj`.
+*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení. Formát souboru manifestu je kompatibilní s formátem SDK – vizuální styl projektu. Ano, soubor projektu, který odkazuje na požadované balíčky je možné s `-m|--manifest` možnosti k uložení sestavení v úložiště balíčků modulu runtime. Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu. Například: `--manifest packages1.csproj --manifest packages2.csproj`.
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 

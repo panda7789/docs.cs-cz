@@ -2,17 +2,17 @@
 title: Zobrazení dat
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: 75719e91daba189c1d93491a1db26acc80100bea
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 93789cf64653af863cbedbf1caeea886afb713f5
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514749"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129386"
 ---
 # <a name="dataviews"></a>Zobrazení dat
 A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkce, která se často používá v aplikacích datové vazby. Použití **DataView**, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků.  
   
- A **DataView** zajišťuje dynamické zobrazení dat v základním **DataTable**: obsah, řazení a členství odrážejí změny při jejich výskytu. Toto chování se liší od **vyberte** metodu **DataTable**, který vrátí hodnotu <xref:System.Data.DataRow> pole z tabulky podle určitého pořadí filtr nebo řazení: thiscontent odráží změny Základní tabulka, ale jeho členství a pořadí zůstat statický. Dynamické schopnosti **DataView** ideální pro vázání dat aplikací.  
+ A **DataView** zajišťuje dynamické zobrazení dat v základním **DataTable**: obsah, řazení a členství odrážejí změny při jejich výskytu. Toto chování se liší od **vyberte** metodu **DataTable**, který vrátí hodnotu <xref:System.Data.DataRow> pole z tabulky podle určitého pořadí filtr nebo řazení: Tento obsah odráží změny Základní tabulka, ale jeho členství a pořadí zůstat statický. Dynamické schopnosti **DataView** ideální pro vázání dat aplikací.  
   
  A **DataView** vám poskytne dynamický náhled na jednu sadu dat, podobně jako na zobrazení databáze, do které můžete použít různé řazení a filtrování kritéria. Na rozdíl od zobrazení databáze, ale **DataView** nemůže být zpracován jako tabulku a nemůžete zviditelňují spojené tabulky. Také nelze vyloučit sloupce, které existují ve zdrojové tabulce, ani připojit sloupců, jako jsou výpočetní sloupce, které neexistují ve zdrojové tabulce.  
   

@@ -1,66 +1,66 @@
 ---
-title: Neshody typu SQL CLR
+title: Neshody typů SQL a CLR
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
-ms.openlocfilehash: 8b072c739b56d191e79b4cc2eff195adfe9da2eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 61731c4d9590892bdae8e90717d77b4dddf1d71d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365667"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147616"
 ---
-# <a name="sql-clr-type-mismatches"></a>Neshody typu SQL CLR
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] umožňuje automatizovat většinu překlad mezi objektový model a SQL Server. Nicméně některých situacích zabránit přesný překlad. Tyto klíče neshody mezi běžné typy language runtime (CLR) a typy databáze systému SQL Server jsou shrnuty v následující části. Můžete najít další podrobnosti o konkrétní typ mapování a funkce překladu v [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) a [datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
+# <a name="sql-clr-type-mismatches"></a>Neshody typů SQL a CLR
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] automatizuje většinu překlad mezi objektový model a systému SQL Server. Nicméně některé situace zabránit přesné překladu. Tyto klíče neshody mezi běžné typy language runtime (CLR) a typy databáze systému SQL Server jsou shrnuté v následujících částech. Můžete najít další podrobnosti o mapování určitého typu a funkce překladu na [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) a [datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
   
 ## <a name="data-types"></a>Datové typy  
- Při odesílání dotazu do databáze, a při výsledky budou odeslány do objektový model dochází k převodu mezi CLR a SQL Server. Například následující dotaz jazyka Transact-SQL vyžaduje dva převody hodnot:  
+ Při odesílání dotazu do databáze a kdy se výsledky odesílají zpět k objektovému modelu dochází k převodu mezi CLR a systému SQL Server. Například následující dotaz jazyka Transact-SQL vyžaduje dva převody hodnot:  
   
 ```  
 Select DateOfBirth From Customer Where CustomerId = @id     
 ```  
   
- Aby bylo možné spustit dotaz na serveru SQL Server, musí být zadána hodnota pro parametr Transact-SQL. V tomto příkladu `id` hodnota parametru musí být nejprve převedeny z modulu CLR <xref:System.Int32?displayProperty=nameWithType> typ k systému SQL Server `INT` zadejte tak, aby databáze můžete porozumět, co je hodnota. Pak se načíst výsledky, SQL Server `DateOfBirth` sloupec musí být převedeny z SQL serveru `DATETIME` typ, který má CLR <xref:System.DateTime?displayProperty=nameWithType> typ pro použití v modelu objektu. Typy v modelu objektu CLR a databáze systému SQL Server v tomto příkladu se mít fyzické mapování. Ale není to vždy.  
+ Předtím, než je možné provést dotaz v systému SQL Server, musíte zadat hodnotu pro parametr příkazů jazyka Transact-SQL. V tomto příkladu `id` hodnota parametru musí být nejdříve přeložena z modul CLR. <xref:System.Int32?displayProperty=nameWithType> typu k serveru SQL Server `INT` tak, aby databáze můžete pochopit, co je hodnota. Potom k načtení výsledků, SQL Server `DateOfBirth` sloupec musí být převedeny z SQL serveru `DATETIME` typ, který má modul CLR <xref:System.DateTime?displayProperty=nameWithType> typ pro použití v objektovém modelu. V tomto příkladu typy CLR objektový model a databáze systému SQL Server mají přirozené mapování. Ale není to vždy.  
   
-### <a name="missing-counterparts"></a>Chybí svými protějšky  
- Následující typy nemají přiměřené svými protějšky.  
+### <a name="missing-counterparts"></a>Chybějící protějšky  
+ Následující typy nemají přiměřené protějšky.  
   
--   V modulu CLR se neshoduje <xref:System> obor názvů:  
+-   V modulu CLR se neshoduje s <xref:System> obor názvů:  
   
-    -   **Nepodepsané celá čísla**. Tyto typy jsou obvykle namapované na jejich podepsané svými protějšky větší velikosti předejdete přetečení. Literály lze převést na podepsané číselný stejné nebo menší velikosti, na základě hodnoty.  
+    -   **Čísla typu unsigned integer**. Tyto typy se obvykle mapují na své ekvivalenty podepsaný o větší velikosti chcete zabránit přetečení. Literály lze převést na číselnou znaménkem stejné nebo menší velikosti na základě hodnoty.  
   
-    -   **Logická hodnota**. Tyto typy lze mapovat na bit nebo větší číselnou nebo řetězec. Literál lze mapovat na výraz, který se vyhodnotí na stejnou hodnotu (například `1=1` v SQL pro `True` ve CLS).  
+    -   **Logická**. Tyto typy lze mapovat na bit nebo větší numerická nebo řetězec. Literál je možné mapovat na výraz, který se vyhodnotí jako stejná hodnota (například `1=1` v SQL pro `True` ve specifikaci CLS).  
   
-    -   **Časový interval**. Tento typ reprezentuje rozdíl mezi dvěma `DateTime` hodnoty a nemusí odpovídat `timestamp` systému SQL Server. Modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> také mapovat k systému SQL Server `TIME` typu v některých případech. SQL Server `TIME` typu byla určena pouze kladné hodnoty představují méně než 24 hodin. Modul CLR <xref:System.TimeSpan> má mnohem větší rozsah.  
+    -   **Časový interval**. Tento typ reprezentuje rozdíl mezi dvěma `DateTime` hodnoty a nemusí odpovídat `timestamp` systému SQL Server. Modul CLR <xref:System.TimeSpan?displayProperty=nameWithType> může také namapovat na SQL Server `TIME` typ v některých případech. SQL Server `TIME` typu byla určena pouze k reprezentaci kladné hodnoty kratší než 24 hodin. Modul CLR <xref:System.TimeSpan> má mnohem větší rozsah.  
   
     > [!NOTE]
-    >  Specifické pro službu SQL Server [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] typy v <xref:System.Data.SqlTypes> nejsou součástí Toto porovnání.  
+    >  SQL Server – konkrétní [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] napíše <xref:System.Data.SqlTypes> nejsou součástí tohoto porovnání.  
   
 -   Neshody v systému SQL Server:  
   
-    -   **Pevná délka znakové typy**. Příkaz Transact-SQL rozlišuje mezi kategorií kódování Unicode a kódování Unicode a má tři odlišné typy v každé kategorii: pevná délka `nchar` / `char`, proměnlivou délkou `nvarchar` / `varchar`, a větší velikost `ntext` / `text`. Typy znaků pevnou délkou mapovat modulu CLR <xref:System.Char?displayProperty=nameWithType> typ pro načítání znaků, ale jejich nemusí odpovídat skutečně stejného typu v převody a chování.  
+    -   **Typy znaků pevné délky**. Příkaz Transact-SQL rozlišuje mezi kategorie sady Unicode a kódování Unicode a má tři různé typy v každé kategorii: pevnou délku `nchar` / `char`, s proměnnou délkou `nvarchar` / `varchar`, a větší velikost `ntext` / `text`. Typy znaků pevné délky mapovat CLR <xref:System.Char?displayProperty=nameWithType> znaky typu pro načtení, ale ve skutečnosti neodpovídají na stejný typ. převody a chování.  
   
-    -   **Bit**. I když `bit` stejný počet hodnot, jako má doména `Nullable<Boolean>`, jsou dva různé typy. `Bit` přijímá hodnoty `1` a `0` místo `true` / `false`a nelze jej použít jako rovnocenné výrazy logických hodnot.  
+    -   **Bit**. I když `bit` doména má stejný počet hodnot jako `Nullable<Boolean>`, jsou dva různé typy. `Bit` přijímá hodnoty `1` a `0` místo `true` / `false`a nelze jej použít jako rovnocenné logických výrazů.  
   
-    -   **Časové razítko**. Na rozdíl od CLR <xref:System.TimeSpan?displayProperty=nameWithType> typ, SQL Server `TIMESTAMP` typ představuje číslo 8 bajtů generovaných databázi, která je jedinečné pro jednotlivé aktualizace a není založena na rozdíl mezi <xref:System.DateTime> hodnoty.  
+    -   **Časové razítko**. Na rozdíl od CLR <xref:System.TimeSpan?displayProperty=nameWithType> zadejte SQL Server `TIMESTAMP` typ představuje číslo 8bajtový generován databází, které je jedinečné pro jednotlivé aktualizace a není založena na rozdíl mezi <xref:System.DateTime> hodnoty.  
   
     -   **Peníze** a **SmallMoney**. Tyto typy lze mapovat na <xref:System.Decimal> , ale jsou v podstatě různé typy a jako takový nakládá serverových funkcí a převody.  
   
-### <a name="multiple-mappings"></a>Víc mapování  
- Existuje mnoho typů dat systému SQL Server, které můžete namapovat na jeden nebo více typů CLR data. Existují také mnoho typů CLR, které můžete namapovat na jeden nebo více typů systému SQL Server. I když mapování může být podporovaná technologií LINQ to SQL, neznamená to, že existují dva typy namapované mezi CLR a SQL Server jsou ideální shoda v přesnost, rozsah a sémantiku. Některé mapování může zahrnovat rozdíly v některého nebo všech z těchto dimenzí. Můžete najít podrobnosti o těchto potenciální rozdíly pro různé možnosti mapování na [mapování typu SQL CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
+### <a name="multiple-mappings"></a>Mapování více  
+ Existuje mnoho typů dat serveru SQL Server, namapované na jeden nebo více datové typy CLR. Existují také mnoho typů CLR, které můžete namapovat na jeden nebo více typů systému SQL Server. I když mapování může být podporována technologií LINQ to SQL, neznamená to, že tyto dva typy mapovány mezi CLR a systému SQL Server se skvěle hodí v přesnost, rozsahu a sémantika. Některé mapování může obsahovat rozdíly v některých nebo všech těchto dimenzí. Můžete najít podrobnosti o těchto rozdílech potenciální pro různé možnosti mapování na [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
   
 ### <a name="user-defined-types"></a>Uživatelem definované typy  
- Uživatelem definované typy CLR jsou navržené tak, abyste přemostění mezery typ systému. Nicméně surface zajímavé problémy o správě verzí typu. Ke změně verze na klienta nemusí odpovídat změnou v typu uložené na serveru databáze. Všechny tyto změny způsobí, že jiný Neshoda typu, kde nemusí odpovídat Sémantika typu a mezera verze je pravděpodobně budou zobrazeny. Další komplikace docházet k hierarchie dědičnosti jsou rozdělili v následných verzí.  
+ Uživatelem definované typy CLR jsou navržené tak, abychom překleňte propast systému typu. Nicméně poskytování zajímavých problémů o správě verzí typu. Změnou v typ uložený na databázovém serveru nemusí odpovídat změnu ve verzi na straně klienta. Tato změna způsobí, že jiný Neshoda typu, kde nemusí odpovídat Sémantika typu a mezera verze je pravděpodobné, že budou zobrazeny. Hierarchie dědičnosti implementovány v následných verzích docházet k další komplikace.  
   
 ## <a name="expression-semantics"></a>Sémantika výrazů  
- Kromě pairwise neshody mezi typy CLR a databáze výrazy přidání složitosti do neshody. Je třeba zvážit neshody v operátor sémantiku, funkce sémantiku, převod implicitní typu a pravidla priorit.  
+ Výrazy kromě pairwise Neshoda mezi typy CLR a databáze přidat složitost neshoda. Musí přestat považovat neshody v operátor sémantiku, sémantiku funkce, implicitní převod typu a pravidel.  
   
- Následující témata ukazují neshody mezi zjevně podobné výrazy. Může být možné generovat SQL výrazů, které odpovídají sémanticky daného výrazu CLR. Ale není jasné jestli sémantického rozdíly mezi zjevně podobné výrazy jsou zřejmá CLR uživateli, a proto jestli jsou změny, které jsou požadovány pro sémantické ekvivalenční určené nebo ne. To je obzvláště důležité problém při vyhodnocování výrazu pro sadu hodnot. Viditelnost rozdíl může závisí na data - a bude obtížné určit během kódování a ladění.  
+ Následující témata ukazují neshody mezi zjevně podobné výrazy. Je možné generovat SQL výrazy, které jsou sémanticky ekvivalentní daného výrazu CLR. Ale není jasné, jestli jsou menší významové rozdíly mezi zjevně podobné výrazy CLR uživateli zřejmé, a proto určuje, zda jsou určeny změny, které jsou požadovány pro sémantické ekvivalence nebo ne. To je zvlášť zásadní potíže při vyhodnocování výrazu pro sadu hodnot. Viditelnost rozdíl může záviset na data – a být obtížné určit během psaní kódu a ladění.  
   
-### <a name="null-semantics"></a>Sémantika hodnotu Null.  
- Výrazy SQL zadejte s hodnotou tři logiku pro výrazy logických hodnot. Výsledkem mohou být true, false nebo hodnotu null. Naopak CLR určuje dvěma hodnotami výsledek logickou hodnotu pro porovnání zahrnující hodnoty null. Vezměte v úvahu následující kód:  
+### <a name="null-semantics"></a>Sémantika s hodnotou Null  
+ Výrazy SQL poskytují tři vracející logiku pro logické výrazy. Výsledkem může být true, false nebo null. Naopak CLR určuje dvěma hodnotami výsledek logickou hodnotu pro porovnání s hodnotami null. Vezměte v úvahu následující kód:  
   
  [!code-csharp[DLinqMismatch#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#2)]
  [!code-vb[DLinqMismatch#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#2)]  
@@ -84,7 +84,7 @@ or (col1 is null and col2 is null)
 -- (Visual Basic 'Nothing'.)  
 ```  
   
- Podobně jako nastaly problémy s předpokladem o výsledcích dvěma hodnotami.  
+ Podobný problém se vyskytuje za předpokladu o výsledcích dvěma hodnotami.  
   
  [!code-csharp[DLinqMismatch#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#3)]
  [!code-vb[DLinqMismatch#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#3)]  
@@ -105,27 +105,27 @@ or col1 != col2
 --     evaluate to true.  
 ```  
   
- V předchozím případě můžete získat ekvivalentní chování při generování SQL, ale překlad nemusí přesně odrážet svůj záměr.  
+ V předchozím případě získáte ekvivalentního chování při generování SQL, ale překladu nemusí přesně odrážet váš záměr.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepředstavuje C# `null` nebo Visual Basic `nothing` porovnání sémantiku SQL. Operátory porovnání jsou syntakticky převedeny na jejich ekvivalenty SQL. Sémantika projeví SQL sémantiku podle definice nastavení serveru nebo připojení. Dvě hodnoty null považovány za nerovné pod výchozí nastavení serveru SQL (i když můžete změnit nastavení můžete změnit sémantiky). Bez ohledu na to [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nebere v úvahu nastavení serveru v překlad dotazu.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepředstavuje C# `null` nebo Visual Basic `nothing` porovnání sémantiky pro SQL. Operátory porovnání jsou syntakticky převedeny na jejich ekvivalenty SQL. Sémantika odrážet SQL sémantiku dle nastavení serveru nebo připojení. Dvě hodnoty null se považují za nestejné podle výchozího nastavení systému SQL Server (i když můžete změnit nastavení můžete změnit sémantiku). Bez ohledu na to [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nebere v úvahu nastavení serveru v překladu dotazu.  
   
- Porovnání s literálové `null` (`nothing`) je přeložená na příslušnou verzi SQL (`is null` nebo `is not null`).  
+ Porovnání s literál `null` (`nothing`) se přeloží na odpovídající verzi SQL (`is null` nebo `is not null`).  
   
- Hodnota `null` (`nothing`) v kolaci je definovaný systémem SQL Server; [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nezmění kolace.  
+ Hodnota `null` (`nothing`) v kolaci je definován pomocí SQL serveru. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nedojde ke změně kolace.  
   
-### <a name="type-conversion-and-promotion"></a>Převod typů a povýšení  
- SQL podporuje širokou škálu implicitní převody ve výrazech. Podobné výrazy v jazyce C# by vyžadovaly explicitní přetypování. Příklad:  
+### <a name="type-conversion-and-promotion"></a>Převod typu a podpora  
+ SQL podporuje širokou škálu implicitních převodů ve výrazech. Podobně jako výrazy v C# by vyžaduje explicitní přetypování. Příklad:  
   
--   `Nvarchar` a `DateTime` typy je možné porovnávat v SQL bez žádné explicitní přetypování; C# vyžaduje explicitní převod.  
+-   `Nvarchar` a `DateTime` typy lze porovnat v SQL bez žádné explicitní přetypování; C# vyžaduje explicitní převod.  
   
--   `Decimal` je implicitně převést na `DateTime` v systému SQL. C# neumožňuje pro implicitní převod.  
+-   `Decimal` je implicitně převeden na `DateTime` v SQL. C#neumožňuje implicitní převod.  
   
- Typ priority v Transact-SQL se podobně liší od priority typu v C# protože základní sadu typů se liší. Mezi seznamy přednost ve skutečnosti není žádný vztah zrušte podmnožinu nebo nadmnožinou. Například porovnání `nvarchar` s `varchar` způsobí, že implicitní převod `varchar` výraz, který se `nvarchar`. Modul CLR poskytuje žádná ekvivalentní povýšení.  
+ Priorita typ příkazů jazyka Transact-SQL se liší od typu priority v C# protože základní sadu typů se liší. Mezi seznamy prioritu ve skutečnosti není žádný vztah vymazat dílčí/nadmnožinou. Například porovnávání `nvarchar` s `varchar` způsobí, že implicitní převod `varchar` výraz, který se `nvarchar`. CLR poskytuje žádná ekvivalentní povýšení.  
   
- Tyto rozdíly v jednoduchých případech způsobit CLR výrazy s přetypování být redundantní pro odpovídající výraz SQL. Je důležité, mezilehlých výsledků výrazu SQL může implicitně převést na typ, který nemá přesné protějšek v C#, a naopak. Celkově platí testování, ladění a ověření těchto výrazů přidá významné zatížení na uživatele.  
+ Tyto rozdíly v jednoduché případech způsobit výrazy CLR pomocí přetypování redundantní pro odpovídající výraz SQL. Důležitější je, mezivýsledků SQL výraz může být implicitně povýšen na typ, který nemá přesné protějšek v C#a naopak. Celkově testování, ladění a ověřování těchto výrazů přidá významné zatížení na uživatele.  
   
 ### <a name="collation"></a>Kolace  
- Příkaz Transact-SQL podporuje explicitní řazení jako poznámky typy řetězec znaků. Tyto kolace určit platnost určité porovnání. Porovnání dva sloupce s jinou kolací explicitní je například k chybě. Použití mnohem jednodušší typu řetězec CTS nezpůsobí takové chyby. Podívejte se na následující příklad:  
+ Příkaz Transact-SQL podporuje explicitní řazení jako poznámky a typy řetězce znaků. Tyto kolace určení platnosti určité porovnání. Například dva sloupce s jinou kolací explicitní porovnávání se o chybu. Použití typu řetězec mnohem jednodušší CTS nezpůsobí tyto chyby. Vezměte v úvahu v následujícím příkladu:  
   
 ```  
 create table T2 (  
@@ -144,31 +144,31 @@ Where Col1 = Col2
 -- Error, collation conflict.  
 ```  
   
- Ve skutečnosti dílčí kolace vytvoří *omezený typ* není nahraditelné.  
+ V důsledku toho se vytvoří klauzule kolace *s omezením pomocí specifikátoru typu* , který není zaměnitelné.  
   
- Pořadí řazení podobně, může být výrazně odlišné mezi systémy typu. Tento rozdíl ovlivňuje řazení výsledků. <xref:System.Guid> je na všech 16 bajtů seřazené podle lexicographic pořadí (`IComparable()`), zatímco T-SQL porovná identifikátory GUID v následujícím pořadí: node(10-15), clock-seq(8-9), time-high(6-7), time-mid(4-5), time-low(0-3). Toto uspořádání bylo provedeno v SQL 7.0 při generované NT identifikátory GUID měl takový octet příkaz. Přístup zajistit společně pocházejí identifikátory GUID, které jsou generované na stejném uzlu clusteru v postupném pořadí podle časového razítka. Přístup byl také užitečná pro vytváření indexů (vložení stát připojí místo náhodných IOs). Pořadí byl kódována později v systému Windows z důvodu aspekty ochrany osobních údajů, ale SQL musí udržovat kompatibilitu. Alternativní řešení je použití <xref:System.Data.SqlTypes.SqlGuid> místo <xref:System.Guid>.  
+ Pořadí řazení podobně, může být výrazně liší mezi systémy typu. Tento rozdíl se týká řazení výsledků. <xref:System.Guid> je ve slovníkovém pořadí seřazená podle všech 16 bajtů (`IComparable()`), zatímco T-SQL porovnává GUID v následujícím pořadí: node(10-15) clock-seq(8-9), time-high(6-7), time-mid(4-5), time-low(0-3). Toto uspořádání bylo provedeno SQL 7.0, kdy tyto objednávky octet NT generované identifikátory GUID. Tento přístup, že jsou splněné, GUID, které jsou generované na stejném uzlu clusteru pochází společně v postupném pořadí podle časového razítka. Přístup byl také užitečné pro vytváření indexů (vložení stát připojí namísto náhodného IOs). Pořadí se kódována později ve Windows z důvodu aspekty ochrany osobních údajů, ale SQL musí zachovat kompatibilitu. Alternativní řešení, je použít <xref:System.Data.SqlTypes.SqlGuid> místo <xref:System.Guid>.  
   
 ### <a name="operator-and-function-differences"></a>Operátor a rozdíly ve funkcích  
- Operátory a funkce, které jsou v podstatě srovnatelné mají podobný sémantiku. Příklad:  
+ Operátory a funkce, které jsou v podstatě srovnatelné mají mírně odlišnou sémantiku. Příklad:  
   
--   C# určuje sémantiku krátké okruh založený na lexikální pořadí operandy pro logické operátory `&&` a `||`. SQL na druhé straně je určená pro dotazy založené na sadě a proto poskytuje dává větší svobodu pro Optimalizátor k rozhodování o pořadí zpracování. Některé důsledky zahrnují následující:  
+-   C#Určuje sémantiku zkráceného vyhodnocení na základě lexikální pořadí operandy pro logické operátory `&&` a `||`. SQL na druhé straně je určena pro dotazy založené na sadě a proto poskytuje více volnosti pro Optimalizátor rozhodnout pořadí provádění. Důsledky patří následující:  
   
-    -   Sémanticky ekvivalentní překlad by vyžadovaly "`CASE` ... `WHEN` … `THEN`"vytvořit v systému SQL, aby se zabránilo změny pořadí spouštění operand.  
+    -   Sémanticky ekvivalentní překlad by vyžadovaly "`CASE` ... `WHEN` … `THEN`"vytvořit v SQL, aby se zabránilo změny pořadí spouštění operand.  
   
-    -   Přijít překlad, aby `AND` / `OR` operátory může způsobit neočekávané chyby, pokud výraz jazyka C# závisí na vyhodnocení Druhý operand založen na výsledek vyhodnocení první operand.  
+    -   Volný převod do kódu `AND` / `OR` operátory může způsobit neočekávané chyby, pokud C# výraz spoléhá na vyhodnocení druhého operandu je založeno na výsledku vyhodnocení prvním operandem.  
   
--   `Round()` funkce má jinou sémantiku [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] a v T-SQL.  
+-   `Round()` funkce má odlišnou sémantiku [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] a v T-SQL.  
   
--   Počáteční index pro řetězce je 0 v modulu CLR ale 1 v systému SQL. Proto všechny funkce, která má index musí překlad index.  
+-   Počáteční index pro řetězce je 0 v modulu CLR, ale 1 v SQL. Proto všechny funkce, které má index musí index překladu.  
   
--   Modul CLR podporuje operátor numerického zbytku (%) pro čísla s plovoucí desetinnou ale SQL neexistuje.  
+-   Modul CLR podporuje operátor numerického zbytku (%) pro čísla s plovoucí desetinnou ale SQL to neuvádí.  
   
--   `Like` Operátor efektivně získá automatické přetížení podle implicitní převody. I když `Like` operátor je definována pro provoz na typy řetězec znaků, implicitní převod z číselnými typy nebo `DateTime` typy umožňuje tyto typy jiné než řetězec, který se má použít s `Like` stejně dobře. V CTS neexistují porovnatelné implicitní převody. Proto je potřeba další přetížení.  
+-   `Like` Operátor efektivně získá automatické přetížení založené na implicitní převody. I když `Like` je operátor definován provozovat na znakové řetězce typy implicitní převod z číselných typů nebo `DateTime` umožňuje tyto typy jiné než řetězec, který se má použít s typy `Like` stejně. V CTS neexistují porovnatelné implicitní převody. Proto je potřeba další přetížení.  
   
     > [!NOTE]
-    >  To `Like` operátor chování platí pouze; pro C# jazyka Visual Basic `Like` – klíčové slovo je beze změny.  
+    >  To `Like` operátor chování platí pro C# pouze; Visual Basic `Like` – klíčové slovo je beze změny.  
   
--   Přetečení je vždy zaškrtnuto v systému SQL, ale musí být explicitně určena v jazyce C# (není v jazyce Visual Basic) předejdete wraparound. Zadané číslo sloupce C1, C2 a C3, pokud je C1 + C2 uložen v C3 (C3 nastavte aktualizace T = C1 + C2).  
+-   Přetečení vždy změnami SQL ale musí být explicitně zadán v C# (nejsou v jazyce Visual Basic), aby vrácení. Zadaný sloupcích s celými čísly C1, C2 a C3, pokud je C1 + C2 je uložen v C3 (C3 nastavte aktualizace T = C1 + C2).  
   
     ```  
     create table T3 (  
@@ -184,9 +184,9 @@ Where Col1 = Col2
  [!code-csharp[DLinqMismatch#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#5)]
  [!code-vb[DLinqMismatch#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#5)]  
   
--   SQL provede symetrický aritmetické operace zaokrouhlení při [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] používá banker je zaokrouhlení. Najdete v článku Knowledge Base 196652 další podrobnosti.  
+-   SQL provede symetrický aritmetické operace při zaokrouhlení [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] společnosti používá bankovní zaokrouhlení. Najdete v článku znalostní báze 196652 další podrobnosti.  
   
--   Ve výchozím nastavení pro běžné národní prostředí porovnání řetězců znaků se velká a malá písmena v systému SQL. V jazyce Visual Basic a v jazyce C# jsou malá a velká písmena. Například `s == "Food"` (`s = "Food"` v jazyce Visual Basic) a `s == "Food"` přispět odlišné výsledky, pokud `s` je `food`.  
+-   Ve výchozím nastavení pro běžné národní prostředí jsou porovnávání řetězců znaků velkých a malých písmen v SQL. V jazyce Visual Basic a v C#, jsou malá a velká písmena. Například `s == "Food"` (`s = "Food"` v jazyce Visual Basic) a `s == "Food"` mohou přinést různé výsledky, pokud `s` je `food`.  
   
     ```  
     -- Assume default US-English locale (case insensitive).  
@@ -202,7 +202,7 @@ Where Col1 = Col2
  [!code-csharp[DLinqMismatch#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#6)]
  [!code-vb[DLinqMismatch#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#6)]  
   
--   Operátory / funkce u argumenty typu znak pevnou délkou v systému SQL, že výrazně odlišné sémantiku než stejné operátory nebo funkce modulu CLR u <xref:System.String?displayProperty=nameWithType>. Může zobrazit také jako rozšíření popsané v části o typech chybějící příslušného problému.  
+-   Operátory nebo funkce použít pro argumenty typu znaků pevné délky v SQL mají výrazně odlišnou sémantiku než stejné operátory nebo funkce u CLR <xref:System.String?displayProperty=nameWithType>. To může také zobrazit jako rozšíření chybí problému protějšek popsáno v části o typech.  
   
     ```  
     create table T4 (  
@@ -218,7 +218,7 @@ Where Col1 = Col2
      [!code-csharp[DLinqMismatch#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#7)]
      [!code-vb[DLinqMismatch#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#7)]  
   
-     Podobný problém se vyskytuje v zřetězení řetězců.  
+     Podobný problém se vyskytuje pomocí zřetězení řetězců.  
   
     ```  
     create table T6 (  
@@ -230,12 +230,12 @@ Where Col1 = Col2
     -- Returns concatenation of padded strings "a   b   " and not "ab".  
     ```  
   
- Souhrnně convoluted překlad mohou být požadovány pro CLR výrazy a další operátory nebo funkce může být nutné vystavit funkcionalitu SQL.  
+ Stručně řečeno složitými překladu může být nezbytný pro CLR výrazy a další operátory nebo funkce může být nutné vystavit funkčnost SQL.  
   
 ### <a name="type-casting"></a>Přetypování typu  
- V jazyce C# a v systému SQL, uživatelé mohou přepsat výchozí sémantika výrazů pomocí explicitního typu přetypování (`Cast` a `Convert`). Tato funkce vystavení přes hranice typu systému však představuje dilematem. Přetypování SQL poskytující požadované sémantiku nelze přeložit snadno odpovídající jazyka C# přetypování. Na druhé straně nejde přetypování C# přeložit přímo na ekvivalentní SQL přetypování z důvodu neshody typu, chybějící svými protějšky a jiný typ přednost hierarchií. Je kompromis mezi vystavení Neshoda typu systému a ztrátě významné power výrazu.  
+ V C# a v SQL, můžou uživatelé potlačit výchozí sémantika výrazů pomocí přetypování explicitních typů (`Cast` a `Convert`). Vystavení tuto funkci systému hranice typu však představuje dilema. Přetypování SQL, která poskytuje požadovanou sémantiku nejde přeložit snadno do odpovídající C# přetypování. Na druhé straně C# přetypování nelze přeložit přímo na ekvivalentní SQL přetypovat z důvodu neshody typů, chybějící protějšky a hierarchie prioritu různých typů. Je kompromis mezi vystavení Neshoda typu systému a ztrátě významné sílu výrazu.  
   
- Přetypování typu v ostatních případech nemusí být potřeba v obou doménách pro ověření výrazu ale můžou požadovat, abyste měli jistotu, že je jiné než výchozí mapování správně použít pro výraz.  
+ V jiných případech nemusí být potřeba v obou domén pro ověření výrazu přetypování typu, ale může být vyžadováno, aby se zajistilo, že je správně použít jiné než výchozí mapování pro výraz.  
   
 ```  
 -- Example from "Non-default Mapping" section extended  
@@ -257,13 +257,13 @@ Where Col1 + Col2 > 4
 ```  
   
 ## <a name="performance-issues"></a>Problémy s výkonem  
- Monitorování účtů pro některé-modulu CLR SQL serveru rozdíly typu může resut k poklesu výkonu při překračování mezi CLR a SQL Server typu systémy. Příklady situací, což ovlivňuje výkon, patří:  
+ Monitorování účtů pro některé-modulu CLR SQL serveru rozdíly typu může vést ke snížení výkonu při přecházení mezi mezi CLR a systému SQL Server typu systémy. Příklady scénářů vliv na výkon, patří:  
   
--   Vynutit pořadí vyhodnocení pro logické a operátory  
+-   Vynutit pořadí vyhodnocování pro logické a/nebo operátory  
   
--   Generování SQL k vynucení pořadí predikátem vyhodnocení omezuje možnost Optimalizátor SQL.  
+-   Generování SQL k vynucení pořadí vyhodnocení predikátu omezuje možnost optimalizace SQL.  
   
--   Převody typů zda zavedená kompilátorem CLR nebo objekt relační implementací dotaz, může omezovat použití indexu.  
+-   Převody typů, ať už zavedené kompilátorem CLR nebo implementaci objektově-relační dotazu, může omezovat použití indexu.  
   
      Například  
   
@@ -277,7 +277,7 @@ Where Col1 + Col2 > 4
      [!code-csharp[DLinqMismatch#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqMismatch/cs/Program.cs#9)]
      [!code-vb[DLinqMismatch#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqMismatch/vb/Module1.vb#9)]  
   
-     Vezměte v úvahu překlad výrazu `(s = SOME_STRING_CONSTANT)`.  
+     Vezměte v úvahu překladu výrazu `(s = SOME_STRING_CONSTANT)`.  
   
     ```  
     -- Corresponding part of SQL where clause  
@@ -291,7 +291,7 @@ Where Col1 + Col2 > 4
     -- Cannot use the index for column Col1 for some implementations.  
     ```  
   
- Kromě sémantického rozdílů je důležité vzít v úvahu dopad na výkon při překročení meze mezi SQL serverem a systémy typu CLR. Pro velké sady dat můžete tyto problémy s výkonem určit, zda je aplikace nasadit.  
+ Kromě menší významové rozdíly je důležité vzít v úvahu dopad na výkon při přecházení mezi mezi SQL serverem a systémy typ CLR. Pro velké datové sady můžete tyto problémy s výkonem zjistit, zda je aplikace nasadit.  
   
 ## <a name="see-also"></a>Viz také  
  [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

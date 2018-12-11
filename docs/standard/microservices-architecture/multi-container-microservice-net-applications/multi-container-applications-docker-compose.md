@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 9ce8d64dbd481d30c6687b8747b2091733ea76db
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: dc9149cb1a17e3af66abd995fd2a2196109e0e05
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297176"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145251"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
 
@@ -448,11 +448,11 @@ V modelu mikroslužeb a kontejnerů jsou neustále spouštění kontejnerů. Typ
 
 Tým .NET má způsobem důležitou práci provést optimalizovaný kontejner rozhraní .NET Core a ASP.NET Core. Nejen .NET Core je jednoduché rozhraní s malé paměťové nároky; tým zaměřený na optimalizované Image Dockeru pro tři hlavní scénáře a publikované v registru Docker Hub v <span class="underline">microsoft/dotnet</span>, začínající s verzí 2.1:
 
-1.  **Vývoj**: kde se priorita je schopnost rychle interate a ladění změnám a velikosti je sekundární.
+1.  **Vývoj**: Pokud priorita je schopnost rychle interate a ladění změnám a velikosti je sekundární.
 
-2.  **Sestavení**: priorita je při kompilaci aplikace a obsahuje binární soubory a další závislosti optimalizovat binární soubory.
+2.  **Sestavení**: Priorita je při kompilaci aplikace a obsahuje binární soubory a další závislosti optimalizovat binární soubory.
 
-3.  **Produkční**: tam, kde je zaměřena tak rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsahu nedded ke spuštění aplikace.
+3.  **Produkční**: Pokud je fokus rychlé nasazení a spouštění kontejnerů, takže tyto Image jsou omezené na binární soubory a obsahu nedded ke spuštění aplikace.
 
 Za tím účelem týmu .NET nabízí tři základní varianty v [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) (v Docker Hubu):
 
@@ -471,5 +471,5 @@ Modul runtime imagí taky poskytuje automatické nastavení aspnetcore\_adresy U
     [*https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images*](https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images)
 
 >[!div class="step-by-step"]
-[Předchozí](data-driven-crud-microservice.md)
-[další](database-server-container.md)
+>[Předchozí](data-driven-crud-microservice.md)
+>[další](database-server-container.md)

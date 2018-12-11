@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: projektování grafu objektu (C#)'
+title: 'Postupy: Projektování grafu objektu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: f8e15e80a6914a8dcb848d91a13958f7e4175342
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cacbd05b7b03bfd56ce5a55dc088d3227788a3cb
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196080"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147512"
 ---
-# <a name="how-to-project-an-object-graph-c"></a>Postupy: projektování grafu objektu (C#)
+# <a name="how-to-project-an-object-graph-c"></a>Postupy: Projektování grafu objektu (C#)
 Toto téma ukazuje, jak do projektu, nebo vyplnit, grafu objektů ze souboru XML.  
   
 ## <a name="example"></a>Příklad  
@@ -62,16 +62,15 @@ class Address
   
     public override string ToString()  
     {  
-        StringBuilder sb = new StringBuilder();  
-        sb.Append(String.Format("Type: {0}\n",  
-          addressType == AddressUse.Shipping ? "Shipping" : "Billing"));  
-        sb.Append(String.Format("Name: {0}\n", name));  
-        sb.Append(String.Format("Street: {0}\n", street));  
-        sb.Append(String.Format("City: {0}\n", city));  
-        sb.Append(String.Format("State: {0}\n", state));  
-        sb.Append(String.Format("Zip: {0}\n", zip));  
-        sb.Append(String.Format("Country: {0}\n", country));  
-        return sb.ToString();  
+        StringBuilder sb = new StringBuilder();
+        sb.Append($"Type: {(addressType == AddressUse.Shipping ? "Shipping" : "Billing")}\n");
+        sb.Append($"Name: {name}\n");
+        sb.Append($"Street: {street}\n");
+        sb.Append($"City: {city}\n");
+        sb.Append($"State: {state}\n");
+        sb.Append($"Zip: {zip}\n");
+        sb.Append($"Country: {country}\n");
+        return sb.ToString();
     }  
 }  
   
@@ -110,16 +109,16 @@ class PurchaseOrderItem
   
     public override string ToString()  
     {  
-        StringBuilder sb = new StringBuilder();  
-        sb.Append(String.Format("PartNumber: {0}\n", partNumber));  
-        sb.Append(String.Format("ProductName: {0}\n", productName));  
-        sb.Append(String.Format("Quantity: {0}\n", quantity));  
-        sb.Append(String.Format("USPrice: {0}\n", usPrice));  
-        if (comment != null)  
-            sb.Append(String.Format("Comment: {0}\n", comment));  
-        if (shipDate != DateTime.MinValue)  
-            sb.Append(String.Format("ShipDate: {0:d}\n", shipDate));  
-        return sb.ToString();  
+        StringBuilder sb = new StringBuilder();
+        sb.Append($"PartNumber: {partNumber}\n");
+        sb.Append($"ProductName: {productName}\n");
+        sb.Append($"Quantity: {quantity}\n");
+        sb.Append($"USPrice: {usPrice}\n");
+        if (comment != null)
+            sb.Append($"Comment: {comment}\n");
+        if (shipDate != DateTime.MinValue)
+            sb.Append($"ShipDate: {shipDate:d}\n");
+        return sb.ToString();
     }  
 }  
   
@@ -153,25 +152,25 @@ class PurchaseOrder
   
     public override string ToString()  
     {  
-        StringBuilder sb = new StringBuilder();  
-        sb.Append(String.Format("PurchaseOrderNumber: {0}\n", purchaseOrderNumber));  
-        sb.Append(String.Format("OrderDate: {0:d}\n", orderDate));  
-        sb.Append("\n");  
-        sb.Append("Addresses\n");  
-        sb.Append("=====\n");  
-        foreach (Address address in addresses)  
-        {  
-            sb.Append(address);  
-            sb.Append("\n");  
-        }  
-        sb.Append("Items\n");  
-        sb.Append("=====\n");  
-        foreach (PurchaseOrderItem item in items)  
-        {  
-            sb.Append(item);  
-            sb.Append("\n");  
-        }  
-        return sb.ToString();  
+        StringBuilder sb = new StringBuilder();
+        sb.Append($"PurchaseOrderNumber: {purchaseOrderNumber}\n");
+        sb.Append($"OrderDate: {orderDate:d}\n");
+        sb.Append("\n");
+        sb.Append("Addresses\n");
+        sb.Append("=====\n");
+        foreach (Address address in addresses)
+        {
+            sb.Append(address);
+            sb.Append("\n");
+        }
+        sb.Append("Items\n");
+        sb.Append("=====\n");
+        foreach (PurchaseOrderItem item in items)
+        {
+            sb.Append(item);
+            sb.Append("\n");
+        }
+        return sb.ToString();
     }  
 }  
   

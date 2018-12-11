@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření zabezpečené relace'
+title: 'Postupy: Vytvoření zabezpečené relace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
 ms.openlocfilehash: c0e5281d227d343d8734809b27b57d8a2bead627
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297111"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147590"
 ---
-# <a name="how-to-create-a-secure-session"></a>Postupy: vytvoření zabezpečené relace
+# <a name="how-to-create-a-secure-session"></a>Postupy: Vytvoření zabezpečené relace
 S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, vazeb poskytovaných systémem Windows Communication Foundation (WCF) automaticky pomocí zabezpečených relací, pokud je povoleno zabezpečení zpráv.  
   
- Ve výchozím nastavení zabezpečených relací nepřežije webový server, který se recykluje. Po vytvoření zabezpečené relace, klient a služba mezipaměti klíč, který je přidružený k zabezpečené relace. Jak se vyměňují zprávy, se vyměňují pouze identifikátor pro klíč uložený v mezipaměti. Pokud se recykluje webový server, mezipaměť je také recyklovat, tak, aby webový server nemůže načíst uložené v mezipaměti klíče pro identifikátor. Pokud k tomu dojde, výjimka je vyvolána zpět do klienta. Zabezpečené relace, které používají token kontextu zabezpečení stavové (SCT) přežijí neumožňovala recyklaci, webový server. Další informace o používání stavové SCT v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+ Ve výchozím nastavení zabezpečených relací nepřežije webový server, který se recykluje. Po vytvoření zabezpečené relace, klient a služba mezipaměti klíč, který je přidružený k zabezpečené relace. Jak se vyměňují zprávy, se vyměňují pouze identifikátor pro klíč uložený v mezipaměti. Pokud se recykluje webový server, mezipaměť je také recyklovat, tak, aby webový server nemůže načíst uložené v mezipaměti klíče pro identifikátor. Pokud k tomu dojde, výjimka je vyvolána zpět do klienta. Zabezpečené relace, které používají token kontextu zabezpečení stavové (SCT) přežijí neumožňovala recyklaci, webový server. Další informace o používání stavové SCT v zabezpečené relaci v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
 ### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-one-of-the-system-provided-bindings"></a>Chcete-li určit, že služba používá zabezpečených relací pomocí jedné z vazeb poskytovaných systémem  
   
@@ -60,7 +60,7 @@ S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configu
   
 -   Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněny zabezpečenou relaci.  
   
-     Další informace o vytvoření vlastní vazby, naleznete v tématu [postupy: přizpůsobení vazeb System-Provided](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
+     Další informace o vytvoření vlastní vazby, naleznete v tématu [jak: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
   
      Následující příklad kódu používá konfigurace k určení vlastních vazeb této zprávy pomocí zabezpečenou relaci.  
   

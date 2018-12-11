@@ -1,15 +1,13 @@
 ---
-title: 'DotNet spusťte příkaz: rozhraní příkazového řádku .NET Core'
+title: Spusťte příkaz DotNet
 description: Spusťte příkaz dotnet poskytuje vhodnou možnost ke spuštění aplikace ze zdrojového kódu.
-author: mairaw
-ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: f560e6f795f00488818647a4b5c711dcf9d59dcd
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: effca44db19e512a01f858e7a149e3fc4fe076a2
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235491"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170246"
 ---
 # <a name="dotnet-run"></a>Spusťte příkaz DotNet
 

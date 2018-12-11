@@ -4,12 +4,12 @@ description: Azure Event Grid je řešení bez serveru pro spolehlivé doručov�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: b2507da61cbea3b4bdc51c6eecfe4d784737e924
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 240542014a34235aea9fd0f8162748749f23eacf
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404903"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143659"
 ---
 # <a name="event-grid"></a>Event Grid
 
@@ -98,9 +98,9 @@ Hlavní výhodou použití služby Event Grid je automatické zprávy vytvořen�
 |  | Microsoft.Resources.ResourceDeleteSuccess | Vyvolá se při úspěšné operaci odstranění prostředku. |
 |  | Microsoft.Resources.ResourceDeleteFailure | Vyvoláno, když selže operace odstranění prostředku. |
 | | Microsoft.Resources.ResourceDeleteCancel | Vyvoláno, když je zrušena operace odstranění prostředku. Tato událost se stane, když se zruší nasazení šablony. |
-| Úložiště objektů BLOB | Microsoft.Storage.BlobCreated | Vyvolá se při vytvoření objektu blob. |
+| Blob Storage | Microsoft.Storage.BlobCreated | Vyvolá se při vytvoření objektu blob. |
 | | Microsoft.Storage.BlobDeleted | Vyvolá se při odstranění objektu blob. |
-| Služba Event hubs | Microsoft.EventHub.CaptureFileCreated | Vyvoláno, když se vytvoří zachytávací soubor.
+| Event Hubs | Microsoft.EventHub.CaptureFileCreated | Vyvoláno, když se vytvoří zachytávací soubor.
 | IoT Hub | Microsoft.Devices.DeviceCreated | Publikuje, když je zařízení zaregistrované do služby IoT hub. |
 | | Microsoft.Devices.DeviceDeleted | Publikuje, když zařízení se odstraní ze služby IoT hub. |
 | Skupiny prostředků | Microsoft.Resources.ResourceWriteSuccess | Vyvoláno při prostředek vytvořit nebo aktualizovat operace proběhne úspěšně. |
@@ -142,5 +142,5 @@ V této kapitole jste se dozvěděli o platformě Azure bez serveru, který se s
 * [Práce s proxy služby Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
 
 >[!div class="step-by-step"]
-[Předchozí](logic-apps.md)
-[další](durable-azure-functions.md)
+>[Předchozí](logic-apps.md)
+>[další](durable-azure-functions.md)

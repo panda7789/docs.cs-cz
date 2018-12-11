@@ -1,120 +1,120 @@
 ---
-title: Typy C# a proměnné - přehled používání jazyka C#
-description: Další informace o definování typů a deklarace proměnné v jazyce C#
+title: C#Typy a proměnné – připravuje C# jazyka
+description: Další informace o definování typů a deklarace proměnné vC#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 752ff490ec91919dc54539c3e39f6d0c527d6260
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34b724dff17feb699d797e9ed9aea25d85d8c5a9
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33352132"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129516"
 ---
 # <a name="types-and-variables"></a>Typy a proměnné
 
-Existují dva druhy typy v jazyku C#: *typů hodnot* a *odkazové typy*. Proměnné typů hodnot obsahovat svá data přímo, zatímco proměnné odkazové typy ukládání odkazů na svá data, k tomu se označuje jako objekty. Pro odkazové typy je možné pro dvě proměnné tak, aby odkazovaly na stejný objekt a proto možná pro operace na jednu proměnnou ovlivnit objekt odkazují jiné proměnné. Typy hodnot proměnných každý mají své vlastní kopie dat, a není možné pro operace na jeden, který bude mít vliv na dalších (s výjimkou u `ref` a `out` proměnné parametrů).
+Existují dva druhy typů v jazyce C#: *typů hodnot* a *referenční typy*. Proměnné typů hodnoty přímo obsahovat svá data, zatímco proměnné typů odkazu ukládají odkazy na svá data, ten se označuje jako objekty. V případě typů odkazu je možné pro dvě proměnné odkazovat na stejný objekt a proto je možné pro operace v rámci jedné proměnné ovlivňovat objekt odkazovaný jinou proměnnou. S typy hodnot proměnných každý vlastní kopii dat a není možné pro operace se na nich se má vliv na jinou (s výjimkou v případě třídy `ref` a `out` proměnných parametrů).
 
-Typy hodnot C# na se dále dělí do *jednoduché typy*, *typy výčtu*, *struktura typy*, a *typy s možnou hodnotou Null hodnot*. Odkazové typy C# na se dále dělí do *třídy typy*, *typy rozhraní*, *pole typů*, a *delegovat typy*.
+C#pro typy hodnot se dále dělí do *jednoduché typy*, *typy výčtu*, *typy struktury*, a *typy s možnou hodnotou*. C#pro typy odkazů se dále dělí do *typy tříd*, *typy rozhraní*, *pole typů*, a *typy delegátů*.
 
-Následující část obsahuje přehled C# na typ systému.
+Následující text uvádí přehled C#na systém typů.
 
 * Typy hodnot
     - Jednoduché typy
-        * Podepsané integrální: `sbyte`, `short`, `int`, `long`
-        * Celé číslo bez znaménka: `byte`, `ushort`, `uint`, `ulong`
-        * Znaky znakové sady Unicode: `char`
-        * IEEE plovoucí desetinnou čárkou: `float`, `double`
-        * Decimal vysokou přesnost: `decimal`
+        * Podepsané celé číslo: `sbyte`, `short`, `int`, `long`
+        * Celočíselný typ bez znaménka: `byte`, `ushort`, `uint`, `ulong`
+        * Znaky Unicode: `char`
+        * S plovoucí desetinnou čárkou IEEE: `float`, `double`
+        * Desetinná přesnost vysoce: `decimal`
         * Logická hodnota: `bool`
-    - Typy výčtu
+    - Výčtové typy
         * Uživatelem definované typy formuláře `enum E {...}`
-    - Struktura typy
+    - Typy struktury
         * Uživatelem definované typy formuláře `struct S {...}`
-    - typy hodnot s povolenou hodnotou Null
+    - Typy s možnou hodnotou Null
         * Rozšíření všechny ostatní typy hodnot s `null` hodnota
 * Odkazové typy
     - Typy tříd
-        * Ultimate základní třídu všechny ostatní typy: `object`
-        * Řetězců v kódu Unicode: `string`
+        * Ultimate základní třídy pro všechny ostatní typy: `object`
+        * Řetězce Unicode: `string`
         * Uživatelem definované typy formuláře `class C {...}`
     - Typy rozhraní
         * Uživatelem definované typy formuláře `interface I {...}`
     - Typy polí
-        * Jeden a více dimenzí, například `int[]` a `int[,]`
-    - Typů delegátů.
+        * Jeden – a s multidimenzionálním, například `int[]` a `int[,]`
+    - Typy delegátů
         * Uživatelem definované typy formuláře `delegate int D(...)`
 
-Osm integrální typy poskytuje podporu pro hodnoty 8bitové, 16bitové, 32bitové a 64bitové verze v podobě podepsaný držitelem nebo bez znaménka.
+Osm integrální typy poskytují podporu pro hodnoty 8bitové, 16 bitů, 32bitová verze a 64bitová verze v podobě nebo bez znaménka.
 
-Existují dva typy s plovoucí desetinnou čárkou `float` a `double`, jsou reprezentované pomocí 32bitové jednoduchou přesností a 64-bit Dvojitá přesnost IEC 60559 formáty, v uvedeném pořadí.
+Dva typy s plovoucí desetinnou čárkou, `float` a `double`, jsou reprezentovány pomocí 32bitové jednoduchou přesností a 64-bit dvojité přesnosti IEC 60559 formátů, v uvedeném pořadí.
 
-`decimal` Typ je 128-bit datový typ, který je vhodný pro finanční a peněžní výpočty.
+`decimal` Typ je typ 128bitových dat. vhodný pro výpočty finančních a přepočty měn.
 
-C# na `bool` typ se používá k reprezentování logické hodnoty – hodnoty, které jsou buď `true` nebo `false`.
+C#společnosti `bool` typ se používá k reprezentaci logické hodnoty – hodnoty, které jsou buď `true` nebo `false`.
 
-Řetězec zpracování v jazyce C# a znak používá kódování Unicode. `char` Typ reprezentuje jednotka kódu UTF-16 a `string` typ reprezentuje pořadí jednotek kódu UTF-16.
+Znakové a řetězcové zpracování v jazyce C# používá kódování Unicode. `char` Typ představuje jednotku kódu UTF-16 a `string` typ představuje posloupnost jednotkami kódu kódování UTF-16.
 
-To shrnuje C# na číselné typy.
+To shrnuje C#pro číselné typy.
 
-* Podepsaný celé číslo
-    - `sbyte`: bity 8, rozsahu od -128 127
-    - `short`: 16 bitů, rozsahu od-32 768-32 767
-    - `int`  : 32 bity v rozsahu od--2,147,483,648 2 147 483 647
+* Podepsané celé číslo
+    - `sbyte`:  8 bitů v rozmezí -128-127
+    - `short`: 16 bitů, jsou v rozsahu od-32 768 32 767
+    - `int`  : 32 bitů, jsou v rozsahu od-2,147,483,648-2 147 483 647
     - `long` : 64 bitů, v rozsahu od –9,223,372,036,854,775,808 9,223,372,036,854,775,807
-* Celé číslo bez znaménka
-    - `byte`   : bity 8, v rozsahu od 0 – 255
+* Celočíselný typ bez znaménka
+    - `byte`   :  8 bitů v rozsahu od 0 – 255
     - `ushort` : 16 bitů v rozsahu od 0 – 65 535
     - `uint`   : 32 bity v rozsahu od 0 - 4 294 967 295
-    - `ulong`  : 64 bitů, v rozsahu od 0 - 18,446,744,073,709,551,615
-* Plovoucí desetinné čárky
-    - `float`  : v rozsahu od 1.5 × 10 32 bity<sup>−45</sup> -3,4 × 10<sup>38</sup>, přesností 7 číslic
-    - `double` : 64 bitů, v rozsahu od 5.0 × 10<sup>−324</sup> -1.7 × 10<sup>308</sup>, přesností na 15 číslic
+    - `ulong`  : 64 bitů v rozsahu od 0 - 18,446,744,073,709,551,615
+* Číslo s plovoucí desetinnou čárkou
+    - `float`  : 32 bity v rozsahu od 1,5 × 10<sup>−45</sup> -3.4 × 10<sup>38</sup>, 7 číslicemi přesnosti
+    - `double` : 64 bitů v rozsahu od 5.0 × 10<sup>−324</sup> -1.7 × 10<sup>308</sup>, 15 číslicemi přesnosti
 * Desetinné číslo
-    - `decimal` : 128 bitů, rozsah je alespoň –7.9 × 10<sup>−28</sup> -7.9 × 10<sup>28</sup>, s přesností alespoň 28 číslic
+    - `decimal` : 128 bitů, rozsah je alespoň –7.9 × 10<sup>−28</sup> -7.9 × 10<sup>28</sup>, s přesností na alespoň číslice 28
     
-Programy C#, používají *typ deklarace* k vytvoření nové typy. Deklarace typu Určuje název a členů nového typu. Pěti kategorií C# na typů jsou uživatelské: typy, typy struktura, rozhraní typy, typy výčtu tříd a delegovat typy.
+C# programy používají *typ deklarace* pro vytvoření nových typů. Deklarace typu Určuje název a členy nového typu. Pět C#společnosti jsou kategorie typů definovaných uživatelem: Třída typy, typy struktury, rozhraní typy, výčtové typy a typy delegátů.
 
-A `class` typ definuje datová struktura, která obsahuje datové členy (pole) a funkce členy (metody, vlastnosti a dalších). Typy tříd podporují jedna dědičnost a polymorfismus, mechanismy, které odvozené třídy můžete rozšířit a specialize základní třídy.
+A `class` typ definuje datová struktura, která obsahuje data (pole) a funkční členy (metody, vlastnosti a ostatní). Typy tříd podporují jednoduché dědičnosti a polymorfismu, mechanismy jeho prostřednictvím odvozené třídy můžete rozšířit a specialize základní třídy.
 
-A `struct` typ je podobný typu třídy v tomto reprezentuje struktura s členy data a funkce členy. Na rozdíl od třídy, ale struktury jsou typy hodnot a obvykle nevyžadují přidělení haldy. Struktura typy nepodporují dědičnosti definované uživatelem, a všechny typy struktura implicitně dědí od typu `object`.
+A `struct` typ je podobný typu třídy, v tom, že představuje strukturu dat a funkční členy. Na rozdíl od tříd však struktury jsou typy hodnot a obvykle nevyžadují přidělení haldy. Typy struktury nepodporují dědičnosti zadané uživatelem, a všechny typy struktury implicitně dědí z typu `object`.
 
-`interface` Typ definuje kontrakt jako pojmenovanou sadu funkce veřejné členy. A `class` nebo `struct` , která implementuje `interface` musí poskytovat implementace členů rozhraní funkce. `interface` Mohou dědit z více základní rozhraní a `class` nebo `struct` může implementovat více rozhraní.
+`interface` Typ definuje kontrakt jako pojmenovanou sadu funkce veřejné členy. A `class` nebo `struct` , který implementuje `interface` nezajistil implementace členů rozhraní funkce. `interface` Může dědit z více základních rozhraních a `class` nebo `struct` může implementovat více rozhraní.
 
-A `delegate` typ reprezentuje odkazy na metody s návratový typ a konkrétní parametr seznamu. Delegáti umožňují považovat za entit, které může být přiřazena k proměnné a předány jako parametry metody. Delegáti jsou obdobou typy funkce poskytované funkčních jazyků. Jsou taky podobné koncept ukazatelů na funkce najít v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, jsou delegáti objektově orientované a bezpečnost typů.
+A `delegate` typ představuje odkazy na metody se seznamem konkrétních parametrů a návratovým typem. Delegáty umožňují považovat za entity, které může být přiřazena k proměnné a předány jako parametry metod. Delegáti jsou obdobou na typy funkcí poskytovaných funkčních jazyků. Jsou také podobný koncept ukazatelů na funkce v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce, Delegáti jsou objektově orientované a typově bezpečné.
 
-`class`, `struct`, `interface` a `delegate` typy všechny obecné typy podpory, které lze nastavit parametry s jinými typy.
+`class`, `struct`, `interface` a `delegate` typy všechny obecné typy podpory, které mohou být parametrizovány s jinými typy.
 
-`enum` Typ je typu distinct s pojmenované konstanty. Každý `enum` typ má základní typ, který musí mít jednu z osm integrální typy. Sada hodnot, které `enum` typ je stejný jako sadu hodnot základního typu.
+`enum` Je typ odlišný typ se pojmenovaných konstant. Každý `enum` typ má základní typ, který musí mít jednu z osmi integrální typy. Sada hodnot, které `enum` typ je stejný jako sadu hodnot ze základního typu.
 
-C# podporuje jeden a více trojrozměrným pole libovolného typu. Na rozdíl od typů uvedených výše typy polí nemají deklarovat, než mohou být použity. Typy polí místo toho se vytvářejí pomocí následujících název typu do složených závorek. Například `int[]` je jednorozměrná pole `int`, `int[,]` je dvourozměrná pole `int`, a `int[][]` je jednorozměrná pole jednorozměrná pole `int`.
+C# podporuje jeden a více trojrozměrným pole libovolného typu. Na rozdíl od výše uvedené typy typy polí nemusí být deklarované před použitím. Místo toho typy pole jsou vytvořeny podle názvu typu do složených závorek. Například `int[]` je jednorozměrné pole `int`, `int[,]` je dvourozměrné pole `int`, a `int[][]` je jednorozměrné pole jednorozměrné pole `int`.
 
-Typy s možnou hodnotou Null hodnot také nemají deklarovat, než mohou být použity. Pro jednotlivé typy hodnot neumožňující hodnotu Null `T` neexistuje odpovídající typ s možnou hodnotou Null hodnotu `T?`, která může pojmout hodnotou další `null`. Například `int?` je typu, který může obsahovat všechny 32bitové celé číslo nebo hodnotu `null`.
+Typy s možnou hodnotou také nemusíte předtím, než je možné deklarovat. Pro jednotlivé typy neumožňující hodnotu `T` neexistuje odpovídající typ s možnou hodnotou Null `T?`, který může obsahovat další hodnotu `null`. Například `int?` je typ, který může pojmout všechny 32bitové celé číslo nebo hodnota `null`.
 
-Systém typů jazyka C# na je jednotná tak, aby hodnota jakéhokoli typu lze zacházet jako `object`. Všechny typy v jazyku C# přímo nebo nepřímo odvozená z `object` typ, třídy a `object` je ultimate základní třída všech typů. Hodnoty odkazové typy jsou považovány za objekty jednoduše tak, že zobrazení hodnoty jako typ `object`. Hodnoty typů hodnot se považují za objekty provedením *zabalení* a *rozbalení operations*. V následujícím příkladu se `int` hodnota je převedena na `object` a zpět znovu do `int`.
+C#v systému typů je jednotný tak, že lze považovat hodnotu libovolného typu `object`. Všechny typy v jazyce C# přímo nebo nepřímo odvozuje od `object` typ, třídy a `object` je ultimate základní třída všech typů. Hodnoty odkazové typy jsou považovány za objekty jednoduše tak, že zobrazení hodnoty jako typ `object`. Hodnoty typy hodnot jsou považovány za objekty pomocí provádí *zabalení* a *rozbalení operace*. V následujícím příkladu `int` hodnota je převedena na `object` a zpět znovu na `int`.
 
 [!code-csharp[Boxing](../../../samples/snippets/csharp/tour/types-and-variables/Program.cs#L1-L10)]
 
-Pokud je hodnota typu hodnoty převést na typ `object`, `object` instance, označované taky jako "pole", je přidělená k uložení hodnota a hodnota se zkopíruje do tohoto pole. Na druhé straně, když `object` odkaz je převést na typ hodnoty, je provedena kontrola odkazovaná `object` je pole správný typ hodnoty, a pokud je kontrola proběhne úspěšně, hodnota v poli se zkopíruje.
+Pokud je hodnota typu hodnoty převést na typ `object`, `object` instance, také nazývané "pole", je přidělená k uchování hodnoty a zkopírování hodnoty do tohoto pole. Naopak, když `object` odkaz je přetypován na typ hodnoty, která se provede kontrola odkazované `object` je pole typu správné hodnoty a v případě zaškrtnutí bude úspěšné, je hodnota v poli zkopírována.
 
-C# pro systém jednotná typů efektivně znamená, že typů hodnot se může stát objekty "na vyžádání." Z důvodu sjednocení, pro obecné účely knihovny, které používají typ `object` lze použít s typy odkazů a hodnotových typů.
+C#společnosti unified typ systému efektivně znamená, že typy hodnot se může stát objekty "na vyžádání." Z důvodu sjednocení pro obecné účely knihoven, které používají typ `object` jde použít s typy odkazů a typy hodnot.
 
-Existuje několik typů z *proměnné* v jazyce C#, včetně polí, elementy pole, místní proměnné a parametry. Proměnné představují umístění úložiště, a každá proměnná má typ, který určuje, jaké hodnoty mohou být uložené v proměnné, jak je uvedeno níže.
+Existuje několik typů z *proměnné* v jazyce C#, včetně polí, prvky pole, místní proměnné a parametry. Umístění úložiště představují proměnné a každá proměnná má typ, který určuje, jaké hodnoty můžou být uložené v proměnné, jak je znázorněno níže.
 
-* Typ hodnoty hodnotu Null
-    - Hodnota přesný typu
-* Typ s možnou hodnotou Null hodnoty
-    - A `null` hodnotu nebo hodnotu přesný typu
+* Typ neumožňující hodnotu
+    - Hodnota tohoto přesné typu
+* Typ s možnou hodnotou Null
+    - A `null` hodnotu nebo hodnotu přesně podle tohoto typu
 * odkazy objektů
-    - A `null` odkazu, odkaz na objekt jakéhokoli typu odkaz nebo odkaz na zabalené hodnoty libovolného typu hodnota
-* Typ třídy
-    - A `null` odkazu, odkaz na instanci typu třídy nebo odkaz na instanci třídy odvozené od typu – třída
+    - A `null` odkazu, odkaz na objekt typu odkazu nebo odkaz zabalené hodnoty libovolného typu hodnoty
+* Typ třídy.
+    - A `null` odkazu, odkaz na instanci daného typu třídy nebo odkaz na instanci třídy odvozené z typu třídy
 * Typ rozhraní
-    - A `null` odkazu, odkaz na instanci typu třídy, který implementuje rozhraní typu nebo odkaz na hodnotu typu, který implementuje rozhraní typu zabalené hodnoty
-* Typ pole.
-    - A `null` odkazu, odkaz na instanci typu pole nebo odkaz na instanci typu kompatibilní pole
+    - A `null` odkazu, odkaz na instanci typu třídy, která implementuje rozhraní typu nebo odkaz na hodnotu zabalený typ hodnoty, která implementuje rozhraní typu
+* Typ pole
+    - A `null` odkazu, odkaz na instanci daného typu pole nebo odkaz na instanci typu kompatibilní pole
 * Typ delegáta
     - A `null` odkaz nebo odkaz na instanci typu kompatibilní delegáta
 
 >[!div class="step-by-step"]
-[Předchozí](program-structure.md)
-[další](expressions.md)
+>[Předchozí](program-structure.md)
+>[další](expressions.md)

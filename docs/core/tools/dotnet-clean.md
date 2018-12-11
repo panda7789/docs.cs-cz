@@ -1,15 +1,13 @@
 ---
-title: DotNet vyčistit příkaz – rozhraní příkazového řádku .NET Core
+title: čištění příkaz DotNet
 description: Příkaz dotnet clean odstraní aktuální adresář.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: 5553e4b4423a2d824c05caf7114c47b5f1c20477
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.date: 12/04/2018
+ms.openlocfilehash: a25b7930794795e3dff5051a8ca1dd1b9c261dfd
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988332"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169856"
 ---
 # <a name="dotnet-clean"></a>DotNet čisté
 
@@ -21,17 +19,10 @@ ms.locfileid: "45988332"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 ```
 dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
-```
-dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-v|--verbosity]
-dotnet clean [-h|--help]
-```
----
 
 ## <a name="description"></a>Popis
 
@@ -45,62 +36,40 @@ Projekt MSBuild pro čištění. Pokud není zadán soubor projektu, MSBuild vyh
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
+* **`-c|--configuration {Debug|Release}`**
 
-`-c|--configuration {Debug|Release}`
+  Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je pouze při čištění, pokud jste zadali během doby sestavení vyžaduje.
 
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je pouze při čištění, pokud jste zadali během doby sestavení vyžaduje.
+* **`-f|--framework <FRAMEWORK>`**
 
-`-f|--framework <FRAMEWORK>`
+  [Framework](../../standard/frameworks.md) , který byl zadán v okamžiku sestavení. Rozhraní musí být definován v [soubor projektu](csproj.md). Pokud jste zadali rozhraní v okamžiku sestavení, je nutné zadat rozhraní framework při čištění souboru.
 
-[Framework](../../standard/frameworks.md) , který byl zadán v okamžiku sestavení. Rozhraní musí být definován v [soubor projektu](csproj.md). Pokud jste zadali rozhraní v okamžiku sestavení, je nutné zadat rozhraní framework při čištění souboru.
+* **`-h|--help`**
 
-`-h|--help`
+  Vytiskne krátký nápovědy pro příkaz.
 
-Vytiskne krátký nápovědy pro příkaz.
+* **`-o|--output <OUTPUT_DIRECTORY>`**
 
-`-o|--output <OUTPUT_DIRECTORY>`
+  Adresář, ve kterém je umístí výstupy sestavení. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
 
-Adresář, ve kterém je umístí výstupy sestavení. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
+* **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-`-r|--runtime <RUNTIME_IDENTIFIER>`
+  Vyčištění výstupní složky zadaného modulu runtime. Používá se při [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) byl vytvořen. Možnost dostupné od verze rozhraní .NET Core 2.0 SDK.
 
-Vyčištění výstupní složky zadaného modulu runtime. Používá se při [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) byl vytvořen.
+* **`-v|--verbosity <LEVEL>`**
 
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené úrovně jsou q [uiet], m [inimal], n [ormal], d [etailed] a diag [nostic].
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
-
-`-c|--configuration {Debug|Release}`
-
-Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`. Tato možnost je pouze při čištění, pokud jste zadali během doby sestavení vyžaduje.
-
-`-f|--framework <FRAMEWORK>`
-
-[Framework](../../standard/frameworks.md) , který byl zadán v okamžiku sestavení. Rozhraní musí být definován v [soubor projektu](csproj.md). Pokud jste zadali rozhraní v okamžiku sestavení, je nutné zadat rozhraní framework při čištění souboru.
-
-`-h|--help`
-
-Vytiskne krátký nápovědy pro příkaz.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Adresář, ve kterém je umístí výstupy sestavení. Zadejte `-f|--framework <FRAMEWORK>` přepnout s přepínačem výstupní adresář, pokud jste zadali rozhraní, když byl projekt sestaven.
-
-`-v|--verbosity <LEVEL>`
-
-Nastaví úroveň podrobností příkazu. Povolené úrovně jsou q [uiet], m [inimal], n [ormal], d [etailed] a diag [nostic].
-
----
+  Nastaví úroveň podrobností příkazu. Povolené úrovně jsou q [uiet], m [inimal], n [ormal], d [etailed] a diag [nostic].
 
 ## <a name="examples"></a>Příklady
 
-Vyčištění výchozí sestavení projektu:
+* Vyčištění výchozí sestavení projektu:
 
-`dotnet clean`
+  ```console
+  dotnet clean
+  ```
 
-Vyčistěte projekt vyvíjené v konfiguraci vydané verze:
+* Vyčistěte projekt vyvíjené v konfiguraci vydané verze:
 
-`dotnet clean --configuration Release`
+  ```console
+  dotnet clean --configuration Release
+  ```

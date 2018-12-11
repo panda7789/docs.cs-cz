@@ -1,27 +1,26 @@
 ---
 title: Pokyny k návrhu architektury
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - libraries, .NET Framework class library
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: df2ccf3d778e26e16937554304ae847f624cfec0
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+author: KrzysztofCwalina
+ms.openlocfilehash: 736069926a2a3fdc4856a51c5226f725b22c1d5f
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085633"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147603"
 ---
 # <a name="framework-design-guidelines"></a>Pokyny k návrhu architektury
 Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat s rozhraním .NET Framework. Cílem je pomoct knihovny návrhářů tím, že poskytuje jednotný programovací model, který je nezávislý na programovací jazyk se používá pro vývoj pro zajištění konzistence rozhraní API a snadné použití. Doporučujeme postupovat podle následujících pokynů návrhu, při vytváření tříd a komponent, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě má vliv na produktivitu vývojářů a odrazuje od přijetí.  
   
  Pokyny jsou uspořádané jako jednoduchý doporučení předponu podmínky `Do`, `Consider`, `Avoid`, a `Do not`. Tyto pokyny jsou určeny k pomohou návrhářům tříd knihovny pochopit kompromisy mezi různými řešeními. Můžou nastat situace, kdy návrh dobrý knihovna vyžaduje, aby že porušují tyto pokyny k návrhu. Takové případy by měl být vzácné a je důležité, abyste měli vymazat a poutavé důvod svého rozhodnutí.  
   
- Tyto pokyny jsou výňatkem z knihy *pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition*, Krzysztof Cwalina a Brad Abrams.  
+ Tyto pokyny jsou výňatkem z knihy *pokyny k návrhu architektury: Konvence, Idiomy a vzory pro knihovny opakovaně použitelných .NET, 2nd Edition*, Krzysztof Cwalina a Brad Abrams.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)  
@@ -47,7 +46,7 @@ Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat 
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

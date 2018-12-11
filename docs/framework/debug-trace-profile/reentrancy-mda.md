@@ -15,38 +15,38 @@ helpviewer_keywords:
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5aea903a7b16491a84998d8290270044e167b79f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc2e725ecb2208256f6d0e025d4cc79339f385cd
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387858"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130114"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
-`reentrancy` Pomocník spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy nebyla provedena předchozí přepínač ze spravovaného na nativní kódu prostřednictvím uspořádání přechodu.  
+`reentrancy` Pomocníka spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy se neprovedla předchozí přepínač ze spravovaného do nativního kódu prostřednictvím uspořádání přechodu.  
   
 ## <a name="symptoms"></a>Příznaky  
- Je poškozena halda objekt nebo jiné závažné chyby dochází při přechodu z nativní do spravovaného kódu.  
+ Objekt haldy je poškozený nebo jiné závažné chyby dochází při přesunu z nativní do spravovaného kódu.  
   
- Vláken, která přepínat mezi nativního a spravovaného kódu v obou směrech musíte provést uspořádání přechodu. Však určité body rozšiřitelnosti nízké úrovně v operačním systému, jako je například obslužná rutina výjimky vectored, povolit přepínače ze spravovaných do nativního kódu bez uspořádání přechodu.  Tyto přepínače jsou pod kontrolou operačního systému, a nikoli podle běžného ovládacího prvku language runtime (CLR).  Nativní kód, který provede uvnitř tyto body rozšiřitelnosti musí Vyhněte se volání zpět do spravovaného kódu.  
+ Vlákna, která přepínat mezi nativním a spravovaným kódem v obou směrech musíte provést uspořádání přechodu. Určitých bodů rozšiřitelnosti nízké úrovně v operačním systému, jako je například vektorové obslužné rutiny výjimek, ale umožní přepínače ze spravované do nativního kódu bez uspořádání přechodu.  Tyto přepínače jsou v rámci ovládacího prvku operačního systému, nikoli ovládány language runtime (CLR).  Nativní kód, který se spustí v těmto rozšiřujícím bodům musí Vyhněte se volání zpět do spravovaného kódu.  
   
 ## <a name="cause"></a>příčina  
- Bod rozšiřitelnost nízké úrovně operačního systému, jako je například obslužná rutina výjimky vectored, aktivoval při provádění spravovaného kódu.  Aplikační kód, který lze vyvolat pomocí tohoto bodu rozšíření se pokouší o zpětného volání do spravovaného kódu.  
+ Bodu rozšiřitelnosti nízké úrovně operačního systému, jako je například vektorové obslužné rutiny výjimek, je aktivován při provádění spravovaného kódu.  Kód aplikace, která je volána pomocí tohoto bodu rozšiřitelnosti se pokouší volat zpět do spravovaného kódu.  
   
- Tento problém je způsoben vždy kódu aplikace.  
+ Tento problém je způsoben vždy kódem aplikace.  
   
 ## <a name="resolution"></a>Rozlišení  
- Zkontrolujte trasování zásobníku pro vlákno, které tento MDA aktivoval.  Vlákno se pokouší o nelegálního volání do spravovaného kódu.  Trasování zásobníku byste měli odhalit kódu aplikace pomocí tohoto bodu rozšiřitelnost, kód operačního systému, který poskytuje tento bod rozšiřitelnost a spravovaný kód, který byl přerušen bodem rozšíření.  
+ Prozkoumejte trasování zásobníku pro vlákno, které se má toto MDA aktivováno.  Vlákno se pokouší o neoprávněně volat do spravovaného kódu.  Trasování zásobníku by měl odhalit kódu aplikace pomocí tohoto bodu rozšiřitelnost, kód operačního systému, který poskytuje tento bod rozšiřitelnost a spravovaný kód, který bylo přerušeno bodu rozšiřitelnosti.  
   
- Například uvidíte MDA za pokus o volání spravovaného kódu z uvnitř obslužné rutiny výjimek vectored aktivuje.  V zásobníku uvidíte zpracování kód a některé spravovaného kódu, která aktivuje výjimku, jako výjimek operačního systému <xref:System.DivideByZeroException> nebo <xref:System.AccessViolationException>.  
+ Uvidíte MDA aktivováno při pokusu o volání spravovaného kódu z uvnitř vektorové obslužné rutiny výjimek.  V zásobníku uvidíte zpracování kódu a spravovaného kódu aktivuje výjimku, jako výjimek operačního systému <xref:System.DivideByZeroException> nebo <xref:System.AccessViolationException>.  
   
- V tomto příkladu je na správné řešení implementace obslužná rutina výjimky vectored zcela v nespravovaném kódu.  
+ V tomto příkladu je na správné řešení úplně implementace vektorové obslužné rutiny výjimek v nespravovaném kódu.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
- MDA hlásí, že probíhá pokus o neplatné opětovné zadání.  Zkontrolujte zásobníku podprocesu určit, proč k této situaci a jak problém vyřešit. Následuje příklad výstupu.  
+ MDA hlásí, že probíhá pokus o neplatné opětovné zadání.  Prozkoumejte zásobníku vlákna, chcete-li zjistit, proč dochází k tomu a pokyny k vyřešení problému. Tady je ukázkový výstup.  
   
 ```  
 Additional Information: Attempting to call into managed code without   
@@ -67,9 +67,9 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód například příčiny <xref:System.AccessViolationException> vyvolání.  Ve verzích systému Windows, které podporují vectored výjimek způsobí obslužná rutina výjimky spravované vectored k volání.  Pokud `reentrancy` MDA je povoleno, MDA aktivují během pokusu o volání `MyHandler` z operačního systému vectored výjimky podporu kód pro zpracování.  
+ Následující příklad způsobí, že kód <xref:System.AccessViolationException> vyvolání.  Ve verzích Windows, která podporuje zpracování výjimek vektorové to způsobí, že spravované vektorové obslužné rutiny výjimek má být volána.  Pokud `reentrancy` MDA je povoleno, MDA se aktivují během pokusu o volání `MyHandler` z operačního systému vektorové výjimky podporu kód pro zpracování.  
   
-```  
+```csharp
 using System;  
 public delegate int ExceptionHandler(IntPtr ptrExceptionInfo);  
   

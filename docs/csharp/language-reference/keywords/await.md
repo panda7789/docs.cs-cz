@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 7ca7554c81b7e8b54665700869c4f7788ebc3dbb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: deae39781b000aa8e08fa3bda29519d280aadb79
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511942"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147382"
 ---
 # <a name="await-c-reference"></a>await – – operátor (Referenční dokumentace jazyka C#)
 `await` Operátor je použít pro úkol v asynchronní metodě vložte bodu pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  
@@ -30,7 +30,7 @@ ms.locfileid: "43511942"
 [!code-csharp[await-example](../../../../samples/snippets/csharp/language-reference/keywords/await/await1.cs)]  
 
 > [!IMPORTANT]
->  Kompletní příklad naleznete v tématu [návod: přístup k webu pomocí Async a Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
+>  Kompletní příklad naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
   
 Jak je znázorněno v předchozím příkladu, pokud `await` se použije na výsledek volání metody, která vrací `Task<TResult>`, potom je typ `await` výraz je `TResult`. Pokud `await` se použije na výsledek volání metody, která vrací `Task`, potom je typ `await` výraz je `void`. Následující příklad ukazuje rozdíl.  
   
@@ -65,7 +65,7 @@ Následující příklad vrátí celkový počet znaků na stránkách, jejichž
 
 [!code-csharp[await-example](../../../../samples/snippets/csharp/language-reference/keywords/await/await2.cs)]  
 
-Protože použití `async` a `await` v položce aplikace bodu se nepodporuje, nemůžeme použít `async` atribut `Main` metoda, ani použít jsme await `GetPageLengthsAsync` volání metody. Jsme zajistit, aby `Main` metoda čeká na dokončení načtením hodnoty asynchronní operace <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> vlastnost. Pro úlohy, které nesmí vracet hodnotu, můžete volat <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metody. 
+V předchozím příkladu C# 7.1, která podporuje [ `async` `Main` metoda](../../programming-guide/main-and-command-args/index.md). Protože starší C# verze nepodporují vstupní body aplikace, které vracejí <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>, nelze použít `async` modifikátor `Main` metoda a operátoru await `GetPageLengthsAsync` volání metody. V takovém případě můžete zajistit, aby `Main` metoda čeká na dokončení načtením hodnoty asynchronní operace <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> vlastnost. Pro úlohy, které nesmí vracet hodnotu, můžete volat <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metody. Informace o tom, jak vyberte verzi jazyka najdete v tématu [vyberte C# jazykovou verzi](../configure-language-version.md).
 
 ## <a name="see-also"></a>Viz také:  
 - [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../csharp/programming-guide/concepts/async/index.md)   

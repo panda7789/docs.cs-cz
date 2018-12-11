@@ -1,15 +1,15 @@
 ---
 title: Úložiště balíčků modulu runtime
-description: Toto téma vysvětluje úložiště balíčků modulu runtime a cíl manifestů, které používá .NET Core.
+description: Další informace o použití úložiště balíčků modulu runtime pro cílové manifestů, které používá .NET Core.
 author: bleroy
-ms.author: mairaw
 ms.date: 08/12/2017
-ms.openlocfilehash: df2776ac2e4a2eed7f54b3031f13ab41fc714aae
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: seodec18
+ms.openlocfilehash: a190e148715547fde29d3a852183ea4d75065e79
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511581"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53170350"
 ---
 # <a name="runtime-package-store"></a>Úložiště balíčků modulu runtime
 

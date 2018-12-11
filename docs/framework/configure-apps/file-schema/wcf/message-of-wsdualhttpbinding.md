@@ -2,12 +2,12 @@
 title: '&lt;message&gt; – &lt;wsDualHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 75101744-eed8-4d61-91f4-5fc4473a21f2
-ms.openlocfilehash: 46f81f6d8a3b272d0eb8b2deb9ee22818b957c6d
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 494ac3c2db209ba66a2b2c32402d1dce4f65036e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850332"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53145186"
 ---
 # <a name="ltmessagegt-of-ltwsdualhttpbindinggt"></a>&lt;message&gt; – &lt;wsDualHttpBinding&gt;
 Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
@@ -68,7 +68,7 @@ Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../.
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
+|Žádná|To umožňuje službě komunikovat s anonymní klienty. Na straně služeb to znamená, že služba nevyžaduje žádné pověření klienta. Na straně klienta to znamená, že klient neposkytuje žádné pověření klienta.|  
 |Windows|Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. Pokud `negotiateServiceCredential` atribut je nastaven na `true`, buď provede vyjednávání SSPI nebo aplikace pomocí protokolu Kerberos (interoperabilní standard).|  
 |UserName|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. WCF nepodporuje odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv. V důsledku toho WCF vynutí, že při použití pověření uživatelských jmen je zabezpečený přenos. Výsledkem interoperabilní exchange nebo -interoperabilní vyjednávání na základě tohoto režimu přihlašovacích údajů `negotiateServiceCredential` atribut.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pokud se používá režim zabezpečených zpráv a `negotiateServiceCredential` atribut je nastaven na `false`, klient musí být zřízená s certifikátem služby.|  

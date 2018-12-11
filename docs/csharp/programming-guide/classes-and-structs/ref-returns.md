@@ -4,12 +4,12 @@ description: Zjistěte, jak definovat a používat ref návratové a místní ho
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: ca518b124bc95a5bc3a2910d9c3d9e5338e1b464
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6399079e17a53ac5bf283eaa5c799964360350f4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193757"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53146063"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Návratové a místní referenční hodnoty
 
@@ -125,4 +125,4 @@ Tento druhý verze je mnohem efektivnější s delší pořadí ve scénářích
 ## <a name="see-also"></a>Viz také:
 
 - [REF – klíčové slovo](../../language-reference/keywords/ref.md)  
-- [Psát bezpečný kód efektivní](../../../csharp/write-safe-efficient-code.md)
+- [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)

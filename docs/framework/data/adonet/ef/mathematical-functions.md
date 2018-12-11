@@ -2,12 +2,12 @@
 title: Matematické funkce
 ms.date: 03/30/2017
 ms.assetid: b040c7cb-156d-40f2-9152-61065b18148c
-ms.openlocfilehash: e6c58d781d7138f8295f2d0a2f0db110ad4b1dd6
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 63f83532c399f77e268913da3198327345b9c2ee
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837307"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143672"
 ---
 # <a name="mathematical-functions"></a>Matematické funkce
 
@@ -19,7 +19,7 @@ Provede funkci absolutní hodnotu.
 
 **Argumenty**
 
-`expression`: Celé `Int32`, `Int64`, `Double`, nebo `Decimal`.
+`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`.
 
 **Návratová hodnota**
 
@@ -35,7 +35,7 @@ Vrátí hodnotu Arkus kosinus určeného výrazu.
 
 **Argumenty**
 
-`expression`: ODPOVĚĎ `Double`.
+`expression`: A `Double`.
 
 **Návratová hodnota**
 
@@ -51,7 +51,7 @@ Vrátí hodnotu Arkus sinus určeného výrazu.
 
 **Argumenty**
 
-`expression`: ODPOVĚĎ `Double`.
+`expression`: A `Double`.
 
 **Návratová hodnota**
 
@@ -67,7 +67,7 @@ Vrátí hodnotu Arkus tangens zadaného číselný výraz.
 
 **Argumenty**
 
-`expression`: ODPOVĚĎ `Double`.
+`expression`: A `Double`.
 
 **Návratová hodnota**
 
@@ -83,7 +83,7 @@ Vrací úhel v radiánech, jehož tangens odpovídá mezi zadaným dvou numerick
 
 **Argumenty**
 
-`expression`: ODPOVĚĎ `Double`.
+`expression`: A `Double`.
 
 **Návratová hodnota**
 
@@ -99,7 +99,7 @@ Převede zadaný výraz na nejmenší celé číslo, který je větší než neb
 
 **Argumenty**
 
-`expression`: Celé `Int32`, `Int64`, `Double`, nebo `Decimal`.
+`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`.
 
 **Návratová hodnota**
 
@@ -116,7 +116,7 @@ Vypočítá trigonometrických kosinus úhlu určeného v radiánech.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -132,7 +132,7 @@ Vypočítá trigonometrických kotangens úhlu určeného v radiánech.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -148,7 +148,7 @@ Vrátí odpovídající úhel ve stupních.
 
 **Argumenty** 
 
-`expression`: Celé `Int32`, `Int64`, `Double`, nebo `Decimal`. 
+`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`. 
 
 **Návratová hodnota** 
 
@@ -164,7 +164,7 @@ Vypočítá exponenciální hodnotu zadaného číselného výrazu.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -178,7 +178,7 @@ Převede zadaný výraz na největší celé číslo menší než nebo rovna k n
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -195,7 +195,7 @@ Vypočítá přirozený logaritmus zadaného `float` výrazu.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -211,7 +211,7 @@ Vrátí logaritmus o základu 10 zadaného `Double` výrazu.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -258,7 +258,7 @@ Převede stupně na radiány.
 
 **Argumenty** 
 
-`expression`: Celé `Int32`, `Int64`, `Double`, nebo `Decimal`. 
+`expression`: `Int32`, `Int64`, `Double`, Nebo `Decimal`. 
 
 **Návratová hodnota** 
 
@@ -326,7 +326,7 @@ Vypočítá trigonometrických sinus úhlu určeného v radiánech a vrátí `Do
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -340,7 +340,7 @@ Vrátí druhou odmocninu z určeného výrazu.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -354,7 +354,7 @@ Vrátí druhou mocninu, z určeného výrazu.
 
 **Argumenty** 
 
-`expression`: ODPOVĚĎ `Double`. 
+`expression`: A `Double`. 
 
 **Návratová hodnota** 
 
@@ -384,8 +384,8 @@ Vypočítá jeho tangens zadaného výrazu.
 
 Další informace o matematických funkcí, které SqlClient podporuje najdete v dokumentaci pro verzi systému SQL Server, který jste zadali v manifestu zprostředkovatele, SqlClient:  
   
-**SQL Server 2005:** [matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms177516(v=sql.90))  
-**SQL Server 2008:** [matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms177516(v=sql.100))  
-**SQL Server 2012 a novější:** [matematické funkce (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql?view=sql-server-2017)   
+**SQL Server 2005:** [Matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms177516(v=sql.90))  
+**SQL Server 2008:** [Matematické funkce (Transact-SQL)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms177516(v=sql.100))  
+**SQL Server 2012 a novější:** [Matematické funkce (Transact-SQL)](/sql/t-sql/functions/mathematical-functions-transact-sql?view=sql-server-2017)   
 
  [SqlClient pro funkce Entity Framework](sqlclient-for-ef-functions.md)

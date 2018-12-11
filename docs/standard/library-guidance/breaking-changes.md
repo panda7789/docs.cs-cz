@@ -4,14 +4,14 @@ description: Doporučení osvědčených postupů pro navigaci rozbíjející zm
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 83c01fdad7d836877bf692b87eeb0230219ded36
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: e0e62cda1b7475cd5d1f8bcd3558dc2fe7f6e07c
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349157"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148499"
 ---
-# <a name="breaking-changes"></a>Rozbíjející změny v
+# <a name="breaking-changes"></a>Změny způsobující chyby
 
 Je důležité pro knihovnu .NET najít rovnováhu mezi stabilitu pro stávající uživatele a inovace v budoucnosti. Další knihovny autoři Refaktoring a jiný pohled kód, dokud je ideálním řešením, ale vaše stávající uživatele dopadem na dřívější kód má negativní dopad, zejména pro knihovny nízké úrovně.
 
@@ -94,6 +94,10 @@ public class Document
 }
 ```
 
+**✔️ ZVAŽTE** typy a metody s <xref:System.ObsoleteAttribute> po neomezenou dobu v knihovnách úrovni střední a nízká.
+
+> Odebírá se rozhraní API je binární soubor narušující změna. Vzhledem k tomu udržování zastaralých typů a metod, pokud jejich údržba je s nízkými náklady a velké množství technického dluhu nepřidává do své knihovny. Není odebírání typů a metod může pomoci zabránit nejhorším scénáře uvedených výše.
+
 ## <a name="see-also"></a>Viz také:
 
 * [Verze a aktualizace důležité informace pro vývojáře v C#](../../csharp/whats-new/version-update-considerations.md)
@@ -101,4 +105,4 @@ public class Document
 * [CoreFX narušující Změna pravidla](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/breaking-change-rules.md)
 
 >[!div class="step-by-step"]
-[Předchozí](./versioning.md)
+>[Předchozí](versioning.md)

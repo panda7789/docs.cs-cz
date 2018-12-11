@@ -1,6 +1,6 @@
 ---
 title: Doporučené postupy pro výjimky
-ms.date: 03/30/2017
+ms.date: 12/05.2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -9,26 +9,22 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b6aa1049c531550687a2c6289ccd87e763ca2f58
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fb2da0d37a3c72941e9ffdac52a6fdf24ec71b3a
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199627"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149585"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
 Za účelem zamezení pádu aplikace zpracovává dobře navržená aplikace výjimky a chyby. Tato část popisuje osvědčené postupy pro zpracování a vytváření výjimek.
 
-## <a name="use-trycatchfinally-blocks"></a>Pomocí konstrukce try/catch/finally bloky
+## <a name="use-trycatchfinally-blocks-to-recover-from-errors-or-release-resources"></a>Pomocí konstrukce try/catch/finally bloky zotavit z chyb nebo uvolnění prostředků
 
-Použití `try` / `catch` / `finally` okolo kódu, který může potenciálně generovat výjimku. 
+Použití `try` / `catch` okolo kódu, který může potenciálně generovat výjimku ***a*** kódu můžete obnovit z této výjimky. V `catch` blokuje vždy nutné výjimky seřazovat od nejvíce odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Více odvozeného výjimky nejsou zpracovávány klauzule catch, který předchází klauzuli catch. výjimky základní třídy. Pokud váš kód nelze obnovit z výjimky, nezachycujte tuto výjimku. Povolte další metody v zásobníku volání, pokud je to možné obnovit.
 
-V `catch` blokuje vždy nutné výjimky seřazovat od nejkonkrétnější po nejméně konkrétní.
-
-Použití `finally` bloku pro vyčištění prostředků, zda lze obnovit nebo ne.
+Vyčistěte prostředky přidělené s oběma `using` příkazy, nebo `finally` bloky. Preferovat `using` příkazy automaticky vyčistit prostředky, pokud jsou výjimky vyvolány. Použití `finally` bloky chcete vyčistit prostředky, které Neimplementujte <xref:System.IDisposable>. V kódu `finally` claus je téměř vždy spuštěn i v případě, že jsou výjimky vyvolány.
 
 ## <a name="handle-common-conditions-without-throwing-exceptions"></a>Zpracování běžných podmínek bez vyvolání výjimky
 
@@ -58,11 +54,11 @@ Třída může poskytnout metody nebo vlastnosti, které vám umožní vyhnout v
 [!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
 [!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]  
 
-Jiný způsob, jak zabránit výjimky je k vrácení hodnoty null pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením hodnoty null v těchto případech minimalizujete dopad výkonu pro aplikaci.
+Jiný způsob, jak zabránit výjimky je vrátit `null` pro nejběžnější případy chyb namísto vyvolání výjimky. Za nejběžnější případ chyby lze považovat běžný tok řízení. Vrácením `null` v těchto případech minimalizujete dopad výkonu pro aplikaci.
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Vyvolat výjimky místo vrácení chybový kód
 
-Výjimky Ujistěte se, že selhání nedojde protože volání, že kód nezaškrtli návratový kód. 
+Výjimky Ujistěte se, že selhání nedojde protože volání, že kód nezaškrtli návratový kód.
 
 ## <a name="use-the-predefined-net-exception-types"></a>Použijte předdefinované typy výjimek .NET
 
@@ -90,7 +86,7 @@ Použijte aspoň tři běžné konstruktory při vytváření vlastních tříd 
   
 * <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, která přijímá řetězcovou zprávu a vnitřní výjimku.  
   
-Příklad najdete v tématu [jak: Create User-defined výjimky](how-to-create-user-defined-exceptions.md).
+Příklad najdete v tématu [jak: Vytvořit uživatelsky definovaných výjimek](how-to-create-user-defined-exceptions.md).
 
 ## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>Ujistěte se, že data výjimky je k dispozici, když je kód spuštěn vzdáleně
 
@@ -132,7 +128,7 @@ Pro třídu je běžné vyvolat stejnou výjimku z různých míst v rámci p�
   
 V některých případech je vhodnější použít konstruktor k vytvoření výjimky. Příkladem je třídy globálních výjimek, jako <xref:System.ArgumentException>.
 
-## <a name="clean-up-intermediate-results-when-throwing-an-exception"></a>Při vyvolání výjimky odstraňte dílčí výsledky
+## <a name="restore-state-when-methods-dont-complete-due-to-exceptions"></a>Obnovit stav, když metody není dokončit z důvodu výjimky
 
 Volající by měl předpokládat, že při vyvolání výjimky z metody nedojde k žádným vedlejším účinkům. Například pokud máte kód, který převede peníze odebrání z jednoho účtu a uložení do jiného účtu, a je vyvolána výjimka při provádění uložení, nechcete stažení zůstávají v platnosti.
 
@@ -144,6 +140,8 @@ public void TransferFunds(Account from, Account to, decimal amount)
     to.Deposit(amount);
 }
 ```
+
+Výše uvedené metody přímo nevyvolá žádné výjimky, ale musí být napsaný defenzivně, takže pokud se nezdaří operace uložení, stažení je obrácený.
 
 Jedním ze způsobů tuto situaci je zachytit žádné výjimky vyvolané uložení transakce a vrátit zpět stažení.
 
@@ -172,8 +170,8 @@ catch (Exception ex)
     throw new TransferFundsException("Withdrawal failed", innerException: ex)
     {
         From = from,
-    To = to,
-    Amount = amount
+        To = to,
+        Amount = amount
     };
 }
 ```

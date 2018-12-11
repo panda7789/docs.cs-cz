@@ -4,12 +4,12 @@ description: Další informace o jazyce C# úrovni jazyka asynchronní programov
 author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: e562ef9fffa5bf77fd5dee1cb19cee0a2492b986
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 12ecadb3fa3c6760af4884626f68b47ead2754d5
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349092"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126494"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -29,7 +29,7 @@ Pro kód vázané na procesor je `await` operace, která je spuštěna ve vlákn
 
 Existují jiné způsoby, jak přístup asynchronní kód než `async` a `await` uvedených v článku TAP propojené výše, ale tento dokument se zaměřuje na úrovni jazyka konstrukce od této chvíle dál.
 
-### <a name="io-bound-example-downloading-data-from-a-web-service"></a>Příklad vstupně-výstupní: stahování dat z webové služby
+### <a name="io-bound-example-downloading-data-from-a-web-service"></a>Vstupně-výstupní příklad: Stahování dat z webové služby
 
 Budete muset stáhnout data z webové služby při stisknutí tlačítka, ale nechcete, aby k blokování vlákna uživatelského rozhraní. To lze provést jednoduše takto:
 
@@ -49,7 +49,7 @@ downloadButton.Clicked += async (o, e) =>
 
 A to je všechno! Kód vyjadřují záměr (stahuje se některá data asynchronně) bez získání energií v práci s objekty úloh.
 
-### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Příklad vázané na procesor: Probíhá výpočet pro hru
+### <a name="cpu-bound-example-performing-a-calculation-for-a-game"></a>Příklad vázané na procesor: Výpočty pro hru
 
 Dejme tomu, že píšete mobilní hru, ve kterém stisknutím tlačítka může způsobit poškození na mnoho nepřátel na obrazovce.  Výpočty poškození může být nákladné a dělat na vlákně UI by vytvořit hru zobrazí pozastavit, jak se provádí výpočet!
 
@@ -108,7 +108,7 @@ Tady jsou dva otázek, na které je třeba požádat předtím, než začnete ps
     
 Pokud je pracovní máte **vstupně-výstupní**, použijte `async` a `await` *bez* `Task.Run`.  Můžete *by neměla* použít Task Parallel Library.  Důvodem je popsaný v [asynchronní v článku hloubky](../standard/async-in-depth.md).
 
-Pokud je pracovní máte **vázané na procesor** a péči o rychlosti odezvy, použijte `async` a `await` ale nejde vytvořit podřízený práce vypnout v jiném vlákně *s* `Task.Run`.  Pokud práce je vhodný pro souběžnost a paralelismu, měli byste také zvážit, pomocí Task Parallel Library.
+Pokud je pracovní máte **vázané na procesor** a péči o rychlosti odezvy, použijte `async` a `await` ale nejde vytvořit podřízený práce vypnout v jiném vlákně *s* `Task.Run`.  Pokud práce je vhodný pro souběžnost a paralelismu, měli byste také zvážit použití [Task Parallel Library](../standard/parallel-programming/task-parallel-library-tpl.md).
 
 Kromě toho by měla vždy měření provádění kódu.  Například může být pro vás sami v situaci, kdy není nákladné práce vázané na procesor dostatečně ve srovnání s režií přepnutí kontextu při multithreadingu.  Každý volbou jeho kompromis, a měli byste vybrat správné kompromis pro vaše konkrétní potřeby.
 

@@ -4,11 +4,11 @@ description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
 ms.openlocfilehash: 521c6edfa7163219ea86c6fb8444bc95859c9aa1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199906"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53126638"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -158,7 +158,7 @@ namespace WebAPIClient
 }
 ``` 
 
-Výše uvedený kód umístěte do nového souboru s názvem "repo.cs". Tato verze třídy představuje nejjednodušší způsob zpracování dat JSON. Název třídy a název člena shodovat s názvy používanými v paketu JSON, namísto následující převody C#. Opravíte to tím, že poskytuje některé atributy konfigurace později. Tato třída ukazuje další důležitou funkcí JSON serializace a deserializace: všechna pole v paketu JSON jsou součástí této třídy.
+Výše uvedený kód umístěte do nového souboru s názvem "repo.cs". Tato verze třídy představuje nejjednodušší způsob zpracování dat JSON. Název třídy a název člena shodovat s názvy používanými v paketu JSON, namísto následující převody C#. Opravíte to tím, že poskytuje některé atributy konfigurace později. Tato třída ukazuje další důležitou funkcí JSON serializace a deserializace: Ne všechna pole v paketu JSON jsou součástí této třídy.
 Serializátor JSON bude ignorovat informace, které není součástí typu třídy se používají.
 Tato funkce usnadňuje vytváření typů, které pracují s pouze podmnožinu polí v paketu JSON.
 

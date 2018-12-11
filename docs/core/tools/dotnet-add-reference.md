@@ -1,31 +1,29 @@
 ---
-title: DotNet – přidat odkaz na příkaz - .NET Core rozhraní příkazového řádku
-description: Dotnet přidat odkaz na příkaz poskytuje vhodnou možnost přidat odkazy na projekt na projekt.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: 3398d4dc7bf70eaadcdd92269dbd3b784079c22d
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+title: DotNet – přidat odkaz na – příkaz
+description: Příkaz dotnet add příkaz odkaz poskytuje vhodnou možnost pro přidání odkazů typu projekt na projekt.
+ms.date: 12/04/2018
+ms.openlocfilehash: 8df9fa3c9469f74b27a9cb8120936f03532b016c
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696959"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169758"
 ---
-# <a name="dotnet-add-reference"></a>DotNet – přidání odkazu
+# <a name="dotnet-add-reference"></a>DotNet – přidat odkaz
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet add reference` -Přidá odkazy na projekt na projekt (P2P).
+`dotnet add reference` -Přidá odkazy typu projekt projekt (P2P).
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 `dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
 
 ## <a name="description"></a>Popis
 
-`dotnet add reference` Příkaz poskytuje vhodnou možnost přidat odkazy na projekt na projekt. Po spuštění příkazu [ `<ProjectReference>` ](/visualstudio/msbuild/common-msbuild-project-items) prvky jsou přidány do souboru projektu.
+`dotnet add reference` Příkaz poskytuje vhodnou možnost přidat odkazy na projekt do projektu. Po spuštění příkazu [ `<ProjectReference>` ](/visualstudio/msbuild/common-msbuild-project-items) prvky jsou přidány do souboru projektu.
 
 ```xml
 <ItemGroup>
@@ -37,34 +35,40 @@ ms.locfileid: "34696959"
 
 ## <a name="arguments"></a>Arguments
 
-`PROJECT`
+* **`PROJECT`**
 
-Určuje soubor projektu. Pokud není zadaný, hledá příkaz aktuální adresář pro jednu.
+  Určuje soubor projektu. Pokud není zadán, příkaz vyhledá v aktuálním adresáři pro jeden.
 
-`PROJECT_REFERENCES`
+* **`PROJECT_REFERENCES`**
 
-Chcete-li přidat odkazuje na projekt na projekt (P2P). Zadejte jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systémech UNIX/Linux.
+  Chcete-li přidat odkazuje na projekt na projekt (P2P). Zadejte jeden nebo více projektů. [Vzory glob](https://en.wikipedia.org/wiki/Glob_(programming)) jsou podporovány v systémech založené na systému Unix/Linux.
 
 ## <a name="options"></a>Možnosti
 
-`-h|--help`
+* **`-h|--help`**
 
-Vytiskne krátké nápovědy pro příkaz.
+  Vytiskne krátký nápovědy pro příkaz.
 
-`-f|--framework <FRAMEWORK>`
+* **`-f|--framework <FRAMEWORK>`**
 
-Přidá odkazy na projekt jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
+  Přidá odkazy na projekt jenom při cílení na konkrétní [framework](../../standard/frameworks.md).
 
 ## <a name="examples"></a>Příklady
 
-Přidáte odkaz na projekt:
+* Přidáte odkaz na projekt:
 
-`dotnet add app/app.csproj reference lib/lib.csproj`
+  ```console
+  dotnet add app/app.csproj reference lib/lib.csproj
+  ```
 
-Přidání více odkazy na projekt na projekt v aktuálním adresáři:
+* Přidání více odkazů projektu na projekt v aktuálním adresáři:
 
-`dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
+  ```console
+  dotnet add reference lib1/lib1.csproj lib2/lib2.csproj
+  ```
 
-Přidání více odkazů projektu pomocí vzoru expanze názvů v systému Linux nebo Unix:
+* Přidání více odkazů projektu pomocí vzoru podpory zástupných znaků v systému Linux/Unix:
 
-`dotnet add app/app.csproj reference **/*.csproj`
+  ```console
+  dotnet add app/app.csproj reference **/*.csproj
+  ```

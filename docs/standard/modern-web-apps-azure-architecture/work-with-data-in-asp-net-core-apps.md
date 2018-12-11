@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 069bfacd1ae08b5c84d6e304b2f12f18e1eecb22
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: efadf3a0d216197b05d6cd4cfe94ee3eb24bb18e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49122848"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53147171"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -200,7 +200,7 @@ Je první objekt DbContext \_catalogContext a druhý je DbContext v rámci \_int
 >
 > - **EF Core dokumentace**  
 >   <https://docs.microsoft.com/ef/>
-> - **EF Core: Souvisejících dat**  
+> - **EF Core: Související Data**  
 >   <https://docs.microsoft.com/ef/core/querying/related-data>
 > - **Vyhněte se opožděné načtení entit v aplikacích ASPNET**  
 >   <https://ardalis.com/avoid-lazy-loading-entities-in-asp-net-applications>
@@ -440,5 +440,5 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 Ukládání do mezipaměti může výrazně zlepšit výkon webových stránek, které opakovaně požádat o stejné hodnoty z databáze. Je nutné měřit výkon přístupu a stránky dat před použitím ukládání do mezipaměti a ukládání do mezipaměti použít pouze pokud vznikne taková potřeba pro zlepšení. Ukládání do mezipaměti používá webové prostředky systémové paměti a zvyšují složitost aplikace, takže je důležité, že jste neoptimalizovat předčasně tímto způsobem.
 
 >[!div class="step-by-step"]
-[Předchozí](develop-asp-net-core-mvc-apps.md)
-[další](test-asp-net-core-mvc-apps.md)
+>[Předchozí](develop-asp-net-core-mvc-apps.md)
+>[další](test-asp-net-core-mvc-apps.md)
