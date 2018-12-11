@@ -1,5 +1,6 @@
 ---
-title: Řídicí sekvence znaků v regulárních výrazech
+title: Řídicí sekvence znaků v regulárních výrazech .NET
+description: Další informace o speciální znaky a uvozený uvozovacím znakem znaků v regulárních výrazech .NET.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,13 @@ helpviewer_keywords:
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9b390b1d3d935ad045d59dd6b3d2e42cdbe82dd7
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.custom: seodec18
+ms.openlocfilehash: 2643e6ec1edf9cd69d7530def1e2605e1af20de4
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837164"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152358"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících akcí:  
@@ -50,7 +52,7 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících
 |`\` *nnn*|Odpovídá znaku ASCII, kde *nnn* se skládá ze dvou nebo tří číslic, které představují osmičkový kód znaku. Například `\040` představuje znak mezery. Tento konstruktor je interpretováno jako zpětný odkaz, pokud má pouze jednu číslici (například `\2`) nebo pokud to odpovídá číslu zachycující skupiny. (Viz [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
 |`\x` *nn*|Odpovídá znaku ASCII, kde *nn* je dvouciferný šestnáctkový kód znaku.|  
 |`\c` *X*|Odpovídá znaku ASCII ovládací prvek, kde X je písmeno kontrolního znaku. Například `\cC` je CTRL-C.|  
-|`\u` *nnnn*|Odpovídá jednotku kódu UTF-16, jehož hodnota je *nnnn* šestnáctkové. **Poznámka:** znak escape jazyka Perl 5, který se používá k určení kódování Unicode nepodporuje rozhraní .NET. Znak escape jazyka Perl 5 má formát `\x{` *####* `…}`, kde *####* `…` je řada šestnáctkových číslic. Místo toho použijte `\u` *nnnn*.|  
+|`\u` *nnnn*|Odpovídá jednotku kódu UTF-16, jehož hodnota je *nnnn* šestnáctkové. **Poznámka:**  Znak escape jazyka Perl 5, který se používá k určení kódování Unicode nepodporuje rozhraní .NET. Znak escape jazyka Perl 5 má formát `\x{` *####* `…}`, kde *####* `…` je řada šestnáctkových číslic. Místo toho použijte `\u` *nnnn*.|  
 |`\`|Pokud následuje znak, který nebyl rozpoznán jako řídicí znak, odpovídá danému znaku. Například `\*` odpovídá hvězdičku (*) a je stejný jako `\x2A`.|  
   
 ## <a name="an-example"></a>Příklad  

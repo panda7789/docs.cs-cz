@@ -1,5 +1,6 @@
 ---
-title: Zpětné navracení v regulárních výrazech
+title: Zpětné navracení v regulárních výrazech .NET
+description: Zjistěte, jak řídit zpětné navracení v regulárních výrazů porovnávání vzorů.
 ms.date: 11/12/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,12 +19,13 @@ helpviewer_keywords:
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 343249f5411d4e5c2335446e7c892b989c8033f2
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.custom: seodec18
+ms.openlocfilehash: 3a61c65b108cba6bb256949a120afc76b58949f2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297347"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53130088"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
 <a name="top"></a> Ke zpětnému navracení dochází, pokud vzor regulárních výrazů obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), a modul regulárních výrazů se vrátí k předchozímu uloženému stavu pokračujte jeho Vyhledání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
@@ -133,7 +135,7 @@ ms.locfileid: "52297347"
 > [!IMPORTANT]
 >  Pokud se regulární výraz spoléhá na mechanismus navracení, doporučujeme vždy nastavit interval časového limitu.  
   
- A <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> výjimka označuje, že modul regulárních výrazů se nepodařilo najít shodu v rámci určeného časového limitu intervalu, ale neobjasňuje, proč byla výjimka vydána. Důvodem může být nadměrné používání mechanismu navracení, je však také možné, že nastavený interval časového limitu byl příliš krátký vzhledem k zatížení systému v době vyvolání výjimky. Při zpracování výjimek můžete zrušit další shody se vstupním řetězcem nebo zvýšit interval časového limitu a opakovat operaci porovnání.  
+ A <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> výjimka označuje, že modul regulárních výrazů se nepodařilo najít shodu v rámci zadaného časového limitu, ale neobjasňuje, proč byla výjimka vydána. Důvodem může být nadměrné používání mechanismu navracení, je však také možné, že nastavený interval časového limitu byl příliš krátký vzhledem k zatížení systému v době vyvolání výjimky. Při zpracování výjimek můžete zrušit další shody se vstupním řetězcem nebo zvýšit interval časového limitu a opakovat operaci porovnání.  
   
  Například následující kód volá <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> konstruktor k vytvoření instance <xref:System.Text.RegularExpressions.Regex> objekt s hodnotou časového limitu jedné sekundy. Vzor regulárního výrazu `(a+)+$`, který odpovídá jednou nebo několika sekvencemi jednoho nebo více znaků "a" na konci řádku, je v souladu s nadměrného používání mechanismu navracení. Pokud <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> je vyvolána výjimka, zvýší příklad hodnotu časového limitu až po dobu tří sekund. Poté zruší pokus o shodu se vzorem.  
   
