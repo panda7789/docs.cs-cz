@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 36dbf725dfcd6fefe6482f7de69daea9356d3d07
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3094c82382292be3295238ef9cf2687f6eeb98f8
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087696"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149884"
 ---
 # <a name="configuring-http-and-https"></a>Konfigurace HTTP a HTTPS
 Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS. Nastavení HTTP/HTTPS se konfigurují pomocí Internetové informační služby (IIS) nebo pomocí nástroje příkazového řádku. Když je služba WCF hostované na nastavení služby IIS protokolu HTTP nebo HTTPS lze nastavit v rámci služby IIS (pomocí nástroje inetmgr.exe). Pokud je služba WCF v místním prostředí, HTTP nebo HTTPS je nakonfigurováno pomocí nástroje příkazového řádku.  
@@ -32,7 +32,7 @@ Služby WCF a klienti mohou komunikovat prostřednictvím protokolu HTTP a HTTPS
   
  Následující příklad zobrazuje syntaxi příkazu Httpcfg s `set urlacl` možnost  
   
-```  
+```console  
 httpcfg set urlacl /u {http://URL:Port/ | https://URL:Port/} /aACL  
 ```  
   
@@ -42,14 +42,14 @@ httpcfg set urlacl /u {http://URL:Port/ | https://URL:Port/} /aACL
   
  Následuje příklad použití tohoto příkazu.  
   
-```  
+```console  
 httpcfg.exe set urlacl /u http://myhost:8000/ /a "O:AOG:DAD:(A;;RPWPCCDCLCSWRCWDWOGA;;;S-1-0-0)"  
 ```  
   
 ### <a name="running-windows-vista-windows-server-2008-r2-or-windows-7"></a>Systém Windows Vista, Windows Server 2008 R2 nebo Windows 7  
  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], Windows Server 2008 R2 nebo Windows 7, pomocí nástroje Netsh.exe. Následuje příklad použití tohoto příkazu.  
   
-```  
+```console  
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user  
 ```  
   
@@ -63,7 +63,7 @@ netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
   
  Certifikáty jsou uloženy v centralizované úložiště podle IP adresy a portu počtu připojení. Speciální IP adresu 0.0.0.0 odpovídá jakékoli IP adresu místního počítače. Všimněte si, že úložiště certifikátů nerozlišuje mezi adresy URL na základě cesty. Služby se stejnou IP adresu a port kombinací musí sdílet certifikáty, i v případě, že cesta v adrese URL pro služby se liší.  
   
- Podrobné pokyny najdete v tématu [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Podrobné pokyny najdete v tématu [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 ## <a name="configuring-the-ip-listen-list"></a>Konfigurace seznamu vlastností listenurimode nastavenou IP  
  Rozhraní API HTTP serveru vytvoří vazbu jenom na IP adresu a port jakmile se uživatel zaregistruje adresy URL. Ve výchozím nastavení rozhraní API serveru HTTP váže na port v adrese URL pro všechny IP adresy počítače. Konflikt nastane, pokud aplikace, které nepoužívají rozhraní API serveru HTTP byl dříve spojen daná kombinace IP adresy a portu. Seznam naslouchání IP umožňuje služeb WCF pro existovat současně s aplikací, které používají port pro některé z IP adresy počítače. Pokud IP naslouchání seznam obsahuje všechny položky, rozhraní API HTTP serveru pouze vytvoří vazbu tyto IP adresy, které určuje seznamu. Úprava seznamu naslouchání IP vyžaduje oprávnění správce.  
@@ -71,14 +71,14 @@ netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 ### <a name="running-windows-xp-or-server-2003"></a>Běžící Windows XP nebo Server 2003  
  Použijte nástroj httpcfg k úpravě seznamu naslouchání IP, jak je znázorněno v následujícím příkladu. [Dokumentace nástrojů podpory Windows Support Tools](https://go.microsoft.com/fwlink/?LinkId=94840) popisuje syntaxe pro nástroj httpcfg.exe.  
   
-```  
+```console  
 httpcfg.exe set iplisten -i 0.0.0.0:8000  
 ```  
   
 ### <a name="running-windows-vista-or-windows-7"></a>Systémem Windows Vista nebo Windows 7  
  Úprava seznamu naslouchání IP použijte nástroj netsh, jak je znázorněno v následujícím příkladu.  
   
-```  
+```console  
 netsh http add iplisten ipaddress=0.0.0.0:8000  
 ```  
   
@@ -92,4 +92,4 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WSDualHttpBinding>  
- [Postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
+ [Jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)

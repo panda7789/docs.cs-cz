@@ -1,15 +1,15 @@
 ---
-title: 'Návod: Generování SQL'
+title: 'Průvodce: Generování SQL'
 ms.date: 03/30/2017
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
 ms.openlocfilehash: cbc400671e5194494772580e77316af07b5669ff
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52672014"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149039"
 ---
-# <a name="walkthrough-sql-generation"></a>Návod: Generování SQL
+# <a name="walkthrough-sql-generation"></a>Průvodce: Generování SQL
 Toto téma ukazuje, jak probíhá generování SQL [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0). Následující dotaz Entity SQL používá model, který je součástí ukázkového zprostředkovatele:  
   
 ```  
@@ -105,7 +105,7 @@ LEFT OUTER JOIN [dbo].[InternationalOrders] AS [Extent5] ON [Extent4].[OrderID] 
    ) AS [Join3] ON [Extent1].[ProductID] = [Join3].[ProductID]  
 ```  
   
-## <a name="first-phase-of-sql-generation-visiting-the-expression-tree"></a>První fázi generování SQL: na strom výrazu  
+## <a name="first-phase-of-sql-generation-visiting-the-expression-tree"></a>První fáze generování SQL: Navštívit stromu výrazů  
  Následující obrázek znázorňuje prázdný počáteční stav návštěvníka.  V tomto tématu jsou uvedeny pouze vlastnosti, které se týkají vysvětlení návod.  
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/430180f5-4fb9-4bc3-8589-d566512d9703.gif "430180f5-4fb9-4bc3-8589-d566512d9703")  
@@ -192,7 +192,7 @@ FROM: "[dbo].[Orders]", " AS ", <symbol_Extent4>,
 " )", " AS ", <joinSymbol_Join3>, " ON ", , , <symbol_Extent1>, ".", "[ProductID]", " = ", , <joinSymbol_Join3>, ".", <symbol_ProductID>  
 ```  
   
-### <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: generování příkaz String  
+### <a name="second-phase-of-sql-generation-generating-the-string-command"></a>Druhá fáze generování SQL: Generování příkazu řetězec  
  Druhá fáze vytvoří skutečné názvy symbolů a zaměříme jenom na symboly představující sloupce s názvem "OrderID", stejně jako v tomto případě ke konfliktu se musí přeložit. Tyto jsou zvýrazněné SqlSelectStatement. Všimněte si, že přípony použita na obrázku jsou pouze pro zdůraznit, že jsou různé instance, není k reprezentaci žádné nové názvy v této fáze jejich poslední názvů (by mohly mít odlišné formuláře původní názvy) dosud nebyla přiřazena.  
   
  První symbol nalezen, které je nutné přejmenovat je < symbol_OrderID >. Jejím novým názvem je přiřazen jako "OrderID1", 1 je označen jako poslední použitá přípona pro "OrderID" a symbol je označen jako není nutnosti přejmenování. V dalším kroku první využití < symbol_OrderID_2 > nebyl nalezen. Je přejmenován na tuto příponu použít, další k dispozici ("OrderID2") a znovu se označilo jako vyžadující není přejmenování, tak, aby při příštím se používá ji není přejmenují. To se provádí příliš pro < symbol_OrderID_3 >.  

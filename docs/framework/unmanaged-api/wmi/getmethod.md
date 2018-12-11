@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a913de0ff20fba51295fd8282b58e3953be9bba2
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 133e056663b208f2a0d12f05f31daaca95676dc5
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43773956"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152315"
 ---
 # <a name="getmethod-function"></a>Funkce GetMethod
 Načte informace o zadané metodě.
@@ -77,10 +77,10 @@ Tato funkce zalamuje volání na [IWbemClassObject::GetMethod](/windows/desktop/
 
 Můžete nastavit správu Windows [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatel na `null` Pokud metoda nemá žádné parametry. v.
 
-V `ppInSignature` a `ppOutSignature` popisují ani výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](/windows/desktop/WmiSdk/--parameters). Vlastnosti v `ppInsignature` jsou pojmenovány **Param *** n*, kde *n* je pozice parametru v podpisu metody (například `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` jsou také s názvem **Param *** n*, a návratová hodnota se nazývá **ReturnValue**. Další informace a příklad najdete v tématu [IWbemClassObject::GetMethod metoda](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
+V `ppInSignature` a `ppOutSignature` popisují ani výstupní parametry, v uvedeném pořadí, v jako vlastnosti `IWbemClassObject` instance třídy systému [_Parameters](/windows/desktop/WmiSdk/--parameters). Vlastnosti v `ppInsignature` jsou pojmenovány `Param` *n*, kde *n* je pozice parametru v podpisu metody (například `Param1`, `Param2`atd.). Vlastnosti v `ppOutSignature` se také nazývají `Param` *n*, a návratová hodnota se nazývá `ReturnValue`. Další informace a příklad najdete v tématu [IWbemClassObject::GetMethod metoda](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   

@@ -1,58 +1,58 @@
 ---
-title: Pomocí generátoru serializátor Microsoft XML na .NET Core
-description: Přehled generátor serializátor XML společnosti Microsoft.
+title: Generátor serializátor XML společnosti Microsoft
+description: Přehled generátor serializátor XML společnosti Microsoft. Generátor serializátor XML můžete generovat sestavení serializace XML pro typy obsažené v projektu.
 author: mlacouture
 ms.author: johalex
 ms.date: 01/19/2017
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: 98d85821784757db903c97e240c55a3d7bb656d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: mvc, seodec18
+ms.openlocfilehash: fad0bbe098718ba91765c24678b2cb099aa7bbb2
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33214553"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168855"
 ---
-# <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátoru serializátor Microsoft XML na .NET Core
+# <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Pomocí generátor serializátor XML společnosti Microsoft v rozhraní .NET Core
 
-V tomto kurzu se naučíte, jak používat generátor serializátor XML společnosti Microsoft v aplikaci C# .NET Core. V průběhu tohoto kurzu se seznámíte:
+V tomto kurzu se naučíte, jak používat generátor serializátor XML společnosti Microsoft v C# aplikaci .NET Core. V průběhu tohoto kurzu se dozvíte:
 
 > [!div class="checklist"]
 > * Jak vytvořit aplikaci .NET Core
 > * Jak přidat odkaz na balíček Microsoft.XmlSerializer.Generator
-> * Úprava vaší MyApp.csproj přidat závislosti
-> * Přidání třídy a třídy XmlSerializer
-> * Postup vytvoření a spuštění aplikace 
+> * Úprava vaše MyApp.csproj přidat závislosti
+> * Přidání třídy a objektu XmlSerializer
+> * Jak sestavit a spustit aplikaci 
 
-Jako [generátor serializátor Xml (sgen.exe)](../../standard/serialization/xml-serializer-generator-tool-sgen-exe.md) pro rozhraní .NET Framework [balíček Microsoft.XmlSerializer.Generator NuGet](https://www.nuget.org/packages/Microsoft.XmlSerializer.Generator) je ekvivalentem pro projekty .NET Core a .NET Standard. Vytvoří sestavení serializace XML pro typy, které jsou součástí sestavení, které chcete zvýšit výkon při spuštění serializace XML při serializaci nebo zrušte serializaci objektů těchto typů pomocí <xref:System.Xml.Serialization.XmlSerializer>.
+Podobně jako [generátor serializátor Xml (sgen.exe)](../../standard/serialization/xml-serializer-generator-tool-sgen-exe.md) pro rozhraní .NET Framework [balíček Microsoft.XmlSerializer.Generator NuGet](https://www.nuget.org/packages/Microsoft.XmlSerializer.Generator) ekvivalent pro projekty .NET Core a .NET Standard. Vytvoří sestavení serializace XML pro typy, které jsou obsaženy v sestavení, které chcete zlepšit výkon při spuštění serializace XML při serializaci nebo deserializaci objektů z těchto typů pomocí <xref:System.Xml.Serialization.XmlSerializer>.
 
 ## <a name="prerequisites"></a>Požadavky
 
-K dokončení tohoto kurzu:
+K provedení kroků v tomto kurzu je potřeba:
 
-* Nainstalujte [.NET Core SDK 2.1.3 nebo novější](https://www.microsoft.com/net/download)
-* Pokud jste to ještě neudělali, nainstalujte editor vaše oblíbené kódu.
+* Nainstalujte [sady SDK .NET Core 2.1 nebo novější](https://www.microsoft.com/net/download).
+* Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
 > [!TIP]
 > Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)!
   
-## <a name="use-microsoft-xml-serializer-generator-in-a-net-core-console-application"></a>Použít Microsoft XML serializátor generátor v konzolové aplikaci .NET Core 
+## <a name="use-microsoft-xml-serializer-generator-in-a-net-core-console-application"></a>Použít Microsoft generátor serializátor XML v konzolovou aplikaci .NET Core 
 
-Následující pokyny ukazují, jak používat generátor serializátor XML v konzolové aplikaci .NET Core.
+Následující pokyny ukazují, jak používat generátor serializátor XML v konzolovou aplikaci .NET Core.
 
-### <a name="create-a-net-core-console-application"></a>Vytvoření aplikace konzoly .NET Core
+### <a name="create-a-net-core-console-application"></a>Vytvořte konzolovou aplikaci .NET Core
 
-Otevřete příkazový řádek a vytvořte složku s názvem *Moje aplikace*. Přejděte do složky, kterou jste vytvořili a zadejte následující příkaz:
+Otevřete příkazový řádek a vytvořte složku s názvem *MyApp*. Přejděte do složky, kterou jste vytvořili a zadejte následující příkaz:
 
 ```console
 dotnet new console
 ```
 
-### <a name="add-a-reference-to-the-microsoftxmlserializergenerator-package-in-the-myapp-project"></a>Přidat odkaz na balíček Microsoft.XmlSerializer.Generator v projektu Moje aplikace
+### <a name="add-a-reference-to-the-microsoftxmlserializergenerator-package-in-the-myapp-project"></a>Přidejte odkaz na balíček Microsoft.XmlSerializer.Generator MyApp projektu
 
-Použití [ `dotnet add package` ](../tools//dotnet-add-package.md) příkaz Přidat odkaz ve vašem projektu. 
+Použití [ `dotnet add package` ](../tools//dotnet-add-package.md) příkaz pro přidání odkazu ve vašem projektu. 
 
-Typ:
+Zadejte:
  
  ```console
  dotnet add package Microsoft.XmlSerializer.Generator -v 1.0.0
@@ -60,11 +60,11 @@ Typ:
  
 ### <a name="verify-changes-to-myappcsproj-after-adding-the-package"></a>Ověřit si změny MyApp.csproj po přidání balíčku
 
-Otevřete editor kódu a můžeme začít! Stále pracujeme z *Moje aplikace* jsme vytvořili aplikaci v adresáři.
+Otevřete editor kódu a můžeme začít! Pořád pracujeme z *MyApp* jsme vytvořili aplikaci v adresáři.
 
-Otevřete *MyApp.csproj* v textovém editoru.
+Otevřít *MyApp.csproj* v textovém editoru.
 
-Po spuštění [ `dotnet add package` ](../tools//dotnet-add-package.md) příkazu, jsou přidány následující řádky do vaší *MyApp.csproj* soubor projektu:
+Po spuštění [ `dotnet add package` ](../tools//dotnet-add-package.md) příkazu následující řádky se přidají do vašeho *MyApp.csproj* souboru projektu:
 
  ```xml
  <ItemGroup>
@@ -72,9 +72,9 @@ Po spuštění [ `dotnet add package` ](../tools//dotnet-add-package.md) příka
  </ItemGroup>
  ```
  
-### <a name="add-another-itemgroup-section-for-net-core-cli-tool-support"></a>Přidat jinou část ItemGroup pro podporu rozhraní .NET Core rozhraní příkazového řádku nástroje
+### <a name="add-another-itemgroup-section-for-net-core-cli-tool-support"></a>Přidejte další část ItemGroup pro podporu nástroje rozhraní příkazového řádku .NET Core
  
- Přidejte následující řádky po `ItemGroup` oddíl, který jsme prověřovány:
+ Přidejte následující řádky za `ItemGroup` oddíl, který jsme ho zkontrolovat:
  
  ```xml
  <ItemGroup>
@@ -82,9 +82,9 @@ Po spuštění [ `dotnet add package` ](../tools//dotnet-add-package.md) příka
  </ItemGroup>
  ```
  
-### <a name="add-a-class-in-the-application"></a>Přidání třídy v aplikaci
+### <a name="add-a-class-in-the-application"></a>Přidejte třídu v aplikaci
 
-Otevřete *Program.cs* v textovém editoru. Přidejte třídu s názvem *MyClass* v *Program.cs*.
+Otevřít *Program.cs* v textovém editoru. Přidejte třídu s názvem *MyClass* v *Program.cs*.
 
 ```csharp
 public class MyClass
@@ -95,7 +95,7 @@ public class MyClass
 
 ### <a name="create-an-xmlserializer-for-myclass"></a>Vytvoření `XmlSerializer` pro MyClass
 
-Přidejte následující řádek uvnitř *hlavní* vytvořit `XmlSerializer` pro MyClass:
+Přidejte následující řádek uvnitř *hlavní* k vytvoření `XmlSerializer` pro MyClass:
 
 ```csharp
 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyClass));
@@ -103,7 +103,7 @@ var serializer = new System.Xml.Serialization.XmlSerializer(typeof(MyClass));
 
 ### <a name="build-and-run-the-application"></a>Sestavení a spuštění aplikace
 
-Stále ještě v *Moje aplikace* složky, spusťte aplikaci prostřednictvím [ `dotnet run` ](../tools/dotnet-run.md) a automaticky načte a používá předem vygenerovaná serializátorů za běhu.
+Pořád ještě uvnitř *MyApp* složky, spusťte aplikaci prostřednictvím [ `dotnet run` ](../tools/dotnet-run.md) a automaticky načte a používá předem generovaného serializátory za běhu.
 
 Zadejte následující příkaz v okně konzoly:
 
@@ -111,25 +111,25 @@ Zadejte následující příkaz v okně konzoly:
  $ dotnet run
  ```
 > [!NOTE]
-> [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby sestavení, které se sestavily cíle a poté zavolá `dotnet <assembly.dll>` ke spuštění cílová aplikace.
+> [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby se sestavily cíle sestavení a poté zavolá `dotnet <assembly.dll>` spustit cílovou aplikaci.
 
 > [!IMPORTANT]
-> Příkazy a postupy v tomto kurzu ke spuštění vaší aplikace se používají pouze dobu vývoj. Jakmile budete připraveni k nasazení své aplikace, prohlédněte si různými [strategie nasazení](../deploying/index.md) pro aplikace .NET Core a [ `dotnet publish` ](../tools/dotnet-publish.md) příkaz.
+> Příkazy a postupy v tomto kurzu ke spuštění aplikace se používají pouze během vývoje. Jakmile budete připraveni k nasazení své aplikace, podívejte se na různé [strategie nasazení](../deploying/index.md) pro aplikace .NET Core a [ `dotnet publish` ](../tools/dotnet-publish.md) příkazu.
 
 Pokud všechno proběhne úspěšně, sestavení s názvem *MyApp.XmlSerializers.dll* se generuje ve výstupní složce. 
 
 
 
-Blahopřejeme! máte právě:
+Blahopřejeme! máte jen:
 > [!div class="checklist"]
-> * Vytvořit .NET Core aplikace.
+> * Vytvoření .NET Core aplikace.
 > * Přidat odkaz na balíček Microsoft.XmlSerializer.Generator.
 > * Upravit vaše MyApp.csproj přidat závislosti.
-> * Přidání třídy a XmlSerializer.
-> * Vytvořené a spustil aplikaci. 
+> * Přidat třídu a objektu XmlSerializer.
+> * Vytvořené a byla aplikace spuštěná. 
 
-## <a name="related-resources"></a>Související informační zdroje
+## <a name="related-resources"></a>Související prostředky
 
 * [Představení serializace XML](../../standard/serialization/introducing-xml-serialization.md)
-* [Postupy: serializace pomocí třídy XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
-* [Postupy: serializace pomocí třídy XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+* [Jak: Serializace pomocí třídy XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+* [Jak: Serializace pomocí třídy XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)

@@ -3,11 +3,11 @@ title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
 ms.openlocfilehash: 4e3531b91382c4d47aed73198bd8dd954ae4ca1f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181589"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149000"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazovat odpovědi, které služba odesílá zpět. Poskytuje bezproblémové službu testování prostředí v kombinaci s hostitel služby WCF.  
@@ -156,7 +156,7 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
   
 -   Zabezpečení: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , certifikátu a uživatelského jména a hesla.  
   
--   Vazby: Wsfederationbinding –, všechny kontextu vazby a vazbu Https, WebHttpbinding (podpora zprávu odpovědi Json).  
+-   Vazby: Wsfederationbinding – všechny kontextu vazby a vazbu Https, WebHttpbinding (podpora zprávu odpovědi Json).  
   
 ## <a name="closing-wcf-test-client"></a>Zavření testovací klient WCF  
  Testovací klient WCF můžete zavřít následujícími způsoby:  

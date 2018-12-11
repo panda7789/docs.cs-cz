@@ -1,29 +1,59 @@
 ---
 title: = – operátor (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+ms.date: 11/26/2018
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 9cd1af400a9afdb7942a49dee7e7f7bb78387f2d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 123674f37d17db6dcfe6ae9d45c7176bdff1eda7
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507351"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149221"
 ---
 # <a name="-operator-c-reference"></a>= – operátor (Referenční dokumentace jazyka C#)
-Operátor přiřazení (`=`) ukládá hodnota jeho operandu pravé v umístění úložiště, vlastnost nebo indexer udávají jeho operand na levé straně a jako svůj výsledek vrátí hodnotu. Operandy musí být stejného typu (nebo zpracovával pravý operand musí být implicitně převoditelná na typ operandu vlevo).  
-  
-## <a name="remarks"></a>Poznámky  
- Operátor přiřazení nelze přetížit. Ale můžete definovat operátory implicitního převodu typu, které vám umožní použít operátor přiřazení s těmito typy. Další informace najdete v tématu [použití operátorů převodu](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md).  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#49](../../../csharp/language-reference/operators/codesnippet/CSharp/assignment-operator_1.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+Operátor přiřazení `=` hodnota jeho operandu pravé přiřadí proměnné, [vlastnost](../../programming-guide/classes-and-structs/properties.md), nebo [indexer](../../../csharp/programming-guide/indexers/index.md) element Dal jeho levý operand. Výsledkem výrazu přiřazení je hodnota přiřazená k levý operand. Typ operandu pravé musí být stejný jako typ levý operand nebo implicitně převeditelné na ni.
+
+Operátor přiřazení je asociativní zprava, to znamená, výraz ve tvaru
+
+```csharp
+a = b = c
+```
+
+je vyhodnocen jako
+
+```csharp
+a = (b = c)
+```
+
+Následující příklad ukazuje použití operátoru přiřazení k přiřazení hodnot k místní proměnné, vlastnosti a elementu indexeru:
+
+[!code-csharp-interactive[assignment operator](~/samples/snippets/csharp/language-reference/operators/AssignmentExamples.cs#Assignments)]
+
+## <a name="ref-assignment-operator"></a>operátoru přiřazení odkazu
+
+Počínaje C# 7.3, můžete pomocí operátoru přiřazení odkazu `= ref` přiřazení [lokální proměnná podle odkazu](../keywords/ref.md#ref-locals) nebo [lokální proměnná podle odkazu jen pro čtení](../keywords/ref.md#ref-readonly-locals) proměnné. Následující příklad ukazuje použití operátoru přiřazení odkazu:
+
+[!code-csharp[ref assignment operator](~/samples/snippets/csharp/language-reference/operators/AssignmentExamples.cs#RefAssignment)]
+
+V případě operátoru přiřazení odkazu typ levého operandu a pravý operand musí být stejné.
+
+Další informace najdete v tématu [Poznámka návrh funkce](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.3/ref-local-reassignment.md).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Uživatelem definovaný typ nejde přetížit operátor přiřazení. Uživatelem definovaný typ však můžete definovat implicitní převod na jiného typu. Tímto způsobem hodnota uživatelem definovaného typu lze přiřadit k proměnné, vlastnosti nebo elementu indexeru jiného typu. Další informace najdete v tématu [implicitní](../keywords/implicit.md) článku – klíčové slovo.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [jednoduché přiřazení](~/_csharplang/spec/expressions.md#simple-assignment) část [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [REF – klíčové slovo](../keywords/ref.md)

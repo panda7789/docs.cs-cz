@@ -9,15 +9,15 @@ helpviewer_keywords:
 - asymmetric accessor accesibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: 66e6f0da417e62bb592fdd8654f85cdb80ccf9bc
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 1dd0f81a454475d6d668324198eb498cdfe20310
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44197201"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149540"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
-[Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení mají stejnou viditelnost těchto přístupových objektů, nebo úroveň přístupu: u vlastnost nebo indexovací člen, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  
+[Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení tyto přístupové objekty mít stejnou úroveň viditelnosti nebo přístup k vlastnosti nebo indexeru, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  
   
  [!code-csharp[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_1.cs)]  
   
@@ -35,7 +35,7 @@ ms.locfileid: "44197201"
 -   Usnadnění úrovní na přistupujícím objektu musí být více omezující než úroveň přístupnost na vlastnost nebo indexovací člen, samotného.  
   
 ## <a name="access-modifiers-on-overriding-accessors"></a>Modifikátory přístupu pro přepsání přístupové objekty  
- Při přepsání vlastnost nebo indexovací člen přepsané přistupující objekty musí být přístupná pro přepsání kódu. Také úroveň usnadnění jak vlastnost nebo indexer a že přístupové objekty musí odpovídat odpovídající přepsané vlastnosti nebo indexeru a přístupové objekty. Příklad:  
+ Při přepsání vlastnost nebo indexovací člen přepsané přistupující objekty musí být přístupná pro přepsání kódu. Navíc přístupnost vlastnost nebo indexer a jeho přístupových objektů musí odpovídat odpovídající přepsané vlastnosti nebo indexeru a jeho přístupových objektů. Příklad:  
   
  [!code-csharp[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_2.cs)]  
   

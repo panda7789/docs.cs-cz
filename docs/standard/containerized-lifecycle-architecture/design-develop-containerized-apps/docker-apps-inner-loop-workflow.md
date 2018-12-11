@@ -4,12 +4,12 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: be9c3fe165be32df43073919904b85120c52d595
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f7acb60e6136c0250d18bdce23ac21fb6aa80b34
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50034454"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148855"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Pracovní postup vývoje vnitřní smyčky pro aplikace Dockeru
 
@@ -17,7 +17,7 @@ Před aktivací pracovního postupu vnější smyčky pokrývající celý DevOp
 
 ![](./media/image18.png)
 
-Obrázek 4 – 14: kontext vývoje vnitřní smyčky
+Obrázek 4 – 14: Kontext vývoje vnitřní smyčky
 
 Kontejner nebo instance image Dockeru, bude obsahovat tyto komponenty:
 
@@ -39,9 +39,9 @@ Obrázek 4 – 15 ukazuje základní kroky, které je obvykle potřeba provádě
 
 ![](./media/image19.png)
 
-Obrázek 4 – 15: pracovní postup vysoké úrovně pro životní cyklus pro Docker kontejnerizovaných aplikací pomocí rozhraní příkazového řádku Dockeru
+Obrázek 4 – 15: Pracovní postup vysoké úrovně pro životní cyklus pro Docker kontejnerizovaných aplikací pomocí rozhraní příkazového řádku Dockeru
 
-### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Krok 1: Psaní kódu ve Visual Studio Code a vytvořit směrný plán počáteční aplikace nebo služby
+### <a name="step-1-start-coding-in-visual-studio-code-and-create-your-initial-appservice-baseline"></a>Krok 1: Pusťte se do programování ve Visual Studio Code a vytvořit směrný plán počáteční aplikace nebo služby
 
 Způsob, jak vyvíjet aplikace je hodně podobné způsobu práce bez Dockeru. Rozdíl je, že při vývoji, máte nasazení a testování vaší aplikace nebo služby v rámci kontejnery Dockeru, které jsou umístěny v místním prostředí (např. virtuální počítač s Linuxem nebo Windows).
 
@@ -65,7 +65,7 @@ Poskytuje rozšíření, které budete muset nainstalovat Visual Studio Code. Ch
 
 ![](./media/image20.png)
 
-Obrázek 4 – 16: instaluje se rozšíření Dockeru v aplikaci Visual Studio Code
+Obrázek 4 – 16: Instaluje se rozšíření Dockeru v aplikaci Visual Studio Code
 
 ### <a name="step-2-create-a-dockerfile-related-to-an-existing-image-plain-os-or-dev-environments-like-net-core-nodejs-and-ruby"></a>Krok 2: Vytvoření souboru DockerFile související s existující image (plain operačního systému nebo vývoj prostředí, jako je .NET Core, Node.js a Ruby)
 
@@ -92,7 +92,7 @@ Obrázek 4 – 18: yo docker pomocí stávající .NET Core probíhá projekt
 
 Ze souboru DockerFile zadejte co základní image Dockeru, který budete používat (například "FROM microsoft/dotnet:1.0.0-core"). Obvykle vytvoříte vlastní bitovou kopii nad základní image, který můžete získat z jakékoli oficiální úložiště [registru Docker Hub](https://hub.docker.com/) (stejně jako [bitovou kopii pro .NET Core](https://hub.docker.com/r/microsoft/dotnet/) nebo jeden [pro Node.js](https://hub.docker.com/_/node/)).
 
-***Možnost A: použití existující oficiální image Dockeru***
+***Možnost A: Použít existující oficiální image Dockeru***
 
 Použití zásobníku jazyka oficiální úložiště s číslem verze zajistí, že stejné funkce jazyka jsou k dispozici na všech počítačích (včetně vývoje, testování a produkce).
 
@@ -128,7 +128,7 @@ Další informace o vytváření vlastních imagí, přejděte na [ https://docs
 
 Kontejnery Windows jsou více běžně se vyskytujícím, jednoho úložiště může obsahovat variant, platformy, jako jsou bitové kopie operačních systémů Linux a Windows. Toto je nová funkce přicházející v Dockeru, který umožňuje dodavatelům použít jednoho úložiště pro různé platformy, například [microsoft/aspdotnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) úložiště, které je k dispozici na Dockerhubu registru. Jako funkci přicházejí k životu, přebírání tuto bitovou kopii z hostitele Windows přetáhne Windows variant, zatímco přebírání stejný název image z hostitele platformy Linux přetáhne varianty Linuxu.
 
-***Možnost B: vytvořit základní image od začátku***
+***Možnost B: Vytvoření zcela nové základní image***
 
 Můžete vytvořit vlastní základní image Dockeru od začátku, jak je popsáno v tomto [článku](https://docs.docker.com/engine/userguide/eng-image/baseimages/) od Dockeru. Scénář, který je pravděpodobně není pro vás nejvhodnější, pokud právě začínáte s Dockerem, ale pokud chcete nastavit konkrétní bity základní image, můžete to provést.
 
@@ -147,7 +147,7 @@ Pro vytvoření image v místním prostředí a pomocí souboru DockerFile, mů�
 
 ![](./media/image25.png)
 
-Obrázek 4 – 19: spouštění sestavení dockeru
+Obrázek 4 – 19: Spouštění sestavení dockeru
 
 Volitelně můžete místo přímo spouštět docker sestavení ze složky projektu, nejprve můžete vygenerovat nasaditelný složku s knihovnami .NET, třeba pomocí spuštění dotnet příkazu pro publikování a pak spusťte sestavení dockeru.
 
@@ -157,9 +157,9 @@ Najdete existujících bitových kopií ve vašem místním úložišti (vývojo
 
 ![](./media/image26.png)
 
-Obrázek 4-20: zobrazení existujících obrázků s využitím Image dockeru
+Obrázek 4-20: Zobrazení existujících obrázků s využitím Image dockeru
 
-### <a name="step-4-optional-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Krok 4: (Volitelné) definujte služby v docker-compose.yml při vytváření složené aplikace Dockeru s více službami
+### <a name="step-4-optional-define-your-services-in-docker-composeyml-when-building-a-composed-docker-app-with-multiple-services"></a>Krok 4: (Volitelné) Definování vašich služeb v docker-compose.yml při vytváření složené aplikace Dockeru s více službami
 
 Pomocí souboru docker-compose.yml můžete definovat sadu souvisejících služeb umožňující nasadit ho jako aplikace skládá pomocí příkazů nasazení je vysvětleno v další části kroku.
 
@@ -192,11 +192,11 @@ V tomto konkrétním případě tento soubor definuje dvě služby: webové slu�
 
 Použití služby redis [nejnovější veřejné redis image](https://hub.docker.com/_/redis/) získaných z registru Docker Hub. [redis](https://redis.io/) je systém velmi populární mezipaměti pro aplikace na straně serveru.
 
-### <a name="step-5-build-and-run-your-docker-app"></a>Krok 5: Vytvoření a spuštění aplikace Dockeru
+### <a name="step-5-build-and-run-your-docker-app"></a>Krok 5: Sestavení a spuštění aplikace Dockeru
 
 Pokud vaše aplikace má pouze jeden kontejner, stačí ji spustit nasazení na hostitele Docker (virtuální počítač nebo fyzický server). Nicméně pokud vaše aplikace se skládá z několika služeb, budete muset *tvoří ji*také. Podívejme se na různé možnosti.
 
-***Možnost A: spuštění jednoho kontejneru nebo služby***
+***Možnost A: Spustit jedním kontejnerem nebo služby***
 
 Image Dockeru můžete spustit pomocí dockeru, spusťte příkaz, jak je znázorněno zde:
 
@@ -207,25 +207,25 @@ cesardl/netcore-webapi-microservice-docker:first
 
 Všimněte si, že pro toto konkrétní nasazení jsme budete se přesměruje požadavky odeslané na portu 80 na interní port 5000. Aplikace teď naslouchá na externím portu 80 na úrovni hostitele.
 
-***Možnost B: vytvoření a spuštění aplikace typu kontejner více***
+***Možnost B: Vytvářet a spouštět aplikace typu kontejner více***
 
 Ve většině scénářů organizace aplikaci v Dockeru se skládá z více služeb. Pro tyto případy můžete spuštění příkazu docker-compose up (obrázek 4 – 21), které použije soubor docker-compose.yml, kterou může jste vytvořili dříve. Spustí tento příkaz nasadí složené aplikaci se všemi jeho související kontejnerů.
 
 ![](./media/image27.png)
 
-Obrázek 4 – 21: výsledky spuštění příkazu "docker-compose up"
+Obrázek 4 – 21: Výsledky spuštění příkazu "docker-compose up"
 
 Po spuštění docker-compose up, budete nasazovat aplikace a její související kontejnerů do hostitele Dockeru, jak ukazuje obrázek 4 – 22 reprezentaci virtuálního počítače.
 
 ![](./media/image28.png)
 
-Obrázek 4 – 22: virtuální počítač s kontejnery Dockeru nasazené
+Obrázek 4 – 22: Virtuální počítač s kontejnery Dockeru nasazené
 
 Poznámka: docker-compose up a docker, spusťte mohou být dostatečné k testování kontejnerů ve vašem vývojovém prostředí, ale pokud očekáváte pro práci s clustery Dockeru a orchestrátorů, jako je Docker Swarm, Mesosphere DC/OS nebo Kubernetes je nemusí použít na všech aby bylo možné vertikálně navýšit kapacitu. Pokud používáte cluster jako [režim Docker Swarm](https://docs.docker.com/engine/swarm/) (k dispozici v Docker pro Windows a Mac od verze 1.12), musíte nasadit a testovat pomocí dalších příkazů, jako je služba docker vytvořit pro jednu službu nebo pokud jste nasazení aplikace skládá z několika kontejnerů pomocí docker compose svazku a docker nasazení myBundleFile, nasazením složené aplikace jako zásobník, jak je popsáno v článku [distribuované aplikace sady](https://blog.docker.com/2016/06/docker-app-bundle/) od Dockeru.
 
 Pro [DC/OS](https://mesosphere.com/blog/2015/09/02/dcos-cli-command-line-tool-datacenter/) a [Kubernetes](https://kubernetes.io/docs/user-guide/deployments/#creating-a-deployment) použijete jiné nasazení příkazy a skripty, také.
 
-### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Krok 6: Testování aplikace Dockeru (místně, v místní virtuální počítač CD)
+### <a name="step-6-test-your-docker-application-locally-in-your-local-cd-vm"></a>Krok 6: Otestujte aplikaci Docker (místně, v místní virtuální počítač CD)
 
 Tento krok se liší v závislosti na tom, co vaše aplikace stojí.
 
@@ -239,7 +239,7 @@ Na hostitele Docker spusťte prohlížeč a přejděte na web; vaše aplikace ne
 
 ![](./media/image29.png)
 
-Obrázek 4 – 23: testování aplikace Dockeru s místním prostředí s využitím místního hostitele
+Obrázek 4 – 23: Testování aplikace místně s použitím místního hostitele Docker
 
 Všimněte si, že používá port 80, ale interně byl přesměrován na portu 5000, protože to je, jak nasazení pomocí dockeru spustíte tak, jak je vysvětleno výše.
 
@@ -247,7 +247,7 @@ Můžete ho otestovat pomocí příkazu CURL z terminálu. V instalaci Dockeru n
 
 ![](./media/image30.png)
 
-Obrázek 4 – 24: testování aplikace Docker místně pomocí CURL
+Obrázek 4 – 24: Testování aplikace Docker místně pomocí CURL
 
 **Ladění kontejneru spuštěného v Dockeru**
 
@@ -257,7 +257,6 @@ Můžete také ladit kontejnery .NET Core v Dockeru při používání sady Visu
 
 **Další informace:** Další informace o ladění kontejnerů Dockeru Node.js, přejděte na <https://blog.docker.com/2016/07/live-debugging-docker/> a [ https://blogs.msdn.microsoft.com/\ uživatele\_ed/2016/02/27 nebo Visual-Studio-Code-New-features-13-Big-Debugging-Updates-Rich-Object-hover-Conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
 
-
 >[!div class="step-by-step"]
-[Předchozí](docker-apps-development-environment.md)
-[další](visual-studio-tools-for-docker.md)
+>[Předchozí](docker-apps-development-environment.md)
+>[další](visual-studio-tools-for-docker.md)

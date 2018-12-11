@@ -1,19 +1,19 @@
 ---
 title: Použití knihovny .NET Standard v sadě Visual Studio 2017
-description: Zjistěte, jak volat členy v knihovně tříd pomocí sady Visual Studio 2017.
+description: Sestavte aplikaci .NET Core, která volá členy jiné knihovny tříd pomocí sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 06/05/2018
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: 52ec46c23bb928b49f034270ed1d510d1acf992e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.custom: vs-dotnet, seodec18
+ms.openlocfilehash: ccf8d33b1017c3def137de7daec4373bfeec6305
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45518162"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168884"
 ---
 # <a name="consuming-a-net-standard-library-in-visual-studio-2017"></a>Použití knihovny .NET Standard v sadě Visual Studio 2017
 
@@ -32,19 +32,19 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovnu t�
 
 1. V **přidat nový projekt** dialogového okna, rozbalte **Visual C#** uzel a vyberte **.NET Core** uzel, za nímž následuje **Konzolová aplikace (.NET Core)** Šablona projektu. V **název** textového pole zadejte "Prezentaci" a vyberte **OK** tlačítko.
 
-   ![Přidání dialogového okna Nový projekt](./media/consuming-library-with-visual-studio/addnewproject.png)
+   ![Dialogové okno Visual Studio přidat nový projekt-C#](./media/consuming-library-with-visual-studio/add-new-project-dialog.png)
 
-1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **prezentaci** projektu a vyberte **nastavit jako spouštěný projekt** v místní nabídce. 
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **prezentaci** projektu a vyberte **nastavit jako spouštěný projekt** v místní nabídce.
 
-   ![Místní nabídka prezentace](./media/consuming-library-with-visual-studio/setstartupproject.png)
+   ![Visual Studio projekt kontextové nabídky nastavení při spuštění projektu –C#](./media/consuming-library-with-visual-studio/set-startup-project-context-menu.png)
 
 1. Na začátku projektu nemá přístup do knihovny tříd. Aby mohla volat metody v knihovně tříd, vytvořit odkaz na knihovnu tříd. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši `ShowCase` projektu **závislosti** uzel a vyberte možnost **přidat odkaz**.
 
-   ![Prezentace závislosti kontextové nabídky](./media/consuming-library-with-visual-studio/addreference.png)
+   ![Projekt sady Visual Studio přidejte odkaz na místní nabídka-C#](./media/consuming-library-with-visual-studio/add-reference-context-menu.png)
 
 1. V **správce odkazů** dialogového okna, vyberte **StringLibrary**, váš projekt knihovny tříd a vyberte **OK** tlačítko.
 
-   ![Správce odkazů](./media/consuming-library-with-visual-studio/referencemanager.png)
+   ![Visual Studio spravovat odkazy na dialogové okno –C#](./media/consuming-library-with-visual-studio/manage-project-references.png)
 
 1. V okně kódu *Program.cs* souboru, nahraďte kód následujícím kódem:
 
@@ -56,25 +56,25 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovnu t�
 
 1. V případě potřeby změňte nástrojů ke kompilaci **ladění** vydání `ShowCase` projektu. Zkompilujte a spusťte program výběrem na zelenou šipku na **prezentaci** tlačítko.
 
-   ![Image](./media/consuming-library-with-visual-studio/toolbar.png)
-# <a name="visual-basictabvisual-basic"></a>[Visual Basic](#tab/visual-basic)
+   ![Visual Studio projekt nástrojů zobrazující tlačítko ladění –C#](./media/consuming-library-with-visual-studio/visual-studio-project-toolbar.png)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 1. Otevřít `ClassLibraryProjects` řešení, které jste vytvořili v [vytváření třídy knihovny jazyka Visual Basic a .NET Core v sadě Visual Studio 2017](vb-library-with-visual-studio.md) tématu. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **ClassLibraryProjects** řešení a vyberte **přidat** > **nový projekt** z kontextové nabídky.
 
 1. V **přidat nový projekt** dialogového okna, rozbalte **jazyka Visual Basic** uzel a vyberte **.NET Core** uzel, za nímž následuje **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "Prezentaci" a vyberte **OK** tlačítko.
 
-   ![Přidání dialogového okna Nový projekt](./media/consuming-library-with-visual-studio/vb-addnewproject.png)
+   ![Visual Studio přidat nový projekt dialog - jazyka Visual Basic](./media/consuming-library-with-visual-studio/add-new-vb-project-dialog.png)
 
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **prezentaci** projektu a vyberte **nastavit jako spouštěný projekt** v místní nabídce. 
 
-   ![Místní nabídka prezentace](./media/consuming-library-with-visual-studio/setstartupproject.png)
+   ![Visual Studio projekt kontextové nabídky projekt po spuštění – nastavení jazyka Visual Basic](./media/consuming-library-with-visual-studio/set-startup-project-context-menu.png)
 
 1. Na začátku projektu nemá přístup do knihovny tříd. Aby mohla volat metody v knihovně tříd, vytvořit odkaz na knihovnu tříd. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši `ShowCase` projektu **závislosti** uzel a vyberte možnost **přidat odkaz**.
 
-   ![Prezentace závislosti kontextové nabídky](./media/consuming-library-with-visual-studio/addreference.png)
+   ![Projekt sady Visual Studio přidejte odkaz na místní nabídka - jazyka Visual Basic](./media/consuming-library-with-visual-studio/add-reference-context-menu.png)
 
 1. V **správce odkazů** dialogového okna, vyberte **StringLibrary**, váš projekt knihovny tříd a vyberte **OK** tlačítko.
 
-   ![Správce odkazů](./media/consuming-library-with-visual-studio/referencemanager.png)
+   ![Spravovat Visual Studio odkazuje na dialogové okno – Visual Basic](./media/consuming-library-with-visual-studio/manage-project-references.png)
 
 1. V okně kódu *soubor Program.vb* souboru, nahraďte kód následujícím kódem:
 
@@ -86,7 +86,7 @@ Stejně jako jste zahrnuli testy jednotek ve stejném řešení jako knihovnu t�
 
 1. V případě potřeby změňte nástrojů ke kompilaci **ladění** vydání `ShowCase` projektu. Zkompilujte a spusťte program výběrem na zelenou šipku na **prezentaci** tlačítko.
 
-   ![Image](./media/consuming-library-with-visual-studio/toolbar.png)
+   ![Ladění na panelu nástrojů – Visual Basic](./media/consuming-library-with-visual-studio/visual-studio-project-toolbar.png)
 ---
 
 Můžete ladit a publikovat aplikaci, která používá tuto knihovnu podle postupu v [ladění aplikace Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md) a [publikování aplikace Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).

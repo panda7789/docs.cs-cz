@@ -1,6 +1,6 @@
 ---
 title: Vnořené typy
-ms.date: 03/30/2017
+ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - types, nested
@@ -10,14 +10,13 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2593b85dd4747a3fbe365994c3e5d9beae3e3406
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+author: KrzysztofCwalina
+ms.openlocfilehash: 7e5fe66106ad34e88bbf435794a08a159c045b02
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44188140"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148873"
 ---
 # <a name="nested-types"></a>Vnořené typy
 Vnořený typ je typ definovaný v rámci jiného typu, která se nazývá nadřazeného typu. Vnořený typ má přístup na všechny členy jeho nadřazeného typu. Například má přístup k privátním položkám definované nadřazeného typu a chráněné pole definovaná ve všech nadřazených členů nadřazeného typu.  
@@ -44,7 +43,7 @@ Vnořený typ je typ definovaný v rámci jiného typu, která se nazývá nadř
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 

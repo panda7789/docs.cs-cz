@@ -3,11 +3,11 @@ title: 'Očekávání přechodu na Windows Communication Foundation: usnadnění
 ms.date: 03/30/2017
 ms.assetid: 3028bba8-6355-4ee0-9ecd-c56e614cb474
 ms.openlocfilehash: f4cc450b04fd05d390a1f41f3d14c19f4b23be29
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52296488"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53155142"
 ---
 # <a name="anticipating-adopting-the-windows-communication-foundation-easing-future-integration"></a>Očekávání přechodu na Windows Communication Foundation: usnadnění budoucí integrace
 Pokud používáte ASP.NET a předvídat pomocí technologie WCF v budoucnu, toto téma obsahuje pokyny pro zajištění, že nové technologie ASP.NET webové služby bude fungovat dobře spolu s aplikací služby WCF.  

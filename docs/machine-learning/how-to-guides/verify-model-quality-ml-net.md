@@ -4,11 +4,11 @@ description: Zjistěte, jak vypočítat metriky k vyhodnocení a ověření stro
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: 6fd4dfab6104b4398918e42ed70584b04169a8c1
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297674"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149520"
 ---
 # <a name="calculate-metrics-to-evaluate-machine-learning-model-quality---mlnet"></a>Vypočítat metriky k vyhodnocení, machine learning model kvality - ML.NET
 
