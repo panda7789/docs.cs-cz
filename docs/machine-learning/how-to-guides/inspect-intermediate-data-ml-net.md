@@ -4,21 +4,21 @@ description: Zjistěte, jak zkontrolovat hodnoty skutečné dočasných dat běh
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: cd229c120f7599c9a304a84a1669947e613fc917
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52671920"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53151535"
 ---
-# <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a><span data-ttu-id="b2d93-103">Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET</span><span class="sxs-lookup"><span data-stu-id="b2d93-103">Inspect intermediate data values during ML.NET pipeline processing</span></span>
+# <a name="inspect-intermediate-data-values-during-mlnet-pipeline-processing"></a><span data-ttu-id="46892-103">Zkontrolovat hodnoty dočasných dat během zpracování kanálu ML.NET</span><span class="sxs-lookup"><span data-stu-id="46892-103">Inspect intermediate data values during ML.NET pipeline processing</span></span>
 
-<span data-ttu-id="b2d93-104">Během testu můžete sledovat a ověřte výsledky zpracování dat v časovém okamžiku.</span><span class="sxs-lookup"><span data-stu-id="b2d93-104">During the experiment, you may want to observe and validate the data processing results at a given point.</span></span> <span data-ttu-id="b2d93-105">To není snadné, protože operace ML.NET jsou opožděná, vytváření objektů, které jsou "příslibů" dat.</span><span class="sxs-lookup"><span data-stu-id="b2d93-105">This isn't easy since ML.NET operations are lazy, constructing objects that are 'promises' of data.</span></span>
+<span data-ttu-id="46892-104">Během testu můžete sledovat a ověřte výsledky zpracování dat v časovém okamžiku.</span><span class="sxs-lookup"><span data-stu-id="46892-104">During the experiment, you may want to observe and validate the data processing results at a given point.</span></span> <span data-ttu-id="46892-105">To není snadné, protože operace ML.NET jsou opožděná, vytváření objektů, které jsou "příslibů" dat.</span><span class="sxs-lookup"><span data-stu-id="46892-105">This isn't easy since ML.NET operations are lazy, constructing objects that are 'promises' of data.</span></span>
 
-<span data-ttu-id="b2d93-106">`GetColumn<T>` – Metoda rozšíření umožňuje kontrolovat zprostředkující data.</span><span class="sxs-lookup"><span data-stu-id="b2d93-106">The `GetColumn<T>` extension method lets you inspect the intermediate data.</span></span> <span data-ttu-id="b2d93-107">Vrátí obsah jako jeden datový sloupec `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="b2d93-107">It returns the contents of one data column as an `IEnumerable`.</span></span>
+<span data-ttu-id="46892-106">`GetColumn<T>` – Metoda rozšíření umožňuje kontrolovat zprostředkující data.</span><span class="sxs-lookup"><span data-stu-id="46892-106">The `GetColumn<T>` extension method lets you inspect the intermediate data.</span></span> <span data-ttu-id="46892-107">Vrátí obsah jako jeden datový sloupec `IEnumerable`.</span><span class="sxs-lookup"><span data-stu-id="46892-107">It returns the contents of one data column as an `IEnumerable`.</span></span>
 
-<span data-ttu-id="b2d93-108">Následující příklad ukazuje způsob použití `GetColumn<T>` – metoda rozšíření:</span><span class="sxs-lookup"><span data-stu-id="b2d93-108">The following example shows how to use the `GetColumn<T>` extension method:</span></span>
+<span data-ttu-id="46892-108">Následující příklad ukazuje způsob použití `GetColumn<T>` – metoda rozšíření:</span><span class="sxs-lookup"><span data-stu-id="46892-108">The following example shows how to use the `GetColumn<T>` extension method:</span></span>
 
-<span data-ttu-id="b2d93-109">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="b2d93-109">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span></span>
+<span data-ttu-id="46892-109">[Příklad souboru](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span><span class="sxs-lookup"><span data-stu-id="46892-109">[Example file](https://github.com/dotnet/machinelearning/tree/master/test/data/adult.tiny.with-schema.txt):</span></span>
 ```
 Label   Workclass   education   marital-status
 0   Private 11th    Never-married
@@ -28,7 +28,7 @@ Label   Workclass   education   marital-status
 
 ```
 
-<span data-ttu-id="b2d93-110">Naše třída je definována takto:</span><span class="sxs-lookup"><span data-stu-id="b2d93-110">Our class is defined as follows:</span></span>
+<span data-ttu-id="46892-110">Naše třída je definována takto:</span><span class="sxs-lookup"><span data-stu-id="46892-110">Our class is defined as follows:</span></span>
 
 ```csharp
 private class InspectedRow

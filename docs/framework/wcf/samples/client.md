@@ -2,34 +2,34 @@
 title: Klient
 ms.date: 03/30/2017
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
-ms.openlocfilehash: cd172aefa640853c7ace1d9d7ad3fada73714642
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: e3a4852ba467f9c334157555ed9c2ffc2ff33f0e
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809089"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53142785"
 ---
-# <a name="client"></a><span data-ttu-id="ae314-102">Klient</span><span class="sxs-lookup"><span data-stu-id="ae314-102">Client</span></span>
-<span data-ttu-id="ae314-103">Tato část obsahuje příklady vysvětlující Windows Communication Foundation (WCF) klientské aplikace.</span><span class="sxs-lookup"><span data-stu-id="ae314-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) client applications.</span></span>  
+# <a name="client"></a><span data-ttu-id="73e25-102">Klient</span><span class="sxs-lookup"><span data-stu-id="73e25-102">Client</span></span>
+<span data-ttu-id="73e25-103">Tato část obsahuje ukázky, které předvádějí klientských aplikací Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="73e25-103">This section contains samples that demonstrate Windows Communication Foundation (WCF) client applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="ae314-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="ae314-104">In This Section</span></span>  
- [<span data-ttu-id="ae314-105">Interoperabilita klientů</span><span class="sxs-lookup"><span data-stu-id="ae314-105">Client Interoperability</span></span>](../../../../docs/framework/wcf/samples/client-interoperability.md)  
- <span data-ttu-id="ae314-106">Demonstruje vzájemná funkční spolupráce mezi WCF a další technologie.</span><span class="sxs-lookup"><span data-stu-id="ae314-106">Demonstrates interoperability between WCF and other technologies.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="73e25-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="73e25-104">In This Section</span></span>  
+ [<span data-ttu-id="73e25-105">Interoperabilita klientů</span><span class="sxs-lookup"><span data-stu-id="73e25-105">Client Interoperability</span></span>](../../../../docs/framework/wcf/samples/client-interoperability.md)  
+ <span data-ttu-id="73e25-106">Ukazuje interoperabilitu mezi WCF a dalších technologií.</span><span class="sxs-lookup"><span data-stu-id="73e25-106">Demonstrates interoperability between WCF and other technologies.</span></span>  
   
- [<span data-ttu-id="ae314-107">Hlavičky adresy</span><span class="sxs-lookup"><span data-stu-id="ae314-107">Address Headers</span></span>](../../../../docs/framework/wcf/samples/address-headers.md)  
- <span data-ttu-id="ae314-108">Ukazuje, jak mohou klienti předat parametry odkaz služby WCF pomocí.</span><span class="sxs-lookup"><span data-stu-id="ae314-108">Demonstrates how clients can pass reference parameters to a service using WCF.</span></span>  
+ [<span data-ttu-id="73e25-107">Hlavičky adresy</span><span class="sxs-lookup"><span data-stu-id="73e25-107">Address Headers</span></span>](../../../../docs/framework/wcf/samples/address-headers.md)  
+ <span data-ttu-id="73e25-108">Ukazuje, jak klienti můžete předávat parametry referenční dokumentace ke službě pomocí WCF.</span><span class="sxs-lookup"><span data-stu-id="73e25-108">Demonstrates how clients can pass reference parameters to a service using WCF.</span></span>  
   
- [<span data-ttu-id="ae314-109">Objekt pro vytváření kanálů</span><span class="sxs-lookup"><span data-stu-id="ae314-109">Channel Factory</span></span>](../../../../docs/framework/wcf/samples/channel-factory.md)  
- <span data-ttu-id="ae314-110">Ukazuje, jak klientská aplikace můžete vytvořit kanál s <xref:System.ServiceModel.ChannelFactory> třída místo generovaného klienta.</span><span class="sxs-lookup"><span data-stu-id="ae314-110">Demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client.</span></span>  
+ [<span data-ttu-id="73e25-109">Objekt pro vytváření kanálů</span><span class="sxs-lookup"><span data-stu-id="73e25-109">Channel Factory</span></span>](../../../../docs/framework/wcf/samples/channel-factory.md)  
+ <span data-ttu-id="73e25-110">Ukazuje, jak vytvořit kanál s klientskou aplikaci <xref:System.ServiceModel.ChannelFactory> třídy namísto generovaného klienta.</span><span class="sxs-lookup"><span data-stu-id="73e25-110">Demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client.</span></span>  
   
- [<span data-ttu-id="ae314-111">Očekávané výjimky</span><span class="sxs-lookup"><span data-stu-id="ae314-111">Expected Exceptions</span></span>](../../../../docs/framework/wcf/samples/expected-exceptions.md)  
- <span data-ttu-id="ae314-112">Ukazuje, jak zachytit očekávané výjimky při použití typový klient.</span><span class="sxs-lookup"><span data-stu-id="ae314-112">Demonstrates how to catch expected exceptions when using a typed client.</span></span>  
+ [<span data-ttu-id="73e25-111">Očekávané výjimky</span><span class="sxs-lookup"><span data-stu-id="73e25-111">Expected Exceptions</span></span>](../../../../docs/framework/wcf/samples/expected-exceptions.md)  
+ <span data-ttu-id="73e25-112">Ukazuje, jak zachytit očekávané výjimky, při použití typu klienta.</span><span class="sxs-lookup"><span data-stu-id="73e25-112">Demonstrates how to catch expected exceptions when using a typed client.</span></span>  
   
- [<span data-ttu-id="ae314-113">Načítání metadat</span><span class="sxs-lookup"><span data-stu-id="ae314-113">Retrieve Metadata</span></span>](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
- <span data-ttu-id="ae314-114">Demonstruje způsob implementace klienta, který dynamicky načítá metadata ze služby vybrat koncový bod s které ke komunikaci.</span><span class="sxs-lookup"><span data-stu-id="ae314-114">Demonstrates how to implement a client that dynamically retrieves metadata from a service to choose an endpoint with which to communicate.</span></span>  
+ [<span data-ttu-id="73e25-113">Načítání metadat</span><span class="sxs-lookup"><span data-stu-id="73e25-113">Retrieve Metadata</span></span>](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ <span data-ttu-id="73e25-114">Ukazuje, jak implementovat dynamicky načte metadata ze služby vybrat koncový bod pro komunikaci s klienty.</span><span class="sxs-lookup"><span data-stu-id="73e25-114">Demonstrates how to implement a client that dynamically retrieves metadata from a service to choose an endpoint with which to communicate.</span></span>  
   
- [<span data-ttu-id="ae314-115">Jak se vyhnout problémům s příkazem Using</span><span class="sxs-lookup"><span data-stu-id="ae314-115">Avoiding Problems with the Using Statement</span></span>](../../../../docs/framework/wcf/samples/avoiding-problems-with-the-using-statement.md)  
- <span data-ttu-id="ae314-116">Ukazuje, jak byste neměli používat "použití" příkaz automaticky vyčištění prostředků při použití typový klient jazyka C#.</span><span class="sxs-lookup"><span data-stu-id="ae314-116">Demonstrates how you should not use the C# "using" statement to automatically clean up resources when using a typed client.</span></span>  
+ [<span data-ttu-id="73e25-115">Použít zavřít a přerušení k uvolnění prostředků klienta WCF</span><span class="sxs-lookup"><span data-stu-id="73e25-115">Use Close and Abort to release WCF client resources</span></span>](../../../../docs/framework/wcf/samples/use-close-abort-release-wcf-client-resources.md)  
+ <span data-ttu-id="73e25-116">Ukazuje, jak byste neměli používat C# "" příkaz using automaticky vyčistit prostředky, při použití typu klienta.</span><span class="sxs-lookup"><span data-stu-id="73e25-116">Demonstrates how you should not use the C# "using" statement to automatically clean up resources when using a typed client.</span></span>  
   
- [<span data-ttu-id="ae314-117">Typový klient</span><span class="sxs-lookup"><span data-stu-id="ae314-117">Typed Client</span></span>](../../../../docs/framework/wcf/samples/typed-client.md)  
- <span data-ttu-id="ae314-118">Ukazuje, jak získat informace z typový klient vygenerované [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span><span class="sxs-lookup"><span data-stu-id="ae314-118">Demonstrates how to obtain information from a typed client generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>
+ [<span data-ttu-id="73e25-117">Typový klient</span><span class="sxs-lookup"><span data-stu-id="73e25-117">Typed Client</span></span>](../../../../docs/framework/wcf/samples/typed-client.md)  
+ <span data-ttu-id="73e25-118">Ukazuje, jak získat informace z typový klient generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span><span class="sxs-lookup"><span data-stu-id="73e25-118">Demonstrates how to obtain information from a typed client generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>

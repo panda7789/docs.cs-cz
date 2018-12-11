@@ -4,26 +4,26 @@ description: Zjistěte, jak použít vytváření funkcí k tréninku modelu na 
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: ed24561c8cc821ece8a21ca61e22a11bda2516d1
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297695"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152159"
 ---
-# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="555b4-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="555b4-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
+# <a name="apply-feature-engineering-for-machine-learning-model-training-on-textual-data-with-mlnet"></a><span data-ttu-id="d4ca6-103">Použít vytváření funkcí pro strojové učení cvičení modelu na textová data s ML.NET</span><span class="sxs-lookup"><span data-stu-id="d4ca6-103">Apply feature engineering for machine learning model training on textual data with ML.NET</span></span>
 
-<span data-ttu-id="555b4-104">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="555b4-104">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
+<span data-ttu-id="d4ca6-104">Je potřeba převést všechna data bez typu float pro `float` datové typy od všech ML.NET `learners` očekávat funkce, jako je `float vector`.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-104">You need to convert any non float data to `float` data types since all ML.NET `learners` expect features as a `float vector`.</span></span>
 
-<span data-ttu-id="555b4-105">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="555b4-105">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="555b4-106">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="555b4-106">ML.NET has some basic text feature extraction mechanisms:</span></span>
+<span data-ttu-id="d4ca6-105">Další informace o textových dat, musíte extrahovat text funkce.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-105">To learn on textual data, you need to extract text features.</span></span> <span data-ttu-id="d4ca6-106">ML.NET má některé základní text funkce extrakce mechanismy:</span><span class="sxs-lookup"><span data-stu-id="d4ca6-106">ML.NET has some basic text feature extraction mechanisms:</span></span>
 
-- <span data-ttu-id="555b4-107">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="555b4-107">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
-- <span data-ttu-id="555b4-108">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="555b4-108">`Separator-based tokenization`.</span></span>
-- <span data-ttu-id="555b4-109">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="555b4-109">`Stopword` removal.</span></span>
-- <span data-ttu-id="555b4-110">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="555b4-110">`Ngram` and `skip-gram` extraction.</span></span>
-- <span data-ttu-id="555b4-111">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="555b4-111">`TF-IDF` rescaling.</span></span>
-- <span data-ttu-id="555b4-112">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="555b4-112">`Bag of words` conversion.</span></span>
+- <span data-ttu-id="d4ca6-107">`Text normalization` (odebrání interpunkční znaménka, diakritiky přepnutí na malá písmena atd.)</span><span class="sxs-lookup"><span data-stu-id="d4ca6-107">`Text normalization` (removing punctuation, diacritics, switching to lowercase etc.)</span></span>
+- <span data-ttu-id="d4ca6-108">`Separator-based tokenization`.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-108">`Separator-based tokenization`.</span></span>
+- <span data-ttu-id="d4ca6-109">`Stopword` odebrání.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-109">`Stopword` removal.</span></span>
+- <span data-ttu-id="d4ca6-110">`Ngram` a `skip-gram` extrakce.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-110">`Ngram` and `skip-gram` extraction.</span></span>
+- <span data-ttu-id="d4ca6-111">`TF-IDF` změny měřítka.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-111">`TF-IDF` rescaling.</span></span>
+- <span data-ttu-id="d4ca6-112">`Bag of words` převod.</span><span class="sxs-lookup"><span data-stu-id="d4ca6-112">`Bag of words` conversion.</span></span>
 
-<span data-ttu-id="555b4-113">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="555b4-113">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
+<span data-ttu-id="d4ca6-113">Následující příklad ukazuje ML.NET textové funkce extrakce mechanismy pomocí [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span><span class="sxs-lookup"><span data-stu-id="d4ca6-113">The following example demonstrates ML.NET text feature extraction mechanisms using the [Wikipedia detox dataset](https://github.com/dotnet/machinelearning/blob/master/test/data/wikipedia-detox-250-line-data.tsv):</span></span>
 
 ```console
 Sentiment   SentimentText

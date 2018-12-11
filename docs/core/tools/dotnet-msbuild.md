@@ -1,48 +1,56 @@
 ---
-title: příkaz DotNet msbuild – rozhraní příkazového řádku .NET Core
+title: příkaz DotNet msbuild
 description: Příkaz dotnet msbuild poskytuje přístup k příkazovému řádku nástroje MSBuild.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: 76165590478b0e76d19d546c87e012da4716b6db
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.date: 12/03/2018
+ms.openlocfilehash: f025b5b92e57c7b804b9bdd59c8b4a4a806796da
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583706"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53169076"
 ---
-# <a name="dotnet-msbuild"></a><span data-ttu-id="0b55b-103">DotNet msbuild</span><span class="sxs-lookup"><span data-stu-id="0b55b-103">dotnet msbuild</span></span>
+# <a name="dotnet-msbuild"></a><span data-ttu-id="0fad3-103">DotNet msbuild</span><span class="sxs-lookup"><span data-stu-id="0fad3-103">dotnet msbuild</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="0b55b-104">Název</span><span class="sxs-lookup"><span data-stu-id="0b55b-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="0fad3-104">Název</span><span class="sxs-lookup"><span data-stu-id="0fad3-104">Name</span></span>
 
-<span data-ttu-id="0b55b-105">`dotnet msbuild` -Sestavení projektu a všechny jeho závislosti.</span><span class="sxs-lookup"><span data-stu-id="0b55b-105">`dotnet msbuild` - Builds a project and all of its dependencies.</span></span>
+<span data-ttu-id="0fad3-105">`dotnet msbuild` -Sestavení projektu a všechny jeho závislosti.</span><span class="sxs-lookup"><span data-stu-id="0fad3-105">`dotnet msbuild` - Builds a project and all of its dependencies.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="0b55b-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="0b55b-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="0fad3-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="0fad3-106">Synopsis</span></span>
 
 `dotnet msbuild <msbuild_arguments> [-h]`
 
-## <a name="description"></a><span data-ttu-id="0b55b-107">Popis</span><span class="sxs-lookup"><span data-stu-id="0b55b-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="0fad3-107">Popis</span><span class="sxs-lookup"><span data-stu-id="0fad3-107">Description</span></span>
 
-<span data-ttu-id="0b55b-108">`dotnet msbuild` Příkaz umožňuje přístup k plně funkční nástroj MSBuild.</span><span class="sxs-lookup"><span data-stu-id="0b55b-108">The `dotnet msbuild` command allows access to a fully functional MSBuild.</span></span>
+<span data-ttu-id="0fad3-108">`dotnet msbuild` Příkaz umožňuje přístup k plně funkční nástroj MSBuild.</span><span class="sxs-lookup"><span data-stu-id="0fad3-108">The `dotnet msbuild` command allows access to a fully functional MSBuild.</span></span>
 
-<span data-ttu-id="0b55b-109">Příkaz má přesně stejné funkce jako existující klient příkazového řádku MSBuild.</span><span class="sxs-lookup"><span data-stu-id="0b55b-109">The command has the exact same capabilities as existing MSBuild command-line client.</span></span> <span data-ttu-id="0b55b-110">Možnosti jsou stejné.</span><span class="sxs-lookup"><span data-stu-id="0b55b-110">The options are all the same.</span></span> <span data-ttu-id="0b55b-111">Další informace o dostupných možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).</span><span class="sxs-lookup"><span data-stu-id="0b55b-111">For more information about the available options, see the [MSBuild Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference).</span></span>
+<span data-ttu-id="0fad3-109">Příkaz má přesně stejné funkce jako existující klient příkazového řádku MSBuild pro SDK – vizuální styl pouze aplikace project.</span><span class="sxs-lookup"><span data-stu-id="0fad3-109">The command has the exact same capabilities as the existing MSBuild command-line client for SDK-style project only.</span></span> <span data-ttu-id="0fad3-110">Možnosti jsou stejné.</span><span class="sxs-lookup"><span data-stu-id="0fad3-110">The options are all the same.</span></span> <span data-ttu-id="0fad3-111">Další informace o dostupných možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).</span><span class="sxs-lookup"><span data-stu-id="0fad3-111">For more information about the available options, see the [MSBuild Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference).</span></span>
 
-## <a name="examples"></a><span data-ttu-id="0b55b-112">Příklady</span><span class="sxs-lookup"><span data-stu-id="0b55b-112">Examples</span></span>
+<span data-ttu-id="0fad3-112">[Dotnet sestavení](dotnet-build.md) je ekvivalentní příkazu `dotnet msbuild -restore -target:Build`.</span><span class="sxs-lookup"><span data-stu-id="0fad3-112">The [dotnet build](dotnet-build.md) command is equivalent to `dotnet msbuild -restore -target:Build`.</span></span> <span data-ttu-id="0fad3-113">`dotnet build` častěji se používá k sestavení projektů, ale `dotnet msbuild` vám dává větší kontrolu.</span><span class="sxs-lookup"><span data-stu-id="0fad3-113">`dotnet build` is more commonly used for building projects, but `dotnet msbuild` gives you more control.</span></span> <span data-ttu-id="0fad3-114">Například pokud máte konkrétní cíl, který chcete spustit (bez spuštění cíl sestavení), pravděpodobně chcete použít `dotnet msbuild`.</span><span class="sxs-lookup"><span data-stu-id="0fad3-114">For example, if you have a specific target you want to run (without running the build target), you probably want to use `dotnet msbuild`.</span></span>
 
-<span data-ttu-id="0b55b-113">Sestavení projektu a jeho závislosti:</span><span class="sxs-lookup"><span data-stu-id="0b55b-113">Build a project and its dependencies:</span></span>
+## <a name="examples"></a><span data-ttu-id="0fad3-115">Příklady</span><span class="sxs-lookup"><span data-stu-id="0fad3-115">Examples</span></span>
 
-`dotnet msbuild`
+* <span data-ttu-id="0fad3-116">Sestavení projektu a jeho závislosti:</span><span class="sxs-lookup"><span data-stu-id="0fad3-116">Build a project and its dependencies:</span></span>
 
-<span data-ttu-id="0b55b-114">Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:</span><span class="sxs-lookup"><span data-stu-id="0b55b-114">Build a project and its dependencies using Release configuration:</span></span>
+  ```console
+  dotnet msbuild
+  ```
 
-`dotnet msbuild -p:Configuration=Release`
+* <span data-ttu-id="0fad3-117">Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:</span><span class="sxs-lookup"><span data-stu-id="0fad3-117">Build a project and its dependencies using Release configuration:</span></span>
 
-<span data-ttu-id="0b55b-115">Spustit cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:</span><span class="sxs-lookup"><span data-stu-id="0b55b-115">Run the publish target and publish for the `osx.10.11-x64` RID:</span></span>
+  ```console
+  dotnet msbuild -p:Configuration=Release
+  ```
 
-`dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64`
+* <span data-ttu-id="0fad3-118">Spustit cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:</span><span class="sxs-lookup"><span data-stu-id="0fad3-118">Run the publish target and publish for the `osx.10.11-x64` RID:</span></span>
 
-<span data-ttu-id="0b55b-116">Zobrazit celý projekt s všechny cíle, které jsou součástí sady SDK:</span><span class="sxs-lookup"><span data-stu-id="0b55b-116">See the whole project with all targets included by the SDK:</span></span>
+  ```console
+  dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64
+  ```
 
-`dotnet msbuild -pp`
+* <span data-ttu-id="0fad3-119">Zobrazit celý projekt s všechny cíle, které jsou součástí sady SDK:</span><span class="sxs-lookup"><span data-stu-id="0fad3-119">See the whole project with all targets included by the SDK:</span></span>
+
+  ```console
+  dotnet msbuild -pp
+  ```

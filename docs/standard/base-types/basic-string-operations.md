@@ -1,5 +1,6 @@
 ---
-title: Základní operace s řetězci v .NET Frameworku
+title: Základní operace s řetězci v .NET
+description: Přečtěte si o základních operací, které můžete provádět na řetězce.
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,41 +9,42 @@ helpviewer_keywords:
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f7692251a00c712f93b649d4cd6fc153bb248f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: seadec18
+ms.openlocfilehash: 8621e79ad6e305f3859dc269965ecd216081f695
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567481"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53150677"
 ---
-# <a name="basic-string-operations-in-net"></a><span data-ttu-id="dd7b7-102">Základní operace s řetězci v .NET</span><span class="sxs-lookup"><span data-stu-id="dd7b7-102">Basic String Operations in .NET</span></span>
-<span data-ttu-id="dd7b7-103">Aplikace často odpovídají uživatelům sestavením zpráv založených na vstup uživatele.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-103">Applications often respond to users by constructing messages based on user input.</span></span> <span data-ttu-id="dd7b7-104">Například neobvyklé pro weby reagovat na nově přihlášený uživatel s specializované pozdravu, která obsahuje jméno uživatele.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-104">For example, it is not uncommon for Web sites to respond to a newly logged-on user with a specialized greeting that includes the user's name.</span></span> <span data-ttu-id="dd7b7-105">Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-105">Several methods in the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes allow you to dynamically construct custom strings to display in your user interface.</span></span> <span data-ttu-id="dd7b7-106">Tyto metody také můžete provést některé základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-106">These methods also help you perform a number of basic string operations like creating new strings from arrays of bytes, comparing the values of strings, and modifying existing strings.</span></span>  
+# <a name="basic-string-operations-in-net"></a><span data-ttu-id="a14e4-103">Základní operace s řetězci v .NET</span><span class="sxs-lookup"><span data-stu-id="a14e4-103">Basic String Operations in .NET</span></span>
+<span data-ttu-id="a14e4-104">Aplikace často reagovat na uživatele pomocí zprávy založené na vstup uživatele.</span><span class="sxs-lookup"><span data-stu-id="a14e4-104">Applications often respond to users by constructing messages based on user input.</span></span> <span data-ttu-id="a14e4-105">Není například neobvyklé webových stránek a reagovat na nově přihlášeného uživatele s specializované pozdrav, který obsahuje jméno uživatele.</span><span class="sxs-lookup"><span data-stu-id="a14e4-105">For example, it is not uncommon for Web sites to respond to a newly logged-on user with a specialized greeting that includes the user's name.</span></span> <span data-ttu-id="a14e4-106">Několik metod v <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> třídy umožňují dynamicky vytvářet vlastní řetězce k zobrazení v uživatelském rozhraní.</span><span class="sxs-lookup"><span data-stu-id="a14e4-106">Several methods in the <xref:System.String?displayProperty=nameWithType> and <xref:System.Text.StringBuilder?displayProperty=nameWithType> classes allow you to dynamically construct custom strings to display in your user interface.</span></span> <span data-ttu-id="a14e4-107">Tyto metody také umožňují provádět základní operace s řetězci jako je vytváření nových řetězců z pole bajtů, porovnání hodnot řetězců a úpravy existujících řetězců.</span><span class="sxs-lookup"><span data-stu-id="a14e4-107">These methods also help you perform a number of basic string operations like creating new strings from arrays of bytes, comparing the values of strings, and modifying existing strings.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="dd7b7-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="dd7b7-107">In This Section</span></span>  
- [<span data-ttu-id="dd7b7-108">Vytváření nových řetězců</span><span class="sxs-lookup"><span data-stu-id="dd7b7-108">Creating New Strings</span></span>](../../../docs/standard/base-types/creating-new.md)  
- <span data-ttu-id="dd7b7-109">Popisuje základní způsoby převést objekty do řetězců a seskupování řetězců.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-109">Describes basic ways to convert objects into strings and to combine strings.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="a14e4-108">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="a14e4-108">In This Section</span></span>  
+ [<span data-ttu-id="a14e4-109">Vytváření nových řetězců</span><span class="sxs-lookup"><span data-stu-id="a14e4-109">Creating New Strings</span></span>](../../../docs/standard/base-types/creating-new.md)  
+ <span data-ttu-id="a14e4-110">Popisuje základní způsoby k převedení objektů na řetězce a kombinování řetězců.</span><span class="sxs-lookup"><span data-stu-id="a14e4-110">Describes basic ways to convert objects into strings and to combine strings.</span></span>  
   
- [<span data-ttu-id="dd7b7-110">Ořezávání a odstraňování znaků</span><span class="sxs-lookup"><span data-stu-id="dd7b7-110">Trimming and Removing Characters</span></span>](../../../docs/standard/base-types/trimming.md)  
- <span data-ttu-id="dd7b7-111">Popisuje postup uvolnění dočasné paměti nebo odeberte znaky v řetězci.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-111">Describes how to trim or remove characters in a string.</span></span>  
+ [<span data-ttu-id="a14e4-111">Ořezávání a odstraňování znaků</span><span class="sxs-lookup"><span data-stu-id="a14e4-111">Trimming and Removing Characters</span></span>](../../../docs/standard/base-types/trimming.md)  
+ <span data-ttu-id="a14e4-112">Popisuje, jak trim nebo odeberte znaky v řetězci.</span><span class="sxs-lookup"><span data-stu-id="a14e4-112">Describes how to trim or remove characters in a string.</span></span>  
   
- [<span data-ttu-id="dd7b7-112">Doplňování řetězců</span><span class="sxs-lookup"><span data-stu-id="dd7b7-112">Padding Strings</span></span>](../../../docs/standard/base-types/padding.md)  
- <span data-ttu-id="dd7b7-113">Popisuje, jak vložit znaky nebo prázdné mezery na řetězec.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-113">Describes how to insert characters or empty spaces into a string.</span></span>  
+ [<span data-ttu-id="a14e4-113">Doplňování řetězců</span><span class="sxs-lookup"><span data-stu-id="a14e4-113">Padding Strings</span></span>](../../../docs/standard/base-types/padding.md)  
+ <span data-ttu-id="a14e4-114">Popisuje, jak vkládat znaky nebo prázdné mezery do řetězce.</span><span class="sxs-lookup"><span data-stu-id="a14e4-114">Describes how to insert characters or empty spaces into a string.</span></span>  
   
- [<span data-ttu-id="dd7b7-114">Porovnávání řetězců</span><span class="sxs-lookup"><span data-stu-id="dd7b7-114">Comparing Strings</span></span>](../../../docs/standard/base-types/comparing.md)  
- <span data-ttu-id="dd7b7-115">Popisuje, jak porovnání obsahu dvou nebo více řetězců.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-115">Describes how to compare the contents of two or more strings.</span></span>  
+ [<span data-ttu-id="a14e4-115">Porovnávání řetězců</span><span class="sxs-lookup"><span data-stu-id="a14e4-115">Comparing Strings</span></span>](../../../docs/standard/base-types/comparing.md)  
+ <span data-ttu-id="a14e4-116">Popisuje, jak porovnání obsahu dvou nebo více řetězců.</span><span class="sxs-lookup"><span data-stu-id="a14e4-116">Describes how to compare the contents of two or more strings.</span></span>  
   
- [<span data-ttu-id="dd7b7-116">Změna velikosti písmen</span><span class="sxs-lookup"><span data-stu-id="dd7b7-116">Changing Case</span></span>](../../../docs/standard/base-types/changing-case.md)  
- <span data-ttu-id="dd7b7-117">Popisuje, jak změnit velikost znaků v řetězci.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-117">Describes how to change the case of characters within a string.</span></span>  
+ [<span data-ttu-id="a14e4-117">Změna velikosti písmen</span><span class="sxs-lookup"><span data-stu-id="a14e4-117">Changing Case</span></span>](../../../docs/standard/base-types/changing-case.md)  
+ <span data-ttu-id="a14e4-118">Popisuje, jak změnit velikost písmen znaků v řetězci.</span><span class="sxs-lookup"><span data-stu-id="a14e4-118">Describes how to change the case of characters within a string.</span></span>  
   
- [<span data-ttu-id="dd7b7-118">Používání třídy StringBuilder</span><span class="sxs-lookup"><span data-stu-id="dd7b7-118">Using the StringBuilder Class</span></span>](../../../docs/standard/base-types/stringbuilder.md)  
- <span data-ttu-id="dd7b7-119">Popisuje, jak vytvářet a upravovat objekty dynamického řetězce <xref:System.Text.StringBuilder> třídy.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-119">Describes how to create and modify dynamic string objects with the <xref:System.Text.StringBuilder> class.</span></span>  
+ [<span data-ttu-id="a14e4-119">Používání třídy StringBuilder</span><span class="sxs-lookup"><span data-stu-id="a14e4-119">Using the StringBuilder Class</span></span>](../../../docs/standard/base-types/stringbuilder.md)  
+ <span data-ttu-id="a14e4-120">Popisuje, jak vytvářet a upravovat objekty dynamického řetězce <xref:System.Text.StringBuilder> třídy.</span><span class="sxs-lookup"><span data-stu-id="a14e4-120">Describes how to create and modify dynamic string objects with the <xref:System.Text.StringBuilder> class.</span></span>  
   
- [<span data-ttu-id="dd7b7-120">Postupy: Základní manipulace s řetězci</span><span class="sxs-lookup"><span data-stu-id="dd7b7-120">How to: Perform Basic String Manipulations</span></span>](../../../docs/standard/base-types/basic-manipulations.md)  
- <span data-ttu-id="dd7b7-121">Demonstruje použití základní operace s řetězci.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-121">Demonstrates the use of basic string operations.</span></span>  
+ [<span data-ttu-id="a14e4-121">Jak: Manipulace s řetězci základní</span><span class="sxs-lookup"><span data-stu-id="a14e4-121">How to: Perform Basic String Manipulations</span></span>](../../../docs/standard/base-types/basic-manipulations.md)  
+ <span data-ttu-id="a14e4-122">Ukazuje použití základní operace s řetězci.</span><span class="sxs-lookup"><span data-stu-id="a14e4-122">Demonstrates the use of basic string operations.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="dd7b7-122">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="dd7b7-122">Related Sections</span></span>  
- [<span data-ttu-id="dd7b7-123">Převod typů v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="dd7b7-123">Type Conversion in .NET</span></span>](../../../docs/standard/base-types/type-conversion.md)  
- <span data-ttu-id="dd7b7-124">Popisuje, jak převést jeden typ do jiného typu.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-124">Describes how to convert one type into another type.</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="a14e4-123">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="a14e4-123">Related Sections</span></span>  
+ [<span data-ttu-id="a14e4-124">Převod typů v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="a14e4-124">Type Conversion in .NET</span></span>](../../../docs/standard/base-types/type-conversion.md)  
+ <span data-ttu-id="a14e4-125">Popisuje, jak převést jednoho typu na jiný typ.</span><span class="sxs-lookup"><span data-stu-id="a14e4-125">Describes how to convert one type into another type.</span></span>  
   
- [<span data-ttu-id="dd7b7-125">Typy formátování</span><span class="sxs-lookup"><span data-stu-id="dd7b7-125">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)  
- <span data-ttu-id="dd7b7-126">Popisuje postup použití specifikátorů formátu řetězce formátu.</span><span class="sxs-lookup"><span data-stu-id="dd7b7-126">Describes how to format strings using format specifiers.</span></span>
+ [<span data-ttu-id="a14e4-126">Typy formátování</span><span class="sxs-lookup"><span data-stu-id="a14e4-126">Formatting Types</span></span>](../../../docs/standard/base-types/formatting-types.md)  
+ <span data-ttu-id="a14e4-127">Popisuje, jak pomocí specifikátorů formátu řetězce formátu.</span><span class="sxs-lookup"><span data-stu-id="a14e4-127">Describes how to format strings using format specifiers.</span></span>

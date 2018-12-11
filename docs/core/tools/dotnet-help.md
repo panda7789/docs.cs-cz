@@ -1,46 +1,46 @@
 ---
-title: příkaz nápovědy DotNet - .NET Core rozhraní příkazového řádku
-description: Příkaz help dotnet ukazuje podrobnější dokumentaci online zadaný příkaz.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
-ms.openlocfilehash: ed152717e32ffb294f5d5bd8e5eb74d55e33e506
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+title: příkaz DotNet nápovědy
+description: Příkaz dotnet help Zobrazí podrobnější online dokumentaci pro zadaný příkaz.
+ms.date: 12/04/2018
+ms.openlocfilehash: 44274b698ed83bd3cdb58787f433eeb5c555bc6d
+ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696595"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53168948"
 ---
-# <a name="dotnet-help-reference"></a><span data-ttu-id="7fb19-103">odkaz na nápovědu DotNet.</span><span class="sxs-lookup"><span data-stu-id="7fb19-103">dotnet help reference</span></span>
+# <a name="dotnet-help-reference"></a><span data-ttu-id="f5ea7-103">odkaz na nápovědu DotNet</span><span class="sxs-lookup"><span data-stu-id="f5ea7-103">dotnet help reference</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-## <a name="name"></a><span data-ttu-id="7fb19-104">Název</span><span class="sxs-lookup"><span data-stu-id="7fb19-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="f5ea7-104">Název</span><span class="sxs-lookup"><span data-stu-id="f5ea7-104">Name</span></span>
 
-<span data-ttu-id="7fb19-105">`dotnet help` -Li zobrazit podrobnější dokumentaci online zadaný příkaz.</span><span class="sxs-lookup"><span data-stu-id="7fb19-105">`dotnet help` - Shows more detailed documentation online for the specified command.</span></span>
+<span data-ttu-id="f5ea7-105">`dotnet help` – Zobrazí podrobnější online dokumentaci pro zadaný příkaz.</span><span class="sxs-lookup"><span data-stu-id="f5ea7-105">`dotnet help` - Shows more detailed documentation online for the specified command.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="7fb19-106">Stručný obsah</span><span class="sxs-lookup"><span data-stu-id="7fb19-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="f5ea7-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="f5ea7-106">Synopsis</span></span>
 
 `dotnet help <COMMAND_NAME> [-h|--help]`
 
-## <a name="description"></a><span data-ttu-id="7fb19-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7fb19-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="f5ea7-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f5ea7-107">Description</span></span>
 
-<span data-ttu-id="7fb19-108">`dotnet help` Příkaz otevře stránka s referencemi podrobné informace o zadaný příkaz na docs.microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="7fb19-108">The `dotnet help` command opens up the reference page for more detailed information about the specified command at docs.microsoft.com.</span></span>
+<span data-ttu-id="f5ea7-108">`dotnet help` Příkaz otevře stránku pro odkaz na podrobné informace o zadaném příkazu na webu docs.microsoft.com.</span><span class="sxs-lookup"><span data-stu-id="f5ea7-108">The `dotnet help` command opens up the reference page for more detailed information about the specified command at docs.microsoft.com.</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="7fb19-109">Arguments</span><span class="sxs-lookup"><span data-stu-id="7fb19-109">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="f5ea7-109">Arguments</span><span class="sxs-lookup"><span data-stu-id="f5ea7-109">Arguments</span></span>
 
-`COMMAND_NAME`
+* **`COMMAND_NAME`**
 
-<span data-ttu-id="7fb19-110">Název příkazu .NET Core rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="7fb19-110">Name of the .NET Core CLI command.</span></span> <span data-ttu-id="7fb19-111">Seznam platné příkazy rozhraní příkazového řádku najdete v tématu [rozhraní příkazového řádku](index.md#cli-commands).</span><span class="sxs-lookup"><span data-stu-id="7fb19-111">For a list of the valid CLI commands, see [CLI commands](index.md#cli-commands).</span></span>
+  <span data-ttu-id="f5ea7-110">Název příkazu rozhraní příkazového řádku .NET Core.</span><span class="sxs-lookup"><span data-stu-id="f5ea7-110">Name of the .NET Core CLI command.</span></span> <span data-ttu-id="f5ea7-111">Seznam platných příkazů rozhraní příkazového řádku najdete v tématu [příkazy rozhraní příkazového řádku](index.md#cli-commands).</span><span class="sxs-lookup"><span data-stu-id="f5ea7-111">For a list of the valid CLI commands, see [CLI commands](index.md#cli-commands).</span></span>
 
-## <a name="options"></a><span data-ttu-id="7fb19-112">Možnosti</span><span class="sxs-lookup"><span data-stu-id="7fb19-112">Options</span></span>
+## <a name="options"></a><span data-ttu-id="f5ea7-112">Možnosti</span><span class="sxs-lookup"><span data-stu-id="f5ea7-112">Options</span></span>
 
-`-h|--help`
+* **`-h|--help`**
 
-<span data-ttu-id="7fb19-113">Vytiskne krátké nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="7fb19-113">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="f5ea7-113">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="f5ea7-113">Prints out a short help for the command.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="7fb19-114">Příklady</span><span class="sxs-lookup"><span data-stu-id="7fb19-114">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="f5ea7-114">Příklady</span><span class="sxs-lookup"><span data-stu-id="f5ea7-114">Examples</span></span>
 
-<span data-ttu-id="7fb19-115">Otevře se stránka dokumentace pro [dotnet nové](dotnet-new.md) příkaz:</span><span class="sxs-lookup"><span data-stu-id="7fb19-115">Opens the documentation page for the [dotnet new](dotnet-new.md) command:</span></span>
+* <span data-ttu-id="f5ea7-115">Otevře se stránka dokumentace pro [dotnet nové](dotnet-new.md) příkaz:</span><span class="sxs-lookup"><span data-stu-id="f5ea7-115">Opens the documentation page for the [dotnet new](dotnet-new.md) command:</span></span>
 
-`dotnet help new`
+  ```console
+  dotnet help new
+  ```
