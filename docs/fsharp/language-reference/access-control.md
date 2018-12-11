@@ -1,13 +1,13 @@
 ---
 title: Řízení přístupu (F#)
-description: Zjistěte, jak řídit přístup k programovací prvky, jako jsou typy, metody a funkce v programovacím jazyce F#.
+description: Zjistěte, jak řídit přístup k programovací prvky, jako jsou typy, metody a funkce, F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: 66a260d326acf07391e3775e5a7853654b4feee4
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 136eba5ec33fa6128e677b614fc0ace3c71d17df
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43803971"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53153706"
 ---
 # <a name="access-control"></a>Access Control
 
@@ -15,7 +15,7 @@ ms.locfileid: "43803971"
 
 ## <a name="basics-of-access-control"></a>Základní informace o řízení přístupu
 
-V jazyce F#, řízení přístupu specifikátory `public`, `internal`, a `private` lze použít u modulů, typy, metody, definice hodnot, funkce, vlastnosti a explicitní pole.
+V F#, specifikátorů řízení přístupu `public`, `internal`, a `private` lze použít u modulů, typy, metody, definice hodnot, funkce, vlastnosti a explicitní pole.
 
 - `public` Označuje, že entita je přístupný všem volajícím.
 
@@ -23,14 +23,14 @@ V jazyce F#, řízení přístupu specifikátory `public`, `internal`, a `privat
 
 - `private` Označuje, že entita je přístupný pouze z nadřazeného typu nebo modulu.
 
->[!NOTE]
-Specifikátor přístupu `protected` se nepoužívá v jazyce F#, i když je přijatelné, pokud používáte typů definovaných v jazycích, které podporují `protected` přístup. Proto pokud je přepsat chráněnou metodu, metodu zůstane dostupný jenom v rámci třídy a jeho následovníky.
+> [!NOTE]
+> Specifikátor přístupu `protected` se nepoužívá v F#, i když je přijatelné, pokud používáte typů definovaných v jazycích, které podporují `protected` přístup. Proto pokud je přepsat chráněnou metodu, metodu zůstane dostupný jenom v rámci třídy a jeho následovníky.
 
 Obecně platí, je specifikátor umístit před název sady entit, kromě případů, kdy `mutable` nebo `inline` specifikátor se používá, které se zobrazí po specifikátoru přístupu ovládacího prvku.
 
 Pokud není použit žádný specifikátor přístupu, výchozí hodnota je `public`, s výjimkou `let` vazby v typu, které jsou vždy `private` typu.
 
-Podpisy v jazyce F# zadejte jiný mechanismus pro řízení přístupu na prvky programu F#. Podpisy nejsou požadována pro řízení přístupu. Další informace najdete v tématu [podpisy](signatures.md).
+Podpisy v F# jiný mechanismus pro řízení přístupu k F# prvky programu. Podpisy nejsou požadována pro řízení přístupu. Další informace najdete v tématu [podpisy](signatures.md).
 
 ## <a name="rules-for-access-control"></a>Pravidla pro řízení přístupu
 

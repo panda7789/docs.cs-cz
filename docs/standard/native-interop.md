@@ -1,38 +1,38 @@
 ---
 title: Nativní interoperabilita
-description: Informace o rozhraní s nativní součásti v rozhraní .NET.
+description: Zjistěte, jak spolupracovat s nativními komponentami v rozhraní .NET.
 author: blackdwarf
 ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-ms.openlocfilehash: 7da86cfe483a2355c53206f4c491fbd07e4c3046
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2f427eb5d8f41f730d4263425e268213db92236d
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591921"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53143179"
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 
-V tomto dokumentu jsme se podrobně chvíli hlubší všechny tři způsoby, jak to "nativní interoperabilita" které jsou k dispozici, pomocí rozhraní .NET.
+V tomto dokumentu jsme se bude věnovat trochu hlouběji všechny tři způsoby, jak dělat "nativní interoperabilita", které jsou k dispozici pomocí rozhraní .NET.
 
-Existuje několik důvodů, proč byste měli volání do nativního kódu:
+Existuje několik důvodů, proč byste to provádět volání do nativního kódu:
 
-*   Operační systémy se dodávají s velkým množstvím rozhraní API, která se nenacházejí v knihovnách spravovanou třídou. Typickým příkladem pro tento bude přístup k hardwaru nebo funkce operačního systému správy.
-*   Komunikaci s ostatními součástmi, které máte nebo můžete vytvořit bis stylu jazyka C (nativní bis ). Toto se vztahuje, například Java kód, který je zveřejněný prostřednictvím [Java nativní rozhraní (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jakéhokoli jiného spravované jazyka, který může vytvářet nativní součásti.
-*   V systému Windows většina softwaru, který získá nainstalovali, jako je například sada Microsoft Office, zaregistruje komponenty modelu COM, které představují jejich programy a umožňují vývojářům automatizovat je nebo je používat. To také vyžaduje nativní interoperabilita.
+*   Operační systémy jsou dostupné velký objem rozhraní API, která se nenachází v knihoven spravovaných tříd. Typickým příkladem pro tento bude přístup k hardwaru nebo operačního systému funkce správy.
+*   Komunikace s ostatními součástmi, které máte, nebo můžete vytvořit instrukce ABI ve stylu jazyka C (nativní instrukce ABI). Toto téma zahrnuje, například kód v Javě, který je zveřejněný prostřednictvím [Java Native Interface (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) nebo jiného spravovaného jazyka, který by mohla vést nativní součásti.
+*   Na Windows většina softwaru, který se nainstaluje, jako je například sada Microsoft Office registruje komponenty modelu COM, které představují své programy a vývojářům umožňuje automatizovat je nebo je používat. Tento proces také vyžaduje nativní interoperabilita.
 
-Samozřejmě seznamu výše nepopisuje všechny potenciální situace a scénáře, ve kterých vývojář by chcete/jako/potřeba rozhraní s nativní součásti. Knihovna tříd rozhraní .NET, například používá nativní interoperabilita podporu k implementaci úloha dostatečný počet jeho rozhraní API, jako je podpora konzoly a manipulaci, přístupu k systému souborů a dalších. Je ale důležité si uvědomit, že je možnost, by měl jeden ho potřebovat.
+Samozřejmě seznamu výše nepopisuje všechny potenciální situace a scénáře, ve kterých by vývojář chcete/typu/potřeba rozhraní s nativními komponentami. Knihovna tříd rozhraní .NET, například používá interoperabilitu nativní podporu k implementaci přiměřený počet jejích rozhraní API, jako je podpora konzoly a manipulaci s, přístupu k systému souborů a další. Je ale důležité si uvědomit, že je možnost, by měl jednu potřebovat.
 
 > [!NOTE]
-> Většina v příkladech v tomto dokumentu zobrazí pro všechny tři podporované platformy pro .NET Core (Windows, Linux a systému macOS). Příklady krátký a příkladů je však pouze jeden ukázka uvádějí, která používá rozšíření (tedy "dll" pro knihovny) a názvy souborů systému Windows. To neznamená, že tyto funkce nejsou k dispozici v systému Linux nebo systému macOS, bylo potřeba jenom pro usnadnění práce saké.
+> Většina příkladů v tomto dokumentu se zobrazí pro všechny tři podporované platformy pro .NET Core (Windows, Linux a macOS). Ale příklady krátký a příkladů, stačí jeden vzorek je zobrazit, který používá rozšíření (to znamená "knihovny dll" pro knihovny) a názvy souborů Windows. To neznamená, že tyto funkce nejsou dostupné v systému Linux nebo macOS, bylo provedeno pouze pro usnadnění práce saké.
 
-## <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (P/Invoke)
+## <a name="platform-invoke-pinvoke"></a>Vyvolání platformy (nespravovaného)
 
-P/Invoke je technologie, která vám umožní přistupovat k struktury, zpětná volání a funkce v nespravované knihovny ze spravovaného kódu. Velká část rozhraní API P/Invoke není součástí dva obory názvů: `System` a `System.Runtime.InteropServices`. Pomocí těchto dva obory názvů vám umožní přístup k atributy, které popisují, jak chcete komunikovat s komponentou nativní.
+P/Invoke je technologie, která umožňuje přístup ke strukturám, zpětná volání a funkce v nespravovaných knihoven ze spravovaného kódu. Většina nespravovaného rozhraní API je součástí dva obory názvů: `System` a `System.Runtime.InteropServices`. Pomocí těchto dva obory názvů vám umožní přístup pro atributy, které popisují, jak chcete komunikovat s nativní součást.
 
-Začněme z nejběžnějších příkladu a který je volání nespravovaných funkcí ve spravovaném kódu. Umožňuje zobrazit okno se zprávou z příkazového řádku aplikace:
+Začněme od Nejběžnějším příkladem a, který je volání nespravovaných funkcí ve spravovaném kódu. Pojďme zobrazit okno se zprávou z aplikace příkazového řádku:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -51,15 +51,15 @@ public class Program {
 }
 ```
 
-V předchozím příkladu je poměrně jednoduché, ale zobrazit vypnout co je potřeba k volání nespravovaných funkcí ze spravovaného kódu. Umožňuje procházet v příkladu:
+V příkladu výše je docela jednoduché, ale předvést toho, co je potřeba k vyvolání nespravovaných funkcí ze spravovaného kódu. Projděme si příklad:
 
-*   Řádek #1 ukazuje použití příkazu pro `System.Runtime.InteropServices` které je obor názvů, který obsahuje všechny položky, potřebujeme.
-*   Zavádí řádku #5 `DllImport` atribut. Tento atribut je velmi důležitý, když informuje modul runtime, ho by se měly načíst knihovnu DLL nespravované. Toto je knihovnu DLL, do kterého chceme vyvolání.
-*   Řádek #6 je crux P/Invoke práce. Definuje spravované metodu, která má **přesný stejným podpisem** jako nespravované. Deklaraci má nové klíčové slovo, které můžete si všimnete, `extern`, která sděluje modulu runtime to je externí metodu a zda při vyvolání ho, modul runtime by měl zjistit v knihovně DLL zadaný v `DllImport` atribut.
+*   Řádek #1 ukazuje na pomocí příkazu pro `System.Runtime.InteropServices` což je obor názvů, který obsahuje všechny položky, potřebujeme.
+*   Představuje řádek #5 `DllImport` atribut. Tento atribut je zásadní, protože říká modul runtime, že by se měly načíst nespravovaná knihovna DLL. To je knihovna DLL, do které bychom chtěli vyvolat.
+*   Řádek #6 je jádrem pracovní P/Invoke. Definuje spravované metody, která má **přesně stejnou signaturu** jako nespravovaný. Deklarace má nové klíčové slovo, můžete si všimnete, `extern`, který dává pokyn modulu runtime to je externí metoda a že při vyvolání jeho, modul runtime měl nacházet v knihovny DLL určené v `DllImport` atribut.
 
-Zbytek v příkladu je právě volání metody, stejně jako jiné spravované metody.
+Zbývající část v příkladu je právě volání metody, stejně jako jiné spravované metody.
 
-Ukázka je podobné pro systému macOS. Jedna z věcí, které je potřeba změnit je samozřejmě název knihovny v nástroji `DllImport` atribut systému macOS má jiné schéma názvových dynamické knihovny. Ukázka níže používá `getpid(2)` funkci k získání ID procesu aplikace a vytiskněte ke konzole.
+Vzorek je podobný pro macOS. Jednou z věcí, kterou je potřeba změnit je, samozřejmě, název knihovny `DllImport` atribut, protože s macOS má jiné schéma názvů dynamické knihovny. Ukázkové níže využívá `getpid(2)` funkce, která se získat ID procesu aplikace a vytiskne na konzolu.
 
 ```csharp
 using System;
@@ -81,7 +81,7 @@ namespace PInvokeSamples {
 }
 ```
 
-Je to podobné v systému Linux. Název funkce je stejné, protože `getpid(2)` je standard [POSIX](https://en.wikipedia.org/wiki/POSIX) systémového volání.
+Je to podobné v Linuxu. Název funkce je stejný, protože `getpid(2)` je standard [POSIX](https://en.wikipedia.org/wiki/POSIX) volání systému.
 
 ```csharp
 using System;
@@ -103,11 +103,11 @@ namespace PInvokeSamples {
 }
 ```
 
-### <a name="invoking-managed-code-from-unmanaged-code"></a>Vyvolání spravovaného kódu z nespravovaného kódu
+### <a name="invoking-managed-code-from-unmanaged-code"></a>Volání spravovaného kódu z nespravovaného kódu
 
-Samozřejmě modul runtime umožňuje komunikaci tok obou směrech, které umožňuje provádět volání do spravovaných artefakty z nativní funkce, pomocí ukazatele na funkce. Je nejblíže si ukazatel na funkci ve spravovaném kódu **delegovat**, takže je to, co používá k povolení zpětná volání z nativní kód do spravovaného kódu.
+Samozřejmě modul runtime povoluje komunikaci tok oba způsoby, které umožňuje provádět volání do spravovaného artefakty z nativní funkce pomocí deklarátoru ukazatele na funkce. Je nejbližší věcí s ukazatelem na funkci ve spravovaném kódu **delegovat**, takže je to, co se používá k povolení zpětných volání z nativního kódu do spravovaného kódu.
 
-Způsob použití této funkce je podobná spravovat tak, aby nativní proces popsaný výše. Pro danou zpětné volání zadejte delegáta, který odpovídá podpisu a který předání do externího metody. Modul runtime se postará o nic jiného.
+Způsob, jak používat tuto funkci je podobný spravované do nativní výše popsaný proces. Pro dané zpětné volání definovat delegáta, která odpovídá podpisu a předat ho do externí metody. Modul runtime se postará o všechno ostatní.
 
 ```csharp
 using System;
@@ -139,18 +139,18 @@ namespace ConsoleApplication1 {
 }
 ```
 
-Před jsme v našem příkladu provede, je vhodné si projít signatur potřebné pro práci s nespravovaným funkcím. Funkce, kterou chcete volat k vytvoření výčtu všech windows má následující podpis: `BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
+Než vás provedeme procesem náš příklad, je vhodné si projít podpisy nespravované funkce potřebné pro práci s. Funkce, které chceme volat k vytvoření výčtu všech oken má následující podpis: `BOOL EnumWindows (WNDENUMPROC lpEnumFunc, LPARAM lParam);`
 
-První parametr je zpětné volání. Uvedené zpětného volání má následující podpis: `BOOL CALLBACK EnumWindowsProc (HWND hwnd, LPARAM lParam);`
+První parametr je zpětné volání. Uvedené zpětné volání má následující podpis: `BOOL CALLBACK EnumWindowsProc (HWND hwnd, LPARAM lParam);`
 
-Myslete na to projděme v příkladu:
+S myslete na to projděme si příklad:
 
-*   Řádek #8 v příkladu definuje delegáta, který odpovídá podpis zpětného volání z nespravovaného kódu. Všimněte si, jak jsou typy LPARAM a HWND reprezentované pomocí `IntPtr` ve spravovaném kódu.
-*   Řádky #10 a #11 zavést `EnumWindows` funkce z knihovny user32.dll.
-*   Řádky #13 až 16 implementovat delegát. V tomto příkladu jednoduché my chceme jenom výstup popisovač ke konzole.
-*   V řádku #19 jsme nakonec vyvolat metodu externí a předat delegát.
+*   Řádek #8 v příkladu definuje delegáta, který odpovídá signatuře zpětného volání z nespravovaného kódu. Všimněte si, jak jsou reprezentovány typy LPARAM a HWND pomocí `IntPtr` ve spravovaném kódu.
+*   Zavést řádky #10 a #11 `EnumWindows` funkce z knihovny user32.dll.
+*   Řádky #13 16 implementaci delegáta. Tento jednoduchý příklad my chceme jenom výstupní popisovač do konzoly.
+*   Na řádku #19 jsme nakonec volání externí metody a předat delegáta.
 
-Níže jsou uvedeny příklady Linux a systému macOS. Pro ně, použijeme `ftw` funkce, který se nachází v `libc`, knihovna jazyka C. Tato funkce se používá k procházení adresáře hierarchií a trvá ukazatel na funkci jako jeden z jeho parametrů. Uvedené funkce má následující podpis: `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
+Níže jsou uvedeny příklady operačních systémů Linux a macOS. Pro ně používáme `ftw` funkce, která lze nalézt v `libc`, knihovna C. Tato funkce slouží k procházení hierarchie adresáře a bere ukazatel na funkci jako jeden ze svých parametrů. Uvedení funkce má následující podpis: `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
 
 ```csharp
 using System;
@@ -202,7 +202,7 @@ namespace PInvokeSamples {
 }
 ```
 
-Příklad systému macOS používá stejnou funkci a jediným rozdílem je, že argument `DllImport` atributů, protože udržuje systému macOS `libc` na jiné místo.
+macOS příklad používá stejnou funkci, a jediným rozdílem je, že argument `DllImport` atribut, protože udržuje macOS `libc` na jiném místě.
 
 ```csharp
 using System;
@@ -254,13 +254,13 @@ namespace PInvokeSamples {
 }
 ```
 
-Obě uvedených příkladech závisí na parametry a v obou případech jsou uvedeny parametry, jako spravované typy. Modul runtime má "správné funkci" a zpracuje tyto na jeho ekvivalenty na druhé straně. Vzhledem k tomu, že tento proces je důležité, psaní kódu pro nativní spolupráce kvality, Podívejme se na co se stane, když modul runtime _marshals_ typy.
+Z výše uvedených příkladech záviset na parametrech a v obou případech jsou uvedeny parametry, jako spravované typy. Modul runtime dělá "správné věci" a zpracuje do své ekvivalenty na druhé straně. Protože tento proces je skutečně potřeba psaní nativního kódu spolupráce kvality, Pojďme se podívat, co se stane, když modul runtime _marshals_ typy.
 
 ## <a name="type-marshalling"></a>Zařazování typů
 
-**Zařazování** je proces transformace typy, když potřebují překročit spravované hranice do nativní a naopak.
+**Zařazování** je proces transformace typy, když je budou potřebovat překračují hranice spravované do nativní a naopak.
 
-Zařazování důvod je potřeba je proto, že typy v kód spravovanými a nespravovanými se liší. Ve spravovaném kódu, například máte `String`, zatímco v nespravované world mohou být řetězce Unicode ("širokou"), kódování Unicode, ukončené hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí provést věc vpravo na výchozí chování, které se zobrazí na základě subsystém P/Invoke [MSDN](../../docs/framework/interop/default-marshaling-behavior.md). Pro tyto situace, kdy potřebujete další kontrolu, ale můžete použít `MarshalAs` atribut k určení, co je očekávaný typ na nespravované straně. Například pokud chceme řetězec, který má být odeslán jako ANSI řetězce ukončené hodnotou null, můžeme ho udělat takto:
+Z důvodu zařazování je potřeba je, protože se liší typy v spravovaným a nespravovaným kódem. Ve spravovaném kódu, například můžete mít `String`, zatímco nespravované světě mohou být řetězce Unicode ("širokých"), kódování Unicode, zakončený hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí že správně dělají na základě deklarace P/Invoke subsystému [výchozí chování](../../docs/framework/interop/default-marshaling-behavior.md). Pro tyto situace, kdy potřebujete další ovládací prvek, ale můžete použít [MarshalAs](xref:System.Runtime.InteropServicxes.MarshalAs) atribut k určení, co je očekávaný typ v nespravované oblasti. Například pokud se mají řetězec, který má být odeslán jako ANSI řetězec zakončený hodnotou null, může Uděláme to takto:
 
 ```csharp
 [DllImport("somenativelibrary.dll")]
@@ -269,7 +269,7 @@ static extern int MethodA([MarshalAs(UnmanagedType.LPStr)] string parameter);
 
 ### <a name="marshalling-classes-and-structs"></a>Zařazování tříd a struktur
 
-Další aspekt zařazování typ je uveden postup předat struktury metodu nespravované. Například některé nespravované metody vyžadovat struktury jako parametr. V těchto případech je potřeba vytvořit odpovídající struktury nebo třída spravované část na světě můžete použít jako parametr. Ale právě definice třídy není dostatečně, musíme také vyzvat zařazování mapování polí ve třídě do nespravovaných struktura. To je, kdy `StructLayout` atribut pochází do play.
+Dalším aspektem typu zařazování je jak předat strukturu pro nespravované metody. Například některé metody nespravovaného vyžadují strukturu jako parametr. V těchto případech potřebujeme vytvořit odpovídající struktury nebo třídy součástí spravované mohli používat jako parametr. Však stačí definování třídy není dostatečně, musíme také dáte pokyn, aby zařazování způsob mapování polí ve třídě do nespravované struktury. Tady `StructLayout` atribut pochází do hry.
 
 ```csharp
 [DllImport("kernel32.dll")]
@@ -294,7 +294,7 @@ public static void Main(string[] args) {
 }
 ```
 
-Výše uvedený příklad ukazuje vypnout jednoduchý příklad volání do `GetSystemTime()` funkce. Zajímavé bit je na řádku 4. Atribut určuje, že pole třídy by měly být namapované postupně k struktura na druhé straně (nespravovaný). To znamená, že se není důležité, názvy polí, jenom jejich pořadí je důležité, protože je tak, aby odpovídaly nespravované struktura, vidíte níže:
+Výše uvedený příklad ukazuje vypnout jednoduchý příklad volání do `GetSystemTime()` funkce. Zajímavé bit je na řádku 4. Atribut určuje, že pole třídy musí být mapována postupně do struktury na druhé straně (nespravovaného). To znamená, že názvy polí není důležité, pouze jejich pořadí je důležité, dokud jej potřebuje tak, aby odpovídaly nespravované struktury, vidíte níže:
 
 ```c
 typedef struct _SYSTEMTIME {
@@ -309,7 +309,7 @@ typedef struct _SYSTEMTIME {
 } SYSTEMTIME, *PSYSTEMTIME*;
 ```
 
-Už jsme viděli příklad Linux a systému macOS pro tento v předchozím příkladu. Se znovu zobrazí níže.
+Už jsme viděli v příkladu se systémy Linux a macOS k tomu v předchozím příkladu. Se znovu zobrazí níže.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -330,10 +330,10 @@ public class StatClass {
 }
 ```
 
-`StatClass` Třída reprezentuje strukturu, která je vrácený `stat` systémového volání v systémech UNIX. Představuje informace o daném souboru. Třída výše je reprezentace stat – struktura ve spravovaném kódu. Znovu pole ve třídě, musí být ve stejném pořadí jako nativní struct (můžete najít tak, že perusing man stránky na implementaci Oblíbené UNIX) a musí být stejného základního typu.
+`StatClass` Třída reprezentuje strukturu, která je vrácena `stat` volání systému v systémech UNIX. Představuje informace o daném souboru. Třída výše je reprezentace stat – struktura ve spravovaném kódu. Opět pole ve třídě musí být ve stejném pořadí jako nativní – struktura (můžete vyhledat těchto perusing man stránky na vaší oblíbené implementace UNIX) a musí být stejný základní typ.
 
-## <a name="more-resources"></a>Další prostředky
+## <a name="more-resources"></a>Další materiály
 
-*   [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní Win32 API a jak je volat.
+*   [PInvoke.net wiki](https://www.pinvoke.net/) vynikající Wiki s informacemi o společné rozhraní API systému Win32 a postupu při jejich volání.
 *   [P/Invoke na webu MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
-*   [Na P/Invoke mono dokumentace](https://www.mono-project.com/docs/advanced/pinvoke/)
+*   [Dokumentace mono na P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)

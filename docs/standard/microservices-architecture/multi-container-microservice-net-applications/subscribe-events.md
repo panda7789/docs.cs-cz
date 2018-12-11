@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: d32c643e553dfe3ce52e3e2ce8aaf1ea3a296de6
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.openlocfilehash: b95e256bf8df7207eed0895587c0945f37b08ecb
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297300"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53128948"
 ---
 # <a name="subscribing-to-events"></a>Přihlášení k odběru událostí
 
@@ -149,7 +149,7 @@ Přístup znázorněný v obrázku 6 – 22 chybí pracovní mikroslužeb, kter�
 
 O druhým přístupem: protokol událostí tabulku použijte jako fronty a vždy použijte mikroslužbě pracovního procesu k publikování zpráv. V takovém případě proces se tímto způsobem zobrazí obrázek 6 – 23. Zobrazí se další mikroslužeb a v tabulce je jediným zdrojem při publikování události.
 
-![Další možností pro zpracování atomicitu: publikovat do tabulky protokolu událostí a pak další mikroslužeb (pracovník na pozadí) publikování události.](./media/image24.png)
+![Další možností pro zpracování atomicitu: Publikovat do tabulky protokolu událostí a pak další mikroslužeb (pracovník na pozadí) publikování události.](./media/image24.png)
 
 **Obrázek 6 – 23**. Atomicitu při publikování událostí do sběrnice událostí pomocí mikroslužeb pracovního procesu
 
@@ -369,10 +369,10 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 -   **Úvod do konzistence dat** <br/>
     [*https://msdn.microsoft.com/library/dn589800.aspx*](https://msdn.microsoft.com/library/dn589800.aspx)
 
--   **Rick Saling. Věty: Proč "Všechno, co jsou různé" bez cloudu a Internetu** <br/>
+-   **Rick Saling. Věty: Proč "všechno, co jsou různé" bez cloudu a Internetu** <br/>
     [*https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/*](https://blogs.msdn.microsoft.com/rickatmicrosoft/2013/01/03/the-cap-theorem-why-everything-is-different-with-the-cloud-and-internet/)
 
--   **Eric Bureš. Zakončení později 12 letech: jak se mění "Pravidla"** <br/>
+-   **Eric Bureš. Zakončení 12 letech později: Jak se mění "Pravidla"** <br/>
     [*https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed*](https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed)
 
 -   **Azure Service Bus. Zprostředkované zasílání zpráv: Vyhledávání duplicit**  <br/>
@@ -390,9 +390,6 @@ Pokud je nastavený příznak "redelivered", příjemce, který přijme v úvahu
 -   **Průvodce spolehlivost** (RabbitMQ dokumentace) <br/>
     [*https://www.rabbitmq.com/reliability.html\#consumer*](https://www.rabbitmq.com/reliability.html%23consumer)
 
-
-
-
 >[!div class="step-by-step"]
-[Předchozí](rabbitmq-event-bus-development-test-environment.md)
-[další](test-aspnet-core-services-web-apps.md)
+>[Předchozí](rabbitmq-event-bus-development-test-environment.md)
+>[další](test-aspnet-core-services-web-apps.md)

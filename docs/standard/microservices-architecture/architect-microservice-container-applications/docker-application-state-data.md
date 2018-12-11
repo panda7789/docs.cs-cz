@@ -1,63 +1,72 @@
 ---
-title: Stav a data v aplikacích Docker
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Stav a data v aplikacích Docker
+title: Stav a data v aplikacích Dockeru
+description: Stav a správu dat v aplikacích Dockeru. Instance Mikroslužeb jsou postradatelnými, ale DATA nejsou, jak o to postarají s využitím mikroslužeb.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: 1469038af29167f7dbb1a161b951eee742cf4bec
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/20/2018
+ms.openlocfilehash: 70c3cee8c5fd1e63f2ff869f49b1fb02ab8f59dd
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105615"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152653"
 ---
-# <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Docker
+# <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
-Ve většině případů si můžete představit kontejneru jako instance procesu. Proces neudržuje trvalý stav. Při kontejner může zapsat do své místní úložiště, za předpokladu, že instance bude přibližně po neomezenou dobu bude třeba za předpokladu, že bude jedno umístění v paměti trvanlivý. Kontejner imagí, stejně jako procesy, by měl být předpokládá, že mít více instancí nebo které se budou nakonec ukončeny; Pokud jste se spravovat s nástrojem orchestrator kontejneru, by měl předpokládá, že se může získat z jednoho uzlu nebo virtuální počítač na jiný přesunout.
+Ve většině případů si můžete představit kontejneru jako instance procesu. Proces nemá udržovat trvalý stav. Zatímco kontejner může zapisovat do své místní úložiště, za předpokladu, že instance bude po neomezeně dlouho by například za předpokladu, že bude trvalý jednoho umístění v paměti. Byste měli předpokládat, že Image kontejneru, jako jsou procesy, máte více instancí nebo nakonec budou ukončeny. Pokud jsou spravovaná pomocí orchestrátoru kontejneru byste měli předpokládat, že se může získat přesouvat z jednoho uzlu nebo virtuální počítač do druhého.
 
-Docker nabízí funkci s názvem *překrytí systém souborů*. To implementuje úlohu kopírování při zápisu, že úložiště aktualizované informace k systému souborů kořenovém kontejneru. Tyto informace je navíc k původní bitové kopie, na kterých je založena kontejneru. Pokud je ze systému odstraněn kontejneru, tyto změny budou ztraceny. Proto i když je možné uložit stav kontejneru v rámci své místní úložiště, návrhu systému řešení by byl v konfliktu s místní návrhu kontejneru, který ve výchozím nastavení je bezstavové.
+Následující řešení se používají ke správě trvalá data v aplikacích Dockeru:
 
-Následující řešení se používají ke správě dat v aplikacích Docker:
+Z hostitele Docker jako [Docker svazky](https://docs.docker.com/engine/admin/volumes/):
 
--   [Datové svazky](https://docs.docker.com/engine/tutorials/dockervolumes/) , připojit k hostiteli.
+- **Svazky** jsou uloženy v oblasti systému souborů hostitele, který je spravovaný nástrojem Docker.
 
--   [Kontejnery svazků data](https://docs.docker.com/engine/tutorials/dockervolumes/#creating-and-mounting-a-data-volume-container) , poskytovat sdílené úložiště mezi kontejnery pomocí externí kontejneru.
+- **Navázat připojení** můžete namapovat na libovolnou složku v systému souborů hostitele, takže nemůže být řízený z procesu Docker přístup a může představovat bezpečnostní riziko, protože kontejner může přístup ke složkám na citlivé operačního systému.
 
--   [Moduly plug-in svazku](https://docs.docker.com/engine/tutorials/dockervolumes/) , připojte svazky, které mají vzdálené poskytuje dlouhodobé trvalost.
+- **připojí tmpfs** jsou například virtuální složky, které jenom v paměti hostiteli existují a nikdy se zapisují do systému souborů.
 
--   [Úložiště Azure](https://docs.microsoft.com/azure/storage/), který poskytuje geograficky distribuovatelného úložiště, poskytuje dobrým řešením dlouhodobé trvalosti pro kontejnery.
+Ze vzdáleného úložiště:
 
--   Vzdálené relační databáze jako [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) nebo jako databáze NoSQL [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), nebo do mezipaměti služby, jako je [Redis](https://redis.io/).
+- [Azure Storage](https://azure.microsoft.com/documentation/services/storage/), který poskytuje geo Distribuovatelný storage, která poskytuje dobré dlouhodobým řešením trvalosti pro kontejnery.
 
-Následují další podrobnosti o těchto možnostech.
+- Vzdálené relační databáze, jako jsou [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) nebo databáze NoSQL, jako jsou [služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), nebo službám, jako je do mezipaměti [Redis](https://redis.io/).
 
-**Datové svazky** jsou adresáře mapovat z hostitelský operační systém na adresáře v kontejnerech. Když kód v kontejneru má přístup k adresáři, který je ve skutečnosti přístup k adresáři na hostitelský operační systém. Tento adresář není vázaný na dobu životnosti kontejneru samostatně a adresář je přístupná z kód spuštěný přímo na operační systém hostitele nebo v jiném kontejneru který mapuje stejný adresář hostitele na sebe sama. Proto vám datové svazky mají zachovat data nezávisle na dobu životnosti kontejneru. Pokud odstraníte kontejner nebo bitové kopie z hostitelů Docker, data uchovávané v datový svazek se neodstraní. Data na svazku je přístupná z hostitele operačního systému a.
+Z kontejneru Dockeru:
 
-**Kontejnery svazků data** jsou vývoje regulární datové svazky. Kontejner svazků dat je jednoduchý kontejner, který má jeden nebo více svazků dat v něm. Kontejner svazků dat poskytuje přístup k kontejnery z centrální přípojný bod. Tato metoda přístup k datům je vhodné, protože ho abstrahuje umístění původní data. Než tu, která je podobná regulární datový svazek, své chování, takže data přetrvají v tomto kontejneru vyhrazené nezávisle na životního cyklu aplikace kontejnerů.
+> Docker nabízí funkci s názvem *překryv systému souborů*. To implementuje úlohu kopírování na zápis, že úložiště aktualizované informace o kořenové systému souborů kontejneru. Tyto informace je navíc k původní bitové kopie, na kterých je založena kontejner. Pokud kontejner je ze systému odstraněn, tyto změny budou ztraceny. Proto i když je možné uložit stav kontejneru v rámci své místní úložiště, návrhu systému tomuto by vznikl konflikt se místní kontejner návrh, který ve výchozím nastavení jsou bezstavové.
+>
+> Dříve uvedených svazky Dockeru je však nyní preferovaný způsob, jak zpracování místních dat Dockeru. Pokud potřebujete další informace o službě storage v kontejnerech, zkontrolujte na [ovladačů úložiště Dockeru](https://docs.docker.com/storage/storagedriver/select-storage-driver/) a [o ovladačích úložiště](https://docs.docker.com/storage/storagedriver/).
 
-Jak ukazuje obrázek 4-5, regulární Docker svazky mohou být uloženy mimo kontejnery sami, ale v rámci fyzické hranic hostitelský server nebo virtuální počítač. Však nelze Docker kontejnery přístup svazku z jeden hostitelský server nebo virtuální počítač do jiného. Jinými slovy tyto svazky clusteru, není možné spravovat data sdílena mezi kontejnery, které běží na různých hostitelích Docker
+Následují další podrobnosti o těchto možnostech:
 
-![](./media/image5.png)
+**Svazky** jsou adresáře, které jsou namapované na adresáře v kontejnerech z hostitelského operačního systému. Pokud má kód v kontejneru přístup k adresáři, který ve skutečnosti je přístup k adresáři na hostitelském operačním systému. Tento adresář se neváže k době života kontejner sám o sobě, a adresář je spravovaný nástrojem Docker a izolovaně od základní funkce hostitelského počítače. Proto datové svazky jsou navržené k uchování dat bez ohledu na jejich životnosti kontejneru. Pokud odstraníte kontejner nebo bitové kopie z hostitele Docker dat uchovávaných v objem dat se neodstraní.
 
-**Obrázek 4 – 5**. Datové svazky a externí zdroje dat pro aplikace založené na kontejneru
+Svazky mohou být pojmenované a anonymní (výchozí). Vývoj jsou pojmenované svazky **kontejnery svazků Data** a usnadňují sdílení dat mezi kontejnery. Svazky také podporu ovladačů svazků, které vám umožňují ukládat data na vzdáleného hostitele, mezi další možnosti.
 
-Kromě toho když Docker kontejnery spravuje orchestrator, kontejnery může "přesunout" mezi hostiteli, v závislosti na optimalizace provádí clusteru. Proto není doporučeno, abyste používali datové svazky pro obchodní data. Ale jsou dobrou mechanismus pro práci s trasovací soubory dočasné soubory, nebo podobný, nebude mít vliv na konzistenci dat firmy.
+**Navázat připojení** jsou k dispozici od dlouhou dobou a umožňují mapování všechny složky přípojný bod v kontejneru. Vazby připojení mít další omezení než svazky a některé problémy se zabezpečením důležité, proto doporučujeme jsou svazky.
 
-**Moduly plug-in svazku** jako [Flocker](https://clusterhq.com/flocker/) poskytovat přístup k datům ve všech hostitelích v clusteru. Zatímco všechny moduly plug-in svazku vytvářejí stejně, moduly plug-in svazku obvykle poskytují externalized trvalé spolehlivé úložiště z neměnné kontejnerů.
+**připojí tmpfs** jsou v podstatě virtuální složky, které live pouze v paměti hostitele a nikdy se zapisují do systému souborů. Jsou rychlé a zabezpečené, ale používají paměti a jsou určeny pouze pro dočasné data.
 
-**Vzdálené zdroje dat. a mezipaměti** nástroje, například Azure SQL Database, Azure Cosmos DB nebo vzdálené mezipaměti jako mohou být používány Redis kontejnerizované aplikace stejným způsobem jako se používají při vývoji bez kontejnery. Toto je Principy sloužit k ukládání dat obchodní aplikace.
+Jak ukazuje obrázek 4 – 5, pravidelné Docker svazky mohou být uloženy mimo kontejnery sami, ale v rámci fyzické hranice hostitelský server nebo virtuální počítač. Ale kontejnerů Dockeru od nemají přístup k svazku jeden hostitelský server nebo virtuální počítač do jiného. Jinými slovy tyto svazky, není možné spravovat data sdílena mezi kontejnerů, které běží na různých hostitelích, Docker, i když ho lze dosáhnout pomocí ovladače svazku, který podporuje vzdáleného hostitele.
 
-**Úložiště Azure.** Obchodní data obvykle nutné umístit do externích zdrojů nebo databáze, jako je Azure Storage. Úložiště Azure v konkrétních, poskytuje tyto služby v cloudu:
+![Svazky lze sdílet mezi kontejnery, ale jenom do stejného hostitele, pokud nechcete použít vzdálené ovladač, který podporuje vzdálené hostitele. ](./media/image5.png)
 
--   BLOB storage ukládá nestrukturované datové objekty. Objekt blob mohou být jakéhokoli typu textu nebo binárních dat, například dokumentu nebo médium (soubory obrázků, audio a video). Úložiště objektů blob se také označuje jako úložiště objektů.
+**Obrázek 4 až 5**. Svazky a externích zdrojů dat pro aplikace založené na kontejnerech
 
--   File storage nabízí sdílené úložiště pro starší verze aplikace pomocí standardního protokol SMB. Cloudových služeb a virtuálních počítačích Azure můžou sdílet souborová data mezi komponentami aplikace přes sdílené složky. Místní aplikace můžou k souborovým datům ve sdílené složce prostřednictvím REST API služby File.
+Navíc když kontejnery Dockeru jsou spravovaná pomocí orchestrátoru, kontejnery může "Přesun" mezi hostiteli, v závislosti na optimalizace prováděné v clusteru. Proto se nedoporučuje používat datové svazky pro obchodní data. Ale jsou dobrým mechanismus pro práci se soubory trasování, dočasné soubory, nebo podobné neovlivní konzistence obchodní data.
 
--   Table storage ukládá strukturované datové sady. Úložiště Table je úložiště dat klíč atribut typu NoSQL, která umožňuje rychlý vývoj a rychlý přístup k velkým objemům dat.
+**Vzdálené zdroje dat. a mezipaměti** nástrojů, jako je Azure SQL Database, Azure Cosmos DB nebo vzdálené mezipaměti, jako jsou Redis je možné v stejným způsobem se používají při vývoji bez kontejnery kontejnerizovaných aplikací. Toto je což je osvědčený způsob k ukládání dat obchodní aplikace.
 
-**Relační databáze a databáze NoSQL.** Existuje mnoho možností pro externí databáze, z relační databáze jako jsou databáze systému SQL Server, PostgreSQL, Oracle nebo NoSQL Azure Cosmos DB, MongoDB, atd. Tyto databáze nejsou chystáte vysvětlit v rámci tohoto průvodce vzhledem k tomu, že jsou v úplně jiných předmětu.
+**Azure Storage.** Obchodní data obvykle je nutné umístit do externího zdroje nebo databáze, jako je Azure Storage. Služba Azure Storage v konkrétní, poskytuje tyto služby v cloudu:
 
+- BLOB storage ukládá nestrukturované datové objekty. Objekt blob může být jakýkoli typ textových nebo binárních dat, jako je například dokumentu nebo média (soubory obrázků, zvuku a videa). Úložiště objektů blob se taky označuje jako úložiště objektů.
+
+- File storage nabízí sdílené úložiště pro starší verze aplikace používající standardní protokol SMB. Virtuální počítače Azure a cloudové služby můžou sdílet souborová data mezi komponentami aplikace přes sdílené složky. Místní aplikace můžou k souborovým datům ve sdílené složce, prostřednictvím rozhraní REST API služby File.
+
+- Table storage ukládá strukturované datové sady. Úložiště Table je úložiště dat klíč atribut NoSQL, která umožňuje rychlý vývoj a přístup k velkým objemům dat.
+
+**Relační databáze a databáze NoSQL.** Existuje mnoho možností pro externí databáze, od relačních databází, jako jsou SQL Server, PostgreSQL, Oracle nebo NoSQL databáze jako služby Azure Cosmos DB, MongoDB atd. Tyto databáze nebudou vysvětlené v rámci tohoto průvodce, protože jsou v úplně jiných předmětu.
 
 >[!div class="step-by-step"]
-[Předchozí](containerize-monolithic-applications.md)
-[další](service-oriented-architecture.md)
+>[Předchozí](containerize-monolithic-applications.md)
+>[další](service-oriented-architecture.md)

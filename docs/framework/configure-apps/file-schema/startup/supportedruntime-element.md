@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b86ffdd242a95a0c5c34efb3f38b3501f3f2ba6c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b6303f765d1cc4a17fe19261c7326d8961ac1080
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197796"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53129244"
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
 
@@ -36,7 +36,7 @@ Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. T
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**Verze**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Pro platné hodnoty `version` atributu naleznete v tématu [hodnoty "verze modulu runtime"](#version) oddílu. **Poznámka:** prostřednictvím rozhraní .NET Framework 3.5 "*verze modulu runtime*" hodnota má podobu *hlavní*. *vedlejší*. *sestavení*. Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze požadované číslo hlavní verze a podverze (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|  
+|**version**|Nepovinný atribut.<br /><br /> Hodnota řetězce, která určuje verzi modulu Common Language Runtime (CLR), který aplikace podporuje. Pro platné hodnoty `version` atributu naleznete v tématu [hodnoty "verze modulu runtime"](#version) oddílu. **Poznámka:**  Prostřednictvím rozhraní .NET Framework 3.5 "*verze modulu runtime*" hodnota má podobu *hlavní*. *vedlejší*. *sestavení*. Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pouze požadované číslo hlavní verze a podverze (tedy "v4.0" místo "v4.0.30319"). Je doporučen kratší řetězec.|  
 |**sku**|Nepovinný atribut.<br /><br /> Řetězcová hodnota, která určuje skladové jednotky (SKU), která zase Určuje, jaké verze rozhraní .NET Framework podporuje tuto aplikaci.<br /><br /> Od verze rozhraní .NET Framework 4.0, použití `sku` atribut se doporučuje.  Pokud je přítomen, určuje verzi rozhraní .NET Framework, který aplikace cílí.<br /><br /> Platné hodnoty atributu sku najdete v článku [hodnoty "sku id"](#sku) oddílu.|  
   
 ## <a name="remarks"></a>Poznámky
@@ -77,12 +77,12 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |----------------------------|---------------------|  
 |4.0|". NETFramework, verze = v4.0 "|  
 |4.0 client Profile|". NETFramework, verze = v4.0 profilu klienta = "|  
-|4.0, aktualizace platformy 1|.NETFramework,Version=v4.0.1|  
-|4.0 client Profile, aktualizace 1|.NETFramework,Version=v4.0.1,Profile=Client|  
-|4.0, aktualizace platformy 2|.NETFramework,Version=v4.0.2|  
-|4.0 client Profile update 2|.NETFramework,Version=v4.0.2,Profile=Client|  
-|4.0, aktualizace platformy 3|.NETFramework,Version=v4.0.3|  
-|4.0 client Profile update 3|.NETFramework,Version=v4.0.3,Profile=Client|  
+|4.0, aktualizace platformy 1|". NETFramework, verze = v4.0.1 "|  
+|4.0 client Profile, aktualizace 1|". NETFramework, verze = v4.0.1 profilu klienta = "|  
+|4.0, aktualizace platformy 2|". NETFramework, Version = verze 4.0.2 "|  
+|4.0 client Profile update 2|". NETFramework, Version = verze 4.0.2 profilu klienta = "|  
+|4.0, aktualizace platformy 3|". NETFramework, Version = verze 4.0.3 "|  
+|4.0 client Profile update 3|". NETFramework, Version = verze 4.0.3 profilu klienta = "|  
 |4.5|". NETFramework, verze = v4.5 "|  
 |4.5.1|". NETFramework, verze = v4.5.1 "|  
 |4.5.2|". NETFramework, verze = v4.5.2 "|  

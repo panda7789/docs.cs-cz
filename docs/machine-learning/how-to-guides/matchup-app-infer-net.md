@@ -2,20 +2,19 @@
 title: Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a probalistic programování
 description: Objevte, jak pomocí probalistic programování Infer.NET k vytvoření aplikace seznamu her zápasu založen na zjednodušené verzi TrueSkill.
 ms.date: 10/04/2018
-ms.topic: how-to
-ms.custom: mvc
-ms.openlocfilehash: 990fd60d809c893730bf2682946f89dbe59f36a5
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.custom: mvc,how-to
+ms.openlocfilehash: ceeb0f43e03c7ce93f105498f44bf243eec86bbf
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845821"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53152462"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování
 
 Tato příručka vás naučí o pravděpodobnostní programování pomocí Infer.NET. Pravděpodobnostní programování je přístup založený na machine learning, ve kterém jsou vlastní modely vyjádřené jako počítačové programy. Umožňuje pro začlenění znalosti v těchto modelech a je strojové učení více interpretovatelném systému. Podporuje také online odvození – proces učení příchodu nových dat. Infer.NET se používá v různých produktů v Microsoftu v Azure, Xbox a Bing.
 
-## <a name="what-is-probabilistic-programming"></a>Co je pravděpodobnostní programování? 
+## <a name="what-is-probabilistic-programming"></a>Co je pravděpodobnostní programování?
 
 Pravděpodobnostní programování umožňuje vytvořit statistických modelů procesů reálného světa. 
 
@@ -135,7 +134,7 @@ V příkazovém řádku spusťte následující příkaz:
 dotnet run
 ```
 
-## <a name="results"></a>výsledky
+## <a name="results"></a>Výsledky
 
 Výsledky by měl vypadat přibližně takto:
 

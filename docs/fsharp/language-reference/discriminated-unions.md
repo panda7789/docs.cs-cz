@@ -3,11 +3,11 @@ title: Rozlišovaná sjednocení (F#)
 description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
 ms.openlocfilehash: f833539f2e31ffc6db4182bdbd2088e6dc2bb2cc
-ms.sourcegitcommit: 7f7664837d35320a0bad3f7e4ecd68d6624633b2
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52672242"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53154408"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -39,7 +39,7 @@ type Shape =
     | Prism of width : float * float * height : float
 ```
 
-Předchozí kód deklaruje diskriminované sjednocení tvar, který může nabývat hodnot ve všech třech případech: obdélník, kruh a hranol. Každý případ má jinou sadu polí. Obdélník využívá dvě s názvem pole, oba typu `float`, které mají názvy šířka a délka. Případ kruh má pouze jedno pole s názvem, poloměr. Případ hranolu obsahuje tři pole dvě z které (šířka a výška) jsou pojmenované názvy polí. Nepojmenované pole jsou označovány jako anonymní pole.
+Předchozí kód deklaruje diskriminované sjednocení tvar, který může nabývat hodnot ve všech třech případech: Obdélník, kruh a hranol. Každý případ má jinou sadu polí. Obdélník využívá dvě s názvem pole, oba typu `float`, které mají názvy šířka a délka. Případ kruh má pouze jedno pole s názvem, poloměr. Případ hranolu obsahuje tři pole dvě z které (šířka a výška) jsou pojmenované názvy polí. Nepojmenované pole jsou označovány jako anonymní pole.
 
 Objekty je možné vytvořit zadáním hodnot pro pojmenované a anonymní pole podle následujících příkladů.
 
@@ -140,7 +140,7 @@ Místo toho virtuální metody pro výpočet plochy nebo obvodu, jako byste pou�
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2004.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 Area of circle that has radius 15.000000: 706.858347

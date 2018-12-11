@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
 ms.openlocfilehash: f8bd0f3eed8599f7f9e316df8274e8204a69c48f
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297449"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53149897"
 ---
 # <a name="arrays-in-visual-basic"></a>Pole v jazyce Visual Basic
 
@@ -299,9 +299,9 @@ Další informace o kolekcích najdete v tématu [kolekce](../../concepts/collec
 |Termín|Definice|
 |----------|----------------|
 |[Rozměry pole v jazyce Visual Basic](../../language-features/arrays/array-dimensions.md)|Popisuje pořadí a rozměry v polích.|
-|[Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak naplnit pole počátečními hodnotami.|
-|[Postupy: řazení pole v jazyce Visual Basic](../../language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak prvky pole seřadit podle abecedy.|
-|[Postupy: Přiřazení jednoho pole k druhému](../../language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a postup pro přiřazení pole do jiné proměnné pole.|
+|[Jak: Inicializace proměnné pole v jazyce Visual Basic](../../language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak naplnit pole počátečními hodnotami.|
+|[Jak: Řazení pole v jazyce Visual Basic](../../language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak prvky pole seřadit podle abecedy.|
+|[Jak: Přiřazení jednoho pole ke druhému](../../language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a postup pro přiřazení pole do jiné proměnné pole.|
 |[Řešení potíží s poli](../../language-features/arrays/troubleshooting-arrays.md)|Tento článek popisuje některé běžné problémy, které vznikají při práci s poli.|
 
 ## <a name="see-also"></a>Viz také:
