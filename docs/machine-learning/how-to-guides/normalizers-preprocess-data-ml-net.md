@@ -4,24 +4,24 @@ description: Další informace o použití normalizers se předběžně zpracova
 ms.date: 11/07/2018
 ms.custom: mvc,how-to
 ms.openlocfilehash: c8b959904705e996c97bdcd8b3444e754d14d046
-ms.sourcegitcommit: 35316b768394e56087483cde93f854ba607b63bc
+ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52297689"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53148831"
 ---
-# <a name="preprocess-training-data-with-normalizers-to-use-in-data-processing---mlnet"></a><span data-ttu-id="2ab26-103">Předběžné zpracování trénovacích dat s normalizers používané k zpracování dat – ML.NET</span><span class="sxs-lookup"><span data-stu-id="2ab26-103">Preprocess training data with normalizers to use in data processing - ML.NET</span></span>
+# <a name="preprocess-training-data-with-normalizers-to-use-in-data-processing---mlnet"></a><span data-ttu-id="70401-103">Předběžné zpracování trénovacích dat s normalizers používané k zpracování dat – ML.NET</span><span class="sxs-lookup"><span data-stu-id="70401-103">Preprocess training data with normalizers to use in data processing - ML.NET</span></span>
 
-<span data-ttu-id="2ab26-104">ML.NET zpřístupňuje řadu [algoritmy čištění a jiných ukazatelů](https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/).</span><span class="sxs-lookup"><span data-stu-id="2ab26-104">ML.NET exposes a number of [parametric and non-parametric algorithms](https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/).</span></span>
+<span data-ttu-id="70401-104">ML.NET zpřístupňuje řadu [algoritmy čištění a jiných ukazatelů](https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/).</span><span class="sxs-lookup"><span data-stu-id="70401-104">ML.NET exposes a number of [parametric and non-parametric algorithms](https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/).</span></span>
 
-<span data-ttu-id="2ab26-105">Má **není** důležitosti které normalizátor zvolíte, protože je **použít** normalizátor při cvičení lineární nebo jiných ukazatelů modely.</span><span class="sxs-lookup"><span data-stu-id="2ab26-105">It's **not** as important which normalizer you choose as it is to **use** a normalizer when training linear or other parametric models.</span></span>
+<span data-ttu-id="70401-105">Má **není** důležitosti které normalizátor zvolíte, protože je **použít** normalizátor při cvičení lineární nebo jiných ukazatelů modely.</span><span class="sxs-lookup"><span data-stu-id="70401-105">It's **not** as important which normalizer you choose as it is to **use** a normalizer when training linear or other parametric models.</span></span>
 
-<span data-ttu-id="2ab26-106">Vždy zahrnovat normalizátor přímo v kanálu ML.NET learning, takže ho:</span><span class="sxs-lookup"><span data-stu-id="2ab26-106">Always include the normalizer directly in the ML.NET learning pipeline, so it:</span></span>
+<span data-ttu-id="70401-106">Vždy zahrnovat normalizátor přímo v kanálu ML.NET learning, takže ho:</span><span class="sxs-lookup"><span data-stu-id="70401-106">Always include the normalizer directly in the ML.NET learning pipeline, so it:</span></span>
 
-- <span data-ttu-id="2ab26-107">jenom se trénuje na trénovací data a ne na testovací data</span><span class="sxs-lookup"><span data-stu-id="2ab26-107">is only trained on the training data, and not on your test data,</span></span>
-- <span data-ttu-id="2ab26-108">správně se použije na všechny nové příchozích dat, bez nutnosti další předběžné zpracování v době předpovědi.</span><span class="sxs-lookup"><span data-stu-id="2ab26-108">is correctly applied to all the new incoming data, without the need for extra pre-processing at prediction time.</span></span>
+- <span data-ttu-id="70401-107">jenom se trénuje na trénovací data a ne na testovací data</span><span class="sxs-lookup"><span data-stu-id="70401-107">is only trained on the training data, and not on your test data,</span></span>
+- <span data-ttu-id="70401-108">správně se použije na všechny nové příchozích dat, bez nutnosti další předběžné zpracování v době předpovědi.</span><span class="sxs-lookup"><span data-stu-id="70401-108">is correctly applied to all the new incoming data, without the need for extra pre-processing at prediction time.</span></span>
 
-<span data-ttu-id="2ab26-109">Tady je fragment kódu, který ukazuje normalizace studium kanály.</span><span class="sxs-lookup"><span data-stu-id="2ab26-109">Here's a snippet of code that demonstrates normalization in learning pipelines.</span></span> <span data-ttu-id="2ab26-110">Předpokládá datovou sadu Iris:</span><span class="sxs-lookup"><span data-stu-id="2ab26-110">It assumes the Iris dataset:</span></span>
+<span data-ttu-id="70401-109">Tady je fragment kódu, který ukazuje normalizace studium kanály.</span><span class="sxs-lookup"><span data-stu-id="70401-109">Here's a snippet of code that demonstrates normalization in learning pipelines.</span></span> <span data-ttu-id="70401-110">Předpokládá datovou sadu Iris:</span><span class="sxs-lookup"><span data-stu-id="70401-110">It assumes the Iris dataset:</span></span>
 
 ```csharp
 // Create a new context for ML.NET operations. It can be used for exception tracking and logging, 
