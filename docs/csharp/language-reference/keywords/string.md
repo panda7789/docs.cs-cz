@@ -11,12 +11,12 @@ helpviewer_keywords:
 - string literals [C#]
 - string keyword [C#]
 ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
-ms.openlocfilehash: c13ea4c6b71e29a422c351ad37c5be342fa4ecc4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: f6c76f8effc5aef82803014b9a7257c2ad6865b8
+ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239389"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286478"
 ---
 # <a name="string-c-reference"></a>string (Referenční dokumentace jazyka C#)
 
@@ -56,6 +56,18 @@ b += "ello";
 string str = "test";
 char x = str[2];  // x = 's';
 ```
+
+Podobně [] – operátor lze také pro iterace přes každý znak v `string`:
+
+```csharp
+string str = "test";
+
+for (int i = 0; i < str.Length; i++)
+{
+  Console.Write(str[i] + " ");
+}
+// Output: t e s t
+``` 
 
 Řetězcové literály jsou typu `string` a může být zapsaný ve dvou formách, v uvozovkách a @-quoted. Citovaný řetězec, který literály jsou uzavřeny v dvojitých uvozovkách ("):
 

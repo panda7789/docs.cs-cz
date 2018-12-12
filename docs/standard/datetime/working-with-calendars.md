@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 055c7db652426651dd3c2a74825a11e305d939f1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: b6f759523acab1a248b92c69b95227b878696bbf
+ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183903"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286582"
 ---
 # <a name="working-with-calendars"></a>Práce s kalendáři
 
@@ -137,6 +137,9 @@ Existuje však jedna důležitá výjimka. Výchozí (neinicializovaná) hodnota
 
 Data v kalendářích jsou obvykle rozdělena do období. Ale <xref:System.Globalization.Calendar> třídy v rozhraní .NET nepodporují každé období definované kalendářem a většina <xref:System.Globalization.Calendar> třídy podporují pouze jediné období. Pouze <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> třídy podporují větší počet období.
 
+> [!IMPORTANT]
+>  A nové éry v <xref:System.Globlalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> začíná 1. května 2019. Tato změna ovlivní všechny aplikace, které používají tyto kalendáře. Zobrazit [zpracování do nové éry v japonské kalendáře v rozhraní .NET](https://blogs.msdn.microsoft.com/dotnet/2018/11/14/handling-a-new-era-in-the-japanese-calendar-in-net/) Další informace a na zjištění, zda jsou vliv na vaše aplikace. Zobrazit [Příprava aplikace pro změnu japonské období](~/windows/uwp/design/globalizing/japanese-era-change) informace o testování aplikací na Windows k zajištění jejich připravenosti změna éry.
+
 ### <a name="eras-and-era-names"></a>Období a názvy období
 
 V rozhraní .NET, jsou celá čísla, která představují období podporovaná implementací konkrétního kalendáře v obráceném pořadí v uložené <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole. Aktuální období je na pozici nula a pro <xref:System.Globalization.Calendar> odráží třídy, které podporují větší počet období, jednotlivé postupné pozice předchozímu období. Statické <xref:System.Globalization.Calendar.CurrentEra?displayProperty=nameWithType> vlastnost definuje index aktuálního období v <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> pole; jedná se o konstantu, jejíž hodnota je vždycky nula. Jednotlivé <xref:System.Globalization.Calendar> třídy zahrnují také statická pole, která vrátí hodnotu aktuálního období. Jsou uvedeny v následující tabulce.
@@ -193,5 +196,5 @@ V případech, kde je vyjádřena řetězec představující datum v kalendáři
 
 ## <a name="see-also"></a>Viz také:
 
-* [Postupy: zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)
-* [Ukázka: Nástroj v rozsahu kalendářní týden](https://code.msdn.microsoft.com/NET-Framework-4-Calendar-3360a84a)
+* [Postupy: Zobrazování dat v jiném než gregoriánském kalendáři](../../../docs/standard/base-types/how-to-display-dates-in-non-gregorian-calendars.md)
+* [Ukázka: Nástroj pro rozsah týdnů kalendáře](https://code.msdn.microsoft.com/NET-Framework-4-Calendar-3360a84a)

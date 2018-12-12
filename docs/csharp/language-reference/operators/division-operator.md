@@ -1,37 +1,53 @@
 ---
 title: / – Operátor - C# odkaz
 ms.custom: seodec18
-ms.date: 04/04/2018
+ms.date: 12/13/2018
 f1_keywords:
 - /_CSharpKeyword
 helpviewer_keywords:
 - / operator [C#]
 - division operator [C#]
 ms.assetid: d155e496-678f-4efa-bebe-2bd08da2c5af
-ms.openlocfilehash: c77d9264baac05f2212db37fe50490516359e96e
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 45bcd64b60e7d13f389064faefeda815ea1f32c9
+ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242318"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286530"
 ---
 # <a name="-operator-c-reference"></a>/ – operátor (Referenční dokumentace jazyka C#)
-Operátor dělení (`/`) rozděluje svůj první operand tak svým druhým operandem. Všechny číselné typy obsahuje předdefinované operátory dělení.
-  
-## <a name="remarks"></a>Poznámky  
- Lze přetěžovat uživatelsky definované typy `/` – operátor (viz [operátor](../../../csharp/language-reference/keywords/operator.md)). Přetížení `/` implicitně přetížení operátoru [/ = – operátor](division-assignment-operator.md).  
-  
- Při dělení dvou celých čísel, výsledek je vždycky celé číslo. Například výsledek 7 / 3 je 2. Toto je nezaměňovat floored dělení, jako `/` operátor zaokrouhlí směrem k nule.: -7 / 3 -2.  
-  
- Chcete-li získat podíl racionální číslo as, použijte `float`, `double`, nebo `decimal` typy. Existuje mnoho způsobů, jak převést mezi [integrovaným číselné typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md).  
-  
- Chcete-li určit zbývající, použijte [operátor zbytku](../../../csharp/language-reference/operators/remainder-operator.md) `%`.  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#42](../../../csharp/language-reference/operators/codesnippet/CSharp/division-operator_1.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+Operátor dělení `/` rozděluje svůj první operand tak svým druhým operandem. Všechny číselné typy podporují operátor dělení.
+
+## <a name="integer-division"></a>Celočíselné dělení
+
+Pro operandy typy celých čísel, výsledek `/` operátor je typu integer a rovnosti podílu dvou operandů zaokrouhlena směrem k nule.:
+
+[!code-csharp-interactive[integer division](~/samples/snippets/csharp/language-reference/operators/DivisionExamples.cs#Integer)]
+
+Chcete-li získat podílu dvou operandů jako číslo s plovoucí desetinnou čárkou, použijte `float`, `double`, nebo `decimal` typu:
+
+[!code-csharp-interactive[integer as floating-point division](~/samples/snippets/csharp/language-reference/operators/DivisionExamples.cs#IntegerAsFloatingPoint)]
+
+## <a name="floating-point-division"></a>S plovoucí desetinnou čárkou dělení
+
+Pro `float`, `double`, a `decimal` typy, výsledek `/` operátor odpovídá podílu dvou operandů:
+
+[!code-csharp-interactive[floating-point division](~/samples/snippets/csharp/language-reference/operators/DivisionExamples.cs#FloatingPoint)]
+
+Pokud jeden z operandů je `decimal`, může být jiný operand ani `float` ani `double`, protože ani `float` ani `double` implicitně převést na `decimal`. Je nutné explicitně převést `float` nebo `double` operand `decimal` typu. Další informace o implicitní převody mezi číselnými typy najdete v tématu [tabulka implicitních číselných převodů](../keywords/implicit-numeric-conversions-table.md).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Uživatelem definované typy lze [přetížení](../keywords/operator.md) `/` operátor. Když `/` je operátor přetížen, [operátor přiřazení dělení](division-assignment-operator.md) `/=` je také implicitně přetížené.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [operátor dělení](~/_csharplang/spec/expressions.md#division-operator) část [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [% – operátor](remainder-operator.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio'
+title: 'Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia'
 ms.date: 09/29/2017
 f1_keywords:
 - cs.build.commandline
@@ -15,16 +15,16 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 77375e428fe0563c0b533ca97abd21070e850682
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 3563f668dfd4610e1c5cd7d7f8633943c654f193
+ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857846"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286439"
 ---
-# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio
+# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postupy: Nastavení proměnných prostředí pro příkazový řádek Visual Studia
 
-Soubor VsDevCmd.bat nastaví příslušné proměnné prostředí povolit sestavení příkazového řádku. Další informace o VsDevCmd.bat najdete v tématu [článku Q248802 znalostní báze](https://support.microsoft.com/help/248802/you-receive-the-out-of-environment-space-error-message-when-you-execut).  
+Soubor VsDevCmd.bat nastaví příslušné proměnné prostředí povolit sestavení příkazového řádku.
 
 > [!NOTE]
 > Soubor VsDevCmd.bat je nový soubor dodávají s Visual Studio 2017. Visual Studio 2015 a starší používala VSVARS32.bat ke stejnému účelu. Tento soubor byl uložen v sadě Visual Studio \Program Files\Microsoft\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft Visual Studio\\*verze*\Common7\Tools.
@@ -41,7 +41,14 @@ Pokud na počítači, který také používá starší verzi sady Visual Studio 
   
     > [!CAUTION]
     >  VsDevCmd.bat se může lišit od počítače na počítač. Nenahrazujte VsDevCmd.bat z jiného počítače VsDevCmd.bat soubor chybí nebo je poškozen. Namísto toho nahraďte chybějící soubor opětovným spuštěním instalačního programu.  
-  
+
+### <a name="available-options-for-vsdevcmdbat"></a>Dostupné možnosti pro VsDevCmd.BAT
+
+Pokud chcete zobrazit dostupné možnosti pro VsDevCmd.BAT, spusťte příkaz se `-help` možnost:
+```console
+VsDevCmd.bat -help
+```
+
 ## <a name="see-also"></a>Viz také  
 
 - [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
