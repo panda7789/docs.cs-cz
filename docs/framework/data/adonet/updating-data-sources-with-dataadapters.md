@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 8feffd5c3a6205dcb67072f8e17b0e771a0f0d6b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: b8e082b98870a59e8fb6f42fa7bedb86c2832d33
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144738"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53245623"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat pomocí adaptérů dat
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, třeba `Fill` metoda, přebírá jako argumenty instance `DataSet`a volitelně <xref:System.Data.DataTable> objektu nebo `DataTable` název. `DataSet` Instance je `DataSet` , která obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulky, ze kterých se mají obnovit změny. Pokud ne `DataTable` je zadán první `DataTable` v `DataSet` se používá.  
@@ -294,9 +294,9 @@ class Program {
   
       // Build the query string  
       String primaryCols = String.Join(",", primaryColumns.Select(col => col.ColumnName));  
-      String resetCols = String.Join(",", resetColumns.Select(col => "Max(" + col.ColumnName + ") as " + col.ColumnName));  
+      String resetCols = String.Join(",", resetColumns.Select(col => $"Max({col.ColumnName}) as {col.ColumnName}"));
   
-      String selectString = String.Format("Select {0},{1} from Course Group by {0}", primaryCols, resetCols);  
+      String selectString = $"Select {primaryCols},{resetCols} from Course Group by {primaryCols}");
   
       SqlCommand selectCommand = new SqlCommand(selectString);  
   

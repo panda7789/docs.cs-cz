@@ -1,5 +1,6 @@
 ---
-title: long (Referenční dokumentace jazyka C#)
+title: Long - C# odkaz
+ms.custom: seodec18
 ms.date: 03/14/2017
 f1_keywords:
 - long_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - long keyword [C#]
 ms.assetid: f9b24319-1f39-48be-a42b-d528ee28a7fd
-ms.openlocfilehash: 1cc800b9e1d91884e4d048d29cc51cdc2b01b76c
-ms.sourcegitcommit: 3b1cb8467bd73dee854b604e306c0e7e3882d91a
+ms.openlocfilehash: 7693de1502898a6ba8d35c0011d31756848fb461
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "43507144"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53241506"
 ---
 # <a name="long-c-reference"></a>long (Referenční dokumentace jazyka C#)
 

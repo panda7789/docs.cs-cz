@@ -1,5 +1,6 @@
 ---
-title: ulong – klíčové slovo (C# odkaz)
+title: ulong – klíčové slovo - C# odkaz
+ms.custom: seodec18
 ms.date: 03/14/2017
 f1_keywords:
 - ulong_CSharpKeyword
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - ulong keyword [C#]
 ms.assetid: f2ece624-837a-40cf-92c5-343e7f33397c
-ms.openlocfilehash: d0c7df4ebda13a59e51e9599699f6abf4bbf1d71
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 97db22612e900658746f40cd117ff941135027a1
+ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143425"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53235017"
 ---
 # <a name="ulong-c-reference"></a>ulong (Referenční dokumentace jazyka C#)
 
