@@ -6,12 +6,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: e9243ff8b55970ebab6ecbe42cb3ed8ebcaecfe3
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 316f8f59b86294b1f344b31f7355017ebd992362
+ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238569"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53334753"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 
@@ -27,7 +27,7 @@ Je možné deklarovat jednorozměrné pole pět celých čísel, jak je znázorn
   
 ## <a name="array-initialization"></a>Inicializace pole
 
- Je možné k inicializaci pole při deklaraci, v takovém případě není potřeba specifikátor pozice, protože je už zadaný počet prvků v inicializačního seznamu. Příklad:  
+ Je možné k inicializaci pole při deklaraci, v takovém případě není potřeba specifikátor délku, protože je už zadaný počet prvků v seznamu inicializace. Příklad:  
   
  [!code-csharp[csProgGuideArrays#6](../../../csharp/programming-guide/arrays/codesnippet/CSharp/single-dimensional-arrays_3.cs)]  
   

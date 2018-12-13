@@ -6,18 +6,18 @@ helpviewer_keywords:
 - covariance, out keyword [C#]
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
-ms.openlocfilehash: 8ad190e8653063f1461e4ff61a62310e59f48cf7
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 1316228a186976f313bb9f10032262974243a3ae
+ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239495"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53334883"
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (generický modifikátor) (referenční dokumentace jazyka C#)
 
 Pro parametry obecného typu `out` – klíčové slovo určuje, že parametr typu je kovariant. Můžete použít `out` – klíčové slovo v obecných rozhraních a delegátech.
 
-Kovariance umožňuje použít více odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod z třídy, které implementují rozhraní variant a implicitní převod delegujících typů. Kovariance a kontravariance jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
+Kovariance umožňuje použít více odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod z třídy, které implementují rozhraní kovariantního a implicitní převod delegujících typů. Kovariance a kontravariance jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
 
 Rozhraní, které má parametr kovariantního typu umožňuje její metody k vrácení více odvozené typy než je zadáno parametrem typu. Například protože v rozhraní .NET Framework 4, v <xref:System.Collections.Generic.IEnumerable%601>, typ T je kovariantní, můžete přiřadit objektu `IEnumerable(Of String)` typu na objekt `IEnumerable(Of Object)` typ bez použití jakékoli speciální převod metody.
 

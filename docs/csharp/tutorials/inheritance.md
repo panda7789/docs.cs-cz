@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/05/2018
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 15e2ddd7e103857054973d6c4ed7401d6f91af0d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: da21b1419f9d662c71ffd469cec67e01154ffc60
+ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502161"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53334870"
 ---
 # <a name="inheritance-in-c-and-net"></a>Dědičnost v jazyce C# a .NET
 
@@ -98,7 +98,7 @@ public class B : A // Generates CS0534.
 }
 ```
 
-Dědičnost platí jenom pro třídy a rozhraní. Další kategorie typů (struktury, delegátů a výčty) nepodporují dědičnosti. Z důvodu tato pravidla při pokusu o kompilaci kódu jako v následujícím příkladu vytvoří chybu kompilátoru CS0527: "Typ 'ValueType' v seznamu rozhraní není rozhraní." Chybová zpráva znamená, že i když můžete definovat rozhraní, která implementuje strukturu, dědičnosti, není podporovaný.
+Dědičnost platí jenom pro třídy a rozhraní. Další kategorie typů (struktury, delegátů a výčty) nepodporují dědičnosti. Protože tato pravidla pokusu o kompilaci kódu, jako je následující příklad generuje chybu kompilátoru CS0527: "Typ 'ValueType' v seznamu rozhraní není rozhraní." Chybová zpráva znamená, že i když můžete definovat rozhraní, která implementuje strukturu, dědičnosti, není podporovaný.
 
 ```csharp
 using System;
@@ -249,7 +249,7 @@ Kromě členy, které dědí z `Publication`, `Book` třída definuje následuj�
 
 - Dva konstruktory
 
-  Dva `Book` konstruktory sdílet tři společných parametrů. Dva, *title* a *vydavatele*, odpovídají parametry `Publication` konstruktoru. Je třetí *Autor*, které je uložený na privátní `authorName` pole. Zahrnuje jeden konstruktor *isbn* parametr, který je uložený v `ISBN` automatickou vlastnost.
+  Dva `Book` konstruktory sdílet tři společných parametrů. Dva, *title* a *vydavatele*, odpovídají parametry `Publication` konstruktoru. Je třetí *Autor*, které je uložený na veřejnou neměnné `Author` vlastnost. Zahrnuje jeden konstruktor *isbn* parametr, který je uložený v `ISBN` automatickou vlastnost.
 
   První konstruktor používá [to](../language-reference/keywords/this.md) – klíčové slovo k volání jiných konstruktoru. Řetězení konstruktor je běžný vzor při definování konstruktory. Konstruktory s parametry méně zadat výchozí hodnoty při volání konstruktoru s největší počet parametrů.
 
@@ -257,11 +257,11 @@ Kromě členy, které dědí z `Publication`, `Book` třída definuje následuj�
 
 - Jen pro čtení `ISBN` vlastnost, která vrací `Book` objektu mezinárodní Standard číslo knihy, číslo jedinečný nebo 13 – 10místné. ISBN je předána jako argument jeden z `Book` konstruktory. ISBN je uložena v privátní pomocným polem, které je automaticky generovaný kompilátorem.
 
-- Jen pro čtení `Author` vlastnost. Jméno autora je předána jako argument pro obě `Book` konstruktory a je uložen v soukromé `authorName` pole.
+- Jen pro čtení `Author` vlastnost. Jméno autora je předána jako argument pro obě `Book` konstruktory a je uložená ve vlastnosti.
 
-- Dvě vlastnosti jen pro čtení související s cenami, `Price` a `Currency`. Jejich hodnoty jsou k dispozici jako argumenty v `SetPrice` volání metody. Cena je uložen v soukromé pole `bookPrice`. `Currency` Vlastnost je trojmístný symbol měny ISO (například USD za americký dolar) a je uložen v soukromé `ISOCurrencySymbol` pole. Symboly měny ISO můžete získat z <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> vlastnost.
+- Dvě vlastnosti jen pro čtení související s cenami, `Price` a `Currency`. Jejich hodnoty jsou k dispozici jako argumenty v `SetPrice` volání metody. `Currency` Vlastnost má tři číslice symbolem měny ISO (například USD za americký dolar). Symboly měny ISO můžete získat z <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> vlastnost. Obě tyto vlastnosti jsou externě jen pro čtení, ale i lze nastavit pomocí kódu v `Book` třídy.
 
-- A `SetPrice` metodu, která nastavuje hodnoty `bookPrice` a `ISOCurrencySymbol` pole. Tyto hodnoty jsou vráceny prostřednictvím `Price` a `Currency` vlastnosti.
+- A `SetPrice` metodu, která nastavuje hodnoty `Price` a `Currency` vlastnosti. Tyto hodnoty jsou vráceny podle stejné vlastností.
 
 - Přepsání `ToString` – metoda (zděděno z `Publication`) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> a <xref:System.Object.GetHashCode%2A> metody (zděděno z <xref:System.Object>).
 

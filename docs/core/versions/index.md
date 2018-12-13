@@ -4,18 +4,18 @@ description: V tomto článku se naučíte, jak .NET Core SDK a modulu Runtime s
 author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: 54b09a6b74b2cf213cea781dec95a413ac2ad059
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: e4ab5e3a6dd487437e267aec042639c70fdc61ad
+ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170714"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53334805"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Přehled, jak se systémovou správou verzí .NET Core
 
 .NET core odkazuje na modul Runtime .NET Core a .NET Core SDK, který obsahuje nástroje, které potřebujete k vývoji aplikací. .NET core SDK jsou navrženy pro práci s jakékoli předchozí verzi modulu Runtime .NET Core. Tento článek vysvětluje strategii verze sady SDK a modulu runtime. Vysvětlení čísla verzí pro .NET Standard najdete v článku Představujeme [.NET Standard](../../standard/net-standard.md#net-implementation-support).
 
-Modulu Runtime .NET Core a .NET Core SDK přidávání nových funkcí v různých sazbě – obecně .NET Core SDK poskytuje rychlé aktualizaci nástrojů pro více než .NET Core Runtime změny modulu runtime, které se používají v produkčním prostředí. Bohužel tento problém přinesl několik strategií správy verzí během posledních několika let. Informace o historii v následujícím článku na [správy verzí .NET Core](version-history.md).
+Modulu Runtime .NET Core a .NET Core SDK přidávání nových funkcí v různých sazbě – obecně .NET Core SDK poskytuje rychlé aktualizaci nástrojů pro více než .NET Core Runtime změny modulu runtime, které se používají v produkčním prostředí.
 
 ## <a name="versioning-details"></a>Správa verzí podrobnosti
 
@@ -32,7 +32,7 @@ Třetí pozici číslo verze sady SDK komunikuje i menší a opravu. Dílčí ve
 | Oprava sady SDK a modulu runtime | 2.2.1             | 2.2.102           |
 | Změna funkce sady SDK    | 2.2.1             | 2.2.200           |
 
-(\*) Tento graf používá budoucí 2.2 .NET Core Runtime jako v příkladu vzhledem k tomu, že historické artefaktů určená první sada SDK pro .NET Core 2.1 je 2.1.300. Další informace najdete v tématu [historie správy verzí .NET Core](version-history.md).
+(\*) Tento graf používá budoucí 2.2 .NET Core Runtime jako v příkladu vzhledem k tomu, že historické artefaktů určená první sada SDK pro .NET Core 2.1 je 2.1.300. Další informace najdete v tématu [výběr verze .NET Core](selection.md).
 
 POZNÁMKY:
 

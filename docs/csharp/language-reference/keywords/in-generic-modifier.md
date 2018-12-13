@@ -5,18 +5,18 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
-ms.openlocfilehash: ea11fabd7974c67b1f1b3af017db1f34178bfae8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d43640cbde856ac1df8b5034f904da75de6b077c
+ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238595"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53334779"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (generický modifikátor) (Referenční dokumentace jazyka C#)
 
 Pro parametry obecného typu `in` – klíčové slovo určuje, že parametr typu je kontravariant. Můžete použít `in` – klíčové slovo v obecných rozhraních a delegátech.
 
-Kontravariance umožňuje použít méně odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod z třídy, které implementují rozhraní variant a implicitní převod delegujících typů. Kovariance a kontravariance v parametrech obecného typu jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
+Kontravariance umožňuje použít méně odvozený typ, než je určeno obecný parametr. To umožňuje implicitní převod z třídy, které implementují rozhraní kontravariantní a implicitní převod delegujících typů. Kovariance a kontravariance v parametrech obecného typu jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
 
 Typ mohou být deklarovány kontravariantní v obecné rozhraní nebo delegát pouze v případě, že definuje typ parametrů, metody a ne návratový typ metody. `In`, `ref`, a `out` parametry musí být neutrální, to znamená jsou ani kovariantní nebo kontravariantní.
 
