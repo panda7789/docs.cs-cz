@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: c19169d61a96314e9fcfad94b013af18440e1ff5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9957b937dd59f82a5d1962fee33593d7a0c1b7c1
+ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503611"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53286556"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  
@@ -48,7 +48,7 @@ Tento dokument obsahuje podrobný pohled na architekturu Windows Communication F
 ## <a name="wcf-terms"></a>Podmínky pro WCF  
  V následujících bodech dalších konceptů a termínů používaných v dokumentaci WCF.  
   
- – zpráva  
+  – zpráva  
  Samostatná jednotka dat, která se může skládat z více částí, včetně záhlaví a text.  
   
  service  
@@ -144,7 +144,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Určuje, že důvěrnost, integritu a ověřování jsou k dispozici mechanismy přenosové vrstvy (například HTTPS). Při použití přenosu, jako je protokol HTTPS, v tomto režimu nabízí výhodu v podobě je efektivnější v jeho výkon a zaměřený z důvodu jeho rozšíření na Internetu. Nevýhodou je, že tento druh zabezpečení, použije se samostatně pro každý segment směrování v komunikační trasa, aby komunikace náchylné k útoku "man in the middle".  
   
  režim zabezpečení zpráv  
- Určuje, že zabezpečení poskytuje implementaci jeden nebo více specifikací zabezpečení, jako je specifikace s názvem [webové služby zabezpečení: zabezpečení zpráv SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Každá zpráva obsahuje nezbytné mechanismů pro zabezpečení během jeho kopírování a umožňuje příjemci umožňuje zjistit případnou manipulaci a k dešifrování zprávy. V tomto smyslu zabezpečení zapouzdřen v rámci každé zprávy poskytující-koncové zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stane součástí zprávy, je také možné zahrnout více druhů přihlašovací údaje se zprávou (tyto jsou označovány jako *deklarace identity*). Tento přístup také nabízí výhodu v podobě povolení zpráva, kterou chcete procházet bezpečně přes všechny dopravu, včetně více přenosy mezi její zdroj a cíl. Nevýhody tohoto přístupu je složitost kryptografických mechanismů zapojeni, což vede k vliv na výkon.  
+ Určuje, že zabezpečení poskytuje implementaci jeden nebo více specifikací zabezpečení, jako je specifikace s názvem [zabezpečení webové služby: Zabezpečení zpráv SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Každá zpráva obsahuje nezbytné mechanismů pro zabezpečení během jeho kopírování a umožňuje příjemci umožňuje zjistit případnou manipulaci a k dešifrování zprávy. V tomto smyslu zabezpečení zapouzdřen v rámci každé zprávy poskytující-koncové zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stane součástí zprávy, je také možné zahrnout více druhů přihlašovací údaje se zprávou (tyto jsou označovány jako *deklarace identity*). Tento přístup také nabízí výhodu v podobě povolení zpráva, kterou chcete procházet bezpečně přes všechny dopravu, včetně více přenosy mezi její zdroj a cíl. Nevýhody tohoto přístupu je složitost kryptografických mechanismů zapojeni, což vede k vliv na výkon.  
   
  přenosu se režim zabezpečených zpráv přihlašovacích údajů  
  Určuje použití přenosové vrstvy k zajištění důvěrnosti, ověřování a integrity zprávy, při každé zprávy může obsahovat více přihlašovacích údajů (deklarace) vyžaduje spuštěné přijímače zpracovaly zprávy.  
