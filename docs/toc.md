@@ -128,7 +128,6 @@
 ### [Publikovaný výstup testování částí](core/testing/unit-testing-published-output.md)
 ### [Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio](/visualstudio/test/live-unit-testing-start)
 ## [Správa verzí](core/versions/index.md)
-### [Historie verzí .NET Core](core/versions/version-history.md)
 ### [Výběr verze .NET Core](core/versions/selection.md)
 ### [Odebrání zastaralých modulů runtime a sad SDK](core/versions/remove-runtime-sdk-versions.md)
 ## [Katalog identifikátorů modulu runtime](core/rid-catalog.md)
