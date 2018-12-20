@@ -4,7 +4,7 @@ description: Použití F# možnosti příkazového řádku kompilátoru pro ří
 ms.date: 12/10/2018
 ms.openlocfilehash: dafd872a22bf4ec4b36910f28b7c5bfe9370af8d
 ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 12/10/2018
 ms.locfileid: "53170870"
@@ -25,7 +25,7 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 |`--baseaddress:address`|Určuje upřednostňovaná základní adresa, ve kterém se má načíst knihovnu DLL.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;baseaddress &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/2fdbz5xd.aspx).|
 |`--codepage:id`|Určuje znakovou stránku, která má použít během kompilace, pokud požadovaná stránka není aktuální výchozí znaková stránka systému.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;znakové stránky &#40;C&#35; – možnosti kompilátoru&#41;](../../csharp/language-reference/compiler-options/codepage-compiler-option.md).|
 |`--consolecolors`|Určuje, že chyby a upozornění používají barevně označený text v konzole.|
-|"--crossoptimize [+|-]`|Povolí nebo zakáže optimalizace mezi moduly.|
+|`--crossoptimize[+|-]`|Povolí nebo zakáže optimalizace mezi moduly.|
 |<code>--delaysign[+&#124;-]</code>|Vytvoří zpožděný podpis sestavení s využitím veřejné části klíče silného názvu.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;delaysign &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/ta1sxwy8.aspx).|
 |<code>--checked[+&#124;-]</code>|Povolí nebo zakáže generování kontroly přetečení.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;zaškrtnutí &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/h25wtyxf.aspx).|
 |<code>--debug[+&#124;-]</code><br /><br /><code>-g[+&#124;-]</code><br /><br /><code>--debug:[full&#124;pdbonly]</code><br /><br /><code>-g: [full&#124;pdbonly]</code>|Povolí nebo zakáže generování ladicích informací nebo určuje typ ladicích informací ke generování. Výchozí hodnota je plná, což umožňuje připojení ke spuštěnému programu. Zvolte **pdbonly** pro získání omezených ladicích informací uložených v souboru pdb (program database).<br /><br />Ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace naleznete v tématu<br /><br />[&#47;ladění &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8cw0bt21.aspx).|
