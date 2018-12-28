@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 0640b4c54b6f1429bce4947ec536352f240ca719
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.openlocfilehash: 5ab9fafeb6c836f1561752a8e2bdfddb97296399
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47863621"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610669"
 ---
 # <a name="ltruntimegt-element"></a>&lt;modul runtime&gt; – Element
 Poskytuje informace, které slouží ke konfiguraci aplikací modulem common language runtime.  
@@ -92,5 +92,5 @@ Poskytuje informace, které slouží ke konfiguraci aplikací modulem common lan
  Prvky v [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) části jsou automaticky číst modul common language runtime při spuštění aplikace. Konfigurační soubor pro jiné než výchozí aplikační doménu můžete také definovat zadáním jeho název <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> vlastnost; jeho nastavení jsou přečtena automaticky při načtení domény aplikace. Jen zřídka, pokud někdy, měli byste třeba přímému čtení nastavení v [ \<runtime >](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu v konfiguračním souboru aplikace.  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -1,13 +1,13 @@
 ---
-title: Asynchronní pracovní postupy (F#)
+title: Asynchronní pracovní postupy
 description: Další informace o podpoře v F# programovací jazyk pro provádění výpočtů asynchronně, což provést bez blokování provádění jiné práce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 720996106d2b90392eacc75eb99147691ee83334
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 7643a26469ee6a6cf15940f90611fd430beef42e
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127742"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610785"
 ---
 # <a name="asynchronous-workflows"></a>Asynchronní pracovní postupy
 

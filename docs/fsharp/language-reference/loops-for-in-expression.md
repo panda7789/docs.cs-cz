@@ -1,13 +1,13 @@
 ---
-title: 'Smyčky: Výraz for...in (F#)'
+title: 'Smyčky: Výraz for...in'
 description: V tématu Jak F# for... ve výrazu konstrukce opakování ve smyčce se používá k iteraci přes odpovídá vzoru v vyčíslitelné kolekce.
 ms.date: 05/16/2016
-ms.openlocfilehash: c4fba1f1dea3993cafa2e37ad0f32d9fb2eed85a
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: adaf448a49cf53c63c41f9156d40ee5d1ad3caeb
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48027231"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614401"
 ---
 # <a name="loops-forin-expression"></a>Smyčky: Výraz for...in
 
@@ -136,5 +136,5 @@ Number of elements in list1: 5
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Smyčky: `for...to` výraz](loops-for-to-expression.md)
-- [Smyčky: `while...do` výraz](loops-while-do-expression.md)
+- [Smyčky: `for...to` Výraz](loops-for-to-expression.md)
+- [Smyčky: `while...do` Výraz](loops-while-do-expression.md)

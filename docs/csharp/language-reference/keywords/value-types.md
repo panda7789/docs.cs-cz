@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 9fe75cf9524f6280bc649fb3784c21e4dd88adea
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 77aed78e7822e06b3b1e6c48b07790d93e09559c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235779"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612722"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# odkaz)
 
@@ -28,14 +28,14 @@ Existují dva druhy typů hodnot:
 
 Proměnné hodnotového typu obsahuje hodnotu typu. Například proměnná `int` typ může obsahovat hodnotu `42`. Tím se liší od proměnné typu odkazu, který obsahuje odkaz na instanci typu, označované také jako objekt. Když přiřadí novou hodnotu do proměnné typu hodnoty, tato hodnota je zkopírována. Když se přiřadí novou hodnotu do proměnné typu odkazu, odkaz je zkopírován, nikoli samotného objektu.
 
-Všechny hodnotové typy jsou implicitně odvozena z <xref:System.ValueType?displayProperty=nameWithType>.  
-  
-Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty. Nicméně, jako jsou typy odkazů, struktury mohou implementovat rozhraní.  
-  
+Všechny hodnotové typy jsou implicitně odvozena z <xref:System.ValueType?displayProperty=nameWithType>.
+
+Na rozdíl od v případě typů odkazu nelze odvodit nový typ z typu hodnoty. Nicméně, jako jsou typy odkazů, struktury mohou implementovat rozhraní.
+
 Hodnoty typových proměnných nesmí být `null` ve výchozím nastavení. Ale proměnné k odpovídající položce [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md) může být `null`.
-  
-Každý hodnotový typ má implicitní výchozí konstruktor, který inicializuje výchozí hodnota tohoto typu. Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).  
-  
+
+Každý hodnotový typ má implicitní výchozí konstruktor, který inicializuje výchozí hodnota tohoto typu. Informace o výchozí hodnoty typů hodnot najdete v tématu [tabulka výchozích hodnot](default-values-table.md).
+
 ## <a name="simple-types"></a>Jednoduché typy
 
 *Jednoduché typy* představují sadu předdefinovaných struktury typy poskytované C# a zahrnuje následující typy:
@@ -55,59 +55,59 @@ Jednoduché typy liší od jiné typy struct, že umožňují některé další 
 - Výrazy konstant, jehož operandy jsou všechny jednoduchý typ konstanty, jsou vyhodnocovány v době kompilace.
 
 Další informace najdete v tématu [jednoduché typy](~/_csharplang/spec/types.md#simple-types) část [ C# specifikace jazyka](../language-specification/index.md).
-  
+
 ## <a name="initializing-value-types"></a>Inicializace typů hodnot
 
- Lokální proměnné v jazyce C# musí být inicializován před jejich použití. Například může prohlásit místní proměnné bez inicializace jako v následujícím příkladu:  
-  
-```csharp  
-int myInt;  
-```  
-  
- Nelze ji použít předtím, než ji inicializovat. Můžete inicializovat pomocí následujícího příkazu:  
-  
-```csharp  
-myInt = new int();  // Invoke default constructor for int type.  
-```  
-  
- Tento příkaz je ekvivalentem následujícího příkazu:  
-  
-```csharp  
-myInt = 0;         // Assign an initial value, 0 in this example.  
-```  
-  
- Můžete samozřejmě máte deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:  
-  
-```csharp  
-int myInt = new int();  
-```  
-  
- – nebo –  
-  
-```csharp  
-int myInt = 0;  
-```  
-  
- Použití [nové](new.md) operátor volá výchozí konstruktor třídy určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu, výchozí konstruktor přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).  
-  
- Pomocí uživatelem definované typy [nové](new.md) k vyvolání výchozího konstruktoru. Například následující příkaz volá výchozí konstruktor třídy `Point` struktury:  
-  
-```csharp  
-Point p = new Point(); // Invoke default constructor for the struct.  
-```  
-  
- Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.  
-  
- Další informace o `new` operátoru, naleznete v tématu [nové](new.md).  
-  
- Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).  
-  
+Lokální proměnné v jazyce C# musí být inicializován před jejich použití. Například může prohlásit místní proměnné bez inicializace jako v následujícím příkladu:
+
+```csharp
+int myInt;
+```
+
+Nelze ji použít předtím, než ji inicializovat. Můžete inicializovat pomocí následujícího příkazu:
+
+```csharp
+myInt = new int();  // Invoke default constructor for int type.
+```
+
+Tento příkaz je ekvivalentem následujícího příkazu:
+
+```csharp
+myInt = 0;         // Assign an initial value, 0 in this example.
+```
+
+Můžete samozřejmě máte deklaraci a inicializaci ve stejném příkazu jako v následujících příkladech:
+
+```csharp
+int myInt = new int();
+```
+
+– nebo –
+
+```csharp
+int myInt = 0;
+```
+
+Použití [nové](new.md) operátor volá výchozí konstruktor třídy určitého typu a přiřadí výchozí hodnotu proměnné. V předchozím příkladu, výchozí konstruktor přiřazena hodnota `0` k `myInt`. Další informace o hodnoty přiřazené voláním výchozí konstruktory, naleznete v tématu [tabulka výchozích hodnot](default-values-table.md).
+
+Pomocí uživatelem definované typy [nové](new.md) k vyvolání výchozího konstruktoru. Například následující příkaz volá výchozí konstruktor třídy `Point` struktury:
+
+```csharp
+Point p = new Point(); // Invoke default constructor for the struct.
+```
+
+Po tomto volání struktury považuje je jednoznačně přiřazovat; To znamená všech jejích členů jsou inicializovány na výchozích hodnotách.
+
+Další informace o `new` operátoru, naleznete v tématu [nové](new.md).
+
+Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).
+
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)  
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-- [Klíčová slova jazyka C#](index.md)  
-- [Typy](types.md)  
-- [Referenční tabulky pro typy](reference-tables-for-types.md)  
-- [Odkazové typy](reference-types.md)  
-- [Typy s možnou hodnotou Null](../../programming-guide/nullable-types/index.md)  
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Typy](types.md)
+- [Referenční tabulky pro typy](reference-tables-for-types.md)
+- [Odkazové typy](reference-types.md)
+- [Typy s možnou hodnotou Null](../../programming-guide/nullable-types/index.md)

@@ -4,12 +4,12 @@ description: Informace o použití sady .NET Core SDK a jeho nástroje na server
 author: guardrex
 ms.date: 05/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 064766555ff178879b91e4395b52b097dcd7c5c5
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 4c651983bb900d000de37a0e413ef9ab0f7893c9
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170155"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611552"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí sady .NET Core SDK a nástroje v kontinuální integrace (CI)
 
@@ -124,7 +124,7 @@ LOCALDOTNET="$INSTALLDIR/dotnet"
 
 Můžete nakonfigurovat [Travis CI](https://travis-ci.org/) nainstalovat s použitím sady .NET Core SDK `csharp` jazyka a `dotnet` klíč. Další informace najdete v oficiální dokumentace Travis CI na [budovy C#, F#, nebo projektu jazyka Visual Basic](https://docs.travis-ci.com/user/languages/csharp/). Všimněte si, jak přistupovat k informacím Travis CI, která udržuje komunity `language: csharp` identifikátor jazyka se dá použít pro všechny jazyky .NET, včetně F#a Mono.
 
-Travis CI běží v systémech macOS a Linux úloh v *sestavení matice*, kde můžete určit kombinaci modulu runtime, prostředí a vyloučení nebo zahrnutí pokrýt kombinace vašeho sestavení pro vaši aplikaci. Další informace najdete v tématu [. Příklad travis.yml](https://github.com/dotnet/docs/blob/master/.travis.yml) souboru a [přizpůsobení sestavení](https://docs.travis-ci.com/user/customizing-the-build) v dokumentaci k Travis CI. Nástroje založené na MSBuild zahrnují LTS (1.0.x) a moduly runtime aktuální (1.1.x) v balíčku. takže nainstalováním sady SDK, zobrazí se všechno, co potřebujete k vytváření.
+Travis CI běží v systémech macOS a Linux úloh v *sestavení matice*, kde můžete určit kombinaci modulu runtime, prostředí a vyloučení nebo zahrnutí pokrýt kombinace vašeho sestavení pro vaši aplikaci. Další informace najdete v tématu [přizpůsobení sestavení](https://docs.travis-ci.com/user/customizing-the-build) článek v dokumentaci k Travis CI. Nástroje založené na MSBuild zahrnují LTS (1.0.x) a moduly runtime aktuální (1.1.x) v balíčku. takže nainstalováním sady SDK, zobrazí se všechno, co potřebujete k vytváření.
 
 ### <a name="appveyor"></a>AppVeyor
 

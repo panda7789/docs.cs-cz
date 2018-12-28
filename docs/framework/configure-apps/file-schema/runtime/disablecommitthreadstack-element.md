@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4d8724d16a25cdec040fa5b1f5472da06b11f669
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 69b2c9f3bbd4fb7562272903d3ab78e3a4312298
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752660"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611643"
 ---
 # <a name="ltdisablecommitthreadstackgt-element"></a>&lt;disablecommitthreadstack –&gt; – Element
-Určuje, jestli je úplná vlákno zásobníku potvrzeny při spuštění vlákna.  
+Určuje, zda je zásobníku úplného vlákna potvrzeny při spuštění vlákna.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -37,14 +37,14 @@ Určuje, jestli je úplná vlákno zásobníku potvrzeny při spuštění vlákn
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|povoleno|Požadovaný atribut.<br /><br /> Určuje, zda je zakázána potvrzení zásobníku úplné vlákno při spuštění vlákna (výchozí nastavení).|  
+|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda je zakázaný potvrzení zásobníku úplného vlákna při spuštění vlákna (výchozí chování).|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Nezakazujte výchozí chování modul common language runtime, který je při spuštění vlákna potvrzení zásobníku úplný přístup z více vláken.|  
-|1|Zakážete výchozí chování modul CLR, což je potvrzení zásobníku úplné vlákno při spuštění vlákna.|  
+|0|Nezakazujte výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
+|1|Zakážete výchozí chování modulu common language runtime, který je pro potvrzení zásobníku úplného vlákna při spuštění vlákna.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -53,17 +53,17 @@ Určuje, jestli je úplná vlákno zásobníku potvrzeny při spuštění vlákn
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`configuration`|Kořenový element v každém konfiguračním souboru, který používá modul common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikace.|  
+|`configuration`|Kořenový element v každém konfiguračním souboru, který používá modul common language runtime a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací.|  
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Výchozí chování modul common language runtime je potvrzení zásobníku úplné vlákno při spuštění vlákna. Pokud velký počet vláken, je nutné vytvořit na serveru, která má omezenou paměti a většinu těchto vláken použije velmi málo místa zásobníku, server může fungovat lépe modul common language runtime nesměrují zásobníku úplné vlákno okamžitě po vlákno st arted.  
+ Výchozí chování modulu common language runtime je potvrzení změn zásobníku úplného vlákna při spuštění vlákna. Pokud velký počet vláken musí být vytvořen na serveru, který má omezené paměti a většina tato vlákna budou používat velmi málo místa zásobníku, server může být lepší provedeno, zda modul common language runtime nesměrují zásobníku úplného vlákna ihned po vlákno st uštění.  
   
 > [!NOTE]
->  Nespravované hostitelů můžete použít `STARTUP_DISABLE_COMMITTHREADSTACK` příznak spuštění v [STARTUP_FLAGS](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčtu k dosažení stejného výsledku.  
+>  Můžete použít nespravovaným hostitelům `STARTUP_DISABLE_COMMITTHREADSTACK` příznak spuštění v [startup_flags –](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) výčet k dosažení stejného výsledku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat výchozí chování modul CLR, což je potvrzení zásobníku úplné vlákno při spuštění přístup z více vláken.  
+ Následující příklad ukazuje, jak zakázat výchozí chování modulu common language runtime, což je potvrzení změn zásobníku úplného vlákna při spuštění vlákna.  
   
 ```xml  
 <configuration>  
@@ -74,5 +74,5 @@ Určuje, jestli je úplná vlákno zásobníku potvrzeny při spuštění vlákn
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8c73f1a4373583530d5afde113c5c4ec049bcea4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9f98d85e5fd01a631352f5db7bba6ed309449d68
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195889"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613515"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Psaní velkých a pohotově reagujících aplikací .NET Framework
 Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhraní .NET Framework nebo aplikace, které zpracovávají velké množství dat, jako jsou soubory nebo databáze. Tyto tipy pocházejí z přepsání kompilátory C# i Visual Basic ve spravovaném kódu a tento článek obsahuje několik skutečné příklady z kompilátoru jazyka C#. 
@@ -31,12 +31,12 @@ Tento článek poskytuje tipy pro zvýšení výkonu velkých aplikací rozhran�
 ### <a name="fact-1-dont-prematurely-optimize"></a>Fakt 1: Neoptimalizovat předčasně ukončen.  
  Psaní kódu, který je složitější, než se musí se jednat o vznikají náklady na údržbu, ladění a leštění náklady. Zkušení programátoři mít intuitivní pochopit, jak vyřešit problémy psaní kódu a psaní kódu efektivnější. Ale jsou někdy předčasně optimalizovat svůj kód. Například používají tabulku hash při jednoduchém poli by stačit, nebo použijte složité ukládání do mezipaměti, který může nastat únik paměti namísto jednoduše recomputing hodnoty. I v případě, že jste programátor prostředí, by měl test výkonu a analýzu kódu při vyhledání potíží. 
   
-### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fakt 2: Pokud nejsou měření, které jste opakovaně uhodnout  
+### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fakt 2: Pokud nejsou měření, že uhodnutí  
  Nemusíte být profily a měření. Profily ukazují, jestli CPU je plně načten nebo určuje, zda jste blokováno při vstupně-výstupních operací disku. Profily můžete zjistit, jaký typ a kolik paměti máte přidělení a zda procesoru tráví spoustu času v [uvolňování](../../../docs/standard/garbage-collection/index.md) (GC). 
   
  By měl nastavit prostředí nebo scénáře výkonnostních cílů pro zákazníků ve vaší aplikaci a psaní testů k měření výkonu. Prozkoumat selhání testů s použitím vědecké metody: použití profilů na vás, co může být problém, vyslovují hypotézy o jejich a testovat vaše hypotézu s experiment nebo změny kódu. Vytvořte standardní hodnoty měření výkonu v čase s pravidelné testování tak může izolovat změny, které způsobují regrese výkonu. Výkon pracovních blíží přísné způsobem, budete vyhnete plýtvání časem se aktualizace kódu, které nepotřebujete. 
   
-### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Dobré nástroje vytvářejí všechny rozdíl  
+### <a name="fact-3-good-tools-make-all-the-difference"></a>Fakt 3: Vhodné nástroje vytvářejí všechny rozdíl  
  Vhodné nástroje umožňují rychle přejít k největší problémy s výkonem (procesor, paměť nebo disk) a pomohou vyhledat kód, který způsobí, že tyto kritické body. Microsoft se dodává s celou řadou nástrojů výkonu, jako [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling), [nástroj pro analýzu Windows Phone](https://msdn.microsoft.com/library/e67e3199-ea43-4d14-ab7e-f7f19266253f), a [PerfView](https://www.microsoft.com/download/details.aspx?id=28567). 
   
  PerfView je zadarmo. je neuvěřitelně výkonné nástroj, který pomůže zaměřit se na podrobné problémy, jako je / v disku, GC – události a paměti. Můžete zaznamenat související s výkonem [události trasování pro Windows](../../../docs/framework/wcf/samples/etw-tracing.md) událostí (ETW) a zobrazení snadno na aplikaci, proces, na zásobníku a na informace o vlákně. PerfView ukazuje, kolik a jaký druh paměti přidělí vaši aplikaci a které funkce nebo volání zásobníků přispívat množství služeb pro přidělení paměti. Podrobnosti najdete v tématu bohaté témata nápovědy, ukázky a videa, které jsou součástí nástroje (například [PerfView kurzy](https://channel9.msdn.com/Series/PerfView-Tutorial) na webu Channel 9). 
@@ -361,7 +361,8 @@ public Symbol FindMatchingSymbol(string name)
  Tento kód nepoužívá rozšiřující metody, lambda výrazy nebo enumerátory LINQ, a to s sebou nese náklady bez přidělení. Nejsou žádné přidělení, protože kompilátor může vidět, že `symbols` je kolekce <xref:System.Collections.Generic.List%601> a může svázat výsledné enumerátor (struktury) na místní proměnnou s správný typ, aby se zabránilo zabalení. Původní verze této funkce bylo skvělé příklad a výrazové Možnosti C# a produktivity rozhraní .NET Framework. Tato verze nové a efektivnější zachová tyto kvality bez přidání jakékoli složitý kód pro údržbu. 
   
 ### <a name="async-method-caching"></a>Asynchronní metoda ukládání do mezipaměti  
- Následující příklad znázorňuje běžný problém při pokusu o použití výsledky uložené v mezipaměti v [asynchronní](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7) metody. 
+
+Následující příklad znázorňuje běžný problém při pokusu o použití výsledky uložené v mezipaměti v [asynchronní](../../csharp/programming-guide/concepts/async/index.md) metody.
   
  **Příklad 6: ukládání do mezipaměti v asynchronních metodách**  
   

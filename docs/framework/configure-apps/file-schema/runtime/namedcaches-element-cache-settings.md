@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: a74dfaf883ea23514c6bc4641d9d576f5baf10b4
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: d6f741f4ecd3ea52dacc9f981024690a0031a533
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028296"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611084"
 ---
 # <a name="ltnamedcachesgt-element-cache-settings"></a>&lt;Element namedCaches&gt; – Element (nastavení mezipaměti)
 Určuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instancí. <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> Vlastnost odkazuje na soubor konfiguračních nastavení z jedné nebo více `namedCaches` prvky konfiguračního souboru.  
@@ -90,4 +90,4 @@ Určuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Cac
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [\<memoryCache > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)
+- [\<memoryCache > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md)

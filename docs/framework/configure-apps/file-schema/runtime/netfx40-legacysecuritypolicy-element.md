@@ -1,5 +1,5 @@
 ---
-title: '&lt;NetFx40_LegacySecurityPolicy –&gt; – Element'
+title: '&lt;NetFx40_LegacySecurityPolicy&gt; – Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <NetFx40_LegacySecurityPolicy> element
@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d9312d25842ccfcdf84e678d34b9bfde3fe7dd0
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 7045623872364160d76f4bc0c1522b0450a81bd2
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753980"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611591"
 ---
-# <a name="ltnetfx40legacysecuritypolicygt-element"></a>&lt;NetFx40_LegacySecurityPolicy –&gt; – Element
-Určuje, zda modul runtime používá zásady zabezpečení (CA) přístupu starší verze kódu.  
+# <a name="ltnetfx40legacysecuritypolicygt-element"></a>&lt;NetFx40_LegacySecurityPolicy&gt; – Element
+Určuje, zda modul runtime používá starší verzi kódu zásady zabezpečení přístupu (CAS).  
   
  \<Konfigurace >  
 \<modul runtime >  
-< NetFx40_LegacySecurityPolicy – >  
+< NetFx40_LegacySecurityPolicy >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,23 +55,23 @@ Určuje, zda modul runtime používá zásady zabezpečení (CA) přístupu star
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 3.5 a starší verze je zásadu CAS vždy v platnost. V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], musí být povolené zásady CAS.  
+ V rozhraní .NET Framework verze 3.5 a starší verze zásad CAS je vždy v vliv. V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], musí být povolené zásady CAS.  
   
- Zásady CAS jsou specifické pro verzi. Vlastní zásady certifikačních Autorit, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+ Zásady CAS je specifické pro verzi. Vlastní zásady CAS, které existují v dřívějších verzích rozhraní .NET Framework musí být zadány znovu v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
   
- Použití `<NetFx40_LegacySecurityPolicy>` elementu, který chcete [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] sestavení nemá vliv na [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); pravidla transparentnosti platit stále.  
+ Použití `<NetFx40_LegacySecurityPolicy>` elementu [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] sestavení nemá vliv na [kód transparentní pro zabezpečení](../../../../../docs/framework/misc/security-transparent-code.md); stále platí pravidla transparentnosti.  
   
 > [!IMPORTANT]
->  Použití `<NetFx40_LegacySecurityPolicy>` element může vést k postihy významně zvýšit výkon u nativních bitových kopií sestavení vytvořené [generátor (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) které nejsou nainstalovány v [globální mezipaměť sestavení ](../../../../../docs/framework/app-domains/gac.md). Snížení výkonu je způsobena nemožnost modulu runtime k načtení sestavení jako nativní bitové kopie, když se použije atribut, což vede k jejich se načíst sestavení jako v běhu.  
+>  Použití `<NetFx40_LegacySecurityPolicy>` element může způsobit snížení výkonu pro sestavení nativních bitových kopií, které jsou vytvořené [Native Image Generator (Ngen.exe)](../../../../../docs/framework/tools/ngen-exe-native-image-generator.md) , která nejsou v nainstalovaná [globální mezipaměti sestavení ](../../../../../docs/framework/app-domains/gac.md). Snížení výkonu způsobuje nemožnost modul runtime k načtení sestavení jako nativní bitové kopie, když se atribut používá, což vede k jejich načtených sestavení jako just-in-time.  
   
 > [!NOTE]
->  Pokud zadáte cílové verze rozhraní .NET Framework, která je starší než [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] v nastavení projektu pro projektu sady Visual Studio, bude možné povolit certifikační Autority zásad, včetně všechny vlastní zásady certifikační Autority, který jste zadali pro tuto verzi. Ale nebudete moci používat nový [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] typy a členy. Můžete také zadat dřívější verzi rozhraní .NET Framework pomocí [ \<supportedRuntime > element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) ve schématu nastavení spuštění ve vaší [konfiguračního souboru aplikace](../../../../../docs/framework/configure-apps/index.md).  
+>  Pokud zadáte cílovou verzi rozhraní .NET Framework, která je starší než [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] v nastavení projektu pro projekt sady Visual Studio, zásady CAS bude povolena, včetně všechny vlastní zásady CAS zadané pro tuto verzi. Ale nebudete moci používat nové [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] typy a členy. Starší verzi rozhraní .NET Framework můžete také zadat pomocí [ \<supportedRuntime > element](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) v schéma nastavení spouštění ve vaší [konfiguračního souboru aplikace](../../../../../docs/framework/configure-apps/index.md).  
   
 > [!NOTE]
->  Syntaxe souboru konfigurace je malá a velká písmena. Jak je uvedené v oddílech syntaxe a příklad, měli byste použít syntaxi.  
+>  Syntaxe konfigurační soubor je velká a malá písmena. Jak je uvedeno v části Syntaxe a příkladu, měli byste použít syntaxi.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element může použít pouze v konfiguračním souboru aplikace.  
+ Tento element lze použít pouze v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolte starší zásadu CAS pro aplikaci.  
@@ -85,5 +85,5 @@ Určuje, zda modul runtime používá zásady zabezpečení (CA) přístupu star
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

@@ -1,13 +1,13 @@
 ---
-title: Pole (F#)
+title: Pole
 description: Zjistěte, jak vytvořit a používat v polích F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0f72718988ee401631c53b74f02948030e83aac1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9670f2a61ed5c254493806501120552be9caecdf
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129971"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614555"
 ---
 # <a name="arrays"></a>Pole
 
@@ -418,4 +418,4 @@ V modulu [ `Array.Parallel` ](https://msdn.microsoft.com/library/60f30b77-5af4-4
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [F#; Typy](fsharp-types.md)
+- [Typy F#](fsharp-types.md)

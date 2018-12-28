@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1f56bbef6ed6decf6be4246f649665db4cf0f766
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 3b2cd047367820d249272ca220669835975dbf2d
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746017"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611162"
 ---
 # <a name="ltgeneratepublisherevidencegt-element"></a>&lt;generatePublisherEvidence&gt; – Element
-Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkaz pro zabezpečení přístupu kódu (CAS).  
+Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> důkazy pro zabezpečení přístupu kódu (CAS).  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<generatePublisherEvidence >  
+\<generatePublisherEvidence – >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Nevytváří <xref:System.Security.Policy.Publisher> důkaz.|  
+|`false`|Nevytváří žádné <xref:System.Security.Policy.Publisher> důkaz.|  
 |`true`|Vytvoří <xref:System.Security.Policy.Publisher> důkaz. Toto nastavení je výchozí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -57,18 +57,18 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] a později tento element nemá žádný vliv na časů načtení sestavení. Další informace najdete v části "Zjednodušení zásad zabezpečení" v [změny zabezpečení](../../../../../docs/framework/security/security-changes.md).  
+>  V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] a později, tento element nemá žádný vliv na dobu načítání sestavení. Další informace najdete v části "Zjednodušení zásady zabezpečení" v [změny zabezpečení](../../../../../docs/framework/security/security-changes.md).  
   
- Modul CLR (CLR) pokusí se ověřit podpis Authenticode při načítání, chcete-li vytvořit <xref:System.Security.Policy.Publisher> důkaz pro sestavení. Nicméně ve výchozím nastavení, většina aplikací není nutné <xref:System.Security.Policy.Publisher> důkaz. Standardní zásady certifikační Autority na nespoléhá se <xref:System.Security.Policy.PublisherMembershipCondition>. Neměli byste nepotřebné spuštění náklady spojené s ověření podpisu vydavatele, pokud vaše aplikace spustí na počítači s vlastní zásadu CAS nebo je hodláte splňují požadavky pro <xref:System.Security.Permissions.PublisherIdentityPermission> v prostředí s částečným vztahem důvěryhodnosti. (Požadavky pro oprávnění identity vždy úspěšné v prostředí plné důvěryhodnosti.)  
+ Modul CLR (CLR) pokusí o ověření podpisu Authenticode v okamžiku načtení vytvořit <xref:System.Security.Policy.Publisher> legitimaci sestavení. Ale ve výchozím nastavení, většina aplikací není nutné <xref:System.Security.Policy.Publisher> důkaz. Standardní zásady CAS nespoléhá na <xref:System.Security.Policy.PublisherMembershipCondition>. Měli byste se vyhnout zbytečným spuštění náklady spojené s ověření podpisu vydavatele, pokud vaše aplikace spustí na počítači s vlastní zásady CAS nebo hodlá splňovat požadavky pro <xref:System.Security.Permissions.PublisherIdentityPermission> v prostředí s částečným vztahem důvěryhodnosti. (Požadavky na identity oprávnění vždy úspěšné v prostředí úplného vztahu důvěryhodnosti.)  
   
 > [!NOTE]
->  Doporučujeme, který služeb pomocí `<generatePublisherEvidence>` elementu, který chcete zvýšit výkon při spouštění.  Pomocí tohoto elementu může také pomoci zabránit zpoždění, které může způsobit, že vypršení časového limitu a zrušení spuštění služby.  
+>  Doporučujeme vám, které služby použijte `<generatePublisherEvidence>` elementu, chcete-li zlepšit výkon při spuštění.  Použití tohoto prvku může také pomoct vyhnout se prodlevám, které může způsobit vypršení časového limitu a zrušení spuštění služby.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element může použít pouze v konfiguračním souboru aplikace.  
+ Tento element lze použít pouze v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití `<generatePublisherEvidence>` elementu, který chcete zakázat zjišťování certifikační Autority zásad vydavatele pro aplikaci.  
+ Následující příklad ukazuje způsob použití `<generatePublisherEvidence>` prvek, který chcete zakázat kontrolu pro certifikační Autority zásad vydavatele aplikace.  
   
 ```xml  
 <configuration>  
@@ -79,5 +79,5 @@ Určuje, zda modul runtime vytvoří <xref:System.Security.Policy.Publisher> dů
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

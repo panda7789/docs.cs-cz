@@ -1,13 +1,13 @@
 ---
-title: Výpočetní výrazy (F#)
+title: Výpočetní výrazy
 description: Zjistěte, jak vytvořit pohodlné syntaxe pro zápis výpočty v F# , můžete být sekvencované a kombinované pomocí řídit tok konstrukcí a vazby.
 ms.date: 07/27/2018
-ms.openlocfilehash: b1fee11f68e99e53d19b47bef9eca6298cce2f45
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 79159146e24dc50f851c29e3cf7fffe892c6d196
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169843"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610694"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 

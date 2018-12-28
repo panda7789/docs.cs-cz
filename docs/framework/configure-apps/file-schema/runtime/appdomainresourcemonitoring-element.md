@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 11e892d8ab9001d3670c801b43ba444aa24b2e41
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 32ffe48e7a65ab4ca2250eee65d188c0c7270c11
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743573"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611331"
 ---
 # <a name="ltappdomainresourcemonitoringgt-element"></a>&lt;appdomainresourcemonitoring –&gt; – Element
-Dá pokyn modulu runtime ke shromažďování statistik na všechny domény aplikace v procesu po dobu trvání procesu.  
+Dá pokyn modulu runtime ke shromažďování statistik na všech doménách aplikace v procesu po dobu trvání procesu.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -41,8 +41,8 @@ Dá pokyn modulu runtime ke shromažďování statistik na všechny domény apli
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`true`|Statistiky pro sledování prostředků domény aplikace se shromažďují.|  
-|`false`|Statistiky pro sledování prostředků domény aplikace nejsou shromážděna.|  
+|`true`|Statistika Sledování prostředků domény aplikace se shromažďují.|  
+|`false`|Statistika Sledování prostředků domény aplikace se neshromažďují.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -55,11 +55,11 @@ Dá pokyn modulu runtime ke shromažďování statistik na všechny domény apli
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Sledování prostředků domény aplikace je k dispozici prostřednictvím třídy domény spravované aplikace, který je hostitelem [iclrappdomainresourcemonitor –](../../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) rozhraní a trasování událostí pro Windows (ETW). Pokud je zapnuto monitorování, statistiky se shromažďují pro všechny domény aplikace v procesu po dobu trvání procesu.  
+ Sledování prostředků aplikační domény nabízíme v rámci doménové třídy spravované aplikace, který je hostitelem [iclrappdomainresourcemonitor –](../../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) rozhraní a trasování událostí pro Windows (ETW). Pokud je zapnuto monitorování, statistiky se shromažďují pro všechny domény aplikace v procesu po dobu trvání procesu.  
   
- Chcete-li monitorování povolit ze spravovaného kódu, použijte <xref:System.AppDomain.MonitoringIsEnabled%2A> vlastnost.  
+ Chcete-li povolit monitorování ze spravovaného kódu, použijte <xref:System.AppDomain.MonitoringIsEnabled%2A> vlastnost.  
   
- Tento element konfigurace je k dispozici pouze v [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] a novější.  
+ Tento prvek konfigurace je k dispozici pouze v [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] a novější.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit sledování prostředků domény aplikace.  
@@ -73,6 +73,6 @@ Dá pokyn modulu runtime ke shromažďování statistik na všechny domény apli
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

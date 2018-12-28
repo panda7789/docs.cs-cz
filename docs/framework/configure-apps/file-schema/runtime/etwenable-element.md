@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 267a4a29282881d18201d0cb2062e91b4ff974a9
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b6ea2f8a32a18dfce6be54ce52ce8fef4abf92ce
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745172"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610772"
 ---
 # <a name="ltetwenablegt-element"></a>&lt;etwenable –&gt; – Element
-Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro běžné události modulu runtime jazyka.  
+Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro common language runtime události.  
   
- \<Konfigurace > elementu  
-\<modul runtime > elementu  
+ \<Konfigurace > – Element  
+\<modul runtime > – Element  
 \<etwEnabled >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,13 +34,13 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro bě�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|povoleno|Požadovaný atribut.<br /><br /> Určuje, zda se má povolit trasování událostí pro Windows.|  
+|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda by měly být povolené trasování událostí pro Windows.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|true|Povolte trasování událostí pro Windows. Toto je výchozí hodnota pro verze systému Windows od verze operačních systémů Windows Vista a Windows Server 2008.|  
+|true|Povolte trasování událostí pro Windows. Toto je výchozí verze Windows od verze operačních systémů Windows Vista a Windows Server 2008.|  
 |false|Zakážete trasování událostí pro Windows. Toto je výchozí hodnota u starších verzí systému Windows.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -54,10 +54,10 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro bě�
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počínaje Windows Vista, je ve výchozím nastavení povolené trasování událostí pro Windows. Pomocí tohoto elementu zakázat trasování pro aplikaci. V dřívějších verzích systému Windows tento prvek slouží k povolení trasování pro aplikaci.  
+ Od verze Windows Vista, je ve výchozím nastavení povolené trasování událostí pro Windows. Tento element slouží k zakázání trasování událostí pro Windows pro aplikaci. V dřívějších verzích Windows použijte tento prvek povolit trasování událostí pro Windows pro aplikaci.  
   
 > [!NOTE]
->  Trasování událostí pro Windows můžete povolit nebo zakázat globálně na serveru pomocí nastavení registru. V tématu [řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md).  
+>  Trasování událostí pro Windows můžete povolit nebo zakázat globálně na serveru s použitím nastavení registru. Zobrazit [řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit trasování událostí pro Windows pro aplikaci.  
@@ -71,6 +71,6 @@ Určuje, jestli se má povolit trasování událostí pro Windows (ETW) pro bě�
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Řízení přihlašování rozhraní .NET Framework](../../../../../docs/framework/performance/controlling-logging.md)

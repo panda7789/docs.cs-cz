@@ -1,13 +1,13 @@
 ---
-title: Zkratky typů (F#)
-description: Další informace o F# zkratky typů poskytnout smysluplnějšího názvu typu Pokud chcete, aby byl kód lépe čitelný.
+title: Zkratky typů
+description: Další informace o F# typ – zkratky poskytnout smysluplnějšího názvu typu Pokud chcete, aby byl kód lépe čitelný.
 ms.date: 05/16/2016
-ms.openlocfilehash: 259cd6c84e22fc7c98e08255d3e0ded5b87af352
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 0deaef789367aad413e5a537bf7164034e1275c0
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48842421"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613346"
 ---
 # <a name="type-abbreviations"></a>Zkratky typů
 
@@ -33,7 +33,7 @@ Zkratky typů můžete zahrnout obecné parametry, jak ukazuje následující k�
 
 V předchozím kódu `Transform` je – zkratka typu, který představuje funkci, která přijímá jeden argument typu a, který vrací jedinou hodnotu stejného typu.
 
-Zkratky typů není zachováno v kódu rozhraní .NET Framework MSIL. Proto při použití sestavení F# z jiného jazyka rozhraní .NET Framework, musíte použít název základního typu pro – zkratka typu.
+Zkratky typů není zachováno v kódu rozhraní .NET Framework MSIL. Proto při použití F# sestavení z jiného jazyka rozhraní .NET Framework, musíte použít název základního typu pro – zkratka typu.
 
 Zkratky typů lze použít také na měrné jednotky. Další informace najdete v tématu [měrné jednotky](units-of-measure.md).
 

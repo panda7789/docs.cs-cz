@@ -1,13 +1,13 @@
 ---
-title: Seznamy (F#)
+title: Seznamy
 description: Další informace o F# seznam seřazený, neměnné řadu prvků stejného typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: f7b9054226a1dd004ac78673a059bd1c35e325a5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: cc4e292280cca0dca37f69cf5a46ec2822d08d5c
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152744"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656333"
 ---
 # <a name="lists"></a>Seznamy
 
@@ -70,6 +70,7 @@ Typ seznamu podporuje následující vlastnosti:
 |[Položka](https://msdn.microsoft.com/library/bdb2553a-0e54-4ff8-baed-ab1aac8f5dae)|`'T`|Element v zadaném indexu (počítáno od nuly).|
 |[Délka](https://msdn.microsoft.com/library/25f715c8-9daa-4c4d-a6c7-26772f9dab4d)|`int`|Počet prvků.|
 |[Funkce Tail](https://msdn.microsoft.com/library/2a6f8eb9-dc32-41aa-8b62-2baffaface91)|`'T list`|Seznam bez první prvek.|
+
 Následuje několik příkladů použití těchto vlastností.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1307.fs)]

@@ -1,17 +1,17 @@
 ---
-title: Typy výjimek (F#)
-description: Zjistěte, jak definovat a používat typy výjimek F#.
+title: Typy výjimek
+description: Zjistěte, jak definovat a používat F# typy výjimek.
 ms.date: 05/16/2016
-ms.openlocfilehash: b8d648a3649153a3604856deb61ce41db8c40bf2
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: ed721dd0dc46a486fafeac2fa4c096800995ccb7
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43858818"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612826"
 ---
 # <a name="exception-types"></a>Typy výjimek
 
-Existují dvě kategorie výjimek v jazyce F#: typy výjimek .NET a typy výjimek F#. Toto téma popisuje, jak definovat a používat typy výjimek F#.
+Existují dvě kategorie výjimek v F#: typy výjimek .NET a F# typy výjimek. Toto téma popisuje, jak definovat a používat F# typy výjimek.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,9 +21,9 @@ exception exception-type of argument-type
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozí syntaxi *typ výjimky* je název nového F# výjimka typu, a *typ argumentu* představuje typ argumentu, který může být zadán při vyvolání výjimky tohoto typu. Můžete zadat více argumentů pomocí typu řazené kolekce členů pro *typ argumentu*.
+V předchozí syntaxi *typ výjimky* je název nové F# typ výjimky a *typ argumentu* představuje typ argumentu, který může být zadán při vyvolání výjimky tohoto typu. Můžete zadat více argumentů pomocí typu řazené kolekce členů pro *typ argumentu*.
 
-Typické definici pro výjimku F# se podobá následující.
+Typické definici F# výjimek má následující podobu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5501.fs)]
 
@@ -31,11 +31,11 @@ Výjimka tohoto typu můžete vygenerovat pomocí `raise` fungovat, následovně
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5502.fs)]
 
-Typ výjimky F# můžete použít přímo ve filtrech v `try...with` výrazu, jak je znázorněno v následujícím příkladu.
+Můžete použít F# typ výjimky přímo do filtrů v `try...with` výrazu, jak je znázorněno v následujícím příkladu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5503.fs)]
 
-Typ výjimky, který definujete pomocí `exception` – klíčové slovo v jazyce F# je nový typ, který dědí z `System.Exception`.
+Typ výjimky, který definujete pomocí `exception` – klíčové slovo v F# je nový typ, který dědí z `System.Exception`.
 
 ## <a name="see-also"></a>Viz také:
 

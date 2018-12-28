@@ -1,13 +1,13 @@
 ---
-title: Referenční dokumentace klíčových slov (F#)
+title: Referenční dokumentace klíčových slov
 description: Odkazy na informace o všech F# klíčová slova jazyka.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0016f68b2872183a2b4dd865ce229b6a76250b78
-ms.sourcegitcommit: 2151690e10d91545e2c20d6b5ad222c162b6b83d
+ms.openlocfilehash: 75adc609dc6feeda2be9aa76bbb50b47b3d738ea
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "43856021"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611747"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -28,20 +28,20 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`class`|[Třídy](classes.md)|V podrobné syntaxi označuje začátek definice třídy.|
 |`default`|[Členové](members/index.md)|Označuje implementaci abstraktní metody; použít společně s deklarací abstraktní metody k vytvoření virtuální metody.|
 |`delegate`|[Delegáti](delegates.md)|Slouží k deklaraci delegáta.|
-|`do`|[Vazby do](functions/do-bindings.md)<br /><br />[Smyčky: `for...to` výraz](loops-for-to-expression.md)<br /><br />[Smyčky: `for...in` výraz](loops-for-in-expression.md)<br /><br />[Smyčky: `while...do` výraz](loops-while-do-expression.md)|Používá se v konstruktorech cyklů nebo k provádění imperativního kódu.|
+|`do`|[Vazby do](functions/do-bindings.md)<br /><br />[Smyčky: `for...to` Výraz](loops-for-to-expression.md)<br /><br />[Smyčky: `for...in` Výraz](loops-for-in-expression.md)<br /><br />[Smyčky: `while...do` Výraz](loops-while-do-expression.md)|Používá se v konstruktorech cyklů nebo k provádění imperativního kódu.|
 |`done`|[Podrobná syntaxe](verbose-syntax.md)|V podrobné syntaxi označuje konec bloku kódu ve výrazu cyklu.|
 |`downcast`|[Přetypování a převody](casting-and-conversions.md)|Slouží k převodu na typ, který je nižší pozici v řetězu dědičnosti.|
-|`downto`|[Smyčky: `for...to` výraz](loops-for-to-expression.md)|V `for` výrazu, slouží k počítání pozpátku.|
+|`downto`|[Smyčky: `for...to` Výraz](loops-for-to-expression.md)|V `for` výrazu, slouží k počítání pozpátku.|
 |`elif`|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)|Používá se v podmíněném větvení. Krátká forma výrazu `else if`.|
 |`else`|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)|Používá se v podmíněném větvení.|
 |`end`|[Struktury](structures.md)<br /><br />[Rozlišovaná sjednocení](discriminated-unions.md)<br /><br />[Záznamy](records.md)<br /><br />[Rozšíření typů](type-extensions.md)<br /><br />[Podrobná syntaxe](verbose-syntax.md)|V definicích typů a rozšíření typu označuje konec sekce definic členů.<br /><br />V podrobné syntaxi se používá k určení konce bloku kódu, který začíná `begin` – klíčové slovo.|
 |`exception`|[Zpracování výjimek](exception-handling/index.md)<br /><br />[Typy výjimek](exception-handling/exception-types.md)|Slouží k deklaraci typu výjimky.|
 |`extern`|[Externí funkce](functions/external-functions.md)|Označuje, že deklarovaný element programu je definovaný v jiném binárním souboru nebo sestavení.|
 |`false`|[Primitivní typy](primitive-types.md)|Použít jako logický literál.|
-|`finally`|[Výjimky: `try...finally` výraz](exception-handling/the-try-finally-expression.md)|Použít v kombinaci s `try` k uvození bloku kódu, který se spustí bez ohledu na to, zda dojde k výjimce.|
+|`finally`|[Výjimky: `try...finally` Výraz](exception-handling/the-try-finally-expression.md)|Použít v kombinaci s `try` k uvození bloku kódu, který se spustí bez ohledu na to, zda dojde k výjimce.|
 |`fixed`|[Oprava](fixed.md)|Použít "připnout" ukazatel zásobníku tak, aby se uvolněna z paměti.|
-|`for`|[Smyčky: `for...to` výraz](loops-for-to-expression.md)<br /><br />[Smyčky: Výraz for...in](loops-for-in-expression.md)|Používá se v konstruktorech cyklů.|
-|`fun`|[Výrazy lambda: `fun` – klíčové slovo](functions/lambda-expressions-the-fun-keyword.md)|Použít ve výrazech lambda, označovaný také jako anonymní funkce.|
+|`for`|[Smyčky: `for...to` Výraz](loops-for-to-expression.md)<br /><br />[Smyčky: Výraz for...in](loops-for-in-expression.md)|Používá se v konstruktorech cyklů.|
+|`fun`|[Výrazy lambda: Klíčové slovo `fun`](functions/lambda-expressions-the-fun-keyword.md)|Použít ve výrazech lambda, označovaný také jako anonymní funkce.|
 |`function`|[Výrazy shody](match-expressions.md)<br /><br />[Výrazy lambda: Klíčové slovo fun](functions/lambda-expressions-the-fun-keyword.md)|Používá se jako kratší alternativa `fun` – klíčové slovo a `match` výraz ve výrazu lambda, který má porovnávání vzorů u jednoho argumentu.|
 |`global`|[Obory názvů](namespaces.md)|Slouží k odkazování nejvyšší úrovni obor názvů .NET.|
 |`if`|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)|Používá se v konstruktorech podmíněného větvení.|
@@ -63,7 +63,7 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`not`|[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)<br /><br />[Omezení](generics/constraints.md)|Ve skutečnosti klíčové slovo. Ale `not struct` v kombinaci se používá jako omezení obecného parametru.|
 |`null`|[Hodnoty Null](values/null-values.md)<br /><br />[Omezení](generics/constraints.md)|Označuje absenci objektu.<br /><br />Používá se také v omezeních obecných parametrů.|
 |`of`|[Rozlišovaná sjednocení](discriminated-unions.md)<br /><br />[Delegáti](delegates.md)<br /><br />[Typy výjimek](exception-handling/exception-types.md)|Použít v rozlišovaných sjednoceních k označení typu kategorií hodnot a v deklaracích delegování a výjimek.|
-|`open`|[Deklarace importu: `open` – klíčové slovo](import-declarations-the-open-keyword.md)|Umožňuje zpřístupnění obsahu oboru názvů nebo modulu bez kvalifikace.|
+|`open`|[Deklarace importu: Klíčové slovo `open`](import-declarations-the-open-keyword.md)|Umožňuje zpřístupnění obsahu oboru názvů nebo modulu bez kvalifikace.|
 |`or`|[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)<br /><br />[Omezení](generics/constraints.md)|Používá se v logických podmínkách jako logická hodnota `or` operátor. Ekvivalentní.||`.<br /><br />Používá se také v omezeních členů.|
 |`override`|[Členové](members/index.md)|Používaný k implementaci verze abstraktní nebo virtuální metody, která se liší od základní verze.|
 |`private`|[Řízení přístupu](access-control.md)|Omezení přístupu k členovi na kód ve stejném typu nebo modulu.|
@@ -75,18 +75,18 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`static`|[Členové](members/index.md)|Slouží k označení metody nebo vlastnosti, kterou lze volat bez instance typu nebo člena hodnoty, který se sdílí mezi všemi instancemi typu.|
 |`struct`|[Struktury](structures.md)<br /><br />[Omezení](generics/constraints.md)|Slouží k deklaraci typu struktury.<br /><br />Používá se také v omezeních obecných parametrů.<br /><br />Používá kvůli kompatibilitě s OCaml v definicích modulů.|
 |`then`|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)<br /><br />[Konstruktory](members/constructors.md)|Používat v podmíněných výrazech.<br /><br />Také použít k provedení vedlejších efektů po konstrukci objektu.|
-|`to`|[Smyčky: `for...to` výraz](loops-for-to-expression.md)|Použít v `for` smyček k označení rozsahu.|
+|`to`|[Smyčky: `for...to` Výraz](loops-for-to-expression.md)|Použít v `for` smyček k označení rozsahu.|
 |`true`|[Primitivní typy](primitive-types.md)|Použít jako logický literál.|
 |`try`|[Výjimky: Try... with – výraz](exception-handling/the-try-with-expression.md)<br /><br />[Výjimky: Try... finally výraz](exception-handling/the-try-finally-expression.md)|Používá k uvození bloku kódu, který může vygenerovat výjimku. Použít v kombinaci s `with` nebo `finally`.|
 |`type`|[Typy F#](fsharp-types.md)<br /><br />[Třídy](classes.md)<br /><br />[Záznamy](records.md)<br /><br />[Struktury](structures.md)<br /><br />[Výčty](enumerations.md)<br /><br />[Rozlišovaná sjednocení](discriminated-unions.md)<br /><br />[Zkratky typů](type-abbreviations.md)<br /><br />[Měrné jednotky](units-of-measure.md)|Používá k deklaraci třídy, záznamu, struktury, diskriminované sjednocení, výčtového typu, měrné jednotky nebo zkratky typu.|
 |`upcast`|[Přetypování a převody](casting-and-conversions.md)|Slouží k převodu na typ, který je vyšší pozici v řetězu dědičnosti.|
-|`use`|[Správa prostředků: `use` – klíčové slovo](resource-management-the-use-keyword.md)|Použít namísto `let` pro hodnoty, které vyžadují `Dispose` říkalo k uvolnění prostředků.|
+|`use`|[Správa prostředků: Klíčové slovo `use`](resource-management-the-use-keyword.md)|Použít namísto `let` pro hodnoty, které vyžadují `Dispose` říkalo k uvolnění prostředků.|
 |`use!`|[Výpočetní výrazy](computation-expressions.md)<br /><br />[Asynchronní pracovní postupy](asynchronous-workflows.md)|Použít namísto `let!` v asynchronních pracovních postupech a jiných výrazech výpočtu pro hodnoty, které vyžadují `Dispose` říkalo k uvolnění prostředků.|
 |`val`|[Explicitní pole: Klíčové slovo `val`](members/explicit-fields-the-val-keyword.md)<br /><br />[Signatury](signatures.md)<br /><br />[Členové](members/index.md)|Použít v podpisu k označení hodnoty, nebo v typu k deklarování člena v situacích, omezené.|
 |`void`|[Primitivní typy](primitive-types.md)|Označuje .NET `void` typu. Používány při spolupráci s jinými jazyky rozhraní .NET.|
 |`when`|[Omezení](generics/constraints.md)|Používá se pro logické podmínky (*při chrání*) u porovnávání vzorů a k uvození klauzule omezení parametru obecného typu.|
-|`while`|[Smyčky: `while...do` výraz](loops-while-do-expression.md)|Zavádí uvozuje konstruktor cyklu.|
-|`with`|[Výrazy shody](match-expressions.md)<br /><br />[Objektové výrazy](object-expressions.md)<br /><br />[Kopírování a aktualizace výrazů záznamů](copy-and-update-record-expressions.md)<br /><br />[Rozšíření typů](type-extensions.md)<br /><br />[Výjimky: `try...with` výraz](exception-handling/the-try-with-expression.md)|Použít v kombinaci s `match` – klíčové slovo ve vzorech porovnávání výrazů. Používá i v objektové výrazy, výrazy záznamu zkopírování a typ rozšíření představují definice členů a zavést obslužných rutin výjimek.|
+|`while`|[Smyčky: `while...do` Výraz](loops-while-do-expression.md)|Zavádí uvozuje konstruktor cyklu.|
+|`with`|[Výrazy shody](match-expressions.md)<br /><br />[Objektové výrazy](object-expressions.md)<br /><br />[Kopírování a aktualizace výrazů záznamů](copy-and-update-record-expressions.md)<br /><br />[Rozšíření typů](type-extensions.md)<br /><br />[Výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md)|Použít v kombinaci s `match` – klíčové slovo ve vzorech porovnávání výrazů. Používá i v objektové výrazy, výrazy záznamu zkopírování a typ rozšíření představují definice členů a zavést obslužných rutin výjimek.|
 |`yield`|[Sekvence](sequences.md)|Použít ve výrazu pořadí k vytvoření hodnoty pořadí.|
 |`yield!`|[Výpočetní výrazy](computation-expressions.md)<br /><br />[Asynchronní pracovní postupy](asynchronous-workflows.md)|Použít ve výrazu výpočtu k připojení výsledku daného výpočetního výrazu ke kolekci výsledků obsahujícího výrazu výpočtu.|
 

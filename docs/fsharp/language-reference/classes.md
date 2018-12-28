@@ -1,13 +1,13 @@
 ---
-title: Třídy (F#)
-description: Zjistěte, jak třídy F# jsou typy, které představují objekty, které mohou mít vlastnosti, metody a události.
+title: Třídy
+description: Zjistěte, jak F# třídy jsou typy, které představují objekty, které mohou mít vlastnosti, metody a události.
 ms.date: 05/16/2016
-ms.openlocfilehash: 71cd713d192d28565e879b79b2fc9e0530e5f841
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 6bf838e98acecb89436d3e87809d9eb6da0c66d5
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48845733"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611175"
 ---
 # <a name="classes"></a>Třídy
 
@@ -33,7 +33,7 @@ and [access-modifier] type-name2 ...
 
 ## <a name="remarks"></a>Poznámky
 
-Třídy představují základní popis typů objektů .NET; Třída je koncept primární typ, který podporuje objektově orientované programování v jazyce F#.
+Třídy představují základní popis typů objektů .NET; Třída je koncept primární typ, který podporuje objektově orientované programování v F#.
 
 V předchozí syntaxi `type-name` je libovolný platný identifikátor. `type-params` Popisuje volitelné obecné parametry typu. Zahrnuje názvy parametrů typů a omezením uzavřen do lomených závorek (`<` a `>`). Další informace najdete v tématu [obecných typů](generics/index.md) a [omezení](generics/constraints.md). `parameter-list` Popisuje parametry konstruktoru. První modifikátor přístupu vztahují na daný typ druhý se vztahují k primárnímu konstruktoru. V obou případech se výchozí hodnota je `public`.
 
@@ -51,7 +51,7 @@ Vzájemně rekurzivních typů, které jsou typy, které odkazují na sobě navz
 
 ## <a name="constructors"></a>Konstruktory
 
-Konstruktor je kód, který vytvoří instanci typu třídy. Konstruktory pro třídy fungují v jazyce F# trochu jinak než v jiných jazycích rozhraní .NET. V F# třídy, je vždy primární konstruktor, jehož argumenty jsou popsány v `parameter-list` , který následuje název typu a jehož subjekt se skládá z `let` (a `let rec`) vazby na začátku deklarace třídy a `do`vazby, které následují. Argumenty konstruktoru primární jsou v oboru v rámci deklarace třídy.
+Konstruktor je kód, který vytvoří instanci typu třídy. Konstruktory pro třídy fungují trochu jinak F# než v jiných jazycích rozhraní .NET. V F# třídy, je vždy primární konstruktor, jehož argumenty jsou popsány v `parameter-list` , který následuje název typu a jehož subjekt se skládá z `let` (a `let rec`) vazby na začátku deklarace třídy a `do` vazby, které následují. Argumenty konstruktoru primární jsou v oboru v rámci deklarace třídy.
 
 Můžete přidat další konstruktory pomocí `new` – klíčové slovo přidání člena, následujícím způsobem:
 
@@ -104,7 +104,7 @@ Argumenty typu jsou odvozeny při použití typu. V následujícím kódu je odv
 
 ## <a name="specifying-inheritance"></a>Určení dědičnosti
 
-`inherit` Klauzule určuje přímou základní třídu, pokud existuje. V jazyce F# je povolen pouze jednu přímou základní třídu. Rozhraní, která třída implementuje nejsou považovány za základní třídy. Rozhraní jsou popsány v [rozhraní](Interfaces.md) tématu.
+`inherit` Klauzule určuje přímou základní třídu, pokud existuje. V F#, pouze jeden Přímá základní třída je povolená. Rozhraní, která třída implementuje nejsou považovány za základní třídy. Rozhraní jsou popsány v [rozhraní](Interfaces.md) tématu.
 
 Metody a vlastnosti ze základní třídy lze přistupovat z odvozené třídy pomocí klíčového slova jazyka `base` jako identifikátor, následované tečkou (.) a název členu.
 
@@ -112,7 +112,7 @@ Další informace najdete v tématu [dědičnosti](inheritance.md).
 
 ## <a name="members-section"></a>Oddíl členové
 
-V této části můžete definovat statické nebo instanci metody, vlastnosti, implementace rozhraní, abstraktní členy, deklarace události a další konstruktory. Umožní a proveďte vazby nemůže být použit v této části. Vzhledem k tomu, že členové mohou být přidány do různých typů F# kromě třídy, jsou popsány v samostatném tématu [členy](members/index.md).
+V této části můžete definovat statické nebo instanci metody, vlastnosti, implementace rozhraní, abstraktní členy, deklarace události a další konstruktory. Umožní a proveďte vazby nemůže být použit v této části. Vzhledem k tomu, že členové mohou být přidány do různých F# typy kromě třídy, jsou popsány v samostatném tématu [členy](members/index.md).
 
 ## <a name="mutually-recursive-types"></a>Vzájemně rekurzivní typy
 
@@ -124,7 +124,7 @@ Výstupem je seznam všech souborů v aktuálním adresáři.
 
 ## <a name="when-to-use-classes-unions-records-and-structures"></a>Kdy použít třídy, sjednocení, záznamů a struktury
 
-S ohledem na celou řadu typů lze vybírat, musíte mít dostatečné povědomí o co každý typ je určen pro vyberte požadovaný typ pro konkrétní situaci. Třídy jsou určeny k použití v objektově orientované programování kontextech. Objektově orientované programování je dominantní paradigma použít v aplikacích, které jsou určeny pro rozhraní .NET Framework. Pokud je váš kód F# těsná spolupráce s rozhraní .NET Framework nebo jiné objektově orientované knihovny a zejména v případě, že budete muset rozšířit z objektově orientované typu systému, jako je například knihovna uživatelského rozhraní, třídy jsou pravděpodobně vhodné.
+S ohledem na celou řadu typů lze vybírat, musíte mít dostatečné povědomí o co každý typ je určen pro vyberte požadovaný typ pro konkrétní situaci. Třídy jsou určeny k použití v objektově orientované programování kontextech. Objektově orientované programování je dominantní paradigma použít v aplikacích, které jsou určeny pro rozhraní .NET Framework. Pokud vaše F# kód má úzce spolupracovat rozhraní .NET Framework nebo jiné objektově orientované knihovny a zejména v případě, že budete muset rozšířit z objektově orientované typu systému, jako je například knihovna uživatelského rozhraní, třídy jsou pravděpodobně vhodné.
 
 Pokud nejsou úzce spolupráce s objektově orientované kódu nebo pokud píšete kód, který je samostatná a proto chráněný před častá interakce s kódem objektově orientované, zvažte použití záznamů a rozlišovaná sjednocení. Jediné, dobře přiměje – out jako jednodušší alternativu k hierarchii objektů lze často použít diskriminované sjednocení, společně s odpovídající vzor odpovídající kód. Další informace o rozlišovaná sjednocení, naleznete v tématu [Rozlišované sjednocení](discriminated-unions.md).
 

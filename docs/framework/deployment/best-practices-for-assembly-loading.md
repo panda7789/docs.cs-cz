@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9c43f75dc17d49fe34094829387673b0f1f1d028
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7f7aa8a57fce9382cb67327e69048c2b05bb99da
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201579"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53397043"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Doporučené postupy pro načtení sestavení
 Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, který může mít za následek <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a další chyby. Tento článek popisuje následující doporučení:  
@@ -44,7 +44,7 @@ Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, kter
   
 -   Načtení z kontextu obsahuje sestavení, která jsou načtena z umístění, které se neprohledávají zavaděčem. Doplňky například může být nainstalováno v adresáři, který není v cestě aplikace. <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>, <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>, a <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> jsou příklady metod, které načítají podle cesty.  
   
--   Kontextu pouze pro reflexi obsahuje sestavení načtená <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody. Kód v tomto kontextu nelze provést, takže tady není probíraná. Další informace najdete v tématu [postupy: načtení sestavení do kontextu Reflection](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+-   Kontextu pouze pro reflexi obsahuje sestavení načtená <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody. Kód v tomto kontextu nelze provést, takže tady není probíraná. Další informace najdete v tématu [jak: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
 -   Pokud jste vygenerovali přechodné dynamické sestavení pomocí reflexe generování, sestavení není v libovolném kontextu. Kromě toho většina sestavení, která jsou načtena pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metody jsou načteny bez kontextu a sestavení, která jsou načtena z bajtových polí jsou načteny bez kontextu, pokud svoji identitu (po zásada) zjistí, že jsou v globální mezipaměti sestavení.  
   
@@ -154,7 +154,7 @@ Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, kter
  Pokud není možné vložit vaše sestavení cesta zjišťování, vezměte v úvahu alternativy, třeba pomocí modelu doplňku rozhraní .NET Framework, umístění sestavení do globální mezipaměti sestavení nebo vytváření domény aplikace.  
   
 ### <a name="consider-using-the-net-framework-add-in-model"></a>Zvažte použití modelu doplňku rozhraní .NET Framework  
- Pokud používáte načtení z kontextu pro implementaci doplňků, které nejsou obvykle nainstalovány v základ cesty aplikace, použijte modelu doplňku rozhraní .NET Framework. Tento model zajišťuje izolaci na úrovni domény nebo proces aplikací bez nutnosti spravovat domény aplikace sami. Informace o tomto modelu najdete v tématu [doplňků a rozšíření](../../../docs/framework/add-ins/index.md).  
+ Pokud používáte načtení z kontextu pro implementaci doplňků, které nejsou obvykle nainstalovány v základ cesty aplikace, použijte modelu doplňku rozhraní .NET Framework. Tento model zajišťuje izolaci na úrovni domény nebo proces aplikací bez nutnosti spravovat domény aplikace sami. Informace o tomto modelu najdete v tématu [doplňků a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).  
   
 ### <a name="consider-using-the-global-assembly-cache"></a>Zvažte možnost použít globální mezipaměti sestavení  
  Získejte výhodu, že cesta sdíleného sestavení místo sestavení v globální mezipaměti sestavení, která je mimo základ cesty, aplikace bez ztráty výhody výchozím kontextu načtení nebo s ohledem na nevýhody jiném kontextu.  
@@ -170,4 +170,3 @@ Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, kter
 - <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>
 - <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>
-- [Doplňky a rozšíření](../../../docs/framework/add-ins/index.md)

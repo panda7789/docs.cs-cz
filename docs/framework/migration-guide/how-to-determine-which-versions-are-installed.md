@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b77775fdc7f552e6433e6364f153c5bde32d9e0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 890ce1e9a23d57121cd714252444e5ff1caa6b19
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151041"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396874"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -97,7 +97,7 @@ Mohou uživatelé nainstalovat a spustit více verzí rozhraní .NET Framework n
     |V systému Windows 10 Anniversary Update a Windows Server 2016: 394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
     |Jenom na Windows 10 Creators Update: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
     |Na Windows 10 Fall Creators Update pouze: 461308<br/><br/> Na všech ostatních verzí operačního systému: 461310 | Rozhraní .NET framework 4.7.1 |
-    |Na webu Windows 10. října 2018 Update pouze: 461814<br/><br/> Na webu Windows 10. dubna 2018 Update pouze: 461808<br/><br/> Na všech ostatních verzí operačního systému: 461814| Rozhraní .NET framework 4.7.2 |
+    |Na webu Windows 10. dubna 2018 Update pouze: 461808<br/><br/> Na všech ostatních verzí operačního systému, včetně Windows 10. října 2018 Update: 461814| Rozhraní .NET framework 4.7.2 |
     
 <a name="net_c"></a> 
 ## <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>K vyhledání verze rozhraní .NET Framework dotazem na registr v kódu (.NET Framework 1 – 4)
@@ -230,6 +230,6 @@ Mohou uživatelé nainstalovat a spustit více verzí rozhraní .NET Framework n
 
 ## <a name="see-also"></a>Viz také:
 
-[Jak: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](~/docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)  
+[Postupy: Zjištění nainstalovaných aktualizací rozhraní .NET Framework](~/docs/framework/migration-guide/how-to-determine-which-net-framework-updates-are-installed.md)  
 [Instalace rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)  
 [Verze a závislosti](~/docs/framework/migration-guide/versions-and-dependencies.md)  

@@ -1,13 +1,13 @@
 ---
-title: Výrazy shody (F#)
-description: Zjistěte, jak výrazu porovnání F# poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.
+title: Výrazy shody
+description: Zjistěte, jak F# výrazu shody poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.
 ms.date: 04/19/2018
-ms.openlocfilehash: e4cb82f20fe82bff562736557c2346562c557f59
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 8972cc012d2746cb720eeed1acee403948941425
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44221841"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611565"
 ---
 # <a name="match-expressions"></a>Výrazy shody
 
@@ -43,7 +43,7 @@ fun arg ->
     | ...
 ```
 
-Další informace o výrazech lambda naleznete v tématu [výrazy Lambda: `fun` – klíčové slovo](functions/lambda-expressions-the-fun-keyword.md).
+Další informace o výrazech lambda naleznete v tématu [výrazy Lambda: `fun` – Klíčové slovo](functions/lambda-expressions-the-fun-keyword.md).
 
 Možných shod je vstupní proměnná by měla zahrnovat celou sadu vzorů. Často, použijte vzor zástupných znaků (`_`) jako poslední vzorek tak, aby odpovídaly všechny dříve bezkonkurenční vstupní hodnoty.
 
@@ -82,6 +82,6 @@ foo() // returns 42
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka F#](index.md)  
-- [Aktivní vzory](active-patterns.md)  
-- [Porovnávání vzorů](pattern-matching.md)  
+- [Referenční dokumentace jazyka F#](index.md)
+- [Aktivní vzory](active-patterns.md)
+- [Porovnávání vzorů](pattern-matching.md)

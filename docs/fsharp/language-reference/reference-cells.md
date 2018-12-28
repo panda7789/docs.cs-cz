@@ -1,13 +1,13 @@
 ---
-title: Referenční buňky (F#)
+title: Referenční buňky
 description: Zjistěte, jak F# odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.
 ms.date: 05/16/2016
-ms.openlocfilehash: e2e1a91c62fd76e4992bc5ae11bb672766850718
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: e4fcd3cf1abcf5f5e3b4d5439c9215b79ff8dbcd
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44192252"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612761"
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -57,6 +57,7 @@ V následující tabulce jsou uvedeny funkce, které jsou u odkazové buňky d
 |`ref` (operátor)|Zapouzdří hodnotu do nové odkazové buňky.|`'a -> 'a ref`|`let ref x = { contents = x }`|
 |`Value` (vlastnost)|Získá nebo nastaví zdrojovou hodnotu.|`unit -> 'a`|`member x.Value = x.contents`|
 |`contents` (pole záznamu)|Získá nebo nastaví zdrojovou hodnotu.|`'a`|`let ref x = { contents = x }`|
+
 Ke zdrojové hodnotě lze získat přístup několika způsoby. Hodnota vrácená operátorem zrušení odkazu (`!`) není Přiřaditelná. Proto se při změně zdrojové hodnoty, musíte použít operátor přiřazení (`:=`) místo toho.
 
 Oba `Value` vlastnost a `contents` pole jsou Přiřaditelné hodnoty. Můžete je proto použít ke zpřístupnění nebo změně zdrojové hodnoty, jak znázorňuje následující kód.
@@ -74,7 +75,7 @@ Výstup je následující.
 
 Pole `contents` zajišťuje kompatibilitu s jinými verzemi ML a během kompilace zobrazí upozornění. Chcete-li toto upozornění zakážete, použijte `--mlcompatibility` – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
 
-Programátoři v C# měli vědět, že `ref` v jazyce C# není totéž jako `ref` v jazyce F#. Ekvivalentní konstrukce v jazyce F# jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
+C#Programátoři by měl vědět, že `ref` v C# není totéž jako `ref` v F#. Ekvivalent konstrukce F# jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
 
 Hodnoty označeny jako `mutable`může automaticky povýšen na `'a ref` nezachytává uzavření; naleznete v tématu [hodnoty](values/index.md).
 

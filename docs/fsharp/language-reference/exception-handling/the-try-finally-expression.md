@@ -1,15 +1,15 @@
 ---
-title: 'Výjimky: Výraz try...finally (F#)'
-description: Zjistěte, jak F# ' try... finally "výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
+title: 'Výjimky: Try... finally výraz'
+description: Zjistěte, jak F# "try... finally" výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
 ms.date: 05/16/2016
-ms.openlocfilehash: 546a6b0619de6f51044600dc1ead73c6d5211299
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 24613185818c8ea30b27dcf639b22af320c4b401
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45970315"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611617"
 ---
-# <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Výraz try...finally
+# <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Try... finally výraz
 
 `try...finally` Výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
 
@@ -50,4 +50,4 @@ V rámci výrazech výpočtu, včetně výrazech pořadí a asynchronní pracovn
 ## <a name="see-also"></a>Viz také:
 
 - [Zpracování výjimek](index.md)
-- [Výjimky: `try...with` výraz](the-try-with-expression.md)
+- [Výjimky: `try...with` Výraz](the-try-with-expression.md)

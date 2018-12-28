@@ -1,13 +1,13 @@
 ---
-title: Konstruktory (F#)
-description: Zjistěte, jak definovat a používat konstruktory v jazyce F# k vytvoření a inicializaci objektů třídy a struktury.
+title: Konstruktory
+description: Zjistěte, jak definovat a používat konstruktory v F# k vytváření a inicializace objektů třídy a struktury.
 ms.date: 05/16/2016
-ms.openlocfilehash: ff2463f890034cce0bbaa85d9a5c93e50427cd03
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 34989e2877b29f6f9fe1f6cc05e3fd7c90a1306a
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45743914"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612072"
 ---
 # <a name="constructors"></a>Konstruktory
 
@@ -42,7 +42,7 @@ Navíc struktury často obsahuje pole, která se vytvářejí pomocí `val` – 
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3502.fs)]
 
-Další informace najdete v tématu [explicitní pole: `val` – klíčové slovo](explicit-fields-the-val-keyword.md).
+Další informace najdete v tématu [explicitní pole: `val` – Klíčové slovo](explicit-fields-the-val-keyword.md).
 
 ## <a name="executing-side-effects-in-constructors"></a>Provádění vedlejší účinky v konstruktorech
 

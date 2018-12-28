@@ -1,13 +1,13 @@
 ---
-title: Dědičnost (F#)
-description: Zjistěte, jak určit dědičnosti relací F# pomocí klíčového slova 'inherit'.
+title: Dědičnost
+description: Zjistěte, jak určit F# vztahy dědičnosti pomocí klíčového slova 'inherit'.
 ms.date: 05/16/2016
-ms.openlocfilehash: e4d79244fb9bada5db0c5c4c7179d4bfe6e21f3d
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 775ee52039caf4c4ab65f82fa21d4e536135a12a
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43864466"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610135"
 ---
 # <a name="inheritance"></a>Dědičnost
 
@@ -34,7 +34,7 @@ Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na z�
 
 ## <a name="virtual-methods-and-overrides"></a>Virtuální metody a přepsání
 
-Virtuální metody (a vlastnosti) fungují odlišně v jazyce F# porovnání s jinými jazyky rozhraní .NET. Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo. Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu. Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:
+Virtuální metody (a vlastnosti) pracují trochu odlišně v F# porovnání s jinými jazyky rozhraní .NET. Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo. Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu. Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:
 
 ```fsharp
 abstract member [method-name] : [type]
@@ -62,7 +62,7 @@ Následující kód ukazuje základní třídu a odvozené třídy, kde odvozen�
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2602.fs)]
 
-V případě více konstruktorů můžete použít následující kód. První řádek konstruktory odvozené třídy je `inherit` klauzule a pole se zobrazí jako explicitní pole, které jsou deklarovány pomocí `val` – klíčové slovo. Další informace najdete v tématu [explicitní pole: `val` – klíčové slovo](members/explicit-fields-the-val-keyword.md).
+V případě více konstruktorů můžete použít následující kód. První řádek konstruktory odvozené třídy je `inherit` klauzule a pole se zobrazí jako explicitní pole, které jsou deklarovány pomocí `val` – klíčové slovo. Další informace najdete v tématu [explicitní pole: `val` – Klíčové slovo](members/explicit-fields-the-val-keyword.md).
 
 ```fsharp
 type BaseClass =

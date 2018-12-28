@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], integral types
 - ranges of integral types [C#]
 ms.assetid: 62e86126-46ff-40b0-9028-e61d7558268c
-ms.openlocfilehash: 1815f057e5cf26d64e5ff151f161cc56214efc1b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 7f8e4a9dabb3e24293ae7fcc724e8787dd6d4cf5
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237984"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396783"
 ---
 # <a name="integral-types-table-c-reference"></a>Tabulka celočíselných typů (referenční dokumentace jazyka C#)
 
@@ -36,7 +36,7 @@ V následující tabulce jsou uvedeny velikosti a rozsah celočíselných typů,
   
 Pokud se překročí Hodnota reprezentovaná celočíselného literálu <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, chybu kompilátoru [CS1021](../../misc/cs1021.md) vyvolá.
 
-Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> pro reprezentaci libovolně velké podepsané celé číslo.
+Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> strukturu představující libovolně velké podepsané celé číslo.
   
 ## <a name="see-also"></a>Viz také:
 
@@ -48,3 +48,4 @@ Použití <xref:System.Numerics.BigInteger?displayProperty=nameWithType> pro rep
 - [Tabulka výchozích hodnot](default-values-table.md)
 - [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
+- [Číslovky v technologii .NET](../../../standard/numerics.md)

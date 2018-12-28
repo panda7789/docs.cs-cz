@@ -5,12 +5,12 @@ helpviewer_keywords:
 - opacity [WPF], animating
 - animation [WPF], Opacity property
 ms.assetid: 572af23b-39dd-48d1-9db5-4bca56a4b3d3
-ms.openlocfilehash: 549d3eab0d6d75403e962eeb146be8d7995cc931
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 659b051fe63c113bf1a4488b1fab12bbee75b1e3
+ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525850"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53451245"
 ---
 # <a name="how-to-animate-the-opacity-of-an-element-or-brush"></a>Postupy: Animace krytí elementu nebo štětce
 Chcete-li prvek framework fade do zobrazení, lze animovat jeho <xref:System.Windows.UIElement.Opacity%2A> lze animovat vlastnost, nebo můžete <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost <xref:System.Windows.Media.Brush> (nebo stopy) používá k malování ho. Animace krytí elementu umožňuje fade své podřízené objekty do a z zobrazení, ale štětce použít k vykreslení elementu animace umožňuje měli pečlivěji jaká část elementu sníží (zesvětlí). Například lze animovat neprůhlednost štětce použít k vykreslení pozadí tlačítka. To by způsobilo pozadí tlačítka, která má vyblednout a oddálení zobrazení, ale zároveň je nechává jeho textu v úplně neprůhledné.  
@@ -23,4 +23,4 @@ Chcete-li prvek framework fade do zobrazení, lze animovat jeho <xref:System.Win
 ## <a name="example"></a>Příklad  
  [!code-xaml[timingbehaviors_snip#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_snip/CSharp/OpacityAnimationExample.xaml#10)]  
   
- Bylo vynecháno kód v tomto příkladu. Úplnou ukázku najdete postup animace krytí <xref:System.Windows.Media.Color> v rámci <xref:System.Windows.Media.LinearGradientBrush>.  Úplnou ukázku najdete v tématu [animace krytí elementu vzorku](https://go.microsoft.com/fwlink/?LinkID=159968).
+ Bylo vynecháno kód v tomto příkladu. Úplnou ukázku najdete postup animace krytí <xref:System.Windows.Media.Color> v rámci <xref:System.Windows.Media.LinearGradientBrush>.  Úplnou ukázku najdete v tématu [animace krytí elementu vzorku](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/OpacityAnimation).

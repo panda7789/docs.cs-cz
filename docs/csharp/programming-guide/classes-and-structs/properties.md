@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: ec34d6f49a538ac106196c342a7ff0f9dad8b6d8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: c37a273b4091d98ccc202f7d98859333658ccf7f
+ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242773"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53451206"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -34,7 +34,7 @@ Vlastnost je člen, který poskytuje flexibilní mechanismus pro čtení, zápis
 
 Jeden základní vzor pro implementování vlastnost zahrnuje použití privátní pomocné pole pro nastavení nebo načtení hodnoty vlastnosti. `get` Přistupující objekt vrací hodnotu soukromé pole a `set` přistupující objekt může provádět některé ověřování dat před přiřazením hodnoty na soukromé pole. Oba přístupové objekty mohou také provádět některé převodu nebo výpočet data předtím, než je uložen nebo vrácena.
 
-Následující příklad ukazuje tento model. V tomto příkladu `TimePeriod` třída představuje časový interval. Interně třídy ukládá časový interval v sekundách v soukromé pole s názvem `seconds`. Čtení a zápis vlastnost s názvem `Hours` umožňuje zákazníkům určit časový interval v hodinách. Jak `get` a `set` přistupující objekty provést nezbytné převod mezi hodiny a sekundy. Kromě toho `set` přistupující k ověření dat a vyvolá <xref:System.ArgumentOutOfRangeException> Pokud počet hodin je neplatný. 
+Následující příklad ukazuje tento model. V tomto příkladu `TimePeriod` třída představuje časový interval. Interně třídy ukládá časový interval v sekundách v soukromé pole s názvem `_seconds`. Čtení a zápis vlastnost s názvem `Hours` umožňuje zákazníkům určit časový interval v hodinách. Jak `get` a `set` přistupující objekty provést nezbytné převod mezi hodiny a sekundy. Kromě toho `set` přistupující k ověření dat a vyvolá <xref:System.ArgumentOutOfRangeException> Pokud počet hodin je neplatný. 
    
  [!code-csharp[Properties#1](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/properties-1.cs)]  
   

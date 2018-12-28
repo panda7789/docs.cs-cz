@@ -1,17 +1,17 @@
 ---
-title: Funkce (F#)
-description: Informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
+title: Funkce
+description: Další informace o funkcích v F# a jak F# podporuje běžné konstrukce funkčního programování.
 ms.date: 05/16/2016
-ms.openlocfilehash: 717eba7e69398048d229173e07ccc376797171bb
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 6e9ef916388745d2dd6874295d06dca656971b3f
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48839565"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610915"
 ---
 # <a name="functions"></a>Funkce
 
-Funkce je základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích má název funkce jazyka F#, mohou mít parametry a argumenty vzít a má tělo. F# podporuje také konstrukcí funkčního programování, jako je zpracování funkce jako hodnoty, použití nepojmenované funkce ve výrazech, složení funkcí k vytvoření nové funkce, curryfikované funkce a implicitní definice funkce prostřednictvím částečnou použití argumentů funkce.
+Funkce je základní jednotkou spuštění programu v jakémkoli programovacím jazyce. Stejně jako v jiných jazycích F# funkce s názvem, mohou mít parametry a argumenty vzít a má tělo. F#také podporuje konstrukce funkčního programování, jako je zpracování funkce jako hodnoty pomocí nepojmenované funkce ve výrazech, složení funkcí k vytvoření nové funkce, curryfikované funkce a implicitní definice funkce prostřednictvím částečnou použití argumentů funkce.
 
 Definování funkcí s použitím `let` – klíčové slovo, nebo v případě, funkce je rekurzivní, `let rec` – kombinace klíčových slov.
 
@@ -120,7 +120,7 @@ Některé rekurzivní funkce mohou přetečení zásobníku programu nebo prové
 
 ## <a name="function-values"></a>Hodnoty funkcí
 
-V jazyce F# všechny funkce jsou považovány za hodnot. ve skutečnosti jsou označovány jako *funkce hodnoty*. Protože funkce jsou hodnoty, se může sloužit jako argumenty dalších funkcí nebo v jiném kontextu použití hodnot. Tady je příklad, který přijímá hodnotu funkce jako argument funkce:
+V F#, všechny funkce jsou považovány za hodnot. ve skutečnosti jsou označovány jako *funkce hodnoty*. Protože funkce jsou hodnoty, se může sloužit jako argumenty dalších funkcí nebo v jiném kontextu použití hodnot. Tady je příklad, který přijímá hodnotu funkce jako argument funkce:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet109.fs)]
 
@@ -142,11 +142,11 @@ A *výraz lambda* je nepojmenovaný funkce. V předchozích příkladech místo 
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-Můžete definovat pomocí výrazů lambda `fun` – klíčové slovo. Výraz lambda se podobá definici funkce, s výjimkou, že místo `=` token, `->` token se používá k oddělení seznamu argumentů z těla funkce. Stejně jako v definici normální funkce typy argumentů lze odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozen z typu posledního výrazu v textu. Další informace najdete v tématu [výrazy Lambda: `fun` – klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md).
+Můžete definovat pomocí výrazů lambda `fun` – klíčové slovo. Výraz lambda se podobá definici funkce, s výjimkou, že místo `=` token, `->` token se používá k oddělení seznamu argumentů z těla funkce. Stejně jako v definici normální funkce typy argumentů lze odvodit nebo zadat explicitně a návratový typ výrazu lambda je odvozen z typu posledního výrazu v textu. Další informace najdete v tématu [výrazy Lambda: `fun` – Klíčové slovo](../functions/lambda-expressions-the-fun-keyword.md).
 
 ## <a name="function-composition-and-pipelining"></a>Skládání a paralelní zpracování funkcí
 
-Funkce jazyka F# se může skládat z dalších funkcí. Složení dvou funkcí **function1** a **function2** je další funkci, která představuje použití **function1** a potom aplikaci **function2**:
+Funkce v F# může skládat z dalších funkcí. Složení dvou funkcí **function1** a **function2** je další funkci, která představuje použití **function1** a potom aplikaci **function2**:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet113.fs)]
 

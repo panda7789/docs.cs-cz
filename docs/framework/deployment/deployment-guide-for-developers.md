@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f6ad77f93236b524e1cd22bf895312920ca4eec
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 72cf3e2e60f27ed4faac12882fcc17974601f6e6
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453473"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396991"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na žádné verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.
@@ -230,7 +230,7 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
 
 - [Zjištění](#detecting-the-language-packs) Určuje, zda jsou již nainstalovány jazykové sady v počítači uživatele.
 
-- Pokud chcete řídit nasazování, bez upozornění spusťte a sledujte proces instalace rozhraní .NET Framework (viz [postupy: získání průběhu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)).
+- Pokud chcete řídit nasazování, bez upozornění spusťte a sledujte proces instalace rozhraní .NET Framework (viz [jak: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)).
 
 - Pokud nasazujete offline instalační program [řetězení jazykových sad samostatně](#chain_langpack).
 
@@ -247,9 +247,8 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
 
 |Version|Hodnota DWORD verze|
 |-------------|--------------------------------|
-|Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. října 2018 aktualizovat|461814|
 |Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. dubna 2018 Update a Windows Server verze 1803|461808|
-|Rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. října 2018 4.7.2 Update, Windows 10. dubna 2018 Update a Windows Server verze 1803|461814|
+|Rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. dubna 2018 4.7.2 Update a Windows Server verze 1803. Jedná se o Windows 10. října 2018 aktualizovat. |461814|
 |Rozhraní .NET framework 4.7.1 nainstalovat na Windows 10 Fall Creators Update a na Windows Server verze 1709|461308|
 |Rozhraní .NET framework 4.7.1 nainstalovat na všechny verze operačního systému než Windows 10 Fall Creators Update a Windows Server verze 1709|461310|
 |Rozhraní .NET framework 4.7 nainstalované ve Windows 10 Creators Update|460798|
@@ -360,7 +359,7 @@ NDP451-KB2858728-x86-x64-AllOS-JPN.exe/q /norestart /ChainingPackage <ProductNam
 |------------|-----------------|
 |**/ CEIPConsent**|Přepíše výchozí chování a odešle anonymní zpětné vazby společnosti Microsoft pro zlepšení průběhu budoucích nasazení. Tato možnost se dá použít jenom v případě, že instalační program zobrazí výzvu k souhlasu a uživatel udělí oprávnění Odeslat anonymní zpětnou vazbu společnosti Microsoft.|
 |**chainingpackage** `packageName`|Určuje název spustitelného souboru, který provádí řetězení. Tyto informace jsou odeslány společnosti Microsoft jako zpětná vazba k vylepšení budoucích nasazení prostředí.<br /><br /> Pokud název balíčku obsahuje mezery, použijte uvozovky jako oddělovače; Příklad: **chainingpackage "Lucerne Publishing"**. Příklad řetězeného balíčku naleznete v tématu [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=181926) v knihovně MSDN.|
-|**/ LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykové sady určené pomocí `LCID` a vynutí zobrazení uživatelského rozhraní, který má být zobrazen v daném jazyce, není-li nastaven tichý režim.<br /><br /> U webového instalátoru tato možnost řetězí – instaluje jazykový balíček z webu. **Poznámka:** tuto možnost použijte pouze s webovým instalátorem.|
+|**/ LCID**  `LCID`<br /><br /> kde `LCID` Určuje identifikátor národního prostředí (viz [podporované jazyky](#supported-languages))|Nainstaluje jazykové sady určené pomocí `LCID` a vynutí zobrazení uživatelského rozhraní, který má být zobrazen v daném jazyce, není-li nastaven tichý režim.<br /><br /> U webového instalátoru tato možnost řetězí – instaluje jazykový balíček z webu. **Poznámka:**  Tuto možnost použijte pouze s webovým instalátorem.|
 |**/ log** `file`&#124; `folder`|Určuje umístění souboru protokolu. Výchozí hodnota je dočasná složka pro proces a výchozí název souboru je založen na balíčku. Pokud je přípona .txt, vytvoří se textový protokol je vytvořen. Pokud zadáte jiné nebo žádné rozšíření, je vytvořen protokol ve formátu HTML.|
 |**/msioptions**|Určuje možnosti, které mají být předány položkám .msi a .msp; Příklad: `/msioptions "PROPERTY1='Value'"`.|
 |**/ norestart /**|Zabrání Instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, řetězená aplikace musí zachytit návratový kód a zpracovat restartování (viz [získávání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606) v knihovně MSDN).|
@@ -382,7 +381,7 @@ Následující tabulka uvádí jazykové sady rozhraní .NET Framework, které j
 |1025|Arabština – Saúdská Arábie|ar|
 |1028|Tradiční čínština|zh-Hant|
 |1029|Čeština|cs|
-|1030|Dánština|da|
+|1030|dánština|da|
 |1031|Německo – němčina|de|
 |1032|Řečtina|El|
 |1035|Finština|Fi|
@@ -397,7 +396,7 @@ Následující tabulka uvádí jazykové sady rozhraní .NET Framework, které j
 |1045|Polština|PL|
 |1046|Portugalština – Brazílie|pt-BR|
 |1049|Ruština|RU|
-|1053|Švédština|sv|
+|1053|švédština|sv|
 |1055|Turečtina|tr|
 |2052|Zjednodušená čínština|zh-Hans|
 |2070|Portugalština – Portugalsko|pt-PT|

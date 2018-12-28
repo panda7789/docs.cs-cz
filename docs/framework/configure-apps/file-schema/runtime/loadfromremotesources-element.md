@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7a8858059159edddb4456561719c572fb9268be7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3070e293fc335bb24dd1234007307773d152ceee
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509480"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611396"
 ---
 # <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadFromRemoteSources&gt; – element
 Určuje, zda sestavení načtená ze vzdáleného zdroje by měly být udělena úplná důvěryhodnost v rozhraní .NET Framework 4 nebo novější.
   
 > [!NOTE]
->  Pokud k tomuto tématu byli přesměrováni z důvodu chybovou zprávu v seznamu chyb sady Visual Studio projekt nebo sestavení chyby, přečtěte si téma [postupy: použití sestavení z webu v sadě Visual Studio](https://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070).  
+>  Pokud k tomuto tématu byli přesměrováni z důvodu chybovou zprávu v seznamu chyb sady Visual Studio projekt nebo sestavení chyby, přečtěte si téma [jak: Použít sestavení z webu v sadě Visual Studio](https://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070).  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -74,7 +74,7 @@ so this load may be dangerous. If this load is not intended to sandbox the assem
 
 Načtení sestavení a provedení jeho kód, musíte buď:
 
-- Explicitně vytvořit izolovaný prostor pro sestavení (viz [postupy: spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)).
+- Explicitně vytvořit izolovaný prostor pro sestavení (viz [jak: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)).
 
 - Spusťte sestavení kódu v režimu plné důvěryhodnosti. To provedete tím, že nakonfigurujete `<loadFromRemoteSources>` elementu. To vám umožní zadat, že sestavení, na kterých běží v částečném vztahu důvěryhodnosti v dřívějších verzích rozhraní .NET Framework nyní spustit v úplném vztahu důvěryhodnosti v rozhraní .NET Framework 4 a novější verze.
 
@@ -117,8 +117,8 @@ Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti k s
 
 ## <a name="see-also"></a>Viz také:
 
-[Více implicitní používá zásady CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)  
-[Postupy: spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
-[Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-[Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
+- [Více implicitní používá zásady CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)  
+- [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  

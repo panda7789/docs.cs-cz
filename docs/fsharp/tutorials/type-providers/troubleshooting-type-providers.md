@@ -1,13 +1,13 @@
 ---
 title: Řešení potíží se zprostředkovateli typů
-description: Zjistěte potenciální řešení problémů, ke kterým máte pravděpodobně dojde při použití poskytovatelů typů v jazyce F#.
+description: Zjistit potenciální řešení problémů, které se pravděpodobně setkáte při použití typu zprostředkovatele v F#.
 ms.date: 05/16/2016
-ms.openlocfilehash: f3b8ffdaf615563305b7b84b45a9ed1e066d0dcc
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 6c675720e0b7c306a2916c94d8096d2f09c0daca
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48873213"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610330"
 ---
 # <a name="troubleshooting-type-providers"></a>Řešení potíží se zprostředkovateli typů
 

@@ -1,17 +1,17 @@
 ---
-title: Měrné jednotky (F#)
-description: Zjistěte, jak plovoucí desetinnou čárkou a celé číslo se znaménkem hodnoty v jazyce F# můžete mít přidružené jednotky měření, které se obvykle používají k označení délku, svazek a velkokapacitních.
+title: Měrné jednotky
+description: Zjistěte, jak plovoucí desetinnou čárkou a celočíselných hodnot přihlášení F# mohou být přidruženy jednotky měření, které se obvykle používají k označení délku, svazek a velkokapacitních.
 ms.date: 05/16/2016
-ms.openlocfilehash: ad2193e25f3c0cee6e73cd529ab43d1e4b6b549b
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 935dbff3545f92736ce8c51de86a168429dc194f
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45972514"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610980"
 ---
 # <a name="units-of-measure"></a>Měrné jednotky
 
-Plovoucí desetinná čárka a číslo se znaménkem hodnoty v jazyce F# můžete mít přidružené jednotky měření, které se obvykle používají k označení délku, svazek, hmotnost, a tak dále. Pomocí množství s jednotkami povolíte kompilátor ověřte, že aritmetické vztahy mají správnou jednotek, která pomáhá zabránit programovací chyby.
+S plovoucí desetinnou čárkou a celočíselných hodnot přihlášení F# mohou být přidruženy jednotky měření, které se obvykle používají k označení délku, svazek, hmotnost a tak dále. Pomocí množství s jednotkami povolíte kompilátor ověřte, že aritmetické vztahy mají správnou jednotek, která pomáhá zabránit programovací chyby.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -113,7 +113,7 @@ Pro převedení unitless hodnoty na hodnotu, která má jednotky, můžete hodno
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6906.fs)]
 
-## <a name="units-of-measure-in-the-f-core-library"></a>Měrné jednotky v knihovně F# Core
+## <a name="units-of-measure-in-the-f-core-library"></a>Měrné jednotky F# Core library
 
 Je k dispozici v knihovně jednotky `FSharp.Data.UnitSystems.SI` oboru názvů. V obou jejich symbol formulář obsahuje jednotek SI (podobně jako `m` pro měření) v `UnitSymbols` podřízeném oboru názvů a jejich úplný název (jako `meter` pro měření) v `UnitNames` podřízeném oboru názvů.
 

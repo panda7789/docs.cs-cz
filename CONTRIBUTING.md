@@ -68,6 +68,8 @@ Ujistěte se, postupujte podle lze patřičnou syntaxi Markdown. Další informa
 
 **Krok 4:** Odeslat žádost o přijetí změn požádat o (o přijetí změn) z vaší větve do `dotnet/docs/master`.
 
+Vaše žádost o přijetí změn by *vždy* cílové hlavní větvi. Měli byste *nikdy* otevřete žádost o přijetí změn živé větve cílí.
+
 Každé žádosti o přijetí změn by měl obvykle adres jedním problémem po jednom. Žádosti o přijetí změn můžete změnit jeden nebo více souborů. Pokud jste adresování více opravy na jiné soubory, jsou upřednostňované samostatné žádosti o přijetí změn.
 
 Pokud vaše žádost o přijetí změn řeší stávající problém, přidejte `Fixes #Issue_Number` – klíčové slovo na zprávu potvrzení nebo popis žádosti o přijetí změn. Tímto způsobem, problém je automaticky uzavřena žádosti o přijetí změn se sloučí. Další informace najdete v tématu [uzavírá chyby prostřednictvím zprávy potvrzení](https://help.github.com/articles/closing-issues-via-commit-messages/).

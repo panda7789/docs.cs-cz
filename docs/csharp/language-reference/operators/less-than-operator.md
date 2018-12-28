@@ -1,31 +1,43 @@
 ---
 title: '&lt; Operator - C# odkaz'
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 12/18/2018
 f1_keywords:
 - <_CSharpKeyword
 helpviewer_keywords:
 - less than operator (<) [C#]
 - < operator [C#]
 ms.assetid: 38cb91e6-79a6-48ec-9c1e-7b71fd8d2b41
-ms.openlocfilehash: 3cc125471eee7bf0002e9844c2a1cdc05e8d4a03
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: bb0f590bb547c4e632bd14c773f095435c8986f0
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241220"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655943"
 ---
 # <a name="lt-operator-c-reference"></a>&lt; – Operátor (referenční dokumentace jazyka C#)
-Všechny číselné a výčet typů definovat "menší než" relační operátor (`<`), která vrací `true` Pokud je první operand je menší než druhé, `false` jinak.  
-  
-## <a name="remarks"></a>Poznámky  
- Lze přetěžovat uživatelsky definované typy `<` – operátor (viz [operátor](../../../csharp/language-reference/keywords/operator.md)). Pokud `<` je přetížena, [ > ](../../../csharp/language-reference/operators/greater-than-operator.md) musí také být přetíženy.
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#24](../../../csharp/language-reference/operators/codesnippet/CSharp/less-than-operator_1.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+"Menší než" relační operátor `<` vrátí `true` Pokud svůj první operand je menší než svým druhým operandem, `false` jinak. Všechny typy číselné a výčet podporují `<` operátor. Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.
+
+> [!NOTE]
+> Pro relační operátory `==`, `>`, `<`, `>=`, a `<=`, pokud žádný z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>) je výsledek operace `false`. To znamená, že `NaN` hodnota není větší než, menší než, ani jakýkoli jiný roven `double` (nebo `float`) hodnotu. Další informace a příklady najdete v tématu <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType> článku.
+
+Následující příklad ukazuje použití `<` operátor:
+
+[!code-csharp-interactive[less than example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#Less)]
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Uživatelem definované typy lze [přetížení](../keywords/operator.md) `<` operátor. Pokud typ přetížení operátor "menší než" `<`, musíte také přetížit ["větší než" operátor](greater-than-operator.md) `>`.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [relační a typové zkoušky operátory](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) část [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [<= – operátor](less-than-equal-operator.md)
+- <xref:System.IComparable%601?displayProperty=nameWithType>

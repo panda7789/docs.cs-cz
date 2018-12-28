@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f90853a93b40eeb72f07ad9b1849aa99c8e8bf3d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c0d71bef4ad68c2fea63cec413e8bd17b78df1d0
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745185"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614330"
 ---
 # <a name="ltlegacyimpersonationpolicygt-element"></a>&lt;legacyimpersonationpolicy –&gt; – Element
-Určuje, že identitu systému Windows není toku napříč asynchronní bodů, bez ohledu na nastavení tok pro kontext provádění na aktuální vlákno.  
+Určuje, že identita Windows není téct přes asynchronní body, bez ohledu na nastavení toku pro kontext spuštění pro aktuální vlákno.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -38,14 +38,14 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, že <xref:System.Security.Principal.WindowsIdentity> nepostupuje napříč asynchronní bodů, bez ohledu na to <xref:System.Threading.ExecutionContext> toku nastavení na aktuální vlákno.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, že <xref:System.Security.Principal.WindowsIdentity> není téct přes asynchronní body, bez ohledu na to <xref:System.Threading.ExecutionContext> tok nastavení pro aktuální vlákno.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|<xref:System.Security.Principal.WindowsIdentity> toky přes asynchronní body, v závislosti na <xref:System.Threading.ExecutionContext> toku nastavení pro aktuální vlákno. Toto nastavení je výchozí.|  
-|`true`|<xref:System.Security.Principal.WindowsIdentity> nepostupuje napříč asynchronní bodů, bez ohledu na to <xref:System.Threading.ExecutionContext> toku nastavení na aktuální vlákno.|  
+|`false`|<xref:System.Security.Principal.WindowsIdentity> toky přes asynchronní body v závislosti na <xref:System.Threading.ExecutionContext> tok nastavení pro aktuální vlákno. Toto nastavení je výchozí.|  
+|`true`|<xref:System.Security.Principal.WindowsIdentity> není téct přes asynchronní body, bez ohledu <xref:System.Threading.ExecutionContext> tok nastavení pro aktuální vlákno.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -58,31 +58,31 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 1.0 a 1.1 <xref:System.Security.Principal.WindowsIdentity> nepostupuje přes všechny body asynchronní definovaný uživatelem. Od verze rozhraní .NET Framework verze 2.0, je <xref:System.Threading.ExecutionContext> objekt, který obsahuje informace o aktuálně spuštěném vlákno a toků mezi asynchronní body v rámci domény aplikace. <xref:System.Security.Principal.WindowsIdentity> Je zahrnutý v tomto kontextu provádění a proto také toků mezi asynchronní body, což znamená, že pokud kontextu zosobnění existuje, ji budou směrovat také.  
+ V rozhraní .NET Framework verze 1.0 a 1.1 <xref:System.Security.Principal.WindowsIdentity> není téct přes asynchronní body žádné definované uživatelem. Od verze rozhraní .NET Framework verze 2.0, je <xref:System.Threading.ExecutionContext> toků, který obsahuje informace o aktuálně spuštěné vlákno a to přes asynchronní body v rámci domény aplikace. <xref:System.Security.Principal.WindowsIdentity> Je zahrnutá v tomto kontextu spuštění a proto se přenášejí také přes asynchronní body, což znamená, že pokud existuje objekt context zosobnění, se budou směrovat také.  
   
- Od verze rozhraní .NET Framework 2.0, můžete použít `<legacyImpersonationPolicy>` elementu, který chcete určit, že <xref:System.Security.Principal.WindowsIdentity> nepostupuje přes asynchronní body.  
+ Od verze rozhraní .NET Framework 2.0, můžete použít `<legacyImpersonationPolicy>` elementu, chcete-li určit, že <xref:System.Security.Principal.WindowsIdentity> není téct přes asynchronní body.  
   
 > [!NOTE]
->  Modul CLR (CLR) má informace o zosobnění operace provedené pomocí pouze spravovaného kódu, nikoli instanci zosobnění provést mimo spravovaného kódu, například prostřednictvím platformy volání nespravovaného kódu nebo prostřednictvím přímé volání funkcí Win32. Jenom spravované <xref:System.Security.Principal.WindowsIdentity> objekty toku asynchronní body, pokud `alwaysFlowImpersonationPolicy` element byla nastavena na hodnotu true (`<alwaysFlowImpersonationPolicy enabled="true"/>`). Nastavení `alwaysFlowImpersonationPolicy` určuje element na hodnotu true, identitu systému Windows vždycky přeteče asynchronní bodů, bez ohledu na to, jak byla provedena zosobnění. Další informace o toku nespravované zosobnění přes asynchronní body najdete v tématu [ \<alwaysflowimpersonationpolicy – > Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md).  
+>  Modul CLR (CLR) je seznámen zosobnění operací provedených pomocí pouze spravovaný kód, ne o zosobnění provést mimo spravovaný kód, například prostřednictvím platformy volání nespravovaného kódu nebo prostřednictvím přímé volání funkcí Win32. Pouze spravované <xref:System.Security.Principal.WindowsIdentity> objekty může téct přes asynchronní body, pokud `alwaysFlowImpersonationPolicy` prvku je nastavená na hodnotu true (`<alwaysFlowImpersonationPolicy enabled="true"/>`). Nastavení `alwaysFlowImpersonationPolicy` prvku na hodnotu true Určuje, že identita Windows vždy toky přes asynchronní body, bez ohledu na to, jak se provádí zosobnění. Další informace o toku nespravované zosobnění přes asynchronní body, přečtěte si téma [ \<alwaysflowimpersonationpolicy – > Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md).  
   
- Chcete-li změnit toto výchozí chování v dva způsoby, jak:  
+ Je-li změnit toto výchozí chování dvěma dalšími způsoby:  
   
-1.  Ve spravovaném kódu na základě vlákna.  
+1.  Ve spravovaném kódu na základě vlákno.  
   
-     Můžete potlačit toku na základě vlákna změnou <xref:System.Threading.ExecutionContext> a <xref:System.Security.SecurityContext> nastavení pomocí <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType> nebo <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> metoda.  
+     Tok na základě vlákna můžete potlačit pomocí úpravy <xref:System.Threading.ExecutionContext> a <xref:System.Security.SecurityContext> nastavení pomocí <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType> nebo <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> metody.  
   
-2.  Ve volání rozhraní nespravované hostingu načíst modul CLR (CLR).  
+2.  Ve volání nespravovaných hostitelských rozhraní načíst modul CLR (CLR).  
   
-     Pokud nespravované rozhraní hostování (namísto jednoduché spustitelný soubor spravovaných) se používá k načtení modulu CLR, můžete zadat speciální příznak ve volání [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) funkce. Chcete-li povolit režim kompatibility pro celý proces, nastavte `flags` parametr pro [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) k STARTUP_LEGACY_IMPERSONATION.  
+     Pokud nespravovaných hostitelských rozhraní (místo jednoduchých spustitelný soubor spravovaný) slouží k načtení modulu CLR, můžete zadat speciální příznak ve volání [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) funkce. Chcete-li povolit režim kompatibility pro celý proces, nastavte `flags` parametr pro [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) k STARTUP_LEGACY_IMPERSONATION.  
   
  Další informace najdete v tématu [ \<alwaysflowimpersonationpolicy – > Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md).  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- V aplikaci rozhraní .NET Framework Tento element lze použít pouze v konfiguračním souboru aplikace.  
+ V aplikaci .NET Framework Tento element lze použít pouze v konfiguračním souboru aplikace.  
   
- Pro aplikaci ASP.NET toku zosobnění lze konfigurovat v nalezen v souboru aspnet.config \<složka systému Windows > \Microsoft.NET\Framework\vx.x.xxxx adresáře.  
+ Pro aplikace ASP.NET se dá nakonfigurovat tok zosobnění v soubor aspnet.config součástí \<složky Windows > \Microsoft.NET\Framework\vx.x.xxxx adresáře.  
   
- Technologie ASP.NET ve výchozím nastavení zakáže zosobnění tok v souboru aspnet.config pomocí následujících nastavení:  
+ Technologie ASP.NET ve výchozím nastavení zakáže zosobnění tok v soubor aspnet.config pomocí následujících nastavení:  
   
 ``` xml
 <configuration>  
@@ -93,7 +93,7 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
 </configuration>  
 ```  
   
- V technologii ASP.NET Pokud chcete povolit tok zosobnění místo toho je nutné explicitně zadat následující nastavení:  
+ V technologii ASP.NET Pokud chcete místo toho povolit tok zosobnění je nutné explicitně zadat následující nastavení:  
   
 ```xml  
 <configuration>  
@@ -105,7 +105,7 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit způsob chování starší verze, který není toku identitu systému Windows přes asynchronní body.  
+ Následující příklad ukazuje, jak určit starší chování, které není identita Windows téct přes asynchronní body.  
   
 ```xml  
 <configuration>  
@@ -116,6 +116,6 @@ Určuje, že identitu systému Windows není toku napříč asynchronní bodů, 
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<alwaysflowimpersonationpolicy – > elementu](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [\<alwaysflowimpersonationpolicy – > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)

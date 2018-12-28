@@ -12,17 +12,18 @@ helpviewer_keywords:
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 422888a595e8fdea01f9cb9d256830467d6822ac
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 78ca269dacc33fb441310ad00ba2548826f5403e
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610512"
 ---
 # <a name="ltdisablecachingbindingfailuresgt-element"></a>&lt;disablecachingbindingfailures –&gt; – Element
-Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože sestavení nebyl nalezen ve zjišťování.  
+Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.  
   
- \<Konfigurace > elementu  
-\<modul runtime > elementu  
+ \<Konfigurace > – Element  
+\<modul runtime > – Element  
 \<disablecachingbindingfailures – >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,14 +39,14 @@ Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým doc
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|povoleno|Požadovaný atribut.<br /><br /> Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože sestavení nebyl nalezen ve zjišťování.|  
+|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda chcete zakázat ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Nezakazujte ukládání do mezipaměti vazby, ke kterým dochází, protože sestavení nebyl nalezen pomocí zjišťování. Toto je výchozí chování vazby od verze rozhraní .NET Framework verze 2.0.|  
-|1|Zakážete ukládání do mezipaměti vazby, ke kterým dochází, protože sestavení nebyl nalezen pomocí zjišťování. Toto nastavení se vrátí do chování vazby rozhraní .NET Framework verze 1.1.|  
+|0|Nezakazujte ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto je výchozí chování vazby od verze rozhraní .NET Framework verze 2.0.|  
+|1|Zakáže ukládání do mezipaměti vazby, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním. Toto nastavení se vrátí k chování vazby rozhraní .NET Framework verze 1.1.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -58,18 +59,18 @@ Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým doc
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Od verze rozhraní .NET Framework verze 2.0, je výchozí chování pro načtení sestavení do mezipaměti všechny vazby a načítání selhání. To znamená pokud se nezdaří pokus o načtení sestavení, další žádost o načtení do stejného sestavení nezdaří okamžitě, bez jakékoli pokus o vyhledání sestavení. Tento element zakáže výchozí chování pro vazby, ke kterým dochází, protože sestavení nebyl nalezen v cestě k testování. Throw – selhání <xref:System.IO.FileNotFoundException>.  
+ Od verze rozhraní .NET Framework verze 2.0, je výchozí chování pro načtení sestavení do mezipaměti všechny vazby a načítání chyb. To znamená pokud se nezdaří pokus o načtení sestavení, následné žádosti k načtení stejné sestavení selhala okamžitě, bez jakékoli pokusy o nalezení sestavení. Tento prvek zakazuje výchozí chování pro vazbu, ke kterým dochází, protože sestavení nebyl nalezen v cestě k testování. Vyvolat tyto chyby <xref:System.IO.FileNotFoundException>.  
   
- Některé vazby a načítání selhání nemá vliv tohoto elementu a vždy v mezipaměti. Selhání dojít, protože sestavení nebyl nalezen, ale nebylo možné načíst. Vyvolají <xref:System.BadImageFormatException> nebo <xref:System.IO.FileLoadException>. Následující seznam obsahuje některé příklady takových selhání.  
+ Některé vazby a načítání selhání nevztahují na tento element a jsou vždy uloženy v mezipaměti. Tyto chyby dojít, protože sestavení nebyl nalezen, ale nelze jej načíst. Generují výjimku <xref:System.BadImageFormatException> nebo <xref:System.IO.FileLoadException>. Následující seznam obsahuje několik příkladů takových selhání.  
   
--   Když se pokusí načíst soubor není platným sestavením, následných pokusů o načtení sestavení selže i v případě chybného souboru se nahradí správná sestavení.  
+-   Při pokusu načíst soubor není platným sestavením, následné pokusy o načtení sestavení se nezdaří, i když chybný soubor nahradí správné sestavení.  
   
--   Při pokusu o načtení sestavení, které je uzamčený systému souborů následné pokusy o načtení sestavení selže i po vydání sestavení pomocí systému souborů.  
+-   Při pokusu o načtení sestavení, které je uzamčen systému souborů, následné pokusy o načtení sestavení se nezdaří, i po sestavení je vydáno systémem souborů.  
   
--   Pokud je jeden nebo více verzí sestavení, které se pokoušíte načíst v cestě k testování, ale není mezi nimi konkrétní verzi, kterou jste požádali, následné pokusy o spouštění této verze selže i v případě správnou verzi přesunete do testování cestu.  
+-   Pokud je jeden nebo více verzí sestavení, které se pokoušíte načíst v cesta zjišťování, ale konkrétní verzi, které jste požádali, není mezi nimi, následné pokusy načíst tuto verzi se nezdaří, i v případě, že správná verze je přesunut do cesta zjišťování.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat ukládání do mezipaměti selhání vazby sestavení, ke kterým dochází, protože sestavení nebyl nalezen pomocí zjišťování.  
+ Následující příklad ukazuje, jak zakázat ukládání do mezipaměti selhání vazby sestavení, ke kterým dochází, protože nebylo nalezeno sestavení zjišťováním.  
   
 ```xml  
 <configuration>  
@@ -80,6 +81,6 @@ Určuje, jestli chcete zakázat ukládání do mezipaměti vazby, ke kterým doc
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

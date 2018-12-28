@@ -1,65 +1,89 @@
 ---
-title: Transformace dat v ML.NET
-description: Prozkoumejte různé datové transformace v ML.NET podporována.
+title: Strojové učení transformací dat - ML.NET
+description: Prozkoumejte funkce engineering součásti, které jsou podporované v ML.NET.
 author: JRAlexander
-ms.date: 10/16/2018
-ms.openlocfilehash: c169319937dac13747935e451952bd75d4cc174d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.custom: seodec18
+ms.date: 12/14/2018
+ms.openlocfilehash: 72e4077151d35b9bff661c28c9a20626098a5c69
+ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143945"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53451089"
 ---
-# <a name="data-transforms-in-mlnet"></a>Transformace dat v ML.NET
+# <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
-Následující tabulky obsahují informace o všech transformací dat nepodporuje v ML.NET (vyberte typ přejdete do příslušné tabulky transformovat data):
-
-* [Zařazené do kategorií](#categorical)
-* [Combiners a segregators](#combiners-and-segregators)
-* [Výběr funkcí](#feature-selection)
-* [Featurizers](#featurizers)
-* [Popisek analýza kódu](#label-parsing)
-* [Chybějící hodnoty](#missing-values)
-* [Normalizace](#normalization)
-* [Filtry řádků](#row-filters)
-* [schéma](#schema)
-* [Snadné a zpracování textu](#text-processing-and-featurization)
-* [Různé](#miscellaneous)
+Následující tabulky obsahují informace o všech transformace dat v ML.NET podporována.
 
 > [!NOTE]
 > ML.NET je aktuálně ve verzi Preview. Ne všechny transformace dat se aktuálně nepodporuje. Chcete-li odeslat žádost o určitých transformace, otevřete problém ve službě [dotnet/machinelearning](https://github.com/dotnet/machinelearning/issues) úložiště GitHub.
-
-## <a name="categorical"></a>Kategorické
-
-| Transformace | Definice |
-| --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.CategoricalHashOneHotVectorizer> | Zakóduje proměnnou zařazené do kategorií pomocí algoritmu hash na základě kódování. |
-| <xref:Microsoft.ML.Legacy.Transforms.CategoricalOneHotVectorizer> | Zakóduje zařazené do kategorií proměnnou s jedním hot kódování v závislosti na slovník termín. |
 
 ## <a name="combiners-and-segregators"></a>Combiners a segregators
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.CombinerByContiguousGroupId> | Skupiny hodnoty pro skalární sloupec jako vektor podle ID souvislých skupiny. |
+| <xref:Microsoft.ML.Transforms.GroupTransform> | Skupiny hodnoty pro skalární sloupec jako vektor podle ID souvislých skupiny. |
 | <xref:Microsoft.ML.Legacy.Transforms.FeatureCombiner> | Do sloupce jednu funkci k dispozici všechny funkce. |
 | <xref:Microsoft.ML.Legacy.Transforms.ManyHeterogeneousModelCombiner> | Kombinuje posloupnost TransformModels a PredictorModel do jednoho PredictorModel. |
 | <xref:Microsoft.ML.Legacy.Transforms.ModelCombiner> | Kombinuje posloupnost TransformModels do jednoho modelu. |
 | <xref:Microsoft.ML.Legacy.Transforms.Segregator> | Zruší seskupení sloupců vektor do sekvence řádků; inverzní funkce k transformaci skupiny. |
 | <xref:Microsoft.ML.Legacy.Transforms.TwoHeterogeneousModelCombiner> | Spojuje TransformModel a PredictorModel do jednoho PredictorModel. |
+| <xref:Microsoft.ML.Transforms.UngroupTransform> | Zrušení skupiny vektorové sloupce do sekvence řádků, inverzní funkce k transformaci skupiny. |
 
-## <a name="feature-selection"></a>Výběr funkcí
-
-| Transformace | Definice |
-| --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.FeatureSelectorByCount> | Vybere sloty, u kterých počet jiné než výchozí hodnoty je větší než nebo rovna prahové hodnoty. |
-| <xref:Microsoft.ML.Legacy.Transforms.FeatureSelectorByMutualInformation> | Vybere sloty nahoru k ve všech zadaných sloupcích seřazené podle jejich vzájemné informace o sloupci popisek. |
-
-## <a name="featurizers"></a>Featurizers
+## <a name="conversions"></a>Převody 
 
 | Transformace | Definice |
 | --- | --- |
+| <xref:Microsoft.ML.Transforms.Conversions.HashingTransformer> | Hodnoty hash jednotného Vážíme si toho sloupce nebo vektorové sloupce. Pro vektor sloupce vytvoří hodnotu hash každý slot samostatně. Můžete ho hash textové hodnoty nebo hodnoty klíče. |
 | <xref:Microsoft.ML.Legacy.Transforms.HashConverter> | Hodnoty sloupců převádí hodnoty hash. Tato transformace přijímá číselné a textové vstupů, jednu i s hodnotou vektoru sloupce. |
-| <xref:Microsoft.ML.Legacy.Transforms.TreeLeafFeaturizer> | Trénovat komplet stromu, nebo načte ze souboru a potom mapuje číselné funkce vektor tří výstupy: 1. Vektor obsahující stromu jednotlivé výstupy komplet stromu. 2. Vektor označující listy, které funkce vector spadá do roku komplet stromu. 3. Vektor označující cesty, které funkce vector spadá do roku komplet stromu. Pokud jsou zadaná soubor modelu i trainer, vektoru použije soubor modelu. Pokud nejsou zadány žádné, bude výchozí model FastTree trénování vektoru. To může zpracovávat popisky kláves díky trénování regresní model směrem k jejich volitelně permutovanou funkci indexy. |
+| <xref:Microsoft.ML.Transforms.Conversions.HashJoiningTransform> | Převede více hodnot sloupců do hodnoty hash. Tato transformace přijímá číselné a textové vstupů, jednu i s hodnotou vektoru sloupce. |
+| <xref:Microsoft.ML.Transforms.Conversions.KeyToBinaryVectorMappingTransformer> | Převede klíč na sloupec binární vektoru. |
+| <xref:Microsoft.ML.Transforms.Conversions.KeyToValueMappingTransformer > | Využívá KeyValues metadat pro mapování klíčů indexů na odpovídající hodnoty v metadatech KeyValues. |
+| <xref:Microsoft.ML.Transforms.Conversions.KeyToVectorMappingTransformer> | Převede klíč na sloupec vektoru. |
+| <xref:Microsoft.ML.Transforms.Conversions.TypeConvertingTransformer> | Změny základní typ sloupce za předpokladu, že typ lze převést. |
+| <xref:Microsoft.ML.Transforms.Conversions.ValueToKeyMappingTransformer> | Převede vstupní hodnoty (slova, čísla, atd.) do indexu ve slovníku. |
+
+
+## <a name="deep-learning"></a>Obsáhlý learning
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.OnnxTransform> | Poskytuje data do existujícího modelu ONNX a vrátí skóre (předpověď). |
+| <xref:Microsoft.ML.Transforms.TensorFlowTransform> | Můžete buď skóre, které je předem vytrénované TensorFlow modelu nebo programovém přeučení modelů TensorFlow. |
+
+## <a name="feature-extraction"></a>Extrakce funkce
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.Text.CustomStopWordsRemovingTransform> | Odebere zadaný seznam stop slov porovnání jednotlivých tokenů (porovnání velká a malá písmena) stopwords.| 
+| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageGrayscaleTransform> | Přijímá jeden nebo více sloupců ImageType a převede je do odstínů šedi reprezentace stejnou bitovou kopii.|
+| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageLoaderTransform> | Vezme jeden nebo více sloupců ReadOnlyMemory a načte jako ImageType. |
+| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImagePixelExtractorTransform> | Přijímá jeden nebo více sloupců ImageType a převede je na reprezentaci vektoru.|
+| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageResizerTransform> | Vezme jeden nebo více sloupců ImageType a přizpůsobí svou velikost je zadaná výšku a šířku.|
+| <xref:Microsoft.ML.Transforms.Text.LatentDirichletAllocationTransformer> | Implementuje LightLDA stavu nejmodernější provádění latentní Dirichletův přidělení.|
+| <xref:Microsoft.ML.Transforms.LoadTransform> | Načte konkrétní transformace ze souboru zadaného modelu. Umožňuje "vybírání" transformací z serializovaný řetězec nebo použití předem vytrénovaných transformace na zobrazení dat různých (ale stále kompatibilní). |
+| <xref:Microsoft.ML.Transforms.Text.NgramExtractingTransformer> | Vytvoří kontejner počty ngrams (pořadí po sobě jdoucích hodnoty o délce 1-n) v dané vektor klíče. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. | 
+| <xref:Microsoft.ML.Transforms.Text.NgramExtractorTransform> | Změní sadu tokenizovaná text (vector ReadOnlyMemory) nebo vektorů klíčů vektory čísly. Funkce vektory jsou počty ngrams (pořadí po sobě jdoucích tokeny - slova nebo klíče - o délce 1-n). | 
+| <xref:Microsoft.ML.Transforms.Text.NgramHashExtractingTransformer> | Zapne kolekci tokenizovaná textu (vector ReadOnlyMemory) do čísla vektory pomocí algoritmu hash. | 
+| <xref:Microsoft.ML.Transforms.Text.NgramHashingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. | 
+| <xref:Microsoft.ML.Transforms.Categorical.OneHotEncodingTransformer> | Převede hodnotu zařazené do kategorií na indikátor pole tak, že vytváření slovník kategorií na základě dat a s použitím id ve slovníku jako index v poli |
+| <xref:Microsoft.ML.Transforms.Projections.PcaTransform> | Vypočítá projekce vektoru funkce na volné místo nízké hodnocení. |
+| <xref:Microsoft.ML.Transforms.Text.SentimentAnalyzingTransformer> | Používá model které je předem vytrénované mínění ke stanovení skóre vstupního řetězce. |
+| <xref:Microsoft.ML.Transforms.Text.StopWordsRemovingTransformer> | Odstraní konkrétní jazyk seznam stop slov (Nejčastější slova) a porovnejte jednotlivé tokeny (porovnání velká a malá písmena) stopwords. |
+| <xref:Microsoft.ML.Transforms.Categorical.TermLookupTransformer> | Mapuje textové hodnoty sloupce do nového sloupce pomocí mapy datové sady k dispozici prostřednictvím svých argumentů. |
+| <xref:Microsoft.ML.Transforms.Text.WordBagBuildingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov) v daného textu. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. |
+| <xref:Microsoft.ML.Transforms.Text.WordHashBagProducingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. Dělá to tak hashování každý ngram a používají hodnoty hash jako index v kontejneru a. |
+| <xref:Microsoft.ML.Transforms.Text.WordTokenizingTransformer> | Rozdělí text na slova pomocí znaky oddělovače. |
+
+
+## <a name="image-model-featurizers"></a>Obrázek modelu featurizers
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.AlexNetExtension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> aby bylo možné používat pretrained [AlexNet](https://en.wikipedia.org/wiki/AlexNet) modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. | 
+| <xref:Microsoft.ML.Transforms.ResNet18Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> použití pretrained ResNet18 modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
+| <xref:Microsoft.ML.Transforms.ResNet50Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> používat pretrained ResNet50model. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
+| <xref:Microsoft.ML.Transforms.ResNet101Extension> | Toto je metodu rozšíření, která se použije <xref:Microsoft.ML.Transforms.DnnImageFeaturizerEstimator> použití pretrained ResNet101 modelu. NuGet, který obsahuje toto rozšíření také je zaručeno, že k binárnímu modelu soubor k zahrnutí. |
 
 ## <a name="label-parsing"></a>Popisek analýza kódu
 
@@ -67,7 +91,8 @@ Následující tabulky obsahují informace o všech transformací dat nepodporuj
 | --- | --- |
 | <xref:Microsoft.ML.Legacy.Transforms.Dictionarizer> | Převede vstupní hodnoty (slova, čísla, atd.) do indexu ve slovníku. |
 | <xref:Microsoft.ML.Legacy.Transforms.LabelColumnKeyBooleanConverter> | Transformuje popisku na klíč nebo bool (v případě potřeby) Chcete-li, že je vhodný pro klasifikaci. |
-| <xref:Microsoft.ML.Legacy.Transforms.LabelIndicator> | Používané soubory OVA remapper popisek. |
+| <xref:Microsoft.ML.Transforms.LabelConvertTransform> |  Převede popisky. |
+| <xref:Microsoft.ML.Transforms.LabelIndicatorTransform> | Změní víc tříd popisky na binární hodnotu True, False popisky, především pro použití s OVA.|
 | <xref:Microsoft.ML.Legacy.Transforms.LabelToFloatConverter> | Transformuje popisku na float, že je vhodný pro regrese. |
 | <xref:Microsoft.ML.Legacy.Transforms.PredictedLabelColumnOriginalValueConverter> | Transformuje předpokládané popisek sloupce na jeho původní hodnoty, pokud se nejedná o typ bool. |
 
@@ -75,68 +100,92 @@ Následující tabulky obsahují informace o všech transformací dat nepodporuj
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.MissingValueHandler> | Zpracování chybějící hodnoty tak, že nahradíte s výchozí hodnotu nebo hodnotu mean/min/max (netextovými pouze pro sloupce). Sloupec ukazatele mohou být spojeny volitelně, pokud je typ vstupní sloupec číselné. |
-| <xref:Microsoft.ML.Legacy.Transforms.MissingValueIndicator> | Vytvořte logickou výstupního sloupce se stejným číslem sloty jako vstupní sloupec, ve kterém je výstupní hodnota true Pokud chybí hodnota v sloupci vstupní. |
-| <xref:Microsoft.ML.Legacy.Transforms.MissingValuesDropper> | Odebere NAs ze sloupce vektoru. |
-| <xref:Microsoft.ML.Legacy.Transforms.MissingValuesRowDropper> | Filtruje řádky, které obsahují chybějící hodnoty. |
-| <xref:Microsoft.ML.Legacy.Transforms.MissingValueSubstitutor> | Vytvoření výstupního sloupce stejného typu a velikosti vstupní sloupec, ve kterém chybí hodnoty jsou nahrazeny výchozí hodnotu nebo hodnotu mean/min/max (netextovými pouze pro sloupce). |
+| <xref:Microsoft.ML.Transforms.MissingValueDroppingTransformer> | Zahodí, chybějící hodnoty ze sloupce. |
+| <xref:Microsoft.ML.Transforms.MissingValueIndicatorTransform> | Vytvoří logickou výstupního sloupce se stejný počet slotů jako vstupní sloupec, kde je výstupní hodnota true Pokud chybí hodnota ve vstupním sloupci. |
+| <xref:Microsoft.ML.Transforms.MissingValueReplacingTransformer> | Zpracování chybějící hodnoty tak, že nahradíte s výchozí hodnotu nebo hodnotu mean/min/max (netextovými pouze pro sloupce). |
+| <xref:Microsoft.ML.Transforms.MissingValueIndicatorTransform> | Vytvoří logickou výstupního sloupce se stejný počet slotů jako vstupní sloupec, kde je výstupní hodnota true Pokud chybí hodnota ve vstupním sloupci. |
 
 ## <a name="normalization"></a>Normalizace
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.BinNormalizer> | Hodnoty jsou přiřazeny do přihrádek equidensity a hodnota je namapována na jeho bin_number / number_of_bins. |
-| <xref:Microsoft.ML.Legacy.Transforms.ConditionalNormalizer> | Normalizujte sloupce pouze v případě potřeby. |
-| <xref:Microsoft.ML.Legacy.Transforms.GlobalContrastNormalizer> | Provede normalizaci globální kontrast vstupní hodnoty: Y = (s * X - min) / D, kde je měřítku, s M je průměr a D je L2 norm nebo směrodatnou odchylku. | 
-| <xref:Microsoft.ML.Legacy.Transforms.LogMeanVarianceNormalizer> | Normalizuje dat na základě průměr vypočítaný a odchylky logaritmus data. |
-| <xref:Microsoft.ML.Legacy.Transforms.LpNormalizer> | Normalizujte vektory (řádky) jednotlivě podle jejich změny měřítka do jednotky norm (L2, L1 nebo LInf). Provádí následující operace na vektor X: Y = (X - min) / D, kde M je průměr a D je L2 norm, L1 norm nebo LInf norm. |
-| <xref:Microsoft.ML.Legacy.Transforms.MeanVarianceNormalizer> | Normalizuje dat na základě průměr vypočítaný a odchylky data. |
-| <xref:Microsoft.ML.Legacy.Transforms.MinMaxNormalizer> | Normalizuje na data vycházející z pozorovaných minimální a maximální hodnoty data. |
+| <xref:Microsoft.ML.Transforms.Projections.LpNormalizingTransformer> | Transformace normalizace LP-Norm (vector/row-wise). |
+| <xref:Microsoft.ML.Transforms.Normalizers.MeanVarDblAggregator> | Vypočítá průměr a odchylky pro sloupec Vážíme si toho vektoru. Sleduje aktuální průměr a M2 (součet kvadratických rozdíly od střední hodnoty), počet hodnoty NaN a počet prvků nenulové. |
+| <xref:Microsoft.ML.Transforms.Normalizers.MeanVarSngAggregator> | Vypočítá průměr a odchylky pro sloupec Vážíme si toho vektoru. Sleduje aktuální průměr a M2 (součet kvadratických rozdíly od střední hodnoty), počet hodnoty NaN a počet prvků nenulové. |
+| <xref:Microsoft.ML.Transforms.Normalizers.MinMaxDblAggregator> | Sleduje min, max, počet hodnot nezhuštěný (vCount) a počet volání ProcessValue() (trainCount) pro sloupec Vážíme si toho vektoru. |
+| <xref:Microsoft.ML.Transforms.Normalizers.MinMaxSngAggregator> | Sleduje min, max, počet hodnot nezhuštěný (vCount) a počet volání ProcessValue() (trainCount) pro sloupec Vážíme si toho vektoru. |
+| <xref:Microsoft.ML.Transforms.Normalizers.NormalizeTransform> | Standardizuje funkce rozsahy. |
+| <xref:Microsoft.ML.Transforms.Normalizers.NormalizingTransformer> |Standardizuje funkce rozsahy. |
+
+## <a name="onnx"></a>Onnx
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.OnnxTransform> | Skóre, které se předem vytrénovaných modely ONNX využívající standardní v1.2 ONNX |
+
+## <a name="preprocessing"></a>Předběžné zpracování
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.BootstrapSamplingTransformer> | Aproximuje bootstrap vzorkování pomocí vzorkování Poissonovo rozdělení. |
+| <xref:Microsoft.ML.Transforms.Projections.RandomFourierFeaturizingTransformer> | Vytvoří náhodný Fourierova funkce. |
+| <xref:Microsoft.ML.Transforms.Text.TokenizingByCharactersTransformer> | Znak objektově orientovaný tokenizátor, ve kterém se text je považován za posloupnost znaků. |
+| <xref:Microsoft.ML.Transforms.Projections.VectorWhiteningTransformer> | Optimalizace Simplfies jako pomoc s identifikací váhy. |
 
 ## <a name="row-filters"></a>Filtry řádků
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.RowRangeFilter> | Filtry pro zobrazení dat na sloupce typu Single, Double nebo klíč (souvislé). Uchovává hodnoty, které jsou v rozsahu zadaného min/max. Hodnoty NaN vždy filtrují. Pokud je vstup typ klíče, min/max jsou považovány za procenta počet hodnot. |
-| <xref:Microsoft.ML.Legacy.Transforms.RowSkipAndTakeFilter> | Umožňuje omezení vstup na podmnožinu řádků volitelné posunem. Můžete použít k implementaci stránkování na data. |
-| <xref:Microsoft.ML.Legacy.Transforms.RowSkipFilter> | Umožňuje omezit vstup na podmnožinu řádků přeskočením počet řádků. |
-| <xref:Microsoft.ML.Legacy.Transforms.RowTakeFilter> | Umožňuje omezení vstup na podmnožinu řádků provedením prvních N řádků. |
+| <xref:Microsoft.ML.Transforms.RowShufflingTransformer> | Podle okolí posouvá náhodnou kurzoru se pokusil provést pomocí fondu zadaný počet řádků.  |
+| <xref:Microsoft.ML.Transforms.SkipFilter> | Umožňuje omezit vstup na podmnožinu řádků přeskočením počet řádků. |
+| <xref:Microsoft.ML.Transforms.SkipTakeFilter> | Umožňuje omezení vstup na podmnožinu řádků volitelné posunem. Můžete použít k implementaci stránkování na data. Při vytvoření se SkipTakeFilter.SkipArguments chová jako `SkipFilter`.
+| <xref:Microsoft.ML.Transforms.TakeFilter> | Umožňuje omezení vstup na podmnožinu řádků provedením prvních N řádků. |
+
 
 ## <a name="schema"></a>Schéma
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.ColumnConcatenator> | Zřetězí dva sloupce stejného typu položky. |
-| <xref:Microsoft.ML.Legacy.Transforms.ColumnCopier> | Duplicitní sloupce z datové sady.|
-| <xref:Microsoft.ML.Legacy.Transforms.ColumnDropper> | Zahodí sloupce z datové sady. |
-| <xref:Microsoft.ML.Legacy.Transforms.ColumnSelector> | Vybere sadu sloupců, vyřadit všechny ostatní. |
-| <xref:Microsoft.ML.Legacy.Transforms.ColumnTypeConverter> | Převede sloupec na jiný typ pomocí standardních převodů. |
+| <xref:Microsoft.ML.Transforms.ColumnCopyingTransformer> | Duplicitní sloupce z datové sady.|
+| <xref:Microsoft.ML.Transforms.ColumnSelectingTransformer> | Vybere sadu sloupce, které chcete vyřadit nebo zabránit daný vstup. |
+| <xref:Microsoft.ML.Transforms.FeatureSelection.SlotsDroppingTransformer> | Sloty Přetahované sloupce.|
 | <xref:Microsoft.ML.Legacy.Transforms.KeyToTextConverter> | KeyToValueTransform využívá KeyValues metadat pro mapování klíčů indexů na odpovídající hodnoty v metadatech KeyValues. |
-| <xref:Microsoft.ML.Legacy.Transforms.NGramTranslator> | Vytvoří kontejner počty ngrams (pořadí po sobě jdoucích hodnoty o délce 1-n) v dané vektor klíče. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. | 
-| <xref:Microsoft.ML.Legacy.Transforms.OptionalColumnCreator> | Pokud zdrojový sloupec po deserializace neexistuje, vytvoří sloupec správný typ a výchozí hodnoty. |
+| <xref:Microsoft.ML.Transforms.OptionalColumnTransform> | Vytvoří nový sloupec se zadaným typem a výchozí hodnoty. |
+| <xref:Microsoft.ML.Transforms.RangeFilter> | Filtry pro zobrazení dat na sloupce typu Single, Double nebo klíč (souvislé). Uchovává hodnoty, které jsou v rozsahu zadaného min/max. Hodnoty NaN vždy filtrují. Pokud je vstup typ klíče, min/max jsou považovány za procenta počet hodnot. |
+
+## <a name="tensorflow"></a>TensorFlow
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Transforms.TensorFlowTransform> | Buď skóre, pomocí které je předem vytrénované TensorFlow model nebo retrains TensorFlow modelu. |
 
 ## <a name="text-processing-and-featurization"></a>Snadné a zpracování textu
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.CharacterTokenizer> | Znak objektově orientovaný tokenizátor, ve kterém se text je považován za posloupnost znaků. |
-| <xref:Microsoft.ML.Legacy.Transforms.TextFeaturizer> | Transformace, která se změní kolekce textové dokumenty do vektory čísly. Normalizovaná počty ngrams (aplikace word a/nebo znak) v dané tokenizovaná textu jsou vektory funkce. |
-| <xref:Microsoft.ML.Legacy.Transforms.TextToKeyConverter> | Převede vstupní hodnoty (slova, čísla, atd.) do indexu ve slovníku. |
-| <xref:Microsoft.ML.Legacy.Transforms.WordEmbeddings> | Transformace, který převádí vektory text tokenů číselné vektory pomocí předem vytrénovaných modelu. Další informace o postupu najdete v článku [vkládání slov](https://en.wikipedia.org/wiki/Word_embedding) stránky Wikipedia. |
-| <xref:Microsoft.ML.Legacy.Transforms.WordTokenizer> | Vstup do této transformace je text a výstup je vektor text obsahující slova (tokeny) v původní text. Oddělovač je místo, ale je možné zadat libovolný znak (nebo více znaků). |
+| <xref:Microsoft.ML.Transforms.Text.TextNormalizingTransformer> | Normalizace transformace textu, který umožňuje normalizace písmen, odebírání diakritická znaménka, interpunkční znaménka a/nebo čísla. Transformací, která funguje na textové zadání, stejně jako vektor tokeny/text (vector ReadOnlyMemory). |
+| <xref:Microsoft.ML.Transforms.Text.TokenizingByCharactersTransformer> | Znak objektově orientovaný tokenizátor, ve kterém se text je považován za posloupnost znaků. |
+
+## <a name="time-series"></a>Časové řady
+
+| Transformace | Definice |
+| --- | --- |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.ExponentialAverageTransform> | Přijímá vážený průměr hodnot: ExpAvg(y_t) = * y_t + (1-a) * ExpAvg(y_(t-1)). |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.IidChangePointDetector> | Implementuje transformace detektor změnu bodu pro i.i.d. pořadí na základě odhadu hustota adaptivní jádra a martingales (náhodného vzorku). |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.IidSpikeDetector> | Implementuje detektor zásobníku transformovat i.i.d. pořadí podle hustoty odhad adaptivní jádra (náhodného vzorku). |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.MovingAverageTransform> | Poskytuje vážený průměr hodnot posuvné okno. |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.PercentileThresholdTransform> | Určuje, zda aktuální hodnota časové řady patří do posuvného okna nejvyšší hodnoty. percentilu. |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.PValueTransform> | Vypočítá řady aktuální empirical p hodnoty na základě jiných hodnot v posuvné okno. |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SlidingWindowTransform> | Vypíše posuvné okno v časové řadě typu Single. |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SsaChangePointDetector> | Implementuje transformace detektor bodu změnit podle singulární spektra modelování časových řad. |
+| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SsaSpikeDetector> | Implementuje detektor transformace (špičky) podle singulární spektra modelování časových řad. |
 
 ## <a name="miscellaneous"></a>Různé
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.ApproximateBootstrapSampler> | Přibližná bootstrap vzorkování. |
-| <xref:Microsoft.ML.Legacy.Transforms.BinaryPredictionScoreColumnsRenamer> | Binární predikcí, přejmenuje PredictedLabel a stanovíte jeho skóre sloupce se mají zahrnout název pozitivní třídy.|
-| <xref:Microsoft.ML.Legacy.Transforms.DataCache> | Ukládá do mezipaměti pomocí možnosti zadané mezipaměti. |
-| <xref:Microsoft.ML.Legacy.Transforms.DatasetScorer> | Získává datovou sadu s prediktivní model. |
-| <xref:Microsoft.ML.Legacy.Transforms.DatasetTransformScorer> | Získává datovou sadu s modelem transformace. |
-| <xref:Microsoft.ML.Legacy.Transforms.NoOperation> | Neprovádí žádnou akci. |
-| <xref:Microsoft.ML.Legacy.Transforms.RandomNumberGenerator> | Přidá sloupec s generované čísel pořadí. |
-| <xref:Microsoft.ML.Legacy.Transforms.ScoreColumnSelector> | Vybere pouze poslední skóre sloupce a dodatečné sloupce zadané v argumentech. |
-| <xref:Microsoft.ML.Legacy.Transforms.Scorer> | Změní model prediktivní model transformace. |
-| <xref:Microsoft.ML.Legacy.Transforms.SentimentAnalyzer> | Používá model které je předem vytrénované mínění ke stanovení skóre vstupního řetězce. |
-| <xref:Microsoft.ML.Legacy.Transforms.TrainTestDatasetSplitter> | Rozdělí nastaví datovou sadu do trénování a testování. |
+| <xref:Microsoft.ML.Transforms.CompositeTransformer> | Vytvoří složené DataTransform. |
+| <xref:Microsoft.ML.Transforms.CustomMappingTransformer%602> | Generuje další sloupce do zadané `IDataView`. Nedojde ke změně počtu řádků a uvidíte v důsledku použití funkce uživatele pro každý řádek vstupní data.|
+| <xref:Microsoft.ML.Transforms.GenerateNumberTransform> | Přidá sloupec s generované čísel pořadí. |
+| <xref:Microsoft.ML.Transforms.ProduceIdTransform> | Sloupec s ID bodu kurzoru vytváří jako sloupec. |
+| <xref:Microsoft.ML.Transforms.RandomNumberGenerator> | Generuje náhodné číslo. |
+| <xref:Microsoft.ML.Transforms.ScoringTransformer> | Kombinuje informace z více prediktivní modely k vygenerování nového modelu v kanálu pomocí skóre z již trénovaného modelu. |

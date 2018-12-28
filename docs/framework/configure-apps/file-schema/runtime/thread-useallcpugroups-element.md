@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: d30fe7c5-8469-46e2-b804-e3eec7b24256
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47d8bcdb9bbb7ec6f5a5386a5ac5951ad8891c28
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8a3984d594d0739d4b8f2b7b165aab434e10ab80
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745588"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611006"
 ---
 # <a name="ltthreaduseallcpugroupsgt-element"></a>&lt;Thread_UseAllCpuGroups&gt; – Element
-Určuje, zda modul runtime distribuuje spravovaných vláken ve všech skupinách procesoru.  
+Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -32,14 +32,14 @@ Určuje, zda modul runtime distribuuje spravovaných vláken ve všech skupinác
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime distribuuje spravovaných vláken ve všech skupinách procesoru.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Modul runtime neprovede distribuci spravovaných vláknech v několika skupinách pro využití procesoru. Toto nastavení je výchozí.|  
-|`true`|Modul runtime distribuuje spravovaných vláknech v několika skupinách pro procesor, pokud má počítač více skupin procesoru a [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) element je povoleno.|  
+|`false`|Modul runtime neprovádí distribuci spravovaných vláken ve více skupinách procesoru. Toto nastavení je výchozí.|  
+|`true`|Modul runtime provádí distribuci spravovaných vláken ve více skupinách procesoru, pokud má počítač více skupin procesorů a [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) prvek povolený.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -52,10 +52,10 @@ Určuje, zda modul runtime distribuuje spravovaných vláken ve všech skupinác
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud počítač obsahuje více skupin procesoru, povolení tohoto elementu způsobí, že modul runtime pro distribuci spravovaných vláken ve všech skupinách procesoru. Chcete-li tuto funkci používat, musíte také povolit [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) element, který rozšiřuje uvolňování paměti pro všechny skupiny procesoru a bere v potaz při vytváření a vyrovnávání haldách všechny jader. Povolení [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) prvek vyžaduje povolení [ \<gcserver – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) element. Pokud nejsou povolené tyto prvky, povolení `<Thread_UseAllCpuGroups>` element nemá žádný vliv.  
+ Pokud počítač má více skupin procesorů, povolení tohoto prvku způsobí, že modul runtime bude distribuovat spravovaná vlákna ve všech skupinách procesoru. Chcete-li tuto funkci používat, musíte také povolit [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) element, který rozšiřuje uvolňování paměti na všech skupinách procesoru a všechna jádra bere v úvahu při vytváření a rozložení zátěže haldy. Povolení [ \<gccpugroup – >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) element vyžaduje povolení [ \<gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) elementu. Pokud tyto prvky nejsou povoleny, takže `<Thread_UseAllCpuGroups>` element nemá žádný vliv.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit podporu pro více skupin procesoru.  
+ Následující příklad ukazuje, jak povolit podporu pro více skupin procesorů.  
   
 ```xml  
 <configuration>  
@@ -68,6 +68,6 @@ Určuje, zda modul runtime distribuuje spravovaných vláken ve všech skupinác
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<Gccpugroup – > elementu](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [\<Gccpugroup – > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)
