@@ -2,29 +2,29 @@
 title: Podpora streamování SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: a393274a7cf40b01399c5909c2d5ec4097ec9310
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: eeec8f2a88894762fd8dab93bf0b3b11941ba17a
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152887"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612995"
 ---
-# <a name="sqlclient-streaming-support"></a><span data-ttu-id="d65cb-102">Podpora streamování SqlClient</span><span class="sxs-lookup"><span data-stu-id="d65cb-102">SqlClient Streaming Support</span></span>
-<span data-ttu-id="d65cb-103">Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory).</span><span class="sxs-lookup"><span data-stu-id="d65cb-103">Streaming support between SQL Server and an application (new in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) supports unstructured data on the server (documents, images, and media files).</span></span> <span data-ttu-id="d65cb-104">Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.</span><span class="sxs-lookup"><span data-stu-id="d65cb-104">A SQL Server database can store binary large objects (BLOBs), but retrieving BLOBS can use a lot of memory.</span></span>  
+# <a name="sqlclient-streaming-support"></a><span data-ttu-id="813f3-102">Podpora streamování SqlClient</span><span class="sxs-lookup"><span data-stu-id="813f3-102">SqlClient Streaming Support</span></span>
+<span data-ttu-id="813f3-103">Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory).</span><span class="sxs-lookup"><span data-stu-id="813f3-103">Streaming support between SQL Server and an application (new in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) supports unstructured data on the server (documents, images, and media files).</span></span> <span data-ttu-id="813f3-104">Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.</span><span class="sxs-lookup"><span data-stu-id="813f3-104">A SQL Server database can store binary large objects (BLOBs), but retrieving BLOBS can use a lot of memory.</span></span>  
   
- <span data-ttu-id="d65cb-105">Podpora z SQL serveru a streamování zjednodušuje psaní aplikací streamování dat, aniž byste museli plně načíst data do paměti, což vede k méně výjimky přetečení paměti.</span><span class="sxs-lookup"><span data-stu-id="d65cb-105">Streaming support to and from SQL Server simplifies writing applications that stream data, without having to fully load the data into memory, resulting in fewer memory overflow exceptions.</span></span>  
+ <span data-ttu-id="813f3-105">Podpora z SQL serveru a streamování zjednodušuje psaní aplikací streamování dat, aniž byste museli plně načíst data do paměti, což vede k méně výjimky přetečení paměti.</span><span class="sxs-lookup"><span data-stu-id="813f3-105">Streaming support to and from SQL Server simplifies writing applications that stream data, without having to fully load the data into memory, resulting in fewer memory overflow exceptions.</span></span>  
   
- <span data-ttu-id="d65cb-106">Podpora streamování vám také umožní aplikace střední vrstvy škálování lepší, zejména ve scénářích, kde se pro obchodní objekty připojit k SQL Azure, aby bylo možné odeslat, načítání a manipulaci s velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="d65cb-106">Streaming support will also enable middle-tier applications to scale better, especially in scenarios where business objects connect to SQL Azure in order to send, retrieve, and manipulate large BLOBs.</span></span>  
+ <span data-ttu-id="813f3-106">Podpora streamování vám také umožní aplikace střední vrstvy škálování lepší, zejména ve scénářích, kde se pro obchodní objekty připojit k SQL Azure, aby bylo možné odeslat, načítání a manipulaci s velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="813f3-106">Streaming support will also enable middle-tier applications to scale better, especially in scenarios where business objects connect to SQL Azure in order to send, retrieve, and manipulate large BLOBs.</span></span>  
   
 > [!WARNING]
->  <span data-ttu-id="d65cb-107">Byla zahájena asynchronní volání nejsou podporovány, pokud aplikace také používá `Context Connection` klíčové slovo připojovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="d65cb-107">Asynchronous calls are not supported if an application also uses the `Context Connection` connection string keyword.</span></span>  
+>  <span data-ttu-id="813f3-107">Byla zahájena asynchronní volání nejsou podporovány, pokud aplikace také používá `Context Connection` klíčové slovo připojovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="813f3-107">Asynchronous calls are not supported if an application also uses the `Context Connection` connection string keyword.</span></span>  
 >   
->  <span data-ttu-id="d65cb-108">Členů přidaná kvůli podpoře streamování se používají k načtení dat z dotazů a předat parametry dotazů a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="d65cb-108">The members added to support streaming are used to retrieve data from queries and to pass parameters to queries and stored procedures.</span></span> <span data-ttu-id="d65cb-109">Funkci streamování řeší základní scénáře migrace, online zpracováním transakcí a dat a vztahuje se na v místním prostředí a vypnout migrations.environments místní data.</span><span class="sxs-lookup"><span data-stu-id="d65cb-109">The streaming feature addresses basic OLTP and data migration scenarios and is applicable to on premise and off premise data migrations.environments.</span></span>  
+>  <span data-ttu-id="813f3-108">Členů přidaná kvůli podpoře streamování se používají k načtení dat z dotazů a předat parametry dotazů a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="813f3-108">The members added to support streaming are used to retrieve data from queries and to pass parameters to queries and stored procedures.</span></span> <span data-ttu-id="813f3-109">Funkci streamování řeší základní scénáře migrace, online zpracováním transakcí a dat a vztahuje se na v místním prostředí a vypnout migrations.environments místní data.</span><span class="sxs-lookup"><span data-stu-id="813f3-109">The streaming feature addresses basic OLTP and data migration scenarios and is applicable to on premise and off premise data migrations.environments.</span></span>  
   
-## <a name="streaming-support-from-sql-server"></a><span data-ttu-id="d65cb-110">Podpora streamování z SQL serveru</span><span class="sxs-lookup"><span data-stu-id="d65cb-110">Streaming Support from SQL Server</span></span>  
- <span data-ttu-id="d65cb-111">Streamování podporu – od serveru SQL Server zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a <xref:System.Data.SqlClient.SqlDataReader> třídy zajistí <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.</span><span class="sxs-lookup"><span data-stu-id="d65cb-111">Streaming support from SQL Server introduces new functionality in the <xref:System.Data.Common.DbDataReader> and in the <xref:System.Data.SqlClient.SqlDataReader> classes in order to get <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, and <xref:System.IO.TextReader> objects and react to them.</span></span>  <span data-ttu-id="d65cb-112">Tyto třídy se používají k načtení dat z dotazů.</span><span class="sxs-lookup"><span data-stu-id="d65cb-112">These classes are used to retrieve data from queries.</span></span> <span data-ttu-id="d65cb-113">Podpora streamování z SQL serveru v důsledku toho řeší scénáře OLTP a platí pro místní místních i vzdálených prostředích.</span><span class="sxs-lookup"><span data-stu-id="d65cb-113">As a result, Streaming support from SQL Server addresses OLTP scenarios and applies to on-premise and off-premise environments.</span></span>  
+## <a name="streaming-support-from-sql-server"></a><span data-ttu-id="813f3-110">Podpora streamování z SQL serveru</span><span class="sxs-lookup"><span data-stu-id="813f3-110">Streaming Support from SQL Server</span></span>  
+ <span data-ttu-id="813f3-111">Streamování podporu – od serveru SQL Server zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a <xref:System.Data.SqlClient.SqlDataReader> třídy zajistí <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.</span><span class="sxs-lookup"><span data-stu-id="813f3-111">Streaming support from SQL Server introduces new functionality in the <xref:System.Data.Common.DbDataReader> and in the <xref:System.Data.SqlClient.SqlDataReader> classes in order to get <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, and <xref:System.IO.TextReader> objects and react to them.</span></span>  <span data-ttu-id="813f3-112">Tyto třídy se používají k načtení dat z dotazů.</span><span class="sxs-lookup"><span data-stu-id="813f3-112">These classes are used to retrieve data from queries.</span></span> <span data-ttu-id="813f3-113">Podpora streamování z SQL serveru v důsledku toho řeší scénáře OLTP a platí pro místní místních i vzdálených prostředích.</span><span class="sxs-lookup"><span data-stu-id="813f3-113">As a result, Streaming support from SQL Server addresses OLTP scenarios and applies to on-premise and off-premise environments.</span></span>  
   
- <span data-ttu-id="d65cb-114">Následující členy byly přidány do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z SQL serveru:</span><span class="sxs-lookup"><span data-stu-id="d65cb-114">The following members were added to <xref:System.Data.SqlClient.SqlDataReader> to enable streaming support from SQL Server:</span></span>  
+ <span data-ttu-id="813f3-114">Následující členy byly přidány do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z SQL serveru:</span><span class="sxs-lookup"><span data-stu-id="813f3-114">The following members were added to <xref:System.Data.SqlClient.SqlDataReader> to enable streaming support from SQL Server:</span></span>  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
@@ -38,7 +38,7 @@ ms.locfileid: "53152887"
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- <span data-ttu-id="d65cb-115">Následující členy byly přidány do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z SQL serveru:</span><span class="sxs-lookup"><span data-stu-id="d65cb-115">The following members were added to <xref:System.Data.Common.DbDataReader> to enable streaming support from SQL Server:</span></span>  
+ <span data-ttu-id="813f3-115">Následující členy byly přidány do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z SQL serveru:</span><span class="sxs-lookup"><span data-stu-id="813f3-115">The following members were added to <xref:System.Data.Common.DbDataReader> to enable streaming support from SQL Server:</span></span>  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -46,35 +46,35 @@ ms.locfileid: "53152887"
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## <a name="streaming-support-to-sql-server"></a><span data-ttu-id="d65cb-116">Podporu streamování pro SQL Server</span><span class="sxs-lookup"><span data-stu-id="d65cb-116">Streaming Support to SQL Server</span></span>  
- <span data-ttu-id="d65cb-117">Streamování podpory pro SQL Server zavádí nové funkce <xref:System.Data.SqlClient.SqlParameter> třídy, může přijímat a reagovat na ně <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty.</span><span class="sxs-lookup"><span data-stu-id="d65cb-117">Streaming support to SQL Server introduces new functionality in the <xref:System.Data.SqlClient.SqlParameter> class so it can accept and react to <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, and <xref:System.IO.TextReader> objects.</span></span> <span data-ttu-id="d65cb-118"><xref:System.Data.SqlClient.SqlParameter> slouží k předání parametrů do dotazů a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="d65cb-118"><xref:System.Data.SqlClient.SqlParameter> is used to pass parameters to queries and stored procedures.</span></span>  
+## <a name="streaming-support-to-sql-server"></a><span data-ttu-id="813f3-116">Podporu streamování pro SQL Server</span><span class="sxs-lookup"><span data-stu-id="813f3-116">Streaming Support to SQL Server</span></span>  
+ <span data-ttu-id="813f3-117">Streamování podpory pro SQL Server zavádí nové funkce <xref:System.Data.SqlClient.SqlParameter> třídy, může přijímat a reagovat na ně <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty.</span><span class="sxs-lookup"><span data-stu-id="813f3-117">Streaming support to SQL Server introduces new functionality in the <xref:System.Data.SqlClient.SqlParameter> class so it can accept and react to <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, and <xref:System.IO.TextReader> objects.</span></span> <span data-ttu-id="813f3-118"><xref:System.Data.SqlClient.SqlParameter> slouží k předání parametrů do dotazů a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="813f3-118"><xref:System.Data.SqlClient.SqlParameter> is used to pass parameters to queries and stored procedures.</span></span>  
   
- <span data-ttu-id="d65cb-119">Připravuje se <xref:System.Data.SqlClient.SqlCommand> objektu nebo volání <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musí zrušit streamování operace.</span><span class="sxs-lookup"><span data-stu-id="d65cb-119">Disposing a <xref:System.Data.SqlClient.SqlCommand> object or calling <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> must cancel any streaming operation.</span></span> <span data-ttu-id="d65cb-120">Když aplikace pošle <xref:System.Threading.CancellationToken>, není zaručeno zrušení.</span><span class="sxs-lookup"><span data-stu-id="d65cb-120">If an application sends <xref:System.Threading.CancellationToken>, cancellation is not guaranteed.</span></span>  
+ <span data-ttu-id="813f3-119">Připravuje se <xref:System.Data.SqlClient.SqlCommand> objektu nebo volání <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musí zrušit streamování operace.</span><span class="sxs-lookup"><span data-stu-id="813f3-119">Disposing a <xref:System.Data.SqlClient.SqlCommand> object or calling <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> must cancel any streaming operation.</span></span> <span data-ttu-id="813f3-120">Když aplikace pošle <xref:System.Threading.CancellationToken>, není zaručeno zrušení.</span><span class="sxs-lookup"><span data-stu-id="813f3-120">If an application sends <xref:System.Threading.CancellationToken>, cancellation is not guaranteed.</span></span>  
   
- <span data-ttu-id="d65cb-121">Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:</span><span class="sxs-lookup"><span data-stu-id="d65cb-121">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.Stream>:</span></span>  
+ <span data-ttu-id="813f3-121">Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:</span><span class="sxs-lookup"><span data-stu-id="813f3-121">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.Stream>:</span></span>  
   
--   <span data-ttu-id="d65cb-122">**Binární**</span><span class="sxs-lookup"><span data-stu-id="d65cb-122">**Binary**</span></span>  
+-   <span data-ttu-id="813f3-122">**Binární**</span><span class="sxs-lookup"><span data-stu-id="813f3-122">**Binary**</span></span>  
   
--   <span data-ttu-id="d65cb-123">**VarBinary**</span><span class="sxs-lookup"><span data-stu-id="d65cb-123">**VarBinary**</span></span>  
+-   <span data-ttu-id="813f3-123">**VarBinary**</span><span class="sxs-lookup"><span data-stu-id="813f3-123">**VarBinary**</span></span>  
   
- <span data-ttu-id="d65cb-124">Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader>:</span><span class="sxs-lookup"><span data-stu-id="d65cb-124">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.TextReader>:</span></span>  
+ <span data-ttu-id="813f3-124">Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader>:</span><span class="sxs-lookup"><span data-stu-id="813f3-124">The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.TextReader>:</span></span>  
   
--   <span data-ttu-id="d65cb-125">**Char**</span><span class="sxs-lookup"><span data-stu-id="d65cb-125">**Char**</span></span>  
+-   <span data-ttu-id="813f3-125">**Char**</span><span class="sxs-lookup"><span data-stu-id="813f3-125">**Char**</span></span>  
   
--   <span data-ttu-id="d65cb-126">**NChar**</span><span class="sxs-lookup"><span data-stu-id="d65cb-126">**NChar**</span></span>  
+-   <span data-ttu-id="813f3-126">**NChar**</span><span class="sxs-lookup"><span data-stu-id="813f3-126">**NChar**</span></span>  
   
--   <span data-ttu-id="d65cb-127">**NVarChar**</span><span class="sxs-lookup"><span data-stu-id="d65cb-127">**NVarChar**</span></span>  
+-   <span data-ttu-id="813f3-127">**NVarChar**</span><span class="sxs-lookup"><span data-stu-id="813f3-127">**NVarChar**</span></span>  
   
--   <span data-ttu-id="d65cb-128">**Xml**</span><span class="sxs-lookup"><span data-stu-id="d65cb-128">**Xml**</span></span>  
+-   <span data-ttu-id="813f3-128">**Xml**</span><span class="sxs-lookup"><span data-stu-id="813f3-128">**Xml**</span></span>  
   
- <span data-ttu-id="d65cb-129">**Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typ bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="d65cb-129">The **Xml**<xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.Xml.XmlReader>.</span></span>  
+ <span data-ttu-id="813f3-129">**Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typ bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="813f3-129">The **Xml**<xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.Xml.XmlReader>.</span></span>  
   
- <span data-ttu-id="d65cb-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> může přijmout hodnoty typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, a <xref:System.IO.Stream>.</span><span class="sxs-lookup"><span data-stu-id="d65cb-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> can accept values of type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream>.</span></span>  
+ <span data-ttu-id="813f3-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> může přijmout hodnoty typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, a <xref:System.IO.Stream>.</span><span class="sxs-lookup"><span data-stu-id="813f3-130"><xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> can accept values of type <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream>.</span></span>  
   
- <span data-ttu-id="d65cb-131"><xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, A <xref:System.IO.Stream> objektu se přesunou do hodnoty definované <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span><span class="sxs-lookup"><span data-stu-id="d65cb-131">The <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream> object will be transferred up to the value defined by the <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span></span>  
+ <span data-ttu-id="813f3-131"><xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, A <xref:System.IO.Stream> objektu se přesunou do hodnoty definované <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span><span class="sxs-lookup"><span data-stu-id="813f3-131">The <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, and <xref:System.IO.Stream> object will be transferred up to the value defined by the <xref:System.Data.SqlClient.SqlParameter.Size%2A>.</span></span>  
   
-## <a name="sample----streaming-from-sql-server"></a><span data-ttu-id="d65cb-132">Ukázka – Streaming z SQL serveru</span><span class="sxs-lookup"><span data-stu-id="d65cb-132">Sample -- Streaming from SQL Server</span></span>  
- <span data-ttu-id="d65cb-133">Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:</span><span class="sxs-lookup"><span data-stu-id="d65cb-133">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
+## <a name="sample----streaming-from-sql-server"></a><span data-ttu-id="813f3-132">Ukázka – Streaming z SQL serveru</span><span class="sxs-lookup"><span data-stu-id="813f3-132">Sample -- Streaming from SQL Server</span></span>  
+ <span data-ttu-id="813f3-133">Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:</span><span class="sxs-lookup"><span data-stu-id="813f3-133">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
   
 ```sql
 CREATE DATABASE [Demo]  
@@ -93,17 +93,17 @@ INSERT INTO [Streams] (textdata, bindata, xmldata) VALUES (N'Another row', 0x666
 GO  
 ```  
   
- <span data-ttu-id="d65cb-134">Vzorek ukazuje, jak provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="d65cb-134">The sample shows how to do the following:</span></span>  
+ <span data-ttu-id="813f3-134">Vzorek ukazuje, jak provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="813f3-134">The sample shows how to do the following:</span></span>  
   
--   <span data-ttu-id="d65cb-135">Vyhněte se blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.</span><span class="sxs-lookup"><span data-stu-id="d65cb-135">Avoid blocking a user-interface thread by providing an asynchronous way to retrieve large files.</span></span>  
+-   <span data-ttu-id="813f3-135">Vyhněte se blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.</span><span class="sxs-lookup"><span data-stu-id="813f3-135">Avoid blocking a user-interface thread by providing an asynchronous way to retrieve large files.</span></span>  
   
--   <span data-ttu-id="d65cb-136">Přenos velkého textového souboru ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d65cb-136">Transfer a large text file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
+-   <span data-ttu-id="813f3-136">Přenos velkého textového souboru ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="813f3-136">Transfer a large text file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   <span data-ttu-id="d65cb-137">Přenos velkých souborů XML z SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d65cb-137">Transfer a large XML file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
+-   <span data-ttu-id="813f3-137">Přenos velkých souborů XML z SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="813f3-137">Transfer a large XML file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   <span data-ttu-id="d65cb-138">Načtení dat z SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="d65cb-138">Retrieve data from SQL Server.</span></span>  
+-   <span data-ttu-id="813f3-138">Načtení dat z SQL serveru.</span><span class="sxs-lookup"><span data-stu-id="813f3-138">Retrieve data from SQL Server.</span></span>  
   
--   <span data-ttu-id="d65cb-139">Přenos velkých souborů, (objektů BLOB) z jedné databáze SQL serveru na jiný bez spuštění nedostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="d65cb-139">Transfer large files (BLOBs) from one SQL Server database to another without running out of memory.</span></span>  
+-   <span data-ttu-id="813f3-139">Přenos velkých souborů, (objektů BLOB) z jedné databáze SQL serveru na jiný bez spuštění nedostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="813f3-139">Transfer large files (BLOBs) from one SQL Server database to another without running out of memory.</span></span>  
   
 ```csharp
 using System;  
@@ -294,8 +294,8 @@ namespace StreamingFromServer {
 }  
 ```  
   
-## <a name="sample----streaming-to-sql-server"></a><span data-ttu-id="d65cb-140">Ukázka--Streamování do systému SQL Server</span><span class="sxs-lookup"><span data-stu-id="d65cb-140">Sample -- Streaming to SQL Server</span></span>  
- <span data-ttu-id="d65cb-141">Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:</span><span class="sxs-lookup"><span data-stu-id="d65cb-141">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
+## <a name="sample----streaming-to-sql-server"></a><span data-ttu-id="813f3-140">Ukázka--Streamování do systému SQL Server</span><span class="sxs-lookup"><span data-stu-id="813f3-140">Sample -- Streaming to SQL Server</span></span>  
+ <span data-ttu-id="813f3-141">Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:</span><span class="sxs-lookup"><span data-stu-id="813f3-141">Use the following [!INCLUDE[tsql](../../../../includes/tsql-md.md)] to create the sample database:</span></span>  
   
 ```sql
 CREATE DATABASE [Demo2]  
@@ -316,19 +316,19 @@ CREATE TABLE [BinaryStreamsCopy] (
 GO  
 ```  
   
- <span data-ttu-id="d65cb-142">Vzorek ukazuje, jak provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="d65cb-142">The sample shows how to do the following:</span></span>  
+ <span data-ttu-id="813f3-142">Vzorek ukazuje, jak provést následující kroky:</span><span class="sxs-lookup"><span data-stu-id="813f3-142">The sample shows how to do the following:</span></span>  
   
--   <span data-ttu-id="d65cb-143">Přenášení velkých objektů BLOB do SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d65cb-143">Transferring a large BLOB to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
+-   <span data-ttu-id="813f3-143">Přenášení velkých objektů BLOB do SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="813f3-143">Transferring a large BLOB to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   <span data-ttu-id="d65cb-144">Přenos velkého textového souboru do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d65cb-144">Transferring a large text file to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
+-   <span data-ttu-id="813f3-144">Přenos velkého textového souboru do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span><span class="sxs-lookup"><span data-stu-id="813f3-144">Transferring a large text file to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].</span></span>  
   
--   <span data-ttu-id="d65cb-145">Pomocí nové asynchronní funkce k přenosu velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="d65cb-145">Using the new asynchronous feature to transfer a large BLOB.</span></span>  
+-   <span data-ttu-id="813f3-145">Pomocí nové asynchronní funkce k přenosu velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="813f3-145">Using the new asynchronous feature to transfer a large BLOB.</span></span>  
   
--   <span data-ttu-id="d65cb-146">Pomocí nové asynchronní funkce a klíčové slovo await pro přenos velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="d65cb-146">Using the new asynchronous feature and the await keyword to transfer a large BLOB.</span></span>  
+-   <span data-ttu-id="813f3-146">Pomocí nové asynchronní funkce a klíčové slovo await pro přenos velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="813f3-146">Using the new asynchronous feature and the await keyword to transfer a large BLOB.</span></span>  
   
--   <span data-ttu-id="d65cb-147">Ruší se přenos velkých objektů BLOB...</span><span class="sxs-lookup"><span data-stu-id="d65cb-147">Cancelling the transfer of a large BLOB..</span></span>  
+-   <span data-ttu-id="813f3-147">Ruší se přenos velkých objektů BLOB.</span><span class="sxs-lookup"><span data-stu-id="813f3-147">Cancelling the transfer of a large BLOB.</span></span>  
   
--   <span data-ttu-id="d65cb-148">Streamovat z jednoho serveru SQL Server na jiný pomocí nové asynchronní funkce.</span><span class="sxs-lookup"><span data-stu-id="d65cb-148">Streaming from one SQL Server to another using the new asynchronous feature.</span></span>  
+-   <span data-ttu-id="813f3-148">Streamovat z jednoho serveru SQL Server na jiný pomocí nové asynchronní funkce.</span><span class="sxs-lookup"><span data-stu-id="813f3-148">Streaming from one SQL Server to another using the new asynchronous feature.</span></span>  
   
 ```csharp
 using System;  
@@ -450,8 +450,8 @@ namespace StreamingToServer {
 }  
 ```  
   
-## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a><span data-ttu-id="d65cb-149">Ukázka – Streamovat z jednoho serveru SQL Server na jiný Server SQL</span><span class="sxs-lookup"><span data-stu-id="d65cb-149">Sample -- Streaming From One SQL Server to Another SQL Server</span></span>  
- <span data-ttu-id="d65cb-150">Tento příklad ukazuje, jak asynchronně streamování velkých objektů BLOB z jednoho serveru SQL do druhého, s podporou pro zrušení.</span><span class="sxs-lookup"><span data-stu-id="d65cb-150">This sample demonstrates how to asynchronously stream a large BLOB from one SQL Server to another, with support for cancellation.</span></span>  
+## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a><span data-ttu-id="813f3-149">Ukázka – Streamovat z jednoho serveru SQL Server na jiný Server SQL</span><span class="sxs-lookup"><span data-stu-id="813f3-149">Sample -- Streaming From One SQL Server to Another SQL Server</span></span>  
+ <span data-ttu-id="813f3-150">Tento příklad ukazuje, jak asynchronně streamování velkých objektů BLOB z jednoho serveru SQL do druhého, s podporou pro zrušení.</span><span class="sxs-lookup"><span data-stu-id="813f3-150">This sample demonstrates how to asynchronously stream a large BLOB from one SQL Server to another, with support for cancellation.</span></span>  
   
 ```csharp
 using System;  
@@ -516,5 +516,5 @@ namespace StreamingFromServerToAnother {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d65cb-151">Viz také</span><span class="sxs-lookup"><span data-stu-id="d65cb-151">See Also</span></span>  
- [<span data-ttu-id="d65cb-152">Načítání a úpravy dat v ADO.NET</span><span class="sxs-lookup"><span data-stu-id="d65cb-152">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+## <a name="see-also"></a><span data-ttu-id="813f3-151">Viz také</span><span class="sxs-lookup"><span data-stu-id="813f3-151">See Also</span></span>  
+ [<span data-ttu-id="813f3-152">Načítání a úpravy dat v ADO.NET</span><span class="sxs-lookup"><span data-stu-id="813f3-152">Retrieving and Modifying Data in ADO.NET</span></span>](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)

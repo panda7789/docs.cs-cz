@@ -1,28 +1,22 @@
 ---
-title: "Žádné soubory, které jsou odpovídající & č. 39; &lt;filename&gt;& č. 39;"
+title: Nebyly nalezeny žádné soubory odpovídající '&lt;filename&gt;.
 ms.date: 07/20/2015
-ms.prod: .net
-ms.technology:
-- devlang-visual-basic
-ms.topic: article
 f1_keywords:
 - vbrKILL_NoFilesFound1
 ms.assetid: 218808a2-8e36-4f13-a60a-770624e1ace3
-caps.latest.revision: 
-author: dotnet-bot
-ms.author: dotnetcontent
-ms.openlocfilehash: 3be65a875215cfc46ef5d0b4f9518574fe541350
-ms.sourcegitcommit: 34ec7753acf76f90a0fa845235ef06663dc9e36e
+ms.openlocfilehash: d6b837a79366cb1af31acda496b52779db3a6c13
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53758130"
 ---
-# <a name="no-files-found-matching-39ltfilenamegt39"></a><span data-ttu-id="c4665-102">Žádné soubory, které jsou odpovídající & č. 39; &lt;filename&gt;& č. 39;</span><span class="sxs-lookup"><span data-stu-id="c4665-102">No files found matching &#39;&lt;filename&gt;&#39;</span></span>
-<span data-ttu-id="c4665-103">Název souboru je nesprávný, nebo soubor neexistuje.</span><span class="sxs-lookup"><span data-stu-id="c4665-103">The file name is incorrect, or the file does not exist.</span></span>  
+# <a name="no-files-found-matching-ltfilenamegt"></a><span data-ttu-id="65cb2-102">Nebyly nalezeny žádné soubory odpovídající '&lt;filename&gt;.</span><span class="sxs-lookup"><span data-stu-id="65cb2-102">No files found matching '&lt;filename&gt;'</span></span>
+<span data-ttu-id="65cb2-103">Název souboru není správný nebo soubor neexistuje.</span><span class="sxs-lookup"><span data-stu-id="65cb2-103">The file name is incorrect, or the file does not exist.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="c4665-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="c4665-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="65cb2-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="65cb2-104">To correct this error</span></span>  
   
-1.  <span data-ttu-id="c4665-105">Ujistěte se, zda je správný název souboru.</span><span class="sxs-lookup"><span data-stu-id="c4665-105">Ensure that the file name is correct.</span></span>  
+1.  <span data-ttu-id="65cb2-105">Ujistěte se, že je název souboru správný.</span><span class="sxs-lookup"><span data-stu-id="65cb2-105">Ensure that the file name is correct.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c4665-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="c4665-106">See Also</span></span>  
- [<span data-ttu-id="c4665-107">My.Computer.FileSystem –</span><span class="sxs-lookup"><span data-stu-id="c4665-107">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)
+## <a name="see-also"></a><span data-ttu-id="65cb2-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="65cb2-106">See Also</span></span>  
+ [<span data-ttu-id="65cb2-107">My.Computer.FileSystem</span><span class="sxs-lookup"><span data-stu-id="65cb2-107">My.Computer.FileSystem</span></span>](xref:Microsoft.VisualBasic.FileIO.FileSystem)
