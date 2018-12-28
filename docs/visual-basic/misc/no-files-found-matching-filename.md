@@ -1,22 +1,22 @@
 ---
-title: Nebyly nalezeny žádné soubory odpovídající &#39; &lt;filename&gt;&#39;
+title: Nebyly nalezeny žádné soubory odpovídající '&lt;filename&gt;.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrKILL_NoFilesFound1
 ms.assetid: 218808a2-8e36-4f13-a60a-770624e1ace3
-ms.openlocfilehash: b6b56e906c14c6097104efb36995ddc27f77725b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6b837a79366cb1af31acda496b52779db3a6c13
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33634917"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53758130"
 ---
-# <a name="no-files-found-matching-39ltfilenamegt39"></a>Nebyly nalezeny žádné soubory odpovídající &#39; &lt;filename&gt;&#39;
-Název souboru je nesprávný, nebo soubor neexistuje.  
+# <a name="no-files-found-matching-ltfilenamegt"></a>Nebyly nalezeny žádné soubory odpovídající '&lt;filename&gt;.
+Název souboru není správný nebo soubor neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Ujistěte se, zda je správný název souboru.  
+1.  Ujistěte se, že je název souboru správný.  
   
 ## <a name="see-also"></a>Viz také  
  [My.Computer.FileSystem](xref:Microsoft.VisualBasic.FileIO.FileSystem)

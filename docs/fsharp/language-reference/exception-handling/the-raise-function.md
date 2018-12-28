@@ -1,13 +1,13 @@
 ---
-title: 'Výjimky: Funkce raise (F#)'
-description: Zjistěte, jak "vyvolat" funkce jazyka F# používá k označení, že došlo k chybě nebo výjimečné podmínce.
+title: 'Výjimky: Funkce raise'
+description: Zjistěte, jak F# "vyvolat" funkce se používá k označení, že došlo k chybě nebo výjimečné podmínce.
 ms.date: 05/16/2016
-ms.openlocfilehash: 537d274659d29404380bfdd56310ac267372bb98
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 87773ead7773c62a325c7e7ff105c729e10dd69c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43778256"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53610148"
 ---
 # <a name="exceptions-the-raise-function"></a>Výjimky: Funkce raise
 
@@ -37,7 +37,7 @@ Následující příklady kódu znázorňují použití `raise` funkce generují
 
 - [Zpracování výjimek](index.md)
 - [Typy výjimek](exception-types.md)
-- [Výjimky: `try...with` výraz](the-try-with-expression.md)
-- [Výjimky: `try...finally` výraz](the-try-finally-expression.md)
-- [Výjimky: `failwith` – funkce](the-failwith-function.md)
-- [Výjimky: `invalidArg` – funkce](the-invalidArg-function.md)
+- [Výjimky: `try...with` Výraz](the-try-with-expression.md)
+- [Výjimky: `try...finally` Výraz](the-try-finally-expression.md)
+- [Výjimky: `failwith` – Funkce](the-failwith-function.md)
+- [Výjimky: `invalidArg` – Funkce](the-invalidArg-function.md)

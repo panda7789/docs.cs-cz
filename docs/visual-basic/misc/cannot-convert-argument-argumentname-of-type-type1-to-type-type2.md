@@ -1,18 +1,18 @@
 ---
-title: Nelze převést argument &#39; &lt;název argumentu argumentname&gt; &#39; typu &#39; &lt;type1&gt; &#39; na typ &#39; &lt;type2&gt;&#39;
+title: Nejde převést argument '&lt;název argumentu argumentname&gt;"typu"&lt;type1&gt;' na typ'&lt;type2&gt;.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrForLoop_ConvertToType3
 ms.assetid: fdf6c571-9c6c-4db2-8960-f394720b01e5
-ms.openlocfilehash: 0a241150870397591da8cbc04ad334b6e5d72741
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc8cf34180a48e47ec32af06e740323cbfa94f22
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33635130"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53781333"
 ---
-# <a name="cannot-convert-argument-39ltargumentnamegt39-of-type-39lttype1gt39-to-type-39lttype2gt39"></a>Nelze převést argument &#39; &lt;název argumentu argumentname&gt; &#39; typu &#39; &lt;type1&gt; &#39; na typ &#39; &lt;type2&gt;&#39;
-Operaci převodu se pokusí převést na nekompatibilní typ argumentu.  
+# <a name="cannot-convert-argument-ltargumentnamegt-of-type-lttype1gt-to-type-lttype2gt"></a>Nejde převést argument '&lt;název argumentu argumentname&gt;"typu"&lt;type1&gt;' na typ'&lt;type2&gt;.
+Operaci převodu se pokusí převést argument na nekompatibilní typ.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   

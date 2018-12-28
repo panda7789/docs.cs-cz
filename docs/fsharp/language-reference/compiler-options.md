@@ -1,13 +1,13 @@
 ---
-title: Možnosti kompilátoru (F#)
+title: Možnosti kompilátoru
 description: Použití F# možnosti příkazového řádku kompilátoru pro řízení sestavování vašich F# aplikací a knihoven.
 ms.date: 12/10/2018
-ms.openlocfilehash: dafd872a22bf4ec4b36910f28b7c5bfe9370af8d
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
-ms.translationtype: HT
+ms.openlocfilehash: d8e4331bcacd7082d7560ddc6fcadb4ce2b61cf8
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170870"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614490"
 ---
 # <a name="compiler-options"></a>Možnosti kompilátoru
 
@@ -67,10 +67,9 @@ V následující tabulce jsou uvedeny možnosti kompilátoru uvedené podle abec
 |`--warnon:warning-number-list`|Povolte určité varování, které může být vypnuto ve výchozím nastavení nebo zakázáno jinou možnost příkazového řádku. V F# 3.0 pouze upozornění 1182 (nepoužité proměnné) je vypnuto ve výchozím nastavení.|
 |<code>--warnaserror[+&#124;-] [warning-number-list]</code>|Povolí nebo zakáže možnost hlásit upozornění jako chyby. Můžete zadat konkrétní čísla upozornění mají být zakázána nebo povolena. Volby dále v příkazovém řádku přepisují možnosti dříve v příkazovém řádku. Například pokud chcete nastavit upozornění, která nechcete hlásit jako chyby, zadejte `--warnaserror+` `--warnaserror-:warning-number-list`.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;warnaserror &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/406xhdz3.aspx).|
 |`--win32manifest:manifest-filename`|Přidá soubor manifestu Win32 do kompilace. Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;win32manifest &#40;C&#35; – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/bb545961.aspx).|
-|`--win32res:resource-filename`|Přidá soubor prostředků Win32 do kompilace.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;win32res (&#40;C & č. 35); Možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8f2f5x2e.aspx).|
+|`--win32res:resource-filename`|Přidá soubor prostředků Win32 do kompilace.<br /><br />Tato možnost kompilátoru je ekvivalentní C# – možnost kompilátoru se stejným názvem. Další informace najdete v tématu [ &#47;win32res (&#40;C&#35;) – možnosti kompilátoru&#41;](https://msdn.microsoft.com/library/8f2f5x2e.aspx).|
 
 ## <a name="related-articles"></a>Související články
-
 
 |Název|Popis|
 |-----|-----------|

@@ -3,13 +3,13 @@ title: Požadavky pro .NET Core v Linuxu
 description: Podporované verze systému Linux a závislosti .NET Core pro vývoj, nasazování a spouštění aplikací .NET Core na počítačích s Linuxem.
 author: thraka
 ms.author: adegeo
-ms.date: 12/03/2018
-ms.openlocfilehash: e250158d10c6a03535f4e693e74954747f860a3c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 12/14/2018
+ms.openlocfilehash: 7a2b0b3af97500ab0988e5de7a44713a8c05ccb9
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148322"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656047"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Požadavky pro .NET Core v Linuxu
 
@@ -60,6 +60,34 @@ Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení 
 * openSUSE 42.3 nebo novější verze (.NET Core 1.1)
 
 Zobrazit [podporované verze operačního systému aplikace .NET Core 1.x](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md) pro úplný seznam .NET Core 1.x podporované operační systémy, z verze podporu operačního systému a propojení zásad životního cyklu.
+
+# <a name="net-core-30-preview-1tabnetcore30"></a>[.NET core 3.0 ve verzi Preview 1](#tab/netcore30)
+
+.NET core 3.0 ve verzi Preview 1 považuje za jeden operační systém Linux. Existuje jedno sestavení Linux (za architektura procesoru) podporované distribuce systému Linux. 
+
+Odkazy ke stažení a další informace najdete v tématu [soubory ke stažení rozhraní .NET Core 3.0](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+
+.NET core 3.0 ve verzi Preview 1 se podporuje v následujících distribucích systému Linux/verzích. 
+
+Operační systém                            | Version               | Architektury  
+------------------------------|-----------------------|----------------
+Red Hat Enterprise Linux      | 6                     | x64
+Red Hat Enterprise Linux<br>CentOS<br>Oracle Linux  | 7                     | x64
+Fedora                        | 28                    | x64
+Debian                        | 9                     | x64 ARM32\*, ARM64\*
+Ubuntu                        | 16.04 +, 18.04 +        | x64 ARM32\*, ARM64\*
+Linux Mint                    | 18                    | x64
+openSUSE                      | 42.3 +                 | x64
+SUSE Linux Enterprise (SLES)  | 12 SP2 +               | x64
+Nástroj Alpine Linuxu                  | 3.8 +                  | x64 ARM64
+
+\* Podpora ARM32 a ARM64 začíná Debian 9 a Ubuntu 16.04. Starší verze těchto distribuce nejsou podporovány na čipech ARM.
+
+Zobrazit [podporované verze operačního systému .NET Core 3.0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) pro .NET Core 3.0 na úplný seznam podporovaných operačních systémů, distribuce a verze z verze podporu operačního systému a propojení zásad životního cyklu.
+
+Další informace o tom, jak nainstalovat .NET Core 3.0 na ARM64 najdete v tématu [instalace .NET Core 3.0 v systému Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
+
+
 
 ---
 

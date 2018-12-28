@@ -1,17 +1,17 @@
 ---
-title: Možnosti (F#)
-description: Zjistěte, jak použít možnost F#, typy, když skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná.
+title: Možnosti
+description: Další informace o použití F# možnost typy skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná.
 ms.date: 05/16/2016
-ms.openlocfilehash: 0859cb42e72ef9e67551b884f5cf6130fb099a78
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: ebd1c1c39468594de83b3c2af1da48c277bfcbe1
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "46479517"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613502"
 ---
 # <a name="options"></a>Možnosti
 
-Typ možnosti v jazyce F# se používá při skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná. Použít má základní typ a můžou obsahovat hodnotu daného typu, nebo nemusí mít hodnotu.
+Typ možnosti v F# se používá, když skutečnou hodnotu nemusí existovat pojmenovaná hodnota nebo proměnná. Použít má základní typ a můžou obsahovat hodnotu daného typu, nebo nemusí mít hodnotu.
 
 ## <a name="remarks"></a>Poznámky
 
@@ -33,7 +33,7 @@ Běžně se používají možnosti při hledání nevrací odpovídající výsl
 
 V předchozím kódu je seznam hledaný rekurzivně. Funkce `tryFindMatch` trvá funkce predikátu `pred` , který vrací logickou hodnotu a seznamu pro vyhledávání. Pokud je nalezen element, který splňuje predikát, elementy end rekurze a funkce vrátí hodnotu jako možnost ve výrazu `Some(head)`. Rekurze končí, když je nalezena shoda s prázdný seznam. V tomto okamžiku hodnotu `head` nebyl nalezen, a `None` je vrácena.
 
-Mnoho F# knihovních funkcí, které vyhledání v kolekci na hodnotu, která můžou nebo nemusí existovat vrátit `option` typu. Podle konvence, tyto funkce začínat `try` předponu, například [ `Seq.tryFindIndex` ](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a).
+Mnoho F# funkce knihovny, které vyhledání v kolekci na hodnotu, která můžou nebo nemusí existovat vrátit `option` typu. Podle konvence, tyto funkce začínat `try` předponu, například [ `Seq.tryFindIndex` ](https://msdn.microsoft.com/library/c357b221-edf6-4f68-bf40-82a3156d945a).
 
 Možnosti mohou být užitečné také při nemusí existovat hodnotu, například pokud je to možné, že při pokusu o vytvoření hodnotu bude vyvolána výjimka. Následující příklad kódu to dokládá.
 
@@ -47,7 +47,7 @@ Typ možnosti podporuje následující vlastnosti a metody.
 
 |Vlastnost nebo metoda|Typ|Popis|
 |------------------|----|-----------|
-|[None](https://msdn.microsoft.com/library/83ef260a-aa33-4e6f-aee6-b9bf0a461476)|`'T option`|Statická vlastnost, která vám umožní vytvořit hodnotu možnosti, která má `None` hodnotu.|
+|[Žádné](https://msdn.microsoft.com/library/83ef260a-aa33-4e6f-aee6-b9bf0a461476)|`'T option`|Statická vlastnost, která vám umožní vytvořit hodnotu možnosti, která má `None` hodnotu.|
 |[Isnone –](https://msdn.microsoft.com/library/f08532ca-1716-4f60-ae59-8ef6256df234)|`bool`|Vrátí `true` Pokud má možnost `None` hodnotu.|
 |[Issome –](https://msdn.microsoft.com/library/c5088d51-c5d7-425f-a77f-12c379bb356f)|`bool`|Vrátí `true` Pokud parametr má hodnotu, která není `None`.|
 |[Některé](https://msdn.microsoft.com/library/12f048d2-e293-4596-accb-de036ecd63fc)|`'T option`|Statický člen, který vytvoří možnost, která má hodnotu, která není `None`.|

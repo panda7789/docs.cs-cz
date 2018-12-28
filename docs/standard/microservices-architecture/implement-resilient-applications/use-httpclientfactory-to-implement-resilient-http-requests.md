@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 07ea85509b86eadd2c85dfe59ace674e2faae9a3
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0ae4dadd6921a71217b50757ede19b8d54910185
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145108"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611032"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -71,7 +71,7 @@ Pouhým přidáním tříd typový klient s AddHttpClient(), vždy, když použi
 
 ### <a name="httpclient-lifetimes"></a>Životnost HttpClient
 
-Pokaždé, když dojde `HttpClient` objekt z IHttpClientFactory, novou instanci třídy `HttpClient` je vrácena. Bude existovat objekt HttpMessageHandler ** za názvem typu klienta. `IHttpClientFactory` objekt HttpMessageHandler instance vytvořené výrobou ke snížení spotřeby prostředků se fondu. Objekt HttpMessageHandler instance mohou být znovu použity z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu.
+Pokaždé, když dojde `HttpClient` objekt z IHttpClientFactory, novou instanci třídy `HttpClient` je vrácena. Bude **objekt HttpMessageHandler** za názvem typu klienta. `IHttpClientFactory` objekt HttpMessageHandler instance vytvořené výrobou ke snížení spotřeby prostředků se fondu. Objekt HttpMessageHandler instance mohou být znovu použity z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu.
 
 Sdružování obslužných rutin je žádoucí, protože každá obslužná rutina obvykle spravuje svou vlastní základní připojení protokolu HTTP; vytváření více obslužných rutin, než je nezbytné, může způsobit zpoždění připojení. Některé obslužné rutiny také zachovat připojení otevřené po neomezenou dobu, což může zabránit obslužnou rutinu reakce na změny DNS.
 

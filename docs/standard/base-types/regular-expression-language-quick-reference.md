@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53f0f0d82ee751b66168fff68c31d952f480be2e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 77a9863b4fb44bbe8142175a032bb052ee99cdae
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041613"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53779383"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 <a name="top"></a> Regulární výraz je vzor, který modul regulárních výrazů pokusí shodovat se vstupním textem. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod naleznete zde [regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md).  
@@ -30,7 +30,7 @@ ms.locfileid: "44041613"
   
  [Řídicí sekvence znaků](#character_escapes)  
  [Třídy znaků](#character_classes)  
- [Kotvy](#atomic_zerowidth_assertions)  
+ [Kotvy](#anchors)  
  [Seskupovací konstrukce](#grouping_constructs)  
  [Kvantifikátory](#quantifiers)  
  [Konstrukce zpětných odkazů](#backreference_constructs)  
@@ -74,8 +74,8 @@ ms.locfileid: "44041613"
 |---------------------|-----------------|-------------|-------------|  
 |`[` *character_group* `]`|Odpovídá jakémukoli jednomu znaku v *character_group*. Ve výchozím nastavení shoda rozlišuje velká a malá písmena.|`[ae]`|"a" ve slově "gray"<br /><br /> "a", "e" ve slově "lane"|  
 |`[^` *character_group* `]`|Negace: Odpovídá jakémukoli jednomu znaku, který není součástí *character_group*. Ve výchozím nastavení, znaky v *character_group* jsou malá a velká písmena.|`[^aei]`|"r", "g", "n" ve slově "reign"|  
-|`[` *první* `-` *poslední* `]`|Rozsah znaků: odpovídá jakémukoli jednomu znaku v rozsahu od *první* k *poslední*.|`[A-Z]`|"A", "B" ve výrazu "AB123"|  
-|`.`|Zástupný znak: Odpovídá jakémukoli jednomu znaku s výjimkou \n.<br /><br /> Tak, aby odpovídaly literální znak tečky (. nebo `\u002E`), je nutné před řídicí znak (`\.`).|`a.e`|"ave" ve slově "nave"<br /><br /> "ate" ve slově "water"|  
+|`[` *první* `-` *poslední* `]`|Rozsah znaků: Odpovídá jakémukoli jednomu znaku v rozsahu od *první* k *poslední*.|`[A-Z]`|"A", "B" ve výrazu "AB123"|  
+|`.`|Zástupný znak: Odpovídá jakémukoli jednomu znaku s výjimkou \n.<br /><br /> Tak, aby odpovídaly literální znak tečky (. nebo `\u002E`), je nutné před řídicí znak (`\.`).|`a.e`|"ave" ve slově "nave"<br /><br /> "ate" ve slově "water"|  
 |`\p{` *Jméno* `}`|Odpovídá jakémukoli jednomu znaku v obecné kategorii Unicode nebo pojmenovanému bloku určenému pomocí *název*.|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|"C", "L" ve výrazu "City Lights"<br /><br /> "Д", "Ж" ve slově "ДЖem"|  
 |`\P{` *Jméno* `}`|Odpovídá jakémukoli jednomu znaku, který není v obecné kategorii Unicode nebo pojmenovanému bloku určenému pomocí *název*.|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|"i", "t", "y" ve slově "City"<br /><br /> "e", "m" ve slově "ДЖem"|  
 |`\w`|Odpovídá jakémukoli znaku slova.|`\w`|"I", "D", "A", "1", "3" ve výrazu "ID A1.3"|  
@@ -87,7 +87,6 @@ ms.locfileid: "44041613"
   
  [Zpět na začátek](#top)  
   
-<a name="atomic_zerowidth_assertions"></a>   
 ## <a name="anchors"></a>Kotvy  
  Kotvy neboli atomické kontrolní výrazy s nulovou šířkou způsobí, že porovnávání je úspěšné nebo neúspěšné v závislosti na aktuální pozici v řetězci, ale nezpůsobí, aby nástroj postupoval dále v řetězci nebo spotřebovával znaky. Metaznaky uvedené v následující tabulce jsou kotvy. Další informace najdete v tématu [kotvy](../../../docs/standard/base-types/anchors-in-regular-expressions.md).  
   
@@ -179,7 +178,7 @@ ms.locfileid: "44041613"
 |`$&`|Nahradí kopii celé shody.|`\$?\d*\.?\d+`|`**$&**`|"$1.30"|"\*\*$1.30\*\*"|  
 |<code>$`</code>|Nahradí celý text vstupního řetězce před shodou.|`B+`|<code>$`</code>|"AABBCC"|"AAAACC"|  
 |`$'`|Nahradí celý text vstupního řetězce za shodou.|`B+`|`$'`|"AABBCC"|"AACCCC"|  
-|`$+`|Nahradí poslední skupinu, která byla zachycena.|`B+(C+)`|`$+`|"AABBCCDD"|AACCDD|  
+|`$+`|Nahradí poslední skupinu, která byla zachycena.|`B+(C+)`|`$+`|"AABBCCDD"|"AACCDD"|  
 |`$_`|Nahradí celý vstupní řetězec.|`B+`|`$_`|"AABBCC"|"AAAABBCCCC"|  
   
  [Zpět na začátek](#top)  

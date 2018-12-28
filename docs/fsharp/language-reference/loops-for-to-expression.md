@@ -1,13 +1,13 @@
 ---
-title: 'Smyčky: Výraz for...to (F#)'
-description: Naleznete v tématu Jak F# for... výraz se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.
+title: 'Smyčky: Výraz for...to'
+description: V tématu Jak F# for... výraz se používá k iteraci ve smyčce napříč celou škálou hodnoty proměnné smyčky.
 ms.date: 05/16/2016
-ms.openlocfilehash: 8160fd30c4f3afe8bb6b58f468802ef1c0ef32ee
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 041e98fa4bcc140aa3cd699f6ed35bf52c8b4175
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43800466"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612319"
 ---
 # <a name="loops-forto-expression"></a>Smyčky: Výraz for...to
 
@@ -39,5 +39,5 @@ Výstup předchozího kódu vypadá takto.
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční dokumentace jazyka F#](index.md)
-- [Smyčky: `for...in` výraz](loops-for-in-expression.md)
-- [Smyčky: `while...do` výraz](loops-while-do-expression.md)
+- [Smyčky: `for...in` Výraz](loops-for-in-expression.md)
+- [Smyčky: `while...do` Výraz](loops-while-do-expression.md)

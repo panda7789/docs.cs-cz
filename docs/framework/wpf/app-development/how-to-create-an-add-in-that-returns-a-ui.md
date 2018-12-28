@@ -9,86 +9,86 @@ helpviewer_keywords:
 - implementing add-in pipeline segments [WPF]
 - add-in [WPF], returns a UI
 ms.assetid: 57f274b7-4c66-4b72-92eb-81939a393776
-ms.openlocfilehash: 24b30d61553796840a44a869eacb33232a0b78d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f882d62152d0116d5bff3bcd604f04c249443a94
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33548230"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396666"
 ---
 # <a name="how-to-create-an-add-in-that-returns-a-ui"></a>Postupy: Vytvoření doplňku, který vrací uživatelské rozhraní
-Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentation Foundation (WPF) na hostitele [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace.  
+Tento příklad ukazuje, jak vytvořit doplněk, který vrací Windows Presentation Foundation (WPF) do hostitele samostatnou aplikaci WPF.  
   
- Doplněk vrátí [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] tedy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] uživatelský ovládací prvek. Obsah uživatelského ovládacího prvku je jedné tlačítko, která po kliknutí na zobrazí okno se zprávou. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Samostatné aplikace hostuje doplněk a zobrazí uživatelského ovládacího prvku (vrácený doplněk) jako obsah hlavního okna aplikace.  
+ Doplněk vrací uživatelské rozhraní, která je uživatelský ovládací prvek WPF. Obsah uživatelský ovládací prvek je jediné tlačítko, které, při kliknutí zobrazí okno se zprávou. Samostatná aplikace WPF hostuje doplněk a zobrazuje uživatelský ovládací prvek (vráceným metodou doplněk) jako obsah hlavního okna aplikace.  
   
  **Požadavky**  
   
- Tento příklad klade důraz [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšíření [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] modelu, který povolit tento scénář a předpokládá následující:  
+ V tomto příkladu zvýrazní WPF rozšíření modelu doplňku rozhraní .NET Framework, které umožňují tento scénář a předpokládá následující:  
   
--   Znalost [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] doplňku modelu, včetně kanálu, doplňku a vývoj hostitele. Pokud jste obeznámeni s následujícími základními pojmy, najdete v části [doplňky a rozšíření](../../../../docs/framework/add-ins/index.md). Kurz, který ukazuje implementaci kanál, -v a hostitelskou aplikaci, najdete v části [návod: vytváření rozšiřitelné aplikace](../../../../docs/framework/add-ins/walkthrough-create-extensible-app.md).  
+-   Znalost modelu rozhraní .NET Framework – doplněk, včetně kanálu doplňku a vývoj pro hostitele. Pokud nejste obeznámeni s tyto koncepty, najdete v článku [doplňků a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)). Kurz, který ukazuje implementaci kanálu, doplněk a hostitelskou aplikací, najdete v tématu [názorný postup: Vytváření rozšiřitelné aplikace](../../../../docs/framework/add-ins/walkthrough-create-extensible-app.md).  
   
--   Znalosti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] rozšíření [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] doplňku model, který se nachází tady: [WPF doplňky přehled](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
+-   Informace o rozšíření WPF rozhraní .NET Framework model doplňku, který najdete tady: [Přehled doplňků WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
   
 ## <a name="example"></a>Příklad  
- Chcete-li vytvořit doplněk, který vrací [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] vyžaduje konkrétní kód pro každý segment kanálu v doplňku a hostitelskou aplikaci.  
+ K vytvoření doplňku, který vrací uživatelské rozhraní WPF vyžaduje konkrétní kód pro každý segment kanálu doplňku a hostitelskou aplikaci.  
     
   
 <a name="Contract"></a>   
-## <a name="implementing-the-contract-pipeline-segment"></a>Implementace segmentu kanálu kontraktu  
- Metoda musí být definován ve smlouvě pro návrat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], a hodnoty musí být typu <xref:System.AddIn.Contract.INativeHandleContract>. Tento postup je znázorněn pomocí `GetAddInUI` metodu `IWPFAddInContract` smlouvy v následujícím kódu.  
+## <a name="implementing-the-contract-pipeline-segment"></a>Implementace kontraktu Segment kanálu  
+ Metoda musí být definován ve smlouvě vrací uživatelské rozhraní a vrácená hodnota musí být typu <xref:System.AddIn.Contract.INativeHandleContract>. To je patrné podle `GetAddInUI` metodu `IWPFAddInContract` smlouvy v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#ContractCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/Contracts/IWPFAddInContract.cs#contractcode)]
  [!code-vb[SimpleAddInReturnsAUISample#ContractCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/Contracts/IWPFAddInContract.vb#contractcode)]  
   
 <a name="AddInView"></a>   
-## <a name="implementing-the-add-in-view-pipeline-segment"></a>Implementace segmentu kanál doplňku zobrazení  
- Protože doplněk implementuje [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] poskytuje jako měly podtřídy <xref:System.Windows.FrameworkElement>, metoda pro zobrazení pro `IWPFAddInView.GetAddInUI` musí vracet hodnoty typu <xref:System.Windows.FrameworkElement>. Následující kód ukazuje zobrazení přidat smlouvy, které jsou implementované jako rozhraní.  
+## <a name="implementing-the-add-in-view-pipeline-segment"></a>Implementace segmentu kanálu doplňku zobrazení  
+ Protože doplněk implementuje [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] poskytuje jako podtřídy třídy <xref:System.Windows.FrameworkElement>, metoda pro zobrazení, které souvisí s `IWPFAddInView.GetAddInUI` musí vracet hodnotu typu <xref:System.Windows.FrameworkElement>. Následující kód ukazuje zobrazení přidat smlouvy, které jsou implementovány jako rozhraní.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#AddInViewCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/AddInViews/IWPFAddInView.cs#addinviewcode)]
  [!code-vb[SimpleAddInReturnsAUISample#AddInViewCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/AddInViews/IWPFAddInView.vb#addinviewcode)]  
   
 <a name="AddInSideAdapter"></a>   
-## <a name="implementing-the-add-in-side-adapter-pipeline-segment"></a>Implementace segmentu kanálu přidat straně adaptéru  
- Vrátí metoda kontraktu <xref:System.AddIn.Contract.INativeHandleContract>, ale doplněk vrací <xref:System.Windows.FrameworkElement> (jak je uvedeno v zobrazení). V důsledku toho <xref:System.Windows.FrameworkElement> musí být převedena na <xref:System.AddIn.Contract.INativeHandleContract> před překračuje hranice izolace. Tento pracovní provádí adaptér přidat straně voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, jak je znázorněno v následujícím kódu.  
+## <a name="implementing-the-add-in-side-adapter-pipeline-segment"></a>Implementace segmentu přidat v-adaptér na straně kanálu  
+ Vrátí metoda smlouvy <xref:System.AddIn.Contract.INativeHandleContract>, ale doplněk vrátí <xref:System.Windows.FrameworkElement> (jak je uvedeno v zobrazení). V důsledku toho <xref:System.Windows.FrameworkElement> musejí být převedeny do <xref:System.AddIn.Contract.INativeHandleContract> před překročení hranice izolace. Tuto práci provádí adaptér přidat v na straně voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#AddInSideAdapterCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.cs#addinsideadaptercode)]
  [!code-vb[SimpleAddInReturnsAUISample#AddInSideAdapterCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/AddInSideAdapters/WPFAddIn_ViewToContractAddInSideAdapter.vb#addinsideadaptercode)]  
   
 <a name="HostView"></a>   
 ## <a name="implementing-the-host-view-pipeline-segment"></a>Implementace segmentu hostitele zobrazení kanálu  
- Protože hostitelskou aplikaci se zobrazí <xref:System.Windows.FrameworkElement>, metoda pro zobrazení hostitele, které odpovídá `IWPFAddInHostView.GetAddInUI` musí vracet hodnoty typu <xref:System.Windows.FrameworkElement>. Následující kód ukazuje hostitelském zobrazení smlouvy, které jsou implementované jako rozhraní.  
+ Protože hostitelská aplikace se zobrazí <xref:System.Windows.FrameworkElement>, metoda v hostitelském zobrazení, které souvisí s `IWPFAddInHostView.GetAddInUI` musí vracet hodnotu typu <xref:System.Windows.FrameworkElement>. Následující kód zobrazuje hostitele kontraktu implementováno jako rozhraní.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#HostViewCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/HostViews/IWPFAddInHostView.cs#hostviewcode)]
  [!code-vb[SimpleAddInReturnsAUISample#HostViewCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/HostViews/IWPFAddInHostView.vb#hostviewcode)]  
   
 <a name="HostSideAdapter"></a>   
-## <a name="implementing-the-host-side-adapter-pipeline-segment"></a>Implementace segmentu adaptér hostitelské kanálu  
- Vrátí metodu kontraktu <xref:System.AddIn.Contract.INativeHandleContract>, ale očekává hostitelskou aplikaci <xref:System.Windows.FrameworkElement> (jak je uvedeno v zobrazení hostitele). V důsledku toho <xref:System.AddIn.Contract.INativeHandleContract> musí být převedena na <xref:System.Windows.FrameworkElement> po překročení meze hranice izolace. Tento pracovní provádí adaptér hostitelské voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>, jak je znázorněno v následujícím kódu.  
+## <a name="implementing-the-host-side-adapter-pipeline-segment"></a>Implementace segmentu kanálu adaptér na straně hostitele  
+ Vrátí metodu smlouvy <xref:System.AddIn.Contract.INativeHandleContract>, ale hostitelská aplikace očekává, že <xref:System.Windows.FrameworkElement> (jak je uvedeno v hostitelském zobrazení). V důsledku toho <xref:System.AddIn.Contract.INativeHandleContract> musí být převeden do <xref:System.Windows.FrameworkElement> po překročení hranice izolace. Tato práce se provádí pomocí adaptéru hostitelské voláním <xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#HostSideAdapterCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/HostSideAdapters/WPFAddIn_ContractToViewHostSideAdapter.cs#hostsideadaptercode)]
  [!code-vb[SimpleAddInReturnsAUISample#HostSideAdapterCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/HostSideAdapters/WPFAddIn_ContractToViewHostSideAdapter.vb#hostsideadaptercode)]  
   
 <a name="AddIn"></a>   
-## <a name="implementing-the-add-in"></a>Implementace v aplikaci  
- Přidat straně adaptéru a doplněk zobrazení vytvořené, doplněk (`WPFAddIn1.AddIn`) musí implementovat `IWPFAddInView.GetAddInUI` metoda vrátí <xref:System.Windows.FrameworkElement> objekt ( <xref:System.Windows.Controls.UserControl> v tomto příkladu). Implementace <xref:System.Windows.Controls.UserControl>, `AddInUI`, je znázorněno v následujícím kódu.  
+## <a name="implementing-the-add-in"></a>Implementace doplňku pro  
+ Adaptér přidat v na straně a doplňku zobrazení vytvořené, doplněk (`WPFAddIn1.AddIn`) musí implementovat `IWPFAddInView.GetAddInUI` metodu pro návrat <xref:System.Windows.FrameworkElement> objekt ( <xref:System.Windows.Controls.UserControl> v tomto příkladu). Provádění <xref:System.Windows.Controls.UserControl>, `AddInUI`, je znázorněno v následujícím kódu.  
   
  [!code-xaml[SimpleAddInReturnsAUISample#AddInUIMarkup](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/WPFAddIn1/AddInUI.xaml#addinuimarkup)]  
   
  [!code-csharp[SimpleAddInReturnsAUISample#AddInUICodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/WPFAddIn1/AddInUI.xaml.cs#addinuicodebehind)]
  [!code-vb[SimpleAddInReturnsAUISample#AddInUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/WPFAddIn1/AddInUI.xaml.vb#addinuicodebehind)]  
   
- Implementace `IWPFAddInView.GetAddInUI` pomocí doplňku jednoduše musí vrátit novou instanci třídy `AddInUI`, jak je znázorněno v následujícím kódu.  
+ Provádění `IWPFAddInView.GetAddInUI` pomocí doplňku jednoduše musí vracet novou instanci třídy `AddInUI`, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#AddInCode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/WPFAddIn1/AddIn.cs#addincode)]
  [!code-vb[SimpleAddInReturnsAUISample#AddInCode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/WPFAddIn1/AddIn.vb#addincode)]  
   
 <a name="App"></a>   
-## <a name="implementing-the-host-application"></a>Implementace aplikace pro hostitele  
- Adaptér hostitelské a hostitele zobrazení vytvořené hostitelskou aplikaci pomocí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] model doplňku otevřít kanál, získat zobrazení hostitele add-in a volání `IWPFAddInHostView.GetAddInUI` metoda. Tyto kroky jsou uvedeny v následující kód.  
+## <a name="implementing-the-host-application"></a>Implementace hostitele aplikace  
+ Adaptér na straně hostitele a hostitele zobrazení vytvořené hostitelská aplikace pomocí modelu doplňku rozhraní .NET Framework na Otevřít kanál, získat zobrazení hostitele doplňku a volání `IWPFAddInHostView.GetAddInUI` metody. Tyto kroky jsou uvedeny v následujícím kódu.  
   
  [!code-csharp[SimpleAddInReturnsAUISample#GetUICode](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/CSharp/Host/MainWindow.xaml.cs#getuicode)]
  [!code-vb[SimpleAddInReturnsAUISample#GetUICode](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SimpleAddInReturnsAUISample/VisualBasic/Host/MainWindow.xaml.vb#getuicode)]  
   
 ## <a name="see-also"></a>Viz také  
- [Doplňky a rozšíření](../../../../docs/framework/add-ins/index.md)  
+ [Doplňky a rozšíření](/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100))  
  [Přehled doplňků WPF](../../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md)

@@ -1,22 +1,22 @@
 ---
-title: Veřejné člen &#39; &lt;membername&gt; &#39; na typ &#39; &lt;typename&gt; &#39; nebyl nalezen
+title: Veřejný člen "&lt;membername&gt;'na typ'&lt;typename&gt;' nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_MemberNotFoundOnType2
 ms.assetid: 6300feb8-78ac-4dd0-9653-1d03e1f5bc20
-ms.openlocfilehash: 8dd60c8570a0d58b9464bb68b6515ccb0eb49483
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe5c639557fbc3a8d1c09c0ad3418318649bf191
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33637527"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53774378"
 ---
-# <a name="public-member-39ltmembernamegt39-on-type-39lttypenamegt39-not-found"></a>Veřejné člen &#39; &lt;membername&gt; &#39; na typ &#39; &lt;typename&gt; &#39; nebyl nalezen
-Člen, který se pokoušíte získat přístup, nebyl nalezen. Této chybě může dojít při přístupu k neveřejným členy objektů pozdní vazbu.  
+# <a name="public-member-ltmembernamegt-on-type-lttypenamegt-not-found"></a>Veřejný člen "&lt;membername&gt;'na typ'&lt;typename&gt;' nebyl nalezen
+Nelze nalézt členu, který se pokoušíte získat přístup. Této chybě může dojít, když přistupoval k neveřejným členům objektů s pozdní vazbou.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Pokud člena existuje, ujistěte se, že je deklarován jako `Public`.  
+1.  Pokud člen existuje, ujistěte se, že je deklarován jako `Public`.  
   
 ## <a name="see-also"></a>Viz také  
  [Public](../../visual-basic/language-reference/modifiers/public.md)  

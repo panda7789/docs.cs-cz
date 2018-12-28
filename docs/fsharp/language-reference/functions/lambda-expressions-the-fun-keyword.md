@@ -1,13 +1,13 @@
 ---
-title: 'Výrazy lambda: Klíčové slovo fun (F#)'
+title: 'Výrazy lambda: Klíčové slovo fun'
 description: Další informace o použití F# "zábavu" – klíčové slovo k definování výraz lambda, který je anonymní funkce.
 ms.date: 05/16/2016
-ms.openlocfilehash: a37757f6b7328cd348bbf13f058a6dbc881769cf
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 6ad15173bb8643bff330e3ca3823cba5d43ad445
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "47231018"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614456"
 ---
 # <a name="lambda-expressions-the-fun-keyword-f"></a>Výrazy lambda: Klíčové slovo fun (F#)
 
@@ -21,7 +21,7 @@ fun parameter-list -> expression
 
 ## <a name="remarks"></a>Poznámky
 
-*Seznam parametrů* se obvykle skládá z názvů a volitelně typy parametrů. Obecně platí *seznam parametrů* může skládat z jakékoli vzorky F#. Úplný seznam možných vzory, naleznete v tématu [porovnávání vzorů](../pattern-matching.md). Seznam platných parametrů zahrnují následující příklady.
+*Seznam parametrů* se obvykle skládá z názvů a volitelně typy parametrů. Obecně platí *seznam parametrů* může skládat z libovolné F# vzory. Úplný seznam možných vzory, naleznete v tématu [porovnávání vzorů](../pattern-matching.md). Seznam platných parametrů zahrnují následující příklady.
 
 ```fsharp
 // Lambda expressions with parameter lists.
@@ -42,7 +42,7 @@ fun head :: tail -> …
 
 ## <a name="using-lambda-expressions"></a>Používání výrazů lambda
 
-Výrazy lambda jsou zvláště užitečné, pokud chcete provádět operace v seznamu nebo z jiné kolekce a chcete se vyhnout nadbytečné práci spojené se definice funkce. Řada funkcí knihovny F# přebírají hodnoty funkce jako argumenty a může být zvláště praktické použití lambda výrazů v těchto případech. Následující kód platí pro prvky seznamu výraz lambda. V takovém případě anonymní funkce přičte 1 k každý prvek seznamu.
+Výrazy lambda jsou zvláště užitečné, pokud chcete provádět operace v seznamu nebo z jiné kolekce a chcete se vyhnout nadbytečné práci spojené se definice funkce. Mnoho F# přijmout hodnoty funkcí jako argumenty funkce knihovny, a může být zvláště praktické použití lambda výrazů v těchto případech. Následující kód platí pro prvky seznamu výraz lambda. V takovém případě anonymní funkce přičte 1 k každý prvek seznamu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet302.fs)]
 

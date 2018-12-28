@@ -1,13 +1,13 @@
 ---
-title: Metody (F#)
-description: Zjistěte, jak metoda F# je přidružený k typu, které se používají k vystavení a implementaci funkce a chování objektů a typy funkce.
+title: Metody
+description: Zjistěte, jak F# metoda je funkce související s typem, který slouží k vystavení a implementují funkce a chování objektů a typy.
 ms.date: 05/16/2016
-ms.openlocfilehash: 02d5a7d22d1ce79a06e15462637c373b33623f61
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 03150cc67f79bfde58cf27e4a9d4dfa9e9ff3f55
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44253205"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614022"
 ---
 # <a name="methods"></a>Metody
 
@@ -59,7 +59,7 @@ Non-inline metod může být použité rekurzivně v rámci typu; není nutné e
 
 ## <a name="instance-methods"></a>Instance metody
 
-Instance metody jsou deklarovány pomocí `member` – klíčové slovo a *vlastní identifikátor*, následované tečkou (.) a název metody a parametrů. Stejně jako v případě pro `let` vazeb *seznam parametrů* může být vzoru. Obvykle použijte metodu, kterou parametry v závorkách v podobě řazené kolekce členů, což je způsob, jak metody se zobrazí v jazyce F# při jejich vytváření v jiných jazycích rozhraní .NET Framework. Ale curryfikované formuláře (parametry oddělené mezerami) je také obvyklé a dalších vzorech jsou také podporovány.
+Instance metody jsou deklarovány pomocí `member` – klíčové slovo a *vlastní identifikátor*, následované tečkou (.) a název metody a parametrů. Stejně jako v případě pro `let` vazeb *seznam parametrů* může být vzoru. Obvykle, použijte metodu parametry v závorkách v podobě řazené kolekce členů, což je způsob, jak metody se zobrazí v F# když jsou vytvořeny v jiných jazycích rozhraní .NET Framework. Ale curryfikované formuláře (parametry oddělené mezerami) je také obvyklé a dalších vzorech jsou také podporovány.
 
 Následující příklad ukazuje definici a využívání instance neabstraktní metoda.
 
@@ -97,11 +97,11 @@ Následující příklad ukazuje odvozené třídy, která přepíše metodu zá
 
 ## <a name="overloaded-methods"></a>Přetížené metody
 
-Přetížené metody jsou metody, které mají stejný název v daného typu, ale mají různé argumenty. V jazyce F# jsou volitelné argumenty obvykle používají místo přetížené metody. Ale přetížené metody jsou povoleny v jazyce, za předpokladu, že jsou argumenty v podobě řazené kolekce členů, není curryfikované formuláře.
+Přetížené metody jsou metody, které mají stejný název v daného typu, ale mají různé argumenty. V F#, volitelné argumenty se obvykle používají místo přetížené metody. Ale přetížené metody jsou povoleny v jazyce, za předpokladu, že jsou argumenty v podobě řazené kolekce členů, není curryfikované formuláře.
 
 ## <a name="optional-arguments"></a>Nepovinné argumenty.
 
-Od verze F# 4.1, můžete mít také volitelné argumenty s výchozí hodnotou parametru do metody.  Toto je usnadňují spolupráci s kódem C#.  Následující příklad ukazuje syntaxi:
+Počínaje F# 4.1, je také možné volitelné argumenty s výchozí hodnotou parametru do metody.  Toto je usnadňují spolupráci s kódem C#.  Následující příklad ukazuje syntaxi:
 
 ```fsharp
 // A class with a method M, which takes in an optional integer argument.

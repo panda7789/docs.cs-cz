@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8e5e33cd3d250b26f0a83a87c4f7ce438af22e96
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d4189efbab9bfc85b6a992934604d5071a767163
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745887"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612540"
 ---
 # <a name="ltdisablefusionupdatesfromadmanagergt-element"></a>&lt;disablefusionupdatesfromadmanager –&gt; – Element
-Určuje, zda je výchozí chování, které je umožnit runtime hostitelů pro přepsání nastavení konfigurace pro doménu aplikace, zakázána.  
+Určuje, zda je výchozí chování, které je umožnit hostitelský modul runtime pro přepsání nastavení konfigurace pro doménu aplikace, zakázáno.  
   
- \<Konfigurace > elementu  
-\<modul runtime > elementu  
+ \<Konfigurace > – Element  
+\<modul runtime > – Element  
 \<disablefusionupdatesfromadmanager – >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Určuje, zda je výchozí chování, které je umožnit runtime hostitelů pro p
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|povoleno|Požadovaný atribut.<br /><br /> Určuje, zda je výchozí možnost pro přepsání nastavení Fusion zakázána.|  
+|Povoleno|Požadovaný atribut.<br /><br /> Určuje, zda je výchozí možnost přepsat nastavení Fusion zakázaný.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Možnost pro přepsání nastavení Fusion nezakazujte. Toto je výchozí chování, počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
-|1|Zakažte možnost pro přepsání nastavení Fusion. To obnoví chování starší verze rozhraní .NET Framework.|  
+|0|Nezakazujte přepsat nastavení Fusion. Jedná se o výchozí chování, počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|1|Zakážete možnost přepsat nastavení Fusion. To obnoví na chování starších verzích rozhraní .NET Framework.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,18 +54,18 @@ Určuje, zda je výchozí chování, které je umožnit runtime hostitelů pro p
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], výchozí chování je umožnit <xref:System.AppDomainManager> objekt, který chcete přepsat nastavení konfigurace pomocí <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodu <xref:System.AppDomainSetup> objekt, který je předán do vaší implementace z <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metoda ve vašem podtřídou třídy <xref:System.AppDomainManager>. Pro výchozí doménu aplikace potlačí nastavení, která můžete změnit nastavení, která měla určeného konfiguračního souboru aplikace. Pro ostatní domény aplikace, se přepíší nastavení konfigurace, které byly předány <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metoda.  
+ Počínaje [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], výchozí chování je umožnit <xref:System.AppDomainManager> určeného k přepsání nastavení konfigurace s použitím <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost nebo <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metodu <xref:System.AppDomainSetup> objekt, který je předán vaší implementace nástroje <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metodu do vaší podtřídy aplikace <xref:System.AppDomainManager>. Pro výchozí domény aplikace přepíší nastavení, které můžete změnit nastavení zadané v konfiguračním souboru aplikace. Pro další aplikační domény, mohou přepsat nastavení konfigurace, které bylo předáno <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metody.  
   
- Můžete předat nové informace o konfiguraci, nebo zadejte hodnotu null (`Nothing` v jazyce Visual Basic) k odstranění informace o konfiguraci, která byla předána.  
+ Můžete předat nové informace o konfiguraci, nebo předat hodnotu null (`Nothing` v jazyce Visual Basic) Chcete-li odstranit informace o konfiguraci, která byla předána.  
   
- Nepředávejte informace o konfiguraci na obě <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost a <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda. Pokud předáte i informace o konfiguraci, informace můžete předat <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost je ignorována, protože <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda přepsání informace o konfiguraci z konfiguračního souboru aplikace. Pokud použijete <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost, můžete předat hodnotu null (`Nothing` v jazyce Visual Basic) k <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda odstranit všechny konfigurace bajtů, které byly zadány ve volání <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> metoda.  
+ Nepředávejte informace o konfiguraci pro obě <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost a <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda. Pokud předáte informace o konfiguraci na obě, informace můžete předat <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastnost se ignoruje, protože <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metoda přepíše informace o konfiguraci z konfiguračního souboru aplikace. Pokud používáte <xref:System.AppDomainSetup.ConfigurationFile%2A> vlastností, můžete předat hodnotu null (`Nothing` v jazyce Visual Basic) na <xref:System.AppDomainSetup.SetConfigurationBytes%2A> metody, chcete-li odstranit všechny konfigurace bajtů, které byly zadány při volání <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> nebo <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> – metoda.  
   
- Kromě informací o konfiguraci, můžete změnit na následující nastavení <xref:System.AppDomainSetup> objekt, který je předán do vaší implementace nástroje <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metoda: <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>, <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A>, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, <xref:System.AppDomainSetup.DynamicBase%2A>, <xref:System.AppDomainSetup.LoaderOptimization%2A>, <xref:System.AppDomainSetup.PrivateBinPath%2A>, <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>, <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, a <xref:System.AppDomainSetup.ShadowCopyFiles%2A>.  
+ Kromě informací o konfiguraci, můžete změnit následující nastavení na <xref:System.AppDomainSetup> objekt, který je předán implementaci <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> metoda: <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>, <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A>, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, <xref:System.AppDomainSetup.DynamicBase%2A>, <xref:System.AppDomainSetup.LoaderOptimization%2A>, <xref:System.AppDomainSetup.PrivateBinPath%2A>, <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>, <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, a <xref:System.AppDomainSetup.ShadowCopyFiles%2A>.  
   
- Jako alternativu k použití `<disableFusionUpdatesFromADManager>` elementu, můžete zakázat výchozí chování vytvořením nastavení registru nebo nastavením proměnné prostředí. V registru, vytvořte hodnotu DWORD s názvem `COMPLUS_disableFusionUpdatesFromADManager` pod `HKCU\Software\Microsoft\.NETFramework` nebo `HKLM\Software\Microsoft\.NETFramework`a nastavte hodnotu na 1. Na příkazovém řádku, nastavte proměnnou prostředí `COMPLUS_disableFusionUpdatesFromADManager` na 1.  
+ Jako alternativu k použití `<disableFusionUpdatesFromADManager>` element, můžete zakázat výchozí chování vytvořením nastavení registru nebo nastavením proměnné prostředí. V registru, vytvořte hodnotu DWORD s názvem `COMPLUS_disableFusionUpdatesFromADManager` pod `HKCU\Software\Microsoft\.NETFramework` nebo `HKLM\Software\Microsoft\.NETFramework`a nastavte hodnotu na 1. Na příkazovém řádku, nastavte proměnnou prostředí `COMPLUS_disableFusionUpdatesFromADManager` na hodnotu 1.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat možnost pro přepsání nastavení Fusion pomocí `<disableFusionUpdatesFromADManager>` elementu.  
+ Následující příklad ukazuje, jak zakázat pomocí přepsání nastavení Fusion `<disableFusionUpdatesFromADManager>` elementu.  
   
 ```xml  
 <configuration>  
@@ -76,6 +76,6 @@ Určuje, zda je výchozí chování, které je umožnit runtime hostitelů pro p
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

@@ -10,27 +10,27 @@ helpviewer_keywords:
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 05ab0874c980d9e6138ae2bfd720c6d89628613c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d5728bac27ae7de649806a3e026bb16560fffefa
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393270"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613216"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Sandboxing je postup spuštění kódu v prostředí s omezeným přístupem, což omezí přístup oprávnění udělená kód. Například pokud máte spravovanou knihovnu ze zdroje, kterému nedůvěřujete úplně, nespouštějte ji jako plně důvěryhodná. Místo toho byste měli umístit kód do izolovaného prostoru, který omezuje její oprávnění na ty, které očekáváte potřebovat (například <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění).  
+ Izolace (sandbox) je spouštění kódu v prostředí s omezeným přístupem, který omezuje oprávnění udělená kódu. Například pokud máte spravované knihovny ze zdroje, kterému nedůvěřujete úplně, byste neměli spouštět ji jako plně důvěryhodné. Místo toho by měl umístit kódu v izolovaném prostoru, který omezuje oprávnění pro ty, které očekáváte, že bude potřebovat (například <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění).  
   
- Sandboxing můžete také použít k testování kódu, které budete distribuovat, který se spustí v prostředí částečně důvěryhodné.  
+ Izolace (sandbox) můžete také použít k testování kódu, který budete distribuovat, který se spustí v prostředí částečně důvěryhodných.  
   
- <xref:System.AppDomain> Je účinný způsob poskytování izolovaném prostoru pro spravované aplikace. Aplikační domény, které se používají pro spuštění částečně důvěryhodného kódu mají oprávnění definující k chráněným prostředkům, které jsou k dispozici při spuštění v rámci které <xref:System.AppDomain>. Kód, který běží v rámci <xref:System.AppDomain> je svázaná s oprávnění spojená s <xref:System.AppDomain> a je povolen přístup pouze zadané prostředky. <xref:System.AppDomain> Také zahrnuje <xref:System.Security.Policy.StrongName> pole, které se používá k identifikaci sestavení, které mají být načteny jako plně důvěryhodná. To umožňuje Tvůrce <xref:System.AppDomain> spustit novou doménu v izolovaném prostoru, která umožňuje konkrétní podpůrné sestavení být plně důvěryhodné. Další možností pro načtení sestavení jako plně důvěryhodné je umístit do globální mezipaměti sestavení; ale, který načte sestavení jako plně důvěryhodný ve všech doménách aplikací vytvořených v tomto počítači. Seznam silných názvů podporujících za-<xref:System.AppDomain> rozhodnutí, která poskytuje více omezující stanovení.  
+ <xref:System.AppDomain> Nabízí efektivní způsob poskytování sandboxu pro spravované aplikace. Aplikační domény, které se používají pro spuštění částečně důvěryhodného kódu mají oprávnění, které definují chráněné prostředky, které jsou k dispozici při spuštění v rámci, která <xref:System.AppDomain>. Kód, který běží v rámci <xref:System.AppDomain> oprávnění spojená s vázán <xref:System.AppDomain> a je povolen přístup pouze zadané prostředky. <xref:System.AppDomain> Zahrnuje také <xref:System.Security.Policy.StrongName> pole, které slouží k identifikaci sestavení, které mají být načteno jako plně důvěryhodné. To umožňuje Tvůrce <xref:System.AppDomain> spustit novou doménu v izolovaném prostoru, který umožňuje konkrétní pomocné rutiny sestavení být plně důvěryhodné. Další možností pro načtení sestavení jako plně důvěryhodné je umístit je do globální mezipaměti sestavení; Nicméně, který načte sestavení jako plně důvěryhodný ve všech doménách aplikace vytvořené v tomto počítači. Seznam silných názvů podporuje za-<xref:System.AppDomain> rozhodnutí, která poskytuje více omezující rozhodnutí.  
   
- Můžete použít <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody k zadání oprávnění nastavená pro aplikace, které běží v izolovaném prostoru. Toto přetížení umožňuje určit přesnou úroveň zabezpečení přístupu kódu, které chcete. Sestavení, která jsou načtena do <xref:System.AppDomain> pomocí tohoto přetížení, mohou mít buď zadaný udělit pouze nastavena, nebo může být plně důvěryhodná. Sestavení jsou udělena úplný vztah důvěryhodnosti, pokud je v globální mezipaměti sestavení nebo uvedené v `fullTrustAssemblies` ( <xref:System.Security.Policy.StrongName>) parametr pole. Pouze sestavení, které jsou známé jako plně důvěryhodný pro by měla být přidány do `fullTrustAssemblies` seznamu.  
+ Můžete použít <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> přetížení metody k určení oprávnění nastavena pro aplikace, které běží v izolovaném prostoru. Toto přetížení umožňuje určit přesnou úroveň zabezpečení přístupu kódu, který chcete. Sestavení, která jsou načtena do <xref:System.AppDomain> pomocí tohoto přetížení, mohou mít buď zadaný jenom sada udělení oprávnění, nebo může být plně důvěryhodné. Sestavení je udělena úplná důvěryhodnost, pokud se nachází v globální mezipaměti sestavení nebo uvedené v `fullTrustAssemblies` ( <xref:System.Security.Policy.StrongName>) parametr pole. Pouze sestavení, které jsou známé jako plně důvěryhodné by měl být přidány do `fullTrustAssemblies` seznamu.  
   
  Přetížení má následující podpis:  
   
-```  
+```csharp
 AppDomain.CreateDomain( string friendlyName,  
                         Evidence securityInfo,  
                         AppDomainSetup info,  
@@ -38,24 +38,24 @@ AppDomain.CreateDomain( string friendlyName,
                         params StrongName[] fullTrustAssemblies);  
 ```  
   
- Parametry <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody zadejte název <xref:System.AppDomain>, důkaz pro <xref:System.AppDomain>, <xref:System.AppDomainSetup> objekt, který identifikuje základní aplikace pro izolovaný prostor, používat sadu oprávnění a silné názvy pro plně důvěryhodný pro sestavení.  
+ Parametry pro <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody zadejte název <xref:System.AppDomain>, legitimaci <xref:System.AppDomain>, <xref:System.AppDomainSetup> objekt, který identifikuje základní aplikace izolovaného prostoru, oprávnění nastaveno na používání a silných názvů pro plně důvěryhodných sestavení.  
   
- Z bezpečnostních důvodů základní aplikace zadané v `info` parametr nesmí být základ aplikace pro hostitelskou aplikaci.  
+ Z bezpečnostních důvodů základ cesty aplikace podle `info` parametr nemůže být pro hostitelskou aplikaci základu cesty aplikace.  
   
- Pro `grantSet` parametr, můžete zadat sadu oprávnění, kterou jste vytvořili explicitně nebo standardní oprávnění, vytvořená <xref:System.Security.SecurityManager.GetStandardSandbox%2A> metoda.  
+ Pro `grantSet` parametr, můžete zadat sadu oprávnění, kterou jste vytvořili explicitně nebo standardní oprávnění vytvořená <xref:System.Security.SecurityManager.GetStandardSandbox%2A> metody.  
   
- Na rozdíl od většiny <xref:System.AppDomain> načte, důkaz pro <xref:System.AppDomain> (poskytnutá `securityInfo` parametr) neslouží k určení grant nastavit pro částečně důvěryhodné sestavení. Místo toho je nezávisle určena podle `grantSet` parametr. Důkaz však lze použít k jiným účelům, jako je například určení rozsahu izolovaného úložiště.  
+ Na rozdíl od většiny <xref:System.AppDomain> důkaz pro načtení <xref:System.AppDomain> (které poskytuje `securityInfo` parametr) se používá k určení udělenou sadu pro částečně důvěryhodná sestavení. Místo toho je nezávisle určena podle `grantSet` parametru. Legitimace však lze použít pro jiné účely, jako je například určování rozsahu izolovaného úložiště.  
   
-### <a name="to-run-an-application-in-a-sandbox"></a>Spuštění aplikace v izolovaném prostoru  
+### <a name="to-run-an-application-in-a-sandbox"></a>Ke spuštění aplikace v izolovaném prostoru  
   
-1.  Vytvořte sadu udělit oprávnění k nedůvěryhodné aplikaci oprávnění. Minimální oprávnění můžete udělit je <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění. Můžete také udělit další oprávnění, které se domníváte, že může být bezpečné pro přístup z nedůvěryhodné kódu; například <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Následující kód vytvoří novou sadu s pouze oprávnění <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění.  
+1.  Vytvořte sadu nedůvěryhodné aplikaci udělit oprávnění. Je minimální oprávnění může udělit <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění. Můžete také udělit další oprávnění, které si myslíte, že může být bezpečné pro nedůvěryhodný kód; například <xref:System.Security.Permissions.IsolatedStorageFilePermission>. Následující kód vytvoří nová sada oprávnění s pouze <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> oprávnění.  
   
-    ```  
+    ```csharp
     PermissionSet permSet = new PermissionSet(PermissionState.None);  
     permSet.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));  
     ```  
   
-     Alternativně můžete použít existující sadu s názvem oprávnění, jako je Internet.  
+     Alternativně můžete použít existující sadu pojmenovaných oprávnění, jako je například Internet.  
   
     ```  
     Evidence ev = new Evidence();  
@@ -63,28 +63,28 @@ AppDomain.CreateDomain( string friendlyName,
     PermissionSet internetPS = SecurityManager.GetStandardSandbox(ev);  
     ```  
   
-     <xref:System.Security.SecurityManager.GetStandardSandbox%2A> Metoda vrací buď `Internet` sadě oprávnění nebo `LocalIntranet` sady v závislosti na zónu důkazy oprávnění. <xref:System.Security.SecurityManager.GetStandardSandbox%2A> také vytvoří oprávnění identity pro některé objekty důkaz předané jako odkazy.  
+     <xref:System.Security.SecurityManager.GetStandardSandbox%2A> Metoda vrátí buď `Internet` sadu oprávnění nebo `LocalIntranet` sadu v závislosti na zóně legitimace oprávnění. <xref:System.Security.SecurityManager.GetStandardSandbox%2A> také vytvoří identitu oprávnění pro některé objekty důkazy předané jako odkazy.  
   
-2.  Podepisování sestavení, které obsahuje hostující třídy (s názvem `Sandboxer` v tomto příkladu), který volá kód nedůvěryhodné. Přidat <xref:System.Security.Policy.StrongName> použité k podepsání sestavení do <xref:System.Security.Policy.StrongName> pole `fullTrustAssemblies` parametr <xref:System.AppDomain.CreateDomain%2A> volání. Hostující třídy musí běžet jako plně důvěryhodná, chcete-li povolit spuštění částečně důvěryhodného kódu nebo nabízí služby do aplikace s částečným vztahem důvěryhodnosti. Toto je, jak číst <xref:System.Security.Policy.StrongName> sestavení:  
+2.  Podepište sestavení obsahující hostující třídy (s názvem `Sandboxer` v tomto příkladu), která volá nedůvěryhodného kódu. Přidat <xref:System.Security.Policy.StrongName> použitý k podepsání sestavení <xref:System.Security.Policy.StrongName> pole `fullTrustAssemblies` parametr <xref:System.AppDomain.CreateDomain%2A> volání. Hostující třídy musí běžet jako plně důvěryhodné povolit spuštění částečně důvěryhodného kódu nebo chcete nabízet služby do aplikace částečným vztahem důvěryhodnosti. To je, jak číst <xref:System.Security.Policy.StrongName> sestavení:  
   
-    ```  
+    ```csharp
     StrongName fullTrustAssembly = typeof(Sandboxer).Assembly.Evidence.GetHostEvidence<StrongName>();  
     ```  
   
-     Sestavení rozhraní .NET framework, jako je například mscorlib a System.dll není nutné přidat do seznamu plné důvěryhodnosti, protože jsou načteny jako plně důvěryhodné z globální mezipaměti sestavení.  
+     Sestavení rozhraní .NET framework, jako je například mscorlib a System.dll, není potřeba přidat do seznamu úplného vztahu důvěryhodnosti, protože pocházejí z globální mezipaměti sestavení načteno jako plně důvěryhodné.  
   
-3.  Inicializace <xref:System.AppDomainSetup> parametr <xref:System.AppDomain.CreateDomain%2A> metoda. Pomocí tohoto parametru, můžete řídit mnoho nastavení nového <xref:System.AppDomain>. <xref:System.AppDomainSetup.ApplicationBase%2A> Vlastnost je důležité nastavení a měl by být odlišný od <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost <xref:System.AppDomain> hostitelské aplikace. Pokud <xref:System.AppDomainSetup.ApplicationBase%2A> nastavení jsou stejné, částečně důvěryhodné aplikace můžete získat hostitelskou aplikaci k načtení (jako je plně důvěryhodná) výjimku definuje, tedy zneužít. To je další důvod, proč se nedoporučuje catch (výjimek). Nastavení aplikace základní hostitele odlišně od základní aplikace v izolovaném prostoru aplikace snižuje riziko zneužití.  
+3.  Inicializovat <xref:System.AppDomainSetup> parametr <xref:System.AppDomain.CreateDomain%2A> metody. S tímto parametrem, můžete řídit celou řadu z nastavení nového <xref:System.AppDomain>. <xref:System.AppDomainSetup.ApplicationBase%2A> Vlastnost je důležitá nastavení a musí být odlišný od <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost <xref:System.AppDomain> hostitelské aplikace. Pokud <xref:System.AppDomainSetup.ApplicationBase%2A> nastavení jsou stejné, částečným vztahem důvěryhodnosti aplikace můžete získat hostitelskou aplikaci k načtení (jako plně důvěryhodné) definuje, tedy zneužít výjimky. To je další důvod, proč se nedoporučuje catch (exception). Nastavení aplikace base hostitele odlišně od základ cesty aplikace z aplikace v izolovaném prostoru snižuje riziko zneužití.  
   
-    ```  
+    ```csharp
     AppDomainSetup adSetup = new AppDomainSetup();  
     adSetup.ApplicationBase = Path.GetFullPath(pathToUntrusted);  
     ```  
   
-4.  Volání <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody pro vytvoření domény aplikace pomocí parametrů jsme určili.  
+4.  Volání <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> přetížení metody k vytvoření domény aplikace pomocí parametrů jsme určili.  
   
-     Podpis pro tuto metodu je:  
+     Signatura pro tuto metodu je:  
   
-    ```  
+    ```csharp
     public static AppDomain CreateDomain(string friendlyName,   
         Evidence securityInfo, AppDomainSetup info, PermissionSet grantSet,   
         params StrongName[] fullTrustAssemblies)  
@@ -92,95 +92,95 @@ AppDomain.CreateDomain( string friendlyName,
   
      Další informace:  
   
-    -   Toto je pouze přetížení <xref:System.AppDomain.CreateDomain%2A> metody, která přijímá <xref:System.Security.PermissionSet> jako parametr a tedy pouze přetížení, které vám umožní načtení aplikace v nastavení částečným vztahem důvěryhodnosti.  
+    -   Toto je pouze přetížení <xref:System.AppDomain.CreateDomain%2A> metodu, která přebírá <xref:System.Security.PermissionSet> jako parametr a tedy pouze přetížení, která umožňuje načtení aplikace v částečným vztahem důvěryhodnosti nastavení.  
   
-    -   `evidence` Parametr se nepoužívá k výpočtu sady oprávnění; slouží k určení dalších funkcí rozhraní .NET Framework.  
+    -   `evidence` Parametr se používá k výpočtu sadu oprávnění, se používá k identifikaci dalších funkcí rozhraní .NET Framework.  
   
     -   Nastavení <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost `info` parametr je povinný pro toto přetížení.  
   
-    -   `fullTrustAssemblies` Parametr má `params` – klíčové slovo, což znamená, že není potřeba vytvořit <xref:System.Security.Policy.StrongName> pole. Je povoleno předávání 0, 1 nebo více silných názvů jako parametry.  
+    -   `fullTrustAssemblies` Parametr má `params` – klíčové slovo, což znamená, že není nutné vytvořit <xref:System.Security.Policy.StrongName> pole. Předejte 0, 1 nebo více silných názvů jako parametry je povolen.  
   
     -   Kód k vytvoření domény aplikace je:  
   
-    ```  
+    ```csharp
     AppDomain newDomain = AppDomain.CreateDomain("Sandbox", null, adSetup, permSet, fullTrustAssembly);  
     ```  
   
-5.  Načtěte kód do sandboxing <xref:System.AppDomain> kterou jste vytvořili. Tento krok můžete provést dvěma způsoby:  
+5.  Načíst kód do sandboxing <xref:System.AppDomain> , kterou jste vytvořili. To lze provést dvěma způsoby:  
   
     -   Volání <xref:System.AppDomain.ExecuteAssembly%2A> metodu pro sestavení.  
   
-    -   Použití <xref:System.Activator.CreateInstanceFrom%2A> metodu pro vytvoření instance třídy odvozené od <xref:System.MarshalByRefObject> v novém <xref:System.AppDomain>.  
+    -   Použití <xref:System.Activator.CreateInstanceFrom%2A> metodu pro vytvoření instance třídy odvozené z <xref:System.MarshalByRefObject> na novém <xref:System.AppDomain>.  
   
-     Druhá metoda je vhodnější, protože umožňuje jednodušší předat parametry do nového <xref:System.AppDomain> instance. <xref:System.Activator.CreateInstanceFrom%2A> Metoda obsahuje dvě důležité funkce:  
+     Druhý způsob je vhodnější, protože usnadňuje pro předání parametrů do nového <xref:System.AppDomain> instance. <xref:System.Activator.CreateInstanceFrom%2A> Metoda obsahuje dvě důležité funkce:  
   
-    -   Můžete použít základu kódu, který odkazuje na umístění, které neobsahuje vaše sestavení.  
+    -   Můžete použít, který odkazuje na umístění, které vaše sestavení neobsahuje základ kódu.  
   
-    -   Můžete provést vytvoření v rámci <xref:System.Security.CodeAccessPermission.Assert%2A> pro plné důvěryhodnosti (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), který umožňuje vytvořit instanci kritické třídy. (K tomu dojde vždy, když vaše sestavení nemá žádné označení transparentnosti a je načteno jako plně důvěryhodná.) Proto musíte vytvořit pouze kód, kterému důvěřujete pomocí této funkce pečlivě, a doporučujeme vytvořit pouze instance tříd plně důvěryhodných v nové doméně aplikace.  
+    -   Vám pomůžou vytvářet v rámci <xref:System.Security.CodeAccessPermission.Assert%2A> pro plnou důvěryhodnost (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), což vám umožní vytvořit instanci třídy kritické. (Tento proces probíhá vždy sestavení nemá žádné označení transparentnosti a je načteno jako plně důvěryhodné.) Proto budete muset pečlivě vytvořit pouze kód, kterému důvěřujete s touto funkcí a doporučujeme vytvořit pouze instance plně důvěryhodné tříd v nové doméně aplikace.  
   
-    ```  
+    ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  
     newDomain, typeof(Sandboxer).Assembly.ManifestModule.FullyQualifiedName,  
            typeof(Sandboxer).FullName );  
     ```  
   
-     Všimněte si, že k vytvoření instance třídy v nové doméně, třída má rozšíření <xref:System.MarshalByRefObject> – třída  
+     Všimněte si, že k vytvoření instance třídy v nové doméně, třída má rozšířit <xref:System.MarshalByRefObject> třídy  
   
-    ```  
+    ```csharp
     class Sandboxer:MarshalByRefObject  
     ```  
   
-6.  Rozbalení novou instanci domény do odkaz v této doméně. Tento odkaz se používá k provedení nedůvěryhodný kód.  
+6.  Rozbalení novou instanci domény do odkazu v této doméně. Tento odkaz se používá ke spuštění nedůvěryhodného kódu.  
   
-    ```  
+    ```csharp
     Sandboxer newDomainInstance = (Sandboxer) handle.Unwrap();  
     ```  
   
-7.  Volání `ExecuteUntrustedCode` metoda v instanci systému `Sandboxer` třídy, kterou jste právě vytvořili.  
+7.  Volání `ExecuteUntrustedCode` metoda v instanci aplikace `Sandboxer` třídy, které jste právě vytvořili.  
   
-    ```  
+    ```csharp
     newDomainInstance.ExecuteUntrustedCode(untrustedAssembly, untrustedClass, entryPoint, parameters);  
     ```  
   
-     Toto volání se spustí v doméně aplikace v izolovaném prostoru, který má omezená oprávnění.  
+     Toto volání je proveden v doméně aplikace v izolovaném prostoru, který má omezená oprávnění.  
   
-    ```  
+    ```csharp
     public void ExecuteUntrustedCode(string assemblyName, string typeName, string entryPoint, Object[] parameters)  
+    {  
+        //Load the MethodInfo for a method in the new assembly. This might be a method you know, or   
+        //you can use Assembly.EntryPoint to get to the entry point in an executable.  
+        MethodInfo target = Assembly.Load(assemblyName).GetType(typeName).GetMethod(entryPoint);  
+        try  
         {  
-            //Load the MethodInfo for a method in the new assembly. This might be a method you know, or   
-            //you can use Assembly.EntryPoint to get to the entry point in an executable.  
-            MethodInfo target = Assembly.Load(assemblyName).GetType(typeName).GetMethod(entryPoint);  
-            try  
-            {  
-                // Invoke the method.  
-                target.Invoke(null, parameters);  
-            }  
-            catch (Exception ex)  
-            {  
-            //When information is obtained from a SecurityException extra information is provided if it is   
-            //accessed in full-trust.  
-                (new PermissionSet(PermissionState.Unrestricted)).Assert();  
-                Console.WriteLine("SecurityException caught:\n{0}", ex.ToString());  
-    CodeAccessPermission.RevertAssert();  
-                Console.ReadLine();  
-            }  
+            // Invoke the method.  
+            target.Invoke(null, parameters);  
         }  
+        catch (Exception ex)  
+        {  
+        //When information is obtained from a SecurityException extra information is provided if it is   
+        //accessed in full-trust.  
+            new PermissionSet(PermissionState.Unrestricted).Assert();  
+            Console.WriteLine("SecurityException caught:\n{0}", ex.ToString());  
+            CodeAccessPermission.RevertAssert();  
+            Console.ReadLine();  
+        }  
+    }  
     ```  
   
-     <xref:System.Reflection> slouží k získání popisovače metody v částečně důvěryhodné sestavení. Popisovač slouží ke spouštění kódu bezpečným způsobem s minimálními oprávněními.  
+     <xref:System.Reflection> slouží k získání popisovače metody v částečně důvěryhodné sestavení. Popisovač lze použít ke spouštění kódu vytvořeného bezpečným způsobem s minimálními oprávněními.  
   
-     V předchozí kód, Upozorňujeme <xref:System.Security.PermissionSet.Assert%2A> plná oprávnění před tiskem <xref:System.Security.SecurityException>.  
+     V předchozím kódu, mějte na paměti <xref:System.Security.PermissionSet.Assert%2A> oprávnění plné důvěryhodnosti před tiskem <xref:System.Security.SecurityException>.  
   
+    ```csharp
+    new PermissionSet(PermissionState.Unrestricted).Assert()  
     ```  
-    new PermissionSet(PermissionState.Unrestricted)).Assert()  
-    ```  
   
-     Assert plné důvěryhodnosti se používá k získání rozšířených informací z <xref:System.Security.SecurityException>. Bez <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.SecurityException.ToString%2A> metodu <xref:System.Security.SecurityException> zjistí, že je částečně důvěryhodného kódu v zásobníku a omezí vrácené informace. To může způsobit problémy se zabezpečením, pokud částečně důvěryhodný kód mohl přečíst informace, ale riziko zmírnit neudělením <xref:System.Security.Permissions.UIPermission>. Assert plné důvěryhodnosti měli šetřit a jenom v případě, že jste si jisti, že nejsou povolení částečně důvěryhodný kód ke zvýšení oprávnění na úplný vztah důvěryhodnosti. Platí pravidlo upravit kód, který si nejste jisti, ve stejné funkci a po volání požadavku pro úplný vztah důvěryhodnosti. Je dobrým zvykem vždy vrátit assert po dokončení jeho použití.  
+     Kontrolní výraz úplného vztahu důvěryhodnosti se používá k získání rozšířené informace z <xref:System.Security.SecurityException>. Bez <xref:System.Security.PermissionSet.Assert%2A>, <xref:System.Security.SecurityException.ToString%2A> metoda <xref:System.Security.SecurityException> zjistí, že je částečně důvěryhodného kódu v zásobníku a omezí vrácené informace. To může způsobit problémy se zabezpečením, pokud částečně důvěryhodného kódu, které může číst informace, ale riziko zmírnit neudělením <xref:System.Security.Permissions.UIPermission>. Kontrolní výraz úplného vztahu důvěryhodnosti měly používat střídmě, a pouze v případě, že jste si jisti, že nepovoluje částečně důvěryhodného kódu zvýšit oprávnění na úplný vztah důvěryhodnosti. Zpravidla Nevolejte kód, který nedůvěřujete ve stejné funkci a po volání assert pro úplný vztah důvěryhodnosti. Je vhodné po dokončení jeho použití se vždycky vrátit assert.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad implementuje podle postupu v předchozím oddílu. V příkladu projekt s názvem `Sandboxer` v sadě Visual Studio řešení obsahuje také projekt s názvem `UntrustedCode`, který implementuje třídu `UntrustedClass`. Tento scénář předpokládá, že jste si stáhli sestavení knihovny obsahující metodu, která zpět `true` nebo `false` indikující, zda počet jste zadali, je Fibonacciho číslo. Místo toho metodu pokusí přečíst soubor z vašeho počítače. Následující příklad ukazuje kód nedůvěryhodné.  
+ V následujícím příkladu se implementuje podle postupu v předchozí části. V tomto příkladu projekt s názvem `Sandboxer` řešení v sadě Visual Studio, také obsahuje projekt s názvem `UntrustedCode`, který implementuje třídu `UntrustedClass`. Tento scénář předpokládá, že jste si stáhli sestavení knihovny obsahující metodu, která se očekává navrácení `true` nebo `false` označující, zda číslo jste zadali, je Fibonacciho číslo. Místo toho metodu se pokusí přečíst soubor z vašeho počítače. Následující příklad ukazuje nedůvěryhodný kód.  
   
-```  
+```csharp
 using System;  
 using System.IO;  
 namespace UntrustedCode  
@@ -200,7 +200,7 @@ namespace UntrustedCode
   
  Následující příklad ukazuje `Sandboxer` aplikační kód, který provede nedůvěryhodný kód.  
   
-```  
+```csharp
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -264,7 +264,7 @@ class Sandboxer : MarshalByRefObject
         {  
             // When we print informations from a SecurityException extra information can be printed if we are   
             //calling it with a full-trust stack.  
-            (new PermissionSet(PermissionState.Unrestricted)).Assert();  
+            new PermissionSet(PermissionState.Unrestricted).Assert();  
             Console.WriteLine("SecurityException caught:\n{0}", ex.ToString());  
             CodeAccessPermission.RevertAssert();  
             Console.ReadLine();  

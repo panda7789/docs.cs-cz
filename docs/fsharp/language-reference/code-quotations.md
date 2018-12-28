@@ -1,13 +1,13 @@
 ---
-title: Uvozovky kódu (F#)
+title: Uvozovky kódu
 description: Další informace o F# uvozovky kódu, funkce jazyka, která umožňuje generovat a pracovat s F# kódu výrazy prostřednictvím kódu programu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 565fd2a07c617d156f1d43f94a7cb98fc22f1401
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: aa8a17eb8f9837ca4023abc552a6aac063117e96
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150775"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614295"
 ---
 # <a name="code-quotations"></a>Uvozovky kódu
 

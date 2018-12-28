@@ -1,13 +1,13 @@
 ---
-title: Řazené kolekce členů (F#)
-description: Další informace o F# záznam, seskupení nepojmenované ale seřazené hodnoty, může být různých typů.
+title: Řazené kolekce členů
+description: Další informace o F# řazené kolekce členů, seskupení nepojmenované ale seřazené hodnoty, může být různých typů.
 ms.date: 05/16/2016
-ms.openlocfilehash: e7628e4c4b538c2fe52fca25d2597b10fec28d1c
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: a1fc31d4dc97c0921545e53b91dcde0547002006
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43749220"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611045"
 ---
 # <a name="tuples"></a>Řazené kolekce členů
 
@@ -22,7 +22,7 @@ struct(element, ... ,element )
 
 ## <a name="remarks"></a>Poznámky
 
-Každý *element* v předchozí syntaxi, může být libovolný platný výraz F#.
+Každý *element* v předchozí syntaxi může být libovolný platný F# výrazu.
 
 ## <a name="examples"></a>Příklady
 
@@ -88,7 +88,7 @@ int * float * string
 
 ## <a name="interoperation-with-c-tuples"></a>Vzájemná spolupráce s řazenými kolekcemi členů jazyka C#
 
-C# 7.0 seznámili s řazenými kolekcemi členů jazyka.  Řazené kolekce členů v C# jsou struktury a je stejná u strukturovaných řazených kolekcí členů v jazyce F#.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s jazykem C#, je nutné použít strukturovaných řazených kolekcí členů.
+C# 7.0 seznámili s řazenými kolekcemi členů jazyka.  Řazené kolekce členů v C# jsou struktury a je stejná u strukturovaných řazených kolekcí členů v F#.  Pokud potřebujete zajistit vzájemnou funkční spolupráci s jazykem C#, je nutné použít strukturovaných řazených kolekcí členů.
 
 To je jednoduché.  Představte si například, že je nutné předat řazené kolekce členů třídy C# a jeho výsledek, který je zároveň řazené kolekce členů je pak využívat:
 
@@ -103,7 +103,7 @@ namespace CSharpTupleInterop
 }
 ```
 
-V kódu F# můžete poté předat řazené kolekce členů struktury jako parametr a využívat výsledek v podobě řazené kolekce členů struktury.
+Ve vaší F# kódu, můžete předat jako parametr řazené kolekce členů struktury a využívat výsledek v podobě řazené kolekce členů struktury.
 
 ```fsharp
 open TupleInterop
@@ -126,7 +126,7 @@ Třeba vzor odpovídající jedna n-tice a druhý s základní části vytvořit
 
 Tato část vysvětluje formě řazené kolekce členů, když jsou kompilovány.  Tyto informace tady není nutné číst, pokud se zaměřujete na rozhraní .NET Framework 3.5 nebo nižší.
 
-Řazené kolekce členů jsou kompilovány do jednoho z několika obecných typů všechny pojmenované objekty `System.Tuple`, které jsou přetížené Arita nebo počtu parametrů typu. Při zobrazení z jiného jazyka, jako je C# nebo Visual Basic, nebo pokud používáte nástroj, který nemá žádné informace o konstrukce jazyka F# se zobrazí typy řazené kolekce členů v tomto formuláři. `Tuple` Typy byly zavedeny v rozhraní .NET Framework 4. Pokud se zaměřujete na starší verzi rozhraní .NET Framework, kterou kompilátor používá verze [System.Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) z 2.0 verze základní knihovny F#. Typy v této knihovně se používají pouze pro aplikace, které se zaměřují 2.0, 3.0 a 3.5 verze rozhraní .NET Framework. Předávání typů slouží k zajištění binární kompatibilitu mezi komponenty rozhraní .NET Framework 2.0 a .NET Framework 4 F#.
+Řazené kolekce členů jsou kompilovány do jednoho z několika obecných typů všechny pojmenované objekty `System.Tuple`, které jsou přetížené Arita nebo počtu parametrů typu. Typy řazené kolekce členů se zobrazí v tomto formuláři při zobrazení je z jiného jazyka, jako například C# nebo Visual Basic, nebo pokud používáte nástroj, který nemá žádné informace o F# vytvoří. `Tuple` Typy byly zavedeny v rozhraní .NET Framework 4. Pokud se zaměřujete na starší verzi rozhraní .NET Framework, kterou kompilátor používá verze [System.Tuple](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) z verze 2.0 F# Core Library. Typy v této knihovně se používají pouze pro aplikace, které se zaměřují 2.0, 3.0 a 3.5 verze rozhraní .NET Framework. Předávání typů se používá k zajištění binární kompatibilitu mezi rozhraní .NET Framework 2.0 a .NET Framework 4 F# komponenty.
 
 ### <a name="compiled-form-of-struct-tuples"></a>Zkompilovaná forma strukturovaných řazených kolekcí členů
 

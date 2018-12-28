@@ -1,15 +1,15 @@
 ---
-title: 'Explicitní pole: Klíčové slovo val (F#)'
-description: Další informace o F# "val" klíčové slovo, které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.
+title: 'Explicitní pole: Val – klíčové slovo'
+description: Další informace o F# klíčové slovo "val", které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 9cd06f7e90192be79490dd0ff67f118cce4339c3
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 492541f6eeba94d2177e92de935fa524b9def567
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45746363"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53773624"
 ---
-# <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Klíčové slovo val
+# <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Val – klíčové slovo
 
 `val` – Klíčové slovo se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury, bez jeho inicializaci. Umístění úložiště, které jsou deklarovány tímto způsobem se nazývají *explicitní pole*. Další používání `val` – klíčové slovo se používá současně se `member` – klíčové slovo Chcete-li deklarovat automaticky implementované vlastnosti. Další informace o automaticky implementovaných vlastností najdete v tématu [vlastnosti](properties.md).
 
@@ -46,7 +46,7 @@ Následující kód ukazuje použití explicitní pole a pro porovnání, `let` 
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6701.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 11 12 abc
@@ -65,7 +65,11 @@ Následující kód ukazuje použití explicitní pole ve struktuře. Vzhledem k
 
 Výstup je `11 xyz`.
 
-Explicitní pole nejsou určené pro běžné použití. Obecně platí, pokud je to možné, abyste používali `let` vazby ve třídě místo explicitní pole. Explicitní pole jsou užitečné v některých případech interoperability, například když je třeba definovat strukturu, která se použije v vyvolání platformy volání nativního rozhraní API, nebo ve scénářích vzájemné spolupráce COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nutné explicitní pole je při práci F# generátoru kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečné pro proměnné statická na úrovni vlákna nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
+**Mějte na paměti,**, pokud se chystáte inicializace struktury s `mutable` pole bez `mutable` – klíčové slovo, přiřazení bude fungovat na kopii struktury, které budou okamžitě po přiřazení zahozeny. Proto nedojde ke změně struktury.
+
+[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6704.fs)]
+
+Explicitní pole nejsou určené pro běžné použití. Obecně platí, pokud je to možné, abyste používali `let` vazby ve třídě místo explicitní pole. Explicitní pole jsou užitečné v některých případech interoperability, například když je třeba definovat strukturu, která se použije v vyvolání platformy volání nativního rozhraní API, nebo ve scénářích vzájemné spolupráce COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nutné explicitní pole je při práci s F# generátoru kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečné pro proměnné statická na úrovni vlákna nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
 
 Když klíčová slova `member val` pohromadě v definici typu, je to definice automaticky implementované vlastnosti. Další informace najdete v tématu [vlastnosti](properties.md).
 

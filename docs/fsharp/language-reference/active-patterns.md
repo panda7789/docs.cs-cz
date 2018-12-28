@@ -1,13 +1,13 @@
 ---
-title: Aktivní vzorky (F#)
-description: Další informace o použití aktivní vzory definovat pojmenované oddíly, které rozdělit vstupní data v programovacím jazyce F#.
+title: Aktivní vzorky
+description: Zjistěte, jak můžete definovat pojmenované oddíly, které rozdělit vstupní data v aktivní vzory F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: 4fb7d3e2b9c7e6f1c1ed9d64a47728c7f40017c8
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: c830011b69809bd399aab0c8a8bc25d40d5c82cc
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48838309"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612839"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
@@ -90,7 +90,7 @@ Při použití částečné aktivní vzory, někdy jednotlivé volby lze nesouvi
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 
-Výstup vypadá takto:
+Výstup je následující:
 
 ```
 1
