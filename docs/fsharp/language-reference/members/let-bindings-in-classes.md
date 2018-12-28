@@ -1,17 +1,17 @@
 ---
-title: Vazby let ve třídách (F#)
-description: Zjistěte, jak definovat privátní pole a soukromé funkce pro třídy F# s použitím "let" vazby v definici třídy.
+title: Vazby let ve třídách
+description: Zjistěte, jak definovat privátní pole a soukromé funkce pro F# třídy pomocí vazeb let' v definici třídy.
 ms.date: 05/16/2016
-ms.openlocfilehash: 237eb98a57571a21c9187abf31f05160374cf4fc
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 03dd583a141971284e6a8ddaad02272236cd1e4c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48033217"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611123"
 ---
 # <a name="let-bindings-in-classes"></a>Vazby let ve třídách
 
-Můžete definovat privátní pole a soukromé funkce pro třídy F# s použitím `let` vazby v definici třídy.
+Můžete definovat privátní pole a soukromé funkce pro F# třídy pomocí `let` vazby v definici třídy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,7 +45,7 @@ Výstup je následující.
 
 ## <a name="alternative-ways-to-create-fields"></a>Alternativní způsoby, jak vytvořit pole
 
-Můžete také použít `val` – klíčové slovo vytvořit soukromé pole. Při použití `val` – klíčové slovo, pole není zadána hodnota, pokud objekt je vytvořen, ale místo toho se inicializuje s výchozí hodnotou. Další informace najdete v tématu [explicitní pole: val – klíčové slovo](explicit-fields-the-val-keyword.md).
+Můžete také použít `val` – klíčové slovo vytvořit soukromé pole. Při použití `val` – klíčové slovo, pole není zadána hodnota, pokud objekt je vytvořen, ale místo toho se inicializuje s výchozí hodnotou. Další informace najdete v tématu [explicitní pole: Val – klíčové slovo](explicit-fields-the-val-keyword.md).
 
 Můžete také definovat privátní pole v třídě pomocí definice členské a přidáním klíčového slova `private` na definici. To může být užitečné, pokud očekáváte, změňte přístupnost člena bez přepsání kódu. Další informace najdete v tématu [řízení přístupu](../access-control.md).
 

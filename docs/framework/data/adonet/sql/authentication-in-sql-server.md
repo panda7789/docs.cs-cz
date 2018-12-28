@@ -2,12 +2,12 @@
 title: Ověřování v systému SQL Server
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 8d7fcb149059c06b7875663e4df5272312121c87
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0172259446724e0be85bd7ca2d15cf299db04e27
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521514"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613099"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v systému SQL Server
 SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  
@@ -19,7 +19,7 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 > [!IMPORTANT]
 >  Doporučujeme používat ověřování Windows, kdykoli je to možné. Ověřování Windows k ověřování uživatelů v systému SQL Server používá řadu šifrované zprávy. Při přihlášení serveru SQL Server jsou používány, jsou předány přihlašovací jména systému SQL Server a šifrovaná hesla přes síť, což je méně bezpečné.  
   
- Uživatelé s ověřováním Windows, se už přihlásili do Windows a není nutné samostatně přihlášení k SQL serveru. Následující `SqlConnection.ConnectionString` Určuje ověřování Windows, aniž by uživatelské jméno nebo heslo.  
+ Uživatelé s ověřováním Windows, se už přihlásili do Windows a není nutné samostatně přihlášení k SQL serveru. Následující `SqlConnection.ConnectionString` Určuje ověřování Windows, aniž by uživatelé museli zadat uživatelské jméno nebo heslo.  
   
 ```  
 "Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;  
@@ -72,7 +72,7 @@ SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a 
 >  Zřetězení řetězců připojení ze vstupu uživatele můžete nechat je zranitelný vůči útoku prostřednictvím injektáže řetězec připojení. Použití <xref:System.Data.SqlClient.SqlConnectionStringBuilder> k vytváření syntakticky správný připojovací řetězce v době běhu. Další informace najdete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  

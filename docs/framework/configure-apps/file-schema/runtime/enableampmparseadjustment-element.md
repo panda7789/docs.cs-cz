@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b17f521be31fa4082d9418c7dad734e37994bbb5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cf56a2720ab407d05b8356280913445c15a17020
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752816"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611071"
 ---
 # <a name="ltenableampmparseadjustmentgt-element"></a>&lt;EnableAmPmParseAdjustment&gt; – Element
-Určuje, zda datum a čas analýza metody použít upravenou sadu pravidel analyzovat data řetězce, které obsahují den, měsíc, hodinu a označení dop. / odp.  
+Určuje, zda analýzy metody data a času použít upravenou sadu pravidel k parsování řetězců kalendářních dat, které obsahují den, měsíc, hodinu a označení dopoledne/odpoledne.  
   
  \<Konfigurace >  
  \<modul runtime >  
@@ -31,14 +31,14 @@ Určuje, zda datum a čas analýza metody použít upravenou sadu pravidel analy
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda datum a čas analýza metody používat upravenou sadu pravidel analyzovat data řetězce, které obsahují pouze den, měsíc, hodinu a označení dop. / odp.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, jestli analýzy metody data a času použít upravenou sadu pravidel k parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
   
 ### <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|0|Datum a čas analýza metody nepoužívejte upravenou pravidla pro Analýza řetězců data, které obsahují pouze den, měsíc, hodinu a označení dop. / odp.|  
-|1|Datum a čas analýza metody použít k analýze datum řetězce, které obsahují pouze den, měsíc, hodinu a označení dop. / odp upravenou pravidla.|  
+|0|Datum a čas analýze metody nepoužívejte upravené pravidla pro parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
+|1|Analýzy metody data a času pomocí upravené pravidel pro parsování řetězců kalendářních dat, které obsahují pouze den, měsíc, hodinu a označení dopoledne/odpoledne.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,7 +51,7 @@ Určuje, zda datum a čas analýza metody použít upravenou sadu pravidel analy
 |`runtime`|Obsahuje informace o možnostech inicializace modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<EnableAmPmParseAdjustment>` Element řídí, jak tyto metody analyzovat data řetězec, který obsahuje číslem dne a měsíce, za nímž následuje hodinu a označení dop. / odp (například "4/10 6 AM"):  
+ `<EnableAmPmParseAdjustment>` Prvek určuje, jak analyzovat řetězec data, který obsahuje číselné vyjádření dne a měsíce, za nímž následuje za hodinu a dopoledne/odpoledne (například "4/10 6 AM") v následujících metod:  
   
 -   <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
   
@@ -63,24 +63,24 @@ Určuje, zda datum a čas analýza metody použít upravenou sadu pravidel analy
   
 -   <xref:System.Convert.ToDateTime%2A?displayProperty=nameWithType>  
   
- Žádné jiné vzorce jsou vliv.  
+ Žádné jiné vzory jsou ovlivněny.  
   
  `<EnableAmPmParseAdjustment>` Element nemá žádný vliv <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>, a <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> metody.  
   
 > [!IMPORTANT]
->  V .NET Core a .NET Native jsou ve výchozím nastavení povolené upravenou dop. / odp analýzy pravidla.  
+>  V .NET Core a .NET Native jsou ve výchozím nastavení povolené upravené pravidla analýzy dop. / odp.  
   
- Pokud není povolena analýza pravidlo úpravy, první číslice řetězce se interpretuje jako hodinu 12 hodin a zbytek řetězci s výjimkou dop. / odp označení je ignorováno. Datum a čas, vrátí metoda analýzy se skládá z aktuální datum a hodinu dne extrahovat z řetězce datum.  
+ Pokud není povolené analýzy pravidlo úpravy, první číslice řetězec je interpretován jako hodinu 12hodinový formát a zbytek řetězci s výjimkou dopoledne/odpoledne ignorováno. Datum a čas, vrátí metoda analýzy se skládá z aktuálního data a hodina dne z řetězce data extrahovat.  
   
- Pokud je povolena analýza pravidlo úpravy, analýza metoda interpretovat dne a měsíce jako náležící do aktuálního roku a interpretovat dobu jako hodinu 12 hodin.  
+ Pokud je povolené analýzy pravidlo úpravy, při analýze metody interpretovat den a měsíc jako patřící do aktuálního roku a interpretovat jako hodina 12hodinový formát času.  
   
- Následující tabulka ukazuje rozdíly <xref:System.DateTime> hodnotu v případě <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> je metoda použitá k analýze řetězec "" 4/10 6 AM"s `<EnableAmPmParseAdjustment>` elementu `enabled` vlastnost nastavena na hodnotu"0"nebo"1". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazuje datum, jako kdyby je naformátovaný pomocí řetězce formátu "G" zadanou jazykovou verzi.  
+ Následující tabulka ukazuje rozdíly <xref:System.DateTime> hodnotu v případě <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> metoda se používá pro analýzu řetězce "" 4/10 6 AM"s `<EnableAmPmParseAdjustment>` elementu `enabled` vlastnost nastavena na"0"nebo"1". Předpokládá, že dnešní datum je 5. ledna 2017 a zobrazí datum, jako kdyby je naformátována pomocí řetězec formátu "G" zadanou jazykovou verzi.  
   
-|Název jazykové verze|Povolit = "0"|Povolit = "1"|  
+|Název jazykové verze|povoleno = "0"|povoleno = "1"|  
 |------------------|------------------|------------------|  
-|en US|1/5/2017 4:00:00: 00|4/10/2017 6:00:00: 00|  
+|en-US|1. 5. 2017 4:00:00: 00|4/10/2017 6:00:00: 00|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
 ## <a name="see-also"></a>Viz také  
- [\<modul runtime > elementu](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)  
- [\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
+- [\<modul runtime > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)  
+- [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)

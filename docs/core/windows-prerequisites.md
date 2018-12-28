@@ -1,13 +1,13 @@
 ---
 title: Předpoklady pro .NET Core ve Windows
 description: Informace v závislosti na vaší Windows potřebujete počítač pro vývoj a spouštění aplikací .NET Core.
-ms.date: 12/10/2018
-ms.openlocfilehash: 764d36300c5d3a4ae3a64e816dbc956d1a9411d4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.date: 12/14/2018
+ms.openlocfilehash: 2209c6e74413204c38ba54ffc538846f27d0bdf6
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240642"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656112"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -35,11 +35,12 @@ Také, pokud vyvíjíte ve Windows pomocí sady Visual Studio 2017, [požadavky 
 
 Následující články obsahují úplný seznam operačních systémů nepodporuje .NET Core na verze:
 
+* [.NET core 3.0 (Preview)](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md)
 * [.NET core 2.2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md)
 * [.NET core 2.1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md)
 * [.NET core 1.0](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0-supported-os.md)
 
-Odkazy ke stažení a další informace najdete v tématu [stáhne .NET](https://www.microsoft.com/net/download) ke stažení nejnovější verze nebo [.NET stáhne archivu](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
+Odkazy ke stažení a další informace najdete v tématu [stáhne .NET](https://dotnet.microsoft.com/download) ke stažení nejnovější verze nebo [.NET stáhne archivu](https://dotnet.microsoft.com/download/archives#dotnet-core) pro starší verze.
 
 ## <a name="net-core-dependencies"></a>.NET core závislosti
 
@@ -61,8 +62,12 @@ Při spuštění na verzích Windows starších než Windows 10 a Windows server
 >
 > Kromě KB2999226, ujistěte se, že budete mít taky [KB2533623](https://support.microsoft.com/en-us/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) nainstalované. Pokud nemáte k dispozici tato aktualizace instalována, zobrazí se zpráva podobná následující při spuštění aplikace rozhraní .NET Core: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
-## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky sady Visual Studio 2017
+## <a name="prerequisites-for-net-core-30-preview-1"></a>Předpoklady pro .NET Core 3.0 ve verzi Preview 1
 
+.NET core 3.0 ve verzi Preview 1 má stejné požadavky jako v jiných verzích .NET Core. Ale pokud budete chtít použít Visual Studio k vytvoření aplikace .NET Core 3.0 projektů, je nutné použít [Visual Studio 2019 Preview](https://visualstudio.microsoft.com/vs/preview/). Visual Studio. 2019 Preview může být nainstalovaná – souběžně s jinými verzemi nástroje Visual Studio bez konfliktu.
+
+## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky sady Visual Studio 2017
+    
 Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .NET Core SDK. Visual Studio 2017 poskytuje integrované vývojové prostředí pro aplikace .NET Core ve Windows.
 
 Další informace o změnách v sadě Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).

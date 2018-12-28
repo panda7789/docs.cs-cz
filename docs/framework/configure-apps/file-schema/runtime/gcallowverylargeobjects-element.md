@@ -1,5 +1,5 @@
 ---
-title: '&lt;gcallowverylargeobjects –&gt; – Element'
+title: '&lt;gcAllowVeryLargeObjects&gt; – Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - gcAllowVeryLargeObjects element
@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 750b0dbc925ec484dd80e1796ba991435e354709
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: a5e0a443f86848a446a7233a2c2e80f693cae9be
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745224"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53611409"
 ---
-# <a name="ltgcallowverylargeobjectsgt-element"></a>&lt;gcallowverylargeobjects –&gt; – Element
+# <a name="ltgcallowverylargeobjectsgt-element"></a>&lt;gcAllowVeryLargeObjects&gt; – Element
 Na 64bitových platformách povoluje pole, jejichž celková velikost je větší než 2 gigabajty (GB).  
   
- \<Konfigurace > elementu  
-\<modul runtime > elementu  
-\<gcallowverylargeobjects – > elementu  
+ \<Konfigurace > – Element  
+\<modul runtime > – Element  
+\<gcAllowVeryLargeObjects > – Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -78,5 +78,5 @@ Na 64bitových platformách povoluje pole, jejichž celková velikost je větš�
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

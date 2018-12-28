@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54036baee6fc2d7af49e818a1c112dec8eac80aa
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: a5b0d3bfb7e4db2fec39f37c9fb794731cdf5bbc
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32744909"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613294"
 ---
 # <a name="ltdependentassemblygt-element"></a>&lt;dependentAssembly&gt; – Element
-Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Použijte jednu `dependentAssembly` element pro každé sestavení.  
+Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení. Použijte jednu `dependentAssembly` – element pro každé sestavení.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -43,10 +43,10 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento element musí být součástí každé `dependentAssembly` elementu.|  
-|`codeBase`|Určuje, kde modulu runtime můžete najít sdílené sestavení, pokud není nainstalovaná v počítači.|  
+|`assemblyIdentity`|Obsahuje identifikační informace o sestavení. Tento element musí být součástí každého `dependentAssembly` elementu.|  
+|`codeBase`|Určuje, kde modul runtime může najít sdílené sestavení, pokud není nainstalovaná na počítači.|  
 |`bindingRedirect`|Přesměruje jednu verzi sestavení k jiné.|  
-|`publisherPolicy`|Určuje, zda modul runtime platí pro toto sestavení zásady vydavatele.|  
+|`publisherPolicy`|Určuje, zda modul runtime použije zásady vydavatele pro toto sestavení.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -57,7 +57,7 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak má být zapouzdřena informací o sestavení pro dvě sestavení.  
+ Následující příklad ukazuje, jak zapouzdřit informace o sestavení pro dvě sestavení.  
   
 ```xml  
 <configuration>  
@@ -81,6 +81,6 @@ Zapouzdřuje pro jednotlivá sestavení zásady vazeb a umístění sestavení.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

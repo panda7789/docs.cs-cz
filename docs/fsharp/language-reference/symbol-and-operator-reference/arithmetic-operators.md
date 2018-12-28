@@ -1,13 +1,13 @@
 ---
-title: Aritmetické operátory (F#)
+title: Aritmetické operátory
 description: Další informace o aritmetických operátorů, které jsou k dispozici v F# programovací jazyk.
 ms.date: 04/04/2018
-ms.openlocfilehash: 2c0e2e25a4f79d00455d978e235e4bef16b52586
-ms.sourcegitcommit: 6ae7cdd0437a32884556dd4826ca90e957b7a4e3
+ms.openlocfilehash: 826f334125a542855bf2fda43465618403d49d4c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "45597424"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614581"
 ---
 # <a name="arithmetic-operators"></a>Aritmetické operátory
 

@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6988be28e3129748ee7f7996a66c728ccde3c70b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 59fe6beb359575c818131e1ae502fdebcec5096c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745380"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613749"
 ---
 # <a name="ltbypasstrustedappstrongnamesgt-element"></a>&lt;bypasstrustedappstrongnames –&gt; – Element
-Určuje, jestli se má vynechat ověřování silné názvy na plné důvěryhodnosti sestavení, která jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>.  
+Určuje, zda obejít ověřování silných názvů na plně důvěryhodných sestavení, která jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -37,14 +37,14 @@ Určuje, jestli se má vynechat ověřování silné názvy na plné důvěryhod
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda je povolena funkce jednorázové přihlášení, která zabraňuje ověřování silných názvů pro sestavení plné důvěryhodnosti. Pokud je tato funkce povolena, nejsou silné názvy ověřit správnost, když je načteno sestavení. Výchozí hodnota je `true`.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda je povolena funkce jednorázové přihlášení, které se vyhýbají ověřování silných názvů pro plně důvěryhodná sestavení. Pokud je tato funkce povolena, silné názvy nejsou ověřit správnost při sestavení je načteno. Výchozí hodnota je `true`.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`true`|Nejsou k ověřování podpisů silného názvu sestavení plné důvěryhodnosti při sestavení jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>. Toto nastavení je výchozí.|  
-|`false`|Jsou k ověřování podpisů silného názvu sestavení plné důvěryhodnosti při sestavení jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>. Podpis silného názvu, se kontroluje jenom na podpis správnost; není porovná jiné silný název pro shodu.|  
+|`true`|Podpisy silného názvu na sestavení s úplnou důvěryhodností nejsou ověřovány při sestavení jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>. Toto nastavení je výchozí.|  
+|`false`|Podpisy silného názvu na sestavení s úplnou důvěryhodností ověřovány při sestavení jsou načtena do plné důvěryhodnosti <xref:System.AppDomain>. Podpis silného názvu se kontroluje jenom u podpisu správnosti; není porovnání s jinou silným názvem pro shodu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,23 +57,23 @@ Určuje, jestli se má vynechat ověřování silné názvy na plné důvěryhod
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce obejití silného názvu zabraňuje režii ověřit podpis silného názvu sestavení plné důvěryhodnosti.  
+ Funkce obejití silného názvu se vyhnete režii ověření podpisu se silným názvem sestavení úplného vztahu důvěryhodnosti.  
   
- Funkce obcházení vztahuje na všechny sestavení, který je podepsaný se silným názvem, který má následující vlastnosti:  
+ Funkce obejití vztahuje na všechny sestavení je podepsáno silným názvem a, který má následující vlastnosti:  
   
--   Bez plně důvěryhodná <xref:System.Security.Policy.StrongName> důkaz (například má `MyComputer` zónu důkaz).  
+-   Bez plně důvěryhodné <xref:System.Security.Policy.StrongName> důkazy (třeba `MyComputer` legitimace zóny).  
   
 -   Načíst do plně důvěryhodné <xref:System.AppDomain>.  
   
--   Načtené z umístění v rámci <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost této <xref:System.AppDomain>.  
+-   Načtené z umístění pod <xref:System.AppDomainSetup.ApplicationBase%2A> vlastnost, která <xref:System.AppDomain>.  
   
--   Podepsáno bez zpoždění.  
+-   Není zpožděním.  
   
 > [!NOTE]
->  Pokud funkce jednorázové přihlášení je vypnutá pro všechny aplikace v počítači pomocí klíče registru, toto nastavení konfigurační soubor nemá žádný vliv. Další informace najdete v tématu [postupy: Zákaz funkce obejití silného názvu](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
+>  Pokud funkce obejití jsou vypnuté pro všechny aplikace na počítači s použitím klíče registru, toto nastavení konfigurační soubor nemá žádný vliv. Další informace najdete v tématu [jak: Zákaz funkce obejití silného názvu](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit způsob chování, která ověřuje podpis silného názvu sestavení plné důvěryhodnosti.  
+ Následující příklad ukazuje, jak můžete určit chování, která ověřuje podpis silného názvu v plně důvěryhodné sestavení.  
   
 ```xml  
 <configuration>  
@@ -84,6 +84,6 @@ Určuje, jestli se má vynechat ověřování silné názvy na plné důvěryhod
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Postupy: Zákaz funkce obejití silného názvu](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Postupy: Zákaz funkce obejití silného názvu](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)

@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f72bedbaaf0b15ade7ff6b7b8c3edcdfd3fda6d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: edf3fd9a4561677813adbfb970a9d6be43d7c83d
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749423"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612573"
 ---
 # <a name="ltthrowunobservedtaskexceptionsgt-element"></a>&lt;Throwunobservedtaskexceptions –&gt; – Element
-Určuje, zda úloha neošetřené výjimky by měl ukončit spuštěných procesů.  
+Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěnému procesu.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -38,14 +38,14 @@ Určuje, zda úloha neošetřené výjimky by měl ukončit spuštěných proces
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda úloha neošetřené výjimky by měl ukončit běžící proces.|  
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda úloh neošetřené výjimky by měla ukončit spuštěný proces.|  
   
 ## <a name="enabled-attribute"></a>Atribut enabled  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`false`|Nezavře běžící proces pro úloh neošetřené výjimce. Toto nastavení je výchozí.|  
-|`true`|Ukončí běžící proces pro úloh neošetřené výjimce.|  
+|`false`|Spuštěný proces pro nezpracovaná výjimka úlohy nebyl ukončen. Toto nastavení je výchozí.|  
+|`true`|Ukončí běžící proces pro nezpracovaná výjimka úlohy.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -59,22 +59,22 @@ Určuje, zda úloha neošetřené výjimky by měl ukončit spuštěných proces
 |||  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud výjimka, která je přidružena <xref:System.Threading.Tasks.Task> nebyla dodržena, není žádné <xref:System.Threading.Tasks.Task.Wait%2A> operace, nadřazený není připojený a <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> nebyla načtena vlastnost výjimku úlohy se považuje za zmeškané.  
+ Pokud výjimka, která je přidružena <xref:System.Threading.Tasks.Task> nebyla dodržena, neexistuje žádné <xref:System.Threading.Tasks.Task.Wait%2A> operace nadřazeného objektu není připojen a <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> nebyla načtena vlastnost výjimka úlohy se považuje za asynchronního nepozorovaného.  
   
- V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pomocí výchozí, pokud <xref:System.Threading.Tasks.Task> má zmeškané výjimkou je uvolnění z paměti, finalizační metodu vyvolá výjimku a ukončit proces. Ukončení procesu je určen podle načasování uvolňování paměti a dokončení.  
+ V [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], pokud výchozí <xref:System.Threading.Tasks.Task> , který má asynchronního nepozorovaného výjimka je uvolněna, finalizační metoda vyvolá výjimku a ukončí proces. Ukončení procesu se určuje podle načasování uvolňování paměti a finalizace.  
   
- Aby bylo snazší pro vývojáře k zápisu asynchronní kódu založené na úlohy, [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] změní toto výchozí chování pro zmeškané výjimky. Nepozorovaná výjimky způsobí <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> událost, která má být vyvolána, ale ve výchozím nastavení, není ukončit proces. Místo toho se výjimka ignoruje po událost se vyvolá, bez ohledu na to, jestli obslužná rutina události dodržuje výjimku.  
+ Aby bylo snazší pro vývojářům umožňuje psát asynchronní kód založený na úkolech, [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] změní toto výchozí chování pro asynchronního nepozorovaného výjimky. Nepozorované výjimky způsobí <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> událost, ale ve výchozím nastavení, se proces neukončí. Místo toho výjimka bude ignorována, jakmile se vyvolá událost, bez ohledu na to, zda obslužná rutina události dodržuje výjimku.  
   
- V [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], můžete použít [ \<throwunobservedtaskexceptions – > element](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace, aby [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] chování došlo k výjimce.  
+ V [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)], můžete použít [ \<throwunobservedtaskexceptions – > element](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) v konfiguračním souboru aplikace umožňuje [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] chování vyvolání výjimky.  
   
- Můžete také určit chování výjimka v jednom z následujících způsobů:  
+ Můžete také určit chování výjimky v jednom z následujících způsobů:  
   
 -   Nastavením proměnné prostředí `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
   
--   Nastavením registru DWORD hodnota throwunobservedtaskexceptions – = 1 v HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
+-   Nastavením registru typu DWORD hodnota throwunobservedtaskexceptions – = 1 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework klíč.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak povolit vyvolání výjimky v úlohách pomocí konfiguračního souboru aplikace.  
+ Následující příklad ukazuje, jak povolit vyvolání výjimek v úlohách pomocí konfiguračního souboru aplikace.  
   
 ```xml  
 <configuration>   
@@ -85,11 +85,11 @@ Určuje, zda úloha neošetřené výjimky by měl ukončit spuštěných proces
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak je vyvolána zmeškané výjimka z úlohy. Kód musí běžet jako vydaná program pracovat správně.  
+ Následující příklad ukazuje, jak je vyvolána nepozorovanou výjimku z úkolu. Kód musí běžet jako vydané program fungovat správně.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

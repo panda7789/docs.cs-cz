@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7dab1474454f8169d8d0d80413c6fb95677fb4bf
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: dc929aba10d8a18e2a084707b69d3fef5f91a701
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453388"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656359"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Přehled modelu programování s přidělenými atributy (MEF)
 V Managed Extensibility Framework (MEF), *programovací model* je konkrétní metoda definuje sadu rámcové objekty, na kterých pracuje MEF. Mezi tyto rámcové objekty patří částí, importy a exporty. MEF používá tyto objekty, ale není zadán, jak by měly být zastoupeny. Proto jsou celou řadu programovacích modelů je to možné, včetně přizpůsobit programovacích modelů.  
@@ -548,7 +548,7 @@ Public Class User
         logger = Nothing  
   
         For Each Plugin As Lazy(Of IPlugin, IPluginMetadata) In plugins  
-            If (Plugin.Metadata.Name = "Logger") Then  
+            If Plugin.Metadata.Name = "Logger" Then  
                 logger = Plugin.Value  
             End If  
         Next  
@@ -564,13 +564,14 @@ public class User
     [ImportMany]  
     public IEnumerable<Lazy<IPlugin, IPluginMetadata>> plugins;  
   
-    public IPlugin InstantiateLogger ()  
+    public IPlugin InstantiateLogger()  
     {  
         IPlugin logger = null;  
   
         foreach (Lazy<IPlugin, IPluginMetadata> plugin in plugins)  
         {  
-            if (plugin.Metadata.Name = "Logger") logger = plugin.Value;  
+            if (plugin.Metadata.Name == "Logger")
+                logger = plugin.Value;  
         }  
         return logger;  
     }  
@@ -958,4 +959,4 @@ public class PartSeven
   
 ## <a name="see-also"></a>Viz také  
  [Video pro kanál 9: Otevřete aplikací pomocí Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)  
- [Video pro kanál 9: Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)
+ [Video pro kanál 9: Rozhraní Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)

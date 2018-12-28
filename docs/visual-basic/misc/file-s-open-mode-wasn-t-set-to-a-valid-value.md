@@ -1,16 +1,16 @@
 ---
-title: Soubor&#39;s otevřete režimu wasn&#39;t nastavit na platnou hodnotu
+title: Režim otevření souboru nebyla nastavena na platnou hodnotu
 ms.date: 07/20/2015
 ms.assetid: 969541f6-9ff6-4804-ba61-0d17370060ef
-ms.openlocfilehash: be5c44def071577a82a648ee36935b69e5f00f2c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2d4c12aaffad9be961f501ada75b5ea54e598bf3
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33635903"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53761612"
 ---
-# <a name="file39s-open-mode-wasn39t-set-to-a-valid-value"></a>Soubor&#39;s otevřete režimu wasn&#39;t nastavit na platnou hodnotu
-Hodnota zadaná pro režim otevření souboru byl neplatný. V následující tabulce jsou platné hodnoty pro <xref:Microsoft.VisualBasic.OpenMode> výčtu.  
+# <a name="files-open-mode-wasnt-set-to-a-valid-value"></a>Režim otevření souboru nebyla nastavena na platnou hodnotu
+Hodnota zadaná pro režim otevření souboru nebyla platná. V následující tabulce jsou uvedeny platné hodnoty pro <xref:Microsoft.VisualBasic.OpenMode> výčtu.  
   
 |Hodnota|Režim|  
 |-----------|----------|  
@@ -22,7 +22,7 @@ Hodnota zadaná pro režim otevření souboru byl neplatný. V následující ta
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Ověření se zadaná hodnota pro režim otevření souboru.  
+-   Ověření se pro režim otevření souboru byla zadána hodnota.  
   
 ## <a name="see-also"></a>Viz také  
    

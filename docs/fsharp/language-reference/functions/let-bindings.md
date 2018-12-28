@@ -1,13 +1,13 @@
 ---
-title: let – vazby (F#)
-description: Další informace o použití jazyka F# nechat vazbu, která přidruží hodnotě nebo funkci identifikátor.
+title: let – vazby
+description: Další informace o použití F# "let" vazby, který přidruží k identifikátoru hodnotě nebo funkci.
 ms.date: 05/16/2016
-ms.openlocfilehash: 1a35b5a39f2768a18665b5c7fe768af0e7714577
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 45de82acf6f4423698cd8037266968e023f40dcb
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43777467"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612670"
 ---
 # <a name="let-bindings"></a>let – vazby
 
@@ -110,7 +110,7 @@ let function3 x =
     function1 x
 ```
 
-Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které vystavují musí být kvalifikován s názvem modulu. Tento atribut má například modulu F# seznam.
+Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které vystavují musí být kvalifikován s názvem modulu. Například F# seznamu modul nemá tento atribut.
 
 Další informace o modulů a řízení přístupu najdete v tématu [moduly](../modules.md) a [řízení přístupu](../access-control.md).
 

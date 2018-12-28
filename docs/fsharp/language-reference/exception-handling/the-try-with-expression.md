@@ -1,13 +1,13 @@
 ---
-title: 'Výjimky: Try... with – výraz (F#)'
+title: 'Výjimky: Try... with – výraz'
 description: Další informace o použití F# "try... with" výraz pro zpracování výjimek.
 ms.date: 05/16/2016
-ms.openlocfilehash: 946cf56f7abc4bd5e3a9f9acc52b868bd6c7f84a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 742e0b595525c69b83a55682c3c8b9b650326ac7
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127404"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614425"
 ---
 # <a name="exceptions-the-trywith-expression"></a>Výjimky: Try... with – výraz
 
