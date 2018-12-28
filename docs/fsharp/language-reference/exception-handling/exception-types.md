@@ -1,44 +1,44 @@
 ---
-title: Typy výjimek (F#)
-description: Zjistěte, jak definovat a používat typy výjimek F#.
+title: Typy výjimek
+description: Zjistěte, jak definovat a používat F# typy výjimek.
 ms.date: 05/16/2016
-ms.openlocfilehash: b8d648a3649153a3604856deb61ce41db8c40bf2
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: ed721dd0dc46a486fafeac2fa4c096800995ccb7
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43858818"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612826"
 ---
-# <a name="exception-types"></a><span data-ttu-id="8be67-103">Typy výjimek</span><span class="sxs-lookup"><span data-stu-id="8be67-103">Exception Types</span></span>
+# <a name="exception-types"></a><span data-ttu-id="09b41-103">Typy výjimek</span><span class="sxs-lookup"><span data-stu-id="09b41-103">Exception Types</span></span>
 
-<span data-ttu-id="8be67-104">Existují dvě kategorie výjimek v jazyce F#: typy výjimek .NET a typy výjimek F#.</span><span class="sxs-lookup"><span data-stu-id="8be67-104">There are two categories of exceptions in F#: .NET exception types and F# exception types.</span></span> <span data-ttu-id="8be67-105">Toto téma popisuje, jak definovat a používat typy výjimek F#.</span><span class="sxs-lookup"><span data-stu-id="8be67-105">This topic describes how to define and use F# exception types.</span></span>
+<span data-ttu-id="09b41-104">Existují dvě kategorie výjimek v F#: typy výjimek .NET a F# typy výjimek.</span><span class="sxs-lookup"><span data-stu-id="09b41-104">There are two categories of exceptions in F#: .NET exception types and F# exception types.</span></span> <span data-ttu-id="09b41-105">Toto téma popisuje, jak definovat a používat F# typy výjimek.</span><span class="sxs-lookup"><span data-stu-id="09b41-105">This topic describes how to define and use F# exception types.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8be67-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8be67-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="09b41-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="09b41-106">Syntax</span></span>
 
 ```fsharp
 exception exception-type of argument-type
 ```
 
-## <a name="remarks"></a><span data-ttu-id="8be67-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8be67-107">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="09b41-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="09b41-107">Remarks</span></span>
 
-<span data-ttu-id="8be67-108">V předchozí syntaxi *typ výjimky* je název nového F# výjimka typu, a *typ argumentu* představuje typ argumentu, který může být zadán při vyvolání výjimky tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="8be67-108">In the previous syntax, *exception-type* is the name of a new F# exception type, and *argument-type* represents the type of an argument that can be supplied when you raise an exception of this type.</span></span> <span data-ttu-id="8be67-109">Můžete zadat více argumentů pomocí typu řazené kolekce členů pro *typ argumentu*.</span><span class="sxs-lookup"><span data-stu-id="8be67-109">You can specify multiple arguments by using a tuple type for *argument-type*.</span></span>
+<span data-ttu-id="09b41-108">V předchozí syntaxi *typ výjimky* je název nové F# typ výjimky a *typ argumentu* představuje typ argumentu, který může být zadán při vyvolání výjimky tohoto typu.</span><span class="sxs-lookup"><span data-stu-id="09b41-108">In the previous syntax, *exception-type* is the name of a new F# exception type, and *argument-type* represents the type of an argument that can be supplied when you raise an exception of this type.</span></span> <span data-ttu-id="09b41-109">Můžete zadat více argumentů pomocí typu řazené kolekce členů pro *typ argumentu*.</span><span class="sxs-lookup"><span data-stu-id="09b41-109">You can specify multiple arguments by using a tuple type for *argument-type*.</span></span>
 
-<span data-ttu-id="8be67-110">Typické definici pro výjimku F# se podobá následující.</span><span class="sxs-lookup"><span data-stu-id="8be67-110">A typical definition for an F# exception resembles the following.</span></span>
+<span data-ttu-id="09b41-110">Typické definici F# výjimek má následující podobu.</span><span class="sxs-lookup"><span data-stu-id="09b41-110">A typical definition for an F# exception resembles the following.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5501.fs)]
 
-<span data-ttu-id="8be67-111">Výjimka tohoto typu můžete vygenerovat pomocí `raise` fungovat, následovně.</span><span class="sxs-lookup"><span data-stu-id="8be67-111">You can generate an exception of this type by using the `raise` function, as follows.</span></span>
+<span data-ttu-id="09b41-111">Výjimka tohoto typu můžete vygenerovat pomocí `raise` fungovat, následovně.</span><span class="sxs-lookup"><span data-stu-id="09b41-111">You can generate an exception of this type by using the `raise` function, as follows.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5502.fs)]
 
-<span data-ttu-id="8be67-112">Typ výjimky F# můžete použít přímo ve filtrech v `try...with` výrazu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="8be67-112">You can use an F# exception type directly in the filters in a `try...with` expression, as shown in the following example.</span></span>
+<span data-ttu-id="09b41-112">Můžete použít F# typ výjimky přímo do filtrů v `try...with` výrazu, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="09b41-112">You can use an F# exception type directly in the filters in a `try...with` expression, as shown in the following example.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5503.fs)]
 
-<span data-ttu-id="8be67-113">Typ výjimky, který definujete pomocí `exception` – klíčové slovo v jazyce F# je nový typ, který dědí z `System.Exception`.</span><span class="sxs-lookup"><span data-stu-id="8be67-113">The exception type that you define with the `exception` keyword in F# is a new type that inherits from `System.Exception`.</span></span>
+<span data-ttu-id="09b41-113">Typ výjimky, který definujete pomocí `exception` – klíčové slovo v F# je nový typ, který dědí z `System.Exception`.</span><span class="sxs-lookup"><span data-stu-id="09b41-113">The exception type that you define with the `exception` keyword in F# is a new type that inherits from `System.Exception`.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="8be67-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8be67-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="09b41-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="09b41-114">See also</span></span>
 
-- [<span data-ttu-id="8be67-115">Zpracování výjimek</span><span class="sxs-lookup"><span data-stu-id="8be67-115">Exception Handling</span></span>](index.md)
-- [<span data-ttu-id="8be67-116">Výjimky: `raise` – funkce</span><span class="sxs-lookup"><span data-stu-id="8be67-116">Exceptions: the `raise` Function</span></span>](the-raise-function.md)
-- [<span data-ttu-id="8be67-117">Hierarchie výjimek</span><span class="sxs-lookup"><span data-stu-id="8be67-117">Exception Hierarchy</span></span>](https://msdn.microsoft.com/library/z4c5tckx.aspx)
+- [<span data-ttu-id="09b41-115">Zpracování výjimek</span><span class="sxs-lookup"><span data-stu-id="09b41-115">Exception Handling</span></span>](index.md)
+- [<span data-ttu-id="09b41-116">Výjimky: `raise` – funkce</span><span class="sxs-lookup"><span data-stu-id="09b41-116">Exceptions: the `raise` Function</span></span>](the-raise-function.md)
+- [<span data-ttu-id="09b41-117">Hierarchie výjimek</span><span class="sxs-lookup"><span data-stu-id="09b41-117">Exception Hierarchy</span></span>](https://msdn.microsoft.com/library/z4c5tckx.aspx)
