@@ -1,32 +1,43 @@
 ---
 title: '&gt; Operator - C# odkaz'
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 12/18/2018
 f1_keywords:
 - '>_CSharpKeyword'
 helpviewer_keywords:
 - '> operator [C#]'
 - greater than operator (>) [C#]
 ms.assetid: 26d3cb69-9c0b-4cc5-858b-5be1abd6659d
-ms.openlocfilehash: 13ec8aa8a98984bc43a349369dd16364edf5cbf3
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 0c9d414d159b5e2f1faa24e9bd5f073d1ca874a4
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239583"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655969"
 ---
-# <a name="gt-operator-c-reference"></a><span data-ttu-id="e1f9e-102">&gt; – Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="e1f9e-102">&gt; Operator (C# Reference)</span></span>
-<span data-ttu-id="e1f9e-103">Všechny číselné a výčet typů definovat relační operátor "větší než" (`>`), která vrací `true` Pokud první operand je větší než druhý, `false` jinak.</span><span class="sxs-lookup"><span data-stu-id="e1f9e-103">All numeric and enumeration types define a "greater than" relational operator (`>`) that returns `true` if the first operand is greater than the second, `false` otherwise.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="e1f9e-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e1f9e-104">Remarks</span></span>  
- <span data-ttu-id="e1f9e-105">Lze přetěžovat uživatelsky definované typy `>` – operátor (viz [operátor](../../../csharp/language-reference/keywords/operator.md)).</span><span class="sxs-lookup"><span data-stu-id="e1f9e-105">User-defined types can overload the `>` operator (see [operator](../../../csharp/language-reference/keywords/operator.md)).</span></span> <span data-ttu-id="e1f9e-106">Pokud `>` je přetížena, [ < ](../../../csharp/language-reference/operators/less-than-operator.md) musí také být přetíženy.</span><span class="sxs-lookup"><span data-stu-id="e1f9e-106">If `>` is overloaded, [<](../../../csharp/language-reference/operators/less-than-operator.md) must also be overloaded.</span></span>
-  
-## <a name="example"></a><span data-ttu-id="e1f9e-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="e1f9e-107">Example</span></span>  
- [!code-csharp[csRefOperators#29](../../../csharp/language-reference/operators/codesnippet/CSharp/greater-than-operator_1.cs)]  
-  
-## <a name="see-also"></a><span data-ttu-id="e1f9e-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="e1f9e-108">See Also</span></span>
+# <a name="gt-operator-c-reference"></a><span data-ttu-id="3c871-102">&gt; – Operátor (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="3c871-102">&gt; Operator (C# Reference)</span></span>
 
-- [<span data-ttu-id="e1f9e-109">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e1f9e-109">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="e1f9e-110">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="e1f9e-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="e1f9e-111">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e1f9e-111">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)  
-- [<span data-ttu-id="e1f9e-112">explicit</span><span class="sxs-lookup"><span data-stu-id="e1f9e-112">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)
+<span data-ttu-id="3c871-103">Relační operátor "větší než" `>` vrátí `true` Pokud svůj první operand je větší než jeho druhým operandem, `false` jinak.</span><span class="sxs-lookup"><span data-stu-id="3c871-103">The "greater than" relational operator `>` returns `true` if its first operand is greater than its second operand, `false` otherwise.</span></span> <span data-ttu-id="3c871-104">Všechny typy číselné a výčet podporují `>` operátor.</span><span class="sxs-lookup"><span data-stu-id="3c871-104">All numeric and enumeration types support the `>` operator.</span></span> <span data-ttu-id="3c871-105">Pro operandy stejného [výčtu](../keywords/enum.md) porovnání typu hodnoty odpovídající základní celočíselného typu.</span><span class="sxs-lookup"><span data-stu-id="3c871-105">For operands of the same [enum](../keywords/enum.md) type, the corresponding values of the underlying integral type are compared.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="3c871-106">Pro relační operátory `==`, `>`, `<`, `>=`, a `<=`, pokud žádný z operandů není číslo (<xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType>) je výsledek operace `false`.</span><span class="sxs-lookup"><span data-stu-id="3c871-106">For relational operators `==`, `>`, `<`, `>=`, and `<=`, if any of the operands is not a number (<xref:System.Double.NaN?displayProperty=nameWithType> or <xref:System.Single.NaN?displayProperty=nameWithType>) the result of operation is `false`.</span></span> <span data-ttu-id="3c871-107">To znamená, že `NaN` hodnota není větší než, menší než, ani jakýkoli jiný roven `double` (nebo `float`) hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3c871-107">That means that the `NaN` value is neither greater than, less than, nor equal to any other `double` (or `float`) value.</span></span> <span data-ttu-id="3c871-108">Další informace a příklady najdete v tématu <xref:System.Double.NaN?displayProperty=nameWithType> nebo <xref:System.Single.NaN?displayProperty=nameWithType> článku.</span><span class="sxs-lookup"><span data-stu-id="3c871-108">For more information and examples, see the <xref:System.Double.NaN?displayProperty=nameWithType> or <xref:System.Single.NaN?displayProperty=nameWithType> reference article.</span></span>
+
+<span data-ttu-id="3c871-109">Následující příklad ukazuje použití `>` operátor:</span><span class="sxs-lookup"><span data-stu-id="3c871-109">The following example demonstrates the usage of the `>` operator:</span></span>
+
+[!code-csharp-interactive[greater than example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#Greater)]
+
+## <a name="operator-overloadability"></a><span data-ttu-id="3c871-110">Overloadability – operátor</span><span class="sxs-lookup"><span data-stu-id="3c871-110">Operator overloadability</span></span>
+
+<span data-ttu-id="3c871-111">Uživatelem definované typy lze [přetížení](../keywords/operator.md) `>` operátor.</span><span class="sxs-lookup"><span data-stu-id="3c871-111">User-defined types can [overload](../keywords/operator.md) the `>` operator.</span></span> <span data-ttu-id="3c871-112">Pokud typ přetížení operátoru "větší než" `>`, musíte také přetížit [operátor "menší než"](less-than-operator.md) `<`.</span><span class="sxs-lookup"><span data-stu-id="3c871-112">If a type overloads the "greater than" operator `>`, it must also overload the ["less than" operator](less-than-operator.md) `<`.</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="3c871-113">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3c871-113">C# language specification</span></span>
+
+<span data-ttu-id="3c871-114">Další informace najdete v tématu [relační a typové zkoušky operátory](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) část [ C# specifikace jazyka](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="3c871-114">For more information, see the [Relational and type-testing operators](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="3c871-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3c871-115">See also</span></span>
+
+- [<span data-ttu-id="3c871-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3c871-116">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="3c871-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="3c871-117">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="3c871-118">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3c871-118">C# Operators</span></span>](index.md)
+- [<span data-ttu-id="3c871-119">>= – operátor</span><span class="sxs-lookup"><span data-stu-id="3c871-119">>= Operator</span></span>](greater-than-equal-operator.md)
+- <xref:System.IComparable%601?displayProperty=nameWithType>
