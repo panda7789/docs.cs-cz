@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro vytváření balíčků nuget
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 8ac01046f25176b781240baeba8bf1efb9376689
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4f33c9993d8eef4b18823d5c16f9f51c06afae88
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129607"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614542"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -44,7 +44,7 @@ Závislosti balíčků NuGet je podrobně popsána v [závislosti](./dependencie
 
 ## <a name="important-nuget-package-metadata"></a>Důležitá metadata balíčku NuGet
 
-Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). Následující tabulka obsahuje základní metadata, která by měla poskytnout každý projekt open source:
+Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). Následující tabulka obsahuje základní metadata, která by měla poskytnout všech balíčků na NuGet.org:
 
 | Název vlastnosti nástroje MSBuild              | Název souboru Nuspec              | Popis  |
 | ---------------------------------- | ------------------------ | ------------ |
@@ -56,14 +56,12 @@ Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). N
 | `PackageTags`                      | `tags`                     | Mezerami oddělený seznam značek a klíčových slov, které popisují balíček. Značky se používají při vyhledávání balíčků.             |
 | `PackageIconUrl`                   | `iconUrl`                  | Adresa URL obrázku má použít jako ikona pro balíček. Adresa URL by měla být HTTPS a bitové kopie by měl být 64 x 64 a průhledné pozadí.             |
 | `PackageProjectUrl`                | `projectUrl`               | Adresa URL pro projekt domovskou stránku a zdrojového úložiště.             |
-| `PackageLicenseUrl`                | `licenseUrl`               | Adresa URL licence projektu. Může být adresa URL `LICENSE` soubor ve správě zdrojového kódu.             |
-
-**✔️ ZVAŽTE** zvolíte název balíčku NuGet s předponou, který splňuje rezervace předpony Nugetu [kritéria](/nuget/reference/id-prefix-reservation).
-
-**✔️ ZVAŽTE** pomocí `LICENSE` soubor ve správě zdrojového kódu, jako `LicenseUrl`. Například [LICENSE.md](https://github.com/JamesNK/Newtonsoft.Json/blob/c4af75c8e91ca0d75aa6c335e8c106780c4f7712/LICENSE.md).
+| `PackageLicenseExpression`         | `license`                  | Licence projektu [SPDX identifikátor](https://spdx.org/licenses/). Pouze OSI a FSF schválené licencí můžete použít identifikátor. Licence na ostatní používejte `PackageLicenseFile`. Další informace o [ `license` metadat](/nuget/reference/nuspec#license). |
 
 > [!IMPORTANT]
-> Projekt bez licence výchozí hodnota je [exkluzivní copyright](https://choosealicense.com/no-permission/), může znemožnit ostatním uživatelům.
+> Projekt bez licence výchozí hodnota je [exkluzivní copyright](https://choosealicense.com/no-permission/), může znemožnit právně pro používání jiným lidem.
+
+**✔️ ZVAŽTE** zvolíte název balíčku NuGet s předponou, který splňuje rezervace předpony Nugetu [kritéria](/nuget/reference/id-prefix-reservation).
 
 **PROVEĎTE ✔️** použít href HTTPS na ikonu vašeho balíčku.
 
@@ -73,9 +71,7 @@ Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). N
 
 **✔️ ZVAŽTE** nastavení [SourceLink](./sourcelink.md) přidat metadata ovládací prvek zdroje k sestavení a balíček NuGet.
 
-> Automaticky přidá SourceLink `RepositoryUrl` a `RepositoryType` metadata balíčku NuGet.
-> SourceLink přidá také informace o kódu konkrétním použitém zdroji balíčku byla vytvořena z.
-> Hodnota hash zápisu přidán jako metadata bude mít například balíček vytvořen z úložiště Git.
+> Automaticky přidá SourceLink `RepositoryUrl` a `RepositoryType` metadata balíčku NuGet. SourceLink přidá také informace o kódu konkrétním použitém zdroji balíčku byla vytvořena z. Hodnota hash zápisu přidán jako metadata bude mít například balíček vytvořen z úložiště Git.
 
 ## <a name="pre-release-packages"></a>Balíčky v předběžné verzi
 

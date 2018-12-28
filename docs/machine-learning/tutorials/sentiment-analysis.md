@@ -1,15 +1,15 @@
 ---
 title: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 description: Objevte, jak používat ML.NET ve scénáři binární klasifikace pochopit, jak pomocí mínění předpovědi proveďte příslušnou akci.
-ms.date: 11/06/2018
+ms.date: 12/20/2018
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: cffce6258685502191e1dd33ef8282d664ea2d4c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 90f3b79226b16ac1ea4cbbe49ce07d95a138323b
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149650"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53779136"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -122,7 +122,7 @@ Je potřeba vytvořit tři globální pole pro uložení cest k naposledy staže
 * `_trainDataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.
 * `_testDataPath` obsahuje cestu k datové sadě k vyhodnocení modelu.
 * `_modelPath` obsahuje cestu k uložení naučeného modelu.
-* `_reader` je <xref:Microsoft.ML.Runtime.Data.TextLoader> lze načíst a transformovat datové sady.
+* `_textLoader` je <xref:Microsoft.ML.Runtime.Data.TextLoader> lze načíst a transformovat datové sady.
 
 Přidejte následující kód na řádku vpravo nahoře `Main` metoda zadat tyto cesty a `_textLoader` proměnné:
 
@@ -216,7 +216,7 @@ Přidejte následující kód, který `Train` metody:
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Trénování modelu, <xref:Microsoft.ML.Runtime.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Runtime.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
+Trénování modelu, <xref:Microsoft.ML.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Runtime.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
 
 Přidejte následující kód, který `Train` metody:
 

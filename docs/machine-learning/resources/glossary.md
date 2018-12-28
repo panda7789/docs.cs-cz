@@ -2,13 +2,13 @@
 title: Machine learning Glosář - ML.NET
 description: Glosář důležité terminologie strojového učení, které jsou užitečné při vytváření vlastních modelů ML.NET.
 ms.custom: seodec18
-ms.date: 12/06/2018
-ms.openlocfilehash: 4db28a62fccca2e8bedc9f48485a61b6f4ab1801
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 12/20/2018
+ms.openlocfilehash: ac0671bbecda93c411d3be82c789f53beb10fbca
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150573"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53760390"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Machine learning Glosář termínů důležité
 
@@ -24,8 +24,6 @@ Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClass
 
 V [binární klasifikace](#binary-classification), metriku hodnocení, která je hodnota v oblasti pod křivkou, která ukazuje zeměpisný pravdivě pozitivní rychlost (na ose y) na míru falešně pozitivních výsledků (na ose x). Od 0,5 (nejhorších) do 1 (doporučené). Také oblasti pod křivkou roc s více TŘÍDAMI, například příjemce provozních charakteristik křivky. Další informace najdete v tématu [Receiver operating charakteristiku](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) článku na wikipedii.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.Auc?displayProperty=nameWithType>.
-
 ## <a name="binary-classification"></a>Binární klasifikace
 
 A [klasifikace](#classification) malá a velká where [popisek](#label) je pouze jedné ze dvou tříd. Další informace najdete v tématu [binární klasifikace](tasks.md#binary-classification) část [služby Machine learning úlohy](tasks.md) tématu.
@@ -37,8 +35,6 @@ Když se data používá k předpovědi kategorii, [pod dohledem strojového uč
 ## <a name="coefficient-of-determination"></a>Koeficient spolehlivosti
 
 V [regrese](#regression), metriku hodnocení, která určuje, jak dobře zapadá datového modelu. Rozsahu od 0 do 1. Hodnota 0 znamená, že data jsou náhodných nebo jinak nevejde do modelu. Hodnota 1 znamená, že model přesně odpovídá data. To se často označuje jako r<sup>2</sup>, R<sup>2</sup>, nebo spolehlivosti.
-
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.RSquared?displayProperty=nameWithType>.
 
 ## <a name="feature"></a>Funkce
 
@@ -52,8 +48,6 @@ Vytváření funkcí je proces, který zahrnuje definování sady [funkce](#feat
 
 V [klasifikace](#classification), vyhodnocení metriku, která vyrovnává [přesnost](#precision) a [spojené s vracením](#recall).
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.F1Score?displayProperty=nameWithType>.
-
 ## <a name="hyperparameter"></a>Hyperparameter
 
 Parametr algoritmu strojového učení. Mezi příklady patří počet stromů výuku v kurzech mooc rozhodovací les nebo velikost kroku sestupu algoritmu. Hodnoty *Hyperparameters* nastavují před trénování modelu a řídí proces hledání parametry funkce předpovědi, například porovnání body v rozhodovacím stromu nebo váhy v modelu lineární regrese . Další informace najdete v tématu [Hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) článku na wikipedii.
@@ -66,13 +60,9 @@ Elementu, který chcete předpovědět s modelem machine learning. Například p
 
 V [klasifikace](#classification), metriku hodnocení, který charakterizuje přesnost třídění. Menší ztráty protokolu je, přesnější třídění.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.LogLoss?displayProperty=nameWithType>.
-
 ## <a name="mean-absolute-error-mae"></a>Střední absolutní chyba (MAE)
 
 V [regrese](#regression), vyhodnocení metriky, které je průměrem všechny chyby modelu, kde je chyba modelu vzdálenost mezi předpokládané [popisek](#label) hodnota a hodnota správný popisek.
-
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.L1?displayProperty=nameWithType>.
 
 ## <a name="model"></a>Model
 
@@ -104,8 +94,6 @@ Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClass
 
 V [klasifikace](#classification), odvolání pro třídu je počet položek správně předpovědět jako patřící do této třídy dělený celkový počet položek, které ve skutečnosti patří do třídy.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.NegativeRecall?displayProperty=nameWithType>, <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.PositiveRecall?displayProperty=nameWithType>.
-
 ## <a name="regression"></a>Regrese
 
 A [pod dohledem strojového učení](#supervised-machine-learning) úloh, kde výstup je skutečné hodnoty, například, double. Příklady: předpověď cen akcií. Další informace najdete v tématu [regrese](tasks.md#regression) část [služby Machine learning úlohy](tasks.md) tématu.
@@ -121,8 +109,6 @@ V [regrese](#regression), metriku hodnocení, která je součet všech spolehliv
 ## <a name="root-of-mean-squared-error-rmse"></a>Kořen střední spolehlivosti chyby (RMSE)
 
 V [regrese](#regression), metriku hodnocení, která je druhá odmocnina průměru kvadratických chyb.
-
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.Rms?displayProperty=nameWithType>.
 
 ## <a name="supervised-machine-learning"></a>Technik strojového učení
 

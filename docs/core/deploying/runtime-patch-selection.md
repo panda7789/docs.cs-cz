@@ -1,16 +1,15 @@
 ---
 title: Modul runtime posunout vpřed pro nasazení samostatné aplikaci .NET Core.
 description: Další informace o dotnet publikovat změny pro samostatné nasazení.
-author: jralexander
-ms.author: kdollard
+author: KathleenDollard
 ms.date: 05/31/2018
 ms.custom: seodec18
-ms.openlocfilehash: dde00cf71f0d67c8c4380748e01a4ef5c17ebb4a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 9af1454ede03b277f9b1a10e1d99a997e38809ea
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126676"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656294"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Samostatná nasazení modulu runtime dopředné posunutí
 

@@ -1,29 +1,27 @@
 ---
-title: Členy (F#)
+title: Členové
 description: Další informace o členy objektu F# programovací jazyk.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6dcdb1d7fa061fb838d4aa8f7a2912fd168c3781
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: c32bd76ab60673563f0cc45ce0fb569b2ea262b9
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "33562203"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613138"
 ---
 # <a name="members"></a>Členové
 
 Tato část popisuje členy F# typy objektů.
 
-
 ## <a name="remarks"></a>Poznámky
+
 *Členové* jsou funkce, které jsou součástí definice typu a jsou deklarovány pomocí `member` – klíčové slovo. F#typy objektů, jako jsou záznamy, třídy, rozlišovaná sjednocení, rozhraní, a podporu členů struktury. Další informace najdete v tématu [záznamy](../records.md), [třídy](../classes.md), [Rozlišované sjednocení](../discriminated-Unions.md), [rozhraní](../interfaces.md), a [struktury](../structures.md).
 
 Členové obvykle tvoří veřejného rozhraní pro typ, který je důvod, proč jsou veřejné, pokud není uvedeno jinak. Členové mohou být deklarovány také soukromý nebo interní. Další informace najdete v tématu [řízení přístupu](../access-Control.md). Podpisy pro typy lze také vystavit nebo bez odkrytí některé členy typu. Další informace najdete v tématu [podpisy](../signatures.md).
 
 Privátní pole a `do` vazeb, které se používají pouze s třídami, nejsou členy hodnotu true, protože jsou součástí veřejného rozhraní typu nikdy a nejsou deklarovány s `member` – klíčové slovo, ale jsou popsané v této části taky.
 
-
 ## <a name="related-topics"></a>Související témata
-
 
 |Téma|Popis|
 |-----|-----------|

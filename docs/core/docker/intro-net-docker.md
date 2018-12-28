@@ -1,16 +1,14 @@
 ---
 title: Seznámení s Dockerem
 description: Tento článek obsahuje přehled a úvod do Docker v kontextu aplikace .NET Core.
-author: jralexander
-ms.author: johalex
 ms.date: 11/06/2017
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 46f7dcd9d13606bc388edee0563163479e2c9987
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 54bad8fcb34e46700fedf508bbc84ad846b05d76
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170675"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656164"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 

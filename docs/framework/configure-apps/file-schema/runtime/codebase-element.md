@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: d7563d3a0ba545bfd8d1b80981fcce607d230873
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 7e52899a953644fc3cf7189bf557f5ade2863161
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847285"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613151"
 ---
 # <a name="ltcodebasegt-element"></a>&lt;základ kódu&gt; – Element
 Určuje, kde najít sestavení modulu common language runtime.  
@@ -90,7 +90,7 @@ href="URL of assembly"/>
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Určení umístění sestavení](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
+- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

@@ -1,17 +1,15 @@
 ---
 title: Přehled Image dockeru
 description: Další informace o použití publikovaných imagí Dockeru .NET Core z registru Dockeru. Také se dozvíte, jak o přijetí změn imagí a vytvoření vlastních imagí.
-author: jralexander
-ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: dbe509269c1dc5868c44b12b025bbdd9faaa3508
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: dd8c6c500dc2177768e6cba0c1e303950e20d4f3
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169336"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656034"
 ---
 # <a name="learn-about-docker-images-for-net-core"></a>Další informace o imagích Dockeru pro .NET Core
 

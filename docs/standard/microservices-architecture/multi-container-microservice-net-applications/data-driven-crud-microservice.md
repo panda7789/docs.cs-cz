@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: c6316717f78dffb672afdf79e919fd1bd7874b52
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 32a0e55b17c51a9aa5b7c1fd70a42456c03c186d
+ms.sourcegitcommit: 5b831a3200f835cb9a69f8aae99129bdda8b2ca1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149566"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "53786215"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -257,7 +257,7 @@ Soubory docker-compose.yml na úrovni řešení nejsou pouze flexibilnější, n
 
 Nakonec můžete získat tuto hodnotu v kódu s použitím konfigurace\["ConnectionString"\], jak je znázorněno v metodě ConfigureServices v předchozím příkladu kódu.
 
-Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné kódy jako jsou připojovací řetězce. Pomocí vynikající způsob, jak spravovat tajné kódy aplikace [Azure Key Vault} (https://azure.microsoft.com/services/key-vault/).
+Pro produkční prostředí, můžete však prozkoumat další způsoby, jak na tom, jak ukládat tajné kódy jako jsou připojovací řetězce. Pomocí vynikající způsob, jak spravovat tajné kódy aplikace [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
 Služba Azure Key Vault umožňuje ukládat a ochraně kryptografických klíčů a tajných kódů používaných cloudovými aplikacemi a službami. Tajný kód se něco chcete zachovat striktní kontrolu nad, jako jsou klíče rozhraní API, připojovací řetězce, hesla, atd. a přísné zahrnuje využití protokolování, nastavení vypršení platnosti, Správa přístupu, <span class="underline">mimo jiné</span>.
 

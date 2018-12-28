@@ -1,15 +1,16 @@
 ---
-title: Asynchronní programování
+title: Asynchronní programování –C#
 description: Další informace o jazyce C# úrovni jazyka asynchronní programovací model poskytované .NET Core.
 author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: 12ecadb3fa3c6760af4884626f68b47ead2754d5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.custom: seodec18
+ms.openlocfilehash: 231cbbde7c908c3d63d3ff0f59cf3d797e8b9543
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126494"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53612124"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -264,5 +265,5 @@ Doporučené cílem je dosáhnout úplné nebo téměř úplnou [referenční tr
 ## <a name="other-resources"></a>Další zdroje
 
 * [Asynchronní podrobné](../standard/async-in-depth.md) poskytuje další informace o tom, jak pracují úkoly.
-* [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)
+* [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](./programming-guide/concepts/async/index.md)
 * Lucian Wischik [šest důležité tipy pro asynchronní](https://channel9.msdn.com/Series/Three-Essential-Tips-for-Async) jsou vynikající prostředku pro asynchronní programování

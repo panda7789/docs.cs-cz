@@ -1,19 +1,19 @@
 ---
-title: .NET standard
+title: .NET Standard
 description: Další informace o .NET Standard, jeho verze a implementace .NET, kteří jej podporují.
 author: mairaw
 ms.author: mairaw
 ms.date: 07/19/2018
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: bdaaa22f20f21e823459914a900997050a6624a6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: cfc830f50f2e77b85e46ebaf91e3c8658aa86c48
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186067"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613593"
 ---
-# <a name="net-standard"></a>.NET standard
+# <a name="net-standard"></a>.NET Standard
 
 [.NET Standard](https://github.com/dotnet/standard) je formální specifikaci rozhraní API .NET, která mají být k dispozici na všech implementace .NET. Motivace za .NET Standard navazuje větší sjednocení v ekosystému .NET. [335 Standard ECMA](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) pokračuje k navázání sjednocení pro chování implementace .NET, ale neexistuje žádná podobné specifikace pro knihovny pro třídy Base .NET (BCL) pro implementace knihovny .NET.
 
@@ -35,7 +35,7 @@ K nalezení nejvyšší verze rozhraní .NET Standard, která se může zaměři
 
 1. Najděte řádek, který označuje, který chcete spustit na implementaci rozhraní .NET.
 2. Najdete sloupce v daném řádku, která určuje verzi od zprava doleva.
-3. Záhlaví sloupce označuje .NET Standard, která podporuje vaše cílové verze (a jakékoli nižší verze rozhraní .NET Standard bude podporovat také).
+3. Záhlaví sloupce označuje .NET Standard, která podporuje vaše cílové verze. Může také směrovat všechny nižší verze rozhraní .NET Standard. Vyšší verze rozhraní .NET Standard bude také podporovat vaši implementaci.
 4. Tento postup opakujte pro každou platformu, kterou chcete cílit. Pokud máte více než jedna cílová platforma, měli byste vybrat menší verze mezi nimi. Například pokud chcete spustit v rozhraní .NET Framework 4.5 a .NET Core 1.0, nejvyšší verze .NET Standard, která vám pomůže je standardní 1.1 rozhraní .NET.
 
 ### <a name="which-net-standard-version-to-target"></a>Kterou verzi .NET Standard do cíle
@@ -146,7 +146,7 @@ Na základě profilu PCLs lze zabalit jako `netstandard` usnadňuje využíván�
 
 Můžete vidět sadu PCL profily, které jsou kompatibilní s .NET Standard:
 
-| Profilem PCL | .NET standard | PCL platformy
+| Profilem PCL | .NET Standard | PCL platformy
 |:-----------:|:-------------:|------------------------------------------------------------------------------
 | Profile7    | 1.1           | Rozhraní .NET framework 4.5, Windows 8
 | Profile31   | 1.0           | Windows 8.1, Windows Phone Silverlight 8.1

@@ -1,24 +1,24 @@
 ---
-title: Použití &#39;filegetobject –&#39; místo &#39;fileget –&#39; při použití argument typu &#39;objektu&#39;
+title: Používat "Filegetobject –" místo 'FileGet', při použití argument typu 'Object'
 ms.date: 07/20/2015
 ms.assetid: 090b8088-895a-482a-9362-606596bac304
-ms.openlocfilehash: 2edb80f6df95774e0ea5a7b51e57925845d7ba75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ddbe187ed1210d238448a5ff3feaee18beea1def
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33640414"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53768008"
 ---
-# <a name="use-39filegetobject39-instead-of-39fileget39-when-using-argument-of-type-39object39"></a>Použití &#39;filegetobject –&#39; místo &#39;fileget –&#39; při použití argument typu &#39;objektu&#39;
-`FileGet` Metoda obsahuje argument typu `Object`. `FileGetObject` musí být použito místo `FileGet` aby se zabránilo nejednoznačnosti.  
+# <a name="use-filegetobject-instead-of-fileget-when-using-argument-of-type-object"></a>Používat "Filegetobject –" místo 'FileGet', při použití argument typu 'Object'
+`FileGet` Metoda zahrnuje argument typu `Object`. `FileGetObject` by měla sloužit místo `FileGet` chcete vyhnout se nejasnostem.  
   
- Všimněte si, že funkce nabízené sítěmi `My.Computer.Filesystem` nabízí jednodušší používání a výkonu než buď `FileGet` nebo `FileGetObject`.  
+ Všimněte si, že nabízí funkce `My.Computer.Filesystem` nabízí jednodušší využití a výkon než buď `FileGet` nebo `FileGetObject`.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Nahraďte `FileGet` s `FileGetObject`.  
+1.  Nahraďte `FileGet` za `FileGetObject` (Jak velká může být moje znalostní báze?).  
   
-2.  Přetypování `Object` argument typu konkrétnější.  
+2.  Přetypování `Object` konkrétnější typ argumentu.  
   
 ## <a name="see-also"></a>Viz také  
    

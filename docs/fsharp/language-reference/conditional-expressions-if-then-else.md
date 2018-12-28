@@ -1,13 +1,13 @@
 ---
-title: 'Podmíněné výrazy: if... then...else (F#)'
-description: Další informace o zápisu podmíněné výrazy v jazyce F# ke spuštění různými větvemi kódu.
+title: 'Podmíněné výrazy: if... then... else'
+description: Další informace o zápisu podmíněné výrazy F# provést různými větvemi kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 10e4224bef772f00520cf5a0fff2f2920147c2fc
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: eade8c20c1b62a2e9a54700550d832798308f368
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "44177598"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614043"
 ---
 # <a name="conditional-expressions-ifthenelse"></a>Podmíněné výrazy: `if...then...else`
 

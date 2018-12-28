@@ -1,13 +1,13 @@
 ---
-title: Identifikátory zdrojového řádku, souboru a cesty (F#)
-description: Další informace o použití integrovaných F# hodnoty identifikátorů, které vám umožní přístup k číslo zdrojového řádku, adresář a název souboru ve vašem kódu.
+title: Identifikátory zdrojového řádku, souboru a cesty
+description: Zjistěte, jak použít integrovaný F# hodnoty identifikátorů, které vám umožní přístup ke zdroji řádek číslo, adresář a název souboru ve vašem kódu.
 ms.date: 05/16/2016
-ms.openlocfilehash: 14f710d1412c3420ec627dc30216ba2e89f16bcd
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: 4b145fe1fe20e3d7f868558e33bab26204fb0125
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "43865124"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656008"
 ---
 # <a name="source-line-file-and-path-identifiers"></a>Identifikátory zdrojového řádku, souboru a cesty
 
@@ -25,13 +25,14 @@ __SOURCE_FILE__
 
 Každá z těchto hodnot obsahuje typ `string`.
 
-Následující tabulka shrnuje zdrojového řádku, souboru a cesty identifikátorů, které jsou k dispozici v jazyce F#. Tyto identifikátory nejsou makra preprocesoru; jsou předdefinované hodnoty, které jsou rozpoznávány kompilátorem.
+Následující tabulka shrnuje zdrojového řádku, souboru a cestu identifikátory, které jsou k dispozici v F#. Tyto identifikátory nejsou makra preprocesoru; jsou předdefinované hodnoty, které jsou rozpoznávány kompilátorem.
 
 |Předdefinovaný identifikátor|Popis|
 |---------------------|-----------|
 |`__LINE__`|Aktuální číslo řádku, je vyhodnocen jako zvážení `#line` direktivy.|
 |`__SOURCE_DIRECTORY__`|Vyhodnotí jako aktuální úplná cesta zdrojového adresáře, vzhledem k tomu `#line` direktivy.|
 |`__SOURCE_FILE__`|Vyhodnotí na aktuální název zdrojového souboru a jeho cestu vzhledem k tomu `#line` direktivy.|
+
 Další informace o `#line` direktiv, viz [direktivy kompilátoru](compiler-directives.md).
 
 ## <a name="example"></a>Příklad

@@ -1,17 +1,17 @@
 ---
-title: '&#39;StrConv.LinguisticCasing&#39; vyžaduje &#39;StrConv.LowerCase&#39; nebo &#39;StrConv.UpperCase&#39;'
+title: "'StrConv.LinguisticCasing' vyžaduje \"StrConv.LowerCase\" nebo \"StrConv.UpperCase."
 ms.date: 07/20/2015
 f1_keywords:
 - vbrLinguisticRequirements
 ms.assetid: 99cdb11d-9488-460b-84fb-a27f43da8be4
-ms.openlocfilehash: fc117c6b8993619e0610d5f51287e0fd0369729f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4ba166d499e722fcebba2a0f2d751bcfe2857304
+ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45741849"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53770543"
 ---
-# <a name="39strconvlinguisticcasing39-requires-39strconvlowercase39-or-39strconvuppercase39"></a>&#39;StrConv.LinguisticCasing&#39; vyžaduje &#39;StrConv.LowerCase&#39; nebo &#39;StrConv.UpperCase&#39;
+# <a name="strconvlinguisticcasing-requires-strconvlowercase-or-strconvuppercase"></a>'StrConv.LinguisticCasing' vyžaduje "StrConv.LowerCase" nebo "StrConv.UpperCase.
 Pokusili jste se použít `StrConv.LinguisticCasing`, který je platný pouze v kombinaci s `StrConv.LowerCase` nebo `StrConv.UpperCase`.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  

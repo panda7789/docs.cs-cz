@@ -1,17 +1,17 @@
 ---
-title: Záznamy (F#)
+title: Záznamy
 description: Zjistěte, jak F# záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6103d96b6b80a9e2ed168755958dbe800f7fa862
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: a499755383654ddaf76af12776ee93f27834b7b0
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "48261287"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656138"
 ---
 # <a name="records"></a>Záznamy
 
-Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.  Od verze F# 4.1, můžete buď být typy struktur nebo odkaz.  Jsou odkazové typy ve výchozím nastavení.
+Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.  Počínaje F# 4.1, mohou být buď struktury nebo referenční typy.  Jsou odkazové typy ve výchozím nastavení.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,7 +28,7 @@ type [accessibility-modifier] typename =
 
 V předchozí syntaxi *typename* je název typu záznamu *label1* a *label2* jsou názvy hodnot, označuje jako *popisky*, a *type1* a *type2* typy těchto hodnot. *seznam členů* je volitelný seznam členů typu.  Můžete použít `[<Struct>]` atributu k vytvoření záznamu – struktura, nikoli záznam, který je typem odkazu.
 
-Toto jsou některé příklady.
+Dále je uvedeno několik příkladů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1901.fs)]
 
@@ -89,6 +89,29 @@ let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 // and leave the rest with default values.
 let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
+
+## <a name="creating-mutually-recursive-records"></a>Vytvoření vzájemně rekurzivní záznamů
+
+Nějakou dobu, během vytváření záznamu, můžete na něm závisí na jiný typ, který chcete definovat později. Jedná se o chybu kompilace, není-li definovat typy záznamů bude vzájemně rekurzivní.
+
+Definování vzájemně rekurzivní záznamy se použije `and` – klíčové slovo. Díky tomu můžete propojit typy 2 nebo více záznamů.
+
+Například následující kód definuje `Person` a `Address` typ jako vzájemně rekurzivní:
+
+```fsharp
+// Create a Person type and use the Address type that is not defined
+type Person =
+  { Name: string
+    Age: int
+    Address: Address }
+// Define the Address type which is used in the Person record
+and Address =
+  { Line1: string
+    Line2: string
+    PostCode: string }
+```
+
+Pokud byste chtěli definovat bez předchozího příkladu `and` – klíčové slovo, pak nebude kompilovat. `and` – Klíčové slovo je vyžadován pro vzájemně rekurzivní definice.
 
 ## <a name="pattern-matching-with-records"></a>Porovnávání vzorů s záznamů
 

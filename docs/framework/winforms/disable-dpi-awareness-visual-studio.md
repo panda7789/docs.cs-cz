@@ -1,17 +1,17 @@
 ---
 title: Zakázání sledování DPI v sadě Visual Studio
 description: Tento článek popisuje omezení pro návrháře formulářů Windows na monitorech HDPI a jak spustit aplikaci Visual Studio jako nepodporující DPI proces.
-ms.date: 08/14/2018
+ms.date: 12/17/2018
 ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 author: gewarren
 ms.author: gewarren
-ms.openlocfilehash: 2d3466476c33a3e5faa8be96d63f1d11442c5d70
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0820450fb9ae257cba87b3055ea1dde91112b19e
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151262"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655995"
 ---
 # <a name="disable-dpi-awareness-in-visual-studio"></a>Zakázání sledování DPI v sadě Visual Studio
 
@@ -29,7 +29,7 @@ V sadě Visual Studio 2017 verze 15,8 a novější, když otevřete formulář v
 
 Přečte zprávu **škálování na hlavní obrazovce je nastavena na 200 % (192 dpi). To může způsobit problémů s vykreslováním v okně návrháře.**
 
-Pokud nefungují v návrháři a není potřeba upravit rozložení formuláře, můžete ignorovat informační panel a pokračovat v práci v editoru kódu nebo v jiných typech návrhářů. Pouze **Návrháře formulářů Windows** má vliv. Pokud potřebujete pracovat **Návrháře formulářů Windows**, následující část vám pomůže [problém pomohl vyřešit](#to-resolve-the-problem).
+Pokud nefungují v návrháři a není potřeba upravit rozložení formuláře, můžete ignorovat informační panel a pokračovat v práci v editoru kódu nebo v jiných typech návrhářů. (Můžete také [zakázat oznámení](#disable-notifications) tak, aby informační panel nebude nadále zobrazovat.) Pouze **Návrháře formulářů Windows** má vliv. Pokud potřebujete pracovat **Návrháře formulářů Windows**, následující část vám pomůže [problém pomohl vyřešit](#to-resolve-the-problem).
 
 ## <a name="to-resolve-the-problem"></a>Chcete-li vyřešit tento problém
 
@@ -68,6 +68,16 @@ Visual Studio můžete označit jako nepodporující DPI úpravou registru. Otev
 Pokud chcete nastavit zobrazení nastavení na 100 % změna měřítka ve Windows 10, zadejte **nastavení zobrazení** na hlavním panelu vyhledávacího pole a pak vyberte **změně nastavení zobrazení**. V **nastavení** okno, nastavte **změnit velikost textu, aplikací a dalších položek** k **100 %**.
 
 Nastavení displeje škálování na 100 % může nežádoucí, protože uživatelské rozhraní může být příliš malá, aby byla použitelná.
+
+## <a name="disable-notifications"></a>Zakázat oznámení
+
+Můžete se informováni o DPI škálování problémy v sadě Visual Studio. Můžete chtít zakázat oznámení, pokud nepracujete v návrháři, např.
+
+Chcete-li zakázat oznámení, zvolte **nástroje** > **možnosti** otevřít **možnosti** dialogového okna. Potom kliknutím na možnost **Návrháře formulářů Windows** > **Obecné**a nastavte **DPI škálování oznámení** k **False**.
+
+![DPI škálování možnost oznámení v sadě Visual Studio](media/disable-dpi-awareness-visual-studio/notifications-option.png)
+
+Pokud chcete později znovu povolit škálování oznámení, nastavte vlastnost na **True**.
 
 ## <a name="troubleshoot"></a>Řešení potíží
 
