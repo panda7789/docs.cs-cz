@@ -1,21 +1,21 @@
 ---
-title: Porovnávání vzorů (F#)
-description: Zjistěte, jak se používají vzory v F# k porovnání dat s logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.
+title: Porovnávání vzorů
+description: Zjistěte, jak vzorky se používají v F# k porovnání dat pomocí logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.
 ms.date: 05/16/2016
-ms.openlocfilehash: 5ad3d3e1a78246afdfa2948fd0fb84fa04686d30
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: bb6b41f6d15612e4a65abd4a3d5d7291d84a8f3c
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45991421"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53613580"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
-Vzorky jsou pravidla pro transformování vstupních dat. Používají se v celém jazyce F# k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na základní části nebo extrahovat informace z dat různými způsoby.
+Vzorky jsou pravidla pro transformování vstupních dat. Používají se v průběhu F# jazyk k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na základní části nebo extrahovat informace z dat různými způsoby.
 
 ## <a name="remarks"></a>Poznámky
 
-Vzorky se používají v mnoha konstrukcích jazyka, jako `match` výrazu. Používají se při zpracování argumentů pro funkce v `let` vazeb, lambda výrazy a v obslužných rutinách výjimek spojených s `try...with` výrazu. Další informace najdete v tématu [odpovídající výrazy](match-expressions.md), [vazby let](functions/let-bindings.md), [výrazy Lambda: `fun` – klíčové slovo](functions/lambda-expressions-the-fun-keyword.md), a [výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md).
+Vzorky se používají v mnoha konstrukcích jazyka, jako `match` výrazu. Používají se při zpracování argumentů pro funkce v `let` vazeb, lambda výrazy a v obslužných rutinách výjimek spojených s `try...with` výrazu. Další informace najdete v tématu [odpovídající výrazy](match-expressions.md), [vazby let](functions/let-bindings.md), [výrazy Lambda: `fun` – Klíčové slovo](functions/lambda-expressions-the-fun-keyword.md), a [výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md).
 
 Například v `match` výrazu, *vzor* co následuje symbol svislé čáry.
 
@@ -39,11 +39,11 @@ Podporované vzory jsou uvedeny v následující tabulce. V době běhu vstup je
 |Vzor AND|*pattern1* &amp; *pattern2*|`(a, b) & (_, "test")`|
 |Nevýhody vzoru|*identifikátor* :: *identifikátor seznamu*|`h :: t`|
 |Vzor seznamu|[ *pattern_1*;...; *pattern_n* ]|`[ a; b; c ]`|
-|Vzor pole|[&#124; *pattern_1*;.; *pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
+|Vzor pole|[&#124; *pattern_1*;..; *pattern_n* &#124;]|<code>[&#124; a; b; c &#124;]</code>|
 |Vzor v závorce|( *vzor* )|`( a )`|
 |Vzor řazené kolekce členů|( *pattern_1*,..., *pattern_n* )|`( a, b )`|
 |Vzor záznamu|{ *identifier1* = *pattern_1*;...; *identifier_n* = *pattern_n* }|`{ Name = name; }`|
-|Vzorec zástupných znaků|_|`_`|
+|Vzorec zástupných znaků|\_|`_`|
 |Vzorek společně s anotací typu|*vzor* : *typu*|`a : int`|
 |Testovací vzorek typu|:? *typ* [jako *identifikátor* ]|`:? System.DateTime as dt`|
 |Vzor Null|null|`null`|
@@ -103,7 +103,7 @@ match shape with
 
 Aktivní vzorky umožňují definovat složitější vlastní porovnávání vzorů. Další informace o aktivních vzorech naleznete v tématu [aktivní vzory](active-patterns.md).
 
-Případ, ve kterém je identifikátor výjimkou se používá v porovnávání vzorů v kontextu obslužné rutiny výjimek. Informace o vzoru porovnávání ve zpracování výjimek naleznete v tématu [výjimky: `try...with` výraz](exception-handling/the-try-with-expression.md).
+Případ, ve kterém je identifikátor výjimkou se používá v porovnávání vzorů v kontextu obslužné rutiny výjimek. Informace o vzoru porovnávání ve zpracování výjimek naleznete v tématu [výjimky: `try...with` Výraz](exception-handling/the-try-with-expression.md).
 
 ## <a name="variable-patterns"></a>Vzorce proměnné
 

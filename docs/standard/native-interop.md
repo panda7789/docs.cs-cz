@@ -6,12 +6,12 @@ ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 3c357112-35fb-44ba-a07b-6a1c140370ac
-ms.openlocfilehash: 2f427eb5d8f41f730d4263425e268213db92236d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 14dfe7639a160af64e925018a4fd9e2bd44d4fe1
+ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143179"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53396809"
 ---
 # <a name="native-interoperability"></a>Nativní interoperabilita
 
@@ -260,7 +260,7 @@ Z výše uvedených příkladech záviset na parametrech a v obou případech js
 
 **Zařazování** je proces transformace typy, když je budou potřebovat překračují hranice spravované do nativní a naopak.
 
-Z důvodu zařazování je potřeba je, protože se liší typy v spravovaným a nespravovaným kódem. Ve spravovaném kódu, například můžete mít `String`, zatímco nespravované světě mohou být řetězce Unicode ("širokých"), kódování Unicode, zakončený hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí že správně dělají na základě deklarace P/Invoke subsystému [výchozí chování](../../docs/framework/interop/default-marshaling-behavior.md). Pro tyto situace, kdy potřebujete další ovládací prvek, ale můžete použít [MarshalAs](xref:System.Runtime.InteropServicxes.MarshalAs) atribut k určení, co je očekávaný typ v nespravované oblasti. Například pokud se mají řetězec, který má být odeslán jako ANSI řetězec zakončený hodnotou null, může Uděláme to takto:
+Z důvodu zařazování je potřeba je, protože se liší typy v spravovaným a nespravovaným kódem. Ve spravovaném kódu, například můžete mít `String`, zatímco nespravované světě mohou být řetězce Unicode ("širokých"), kódování Unicode, zakončený hodnotou null, ASCII, atd. Ve výchozím nastavení, se pokusí že správně dělají na základě deklarace P/Invoke subsystému [výchozí chování](../../docs/framework/interop/default-marshaling-behavior.md). Pro tyto situace, kdy potřebujete další ovládací prvek, ale můžete použít [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) atribut k určení, co je očekávaný typ v nespravované oblasti. Například pokud se mají řetězec, který má být odeslán jako ANSI řetězec zakončený hodnotou null, může Uděláme to takto:
 
 ```csharp
 [DllImport("somenativelibrary.dll")]

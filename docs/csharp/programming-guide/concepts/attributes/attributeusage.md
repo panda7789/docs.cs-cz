@@ -1,18 +1,18 @@
 ---
 title: AttributeUsage (C#)
 ms.date: 04/25/2018
-ms.openlocfilehash: 37657a0611180d5b4c48b3e1778d33861afa5a74
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 081a8f6edcddd5e87d3d9750b91ff42a72b92886
+ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500569"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53656346"
 ---
 # <a name="attributeusage-c"></a>AttributeUsage (C#)
 
 Určuje, jak je možné třídu vlastního atributu. <xref:System.AttributeUsageAttribute> představuje atribut, které použijete pro vlastní atribut definice. `AttributeUsage` Atribut umožňuje řídit:
 
-- Které atribut prvky programu může použít pro. Pokud můžete omezit využití, je atribut může použije pro všechny z následujících prvků programu:
+- Které atribut prvky programu může použít pro. Pokud omezíte její používání, atribut lze použít na jakýkoli z následujících prvků programu:
   - sestavení
   - module
   - pole

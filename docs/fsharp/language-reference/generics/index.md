@@ -1,13 +1,13 @@
 ---
-title: Obecné typy (F#)
+title: Obecné typy
 description: Další informace o použití F# obecné funkce a typy, které umožňují také napsat kód, který funguje s různými typy bez opakující se kód.
 ms.date: 05/16/2016
-ms.openlocfilehash: 7eae69bc0286bff4997c6399c7417bde119c2204
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: bafb80893df2f3fab85840ee844bc78d1fb33428
+ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147002"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53614348"
 ---
 # <a name="generics"></a>Obecné typy
 
