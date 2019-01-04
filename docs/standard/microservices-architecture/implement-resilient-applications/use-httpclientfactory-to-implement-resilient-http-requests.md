@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 0ae4dadd6921a71217b50757ede19b8d54910185
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 0d08346dc59b6f6227e719658909c174e67d4a61
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611032"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030357"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -21,7 +21,7 @@ Původní a dobře známých [HttpClient](https://docs.microsoft.com/dotnet/api/
 
 Jako první problém, i když tato třída je jedno použití, používat s `using` příkaz není nejlepší volbou protože i při vyřazení `HttpClient` objekt základního soketu neuvolní okamžitě a může způsobit závažné potíže s názvem "sockets vyčerpání ". Další informace o tomto problému najdete v tématu [používáte HttpClient nesprávné a je to destabilizing váš software](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/) blogový příspěvek.
 
-Proto `HttpClient` by se měly vytvořit jednou a opětovně používat v rámci životnosti aplikace. Vytvoření instance `HttpClient` třídy pro každý požadavek že počet soketů, které jsou k dispozici pod velkým zatížením. Bude mít za následek problém `SocketException` chyby. Je to možné přístupy k vyřešení tohoto problému jsou založeny na vytváření `HttpClient` objekt typu singleton nebo static, jak je popsáno v tomto [článku znalostní báze Microsoft HttpClient využití](https://docs.microsoft.com/dotnet/csharp/tutorials/console-webapiclient). 
+Proto `HttpClient` by se měly vytvořit jednou a opětovně používat v rámci životnosti aplikace. Vytvoření instance `HttpClient` třídy pro každý požadavek že počet soketů, které jsou k dispozici pod velkým zatížením. Bude mít za následek problém `SocketException` chyby. Je to možné přístupy k vyřešení tohoto problému jsou založeny na vytváření `HttpClient` objekt typu singleton nebo static, jak je popsáno v tomto [článku znalostní báze Microsoft HttpClient využití](../../../csharp/tutorials/console-webapiclient.md). 
 
 Druhý problém s, ale `HttpClient` mají při použití jako singleton nebo statický objekt. V tomto případě, typu singleton nebo statické `HttpClient` nerespektuje změny DNS, jak je popsáno v tomto [problém na úložiště .NET Core GitHub](https://github.com/dotnet/corefx/issues/11224). 
 

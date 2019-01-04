@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: fb2da0d37a3c72941e9ffdac52a6fdf24ec71b3a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 220e43ed6aadbcc443f4cf06310fe12e970abcf2
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149585"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030422"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
@@ -24,7 +24,7 @@ Za účelem zamezení pádu aplikace zpracovává dobře navržená aplikace vý
 
 Použití `try` / `catch` okolo kódu, který může potenciálně generovat výjimku ***a*** kódu můžete obnovit z této výjimky. V `catch` blokuje vždy nutné výjimky seřazovat od nejvíce odvozené na nejméně odvozené. Všechny výjimky jsou odvozeny z <xref:System.Exception>. Více odvozeného výjimky nejsou zpracovávány klauzule catch, který předchází klauzuli catch. výjimky základní třídy. Pokud váš kód nelze obnovit z výjimky, nezachycujte tuto výjimku. Povolte další metody v zásobníku volání, pokud je to možné obnovit.
 
-Vyčistěte prostředky přidělené s oběma `using` příkazy, nebo `finally` bloky. Preferovat `using` příkazy automaticky vyčistit prostředky, pokud jsou výjimky vyvolány. Použití `finally` bloky chcete vyčistit prostředky, které Neimplementujte <xref:System.IDisposable>. V kódu `finally` claus je téměř vždy spuštěn i v případě, že jsou výjimky vyvolány.
+Vyčistěte prostředky přidělené s oběma `using` příkazy, nebo `finally` bloky. Preferovat `using` příkazy automaticky vyčistit prostředky, pokud jsou výjimky vyvolány. Použití `finally` bloky chcete vyčistit prostředky, které Neimplementujte <xref:System.IDisposable>. V kódu `finally` klauzule je téměř vždy spuštěn i v případě, že jsou výjimky vyvolány.
 
 ## <a name="handle-common-conditions-without-throwing-exceptions"></a>Zpracování běžných podmínek bez vyvolání výjimky
 

@@ -2,12 +2,12 @@
 title: F#Průvodce správným stylem
 description: Další pět zásadami dobrého F# kódu.
 ms.date: 12/10/2018
-ms.openlocfilehash: 7718df596bde9004fb9ba6143146f1f475d25683
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 9f47257626e04b09b546de2ae315d48d791678be
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168951"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030266"
 ---
 # <a name="f-style-guide"></a>F#Průvodce správným stylem
 
@@ -21,7 +21,7 @@ Mějte tyto zásady kdykoli napíšete F# kódu, zejména v systémech, které s
 
 1. **Dobrý F# kód je stručné, výrazový a sestavitelný**
 
-    F#má řadu funkcí, které vám umožní express akce v míň řádků kódu a opětovné použití obecné funkce. F# Základní knihovna také obsahuje mnoho funkcí pro práci s common kolekce dat a užitečné typy. Složení vašich vlastních funkcích a těm F# základní knihovna (nebo jiných knihovnách) je součástí rutina idiomatickou F# programování. Obecně platí Pokud řešení problému v míň řádků kódu, můžete vyjádřit ostatním vývojářům (nebo budoucí self) bude appreciative. Také důrazně doporučujeme použít knihovnu, jako je například FSharp.Core, [rozsáhlé knihovny .NET](https://docs.microsoft.com/dotnet/api/) , který F# spuštěný, nebo pomocí balíčku třetí strany na [NuGet](https://www.nuget.org/) když potřebujete provést úlohu triviální.
+    F#má řadu funkcí, které vám umožní express akce v míň řádků kódu a opětovné použití obecné funkce. F# Základní knihovna také obsahuje mnoho funkcí pro práci s common kolekce dat a užitečné typy. Složení vašich vlastních funkcích a těm F# základní knihovna (nebo jiných knihovnách) je součástí rutina idiomatickou F# programování. Obecně platí Pokud řešení problému v míň řádků kódu, můžete vyjádřit ostatním vývojářům (nebo budoucí self) bude appreciative. Také důrazně doporučujeme použít knihovnu, jako je například FSharp.Core, [rozsáhlé knihovny .NET](../../../api/index.md) , který F# spuštěný, nebo pomocí balíčku třetí strany na [NuGet](https://www.nuget.org/) když potřebujete provést úlohu triviální.
 
 2. **Dobrý F# kód je interoperabilní**
 

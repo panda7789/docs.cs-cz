@@ -1,13 +1,13 @@
 ---
 title: Začínáme s F# ve Visual Studio Code
 description: Další informace o použití F# s Visual Studio Code a Ionide suite modulu plug-in.
-ms.date: 05/28/2018
-ms.openlocfilehash: 2db587b5614c5a7ca9285cad9b719970d53afd55
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 12/23/2018
+ms.openlocfilehash: 34802551bf4e34abb5aa0130643f32dbce68f1b2
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129789"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029551"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s F# ve Visual Studio Code
 
@@ -150,8 +150,7 @@ Dále otevřete `Script.fsx` soubor znovu a odstranit celý `toPigLatin` fungova
 #load "ClassLibraryDemo.fs"
 open ClassLibraryDemo
 ```
-
-První řádek je potřeba pro FSI skriptování pro načtení `ClassLibraryDemo.fs`. Druhý řádek je usnadnění: ho vynechání je volitelný, ale budete muset zadat `open ClassLibraryDemo` v okně FSI-li přenést `ToPigLatin` modulu do oboru.
+Vyberte obě čáry text a stisknutím kláves Alt + Enter pro spuštění ve FSI tyto řádky. Obsah knihovny Pig Latin tyto se načtou do procesu FSI a `open` `ClassLibraryDemo` obor názvů, abyste měli přístup k funkcím.
 
 Pak v okně FSI zavolejte funkci s `PigLatin` modul, který jste definovali dříve:
 

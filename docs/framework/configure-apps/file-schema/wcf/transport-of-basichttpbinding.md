@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4c5ba293-3d7e-47a6-b84e-e9022857b7e5
-ms.openlocfilehash: f4e37281539106fef93dc4ab566d94d781c39d29
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 01fe2bc98326e3cef2b3df8bdf4aa03055df5e65
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845664"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030331"
 ---
 # <a name="lttransportgt-of-ltbasichttpbindinggt"></a>&lt;transport&gt; – &lt;basicHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí protokolu HTTP.  
@@ -56,7 +56,7 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zprávy nejsou zabezpečená při přenosu.|  
+|Žádná|Zprávy nejsou zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování.|  
 |ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.|  
 |NTLM|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
@@ -66,15 +66,15 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|-Zprávy nejsou zabezpečená při přenosu.|  
-|Základní|Určuje základní ověřování, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
-|ověřování algoritmem Digest|Určuje ověřování hodnotou hash dle RFC 2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest.|  
+|Žádná|-Zprávy nejsou zabezpečená při přenosu.|  
+|Základní|Základní ověřování určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
+|ověřování algoritmem Digest|Ověřování algoritmem digest Určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
 |NTLM|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
 |Windows|Určuje integrované ověřování Windows.|  
 |Certifikát|Provádí pomocí certifikátu ověřování klienta. Tato možnost funguje jenom v případě, `Mode` atributu nadřazeného elementu `security` element je nastavena na přenos a nebude fungovat, pokud je nastaveno na TransportCredentialOnly.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -99,8 +99,8 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
    </services>  
     <bindings>  
         <basicHttpBinding>  
-        <!-- Configure basicHttpBinding with Transport security -- >  
-        <!-- mode and clientCredentialType set to None.-->  
+        <!-- Configure basicHttpBinding with Transport security -->  
+        <!-- mode and clientCredentialType set to None. -->  
            <binding name="Binding1">  
                <security mode="Transport">  
                    <transport clientCredentialType="None"  

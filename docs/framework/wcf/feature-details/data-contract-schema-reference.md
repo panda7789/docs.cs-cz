@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-ms.openlocfilehash: 33661061e1a5db4f7826c1a8eca188f8c782b58f
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: c4e2939c0868bc452496c2b8c4435b5ef316e573
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873716"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030526"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -89,7 +89,7 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
 |`complexContent`|Podporované. V tématu "Dědičnost".|  
 |`group`|Je zakázané.|  
 |`all`|Je zakázané.|  
-|`choice`|Je zakázané|  
+|`choice`|Zakázáno|  
 |`sequence`|Podporované, mapuje se na datové členy kontraktu dat.|  
 |`attribute`|Je zakázané, i v případě použití = "prohibited" (s jednou výjimkou). Jsou podporovány pouze volitelné atributy z oboru názvů schématu standardní serializace. Nelze je namapovat na datové členy v kontraktu dat programovacího modelu. V současné době pouze jeden atribut má význam a je popsána v části ISerializable. Případné další se ignorují.|  
 |`attributeGroup`|Je zakázané. Ve verzi v1 WCF `DataContractSerializer` ignoruje přítomnost `attributeGroup` uvnitř `xs:complexType`.|  
@@ -290,15 +290,14 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
   
  Následující kód ukazuje výčet tříd jazyka C#.  
   
-```  
+```csharp  
 public enum MyEnum  
 {  
-   first = 3,  
-   second = 4,  
-   third =5  
+  first = 3,  
+  second = 4,  
+  third =5  
+}  
 ```  
-  
- }  
   
  Tato třída se mapuje na následující schéma podle `DataContractSerializer`. Pokud hodnoty výčtu spustit z 1, `xs:annotation` bloky se negenerují.  
   
@@ -349,7 +348,7 @@ public enum MyEnum
   
  Následující kód například příznaky typu výčtu.  
   
-```  
+```csharp  
 [Flags]  
 public enum AuthFlags  
 {    
@@ -402,7 +401,7 @@ rialization/">64</EnumerationValue>
   
  Například následující kód je datový kontrakt.  
   
-```  
+```csharp  
 [DataContract]  
 public class Person  
 {  
@@ -619,7 +618,7 @@ public class Employee : Person
 ## <a name="importing-non-datacontract-schemas"></a>Import jiné než DataContract schémata  
  `DataContractSerializer` má `ImportXmlTypes` možnost, povolíte import schémat, které není v souladu s `DataContractSerializer` XSD profilu (najdete v článku <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> vlastnost). Tuto volbu nastavíte `true` povoluje přijetí nonkonformní schématu typy a mapování pro následující implementaci <xref:System.Xml.Serialization.IXmlSerializable> obtékání pole <xref:System.Xml.XmlNode> (se liší jenom název třídy).  
   
-```  
+```csharp  
 [GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]  
 [System.Xml.Serialization.XmlSchemaProviderAttribute("ExportSchema")]  
 [System.Xml.Serialization.XmlRootAttribute(IsNullable=false)]  

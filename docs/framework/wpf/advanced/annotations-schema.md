@@ -6,31 +6,31 @@ helpviewer_keywords:
 - Microsoft Annotations Framework [WPF]
 - documents [WPF], annotations
 ms.assetid: a893442b-e220-4603-bf6a-b01fefcb4b37
-ms.openlocfilehash: e463a087516dc45cb4bd879c77aef6fbeba2b546
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d2f3fa70673c7ae5819346ab152b74acf93a164c
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542012"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029837"
 ---
 # <a name="annotations-schema"></a>Schéma poznámek
-Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft Framework poznámky k uložení a načtení dat poznámky uživatele.  
+Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft Framework poznámky k ukládání a načítání dat anotace uživatele.  
   
- [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Serializuje data poznámky z interního vyjádření na formátu XML.  Formát XML použitý pro tento převod je popsán [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] schématu XSD.  Schéma definuje formát nezávislý na implementaci XML, který lze použít pro výměnu poznámky dat mezi aplikacemi.  
+ [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Serializuje anotace data z interního vyjádření na formátu XML.  Formát XML používaný pro tento převod je popsán [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] schéma XSD.  Schéma definuje ve formátu XML nezávislého na implementaci, který slouží k výměně anotace dat mezi aplikacemi.  
   
- [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Definice schématu XML se skládá ze dvou subschemas  
+ [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] Definici schématu XML se skládá ze dvou subschemas  
   
--   Poznámky základní schéma XML (základní schéma).  
+-   Poznámky Core schématu XML (základní schéma).  
   
--   Poznámky XML základní schématu (základní schéma).  
+-   Komentáře XML základní schéma (základní schéma).  
   
- Základní schéma definuje primární strukturu XML <xref:System.Windows.Annotations.Annotation>.  Většina elementů XML definovaná ve schématu základní odpovídají typům v <xref:System.Windows.Annotations> oboru názvů.  Schéma základní zpřístupní tři body rozšíření, kde aplikace můžete přidat svoje vlastní data XML.  Zahrnují tyto body rozšíření <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a "Obsah".  (Obsahu elementy jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)  
+ Základní schéma definuje strukturu XML primární <xref:System.Windows.Annotations.Annotation>.  Většina XML elementů definováno ve schématu Core odpovídají typům v <xref:System.Windows.Annotations> oboru názvů.  Základní schéma poskytuje tři Rozšiřovací body, ve kterém aplikace můžete přidat svoje vlastní data XML.  Zahrnout tyto Rozšiřovací body <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>nebo "Obsah".  (Obsahu prvky jsou k dispozici ve formě <xref:System.Xml.XmlElement> seznamu.)  
   
- Rozšíření pro definuje schéma základní popsaných v tomto tématu <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a typů součástí původní verze systému Windows Presentation Foundation (WPF) obsahu.  
+ Definuje rozšíření pro základní schéma popsaných v tomto tématu <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>a obsah typů, které jsou zahrnuty v počáteční verzi Windows Presentation Foundation (WPF).  
   
 <a name="CoreSchema"></a>   
-## <a name="annotations-xml-core-schema"></a>Schéma základní XML poznámky  
- Základní schéma XML poznámky definuje strukturu XML, který se používá k ukládání <xref:System.Windows.Annotations.Annotation> objekty.  
+## <a name="annotations-xml-core-schema"></a>Schéma XML Core poznámek  
+ Schéma poznámek XML Core definuje strukturu XML, který se používá k ukládání <xref:System.Windows.Annotations.Annotation> objekty.  
   
 ```xml  
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"  
@@ -181,8 +181,8 @@ Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft 
 ```  
   
 <a name="BaseSchema"></a>   
-## <a name="annotations-xml-base-schema"></a>Základní schématu XML poznámky  
- Základní schéma definuje strukturu XML pro tři abstraktní prvky definovaná ve schématu základní – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.  
+## <a name="annotations-xml-base-schema"></a>Základní schéma XML poznámek  
+ Základní schéma definuje strukturu XML pro tři abstraktní elementů definováno ve schématu Core – <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, a <xref:System.Windows.Annotations.AnnotationResource.Contents%2A>.  
   
 ```xml  
 <xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified"  
@@ -429,11 +429,11 @@ Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft 
     </xsd:complexContent>  
   </xsd:complexType>  
   
-  <-- PageNumber element substitutes ContentLocatorPart and is used to locate a  
-  *  page in a FixedDocument.  PageNumber ContentLocatorPart is used in  
-  *   conjunction with the FixedTextRange ContentLocatorPart and it shows on with  
-  *   page are the coordinates defined in the FixedTextRange.  
-  *   Example of a PageNumber ContentLocatorPart:  
+  <!-- PageNumber element substitutes ContentLocatorPart and is used to locate a  
+  *    page in a FixedDocument.  PageNumber ContentLocatorPart is used in  
+  *    conjunction with the FixedTextRange ContentLocatorPart and it shows on with  
+  *    page are the coordinates defined in the FixedTextRange.  
+  *    Example of a PageNumber ContentLocatorPart:  
   *     
   *       <anb:PageNumber>  
   *         <anc:Item Name="Value" Value="1" />  
@@ -464,8 +464,8 @@ Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft 
   <xsd:element name="Text" type="anb:TextContentType"  
                substitutionGroup="anc:Content"/>  
   
-  <-- Ink – contains XAML representing Sticky Note ink.  
-  *   Used in annotations of type InkStickyNote. -->  
+  <!-- Ink – contains XAML representing Sticky Note ink.  
+  *    Used in annotations of type InkStickyNote. -->  
   <xsd:complexType name="InkContentType">  
     <!-- See XAML schema for Ink content -->  
   </xsd:complexType>  
@@ -492,8 +492,8 @@ Toto téma popisuje definici schématu XML (XSD) používá rozhraní Microsoft 
 ```  
   
 <a name="SampleXML"></a>   
-## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>Ukázka XML vyprodukované XmlStreamStore poznámky  
- Soubor XML, který následuje zobrazí výstup poznámky <xref:System.Windows.Annotations.Storage.XmlStreamStore> a v organizaci ukázkový soubor, který obsahuje tři poznámky – zvýraznění textu rychlé poznámky a Flash disk – Poznámka rukopisu.  
+## <a name="sample-xml-produced-by-annotations-xmlstreamstore"></a>Ukázkový soubor XML vytvořené metodou XmlStreamStore poznámky  
+ XML, který následuje zobrazí výstup anotací <xref:System.Windows.Annotations.Storage.XmlStreamStore> a organizaci, který obsahuje tři anotace – zvýraznění textu rychlé – poznámky a stonek ink-note ukázkový soubor.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

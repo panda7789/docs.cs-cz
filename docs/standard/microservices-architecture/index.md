@@ -4,18 +4,18 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 8304e4d0b06e7137c42e669191c4e9f0dd946dbb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 52435c31e77e7139b982829ae4ab33a5e0f9f045
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152679"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030435"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
 
 ![Titulní knihy](./media/cover-small.png)
 
-**EDICE v2.1.02** – aktualizováno, aby ASP.NET Core 2.1
+**EDICE v2.1.03** – aktualizováno, aby ASP.NET Core 2.1
 
 Tato příručka slouží jako úvod k vývoji aplikací založených na mikroslužbách a správu kontejnerů. Tento článek popisuje kontrol architektonického návrhu a implementace přístupy pomocí .NET Core a kontejnery Dockeru. 
 

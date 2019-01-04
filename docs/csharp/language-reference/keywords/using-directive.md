@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 8ed1386d0da802e00dc6cf4b8d56b27fbb6226d4
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 3e8daf24929339e31cda81a726ec11fdcffc687a
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612592"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029499"
 ---
 # <a name="using-directive-c-reference"></a>Using – direktiva (C# odkaz)
 
@@ -74,7 +74,7 @@ using s.RegularExpressions;
 
 Vytvoření `using` směrnice použít typy v oboru názvů, aniž byste museli zadat obor názvů. A `using` – direktiva není poskytují přístup k žádné obory názvů, které jsou vnořené v oboru názvů, které zadáte.
 
-Obory názvů se dělí na dvou kategorií: uživatelem definované a definovaná systémem. Uživatelem definované obory názvů jsou obory názvů definované ve vašem kódu. Seznam oborů názvů definovaných systémem najdete v tématu [.NET API Browseru](https://docs.microsoft.com/dotnet/api/).
+Obory názvů se dělí na dvou kategorií: uživatelem definované a definovaná systémem. Uživatelem definované obory názvů jsou obory názvů definované ve vašem kódu. Seznam oborů názvů definovaných systémem najdete v tématu [.NET API Browseru](../../../../api/index.md).
 
 Odkazující metody v jiných sestaveních příklady najdete v tématu [vytvoření a použití sestavení pomocí příkazového řádku](../../programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).
 

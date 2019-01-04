@@ -9,12 +9,12 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-ms.openlocfilehash: a1006816168e405d0d79786b8430b802f1ec0928
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: a4c0a137da74b276b1238d500057ce96756a1ae1
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45999439"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030370"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.Freezable> objekty, které mají speciální funkcí, které může pomoct zlepšit výkon aplikace. Příklady zablokovatelných objektů: štětce, pera, transformace, geometrie a animace.  
@@ -126,7 +126,7 @@ mc:Ignorable="PresentationOptions"
   
 -   Bezpečnost vlákna: zmrazený <xref:System.Windows.Freezable> mohou být sdílena mezi vlákny.  
   
--   Podrobné oznámení o změně: na rozdíl od jiných <xref:System.Windows.DependencyObject>s, Zablokovatelných objektů poskytují oznámení o změnách při změně hodnoty vlastnosti dílčí.  
+-   Oznámení o změně podrobné: Na rozdíl od jiných <xref:System.Windows.DependencyObject>s, Zablokovatelných objektů poskytují oznámení o změnách při změně hodnoty vlastnosti dílčí.  
   
 -   Snadné klonování: zablokovatelného objektu třídy již provedlo několik metod, které vytvářejí hloubkové duplicity.  
   
@@ -154,7 +154,7 @@ mc:Ignorable="PresentationOptions"
   
 -   Volání <xref:System.Windows.Freezable.WritePostscript%2A> metoda před ukončením metody, které se zápis do vlastnosti bez závislosti datové členy.  
   
- Pokud vaše třída obsahuje závislost vlastnost datové členy, které jsou <xref:System.Windows.DependencyObject> objekty, musíte také zavolat <xref:System.Windows.Freezable.OnFreezablePropertyChanged%2A> metoda pokaždé, když změníte na jejich hodnot, i v případě, že nastavujete člen `null`.  
+ Pokud vaše třída obsahuje závislost vlastnost datové členy, které jsou <xref:System.Windows.DependencyObject> objekty, musíte také zavolat <xref:System.Windows.Freezable.OnFreezablePropertyChanged%2A> metoda pokaždé, když změníte obsah některého z jejich hodnot, i v případě, že nastavujete člen `null`.  
   
 > [!NOTE]
 >  Je velmi důležité, že začnete každý <xref:System.Windows.Freezable> přepsat pomocí volání základní implementaci metody.  

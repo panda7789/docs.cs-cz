@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: eabb9c84824a4604319a346612e84563abaf2b76
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 31f9e31d7cd91f9f89e131a7b506cf1a53fce7e4
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485726"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030292"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAML. Tyto podmínky se často používají v celé zbývající části této dokumentace, i pro WPF dokumentaci, konkrétně a pro jiná rozhraní, které využívají XAML nebo o základních konceptech XAML povolená podpora jazyka XAML na úrovni oboru názvů System.Xaml. Toto téma rozšiřuje základní terminologii zavedené v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
@@ -288,7 +288,7 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
   
 <a name="optional_and_nonrecommended_xaml_usages"></a>   
 ## <a name="optional-and-nonrecommended-xaml-usages"></a>Použití volitelné a Nonrecommended XAML  
- Následující části popisují použití XAML, které podporují technicky XAML procesory, ale, který vytvoří podrobností nebo jiné aesthetic problémy, které vás omezují soubory XAML zbývající čitelný, kdy vaše vyvíjet aplikace, které obsahují zdroje XAML .  
+ Následující části popisují použití XAML technicky podporuje procesory XAML, ale které vyvolávají podrobností nebo jiné aesthetic problémy, které vás omezují zbývající lidsky čitelném při vývoji aplikací, které obsahují zdroje XAML soubory XAML.  
   
 ### <a name="optional-property-element-usages"></a>Použití elementu volitelné vlastnosti  
  Použití elementu volitelné vlastnosti zahrnují explicitně výpisu obsahu vlastnosti prvku, že procesor XAML bere v úvahu implicitní. Například, pokud deklarujete obsah <xref:System.Windows.Controls.Menu>, můžete se rozhodnout explicitně deklarovat <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce <xref:System.Windows.Controls.Menu> jako `<Menu.Items>` značky elementu vlastnosti a místo jednotlivých <xref:System.Windows.Controls.MenuItem> v rámci `<Menu.Items>`, a nikoli než při použití implicitního procesoru chování XAML, který všechny podřízené prvky prvku <xref:System.Windows.Controls.Menu> musí být <xref:System.Windows.Controls.MenuItem> a jsou umístěny v <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce. Volitelné použití někdy může pomoct vizuálně vysvětlení struktury objekt reprezentovaný v kódu. Nebo v některých případech můžete použití explicitní vlastnost elementu vyhnout kód, který je technicky funkční, ale vizuálně matoucí, jako je například rozšíření značek vnořené v rámci hodnotu atributu.  
@@ -317,7 +317,7 @@ Toto téma definuje podmínky, které se používají k popisu prvky syntaxe XAM
   
 ## <a name="see-also"></a>Viz také  
  [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
+ [Namespace XAML (x:) Jazykové funkce](../../../../docs/framework/xaml-services/xaml-namespace-x-language-features.md)  
  [Rozšíření WPF XAML](../../../../docs/framework/wpf/advanced/wpf-xaml-extensions.md)  
  [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
  [TypeConverters a XAML](../../../../docs/framework/wpf/advanced/typeconverters-and-xaml.md)  

@@ -39,12 +39,12 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: acc51287a8c670da63d0ec421aa232864ea91c2b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: b00d08f43874518e117739d4a9502bf9463db5c1
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185846"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029869"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -84,9 +84,9 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 
  <xref:System> Obor názvů je kořenový obor názvů pro základní typy v rozhraní .NET. Tento obor názvů obsahuje třídy, které představují základní datové typy použit všemi aplikacemi: <xref:System.Object> (kořen hierarchie dědičnosti) <xref:System.Byte>, <xref:System.Char>, <xref:System.Array>, <xref:System.Int32>, <xref:System.String>, a tak dále. Mnohé z těchto typů odpovídají primitivní datové typy, které používá svůj oblíbený programovací jazyk. Při psaní kódu s využitím typy rozhraní .NET Framework, můžete použít váš jazyk odpovídající klíčové slovo při očekávání základní datový typ rozhraní .NET Framework.  
   
- V následující tabulce jsou uvedeny základní typy, .NET poskytuje stručně popisuje všechny typy a označuje odpovídající typ v jazyce Visual Basic, C#, C++ a F #.  
+ V následující tabulce jsou uvedeny základní typy, .NET poskytuje stručně popisuje všechny typy a označuje odpovídající typ v jazyce Visual Basic C#, C++, a F#.  
   
-|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ jazyka C#|C + +/ CLI datový typ|Datový typ F #|  
+|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ jazyka C#|C + +/ CLI datový typ|F#datový typ|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |Integer|<xref:System.Byte>|Celé číslo bez znaménka 8 bitů.|**Bajtů**|**byte**|**unsigned char**|**byte**|  
 ||<xref:System.SByte>|8bitové celé číslo se znaménkem.<br /><br /> Není kompatibilní se Specifikací CLS.|**SByte –**|**sbyte**|**char**<br /> -nebo-<br /> **podepsané** **char**|**sbyte**|  
@@ -96,7 +96,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 ||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**UInt16**|  
 ||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**Uinteger –**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**UInt32**|  
 ||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**UInt64**|  
-|Plovoucí desetinná čárka|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**</br> or</br>**single**|  
+|Číslo s plovoucí desetinnou čárkou|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**</br> or</br>**single**|  
 ||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**</br> or </br> **double**|  
 |Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Datový typ Boolean**|**bool**|**bool**|**bool**|  
 |Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
@@ -113,5 +113,5 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 ## <a name="see-also"></a>Viz také:
 
 - [Obecný systém typů](../../docs/standard/base-types/common-type-system.md)  
-- [Prohlížeč rozhraní API .NET](https://docs.microsoft.com/dotnet/api)  
+- [Prohlížeč rozhraní API .NET](../../api/index.md)  
 - [Přehled](../../docs/framework/get-started/overview.md)

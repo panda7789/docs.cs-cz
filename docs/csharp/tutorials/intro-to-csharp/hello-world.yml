@@ -11,22 +11,119 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: 7d6029e48c67259dc2fb28151196223f2490962f
-  ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+  ms.openlocfilehash: 86c2226796d5632281f2b6b2cb533bfeacebd288
+  ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/10/2018
-  ms.locfileid: "53126533"
+  ms.lasthandoff: 01/04/2019
+  ms.locfileid: "54030513"
 items:
 - durationInMinutes: 1
   content: >
     V tomto kurzu se naučíte C# interaktivně, pomocí prohlížeče k zápisu C# a zobrazovat výsledky kompilace a spuštění kódu. Obsahuje sérii lekcí, které začínají programem "Hello World". Tato lekce vás naučí základy jazyka C#.
 - title: Spuštění prvního programu jazyka C#
   durationInMinutes: 2
-  content: "Spusťte v interaktivním okně následující kód. K tomu, zadejte do interaktivního okna následující blok kódu a klikněte na tlačítko **spustit** tlačítka:\n\n```csharp\nConsole.WriteLine(\"Hello World!\");\n```\n\nBlahopřejeme! Jste spustili svůj první program C#. Je jednoduchý program, který zobrazí zprávu \"Hello World!\". Používá se <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu pro zobrazení této zprávy. `Console` je typ, který představuje okno konzoly. `WriteLine` je metoda `Console` , která zobrazí text této textové konzole řádek.\n\nTeď přejdeme a prozkoumat další. Zbytek této lekce se zabývá prací s `string` typ, který představuje text v jazyce C#. Podobně jako `Console` typ, `string` typ má metody. `string` Metody práce s textem. \n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: >
+    Spusťte v interaktivním okně následující kód. K tomu, zadejte do interaktivního okna následující blok kódu a klikněte na tlačítko **spustit** tlačítka:
+
+
+    ```csharp
+
+    Console.WriteLine("Hello World!");
+
+    ```
+
+
+    Blahopřejeme! Jste spustili svůj první program C#. Je jednoduchý program, který zobrazí zprávu "Hello World!". Používá se <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> metodu pro zobrazení této zprávy. `Console` je typ, který představuje okno konzoly. `WriteLine` je metoda `Console` , která zobrazí text této textové konzole řádek.
+
+
+    Teď přejdeme a prozkoumat další. Zbytek této lekce se zabývá prací s `string` typ, který představuje text v jazyce C#. Podobně jako `Console` typ, `string` typ má metody. `string` Metody práce s textem.
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Deklarace a používání proměnných
   durationInMinutes: 3
-  content: "Váš první program vytisknout `string` \"Hello World!\" na obrazovce. \n\n> [!TIP]\n> Když se budete učit, C# (nebo libovolným programovacím jazykem), budete se při psaní kódu dělat chyby. **Kompilátoru** se tyto chyby odhalí a dejte nám o nich na vás. Pokud výstup obsahuje chybové zprávy, prohlédněte si blíže ukázkový kód a kód v interaktivním okně, abyste zjistili, co je opravit.\n> Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#. \n\nVáš první program se omezuje na zobrazení jedné určité zprávy. Můžete napsat užitečnější programy pomocí **proměnné**. A **proměnnou** je symbol, můžete spustit stejný kód s různými hodnotami. Pojďme si to vyzkoušet! Nahraďte kód, který jste napsali v interaktivním okně následující kód:\n\n```csharp\nstring aFriend = \"Bill\";\nConsole.WriteLine(aFriend);\n```\n\nPrvní řádek deklaruje proměnnou `aFriend` a přiřazuje jí hodnotu \"Bill\". Druhý řádek vytiskne název.\n\nVšechny deklarované proměnné můžete přiřadit různé hodnoty. Změňte název na některého ze svých přátel. Přidejte následující dva řádky v interaktivním okně následující kód, který jste už přidali:\n\n```csharp\naFriend = \"Maira\";\nConsole.WriteLine(aFriend);\n```\n\nVšimněte si, že stejný řádek kódu vytiskne dvě různé zprávy podle hodnoty uložené v `aFriend` proměnné.\n\nMůžete také všimnout, že se v posledních dvou zprávách chybí slovo \"Hello\". Pojďme to napravit.  Upravte řádky, které zobrazují zprávu následující:\n\n```csharp\nConsole.WriteLine(\"Hello \" + aFriend);\n```\n\nKlikněte na tlačítko **spustit** znovu, abyste viděli výsledek.\n\nZatím jste používali `+` k vytvoření řetězce z **proměnné** a **konstantní** řetězce. Je lepší způsob.\nMůžete umístit do proměnné mezi `{` a `}` znaků říct jazyka C# k textu nahraďte hodnotou proměnné.\n\nTento postup se nazývá [interpolace](../../language-reference/tokens/interpolated.md).\n\nPokud chcete přidat `$` před počáteční uvozovky řetězce, pak můžete vložit proměnné, jako je třeba `aFriend`, do řetězce mezi složenými závorkami. Vyzkoušejte ho:\n\n\n```csharp\nConsole.WriteLine($\"Hello {aFriend}\");\n```\n\nKlikněte na tlačítko **spustit** znovu, abyste viděli výsledek. Místo \"Hello {aFriend}\" zpráva by měla být \"Hello Maira\".\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: >
+    Váš první program vytisknout `string` "Hello World!" na obrazovce.
+
+
+    > [!TIP]
+
+    > Když se budete učit, C# (nebo libovolným programovacím jazykem), budete se při psaní kódu dělat chyby. **Kompilátoru** se tyto chyby odhalí a dejte nám o nich na vás. Pokud výstup obsahuje chybové zprávy, prohlédněte si blíže ukázkový kód a kód v interaktivním okně, abyste zjistili, co je opravit.
+
+    > Toto cvičení vám pomůže seznámit se se strukturou kódu jazyka C#.
+
+
+    Váš první program se omezuje na zobrazení jedné určité zprávy. Můžete napsat užitečnější programy pomocí **proměnné**. A **proměnnou** je symbol, můžete spustit stejný kód s různými hodnotami. Pojďme si to vyzkoušet! Nahraďte kód, který jste napsali v interaktivním okně následující kód:
+
+
+    ```csharp
+
+    string aFriend = "Bill";
+
+    Console.WriteLine(aFriend);
+
+    ```
+
+
+    První řádek deklaruje proměnnou `aFriend` a přiřazuje jí hodnotu "Bill". Druhý řádek vytiskne název.
+
+
+    Všechny deklarované proměnné můžete přiřadit různé hodnoty. Změňte název na některého ze svých přátel. Přidejte následující dva řádky v interaktivním okně následující kód, který jste už přidali:
+
+
+    ```csharp
+
+    aFriend = "Maira";
+
+    Console.WriteLine(aFriend);
+
+    ```
+
+
+    Všimněte si, že stejný řádek kódu vytiskne dvě různé zprávy podle hodnoty uložené v `aFriend` proměnné.
+
+
+    Můžete také všimnout, že se v posledních dvou zprávách chybí slovo "Hello". Pojďme to napravit.  Upravte řádky, které zobrazují zprávu následující:
+
+
+    ```csharp
+
+    Console.WriteLine("Hello " + aFriend);
+
+    ```
+
+
+    Klikněte na tlačítko **spustit** znovu, abyste viděli výsledek.
+
+
+    Zatím jste používali `+` k vytvoření řetězce z **proměnné** a **konstantní** řetězce. Je lepší způsob.
+
+    Můžete umístit do proměnné mezi `{` a `}` znaků říct jazyka C# k textu nahraďte hodnotou proměnné.
+
+
+    Tento postup se nazývá [interpolace](../../language-reference/tokens/interpolated.md).
+
+
+    Pokud chcete přidat `$` před počáteční uvozovky řetězce, pak můžete vložit proměnné, jako je třeba `aFriend`, do řetězce mezi složenými závorkami. Vyzkoušejte ho:
+
+
+
+    ```csharp
+
+    Console.WriteLine($"Hello {aFriend}");
+
+    ```
+
+
+    Klikněte na tlačítko **spustit** znovu, abyste viděli výsledek. Místo "Hello {aFriend}" zpráva by měla být "Hello Maira".
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Práce s řetězci
   durationInMinutes: 5
   content: >
@@ -69,10 +166,110 @@ items:
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Další úkony s řetězci
   durationInMinutes: 5
-  content: "Zatím jste používali **metoda**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, která zobrazuje zprávy. A **metoda** je blok kódu, který implementuje určitou akci. Má název, takže k němu máte přístup. \n\nPředpokládejme, že vaše řetězce obsahovat počáteční ani koncové mezery, které nechcete zobrazit. Chcete **trim** mezery z řetězce.\n<xref:System.String.Trim%2A> Metodu a související metody <xref:System.String.TrimStart%2A> a <xref:System.String.TrimEnd%2A> tuto práci. Tyto metody můžete použít jenom mají být odebrány úvodní a koncové mezery. Vyzkoušejte následující kód:\n\n```csharp\nstring greeting = \"      Hello World!       \";\nConsole.WriteLine($\"[{greeting}]\");\n\nstring trimmedGreeting = greeting.TrimStart();\nConsole.WriteLine($\"[{trimmedGreeting}]\");\n\ntrimmedGreeting = greeting.TrimEnd();\nConsole.WriteLine($\"[{trimmedGreeting}]\");\n\ntrimmedGreeting = greeting.Trim();\nConsole.WriteLine($\"[{trimmedGreeting}]\");\n```\n\nTato ukázka posiluje pár důležitých konceptů, při práci s řetězci. Metody pro manipulaci s řetězci vrací nové objekty namísto úpravy. Vidíte, že každé volání kterékoli z `Trim` metody vrátí nový řetězec, ale původní zprávu nezmění.\n\nExistují další metody pro práci s řetězci. Například pravděpodobně využili vyhledávání a nahradit příkaz v nějakém editoru nebo textovém procesoru před. <xref:System.String.Replace%2A> Metoda provede něco podobného v řetězci. Vyhledá dílčí řetězec a nahradí ho jiným textem. <xref:System.String.Replace%2A> Metoda má dva **parametry**. Toto jsou řetězce v závorkách. První řetězec, který je hledaný text. Druhý řetězec je text, který má nahradit. Vyzkoušejte si to sami. Přidejte tento kód. Zadejte jej zobrazíte pomocné parametry, když začnete psát `.Re` po `sayHello` proměnné:\n\n```csharp\nstring sayHello = \"Hello World!\";\nConsole.WriteLine(sayHello);\nsayHello = sayHello.Replace(\"Hello\", \"Greetings\");\nConsole.WriteLine(sayHello);\n```\n\nDalší dvě užitečné metody Ujistěte se, všechna velká mají standardní řetězec nebo text malými písmeny. Vyzkoušejte následující kód. Zadejte jej zobrazit jak **IntelliSense** nabízí tipy, jak začnete psát `To`:\n\n```csharp\nConsole.WriteLine(sayHello.ToUpper());\nConsole.WriteLine(sayHello.ToLower());\n```\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: >
+    Zatím jste používali **metoda**, <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, která zobrazuje zprávy. A **metoda** je blok kódu, který implementuje určitou akci. Má název, takže k němu máte přístup.
+
+
+    Předpokládejme, že vaše řetězce obsahovat počáteční ani koncové mezery, které nechcete zobrazit. Chcete **trim** mezery z řetězce.
+
+    <xref:System.String.Trim%2A> Metodu a související metody <xref:System.String.TrimStart%2A> a <xref:System.String.TrimEnd%2A> tuto práci. Tyto metody můžete použít jenom mají být odebrány úvodní a koncové mezery. Vyzkoušejte následující kód:
+
+
+    ```csharp
+
+    string greeting = "      Hello World!       ";
+
+    Console.WriteLine($"[{greeting}]");
+
+
+    string trimmedGreeting = greeting.TrimStart();
+
+    Console.WriteLine($"[{trimmedGreeting}]");
+
+
+    trimmedGreeting = greeting.TrimEnd();
+
+    Console.WriteLine($"[{trimmedGreeting}]");
+
+
+    trimmedGreeting = greeting.Trim();
+
+    Console.WriteLine($"[{trimmedGreeting}]");
+
+    ```
+
+
+    Tato ukázka posiluje pár důležitých konceptů, při práci s řetězci. Metody pro manipulaci s řetězci vrací nové objekty namísto úpravy. Vidíte, že každé volání kterékoli z `Trim` metody vrátí nový řetězec, ale původní zprávu nezmění.
+
+
+    Existují další metody pro práci s řetězci. Například pravděpodobně využili vyhledávání a nahradit příkaz v nějakém editoru nebo textovém procesoru před. <xref:System.String.Replace%2A> Metoda provede něco podobného v řetězci. Vyhledá dílčí řetězec a nahradí ho jiným textem. <xref:System.String.Replace%2A> Metoda má dva **parametry**. Toto jsou řetězce v závorkách. První řetězec, který je hledaný text. Druhý řetězec je text, který má nahradit. Vyzkoušejte si to sami. Přidejte tento kód. Zadejte jej zobrazíte pomocné parametry, když začnete psát `.Re` po `sayHello` proměnné:
+
+
+    ```csharp
+
+    string sayHello = "Hello World!";
+
+    Console.WriteLine(sayHello);
+
+    sayHello = sayHello.Replace("Hello", "Greetings");
+
+    Console.WriteLine(sayHello);
+
+    ```
+
+
+    Další dvě užitečné metody Ujistěte se, všechna velká mají standardní řetězec nebo text malými písmeny. Vyzkoušejte následující kód. Zadejte jej zobrazit jak **IntelliSense** nabízí tipy, jak začnete psát `To`:
+
+
+    ```csharp
+
+    Console.WriteLine(sayHello.ToUpper());
+
+    Console.WriteLine(sayHello.ToLower());
+
+    ```
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Hledání řetězců
   durationInMinutes: 10
-  content: "Druhá část *vyhledávání a nahrazení* je operace hledání textu v řetězci. Můžete použít <xref:System.String.Contains%2A> metodu pro hledání. Zjistíte, jestli některý řetězec obsahuje určitý dílčí řetězec. Následující kód k prozkoumání <xref:System.String.Contains%2A>:\n\n```csharp\nstring songLyrics = \"You say goodbye, and I say hello\";\nConsole.WriteLine(songLyrics.Contains(\"goodbye\"));\nConsole.WriteLine(songLyrics.Contains(\"greetings\"));\n```\n\n<xref:System.String.Contains%2A> Metoda vrátí hodnotu **logická** hodnotu, která udává, pokud byl nalezen řetězec jste hledali. A **logická** ukládá buď `true` nebo `false` hodnotu. Získáte další informace o **logická** hodnoty v některé z pozdějších lekcí.\n\n***Výzvy***\n\nExistují dvě podobné metody <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> hledání dílčích řetězců v řetězci. Ty vyhledají dílčí řetězec na začátku nebo konci řetězce. Zkuste upravit předchozí ukázku použít <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> místo <xref:System.String.Contains%2A>. Vyhledejte \"Vás\" nebo \"goodbye\" na začátku řetězce. Vyhledejte \"hello\" nebo \"goodbye\" na konci řetězce.\n\n> [!Note]\n> Podívejte se na vaše interpunkční znaménka při testování textu na konci řetězce. Pokud řetězec končí tečkou, musíte hledat řetězec končící tečkou.\n\nMěli byste obdržet `true` pro spuštění \"You\" a končící na \"hello\" a hodnotu false pro začíná nebo končí \"goodbye\". \n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+  content: >
+    Druhá část *vyhledávání a nahrazení* je operace hledání textu v řetězci. Můžete použít <xref:System.String.Contains%2A> metodu pro hledání. Zjistíte, jestli některý řetězec obsahuje určitý dílčí řetězec. Následující kód k prozkoumání <xref:System.String.Contains%2A>:
+
+
+    ```csharp
+
+    string songLyrics = "You say goodbye, and I say hello";
+
+    Console.WriteLine(songLyrics.Contains("goodbye"));
+
+    Console.WriteLine(songLyrics.Contains("greetings"));
+
+    ```
+
+
+    <xref:System.String.Contains%2A> Metoda vrátí hodnotu **logická** hodnotu, která udává, pokud byl nalezen řetězec jste hledali. A **logická** ukládá buď `true` nebo `false` hodnotu. Získáte další informace o **logická** hodnoty v některé z pozdějších lekcí.
+
+
+    ***Výzvy***
+
+
+    Existují dvě podobné metody <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> hledání dílčích řetězců v řetězci. Ty vyhledají dílčí řetězec na začátku nebo konci řetězce. Zkuste upravit předchozí ukázku použít <xref:System.String.StartsWith%2A> a <xref:System.String.EndsWith%2A> místo <xref:System.String.Contains%2A>. Vyhledejte "Vás" nebo "goodbye" na začátku řetězce. Vyhledejte "hello" nebo "goodbye" na konci řetězce.
+
+
+    > [!Note]
+
+    > Podívejte se na vaše interpunkční znaménka při testování textu na konci řetězce. Pokud řetězec končí tečkou, musíte hledat řetězec končící tečkou.
+
+
+    Měli byste obdržet `true` pro spuštění "You" a končící na "hello" a hodnotu false pro začíná nebo končí "goodbye".
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
 - title: Dokončení výzvy
   durationInMinutes: 3
   content: >
@@ -98,4 +295,12 @@ items:
     > [!NOTE]
 
     > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
-- content: "Dokončili jste \"Hello C#\" Úvod do C# kurzu. Můžete kliknout **čísla ve C# ** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok \"Zachovat učení\" přináší zpět do těchto kurzů.\n\nDalší informace o `string` typu:\n- [C#Průvodce programováním v](../../programming-guide/index.md) téma na [řetězce](../../programming-guide/strings/index.md). \n- [Jak tipy pro práci s řetězci](../../how-to/index.md#working-with-strings)."
+- content: >-
+    Dokončili jste "Hello C#" Úvod do C# kurzu. Můžete kliknout **čísla ve C# ** odkaz níže spusťte další interaktivní kurz, nebo můžete navštívit [.NET Web](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) stáhnout .NET Core SDK, vytvořte projekt na vašem počítači a zachovat kódování. Krok "Zachovat učení" přináší zpět do těchto kurzů.
+
+
+    Další informace o `string` typu:
+
+    - [C#Průvodce programováním v](../../programming-guide/index.md) téma na [řetězce](../../programming-guide/strings/index.md).
+
+    - [Jak tipy pro práci s řetězci](../../how-to/index.md#working-with-strings).

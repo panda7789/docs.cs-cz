@@ -4,12 +4,12 @@ description: .NET core je modulární a vysoce výkonnou implementace .NET pro v
 author: richlander
 ms.date: 08/01/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: ffa58600bea1f5514b25c18aa00e6d36679f2fd9
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 62019c5414857ed5eee99a6a60f5b0b183fe25e8
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170261"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030279"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -19,15 +19,15 @@ Zobrazit [o .NET Core](about.md) získat další informace o .NET Core, včetně
 
 Podívejte se na [kurzy k .NET Core](tutorials/index.md) se naučíte vytvořit jednoduchou aplikaci .NET Core. Trvá jenom pár minut a zprovoznění svoji první aplikaci. Pokud chcete vyzkoušet .NET Core v prohlížeči, podívejte se na [čísla ve C# ](../csharp/tutorials/intro-to-csharp/numbers-in-csharp.yml) online kurz ke službě.
 
-## <a name="download-net-core-21"></a>Stáhnout .NET Core 2.1
+## <a name="download-net-core-22"></a>Stáhnout .NET Core 2.2
 
-Stáhněte si [sady SDK .NET Core 2.1](https://www.microsoft.com/net/download) vyzkoušet .NET Core na počítači Windows, macOS nebo Linux. Navštivte [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) Pokud byste radši chtěli použít kontejnery Dockeru.
+Stáhněte si [.NET Core 2.2 SDK](https://www.microsoft.com/net/download) vyzkoušet .NET Core na počítači Windows, macOS nebo Linux. Navštivte [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) Pokud byste radši chtěli použít kontejnery Dockeru.
 
 Všechny verze .NET Core najdete na adrese [soubory ke stažení rozhraní .NET Core](https://www.microsoft.com/net/download/archives) Pokud potřebujete jinou verzi .NET Core.
 
-## <a name="net-core-21"></a>.NET core 2.1
+## <a name="net-core-22"></a>.NET core 2.2
 
-Nejnovější verze je [.NET Core 2.1](whats-new/dotnet-core-2-1.md). Mezi nové funkce patří: globální nástroje, výkonné rozhraní API (například <xref:System.Span%601?displayProperty=nameWithType>), vrstvené kompilace JIT [sestavení](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/) a [vylepšení výkonu modulu runtime](https://blogs.msdn.microsoft.com/dotnet/2018/04/18/performance-improvements-in-net-core-2-1/)a podpora pro Alpine a ARM32.
+Nejnovější verze je [.NET Core 2.2](whats-new/dotnet-core-2-2.md). Mezi nové funkce patří: závisí na architektuře nasazení, spuštění háky, ověřování AAD s Azure SQL a podpora Windows ARM32.
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 

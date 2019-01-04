@@ -4,14 +4,14 @@ description: V tomto článku se naučíte, jak povolení dokončování pomocí
 author: thraka
 ms.author: adegeo
 ms.date: 12/17/2018
-ms.openlocfilehash: 10b2e13aad9821295efc5c36d1cad04f1a95477c
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.openlocfilehash: 783868fb8300dd4a25c62a108c1c0f7a485721df
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53784405"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029603"
 ---
-# <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Povolení dokončování pomocí TABULÁTORU pro rozhraní příkazového řádku .NET Core
+# <a name="how-to-enable-tab-completion-for-net-core-cli"></a>Povolení dokončování pomocí TABULÁTORU pro rozhraní příkazového řádku .NET Core
 
 Počínaje .NET Core 2.0 SDK, rozhraní příkazového řádku .NET Core podporuje dokončování pomocí tabulátoru. Tento článek popisuje, jak nakonfigurovat dokončování pomocí tabulátoru pro tři prostředí PowerShell, Bash a zsh. Další prostředí může mít podporu pro automatické dokončování. Přečtěte si jejich dokumentaci o tom, jak nakonfigurovat automatické doplňování, kroky by měl být podobný postup popsaný v tomto článku.
 
@@ -28,7 +28,7 @@ migrate
 pack
 ```
 
-Pokud tento příkaz nefunguje, ujistěte se, že sada .NET Core 2.0 SDK nebo vyšší než je nainstalována. Pokud je nainstalovaná, ale tohoto příkazu stále nefunguje, ujistěte se, že `dotnet` příkaz překládá na verzi rozhraní .NET Core 2.0 a vyšší. Použití `dotnet --version` příkazu zobrazte jakou verzi `dotnet` správně směřuje aktuální cestě. Další informace najdete v tématu [vyberte verzi .NET Core používat](../versions/selection.md).
+Pokud tento příkaz nefunguje, ujistěte se, že sada .NET Core 2.0 SDK nebo vyšší než je nainstalována. Pokud je nainstalovaná, ale tohoto příkazu stále nefunguje, ujistěte se, že `dotnet` příkaz překládá na verzi .NET Core 2.0 SDK a vyšší. Použití `dotnet --version` příkazu zobrazte jakou verzi `dotnet` správně směřuje aktuální cestě. Další informace najdete v tématu [vyberte verzi .NET Core používat](../versions/selection.md).
 
 ### <a name="examples"></a>Příklady
 

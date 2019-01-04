@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20050bee696f9d47324f1b095b0b3c1120f78255
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 51e22407bd20cc6aa17b242948a83d698167590e
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47087327"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030151"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
 <a name="Top"></a> Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzory pro nahrazení. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazení jsou poskytovány pro přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodu, která mají `replacement` parametr a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzorem, který je definován `replacement` parametru.  
@@ -33,7 +33,7 @@ ms.locfileid: "47087327"
 |`${` *Jméno* `}`|Zahrnuje poslední podřetězec odpovídající pojmenované skupině, která je stanovena podle prvku `(?<` *název* `> )` v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování pojmenované skupiny](#Named).|  
 |`$$`|Zahrnuje jediný literál "$" v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování symbolu "$"](#DollarSign).|  
 |`$&`|Zahrnuje kopii celé shody v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování celé shody](#EntireMatch).|  
-|<code>$\`</code>|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu před porovnáním](#BeforeMatch).|  
+|``$` ``|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu před porovnáním](#BeforeMatch).|  
 |`$'`|Zahrnuje celý text vstupního řetězce po porovnání v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování textu po shodě](#AfterMatch).|  
 |`$+`|Zahrnuje poslední skupinu zachycenou v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování poslední zachycené skupiny](#LastGroup).|  
 |`$_`|Zahrnuje celý vstupní řetězec v řetězci pro nahrazení. Další informace najdete v tématu [nahrazování celého vstupního řetězce](#EntireString).|  
@@ -142,14 +142,14 @@ ms.locfileid: "47087327"
   
 <a name="BeforeMatch"></a>   
 ## <a name="substituting-the-text-before-the-match"></a>Nahrazování textu před porovnáváním  
- <code>$\`</code> Nahrazení nahradí odpovídající řetězec celým vstupním řetězcem před shodou. To znamená, že duplikuje vstupní řetězec až po shodu a odebírá odpovídající text. Jakýkoli text, který následuje za odpovídajícím textem, zůstane ve výsledném řetězci nezměněn. Pokud existuje více shod ve vstupním řetězci, je text pro nahrazení odvozen z původního vstupního řetězce, nikoli z řetězce, ve kterém byl text nahrazen předchozími shodami. \(V příkladu je uvedena ukázka.\) Pokud není nalezena žádná shoda, <code>$\`</code> nahrazení nemá žádný vliv.  
+ ``$` `` Nahrazení nahradí odpovídající řetězec celým vstupním řetězcem před shodou. To znamená, že duplikuje vstupní řetězec až po shodu a odebírá odpovídající text. Jakýkoli text, který následuje za odpovídajícím textem, zůstane ve výsledném řetězci nezměněn. Pokud existuje více shod ve vstupním řetězci, je text pro nahrazení odvozen z původního vstupního řetězce, nikoli z řetězce, ve kterém byl text nahrazen předchozími shodami. \(V příkladu je uvedena ukázka.\) Pokud není nalezena žádná shoda, ``$` `` nahrazení nemá žádný vliv.  
   
- Následující příklad používá vzor regulárního výrazu `\d+` pro porovnání sekvence jedné nebo více desítkových číslic ve vstupním řetězci. Řetězci pro nahrazení <code>$`</code> nahradí tyto číslice textem, který předchází shodě.  
+ Následující příklad používá vzor regulárního výrazu `\d+` pro porovnání sekvence jedné nebo více desítkových číslic ve vstupním řetězci. Řetězci pro nahrazení ``$` `` nahradí tyto číslice textem, který předchází shodě.  
   
  [!code-csharp[Conceptual.Regex.Language.Substitutions#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.substitutions/cs/before1.cs#4)]
  [!code-vb[Conceptual.Regex.Language.Substitutions#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.substitutions/vb/before1.vb#4)]  
   
- V tomto příkladu vstupní řetězec `"aa1bb2cc3dd4ee5"` obsahuje pět shod. Následující tabulka ukazuje, jak <code>$`</code> nahrazení způsobí, že modul regulárních výrazů nahradí jednotlivé shody ve vstupním řetězci. Vložený text je zobrazen tučně ve sloupci výsledků.  
+ V tomto příkladu vstupní řetězec `"aa1bb2cc3dd4ee5"` obsahuje pět shod. Následující tabulka ukazuje, jak ``$` `` nahrazení způsobí, že modul regulárních výrazů nahradí jednotlivé shody ve vstupním řetězci. Vložený text je zobrazen tučně ve sloupci výsledků.  
   
 |Shoda|Pozice|Řetězec před shodou|Výsledný řetězec|  
 |-----------|--------------|-------------------------|-------------------|  

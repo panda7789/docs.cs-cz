@@ -4,12 +4,12 @@ description: Pochopení rozdílů a používá model brány rozhraní API a př�
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: c0c98733271e74e119373fe359b9aa6121930a40
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: eebbfa6579de4cd24f58371ed1c7ab9a5f2e1c00
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152640"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030539"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -41,7 +41,7 @@ Interakce s různými mikroslužbami k sestavení na jedné obrazovce uživatels
 
 Implementace zabezpečení a převeďte společné aspekty, jako je zabezpečení a autorizace v každé mikroslužbě může vyžadovat významné vývoj úsilí. Možných způsobů je, aby tyto služby v rámci hostitele Docker nebo interní clusteru omezit přímý přístup k nim z vnějšku a k implementaci těchto vyskytující aspekty v centrálním umístění, jako jsou brány rozhraní API.
 
-- Jak může klientské aplikace komunikovat se službou, které používají protokoly sítě Internet vhodných? *
+- *Jak může klientské aplikace komunikovat se službou, které používají protokoly sítě Internet vhodných?*
 
 Klientské aplikace obvykle nepodporuje protokoly použité na straně serveru (jako je připojení přes AMQP nebo binární protokoly). Proto musí být žádostí provádí prostřednictvím protokolů, jako jsou HTTP/HTTPS a poté převedeny na jiné protokoly. A *man-in-the-middle* přístup může pomoct v této situaci.
 

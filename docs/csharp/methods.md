@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 73cd8b703fe30e622a849fa20e33b529ea3db61d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8cb47d1c7eecebca42a65557b61d782a76266c2f
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127443"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030175"
 ---
 # <a name="methods"></a>Metody #
 
@@ -197,10 +197,7 @@ V některých případech budete chtít vaše metoda vrátit více než jednu ho
 public (string, string, string, int) GetPersonalInfo(string id)
 {
     PersonInfo per = PersonInfo.RetrieveInfoById(id);
-    if (per != null)
-       return (per.FirstName, per.MiddleName, per.LastName, per.Age);
-    else
-       return null;
+    return (per.FirstName, per.MiddleName, per.LastName, per.Age);
 }
 ```
 
@@ -208,8 +205,7 @@ Volající je pak mohou využívat vrácené řazené kolekce členů s kódem, 
 
 ```csharp
 var person = GetPersonalInfo("111111111")
-if (person != null)
-   Console.WriteLine("{person.Item1} {person.Item3}: age = {person.Item4}");
+Console.WriteLine("{person.Item1} {person.Item3}: age = {person.Item4}");
 ```
 
 Lze také přiřadit názvy elementů řazené kolekce členů v definici typu řazené kolekce členů. Následující příklad ukazuje alternativní verze `GetPersonalInfo` metodu, která se používá s názvem prvky:
@@ -218,10 +214,7 @@ Lze také přiřadit názvy elementů řazené kolekce členů v definici typu �
 public (string FName, string MName, string LName, int Age) GetPersonalInfo(string id)
 {
     PersonInfo per = PersonInfo.RetrieveInfoById(id);
-    if (per != null)
-       return (per.FirstName, per.MiddleName, per.LastName, per.Age);
-    else
-       return null;
+    return (per.FirstName, per.MiddleName, per.LastName, per.Age);
 }
 ```
 
@@ -229,8 +222,7 @@ Předchozí volání `GetPersonInfo` metoda pak lze upravit následujícím způ
 
 ```csharp
 var person = GetPersonalInfo("111111111");
-if (person != null)
-   Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
+Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
 ```
 
 Pokud metoda pole je předán jako argument a změní hodnotu jednotlivých prvků, není nutné pro metodu vrátit pole, i když můžete k tomu dobrý styl nebo funkční toku hodnot.  Je to proto, že C# projde všechny typy odkazů podle hodnoty a odkazu na pole má hodnotu ukazatele na pole. V následujícím příkladu se změní na obsah `values` pole, které probíhají v `DoubleValues` metody jsou pozorovat podle veškerý kód, který obsahuje odkaz na pole.

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: d2221d1c-c9cb-48d1-b044-a3b4445c7f05
-ms.openlocfilehash: 5121b5076d867c57c97e637045aced8a00e24c84
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e5bb27980f38237f69f77721578f30df3830ade2
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185544"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54029642"
 ---
 # <a name="message-security-windows"></a>Zabezpečení zpráv – Windows
 Tato ukázka předvádí, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> vazby pro použití zabezpečení na úrovni zprávy s ověřováním Windows. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
@@ -45,12 +45,11 @@ Tato ukázka předvádí, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBin
   
   <bindings>  
     <wsHttpBinding>  
-      <!--   
-      <!--The default security for the WSHttpBinding is-->  
-      <!--Message security using Windows authentication. -->  
-      <!--This configuration explicitly defines the security mode -->  
-      <!--as Message and the clientCredentialType as Windows  -->  
-      <!--for demonstration purposes. -->  
+      <!-- The default security for the WSHttpBinding is -->  
+      <!-- Message security using Windows authentication. -->  
+      <!-- This configuration explicitly defines the security mode -->  
+      <!-- as Message and the clientCredentialType as Windows -->  
+      <!-- for demonstration purposes. -->  
       <binding name="Binding1">  
         <security mode="Message">  
           <message clientCredentialType="Windows"/>  

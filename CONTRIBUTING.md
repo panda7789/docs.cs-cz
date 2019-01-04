@@ -39,7 +39,7 @@ Můžete také z existující problémy pro které komunitní příspěvky jsou 
 
 Můžete se také podívat na naše [hlásit problémy](https://github.com/dotnet/docs/issues) seznamu a volunteer pracovat na ty, které vás zajímají. Používáme [nahoru pro vezme](https://github.com/dotnet/docs/labels/up-for-grabs) popisku na značky problémy, které jsou otevřené pro příspěvek. 
 
-**Krok 2:** Fork `/dotnet/docs`, `dotnet/samples` nebo `dotnet/dotnet-api-docs` úložišť jako potřeby a vytvořit větev pro vaše změny.
+**Krok 2:** Fork `dotnet/docs`, `dotnet/samples` nebo `dotnet/dotnet-api-docs` úložišť jako potřeby a vytvořit větev pro vaše změny.
 
 Pro malé změny můžete použít webového rozhraní na Githubu. Stačí kliknout **upravte soubor ve svém forku tohoto projektu** na soubor, který chcete změnit. GitHub vytvoří novou větev pro vás, když odešlete změny.
 
@@ -101,7 +101,7 @@ Kromě toho všechny ukázky v části *core* a *standardní* složky by měl se
 Možná budeme dále tyto adresáře, protože úložiště dokumentů přidá nový obsah. Například přidáme Xamarin adresářů, jako je třeba `xamarin-ios` a `xamarin-android` adresáře.
 
 By měl obsahovat každou úplnou ukázku, kterou vytvoříte *readme.md* souboru. Tento soubor by měl obsahovat krátký popis ukázky (jeden nebo dva odstavce). Vaše *readme.md* by vám měl sdělit čtenáři co se dozvíte, ve kterých tuto ukázku. *Readme.md* soubor by měl také obsahovat odkaz na dokument za provozu na [webu Dokumentace k .NET](https://docs.microsoft.com/dotnet/welcome).
-Pokud chcete zjistit, kde se daný soubor v úložišti mapuje na dané lokalitě, nahraďte `/docs` v cestě k úložišti s `http://docs.microsoft.com/dotnet/articles`.
+Pokud chcete zjistit, kde se daný soubor v úložišti mapuje na dané lokalitě, nahraďte `/docs` v cestě k úložišti s `https://docs.microsoft.com/dotnet`.
 
 Vaše téma se bude také obsahovat odkazy na ukázky. Přímý odkaz na složku ukázky na Githubu.
 

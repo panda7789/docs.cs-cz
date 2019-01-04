@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: 70bd756c9de2cf6ffb43479b0b28a6d51340f905
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fd6852e5381a5e57bc911203b110d189d23a9e9d
+ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50198079"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54030565"
 ---
 # <a name="auditing-security-events"></a>Auditování událostí zabezpečení
 Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) může protokolovat události zabezpečení (úspěch, selhání nebo obě) se tato funkce. Události se zapisují do protokolu událostí systému Windows a lze jej prozkoumat pomocí prohlížeče událostí.  
@@ -28,7 +28,7 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
  Můžete zkontrolovat obě auditu úrovně o úspěch nebo chybu, která se nazývá *auditu chování*.  
   
 ## <a name="audit-log-location"></a>Umístění protokolu auditu  
- Jakmile určíte úroveň auditování a chování služby, můžete vy (nebo správcem) zadejte umístění protokolu auditu. Tři možnosti jsou: výchozí, aplikace a zabezpečení. Při zadání výchozí skutečné protokolu závisí na systém, který používáte a určuje, zda systém podporuje zápis do protokolu zabezpečení. Další informace najdete v části "Operační systém" dále v tomto tématu.  
+ Jakmile určíte úroveň auditování a chování služby, můžete vy (nebo správcem) zadejte umístění protokolu auditu. Tři možnosti jsou: Výchozí aplikace a zabezpečení. Při zadání výchozí skutečné protokolu závisí na systém, který používáte a určuje, zda systém podporuje zápis do protokolu zabezpečení. Další informace najdete v části "Operační systém" dále v tomto tématu.  
   
  Zapsat do protokolu zabezpečení vyžaduje `SeAuditPrivilege`. Ve výchozím nastavení pouze místní systém a Network Service účty mají toto oprávnění. Ke správě funkcí protokolu zabezpečení `read` a `delete` vyžaduje `SeSecurityPrivilege`. Ve výchozím nastavení pouze správci mají toto oprávnění.  
   
@@ -51,7 +51,7 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
 |<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A>|Určuje, jaké typy událostí autorizace služby se auditují na úrovni služby. Možnosti jsou `None`, `Failure`, `Success`, a `SuccessOrFailure`.|  
 |<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A>|Určuje, co se stane na žádosti klientů při auditování se nezdaří. Například pokud služba pokusí se zapsat do protokolu zabezpečení, ale nemá `SeAuditPrivilege`. Výchozí hodnota `true` označuje, že chyby jsou ignorovány a žádost klienta se zpracují normálně.|  
   
- Příklad nastavení aplikace k zaznamenání událostí auditu najdete v tématu [postupy: auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
+ Příklad nastavení aplikace k zaznamenání událostí auditu najdete v tématu [jak: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
 ### <a name="configuration"></a>Konfigurace  
  Konfigurace můžete použít také k určení chování auditování tak, že přidáte [ \<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) pod [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md). Je nutné přidat prvek v části [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) jak je znázorněno v následujícím kódu.  
@@ -61,7 +61,7 @@ Aplikace vytvořené pomocí služby Windows Communication Foundation (WCF) mů�
   <system.serviceModel>  
     <behaviors>  
       <behavior>  
-        <!— auditLogLocation="Application" or "Security" -—>  
+        <!-- auditLogLocation="Application" or "Security" -->  
         <serviceSecurityAudit  
                   auditLogLocation="Application"  
                   suppressAuditFailure="true"  
