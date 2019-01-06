@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: b47be45f00ee03d400383dd45dc6776cff3f816d
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 2a372ba995f409fc3dd12492e21af80b93d20b8c
+ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45742484"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "54058591"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -99,7 +99,7 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 1.  BRÁNÍ návrh vašich typů speciálně pro serializaci XML, pokud nemáte autoři kladou důvod k nastavení tvaru XML vytvořen. Tato technologie serializace bylo nahrazeno serializaci smlouvy dat, který je popsána v předchozím oddílu.  
   
-     Jinými slovy, se nevztahují atributů z <xref:System.Runtime.Serialization> obor názvů pro nové typy, pokud si nejste jisti, že typ bude použita k serializaci kódu XML. Následující příklad ukazuje jak **System.Xml.Serialization** slouží k nastavení tvaru XML-vytvořen.  
+     Jinými slovy, se nevztahují atributů z <xref:System.Xml.Serialization> obor názvů pro nové typy, pokud si nejste jisti, že typ bude použita k serializaci kódu XML. Následující příklad ukazuje jak **System.Xml.Serialization** slouží k nastavení tvaru XML-vytvořen.  
   
      [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
      [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  

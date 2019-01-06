@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 9a7ddbc8a15e4064b4446ff322148720312e7937
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3804ac13580a967bc95617acbce86a3a0c8e7292
+ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152219"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "54058539"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
 
@@ -25,7 +25,7 @@ Toto je typ kopírování a vkládání opakované použití, který mnoho vývo
 
 ## <a name="the-custom-entity-base-class"></a>Vlastní Entity základní třídy
 
-Následující kód je příklad základní třídu Entity můžete umístit kód, který můžete používat stejným způsobem jako Každá entita domény, jako je například entity ID [operátory rovnosti](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/equality-comparison-operator), seznam domén událost na entitu, atd.
+Následující kód je příklad základní třídu Entity můžete umístit kód, který můžete používat stejným způsobem jako Každá entita domény, jako je například entity ID [operátory rovnosti](~/docs/csharp/language-reference/operators/equality-comparison-operator.md), seznam domén událost na entitu, atd.
 
 ```csharp
 // COMPATIBLE WITH ENTITY FRAMEWORK CORE (1.1 and later)

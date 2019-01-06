@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 7459173f21bd5219c2aa7b994ac2b2b44857375f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: aed0ba4621eab91dd47df9ef760fdf8c39ff1103
+ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152773"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "54058500"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
 
@@ -69,13 +69,13 @@ Pro webová rozhraní API ASP.NET Core MVC podporuje [ _vyjednávání obsahu_](
 > ### <a name="references--mapping-requests-to-responses"></a>Odkazy – mapování vyžádá, aby odpovědi
 >
 > - **Směrování na akce Kontroleru**
-> <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
+ > <https://docs.microsoft.com/aspnet/core/mvc/controllers/routing>
 > - **Vazby modelu**
-> <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
+ > <https://docs.microsoft.com/aspnet/core/mvc/models/model-binding>
 > - **Ověření modelu**
-> <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
+ > <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 > - **Filtry**
-> <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
+ > <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 
 ## <a name="working-with-dependencies"></a>Práce se závislostmi
 
@@ -213,7 +213,7 @@ S růstem aplikace stává čím dál důležitějším zohlednit si vyskytujíc
 
 Obrázek 7-2 provádění požadavku prostřednictvím kanálu požadavku a filtry.
 
-Filtry jsou obvykle implementovány jako atributy, řadiče nebo akce, můžete je použít. Když se přidá tímto způsobem, filtry na úrovni akce přepsání nebo jsou postavené na úrovni kontroleru, filtrů které samy přepsat globální filtry. Například \[trasy\] atribut lze použít k vytvoření trasy mezi kontrolery a akce. Obdobně autorizace můžete nakonfigurovat na úrovni kontroleru a poté přepsána jednotlivé akce, jak ukazuje následující příklad:
+Filtry jsou obvykle implementovány jako atributy, takže je lze následně použít na řadiče nebo akce (nebo dokonce globálně). Když se přidá tímto způsobem, filtry na úrovni akce přepsání nebo jsou postavené na úrovni kontroleru, filtrů které samy přepsat globální filtry. Například \[trasy\] atribut lze použít k vytvoření trasy mezi kontrolery a akce. Obdobně autorizace můžete nakonfigurovat na úrovni kontroleru a poté přepsána jednotlivé akce, jak ukazuje následující příklad:
 
 ```csharp
 [Authorize]
@@ -282,7 +282,7 @@ Další informace o implementaci filtry a stáhněte si ukázky práce z článk
 > - **Oblasti**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **Zpravodaj MSDN Magazine – funkce řezy pro ASP.NET Core MVC**  
- > <https://msdn.microsoft.com/magazine/mt763233.aspx>
+>   <https://msdn.microsoft.com/magazine/mt763233.aspx>
 > - **Filtry**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – filtry reálného světa ASP.NET Core MVC**  

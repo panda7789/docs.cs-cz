@@ -16,27 +16,27 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4be232ab557d582f3521b8775108c004b5a3dd78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fecd5af43f4b984a4ab626e9832b3318715c0516
+ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403302"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "54058357"
 ---
 # <a name="clrdebuggingversion-structure"></a>CLR_DEBUGGING_VERSION – struktura
-Definuje verze produktu common language runtime (CLR) pro účely ladění.  
+Určuje verzi modulu common language runtime (CLR) pro účely ladění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```  
-Typedef struct _CLR_DEBUGGING_VERSION  
+typedef struct _CLR_DEBUGGING_VERSION  
 {  
-WORD wStructVersion;  
-WORD wMajor;   
-WORD wMinor;  
-WORD wBuild;  
-WORD wRevision;  
-}  CLR_DEBUGGING_VERSION;  
+    WORD wStructVersion;
+    WORD wMajor;
+    WORD wMinor;
+    WORD wBuild;
+    WORD wRevision;
+} CLR_DEBUGGING_VERSION;
 ```  
   
 ## <a name="members"></a>Členové  
@@ -50,10 +50,10 @@ WORD wRevision;
 |`wRevision`|Číslo revize.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CLR_DEBUGGING_VERSION` Struktura je stejný jako cor_version – struktura, ale je `CLR_DEBUGGING_VERSION` struktura zajišťuje na další struktura pole verze (`wStructVersion`). V tomto poli musí být v současné době nastavit na nulu.  
+ `CLR_DEBUGGING_VERSION` Struktura je stejná jako cor_version – struktura, ale, `CLR_DEBUGGING_VERSION` struktura obsahuje pole Další Struktura verze (`wStructVersion`). V současné době toto pole musí být nastaveno na hodnotu nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl  
   
