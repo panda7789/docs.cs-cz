@@ -14,7 +14,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 12/10/2018
 ms.locfileid: "53149234"
 ---
-# <a name="for-c-reference"></a>pro (referenční dokumentace jazyka C#)
+# <a name="for-c-reference"></a>for (referenční dokumentace jazyka C#)
 
 `for` Příkaz opakuje příkaz nebo blok příkazů během zadaný logický výraz je vyhodnocen jako `true`.
 
