@@ -12,12 +12,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: e50f455ab83b0b057f8ce3c32f874e6856632d70
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 37575ff080fca1514e4fd6e4e22243227c529dd2
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836956"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084950"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech poskytuje účinný způsob, jak vystavit asynchronní chování v třídy pomocí známých události a delegovat sémantiku. K implementaci asynchronního vzoru založeného na událostech, budete muset postupovat podle některých zvláštní chování požadavky. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která používá asynchronní vzor založený na událostech.  
@@ -73,7 +73,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 -   Pokud vaše třída podporuje více souběžných volání, umožňují vývojářům sledovat každé vyvolání samostatně tak, že definujete <em>MethodName</em>**asynchronní** přetížení přebírající stavu s hodnotou objektu parametr nebo ID úlohy, volá `userSuppliedState`. Tento parametr by měl vždy být posledním parametrem v <em>MethodName</em>**asynchronní** podpis metody.  
   
--   Pokud vaše třída definuje <em>MethodName</em>**asynchronní** přetížení přebírající parametr s hodnotou objektu stavu nebo ID úlohy, je potřeba sledovat dobu života operace s tímto ID úloh a nezapomeňte uvést zpět obslužné rutině dokončení. Nejsou k dispozici jako pomoc pomocné třídy. Další informace o správě souběžnosti, naleznete v tématu [postupy: implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+-   Pokud vaše třída definuje <em>MethodName</em>**asynchronní** přetížení přebírající parametr s hodnotou objektu stavu nebo ID úlohy, je potřeba sledovat dobu života operace s tímto ID úloh a nezapomeňte uvést zpět obslužné rutině dokončení. Nejsou k dispozici jako pomoc pomocné třídy. Další informace o správě souběžnosti, naleznete v tématu [jak: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
 -   Pokud vaše třída definuje <em>MethodName</em>**asynchronní** metody bez parametru state a nepodporuje více souběžných volání, ujistěte se, že žádný pokus o vyvolání <em>MethodName</em>  **Asynchronní** před předchozího <em>MethodName</em>**asynchronní** vyvolání dokončení vyvolá <xref:System.InvalidOperationException>.  
   
@@ -127,7 +127,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 > [!NOTE]
 >  Tato pravidla mohou obejít, pokud explicitně chcete se dostat na zásad aplikačního modelu, ale přesto využívat výhod další výhody plynoucí z použití asynchronního vzoru založeného na událostech. Můžete například, že třída provoz ve Windows Forms to bude zdarma vláken. Můžete vytvořit třídu volného vláken, za předpokladu, seznamte se s vývojáři implicitní omezením. Konzolové aplikace nesynchronizovat provádění <xref:System.ComponentModel.AsyncOperation.Post%2A> volání. To může způsobit `ProgressChanged` události, které mají být vyvolána mimo pořadí. Pokud chcete mít serializovat provádění <xref:System.ComponentModel.AsyncOperation.Post%2A> volání, implementovat a nainstalujte <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> třídy.  
   
- Další informace o používání <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager> Povolit asynchronní operace, naleznete v tématu [postupy: implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+ Další informace o používání <xref:System.ComponentModel.AsyncOperation> a <xref:System.ComponentModel.AsyncOperationManager> Povolit asynchronní operace, naleznete v tématu [jak: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="guidelines"></a>Pokyny  
   

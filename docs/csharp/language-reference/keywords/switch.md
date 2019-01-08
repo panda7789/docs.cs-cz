@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: b23c43ebdb8d4277344949a18b1bc999b27d60e9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 371b6e232e9d97df3ce34d69bcb10155c1242e1e
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188609"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084716"
 ---
 # <a name="switch-c-reference"></a>Přepnout (referenční dokumentace jazyka C#)
 
@@ -59,7 +59,7 @@ A `switch` příkaz může obsahovat libovolný počet oddílů přepínače a k
 
 [!code-csharp[switch#2](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-Provede přepínači pouze jeden oddíl v příkazu switch. C# neumožňuje spuštění pokračovat z jednoho oddílu přepnutí na další. Proto následující kód vygeneruje chybu kompilátoru CS0163: "ovládací prvek nemůže být předáno z jednoho návěstí příkazu case (<case label>) do jiného."
+Provede přepínači pouze jeden oddíl v příkazu switch. C# neumožňuje spuštění pokračovat z jednoho oddílu přepnutí na další. Proto následující kód vygeneruje chybu kompilátoru CS0163: "Ovládací prvek nemůže být předáno z jednoho návěstí příkazu case (<case label>) do jiného."
 
 ```csharp
 switch (caseSwitch)
@@ -88,7 +88,7 @@ Informace o tom, `switch` příkazu a porovnávání vzorů, najdete v článku 
 
 Protože C# 6 podporuje pouze konstantní vzorek a nepovoluje opakování konstantní hodnoty, popisky případu definovat vzájemně se vylučuje hodnoty a pouze jeden vzor odpovídá výrazu shody. V důsledku toho pořadí, ve kterém `case` příkazy se zobrazí, nedůležité.
 
-V jazyce C# 7.0 ale protože jsou podporována další způsoby, popisky případů není nutné definovat vzájemně se vylučuje hodnoty a více vzorům může odpovídat výrazu match. Protože jsou spouštěny příkazy v části přepínače, který obsahuje první odpovídající vzor, pořadí, ve kterém `case` příkazy se zobrazí, je důležité. Pokud C# zjistí části přepínače, jejichž case – příkaz nebo příkazy jsou ekvivalentní, nebo jsou podmnožinou tohoto předchozích příkazů, vygeneruje chybu kompilátoru, CS8120, "případ přepínače se už zpracovala předchozí větví."
+V jazyce C# 7.0 ale protože jsou podporována další způsoby, popisky případů není nutné definovat vzájemně se vylučuje hodnoty a více vzorům může odpovídat výrazu match. Protože jsou spouštěny příkazy v první části přepínače, který obsahuje odpovídající vzor, pořadí, ve kterém `case` příkazy se zobrazí, je důležité. Pokud C# zjistí části přepínače, jejichž case – příkaz nebo příkazy jsou ekvivalentní, nebo jsou podmnožinou tohoto předchozích příkazů, vygeneruje chybu kompilátoru, CS8120, "případ přepínače se už zpracovala předchozí větví."
 
 Následující příklad ukazuje `switch` příkaz, který používá celou řadu jiných vzájemně se vylučující vzory. Pokud přesunete `case 0:` oddíl přepínání tak, aby se už v první části `switch` prohlášení, C# vygeneruje chybu kompilátoru, protože celé číslo, jehož hodnota je nula je podmnožinou všech celých čísel, který je definován vzor podle `case int val` příkaz.
 

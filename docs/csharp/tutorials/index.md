@@ -2,20 +2,20 @@
 title: Výukové programy jazyka C#
 description: Prozkoumejte tyto C# kurzů se naučíte sestavit C# programy a další C# jazykové funkce.
 ms.date: 10/25/2018
-ms.openlocfilehash: 2e7981c0b958e6ff4682dc502b83766f56d6c528
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f49754a9d6fa7523d88fa5ce3a7f57501f434878
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195122"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084664"
 ---
 # <a name="c-tutorials"></a>Výukové programy jazyka C#
 
-Vítá vás C# kurzy. Tyto začínat interaktivní lekcí, které můžete spustit v prohlížeči. Kurzech a pokročilejší kurzy pomoc při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
+Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Kurzech a pokročilejší kurzy pomoc při práci s nástroje pro vývoj .NET k vytvoření C# programů na vašem počítači.
 
 ## <a name="introduction-to-c-interactive-tutorials"></a>Úvod do C# interaktivní kurzy #
 
-První lekce vysvětlují C# koncepty pomocí malé fragmenty kódu. Dozvíte se základy C# syntaxi a postupu při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je všechny interaktivní a vás bude psaní a spouštění kódu v rámci minut. První lekce předpokládají žádné předchozí znalosti programování nebo C# jazyka.
+První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
 
 ## <a name="hello-worldintro-to-csharphello-worldyml"></a>[Hello World](intro-to-csharp/hello-world.yml)
 
@@ -47,20 +47,18 @@ Tento kurz předpokládá, že dokončení lekce uvedené výše.
 
 Úvodní kurzy následující Hello World lekci jsou k dispozici ve vlastním místním vývojovém prostředí. Na konci každého kurzu rozhodněte, pokud chcete pokračovat v další lekci online nebo na vlastním počítači. Existují odkazy můžete nastavení prostředí a pokračovat k dalšímu kurzu, ve vašem počítači.
 
+## <a name="explore-new-features-in-c"></a>Prozkoumání nových funkcí vC# #
+
+Vyzkoušejte si nové funkce v [ C# 6](../whats-new/csharp-6.md) v tomto [interaktivní zkoumání](exploration/csharp-6.yml).
+
 ## <a name="general-tutorials"></a>Obecné kurzy
 
 V následujících kurzech umožňují vytvářet C# programy pomocí [.NET Core](../../core/index.md):
 
 * [Konzolové aplikace](console-teleprompter.md): ukazuje vstupně-výstupní operace konzoly, struktura konzolovou aplikaci a základní informace o úkolově orientovanou asynchronní programovací model.
-
 * [Klient REST](console-webapiclient.md): ukazuje webové komunikace, serializaci JSON a objektově orientovaných vlastností v C# jazyka.
-
 * [Dědičnost v C# a .NET](inheritance.md): ukazuje dědičnosti v C#, včetně využití čipu TPM dědičnosti, chcete-li definovat základních tříd, abstraktní základní třídy a odvozené třídy.
-
 * [Práce s jazykem LINQ](working-with-linq.md): ukazuje mnoho funkcí LINQ a prvky jazyka, které ho podporují.
-
-* [Mikroslužby hostované v Dockeru](microservices.md): demonstruje sestavování mikroslužeb ASP.NET Core a hostování v Dockeru.
-
 * [Interpolace řetězců](string-interpolation.md): ukazuje, jak pomocí interpolace řetězců můžete vytvořit formátovaných řetězců v C#.
-
 * [Pomocí atributů](attributes.md): ukazuje, jak vytvořit a použít atributy v C#.
+* [Typy s možnou hodnotou Null odkazů](nullable-reference-types.md): Popisuje způsob použití typů s povolenou hodnotou Null odkazu k vyjádření vašich představ pro odkazy s hodnotou null.

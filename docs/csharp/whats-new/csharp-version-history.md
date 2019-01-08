@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: ad05e803000393800764a4b3aa1bf6288f765fd4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 00294287c978cf3ede5bdbd951587f5addab1994
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245597"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084833"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -142,7 +142,7 @@ S verze 3.0 a 5.0 C# měli přidat hlavní nové funkce v objektově orientovan�
 - [Null Šiřitel](./csharp-6.md#null-conditional-operators)
 - [Interpolace řetězců](./csharp-6.md#string-interpolation)
 - [operátor nameof](./csharp-6.md#the-nameof-expression)
-- [Inicializátory indexů](csharp-6.md#index-initializers)
+- [Inicializátory indexů](csharp-6.md#extension-add-methods-in-collection-initializers)
 
 Mezi další nové funkce patří:
 

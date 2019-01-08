@@ -2,18 +2,18 @@
 title: Přehled zjišťování WCF
 ms.date: 03/30/2017
 ms.assetid: 84fad0e4-23b1-45b5-a2d4-c9cdf90bbb22
-ms.openlocfilehash: 24d758502e360a8368be25c506b8648b12a3eb20
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.openlocfilehash: 8f89a3b52728f10a0d0e0544f3663c9af13488c9
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44494249"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084937"
 ---
 # <a name="wcf-discovery-overview"></a>Přehled zjišťování WCF
 Rozhraní API zjišťování poskytují jednotný programovací model pro dynamické publikace a zjišťování webové služby pomocí protokolu WS-Discovery. Tato rozhraní API umožňují služby sami a klientům nalezení služeb publikovaných na publikovat. Jakmile proběhne zjistitelné služby, služby má možnost odesílat zprávy oznámení také naslouchat a reagovat na požadavky na zjišťování. Zjistitelné služby může odesílat zprávy Hello oznamujeme jejich doručení na síť a zprávy Bye oznamujeme jejich odeslání ze sítě. K vyhledání služby klienty odeslat `Probe` žádost, která obsahuje určitá kritéria, například typ kontraktu služby, klíčová slova a oboru v síti. Přijímat služby `Probe` žádosti a určit, zda kritériím neodpovídají. Pokud služba odpovídá, odpovídá odesláním `ProbeMatch` zprávy zpět do klienta o informace nezbytné pro kontaktování služby. Klienti mohou také odesílat `Resolve` požadavků, které zajistí, aby hledání mohlo dojít ke změně jejich adresa koncového bodu služby. Odpovídající služby reagovat na `Resolve` odesláním žádosti `ResolveMatch` zpráv zpět klientovi.  
   
 ## <a name="ad-hoc-and-managed-modes"></a>Ad-Hoc a spravované režimy  
- Zjišťování rozhraní API podporuje dva různé režimy: spravované a Ad Hoc. Spravovaný režim je centralizovaná serveru s názvem proxy zjišťování, která uchovává informace o dostupných služeb. Zjišťování proxy je možné naplnit informace o službách v mnoha různými způsoby. Například služby odesílat zprávy o oznámení při spuštění až po zjišťování proxy serveru nebo proxy server může číst data z databáze nebo konfiguračního souboru k určení, jaké služby jsou k dispozici. Jak se vyplní proxy zjišťování je zcela na vývojáře. Klienti používají proxy zjišťování k načtení informací o dostupných služeb. Když klient vyhledává služby se odešle `Probe` zprávy zjišťování proxy serveru a proxy server určuje shodu kterékoli ze služeb ví o služby, bude klient Hledat. Pokud existují odešle proxy zjišťování shody `ProbeMatch` odpověď zpět klientovi. Klient pak může kontaktovat službu přímo pomocí služby informace vrácené z proxy serveru. Klíčovým principem za spravovaný režim je odeslání žádosti o zjištění způsobem jednosměrového vysílání jeden úřadu, za proxy zjišťování. Rozhraní .NET Framework obsahuje klíčových komponent, které umožňují vytvářet vlastní proxy server. Služby a klienti najdou proxy server pomocí několika metod:  
+ Zjišťování rozhraní API podporuje dvou různých režimech: Spravované a Ad Hoc. Spravovaný režim je centralizovaná serveru s názvem proxy zjišťování, která uchovává informace o dostupných služeb. Zjišťování proxy je možné naplnit informace o službách v mnoha různými způsoby. Například služby odesílat zprávy o oznámení při spuštění až po zjišťování proxy serveru nebo proxy server může číst data z databáze nebo konfiguračního souboru k určení, jaké služby jsou k dispozici. Jak se vyplní proxy zjišťování je zcela na vývojáře. Klienti používají proxy zjišťování k načtení informací o dostupných služeb. Když klient vyhledává služby se odešle `Probe` zprávy zjišťování proxy serveru a proxy server určuje shodu kterékoli ze služeb ví o služby, bude klient Hledat. Pokud existují odešle proxy zjišťování shody `ProbeMatch` odpověď zpět klientovi. Klient pak může kontaktovat službu přímo pomocí služby informace vrácené z proxy serveru. Klíčovým principem za spravovaný režim je odeslání žádosti o zjištění způsobem jednosměrového vysílání jeden úřadu, za proxy zjišťování. Rozhraní .NET Framework obsahuje klíčových komponent, které umožňují vytvářet vlastní proxy server. Služby a klienti najdou proxy server pomocí několika metod:  
   
 -   Proxy server můžou reagovat na ad-hoc zprávy.  
   
@@ -74,7 +74,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
     // ** DISCOVERY ** //
     // Make the service discoverable by adding the discovery behavior
     ServiceDiscoveryBehavior discoveryBehavior = new ServiceDiscoveryBehavior();
-    serviceHost.Description.Behaviors.Add(new ServiceDiscoveryBehavior());
+    serviceHost.Description.Behaviors.Add(discoveryBehavior);
 
     // Send announcements on UDP multicast transport
     discoveryBehavior.AnnouncementEndpoints.Add(
@@ -155,7 +155,7 @@ class Client
   
 2.  Komunikovat jménem službě pomocí proxy zjišťování  
   
- Windows Server AppFabric obsahuje funkci automatického spuštění, které vám umožní službu spustit před přijetím všechny zprávy. Automatické spouštění nastavení IIS / WAS hostované služby je nakonfigurovat zjistitelné. Další informace o najdete v tématu automatického spuštění funkce [funkce systému Windows Server AppFabric automatického spuštění](https://go.microsoft.com/fwlink/?LinkId=205545). Spolu s povolením funkce Automatické spouštění, musíte nakonfigurovat službu pro zjišťování. Další informace najdete v tématu [postupy: programové přidání zjistitelnosti do klienta a služby WCF](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[konfigurace zjišťování v konfiguračním souboru](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
+ Windows Server AppFabric obsahuje funkci automatického spuštění, které vám umožní službu spustit před přijetím všechny zprávy. Automatické spouštění nastavení IIS / WAS hostované služby je nakonfigurovat zjistitelné. Další informace o najdete v tématu automatického spuštění funkce [funkce systému Windows Server AppFabric automatického spuštění](https://go.microsoft.com/fwlink/?LinkId=205545). Spolu s povolením funkce Automatické spouštění, musíte nakonfigurovat službu pro zjišťování. Další informace najdete v tématu [jak: Programové přidání možností rozpoznání do klienta a služby WCF](../../../../docs/framework/wcf/feature-details/how-to-programmatically-add-discoverability-to-a-wcf-service-and-client.md)[konfigurace zjišťování v konfiguračním souboru](../../../../docs/framework/wcf/feature-details/configuring-discovery-in-a-configuration-file.md).  
   
  Zjišťování proxy serveru umožňuje komunikovat jménem služby WCF, když služba není spuštěná. Proxy server může sledovat testu nebo vyřešit zprávy a reagovat na klientovi. Klient pak může odesílat zprávy přímo ke službě. Když klient odešle zprávu do služby bude vytvořena instance reagovat na zprávu. Další informace o implementace zjišťování proxy serveru najdete v [implementace Proxy zjišťování](../../../../docs/framework/wcf/feature-details/implementing-a-discovery-proxy.md).  
   

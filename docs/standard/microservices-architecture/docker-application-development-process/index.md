@@ -1,15 +1,15 @@
 ---
 title: Aplikace založené na proces vývoje pro Docker
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Aplikace založené na proces vývoje pro Docker
+description: Získáte základní přehled možností pro vývoj aplikací založených na Dockeru. Díky volbě Visual Studio pro Windows, Visual Studio pro Mac nebo Visual Studio Code pro podporu více platforem (Windows, Mac a Linux).
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: 7736c1fe4cb1a2a4553ba36cecceab37e2fe90c4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 09/27/2018
+ms.openlocfilehash: eb87f9a214dbffe71dae1e1739f2563c08fac280
+ms.sourcegitcommit: d09c77414e9e4fc72c79b04deee7a756a120674e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53144465"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54084924"
 ---
 # <a name="development-process-for-docker-based-applications"></a>Proces vývoje pro aplikace založené na Dockeru
 
@@ -21,24 +21,24 @@ ms.locfileid: "53144465"
 
 Ať už dáváte přednost úplné a výkonné IDE nebo editoru jednoduchý a flexibilní, společnost Microsoft má nástroje, které můžete použít pro vývoj aplikací Dockeru.
 
-**Visual Studio (pro Windows)**. K vývoji aplikací založených na Dockeru pomocí sady Visual Studio 2017 nebo novější verze, které je součástí nástrojů pro Docker již integrované. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat aplikace přímo v cílovém prostředí Docker. Můžete stisknutím klávesy F5 ke spuštění a ladění aplikace (jedním kontejnerem nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5, upravit a aktualizovat aplikace bez nutnosti znovu sestavovat kontejner. Toto je nejvýkonnější vývoj volbou pro aplikace založené na Dockeru.
+**Visual Studio (pro Windows).** Při vývoji aplikací dockeru pomocí sady Visual Studio, doporučujeme použít Visual Studio 2017 verze 15.7 nebo novější, která se dodává s nástroji pro Docker již integrované. Nástroje pro Docker umožňují vyvíjet, spouštět a ověřovat aplikace přímo v cílovém prostředí Docker. Můžete stisknutím klávesy F5 ke spuštění a ladění aplikace (jedním kontejnerem nebo více kontejnerů) přímo do hostitele Docker nebo stisknutím kláves CTRL + F5, upravit a aktualizovat aplikace bez nutnosti znovu sestavovat kontejner. Toto je nejvýkonnější vývoj volbou pro aplikace založené na Dockeru.
 
-**Visual Studio for Mac**. Je integrované vývojové prostředí, vývoj Xamarin Studio, který běží v systému macOS a podporuje vývoj aplikací založených na Dockeru. To by měl být upřednostňovanou volbu pro vývojáře pracující na počítačích Mac, které také chtějí využívat výkonné integrované vývojové prostředí.
+**Visual Studio pro Mac.** Je integrované vývojové prostředí, vývoj Xamarin Studio, spuštěné v systému macOS a podporuje Docker od poloviny 2017. To by měl být upřednostňovanou volbu pro vývojáře pracující na počítačích Mac, které také chtějí využívat výkonné integrované vývojové prostředí.
 
-**Visual Studio Code a Dockeru CLI**. Pokud dáváte přednost jednoduchý a multiplatformní editor, který podporuje jakýkoli jazyk pro vývoj, můžete použít Microsoft Visual Studio Code (VS Code) a rozhraní příkazového řádku Dockeru. Toto je postup vývoj multiplatformních aplikací pro Mac, Linux a Windows.
+**Visual Studio Code a Dockeru CLI**. Pokud dáváte přednost jednoduchý a multiplatformní editor, který podporuje jakýkoli jazyk pro vývoj, můžete použít Microsoft Visual Studio Code (VS Code) a rozhraní příkazového řádku Dockeru. Toto je postup vývoj multiplatformních aplikací pro Mac, Linux a Windows. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například technologie IntelliSense pro soubory Dockerfile a místní úlohy spouštět příkazy Dockeru z editoru.
 
-Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/community-edition) nástroje, jednotné rozhraní příkazového řádku Dockeru můžete použít k vytváření aplikací pro Windows a Linux. Kromě toho Visual Studio Code podporuje rozšíření pro Docker, jako je například technologie IntelliSense pro soubory Dockerfile a místní úlohy spouštět příkazy Dockeru z editoru.
+Nainstalováním [Docker Community Edition (CE)](https://www.docker.com/community-edition) nástroje, jednotné rozhraní příkazového řádku Dockeru můžete použít k vytváření aplikací pro Windows a Linux.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Visual Studio Tools for Docker**
-    [*https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker*](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
+- **Visual Studio**. Oficiální web. \
+  [*https://visualstudio.microsoft.com/vs/*](https://visualstudio.microsoft.com/vs/)
 
--   **Visual Studio Code**. Oficiální web.
-    [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
+- **Visual Studio Code**. Oficiální web. \
+  [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
 
--   **Docker Community Edition (CE) pro Mac a Windows**
-    [*https://www.docker.com/community-editions*](https://www.docker.com/community-edition)
+- **Docker Community Edition (CE) pro Mac a Windows** \
+  [*https://www.docker.com/community-editions*](https://www.docker.com/community-edition)
 
 ## <a name="net-languages-and-frameworks-for-docker-containers"></a>Jazyky .NET a rozhraní pro kontejnery Dockeru
 
