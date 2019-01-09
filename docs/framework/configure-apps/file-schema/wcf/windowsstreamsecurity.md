@@ -2,12 +2,12 @@
 title: '&lt;zabezpečení windowsstreamsecurity iniciuje&gt;'
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
-ms.openlocfilehash: e117c30ba2583158ee21fd11ff4a38b094c18fd9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6cce178910767d7fd197aff0d007b7cc3f4e60f3
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197629"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151121"
 ---
 # <a name="ltwindowsstreamsecuritygt"></a>&lt;zabezpečení windowsstreamsecurity iniciuje&gt;
 Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  
@@ -21,7 +21,7 @@ Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<windowsStreamSecurity protectionLevel="None/Sign/EncryptAndSign"/>  
+<windowsStreamSecurity protectionLevel="None/Sign/EncryptAndSign" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -31,10 +31,10 @@ Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Třída protectionLevel|Definuje zabezpečení na úrovni zprávy. Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů. Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />-Sign: Jsou podepsané zprávy.<br />-EncryptAndSign: Podepsaný a zašifrovaný zpráv.<br /><br /> Výchozí hodnota je EncryptAndSign.<br /><br /> Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
+|Třída protectionLevel|Definuje zabezpečení na úrovni zprávy. Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů. Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />– Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou podepsaný a zašifrovaný.<br /><br /> Výchozí hodnota je EncryptAndSign.<br /><br /> Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

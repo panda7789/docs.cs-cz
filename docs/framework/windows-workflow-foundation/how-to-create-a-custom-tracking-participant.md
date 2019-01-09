@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: 74c0e8ac025d69f0fd1ee7d451033165a1c8e615
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 4afa3f46532e365760c0dd5a9e1880a82e5ae82b
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611852"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54150627"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Postupy: Vytvoření vlastního účastníka sledování
 Pracovní postup sledování poskytuje přehled o stavu pracovního postupu provádění. Modul runtime pracovního postupu vysílá záznamy sledování, které popisují pracovního postupu události životního cyklu, události životního cyklu aktivit, záložku obnovení a chyb. Tyto záznamy sledování se spotřebovávají sledování účastníci. Windows Workflow Foundation (WF) zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník. Tento kurz – krok popisuje postup vytvoření vlastního účastníka sledování a sledování profil, který zachytit výstup `WriteLine` aktivity, aby mohly být zobrazeny uživateli.  
@@ -92,7 +92,7 @@ Pracovní postup sledování poskytuje přehled o stavu pracovního postupu prov
     }  
     ```  
   
-     Když se nezadá žádný profil sledování, je použita výchozí profil sledování tracking profile. Pokud se použije výchozí profil sledování tracking profile, jsou vydávány sledování záznamů pro všechny `ActivityStates`. Protože potřebujeme jen k zachycení text jednou během životního cyklu `WriteLine` aktivity, jsme pouze vyextrahovat text z `ActivityStates.Executing` stavu. V [k vytvoření sledovacího profilu a registrace účastník sledování](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-tracking-participant.md#BKMK_TrackingProfile), je vytvořen sledovacího profilu, který určuje pouze `WriteLine` `ActivityStates.Executing` jsou vydávány sledování záznamů.  
+     Když se nezadá žádný profil sledování, je použita výchozí profil sledování tracking profile. Pokud se použije výchozí profil sledování tracking profile, jsou vydávány sledování záznamů pro všechny `ActivityStates`. Protože potřebujeme jen k zachycení text jednou během životního cyklu `WriteLine` aktivity, jsme pouze vyextrahovat text z `ActivityStates.Executing` stavu. V [k vytvoření sledovacího profilu a registrace účastník sledování](#to-create-the-tracking-profile-and-register-the-tracking-participant), je vytvořen sledovacího profilu, který určuje pouze `WriteLine` `ActivityStates.Executing` jsou vydávány sledování záznamů.  
   
 ## <a name="to-create-the-tracking-profile-and-register-the-tracking-participant"></a>K vytvoření sledovacího profilu a registrace účastník sledování  
   

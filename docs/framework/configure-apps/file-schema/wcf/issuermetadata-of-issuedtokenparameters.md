@@ -2,26 +2,26 @@
 title: '&lt;issuerMetadata&gt; – &lt;issuedTokenParameters&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1a85ca37-496d-4fa3-8d44-d6c9383d735c
-ms.openlocfilehash: 82c04fe71ec67b2c539dae9c41eb35350c72d923
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 76956c54739219bbde78f378a12d59563ab785c4
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746511"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54148744"
 ---
 # <a name="ltissuermetadatagt-of-ltissuedtokenparametersgt"></a>&lt;issuerMetadata&gt; – &lt;issuedTokenParameters&gt;
 \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
-\<– issuedTokenParameters >  
+\<issuedTokenParameters >  
 \<issuerMetadata >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<issuerMetaData address=String"/>  
+<issuerMetaData address="String" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -31,20 +31,20 @@ ms.locfileid: "32746511"
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|adresa|Požadováno. Řetězec, který určuje adresu koncového bodu. Tato adresa musí být absolutní identifikátor URI. Výchozí hodnota je prázdný řetězec.|  
+|adresa|Povinný parametr. Řetězec, který určuje adresu koncového bodu. Tato adresa musí být absolutní identifikátor URI. Výchozí hodnota je prázdný řetězec.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<hlavičky >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce hlavičky adresy.|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověření koncový bod pomocí dalších koncových bodů výměna zpráv s ním.|  
+|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres.|  
+|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověřování z koncového bodu jiné koncové body výměna zpráv s ním.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<– issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje parametry pro token zabezpečení vydané ve scénáři federovaný zabezpečení.|  
+|[\<issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje parametry tokenu zabezpečení vydané ve scénáři federativní zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>  
@@ -57,6 +57,6 @@ ms.locfileid: "32746511"
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

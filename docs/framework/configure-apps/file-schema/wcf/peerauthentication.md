@@ -2,12 +2,12 @@
 title: '&lt;peerAuthentication&gt;'
 ms.date: 03/30/2017
 ms.assetid: ad545e6f-f06e-4549-ac92-09d758d5c636
-ms.openlocfilehash: bb83d2badad609394a66246fc14c19a6602399e0
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 2b010fd6d1f6976504ee703802c9696935a81261
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45617166"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145650"
 ---
 # <a name="ltpeerauthenticationgt"></a>&lt;peerAuthentication&gt;
 Určuje nastavení ověřování pro sdílené certifikát používaný službou partnerský uzel.  
@@ -23,12 +23,10 @@ Určuje nastavení ověřování pro sdílené certifikát používaný službou
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<peerAuthentication  
-      customCertificateValidatorType="namespace.typeName, [,AssemblyName] [,Version=version number] [,Culture=culture] [,PublicKeyToken=token]"  
-      certificateValidationMode="ChainTrust/None/PeerTrust/PeerOrChainTrust/Custom"  
-      revocationMode="NoCheck/Online/Offline"  
-      trustedStoreLocation="CurrentUser/LocalMachine"   
-/>  
+<peerAuthentication customCertificateValidatorType="namespace.typeName, [,AssemblyName] [,Version=version number] [,Culture=culture] [,PublicKeyToken=token]"
+                    certificateValidationMode="ChainTrust/None/PeerTrust/PeerOrChainTrust/Custom"
+                    revocationMode="NoCheck/Online/Offline"
+                    trustedStoreLocation="CurrentUser/LocalMachine" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

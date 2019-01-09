@@ -4,12 +4,12 @@ description: Zjistěte, jaké jsou problémy a řešení správy distribuovanýc
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: adfb3c0be33d18a991ee552a99a2d02cc3ec7bb3
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c3da158bf7a7ee2d4b979349299bba7487c9b1a2
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151028"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145988"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
 
@@ -53,7 +53,7 @@ Však v aplikacích založených na mikroslužbách tabulek Product a nákupním
 
 **Obrázek 4 – 9**. Mikroslužby nemá přímý přístup k tabulce v jiném mikroslužeb
 
-Mikroslužeb katalogu by neměla aktualizovat tabulku nákupní košík přímo, protože tabulce Nákupní košík je vlastněná mikroslužeb nákupní košík. Mikroslužby katalogu provést malou úpravu mikroslužeb nákupní košík, měli by používat konečné konzistence pravděpodobně podle asynchronní komunikace, jako je například integrace událostí (zpráv a komunikaci na bázi události). Toto je způsob, jakým [aplikaci eShopOnContainers](http://aka.ms/eshoponcontainers) referenční aplikace provádí tento typ konzistence napříč mikroslužeb.
+Mikroslužeb katalogu by neměla aktualizovat tabulku nákupní košík přímo, protože tabulce Nákupní košík je vlastněná mikroslužeb nákupní košík. Mikroslužby katalogu provést malou úpravu mikroslužeb nákupní košík, měli by používat konečné konzistence pravděpodobně podle asynchronní komunikace, jako je například integrace událostí (zpráv a komunikaci na bázi události). Toto je způsob, jakým [aplikaci eShopOnContainers](https://aka.ms/eshoponcontainers) referenční aplikace provádí tento typ konzistence napříč mikroslužeb.
 
 Jak je uvedeno ve [věty](https://en.wikipedia.org/wiki/CAP_theorem), je nutné zvolit mezi dostupností a odpovídající zásadám ACID silnou konzistenci. Většina scénářů založených na mikroslužbách poptávky, dostupnosti a vysokou škálovatelnost na rozdíl od silné konzistence. Důležité podnikové aplikace musí zůstat nahoru a běží a vývojáři můžete alternativně vyřešit silná konzistence pomocí techniky pro práci s slabá nebo konečné konzistence. Jedná se o postup provedenou většina architektur založených na mikroslužbách.
 
@@ -101,7 +101,7 @@ Použití asynchronní komunikace je vysvětlen později v tomto průvodci v č�
   [*https://docs.microsoft.com/azure/architecture/patterns/materialized-view*](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
 
 - **Charles řádek. Odpovídající zásadám ACID vs. ZÁKLADNÍ: PH Shifting zpracování transakcí databáze** \
-  [*http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/*](http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/)
+  [*https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/*](https://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/)
 
 - **Kompenzační transakce** \
   [*https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction*](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)

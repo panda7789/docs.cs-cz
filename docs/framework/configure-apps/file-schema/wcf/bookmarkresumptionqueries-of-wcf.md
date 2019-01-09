@@ -2,15 +2,15 @@
 title: '&lt;bookmarkResumptionQueries&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: ed086712-1dc7-4932-a592-d1116a0155f3
-ms.openlocfilehash: d2b3365f3793c114003bbd9b9da664448bbac243
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ba8c98557a859f4bd37b9aaca80a44c393429da4
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147643"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54146079"
 ---
 # <a name="ltbookmarkresumptionqueriesgt-of-wcf"></a>&lt;bookmarkResumptionQueries&gt; služby WCF
-
+  
 Představuje kolekci dotazů, které se používají ke sledování obnovení záložku v instanci pracovního postupu. Dotaz, je nezbytné pro sledování účastníka přihlásit k odběru záložku obnovení záznamů.  
   
 Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).
@@ -25,7 +25,7 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 ## <a name="syntax"></a>Syntaxe  
   
-```xml
+```xml  
 <tracking>
   <profiles>
     <trackingProfile name="Name">
@@ -36,15 +36,15 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
       </workflow>
     </trackingProfile>
   </profiles>
-</tracking>  
-```
-
-## <a name="attributes-and-elements"></a>Atributy a elementy
-
+</tracking>
+```  
+  
+## <a name="attributes-and-elements"></a>Atributy a elementy  
+  
 Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
   
-### <a name="attributes"></a>Atributy
-
+### <a name="attributes"></a>Atributy  
+  
 Žádné  
   
 ### <a name="child-elements"></a>Podřízené prvky  

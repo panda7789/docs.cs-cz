@@ -2,15 +2,15 @@
 title: '&lt;persistableType&gt;'
 ms.date: 03/30/2017
 ms.assetid: e5425fe6-523a-4076-aab4-2c2515b1d830
-ms.openlocfilehash: 23724957398ed1ade2c81a3932e9773d7cf4c642
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 92c59b3804e22c62340acccc1e12e594203c8e8b
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32747070"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145416"
 ---
 # <a name="ltpersistabletypegt"></a>&lt;persistableType&gt;
-Určuje trvalá typy.  
+Určuje trvalé typy.  
   
  \<system.ServiceModel>  
 \<comContracts >  
@@ -19,15 +19,15 @@ Určuje trvalá typy.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<comContracts>  
-  <comContract>  
-      <persistableTypes>  
-         <persistableType id="string"  
-            name="string">  
-         </persistableType>  
-      </persistableTypes>  
-  </comContract>  
-</comContracts>  
+<comContracts>
+  <comContract>
+    <persistableTypes>
+      <persistableType id="String"
+                       name="String">
+      </persistableType>
+    </persistableTypes>
+  </comContract>
+</comContracts>
 ```  
   
 ## <a name="type"></a>Typ  
@@ -40,11 +40,11 @@ Určuje trvalá typy.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|id|Požadovaný atribut, který obsahuje řetězec, který určuje jedinečný identifikátor typu trvalá.|  
-|name|Volitelný atribut, který obsahuje řetězec, který určuje název typu trvalá.|  
+|id|Požadovaný atribut, který obsahuje řetězec určující jedinečný identifikátor typu trvalé.|  
+|name|Volitelný atribut, který obsahuje řetězec určující název typu trvalé.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -57,4 +57,4 @@ Určuje trvalá typy.
  <xref:System.ServiceModel.Configuration.ComPersistableTypeElement>  
  [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
  [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
- [Postupy: Konfigurace nastavení služby modelu COM+](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+ [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

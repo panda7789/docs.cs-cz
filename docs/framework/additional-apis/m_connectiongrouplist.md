@@ -12,15 +12,16 @@ api_type:
 ms.assetid: df8afb59-f0f6-4ddc-b3c1-839b9fc601d8
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 25caec18f7d2c51f03028b52c1a4957bb1cd2589
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: a764c74dc0927094675b0f5e0916a4ad29f04250
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151160"
 ---
 # <a name="servicepointmconnectiongrouplist-field"></a>ServicePoint.m\_ConnectionGroupList pole
 
-`ServicePoint.m_ConnectionGroupList` je <xref:System.Collections.Hashtable> skupin připojení, každý podržíte připojení pro <xref:System.Net.ServicePoint>je identifikátor URI.
+`ServicePoint.m_ConnectionGroupList` je <xref:System.Collections.Hashtable> skupin připojení jednotlivých uchovávající připojení <xref:System.Net.ServicePoint>na identifikátor URI.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -29,14 +30,14 @@ private Hashtable m_ConnectionGroupList
 ```
 
 > [!WARNING]
-> `ServicePoint.m_ConnectionGroupList` Pole je privátní a nejsou určeny pro použití přímo v kódu.
+> `ServicePoint.m_ConnectionGroupList` Pole je privátní a není určena pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití tohoto pole v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
 **Namespace:** <xref:System.Net>
 
-**Sestavení:** systému (v System.dll)
+**Sestavení:** Systém (System.dll)
 
-**Verze rozhraní .NET framework:** dostupné od verze 2.0.
+**Verze rozhraní .NET framework:** Dostupné od verze 2.0.

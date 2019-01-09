@@ -2,15 +2,15 @@
 title: '&lt;serviceHostingEnvironment&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-ms.openlocfilehash: 1d9edec2c5bbddefe575952d591416353d603d33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eee81f774382bf9bac3caaada0ae144e933cb630
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354317"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54150315"
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
-Tento element definuje typ, který vytvoří instanci služby hostování prostředí konkrétního přenosu. Pokud tento element je prázdné, použije se výchozí typ. Tento element dá použít jenom na aplikace či soubory konfiguraci na úrovni počítačů.  
+Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím služby pro konkrétní přenos. Pokud tento prvek je prázdný, je použit výchozí typ. Tento prvek jde použít jenom na aplikace nebo na úrovni konfigurační soubory.  
   
  \<system.ServiceModel>  
 \<serviceHostingEnvironment >  
@@ -18,19 +18,21 @@ Tento element definuje typ, který vytvoří instanci služby hostování prost�
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<serviceHostingEnvironment aspNetCompatibilityEnabled="Boolean" 
-                           minFreeMemoryPercentageToActivateService="Integer" 
+<serviceHostingEnvironment aspNetCompatibilityEnabled="Boolean"
+                           minFreeMemoryPercentageToActivateService="Integer"
                            multipleSiteBindingsEnabled="Boolean">
   <baseAddressPrefixFilters>
     <add prefix="string" />
   </baseAddressPrefixFilters>
   <serviceActivations>
-    <add factory="String" service="String" />
+    <add factory="String"
+         service="String" />
   </serviceActivations>
   <transportConfigurationTypes>
-    <add name="String" transportConfigurationType="String" />
+    <add name="String"
+         transportConfigurationType="String" />
   </transportConfigurationTypes>
-</serviceHostingEnvironment>  
+</serviceHostingEnvironment>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -40,46 +42,46 @@ Tento element definuje typ, který vytvoří instanci služby hostování prost�
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|aspNetCompatibilityEnabled|Logickou hodnotu udávající, zda je režim kompatibility ASP.NET je zapnutý pro aktuální aplikaci. Výchozí hodnota je `false`.<br /><br /> Když tento atribut je nastaven na `true`, požadavky na služby Windows Communication Foundation (WCF) procházet skrz kanál protokolu HTTP technologie ASP.NET a komunikaci v rámci jiných protokolů než HTTP je zakázáno. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).|  
-|minFreeMemoryPercentageToActivateService|Celé číslo, které určuje minimální množství volné paměti, která by měla být k dispozici pro systém, před aktivací služby WCF. **Upozornění:** zadání tohoto atributu společně s částečnou důvěryhodností v souboru web.config služby WCF bude mít za následek <xref:System.Security.SecurityException> spuštění služby.|  
-|multipleSiteBindingsEnabled|Logická hodnota, která určuje, zda je povoleno více vazby služby IIS na webu.<br /><br /> IIS se skládá z webů, které jsou kontejnery pro virtuální aplikace obsahující virtuální adresáře. Aplikace v síti je přístupná přes jeden nebo více vazby služby IIS. Vazbu služby IIS poskytuje dva kusy informací: protokol vazby a informace o vazbě. Vytvoření vazby protokolu definuje schéma, přes který probíhá komunikace a informace o vazbě je informace, které slouží pro přístup k webu. Příklad vazby protokolu může být protokolu HTTP, kdežto informace o vazbě může obsahovat IP adresu, Port, Hlavička hostitele, atd.<br /><br /> Služba IIS podporuje zadání více vazby služby IIS na webu, což vede k více základní adresy na schéma. Však hostované na webu služby Windows Communication Foundation (WCF) umožňuje vazbu na jedinou baseAddress na schéma.<br /><br /> Pokud chcete povolit víc vazeb IIS na webu služby Windows Communication Foundation (WCF), nastavte tento atribut na `true`. Všimněte si, že více vazba webu je podporována pouze pro protokol HTTP. Adresy koncových bodů v konfiguračním souboru musí být úplný identifikátor URI.|  
+|aspNetCompatibilityEnabled|Logická hodnota označující, zda režim kompatibility ASP.NET je zapnutý pro aktuální aplikaci. Výchozí hodnota je `false`.<br /><br /> Když tento atribut je nastaven na `true`požadavků na služby Windows Communication Foundation (WCF) tok prostřednictvím kanálu HTTP technologie ASP.NET a komunikaci přes protokoly jiným protokolem než HTTP je zakázaná. Další informace najdete v tématu [služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).|  
+|minFreeMemoryPercentageToActivateService|Celé číslo určující minimální množství volné paměti, která má být k dispozici systému, před aktivací služby WCF. **Upozornění:**  Zadání tohoto atributu společně s částečnou důvěryhodností v souboru web.config služby WCF způsobí <xref:System.Security.SecurityException> při spuštění služby.|  
+|multipleSiteBindingsEnabled|Logická hodnota, která určuje, zda je povoleno více vazeb služby IIS webu.<br /><br /> IIS se skládá z webů, které jsou kontejnery pro virtuální aplikace obsahující virtuální adresáře. Aplikace v síti přístupné prostřednictvím jednoho nebo více vazeb služby IIS. Vazby služby IIS poskytuje dva druhy údajů: protokol vazby a informace o vazbě. Vazba protokolu definuje schéma, přes které probíhá komunikace a informace o vazbě je informace, které slouží pro přístup k webu. Příklad vazby protokolu může být HTTP, kdežto informace o vazbě může obsahovat IP adresu, Port, hlavičku hostitele, atd.<br /><br /> Služba IIS podporuje zadávání více vazeb služby IIS webu, což vede k více základních adres na jedno schéma. Hostované na webu služby Windows Communication Foundation (WCF) umožňuje však vazba pouze jedna vlastnost baseAddress jedno schéma.<br /><br /> Pokud chcete povolit více vazeb služby IIS webu pro službu Windows Communication Foundation (WCF), tento atribut nastavte na `true`. Všimněte si, že více vazeb webu se podporuje jenom pro protokol HTTP. Adresy koncových bodů v konfiguračním souboru musí být úplný identifikátor URI.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci elementů konfigurace, které zadejte předponu filtry pro základní adresy používané hostitele služby.|  
+|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci konfiguračních elementů určujících předponu filtry pro základní adresy použité hostitelem služby.|  
 |[\<serviceActivations >](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceactivations.md)|Konfigurační oddíl, který popisuje nastavení aktivace.|  
-|[\<transportConfigurationTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce konfigurační prvky, které identifikují typ konkrétního přenosu.|  
+|[\<transportConfigurationTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce elementů konfigurace, které určují typ konkrétní přenos.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|ServiceModel|Kořenový element všechny konfigurační prvky Windows Communication Foundation (WCF).|  
+|serviceModel|Kořenový element všechny elementy konfigurace Windows Communication Foundation (WCF).|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení služeb WCF spuštění-souběžného s technologií ASP.NET v aplikační domény hostované (AppDomain). I když do stejné domény aplikace můžou existovat společně WCF a ASP.NET, WCF požadavky nejsou zpracovává HTTP kanálu ASP.NET ve výchozím nastavení. Několik prvky platformu aplikací ASP.NET v důsledku toho nejsou k dispozici pro služby WCF. Mezi ně patří  
+ Ve výchozím nastavení služby WCF spuštění – souběžně s rozhraním ASP.NET v prostředí domény aplikace (AppDomain). I když WCF a ASP.NET mohou existovat vedle sebe v téže doméně AppDomain, WCF požadavky nejsou zpracovávány kanálu HTTP ASP.NET ve výchozím nastavení. Několik prvků platformy aplikace ASP.NET v důsledku toho nejsou k dispozici ke službám WCF. Patří mezi ně  
   
--   Autorizace ASP.NET soubor nebo adresa URL  
+-   Autorizace souboru nebo adresy URL technologie ASP.NET  
   
 -   Zosobnění technologie ASP.NET  
   
--   Stav relace na základě souborů cookie  
+-   Stav relace na základě souboru cookie  
   
--   HttpContext.Current  
+-   Vlastnost HttpContext.Current  
   
--   Rozšiřitelnost kanálů prostřednictvím vlastního modulu HTTP  
+-   Kanál rozšiřitelnost prostřednictvím vlastních modulu HttpModule  
   
- Pokud potřebujete služby WCF je funkce v rámci ASP.NET a komunikovat pouze prostřednictvím protokolu HTTP, můžete použít režim kompatibility ASP.NET na WCF. Tento režim zapnutý, když `aspNetCompatibilityEnabled` je nastavena na hodnotu `true` na úrovni aplikace. Implementace služby, musí deklarovat schopnost spustit v režimu kompatibility pomocí <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> třídy. Když je povolený režim kompatibility,  
+ Pokud vaše služby WCF potřebujete pracovat v rámci technologie ASP.NET a komunikovat jenom přes protokol HTTP, můžete použít režim kompatibility ASP.NET na WCF. Když je zapnutý tento režim `aspNetCompatibilityEnabled` atribut je nastaven na `true` na úrovni aplikace. Implementace služby musí deklarovat své možnost spouštět pomocí režimu kompatibility <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> třídy. Když je povolený režim kompatibility,  
   
--   Autorizace ASP.NET soubor nebo adresa URL se vynucuje před WCF autorizace. Rozhodnutí o autorizaci vychází transportní vrstvy identitu požadavku. Identity na úrovni zpráv se ignorují.  
+-   Autorizace souboru nebo adresy URL technologie ASP.NET je vynuceno před WCF autorizace. Rozhodnutí o autorizaci vychází transportní vrstvy identitu požadavku. Identit na úrovni zprávy jsou ignorovány.  
   
--   Operací služby WCF začít spuštěn v kontextu zosobnění technologie ASP.NET. Pokud zosobnění technologie ASP.NET a WCF zosobnění jsou povolené pro konkrétní službu, platí kontextu zosobnění WCF.  
+-   Operací služby WCF start ke spuštění v kontextu zosobnění technologie ASP.NET. Pokud je pro konkrétní službu povolené zosobnění technologie ASP.NET a WCF zosobnění, platí kontextu zosobnění WCF.  
   
--   HttpContext.Current lze z kódu služby WCF a služby se vám bránit vystavení koncové body jiným protokolem než HTTP.  
+-   HttpContext.Current je možné z kódu služby WCF a služeb bránit zveřejnění jiným protokolem než HTTP koncových bodů.  
   
--   Zpracovává požadavky WCF kanálu ASP.NET. HttpModules, které byly nakonfigurovány tak, aby fungoval na příchozí požadavky může také zpracovat WCF žádosti. Patří mezi komponenty platformy ASP.NET (například <xref:System.Web.SessionState.SessionStateModule>), a také moduly vlastní třetích stran.  
+-   WCF jsou zpracovány pomocí kanálu ASP.NET. HttpModules, které jsou nakonfigurované tak, aby fungoval na příchozí požadavky může také zpracovat WCF žádosti. Může jít o komponenty platformy technologie ASP.NET (například <xref:System.Web.SessionState.SessionStateModule>), a také vlastní třetích stran moduly.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak povolit režim kompatibility ASP.  
@@ -87,7 +89,7 @@ Tento element definuje typ, který vytvoří instanci služby hostování prost�
 ## <a name="code"></a>Kód  
   
 ```xml  
-<serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>  
+<serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>
 ```  
   
 ## <a name="see-also"></a>Viz také  

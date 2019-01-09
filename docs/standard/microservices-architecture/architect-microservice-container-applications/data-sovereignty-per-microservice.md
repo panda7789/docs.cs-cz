@@ -4,12 +4,12 @@ description: Svrchovanost dat v jednotlivých mikroslužeb je jedním z nastaven
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: 136f8d173042ab235e5fa3c8478f4aa5659a9787
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4900c294f94f4b4d604ba841595fc5c6d7952c10
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126845"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54144899"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Svrchovanost dat v jednotlivých mikroslužbách
 
@@ -37,7 +37,7 @@ Dělené polyglot trvalé architektury pro ukládání dat má mnoho výhod. Pat
 
 ## <a name="the-relationship-between-microservices-and-the-bounded-context-pattern"></a>Vztah mezi mikroslužbami a vzor ohraničená kontextu
 
-Koncept mikroslužeb je odvozen od [ohraničená kontextu (BC) vzor](http://martinfowler.com/bliki/BoundedContext.html) v [návrhu řízeného doménou (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely jejich rozdělení do několika BCs a použití explicitní o jejich hranice. Každý BC musí mít svůj vlastní model a databázi. Každá mikroslužba podobně, vlastní související data. Kromě toho každá BC obvykle má svou vlastní [všudypřítomná jazyk](http://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři a odborníky na domény.
+Koncept mikroslužeb je odvozen od [ohraničená kontextu (BC) vzor](https://martinfowler.com/bliki/BoundedContext.html) v [návrhu řízeného doménou (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). DDD se zabývá velké modely jejich rozdělení do několika BCs a použití explicitní o jejich hranice. Každý BC musí mít svůj vlastní model a databázi. Každá mikroslužba podobně, vlastní související data. Kromě toho každá BC obvykle má svou vlastní [všudypřítomná jazyk](https://martinfowler.com/bliki/UbiquitousLanguage.html) ke komunikaci mezi vývojáři a odborníky na domény.
 
 Tyto podmínky (hlavně domény entity) v jazyce všudypřítomná může mít různé názvy v různých kontextech ohraničená, i když jiné domény entity sdílejí stejnou identitu (to znamená, jedinečný Identifikátor, který se má použít ke čtení entit ze služby storage). Například v rámci ohraničená profil uživatele entita domény uživatele může nasdílet identity kupujících entita domény v rámci pořadí omezená.
 

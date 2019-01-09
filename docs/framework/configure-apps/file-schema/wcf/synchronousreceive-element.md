@@ -2,26 +2,26 @@
 title: Element &lt;synchronousReceive&gt;
 ms.date: 03/30/2017
 ms.assetid: cc070387-3d11-4b02-a952-bc08ad2df05a
-ms.openlocfilehash: af1ca2ee1fe3c03c33f05e0c30c7b843b3720a36
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: bc89470900e50e4d3e522682b39b20e21a66b284
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753258"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147379"
 ---
 # <a name="ltsynchronousreceivegt-element"></a>Element &lt;synchronousReceive&gt;
-Tento element konfigurace slouží k určení chování pro příjem zpráv v aplikaci služby nebo klienta. Nástroj nemá žádné atributy nebo podřízené elementy.  
+Tento prvek konfigurace slouží k určení chování za běhu pro příjem zpráv v aplikaci klienta nebo službě. Nemá žádné atributy nebo podřízené prvky.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<endpointBehaviors >  
+\<názvy endpointBehaviors >  
 \<chování >  
 \<synchronousReceive >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<synchronousReceive />  
+<synchronousReceive />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -40,7 +40,7 @@ Tento element konfigurace slouží k určení chování pro příjem zpráv v ap
 |[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Naslouchací proces kanálu nástroje použijte synchronního přijímat spíše než výchozí, asynchronní použitím toto chování. Windows Communication Foundation (WCF) vydá nové vlákno čerpadlo pro každý přijatý kanál. Pokud je celá řada kanály, existuje možnost spuštění z vláken.  
+ Toto chování použijte dáte pokyn, aby modul pro naslouchání kanálu pro použití synchronního přijímat spíše než výchozí, asynchronní. Windows Communication Foundation (WCF) vydá nové vlákno odeslané pro každé přijaté kanálu. Pokud existuje mnoho kanálů, je možné došly vlákna.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.SynchronousReceiveElement>  

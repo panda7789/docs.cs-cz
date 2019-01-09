@@ -2,12 +2,12 @@
 title: '&lt;byteStreamMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: bbadd8dd-60a2-4007-b959-89373a8a7d60
-ms.openlocfilehash: 4b031bfb0d0979dc99df13c104a712d6dd771e8a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 9d38f16cdeb8b769f4026ccb29f9129e93ef031c
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44225185"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54146456"
 ---
 # <a name="ltbytestreammessageencodinggt"></a>&lt;byteStreamMessageEncoding&gt;
 Určuje kódování zprávy formou datového proudu bajtů s možností určení kódování znaků.  
@@ -21,7 +21,7 @@ Určuje kódování zprávy formou datového proudu bajtů s možností určení
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<byteStreamMessageEncoding/>  
+<byteStreamMessageEncoding />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

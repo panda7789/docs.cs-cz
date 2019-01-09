@@ -2,27 +2,27 @@
 title: dataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
-ms.openlocfilehash: 0528ae823db500da3c3a1efc6934951c4e41cea7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: a024ca89bd766681f25b992f1d2c66a92e3b31b7
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32748008"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54150198"
 ---
 # <a name="datacontractserializer"></a>dataContractSerializer
 Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<endpointBehaviors >  
+\<názvy endpointBehaviors >  
 \<chování >  
 \<dataContractSerializer >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<dataContractSerializer ignoreExtensionDataObject="Boolean"  
-      maxItemsInObjectGraph="Integer" />  
+<dataContractSerializer ignoreExtensionDataObject="Boolean"
+                        maxItemsInObjectGraph="Integer" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -32,8 +32,8 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|ignoreExtensionDataObject|Logická hodnota, která určuje, jestli se ignorovat data poskytl koncového bodu, když je právě serializován nebo deserializován.|  
-|maxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci.|  
+|IgnoreExtensionDataObject|Logická hodnota, která určuje, jestli se má ignorovat data dodaná nástrojem koncový bod, když je serializován nebo deserializován.|  
+|MaxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,10 +45,10 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
 |[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Najdete v článku <xref:System.Runtime.Serialization.DataContractSerializer> dokumentace pro další informace o známé typy.  
+ Zobrazit <xref:System.Runtime.Serialization.DataContractSerializer> dokumentaci pro další informace o známých typů.  
   
 > [!CAUTION]
->  `<dataContractSerializer>` Element chování (pokud existuje) vždy zobrazit před `<enableWebScript>` chování element v konfiguračním souboru. Jinak jejich výsledné chování není definován.  
+>  `<dataContractSerializer>` Chování – element (pokud existuje) by měla vždy předcházet `<enableWebScript>` prvek chování v konfiguračním souboru. V opačném případě výsledné chování není definováno.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

@@ -2,12 +2,12 @@
 title: '&lt;peer&gt; – &lt;serviceCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: b134e21d-e5b5-458e-9309-626dbf8db4ed
-ms.openlocfilehash: 94f93a7955af3bff1c17e59a11af3fad85c9134d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: df2570a94e7d0c11228d0a72c938d871503d17ac
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514736"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152044"
 ---
 # <a name="ltpeergt-of-ltservicecredentialsgt"></a>&lt;peer&gt; – &lt;serviceCredentials&gt;
 Určuje aktuální pověření pro partnerský uzel.  
@@ -22,11 +22,11 @@ Určuje aktuální pověření pro partnerský uzel.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<peer>  
-  <certificate/>  
-  <peerAuthentication/>  
-  <messageSenderAuthentication/>  
-</peer>  
+<peer>
+  <certificate />
+  <peerAuthentication />
+  <messageSenderAuthentication />
+</peer>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

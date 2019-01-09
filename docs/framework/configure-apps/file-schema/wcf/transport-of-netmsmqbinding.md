@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;netMsmqBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-ms.openlocfilehash: 06114990f931eb06d064fcec425e9ab42507c932
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 678f3fd34f368abae11404fcbb1546b2135a75d2
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582304"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147028"
 ---
 # <a name="lttransportgt-of-ltnetmsmqbindinggt"></a>&lt;transport&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení zabezpečení přenosu.  
@@ -22,16 +22,16 @@ Definuje nastavení zabezpečení přenosu.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<netMsmqBinding>  
-    <binding>  
-    <security>  
-         <transport msmqAuthenticationMode="None/WindowsDomain/Certificate"  
-            msmqEncryptionAlgorithm="RC4Stream/AES"  
-            msmqProtectionLevel="None/Sign/EncryptAndSign"  
-            msmqSecureHashAlgorithm="MD5/SHA1/SHA256/SHA512" />  
-    </security>  
-   </binding>  
-</netMsmqBinding>  
+<netMsmqBinding>
+  <binding>
+    <security>
+      <transport msmqAuthenticationMode="None/WindowsDomain/Certificate"
+                 msmqEncryptionAlgorithm="RC4Stream/AES"
+                 msmqProtectionLevel="None/Sign/EncryptAndSign"
+                 msmqSecureHashAlgorithm="MD5/SHA1/SHA256/SHA512" />
+    </security>
+  </binding>
+</netMsmqBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -41,13 +41,13 @@ Definuje nastavení zabezpečení přenosu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|msmqAuthenticationMode|Určuje, jak ověření zprávy dopravou služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: Bez ověřování.<br />– Třída: Používá mechanismus ověřování služby Active Directory pro certifikát X.509 pro identifikátor zabezpečení spojený se zprávou načtení. Potom se používá ke kontrole, že seznam ACL fronty, aby uživatel má oprávnění k zápisu pro danou frontu.<br />-Certificate: Kanál načte příslušný certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je `WindowsDomain`.<br /><br /> Pokud tento atribut je nastaven na `None`, `msmqProtectionLevel` atribut musí být také nastaven na `None`. Tento atribut je typu<xref:System.ServiceModel.MsmqAuthenticationMode>|  
+|msmqAuthenticationMode|Určuje, jak ověření zprávy dopravou služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: Bez ověřování.<br />– Třída: Mechanismus ověřování služby Active Directory používá k načtení certifikátu X.509 pro identifikátor zabezpečení spojený se zprávou. Potom se používá ke kontrole, že seznam ACL fronty, aby uživatel má oprávnění k zápisu pro danou frontu.<br />-Certifikátu: Kanál načte příslušný certifikát z úložiště certifikátů.<br /><br /> Výchozí hodnota je `WindowsDomain`.<br /><br /> Pokud tento atribut je nastaven na `None`, `msmqProtectionLevel` atribut musí být také nastaven na `None`. Tento atribut je typu<xref:System.ServiceModel.MsmqAuthenticationMode>|  
 |msmqEncryptionAlgorithm|Určuje algoritmus se má použít pro šifrování zpráv na lince, přenos zpráv mezi správci fronty zpráv. Platné hodnoty patří:<br /><br /> -RC4Stream<br />-AES<br />– Výchozí hodnota je `RC4Stream`. Tento atribut je typu <xref:System.ServiceModel.MsmqEncryptionAlgorithm>.|  
-|msmqProtectionLevel|Určuje že způsob, jak zprávy jsou zabezpečená na úrovni přenosu služby MSMQ. Šifrování zajišťuje, že zajišťuje zprávu integrity, při přihlašování a šifrování zpráv integrity a nepopiratelnosti. To znamená že zpráva pochází skutečně od odesílatele a odesílatel je, který říká, že je. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />-Sign: Jsou podepsané zprávy.<br />-EncryptAndSign: Zprávy jsou zašifrovaná a podepsaná.<br />– Výchozí hodnota je `Sign`.|  
+|msmqProtectionLevel|Určuje že způsob, jak zprávy jsou zabezpečená na úrovni přenosu služby MSMQ. Šifrování zajišťuje, že zajišťuje zprávu integrity, při přihlašování a šifrování zpráv integrity a nepopiratelnosti. To znamená že zpráva pochází skutečně od odesílatele a odesílatel je, který říká, že je. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />– Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou zašifrovaná a podepsaná.<br />– Výchozí hodnota je `Sign`.|  
 |msmqSecureHashAlgorithm|Určuje algoritmus hash, který má být použit pro výpočet výběru zprávy. Platné hodnoty patří:<br /><br /> -   MD5<br />-   SHA1<br />-   SHA256<br />-SHA512<br /><br /> Výchozí hodnota je `SHA1`. Tento atribut je typu <xref:System.ServiceModel.MsmqSecureHashAlgorithm>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

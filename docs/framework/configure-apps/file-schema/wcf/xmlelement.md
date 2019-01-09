@@ -1,21 +1,21 @@
 ---
-title: '&lt;XmlElement.&gt;'
+title: '&lt;Třída XmlElement&gt;'
 ms.date: 03/30/2017
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
-ms.openlocfilehash: 70ff9b93bcd59331c5fa5e66bb51dc4cd1e043ff
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6a197f7aa29645a08a581bcee103eb94c0e20179
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767645"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147015"
 ---
-# <a name="ltxmlelementgt"></a>&lt;XmlElement.&gt;
-Určuje element XML, který je odeslána v textu zprávy do služby tokenů zabezpečení Pokud požadování tokenu.  
+# <a name="ltxmlelementgt"></a>&lt;Třída XmlElement&gt;
+Určuje element XML, který posílá v těle zprávy služby tokenů zabezpečení při vyžádání tokenu.  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<wsFederatedBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<Zpráva >  
 \<tokenRequestParameters >  
@@ -23,9 +23,9 @@ Určuje element XML, který je odeslána v textu zprávy do služby tokenů zabe
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<tokenRequestParameters>  
-      <xmlElement xmlElement="String" />  
-</tokenRequestParameters>  
+<tokenRequestParameters>
+  <xmlElement xmlElement="String" />
+</tokenRequestParameters>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -35,7 +35,7 @@ Určuje element XML, který je odeslána v textu zprávy do služby tokenů zabe
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|xmlElement|Řetězec určující element XML, který je odeslána v textu zprávy do služby tokenů zabezpečení Pokud požadování tokenu.|  
+|xmlElement|Řetězec určující element XML, který posílá v těle zprávy služby tokenů zabezpečení při vyžádání tokenu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -44,7 +44,7 @@ Určuje element XML, který je odeslána v textu zprávy do služby tokenů zabe
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je XML element.|  
+|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Kolekce parametrů žádosti o token. Každý parametr je platný element XML.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>  

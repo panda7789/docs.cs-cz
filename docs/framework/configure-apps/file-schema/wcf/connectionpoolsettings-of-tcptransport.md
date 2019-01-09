@@ -2,31 +2,30 @@
 title: '&lt;connectionPoolSettings&gt; – &lt;tcpTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 2fbc3aa7-fcc9-4193-99a3-85d31d60d3f7
-ms.openlocfilehash: 1fbc4e179fa5f59a903dad51728638a1e182b23e
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8780709a5713c0192d6be1139e3425747b0b07ca
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753076"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145689"
 ---
 # <a name="ltconnectionpoolsettingsgt-of-lttcptransportgt"></a>&lt;connectionPoolSettings&gt; – &lt;tcpTransport&gt;
-Určuje nastavení fondu další připojení pro přenos TCP.  
+Určuje další nastavení fondu připojení přenosu protokolu TCP.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<tcpTransport>  
 \<connectionPoolSettings >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<connectionPoolSettings  
-    groupName="String"  
-    idleTimeout"TimeSpan"  
-        leaseTimeout="TimeSpan"  
-    maxOutboundConnectionsPerEndpopint="Integer" />  
+<connectionPoolSettings groupName="String"
+                        idleTimeout="TimeSpan"
+                        leaseTimeout="TimeSpan"
+                        maxOutboundConnectionsPerEndpopint="Integer" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -36,10 +35,10 @@ Určuje nastavení fondu další připojení pro přenos TCP.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`groupName`|Řetězec, který definuje název fondu připojení používané pro odchozí kanály. V přenášené datovými proudy režimu nejsou sdílené připojení – zakázáno sdružování připojení. Výchozí hodnota je řetězec "default". Tato hodnota izolovat připojení pro konkrétního klienta do samostatných skupin můžete upravit.|  
-|`idleTimeout`|U kladné <xref:System.TimeSpan> , určuje maximální dobu může být připojení nečinnosti, než dojde k odpojení. Výchozí hodnota je 00:02:00.|  
-|`leaseTimeout`|A <xref:System.TimeSpan> určující dobu, po jejímž uplynutí je uzavřený aktivní připojení. Výchozí hodnota je 00:05:00.<br /><br /> Poté, co se vrátí do mezipaměti připojení a ne během aktivní přenos, je připojení ukončeno. Mezipaměť připojení používá přenos TCP vytvoří nové připojení podle potřeby pro každý koncový bod, až do limitu mezipaměti, kterou je nastavit `maxOutboundConnectionsPerEndpoint.`|  
-|`maxOutboundConnectionsPerEndpoint`|Kladné celé číslo, které určuje maximální počet připojení, aby vzdálený koncový bod iniciovat službu. Připojení nad tento limit jsou zařazeny do fronty, dokud nebude k dispozici místo pod limit. `idleTimeout` Omezí doba trvání, ve kterém připojení zůstat ve frontě, než je vyvolána výjimka. Výchozí hodnota je 10.<br /><br /> Tento atribut omezuje počet souběžných aktivních připojení z klienta pro koncový bod konkrétní služby. Pokud se překročí tuto hodnotu tak, že více aktivních připojení klienta, se mohou objevit reagovat na klienta služby. V takovém případě je třeba upravit tuto hodnotu delší než maximální počet očekávané simultánních klientských připojení na konkrétní.|  
+|`groupName`|Řetězec, který definuje název fondu připojení používaný pro odchozí kanály. V proudu režimu nejsou sdíleny připojení, což znamená, že je zakázána sdružování připojení. Výchozí hodnota je řetězec "Výchozí". Tato hodnota k izolaci připojení pro konkrétního klienta do samostatných skupin můžete upravit.|  
+|`idleTimeout`|Pozitivní <xref:System.TimeSpan> , která určuje maximální dobu, může být připojení nečinné, než je odpojeno. Výchozí hodnota je 00:02:00.|  
+|`leaseTimeout`|A <xref:System.TimeSpan> , který určuje dobu, po jejímž uplynutí aktivní připojení ukončeno. Výchozí hodnota je 00:05:00.<br /><br /> Poté, co se vrátí do mezipaměti připojení a ne během aktivní přenos, je připojení ukončeno. Mezipaměť připojení přenosu protokolu TCP používané vytvoří nové připojení pro každý koncový bod, až po limit mezipaměti, který je nastaven podle potřeby `maxOutboundConnectionsPerEndpoint.`|  
+|`maxOutboundConnectionsPerEndpoint`|Kladné celé číslo, které určuje maximální počet připojení na vzdálený koncový bod iniciovaných službou. Připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit. `idleTimeout` Omezení doby trvání, ve kterém připojení zůstat ve frontě, než dojde k výjimce. Výchozí hodnota je 10.<br /><br /> Tento atribut omezuje počet souběžných aktivních připojení z klienta do koncového bodu konkrétní služby. Pokud se překročí tuto hodnotu tak, že více aktivních připojení klienta, se můžou objevit reagovat na klienta služby. V takovém případě by měla být přizpůsobena tuto hodnotu delší než maximální počet očekávaných simultánních klientských připojení do určitého koncového bodu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,7 +47,7 @@ Určuje nastavení fondu další připojení pro přenos TCP.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobuje, že kanálu pro přenos zpráv pomocí pojmenovaných kanálů.|  
+|[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.TcpConnectionPoolSettingsElement>  
@@ -61,4 +60,4 @@ Určuje nastavení fondu další připojení pro přenos TCP.
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

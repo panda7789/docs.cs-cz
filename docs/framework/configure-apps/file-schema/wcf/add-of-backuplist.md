@@ -2,15 +2,15 @@
 title: '&lt;add&gt; – &lt;backupList&gt;'
 ms.date: 03/30/2017
 ms.assetid: bc5939fc-314a-4ea4-a533-c96958da7173
-ms.openlocfilehash: 7e7361b24c0444b5f3d51a6f5bf079d5eb2dee18
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4a8eb3df9be6b6b5bfe43aee330f3174ddca66ab
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745549"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151472"
 ---
 # <a name="ltaddgt-of-ltbackuplistgt"></a>&lt;add&gt; – &lt;backupList&gt;
-Představuje element konfigurace, který definuje element zálohování koncový bod.  
+Představuje prvek konfigurace, který definuje element záložního koncového bodu.  
   
  \<system.serviceModel>  
 \<směrování >  
@@ -21,7 +21,13 @@ Představuje element konfigurace, který definuje element zálohování koncový
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-   <routing>  <backupLists>    <backupList name="String">      <add endpointName="String" />    </backupList>    </backupLists></routing>  
+<routing>
+  <backupLists>
+    <backupList name="String">
+      <add endpointName="String" />
+    </backupList>
+  </backupLists>
+</routing>
 ```  
   
 ```csharp  
@@ -34,7 +40,7 @@ Představuje element konfigurace, který definuje element zálohování koncový
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec, který určuje název koncového bodu zálohy.|  
+|name|Řetězec určující název záložního koncového bodu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,7 +49,7 @@ Představuje element konfigurace, který definuje element zálohování koncový
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Obsahuje seznam koncových bodů, které byste chtěli směrovací služby používat v případě, že primární koncový bod není dostupný.|  
+|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Obsahuje seznam koncových bodů, které byste chtěli směrovací služba použít v případě, že nelze dosáhnout primárního koncového bodu.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Routing.Configuration.BackupEndpointElement?displayProperty=nameWithType> 

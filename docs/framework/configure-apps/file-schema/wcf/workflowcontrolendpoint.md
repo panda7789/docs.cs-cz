@@ -1,16 +1,16 @@
 ---
-title: '&lt;WorkflowControlEndpoint&gt;'
+title: '&lt;koncového bodu workflowControlEndpoint&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6c89e76c-643b-4b6a-9b25-628f753d7027
-ms.openlocfilehash: 87c745cfb8f7cd98c25cd34fc1aa94a26a5ba507
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 178ccc8ac35b0ac76d74c818dce43dcffc5c0835
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754782"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54144948"
 ---
-# <a name="ltworkflowcontrolendpointgt"></a>&lt;WorkflowControlEndpoint&gt;
-Koncový bod standardní řízení provádění instancí pracovního postupu definuje tento element konfigurace (vytvoření, spuštění, pozastavení, ukončit, atd).  
+# <a name="ltworkflowcontrolendpointgt"></a>&lt;koncového bodu workflowControlEndpoint&gt;
+Tento prvek konfigurace definuje standardní koncový bod pro řízení spouštění instance pracovního postupu (vytvoření, spuštění, pozastavení, ukončit atd).  
   
 \<system.ServiceModel>  
 \<standardEndpoints >  
@@ -18,13 +18,13 @@ Koncový bod standardní řízení provádění instancí pracovního postupu de
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<system.serviceModel>  
+<system.serviceModel>
   <standardEndpoints>
     <workflowControlEndpoint>
       <standardEndpoint name="String" />
     </workflowControlEndpoint>
-  </standardEndpoints>  
-</system.serviceModel>  
+  </standardEndpoints>
+</system.serviceModel>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -34,7 +34,7 @@ Koncový bod standardní řízení provádění instancí pracovního postupu de
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec, který určuje název konfigurace standardní koncového bodu. Název je používán `endpointConfiguration` atribut propojení koncový bod standardní konfiguraci koncového bodu služby.|  
+|name|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atribut koncového bodu služby propojit s jeho konfigurace je standardní koncový bod.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,7 +43,7 @@ Koncový bod standardní řízení provádění instancí pracovního postupu de
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncových bodů s jedním nebo více jejich vlastnosti (adresy, vazby, kontrakt) pevné.|  
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>

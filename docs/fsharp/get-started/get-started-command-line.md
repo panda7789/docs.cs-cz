@@ -1,23 +1,23 @@
 ---
-title: Začínáme s jazykem F# pomocí nástrojů příkazového řádku
-description: Informace o vytvoření jednoduchého řešení vícenásobného projektu v F# s použitím rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).
+title: Začínáme s F# pomocí nástrojů příkazového řádku
+description: Zjistěte, jak vytvoření jednoduchého řešení vícenásobného projektu F# pomocí rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).
 ms.date: 03/26/2018
-ms.openlocfilehash: 8a82970f33c8bbe1b8cdd8fb6499b59b16d3cbf3
-ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
+ms.openlocfilehash: bc9b223fcf133ffe8b19d5284dcbd3c14a426235
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "45673906"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152096"
 ---
-# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s jazykem F# pomocí rozhraní příkazového řádku .NET Core
+# <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s F# pomocí rozhraní příkazového řádku .NET Core
 
-Tento článek popisuje, jak můžete začít s jazykem F# pro všechny operační systémy (Windows, macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core. Prochází přes vytváření řešení vícenásobného projektu knihovny tříd, která je volána pomocí konzolové aplikace.
+Tento článek popisuje, jak můžete začít s F# pro všechny operační systémy (Windows, macOS nebo Linux) pomocí rozhraní příkazového řádku .NET Core. Prochází přes vytváření řešení vícenásobného projektu knihovny tříd, která je volána pomocí konzolové aplikace.
 
 ## <a name="prerequisites"></a>Požadavky
 
 Pokud chcete začít, musíte nainstalovat nejnovější [.NET Core SDK](https://www.microsoft.com/net/download/).
 
-Tento článek předpokládá, že znáte postup pomocí příkazového řádku a mít upřednostňovaném textovém editoru. Pokud už nepoužíváte, [Visual Studio Code](get-started-vscode.md) je skvělou možností jako textový editor jazyka F#.
+Tento článek předpokládá, že znáte postup pomocí příkazového řádku a mít upřednostňovaném textovém editoru. Pokud už nepoužíváte, [Visual Studio Code](get-started-vscode.md) je skvělou možností jako textového editoru pro F#.
 
 ## <a name="build-a-simple-multi-project-solution"></a>Vytvoření jednoduchého řešení vícenásobného projektu
 
@@ -131,7 +131,7 @@ Přidat `App` projektu `FSNetCore` pomocí řešení `dotnet sln add` příkaz:
 dotnet sln add src/App/App.fsproj
 ```
 
-Obnovení závislostí NuGet `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) a spusťte `dotnet build` k sestavení projektu.
+Obnovení závislostí NuGet `dotnet restore` a spusťte `dotnet build` k sestavení projektu.
 
 Změňte adresář na `src/App` konzoly projektu a spusťte projekt pro předání `Hello World` jako argumenty:
 
@@ -140,7 +140,7 @@ cd src/App
 dotnet run Hello World
 ```
 
-Zobrazí se následující výsledky:
+Měly by se zobrazit následující výsledky:
 
 ```console
 Nice command-line arguments! Here's what JSON.NET has to say about them:
@@ -151,4 +151,4 @@ I used to be World but now I'm ""World"" thanks to JSON.NET!
 
 ## <a name="next-steps"></a>Další kroky
 
-V dalším kroku se podívejte [Tour F#](../tour.md) získat další informace o různých funkcí F#.
+Dále, podívejte se [prohlídka F# ](../tour.md) získat další informace o různých F# funkce.

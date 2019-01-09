@@ -140,7 +140,7 @@ Následující seznam uvádí některé hlavní pravidla, které jste měli vzí
 
 ## <a name="contributor-license-agreement"></a>Přispěvatel licenční smlouvy
 
-Musíte podepsat [.NET Foundation licenční smlouvy (CLA)](https://cla.dotnetfoundation.org) předtím, než se vaše žádost o přijetí změn sloučí. Toto je jednorázový požadavek pro projekty .NET Foundation. Další informace o [licenční smlouvy (CLA)](http://en.wikipedia.org/wiki/Contributor_License_Agreement) v encyklopedii Wikipedia.
+Musíte podepsat [.NET Foundation licenční smlouvy (CLA)](https://cla.dotnetfoundation.org) předtím, než se vaše žádost o přijetí změn sloučí. Toto je jednorázový požadavek pro projekty .NET Foundation. Další informace o [licenční smlouvy (CLA)](https://en.wikipedia.org/wiki/Contributor_License_Agreement) v encyklopedii Wikipedia.
 
 Smlouva: [net-foundation příspěvek licence agreement.pdf](https://github.com/dotnet/home/blob/master/guidance/net-foundation-contribution-license-agreement.pdf)
 

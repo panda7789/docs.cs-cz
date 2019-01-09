@@ -2,18 +2,18 @@
 title: '&lt;issuerMetadata&gt;'
 ms.date: 03/30/2017
 ms.assetid: e7eae2c0-cc17-4281-af59-e4eb8d54f92a
-ms.openlocfilehash: 5f6b8d2f861c4d64a3b81407de4ce13b42d9b864
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 38fa373212464a7dc919c2f364524a391db17d43
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752930"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149355"
 ---
 # <a name="ltissuermetadatagt"></a>&lt;issuerMetadata&gt;
 \<system.serviceModel>  
 \<vazby >  
-\<– wsFederationHttpBinding >  
-\<Vazba >  
+\<wsFederationHttpBinding >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<Zpráva >  
 \<issuerMetadata >  
@@ -21,24 +21,24 @@ ms.locfileid: "32752930"
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<issuerMetadata address=String" >  
-   <headers>  
-      <add name="String"  
-                 namespace="String" />  
-   </headers>  
-   <identity>  
-           <certificate encodedValue="String"/>  
-      <certificateReference findValue="String"   
-         isChainIncluded="Boolean"  
-         storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"  
-         storeLocation="LocalMachine/CurrentUser"  
-                  x509FindType=System.Security.Cryptography.X509certificates.X509findtype/>  
-      <dns value="String"/>  
-      <rsa value="String"/>  
-      <servicePrincipalName value="String"/>  
-      <usePrincipalName value="String"/>  
-   </identity>  
-</issuerMetadata>  
+<issuerMetadata address="String">
+  <headers>
+    <add name="String"
+         namespace="String" />
+  </headers>
+  <identity>
+    <certificate encodedValue="String" />
+    <certificateReference findValue="String"
+                          isChainIncluded="Boolean"
+                          storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"
+                          storeLocation="LocalMachine/CurrentUser"
+                          x509FindType="System.Security.Cryptography.X509certificates.X509findtype" />
+    <dns value="String" />
+    <rsa value="String" />
+    <servicePrincipalName value="String" />
+    <usePrincipalName value="String" />
+  </identity>
+</issuerMetadata>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -48,20 +48,20 @@ ms.locfileid: "32752930"
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|adresa|Požadované `string` atribut.<br /><br /> Určuje adresu koncového bodu. Tato adresa musí být absolutní identifikátor URI. Výchozí hodnota je prázdný řetězec.|  
+|adresa|Vyžaduje `string` atribut.<br /><br /> Určuje adresu koncového bodu. Tato adresa musí být absolutní identifikátor URI. Výchozí hodnota je prázdný řetězec.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<hlavičky >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce hlavičky adresy.|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověření koncový bod pomocí dalších koncových bodů výměna zpráv s ním.|  
+|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres.|  
+|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověřování z koncového bodu jiné koncové body výměna zpráv s ním.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení pro zprávy úroveň zabezpečení [ \<– wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) element.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Definuje nastavení založená na úrovni zpráv zabezpečení pro [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) elementu.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A>  

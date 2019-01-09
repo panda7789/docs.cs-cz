@@ -1,5 +1,5 @@
 ---
-title: '&lt;dataContractSerializer&gt;'
+title: '&lt;DataContractSerializer&gt;'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dataContractSerializer element
@@ -7,15 +7,15 @@ helpviewer_keywords:
 - DataContractSerializer
 - KnownTypes
 ms.assetid: f41fb4d5-24e7-4059-8010-286a30bfea93
-ms.openlocfilehash: 5f2a05fdf2e38923205092b232995a70a87f7e87
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c79c8e8db2a4ea4526000bcbe336d1e664f9c4c2
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752764"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54150952"
 ---
-# <a name="ltdatacontractserializergt"></a>&lt;dataContractSerializer&gt;
-Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>. Tento element proběhne dvě různé hierarchie. Jeden je uvedena v následující části schéma hierarchie a druhý je uveden v oddílu Poznámky.  
+# <a name="ltdatacontractserializergt"></a>&lt;DataContractSerializer&gt;
+Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContractSerializer>. Tento element vyskytuje ve dvou různých hierarchií. Jeden je uvedena v následující části hierarchie schémat a druhý je uveden v oddílu Poznámky.  
   
  \<system.ServiceModel>  
 \<chování >  
@@ -26,8 +26,8 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<dataContractSerializer ignoreExtensionDataObject="Boolean"  
-   maxItemsInObjectGraph="Integer" />  
+<dataContractSerializer ignoreExtensionDataObject="Boolean"
+                        maxItemsInObjectGraph="Integer" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -37,8 +37,8 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|ignoreExtensionDataObject|Logická hodnota, která určuje, jestli se ignorovat dat uvedených v koncovém bodě při jeho serializován nebo deserializován. Tento atribut je nastavit pouze na `<dataContractSerializer>` pod `<behavior>` elementu.|  
-|maxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci. Tento atribut je 65536.|  
+|IgnoreExtensionDataObject|Logická hodnota, která určuje, jestli se má ignorovat data dodaná nástrojem koncový bod, když je serializován nebo deserializován. Tento atribut je nastavit pouze v `<dataContractSerializer>` pod `<behavior>` elementu.|  
+|MaxItemsInObjectGraph|Celé číslo, které určuje maximální počet položek k serializaci nebo deserializaci. Tento atribut je 65536.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,16 +48,16 @@ Obsahuje konfigurační data pro <xref:System.Runtime.Serialization.DataContract
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)|Kolekce nastavení pro chování služby.|  
-|[\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)|Reprezentuje kořenový element <xref:System.Runtime.Serialization> část oboru názvů a obsahuje prvky pro nastavení možností nástroje <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)|Představuje kořenový element <xref:System.Runtime.Serialization> části obor názvů a obsahuje prvky pro nastavení voleb <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Jak jsme uvedli v úvodu tohoto tématu, to je druhá hierarchie, ve kterém \<X509Extension > dojde k elementu.  
+ Jak jsme uvedli v úvodu tohoto tématu, toto je druhá hierarchie, ve kterém \<X509Extension > element vyskytuje.  
   
  [\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)  
   
  [\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
   
- Další informace o známé typy najdete v tématu <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ Další informace o známých typů najdete v tématu <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

@@ -2,24 +2,24 @@
 title: '&lt;allowAccounts&gt;'
 ms.date: 03/30/2017
 ms.assetid: 166923a9-a8ac-478f-92f9-529d9667f3a6
-ms.openlocfilehash: 097112a8b54467843554047882e55b62d7813c0c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 61310d530cfec2862fb64155777cd0e88132f748
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33352874"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145936"
 ---
 # <a name="ltallowaccountsgt"></a>&lt;allowAccounts&gt;
-Obsahuje kolekci elementů konfigurace, které určují uživatelské účty pro procesy na tomto hostiteli služby Windows Communication Foundation (WCF) a je uděleno oprávnění k připojení ke službě sdílení.  
+Obsahuje kolekci prvků konfigurace, které určují uživatelské účty pro procesy, které hostují služby Windows Communication Foundation (WCF) a jímž je udělen přístup ke službě sdílení.  
   
  \<system.serviceModel.activation>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<allowAccounts>  
-   <add securityIdentifier="String"/>  
-</allowAccounts>  
+<allowAccounts>
+  <add securityIdentifier="String" />
+</allowAccounts>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -32,13 +32,13 @@ Obsahuje kolekci elementů konfigurace, které určují uživatelské účty pro
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowaccounts.md)|Přidá uživatelský účet pro procesy, které hostování služby WCF a je uděleno oprávnění k připojení ke službě Sdílení|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-allowaccounts.md)|Přidá uživatelský účet pro procesy, které hostují služby WCF a jemuž je udělen přístup ke službě Sdílení|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<NET.pipe >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-pipe.md) nebo [ \<net.tcp >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)|Určuje nastavení konfigurace pro Net kanálu nebo TCP služby sdílení.|  
+|[\<NET.pipe >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-pipe.md) nebo [ \<net.tcp >](../../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)|Určuje nastavení konfigurace pro Net kanálu nebo služby Sdílení TCP.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>  

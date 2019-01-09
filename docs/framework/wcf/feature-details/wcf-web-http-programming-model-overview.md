@@ -2,12 +2,12 @@
 title: Přehled modelu webového programování HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: f1185e7f8d455a59edf2b11e4e77ac6470d768fc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 03bfa53ac8e2a6cf7b252a8d0ea4683727134e4a
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517072"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54152083"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Přehled modelu webového programování HTTP služby WCF
 Model programování webových služeb HTTP Windows Communication Foundation (WCF) poskytuje základní prvky, které jsou potřebné k sestavení služeb webových služeb HTTP s použitím technologie WCF. WEBOVÝCH služeb HTTP WCF services jsou navržené tak přístup k nejširší škálu možných klientů, včetně webových prohlížečů a mají následující jedinečné požadavky:  
@@ -26,7 +26,7 @@ Model programování webových služeb HTTP Windows Communication Foundation (WC
 >  Služby, které jsou napsané pomocí programovacího modelu WCF WEB HTTP nepoužívejte zprávy protokolu SOAP. Vzhledem k tomu, že není použit protokol SOAP, nelze použít funkcích zabezpečení poskytovaných WCF. Můžete ale použít zabezpečení na základě přenosu hostováním vaši službu pomocí protokolu HTTPS. Další informace o zabezpečení WCF najdete v tématu [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
 > [!WARNING]
->  Instalace rozšíření WebDAV pro službu IIS může způsobit webové služby HTTP vrátit chybu HTTP 405 jako WebDAV rozšíření, pokusí se zpracovat všechny požadavky PUT. Chcete-li vyřešit tento problém můžete odinstalovat rozšíření WebDAV nebo zakázat rozšíření WebDAV pro váš web. Další informace najdete v tématu [služby IIS a protokolu WebDav](http://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
+>  Instalace rozšíření WebDAV pro službu IIS může způsobit webové služby HTTP vrátit chybu HTTP 405 jako WebDAV rozšíření, pokusí se zpracovat všechny požadavky PUT. Chcete-li vyřešit tento problém můžete odinstalovat rozšíření WebDAV nebo zakázat rozšíření WebDAV pro váš web. Další informace najdete v tématu [služby IIS a protokolu WebDav](https://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
   
 ## <a name="uri-processing-with-uritemplate-and-uritemplatetable"></a>Identifikátor URI zpracování ve službě UriTemplate a UriTemplateTable  
  Identifikátor URI šablony poskytují efektivní syntaxe pro vyjádření velkých sad strukturálně podobné identifikátorů URI. Například následující šablonu vyjadřuje sadu URI všechny tři segmentu, které začínají řetězcem "a" a na konci "c" bez ohledu na hodnotu zprostředkující segmentu: / {segmentovat} /c  
@@ -96,7 +96,7 @@ interface ICustomer
 }  
 ```  
   
- Úplnou ukázku služby WCF, který používá model programování webových služeb HTTP WCF najdete v tématu [postupy: vytvoření základní webové služby HTTP WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
+ Úplnou ukázku služby WCF, který používá model programování webových služeb HTTP WCF najdete v tématu [jak: Vytvoření základní webové HTTP služby WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
   
 ## <a name="uritemplate-query-string-parameters-and-urls"></a>Parametry řetězce dotazu UriTemplate a adresy URL  
  Styl webové služby lze volat z webového prohlížeče zadáním adresy URL, který je přidružený k operaci služby. Tyto operace služby může trvat parametrů řetězce dotazu, které musí být zadán ve formátu řetězce v rámci adresy URL. V následující tabulce jsou uvedeny typy, které mohou být předány v rámci adresy URL a formát používaný.  

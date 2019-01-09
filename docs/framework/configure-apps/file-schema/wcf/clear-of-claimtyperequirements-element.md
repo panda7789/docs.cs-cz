@@ -2,20 +2,20 @@
 title: '&lt;clear&gt; elementu &lt;claimTypeRequirements&gt;'
 ms.date: 03/30/2017
 ms.assetid: ef42fde7-f292-4610-9111-9fea382c3b5f
-ms.openlocfilehash: ca8ea91f5806a6cedc98729de1c45ab6b5de6afb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1e77e3c978c1e385aec983d5e2d4bea64697c43e
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32747122"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145286"
 ---
 # <a name="ltcleargt-of-ltclaimtyperequirementsgt-element"></a>&lt;clear&gt; elementu &lt;claimTypeRequirements&gt;
-Určuje, že všechny deklarace identity typy odeberou ve federované přihlašovací údaje. Tím se zajistí, že kolekce začne prázdný.  
+Určuje, že všechny typy deklarací, jenž budou odebrány z federovaného pověření. Tím se zajistí, že začne prázdnou kolekci.  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<wsFederatedBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<Zpráva >  
 \<claimTypeRequirements >  
@@ -23,9 +23,9 @@ Určuje, že všechny deklarace identity typy odeberou ve federované přihlašo
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<claimTypeRequirements>  
-      <clear />  
-</claimTypeRequirements>  
+<claimTypeRequirements>
+  <clear />
+</claimTypeRequirements>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -41,7 +41,7 @@ Určuje, že všechny deklarace identity typy odeberou ve federované přihlašo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|Určuje kolekci typů požadované deklarace identity. Každý element je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí pověření musí mít sadu typy deklarací identity. Každý prvek v této kolekci Určuje typy deklarací identity požadované a volitelné očekávání měla objevit ve federované přihlašovací údaje.|  
+|[\<claimTypeRequirements >](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|Určuje kolekci požadovaných typů deklarací. Každý prvek je typu <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> V případě federovaných stavu služby požadavky na příchozí přihlašovací údaje. Například příchozí přihlašovací údaje musí mít sadu typů deklarací identity. Každý prvek v této kolekci Určuje typy požadovaných a volitelných deklarací, očekává se objeví federovaného pověření.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>  

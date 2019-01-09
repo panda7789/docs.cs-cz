@@ -2,12 +2,12 @@
 title: '&lt;message&gt; – &lt;netMsmqBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6ebf0240-d7be-4493-b0fe-f00fd5989d77
-ms.openlocfilehash: 124d53ae24b627c35863fda4cd8f404057978f1e
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 06346ba50b68f43cb2c3f9c92a37a432339126d1
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838504"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151017"
 ---
 # <a name="ltmessagegt-of-ltnetmsmqbindinggt"></a>&lt;message&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `netMsmqBinding` vazby.  
@@ -22,14 +22,14 @@ Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<netMsmqBinding>  
-    <binding>  
-      <security>  
-         <message   
-                      algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
-            clientCredentialType="None/Windows/UserName/Certificate/CardSpace" />  
-    </security>  
-</netMsmqBinding>  
+<netMsmqBinding>
+  <binding>
+    <security>
+      <message algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"
+               clientCredentialType="None/Windows/UserName/Certificate/CardSpace" />
+    </security>
+  </binding>
+</netMsmqBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -40,10 +40,10 @@ Definuje nastavení založená na protokolu SOAP zprávy zabezpečení v tomto `
 |Atribut|Popis|  
 |---------------|-----------------|  
 |algorithmSuite|Nastaví zprávu, šifrování a key-wrap algoritmy, které se používají k zajištění zabezpečení na základě zpráv pro zprávy odeslané přes přenosu služby MSMQ.<br /><br /> Výchozí hodnota je `Aes256`. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.|  
-|Typ clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: To umožňuje službě komunikovat s anonymní klienty. Služby ani klienta vyžaduje přihlašovací údaje.<br />-Windows: Umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů pro Windows. To provádí ověřování pomocí protokolu Kerberos.<br />-UserName: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. Přihlašovací údaje, které v tomto případě musí být zadaná pomocí `clientCredentials` chování **upozornění:** Windows Communication Foundation (WCF) nepodporuje odesílání hodnotou hash nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro heslo zabezpečení zpráv. Proto WCF vynutí, že při použití pověření uživatelských jmen zabezpečené výměny. Tento režim vyžaduje, aby byl specifikován certifikát služby na straně klienta pomocí `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certificate: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pověření klienta nejsou v tomto případě musí být zadaná pomocí `clientCredentials` chování. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí `clientCredentials` chování tak, že zadáte `serviceCertificate`.<br />-Služba CardSpace: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízený v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
+|Typ clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pro zprávy odeslané přes přenosu služby MSMQ. Platné hodnoty patří:<br /><br /> -Žádný: To umožňuje službě komunikovat s anonymní klienty. Služby ani klienta vyžaduje přihlašovací údaje.<br />– Windows: To umožňuje výměnu SOAP být pod správou ověřený kontext přihlašovacích údajů Windows. To provádí ověřování pomocí protokolu Kerberos.<br />-Uživatelské jméno: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí přihlašovacích údajů uživatelského jména. Přihlašovací údaje, které v tomto případě musí být zadaná pomocí `clientCredentials` chování **upozornění:**  Odesílání hodnotou hash hesla nebo odvození klíče pomocí hesla a pomocí těchto klíčů pro zabezpečení zpráv Windows Communication Foundation (WCF) není podporována. Proto WCF vynutí, že při použití pověření uživatelských jmen zabezpečené výměny. Tento režim vyžaduje, aby byl specifikován certifikát služby na straně klienta pomocí `clientCredential` chování a `serviceCertificate`. <br /><br /> -Certifikátu: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu. Pověření klienta nejsou v tomto případě musí být zadaná pomocí `clientCredentials` chování. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí `clientCredentials` chování tak, že zadáte `serviceCertificate`.<br />-Služba CardSpace: To umožňuje službě tak, aby vyžadovala, ověření klienta pomocí CardSpace. `serviceCertiifcate` Musí být zřízený v `clientCredential` chování.<br /><br /> Výchozí hodnota je `Windows`. Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

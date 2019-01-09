@@ -2,29 +2,29 @@
 title: '&lt;Třída knownType&gt;'
 ms.date: 03/30/2017
 ms.assetid: ee2b7be3-7148-4a3a-b861-48e7330615e5
-ms.openlocfilehash: b2445f12f1eaac03b3f3ab66f3d13a5f465a1133
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6156f102573333ec0d5533b8f1a8506d91215f47
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753323"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151927"
 ---
 # <a name="ltknowntypegt"></a>&lt;Třída knownType&gt;
-Určuje typ má být používána <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Element "známému typu" Určuje, který vrátí pole nebo vlastnost "deklarovaný typ". Další informace najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+Určuje typ používané <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Určuje element "známý typ", který je vrácen pole nebo vlastnost "deklarovaného typu". Další informace najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
  \<System.Runtime.Serialization >  
 \<dataContractSerializer >  
-\<declaredTypes > elementu  
+\<declaredTypes > – Element  
 \<Přidat > z \<declaredTypes >  
-\<Třída knownType > elementu  
+\<Třída knownType > – Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<knownType type="String">  
-     <parameter index="Integer"  
-                type="String" />  
-</knownType>  
+<knownType type="String">
+  <parameter index="Integer"
+             type="String" />
+</knownType>
 ```  
   
 ## <a name="type"></a>Typ  
@@ -37,36 +37,36 @@ Určuje typ má být používána <xref:System.Runtime.Serialization.DataContrac
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|– typ|Určuje typ (včetně oboru názvů), název sestavení, verze, jazykové verze a tokenu veřejného klíče.|  
+|– typ|Určuje typ (včetně oboru názvů), název sestavení, verzi, jazykovou verzi a token veřejného klíče.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Parametr >](../../../../../docs/framework/configure-apps/file-schema/wcf/parameter.md)|Určuje indexu parametru, je-li deklarovaný typ obecného typu.|  
+|[\<Parametr >](../../../../../docs/framework/configure-apps/file-schema/wcf/parameter.md)|Určuje index parametru, je-li deklarovaný typ obecného typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)|Deklarovaný typ přidá do kolekce deklarované typů.|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)|Přidá do kolekce deklarované typy deklarovaného typu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o známé typy najdete v tématu [známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
+ Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
- Najdete v článku [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) příklad použití tohoto elementu.  
+ Zobrazit [ \<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md) příklad použití tohoto prvku.  
   
 ## <a name="example"></a>Příklad  
   
 ```xml  
-<add type="MyCompany.Library.Shape,   
-           MyAssembly, Version=2.0.0.0, Culture=neutral,  
-           PublicKeyToken=XXXXXX, processorArchitecture=MSIL">  
-           <knownType type="MyCompany.Library.Circle,   
-                      MyAssembly, Version=2.0.0.0, Culture=neutral,  
-                      PublicKeyToken=XXXXXX,  
-                      processorArchitecture=MSIL"/>  
-</add>  
+<add type="MyCompany.Library.Shape,
+           MyAssembly, Version=2.0.0.0, Culture=neutral,
+           PublicKeyToken=XXXXXX, processorArchitecture=MSIL">
+  <knownType type="MyCompany.Library.Circle,
+                   MyAssembly, Version=2.0.0.0, Culture=neutral,
+                   PublicKeyToken=XXXXXX,
+                   processorArchitecture=MSIL"/>
+</add>
 ```  
   
 ## <a name="see-also"></a>Viz také  

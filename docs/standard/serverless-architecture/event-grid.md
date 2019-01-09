@@ -4,16 +4,16 @@ description: Azure Event Grid je řešení bez serveru pro spolehlivé doručov�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 240542014a34235aea9fd0f8162748749f23eacf
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a10fc6a47322de5db40870b1b727edc5559a27f6
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143659"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145869"
 ---
 # <a name="event-grid"></a>Event Grid
 
-[Azure Event Grid](/azure-event-grid/overview) poskytuje infrastruktura bez serveru pro aplikace založené na událostech. Můžete publikovat do služby Event Grid z libovolného zdroje a využívat zprávy z libovolné platformy. Event Grid také obsahuje integrovanou podporu pro události z prostředků Azure, které zjednodušují integraci s vašimi aplikacemi. Například k odběru událostí služby blob storage k vaší aplikaci upozornění, když se nahraje soubor. Aplikace pak můžete publikovat zprávu mřížky vlastní událost, která je využívána jiných cloudových nebo místních aplikací. Event Grid byla založená, aby spolehlivě zpracovávat masivní škálování. Získáte výhody publikování a odběru zpráv bez režie nastavení potřebnou infrastrukturu.
+[Azure Event Grid](/azure/event-grid/overview) poskytuje infrastruktura bez serveru pro aplikace založené na událostech. Můžete publikovat do služby Event Grid z libovolného zdroje a využívat zprávy z libovolné platformy. Event Grid také obsahuje integrovanou podporu pro události z prostředků Azure, které zjednodušují integraci s vašimi aplikacemi. Například k odběru událostí služby blob storage k vaší aplikaci upozornění, když se nahraje soubor. Aplikace pak můžete publikovat zprávu mřížky vlastní událost, která je využívána jiných cloudových nebo místních aplikací. Event Grid byla založená, aby spolehlivě zpracovávat masivní škálování. Získáte výhody publikování a odběru zpráv bez režie nastavení potřebnou infrastrukturu.
 
 ![Event Grid logo](./media/event-grid-logo.png)
 

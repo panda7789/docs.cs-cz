@@ -2,15 +2,15 @@
 title: '&lt;userPrincipalName&gt;'
 ms.date: 03/30/2017
 ms.assetid: 68032f69-149e-4613-bae4-18314d4fd294
-ms.openlocfilehash: 1bb0c8ac4cbe11cdfa31beb16b00b3863acabf92
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff38a6975d1ec73c1a3014b94198ba630c3fec31
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33358674"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149977"
 ---
 # <a name="ltuserprincipalnamegt"></a>&lt;userPrincipalName&gt;
-Určuje hlavní název uživatele (UPN) služby k ověření klienta.  
+Určuje, hlavní název uživatele (UPN) služby k ověření klienta.  
   
  Další informace o nastavení hlavního názvu uživatele najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
@@ -20,17 +20,17 @@ Určuje hlavní název uživatele (UPN) služby k ověření klienta.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<userPrincipalName value="String" />  
+<userPrincipalName value="String" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|Název uživatelského účtu (někdy označované jako přihlašovací jméno uživatele) a název domény určujícího doménu, ve kterém se nachází uživatelský účet. Toto je standardní použití pro přihlášení k doméně systému Windows. Formát je: someone@example.com (jako u e-mailovou adresu).|  
+|value|Název uživatelského účtu (někdy označované jako přihlašovací uživatelské jméno) a název domény identifikující doménu, ve kterém se nachází uživatelský účet. Toto je standardní využití pro přihlášení k doméně Windows. Formát je: someone@example.com (jako u e-mailovou adresu).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,15 +42,15 @@ Určuje hlavní název uživatele (UPN) služby k ověření klienta.
 |[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zabezpečené klienta Windows Communication Foundation (WCF), která se připojuje k koncový bod s tuto identitu používá název UPN při ověřování rozhraní SSPI ke koncovému bodu.  
+ Zabezpečené klienta Windows Communication Foundation (WCF), která se připojuje k koncový bod s tato identita se používá název UPN při provádění ověřování rozhraní SSPI ke koncovému bodu.  
   
 ## <a name="example"></a>Příklad  
  Následující kód konfigurace určuje UPN služby k ověření klienta.  
   
 ```xml  
-<identity>  
-  <userPrincipalName value="someone@cohowinery.com" />  
-</identity>  
+<identity>
+  <userPrincipalName value="someone@cohowinery.com" />
+</identity>
 ```  
   
 ## <a name="see-also"></a>Viz také  

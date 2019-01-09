@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;netTcpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 49462e0a-66e1-463f-b3e1-c83a441673c6
-ms.openlocfilehash: 0405d3fa8e2155d21fd7bf5b20df39ff3db86b02
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8416701ce4e787a49ee0a4bdd4829c6592cde94c
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48835791"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147327"
 ---
 # <a name="lttransportgt-of-ltnettcpbindinggt"></a>&lt;transport&gt; – &lt;netTcpBinding&gt;
 Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfigurovaným s [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
@@ -22,21 +22,21 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<netTcpBinding>  
-    <binding>  
-        <security  
-         mode="None|Transport|Message|TransportWithMessageCredential">  
-            <transport clientCredentialType="None|Windows|Certificate"  
-             protectionLevel="None|Sign|EncryptAndSign"             sslProtocols="Tls|Tls11|Tls12">  
-                <extendedProtectionPolicy  
-                     policyEnforcement="Never|WhenSupported|Always"  
-                     protectionScenario="TransportSelected|TrustedProxy">  
-                    <customServiceNames></customServiceNames>  
-                        </extendedProtectionPolicy>  
-            </transport>  
-        </security>  
-    </binding>  
-</netTcpBinding>  
+<netTcpBinding>
+  <binding>
+    <security mode="None|Transport|Message|TransportWithMessageCredential">
+      <transport clientCredentialType="None|Windows|Certificate"
+                 protectionLevel="None|Sign|EncryptAndSign"
+                 sslProtocols="Tls|Tls11|Tls12">
+        <extendedProtectionPolicy policyEnforcement="Never|WhenSupported|Always"
+                                  protectionScenario="TransportSelected|TrustedProxy">
+          <customServiceNames>
+          </customServiceNames>
+        </extendedProtectionPolicy>
+      </transport>
+    </security>
+  </binding>
+</netTcpBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -55,7 +55,7 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Klient je anonymní. To vyžaduje certifikát pro službu.|  
+|Žádná|Klient je anonymní. To vyžaduje certifikát pro službu.|  
 |Windows|Určuje ověřování Windows z klienta pomocí vyjednávání SP (vyjednávání protokolu Kerberos).|  
 |Certifikát|Klient je ověřený pomocí certifikátu. Využívá vyjednávání protokolu SSL a vyžaduje certifikát pro službu.|  
   
@@ -63,12 +63,12 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Žádná ochrana.|  
+|Žádná|Žádná ochrana.|  
 |přihlášení|Zprávy jsou podepsané.|  
 |EncryptAndSign|-Zprávy jsou zašifrovaná a podepsaná.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

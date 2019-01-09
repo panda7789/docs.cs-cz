@@ -2,12 +2,12 @@
 title: '&lt;message&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
-ms.openlocfilehash: 08307d1120904fc703e7b76616aacce7e153929a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8c3519e2db12e34d9f2bd03689e0e9684c5792ae
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842590"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151277"
 ---
 # <a name="ltmessagegt-of-ltbasichttpbindinggt"></a>&lt;message&gt; – &lt;basicHttpBinding&gt;
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -22,9 +22,8 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<message   
-   algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
-      clientCredentialType="UserName/Certificate"/>  
+<message algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"
+         clientCredentialType="UserName/Certificate" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -45,7 +44,7 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 |Certifikát|Vyžaduje se k serveru, používá certifikát ověření klienta. Pověření klienta nejsou v tomto případě musí být zadaná pomocí [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) a [ \<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md). Kromě toho-když používají režim zabezpečených zpráv, klient musí být zřízená s certifikátem služby. Přihlašovací údaje služby v tomto případě musí být zadaná pomocí <xref:System.ServiceModel.Description.ClientCredentials> třídy nebo `ClientCredentials` prvek chování a zadáním služby certifikátu pomocí [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -59,70 +58,65 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
  Stejné informace pro vazby a zabezpečení jsou uvedeny v souboru konfigurace klienta.  
   
 ```xml  
-<system.serviceModel>  
-    <services>  
-      <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
-               behaviorConfiguration="CalculatorServiceBehavior">  
-        <host>  
-          <baseAddresses>  
-            <add baseAddress="http://localhost:8000/ServiceModelSamples/service"/>  
-          </baseAddresses>  
-        </host>  
-        <!-- this endpoint is exposed at the base address provided by host: http://localhost:8000/ServiceModelSamples/service  -->  
-        <endpoint address=""  
-                  binding="basicHttpBinding"  
-                  bindingConfiguration="Binding1"   
-                  contract="Microsoft.ServiceModel.Samples.ICalculator" />  
-        <!-- the mex endpoint is exposed at http://localhost:8000/ServiceModelSamples/service/mex -->  
-        <endpoint address="mex"  
-                  binding="mexHttpBinding"  
-                  contract="IMetadataExchange" />  
-      </service>  
-    </services>  
-  
-    <bindings>  
-      <basicHttpBinding>  
-        <!--   
-        This configuration defines the SecurityMode as Message and   
-        the clientCredentialType as Certificate.  
-        -->  
-        <binding name="Binding1" >  
-          <security mode = "Message">  
-            <message clientCredentialType="Certificate"/>  
-          </security>  
-        </binding>  
-      </basicHttpBinding>  
-    </bindings>  
-  
-    <!--For debugging purposes set the includeExceptionDetailInFaults attribute to true-->  
-    <behaviors>  
-      <serviceBehaviors>  
-        <behavior name="CalculatorServiceBehavior">  
-          <serviceMetadata httpGetEnabled="True"/>  
-          <serviceDebug includeExceptionDetailInFaults="False" />  
-          <!--  
-        The serviceCredentials behavior allows one to define a service certificate.  
-        A service certificate is used by a client to authenticate the service and provide message protection.  
-        This configuration references the "localhost" certificate installed during the setup instructions.  
-        -->  
-          <serviceCredentials>  
-            <serviceCertificate findValue="localhost" storeLocation="LocalMachine" storeName="My" x509FindType="FindBySubjectName" />  
-            <clientCertificate>  
-              <!--   
-            Setting the certificateValidationMode to PeerOrChainTrust means that if the certificate   
-            is in the user's Trusted People store, then it will be trusted without performing a  
-            validation of the certificate's issuer chain. This setting is used here for convenience so that the   
-            sample can be run without having to have certificates issued by a certification authority (CA).  
-            This setting is less secure than the default, ChainTrust. The security implications of this   
-            setting should be carefully considered before using PeerOrChainTrust in production code.   
-            -->  
-              <authentication certificateValidationMode="PeerOrChainTrust" />  
-            </clientCertificate>  
-          </serviceCredentials>  
-        </behavior>  
-      </serviceBehaviors>  
-    </behaviors>  
-</system.serviceModel>  
+<system.serviceModel>
+  <services>
+    <service name="Microsoft.ServiceModel.Samples.CalculatorService"
+             behaviorConfiguration="CalculatorServiceBehavior">
+      <host>
+        <baseAddresses>
+          <add baseAddress="http://localhost:8000/ServiceModelSamples/service" />
+        </baseAddresses>
+      </host>
+      <!-- this endpoint is exposed at the base address provided by host: http://localhost:8000/ServiceModelSamples/service -->
+      <endpoint address=""
+                binding="basicHttpBinding"
+                bindingConfiguration="Binding1"
+                contract="Microsoft.ServiceModel.Samples.ICalculator" />
+      <!-- the mex endpoint is exposed at http://localhost:8000/ServiceModelSamples/service/mex -->
+      <endpoint address="mex"
+                binding="mexHttpBinding"
+                contract="IMetadataExchange" />
+    </service>
+  </services>
+  <bindings>
+    <basicHttpBinding>
+    <!-- This configuration defines the SecurityMode as Message and
+         the clientCredentialType as Certificate. -->
+      <binding name="Binding1">
+        <security mode = "Message">
+          <message clientCredentialType="Certificate" />
+        </security>
+      </binding>
+    </basicHttpBinding>
+  </bindings>
+  <!--For debugging purposes set the includeExceptionDetailInFaults attribute to true-->
+  <behaviors>
+    <serviceBehaviors>
+      <behavior name="CalculatorServiceBehavior">
+        <serviceMetadata httpGetEnabled="True" />
+        <serviceDebug includeExceptionDetailInFaults="False" />
+        <!-- The serviceCredentials behavior allows one to define a service certificate.
+             A service certificate is used by a client to authenticate the service and provide message protection.
+             This configuration references the "localhost" certificate installed during the setup instructions. -->
+        <serviceCredentials>
+          <serviceCertificate findValue="localhost"
+                              storeLocation="LocalMachine"
+                              storeName="My"
+                              x509FindType="FindBySubjectName" />
+          <clientCertificate>
+            <!-- Setting the certificateValidationMode to PeerOrChainTrust means that if the certificate
+               is in the user's Trusted People store, then it will be trusted without performing a
+               validation of the certificate's issuer chain. This setting is used here for convenience so that the
+               sample can be run without having to have certificates issued by a certification authority (CA).
+               This setting is less secure than the default, ChainTrust. The security implications of this
+               setting should be carefully considered before using PeerOrChainTrust in production code. -->
+            <authentication certificateValidationMode="PeerOrChainTrust" />
+          </clientCertificate>
+        </serviceCredentials>
+      </behavior>
+    </serviceBehaviors>
+  </behaviors>
+</system.serviceModel>
 ```  
   
 ## <a name="see-also"></a>Viz také  

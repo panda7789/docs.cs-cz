@@ -1,5 +1,5 @@
 ---
-title: ConnectionGroup – třída
+title: Třída ConnectionGroup
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -12,16 +12,16 @@ api_type:
 ms.assetid: 25c08217-fdeb-44b9-9cd6-1b4955d6e602
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 420925f9f257bff5a788cd5af918e33c96882674
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8fddc2cd537963ad2aa1e0858476e7b9b9c6c032
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753600"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54144688"
 ---
-# <a name="connectiongroup-class"></a>ConnectionGroup – třída
+# <a name="connectiongroup-class"></a>Třída ConnectionGroup
 
-`ConnectionGroup` Třída skupiny seznam připojení v rámci <xref:System.Net.ServicePoint> kontextu a slouží k udržování kontext pro síťové prostředky (například proxy servery a klienti samostatné).
+`ConnectionGroup` Seznam připojení v rámci skupiny třídy <xref:System.Net.ServicePoint> kontextu a je používán pro zachování kontextu pro síťové prostředky (například servery proxy a samostatné klientů).
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ internal class ConnectionGroup
 ```
 
 > [!WARNING]
-> `ConnectionGroup` Třída je interní a nejsou určeny pro použití přímo v kódu.
+> `ConnectionGroup` Třídy je interní a není určena pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
 **Namespace:** <xref:System.Net>
 
-**Sestavení:** systému (v System.dll)
+**Sestavení:** Systém (System.dll)
 
-**Verze rozhraní .NET framework:** dostupné od verze 2.0.
+**Verze rozhraní .NET framework:** Dostupné od verze 2.0.

@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;wsHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: 5a62eefa6865a6908caecef87b0e457040df0b21
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 4bd385e8c4fee1ea340e1d9df9816e25760efb02
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316204"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54148627"
 ---
 # <a name="lttransportgt-of-ltwshttpbindinggt"></a>&lt;transport&gt; – &lt;wsHttpBinding&gt;
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
@@ -22,20 +22,21 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<wsHttpBinding>  
-    <binding>  
-        <security mode="None|Transport|TransportWithMessageCredential|TransportCredentialOnly">  
-            <transport  
-            clientCredentialType="Basic|Certificate|Digest|None|Ntlm|Windows"  
-            proxyCredentialType="Basic|Digest|None|Ntlm|Windows"  
-            realm="string" />  
-                <extendedProtectionPolicy policyEnforcement="Never|WhenSupported|Always" protectionScenario="TransportSelected|TrustedProxy">  
-                    <customServiceNames></customServiceNames>  
-                </extendedProtecutionPolicy>  
-            </transport>  
-        </security>  
-    </binding>  
-</wsHttpBinding>  
+<wsHttpBinding>
+  <binding>
+    <security mode="None|Transport|TransportWithMessageCredential|TransportCredentialOnly">
+      <transport clientCredentialType="Basic|Certificate|Digest|None|Ntlm|Windows"
+                 proxyCredentialType="Basic|Digest|None|Ntlm|Windows"
+                 realm="string" />
+        <extendedProtectionPolicy policyEnforcement="Never|WhenSupported|Always"
+                                  protectionScenario="TransportSelected|TrustedProxy">
+          <customServiceNames>
+          </customServiceNames>
+        </extendedProtecutionPolicy>
+      </transport>
+    </security>
+  </binding>
+</wsHttpBinding>
 ```  
   
 ## <a name="type"></a>Typ  

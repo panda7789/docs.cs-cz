@@ -2,37 +2,37 @@
 title: '&lt;messageLogging&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: e137070b71cf8a481eef3ea16260c135e29b4932
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cfc5f23e58c5a428ecb4541ccfc0ada5b190fb36
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32750684"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54150445"
 ---
 # <a name="ltmessagelogginggt"></a>&lt;messageLogging&gt;
-Tento element definuje nastavení pro protokolování zpráv možnosti Windows Communication Foundation (WCF).  
+Tento prvek definuje nastavení možností protokolování zpráv Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<diagnostické >  
+\<diagnostiky >  
 \<messageLogging >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<system.serviceModel>  
-   <diagnostics>  
-       <messageLogging logEntireMessage="Boolean"  
-          logMalformedMessages="Boolean"  
-          logMessagesAtServiceLevel="Boolean"  
-          logMessagesAtTransportLevel="Boolean"  
-                    maxMessagesToLog="Integer"  
-          maxSizeOfMessageToLog="Integer" >  
-          <filters>  
-                            <clear />  
-          </filters>  
-       </messageLogging>  
-   </diagnostics>  
-</system.serviceModel>  
+<system.serviceModel>
+  <diagnostics>
+    <messageLogging logEntireMessage="Boolean"
+                    logMalformedMessages="Boolean"
+                    logMessagesAtServiceLevel="Boolean"
+                    logMessagesAtTransportLevel="Boolean"
+                    maxMessagesToLog="Integer"
+                    maxSizeOfMessageToLog="Integer">
+      <filters>
+        <clear />
+      </filters>
+    </messageLogging>
+  </diagnostics>
+</system.serviceModel>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -42,78 +42,83 @@ Tento element definuje nastavení pro protokolování zpráv možnosti Windows C
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`logEntireMessage`|Logická hodnota, která určuje, zda je zaznamenána celé zprávy (záhlaví zprávy a text). Výchozí hodnota je `false`, což znamená, že pouze záhlaví zprávy přihlášen. Toto nastavení ovlivňuje všechny úrovně protokolování zpráv (service, přenos a chybná).|  
-|`logMalformedMessages`|Logická hodnota, která určuje, zda mají být protokolovány poškozených zpráv. Poškozených zpráv nepočítá `maxMessagesToLog`. Výchozí hodnota je `false`.|  
-|`logMessagesAtServiceLevel`|Logická hodnota, která určuje, zda jsou zprávy nalezeny na úrovni služby (před šifrování a přenosu související transformací). Výchozí hodnota je `false`.|  
-|`logMessagesAtTransportLevel`|Logická hodnota, která určuje, zda jsou zprávy nalezeny na úrovni přenosu. Jsou použity žádné filtry zadané v konfiguračním souboru, a budou trasovány pouze zprávy, které splňují podmínky filtrů. Výchozí hodnota je `false`.|  
-|`maxMessagesToLog`|Kladné celé číslo, které určuje maximální počet zpráv do protokolu. Výchozí hodnota je 1 000.|  
-|`maxSizeOfMessageToLog`|Kladné celé číslo, které určuje maximální velikost v bajtech zprávy do protokolu. Zprávy, které jsou větší než limit se nebudou protokolovat. Toto nastavení ovlivňuje všechny úrovně trasování. Výchozí hodnota je 262144(0x4000).|  
+|`logEntireMessage`|Logická hodnota určující, zda je zaznamenána celá zpráva (hlavička a tělo zprávy). Výchozí hodnota je `false`, což znamená, že pouze záhlaví zprávy je zaznamenána. Toto nastavení ovlivňuje všechny úrovně protokolování zpráv (služba, přenos a chybně formátovaný).|  
+|`logMalformedMessages`|Logická hodnota určující, zda jsou špatně vytvořené zprávy zaznamenány. Špatně vytvořené zprávy se nepočítají do `maxMessagesToLog`. Výchozí hodnota je `false`.|  
+|`logMessagesAtServiceLevel`|Logická hodnota určující, zda jsou zprávy trasovány na úrovni služby (před transformací související šifrování a transport). Výchozí hodnota je `false`.|  
+|`logMessagesAtTransportLevel`|Logická hodnota určující, zda jsou zprávy trasovány na úrovni přenosu. Jsou použity nějaké filtry zadané v konfiguračním souboru, a jsou trasovány pouze zprávy, které odpovídají filtrům. Výchozí hodnota je `false`.|  
+|`maxMessagesToLog`|Kladné celé číslo, které určuje maximální počet zaznamenavaných zpráv. Výchozí hodnota je 1000.|  
+|`maxSizeOfMessageToLog`|Kladné celé číslo, které určuje maximální velikost v bajtech zaznamenávané zprávy. Zprávy větší než limit se nebudou protokolovat. Toto nastavení ovlivňuje všechny úrovně trasování. Výchozí hodnota je 262144(0x4000).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|filtry|`filters` Element obsahuje kolekci filtrů XPath. Když je povoleno protokolování přenosu zpráv (`logMessagesAtTransportLevel` je `true`), bude do protokolu pouze zprávy odpovídající filtry.<br /><br /> Filtry se použijí jenom v přenosové vrstvě. Protokolování úrovně a poškozených zpráv služby nemá vliv filtry.<br /><br /> Atribut pouze pro tento element `filter`, je třída XpathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
+|filtry|`filters` Element obsahuje kolekci filtrů XPath. Pokud je povoleno protokolování zpráv přenosu (`logMessagesAtTransportLevel` je `true`), budou zaznamenány pouze zprávy odpovídající filtry.<br /><br /> Filtry se použijí pouze na transportní vrstvě. Protokolování úrovně a poškozené zprávy služby nejsou ovlivněny filtry.<br /><br /> Atribut pouze pro tento element `filter`, je třída XpathFilter.<br /><br /> `<filters>     <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">/soap:Envelope</add> </filters>`|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|diagnostika|Definuje nastavení WCF pro modul runtime kontroly a řízení pro správce.|  
+|diagnostika|Definuje nastavení kontroly runtime WCF a ovládací prvek pro správce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zprávy se zaznamenávají na třech různých úrovních v zásobníku: service, přenos a je poškozený. Každá úroveň je možné aktivovat samostatně.  
+ Zprávy jsou zaznamenány na třech různých úrovních v zásobníku: služba, přenos a je poškozený. Každá úroveň lze aktivovat samostatně.  
   
- Filtry jazyka XPath lze přidat k protokolování konkrétní zpráv na úrovni přenosu a služby. Pokud jsou definovány žádné filtry, jsou protokolovány všechny zprávy. Filtry se použijí jenom u záhlaví zprávy. Text se ignoruje. WCF ignoruje tělo zprávy ke zlepšení výkonu. Pokud chcete filtrovat podle obsah textu, můžete vytvořit vlastní naslouchací proces s filtr, který nemá tak.  
+ Filtry jazyka XPath lze přidat můžete protokolovat konkrétní zprávy na úrovni přenosu a služby. Pokud jsou definovány žádné filtry, protokolují se všechny zprávy. Filtry se použijí jenom u záhlaví zprávy. Text se ignoruje. WCF ignoruje text zprávy pro zvýšení výkonu. Pokud chcete filtrovat na základě obsahu těla, můžete vytvořit vlastní naslouchací proces s filtrem, která tak učiní.  
   
- Budete muset vytvořit naslouchací proces trasování aktivujte trasování zpráv. Naslouchací proces samotné může být jakékoli naslouchací proces, který funguje s <xref:System.Diagnostics> architektura trasování. Následující příklad ukazuje, jak vytvořit naslouchací proces.  
+ Je potřeba vytvořit naslouchací proces trasování aktivujte trasování zprávy. Naslouchací proces sám může být jakékoli naslouchací proces, který funguje s <xref:System.Diagnostics> architektura trasování. Následující příklad ukazuje, jak vytvořit takový naslouchací proces.  
   
 ```xml  
-<system.diagnostics>  
-    <sources>  
-          <source name="System.ServiceModel" switchValue="Verbose">  
-              <listeners>  
-                    <clear />  
-                    <add type="System.Diagnostics.DefaultTraceListener" name="Default"  
-                        traceOutputOptions="None" />  
-                    <add name="ServiceModel Listener" traceOutputOptions="None" />  
-               </listeners>  
-        </source>  
-            <source name="System.ServiceModel.MessageLogging">  
-                <listeners>  
-                    <clear />  
-                    <add type="System.Diagnostics.DefaultTraceListener" name="Default"  
-                        traceOutputOptions="None" />  
-                    <add name="MessageLogging Listener" traceOutputOptions="None"/>  
-               </listeners>  
-        </source>  
-    </sources>  
-     <sharedListeners>  
-            <add initializeData="C:\ItProTools\TraceLog.xml"  
-                    type="System.Diagnostics.XmlWriterTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
-                    name="ServiceModel Listener"  
-                    traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack" />  
-            <add initializeData="C:\ItProTools\MessageLog.log"  
-                    type="System.Diagnostics.XmlWriterTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
-                   name="MessageLogging Listener"  
-                   traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack" />  
-    </sharedListeners>  
-</system.diagnostics>  
+<system.diagnostics>
+  <sources>
+    <source name="System.ServiceModel"
+            switchValue="Verbose">
+      <listeners>
+        <clear />
+        <add type="System.Diagnostics.DefaultTraceListener"
+             name="Default"
+             traceOutputOptions="None" />
+        <add name="ServiceModel Listener"
+             traceOutputOptions="None" />
+      </listeners>
+    </source>
+    <source name="System.ServiceModel.MessageLogging">
+      <listeners>
+        <clear />
+        <add type="System.Diagnostics.DefaultTraceListener"
+             name="Default"
+             traceOutputOptions="None" />
+        <add name="MessageLogging Listener"
+             traceOutputOptions="None" />
+      </listeners>
+    </source>
+  </sources>
+  <sharedListeners>
+    <add initializeData="C:\ItProTools\TraceLog.xml"
+         type="System.Diagnostics.XmlWriterTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+         name="ServiceModel Listener"
+         traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack" />
+    <add initializeData="C:\ItProTools\MessageLog.log"
+         type="System.Diagnostics.XmlWriterTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+         name="MessageLogging Listener"
+         traceOutputOptions="LogicalOperationStack, DateTime, Timestamp, ProcessId, ThreadId, Callstack" />
+  </sharedListeners>
+</system.diagnostics>
 ```  
   
 ## <a name="example"></a>Příklad  
   
 ```xml  
-<messageLogging logEntireMessage="true"  
-    logMalformedMessages="true"  
-    logMessagesAtServiceLevel="true"  
-    logMessagesAtTransportLevel="true"  
-    maxMessagesToLog="42"  
-    maxSizeOfMessageToLog="42">  
-     <filters>  
-         <clear />  
-     </filters>  
- </messageLogging>  
+<messageLogging logEntireMessage="true"
+                logMalformedMessages="true"
+                logMessagesAtServiceLevel="true"
+                logMessagesAtTransportLevel="true"
+                maxMessagesToLog="42"
+                maxSizeOfMessageToLog="42">
+  <filters>
+    <clear />
+  </filters>
+</messageLogging>
 ```  
   
 ## <a name="see-also"></a>Viz také  

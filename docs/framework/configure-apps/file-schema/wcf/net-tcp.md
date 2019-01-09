@@ -2,12 +2,12 @@
 title: '&lt;net.tcp&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: c67aeca183eb476460fa0be2c6dcd9c6077165d8
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 2a75a33eac61d85a0dab4732cb3b0de7f4703fa7
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842343"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145780"
 ---
 # <a name="ltnettcpgt"></a>&lt;net.tcp&gt;
 Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umožňuje sdílet stejný port TCP mezi více procesy.  
@@ -18,28 +18,28 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<configuration>  
-   <system.serviceModel.activation>  
-       <net.tcp listenBacklog="Integer"  
-          maxPendingAccepts="Integer"  
-          maxPendingConnections="Integer"  
-          receiveTimeout="TimeSpan"  
-          teredoEnabled="Boolean">  
-          <allowAccounts>  
-             <!-- LocalSystem account -->   
-             <add securityIdentifier="S-1-5-18"/>  
-             <!-- LocalService account -->   
-             <add securityIdentifier="S-1-5-19"/>  
-             <!-- Administrators account -->   
-             <add securityIdentifier="S-1-5-20"/>  
-             <!-- Network Service account -->   
-             <add securityIdentifier="S-1-5-32-544" />  
-             <!-- IIS_IUSRS account (Vista only)-->   
-             <add securityIdentifier="S-1-5-32-568"/>  
-           </allowAccounts>  
-       </net.tcp>  
-   </system.serviceModel.activation>  
-</configuration>  
+<configuration>
+  <system.serviceModel.activation>
+    <net.tcp listenBacklog="Integer"
+             maxPendingAccepts="Integer"
+             maxPendingConnections="Integer"
+             receiveTimeout="TimeSpan"
+             teredoEnabled="Boolean">
+      <allowAccounts>
+        <!-- LocalSystem account -->
+        <add securityIdentifier="S-1-5-18"/>
+        <!-- LocalService account -->
+        <add securityIdentifier="S-1-5-19"/>
+        <!-- Administrators account -->
+        <add securityIdentifier="S-1-5-20"/>
+        <!-- Network Service account -->
+        <add securityIdentifier="S-1-5-32-544" />
+        <!-- IIS_IUSRS account (Vista only)-->
+        <add securityIdentifier="S-1-5-32-568"/>
+      </allowAccounts>
+    </net.tcp>
+  </system.serviceModel.activation>
+</configuration>
 ```  
   
 ## <a name="type"></a>Typ  
