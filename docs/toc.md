@@ -245,6 +245,7 @@
 ##### [Interpolace řetězců](csharp/tutorials/intro-to-csharp/interpolated-strings-local.md)
 ##### [Seznam kolekcí](csharp/tutorials/intro-to-csharp/arrays-and-collections.md)
 ##### [Úvod do tříd](csharp/tutorials/intro-to-csharp/introduction-to-classes.md)
+### [Prozkoumání C# 6](csharp/tutorials/exploration/csharp-6.yml)
 ### [Práce s odkazovými typy s možnou hodnotou null](csharp/tutorials/nullable-reference-types.md)
 ### [Konzolová aplikace](csharp/tutorials/console-teleprompter.md)
 ### [Klient REST](csharp/tutorials/console-webapiclient.md)
