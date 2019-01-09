@@ -4,195 +4,198 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-ms.openlocfilehash: c9cf6e42aa9811a15e3b787599fe9d1def2c7efe
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 0101f9c06c5461c0008ba72c67fc5a49c1f09b4d
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847734"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54151846"
 ---
-# <a name="ltwsfederationhttpbindinggt"></a><span data-ttu-id="57f62-102">&lt;wsFederationHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="57f62-102">&lt;wsFederationHttpBinding&gt;</span></span>
-<span data-ttu-id="57f62-103">Definuje vazbu, která podporuje WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="57f62-103">Defines a binding that supports WS-Federation.</span></span>  
+# <a name="ltwsfederationhttpbindinggt"></a><span data-ttu-id="247e0-102">&lt;wsFederationHttpBinding&gt;</span><span class="sxs-lookup"><span data-stu-id="247e0-102">&lt;wsFederationHttpBinding&gt;</span></span>
+<span data-ttu-id="247e0-103">Definuje vazbu, která podporuje WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="247e0-103">Defines a binding that supports WS-Federation.</span></span>  
   
- <span data-ttu-id="57f62-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="57f62-104">\<system.ServiceModel></span></span>  
-<span data-ttu-id="57f62-105">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="57f62-105">\<bindings></span></span>  
-<span data-ttu-id="57f62-106">wsFederationBinding – element</span><span class="sxs-lookup"><span data-stu-id="57f62-106">wsFederationBinding element</span></span>  
+ <span data-ttu-id="247e0-104">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="247e0-104">\<system.ServiceModel></span></span>  
+<span data-ttu-id="247e0-105">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="247e0-105">\<bindings></span></span>  
+<span data-ttu-id="247e0-106">wsFederationBinding – element</span><span class="sxs-lookup"><span data-stu-id="247e0-106">wsFederationBinding element</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="57f62-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="57f62-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="247e0-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="247e0-107">Syntax</span></span>  
   
 ```xml  
-<wsFederationHttpBinding>  
-    <binding   
-        bypassProxyOnLocal="Boolean"  
-        closeTimeout="TimeSpan"   
-        hostNameComparisonMode="StrongWildcard/Exact/WeakWildcard"  
-        maxBufferPoolSize="integer"  
-        maxReceivedMessageSize="integer"  
-        messageEncoding="Text/Mtom"   
-                name="string"  
-        openTimeout="TimeSpan"   
-        privacyNoticeAt="Uri"  
-        privacyNoticeVersion="Integer"  
-        proxyAddress="Uri"   
-        receiveTimeout="TimeSpan"  
-        sendTimeout="TimeSpan"  
-        textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/ Utf8TextEncoding"  
-        transactionFlow="Boolean"  
-        useDefaultWebProxy="Boolean">  
-        <security mode="None/Message/TransportWithMessageCredential">  
-         <message   
-            algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
-            issuedTokenType="string"   
-            issuedKeyType="SymmetricKey/PublicKey"  
-            negotiateServiceCredential="Boolean" >  
-            <claimTypeRequirements>  
-               <add claimType="URI"  
-                    isOptional="Boolean" />  
-            </claimTypeRequirements>  
-                        <issuer address="Uri" >  
-               <headers>  
-                  <add name="String"  
-                       namespace="String" />  
-                          </headers>  
-                              <identity>  
-                                 <certificate encodedValue="String"/>  
-                                <certificateReference findValue="String"   
-                                 isChainIncluded="Boolean"  
-                            storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"  
-                                  storeLocation="LocalMachine/CurrentUser"  
-                                   X509FindType=System.Security.Cryptography.X509certificates.X509findtype/>  
-                                   <dns value="String"/>  
-                                <rsa value="String"/>  
-                                <servicePrincipalName value="String"/>  
-                                <usePrincipalName value="String"/>  
-                              </identity>  
-                        </issuer>  
-                        <issuerMetadata address=String" >  
-               <headers>  
-                  <add name="String"  
-                       namespace="String" />  
-               </headers>  
-               <identity>  
-                  <certificate encodedValue="String"/>  
-                  <certificateReference findValue="String"   
-                     isChainIncluded="Boolean"  
-                     storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"  
-                     storeLocation="LocalMachine/CurrentUser"  
-                     x509FindType=System.Security.Cryptography.X509certificates.X509findtype/>  
-                  <dns value="String"/>  
-                  <rsa value="String"/>  
-                  <servicePrincipalName value="String"/>  
-                  <usePrincipalName value="String"/>  
-               </identity>  
-                        </issuerMetadata>  
-            <tokenRequestParameters>  
-               <xmlElement>  
-               </xmlElement>  
-            </tokenRequestParameters>  
-           </message>  
-        </security>  
-        <reliableSession ordered="Boolean"  
-           inactivityTimeout="TimeSpan"  
-           enabled="Boolean" />  
-       <readerQuotas             maxArrayLength="Integer"            maxBytesPerRead="Integer"            maxDepth="Integer"             maxNameTableCharCount="Integer"                     maxStringContentLength="Integer" />    </binding>  
-</wsFederationBinding>  
+<wsFederationHttpBinding>
+  <binding bypassProxyOnLocal="Boolean"
+           closeTimeout="TimeSpan"
+           hostNameComparisonMode="StrongWildcard/Exact/WeakWildcard"
+           maxBufferPoolSize="integer"
+           maxReceivedMessageSize="integer"
+           messageEncoding="Text/Mtom"
+           name="string"
+           openTimeout="TimeSpan"
+           privacyNoticeAt="Uri"
+           privacyNoticeVersion="Integer"
+           proxyAddress="Uri"
+           receiveTimeout="TimeSpan"
+           sendTimeout="TimeSpan"
+           textEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/ Utf8TextEncoding"
+           transactionFlow="Boolean"
+           useDefaultWebProxy="Boolean">
+    <security mode="None/Message/TransportWithMessageCredential">
+      <message algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"
+               issuedTokenType="string"
+               issuedKeyType="SymmetricKey/PublicKey"
+               negotiateServiceCredential="Boolean">
+        <claimTypeRequirements>
+          <add claimType="URI"
+               isOptional="Boolean" />
+        </claimTypeRequirements>
+        <issuer address="Uri" >
+          <headers>
+            <add name="String"
+                 namespace="String" />
+          </headers>
+          <identity>
+            <certificate encodedValue="String" />
+            <certificateReference findValue="String"
+                                  isChainIncluded="Boolean"
+                                  storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"
+                                  storeLocation="LocalMachine/CurrentUser"
+                                  X509FindType="System.Security.Cryptography.X509certificates.X509findtype" />
+            <dns value="String" />
+            <rsa value="String" />
+            <servicePrincipalName value="String" />
+            <usePrincipalName value="String" />
+          </identity>
+        </issuer>
+        <issuerMetadata address="String">
+          <headers>
+            <add name="String"
+                 namespace="String" />
+          </headers>
+          <identity>
+            <certificate encodedValue="String" />
+            <certificateReference findValue="String"
+                                  isChainIncluded="Boolean"
+                                  storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"
+                                  storeLocation="LocalMachine/CurrentUser"
+                                  x509FindType="System.Security.Cryptography.X509certificates.X509findtype" />
+            <dns value="String" />
+            <rsa value="String" />
+            <servicePrincipalName value="String" />
+            <usePrincipalName value="String" />
+          </identity>
+        </issuerMetadata>
+        <tokenRequestParameters>
+          <xmlElement>
+          </xmlElement>
+        </tokenRequestParameters>
+      </message>
+    </security>
+    <reliableSession ordered="Boolean"
+                     inactivityTimeout="TimeSpan"
+                     enabled="Boolean" />
+    <readerQuotas maxArrayLength="Integer"
+                  maxBytesPerRead="Integer"
+                  maxDepth="Integer"
+                  maxNameTableCharCount="Integer"
+                  maxStringContentLength="Integer" />
+  </binding>
+</wsFederationBinding>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="57f62-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="57f62-108">Attributes and Elements</span></span>  
- <span data-ttu-id="57f62-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="57f62-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="247e0-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="247e0-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="247e0-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="247e0-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="57f62-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="57f62-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="247e0-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="247e0-110">Attributes</span></span>  
   
-|<span data-ttu-id="57f62-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="57f62-111">Attribute</span></span>|<span data-ttu-id="57f62-112">Popis</span><span class="sxs-lookup"><span data-stu-id="57f62-112">Description</span></span>|  
+|<span data-ttu-id="247e0-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="247e0-111">Attribute</span></span>|<span data-ttu-id="247e0-112">Popis</span><span class="sxs-lookup"><span data-stu-id="247e0-112">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="57f62-113">bypassProxyOnLocal</span><span class="sxs-lookup"><span data-stu-id="57f62-113">bypassProxyOnLocal</span></span>|<span data-ttu-id="57f62-114">Logická hodnota určující, zda obejít proxy server pro místní adresy.</span><span class="sxs-lookup"><span data-stu-id="57f62-114">A Boolean value that indicates whether to bypass the proxy server for local addresses.</span></span> <span data-ttu-id="57f62-115">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="57f62-115">The default is `false`.</span></span>|  
-|<span data-ttu-id="57f62-116">closeTimeout</span><span class="sxs-lookup"><span data-stu-id="57f62-116">closeTimeout</span></span>|<span data-ttu-id="57f62-117">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření.</span><span class="sxs-lookup"><span data-stu-id="57f62-117">A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete.</span></span> <span data-ttu-id="57f62-118">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="57f62-118">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="57f62-119">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="57f62-119">The default is 00:01:00.</span></span>|  
-|<span data-ttu-id="57f62-120">hostnameComparisonMode</span><span class="sxs-lookup"><span data-stu-id="57f62-120">hostnameComparisonMode</span></span>|<span data-ttu-id="57f62-121">Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="57f62-121">Specifies the HTTP hostname comparison mode used to parse URIs.</span></span> <span data-ttu-id="57f62-122">Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.</span><span class="sxs-lookup"><span data-stu-id="57f62-122">This attribute is of type <xref:System.ServiceModel.HostNameComparisonMode>, which indicates whether the hostname is used to reach the service when matching on the URI.</span></span> <span data-ttu-id="57f62-123">Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.</span><span class="sxs-lookup"><span data-stu-id="57f62-123">The default value is <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, which ignores the hostname in the match.</span></span>|  
-|<span data-ttu-id="57f62-124">maxBufferPoolSize</span><span class="sxs-lookup"><span data-stu-id="57f62-124">maxBufferPoolSize</span></span>|<span data-ttu-id="57f62-125">Celé číslo, které určuje velikost fondu maximální vyrovnávací paměti pro tuto vazbu.</span><span class="sxs-lookup"><span data-stu-id="57f62-125">An integer that specifies the maximum buffer pool size for this binding.</span></span> <span data-ttu-id="57f62-126">Výchozí hodnota je 524,288 bajtů (512 \* 1024).</span><span class="sxs-lookup"><span data-stu-id="57f62-126">The default is 524,288 bytes (512 \* 1024).</span></span> <span data-ttu-id="57f62-127">Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="57f62-127">Many parts of Windows Communication Foundation (WCF) use buffers.</span></span> <span data-ttu-id="57f62-128">Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné.</span><span class="sxs-lookup"><span data-stu-id="57f62-128">Creating and destroying buffers each time they are used is expensive, and garbage collection for buffers is also expensive.</span></span> <span data-ttu-id="57f62-129">S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi.</span><span class="sxs-lookup"><span data-stu-id="57f62-129">With buffer pools, you can take a buffer from the pool, use it, and return it to the pool once you are done.</span></span> <span data-ttu-id="57f62-130">Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="57f62-130">Thus the overhead in creating and destroying buffers is avoided.</span></span>|  
-|<span data-ttu-id="57f62-131">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="57f62-131">maxReceivedMessageSize</span></span>|<span data-ttu-id="57f62-132">Kladné celé číslo, které určuje maximální velikost zprávy, v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou.</span><span class="sxs-lookup"><span data-stu-id="57f62-132">A positive integer that specifies the maximum message size, in bytes, including headers, that can be received on a channel configured with this binding.</span></span> <span data-ttu-id="57f62-133">Odesílatel zprávy překračující tento limit se zobrazí chyba protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="57f62-133">The sender of a message exceeding this limit will receive a SOAP fault.</span></span> <span data-ttu-id="57f62-134">Příjemce zahodí a vytvoří záznam události v protokolu trasování.</span><span class="sxs-lookup"><span data-stu-id="57f62-134">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="57f62-135">Výchozí hodnota je 65536.</span><span class="sxs-lookup"><span data-stu-id="57f62-135">The default is 65536.</span></span>|  
-|<span data-ttu-id="57f62-136">messageEncoding</span><span class="sxs-lookup"><span data-stu-id="57f62-136">messageEncoding</span></span>|<span data-ttu-id="57f62-137">Definuje kodér pro kódování zprávy.</span><span class="sxs-lookup"><span data-stu-id="57f62-137">Defines the encoder used to encode the message.</span></span> <span data-ttu-id="57f62-138">Platné hodnoty patří:</span><span class="sxs-lookup"><span data-stu-id="57f62-138">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="57f62-139">-Text: Použijte kodér textu zprávy.</span><span class="sxs-lookup"><span data-stu-id="57f62-139">-   Text: Use a text message encoder.</span></span><br /><span data-ttu-id="57f62-140">-Mtom: Pomocí kodéru zpráv přenosu organizace mechanismus 1.0 (MTOM).</span><span class="sxs-lookup"><span data-stu-id="57f62-140">-   Mtom: Use a Message Transmission Organization Mechanism 1.0 (MTOM) encoder.</span></span><br /><br /> <span data-ttu-id="57f62-141">Výchozí hodnota je Text.</span><span class="sxs-lookup"><span data-stu-id="57f62-141">The default is Text.</span></span><br /><br /> <span data-ttu-id="57f62-142">Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.</span><span class="sxs-lookup"><span data-stu-id="57f62-142">This attribute is of type <xref:System.ServiceModel.WSMessageEncoding>.</span></span>|  
-|<span data-ttu-id="57f62-143">name</span><span class="sxs-lookup"><span data-stu-id="57f62-143">name</span></span>|<span data-ttu-id="57f62-144">Řetězec, který obsahuje konfigurační název vazby.</span><span class="sxs-lookup"><span data-stu-id="57f62-144">A string that contains the configuration name of the binding.</span></span> <span data-ttu-id="57f62-145">Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu.</span><span class="sxs-lookup"><span data-stu-id="57f62-145">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="57f62-146">Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název.</span><span class="sxs-lookup"><span data-stu-id="57f62-146">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="57f62-147">Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="57f62-147">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
-|<span data-ttu-id="57f62-148">openTimeout</span><span class="sxs-lookup"><span data-stu-id="57f62-148">openTimeout</span></span>|<span data-ttu-id="57f62-149">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření.</span><span class="sxs-lookup"><span data-stu-id="57f62-149">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="57f62-150">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="57f62-150">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="57f62-151">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="57f62-151">The default is 00:01:00.</span></span>|  
-|<span data-ttu-id="57f62-152">privactyNoticeAt</span><span class="sxs-lookup"><span data-stu-id="57f62-152">privactyNoticeAt</span></span>|<span data-ttu-id="57f62-153">Řetězec určující identifikátor URI, ve kterém je umístěno oznámení soukromí.</span><span class="sxs-lookup"><span data-stu-id="57f62-153">A String that specifies a URI at which the privacy notice is located.</span></span>|  
-|<span data-ttu-id="57f62-154">privactyNoticeVersion</span><span class="sxs-lookup"><span data-stu-id="57f62-154">privactyNoticeVersion</span></span>|<span data-ttu-id="57f62-155">Celé číslo, které určuje verzi aktuální oznámení o ochraně osobních údajů.</span><span class="sxs-lookup"><span data-stu-id="57f62-155">An integer that specifies the version of the current privacy notice.</span></span>|  
-|<span data-ttu-id="57f62-156">proxyAddress</span><span class="sxs-lookup"><span data-stu-id="57f62-156">proxyAddress</span></span>|<span data-ttu-id="57f62-157">Identifikátor URI, který určuje adresu proxy serveru HTTP.</span><span class="sxs-lookup"><span data-stu-id="57f62-157">A URI that specifies the address of the HTTP proxy.</span></span> <span data-ttu-id="57f62-158">Pokud `useDefaultWebProxy` je `true`, toto nastavení musí být `null`.</span><span class="sxs-lookup"><span data-stu-id="57f62-158">If `useDefaultWebProxy` is `true`, this setting must be `null`.</span></span> <span data-ttu-id="57f62-159">Výchozí hodnota je `null`.</span><span class="sxs-lookup"><span data-stu-id="57f62-159">The default is `null`.</span></span>|  
-|<span data-ttu-id="57f62-160">receiveTimeout</span><span class="sxs-lookup"><span data-stu-id="57f62-160">receiveTimeout</span></span>|<span data-ttu-id="57f62-161">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení.</span><span class="sxs-lookup"><span data-stu-id="57f62-161">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="57f62-162">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="57f62-162">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="57f62-163">Výchozí hodnota je 00:10:00.</span><span class="sxs-lookup"><span data-stu-id="57f62-163">The default is 00:10:00.</span></span>|  
-|<span data-ttu-id="57f62-164">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="57f62-164">sendTimeout</span></span>|<span data-ttu-id="57f62-165">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání.</span><span class="sxs-lookup"><span data-stu-id="57f62-165">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="57f62-166">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="57f62-166">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="57f62-167">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="57f62-167">The default is 00:01:00.</span></span>|  
-|<span data-ttu-id="57f62-168">textEncoding</span><span class="sxs-lookup"><span data-stu-id="57f62-168">textEncoding</span></span>|<span data-ttu-id="57f62-169">Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby.</span><span class="sxs-lookup"><span data-stu-id="57f62-169">Sets the character set encoding to be used for emitting messages on the binding.</span></span> <span data-ttu-id="57f62-170">Platné hodnoty patří:</span><span class="sxs-lookup"><span data-stu-id="57f62-170">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="57f62-171">-BigEndianUnicode: BigEndian kódování Unicode kódování.</span><span class="sxs-lookup"><span data-stu-id="57f62-171">-   BigEndianUnicode: Unicode BigEndian encoding.</span></span><br /><span data-ttu-id="57f62-172">-Unicode: kódování 16 bitů.</span><span class="sxs-lookup"><span data-stu-id="57f62-172">-   Unicode: 16-bit encoding.</span></span><br /><span data-ttu-id="57f62-173">– UTF8: kódování 8bitové</span><span class="sxs-lookup"><span data-stu-id="57f62-173">-   UTF8: 8-bit encoding</span></span><br /><br /> <span data-ttu-id="57f62-174">Použije se UTF8.</span><span class="sxs-lookup"><span data-stu-id="57f62-174">The default is UTF8.</span></span> <span data-ttu-id="57f62-175">Tento atribut je typu <xref:System.Text.Encoding>...</span><span class="sxs-lookup"><span data-stu-id="57f62-175">This attribute is of type <xref:System.Text.Encoding>..</span></span>|  
-|<span data-ttu-id="57f62-176">transactionFlow</span><span class="sxs-lookup"><span data-stu-id="57f62-176">transactionFlow</span></span>|<span data-ttu-id="57f62-177">Logická hodnota určující, zda vazba podporuje průchodu WS-transakce.</span><span class="sxs-lookup"><span data-stu-id="57f62-177">A Boolean value that specifies whether the binding supports flowing WS-Transactions.</span></span> <span data-ttu-id="57f62-178">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="57f62-178">The default is `false`.</span></span>|  
-|<span data-ttu-id="57f62-179">useDefaultWebProxy</span><span class="sxs-lookup"><span data-stu-id="57f62-179">useDefaultWebProxy</span></span>|<span data-ttu-id="57f62-180">Logická hodnota, která určuje, jestli se používá v systému automaticky nakonfigurovaný proxy HTTP.</span><span class="sxs-lookup"><span data-stu-id="57f62-180">A Boolean value that indicates whether the system’s auto-configured HTTP proxy is used.</span></span> <span data-ttu-id="57f62-181">Adresa proxy musí být `null` (to znamená, není nastavený) Pokud tento atribut je `true`.</span><span class="sxs-lookup"><span data-stu-id="57f62-181">The proxy address must be `null` (that is, not set) if this attribute is `true`.</span></span> <span data-ttu-id="57f62-182">Výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="57f62-182">The default is `true`.</span></span>|  
+|<span data-ttu-id="247e0-113">bypassProxyOnLocal</span><span class="sxs-lookup"><span data-stu-id="247e0-113">bypassProxyOnLocal</span></span>|<span data-ttu-id="247e0-114">Logická hodnota určující, zda obejít proxy server pro místní adresy.</span><span class="sxs-lookup"><span data-stu-id="247e0-114">A Boolean value that indicates whether to bypass the proxy server for local addresses.</span></span> <span data-ttu-id="247e0-115">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="247e0-115">The default is `false`.</span></span>|  
+|<span data-ttu-id="247e0-116">closeTimeout</span><span class="sxs-lookup"><span data-stu-id="247e0-116">closeTimeout</span></span>|<span data-ttu-id="247e0-117">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace uzavření.</span><span class="sxs-lookup"><span data-stu-id="247e0-117">A <xref:System.TimeSpan> value that specifies the interval of time provided for a close operation to complete.</span></span> <span data-ttu-id="247e0-118">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="247e0-118">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="247e0-119">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="247e0-119">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="247e0-120">hostnameComparisonMode</span><span class="sxs-lookup"><span data-stu-id="247e0-120">hostnameComparisonMode</span></span>|<span data-ttu-id="247e0-121">Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="247e0-121">Specifies the HTTP hostname comparison mode used to parse URIs.</span></span> <span data-ttu-id="247e0-122">Tento atribut je typu <xref:System.ServiceModel.HostNameComparisonMode>, což znamená, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.</span><span class="sxs-lookup"><span data-stu-id="247e0-122">This attribute is of type <xref:System.ServiceModel.HostNameComparisonMode>, which indicates whether the hostname is used to reach the service when matching on the URI.</span></span> <span data-ttu-id="247e0-123">Výchozí hodnota je <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, které ignoruje jako název hostitele v porovnávání.</span><span class="sxs-lookup"><span data-stu-id="247e0-123">The default value is <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, which ignores the hostname in the match.</span></span>|  
+|<span data-ttu-id="247e0-124">maxBufferPoolSize</span><span class="sxs-lookup"><span data-stu-id="247e0-124">maxBufferPoolSize</span></span>|<span data-ttu-id="247e0-125">Celé číslo, které určuje velikost fondu maximální vyrovnávací paměti pro tuto vazbu.</span><span class="sxs-lookup"><span data-stu-id="247e0-125">An integer that specifies the maximum buffer pool size for this binding.</span></span> <span data-ttu-id="247e0-126">Výchozí hodnota je 524,288 bajtů (512 \* 1024).</span><span class="sxs-lookup"><span data-stu-id="247e0-126">The default is 524,288 bytes (512 \* 1024).</span></span> <span data-ttu-id="247e0-127">Mnoho částí Windows Communication Foundation (WCF) použít vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="247e0-127">Many parts of Windows Communication Foundation (WCF) use buffers.</span></span> <span data-ttu-id="247e0-128">Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné.</span><span class="sxs-lookup"><span data-stu-id="247e0-128">Creating and destroying buffers each time they are used is expensive, and garbage collection for buffers is also expensive.</span></span> <span data-ttu-id="247e0-129">S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi.</span><span class="sxs-lookup"><span data-stu-id="247e0-129">With buffer pools, you can take a buffer from the pool, use it, and return it to the pool once you are done.</span></span> <span data-ttu-id="247e0-130">Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="247e0-130">Thus the overhead in creating and destroying buffers is avoided.</span></span>|  
+|<span data-ttu-id="247e0-131">maxReceivedMessageSize</span><span class="sxs-lookup"><span data-stu-id="247e0-131">maxReceivedMessageSize</span></span>|<span data-ttu-id="247e0-132">Kladné celé číslo, které určuje maximální velikost zprávy, v bajtech, včetně záhlaví, které může být přijata v kanálu nakonfigurovaným s touto vazbou.</span><span class="sxs-lookup"><span data-stu-id="247e0-132">A positive integer that specifies the maximum message size, in bytes, including headers, that can be received on a channel configured with this binding.</span></span> <span data-ttu-id="247e0-133">Odesílatel zprávy překračující tento limit se zobrazí chyba protokolu SOAP.</span><span class="sxs-lookup"><span data-stu-id="247e0-133">The sender of a message exceeding this limit will receive a SOAP fault.</span></span> <span data-ttu-id="247e0-134">Příjemce zahodí a vytvoří záznam události v protokolu trasování.</span><span class="sxs-lookup"><span data-stu-id="247e0-134">The receiver drops the message and creates an entry of the event in the trace log.</span></span> <span data-ttu-id="247e0-135">Výchozí hodnota je 65536.</span><span class="sxs-lookup"><span data-stu-id="247e0-135">The default is 65536.</span></span>|  
+|<span data-ttu-id="247e0-136">messageEncoding</span><span class="sxs-lookup"><span data-stu-id="247e0-136">messageEncoding</span></span>|<span data-ttu-id="247e0-137">Definuje kodér pro kódování zprávy.</span><span class="sxs-lookup"><span data-stu-id="247e0-137">Defines the encoder used to encode the message.</span></span> <span data-ttu-id="247e0-138">Platné hodnoty patří:</span><span class="sxs-lookup"><span data-stu-id="247e0-138">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="247e0-139">-Text: Použijte kodér textu zprávy.</span><span class="sxs-lookup"><span data-stu-id="247e0-139">-   Text: Use a text message encoder.</span></span><br /><span data-ttu-id="247e0-140">-Mtom: Pomocí kodéru zpráv přenosu organizace mechanismus 1.0 (MTOM).</span><span class="sxs-lookup"><span data-stu-id="247e0-140">-   Mtom: Use a Message Transmission Organization Mechanism 1.0 (MTOM) encoder.</span></span><br /><br /> <span data-ttu-id="247e0-141">Výchozí hodnota je Text.</span><span class="sxs-lookup"><span data-stu-id="247e0-141">The default is Text.</span></span><br /><br /> <span data-ttu-id="247e0-142">Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.</span><span class="sxs-lookup"><span data-stu-id="247e0-142">This attribute is of type <xref:System.ServiceModel.WSMessageEncoding>.</span></span>|  
+|<span data-ttu-id="247e0-143">name</span><span class="sxs-lookup"><span data-stu-id="247e0-143">name</span></span>|<span data-ttu-id="247e0-144">Řetězec, který obsahuje konfigurační název vazby.</span><span class="sxs-lookup"><span data-stu-id="247e0-144">A string that contains the configuration name of the binding.</span></span> <span data-ttu-id="247e0-145">Tato hodnota by měla být jedinečný, protože se používá jako identifikace pro vazbu.</span><span class="sxs-lookup"><span data-stu-id="247e0-145">This value should be unique because it is used as an identification for the binding.</span></span> <span data-ttu-id="247e0-146">Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], vazby a chování nemusí mít název.</span><span class="sxs-lookup"><span data-stu-id="247e0-146">Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name.</span></span> <span data-ttu-id="247e0-147">Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span><span class="sxs-lookup"><span data-stu-id="247e0-147">For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).</span></span>|  
+|<span data-ttu-id="247e0-148">openTimeout</span><span class="sxs-lookup"><span data-stu-id="247e0-148">openTimeout</span></span>|<span data-ttu-id="247e0-149">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace otevření.</span><span class="sxs-lookup"><span data-stu-id="247e0-149">A <xref:System.TimeSpan> value that specifies the interval of time provided for an open operation to complete.</span></span> <span data-ttu-id="247e0-150">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="247e0-150">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="247e0-151">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="247e0-151">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="247e0-152">privactyNoticeAt</span><span class="sxs-lookup"><span data-stu-id="247e0-152">privactyNoticeAt</span></span>|<span data-ttu-id="247e0-153">Řetězec určující identifikátor URI, ve kterém je umístěno oznámení soukromí.</span><span class="sxs-lookup"><span data-stu-id="247e0-153">A String that specifies a URI at which the privacy notice is located.</span></span>|  
+|<span data-ttu-id="247e0-154">privactyNoticeVersion</span><span class="sxs-lookup"><span data-stu-id="247e0-154">privactyNoticeVersion</span></span>|<span data-ttu-id="247e0-155">Celé číslo, které určuje verzi aktuální oznámení o ochraně osobních údajů.</span><span class="sxs-lookup"><span data-stu-id="247e0-155">An integer that specifies the version of the current privacy notice.</span></span>|  
+|<span data-ttu-id="247e0-156">proxyAddress</span><span class="sxs-lookup"><span data-stu-id="247e0-156">proxyAddress</span></span>|<span data-ttu-id="247e0-157">Identifikátor URI, který určuje adresu proxy serveru HTTP.</span><span class="sxs-lookup"><span data-stu-id="247e0-157">A URI that specifies the address of the HTTP proxy.</span></span> <span data-ttu-id="247e0-158">Pokud `useDefaultWebProxy` je `true`, toto nastavení musí být `null`.</span><span class="sxs-lookup"><span data-stu-id="247e0-158">If `useDefaultWebProxy` is `true`, this setting must be `null`.</span></span> <span data-ttu-id="247e0-159">Výchozí hodnota je `null`.</span><span class="sxs-lookup"><span data-stu-id="247e0-159">The default is `null`.</span></span>|  
+|<span data-ttu-id="247e0-160">receiveTimeout</span><span class="sxs-lookup"><span data-stu-id="247e0-160">receiveTimeout</span></span>|<span data-ttu-id="247e0-161">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení.</span><span class="sxs-lookup"><span data-stu-id="247e0-161">A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete.</span></span> <span data-ttu-id="247e0-162">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="247e0-162">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="247e0-163">Výchozí hodnota je 00:10:00.</span><span class="sxs-lookup"><span data-stu-id="247e0-163">The default is 00:10:00.</span></span>|  
+|<span data-ttu-id="247e0-164">SendTimeout</span><span class="sxs-lookup"><span data-stu-id="247e0-164">sendTimeout</span></span>|<span data-ttu-id="247e0-165">A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání.</span><span class="sxs-lookup"><span data-stu-id="247e0-165">A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete.</span></span> <span data-ttu-id="247e0-166">Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>.</span><span class="sxs-lookup"><span data-stu-id="247e0-166">This value should be greater than or equal to <xref:System.TimeSpan.Zero>.</span></span> <span data-ttu-id="247e0-167">Výchozí hodnota je 00:01:00.</span><span class="sxs-lookup"><span data-stu-id="247e0-167">The default is 00:01:00.</span></span>|  
+|<span data-ttu-id="247e0-168">textEncoding</span><span class="sxs-lookup"><span data-stu-id="247e0-168">textEncoding</span></span>|<span data-ttu-id="247e0-169">Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby.</span><span class="sxs-lookup"><span data-stu-id="247e0-169">Sets the character set encoding to be used for emitting messages on the binding.</span></span> <span data-ttu-id="247e0-170">Platné hodnoty patří:</span><span class="sxs-lookup"><span data-stu-id="247e0-170">Valid values include the following:</span></span><br /><br /> <span data-ttu-id="247e0-171">-BigEndianUnicode: Kódování Unicode BigEndian.</span><span class="sxs-lookup"><span data-stu-id="247e0-171">-   BigEndianUnicode: Unicode BigEndian encoding.</span></span><br /><span data-ttu-id="247e0-172">-Unicode: 16bitové kódování.</span><span class="sxs-lookup"><span data-stu-id="247e0-172">-   Unicode: 16-bit encoding.</span></span><br /><span data-ttu-id="247e0-173">-UTF8: 8bitové kódování</span><span class="sxs-lookup"><span data-stu-id="247e0-173">-   UTF8: 8-bit encoding</span></span><br /><br /> <span data-ttu-id="247e0-174">Použije se UTF8.</span><span class="sxs-lookup"><span data-stu-id="247e0-174">The default is UTF8.</span></span> <span data-ttu-id="247e0-175">Tento atribut je typu <xref:System.Text.Encoding>...</span><span class="sxs-lookup"><span data-stu-id="247e0-175">This attribute is of type <xref:System.Text.Encoding>..</span></span>|  
+|<span data-ttu-id="247e0-176">transactionFlow</span><span class="sxs-lookup"><span data-stu-id="247e0-176">transactionFlow</span></span>|<span data-ttu-id="247e0-177">Logická hodnota určující, zda vazba podporuje průchodu WS-transakce.</span><span class="sxs-lookup"><span data-stu-id="247e0-177">A Boolean value that specifies whether the binding supports flowing WS-Transactions.</span></span> <span data-ttu-id="247e0-178">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="247e0-178">The default is `false`.</span></span>|  
+|<span data-ttu-id="247e0-179">useDefaultWebProxy</span><span class="sxs-lookup"><span data-stu-id="247e0-179">useDefaultWebProxy</span></span>|<span data-ttu-id="247e0-180">Logická hodnota, která určuje, jestli se používá v systému automaticky nakonfigurovaný proxy HTTP.</span><span class="sxs-lookup"><span data-stu-id="247e0-180">A Boolean value that indicates whether the system’s auto-configured HTTP proxy is used.</span></span> <span data-ttu-id="247e0-181">Adresa proxy musí být `null` (to znamená, není nastavený) Pokud tento atribut je `true`.</span><span class="sxs-lookup"><span data-stu-id="247e0-181">The proxy address must be `null` (that is, not set) if this attribute is `true`.</span></span> <span data-ttu-id="247e0-182">Výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="247e0-182">The default is `true`.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="57f62-183">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="57f62-183">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="247e0-183">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="247e0-183">Child Elements</span></span>  
   
-|<span data-ttu-id="57f62-184">Prvek</span><span class="sxs-lookup"><span data-stu-id="57f62-184">Element</span></span>|<span data-ttu-id="57f62-185">Popis</span><span class="sxs-lookup"><span data-stu-id="57f62-185">Description</span></span>|  
+|<span data-ttu-id="247e0-184">Prvek</span><span class="sxs-lookup"><span data-stu-id="247e0-184">Element</span></span>|<span data-ttu-id="247e0-185">Popis</span><span class="sxs-lookup"><span data-stu-id="247e0-185">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="57f62-186">\<zabezpečení ></span><span class="sxs-lookup"><span data-stu-id="57f62-186">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|<span data-ttu-id="57f62-187">Definuje nastavení zabezpečení pro zprávu.</span><span class="sxs-lookup"><span data-stu-id="57f62-187">Defines the security settings for the message.</span></span> <span data-ttu-id="57f62-188">Tento prvek je typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.</span><span class="sxs-lookup"><span data-stu-id="57f62-188">This element is of type <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.</span></span>|  
-|[<span data-ttu-id="57f62-189">\<readerQuotas></span><span class="sxs-lookup"><span data-stu-id="57f62-189">\<readerQuotas></span></span>](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|<span data-ttu-id="57f62-190">Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou.</span><span class="sxs-lookup"><span data-stu-id="57f62-190">Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding.</span></span> <span data-ttu-id="57f62-191">Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span><span class="sxs-lookup"><span data-stu-id="57f62-191">This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span></span>|  
-|[<span data-ttu-id="57f62-192">reliableSession</span><span class="sxs-lookup"><span data-stu-id="57f62-192">reliableSession</span></span>](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|<span data-ttu-id="57f62-193">Určuje, pokud jsou mezi koncovými body kanál navázat spolehlivé relace.</span><span class="sxs-lookup"><span data-stu-id="57f62-193">Specifies if reliable sessions are established between channel endpoints.</span></span>|  
+|[<span data-ttu-id="247e0-186">\<zabezpečení ></span><span class="sxs-lookup"><span data-stu-id="247e0-186">\<security></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|<span data-ttu-id="247e0-187">Definuje nastavení zabezpečení pro zprávu.</span><span class="sxs-lookup"><span data-stu-id="247e0-187">Defines the security settings for the message.</span></span> <span data-ttu-id="247e0-188">Tento prvek je typu <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.</span><span class="sxs-lookup"><span data-stu-id="247e0-188">This element is of type <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.</span></span>|  
+|[<span data-ttu-id="247e0-189">\<readerQuotas></span><span class="sxs-lookup"><span data-stu-id="247e0-189">\<readerQuotas></span></span>](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|<span data-ttu-id="247e0-190">Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou.</span><span class="sxs-lookup"><span data-stu-id="247e0-190">Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding.</span></span> <span data-ttu-id="247e0-191">Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span><span class="sxs-lookup"><span data-stu-id="247e0-191">This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.</span></span>|  
+|[<span data-ttu-id="247e0-192">reliableSession</span><span class="sxs-lookup"><span data-stu-id="247e0-192">reliableSession</span></span>](https://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|<span data-ttu-id="247e0-193">Určuje, pokud jsou mezi koncovými body kanál navázat spolehlivé relace.</span><span class="sxs-lookup"><span data-stu-id="247e0-193">Specifies if reliable sessions are established between channel endpoints.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="57f62-194">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="57f62-194">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="247e0-194">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="247e0-194">Parent Elements</span></span>  
   
-|<span data-ttu-id="57f62-195">Prvek</span><span class="sxs-lookup"><span data-stu-id="57f62-195">Element</span></span>|<span data-ttu-id="57f62-196">Popis</span><span class="sxs-lookup"><span data-stu-id="57f62-196">Description</span></span>|  
+|<span data-ttu-id="247e0-195">Prvek</span><span class="sxs-lookup"><span data-stu-id="247e0-195">Element</span></span>|<span data-ttu-id="247e0-196">Popis</span><span class="sxs-lookup"><span data-stu-id="247e0-196">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="57f62-197">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="57f62-197">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="57f62-198">Tento prvek obsahuje sadu standardních a vlastních vazeb.</span><span class="sxs-lookup"><span data-stu-id="57f62-198">This element holds a collection of standard and custom bindings.</span></span>|  
+|[<span data-ttu-id="247e0-197">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="247e0-197">\<bindings></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|<span data-ttu-id="247e0-198">Tento prvek obsahuje sadu standardních a vlastních vazeb.</span><span class="sxs-lookup"><span data-stu-id="247e0-198">This element holds a collection of standard and custom bindings.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="57f62-199">Poznámky</span><span class="sxs-lookup"><span data-stu-id="57f62-199">Remarks</span></span>  
- <span data-ttu-id="57f62-200">Federace se nachází taky možnost podělit identity mezi různými systémy pro ověřování a autorizaci.</span><span class="sxs-lookup"><span data-stu-id="57f62-200">Federation is the ability to share identities across multiple systems for authentication and authorization.</span></span> <span data-ttu-id="57f62-201">Pro uživatele nebo počítače mohou odkazovat tyto identity.</span><span class="sxs-lookup"><span data-stu-id="57f62-201">These identities can refer to users or to machines.</span></span> <span data-ttu-id="57f62-202">Federované HTTP podporuje zabezpečení protokolu SOAP, stejně jako ve smíšeném režimu zabezpečení, ale nepodporuje výhradně pomocí zabezpečení přenosu.</span><span class="sxs-lookup"><span data-stu-id="57f62-202">Federated HTTP supports SOAP security as well as mixed-mode security, but it does not support exclusively using transport security.</span></span> <span data-ttu-id="57f62-203">Tato vazba poskytuje podporu Windows Communication Foundation (WCF) pro protokol WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="57f62-203">This binding provides Windows Communication Foundation (WCF) support for the WS-Federation protocol.</span></span> <span data-ttu-id="57f62-204">Nakonfigurované s touto vazbou služby musíte použít přenos pomocí protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="57f62-204">Services configured with this binding must use the HTTP transport.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="247e0-199">Poznámky</span><span class="sxs-lookup"><span data-stu-id="247e0-199">Remarks</span></span>  
+ <span data-ttu-id="247e0-200">Federace se nachází taky možnost podělit identity mezi různými systémy pro ověřování a autorizaci.</span><span class="sxs-lookup"><span data-stu-id="247e0-200">Federation is the ability to share identities across multiple systems for authentication and authorization.</span></span> <span data-ttu-id="247e0-201">Pro uživatele nebo počítače mohou odkazovat tyto identity.</span><span class="sxs-lookup"><span data-stu-id="247e0-201">These identities can refer to users or to machines.</span></span> <span data-ttu-id="247e0-202">Federované HTTP podporuje zabezpečení protokolu SOAP, stejně jako ve smíšeném režimu zabezpečení, ale nepodporuje výhradně pomocí zabezpečení přenosu.</span><span class="sxs-lookup"><span data-stu-id="247e0-202">Federated HTTP supports SOAP security as well as mixed-mode security, but it does not support exclusively using transport security.</span></span> <span data-ttu-id="247e0-203">Tato vazba poskytuje podporu Windows Communication Foundation (WCF) pro protokol WS-Federation.</span><span class="sxs-lookup"><span data-stu-id="247e0-203">This binding provides Windows Communication Foundation (WCF) support for the WS-Federation protocol.</span></span> <span data-ttu-id="247e0-204">Nakonfigurované s touto vazbou služby musíte použít přenos pomocí protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="247e0-204">Services configured with this binding must use the HTTP transport.</span></span>  
   
- <span data-ttu-id="57f62-205">Vazby se skládají z více elementů vazby.</span><span class="sxs-lookup"><span data-stu-id="57f62-205">Bindings consist of a stack of binding elements.</span></span> <span data-ttu-id="57f62-206">Sadu elementů v vazby</span><span class="sxs-lookup"><span data-stu-id="57f62-206">The stack of binding elements in</span></span>  
+ <span data-ttu-id="247e0-205">Vazby se skládají z více elementů vazby.</span><span class="sxs-lookup"><span data-stu-id="247e0-205">Bindings consist of a stack of binding elements.</span></span> <span data-ttu-id="247e0-206">Sadu elementů v vazby</span><span class="sxs-lookup"><span data-stu-id="247e0-206">The stack of binding elements in</span></span>  
   
- <span data-ttu-id="57f62-207">`wsFederationHttpBinding` je stejný jako součástí `wsHttpBinding`</span><span class="sxs-lookup"><span data-stu-id="57f62-207">`wsFederationHttpBinding` is the same as that contained in `wsHttpBinding`</span></span>  
+ <span data-ttu-id="247e0-207">`wsFederationHttpBinding` je stejný jako součástí `wsHttpBinding`</span><span class="sxs-lookup"><span data-stu-id="247e0-207">`wsFederationHttpBinding` is the same as that contained in `wsHttpBinding`</span></span>  
   
- <span data-ttu-id="57f62-208">Když [ \<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) je nastavena na výchozí hodnotu <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message>.</span><span class="sxs-lookup"><span data-stu-id="57f62-208">when [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) is set to the default value of <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message>.</span></span>  
+ <span data-ttu-id="247e0-208">Když [ \<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) je nastavena na výchozí hodnotu <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message>.</span><span class="sxs-lookup"><span data-stu-id="247e0-208">when [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) is set to the default value of <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message>.</span></span>  
   
- <span data-ttu-id="57f62-209">`wsFederationHttpBinding` Řídí podrobnosti o nastavení zabezpečení zpráv v [ \<zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="57f62-209">The `wsFederationHttpBinding` controls the details of the message security settings in [\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md).</span></span> <span data-ttu-id="57f62-210">Všimněte si, [ \<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) element poskytuje přístup jen zabezpečení použité vazbou nelze změnit po vytvoření vazby.</span><span class="sxs-lookup"><span data-stu-id="57f62-210">Note that the [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) element provides get access only as the security used by the binding cannot be changed once the binding is created.</span></span>  
+ <span data-ttu-id="247e0-209">`wsFederationHttpBinding` Řídí podrobnosti o nastavení zabezpečení zpráv v [ \<zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="247e0-209">The `wsFederationHttpBinding` controls the details of the message security settings in [\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md).</span></span> <span data-ttu-id="247e0-210">Všimněte si, [ \<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) element poskytuje přístup jen zabezpečení použité vazbou nelze změnit po vytvoření vazby.</span><span class="sxs-lookup"><span data-stu-id="247e0-210">Note that the [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) element provides get access only as the security used by the binding cannot be changed once the binding is created.</span></span>  
   
- <span data-ttu-id="57f62-211">`wsFederationHttpBinding` Také obsahuje atribut privactyNoticeAt k nastavení a načtení identifikátoru URI, ve kterém je umístěno oznámení soukromí.</span><span class="sxs-lookup"><span data-stu-id="57f62-211">The `wsFederationHttpBinding` also provides a privactyNoticeAt attribute to set and retrieve the URI at which the privacy notice is located.</span></span>  
+ <span data-ttu-id="247e0-211">`wsFederationHttpBinding` Také obsahuje atribut privactyNoticeAt k nastavení a načtení identifikátoru URI, ve kterém je umístěno oznámení soukromí.</span><span class="sxs-lookup"><span data-stu-id="247e0-211">The `wsFederationHttpBinding` also provides a privactyNoticeAt attribute to set and retrieve the URI at which the privacy notice is located.</span></span>  
   
- <span data-ttu-id="57f62-212">Zásady zabezpečení je zvlášť důležité při scénářích s federací.</span><span class="sxs-lookup"><span data-stu-id="57f62-212">Keeping policy secure is especially important in federation scenarios.</span></span> <span data-ttu-id="57f62-213">Doporučujeme použít nějaký způsob zabezpečení, jako je například HTTPS, zásady ochrany před uživateli se zlými úmysly.</span><span class="sxs-lookup"><span data-stu-id="57f62-213">The recommendation is to use some form of security, such as HTTPS, to protect the policy from malicious users.</span></span>  
+ <span data-ttu-id="247e0-212">Zásady zabezpečení je zvlášť důležité při scénářích s federací.</span><span class="sxs-lookup"><span data-stu-id="247e0-212">Keeping policy secure is especially important in federation scenarios.</span></span> <span data-ttu-id="247e0-213">Doporučujeme použít nějaký způsob zabezpečení, jako je například HTTPS, zásady ochrany před uživateli se zlými úmysly.</span><span class="sxs-lookup"><span data-stu-id="247e0-213">The recommendation is to use some form of security, such as HTTPS, to protect the policy from malicious users.</span></span>  
   
- <span data-ttu-id="57f62-214">Ve scénářích s federací používá tuto vazbu potenciálně zásady služby obsahuje důležité informace, jako je klíč používat zašifrování vydaný token (SAML), typ deklarace identity v tokenu, a tak dále.</span><span class="sxs-lookup"><span data-stu-id="57f62-214">In federation scenarios using this binding, the service policy potentially has important information such as the key to use to encrypt the issued (SAML) token, the type of claims to put in the token, and so forth.</span></span> <span data-ttu-id="57f62-215">Pokud je tato zásada manipulováno, může útočník zjistit klíče vydaného tokenu, což vede k další manipulaci, zpřístupnění informací a dalšího škodlivého chování.</span><span class="sxs-lookup"><span data-stu-id="57f62-215">If this policy is tampered with, an attacker could discover the key of the issued token leading to further tampering, info disclosure and other malicious behavior.</span></span> <span data-ttu-id="57f62-216">K tomu nedocházelo, musí být získány bezpečně (například pomocí protokolu HTTPS) zásady ze služby.</span><span class="sxs-lookup"><span data-stu-id="57f62-216">To help prevent this, the policy must be obtained securely (for example using HTTPS) from the service.</span></span>  
+ <span data-ttu-id="247e0-214">Ve scénářích s federací používá tuto vazbu potenciálně zásady služby obsahuje důležité informace, jako je klíč používat zašifrování vydaný token (SAML), typ deklarace identity v tokenu, a tak dále.</span><span class="sxs-lookup"><span data-stu-id="247e0-214">In federation scenarios using this binding, the service policy potentially has important information such as the key to use to encrypt the issued (SAML) token, the type of claims to put in the token, and so forth.</span></span> <span data-ttu-id="247e0-215">Pokud je tato zásada manipulováno, může útočník zjistit klíče vydaného tokenu, což vede k další manipulaci, zpřístupnění informací a dalšího škodlivého chování.</span><span class="sxs-lookup"><span data-stu-id="247e0-215">If this policy is tampered with, an attacker could discover the key of the issued token leading to further tampering, info disclosure and other malicious behavior.</span></span> <span data-ttu-id="247e0-216">K tomu nedocházelo, musí být získány bezpečně (například pomocí protokolu HTTPS) zásady ze služby.</span><span class="sxs-lookup"><span data-stu-id="247e0-216">To help prevent this, the policy must be obtained securely (for example using HTTPS) from the service.</span></span>  
   
- <span data-ttu-id="57f62-217">Další informace pro tuto vazbu, naleznete v tématu [postupy: vytvoření WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="57f62-217">For more information on this binding, see [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).</span></span>  
+ <span data-ttu-id="247e0-217">Další informace pro tuto vazbu, naleznete v tématu [jak: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).</span><span class="sxs-lookup"><span data-stu-id="247e0-217">For more information on this binding, see [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="57f62-218">Příklad</span><span class="sxs-lookup"><span data-stu-id="57f62-218">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="247e0-218">Příklad</span><span class="sxs-lookup"><span data-stu-id="247e0-218">Example</span></span>  
   
 ```xml  
-<configuration>  
-<system.ServiceModel>  
-<bindings>  
-<wsFederationHttpBinding>  
-    <binding   
-        bypassProxyOnLocal="false"  
-        transactionFlow="false"  
-        hostNameComparisonMode="WeakWildcard"  
-        maxReceivedMessageSize="1000"  
-        messageEncoding="Mtom"   
-        proxyAddress="http://foo/bar"   
-        textEncoding="Utf16TextEncoding"  
-        useDefaultWebProxy="false">  
-        <reliableSession ordered="false"  
-            inactivityTimeout="00:02:00" enabled="true" />  
-        <security mode="None">  
-           <message negotiateServiceCredential="false"  
-                algorithmSuite="Aes128"  
-                issuedTokenType="saml"   
-                issuedKeyType="PublicKey">  
-               <issuer address="http://localhost/Sts" />  
-           </message>  
-        </security>  
-    </binding>  
-</wsFederationBinding>  
-</bindings>  
-</system.ServiceModel>  
-</configuration>  
+<configuration>
+  <system.ServiceModel>
+    <bindings>
+      <wsFederationHttpBinding>
+        <binding bypassProxyOnLocal="false"
+                 transactionFlow="false"
+                 hostNameComparisonMode="WeakWildcard"
+                 maxReceivedMessageSize="1000"
+                 messageEncoding="Mtom"
+                 proxyAddress="http://foo/bar"
+                 textEncoding="Utf16TextEncoding"
+                 useDefaultWebProxy="false">
+          <reliableSession ordered="false"
+                           inactivityTimeout="00:02:00"
+                           enabled="true" />
+          <security mode="None">
+            <message negotiateServiceCredential="false"
+                     algorithmSuite="Aes128"
+                     issuedTokenType="saml"
+                     issuedKeyType="PublicKey">
+              <issuer address="http://localhost/Sts" />
+            </message>
+          </security>
+        </binding>
+      </wsFederationBinding>
+    </bindings>
+  </system.ServiceModel>
+</configuration>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="57f62-219">Viz také</span><span class="sxs-lookup"><span data-stu-id="57f62-219">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="247e0-219">Viz také</span><span class="sxs-lookup"><span data-stu-id="247e0-219">See Also</span></span>  
  <xref:System.ServiceModel.WSFederationHttpBinding>  
  <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>  
- [<span data-ttu-id="57f62-220">Postupy: Vytvoření WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="57f62-220">How to: Create a WSFederationHttpBinding</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
- [<span data-ttu-id="57f62-221">Vazby</span><span class="sxs-lookup"><span data-stu-id="57f62-221">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
- [<span data-ttu-id="57f62-222">Konfigurace vazeb poskytovaných systémem</span><span class="sxs-lookup"><span data-stu-id="57f62-222">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [<span data-ttu-id="57f62-223">Používání vazeb ke konfiguraci služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="57f62-223">Using Bindings to Configure Services and Clients</span></span>](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [<span data-ttu-id="57f62-224">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="57f62-224">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)
+ [<span data-ttu-id="247e0-220">Postupy: Vytvoření instance WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="247e0-220">How to: Create a WSFederationHttpBinding</span></span>](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [<span data-ttu-id="247e0-221">Vazby</span><span class="sxs-lookup"><span data-stu-id="247e0-221">Bindings</span></span>](../../../../../docs/framework/wcf/bindings.md)  
+ [<span data-ttu-id="247e0-222">Konfigurace vazeb poskytovaných systémem</span><span class="sxs-lookup"><span data-stu-id="247e0-222">Configuring System-Provided Bindings</span></span>](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [<span data-ttu-id="247e0-223">Používání vazeb ke konfiguraci služeb a klientů</span><span class="sxs-lookup"><span data-stu-id="247e0-223">Using Bindings to Configure Services and Clients</span></span>](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
+ [<span data-ttu-id="247e0-224">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="247e0-224">\<binding></span></span>](../../../../../docs/framework/misc/binding.md)
