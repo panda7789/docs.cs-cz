@@ -2,30 +2,28 @@
 title: '&lt;windows&gt; elementu &lt;clientCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
-ms.openlocfilehash: 9badcfafff4bc09a16b0b9a565a9ea5c01e26bb5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 780d73b747feae5495ad08cb2324e7d8f8de0d7d
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767060"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147470"
 ---
 # <a name="ltwindowsgt-of-ltclientcredentialsgt-element"></a>&lt;windows&gt; elementu &lt;clientCredentials&gt;
-Určuje nastavení pro pověření systému Windows, který se má použít k reprezentování klienta.  
+Určuje nastavení pro přihlašovací údaje Windows k provádět reprezentovalo klienta.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<endpointBehaviors >  
+\<názvy endpointBehaviors >  
 \<chování >  
-\<clientCredentials >  
+\<třídu clientCredentials >  
 \<Windows >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<windows   
-    allowedImpersonationLevel="Identification/Impersonation/Delegation/Anonymous/None"  
-        allowNtlm="Boolean"  
-/>  
+<windows allowedImpersonationLevel="Identification/Impersonation/Delegation/Anonymous/None"
+         allowNtlm="Boolean" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -35,8 +33,8 @@ Určuje nastavení pro pověření systému Windows, který se má použít k re
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`allowedImpersonationLevel`|Nastaví zosobnění předvoleb, které klient komunikuje se serverem. Režim zosobnění, který klient vybere nevynucuje na serveru. Platné hodnoty patří:<br /><br /> -Identifikace: Na serveru můžete získat identitu a oprávnění klienta, ale nelze zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta na vzdálené systémy.<br />-Anonymní: Server nelze zosobnit nebo identifikaci klienta.<br />-None: Není přiřazen úroveň zosobnění.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
-|`allowNtlm`|Nastavení této vlastnosti na `true` povoluje ověřování na starší verzi protokolu NTLM, pokud není k dispozici protokolu Kerberos.<br /><br /> Nastavení této vlastnosti na `false` způsobí, že Windows Communication Foundation (WCF), aby best effort vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí zabránit odesílány prostřednictvím sítě pověření NTLM.|  
+|`allowedImpersonationLevel`|Nastavuje předvolbu zosobnění, který klient komunikuje na server. Režim zosobnění, který klient vybere nevynucuje na serveru. Platné hodnoty patří:<br /><br /> -Identifikace: Na serveru můžete získat identit a oprávnění klienta, ale nelze zosobnit klienta.<br />-Zosobnění: Server může zosobnit kontext zabezpečení klienta v místním systému.<br />-Delegování: Server může zosobnit kontext zabezpečení klienta ve vzdálených systémech.<br />-Anonymní: Server nelze zosobnit nebo identifikaci klienta.<br />-Žádný: Úroveň zosobnění není přiřazen.<br /><br /> Výchozí hodnota je identifikace. Tento atribut je typu <xref:System.Security.Principal.TokenImpersonationLevel>.|  
+|`allowNtlm`|Nastavení této vlastnosti na `true` umožňuje ověřování na starší verzi NTLM, pokud není k dispozici protokol Kerberos.<br /><br /> Nastavení této vlastnosti na `false` způsobí, že Windows Communication Foundation (WCF), aby se snažíme vyvolá výjimku, pokud je použit protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemůže zabránit odeslání při přenosu přihlašovacích údajů protokolů NTLM.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -45,7 +43,7 @@ Určuje nastavení pro pověření systému Windows, který se má použít k re
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření, která používá k ověření klienta ke službě.|  
+|[\<třídu clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Určuje pověření pro ověření klienta ke službě.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.WindowsClientElement>  

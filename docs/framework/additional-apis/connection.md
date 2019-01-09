@@ -1,5 +1,5 @@
 ---
-title: Připojení – třída
+title: Třída připojení
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -12,16 +12,16 @@ api_type:
 ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 7423136ab8e04c076e3e5e33efdf010f36d02242
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed1fce1d16f9ddbe3a3ede91fecb1a3ca6b3d407
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33349630"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54146534"
 ---
-# <a name="connection-class"></a>Připojení – třída
+# <a name="connection-class"></a>Třída připojení
 
-`Connection` Odpovědi serveru analyzuje třídy, fronty požadavků a kanál žádosti.
+`Connection` Odpovědi serveru analyzuje třídy, fronty požadavků a požadavků kanálu.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -30,14 +30,14 @@ internal class Connection : PooledStream
 ```
 
 > [!WARNING]
-> `Connection` Třída je interní a nejsou určeny pro použití přímo v kódu.
+> `Connection` Třídy je interní a není určena pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
 **Namespace:** <xref:System.Net>
 
-**Sestavení:** systému (v System.dll)
+**Sestavení:** Systém (System.dll)
 
-**Verze rozhraní .NET framework:** dostupné od verze 2.0.
+**Verze rozhraní .NET framework:** Dostupné od verze 2.0.

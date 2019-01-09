@@ -2,26 +2,26 @@
 title: '&lt;callbackTimeouts&gt;'
 ms.date: 03/30/2017
 ms.assetid: d7fcfc5f-6d35-491e-8fa6-2f964c1e792f
-ms.openlocfilehash: 48da0351d162a2143a26cc5b9eaa05b731358639
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 85e7b1f0d009e27cbacd9f69b381e4f05984bf56
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749563"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149108"
 ---
 # <a name="ltcallbacktimeoutsgt"></a>&lt;callbackTimeouts&gt;
-Určuje hodnotu časového limitu při toku transakcí ze serveru pro položku scénáři zpětného volání duplexní kontrakt.  
+Určuje maximální dobu proudění transakcí ze serveru do zpětně volaném scénáři kontraktu duplexního zpětného volání.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<endpointBehaviors >  
+\<názvy endpointBehaviors >  
 \<chování >  
 \<callbackTimeOuts >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<callbackTimeOuts transactionTimeout="TimeSpan" />  
+<callbackTimeOuts transactionTimeout="TimeSpan" />
 ```  
   
 ## <a name="type"></a>Typ  
@@ -34,7 +34,7 @@ Určuje hodnotu časového limitu při toku transakcí ze serveru pro položku s
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`transactionTimeout`|A <xref:System.TimeSpan> hodnotu, která udává interval času v rámci transakce, které musíte dokončit nebo automaticky ukončena. Výchozí hodnota je "00: 00:00".|  
+|`transactionTimeout`|A <xref:System.TimeSpan> hodnota, která určuje dobu v rámci transakce, které musíte dokončit nebo bude automaticky ukončena. Výchozí hodnota je "00: 00:00".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  

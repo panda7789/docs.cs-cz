@@ -2,25 +2,25 @@
 title: '&lt;certificate&gt; pro &lt;identity&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: e7d8e7abbc95521d85dc5999c36687f9becea9fb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0b65157aea84760f3e52bc294f7559967fc308f1
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749280"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54146911"
 ---
 # <a name="ltcertificategt-for-ltidentitygt"></a>&lt;certificate&gt; pro &lt;identity&gt;
-Určuje certifikátu X.509. certifikát použitý k ověření serveru ke klientovi.  
+Určuje certifikát X.509 sloužící k ověření serveru do klienta.  
   
- Další informace o nastavení hodnota elementu najdete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Další informace o nastavení hodnoty prvku naleznete v tématu [identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
  \<identity >  
-\<certifikátu >  
+\<certifikát >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<certificate encodedValue = "String" />  
+<certificate encodedValue = "String" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -30,7 +30,7 @@ Určuje certifikátu X.509. certifikát použitý k ověření serveru ke klient
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|encodedValue|Kódování Base64 certifikátu.|  
+|encodedValue|Kódování Base64 z certifikátu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,12 +42,12 @@ Určuje certifikátu X.509. certifikát použitý k ověření serveru ke klient
 |[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu služby k ověření klienta.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód určuje vyjádření kódovaného certifikátu slouží k ověření serveru ke klientovi.  
+ Následující kód určuje kódovaného reprezentace certifikát používaný k ověření serveru do klienta.  
   
 ```xml  
-<identity>  
-  <certificate encodedValue = " MIIBxjCCAXSgAwIBAgIQmXJgyu9tro1M98GifjtuoDAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTA2MDUxNzIxNDQyNVoXDTM5MTIzMTIzNTk1OVowKTEQMA4GA1UEChMHQ29udG9zbzEVMBMGA1UEAxMMaWRlbnRpdHkuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBmivcb8hYbh11hqVoDuB7zmJ2y230f" />  
-</identity>  
+<identity>
+  <certificate encodedValue="MIIBxjCCAXSgAwIBAgIQmXJgyu9tro1M98GifjtuoDAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTA2MDUxNzIxNDQyNVoXDTM5MTIzMTIzNTk1OVowKTEQMA4GA1UEChMHQ29udG9zbzEVMBMGA1UEAxMMaWRlbnRpdHkuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBmivcb8hYbh11hqVoDuB7zmJ2y230f" />
+</identity>
 ```  
   
 ## <a name="see-also"></a>Viz také  

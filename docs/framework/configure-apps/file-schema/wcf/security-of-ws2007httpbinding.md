@@ -2,12 +2,12 @@
 title: '&lt;security&gt; – &lt;ws2007HttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: fdda0ff7-b462-4e26-af52-e87ddab71945
-ms.openlocfilehash: fb92e7549b86a2c4a4a8453d13f6c4f08d696348
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a7bb6816c5b34e608b5010aba308ccd9d870d398
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129776"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145878"
 ---
 # <a name="ltsecuritygt-of-ltws2007httpbindinggt"></a>&lt;security&gt; – &lt;ws2007HttpBinding&gt;
 Představuje nastavení zabezpečení použité s [ \<ws2007HttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) elementu.  
@@ -21,19 +21,20 @@ Představuje nastavení zabezpečení použité s [ \<ws2007HttpBinding >](../..
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<system.serviceModel>  
-    <bindings>  
-        <ws2007HttpBinding>  
-            <binding name = "string">  
-              <security mode="None/Message/Transport/TransportWithMessageCredential">  
-                  <transport>  
-                  </transport>  
-                  <message>  
-                  </message>  
-              </security  
-        </ws2007HttpBinding>  
-    </bindings>  
-</system.ServiceModel>  
+<system.serviceModel>
+  <bindings>
+    <ws2007HttpBinding>
+      <binding name = "String">
+        <security mode="None/Message/Transport/TransportWithMessageCredential">
+          <transport>
+          </transport>
+          <message>
+          </message>
+        </security>
+      </binding>
+    </ws2007HttpBinding>
+  </bindings>
+</system.ServiceModel>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

@@ -2,29 +2,28 @@
 title: '&lt;windowsAuthentication&gt; – &lt;serviceCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-ms.openlocfilehash: 9872b1f2520661ff3f31cef94b6822bb345ebfdf
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: acbb4f788d805d72dedcc7be711a38d1f1e82687
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767541"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54148341"
 ---
 # <a name="ltwindowsauthenticationgt-of-ltservicecredentialsgt"></a>&lt;windowsAuthentication&gt; – &lt;serviceCredentials&gt;
-Určuje nastavení pověření služby systému Windows.  
+Určuje nastavení přihlašovacích údajů služby Windows.  
   
  \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
-\<– serviceCredentials >  
+\<serviceCredentials >  
 \<windowsAuthentication >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<windowsAuthentication  
-      allowAnonymousLogons="Boolean"  
-      includeWindowsGroups="Boolean" />  
+<windowsAuthentication allowAnonymousLogons="Boolean"
+                       includeWindowsGroups="Boolean" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -34,8 +33,8 @@ Určuje nastavení pověření služby systému Windows.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`includeWindowsGroups`|Volitelný logický atribut, který určuje, zda systém zahrnuje skupiny systému Windows v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má dopad na výkon, jako je výsledkem rozšíření skupiny úplné. Nastavte tento atribut `false` Pokud není potřeba vytvořit seznam skupin uživatel patří do.|  
-|`allowAnonymousLogons`|Volitelný logický atribut, který určuje, zda jsou povoleny anonymní, neověřené volající. Výchozí hodnota je `false`.<br /><br /> Když `clientCredentialType` atribut vazby je nastaven na `Windows`, systém nepovoluje anonymní volající. To znamená, že pouze doméně nebo pracovní skupině authenticated volající mají povolena přístup k systému. Toto chování můžete přepsat pomocí tohoto atributu.<br /><br /> Pomocí tohoto nastavení s velmi opatrní.|  
+|`includeWindowsGroups`|Volitelný logický atribut, který určuje, zda tento systém zahrnuje skupiny Windows v kontextu zabezpečení. Výchozí hodnota je `true`.<br /><br /> Nastavení tohoto atributu na `true` má dopad na výkon, protože výsledkem rozšíření skupiny úplné. Tento atribut nastavte na `false` Pokud není potřeba vytvořit seznam skupin uživatel patří.|  
+|`allowAnonymousLogons`|Volitelný logický atribut, který určuje, jestli jsou povolené anonymní, neověření volající. Výchozí hodnota je `false`.<br /><br /> Když `clientCredentialType` atribut vazby je nastaven na `Windows`, systém nepovoluje anonymní volající. To znamená, že pouze domény nebo pracovní skupině authenticated volající je povolen přístup k systému. Toto chování můžete přepsat pomocí tohoto atributu.<br /><br /> Pomocí tohoto nastavení s nejvyšší opatrností.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -44,10 +43,10 @@ Určuje nastavení pověření služby systému Windows.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<– serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.|  
+|[\<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek slouží k určení, zda povolit přístup anonymní uživatelé Windows nastavením `allowAnonymousLogons` atribut. Můžete také určit, zda mají být zahrnuty informace o skupině, do které patří uživatelé kontext ověřování nastavením `includeWindowsGroups` atribut. Pokud je nastaven na hodnotu `true` (výchozí nastavení), může služba zjistit skupiny systému Windows, na které klient patří.  
+ Tento element slouží k určení, jestli se má povolit přístup anonymní uživatelé Windows tak, že nastavíte `allowAnonymousLogons` atribut. Můžete také určit, zda mají být zahrnuty informace o skupinách, ke kterému uživatelé patří AuthorizationContext tak, že nastavíte `includeWindowsGroups` atribut. Pokud je nastavena na `true` (výchozí nastavení), službu můžete určit skupiny Windows, na které klient patří.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.WindowsServiceElement>  

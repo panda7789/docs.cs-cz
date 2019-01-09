@@ -4,12 +4,12 @@ description: Vysvětlení různých scénářích podporovaných architektur bez
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: cf46c601ac6aa401c7c37bd64c1f8981589ebd2e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d165746ff2f03b0edc59a9284052323a0c1fd05b
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53146703"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149674"
 ---
 # <a name="serverless-design-examples"></a>Příklady návrhu bez serveru
 
@@ -65,7 +65,7 @@ Funkce bez serveru je možné pro usnadnění datového kanálu. V tomto příkl
 
 ## <a name="stream-processing"></a>Zpracování streamů
 
-Zařízení a senzorů často generovat datové proudy dat, které je potřeba zpracovat v reálném čase. Existuje mnoho technologií, které můžete zaznamenat zprávy a datové proudy [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) a [služby IoT Hub](https://docs.microsoft.com/azure/iot-hub) k [služby Service Bus](/service-bus). Bez ohledu na přenos je ideální mechanismu pro zpracování zpráv a datových proudů, jak ve bez serveru. Bez serveru se rychle škálují podle potřeby velkých svazků s daty. Kód bez serveru můžete použít obchodní logiku k analýze dat a výstupu předává ve strukturovaném formátu pro akce a analýzy.
+Zařízení a senzorů často generovat datové proudy dat, které je potřeba zpracovat v reálném čase. Existuje mnoho technologií, které můžete zaznamenat zprávy a datové proudy [Event Hubs](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs) a [služby IoT Hub](https://docs.microsoft.com/azure/iot-hub) k [služby Service Bus](https://docs.microsoft.com/azure/service-bus). Bez ohledu na přenos je ideální mechanismu pro zpracování zpráv a datových proudů, jak ve bez serveru. Bez serveru se rychle škálují podle potřeby velkých svazků s daty. Kód bez serveru můžete použít obchodní logiku k analýze dat a výstupu předává ve strukturovaném formátu pro akce a analýzy.
 
 ![Zpracování datových proudů bez serveru](./media/serverless-stream-processing.png)
 

@@ -2,44 +2,44 @@
 title: '&lt;add&gt; – &lt;issuerChannelBehaviors&gt;'
 ms.date: 03/30/2017
 ms.assetid: 50710506-e28f-45dd-ab7e-bff6f44173db
-ms.openlocfilehash: 75531e8ed50ae89f379db23d228804612f4bfccb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 072e3f4e961f6bf45e7c8b48c64cda36d385cf2b
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752452"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149537"
 ---
 # <a name="ltaddgt-of-ltissuerchannelbehaviorsgt"></a>&lt;add&gt; – &lt;issuerChannelBehaviors&gt;
-Přidá chování koncového bodu, který se má použít při komunikaci s služby tokenů zabezpečení.  
+Přidá chování koncového bodu se použije při komunikaci se službou tokenů zabezpečení.  
   
 > [!NOTE]
->  Pokud obsahuje všechny chování koncového bodu [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementu, bude vyvolána výjimka.  
+>  Pokud jakékoliv chování koncového bodu obsahuje [ \<clientCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) elementu, bude vyvolána výjimka.  
   
  \<system.ServiceModel>  
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<clientCredentials >  
-\<issuedToken >  
-\<issuerChannelBehaviors > elementu  
+\<třídu clientCredentials >  
+\<třídy issuedToken >  
+\<issuerChannelBehaviors > – Element  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<add issuerAddress="string"  
-     behaviorConfiguraton="string" />  
+<add issuerAddress="string"
+     behaviorConfiguraton="string" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|issuerAddress|Identifikátor URI vydavatel tokenu zabezpečení ke komunikaci s.|  
-|behaviorConfiguration|Název koncový bod chování definované ve stejném souboru konfigurace.|  
+|issuerAddress|Identifikátor URI vystavitele tokenu zabezpečení komunikovat.|  
+|behaviorConfiguration|Název chování koncového bodu definované ve stejném souboru konfigurace.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -48,10 +48,10 @@ Přidá chování koncového bodu, který se má použít při komunikaci s slu�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuerChannelBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Obsahuje kolekce chování koncový bod klienta Windows Communication Foundation (WCF), který se má použít při komunikaci s určeným službám tokenu služby.|  
+|[\<issuerChannelBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Obsahuje kolekci chování koncového bodu klienta Windows Communication Foundation (WCF) se použije při komunikaci s určeným službám tokenu služby.|  
   
 ## <a name="remarks"></a>Poznámky  
- `issuerAddress` obsahuje identifikátor URI služby tokenů zabezpečení, který chce klienta ke komunikaci s. `behaviorConfiguration` odkazuje na koncový bod chování, které aplikace používá v kanály vytvořen ve Windows Communication Foundation (WCF) k získání vystavené tokeny od služby tokenů zabezpečení.  
+ `issuerAddress` obsahuje identifikátor URI, který chce komunikaci s klientem služby tokenů zabezpečení. `behaviorConfiguration` odkazuje na chování koncového bodu, který aplikace používá v kanálech vytvořené technologií Windows Communication Foundation (WCF) Chcete-li získat od služby tokenů zabezpečení vydané tokeny.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.IssuerChannelBehaviors%2A>  

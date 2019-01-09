@@ -1,31 +1,30 @@
 ---
-title: '&lt;ConnectionPoolSettings&gt;'
+title: '&lt;connectionPoolSettings&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: 87fcbf08d897cf8d9e1924a8a5ed2b5b20945638
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 2d79b3e28d1a80011cba7c515d979ae0037785a5
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32748149"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149524"
 ---
-# <a name="ltconnectionpoolsettingsgt"></a>&lt;ConnectionPoolSettings&gt;
-Určuje nastavení fondu další připojení pro vazbu s názvem kanálu.  
+# <a name="ltconnectionpoolsettingsgt"></a>&lt;connectionPoolSettings&gt;
+Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<namePipeTransport >  
 \<connectionPoolSettings >  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<connectionPoolSettings  
-        groupName="String"  
-    idleTimeout"TimeSpan"  
-    maxOutboundConnectionsPerEndpopint="Integer" />  
+<connectionPoolSettings groupName="String"
+                        idleTimeout="TimeSpan"
+                        maxOutboundConnectionsPerEndpopint="Integer" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -35,9 +34,9 @@ Určuje nastavení fondu další připojení pro vazbu s názvem kanálu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`groupName`|Řetězec, který definuje název fondu připojení používané pro odchozí kanály. V přenášené datovými proudy režimu nejsou sdílené připojení – zakázáno sdružování připojení. Výchozí hodnota je řetězec "default". Tato hodnota izolovat připojení pro konkrétního klienta do samostatných skupin můžete upravit.|  
-|`idleTimeout`|U kladné <xref:System.TimeSpan> , určuje maximální dobu může být připojení nečinnosti, než dojde k odpojení. Výchozí hodnota je 00:02:00.|  
-|`maxOutboundConnectionsPerEndpoint`|Kladné celé číslo, které určuje maximální počet připojení, aby vzdálený koncový bod iniciovat službu. Připojení nad tento limit jsou zařazeny do fronty, dokud nebude k dispozici místo pod limit. `idleTimeout` Omezí doba trvání, ve kterém připojení zůstat ve frontě, než je vyvolána výjimka. Výchozí hodnota je 10.<br /><br /> Tento atribut omezuje počet souběžných aktivních připojení z klienta pro koncový bod konkrétní služby. Pokud se překročí tuto hodnotu tak, že více aktivních připojení klienta, se mohou objevit reagovat na klienta služby. V takovém případě je třeba upravit tuto hodnotu delší než maximální počet očekávané simultánních klientských připojení na konkrétní.|  
+|`groupName`|Řetězec, který definuje název fondu připojení používaný pro odchozí kanály. V proudu režimu nejsou sdíleny připojení, což znamená, že je zakázána sdružování připojení. Výchozí hodnota je řetězec "Výchozí". Tato hodnota k izolaci připojení pro konkrétního klienta do samostatných skupin můžete upravit.|  
+|`idleTimeout`|Pozitivní <xref:System.TimeSpan> , která určuje maximální dobu, může být připojení nečinné, než je odpojeno. Výchozí hodnota je 00:02:00.|  
+|`maxOutboundConnectionsPerEndpoint`|Kladné celé číslo, které určuje maximální počet připojení na vzdálený koncový bod iniciovaných službou. Připojení nad tento limit se zařadí do fronty, dokud nebude k dispozici prostor pod limit. `idleTimeout` Omezení doby trvání, ve kterém připojení zůstat ve frontě, než dojde k výjimce. Výchozí hodnota je 10.<br /><br /> Tento atribut omezuje počet souběžných aktivních připojení z klienta do koncového bodu konkrétní služby. Pokud se překročí tuto hodnotu tak, že více aktivních připojení klienta, se můžou objevit reagovat na klienta služby. V takovém případě by měla být přizpůsobena tuto hodnotu delší než maximální počet očekávaných simultánních klientských připojení do určitého koncového bodu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,7 +45,7 @@ Určuje nastavení fondu další připojení pro vazbu s názvem kanálu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobuje, že kanálu pro přenos zpráv pomocí pojmenovaných kanálů.|  
+|[\<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.NamedPipeConnectionPoolSettingsElement>  
@@ -59,4 +58,4 @@ Určuje nastavení fondu další připojení pro vazbu s názvem kanálu.
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: d8e001e6c39549b35eee332d0874e6f347b53509
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 0849120edf7d4b8948b3632cfe2fc81f1bdff1eb
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49314894"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54148185"
 ---
 # <a name="ltnettcpbindinggt"></a>&lt;NetTcpBinding&gt;
 
@@ -23,37 +23,37 @@ Určuje zabezpečená, spolehlivá a optimalizovaná vazby vhodné pro komunikac
   
 ```xml  
 <netTcpBinding>
-  <binding closeTimeout="TimeSpan"  
+  <binding closeTimeout="TimeSpan"
            hostNameComparisonMode="StrongWildCard/Exact/WeakWildcard"
-           listenBacklog="Integer"  
-           maxBufferPoolSize="integer"  
-           maxBufferSize="Integer"  
-           maxConnections="Integer"   
-           maxReceivedMessageSize="Integer"  
-           name="string"  
-           openTimeout="TimeSpan"  
-           portSharingEnabled="Boolean"  
-           receiveTimeout="TimeSpan"  
-           sendTimeout="TimeSpan"  
-           transactionFlow="Boolean"   
-           transactionProtocol="OleTransactions/WSAtomicTransactionOctober2004"   
+           listenBacklog="Integer"
+           maxBufferPoolSize="integer"
+           maxBufferSize="Integer"
+           maxConnections="Integer"
+           maxReceivedMessageSize="Integer"
+           name="string"
+           openTimeout="TimeSpan"
+           portSharingEnabled="Boolean"
+           receiveTimeout="TimeSpan"
+           sendTimeout="TimeSpan"
+           transactionFlow="Boolean"
+           transactionProtocol="OleTransactions/WSAtomicTransactionOctober2004"
            transferMode="Buffered/Streamed/StreamedRequest/StreamedResponse">
-    <reliableSession ordered="Boolean"  
-                     inactivityTimeout="TimeSpan"  
+    <reliableSession ordered="Boolean"
+                     inactivityTimeout="TimeSpan"
                      enabled="Boolean" />
     <security mode="None/Transport/Message/Both">
-      <message clientCredentialType="None/Windows/UserName/Certificate/CardSpace"  
+      <message clientCredentialType="None/Windows/UserName/Certificate/CardSpace"
                algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15" />
-      <transport clientCredentialType="None/Windows/Certificate"  
+      <transport clientCredentialType="None/Windows/Certificate"
                  protectionLevel="None/Sign/EncryptAndSign" />
     </security>
-    <readerQuotas maxArrayLength="Integer"     
-                  maxBytesPerRead="Integer"      
-                  maxDepth="Integer" 
+    <readerQuotas maxArrayLength="Integer"
+                  maxBytesPerRead="Integer"
+                  maxDepth="Integer"
                   maxNameTableCharCount="Integer"
                   maxStringContentLength="Integer" />
   </binding>
-</netTcpBinding> 
+</netTcpBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy
@@ -105,47 +105,45 @@ Tato vazba generuje runtime komunikačního balíku ve výchozím nastavení, kt
 Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby je zadán v `binding` atribut `<endpoint>` elementu. Pokud chcete konfiguraci vazby netTcpBinding a některé z nastavení změnit, je potřeba definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby `bindingConfiguration` atribut. V následujícím příkladu je definován konfiguraci vazby.  
   
 ```xml  
-<services>  
-  <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
-           behaviorConfiguration="CalculatorServiceBehavior">  
-    ...  
-    <endpoint address=""  
-              binding="netTcpBinding"  
-              contract="Microsoft.ServiceModel.Samples.ICalculator" />  
-    ...  
-  </service>  
-</services>  
-  
-<bindings>  
-  <netTcpBinding>  
-    <binding   
-             closeTimeout="00:01:00"  
-             openTimeout="00:01:00"   
-             receiveTimeout="00:10:00"   
-             sendTimeout="00:01:00"  
-             transactionFlow="false"   
-             transferMode="Buffered"   
-             transactionProtocol="OleTransactions"  
-             hostNameComparisonMode="StrongWildcard"   
-             listenBacklog="10"  
-             maxBufferPoolSize="524288"   
-             maxBufferSize="65536"   
-             maxConnections="10"  
-             maxReceivedMessageSize="65536">  
-      <readerQuotas maxDepth="32"   
-                    maxStringContentLength="8192"   
-                    maxArrayLength="16384"  
-                    maxBytesPerRead="4096"   
-                    maxNameTableCharCount="16384" />  
-      <reliableSession ordered="true"   
-                       inactivityTimeout="00:10:00"  
-                       enabled="false" />  
-      <security mode="Transport">  
-        <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign" />  
-      </security>  
-    </binding>  
-  </netTcpBinding>  
-</bindings>  
+<services>
+  <service name="Microsoft.ServiceModel.Samples.CalculatorService"
+           behaviorConfiguration="CalculatorServiceBehavior">
+    ...
+    <endpoint address=""
+              binding="netTcpBinding"
+              contract="Microsoft.ServiceModel.Samples.ICalculator" />
+    ...
+  </service>
+</services>
+<bindings>
+  <netTcpBinding>
+    <binding closeTimeout="00:01:00"
+             openTimeout="00:01:00"
+             receiveTimeout="00:10:00"
+             sendTimeout="00:01:00"
+             transactionFlow="false"
+             transferMode="Buffered"
+             transactionProtocol="OleTransactions"
+             hostNameComparisonMode="StrongWildcard"
+             listenBacklog="10"
+             maxBufferPoolSize="524288"
+             maxBufferSize="65536"
+             maxConnections="10"
+             maxReceivedMessageSize="65536">
+      <readerQuotas maxDepth="32"
+                    maxStringContentLength="8192"
+                    maxArrayLength="16384"
+                    maxBytesPerRead="4096"
+                    maxNameTableCharCount="16384" />
+      <reliableSession ordered="true"
+                       inactivityTimeout="00:10:00"
+                       enabled="false" />
+      <security mode="Transport">
+        <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign" />
+      </security>
+    </binding>
+  </netTcpBinding>
+</bindings>
 ```  
   
 ## <a name="see-also"></a>Viz také:  

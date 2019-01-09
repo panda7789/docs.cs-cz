@@ -2,12 +2,12 @@
 title: '&lt;msmqTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
-ms.openlocfilehash: a771e4e74078feed5bb9f6c76d991ccee4c4ea29
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a0406ae6e91755707656e10c75cbd25dd68d07c2
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143490"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147912"
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 Způsobí, že přenos zpráv kanálu službou MSMQ při je součástí vlastní vazby.  
@@ -21,27 +21,27 @@ Způsobí, že přenos zpráv kanálu službou MSMQ při je součástí vlastní
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<msmqTransport>  
-    customDeadLetterQueue="Uri"  
-    deadLetterQueue="Custom/None/System"  
-    durable="Boolean"  
-    exactlyOnce="Boolean"  
-    manualAddressing="Boolean"  
-    maxBufferPoolSize="Integer"  
-    maxImmediateRetries="Integer"  
-    maxPoolSize="Integer"  
-    maxReceivedMessageSize="Integer"  
-    maxRetryCycles="Integer"  
-....queueTransferProtocol="Native/Srmp/SrmpSecure"  
-    rejectAfterLastRetry="Boolean"  
-    retryCycleDelay="TimeSpan"  
-    timeToLive="TimeSpan"  
-    useActiveDirectory="Boolean"  
-    useSourceJournal="Boolean"  
-    useMsmqTracing="Boolean"  
-    <msmqTransportSecurity>  
-    </msmqTransportSecurity>  
-</msmqIntegration>  
+<msmqTransport customDeadLetterQueue="Uri"
+               deadLetterQueue="Custom/None/System"
+               durable="Boolean"
+               exactlyOnce="Boolean"
+               manualAddressing="Boolean"
+               maxBufferPoolSize="Integer"
+               maxImmediateRetries="Integer"
+               maxPoolSize="Integer"
+               maxReceivedMessageSize="Integer"
+               maxRetryCycles="Integer"
+               queueTransferProtocol="Native/Srmp/SrmpSecure"
+               rejectAfterLastRetry="Boolean"
+               retryCycleDelay="TimeSpan"
+               timeToLive="TimeSpan"
+               useActiveDirectory="Boolean"
+               useSourceJournal="Boolean"
+               useMsmqTracing="Boolean"
+               ...>
+  <msmqTransportSecurity>
+  </msmqTransportSecurity>
+</msmqTransport>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

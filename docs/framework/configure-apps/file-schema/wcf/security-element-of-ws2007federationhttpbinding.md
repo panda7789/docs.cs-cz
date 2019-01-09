@@ -2,12 +2,12 @@
 title: Element &lt;security&gt; – &lt;ws2007FederationHttpBinding&gt;
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-ms.openlocfilehash: e212e73f03d52bdfcba8559db5ab62288b3ebcc2
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4ddf963db10656c905220ca22606772625dd7f3c
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199224"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54145712"
 ---
 # <a name="ltsecuritygt-element-of-ltws2007federationhttpbindinggt"></a>Element &lt;security&gt; – &lt;ws2007FederationHttpBinding&gt;
 Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementu.  
@@ -21,18 +21,18 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<ws2007FederationBinding>  
-    <binding >  
-        <security mode="None/Message/TransportWithMessageCredential">  
-           <message negotiateServiceCredential="Boolean"  
-                algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/ Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
-                defaultProtectionLevel="none/sign/EncryptAndSign"   
-                issuedTokenType="string"   
-                issuedKeyType="SymmetricKey/PublicKey"  
-           </message>  
-        </security>  
-    </binding>  
-</ws2007FederationBinding>  
+<ws2007FederationBinding>
+  <binding>
+    <security mode="None/Message/TransportWithMessageCredential">
+      <message negotiateServiceCredential="Boolean"
+               algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/  Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"
+               defaultProtectionLevel="none/sign/EncryptAndSign"
+               issuedTokenType="string"
+               issuedKeyType="SymmetricKey/PublicKey">
+      </message>
+    </security>
+  </binding>
+</ws2007FederationBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -48,7 +48,7 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zprávu protokolu SOAP není zabezpečená při přenosu.|  
+|Žádná|Zprávu protokolu SOAP není zabezpečená při přenosu.|  
 |Zpráva|Integrity, šifrování, ověřování serveru a klienta ověřování zajišťuje zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je tělo zašifrovaný a podepsaný. Služba musí být nakonfigurován s certifikátem. Ověření klienta je založen na token vydaný pro klienta služby tokenů zabezpečení.|  
 |TransportWithMessageCredential|Jsou k dispozici integritu a důvěrnost serveru ověřování pomocí protokolu HTTPS. Služba musí být nakonfigurován s certifikátem. Ověření klienta se poskytuje prostřednictvím zabezpečení zprávy protokolu SOAP a je založena na token vydaný pro klienta služby tokenů zabezpečení.|  
   
@@ -69,7 +69,7 @@ Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../..
  <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>  
  <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>  
  <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>  
- [Postupy: Vytvoření WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  

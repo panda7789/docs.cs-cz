@@ -2,12 +2,12 @@
 title: '&lt;security&gt; – &lt;netPeerBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
-ms.openlocfilehash: d32b6426009c403d74ca3a05d3c3ba7be9163cae
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: eb25535e9eb0b74e8f92a77cf86656cc3788f0aa
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197324"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54146118"
 ---
 # <a name="ltsecuritygt-of-ltnetpeerbindinggt"></a>&lt;security&gt; – &lt;netPeerBinding&gt;
 Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md), včetně typ ověřování, který používá a zabezpečení pro přenos zpráv.  
@@ -21,13 +21,13 @@ Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/f
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<netPeerBinding>  
-    <binding>  
-        <security mode="Message/None/Transport//TransportWithMessageCredential">  
-            <transport credentialType="Certificate/Password" />  
-        </security>  
-    </binding>  
-</netPeerBinding>  
+<netPeerBinding>
+  <binding>
+    <security mode="Message/None/Transport//TransportWithMessageCredential">
+      <transport credentialType="Certificate/Password" />
+    </security>
+  </binding>
+</netPeerBinding>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -44,7 +44,7 @@ Definuje nastavení zabezpečení [ \<netPeerTcpBinding >](../../../../../docs/f
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |Zpráva|Zabezpečení protokolu SOAP poskytuje ověřování, integritu a důvěrnost.|  
-|Žádné|Zabezpečení je zakázaná.|  
+|Žádná|Zabezpečení je zakázaná.|  
 |Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS.|  
 |TransportWithMessageCredential|HTTPS zajišťuje ověřování a zachováním důvěrnosti. Zprávy protokolu SOAP poskytuje typy bohaté přihlašovacích údajů.|  
   

@@ -2,15 +2,15 @@
 title: '&lt;mexEndpoint&gt;'
 ms.date: 03/30/2017
 ms.assetid: c9823060-0a5d-4f9d-99d4-4d113b758247
-ms.openlocfilehash: aceff3e373d9a5f7e57c28d85870af19ae8ef3e1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4e2fb4946ee68b3cbd5bd6bfbafe6bb5e9c9106f
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32747782"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54149147"
 ---
 # <a name="ltmexendpointgt"></a>&lt;mexEndpoint&gt;
-Tento element konfigurace definuje standardní koncový bod s pevnou IMetadataExchange kontrakt. Vzhledem k tomu, že všechny koncové body metadat serveru exchange zadejte IMetadataExchange jako jejich kontrakt, můžete použít tento standardní bod místo definování jeden pro sami.  
+Tento prvek konfigurace definuje standardní koncový bod s pevným kontraktem IMetadataExchange. Protože všechny koncové body metadat exchange určit jako jejich kontraktu IMetadataExchange, můžete použít tento standardní bod místo definování sami.  
   
  \<system.ServiceModel>  
 \<standardEndpoints >  
@@ -18,13 +18,13 @@ Tento element konfigurace definuje standardní koncový bod s pevnou IMetadataEx
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<system.serviceModel>  
+<system.serviceModel>
   <standardEndpoints>
     <mexEndpoint>
       <standardEndpoint name="String" />
     </mexEndpoint>
-  </standardEndpoints>  
-</system.serviceModel>  
+  </standardEndpoints>
+</system.serviceModel>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -34,7 +34,7 @@ Tento element konfigurace definuje standardní koncový bod s pevnou IMetadataEx
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec, který určuje název konfigurace standardní koncového bodu. Název je používán `endpointConfiguration` atribut propojení koncový bod standardní konfiguraci koncového bodu služby.|  
+|name|Řetězec, který určuje název konfigurace standardního koncového bodu. Název se používá v `endpointConfiguration` atribut koncového bodu služby propojit s jeho konfigurace je standardní koncový bod.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -43,4 +43,4 @@ Tento element konfigurace definuje standardní koncový bod s pevnou IMetadataEx
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncových bodů s jedním nebo více jejich vlastnosti (adresy, vazby, kontrakt) pevné.|
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|

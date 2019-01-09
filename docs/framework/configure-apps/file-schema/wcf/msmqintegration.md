@@ -2,12 +2,12 @@
 title: '&lt;msmqIntegration&gt;'
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-ms.openlocfilehash: 092f882b9e135595c63d7b49c9aee77203b19740
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6b1449ec385af2478ee278e9823a005c69ca8dc2
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151058"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147847"
 ---
 # <a name="ltmsmqintegrationgt"></a>&lt;msmqIntegration&gt;
 Určuje přenos služby MSMQ pro vlastní vazbu.  
@@ -21,25 +21,24 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<msmqIntegration>  
-        customDeadLetterQueue="Uri"  
-        deadLetterQueue="Custom/None/System"  
-    durable="Boolean"  
-    exactlyOnce="Boolean"  
-    manualAddressing="Boolean"  
-    maxBufferPoolSize="Integer"  
-    maxImmediateRetries="Integer"  
-    maxReceivedMessageSize="Integer"  
-    maxRetryCycles="Integer"  
-    rejectAfterLastRetry="Boolean"  
-    retryCycleDelay="TimeSpan"  
-    serializationFormat="XML/Binary/ActiveX/ByteArray/Stream"  
-    timeToLive="TimeSpan"  
-    useSourceJournal="Boolean"  
-    useMsmqTracing="Boolean"  
-    <msmqTransportSecurity>  
-    </msmqTransportSecurity>  
-</msmqIntegration>  
+<msmqIntegration customDeadLetterQueue="Uri"
+                 deadLetterQueue="Custom/None/System"
+                 durable="Boolean"
+                 exactlyOnce="Boolean"
+                 manualAddressing="Boolean"
+                 maxBufferPoolSize="Integer"
+                 maxImmediateRetries="Integer"
+                 maxReceivedMessageSize="Integer"
+                 maxRetryCycles="Integer"
+                 rejectAfterLastRetry="Boolean"
+                 retryCycleDelay="TimeSpan"
+                 serializationFormat="XML/Binary/ActiveX/ByteArray/Stream"
+                 timeToLive="TimeSpan"
+                 useSourceJournal="Boolean"
+                 useMsmqTracing="Boolean">
+  <msmqTransportSecurity>
+  </msmqTransportSecurity>
+</msmqIntegration>
 ```  
   
 ## <a name="type"></a>Typ  

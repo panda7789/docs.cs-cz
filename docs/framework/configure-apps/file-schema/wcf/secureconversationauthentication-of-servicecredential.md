@@ -2,12 +2,12 @@
 title: '&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;'
 ms.date: 03/30/2017
 ms.assetid: 0bd3fac7-befd-4a45-ba51-c200b33be0fd
-ms.openlocfilehash: 8433ac8f698f3e5569802a8d76f7dedaf22f53c3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 2c8479c4d8a321c822d49bdc24f359ffad5500e9
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50180374"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147184"
 ---
 # <a name="ltsecureconversationauthenticationgt-of-ltservicecredentialgt"></a>&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;
 Určuje nastavení pro služby zabezpečené konverzace.  
@@ -22,7 +22,7 @@ Určuje nastavení pro služby zabezpečené konverzace.
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-<secureConversationAuthentication securityStateEncoderType="String" />  
+<secureConversationAuthentication securityStateEncoderType="String" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  

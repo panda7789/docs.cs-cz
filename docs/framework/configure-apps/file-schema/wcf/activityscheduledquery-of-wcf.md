@@ -2,12 +2,12 @@
 title: '&lt;activityScheduledQuery&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 25f6eee1-3d98-4c39-b517-c0813f03f106
-ms.openlocfilehash: a3c4c8b338921c9d949edd83deb4d6073eb26b55
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: fd7830bc178de0693f0632cea3b390d792408ec1
+ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123368"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54147873"
 ---
 # <a name="ltactivityscheduledquerygt-of-wcf"></a>&lt;activityScheduledQuery&gt; služby WCF
 
@@ -25,19 +25,19 @@ Další informace o sledování profil dotazy naleznete v tématu [sledování p
   
 ## <a name="syntax"></a>Syntaxe  
   
-```xml
+```xml  
 <tracking>
   <profiles>
     <trackingProfile name="Name">
       <workflow>
         <activityScheduledQueries>
-          <activityScheduledQuery activityName="String"   
-                                  childActivityName="String"/>
+          <activityScheduledQuery activityName="String"
+                                  childActivityName="String" />
         </activityScheduledQueries>
       </workflow>
     </trackingProfile>
   </profiles>
-</tracking> 
+</tracking>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
