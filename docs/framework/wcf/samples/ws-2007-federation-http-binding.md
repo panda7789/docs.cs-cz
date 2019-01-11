@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 53f2cb893476cdfa0517bd6586f38951dff1f2af
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7dffe56cf5593f1cd59cccd7ea9b6b0e173e0c2c
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513059"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221281"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>, standardní vazbu, že můžete použít k sestavení federovaných scénářích podporu verzi 1.3 specifikaci WS-Trust.  
@@ -112,7 +112,7 @@ Press <ENTER> to terminate client.
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte soubor Setup.bat vytvořit požadované certifikáty.  
+2.  Otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte soubor Setup.bat vytvořit požadované certifikáty.  
   
  Tento dávkový soubor používá Certmgr.exe a Makecert.exe, které jsou distribuovány v sadě Windows SDK. Však musíte spustit Setup.bat z v rámci příkazový řádek sady Visual Studio umožňuje skript, který chcete najít těchto nástrojů.  
   

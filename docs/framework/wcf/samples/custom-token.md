@@ -2,12 +2,12 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 8aa41a1f9651d0a385836178bc791c14706c17e4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 6e743be961de2c6d7b09805e6f91d7710efe227e
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243046"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223088"
 ---
 # <a name="custom-token"></a>Vlastní token
 Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -609,7 +609,7 @@ string GetCallerCreditCardNumber()
   
 2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Nezapomeňte zkopírovat CreditCardFile.txt; v opačném případě authenticator platební karty nelze ověřit informace o platební kartě odeslaných z klienta. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete si ho pomocí Setup.bat změníte-li vytvořit `%SERVER_NAME%` proměnné pro plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že se soubor Setup.bat musí být spuštěn v příkazovém řádku aplikace Visual Studio otevřeného s oprávněními správce.  
+3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete si ho pomocí Setup.bat změníte-li vytvořit `%SERVER_NAME%` proměnné pro plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že se soubor Setup.bat musí být spuštěn v příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
   
 4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople na straně klienta. Musíte to provést jenom v případě, že certifikát serveru není vystavený důvěryhodného vystavitele.  
   

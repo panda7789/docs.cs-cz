@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73fa08f92a4572a501be65f05e8141c349cc003e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 17e8e00afd759a3408ca54930c15d0b8797ff947
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400208"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222334"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
-Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime se nezdařilo najít sestavení obvykle objeví jako <xref:System.TypeLoadException> ve vaší aplikaci.  
+Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime nepodařilo najít sestavení obvykle zobrazí jako <xref:System.TypeLoadException> ve vaší aplikaci.  
   
 > [!IMPORTANT]
 >  Nástroj fuslogvw.exe je nutné spustit s oprávněními správce.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek pro vývojáře (nebo příkazový řádek sady Visual Studio v systému Windows 7) s oprávněními správce. Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7) s oprávněními správce. Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -36,9 +36,9 @@ fuslogvw
   
 ### <a name="to-change-the-log-location-view"></a>Změna umístění zobrazení protokolu  
   
-1.  Vyberte **výchozí** tlačítko Možnosti zobrazíte selhání vazby pro všechny typy aplikací. Položky protokolu jsou ve výchozím nastavení uloženy na disku do mezipaměti rozhraní wininet v adresářích jednotlivých uživatelů.  
+1.  Vyberte **výchozí** přepínač, chcete-li zobrazit chyby vazeb všech typů aplikací. Položky protokolu jsou ve výchozím nastavení uloženy na disku do mezipaměti rozhraní wininet v adresářích jednotlivých uživatelů.  
   
-2.  Vyberte **vlastní** tlačítko zobrazíte selhání vazby v vlastní adresář, který zadáte. Je nutné zadat vlastní umístění, kam chcete ukládat protokoly nastavením umístění vlastní protokolu v modulu runtime **nastavení protokolu** dialogovém okně můžete platný název adresáře. Tento adresář by měl být prázdný a měl by obsahovat pouze soubory, které generuje modul runtime. Pokud obsahuje spustitelný soubor, který generuje chybu do protokolu, tato chyba nebude protokolována, protože se nástroj pokusí vytvořit adresář se stejným názvem jako tento spustitelný soubor. Kromě toho se nezdaří pokus o spuštění spustitelného souboru z umístění protokolu.  
+2.  Vyberte **vlastní** přepínač li chyby vazeb zobrazit ve vlastních adresářích, který zadáte. Musíte zadat vlastní umístění, kam má modul runtime uložil protokoly nastavením umístění vlastní protokol **nastavení protokolu** dialogové okno pro platný název adresáře. Tento adresář by měl být prázdný a měl by obsahovat pouze soubory, které generuje modul runtime. Pokud obsahuje spustitelný soubor, který generuje chybu do protokolu, tato chyba nebude protokolována, protože se nástroj pokusí vytvořit adresář se stejným názvem jako tento spustitelný soubor. Kromě toho se nezdaří pokus o spuštění spustitelného souboru z umístění protokolu.  
   
     > [!NOTE]
     >  Výchozí umístění vazby je vhodnější než vlastní umístění vazby. Modul runtime ukládá výchozí umístění vazby do mezipaměti rozhraní wininet, a proto vazbu automaticky odstraní. Pokud určíte vlastní umístění vazby, zodpovídáte za její odstranění.  
@@ -47,7 +47,7 @@ fuslogvw
   
 1.  V prohlížeči vyberte název aplikace požadovaného záznamu.  
   
-2.  Klikněte **zobrazit protokol** tlačítko. Záznam lze vybrat také dvojitým kliknutím.  
+2.  Klikněte na tlačítko **zobrazit protokol** tlačítko. Záznam lze vybrat také dvojitým kliknutím.  
   
      Nástroj zobrazí následující podrobnosti o vybrané chybě vazby:  
   
@@ -59,7 +59,7 @@ fuslogvw
   
     -   Popis všech zásad aplikace, vydavatele nebo správce, které byly použity.  
   
-    -   Zda je sestavení byl nalezen v [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md).  
+    -   Zda sestavení bylo nalezeno v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md).  
   
     -   Seznam všech zjišťovaných adres URL.  
   
@@ -101,30 +101,30 @@ LOG: All probing URLs attempted and failed.
   
 1.  Vyberte záznam v prohlížeči.  
   
-2.  Klikněte **odstranit položku** tlačítko.  
+2.  Klikněte na tlačítko **odstranit položku** tlačítko.  
   
 ### <a name="to-delete-all-entries-from-the-log"></a>Odstranění všech záznamů z protokolu  
   
--   Klikněte **odstranit všechny** tlačítko.  
+-   Klikněte na tlačítko **odstranit vše** tlačítko.  
   
 ### <a name="to-refresh-the-user-interface"></a>Obnovení uživatelského rozhraní  
   
--   Klikněte **aktualizovat** tlačítko. Prohlížeč automaticky nerozpozná nové položky protokolu, pokud je spuštěn. Je nutné použít **aktualizovat** tlačítko zobrazit.  
+-   Klikněte na tlačítko **aktualizovat** tlačítko. Prohlížeč automaticky nerozpozná nové položky protokolu, pokud je spuštěn. Je nutné použít **aktualizovat** tlačítko k jejich zobrazení.  
   
 ### <a name="to-change-the-log-settings"></a>Změna nastavení protokolu  
   
--   Klikněte **nastavení** tlačítko Otevřít **nastavení protokolu** dialogové okno.  
+-   Klikněte na tlačítko **nastavení** tlačítko Otevřít **nastavení protokolu** dialogového okna.  
   
 ### <a name="to-view-the-about-dialog"></a>Zobrazení dialogového okna O programu  
   
--   Klikněte **o** tlačítko.  
+-   Klikněte na tlačítko **o** tlačítko.  
   
 ## <a name="binding-logs-for-native-images"></a>Protokoly vazeb nativních bitových kopií  
- Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadavky vazby sestavení. Alternativně můžete protokolu vazby sestavení pro nativní bitové kopie, které byly vytvořené pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
+ Ve výchozím nastavení nástroj Fuslogvw.exe zaznamenává normální požadavky vazby sestavení. Alternativně můžete protokolovat vazby sestavení nativních bitových kopií, které byly vytvořeny pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).  
   
 #### <a name="to-log-assembly-binds-for-native-images"></a>Protokolování vazeb sestavení nativních bitových kopií  
   
--   V **kategorií protokolu** skupiny, vyberte **nativní bitové kopie** tlačítko.  
+-   V **kategorie protokolu** skupiny, vyberte **nativní bitové kopie** přepínač.  
   
  Následující protokol zobrazuje chybu způsobenou neexistující závislostí při vytvoření nativní bitové kopie pro aplikaci. Pokud se tyto závislosti v době běhu liší od závislostí při spuštění nástroje Ngen.exe, vazba na nativní bitovou kopii není povolena.  
   
@@ -185,45 +185,45 @@ Discarding native image.
   
 #### <a name="to-disable-logging"></a>Zákaz protokolování  
   
--   Vyberte **protokolu zakázáno** tlačítko.  Tato možnost je ve výchozím stavu zvolena.  
+-   Vyberte **protokolu zakázáno** přepínač.  Tato možnost je ve výchozím stavu zvolena.  
   
 #### <a name="to-log-assembly-binds-in-exceptions"></a>Protokolování vazby sestavení ve výjimkách  
   
--   Vyberte **přihlásit text výjimky** tlačítko. Pouze nejméně podrobné informace protokolu jsou zaznamenány v textu výjimky. Chcete-li zobrazit úplné informace, použijte některé z dalších nastavení.  
+-   Vyberte **protokolovat text výjimek** přepínač. Pouze nejméně podrobné informace protokolu jsou zaznamenány v textu výjimky. Chcete-li zobrazit úplné informace, použijte některé z dalších nastavení.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   
 #### <a name="to-log-assembly-bind-failures"></a>Protokolování selhání vazby sestavení  
   
--   Vyberte **selhání vazby protokolu na disk** tlačítko.  
+-   Vyberte **chyby protokolu vazeb na disk** přepínač.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   
 #### <a name="to-log-all-assembly-binds"></a>Protokolování všech vazeb sestavení  
   
--   Vyberte **protokolu všechny vazby na disk** tlačítko.  
+-   Vyberte **protokolovat všechny vazby na disk** přepínač.  
   
      Prohlédněte si důležitou poznámku týkající se sestavení, která jsou načtena jako doménově neutrální.  
   
 > [!IMPORTANT]
->  Když je načteno sestavení jako doména neutrální, například nastavením <xref:System.AppDomainSetup.LoaderOptimization%2A> vlastnost <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> nebo <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, zapnout protokolování může nastat únik paměti v některých případech. K tomu může dojít, pokud je položka protokolu vytvořena při načtení doménově neutrálního modulu do domény aplikace a později, když je doména aplikace uvolněna. Položka protokolu nemusí být uvolněna až do ukončení procesu. Některé ladicí programy automaticky zapínají protokolování.  
+>  Když je sestavení načteno jako doménově neutrální, třeba tak, že nastavíte <xref:System.AppDomainSetup.LoaderOptimization%2A> vlastnost <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> nebo <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, zapnutí protokolování způsobit únik paměti v některých případech. K tomu může dojít, pokud je položka protokolu vytvořena při načtení doménově neutrálního modulu do domény aplikace a později, když je doména aplikace uvolněna. Položka protokolu nemusí být uvolněna až do ukončení procesu. Některé ladicí programy automaticky zapínají protokolování.  
   
 #### <a name="to-enable-a-custom-log-path"></a>Povolení vlastní cesty protokolu  
   
-1.  Vyberte **povolit vlastní protokol cesta** tlačítko.  
+1.  Vyberte **povolit vlastní cestu protokolu** přepínač.  
   
-2.  Zadejte cestu do **cesta protokolu vlastní** textové pole.  
+2.  Zadejte cestu do **vlastní cesta protokolu** textového pole.  
   
 > [!NOTE]
->  [Prohlížeč protokolu vazby sestavení (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť Internet Explorer (IE) k uložení protokol vazby. Kvůli příležitostně poškození v mezipaměti IE [Prohlížeč protokolu vazby sestavení (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) může někdy přestane zobrazovat text nové protokoly vazby v okně zobrazení. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.  
+>  [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) používá mezipaměť aplikace Internet Explorer (IE) k uložení svého protokolu vazeb. Z důvodu občasného poškození mezipaměti aplikace Internet Explorer [Assembly Binding Log Viewer (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) někdy přestane v okně zobrazení zobrazovat nové protokoly vazeb. V důsledku tohoto poškození infrastruktura vazeb rozhraní .NET (Fusion) nemůže do protokolu vazeb zapisovat nebo číst. (Při použití vlastní cesty protokolu k tomuto problému nedochází.)  Chcete-li opravit toto poškození a umožnit zobrazení protokolů vazeb, vymažte mezipaměť aplikace Internet Explorer (IE) odstraněním dočasných souborů internetu v dialogovém okně Možnosti Internetu.  
 >   
->  Pokud vaše nespravované aplikace je hostitelem modul common language runtime implementací `IHostAssemblyManager` a `IHostAssemblyStore` rozhraní, položky protokolu nemůže být uložen do mezipaměti wininet.  Chcete-li zobrazit položky protokolu pro vlastní hostitele implementující tato rozhraní, je nutné zadat alternativní cestu k protokolu.  
+>  Pokud vaše nespravovaná aplikace hostuje modul CLR pomocí implementace `IHostAssemblyManager` a `IHostAssemblyStore` rozhraní, položky protokolu nelze ukládat do mezipaměti rozhraní wininet.  Chcete-li zobrazit položky protokolu pro vlastní hostitele implementující tato rozhraní, je nutné zadat alternativní cestu k protokolu.  
   
 #### <a name="to-enable-logging-for-apps-running-in-the-windows-app-container"></a>Povolení protokolování pro aplikace spuštěné v kontejneru pro aplikace systému Windows  
   
 1.  Povolte vlastní cestu protokolu, jak je popsáno v předchozí proceduře. Ve výchozím nastavení mají aplikace spuštěné v kontejneru pro aplikace systému Windows omezený přístup na pevný disk. Zadaný adresář bude mít přístup pro čtení a zápis pro všechny aplikace v kontejneru aplikace.  
   
-2.  Vyberte **dokonalé protokolování** zaškrtávací políčko.  
+2.  Vyberte **povolit pohlcující protokolování** zaškrtávací políčko.  
   
     > [!NOTE]
     >  Toto pole je povoleno pouze v systému Windows 8 nebo novějším.  

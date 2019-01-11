@@ -3,12 +3,12 @@ title: Interpolace řetězců v jazyce C#
 description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný výsledný řetězec v jazyce C# pomocí interpolace řetězců.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 1a5d451f6fef926f0f142c7f09f564ce95618b39
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ef4358ff61cde43998fc0dc4ba174dc0f06bc2bd
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188635"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222490"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C# #
 
@@ -31,6 +31,8 @@ Jak ukazuje příklad, patří uzavřením závorek výrazu v interpolovaném ř
 ```
 
 V době kompilace, interpolovaném řetězci se obvykle transformuje na <xref:System.String.Format%2A?displayProperty=nameWithType> volání metody. Díky tomu se všechny funkce [řetězec složené formátování](../../standard/base-types/composite-formatting.md) funkce je k dispozici pro použití s interpolovanými řetězci najdete také.
+
+Kompilátor může nahradit <xref:System.String.Format%2A?displayProperty=nameWithType> pro <xref:System.String.Concat%2A?displayProperty=nameWithType> Pokud analyzovat chování by ekvivalentní zřetězení.
 
 ## <a name="how-to-specify-a-format-string-for-an-interpolated-expression"></a>Jak určit řetězec formátu pro interpolovaný výraz
 

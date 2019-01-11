@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock'
+title: 'Průvodce: Použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fb3f50459eeafcbb9f4882e56fb08b2001a35fb3
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0367b4224b49377d8d17045e044976e1c511a8ed
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042347"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222092"
 ---
-# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Postupy: Zvýšení efektivity díky použití tříd BatchBlock a BatchedJoinBlock
+# <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>Průvodce: Použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity
 Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602?displayProperty=nameWithType> třídy tak, aby se zobrazí a uložit do vyrovnávací paměti dat z jednoho nebo více zdrojů a poté je šířit data ve vyrovnávací paměti jako jednu kolekci. Tento mechanismus dávkování je užitečný při shromažďování dat z jednoho nebo více zdrojů a následném zpracování více datových prvků v dávce. Zvažte například aplikaci, která používá tok dat pro vkládání záznamů do databáze. Tato operace může být efektivnější, pokud je vloženo více položek současně místo postupně sekvenčně. Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> operací vložení třídy ke zvýšení účinnosti takových databáze. Také popisuje způsob použití <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> třídy pro zachycení výsledků i všech výjimek, ke kterým dochází, když program čte z databáze.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -30,7 +30,7 @@ Knihovna TPL datového toku poskytuje <xref:System.Threading.Tasks.Dataflow.Batc
 2.  Ujistěte se, že máte kopii databáze Northwind, Northwind.sdf, dostupný na vašem počítači. Tento soubor je obvykle umístěn ve složce % Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\.  
   
     > [!IMPORTANT]
-    >  V některých verzích Windows se nelze připojit k Northwind.sdf Pokud Visual Studio běží v režimu bez oprávnění správce. Připojit k Northwind.sdf, spusťte Visual Studio nebo příkazového řádku v sadě Visual Studio **spustit jako správce** režimu.  
+    >  V některých verzích Windows se nelze připojit k Northwind.sdf Pokud Visual Studio běží v režimu bez oprávnění správce. Pokud chcete připojit k Northwind.sdf, spusťte Visual Studio nebo příkazový řádek vývojáře pro sadu Visual Studio v **spustit jako správce** režimu.  
   
  Tento návod obsahuje následující části:  
   

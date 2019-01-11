@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Programování pro Office (C# a Visual Basic)'
+title: 'Průvodce: Programování pro Office (C# a Visual Basic)'
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 997affa2f4cc5332339a49450d68ab3aaadffc4b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 76d48b588db17a712ac698b604828520e38776a9
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084797"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223153"
 ---
-# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
+# <a name="walkthrough-office-programming-c-and-visual-basic"></a>Průvodce: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
 
-Oba jazyky umožňují vkládání informací o typu, který umožňuje nasazení sestavení, které komunikují s komponentami modelu COM bez nasazení primárních sestavení vzájemné spolupráce (PIA) na počítači uživatele. Další informace najdete v tématu [návod: vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
+Oba jazyky umožňují vkládání informací o typu, který umožňuje nasazení sestavení, které komunikují s komponentami modelu COM bez nasazení primárních sestavení vzájemné spolupráce (PIA) na počítači uživatele. Další informace najdete v tématu [názorný postup: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
   
 Tento názorný postup ukazuje tyto funkce v rámci programování pro Office, ale mnohé z těchto funkcí jsou také užitečné, obecně programování. V tomto návodu použijete k vytvoření Excelového sešitu aplikace Excel Add-in. V dalším kroku vytvořte Wordový dokument, který obsahuje odkaz na sešit. A konečně naleznete v tématu Jak povolit a zakázat závislost PIA.  
   
@@ -33,7 +33,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 ### <a name="to-set-up-an-excel-add-in-application"></a>Chcete-li nastavit aplikaci Excel Add-in  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
@@ -45,7 +45,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 6.  Zadejte název pro váš projekt v **název** pole, pokud chcete.  
   
-7.  Klikněte na tlačítko **OK**.  
+7.  Klikněte na **OK**.  
   
 8.  Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
@@ -53,9 +53,9 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu a pak klikněte na tlačítko **přidat odkaz**. **Přidat odkaz** zobrazí se dialogové okno.  
   
-2.  Na **sestavení** kartu, vyberte možnost **Microsoft.Office.Interop.Excel**, verze `<version>.0.0.0` (klávesy čísla verze produktů Office, naleznete v tématu [Versions Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)) v **název komponenty** seznamu a pak podržte klávesu CTRL, klíče a vyberte **Microsoft.Office.Interop.Word**, `version <version>.0.0.0`. Pokud nevidíte sestavení, budete muset zajistit, jsou nainstalované a zobrazí (naleznete v tématu [postupy: Instalace sestavení primární spolupráce Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).  
+2.  Na **sestavení** kartu, vyberte možnost **Microsoft.Office.Interop.Excel**, verze `<version>.0.0.0` (klávesy čísla verze produktů Office, naleznete v tématu [Versions Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)) v **název komponenty** seznamu a pak podržte klávesu CTRL, klíče a vyberte **Microsoft.Office.Interop.Word**, `version <version>.0.0.0`. Pokud nevidíte sestavení, budete muset zajistit, jsou nainstalované a zobrazí (viz [jak: Instalace primárních sestavení vzájemné spolupráce Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).  
   
-3.  Klikněte na tlačítko **OK**.  
+3.  Klikněte na **OK**.  
   
 ### <a name="to-add-necessary-imports-statements-or-using-directives"></a>Přidání potřebných příkazů Imports nebo direktiv using  
   
@@ -69,7 +69,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 ### <a name="to-create-a-list-of-bank-accounts"></a>Chcete-li vytvořit seznam účtů bank  
   
-1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **třídy**. Název třídy Account.vb, pokud používáte Visual Basic nebo Account.cs Pokud používáte C#. Klikněte na tlačítko **přidat**.  
+1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **třídy**. Název třídy Account.vb, pokud používáte Visual Basic nebo Account.cs Pokud používáte C#. Klikněte na **Přidat**.  
   
 2.  Nahraďte definici `Account` třídy následujícím kódem. Definice tříd pomocí *automaticky implementované vlastnosti*. Další informace najdete v tématu [implemented Properties](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).  
   
@@ -107,7 +107,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
          Nelze vytvořit indexované vlastnosti. Tato funkce podporuje pouze využití stávající indexované vlastnosti.  
   
-         Další informace najdete v tématu [postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md).  
+         Další informace najdete v tématu [jak: Použití indexovaných vlastností při programování v modelu COM Interop](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md).  
   
 2.  Přidejte následující kód na konci `DisplayInExcel` upravit šířku sloupců podle obsahu.  
   
@@ -157,11 +157,11 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 2.  Vyberte **Start**. Vyhledejte **sady Microsoft Visual Studio \<verze >** a otevřete příkazový řádek pro vývojáře.  
   
-3.  Typ `ildasm` příkazový řádek sady Visual Studio, a potom stiskněte klávesu ENTER. Zobrazí se okno IL DASM.  
+3.  Typ `ildasm` v příkazový řádek vývojáře pro Visual Studio okno a potom stiskněte klávesu ENTER. Zobrazí se okno IL DASM.  
   
 4.  Na **souboru** nabídky v okně IL DASM vyberte **souboru** > **otevřít**. Dvakrát klikněte na panel **sady Visual Studio \<verze >** a potom dvakrát klikněte na panel **projekty**. Otevřete složku pro váš projekt a podívejte se do složky bin/Debug *název vašeho projektu*.dll. Dvakrát klikněte na panel *název vašeho projektu*.dll. Nové okno zobrazuje atributy váš projekt, kromě odkazy na jiných modulů a sestavení. Všimněte si, že obory názvů `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` jsou součástí sestavení. Ve výchozím nastavení v sadě Visual Studio kompilátor importuje typy, které potřebujete z odkazované PIA do vašeho sestavení.  
   
-     Další informace najdete v tématu [postupy: zobrazení obsahu sestavení](../../../framework/app-domains/how-to-view-assembly-contents.md).  
+     Další informace najdete v tématu [jak: Zobrazení obsahu sestavení](../../../framework/app-domains/how-to-view-assembly-contents.md).  
   
 5.  Dvakrát klikněte **MANIFEST** ikonu. Zobrazí se okno obsahující seznam sestavení, které obsahují položky, které jsou odkazované projektem. `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` nejsou zahrnuty v seznamu. Vzhledem k tomu, že typy, které projekt potřebuje se naimportovaly do vašeho sestavení, odkazy na PIA nejsou povinné. To usnadňuje nasazení. PIA nemusí být k dispozici v počítači uživatele, a protože aplikace nevyžaduje, aby nasazení na konkrétní verzi nástroje PIA, aplikace může být navržené pro práci s více verzemi systému Office, za předpokladu, že nezbytné rozhraní API existují ve všech verzích .  
   
@@ -204,9 +204,9 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
 - [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
 - [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
 - [Výrazy lambda (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
-- [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
-- [Návod: Vložení informací o typu ze sestavení Microsoft Office](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)  
+- [Postupy: Použití indexovaných vlastností při programování vzájemné spolupráce COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
+- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)  
 - [Návod: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
-- [Návod: Vytvoření prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)  
+- [Návod: Vytvoření vašeho prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)  
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
 - [Interoperabilita](../../../csharp/programming-guide/interop/index.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
-ms.openlocfilehash: 265ee152bf106d0f97cca83552fe9a3e75fb4165
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 937c559130ea70ab125935ce26ecc5f9bd315ad1
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349001"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221216"
 ---
 # <a name="how-to-install-and-uninstall-services"></a>Postupy: Instalace a odinstalace služeb
 Vyvíjíte služby Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí nástroje příkazového řádku InstallUtil.exe volána. Pokud jste vývojář, kdo chce vydání služby Windows, mohou uživatelé nainstalovat a odinstalovat jste používali InstallShield. Zobrazit [nasazení Instalační služby systému Windows](https://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).  
@@ -25,18 +25,18 @@ Vyvíjíte služby Windows s použitím rozhraní .NET Framework, můžete rychl
 > [!WARNING]
 >  Pokud chcete z počítače odinstalovat službu, není postupujte podle kroků v tomto článku. Místo toho zjistit službu nainstalované balíčky, které program nebo software a pak zvolte **přidat nebo odebrat programy** v Ovládacích panelech odinstalujte tohoto programu. Všimněte si, že mnoho služeb jsou nedílnou součástí Windows; Pokud je odstraníte, může způsobit nestabilitu systému.  
   
- Chcete-li použít postup v tomto článku, musíte nejprve přidat instalační program služby do služby Windows. Zobrazit [návod: vytváření Windows aplikace v Návrháři součástí služby](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md).  
+ Chcete-li použít postup v tomto článku, musíte nejprve přidat instalační program služby do služby Windows. Zobrazit [názorný postup: Aplikace v Návrháři součástí vytváření Windows služby](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md).  
   
  Projekty služeb Windows nelze spustit přímo z vývojového prostředí sady Visual Studio stisknutím klávesy F5. Je to proto musí být nainstalována služba v projektu, abyste mohli spustit projekt.  
   
 > [!TIP]
->  Můžete spustit **Průzkumníka serveru** a ověřte, zda má vaše služba nainstalovat nebo odinstalovat. Další informace najdete v tématu Postupy: přístup a inicializace Průzkumníka serveru Průzkumníka databáze.  
+>  Můžete spustit **Průzkumníka serveru** a ověřte, zda má vaše služba nainstalovat nebo odinstalovat. Další informace najdete v tématu Postupy: Přístup a inicializace Průzkumníka serveru Průzkumníka databáze.  
   
 ### <a name="to-install-your-service-manually"></a>Ruční instalace služby  
   
 1.  V Windows **Start** nabídky nebo **Start** obrazovce **sady Visual Studio** , **Visual Studio Tools**, **pro vývojáře Příkazový řádek**.  
   
-     Zobrazí se příkazový řádek sady Visual Studio.  
+     Zobrazí se příkazový řádek vývojáře pro sadu Visual Studio.  
   
 2.  Přístup k adresáři, kde se nachází zkompilovaný spustitelný soubor projektu.  
   
@@ -46,13 +46,13 @@ Vyvíjíte služby Windows s použitím rozhraní .NET Framework, můžete rychl
     installutil <yourproject>.exe  
     ```  
   
-     Pokud používáte příkazový řádek sady Visual Studio, InstallUtil.exe by měla být v systémové cestě. Pokud ne, můžete ho přidat do cesty nebo použijte plně kvalifikovanou cestu k vyvolání ho. Tento nástroj je nainstalován pomocí rozhraní .NET Framework a je jeho cesta `%WINDIR%\Microsoft.NET\Framework[64]\<framework_version>`. Například pro 32bitovou verzi rozhraní .NET Framework 4 nebo 4.5. *, pokud váš instalační adresář Windows C:\Windows, cesta je `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`. Pro 64bitové verze rozhraní .NET Framework 4 nebo 4.5. \*, výchozí cesta je `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe`.  
+     Pokud používáte Developer Command Prompt pro sadu Visual Studio, InstallUtil.exe by měla být v systémové cestě. Pokud ne, můžete ho přidat do cesty nebo použijte plně kvalifikovanou cestu k vyvolání ho. Tento nástroj je nainstalován pomocí rozhraní .NET Framework a je jeho cesta `%WINDIR%\Microsoft.NET\Framework[64]\<framework_version>`. Například pro 32bitovou verzi rozhraní .NET Framework 4 nebo 4.5. *, pokud váš instalační adresář Windows C:\Windows, cesta je `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`. Pro 64bitové verze rozhraní .NET Framework 4 nebo 4.5. \*, výchozí cesta je `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe`.  
   
 ### <a name="to-uninstall-your-service-manually"></a>Ruční odinstalování služby  
   
 1.  V Windows **Start** nabídky nebo **Start** obrazovce **sady Visual Studio**, **Visual Studio Tools**, **pro vývojáře Příkazový řádek**.  
   
-     Zobrazí se příkazový řádek sady Visual Studio.  
+     Zobrazí se příkazový řádek vývojáře pro sadu Visual Studio.  
   
 2.  Spusťte InstallUtil.exe z příkazového řádku s výstupy projektu jako parametr:  
   
@@ -64,6 +64,6 @@ Vyvíjíte služby Windows s použitím rozhraní .NET Framework, můžete rychl
   
 ## <a name="see-also"></a>Viz také  
  [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
  [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)  
  [Installutil.exe (instalační nástroj)](../../../docs/framework/tools/installutil-exe-installer-tool.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: c5a8b38e819c323a06faad2edba586cb18d26edc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f6daa696ecd7b91c6d53edaa447f2d64bca0fd7
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409075"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221203"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (kompilátor licencí)
 License Compiler čte textové soubory, které obsahují licenční informace a vytváří binární soubor, který může být integrován jako prostředek do spustitelného souboru modulu CLR (Common Language Runtime).  
@@ -26,7 +26,7 @@ License Compiler čte textové soubory, které obsahují licenční informace a 
   
  Křížová kompilace mezi 32 bity a 64 bity není podporována, jestliže při sestavování projektu použijete License Compiler. Důvodem je, že License Compiler musí načíst sestavení, přičemž načítání 64bitových sestavení z 32bitové aplikace není povoleno a naopak. V tomto případě použijte License Compiler z příkazového řádku k ruční kompilaci licence a zadejte odpovídající architekturu.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazového řádku](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -40,44 +40,44 @@ License Compiler čte textové soubory, které obsahují licenční informace a 
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**/complist:** *filename*|Určuje název souboru, který obsahuje seznam licencovaných součástí, jež chcete zahrnout do souboru .licenses. Jednotlivé komponenty se odkazují pomocí úplného názvu, vždy pouze jedna komponenta na řádek.<br /><br /> Uživatelé příkazového řádku mohou určit samostatný soubor pro každý formulář v projektu. Lc.exe akceptuje více vstupních souborů a vytváří jeden soubor .licenses.|  
+|**/complist:** *název souboru*|Určuje název souboru, který obsahuje seznam licencovaných součástí, jež chcete zahrnout do souboru .licenses. Jednotlivé komponenty se odkazují pomocí úplného názvu, vždy pouze jedna komponenta na řádek.<br /><br /> Uživatelé příkazového řádku mohou určit samostatný soubor pro každý formulář v projektu. Lc.exe akceptuje více vstupních souborů a vytváří jeden soubor .licenses.|  
 |**/h**[**elp**]|Zobrazí syntaxi příkazu a možnosti nástroje.|  
-|**i:** *modulu*|Určuje modulů, které obsahují součástí uvedených v **/complist** souboru. Chcete-li zadat více než jeden modul, použijte více **/i** příznaky.|  
+|**i:** *modulu*|Určuje moduly obsahující uvedené v součásti **/complist** souboru. Pokud chcete zadat více než jeden modul, použijte více **/i** příznaky.|  
 |**/nologo**|Potlačí zobrazení úvodního nápisu společnosti Microsoft.|  
-|**Company:** *cesta*|Určuje adresář, do kterého má být umístěn výstupní soubor .licenses.|  
+|**/OutDir:** *cesta*|Určuje adresář, do kterého má být umístěn výstupní soubor .licenses.|  
 |**/ target:** *targetPE*|Určuje spustitelný soubor, pro který je generován soubor .licenses.|  
 |**/v**|Určuje režim podrobného vypisování; zobrazuje informace o průběhu kompilace.|  
-|**@** *Soubor*|Určuje soubor odpovědi (.rsp).|  
+|**@** *Soubor*|Určuje soubor odpovědí (.rsp).|  
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="example"></a>Příklad  
   
-1.  Pokud používáte licencované ovládací prvek `MyCompany.Samples.LicControl1` obsažené v `Samples.DLL` v aplikaci s názvem `HostApp.exe` *,* můžete vytvořit `HostAppLic.txt` obsahující následující.  
+1.  Pokud používáte licencovaného ovládacího prvku `MyCompany.Samples.LicControl1` součástí `Samples.DLL` v aplikaci s názvem `HostApp.exe` *,* můžete vytvořit `HostAppLic.txt` , který obsahuje následující.  
   
     ```  
     MyCompany.Samples.LicControl1, Samples.DLL  
     ```  
   
-2.  Vytvoření .licenses – soubor s názvem `HostApp.exe.licenses` pomocí následujícího příkazu.  
+2.  Vytvořte soubor .licenses s názvem `HostApp.exe.licenses` pomocí následujícího příkazu.  
   
     ```  
     lc /target:HostApp.exe /complist:hostapplic.txt /i:Samples.DLL /outdir:c:\bindir  
     ```  
   
-3.  Sestavení `HostApp.exe` včetně .licenses – soubor jako prostředek. Pokud vytváříte aplikace C#, měli byste k sestavení aplikace použít následující příkaz.  
+3.  Sestavení `HostApp.exe` včetně souboru .licenses jako prostředku. Pokud vytváříte aplikace C#, měli byste k sestavení aplikace použít následující příkaz.  
   
     ```  
     csc /res:HostApp.exe.licenses /out:HostApp.exe *.cs  
     ```  
   
- Následující příkaz zkompiluje `myApp.licenses` ze seznamů součástí licencovanou určeného `hostapplic.txt`, `hostapplic2.txt` a `hostapplic3.txt`. `modulesList` Argument určuje modulů, které obsahují licencovanou součásti.  
+ Následující příkaz kompiluje `myApp.licenses` ze seznamu licencovaných součástí určených `hostapplic.txt`, `hostapplic2.txt` a `hostapplic3.txt`. `modulesList` Argument určuje moduly obsahující licencované komponenty.  
   
 ```  
 lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: hostapplic3.txt /i:modulesList  
 ```  
   
 ## <a name="response-file-example"></a>Příklad souboru odpovědí  
- Následující seznam ukazuje příklad soubor odezvy `response.rsp`. Další informace o souborech odpovědí najdete v tématu [soubory odezvy](/visualstudio/msbuild/msbuild-response-files).  
+ Následující výpis ukazuje příklad souboru odpovědí, `response.rsp`. Další informace o souborech odpovědí najdete v tématu [soubory odpovědí](/visualstudio/msbuild/msbuild-response-files).  
   
 ```  
 /target:hostapp.exe  
@@ -86,7 +86,7 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
 /outdir:"C:\My Folder"  
 ```  
   
- Používá následující příkazový řádek `response.rsp` souboru.  
+ Následující příkazový řádek používá `response.rsp` souboru.  
   
 ```  
 lc @response.rsp  

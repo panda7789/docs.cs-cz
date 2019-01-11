@@ -2,12 +2,12 @@
 title: Zabezpečení vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: 72812c23bca5cd5c61f906cfd98f1929b0edee1a
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 56c3ed4be894a265635c747373e0b79599ce129d
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192886"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221697"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní vazby. Ukazuje, jak povolit zabezpečení na úrovni zprávy spolu s zabezpečeného přenosu pomocí vlastní vazby. To je užitečné, když zabezpečeného přenosu je potřebná pro přenos zpráv mezi klientem a službou a současně zprávy musí být zabezpečení na úrovni zprávy. Tato konfigurace není podporována vazeb poskytovaných systémem.
@@ -113,7 +113,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači
 
-1.  Otevřete okno Příkazový řádek sady Visual Studio s oprávněními správce a spusťte Setup.bat z instalační složky s ukázkou. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
+1.  Otevřete Developer Command Prompt for okně aplikace Visual Studio s oprávněními správce a spusťte Setup.bat z instalační složky s ukázkou. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.
 
     > [!NOTE]
     >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2012 příkazový řádek. Proměnné prostředí PATH v nastavení v rámci body příkazový řádek sady Visual Studio 2012 k adresáři, který obsahuje požadované skript Setup.bat spustitelné soubory.  
@@ -134,7 +134,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
   
     3.  Zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-    4.  Spuštění následujícího příkazu v příkazovém řádku aplikace Visual Studio otevřeného s oprávněními správce: `Setup.bat service`. Tím se vytvoří certifikát služby s názvem subjektu odpovídající název počítače, který byl spuštěn dávkového souboru.  
+    4.  Spuštěním následujícího příkazu v příkazovém řádku pro vývojáře pro Visual Studio otevřené s oprávněními správce: `Setup.bat service`. Tím se vytvoří certifikát služby s názvem subjektu odpovídající název počítače, který byl spuštěn dávkového souboru.  
   
         > [!NOTE]
         >  Dávkový soubor Setup.bat slouží ke spuštění z Visual Studio 2010 příkazový řádek. To vyžaduje, aby proměnné prostředí path v bodu do adresáře, ve kterém je nainstalována sada SDK. Tato proměnná prostředí je nastavena automaticky v rámci Visual Studio 2010 příkazový řádek.
@@ -149,7 +149,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     2.  Spusťte Cleanup.bat odebrání starého certifikátů z předchozí ukázky.
 
-    3.  Exportujte certifikát služby tak, že otevřete příkazový řádek sady Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači se službou (Nahraďte `%SERVER_NAME%` s plně kvalifikovaný název počítače, kde je služba spuštění):
+    3.  Export certifikátu služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu na počítači se službou (Nahraďte `%SERVER_NAME%` s plně kvalifikovaný název počítače, kde Služba je spuštěna):
 
         ```
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
@@ -157,7 +157,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     4.  Zkopírujte %SERVER_NAME%.cer ke klientskému počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém je služba spuštěná).
 
-    5.  Naimportujte certifikát služby tak, že otevřete příkazový řádek sady Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, kde je služba spuštění):
+    5.  Naimportujte certifikát služby tak, že otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spuštěním následujícího příkazu v klientském počítači (nahraďte název_serveru % s plně kvalifikovaný název počítače, ve kterém Služba je spuštěna):
 
         ```
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople

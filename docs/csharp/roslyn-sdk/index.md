@@ -3,17 +3,17 @@ title: .NET Compiler Platform SDK (rozhraní Roslyn API)
 description: Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 4fb67b1d7ff963a01696ce163fdcef0b7944dcee
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 62f2cf0eb8a7c7cf3606bb55efd3525059a6a267
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925028"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221268"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 
 Kompilátory sestavení prováděcí model kódu aplikace, protože ověří syntaxi a sémantiku tohoto kódu. Tento model se použít k sestavení spustitelného ze zdrojového kódu. Sada SDK platformy kompilátoru .NET poskytuje přístup k tomuto modelu. Čím dál, spoléháme na funkce integrovaného vývojového prostředí (IDE), jako jsou IntelliSense, refaktoring, inteligentní přejmenování "Najít všechny odkazy" a "Přejít k definici" zvýšit naši produktivitu. Spoléháme na nástroji pro analýzu kódu pro zlepšení našeho kvalitu kódu a generátory kódu pro vytváření aplikací. Protože tyto nástroje získat inteligentnější, přistupují potřebovat více a více modelu, který pouze kompilátory vytvořit, protože budou zpracovávat kódu aplikace. To je zvlášť jádro Roslyn API: černé skříňky vám otevírají a povolení nástrojů a koncovým uživatelům sdílet v řadu informace kompilátory si našeho kódu.
-Namísto neprůhledné zdrojového kódu – se změnami a objekt code-out překladatele, prostřednictvím Roslyn, kompilátory stát platformy: rozhraní API, která můžete použít pro úlohy související s kódem v nástroje a aplikace.
+Namísto neprůhledné zdrojového kódu – se změnami a objekt code-out překladatele, prostřednictvím Roslyn, kompilátory stát platformy: Rozhraní API, která můžete použít pro úlohy související s kódem v nástroje a aplikace.
 
 ## <a name="net-compiler-platform-sdk-concepts"></a>Koncepce sady SDK platformy kompilátoru .NET
 
@@ -60,7 +60,7 @@ Tyto analyzátory můžou být odeslán do [Visual Studio Marketplace](https://m
 
 Sada SDK platformy kompilátoru .NET obsahuje nejnovější objektové modely jazyka pro generování kódu, analýzy a refaktoringu. Tato část obsahuje přehled sady SDK platformy kompilátoru .NET. Další podrobnosti najdete v části šablony rychlý start, ukázek a kurzů.
 
-Vás podrobnější informace o konceptech v sadě SDK platformy kompilátoru .NET v těchto tématech čtyři:
+Můžete další informace o konceptech v sadě SDK platformy kompilátoru .NET v těchto tématech pět:
 
  - [Prozkoumání kódu pomocí vizualizéru syntaxe](syntax-visualizer.md)
  - [Pochopení modelu rozhraní API kompilátoru](compiler-api-model.md)

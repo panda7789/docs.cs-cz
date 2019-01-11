@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock'
+title: 'Postupy: Data z různých zdrojů pomocí třídy JoinBlock'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c49f7ad5162c9e2759ec8afed217451b4bcf04ff
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 0031e352fea845ca4831b4df3a67c9cc6b67e876
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44227620"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222282"
 ---
-# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock
+# <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Data z různých zdrojů pomocí třídy JoinBlock
 Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy provádět operace, když jsou k dispozici data z různých zdrojů. Také ukazuje, jak použít bez metody greedy režim povolit více bloků spojení sdílet zdroje dat efektivněji.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -33,7 +33,7 @@ Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.Jo
  Umožňuje efektivní využití sdílený fond `MemoryResource` objekty, tento příklad určuje <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> vlastnost nastavena na hodnotu `False` vytvořit <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty, které fungují v režimu bez metody greedy. Spojení typu non-greedy blok odloží všechny příchozí zprávy, dokud je k dispozici z každého zdroje. Pokud některý z odložených zprávy byly přijaty jiným blokem, restartuje blokovat připojení k procesu. Bez metody greedy režim umožňuje spojení bloky, které sdílejí jeden nebo více zdrojových bloků tak postup směrem vpřed, jak se bloky čekat na data. V tomto příkladu Pokud `MemoryResource` objekt přidán do `memoryResources` fondu, spojení první blok obdržet svůj druhý zdroj dat můžete provést postup směrem vpřed. Pokud v tomto příkladu byly pro použití režimu greedy, což je výchozí hodnota, jeden blok připojení může trvat, než `MemoryResource` objektu a počkejte, druhý prostředků k dispozici. Nicméně, pokud jiné spojení blok má svůj druhý zdroj dat k dispozici, nemůže vytvořit postup směrem vpřed protože `MemoryResource` objektu je už zabraný jiných spojení blokem.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowNonGreedyJoin.cs` (`DataflowNonGreedyJoin.vb` v jazyce Visual Basic), a pak spusťte následující příkaz v okně Příkazový řádek sady Visual Studio.  
+ Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowNonGreedyJoin.cs` (`DataflowNonGreedyJoin.vb` v jazyce Visual Basic), a pak spuštěním následujícího příkazu na příkazovém řádku pro vývojáře pro Visual Studio okno.  
   
  Visual C#  
   

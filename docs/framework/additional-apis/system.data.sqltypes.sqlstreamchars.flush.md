@@ -5,18 +5,20 @@ ms.author: douglasl
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlStreamChars.Flush
 api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: ecaf7932a4e832a88b883ceac4746afe6140b38e
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 13c4b9424b5fc16648628e2b1022a7f1621dee88
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152242"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221359"
 ---
 # <a name="sqlstreamcharsflush-method"></a>SqlStreamChars.Flush – metoda
 

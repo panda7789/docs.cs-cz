@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 890ce1e9a23d57121cd714252444e5ff1caa6b19
-ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
+ms.openlocfilehash: d1a0ee772618b89d3b8cf6efc9400e3dcf4804da
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53396874"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223179"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: Zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -197,7 +197,7 @@ Mohou uživatelé nainstalovat a spustit více verzí rozhraní .NET Framework n
 
 - Chcete-li zjistit, jaké verze Common Language Runtime jsou nainstalovány v počítači, použijte nástroj CLR Version Tool (Clrver.exe).
 
-     Z příkazového řádku aplikace Visual Studio, zadejte `clrver`. Tento příkaz vytváří výstup podobný následujícímu:
+     Z příkazový řádek vývojáře pro sadu Visual Studio, zadejte `clrver`. Tento příkaz vytváří výstup podobný následujícímu:
 
     ```
     Versions installed on the machine:

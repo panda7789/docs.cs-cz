@@ -7,25 +7,25 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-ms.openlocfilehash: 0b835bb5654574a5aa6f32eede1e942b11e7dcb0
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: d2d193f8c3d483ff87fe719919982e8c3473ec0b
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932151"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221840"
 ---
 # <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
-Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, označované také jako příkazový. Pokud kompilujete z výchozího příkazového řádku Windows, je nutné zadat úplnou cestu ke spustitelnému souboru. Chcete-li přepsat toto výchozí chování, můžete použít příkazový řádek sady Visual Studio nebo upravit proměnné prostředí PATH. Umožňují z libovolného adresáře kompilovat pouze zadáním názvu kompilátoru.  
+Kompilátor příkazového řádku můžete vyvolat zadáním názvu jeho spustitelného souboru do příkazového řádku, označované také jako příkazový. Pokud kompilujete z výchozího příkazového řádku Windows, je nutné zadat úplnou cestu ke spustitelnému souboru. Chcete-li přepsat toto výchozí chování, můžete použít příkazový řádek pro vývojáře pro sadu Visual Studio nebo upravit proměnné prostředí PATH. Umožňují z libovolného adresáře kompilovat pouze zadáním názvu kompilátoru.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-invoke-the-compiler-using-the-visual-studio-command-prompt"></a>K vyvolání kompilátoru pomocí Visual Studio Command Prompt  
+### <a name="to-invoke-the-compiler-using-the-developer-command-prompt-for-visual-studio"></a>K vyvolání kompilátoru pomocí příkazového řádku pro vývojáře pro sadu Visual Studio  
   
 1.  Otevřete složku program Visual Studio Tools v rámci skupiny pro program Microsoft Visual Studio.  
   
-2.  Příkazový řádek sady Visual Studio můžete použít pro přístup k kompilátor z libovolného adresáře v počítači, pokud je nainstalována aplikace Visual Studio.  
+2.  Developer Command Prompt pro sadu Visual Studio můžete použít pro přístup k kompilátor z libovolného adresáře v počítači, pokud je nainstalována aplikace Visual Studio.  
   
-3.  Vyvolejte příkazový řádek sady Visual Studio.  
+3.  Vyvolání Developer Command Prompt pro sadu Visual Studio.  
   
 4.  Na příkazovém řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.  
   

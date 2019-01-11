@@ -5,6 +5,8 @@ ms.author: douglasl
 ms.date: 12/19/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlChars.Stream
 - System.Data.SqlTypes.SqlChars.get_Stream
@@ -13,12 +15,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: f8b6f4f3a92f1d78e434263c6a7897641867c412
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: d756b78a7cdbc12562e474ca3d2c9a1f3529f6bf
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152200"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223049"
 ---
 # <a name="sqlcharsstream-property"></a>Vlastnost SqlChars.Stream
 

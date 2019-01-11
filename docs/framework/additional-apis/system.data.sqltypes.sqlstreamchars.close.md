@@ -5,18 +5,20 @@ ms.author: douglasl
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlStreamChars.Close
 api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 893ee729b864d381c4e4686024687f309d15d214
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5b7ba05b0659bfd2cad165826469c0c8f0674797
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152215"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221164"
 ---
 # <a name="sqlstreamcharsclose-method"></a>SqlStreamChars.Close – metoda
 

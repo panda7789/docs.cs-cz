@@ -5,18 +5,20 @@ ms.author: douglasl
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlStreamChars.Seek
 api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: aab3195ec0d300a7f001f98f2d646c85be939356
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1710c802324920e324b18ddea843f0a532fa0d17
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152185"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222984"
 ---
 # <a name="sqlstreamcharsseekint64-seekorigin-method"></a>Metoda SqlStreamChars.Seek (Int64, SeekOrigin)
 

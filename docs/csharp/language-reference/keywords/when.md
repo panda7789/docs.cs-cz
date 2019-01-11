@@ -1,5 +1,5 @@
 ---
-title: Když - C# odkaz
+title: Když kontextové klíčové slovo - C# odkaz
 ms.custom: seodec18
 ms.date: 03/07/2017
 f1_keywords:
@@ -8,14 +8,14 @@ f1_keywords:
 helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-ms.openlocfilehash: 103309b5e5a121647576ce120f4353b4ceef08c4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: a8f64da0ab603830972035f1c2cd3a0b1eaadaff
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235524"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221853"
 ---
- # <a name="when-c-reference"></a>Když (referenční dokumentace jazyka C#)
+# <a name="when-c-reference"></a>Když (referenční dokumentace jazyka C#)
 
 Můžete použít `when` kontextové klíčové slovo k určení podmínky filtru ve dvou kontextů:
 
@@ -29,12 +29,13 @@ Od verze C# 6, `when` lze použít v `catch` příkaz a zadejte podmínku, kter�
 ```csharp
 catch (ExceptionType [e]) when (expr)
 ```
-kde *expr* je výraz, který se vyhodnocuje na logickou hodnotu. Vrátí-li `true`, spustí obslužnou rutinu výjimky; Pokud `false`, tomu tak není. 
+
+kde *expr* je výraz, který se vyhodnocuje na logickou hodnotu. Vrátí-li `true`, spustí obslužnou rutinu výjimky; Pokud `false`, tomu tak není.
 
 V následujícím příkladu `when` – klíčové slovo k podmíněnému spuštění obslužné rutiny pro <xref:System.Net.Http.HttpRequestException> v závislosti na text zpráva o výjimce.
 
- [!code-csharp[when-with-catch](../../../../samples/snippets/csharp/language-reference/keywords/when/catch.cs)]  
-  
+[!code-csharp[when-with-catch](~/samples/snippets/csharp/language-reference/keywords/when/catch.cs)]
+
 ## <a name="when-in-a-switch-statement"></a>`when` v `switch` – příkaz
 
 Od verze C# 7.0, `case` popisky už musí být vzájemně vylučují a pořadí, ve kterém `case` popisků se zobrazí v `switch` příkazu můžete určit, které blok switch spustí. `when` – Klíčové slovo lze použít k určení podmínky filtru, který způsobí, že jeho přidružené popisek případu na hodnotu true pouze v případě, že podmínka platí to i naopak. Syntaxe je:
@@ -42,14 +43,15 @@ Od verze C# 7.0, `case` popisky už musí být vzájemně vylučují a pořadí,
 ```csharp
 case (expr) when (when-condition):
 ```
-kde *expr* je konstantní vzorek nebo vzor typu, který je ve srovnání s výrazu shody a *podmínka v případě* je libovolný výraz Boolean. 
 
-V následujícím příkladu `when` – klíčové slovo pro testování `Shape` objekty, které mají určitou oblast nula, stejně jako test pro širokou škálu `Shape` objekty, které mají větší než nula oblasti. 
+kde *expr* je konstantní vzorek nebo vzor typu, který je ve srovnání s výrazu shody a *podmínka v případě* je libovolný výraz Boolean.
 
- [!code-csharp[when-with-case#1](../../../../samples/snippets/csharp/language-reference/keywords/when/when.cs#1)]  
+V následujícím příkladu `when` – klíčové slovo pro testování `Shape` objekty, které mají určitou oblast nula, stejně jako test pro širokou škálu `Shape` objekty, které mají větší než nula oblasti.
+
+[!code-csharp[when-with-case#1](~/samples/snippets/csharp/language-reference/keywords/when/when.cs#1)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Switch – příkaz](switch.md)  
-- [try/catch – příkaz](try-catch.md)  
-- [konstrukce try/catch/finally – příkaz](try-catch-finally.md) 
+- [Switch – příkaz](switch.md)
+- [try/catch – příkaz](try-catch.md)
+- [konstrukce try/catch/finally – příkaz](try-catch-finally.md)

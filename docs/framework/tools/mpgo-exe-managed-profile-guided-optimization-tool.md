@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 68593509e384b2acd33fad0f476b6f300f2dbd92
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3809345432b705e4b44700fd6e8231c84bdce6ad
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50202175"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221619"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
@@ -25,7 +25,7 @@ Profilováním řízená optimalizace zlepšuje dobu spuštění aplikace, využ
   
 Při výkonových potížích s časem spuštění a velikostí pracovní sady pro sestavení jazyka IL doporučujeme nejdříve použít nástroj Ngen.exe k eliminaci nároků spojených s kompilací JIT a k usnadnění sdílení kódu. V případě potřeby dalšího zlepšení je k optimalizaci aplikace možné použít nástroj Mpgo.exe. Data o výkonu z neoptimalizované nativní bitové kopie sestavení je možné použít jako základ k vyhodnocení zlepšení výkonu. Použití nástroje Mpgo.exe může mít za následek rychlejší úplné spuštění a menší velikost pracovní sady. Nástroj Mpgo.exe přidá informace do sestavení jazyka IL, které nástroj Ngen.exe používá k vytvoření optimalizované nativní bitové kopie sestavení. Další informace naleznete v příspěvku [zlepšení výkonu spouštění pro aplikace klasické pracovní plochy](https://go.microsoft.com/fwlink/p/?LinkId=248943) v blogu .NET.  
   
-Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek pro vývojáře (nebo příkazový řádek sady Visual Studio v systému Windows 7) s oprávněními správce a napište do něj následující text. Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7) s přihlašovacími údaji správce a zadejte na příkazovém řádku. Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
 Pro aplikace klasické pracovní plochy:  
   
@@ -104,11 +104,11 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
   
 -   Nelze použít cesty v uvozovkách ukončené lomítkem, protože makra sady Visual Studio ve výchozím nastavení také používají koncová lomítka. (Například `–OutDir "C:\Output Folder\"` je neplatný.) Chcete-li toto omezení obejít, je možné koncové lomítko zapsat s řídicími znaky. (Například použít `-OutDir "$(OutDir)\"` místo.)  
   
--   Ve výchozím nastavení není nástroj Mpgo.exe v cestě sestavení sady Visual Studio. Je nutné přidat cestu do sady Visual Studio nebo zadat úplnou cestu v příkazovém řádku nástroje Mpgo.exe. Můžete použít buď `–Scenario` nebo `–Import` parametr v události po sestavení v sadě Visual Studio. Typickým procesem je však použít `–Scenario` jednou z příkazu pro vývojáře Visual Studio výzvu a pak pomocí `–Import` k aktualizaci optimalizovaných sestavení po každém sestavení; například: `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.  
+-   Ve výchozím nastavení není nástroj Mpgo.exe v cestě sestavení sady Visual Studio. Je nutné přidat cestu do sady Visual Studio nebo zadat úplnou cestu v příkazovém řádku nástroje Mpgo.exe. Můžete použít buď `–Scenario` nebo `–Import` parametr v události po sestavení v sadě Visual Studio. Typickým procesem je však použít `–Scenario` jednou od vývojáře příkazový řádek sady Visual Studio a pak pomocí `–Import` k aktualizaci optimalizovaných sestavení po každém sestavení; například: `"C:\Program Files\Microsoft Visual Studio 11.0\Team Tools\Performance Tools\mpgo.exe" -import "$(OutDir)tmp" -assemblylist "$(TargetPath)" -outdir "$(OutDir)\"`.  
   
 <a name="samples"></a>   
 ## <a name="examples"></a>Příklady  
- Následující příkaz nástroje Mpgo.exe z příkazového řádku pro vývojáře v sadě Visual Studio optimalizuje daňovou aplikaci:  
+ Následující příkaz Mpgo.exe z příkazového řádku pro vývojáře pro Visual Studio optimalizuje daňovou aplikaci:  
   
 ```  
 mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15  

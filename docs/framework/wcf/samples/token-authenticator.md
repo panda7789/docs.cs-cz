@@ -2,12 +2,12 @@
 title: Ověřovací data tokenu
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: 198994acb322ece374ba0e04bc4d15cb2754f995
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: d9eeee3e69d053fba9afb03e4e938cbe02c7a303
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582642"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54222893"
 ---
 # <a name="token-authenticator"></a>Ověřovací data tokenu
 Tento příklad ukazuje, jak implementovat vlastní ověřovací data tokenu. Ve Windows Communication Foundation (WCF) ověřovací data tokenu se používá k ověření tokenu používaného se zprávou, ověření, že je konzistentní a ověření identity přidružené k tokenu.
@@ -347,7 +347,7 @@ static void DisplayIdentityInformation()
   
 2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor App.config služby musí být aktualizovány tak, aby odrážely tento nový název certifikátu. Můžete vytvořit pomocí Setup.bat, pokud jste nastavili `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, na kterém je spuštěna služba. Všimněte si, že se soubor setup.bat musí být spuštěn z příkazového řádku sady Visual Studio otevřeného s oprávněními správce.  
+3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Soubor App.config služby musí být aktualizovány tak, aby odrážely tento nový název certifikátu. Můžete vytvořit pomocí Setup.bat, pokud jste nastavili `%SERVER_NAME%` proměnných hostitele plně kvalifikovaný název počítače, na kterém je spuštěna služba. Všimněte si, že se soubor setup.bat musí spustit na příkazovém řádku pro vývojáře pro sadu Visual Studio otevřeného s oprávněními správce.  
   
 4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Nemusíte to dělat s výjimkou případů, kdy certifikátu serveru vydanému klienta důvěryhodného vystavitele.  
   

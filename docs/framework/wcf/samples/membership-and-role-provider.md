@@ -2,12 +2,12 @@
 title: Členství a poskytovatel rolí
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: bff100189c904706f3c7c886945383252ce7bfcb
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 716aeeb57dc78ea9ff9205f75880b974d63fe39b
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864025"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221242"
 ---
 # <a name="membership-and-role-provider"></a>Členství a poskytovatel rolí
 Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít službu [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] zprostředkovatele členství a rolí k ověřování a autorizaci klientů.  
@@ -114,7 +114,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
 </system.serviceModel>  
 ```  
   
- Když spustíte ukázku, klient volá různé operace služby do dvou různých uživatelských účtů: Alici, Roberta a Karel. Operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři volání provedli jako uživatel "Alice" uspěli. Uživatel "Bob" by měl získat chybu při pokusu o volání metody dělení odepření přístupu. Uživatel "Karel" by měl získat chybu při pokusu o volání odepření přístupu vynásobí metody. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
+ Při spuštění ukázky klient volá různé operace služby do dvou různých uživatelských účtů: Alici, Roberta a Karel. Operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři volání provedli jako uživatel "Alice" uspěli. Uživatel "Bob" by měl získat chybu při pokusu o volání metody dělení odepření přístupu. Uživatel "Karel" by měl získat chybu při pokusu o volání odepření přístupu vynásobí metody. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
@@ -134,7 +134,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
 1.  Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.  
   
-2.  Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku aplikace Visual Studio spusťte s oprávněními správce. Tím se nainstaluje služba certifikáty požadované ke spuštění ukázky.  
+2.  Spusťte Setup.bat z instalační složky s ukázkou v příkazovém řádku pro vývojáře pro sadu Visual Studio spusťte s oprávněními správce. Tím se nainstaluje služba certifikáty požadované ke spuštění ukázky.  
   
 3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
@@ -150,7 +150,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
 4.  Zkopírujte soubory programu klienta k adresáři klienta v klientském počítači. Také kopírovat soubory Setup.bat Cleanup.bat a ImportServiceCert.bat do klienta.  
   
-5.  Na serveru, otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte `setup.bat service`. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
+5.  Na serveru, otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte `setup.bat service`. Spuštění `setup.bat` s `service` argument vytvoří certifikát služby se plně kvalifikovaný název domény počítače a exportuje certifikát služby do souboru s názvem Service.cer.  
   
 6.  Upravit soubor Web.config tak, aby odrážely nový název certifikátu (v `findValue` atribut [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)), což je stejné jako plně kvalifikovaný název domény počítače.  
   
@@ -158,7 +158,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
   
 8.  V souboru Client.exe.config v klientském počítači změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
-9. V klientském počítači otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte ImportServiceCert.bat. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
+9. V klientském počítači otevřete příkazový řádek vývojáře pro sadu Visual Studio s oprávněními správce a spusťte ImportServiceCert.bat. To importuje certifikát služby ze souboru Service.cer do CurrentUser - TrustedPeople úložiště.  
   
 10. Na klientském počítači spusťte Client.exe z příkazového řádku. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
@@ -167,7 +167,7 @@ Zprostředkovatel členství a rolí ukázka demonstruje, jak můžete použít 
 -   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 > [!NOTE]
->  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
+>  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.  
   
 ## <a name="the-setup-batch-file"></a>Instalační dávkový soubor  
  Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušné certifikáty ke spuštění aplikace v místním prostředí, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.  

@@ -2,12 +2,12 @@
 title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: 41f5508ea5805581282389e0731a00dde7796bc0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0420a174705c12384509bf1d8022d664d7cb354e
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520635"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223218"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit zasílání zpráv a dva pracovní postupy hostovaný jako služeb pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem Contoso, Inc.  
@@ -114,7 +114,7 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
 |Služby pracovních postupů|Vývojový diagram s definicí procesu je hostovaný ve službě (v tomto příkladu služba je hostována v konzolové aplikaci).|HiringRequestService|  
 |Aktivity zasílání zpráv|Vývojový diagram používá zasílání zpráv aktivity dvěma způsoby:<br /><br /> -K získání informací od uživatele (Chcete-li přijímat rozhodnutí a související informace v každém kroku schválení).<br />-K interakci s ostatními existující službami (InboxService a OrgDataService použít odkazy na službu).|HiringRequestService|  
 |Obsah na základě korelace|Na vlastnost ID náborovou žádosti o korelaci zprávy schválení:<br /><br /> – Když se spustí proces, popisovače korelace je inicializován s ID žádosti.<br />-Příchozí zprávy schválení je možné korelovat na jejich ID (ID požadavku je první parametr každé zprávy schválení).|HiringRequestService / ResumeRequestService|  
-|Vlastní aktivity (deklarativní a na základě kódu)|Existuje několik vlastních aktivit v této ukázce:<br /><br /> -   `SaveActionTracking`: Tato aktivita vygeneruje vlastní <xref:System.Activities.Tracking.TrackingRecord> (pomocí <xref:System.Activities.NativeActivityContext.Track%2A>). Tato aktivita se vytvořila pomocí imperativního kódu rozšíření <xref:System.Activities.NativeActivity>.<br />-   `GetEmployeesByPositionTypes`: Tato aktivita přijímá seznam ID typu umístění a vrátí seznam lidí, kteří mají této pozici ve společnosti Contoso. Tato aktivita deklarativně vytvořila (použití návrháře aktivit).<br />-   `SaveHiringRequestInfo`: Tato aktivita se uloží informace `HiringRequest` (pomocí `HiringRequestRepository.Save`). Tato aktivita se vytvořila pomocí imperativního kódu rozšíření <xref:System.Activities.CodeActivity>.|HiringRequestService|  
+|Vlastní aktivity (deklarativní a na základě kódu)|Existuje několik vlastních aktivit v této ukázce:<br /><br /> -   `SaveActionTracking`: Tato aktivita vygeneruje vlastní <xref:System.Activities.Tracking.TrackingRecord> (pomocí <xref:System.Activities.NativeActivityContext.Track%2A>). Tato aktivita se vytvořila pomocí imperativního kódu rozšíření <xref:System.Activities.NativeActivity>.<br />-   `GetEmployeesByPositionTypes`: Tato aktivita přijímá seznam ID typu umístění a vrátí seznam lidí, kteří mají této pozici ve společnosti Contoso. Tato aktivita deklarativně vytvořila (použití návrháře aktivit).<br />-   `SaveHiringRequestInfo`: Tato aktivita uloží informace `HiringRequest` (pomocí `HiringRequestRepository.Save`). Tato aktivita se vytvořila pomocí imperativního kódu rozšíření <xref:System.Activities.CodeActivity>.|HiringRequestService|  
 |Trvalost poskytované systémem SQL Server|<xref:System.ServiceModel.Activities.WorkflowServiceHost> Instanci, která hostuje definici vývojový diagram procesu je nakonfigurován na použití stálost poskytované systémem SQL Server.|HiringRequestService / ResumeRequestService|  
 |Vlastní sledování|Ukázka zahrnuje vlastní sledování účastník, který ukládá historii `HiringRequestProcess` (to zaznamenává, jaké akce proběhla, kdo a kdy). Zdrojový kód je ve složce Sledování HiringRequestService.|HiringRequestService|  
 |Sledování trasování událostí pro Windows|Poskytované systémem sledování ETW konfigurován v souboru App.config v HiringRequestService služby.|HiringRequestService|  
@@ -131,13 +131,13 @@ Tento příklad ukazuje, jak implementovat obchodních procesů pomocí aktivit 
 ## <a name="data-storage"></a>Úložiště dat  
  Data uložená v databázi serveru SQL Server s názvem `ContosoHR` (skript pro vytvoření této databáze se nachází v `DbSetup` složky). Instance pracovního postupu jsou uloženy v databázi serveru SQL Server s názvem `InstanceStore` (skriptů pro vytváření v úložišti instancí jsou součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] distribuce).  
   
- Obě databáze jsou vytvořeny pomocí skriptu Setup.cmd z příkazového řádku sady Visual Studio.  
+ Obě databáze jsou vytvořeny pomocí skriptu Setup.cmd na příkazovém řádku pro vývojáře pro sadu Visual Studio.  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
   
 #### <a name="to-create-the-databases"></a>K vytvoření databáze  
   
-1.  Otevřete příkazový řádek sady Visual Studio.  
+1.  Otevřete příkazový řádek pro vývojáře pro sadu Visual Studio.  
   
 2.  Přejděte do složky s ukázkou.  
   

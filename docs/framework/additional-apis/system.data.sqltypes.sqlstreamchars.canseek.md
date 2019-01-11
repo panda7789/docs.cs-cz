@@ -5,6 +5,8 @@ ms.author: douglasl
 ms.date: 12/19/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlStreamChars.CanSeek
 - System.Data.SqlTypes.SqlStreamChars.get_CanSeek
@@ -12,12 +14,12 @@ api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 0145fe87e2c8aa3dd40e73f0089fe40b6b6cca30
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 8d7bd7fb90177932b413c379f618a6d36374de57
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152239"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54223140"
 ---
 # <a name="sqlstreamcharscanseek-property"></a>Vlastnost SqlStreamChars.CanSeek
 

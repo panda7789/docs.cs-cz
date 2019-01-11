@@ -7,17 +7,17 @@ helpviewer_keywords:
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4cece1227b5210cf839aff0658267ae480b23b6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f0827634278f248089b105844dadf8959f953595
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196459"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221593"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (nástroj pro podpis)
 Sign Tool je nástroj příkazového řádku, který digitálně podepíše soubory, ověří podpisy v souborech a časová razítka souborů.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit tento nástroj, použijte příkazový řádek vývojáře (nebo příkazový řádek Visual Studio v systému Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. Ke spuštění nástroje, použijte příkazový řádek pro vývojáře pro Visual Studio (nebo příkazový řádek Visual Studio ve Windows 7). Další informace najdete v tématu [příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -129,7 +129,7 @@ signtool [command] [options] [file_name | ...]
 |`/hash` (`SHA1`&#124;`SHA256`)|Určuje volitelný hashovací algoritmus k použití pro hledání souboru v katalogu.|  
 |`/kp`|Určuje, že by mělo být provedeno ověření pomocí zásady podepisování ovladačů v režimu jádra.|  
 |`/ms`|Používá několik sémantik pro ověřování. Toto je výchozí chování [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) volat [!INCLUDE[win8](../../../includes/win8-md.md)] a vyšší.|  
-|`/o` *Verze*|Ověřuje soubor podle verze operačního systému. *Verze* má následující formát: *PlatformID*:*VerMajor*. *VerMinor*. *BuildNumber*. *PlatformID* představuje podkladovou hodnotu <xref:System.PlatformID> člena výčtu. **Důležité:** použití `/o` přepínače doporučujeme. Pokud `/o` není zadán, SignTool.exe může vrátit neočekávané výsledky. Například, pokud není zadána `/o` přepínače, systémové katalogy, které byly správně ověřeny ve starším operačním systému nemusí být správně ověřeny v novějším operačním systému.|  
+|`/o` *Verze*|Ověřuje soubor podle verze operačního systému. *Verze* má následující formát: *PlatformID*:*VerMajor*. *VerMinor*. *BuildNumber*. *PlatformID* představuje podkladovou hodnotu <xref:System.PlatformID> člena výčtu. **Důležité:**  Použití `/o` přepínače doporučujeme. Pokud `/o` není zadán, SignTool.exe může vrátit neočekávané výsledky. Například, pokud není zadána `/o` přepínače, systémové katalogy, které byly správně ověřeny ve starším operačním systému nemusí být správně ověřeny v novějším operačním systému.|  
 |`/p7`|Ověří soubory PKCS #7. Žádné existující zásady nejsou použity pro ověřování PKCS #7. Podpis je zkontrolován a řetězec je sestaven pro podpisový certifikát.|  
 |`/pa`|Určuje, že mají být použity výchozí zásady ověření pomocí technologie Authenticode. Pokud `/pa` možnost nezadáte, nástroj Sign Tool použije zásady ověřování ovladačů Windows. Tento parametr nelze použít s `catdb` možnosti.|  
 |`/pg` *PolicyGUID*|Určuje zásady ověření podle identifikátoru GUID. *PolicyGUID* odpovídá ActionID zásadám ověřování. Tento parametr nelze použít s `catdb` možnosti.|  

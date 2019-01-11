@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cded8ce271ea0f3d1dbb8fc3d9a072ee4a23d1ee
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6e648cdadb567919d320ea8a12d30b7be306e67a
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149169"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221229"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt pro sadu Visual Studio
 
@@ -34,7 +34,7 @@ Můžete mít více příkazových řádků, v závislosti na verzi sady Visual 
 
 1. Do vyhledávacího pole na hlavním panelu, začněte psát název nástroje, jako například `dev` nebo `developer command prompt`. Tím se zobrazí seznam nainstalovaných aplikací, které odpovídají vaší vyhledávací vzory. Pokud hledáte různých příkazového řádku, zkuste zadat jinou hledaný termín, jako `prompt`.
 
-2. Zvolte **Developer Command Prompt** (nebo příkazový řádek, který chcete použít).
+2. Zvolte **Developer Command Prompt pro sadu Visual Studio** (nebo příkazový řádek, který chcete použít).
 
 ### <a name="in-windows-81"></a>Ve Windows 8.1
 

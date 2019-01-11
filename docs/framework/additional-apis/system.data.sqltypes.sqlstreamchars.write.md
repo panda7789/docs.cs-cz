@@ -5,18 +5,20 @@ ms.author: douglasl
 ms.date: 12/20/2018
 ms.technology:
 - dotnet-data
+topic_type:
+- apiref
 api_name:
 - System.Data.SqlTypes.SqlStreamChars.Write
 api_location:
 - System.Data.dll
 api_type:
 - Assembly
-ms.openlocfilehash: e8c8ee7ab7a744c1a1d18212f1c7f9788c91ea0d
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: dd9bb691f6d07f4875d684eef76d6329667003af
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152191"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221905"
 ---
 # <a name="sqlstreamcharswritechar-int32-int32-method"></a>Metoda SqlStreamChars.Write (Char [], Int32, Int32)
 

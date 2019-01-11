@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat'
+title: 'Postupy: Zápis zpráv a čtení zpráv z bloku toku dat'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 1a9bf078-aa82-46eb-b95a-f87237f028c5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47a61a1d01984eeefb2f1f09774374dc29a774d3
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 638cd917bdb40fa5bbf1cb02857c71a0127d0e3f
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087806"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221151"
 ---
-# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv do bloku toku dat a čtení zpráv z bloku toku dat
+# <a name="how-to-write-messages-to-and-read-messages-from-a-dataflow-block"></a>Postupy: Zápis zpráv a čtení zpráv z bloku toku dat
 Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro zápis zpráv a čtení zpráv z bloku toku dat. Knihovna TPL datového toku poskytuje synchronní a asynchronní metody pro zápis zpráv a čtení zpráv z bloku toku dat. Tento dokument používá <xref:System.Threading.Tasks.Dataflow.BufferBlock%601?displayProperty=nameWithType> třídy. <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> Třídy ukládá do vyrovnávací paměti zpráv a jak se bude chovat jako zdroj zprávy a jako cíl zprávy.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -52,7 +52,7 @@ Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro zá
  [!code-vb[TPLDataflow_ReadWrite#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_readwrite/vb/dataflowreadwrite.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowReadWrite.cs` (`DataflowReadWrite.vb` v jazyce Visual Basic), a pak spusťte následující příkaz v okně Příkazový řádek sady Visual Studio.  
+ Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowReadWrite.cs` (`DataflowReadWrite.vb` v jazyce Visual Basic), a pak spuštěním následujícího příkazu na příkazovém řádku pro vývojáře pro Visual Studio okno.  
   
  Visual C#  
   
@@ -63,7 +63,7 @@ Tento dokument popisuje způsob použití knihovně TPL Dataflow Library pro zá
  **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowReadWrite.vb**  
   
 ## <a name="next-steps"></a>Další kroky  
- Tento příklad ukazuje, jak číst z a zapisovat do bloku zprávy přímo. Můžete také připojit bloků toku dat do formuláře *kanály*, které představují lineární posloupnosti bloků toku dat, nebo *sítě*, které jsou grafy bloků toku dat. V kanálu nebo síťové zdroje asynchronně šířit data do cíle jako tato data k dispozici. Příklad, který vytvoří kanál základní toku dat, naleznete v tématu [návod: vytvoření kanálu toku dat](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Příklad, který vytvoří složitější síť toku dat, naleznete v tématu [návod: použití toku dat ve formulářové aplikaci Windows](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
+ Tento příklad ukazuje, jak číst z a zapisovat do bloku zprávy přímo. Můžete také připojit bloků toku dat do formuláře *kanály*, které představují lineární posloupnosti bloků toku dat, nebo *sítě*, které jsou grafy bloků toku dat. V kanálu nebo síťové zdroje asynchronně šířit data do cíle jako tato data k dispozici. Příklad, který vytvoří kanál základní toku dat, naleznete v tématu [názorný postup: Vytvoření kanálu toku dat](../../../docs/standard/parallel-programming/walkthrough-creating-a-dataflow-pipeline.md). Příklad, který vytvoří složitější síť toku dat, naleznete v tématu [názorný postup: Použití toku dat v Windows Forms aplikace](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ## <a name="see-also"></a>Viz také:
 

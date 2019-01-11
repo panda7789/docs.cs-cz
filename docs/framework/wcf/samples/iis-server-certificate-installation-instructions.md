@@ -2,18 +2,18 @@
 title: Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: ae1f90a68acc4b1217c46a6570031a88e60c6e88
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: a89d907b9be25c83a74f0c5d60d184637552f297
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838244"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221099"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)
 Ke spuštění ukázky, které zabezpečeně komunikovat s Internetové informační služby (IIS), musíte vytvořit a nainstalovat certifikát serveru.  
   
 ## <a name="step-1-creating-certificates"></a>Krok 1. Vytváření certifikátů  
- Chcete-li vytvořit certifikát pro počítač, otevřete příkazový řádek sady Visual Studio s oprávněními správce a spusťte Setup.bat, který je součástí všech ukázek, které používají zabezpečené komunikace se službou IIS. Ujistěte se, že cesta obsahuje složku obsahující Makecert.exe předtím, než spustíte tento dávkový soubor. Následující příkaz se používá k vytvoření certifikátu v Setup.bat.  
+ Chcete-li vytvořit certifikát pro počítač, otevřete Developer Command Prompt pro sadu Visual Studio s oprávněními správce a spusťte Setup.bat, který je součástí všech ukázek, které používají zabezpečené komunikace se službou IIS. Ujistěte se, že cesta obsahuje složku obsahující Makecert.exe předtím, než spustíte tento dávkový soubor. Následující příkaz se používá k vytvoření certifikátu v Setup.bat.  
   
 ```  
 makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exchange -sk ServiceModelSamples-HTTPS-Key  
