@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a94f9c650927aee0f120ee3c0b1199b6c977ef0e
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.openlocfilehash: 50ea2b1fefe5c41f0c67ab8c12362f19ea125b5b
+ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53776731"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54186212"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho systémové závislosti napříč sítí pomocí nástroje System Center Configuration Manager. V tomto článku se předpokládá, že všechny cílové klientské počítače splňují minimální požadavky rozhraní .NET Framework. Seznam všech softwarových a hardwarových požadavků pro instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).  
@@ -254,10 +254,11 @@ Tento článek popisuje, jak může správce systému nasadit [!INCLUDE[net_v45]
   
  Další kódy chyb:  
   
--   [Kódy chyb Instalační služby systému Windows](/windows/desktop/msi/error-codes)  
-  
--   [Výsledné kódy agenta služby Windows Update](/security-updates/WindowsUpdateServices/18127055)  
-  
-## <a name="see-also"></a>Viz také  
-- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
+-   [Kódy chyb Instalační služby systému Windows](/windows/desktop/msi/error-codes)
+
+-   [Výsledné kódy agenta služby Windows Update](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
+
+## <a name="see-also"></a>Viz také:
+
+- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)
 - [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)

@@ -3,12 +3,12 @@ title: Historie jazyka C# – průvodce v C#
 description: Co vzhled jazyka, jako je v jeho nejstarší verze a jak vyvinula od?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: c24ac6c87762c4808c0794bf7c724eee942ad0fc
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: f5bf9a7de7c8681fa2ebb49ba1cf6991b9b137c9
+ms.sourcegitcommit: 90775b20343b6ad831af6f5380f8ab7553abb16b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54152057"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54186225"
 ---
 # <a name="the-history-of-c"></a>Historie jazyka C# #
 
@@ -168,7 +168,6 @@ Další funkce zahrnuté:
 
 - [Zahození](./csharp-7.md#discards)
 - [Binární literály a oddělovače číslic:](./csharp-7.md#numeric-literal-syntax-improvements)
-- [Návratové a místní hodnoty](./csharp-7.md#ref-locals-and-returns)
 - [Vyvolání výrazů](./csharp-7.md#throw-expressions)
 
 Všechny tyto funkce nabízejí zajímavé nové funkce pro vývojáře a příležitosti pro zápis i čistější kód než kdy dřív. Zvýraznění je kondenzačních deklarace proměnné pro použití s `out` – klíčové slovo a tím, že více návratových hodnot přes řazené kolekce členů.
