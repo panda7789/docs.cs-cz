@@ -3,15 +3,15 @@ title: Cluster květin iris pomocí clusteringu learner - ML.NET
 description: Zjistěte, jak použít ve scénáři clusteringu ML.NET
 author: pkulikov
 ms.author: johalex
-ms.date: 12/17/2018
+ms.date: 01/11/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: cf743864f566c58fad2146fbabdf24f860330b2f
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: ab888a2cd9469d5ce0131ba2b17f7c134cf2855c
+ms.sourcegitcommit: 81bd16c7435a8c9183d2a7e878a2a5eff7d04584
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146196"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249070"
 ---
 # <a name="tutorial-cluster-iris-flowers-using-a-clustering-learner-with-mlnet"></a>Kurz: Cluster květin iris pomocí clusteringu learner ML.NET
 
@@ -84,9 +84,9 @@ Odeberte stávající definice třídy a přidejte následující kód, který d
 
 [!code-csharp[Define data classes](~/samples/machine-learning/tutorials/IrisFlowerClustering/IrisData.cs#ClassDefinitions)]
 
-`IrisData` je třída vstupní data a obsahuje definice pro jednotlivé funkce z datové sady. Použití [sloupec](xref:Microsoft.ML.Runtime.Api.ColumnAttribute) atributy indexů zdrojových sloupců v souboru datové sady.
+`IrisData` je třída vstupní data a obsahuje definice pro jednotlivé funkce z datové sady. Použití [sloupec](xref:Microsoft.ML.Data.ColumnAttribute) atributy indexů zdrojových sloupců v souboru datové sady.
 
-`ClusterPrediction` Třída reprezentuje výstup model clusteringu u `IrisData` instance. Použití [Názevsloupce](xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute) atribut pro vytvoření vazby `PredictedClusterId` a `Distances` polím **PredictedLabel** a **skóre** sloupce v uvedeném pořadí. V případě clusteru úloh tyto sloupce mají následující význam:
+`ClusterPrediction` Třída reprezentuje výstup model clusteringu u `IrisData` instance. Použití [Názevsloupce](xref:Microsoft.ML.Data.ColumnNameAttribute) atribut pro vytvoření vazby `PredictedClusterId` a `Distances` polím **PredictedLabel** a **skóre** sloupce v uvedeném pořadí. V případě clusteru úloh tyto sloupce mají následující význam:
 
 - **PredictedLabel** sloupec obsahuje ID předpokládané clusteru.
 - **Skóre** sloupec obsahuje pole s kvadratických Euclidean vzdálenosti se centroids clusteru. Délka pole je rovna počtu clusterů.
@@ -127,9 +127,9 @@ Přidejte následující kód, který `Main` metoda nastavit způsob, jak načí
 
 [!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#SetupTextLoader)]
 
-Všimněte si, že názvy sloupců a indexy odpovídat definované schéma `IrisData` třídy. <xref:Microsoft.ML.Runtime.Data.DataKind.R4?displayProperty=nameWithType> Hodnota určuje, `float` typu.
+Všimněte si, že názvy sloupců a indexy odpovídat definované schéma `IrisData` třídy. <xref:Microsoft.ML.Data.DataKind.R4?displayProperty=nameWithType> Hodnota určuje, `float` typu.
 
-Použití vytvořena instance <xref:Microsoft.ML.Runtime.Data.TextLoader> instance má vytvořit <xref:Microsoft.ML.Runtime.Data.IDataView> instanci, která představuje zdroj dat pro trénovací datové sady:
+Použití vytvořena instance <xref:Microsoft.ML.Data.TextLoader> instance má vytvořit <xref:Microsoft.ML.Data.IDataView> instanci, která představuje zdroj dat pro trénovací datové sady:
 
 [!code-csharp[Create IDataView](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateDataView)]
 
@@ -160,7 +160,7 @@ V tomto okamžiku máte model, který je možné integrovat do všech existujíc
 
 ## <a name="use-the-model-for-predictions"></a>Použít model pro předpovědi
 
-K následné predikci, použijte <xref:Microsoft.ML.Runtime.Data.PredictionFunction%602> třídu, která přebírá instance typu vstupním kanálem transformer a vytváří instance typu výstupu. Přidejte následující řádek, který `Main` metodu pro vytvoření instance této třídy:
+K následné predikci, použijte <xref:Microsoft.ML.PredictionEngine%602> třídu, která přebírá instance typu vstupním kanálem transformer a vytváří instance typu výstupu. Přidejte následující řádek, který `Main` metodu pro vytvoření instance této třídy:
 
 [!code-csharp[Create predictor](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#Predictor)]
 

@@ -4,12 +4,12 @@ description: Prozkoumejte funkce engineering součásti, které jsou podporovan�
 author: JRAlexander
 ms.custom: seodec18
 ms.date: 12/14/2018
-ms.openlocfilehash: 72e4077151d35b9bff661c28c9a20626098a5c69
-ms.sourcegitcommit: 882a2f56bf6afdcb40d468e4ae9371296822b68c
+ms.openlocfilehash: c311aa59426b716ffcd2c53e890d2e3e380360a7
+ms.sourcegitcommit: 81bd16c7435a8c9183d2a7e878a2a5eff7d04584
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53451089"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249122"
 ---
 # <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
@@ -103,7 +103,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.MissingValueDroppingTransformer> | Zahodí, chybějící hodnoty ze sloupce. |
 | <xref:Microsoft.ML.Transforms.MissingValueIndicatorTransform> | Vytvoří logickou výstupního sloupce se stejný počet slotů jako vstupní sloupec, kde je výstupní hodnota true Pokud chybí hodnota ve vstupním sloupci. |
 | <xref:Microsoft.ML.Transforms.MissingValueReplacingTransformer> | Zpracování chybějící hodnoty tak, že nahradíte s výchozí hodnotu nebo hodnotu mean/min/max (netextovými pouze pro sloupce). |
-| <xref:Microsoft.ML.Transforms.MissingValueIndicatorTransform> | Vytvoří logickou výstupního sloupce se stejný počet slotů jako vstupní sloupec, kde je výstupní hodnota true Pokud chybí hodnota ve vstupním sloupci. |
 
 ## <a name="normalization"></a>Normalizace
 

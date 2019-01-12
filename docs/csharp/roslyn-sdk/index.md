@@ -3,12 +3,12 @@ title: .NET Compiler Platform SDK (rozhraní Roslyn API)
 description: Zjistěte, jak pomocí sady SDK platformy kompilátoru .NET (také nazývané rozhraní Roslyn API) a pochopení kódu .NET, přímé chyby, opravte tyto chyby.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 62f2cf0eb8a7c7cf3606bb55efd3525059a6a267
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: be65d8ecafc13fc699efb10dc396b0631ba70810
+ms.sourcegitcommit: 81bd16c7435a8c9183d2a7e878a2a5eff7d04584
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221268"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54249135"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 
@@ -31,7 +31,7 @@ Existují tři hlavní scénáře pro zápis analyzátory a opravy kódu:
 
 1. [*Vynucovat standardy kódování týmu*](#enforce-team-coding-standards)
 1. [*Poskytovat pokyny balíčků knihovny*](#provide-guidance-with-library-packages)
-1. [*Poskytují obecné pokyny pro psaní kódu*](#provide-general-coding-guidance)
+1. [*Obecné pokyny*](#provide-general-guidance)
 
 ## <a name="enforce-team-coding-standards"></a>Vynucovat standardy kódování týmu
 
