@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a982082611760e4f901c427af25a0a49a4e243a1
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 4718dadddb2ad88ece05312b2f2b7232271d5b0e
+ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580455"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54221385"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí být k dispozici ve vstupu pro shodu, která se má najít.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -49,7 +49,7 @@ Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí
 ### <a name="match-zero-or-more-times-"></a>Odpovídá nule nebo víckrát: *  
  `*` Kvantifikátor Porovná předchozí prvek nulakrát nebo vícekrát. Je ekvivalentní `{0,}` kvantifikátor. `*` je greedy kvantifikátor, jehož ekvivalent opožděné je `*?`.  
   
- Následující příklad ukazuje tento regulární výraz. Devět číslic ve vstupním řetězci, pět shoduje se vzorem a čtyři (`95`, `929`, `9129`, a `9919`) nepodporují.  
+ Následující příklad ukazuje tento regulární výraz. Devět číslic ve vstupním řetězci, pět shoduje se vzorem a čtyři (`95`, `929`, `9219`, a `9919`) nepodporují.  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  
