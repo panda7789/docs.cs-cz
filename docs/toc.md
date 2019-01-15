@@ -205,7 +205,6 @@
 ### [Usnadnění](framework/ui-automation/)
 ### [Data a modelování](framework/data/)
 ### [Klientské aplikace](framework/develop-client-apps.md)
-#### [Technologie CCT (Common Client Technologies)](framework/common-client-technologies/)
 #### [Windows Presentation Foundation](framework/wpf/)
 #### [Windows Forms](framework/winforms/)
 ### [Aplikace orientované na služby s použitím technologie WCF](framework/wcf/)

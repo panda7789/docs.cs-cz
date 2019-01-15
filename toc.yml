@@ -110,9 +110,6 @@ items:
       - name: Domény a sestavení aplikací
         tocHref: /dotnet/framework/app-domains/
         topicHref: /dotnet/framework/app-domains/index
-      - name: Technologie CCT (Common Client Technologies)
-        tocHref: /dotnet/framework/common-client-technologies/
-        topicHref: /dotnet/framework/common-client-technologies/index
       - name: Konfigurace aplikací pomocí konfiguračních souborů
         tocHref: /dotnet/framework/configure-apps/
         topicHref: /dotnet/framework/configure-apps/index
@@ -613,9 +610,9 @@ items:
       - name: Kurzy
         tocHref: /dotnet/machine-learning/tutorials/
         topicHref: /dotnet/machine-learning/tutorials/index
-ms.openlocfilehash: 59b58c95a40b2db2a5cb9da50ad4bec96e9f782c
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: fa81883a0229859aa78d0775122e492951f99f10
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030032"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307341"
