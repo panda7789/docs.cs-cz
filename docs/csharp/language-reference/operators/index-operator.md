@@ -1,7 +1,7 @@
 ---
 title: '[] – Operátor - C# odkaz'
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 01/10/2019
 f1_keywords:
 - '[]_CSharpKeyword'
 helpviewer_keywords:
@@ -10,52 +10,62 @@ helpviewer_keywords:
 - '[] operator [C#]'
 - indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
-ms.openlocfilehash: 3e2ce5c4b74cbf79e00410791ffcc31368f78648
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: c464dab1ebf62d33b74c83b8d5c3c563fef4e77c
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243995"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307120"
 ---
 # <a name="-operator-c-reference"></a>[] – operátor (Referenční dokumentace jazyka C#)
-Hranaté závorky (`[]`) se používají pro pole, indexery a atributy. Můžete také používají s ukazateli.  
-  
-## <a name="remarks"></a>Poznámky  
- Typ pole je typu, za nímž následuje `[]`:  
-  
- [!code-csharp[csRefOperators#43](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_1.cs)]  
-  
- O přístup k prvku pole, index požadovaný element uzavřený v hranatých závorkách:  
-  
- [!code-csharp[csRefOperators#44](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_2.cs)]  
-  
- Pokud pole indexu je mimo rozsah, je vyvolána výjimka.  
-  
- Pole indexování operátor nelze přetížit; typy však můžete definovat indexerů, které provést jeden nebo více parametrů. Indexer parametry jsou uzavřeny do hranatých závorek, stejně jako indexy pole, ale mohou být deklarovány parametry indexer bude libovolný typ, na rozdíl od indexy pole, které musí být integrálního typu.  
-  
- Například rozhraní .NET Framework definuje `Hashtable` typ, který přidruží klíče a hodnoty libovolného typu:  
-  
- [!code-csharp[csRefOperators#45](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_3.cs)]  
-  
- Hranaté závorky se také používají k určení [atributy](../../../csharp/programming-guide/concepts/attributes/index.md):  
-  
- [!code-csharp[csRefOperators#46](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_4.cs)]  
-  
- Hranaté závorky můžete použít k indexování vypnout ukazatel:  
-  
- [!code-csharp[csRefOperators#47](../../../csharp/language-reference/operators/codesnippet/CSharp/index-operator_5.cs)]  
-  
- Žádné kontroly hranic, se provádí.  
-  
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)  
-- [Pole](../../../csharp/programming-guide/arrays/index.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
-- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
-- [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)
+Hranaté závorky, `[]`, se obvykle používají pro přístup k prvkům pole, indexovací člen nebo ukazatel.
+
+Další informace o přístup k prvkům ukazatel, naleznete v tématu [postupy: přístup k elementu pole pomocí ukazatele](../../programming-guide/unsafe-code-pointers/how-to-access-an-array-element-with-a-pointer.md).
+
+Můžete také použít hranaté závorky k určení [atributy](../../programming-guide/concepts/attributes/index.md):
+
+```csharp
+[System.Diagnostics.Conditional("DEBUG")]
+void TraceMethod() {}
+```
+
+## <a name="array-access"></a>Přístup k poli
+
+Následující příklad ukazuje, jak přistupovat k prvkům pole:
+
+[!code-csharp-interactive[array access](~/samples/snippets/csharp/language-reference/operators/IndexOperatorExamples.cs#Arrays)]
+
+Pokud pole indexu je mimo hranice odpovídající dimenze v poli, <xref:System.IndexOutOfRangeException> je vyvolána výjimka.
+
+Jak ukazuje předchozí příklad, také použít hranaté závorky v deklaraci typu pole a vytvoření instance pole instance.
+
+Další informace o polích naleznete v tématu [pole](../../programming-guide/arrays/index.md).
+
+## <a name="indexer-access"></a>Přístup indexeru
+
+Následující příklad používá .NET <xref:System.Collections.Generic.Dictionary%602> typu k předvedení přístup indexeru:
+
+[!code-csharp-interactive[indexer access](~/samples/snippets/csharp/language-reference/operators/IndexOperatorExamples.cs#Indexers)]
+
+Indexery umožňují index instance typu uživatelem definované v podobným způsobem jako indexování pole. Na rozdíl od indexy pole, které musí být celé číslo, mohou být deklarovány argumenty indexeru být libovolného typu.
+
+Další informace o indexerech najdete v tématu [indexery](../../programming-guide/indexers/index.md).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Přístup k prvkům `[]` není považováno za očekával se přetěžovatelný operátor. Použití [indexery](../../programming-guide/indexers/index.md) pro podporu indexování pomocí uživatelem definovaných typů.
+
+## <a name="c-language-specification"></a>specifikace jazyka C#
+
+Další informace najdete v tématu [přístup k prvkům](~/_csharplang/spec/expressions.md#element-access) a [přístup k prvkům ukazatel](~/_csharplang/spec/unsafe-code.md#pointer-element-access) oddíly [ C# specifikace jazyka](../language-specification/index.md).
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [Pole](../../programming-guide/arrays/index.md)
+- [Indexery](../../programming-guide/indexers/index.md)
+- [Typy ukazatelů](../../programming-guide/unsafe-code-pointers/pointer-types.md)
+- [Atributy](../../programming-guide/concepts/attributes/index.md)

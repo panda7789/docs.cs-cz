@@ -3,12 +3,12 @@ title: Prozkoumání kódu pomocí vizualizéru syntaxe Roslyn v sadě Visual St
 description: Vizualizéru syntaxe poskytuje vizuální nástroj, který chcete prozkoumat modelů, který generuje sada SDK platformy kompilátoru .NET pro kód.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: 9b283f656b5c468a2270abe9818a89218ce63d16
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2d1c6d0b9f65324ee2eadafaa7f98360f37e7bb7
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143558"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307198"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Prozkoumání kódu pomocí vizualizéru syntaxe Roslyn v sadě Visual Studio
 
@@ -80,7 +80,7 @@ Tady je dokovací rozložení pomocí okna nástroje vizualizátor a syntaxe gra
 
 Další možností je umístit okno grafu syntaxe na druhém monitoru, v nastavení dvou monitorů.
 
-# <a name="inspecting-semantics"></a>Kontrola sémantiku
+## <a name="inspecting-semantics"></a>Kontrola sémantiku
 
 Syntax Visualizer umožňuje základní kontroly symbolů a sémantické informace. Typ `double x = 1 + 1;` uvnitř Main() v příklad jazyka C#. Vyberte výraz `1 + 1` v okně editoru kódu. Zvýrazní vizualizéru **AddExpression** uzlu ve vizualizátoru. Klikněte pravým tlačítkem myši na tomto **AddExpression** a klikněte na **zobrazení symbolů (pokud existuje)**. Všimněte si, že většina položek nabídky má kvalifikátor "je-li k dispozici". Syntax Visualizer zkontroluje, zda obsahuje vlastnosti uzlu, včetně vlastnosti, které nemusí být k dispozici pro všechny uzly. 
 

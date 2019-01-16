@@ -3,13 +3,13 @@ title: Strojové učení transformací dat - ML.NET
 description: Prozkoumejte funkce engineering součásti, které jsou podporované v ML.NET.
 author: JRAlexander
 ms.custom: seodec18
-ms.date: 12/14/2018
-ms.openlocfilehash: c311aa59426b716ffcd2c53e890d2e3e380360a7
-ms.sourcegitcommit: 81bd16c7435a8c9183d2a7e878a2a5eff7d04584
+ms.date: 01/14/2019
+ms.openlocfilehash: ebcbcc56eeb7c3caf7350e6c4bfd53997582652e
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54249122"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307497"
 ---
 # <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
@@ -23,11 +23,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | Transformace | Definice |
 | --- | --- |
 | <xref:Microsoft.ML.Transforms.GroupTransform> | Skupiny hodnoty pro skalární sloupec jako vektor podle ID souvislých skupiny. |
-| <xref:Microsoft.ML.Legacy.Transforms.FeatureCombiner> | Do sloupce jednu funkci k dispozici všechny funkce. |
-| <xref:Microsoft.ML.Legacy.Transforms.ManyHeterogeneousModelCombiner> | Kombinuje posloupnost TransformModels a PredictorModel do jednoho PredictorModel. |
-| <xref:Microsoft.ML.Legacy.Transforms.ModelCombiner> | Kombinuje posloupnost TransformModels do jednoho modelu. |
-| <xref:Microsoft.ML.Legacy.Transforms.Segregator> | Zruší seskupení sloupců vektor do sekvence řádků; inverzní funkce k transformaci skupiny. |
-| <xref:Microsoft.ML.Legacy.Transforms.TwoHeterogeneousModelCombiner> | Spojuje TransformModel a PredictorModel do jednoho PredictorModel. |
 | <xref:Microsoft.ML.Transforms.UngroupTransform> | Zrušení skupiny vektorové sloupce do sekvence řádků, inverzní funkce k transformaci skupiny. |
 
 ## <a name="conversions"></a>Převody 
@@ -35,7 +30,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | Transformace | Definice |
 | --- | --- |
 | <xref:Microsoft.ML.Transforms.Conversions.HashingTransformer> | Hodnoty hash jednotného Vážíme si toho sloupce nebo vektorové sloupce. Pro vektor sloupce vytvoří hodnotu hash každý slot samostatně. Můžete ho hash textové hodnoty nebo hodnoty klíče. |
-| <xref:Microsoft.ML.Legacy.Transforms.HashConverter> | Hodnoty sloupců převádí hodnoty hash. Tato transformace přijímá číselné a textové vstupů, jednu i s hodnotou vektoru sloupce. |
 | <xref:Microsoft.ML.Transforms.Conversions.HashJoiningTransform> | Převede více hodnot sloupců do hodnoty hash. Tato transformace přijímá číselné a textové vstupů, jednu i s hodnotou vektoru sloupce. |
 | <xref:Microsoft.ML.Transforms.Conversions.KeyToBinaryVectorMappingTransformer> | Převede klíč na sloupec binární vektoru. |
 | <xref:Microsoft.ML.Transforms.Conversions.KeyToValueMappingTransformer > | Využívá KeyValues metadat pro mapování klíčů indexů na odpovídající hodnoty v metadatech KeyValues. |
@@ -56,10 +50,10 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | Transformace | Definice |
 | --- | --- |
 | <xref:Microsoft.ML.Transforms.Text.CustomStopWordsRemovingTransform> | Odebere zadaný seznam stop slov porovnání jednotlivých tokenů (porovnání velká a malá písmena) stopwords.| 
-| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageGrayscaleTransform> | Přijímá jeden nebo více sloupců ImageType a převede je do odstínů šedi reprezentace stejnou bitovou kopii.|
-| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageLoaderTransform> | Vezme jeden nebo více sloupců ReadOnlyMemory a načte jako ImageType. |
-| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImagePixelExtractorTransform> | Přijímá jeden nebo více sloupců ImageType a převede je na reprezentaci vektoru.|
-| <xref:Microsoft.ML.Runtime.ImageAnalytics.ImageResizerTransform> | Vezme jeden nebo více sloupců ImageType a přizpůsobí svou velikost je zadaná výšku a šířku.|
+| <xref:Microsoft.ML.ImageAnalytics.ImageGrayscaleTransform> | Přijímá jeden nebo více sloupců ImageType a převede je do odstínů šedi reprezentace stejnou bitovou kopii.|
+| <xref:Microsoft.ML.ImageAnalytics.ImageLoaderTransform> | Vezme jeden nebo více sloupců ReadOnlyMemory a načte jako ImageType. |
+| <xref:Microsoft.ML.ImageAnalytics.ImagePixelExtractorTransform> | Přijímá jeden nebo více sloupců ImageType a převede je na reprezentaci vektoru.|
+| <xref:Microsoft.ML.ImageAnalytics.ImageResizerTransform> | Vezme jeden nebo více sloupců ImageType a přizpůsobí svou velikost je zadaná výšku a šířku.|
 | <xref:Microsoft.ML.Transforms.Text.LatentDirichletAllocationTransformer> | Implementuje LightLDA stavu nejmodernější provádění latentní Dirichletův přidělení.|
 | <xref:Microsoft.ML.Transforms.LoadTransform> | Načte konkrétní transformace ze souboru zadaného modelu. Umožňuje "vybírání" transformací z serializovaný řetězec nebo použití předem vytrénovaných transformace na zobrazení dat různých (ale stále kompatibilní). |
 | <xref:Microsoft.ML.Transforms.Text.NgramExtractingTransformer> | Vytvoří kontejner počty ngrams (pořadí po sobě jdoucích hodnoty o délce 1-n) v dané vektor klíče. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. | 
@@ -89,12 +83,8 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Legacy.Transforms.Dictionarizer> | Převede vstupní hodnoty (slova, čísla, atd.) do indexu ve slovníku. |
-| <xref:Microsoft.ML.Legacy.Transforms.LabelColumnKeyBooleanConverter> | Transformuje popisku na klíč nebo bool (v případě potřeby) Chcete-li, že je vhodný pro klasifikaci. |
 | <xref:Microsoft.ML.Transforms.LabelConvertTransform> |  Převede popisky. |
 | <xref:Microsoft.ML.Transforms.LabelIndicatorTransform> | Změní víc tříd popisky na binární hodnotu True, False popisky, především pro použití s OVA.|
-| <xref:Microsoft.ML.Legacy.Transforms.LabelToFloatConverter> | Transformuje popisku na float, že je vhodný pro regrese. |
-| <xref:Microsoft.ML.Legacy.Transforms.PredictedLabelColumnOriginalValueConverter> | Transformuje předpokládané popisek sloupce na jeho původní hodnoty, pokud se nejedná o typ bool. |
 
 ## <a name="missing-values"></a>Chybějící hodnoty
 
@@ -147,7 +137,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.ColumnCopyingTransformer> | Duplicitní sloupce z datové sady.|
 | <xref:Microsoft.ML.Transforms.ColumnSelectingTransformer> | Vybere sadu sloupce, které chcete vyřadit nebo zabránit daný vstup. |
 | <xref:Microsoft.ML.Transforms.FeatureSelection.SlotsDroppingTransformer> | Sloty Přetahované sloupce.|
-| <xref:Microsoft.ML.Legacy.Transforms.KeyToTextConverter> | KeyToValueTransform využívá KeyValues metadat pro mapování klíčů indexů na odpovídající hodnoty v metadatech KeyValues. |
 | <xref:Microsoft.ML.Transforms.OptionalColumnTransform> | Vytvoří nový sloupec se zadaným typem a výchozí hodnoty. |
 | <xref:Microsoft.ML.Transforms.RangeFilter> | Filtry pro zobrazení dat na sloupce typu Single, Double nebo klíč (souvislé). Uchovává hodnoty, které jsou v rozsahu zadaného min/max. Hodnoty NaN vždy filtrují. Pokud je vstup typ klíče, min/max jsou považovány za procenta počet hodnot. |
 
@@ -168,15 +157,15 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.ExponentialAverageTransform> | Přijímá vážený průměr hodnot: ExpAvg(y_t) = * y_t + (1-a) * ExpAvg(y_(t-1)). |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.IidChangePointDetector> | Implementuje transformace detektor změnu bodu pro i.i.d. pořadí na základě odhadu hustota adaptivní jádra a martingales (náhodného vzorku). |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.IidSpikeDetector> | Implementuje detektor zásobníku transformovat i.i.d. pořadí podle hustoty odhad adaptivní jádra (náhodného vzorku). |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.MovingAverageTransform> | Poskytuje vážený průměr hodnot posuvné okno. |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.PercentileThresholdTransform> | Určuje, zda aktuální hodnota časové řady patří do posuvného okna nejvyšší hodnoty. percentilu. |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.PValueTransform> | Vypočítá řady aktuální empirical p hodnoty na základě jiných hodnot v posuvné okno. |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SlidingWindowTransform> | Vypíše posuvné okno v časové řadě typu Single. |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SsaChangePointDetector> | Implementuje transformace detektor bodu změnit podle singulární spektra modelování časových řad. |
-| <xref:Microsoft.ML.Runtime.TimeSeriesProcessing.SsaSpikeDetector> | Implementuje detektor transformace (špičky) podle singulární spektra modelování časových řad. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.ExponentialAverageTransform> | Přijímá vážený průměr hodnot: ExpAvg(y_t) = a * y_t + (1-a) * ExpAvg(y_(t-1)). |
+| <xref:Microsoft.ML.TimeSeriesProcessing.IidChangePointDetector> | Implementuje transformace detektor změnu bodu pro i.i.d. pořadí na základě odhadu hustota adaptivní jádra a martingales (náhodného vzorku). |
+| <xref:Microsoft.ML.TimeSeriesProcessing.IidSpikeDetector> | Implementuje detektor zásobníku transformovat i.i.d. pořadí podle hustoty odhad adaptivní jádra (náhodného vzorku). |
+| <xref:Microsoft.ML.TimeSeriesProcessing.MovingAverageTransform> | Poskytuje vážený průměr hodnot posuvné okno. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.PercentileThresholdTransform> | Určuje, zda aktuální hodnota časové řady patří do posuvného okna nejvyšší hodnoty. percentilu. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.PValueTransform> | Vypočítá řady aktuální empirical p hodnoty na základě jiných hodnot v posuvné okno. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.SlidingWindowTransform> | Vypíše posuvné okno v časové řadě typu Single. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.SsaChangePointDetector> | Implementuje transformace detektor bodu změnit podle singulární spektra modelování časových řad. |
+| <xref:Microsoft.ML.TimeSeriesProcessing.SsaSpikeDetector> | Implementuje detektor transformace (špičky) podle singulární spektra modelování časových řad. |
 
 ## <a name="miscellaneous"></a>Různé
 

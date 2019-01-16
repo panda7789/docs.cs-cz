@@ -4,12 +4,12 @@ description: Objevte možnosti Orchestrace mikroslužeb a vícekontejnerových a
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: c3a40d5a9229ec754f5a5c2e2637af964f25ba08
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8f8d05a79189b909990fd7ef0c05bd84d556a94a
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152715"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307432"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrace mikroslužeb a vícekontejnerových aplikací pro vysokou škálovatelnost a dostupnost
 
@@ -91,7 +91,7 @@ Azure Kubernetes Service optimalizuje konfiguraci oblíbených Docker clustering
 
 **Obrázek 4 – 24**. Zjednodušenou strukturu a topologii clusteru Kubernetes
 
-Pokud obrázek 4 – 24 se zobrazí strukturu cluster Kubernetes, kde hlavní uzel (VM) řídí většina koordinace clusteru a kontejnerů můžete nasadit na zbývající uzly, které se spravují jako jeden fond z hlediska aplikací a umožňuje y organizačních jednotek škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
+Na obrázku 4-24 uvidíte struktura cluster Kubernetes, kde hlavní uzel (VM) řídí většina koordinace clusteru a kontejnerů můžete nasadit na zbývající uzly, které se spravují jako jeden fond z hlediska aplikací a umožňuje y organizačních jednotek škálovat do tisíců nebo dokonce desítek tisíců kontejnerů.
 
 ## <a name="development-environment-for-kubernetes"></a>Vývojové prostředí pro Kubernetes
 

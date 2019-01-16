@@ -4,12 +4,12 @@ description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím
 author: rprouse
 ms.date: 08/31/2018
 ms.custom: seodec18
-ms.openlocfilehash: 80c831a6d8ab9aa35435d0ff8f13334f7d169a3a
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 00be8c2fdef88861cc1119b1593155e027a3ade5
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169025"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307211"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# s použitím NUnit a .NET Core
 
@@ -109,10 +109,10 @@ Následující osnovy ukazuje rozložení konečné řešení:
         PrimeService.Tests.csproj
 ```
 
-Spusťte následující příkaz v *testování použití dotnet testování částí* adresáře:
+Spusťte následující příkaz v *jednotky – testování použití nunit* adresáře:
 
 ```console
-dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: e1625d2cdf0be4106a43b9d40aef97ea2b5c4ec4
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 5de13fc4da371220f46a107ca9b620e1313e75d4
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45999460"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307523"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 
@@ -28,7 +28,7 @@ Serializace je proces převodu objektu do formuláře, který lze snadno přené
 > [!NOTE]
 > Serializace XML nepřevádět metody, indexery, soukromé pole nebo vlastnosti jen pro čtení (s výjimkou kolekce jen pro čtení). K serializaci všechny objektu polí a vlastností, veřejné a soukromé, použijte <xref:System.Runtime.Serialization.DataContractSerializer> namísto serializace XML.
 
- Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> třídy a nejdůležitějších metod této třídy jsou **serializace** a **Deserialize** metody. <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V rozhraní .NET Framework 2.0 [nástroj XML Serializer Generator (Sgen.exe)](xml-serializer-generator-tool-sgen-exe.md) je určena ke generování těchto sestavení serializace předem, chcete-li být nasazeny s vaší aplikací a zlepšit výkon při spuštění. Datový proud XML generovaných **XmlSerializer** je v souladu s World Wide Web Consortium (W3C) [schéma XML definice jazyk (XSD) 1.0 doporučení](https://www.w3.org/TR/xslt). Kromě toho jsou typy dat, které jsou generovány kompatibilní s dokumentu s názvem "část schématu XML 2: datové typy."
+ Centrální třída v serializaci XML je <xref:System.Xml.Serialization.XmlSerializer> třídy a nejdůležitějších metod této třídy jsou **serializace** a **Deserialize** metody. <xref:System.Xml.Serialization.XmlSerializer> Vytváří soubory jazyka C# a jejich kompiluje do soubory DLL a provést serializace. V rozhraní .NET Framework 2.0 [nástroj XML Serializer Generator (Sgen.exe)](xml-serializer-generator-tool-sgen-exe.md) je určena ke generování těchto sestavení serializace předem, chcete-li být nasazeny s vaší aplikací a zlepšit výkon při spuštění. Datový proud XML generovaných **XmlSerializer** je v souladu s World Wide Web Consortium (W3C) [schéma XML definice jazyk (XSD) 1.0 doporučení](https://www.w3.org/TR/xslt). Kromě toho jsou datové typy generovány kompatibilní s dokumentu s názvem "XML schématu část 2: Datové typy."
 
  Data v objekty je popsána pomocí konstrukcí programovací jazyk jako třídy, pole, vlastnosti, primitivní typy, pole a dokonce i vloženého XML ve formě **XmlElement** nebo **XmlAttribute**objekty. Máte možnost vytvořit vlastní třídy označena s atributy, nebo pomocí nástroje definici schématu XML vygenerovat třídy založen na stávajícím schématu XML.
 
@@ -36,9 +36,9 @@ Serializace je proces převodu objektu do formuláře, který lze snadno přené
 
  Atributy řídí datový proud XML generovaných **XmlSerializer** třídy, což vám umožní nastavit obor názvů XML, název elementu, název atributu a tak dále datového proudu XML. Další informace o těchto atributů a způsob, jakým se řídí serializace XML, naleznete v tématu [řízení XML serializace pomocí atributů](controlling-xml-serialization-using-attributes.md). Tabulka obsahující tyto atributy, které se používají k řízení vygenerovaný kód XML, naleznete v tématu [atributy, které ovládací prvek XML serializace](attributes-that-control-xml-serialization.md).
 
- **XmlSerializer** třídy lze dále serializovat objekt a generovat kódovaného datový proud XML protokolu SOAP. Vygenerovaný XML dodržuje část 5 W3c dokumentu s názvem "Simple Object Access Protocol (SOAP) 1.1." Další informace o tomto procesu najdete v tématu [postupy: serializace objektu jako Stream XML SOAP-Encoded](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md). Tabulka obsahující atributy, které řídí vygenerovaný kód XML, naleznete v tématu [atributy, které ovládací prvek kódovaný SOAP serializace](attributes-that-control-encoded-soap-serialization.md).
+ **XmlSerializer** třídy lze dále serializovat objekt a generovat kódovaného datový proud XML protokolu SOAP. Vygenerovaný XML dodržuje část 5 W3c dokumentu s názvem "Simple Object Access Protocol (SOAP) 1.1." Další informace o tomto procesu najdete v tématu [jak: Serializace objektu jako XML kódováním protokolu SOAP Stream](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md). Tabulka obsahující atributy, které řídí vygenerovaný kód XML, naleznete v tématu [atributy, které ovládací prvek kódovaný SOAP serializace](attributes-that-control-encoded-soap-serialization.md).
 
- **XmlSerializer** třídy generuje zprávy protokolu SOAP vytvořen a předán webové služby XML. Chcete-li řídit zprávy protokolu SOAP, můžete použít atributy do třídy, vrácené hodnoty, parametry a pole nalezen v souboru XML webové služby (.asmx). Můžete použít atributy uvedené v "Atributy, aby ovládací prvek XML serializace" a "Atributy, aby ovládací prvek kódovaný SOAP serializace", protože webové služby XML lze použít buď literál nebo kódovaného protokolu SOAP stylu. Další informace o použití atributů k ovládání XML generovaných webové služby XML, naleznete v tématu [serializace XML pomocí webových služeb XML](xml-serialization-with-xml-web-services.md). Další informace o protokolu SOAP a XML webových služeb najdete v tématu [přizpůsobení zprávy protokolu SOAP](https://msdn.microsoft.com/en-us/subscriptions/index/dkwy2d72\(v=vs.71\).aspx).
+ **XmlSerializer** třídy generuje zprávy protokolu SOAP vytvořen a předán webové služby XML. Chcete-li řídit zprávy protokolu SOAP, můžete použít atributy do třídy, vrácené hodnoty, parametry a pole nalezen v souboru XML webové služby (.asmx). Můžete použít atributy uvedené v "Atributy, aby ovládací prvek XML serializace" a "Atributy, aby ovládací prvek kódovaný SOAP serializace", protože webové služby XML lze použít buď literál nebo kódovaného protokolu SOAP stylu. Další informace o použití atributů k ovládání XML generovaných webové služby XML, naleznete v tématu [serializace XML pomocí webových služeb XML](xml-serialization-with-xml-web-services.md). Další informace o protokolu SOAP a XML webových služeb najdete v tématu [přizpůsobení zprávy protokolu SOAP](https://msdn.microsoft.com/subscriptions/index/dkwy2d72\(v=vs.71\).aspx).
 
 ## <a name="security-considerations-for-xmlserializer-applications"></a>Důležité informace o zabezpečení pro XmlSerializer aplikace
 
@@ -107,7 +107,7 @@ Následující položky lze serializovat pomocí **XmLSerializer** třídy:
 
 - **Datová sada** objekty.
 
- Další informace o serializaci nebo deserializaci objektů, naleznete v tématu [postupy: serializace objektu](how-to-serialize-an-object.md) a [jak: deserializaci objektu](how-to-deserialize-an-object.md).
+ Další informace o serializaci nebo deserializaci objektů, naleznete v tématu [jak: Serializace objektu](how-to-serialize-an-object.md) a [jak: Deserializace objektu](how-to-deserialize-an-object.md).
 
 ## <a name="advantages-of-using-xml-serialization"></a>Výhody použití serializace XML
 
@@ -147,7 +147,7 @@ Následující by měly být považovány za při použití **XmlSerializer** t�
 
 ## <a name="xsd-data-type-mapping"></a>Mapování typů dat XSD
 
-W3C dokumentu s názvem [XML schématu část 2: datové typy](https://www.w3.org/TR/xmlschema-2/) určuje jednoduché datové typy, které jsou povoleny ve schématu schématu XML definice jazyk (XSD). Pro mnoho z nich (například **int** a **desítkové**), neexistuje odpovídající typ dat v rozhraní .NET Framework. Nicméně některé typy dat XML nemají odpovídající typ dat v rozhraní .NET Framework (třeba **NMTOKEN** datový typ). V takových případech, pokud použijete nástroj definici schématu XML ([nástroj definici schématu XML (Xsd.exe)](xml-schema-definition-tool-xsd-exe.md)) ke generování třídy z schématu, odpovídajícího atributu se použije na člena typu řetězec a jeho **datovýtyp** je nastavena na název datového typu XML. Například pokud schématu obsahuje element s názvem "MyToken" s datovým typem XML **NMTOKEN**, generovaná třída může obsahovat člena, jak je znázorněno v následujícím příkladu.
+W3C dokumentu s názvem [XML schématu část 2: Datové typy](https://www.w3.org/TR/xmlschema-2/) určuje jednoduché datové typy, které jsou povoleny ve schématu schématu XML definice jazyk (XSD). Pro mnoho z nich (například **int** a **desítkové**), neexistuje odpovídající typ dat v rozhraní .NET Framework. Nicméně některé typy dat XML nemají odpovídající typ dat v rozhraní .NET Framework (třeba **NMTOKEN** datový typ). V takových případech, pokud použijete nástroj definici schématu XML ([nástroj definici schématu XML (Xsd.exe)](xml-schema-definition-tool-xsd-exe.md)) ke generování třídy z schématu, odpovídajícího atributu se použije na člena typu řetězec a jeho **datovýtyp** je nastavena na název datového typu XML. Například pokud schématu obsahuje element s názvem "MyToken" s datovým typem XML **NMTOKEN**, generovaná třída může obsahovat člena, jak je znázorněno v následujícím příkladu.
 
 ```vb
 <XmlElement(DataType:="NMTOKEN")> _

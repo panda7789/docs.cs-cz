@@ -1,14 +1,14 @@
 ---
 title: Získat ukázky kódu ADO.NET ukázkové databáze systému SQL Server
 description: Stažení ukázkových databází SQL serveru použité v ukázkách kódu v dokumentaci k rozhraní ADO.NET, jakož i nástroje SQL Server a správu
-ms.date: 10/18/2018
+ms.date: 01/11/2019
 ms.assetid: ef9d69a1-9461-43fe-94bb-7c836754bcb5
-ms.openlocfilehash: 8ab65f992c9cf2b65271a237fa06eb96e358ae6a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5580f06f3d28ed6d70f75b619498ac8de7bc3326
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153485"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307289"
 ---
 # <a name="get-the-sample-databases-for-adonet-code-samples"></a>Získání ukázkových databází pro ukázky kódu ADO.NET
 
@@ -25,30 +25,7 @@ Než použijete databázi Northwind, musíte spustit na stažený `instnwnd.sql`
 > [!TIP]
 > Pokud hledáte databázi Northwind pro aplikaci Microsoft Access, přečtěte si téma [instalace ukázkové databáze Northwind pro aplikaci Microsoft Access](#northwind_access).
 
-## <a name="get-the-adventureworks-sample-database-for-sql-server"></a>Získat ukázkovou databází AdventureWorks pro SQL Server
-
-Stáhněte si ukázkovou databází AdventureWorks pro SQL Server z následující úložiště GitHub:
-
-[Ukázkových databází AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
-
-Po stažení zálohy databáze (\*.bak) souborech, obnovení zálohy do instance systému SQL Server pomocí SQL Server Management Studio (SSMS). Zobrazit [získat SQL Server Management Studio](#get_ssms).
-
-## <a name="get_sql"></a> Získat SQL Server Express
-
-SQL Server Express je zdarma, základní edice systému SQL Server, který je možné znovu distribuovat s aplikací. Stáhněte SQL Server Express z následující stránky:
-  
-[SQL Server Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express)
-
-Pokud používáte [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), SQL Server Express LocalDB je součástí sady Visual Studio bezplatná edice Community, jakož i edice Professional a vyšší.  
-
-## <a name="get_ssms"></a> Získat SQL Server Management Studio
-Pokud chcete zobrazit nebo upravit databázi, kterou jste stáhli, můžete použít SQL Server Management Studio (SSMS). SSMS stáhněte z následující stránky:
-
-[Stáhněte si SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) 
-
-Můžete také zobrazit a spravovat databáze v prostředí integrovaného vývojového (prostředí IDE) sady Visual Studio. V [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), připojte se k databázi z **Průzkumník objektů systému SQL Server**, nebo vytvoření datového připojení k databázi v **Průzkumníka serveru**. Otevření těchto podoken explorer z **zobrazení** nabídky.
-
-## <a name="northwind_access"></a> Instalace ukázkové databáze Northwind pro aplikaci Microsoft Access
+## <a name="northwind_access"></a> Získat ukázkové databáze Northwind pro aplikaci Microsoft Access
 
 Ukázkové databázi Northwind pro aplikaci Microsoft Access není k dispozici na webu Microsoft Download Center. Pokud chcete nainstalovat Northwind přímo z aplikace Access, proveďte následující akce:
 
@@ -63,6 +40,29 @@ Ukázkové databázi Northwind pro aplikaci Microsoft Access není k dispozici n
 1. Vyberte **Vytvořit**. Přístup k databázi Northwind stáhne a připraví soubor.
 
 1. Po dokončení tohoto procesu se otevře databáze úvodní obrazovka.
+
+## <a name="get-the-adventureworks-sample-database-for-sql-server"></a>Získat ukázkovou databází AdventureWorks pro SQL Server
+
+Stáhněte si ukázkovou databází AdventureWorks pro SQL Server z následující úložiště GitHub:
+
+[Ukázkových databází AdventureWorks](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
+
+Po stažení zálohy databáze (\*.bak) souborech, obnovení zálohy do instance systému SQL Server pomocí SQL Server Management Studio (SSMS). Zobrazit [získat SQL Server Management Studio](#get_ssms).
+
+## <a name="get_ssms"></a> Získat SQL Server Management Studio
+Pokud chcete zobrazit nebo upravit databázi, kterou jste stáhli, můžete použít SQL Server Management Studio (SSMS). SSMS stáhněte z následující stránky:
+
+[Stáhněte si SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) 
+
+Můžete také zobrazit a spravovat databáze v prostředí integrovaného vývojového (prostředí IDE) sady Visual Studio. V [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), připojte se k databázi z **Průzkumník objektů systému SQL Server**, nebo vytvoření datového připojení k databázi v **Průzkumníka serveru**. Otevření těchto podoken explorer z **zobrazení** nabídky.
+
+## <a name="get_sql"></a> Get SQL Server Express
+
+SQL Server Express je zdarma, základní edice systému SQL Server, který je možné znovu distribuovat s aplikací. Stáhněte SQL Server Express z následující stránky:
+  
+[SQL Server Express Edition](https://www.microsoft.com/sql-server/sql-server-editions-express)
+
+Pokud používáte [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), SQL Server Express LocalDB je součástí sady Visual Studio bezplatná edice Community, jakož i edice Professional a vyšší.  
 
 ## <a name="see-also"></a>Viz také:
 

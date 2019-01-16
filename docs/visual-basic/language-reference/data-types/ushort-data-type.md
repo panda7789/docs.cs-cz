@@ -16,12 +16,12 @@ helpviewer_keywords:
 - UShort data type
 - US literal type characters [Visual Basic]
 ms.assetid: 138db892-665d-4ba8-9cae-d8d91c4a8f39
-ms.openlocfilehash: f1ccb2f2e297ecac8f5ac96c0af42ff6bfb9363b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 21d3b31fe19db7abf1a78d0c6d33abfbc2882089
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146040"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307393"
 ---
 # <a name="ushort-data-type-visual-basic"></a>Ushort – datový typ (Visual Basic)
 
@@ -33,7 +33,7 @@ Blokování 16 bitů (2bajtových) celá čísla bez znaménka v rozmezí od 0 d
   
  Výchozí hodnota `UShort` je 0.  
 
-# <a name="literal-assignments"></a>Literál přiřazení
+## <a name="literal-assignments"></a>Literál přiřazení
 
 Můžete deklarovat a inicializovat `UShort` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `UShort` (tj. Pokud je menší než <xref:System.UInt16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt16.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 

@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 07/19/2018
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: cfc830f50f2e77b85e46ebaf91e3c8658aa86c48
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: bf8b73d5785ad39180b47963130105b905f955c1
+ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613593"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54307536"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -65,7 +65,7 @@ Specifikaci .NET Standard je sada standardních rozhraní API. Specifikace se sp
 
 ### <a name="official-artifacts"></a>Oficiální artefaktů
 
-Oficiální specifikace je sada .cs soubory, které definují rozhraní API, která jsou součástí standardní. [Ref directory](https://github.com/dotnet/standard/tree/master/netstandard/ref) v [úložišti dotnet/standard](https://github.com/dotnet/standard) definuje standardní rozhraní API .NET.
+Oficiální specifikace je sada .cs soubory, které definují rozhraní API, která jsou součástí standardní. [Ref directory](https://github.com/dotnet/standard/tree/master/src/netstandard/ref) v [úložišti dotnet/standard](https://github.com/dotnet/standard) definuje standardní rozhraní API .NET.
 
 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library) Microsoft.aspnetcore.all ([zdroj](https://github.com/dotnet/standard/blob/master/netstandard/pkg/NETStandard.Library.dependencies.props)) popisuje sadu knihoven, které definují (částečně) jednu nebo více verzí rozhraní .NET Standard.
 
@@ -148,7 +148,7 @@ Můžete vidět sadu PCL profily, které jsou kompatibilní s .NET Standard:
 
 | Profilem PCL | .NET Standard | PCL platformy
 |:-----------:|:-------------:|------------------------------------------------------------------------------
-| Profile7    | 1.1           | Rozhraní .NET framework 4.5, Windows 8
+| Profile7    | 1.1           | .NET Framework 4.5, Windows 8
 | Profile31   | 1.0           | Windows 8.1, Windows Phone Silverlight 8.1
 | Profile32   | 1.2           | Windows 8.1, Windows Phone 8.1
 | Profile44   | 1.2           | Rozhraní .NET framework 4.5.1, Windows 8.1
@@ -156,7 +156,7 @@ Můžete vidět sadu PCL profily, které jsou kompatibilní s .NET Standard:
 | Profile78   | 1.0           | Rozhraní .NET framework 4.5, Windows 8, Windows Phone Silverlight 8
 | Profile84   | 1.0           | Windows Phone 8.1, Windows Phone Silverlight 8.1
 | Profile111  | 1.1           | Rozhraní .NET framework 4.5, Windows 8, Windows Phone 8.1
-| Profile151  | 1.2           | Rozhraní .NET framework 4.5.1, Windows 8.1, Windows Phone 8.1
+| Profile151  | 1.2           | .NET Framework 4.5.1, Windows 8.1, Windows Phone 8.1
 | Profile157  | 1.0           | Windows 8.1, Windows Phone 8.1, Windows Phone Silverlight 8.1
 | Profile259  | 1.0           | Rozhraní .NET framework 4.5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8
 
