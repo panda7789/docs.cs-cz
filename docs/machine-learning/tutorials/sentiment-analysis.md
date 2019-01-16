@@ -1,15 +1,15 @@
 ---
 title: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 description: Objevte, jak používat ML.NET ve scénáři binární klasifikace pochopit, jak pomocí mínění předpovědi proveďte příslušnou akci.
-ms.date: 12/20/2018
+ms.date: 01/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: c6ef4da7f429b92591c90daa3fb06f367d8a578a
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 429304bbbef94457800673f1b087752eb3d5dba9
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030155"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333795"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -122,7 +122,7 @@ Je potřeba vytvořit tři globální pole pro uložení cest k naposledy staže
 * `_trainDataPath` obsahuje cestu k datové sadě využívají k tréninku modelu.
 * `_testDataPath` obsahuje cestu k datové sadě k vyhodnocení modelu.
 * `_modelPath` obsahuje cestu k uložení naučeného modelu.
-* `_textLoader` je <xref:Microsoft.ML.Runtime.Data.TextLoader> lze načíst a transformovat datové sady.
+* `_textLoader` je <xref:Microsoft.ML.Data.TextLoader> lze načíst a transformovat datové sady.
 
 Přidejte následující kód na řádku vpravo nahoře `Main` metoda zadat tyto cesty a `_textLoader` proměnné:
 
@@ -152,10 +152,10 @@ Vytvořte proměnnou s názvem `mlContext` a inicializujte novou instanci tříd
 
 [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#3 "Create the ML Context")]
 
-Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že používáte `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Runtime.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení.
+Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že používáte `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení.
 
- Zadejte schéma dat předáním pole <xref:Microsoft.ML.Runtime.Data.TextLoader.Column> zavaděč obsahující všechny názvy sloupců a jejich typy objektů. Definujete schéma dat dříve při vytváření naše `SentimentData` třídy. Pro naše schéma z prvního sloupce (popisek) je <xref:System.Boolean> (předpověď) a druhý sloupec (SentimentText) je funkce typu text/řetězec použitý pro predikci mínění.
-`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Runtime.Data.TextLoader>  
+ Zadejte schéma dat předáním pole <xref:Microsoft.ML.Data.TextLoader.Column> zavaděč obsahující všechny názvy sloupců a jejich typy objektů. Definujete schéma dat dříve při vytváření naše `SentimentData` třídy. Pro naše schéma z prvního sloupce (popisek) je <xref:System.Boolean> (předpověď) a druhý sloupec (SentimentText) je funkce typu text/řetězec použitý pro predikci mínění.
+`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
 
 Inicializovat `_textLoader` globální proměnné, aby bylo možné znovu použít pro potřeby datové sady, přidejte následující kód za `mlContext` inicializace:
 
@@ -186,7 +186,7 @@ Všimněte si, že dva parametry jsou předány do metody trénování; `MLConte
 
 ## <a name="load-the-data"></a>Načtení dat
 
-Budete nahrajte data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Runtime.Data.IDataView>. Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
+Budete nahrajte data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Data.IDataView>. Jako vstup a výstup `Transforms`, `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
 Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s komentáři a odpovídající toxické nebo jiných toxické mínění. Slouží k vytvoření modelu a jeho trénování.
 
@@ -200,7 +200,7 @@ Předběžné zpracování a čištění dat jsou důležité úkoly, ke kterým
 
 ML. Kanály transformace vaší sítě vytvořit vlastní sadu transformací, které se použijí pro vaše data před trénování a testování. Hlavním účelem transformace jsou data [snadné](../resources/glossary.md#feature-engineering). Vysvětlení algoritmů strojového učení [natrénuje](../resources/glossary.md#feature) data, abyste dalším krokem je získat z našich algoritmů ML rozpoznat formát naše textová data. Tento formát je [číselné vektoru](../resources/glossary.md#numerical-feature-vector).
 
-Pak zavolejte `mlContext.Transforms.Text.FeaturizeText` které featurizes textového sloupce (`SentimentText`) sloupec jako číselný vektor nazývá `Features` používá algoritmus strojového učení. Toto je obálka volání, které se vrátí <xref:Microsoft.ML.Runtime.Data.EstimatorChain%601> efektivně, který bude kanál. Pojmenujte toto `pipeline` jako se pak připojí trainer k `EstimatorChain`. Přidáte jako další řádek kódu:
+Pak zavolejte `mlContext.Transforms.Text.FeaturizeText` které featurizes textového sloupce (`SentimentText`) sloupec jako číselný vektor nazývá `Features` používá algoritmus strojového učení. Toto je obálka volání, které se vrátí <xref:Microsoft.ML.Data.EstimatorChain%601> efektivně, který bude kanál. Pojmenujte toto `pipeline` jako se pak připojí trainer k `EstimatorChain`. Přidáte jako další řádek kódu:
 
 [!code-csharp[TextFeaturizingEstimator](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#7 "Add a TextFeaturizingEstimator")]
 
@@ -216,7 +216,7 @@ Přidejte následující kód, který `Train` metody:
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Trénování modelu, <xref:Microsoft.ML.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Runtime.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
+Trénování modelu, <xref:Microsoft.ML.Data.TransformerChain%601>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu tréninku modelu pomocí <xref:Microsoft.ML.Data.EstimatorChain`1.Fit*> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
 
 Přidejte následující kód, který `Train` metody:
 
@@ -287,7 +287,7 @@ private static void SaveModelAsFile(MLContext mlContext, ITransformer model)
 
 * Uloží modelu ve formě souboru .zip.
 
-Dále vytvořte metodu k uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.Runtime.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Uložit jako soubor zip, vytvoříte `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
+Dále vytvořte metodu k uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Uložit jako soubor zip, vytvoříte `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
 
 [!code-csharp[SaveToMethod](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#24 "Add the SaveTo Method")]
 
@@ -319,16 +319,16 @@ Přidejte volání do nové metody z `Main` metody, v rámci `Evaluate` volání
 
 [!code-csharp[CallPredict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#16 "Call the Predict method")]
 
-Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.Runtime.Data.PredictionFunction%602> Představuje obálku, která je vrácena z `MakePredictionFunction` metody. Přidejte následující kód k vytvoření PredictionFunction jako první řádek `Predict` metody:
+Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionFunction` jako první řádek `Predict` metody:
 
-[!code-csharp[MakePredictionFunction](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#17 "Create the PredictionFunction")]
+[!code-csharp[CreatePredictionFunction](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#17 "Create the PredictionFunction")]
   
 Přidejte komentář k otestování trénovaného modelu předpovědi v `Predict` metodu tak, že vytvoříte instanci `SentimentData`:
 
 [!code-csharp[PredictionData](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#18 "Create test data for single prediction")]
 
 
- Který můžete použít k predikci toxické nebo jiných toxické mínění jednu instanci data komentáře. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.Runtime.Data.PredictionFunction%602.Predict(%600)> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
+ Který můžete použít k predikci toxické nebo jiných toxické mínění jednu instanci data komentáře. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.PredictionEngine%602.Predict%2A> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#19 "Create a prediction of sentiment")]
 
@@ -368,7 +368,7 @@ Načíst model
 
 [!code-csharp[LoadTheModel](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#27 "Load the model")]
 
-Teď, když máte model, vám pomůže, která předvídat toxické nebo jiných toxické mínění komentář dat pomocí <xref:Microsoft.ML.Core.Data.ITransformer.Transform(Microsoft.ML.Runtime.Data.IDataView)> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi. Přidejte následující kód, který `PredictWithModelLoadedFromFile` metodu předpovědí:
+Teď, když máte model, vám pomůže, která předvídat toxické nebo jiných toxické mínění komentář dat pomocí <xref:Microsoft.ML.Core.Data.ITransformer.Transform(Microsoft.ML.Data.IDataView)> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi. Přidejte následující kód, který `PredictWithModelLoadedFromFile` metodu předpovědí:
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#28 "Create predictions of sentiments")]
 
@@ -413,7 +413,7 @@ Sentiment: This is a very rude movie | Prediction: Toxic | Probability: 0.529704
 
 The model is saved to: C:\Tutorial\SentimentAnalysis\bin\Debug\netcoreapp2.0\Data\Model.zip
 
-=============== Prediction Test of loaded model with a multiple samples ===============
+=============== Prediction Test of loaded model with a multiple sample ===============
 
 Sentiment: This is a very rude movie | Prediction: Toxic | Probability: 0.4585565
 Sentiment: He is the best, and the article should say that. | Prediction: Not Toxic | Probability: 0.9924279

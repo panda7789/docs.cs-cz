@@ -3,15 +3,15 @@ title: Předpověď tarify taxislužby města New York learner regrese pomocí M
 description: Předpověď tarify pomocí ML.NET learner regrese.
 author: aditidugar
 ms.author: johalex
-ms.date: 11/06/2018
+ms.date: 01/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 630cbcac954b9fcda67eef38f54241a81b831fc3
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: b17b4e31a60d6eaf432577281004bcf2c7ca1da2
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030253"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333782"
 ---
 # <a name="tutorial-predict-new-york-taxi-fares-using-a-regression-learner-with-mlnet"></a>Kurz: Předpověď tarify taxislužby města New York learner regrese pomocí ML.NET
 
@@ -90,9 +90,9 @@ Odeberte stávající definice třídy a přidejte následující kód, který m
 
 [!code-csharp[DefineTaxiTrip](../../../samples/machine-learning/tutorials/TaxiFarePrediction/TaxiTrip.cs#2 "Define the taxi trip and fare predictions classes")]
 
-`TaxiTrip` je třída vstupní data a obsahuje definice pro všechny sloupce datové sady. Použití <xref:Microsoft.ML.Runtime.Api.ColumnAttribute> atributy indexů zdrojových sloupců v datové sadě.
+`TaxiTrip` je třída vstupní data a obsahuje definice pro všechny sloupce datové sady. Použití <xref:Microsoft.ML.Data.ColumnAttribute> atributy indexů zdrojových sloupců v datové sadě.
 
-`TaxiTripFarePrediction` Třída reprezentuje předpokládané výsledky. Obsahuje pole jednou čárkou `FareAmount`, s `Score` <xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute> atribut. V případě úloh regrese **skóre** sloupec obsahuje hodnoty předpovězené popisků.
+`TaxiTripFarePrediction` Třída reprezentuje předpokládané výsledky. Obsahuje pole jednou čárkou `FareAmount`, s `Score` <xref:Microsoft.ML.Data.ColumnNameAttribute> atribut. V případě úloh regrese **skóre** sloupec obsahuje hodnoty předpovězené popisků.
 
 > [!NOTE]
 > Použití `float` typ pro reprezentaci hodnoty s plovoucí desetinnou čárkou v datových tříd vstupu a předpovědí.
@@ -108,7 +108,7 @@ Je potřeba vytvořit tři pole pro uložení cest k souborům s datovými sadam
 * `_trainDataPath` obsahuje cestu k souboru s datovou sadou, využívají k tréninku modelu.
 * `_testDataPath` obsahuje cestu k souboru s datovou sadou, používá k vyhodnocení modelu.
 * `_modelPath` obsahuje cestu k souboru, kde je uložený trénovaného modelu.
-* `_textLoader` je <xref:Microsoft.ML.Runtime.Data.TextLoader> lze načíst a transformovat datové sady.
+* `_textLoader` je <xref:Microsoft.ML.Data.TextLoader> lze načíst a transformovat datové sady.
 
 Přidejte následující kód přímo nad `Main` metoda zadat tyto cesty a `_textLoader` proměnné:
 
@@ -122,9 +122,9 @@ Vytvořte proměnnou s názvem `mlContext` a inicializujte novou instanci tříd
 
 [!code-csharp[CreateMLContext](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#3 "Create the ML Context")]
 
-Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že se používá `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Runtime.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení. Zadejte schéma dat předáním pole <xref:Microsoft.ML.Runtime.Data.TextLoader.Column> objektů `TextReader` obsahující všechny názvy sloupců a jejich typy. Jsme dříve definovali schéma dat když jsme vytvořili naši `TaxiTrip` třídy.
+Další nastavení pro načítání inicializace dat `_textLoader` globální proměnné, aby bylo možné znovu použít.  Všimněte si, že se používá `TextReader`. Při vytváření `TextLoader` pomocí `TextReader`, předáte v souvislosti potřebné a <xref:Microsoft.ML.Data.TextLoader.Arguments> třída, která umožňuje přizpůsobení. Zadejte schéma dat předáním pole <xref:Microsoft.ML.Data.TextLoader.Column> objektů `TextReader` obsahující všechny názvy sloupců a jejich typy. Jsme dříve definovali schéma dat když jsme vytvořili naši `TaxiTrip` třídy.
 
-`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Runtime.Data.TextLoader>  
+`TextReader` Třídy vrátí plně inicializován <xref:Microsoft.ML.Data.TextLoader>  
 
 Inicializovat `_textLoader` globální proměnné, aby bylo možné znovu použít pro potřeby datové sady, přidejte následující kód za `mlContext` inicializace:
 
@@ -155,7 +155,7 @@ Jsme prochází dva parametry do `Train` metoda; `MLContext` kontextu (`mlContex
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat.
 
-Budete načteme data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Runtime.Data.IDataView>. Jako vstup a výstup transformací `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
+Budete načteme data s využitím `_textLoader` globální proměnné `dataPath` parametru. Vrátí <xref:Microsoft.ML.Data.IDataView>. Jako vstup a výstup transformací `DataView` je základní datový kanál typ, srovnatelná s hodnotou `IEnumerable` pro `LINQ`.
 
 Data jsou v ML.NET, podobně jako zobrazení SQL. Je laxně Vyhodnocená schematizovanými a heterogenní. Objekt představuje první část kanálu a načte data. Pro účely tohoto kurzu načte datovou sadu s informacemi o jízdách taxislužby užitečné k předpovědi tarify. Slouží k vytvoření modelu a jeho trénování.
 
@@ -189,7 +189,7 @@ Přidejte následující kód do `Train` způsob, jak přidat `FastTreeRegressio
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Posledním krokem je pro trénování modelu. Model trénujeme <xref:Microsoft.ML.Data.TransformerChain>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu trénujeme pomocí modelu <xref:Microsoft.ML.Runtime.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
+Posledním krokem je pro trénování modelu. Model trénujeme <xref:Microsoft.ML.Data.TransformerChain>založená na datovou sadu, která má načíst a transformovat. Po definování odhadu trénujeme pomocí modelu <xref:Microsoft.ML.Data.EstimatorChain%601.Fit%2A> současně už načtený trénovací data. Vrátí model pro předpovědi. `pipeline.Fit()` trénovat kanálu a vrátí `Transformer` na základě `DataView` předán. Experiment není spuštěn, dokud k tomu dojde.
 
 [!code-csharp[TrainModel](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#11 "Train the model")]
 
@@ -216,7 +216,7 @@ private static void SaveModelAsFile(MLContext mlContext, ITransformer model)
 
 * Uloží modelu ve formě souboru .zip.
 
-Potřebujeme vytvořit metodu ke uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.Runtime.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Protože chceme uložit jako soubor zip, vytvoříme `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
+Potřebujeme vytvořit metodu ke uložit model, takže můžete opakovaně používat a využívat v jiných aplikacích. `ITransformer` Má <xref:Microsoft.ML.Data.TransformerChain%601.SaveTo(Microsoft.ML.IHostEnvironment,System.IO.Stream)> metodu, která přijímá `_modelPath` globální pole a <xref:System.IO.Stream>. Protože chceme uložit jako soubor zip, vytvoříme `FileStream` bezprostředně před volání `SaveTo` metody. Přidejte následující kód, který `SaveModelAsFile` metody jako další řádek:
 
 [!code-csharp[SaveToMethod](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#13 "Add the SaveTo Method")]
 
@@ -257,7 +257,7 @@ V dalším kroku použijeme strojového učení `model` parametr (transformace) 
 
 [!code-csharp[PredictWithTransformer](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#16 "Predict using the Transformer")]
 
-`RegressionContext.Evaluate` Metoda vypočítá metrik kvality pro `PredictionModel` pomocí zadané datové sady. Vrátí <xref:Microsoft.ML.Runtime.Data.RegressionEvaluator.Result> objekt obsahuje celkový metriky počítají tak, že nástroje pro vyhodnocení regrese. Chcete-li zobrazit tyto k určení kvality tohoto modelu, budete muset získat metriky první. Přidejte následující kód jako další řádek `Evaluate` metody:
+`RegressionContext.Evaluate` Metoda vypočítá metrik kvality pro `PredictionModel` pomocí zadané datové sady. Vrátí <xref:Microsoft.ML.Data.RegressionMetrics> objekt, který obsahuje celkový metriky počítají tak, že nástroje pro vyhodnocení regrese. Chcete-li zobrazit tyto k určení kvality tohoto modelu, budete muset získat metriky první. Přidejte následující kód jako další řádek `Evaluate` metody:
 
 [!code-csharp[ComputeMetrics](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#17 "Compute Metrics")]
 
@@ -307,15 +307,15 @@ Protože chceme, aby načíst model ze souboru zip jsme předtím uložili, a My
 
 [!code-csharp[LoadTheModel](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#21 "Load the model")]
 
-Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.Runtime.Data.PredictionFunction%602> Představuje obálku, která je vrácena z `MakePredictionFunction` metody. Přidejte následující kód k vytvoření `PredictionFunction` jako první řádek `Predict` metody:
+Zatímco `model` je `transformer` , který pracuje na mnoho řádky dat, je potřeba k předpovědím na jednotlivé příklady o velmi běžný scénář produkčního prostředí. <xref:Microsoft.ML.PredictionEngine%602> Představuje obálku, která je vrácena z `CreatePredictionEngine` metody. Přidejte následující kód k vytvoření `PredictionEngine` jako první řádek `Predict` metody:
 
-[!code-csharp[MakePredictionFunction](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
+[!code-csharp[MakePredictionEngine](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
   
 Tento kurz používá jeden test latence v rámci této třídy. Později můžete přidat další scénáře můžete experimentovat s modelem. Přidat cestu k otestování předpovědi trénovaného modelu nákladů `Predict` metodu tak, že vytvoříte instanci `TaxiTrip`:
 
 [!code-csharp[PredictionData](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#23 "Create test data for single prediction")]
 
- Který můžeme použít k predikci tarif založené na jednu instanci data o jízdách taxislužby. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.Runtime.Data.PredictionFunction%602.Predict(%600)> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
+ Který můžeme použít k predikci tarif založené na jednu instanci data o jízdách taxislužby. Chcete-li získat predikcí, použijte <xref:Microsoft.ML.PredictionEngine%602.Predict%2A> na data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#24 "Create a prediction of taxi fare")]
 

@@ -8,32 +8,36 @@ helpviewer_keywords:
 - multiplication operator (*) [C#]
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
-ms.openlocfilehash: 24ac4a99c48f1e8204b821bfbf5f7fbc0a2b2f1d
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: f4490c4632d9344eb879ea55c20787b838781d91
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237347"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333730"
 ---
-# <a name="-operator-c-reference"></a>* – operátor (Referenční dokumentace jazyka C#)
-Operátor násobení (`*`) vypočítá součin z operandů. Všechny číselné typy obsahuje předdefinované operátory násobení.  
+# <a name="-operator-c-reference"></a>* – operátor (C# odkaz)
+
+Operátor násobení (`*`) vypočítá součin z operandů. Všechny číselné typy obsahuje předdefinované operátory násobení.
 
 `*` slouží také jako operátor zrušení odkazu, který umožňuje čtení a zápis na ukazatel.
-  
-## <a name="remarks"></a>Poznámky  
- `*` Operátor se používá také, chcete-li deklarovat typy ukazatelů a ke zrušení ukazatele. Tento operátor jde použít jenom v kontextu unsafe, udávají použití [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo která vyžaduje [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.  Operátor zrušení odkazu se také označuje jako operátor dereference.  
-  
- Uživatelem definované typy mohou přetížit binárního souboru `*` – operátor (viz [operátor](../../../csharp/language-reference/keywords/operator.md)). Při je binární operátor přetížen, odpovídající operátor přiřazení, pokud existuje, je také implicitně přetížená.  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp-interactive[csRefOperators#50](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_1.cs)]  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#51](../../../csharp/language-reference/operators/codesnippet/CSharp/multiplication-operator_2.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Nebezpečný kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+## <a name="remarks"></a>Poznámky
+
+`*` Operátor se používá také, chcete-li deklarovat typy ukazatelů a ke zrušení ukazatele. Tento operátor jde použít jenom v kontextu unsafe, udávají použití [nebezpečné](../keywords/unsafe.md) – klíčové slovo která vyžaduje [/ unsafe](../compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.  Operátor zrušení odkazu se také označuje jako operátor dereference.
+
+Uživatelem definované typy mohou přetížit binárního souboru `*` – operátor (viz [operátor](../keywords/operator.md)). Při je binární operátor přetížen, odpovídající operátor přiřazení, pokud existuje, je také implicitně přetížená.
+
+## <a name="example"></a>Příklad
+
+[!code-csharp-interactive[csRefOperators#50](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#50)]
+
+## <a name="example"></a>Příklad
+
+[!code-csharp[csRefOperators#51](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#51)]
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Nebezpečný kód a ukazatele](../../programming-guide/unsafe-code-pointers/index.md)
+- [Operátory jazyka C#](index.md)

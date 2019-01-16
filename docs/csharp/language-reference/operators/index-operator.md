@@ -1,5 +1,5 @@
 ---
-title: '[] – Operátor - C# odkaz'
+title: '[] – operátor - C# odkaz'
 ms.custom: seodec18
 ms.date: 01/10/2019
 f1_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - '[] operator [C#]'
 - indexing operator [C#]
 ms.assetid: 5c16bb45-88f7-45ff-b42c-1af1972b042c
-ms.openlocfilehash: c464dab1ebf62d33b74c83b8d5c3c563fef4e77c
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.openlocfilehash: 948ce238058307631cf0e5a7a5e3d72664233052
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307120"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333392"
 ---
-# <a name="-operator-c-reference"></a>[] – operátor (Referenční dokumentace jazyka C#)
+# <a name="-operator-c-reference"></a>[] – operátor (C# odkaz)
 
 Hranaté závorky, `[]`, se obvykle používají pro přístup k prvkům pole, indexovací člen nebo ukazatel.
 

@@ -3,13 +3,13 @@ title: Knihovny SourceLink a .NET
 description: Doporučené osvědčené postupy pro používání SourceLink k vylepšení ladění pro knihovny .NET.
 author: jamesnk
 ms.author: mairaw
-ms.date: 10/02/2018
-ms.openlocfilehash: 3bc72e158a5773b656095f9ce58b442469f91e67
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/15/2019
+ms.openlocfilehash: be97f868e2fcfc6c45e4bbac45b033f8914f4d99
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128922"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333535"
 ---
 # <a name="sourcelink"></a>SourceLink
 
@@ -35,9 +35,9 @@ Můžete použít [NuGet – Průzkumník balíčků](https://github.com/NuGetPa
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> Dává pokyn ladicímu programu vstup do kódu místo krokování s vnořením do kódu.
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> Určuje, zda člen je zobrazeno v oknech proměnných ladicího programu.
 
-**✔️ ZVAŽTE** včetně soubory symbolů (`*.pdb`) v balíčku NuGet.
+**✔️ ZVAŽTE** publikování souborů symbolů (`*.pdb`).
 
-> Obvykle bude publikována soubory se symboly v [balíček symbolů](./nuget.md#symbol-packages). V současné době hlavní veřejný hostitel pro balíčky symbolů nepodporuje soubory portable symbolů (`*.pdb`) vytvořené projekty založenými na sadě SDK a symbol balíčky nejsou uloženy užitečné.
+> Další informace o soubory symbolů a balíčky symbolů, naleznete v tématu [Symbol balíčky](./nuget.md#symbol-packages).
 
 >[!div class="step-by-step"]
 >[Předchozí](dependencies.md)

@@ -1,15 +1,15 @@
 ---
 title: Úlohy strojového učení – ML.NET
-description: Prozkoumejte různé strojového učení úkoly a přidružené inteligentních algoritmů, které jsou podporovány v ML.NET.
+description: Prozkoumejte různé strojového učení úkoly a přidružené úlohy, které jsou podporovány v ML.NET.
 ms.custom: seodec18
-ms.date: 01/14/2019
+ms.date: 01/15/2019
 author: jralexander
-ms.openlocfilehash: 32a785a28a02b936ab92f6b3a3c4c5abbbf73315
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.openlocfilehash: c40dade6e6daae9fcdfabea06a72d72905216336
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307406"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333743"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 
@@ -47,7 +47,7 @@ Následující inteligentních algoritmů jsou k dispozici pro úlohy binární 
 * [FastTreeBinaryClassificationTrainer](xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryClassificationTrainer)
 * [FieldAwareFactorizationMachineTrainer](xref:Microsoft.ML.FactorizationMachine.FieldAwareFactorizationMachineTrainer)
 * [LightGbmBinaryTrainer](xref:Microsoft.ML.LightGBM.LightGbmBinaryTrainer)
-* [LinearSvm](xref:Microsoft.ML.Trainers.Online.LinearSvm)
+* [LinearSvmTrainer](xref:Microsoft.ML.Trainers.Online.LinearSvmTrainer)
 * [PriorTrainer](xref:Microsoft.ML.Trainers.PriorTrainer)
 * [RandomTrainer](xref:Microsoft.ML.Trainers.RandomTrainer)
 * [StochasticGradientDescentClassificationTrainer](xref:Microsoft.ML.Trainers.StochasticGradientDescentClassificationTrainer)
@@ -79,7 +79,6 @@ Pro úlohy klasifikace víc tříd k dispozici jsou následující inteligentní
 
 * [LightGbmMulticlassTrainer](xref:Microsoft.ML.LightGBM.LightGbmMulticlassTrainer)
 * [MetaMulticlassTrainer < TTransformer, TModel >](xref:Microsoft.ML.Learners.MetaMulticlassTrainer%602)
-* [MultiClassClassificationTrainers](xref:Microsoft.ML.Trainers.MultiClassClassificationTrainers)
 * [MultiClassNaiveBayesTrainer](xref:Microsoft.ML.Trainers.MultiClassNaiveBayesTrainer)
 * [Ova](xref:Microsoft.ML.Trainers.Ova)
 * [Pkpd](xref:Microsoft.ML.Trainers.Pkpd)
@@ -105,7 +104,6 @@ Doporučené inteligentních algoritmů pro regresní:
 Následující inteligentních algoritmů jsou k dispozici pro regresní úlohy:
 
 * [FastTreeRegressionTrainer](xref:Microsoft.ML.Trainers.FastTree.FastTreeRegressionTrainer)
-* [FastTreeRegressionFastTreeTrainer](xref:Microsoft.ML.Runtime.FastTreeRegressionFastTreeTrainer)
 * [FastTreeTweedieTrainer](xref:Microsoft.ML.Trainers.FastTree.FastTreeTweedieTrainer)
 * [LightGbmRegressorTrainer](xref:Microsoft.ML.LightGBM.LightGbmRegressorTrainer)
 * [LogisticRegression](xref:Microsoft.ML.Learners.LogisticRegression)

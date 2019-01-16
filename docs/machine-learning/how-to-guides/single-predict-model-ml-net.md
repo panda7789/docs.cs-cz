@@ -1,22 +1,22 @@
 ---
-title: Použití PredictionFunction předpověď jeden po druhém - ML.NET
-description: Další informace o použití ML.NET PredictionFunction předpověď jeden po druhém
-ms.date: 11/07/2018
+title: Použití PredictionEngine předpověď jeden po druhém - ML.NET
+description: Další informace o použití ML.NET PredictionEngine předpověď jeden po druhém
+ms.date: 01/15/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: 9e34c1357e5ac241abd628289cd694bcd6b9cbb1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0b3f60038fe7f49ffbff3c63fd2862ba67adb506
+ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131585"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54333639"
 ---
-# <a name="use-the-predictionfunction-to-make-one-prediction-at-a-time---mlnet"></a>Použití PredictionFunction předpověď jeden po druhém - ML.NET 
+# <a name="use-the-predictionengine-to-make-one-prediction-at-a-time---mlnet"></a>Použití PredictionEngine předpověď jeden po druhém - ML.NET 
 
 Protože všechny modely ML.NET transformátoru, použijete `model.Transform` použít model, který má `DataView` k následné predikci. 
 
 Více obvyklý případ, ale je, pokud není žádný parametr 'dataset', že chcete předpovědět na, ale místo toho obdržíte jedním z příkladů v čase. Například spusťte modelu jako součást vašeho webu technologie ASP.NET a muset udělat předpověď pro příchozí požadavek protokolu HTTP.
 
-`PredictionFunction` Prostřednictvím kanálu pro predikce byla najednou spuštěna jedním z příkladů.
+`PredictionEngine` Prostřednictvím kanálu pro predikce byla najednou spuštěna jedním z příkladů.
 
 Tady je úplný příklad použití předem připravených Iris prediktivní model datové sady:
 
@@ -27,7 +27,7 @@ var mlContext = new MLContext();
 
 // Step one: read the data as an IDataView.
 // First, we define the reader: specify the data columns and where to find them in the text file.
-var reader = mlContext.Data.TextReader(new TextLoader.Arguments
+var reader = mlContext.Data.CreateTextReader(new TextLoader.Arguments
 {
     Column = new[] {
         new TextLoader.Column("SepalLength", DataKind.R4, 0),
@@ -89,13 +89,13 @@ var mlContext = new MLContext();
 
 // Use the model for one-time prediction.
 // Make the prediction function object. Note that, on average, this call takes around 200x longer
-// than one prediction, so you might want to cache and reuse the prediction function, instead of
+// than one prediction, so you might want to cache and reuse the prediction engine, instead of
 // creating one per prediction.
-var predictionFunc = model.MakePredictionFunction<IrisInput, IrisPrediction>(mlContext);
+var predictionEngine = model.CreatePredictionEngine<IrisInput, IrisPrediction>(mlContext);
 
 // Obtain the prediction. Remember that 'Predict' is not reentrant. If you want to use multiple threads
-// for simultaneous prediction, make sure each thread is using its own PredictionFunction.
-var prediction = predictionFunc.Predict(new IrisInput
+// for simultaneous prediction, make sure each thread is using its own PredictionEngine.
+var prediction = predictionEngine.Predict(new IrisInput
 {
     SepalLength = 4.1f,
     SepalWidth = 0.1f,
