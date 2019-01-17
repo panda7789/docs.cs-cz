@@ -1,9 +1,10 @@
-# [Začínáme](index.md)
-## [Úvod do jazyka C# a rozhraní .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
-## [Vytvoření aplikace Hello World v jazyce C# pomocí platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
-### [Ladění aplikace Hello World v jazyce C# pomocí sady Visual Studio 2017](../../core/tutorials/debugging-with-visual-studio.md)
-### [Publikování aplikace Hello World pomocí sady Visual Studio 2017](../../core/tutorials/publishing-with-visual-studio.md)
-## [Vytvoření knihovny tříd pomocí jazyka C# a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
-### [Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/testing-library-with-visual-studio.md)
-### [Použití rozhraní .NET standardní knihovny v Visual Studio 2017](../../core/tutorials/consuming-library-with-visual-studio.md)
-## [Začínáme s jazykem C# a nástrojem Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
+---
+ms.openlocfilehash: 899f6c8a4b6ee8bfb09ce7f380cfa08c2f93b2e1
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.translationtype: HT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362825"
+---
+# [Getting Started](index.md)
+## [Introduction to the C# language and the .NET framework](introduction-to-the-csharp-language-and-the-net-framework.md)
