@@ -1,15 +1,15 @@
 ---
 title: Implementace opakování volání HTTP pomocí exponenciálního omezení rychlosti pomocí knihovny Polly
-description: Zjistěte, jak pomocí knihovny Polly a HttpClientFactory zpracování chyb HTTP
+description: Zjistěte, jak pro zpracování chyb HTTP pomocí knihovny Polly a HttpClientFactory.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 06/10/2018
-ms.openlocfilehash: 78de1440721e83459e455f5c31d10e52a1d3b1b6
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 10/16/2018
+ms.openlocfilehash: 25b816cb56c30545b8d67986817f51e17b2ff770
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143984"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362753"
 ---
 # <a name="implement-http-call-retries-with-exponential-backoff-with-httpclientfactory-and-polly-policies"></a>Implementace opakování volání HTTP pomocí exponenciálního omezení rychlosti zásadám HttpClientFactory a Polly
 
@@ -38,7 +38,7 @@ services.AddHttpClient<IBasketService, BasketService>()
 
 **AddPolicyHandler()** metoda je co přidá zásady, které `HttpClient` objekty, které použijete. V tomto případě to je přidání zásad Polly pro opakování Http pomocí exponenciálního omezení rychlosti.
 
-Abyste měli přístup založený na modulárnější, lze v samostatné metodě v rámci metody ConfigureServices() jako následující kód definovat zásady opakování Http.
+Pokud chcete, aby modulárnější přístup, lze definovat zásady opakování Http v samostatné metodě v rámci `Startup.cs` souboru, jak je znázorněno v následujícím kódu:
 
 ```csharp
 static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
@@ -55,7 +55,7 @@ Pomocí knihovny Polly můžete definovat zásady opakování s počtem opakovan
 
 proto pokusí šestkrát a počet sekund mezi opakováními bude exponenciální, od dvou sekund.
 
-### <a name="adding-a-jitter-strategy-to-the-retry-policy"></a>Přidání zpoždění strategie zásad opakování
+## <a name="add-a-jitter-strategy-to-the-retry-policy"></a>Přidání zpoždění strategie zásad opakování
 
 Pravidelné zásady opakování můžou mít vliv na váš systém v případech, vysoká souběžnosti a škálovatelnosti a v části vysokou kolize. K překonání špičky podobné opakované pokusy pocházejí z mnoha klientů v případě částečné výpadky, dobrým řešením je přidat strategii kolísání algoritmus/zásad opakování. Přidání náhodnost exponenciálního omezení rychlosti tím lze vylepšit celkový výkon systému začátku do konce. To šíří provozní špičky případných problémech. Při použití standardní zásady Polly kód pro implementaci zpoždění může vypadat jako v následujícím příkladu:
 
@@ -71,19 +71,17 @@ Policy
 
 ## <a name="additional-resources"></a>Další zdroje
 
--   **Model opakování**
-    [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
+- **Model opakování**\
+  [*https://docs.microsoft.com/azure/architecture/patterns/retry*](/azure/architecture/patterns/retry)
 
--   **Polly a HttpClientFactory**
-    [*https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory*](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)
+- **Polly a HttpClientFactory**\
+  [*https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory*](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)
 
--   **Polly (.NET odolnosti a zpracování chyb přechodná knihovny)**
+- **Polly (.NET odolnosti a zpracování chyb přechodná knihovny)**\
+  [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
 
-    [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
-
--   **Marc Brooker. Zpoždění: Provedení akce lépe s náhodnost**
-
-    [*https://brooker.co.za/blog/2015/03/21/backoff.html*](https://brooker.co.za/blog/2015/03/21/backoff.html)
+- **Marc Brooker. Zpoždění: Provedení akce lépe s náhodnost**\
+  [*https://brooker.co.za/blog/2015/03/21/backoff.html*](https://brooker.co.za/blog/2015/03/21/backoff.html)
 
 >[!div class="step-by-step"]
 >[Předchozí](explore-custom-http-call-retries-exponential-backoff.md)

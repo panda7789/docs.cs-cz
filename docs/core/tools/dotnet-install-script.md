@@ -1,13 +1,13 @@
 ---
 title: DotNet – instalačních skriptů
 description: Další informace o dotnet instalačních skriptů k instalaci nástroje rozhraní příkazového řádku .NET Core a sdílený modul runtime.
-ms.date: 11/15/2018
-ms.openlocfilehash: 0f565fee3e4ff4bec65bd196f635e9e9601485c2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 01/16/2019
+ms.openlocfilehash: 5b266d484aae482d79674660417a834f03d53e4c
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148316"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362819"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 
@@ -21,7 +21,7 @@ Windows:
 
 `dotnet-install.ps1 [-Channel] [-Version] [-InstallDir] [-Architecture] [-SharedRuntime] [-Runtime] [-DryRun] [-NoPath] [-Verbose] [-AzureFeed] [-UncachedFeed] [-NoCdn] [-FeedCredential] [-ProxyAddress] [-ProxyUseDefaultCredentials] [-SkipNonVersionedFiles] [-Help]`
 
-macOS nebo Linux:
+macOS/Linux:
 
 `dotnet-install.sh [--channel] [--version] [--install-dir] [--architecture] [--runtime] [--dry-run] [--no-path] [--verbose] [--azure-feed] [--uncached-feed] [--no-cdn] [--feed-credential] [--runtime-id] [--skip-non-versioned-files] [--help]`
 
@@ -73,7 +73,7 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
 
 * **`-Architecture <ARCHITECTURE>`**
 
-  Architektury .NET Core binární soubory pro instalaci. Možné hodnoty jsou `auto`, `x64`, a `x86`. Výchozí hodnota je `auto`, která představuje aktuálně spuštěné Architektura operačního systému.
+  Architektury .NET Core binární soubory pro instalaci. Možné hodnoty jsou `<auto>`, `amd64`, `x64`, `x86`, `arm64`, a `arm`. Výchozí hodnota je `<auto>`, která představuje aktuálně spuštěné Architektura operačního systému.
 
 * **`-SharedRuntime`**
 
@@ -143,7 +143,7 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
   ./dotnet-install.ps1 -Channel LTS
   ```
 
-  macOS nebo Linux:
+  macOS/Linux:
 
   ```bash
   ./dotnet-install.sh --channel LTS
@@ -157,7 +157,7 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
   ./dotnet-install.ps1 -Channel 2.0 -InstallDir C:\cli
   ```
 
-  macOS nebo Linux:
+  macOS/Linux:
 
   ```bash
   ./dotnet-install.sh --channel 2.0 --install-dir ~/cli
@@ -171,7 +171,7 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
   ./dotnet-install.ps1 -SharedRuntime -Version 1.1.0
   ```
 
-  macOS nebo Linux:
+  macOS/Linux:
 
   ```bash
   ./dotnet-install.sh --shared-runtime --version 1.1.0
@@ -192,7 +192,7 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
   @powershell -NoProfile -ExecutionPolicy unrestricted -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; &([scriptblock]::Create((Invoke-WebRequest -useb 'https://dot.net/v1/dotnet-install.ps1'))) <additional install-script args>"
   ```
 
-  macOS nebo Linux:
+  macOS/Linux:
 
   ```bash
   curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>

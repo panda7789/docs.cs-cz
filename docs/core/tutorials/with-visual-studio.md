@@ -1,16 +1,16 @@
 ---
-title: Sestavení C# aplikace Hello World v .NET Core v sadě Visual Studio 2017
+title: Vytvořte si aplikaci C# Hello World pomocí .NET Core v sadě Visual Studio 2017
 description: Zjistěte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí jazyka C# pomocí sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 455058ad0a9155b8c6d2a267259783c2a7cc9815
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 7a2a7b251f38a2f1add39e50e32a832adaedc965
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168920"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362793"
 ---
 # <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení C# aplikace Hello World pomocí sady .NET Core SDK v sadě Visual Studio 2017
 
@@ -76,9 +76,9 @@ Vylepšete vaše aplikace výzva k zadání názvu a zobrazit je spolu se datum 
 
 Jste vytvořili a spustili aplikaci. K vývoji profesionální aplikace, proveďte některé další kroky pro zajištění připraven k vydání aplikace:
 
-- Informace o ladění vaší aplikace najdete v tématu [ladění jazyka C# aplikace Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md).
+- Informace o ladění vaší aplikace najdete v tématu [ladit aplikaci .NET Core Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md).
 
-- Informace o vývoji a publikování distribuovatelná verze vaší aplikace najdete v tématu [publikování C# aplikace Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).
+- Informace o vývoji a publikování distribuovatelná verze vaší aplikace najdete v tématu [publikování aplikace .NET Core Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).
 
 ## <a name="related-topics"></a>Související témata
 

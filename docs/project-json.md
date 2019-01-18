@@ -4,12 +4,12 @@ description: Kde najít dokumentaci pro předběžné verze nástrojů pro .NET 
 author: mairaw
 ms.author: mairaw
 ms.date: 03/08/2017
-ms.openlocfilehash: f5f4dd8f335d940d5c63baef73e83dd3d0eccf6e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ccdf897727ed52ccbed3e56b5a9a08cb45427d70
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47216614"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54361960"
 ---
 # <a name="projectjson-and-visual-studio-2015-with-net-core"></a>Project.JSON a Visual Studio 2015 se sadou .NET Core
 
@@ -17,12 +17,9 @@ ms.locfileid: "47216614"
 
 Dokumentace k verzi z před: 7. března aktualizace je k dispozici v souboru PDF a větve v úložišti dokumentace k.
 
-## <a name="pdf-files"></a>Soubory PDF
+## <a name="pdf-documentation"></a>Dokumentace ke službě PDF
 
-Doporučené zdroje do starší dokumentace se soubory PDF:
-
-* [.NET core – PDF pro project.json a Visual Studio 2015](https://github.com/dotnet/docs/blob/project.json/net-core-project-json.pdf)
-* [ASP.NET Core – PDF pro project.json a Visual Studio 2015](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)
+Doporučené zdroje do starší dokumentace je [.NET Core – PDF pro project.json a Visual Studio 2015](https://github.com/dotnet/docs/blob/project.json/net-core-project-json.pdf).
 
 ## <a name="documentation-repository-branch"></a>Dokumentace k úložišti větev
 

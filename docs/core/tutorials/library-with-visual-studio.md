@@ -1,18 +1,18 @@
 ---
-title: Sestavení C# .NET Standard knihovny tříd pomocí sady Visual Studio 2017
+title: Sestavení C# knihovny .NET Standard sady Visual Studio 2017
 description: Zjistěte, jak vytvořit knihovnu tříd .NET Standard napsané v jazyce C# pomocí sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/07/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 0c98f8c8fc4847570964d8d4ea8deb221164441d
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 6228cd93b275a059da63a8b8e3408032d78c5e39
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168933"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362012"
 ---
-# <a name="build-a-net-standard-class-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny tříd .NET Standard s C# a .NET Core SDK v sadě Visual Studio 2017
+# <a name="build-a-net-standard-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Sestavení knihovny .NET Standard s C# a .NET Core SDK v sadě Visual Studio 2017
 
 A *knihovny tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, který cílí na .NET Standard 2.0 umožňuje knihovny, které jsou volány žádné implementace .NET, která podporuje danou verzi .NET Standard. Po dokončení knihovnu tříd, můžete se rozhodnout, zda chcete distribuovat jako součást jiného výrobce nebo určuje, zda chcete zahrnout jako součást připojené pomocí jedné nebo více aplikací.
 

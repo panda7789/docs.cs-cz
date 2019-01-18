@@ -1,5 +1,5 @@
 ---
-title: Použití knihovny .NET Standard v sadě Visual Studio 2017
+title: Využívat knihovny .NET Standard v sadě Visual Studio 2017
 description: Sestavte aplikaci .NET Core, která volá členy jiné knihovny tříd pomocí sady Visual Studio 2017.
 author: BillWagner
 ms.author: wiwagn
@@ -8,14 +8,14 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: ccf8d33b1017c3def137de7daec4373bfeec6305
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 7689d45b341dbe9dbfae40beec3a7663e2bd0366
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168884"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362389"
 ---
-# <a name="consuming-a-net-standard-library-in-visual-studio-2017"></a>Použití knihovny .NET Standard v sadě Visual Studio 2017
+# <a name="consume-a-net-standard-library-in-visual-studio-2017"></a>Využívat knihovny .NET Standard v sadě Visual Studio 2017
 
 Po vytvoření knihovny tříd .NET Standard podle postupu v [vytváření knihovny tříd jazyka C# pomocí .NET Core v sadě Visual Studio 2017](./library-with-visual-studio.md) nebo [vytváření knihovny tříd jazyka Visual Basic pomocí .NET Core v sadě Visual Studio 2017 ](vb-library-with-visual-studio.md), otestovat ji v [testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017](testing-library-with-visual-studio.md), a integrované verzi knihovny, dalším krokem je zpřístupnit volající. Můžete to provést dvěma způsoby:
 

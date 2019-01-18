@@ -4,18 +4,20 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: 5e6c79cb538d108bba4f3915f93240d9320293c1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 923d177a294e0aeccc3fe6632488a2bc5f48b727
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143633"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362828"
 ---
 # <a name="apply-cqrs-and-cqs-approaches-in-a-ddd-microservice-in-eshoponcontainers"></a>Použít přístupy CQRS a CQS v mikroslužbě DDD v aplikaci eShopOnContainers
 
 Návrh pořadí mikroslužeb v aplikaci eShopOnContainers referenční aplikace je založen na modelu CQRS zásady. Ale používá nejjednodušším přístupem, která je právě oddělení dotazů z příkazů a používat stejnou databázi pro obě akce.
 
-Podstatu tyto vzory a tady důležitý bod je, že dotazy jsou idempotentní: bez ohledu na to, kolikrát dotaz systém, nedojde ke změně stavu systému. Můžete dokonce použít různé "čtení" datový model než transakční logiky "zapíše" model domény, přestože pořadí mikroslužeb používat stejnou databázi. To je proto jednodušší přístup modelu CQRS.
+Podstatu tyto vzory a tady důležitý bod je, že dotazy jsou idempotentní: bez ohledu na to, kolikrát dotaz systém, nedojde ke změně stavu systému. Jinými slovy dotazy jsou vedlejší efekt zdarma.
+
+Proto můžete použít různé "čtení" datový model než transakční logiky "zapíše" model domény, přestože pořadí mikroslužeb používají tutéž databázi. Proto je zjednodušený přístup modelu CQRS.
 
 Příkazy, které aktivují transakce a aktualizace dat, na druhé straně změnit stav systému. Pomocí příkazů, potřebujete mít na paměti při zabývají složitost a neustále se měnící obchodní pravidla. Toto je where má být použita DDD techniky lépe modelové systém.
 

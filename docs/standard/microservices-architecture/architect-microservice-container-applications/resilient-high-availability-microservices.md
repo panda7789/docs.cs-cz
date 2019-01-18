@@ -4,12 +4,12 @@ description: Mikroslužeb mají být navržena k odolat přechodných síťovýc
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: cbfff525c977c8dc11503a9f230c3ede6f0d6f37
-ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
+ms.openlocfilehash: 174e9881be50b8c2f8220960e93dce626e776b65
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "52745326"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362233"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>Odolnost a vysoká dostupnost v mikroslužbách
 
@@ -29,12 +29,12 @@ To se může zdát zřejmé a je často přehlédnuta, ale mikroslužby se musí
 
 Stav se liší od diagnostiky. Stav je o mikroslužbách jeho aktuální stav přijmout vhodná opatření pro vytváření sestav. Dobrým příkladem je práce s mechanismy upgradu a nasazení dostupnost. I když služba může být aktuálně v dobrém stavu z důvodu chybové ukončení procesu nebo počítač restartovat počítač, služba může být stále provozní. Poslední věcí, které potřebujete je, aby to horší provedením upgradu. Nejlepším řešením je nejdřív proveďte šetření nebo nějakou dobu počkat, mikroslužeb pro obnovení. Události stavu v mikroslužbě Pomozte nám umožňují přijímat informovaná rozhodnutí a v důsledku toho vám pomůžou vytvořit samoopravení služby.
 
-V [implementace stavu v ASP.NET Core services zkontroluje](../implement-resilient-applications/monitor-app-health.md#implementing-health-checks-in-aspnet-core-services) části této příručky, vám vysvětlíme, jak používat knihovnu ASP.NET HealthChecks nové mikroslužby tak ohlásí jejich stav monitorování službě, provést příslušné akce.
+V [implementace stavu v ASP.NET Core services zkontroluje](../implement-resilient-applications/monitor-app-health.md#implement-health-checks-in-aspnet-core-services) části této příručky, vám vysvětlíme, jak používat knihovnu ASP.NET HealthChecks nové mikroslužby tak ohlásí jejich stav monitorování službě, provést příslušné akce.
 
 Máte také možnost používat vynikající open source knihovnu s názvem Beat Pulse, který je k dispozici na [Githubu](https://github.com/Xabaril/BeatPulse) a stejně jako [balíček NuGet](https://www.nuget.org/packages/BeatPulse/). Tato knihovna také provádí kontroly stavu s prvkem, zpracovává dvou typů kontrol:
 
-- **Aktivity**: zkontroluje, jestli mikroslužbách zachování připojení, to znamená, pokud je schopný přijímat požadavky a reagovat. 
-- **Připravenost**: zkontroluje, pokud mikroslužbách závislosti (databáze, služba front, atd.) představují samy o sobě budete mít, tak můžete provést mikroslužbách, co se má provést. 
+- **Aktivity**: Zkontroluje, jestli mikroslužbách zachování připojení, to znamená, pokud je schopný přijímat požadavky a reagovat. 
+- **Připravenost**: Kontroluje, pokud mikroslužbách závislosti (databáze, služba front, atd.) představují samy o sobě budete mít, tak můžete provést mikroslužbách, co se má provést. 
 
 ### <a name="using-diagnostics-and-logs-event-streams"></a>Pomocí diagnostiky a protokoly datových proudů událostí
 
@@ -70,7 +70,7 @@ Různé orchestrátory může zní podobně, ale diagnostiky a kontroly stavu na
 - **Připojení počítačů s Windows ke službě Log Analytics v Azure** \
   [*https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents*](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents)
 
-- **Protokolování co znamená: Použití sémantického protokolování Application Block** \
+- **Protokolování co Mean: Použití sémantického protokolování Application Block** \
   [*https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx*](https://msdn.microsoft.com/library/dn440729(v=pandp.60).aspx)
 
 - **Splunk** oficiální web. \

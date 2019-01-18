@@ -1,18 +1,18 @@
 ---
-title: Publikování aplikace Hello World pomocí sady Visual Studio 2017
-description: Publikování vytvoří sadu souborů, které jsou potřeba ke spuštění aplikace.
+title: Publikování aplikace .NET Core Hello World pomocí sady Visual Studio 2017
+description: Publikování vytvoří sadu souborů, které jsou potřeba ke spuštění aplikace .NET Core.
 author: BillWagner
 ms.author: wiwagn
 ms.date: 10/05/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 8d6d5cc7766334e10e7ae3a70af0c309c05bc98b
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: ae202d8102d470e4260394f427e861750d4f0ee6
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169115"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362467"
 ---
-# <a name="publish-your-hello-world-application-with-visual-studio-2017"></a>Publikování aplikace Hello World pomocí sady Visual Studio 2017
+# <a name="publish-your-net-core-hello-world-application-with-visual-studio-2017"></a>Publikování aplikace .NET Core Hello World pomocí sady Visual Studio 2017
 
 V [sestavení C# aplikace Hello World pomocí .NET Core v sadě Visual Studio 2017](with-visual-studio.md) nebo [vytvořit aplikaci Hello World jazyka Visual Basic pomocí .NET Core v sadě Visual Studio 2017](vb-with-visual-studio.md), jste vytvořili konzolovou aplikaci Hello World . V [ladění jazyka C# aplikace Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md), můžete otestovat pomocí ladicího programu sady Visual Studio. Teď, když jste si jisti, že funguje podle očekávání, můžete publikovat tak, aby mohli ostatní uživatelé spouštět. Publikování vytvoří sadu souborů, které jsou potřeba ke spuštění aplikace a soubory můžete nasadit zkopírováním do cílového počítače.
 
@@ -24,7 +24,7 @@ K publikování a spuštění aplikace:
 
 1. Klikněte pravým tlačítkem na **HelloWorld** projektu (nikoli řešení HelloWorld) a vyberte **publikovat** z nabídky. Můžete také vybrat **publikovat HelloWorld** z hlavní aplikace Visual Studio **sestavení** nabídky.
 
-   ![Visual Studio publikovat místní nabídka](media/publishing-with-visual-studio/publish-context-menu.png)
+   ![Visual Studio Publish context menu](media/publishing-with-visual-studio/publish-context-menu.png)
 
 
    ![Visual Studio publikovat okna](media/publishing-with-visual-studio/publish-settings-window.png)

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/02/2018
-ms.openlocfilehash: 67989dc9651745ce0bd9ee9bbcbde1af0b7bc452
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0f4b9a8461b4d14cd5b468a50af1783a340392e2
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148025"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362155"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
@@ -110,7 +110,7 @@ public class PrimeWebDefaultRequestShould
     [*https://docs.microsoft.com/aspnet/core/test/integration-tests*](https://docs.microsoft.com/aspnet/core/test/integration-tests)
 
 -   **Testování jednotek v .NET Core pomocí příkazu dotnet test** <br/>
-    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test)
+    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](~/docs/core/testing/unit-testing-with-dotnet-test.md)
 
 -   **xUnit.net**. Oficiální web. <br/>
     [*https://xunit.github.io/*](https://xunit.github.io/)
@@ -152,7 +152,7 @@ Test jednotky a integrace jednotlivých mikroslužbách jsou obsaženy v testova
 
 Mikroslužby a testy funkčnosti/integrace aplikace se spouštějí ze sady Visual Studio pomocí runneru pravidelné testy, ale nejdřív je potřeba spustit požadované infrastruktury služby, prostřednictvím sady docker-compose soubory obsažené v řešení testovat složky :
 
-**docker compose test.yml**
+**docker-compose-test.yml**
 
 ```yml
 version: '3.4'
@@ -168,7 +168,7 @@ services:
     image: mongo
 ```
 
-**docker compose test.override.yml**
+**docker-compose-test.override.yml**
 
 ```yml
 version: '3.4'

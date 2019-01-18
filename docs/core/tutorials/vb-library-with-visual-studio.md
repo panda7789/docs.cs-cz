@@ -1,20 +1,20 @@
 ---
-title: Vytvoření knihovny tříd jazyka Visual Basic .NET Core v sadě Visual Studio 2017
-description: Další informace o vytváření knihovny tříd .NET Core napsané v jazyce Visual Basic pomocí sady Visual Studio 2017
+title: Vytvoření knihovny tříd jazyka Visual Basic .NET Standard v sadě Visual Studio 2017
+description: Informace o vývoji .NET Standard knihovny tříd napsané v jazyce Visual Basic pomocí sady Visual Studio 2017
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
 dev_langs:
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 04d866c0615d299fe3df72553bafce2514a1c121
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 1fddbfd84164a95505cff1783e241ea9001231f5
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168829"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362038"
 ---
-# <a name="build-a-class-library-with-visual-basic-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny tříd pomocí jazyka Visual Basic a .NET Core SDK v sadě Visual Studio 2017
+# <a name="build-a-net-standard-library-with-visual-basic-and-the-net-core-sdk-in-visual-studio-2017"></a>Vytvoření knihovny .NET Standard pomocí jazyka Visual Basic a .NET Core SDK v sadě Visual Studio 2017
 
 A *knihovny tříd* definuje typy a metody, které jsou volány aplikací. Knihovna tříd, který cílí na .NET Standard 2.0 umožňuje knihovny, které jsou volány žádné implementace .NET, která podporuje danou verzi .NET Standard. Po dokončení knihovnu tříd, můžete se rozhodnout, zda chcete distribuovat jako součást jiného výrobce nebo určuje, zda chcete zahrnout jako součást připojené pomocí jedné nebo více aplikací.
 

@@ -1,19 +1,19 @@
 ---
 title: Implementace odolných aplikací
-description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Implementace odolných aplikací
+description: Další informace o odolnost, základní pojmy v architektuře mikroslužeb. Musíte vědět, jak řešit přechodná selhání bez výpadku, protože se k nim dojde.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 06/08/2018
-ms.openlocfilehash: ec79221f0238d61f1ca1b2b7c58b1e16be7f4df4
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 10/16/2018
+ms.openlocfilehash: 00724509ba6e027ef73f72bfb6f85b8ec0aa9d25
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130791"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362740"
 ---
-# <a name="implementing-resilient-applications"></a>Implementace odolných aplikací
+# <a name="implement-resilient-applications"></a>Implementace odolných aplikací
 
-*Částečně neúspěšné, kterým bude určitě nakonec musí využívat mikroslužeb a cloudových aplikací. Je třeba navrhnout aplikace tak bude odolné vůči selhání v těchto částečné.*
+*Částečně neúspěšné, kterým bude určitě nakonec musí využívat mikroslužeb a cloudových aplikací. Je třeba navrhnout aplikaci chcete být odolní vůči selhání v těchto částečné.*
 
 Odolnost proti chybám je schopnost zotavení z chyb a nadále fungovat. Nejedná se o předcházení chybám, ale přijímá skutečnost, že dojde k selhání a reagovat na ně způsobem, který zabraňuje výpadkům nebo ztrátě. Cílem odolnosti proti chybám je plně funkčního stavu aplikace po selhání.
 

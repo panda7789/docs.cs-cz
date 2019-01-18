@@ -1,7 +1,7 @@
 ---
 title: () – operátor - C# odkaz
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 01/15/2019
 f1_keywords:
 - ()_CSharpKeyword
 helpviewer_keywords:
@@ -9,38 +9,48 @@ helpviewer_keywords:
 - cast operator [C#]
 - () operator [C#]
 ms.assetid: 846e1f94-8a8c-42fc-a42c-fbd38e70d8cc
-ms.openlocfilehash: 656a1ca7a992df43ff857d2c4ecb62b044f7e06f
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 3a0af33739c9cb4d090842219eba4ece9700ef89
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333275"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362779"
 ---
 # <a name="-operator-c-reference"></a>() – operátor (C# odkaz)
 
-Kromě používá k určení pořadí operací ve výrazu závorky slouží k provádění následujících úloh:
+Závorky, `()`, se obvykle používají pro vyvolání delegáta nebo metody nebo výrazy přetypování.
 
-1. Zadejte přetypování a převody typů.
+Je také použít k určení pořadí, ve kterém se má vyhodnotit operací ve výrazu závorky. Další informace najdete v tématu [závorek](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) část [operátory](../../programming-guide/statements-expressions-operators/operators.md) článku. Seznam operátorů seřazené podle úrovně priority, naleznete v tématu [ C# operátory](index.md).
 
-    [!code-csharp[csRefOperators#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#1)]
+## <a name="method-invocation"></a>Volání metody
 
-2. Vyvolání metod a delegátů.
+Následující příklad ukazuje, jak vyvolat metodu, s nebo bez argumentů a delegáta:
 
-    [!code-csharp[csRefOperators#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#2)]
+[!code-csharp-interactive[use for invocation](~/samples/snippets/csharp/language-reference/operators/InvocationOperatorExamples.cs#Invocation)]
 
-## <a name="remarks"></a>Poznámky
+Můžete také použít závorky, při vyvolání [konstruktor](../../programming-guide/classes-and-structs/constructors.md) s [ `new` ](../keywords/new-operator.md) operátor.
 
-Přetypování vyvolá explicitní operátor převodu z jednoho typu na jiný; přetypování selže, pokud není definován žádný převod operátor. Chcete-li definice operátora převodu, přečtěte si téma [explicitní](../keywords/explicit.md) a [implicitní](../keywords/implicit.md).
+Další informace o metodách, naleznete v tématu [metody](../../programming-guide/classes-and-structs/methods.md). Další informace o delegátech naleznete v tématu [delegáti](../../programming-guide/delegates/index.md).
 
- `()` Operátor nelze přetížit.
+## <a name="cast-expression"></a>Výraz CAST
 
- Další informace najdete v tématu [přetypování a převody typů](../../programming-guide/types/casting-and-type-conversions.md).
+Přetypování výrazu v podobě `(T)E` vyvolá operátor převodu se převést hodnotu výrazu `E` na typ `T`. Pokud neexistuje žádný explicitní převod z typu `E` na typ `T`, dojde k chybě kompilace. Informace o tom, jak definovat operátor převodu, najdete v článku [explicitní](../keywords/explicit.md) a [implicitní](../keywords/implicit.md) články – klíčové slovo.
 
- Další informace o volání metody, naleznete v tématu [metody](../../programming-guide/classes-and-structs/methods.md).
+Následující příklad ukazuje převodů mezi číselnými typy:
+
+[!code-csharp-interactive[use for cast](~/samples/snippets/csharp/language-reference/operators/InvocationOperatorExamples.cs#Cast)]
+
+Další informace o předdefinovaných explicitní převody mezi číselnými typy najdete v tématu [tabulka explicitních číselných převodů](../keywords/explicit-numeric-conversions-table.md).
+
+Další informace najdete v tématu [přetypování a převody typu](../../programming-guide/types/casting-and-type-conversions.md) a [operátory převodu](../../programming-guide/statements-expressions-operators/conversion-operators.md).
+
+## <a name="operator-overloadability"></a>Overloadability – operátor
+
+Operátor `()` nemohou být přetíženy.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Další informace najdete v tématu [výrazy typu Invocation](~/_csharplang/spec/expressions.md#invocation-expressions) a [výrazy přetypování](~/_csharplang/spec/expressions.md#cast-expressions) oddíly [ C# specifikace jazyka](../language-specification/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - expressions [C#]
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
-ms.openlocfilehash: b2975403c38dbb2b73c10b147a6903013a1e5573
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 1a9b80d90c8f5089744e9cd5a126f7730afbed44
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239287"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362311"
 ---
 # <a name="expressions-c-programming-guide"></a>Výrazy (Průvodce programováním v C#)
 *Výraz* je posloupnost nula nebo více operátory, které lze vyhodnotit na jednu hodnotu, objekt, metodu nebo obor názvů a jednu nebo více operandů. Výrazy se může skládat z literálovou hodnotou, volání metody, operátor a jeho operandy nebo *jednoduchý název*. Název proměnné, člen typu, parametr metody, obor názvů nebo typ může být jednoduché názvy.  
@@ -25,7 +25,7 @@ System.Convert.ToInt32("35");
 ```  
   
 ## <a name="expression-values"></a>Výraz hodnoty  
- Ve většině kontextech, ve kterých se používají výrazy, například v příkazech nebo parametry metody výrazu by měl vyhodnotit na nějakou hodnotu. Pokud x a y jsou celá čísla, výraz `x + y` vyhodnotí na číselnou hodnotu. Výraz `new MyClass()` vyhodnocen jako odkaz na novou instanci třídy `MyClass` objektu. Výraz `myClass.ToString()` vyhodnotí jako řetězec, protože to je návratový typ metody. Ale i když název oboru názvů klasifikovaný jako výraz, to není vyhodnocen na hodnotu a proto nemůže být nikdy konečný výsledek libovolný výraz. Nelze předat název oboru názvů parametru metody, nebo použít ve výrazu nový nebo ji přiřadit k proměnné. Můžete ho používáte jenom jako dílčí výraz do větších výrazů. Totéž platí pro typy (formou <xref:System.Type?displayProperty=nameWithType> objekty), názvy skupin – metoda (odlišuje specifických metod) a události [přidat](../../../csharp/language-reference/keywords/add.md) a [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupující objekty.  
+ Ve většině kontextech, ve kterých se používají výrazy, například v příkazech nebo parametry metody výrazu by měl vyhodnotit na nějakou hodnotu. Pokud x a y jsou celá čísla, výraz `x + y` vyhodnotí na číselnou hodnotu. Výraz `new MyClass()` vyhodnocen jako odkaz na novou instanci třídy `MyClass` třídy. Výraz `myClass.ToString()` vyhodnotí jako řetězec, protože to je návratový typ metody. Ale i když název oboru názvů klasifikovaný jako výraz, to není vyhodnocen na hodnotu a proto nemůže být nikdy konečný výsledek libovolný výraz. Nelze předat název oboru názvů parametru metody, nebo použít ve výrazu nový nebo ji přiřadit k proměnné. Můžete ho používáte jenom jako dílčí výraz do větších výrazů. Totéž platí pro typy (formou <xref:System.Type?displayProperty=nameWithType> objekty), názvy skupin – metoda (odlišuje specifických metod) a události [přidat](../../../csharp/language-reference/keywords/add.md) a [odebrat](../../../csharp/language-reference/keywords/remove.md) přistupující objekty.  
   
  Každá hodnota má přidruženého typu. Například pokud x a y jsou obě proměnné typu `int`, hodnotu výrazu `x + y` je také zadán jako `int`. Pokud je hodnota přiřazena proměnné jiného typu, nebo pokud x a y jsou různé typy, jsou použita pravidla převodu typu. Další informace o tom, jak tyto převody fungují, najdete v části [přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md).  
   

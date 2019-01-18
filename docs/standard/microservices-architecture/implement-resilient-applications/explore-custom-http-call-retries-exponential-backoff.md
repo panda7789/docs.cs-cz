@@ -1,23 +1,23 @@
 ---
 title: Prozkoumejte vlastních opakování volání HTTP pomocí exponenciálního omezení rychlosti
-description: Zjistěte, jak je možné implementovat, od začátku, opakování volání HTTP pomocí exponenciálního omezení rychlosti zpracování možných scénářů chyby protokolu HTTP.
+description: Zjistěte, jak je možné implementovat opakování volání HTTP pomocí exponenciálního omezení rychlosti, od začátku pro zpracování možných scénářů chyby protokolu HTTP.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 06/08/2018
-ms.openlocfilehash: b7aaad9199bb275f45fd088a6207d707e8e5751c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.date: 10/16/2018
+ms.openlocfilehash: fdbc09cddde34cb8897e1d5b105cb15c863b59ce
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145095"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362246"
 ---
 # <a name="explore-custom-http-call-retries-with-exponential-backoff"></a>Prozkoumejte vlastních opakování volání HTTP pomocí exponenciálního omezení rychlosti
 
 K vytvoření odolné mikroslužeb, potřebujete zpracovávat možných scénářů chyby protokolu HTTP. Jedním ze způsobů zpracování těchto chyb, však není doporučena, je vytvořit vlastní implementace opakování pomocí exponenciálního omezení rychlosti.
 
-**Důležitá poznámka:** Tato část popisuje, jak můžete vytvořit vlastní kód pro implementaci opakování volání HTTP. Ale nedoporučujeme to udělat příkazem vlastní, ale výkonné a spolehlivé, zatímco je jednodušší použít mechanismy, jako například `HttpClientFactory` pomocí knihovny Polly dostupné od verze rozhraní .NET Core 2.1. Tyto doporučené postupy jsou vysvětlené v následujících částech. 
+**Důležitá poznámka:** Tato část popisuje, jak můžete vytvořit vlastní kód pro implementaci opakování volání HTTP. Však není doporučený postup na vlastní ale určený výkonnější a spolehlivé, zatímco je jednodušší použít mechanismy, jako například `HttpClientFactory` pomocí knihovny Polly dostupné od verze rozhraní .NET Core 2.1. Tyto doporučené postupy jsou vysvětlené v následujících částech.
 
-Jako počáteční zkoumání, je možné implementovat vlastního kódu s využitím třídy nástrojů pro exponenciálního omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus kód podobný tomuto (což je také k dispozici na tomto [Githubu úložiště](https://gist.github.com/CESARDELATORRE/d80c6423a1aebaffaf387469f5194f5b)).
+Jako počáteční zkoumání, je možné implementovat vlastního kódu s využitím třídy nástrojů pro exponenciálního omezení rychlosti jako v [RetryWithExponentialBackoff.cs](https://gist.github.com/CESARDELATORRE/6d7f647b29e55fdc219ee1fd2babb260), plus kód jako následující.
 
 ```csharp
 public sealed class RetryWithExponentialBackoff
@@ -113,8 +113,7 @@ public async Task<Catalog> GetCatalogItems(int page,int take, int? brand, int? t
 }
 ```
 
-Mějte na paměti, že tento kód je vhodný pouze jako testování konceptu. Další části popisují, jak používat složitější přístupy, zatímco je jednodušší, pomocí HttpClientFactory.
-HttpClientFactory je k dispozici od verze rozhraní .NET Core 2.1 s knihovnami osvědčené odolnost proti chybám, jako je Polly. 
+Mějte na paměti, že tento kód je vhodný pouze jako testování konceptu. Další části popisují, jak používat složitější přístupy, zatímco je jednodušší, pomocí HttpClientFactory. HttpClientFactory je k dispozici od verze rozhraní .NET Core 2.1 s knihovnami osvědčené odolnost proti chybám, jako je Polly.
 
 >[!div class="step-by-step"]
 >[Předchozí](implement-resilient-entity-framework-core-sql-connections.md)

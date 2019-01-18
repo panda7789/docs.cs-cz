@@ -1,5 +1,5 @@
 ---
-title: Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017
+title: Testování knihovny tříd .NET Standard s .NET Core v sadě Visual Studio 2017
 description: Vytvoření projektu testů jednotek pro knihovny tříd .NET Core. Zkontrolujte, jestli se knihovny tříd .NET Core s testy jednotek funguje správně.
 author: BillWagner
 ms.author: wiwagn
@@ -8,16 +8,16 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: 9e680921a882ab1c974a7546a6e91a892288db8d
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 7f0f1da48294fd3856f0b2524ef5239b8b63f3e6
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170792"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362688"
 ---
-# <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017
+# <a name="test-a-net-standard-library-with-net-core-in-visual-studio-2017"></a>Test knihovny .NET Standard s .NET Core v sadě Visual Studio 2017
 
-V [vytvoření knihovny tříd pomocí jazyka C# a .NET Core v sadě Visual Studio 2017](library-with-visual-studio.md) nebo [vytváření knihovny tříd pomocí jazyka Visual Basic a .NET Core v sadě Visual Studio 2017](vb-library-with-visual-studio.md), vytvoříte jednoduchou třídu knihovnu, která se přidá metodu rozšíření k <xref:System.String> třídy. Teď vytvoříte test jednotky a ujistit se, že pracuje podle očekávání. Přidáte projektu jednotkového testu k řešení, které jste vytvořili v předchozím tématu.
+V [vytvářet knihovny .NET Standard s C# a .NET Core v sadě Visual Studio 2017](library-with-visual-studio.md) nebo [sestavení .NET standardní knihovny jazyka Visual Basic a .NET Core v sadě Visual Studio 2017](vb-library-with-visual-studio.md), vytvoříte jednoduchou třídu Knihovna, která přidá metodu rozšíření k <xref:System.String> třídy. Teď vytvoříte test jednotky a ujistit se, že pracuje podle očekávání. Přidáte projektu jednotkového testu k řešení, které jste vytvořili v předchozím článku.
 
 ## <a name="creating-a-unit-test-project"></a>Vytvoření projektu testů jednotek
 
