@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: 8cd68620-dcc3-4f20-8835-c728a6820e71
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d33dcb2b060d1d453ae17a48d2765d489de0038
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f3bcdbfacf02d84848934e21d58ed6fff7d37d52
+ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394472"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54362883"
 ---
-# <a name="how-to-perform-lazy-initialization-of-objects"></a><span data-ttu-id="a2ccf-102">Postupy: Provádění opožděné inicializace objektů</span><span class="sxs-lookup"><span data-stu-id="a2ccf-102">How to: Perform Lazy Initialization of Objects</span></span>
-<span data-ttu-id="a2ccf-103"><xref:System.Lazy%601?displayProperty=nameWithType> Třída zjednodušuje práci při provádění opožděné inicializace a vytváření instancí objektů.</span><span class="sxs-lookup"><span data-stu-id="a2ccf-103">The <xref:System.Lazy%601?displayProperty=nameWithType> class simplifies the work of performing lazy initialization and instantiation of objects.</span></span> <span data-ttu-id="a2ccf-104">Inicializace objektů opožděné způsobem, můžete vyhnout, museli vytvářet je vůbec, pokud jsou potřeba nikdy nebo jejich inicializace můžete odložit, dokud jsou nejprve přístupná.</span><span class="sxs-lookup"><span data-stu-id="a2ccf-104">By initializing objects in a lazy manner, you can avoid having to create them at all if they are never needed, or you can postpone their initialization until they are first accessed.</span></span> <span data-ttu-id="a2ccf-105">Další informace najdete v tématu [opožděné inicializace](../../../docs/framework/performance/lazy-initialization.md).</span><span class="sxs-lookup"><span data-stu-id="a2ccf-105">For more information, see [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md).</span></span>  
+# <a name="how-to-perform-lazy-initialization-of-objects"></a><span data-ttu-id="ef1aa-102">Postupy: Provádění opožděné inicializace objektů</span><span class="sxs-lookup"><span data-stu-id="ef1aa-102">How to: Perform Lazy Initialization of Objects</span></span>
+<span data-ttu-id="ef1aa-103"><xref:System.Lazy%601?displayProperty=nameWithType> Třída zjednodušuje práci provádění opožděné inicializace a vytváření instancí objektů.</span><span class="sxs-lookup"><span data-stu-id="ef1aa-103">The <xref:System.Lazy%601?displayProperty=nameWithType> class simplifies the work of performing lazy initialization and instantiation of objects.</span></span> <span data-ttu-id="ef1aa-104">V podobě opožděné inicializace objektů, vyhnete nutnosti vytvářet je vůbec, pokud nejsou nikdy potřeba nebo jejich inicializace můžete odložit, dokud se nejprve otevřen.</span><span class="sxs-lookup"><span data-stu-id="ef1aa-104">By initializing objects in a lazy manner, you can avoid having to create them at all if they are never needed, or you can postpone their initialization until they are first accessed.</span></span> <span data-ttu-id="ef1aa-105">Další informace najdete v tématu [opožděné inicializace](../../../docs/framework/performance/lazy-initialization.md).</span><span class="sxs-lookup"><span data-stu-id="ef1aa-105">For more information, see [Lazy Initialization](../../../docs/framework/performance/lazy-initialization.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="a2ccf-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="a2ccf-106">Example</span></span>  
- <span data-ttu-id="a2ccf-107">Následující příklad ukazuje, jak k chybě při inicializaci hodnotu s <xref:System.Lazy%601>.</span><span class="sxs-lookup"><span data-stu-id="a2ccf-107">The following example shows how to initialize a value with <xref:System.Lazy%601>.</span></span> <span data-ttu-id="a2ccf-108">Předpokládejme, že proměnnou opožděné nemusí být potřeba, v závislosti na jiný kód, který nastaví `someCondition` proměnné na hodnotu true nebo false.</span><span class="sxs-lookup"><span data-stu-id="a2ccf-108">Assume that the lazy variable might not be needed, depending on some other code that sets the `someCondition` variable to true or false.</span></span>  
+## <a name="example"></a><span data-ttu-id="ef1aa-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="ef1aa-106">Example</span></span>  
+ <span data-ttu-id="ef1aa-107">Následující příklad ukazuje způsob inicializace hodnotu s <xref:System.Lazy%601>.</span><span class="sxs-lookup"><span data-stu-id="ef1aa-107">The following example shows how to initialize a value with <xref:System.Lazy%601>.</span></span> <span data-ttu-id="ef1aa-108">Předpokládejme, že opožděná proměnné nemusí být potřeba, v závislosti na jiný kód, který nastaví `someCondition` proměnných na hodnotu true nebo false.</span><span class="sxs-lookup"><span data-stu-id="ef1aa-108">Assume that the lazy variable might not be needed, depending on some other code that sets the `someCondition` variable to true or false.</span></span>  
   
 ```vb  
 Dim someCondition As Boolean = False  
@@ -62,20 +62,20 @@ End Sub
   //  ...  
   // Initialize the data only if necessary  
   if (someCondition)  
-{  
+  {  
     if (_data.Value > 100)  
       {  
           Console.WriteLine("Good data");  
       }  
-}  
+  }  
 ```  
   
-## <a name="example"></a><span data-ttu-id="a2ccf-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="a2ccf-109">Example</span></span>  
- <span data-ttu-id="a2ccf-110">Následující příklad ukazuje způsob použití <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> třídě pro inicializaci typ, který je viditelná jenom pro aktuální instanci objektu na aktuální vlákno.</span><span class="sxs-lookup"><span data-stu-id="a2ccf-110">The following example shows how to use the <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> class to initialize a type that is visible only to the current object instance on the current thread.</span></span>  
+## <a name="example"></a><span data-ttu-id="ef1aa-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="ef1aa-109">Example</span></span>  
+ <span data-ttu-id="ef1aa-110">Následující příklad ukazuje způsob použití <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> třídě pro inicializaci typu, který je viditelné pouze pro aktuální instanci objektu v aktuálním vláknu.</span><span class="sxs-lookup"><span data-stu-id="ef1aa-110">The following example shows how to use the <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> class to initialize a type that is visible only to the current object instance on the current thread.</span></span>  
   
  [!code-csharp[CDS#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cds/cs/cds2.cs#13)]
  [!code-vb[CDS#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds/vb/lazyhowto.vb#13)]  
   
-## <a name="see-also"></a><span data-ttu-id="a2ccf-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="a2ccf-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ef1aa-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="ef1aa-111">See Also</span></span>  
  <xref:System.Threading.LazyInitializer?displayProperty=nameWithType>  
- [<span data-ttu-id="a2ccf-112">Opožděná inicializace</span><span class="sxs-lookup"><span data-stu-id="a2ccf-112">Lazy Initialization</span></span>](../../../docs/framework/performance/lazy-initialization.md)
+ [<span data-ttu-id="ef1aa-112">Opožděná inicializace</span><span class="sxs-lookup"><span data-stu-id="ef1aa-112">Lazy Initialization</span></span>](../../../docs/framework/performance/lazy-initialization.md)
