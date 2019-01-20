@@ -4,12 +4,12 @@ description: Prozkoumejte funkce engineering součásti, které jsou podporovan�
 author: JRAlexander
 ms.custom: seodec18
 ms.date: 01/14/2019
-ms.openlocfilehash: ebcbcc56eeb7c3caf7350e6c4bfd53997582652e
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
+ms.openlocfilehash: 54dffec37318b79edf546ba1f6e1145e35782bfb
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307497"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415348"
 ---
 # <a name="machine-learning-data-transforms---mlnet"></a>Strojové učení transformací dat - ML.NET
 
@@ -64,7 +64,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.Projections.PcaTransform> | Vypočítá projekce vektoru funkce na volné místo nízké hodnocení. |
 | <xref:Microsoft.ML.Transforms.Text.SentimentAnalyzingTransformer> | Používá model které je předem vytrénované mínění ke stanovení skóre vstupního řetězce. |
 | <xref:Microsoft.ML.Transforms.Text.StopWordsRemovingTransformer> | Odstraní konkrétní jazyk seznam stop slov (Nejčastější slova) a porovnejte jednotlivé tokeny (porovnání velká a malá písmena) stopwords. |
-| <xref:Microsoft.ML.Transforms.Categorical.TermLookupTransformer> | Mapuje textové hodnoty sloupce do nového sloupce pomocí mapy datové sady k dispozici prostřednictvím svých argumentů. |
 | <xref:Microsoft.ML.Transforms.Text.WordBagBuildingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov) v daného textu. Dělá to tak vytváření slovník ngrams a jako index v kontejneru a s použitím id ve slovníku. |
 | <xref:Microsoft.ML.Transforms.Text.WordHashBagProducingTransformer> | Vytvoří kontejner počty ngrams (posloupnosti po sobě jdoucích slov o délce 1-n) v daného textu. Dělá to tak hashování každý ngram a používají hodnoty hash jako index v kontejneru a. |
 | <xref:Microsoft.ML.Transforms.Text.WordTokenizingTransformer> | Rozdělí text na slova pomocí znaky oddělovače. |
@@ -102,7 +101,6 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.Normalizers.MeanVarDblAggregator> | Vypočítá průměr a odchylky pro sloupec Vážíme si toho vektoru. Sleduje aktuální průměr a M2 (součet kvadratických rozdíly od střední hodnoty), počet hodnoty NaN a počet prvků nenulové. |
 | <xref:Microsoft.ML.Transforms.Normalizers.MeanVarSngAggregator> | Vypočítá průměr a odchylky pro sloupec Vážíme si toho vektoru. Sleduje aktuální průměr a M2 (součet kvadratických rozdíly od střední hodnoty), počet hodnoty NaN a počet prvků nenulové. |
 | <xref:Microsoft.ML.Transforms.Normalizers.MinMaxDblAggregator> | Sleduje min, max, počet hodnot nezhuštěný (vCount) a počet volání ProcessValue() (trainCount) pro sloupec Vážíme si toho vektoru. |
-| <xref:Microsoft.ML.Transforms.Normalizers.MinMaxSngAggregator> | Sleduje min, max, počet hodnot nezhuštěný (vCount) a počet volání ProcessValue() (trainCount) pro sloupec Vážíme si toho vektoru. |
 | <xref:Microsoft.ML.Transforms.Normalizers.NormalizeTransform> | Standardizuje funkce rozsahy. |
 | <xref:Microsoft.ML.Transforms.Normalizers.NormalizingTransformer> |Standardizuje funkce rozsahy. |
 
@@ -176,4 +174,3 @@ Následující tabulky obsahují informace o všech transformace dat v ML.NET po
 | <xref:Microsoft.ML.Transforms.GenerateNumberTransform> | Přidá sloupec s generované čísel pořadí. |
 | <xref:Microsoft.ML.Transforms.ProduceIdTransform> | Sloupec s ID bodu kurzoru vytváří jako sloupec. |
 | <xref:Microsoft.ML.Transforms.RandomNumberGenerator> | Generuje náhodné číslo. |
-| <xref:Microsoft.ML.Transforms.ScoringTransformer> | Kombinuje informace z více prediktivní modely k vygenerování nového modelu v kanálu pomocí skóre z již trénovaného modelu. |

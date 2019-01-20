@@ -5,19 +5,19 @@ helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 4b6dfdbce131371553fc729206de29794266bfbe
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 833308838c5087a657c8f718682aef8d971c188f
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584314"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415907"
 ---
 # <a name="command-line-build-with-cscexe"></a>Sestavení z příkazového řádku s csc.exe
 Kompilátor jazyka C# můžete vyvolat zadáním názvu její spustitelný soubor (*csc.exe*) z příkazového řádku.
 
 Pokud používáte **Developer Command Prompt pro sadu Visual Studio** okna, všechny nezbytné proměnné prostředí jsou nastaveny za vás. Informace o tom, jak tento nástroj používat, najdete v článku [Developer Command Prompt pro sadu Visual Studio](../../../framework/tools/developer-command-prompt-for-vs.md) tématu. 
 
-Pokud používáte standardního okna příkazového řádku, je nutné upravit cestu k, abyste mohli vyvolat *csc.exe* z libovolného adresáře v počítači. Je také nutné spustit *vsvars32.bat* nastavit příslušné proměnné prostředí pro podporu sestavení příkazového řádku. Další informace o *vsvars32.bat*, včetně pokynů pro vyhledání a spusťte ho, naleznete v tématu [postupy: nastavení proměnných prostředí pro Visual Studio příkazového řádku](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
+Pokud používáte standardního okna příkazového řádku, je nutné upravit cestu k, abyste mohli vyvolat *csc.exe* z libovolného adresáře v počítači. Je také nutné spustit *vsvars32.bat* nastavit příslušné proměnné prostředí pro podporu sestavení příkazového řádku. Další informace o *vsvars32.bat*, včetně pokynů pro vyhledání a spusťte ho, naleznete v tématu [jak: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
 
 Pokud pracujete na počítači, který má pouze [!INCLUDE[winsdklong](~/includes/winsdklong-md.md)], můžete použít kompilátor jazyka C# na **příkazový řádek sady SDK**, které můžete otevřít z **Microsoft .NET Framework SDK** nabídky.
 
@@ -26,11 +26,11 @@ Pomocí nástroje MSBuild můžete také programově vytvářet programy jazyka 
 *Csc.exe* spustitelný soubor je obvykle umístěn ve Microsoft.NET\Framework\\*\<verze >* ve složce *Windows* adresář. Umístění, kde se může lišit v závislosti na přesnou konfiguraci určitého počítače. Pokud více než jednu verzi rozhraní .NET Framework je nainstalována v počítači, zjistíte více verzí tohoto souboru. Další informace o těchto zařízení najdete v tématu [postupy: zjištění nainstalovaných verzí rozhraní .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
 
 > [!TIP]
->  Při vytváření projektu pomocí rozhraní IDE sady Visual Studio můžete zobrazit **csc** příkazu a jeho kompilátoru přidružené možností v **výstup** okna. Chcete-li zobrazit tyto informace, postupujte podle pokynů v [postupy: zobrazení, ukládání a konfigurace souborů protokolu sestavení](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) změnit úroveň podrobností dat protokolu do **normální** nebo **podrobné**. Po opětovném sestavení projektu, hledání **výstup** okně **csc** najít vyvolání kompilátor jazyka C#.
+>  Při vytváření projektu pomocí rozhraní IDE sady Visual Studio můžete zobrazit **csc** příkazu a jeho kompilátoru přidružené možností v **výstup** okna. Chcete-li zobrazit tyto informace, postupujte podle pokynů v [jak: Zobrazení, ukládání a konfigurace souborů protokolu sestavení](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) změnit úroveň podrobností dat protokolu do **normální** nebo **podrobné**. Po opětovném sestavení projektu, hledání **výstup** okně **csc** najít vyvolání kompilátor jazyka C#.
 
  **V tomto tématu**
 
-- [Pravidla pro syntaxi příkazového řádku](#-rules-for-command-line-syntax-for-the-c-compiler)
+- [Pravidla pro syntaxi příkazového řádku](#rules-for-command-line-syntax-for-the-c-compiler)
 
 - [Ukázkové příkazové řádky](#sample-command-lines-for-the-c-compiler)
 
@@ -103,5 +103,5 @@ Neexistují žádné objektu (*.obj*) soubory vytvořené v důsledku volání k
 - [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
 - [Argumenty příkazového řádku](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)  
 - [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
-- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
+- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
 - [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)

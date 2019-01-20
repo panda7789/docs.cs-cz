@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: f9b4e3d885725afc4181256e02e3b174318e3ece
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: acd8e14e1d000f55f03017a4fee43347f50df3a7
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47232843"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415920"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -27,11 +27,11 @@ Zjistěte, jak nastavit vývojové prostředí ke spuštění ukázky kódu, naj
 
 .NET podporuje více programovacích jazyků. Implementace .NET implementovat [společné jazykové infrastruktury (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), které mimo jiné určuje nezávislým na jazyku modulu runtime a jazyk interoperability. To znamená, že zvolíte kterémkoli jazyce platformy .NET k vytváření aplikací a služeb na rozhraní .NET.
 
-Microsoft aktivně vyvíjí a podporuje tři různé jazyky .NET: C#, F # a Visual Basic (VB). 
+Microsoft aktivně vyvíjí a podporuje tři různé jazyky .NET: C#, F#and Visual Basic (VB). 
 
 * C# je jednoduchý, výkonný, typově bezpečný a objektově orientované, při zachování expresivity a elegance jazyků stylu. Každý, kdo zná podobné jazyky C a zjistí, několik problémů s přizpůsobením jazyka C#. Podívejte se [průvodce v C#](../csharp/index.md) Další informace o jazyce C#.
 
-* F # je multiplatformní, funkcionální programovací jazyk, který podporuje také tradičního objektově orientované a imperativní programování. Podívejte se [Průvodce jazykem F #](../fsharp/index.md) Další informace o jazyce F #.
+* F#je platformově univerzální, funkcionální programovací jazyk, který podporuje také tradičního objektově orientované a imperativní programování. Podívejte se [ F# průvodce](../fsharp/index.md) Další informace o F#.
 
 * Visual Basic je snadné jazykové informace, které umožňují vytvářet různé aplikace, které běží na rozhraní .NET. Mezi jazyky .NET syntaxe jazyka Visual Basic se nejvíc blíží běžné lidské jazyka, často usnadnění pro osoby, nový přístup k vývoji softwaru.
 
@@ -64,7 +64,7 @@ Jednou `using` blok dokončení, modulu runtime .NET automaticky volá `stream` 
 Další podrobnosti naleznete v následujících tématech:
 
 * Pro jazyk C#, najdete v článku [using – příkaz (referenční dokumentace jazyka C#)](../csharp/language-reference/keywords/using-statement.md) tématu.
-* F #, najdete v části [Správa prostředků: klíčové slovo use](../fsharp/language-reference/resource-management-the-use-keyword.md).
+* Pro F#, naleznete v tématu [Správa prostředků: Klíčové slovo use](../fsharp/language-reference/resource-management-the-use-keyword.md).
 * VB, najdete v článku [pomocí – příkaz (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) tématu.
 
 ## <a name="type-safety"></a>Bezpečnost typů
@@ -79,11 +79,11 @@ Bezpečnost typů slouží také k podpoře vynucení zapouzdření zaručením 
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, VB a F # podporují místní *odvození typu*. Odvození typu znamená, že kompilátor odvodí typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že je bezpečnost typů narušený, případně jim vyhnout. Výsledný typ nemá silný typ se vším, který zahrnuje. Z předchozího příkladu `dog` je přepsán zavést odvození typu proměnné a zbytek v příkladu je beze změny:
+C#, VB, a F# místní podporu *odvození typu*. Odvození typu znamená, že kompilátor odvodí typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že je bezpečnost typů narušený, případně jim vyhnout. Výsledný typ nemá silný typ se vším, který zahrnuje. Z předchozího příkladu `dog` je přepsán zavést odvození typu proměnné a zbytek v příkladu je beze změny:
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F # obsahuje i další typ odvození funkce než pro odvození typu metoda – místní, v C# a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
+F#má i další možnosti odvození typu než odvození typu metoda místní součástí C# a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
 
 ## <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -125,7 +125,7 @@ Hlavní způsob, jak provést nativní Interoperabilita je prostřednictvím "vy
 
 Podobně stojí většina vzájemná funkční spolupráce podpora pro Mono (a tedy Xamarinu pro) pro Javu a Objective-C, to znamená, že použít stejné zásady.
 
-Další informace o nativní interoperabilita v [nativní interoperabilita](native-interop.md) tématu.
+Další informace o nativní interoperabilita, najdete v článku [nativní interoperabilita](native-interop/index.md) článku.
 
 ## <a name="unsafe-code"></a>Nezabezpečený kód
 
@@ -139,7 +139,7 @@ V následujícím příkladu je upravená verze `ToString()` metodu z `StringBui
 
 Pokud vás zajímá prohlídku funkcí jazyka C#, přečtěte si [Tour z jazyka C#](../csharp/tour-of-csharp/index.md).
 
-Pokud vás zajímá prohlídku funkcí F #, přečtěte si téma [Tour F #](../fsharp/tour.md).
+Pokud vás zajímá prohlídku F# funkce, najdete v článku [prohlídka F# ](../fsharp/tour.md).
 
 Pokud chcete začít s psaním kódu vlastní, navštivte [Začínáme](get-started.md).
 

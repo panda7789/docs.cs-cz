@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 7.0 – průvodce v C#
 description: Získejte přehled o nových funkcích v nadcházející verzi 7 jazyka C#.
 ms.date: 12/21/2016
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 0a8b20606e5133c45f26377ea1c2eba58a1aa3af
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 08e9b9d1a991c6dd18477214dec60fba95afc6c9
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155285"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415725"
 ---
 # <a name="whats-new-in-c-70"></a>Co je nového v jazyce C# 7.0
 
@@ -168,7 +168,7 @@ Porovnávání vzorů podporuje `is` výrazy a `switch` výrazy. Každý umožň
 
 ### <a name="is-expression"></a>`is` Výraz
 
-`is` Výraz vzoru rozšiřuje známé `is` operátor k dotazování nad rámec jeho typ objektu.
+`is` Výraz vzoru rozšiřuje známé [ `is` operátor](../language-reference/keywords/is.md#pattern-matching-with-is) k dotazování nad rámec jeho typ objektu.
 
 Začněme pomocí jednoduchého scénáře. Přidáme možnosti pro tento scénář, které ukazují, jak vytvořit odpovídající výrazy vzor algoritmy, které pracují s nesouvisejících typů jednoduché. Začneme s metodou, která vypočítá součet počtu kostka zobrazí:
 

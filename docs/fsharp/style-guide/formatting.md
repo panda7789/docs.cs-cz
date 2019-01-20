@@ -2,12 +2,12 @@
 title: F#pravidla formátování kódu
 description: Přečtěte si pokyny pro formátování F# kódu.
 ms.date: 11/26/2018
-ms.openlocfilehash: e8e0af2ebffd0e2f3720896bf710961afa11e7bd
-ms.sourcegitcommit: 49af435bfdd41faf26d38c20c5b0cc07e87bea60
+ms.openlocfilehash: d4b61646154c613093374ef3dcf7436de4b0d3ea
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53396822"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415439"
 ---
 # <a name="f-code-formatting-guidelines"></a>F#pravidla formátování kódu
 
@@ -357,7 +357,7 @@ type PostalAddress =
     
 type MyRecord =
     {
-        SomeField : int
+        SomeField: int
     }
     interface IMyInterface
 ```
@@ -399,7 +399,7 @@ let rainbow =
     
 type MyRecord =
     {
-        SomeField : int
+        SomeField: int
     }
     interface IMyInterface
 
@@ -676,7 +676,7 @@ Objektové výrazy a rozhraní zarovnání stejným způsobem s `member` se odsa
 let comparer =
     { new IComparer<string> with
           member x.Compare(s1, s2) =
-              let rev (s : String) =
+              let rev (s: String) =
                   new String (Array.rev (s.ToCharArray()))
               let reversed = rev s1
               reversed.CompareTo (rev s2) }

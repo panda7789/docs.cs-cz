@@ -7,12 +7,12 @@ helpviewer_keywords:
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: ce6b23edb10733de3134b5233413de8b535c11ac
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: c14b0470f7ea488fcb813b68174b5d1cb0d95786
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235290"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415582"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>Oddělovače pro dokumentační značky (Průvodce programováním v C#)
 Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru kde Dokumentační komentář začíná a končí. Můžete použít následující typy oddělovače se značkami dokumentace XML:  
@@ -38,7 +38,7 @@ Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru
   
 -   Řádek, který začíná je jediná součást následující komentář, který se zpracuje `<summary>`. Tři značky formáty vytvářejí stejné komentáře.  
   
-    ```  
+    ```csharp  
     /** <summary>text</summary> */   
   
     /**   
@@ -52,7 +52,7 @@ Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru
   
 -   Kompilátor identifikuje běžné vzor "*" na začátku druhé a třetí řádky. Vzor není zahrnut ve výstupu.  
   
-    ```  
+    ```csharp  
     /**   
      * <summary>   
      * text </summary>*/   
@@ -60,7 +60,7 @@ Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru
   
 -   Kompilátor vyhledá žádné běžný vzor v následující komentář, protože druhý znak na třetím řádku není hvězdičku. Proto veškerý text na řádcích druhé a třetí zpracovávány jako součást komentář.  
   
-    ```  
+    ```csharp  
     /**   
      * <summary>   
        text </summary>  
@@ -69,7 +69,7 @@ Použití komentáře XML vyžaduje oddělovače, které označují kompilátoru
   
 -   Kompilátor vyhledá žádný model v následující komentář dvou důvodů. Počet mezer před hvězdička nejprve není konzistentní. Za druhé pátý řádek začíná kartu, která se neshoduje s mezery. Proto veškerý text z řádky dvou až pět zpracovávány jako součást komentář.  
   
-    ```  
+    ```csharp  
     /**   
       * <summary>   
       * text   

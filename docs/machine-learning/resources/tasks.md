@@ -4,12 +4,12 @@ description: Prozkoumejte různé strojového učení úkoly a přidružené úl
 ms.custom: seodec18
 ms.date: 01/15/2019
 author: jralexander
-ms.openlocfilehash: c40dade6e6daae9fcdfabea06a72d72905216336
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 02b454d18eca36c94c27ae15665af5df2ec87905
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333743"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415699"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 
@@ -48,6 +48,7 @@ Následující inteligentních algoritmů jsou k dispozici pro úlohy binární 
 * [FieldAwareFactorizationMachineTrainer](xref:Microsoft.ML.FactorizationMachine.FieldAwareFactorizationMachineTrainer)
 * [LightGbmBinaryTrainer](xref:Microsoft.ML.LightGBM.LightGbmBinaryTrainer)
 * [LinearSvmTrainer](xref:Microsoft.ML.Trainers.Online.LinearSvmTrainer)
+* [LogisticRegression](xref:Microsoft.ML.Learners.LogisticRegression)
 * [PriorTrainer](xref:Microsoft.ML.Trainers.PriorTrainer)
 * [RandomTrainer](xref:Microsoft.ML.Trainers.RandomTrainer)
 * [StochasticGradientDescentClassificationTrainer](xref:Microsoft.ML.Trainers.StochasticGradientDescentClassificationTrainer)
@@ -106,7 +107,6 @@ Následující inteligentních algoritmů jsou k dispozici pro regresní úlohy:
 * [FastTreeRegressionTrainer](xref:Microsoft.ML.Trainers.FastTree.FastTreeRegressionTrainer)
 * [FastTreeTweedieTrainer](xref:Microsoft.ML.Trainers.FastTree.FastTreeTweedieTrainer)
 * [LightGbmRegressorTrainer](xref:Microsoft.ML.LightGBM.LightGbmRegressorTrainer)
-* [LogisticRegression](xref:Microsoft.ML.Learners.LogisticRegression)
 * [OlsLinearRegressionTrainer](xref:Microsoft.ML.Trainers.HalLearners.OlsLinearRegressionTrainer)
 * [OnlineGradientDescentTrainer](xref:Microsoft.ML.Trainers.Online.OnlineGradientDescentTrainer)
 * [PoissonRegression](xref:Microsoft.ML.Trainers.PoissonRegression)

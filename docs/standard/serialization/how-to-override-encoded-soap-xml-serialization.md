@@ -1,23 +1,22 @@
 ---
-title: 'Postupy: přepsání serializace XML kódovaný protokol SOAP'
+title: 'Postupy: Přepsat kódovaný protokol SOAP serializace XML'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - overriding XML serialization
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
-ms.openlocfilehash: 721a27b4bba239f0d22a24e0e159ef36b742d1b7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 7deec91f605555cff94fa882c887a4adf97db58a
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003773"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415062"
 ---
-# <a name="how-to-override-encoded-soap-xml-serialization"></a>Postupy: přepsání serializace XML kódovaný protokol SOAP
-[Příklad kódu](#tskhowtooverrideencodedsoapxmlserializationanchor1)  
+# <a name="how-to-override-encoded-soap-xml-serialization"></a>Postupy: Přepsat kódovaný protokol SOAP serializace XML
   
- Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML. Informace o přepsání standardních serializace XML, naleznete v tématu [postupy: určení alternativního názvu elementu pro XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).  
+ Proces pro přepsání XML serializaci objektů jako zprávy protokolu SOAP je podobný procesu pro přepsání standardních serializace XML. Informace o přepsání standardních serializace XML, naleznete v tématu [jak: Určení alternativního názvu elementu pro XML Stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md).  
   
-### <a name="to-override-serialization-of-objects-as-soap-messages"></a>Chcete-li přepsat serializaci objektů jako zprávy protokolu SOAP  
+## <a name="to-override-serialization-of-objects-as-soap-messages"></a>Chcete-li přepsat serializaci objektů jako zprávy protokolu SOAP  
   
 1.  Vytvořit instanci <xref:System.Xml.Serialization.SoapAttributeOverrides> třídy.  
   
@@ -285,4 +284,4 @@ public class Run
 - [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
 - [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
-- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

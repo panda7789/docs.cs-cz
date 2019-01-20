@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 8cb47d1c7eecebca42a65557b61d782a76266c2f
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 7ddc79a7d9864ecd7834cb75e23c9ad3a4320a91
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030175"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415504"
 ---
 # <a name="methods"></a>Metody #
 
@@ -229,7 +229,7 @@ Pokud metoda pole je předán jako argument a změní hodnotu jednotlivých prvk
 
 [!code-csharp[csSnippets.Methods#101](../../samples/snippets/csharp/concepts/methods/returnarray1.cs#101)]
 
- <a name="exten"></a>
+ <a name="extension"></a>
  ## <a name="extension-methods"></a>Rozšiřující metody ##
 
 Obvykle existují dva způsoby, jak přidat metodu k existujícímu typu:

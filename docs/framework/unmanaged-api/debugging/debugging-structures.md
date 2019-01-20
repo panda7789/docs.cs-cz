@@ -8,64 +8,64 @@ helpviewer_keywords:
 ms.assetid: 173ba2c2-ab34-49ae-b6a8-e5c49882bf05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6c7415920d34fc231bf82dd00199c7e01eec7a73
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 23aa619d666f2e0b9eb67ab4cf8d4f92761865d3
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408109"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415322"
 ---
 # <a name="debugging-structures"></a>Struktury pro ladění
-Tato část popisuje nespravované struktury, která používá rozhraní API pro ladění.  
+Tato část popisuje nespravované struktury, které používá rozhraní API pro ladění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CLR_DEBUGGING_VERSION – struktura](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-version-structure.md)  
- Definuje verze produktu common language runtime (CLR) pro účely ladění.  
+ Určuje verzi modulu common language runtime (CLR) pro účely ladění.  
   
  [CodeChunkInfo – struktura 1](../../../../docs/framework/unmanaged-api/debugging/codechunkinfo-structure.md)  
- Představuje jeden blok kódu v paměti.  
+ Představuje jediný neodkazovaný blok kódu v paměti.  
   
  [CorDebugBlockingObject – struktura](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md)  
- Definuje objekt, který je blokování vlákna a důvod, proč je blokován vlákno.  
+ Definuje objekt, který blokuje vlákno a důvod, proč je vlákno blokované.  
   
  [CorDebugEHClause – struktura](../../../../docs/framework/unmanaged-api/debugging/cordebugehclause-structure.md)  
- Představuje výjimku zpracování (EH) klauzuli pro určitou část převodní jazyk (IL).  
+ Představuje výjimku zpracování – klauzule (EH) pro danou část (IL intermediate language).  
   
  [CorDebugExceptionObjectStackFrame – struktura](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionobjectstackframe-structure.md)  
- Představuje zásobníku rámce informace z objektu výjimky.  
+ Představuje zásobník snímků informace z objektu výjimky.  
   
  [CorDebugExceptionObjectStackFrame – struktura](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionobjectstackframe-structure.md)  
- Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID do její odpovídající [ICorDebugType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-interface.md) objektu.  
+ Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID odpovídající [ICorDebugType](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-interface.md) objektu.  
   
- COR_ACTIVE_FUNCTION –  
- Obsahuje informace o funkcích, které jsou momentálně aktivní v podprocesu rámce.  
+ COR_ACTIVE_FUNCTION  
+ Obsahuje informace o funkcích, které jsou aktuálně aktivní vlákna snímků.  
   
  [COR_ARRAY_LAYOUT – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-array-layout-structure.md)  
- Poskytuje informace o rozložení objektu pole v paměti.  
+ Poskytuje informace o rozložení objektu array v paměti.  
   
- COR_DEBUG_IL_TO_NATIVE_MAP –  
- Obsahuje posuny, které se používají pro mapování kódu Microsoft (MSIL intermediate language) do nativního kódu.  
+ COR_DEBUG_IL_TO_NATIVE_MAP  
+ Obsahuje posuny, které se používají k mapování kód Microsoft intermediate language (MSIL) do nativního kódu.  
   
- COR_DEBUG_STEP_RANGE –  
- Obsahuje informace o posunu pro řadu kódu.  
+ COR_DEBUG_STEP_RANGE  
+ Obsahuje informace o posunu pro celou řadu kódu.  
   
  [COR_FIELD – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-field-structure.md)  
  Poskytuje informace o pole v objektu.  
   
  [COR_GC_REFERENCE – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md)  
- Obsahuje informace o objekt, který má být uvolňování paměti.  
+ Obsahuje informace o objektu, který má být uvolněna.  
   
  [COR_HEAPINFO – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-heapinfo-structure.md)  
- Poskytuje obecné informace o kolekci halda paměti, včetně toho, jestli je vyčíslitelná.  
+ Obsahuje obecné informace o haldě uvolňování paměti kolekce, včetně toho, zda je vyčíslitelná.  
   
  [COR_HEAPOBJECT – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md)  
- Poskytuje informace o objekt na spravované haldě.  
+ Poskytuje informace o objektu na spravované haldě.  
   
- COR_IL_MAP –  
- Určuje změny v relativní posun funkce.  
+ COR_IL_MAP  
+ Určuje změny v relativním posunem funkce.  
   
  [COR_SEGMENT – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-segment-structure.md)  
- Obsahuje informace o oblasti spravovaná halda paměti.  
+ Obsahuje informace o oblasti paměti spravované haldy.  
   
  [COR_TYPEID – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md)  
  Obsahuje identifikátor typu.  
@@ -73,11 +73,18 @@ Tato část popisuje nespravované struktury, která používá rozhraní API pr
  [COR_TYPE_LAYOUT – struktura](../../../../docs/framework/unmanaged-api/debugging/cor-type-layout-structure.md)  
  Poskytuje informace o rozložení objektu v paměti.  
   
- COR_VERSION –  
- Ukládá číslo standardní sestávající ze čtyř částí verze modulu CLR.  
+ COR_VERSION  
+ Ukládá číslo standardní sestávající ze čtyř částí verze modulu common language runtime.  
   
  [StackTrace_SimpleContext – struktura](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md)  
- Poskytuje jednoduché kontext, který jde použít místo úplné `CONTEXT` struktura.  
+ Poskytuje jednoduchý kontext, který jde použít místo úplné `CONTEXT` struktury.
+
+ [Struktura CLRDATA_ADDRESS_RANGE](../../../../docs/framework/unmanaged-api/debugging/clrdata-address-range-structure.md) definuje rozsah adres.
+ 
+ [Struktura CLRDATA_IL_ADDRESS_MAP](../../../../docs/framework/unmanaged-api/debugging/clrdata-il-address-map-structure.md) definuje IL pro mapování adresy
+ 
+ [Struktura DacpGetModuleAddress](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-structure.md) definuje kontejner pro žádost o adresu modulu.
+
   
 ## <a name="related-sections"></a>Související oddíly  
  [Třídy typu coclass pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-coclasses.md)  

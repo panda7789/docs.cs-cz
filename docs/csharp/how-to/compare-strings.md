@@ -1,16 +1,16 @@
 ---
 title: 'Postupy: Porovnání řetězců - C# Průvodce'
 description: Zjistěte, jak porovnat a pořadí řetězcové hodnoty, s nebo bez něj případu s nebo bez řazení konkrétní jazykovou verzi
-ms.date: 03/20/2018
+ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 5b62dd37474dc0afb186c65d1f55f7ccaf7266ec
-ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
+ms.openlocfilehash: 0eb8669e52099e35553d9e7842371045bd88a643
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53334831"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415881"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Jak bude probíhat porovnávání řetězců v jazyce C\#
 
@@ -29,7 +29,13 @@ Při porovnání řetězců můžete definovat pořadí mezi nimi. Porovnání s
 
 ## <a name="default-ordinal-comparisons"></a>Výchozí ordinální porovnání
 
-Nejběžnější metody, které testují rovnost, <xref:System.String.Equals%2A?displayProperty=nameWithType> a <xref:System.String.op_Equality%2A?displayProperty=nameWithType>, použít malá a velká písmena řadové porovnání. Výsledky jsou zobrazeny v následujícím příkladu.
+Nejběžnější operace:
+
+- <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
+- <xref:System.String.Equals%2A?displayProperty=nameWithType>
+- <xref:System.String.op_Equality%2A?displayProperty=nameWithType> 
+
+použít řadové porovnání porovnání velká a malá písmena a pomocí aktuální jazykové verze. Výsledky jsou uvedeny v následujícím příkladu:
 
 [!code-csharp-interactive[Comparing strings using an ordinal comparison](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#1)]
 

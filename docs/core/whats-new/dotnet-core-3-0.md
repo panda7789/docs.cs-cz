@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2018
-ms.openlocfilehash: 3ca833031eb8bb0f43a334f833f2e0075842d57d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 26fb7cb25b9bf7f00f87059fbe1848763f7f175d
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155480"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415543"
 ---
 # <a name="whats-new-in-net-core-30-preview-1"></a>Co je nového v .NET Core 3.0 (ve verzi Preview 1)
 
@@ -24,21 +24,18 @@ Přidává podporu pro .NET core 3.0 C# 8.0.
 
 Další informace najdete v tématu [.NET Core 3.0 ve verzi Preview 1 oznámení](https://blogs.msdn.microsoft.com/dotnet/2018/12/04/announcing-net-core-3-preview-1-and-open-sourcing-windows-desktop-frameworks/).
 
-## <a name="net-standard-21"></a>.NET standard 2.1
+## <a name="net-standard-21"></a>.NET Standard 2.1
 
 .NET core 3.0 implementuje .NET Standard 2.1.
 
 ## <a name="default-executables"></a>Výchozí spustitelné soubory
 
-.NET core teď bude vytvářet spustitelné soubory ve výchozím nastavení. Toto je nová pro aplikace, které používají globálně nainstalovanou verzi .NET Core. Až doteď jenom [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) měl spustitelné soubory.
+.NET core se teď sestavení [závisí na architektuře spustitelných souborů](../deploying/index.md#framework-dependent-executables-fde) ve výchozím nastavení. Toto je nová pro aplikace, které používají globálně nainstalovanou verzi .NET Core. Až doteď jenom [samostatná nasazení](../deploying/index.md#self-contained-deployments-scd) vytvoří spustitelný soubor.
 
 Během `dotnet build` nebo `dotnet publish`, spustitelný soubor je vytvořen, za předpokladu, který odpovídá prostředí a platforma sady SDK, kterou používáte. Můžete očekávat, že stejné operace tyto spustitelné soubory stejně jako další nativní spustitelné soubory, jako například:
 
 * Můžete dvakrát kliknout na spustitelný soubor.
 * Aplikace z příkazového řádku můžete spustit přímo, jako například `myapp.exe` na Windows, a `./myapp` v Linuxu a macOS.
-
-> [!NOTE]
-> Určení konkrétního modulu runtime s `dotnet publish -r` nebo `dotnet build -r` argumenty pro jiná prostředí modulu runtime není podporován.
 
 ## <a name="build-copies-dependencies"></a>Vytvoření kopie závislosti
 
@@ -389,7 +386,7 @@ OpenSSL 1.1.1  11 Sep 2018
 >[!IMPORTANT]
 >Windows a macOS zatím ještě nepodporují **TLS 1.3**. Bude podporovat .NET core 3.0 **TLS 1.3** v těchto operačních systémech, jakmile je k dispozici podpora.
 
-## <a name="cryptography"></a>Kryptografie
+## <a name="cryptography"></a>Cryptography
 
 Byla přidána podpora pro **AES-GCM** a **AES-CCM** šifry, prostřednictvím rozhraní `System.Security.Cryptography.AesGcm` a `System.Security.Cryptography.AesCcm`. Tyto algoritmy jsou obě [ověření šifrování pomocí algoritmů přidružení dat (AEAD)](https://en.wikipedia.org/wiki/Authenticated_encryption)a první ověření šifrování (AE) algoritmy přidané do .NET Core.
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cdbbf3138cad0a2fae311bf03476eebba23b7320
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 822aedd3e08ad3f8950f6531fe687ec26df4622a
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50202904"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415530"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
@@ -52,8 +52,8 @@ Obrázek 1: Generace 0 a 1. generace GC.
 
 Obrázek 2 ukazuje, že po 2. generace GC které si všimli, že `Obj1` a `Obj2` jsou neaktivní, GC forms souvislých volného místa, nedostatek paměti, která používá pravděpodobně obsazena `Obj1` a `Obj2`, která byla použita k vyřízení požadavku na přidělení pro `Obj4`. Mezera za poslední objekt `Obj3`na konci segmentu slouží také ke splnění požadavků na přidělení.
 
-![Obrázek 2: po uvolňování paměti generace 2](media/loh/loh-figure-2.jpg)  
-Obrázek 2: po uvolnění GC 2. generace
+![Obrázek 2: Po uvolnění GC gen 2](media/loh/loh-figure-2.jpg)  
+Obrázek 2: Po uvolnění GC 2. generace
 
 Pokud není k dispozici dostatek volného místa pro plnění požadavků na přidělení velké objekty, uvolňování paměti se nejprve pokusí získat další segmenty z operačního systému. Pokud selže, spustí 2. generace uvolňování paměti v naději, uvolněte nějaké místo.
 
@@ -144,7 +144,7 @@ Můžete použít následující nástroje ke shromažďování dat o výkonu LO
 
 ### <a name="net-clr-memory-performance-counters"></a>Čítače výkonu paměti .NET CLR
 
-Tyto čítače výkonu jsou obvykle dobrý první krok při zkoumání problémů s výkonem (i když vám doporučujeme použít [události trasování událostí pro Windows](#etw)). Konfigurace sledování výkonu tak, že přidáte čítače, které potřebujete, jak je vidět na obrázku 4. Ty, které jsou relevantní pro LOH jsou:
+Tyto čítače výkonu jsou obvykle dobrý první krok při zkoumání problémů s výkonem (i když vám doporučujeme použít [události trasování událostí pro Windows](#etw-events)). Konfigurace sledování výkonu tak, že přidáte čítače, které potřebujete, jak je vidět na obrázku 4. Ty, které jsou relevantní pro LOH jsou:
 
 - **Úklidy 2.**
 
@@ -197,8 +197,8 @@ perfview /GCOnly /AcceptEULA /nogui collect
 
 shromažďuje události AllocationTick, která se aktivuje přibližně každých 100 kB za přidělení. Jinými slovy událost se aktivuje pokaždé, když je přiděleno ve velkém objektu. Pak můžete se podívat na jedno zobrazení alokační haldy uvolňování paměti, které zobrazují zásobníky volání, která přidělena velké objekty:
 
-![Obrázek 6: Alokační haldy uvolňování paměti zobrazení](media/loh/perfview2.png)  
-Obrázek 6: Alokační haldy uvolňování paměti zobrazení
+![Obrázek 6: Zobrazení alokační haldy uvolňování paměti](media/loh/perfview2.png)  
+Obrázek 6: Zobrazení alokační haldy uvolňování paměti
 
 Jak je vidět, to je velmi jednoduchý test, který právě přiděluje rozsáhlé objekty z jeho `Main` metoda.
 

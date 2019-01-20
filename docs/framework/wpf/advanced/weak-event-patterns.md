@@ -6,74 +6,75 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 4b1e8649e5d550ffa2c7ee614cb9102f86a83ff8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52692bf165927ba50ab55e4c0f8bbc92b23d2272
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33549344"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415985"
 ---
 # <a name="weak-event-patterns"></a>Slabý vzor událostí
-V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroje událostí nebude v koordinaci s objektem naslouchací proces, který obslužná rutina připojen ke zdroji. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] představuje návrhový vzor, který lze tento problém vyřešit pomocí vyhrazené manager třídu pro konkrétní události a implementace rozhraní na naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabé událostí vzor*.  
+V aplikacích je možné, že obslužné rutiny, které jsou připojeny ke zdrojům událostí nebude ve spolupráci s objektem naslouchací proces, který připojuje ke zdroji obslužné rutiny. Tato situace může vést k nevracení paměti. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] zavádí návrhový vzor, který je možné tento problém vyřešit tak, že třída vyhrazený správce poskytuje pro určité události a implementace rozhraní pro naslouchací procesy pro tuto událost. Tento vzor návrhu se označuje jako *slabý vzor událostí*.  
   
-## <a name="why-implement-the-weak-event-pattern"></a>Proč implementovat vzor slabé událostí?  
- Naslouchání událostem může vést k nevracení paměti. Typické technika pro naslouchání na událost, je použití syntaxe pro specifický jazyk, který připojí obslužnou rutinu pro událost ve zdroji. Například v jazyce C#, že syntaxe je: `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
+## <a name="why-implement-the-weak-event-pattern"></a>Proč implementovat vzor slabých událostí?  
+ Naslouchání událostem může vést k nevracení paměti. Typickou techniku pro naslouchání události je syntaxí specifické pro jazyk, který připojí obslužnou rutinu události ve zdroji. Například v C#, že syntaxe je: `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
   
- Tento postup vytvoří silné odkaz ze zdroje událostí pro událost naslouchací proces. Obvykle je připojení obslužné rutiny události pro naslouchací proces způsobí, že naslouchací proces má doba života objektu, který je ovlivněno doba života objektu zdroje (Pokud je výslovně odebrali obslužné rutiny události). Ale v některých případech můžete doba života objektu z naslouchacího procesu kontrolován dalších faktorech, například zda aktuálně patří vizuálním stromu aplikace a ne serverem životnost zdroje. Vždy, když doba života objektu zdroj přesahuje doba života objektu naslouchacího procesu, vzoru normálního událostí vede k nevrácenou pamětí: naslouchací proces je udržováno zachování delší než určená.  
+ Tento postup vytvoří silného odkazu ze zdroje události do event listener. Obvykle připojení obslužnou rutinu události pro naslouchací proces způsobí, že naslouchací proces má dobu života objektu, který ovlivňuje dobu života objektu zdroje (Pokud obslužná rutina události je výslovně odebrali). Ale v některých případech může být vhodné doba života objektu naslouchacího procesu pro řídit pomocí dalších faktorů, jako například, jestli aktuálně patří do vizuálního stromu, aplikace a ne životnost zdroje. Pokaždé, když se doba života objektu zdroje se rozpíná za dobu života objektu naslouchacího procesu, vzor normální událost povede k nevrácení paměti: naslouchací proces je udržována nehledě déle, než bylo zamýšleno.  
   
- Vzor slabé událostí slouží k vyřešení tohoto problému nevracení paměti. Vzor slabé události lze vždy, když potřebuje naslouchací proces registrace pro událost, avšak naslouchací proces nebude vědět explicitně při zrušení registrace. Vzor slabé události mohou sloužit také vždy, když doba života objektu zdroje překračuje doba života užitečné objektu naslouchacího procesu. (V tomto případě *užitečné* je dáno jste.) Vzor slabé událostí umožňuje naslouchací proces se registrovat a přijímat události bez ovlivnění charakteristiky doba života objektu naslouchací proces žádným způsobem. Ve skutečnosti implicitní odkaz ze zdroje není určit, zda naslouchací proces je vhodné pro uvolňování paměti. Odkaz je slabé odkaz, proto pojmenování vzoru slabé události a související [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Naslouchací proces může být paměti shromážděných nebo jinak zničeno a zdroj můžete pokračovat bez zachování noncollectible obslužná rutina odkazy na objekt nyní zničení.  
+ Slabý vzor událostí je navržená pro vyřešení tohoto problému nevracení paměti. Pokaždé, když se naslouchací proces potřebuje k registraci na událost, ale naslouchací proces nezná explicitně při zrušení registrace je možné slabý vzor událostí. Slabý vzor událostí je také možné pokaždé, když se doba života objektu zdroje překračuje dobu života objektu užitečné naslouchacího procesu. (V tomto případě *užitečné* se určuje podle vás.) Slabý vzor událostí umožňuje naslouchací proces, zaregistrujte se a přijímat události bez ovlivnění vlastnosti doby života objektu naslouchacího procesu žádným způsobem. V důsledku toho implicitní odkaz ze zdroje nezjišťuje, zda naslouchací proces má nárok na uvolňování paměti. Odkaz je slabý odkaz, tedy pojmenování slabý vzor událostí a související [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. Naslouchací proces může být uvolňování paměti shromažďovaným nebo jinak zničeny a zdroji můžete pokračovat bez zachování utvořit obslužná rutina odkazy na nyní zničení objektu.  
   
-## <a name="who-should-implement-the-weak-event-pattern"></a>Kdo by měla implementovat vzor slabé událostí?  
- Implementace vzoru slabé událostí je zajímavé hlavně pro autory ovládacího prvku. Jako autor ovládací prvek je z velké části zodpovědná chování a členství ve skupině ovládacího prvku a dopad, který má v aplikacích, ve kterých je vložen. To zahrnuje řídit chování doba života objektu, zejména zpracování problému úniku popsané paměti.  
+## <a name="who-should-implement-the-weak-event-pattern"></a>Kdo by měly implementovat vzor slabých událostí?  
+ Implementace vzoru slabých událostí je zajímavé hlavně pro autory ovládacího prvku. Jako autor ovládací prvek jsou do značné míry zodpovědná za chování a členství ve skupině ovládacího prvku a dopad, který má u aplikací, ve kterých je vložen. To zahrnuje řízení chování doba života objektu, zejména zpracování problém nevracení paměti popsané.  
   
- Některé scénáře ze své podstaty samo o vzoru slabé událostí aplikace. Jeden takový scénář se datová vazba. V datové vazby, je běžné zdroje objekt, který má být zcela nezávislé na objekt naslouchací proces, který je cílem vazbu. Mnoho aspektů [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] datové vazby již mít vzoru slabé událostí použité v tom, jak jsou implementované události.  
+ Některé scénáře ze své podstaty přizpůsobují aplikace slabý vzor událostí. Jeden takový scénář je datové vazby. V datové vazbě je běžné, že zdrojový objekt nezávislou naslouchací proces objektu, který je cílem vazby. Mnoho aspektů [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] datové vazby již mít slabý vzor událostí v tom, jak jsou implementované událostí.  
   
-## <a name="how-to-implement-the-weak-event-pattern"></a>Implementace vzoru slabé událostí  
- Existují tři způsoby, jak implementovat vzor slabé událostí. Následující tabulka uvádí se třemi způsoby a nabízí některé pokyny, když každý měli použít.  
+## <a name="how-to-implement-the-weak-event-pattern"></a>Jak implementovat slabý vzor událostí  
+ Existují tři způsoby, jak implementovat slabý vzor událostí. Následující tabulka uvádí se třemi způsoby a poskytuje pokyny, kdy by každý používá.  
   
-|Přístup|Kdy implementovat|  
+|Přístup|Kdy k implementaci|  
 |--------------|-----------------------|  
-|Použít existující třídu manager slabé události|Pokud se chcete přihlásit k odběru události má odpovídající <xref:System.Windows.WeakEventManager>, použijte existující správce slabé událostí. Seznam manažerů slabé událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy. Upozorňujeme však, že jsou poměrně málo správci slabé událostí, které jsou součástí WPF, takže budete pravděpodobně muset vyberte jednu z dalších přístupy.|  
-|Použití třídy manager obecné slabé událostí|Použít obecný <xref:System.Windows.WeakEventManager%602> pokud stávající <xref:System.Windows.WeakEventManager> má není k dispozici, má snadný způsob, jak implementovat a nemáte zájem o efektivitu. Obecná <xref:System.Windows.WeakEventManager%602> sice méně efektivní než existující nebo vlastní správce slabé událostí. Například obecná třída nepodporuje více reflexe ke zjištění události název události. Navíc kód k registraci události pomocí Obecné <xref:System.Windows.WeakEventManager%602> více podrobné než při použití existující nebo vlastní <xref:System.Windows.WeakEventManager>.|  
-|Vytvoření třídy manager vlastní slabé událostí|Vytvoření vlastní <xref:System.Windows.WeakEventManager> pokud stávající <xref:System.Windows.WeakEventManager> není k dispozici, a chcete nejlepšího výkonu. Použití vlastní <xref:System.Windows.WeakEventManager> přihlásit k odběru události bude efektivnější, ale způsobit náklady na zápis další kód na začátku.|  
+|Použít existující třídu správce slabých událostí|Pokud se chcete přihlásit k odběru události nemá odpovídající <xref:System.Windows.WeakEventManager>, použijte existujícího správce slabých událostí. Seznam správců slabých událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy. Vzhledem k tomu, že správce součástí slabých událostí jsou omezeny, bude pravděpodobně muset zvolte jednu z dalších přístupů.|  
+|Použití třídy obecného slabých událostí správce|Použití obecného <xref:System.Windows.WeakEventManager%602> pokud stávající <xref:System.Windows.WeakEventManager> má není k dispozici, má snadný způsob, jak implementovat a nemáte zájem o efektivitu. Obecné <xref:System.Windows.WeakEventManager%602> je méně efektivní než existující nebo vlastní správce slabých událostí. Například obecná třída nemá další reflexi ke zjišťování událostí, název události. Navíc kód pro registraci na událost pomocí obecného <xref:System.Windows.WeakEventManager%602> podrobné než při použití existující nebo vlastní <xref:System.Windows.WeakEventManager>.|  
+|Vytvořte třídu správce vlastní slabých událostí|Vytvoření vlastní <xref:System.Windows.WeakEventManager> pokud stávající <xref:System.Windows.WeakEventManager> není k dispozici a chcete, aby nejlepšího výkonu. Použití vlastní <xref:System.Windows.WeakEventManager> přihlásit k odběru události bude mnohem efektivnější, ale účtovat náklady na vytváření další kódu na začátku.|  
+|Pomocí Správce slabých událostí třetích stran|NuGet má [několik správci slabých událostí](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) a také podpora vzor mnoha architektur WPF (například naleznete v tématu [modulu Prism dokumentaci k odběru událostí volně](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/Communication.md#subscribing-to-events)).|
+
+ Následující části popisují, jak implementovat vzor slabých událostí.  Pro účely této diskuse Přihlaste se k odběru události má následující vlastnosti.  
   
- Následující části popisují, jak implementovat vzor slabé událostí.  Pro účely Tato diskuse se přihlásit k odběru události má následující vlastnosti.  
+-   Je název události `SomeEvent`.  
   
--   Název události je `SomeEvent`.  
+-   Událost je vyvolána `EventSource` třídy.  
   
--   Událost se vyvolá, pomocí `EventSource` třídy.  
+-   Obslužná rutina události má typ: `SomeEventEventHandler` (nebo `EventHandler<SomeEventEventArgs>`).  
   
--   Obslužné rutiny události má typ: `SomeEventEventHandler` (nebo `EventHandler<SomeEventEventArgs>`).  
-  
--   Událost předá parametr typu `SomeEventEventArgs` do obslužné rutiny událostí.  
+-   Událost předává parametr typu `SomeEventEventArgs` obslužné rutiny události.  
   
 ### <a name="using-an-existing-weak-event-manager-class"></a>Použití existující třídy slabé správce událostí  
   
-1.  Najdete existující slabé událost správce.  
+1.  Najděte si událost ve stávající slabé správce.  
   
-     Seznam manažerů slabé událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy.  
+     Seznam správců slabých událostí, které jsou součástí WPF najdete v tématu v hierarchii dědičnosti <xref:System.Windows.WeakEventManager> třídy.  
   
-2.  Pomocí nového správce slabé událostí místo normální událostí spojení.  
+2.  Pomocí nového správce slabých událostí místo normální událost propojení.  
   
-     Pokud například váš kód používá následující vzorec k odběru události:  
+     Pokud například váš kód používá následující vzor k odběru události:  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     Změňte jej na vzoru následující:  
+     Změňte ho na následujícímu vzoru:  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     Podobně pokud kód používá následující vzor k odhlášení odběru na událost:  
+     Podobně pokud váš kód používá následující vzor na zrušit odběr události:  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     Změňte jej na vzoru následující:  
+     Změňte ho na následujícímu vzoru:  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
@@ -81,9 +82,9 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroj
   
 ### <a name="using-the-generic-weak-event-manager-class"></a>Použití obecné třídy slabé správce událostí  
   
-1.  Používat obecná <xref:System.Windows.WeakEventManager%602> třída místo normální událostí spojení.  
+1.  Použití obecného <xref:System.Windows.WeakEventManager%602> třídy místo normální událost propojení.  
   
-     Při použití <xref:System.Windows.WeakEventManager%602> Chcete-li zaregistrovat naslouchacích procesů událostí, je zadat zdroj události a <xref:System.EventArgs> typů jako parametrů typů třídy a volání <xref:System.Windows.WeakEventManager%602.AddHandler%2A> jak je znázorněno v následujícím kódu:  
+     Při použití <xref:System.Windows.WeakEventManager%602> zaregistrovat naslouchacích procesů událostí, zadáte zdroj události a <xref:System.EventArgs> typ jako parametry typu třídy a volání <xref:System.Windows.WeakEventManager%602.AddHandler%2A> jak je znázorněno v následujícím kódu:  
   
     ```  
     WeakEventManager<EventSource, SomeEventEventArgs>.AddHandler(source, "SomeEvent", source_SomeEvent);  
@@ -91,39 +92,39 @@ V aplikacích je možné, že obslužné rutiny, které jsou připojené k zdroj
   
 ### <a name="creating-a-custom-weak-event-manager-class"></a>Vytvoření vlastní třídy slabé správce událostí  
   
-1.  Zkopírujte následující šablony třídu do projektu.  
+1.  Zkopírujte následující šablony třídy do projektu.  
   
      Tato třída dědí z <xref:System.Windows.WeakEventManager> třídy.  
   
      [!code-csharp[WeakEvents#WeakEventManagerTemplate](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WeakEvents/CSharp/WeakEventManagerTemplate.cs#weakeventmanagertemplate)]  
   
-2.  Nahraďte `SomeEventWeakEventManager` název s svůj vlastní název.  
+2.  Nahradit `SomeEventWeakEventManager` název nahraďte vlastním názvem.  
   
-3.  Nahraďte tři názvy popsané s odpovídající názvy pro událost. (`SomeEvent`, `EventSource`, a `SomeEventEventArgs`)  
+3.  Nahraďte tři popsané dříve se odpovídající názvy pro událost. (`SomeEvent`, `EventSource`, a `SomeEventEventArgs`)  
   
-4.  Nastavte viditelnost (veřejné / interní / privátní) slabé event – třída manager na stejném viditelnost jako událost, které spravuje.  
+4.  Nastavte viditelnost (veřejné / interní nebo privátní) třídy správce slabých událostí pro stejnou viditelnost jako událost, kterou spravuje.  
   
-5.  Pomocí nového správce slabé událostí místo normální událostí spojení.  
+5.  Pomocí nového správce slabých událostí místo normální událost propojení.  
   
-     Pokud například váš kód používá následující vzorec k odběru události:  
+     Pokud například váš kód používá následující vzor k odběru události:  
   
     ```  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     Změňte jej na vzoru následující:  
+     Změňte ho na následujícímu vzoru:  
   
     ```  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     Podobně pokud kód používá následující vzor k odhlášení odběru na událost:  
+     Podobně pokud váš kód k odhlášení odběru událostí používá následující vzorec:  
   
     ```  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     Změňte jej na vzoru následující:  
+     Změňte ho na následujícímu vzoru:  
   
     ```  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  

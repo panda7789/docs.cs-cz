@@ -2,12 +2,12 @@
 title: F#Pokyny k návrhu komponenty
 description: Přečtěte si pokyny pro zápis F# součásti určené pro využití dalších volajícími.
 ms.date: 05/14/2018
-ms.openlocfilehash: bc8d4908912c4630f649ba30593d43a557278efa
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d72bfac1de5a57d5cce86f996f144af4bc181463
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145670"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415634"
 ---
 # <a name="f-component-design-guidelines"></a>F#Pokyny k návrhu komponenty
 
@@ -47,7 +47,7 @@ Dokumentace XML v rámci veřejných API Ujistěte se, že se uživatelé dostan
 type Point =
 
     /// Computes the distance between this point and another
-    member DistanceTo : otherPoint:Point -> float
+    member DistanceTo: otherPoint:Point -> float
 ```
 
 Můžete použít buď krátký tvar XML komentáře (`/// comment`), nebo standardní komentáře XML (`///<summary>comment</summary>`).
@@ -76,7 +76,7 @@ V následující tabulce dodržovat konvence pojmenování a malá a velká pís
 | knihovny DLL           | PascalCase |                 | Fabrikam.Core.dll |  |
 | Sjednocení značky     | PascalCase | Podstatné jméno | Některé, přidat, úspěch | Nepoužívejte předponu ve veřejných rozhraní API. Volitelně použít předponu, když je to interní, jako například `Zadejte týmů = TAlpha | TBeta | TDelta.` |
 | Událost          | PascalCase | Příkaz | ValueChanged / ValueChanging |  |
-| Výjimky     | PascalCase |      | O výjimku WebException | Název by měl končit "Výjimek". |
+| Výjimky     | PascalCase |      | WebException | Název by měl končit "Výjimek". |
 | Pole          | PascalCase | Podstatné jméno | CurrentName  | |
 | Typy rozhraní |  PascalCase | Podstatné jméno / tvary přídavných jmen | Rozhraní IDisposable | Název by měl začínat "I". |
 | Metoda |  PascalCase |  Příkaz | ToString | |
@@ -84,7 +84,7 @@ V následující tabulce dodržovat konvence pojmenování a malá a velká pís
 | Parametry | camelCase | Podstatné jméno |  typeName, transformace, rozsahu | |
 | umožní hodnoty (interní) | camelCase nebo formátu PascalCase | Podstatné jméno / příkaz |  getValue myTable |
 | umožní hodnoty (externí) | camelCase nebo formátu PascalCase | Podstatné jméno/příkaz  | List.map Dates.Today | vazbou let hodnoty jsou často veřejné, pokud následující vzory návrhu tradiční funkční. Ale obecně používejte PascalCase identifikátor lze použít v jiných jazycích rozhraní .NET. |
-| Vlastnost  | PascalCase  | Podstatné jméno / tvary přídavných jmen  | IsEndOfFile, barva pozadí  | Logické vlastnosti obecně použití je a můžete a musí být kladná, stejně jako v IsEndOfFile, ne IsNotEndOfFile.
+| Vlastnost  | PascalCase  | Podstatné jméno / tvary přídavných jmen  | IsEndOfFile, BackColor  | Logické vlastnosti obecně použití je a můžete a musí být kladná, stejně jako v IsEndOfFile, ne IsNotEndOfFile.
 
 #### <a name="avoid-abbreviations"></a>Vyhněte se zkratky
 
@@ -191,16 +191,16 @@ Představuje sadu operací pomocí typy rozhraní. Toto je upřednostňována p�
 
 ```fsharp
 type Serializer =
-    abstract Serialize<'T> : preserveRefEq: bool -> value: 'T -> string
-    abstract Deserialize<'T> : preserveRefEq: bool -> pickle: string -> 'T
+    abstract Serialize<'T>: preserveRefEq: bool -> value: 'T -> string
+    abstract Deserialize<'T>: preserveRefEq: bool -> pickle: string -> 'T
 ```
 
 V preference pro:
 
 ```fsharp
 type Serializer<'T> = {
-    Serialize : bool -> 'T -> string
-    Deserialize : bool -> string -> 'T
+    Serialize: bool -> 'T -> string
+    Deserialize: bool -> string -> 'T
 }
 ```
 
@@ -243,13 +243,13 @@ Nadměrné použití z `[<AutoOpen>]` potenciálních zákazníků na znečišt�
 Někdy třídy se používají k modelování matematické konstrukce, jako jsou vektory. Pokud má doména modelovaných dobře známých operátorů, je definují jako členy, které jsou přirozené pro třídu je užitečné.
 
 ```fsharp
-type Vector(x:float) =
+type Vector(x: float) =
 
     member v.X = x
 
-    static member (*) (vector:Vector, scalar:float) = Vector(vector.X * scalar)
+    static member (*) (vector: Vector, scalar: float) = Vector(vector.X * scalar)
 
-    static member (+) (vector1:Vector, vector2:Vector) = Vector(vector1.X + vector2.X)
+    static member (+) (vector1: Vector, vector2: Vector) = Vector(vector1.X + vector2.X)
 
 let v = Vector(5.0)
 
@@ -306,7 +306,7 @@ V F#, implementace dědičnosti je zřídka se používá. Hierarchie dědičnos
 Tady je typickým příkladem použití řazené kolekce členů v návratovém typu:
 
 ```fsharp
-val divrem : BigInteger -> BigInteger -> BigInteger * BigInteger
+val divrem: BigInteger -> BigInteger -> BigInteger * BigInteger
 ```
 
 Návratové typy obsahující mnoho komponent, nebo pokud komponenty se vztahují k jedné entity identifikovatelné, zvažte použití pojmenovaného typu namísto řazené kolekce členů.
@@ -317,9 +317,9 @@ Pokud je odpovídající synchronní operace s názvem `Operation` , která vrac
 
 ```fsharp
 type SomeType =
-    member this.Compute(x:int) : int =
+    member this.Compute(x:int): int =
         ...
-    member this.AsyncCompute(x:int) : Async<int> =
+    member this.AsyncCompute(x:int): Async<int> =
         ...
 
 type System.ServiceModel.Channels.IInputChannel with
@@ -508,8 +508,8 @@ F#:
 ```fsharp
 [<NoEquality; NoComparison>]
 type MyRecord =
-    { FirstThing : int
-        SecondThing : string }
+    { FirstThing: int
+        SecondThing: string }
 ```
 
 C#:
@@ -574,7 +574,7 @@ type MyBadType() =
     [<CLIEvent>]
     member this.MyEvent = myEv.Publish
 
-type MyEventArgs(x:int) =
+type MyEventArgs(x: int) =
     inherit System.EventArgs()
     member this.X = x
 
@@ -596,7 +596,7 @@ Bez ohledu na to, jsou metody, které vracejí úlohy standardní reprezentace a
 /// A type in a component designed for use from other .NET languages
 type MyType() =
 
-    let compute (x: int) : Async<int> = async { ... }
+    let compute (x: int): Async<int> = async { ... }
 
     member this.ComputeAsync(x) = compute x |> Async.StartAsTask
 ```
@@ -606,7 +606,7 @@ type MyType() =
 ```fsharp
 /// A type in a component designed for use from other .NET languages
 type MyType() =
-    let compute(x:int) : Async<int> = async { ... }
+    let compute(x: int): Async<int> = async { ... }
     member this.ComputeAsTask(x, cancellationToken) = Async.StartAsTask(compute x, cancellationToken)
 ```
 
@@ -617,14 +617,14 @@ Tady "F# funkce typy" znamená "šipka" typy, jako jsou `int -> int`.
 Namísto toto:
 
 ```fsharp
-member this.Transform(f:int->int) =
+member this.Transform(f: int->int) =
     ...
 ```
 
 postupujte takto:
 
 ```fsharp
-member this.Transform(f:Func<int,int>) =
+member this.Transform(f: Func<int,int>) =
     ...
 ```
 
@@ -639,18 +639,18 @@ Obecné vzory pro použití F# typ možnosti v rozhraní API jsou lepší implem
 ```fsharp
 member this.ReturnOption() = Some 3
 
-member this.ReturnBoolAndOut(outVal : byref<int>) =
+member this.ReturnBoolAndOut(outVal: byref<int>) =
     outVal <- 3
     true
 
-member this.ParamOption(x : int, y : int option) =
+member this.ParamOption(x: int, y: int option) =
     match y with
     | Some y2 -> x + y2
     | None -> x
 
-member this.ParamOverload(x : int) = x
+member this.ParamOverload(x: int) = x
 
-member this.ParamOverload(x : int, y : int) = x + y
+member this.ParamOverload(x: int, y: int) = x + y
 ```
 
 #### <a name="use-the-net-collection-interface-types-ienumerablet-and-idictionarykeyvalue-for-parameters-and-return-values"></a>Použití rozhraní .NET kolekci typů IEnumerable\<T\> a IDictionary\<klíč, hodnota\> pro parametry a návratové hodnoty
@@ -660,14 +660,14 @@ Vyhněte se použití konkrétní kolekci typů jako je například pole .NET `T
 Místo F# uvádí:
 
 ```fsharp
-member this.PrintNames(names : string list) =
+member this.PrintNames(names: string list) =
     ...
 ```
 
 Použití F# pořadí:
 
 ```fsharp
-member this.PrintNames(names : seq<string>) =
+member this.PrintNames(names: seq<string>) =
     ...
 ```
 
@@ -678,13 +678,13 @@ Vyhněte se dalších možnostech použití typu jednotky. Toto jsou dobré:
 ```fsharp
 ✔ member this.NoArguments() = 3
 
-✔ member this.ReturnVoid(x : int) = ()
+✔ member this.ReturnVoid(x: int) = ()
 ```
 
 Toto je chybný:
 
 ```fsharp
-member this.WrongUnit( x:unit, z:int) = ((), ())
+member this.WrongUnit( x: unit, z: int) = ((), ())
 ```
 
 #### <a name="check-for-null-values-on-vanilla-net-api-boundaries"></a>Kontrola hodnot null na hranicích vanilla rozhraní .NET API

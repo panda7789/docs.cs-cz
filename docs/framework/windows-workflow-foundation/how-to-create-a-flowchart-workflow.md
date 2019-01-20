@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: vytvoření pracovního postupu vývojového diagramu'
+title: 'Postupy: Vytvoření pracovního postupu vývojového diagramu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 185d46d041ee342962c624ad6a3592e5a426cc6e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e508a29e3c3dffce467eb60f2f702ea06fa4992a
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502148"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415244"
 ---
-# <a name="how-to-create-a-flowchart-workflow"></a>Postupy: vytvoření pracovního postupu vývojového diagramu
-Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. V tomto tématu se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozího [jak: vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
+# <a name="how-to-create-a-flowchart-workflow"></a>Postupy: Vytvoření pracovního postupu vývojového diagramu
+Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastních aktivit. Toto téma se provede vytvořením pracovního postupu, který používá obě integrované aktivity, jako <xref:System.Activities.Statements.Flowchart> aktivity a vlastní aktivity z předchozího [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md) tématu. Pracovní postup modely číslo rozluštění hru.  
   
 > [!NOTE]
->  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [postupy: vytvoření aktivity](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md).  
+>  Každé téma v kurzu Začínáme závisí na předchozí témata. K dokončení tohoto tématu, musíte nejdřív Dokončit [jak: Vytvořit aktivitu](../../../docs/framework/windows-workflow-foundation/how-to-create-an-activity.md).  
   
 > [!NOTE]
 >  Chcete-li stáhnout úplnou verzi tohoto kurzu, přečtěte si téma [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
@@ -67,7 +67,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
 1.  Přetáhněte **přiřadit** aktivita z **primitiv** část **nástrojů** a najeďte myší **spustit** uzlu, který je v horní části Vývojový diagram. Při **přiřadit** činnost je nad **Start** uzlu kolem se zobrazí tři trojúhelníky **Start** uzlu. Vyřadit **přiřadit** aktivitu na trojúhelník, který je přímo pod **Start** uzlu. To se propojit dvě položky a označí **přiřadit** aktivitu jako první aktivitu ve vývojovém diagramu.  
   
     > [!NOTE]
-    >  Aktivity mohou také uvedené jako spouštěcí aktivitu v pracovním postupu ručně jejich propojením aktivit k počáteční uzel. K tomu, najeďte myší **Start** uzel, klikněte na některou obdélníky, které se zobrazí, když je myš **Start** uzel a přetáhněte připojení řádek dolů požadovanou aktivitu a umístěte ho na jednom z obdélníky, které se zobrazí. Můžete taky určit a aktivitu jako spouštěcí aktivitu tak, že kliknete pravým tlačítkem it a zvolíte **nastavit jako spuštění uzlu**.  
+    >  Aktivity mohou také uvedené jako spouštěcí aktivitu v pracovním postupu ručně jejich propojením aktivit k počáteční uzel. K tomu, najeďte myší **Start** uzel, klikněte na některou obdélníky, které se zobrazí, když je myš **Start** uzel a přetáhněte připojení řádek dolů požadovanou aktivitu a umístěte ho na jednom z obdélníky, které se zobrazí. Můžete taky určit aktivity jako spouštěcí aktivitu tak, že kliknete pravým tlačítkem it a zvolíte **nastavit jako spuštění uzlu**.  
   
 2.  Typ `Target` do **k** pole a následující výraz, který **zadejte výraz C#** nebo **zadejte výraz jazyka VB.** pole.  
   
@@ -148,7 +148,7 @@ Pracovní postupy lze zkonstruovat z předdefinovaných aktivit a také z vlastn
   
 1.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
-     Návod, jak spustit workflow, najdete dalším tématu s názvem [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md). Pokud jste už dokončili [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí pracovního postupu vývojového diagramu z tohoto kroku, přeskočte k části [sestavíte a spustíte aplikaci](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication)část [postupy: spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md).  
+     Návod, jak spustit workflow, najdete dalším tématu s názvem [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md). Pokud jste už dokončili [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md) krok s jiným stylem pracovního postupu a chcete ji spustit pomocí pracovního postupu vývojového diagramu z tohoto kroku, přeskočte k části [sestavíte a spustíte aplikaci](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md#BKMK_ToRunTheApplication) část [jak: Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-run-a-workflow.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.Statements.Flowchart>  

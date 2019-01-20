@@ -4,16 +4,16 @@ description: Zjistěte, jak analyzovat externích závislostí k portu projektu 
 author: cartermp
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: dce8e6cd4986b15cf926154b378964db4beef398
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 6451099bfc7f3afa5c9c1585862403a0a9fb2186
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170314"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415218"
 ---
 # <a name="analyze-your-dependencies-to-port-code-to-net-core"></a>Analýza závislostí do portu kódu až po .NET Core
 
-K portu kódu .NET Core nebo .NET Standard, je třeba porozumět závislostí. Externí závislosti jsou [balíčky NuGet](#analyze-referenced-nuget-packages-on-your-project) nebo [knihovny DLL](#analyze-dependencies-that-arent-nuget-packages) odkazovat ve vašem projektu, ale není sestavení. Vyhodnotit každý závislosti a vytvořte plán řešení nepředvídaných událostí pro ty, které nejsou kompatibilní s .NET Core. Tady je postup, chcete-li zjistit, zda závislost je kompatibilní s .NET Core.
+K portu kódu .NET Core nebo .NET Standard, je třeba porozumět závislostí. Externí závislosti jsou [balíčky NuGet](#analyze-referenced-nuget-packages-in-your-projects) nebo [knihovny DLL](#analyze-dependencies-that-arent-nuget-packages) odkazovat ve vašem projektu, ale není sestavení. Vyhodnotit každý závislosti a vytvořte plán řešení nepředvídaných událostí pro ty, které nejsou kompatibilní s .NET Core. Tady je postup, chcete-li zjistit, zda závislost je kompatibilní s .NET Core.
 
 ## <a name="analyze-referenced-nuget-packages-in-your-projects"></a>Analýza odkazované balíčky NuGet ve vašich projektech
 
@@ -77,7 +77,7 @@ Po analýze balíčky NuGet, můžete zjistit, že pouze cílí na rozhraní .NE
 
 Počínaje rozhraním .NET Standard 2.0, byla zavedena režimu kompatibility rozhraní .NET Framework. Tento režim kompatibility umožňuje odkazovat na knihovny rozhraní .NET Framework projekty .NET Standard a .NET Core. Odkazování na knihovny rozhraní .NET Framework nefunguje pro všechny projekty, třeba když knihovny používá Windows Presentation Foundation (WPF) rozhraní API, ale jeho odblokovat mnoho scénářů přenosem.
 
-Při odkazu na balíčky NuGet, které se zaměřují rozhraní .NET Framework ve vašem projektu, například [Huitian.PowerCollections](https://www.nuget.org/packages/Huitian.PowerCollections), zobrazí upozornění záložní balíčku ([NU1701](/nuget/reference/errors-and-warnings#nu1701)) podobně jako v následujícím příkladu:
+Při odkazu na balíčky NuGet, které se zaměřují rozhraní .NET Framework ve vašem projektu, například [Huitian.PowerCollections](https://www.nuget.org/packages/Huitian.PowerCollections), zobrazí upozornění záložní balíčku ([NU1701](/nuget/reference/errors-and-warnings/nu1701)) podobně jako v následujícím příkladu:
 
 `NU1701: Package ‘Huitian.PowerCollections 1.0.0’ was restored using ‘.NETFramework,Version=v4.6.1’ instead of the project target framework ‘.NETStandard,Version=v2.0’. This package may not be fully compatible with your project.`
 
@@ -91,7 +91,7 @@ Chcete-li potlačit upozornění úpravou souboru projektu, vyhledejte `PackageR
 </ItemGroup>
 ```
 
-Další informace o tom, jak potlačení upozornění kompilátoru v sadě Visual Studio najdete v tématu [potlačení upozornění pro balíčky NuGet](/visualstudio/ide/how-to-suppress-compiler-warnings#suppressing-warnings-for-nuget-packages).
+Další informace o tom, jak potlačení upozornění kompilátoru v sadě Visual Studio najdete v tématu [potlačení upozornění pro balíčky NuGet](/visualstudio/ide/how-to-suppress-compiler-warnings#suppress-warnings-for-nuget-packages).
 
 ### <a name="port-your-packages-to-packagereference"></a>Přenést své balíčky do `PackageReference`
 

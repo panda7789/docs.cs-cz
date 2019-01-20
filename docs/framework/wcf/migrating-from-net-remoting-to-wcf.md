@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: cca303cf9b906fd395e594111fae808ae4ab6435
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 1ebab76d63ae3328b158f1c03a61d2e2b3cbd8f9
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245675"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54415972"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -23,7 +23,7 @@ Tento článek popisuje, jak migrovat aplikace, která používá vzdálené kom
 |Operace služby|Veřejné metody pro typ serveru|Označit pomocí atributu [OperationContract]|  
 |Serializace|ISerializable nebo [Serializable]|DataContractSerializer nebo XmlSerializer|  
 |Objekty předané|Podle hodnoty nebo podle odkazu|Podle hodnoty pouze|  
-|Chyby a výjimky|Jakoukoli serializovatelný výjimku|FaultContract\<TDetail >|  
+|Chyby a výjimky|Jakoukoli serializovatelný výjimku|FaultContract\<TDetail>|  
 |Objekty proxy serveru klienta|Silného typu transparentních proxy se automaticky vytvořen z kolekci MarshalByRefObjects|Silného typu proxy servery jsou generovány, vyžádaná použití třídy ChannelFactory\<TChannel >|  
 |Požadované platformy|Klient i server musí používat Microsoft OS a .NET|Různé platformy|  
 |Formát zprávy|Soukromé|Oborové standardy (SOAP, WS-*, atd.)|  
@@ -307,9 +307,9 @@ catch (FaultException<CustomerServiceFault> fault)
   
  Po použití vzdálené komunikace se migroval na WCF, je stále potřeba odebrat závislosti na vzdálené komunikace .NET. Tím se zajistí, že z aplikace odeberou se všechny chyby zabezpečení vzdálené komunikace. Tyto kroky zahrnují následující:  
   
--   **Přestat používat MarshalByRefObject.** Typ třídy MarshalByRefObject existuje pouze pro vzdálenou komunikaci a není používán WCF. Všechny typy aplikací, které dílčí třídy MarshalByRefObject by měla odebrat nebo změnit. Typ třídy MarshalByRefObject existuje pouze pro vzdálenou komunikaci a není používán WCF. Všechny typy aplikací, které dílčí třídy MarshalByRefObject by měla odebrat nebo změnit.  
+-   **Přestat používat MarshalByRefObject.** Typ třídy MarshalByRefObject existuje pouze pro vzdálenou komunikaci a není používán WCF. Všechny typy aplikací, které dílčí třídy MarshalByRefObject by měla odebrat nebo změnit.  
   
--   **Ukončení použití [Serializable] a rozhraní ISerializable.** Atribut [Serializable] a rozhraní ISerializable byly původně navržen k serializaci typů v rámci důvěryhodného prostředí a jejich používání vzdálené komunikace. Serializace WCF spoléhá na typy, které jsou označené [kontraktu dat DataContract] a [DataMember]. Datové typy používané aplikací by měl být upraven použití [kontraktu dat DataContract] a nepoužívat ISerializable nebo [Serializable]. Atribut [Serializable] a rozhraní ISerializable byly původně navržen k serializaci typů v rámci důvěryhodného prostředí a jejich používání vzdálené komunikace. Serializace WCF spoléhá na typy, které jsou označené [kontraktu dat DataContract] a [DataMember]. Datové typy používané aplikací by měl být upraven použití [kontraktu dat DataContract] a nepoužívat ISerializable nebo [Serializable].  
+-   **Ukončení použití [Serializable] a rozhraní ISerializable.** Atribut [Serializable] a rozhraní ISerializable byly původně navržen k serializaci typů v rámci důvěryhodného prostředí a jejich používání vzdálené komunikace. Serializace WCF spoléhá na typy, které jsou označené [kontraktu dat DataContract] a [DataMember]. Datové typy používané aplikací by měl být upraven použití [kontraktu dat DataContract] a nepoužívat ISerializable nebo [Serializable].  
   
 ### <a name="migration-scenarios"></a>Scénáře migrace  
  Nyní Pojďme zjistit, jak provést následující běžné scénáře vzdálené komunikace v WCF:  
