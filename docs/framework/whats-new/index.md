@@ -10,26 +10,26 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e9c40b68a67219cd8f24874780281023974886e4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: de919789c369c66c52a137bde811c56bf07a6ec9
+ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201015"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54416024"
 ---
 # Co je nového v rozhraní .NET Framework <a name="introduction"></a>
 
 Tento článek shrnuje hlavní nové funkce a vylepšení v následujících verzích rozhraní .NET Framework:
 
-- [Rozhraní .NET framework 4.7.2](#v472)
-- [Rozhraní .NET framework 4.7.1](#v471)
-- [Rozhraní .NET framework 4.7](#v47)
-- [Rozhraní .NET framework 4.6.2](#v462)
-- [Rozhraní .NET framework 4.6.1](#v461)
+- [.NET Framework 4.7.2](#v472)
+- [.NET Framework 4.7.1](#v471)
+- [.NET Framework 4.7](#v47)
+- [.NET Framework 4.6.2](#v462)
+- [.NET Framework 4.6.1](#v461)
 - [.NET 2015 a .NET Framework 4.6](#v46)
-- [Rozhraní .NET framework 4.5.2](#v452)
-- [Rozhraní .NET framework 4.5.1](#v451)
-- [Rozhraní .NET framework 4.5](#v45)
+- [.NET Framework 4.5.2](#v452)
+- [.NET Framework 4.5.1](#v451)
+- [.NET Framework 4.5](#v45)
 
 Tento článek neposkytuje úplné informace o každé nové funkce a může se změnit. Obecné informace o rozhraní .NET Framework najdete v tématu [Začínáme](../../../docs/framework/get-started/index.md). Podporované platformy naleznete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md). Odkazy ke stažení a pokyny k instalaci najdete v tématu [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md).
 
@@ -242,9 +242,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 [Injektáž závislostí (DI)](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) odděluje objekty a jejich závislosti tak, aby kód objektu už nebude potřeba změnit to, že došlo ke změně závislosti. Při vývoji aplikací ASP.NET, které se zaměřují na rozhraní .NET Framework 4.7.2, můžete:
 
-- Pomocí vkládání založené na setter, založené na rozhraní a na základě konstruktoru v [moduly a obslužné rutiny](https://msdn.microsoft.com/en-us/library/bb398986.aspx), [stránce instance](xref:System.Web.UI.Page), a [uživatelské ovládací prvky](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx) technologie ASP.NET webové aplikace projekty.
+- Pomocí vkládání založené na setter, založené na rozhraní a na základě konstruktoru v [moduly a obslužné rutiny](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [stránce instance](xref:System.Web.UI.Page), a [uživatelské ovládací prvky](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) technologie ASP.NET webové aplikace projekty.
 
-- Pomocí vkládání setter a interface v [moduly a obslužné rutiny](https://msdn.microsoft.com/en-us/library/bb398986.aspx), [stránce instance](xref:System.Web.UI.Page), a [uživatelské ovládací prvky](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx) webových projektů ASP.NET.
+- Pomocí vkládání setter a interface v [moduly a obslužné rutiny](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100)), [stránce instance](xref:System.Web.UI.Page), a [uživatelské ovládací prvky](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100)) webových projektů ASP.NET.
 
 - Zařaďte různých závislostí architektury vkládání.
 
@@ -624,7 +624,7 @@ WPF v rozhraní API v tisku <xref:System.Printing.PrintQueue?displayProperty=nam
 
 - [Kategoriích znaků](#Strings)
 
-- [Kryptografie](#Crypto462)
+- [Cryptography](#Crypto462)
 
 - [SqlClient](#SQLClient)
 
@@ -683,7 +683,7 @@ Potom můžete vytvořit soubor prostředků DataAnnotation.Localization.fr.resx
 
 | Název                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
-| Hodnocení musí být mezi 1 a 10. | Poznámka: la provedení être tvoří entre 1 a 10. |
+| Hodnocení musí být mezi 1 a 10. | La note doit être comprise entre 1 et 10. |
 
  Kromě toho je rozšiřitelný lokalizační Poznámka data. Vývojářům můžete zařadit vlastní řetězec poskytovatele lokalizátora implementací <xref:System.Web.Globalization.IStringLocalizerProvider> rozhraní pro uložení řetězce lokalizace někde jinak než v souboru prostředků.
 
@@ -733,7 +733,7 @@ public interface ISessionStateModule : IHttpModule {
 
 <a name="Crypto462" />
 
-### <a name="cryptography"></a>Kryptografie
+### <a name="cryptography"></a>Cryptography
 
  **Podpora pro X509 certifikáty obsahující DSA FIPS 186 3**
 
@@ -1008,7 +1008,7 @@ Další informace o <xref:System.TimeZoneInfo> strukturu a úpravy časového p�
 
  Pro podporu poslední růst počtu vysokých hodnot DPI a DPI hybridní prostředí pro aplikace WPF, WPF v [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] umožňuje sledování na sledování. Zobrazit [ukázky a příručka pro vývojáře](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) na Githubu pro další informace o tom, jak povolit aplikaci WPF se nastavení DPI podle monitoru.
 
- V předchozích verzích rozhraní .NET Framework jsou aplikace WPF systému – rozpoznání nastavení DPI. Jinými slovy uživatelského rozhraní aplikace se škálovat podle operačního systému podle potřeby, v závislosti na DPI monitorování, na kterém je vykreslen aplikace. ,
+ V předchozích verzích rozhraní .NET Framework jsou aplikace WPF systému – rozpoznání nastavení DPI. Jinými slovy uživatelského rozhraní aplikace se škálovat podle operačního systému podle potřeby, v závislosti na DPI monitorování, na kterém je vykreslen aplikace. , 
 
  Pro aplikace běžící v rámci [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], DPI za monitorování změn v aplikacích WPF můžete zakázat přidáním konfiguraci příkazu [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část konfigurace aplikací souboru následujícím způsobem:
 
@@ -1074,7 +1074,7 @@ Aktualizovali jsme ClickOnce pro podporu protokolu TLS 1.1 a TLS 1.2 kromě 1.0 
 
 [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] Obsahuje nové funkce v následujících oblastech:
 
-- [Kryptografie](#Crypto)
+- [Cryptography](#Crypto)
 
 - [ADO.NET](#ADO.NET461)
 
@@ -1096,7 +1096,7 @@ Další informace o [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], nale
 
 <a name="Crypto" />
 
-### <a name="cryptography-support-for-x509-certificates-containing-ecdsa"></a>Kryptografie: Podpora X509 certifikáty ECDSA obsahující
+### <a name="cryptography-support-for-x509-certificates-containing-ecdsa"></a>Kryptografie: Podpora pro X509 certifikáty ECDSA obsahující
  Rozhraní .NET Framework 4.6 přidání podpory RSACng X509 certifikáty. [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] Přidává podporu pro ECDSA (Elliptic Curve algoritmu Digital Signature Algorithm) X509 certifikáty.
 
  ECDSA nabízí lepší výkon a je bezpečnější algoritmus šifrování než RSA, poskytuje skvělou volbou kde zabezpečení TLS (Transport Layer) výkon a škálovatelnost se netýká. Implementace rozhraní .NET Framework zabalí volání do stávajících funkcí Windows.
@@ -1176,7 +1176,7 @@ SqlClient teď automaticky poskytuje rychlejší připojení do dostupnosti skup
 
 <a name="WWF461" />
 
-### <a name="windows-workflow-foundation-transactions"></a>Windows Workflow Foundation: transakce
+### <a name="windows-workflow-foundation-transactions"></a>Windows Workflow Foundation: Transakce
  <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> Metoda teď můžete použít Správce distribuovaných transakcí než MSDTC zvýšit úroveň transakce. To provedete tak, že zadáte identifikátor GUID transakce promoter k novému <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%28System.Transactions.IPromotableSinglePhaseNotification%2CSystem.Guid%29?displayProperty=nameWithType> přetížení. Pokud je tato operace úspěšná, existují omezení možnosti transakce. Jakmile je zapsán promoter transakce-služby MSDTC, následující metody vyvolání <xref:System.Transactions.TransactionPromotionException> protože povýšení MSDTC, požadují tyto metody:
 
 - <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType>
@@ -1641,7 +1641,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
     - Můžete použít rozhraní API Windows Runtime v přenosných knihovnách, které se zaměřují na Windows 8.1, Windows Phone 8.1 a Windows Phone Silverlight 8.1.
 
-    - Můžete zahrnout XAML (Windows.UI.XAML typy) v přenosných knihovnách při cílení na Windows 8.1 nebo Windows Phone 8.1. Jsou podporovány následující šablony XAML: prázdná stránka, slovník prostředků, ovládací prvek bez vizuálního vzhledu a uživatelský ovládací prvek.
+    - Můžete zahrnout XAML (Windows.UI.XAML typy) v přenosných knihovnách při cílení na Windows 8.1 nebo Windows Phone 8.1. Podporují se následující šablony XAML:  Prázdná stránka, slovník prostředků, ovládací prvek bez vizuálního vzhledu a uživatelský ovládací prvek.
 
     - Přenosné součást prostředí Windows Runtime (soubor .winmd) můžete vytvořit pro použití v aplikacích pro Store, které se zaměřují na Windows 8.1 a Windows Phone 8.1.
 
@@ -1655,7 +1655,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
  Hlavní nové vlastnosti a vylepšení v rozhraní .NET Framework 4.5.1 zahrnují:
 
-- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [postupy: povolení a zakázání automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [jak: Povolení a zákaz automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Schopnost shromažďovat diagnostické informace umožňující vývojářům zvyšovat výkon serverových a cloudových aplikací. Další informace najdete v tématu <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> metody v <xref:System.Diagnostics.Tracing.EventSource> třídy.
 
