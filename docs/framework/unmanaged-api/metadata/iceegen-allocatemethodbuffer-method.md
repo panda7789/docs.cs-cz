@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f56376d4400f4e24aefe2d1e5d4ad504b1d281cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd51f9c05c49fefc790ce69dcdc3117680c8e6b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446001"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500027"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer – metoda
-Vytvoří vyrovnávací paměti zadaná velikost pro metodu a získá relativní virtuální adresu metody.  
+Vytvoří vyrovnávací paměti o zadané velikosti pro metodu a získá relativní virtuální adresu metody.  
   
- Tato metoda je zastaralá a by se neměla používat.  
+ Tato metoda je zastaralý a neměl by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +41,22 @@ HRESULT AllocateMethodBuffer (
   
 #### <a name="parameters"></a>Parametry  
  `cchBuffer`  
- [v] Délka vyrovnávací paměti k vytvoření.  
+ [in] Délka vyrovnávací paměti k vytvoření.  
   
  `lpBuffer`  
- [out] Vrácený vyrovnávací paměti.  
+ [out] Vrácené vyrovnávací paměti.  
   
  `RVA`  
- [out] Relativní virtuální adresa metodu.  
+ [out] Relativní virtuální adresu metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

@@ -2,12 +2,6 @@
 title: ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 59828e988659b9fc5644ff801f77171103630660
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519913"
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET je sada tříd, které zprostředkovávají služby data access services pro programátory v rozhraní .NET Framework. ADO.NET obsahuje bohatou sadu komponent pro vytváření aplikací pro distribuované, sdílení dat. Je nedílnou součástí rozhraní .NET Framework poskytuje přístup k relační, XML a data aplikací. ADO.NET podporuje nejrůznější potřeby vývoje, včetně vytvoření front-endu databáze klientů a střední vrstvy obchodní objekty používané aplikace, nástroje, jazyky nebo webových prohlížečů.  
@@ -62,6 +56,6 @@ ADO.NET je sada tříd, které zprostředkovávají služby data access services
  [Ukázky a šablony rychlý start](https://msdn.microsoft.com/library/ms184422.aspx)  
  Poskytuje úplné výpisy všech ukázek a ukázky QuickStart, které jsou přidružené k rozhraní .NET Framework.  
   
-## <a name="see-also"></a>Viz také  
- [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přístup k datům v sadě Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

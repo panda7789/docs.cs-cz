@@ -5,25 +5,25 @@ helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: ee08dc22588264b25d40b3fd818ef9ee1da90319
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 39f98d11099a778a7b3915f39588138d41214af4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502036"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Podkladový kód a kód XAML v subsystému WPF
 <a name="introduction"></a> Použití modelu Code-behind je pojem používaný pro kód, který je spojen s objekty definovanými značkami při [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka není kompilována značka. Toto téma popisuje požadavky pro použití modelu code-behind i mechanismus alternativní vloženého kódu pro kód v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  Toto téma obsahuje následující oddíly:  
   
--   [Požadované součásti](#Prerequisites)  
+-   [Požadavky](#Prerequisites)  
   
 -   [Použití modelu Code-Behind a jazyk XAML](#codebehind_and_the_xaml_language)  
   
 -   [Použití modelu Code-behind, obslužná rutina události a požadavky na částečné třídy v subsystému WPF](#Code_behind__Event_Handler__and_Partial_Class)  
   
--   [x: Code](#x_Code)  
+-   [x:Code](#x_Code)  
   
 -   [Omezení vloženého kódu](#Inline_Code_Limitations)  
   
@@ -58,8 +58,8 @@ ms.locfileid: "44085663"
 ## <a name="inline-code-limitations"></a>Omezení vloženého kódu  
  Měli byste zvážit vyloučení nebo omezení využití vloženého kódu. Z hlediska architekturu a kódování filozofií udržování oddělení mezi značky a modelu code-behind udržuje role návrháři a vývojáři mnohem více jedinečných. Na další odborné úrovni, může být není vhodný pro zápis, kód, který napíšete pro vložený kód protože jsou vždy zápisu do [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] generované částečné třídy a mohou používat pouze výchozí mapování názvového prostoru XML. Protože nemůžete přidat `using` příkazy, které musí plnému řadu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] volání, které jste provedli. Výchozí hodnota [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mapování obsahují nejvíce, ale ne všechny [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] obory názvů, které se nacházejí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sestavení; bude mít k plnému určení volání k typům a členům obsažené v jiných oborech názvů CLR. Také nelze definovat nic nad rámec částečné třídy v vloženého kódu a všechny entity kód uživatele, který odkazujete, musí existovat jako členové nebo proměnné v rámci vygenerovanou dílčí třídu. Další programovací funkcí, například makra nebo `#ifdef` před globální proměnné a proměnné sestavení nejsou k dispozici. Další informace najdete v tématu [x: Code vnitřního typu XAML](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [x:Code – vnitřní typ jazyka XAML](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)  
- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [x:Code – vnitřní typ jazyka XAML](../../../../docs/framework/xaml-services/x-code-intrinsic-xaml-type.md)
+- [Sestavení aplikace WPF](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)
+- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)

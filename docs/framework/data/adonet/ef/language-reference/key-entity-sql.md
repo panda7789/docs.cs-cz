@@ -1,16 +1,16 @@
 ---
-title: KLÍČ (entita SQL)
+title: KLÍČ (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: cbaa97a8-c89c-4460-8c74-00474695789f
-ms.openlocfilehash: c35cac018392aa9688866e280ff64fdf6a1453f5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 68ee7d512e0a3b5d912dc12c55be6f0135129225
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760554"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509195"
 ---
-# <a name="key-entity-sql"></a>KLÍČ (entita SQL)
-Extrahuje klíč odkaz nebo výraz entity.  
+# <a name="key-entity-sql"></a>KLÍČ (Entity SQL)
+Extrahuje klíč odkazu nebo výrazu entity.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -19,9 +19,9 @@ KEY(createref_expression)
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Klíč entity obsahuje hodnoty klíče ve správném pořadí zadané entity nebo odkaz na entitu. Protože několik sad entit může být založen na stejného typu, může vypadat stejným klíčem v každé sadě entit. Chcete-li získat jedinečný odkaz, použijte `REF`. Návratový typ operátor klíč je typ řádek, který obsahuje jedno pole pro každý klíč entity, ve stejném pořadí.  
+ Klíč entity obsahuje hodnoty klíče ve správném pořadí zadané entity nebo odkaz na entitu. Protože více sad entit může být založen na stejný typ, stejný klíč se může zobrazit v každé sadě entit. Chcete-li získat jedinečný odkaz, použijte `REF`. Návratový typ operátoru klíč je typ řádku, který obsahuje jedno pole pro každý klíč entity, ve stejném pořadí.  
   
- V následujícím příkladu se klíče operátor je předán odkaz na entitu BadOrder a vrátí část klíče tento odkaz. V takovém případě s přesně jeden pole odpovídající typ záznamu `Id` vlastnost.  
+ V následujícím příkladu operátor klíčů je předán odkaz na entitu BadOrder a vrátí část klíče tohoto odkazu. V takovém případě se přesně jeden pole odpovídající typ záznamu `Id` vlastnost.  
   
 ```  
 select Key( CreateRef(LOB.BadOrders, row(o.Id)) )   
@@ -29,16 +29,16 @@ from LOB.Orders as o
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz Entity SQL pomocí operátoru klíč k extrakci část výraz obsahující odkaz na typ klíče. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  
+ Následující dotaz Entity SQL používá operátor klíče k extrakci část výraz s odkaz na typ klíče. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metoda:  
+2.  Předat jako argument pro následující dotaz `ExecuteStructuralTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#KEY](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#key)]  
   
-## <a name="see-also"></a>Viz také  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)  
- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)  
- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)
+## <a name="see-also"></a>Viz také:
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)
+- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)
+- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e28aef4916d06218953236e3b29e19c68822bd6b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 351fa8d1ec144a1861ef152ba6b02d9bbfb78df0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501660"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a>ICorProfilerCallback::FunctionUnloadStarted – metoda
-Upozorní profileru, že modul runtime bylo zahájeno Unload funkce.  
+Oznámí profileru, modul runtime byla spuštěna uvolnit funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +36,13 @@ HRESULT FunctionUnloadStarted(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, která odpojení.  
+ [in] ID funkce, která uvolňován.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `functionId` parametr je platný už po návratu tato metoda volajícímu.  
+ Hodnota `functionId` parametr již není platný po návratu tato metoda volajícímu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -50,5 +50,5 @@ HRESULT FunctionUnloadStarted(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

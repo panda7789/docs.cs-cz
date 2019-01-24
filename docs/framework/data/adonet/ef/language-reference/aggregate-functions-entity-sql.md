@@ -1,46 +1,46 @@
 ---
-title: Agregační funkce (entita SQL)
+title: Agregační funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: acfd3149-f519-4c6e-8fe1-b21d243a0e58
-ms.openlocfilehash: 63e366f323b38a24c4d067681b47d8a8b96125b2
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e606d0e355bb715cfa0536ad9e33f08f5f692951
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765578"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492049"
 ---
-# <a name="aggregate-functions-entity-sql"></a>Agregační funkce (entita SQL)
-Agregace je jazyk konstruktor, který zestruční jako součást skupiny operace kolekci do skalární hodnota. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] agregace má ve dvou formách:  
+# <a name="aggregate-functions-entity-sql"></a>Agregační funkce (Entity SQL)
+Agregace je konstrukce jazyka, který zestruční kolekce do skaláru jako součást operace skupiny. [!INCLUDE[esql](../../../../../../includes/esql-md.md)] agregace přicházet ve dvou formách:  
   
--   [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Kolekce funkcí, které je možné použít kdekoli výrazu. To zahrnuje použití agregačních funkcí ve projekce a predikáty, které fungují u kolekcí. Funkce kolekce je preferovaným režimem zadávání agregací ve [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
+-   [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Kolekce funkcí, které může je použít kdekoli ve výrazu. To zahrnuje použití agregačních funkcí v projekce a predikátů, které fungují na kolekcích. Kolekce funkcí jsou preferovaný způsob určení agregace v [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
   
--   Skupiny agregace ve výrazech dotazů, které mají klauzule GROUP BY. Jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], skupiny agregace přijmout DISTINCT a všechny jako modifikátory agregační vstupu.  
+-   Skupina agregace ve výrazech dotazů, které mají klauzuli Group by. Stejně jako v [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], agregace skupiny přijmout DISTINCT a všechny jako modifikátory agregační vstupem.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Nejprve se pokusí interpretovat výraz jako funkce kolekce a Pokud výraz v kontextu výrazu, vyberte ji interpretuje jako skupiny agregace.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Nejprve se pokusí o interpretovat výraz jako funkce kolekce a Pokud výraz v kontextu výrazu SELECT ji interpretuje jako agregace skupiny.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] definuje speciální agregační operátor s názvem [GROUPPARTITION](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md). Tento operátor umožňuje získat odkaz na sadu seskupené vstupní. To umožňuje pokročilejší seskupení dotazů, kde lze v místech než agregační skupiny nebo kolekce funkce výsledky v klauzuli GROUP BY.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] definuje speciální agregační operátor volá [GROUPPARTITION](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md). Tento operátor umožňuje získat odkaz na seskupené vstupní sady. To umožňuje pokročilejší seskupení dotazů, kde lze použít výsledky v klauzuli GROUP BY v jiných míst než agregace skupiny nebo kolekce funkcí.  
   
 ## <a name="collection-functions"></a>Kolekce funkcí  
- Kolekce funkcí pracovat kolekce a vrátit skalární hodnotu. Například pokud `orders` je kolekce všech `orders`, můžete vypočítat nejdřívější datum expedice s následující výraz:  
+ Kolekce funkcí pracovat s kolekcí a vracet skalární hodnotu. Například pokud `orders` je kolekce všech `orders`, můžete vypočítat datum příjemce se následující výraz:  
   
  `min(select value o.ShipDate from LOB.Orders as o)`  
   
-## <a name="group-aggregates"></a>Agreguje skupiny  
- Skupiny agregace jsou vypočteny přes výsledku skupinu podle definice v klauzuli GROUP BY. V klauzuli GROUP BY oddíly dat do skupin. Pro každou skupinu ve výsledku se použije agregační funkce a samostatné agregace se vypočítává pomocí elementů v každé skupině jako vstupy pro agregační výpočtu. Když klauzule GROUP BY se používá ve výrazu SELECT, pouze seskupování názvy výrazů, agregací nebo konstantní výrazy může být k dispozici v projekci, s, nebo klauzule ORDER.  
+## <a name="group-aggregates"></a>Agregace skupiny  
+ Agregace skupiny se počítá za výsledek skupiny definované v klauzuli GROUP BY. V klauzuli GROUP BY dělí data do skupin. Pro každou skupinu ve výsledku se použije agregační funkce a samostatné agregace se počítá pomocí elementů v každé skupině jako vstupy do agregačního výpočtu. Když klauzule GROUP BY se používá ve výrazu SELECT, seskupení pouze názvy výrazů, agregace nebo konstantní výrazy může být k dispozici v projekci s, nebo ORDER BY – klauzule.  
   
- Následující příklad vypočítá průměrné množství řazení pro každý produkt.  
+ Následující příklad vypočítá průměrné množství, řazení pro jednotlivé produkty.  
   
  `select p, avg(ol.Quantity) from LOB.OrderLines as ol`  
   
  `group by ol.Product as p`  
   
- Je možné, že ve výrazu vyberte skupinu agregační bez explicitní klauzule GROUP BY. Všechny elementy bude považována za jednu skupinu ekvivalentní v případě zadání seskupení založené na konstanta.  
+ Je možné mít ve výrazu vyberte skupinu agregační bez explicitní klauzule GROUP BY. Všechny prvky bude považována za jednu skupinu ekvivalentní případu pro určení seskupení založené na konstantu.  
   
  `select avg(ol.Quantity) from LOB.OrderLines as ol`  
   
  `select avg(ol.Quantity) from LOB.OrderLines as ol group by 1`  
   
- Pomocí stejného oboru rozlišení názvů, který staly viditelnými pro výraz klauzule WHERE se vyhodnotí výrazy použitého v klauzuli GROUP BY.  
+ Výrazy v klauzuli GROUP BY vyhodnocují se pomocí stejného oboru rozlišení názvů, které se staly viditelnými pro výraz klauzule WHERE.  
   
-## <a name="see-also"></a>Viz také  
- [Funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)
+## <a name="see-also"></a>Viz také:
+- [Funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)

@@ -2,12 +2,12 @@
 title: Zjednodušená konfigurace
 ms.date: 03/30/2017
 ms.assetid: dcbe1f84-437c-495f-9324-2bc09fd79ea9
-ms.openlocfilehash: 7df686188099aea45cac81ea94a49b98e5c65f89
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: f6998b17747b5d250827066a41373d81c243773c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838949"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498356"
 ---
 # <a name="simplified-configuration"></a>Zjednodušená konfigurace
 Konfigurace služby Windows Communication Foundation (WCF) může být složitý úkol. Spousta různých možností, a to není vždy jednoduché určit nastavení, které jsou požadovány. Konfigurační soubory zvýšit flexibilitu služeb WCF, ale také jsou zdroje pro mnoho obtížné najít problémy. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] řeší tyto problémy a poskytuje způsob, jak zmenšit velikost a složitost konfigurace služby.  
@@ -113,10 +113,10 @@ Konfigurace služby Windows Communication Foundation (WCF) může být složitý
 > [!IMPORTANT]
 >  Tato funkce se týká pouze konfigurace služby WCF, není konfigurace klienta. Většinu času konfigurace klienta WCF se vygeneruje pomocí nástroje, jako je svcutil.exe nebo přidáním odkazu na službu v sadě Visual Studio. Při ruční konfiguraci klienta WCF je potřeba přidat \<klienta > element konfigurace a určete žádné koncové body, kterou chcete volat.  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
- [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)  
- [Konfigurace aplikací Windows Communication Foundation](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
- [Konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
+- [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)
+- [Konfigurace aplikací Windows Communication Foundation](https://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)
+- [Konfigurace služeb WCF v kódu](../../../docs/framework/wcf/configuring-wcf-services-in-code.md)

@@ -2,12 +2,12 @@
 title: Hosting2
 ms.date: 03/30/2017
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
-ms.openlocfilehash: 9237518f5bfa48401e60e47ccc40e4ee303dec35
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 3216b578ffed23091a27c4449abfe1aa6a2a97c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44209235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503003"
 ---
 # <a name="hosting"></a>Hostování
 Témata v této sekci popisují hostování služeb. Službě mohou být hostovány Internetové informační služby (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, služba Windows, nebo spravovaných aplikací – tato možnost se často označuje jako *samoobslužné hostování*.  
@@ -33,6 +33,6 @@ Témata v této sekci popisují hostování služeb. Službě mohou být hostov�
  [Podpora více vazeb webu IIS](../../../../docs/framework/wcf/feature-details/supporting-multiple-iis-site-bindings.md)  
  Popisuje, jak zadat více bázové adresy pro službu pomocí stejné schéma identifikátoru URI na jeden web.  
   
-## <a name="see-also"></a>Viz také  
- [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)  
- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a>Viz také:
+- [Služby hostování](../../../../docs/framework/wcf/hosting-services.md)
+- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

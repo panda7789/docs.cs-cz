@@ -9,12 +9,12 @@ helpviewer_keywords:
 - syntax [WPF], Storyboard
 - timelines [WPF]
 ms.assetid: 1a698c3c-30f1-4b30-ae56-57e8a39811bd
-ms.openlocfilehash: d6b33df8574d9c25380d6d9319480d3c9df28660
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fa0143aac4253b6a7648da589e01ac8abf9d4341
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44222471"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492682"
 ---
 # <a name="storyboards-overview"></a>Přehled scénářů
 Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboard> objekty k uspořádání a použití animací. Popisuje, jak interaktivně pracovat s <xref:System.Windows.Media.Animation.Storyboard> objektů a popisuje nepřímé vlastnost cílení na syntaxi.  
@@ -63,7 +63,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
 |--------------------------------|-------------------|-----------|----------------------|-------------------|-------------|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.EventTrigger>|Ano|Ano|Ano|Ano|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
 |<xref:System.Windows.Media.Animation.BeginStoryboard> a vlastnosti <xref:System.Windows.Trigger>|Ne|Ano|Ano|Ano|[Spuštění animace při změně hodnoty vlastnosti](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-an-animation-when-a-property-value-changes.md)|  
-|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: spuštění animace při změně dat](https://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
+|<xref:System.Windows.Media.Animation.BeginStoryboard> a <xref:System.Windows.DataTrigger>|Ne|Ano|Ano|Ano|[Postupy: Spuštění animace při změně dat](https://msdn.microsoft.com/library/a736bb3a-2ae5-479a-a33a-75a27055d863)|  
 |<xref:System.Windows.Media.Animation.Storyboard.Begin%2A> – Metoda|Ano|Ne|Ne|Ne|[Animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md)|  
   
  V následujícím příkladu <xref:System.Windows.Media.Animation.Storyboard> pro animaci <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> elementu a <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> , kterým se má <xref:System.Windows.Shapes.Rectangle>.  
@@ -231,11 +231,11 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
 -   <xref:System.Windows.Media.Animation.SetStoryboardSpeedRatio>: Změní scénáře rychlost.  
   
--   <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce období výplň, má-li nějaký.  
+-   <xref:System.Windows.Media.Animation.SkipStoryboardToFill>: Pokročilé funkce scénáře do konce doby výplň, má-li nějaký.  
   
 -   <xref:System.Windows.Media.Animation.StopStoryboard>: Zastaví scénáři.  
   
--   <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odstraní scénáři.  
+-   <xref:System.Windows.Media.Animation.RemoveStoryboard>: Odebere scénáři.  
   
  V následujícím příkladu může ovládat scénáře akce slouží k interaktivní řízení scénáře.  
   
@@ -261,7 +261,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Výhodou použití těchto metod je, že není nutné vytvořit <xref:System.Windows.Trigger> nebo <xref:System.Windows.TriggerAction> objektů; je třeba odkaz na dát řídit <xref:System.Windows.Media.Animation.Storyboard> chcete pracovat.  
   
- **Poznámka:** všechny interaktivní akcí provedených ve <xref:System.Windows.Media.Animation.Clock>a proto také na <xref:System.Windows.Media.Animation.Storyboard> dojde u další značky časování modul, který se stane, krátce před další metodou render. Například, pokud použijete <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metoda pro přechod na jiném místě animace, hodnota vlastnosti nezmění okamžitě, místo, hodnota se změní na další značky modul časování.  
+ **Poznámka:** Všechny interaktivní akcí provedených ve <xref:System.Windows.Media.Animation.Clock>a proto také na <xref:System.Windows.Media.Animation.Storyboard> dojde u další značky časování modul, který se stane, krátce před další metodou render. Například, pokud použijete <xref:System.Windows.Media.Animation.Storyboard.Seek%2A> metoda pro přechod na jiném místě animace, hodnota vlastnosti nezmění okamžitě, místo, hodnota se změní na další značky modul časování.  
   
  Následující příklad ukazuje, jak použít a řízení animací použitím interaktivních metod <xref:System.Windows.Media.Animation.Storyboard> třídy.  
   
@@ -302,7 +302,7 @@ Toto téma ukazuje, jak používat <xref:System.Windows.Media.Animation.Storyboa
   
  Animace použít vlastností <xref:System.Windows.Trigger> objekty se chovají způsobem složitější než <xref:System.Windows.EventTrigger> animace nebo animace spuštěna pomocí <xref:System.Windows.Media.Animation.Storyboard> metody.  Jsou "předání" s použitím animací definované jinými <xref:System.Windows.Trigger> objekty, ale compose s <xref:System.Windows.EventTrigger> a aktivaci metody animace.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)

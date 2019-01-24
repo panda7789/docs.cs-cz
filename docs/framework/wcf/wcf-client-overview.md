@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], architecture
 ms.assetid: f60d9bc5-8ade-4471-8ecf-5a07a936c82d
-ms.openlocfilehash: e6e7d9fe6764120e3d676b9d2cbd248e7491e504
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d67da4cedc4bd9bad468197db4a2ad60d054894a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152627"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492595"
 ---
 # <a name="wcf-client-overview"></a>Klienti WCF – přehled
 Tato část popisuje, co dělat klientské aplikace, jak konfigurovat, vytvořit a používat klienta Windows Communication Foundation (WCF) a tom, jak zabezpečit klientské aplikace.  
@@ -171,6 +171,6 @@ End Interface
 ## <a name="calling-services-using-wcf-client-channels"></a>Volání služby pomocí kanálů klienta WCF  
  Typy klienta WCF rozšířit <xref:System.ServiceModel.ClientBase%601>, který je odvozen od <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> rozhraní ke zveřejnění základní kanál systému. Služby lze vyvolat pomocí cílové kontrakt služby s <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> třídy. Podrobnosti najdete v tématu [Architektura klienta WCF](../../../docs/framework/wcf/feature-details/client-architecture.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  
- <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>
+- <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>

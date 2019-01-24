@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 63f6ea4a348b3035a1f0b1d3e00f61f689915fa2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 13740920e8db5d44b71cd3c324742945c64b3e59
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450096"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498957"
 ---
 # <a name="corprfgcreason-enumeration"></a>COR_PRF_GC_REASON – výčet
-Určuje, z důvodu probíhající uvolňování paměti.  
+Označuje, že uvolňování paměti dochází důvod.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,11 +39,11 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_INDUCED`|Kolekce paměti bylo získáno <xref:System.GC.Collect%2A> metoda.|  
-|`COR_PRF_GC_OTHER`|Důvodem neurčená.|  
+|`COR_PRF_GC_INDUCED`|Kolekce paměti byla vyvolaná <xref:System.GC.Collect%2A> metody.|  
+|`COR_PRF_GC_OTHER`|Důvod není zadána.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -51,5 +51,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

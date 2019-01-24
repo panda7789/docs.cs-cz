@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9bcf8919037d5b79f3819fffec02708886064b40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0561f76c70da603d50b96ce5b5162efac4eff2de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492974"
 ---
 # <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a>ICorProfilerInfo::GetTokenAndMetadataFromFunction – metoda
-Získá token metadat a instanci rozhraní metadat, které můžete použít u tokenu pro zadanou funkci.  
+Získá token metadat a instanci rozhraní metadata, která se dá použít pro token pro zadanou funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetTokenAndMetaDataFromFunction(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, pro které chcete získat token metadat a metadat rozhraní.  
+ [in] ID funkce, pro které chcete-li získat token metadat a interface metadat.  
   
  `riid`  
- [v] ID odkazu rozhraní metadata získat instanci.  
+ [in] Referenční ID rozhraní metadata k získání instance.  
   
  `ppImport`  
- [out] Ukazatel na adresu instanci rozhraní metadata, která můžete použít u tokenu pro zadanou funkci.  
+ [out] Ukazatel na adresu rozhraní instance metadata a dá se použít pro token pro zadanou funkci.  
   
  `pToken`  
  [out] Ukazatel na token metadata pro zadanou funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -59,5 +59,5 @@ HRESULT GetTokenAndMetaDataFromFunction(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

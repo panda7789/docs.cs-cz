@@ -2,40 +2,40 @@
 title: Typ entity
 ms.date: 03/30/2017
 ms.assetid: a6dee9ab-9e4a-48f2-a169-3f79cc15821c
-ms.openlocfilehash: c694f29d36988ea52aeca650cf2bba2c50c91e89
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 3955de1873d80e85df713a557750e34e76efeb41
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502881"
 ---
 # <a name="entity-type"></a>Typ entity
-*Typ entity* je základní stavební blok pro popisující strukturu dat s Entity Data Model (EDM). Typ entity v konceptuálním modelu představuje strukturu nejvyšší úrovně koncepty, jako jsou zákazníci nebo objednávky. Typ entity je šablona pro instance typu entity. Každá šablona obsahuje následující informace:  
+*Typ entity* je základním stavebním blokem pro popis struktury data pomocí modelu Entity Data Model (EDM). Typ entity v konceptuálním modelu reprezentuje strukturu těchto koncepty nejvyšší úrovně, jako je například Zákazníci a objednávky. Typ entity je šablona pro instance typu entity. Každá šablona obsahuje následující informace:  
   
 -   Jedinečný název. (Povinné).  
   
--   [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) definované jednu nebo více vlastností. (Povinné).  
+-   [Klíč entity](../../../../docs/framework/data/adonet/entity-key.md) určené jednu nebo více vlastností. (Povinné).  
   
 -   Data ve formě [vlastnosti](../../../../docs/framework/data/adonet/property.md). (Volitelné).  
   
--   [Navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) které umožňují pro navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) z [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. (Volitelné)  
+-   [Navigační vlastnosti](../../../../docs/framework/data/adonet/navigation-property.md) , která umožňují navigaci z jednoho [end](../../../../docs/framework/data/adonet/association-end.md) ze [přidružení](../../../../docs/framework/data/adonet/association-type.md) na druhém konci. (Volitelné)  
   
- V aplikaci představuje instanci typu entity na konkrétní objekt (například konkrétního zákazníka nebo pořadí). Každá instance typu entity, musí mít jedinečnou [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) v rámci [sady entit](../../../../docs/framework/data/adonet/entity-set.md).  
+ V aplikaci, která představuje instance typu entity na konkrétní objekt (například konkrétního zákazníka nebo pořadí). Každá instance typu entity musí mít jedinečnou [klíč entity](../../../../docs/framework/data/adonet/entity-key.md) v rámci [sadu entit](../../../../docs/framework/data/adonet/entity-set.md).  
   
- Dvě instance typu entity jsou považovány za shodné, pouze v případě, že jsou stejného typu a hodnoty jejich klíče entity jsou stejné.  
+ Dvě instance typu entity se považovat za rovné pouze v případě, že jsou stejného typu a hodnoty jejich klíče entity jsou stejné.  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje Koncepční model se tři typy entit: `Book`, `Publisher`, a `Author`:  
+ Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`:  
   
  ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
   
- Všimněte si, že vlastnosti každého typu entity, které tvoří svůj klíč entity, jsou označeny "(klíč)".  
+ Všimněte si, že vlastnosti každého typu entity, které tvoří jeho klíč entity, jsou označeny "(klíč)".  
   
- [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá specifické pro doménu jazyka (DSL) nazývaného konceptuálního schématu definition language ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelech. Definuje následující CSDL `Book` typ entity, které jsou uvedené v diagramu výše:  
+ [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá jazyka specifického pro doménu (DSL) volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Definuje následující CSDL `Book` typ entity, které jsou zobrazeny ve výše uvedeném diagramu:  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
-## <a name="see-also"></a>Viz také  
- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)  
- [facet](../../../../docs/framework/data/adonet/facet.md)
+## <a name="see-also"></a>Viz také:
+- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [facet](../../../../docs/framework/data/adonet/facet.md)

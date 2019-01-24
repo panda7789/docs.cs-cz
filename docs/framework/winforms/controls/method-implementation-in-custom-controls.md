@@ -11,17 +11,17 @@ helpviewer_keywords:
 - methods [Windows Forms]
 - methods [Windows Forms], custom controls
 ms.assetid: 35d14fca-4bb4-4a27-8211-1f7a98ea27de
-ms.openlocfilehash: 9df2bc9257c3f697f30cbe8c679ffc88ec34517b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f65c34c965ddf19c7a287eeeaafe2583c97583ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538110"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506067"
 ---
 # <a name="method-implementation-in-custom-controls"></a>Implementace metody ve vlastních ovládacích prvcích
-Metoda je implementována v ovládacím prvku stejným způsobem, který ve jakoukoli jinou součástí by být implementována metoda.  
+Metoda je implementována v ovládacím prvku stejným způsobem, který by implementovat metodu v jiné součásti.  
   
- V jazyce Visual Basic, pokud je metoda je nutný k vrácení hodnoty, jsou implementované jako `Public Function`. Pokud je vrácena žádná hodnota, je implementovaný jako `Public Sub`. Metody jsou deklarovány pomocí následující syntaxe:  
+ V jazyce Visual Basic, pokud je potřeba metoda vrátí hodnotu, je implementován jako `Public Function`. Pokud není vrácena žádná hodnota, je implementovaný jako `Public Sub`. Metody jsou deklarovány pomocí následující syntaxe:  
   
 ```vb  
 Public Function ConvertMatterToEnergy(Matter as Integer) As Integer  
@@ -29,9 +29,9 @@ Public Function ConvertMatterToEnergy(Matter as Integer) As Integer
 End Function  
 ```  
   
- Protože funkce vrátí hodnotu, musí zadat návratový typ, například celé číslo, řetězec, objekt a tak dále. Argumenty `Function` nebo `Sub` postupy využít, pokud existuje, musí být také zadána.  
+ Protože funkce vrátí hodnotu, se musí zadat návratovým typem, jako je například integer, string, objektu a tak dále. Argumenty `Function` nebo `Sub` využít postupy, pokud existuje, musí být také zadána.  
   
- C# nerozlišuje mezi funkcemi a postupy, jak to dělá jazyka Visual Basic. Metoda vrátí hodnotu, nebo vrátí `void`. Tady je syntax deklarace veřejnou metodu C#:  
+ C#nerozlišuje mezi funkcemi a postupy, stejně jako jazyka Visual Basic. Metoda vrací hodnotu, nebo vrátí `void`. Syntaxe pro deklarování C# veřejnou metodu je:  
   
 ```csharp  
 public int ConvertMatterToEnergy(int matter)  
@@ -40,17 +40,17 @@ public int ConvertMatterToEnergy(int matter)
 }  
 ```  
   
- Po deklarování metodu deklarujte všechny argumenty jako explicitní datové typy, kdykoli je to možné. Argumenty, které trvat odkazy na objekty musí být deklarována jako typy určité třídy – například `As Widget` místo `As Object`. V jazyce Visual Basic, výchozí nastavení `Option Strict` automaticky vynucuje toto pravidlo.  
+ Při deklaraci metody deklarujte všechny argumenty jako explicitní datové typy, kdykoli je to možné. Argumenty, které trvat odkazy na objekty by měly být deklarovány jako typy určité třídy – například `As Widget` místo `As Object`. V jazyce Visual Basic, výchozí nastavení `Option Strict` automaticky vynutí toto pravidlo.  
   
- Argumenty typu povolit mnoho chyb vývojáře k zachycení, kompilátorem spíše než v době běhu. Kompilátor vždy zachytí chyby, zatímco spuštění testování je pouze jako vhodný jako testovací sadu.  
+ Typové argumenty umožňují zachytit kompilátorem, spíše než v době běhu mnoho chyb pro vývojáře. Kompilátor vždy zachytí chyby, zatímco za běhu testování je jenom tak dobré jako sadu testů.  
   
 ## <a name="overloaded-methods"></a>Přetížené metody  
- Pokud chcete povolit uživatelům vlastního ovládacího prvku zadat různé kombinace parametrů na metodu, zadejte více přetížení metody, pomocí explicitní datových typů. Vyhněte se vytváření parametry deklarovaný `As Object` , může obsahovat libovolný typ dat, jako to může způsobit chyby, které nemusí být zachyceny v testování.  
+ Pokud chcete povolit uživatelům ovládacího prvku k poskytování různých kombinací parametry pro metodu, poskytují několik přetížení metody, pomocí explicitní datových typů. Vyhněte se vytváření parametry deklarovanými jako `As Object` , který může obsahovat žádný datový typ, jako to může vést k chybám, které nemusí být zachycena v testování.  
   
 > [!NOTE]
->  Je univerzální datového typu ve modul common language runtime `Object` místo `Variant`. `Variant` byla odebrána od jazyka.  
+>  Univerzální datový typ v modulu common language runtime je `Object` spíše než `Variant`. `Variant` byl odebrán z jazyka.  
   
- Například `Spin` metodu hypotetický `Widget` řízení může povolit buď přímé specifikaci typu číselník směr a rychlost, nebo specifikace jiného `Widget` objekt z které úhlová informací má být odebíraný:  
+ Například `Spin` metoda hypotetické `Widget` ovládací prvek může umožnit přímý specifikace typu číselník směru a rychlost nebo specifikace jiného `Widget` má být odebíraný objekt, ze které podpora angular:  
   
 ```vb  
 Overloads Public Sub Spin( _  
@@ -75,6 +75,6 @@ public void Spin(Widget driver)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../../docs/standard/events/index.md)  
- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Události](../../../../docs/standard/events/index.md)
+- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)

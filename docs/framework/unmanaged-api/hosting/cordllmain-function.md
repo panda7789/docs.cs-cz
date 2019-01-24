@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5d541f834e829305fa2b091c45d0dc8f387bb55
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f62ad2c9ec6e1c9672ac5c78e838e926b02359f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431666"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512369"
 ---
 # <a name="cordllmain-function"></a>_CorDllMain – funkce
-Inicializuje modul CLR (CLR), vyhledá spravované vstupní bod v záhlaví modulu CLR sestavení knihoven DLL a zahájí spuštění.  
+Inicializuje modul CLR (CLR), vyhledá spravovaný vstupní bod v záhlaví modulu CLR sestavení DLL a zahájí vykonávání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,34 +38,34 @@ BOOL STDMETHODCALLTYPE _CorDllMain (
   
 #### <a name="parameters"></a>Parametry  
  `hInst`  
- [v] Instance popisovače načíst modul.  
+ [in] Popisovač instance načteného modulu.  
   
  `dwReason`  
- [v] Označuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jedna z následujících hodnot: DLL_PROCESS_ATTACH DLL_THREAD_ATTACH, DLL_THREAD_ATTACH nebo DLL_PROCESS_DETACH. Popis těchto hodnot najdete v tématu `DllMain` dokumentace v sadě SDK pro platformu.  
+ [in] Označuje, proč je volána funkce vstupního bodu knihovny DLL. Tento parametr může být jeden z následujících hodnot: DLL_PROCESS_ATTACH, DLL_THREAD_ATTACH, DLL_THREAD_ATTACH nebo DLL_PROCESS_DETACH. Popisy těchto hodnot, najdete v článku `DllMain` dokumentaci Platform SDK.  
   
  `lpReserved`  
- [v] Nepoužívá se.  
+ [in] Nevyužité.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí hodnotu `true` úspěch a `false` Pokud dojde k chybě.  
+ Tato metoda vrátí `true` k dosažení úspěchu a `false` Pokud dojde k chybě.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato funkce je volána zavaděčem operačního systému pro knihovnu DLL sestavení. Pro spustitelný soubor sestavení zavaděč volá [_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) funkce místo.  
+ Tato funkce je volána zavaděčem operačního systému pro sestavení knihovny DLL. Pro spustitelný soubor sestavení zavaděče volá [Funkce _CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md) namísto toho funkci.  
   
- Zavaděč operačního systému volá tuto metodu, bez ohledu na to, vstupní bod uvedený v souboru DLL.  
+ Zavaděč operačního systému volá tuto metodu, bez ohledu na vstupní bod uvedený v souboru knihovny DLL.  
   
- V systému Windows 98, Windows ME, systém Windows NT a Windows 2000 `_CorDllMain` je volána funkce nepřímo prostřednictvím fixupin zavaděč operačního systému. Ve všech ostatních verzí systému Windows je volána přímo zavaděčem operačního systému.  
+ Ve Windows 98, Windows ME, Windows NT a Windows 2000 `_CorDllMain` volána nepřímo prostřednictvím fixupin zavaděči operačního systému. Ve všech ostatních verzích Windows je volána přímo zavaděčem operačního systému.  
   
- Další informace najdete v části poznámky v [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
+ Další informace naleznete v části poznámky v [_CorValidateImage](../../../../docs/framework/unmanaged-api/hosting/corvalidateimage-function.md) tématu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)

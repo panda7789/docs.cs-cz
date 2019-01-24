@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b772de720a8c3b669bd3cbe9591637d931cb8763
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 349604404487501a692b9a2472ed32878c62d879
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430616"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494805"
 ---
 # <a name="getfileversion-function"></a>GetFileVersion – funkce
-Získá běžné language runtime (CLR) informace o verzi zadaného souboru, pomocí zadané vyrovnávací paměti.  
+Získá common language runtime (CLR) informace o verzi zadaného souboru pomocí zadané vyrovnávací paměti.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -41,23 +41,23 @@ HRESULT GetFileVersion (
   
 #### <a name="parameters"></a>Parametry  
  `szFilename`  
- [v] Cesta k souboru prověřit.  
+ [in] Cesta souboru, který má být zkontrolován.  
   
  `szBuffer`  
- [ve out] Vyrovnávací paměti přidělené pro informace o verzi, která je vrácena.  
+ [out v] Vyrovnávací paměť přidělená pro informace o verzi, která je vrácena.  
   
  `cchBuffer`  
- [v] Velikost v široké znaky z `szBuffer`.  
+ [in] Velikost v širokých znaků, z `szBuffer`.  
   
  `dwLength`  
- [out] Velikost v bajtech vrácený `szBuffer`.  
+ [out] Velikost v bajtech, vráceného `szBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

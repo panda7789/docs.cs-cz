@@ -9,54 +9,54 @@ helpviewer_keywords:
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ac278a4a3b06e0611e1cf57d079516a1dccf606b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c74a130c078077d9f692fbf6107e9d5aefc16b9a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397946"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505936"
 ---
 # <a name="securing-wrapper-code"></a>Zabezpečení kódu obálky
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Kód obálky, zejména kde obálku má vyšší důvěryhodnost než kód, který používá, můžete otevřít jedinečnou sadu slabá místa zabezpečení. Nic udělat jménem volající, kde omezenými oprávněními volajícího nejsou součástí odpovídající kontroly zabezpečení, je potenciální slabé místo k zneužít.  
+ Kód obálky, zejména pokud má obálka vyšší zabezpečení než kód, který používá, můžete otevřít jedinečnou sadu slabá místa zabezpečení. Všechno Hotovo jménem volající, kde omezenými oprávněními volajícího, jež nejsou součástí kontroly zabezpečení, je potenciální slabé stránky na možné zneužít.  
   
- Nikdy nepovolujte něco prostřednictvím obálky, že volající nelze provádět sám sebe. Toto je speciální nebezpečí, když děláte něco, co zahrnuje kontrolu omezené zabezpečení oproti úplné procházení zásobníku. Pokud se jedná o jednu úroveň kontroly obálkového kódu mezi skutečného volajícího a prvku rozhraní API v otázku můžete snadno způsobit kontrola zabezpečení uspět, když ho by neměl, čímž oslabí zabezpečení.  
+ Nikdy nepovolujte něco prostřednictvím obálky, kterou volajícího nelze provést samotný. Toto je speciální nebezpečí při děláte něco, co zahrnuje omezenou kontrolu zabezpečení, na rozdíl od úplné procházení zásobníku. Pokud se jedná o jednu úroveň kontroly obálkového kódu mezi skutečné volajícího a elementu rozhraní API v otázce může snadno způsobit kontrola zabezpečení uspět, když ji by měl není, čímž oslabí zabezpečení.  
   
 ## <a name="delegates"></a>Delegáty  
- Delegát zabezpečení se liší mezi verzemi rozhraní .NET Framework.  Tato část popisuje různá chování delegátů a související informace o zabezpečení.  
+ Delegát zabezpečení se liší mezi verzemi rozhraní .NET Framework.  Tato část popisuje chování různých delegáta a související důležité informace o zabezpečení.  
   
 ### <a name="in-version-10-and-11-of-the-net-framework"></a>Ve verzi 1.0 a 1.1 rozhraní .NET Framework  
- Verze 1.0 a 1.1 rozhraní .NET Framework proveďte následující akce zabezpečení proti tvůrci a volající delegáta.  
+ Verze 1.0 a 1.1 rozhraní .NET Framework provést následující akce zabezpečení proti delegáta creator a volající delegáta.  
   
--   Když je vytvořen delegáta, jsou požadavky na zabezpečení odkaz na cílové metody delegáta adresovat poskytnutí sady tvůrce delegáta.  Výsledkem nesplnění akce zabezpečení <xref:System.Security.SecurityException>.  
+-   Po vytvoření delegáta požadavky na zabezpečení propojení na cílové metody delegáta jsou provedeny udělená sada oprávnění tvůrce delegáta.  Výsledkem nesplnění akce zabezpečení <xref:System.Security.SecurityException>.  
   
--   Po vyvolání delegáta jsou provedeny všechny existující požadavky zabezpečení na volajícího delegáta.  
+-   Když je vyvolán delegát, jsou prováděny existující požadavků na zabezpečení na volajícím delegáta.  
   
- Vždy, když kód trvá <xref:System.Delegate> z méně důvěryhodného kódu, který ho může volat, ujistěte se, že méně důvěryhodného kódu pro zvýšení jeho oprávnění. Pokud přijmete delegáta a pozdější použití, kód, který vytvořili delegát není v zásobníku volání a jeho oprávnění nebudou testována, pokud kód v nebo v části delegát pokusí chráněné operace. Pokud váš kód a kód volající oprávnění vyšší než tvůrce, můžete tvůrce organizovat cestu volání, aniž by byly součástí zásobníku volání.  
+ Vždy, když má váš kód <xref:System.Delegate> z méně důvěryhodnému kódu, který může volat, ujistěte se, že nejsou povolení méně důvěryhodnému kódu ke zvýšení úrovně oprávnění. Je-li provést delegáta a pozdější použití, kód, který vytvoří delegát není v zásobníku volání a jeho oprávnění nebudou testována, pokud kód v nebo v rámci delegáta pokusí chráněné operace. Pokud váš kód a volající kód oprávnění vyšší než tvůrce, Tvůrce můžete orchestrovat cesta volání bez části zásobníku volání.  
   
-### <a name="in-version-20-and-later-versions-of-the-net-framework"></a>Ve verzi 2.0 a novější verze rozhraní .NET Framework  
- Na rozdíl od předchozích verzí verze 2.0 a novějších verzích rozhraní .NET Framework provádí akce zabezpečení vůči tvůrce delegáta při vytvoření a volá delegát.  
+### <a name="in-version-20-and-later-versions-of-the-net-framework"></a>Ve verzi 2.0 a novějších verzích rozhraní .NET Framework  
+ Na rozdíl od předchozích verzí verze 2.0 a novějších verzích rozhraní .NET Framework provede akce zabezpečení proti delegáta creator delegáta je vytvořen a volat.  
   
--   Když je vytvořen delegáta, jsou požadavky na zabezpečení odkaz na cílové metody delegáta adresovat poskytnutí sady tvůrce delegáta.  Výsledkem nesplnění akce zabezpečení <xref:System.Security.SecurityException>.  
+-   Po vytvoření delegáta požadavky na zabezpečení propojení na cílové metody delegáta jsou provedeny udělená sada oprávnění tvůrce delegáta.  Výsledkem nesplnění akce zabezpečení <xref:System.Security.SecurityException>.  
   
--   Sada grant tvůrce delegáta se také zaznamenána během vytváření delegáta a uloží s delegátem.  
+-   Udělená sada tvůrce příslušného delegáta je také zaznamenána během vytvoření delegáta a uložená s delegátem.  
   
--   Po vyvolání delegáta zaznamenané udělená sada tvůrce delegáta je nejdřív porovnán s jakékoli nároky v aktuálním kontextu, pokud tvůrce delegáta a volající patří do různých sestavení.  Dále jsou provedeny všechny existující požadavky zabezpečení na volajícího delegáta.  
+-   Když je vyvolán delegát, Tvůrce příslušného delegáta zachycené udělené sady nejprve vyhodnocení proti všechny požadavky v rámci aktuálního kontextu, pokud delegáta creator a volající patří do různých sestaveních.  Dále jsou prováděny existující požadavků na zabezpečení na volajícím delegáta.  
   
-## <a name="link-demands-and-wrappers"></a>Požadavky na odkaz a obálky  
- Zvláštní ochranu případu s požadavky propojení nemá byla posílit zabezpečení infrastruktury, ale je stále zdroj možné slabé místo v kódu.  
+## <a name="link-demands-and-wrappers"></a>Požadavky na propojení a obálky  
+ Zvláštní případ ochrany s požadavky propojení má posílena v rámci infrastruktury zabezpečení, ale je stále zdrojem je možné slabé stránky ve vašem kódu.  
   
- Pokud plně důvěryhodný kód volá vlastnost, události nebo metoda chráněn [LinkDemand](../../../docs/framework/misc/link-demands.md), volání bude úspěšné, pokud **LinkDemand** kontrola oprávnění pro volající je splněna. Kromě toho pokud plně důvěryhodný kód zpřístupní třídu, která má název vlastnosti a volání jeho **získat** přistupujícího objektu pomocí reflexe, toto volání **získat** přistupujícího objektu bude úspěšné, i když nemá uživatelského kódu nemá oprávnění k přístupu k této vlastnosti. Důvodem je, že **LinkDemand** kontroluje jenom bezprostředního volajícího, která je plně důvěryhodný kód. V podstatě plně důvěryhodný kód se telefonicky privilegované jménem uživatelského kódu bez a ujistěte se, zda má uživatelský kód pravé uskutečnit toto volání.  
+ Pokud plně důvěryhodného kódu volá vlastnosti, události nebo metody, které jsou chráněné službou [LinkDemand](../../../docs/framework/misc/link-demands.md), bude volání úspěšné, pokud **LinkDemand** kontrola oprávnění pro volající není splněna. Kromě toho pokud plně důvěryhodného kódu zpřístupní třídu, která přebírá název vlastnosti a volání jeho **získat** přístupového objektu pomocí reflexe, toto volání **získat** přistupujícího objektu bude úspěšné, i když nemá uživatelský kód není nutné oprávnění k přístupu k této vlastnosti. Je to proto, **LinkDemand** kontroluje pouze okamžitého volajícího, což je plně důvěryhodného kódu. V podstatě plně důvěryhodného kódu je volání privilegovaných jménem uživatelský kód bez a ujistěte se, že uživatelský kód má oprávnění provést toto volání.  
   
- Aby se zabránilo takovým bezpečnostním rizikům, modul common language runtime rozšiřuje kontrolu do úplné procházení zásobníku vyžádaného na všechny nepřímé volání metoda, konstruktor, vlastnost nebo událostí, které jsou chráněny **LinkDemand**. Tato ochrana způsobuje náklady na výkon a změní sémantiku kontrola zabezpečení; vyžádání úplné procházení zásobníku může selhat, kde by prošla rychlejší, jednu úroveň kontroly.  
+ Takové bezpečnostních děr zabránit, modul common language runtime rozšiřuje kontrolu do požadavek na úplné procházení zásobníku na všechny nepřímé volání metody, konstruktor, vlastnost nebo událost chráněn **LinkDemand**. Tato ochrana náklady na výkon s sebou nese náklady a změny sémantiky kontrola zabezpečení; vyžádání úplné procházení zásobníku může selhat, pokud by prošly rychlejší a jednu úroveň kontroly.  
   
-## <a name="assembly-loading-wrappers"></a>Obálky načítání sestavení  
- Několik metod používaných k načtení spravovaného kódu, včetně <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, načtení sestavení s důkaz volajícího. Pokud zabalením některé z těchto metod, použít systém zabezpečení vašeho kódu udělení oprávnění, místo oprávnění volajícího vaší obálky, k načtení sestavení. Měli byste méně důvěryhodný kód pro načtení kód, který má vyšší oprávnění než ty volajícího, aby vaše obálku.  
+## <a name="assembly-loading-wrappers"></a>Sestavení – načítání obálek  
+ Několik metod používaných k načtení spravovaného kódu, včetně <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, načtení sestavení s legitimací volajícího. Pokud zabalením některé z těchto metod, pomocí zabezpečení systému udělení oprávnění kódu, namísto oprávnění volajícímu obálku, a načte tato sestavení. By nemělo umožňovat méně důvěryhodnému kódu načíst kód, který je vyšší oprávnění než u volajícího, aby vaše obálky.  
   
- Kód, který má úplný vztah důvěryhodnosti nebo důvěryhodnost výrazně vyšší než potenciální volající (včetně volající úroveň oprávnění Internetu), může oslabit zabezpečení tímto způsobem. Pokud má váš kód veřejnou metodu, která přijímá bajtové pole a předává jej do **Assembly.Load**, čímž vytvoření sestavení jménem volajícího, může porušit zabezpečení.  
+ Veškerý kód, který má úplný vztah důvěryhodnosti nebo výrazně vyšší zabezpečení než potenciální volající (včetně volajícího úroveň oprávnění Internetu), může oslabit zabezpečení tímto způsobem. Pokud váš kód má veřejnou metodu, která přijímá pole bajtů a předává jej do **Assembly.Load**, a tím vytváření sestavení jménem volajícího, by mohly narušit zabezpečení.  
   
- Tento problém se vztahuje na následující prvky rozhraní API:  
+ Tento problém se vztahuje k následujícím prvkům rozhraní API:  
   
 -   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>  
   
@@ -67,39 +67,39 @@ ms.locfileid: "33397946"
 -   <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
 ## <a name="demand-vs-linkdemand"></a>Vyžádání vs. LinkDemand  
- Deklarativní zabezpečení nabízí dva druhy kontrol zabezpečení, které jsou podobné, ale provádí velmi odlišné kontroly. Protože nesprávná volba může dojít ke ztrátě slabý výkon nebo zabezpečení byste měli porozumět obou formulářů.  
+ Deklarativní zabezpečení nabízí dva druhy kontroly zabezpečení, které jsou podobné, ale provést kontroly velmi odlišné. Protože nesprávné volby může způsobit ztrátu slabý výkon nebo zabezpečení, měli byste porozumět obě formy.  
   
  Deklarativní zabezpečení nabízí následující kontroly zabezpečení:  
   
--   <xref:System.Security.Permissions.SecurityAction.Demand> Určuje procházení zásobníku zabezpečení přístupu kódu. Všechny volající v zásobníku musí mít zadaný oprávnění nebo identitu předat. **Vyžádání** dochází v zásobníku může obsahovat různé volající při každém volání. Pokud při volání metody opakovaně, dojde k této kontroly zabezpečení pokaždé, když. **Vyžádání** je dobrá ochrana proti útokům typu luring; neoprávněný kód pokusu o získání přes něj bude zjištěn.  
+-   <xref:System.Security.Permissions.SecurityAction.Demand> Určuje procházení zásobníku zabezpečení přístupu kódu. Zadané oprávnění nebo identity předat musí mít všichni volající v zásobníku. **Vyžádání** dochází při každém volání, protože zásobník může obsahovat různé volající. Pokud zavoláte metodu opakovaně, vyvolá tuto kontrolu zabezpečení pokaždé, když. **Vyžádání** je dobrá ochrana proti útokům typu luring; neoprávněný kód. při operaci get přes něj bude rozpoznán.  
   
--   [LinkDemand](../../../docs/framework/misc/link-demands.md) dochází v době kompilace za běhu (JIT) a kontroluje jenom bezprostředního volajícího. Tato kontrola zabezpečení nekontroluje volající volajícího. Jakmile tato kontrola proběhne, neexistuje žádný další bezpečnostní režie ohledu na to, kolikrát může volající volat. Však neexistuje také žádná ochrana proti útokům typu luring. S **LinkDemand**, kód, který projde testem a může odkazovat kódu potenciálně narušit zabezpečení tím, že škodlivý kód volání pomocí oprávnění kódu. Proto nepoužívejte **LinkDemand** Pokud nebude možné slabá místa můžete zcela vyhnout.  
+-   [LinkDemand](../../../docs/framework/misc/link-demands.md) dochází v době kompilace just-in-time (JIT) a kontroluje pouze bezprostředního volajícího. Tato kontrola zabezpečení volajícího, volající nekontroluje. Jakmile úspěšně proběhne kontrola, neexistuje žádné další bezpečnostní režie nezáleží na tom, kolikrát může volající volat. Existuje ale také žádná ochrana proti útokům typu luring. S **LinkDemand**, veškerý kód, který projde testem a může odkazovat na váš kód může potenciálně narušit zabezpečení tím, že škodlivý kód volání pomocí autorizovaného kódu. Proto nepoužívejte **LinkDemand** Pokud nebude možné slabá místa můžete důkladně vyhnout.  
   
     > [!NOTE]
-    >  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], byly nahrazeny požadavky na odkaz <xref:System.Security.SecurityCriticalAttribute> atribut <xref:System.Security.SecurityRuleSet.Level2> sestavení. <xref:System.Security.SecurityCriticalAttribute> Je ekvivalentní k požadavku na odkaz pro úplný vztah důvěryhodnosti; ale taky ovlivňuje pravidla dědičnosti. Další informace o této změně najdete v tématu [kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
+    >  V [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], byly nahrazeny požadavky propojení <xref:System.Security.SecurityCriticalAttribute> atribut <xref:System.Security.SecurityRuleSet.Level2> sestavení. <xref:System.Security.SecurityCriticalAttribute> Odpovídá požadavku propojení pro úplný vztah důvěryhodnosti, ale taky ovlivňuje pravidla dědičnosti. Další informace o této změně najdete v tématu [kód transparentní pro zabezpečení, úroveň 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
   
- Vyžadováno při použití zvláštní opatření **LinkDemand** musí být naprogramováno samostatně; může zabezpečení systému, usnadní vynucení. Jakákoli chyba otevírá slabá místa zabezpečení. Všechny oprávnění kódu, používá váš kód musí být zodpovědná za implementaci dalšího zabezpečení následujícím způsobem:  
+ Další bezpečnostní opatření, která požaduje se při použití **LinkDemand** musí být naprogramovány jednotlivě; může systém zabezpečení pomáhají s vynucením. Jakákoli chyba otevře slabé stránky zabezpečení. Všechna oprávnění, že používá váš kód musí být za implementaci další bezpečnostní pomocí následujícího kódu:  
   
--   Omezení přístupu volací kód pro třídu nebo sestavení.  
+-   Omezení přístupu volající kód do třídy nebo sestavení.  
   
--   Umístění stejné zabezpečení kontroly v volací kód, který se zobrazí na kód volané a obligating jeho volající Uděláte to tak. Například pokud napsat kód, který volá metodu, která je chráněný pomocí **LinkDemand** pro <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadán příznak metodu také měli **LinkDemand** (nebo **Vyžádání**, což je silnější) pro toto oprávnění. Jedinou výjimkou je, pokud váš kód používá **LinkDemand**-chráněná metoda omezená tak, že se rozhodnete je bezpečné, daná jinými mechanismy ochrany zabezpečení (například požadavky) ve vašem kódu. V tomto případě výjimečných trvá volající odpovědnost za oslabení ochranu zabezpečení v kódu.  
+-   Volající kód, který se zobrazí v kódu volaného a jeho volající k tomu obligating uvedení stejné zabezpečení kontroly. Například pokud píšete kód, který volá metodu, která je chráněna **LinkDemand** pro <xref:System.Security.Permissions.SecurityPermission> s <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> zadán příznak metodu také se ujistěte, **LinkDemand** (nebo **Vyžádání**, což je silnější) pro toto oprávnění. Výjimkou je, pokud váš kód používá **LinkDemand**-chráněná metoda omezeným způsobem, který se rozhodnete je bezpečné, s ohledem jiné mechanismy ochrany zabezpečení (například požadavků) ve vašem kódu. V tomto případě mimořádných volající přebírá odpovědnost za oslabení ochrany na základní kód.  
   
--   Zajištění, že volající vašeho kódu nelze obelstít váš kód volání chráněného kódu jejich jménem. Jinými slovy volající nemůže vynutit kód autorizovaný k předání specifických parametrů chráněnému kódu nebo k získání výsledků z něj.  
+-   Zajištění, že volající vašeho kódu nelze přimět váš kód k volání chráněné kódu za ně. Jinými slovy volající nemůže vynutit autorizovaného kódu předat konkrétní parametry chráněného kódu nebo vrátit výsledky z něj.  
   
-### <a name="interfaces-and-link-demands"></a>Rozhraní a požadavky na odkaz  
- Pokud virtuální metoda, vlastnost nebo událost s **LinkDemand** přepíše metodu základní třídy, metoda základní třídy musí mít také stejnou **LinkDemand** pro metodu přepsaného Chcete-li být účinné. Je možné volat metodu základní třídy a převést zpět na základní typ škodlivý kód. Všimněte si, že požadavky na propojení můžete přidat i implicitně na sestavení, které nemají <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut úrovně sestavení.  
+### <a name="interfaces-and-link-demands"></a>Rozhraní a požadavky propojení  
+ Pokud virtuální metoda, vlastnost nebo událost s **LinkDemand** přepíše metodu základní třídy, metody základní třídy musí mít také stejný **LinkDemand** přepsané metody-li být účinné. Je možné, škodlivý kód pro zpětné přetypování do základního typu a volání metody základní třídy. Všimněte si, že požadavky na propojení mohou být také na sestavení, která nemají implicitně přidány <xref:System.Security.AllowPartiallyTrustedCallersAttribute> atribut úrovně sestavení.  
   
- Je dobrým zvykem chránit implementace metody s požadavky propojení při metody rozhraní také mít požadavky na odkaz. Vezměte na vědomí následující skutečnosti související požadavky propojení pomocí rozhraní:  
+ Je dobrým zvykem chránit implementace metod s požadavky propojení, když rozhraní metody mají také požadavky propojení. Mějte na paměti následující skutečnosti související požadavky propojení pomocí rozhraní:  
   
--   Zadáte-li **LinkDemand** na veřejné metody třídy, která implementuje metodu rozhraní **LinkDemand** se neuplatní Pokud následně převést na rozhraní a volat metodu. V takovém případě vzhledem k tomu, že jste propojili proti rozhraní pouze **LinkDemand** na rozhraní je přijmout.  
+-   Pokud umístíte **LinkDemand** na veřejné metody třídy, která implementuje metodu rozhraní **LinkDemand** neuplatní, pokud následně přetypována na rozhraní a zavolejte metodu. V takovém případě vzhledem k tomu, že propojená s rozhraní, pouze **LinkDemand** rozhraní je přijmout.  
   
  Zkontrolujte následující položky pro problémy se zabezpečením:  
   
--   Požadavky na explicitní odkaz na metody rozhraní. Zajistěte, aby tyto požadavky propojení nabízejí očekávanou ochranu. Určí, zda škodlivý kód můžete použít přetypování k vyřešení požadavky propojení, jak je popsáno výše.  
+-   Požadavky na explicitní odkaz na metody rozhraní. Ujistěte se, že tyto požadavky propojení nabízejí očekávanou ochranu. Zjistěte, zda škodlivý kód může použít přetypování jsme požadavky propojení, jak je popsáno výše.  
   
--   Virtuální metody s požadavky na odkaz použít.  
+-   Virtuální metody s požadavky propojení, které jsou použity.  
   
--   Typy a rozhraní, které budou implementovat. Požadavky na odkaz tyto měli použít konzistentně.  
+-   Typy a rozhraní, které implementují. Ty by měly použít požadavky propojení konzistentně.  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

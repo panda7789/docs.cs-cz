@@ -2,12 +2,12 @@
 title: '&lt;add&gt; elementu &lt;scopedCertificates&gt;'
 ms.date: 03/30/2017
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
-ms.openlocfilehash: a173d3b137833abfe8a69aed55b972c9b6469890
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 2406c93307ed9beb5738567a473406026b09b0a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146092"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508740"
 ---
 # <a name="ltaddgt-of-ltscopedcertificatesgt-element"></a>&lt;add&gt; elementu &lt;scopedCertificates&gt;
 Přidá certifikát X.509 do kolekce vymezených certifikátů.  
@@ -16,9 +16,9 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<třídu clientCredentials >  
-\<serviceCertificate >  
-\<scopedCertificates >  
+\<clientCredentials>  
+\<serviceCertificate>  
+\<scopedCertificates>  
 \<Přidat > – element pro \<scopedCertificates >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -40,7 +40,7 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 |---------------|-----------------|  
 |targetUri|řetězec. Určuje identifikátor URI služby přidruženého k certifikátu.|  
 |findValue|řetězec. Hodnota, kterou chcete vyhledat.|  
-|X509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
+|x509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
 |storeLocation|Výčet. Jedno ze dvou umístění úložišť k prohledání.|  
 |storeName|Výčet. Jedno ze systémových úložišť k prohledání.|  
   
@@ -75,7 +75,7 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<scopedCertificates >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování.|  
+|[\<scopedCertificates>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopedcertificates-element.md)|Představuje kolekci certifikátů X.509 poskytnuty konkrétní službou pro ověřování.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek umožňuje klientovi konfigurace certifikátu služby k použití na základě adresy URL služby, se kterým komunikuje. To je zvláště užitečná v vydaný token situacích, kdy může klient komunikovat k více službám (ukončení služby také služby tokenu zabezpečení zprostředkující). U vazeb, které používají zabezpečení na základě certifikátů zpráv tento certifikát se používá k šifrování zpráv ve službě a očekává se využívat službu k podepisování odpovědi klientovi.  
@@ -107,13 +107,13 @@ Přidá certifikát X.509 do kolekce vymezených certifikátů.
 </behaviors>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>  
- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>  
- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>  
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>  
- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>
+- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>
+- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>
+- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
+- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>
+- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

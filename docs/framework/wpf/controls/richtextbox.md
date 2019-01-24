@@ -7,21 +7,21 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF]
 ms.assetid: a177374d-ee54-4d00-aaae-c983481cae9b
-ms.openlocfilehash: 201dd8cfc76191fefb45ff01dd42f26fd8454f20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c521c5c5d4ecb2b20954b5b6e303bbbda0a26418
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508637"
 ---
 # <a name="richtextbox"></a>RichTextBox
-<xref:System.Windows.Controls.RichTextBox> Element definuje ovládací prvek úprav s integrovanou podporu pro funkce, jako je vyjmutí a vložení, prezentace bohaté dokumentu a obsahu výběr.  
+<xref:System.Windows.Controls.RichTextBox> Element definuje ovládací prvek úprav s integrovanou podporou pro funkce, jako je vyjmutí a vložení, prezentace dokumentů s bohatým formátováním a výběr obsahu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
  [Témata s postupy](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.TextBox>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.TextBox>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

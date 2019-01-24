@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 36651de5053e994103f79c9021e8e18e126f91fa
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: c8b3f338659e2784db8deca3e1776e7926c30c32
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416069"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506081"
 ---
 # <a name="clrdatasourcetype-enumeration"></a>CLRDataSourceType Enumeration
 
@@ -54,7 +54,7 @@ Tento výčet se nachází uvnitř modulu runtime a není dostupná záhlaví ne
 **Knihovna:** Žádná  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

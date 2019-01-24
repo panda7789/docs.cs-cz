@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: be7184e07815ebe222b8ff8736c26fd3879c8777
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3d7d5b4e7ed4fdf6ae20da654913cbf3e004eb09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460705"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506742"
 ---
 # <a name="icorprofilerinfo4requestrejit-method"></a>ICorProfilerInfo4::RequestReJIT – metoda
-Požadavky JIT rekompilace všech instancí určených funkcí.  
+Požadavků opětovnou kompilaci JIT všechny výskyty zadaných funkcí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,33 +38,33 @@ HRESULT RequestReJIT (
   
 #### <a name="parameters"></a>Parametry  
  `cFunctions`  
- [v] Počet funkcí její kompilace.  
+ [in] Počet funkcí znovu zkompilovat.  
   
  `moduleIds`  
- [v] Určuje, `moduleId` část (`module`, `methodDef`) páry, které identifikují funkce zopakovat.  
+ [in] Určuje `moduleId` část (`module`, `methodDef`) dvojice, které identifikují funkcí, které mají být překompilovány.  
   
  `methodIds`  
- [v] Určuje, `methodId` část (`module`, `methodDef`) páry, které identifikují funkce zopakovat.  
+ [in] Určuje `methodId` část (`module`, `methodDef`) dvojice, které identifikují funkcí, které mají být překompilovány.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Došlo pokusu o označte všechny metody pro opětovnou kompilaci JIT. Musí implementovat profileru [icorprofilercallback4::rejiterror –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md) metoda k určení, které metody byly úspěšně označen pro opětovnou kompilaci JIT.|  
-|CORPROF_E_CALLBACK4_REQUIRED|Musí implementovat profileru [icorprofilercallback4 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) rozhraní pro toto volání podporovaná.|  
-|CORPROF_E_REJIT_NOT_ENABLED|JIT rekompilace nebylo povoleno. Je nutné povolit JIT rekompilace během inicializace s použitím [icorprofilerinfo::seteventmask –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metodu a nastavit `COR_PRF_ENABLE_REJIT` příznak.|  
-|E_INVALIDARG|`cFunctions` 0, nebo `moduleIds` nebo `methodIds` je `NULL`.|  
+|S_OK|Byl proveden pokus o pro označení všech metod rekompilace JIT. Profiler musí implementovat [icorprofilercallback4::rejiterror –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md) metodou ke zjištění, které metody byly úspěšně označen pro opětovnou kompilaci JIT.|  
+|CORPROF_E_CALLBACK4_REQUIRED|Profiler musí implementovat [icorprofilercallback4 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) rozhraní pro toto volání a proto není podporován.|  
+|CORPROF_E_REJIT_NOT_ENABLED|Rekompilace JIT není povolená. Musíte povolit rekompilace JIT při inicializaci pomocí [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) metody nastavte `COR_PRF_ENABLE_REJIT` příznak.|  
+|E_INVALIDARG|`cFunctions` je 0, nebo `moduleIds` nebo `methodIds` je `NULL`.|  
 |||  
-|E_OUTOFMEMORY|Modul CLR se nepodařilo dokončit požadavek, protože nedostatku paměti.|  
+|E_OUTOFMEMORY|Modul CLR nemohl dokončit požadavek, protože mu došla paměť.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `RequestReJIT` tak, aby měl modul runtime znovu zkompiluje zadaný sady funkcí. Pak můžete použít kód profileru [icorprofilerfunctioncontrol –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md) rozhraní upravit kód, který se vygeneruje, když jsou překompilovat funkce. Aktuálně prováděné funkce a volání funkce jenom budoucí to nemá vliv. Pokud některé z určených funkcí byl dříve JIT překompilovat, požadavku opětovnou kompilaci je ekvivalentní návrat a nutnosti rekompilace funkce. Pokud chcete zachovat vratnost, když kompilátoru za běhu kompiluje původní verze funkce, považuje pouze původní verze jeho volané pro vložené rozhodnutí. Když JIT kompilátoru znovu zkompiluje funkci, považuje aktuální verze (Rekompilované nebo původní) jeho volané pro vložené.  
+ Volání `RequestReJIT` má modul runtime znovu zkompilovat zadanou sadu funkcí. Profileru kód pak může použít [icorprofilerfunctioncontrol –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md) rozhraní a upravte kód, který se vygeneruje, když funkce se překompilují. Toto nastavení neovlivní aktuálně prováděné funkce a volání pouze budoucí funkce. Pokud některý z určené funkce byl dříve překompilován JIT, požaduje Opětovná kompilace je ekvivalentní k vrácení zpět a znovu zkompiluje funkci. Pokud chcete zachovat vratnost, když kompilátor JIT kompilaci původní verzi funkce, považuje pouze původní verze jeho volané pro vkládání rozhodnutí. Když kompilátor JIT znovu zkompiluje funkci, považuje za aktuální verze (překompilovanou nebo původní) jeho volané pro vkládání.  
   
- Obvykle volá profileru `RequestReJIT` v reakci na vstup uživatele, vyžaduje, aby instrumentace profileru jedné nebo několika metod. `RequestReJIT` obvykle pozastaví modul runtime, aby bylo možné provést některé z svou práci a může potenciálně aktivační události kolekce paměti. Jako takový, by měly volat profileru `RequestReJIT` z vlákna ho dříve vytvořili, a z vlákna vytvořené CLR, aktuálně neprovádí profileru zpětné volání.  
+ Profiler volá obvykle `RequestReJIT` v reakci na vstup uživatele požaduje, aby profileru instrumentace jednu nebo více metod. `RequestReJIT` modul runtime, aby bylo možné provést některé své práce a může potenciálně aktivační události uvolňování paměti obvykle pozastaví. V důsledku toho by měly volat profiler `RequestReJIT` z vlákna se dřív vytvořili, a z CLR vytvoří vlákno, které aktuálně nezpracovává zpětného volání profileru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -72,7 +72,7 @@ HRESULT RequestReJIT (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

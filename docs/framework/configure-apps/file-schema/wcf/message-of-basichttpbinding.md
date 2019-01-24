@@ -2,21 +2,21 @@
 title: '&lt;message&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
-ms.openlocfilehash: 8c3519e2db12e34d9f2bd03689e0e9684c5792ae
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: f4f50f0cf3010259677af2c8675cb2551c29ae42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151277"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497052"
 ---
 # <a name="ltmessagegt-of-ltbasichttpbindinggt"></a>&lt;message&gt; – &lt;basicHttpBinding&gt;
 Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<basicHttpBinding >  
+\<basicHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<Zpráva >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,9 +34,9 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 |Atribut|Popis|  
 |---------------|-----------------|  
 |algorithmSuite|Nastaví zprávu algoritmy šifrování a klíč zalamování řádků. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>, která určuje algoritmy a velikosti klíče. Tyto algoritmy namapovat na uvedené ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Výchozí hodnota je `Basic256`.|  
-|Typ clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pomocí zabezpečení na základě zpráv. Výchozí hodnota je `UserName`.|  
+|clientCredentialType|Určuje typ přihlašovacích údajů pro použití při ověřování klientů pomocí zabezpečení na základě zpráv. Výchozí hodnota je `UserName`.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -119,13 +119,13 @@ Definuje nastavení pro zabezpečení na úrovni zprávy z [ \<basicHttpBinding 
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.BasicHttpMessageSecurity>  
- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>  
- <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>  
- <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.BasicHttpMessageSecurity>
+- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>
+- <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>
+- <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

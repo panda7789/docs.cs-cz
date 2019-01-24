@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c2a50823b812541786cf1bebfd6b1262ce2e9314
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 2d5f807481468b61365c8b4d8412f12a4741ebb9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070555"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503155"
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>Provádění aritmetických operací s daty a časy
 
@@ -78,7 +78,7 @@ Pro ilustraci, přechodu na letní čas v USA. Vyvolá se centrální standardn�
 
 Podrobnosti najdete v tématu [převádění časových údajů mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md).
 
-<xref:System.TimeZoneInfo.ConvertTimeToUtc(System.DateTime)> Třída neposkytuje žádné metody, které automaticky používají pravidla pro úpravy při provádění aritmetika data a času. Můžete to však provést převod čas v časovém pásmu UTC, provádí aritmetické operace a pak převod ze standardu UTC zpět na čas v časovém pásmu. Podrobnosti najdete v tématu [postupy: používání časových pásem v aritmetice kalendářních a časových](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md).
+<xref:System.TimeZoneInfo.ConvertTimeToUtc(System.DateTime)> Třída neposkytuje žádné metody, které automaticky používají pravidla pro úpravy při provádění aritmetika data a času. Můžete to však provést převod čas v časovém pásmu UTC, provádí aritmetické operace a pak převod ze standardu UTC zpět na čas v časovém pásmu. Podrobnosti najdete v tématu [jak: Používání časových pásem v aritmetice kalendářních a časových](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md).
 
 Například následující kód je podobný jako předchozí kód, který přidá dvě a půl hodiny 2:00:00 9. března, 2008. Ale protože centrální běžný čas převede na UTC předtím, než provede aritmetika data a času a poté převádí výsledek od času UTC zpět na střed (běžný čas), výsledný čas odráží zóny centrální běžný čas přechodu na letní čas čas.
 
@@ -87,5 +87,5 @@ Například následující kód je podobný jako předchozí kód, který přid�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Postupy: Používání časových pásem v aritmetice kalendářních a časových údajů](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Postupy: Používání časových pásem v aritmetice kalendářních a časových](../../../docs/standard/datetime/use-time-zones-in-arithmetic.md)

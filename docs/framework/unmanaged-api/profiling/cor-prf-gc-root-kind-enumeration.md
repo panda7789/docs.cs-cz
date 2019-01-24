@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0f5b12825c9a348cd16eed9f5be0f41e03c367c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd8c5e05d3f331d46b2d31f3f2448a674f090eaf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508615"
 ---
 # <a name="corprfgcrootkind-enumeration"></a>COR_PRF_GC_ROOT_KIND – výčet
-Určuje druh kořenové kolekce paměti, který je zveřejněný prostřednictvím [icorprofilercallback2::rootreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) zpětného volání.  
+Označuje druh kořenové kolekce uvolňování paměti, který je zveřejněný prostřednictvím [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) zpětného volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,12 +42,12 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_GC_ROOT_STACK`|Kořenový adresář je proměnná v zásobníku.|  
-|`COR_PRF_GC_ROOT_FINALIZER`|Kořenová je položku ve frontě finalizační metodu.|  
-|`COR_PRF_GC_ROOT_HANDLE`|Kořenový adresář je kolekce popisovač uvolňování paměti.|  
-|`COR_PRF_GC_ROOT_OTHER`|Druh kořenové není zadáno.|  
+|`COR_PRF_GC_ROOT_FINALIZER`|Kořenový adresář je položka ve frontě finalizační metodu.|  
+|`COR_PRF_GC_ROOT_HANDLE`|Kořenový adresář je popisovač kolekce uvolnění paměti.|  
+|`COR_PRF_GC_ROOT_OTHER`|Druh root není zadána.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -55,5 +55,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

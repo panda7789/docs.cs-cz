@@ -13,15 +13,15 @@ helpviewer_keywords:
 - Web pages [Windows Forms], printing
 - examples [Windows Forms], WebBrowser control
 ms.assetid: 3fb2a305-64ce-4b6c-9258-5330d3f21b6c
-ms.openlocfilehash: 2ddb362100d5678d678a71707d8959a3be25853c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee84576c99b7088be72c2bdaf72d25f954d23ee2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532847"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499719"
 ---
 # <a name="how-to-print-with-a-webbrowser-control"></a>Postupy: Tisk pomocí ovládacího prvku WebBrowser
-Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.WebBrowser> řízení tisknout bez zobrazení na webové stránce.  
+Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro tisk na webové stránce bez jeho zobrazení.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[WebBrowserMisc#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/WebBrowserMisc/CS/WebBrowserMisc.cs#10)]
@@ -30,14 +30,14 @@ Následující příklad kódu ukazuje, jak používat <xref:System.Windows.Form
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na `System` a `System.Windows.Forms` sestavení.  
+-   Odkazy `System` a `System.Windows.Forms` sestavení.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.WebBrowser>  
- <xref:System.Windows.Forms.WebBrowser.Print%2A>  
- <xref:System.Windows.Forms.WebBrowser.Url%2A>  
- [Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- [Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
- [Postupy: Vytvoření prohlížeče dokumentu HTML v aplikaci Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
- [Přehled ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
- [WebBrowser – zabezpečení](../../../../docs/framework/winforms/controls/webbrowser-security.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.WebBrowser>
+- <xref:System.Windows.Forms.WebBrowser.Print%2A>
+- <xref:System.Windows.Forms.WebBrowser.Url%2A>
+- [Postupy: Přejděte na adresu URL pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)
+- [Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)
+- [Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)
+- [Přehled ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)
+- [WebBrowser – zabezpečení](../../../../docs/framework/winforms/controls/webbrowser-security.md)

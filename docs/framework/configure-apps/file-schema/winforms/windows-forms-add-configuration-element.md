@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5cb0d058cd1ade65bfdc966819c0c41d9c1a9750
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3e9b8b6325900214865e31492b129e381de5c1c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155090"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507366"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Přidání konfiguračního prvku Windows Forms
 
@@ -109,6 +109,6 @@ Od verze rozhraní .NET Framework 4.7, ovládacích prvků Windows Forms zvýši
 Jeden nebo více pass škálování ovlivňuje ovlivnit vnímanou odezvu uživatelského rozhraní a vzhled prvky uživatelského rozhraní, jak se upraví. Od verze rozhraní .NET Framework 4.7, Windows Forms používá škálování na jednom průchodu. V předchozích verzích rozhraní .NET Framework škálování se provádí prostřednictvím více průchody, která způsobila některé ovládací prvky škálovat víc než bylo nutné. Škálování jednoho průchodu pouze je třeba zakázat Pokud vaše aplikace závisí na staré chování.  
 
 ## <a name="see-also"></a>Viz také:
- 
-[Konfigurační oddíl pro model Windows Forms](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md)   
-[Podpora vysokého nastavení DPI ve Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md)
+
+- [Konfigurační oddíl pro model Windows Forms](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md)
+- [Podpora vysokého nastavení DPI ve Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md)

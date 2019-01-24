@@ -1,12 +1,12 @@
 ---
-title: 'Návod: Uchování objektu pomocí jazyka C#'
+title: 'Průvodce: Uchování objektu pomocíC#'
 ms.date: 04/26/2018
-ms.openlocfilehash: 85c447ae43086cc789338e77555b7400a523662a
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 61e7496b39bcbc42b0ebb2642fcb1ad1d32696af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086074"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512447"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C# #
 
@@ -27,7 +27,7 @@ V tomto návodu vytvoříte základní `Loan` objektu a zachovat data do souboru
 * Pokud jste tak dosud neučinili, nainstalujte váš oblíbený editor kódu.
 
 > [!TIP]
-> Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://visualstudio.com/downloads)!
+> Je potřeba nainstalovat editor kódu? Try [Visual Studio](https://visualstudio.com/downloads)!
 
 * V příkladu vyžaduje C# 7.3. Zobrazit [vyberte verzi jazyka C#](../../../language-reference/configure-language-version.md) 
 
@@ -99,7 +99,7 @@ Dále je nutné přidat kód k serializaci třídy do souboru. Přidejte násled
 
 V tomto okamžiku můžete znovu sestavte a spusťte aplikaci. Při prvním spuštění, Všimněte si, že začíná 7.5 úrokové sazby a poté změní na 7.1. Ukončete aplikaci a znovu jej spusťte. Teď se aplikace zobrazí zprávu, aby četl uloženého souboru a úrokové sazby 7.1 ještě před kód, který změní.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Serializace (C#)](index.md)  
-- [Průvodce programováním v jazyce C#](../..//index.md)  
+- [Serializace (C#)](index.md)
+- [Průvodce programováním v jazyce C#](../..//index.md)

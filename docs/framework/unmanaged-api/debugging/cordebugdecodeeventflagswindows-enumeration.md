@@ -12,12 +12,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa8bbcf4d8e5aadee6a4250d23842187d6c2af09
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 99283200a4e9af2e9232b6ce6c25702f47a5cc42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405483"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510205"
 ---
 # <a name="cordebugdecodeeventflagswindows-enumeration"></a>Výčet CorDebugDecodeEventFlagsWindows
 Poskytuje další informace o ladění událostí na platformě Windows.  
@@ -34,16 +34,16 @@ typedef enum CorDebugDecodeEventFlagsWindows {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`IS_FIRST_CHANCE`|Označuje, že událost ladění je první odpovídající výjimce.|  
+|`IS_FIRST_CHANCE`|Označuje, že událost ladění je výjimka první příležitosti.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Icordebugprocess6::decodeevent –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) metoda zahrnuje `dwFlags` parametr, který obsahuje další informace o ladění událostí a jehož hodnota je závislá na cílové architektury. `CorDebugDecodeEventFlagsWindows` Výčtu lze použít s událostmi ladění na platformě Windows.  
+ [Icordebugprocess6::decodeevent –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) obsahuje metodu `dwFlags` parametr, který poskytuje další informace o ladění události, a jehož hodnota je závislá na Cílová architektura. `CorDebugDecodeEventFlagsWindows` Výčtu lze použít s výjimky ladění na platformě Windows.  
   
 > [!NOTE]
->  Tento výčet je určena pro použití v rozhraní .NET nativní ladění pouze scénáře.  
+>  Tento výčet je určena pro použití v .NET Native ladění pouze scénáře.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ typedef enum CorDebugDecodeEventFlagsWindows {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

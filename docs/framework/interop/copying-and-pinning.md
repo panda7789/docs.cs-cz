@@ -9,76 +9,76 @@ helpviewer_keywords:
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 503ef7066b5d66b05c1642512ab8d59a2b1d3f9a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42257790b5a6e5005ca142bd5e32d4c6fc545195
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392798"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507080"
 ---
 # <a name="copying-and-pinning"></a>Kopírování a přichycování
-Při zařazování dat, spolupráce vláken můžete zkopírovat nebo kód pin se zařazené data. Kopírování dat umístí kopii dat z jednoho umístění paměti v jiném umístění paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typ hodnoty a kopírování typu předaná odkaz ze spravované na nespravované paměti.  
+Při zařazování dat, interoperační zařazovač můžete kopírovat nebo připnout dat se zařadit. Kopírování dat umístí kopii dat z jednoho umístění v paměti do jiného umístění v paměti. Následující obrázek znázorňuje rozdíly mezi kopírování typu hodnoty a kopírování typu předány podle odkazu ze spravované na nespravované paměti.  
   
- ![Hodnota předaná podle hodnoty a podle reference typy](./media/interopmarshalcopy.gif "interopmarshalcopy")  
-Typy hodnot předán podle hodnoty a podle reference  
+ ![Typy, předán podle hodnoty a podle reference hodnot](./media/interopmarshalcopy.gif "interopmarshalcopy")  
+Typy hodnot, předán podle hodnoty a podle reference  
   
- Metoda argumenty předaná hodnota přeuspořádány na nespravovaný kód jako hodnoty v zásobníku. Proces kopírování je SMB direct. Argumenty předávané odkazem jsou předány jako ukazatele v zásobníku. Odkazové typy jsou předávány také podle hodnoty a podle reference. Jak ukazuje následující obrázek, předaná hodnota odkazové typy jsou zkopírovány nebo připnutý.  
+ Argumenty metody předán podle hodnoty jsou zařazení na nespravovaný kód jako hodnoty v zásobníku. Proces kopírování je s přímým přístupem. Argumenty předány podle odkazu jsou předány jako ukazatele do zásobníku. Typy odkazů jsou také předán podle hodnoty a podle reference. Jak ukazuje následující obrázek, typy odkazů, předán podle hodnoty jsou zkopírovány nebo připnout.  
   
- ![Zprostředkovatel komunikace s objekty COM](./media/interopmarshalpin.gif "interopmarshalpin")  
-Odkazové typy předán podle hodnoty a podle reference  
+ ![Komunikace s objekty COM](./media/interopmarshalpin.gif "interopmarshalpin")  
+Typy odkazů, předán podle hodnoty a podle reference  
   
- Připnutí dočasně zamkne dat v aktuálním umístění paměti, proto je zachování z se přemístění podle common language runtime systém uvolňování paměti. Zařazování PIN kódy dat snížit režii kopírování a vylepšují výkon. Typ dat určuje, zda je zkopírovat nebo připnuté během procesu zařazování.  Připnutí se provádí automaticky při zařazování pro objekty, jako <xref:System.String>, ale můžete také ručně připnout paměti pomocí <xref:System.Runtime.InteropServices.GCHandle> třídy.  
+ Připnutí dočasně uzamkne dat v aktuálním umístění paměti, tak jeho synchronizaci z právě přemístění uvolňováním paměti modulu common language runtime. Aby zařazování odvozovalo připíná data s cílem snížit režijní náklady na kopírování a zvýšit výkon. Typ dat určuje, zda se zkopíroval nebo připnout během procesu zařazování.  Připnutí se provádí automaticky při zařazování pro objekty, jako <xref:System.String>, ale můžete také ručně připnout použití paměti <xref:System.Runtime.InteropServices.GCHandle> třídy.  
   
-## <a name="formatted-blittable-classes"></a>Formátovaný přenositelné třídy  
- Formátovaný [přenositelné](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu) a běžné reprezentace dat v obou spravovaných a nespravovaných paměti. Pokud tyto typy vyžadují kódování, ukazatel na objekt v haldě je předán volaného přímo. Volaného můžete změnit obsah umístění v paměti se na ně odkazovat ukazatele.  
+## <a name="formatted-blittable-classes"></a>Formátovaný Blittable třídy  
+ Ve formátu [blittable](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu) a běžné reprezentace dat v obou spravované a nespravované paměti. Pokud tyto typy vyžadují zařazování, ukazatel na objekt v haldě volaný předána přímo. Volaný může změnit obsah z umístění v paměti se na ně odkazovat ukazatel.  
   
 > [!NOTE]
->  Obsah paměti můžete změnit volaného, pokud parametr je označen jako Out či vstup/výstup. Naproti tomu volaného byste neměli Změna obsahu, pokud parametr je nastaven na zařazování jako v což je výchozí nastavení pro formátovaný přenositelné typy. Úprava objektu v generuje problémy, když se stejnou třídu exportují do knihovny typů a použít k volání mezi apartment.  
+>  Volaný můžete změnit obsah paměti, když je parametr označený Out nebo In/Out. Naproti tomu volaný byste se vyhnout změny obsahu, pokud parametr je nastaven k zařazování podle, což je výchozí nastavení pro formátovaný přenositelné typy. Úprava objektu v generuje problémy, když se do knihovny typů exportuje stejné třídy a použít pro volání mezi objektu apartment.  
   
 ## <a name="formatted-non-blittable-classes"></a>Formátovaný nepřenositelné třídy  
- Formátovaný [nepřenositelné](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu), ale reprezentace dat se liší v spravovanými a nespravovanými paměti. Data můžete vyžadovat transformace za následujících podmínek:  
+ Ve formátu [nepřenositelné](blittable-and-non-blittable-types.md) třídy opravili rozložení (ve formátu), ale reprezentace dat se liší ve spravované a nespravované paměti. Data můžou vyžadovat transformace za následujících podmínek:  
   
--   Pokud je třída nepřenositelné zařazena pomocí hodnoty, obdrží volaného ukazatel na kopii datovou strukturu.  
+-   Pokud je třída nepřenositelné zařazen podle hodnoty, volaný přijímá ukazatel na kopii struktury dat.  
   
--   Pokud je třída nepřenositelné zařazena pomocí odkazu, obdrží volaného ukazatel na ukazatel na kopii datovou strukturu.  
+-   Pokud třída nepřenositelné je zařazen podle odkazu, volaný přijímá ukazatel na ukazatel na kopii struktury dat.  
   
--   Pokud <xref:System.Runtime.InteropServices.InAttribute> nastavený atribut, tato kopie je vždy inicializovat stavem instance zařazování podle potřeby.  
+-   Pokud <xref:System.Runtime.InteropServices.InAttribute> atribut je nastaven, tato kopie je vždy inicializovat stavem instance zařazování podle potřeby.  
   
--   Pokud <xref:System.Runtime.InteropServices.OutAttribute> nastavený atribut, stav se vždy zkopíruje zpět na instanci na return zařazování podle potřeby.  
+-   Pokud <xref:System.Runtime.InteropServices.OutAttribute> atribut je nastaven, stav je vždy zkopírována zpět k instanci na vrátit, zařazování podle potřeby.  
   
--   Pokud oba **InAttribute** a **OutAttribute** jsou nastavené, jsou požadovány obě kopie. Pokud je vynechán buď atribut, můžete optimalizovat zařazování odstraněním buď kopírování.  
+-   Pokud mají oba **InAttribute** a **OutAttribute** je nastaveno, jsou požadovány obě kopie. Pokud je buď atribut vynechán, aby zařazování odvozovalo můžete optimalizovat odstraněním zkopírujte.  
   
 ## <a name="reference-types"></a>Typy odkazů  
- Hodnotou nebo odkazem, může být předán odkazové typy. Když jsou předávány podle hodnoty, je ukazatel typu předán v zásobníku. Při předání odkazem, je předaná ukazatel na ukazatel na typ na zásobníku.  
+ Odkazové typy je možné předat hodnotou nebo odkazem. Když jsou předávány hodnotou, je ukazatel na typ předány do zásobníku. Když jsou předány podle odkazu, je ukazatel na ukazatel na typ předány do zásobníku.  
   
- Typy odkazů mít podmíněného následující chování:  
+ Odkazové typy mají následující podmíněné chování:  
   
--   Pokud je předaná hodnota typu odkazu a má členy nepřenositelné typy, typy se převedou dvakrát:  
+-   Pokud typ odkazu je předán podle hodnoty a má členy nepřenositelné typy, typy jsou převedeny dvakrát:  
   
-    -   Když je argument předaný nespravované straně.  
+    -   Když je argument předaný do nespravované oblasti.  
   
     -   Při návratu z volání.  
   
-     Aby se zabránilo zbytečně kopírování a převodu tyto typy jsou zařazené jako v parametry. Musíte explicitně použít **InAttribute** a **OutAttribute** atributy pro argument volajícího a podívejte se změny provedené volaného.  
+     Aby se zabránilo zbytečně kopírování a převod, tyto typy jsou zařazeny jako v parametry. Musíte explicitně použít **InAttribute** a **OutAttribute** atributy na argument pro volajícího, aby se změny provedené volaným.  
   
--   Pokud je předaná hodnota typu odkazu a má pouze členové přenositelné typy, může být připnutý při zařazování a všechny změny provedené volaného na členy typu jsou vidět volající. Použít **InAttribute** a **OutAttribute** explicitně, pokud chcete toto chování. Bez těchto směrovou atributů spolupráce vláken neexportuje směrovou informace ke knihovně typů (exportuje jako v, což je výchozí hodnota). to může způsobit problémy s zařazování mezi apartment COM.  
+-   Pokud typ odkazu je předán podle hodnoty a obsahuje pouze členy typů blittable, je možné připnout při zařazování a všechny změny provedené členy typu volaným jsou vidět volajícím. Použít **InAttribute** a **OutAttribute** explicitně, pokud chcete toto chování. Bez těchto směrové atributy interoperační zařazovač neexportuje směrové informace do knihovny typů (exportuje jako v, což je výchozí hodnota) a to může způsobit problémy s zařazování mezi apartment modelu COM.  
   
--   Pokud typ odkazu je předán odkazem, ji budou zařazována jako vstup/výstup ve výchozím nastavení.  
+-   Pokud typ odkazu je předána odkazem, ji budou zařadit jako vstup a výstup ve výchozím nastavení.  
   
-## <a name="systemstring-and-systemtextstringbuilder"></a>System.String a objektu System.Text.StringBuilder.  
- Pokud data je zařazen do nespravovaného kódu hodnotou nebo odkazem, zařazování obvykle zkopíruje data na sekundární vyrovnávací paměti (pravděpodobně převodu znakové sady během kopírování) a předá volaného odkaz do vyrovnávací paměti. Pokud je odkaz **BSTR** přidělený **SysAllocString**, odkaz na vždycky se přidělí s **CoTaskMemAlloc**.  
+## <a name="systemstring-and-systemtextstringbuilder"></a>System.String a System.Text.StringBuilder  
+ Při dat je zařazení na nespravovaný kód podle hodnoty nebo podle odkazu, aby zařazování odvozovalo obvykle zkopíruje data do sekundární vyrovnávací paměti (pravděpodobně převodu znakové sady během kopírování) a předá volaný odkaz do vyrovnávací paměti. Pokud je odkaz **BSTR** alokována **SysAllocString**, odkaz je vždy přidělena pomocí **CoTaskMemAlloc**.  
   
- Jako optimalizace když buď typ řetězce je zařazena pomocí hodnoty (například řetězec znaků Unicode), zařazování předá volaného přímé ukazatel na spravované řetězce v vnitřní vyrovnávací paměť Unicode namísto kopírování do nové vyrovnávací paměti.  
+ Jako optimalizace při buď typ řetězce je zařazen podle hodnoty (například řetězce znaků Unicode), aby zařazování odvozovalo předá volaný přímý ukazatel spravované řetězce ve vnitřní vyrovnávací paměti Unicode místo jeho kopírování vyrovnávací paměť nového.  
   
 > [!CAUTION]
->  Pokud řetězec, je předaná hodnota, musí volaného nikdy změnit odkaz předaná zařazování. Díky tomu může dojít k poškození spravovaná halda.  
+>  Pokud řetězec je předán podle hodnoty, volaný musí nikdy změnit odkaz předávány zařazování. To může dojít k poškození spravované haldě.  
   
- Když <xref:System.String?displayProperty=nameWithType> je předán odkazem, zařazování zkopíruje obsah řetězec do vyrovnávací paměti sekundární před uskutečněním hovoru. Pak zkopíruje obsah vyrovnávací paměti do nového řetězce pro návrat z volání. Tento postup zajišťuje, že neměnné spravovaný řetězec zůstává beze změny.  
+ Když <xref:System.String?displayProperty=nameWithType> je předána odkazem, aby zařazování odvozovalo zkopíruje obsah řetězce do vyrovnávací paměti, sekundární před uskutečněním hovoru. Potom zkopíruje obsah vyrovnávací paměti do nového řetězce při návratu z volání. Tento postup zajišťuje, zůstane neměnné spravované řetězce beze změny.  
   
- Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předaná hodnota, předává vláken a odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo na volající. Volající a volaný, musíte souhlasit na velikost vyrovnávací paměti. Volající zodpovídá za vytvoření **StringBuilder** odpovídající délky. Volaného nutné provést nezbytná opatření k zajištění, že není přetečení vyrovnávací paměti. **StringBuilder** je výjimkou pravidla, která odkazové typy předaná hodnota jsou předány jako parametry ve výchozím nastavení. Je to vždy předáno jako vstup/výstup.  
+ Když <xref:System.Text.StringBuilder?displayProperty=nameWithType> je předán podle hodnoty, předá zařazování odkaz na vnitřní vyrovnávací paměť **StringBuilder** přímo k volajícímu. Volajícím a volaným musí shodnout na velikost vyrovnávací paměti. Volající zodpovídá za vytvoření **StringBuilder** odpovídající délky. Volaný musí přijmout nezbytná opatření pro zajištění, že není přetečení vyrovnávací paměti. **StringBuilder** je výjimkou z pravidla, odkazující na typy, předán podle hodnoty jsou předány jako parametry in ve výchozím nastavení. Vždy je předána jako vstup a výstup.  
   
-## <a name="see-also"></a>Viz také  
- [Výchozí chování zařazování](default-marshaling-behavior.md)  
- [Správa paměti s spolupráce zařazování vláken](https://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee(v=vs.100))  
- [Směrovou atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))  
- [Zařazování spolupráce](interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- [Výchozí chování zařazování](default-marshaling-behavior.md)
+- [Správa paměti zařazovacím modulem spolupráce](https://msdn.microsoft.com/library/417206ce-ee3e-4619-9529-0c0b686c7bee(v=vs.100))
+- [Směrové atributy](https://msdn.microsoft.com/library/241ac5b5-928e-4969-8f58-1dbc048f9ea2(v=vs.100))
+- [Zařazování spolupráce](interop-marshaling.md)

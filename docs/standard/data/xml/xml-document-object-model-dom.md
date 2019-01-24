@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: b5e52844-4820-47c0-a61d-de2da33e9f54
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b98aa5b62718a2ff19cb50a09de1a0ddf55ddb91
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 2b3a2432deb1e956060ab3615db01821658f8782
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087188"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508676"
 ---
 # <a name="xml-document-object-model-dom"></a>model DOM (Document Object Model) dokumentu XML
 Třída XML Document Object Model (DOM) je v paměti reprezentace dokumentu XML. V modelu DOM můžete prostřednictvím kódu programu čtení, manipulaci a upravit dokument XML. **XmlReader** XML přečte třída; však poskytuje přístup bez mezipaměti, pouze vpřed, jen pro čtení. To znamená, že neexistují žádné možnosti upravit hodnoty atributu nebo obsahu elementu nebo možnost vkládat a odebrání uzlů s **XmlReader**. Pro úpravy je primární funkce modelu DOM. Je běžné a způsobem strukturovaná, že XML data reprezentované v paměti, ačkoli skutečná data XML je uložen v lineárně v souboru nebo přicházející z jiného objektu. Následuje XML data.  
@@ -78,5 +78,5 @@ Strukturu dokumentu XML
   
 ## <a name="see-also"></a>Viz také:
 
-- [Typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)  
+- [Typy uzlů XML](../../../../docs/standard/data/xml/types-of-xml-nodes.md)
 - [Mapování hierarchie objektů na data XML](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)

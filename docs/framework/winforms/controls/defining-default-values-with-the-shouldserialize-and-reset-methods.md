@@ -8,26 +8,26 @@ helpviewer_keywords:
 - custom controls [Windows Forms], property methods
 - ShouldPersist method
 ms.assetid: 7b6c5e00-3771-46b4-9142-5a80d5864a5e
-ms.openlocfilehash: 8d7645e8de5edee711c30bbe7edde8ba7b5b1dab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 23b4ddb3399c12f5bf3c387991676e7ea93b8a29
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529789"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497430"
 ---
 # <a name="defining-default-values-with-the-shouldserialize-and-reset-methods"></a>Definování výchozích hodnot pomocí metod ShouldSerialize a Reset
-`ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat u vlastnosti, pokud vlastnost nemá mají jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduché výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu atributu konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:  
+`ShouldSerialize` a `Reset` jsou volitelné metody, které můžete zadat vlastnosti, pokud vlastnost není máte jednoduchý výchozí hodnotu. Pokud má vlastnost jednoduchý výchozí hodnotu, byste měli použít <xref:System.ComponentModel.DefaultValueAttribute> a místo toho zadat výchozí hodnotu pro atribut konstruktoru třídy. Některé z těchto mechanismů povoluje následující funkce v Návrháři:  
   
--   Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila z výchozí hodnoty.  
+-   Vlastnost poskytuje vizuální označení v prohlížeči vlastností, pokud se změnila od jeho výchozí hodnotu.  
   
--   Uživatel můžete kliknout pravým tlačítkem na vlastnosti a zvolte **resetovat** vlastnost obnovíte jeho výchozí hodnotu.  
+-   Uživatel může kliknout pravým tlačítkem na vlastnosti a zvolte **resetování** obnovíte jeho výchozí hodnota vlastnosti.  
   
--   Návrhář generuje efektivnější kód.  
+-   Návrhář vytvoří efektivnějšího kódu.  
   
     > [!NOTE]
-    >  Buď použít <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody. Nepoužívejte obě.  
+    >  Buď použijte <xref:System.ComponentModel.DefaultValueAttribute> nebo zadejte `Reset` *PropertyName* a `ShouldSerialize` *PropertyName* metody. Nepoužívejte obojí.  
   
- `Reset` *PropertyName* metoda vlastnost nastaví na výchozí hodnotu, jak je znázorněno v následující fragment kódu.  
+ `Reset` *PropertyName* metoda nastaví vlastnost na výchozí hodnotu, jak je znázorněno v následujícím fragmentu kódu.  
   
 ```vb  
 Public Sub ResetMyFont()  
@@ -42,9 +42,9 @@ public void ResetMyFont() {
 ```  
   
 > [!NOTE]
->  Pokud vlastnost nemá `Reset` metoda, není označen atributem <xref:System.ComponentModel.DefaultValueAttribute>a nemá výchozí hodnotu. zadaná v jeho deklaraci `Reset` možnost pro tuto vlastnost je zakázána v místní nabídce **vlastnosti** okno Windows Forms designerem v sadě Visual Studio.  
+>  Pokud nemá žádné vlastnosti `Reset` metoda, není označena třídou <xref:System.ComponentModel.DefaultValueAttribute>a výchozí hodnota zadaná v jeho deklaraci, nemá `Reset` možnost pro tuto vlastnost je zakázaný v místní nabídce **vlastnosti** okna Návrháře formulářů Windows v sadě Visual Studio.  
   
- Návrháři třeba v sadě Visual Studio používají `ShouldSerialize` *PropertyName* metoda zkontrolujte, zda vlastnost byl změněn z výchozí hodnoty a napsat kód do formuláře pouze tehdy, pokud vlastnost mění, což umožňuje efektivnější kódu generování. Příklad:  
+ Použití návrháře, jako je Visual Studio `ShouldSerialize` *PropertyName* metodu ke kontrole, zda má došlo ke změně vlastnosti z výchozí hodnoty a napsat kód do formuláře pouze tehdy, pokud vlastnost změnit, což umožňuje mnohem efektivnější kódu generování. Příklad:  
   
 ```vb  
 'Returns true if the font has changed; otherwise, returns false.  
@@ -62,7 +62,7 @@ public bool ShouldSerializeMyFont() {
 }  
 ```  
   
- Následuje příklad dokončení kódu.  
+ Následuje příklad úplného kódu.  
   
 ```vb  
 Option Explicit  
@@ -141,9 +141,9 @@ public class MyControl : Control {
 }  
 ```  
   
- V tomto případě i v případě, že hodnota soukromé proměnné přístup `MyFont` vlastnost je `null`, prohlížeč vlastností nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnost nadřazeným prvkem, pokud není `null`, nebo výchozí <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>. Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost. Místo toho `ShouldSerialize` a `Reset` metod, musí být implementována pro `MyFont` vlastnost.  
+ V takovém případě i v případě, že hodnota soukromé proměnné přistupuje `MyFont` vlastnost je `null`, vlastnost prohlížeče nezobrazí `null`; místo toho se zobrazí <xref:System.Windows.Forms.Control.Font%2A> vlastnosti nadřazeného objektu, pokud není `null`, nebo výchozí hodnotu <xref:System.Windows.Forms.Control.Font%2A> hodnota definovaná v <xref:System.Windows.Forms.Control>. Proto výchozí hodnota pro `MyFont` nelze jednoduše nastavit a <xref:System.ComponentModel.DefaultValueAttribute> nelze použít pro tuto vlastnost. Místo toho `ShouldSerialize` a `Reset` metod je nutné implementovat pro `MyFont` vlastnost.  
   
-## <a name="see-also"></a>Viz také  
- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
- [Definování vlastnosti](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)  
- [Události změny vlastnosti](../../../../docs/framework/winforms/controls/property-changed-events.md)
+## <a name="see-also"></a>Viz také:
+- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+- [Definování vlastnosti](../../../../docs/framework/winforms/controls/defining-a-property-in-windows-forms-controls.md)
+- [Události změny vlastnosti](../../../../docs/framework/winforms/controls/property-changed-events.md)

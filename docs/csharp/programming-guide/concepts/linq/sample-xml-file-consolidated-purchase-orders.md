@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Konsolidované nákupní Orders2'
 ms.date: 07/20/2015
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
-ms.openlocfilehash: 3f7f24d0607be9a657e00b9e81c821ac3b41c3b2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d1f6af1f326b5a3e4bb115a02a62ac30a6e29602
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501721"
 ---
 # <a name="sample-xml-file-consolidated-purchase-orders"></a>Ukázkový soubor XML: Konsolidované nákupní objednávky
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor je sada nákupních objednávek různých tvarů z více společností. Nákupní objednávky z obou společností jsou v samostatných oborech názvů.  
@@ -144,6 +144,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 844ac2a8aad4ce2cc6f70de2d5a53c7c0b6f4f6c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 53a8f9aefa4460493113c035aa05e971b05d5167
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453141"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500168"
 ---
 # <a name="icorprofilercallbackjitinlining-method"></a>ICorProfilerCallback::JITInlining – metoda
-Upozorní profileru, že kompilátoru v běhu (JIT) se chystáte vložit funkci souladu jinou funkci.  
+Oznámí profileru, že kompilátor just-in-time (JIT) Chystáte se vložit funkci v jiné funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT JITInlining(
   
 #### <a name="parameters"></a>Parametry  
  `callerId`  
- [v] ID funkce, do kterého `calleeId` funkce bude možné vložit.  
+ [in] ID funkce, do kterého `calleeId` vloží funkce.  
   
  `calleeId`  
- [v] ID funkce má být vložen.  
+ [in] ID funkce má být vložen.  
   
  `pfShouldInline`  
- [out] `true` vkládání dojít, jinak hodnota `false`.  
+ [out] `true` vkládání dojde k; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete nastavit profileru `pfShouldInline` k `false` zabránit `calleeId` funkce z vkládání do `callerId` funkce. Navíc můžete profileru globálně zakázat vložené vložení pomocí COR_PRF_DISABLE_INLINING hodnotu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu.  
+ Profiler může nastavit `pfShouldInline` k `false` zabránit `calleeId` funkce nebude vložen do `callerId` funkce. Navíc můžete profiler globálně zakázat vložení vložené pomocí COR_PRF_DISABLE_INLINING hodnotu [cor_prf_monitor –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu.  
   
- Vložené funkce Vložit není vyvolávání událostí pro zadání nebo ponechat. Proto musíte nastavit profileru `pfShouldInline` k `false` Chcete-li vytvořit přesný callgraph. Nastavení `pfShouldInline` k `false` ovlivní výkon, protože vložené vložení obvykle zvyšuje rychlost a snižuje počet samostatné událostí JIT kompilace pro metodu vložené.  
+ Vložené funkce vloženy nevyvolávejte události pro zadání nebo byste museli opustit. Proto musíte nastavit profiler `pfShouldInline` k `false` cílem vytvořit přesný graf volání. Nastavení `pfShouldInline` k `false` ovlivní výkon, protože vložený vkládání obvykle zvyšuje rychlost a snižuje počet samostatných události kompilace JIT pro vložené metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -60,5 +60,5 @@ HRESULT JITInlining(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

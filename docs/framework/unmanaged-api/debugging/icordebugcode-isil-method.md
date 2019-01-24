@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccebe01c853677f7c78731e757ef7a5f090d6919
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2086b12cac75af1c75a13997784e04113630c4f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415188"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496163"
 ---
 # <a name="icordebugcodeisil-method"></a>ICorDebugCode::IsIL – metoda
-Získá hodnotu, která určuje, zda tato "ICorDebugCode" představuje kód, který byl sestaven v Microsoft (MSIL intermediate language).  
+Získá hodnotu určující, zda tento "ICorDebugCode" představuje kód, který byl zkompilován v jazyk Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT IsIL (
   
 #### <a name="parameters"></a>Parametry  
  `pbIL`  
- [out] `true` Pokud `ICorDebugCode` představuje kód, který byl kompilované v MSIL, jinak hodnota `false`.  
+ [out] `true` tato `ICorDebugCode` představuje kód, který byl kompilovaný do jazyka MSIL; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,5 +48,5 @@ HRESULT IsIL (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

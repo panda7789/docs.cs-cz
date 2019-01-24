@@ -2,12 +2,12 @@
 title: LINQ to XML versus. Modelu DOM (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 18c36130-d598-40b7-9007-828232252978
-ms.openlocfilehash: 4feb0df2e4d3ffe5c79ce61d7b94142833a312c7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 07c54c9e2097a328ba09b16dab5b6c8b71c90934
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44213868"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494844"
 ---
 # <a name="linq-to-xml-vs-dom-visual-basic"></a>LINQ to XML versus. Modelu DOM (Visual Basic)
 Tato část popisuje některé hlavní rozdíly mezi [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] a aktuální převládající XML programování rozhraní API, W3C Document Object Model (DOM).  
@@ -104,7 +104,7 @@ doc.AppendChild(name)
  Dalším problémem modelu DOM se, že neumožní můžete změnit název uzlu. Místo toho budete muset vytvořit nový uzel a zkopírujte všechny podřízené uzly, ztráty původní uzel identitu. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tomuto problému se vyhnete tím, že vám umožní nastavit <xref:System.Xml.Linq.XName> vlastnost uzlu.  
   
 ## <a name="static-method-support-for-loading-xml"></a>Podpora statické metody pro načítání dat XML  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje načíst XML pomocí statické metody, namísto metody instance. To zjednodušuje, načítání a analýzu. Další informace najdete v tématu [postupy: načtení XML ze souboru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md).  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje načíst XML pomocí statické metody, namísto metody instance. To zjednodušuje, načítání a analýzu. Další informace najdete v tématu [jak: Načtení XML ze souboru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md).  
   
 ## <a name="removal-of-support-for-dtd-constructs"></a>Odebrání podpory pro DTD konstrukce  
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] Další zjednodušuje programování tak, že odeberete podporu pro entity a odkazy na entity XML. Správa entit je složitá a zřídka se používá. Odebírá se jejich podpora zvyšuje výkon a zjednodušuje programovací rozhraní. Když [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] naplnění stromu, jsou rozbaleny všechny entity DTD.  
@@ -128,7 +128,7 @@ doc.AppendChild(name)
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prvky podporují rozšiřitelnou sadu poznámky. To je užitečné pro sledování různé informace o elementu, jako je například informace o schématu, informace o tom, zda elementu je vázán na uživatelské rozhraní nebo nějakých jiných informací druh specifické pro aplikaci. Další informace najdete v tématu [LINQ to XML poznámky](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-annotations.md).  
   
 ## <a name="support-for-schema-information"></a>Podpora pro informace o schématu  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje podporu pro ověření XSD prostřednictvím metody rozšíření v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Můžete ověřit, že stromu XML v souladu s XSD. Můžete naplnit stromu XML pomocí informační sadu po ověření (PSVI). Další informace najdete v tématu [postupy: ověření pomocí XSD](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a <xref:System.Xml.Schema.Extensions>.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje podporu pro ověření XSD prostřednictvím metody rozšíření v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Můžete ověřit, že stromu XML v souladu s XSD. Můžete naplnit stromu XML pomocí informační sadu po ověření (PSVI). Další informace najdete v tématu [jak: Ověření pomocí XSD](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) a <xref:System.Xml.Schema.Extensions>.  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

@@ -15,14 +15,14 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: 20150326308513325a9f1219de3e3023e6c5192b
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 89645c489cb9f21ffe415fb7c02ae09fca9a7444
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332971"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505702"
 ---
-# <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
+# <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Průvodce: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.StreamReader> třídy, zkontrolujte, pokud je přístupu k souboru, hledání řetězce v rámci souboru pro čtení s instancí <xref:System.IO.StreamReader> třídy a zápis do souboru pomocí <xref:System.IO.StreamWriter> třídy.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
@@ -44,9 +44,9 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
   
 |**objekt**|**Vlastnosti**|**Hodnota**|  
 |---|---|---|   
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Submit`<br /><br /> **Odeslat položku**|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Clear`<br /><br /> **Vymazat položky**|  
-|<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Multiline**|`Entry`<br /><br /> **Zadejte prosím něco.**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**|`Submit`<br /><br /> **Odeslat položku**|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**|`Clear`<br /><br /> **Vymazat položky**|  
+|<xref:System.Windows.Forms.TextBox>|**Název**<br /><br /> **Text**<br /><br /> **Multiline**|`Entry`<br /><br /> **Zadejte prosím něco.**<br /><br /> `False`|  
   
 ## <a name="writing-to-the-file"></a>Při zápisu do souboru  
  Chcete-li přidat možnost zapisovat do souboru pomocí aplikace, použijte <xref:System.IO.StreamWriter> třídy. <xref:System.IO.StreamWriter> je navržená pro výstup znaků v určitém kódování, že <xref:System.IO.Stream> třídy je navržená pro bajtový vstup a výstup. Použití <xref:System.IO.StreamWriter> pro řádky informace do standardního textového souboru. Další informace o <xref:System.IO.StreamWriter> najdete v tématu <xref:System.IO.StreamWriter>.  
@@ -91,10 +91,10 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
   
 |Ovládací prvek|Vlastnosti|Hodnoty|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Viditelné**<br /><br /> **Velikost**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Display`<br /><br /> **Zobrazení**|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`GetEntries`<br /><br /> **Získání položky**|  
-|<xref:System.Windows.Forms.ComboBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`PickEntries`<br /><br /> **Vyberte položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.TextBox>|**Název**<br /><br /> **Viditelné**<br /><br /> **Velikost**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**|`Display`<br /><br /> **Zobrazení**|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**|`GetEntries`<br /><br /> **Získání položky**|  
+|<xref:System.Windows.Forms.ComboBox>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`PickEntries`<br /><br /> **Vyberte položku**<br /><br /> `False`|  
   
 #### <a name="to-populate-the-combo-box"></a>K naplnění pole se seznamem  
   
@@ -119,9 +119,9 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
   
 |Ovládací prvek|Vlastnosti|Hodnoty|  
 |-------------|----------------|------------|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`DeleteEntry`<br /><br /> **Odstranit položku**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|  
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Povoleno**|`SubmitEdit`<br /><br /> **Odeslání úpravy**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`DeleteEntry`<br /><br /> **Odstranit položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|  
+|<xref:System.Windows.Forms.Button>|**Název**<br /><br /> **Text**<br /><br /> **Povoleno**|`SubmitEdit`<br /><br /> **Odeslání úpravy**<br /><br /> `False`|  
   
 #### <a name="to-enable-deletion-and-modification-of-entries"></a>Chcete-li povolit odstraňování a úpravy záznamů  
   
@@ -147,7 +147,7 @@ Tento návod ukazuje, jak otevřít a přečíst soubor pomocí <xref:System.IO.
   
  K testování kódu, stiskněte klávesu F5 pro kompilaci aplikace. Klikněte na tlačítko **najít položky**, vyberte položku a pak klikněte na tlačítko **zobrazení**. Položka se zobrazí v `DisplayEntry` <xref:System.Windows.Forms.TextBox>. Klikněte na tlačítko **upravte položku**. Položka se zobrazí v `Entry` <xref:System.Windows.Forms.TextBox>. Upravte položku ve `Entry` <xref:System.Windows.Forms.TextBox> a klikněte na tlačítko **Odeslat úpravu**. Otevřít `MyDiary.txt` souboru k ověření vašich oprav. Teď vyberte položku a klikněte na tlačítko **odstranit položku**. Když <xref:System.Windows.Forms.MessageBox> požádá o potvrzení, klikněte na tlačítko **OK**. Ukončete aplikaci a otevřete `MyDiary.txt` potvrďte odstranění.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO.StreamReader>  
- <xref:System.IO.StreamWriter>  
- [Návody](../../../../visual-basic/walkthroughs.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IO.StreamReader>
+- <xref:System.IO.StreamWriter>
+- [Návody](../../../../visual-basic/walkthroughs.md)

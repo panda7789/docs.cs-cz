@@ -2,12 +2,12 @@
 title: Zpracování chyb v aktivitě Flowchart pomocí TryCatch
 ms.date: 03/30/2017
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-ms.openlocfilehash: df3d93087744ce0fba597f5c9f1d2da4b71a50dd
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 56215ecf1b5f2b54333271f2086b831f564ff7c3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845642"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507496"
 ---
 # <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Zpracování chyb v aktivitě Flowchart pomocí TryCatch
 Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktivita se dá použít v rámci aktivity toku řízení komplexní.
@@ -18,7 +18,7 @@ Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktiv
 
 |Parametry|Popis|
 |----------------|-----------------|
-|promoCode|Propagační kód. Typ: řetězec<br /><br /> Možné hodnoty s popisem v závorkách:<br /><br /> -Jednou (jednoduchý)<br />-MNK (vdaná s žádné děti.)<br />-MWK (vdaná s děti.)|
+|promoCode|Propagační kód. Zadejte: String<br /><br /> Možné hodnoty s popisem v závorkách:<br /><br /> -Jednou (jednoduchý)<br />-MNK (vdaná s žádné děti.)<br />-MWK (vdaná s děti.)|
 |numKids|Počet podřízených. Typ: int|
 
  `CreateFlowchartWithFaults` Používá aktivitu <xref:System.Activities.Statements.FlowSwitch%601> aktivitu, která se přepne na `promoCode` argument a vypočítá slevu pomocí tohoto vzorce.
@@ -27,7 +27,7 @@ Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktiv
 |--------------------------|--------------------|
 |Single|10|
 |MNK|15|
-|MWK|15 + (1 – 1 /`numberOfKids`)\*10 **Poznámka:** potenciálně, může tento výpočet vyvolat <xref:System.DivideByZeroException>. Ano, je výpočet slevy zabalené v <xref:System.Activities.Statements.TryCatch> aktivitu, která zachytává <xref:System.DivideByZeroException> výjimky a nastaví slevy na nulu.|
+|MWK|15 + (1 – 1 /`numberOfKids`)\*10 **Poznámka:**  Případně může vyvolat tento výpočet <xref:System.DivideByZeroException>. Ano, je výpočet slevy zabalené v <xref:System.Activities.Statements.TryCatch> aktivitu, která zachytává <xref:System.DivideByZeroException> výjimky a nastaví slevy na nulu.|
 
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky
 
@@ -46,6 +46,6 @@ Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktiv
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`  
   
-## <a name="see-also"></a>Viz také  
- [Pracovní postupy vývojového diagramu](../../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)  
- [Výjimky](../../../../docs/framework/windows-workflow-foundation/exceptions.md)
+## <a name="see-also"></a>Viz také:
+- [Pracovní postupy vývojového diagramu](../../../../docs/framework/windows-workflow-foundation/flowchart-workflows.md)
+- [Výjimky](../../../../docs/framework/windows-workflow-foundation/exceptions.md)

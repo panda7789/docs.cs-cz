@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3ee2272a43d9f71cd49754a7f4233868b8bb9134
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d15f34c55f0ee261c65649e9d431944201c546f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406589"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506027"
 ---
 # <a name="cordebugintercept-enumeration"></a>CorDebugIntercept – výčet
-Určuje typy kód, který mohou být zachyceny (které se do stupeň).  
+Určuje typy kód, který může být zachycen (které je, vkročili).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,19 +44,19 @@ typedef enum CorDebugIntercept {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`INTERCEPT_NONE`|Mohou být zachyceny žádný kód.|  
-|`INTERCEPT_CLASS_INIT`|Mohou být zachyceny konstruktor.|  
-|`INTERCEPT_EXCEPTION_FILTER`|Mohou být zachyceny filtru výjimek.|  
-|`INTERCEPT_SECURITY`|Kód, který vynucuje zabezpečení mohou být zachyceny.|  
-|`INTERCEPT_CONTEXT_POLICY`|Mohou být zachyceny zásadu kontextu.|  
+|`INTERCEPT_NONE`|Žádný kód může být zachycena.|  
+|`INTERCEPT_CLASS_INIT`|Konstruktor může být zachycena.|  
+|`INTERCEPT_EXCEPTION_FILTER`|Filtru výjimky může být zachycena.|  
+|`INTERCEPT_SECURITY`|Kód, který vynucuje zabezpečení může být zachycena.|  
+|`INTERCEPT_CONTEXT_POLICY`|Kontext zásad může být zachycena.|  
 |`INTERCEPT_INTERCEPTION`|Nepoužívá se.|  
-|`INTERCEPT_ALL`|Mohou být zachyceny veškerý kód.|  
+|`INTERCEPT_ALL`|Veškerý kód může být zachycena.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [icordebugstepper::setinterceptmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) metodu pro vytvoření typy kód, který může být zachycen.  
+ Použití [icordebugstepper::setinterceptmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) metodu pro vytvoření typy kódu, který může být zachycena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -64,5 +64,5 @@ typedef enum CorDebugIntercept {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

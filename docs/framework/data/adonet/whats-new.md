@@ -2,12 +2,12 @@
 title: Co&#39;nového v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: a94833a513fa6ceef02b5ec64f0a7995779d323a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cfb1546ccddc6a4f6f3668210832db3d7a88f632
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511800"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501592"
 ---
 # <a name="what39s-new-in-adonet"></a>Co&#39;nového v ADO.NET
 Následující funkce jsou novinkou [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
@@ -48,11 +48,11 @@ Následující funkce jsou novinkou [!INCLUDE[vstecado](../../../../includes/vst
 -   Sestavení Microsoft.SqlServer.Types.dll, který obsahuje typy prostorových dat byla upgradována z verze 10.0 na verze 11.0. Aplikace, které odkazují na toto sestavení může selhat. Další informace najdete v tématu [Breaking Changes funkce databázového stroje](https://go.microsoft.com/fwlink/?LinkId=224367).  
   
 ## <a name="adonet-entity-framework"></a>ADO.NET Entity Framework  
- [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] Přidá rozhraní API, která umožňují nové scénáře, jako při práci s Entity Framework 5.0. Další informace o vylepšení a funkcí, které byly přidány do Entity Framework 5.0 naleznete v následujících tématech: [novinky](https://go.microsoft.com/fwlink/?LinkID=251106) a [Entity Framework vydání a správa verzí](https://go.microsoft.com/fwlink/?LinkId=234899).  
+ [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] Přidá rozhraní API, která umožňují nové scénáře, jako při práci s Entity Framework 5.0. Další informace o vylepšení a funkcí, které byly přidány do Entity Framework 5.0 naleznete v následujících tématech: [Co je nového](https://go.microsoft.com/fwlink/?LinkID=251106) a [Entity Framework vydání a správa verzí](https://go.microsoft.com/fwlink/?LinkId=234899).  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET](../../../../docs/framework/data/adonet/index.md)  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
- [Co je nového ve službě WCF Data Services](https://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)
+- [Co je nového ve službě WCF Data Services](https://msdn.microsoft.com/library/cf22cad5-b8d9-472b-8d7c-b863b64eaae8)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

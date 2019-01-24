@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7024b8c0682b3351d185e518dd149737beb04bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50e9f3b8271cb5e518b75ee129fe6ea2a1b7720d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512928"
 ---
 # <a name="icordebugmanagedcallback2createconnection-method"></a>ICorDebugManagedCallback2::CreateConnection – metoda
-Upozorní ladicího programu vytvořený nové připojení.  
+Upozorní ladicího programu, že se vytvořila nová připojení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT CreateConnection (
   
 #### <a name="parameters"></a>Parametry  
  `pProcess`  
- [v] Ukazatel na objekt "ICorDebugProcess", který představuje proces, ve kterém byla vytvořena připojení  
+ [in] Ukazatel na objekt "ICorDebugProcess", který představuje proces, ve kterém byla vytvořena připojení  
   
  `dwConnectionId`  
- [v] ID nové připojení.  
+ [in] ID připojení tímto novým připojením.  
   
  `pConnName`  
- [v] Ukazatel na název nového připojení.  
+ [in] Ukazatel na název připojení tímto novým připojením.  
   
 ## <a name="remarks"></a>Poznámky  
- A `CreateConnection` zpětného volání nebudou vydány v některém z následujících případech:  
+ A `CreateConnection` aktivuje zpětného volání v některém z následujících případech:  
   
--   Když ladicí program připojí k procesu, který obsahuje připojení. V takovém případě bude modulu runtime generování a odesílání `CreateConnection` událostí a [icordebugmanagedcallback2::changeconnection –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-changeconnection-method.md) událost pro každé připojení v procesu.  
+-   Pokud ladicí program připojí k procesu, který obsahuje připojení. V takovém případě modul runtime bude generovat a odeslání `CreateConnection` událostí a [icordebugmanagedcallback2::changeconnection –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-changeconnection-method.md) události pro každé připojení v procesu.  
   
--   Když hostitel volá [iclrdebugmanager::beginconnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) v [hostování rozhraní API](../../../../docs/framework/unmanaged-api/hosting/index.md).  
+-   Když hostitel volá [iclrdebugmanager::beginconnection –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md) v [API pro hostování](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -63,6 +63,6 @@ HRESULT CreateConnection (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

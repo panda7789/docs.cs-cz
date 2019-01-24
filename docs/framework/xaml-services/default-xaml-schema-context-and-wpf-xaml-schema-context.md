@@ -2,91 +2,91 @@
 title: Výchozí kontext schématu XAML a kontext WPF schématu XAML
 ms.date: 03/30/2017
 ms.assetid: 04e06a15-09b3-4210-9bdf-9a64c2eccb83
-ms.openlocfilehash: 9ec161c3af3c2555e04e479fec85c48f90830a87
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2bf7d7b3b5a871d358088fe652653fa0e6be5620
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566025"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492192"
 ---
 # <a name="default-xaml-schema-context-and-wpf-xaml-schema-context"></a>Výchozí kontext schématu XAML a kontext WPF schématu XAML
-Kontext schématu XAML je koncepční entita, která kvalifikují jak provozní XAML používající konkrétní termínů XAML komunikuje s objektem zápis chování, včetně způsobu mapování typu řeší, jak se načíst sestavení, jak určitá čtení a zápis nastavení se interpretují. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružená výchozí kontext schématu XAML, který je založený na systému typu CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro grafický subsystém WPF.  
+Kontext schématu XAML je koncepční entita, která kvalifikuje interakci produkční XAML, který používá určité slovníkové XAML s objektem zápis chování, včetně způsob mapování typu řeší, jak jsou načtené sestavení, jak některé čtečky a zapisovače nastavení jsou interpretovány. Toto téma popisuje funkce rozhraní .NET Framework XAML Services a přidružené výchozí kontext schématu XAML, která je založena na systému typů CLR. Toto téma také popisuje kontext schématu XAML, který se používá pro WPF.  
   
 ## <a name="default-xaml-schema-context"></a>Výchozí kontext schématu XAML  
- Rozhraní .NET framework XAML Services implementuje a používá výchozí kontext schématu XAML. Výchozí chování kontext schématu XAML není vždy zcela viditelné v rozhraní API <xref:System.Xaml.XamlSchemaContext> třídy. V mnoha případech chování, které ovlivňuje výchozí kontext schématu XAML je však lze zobrazit prostřednictvím společné rozhraní API systému XAML typu, například členové <xref:System.Xaml.XamlMember> nebo <xref:System.Xaml.XamlType>, nebo prostřednictvím zveřejněné na XAML čtení a zápis XAML, které používají rozhraní API Výchozí kontext schématu XAML.  
+ Rozhraní .NET framework XAML Services implementuje a používá výchozí kontext schématu XAML. Výchozí chování kontext schématu XAML není vždy plně viditelný v rozhraní API <xref:System.Xaml.XamlSchemaContext> třídy. Ale v mnoha případech se chování, které ovlivňuje výchozí kontext schématu XAML pozorovat prostřednictvím společného rozhraní API typu systému XAML, jako je například členové <xref:System.Xaml.XamlMember> nebo <xref:System.Xaml.XamlType>, nebo prostřednictvím rozhraní API, které jsou zveřejněné na XAML čtečky a zapisovače XAML, které používáte Výchozí kontext schématu XAML.  
   
- Můžete vytvořit <xref:System.Xaml.XamlSchemaContext> který zapouzdří výchozí chování při volání <xref:System.Xaml.XamlSchemaContext> konstruktor. Tím se explicitně vytvoří výchozí kontext schématu XAML. Stejné výchozí kontext schématu XAML se implicitně, vytvoří, pokud inicializovat XAML čtečky nebo pomocí rozhraní API, které nepřebírají explicitně zapisovače XAML <xref:System.Xaml.XamlSchemaContext> vstupní parametr.  
+ Můžete vytvořit <xref:System.Xaml.XamlSchemaContext> , který zapouzdřuje výchozí chování při volání <xref:System.Xaml.XamlSchemaContext> konstruktoru. Tím se explicitně vytvoří výchozí kontext schématu XAML. Stejnou výchozí kontext schématu XAML se implicitně vytvoří, pokud inicializovat XAML čtečky nebo zapisovače XAML pomocí rozhraní API, která se nedají zadat explicitně <xref:System.Xaml.XamlSchemaContext> vstupního parametru.  
   
- Výchozí kontext schématu XAML závisí na reflexi CLR pro své chování mapování typu. To zahrnuje zkoumání definující CLR <xref:System.Type>a související <xref:System.Reflection.PropertyInfo> nebo <xref:System.Reflection.MethodInfo>. Chcete-li vyplnit specifika typ jazyka XAML nebo XAML člen informace, která používá zálohování typu modulu CLR se také používá CLR uvedení na typy nebo členy. Výchozí kontext schématu XAML nevyžaduje typ systému rozšíření techniky, jako `Invoker` vzor, protože informace potřebné k dispozici ze systému typu CLR.  
+ Výchozí kontext schématu XAML závisí na reflexi CLR pro své chování pro mapování typu. Jedná se o zkoumání definující CLR <xref:System.Type>a související <xref:System.Reflection.PropertyInfo> nebo <xref:System.Reflection.MethodInfo>. Aby bylo možné zadejte podrobnosti pro XAML typ nebo člen informace o XAML, který používá typ podpory modulu CLR se také používá attribution CLR na typech nebo členech. Výchozí kontext schématu XAML nevyžaduje, aby typ systému rozšíření techniky, jako `Invoker` vzorek, protože je k dispozici v systému typů CLR potřebné informace.  
   
- Pro sestavení načítání logiku výchozí kontext schématu XAML závisí hlavně na žádné hodnoty sestavení zadaná v mapování oboru názvů jazyka XAML. Navíc <xref:System.Xaml.XamlReaderSettings.LocalAssembly%2A> můžete pomocného parametru sestavení načíst pro scénáře, jako je načítání interní typy.  
+ Pro načítání logiku sestavení výchozí kontext schématu XAML se využívají hlavně všechny hodnoty sestavení zadaná v mapování oboru názvů XAML. Navíc <xref:System.Xaml.XamlReaderSettings.LocalAssembly%2A> můžete pomocného parametru sestavení, které chcete načíst pro scénáře, jako je například načtení vnitřní typy.  
   
-## <a name="wpf-xaml-schema-context"></a>Kontext schématu WPF XAML  
- Kontext schématu WPF XAML je popsaný v tomto tématu, protože implementace WPF poskytuje ilustraci zajímavých funkcí, které mohou být způsobeny implementace bez výchozí kontext schématu XAML. Také koncepce kontext schématu XAML není velmi mnohem zabývá WPF dokumentace, která řeší WPF XAML; chování, které umožňuje kontext schématu XAML může být pouze plně nerozumí, pokud je spojen s diskuzi o tom, jak funguje výchozí kontext schématu XAML. Kontext schématu WPF XAML implementuje toto chování.  
+## <a name="wpf-xaml-schema-context"></a>WPF XAML Schema Context  
+ Kontext schématu XAML WPF je popsané v tomto tématu, protože poskytuje implementaci WPF zajímavé ilustraci typy funkcí, které je možné vytvářet implementací jiné než výchozí kontext schématu XAML. Navíc koncept kontext schématu XAML není velmi mnohem podrobněji dokumentace WPF, která řeší WPF XAML; chování, které umožňuje kontext schématu XAML může být pouze plně srozumitelný, pokud je integrovaný s diskusi o tom, jak funguje výchozí kontext schématu XAML. Kontext schématu XAML WPF implementuje toto chování.  
   
- **Přepsání vyhledávání:** WPF má několik obsahu modely pro jazyk XAML tam, kde nejsou k dispozici XAML obsahu vlastnosti, které funkce aniž by musel být <xref:System.Windows.Markup.ContentPropertyAttribute> s atributy. <xref:System.Xaml.XamlType.LookupContentProperty%2A> přepsání pro grafický subsystém WPF implementovat toto chování.  
+ **Vyhledání přepsání:** WPF obsahuje několik modelů obsahu pro XAML tam, kde jsou vlastnosti obsahu XAML, které fungují bez <xref:System.Windows.Markup.ContentPropertyAttribute> s atributy. <xref:System.Xaml.XamlType.LookupContentProperty%2A> přepsání pro WPF implementaci tohoto chování.  
   
- **Odložení pro výrazů WPF:** WPF funkce několik tříd výrazu, které odložení hodnotu, dokud nebude k dispozici modul runtime kontextu. Modul runtime chování, které využívá techniky odložení je také rozšíření šablony.  
+ **Odložení pro WPF výrazy:** WPF obsahuje několik výrazů tříd, které hodnotu odložit, dokud nebude k dispozici kontext modulu runtime. Rozšíření šablon je také chování modulu runtime, který využívá techniky odložení.  
   
- **Typ systému vyhledávání optimalizace:** WPF má rozsáhlé XAML termínů a objekt modelu, včetně definice člen základní třídy, které dědí na oznámena stovky tříd definovaných grafického subsystému WPF. Navíc WPF samotné je rozdělena mezi několik sestavení. WPF optimalizuje jeho typ vyhledávání pomocí vyhledávací tabulky a další metody. To nabízí vylepšení výkonu v porovnání s výchozí kontext schématu XAML a jeho vyhledávání na základě CLR typu. V případech, kde typy neexistují ve vyhledávací tabulce používá chování techniky kontext schématu XAML, které jsou podobná výchozí kontext schématu XAML.  
+ **Typ optimalizace vyhledávání systému:** WPF má rozsáhlé XAML slovník a objekt modelu, včetně definice členů základní třídy, které dědí doslova stovky tříd definovaných WPF. Také WPF, samotného je rozdělena mezi několik sestavení. WPF optimalizuje jeho typ vyhledávání pomocí vyhledávacích tabulek a dalších metod. To nabízí vylepšení výkonu v porovnání s výchozí kontext schématu XAML a jeho vyhledání typu založeného na modulu CLR. V případech, kde typy neexistují ve vyhledávací tabulce používá chování XAML schématu kontextu techniky, které jsou podobné výchozí kontext schématu XAML.  
   
- **Rozšíření XamlType a XamlMember:** WPF rozšiřuje koncepty vlastnost s vlastností závislostí a událostí konceptech směrované události. Poskytnout tyto koncepty lepší viditelnost pro operace zpracování XAML, WPF rozšiřuje <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>a přidá vnitřní vlastnosti, které sestavy vlastnost závislosti a směrují vlastnosti události.  
+ **Typ XamlType a XamlMember rozšíření:** WPF rozšiřuje vlastnost prostřednictvím vlastností závislosti a události pojmy za použití směrovaných událostí. Tyto koncepty poskytnout větší viditelnost pro operace zpracování XAML, WPF rozšiřuje <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>a přidá vnitřní vlastnosti, které sestavy vlastnost závislosti a směrovat vlastnosti události.  
   
-### <a name="accessing-the-wpf-xaml-schema-context"></a>Přístup k kontext schématu WPF XAML  
- Pokud používáte XAML techniky, které jsou založeny na formulářích WPF <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> nebo <xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>, kontext schématu WPF XAML je již používána na těchto čtečky XAML a implementace zapisovače XAML.  
+### <a name="accessing-the-wpf-xaml-schema-context"></a>Přístup k kontext schématu XAML WPF  
+ Pokud používáte XAML techniky, které jsou založeny na WPF <xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType> nebo <xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>, kontext schématu XAML WPF se už používá na XAML čtečky a zapisovače implementace XAML.  
   
- Pokud používáte jiné XAML čtečka nebo implementace zapisovače XAML, které není inicializovat s kontext schématu WPF XAML, bude pravděpodobně možné získat funkční WPF XAML schématu kontext z <xref:System.Windows.Markup.XamlReader.GetWpfSchemaContext%2A?displayProperty=nameWithType>. Potom můžete tuto hodnotu jako inicializace pro ostatní rozhraní API, které použít <xref:System.Xaml.XamlSchemaContext>. Například může volat <xref:System.Xaml.XamlXmlReader.%23ctor%2A> pro inicializaci a předejte jí kontext schématu WPF XAML. Nebo můžete použít kontext schématu WPF XAML pro operace systému typ XAML. To může zahrnovat inicializace vytváření <xref:System.Xaml.XamlType> nebo <xref:System.Xaml.XamlMember>, nebo volání <xref:System.Xaml.XamlSchemaContext.GetXamlType%2A?displayProperty=nameWithType>.  
+ Pokud používáte jiné XAML čtečky nebo zapisovače implementace XAML, které nebyl inicializován s kontext schématu XAML WPF, bude pravděpodobně možné začít pracovat WPF XAML kontext schématu z <xref:System.Windows.Markup.XamlReader.GetWpfSchemaContext%2A?displayProperty=nameWithType>. Pak můžete tuto hodnotu jako inicializace pro ostatní rozhraní API, které použijte <xref:System.Xaml.XamlSchemaContext>. Například lze zavolat <xref:System.Xaml.XamlXmlReader.%23ctor%2A> pro inicializaci a předejte jí kontext schématu XAML WPF. Nebo můžete použít kontext schématu XAML WPF pro operace typu systému XAML. To může zahrnovat inicializace konstrukce <xref:System.Xaml.XamlType> nebo <xref:System.Xaml.XamlMember>, nebo zavolání <xref:System.Xaml.XamlSchemaContext.GetXamlType%2A?displayProperty=nameWithType>.  
   
- Všimněte si, že pokud z čistý perspektivy datový proud uzlu XAML konkrétních aspektů WPF XAML, některé z možností framework WPF nemusí mít reagovali ještě. Například WPF šablony pro ovládací prvky zatím nejsou použité. Proto pokud máte přístup k vlastnosti, která v době běhu může být vyplněny úplné vizuálním stromu, může zobrazit pouze hodnotu vlastnosti, která odkazuje na šablonu. Kontext služby zadaná pro rozšíření značek WPF také nemusí být přesné, pokud zadaná z situaci – modul runtime a může vést k výjimkám při pokusu o zápis grafu objektu.  
+ Všimněte si, že pokud přistupujete některé aspekty WPF XAML z čistě perspektiv datový proud uzlu XAML, některé funkce rozhraní WPF nemusí se zachovali ještě. Například WPF šablony pro ovládací prvky ještě se nepoužívají. Proto pokud přístup k vlastnosti, která v době běhu může být vyplní celý vizuální strom, může zobrazovat jenom hodnotu vlastnosti, která odkazuje na šablonu. Kontext služby pro WPF – rozšíření značek k dispozici také nemusí být přesné, pokud od situace – modul runtime a může vést k výjimkám při pokusu o zápis grafu objektů.  
   
-## <a name="xaml-and-assembly-loading"></a>XAML a načtení sestavení  
- Načítání pro XAML a rozhraní .NET Framework XAML Services sestavení se integruje s koncept definované CLR <xref:System.AppDomain>. Kontext schématu XAML interpretuje jak načíst sestavení nebo najít typy v době běhu nebo návrhu, založené na použití <xref:System.AppDomain> a dalších faktorů. Logika je mírně liší v závislosti na tom, jestli je XAML přijít XAML pro čtečku XAML, XAML zkompilovat do knihovny DLL pomocí `XamlBuildTask`, nebo je generován BAML na WPF `PresentationBuildTask`.  
+## <a name="xaml-and-assembly-loading"></a>XAML a načítání sestavení  
+ Načítání XAML a rozhraní .NET Framework XAML Services sestavení se integruje s konceptem CLR definované <xref:System.AppDomain>. Kontext schématu XAML interpretuje načtení sestavení nebo najít typy v době běhu nebo návrhu, založené na použití <xref:System.AppDomain> a dalších faktorů. Logika se mírně liší v závislosti na tom, zda XAML je volný XAML pro čtečku XAML, je zkompilován s knihovnou DLL pomocí XAML `XamlBuildTask`, nebo je generován BAML pro WPF `PresentationBuildTask`.  
   
- Kontext WPF schématu XAML integruje s modelem aplikace WPF, které dále používá <xref:System.AppDomain> a dalších faktorů, které jsou podrobnosti implementace WPF.  
+ Kontext WPF schématu XAML se integruje s modelem aplikace WPF, která dále používá <xref:System.AppDomain> a dalších faktorů, které jsou podrobnosti o implementaci WPF.  
   
-#### <a name="xaml-reader-input-loose-xaml"></a>Vstup čtečky XAML (přijít XAML)  
+#### <a name="xaml-reader-input-loose-xaml"></a>Čtečka vstup XAML (volný XAML)  
   
-1.  Kontext schématu XAML iteruje <xref:System.AppDomain> aplikace, hledá již načíst sestavení, která odpovídají všechny aspekty názvu, od nejvíc nedávno načíst sestavení. Pokud je nalezena shoda, se toto sestavení používá pro překlad.  
+1.  Kontext schématu XAML prochází <xref:System.AppDomain> aplikace hledání už načíst sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  Jeden z následujících postupů, jinak hodnota podle CLR <xref:System.Reflection.Assembly> rozhraní API slouží k načtení sestavení:  
+2.  V opačném případě jednu z následujících postupů na základě CLR <xref:System.Reflection.Assembly> rozhraní API slouží k načtení sestavení:  
   
-    -   Pokud v mapování je kvalifikovaný název, volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
+    -   Pokud se název kvalifikovaný v mapování, zavolejte <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-    -   Pokud předchozí krok nebyl úspěšný, použít krátký název (a tokenu veřejného klíče pokud existuje) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+    -   Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
-    -   Pokud je název nekvalifikované v mapování, volání <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
+    -   Pokud je název nekvalifikované v mapování, zavolejte <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>.  
   
 #### <a name="xamlbuildtask"></a>XamlBuildTask  
- `XamlBuildTask` se používá pro Windows Communication Foundation (WCF) a modelu Windows Workflow Foundation.  
+ `XamlBuildTask` se používá pro Windows Communication Foundation (WCF) a Windows Workflow Foundation.  
   
- Všimněte si, že sestavení odkazuje na prostřednictvím `XamlBuildTask` jsou vždy úplný.  
+ Všimněte si, že sestavení se odkazuje prostřednictvím `XamlBuildTask` jsou vždy plně kvalifikovaný.  
   
 1.  Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-2.  Pokud předchozí krok nebyl úspěšný, použít krátký název (a tokenu veřejného klíče pokud existuje) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+2.  Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
 #### <a name="baml-presentationbuildtask"></a>BAML (PresentationBuildTask)  
- Existují dva aspekty k načtení sestavení pro BAML: načítání počáteční sestavení, které obsahuje BAML jako součást a načítání sestavení základní typ pro všechny typy odkazuje BAML produkční.  
+ Existují dva aspekty k načtení sestavení BAML: načítání počáteční sestavení, který obsahuje BAML jako součást a načítání sestavení základní typ pro typy, které odkazuje produkční BAML.  
   
-##### <a name="assembly-load-for-initial-markup"></a>Sestavení zatížení pro počáteční značku:  
- Odkaz na sestavení načíst kód z je vždy neúplné.  
+##### <a name="assembly-load-for-initial-markup"></a>Načtení sestavení pro počáteční značky:  
+ Odkaz na sestavení pro načtení značky z je vždy neúplné.  
   
-1.  Kontext schématu WPF XAML iteruje <xref:System.AppDomain> aplikace WPF, hledá již načíst sestavení, která odpovídají všechny aspekty názvu, od nejvíc nedávno načíst sestavení. Pokud je nalezena shoda, se toto sestavení používá pro překlad.  
+1.  Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  Pokud předchozí krok nebyl úspěšný, použít krátký název (a tokenu veřejného klíče pokud existuje) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+2.  Pokud předchozí krok nebyl úspěšný, použijte krátký název (a token veřejného klíče Pokud jsou k dispozici) pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
-##### <a name="assembly-references-by-baml-types"></a>Odkazy na sestavení BAML typy:  
- Odkazy na sestavení pro typy používané v produkčním prostředí BAML jsou vždy plně kvalifikovaný jako výstup sestavovací úlohy.  
+##### <a name="assembly-references-by-baml-types"></a>Odkazy na sestavení podle typů BAML:  
+ Odkazy na sestavení pro typy používané v produkčním prostředí BAML jsou vždy plně kvalifikovaný, jako výstup úkolu sestavení.  
   
-1.  Kontext schématu WPF XAML iteruje <xref:System.AppDomain> aplikace WPF, hledá již načíst sestavení, která odpovídají všechny aspekty názvu, od nejvíc nedávno načíst sestavení. Pokud je nalezena shoda, se toto sestavení používá pro překlad.  
+1.  Kontext schématu XAML WPF prochází <xref:System.AppDomain> aplikace WPF, hledá již načtena sestavení, která odpovídá názvu, všechny aspekty od nejvíce nedávno načíst sestavení. Pokud se najde shoda, toto sestavení se používá pro rozlišení.  
   
-2.  Jeden z následujících postupů, jinak hodnota slouží k načtení sestavení:  
+2.  Jednu z následujících postupů v opačném případě se používá k načtení sestavení:  
   
     -   Volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType> na kvalifikovaný název.  
   
-    -   Pokud krátký název + veřejného klíče tokenu kombinace odpovídat sestavení, které BAML byl načten z, použijte toto sestavení.  
+    -   Pokud krátký název + veřejné token kombinace kláves odpovídaly sestavení, která byla načtena BAML z, použijte toto sestavení.  
   
-    -   Použít krátký název + tokenu veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
+    -   Použít krátký název a token veřejného klíče pro volání <xref:System.Reflection.Assembly.Load%28System.String%29?displayProperty=nameWithType>.  
   
-## <a name="see-also"></a>Viz také  
- [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)
+## <a name="see-also"></a>Viz také:
+- [Principy struktur a koncepcí streamu uzlů XAML](../../../docs/framework/xaml-services/understanding-xaml-node-stream-structures-and-concepts.md)

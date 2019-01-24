@@ -9,42 +9,42 @@ helpviewer_keywords:
 - antialiasing [Windows Forms], smoothing modes
 - GDI+, antialiasing
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
-ms.openlocfilehash: ccc75a535d8ef21cc780ae8e20d590631306bdc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 364dffe3b4b63e3a369f87dd851ab54a975f881a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520380"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496241"
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>Vyhlazení u čar a křivek
-Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení čáry, zadejte výchozí bod a koncový bod řádku, ale není nutné poskytovat žádné informace o jednotlivých pixelů na řádek. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s software ovladače zobrazení k určení, které pixelů bude zapnuto zobrazíte řádek na konkrétní zobrazení zařízení.  
+Při použití [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nakreslení čáry, zadáte počáteční bod a koncový bod řádku, ale není potřeba poskytovat žádné informace o jednotlivých pixelech na řádku. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] funguje ve spojení s ovladač zobrazení k určení, které pixelů zapne k zobrazení řádku v konkrétní zobrazení zařízení.  
   
-## <a name="aliasing"></a>Aliasy  
- Vezměte v úvahu rovnou red řádek, který přejde z bodu (4, 2) do bodu (16, 10). Předpokládejme souřadnicový systém má původ v levém horním rohu a zda Měrná jednotka služby pixelech. Také předpokládají, že osy x bodů vpravo a body osy y dolů. Následující obrázek znázorňuje zvětšeným zobrazením červené linií na barevné pozadí.  
+## <a name="aliasing"></a>Vyhlazení  
+ Vezměte v úvahu přímo červená čára, která přejde z bodu (4, 2) na bod (16, 10). Předpokládejme souřadnicový systém má původu v levém horním rohu a zda je jednotka měření je pixel. Taky se předpokládá, že osa x odkazuje na pravé straně a osy y body dolů. Následující obrázek znázorňuje zvětšeným zobrazením červené čáry vykreslen na barevné pozadí.  
   
- ![Řádek, žádné vyhlazení](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.gif "AboutGdip02_Art33")  
+ ![Řádek, bez antialiasingu](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art33.gif "AboutGdip02_Art33")  
   
- Red pixelů použitý k vykreslení řádku jsou neprůhledné. V řádku nejsou žádné částečně transparentní pixelů. Tento typ řádku vykreslování nabízí řádek vícenásobná vzhled a řádek vypadal něco jako schodiště. Tato technika reprezentace čáry s schodiště nazývá aliasy; schodiště je alias teoretické řádku.  
+ Červené pixelů použitý k vykreslení čáry jsou neprůhledné. V řádku nejsou žádné pixelech částečně transparentní. Tento typ čáry vykreslování poskytuje řádku vícenásobná vzhled a řádek vypadal něco jako schodiště. Tato technika reprezentovat čáry s schodiště se nazývá aliasing, schodiště je alias pro teoretické řádek.  
   
 ## <a name="antialiasing"></a>Vyhlazení  
- Složitější technika pro vykreslování řádku, která využívá částečně transparentní pixelů společně s neprůhledností pixelů. Pixelů jsou nastaveny na čistý červený, nebo na některé blend red a barvu pozadí v závislosti na tom, jak zavřít jsou na řádek. Tento typ vykreslování se nazývá vyhlazení a výsledkem řádek, který zjistí lidské oko jako více smooth. Následující obrázek znázorňuje, jak jsou s na pozadí k vytvoření řádku s antialiased smíšení určité pixelů.  
+ Složitější techniku pro vykreslení čáry zahrnuje použití částečně transparentní pixelů spolu s neprůhledné pixelů. Obrazové body jsou nastaveny na čistě červenou nebo některé blendu červené a barva pozadí v závislosti na tom, jak blízko se na řádek. Tento typ vykreslování se nazývá vyhlazení a výsledkem řádek, který zjistí z pohledu uživatele jako více hladký průběh. Následující obrázek znázorňuje, jak jsou prolnuty určité pixelů na pozadí a k vytvoření řádku antialiased.  
   
- ![Vyhlazení řádek](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.gif "AboutGdip02_Art34")  
+ ![Vyhlazení řádku](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art34.gif "AboutGdip02_Art34")  
   
- Vyhlazení, označované taky jako vyhlazování, je použít také pro křivek. Následující obrázek znázorňuje zvětšeným zobrazením vyhlazenými třemi tečkami.  
+ Vyhlazení, také nazývané vyhlazování, můžete použít také pro křivky. Následující obrázek znázorňuje zvětšeným zobrazením vyhlazenými elipsy.  
   
- ![Křivky vyhlazení](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.gif "AboutGdip02_Art35")  
+ ![Antialiasing Curves](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art35.gif "AboutGdip02_Art35")  
   
- Následující obrázek znázorňuje stejné elipsy v jeho skutečná velikost jednou bez vyhlazení a posléze s vyhlazení.  
+ Následující obrázek znázorňuje stejné elipsy ve skutečné velikosti, bez vyhlazení a posléze s vyhlazení.  
   
- ![Příklad vyhlazení](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")  
+ ![Antialiasing example](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")  
   
- Kreslení čar a křivek, které používají vyhlazení, vytvořte instanci <xref:System.Drawing.Graphics> a nastavit jeho <xref:System.Drawing.Graphics.SmoothingMode%2A> vlastnost <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> nebo <xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>. Potom zavolejte jednu z metod vykreslování této stejné <xref:System.Drawing.Graphics> třídy.  
+ Kreslení čar a křivek, které používají vyhlazení, vytvoření instance <xref:System.Drawing.Graphics> třídy a nastavit jeho <xref:System.Drawing.Graphics.SmoothingMode%2A> vlastnost <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> nebo <xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>. Pak volání jedné z metod výkresu, který stejné <xref:System.Drawing.Graphics> třídy.  
   
  [!code-csharp[LinesCurvesAndShapes#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#81)]
  [!code-vb[LinesCurvesAndShapes#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#81)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Postupy: Použití vyhlazení u textu](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Postupy: Použití vyhlazení s textem](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)

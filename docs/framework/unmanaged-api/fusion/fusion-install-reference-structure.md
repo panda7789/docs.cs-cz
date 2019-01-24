@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4685d1a23fdf1874817522a16ccd428d81acd1ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34349466594381441c11f947d682b018f95461e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433227"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491607"
 ---
 # <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE – struktura
-Představuje odkaz, který umožňuje aplikaci na sestavení, který má aplikace nainstalované v globální mezipaměti sestavení.  
+Představuje odkaz, který aplikace slouží k sestavení aplikace nainstalované v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,17 +44,17 @@ typedef struct _FUSION_INSTALL_REFERENCE_ {
 |------------|-----------------|  
 |`cbSize`|Velikost struktury v bajtech.|  
 |`dwFlags`|Vyhrazeno pro budoucí rozšíření. Tato hodnota musí být 0 (nula).|  
-|`guidScheme`|Typ entity, která přidá odkaz. Toto pole může mít jednu z následujících hodnot:<br /><br /> -FUSION_REFCOUNT_MSI_GUID: Odkazuje sestavení aplikace, která byla nainstalována pomocí Instalační služby systému Windows. `szIdentifier` Je nastaveno na `MSI`a `szNonCanonicalData` je nastaveno na `Windows Installer`. Toto schéma se používá pro Windows souběžně sdílená sestavení.<br />-FUSION_REFCOUNT_UNINSTALL_SUBKEY_GUID: Sestavení odkazuje aplikace, která se zobrazí v **přidat nebo odebrat programy** rozhraní. `szIdentifier` Pole poskytuje token, který aplikace se zaregistruje **přidat nebo odebrat programy** rozhraní.<br />-FUSION_REFCOUNT_FILEPATH_GUID: Odkazuje sestavení aplikace, která je reprezentována souboru v systému souborů. `szIdentifier` Pole obsahuje cestu k souboru.<br />-FUSION_REFCOUNT_OPAQUE_STRING_GUID: Odkazuje sestavení aplikace, která je reprezentována pouze neprůhledný řetězec. `szIdentifier` Pole poskytuje toto neprůhledný řetězec. Když odeberete tuto hodnotu nekontroluje existenci neprůhledného odkazy globální mezipaměti sestavení.<br />-FUSION_REFCOUNT_OSINSTALL_GUID: Tato hodnota je rezervovaná.|  
-|`szIdentifier`|Jedinečného řetězce, který identifikuje aplikaci, která nainstalována sestavení v globální mezipaměti sestavení. Jeho hodnota závisí na hodnotu `guidScheme` pole.|  
-|`szNonCanonicalData`|Řetězec, který se rozumí pouze typ entity, která přidá odkaz. Globální mezipaměti sestavení ukládá tento řetězec, ale nepoužívá se.|  
+|`guidScheme`|Entita, která přidá odkaz. Toto pole může mít jednu z následujících hodnot:<br /><br /> -   FUSION_REFCOUNT_MSI_GUID: Sestavení se odkazuje aplikaci, která byla nainstalována pomocí Instalační služby systému Windows. `szIdentifier` Je nastaveno na `MSI`a `szNonCanonicalData` je nastaveno na `Windows Installer`. Toto schéma se používá pro sestavení vedle sebe Windows.<br />-   FUSION_REFCOUNT_UNINSTALL_SUBKEY_GUID: Sestavení se odkazuje, který se zobrazí v aplikaci **přidat nebo odebrat programy** rozhraní. `szIdentifier` Pole obsahuje token, který zaregistruje aplikaci **přidat nebo odebrat programy** rozhraní.<br />-   FUSION_REFCOUNT_FILEPATH_GUID: Sestavení se odkazuje v aplikaci, která je reprezentována souboru v systému souborů. `szIdentifier` Pole obsahuje cestu k tomuto souboru.<br />-   FUSION_REFCOUNT_OPAQUE_STRING_GUID: Aplikace, která je reprezentována pouze neprůhledný řetězec odkazuje sestavení. `szIdentifier` Pole obsahuje tento neprůhledný řetězec. Když odeberete tato hodnota nekontroluje existenci neprůhledné odkazy na globální mezipaměti sestavení.<br />-   FUSION_REFCOUNT_OSINSTALL_GUID: Tato hodnota je rezervovaná.|  
+|`szIdentifier`|Jedinečný řetězec, který identifikuje aplikaci, která nainstalovaná sestavení v globální mezipaměti sestavení. Jeho hodnota závisí na hodnotě `guidScheme` pole.|  
+|`szNonCanonicalData`|Řetězec, který je srozumitelné pouze entity, která přidá odkaz. Globální mezipaměti sestavení ukládá tento řetězec, ale nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)  
- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [Globální mezipaměť sestavení](../../../../docs/framework/app-domains/gac.md)

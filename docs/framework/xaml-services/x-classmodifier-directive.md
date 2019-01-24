@@ -10,12 +10,12 @@ helpviewer_keywords:
 - x:ClassModifier attribute [XAML Services]
 - ClassModifier attribute in XAML [XAML Services]
 ms.assetid: ef30ab78-d334-4668-917d-c9f66c3b6aea
-ms.openlocfilehash: 5a3bbd1d4d75c84dda741d382c8dd7568dbb474b
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ef55549b43ecbef539d7e84a7281fa704a328938
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45749914"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507587"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier – direktiva
 Upravuje chování kompilace XAML při `x:Class` je také k dispozici. Konkrétně, místo vytvoření částečné `class` , který má `Public` (výchozí) úroveň přístupu zadaných `x:Class` se vytvoří s `NotPublic` úroveň přístupu. Toto chování má vliv na úroveň přístupu pro třídu v vygenerované sestavení.  
@@ -53,9 +53,9 @@ Upravuje chování kompilace XAML při `x:Class` je také k dispozici. Konkrétn
 ## <a name="security-notes"></a>Poznámky k zabezpečení  
  Úroveň přístupu, jak je deklarován v `x:ClassModifier` stále podléhá interpretaci konkrétní rozhraní a jejich funkce. WPF obsahuje funkce pro načtení a vytvoření instancí typů kde `x:ClassModifier` je `internal`, pokud tuto třídu se odkazuje z prostředku WPF prostřednictvím balíčku odkaz na identifikátor URI. Následkem tohoto případu a potenciálně ostatní jako implementované další architektury, nespoléhejte pouze na `x:ClassModifier` blokování všech možných instance pokusí.  
   
-## <a name="see-also"></a>Viz také  
- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
- [Podkladový kód a kód XAML v subsystému WPF](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)  
- [x:FieldModifier – direktiva](../../../docs/framework/xaml-services/x-fieldmodifier-directive.md)  
- [Zabezpečení (WPF)](../../../docs/framework/wpf/security-wpf.md)  
- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
+- [Podkladový kód a kód XAML v subsystému WPF](../../../docs/framework/wpf/advanced/code-behind-and-xaml-in-wpf.md)
+- [x:FieldModifier – direktiva](../../../docs/framework/xaml-services/x-fieldmodifier-directive.md)
+- [Zabezpečení (WPF)](../../../docs/framework/wpf/security-wpf.md)
+- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

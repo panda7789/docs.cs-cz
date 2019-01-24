@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a datovými proudy prostředí Windows Runtime'
+title: 'Postupy: Převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 96067ab6c8e13417158e4ebf7fae0e08cb9fbea4
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 6a006d739b6fa9a31ad238702dd0b2d26254deca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492757"
 ---
-# <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a datovými proudy prostředí Windows Runtime
+# <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>Postupy: Převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime
 
 Rozhraní .NET Framework pro aplikace Windows Store je podmnožinou kompletního rozhraní .NET Framework. Z důvodu bezpečnosti a vzhledem k jiným požadavkům na aplikace pro Windows Store nelze použít úplnou sadu API rozhraní .NET Framework pro otevírání a čtení souborů. Další informace najdete v tématu [.NET pro Windows Store apps – přehled](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Rozhraní API pro .NET Framework však můžete použít pro jiné operace manipulace s datovým proudem. K práci s těmito proudy, možná bude nutné převést mezi typem datového proudu rozhraní .NET Framework, jako <xref:System.IO.MemoryStream> nebo <xref:System.IO.FileStream>a datový proud Windows Runtime, jako <xref:Windows.Storage.Streams.IInputStream>, <xref:Windows.Storage.Streams.IOutputStream>, nebo <xref:Windows.Storage.Streams.IRandomAccessStream>.
 
@@ -79,6 +79,6 @@ Datové proudy .NET Framework nepodporují klonování, a to ani po dokončení
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
-- [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
-- [Aplikace .NET pro Windows Store – podporována rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)  
+- [Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)
+- [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)
+- [Aplikace .NET pro Windows Store – podporována rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)

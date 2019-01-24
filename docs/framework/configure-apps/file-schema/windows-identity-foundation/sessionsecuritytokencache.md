@@ -3,20 +3,20 @@ title: '&lt;sessionSecurityTokenCache&gt;'
 ms.date: 03/30/2017
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
 author: BrucePerlerMS
-ms.openlocfilehash: b812673ac1c015adde357d3c0707d85643aad3e9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 024375cb114bb080c576ea033e5588526350ecdf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47401367"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510088"
 ---
 # <a name="ltsessionsecuritytokencachegt"></a>&lt;sessionSecurityTokenCache&gt;
 Registruje mezipaměti relace tokeny služby nebo kolekci obslužné rutiny tokenů zabezpečení.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
-\<ukládá do mezipaměti >  
-\<sessionSecurityTokenCache >  
+\<identityConfiguration>  
+\<caches>  
+\<sessionSecurityTokenCache>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,13 +41,13 @@ Registruje mezipaměti relace tokeny služby nebo kolekci obslužné rutiny toke
 |– typ|Typ, který je odvozen od <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<ukládá do mezipaměti >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipamětí používá službu nebo kolekci obslužné rutiny tokenů zabezpečení.|  
+|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipamětí používá službu nebo kolekci obslužné rutiny tokenů zabezpečení.|  
   
 ## <a name="example"></a>Příklad  
  Následující kód XML ukazuje konfiguraci vlastní mezipaměti pro uchování relace tokenů zabezpečení (<xref:System.IdentityModel.Tokens.SessionSecurityToken>). Konfigurace se přebírá ze `ClaimsAwareWebFarm` vzorku. Další informace o této ukázce najdete v tématu [Index ukázkového kódu WIF](../../../../../docs/framework/security/wif-code-sample-index.md).  
@@ -61,5 +61,5 @@ Registruje mezipaměti relace tokeny služby nebo kolekci obslužné rutiny toke
 </caches>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>

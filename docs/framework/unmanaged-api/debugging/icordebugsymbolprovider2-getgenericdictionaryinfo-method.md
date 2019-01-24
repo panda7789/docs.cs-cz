@@ -1,18 +1,18 @@
 ---
-title: ICorDebugSymbolProvider2::GetGenericDictionaryInfo – metoda
+title: ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
 ms.date: 03/30/2017
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c69be53a429e2f40741cc1e4c20fef3b7363654
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e5ed689ad7c456121f7687e7df09eca6c7ea617d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422972"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502556"
 ---
-# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2::GetGenericDictionaryInfo – metoda
-Načte mapu obecné slovníku.  
+# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
+Načte mapování generický slovník.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,55 +24,55 @@ HRESULT GetGenericDictionaryInfo(
   
 #### <a name="parameters"></a>Parametry  
  `ppMemoryBuffer`  
- [out] Ukazatel na adresu [ICorDebugMemoryBuffer](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) objekt obsahující obecné slovník mapy. Další informace naleznete v části Poznámky.  
+ [out] Ukazatel na adresu [icordebugmemorybuffer –](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) objekt, který obsahuje generický slovník mapování. Další informace naleznete v části Poznámky.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
- Mapy se skládá ze dvou částech nejvyšší úrovně:  
+ Mapa se skládá ze dvou částí nejvyšší úrovně:  
   
--   A [directory](#Directory) obsahující všechny slovníků zahrnuté v této mapě relativní virtuální adresy (RVA).  
+-   A [directory](#Directory) relativních virtuálních adres (RVA) obsahující všechny adresářů, které jsou součástí této mapy.  
   
--   Zarovnaný bajtů [haldy](#Heap) obsahující informace o vytvoření instance objektu. Spustí ihned po poslední položky adresáře.  
+-   Zarovnané bajtové [haldy](#Heap) , který obsahuje informace o vytvoření instance objektu. Začne okamžitě po poslední položky adresáře.  
   
 <a name="Directory"></a>   
 ## <a name="the-directory"></a>Adresář  
- Každá položka v adresáři odkazuje na posun v haldě; To znamená je posun, který je relativní vzhledem ke spuštění haldě. Hodnota jednotlivých položek není nutně jedinečný; je možné pro více položek adresáře tak, aby odkazoval na stejné posun v haldě.  
+ Každá položka v adresáři odkazuje na posun uvnitř haldy; To znamená je posunu, který je relativní vzhledem k začátku haldy. Hodnota jednotlivých položek, které není nutně jedinečné; je možné pro více položek adresáře tak, aby odkazoval na stejný posun v haldě.  
   
- Část directory mapy obecné slovník má následující strukturu:  
+ Část adresáře generický slovník mapování má následující strukturu:  
   
--   První 4 bajty obsahuje počet položky slovníku (to znamená, počet relativní virtuální adresy ve slovníku). Budeme odkazovat na tuto hodnotu jako *N*. Pokud je nastavena rozšířené, jsou položky seřazené podle relativní virtuální adresy ve vzestupném pořadí.  
+-   První 4 bajty obsahuje počet položek slovníku (to znamená, že počet relativních virtuálních adres ve slovníku). Společnost Microsoft bude odkazovat na tuto hodnotu jako *N*. Pokud je vysoký bit nastaven, jsou položky seřazené podle relativní virtuální adresa ve vzestupném pořadí.  
   
--   *N* podle položek adresáře. Každý záznam se skládá z 8 bajtů v dva segmenty 4bajtový:  
+-   *N* postupujte podle položek adresáře. Každý záznam se skládá z 8 bajtů v dva segmenty 4bajtovou:  
   
-    -   Bajty 0 až 3: RVA; relativní virtuální adresy slovníku.  
+    -   Bajty 0 až 3: ADRESA RVA; relativní virtuální adresu do slovníku.  
   
-    -   Bajty 4-7: posun; posun vzhledem k začátku haldě.  
+    -   Bajty 4 – 7: Posun; posun vzhledem k začátku haldy.  
   
 <a name="Heap"></a>   
-## <a name="the-heap"></a>Halda  
- Velikost haldy pro mocninou čtečku datového proudu odečtením délka datového proudu z adresáře velikost + 4. Jinými slovy:  
+## <a name="the-heap"></a>Haldy  
+ Velikost haldy můžete vypočítat čtečka stream tak, že se délka datového proudu z velikosti adresářů a 4. Jinými slovy:  
   
 ```  
 Heap Size = Stream.Length – (Directory Size + 4)  
 ```  
   
- kde je velikost directory `N * 8`.  
+ kde je velikost adresáře `N * 8`.  
   
- Formát pro každou položku informace o vytváření instancí v haldě je:  
+ Formát pro každou položku informace o vytvoření instance na haldě je:  
   
--   Délka této položky informace o vytváření instancí v bajtech v komprimované ECMA metadata formátu. Hodnota vyloučí tyto informace délka.  
+-   Délka této položky informace o vytvoření instance v bajtech ve formátu metadat komprimované ECMA. Hodnota nezahrnuje informace o délce.  
   
--   Počet typů obecné konkretizaci nebo *T*, ve formátu metadat komprimované ECMA.  
+-   Počet typů obecné vytváření instancí, nebo *T*, v komprimované formát metadat ECMA.  
   
--   *T* typy, každý určený ve formátu podpis ECMA typu.  
+-   *T* typy, znázorněny ve formátu podpisu typu ECMA.  
   
- Zahrnutí délka pro každý prvek haldy umožňuje jednoduché řazení sekci adresáře bez ovlivnění haldě.  
+ Zahrnutí délka pro každý prvek haldy umožňuje jednoduché řazení sekci adresáře aniž by to ovlivnilo haldy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -80,6 +80,6 @@ Heap Size = Stream.Length – (Directory Size + 4)
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugSymbolProvider2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugSymbolProvider2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

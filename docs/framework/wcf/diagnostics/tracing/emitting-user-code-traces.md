@@ -2,12 +2,12 @@
 title: Generování trasování v uživatelském kódu
 ms.date: 03/30/2017
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
-ms.openlocfilehash: 0664c11d8020ee5e712ce6d4843c85a1f30b11a3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5ecc0c2110362f715275729b5e4c4c7e1ec03496
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200584"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492661"
 ---
 # <a name="emitting-user-code-traces"></a>Generování trasování v uživatelském kódu
 Kromě povolení trasování v konfiguraci ke shromažďování dat instrumentace vygenerovaných Windows Communication Foundation (WCF), můžete také generování trasování v uživatelském kódu prostřednictvím kódu programu. Tímto způsobem můžete vytvořit proaktivně data instrumentace, který lze později prostudujte pro diagnostické účely. Toto téma popisuje, jak to udělat.  
@@ -123,7 +123,7 @@ ts.TraceEvent(TraceEventType.Warning, 0, "Throwing exception " + "exceptionMessa
   
  V následujícím diagramu vidíme také přenos trasování z a do aktivity kalkulačky, jakož i dvě dvojice spuštění a zastavení trasování za aktivitu žádosti o, jeden pro klienta a jeden pro službu (jeden pro každý zdroj trasování).  
   
- ![Prohlížeč trasování: Generování uživatele&#45;kódu trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/242c9358-475a-4baf-83f3-4227aa942fcd.gif "242c9358-475a-4baf-83f3-4227aa942fcd")  
+ ![Prohlížeč trasování: Emitting User&#45;code traces](../../../../../docs/framework/wcf/diagnostics/tracing/media/242c9358-475a-4baf-83f3-4227aa942fcd.gif "242c9358-475a-4baf-83f3-4227aa942fcd")  
 Seznam aktivit ve čas vytvoření (levý panel) a jejich vnořené aktivity (pravém panelu)  
   
  Kód služby vyvolá výjimku, která způsobí, že klient má vyvolat také (například, když klient neobdržela odpověď na svou žádost), do stejné aktivity pro přímou spojitost s míněním dojít i služby a klient upozornění nebo chybové zprávy. V následujícím diagramu služba vyvolá výjimku, s oznámením "služba odmítne zpracovat tento požadavek v uživatelském kódu." Klient také vyvolá výjimku, s oznámením "server nemohl zpracovat požadavek, protože došlo k vnitřní chybě."  
@@ -140,5 +140,5 @@ Zobrazení grafu chybě korelace
   
  Definování aktivity změny a šíření ID aktivity umožňuje nám to provádět korelaci s přímým přístupem chyba napříč koncovými body. Tímto způsobem můžeme rychleji najít hlavní příčinu chyby.  
   
-## <a name="see-also"></a>Viz také  
- [Rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md)
+## <a name="see-also"></a>Viz také:
+- [Rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md)

@@ -6,75 +6,75 @@ helpviewer_keywords:
 - TreeView control [WPF], about TreeView control
 - Control class [WPF], TreeView
 ms.assetid: 62212512-5a5c-4864-949e-b6a6a3a52c02
-ms.openlocfilehash: f8c49013bc34671ec590f0bd9f84a0f2cf3f9aaf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42e6601ecc65ec3534b82154bffc1076e10db665
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557781"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504285"
 ---
 # <a name="treeview-overview"></a>TreeView – přehled
-<xref:System.Windows.Controls.TreeView> Řízení poskytuje způsob, jak zobrazit informace v hierarchická struktura pomocí sbalitelné uzly. Toto téma představuje <xref:System.Windows.Controls.TreeView> a <xref:System.Windows.Controls.TreeViewItem> ovládací prvky a poskytuje jednoduché příklady, jak jejich použití.  
+<xref:System.Windows.Controls.TreeView> Ovládacího prvku poskytuje způsob, jak zobrazit informace v hierarchické struktuře pomocí sbalitelné uzly. Toto téma představuje <xref:System.Windows.Controls.TreeView> a <xref:System.Windows.Controls.TreeViewItem> ovládací prvky a poskytuje jednoduché příklady jejich použití.  
   
   
 <a name="Simple_TreeView_Control"></a>   
-## <a name="what-is-a-treeview"></a>Co je elementu TreeView?  
- <xref:System.Windows.Controls.TreeView> je <xref:System.Windows.Controls.ItemsControl> který vnořena položek s použitím <xref:System.Windows.Controls.TreeViewItem> ovládací prvky. Následující příklad vytvoří <xref:System.Windows.Controls.TreeView>.  
+## <a name="what-is-a-treeview"></a>Co je ovládací prvek TreeView?  
+ <xref:System.Windows.Controls.TreeView> je <xref:System.Windows.Controls.ItemsControl> položky, které vnoří pomocí <xref:System.Windows.Controls.TreeViewItem> ovládacích prvků. Následující příklad vytvoří <xref:System.Windows.Controls.TreeView>.  
   
  [!code-xaml[TreeViewSnips#EmbeddedTVIs](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#embeddedtvis)]  
   
 <a name="Creating_a_TreeView"></a>   
-## <a name="creating-a-treeview"></a>Vytváření elementu TreeView  
- <xref:System.Windows.Controls.TreeView> Ovládací prvek obsahuje hierarchii <xref:System.Windows.Controls.TreeViewItem> ovládací prvky. A <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku <xref:System.Windows.Controls.HeaderedItemsControl> má <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> a <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce.  
+## <a name="creating-a-treeview"></a>Vytvoření objektu TreeView  
+ <xref:System.Windows.Controls.TreeView> Ovládací prvek obsahuje hierarchii <xref:System.Windows.Controls.TreeViewItem> ovládacích prvků. A <xref:System.Windows.Controls.TreeViewItem> je ovládací prvek <xref:System.Windows.Controls.HeaderedItemsControl> , který má <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> a <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce.  
   
- Pokud definujete <xref:System.Windows.Controls.TreeView> pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], explicitně můžete definovat <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsah <xref:System.Windows.Controls.TreeViewItem> řízení a položky, které tvoří jeho kolekce. Předchozí obrázek ukazuje tuto metodu.  
+ Pokud definujete <xref:System.Windows.Controls.TreeView> pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], můžete explicitně definovat <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsah <xref:System.Windows.Controls.TreeViewItem> ovládací prvek a v položkách, které tvoří jeho kolekce. Předchozí obrázek ukazuje tuto metodu.  
   
- Můžete také určit, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> jako datový zdroje a pak zadejte <xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> a <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> k definování <xref:System.Windows.Controls.TreeViewItem> obsah.  
+ Můžete také určit, <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> jako datové zdroje a pak zadejte <xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> a <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> definovat <xref:System.Windows.Controls.TreeViewItem> obsah.  
   
- Chcete-li definovat rozložení <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, můžete použít také <xref:System.Windows.HierarchicalDataTemplate> objekty. Další informace a příklady naleznete v tématu [použití SelectedValue SelectedValuePath a SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md).  
+ Chcete-li definovat rozložení <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku, můžete použít také <xref:System.Windows.HierarchicalDataTemplate> objekty. Další informace a příklad najdete v tématu [použití SelectedValue, SelectedValuePath a SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md).  
   
- Pokud položka není <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, je automaticky uzavřen podle <xref:System.Windows.Controls.TreeViewItem> řídit, kdy <xref:System.Windows.Controls.TreeView> ovládací prvek je zobrazen.  
+ Pokud položka není <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku, je automaticky uzavřen <xref:System.Windows.Controls.TreeViewItem> řídí, kdy se <xref:System.Windows.Controls.TreeView> se zobrazí ovládací prvek.  
   
 <a name="Expanding_and_Collapsing_a_TreeViewItem"></a>   
 ## <a name="expanding-and-collapsing-a-treeviewitem"></a>Rozbalení a sbalení TreeViewItem  
- Pokud uživatel rozšíří <xref:System.Windows.Controls.TreeViewItem>, <xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> je nastavena na `true`. Můžete rozbalit nebo sbalit <xref:System.Windows.Controls.TreeViewItem> bez jakéhokoli zásahu uživatele přímé nastavením <xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> vlastnost `true` (expand) nebo `false` (sbalit). Při změně této vlastnosti <xref:System.Windows.Controls.TreeViewItem.Expanded> nebo <xref:System.Windows.Controls.TreeViewItem.Collapsed> dojde k události.  
+ Pokud je uživatel rozbalí <xref:System.Windows.Controls.TreeViewItem>, <xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> je nastavena na `true`. Můžete rozbalit nebo sbalit <xref:System.Windows.Controls.TreeViewItem> bez jakéhokoli zásahu uživatele s přímým přístupem tak, že nastavíte <xref:System.Windows.Controls.TreeViewItem.IsExpanded%2A> vlastnost `true` (expand) nebo `false` (sbalit). Při změně této vlastnosti <xref:System.Windows.Controls.TreeViewItem.Expanded> nebo <xref:System.Windows.Controls.TreeViewItem.Collapsed> dojde k události.  
   
- Když <xref:System.Windows.FrameworkElement.BringIntoView%2A> metoda je volána v <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, <xref:System.Windows.Controls.TreeViewItem> a jeho nadřazený objekt <xref:System.Windows.Controls.TreeViewItem> rozbalte ovládací prvky. Pokud <xref:System.Windows.Controls.TreeViewItem> není viditelný nebo částečně viditelná, <xref:System.Windows.Controls.TreeView> viditelné vytvořit viditelné.  
+ Při <xref:System.Windows.FrameworkElement.BringIntoView%2A> metoda je volána na <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, <xref:System.Windows.Controls.TreeViewItem> a jeho nadřazený objekt <xref:System.Windows.Controls.TreeViewItem> rozbalit ovládací prvky. Pokud <xref:System.Windows.Controls.TreeViewItem> není viditelný nebo částečně viditelný <xref:System.Windows.Controls.TreeView> posouvání, aby byla viditelná.  
   
 <a name="TreeViewItem_Selection"></a>   
-## <a name="treeviewitem-selection"></a>Výběr TreeViewItem  
- Když uživatel klikne <xref:System.Windows.Controls.TreeViewItem> , vyberte ovládací prvek <xref:System.Windows.Controls.TreeViewItem.Selected> dojde k události a jeho <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `true`. <xref:System.Windows.Controls.TreeViewItem> Také změní <xref:System.Windows.Controls.TreeView.SelectedItem%2A> z <xref:System.Windows.Controls.TreeView> ovládacího prvku. Naopak při výběru změní z <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, jeho <xref:System.Windows.Controls.TreeViewItem.Unselected> dojde k události a jeho <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `false`.  
+## <a name="treeviewitem-selection"></a>Výběr položky TreeViewItem  
+ Když uživatel klikne <xref:System.Windows.Controls.TreeViewItem> , vyberte ovládací prvek <xref:System.Windows.Controls.TreeViewItem.Selected> dojde k události a jeho <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `true`. <xref:System.Windows.Controls.TreeViewItem> Stane <xref:System.Windows.Controls.TreeView.SelectedItem%2A> z <xref:System.Windows.Controls.TreeView> ovládacího prvku. Naopak při změně výběru z <xref:System.Windows.Controls.TreeViewItem> ovládací prvek, jeho <xref:System.Windows.Controls.TreeViewItem.Unselected> dojde k události a jeho <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `false`.  
   
- <xref:System.Windows.Controls.TreeView.SelectedItem%2A> Vlastnost <xref:System.Windows.Controls.TreeView> ovládací prvek je vlastnost jen pro čtení; proto nemůžete explicitně nastavit ho. <xref:System.Windows.Controls.TreeView.SelectedItem%2A> Vlastnost nastavena, když uživatel klikne na <xref:System.Windows.Controls.TreeViewItem> ovládací prvek nebo když <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `true` na <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku.  
+ <xref:System.Windows.Controls.TreeView.SelectedItem%2A> Vlastnost <xref:System.Windows.Controls.TreeView> ovládací prvek je vlastnost jen pro čtení, proto nelze nastavit explicitně ji. <xref:System.Windows.Controls.TreeView.SelectedItem%2A> Vlastnost nastavena, když uživatel klikne na <xref:System.Windows.Controls.TreeViewItem> ovládací prvek nebo když <xref:System.Windows.Controls.TreeViewItem.IsSelected%2A> je nastavena na `true` na <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku.  
   
- Použití <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> vlastnosti k určení <xref:System.Windows.Controls.TreeView.SelectedValue%2A> z <xref:System.Windows.Controls.TreeView.SelectedItem%2A>. Další informace najdete v tématu [použití SelectedValue SelectedValuePath a SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md).  
+ Použití <xref:System.Windows.Controls.TreeView.SelectedValuePath%2A> vlastnosti k určení <xref:System.Windows.Controls.TreeView.SelectedValue%2A> z <xref:System.Windows.Controls.TreeView.SelectedItem%2A>. Další informace najdete v tématu [použití SelectedValue, SelectedValuePath a SelectedItem](../../../../docs/framework/wpf/controls/how-to-use-selectedvalue-selectedvaluepath-and-selecteditem.md).  
   
- Obslužné rutiny události můžete zaregistrovat na <xref:System.Windows.Controls.TreeView.SelectedItemChanged> událostí k určení, kdy vybrané <xref:System.Windows.Controls.TreeViewItem> změny. <xref:System.Windows.RoutedPropertyChangedEventArgs%601> , Je zadané události určuje obslužné rutiny <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A>, tedy předchozí výběr a <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A>, což je aktuální výběr. Může být buď hodnota `null` Pokud aplikaci nebo uživatele nebyla vytvořili výběr předchozí nebo aktuální.  
+ Obslužné rutiny události můžete zaregistrovat na <xref:System.Windows.Controls.TreeView.SelectedItemChanged> událostí, aby bylo možné určit, kdy vybrané <xref:System.Windows.Controls.TreeViewItem> změny. <xref:System.Windows.RoutedPropertyChangedEventArgs%601> , Která je zadaná pro událost obslužná rutina udává <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A>, což je předchozí výběr a <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A>, což je aktuální výběr. Může být buď hodnotu `null` Pokud aplikace nebo uživatel nebyl proveden předchozí nebo aktuální výběr.  
   
 <a name="TreeView_Style"></a>   
 ## <a name="treeview-style"></a>TreeView – styl  
- Výchozí styl pro <xref:System.Windows.Controls.TreeView> řízení nahradí uvnitř <xref:System.Windows.Controls.StackPanel> objekt, který obsahuje <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. Když nastavíte <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti <xref:System.Windows.Controls.TreeView>, velikost se používají tyto hodnoty <xref:System.Windows.Controls.StackPanel> objekt, který zobrazí <xref:System.Windows.Controls.TreeView>. Pokud je větší než oblasti zobrazení obsahu k zobrazení <xref:System.Windows.Controls.ScrollViewer> se automaticky zobrazí tak, aby uživatel můžete procházet <xref:System.Windows.Controls.TreeView> obsah.  
+ Výchozí styl <xref:System.Windows.Controls.TreeView> nahradí ovládací prvek uvnitř <xref:System.Windows.Controls.StackPanel> objekt, který obsahuje <xref:System.Windows.Controls.ScrollViewer> ovládacího prvku. Při nastavení <xref:System.Windows.FrameworkElement.Width%2A> a <xref:System.Windows.FrameworkElement.Height%2A> vlastnosti <xref:System.Windows.Controls.TreeView>, tyto hodnoty se použijí na velikost <xref:System.Windows.Controls.StackPanel> objekt, který se zobrazí <xref:System.Windows.Controls.TreeView>. Pokud je větší než oblasti zobrazení, obsah, který se zobrazí <xref:System.Windows.Controls.ScrollViewer> automaticky zobrazí tak, aby uživatel mohl procházet <xref:System.Windows.Controls.TreeView> obsah.  
   
- Chcete-li přizpůsobit vzhled <xref:System.Windows.Controls.TreeViewItem> , nastavte <xref:System.Windows.FrameworkElement.Style%2A> vlastnost, která má vlastní <xref:System.Windows.Style>.  
+ Přizpůsobení vzhledu <xref:System.Windows.Controls.TreeViewItem> , nastavte <xref:System.Windows.FrameworkElement.Style%2A> vlastnost vlastní <xref:System.Windows.Style>.  
   
- Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.Control.FontSize%2A> hodnoty vlastností <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku pomocí <xref:System.Windows.FrameworkElement.Style%2A>.  
+ Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.Control.Foreground%2A> a <xref:System.Windows.Controls.Control.FontSize%2A> hodnot vlastností pro <xref:System.Windows.Controls.TreeViewItem> ovládacího prvku pomocí <xref:System.Windows.FrameworkElement.Style%2A>.  
   
  [!code-xaml[TreeViewSimple#8](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSimple/CS/Window1.xaml#8)]  
   
 <a name="Adding_Images_and_oOther_Content_to_TreeView_Items"></a>   
-## <a name="adding-images-and-other-content-to-treeview-items"></a>Přidání bitové kopie a další obsah položkám TreeView  
- Může obsahovat více než jeden objekt v <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsah <xref:System.Windows.Controls.TreeViewItem>. Zahrnout více objektů v <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsahu, jako například uzavřete objekty uvnitř prvku rozložení <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.StackPanel>.  
+## <a name="adding-images-and-other-content-to-treeview-items"></a>Přidávání obrázků a další obsah k položkám prvku TreeView  
+ Může obsahovat více než jeden objekt <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsah <xref:System.Windows.Controls.TreeViewItem>. Zahrnout více objektů v <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> obsahu, uzavřete objektů uvnitř ovládacího prvku na rozložení, jako například <xref:System.Windows.Controls.Panel> nebo <xref:System.Windows.Controls.StackPanel>.  
   
- Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> z <xref:System.Windows.Controls.TreeViewItem> jako <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.TextBlock> , že jsou oba uzavřené v <xref:System.Windows.Controls.DockPanel> ovládacího prvku.  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.HeaderedItemsControl.Header%2A> z <xref:System.Windows.Controls.TreeViewItem> jako <xref:System.Windows.Controls.CheckBox> a <xref:System.Windows.Controls.TextBlock> , že jsou oba uzavřeny v <xref:System.Windows.Controls.DockPanel> ovládacího prvku.  
   
  [!code-xaml[TreeViewSnips#TVIHeader](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewSnips/CSharp/Window1.xaml#tviheader)]  
   
- Následující příklad ukazuje, jak definovat <xref:System.Windows.DataTemplate> obsahující <xref:System.Windows.Controls.Image> a <xref:System.Windows.Controls.TextBlock> , jsou uzavřené v <xref:System.Windows.Controls.DockPanel> ovládacího prvku. Můžete použít <xref:System.Windows.DataTemplate> nastavit <xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> nebo <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> pro <xref:System.Windows.Controls.TreeViewItem>.  
+ Následující příklad ukazuje, jak definovat <xref:System.Windows.DataTemplate> , který obsahuje <xref:System.Windows.Controls.Image> a <xref:System.Windows.Controls.TextBlock> , které jsou uzavřeny v <xref:System.Windows.Controls.DockPanel> ovládacího prvku. Můžete použít <xref:System.Windows.DataTemplate> nastavit <xref:System.Windows.Controls.HeaderedItemsControl.HeaderTemplate%2A> nebo <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> pro <xref:System.Windows.Controls.TreeViewItem>.  
   
  [!code-xaml[TreeViewDataBinding#6](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TreeViewDataBinding/CSharp/Window1.xaml#6)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.TreeView>  
- <xref:System.Windows.Controls.TreeViewItem>  
- [Témata s postupy](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)  
- [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.TreeView>
+- <xref:System.Windows.Controls.TreeViewItem>
+- [Témata s postupy](../../../../docs/framework/wpf/controls/treeview-how-to-topics.md)
+- [Model obsahu WPF](../../../../docs/framework/wpf/controls/wpf-content-model.md)

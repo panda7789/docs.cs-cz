@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0bcb0efab3b61f55bd5fdd3405799c7ac78ee521
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 68f2cc471a33d2c0ea92ceab59d5ba9ecb86e7f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424648"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509574"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments – metoda
-Vrátí pole všech dokumentů, které jsou definované v úložišti symbol.  
+Vrací pole všech dokumentů, které jsou definovány v úložišti symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetDocuments (
   
 #### <a name="parameters"></a>Parametry  
  `cDocs`  
- [v] Velikost `pDocs` pole.  
+ [in] Velikost `pDocs` pole.  
   
  `pcDocs`  
- [out] Ukazatel na proměnnou, která přijímá délka pole.  
+ [out] Ukazovat na proměnnou, která přijímá délka pole.  
   
  `pDocs`  
- [out] Ukazatel na proměnnou, která přijímá pole dokumentu.  
+ [out] Ukazovat na proměnnou, která přijímá pole dokumentu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

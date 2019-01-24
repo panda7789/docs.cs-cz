@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: d739e4bba96873740c53c07eccf687b060d82003
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 7e24bf24785538863738fe2c006834a77f47e1ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798864"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496085"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Provádění obchodní logiky (LINQ to SQL)
 Termín "obchodní logiky" v tomto tématu se odkazuje na všechny vlastní pravidla nebo ověřovací testy, které můžete použít pro data předtím, než je vložena, aktualizována nebo odstraněna z databáze. Obchodní logiky se také někdy označuje jako "obchodní pravidla" nebo "logiku domény." V n vrstvá aplikace obvykle slouží jako logické vrstvy tak, aby jej můžete upravit nezávisle na prezentační vrstva a vrstva přístupu k datům. Obchodní logika může vyvolávat vrstvy přístupu k datům před nebo za všechny aktualizace, vložení nebo odstranění dat v databázi.  
@@ -69,7 +69,7 @@ public partial class MyNorthWindDataContext : System.Data.Linq.DataContext
         #endregion  
 ```  
   
- Pokud se rozhodnete implementovat vložit, aktualizovat a odstraňovat metody v dílčí třídě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul runtime bude volat bez vlastní výchozí metody při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. To umožňuje potlačit výchozí chování pro vytvoření / číst / aktualizovat / odstranit operace. Další informace najdete v tématu [návod: přizpůsobení vložit, aktualizovat a odstraňovat chování tříd entit](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes).  
+ Pokud se rozhodnete implementovat vložit, aktualizovat a odstraňovat metody v dílčí třídě [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] modul runtime bude volat bez vlastní výchozí metody při <xref:System.Data.Linq.DataContext.SubmitChanges%2A> je volána. To umožňuje potlačit výchozí chování pro vytvoření / číst / aktualizovat / odstranit operace. Další informace najdete v tématu [názorný postup: Přizpůsobení vložit, aktualizovat a odstraňovat chování tříd entit](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes).  
   
  `OnCreated` Metoda je volána v konstruktoru třídy.  
   
@@ -181,10 +181,10 @@ partial class Customer
   
  [Návod: Přizpůsobení chování tříd entit při vložení, aktualizaci a odstranění](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
   
- [Návod: Přidávání ověřování do tříd entit](https://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
+ [Návod: Přidání ověřování do tříd entit](https://msdn.microsoft.com/library/85b06a02-b2e3-4534-95b8-d077c8d4c1d7)  
   
-## <a name="see-also"></a>Viz také  
- [Částečné třídy a metody](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)  
- [Částečné metody](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)  
- [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)  
- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+## <a name="see-also"></a>Viz také:
+- [Částečné třídy a metody](~/docs/csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
+- [Částečné metody](~/docs/visual-basic/programming-guide/language-features/procedures/partial-methods.md)
+- [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
+- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)

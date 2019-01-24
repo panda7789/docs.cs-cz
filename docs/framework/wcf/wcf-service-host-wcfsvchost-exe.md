@@ -2,12 +2,12 @@
 title: Hostitel služby WCF (WcfSvcHost.exe)
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: 6f719756688af066a42c3f73a860038dad1e5a53
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 6a8ed677ceaf9b86b67ec2558eb4e31c23d4c57e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505637"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
 Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožňuje spustit ladicí program sady Visual Studio (F5) automaticky hostovat a testovat službu, kterou jste implementovali. Potom můžete otestovat pomocí testovacího klienta WCF (WcfTestClient.exe) nebo vlastního klienta, můžete najít a opravit všechny potenciální chyby.  
@@ -21,7 +21,7 @@ Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožň
 >  Hostitel služby WCF nepodporuje částečném vztahu důvěryhodnosti. Pokud chcete použít službu WCF v částečném vztahu důvěryhodnosti, nepoužívejte šablony projektu Knihovna služby WCF v sadě Visual Studio k vytvoření vaší služby. Místo toho vytvořte nový web v sadě Visual Studio výběrem šablony WCF Web Service, které můžete hostovat službu v webového serveru, na kterém je WCF částečném vztahu důvěryhodnosti podporována.  
   
 ## <a name="project-types-hosted-by-wcf-service-host"></a>Typy projektů, které jsou hostovány hostitel služby WCF  
- Hostitel služby WCF můžete hostovat typ s projektu knihovny služby WCF: Knihovna služby WCF, knihovna služby sekvenčního pracovního postupu, knihovna služby pracovního postupu stavu počítače a knihovna služby syndikace. Hostitel služby WCF mohli hostovat i tyto služby, které mohou být přidány do projektu knihovny služby pomocí **přidat položku** funkce. To zahrnuje služby WCF, WF stavu počítače služby sekvenční Služba pracovního postupu, XAML WF stavu počítače a sekvenční Služba pracovního postupu XAML.  
+ Hostitel služby WCF můžete hostovat typ s projektu knihovny služby WCF: Knihovna služby WCF, knihovna služby sekvenčního pracovního postupu, knihovna služby pracovního postupu stavového stroje a knihovna služby syndikace. Hostitel služby WCF mohli hostovat i tyto služby, které mohou být přidány do projektu knihovny služby pomocí **přidat položku** funkce. To zahrnuje služby WCF, WF stavu počítače služby sekvenční Služba pracovního postupu, XAML WF stavu počítače a sekvenční Služba pracovního postupu XAML.  
   
  Nezapomeňte přitom, ale, že nástroj nebude vám pomohou při konfiguraci hostitele. Pro tuto úlohu musíte ručně upravit soubor App.config. Nástroj také nelze ověřit uživatelský konfigurační soubory.  
   
@@ -65,22 +65,22 @@ Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožň
 #### <a name="using-a-custom-host"></a>Pomocí vlastního hostitele  
  Pokud chcete použít vlastního hostitele, klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** v sadě Visual Studio, vyberte **vlastnosti**a pak vyberte **ladění** kartu. Klikněte na tlačítko **spustit externí Program** a zadejte úplnou cestu do vlastního hostitele. Můžete také použít **argumenty příkazového řádku** dialogové okno zadat argumenty předávané do hostitele.  
   
-## <a name="wcf-service-host-user-interface"></a>Uživatelského rozhraní hostitele služby WCF  
+## <a name="wcf-service-host-user-interface"></a>WCF Service Host User Interface  
  Při počáteční vyvolání hostitel služby WCF (stisknutím klávesy F5 v sadě Visual Studio), **hostitel služby WCF** automaticky otevře okno. Při spuštění hostitele služby WCF, se zobrazí v oznamovací oblasti ikonu programu. Poklepejte na ikonu Otevřít **hostitel služby WCF** okna  
   
  Když dojde k chybám při hostování služeb, otevře se dialogové okno hostitele služeb WCF zobrazíte příslušné informace.  
   
  **Hostitel služby WCF** hlavní okno obsahuje dvě nabídky:  
   
--   **Soubor**: obsahuje **Zavřít** a **ukončovací** příkazy. Po kliknutí na **Zavřít**, **hostitel služby WCF** zavře dialogové okno, ale nadále možné hostovat služby. Po kliknutí na **ukončovací**, je také vypnout hostitele služeb WCF. Tím se zastaví také všechny hostované služby.  
+-   **Soubor**: Obsahuje **Zavřít** a **ukončovací** příkazy. Po kliknutí na **Zavřít**, **hostitel služby WCF** zavře dialogové okno, ale nadále možné hostovat služby. Po kliknutí na **ukončovací**, je také vypnout hostitele služeb WCF. Tím se zastaví také všechny hostované služby.  
   
--   **Nápověda**: obsahuje **o** příkaz, který obsahuje informace o verzi. Obsahuje taky **pomáhají** příkaz, který můžete otevřít soubor nápovědy.  
+-   **Nápověda**: Obsahuje **o** příkaz, který obsahuje informace o verzi. Obsahuje taky **pomáhají** příkaz, který můžete otevřít soubor nápovědy.  
   
  Hlavní **hostitel služby WCF** okno obsahuje dvě oblasti:  
   
 -   V první oblasti je **služby**. Obsahuje seznam, který zobrazuje základní informace o všech službách. Tyto informace zahrnují:  
   
-    -   **Služba**: Zobrazuje seznam všech služeb.  
+    -   **Služba**: Zobrazí seznam všech služeb.  
   
     -   **Stav**: Zobrazí stav služby. Platné hodnoty jsou "Spuštěno", "Stopped" a "Chyba".  
   
@@ -88,7 +88,7 @@ Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost.exe) umožň
   
 -   Druhá oblast je **Další informace o**. Zobrazí se při výběru řádku konkrétní služby v podrobné vysvětlení stav služby **služby** oblasti. Pokud je ve stavu chyby, můžete zobrazit celé chybové zprávy na obrazovce.  
   
-## <a name="stopping-wcf-service-host"></a>Zastavuje se hostitel služby WCF  
+## <a name="stopping-wcf-service-host"></a>Stopping WCF Service Host  
  Hostitel služby WCF můžete vypnout následující čtyři způsoby:  
   
 -   Zastavte relaci ladění v sadě Visual Studio.  
@@ -110,5 +110,5 @@ netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
   
  Další informace o netsh.exe, najdete v části "[použití pomocí nástroje Netsh.exe a přepínače příkazového řádku](https://go.microsoft.com/fwlink/?LinkId=97877)".  
   
-## <a name="see-also"></a>Viz také  
- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Testovací klient WCF (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)

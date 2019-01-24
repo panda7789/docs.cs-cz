@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: 7fd111f5e885de3389b8f93002db22b48c4edd45
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 70ba038a2bdf4bde092ef6beecf32ac9ad5cbba1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506898"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
 Můžete použít *literály XML* načtení z externího zdroje, například řetězce, soubor nebo datový proud XML. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] manipulaci s XML a použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
+ [Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
  Ukazuje, jak načíst data XML <xref:System.Xml.Linq.XDocument> nebo <xref:System.Xml.Linq.XElement> objekt z textového souboru, řetězce nebo proudu.  
   
- [Postupy: Transformace XML pomocí jazyka LINQ](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
+ [Postupy: Transformace XML pomocí LINQ](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
  Ukazuje, jak transformovat obsah <xref:System.Xml.Linq.XDocument> objekt do nového dokumentu XML.  
   
  [Postupy: Změna literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
@@ -42,7 +42,7 @@ Můžete použít *literály XML* načtení z externího zdroje, například ře
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
  Obsahuje odkazy na oddíly, které popisují způsob použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v jazyce Visual Basic.  
   
-## <a name="see-also"></a>Viz také  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+## <a name="see-also"></a>Viz také:
+- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

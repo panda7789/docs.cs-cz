@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 1be7184a37e98e72118065de262d1484476d1cb8
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 8ad6b5767c349379121352930341be5b916131e6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53238664"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502063"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -58,11 +58,11 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
   
  Další informace najdete v tématu [vystavení komponent architektury .NET Framework pro COM](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md) a [Ukázka třídy COM](../../../csharp/programming-guide/interop/example-com-class.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Zlepšení výkonu interoperability](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)  
-- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](/office/client-developer/outlook/pia/introduction-to-interoperability-between-com-and-net)  
-- [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
-- [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)  
-- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
+- [Zlepšení výkonu interoperability](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)
+- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](/office/client-developer/outlook/pia/introduction-to-interoperability-between-com-and-net)
+- [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
+- [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)
+- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

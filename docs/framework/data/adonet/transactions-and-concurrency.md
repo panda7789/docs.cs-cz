@@ -2,12 +2,12 @@
 title: Transakce a souběžnost
 ms.date: 03/30/2017
 ms.assetid: f46570de-9e50-4fe6-8710-a8c31fa8569b
-ms.openlocfilehash: bd47c5e0e2b2086e5fd0482bf4319ebab5674a54
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f5efa8f25e3cd4dedec9e5a9c99db28320a4d93e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777450"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494051"
 ---
 # <a name="transactions-and-concurrency"></a>Transakce a souběžnost
 Transakce se skládá z jediného příkazu nebo skupině příkazů, které jsou spouštěny jako balíček. Transakce umožňují kombinovat více operací do jedné jednotky práce. V případě selhání v jednom bodě v transakci všechny aktualizace může být vrácena zpět do stavu před transakce.  
@@ -34,10 +34,10 @@ Transakce se skládá z jediného příkazu nebo skupině příkazů, které jso
  [Optimistická metoda souběžného zpracování](../../../../docs/framework/data/adonet/optimistic-concurrency.md)  
  Popisuje optimistické a Pesimistická souběžnost a jak otestovat pro porušení souběžnosti.  
   
-## <a name="see-also"></a>Viz také  
- [Principy transakcí](../../../../docs/framework/data/transactions/transaction-fundamentals.md)  
- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Principy transakcí](../../../../docs/framework/data/transactions/transaction-fundamentals.md)
+- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

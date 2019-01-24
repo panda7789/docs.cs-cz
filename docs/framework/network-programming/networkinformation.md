@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: 31b44dd3-b903-4a48-8419-40419a3e4038
-ms.openlocfilehash: 333baa68f4bd80b98e8bb03929ab41dc9cbed7a1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: de8cb03e6205a83d2cc93ee300eb3fcac1ac5b74
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150950"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497167"
 ---
 # <a name="networkinformation"></a>NetworkInformation
 <xref:System.Net.NetworkInformation> Oborů názvů umožňuje shromažďování informací o událostech sítě, změnách, statistiky a vlastnosti. Můžete také určit, jestli je vzdálený hostitel dosažitelný pomocí <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> třídy.  
@@ -23,8 +23,8 @@ ms.locfileid: "53150950"
 ## <a name="determine-if-a-remote-host-is-reachable"></a>Určí, zda vzdálený hostitel dostupné  
  Můžete použít <xref:System.Net.NetworkInformation.Ping> třídu k určení, zda vzdálený hostitel správně nahoru, v síti a je dostupný. Další informace najdete v tématu [jak: Příkaz ping na hostitele](../../../docs/framework/network-programming/how-to-ping-a-host.md).  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
- [Ukázka technologie informace o síti](https://go.microsoft.com/fwlink/?LinkID=179564)  
- [Ukázka technologie NetStat nástroj](https://go.microsoft.com/fwlink/?LinkID=179562)  
- [Ukázka technologie ping klienta](https://go.microsoft.com/fwlink/?LinkID=179565)
+## <a name="see-also"></a>Viz také:
+- [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)
+- [Ukázka technologie informace o síti](https://go.microsoft.com/fwlink/?LinkID=179564)
+- [Ukázka technologie NetStat nástroj](https://go.microsoft.com/fwlink/?LinkID=179562)
+- [Ukázka technologie ping klienta](https://go.microsoft.com/fwlink/?LinkID=179565)

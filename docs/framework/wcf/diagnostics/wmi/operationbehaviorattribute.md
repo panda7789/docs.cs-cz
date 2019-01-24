@@ -2,12 +2,12 @@
 title: OperationBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 8c9b0755-9e83-411f-bdcb-61a586022797
-ms.openlocfilehash: 6266713307846ab953299370835726958196fac1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d0bf59e6064748a045f761777a2f8f3e88f1cb5a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54504324"
 ---
 # <a name="operationbehaviorattribute"></a>OperationBehaviorAttribute
 OperationBehaviorAttribute  
@@ -34,35 +34,35 @@ class OperationBehaviorAttribute : Behavior
 ### <a name="autodisposeparameters"></a>AutoDisposeParameters  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Stav funkce automatického dispose pro parametry.  
   
 ### <a name="impersonation"></a>Zosobnění  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje úroveň představení volajícího, kterou operace podporuje.  
   
-### <a name="releaseinstancemode"></a>ReleaseInstanceMode u atributu  
+### <a name="releaseinstancemode"></a>ReleaseInstanceMode  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Označuje, že když průběhu realizace operace má být objekt.  
   
-### <a name="transactionautocomplete"></a>Vlastnost TransactionAutoComplete  
+### <a name="transactionautocomplete"></a>TransactionAutoComplete  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Označuje, zda aktuální transakce potvrzena automaticky, pokud se nevyskytnou žádné nezpracované výjimky.  
   
 ### <a name="transactionscoperequired"></a>Vlastností TransactionScopeRequired  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda operace vyžaduje transakci.  
   
@@ -72,5 +72,5 @@ class OperationBehaviorAttribute : Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.OperationBehaviorAttribute>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.OperationBehaviorAttribute>

@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML třídy (C#)
 ms.date: 07/20/2015
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-ms.openlocfilehash: d1454909591ff060f9d2a1d2484302e7112be149
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a50b58ad3e8f375d80701f454e74fef00e4d2203
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502388"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509659"
 ---
 # <a name="linq-to-xml-classes-overview-c"></a>Přehled LINQ to XML třídy (C#)
 Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tříd v <xref:System.Xml.Linq> obor názvů a krátký popis každého.  
@@ -77,7 +77,7 @@ Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]
 ### <a name="xobjectchange-class"></a>Třída XObjectChange  
  <xref:System.Xml.Linq.XObjectChange> Určuje typ události, když událost se vyvolá pro <xref:System.Xml.Linq.XObject>.  
   
-### <a name="xobjectchangeeventargs-class"></a>Třída XObjectChangeEventArgs  
+### <a name="xobjectchangeeventargs-class"></a>XObjectChangeEventArgs Class  
  <xref:System.Xml.Linq.XObjectChangeEventArgs> poskytuje data pro <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed> události.  
   
 ### <a name="xprocessinginstruction-class"></a>Třída XProcessingInstruction  
@@ -86,6 +86,6 @@ Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]
 ### <a name="xtext-class"></a>Třída XText  
  <xref:System.Xml.Linq.XText> reprezentuje textový uzel. Ve většině případů není nutné použít tuto třídu. Tato třída se používá především pro smíšený obsah.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

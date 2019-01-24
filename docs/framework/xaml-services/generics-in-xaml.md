@@ -4,45 +4,45 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-ms.openlocfilehash: faef74c57ac5ff9e3d4162accfc6552db55715bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ddd094d5acb1eea5bf45984c27df93d1de3d53fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563581"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491308"
 ---
 # <a name="generics-in-xaml"></a>Obecné typy v jazyku XAML
-Rozhraní .NET Framework XAML Services jak jsou implementované ve System.Xaml poskytuje podporu pro použití obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucující omezení voláním odpovídající `Add` metoda pro obecnou kolekci případy. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v jazyce XAML.  
+Rozhraní .NET Framework XAML Services jak je implementován v oboru názvů System.Xaml poskytuje podporu pro používání obecných typů CLR. Tato podpora zahrnuje určení omezení obecných typů jako argument typu a vynucování omezení voláním příslušné `Add` metodu pro případy, obecné kolekce. Toto téma popisuje aspekty pomocí a odkazování na obecné typy v XAML.  
   
-## <a name="xtypearguments"></a>x: TypeArguments –  
- `x:TypeArguments` direktivu definované jazyk XAML. Pokud se používá jako člen skupiny typ jazyka XAML, který je zálohovaný díky obecného typu `x:TypeArguments` předává chovaly zadejte argumenty obecného konstruktoru zálohování. Pro odkaz na syntaxi, která se vztahují na rozhraní .NET Framework XAML Services použití `x:TypeArguments`, což zahrnuje příklady syntaxe, najdete v části [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
+## <a name="xtypearguments"></a>x:TypeArguments  
+ `x:TypeArguments` definoval direktivy jazyka XAML. Když se používá jako člen typu XAML, který se zálohuje pomocí obecného typu, `x:TypeArguments` předá omezení zadejte argumenty obecného konstruktoru zálohování. Odkaz syntaxe, které se vztahují na rozhraní .NET Framework XAML Services využívání `x:TypeArguments`, což zahrnuje příklady syntaxe, naleznete v tématu [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
   
- Protože `x:TypeArguments` přebírá řetězec a má základní typ převaděče, je obvykle deklarovaný XAML využití jako atribut.  
+ Protože `x:TypeArguments` přijímá řetězec a má typ převaděče zálohování, je obvykle deklarované v použití atributu XAML.  
   
- V datový proud uzlu XAML informace deklarovaná `x:TypeArguments` lze získat z <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType> na `StartObject` pozici v datovém proudu uzlu. Návratová hodnota <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType> je seznam <xref:System.Xaml.XamlType> hodnoty. Rozhodnutí o tom, jestli typ jazyka XAML představuje obecného typu můžete provedeny voláním <xref:System.Xaml.XamlType.IsGeneric%2A?displayProperty=nameWithType>.  
+ V datovém proudu uzlu XAML informace deklaroval `x:TypeArguments` můžete získat <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType> na `StartObject` pozici v datovém proudu uzlu. Návratová hodnota <xref:System.Xaml.XamlType.TypeArguments%2A?displayProperty=nameWithType> je seznam <xref:System.Xaml.XamlType> hodnoty. Určení, zda typ XAML představuje obecný typ nelze realizovat voláním <xref:System.Xaml.XamlType.IsGeneric%2A?displayProperty=nameWithType>.  
   
-## <a name="rules-and-syntax-conventions-for-generics-in-xaml"></a>Pravidla a pravidla týkající se syntaxe pro obecné typy v jazyce XAML  
- V jazyce XAML musí být vždy reprezentován obecného typu jako omezené obecného; neomezeným obecného je nikdy k dispozici v systému typu XAML nebo datový proud uzlu XAML a není možné vyjádřit v XAML značek. Obecný může být odkazováno v rámci syntaxe atribut XAML, případech, kdy je omezení vnořené typy obecný odkazují `x:TypeArguments`, nebo pro případy, kdy `x:Type` poskytuje odkaz na typ CLR pro obecný typ. To je podporováno prostřednictvím <xref:System.Xaml.Schema.XamlTypeTypeConverter> třídy definované rozhraní .NET Framework XAML Services.  
+## <a name="rules-and-syntax-conventions-for-generics-in-xaml"></a>Pravidla a pravidla týkající se syntaxe pro obecné typy v XAML  
+ V XAML musí být vždy reprezentována obecného typu jako omezené obecný; bez omezení obecné není nikdy k dispozici v typu systému XAML nebo datový proud uzlu XAML, nemůže být vyjádřena v kódu XAML. Obecný může být odkazováno v syntaxi atributu XAML pro případy, kdy je omezení vnořený typ obecný, se na ně odkazovat `x:TypeArguments`, nebo pro případy, kde `x:Type` poskytuje odkaz na typ CLR pro obecného typu. To je podporováno prostřednictvím <xref:System.Xaml.Schema.XamlTypeTypeConverter> třídy definované v rozhraní .NET Framework XAML Services.  
   
- XAML atribut syntaxe formuláře ve povolené <xref:System.Xaml.Schema.XamlTypeTypeConverter> mění typické MSIL / konvence syntaxe CLR, který používá úhel závorky pro různé typy a omezení obecných typů a místo toho nahradí závorkách kontejneru omezení. Příklad, naleznete v části [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
+ XAML atributu forma syntaxe umožněné <xref:System.Xaml.Schema.XamlTypeTypeConverter> mění typické MSIL / CLR syntaxe vytváření názvů, které používá ostré závorky pro typy a omezení obecných typů a místo toho nahradí závorky pro container omezení. Příklad najdete v tématu [x: TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md).  
   
-## <a name="generics-and-xaml-2009-features"></a>Obecné typy a funkce jazyka XAML 2009  
- Pokud používáte XAML 2009 místo mapování modulu CLR základní typy získat běžné primitiv jazyka XAML typy, můžete použít [předdefinované typy jazyka XAML 2009](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md) jako položky informace v `x:TypeArguments`. Je třeba deklarovat následující (předpony mapování není vidět, ale `x` je obor názvů jazyka XAML XAML pro XAML 2009):  
+## <a name="generics-and-xaml-2009-features"></a>Obecné typy a funkce XAML 2009  
+ Pokud používáte XAML 2009 místo mapování CLR základní typy získat primitiv jazyka XAML typy, můžete použít [předdefinovaných typů XAML 2009](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md) jako informačních položek v `x:TypeArguments`. Například můžete deklarovat následující (předpona mapování nezobrazují, ale `x` je obor názvů jazyka XAML XAML pro XAML 2009):  
   
 ```xaml  
 <my:BusinessObject x:TypeArguments="x:String,x:Int32"/>  
 ```  
   
-## <a name="generics-support-in-wpf-and-other-v35-frameworks"></a>Podpora obecné typy v WPF a jiné architektury v3.5  
- Pro použití XAML 2006, pokud je konkrétně cílem WPF [x: Class –](../../../docs/framework/xaml-services/x-class-directive.md) také je třeba zadat u stejného elementu jako `x:TypeArguments`, a tento element musí být kořenový element dokumentu XAML. Kořenový element musí být mapována obecného typu pomocí alespoň jeden typ argumentu. Příkladem je <xref:System.Windows.Navigation.PageFunction%601>.  
+## <a name="generics-support-in-wpf-and-other-v35-frameworks"></a>Podpora obecných typů v projektech WPF a další architektury v3.5  
+ XAML 2006 využití při specificky cílené na WPF [x: Class](../../../docs/framework/xaml-services/x-class-directive.md) musí se poskytnout i na stejný prvek jako `x:TypeArguments`, a tento element musí být kořenový element v dokumentu XAML. Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>.  
   
- Možná řešení v oblasti podpory obecné použití zahrnují definování rozšíření vlastních značek, které může vrátit obecných typů, nebo zadáním zabalení třídy definice, které je odvozen od obecného typu, ale vyrovná obecná omezení v jeho vlastní definici třídy.  
+ Možná řešení pro podporu obecných použití patří definování rozšíření vlastního kódu, která vrací obecných typů, nebo které uvádějí zabalení třídy definice, která je odvozena od obecného typu, ale sloučí obecná omezení v definici třídy.  
   
- WPF a cílení na [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], můžete použít funkce jazyka XAML 2009 společně s `x:TypeArguments`, ale jenom pro přijít XAML (XAML, který zkompiluje značek není). Zkompilovaný kód XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova jazyka XAML 2009 a funkce.  
+ V WPF a cílení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], je možné použít funkce XAML 2009 spolu s `x:TypeArguments`, ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce.  
   
- Vlastní pracovní postupy v modelu Windows Workflow Foundation pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] není podporována Obecná použití XAML.  
+ Vlastní pracovní postupy v modelu Windows Workflow Foundation pro [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] nepodporují použití obecných XAML.  
   
-## <a name="see-also"></a>Viz také  
- [x:TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md)  
- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
- [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)
+## <a name="see-also"></a>Viz také:
+- [x:TypeArguments – direktiva](../../../docs/framework/xaml-services/x-typearguments-directive.md)
+- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
+- [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)

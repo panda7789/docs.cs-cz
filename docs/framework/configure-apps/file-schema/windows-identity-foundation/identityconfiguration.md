@@ -3,18 +3,18 @@ title: '&lt;identityConfiguration&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
-ms.openlocfilehash: 11ba7df79ead1693fc6828aeabde413237680737
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 7c20f3d00b71eacbf8409c3f848d550445468e5b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193772"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513097"
 ---
 # <a name="ltidentityconfigurationgt"></a>&lt;identityConfiguration&gt;
 Určuje nastavení identit na úrovni služby.  
   
  \<system.identityModel>  
-\<identityConfiguration >  
+\<identityConfiguration>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,19 +43,19 @@ Určuje nastavení identit na úrovni služby.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<ukládá do mezipaměti >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipaměti používané pro tokeny relace a rozpoznání opětovného přehrání tokenu. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
-|[\<certificateValidation >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používat ověřování certifikátů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
-|[\<komponenty claimsAuthenticationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity. Volitelné.|  
-|[\<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace identity. Volitelné.|  
-|[\<claimTypeRequired >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Určuje sadu požadované deklarace identit pro příchozí tokeny zabezpečení. Volitelné.|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení. Je možné zadat nuly nebo více kolekcí obslužné rutiny tokenů zabezpečení. Volitelné.|  
-|[\<tokenReplayDetection >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|Umožňuje rozpoznání opětovného přehrání tokenu a určuje dobu vypršení platnosti tokenů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
+|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Zaregistruje mezipaměti používané pro tokeny relace a rozpoznání opětovného přehrání tokenu. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
+|[\<certificateValidation>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|Určuje nastavení, které obslužné rutiny tokenů používat ověřování certifikátů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
+|[\<claimsAuthenticationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity. Volitelné.|  
+|[\<claimsAuthorizationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace identity. Volitelné.|  
+|[\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Určuje sadu požadované deklarace identit pro příchozí tokeny zabezpečení. Volitelné.|  
+|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení. Je možné zadat nuly nebo více kolekcí obslužné rutiny tokenů zabezpečení. Volitelné.|  
+|[\<tokenReplayDetection>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|Umožňuje rozpoznání opětovného přehrání tokenu a určuje dobu vypršení platnosti tokenů. Můžete nastavit na úrovni služby nebo v kolekci obslužné rutiny tokenů zabezpečení. Volitelné.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.identityModel >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.|  
+|[\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.|  
   
 ## <a name="remarks"></a>Poznámky  
  Více identit konfigurace mohou být definovány, každý s jedinečným názvem. Chování vypadá takto:  
@@ -79,10 +79,10 @@ Určuje nastavení identit na úrovni služby.
 > [!IMPORTANT]
 >  Zadáním následujících prvků jako podřízených elementů `<identityConfiguration>` prvek se už nepoužívá, i když je chování stále podporována z důvodu zpětné kompatibility. Tyto prvky musí, místo toho nastavit v rámci [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) elementu.  
 >   
->  -   [\<audienceUris >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)  
-> -   [\<issuerNameRegistry >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)  
-> -   [\<issuerTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)  
-> -   [\<serviceTokenResolver >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)  
+>  -   [\<audienceUris>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)  
+> -   [\<issuerNameRegistry>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)  
+> -   [\<issuerTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)  
+> -   [\<serviceTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)  
   
 ## <a name="example"></a>Příklad  
  V následujícím příkladu se vytvoří konfigurace identity s názvem "alternateConfiguration". Konfigurace identity Určuje výchozí nastavení.  
@@ -93,6 +93,6 @@ Určuje nastavení identit na úrovni služby.
 </system.identityModel>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Configuration.IdentityConfiguration>  
- <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Configuration.IdentityConfiguration>
+- <xref:System.IdentityModel.Configuration.IdentityConfigurationElement>

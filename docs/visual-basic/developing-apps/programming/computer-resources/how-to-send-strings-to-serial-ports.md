@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic'
+title: 'Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ports, sending strings to
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - serial ports, sending strings to
 ms.assetid: 6ebf46cd-b2d0-4b2c-9a1f-be177b22ad52
-ms.openlocfilehash: a00306407cfe880ebc915d74a753109cc9696f6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b2ba25f4ca3f63e1e7831d26745fa35cd337dc48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33584024"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503024"
 ---
-# <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
-Toto téma popisuje postup použití `My.Computer.Ports` k odesílání řetězců na sériové porty počítače v jazyce Visual Basic.  
+# <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
+Toto téma popisuje způsob použití `My.Computer.Ports` k odesílání řetězců na sériové porty počítače v jazyce Visual Basic.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad odešle řetězec COM1 sériového portu. Musíte použít jiný sériového portu v počítači.  
+ Tento příklad odešle řetězec COM1 sériového portu. Budete muset použít jiné sériového portu ve vašem počítači.  
   
  Použití `My.Computer.Ports.OpenSerialPort` metodu k získání odkazu na port. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
- `Using` Bloku umožňuje aplikaci zavřete sériového portu i v případě, že vygeneruje výjimka. Všechny kód, který zpracovává sériového portu by se měla objevit v rámci tohoto bloku nebo uvnitř `Try...Catch...Finally` bloku.  
+ `Using` Bloku umožňuje, aby aplikace zavřete sériového portu, i v případě, že vygeneruje výjimku. Veškerý kód, který provádí úpravy sériového portu by se měla objevit v rámci tohoto bloku nebo v rámci `Try...Catch...Finally` bloku.  
   
- <xref:System.IO.Ports.SerialPort.WriteLine%2A> Metoda odešle data do sériového portu.  
+ <xref:System.IO.Ports.SerialPort.WriteLine%2A> Metoda odesílá data do sériového portu.  
   
  [!code-vb[VbVbalrMyComputer#33](../../../../visual-basic/developing-apps/programming/computer-resources/codesnippet/VisualBasic/how-to-send-strings-to-serial-ports_1.vb)]  
   
@@ -33,12 +33,12 @@ Toto téma popisuje postup použití `My.Computer.Ports` k odesílání řetězc
 -   Tento příklad předpokládá, že počítač používá `COM1`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Tento příklad předpokládá, že počítač používá `COM1`; pro větší flexibilitu, tento kód by měl umožní uživateli vybrat ze seznamu dostupných portů požadovaných sériového portu. Další informace najdete v tématu [postupy: zobrazení k dispozici sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Tento příklad předpokládá, že počítač používá `COM1`; pro větší flexibilitu, kód by měl umožnit uživateli vybrat požadovanou sériového portu ze seznamu dostupných portů. Další informace najdete v tématu [jak: Zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- Tento příklad používá `Using` bloku a ujistěte se, že aplikace zavře port i v případě, že vyhodí výjimku. Další informace najdete v tématu [pomocí příkazu](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ Tento příklad používá `Using` blok k Ujistěte se, že aplikace zavře portu i v případě, že dojde k výjimce. Další informace najdete v tématu [příkazu Using](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Devices.Ports>  
- <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>  
- [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)  
- [Postupy: Zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Devices.Ports>
+- <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>
+- [Postupy: Vytáčení čísel na modemech připojených k sériovým portům](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
+- [Postupy: Zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md)

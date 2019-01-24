@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: řešení nejednoznačných časových údajů uživatelům'
+title: 'Postupy: Umožnit uživatelům řešení nejednoznačných časových údajů'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 ms.assetid: bca874ee-5b68-4654-8bbd-3711220ef332
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 91e80f44934092007f6f842f0694789d49321446
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: ae6d16bda7a2cd6f2367129b737ec79d8193ebf9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863548"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502712"
 ---
-# <a name="how-to-let-users-resolve-ambiguous-times"></a>Postupy: řešení nejednoznačných časových údajů uživatelům
+# <a name="how-to-let-users-resolve-ambiguous-times"></a>Postupy: Umožnit uživatelům řešení nejednoznačných časových údajů
 
 Nejednoznačný čas je čas, který se mapuje na více než jeden koordinovaný univerzální čas (UTC). K tomu dochází, když čas dojde k přenastavení zpět v čase, například při přechodu z časové pásmo letního času na jeho (běžný čas). Při zpracování nejednoznačný čas, můžete provést jednu z následujících:
 
@@ -60,5 +60,5 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Postupy: Řešení nejednoznačných časových údajů](../../../docs/standard/datetime/resolve-ambiguous-times.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Postupy: Řešení nejednoznačných časových údajů](../../../docs/standard/datetime/resolve-ambiguous-times.md)

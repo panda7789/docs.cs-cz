@@ -8,26 +8,26 @@ helpviewer_keywords:
 - event handlers [WPF], adding
 - XAML [WPF], adding event handlers
 ms.assetid: 269c61e0-6bd9-4291-9bed-1c5ee66da486
-ms.openlocfilehash: 782f668557c3cb081d30e7835006af63c9ca4df5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e8344ebcb0406a7da29787c5a4377760f55597e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542620"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499129"
 ---
 # <a name="how-to-add-an-event-handler-using-code"></a>Postupy: Přidání obslužné rutiny události pomocí kódu
-Tento příklad ukazuje postup přidání obslužné rutiny události pro element pomocí kódu.  
+Tento příklad ukazuje, jak přidat obslužnou rutinu události k prvku pomocí kódu.  
   
- Pokud chcete přidat obslužné rutiny události pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] již byla načtena elementu a stránce značek, který obsahuje element, je nutné přidat obslužnou rutinu pomocí kódu. Případně pokud vytváříte nahoru k elementu pro aplikaci zcela použití kódu a není deklarace všech elementů pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete volat konkrétní metody pro přidání obslužné rutiny událostí na strom vytvořený element.  
+ Pokud chcete přidat obslužnou rutinu události pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] elementu a na stránce značek, obsahující prvek již byl načten, je nutné přidat obslužnou rutinu pomocí kódu. Případně pokud vytváříte nahoru stromem prvků pro aplikaci zcela pomocí kódu a nedeklarováním všechny prvky pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], můžete volat konkrétní metody pro přidání obslužné rutiny událostí do stromu vytvořený element.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přidá novou <xref:System.Windows.Controls.Button> na existující stránku původně definovaného v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Soubor modelu code-behind implementuje metodu obslužné rutiny události a potom přidá dané metody jako novou obslužnou rutinu události na <xref:System.Windows.Controls.Button>.  
+ Následující příklad přidá nový <xref:System.Windows.Controls.Button> na existující stránku, který je původně definována v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Soubor kódu na pozadí implementuje metodu obslužné rutiny události a pak přidá tuto metodu jako novou obslužnou rutinu události na <xref:System.Windows.Controls.Button>.  
   
- Příklad C# používá `+=` operátor přiřadit obslužnou rutinu události. Toto je stejný operátor, který slouží k přiřazení obslužnou rutinu v [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] model zpracování událostí. Microsoft Visual Basic nepodporuje tento operátor jako způsob přidání obslužných rutin událostí. Místo toho vyžaduje jednu z dvě techniky:  
+ C# Příklad používá `+=` operátor přiřazení obslužnou rutinu události. To je stejný operátor, který slouží k přiřazení obslužnou rutinu v [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] model zpracování událostí. Microsoft Visual Basic nepodporuje tento operátor jako způsob přidání obslužných rutin událostí. Místo toho vyžaduje jednu z dvou technik:  
   
--   Použití <xref:System.Windows.UIElement.AddHandler%2A> metoda, společně s `AddressOf` operátor, chcete-li implementace obslužných rutin událostí.  
+-   Použití <xref:System.Windows.UIElement.AddHandler%2A> metody společně s `AddressOf` operátor tak, aby odkazovaly implementaci obslužné rutiny události.  
   
--   Použití `Handles` – klíčové slovo jako součást definice obslužná rutina události. Tento postup není zobrazeny zde; v tématu [Visual Basic a zpracování události WPF](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
+-   Použití `Handles` – klíčové slovo jako součást definice obslužné rutiny události. Tato technika, tady není ukázaný; Zobrazit [jazyka Visual Basic a WPF zpracování událostí](../../../../docs/framework/wpf/advanced/visual-basic-and-wpf-event-handling.md).  
   
  [!code-xaml[RoutedEventAddRemoveHandler#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/CSharp/default.xaml#xaml)]  
   
@@ -35,8 +35,8 @@ Tento příklad ukazuje postup přidání obslužné rutiny události pro elemen
  [!code-vb[RoutedEventAddRemoveHandler#Handler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RoutedEventAddRemoveHandler/VisualBasic/default.xaml.vb#handler)]  
   
 > [!NOTE]
->  Přidání obslužné rutiny událostí v původně Analyzovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky je mnohem jednodušší. V rámci objektu elementu, kde chcete přidat obslužné rutiny události přidejte atribut, který odpovídá názvu událost, která chcete zpracovat. Zadejte hodnotu tohoto atributu jako název metody obslužné rutiny události, který jste zadali v souboru kódu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Další informace najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) nebo [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
+>  Přidání obslužné rutiny událostí v původně analyzovaný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránka je mnohem jednodušší. V rámci elementu objektu, ve které chcete přidat obslužnou rutinu události přidejte atribut, který odpovídá názvu události, ke které chcete zpracovat. Hodnota tohoto atributu zadejte jako název obslužné metody událostí, který jste definovali v souboru kódu na pozadí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky. Další informace najdete v tématu [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) nebo [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/advanced/events-how-to-topics.md)

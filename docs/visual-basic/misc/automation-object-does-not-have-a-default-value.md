@@ -1,23 +1,23 @@
 ---
-title: Objekt Automation nemá výchozí hodnotu.
+title: Automatizační objekt nemá výchozí hodnotu
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID443
 ms.assetid: 162641f6-5a19-4c37-8c92-17929885e87e
-ms.openlocfilehash: 677e1951fcfd4e1c26cc19c7e81c310e2b221a58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1eca5c0d43737337efa354d823dcd3d3f8e6043
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33599233"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499781"
 ---
-# <a name="automation-object-does-not-have-a-default-value"></a>Objekt Automation nemá výchozí hodnotu.
-Visual Basic nelze určit výchozí člen pro zadaný objekt.  
+# <a name="automation-object-does-not-have-a-default-value"></a>Automatizační objekt nemá výchozí hodnotu
+Visual Basic nelze určit výchozí člen zadaný objekt.  
   
-### <a name="to-correct-the-error"></a>Opravte chybu  
+### <a name="to-correct-the-error"></a>Chcete-li opravit chyby  
   
--   Podívejte se do dokumentace objektu a poskytněte explicitní specifikace pro vlastnosti nebo metody.  
+-   Dokumentaci k objektu a poskytnout explicitní specifikace vlastnosti nebo metody.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)  
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
 

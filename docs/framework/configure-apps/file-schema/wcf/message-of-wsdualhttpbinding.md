@@ -2,12 +2,12 @@
 title: '&lt;message&gt; – &lt;wsDualHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 75101744-eed8-4d61-91f4-5fc4473a21f2
-ms.openlocfilehash: 4aec0bf3c88bcbb634c1b6ab44cbb0bcdf2f24e5
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: cdba592f5d85e6475921692deebda574a2a3f601
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147509"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509646"
 ---
 # <a name="ltmessagegt-of-ltwsdualhttpbindinggt"></a>&lt;message&gt; – &lt;wsDualHttpBinding&gt;
 Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
@@ -16,7 +16,7 @@ Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../.
 \<vazby >  
 \<wsDualHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<Zpráva >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,7 +39,7 @@ Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../.
 |Atribut|Popis|  
 |---------------|-----------------|  
 |algorithmSuite|Volitelné. Nastaví zprávu algoritmy šifrování a klíč zalamování řádků. Algoritmy a velikosti klíče jsou určeny <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> třídy. Tyto algoritmy namapovat na uvedené ve specifikaci jazyka zásad zabezpečení (WS-SecurityPolicy).<br /><br /> Možné hodnoty najdete níže. Výchozí hodnota je `Basic256`.|  
-|Typ clientCredentialType|Volitelné. Určuje typ přihlašovacích údajů se použije při použití režimu zabezpečení rozhraní provádí ověření klienta `Message`. Možné hodnoty najdete níže. Výchozí hodnota je `Windows`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
+|clientCredentialType|Volitelné. Určuje typ přihlašovacích údajů se použije při použití režimu zabezpečení rozhraní provádí ověření klienta `Message`. Možné hodnoty najdete níže. Výchozí hodnota je `Windows`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MessageCredentialType>.|  
 |negotiateServiceCredential|Volitelné. Logická hodnota, která určuje, zda přihlašovací údaje služby je zřízený v klientovi mimo pásmo nebo se získá od služby ke klientovi procesem vyjednávání. Takové vyjednávání je předpokladem k výměně zpráv obvyklé.<br /><br /> Pokud `clientCredentialType` atributu rovná na hodnotu None, uživatelské jméno nebo certifikát, nastavení tohoto atributu na `false` znamená, že certifikát služby je k dispozici na klientovi mimo IP síť a že klient musí a určete certifikát služby (pomocí [ \<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) v [ \<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) služeb chování. Tento režim se vzájemná spolupráce s zásobníky SOAP, které implementují WS-Trust a WS-SecureConversation.<br /><br /> Pokud `ClientCredentialType` atribut je nastaven na `Windows`, nastavení tohoto atributu na `false` Určuje ověřování na základě protokolu Kerberos. To znamená, že klient a služba musí být součástí stejné domény pomocí protokolu Kerberos. Tento režim se vzájemná spolupráce s zásobníky SOAP, které implementují profilu token protokolu Kerberos (jak jsou definovány v OASIS WSS TC) a WS-Trust a WS-SecureConversation. Pokud tento atribut je `true`, dojde k vygenerování vyjednávání protokolu SOAP .NET, které tunelových propojení SPNego exchange přes zprávy protokolu SOAP.<br /><br /> Výchozí hodnota je `true`.|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite atribut  
@@ -63,7 +63,7 @@ Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../.
 |Basic256Sha256Rsa15|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
 |TripleDesSha256Rsa15|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -82,13 +82,13 @@ Definuje zabezpečení na úrovni zprávy [ \<wsDualHttpBinding >](../../../../.
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsdualhttpbinding.md)|Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.WSDualHttpSecurityElement.Message%2A>  
- <xref:System.ServiceModel.WSDualHttpSecurity.Message%2A>  
- <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>  
- <xref:System.ServiceModel.MessageSecurityOverHttp>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.WSDualHttpSecurityElement.Message%2A>
+- <xref:System.ServiceModel.WSDualHttpSecurity.Message%2A>
+- <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>
+- <xref:System.ServiceModel.MessageSecurityOverHttp>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

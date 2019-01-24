@@ -23,12 +23,12 @@ helpviewer_keywords:
 - user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: be913dca-a364-4a51-96a1-549a1b390b0a
-ms.openlocfilehash: 1dac93145b6e11a0d149f03b43e1e0b28b770925
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 33a9dd3144f6f51eb6a63ff93750019878cb4a03
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698455"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507470"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje formát.  
@@ -71,14 +71,14 @@ Obsahuje data ve formátu, který definujete. `Structure` Prohlášení definuje
 End Structure  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ValueType>  
- <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)  
- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ValueType>
+- <xref:System.Runtime.InteropServices.StructLayoutAttribute>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
+- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)
+- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
+- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

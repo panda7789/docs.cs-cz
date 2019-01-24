@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.MsmqPoisonMessageRejected
 ms.date: 03/30/2017
 ms.assetid: 0e64b9bd-1f12-43df-a189-d7be3c2bace1
-ms.openlocfilehash: 27402017e5e79194578719fd0c921dfc1e047b80
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c8e476ab90fda9214831fbd5beaba518f3e3bd20
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512957"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491425"
 ---
 # <a name="systemservicemodelchannelsmsmqpoisonmessagerejected"></a>System.ServiceModel.Channels.MsmqPoisonMessageRejected
 Nezpracovatelná zpráva byla odmítnuta.  
@@ -17,9 +17,9 @@ Nezpracovatelná zpráva byla odmítnuta.
   
  Zobrazit [zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkId=99546) podrobné informace o při stát nezpracovatelných zpráv a způsob konfigurace vaší služby k odpovídajícím způsobem zpracovat. Zobrazit [MQMarkMessageRejected](https://go.microsoft.com/fwlink/?LinkId=99548) pro další podrobnosti o tom, co znamená odmítnuté zprávy služby MSMQ.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)  
- [Zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkId=99546)  
- [MQMarkMessageRejected](https://go.microsoft.com/fwlink/?LinkId=99548)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Zpracování zpráv Poison](https://go.microsoft.com/fwlink/?LinkId=99546)
+- [MQMarkMessageRejected](https://go.microsoft.com/fwlink/?LinkId=99548)

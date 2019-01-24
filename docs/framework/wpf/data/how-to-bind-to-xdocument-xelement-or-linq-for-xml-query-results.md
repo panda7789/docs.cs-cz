@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding [WPF], binding to XDocument
 - data binding [WPF], binding to XElement
 ms.assetid: 6a629a49-fe1c-465d-b76a-3dcbf4307b64
-ms.openlocfilehash: 83254bcb0b2aef53a53874a67e8ae169ad242d57
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0d68eb40b60481709ff2852a643908025e2e43ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43499936"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512330"
 ---
 # <a name="how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results"></a>Postupy: Připojení k XDocument, XElement nebo LINQ pro výsledky XML dotazu
 Tento příklad ukazuje, jak vytvořit vazbu dat XML do <xref:System.Windows.Controls.ItemsControl> pomocí <xref:System.Xml.Linq.XDocument>.  
@@ -39,8 +39,8 @@ Tento příklad ukazuje, jak vytvořit vazbu dat XML do <xref:System.Windows.Con
  [!code-csharp[XLinqExample#BindToResults](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml.cs#bindtoresults)]
  [!code-vb[XLinqExample#BindToResults](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/XLinqExample/visualbasic/window1.xaml.vb#bindtoresults)]  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)  
- [Přehled datové vazby WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)  
- [Příklad datové vazby WPF pomocí LINQ to XML](/visualstudio/designers/wpf-data-binding-using-linq-to-xml-example)  
- [Dynamické vlastnosti LINQ to XML](/visualstudio/designers/linq-to-xml-dynamic-properties)
+## <a name="see-also"></a>Viz také:
+- [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md)
+- [Přehled datové vazby WPF s LINQ to XML](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)
+- [Příklad datové vazby WPF pomocí LINQ to XML](/visualstudio/designers/wpf-data-binding-using-linq-to-xml-example)
+- [Dynamické vlastnosti LINQ to XML](/visualstudio/designers/linq-to-xml-dynamic-properties)

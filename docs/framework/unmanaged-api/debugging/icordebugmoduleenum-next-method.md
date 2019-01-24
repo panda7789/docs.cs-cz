@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7624a22e5d65ae94797779a0b8cfa70f226450ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f71901acf8227d018bf288b6cd0265f053e6a3a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418981"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510829"
 ---
 # <a name="icordebugmoduleenumnext-method"></a>ICorDebugModuleEnum::Next – metoda
-Získá počet instancí "ICorDebugModule" určeného `celt` z výčtu, počínaje na aktuální pozici.  
+Získá počet instancí "ICorDebugModule" určené `celt` z výčtu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Next (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet `ICorDebugModule` instancí, které mají být načteny.  
+ [in] Počet `ICorDebugModule` instancí, který se má načíst.  
   
  `modules`  
- [out] Ukazatele, každý z nich odkazuje na pole `ICorDebugModule` objektu.  
+ [out] Pole ukazatelů, každý z nich odkazuje na `ICorDebugModule` objektu.  
   
  `pceltFetched`  
- [out] Ukazatel na počet `ICorDebugModule` instancí vrácených ve skutečnosti. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet `ICorDebugModule` skutečně vrácených instancí. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,5 +57,5 @@ HRESULT Next (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

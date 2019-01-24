@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: použití Monikeru služby s kontrakty Metadata Exchange'
+title: 'Postupy: Použití monikeru služby u kontraktů Metadata Exchange'
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: 6265860c2e1efb2f74a0243157a223a33889629a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7c05bb43b7811d4716a225142dd880886586783
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491247"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495092"
 ---
-# <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: použití Monikeru služby s kontrakty Metadata Exchange
-Po vývoj některé nové služby WCF, můžete rozhodnout, že chcete být schopni volání tyto služby ze skriptu nebo aplikace Visual Basic 6.0. Jedno z těchto metod bude generovat sestavení klienta WCF, registraci sestavení modelu COM, který nainstaluje sestavení v mezipaměti GAC a pak odkazovat typy modelu COM z kódu jazyka Visual Basic. Když distribuujete aplikace, budete muset distribuovat také sestavení klienta WCF. Uživatel pak bude mít k registraci sestavení klienta WCF u modelu COM a jeho následné uložení do mezipaměti GAC. Zprostředkovatel komunikace s objekty WCF COM také umožňuje provádět stejné volání služby bez nutnosti spoléhat se na sestavení klienta WCF. Monikeru služby WCF můžete volat libovolnou službu WCF z jakéhokoli jazyka kompatibilní COM (Visual Basic, VBScript, Visual Basic for Applications (VBA) a tak dále) tak, že zadáte exchange (Mex) koncový bod metadat identifikátor URI, který monikeru služby se používá k extrakci typu informace o službě. Toto téma popisuje, jak volat ukázku získávání spuštění WCF pomocí Přezdívka WCF, který určuje koncový bod Mex.  
+# <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>Postupy: Použití monikeru služby u kontraktů Metadata Exchange
+Po vývoj některé nové služby WCF, může rozhodnout, že chcete mít možnost volat tyto služby ze skriptu nebo aplikace v jazyce Visual Basic 6.0. Jednu metodu bude generovat sestavení klienta WCF, zaregistrovat sestavení s modelem COM, instalaci sestavení v GAC a pak odkazování na typy modelu COM z kódu jazyka Visual Basic. Pokud distribuujete aplikaci, budete muset distribuovat na klienta WCF sestavení. Uživatel pak muset zaregistrovat sestavení klienta WCF s modelem COM a jeho následné uložení do mezipaměti GAC. Komunikace s objekty COM WCF také umožňuje provádět stejné volání služby bez nutnosti spoléhat se na sestavení klienta WCF. Monikeru služby WCF umožňuje volat libovolnou službu WCF z jakéhokoli jazyka kompatibilního s modelu COM (Visual Basic, VBScript, Visual Basic for Applications (VBA) a tak dále) tak, že zadáte identifikátor URI, který používá monikeru služby k extrakci typů exchange (Mex) koncových bodů metadat informace o službě. Toto téma popisuje, jak volat získávání WCF spuštění ukázky použití monikeru služby WCF, který určuje koncový bod Mex.  
   
 > [!NOTE]
->  Ve skutečnosti instance typů front definovaných sestavením klienta WCF. Sestavení se používá pouze pro metadata.  
+>  Typy definované v sestavení klienta WCF se nikdy skutečně vytvořena instance. Sestavení se používá jenom pro metadata.  
   
-### <a name="using-the-service-moniker-with-a-mex-address"></a>Použití monikeru služby s adresou Mex  
+### <a name="using-the-service-moniker-with-a-mex-address"></a>Použití monikeru služby u adresa MEX.  
   
-1.  Sestavit ukázku Začínáme a aplikaci Internet Explorer a přejděte do jeho adresa URL (http://localhost/ServiceModelSamples/Service.svc) zajistit, že služba funguje.  
+1.  Ukázka Začínáme vytvářet a používat prohlížeč Internet Explorer a přejděte na její adresu URL (http://localhost/ServiceModelSamples/Service.svc) zajistit, služba funguje.  
   
-2.  Vytvořte skript jazyka Visual Basic nebo Visual Basic aplikaci, která obsahuje následující kód:  
+2.  Vytvořte skript jazyka Visual Basic nebo Visual Basic aplikací, který obsahuje následující kód:  
   
     ```  
     monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
@@ -34,11 +34,11 @@ Po vývoj některé nové služby WCF, můžete rozhodnout, že chcete být scho
 3.  Spuštění aplikace Visual Basic nebo skriptu.  
   
     > [!NOTE]
-    >  Služby, ke kterému se připojujete musí vystavit koncový bod Mex pro Přezdívka moct číst metadata ze služby. Další informace najdete v tématu [postupy: publikování metadat služby promocí konfigurační soubor](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
+    >  Na službu, kterou voláte musí vystavit koncový bod Mex pro moniker bude moct číst metadata ze služby. Další informace najdete v tématu [jak: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
     > [!NOTE]
-    >  Pokud Přezdívka je poškozený nebo pokud služba není dostupná, volání `GetObject` se vrátí chyba s oznámením "Neplatnou syntaxi."  Pokud se zobrazí tato chyba, ujistěte se, kterou používáte Přezdívka je správný a služba není k dispozici.  
+    >  Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatnou syntaxi."  Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Použití monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  
- [Postupy: Použití monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Použití Monikeru služby Windows Communication Foundation bez registrace](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)
+- [Postupy: Použití Monikeru služby u kontraktů WSDL](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
