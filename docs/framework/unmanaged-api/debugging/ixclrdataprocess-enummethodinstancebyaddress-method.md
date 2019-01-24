@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: b42939e8e64e75337478ace67a9a91c6a03a94e3
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 825cb8ea94bee980f9e10b90cddf04db32c1a33f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491906"
 ---
 # <a name="ixclrdataprocessenummethodinstancebyaddress-method"></a>IXCLRDataProcess::EnumMethodInstanceByAddress Method
 
@@ -54,7 +54,7 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 28 pozic
 **Knihovna:** Žádná   
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]   
  
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 - [CLRDataSourceType Enumeration](../../../../docs/framework/unmanaged-api/debugging/clrdatasourcetype-enumeration.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [IXCLRDataProcess Interface](../../../../docs/framework/unmanaged-api/debugging/ixclrdataprocess-interface.md)

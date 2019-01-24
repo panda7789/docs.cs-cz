@@ -2,91 +2,91 @@
 title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 6613d25cb87209116a7a49a4951953c9a83dfa4e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8dfb9c9a9f6a007e65dbf819d347f335a93d1749
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33507892"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573069"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
-Modul Snap-in konzoly MMC WS-AtomicTransaction Configuration slouží ke konfiguraci hodnot nastavení, WS-AtomicTransaction na místních i vzdálených počítačích.  
+Modul Snap-in konzoly MMC WS-AtomicTransaction konfigurace slouží ke konfiguraci část nastavení WS-AtomicTransaction na místních i vzdálených počítačích.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], modul snap-in konzoly MMC naleznete přechodem na **součást Tools panelech řízení služby nebo**, klikněte pravým tlačítkem na **Můj počítač**, a Výběr **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat služby MS DTC. Možnosti, které jsou k dispozici ke konfiguraci jsou seskupené v rámci **WS-AT** kartě.  
+ Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], modul snap-in konzoly MMC najdete tak, že přejdete na **ovládací panely/pro správu nástroje/Component Services /**, pravým tlačítkem myši **tento počítač**, a Výběr **vlastnosti**. Toto je na stejném umístění, kde můžete konfigurovat příkaz MSDTC. Možnosti pro konfiguraci k dispozici jsou seskupené podle **WS-AT** kartu.  
   
- Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], modul snap-in konzoly MMC naleznete kliknutím **spustit** tlačítko a zadáním příkazu v `dcomcnfg.exe` v **vyhledávání** pole. Po otevření konzoly MMC, přejděte na **Moje Computer\Distributed transakce Coordinator\Local DTC** uzel, klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici ke konfiguraci jsou seskupené v rámci **WS-AT** kartě.  
+ Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], modul snap-in konzoly MMC najdete po kliknutí **Start** tlačítko a zadejte text `dcomcnfg.exe` v **hledání** pole. Při otevření konzoly MMC, přejděte **Moje Computer\Distributed transakce Coordinator\Local DTC** uzel, klikněte pravým tlačítkem myši a vyberte **vlastnosti**. Možnosti pro konfiguraci k dispozici jsou seskupené podle **WS-AT** kartu.  
   
- Předchozí kroky jsou použitý ke spuštění modulu snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, byste měli vyhledat název vzdáleného počítače v **součást Tools panelech řízení služby nebo**a proveďte podobným způsobem, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], postupujte podle předchozích kroků pro Vista a [!INCLUDE[lserver](../../../includes/lserver-md.md)], ale použít **Distribuovaných transakcí Coordinator\Local** uzlu pod uzlem vzdáleného počítače.  
+ Spusťte modul snap-in pro konfiguraci místního počítače se používají v předchozích krocích. Pokud chcete konfigurovat vzdálený počítač, byste měli vyhledat název vzdáleného počítače v **ovládací panely/pro správu nástroje/Component Services /** a provedení podobných kroků, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], postupujte podle předchozích kroků pro Vista a [!INCLUDE[lserver](../../../includes/lserver-md.md)], ale použít **Distribuovaných transakcí Coordinator\Local** uzel pod uzlem vzdáleného počítače.  
   
- Chcete-li použít uživatelské rozhraní, poskytuje nástroje, budete muset zaregistrovat WsatUI.dll souboru, který se nachází v následující cestě,  
+ Použití uživatelského rozhraní pomocí nástroje, je nutné provést registraci WsatUI.dll soubor, který je umístěný v následující cestě,  
   
- **%ProgramFiles%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**  
+ **%PROGRAMFILES%\Microsoft SDKs\Windows\v6.0\Bin\WsatUI.dll**  
   
- Registrace lze provést pomocí následujícího příkazu.  
+ Registraci můžete provést pomocí následujícího příkazu.  
   
 ```Output  
 regasm.exe /codebase WsatUI.dll  
 ```  
   
- Tento nástroj můžete upravit nastavení základního WS-AtomicTransaction. Například můžete povolit a zakázat podpory protokolu WS-AtomicTransaction, nakonfigurovat porty HTTP pro WS-AT, vazby certifikátu SSL pro HTTP port, konfigurace certifikátů zadáním názvy předmětu certifikátu, vybrat režim trasování a nastavení výchozí a maximální počet časových limitů.  
+ Tento nástroj můžete použít k úpravě základního WS-AtomicTransaction nastavení. Například můžete povolit a zakázat podporu protokolu WS-AtomicTransaction, konfigurace portů HTTP pro WS-AT, vytvoření vazby certifikátu SSL na HTTP port, konfigurace certifikátů tak, že zadáte názvy předmětu certifikátů, vyberte režim trasování a nastavit výchozí a maximální časový limit.  
   
- Pokud nakonfigurujete musí podpory protokolu WS-AtomicTransaction pouze v místním počítači, můžete použít příkaz verze tohoto nástroje. Další informace o nástroji příkazového řádku najdete v tématu [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) tématu.  
+ Pokud podpora WS-AtomicTransaction musíte nakonfigurovat na místním počítači, můžete použít příkazový řádek verzi tohoto nástroje. Další informace o nástroj příkazového řádku, najdete v článku [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md) tématu.  
   
- Je třeba si uvědomit, že jak modul Snap-in konzoly MMC a nástroje příkazového řádku nepodporují nastavení WS-AT. Tato nastavení lze upravit pouze pomocí úpravy registru přímo. Další informace o těchto nastaveních registru najdete v tématu [konfigurace podpory WS-Atomic Transactions](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
+ Byste měli vědět, jak modul Snap-in konzoly MMC a nástroje příkazového řádku nepodporují všechna WS-AT nastavení konfigurace. Tato nastavení lze upravit pouze pomocí úpravy registru přímo. Další informace o těchto nastaveních registru najdete v tématu [konfigurace WS-Atomic podpora transakcí](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
   
-### <a name="user-interface-description"></a>Popis rozhraní uživatele  
+### <a name="user-interface-description"></a>Popis uživatelské rozhraní  
  **Povolit podporu sítě WS-Atomic Transactions**:  
   
- Přepnutím toto políčko povolí nebo zakáže všechny součásti grafické uživatelské rozhraní modulu snap-in.  
+ Při přepínání toto zaškrtávací políčko povolí nebo zakáže všechny součásti grafické uživatelské rozhraní modulu snap-in.  
   
- Předtím, než toto políčko zaškrtnete, měli byste si ověřit, povolení síťového přístupu s příchozí nebo odchozí komunikace, nebo obojí. Tuto hodnotu můžete ověřit v **zabezpečení** kartě modul snap-in služby MS DTC.  
+ Než toto políčko zaškrtnete, by se ujistěte, že je povolen přístup pomocí koordinátoru DTC sítě s příchozí nebo odchozí komunikace, nebo obojí. Tato hodnota se dá ověřit v **zabezpečení** kartu modulu snap-in služby MSDTC.  
   
-#### <a name="network-group-box"></a>Pole skupiny v síti  
- Ve skupině sítě můžete zadat HTTPS port a další bezpečnostní nastavení, jako například šifrování SSL. Tuto skupinu je zakázaná (šedě) Pokud není povoleno síťových transakcí koordinátoru DTC.  
+#### <a name="network-group-box"></a>Network Group Box  
+ Ve skupině sítě můžete zadat HTTPS port a nastavení dalšího ověření zabezpečení, jako je šifrování pomocí protokolu SSL. Tato skupina je zakázaný (šedě) Pokud transakcí koordinátoru DTC sítě nejsou povoleny.  
   
  **HTTPS Port**  
   
- Toto je hodnota portu HTTPS používá pro WS-AT. Hodnota musí být číslo v rozsahu 1 – 65 535 (představoval platný port). Změna HTTP Port upraví konfiguraci služby protokolu HTTP, to znamená, že vydání použitých adresu služby WS-AT a nová adresa služby WS-AT je zaregistrována na základě na nový port. Kromě toho nově vybraný port je šifrován aktuálně vybraný certifikát pro šifrování SSL.  
+ Jedná se o hodnotu protokol HTTPS port používaný pro WS-AT. Hodnota musí být číslo v rozsahu 1-65535 (jde o představovat platný port). Změnit HTTP Port upraví konfiguraci služby HTTP, to znamená, že dříve použitých WS-AT služby Adresa se uvolní a nová adresa služby WS-AT zaregistrován v závislosti na nový port. Kromě toho nově vybraný port se šifrují pomocí aktuálně vybraného certifikátu pro šifrování SSL.  
   
 > [!NOTE]
->  Pokud jste povolili již bránu firewall před spuštěním tohoto nástroje, port se automaticky registruje v seznamu výjimek. Pokud brána firewall je zakázáno před spuštěním tohoto nástroje, žádné další je nakonfigurován týkající se brány firewall.  
+>  Pokud brána firewall povolíte už před spuštěním tohoto nástroje, port, který se automaticky registruje v seznamu výjimek. Pokud brána firewall je zakázaná před spuštěním tohoto nástroje, další není nic nakonfigurované týkající se brány firewall.  
   
- Pokud povolíte bránu firewall po dokončení konfigurace služby WS-AT, je nutné spustit tento nástroj znovu a zadejte číslo portu pomocí tohoto parametru. Pokud zakážete po dokončení konfigurace brány firewall, WS-AT i nadále fungovat bez další vstup.  
+ Pokud po nakonfigurování WS-AT povolíte bránu firewall, musíte tento nástroj znovu spustit a zadat číslo portu, který pomocí tohoto parametru. Pokud zakážete po dokončení konfigurace brány firewall, WS-AT i nadále fungovat bez další vstupy.  
   
  **Certifikát koncového bodu**  
   
- Kliknutím **vyberte** tlačítko zobrazí seznam aktuálně k dispozici certifikáty v místním počítači, které uživateli umožňují vyberte certifikát, který lze použít pro šifrování SSL. Certifikáty, musí mít privátní klíč. Jinak obdržíte chybovou zprávu.  
+ Kliknutím **vyberte** tlačítko zobrazuje seznam aktuálně dostupných certifikátů na místním počítači, které uživateli umožňují vybrat certifikát, který lze použít pro šifrování SSL. Certifikáty musí mít privátní klíč. V opačném případě se zobrazí chybová zpráva.  
   
 > [!NOTE]
->  Když nastavíte certifikát protokolu SSL pro vybraný port, můžete přepsat původní certifikát SSL přidružený tento port, pokud existuje.  
+>  Při nastavení certifikátu SSL pro vybraný port přepsat původní certifikát SSL přidružený tento port, pokud existuje.  
   
  **Autorizovaných účtů**  
   
- Kliknutím **vyberte** tlačítko vyvolá editor seznamu řízení přístupu Windows, kde můžete určit uživatele nebo skupinu, které mohou být zahrnuty v WS-Atomic transakce kontrolou **povolit** nebo **Odepřít** pole **účast** skupině oprávnění.  
+ Kliknutím **vyberte** tlačítko vyvolá editor seznamu řízení přístupu pro Windows, kde můžete určit uživatele nebo skupiny, které se mohou účastnit v WS-Atomic transactions kontrolou **povolit** nebo **Odepřít** pole **účast** oprávnění skupiny.  
   
- **Autorizovaný certifikáty**  
+ **Autorizované certifikáty**  
   
- Kliknutím **vyberte** tlačítko zobrazí seznam aktuálně dostupných certifikátů na LocalMachine. Pak můžete vybrat, která certifikát identity jsou povoleny zapojit se do protokolu WS-Atomic transakce.  
+ Kliknutím **vyberte** tlačítku zobrazí seznam certifikátů, aktuálně k dispozici na mém. Pak můžete vybrat, které certifikát identity můžou účastnit WS-Atomic transactions.  
   
 #### <a name="timeout-group-box"></a>Časový limit skupinový rámeček  
- **Časový limit** skupinový rámeček umožňuje zadat výchozí a maximální časový limit pro WS-Atomic Transactions. Platná hodnota pro odchozí časový limit je mezi 1 a 3600. Platná hodnota pro příchozí časový limit je mezi 0 a 3600.  
+ **Vypršení časového limitu** skupinový rámeček umožňuje určit výchozí a maximální časový limit pro WS-Atomic Transactions. Platná hodnota pro odchozí časový limit je mezi 1 a 3600. Platná hodnota pro příchozí časový limit je mezi 0 a 3600.  
   
 #### <a name="tracing-and-logging-group-box"></a>Trasování a protokolování skupinový rámeček  
  **Trasování a protokolování** skupiny pole umožňuje nakonfigurovat požadované trasování a úroveň protokolování.  
   
- Kliknutím **možnosti** tlačítko vyvolá stránky, kde můžete určit další nastavení.  
+ Kliknutím **možnosti** tlačítko vyvolá stránku, kde můžete určit další nastavení.  
   
- **Úroveň trasování** kombinace pole umožňuje výběr z jakékoli platná hodnota <xref:System.Diagnostics.TraceLevel> výčtu. Zaškrtávací políčka můžete také použít k určení, zda chcete provést trasování aktivit, rozšíření aktivity nebo shromažďovat osobní identifikovatelné údaje.  
+ **Úroveň trasování** kombinace pole umožňuje výběr z jakékoli platné hodnoty <xref:System.Diagnostics.TraceLevel> výčtu. Zaškrtávací políčka můžete také použít k určení, zda chcete provést trasování činnosti, šíření aktivity nebo shromažďovat osobní údaje.  
   
- Můžete také zadat protokolování relací v **protokolování relace** skupinový rámeček.  
+ Můžete také určit relace protokolování **protokolování relace** skupinovém rámečku.  
   
 > [!NOTE]
->  Pokud jiný příjemce trasování používá zprostředkovatel trasování WS-AT, nelze vytvořit novou relaci protokolování pro trasování událostí. Pokusy o konfiguraci protokolování během této doby výsledků v chybové zprávě "se nepodařilo povolit zprostředkovatele. Kód chyby: 1".  
+>  Jestli používáte jiný příjemce trasování je zprostředkovatel trasování WS-AT, nelze vytvořit novou relaci protokolování pro trasování událostí. Jakýkoliv pokus o konfiguraci protokolování během této doby výsledkem chybová zpráva "Nepodařilo se povolit poskytovatele. Kód chyby: 1".  
   
- Další informace o trasování a protokolování najdete v tématu [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
+ Další informace o trasování a protokolování, najdete v části [Správa a Diagnostika](../../../docs/framework/wcf/diagnostics/index.md).  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace podpory protokolu WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)  
- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
- [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace podpory protokolu WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)
+- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [Správa a diagnostika](../../../docs/framework/wcf/diagnostics/index.md)

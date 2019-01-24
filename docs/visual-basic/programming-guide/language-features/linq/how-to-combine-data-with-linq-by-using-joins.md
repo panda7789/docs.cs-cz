@@ -9,12 +9,12 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: 4db5d288d79379b677bb19b2eba0d094e0d71bc8
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fd1025d056dfb11d2253a39defb384c1d05efa32
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44177802"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553695"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
 Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit obsah více kolekcí založených na společné hodnoty mezi kolekcí dotazů. Tyto hodnoty jsou označovány jako *klíč* hodnoty. Rozpozná vývojářům dobře známé koncepty relační databáze `Join` klauzule jako INNER JOIN a `Group Join` klauzule jako efektivní, LEFT OUTER JOIN.  
@@ -79,12 +79,12 @@ Visual Basic poskytuje `Join` a `Group Join` klauzulí vám umožní sloučit ob
   
 2.  Stisknutím klávesy F5 pro spuštění příkladů.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)  
- [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)  
- [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
- [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)
+- [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)
+- [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
+- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
+- [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)

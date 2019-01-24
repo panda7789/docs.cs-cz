@@ -7,12 +7,12 @@ helpviewer_keywords:
 - security [Windows Forms], calling APIs
 - Clipboard [Windows Forms], securing access
 ms.assetid: 15abda8b-0527-47c7-aedb-77ab595f2bf1
-ms.openlocfilehash: 0dc0ddaa1f64b75c0b4ccc1f5e73638576ea3da2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2d7f5bfc1532775d092fbee1ef9cdc3c7ed5efc6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523479"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496654"
 ---
 # <a name="additional-security-considerations-in-windows-forms"></a>Dodatečné informace o zabezpečení ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] nastavení zabezpečení může způsobit, že aplikace na spouštění v prostředí částečným vztahem důvěryhodnosti než jinak než v místním počítači. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Omezuje přístup k takové kritické místním prostředkům jako systém souborů, síťové a nespravované rozhraní API, mimo jiné. Nastavení zabezpečení ovlivňuje možnost volat rozhraní API systému Win32 Microsoftu nebo jiných rozhraní API, který nelze ověřit pomocí zabezpečení systému. Zabezpečení má vliv také na dalších aspektů vaší aplikace, včetně přístupu k souborům a dat a tisku. Další informace o přístupu k souborům a data v částečně důvěryhodném prostředí, najdete v části [další soubor zabezpečení a přístup k datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md). Další informace o tisku v prostředí částečné důvěryhodnosti, naleznete v tématu [další zabezpečení tisku ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md).  
@@ -86,11 +86,11 @@ ms.locfileid: "43523479"
   
  Pokud aplikace nemá oprávnění volat nespravovaný kód, vaše aplikace musí požádat o <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> oprávnění, nebo musíte zvážit alternativní způsoby implementace funkce; v mnoha případech Windows Forms poskytuje spravované alternativy k rozhraní API systému Win32 funkce. Pokud žádná alternativa znamená, že existují a aplikace musí přístup k nespravovanému kódu, budete muset zvýšení oprávnění pro aplikaci.  
   
- Oprávnění pro volání nespravovaného kódu umožňuje aplikaci provést nejvíce cokoli. Proto by měl oprávnění pro volání nespravovaného kódu udělena pouze pro aplikace, které pocházejí z důvěryhodného zdroje. V závislosti na aplikaci, může také část funkčnost aplikace, která provádí volání nespravovaného kódu být, volitelné, nebo není povolen v úplném vztahu důvěryhodnosti pouze prostředí. Další informace o nebezpečná oprávnění najdete v tématu [Správa nebezpečných oprávnění a zásad](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md). Další informace o zvyšování oprávnění najdete v tématu [NIB: Obecné Správa zásad zabezpečení](https://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b).  
+ Oprávnění pro volání nespravovaného kódu umožňuje aplikaci provést nejvíce cokoli. Proto by měl oprávnění pro volání nespravovaného kódu udělena pouze pro aplikace, které pocházejí z důvěryhodného zdroje. V závislosti na aplikaci, může také část funkčnost aplikace, která provádí volání nespravovaného kódu být, volitelné, nebo není povolen v úplném vztahu důvěryhodnosti pouze prostředí. Další informace o nebezpečná oprávnění najdete v tématu [Správa nebezpečných oprávnění a zásad](../../../docs/framework/misc/dangerous-permissions-and-policy-administration.md). Další informace o zvyšování oprávnění najdete v tématu [NIB: Správa zásad zabezpečení Obecné](https://msdn.microsoft.com/library/5121fe35-f0e3-402c-94ab-4f35b0a87b4b).  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečenější přístup k souborům a datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)  
- [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)  
- [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)  
- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)  
- [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečenější přístup k souborům a datům ve Windows Forms](../../../docs/framework/winforms/more-secure-file-and-data-access-in-windows-forms.md)
+- [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)
+- [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)
+- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)
+- [Zabezpečování aplikací ClickOnce](/visualstudio/deployment/securing-clickonce-applications)

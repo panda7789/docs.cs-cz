@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8f8c2c90-f15d-400e-87e7-a757e4f04d0e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6447593ba81e4512afaf2b5798fcec00b755e63c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9b210ea2126058d38c2586c5bdd0d94af2abab30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184773"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529814"
 ---
 # <a name="assembly-names"></a>Názvy sestavení
 Název sestavení je uložená v metadatech a má významný dopad na rozsah sestavení a používat aplikace. Sestavení se silným názvem je plně kvalifikovaný název, který obsahuje název sestavení, jazykové verze, veřejného klíče a číslo verze. To se často označuje jako zobrazovaný název a pro načtená sestavení lze získat pomocí <xref:System.Reflection.Assembly.FullName%2A> vlastnost.  
@@ -57,10 +57,10 @@ System.data, version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e08
 > [!NOTE]
 >  Když vložíte sestavení se silným názvem do globální mezipaměti sestavení, název souboru sestavení musí odpovídat názvu sestavení (nezahrnuje příponu názvu souboru, jako je například .exe nebo .dll). Například pokud je název souboru sestavení myAssembly.dll, musí být název sestavení myAssembly. Soukromá sestavení, které jsou nasazeny pouze v kořenovém adresáři aplikace může mít název sestavení, které se liší od názvu souboru.  
   
-## <a name="see-also"></a>Viz také  
-- [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
-- [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
-- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)  
-- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
-- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+## <a name="see-also"></a>Viz také:
+- [Postupy: Určení plně kvalifikovaného názvu sestavení](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)
+- [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)
+- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
+- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)

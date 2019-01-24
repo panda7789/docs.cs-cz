@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
-ms.openlocfilehash: cfc77ff3b030ffebf52feab0190f81fc4e581cf9
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: ccf730eb85024687285200db8f978291986dcc18
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847877"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543458"
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Provádění dávkových operací pomocí adaptérů dat
 Umožňuje podporu služby batch v ADO.NET <xref:System.Data.Common.DataAdapter> pro operace INSERT, UPDATE a DELETE ze skupin <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable> na server, místo abyste odesílali jednu operaci najednou. Snížení počet zpátečních cest k serveru se obvykle vytváří nárůstu výkonu. Pro zprostředkovatele dat .NET pro SQL Server jsou podporovány dávkové aktualizace (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  
@@ -126,7 +126,7 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
 ```  
   
 ## <a name="handling-batch-update-related-events-and-errors"></a>Zpracování dávkové aktualizace související události a chyby  
- **DataAdapter** má dvě události související s aktualizace: **RowUpdating** a **RowUpdated**. V předchozích verzích technologie ADO.NET Pokud dávkové zpracování je zakázané, každá z těchto událostí se vygeneruje jednou pro každý řádek zpracování. **RowUpdating** je generovaná, než dojde k aktualizaci, a **RowUpdated** se vygeneruje po dokončení aktualizace databáze.  
+ **DataAdapter** má dvě aktualizace související události: **RowUpdating** a **RowUpdated**. V předchozích verzích technologie ADO.NET Pokud dávkové zpracování je zakázané, každá z těchto událostí se vygeneruje jednou pro každý řádek zpracování. **RowUpdating** je generovaná, než dojde k aktualizaci, a **RowUpdated** se vygeneruje po dokončení aktualizace databáze.  
   
 ### <a name="event-behavior-changes-with-batch-updates"></a>Událost změny chování s aktualizacemi služby Batch  
  Pokud je povoleno dávkové zpracování, více řádků se aktualizují v rámci operace izolované databáze. Proto pouze jeden `RowUpdated` dojde k události pro jednotlivé dávky, zatímco `RowUpdating` pro každý řádek zpracování dojde k události. Při zpracování dávky je zakázaná, jsou vyvolávány dvě události s 1: 1 prokládání, pokud jeden `RowUpdating` událost a jedna `RowUpdated` fire události pro řádek a potom na jeden `RowUpdating` a jeden `RowUpdated` fire události pro další řádek, dokud se všechny řádky jsou zpracovávány.  
@@ -141,8 +141,8 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
   
  Zprostředkovatel dat a serveru back-end databáze určují, které konstrukce SQL jsou podporovány pro spuštění dávky. Pokud příkazu není podporováno se odešle ke spuštění může být vyvolána výjimka.  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
- [Zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
+- [Zpracování událostí adaptéru dat](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: Směrovací služba
 ms.date: 03/30/2017
 ms.assetid: ca7c216a-5141-4132-8193-102c181d2eba
-ms.openlocfilehash: 139607614934aedbad9f76172b8e31fb02394d80
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b0d58e70d482532e3f148d3f4f92741f46221982
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522167"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495302"
 ---
 # <a name="routing-service"></a>Směrovací služba
 Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje jako směrovač zprávy. Základní funkce služby směrování je schopnost trasy zpráv na základě obsahu zprávy, což umožní zprávy mají být předány koncový bod klienta na základě hodnoty v rámci samotné, zprávy v záhlaví nebo textu zprávy.  
@@ -62,7 +62,7 @@ Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje
  Pomocí směrování na základě obsahu, můžete zveřejnit jeden koncový bod, který přijímá zprávy z externích klientských aplikací a potom na příslušný interní koncový bod na základě hodnoty v něm přesměruje každou zprávu. To je užitečné nabízet jeden konkrétní koncový bod pro různé back endové aplikace a také k dispozici jeden koncový bod aplikace pro zákazníky, při které budou zohledňovat aplikace do celé řady služeb.  
   
 ### <a name="service-versioning"></a>Verze služby  
- Při migraci na novou verzi vašeho řešení, bude pravděpodobně nutné udržovat stará verze souběžně s existující zákazníků. Často vyžaduje, aby klienti připojení k novější verzi, musíte použít jinou adresu při komunikaci s řešením. Směrovací služba umožňuje vystavit jeden koncový bod služby, který slouží obě verze vašeho řešení pomocí směrování zpráv do příslušné řešení založené na konkrétní verzi informace obsažené ve zprávě. Příklad takové implementace naleznete v tématu [postupy: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  
+ Při migraci na novou verzi vašeho řešení, bude pravděpodobně nutné udržovat stará verze souběžně s existující zákazníků. Často vyžaduje, aby klienti připojení k novější verzi, musíte použít jinou adresu při komunikaci s řešením. Směrovací služba umožňuje vystavit jeden koncový bod služby, který slouží obě verze vašeho řešení pomocí směrování zpráv do příslušné řešení založené na konkrétní verzi informace obsažené ve zprávě. Příklad takové implementace naleznete v tématu [How To: Správa verzí služby](../../../../docs/framework/wcf/feature-details/how-to-service-versioning.md).  
   
 ### <a name="priority-routing"></a>Priorita směrování  
  Při poskytování služeb pro víc klientů, které máte uzavřeny smlouvy o úrovni služeb (SLA) s někteří partneři, které vyžaduje všechna data od těchto partnerů se zpracovávají odděleně od jiných klientů. Když použijete filtr, který hledá zákaznické informace obsažené ve zprávě, snadno zprávy budete směrovat od partnerů pro konkrétní do koncového bodu, která byla vytvořená za účelem vyhovuje jejich požadavkům na smlouvu SLA.  
@@ -105,7 +105,7 @@ Směrovací služba je obecný zprostředkovatele protokolu SOAP, která funguje
   
 -   Dynamickou konfiguraci  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
- [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)
+- [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)
+- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 930653a6-95d2-4697-9d5a-52d11bb6fd4c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09f2886173bd3a80691b78a6e3ea71b034ebe34a
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 0b191a01995b7c36d733b225672a3d79f488a276
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030396"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531418"
 ---
 # <a name="regular-expression-language---quick-reference"></a>Jazyk regulárních výrazů – stručná referenční dokumentace
 <a name="top"></a> Regulární výraz je vzor, který modul regulárních výrazů pokusí shodovat se vstupním textem. Vzor sestává z jednoho nebo více znakových literálů, operátorů nebo konstrukcí.  Stručný úvod naleznete zde [regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md).  
@@ -75,7 +75,7 @@ ms.locfileid: "54030396"
 |`[` *character_group* `]`|Odpovídá jakémukoli jednomu znaku v *character_group*. Ve výchozím nastavení shoda rozlišuje velká a malá písmena.|`[ae]`|"a" ve slově "gray"<br /><br /> "a", "e" ve slově "lane"|  
 |`[^` *character_group* `]`|Negace: Odpovídá jakémukoli jednomu znaku, který není součástí *character_group*. Ve výchozím nastavení, znaky v *character_group* jsou malá a velká písmena.|`[^aei]`|"r", "g", "n" ve slově "reign"|  
 |`[` *první* `-` *poslední* `]`|Rozsah znaků: Odpovídá jakémukoli jednomu znaku v rozsahu od *první* k *poslední*.|`[A-Z]`|"A", "B" ve výrazu "AB123"|  
-|`.`|Zástupný znak: Odpovídá jakémukoli jednomu znaku s výjimkou \n.<br /><br /> Tak, aby odpovídaly literální znak tečky (. nebo `\u002E`), je nutné před řídicí znak (`\.`).|`a.e`|"ave" ve slově "nave"<br /><br /> "ate" ve slově "water"|  
+|`.`|Wildcard: Odpovídá jakémukoli jednomu znaku s výjimkou \n.<br /><br /> Tak, aby odpovídaly literální znak tečky (. nebo `\u002E`), je nutné před řídicí znak (`\.`).|`a.e`|"ave" ve slově "nave"<br /><br /> "ate" ve slově "water"|  
 |`\p{` *Jméno* `}`|Odpovídá jakémukoli jednomu znaku v obecné kategorii Unicode nebo pojmenovanému bloku určenému pomocí *název*.|`\p{Lu}`<br /><br /> `\p{IsCyrillic}`|"C", "L" ve výrazu "City Lights"<br /><br /> "Д", "Ж" ve slově "ДЖem"|  
 |`\P{` *Jméno* `}`|Odpovídá jakémukoli jednomu znaku, který není v obecné kategorii Unicode nebo pojmenovanému bloku určenému pomocí *název*.|`\P{Lu}`<br /><br /> `\P{IsCyrillic}`|"i", "t", "y" ve slově "City"<br /><br /> "e", "m" ve slově "ДЖem"|  
 |`\w`|Odpovídá jakémukoli znaku slova.|`\w`|"I", "D", "A", "1", "3" ve výrazu "ID A1.3"|  
@@ -131,14 +131,14 @@ ms.locfileid: "54030396"
 |`*`|Porovná předchozí prvek nulakrát nebo vícekrát.|`\d*\.\d`|".0", "19.9", "219.9"|  
 |`+`|Porovná předchozí prvek jednou nebo vícekrát.|`"be+"`|"bee" ve slově "been", "be" ve slově "bent"|  
 |`?`|Porovná předchozí prvek nulakrát nebo jedenkrát.|`"rai?n"`|"ran", "rain"|  
-|`{` *N* `}`|Porovná předchozí prvek přesně *n* časy.|`",\d{3}"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
-|`{` *N* `,}`|Porovná předchozí prvek nejméně *n* časy.|`"\d{2,}"`|"166", "29", "1930"|  
+|`{` *n* `}`|Porovná předchozí prvek přesně *n* časy.|`",\d{3}"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
+|`{` *n* `,}`|Porovná předchozí prvek nejméně *n* časy.|`"\d{2,}"`|"166", "29", "1930"|  
 |`{` *n* `,` *m* `}`|Porovná předchozí prvek nejméně *n* krát, ale ne víc než *m* časy.|`"\d{3,5}"`|"166", "17668"<br /><br /> "19302" ve výrazu "193024"|  
 |`*?`|Porovná předchozí prvek nulakrát nebo vícekrát, ale s co nejmenším možným počtem opakování.|`\d*?\.\d`|".0", "19.9", "219.9"|  
 |`+?`|Porovná předchozí prvek jednou nebo vícekrát, ale s co nejmenším možným počtem opakování.|`"be+?"`|"be" ve slově "been", "be" ve slově "bent"|  
 |`??`|Porovná předchozí prvek nulakrát nebo jedenkrát, ale s co nejmenším možným počtem opakování.|`"rai??n"`|"ran", "rain"|  
-|`{` *N* `}?`|Porovná předcházející prvek přesně *n* časy.|`",\d{3}?"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
-|`{` *N* `,}?`|Porovná předchozí prvek nejméně *n* krát, ale jako nejmenším možným počtem opakování.|`"\d{2,}?"`|"166", "29", "1930"|  
+|`{` *n* `}?`|Porovná předcházející prvek přesně *n* časy.|`",\d{3}?"`|",043" ve výrazu "1,043.6", ",876", ",543" a ",210" ve výrazu "9,876,543,210"|  
+|`{` *n* `,}?`|Porovná předchozí prvek nejméně *n* krát, ale jako nejmenším možným počtem opakování.|`"\d{2,}?"`|"166", "29", "1930"|  
 |`{` *n* `,` *m* `}?`|Porovná předchozí prvek mezi *n* a *m* krát, ale jako nejmenším možným počtem opakování.|`"\d{3,5}?"`|"166", "17668"<br /><br /> "193", "024" ve výrazu "193024"|  
   
  [Zpět na začátek](#top)  
@@ -217,10 +217,10 @@ ms.locfileid: "54030396"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
-- <xref:System.Text.RegularExpressions.Regex>  
-- [Regulární výrazy](regular-expressions.md)  
-- [Třídy regulárních výrazů](the-regular-expression-object-model.md)  
-- [Příklady regulárních výrazů](regular-expression-examples.md)  
-- [Regulárních výrazů – Stručná referenční příručka (ke stažení ve Wordovém formátu)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
+- <xref:System.Text.RegularExpressions?displayProperty=nameWithType>
+- <xref:System.Text.RegularExpressions.Regex>
+- [Regulární výrazy](regular-expressions.md)
+- [Třídy regulárních výrazů](the-regular-expression-object-model.md)
+- [Příklady regulárních výrazů](regular-expression-examples.md)
+- [Regulárních výrazů – Stručná referenční příručka (ke stažení ve Wordovém formátu)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)
 - [Regulárních výrazů – Stručná referenční příručka (ke stažení ve formátu PDF)](https://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

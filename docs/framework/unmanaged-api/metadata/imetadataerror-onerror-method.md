@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1ed9e097dccd0fcb81ea9023cc9b84906589ccb0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ebb7fdbcf8c17991928df2dc621ec651b9cd4f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446255"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678717"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError – metoda
-Poskytuje oznámení chyb, ke kterým došlo během metadat sloučení.  
+Poskytuje oznámení chyb, k nimž došlo při sloučení metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT OnError (
   
 #### <a name="parameters"></a>Parametry  
  `hrError`  
- [v] Hodnota chyby HRESULT vrácená volání metody.  
+ [in] Vrátila hodnota HRESULT chyby pro volání metody.  
   
  `token`  
- [v] Token metadata objektu kód, který slučování když došlo k chybě.  
+ [in] Token metadat objektu kód, který byl slučovány, kdy došlo k chybě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataError – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataError – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)

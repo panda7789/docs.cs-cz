@@ -2,12 +2,12 @@
 title: Volání služby typu REST ze služby WCF
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: be9f15d35ec00ba91a06abf5a0a413b59452270b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: df57433b01df9faf49eada8189ba8864fe7a9093
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184234"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596784"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>Volání služby typu REST ze služby WCF
 Při volání služby typu REST – vizuální styl od pravidelných služby WCF (založený na protokolu SOAP), přepíše kontext operace na metodu služby (který obsahuje informace o příchozího požadavku) kontext, který by měly být používány odchozí požadavek. To způsobí, že požadavky HTTP GET, chcete-li změnit na požadavky HTTP POST. Chcete-li vynutit služby WCF ve správném kontextu použít pro volání služby REST – vizuální styl, vytvořte nový <xref:System.ServiceModel.OperationContextScope> a volání služby REST – vizuální styl od uvnitř oboru kontextu operace. Toto téma popisuje, jak vytvořit jednoduchý příklad, který znázorňuje tento postup.  
@@ -233,6 +233,6 @@ public class CallingRESTSample
 }
 ```
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vytvoření základní webové služby HTTP WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vytvoření základní webové HTTP služby WCF](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)
+- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)

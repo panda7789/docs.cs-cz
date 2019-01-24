@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a7ef478fed697f4152a6348931ddf3b4b4b2885
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c33f287cf7ccadeb75ba0bbccf9118aeedc1f942
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415006"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607429"
 ---
 # <a name="icordebugmanagedcallbacknamechange-method"></a>ICorDebugManagedCallback::NameChange – metoda
-Upozorní ladicí program, že došlo ke změně názvu domény aplikace nebo vlákna.  
+Upozorní ladicího programu, že došlo ke změně názvu domény aplikace nebo vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT NameChange (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který reprezentuje doméně aplikace, která buď měl změnu názvu nebo který obsahuje vláken, která měla změnit název.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který měl buď změnit název nebo, který obsahuje vlákna, která měla změnit název.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vláken, která měla změnit název.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které měly změnu názvu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -52,5 +52,5 @@ HRESULT NameChange (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

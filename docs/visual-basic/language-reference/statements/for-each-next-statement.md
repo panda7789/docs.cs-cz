@@ -22,15 +22,15 @@ helpviewer_keywords:
 - Exit statement [Visual Basic], For Each...Next statements
 - iteration
 ms.assetid: ebce3120-95c3-42b1-b70b-fa7da40c75e2
-ms.openlocfilehash: ec7e5196bcb939631f4bf426f2e94cddc0c88a9a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a44aff8407a29ef7f3712e116301cfce0aa984ea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33605378"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700426"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
-Opakuje skupinu příkazů pro jednotlivé elementy v kolekci.  
+Opakuje skupinu příkazů pro každý prvek v kolekci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,103 +48,103 @@ Next [ element ]
   
 |Termín|Definice|  
 |---|---|  
-|`element`|V požadované `For Each` příkaz. Volitelné v `Next` příkaz. Proměnná. Použít k iteraci v rámci prvků kolekce.|  
-|`datatype`|Požadováno pokud `element` již není deklarovaný. Datový typ `element`.|  
-|`group`|Požadováno. Proměnná s typem, který je typu kolekce nebo objekt. Odkazuje na kolekci, za které `statements` k opakování.|  
-|`statements`|Volitelné. Jeden nebo více příkazů mezi `For Each` a `Next` , spusťte na každou položku v `group`.|  
-|`Continue For`|Volitelné. Přenosy ovládacího prvku na spuštění `For Each` smyčky.|  
-|`Exit For`|Volitelné. Přenosy ovládacího prvku mimo `For Each` smyčky.|  
-|`Next`|Požadováno. Ukončí definice `For Each` smyčky.|  
+|`element`|Vyžaduje `For Each` příkazu. Volitelné v `Next` příkazu. Proměnná. Použít k iteraci prvků kolekce.|  
+|`datatype`|Požadováno pokud `element` již není deklarován. Datový typ `element`.|  
+|`group`|Povinný parametr. Proměnná typu, který je typ kolekce nebo objekt. Odkazuje na kolekci, nad niž `statements` se bude opakovat.|  
+|`statements`|Volitelné. Jeden nebo více příkazů mezi `For Each` a `Next` , která spustí pro každou položku v `group`.|  
+|`Continue For`|Volitelné. Přenese ovládací prvek na začátku `For Each` smyčky.|  
+|`Exit For`|Volitelné. Přenese ovládací prvek z celkového počtu `For Each` smyčky.|  
+|`Next`|Povinný parametr. Ukončí definici `For Each` smyčky.|  
   
 ## <a name="simple-example"></a>Jednoduchý příklad  
- Použití `For Each`... `Next` cykly, pokud chcete sadu příkazů opakujte pro každý prvek kolekce nebo pole.  
+ Použití `For Each`... `Next` smyčky, pokud má být opakován sadu příkazů pro každý prvek kolekce nebo pole.  
   
 > [!TIP]
->  A [pro... Další příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md) dobře funguje při každé iteraci smyčky přidružit řídicí proměnná a určit hodnoty počáteční a finální tuto proměnnou. Ale když pracujete s kolekcí, koncept počáteční a finální hodnoty není smysluplný a neznáte nutně kolik elementů v kolekci nachází. V tento druh případě `For Each`... `Next` smyčka je často lepší volbou.  
+>  A [pro... Další příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md) dobře funguje i při každé iteraci smyčky přidružit řídicí proměnná a určit tuto proměnnou počáteční a konečné hodnoty. Ale při jednání s kolekcí koncept počáteční a konečné hodnoty není smysluplné a neznáte nutně počet prvků kolekci. V takovémto případě `For Each`... `Next` smyčky je často vhodnější použít.  
   
- V následujícím příkladu `For Each`...`Next` příkaz iteruje všechny elementy kolekce seznamu.  
+ V následujícím příkladu `For Each`...`Next` příkaz Iteruje přes všechny prvky ze seznamu kolekce.  
   
  [!code-vb[VbVbalrStatements#121](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_1.vb)]  
   
  Další příklady najdete v tématu [kolekce](../../../standard/collections/index.md) a [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="nested-loops"></a>Vnořené smyčky  
- Lze vnořit `For Each` smyčky umístěním jednoho smyčky v rámci jiného.  
+ Je možné vnořovat `For Each` smyčky vložením v jednom průchodu v rámci jiného.  
   
  Následující příklad ukazuje vnořené `For Each`...`Next` struktury.  
   
  [!code-vb[VbVbalrStatements#122](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_2.vb)]  
   
- Pokud je vnořovat smyčky, každou smyčku musí mít jedinečnou `element` proměnné.  
+ Pokud byste vnořit smyčky, každé smyčce musí mít jedinečný `element` proměnné.  
   
- Můžete také vnořovat různé druhy řídicí struktury v rámci navzájem. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ Lze také vnořit různé druhy řídicích struktur v sobě navzájem. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 ## <a name="exit-for-and-continue-for"></a>Pro ukončení a pokračovat pro  
- [Ukončení pro](../../../visual-basic/language-reference/statements/exit-statement.md) příkaz způsobuje provádění ukončíte `For`...`Next` smyčky a přenosy ovládacího prvku do příkazu, který odpovídá `Next` příkaz.  
+ [Ukončení pro](../../../visual-basic/language-reference/statements/exit-statement.md) příkaz způsobí spuštění do ukončení `For`...`Next` řízení smyčky a přenosy příkazu, který následuje `Next` příkazu.  
   
- `Continue For` Řízení příkaz okamžitě přenese do další iterace smyčky. Další informace najdete v tématu [pokračovat příkaz](../../../visual-basic/language-reference/statements/continue-statement.md).  
+ `Continue For` Ovládací prvek příkaz okamžitě přenese na další iteraci smyčky. Další informace najdete v tématu [pokračovat příkaz](../../../visual-basic/language-reference/statements/continue-statement.md).  
   
- Následující příklad ukazuje, jak používat `Continue For` a `Exit For` příkazy.  
+ Následující příklad ukazuje způsob použití `Continue For` a `Exit For` příkazy.  
   
  [!code-vb[VbVbalrStatements#123](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_3.vb)]  
   
- Můžete použít a zadat libovolný počet `Exit For` příkazy v `For Each` smyčky. Při použití uvnitř vnořené `For Each` smyčky, `Exit For` způsobí, že provádění ukončíte nejvnitřnější smyčky a přenosy ovládacího prvku na další vyšší úroveň vnoření.  
+ Můžete vložit libovolný počet `Exit For` příkazů v `For Each` smyčky. Při použití v rámci vnořené `For Each` smyčky, `Exit For` způsobí spuštění do ukončení vnitřní smyčky a přenosy ovládacího prvku na další vyšší úroveň vnoření.  
   
- `Exit For` se často používá po vyhodnocení některé podmínky, například v `If`... `Then`... `Else` struktura. Můžete chtít použít `Exit For` byly splněny následující podmínky:  
+ `Exit For` často se používá po vyhodnocení některé podmínky, třeba v `If`... `Then`... `Else` struktury. Můžete chtít použít `Exit For` byly splněny následující podmínky:  
   
--   Pokračovat v procházení je zbytečné nebo dokonce znemožňují. Příčinou může být chybná hodnota nebo žádost o ukončení.  
+-   Pokračování k iteraci je zbytečné nebo nemožné. Příčinou může být chybná hodnota nebo žádost o ukončení.  
   
 -   Výjimka zachycena v `Try`... `Catch`... `Finally`. Můžete použít `Exit For` na konci `Finally` bloku.  
   
--   Zde nekonečnou smyčku, což je smyčku, který by mohl spustit velký, nebo i nekonečné stanovený počet. Pokud zjistíte takové podmínky, můžete použít `Exit For` abyste se vyhnuli smyčky. Další informace najdete v tématu [provést... Cykly příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+-   Zde nekonečné smyčky, což je smyčku, která může běžet velká, nebo dokonce neomezený počet pokusů. Pokud zjistíte takové podmínky, můžete použít `Exit For` dostala mimo smyčku. Další informace najdete v tématu [udělat... Smyčky příkaz](../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
 ## <a name="iterators"></a>Iterátory  
- Můžete použít *iterator* k provedení vlastní iteraci přes kolekci. Iterace může být funkce nebo `Get` přistupujícího objektu. Použije `Yield` příkaz vrátit každý prvek kolekce, jeden v čase.  
+ Můžete použít *iterátoru* k provedení vlastní iterace nad kolekcí. Iterátor může být způsobená nebo `Get` přistupujícího objektu. Použije `Yield` příkaz k vrácení každého prvku kolekce jeden po druhém.  
   
- Volání iterovat pomocí `For Each...Next` příkaz. Každé iteraci `For Each` volá iteraci smyčky. Při `Yield` příkaz je dosaženo v iterator, výraz ve `Yield` se vrátí příkaz a zůstane aktuální umístění v kódu. Provádění restartování z tohoto umístění příštím iteraci je volána.  
+ Můžete volat iterátor pomocí `For Each...Next` příkazu. Každá iterace `For Each` smyčky volá iterátor. Když `Yield` je dosažen příkaz v iterátoru, výraz v `Yield` příkazu se vrátí, a je zachováno aktuální umístění v kódu. Provádění je restartováno z tohoto umístění při příštím volání iterátoru.  
   
- Následující příklad používá funkci iterator. Funkce iterator má `Yield` příkaz, který je uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. V `ListEvenNumbers` metoda, každé iteraci `For Each` těla příkazu vytvoří volání funkce iterator, který bude pokračovat na další `Yield` příkaz.  
+ Následující příklad používá funkce iterátoru. Má funkce iterátoru `Yield` , který se nachází uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. V `ListEvenNumbers` metodě, každé iterace `For Each` tělo s příkazy vytvoří volání funkce iterátoru, který pokračuje k dalšímu `Yield` příkazu.  
   
  [!code-vb[VbVbalrStatements#127](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_4.vb)]  
   
- Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md), [Yield – příkaz](../../../visual-basic/language-reference/statements/yield-statement.md), a [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).  
+ Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md), [příkazu Yield](../../../visual-basic/language-reference/statements/yield-statement.md), a [iterátoru](../../../visual-basic/language-reference/modifiers/iterator.md).  
   
 ## <a name="technical-implementation"></a>Technická implementace  
- Když `For Each`...`Next` příkaz spustí, Visual Basic vyhodnotí kolekce pouze jednou, před zahájením smyčky. Pokud se změní váš příkaz bloku `element` nebo `group`, tyto změny neovlivňují iteraci smyčky.  
+ Když `For Each`...`Next` příkaz spustí, Visual Basic vyhodnocuje kolekce pouze jednou, než na začátku cyklu. Pokud se změní vaše blok příkazů `element` nebo `group`, tyto změny nemají vliv na iteraci smyčky.  
   
- Pokud všechny elementy v kolekci se postupně přiřadily `element`, `For Each` cykly zastaví a řídit předává pro následující příkaz `Next` příkaz.  
+ Pokud všechny prvky v kolekci se postupně přiřadily `element`, `For Each` smyčky zastaví a řídit předá následující příkaz `Next` příkazu.  
   
- Pokud `element` nebyla deklarována mimo tento ve smyčce, je potřeba deklarovat v `For Each` příkaz. Je možné deklarovat typ `element` explicitně pomocí `As` prohlášení, nebo můžete spoléhat na odvození typu přiřadit typu. V obou případech oboru `element` je do těla smyčky. Však nelze deklarovat `element` mimo i uvnitř smyčky.  
+ Pokud `element` nebyla deklarována mimo tuto smyčku, musíte ji deklarovat v `For Each` příkazu. Je možné deklarovat typ `element` explicitně pomocí `As` příkazu, nebo se můžete spolehnout na odvození typu na typ přiřadit. V obou případech se rozsah `element` tělo smyčky. Nelze však deklarovat `element` mimo a uvnitř smyčky.  
   
- Volitelně můžete zadat `element` v `Next` příkaz. Tím se zlepšuje čitelnost vašeho programu, zejména v případě, že budete mít člověk vnořené `For Each` smyčky. Musíte zadat stejnou proměnnou jako ten, který se zobrazí v odpovídající `For Each` příkaz.  
+ Volitelně můžete zadat `element` v `Next` příkazu. To zlepšuje čitelnost programu, zejména v případě, že budete mít člověk vnořené `For Each` smyčky. Musíte zadat stejnou proměnnou jako ten, který se zobrazí v odpovídající `For Each` příkazu.  
   
- Můžete chtít vyhnout změně hodnotu `element` uvnitř smyčku. To může být obtížné číst a ladění kódu. Změna hodnoty `group` nemá vliv kolekci nebo jeho prvky, které se zjistilo, že při prvním zadání smyčky.  
+ Můžete chtít vyhnout změnou hodnoty `element` uvnitř smyčka. To může to ztížit čtení a ladění kódu. Změna hodnoty `group` nemá vliv na kolekce nebo jeho prvky, které byly určeny při prvním zadání smyčky.  
   
- Pokud jste vnoření smyčky, pokud `Next` příkaz vnější úrovně vnoření je zjistil před `Next` vnitřní úrovně kompilátor nevydá signál k chybě. Ale kompilátor to zjistit překrývající se chyby pouze v případě, že zadáte `element` v každé `Next` příkaz.  
+ Pokud jste vnoření smyčky, pokud `Next` příkazu vnější úroveň vnoření dochází před `Next` vnitřní úrovně signály kompilátor chybu. Však kompilátor to zjistit překrývající se chyby pouze v případě, že zadáte `element` v každé `Next` příkazu.  
   
- Pokud váš kód závisí na procházející kolekci v určitém pořadí, `For Each`... `Next` smyčky není nejlepší volbou, pokud si nejste jisti charakteristiky objekt enumerator zpřístupní kolekce. Pořadí traversal není určeno jazyka Visual Basic, ale pomocí <xref:System.Collections.IEnumerator.MoveNext%2A> metodu objektu enumerátor. Proto není možné předpovědět, který element kolekce je první, vrátí se `element`, nebo které mají být vráceny po daného elementu na další. Může dosáhnout větší spolehlivost výsledky pomocí struktury různých smyčky, například `For`... `Next` nebo `Do`... `Loop`.  
+ Pokud váš kód závisí na kolekci v určitém pořadí, procházení `For Each`... `Next` smyčky není nejlepší volbou, pokud si nejste jisti charakteristiky objekt enumerator poskytuje kolekci. Pořadí procházení není určeno jazyka Visual Basic, ale podle <xref:System.Collections.IEnumerator.MoveNext%2A> metodu objektu enumerátor. Proto nebude možné předpovědět, které elementu kolekce, je první má být vrácen v `element`, nebo které je kdy má být vrácen po daného elementu. Můžete dosáhnout pomocí různých smyčce struktura, například spolehlivější výsledky `For`... `Next` nebo `Do`... `Loop`.  
   
- Datový typ `element` musí být tak, že datový typ elementů `group` lze převést na ni.  
+ Datový typ `element` musí být takový, datový typ prvků `group` lze převést na ni.  
   
- Datový typ `group` musí být typu odkaz, který odkazuje na kolekci nebo pole, které je vyčíslitelná. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje <xref:System.Collections.IEnumerable> rozhraní `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní `System.Collections.Generic` oboru názvů. `System.Collections.IEnumerable` definuje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu, která vrací objekt enumerátoru pro kolekci. Implementuje objekt enumerator `System.Collections.IEnumerator` rozhraní `System.Collections` obor názvů a zveřejňuje <xref:System.Collections.IEnumerator.Current%2A> vlastnost a <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A> metody. Visual Basic používá následující procházení kolekce.  
+ Datový typ `group` musí být typ odkazu, který odkazuje na kolekci nebo pole, která je vyčíslitelná. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje <xref:System.Collections.IEnumerable> rozhraní `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní `System.Collections.Generic` oboru názvů. `System.Collections.IEnumerable` definuje <xref:System.Collections.IEnumerable.GetEnumerator%2A> metodu, která vrací objekt enumerátoru pro kolekci. Implementuje objekt enumerator `System.Collections.IEnumerator` rozhraní `System.Collections` obor názvů a zpřístupňuje <xref:System.Collections.IEnumerator.Current%2A> vlastnost a <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A> metody. Jazyk Visual Basic používá tyto k procházení kolekce.  
   
 ### <a name="narrowing-conversions"></a>Zužující převody  
- Když `Option Strict` je nastaven na `On`, zužující převody normálně způsobit chyby kompilátoru. V `For Each` příkaz, ale převody z elementů v `group` k `element` jsou vyhodnotit a provést v době běhu, a jsou potlačeny chyby kompilátoru způsobené zužující převody.  
+ Když `Option Strict` je nastavena na `On`, zužující převody obvykle způsobí chyby kompilátoru. V `For Each` příkazu, ale převody z prvků v `group` k `element` jsou vyhodnoceny a provést v době běhu a jsou potlačeny chyby kompilátoru způsobené zužujících převodů.  
   
- V následujícím příkladu, přiřazení `m` jako počáteční hodnotu pro `n` není při kompilaci `Option Strict` totiž na převod `Long` k `Integer` je zužující převod. V `For Each` příkaz, ale je žádná chyba kompilátoru nahlásí, i když přiřazení `number` vyžaduje stejné převod `Long` k `Integer`. V `For Each` nastane chyba spuštění příkazu, který obsahuje hodně, když <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> se použije pro velký počet.  
+ V následujícím příkladu se přiřazení `m` jako počáteční hodnota pro `n` není při kompilaci `Option Strict` je zapnutý, protože převod `Long` k `Integer` je zužující převod. V `For Each` příkazu, ale žádná chyba kompilátoru je hlášeny, i když přiřazení `number` vyžaduje stejný převod z `Long` k `Integer`. V `For Each` příkazu, který obsahuje velký počet chyb za běhu dochází při <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> se použije na velké množství.  
   
  [!code-vb[VbVbalrStatements#89](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_5.vb)]  
   
 ### <a name="ienumerator-calls"></a>IEnumerator volání  
- Při provádění `For Each`... `Next` spuštění cyklu, Visual Basic ověřuje, že `group` odkazuje na objekt platnou kolekci. Pokud ne, vyvolá výjimku. Jinak, zavolá <xref:System.Collections.IEnumerator.MoveNext%2A> metoda a <xref:System.Collections.IEnumerator.Current%2A> vlastnost objekt enumerator vrátit první prvek. Pokud `MoveNext` Určuje, že neexistuje žádná další prvek, to znamená, pokud je kolekce prázdná, `For Each` cykly zastaví a řídit předává pro následující příkaz `Next` příkaz. Jinak, nastaví jazyka Visual Basic `element` první prvek a spustí příkaz bloku.  
+ Při provádění `For Each`... `Next` spuštění cyklu, Visual Basic ověřuje, že `group` odkazuje na objekt platné kolekce. V opačném případě dojde k výjimce. V opačném případě volá <xref:System.Collections.IEnumerator.MoveNext%2A> metoda a <xref:System.Collections.IEnumerator.Current%2A> vlastnost objekt enumerátoru pro vrácení prvního prvku. Pokud `MoveNext` označuje, že neexistuje žádná další prvek, to znamená, pokud kolekce je prázdná, `For Each` smyčky zastaví a řídit předá následující příkaz `Next` příkazu. Jinak, nastaví jazyka Visual Basic `element` na první element a spuštění tohoto bloku příkazů.  
   
- Pokaždé, když komunikaci jazyka Visual Basic `Next` příkaz vrátí `For Each` příkaz. Znovu volá `MoveNext` a `Current` vrátí na další prvek a znovu ji buď běží bloku nebo zastaví smyčky v závislosti na výsledku. Tento proces pokračuje, dokud `MoveNext` Určuje, že neexistuje žádná další prvek nebo `Exit For` příkaz je zjistil.  
+ Pokaždé, když zjistí jazyka Visual Basic `Next` prohlášení, vrátí `For Each` příkaz. Znovu volá `MoveNext` a `Current` vrátit další prvek a znovu ho buď blok spustí nebo zastaví smyčky na základě výsledku. Tento proces pokračuje, dokud `MoveNext` označuje, že neexistuje žádná další prvek nebo `Exit For` příkaz dochází.  
   
- **Úpravy kolekce.** Objekt enumerator vrácený <xref:System.Collections.IEnumerable.GetEnumerator%2A> obvykle není umožňují změnit kolekci přidáním, odstraněním, nahraďte nebo změna žádné elementy. Pokud změníte kolekci po spuštění `For Each`... `Next` smyčky, objekt enumerator stává neplatným a další pokus o přístup k elementu způsobí, že <xref:System.InvalidOperationException> výjimka.  
+ **Úprava kolekce.** Enumerátor objekt vrácený rutinou <xref:System.Collections.IEnumerable.GetEnumerator%2A> obvykle neumožňuje změnu kolekce pomocí přidání, odstranění, nahrazení nebo změna pořadí žádné elementy. Pokud se změní kolekce po spuštění `For Each`... `Next` smyčky, objekt enumerator stává neplatným a další pokus o přístup k prvku způsobí, že <xref:System.InvalidOperationException> výjimky.  
   
- Ale toto blokování změny, není určené ve Visual Basic, ale spíš podle implementace <xref:System.Collections.IEnumerable> rozhraní. Je možné implementovat `IEnumerable` způsobem, který umožňuje upravovat během iterace. Pokud uvažujete o provádění takových dynamické úpravy, ujistěte se, že rozumíte charakteristika `IEnumerable` implementace na kolekci, kterou používáte.  
+ Nicméně toto blokování úpravy nelze určit jazyka Visual Basic, ale místo toho provádění <xref:System.Collections.IEnumerable> rozhraní. Je možné implementovat `IEnumerable` způsobem, který umožňuje úpravy během iterace. Pokud uvažujete o provádění takových dynamické úpravy, ujistěte se, že se můžete seznámit s charakteristikou z `IEnumerable` implementaci na kolekce, který používáte.  
   
- **Úpravy elementy z kolekce.** <xref:System.Collections.IEnumerator.Current%2A> Vlastností objektu enumerátor je [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md), a vrátí místní kopii každého prvku kolekce. To znamená, že nelze upravovat samotné prvky v `For Each`... `Next` smyčky. Všechny úpravy provedete ovlivňují jenom místní kopie z `Current` a nereflektují zpět do základní kolekce. Ale pokud element je typu odkaz, můžete upravit členy instance, na kterou odkazuje. Následující příklad změní `BackColor` členem všech `thisControl` elementu. Nelze, ale upravovat `thisControl` sám sebe.  
+ **Úprava elementy z kolekce.** <xref:System.Collections.IEnumerator.Current%2A> Vlastností objektu enumerátor je [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md), a vrátí místní kopii každého prvku kolekce. To znamená, že nelze upravit samotné prvky v `For Each`... `Next` smyčky. Všechny změny provedené ovlivňuje pouze místní kopie z `Current` a nereflektují se zpátky do zdrojové kolekce. Ale pokud elementu je typem odkazu, můžete upravit členy instance, na kterou odkazuje. Následující příklad upravuje `BackColor` členem všech `thisControl` elementu. Nelze však změnit `thisControl` samotný.  
   
 ```vb  
 Sub lightBlueBackground(ByVal thisForm As System.Windows.Forms.Form)  
@@ -154,31 +154,31 @@ Sub lightBlueBackground(ByVal thisForm As System.Windows.Forms.Form)
 End Sub  
 ```  
   
- Předchozí příklad můžete upravit `BackColor` členem všech `thisControl` elementu, i když ho nelze změnit `thisControl` sám sebe.  
+ V předchozím příkladu můžete změnit `BackColor` členem všech `thisControl` elementu, i když ho nelze změnit `thisControl` samotný.  
   
- **Procházení pole.** Protože <xref:System.Array> třída implementuje <xref:System.Collections.IEnumerable> vystavit rozhraní, všechna pole <xref:System.Array.GetEnumerator%2A> metoda. To znamená, že můžete iterovat pole s `For Each`... `Next` smyčky. Však může číst pouze elementy pole. Nelze je změnit.  
+ **Procházení pole.** Protože <xref:System.Array> implementuje třída <xref:System.Collections.IEnumerable> vystavit rozhraní, všechna pole <xref:System.Array.GetEnumerator%2A> metoda. To znamená, že můžete iterovat pole `For Each`... `Next` smyčky. Prvky pole však můžete pouze číst. Nelze je změnit.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vypíše všechny složky v adresáři C:\ pomocí <xref:System.IO.DirectoryInfo> třídy.  
+ Následující příklad vypíše všechny složky v adresáři C:\ s použitím <xref:System.IO.DirectoryInfo> třídy.  
   
  [!code-vb[VbVbalrStatements#124](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_6.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje postup pro řazení kolekce. V příkladu seřadí instancí `Car` třídy, které jsou uložené v <xref:System.Collections.Generic.List%601>. `Car` Třída implementuje <xref:System.IComparable%601> rozhraní, které vyžaduje, aby <xref:System.IComparable%601.CompareTo%2A> být implementována metoda.  
+ Následující příklad ukazuje postup při řazení kolekce. Příklad řadí instance třídy `Car` třídy, které jsou uložené v <xref:System.Collections.Generic.List%601>. `Car` Implementuje třída <xref:System.IComparable%601> rozhraní, které vyžaduje, aby <xref:System.IComparable%601.CompareTo%2A> implementaci metody.  
   
- Každé volání <xref:System.IComparable%601.CompareTo%2A> metoda umožňuje jedno porovnání, který se používá pro řazení. Uživatel zapsat kód v `CompareTo` metoda vrátí hodnotu pro každou porovnání aktuální objekt s jiným objektem. Hodnota vrácená je menší než nula. Pokud je aktuální objekt menší než druhý objekt, větší než nula. Pokud se aktuální objekt větší než druhý objekt a nula. Pokud jsou stejné. To umožňuje definovat kritéria pro větší než je menší než v kódu a rovnat.  
+ Každé volání <xref:System.IComparable%601.CompareTo%2A> metoda provádí jedno porovnání, který se používá pro řazení. Uživatelem zapsaný kód v `CompareTo` metoda vrátí hodnotu pro všechna porovnání aktuálního objektu s jiným objektem. Vrácená hodnota je menší než nula, pokud se aktuální objekt menší než druhý objekt, větší než nula, pokud je aktuální objekt větší než druhý objekt a nula jestli jsou shodné. To umožňuje v kódu definovat kritéria pro větší, menší než a rovná.  
   
- V `ListCars` metody `cars.Sort()` příkaz Seřadí seznam. Volání <xref:System.Collections.Generic.List%601.Sort%2A> metodu <xref:System.Collections.Generic.List%601> způsobí, že `CompareTo` metoda má být automaticky volána pro `Car` objekty v `List`.  
+ V `ListCars` metody, `cars.Sort()` příkaz Seřadí seznam. Toto volání <xref:System.Collections.Generic.List%601.Sort%2A> metodu <xref:System.Collections.Generic.List%601> způsobí, že `CompareTo` metoda bude automaticky volána pro `Car` objekty v `List`.  
   
  [!code-vb[VbVbalrStatements#125](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/for-each-next-statement_7.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Kolekce](../../../standard/collections/index.md)  
- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)  
- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
- [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+## <a name="see-also"></a>Viz také:
+- [Kolekce](../../../standard/collections/index.md)
+- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
+- [Struktury smyčky](../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
+- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)
+- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)
+- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)

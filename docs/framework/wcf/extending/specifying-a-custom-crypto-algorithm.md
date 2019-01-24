@@ -2,24 +2,24 @@
 title: Určení vlastního šifrovacího algoritmu
 ms.date: 03/30/2017
 ms.assetid: d662a305-8e09-451d-9a59-b0f12b012f1d
-ms.openlocfilehash: d8fb22daac66c3ef80f148db03703fc5024d3438
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5c7bddb7e6e1696ea1cb4f8359e34a51a89fce40
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489218"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537683"
 ---
 # <a name="specifying-a-custom-crypto-algorithm"></a>Určení vlastního šifrovacího algoritmu
-WCF umožňuje zadat vlastního šifrovacího algoritmu, který má použít při šifrování dat nebo výpočetní digitální podpisy. Uděláte to pomocí následujících kroků:  
+WCF umožňuje určení vlastního šifrovacího algoritmu, který chcete použít, pokud k šifrování dat nebo výpočetní digitální podpisy. Uděláte to pomocí následujících kroků:  
   
-1.  Odvození třídy z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
+1.  Odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>  
   
-2.  Zaregistrovat algoritmus  
+2.  Zaregistrujte algoritmus  
   
-3.  Konfiguraci vazby s <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy.  
+3.  Konfigurace vazby s <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy.  
   
-## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvození třídy z SecurityAlgorithmSuite  
- <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> Je abstraktní základní třída, která vám umožní určit, že algoritmus použije při provádění různých zabezpečení operací souvisejících s. Například computing hodnotu hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak na odvození třídy z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
+## <a name="derive-a-class-from-securityalgorithmsuite"></a>Odvodit třídu z SecurityAlgorithmSuite  
+ <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> Je abstraktní základní třída, která vám umožní určit algoritmus pro použití při provádění zabezpečení různých operací souvisejících s. Například výpočtu hodnoty hash pro digitální podpis nebo šifrování zprávy. Následující kód ukazuje, jak odvodit třídu z <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>:  
   
 ```csharp  
 public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite  
@@ -86,8 +86,8 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
     }  
 ```  
   
-## <a name="register-the-custom-algorithm"></a>Zaregistrovat vlastní algoritmus  
- Registrace lze provést v konfiguračním souboru nebo v imperativní kódu. Registrace vlastní algoritmus se provádí tak, že vytvoříte mapování mezi třídu, která implementuje zprostředkovatele kryptografických služeb a alias. Alias je poté mapován na identifikátor URI, který se používá při zadávání algoritmus do vazby služby WCF. Následující fragment kódu konfigurace ukazuje, jak se zaregistrovat vlastní algoritmus v konfiguraci:  
+## <a name="register-the-custom-algorithm"></a>Registrace vlastního algoritmu  
+ Registrace může provést, v konfiguračním souboru nebo imperativního kódu. Registrace vlastního algoritmu se provádí tak, že vytvoříte mapování mezi třídy implementující zprostředkovatele kryptografických služeb a alias. Alias se pak namapuje na identifikátor URI, který se používá při určování algoritmus ve vazbě služby WCF. Následující konfigurace fragment kódu ukazuje, jak zaregistrovat vlastní algoritmus v konfiguraci:  
   
 ```xml  
 <configuration>  
@@ -105,9 +105,9 @@ public class MyCustomAlgorithmSuite : SecurityAlgorithmSuite
 </configuration>  
 ```  
   
- V části v rámci <`cryptoClasses`> element vytvoří mapování mezi SHA256CryptoServiceProvider a alias "SHA256CSP". <`nameEntry`> Element vytvoří mapování mezi alias "SHA256CSP" a zadaná adresa URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm ).  
+ Části <`cryptoClasses`> element vytvoří mapování mezi SHA256CryptoServiceProvider a alias "SHA256CSP". <`nameEntry`> Element vytvoří mapování mezi "SHA256CSP" alias a zadaná adresa URL (http://constoso.com/CustomAlgorithms/CustomHashAlgorithm ).  
   
- K registraci algoritmus vlastní kód používá <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> metoda. Tato metoda vytvoří obou mapování. Následující příklad ukazuje způsob volání této metody:  
+ K registraci vlastního algoritmu kód používá <xref:System.Security.Cryptography.CryptoConfig.AddAlgorithm(System.Type,System.String[])> metody. Tato metoda vytvoří oba mapování. Následující příklad ukazuje, jak volat tuto metodu:  
   
 ```  
 // Register the custom URI string defined for the hashAlgorithm in MyCustomAlgorithmSuite class to create the   
@@ -116,17 +116,17 @@ CryptoConfig.AddAlgorithm(typeof(SHA256CryptoServiceProvider), "http://constoso.
 ```  
   
 ## <a name="configure-the-binding"></a>Konfiguraci vazby  
- Konfiguraci vazby zadáním vlastní <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy v závazné nastavení, jak je znázorněno v následující fragment kódu:  
+ Konfiguraci vazby tak, že zadáte vlastní <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>-odvozené třídy v nastavení vazby, jak je znázorněno v následujícím fragmentu kódu:  
   
 ```csharp  
 WSHttpBinding binding = new WSHttpBinding();  
             binding.Security.Message.AlgorithmSuite = new MyCustomAlgorithmSuite();  
 ```  
   
- Úplný příklad, naleznete v tématu [kryptografická flexibilita v zabezpečení WCF](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md) ukázka.  
+ Kompletní příklad, najdete v článku [kryptografická flexibilita v zabezpečení WCF](../../../../docs/framework/wcf/samples/cryptographic-agility-in-wcf-security.md) vzorku.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)

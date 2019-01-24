@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2477b55f38167cc3497979d073f74d441a06f96d
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 15e7692abfe06ec9e9f91a3b229bf99971eaecc1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550497"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro odvození jednoduchých typů
 Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodí typ dat pro atributy a elementy.  
@@ -32,13 +32,13 @@ Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodí typ da
 |short|Celá čísla v rozsahu –32768 do 32767.|  
 |unsignedShort|Celá čísla v rozsahu 0 až 65535.|  
 |int|Celá čísla v rozsahu –2147483648 do 2147483647.|  
-|celé číslo bez znaménka|Celá čísla v rozsahu od 0 do 4294967295.|  
+|unsignedInt|Celá čísla v rozsahu od 0 do 4294967295.|  
 |long|Celá čísla v rozsahu –9223372036854775808 k 9223372036854775807.|  
 |unsignedLong|Celá čísla v rozsahu 0 – 18446744073709551615.|  
 |integer|Konečný počet číslic, případně s předponou "-".|  
 |decimal|Číselné hodnoty, které se skládat z 0 až 28 platných číslic.|  
-|float|Desetinná místa může volitelně následovat "E" nebo "e" následované celočíselnou hodnotu představující exponent. Desetinné hodnoty mohou být v rozsahu-16777216 k 16777216. Exponent hodnoty mohou být v rozsahu –149 na 104.<br /><br /> Plovoucí desetinnou čárkou umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Speciální hodnoty typu float: 0, - 0, INF, -INF, NaN.|  
-|double|Stejné jako plovoucí desetinnou čárkou s výjimkou desetinné hodnoty můžou být v rozsahu-9007199254740992 k 9007199254740992 a exponentu hodnoty mohou být v rozsahu –1075 k 970.<br /><br /> Double umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Speciální hodnoty typu float: 0, - 0, INF, -INF, NaN.|  
+|float|Desetinná místa může volitelně následovat "E" nebo "e" následované celočíselnou hodnotu představující exponent. Desetinné hodnoty mohou být v rozsahu-16777216 k 16777216. Exponent hodnoty mohou být v rozsahu –149 na 104.<br /><br /> Plovoucí desetinnou čárkou umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Jsou speciální hodnoty typu float: 0, -0, INF, -INF, NaN.|  
+|double|Stejné jako plovoucí desetinnou čárkou s výjimkou desetinné hodnoty můžou být v rozsahu-9007199254740992 k 9007199254740992 a exponentu hodnoty mohou být v rozsahu –1075 k 970.<br /><br /> Double umožňuje pro zvláštní hodnoty k reprezentování nekonečna a jiné než číselné hodnoty. Jsou speciální hodnoty typu float: 0, -0, INF, -INF, NaN.|  
 |doba trvání|Formát doby trvání W3C.|  
 |data a času.|Formát data a času ve formátu W3C.|  
 |čas|Formát času W3C.|  
@@ -78,6 +78,6 @@ Definování schématu jsou následující atributy, které jsou ignorovány př
   
 ## <a name="see-also"></a>Viz také:
 
-- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
-- [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
+- [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
 - [Pravidla pro odvození typů a struktury uzlů schémat](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)

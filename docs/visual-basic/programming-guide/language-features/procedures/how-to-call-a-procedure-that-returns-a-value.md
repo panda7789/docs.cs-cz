@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání procedury, která vrátí hodnotu (Visual Basic).'
+title: 'Postupy: Volání procedury, která vrací hodnotu (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedure calls [Visual Basic], returning values
@@ -7,47 +7,47 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-ms.openlocfilehash: 35f757609b6d0b36652db3b14e62ecd299a063ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d9c7f3eadfa0095e0ed49b3a7a207fd3f7f8769
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525453"
 ---
-# <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Volání procedury, která vrátí hodnotu (Visual Basic).
-A `Function` postup vrátí hodnotu volání kódu. Můžete pro volání ho včetně jeho název a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu.  
+# <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Volání procedury, která vrací hodnotu (Visual Basic)
+A `Function` postup vrací hodnotu volajícímu kódu. Při volání včetně jejího názvu a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu.  
   
-### <a name="to-call-a-function-procedure-within-an-expression"></a>K volání procedury, funkce v rámci výrazu  
+### <a name="to-call-a-function-procedure-within-an-expression"></a>Pro volání funkce ve výrazu  
   
-1.  Použít `Function` postupu název stejným způsobem jako použijete proměnnou. Můžete použít `Function` volání procedur, kdekoli proměnnou nebo konstanta můžete použít ve výrazu.  
+1.  Použít `Function` postup pojmenovat stejně jako byste použili proměnné. Můžete použít `Function` volání procedur, kdekoli ve výrazu můžete použít proměnnou nebo konstantu.  
   
-2.  Použijte název procedury v závorkách uveďte seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorkách. Však pomocí závorek usnadňuje kódu čtení.  
+2.  Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělených čárkami. Ujistěte se, zadejte argumenty ve stejném pořadí, `Function` postupu definuje odpovídající parametry.  
+3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry.  
   
      Alternativně můžete předat jeden nebo více argumentů podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md).  
   
-4.  Hodnota vrácená z procesu účastní výraz stejně jako hodnota proměnné nebo by konstanta.  
+4.  Hodnota vrácená z procedury podílí na výraz, stejně jako hodnota proměnné nebo by konstanty.  
   
-### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>K volání procedury, funkce v příkazu přiřazení  
+### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>Volat funkci proceduru v příkazu přiřazení  
   
-1.  Použití `Function` název procedury následující rovno (`=`) přihlásit příkaz přiřazení.  
+1.  Použití `Function` název procedury po rovnosti (`=`) přihlaste příkazu přiřazení.  
   
-2.  Použijte název procedury v závorkách uveďte seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorkách. Však pomocí závorek usnadňuje kódu čtení.  
+2.  Použijte název procedury se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky. Však pomocí závorek díky váš kód lépe čitelný.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělených čárkami. Ujistěte se, zadejte argumenty ve stejném pořadí, `Function` postupu definuje odpovídajících parametrů, pokud jsou jejich předání podle názvu.  
+3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Je nutné zadat argumenty ve stejném pořadí, které `Function` procedura definuje odpovídající parametry, pokud jsou byly předány podle názvu.  
   
-4.  Hodnota vrácená v postupu je uložené v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
+4.  Hodnota vrácená z procedury je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu volání jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> k načtení hodnoty proměnné prostředí operačního systému. První řádek volání `Environ` ve výrazu a druhý řádek nazve je v příkazu přiřazení. `Environ` přebírá název proměnné jako jedinou argument. Hodnota proměnné vrátí volání kódu.  
+ Následující příklad volá jazyka Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> k načtení hodnoty proměnné prostředí operačního systému. První řádek volá `Environ` v rámci výrazu a druhý řádek nazve je v příkazu přiřazení. `Environ` přijímá název proměnné jako její jediný argument. Vrátí hodnotu proměnné volajícímu kódu.  
   
  [!code-vb[VbVbcnProcedures#7](./codesnippet/VisualBasic/how-to-call-a-procedure-that-returns-a-value_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Procedury funkce](./function-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)  
- [Postupy: Vytvoření procedury, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)  
- [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)  
- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury funkce](./function-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Postupy: Vytvořit proceduru, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
+- [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)
+- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)

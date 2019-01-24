@@ -12,16 +12,16 @@ helpviewer_keywords:
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 4fe6a0c39388e72807043e9e1ccd2deb59afb656
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: d4c3801e81efc7af1afbf15d882a9d13ad552524
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48845964"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717555"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)] Povolí uživatelům změnit [!INCLUDE[TLA#tla_dpi](../../../includes/tlasharptla-dpi-md.md)] nastavení tak, který nejlépe [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] prvky na obrazovce zobrazí větší. I když tato funkce byla dlouhou dobu k dispozici v [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)], v předchozích verzích škálování měli k implementaci aplikace. V [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], výchozí měřítko pro všechny aplikace, které ke zpracování vlastní škálování provede správce oken plochy. Automatizace uživatelského rozhraní klientské aplikace musí tuto funkci vezměte v úvahu.  
   
@@ -77,5 +77,5 @@ ms.locfileid: "48845964"
   
  Pokud vaše aplikace provádí přímou komunikaci mezi procesy s jinou hodnotu než [!INCLUDE[TLA2#tla_dpi](../../../includes/tla2sharptla-dpi-md.md)]– aplikace používající, může mít převádění mezi logické a fyzické souřadnice pomocí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] funkce `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
-## <a name="see-also"></a>Viz také  
- [Ukázka zvýrazňovači nepoužívaného](https://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)
+## <a name="see-also"></a>Viz také:
+- [Ukázka zvýrazňovači nepoužívaného](https://msdn.microsoft.com/library/19ba4577-753e-4efd-92cc-c02ee67c1b69)

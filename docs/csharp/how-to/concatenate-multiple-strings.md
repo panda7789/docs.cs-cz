@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: řetězení více řetězců (Průvodce v C#)'
+title: 'Postupy: Řetězení více řetězců (C# průvodce)'
 description: Zřetězení řetězců v jazyce C# několika způsoby. Další možnosti a důvodech různé možnosti.
 ms.date: 02/20/2018
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 355e56acf36b6212ee4563f34722b10b56a0fb47
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: da83a79f58c236692e284a7920c7b98c3520e5d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855384"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710414"
 ---
-# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Postupy: řetězení více řetězců (Průvodce v C#)
+# <a name="how-to-concatenate-multiple-strings-c-guide"></a>Postupy: Řetězení více řetězců (C# průvodce)
 
 *Zřetězení* je proces přidávání jeden řetězec na konci další řetězec. Zřetězení řetězců s použitím `+` operátor. Řetězcové literály a řetězcové konstanty zřetězení dochází v době kompilace; Vyvolá se v žádné zřetězení za běhu. Pro proměnné řetězce zřetězení dochází pouze v době běhu.
 
@@ -53,9 +53,9 @@ V poslední, můžete použít [LINQ](../programming-guide/concepts/linq/index.m
 
 Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.String>  
-- <xref:System.Text.StringBuilder>  
-- [Průvodce programováním v jazyce C#](../programming-guide/index.md)  
+- <xref:System.String>
+- <xref:System.Text.StringBuilder>
+- [Průvodce programováním v jazyce C#](../programming-guide/index.md)
 - [Řetězce](../programming-guide/strings/index.md)

@@ -2,12 +2,12 @@
 title: Aktivita
 ms.date: 03/30/2017
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-ms.openlocfilehash: 00115d51cff40be726ccf94c3cac09242c0bdab8
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 970f2978f65b2c1a2585a207d66e4b97fbe4af1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54505585"
 ---
 # <a name="activity"></a>Aktivita
 Toto téma popisuje trasování aktivit v modelu trasování Windows Communication Foundation (WCF). Aktivity představují zpracování jednotek, které uživatel zúžit rozsah selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Například operace selže, protože zpráva dešifrování se nezdařilo. Zobrazí trasování pro operace a selhání dešifrování zprávy do stejné aktivity zobrazující přímá korelace mezi dešifrování chyba a Chyba žádosti.  
@@ -64,13 +64,13 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
 ## <a name="activity-lifetime"></a>Doba života aktivity  
  Nejpřísnější řečeno doklad o aktivity spustí při prvním ID aktivity se používá v emitovaný trasování a končí poslední čas, který se používá v emitovaný trasování. Poskytuje sadu předdefinovaných typů trasování <xref:System.Diagnostics>, včetně spouštění a zastavování, explicitně označit hranice životního cyklu aktivit.  
   
--   Začátek: Označuje začátek aktivity. Trasování "Start" obsahuje záznam začínající nový milník zpracování. Obsahuje nové ID aktivity pro zdroj daného trasování v daného procesu, s výjimkou případů, kdy se ID aktivity šíří napříč koncovými body, v takovém případě vidíme jednu "Start" jeden koncový bod. Spouští se nová aktivita příklady vytváření nového vlákna pro zpracování, nebo zadáním nové veřejné metody.  
+-   Spuštění: Označuje začátek aktivity. Trasování "Start" obsahuje záznam začínající nový milník zpracování. Obsahuje nové ID aktivity pro zdroj daného trasování v daného procesu, s výjimkou případů, kdy se ID aktivity šíří napříč koncovými body, v takovém případě vidíme jednu "Start" jeden koncový bod. Spouští se nová aktivita příklady vytváření nového vlákna pro zpracování, nebo zadáním nové veřejné metody.  
   
 -   Stop: Označuje konec aktivity. Trasování "Stop" poskytuje záznam o ukončení existující milník zpracování. Obsahuje existující ID aktivity pro zdroj daného trasování v daného procesu, s výjimkou případů, kdy se ID aktivity šíří napříč koncovými body, v takovém případě vidíme jednu "Stop" jeden koncový bod.  Zastavuje se aktivita příklady ukončuje podproces zpracování a ukončuje se metoda jehož začátku byl označený "Start" trasování.  
   
--   Pozastavit: Určuje pozastavení zpracování aktivity. Trasování "Pozastavit" obsahuje existující ID aktivity, jejíž zpracování se očekává pokračovat později. Žádné trasování jsou emitovány s tímto ID mezi událostí pozastavení a obnovení z aktuálního zdroje trasování. Příklady: aktivita pozastavení při volání do funkce vnější knihovny, nebo při čekání na prostředek, jako je port dokončení vstupně-výstupních operací.  
+-   Pozastavit: Označuje pozastavení zpracování aktivity. Trasování "Pozastavit" obsahuje existující ID aktivity, jejíž zpracování se očekává pokračovat později. Žádné trasování jsou emitovány s tímto ID mezi událostí pozastavení a obnovení z aktuálního zdroje trasování. Příklady: aktivita pozastavení při volání do funkce vnější knihovny, nebo při čekání na prostředek, jako je port dokončení vstupně-výstupních operací.  
   
--   Obnovení: Určuje opětovné zpracování aktivity. Trasování "Obnovit" obsahuje existující id aktivity, jejíž poslední trasování vygenerovanou z aktuálního zdroje trasování byl "Pozastavit" trasování. Mezi příklady patří návratu z volání funkce externí knihovny nebo signalizován obnovit zpracování podle prostředků, jako je port dokončení vstupně-výstupních operací.  
+-   Obnovení: Označuje opětovné zpracování aktivity. Trasování "Obnovit" obsahuje existující id aktivity, jejíž poslední trasování vygenerovanou z aktuálního zdroje trasování byl "Pozastavit" trasování. Mezi příklady patří návratu z volání funkce externí knihovny nebo signalizován obnovit zpracování podle prostředků, jako je port dokončení vstupně-výstupních operací.  
   
 -   Přenos: Protože některé aktivity jsou způsobeny jinými uživateli nebo jiné se týkají, aktivity může souviset s další aktivity prostřednictvím "Přenést" trasování. Převod záznamů řízené vztah sady jedné aktivity do druhé  
   
@@ -97,9 +97,9 @@ traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");
   
 -   Aktivity představují aktivity, ne tedy nutně objekty. Aktivita by měl být interpretován jako "k této situaci docházelo při. . . (emisí smysluplné trasování došlo k chybě)."  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)  
- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
- [Generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
+- [Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md)

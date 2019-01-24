@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39c0ea69a0922f5e0d25c98c21ec17a872b2f421
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e8baa73594823c6b2f19b2af87e6a681ad71e3b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418867"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713298"
 ---
 # <a name="icordebugnativeframe2ismatchingparentframe-method"></a>ICorDebugNativeFrame2::IsMatchingParentFrame – metoda
-Určuje, zda je zadaný rámečku nadřazeného aktuální snímek.  
+Určuje, zda zadaného rámce je nadřazeného člena aktuální rámec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT IsMatchingParentFrame([in] ICorDebugNativeFrame2
   
 #### <a name="parameters"></a>Parametry  
  `pPotentialParentFrame`  
- [v] Ukazatel na rámec objekt, který chcete vyhodnotit stav nadřazené.  
+ [in] Ukazatel na rámec objekt, který chcete vyhodnotit stav nadřazené.  
   
  `pIsParent`  
- [out] `true` Pokud `pPotentialParentFrame` je nadřazený aktuální rámečku, jinak hodnota `false`.  
+ [out] `true` Pokud `pPotentialParentFrame` je nadřazeným prvkem aktuální rámec; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Stav nadřazeného byla úspěšně vrácena.|  
-|E_FAIL|Stav nadřazeného nejde vrátit.|  
+|E_FAIL|Stav nadřazeného nebylo možné vrátit.|  
 |E_INVALIDARG|`pPotentialParentFrame` nebo `pIsParent` má hodnotu null.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- `IsMatchingParentFrame` Vrátí `true` Pokud je objekt rámce předáte metodě nadřazeného objektu rámce volání metody. Když zavoláte metodu na rámce, který není podřízenou zadaného rámce, vrátí chybu.  
+ `IsMatchingParentFrame` Vrátí `true` Pokud orámovat objekt můžete předat metodě je nadřazeného člena orámovat objekt, na kterém byla volána metoda. Při volání metody na snímek, který není podřízeným prvkem zadaného rámce, vrátí chybu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -65,7 +65,7 @@ HRESULT IsMatchingParentFrame([in] ICorDebugNativeFrame2
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugNativeFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugNativeFrame2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

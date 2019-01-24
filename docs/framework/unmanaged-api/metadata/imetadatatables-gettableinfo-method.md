@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ea617668a72413f3387a35fe009b37fa15d03354
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bf3e5d427698673576f71e290fde54275b75317
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683453"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo – metoda
-Získá název, velikost řádku, počet řádků, počet sloupců a index klíče sloupců zadané tabulky.  
+Získá název, velikost řádku, počet řádků, počet sloupců a index klíčový sloupec ze zadané tabulky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,10 +42,10 @@ HRESULT GetTableInfo (
   
 #### <a name="parameters"></a>Parametry  
  `ixTbl`  
- [v] Identifikátor tabulky, jehož vlastnosti chcete vrátit.  
+ [in] Identifikátor tabulky, jehož vlastnosti chcete vrátit.  
   
  `pcbRow`  
- [out] Ukazatel na velikost v bajtech řádku tabulky.  
+ [out] Ukazatel na velikost v bajtech řádek tabulky.  
   
  `pcRows`  
  [out] Ukazatel na počet řádků v tabulce.  
@@ -54,20 +54,20 @@ HRESULT GetTableInfo (
  [out] Ukazatel na počet sloupců v tabulce.  
   
  `piKey`  
- [out] Ukazatel na index klíče sloupce nebo -1, pokud tabulka nemá žádný klíčový sloupec.  
+ [out] Ukazatel na index klíčový sloupec nebo -1, pokud tabulka nemá žádný klíčový sloupec.  
   
  `ppName`  
  [out] Ukazatel na ukazatel na název tabulky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

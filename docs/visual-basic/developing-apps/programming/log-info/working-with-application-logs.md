@@ -6,12 +6,12 @@ helpviewer_keywords:
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-ms.openlocfilehash: c11e1f0c99b3189c7a353e6778c701667b0a1d12
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ec54e2234d11a474f89c2890353b4eab53c3d41b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397683"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693133"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 `My.Applicaton.Log` a `My.Log` objekty usnadňují zapsat informace trasování a protokolování do protokolů.  
@@ -42,10 +42,10 @@ ms.locfileid: "47397683"
   
  Hodnoty `CompanyName`, `ProductName`, a `ProductVersion` pocházejí z informací o sestavení aplikace. Název souboru protokolu má *AssemblyName*.log, kde *AssemblyName* je název souboru sestavení bez přípony. V případě potřeby je více než jeden soubor protokolu, třeba když původní protokolu není k dispozici aplikace pokusy o zápis do protokolu, je formulář pro název souboru protokolu *AssemblyName*-*iterace* .log, kde `iteration` pozitivní `Integer`.  
   
- Výchozí chování můžete přepsat přidáním nebo změnou konfiguračních souborů aplikace a počítače. Další informace najdete v tématu [návod: Změna kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).  
+ Výchozí chování můžete přepsat přidáním nebo změnou konfiguračních souborů aplikace a počítače. Další informace najdete v tématu [názorný postup: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).  
   
 ## <a name="configuring-log-settings"></a>Konfigurace nastavení protokolu  
- `Log` Objekt má výchozí implementaci, která funguje bez konfiguračního souboru aplikace, app.config. Chcete-li změnit výchozí hodnoty, je nutné přidat konfigurační soubor s novým nastavením. Další informace najdete v tématu [návod: filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
+ `Log` Objekt má výchozí implementaci, která funguje bez konfiguračního souboru aplikace, app.config. Chcete-li změnit výchozí hodnoty, je nutné přidat konfigurační soubor s novým nastavením. Další informace najdete v tématu [názorný postup: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
   
  Konfigurační oddíly funkce protokolu jsou umístěné v `<system.diagnostics>` uzlu v hlavním `<configuration>` uzlu ze souboru app.config. Informace o protokolu je definován v několika uzly:  
   
@@ -100,6 +100,6 @@ ms.locfileid: "47397683"
   
 -   **Vyhněte se útok DoS.** Pokud vaše aplikace zapisuje příliš mnoho informace do protokolu, může zaplnit protokol nebo nalezení obtížné důležité informace.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
+- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)

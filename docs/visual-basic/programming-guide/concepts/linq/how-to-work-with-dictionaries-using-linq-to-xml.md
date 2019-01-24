@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: práce s slovník pomocí technologie LINQ to XML (Visual Basic)'
+title: 'Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: b6e41f61358563472f49b22df389df00e721503e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f08430aeb92b9c6e0b7b08481027fb3b5b77cad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644820"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572341"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: práce s slovník pomocí technologie LINQ to XML (Visual Basic)
-Často je vhodnější převést zpět na jiné datové struktury typy datové struktury XML a XML. Toto téma ukazuje na konkrétní implementace tento obecné přístup tím, že převedete <xref:System.Collections.Generic.Dictionary%602> do XML a zpět.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)
+Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML. Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá ve výrazu vložených literálech XML a dotaz. Nový dotaz projekty <xref:System.Xml.Linq.XElement> objekty, které pak stane nový obsah `Root` <xref:System.Xml.Linq.XElement> objektu.  
+ Tento příklad používá literály XML a dotaz v vložený výraz. Nový dotaz projekty <xref:System.Xml.Linq.XElement> objekty, které pak budou nový obsah `Root` <xref:System.Xml.Linq.XElement> objektu.  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -41,7 +41,7 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří adresář ze souboru XML.  
+ Následující kód vytvoří slovník ze souboru XML.  
   
 ```vb  
 Dim root As XElement = _  
@@ -70,5 +70,5 @@ Child3:Value3
 Child4:Value4  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

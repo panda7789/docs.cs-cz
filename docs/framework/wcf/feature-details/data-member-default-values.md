@@ -8,31 +8,31 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: 477921069411bb4b7ac32a5e93cc409bc7fbdec2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 30836f7f1cbf742c621254ef92314d20a4fffd83
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33492122"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715063"
 ---
 # <a name="data-member-default-values"></a>Vychozí hodnoty datových členů
-V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Například pro libovolného typu odkaz na výchozí hodnota je `null`, a pro typ integer je nula. Je občas žádoucí vynechat data člena z serializovaná data, když je nastaveno na výchozí hodnotu. Protože člen má výchozí hodnotu, nemusí být serializovány skutečnou hodnotu; Tato akce nemá využít výkonu.  
+V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají koncept *výchozí hodnoty*. Třeba u jakéhokoliv odkazového typu, výchozí hodnota je `null`, a pro typ integer je nula. Je čas od času žádoucí chcete vynechat, nechte datový člen ze serializovaných dat. Pokud je nastavena na výchozí hodnotu. Vzhledem k tomu, že člen má výchozí hodnotu, nemusí být serializován skutečnou hodnotu; Tato akce nemá výhody výkonu.  
   
- Chcete-li vynechejte člena z serializovaná data, nastavte <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut `false` (výchozí hodnota je `true`).  
+ Chcete-li vynechat člena ze serializovaných dat. Nastavte <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastnost <xref:System.Runtime.Serialization.DataMemberAttribute> atribut `false` (výchozí hodnota je `true`).  
   
 > [!NOTE]
->  Měli byste nastavit <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastnost `false` Pokud je konkrétní potřebu Uděláte to tak, například konkrétní interoperabilitu nebo data velikost snížení.  
+>  Měli byste nastavit <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastnost `false` pokud existuje konkrétní potřeba k tomu, například interoperability nebo data velikost snížení.  
   
 ## <a name="example"></a>Příklad  
- Následující kód má několik členů s <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> nastavena na `false`.  
+ Následující kód obsahuje několik členů s <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> nastavena na `false`.  
   
  [!code-csharp[DataMemberAttribute#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/datamemberattribute/cs/overview.cs#4)]
  [!code-vb[DataMemberAttribute#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/datamemberattribute/vb/overview.vb#4)]  
   
- Pokud se instance této třídy je serializováno, výsledek je následující: `employeeName` a `employeeID` serializován. Hodnota null pro `employeeName` a nulovou hodnotu `employeeID` je explicitně součástí serializovaná data. Ale `position`, `salary`, a `bonus` nejsou serializované členy. Nakonec `targetSalary` serializován obvyklým způsobem, i když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false`, protože 57800 neodpovídá .NET výchozí hodnota pro celé číslo, které je nulová.  
+ Pokud je serializována instance této třídy, výsledek je následující: `employeeName` a `employeeID` serializován. Hodnota null pro `employeeName` a nulovou hodnotu pro `employeeID` je explicitně součástí serializovaná data. Ale `position`, `salary`, a `bonus` členy nejsou serializována. Nakonec `targetSalary` serializován jako obvykle, i když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false`, protože 57800 neodpovídá výchozí hodnotě .NET pro celé číslo, které je nula.  
   
 ### <a name="xml-representation"></a>Reprezentovaný pomocí XML  
- Pokud předchozí příklad serializován do formátu XML, reprezentace je podobný následujícímu.  
+ Pokud v předchozím příkladu je serializován do formátu XML, reprezentace je podobný následujícímu.  
   
 ```xml  
 <Employee>  
@@ -42,20 +42,20 @@ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], typy mají ko
 </Employee>  
 ```  
   
- `xsi:nil` Se o zvláštní atribut instance oboru názvů schématu XML World Wide Web Consortium (W3C), který poskytuje umožňuje vzájemnou spolupráci způsob, jak explicitně představují hodnotu null. Všimněte si, že žádné informace o všech v souboru XML o pozici, mzda a bonusové datových členů. Koncové straně příjmu můžete interpretovat jako `null`, nula, a `null`, v uvedeném pořadí. Neexistuje žádná záruka, který deserializátor třetích stran může provádět správné interpretace, proto tento vzor se nedoporučuje. <xref:System.Runtime.Serialization.DataContractSerializer> Třída vždy vybere správný interpretace pro chybějící hodnoty.  
+ `xsi:nil` Atribut je speciální atribut v oboru názvů instance schématu XML World Wide Web Consortium (W3C), který poskytuje interoperabilní způsob, jak explicitně reprezentaci hodnoty null. Mějte na paměti, že není žádná vůbec v souboru XML o umístění, salary a bonusové datové členy. Přijímající straně dokáže interpretovat jako `null`, nula, a `null`v uvedeném pořadí. Neexistuje žádná záruka, který deserializátor třetích stran umožňuje správnou interpretaci, což je důvod, proč tento model se nedoporučuje. <xref:System.Runtime.Serialization.DataContractSerializer> Třídy vždy vybere správnou interpretaci pro chybějící hodnoty.  
   
 ### <a name="interaction-with-isrequired"></a>Interakce s IsRequired  
- Jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md), <xref:System.Runtime.Serialization.DataMemberAttribute> atribut má <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnosti (výchozí hodnota je `false`). Vlastnost určuje, zda daná data člena musí být v serializovaných datech. Pokud je deserializován. Pokud `IsRequired` je nastaven na `true`, (což znamená, že hodnota musí být přítomen) a <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastaven na `false` (což znamená, že hodnota nesmí být přítomen, pokud je nastaveno na výchozí hodnotu), nemůže být výchozí hodnoty pro tento datový člen serializovat, protože by byl odporuje výsledky. Pokud datový člen nastavená na výchozí hodnotu (obvykle `null` nebo nula) a je pokus serializaci, <xref:System.Runtime.Serialization.SerializationException> je vyvolána výjimka.  
+ Jak je popsáno v [Správa verzí kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md), <xref:System.Runtime.Serialization.DataMemberAttribute> atribut má <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> vlastnosti (výchozí hodnota je `false`). Vlastnost určuje, zda daný datový člen musí být součástí serializovaná data, když je deserializován. Pokud `IsRequired` je nastavena na `true`, (což znamená, že hodnota musí být k dispozici) a <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false` (to znamená, že hodnota nesmí být k dispozici, pokud je nastavena na výchozí hodnotu), nemůže být výchozí hodnoty pro tento datový člen serializovat, protože výsledky budou odporuje. Pokud datový člen je nastavena na výchozí hodnotu (obvykle `null` nebo nula) a dojde k pokusu o serializace, <xref:System.Runtime.Serialization.SerializationException> je vyvolána výjimka.  
   
 ### <a name="schema-representation"></a>Reprezentace schématu  
- Podrobnosti o definice schématu XML jazyk (XSD) schématu reprezentaci datových členů při `EmitDefaultValue` je nastavena na `false` jsou popsané v [Přehled schématu kontraktu dat](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto je však stručný přehled:  
+ Podrobnosti o reprezentaci schématu XML definice jazyk (XSD) schématu datových členů při `EmitDefaultValue` je nastavena na `false` jsou popsány v [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md). Toto je však stručný přehled:  
   
--   Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastaven na `false`, je zobrazena ve schématu jako poznámky konkrétní na Windows Communication Foundation (WCF). Neexistuje žádný způsob umožňuje vzájemnou spolupráci představují tyto informace. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze podle typu datový člen.  
+-   Když <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je nastavena na `false`, je reprezentován ve schématu jako poznámky specifické pro Windows Communication Foundation (WCF). Neexistuje žádný interoperabilní způsob, jak reprezentaci těchto informací. Konkrétně není pro tento účel použít atribut "Výchozí" ve schématu `minOccurs` atribut má vliv pouze <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> nastavení a `nillable` atribut má vliv pouze typ datového členu.  
   
--   Použít skutečné výchozí hodnota se nenachází ve schématu. Je přijímací koncový bod správně interpretovat chybí element.  
+-   Použít skutečné výchozí hodnota není k dispozici ve schématu. Záleží přijímající koncového bodu správně interpretovat element nebyl nalezen.  
   
- Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> je automaticky nastavena na `false` vždy, když je dříve zjištěna poznámky pro konkrétní WCF uvedených. Je také nastavena na `false` pro odkazové typy, které mají `nillable` vlastnost nastavena na hodnotu `false` podporu konkrétní interoperabilita scénářů, které běžně nastat při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
+ Při importu schématu <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> vlastností se automaticky nastaví na `false` vždy, když se dříve zjistí poznámky specifické pro WCF uvedené. Je také nastavena na `false` pro typy odkazů, které mají `nillable` vlastnost nastavena na hodnotu `false` pro zajištění podpory scénářů konkrétní vzájemná funkční spolupráce, nejčastějších při využívání [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>  
- <xref:System.Runtime.Serialization.DataMemberAttribute>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>
+- <xref:System.Runtime.Serialization.DataMemberAttribute>

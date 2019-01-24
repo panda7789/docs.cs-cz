@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8ecb80de1ae46b072df4bab8357e78e7a22ae298
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d4780242dc34f31ecd0ff0dc2c339cdaa30278a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458058"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721159"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
-Nastaví mapu kódu pro zadanou funkci pomocí zadané položek mapy (MSIL intermediate language) společnosti Microsoft.  
+Nastaví mapu kódu pro zadanou funkci pomocí zadané položky mapování Microsoft intermediate language (MSIL).  
   
 > [!NOTE]
->  V rozhraní .NET Framework verze 2.0, volání `SetILInstrumentedCodeMap` na `FunctionID` , představuje obecný fungovat v určité domény aplikace bude mít vliv na všechny instance této funkce v doméně aplikace.  
+>  V rozhraní .NET Framework verze 2.0, volání `SetILInstrumentedCodeMap` na `FunctionID` , představuje obecnou funkci v určité domény aplikace bude mít vliv na všechny instance této funkce v doméně aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,48 +42,48 @@ HRESULT SetILInstrumentedCodeMap(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, pro kterou chcete nastavit Mapa kódu.  
+ [in] ID funkce, pro kterou chcete nastavit mapu kódu.  
   
  `fStartJit`  
- [v] Logická hodnota, která určuje, zda volání `SetILInstrumentedCodeMap` metoda je první pro konkrétní `FunctionID`. Nastavit `fStartJit` k `true` v prvním volání `SetILInstrumentedCodeMap` pro danou `FunctionID`a `false` po tomto datu.  
+ [in] Logická hodnota, která určuje, zda volání `SetILInstrumentedCodeMap` metody je první pro konkrétní `FunctionID`. Nastavit `fStartJit` k `true` v prvním volání `SetILInstrumentedCodeMap` pro dané `FunctionID`a získat `false` po tomto datu.  
   
  `cILMapEntries`  
- [v] Počet elementů ve `cILMapEntries` pole.  
+ [in] Počet prvků v `cILMapEntries` pole.  
   
  `rgILMapEntries`  
- [v] Pole cor_il_map – struktury, z nichž každý určuje posun MSIL.  
+ [in] Pole struktur cor_il_map –, z nichž každý Určuje prodlevu jazyka MSIL.  
   
 ## <a name="remarks"></a>Poznámky  
- Profileru často vloží příkazů v rámci zdrojový kód metody za účelem instrumentace dané metody (například upozornit, když je dosaženo zadaná zdrojová řádku). `SetILInstrumentedCodeMap` Umožňuje profileru mapovat původní pokynů MSIL do nového umístění. Můžete použít profileru [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metoda získat původní MSIL posunutí pro daný nativní posun.  
+ Profiler často vloží příkazy ve zdrojovém kódu metody k instrumentaci metody (například upozornit, když je dosaženo dané zdrojový řádek). `SetILInstrumentedCodeMap` Umožňuje profileru mapování původní instrukce jazyka MSIL do nového umístění. Profiler může použít [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metodu k získání původní posun jazyka MSIL pro danou nativní posun.  
   
- Ladicí program bude předpokládat, že každý staré posun odkazuje na MSIL posun v rámci kód MSIL původní, beze změny a že každý nový posun odkazuje na MSIL posun v rámci kód nové, instrumentovaného. Mapy by měly být seřazeny ve vzestupném pořadí. Pro krokování s fungovalo správně, postupujte podle následujících pokynů:  
+ Ladicí program bude předpokládat, že každý staré posun odkazuje na jazyka MSIL posun v rámci původní verzí bez úprav kódu MSIL a, že každý nový posun odkazuje na MSIL posun v rámci nové instrumentované kódu. Na mapě by měly být seřazeny vzestupně v pořadí. Pro krokování fungovalo správně, postupujte podle následujících pokynů:  
   
--   Není uspořádat instrumentovaného MSIL kód.  
+-   Nemění pořadí instrumentované kód jazyka MSIL.  
   
--   Neodebírejte původní MSIL kód.  
+-   Neodebírejte původní kód jazyka MSIL.  
   
--   Zahrnete položky pro všechny body sekvence ze souboru databáze (PDB) program v mapě. Mapy není interpolovat položky. Ano danou následující mapa:  
+-   Zahrnete položky pro všechny body posloupnosti ze souboru databáze (PDB) programu na mapě. Mapa není interpolovat chybějící položky. Ano uvedené následující mapování:  
   
-     (0 starý, 0 nové)  
+     (0 staré, 0 nové)  
   
-     (5 starý, 10 nové)  
+     (5 staré, 10 nové)  
   
-     (9 starý, 20 nové)  
+     (9 staré, 20 nové)  
   
-    -   Původní posun 0, 1, 2, 3 nebo 4 budou mapována na nový posunu 0.  
+    -   Staré posun 0, 1, 2, 3 nebo 4 se namapují na nové posun 0.  
   
-    -   Původní posun 5, 6, 7 nebo 8 budou mapována na nový posun 10.  
+    -   Posun staré 5, 6, 7 nebo 8 se namapují na nové posun 10.  
   
-    -   Původní posun 9 nebo vyšší budou mapována na nový posun 20.  
+    -   Staré posun 9 nebo vyšší se namapují na nové posun 20.  
   
-    -   Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 nebo 9 budou mapována na staré posunu 0.  
+    -   Nové posun 0, 1, 2, 3, 4, 5, 6, 7, 8 a 9 se namapují na staré posun 0.  
   
-    -   Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 budou mapována na staré posun 5.  
+    -   Nové posun 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 se namapují na staré posun 5.  
   
-    -   Nové posun 20 nebo vyšší budou mapována na staré posun 9.  
+    -   Nové posun 20 nebo vyšší se namapují na staré posun 9.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -91,5 +91,5 @@ HRESULT SetILInstrumentedCodeMap(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

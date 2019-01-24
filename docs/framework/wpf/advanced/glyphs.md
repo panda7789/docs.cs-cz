@@ -10,23 +10,23 @@ helpviewer_keywords:
 - GlyphRunDrawing objects [WPF]
 - glyphs [WPF]
 ms.assetid: d5d9274c-23b3-4859-8869-6e64403c9ca7
-ms.openlocfilehash: 744906d7dba8b9bc317d181738790b7647fe912c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a629d74c7b76e5daf2460c63b040fbe37a3a36d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543063"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499116"
 ---
 # <a name="glyphs"></a>Glyfy
-Glyfů jsou nízké úrovně Popis shromažďování znaků, které se mají vykreslovat na obrazovce. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje přímý přístup k glyfů pro zákazníky, kteří chtějí zachytávat a zachovat po formátování textu.  
+Glyfy jsou nízké úrovně znázornění znaku potřeba vykreslit na obrazovce. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje přímý přístup k glyfů pro zákazníky, kteří chtějí zachytit a zachovat po formátování textu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod do objektu GlyphRun a elementu Glyph](../../../../docs/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element.md)  
-  [Postupy: Vykreslení textu pomocí piktogramů](../../../../docs/framework/wpf/advanced/draw-text-using-glyphs.md)  
+  [Postupy: Vykreslení textu použitím piktogramů](../../../../docs/framework/wpf/advanced/draw-text-using-glyphs.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.GlyphRun>  
- <xref:System.Windows.Media.DrawingContext.DrawText%2A>  
- <xref:System.Windows.Documents.Glyphs>  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.GlyphRun>
+- <xref:System.Windows.Media.DrawingContext.DrawText%2A>
+- <xref:System.Windows.Documents.Glyphs>
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [Typografie v rozhraní WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)

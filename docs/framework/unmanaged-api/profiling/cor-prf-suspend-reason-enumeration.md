@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2f4382c7fa85008de9e67ad21c467402bae4ac90
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b40533553ccd7a3339a8a3ee0c8b47879efd38ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451279"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742458"
 ---
 # <a name="corprfsuspendreason-enumeration"></a>COR_PRF_SUSPEND_REASON – výčet
-Určuje, z důvodu, že je pozastaveno modulu runtime.  
+Označuje, že je pozastavený, modul runtime důvod.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,20 +44,20 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_SUSPEND_OTHER`|Modul runtime je pozastaven z neznámého důvodu.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Modul runtime pozastavený, aby služba žádost kolekce paměti.<br /><br /> Zpětná volání související s kolekcí paměti dojde k mezi [icorprofilercallback::runtimesuspendfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a [icorprofilercallback::runtimeresumestarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) zpětných volání.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|Modul runtime je pozastaveno, aby `AppDomain` může být vypnut.<br /><br /> Modul runtime pozastaven, modul runtime určí vláken, které jsou v `AppDomain` který je právě vypnout a nastavit je k přerušení po jejich obnovení. Neexistují žádné `AppDomain`-konkrétní zpětná volání během této doby pozastavení.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|Modul runtime je pozastaven, tak, aby pitching kódu může dojít.<br /><br /> Kód pitching vyplývá, pouze když kompilátoru za běhu (JIT) je aktivní s kód pitching povolena. Kód pitching zpětná volání dojít mezi `ICorProfilerCallback::RuntimeSuspendFinished` a `ICorProfilerCallback::RuntimeResumeStarted` zpětných volání. **Poznámka:** CLR JIT není pro představení funkce v rozhraní .NET Framework verze 2.0, tak tato hodnota se nepoužívá v 2.0.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|Modul runtime je pozastaven, tak, aby ho vypnout. Musíte ho pozastavit všechna vlákna k dokončení operace.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|Modul runtime je pozastavená v procesu ladění.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|Příprava pro kolekci paměti je pozastaven modulem runtime.|  
-|`COR_PRF_SUSPEND_FOR_REJIT`|Modul runtime je pozastaven pro opětovnou kompilaci JIT.|  
+|`COR_PRF_FIELD_SUSPEND_OTHER`|Modul runtime je pozastaven z neznámého důvodu nezdařila.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Modul runtime je pozastavený, k plnění požadavků kolekce uvolnění paměti.<br /><br /> Zpětná volání související s kolekcí uvolnění paměti, ke kterým dochází mezi [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a [ICorProfilerCallback::RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) zpětná volání.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|Modul runtime je pozastavený, tak, aby `AppDomain` můžete vypnout.<br /><br /> Modul runtime je pozastaven, modul runtime se určit, která vlákna jsou v `AppDomain` , který je právě vypnout a nastavit je na zrušení po jejich obnovení. Neexistují žádné `AppDomain`-konkrétní zpětná volání během této doby pozastavení.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|Modul runtime je pozastavený, aby mohla probíhat pitching kódu.<br /><br /> Kód pitching vyplývá, pouze pokud kompilátor just-in-time (JIT) je aktivní s kódem pitching povolené. Kód pitching zpětná volání, ke kterým dochází mezi `ICorProfilerCallback::RuntimeSuspendFinished` a `ICorProfilerCallback::RuntimeResumeStarted` zpětná volání. **Poznámka:**  CLR JIT není představení funkcí v rozhraní .NET Framework verze 2.0, takže tato hodnota se používá ve verzi 2.0.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|Modul runtime je pozastavený, takže můžete vypnout. Se musí pozastavit všechna vlákna do dokončení operace.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|Modul runtime je pozastaven vnitroprocesové ladění.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|Modul runtime je pozastavený, příprava pro uvolnění paměti.|  
+|`COR_PRF_SUSPEND_FOR_REJIT`|Modul runtime je pozastaven rekompilace JIT.|  
   
 ## <a name="remarks"></a>Poznámky  
- Všechna vlákna modulu runtime, které jsou v nespravovaném kódu je povoleno dále běžet až do snaží znovu zadat modulu runtime v bod, který se bude také pozastavuje, dokud nebude obnoví modulu runtime. To platí také pro nové vláken, která zadejte modulu runtime. Všechna vlákna v modulu runtime jsou buď okamžitě pozastaveno, pokud se dá přerušit kódu nebo požádáni, abyste pozastavit po uplynutí přerušitelné kódu.  
+ Všechna vlákna modulu runtime, které jsou v nespravovaném kódu povoleno spuštění, dokud se pokusí znovu zadat modulu runtime, v tomto okamžiku se bude také být pozastaveno, dokud modul runtime bude pokračovat dál. To platí i pro nová vlákna, které zadejte modul runtime. Všechna vlákna v modulu runtime jsou pozastavena okamžitě, když jsou v paralelní kód nebo dotaz, pozastavit, když dosáhnou paralelní kód.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -65,5 +65,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření datové služby pomocí LINQ ke zdroji dat SQL (WCF Data Services)'
+title: 'Postupy: Vytvoření datové služby pomocí LINQ ke zdroji dat SQL (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - WCF Data Services, LINQ to SQL
 - WCF Data Services, providers
 ms.assetid: 3b01c2fd-8c6e-4bf5-b38f-9e61bdc3c328
-ms.openlocfilehash: e65d9dc48f128d7808f0731057ec0a5e52e65444
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 7447a9f2ab0b2a9cca396ee947a0eb5fe2cc8715
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43866829"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608570"
 ---
-# <a name="how-to-create-a-data-service-using-a-linq-to-sql-data-source-wcf-data-services"></a>Postupy: vytvoření datové služby pomocí LINQ ke zdroji dat SQL (WCF Data Services)
+# <a name="how-to-create-a-data-service-using-a-linq-to-sql-data-source-wcf-data-services"></a>Postupy: Vytvoření datové služby pomocí LINQ ke zdroji dat SQL (WCF Data Services)
 
 Služby WCF Data Services zpřístupňuje entity data jako datové služby. Zprostředkovatel reflexe umožňuje definovat datový model, který je založen na jakoukoli třídu, která zveřejňuje členy který vrací <xref:System.Linq.IQueryable%601> implementace. Aby bylo možné provést aktualizace dat ve zdroji dat, musíte také implementovat tyto třídy <xref:System.Data.Services.IUpdatable> rozhraní. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md). Toto téma ukazuje, jak vytvořit LINQ na třídy SQL, které přístup k ukázkové databázi Northwind pomocí zprostředkovatel reflexe, jakož i jak vytvořit datovou službu, která je založena na těchto datových tříd.
 
@@ -27,7 +27,7 @@ Služby WCF Data Services zpřístupňuje entity data jako datové služby. Zpro
 
 3. Změňte název na **Northwind.dbml**.
 
-4. Klikněte na tlačítko **přidat**.
+4. Klikněte na **Přidat**.
 
      Do projektu se přidá soubor Northwind.dbml a otevře se Návrhář relací objektů (O/R Designer).
 
@@ -72,8 +72,8 @@ Služby WCF Data Services zpřístupňuje entity data jako datové služby. Zpro
 
 6. Pokud chcete testovat službu Northwind.svc dat pomocí webového prohlížeče, postupujte podle pokynů v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření datové služby pomocí zdroje dat ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)
+- [Postupy: Vytvoření datové služby pomocí zdroje dat rozhraní ADO.NET Entity Framework](../../../../docs/framework/data/wcf/create-a-data-service-using-an-adonet-ef-data-wcf.md)
 - [Postupy: Vytvoření datové služby pomocí zprostředkovatel reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)
 - [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)

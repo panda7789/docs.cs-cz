@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c21fb997-9f0e-40a5-8741-f73bba376bd8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 979989c3e1f90f3de47473aa1bd8bc5268520e57
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 135decebcd071c611cf6e72835fee33d49088070
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840151"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493908"
 ---
 # <a name="building-console-applications-in-the-net-framework"></a>Sestavování konzolových aplikací v rozhraní .NET Framework
 Aplikace v rozhraní .NET Framework lze používat <xref:System.Console?displayProperty=nameWithType> třídy znaků z čtení a zápis znaků do konzoly. Ze standardního vstupního proudu je číst data z konzoly, data do konzoly se zapisují do standardního výstupního datového proudu a chyba data do konzoly se zapisují do výstupního datového proudu standardní chybu. Tyto datové proudy jsou automaticky spojeny s konzolou při spuštění aplikace a jsou uvedené jako <xref:System.Console.In%2A>, <xref:System.Console.Out%2A>, a <xref:System.Console.Error%2A> vlastnosti, v uvedeném pořadí.  
@@ -34,5 +34,5 @@ Aplikace v rozhraní .NET Framework lze používat <xref:System.Console?displayP
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Console?displayProperty=nameWithType>  
+- <xref:System.Console?displayProperty=nameWithType>
 - [Typy formátování](../../docs/standard/base-types/formatting-types.md)

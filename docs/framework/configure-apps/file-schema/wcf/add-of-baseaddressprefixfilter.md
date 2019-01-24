@@ -2,19 +2,19 @@
 title: '&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;'
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: ece3178c48c84c609ab959a5cfc426062de9255f
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: cc9ef6c8712ff764240c4c2f0322bd94b1aaccc8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145598"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698437"
 ---
 # <a name="ltaddgt-of-ltbaseaddressprefixfiltergt"></a>&lt;add&gt; – &lt;baseAddressPrefixFilter&gt;
 Představuje prvek konfigurace, který určuje průchozí filtr, který poskytuje mechanismus pro výběr příslušné vazby Internetové informační služby (IIS) při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS.  
   
  \<system.ServiceModel>  
-\<serviceHostingEnvironment >  
-\<baseAddressPrefixFilters >  
+\<ServiceHostingEnvironment>  
+\<baseAddressPrefixFilters>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,7 +43,7 @@ Představuje prvek konfigurace, který určuje průchozí filtr, který poskytuj
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci konfiguračních elementů určujících průchozí filtry, které poskytují mechanismus pro výběr příslušné vazby Internetové informační služby, při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS.|  
+|[\<baseAddressPrefixFilters>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci konfiguračních elementů určujících průchozí filtry, které poskytují mechanismus pro výběr příslušné vazby Internetové informační služby, při hostování aplikace Windows Communication Foundation (WCF) ve službě IIS.|  
   
 ## <a name="remarks"></a>Poznámky  
  Filtr předponu poskytuje způsob pro sdílené poskytovatele hostingu k určení, které identifikátory URI se používá služba. Umožňuje sdílené hostitele k hostování více aplikací s jinou bázové adresy pro stejné schéma na stejném místě.  
@@ -79,8 +79,8 @@ http://test2.fabrikam.com/Service.svc
 > [!NOTE]
 >  Tento filtr nepodporuje žádné zástupné znaky. Kromě toho baseAddresses poskytované službou IIS pravděpodobně adresy, které jsou vázány na jiná schémata není k dispozici v `baseAddressPrefixFilters` seznamu. Tyto adresy nejsou odfiltrovány.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement>  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
- <xref:System.ServiceModel.ServiceHostingEnvironment>  
- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.BaseAddressPrefixFilterElement>
+- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>
+- <xref:System.ServiceModel.ServiceHostingEnvironment>
+- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)

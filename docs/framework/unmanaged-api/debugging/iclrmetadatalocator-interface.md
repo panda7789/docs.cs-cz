@@ -16,27 +16,27 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fd7a67237d89864915f8b4f1f7361d1f113d1e5d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d1d767de88b239c96cb98130b6ff006e3f75b09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404728"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495029"
 ---
 # <a name="iclrmetadatalocator-interface"></a>ICLRMetadataLocator – rozhraní
-Používá vrstvy služby přístupu k datům v Cílový proces najít metadata sestavení.  
+Používaná vrstvou služeb přístupu k data k nalezení metadata sestavení v cílovém procesu.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetMetadata – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-getmetadata-method.md)|Načte metadata bitové kopie z tento cílový proces.|  
+|[GetMetadata – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-getmetadata-method.md)|Načte metadata obrázek z cílového procesu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Klient API (tzn. ladicí program) musí implementovat toto rozhraní v závislosti na konkrétním cílovém procesu. Implementace za provozu procesu by být například z výpis stavu paměti.  
+ Klient API (tzn. ladicí program) musí implementovat toto rozhraní v závislosti na konkrétním cílovém procesu. Implementace pro živý proces bude například liší od výpis paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -44,5 +44,5 @@ Používá vrstvy služby přístupu k datům v Cílový proces najít metadata 
   
  **.** **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

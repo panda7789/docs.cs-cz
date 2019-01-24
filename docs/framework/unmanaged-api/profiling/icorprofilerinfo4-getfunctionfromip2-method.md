@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4fe3eec4940b57001b7734c581076388f8ba0c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bded97c23013e60bf2d3c32c4eb25285870977e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456983"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554189"
 ---
 # <a name="icorprofilerinfo4getfunctionfromip2-method"></a>ICorProfilerInfo4::GetFunctionFromIP2 – metoda
-Mapuje ukazatel instrukce spravovaného kódu na verzi překompilovat JIT funkce.  
+Mapuje ukazatel na instrukci spravovaného kódu na verzi funkce překompilován JIT.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetFunctionFromIP2(
   
 #### <a name="parameters"></a>Parametry  
  `ip`  
- [v] Ukazatel instrukce ve spravovaném kódu.  
+ [in] Ukazatele na instrukci ve spravovaném kódu.  
   
  `pFunctionId`  
  [out] ID funkce.  
   
  `pReJitId`  
- [out] Identita překompilovat JIT verze funkce.  
+ [out] Identita překompilován JIT verze funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetFunctionFromIP2` je podobná `GetFunctionFromIP`kromě toho, že získá ID překompilovat JIT místo ID funkce funkce, která obsahuje zadaná IP adresa.  
+ `GetFunctionFromIP2` je podobný `GetFunctionFromIP`, s tím rozdílem, že získá ID překompilován JIT místo ID funkce funkce, která obsahuje zadaná IP adresa.  
   
 > [!NOTE]
->  `GetFunctionFromIP2` můžete aktivovat uvolňování paměti, zatímco `GetFunctionFromIP` nikoli.  Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
+>  `GetFunctionFromIP2` můžete aktivovat kolekce uvolnění paměti, že `GetFunctionFromIP` se tak nestane.  Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -61,5 +61,5 @@ HRESULT GetFunctionFromIP2(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

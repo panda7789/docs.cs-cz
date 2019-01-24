@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b549c6eacad63b165d26c203817f1a2adac57bca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b53347e9f446d6340bfc5dab2d8f898ebbbf93f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448635"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527104"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes – metoda
-Vytvoří výčet vlastní definice atributu tokeny spojených s zadaný typ nebo člen.  
+Vytvoří výčet vlastní definice atributu tokeny přidružené zadaný typ nebo člen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,39 +42,39 @@ HRESULT EnumCustomAttributes (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na vrácený enumerátor.  
+ [out v] Ukazatel na vrácený enumerátor.  
   
  `tk`  
- [v] Token pro obor výčtu nebo nula pro všechny vlastní atributy.  
+ [in] Token pro rozsah výčtu nebo nulu pro všechny vlastní atributy.  
   
  `tkType`  
- [v] Token pro konstruktor typu atributy, které mají být ve výčtu, nebo `null` pro všechny typy.  
+ [in] Token pro konstruktor typu atributů pro provedení výčtu nebo `null` pro všechny typy.  
   
  `rCustomAttributes`  
  [out] Pole vlastních atributů tokeny.  
   
  `cMax`  
- [v] Maximální velikost `rCustomAttributes` pole.  
+ [in] Maximální velikost `rCustomAttributes` pole.  
   
  `pcCustomAttributes`  
- [na víc systémů, volitelné] Skutečný počet tokenu hodnot vrácených v `rCustomAttributes`.  
+ [out, volitelné] Skutečný počet tokenů hodnot vrácených v `rCustomAttributes`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumCustomAttributes` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné vlastní atributy pro vytvoření výčtu. V takovém případě `pcCustomAttributes` je nulová.|  
+|`S_OK`|`EnumCustomAttributes` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné vlastní atributy k vytvoření výčtu. V takovém případě `pcCustomAttributes` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

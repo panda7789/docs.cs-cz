@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 83efda175b7e5cef8c7042682827d2fe0562c207
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: e932b3af0b952fa88d33df453917cb11c3ceed33
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517757"
 ---
 # <a name="sorted-collection-types"></a>Typy řazených kolekcí
 <xref:System.Collections.SortedList?displayProperty=nameWithType> Třídy, <xref:System.Collections.Generic.SortedList%602?displayProperty=nameWithType> obecné třídy a <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=nameWithType> obecné třídy jsou podobné <xref:System.Collections.Hashtable> třídy a <xref:System.Collections.Generic.Dictionary%602> obecná třída v tom, že je implementovat <xref:System.Collections.IDictionary> rozhraní, ale zachovat jejich pořadí prvků v řazení podle klíče a nemají O(1) vkládání a načítání charakteristické zatřiďovacích tabulek. Tři třídy mají společnou několik funkcí:  
@@ -50,7 +50,7 @@ ms.locfileid: "44260081"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.IDictionary?displayProperty=nameWithType>  
-- <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>  
-- <xref:System.Collections.Concurrent.ConcurrentDictionary%602>  
+- <xref:System.Collections.IDictionary?displayProperty=nameWithType>
+- <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>
+- <xref:System.Collections.Concurrent.ConcurrentDictionary%602>
 - [Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)

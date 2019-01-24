@@ -10,31 +10,31 @@ helpviewer_keywords:
 - matrices [Windows Forms], alpha values
 - bitmaps [Windows Forms], using color matrices for semi-transparent
 ms.assetid: a27121e6-f7e9-4c09-84e2-f05aa9d2a1bb
-ms.openlocfilehash: ed129cd9487ba1416cd69b2e13f59747856cb598
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e62bee55938e79d1555c463ac770f7b35be20f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54578797"
 ---
 # <a name="how-to-use-a-color-matrix-to-set-alpha-values-in-images"></a>Postupy: Použití matice barev k nastavení alfa hodnot v obrázcích
-<xref:System.Drawing.Bitmap> – Třída (který dědí z <xref:System.Drawing.Image> třída) a <xref:System.Drawing.Imaging.ImageAttributes> třída poskytovat funkce pro načtení a nastavení hodnoty pixelů. Můžete použít <xref:System.Drawing.Imaging.ImageAttributes> třída změnit alpha hodnoty celého obrázku, nebo můžete volat <xref:System.Drawing.Bitmap.SetPixel%2A> metodu <xref:System.Drawing.Bitmap> třídy upravte hodnoty jednotlivých pixelů.  
+<xref:System.Drawing.Bitmap> Třídy (který dědí z <xref:System.Drawing.Image> třídy) a <xref:System.Drawing.Imaging.ImageAttributes> třídy poskytují funkce pro získání a nastavení hodnoty pixelů. Můžete použít <xref:System.Drawing.Imaging.ImageAttributes> třídy k úpravě alfa hodnoty celého obrázku, nebo můžete volat <xref:System.Drawing.Bitmap.SetPixel%2A> metodu <xref:System.Drawing.Bitmap> třídy k úpravě jednotlivých obrazových bodů.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Drawing.Imaging.ImageAttributes> Třída má mnoho vlastností, které můžete použít k úpravě bitové kopie během vykreslování. V následujícím příkladu se <xref:System.Drawing.Imaging.ImageAttributes> objekt se používá k nastavení alfa hodnot až 80 procent jaké byly. To se provádí inicializace matice barev a nastavit alpha hodnotu v matici 0,8 změny velikosti. Je předán na adresu matice barev <xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objekt a <xref:System.Drawing.Imaging.ImageAttributes> je předán objekt <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics> objektu.  
+ <xref:System.Drawing.Imaging.ImageAttributes> Třída má mnoho vlastností, které vám umožní upravit obrázky při vykreslování. V následujícím příkladu <xref:System.Drawing.Imaging.ImageAttributes> objektu se používá k nastavení alfa hodnot až 80 procent, co bylo. To se provádí inicializace matice barev a alfa škálování hodnoty v matici 0,8 nastavením. Adresa matice barev je předána <xref:System.Drawing.Imaging.ImageAttributes.SetColorMatrix%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu a <xref:System.Drawing.Imaging.ImageAttributes> objekt je předán do <xref:System.Drawing.Graphics.DrawString%2A> metodu <xref:System.Drawing.Graphics> objektu.  
   
- Při vykreslování, jsou až 80 procent jaké byly převést alfa hodnot v souboru bitové mapy. Výsledkem je obrázek, který je smíšený s na pozadí. Jak ukazuje následující obrázek, rastrový obrázek vypadá transparentní; můžete zobrazit plná černá čára přes něj.  
+ Během vykreslování, jsou převedeny alfa hodnot rastrového obrázku nastaven na 80 procent, co bylo. Výsledkem je obrázek, který je v kombinaci s na pozadí. Jak ukazuje následující obrázek, vypadá průhledné; rastrový obrázek Zobrazí se plná čára černé přes něj.  
   
- ![Alfa míchání pomocí matice](../../../../docs/framework/winforms/advanced/media/image2.png "obrázek 2")  
+ ![Alfa míchání pomocí matice](../../../../docs/framework/winforms/advanced/media/image2.png "obrazek2")  
   
- Kde je bitová kopie je přes části bílé pozadí, má byla smíšené bitovou kopii s bílé barvy. Kde bitovou kopii protne černá čára bitovou kopii je smíšený s černé barvy.  
+ Kde je bitová kopie je přes bílé části na pozadí, má byla image v kombinaci s bílou barvu. Kde image protíná černá čára na obrázku je v kombinaci s černá barva.  
   
  [!code-csharp[System.Drawing.AlphaBlending#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.AlphaBlending#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#21)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)
+## <a name="see-also"></a>Viz také:
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)

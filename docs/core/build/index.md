@@ -4,12 +4,12 @@ description: Zjistěte, jak sestavení .NET Core a .NET Core CLI ze zdrojového 
 author: bleroy
 ms.date: 06/28/2017
 ms.custom: seodec18
-ms.openlocfilehash: 036d7fb64d74c00b4ac0e3d34bacc834f3c3a198
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 523b537ba07afd1b6c56192c5e2589082fe5820f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170064"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519369"
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje
 
@@ -101,6 +101,6 @@ Použití `dotnet` spustitelného souboru z *artefakty / {os} – {arch} / stage
 
 ## <a name="see-also"></a>Viz také:
 
-* [.NET core Common Language Runtime (CoreCLR)](https://github.com/dotnet/coreclr/blob/master/README.md)
-* [Příručka pro vývojáře rozhraní příkazového řádku .NET core](https://github.com/dotnet/cli/blob/master/Documentation/project-docs/developer-guide.md)
-* [Vytváření distribučních balíčků .NET Core](./distribution-packaging.md)
+- [.NET core Common Language Runtime (CoreCLR)](https://github.com/dotnet/coreclr/blob/master/README.md)
+- [Příručka pro vývojáře rozhraní příkazového řádku .NET core](https://github.com/dotnet/cli/blob/master/Documentation/project-docs/developer-guide.md)
+- [Vytváření distribučních balíčků .NET Core](./distribution-packaging.md)

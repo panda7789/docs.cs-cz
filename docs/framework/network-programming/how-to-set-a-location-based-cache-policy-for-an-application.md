@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: nastavení zásad mezipaměti na základě polohy pro aplikaci'
+title: 'Postupy: Nastavení zásad mezipaměti na základě polohy pro aplikaci'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: e47b7de00941a8da24052c21f28e91391cff390d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4ac0d6449fea4980154eef8c88d03d13230a6a62
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193679"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514046"
 ---
-# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: nastavení zásad mezipaměti na základě polohy pro aplikaci
+# <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Postupy: Nastavení zásad mezipaměti na základě polohy pro aplikaci
 Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu definování chování ukládání do mezipaměti na základě umístění požadovaného prostředku. Toto téma popisuje nastavení zásad mezipaměti prostřednictvím kódu programu. Informace o nastavení zásad pro aplikace pomocí konfiguračních souborů naleznete v tématu [ \<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
 ### <a name="to-set-a-location-based-cache-policy-for-an-application"></a>Nastavení zásad mezipaměti na základě umístění pro aplikaci  
@@ -153,9 +153,9 @@ Zásady mezipaměti na základě polohy umožnit aplikaci k explicitnímu defino
     End Sub  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
+- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
+- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
+- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

@@ -11,15 +11,15 @@ helpviewer_keywords:
 - forms [Windows Forms], sounds
 - examples [Windows Forms], sounds
 ms.assetid: 7ea5cded-4888-4f35-8f28-5cab1a55c973
-ms.openlocfilehash: 460309d853f2b3b423d14a820771e0230358e3c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b847f2f759667eed5dfb6f9168a5c2fc50909cc3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33531211"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54544507"
 ---
 # <a name="how-to-play-a-beep-from-a-windows-form"></a>Postupy: Přehrání zvukového signálu z formuláře Windows
-Tento příklad hraje zvukového signálu za běhu.  
+V tomto příkladu přehraje pípnutí v době běhu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -37,13 +37,13 @@ public void onePing()
 ```  
   
 > [!NOTE]
->  Je dáno zvuk přehrávají v ukázce kódu C# <xref:System.Media.SystemSounds.Beep%2A> zvukové nastavení systému. Další informace naleznete v tématu <xref:System.Media.SystemSounds>.  
+>  Zvuk v C# vzorový kód závisí <xref:System.Media.SystemSounds.Beep%2A> zvukový nastavení systému. Další informace naleznete v tématu <xref:System.Media.SystemSounds>.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Pro jazyk C#, tento příklad vyžaduje odkaz na <xref:System.Media?displayProperty=nameWithType> oboru názvů.  
+ Pro C#, v tomto příkladu vyžaduje přidání odkazu na <xref:System.Media?displayProperty=nameWithType> oboru názvů.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Interaction.Beep%2A>  
- <xref:System.Media.SoundPlayer>  
- [Postupy: Přehrávání systémového zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-system-sound-from-a-windows-form.md)  
- [Postupy: Přehrávání zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Interaction.Beep%2A>
+- <xref:System.Media.SoundPlayer>
+- [Postupy: Přehrávání systémového zvuku z formuláře Windows](../../../../docs/framework/winforms/controls/how-to-play-a-system-sound-from-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)

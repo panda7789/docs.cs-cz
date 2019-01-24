@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 294156983507476b7ddfda3bc3cad16bb32f422b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e84581a0642fe5bee3b88b6774ab2155fd2736a0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445406"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54490781"
 ---
 # <a name="imetadataimportenummodulerefs-method"></a>IMetaDataImport::EnumModuleRefs – metoda
-Vytvoří výčet Odkaz ModuleRef tokeny, které představují importovaných modulů.  
+Vytvoří výčet Odkaz ModuleRef tokeny, které představují importované moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,33 +40,33 @@ HRESULT EnumModuleRefs (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `rModuleRefs`  
- [out] Pole používá k ukládání Odkaz ModuleRef tokenů.  
+ [out] Pole pro ukládání tokenů Odkaz ModuleRef.  
   
  `cMax`  
- [v] Maximální velikost `rModuleRefs` pole.  
+ [in] Maximální velikost `rModuleRefs` pole.  
   
  `pcModuleRefs`  
- [out] Počet Odkaz ModuleRef tokeny, vrátí se v `rModuleRefs`.  
+ [out] Počet tokenů Odkaz ModuleRef vrácené v `rModuleRefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcModuleRefs` je nulová.|  
+|`S_OK`|`EnumModuleRefs` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcModuleRefs` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

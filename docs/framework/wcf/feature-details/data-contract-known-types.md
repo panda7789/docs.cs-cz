@@ -9,75 +9,75 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 00ae32ff394b1ce2acb38fb237527e934934b935
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d215d4b8adcf3e4892c00be1629f92b657496780
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496006"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54705307"
 ---
 # <a name="data-contract-known-types"></a>Známé typy kontraktů dat
-<xref:System.Runtime.Serialization.KnownTypeAttribute> Třída umožňuje zadat v předstihu, typy, které by měl být zahrnutý během deserializace důvodů. Příklad pracovní najdete v tématu [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
+<xref:System.Runtime.Serialization.KnownTypeAttribute> Třídy můžete zadat v předstihu, typy, které by měly být zahrnuty k posouzení vlastní během deserializace. Funkční příklad najdete v článku [známé typy](../../../../docs/framework/wcf/samples/known-types.md) příklad.  
   
- Za normálních okolností při předávání parametry a návratové hodnoty mezi klientem a služby, oba koncové body sdílejí všechny kontrakty dat dat přenášených. Je to ale není velká písmena v následujících případech:  
+ Za normálních okolností při předávání parametrů a vrácených hodnot mezi klientem a službou, oba koncové body sdílet všechny kontrakty dat data předávají. Ale to není případ v následujících případech:  
   
--   Odeslaná data kontrakt je odvozená od kontrakt očekávaná data. Další informace najdete v části o dědičnosti v [ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)). V takovém případě velikost přenášených dat nemá stejná data smlouvy podle očekávání tím přijímající koncový bod.  
+-   Kontrakt odeslaná data jsou odvozena z smlouvy očekávaná data. Další informace najdete v části o dědičnosti v [ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)). V takovém případě přenášených dat nemá stejná data smlouvy podle očekávání tím přijímající koncový bod.  
   
--   Deklarovaný typ informace předávají je rozhraní a třídy, struktury nebo výčet. Proto ho nemůže být známé předem který typ, implementuje rozhraní je ve skutečnosti odeslán, a proto přijímající koncový bod nemůže určit předem kontrakt dat přenášených dat.  
+-   Deklarovaný typ informace předávají je rozhraní, na rozdíl od třídy, struktury nebo výčtu. Proto ho nemůže být známé předem jakým typem, že implementuje rozhraní je ve skutečnosti odesílány. a proto přijímající koncový bod nemůže určit předem kontraktu dat pro přenášená data.  
   
--   Deklarovaný typ informace předávají je <xref:System.Object>. Protože každý typ dědí od <xref:System.Object>a ho nemůže být známé předem typů, které se skutečně je odeslán, přijímající koncový bod nemůže určit předem kontrakt data přenášená data. Toto je ve speciálním případě první položka: každých kontrakt dat je odvozena z výchozí, kontrakt prázdné dat, který se vygeneruje pro <xref:System.Object>.  
+-   Je deklarovaný typ informace předávají <xref:System.Object>. Protože každý typ dědí z <xref:System.Object>a to nemůže být předem známý typů, které se skutečně přijde, přijímající koncový bod nemůže určit předem kontraktu dat pro přenášená data. Toto je zvláštní případ první položky: Každý kontraktu dat. je odvozena z výchozí prázdné datové kontrakt, který je generován pro <xref:System.Object>.  
   
--   Některé typy, které zahrnují [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, mají členy, kteří jsou v jednom z výše uvedených tří skupin. Například <xref:System.Collections.Hashtable> používá <xref:System.Object> k uložení skutečných objektů v zatřiďovací tabulce. Při serializaci těchto typů, nemůže straně příjmu předem určit kontrakt dat pro tyto členy.  
+-   Některé typy, mezi které patří [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, mají členy, které jsou v jednom z předchozích tří kategorií. Například <xref:System.Collections.Hashtable> používá <xref:System.Object> k uložení skutečných objektů v zatřiďovací tabulce. Při serializaci těchto typů nelze určit přijímající straně předem kontraktu dat pro tyto členy.  
   
-## <a name="the-knowntypeattribute-class"></a>KnownTypeAttribute – třída  
- Když data dorazí na koncový bod přijímající, pokusí se modul runtime WCF deserializuje data do instance stejného typu language runtime (CLR). Typ, který je vytvořena instance pro deserializaci je zvolen zkontrolováním první příchozí zpráva k určení dat smlouvy, na které se shodují obsah zprávy. Modul deserializace se potom pokusí se najít typ CLR, který implementuje kontraktu dat, který je kompatibilní s obsah zprávy. Sadu candidate typů, které modul deserializace umožňuje během tohoto procesu se označuje jako deserializátor sadu "známé typy."  
+## <a name="the-knowntypeattribute-class"></a>Třída KnownTypeAttribute  
+ Po přijetí na koncový bod příjmu dat, pokusí se modul runtime WCF deserializovat data do instance stejného typu language runtime (CLR). Typ, který je vytvořena instance pro deserializaci je vybrán zkontrolováním první příchozí zprávy k určení dat smlouvy tak, aby odpovídal který obsah zprávy. Modul deserializace se pak pokusí se najít typ CLR, který implementuje kontrakt dat kompatibilní s obsah zprávy. Sadu Release candidate typů, které modul deserializace umožňuje během tohoto procesu se označuje jako sada deserializátor "známých typů."  
   
- Jedním ze způsobů umožníte modul deserializace vědět o typu je pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute>. Atribut nelze použít pro jednotlivé datové členy, jenom na celou datové typy kontrakt. Atribut se použije k *vnější typ* , může být třídu nebo strukturu. Ve své nejzákladnější využití použití atribut určuje typ jako "známý typ". To způsobí, že známý typ, který má být součástí sadu známé typy vždy, když objekt vnější typu nebo libovolného objektu uvedené prostřednictvím členů je deserializován. Více než jeden <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut lze použít do stejného typu.  
+ Jedním ze způsobů, aby modul deserializace vědět o typu je pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute>. Atribut nelze použít pro jednotlivé datové členy pouze pro celé datové typy kontraktu. Atribut je použit *vnějšího typu* , může být třída nebo struktura. Ve své nejzákladnější využití použití atributu určuje typ jako "známý typ". To způsobí, že známý typ jako součást sadu známých typů pokaždé, když se objekt z vnějšího typu nebo libovolný objekt označovány prostřednictvím jejích členů je deserializován. Více než jeden <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut lze použít pro stejného typu.  
   
-## <a name="known-types-and-primitives"></a>Známé typy a primitivní elementy.  
- Primitivní typy, jakož i některé typy, které jsou považovány za primitiv (například <xref:System.DateTime> a <xref:System.Xml.XmlElement>) jsou vždy "známé" a není nutné je přidat díky tomuto mechanismu. Pole jednoduchých typů je však nutné explicitně přidat. Většina kolekce jsou považovány za ekvivalentní k polím. (Non obecné kolekce jsou považovány za ekvivalentní k pole <xref:System.Object>). Příklad použití primitiv, primitivní pole a primitivní kolekcí, najdete v příkladu 4.  
+## <a name="known-types-and-primitives"></a>Známé typy a primitiv  
+ Primitivní typy, jakož i určité typy, které jsou považovány za primitivních elementů (například <xref:System.DateTime> a <xref:System.Xml.XmlElement>) jsou vždy "označuje" a už nikdy nemusíte přidají díky tomuto mechanismu. Pole jednoduchých typů je však nutné explicitně přidat. Většina kolekce se považují za ekvivalentní k polím. (Neobecné kolekce se považují za ekvivalentní polí <xref:System.Object>). Příklad pomocí primitiv, primitivní pole a kolekce primitivní, najdete v příkladu 4.  
   
 > [!NOTE]
->  Na rozdíl od jiných primitivní typy <xref:System.DateTimeOffset> struktura není známý typ ve výchozím nastavení, a musí být ručně přidat do seznamu známých typů.  
+>  Na rozdíl od jiných primitivní typy <xref:System.DateTimeOffset> struktura není známý typ ve výchozím nastavení, takže ho musí ručně přidat do seznamu známých typů.  
   
 ## <a name="examples"></a>Příklady  
- Následující příklady zobrazují <xref:System.Runtime.Serialization.KnownTypeAttribute> třída používán.  
+ Následující příklady ukazují <xref:System.Runtime.Serialization.KnownTypeAttribute> třída používá.  
   
 #### <a name="example-1"></a>Příklad 1  
- Existují tři tříd pomocí vztahu dědičnosti.  
+ Existují tři třídy s vztah dědičnosti.  
   
  [!code-csharp[C_KnownTypeAttribute#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#1)]
  [!code-vb[C_KnownTypeAttribute#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#1)]  
   
- Následující `CompanyLogo` třídy lze serializovat, ale nelze deserializovat, pokud `ShapeOfLogo` členů je nastaven na hodnotu `CircleType` nebo `TriangleType` objekt, protože modul deserializace nemůže rozpoznat všechny typy s názvy datových kontraktů " Kruh"nebo"Trojúhelník."  
+ Následující `CompanyLogo` třídy lze serializovat, ale nelze deserializovat, pokud `ShapeOfLogo` členů je nastaven na hodnotu `CircleType` nebo `TriangleType` objektu, protože modul deserializace nerozpozná žádné typy s názvy datových kontraktů " Kruh"nebo"Trojúhelník".  
   
  [!code-csharp[C_KnownTypeAttribute#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#2)]
  [!code-vb[C_KnownTypeAttribute#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#2)]  
   
- Správné způsobu jak psát `CompanyLogo` typ je znázorněno v následujícím kódu.  
+ Správný způsob zápisu `CompanyLogo` typ je znázorněno v následujícím kódu.  
   
  [!code-csharp[C_KnownTypeAttribute#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#3)]
  [!code-vb[C_KnownTypeAttribute#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#3)]  
   
- Vždy, když typ vnější `CompanyLogo2` je deserializován, modul deserializace ví o `CircleType` a `TriangleType` a je proto nemůže najít odpovídající typy pro kontrakty dat "Kruh" a "Trojúhelník".  
+ Pokaždé, když vnější typ `CompanyLogo2` je deserializován, modul deserializace ví o `CircleType` a `TriangleType` a proto je schopen vyhledat odpovídající typy kontraktů dat "Kruh" a "Trojúhelník".  
   
 #### <a name="example-2"></a>Příklad 2  
- V následujícím příkladu i když obě `CustomerTypeA` a `CustomerTypeB` mít `Customer` kontraktů dat, instanci `CustomerTypeB` vždy, když je vytvořena `PurchaseOrder` deserializován, protože pouze `CustomerTypeB` se ví, modul deserializace.  
+ V následujícím příkladu i v případě, obě `CustomerTypeA` a `CustomerTypeB` mít `Customer` kontraktu dat, instance `CustomerTypeB` vždy, když se vytvoří `PurchaseOrder` je deserializovat, protože pouze `CustomerTypeB` se ví, modul deserializace.  
   
  [!code-csharp[C_KnownTypeAttribute#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#4)]
  [!code-vb[C_KnownTypeAttribute#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#4)]  
   
 #### <a name="example-3"></a>Příklad 3  
- V následujícím příkladu <xref:System.Collections.Hashtable> ukládá její obsah interně jako <xref:System.Object>. Chcete-li úspěšně deserializovat zatřiďovací tabulku, musíte znát modul deserializace sadu možné typy, které se můžou vyskytnout existuje. V takovém případě abychom věděli, předem pouze `Book` a `Magazine` objekty jsou uloženy v `Catalog`, takže těch, které jsou přidány, pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut.  
+ V následujícím příkladu <xref:System.Collections.Hashtable> ukládá obsah interně jako <xref:System.Object>. Úspěšně deserializovat zatřiďovací tabulku, musíte znát modul deserializace sadu možných typů, které se mohou vyskytnout existuje. V tomto případě jsme předem vědět pouze `Book` a `Magazine` objekty jsou uloženy v `Catalog`, takže ty jsou přidány pomocí <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut.  
   
  [!code-csharp[C_KnownTypeAttribute#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#5)]
  [!code-vb[C_KnownTypeAttribute#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#5)]  
   
-#### <a name="example-4"></a>Příklad 4  
- V následujícím příkladu kontrakt dat ukládá číslo a operace provádět na číslo. `Numbers` – Datový člen může být celé číslo, pole celých čísel, nebo <xref:System.Collections.Generic.List%601> obsahující celá čísla.  
+#### <a name="example-4"></a>Příklad 4:  
+ V následujícím příkladu kontrakt dat ukládá číslo a operace provádět na číslo. `Numbers` Datový člen může být celé číslo, pole celých čísel, nebo <xref:System.Collections.Generic.List%601> obsahující celá čísla.  
   
 > [!CAUTION]
->  Bude fungovat pouze na straně klienta Pokud SVCUTIL. EXE slouží ke generování WCF proxy. SVCUTIL. EXE získává metadata ze služby včetně všech známých typů. Bez těchto informací klienta nebude možné k deserializaci typy.  
+>  Bude to fungovat jenom na straně klienta Pokud SVCUTIL. Soubor EXE slouží ke generování WCF proxy. SVCUTIL. Soubor EXE načte metadata ze služby včetně všech známých typů. Bez těchto informací klienta nebude možné deserializovat typy.  
   
  [!code-csharp[C_KnownTypeAttribute#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#6)]
  [!code-vb[C_KnownTypeAttribute#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#6)]  
@@ -87,31 +87,31 @@ ms.locfileid: "33496006"
  [!code-csharp[C_KnownTypeAttribute#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#7)]
  [!code-vb[C_KnownTypeAttribute#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#7)]  
   
-## <a name="known-types-inheritance-and-interfaces"></a>Známé typy, dědičnost a rozhraní  
- Pokud je přidružen konkrétní typ pomocí známých typ `KnownTypeAttribute` atribut známý typ je taky přiřazený všechny odvozené typy daného typu. Například viz následující kód.  
+## <a name="known-types-inheritance-and-interfaces"></a>Známých typů, dědičnost a rozhraní  
+ Pokud je spojené s konkrétní typ použitím známý typ `KnownTypeAttribute` atribut, známý typ je přidružen také všechny odvozené typy tohoto typu. Například viz následující kód.  
   
  [!code-csharp[C_KnownTypeAttribute#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#8)]
  [!code-vb[C_KnownTypeAttribute#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#8)]  
   
- `DoubleDrawing` Třída nevyžaduje, aby `KnownTypeAttribute` atribut používat `Square` a `Circle` v `AdditionalShape` pole, protože základní třídy (`Drawing`) již má tyto atributy použité.  
+ `DoubleDrawing` Třída nevyžaduje, aby `KnownTypeAttribute` atribut používat `Square` a `Circle` v `AdditionalShape` pole, protože základní třída (`Drawing`) už má tyto atributy použité.  
   
- Známé typy lze přidružit pouze k třídy a struktury, nikoli rozhraní.  
+ Známé typy lze přidružit pouze k tříd a struktur, není rozhraní.  
   
-## <a name="known-types-using-open-generic-methods"></a>Známé typy pomocí otevřete obecné metody  
- Může být nutné přidat jako známý typ obecného typu. Otevřený obecný typ. však nelze předat jako parametr, který se `KnownTypeAttribute` atribut.  
+## <a name="known-types-using-open-generic-methods"></a>Známé typy pomocí otevřené obecné metody  
+ Může být potřeba přidat jako známý typ obecného typu. Otevřený obecný typ. však nelze předat jako parametr `KnownTypeAttribute` atribut.  
   
- Tento problém lze vyřešit pomocí alternativní mechanismus: napíše metoda, která vrátí seznam typů, které chcete přidat do kolekce známé typy. Název metody je pak zadaný jako argument řetězec k `KnownTypeAttribute` atribut z důvodu určitá omezení.  
+ Tento problém můžete vyřešit pomocí alternativní mechanismus: Zapsat metodu, která vrátí seznam typů, který chcete přidat do kolekce známých typů. Název metody je pak zadaný jako argument řetězec k `KnownTypeAttribute` atribut z důvodu určitá omezení.  
   
- Metodu, musí existovat v typu, na který `KnownTypeAttribute` atributu se použije, musí být statické, musí přijmout žádné parametry a musí vrátit objekt, který lze přiřadit k <xref:System.Collections.IEnumerable> z <xref:System.Type>.  
+ Metodu, musí existovat v typu, na který `KnownTypeAttribute` atributu se použije, musí být statická, musí přijmout žádné parametry a musí vrátit objekt, který lze přiřadit k <xref:System.Collections.IEnumerable> z <xref:System.Type>.  
   
- Nelze kombinovat `KnownTypeAttribute` atribut s názvem metody a `KnownTypeAttribute` atributy s skutečné typy na stejného typu. Kromě toho nelze použít více než jeden `KnownTypeAttribute` s názvem metody do stejného typu.  
+ Nelze kombinovat `KnownTypeAttribute` atribut s názvem metody a `KnownTypeAttribute` atributy se skutečné typy na stejného typu. Kromě toho není možné použít více než jeden `KnownTypeAttribute` s názvem metody do stejného typu.  
   
- Viz následující třídy.  
+ Podívejte se následující třídy.  
   
  [!code-csharp[C_KnownTypeAttribute#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#9)]
  [!code-vb[C_KnownTypeAttribute#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#9)]  
   
- `theDrawing` Pole obsahuje instance obecné třídy `ColorDrawing` a obecné třídy `BlackAndWhiteDrawing`, které dědí obecné třídy `Drawing`. Za normálních okolností obě musí být přidaný do známé typy, ale toto není platné syntaxe pro atributy.  
+ `theDrawing` Obsahuje pole instance generické třídy `ColorDrawing` a obecnou třídu `BlackAndWhiteDrawing`, které dědí z obecné třídy `Drawing`. Za normálních okolností obě musí být přidané do známé typy, ale následující není platnou syntaxi pro atributy.  
   
 ```csharp  
 // Invalid syntax for attributes:  
@@ -125,15 +125,15 @@ ms.locfileid: "33496006"
 ' KnownType(GetType(BlackAndWhiteDrawing(Of T)))>  
 ```  
   
- Proto musí být vytvořeny metodu vrátit tyto typy. Správný způsob k zápisu tohoto typu, pak se zobrazí v následujícím kódu.  
+ Díky tomu se metoda musí být vytvořený vracet tyto typy. Správný způsob zápisu tohoto typu, zobrazí se v následujícím kódu.  
   
  [!code-csharp[C_KnownTypeAttribute#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#10)]
  [!code-vb[C_KnownTypeAttribute#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#10)]  
   
 ## <a name="additional-ways-to-add-known-types"></a>Další způsoby, jak přidat známé typy  
- Kromě toho mohou být přidány známé typy prostřednictvím konfiguračního souboru. To je užitečné, když není řídit typ, který vyžaduje pro správné deserializace, například při použití jiných výrobců s Windows Communication Foundation (WCF) knihovny typů známé typy.  
+ Kromě toho známé typy, které je možné přidat prostřednictvím konfiguračního souboru. To je užitečné, pokud není ovládací prvek na typ, který vyžaduje známých typů pro správné deserializace, jako je například při použití jiných výrobců zadejte knihovny Windows Communication Foundation (WCF).  
   
- Následujícího konfiguračního souboru ukazuje, jak určit známý typ v konfiguračním souboru.  
+ Následující konfigurační soubor ukazuje, jak určit známý typ v konfiguračním souboru.  
   
  `<configuration>`  
   
@@ -165,14 +165,14 @@ ms.locfileid: "33496006"
   
  `</configuration>`  
   
- V předchozí konfiguraci souboru typu kontraktu dat s názvem `MyCompany.Library.Shape` je deklarovaná tak, aby měl `MyCompany.Library.Circle` jako známému typu.  
+ V předchozí konfiguraci souboru typ kontraktu dat s názvem `MyCompany.Library.Shape` je deklarován mít `MyCompany.Library.Circle` jako známý typ.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.KnownTypeAttribute>  
- <xref:System.Collections.Hashtable>  
- <xref:System.Object>  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A>  
- [Známé typy](../../../../docs/framework/wcf/samples/known-types.md)  
- [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)  
- [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.KnownTypeAttribute>
+- <xref:System.Collections.Hashtable>
+- <xref:System.Object>
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A>
+- [Známé typy](../../../../docs/framework/wcf/samples/known-types.md)
+- [Ekvivalence kontraktů dat](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
+- [Navrhování kontraktů služby](../../../../docs/framework/wcf/designing-service-contracts.md)

@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 393d755276e281e923dfe3e52b5d3e9afdae38dd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7aa2bcdad9584ecf05dfee35e0887ed70737795d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183708"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492830"
 ---
 # <a name="async-in-depth"></a>Asynchronní do hloubky
 
@@ -146,7 +146,7 @@ Jednou `await` nalezen, provádění `CalculateResult()` se vrátil volajícímu
 
 ## <a name="see-also"></a>Viz také:
 
-* [Asynchronní programování v jazyce C#](~/docs/csharp/async.md)   
-* [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)  
-* [Asynchronní programování v jazyce F #](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
-* [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)
+- [Asynchronní programování v jazyce C#](~/docs/csharp/async.md)
+- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../csharp/programming-guide/concepts/async/index.md)
+- [Asynchronní programování vF#](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)

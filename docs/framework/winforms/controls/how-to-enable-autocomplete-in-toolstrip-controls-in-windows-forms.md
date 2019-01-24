@@ -12,22 +12,22 @@ helpviewer_keywords:
 - ToolStripComboBox class [Windows Forms], examples
 - ToolStrip control [Windows Forms], AutoComplete
 ms.assetid: fd66d085-1af1-45d4-930a-cde944da2e16
-ms.openlocfilehash: c5836b03ad185d4a31a24dfea46db54214ac54b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc3ec2dd0bdd7f83b2cd6b8cfaf0cad37238707b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532535"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514813"
 ---
 # <a name="how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms"></a>Postupy: Povolení AutoComplete v ovládacích prvcích ToolStrip ve Windows Forms
-Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xref:System.Windows.Forms.ToolStripComboBox> , může být přetažen zobrazíte seznam položek, jako například naposledy navštívené webové servery. Pokud uživatel zadá znak, který odpovídá prvnímu znaku jedné z položek v seznamu, se okamžitě zobrazí položka.  
+Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xref:System.Windows.Forms.ToolStripComboBox> , který může být rozbalil zobrazíte seznam položek, jako například naposledy navštívené webové stránky. Pokud uživatel zadá znak, který odpovídá jedné z položek v seznamu první znak, zobrazí se okamžitě položky.  
   
 > [!NOTE]
 >  Automatické dokončování funguje s `ToolStrip` ovládací prvky stejným způsobem, který funguje s tradiční ovládací prvky, jako například <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.TextBox>.  
   
-### <a name="to-enable-autocomplete-in-a-toolstrip-control"></a>Chcete-li povolit automatické dokončování v ovládacím prvku ToolStrip  
+### <a name="to-enable-autocomplete-in-a-toolstrip-control"></a>K povolení AutoComplete v ovládacím prvku ToolStrip  
   
-1.  Vytvoření <xref:System.Windows.Forms.ToolStrip> řízení a přidejte položky do ní.  
+1.  Vytvoření <xref:System.Windows.Forms.ToolStrip> ovládací prvek a přidat položky do něj.  
   
     ```vb  
     ToolStrip1 = New System.Windows.Forms.ToolStrip  
@@ -41,7 +41,7 @@ Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xr
         {toolStripLabel1, toolStripComboBox1});  
     ```  
   
-2.  Nastavte <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> vlastnost popisek a seznamem <xref:System.Windows.Forms.ToolStripItemOverflow.Never> tak, aby seznam je vždy k dispozici bez ohledu na velikost formuláře.  
+2.  Nastavte <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> vlastnost popisek a do pole se seznamem <xref:System.Windows.Forms.ToolStripItemOverflow.Never> tak, aby byla vždy dostupná bez ohledu na velikost formuláře seznamu.  
   
     ```vb  
     ToolStripLabel1.Overflow = _  
@@ -56,7 +56,7 @@ Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xr
     toolStripComboBox1.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never  
     ```  
   
-3.  Přidat do kolekce položky slova <xref:System.Windows.Forms.ToolStripComboBox> ovládacího prvku.  
+3.  Přidat do kolekce položek slova <xref:System.Windows.Forms.ToolStripComboBox> ovládacího prvku.  
   
     ```vb  
     ToolStripComboBox1.Items.AddRange(New Object() {"First Item", _  
@@ -67,7 +67,7 @@ Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xr
     toolStripComboBox1.Items.AddRange(new object[] {"First item", "Second item", "Third item"});  
     ```  
   
-4.  Nastavte <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A> vlastnost pole se seznamem na <xref:System.Windows.Forms.AutoCompleteMode.Append>.  
+4.  Nastavte <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A> vlastnost poli se seznamem <xref:System.Windows.Forms.AutoCompleteMode.Append>.  
   
     ```vb  
     ToolStripComboBox1.AutoCompleteMode = _  
@@ -78,7 +78,7 @@ Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xr
     toolStripComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;  
     ```  
   
-5.  Nastavte <xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A> vlastnost pole se seznamem na <xref:System.Windows.Forms.AutoCompleteSource.ListItems>.  
+5.  Nastavte <xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A> vlastnost poli se seznamem <xref:System.Windows.Forms.AutoCompleteSource.ListItems>.  
   
     ```vb  
     ToolStripComboBox1.AutoCompleteSource = _  
@@ -89,12 +89,12 @@ Následující postup kombinuje <xref:System.Windows.Forms.ToolStripLabel> s <xr
     toolStripComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ToolStrip>  
- <xref:System.Windows.Forms.ToolStripLabel>  
- <xref:System.Windows.Forms.ToolStripComboBox>  
- <xref:System.Windows.Forms.ToolStripComboBox.AutoCompleteMode%2A>  
- <xref:System.Windows.Forms.ToolStripComboBox.AutoCompleteSource%2A>  
- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ToolStrip>
+- <xref:System.Windows.Forms.ToolStripLabel>
+- <xref:System.Windows.Forms.ToolStripComboBox>
+- <xref:System.Windows.Forms.ToolStripComboBox.AutoCompleteMode%2A>
+- <xref:System.Windows.Forms.ToolStripComboBox.AutoCompleteSource%2A>
+- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
+- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

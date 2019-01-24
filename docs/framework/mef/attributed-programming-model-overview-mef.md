@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc929aba10d8a18e2a084707b69d3fef5f91a701
-ms.sourcegitcommit: 3d0c29b878f00caec288dfecb3a5c959de5aa629
+ms.openlocfilehash: 5429dfbf7b318b60d6c3150315dbe22ee73b4792
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53656359"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563441"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Přehled modelu programování s přidělenými atributy (MEF)
 V Managed Extensibility Framework (MEF), *programovací model* je konkrétní metoda definuje sadu rámcové objekty, na kterých pracuje MEF. Mezi tyto rámcové objekty patří částí, importy a exporty. MEF používá tyto objekty, ale není zadán, jak by měly být zastoupeny. Proto jsou celou řadu programovacích modelů je to možné, včetně přizpůsobit programovacích modelů.  
@@ -957,6 +957,6 @@ public class PartSeven
   
  `IPartImportsSatisfiedNotification` obsahuje jednu metodu s názvem `OnImportsSatisfied`. Tato metoda je volána kontejner kompozic v některé části, které implementují rozhraní, když dokončil složení a části importy jsou připravené k použití. Kompoziční modul tak, aby vyplnil importy z dalších částí vytvářejí částí. Importy z část jste nastavili, je nelze provést všechny inicializace, které spoléhá na nebo tyto hodnoty jste byla určena jako požadavky pomocí provádí úpravy importované hodnoty v konstruktoru část `ImportingConstructor` atribut. Toto je obvykle upřednostňovanou metodou, ale v některých případech nemusí být k dispozici prostřednictvím injektáže konstruktoru. V těchto případech je možné provádět inicializace `OnImportsSatisfied`, a měla by implementovat části `IPartImportsSatisfiedNotification`.  
   
-## <a name="see-also"></a>Viz také  
- [Video pro kanál 9: Otevřete aplikací pomocí Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)  
- [Video pro kanál 9: Rozhraní Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)
+## <a name="see-also"></a>Viz také:
+- [Video pro kanál 9: Otevřete aplikací pomocí Managed Extensibility Framework](https://channel9.msdn.com/events/TechEd/NorthAmerica/2009/DTL328)
+- [Video pro kanál 9: Rozhraní Managed Extensibility Framework (MEF) 2.0](https://channel9.msdn.com/posts/NET-45-Oleg-Lvovitch-and-Kevin-Ransom-Managed-Extensibility-Framework-MEF-20)

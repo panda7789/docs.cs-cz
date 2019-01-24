@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8a4ed21b6f9fd067f3357e07c5fda07d25ce868d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4619d5a1444d42c6f3ac43306fbd979a6a70f12b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448400"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672172"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps – metoda
-Získá hodnotu atributu vlastní zadaný token jeho metadata.  
+Získá hodnotu vlastní atribut zadaný svůj token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT GetCustomAttributeProps (
   
 #### <a name="parameters"></a>Parametry  
  `cv`  
- [v] Metadata token, který představuje vlastní atribut mají být načteny.  
+ [in] Token metadat, který představuje vlastní atribut, který se má načíst.  
   
  `ptkObj`  
- [na víc systémů, volitelné] Metadata token představující objektu, která upraví vlastních atributů. Tato hodnota může být jakýkoli typ metadat token s výjimkou `mdCustomAttribute`.  
+ [out, volitelné] Token metadat představující objekt, který upravuje vlastního atributu. Tato hodnota může být libovolný typ tokenu metadat s výjimkou `mdCustomAttribute`.  
   
  `ptkType`  
- [na víc systémů, volitelné] `mdMethodDef` Nebo `mdMemberRef` metadata token reprezentující <xref:System.Type> vrácený vlastního atributu.  
+ [out, volitelné] `mdMethodDef` Nebo `mdMemberRef` představující token metadat <xref:System.Type> vrácené vlastního atributu.  
   
  `ppBlob`  
- [na víc systémů, volitelné] Ukazatel na pole dat, která je hodnota vlastního atributu.  
+ [out, volitelné] Ukazatel na pole dat, která je hodnota vlastního atributu.  
   
  `pcbSize`  
- [na víc systémů, volitelné] Velikost v bajtech data v *`ppBlob`.  
+ [out, volitelné] Velikost v bajtech dat vrácených v *`ppBlob`.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlastní atribut se ukládají jako pole dat, formátu, který se rozumí modul metadat.  
+ Vlastní atribut je uložena jako pole dat, formát, který je srozumitelné pro modul metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

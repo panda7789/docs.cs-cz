@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2898f530fe3f9368778d0f854e8254f7b32d5293
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ca7508c675ccc4c4ee0c07a2d7790bb5de7a668
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404934"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594587"
 ---
 # <a name="cordebughandletype-enumeration"></a>CorDebugHandleType – výčet
 Určuje typ popisovače.  
@@ -39,11 +39,11 @@ typedef enum CorDebugHandleType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`HANDLE_STRONG`|Popisovač je silné, aby se zabránilo objekt převzata systémem uvolňování paměti.|  
-|`HANDLE_WEAK_TRACK_RESURRECTION`|Popisovač je slabé, který nezabrání objekt převzata systémem uvolňování paměti.<br /><br /> Když jsou shromažďována objekt stane neplatný popisovač.|  
+|`HANDLE_STRONG`|Popisovač je silný, která zabraňuje objektu je vyžádá zpět systém uvolňování paměti.|  
+|`HANDLE_WEAK_TRACK_RESURRECTION`|Popisovač je slabé, který nebrání objektu je vyžádá zpět systém uvolňování paměti.<br /><br /> Když objekt se shromažďují se stanou neplatnými popisovač.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ typedef enum CorDebugHandleType {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

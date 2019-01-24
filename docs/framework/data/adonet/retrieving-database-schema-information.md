@@ -2,12 +2,12 @@
 title: Načítání informací o schématu databáze
 ms.date: 03/30/2017
 ms.assetid: 79038d52-f122-4fd4-9bfb-aaa22d6a114b
-ms.openlocfilehash: 00cf0e36dd7886897c26adf50102f32892ebb18e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 8a076ca792ee1b4b2194b778c51fefbd0bb19bd5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43772838"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494025"
 ---
 # <a name="retrieving-database-schema-information"></a>Načítání informací o schématu databáze
 Získání informací o schématu z databáze se provádí v procesu zjišťování schématu. Zjišťování schématu umožňuje aplikacím vyžadovat, že spravovaného poskytovatele vyhledání a vrácení informací o schématu databáze, označované také jako *metadat*, dané databáze. Prvky schématu jinou databázi, jako například tabulky, sloupce a uložené procedury jsou přístupné prostřednictvím kolekce schémat. Každá kolekce schématu obsahuje širokou škálu informací o schématu specifické pro použitý zprostředkovatel.  
@@ -71,6 +71,6 @@ Získání informací o schématu z databáze se provádí v procesu zjišťová
  <xref:System.Data.SqlClient.SqlDataReader.GetSchemaTable%2A>  
  Popisuje **GetSchemaTable** metodu <xref:System.Data.SqlClient.SqlDataReader> třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

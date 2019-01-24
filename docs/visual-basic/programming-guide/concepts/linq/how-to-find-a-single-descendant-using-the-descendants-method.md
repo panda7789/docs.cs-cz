@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání jednoho následníka pomocí metody následníky (Visual Basic)'
+title: 'Postupy: Vyhledání jednoho potomka pomocí metody Descendants (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0c03468c-efc8-4140-98f3-fb67acd9e8e1
-ms.openlocfilehash: 5c4e857d28ab4660638198c054cf93bf94a621a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24bad2bc6ac121cd2be16933161a38a6a6fcb1e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642835"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552447"
 ---
-# <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>Postupy: vyhledání jednoho následníka pomocí metody následníky (Visual Basic)
-Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy metoda rychle napsat kód najít jednoho jednoznačně s názvem elementu. Tento postup je zvlášť užitečné, když chcete najít konkrétní následníka s konkrétním názvem. Můžete napsat kód, přejděte na požadovaný element, ale je často rychlejší a snadnější k zápisu kódu pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
+# <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>Postupy: Vyhledání jednoho potomka pomocí metody Descendants (Visual Basic)
+Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> metody osy rychle psát kód jednoznačně najít jeden s názvem elementu. Tato technika je užitečná, pokud chcete najít konkrétní potomkem s konkrétním názvem. Můžete napsat kód pro navigaci na požadovaný element, ale je často rychlejší a snazší psát kód s využitím <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Enumerable.First%2A> operátor standardní dotazu.  
+ V tomto příkladu <xref:System.Linq.Enumerable.First%2A> standardní operátor dotazu.  
   
 ```vb  
 Dim root As XElement = _  
@@ -44,7 +44,7 @@ GC3 Value
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```vb  
 Imports <xmlns:aw='http://www.adventure-works.com'>  
@@ -80,5 +80,5 @@ End Module
 GC3 Value  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Základní dotazy (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

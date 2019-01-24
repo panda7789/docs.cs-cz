@@ -9,33 +9,33 @@ helpviewer_keywords:
 - custom colors [Windows Forms], creating with color remap table
 - color remap tables [Windows Forms], using
 ms.assetid: 977df1ce-8665-42d4-9fb1-ef7f0ff63419
-ms.openlocfilehash: ba763cc7960e71c6fc705d40eefdbde163d06181
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 06a25179a3afc004029972bbf7d4d5691d42b25b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683908"
 ---
 # <a name="how-to-use-a-color-remap-table"></a>Postupy: Použití tabulky přemapování barev
-Přemapování je proces převodu barev v obraze podle tabulky přemapování barev. Tabulky přemapování barev je pole <xref:System.Drawing.Imaging.ColorMap> objekty. Každý <xref:System.Drawing.Imaging.ColorMap> objekt v poli má <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> vlastnost a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost.  
+Přemapování je proces převodu barvy v bitovou kopii podle tabulky přemapování barev. Tabulky přemapování barev je pole <xref:System.Drawing.Imaging.ColorMap> objekty. Každý <xref:System.Drawing.Imaging.ColorMap> objekt pole má <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> vlastnost a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost.  
   
- Když [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nakreslí na bitovou kopii, každý pixelů bitové kopie se porovnává se pole staré barvy. Pokud jeden bod barva odpovídá původní barvu, jeho barva se změní na barvu odpovídající nové. Barvy došlo ke změně pouze pro vykreslování – hodnoty barev samotné bitové kopie (uložené v <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu), nebudou změněny.  
+ Když [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] nakreslí obrázek, každý pixel na obrázku je ve srovnání s poli staré barvy. Pokud jeden bod barva odpovídá stará barva, jeho barva se změní na odpovídající novou barvu. Barvy se změní pouze pro vykreslování – hodnoty barev samotné (uložené v <xref:System.Drawing.Image> nebo <xref:System.Drawing.Bitmap> objektu) se nezmění.  
   
- Kreslení změnu mapování bitové kopie, inicializovat pole <xref:System.Drawing.Imaging.ColorMap> objekty. Předat do tohoto pole <xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu a pak <xref:System.Drawing.Imaging.ImageAttributes> do objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
+ Chcete-li nakreslit změnu mapování bitové kopie, inicializovat pole <xref:System.Drawing.Imaging.ColorMap> objekty. Předejte toto pole na <xref:System.Drawing.Imaging.ImageAttributes.SetRemapTable%2A> metodu <xref:System.Drawing.Imaging.ImageAttributes> objektu a pak předejte <xref:System.Drawing.Imaging.ImageAttributes> objektu <xref:System.Drawing.Graphics.DrawImage%2A> metodu <xref:System.Drawing.Graphics> objektu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Drawing.Image> objektu ze souboru RemapInput.bmp. Kód vytvoří tabulky přemapování barev, která se skládá z jedné <xref:System.Drawing.Imaging.ColorMap> objektu. <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> Vlastnost `ColorRemap` objekt je červená a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost je modrá. Bitová kopie je vykresleného jednou bez přemapování a jednou pro přemapování. Procesu přemapování změní všechny red pixelů na modrou.  
+ Následující příklad vytvoří <xref:System.Drawing.Image> objekt ze souboru RemapInput.bmp. Vytvoří kód, který se skládá z jedné tabulky přemapování barev <xref:System.Drawing.Imaging.ColorMap> objektu. <xref:System.Drawing.Imaging.ColorMap.OldColor%2A> Vlastnost `ColorRemap` červená, je objekt a <xref:System.Drawing.Imaging.ColorMap.NewColor%2A> vlastnost je modrá. Na obrázku je bez přemapování vykresleného jednou a jednou pro přemapování. Přemapování proces pouze změní všechny red pixelů na modrou.  
   
- Následující obrázek znázorňuje původní bitové kopie na levé straně a bitovou kopii změnu mapování na pravé straně.  
+ Následující obrázek znázorňuje původní obrázek na levé straně a změnu mapování image na pravé straně.  
   
- ![Barva přemapování](../../../../docs/framework/winforms/advanced/media/colortrans7.png "colortrans7")  
+ ![Přemapování barev](../../../../docs/framework/winforms/advanced/media/colortrans7.png "colortrans7")  
   
  [!code-csharp[System.Drawing.RecoloringImages#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.RecoloringImages#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#31)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)  
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
+## <a name="see-also"></a>Viz také:
+- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
+- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)

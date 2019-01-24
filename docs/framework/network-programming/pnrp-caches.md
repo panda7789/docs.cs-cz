@@ -2,12 +2,12 @@
 title: Mezipaměti PNRP
 ms.date: 03/30/2017
 ms.assetid: 270068d9-1b6b-4eb9-9e14-e02326bb88df
-ms.openlocfilehash: 53df90a9bb3da90145ebe30bb274b4ff4950c00f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 375e193e618366b169d5c84073adb432cea3634c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147184"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736944"
 ---
 # <a name="pnrp-caches"></a>Mezipaměti PNRP
 Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce koncových bodů algorithmically vybrané sdílené udržuje na partnerský uzel.  
@@ -35,5 +35,5 @@ Sdílené mezipaměti protokolu PNRP (Name Resolution) jsou místní kolekce kon
   
  Partnerské uzly můžete zaregistrovat zájem přijímají se objekty z dalších partnerských uzlů. Při aktualizaci objektu spolupráci aplikaci zasláno oznámení a nový objekt je předán všichni předplatitelé aplikace. Sdílené ve skupině chatovací aplikaci můžete například zaregistrovat zájem příjem informací o aplikaci, která pošle ho všechny konverzace záznamy jako data aplikací.  Umožní vám to sledovat činnost chat v rámci cloudu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Net.PeerToPeer>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.PeerToPeer>

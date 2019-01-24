@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8441e1b2c623126e844d8a641d7f002aef495e9d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 31aa9f18729bf5d85e28d484f5fd1f5aac762470
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145881"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593534"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate – pomocník spravovaného ladění (MDA)
 `callbackOnCollectedDelegate` Pomocníka spravovaného ladění (MDA) se aktivuje, pokud delegát je zařazen ze spravovaného do nespravovaného kódu jako ukazatel na funkci a zpětné volání je umístěn na tento ukazatel na funkci delegáta byla uvolněna z paměti.  
@@ -31,7 +31,7 @@ ms.locfileid: "53145881"
   
  Selhání není konzistentní; v některých případech bude úspěšné volání na ukazatel funkce a někdy nezdaří. Pouze v případě velkého zatížení nebo na náhodné číslo pokusů o přihlášení, může dojít k selhání.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Delegát, ze kterého byla vytvořena a vystavit na nespravovaný kód ukazatel na funkci byla uvolněna z paměti. Když se nespravované součásti se pokusí zavolat na ukazatel funkce, generuje narušení přístupu.  
   
  Selhání se zobrazí náhodné, protože závisí na, když dojde k uvolnění paměti. Pokud delegát má nárok na kolekce, kolekce uvolnění paměti může vzniknout po zpětném volání a bude volání úspěšné. V jinou dobu před zpětné volání dojde k uvolnění paměti, zpětné volání vygeneruje narušení přístupu a program se zastaví.  
@@ -111,8 +111,8 @@ public class Entry
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)  
- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)

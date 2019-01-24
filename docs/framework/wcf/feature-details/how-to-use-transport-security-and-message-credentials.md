@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - TransportWithMessageCredentials
 ms.assetid: 6cc35346-c37a-4859-b82b-946c0ba6e68f
-ms.openlocfilehash: f678c4713bff342cb3e788a85d7e58fc6e47820c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7af670210b39da93e9f3efb37a0bfddce84ed2a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731865"
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv
-Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy používá nejlepší režimy dopravy a zprávu zabezpečení ve Windows Communication Foundation (WCF). V sum transport layer security poskytuje integritu a důvěrnost, zpráva vrstvy zabezpečení poskytuje širokou škálu přihlašovací údaje, které nejsou možné s mechanismy zabezpečení striktní přenosu. Toto téma popisuje základní kroky pro implementaci přenosu pomocí přihlašovacích údajů zprávy <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. Další informace o nastavení režimu zabezpečení rozhraní najdete v tématu [postupy: nastavení režimu zabezpečení rozhraní](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
+Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy používá nejlepší režimy dopravy a zprávu zabezpečení ve Windows Communication Foundation (WCF). V sum transport layer security poskytuje integritu a důvěrnost, zpráva vrstvy zabezpečení poskytuje širokou škálu přihlašovací údaje, které nejsou možné s mechanismy zabezpečení striktní přenosu. Toto téma popisuje základní kroky pro implementaci přenosu pomocí přihlašovacích údajů zprávy <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. Další informace o nastavení režimu zabezpečení rozhraní najdete v tématu [jak: Nastavení režimu zabezpečení rozhraní](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
   
  Pokud nastavení režimu zabezpečení rozhraní `TransportWithMessageCredential`, přenos určuje skutečné mechanismus, který poskytuje zabezpečení transportní vrstvy. Pro protokol HTTP je mechanismus vrstvy SSL (Secure Sockets) přes HTTP (HTTPS); pro protokol TCP je protokol SSL přes TCP nebo Windows.  
   
@@ -25,7 +25,7 @@ Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy pou
   
 ### <a name="to-use-the-wshttpbinding-with-a-certificate-for-transport-security-in-code"></a>Pro účely Proces WSHttpBinding s certifikátem zabezpečení přenosu (v kódu)  
   
-1.  Použijte nástroj HttpCfg.exe vytvořit vazbu certifikátu SSL s portem v počítači. Další informace najdete v tématu [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+1.  Použijte nástroj HttpCfg.exe vytvořit vazbu certifikátu SSL s portem v počítači. Další informace najdete v tématu [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
 2.  Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavit <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> vlastnost <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.  
   
@@ -84,7 +84,7 @@ Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy pou
   
 #### <a name="to-use-the-wshttpbinding"></a>Chcete-li použít vazba WSHttpBinding  
   
-1.  Konfigurace počítače s certifikátem SSL, který je vázán na port. (Další informace najdete v tématu [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)). Není nutné nastavovat <`transport`> Hodnota elementu s touto konfigurací.  
+1.  Konfigurace počítače s certifikátem SSL, který je vázán na port. (Další informace najdete v tématu [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)). Není nutné nastavovat <`transport`> Hodnota elementu s touto konfigurací.  
   
 2.  Určení typu pověření klienta pro zprávy úroveň zabezpečení. Následující příklad nastaví `clientCredentialType` atribut <`message`> element `UserName`.  
   
@@ -160,7 +160,7 @@ Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy pou
     </bindings>  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Nastavení režimu zabezpečení](../../../../docs/framework/wcf/how-to-set-the-security-mode.md)
+- [Zabezpečení služeb](../../../../docs/framework/wcf/securing-services.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

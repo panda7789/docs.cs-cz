@@ -2,19 +2,19 @@
 title: Element &lt;endpoint&gt;
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-ms.openlocfilehash: ea95e2d16027869778e99cb217d5ea4f7ba7d21a
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: f0701f522874e9e77ba8cb8f013016dd66fbfa30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147483"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509698"
 ---
 # <a name="ltendpointgt-element"></a>Element &lt;endpoint&gt;
 Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se používá k vystavení služby.  
   
  \<system.ServiceModel>  
 \<služby >  
-\<koncový bod >  
+\<endpoint>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,15 +52,15 @@ Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se p
 |isSystemEndpoint|Logická hodnota určující, zda je koncový bod koncovým bodem infrastruktury.|  
 |Typ|Řetězec, který určuje typ standardně použitého koncového bodu. Typ musí být zaregistrovaný ve `<extensions>` části nebo v souboru machine.config. Pokud není zadáno žádné umístění, je vytvořen společný koncový bod služby.|  
 |listenUriMode|Určuje, jak přenos zachází `ListenUri` poskytnutým službě k naslouchání. Platné hodnoty jsou<br /><br /> -Explicitní<br />-Jedinečné<br /><br /> Výchozí hodnota je explicitní.|  
-|Třídu ListenUri|Řetězec určující identifikátor URI, na kterém naslouchá koncový bod služby. Výchozí hodnota je prázdný řetězec.|  
+|listenUri|Řetězec určující identifikátor URI, na kterém naslouchá koncový bod služby. Výchozí hodnota je prázdný řetězec.|  
 |name|Nepovinný atribut. Řetězec určující název koncového bodu služby. Výchozí hodnota je zřetězení vazby název a popis název kontraktu. Služby mohou mít několik koncových bodů, proto koncový bod `name` atributu se liší od názvu služby.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Kolekce záhlaví adres.|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověřování z koncového bodu jiné koncové body výměna zpráv s ním.|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Kolekce záhlaví adres.|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identita, která umožňuje ověřování z koncového bodu jiné koncové body výměna zpráv s ním.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -84,9 +84,9 @@ Určuje vazbu, kontrakt a vlastnosti adresy koncového bodu služby, který se p
 </endpoint>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ServiceEndpointElement>  
- <xref:System.ServiceModel.EndpointAddress>  
- <xref:System.ServiceModel.Description.ServiceEndpoint>  
- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ServiceEndpointElement>
+- <xref:System.ServiceModel.EndpointAddress>
+- <xref:System.ServiceModel.Description.ServiceEndpoint>
+- [Koncové body: Adresy, vazby a kontrakty](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

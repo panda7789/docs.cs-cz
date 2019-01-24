@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8f34fee19c796f65d315fcbd26d55e1d5322303a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c131c5531d52f5ee81c70bddb67e8bc6071f39e3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453025"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599660"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass – metoda
-Určuje, zda je pro zadanou třídu třídu pole.  
+Určuje, zda dané třídy je třída pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT IsArrayClass(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy prověřit.  
+ [in] ID třídy prověřit.  
   
  `pBaseElemType`  
- [out] Ukazatel na hodnotu CorElementType – výčet, který určuje typ prvků pole.  
+ [out] Ukazatel na hodnotu corelementtype – výčet, který označuje typ prvků pole.  
   
  `pBaseClassId`  
  [out] Ukazatel na ID třídy prvků pole, pokud je k dispozici.  
   
  `pcRank`  
- [out] Ukazatel na celé číslo, které určuje pořadí pole (tj, počet dimenzí).  
+ [out] Ukazatel na celé číslo označující pořadí (to znamená, počet rozměrů) v poli.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud pro zadanou třídu je třída pole, `IsArrayClass` metoda vrátí S_OK HRESULT a hodnoty pro všechny nesmí být nulová výstupní parametry. V opačném případě vrátí S_FALSE.  
+ Pokud dané třídy je třída pole, `IsArrayClass` metoda vrátí hodnotu S_OK HRESULT a hodnoty pro všechny nenulové výstupní parametry. V opačném případě vrátí S_FALSE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,5 +62,5 @@ HRESULT IsArrayClass(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - NetworkCredential class, about NetworkCredential class
 - client authentication, classes for authentication
 ms.assetid: d342e87c-f672-4660-a513-41a2f2b80c4a
-ms.openlocfilehash: 245e94cab61c0c60672476aadb417fc798b30362
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9ec1a003d981db99bec20778790fa4a3507ad0b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181040"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587957"
 ---
 # <a name="internet-authentication"></a>Ověřování v Internetu
 <xref:System.Net> Třídy podporu různých mechanismů ověřování klienta, včetně standardní Internet metody ověřování basic, digest, negotiate, NTLM a ověřování protokolu Kerberos, jakož i vlastních metod, které můžete vytvořit.  
@@ -39,7 +39,7 @@ ms.locfileid: "50181040"
   
  Některá schémata ověřování můžete ověřovat uživatele bez provedení první požadavek pro prostředek. Aplikace můžete ušetřit čas tím preauthenticating uživatele s prostředkem, čímž se zmenšuje alespoň jednu výměnu zpráv pro server. Nebo, aby bylo možné později se více přizpůsobovat uživateli může provést ověření při spuštění programu. Schémata ověřování, které můžete použít sadu předběžné ověření <xref:System.Net.IAuthenticationModule.PreAuthenticate%2A> vlastnost **true**.  
   
-## <a name="see-also"></a>Viz také  
- [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)  
- [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)  
- [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)
+## <a name="see-also"></a>Viz také:
+- [Základní ověřování a ověřování algoritmem Digest](../../../docs/framework/network-programming/basic-and-digest-authentication.md)
+- [Ověřování NTLM a Kerberos](../../../docs/framework/network-programming/ntlm-and-kerberos-authentication.md)
+- [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)

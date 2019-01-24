@@ -5,17 +5,17 @@ helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: db2eff2f7c19a3c510e7b212f5bb406d7a885439
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 557e3607443066a863946ff08958197a14662a88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519370"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
 Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na technologie v jazyce Visual Basic, že podporuje syntaxi dotazu a jiné jazykové konstrukty přímo v jazyce. S [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], nemusíte učit nový jazyk k dotazu vůči externímu zdroji dat. V jazyce Visual Basic můžete dotazovat data v relačních databází, úložiště XML nebo objekty. Tato integrace možností dotazování jazyk povolí kompilaci kontrolu pro chyby syntaxe a bezpečnost typů. Tato integrační také zajišťuje, že už znáte většinu toho, co máte vědět o zápis bohatě vybaveným a různých dotazů v jazyce Visual Basic.  
   
- Následující části popisují jazykovým konstrukcím, které podporují LINQ dostatečně podrobně, aby vám umožní začít během čtení úvodní dokumentaci, ukázky kódu a ukázkové aplikace. Můžete také kliknutím na odkazy najdete podrobnější vysvětlení jak jazykové funkce setkávají, aby se povolit jazyka integrované dotazu. Je dobrým začátkem [návod: zápis dotazů v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
+ Následující části popisují jazykovým konstrukcím, které podporují LINQ dostatečně podrobně, aby vám umožní začít během čtení úvodní dokumentaci, ukázky kódu a ukázkové aplikace. Můžete také kliknutím na odkazy najdete podrobnější vysvětlení jak jazykové funkce setkávají, aby se povolit jazyka integrované dotazu. Je dobrým začátkem [názorný postup: Zápis dotazů v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
   
 ## <a name="query-expressions"></a>Výrazy dotazu  
  Výrazy dotazů v jazyce Visual Basic lze vyjádřit v deklarativní syntaxe podobná SQL nebo výraz XQuery. V době kompilace je syntaxe dotazu převeden na volání metody k implementaci zprostředkovatele LINQ standardní metody operátoru dotazu rozšíření. Řízení aplikací, které jsou operátory standardního dotazu v oboru tak, že zadáte odpovídající obor názvů s `Imports` příkazu. Syntaxe výrazu dotazu jazyka Visual Basic vypadá takto:  
@@ -44,7 +44,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  [!code-vb[VbLINQVbFeatures#4](../../../../visual-basic/programming-guide/concepts/linq/codesnippet/VisualBasic/features-that-support-linq_4.vb)]  
   
- Další informace najdete v tématu [inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
+ Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="anonymous-types"></a>Anonymní typy  
  Anonymní typy poskytují pohodlný způsob, aby dočasně seskupily sadu vlastností do elementu, který chcete zahrnout do výsledku dotazu. To můžete zvolit libovolnou kombinaci dostupných polí v dotazu, v libovolném pořadí, bez definování pojmenované datový typ pro element.  
@@ -93,9 +93,9 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  Další informace najdete v tématu [výrazy Lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
-## <a name="see-also"></a>Viz také  
- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)  
- [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)  
- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
+- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

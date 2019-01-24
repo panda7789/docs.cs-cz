@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 1f10c5e0c6c266b7b31d658ec561bd8d6d85697b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: dac372ce4f9da99b91b6f8d140d69ce9f1238f30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129464"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562895"
 ---
 # <a name="how-to-send-data-using-the-webrequest-class"></a>Postupy: Odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky, které používají k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku.  
@@ -255,9 +255,9 @@ Namespace Examples.System.Net
 End Namespace  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)  
- [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)  
- [Jak: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)
+## <a name="see-also"></a>Viz také:
+- [Vytváření internetových žádostí](../../../docs/framework/network-programming/creating-internet-requests.md)
+- [Použití streamů v síti](../../../docs/framework/network-programming/using-streams-on-the-network.md)
+- [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)
+- [Žádosti o data](../../../docs/framework/network-programming/requesting-data.md)
+- [Postupy: Žádost o Data pomocí třídy WebRequest](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)

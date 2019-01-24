@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0508e9291b089ec7af6a0b41bbc231fdb0701ad6
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 15b258f0392275ffd18c52d11df3bc266a55ce3f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452979"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566291"
 ---
 # <a name="global-assembly-cache"></a>Globální mezipaměť sestavení
 Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje mezipaměť kódu celého stroje názvem do globální mezipaměti sestavení. Global Assembly Cache ukládá sestavení speciálně určené ke sdílení více aplikacemi v počítači.  
@@ -42,7 +42,7 @@ Každý počítač, kde je nainstalován modul Common Language Runtime obsahuje 
   
  Sestavení, které jsou nasazené v globální mezipaměti sestavení musí mít silný název. Pokud je sestavení přidáno do globální mezipaměti sestavení, kontroly integrity probíhají na všechny soubory, které tvoří sestavení. Mezipaměť provádí tyto kontroly integrity zajistit, že sestavení nebylo manipulováno, například když došlo ke změně souboru, ale manifest neodráží změny.  
   
-## <a name="see-also"></a>Viz také  
-- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
-- [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  
+## <a name="see-also"></a>Viz také:
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)
 - [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)

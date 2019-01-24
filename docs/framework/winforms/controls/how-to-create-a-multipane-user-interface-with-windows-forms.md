@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms'
+title: 'Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,25 +12,25 @@ helpviewer_keywords:
 - TreeView control [Windows Forms], examples
 - Splitter control [Windows Forms], examples
 ms.assetid: e79f6bcc-3740-4d1e-b46a-c5594d9b7327
-ms.openlocfilehash: 4e243191b83149f17f4970150d784dcd7d014b22
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f7ba0ab7f0701fe39c3cefb979b9226eeeddffe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532080"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531405"
 ---
-# <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms
-V následujícím postupu vytvoříte více podokny uživatelské rozhraní, které je podobné použít v aplikaci Microsoft Outlook s **složky** seznamu **zprávy** podokně a **Preview** podokně. Toto uspořádání je dosaženo hlavně prostřednictvím ukotvení ovládacích prvků pomocí formuláře.  
+# <a name="how-to-create-a-multipane-user-interface-with-windows-forms"></a>Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms
+V následujícím postupu vytvoříte, který je podobný tomu použitému v aplikaci Microsoft Outlook s více podokny uživatelské rozhraní **složky** seznamu, **zprávy** podokně a **veverziPreview** podokně. Toto uspořádání se dosahuje hlavně prostřednictvím Ukotvování ovládacích prvků ve formuláři.  
   
- V případě ukotvení ovládacího prvku určit, které okraje nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravý okraj ovládacího prvku bude ukotven na pravý okraj jeho nadřazenému ovládacímu prvku. Kromě toho se změnila ukotveného okraje ovládacího prvku velikost odpovídat jeho ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v části [postupy: ukotvení ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
+ Můžete ukotvit ovládacího prvku, zjistíte, které okrajem nadřazeného kontejneru ovládacího prvku je připojen k. Proto pokud nastavíte <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost <xref:System.Windows.Forms.DockStyle.Right>, pravým okrajem ovládacího prvku se ukotven k pravým okrajem jeho nadřazeného ovládacího prvku. Kromě toho ukotvených okrajem ovládacího prvku svou velikost tak, aby odpovídaly u ovládacího prvku kontejneru. Další informace o tom, jak <xref:System.Windows.Forms.SplitContainer.Dock%2A> vlastnost funguje, najdete v článku [jak: Ukotvování ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md).  
   
- Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a jiných ovládacích prvků na formuláři, nikoli na přidání funkce zpřístupnění aplikace napodobovat Microsoft Outlook.  
+ Tento postup se zaměřuje na uspořádání <xref:System.Windows.Forms.SplitContainer> a další ovládací prvky ve formuláři, nikoli na přidání funkce do aplikace, které napodobují aplikace Microsoft Outlook.  
   
- Pokud chcete vytvořit toto uživatelské rozhraní, umístěte všechny ovládací prvky v rámci <xref:System.Windows.Forms.SplitContainer> ovládací prvek, který obsahuje <xref:System.Windows.Forms.TreeView> ovládacího prvku v levém panelu. Na pravém panelu <xref:System.Windows.Forms.SplitContainer> ovládací prvek obsahuje druhý <xref:System.Windows.Forms.SplitContainer> řízení s <xref:System.Windows.Forms.ListView> ovládací prvek nahoře <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tyto <xref:System.Windows.Forms.SplitContainer> ovládací prvky povolit nezávislé změnu velikosti další ovládací prvky na formuláři. Můžete upravit postupy v tomto postupu plavidla vlastní uživatelská rozhraní vlastní.  
+ K vytvoření tohoto uživatelského rozhraní, umístěte všechny ovládací prvky v rámci <xref:System.Windows.Forms.SplitContainer> ovládací prvek, který obsahuje <xref:System.Windows.Forms.TreeView> ovládacího prvku na panelu vlevo. Na pravém panelu <xref:System.Windows.Forms.SplitContainer> ovládací prvek obsahuje druhý <xref:System.Windows.Forms.SplitContainer> ovládacím prvkem <xref:System.Windows.Forms.ListView> ovládací prvek výše <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tyto <xref:System.Windows.Forms.SplitContainer> ovládací prvky umožňují nezávislé Změna velikosti jiných ovládacích prvků ve formuláři. Můžete upravit postupy v tomto postupu vytváření vlastního uživatelského rozhraní vlastní.  
   
-### <a name="to-create-an-outlook-style-user-interface-programmatically"></a>Chcete-li vytvořit uživatelské rozhraní stylu Outlook prostřednictvím kódu programu  
+### <a name="to-create-an-outlook-style-user-interface-programmatically"></a>Chcete-li vytvořit uživatelským rozhraním stylu aplikace Outlook prostřednictvím kódu programu  
   
-1.  Ve formuláři deklarujte každý ovládací prvek, který se skládá z uživatelského rozhraní. V tomto příkladu použijte <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer>, a <xref:System.Windows.Forms.RichTextBox> ovládacích prvků tak, aby napodoboval uživatelské rozhraní aplikace Microsoft Outlook.  
+1.  Ve formuláři deklarujte každý ovládací prvek, který se skládá z uživatelského rozhraní. V tomto příkladu použijte <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.SplitContainer>, a <xref:System.Windows.Forms.RichTextBox> ovládacích prvků tak, aby napodoboval uživatelského rozhraní aplikace Microsoft Outlook.  
   
     ```vb  
     Private WithEvents treeView1 As System.Windows.Forms.TreeView  
@@ -50,7 +50,7 @@ V následujícím postupu vytvoříte více podokny uživatelské rozhraní, kte
     private System.Windows.Forms. SplitContainer splitContainer1;  
     ```  
   
-2.  Vytvoření procedury, která definuje uživatelské rozhraní. Následující kód nastaví vlastnosti tak, aby formuláře budou vypadat podobně jako uživatelské rozhraní v aplikaci Microsoft Outlook. Pomocí další ovládací prvky nebo ukotvení je jinak, je stejně jednoduché vytvořit další uživatelské rozhraní, která se mají stejnou flexibilní.  
+2.  Vytvořte proceduru, která definuje uživatelské rozhraní. Následující kód nastaví vlastnosti tak, aby formuláře budou vypadat podobně jako na uživatelské rozhraní v aplikaci Microsoft Outlook. Pomocí další ovládací prvky nebo je jinak ukotvení, je stejně snadné vytvořit další uživatelské rozhraní, které jsou stejně flexibilní.  
   
     ```vb  
     Public Sub CreateOutlookUI()  
@@ -164,7 +164,7 @@ V následujícím postupu vytvoříte více podokny uživatelské rozhraní, kte
     }  
     ```  
   
-3.  V jazyce Visual Basic, přidejte volání procedury, kterou jste právě vytvořili `New()` postupu. V jazyce Visual C# přidejte tento řádek kódu do konstruktoru pro třídu formuláře.  
+3.  V jazyce Visual Basic přidejte volání do procedury, kterou jste právě vytvořili `New()` postup. Ve Vizuálu C#, přidejte následující řádek kódu do konstruktoru třídy formuláře.  
   
     ```vb  
     ' Add this to the New procedure.  
@@ -176,7 +176,7 @@ V následujícím postupu vytvoříte více podokny uživatelské rozhraní, kte
     createOutlookUI();  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.SplitContainer>  
- [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
- [Postupy: Vytváření uživatelského rozhraní s více podokny pomocí Windows Forms pomocí Návrháře](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.SplitContainer>
+- [Ovládací prvek SplitContainer](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)
+- [Postupy: Vytvoření více podokny uživatelského rozhraní pomocí Windows Forms pomocí návrháře](../../../../docs/framework/winforms/controls/create-a-multipane-user-interface-with-wf-using-the-designer.md)

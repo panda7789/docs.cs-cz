@@ -27,12 +27,12 @@ helpviewer_keywords:
 - Visual Basic code, Sub procedures
 - Function procedures [Visual Basic], declaring
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
-ms.openlocfilehash: 343ee168809fc63ef63559eda0fd018abde684e7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 186238d8e823f028caaed2e2618d882d21e1358f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485739"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548947"
 ---
 # <a name="declare-statement"></a>Declare – příkaz
 Deklaruje odkaz na proceduru implementovanou v externím souboru.  
@@ -54,14 +54,14 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 |Termín|Definice|  
 |---|---|  
 |`attributelist`|Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [chráněný](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br />- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`accessmodifier`|Volitelné. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />- [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md)<br />- [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)<br /><br /> Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
 |`Shadows`|Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).|  
-|`charsetmodifier`|Volitelné. Určuje znakovou sadou a soubor vyhledat informace. Může být jedna z následujících akcí:<br /><br /> -   [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md) (výchozí)<br />-   [Kódování Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Automaticky](../../../visual-basic/language-reference/modifiers/auto.md)|  
+|`charsetmodifier`|Volitelné. Určuje znakovou sadou a soubor vyhledat informace. Může být jedna z následujících akcí:<br /><br /> -   [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md) (výchozí)<br />-   [Kódování Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)|  
 |`Sub`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Označuje, že externí procedura nesmí vracet hodnotu.|  
 |`Function`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Označuje, že externí procedura, vrátí hodnotu.|  
-|`name`|Požadováno. Název externího odkazu. Další informace najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`Lib`|Požadováno. Zavádí `Lib` klauzuli, která identifikuje externí soubor (knihovna DLL nebo prostředek kódu) obsahující externí proceduru.|  
-|`libname`|Požadováno. Název souboru, který obsahuje postup deklarovaný.|  
+|`name`|Povinný parametr. Název externího odkazu. Další informace najdete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`Lib`|Povinný parametr. Zavádí `Lib` klauzuli, která identifikuje externí soubor (knihovna DLL nebo prostředek kódu) obsahující externí proceduru.|  
+|`libname`|Povinný parametr. Název souboru, který obsahuje postup deklarovaný.|  
 |`Alias`|Volitelné. Označuje, že název zadaný v nelze postup deklarované v rámci svého souboru identifikovat `name`. Zadejte jeho identifikaci v `aliasname`.|  
 |`aliasname`|Povinné, pokud používáte `Alias` – klíčové slovo. Řetězec, který identifikuje postupu v jednom ze dvou způsobů:<br /><br /> Název vstupního bodu procedury v rámci svého souboru do uvozovek (`""`)<br /><br /> -nebo-<br /><br /> Znak čísla (`#`) následované celé číslo určující řadová číslovka vstupní bod podle postupu v jeho souboru|  
 |`parameterlist`|Povinné, pokud, které procedura používá parametry. Zobrazit [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
@@ -124,7 +124,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
     -   Na platformě Unicode, jako je například Windows NT, Windows 2000 nebo Windows XP nejprve vyhledejte externí procedura bez úprav název. Pokud se to nepodaří připojit "W" na konci externí procedura pojmenujte a znovu vyhledat.  
   
--   **Mechanismus.** Jazyk Visual Basic používá rozhraní .NET Framework *vyvolání platformy* (PInvoke) mechanismus řešení a přístup k externí procedury. `Declare` Příkazu a <xref:System.Runtime.InteropServices.DllImportAttribute> třída oba použít tento mechanismus automaticky a není nutné žádnou znalost PInvoke. Další informace najdete v tématu [návod: volání rozhraní API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
+-   **Mechanismus.** Jazyk Visual Basic používá rozhraní .NET Framework *vyvolání platformy* (PInvoke) mechanismus řešení a přístup k externí procedury. `Declare` Příkazu a <xref:System.Runtime.InteropServices.DllImportAttribute> třída oba použít tento mechanismus automaticky a není nutné žádnou znalost PInvoke. Další informace najdete v tématu [názorný postup: Volání rozhraní API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
   
 > [!IMPORTANT]
 >  V případě, že externí procedura běží mimo modul CLR (CLR), je *nespravovaný kód*. Při volání tento postup, například funkce rozhraní Win32 API nebo metodu modelu COM může zveřejnit aplikaci na bezpečnostní rizika. Další informace najdete v tématu [zabezpečené kódování pokyny pro nespravovaný kód](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).  
@@ -141,12 +141,12 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
   
  [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_3.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [Příkaz Call](../../../visual-basic/language-reference/statements/call-statement.md)  
- [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>
+- [Příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
+- [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)
+- [Příkaz Call](../../../visual-basic/language-reference/statements/call-statement.md)
+- [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

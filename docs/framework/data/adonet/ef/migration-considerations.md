@@ -2,12 +2,12 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: cf705caa84742d654465a2dba005f2d8f32abcca
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 14f71de4a05c821ec21bf018fe2e2383d747c41b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837492"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54575616"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -29,7 +29,7 @@ ms.locfileid: "48837492"
  Cesta k migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategie přístupu data. Však můžete vždycky musí provádět následující úkoly při migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
 > [!NOTE]
->  Všechny tyto úlohy provádějí automaticky při použití nástroje modelu Entity Data Model od verze Visual Studio 2008. Další informace najdete v tématu [postupy: použití Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
+>  Všechny tyto úlohy provádějí automaticky při použití nástroje modelu Entity Data Model od verze Visual Studio 2008. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 1.  Upgrade aplikace.  
   
@@ -37,23 +37,23 @@ ms.locfileid: "48837492"
   
 2.  Definujte modely a mapování.  
   
-     Modelu a souborů mapování definování entity v konceptuálním modelu; struktury ve zdroji dat, jako jsou tabulky, uložené procedury a zobrazení a mapování mezi entitami a datových struktur zdroje. Další informace najdete v tématu [postupy: ruční definování modelu a souborů mapování](https://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
+     Modelu a souborů mapování definování entity v konceptuálním modelu; struktury ve zdroji dat, jako jsou tabulky, uložené procedury a zobrazení a mapování mezi entitami a datových struktur zdroje. Další informace najdete v tématu [jak: Ručně definovat modelu a mapování souborů](https://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
   
-     Názvy objektů ve zdroji dat musí odpovídat typy, které jsou definovány v modelu úložiště. Pokud stávající aplikace jednotlivě vystavuje dat jako objektů, je třeba zajistit, že entit a vlastnosti, které jsou definované v konceptuálním modelu shodovat s názvy těchto existující datové třídy a vlastnosti. Další informace najdete v tématu [postupy: přizpůsobení modelování a mapování souborů pro práci s objekty vlastní](https://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708).  
+     Názvy objektů ve zdroji dat musí odpovídat typy, které jsou definovány v modelu úložiště. Pokud stávající aplikace jednotlivě vystavuje dat jako objektů, je třeba zajistit, že entit a vlastnosti, které jsou definované v konceptuálním modelu shodovat s názvy těchto existující datové třídy a vlastnosti. Další informace najdete v tématu [jak: Přizpůsobení modelování a mapování souborů pro práci s vlastní objekty](https://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708).  
   
     > [!NOTE]
     >  Entity Data Model Designer je možné přejmenovat entit v konceptuálním modelu tak, aby odpovídala stávající objekty. Další informace najdete v tématu [Entity Data Model Designer](https://msdn.microsoft.com/library/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  
   
 3.  Definujte připojovací řetězec.  
   
-     [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Pomocí speciálně formátovaného připojovací řetězec při provádění dotazů u konceptuálního modelu. Tento připojovací řetězec zapouzdřuje informace o modelu a souborů mapování a připojení ke zdroji dat. Další informace najdete v tématu [postupy: Definování připojovacího řetězce](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
+     [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Pomocí speciálně formátovaného připojovací řetězec při provádění dotazů u konceptuálního modelu. Tento připojovací řetězec zapouzdřuje informace o modelu a souborů mapování a připojení ke zdroji dat. Další informace najdete v tématu [jak: Definujte připojovací řetězec](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
   
 4.  Konfigurace projektu Visual Studio.  
   
-     Odkazy na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do projektu sady Visual Studio. Tyto soubory mapování můžete přidat do projektu zajistit, že jsou nasazené v aplikaci v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [postupy: ruční konfigurace projektu v Entity Framework](https://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
+     Odkazy na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] sestavení a modelu a mapování soubory musí být přidány do projektu sady Visual Studio. Tyto soubory mapování můžete přidat do projektu zajistit, že jsou nasazené v aplikaci v umístění, které je uvedené v připojovacím řetězci. Další informace najdete v tématu [jak: Ruční konfigurace projektu v Entity Framework](https://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>Důležité informace týkající se aplikací pomocí existujících objektů  
- Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "plain old" CLR objektů POCO, tzv ignorujících objekty. Ve většině případů můžete pracovat existujících objektů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entitami objektů POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). Můžete také migrovat aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a použití datových tříd, které jsou generovány pomocí nástroje Entity Framework. Další informace najdete v tématu [postupy: použití Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
+ Počínaje [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] podporuje "plain old" CLR objektů POCO, tzv ignorujících objekty. Ve většině případů můžete pracovat existujících objektů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] tím, že menší změny. Další informace najdete v tématu [práce s entitami objektů POCO](https://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). Můžete také migrovat aplikace do [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a použití datových tříd, které jsou generovány pomocí nástroje Entity Framework. Další informace najdete v tématu [jak: Použijte Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>Důležité informace týkající se aplikací, které používají zprostředkovatele ADO.NET  
  [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] poskytovatelé, například SqlClient, umožňují dotazování na zdroj dat pro vrácení tabulkových dat. Je také možné načíst data do [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] datové sady. Následující seznam popisuje důležité aspekty upgradu aplikace, která využívá existující [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] zprostředkovatele:  
@@ -95,6 +95,6 @@ ms.locfileid: "48837492"
  Aplikace, které udržují stav.  
  [!INCLUDE[vstecasp](../../../../../includes/vstecasp-md.md)] Webové aplikace, často musíte mít stavu webové stránky nebo uživatelské relace. Objekty ve <xref:System.Data.Objects.ObjectContext> instance mohou být uloženy v zobrazení stavu klienta nebo ve stavu relace na serveru a později načíst a znovu připojit nový kontext objektu. Další informace najdete v tématu [připojení a odpojení objekty](https://msdn.microsoft.com/library/41d5c1ef-1b78-4502-aa10-7e1438d62d23).  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
- [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
+- [Terminologie Entity Framework](../../../../../docs/framework/data/adonet/ef/terminology.md)

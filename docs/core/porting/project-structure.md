@@ -4,12 +4,12 @@ description: Nápovědu k projektu vlastníky, kteří chtějí kompilaci své �
 author: conniey
 ms.date: 04/06/2017
 ms.custom: seodec18
-ms.openlocfilehash: 97673e1ccaeb094bf8c7cb835a84ae9389fac502
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 52205a32af212dc74b000025c0e4fc8cde3ae134
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169128"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498658"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Uspořádání vašeho projektu pro podporu rozhraní .NET Framework a .NET Core
 
@@ -67,7 +67,7 @@ Všimněte si změny jsou:
 * Existující projekty .NET Core a jsou uchovávány v oddělených složek.
   * Udržování projektů do samostatné složky zabraňuje vynucení, abyste měli Visual Studio 2017. Můžete vytvořit samostatné řešení, které otevře pouze starých projektů.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 * Podrobnosti najdete [portování dokumentace k .NET Core] [ porting-doc] další pokyny k migraci až po .NET Core.
 

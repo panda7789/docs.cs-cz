@@ -9,40 +9,40 @@ helpviewer_keywords:
 - text change [WPF], detecting
 - detecting text change [WPF]
 ms.assetid: 1c39ee14-e37f-49fb-a0d1-a9824ca13584
-ms.openlocfilehash: 1befd18220488334319a55bce2ce602aef20d3d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 23bf0a88b3dc16491fbd520683385c65a58a7f6a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33552949"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696552"
 ---
 # <a name="how-to-detect-when-text-in-a-textbox-has-changed"></a>Postupy: Zjištění, kdy došlo ke změně textu v prvku TextBox
-Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> události spuštění metody vždy, když text v <xref:System.Windows.Controls.TextBox> došlo ke změně ovládacího prvku.  
+Tento příklad ukazuje jeden ze způsobů použití <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> události a metody pokaždé, když se text v <xref:System.Windows.Controls.TextBox> ovládacího prvku se změnil.  
   
- Ve třídě kódu pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahující <xref:System.Windows.Controls.TextBox> vložit ovládací prvek, který chcete monitorovat změny, metoda k volání vždy, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> je aktivována událost.  Tato metoda musí mít podpis, který odpovídá očekávané pomocí <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
+ Ve třídě použití modelu code-behind pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která obsahuje <xref:System.Windows.Controls.TextBox> ovládací prvek, který chcete monitorovat změny vložit metodu volat pokaždé, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> dojde k aktivaci události.  Tato metoda musí mít podpis, který odpovídá očekávání podle <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
   
- Je volána obslužná rutina události vždy, když obsah <xref:System.Windows.Controls.TextBox> řízení se změní, uživatelem nebo prostřednictvím kódu programu.  
+ Obslužná rutina události je volána pokaždé, když obsah <xref:System.Windows.Controls.TextBox> změní ovládacího prvku, uživatelem nebo prostřednictvím kódu programu.  
   
- **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> řízení se vytvoří a zpočátku zobrazí s textem.  
+ **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> ovládacího prvku je vytvořen a zpočátku zobrazí s textem.  
   
 ## <a name="example"></a>Příklad  
- V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] , který definuje váš <xref:System.Windows.Controls.TextBox> řídit, zadejte <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> atributu s hodnotou, která odpovídá názvu metoda obslužná rutina události.  
+ V [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] , který definuje vaši <xref:System.Windows.Controls.TextBox> řídit, zadejte <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> atributu s hodnotou, která odpovídá názvu metody obslužné rutiny události.  
   
  [!code-xaml[TextBox_MiscCode#_TextChangedXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml#_textchangedxaml)]  
   
 ## <a name="example"></a>Příklad  
- Ve třídě kódu pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] obsahující <xref:System.Windows.Controls.TextBox> vložit ovládací prvek, který chcete monitorovat změny, metoda k volání vždy, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> je aktivována událost.  Tato metoda musí mít podpis, který odpovídá očekávané pomocí <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
+ Ve třídě použití modelu code-behind pro [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] , která obsahuje <xref:System.Windows.Controls.TextBox> ovládací prvek, který chcete monitorovat změny vložit metodu volat pokaždé, když <xref:System.Windows.Controls.Primitives.TextBoxBase.TextChanged> dojde k aktivaci události.  Tato metoda musí mít podpis, který odpovídá očekávání podle <xref:System.Windows.Controls.TextChangedEventHandler> delegovat.  
   
  [!code-csharp[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/TextBox_MiscCode/CSharp/Window1.xaml.cs#_textchangedeventhandler)]
  [!code-vb[TextBox_MiscCode#_TextChangedEventHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/TextBox_MiscCode/VisualBasic/Window1.xaml.vb#_textchangedeventhandler)]  
   
- Je volána obslužná rutina události vždy, když obsah <xref:System.Windows.Controls.TextBox> řízení se změní, uživatelem nebo prostřednictvím kódu programu.  
+ Obslužná rutina události je volána pokaždé, když obsah <xref:System.Windows.Controls.TextBox> změní ovládacího prvku, uživatelem nebo prostřednictvím kódu programu.  
   
- **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> řízení se vytvoří a zpočátku zobrazí s textem.  
+ **Poznámka:** Tato událost aktivuje, když <xref:System.Windows.Controls.TextBox> ovládacího prvku je vytvořen a zpočátku zobrazí s textem.  
   
  Komentáře  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.TextChangedEventArgs>  
- [TextBox – přehled](../../../../docs/framework/wpf/controls/textbox-overview.md)  
- [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.TextChangedEventArgs>
+- [TextBox – přehled](../../../../docs/framework/wpf/controls/textbox-overview.md)
+- [RichTextBox – přehled](../../../../docs/framework/wpf/controls/richtextbox-overview.md)

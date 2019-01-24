@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 96153688-9a01-47c4-8430-909cee9a2887
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b4e835d01ac0e1249a9a4c71a3a9db25082fec1
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 73c745fbbdb66777b50478623d969c125f92474b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964838"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698888"
 ---
 # <a name="custom-partitioners-for-plinq-and-tpl"></a>Vlastní dělicí metody pro PLINQ a TPL
 Pro paralelní zpracování operace na zdroji dat, jedním ze základních kroků je *oddílu* zdroje do několika oddílů, které může přistupovat souběžně více vláken. PLINQ a Task Parallel Library (TPL) poskytují výchozí rozdělovače, které pracují transparentně při psaní paralelního dotazu nebo <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky. Pro pokročilejší scénáře můžete zařadit vlastní dělicí metody.  
@@ -23,7 +23,7 @@ Pro paralelní zpracování operace na zdroji dat, jedním ze základních krok�
 ## <a name="kinds-of-partitioning"></a>Druhy dělení  
  Při vytváření oddílů zdroji dat mnoha způsoby. V nejúčinnější přístupy více vláken spolupracují s cílem procesu původní zdrojové sekvence, nikoli fyzické oddělení zdroje do více dílčích sekvencí. Pro pole a další indexovat zdroje <xref:System.Collections.IList> kolekce, kde délka je znám předem, *dělení rozsah* je nejjednodušší druh dělení. Každé vlákno přijímá jedinečný počáteční a koncové indexy, tak, aby jeho rozsah zdroje může zpracovat bez přepsání nebo přepsání z žádného vlákna. Pouze režie spojená s rozsah dělení je počáteční pracovní vytváření rozsahů; Po tomto není nutná žádná další synchronizace. Tak dlouho, dokud zatížení je rozděleno rovnoměrně, je proto poskytují dobrý výkon. Nevýhodou rozsah dělení je, že pokud se jedno vlákno brzy dokončí, nemůže pomoct ostatní vlákna dokončí svou práci.  
   
- Propojené seznamy nebo další kolekce, jejichž délka není znám, můžete použít *dělení bloků*. Při dělení bloků dat, každý vlákna nebo úlohy v paralelní smyčce nebo dotaz využívá některé zdrojové prvky v jednom bloku, zpracovává je a potom se vrátí zpět k načtení dalších prvků. Dělicí zajistí, že všechny prvky mají distribuovat a, že neexistují žádné duplicity. Blok může být libovolné velikosti. Například dělicí metodou, která je znázorněna v [postupy: implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md) vytvoří bloky dat, které obsahují pouze jeden element. Za předpokladu, bloky dat nejsou příliš velké, tento druh dělení je ze své podstaty Vyrovnávání zatížení protože přiřazení prvky na vláknech není předem určit. Dělicí ale účtovat režii synchronizace pokaždé, když vlákno je potřeba získat jiného bloku. Množství synchronizace vzniklé v těchto případech je nepřímo úměrná velikosti bloky dat.  
+ Propojené seznamy nebo další kolekce, jejichž délka není znám, můžete použít *dělení bloků*. Při dělení bloků dat, každý vlákna nebo úlohy v paralelní smyčce nebo dotaz využívá některé zdrojové prvky v jednom bloku, zpracovává je a potom se vrátí zpět k načtení dalších prvků. Dělicí zajistí, že všechny prvky mají distribuovat a, že neexistují žádné duplicity. Blok může být libovolné velikosti. Například dělicí metodou, která je znázorněna v [jak: Implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md) vytvoří bloky dat, které obsahují pouze jeden element. Za předpokladu, bloky dat nejsou příliš velké, tento druh dělení je ze své podstaty Vyrovnávání zatížení protože přiřazení prvky na vláknech není předem určit. Dělicí ale účtovat režii synchronizace pokaždé, když vlákno je potřeba získat jiného bloku. Množství synchronizace vzniklé v těchto případech je nepřímo úměrná velikosti bloky dat.  
   
  Obecně platí rozsah dělení probíhá pouze rychleji, pokud čas spuštění delegáta je malé a střední, zdroj má velký počet prvků a celkovou práci každý oddíl je zhruba ekvivalentní. Vytváření oddílů datových dávek tedy obecně rychlejší ve většině případů. U zdrojů s malý počet elementů nebo delší dobu provádění pro delegáta pak výkon bloků dat a vytváření oddílů rozsah je o stejné.  
   
@@ -95,7 +95,7 @@ Pro paralelní zpracování operace na zdroji dat, jedním ze základních krok�
 ### <a name="dynamic-partitions"></a>Dynamických oddílů  
  Pokud máte v úmyslu dělicí metody pro použití v <xref:System.Threading.Tasks.Parallel.ForEach%2A> metodu, musí být schopni vracet dynamické počet oddílů. To znamená, že dělicí můžete zadat enumerátor pro nového oddílu na vyžádání kdykoli během provádění smyčky. V podstatě pokaždé, když smyčky přidá nový paralelních úkolů, požadavků nový oddíl pro tuto úlohu. Pokud potřebujete data, která mají být uspořádatelná, pak jsou odvozeny z <xref:System.Collections.Concurrent.OrderablePartitioner%601?displayProperty=nameWithType> tak, aby každá položka v každém oddílu je přiřazen jedinečný index.  
   
- Další informace a příklad najdete v tématu [postupy: implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ Další informace a příklad najdete v tématu [jak: Implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
 ### <a name="contract-for-partitioners"></a>Kontrakt pro dělicí metody  
  Při implementaci vlastního rozdělovače, postupujte podle následujících pokynů k zajištění správné interakci s PLINQ a <xref:System.Threading.Tasks.Parallel.ForEach%2A> v TPL:  
@@ -122,6 +122,6 @@ Pro paralelní zpracování operace na zdroji dat, jedním ze základních krok�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
-- [Postupy: Implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)  
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
+- [Postupy: Implementace dynamických oddílů](../../../docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md)
 - [Postupy: Implementace rozdělovače pro statické dělení](../../../docs/standard/parallel-programming/how-to-implement-a-partitioner-for-static-partitioning.md)

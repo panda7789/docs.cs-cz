@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (C#)'
+title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (C#)'
 ms.date: 07/20/2015
 ms.assetid: 408ddce3-89e3-4e12-8353-34a49beeb72b
-ms.openlocfilehash: 0cb964991cdbcdb3fa528ac96a0e883a37439099
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3b582f3959ed4c703123fab99e98bedda0a0a3a8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514552"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623834"
 ---
-# <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (C#)
+# <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (C#)
 Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
   
--   `MathLibrary.DLL`: Knihovna soubor, který obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
+-   `MathLibrary.DLL`: Soubor knihovny, která obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
   
 -   `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet svých parametrů. Třída `AddClass` , který obsahuje metodu `Add` patří do oboru názvů `UtilityMethods`.  
   
@@ -122,8 +122,8 @@ csc /out:TestCode.exe /reference:MathLibrary.DLL TestCode.cs
   
  Další informace o sestavování z příkazového řádku najdete v tématu [sestavení pomocí příkazového řádku csc.exe](../../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
-- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
 - [Vytvoření třídy k umístění funkcí DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

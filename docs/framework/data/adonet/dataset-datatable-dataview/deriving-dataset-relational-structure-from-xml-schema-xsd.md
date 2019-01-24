@@ -2,17 +2,17 @@
 title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 76fd0126f32eb2b22a12ee0b67e1f81794ff9445
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 8d11fdbcb973eb3e4b7487eb6aacb28374c4c654
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195291"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717935"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část obsahuje přehled toho, jak relační schéma `DataSet` je sestaven z dokument schématu XML definice jazyk (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek element schématu tabulky se vygeneruje v `DataSet`. Struktura tabulky se určuje podle definice komplexního typu. Tabulky vytvářejí `DataSet` pro nejvyšší úrovně elementy ve schématu. Ale tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element je vnořit do jiného `complexType` element, ve kterém malá a velká ve vnořeném `complexType` element je namapována na `DataTable` v rámci `DataSet`.  
   
- Další informace o XSD, najdete v článku World Wide Web Consortium (W3C) [XML schématu část 0: Úvod do doporučení](https://www.w3.org/TR/xmlschema-0/), [XML schématu část 1: struktury doporučení](https://www.w3.org/TR/xmlschema-1/)a [XML Schéma – část 2: Datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).  
+ Další informace o XSD, najdete v článku World Wide Web Consortium (W3C) [XML schématu část 0: Úvod do doporučení](https://www.w3.org/TR/xmlschema-0/), [XML schématu část 1: Struktury doporučení](https://www.w3.org/TR/xmlschema-1/)a [XML schématu část 2: Datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).  
   
  Následující příklad ukazuje schématu XML kde `customers` je podřízený prvek `MyDataSet` element, který je **datovou sadu** elementu.  
   
@@ -96,5 +96,5 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
  [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
  Popisuje, jak načíst a zachováte data v a relační struktury `DataSet` jako XML data.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

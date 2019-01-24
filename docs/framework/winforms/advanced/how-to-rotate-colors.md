@@ -8,36 +8,36 @@ helpviewer_keywords:
 - colors [Windows Forms], rotating
 - examples [Windows Forms], rotating colors
 ms.assetid: e2e4c300-159c-4f4a-9b56-103b0f7cbc05
-ms.openlocfilehash: 258ef9cd5eb8d569b2982614e3087df730a18c57
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6c4f41504911e94673707d99d804fad5b228599e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522392"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503059"
 ---
 # <a name="how-to-rotate-colors"></a>Postupy: Otáčení barev
-Otočení v four-dimensional barevný prostor je obtížné vizualizace. Jsme můžete usnadňují vizualizaci otočení souhlasit a jedna z komponent Barva pevné zachovat. Předpokládejme, že jsme souhlas s zachovat komponentu alfa pevné na 1 (plně neprůhledný). Potom jsme vizualizovat trojrozměrné barevný prostor s červenou, zelené a modré osy, jak je znázorněno na následujícím obrázku.  
+Otočení v four-dimensional barevný prostor je obtížné vizualizace. Můžeme provádět to usnadňuje vizualizaci otočení souhlasit a udržovat jeden barevným opraveno. Předpokládejme, že jsme souhlas zachovat alfa pevně nastavena na 1 (úplně neprůhledné). Potom jsme vizualizace trojrozměrného barevný prostor pomocí červené, zelené a modré osy, jak je znázorněno na následujícím obrázku.  
   
  ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring03.gif "recoloring03")  
   
- Barvu, která lze považovat za bod v 3D prostoru. Například bodu (1, 0, 0) v prostoru představuje červenou barvu a bodem (0, 1, 0) v prostoru představuje zelenou barvu.  
+ Barvu můžete představit jako bod v 3D prostoru. Například bod (1, 0, 0) v prostoru představuje červenou barvu a bod (0, 1, 0) v prostoru představuje zelenou barvu.  
   
- Následující obrázek znázorňuje, co znamená otočit barvu (1, 0, 0) prostřednictvím úhel 60 stupňů v rovině Red zeleně. Otočení paralelně roviny rovinou Red zelená lze považovat za otočení blue osy.  
+ Následující obrázek znázorňuje prostřednictvím úhel 60 stupňů v rovině červenou a zelenou význam otočení barev (1, 0, 0). Otočení paralelně roviny k rovině červenou a zelenou můžete představit jako otočení o modrá osu.  
   
  ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring04.gif "recoloring04")  
   
- Následující obrázek ukazuje, jak k chybě při inicializaci matice barev k provedení otočení o jednotlivých tři souřadnice osy (červená, zelená, modrá).  
+ Následující obrázek znázorňuje způsob inicializace matice barev k provedení rotace o každé ze tří OS souřadnic (červená, zelená, modrá).  
   
  ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring05.gif "recoloring05")  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu má obrázek, který je všechny jedné barvy (1, 0, 0,6) a použije rotaci 60 stupeň blue osy. Úhel otočení je, jež se v rovině rovnoběžné roviny red zeleně.  
+ Následující příklad používá image, která je všechny jednu barvu (1, 0, 0.6) a platí otočení 60 stupňů o modrá osu. Úhel otočení je, jež navýšení kapacity v rovině, který je paralelní k rovině červenou a zelenou.  
   
- Následující obrázek znázorňuje původní bitové kopie na levé straně a obrázek otočen barva na pravé straně.  
+ Následující obrázek znázorňuje původní obrázek nalevo a obrázek otočí barvu na pravé straně.  
   
- ![Otáčení barev](../../../../docs/framework/winforms/advanced/media/colortrans5.png "colortrans5")  
+ ![Rotate Colors](../../../../docs/framework/winforms/advanced/media/colortrans5.png "colortrans5")  
   
- Následující obrázek znázorňuje vizualizaci otočení barev provést v následujícím kódu.  
+ Následující obrázek znázorňuje vizualizace otáčení barev provést v následujícím kódu.  
   
  ![Přebarvení](../../../../docs/framework/winforms/advanced/media/recoloring06.gif "recoloring06")  
   
@@ -45,10 +45,10 @@ Otočení v four-dimensional barevný prostor je obtížné vizualizace. Jsme m�
  [!code-vb[System.Drawing.RotateColors#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RotateColors/VB/Form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `RotationInput.bmp` s název souboru obrázku a cesta platné ve vašem systému.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `RotationInput.bmp` název a cesta platné ve vašem systému.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Imaging.ColorMatrix>  
- <xref:System.Drawing.Imaging.ImageAttributes>  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Imaging.ColorMatrix>
+- <xref:System.Drawing.Imaging.ImageAttributes>
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)

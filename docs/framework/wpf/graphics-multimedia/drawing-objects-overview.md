@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Drawing objects [WPF]
 - DrawingGroup objects [WPF]
 ms.assetid: 9b5ce5c0-e204-4320-a7a8-0b2210d62f88
-ms.openlocfilehash: 92cf4e7099c7880eb9bde9af765970abac698310
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4be6f3b06a0e9ab16469ad9a7f9e78799cc2e637
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525573"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513669"
 ---
 # <a name="drawing-objects-overview"></a>Přehled vykreslovaných objektů
 Toto téma představuje <xref:System.Windows.Media.Drawing> objektů a popisuje, jak se dají použít k efektivní kreslení tvarů, rastrové obrázky, text a média. Použít <xref:System.Windows.Media.Drawing> objekty při vytváření klipart, Malování <xref:System.Windows.Media.DrawingBrush>, nebo použijte <xref:System.Windows.Media.Visual> objekty.  
@@ -180,12 +180,12 @@ Pořadí operací DrawingGroup –
   
 |Vlastnost|Popis|Obrázek|  
 |--------------|-----------------|------------------|  
-|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|Mění neprůhlednost vybrané části <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [postupy: řízení krytí kresby](https://msdn.microsoft.com/library/68580652-7d32-4d27-93cc-a5148cf4d5ee).|![DrawingGroup – s masky krytí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
-|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|Rovnoměrně mění neprůhlednost <xref:System.Windows.Media.DrawingGroup> obsah. Pomocí této vlastnosti můžete provést <xref:System.Windows.Media.Drawing> průhledného nebo částečně. Příklad najdete v tématu [postupy: použití masky krytí na kresbu](https://msdn.microsoft.com/library/d77b420b-9be2-479c-a45e-82f4da30eb9f).|![Objekty DrawingGroup s různým nastavením neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
-|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|Platí <xref:System.Windows.Media.Effects.BitmapEffect> k <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [postupy: použití efekty BitmapEffect na kresbu](https://msdn.microsoft.com/library/c5b1de83-8d09-47fb-96db-5f174471f4b5).|![DrawingGroup – s BlurBitmapEffect](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
-|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|Klipy <xref:System.Windows.Media.DrawingGroup> obsah do oblasti popíšete pomocí <xref:System.Windows.Media.Geometry>. Příklad najdete v tématu [postupy: oříznutí kresby](https://msdn.microsoft.com/library/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058) .|![DrawingGroup – s definovanou oblastí oříznutí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
+|<xref:System.Windows.Media.DrawingGroup.OpacityMask%2A>|Mění neprůhlednost vybrané části <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [jak: Řízení průhlednosti kresby](https://msdn.microsoft.com/library/68580652-7d32-4d27-93cc-a5148cf4d5ee).|![DrawingGroup – s masky krytí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opmask.png "graphicsmm_opmask")|  
+|<xref:System.Windows.Media.DrawingGroup.Opacity%2A>|Rovnoměrně mění neprůhlednost <xref:System.Windows.Media.DrawingGroup> obsah. Pomocí této vlastnosti můžete provést <xref:System.Windows.Media.Drawing> průhledného nebo částečně. Příklad najdete v tématu [jak: Použití masky krytí na kresbu](https://msdn.microsoft.com/library/d77b420b-9be2-479c-a45e-82f4da30eb9f).|![Objekty DrawingGroup s různým nastavením neprůhlednosti](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-opacity.png "graphicsmm_opacity")|  
+|<xref:System.Windows.Media.DrawingGroup.BitmapEffect%2A>|Platí <xref:System.Windows.Media.Effects.BitmapEffect> k <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [jak: Použití efekty BitmapEffect na kresbu](https://msdn.microsoft.com/library/c5b1de83-8d09-47fb-96db-5f174471f4b5).|![DrawingGroup – s BlurBitmapEffect](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-bitmap.png "graphicsmm_bitmap")|  
+|<xref:System.Windows.Media.DrawingGroup.ClipGeometry%2A>|Klipy <xref:System.Windows.Media.DrawingGroup> obsah do oblasti popíšete pomocí <xref:System.Windows.Media.Geometry>. Příklad najdete v tématu [jak: Oříznout kresby](https://msdn.microsoft.com/library/1f7d8a2c-c3c2-42cb-a542-e6796f9fb058) .|![DrawingGroup – s definovanou oblastí oříznutí](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-clipgeom.png "graphicsmm_clipgeom")|  
 |<xref:System.Windows.Media.DrawingGroup.GuidelineSet%2A>|Připnutí pixelech nezávislých na zařízení na zařízení pixelů podél zadaná pravidla. Tato vlastnost je užitečná pro zajištění prudce vykreslení jemně podrobné grafiky na displeji nízkým rozlišením DPI. Příklad najdete v tématu [použití GuidelineSet na kresbu](../../../../docs/framework/wpf/graphics-multimedia/how-to-apply-a-guidelineset-to-a-drawing.md).|![DrawingGroup – a nemusíte GuidelineSet](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-drawinggroup-guidelineset.png "graphicsmm_drawinggroup_guidelineset")|  
-|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|Transformuje <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [postupy: použití transformace na kresbu](https://msdn.microsoft.com/library/0d525f2b-682d-4d67-9660-cf46929fbabd).|![DrawingGroup – otočit A](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
+|<xref:System.Windows.Media.DrawingGroup.Transform%2A>|Transformuje <xref:System.Windows.Media.DrawingGroup> obsah. Příklad najdete v tématu [jak: Použití transformace na kresbu](https://msdn.microsoft.com/library/0d525f2b-682d-4d67-9660-cf46929fbabd).|![DrawingGroup – otočit A](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-rotate.png "graphicsmm_rotate")|  
   
 <a name="usingimagedrawing"></a>   
 ## <a name="display-a-drawing-as-an-image"></a>Zobrazit kresby jako obrázek  
@@ -233,13 +233,13 @@ GeometryDrawing použít s DrawingBrush
   
  [!code-csharp[DrawingMiscSnippets_snip#GraphicsMMRetrieveDrawings](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingMiscSnippets_snip/CSharp/EnumerateDrawingsExample.xaml.cs#graphicsmmretrievedrawings)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Drawing>  
- <xref:System.Windows.Media.DrawingGroup>  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  
- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/drawings-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Drawing>
+- <xref:System.Windows.Media.DrawingGroup>
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
+- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/drawings-how-to-topics.md)

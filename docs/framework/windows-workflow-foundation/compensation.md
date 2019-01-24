@@ -2,12 +2,12 @@
 title: Kompenzace
 ms.date: 03/30/2017
 ms.assetid: 722e9766-48d7-456c-9496-d7c5c8f0fa76
-ms.openlocfilehash: 840730acd9289fd394906c49186846e3204c4a99
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.openlocfilehash: e8a7140e677b553d07014d0ac5a77dd1c7488f53
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47863465"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607602"
 ---
 # <a name="compensation"></a>Kompenzace
 Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého dříve Dokončená práce vrátit zpět nebo kompenzována (následující logiky definované aplikací.) dojde k následující chybě. Tato část popisuje, jak použít náhradu v pracovních postupech.  
@@ -48,9 +48,9 @@ Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého 
  Když uživatel vyvolá pracovní postup, se zobrazí následující výstup do konzoly.  
   
  **ReserveFlight: Lístku je vyhrazená.**  
-**ManagerApproval: Schválení správcem přijaté.**   
-**PurchaseFlight: Lístek jste si koupili.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: uzavřeno.**    
+**ManagerApproval: Přijetí schválení správcem.**   
+**PurchaseFlight: Jste si koupili lístku.**   
+**Byla úspěšně dokončena se stavem pracovního postupu: Uzavřený.**    
 > [!NOTE]
 >  Ukázkové aktivity v tomto tématu, jako `ReserveFlight` konzolu tak, aby usnadnily pořadí, ve kterém jsou spouštěny aktivity, když dojde k vyrovnání zobrazí jejich název a účel.  
   
@@ -96,7 +96,7 @@ Kompenzace ve Windows Workflow Foundation (WF) je mechanismus, pomocí kterého 
 **Pracovní postup neošetřená výjimka:**   
 **System.ApplicationException: Simulované chybě v pracovním postupu.**   
 **CancelFlight: Lístek se zrušila.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: bylo zrušeno.**    
+**Byla úspěšně dokončena se stavem pracovního postupu: Bylo zrušeno.**    
 ### <a name="cancellation-and-compensableactivity"></a>Zrušení a aktivita CompensableActivity  
  Pokud aktivity v <xref:System.Activities.Statements.CompensableActivity.Body%2A> z <xref:System.Activities.Statements.CompensableActivity> mají nedokončený a aktivity se zruší, aktivity v <xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A> provádějí.  
   
@@ -165,8 +165,8 @@ Activity wf = new Sequence()
 **SimulatedErrorCondition: Došlo ApplicationException.**   
 **Pracovní postup neošetřená výjimka:**   
 **System.ApplicationException: Simulované chybě v pracovním postupu.**   
-**CancelCreditCard: Zrušit platební karty poplatky.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: bylo zrušeno.**  Další informace o zrušení naleznete v tématu [zrušení](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md).  
+**CancelCreditCard: Zrušte poplatky.**   
+**Byla úspěšně dokončena se stavem pracovního postupu: Bylo zrušeno.**  Další informace o zrušení naleznete v tématu [zrušení](../../../docs/framework/windows-workflow-foundation/modeling-cancellation-behavior-in-workflows.md).  
   
 ### <a name="explicit-compensation-using-the-compensate-activity"></a>Pomocí explicitní kompenzaci aktivitu kompenzace  
  V předchozí části zkušebním implicitní kompenzaci. Implicitní kompenzace může být vhodné pro jednoduché scénáře, ale pokud podrobnější je vyžadováno řízení nad plánováním kompenzace pak zpracování <xref:System.Activities.Statements.Compensate> aktivita se dá použít. K zahájení kompenzace s <xref:System.Activities.Statements.Compensate> aktivity, <xref:System.Activities.Statements.CompensationToken> z <xref:System.Activities.Statements.CompensableActivity> pro které kompenzace je žádoucí se používá. <xref:System.Activities.Statements.Compensate> Aktivita slouží k zahájení kompenzaci na žádném dokončení <xref:System.Activities.Statements.CompensableActivity> , která nebyla potvrzena nebo kompenzována. Například <xref:System.Activities.Statements.Compensate> aktivity se daly použít v <xref:System.Activities.Statements.TryCatch.Catches%2A> část <xref:System.Activities.Statements.TryCatch> aktivity nebo kdykoli po dokončení <xref:System.Activities.Statements.CompensableActivity> byla dokončena. V tomto příkladu <xref:System.Activities.Statements.Compensate> aktivita se používá v <xref:System.Activities.Statements.TryCatch.Catches%2A> část <xref:System.Activities.Statements.TryCatch> aktivitu pro vrácení akce <xref:System.Activities.Statements.CompensableActivity>.  
@@ -247,7 +247,7 @@ Activity wf = new Sequence()
  **ReserveFlight: Lístku je vyhrazená.**  
 **SimulatedErrorCondition: Došlo ApplicationException.**   
 **CancelFlight: Lístek se zrušila.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: uzavřeno.**    
+**Byla úspěšně dokončena se stavem pracovního postupu: Uzavřený.**    
 ### <a name="confirming-compensation"></a>Potvrzují se kompenzace  
  Ve výchozím nastavení kompenzovatelné aktivity kompenzovat lze kdykoli po jejich dokončení. V některých případech to nemusí být vhodné. V předchozím příkladu byl kompenzace k rezervaci-the-ticket ke zrušení rezervace. Po dokončení letu tento krok kompenzace je však již platná. Potvrzení kompenzovatelné aktivity volá aktivita určené <xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A>. Jeden využití pro tuto je umožnit všechny prostředky, které jsou nezbytné k provedení náhrady uvolnit. Jakmile se potvrdí kompenzovatelné aktivity není možné, aby se kompenzována a tím dojde k pokusu o <xref:System.InvalidOperationException> je vyvolána výjimka. Po úspěšném dokončení pracovního postupu, jsou všechny nepotvrzené a kompenzována kompenzovatelné aktivity, které byla úspěšně dokončena v obráceném pořadí potvrdit dokončení. V tomto příkladu je letu vyhrazené, koupit a dokončit, a pak je potvrzen kompenzovatelné aktivity. Potvrďte <xref:System.Activities.Statements.CompensableActivity>, použijte <xref:System.Activities.Statements.Confirm> aktivity a zadejte <xref:System.Activities.Statements.CompensationToken> z <xref:System.Activities.Statements.CompensableActivity> potvrďte.  
   
@@ -314,19 +314,19 @@ Activity wf = new Sequence()
 Když uživatel vyvolá pracovní postup, se zobrazí následující výstup do konzoly.  
   
 **ReserveFlight: Lístku je vyhrazená.**  
-**ManagerApproval: Schválení správcem přijaté.**   
-**PurchaseFlight: Lístek jste si koupili.**   
-**TakeFlight: Letu je dokončen.**   
+**ManagerApproval: Přijetí schválení správcem.**   
+**PurchaseFlight: Jste si koupili lístku.**   
+**TakeFlight: Flight je dokončen.**   
 **ConfirmFlight: Letu se nestalo, žádné honoráře je to možné.**   
-**Pracovního postupu byla úspěšně dokončena se stavem: uzavřeno.**   
+**Byla úspěšně dokončena se stavem pracovního postupu: Uzavřený.**   
 
 ## <a name="nesting-compensation-activities"></a>Vnoření kompenzace aktivity  
 
 A <xref:System.Activities.Statements.CompensableActivity> , jde umístit do <xref:System.Activities.Statements.CompensableActivity.Body%2A> části jiného <xref:System.Activities.Statements.CompensableActivity>. A <xref:System.Activities.Statements.CompensableActivity> nelze umístit do rutiny jiného <xref:System.Activities.Statements.CompensableActivity>. Zodpovídá za nadřazeného <xref:System.Activities.Statements.CompensableActivity> zajistit, že pokud je zrušen, potvrzena nebo kompenzována, všechny podřízené kompenzovatelné aktivity, které byly úspěšně dokončeny a ještě není byla potvrzena nebo kompenzována musí být potvrzeny nebo kompenzována předtím, než nadřazená dokončení zrušení, confirmation nebo kompenzaci. Pokud to není explicitně modelovat nadřazené <xref:System.Activities.Statements.CompensableActivity> bude implicitně kompenzace podřízené kompenzovatelné aktivity, pokud nadřazená dostali zrušení nebo kompenzaci signálu. Pokud nadřazená přijal signál potvrzení nadřazené potvrdí implicitně podřízené kompenzovatelné aktivity. Pokud logiku ke zpracování zrušení, confirmation nebo kompenzace je explicitně modelován v obslužné rutině nadřazené <xref:System.Activities.Statements.CompensableActivity>, všech podřízených nejsou explicitně zpracována bude implicitně potvrzen.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Activities.Statements.CompensableActivity>  
-- <xref:System.Activities.Statements.Compensate>  
-- <xref:System.Activities.Statements.Confirm>  
+- <xref:System.Activities.Statements.CompensableActivity>
+- <xref:System.Activities.Statements.Compensate>
+- <xref:System.Activities.Statements.Confirm>
 - <xref:System.Activities.Statements.CompensationToken>

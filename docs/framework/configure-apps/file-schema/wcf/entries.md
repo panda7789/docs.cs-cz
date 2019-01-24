@@ -2,19 +2,19 @@
 title: '&lt;Položky&gt;'
 ms.date: 03/30/2017
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
-ms.openlocfilehash: 8c442990ee736c17b71b625e06d961230a8ceed2
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 33f98cb4b138307622a14463ce5a3008058b6e31
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587057"
 ---
 # <a name="ltentriesgt"></a>&lt;Položky&gt;
 Směrování položky, které obsahují mapování mezi směrovacími filtry a cílovými koncovými body pro odesílání zpráv do pokud bod odpovídá filtru.  
   
  \<system.serviceModel>  
 \<směrování >  
-\<routingTables >  
+\<routingTables>  
 \<Tabulka >  
 \<položky >  
   
@@ -53,6 +53,6 @@ Směrování položky, které obsahují mapování mezi směrovacími filtry a c
 |-------------|-----------------|  
 |[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Konfigurační oddíl, který obsahuje směrovací tabulky.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>       
- <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement?displayProperty=nameWithType>    
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement?displayProperty=nameWithType>

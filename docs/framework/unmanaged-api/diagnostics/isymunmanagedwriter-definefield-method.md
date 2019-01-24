@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d5b3c60845fce39ce7f904c6871e7feb16e8970
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 03c0a9d7315f5158948701d4322887104f0844c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429811"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603661"
 ---
 # <a name="isymunmanagedwriterdefinefield-method"></a>ISymUnmanagedWriter::DefineField – metoda
-Definuje samostatná proměnná, která není v rámci metody. Tato metoda je použít u některých polí v třídách, bitových polí a tak dále.  
+Definuje jednu proměnnou, která není v rámci metody. Tato metoda je použité pro určité pole ve třídách, bitová pole a tak dále.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +44,37 @@ HRESULT DefineField(
   
 #### <a name="parameters"></a>Parametry  
  `parent`  
- [v] Metadata typ nebo metoda tokenu.  
+ [in] Metadata typu nebo metodě tokenu.  
   
  `name`  
- [v] Název pole.  
+ [in] Název pole.  
   
  `attributes`  
- [v] Atributy pole.  
+ [in] Atributy pole.  
   
  `cSig`  
- [v] A `ULONG32` to znamená velikost vyrovnávací paměti musí obsahovat pole podpis znakům.  
+ [in] A `ULONG32` , který je velikost ve znacích, vyrovnávací paměti musí obsahovat podpis pole.  
   
  `signature`  
- [v] Pole podpisy pole.  
+ [in] Pole podpisy polí.  
   
  `addrKind`  
- [v] Typ adresy.  
+ [in] Typ adresy.  
   
  `addr1`  
- [v] První adresa pro specifikaci pole.  
+ [in] První adresa specifikace pole.  
   
  `addr2`  
- [v] Druhý adresa pro specifikaci pole.  
+ [in] Druhý adresa specifikace pole.  
   
  `addr3`  
- [v] Je třetí adresa pro specifikaci pole.  
+ [in] Je třetí adresa pro specifikaci pole.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

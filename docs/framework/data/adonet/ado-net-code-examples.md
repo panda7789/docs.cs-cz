@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: 8719ffc458297191514cfe65714d5b6dd862dd60
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5d3bc2b4e5fbb8cc36cf4688bd4fa5e4c0851dcf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143614"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597629"
 ---
 # <a name="adonet-code-examples"></a>Příklady kódu ADO.NET
 Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí následujících technologií ADO.NET:
@@ -21,7 +21,7 @@ Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí ná
 
   - [OleDb](#oledb) (`System.Data.OleDb`)
 
-  - [ODBC](#odbc) (`System.Data.Odbc`)
+  - [Odbc](#odbc) (`System.Data.Odbc`)
 
   - [OracleClient](#oracleclient) (`System.Data.OracleClient`)
 
@@ -31,7 +31,7 @@ Výpis kódu v tomto tématu ukazují, jak načíst data z databáze pomocí ná
 
   - [ObjectQuery typu](#typed-objectquery)
 
-  - [Zprostředkovatel EntityClient](#entityclient) (`System.Data.EntityClient`)
+  - [EntityClient](#entityclient) (`System.Data.EntityClient`)
 
 - [LINQ to SQL](#linq-to-sql)
 
@@ -186,7 +186,7 @@ Class ObjectQuerySample
 End Class
 ```
 
-### <a name="entityclient"></a>Zprostředkovatel EntityClient
+### <a name="entityclient"></a>EntityClient
 Kód v tomto příkladu používá <xref:System.Data.EntityClient.EntityCommand> ke spuštění dotazu Entity SQL. Tento dotaz vrátí seznam záznamů, které představují instance typu entity kategorií. <xref:System.Data.EntityClient.EntityDataReader> Slouží k přístupu k datové záznamy v sadě výsledků. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).
 
 ```csharp
@@ -344,9 +344,9 @@ End Class
 ```
 
 ## <a name="see-also"></a>Viz také:
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [Vytváření datových aplikací](https://msdn.microsoft.com/library/ab334d5f-4f49-4346-bce0-3325d6130b3e)  
- [Dotazování na Entity Data Model (Entity Framework úlohy)](https://msdn.microsoft.com/187f1caa-e4d3-4e31-bd99-5d5c2b329c77)  
- [Jak: Provedení dotazu, který vrací objekty anonymního typu](https://msdn.microsoft.com/3b264025-e911-4d73-90ce-992d2b9d189d)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)  
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [Vytváření datových aplikací](https://msdn.microsoft.com/library/ab334d5f-4f49-4346-bce0-3325d6130b3e)
+- [Dotazování na Entity Data Model (Entity Framework úlohy)](https://msdn.microsoft.com/187f1caa-e4d3-4e31-bd99-5d5c2b329c77)
+- [Postupy: Provedení dotazu, který vrací objekty anonymního typu](https://msdn.microsoft.com/3b264025-e911-4d73-90ce-992d2b9d189d)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

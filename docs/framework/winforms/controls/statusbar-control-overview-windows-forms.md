@@ -7,25 +7,25 @@ helpviewer_keywords:
 - StatusBar control [Windows Forms], about StatusBar control
 - status bars
 ms.assetid: b7b9852c-633d-4416-bb2e-94852b989c6c
-ms.openlocfilehash: 6dd5b45b38ec4fb04d9a53a1648cfe6e5a5b9f20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c3e52a91a31eb898d0176bc35a97cda7de9a8368
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535126"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491347"
 ---
 # <a name="statusbar-control-overview-windows-forms"></a>StatusBar – přehled ovládacího prvku (Windows Forms)
 > [!IMPORTANT]
->  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkcí do <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky jsou uchovány pro zpětnou kompatibilitu a budoucí použití, pokud jste Vyberte.  
+>  <xref:System.Windows.Forms.StatusStrip> a <xref:System.Windows.Forms.ToolStripStatusLabel> ovládací prvky nahradit a přidání funkce, které <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> řídí; však <xref:System.Windows.Forms.StatusBar> a <xref:System.Windows.Forms.StatusBarPanel> ovládací prvky se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud jste Zvolte.  
   
- Windows Forms [StatusBar – ovládací prvek](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) se používá ve formulářích jako oblast, obvykle zobrazují v dolní části okna, ve kterém aplikace můžete zobrazit různé typy informací o stavu. <xref:System.Windows.Forms.StatusBar> ovládací prvky může mít stav panely panelu na nich, které zobrazení textu nebo ikony, které označují stav nebo řadu ikony v animace, který indikuje, že proces je v provozu. například [!INCLUDE[ofprword](../../../../includes/ofprword-md.md)] označující, že dokument je uložen.  
+ Windows Forms [ovládacího prvku StatusBar](../../../../docs/framework/winforms/controls/statusbar-control-windows-forms.md) se používá ve formulářích jako oblast, obvykle se zobrazí v dolní části okna, ve kterém může aplikace zobrazit různé druhy informací o stavu. <xref:System.Windows.Forms.StatusBar> ovládací prvky můžete mít stav panelu na nich zobrazit panely text nebo ikony k označení stavu nebo řady ikony animace, který indikuje, že proces funguje; například [!INCLUDE[ofprword](../../../../includes/ofprword-md.md)] označující, že je dokument uložen.  
   
 ## <a name="using-the-statusbar-control"></a>Použití ovládacího prvku StatusBar  
- Internet Explorer pomocí stavového řádku označuje adresu URL stránky při umístění ukazatele myši na hypertextový odkaz; [!INCLUDE[ofprword](../../../../includes/ofprword-md.md)] získáte informace na stránce umístění, část umístění a úpravy v režimu, jako je přepisování a sledování revize; a Visual Studio používá stavový řádek umožnit kontextové informace, například o tom, jak pracovat s lze ukotvit windows jako ukotvený nebo plovoucí.  
+ Aplikace Internet Explorer stavový řádek používá k označení adresy URL stránky při umístění ukazatele myši nad hypertextový odkaz. [!INCLUDE[ofprword](../../../../includes/ofprword-md.md)] poskytuje informace o umístění stránky, umístění oddílu a úpravy v režimu, jako je přepisování a sledování revizí; a sady Visual Studio využívá stavového řádku, abychom zajistili kontextové informace, například o tom, jak pracovat s ukotvitelných oken jako ukotvené nebo plovoucí.  
   
- Do jedné zprávy můžete zobrazit na stavovém řádku nastavením <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `false` (výchozí) a nastavení <xref:System.Windows.Forms.StatusBar.Text%2A> vlastnost stavový řádek na text, který se má zobrazit ve stavovém řádku. Stavový řádek lze rozdělit do panelů zobrazíte víc než jeden typ informací nastavením <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost, která má `true` a pomocí <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A> metodu <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.  
+ Do jedné zprávy ve stavovém řádku můžete zobrazit tak, že nastavíte <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `false` (výchozí) a nastavení <xref:System.Windows.Forms.StatusBar.Text%2A> vlastnost stavový řádek textu, které se mají zobrazit ve stavovém řádku. Stavový řádek lze rozdělit do panelů k zobrazení více než jeden typ informací tak, že nastavíte <xref:System.Windows.Forms.StatusBar.ShowPanels%2A> vlastnost `true` a použití <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection.Add%2A> metoda <xref:System.Windows.Forms.StatusBar.StatusBarPanelCollection>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.StatusBar>  
- <xref:System.Windows.Forms.ToolStripStatusLabel>  
- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.StatusBar>
+- <xref:System.Windows.Forms.ToolStripStatusLabel>
+- [Postupy: Určení panelu v ovládacím prvku Windows Forms StatusBar označeného kliknutím](../../../../docs/framework/winforms/controls/determine-which-panel-wf-statusbar-control-was-clicked.md)

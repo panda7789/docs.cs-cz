@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7d280cd20b8ff76efe977983e3e9f6da32990c8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a886d8ab8f2d59bb9c9b0b3ff00fd89f7c931ff8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413956"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692818"
 ---
 # <a name="icordebugenumskip-method"></a>ICorDebugEnum::Skip – metoda
-Přesune kurzor dál o zadaný počet položek ve výčtu.  
+Přesune kurzor vpřed o zadaný počet položek ve výčtu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT Skip (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet položek, kterým se mají předat přesunutí kurzoru.  
+ [in] Počet položek, podle kterého se má přesunout kurzor vpřed.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,5 +48,5 @@ HRESULT Skip (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugEnum – rozhraní 1](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugEnum – rozhraní 1](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)

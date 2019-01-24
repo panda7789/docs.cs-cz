@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 5744184d224fa97e57055b5a110d830e8809647f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a2d0ef1e70c88133d5f9c3d2ffe8dafa4983cfd9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185885"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552018"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 Windows Communication Foundation (WCF) je architektura určená k vytváření aplikací orientovaných na služby. Pomocí technologie WCF, můžete odeslat data jako asynchronní zprávy z jeden koncový bod služby do jiného. Koncový bod služby můžou být součástí nepřetržitě dostupnými službami hostované službou IIS nebo může být služba hostovaná v aplikaci. Koncový bod může být klient služby, který vyžaduje data z koncového bodu služby. Zprávy může být stejně jednoduché jako jeden znak nebo slova jako XML, nebo komplexního, jako binární datový proud. Několik ukázkových scénářů patří:
@@ -46,7 +46,7 @@ WCF zahrnuje následující sady funkcí. Další informace najdete v tématu [p
 
      Zprávy se vyměňují v jednom z několika způsoby. Nejběžnější vzor je vzor žádost odpověď, kde jeden koncový bod vyžaduje data z druhé koncový bod. Druhý odpovědi koncového bodu. Existují další způsoby, jako je například jednosměrná zpráva, ve kterém jeden koncový bod odešle zprávu bez jakékoli očekává odpověď. Složitější vzor je vzor duplexní exchange, kde dva koncové body připojení a odešlete data vpřed a zpět, podobný program pro zasílání rychlých zpráv. Další informace o tom, jak implementovat jiná zpráva exchange vzory pomocí technologie WCF najdete v části [kontrakty](../../../docs/framework/wcf/feature-details/contracts.md).
 
--   **Metadata služby**
+-   **Service Metadata**
 
      WCF podporuje použití formátů podle oborových standardů, jako je například WSDL, schéma XML a WS-Policy publikování metadat služby. Tato metadata slouží k automatickému generování a konfigurace klientů pro přístup ke službám WCF. Metadata je možné publikovat prostřednictvím protokolu HTTP a HTTPS nebo pomocí standardní webové služby Metadata Exchange. Další informace najdete v tématu [metadat](../../../docs/framework/wcf/feature-details/metadata.md).
 
@@ -72,7 +72,7 @@ WCF zahrnuje následující sady funkcí. Další informace najdete v tématu [p
 
 -   **Transakce**
 
-     Také podporuje transakce použitím jednoho ze tří modelů transakce WCF: WS-AtomicTtransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci, najdete v článku podpory ve službě WCF [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
+     WCF také podporuje transakce použitím jednoho ze tří modelů transakce: WS-AtomicTtransactions, rozhraní API v <xref:System.Transactions> obor názvů a Microsoft Distributed Transaction Coordinator. Další informace o transakci, najdete v článku podpory ve službě WCF [transakce](../../../docs/framework/wcf/feature-details/transactions-in-wcf.md).
 
 -   **AJAX a podpora REST**
 
@@ -94,7 +94,7 @@ Microsoft Silverlight je platforma pro vytváření interoperabilních, bohatýc
 
 [!INCLUDE[dublin](../../../includes/dublin-md.md)] Aplikační server je vytvořená speciálně pro nasazení a správu aplikací, které používají WCF pro komunikaci. [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] Zahrnuje bohaté možnosti nástrojů a konfigurace vytvořené speciálně pro aplikace pro práci s WCF.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel>
 - [Základní koncepty Windows Communication Foundation](../../../docs/framework/wcf/fundamental-concepts.md)

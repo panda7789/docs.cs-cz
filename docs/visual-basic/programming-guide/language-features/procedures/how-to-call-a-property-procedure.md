@@ -8,59 +8,59 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-ms.openlocfilehash: 61d79b9ff99ec144a9c629872abd2a7e7ebda4d0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f8871c2cc5126110fa849d42eed3d8edb3a03f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654814"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602569"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>Postupy: Volání procedury vlastnosti (Visual Basic)
-Volání procedury vlastnosti ukládání hodnotu ve vlastnosti nebo načtení jeho hodnoty. Přístup k vlastnosti stejným způsobem jako přístup k proměnné.  
+Volání procedury vlastnosti uložení hodnoty do vlastnosti nebo načítání jeho hodnotu. Přístup k vlastnosti stejným způsobem, přístup k proměnné.  
   
- Vlastnosti `Set` postup ukládá hodnotu a jeho `Get` postup načte hodnotu. Ale Nevolejte explicitně tyto postupy podle názvu. Pomocí vlastnosti v příkazu přiřazení nebo výraz, stejně, jako by ukládat a načítat hodnoty proměnné. Visual Basic umožňuje volání procedury vlastnosti.  
+ Vlastnosti `Set` postup uloží hodnotu a jeho `Get` postup načte hodnotu. Však není volána explicitně tyto postupy podle názvu. Pomocí vlastnosti v příkazu přiřazení nebo výraz, stejně jako by ukládat nebo načítat hodnoty proměnné. Visual Basic provede volání do procedury vlastnosti.  
   
-### <a name="to-call-a-propertys-get-procedure"></a>K volání procedury Get vlastnost  
+### <a name="to-call-a-propertys-get-procedure"></a>Volání procedury Get vlastnosti  
   
-1.  Pomocí názvu vlastnosti ve výrazu stejným způsobem, jako byste použili název proměnné. Můžete použít vlastnost kdekoli můžete proměnné nebo konstantní.  
+1.  Použijte název vlastnosti výrazu stejným způsobem použijete název proměnné. Můžete použít vlastnost kdekoli můžete použít proměnnou nebo konstantu.  
   
      -nebo-  
   
-     Použít následující rovná název vlastnosti (`=`) přihlásit příkazu přiřazení.  
+     Použijte název vlastnosti po rovnosti (`=`) Přihlaste se příkazu přiřazení.  
   
-     Následující příklad načte hodnotu <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> vlastnost implicitně volání jeho `Get` postupu.  
+     Následující příklad přečte hodnotu <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> vlastnost implicitně volání jeho `Get` postup.  
   
      [!code-vb[VbVbalrDateProperties#4](./codesnippet/VisualBasic/how-to-call-a-property-procedure_1.vb)]  
   
-2.  Pokud vlastnost přijímá argumenty, postupujte podle názvu vlastnosti v závorkách uveďte seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorkách.  
+2.  Pokud vlastnost přebírá argumenty, postupujte podle názvu vlastnosti se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělených čárkami. Ujistěte se, že zadáte argumenty ve stejném pořadí, vlastnost definuje odpovídajících parametrů.  
+3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Ujistěte se, že zadáte argumenty ve stejném pořadí, že vlastnost definuje odpovídající parametry.  
   
- Hodnota vlastnosti, na které se účastní výraz stejně jako proměnné Konstanta by nebo je uložené v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
+ Hodnota vlastnosti podílí na výraz, stejně jako proměnné by – konstanta nebo je uložen v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
-### <a name="to-call-a-propertys-set-procedure"></a>Volání vlastnosti sadu postup  
+### <a name="to-call-a-propertys-set-procedure"></a>Volání vlastnosti je postup nastavení  
   
-1.  Na levé straně příkazu přiřazení pomocí názvu vlastnosti.  
+1.  Použijte název vlastnosti na levé straně příkazu přiřazení.  
   
-     Nastaví hodnotu v následujícím příkladu <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> vlastnost implicitně volání `Set` postupu.  
+     Následující příklad nastaví hodnotu vlastnosti <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> vlastnost implicitně volání `Set` postup.  
   
      [!code-vb[VbVbcnProcedures#11](./codesnippet/VisualBasic/how-to-call-a-property-procedure_2.vb)]  
   
-2.  Pokud vlastnost přijímá argumenty, postupujte podle názvu vlastnosti v závorkách uveďte seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorkách.  
+2.  Pokud vlastnost přebírá argumenty, postupujte podle názvu vlastnosti se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky.  
   
-3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělených čárkami. Ujistěte se, že zadáte argumenty ve stejném pořadí, vlastnost definuje odpovídajících parametrů.  
+3.  Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Ujistěte se, že zadáte argumenty ve stejném pořadí, že vlastnost definuje odpovídající parametry.  
   
- Hodnota generovaná na pravé straně přiřazení příkazu je uložené v určité vlastnosti.  
+ Hodnota generovaná na pravé straně příkazu přiřazení je uložená ve vlastnosti.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury vlastnosti](./property-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)  
- [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)  
- [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)  
- [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)  
- [Postupy: deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)  
- [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)  
- [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)  
- [Příkaz Get](../../../../visual-basic/language-reference/statements/get-statement.md)  
- [Příkaz Set](../../../../visual-basic/language-reference/statements/set-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury vlastnosti](./property-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
+- [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
+- [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
+- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
+- [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
+- [Příkaz Get](../../../../visual-basic/language-reference/statements/get-statement.md)
+- [Příkaz Set](../../../../visual-basic/language-reference/statements/set-statement.md)

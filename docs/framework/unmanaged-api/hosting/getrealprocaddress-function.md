@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 256afe9a4304654ddb263a0671db7525f3bedcba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b31db6e6a8ecb3fa15f1a8690b007bdb536b97c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429634"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506547"
 ---
 # <a name="getrealprocaddress-function"></a>GetRealProcAddress – funkce
-Získá adresu zadanou funkci, která je exportována z nainstalovaných verzí common language runtime (CLR).  
+Získá adresu zadané funkce, která je exportována z poslední instalované verzi modulu common language runtime (CLR).  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -39,22 +39,22 @@ HRESULT GetRealProcAddress (
   
 #### <a name="parameters"></a>Parametry  
  `pwszProcName`  
- [v] Název funkce.  
+ [in] Název funkce.  
   
  `ppv`  
  [out] Umístění, která přijímá ukazatel na adresu funkce.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM (Component Object), jak jsou definovány v WinError.h, kromě následující hodnoty definované v CorError.h.  
+ Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot definovaných v CorError.h.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`ppv` není platný.|  
-|CLR_E_SHIM_RUNTIMEEXPORT|Funkce není exportovali z modulu runtime.|  
+|CLR_E_SHIM_RUNTIMEEXPORT|Funkce není exportována z modulu runtime.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -62,5 +62,5 @@ HRESULT GetRealProcAddress (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

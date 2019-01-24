@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 395dc85ad638e8a790962a4aa38019612c360ce1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 632f19e0ead57d5508265fece578bb22f18ba54a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402214"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722722"
 ---
 # <a name="getalinkmessagedll-function"></a>GetALinkMessageDll – funkce
-Vyhledá a načte zprávy knihovny DLL. Vrátí hodnotu 0, pokud nelze umístěný nebo načíst knihovny DLL zpráv. Zpráva knihovny DLL musí být buď v podadresáři, jejíž název je ID jazyka, nebo v aktuálním adresáři.  
+Vyhledá a načte knihovna DLL zprávy. Vrátí hodnotu 0, pokud knihovna DLL zprávy nelze umístěný nebo načíst. Knihovna DLL zprávy musí být buď v podadresáři, jehož název je ID jazyka, nebo v aktuálním adresáři.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,5 +38,5 @@ HINSTANCE WINAPI GetALinkMessageDll();
   
  **Knihovna**: alink.dll  
   
-## <a name="see-also"></a>Viz také  
- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+## <a name="see-also"></a>Viz také:
+- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

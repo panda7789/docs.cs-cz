@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-ms.openlocfilehash: 362ba0000c739c8fc216186514a63531e603c637
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d261418136cfc799e7891da02b2bd8174cf8340a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502018"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582077"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Kompilované dotazy (LINQ to Entities)
 Až budete mít aplikaci, která spustí dotazy strukturálně podobně jako v mnoha případech v Entity Framework, můžete často zvýšit výkon kompilaci dotazu jednou a spustíte ji několikrát s různými parametry. Například aplikace může mít k načtení všech zákazníků v konkrétním městě; Město je uživatel zadá za běhu ve formuláři. Technologie LINQ to Entities podporuje používání kompilované dotazy pro tento účel.  
@@ -68,7 +68,7 @@ Až budete mít aplikaci, která spustí dotazy strukturálně podobně jako v m
  [!code-csharp[DP L2E Conceptual Examples#MyParamsStruct](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myparamsstruct)]
  [!code-vb[DP L2E Conceptual Examples#MyParamsStruct](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myparamsstruct)]  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)  
- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)  
- [Možnosti sloučení Entity Framework a kompilované dotazy](https://go.microsoft.com/fwlink/?LinkId=199591)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)
+- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)
+- [Možnosti sloučení Entity Framework a kompilované dotazy](https://go.microsoft.com/fwlink/?LinkId=199591)

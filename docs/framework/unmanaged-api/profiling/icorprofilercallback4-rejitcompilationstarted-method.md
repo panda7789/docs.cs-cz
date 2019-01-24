@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d3e21d42340378c576bfc65750fba26a257b82cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5a65de26f3fc088b292ec9f8a96ca4e503a17edd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457743"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680895"
 ---
 # <a name="icorprofilercallback4rejitcompilationstarted-method"></a>ICorProfilerCallback4::ReJITCompilationStarted – metoda
-Upozorní profileru, že kompilátoru za běhu (JIT) byla spuštěna znovu kompilovat funkci.  
+Oznámí profileru, kompilátor just-in-time (JIT) byla spuštěna znovu zkompilovat funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT ReJITCompilationStarted(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, která JIT kompilátoru bylo zahájeno její kompilace.  
+ [in] ID funkce, které kompilátor JIT začal znovu zkompilovat.  
   
  `rejitId`  
- [v] ID rekompilace nové verze funkce.  
+ [in] ID rekompilace novou verzi funkce.  
   
  `fIsSafeToBlock`  
- [v] `true` k označení, že blokování může způsobit modulu runtime počkejte volající vlákno k návratu z této zpětného volání; `false` k označení, že blokování neovlivní operaci modulu runtime. Hodnota `true` nepříznivý vliv modul runtime, ale může ovlivnit profilování výsledky.  
+ [in] `true` k označení, že blokování může způsobit, že modul runtime počká pro volajícího vlákna má vrátit z této zpětné volání; `false` k označení, že blokování nebude mít vliv na operace modulu runtime. Hodnota `true` nepoškodí modul runtime, ale může mít vliv na výsledky profilace.  
   
 ## <a name="remarks"></a>Poznámky  
- Je možné získat více než jednu dvojici `ReJITCompilationStarted` a [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) metoda volá pro jednotlivé funkce z důvodu způsob, jakým modul runtime konstruktory třídu obslužné rutiny. Například modul runtime začne znovu zkompiluje metoda A, ale konstruktoru třídy pro třídy B musí být spuštěn. Modul runtime proto znovu zkompiluje v konstruktoru pro třídy B a ho spouští. Je spuštěn v konstruktoru, provede volání do metody A, což způsobí, že metoda A k akci zopakovat. V tomto scénáři je první rekompilace metody A zastavit. Však obě pokusí znovu zkompiluje metoda A jsou hlášené s rekompilace JIT – události.  
+ Je možné přijímat více než jednu dvojici `ReJITCompilationStarted` a [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) metoda volá pro každou funkci kvůli způsobu, jakým modul runtime konstruktor třídy obslužné rutiny. Například modul runtime spustí znovu zkompilovat metoda A, ale třída konstruktor třídy B musí být spuštěn. Proto se modul runtime konstruktor třídy B se znovu zkompiluje a spustí ji. Je spuštěn konstruktoru, provede volání do metody A, což způsobí, že metoda A znovu překompilovat. V tomto scénáři je první opětovnou kompilaci metody A zastaveno. Ale i pokusí znovu zkompilovat metoda se nahlásí se rekompilace JIT – události.  
   
- Profilery musí podporovat posloupnost zpětných volání rekompilace JIT v případech, kde jsou dva vláken současně provádění zpětných volání. Například přístup z více vláken A volá `ReJITCompilationStarted`; však před volání vláken A [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md), vlákno B volání [icorprofilercallback::exceptionsearchfunctionenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md) s ID – funkce z `ReJITCompilationStarted` zpětné volání pro přístup z více vláken A. Může se zdát, že funkce ID nesmí být ještě platný protože volání [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) kdyby ještě přijatý nástrojem profileru. V takovém případě Identifikátor funkce je však platný.  
+ Profilovací programy musí podporovat posloupnost zpětných volání rekompilace JIT v případech, kde dva vláken současně, aby zpětná volání. Například, vlákna A zavolá `ReJITCompilationStarted`; však před volání vlákna A [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md), vlákno B vyvolá [icorprofilercallback::exceptionsearchfunctionenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md) s ID – funkce z `ReJITCompilationStarted` zpětného volání pro vlákno A. Může se zdát, že ID funkce by neměl být ještě platný protože volání [rejitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) nebyl dosud nebylo přijato pomocí profileru. Ale v takovém případě ID funkce je platný.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -60,8 +60,8 @@ HRESULT ReJITCompilationStarted(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)  
- [JITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md)  
- [ReJITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
+- [JITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md)
+- [ReJITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)

@@ -11,38 +11,38 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - names [Visual Basic], shadowing
 ms.assetid: 6bf687cd-0544-4797-b51b-911125ec57c6
-ms.openlocfilehash: 4ca4ec48ee63b71447056a2c5cb68e8948f27ad0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e879819d945f3e7256edd34e87b9cae4a04c0829
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604647"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512733"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
-Určuje, že deklarované programovací element redeclares a skryje stejně jako s názvem prvku, nebo sadu přetížené elementů v základní třídě.  
+Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky pojmenovanou elementu, nebo sadu přetížených elementů v základní třídě.  
   
 ## <a name="remarks"></a>Poznámky  
- Hlavním účelem stínový provoz (což je také označován jako *skrytí podle názvu*) se zachovat definici členy vaší třídy. Základní třída může podstoupit změnu, která vytvoří element se stejným názvem jako jeden, který je již definován. V takovém případě `Shadows` modifikátor vynutí odkazuje prostřednictvím vaší třídy přeloží na člen definované, místo do nového elementu základní třídy.  
+ Hlavním účelem stínový provoz (což je také označován jako *skrývání podle názvu*) je zachovat definice členů třídy. Základní třídy může být změnu, která vytvoří element se stejným názvem jako ten, který je již definován. Pokud k tomu dojde, `Shadows` modifikátor vynutí odkazuje prostřednictvím vaší třídy, které je potřeba vyřešit členovi definované, namísto nový prvek základní třídy.  
   
- Jak stínováním a přepsáním znovu definovat zděděné elementu, ale existují významné rozdíly mezi dva přístupy. Další informace najdete v tématu [stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ Jak stínováním a přepsáním znovu definovat element zděděné, ale existují významné rozdíly mezi dvěma přístupy. Další informace najdete v tématu [stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Kontext deklarace.** Můžete použít `Shadows` jenom na úrovni třídy. To znamená kontext deklarace `Shadows` element musí být třída a nesmí být zdrojový soubor, obor názvů, rozhraní, modul, struktura nebo postup.  
+-   **Místní deklarace.** Můžete použít `Shadows` pouze na úrovni třídy. To znamená, že deklarace kontext `Shadows` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
   
-     Lze deklarovat pouze jeden element stínového provozu v jediné deklaraci příkazu.  
+     Je možné deklarovat pouze jeden element stínového provozu v jedné deklaraci příkazu.  
   
--   **Kombinovaná parametrů.** Nelze zadat `Shadows` společně s `Overloads`, `Overrides`, nebo `Static` ve stejné deklaraci.  
+-   **Kombinované modifikátory.** Nelze zadat `Shadows` spolu s `Overloads`, `Overrides`, nebo `Static` ve stejné deklaraci.  
   
--   **Typy elementů.** Můžete stínové jakýkoli druh deklarovaný element s jakéhokoli jiného typu. Pokud jste stínové vlastnosti nebo procedury s jinou vlastnost nebo postup, parametry a návratový typ nemusí se shodovat s hodnotami ve vlastnosti základní třídu nebo postupu.  
+-   **Typy elementů.** Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu. Pokud jste stínovou kopii se vlastnost nebo procedura s jinou vlastnost nebo procedura, parametry a návratovým typem není potřeba odpovídají polím v základní třídě vlastnost nebo procedura.  
   
--   **Přístup k.** Element stíněné v základní třídě je obvykle ze není k dispozici v rámci odvozené třídy, stín ho. Nicméně, platí následující aspekty.  
+-   **Přístup k.** Stínovaný element v základní třídě je obvykle nedostupná z v rámci odvozené třídy, která zastiňuje ho. Nicméně platí následující aspekty.  
   
-    -   Pokud element stínového provozu není přístupný z kódu na ně odkazovat, odkaz je přeložen na stíněné elementu. Například pokud `Private` element shadows prvku základní třídy, kód, který nemá oprávnění k přístupu `Private` element přistupuje k prvku základní třídy místo.  
+    -   Pokud stínového provozu element není přístupné z kódu na ni odkazuje, odkaz je přeložen na stínovaný elementu. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.  
   
-    -   Pokud jste stínové element, můžete ke stíněné element prostřednictvím objektu deklarovat s typem základní třídy. Můžete taky přejít přes `MyBase`.  
+    -   Pokud jste stínové elementu, budete k němu přístup stínovaný element prostřednictvím objektu, který deklarovat s typem základní třídy. Můžete také k němu přístup prostřednictvím `MyBase`.  
   
- `Shadows` Modifikátor lze použít v těchto kontexty:  
+ `Shadows` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -68,15 +68,15 @@ Určuje, že deklarované programovací element redeclares a skryje stejně jako
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
- [Static](../../../visual-basic/language-reference/modifiers/static.md)  
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
- [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
- [Stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a>Viz také:
+- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
+- [Static](../../../visual-basic/language-reference/modifiers/static.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Me, My, MyBase a MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)
+- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
+- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
+- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
+- [Stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

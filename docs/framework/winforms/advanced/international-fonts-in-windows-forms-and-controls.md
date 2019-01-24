@@ -13,22 +13,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c3066df-9bac-479a-82b2-79e484b346a3
-ms.openlocfilehash: b2738f174c9837a2ba83c1306f4617f39ce17de1
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 1f9afd575e2de04e0b11556ad34436839e13d968
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208443"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54693237"
 ---
 # <a name="international-fonts-in-windows-forms-and-controls"></a>Mezinárodní písma ve Windows Forms a ovládacích prvků
 
-Doporučené metody výběru písem mezinárodní aplikace, je použít záložní písma, kdykoli je to možné. Písmo záložní znamená systém zjišťuje, jaké skriptu znak, který patří do.
+V aplikacích výběru písma doporučujeme použít záložní písma, kdykoli je to možné. Písmo záložní znamená, že systém zjišťuje, co skript znak, který patří do.
 
 ## <a name="using-font-fallback"></a>Použití záložního písma
 
-Abyste mohli využívat tuto funkci, není nastavený <xref:System.Drawing.Font> vlastnost pro daný formulář nebo jiného elementu. Aplikace budou automaticky používat na písmo, které se liší od jednoho lokalizovaném jazyce operačního systému do jiného. Když je aplikace spuštěná, systém automaticky poskytovat správné písmo pro jazykovou verzi vybrané v operačním systému.
+Abyste mohli využívat tuto funkci, nemají nastavený <xref:System.Drawing.Font> vlastnost formuláře nebo jiný prvek. Aplikace automaticky použije výchozí systémové písmo, které se liší od jednoho lokalizovaný jazyk operačního systému do druhého. Při spuštění aplikace, systém automaticky poskytovat použitím správného písma pro jazykovou verzi vybrané v operačním systému.
 
-Dojde k výjimce pravidla není nastavení písma, který je pro změnu styl písma. To může být důležité pro aplikaci, ve kterém uživatel kliknutím na tlačítko, chcete-li text v textovém poli se zobrazí v tučné písmo. Kvůli tomu by zápis funkce chcete-li změnit písmo textového pole na tučné písmo podle toho, ať formuláře písma. Je důležité pro volání této funkce na dvou místech: na tlačítku <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a <xref:System.Windows.Forms.Control.FontChanged> obslužné rutiny události. Pokud je tato funkce volána pouze v <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a dalších částí kódu změní rodiny písem celého formuláře, textového pole nemění se zbytkem formuláře.
+Dojde k výjimce z pravidla nelze nastavit písmo, které je pro změnu styl písma. To může být důležité pro aplikaci, ve kterém uživatel klikne na tlačítko provést text v textovém poli se zobrazí v tučné písmo. K tomu, měli byste napsat funkci, kterou chcete změnit písmo textového pole mají být zobrazena tučně, podle toho libovolné formuláře písma. Je důležité pro volání této funkce na dvou místech: na tlačítku <xref:System.Windows.Forms.Control.Click> obslužné rutiny události a <xref:System.Windows.Forms.Control.FontChanged> obslužné rutiny události. Pokud je tato funkce volána pouze v <xref:System.Windows.Forms.Control.Click> obslužná rutina události a další část kódu změní rodinu písem celý formulář, do textového pole se nezmění se zbytkem formuláře.
 
 ```vb
 Private Sub MakeBold()
@@ -74,7 +74,7 @@ private void Form1_FontChanged(object sender, System.EventArgs e)
 }
 ```
 
-Ale při lokalizaci berte vaší aplikace, tučným písmem může zobrazit chybně pro určité jazyky. Pokud se jedná o problém, budete chtít překladatelům při lokalizaci mít možnost přepínání z tučné písmo na běžný text. Vzhledem k tomu, že překladatelům při lokalizaci nejsou obvykle vývojáři a nemáte přístup ke zdrojovému kódu, pouze na soubory prostředků, tato možnost je třeba nastavit v souborech prostředků. K tomuto účelu se nastavuje <xref:System.Drawing.Font.Bold%2A> vlastnost `true`. Výsledkem zápisem na soubory prostředků, kde překladatelům při lokalizaci můžete upravit nastavení písma. Potom napíšete kód po `InitializeComponent` metoda resetovat písmo podle toho, bez ohledu na tvar na písma, ale pomocí styl písma zadaný v souboru prostředků.
+Však při lokalizaci berte vaší aplikace, tučné písmo se může zobrazit nesprávně pro určité jazyky. Pokud je to žádný problém, chcete Lokalizátoři nabízet možnost přepínání písmo z tučného písma na běžný text. Lokalizátoři obvykle nejsou vývojáři a nemáte přístup ke zdrojovému kódu, pouze na soubory prostředků, tato možnost musí být nastavena v souborech prostředků. Chcete-li to provést, nastavte <xref:System.Drawing.Font.Bold%2A> vlastnost `true`. Výsledkem je zapsán do souborů prostředků, kde Lokalizátoři můžete upravit nastavení písma. Potom napíšete kód za `InitializeComponent` metoda resetovat písmo podle je písmo libovolné formuláře, ale styl písma pomocí zadaných v souboru prostředků.
 
 ```vb
 TextBox1.Font = New System.Drawing.Font(Me.Font, TextBox1.Font.Style)
@@ -86,5 +86,5 @@ textBox1.Font = new System.Drawing.Font(this.Font, textBox1.Font.Style);
   
 ## <a name="see-also"></a>Viz také:
 
-[Globalizace aplikací Windows Forms](globalizing-windows-forms.md)  
-[Použití písem a textu](using-fonts-and-text.md)
+- [Globalizace aplikací Windows Forms](globalizing-windows-forms.md)
+- [Použití písem a textu](using-fonts-and-text.md)

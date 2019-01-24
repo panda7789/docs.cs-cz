@@ -15,37 +15,37 @@ helpviewer_keywords:
 - .rtf files [Windows Forms], saving in RichTextBox control
 - text files [Windows Forms], saving from RichTextBox control
 ms.assetid: 4a58ec19-84d1-4383-9110-298c06adcfca
-ms.openlocfilehash: c50b2f3309c1f811b29e824327a709e2cc4bd791
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 739cc33df873ef2c8ec7a2f5eaf867abadb8da75
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33536192"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539776"
 ---
 # <a name="how-to-save-files-with-the-windows-forms-richtextbox-control"></a>Postupy: Ukládání souborů pomocí ovládacího prvku Windows Forms RichTextBox
-Windows Forms <xref:System.Windows.Forms.RichTextBox> řízení může zapsat informace se zobrazí v některém z formátů:  
+Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek lze zapsat informace se zobrazí v jednom z několika formátů:  
   
 -   Prostý text  
   
--   Prostý text v kódu Unicode  
+-   Kódování Unicode ve formátu prostého textu  
   
--   RTF (Rich Text Format)  
+-   Rich-Text Format (RTF)  
   
--   RTF prostory místo OLE – objekty  
+-   RTF prostory místo objekty OLE  
   
--   Ve formátu prostého textu s textovou reprezentaci OLE – objekty  
+-   Prostý text s textovou reprezentaci řetězce objekty OLE  
   
- Chcete-li uložit soubor, volejte <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metoda. Můžete také **SaveFile** metoda k uložení dat do datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.  
+ Chcete-li uložit soubor, zavolejte <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metody. Můžete také použít **SaveFile** metoda k ukládání dat do datového proudu. Další informace naleznete v tématu <xref:System.Windows.Forms.RichTextBox.SaveFile%28System.IO.Stream%2CSystem.Windows.Forms.RichTextBoxStreamType%29>.  
   
 ### <a name="to-save-the-contents-of-the-control-to-a-file"></a>Chcete uložit obsah ovládacího prvku do souboru  
   
-1.  Určete cestu k souboru uložit.  
+1.  Určete cestu k souboru, který se má uložit.  
   
-     K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> součásti. Přehled najdete v tématu [SaveFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md).  
+     K tomu v reálné aplikaci byste obvykle použili <xref:System.Windows.Forms.SaveFileDialog> komponenty. Přehled najdete v tématu [SaveFileDialog – přehled komponenty](../../../../docs/framework/winforms/controls/savefiledialog-component-overview-windows-forms.md).  
   
-2.  Volání <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> řízení, soubor uložte a volitelně typu souboru. Pokud jste volali metodu s názvem souboru jako argument pouze, uloží soubor ve formátu RTF. Chcete-li určit jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčtu jako druhý argument.  
+2.  Volání <xref:System.Windows.Forms.RichTextBox.SaveFile%2A> metodu <xref:System.Windows.Forms.RichTextBox> ovládací prvek, pro uložení souboru a volitelně typu souboru. Pokud jste volali metodu s názvem souboru jako její jediný argument, soubor se uloží ve formátu RTF. Chcete-li zadat jiný typ souboru, volejte metodu s hodnotou <xref:System.Windows.Forms.RichTextBoxStreamType> výčet jako druhý argument.  
   
-     V následujícím příkladu cesta pro umístění souboru formátovaného textu je nastavena **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběr toto umístění také umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládací prvek již přidán.  
+     V následujícím příkladu nastavena cesta pro umístění souboru formátovaného textu je **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění také umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spusťte aplikaci. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládací prvek již přidán.  
   
     ```vb  
     Public Sub SaveFile()  
@@ -85,10 +85,10 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> řízení může zapsat in
     ```  
   
     > [!IMPORTANT]
-    >  Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje k vytvoření souboru, tuto aplikaci potřebuje vytvořit přístup ke složce. Jsou oprávnění nastavena pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze k zápisu, a menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a jenom udělit přístup pro čtení do jednoho souboru, než vytvořit přístupu pro složku. Navíc je bezpečnější zapsat data do složek uživatele než do kořenové složky nebo ve složce Program Files.  
+    >  Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje k vytvoření souboru, aplikace potřebuje vytvořit přístup ke složce. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze přístup pro zápis, a menší oprávnění. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a jenom udělit přístup pro čtení do jednoho souboru, ne vytvořit přístup ke složce. Navíc je bezpečnější zapsat data do uživatelské složky než do kořenové složky nebo ve složce Program Files.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.RichTextBox>  
- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.RichTextBox>
+- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
