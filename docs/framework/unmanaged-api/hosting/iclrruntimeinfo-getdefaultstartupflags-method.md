@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 546a26306a1faaeceb1337b79bd2d27970d9f5be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a4615200bce3aa11401abc9e9c264ab8d8e797b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434210"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720012"
 ---
 # <a name="iclrruntimeinfogetdefaultstartupflags-method"></a>ICLRRuntimeInfo::GetDefaultStartupFlags – metoda
-Získá spuštění příznaky a hostitele konfigurační soubor, který se použije ke spuštění modulu runtime.  
+Získá příznaky spuštění a konfiguračním souboru hostitele, který se použije ke spuštění modulu runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT GetDefaultStartupFlags(
   
 #### <a name="parameters"></a>Parametry  
  `pdwStartupFlags`  
- [out] Ukazatel na příznaky spuštění hostitele, které jsou aktuálně nastavené.  
+ [out] Ukazatel na příznaky spuštění hostitele, které jsou aktuálně nastaveny.  
   
  `pwzHostConfigFile`  
  [out] Ukazatel na cestu k adresáři aktuálního konfiguračního souboru hostitele.  
   
  `pcchHostConfigFile`  
- [ve out] Na vstupu velikost `pwzHostConfigFile`, aby se zabránilo přetečení vyrovnávací paměti. Pokud `pwzHostConfigFile` je null, vrátí metoda požadovaná velikost `pwzHostConfigFile` pro předběžné přidělení.  
+ [out v] Na vstupní velikost `pwzHostConfigFile`předešli přetečení vyrovnávací paměti. Pokud `pwzHostConfigFile` je null, vrátí metoda požadovaná velikost `pwzHostConfigFile` pro předběžné přidělení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Tato metoda vrátí následující konkrétní HRESULT a také HRESULT chyby, které označují selhání metoda.  
@@ -54,18 +54,18 @@ HRESULT GetDefaultStartupFlags(
 |S_OK|Metoda byla úspěšně dokončena.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vrátí příznak výchozí hodnoty (`STARTUP_CONCURRENT_GC` a `NULL`), nebo hodnoty od předchozího volání [iclrruntimeinfo::setdefaultstartupflags – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-setdefaultstartupflags-method.md), nebo s hodnotami nastavenými v některé z `CorBind*` metody, pokud je vázána na tento modul runtime.  
+ Tato metoda vrátí výchozí hodnoty příznak (`STARTUP_CONCURRENT_GC` a `NULL`), nebo hodnoty poskytnuté předchozí volání [iclrruntimeinfo::setdefaultstartupflags – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-setdefaultstartupflags-method.md), nebo hodnoty nastavené podle těchto sloupců `CorBind*` metody, pokud jsou vázány na tento modul runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

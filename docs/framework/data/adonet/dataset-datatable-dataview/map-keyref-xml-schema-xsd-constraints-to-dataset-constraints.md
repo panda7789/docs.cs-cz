@@ -2,12 +2,12 @@
 title: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-ms.openlocfilehash: 86bc1961fb23b0b2f98a2849eaabd4eecd65cd64
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: bc3863bbe6fd7c290c25056e2420107ed2d8bff3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777545"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732801"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 **Keyref** element slouží k vytvoření vazeb mezi prvky v rámci dokumentu. Toto je podobný vztahu cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převeden při rušení mapování schématu odpovídající omezení cizího klíče na sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element zároveň vytvoří relaci, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** vlastnosti zadané na vztah.  
@@ -109,7 +109,7 @@ Order(OrderNumber, EmpNumber)
     RelatedColumns: OrderNumber   
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
+- [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

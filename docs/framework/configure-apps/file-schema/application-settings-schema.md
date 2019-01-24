@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: f11be59941759687806591feb1edcce28b2119e6
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 7a4f60571fb4d30793f64c57317bf0b372ae4812
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123335"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701908"
 ---
 # <a name="application-settings-schema"></a>Schéma nastavení aplikace
 
@@ -26,10 +26,10 @@ Nastavení aplikace definuje následující prvky jako součást konfigurační 
 
 | Prvek                    | Popis                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| **\<applicationSettings >** | Obsahuje všechny  **\<Nastavení >** značky, které jsou specifické pro aplikaci.                         |
-| **\<userSettings >**        | Obsahuje všechny  **\<Nastavení >** značky, které jsou specifické pro aktuálního uživatele.                        |
-| **\<Nastavení >**             | Definuje nastavení. Podřízené buď  **\<applicationSettings >** nebo  **\<userSettings >**. |
-| **\<Hodnota >**               | Definuje hodnoty nastavení. Podřízený  **\<Nastavení >**.                                   |
+| **\<applicationSettings>** | Obsahuje všechny  **\<Nastavení >** značky, které jsou specifické pro aplikaci.                         |
+| **\<userSettings>**        | Obsahuje všechny  **\<Nastavení >** značky, které jsou specifické pro aktuálního uživatele.                        |
+| **\<setting>**             | Definuje nastavení. Podřízené buď  **\<applicationSettings >** nebo  **\<userSettings >**. |
+| **\<value>**               | Definuje hodnoty nastavení. Podřízený  **\<Nastavení >**.                                   |
 
 ## <a name="applicationsettings-element"></a>\<applicationSettings > – element
 
@@ -45,8 +45,8 @@ Tento prvek definuje nastavení. Má následující atributy.
 
 | Atribut        | Popis |
 | ---------------- | ----------- |
-| **Jméno**         | Požadováno. Jedinečné ID nastavení. Nastavení vytvořená pomocí sady Visual Studio se uloží s názvem `ProjectName.Properties.Settings`. |
-| **serializedAs** | Požadováno. Formát, který se má použít pro serializaci hodnotu na text. Platné hodnoty jsou:<br><br>- `string`. Hodnota je serializován jako řetězec pomocí <xref:System.ComponentModel.TypeConverter>.<br>- `xml`. Hodnota je serializována použití serializace XML.<br>- `binary`. Hodnota je serializována jako binární kódování textu pomocí binární serializace.<br />- `custom`. Poskytovatel nastavení má vlastní znalostní báze tohoto nastavení a serializuje a deserializuje. |
+| **Jméno**         | Povinný parametr. Jedinečné ID nastavení. Nastavení vytvořená pomocí sady Visual Studio se uloží s názvem `ProjectName.Properties.Settings`. |
+| **serializedAs** | Povinný parametr. Formát, který se má použít pro serializaci hodnotu na text. Platné hodnoty jsou:<br><br>- `string`. Hodnota je serializován jako řetězec pomocí <xref:System.ComponentModel.TypeConverter>.<br>- `xml`. Hodnota je serializována použití serializace XML.<br>- `binary`. Hodnota je serializována jako binární kódování textu pomocí binární serializace.<br />- `custom`. Poskytovatel nastavení má vlastní znalostní báze tohoto nastavení a serializuje a deserializuje. |
 
 ## <a name="value-element"></a>\<Hodnota > – element
 
@@ -92,5 +92,5 @@ Následující příklad ukazuje soubor nastavení aplikace, která definuje dv�
 
 ## <a name="see-also"></a>Viz také:
 
-[Přehled nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-overview.md)   
-[Architektura nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Přehled nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-overview.md)
+- [Architektura nastavení aplikace](~/docs/framework/winforms/advanced/application-settings-architecture.md)

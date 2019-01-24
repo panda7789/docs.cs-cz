@@ -8,17 +8,17 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 92c430ca5514441de01a630a6945e9d294a88c18
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 983504993a1252e4345c3c50130a25e25e99446d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349079"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509279"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Postupy: Konfigurace pověření ve službě Federation Service
 Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se skládá z následujících hlavních kroků:  
   
-1.  Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. Další informace o vytváření příslušnou datovou vazbu najdete v tématu [postupy: vytvoření WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
+1.  Konfigurace <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby. Další informace o vytváření příslušnou datovou vazbu najdete v tématu [jak: Vytvoření instance WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).  
   
 2.  Konfigurace <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> , která určuje, jak vydané tokeny, které se zobrazí ve službě jsou ověřeni.  
   
@@ -69,14 +69,14 @@ Ve Windows Communication Foundation (WCF), vytvoření federovaného služby se 
   
 -   Když vydaný token je podepsaná pomocí certifikátu X.509, certifikát musí ověřit na sémantiku zadaný hodnotou <xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A> vlastnost, bez ohledu na to, zda certifikát byla odeslána k předávající straně jako <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause> nebo byl získán z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> vlastnost. Další informace o ověřování certifikátů X.509 naleznete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
- Například nastavení <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> k <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust> by ověřit jakékoli vydaný token, jehož podpisový certifikát se nachází ve `TrustedPeople` úložiště certifikátů. V takovém případě nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.TrustedStoreLocation%2A> vlastnost buď <xref:System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser> nebo <xref:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine>. Můžete vybrat jiné režimy, včetně <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>. Když `Custom` je vybrali, je nutné přiřadit instanci <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídu <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CustomCertificateValidator%2A> vlastnost. Vlastní validátor můžete ověřit certifikáty pomocí všechna kritéria, která vlastní stavový objekt. Další informace najdete v tématu [postupy: vytvoření služby, která používá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ Například nastavení <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> k <xref:System.ServiceModel.Security.X509CertificateValidationMode.PeerTrust> by ověřit jakékoli vydaný token, jehož podpisový certifikát se nachází ve `TrustedPeople` úložiště certifikátů. V takovém případě nastavte <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.TrustedStoreLocation%2A> vlastnost buď <xref:System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser> nebo <xref:System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine>. Můžete vybrat jiné režimy, včetně <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom>. Když `Custom` je vybrali, je nutné přiřadit instanci <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídu <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CustomCertificateValidator%2A> vlastnost. Vlastní validátor můžete ověřit certifikáty pomocí všechna kritéria, která vlastní stavový objekt. Další informace najdete v tématu [jak: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
-## <a name="see-also"></a>Viz také  
-* [Federace](../../../../docs/framework/wcf/feature-details/federation.md)  
-* [Federace a důvěryhodnost](../../../../docs/framework/wcf/feature-details/federation-and-trust.md)  
-* [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)  
-* [Postupy: Zakázání zabezpečených relací u WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
-* [Postupy: Vytvoření WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
-* [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
-* [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
-* [Režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)
+## <a name="see-also"></a>Viz také:
+- [Federace](../../../../docs/framework/wcf/feature-details/federation.md)
+- [Federace a důvěryhodnost](../../../../docs/framework/wcf/feature-details/federation-and-trust.md)
+- [Ukázka federace](../../../../docs/framework/wcf/samples/federation-sample.md)
+- [Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)
+- [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Postupy: Vytvoření federovaného klienta](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
+- [Práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [Režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)

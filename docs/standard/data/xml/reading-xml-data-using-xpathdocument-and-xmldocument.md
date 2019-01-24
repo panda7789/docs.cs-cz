@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69e22328c39ae68acc4baff12775b49fbac80696
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 68d19784bab8a5d5a1994ea139b5631f56c7c680
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44252828"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580418"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Čtení dat XML pomocí XPathDocument a XmlDocument
 Existují dva způsoby, jak číst v dokumentu XML <xref:System.Xml.XPath?displayProperty=nameWithType> oboru názvů. Jeden je ke čtení dokumentu XML pomocí jen pro čtení <xref:System.Xml.XPath.XPathDocument> třídy a druhý je ke čtení dokumentu XML pomocí upravitelné <xref:System.Xml.XmlDocument> třídy v <xref:System.Xml?displayProperty=nameWithType> oboru názvů.  
@@ -74,10 +74,10 @@ document.Load("books.xml");
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.XmlDocument>  
-- <xref:System.Xml.XPath.XPathDocument>  
-- <xref:System.Xml.XPath.XPathNavigator>  
-- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
-- [Přístup k datům XML pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
-- [Úpravy dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+- <xref:System.Xml.XmlDocument>
+- <xref:System.Xml.XPath.XPathDocument>
+- <xref:System.Xml.XPath.XPathNavigator>
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
+- [Přístup k datům XML pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
+- [Úpravy dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)
 - [Ověření schématu pomocí XPathNavigator](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)

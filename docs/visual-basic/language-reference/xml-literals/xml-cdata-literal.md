@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: 999531d8146748fe491255663f0d2d17d056bcd4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 71769c023ba77d40099ba0ba29ef363091e96831
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603831"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521553"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literál XML CDATA (Visual Basic)
 Literál představující <xref:System.Xml.Linq.XCData> objektu.  
@@ -26,38 +26,38 @@ Literál představující <xref:System.Xml.Linq.XCData> objektu.
   
 ## <a name="parts"></a>Součásti  
  `<![CDATA[`  
- Požadováno. Označuje začátek části XML CDATA.  
+ Povinný parametr. Označuje začátek oddílu CDATA kódu XML.  
   
  `content`  
- Požadováno. Obsah textu se objeví v části XML CDATA.  
+ Povinný parametr. Textový obsah se zobrazí v oddílu CDATA kódu XML.  
   
  `]]>`  
- Požadováno. Označuje konec oddílu.  
+ Povinný parametr. Označuje konec oddílu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  <xref:System.Xml.Linq.XCData> Objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- XML CDATA částech nezpracovaný text, který by měl být zahrnuty, ale nebyly analyzovány s XML, který jej obsahuje. XML CDATA oddílu může obsahovat jakýkoli text. To zahrnuje vyhrazené znaky jazyka XML. Části XML CDATA končí sekvenci "]] >". To znamená následující body:  
+ XML CDATA oddíly obsahují nezpracovaný text, který by měl zahrnuty, ale nebyly analyzovány pomocí XML, který jej obsahuje. Oddíl CDATA kódu XML může obsahovat libovolný text. To zahrnuje vyhrazené znaky jazyka XML. Sekce XML CDATA končí sekvence "]] >". Z toho vyplývá následující body:  
   
--   Výraz vložené v literál XML CDATA nelze použít, protože oddělovače embedded výraz platný obsah XML CDATA.  
+-   V XML CDATA, který je literál nejde použít vložený výraz, protože vložený výraz oddělovače jsou platný obsah XML CDATA.  
   
 -   XML CDATA oddíly nelze vnořit, protože `content` nemůže obsahovat hodnotu "]] >".  
   
- Můžete přiřadit literál XML CDATA proměnné nebo její zahrnutí do literál XML elementu.  
+ Můžete přiřadit literál XML CDATA proměnné nebo zahrnout do literálů XML element.  
   
 > [!NOTE]
->  Literál XML může mít rozsah více řádků, ale nepoužívá znaky pokračování řádku. To umožňuje kopírovat obsah z dokumentu XML a vložte jej přímo do programu Visual Basic.  
+>  Literál XML může zahrnovat více řádků, ale nepoužívá znaky pokračování řádku. To umožňuje kopírovat obsah z dokumentu XML a vložte ho přímo do programu Visual Basic.  
   
- Visual Basic – kompilátor převede literál XML CDATA volání <xref:System.Xml.Linq.XCData.%23ctor%2A> konstruktor.  
+ Kompilátor jazyka Visual Basic převede literál XML CDATA na volání <xref:System.Xml.Linq.XCData.%23ctor%2A> konstruktoru.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří oddílu CDATA, který obsahuje text "může obsahovat literálu \<XML > značky".  
+ Následující příklad vytvoří oddíl CDATA, který obsahuje text "může obsahovat literál \<XML > značky".  
   
  [!code-vb[VbXMLSamples#23](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-cdata-literal_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XCData>  
- [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XCData>
+- [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

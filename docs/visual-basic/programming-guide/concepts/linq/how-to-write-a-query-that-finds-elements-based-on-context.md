@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (Visual Basic)'
+title: 'Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
-ms.openlocfilehash: a16f591fc08e8822059bae2ee07d96af575059bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4921652b5b9c59f767e0477e26987edaf4655897
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33645678"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708139"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (Visual Basic)
-V některých případech můžete chtít vytvořit dotaz, který vybere elementy na základě jejich kontextu. Můžete filtrovat na základě před nebo po prvků. Můžete filtrovat na základě podřízené domény nebo nadřazenými prvky.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (Visual Basic)
+V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  
   
- To provedete zadáním dotazu a použitím výsledků dotazu v `where` klauzule. Pokud musíte nejprve porovnat s hodnotou null a otestujte hodnota, je pohodlnější udělat dotazu `let` klauzule a pak použijte výsledky v `where` klauzule.  
+ To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli. Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vybere všechny `p` prvky, které jsou bezprostředně následované `ul` elementu.  
+ V následujícím příkladu vybere všechny `p` prvky, které jsou okamžitě následovat `ul` elementu.  
   
 ```vb  
 Dim doc As XElement = _  
@@ -58,7 +58,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -106,9 +106,9 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement.Parse%2A>  
- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>  
- <xref:System.Linq.Enumerable.FirstOrDefault%2A>  
- [Základní dotazy (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement.Parse%2A>
+- <xref:System.Xml.Linq.XContainer.Descendants%2A>
+- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
+- <xref:System.Linq.Enumerable.FirstOrDefault%2A>
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

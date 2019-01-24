@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98a83a64a692955d5627e891e7fb3a3ef6f53476
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf0fdb1e46bfbd17505e255d539547a00eb4764c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442566"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694552"
 ---
 # <a name="cornativelinkflags-enumeration"></a>CorNativeLinkFlags – výčet
-Poskytuje příznak hodnoty používané linkeru při propojování nativního kódu.  
+Obsahuje příznak hodnoty používané linkeru při propojování nativního kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,13 +48,13 @@ typedef enum
 |`nlfMaxValue`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

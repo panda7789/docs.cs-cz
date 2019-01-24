@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)'
+title: 'Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 9eb0198c16efebd09af45ae26a47288b2153cf43
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c99696472deaa79842e3270d05b63cd591754d8e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643357"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671899"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
-Tento příklad ukazuje, jak provádět agregační výpočtů, jako je například součtu, průměru, Min a Max pro sloupce soubor .csv. Příklad zásady, které jsou zobrazeny v tomto poli je použít pro jiné typy strukturovaných textových.  
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>Postupy: Výpočet hodnot sloupce v textovém souboru CSV (LINQ) (Visual Basic)
+Tento příklad ukazuje, jak provádět agregační výpočty, jako je součet, průměr, Min a Max pro sloupce souboru .csv. Příklad zásady, které jsou uvedeny zde lze použít na jiné typy structured textu.  
   
 ### <a name="to-create-the-source-file"></a>Chcete-li vytvořit zdrojový soubor  
   
-1.  Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložit ve složce projektu. Předpokládají, že první sloupec představuje student ID a následné sloupce představují skóre ze čtyř zkoušek pro aplikaci.  
+1.  Zkopírujte následující řádky do souboru s názvem scores.csv a uložte ho do složky projektu. Předpokládejme, že první sloupec představuje ID studenta, a následné sloupce představují skóre z čtyři zkoušky.  
   
     ```  
     111, 97, 92, 81, 60  
@@ -140,11 +140,11 @@ End Class
 ' Exam #4 Average: 76.92 High Score: 94 Low Score: 39  
 ```  
   
- Dotaz funguje tak, že pomocí <xref:System.String.Split%2A> způsobů, jak převést jednotlivé řádky textu do pole. Každý element pole představuje sloupec. Nakonec text v jednotlivých sloupcích jsou převedeny na jeho číselnému znázornění. Pokud se soubor nachází soubor tabulátorem, stačí aktualizovat argument ve `Split` metodu `\t`.  
+ Dotaz funguje <xref:System.String.Split%2A> způsobů, jak převést každý řádek textu do pole. Každý prvek pole představuje sloupci. Nakonec text v každém sloupci je převedena na číselné vyjádření. Pokud se soubor nachází soubor oddělené tabulátorem, jen aktualizujte argument v `Split` metodu `\t`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - TileBrush [WPF]
 - brushes [WPF], TileBrush
 ms.assetid: aa4a7b7e-d09d-44c2-8d61-310c50e08d68
-ms.openlocfilehash: e590732419396660221aa781e3c333311b6e88b4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9058c6c3256efad15e0811fcc1f21f440e13edbf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505136"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683018"
 ---
 # <a name="tilebrush-overview"></a>TileBrush – přehled
 <xref:System.Windows.Media.TileBrush> objekty poskytují vám s velkou kontrolu nad jak Vymalování oblasti s obrázkem, <xref:System.Windows.Media.Drawing>, nebo <xref:System.Windows.Media.Visual>. Toto téma popisuje způsob použití <xref:System.Windows.Media.TileBrush> funkce, které chcete získat větší kontrolu nad jak <xref:System.Windows.Media.ImageBrush>, <xref:System.Windows.Media.DrawingBrush>, nebo <xref:System.Windows.Media.VisualBrush> jsou vykreslovány oblasti.  
@@ -29,7 +29,7 @@ ms.locfileid: "43505136"
   
  V oblasti dlaždicového štětce vykreslování zahrnuje tři komponenty: obsah, že je základní dlaždice a výstupní oblasti.  
   
- ![TileBrush – komponenty](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
+ ![TileBrush components](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "wcpsdk_mmgraphics_defaultcontentprojection2")  
 Součásti s jednu dlaždici TileBrush  
   
  ![Součástí Objekt TileBrush](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tiledprojection.png "graphicsmm_tiledprojection")  
@@ -53,13 +53,13 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
 ## <a name="the-base-tile"></a>Základní dlaždice  
  A <xref:System.Windows.Media.TileBrush> projekty její obsah do základní dlaždice. <xref:System.Windows.Media.TileBrush.Stretch%2A> Ovládací prvky vlastnosti jak <xref:System.Windows.Media.TileBrush> je roztažený obsah tak, aby vyplnil základní dlaždice. <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost přijímá následující hodnoty, které jsou definované <xref:System.Windows.Media.Stretch> výčtu:  
   
--   <xref:System.Windows.Media.Stretch.None>Obsah: štětce není roztažená tak, aby vyplnil dlaždice.  
+-   <xref:System.Windows.Media.Stretch.None>: Obsah štětce není roztažená tak, aby vyplnil dlaždice.  
   
--   <xref:System.Windows.Media.Stretch.Fill>Přizpůsobit na dlaždici se mění velikost obsahu: štětce. Protože jsou nezávisle výšku a šířku obsah, nemusí být zachovaná původní poměr stran obsahu. To znamená může obsah na stopu pokřivení pro úplně naplnění dlaždice výstup.  
+-   <xref:System.Windows.Media.Stretch.Fill>: Nástroj štětec obsahu se přizpůsobí dlaždice. Protože jsou nezávisle výšku a šířku obsah, nemusí být zachovaná původní poměr stran obsahu. To znamená může obsah na stopu pokřivení pro úplně naplnění dlaždice výstup.  
   
--   <xref:System.Windows.Media.Stretch.Uniform>Tak, aby zcela v rámci dlaždice, se mění velikost obsahu: štětce. Poměr stran obsahu se zachovají.  
+-   <xref:System.Windows.Media.Stretch.Uniform>: Nástroj štětec obsah je škálovat tak, aby zcela v rámci dlaždice. Poměr stran obsahu se zachovají.  
   
--   <xref:System.Windows.Media.Stretch.UniformToFill>Tak, že zcela vyplní výstupní oblasti při zachování původního poměru stran obrázku obsah, se mění velikost obsahu: štětce.  
+-   <xref:System.Windows.Media.Stretch.UniformToFill>: Nástroj štětec obsah je škálovat tak, že zcela vyplní výstupní oblasti při zachování obsahu původního poměru stran obrázku.  
   
  Následující obrázek ukazuje různé <xref:System.Windows.Media.TileBrush.Stretch%2A> nastavení.  
   
@@ -102,11 +102,11 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
   
 -   <xref:System.Windows.Media.TileMode.None>: Pouze základní dlaždice se vykreslí.  
   
--   <xref:System.Windows.Media.TileMode.Tile>: Vykreslení základní dlaždice a zbývající oblast se vyplní opakováním základní dlaždice tak, že je vedle levého okraje na další a pravým okrajem jednu dlaždici podobně pro dolní a horní části.  
+-   <xref:System.Windows.Media.TileMode.Tile>: Základní dlaždice se vykreslí a zbývající oblast se vyplní opakováním základní dlaždice tak, že je vedle levého okraje na další a pravým okrajem jednu dlaždici podobně pro dolní a horní části.  
   
--   <xref:System.Windows.Media.TileMode.FlipX>: Stejná jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou alternativní sloupce dlaždic Vodorovně obráceně.  
+-   <xref:System.Windows.Media.TileMode.FlipX>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou alternativní sloupce dlaždic Vodorovně obráceně.  
   
--   <xref:System.Windows.Media.TileMode.FlipY>: Stejná jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou střídavé řádky dlaždice Svisle obráceně.  
+-   <xref:System.Windows.Media.TileMode.FlipY>: Stejné jako <xref:System.Windows.Media.TileMode.Tile>, ale jsou střídavé řádky dlaždice Svisle obráceně.  
   
 -   <xref:System.Windows.Media.TileMode.FlipXY>: Kombinace <xref:System.Windows.Media.TileMode.FlipX> a <xref:System.Windows.Media.TileMode.FlipY>.  
   
@@ -121,13 +121,13 @@ Součástí TileBrush pomocí vlastnosti TileMode objektu dlaždice
  [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/TilingExample.cs#graphicsmmflipxyexample)]
  [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMFlipXYExample](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/tilingexample.vb#graphicsmmflipxyexample)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.ImageBrush>  
- <xref:System.Windows.Media.DrawingBrush>  
- <xref:System.Windows.Media.VisualBrush>  
- <xref:System.Windows.Media.TileBrush>  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)  
- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.ImageBrush>
+- <xref:System.Windows.Media.DrawingBrush>
+- <xref:System.Windows.Media.VisualBrush>
+- <xref:System.Windows.Media.TileBrush>
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/brushes-how-to-topics.md)
+- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+- [Ukázka ImageBrush](https://go.microsoft.com/fwlink/?LinkID=160005)
+- [Ukázka VisualBrush](https://go.microsoft.com/fwlink/?LinkID=160049)

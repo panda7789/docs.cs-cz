@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dff6b245c80050a5e85561b8bba6aa9ba8199ba8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 609bb050bb9c5addb5250f65a059a70d3ce32428
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407063"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662241"
 ---
 # <a name="clrdebuggingprocessflags-enumeration"></a>CLR_DEBUGGING_PROCESS_FLAGS – výčet
-Obsahuje hodnoty, které jsou používány [iclrdebugging::openvirtualprocess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) metoda.  
+Obsahuje hodnoty, které jsou používány [iclrdebugging::openvirtualprocess –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-openvirtualprocess-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ typedef enum CLR_DEBUGGING_PROCESS_FLAGS
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CLR_DEBUGGING_MANAGED_EVENT_PENDING`|Tento modul runtime má událostí catch až spravované ladicí program k odeslání. Naleznete v části poznámky o rozdíl mezi událostmi opravný a catch nahoru.|  
-|`CLR_DEBUGGING_MANAGED_EVENT_DEBUGGER_LAUNCH`|Spravované událost, která čeká na vyřízení je <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType> požadavku.|  
+|`CLR_DEBUGGING_MANAGED_EVENT_PENDING`|Tento modul runtime dojde k události catch nahoru spravovanému ladicímu programu k odeslání. Rozdíl mezi událostmi catch nahoru a hned v části poznámky.|  
+|`CLR_DEBUGGING_MANAGED_EVENT_DEBUGGER_LAUNCH`|Je spravovaná událost, která čeká na vyřízení <xref:System.Diagnostics.Debugger.Launch%2A?displayProperty=nameWithType> požadavku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Zachytávání událostí zahrnují procesu, doménu aplikace, sestavení, modulu a oznámení vytvoření přístup z více vláken, která vrátí ladicího programu až do aktuálního stavu po má připojit k procesu. Události bez catch-up, která jsou zobrazena `CLR_DEBUGGING_MANAGED_EVENT_PENDING` příznak, zahrnují všechny ostatní události ladicí program, jako je například výjimky a spravovaného ladění (MDA) pomocníka oznámení.  
+ Zachytávání událostí zahrnují procesu, aplikační domény, sestavení, modulu a oznámení o vytvoření vlákna, přinášející ladicí program až do aktuálního stavu po má připojení k procesu. Non-catch-up události, které jsou označeny `CLR_DEBUGGING_MANAGED_EVENT_PENDING` příznak, zahrnují všechny další události ladicího programu, jako jsou například výjimky a spravovaného ladění (MDA) pomocníka s nastavením oznámení.  
   
- `CLR_DEBUGGING_MANAGED_EVENT_DEBUGGER_LAUNCH` Příznak umožňuje modulu runtime rozlišit mezi ukončující výjimce a požadavek na připojení spravované ladicí program, který může být zrušen.  
+ `CLR_DEBUGGING_MANAGED_EVENT_DEBUGGER_LAUNCH` Příznak umožňuje modulu runtime rozlišovat mezi ukončující výjimce a žádost o připojení spravovaného ladicího programu, který může být zrušen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Metahost.idl, Metahost.h  
   
@@ -57,6 +57,6 @@ typedef enum CLR_DEBUGGING_PROCESS_FLAGS
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 35256a25ed793ffee6ddc1b26088e0988fea5af2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d34c88b52dcc8d07736b6866d467439654faa9a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454339"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681843"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip – metoda
-Posune kurzor enumerátor z aktuálního umístění tak, aby se přeskočí zadaný počet elementů.  
+Posune kurzor enumerátor z aktuálního umístění tak, aby zadaný počet prvků, které se přeskočí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +35,21 @@ HRESULT Skip([in] ULONG celt);
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet elementů lze vynechat.  
+ [in] Počet prvků, které mají být přeskočeny.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|`celt` elementy byly vynechány.|  
-|S_FALSE|Méně než `celt` elementy byly přeskočeny, což naznačuje, že neexistují žádné další prvky.|  
+|S_FALSE|Méně než `celt` prvky byly přeskočeny, což znamená, že neexistují žádné další prvky.|  
   
 ## <a name="remarks"></a>Poznámky  
  Nové pozice kurzoru tento výčet je (aktuální pozici) + `celt`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -57,6 +57,6 @@ HRESULT Skip([in] ULONG celt);
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

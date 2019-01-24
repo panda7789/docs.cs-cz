@@ -1,18 +1,18 @@
 ---
-title: 'Příklady syntaxe výrazů dotazů: filtrování'
+title: 'Příklady syntaxe výrazů dotazů: Filtrování'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c27cb89c-1c1d-4988-9f38-950eda3cb275
-ms.openlocfilehash: 667c67cea4dfa3f9a63554286d6c137280332c7e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 53087a773f6a639a6f2b421a0b30133927e294f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749662"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675183"
 ---
-# <a name="query-expression-syntax-examples-filtering"></a>Příklady syntaxe výrazů dotazů: filtrování
+# <a name="query-expression-syntax-examples-filtering"></a>Příklady syntaxe výrazů dotazů: Filtrování
 Příklady v tomto tématu ukazují, jak používat `Where` a `Where…Contains` metody k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu. Všimněte si, kde...`Contains` nelze použít jako součást [zkompilován dotaz](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
   
  Prodeje společnosti AdventureWorks model používaný v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  
@@ -65,5 +65,5 @@ Příklady v tomto tématu ukazují, jak používat `Where` a `Where…Contains`
  [!code-csharp[DP L2E ArraysAndListsInQueries#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e arraysandlistsinqueries/cs/program.cs#2)]
  [!code-vb[DP L2E ArraysAndListsInQueries#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e arraysandlistsinqueries/vb/module1.vb#2)]  
   
-## <a name="see-also"></a>Viz také  
- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+## <a name="see-also"></a>Viz také:
+- [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

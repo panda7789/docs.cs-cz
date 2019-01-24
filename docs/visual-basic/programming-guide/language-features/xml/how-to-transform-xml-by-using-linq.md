@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XML [Visual Basic], transforming
 - LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
-ms.openlocfilehash: 94ad5180c7921a5ace09f9161de5f275475e46d4
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 628af13a4cdea41ade943b69e326ec2d9abcbf1c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536344"
 ---
 # <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>Postupy: Transformace XML pomocí LINQ (Visual Basic)
 [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují přečíst XML z jednoho zdroje a transformovat ho do nového formátu XML. Můžete využívat dotazy LINQ načítat obsah, který umožňuje transformovat nebo změnit obsah v existující dokument na nový formát XML.  
@@ -57,7 +57,7 @@ ms.locfileid: "42924906"
         </Catalog>  
     ```  
   
-     [Postupy: načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).  
+     [Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).  
   
 3.  Za kód k vytvoření zdrojového dokumentu XML, přidejte následující kód k načtení všech \<knihy > prvky z objektu a transformují je na dokument HTML. Seznam \<knihy > prvků je vytvořena pomocí dotaz LINQ, který vrátí kolekci <xref:System.Xml.Linq.XElement> objektů, které obsahují kód HTML pro transformovaná. Vložené výrazy můžete použít pro převedení hodnot ze zdrojového dokumentu v novém formátu XML.  
   
@@ -155,10 +155,10 @@ ms.locfileid: "42924906"
     </html>  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)  
- [Manipulace s kódem XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+## <a name="see-also"></a>Viz také:
+- [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)
+- [Manipulace s kódem XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Postupy: Načtení XML ze souboru, řetězce nebo Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

@@ -1,30 +1,30 @@
 ---
-title: Výpočetní součet hodnot v číselného pořadí
+title: Nalezení součtu hodnot v číselné posloupnosti
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 24e335b0-984e-4825-8721-0a91b533b7c3
-ms.openlocfilehash: d1c49d45eaf82101e57e0886af52a134d24b1651
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 699211e8e573f03935b5406f1759e6c3834718f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361426"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713155"
 ---
-# <a name="compute-the-sum-of-values-in-a-numeric-sequence"></a>Výpočetní součet hodnot v číselného pořadí
-Použití <xref:System.Linq.Enumerable.Sum%2A> operátor vypočítat součet číselných hodnot v pořadí.  
+# <a name="compute-the-sum-of-values-in-a-numeric-sequence"></a>Nalezení součtu hodnot v číselné posloupnosti
+Použití <xref:System.Linq.Enumerable.Sum%2A> operátor pro výpočet součtu číselných hodnot v sekvenci.  
   
- Všimněte si těchto vlastností `Sum` operátor v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:  
+ Mějte na paměti následující charakteristiky `Sum` operátor v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:  
   
--   Agregační operátor standardní – operátor dotazu `Sum` vyhodnotí na nulu pro prázdnou sekvencí nebo sekvenci, která obsahuje jenom hodnoty Null. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], sémantika SQL jsou ponechána beze změny. Z tohoto důvodu `Sum` vyhodnocen jako null místo na nulu pro prázdnou sekvencí nebo sekvenci, která obsahuje jenom hodnoty Null.  
+-   Standardní operátor dotazu agregační operátor `Sum` vyhodnocen jako nula k prázdné sekvenci nebo sekvenci, která obsahuje pouze hodnoty Null. V [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], sémantika SQL jsou ponechány beze změny. Z tohoto důvodu `Sum` vyhodnotí na hodnotu null namísto na nulu pro prázdnou sekvencí nebo pro sekvenci, která obsahuje pouze hodnoty Null.  
   
--   Platí omezení SQL na mezilehlých výsledků agregace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Součet počty 32bitové celé číslo není počítaný pomocí 64-bit výsledky a pro může dojít k přetečení [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překlad `Sum`. Tato možnost existuje i v případě implementace standardní – operátor dotazu nezpůsobí přetečení pro odpovídající sekvence v paměti.  
+-   Platí omezení SQL na mezilehlých výsledků agregace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Součet počty 32bitové celé číslo není počítaný pomocí 64-bit výsledky a přetečení se může stát [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] překlad `Sum`. Tato možnost existuje i v případě, že implementace standardní operátor dotazu nezpůsobí přetečení pro odpovídající sekvence v paměti.  
   
 ## <a name="example"></a>Příklad  
- Vyhledá celkový nákladní všech objednávek v následujícím příkladu `Order` tabulky.  
+ Následující příklad vyhledá Dopravné celkem všech objednávek v `Order` tabulky.  
   
- Pokud spustíte tento dotaz proti ukázková databáze Northwind, je výstup: `64942.6900`.  
+ Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, je výstup: `64942.6900`.  
   
  [!code-csharp[DLinqQueryExamples#12](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#12)]
  [!code-vb[DLinqQueryExamples#12](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#12)]  
@@ -32,13 +32,13 @@ Použití <xref:System.Linq.Enumerable.Sum%2A> operátor vypočítat součet č�
 ## <a name="example"></a>Příklad  
  Následující příklad vyhledá celkový počet jednotek v pořadí pro všechny produkty.  
   
- Pokud spustíte tento dotaz proti ukázková databáze Northwind, je výstup: `780`.  
+ Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, je výstup: `780`.  
   
- Všimněte si, že musíte vysílat `short` typy (například `UnitsOnOrder`) protože `Sum` nemá žádné přetížení pro krátké typy.  
+ Všimněte si, že musíte přetypovat `short` typů (například `UnitsOnOrder`) protože `Sum` nemá žádné přetížení pro krátké typy.  
   
  [!code-csharp[DLinqQueryExamples#13](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#13)]
  [!code-vb[DLinqQueryExamples#13](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#13)]  
   
-## <a name="see-also"></a>Viz také  
- [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)  
- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+## <a name="see-also"></a>Viz také:
+- [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
+- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

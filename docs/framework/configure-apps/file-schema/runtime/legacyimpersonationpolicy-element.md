@@ -1,5 +1,5 @@
 ---
-title: '&lt;legacyimpersonationpolicy –&gt; – Element'
+title: '&lt;legacyImpersonationPolicy&gt; Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#legacyImpersonationPolicy
@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c0d71bef4ad68c2fea63cec413e8bd17b78df1d0
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 196aaa35561cba7925bcd005474cccb393494250
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53614330"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699881"
 ---
-# <a name="ltlegacyimpersonationpolicygt-element"></a>&lt;legacyimpersonationpolicy –&gt; – Element
+# <a name="ltlegacyimpersonationpolicygt-element"></a>&lt;legacyImpersonationPolicy&gt; Element
 Určuje, že identita Windows není téct přes asynchronní body, bez ohledu na nastavení toku pro kontext spuštění pro aktuální vlákno.  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<legacyimpersonationpolicy – >  
+\<legacyImpersonationPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -115,7 +115,7 @@ Určuje, že identita Windows není téct přes asynchronní body, bez ohledu na
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [\<alwaysflowimpersonationpolicy – > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [\<alwaysFlowImpersonationPolicy> Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)

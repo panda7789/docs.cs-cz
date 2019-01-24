@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: bcf218efeb7bff5f7457164411efed796314ba82
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e4f2b88b075a7806d2ca4c4a1e2cf3f027e71f51
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129477"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54706229"
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 
@@ -141,7 +141,7 @@ WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../incl
 
 -   Můžete také registrovat vlastnost jako připojené vlastnosti a jako vlastnost závislosti, ale stále pak vystavit implementace "zabezpečenou obálku". V takovém případě vlastnost lze nastavit buď na tento element nebo na libovolný element prostřednictvím XAML připojené vlastnosti syntaxe. Je například vlastnost s odpovídající scénáře pro použití, standard a připojené <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.DependencyProperty>
 - [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)

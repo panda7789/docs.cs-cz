@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 591b3e43712832156283baf16e3d65b09172fe14
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4956a763c9a5b2fc1ad74463fdfdeef2b5dc379e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428491"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620042"
 ---
 # <a name="ehostapplicationpolicy-enumeration"></a>EHostApplicationPolicy – výčet
-Určuje, jak upravit [ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu. Tento výčet je zastaralá.  
+Určuje, jak upravit [ihostassemblymanager –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md) rozhraní objektu. Tento výčet je zastaralý.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +35,7 @@ typedef enum _HostApplicationPolicy {
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -43,5 +43,5 @@ typedef enum _HostApplicationPolicy {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

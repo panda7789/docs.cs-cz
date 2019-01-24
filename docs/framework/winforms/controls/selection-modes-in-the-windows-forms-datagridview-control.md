@@ -5,49 +5,49 @@ helpviewer_keywords:
 - selection [Windows Forms], modes in DataGridView control
 - DataGridView control [Windows Forms], selection mode
 ms.assetid: a3ebfd3d-0525-479d-9d96-d9e017289b36
-ms.openlocfilehash: 43f3648a9c7d64fb4fb900c7df3f01bc18d729b3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c512a296f618ab32781dd8718a47c4b20fd7f54a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33539569"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745906"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Režimy výběru v ovládacím prvku Windows Forms DataGridView
-Někdy má vaše aplikace k provádění akcí podle volby uživatele v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V závislosti na akce můžete omezit druhy výběru, které jsou možné. Předpokládejme například, že vaše aplikace můžete vytisknout sestavu pro aktuálně vybraný záznam. V takovém případě můžete nakonfigurovat <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, že kliknete na libovolné místo v řádku vždy vybere celý řádek, a proto lze vybrat že pouze jeden řádek v čase.  
+Občas můžete chtít vaše aplikace k provádění akcí na základě výběrů uživatele v rámci <xref:System.Windows.Forms.DataGridView> ovládacího prvku. V závislosti na akce můžete omezit, které jsou možné druhy výběru. Předpokládejme například, že aplikace můžete vytisknout sestavu pro aktuálně vybraný záznam. V takovém případě můžete chtít konfigurovat <xref:System.Windows.Forms.DataGridView> ovládacího prvku tak, aby kliknutím kamkoli na řádku vždy vybere celý řádek, a proto je možné vybrat tuto pouze jeden řádek v čase.  
   
- Můžete zadat povolenou nastavení výběr <xref:System.Windows.Forms.DataGridView.SelectionMode%2A?displayProperty=nameWithType> vlastnost na jednu z následujících <xref:System.Windows.Forms.DataGridViewSelectionMode> hodnot výčtu.  
+ Můžete zadat povolené nastavení voleb <xref:System.Windows.Forms.DataGridView.SelectionMode%2A?displayProperty=nameWithType> vlastnost na jednu z následujících <xref:System.Windows.Forms.DataGridViewSelectionMode> hodnot výčtu.  
   
-|Hodnota DataGridViewSelectionMode|Popis|  
+|DataGridViewSelectionMode value|Popis|  
 |-------------------------------------|-----------------|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>|Klepnutím na buňku vyberete. Záhlaví řádků a sloupců nelze použít pro výběr.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>|Klepnutím na buňku vyberete. Kliknutím na záhlaví sloupce vybere celý sloupec. Záhlaví sloupců nelze použít k řazení.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>|Kliknutím na buňku nebo záhlaví sloupce vybere celý sloupec. Záhlaví sloupců nelze použít k řazení.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>|Klepnutím na buňku vybere. Záhlaví řádků a sloupců nelze použít pro výběr.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>|Klepnutím na buňku vybere. Kliknutím na záhlaví sloupce vybere celý sloupec. Nelze zadat záhlaví sloupců pro řazení.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>|Kliknutím na buňku nebo záhlaví sloupce vybere celý sloupec. Nelze zadat záhlaví sloupců pro řazení.|  
 |<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>|Kliknutím na buňku nebo řádek záhlaví vybere celý řádek.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>|Výchozí režim výběru. Klepnutím na buňku vyberete. Kliknutím na záhlaví řádků vybere celý řádek.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>|Výchozí režim výběru. Klepnutím na buňku vybere. Kliknutím na záhlaví řádků vybere celý řádek.|  
   
 > [!NOTE]
->  Změna režimu výběru v době běhu automaticky vymaže aktuální výběr.  
+>  Změna režimu výběru za běhu automaticky zruší aktuální výběr.  
   
- Ve výchozím nastavení uživatelé mohou vybrat více řádků, sloupců nebo buněk přetažením pomocí myši, stisknutím kláves CTRL nebo SHIFT při výběru rozšířit nebo změnit výběr, nebo kliknutím na tlačítko levého horního datovou buňku a vyberte všechny buňky v ovládacím prvku. Chcete-li toto chování zakázat, nastavte <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> vlastnost `false`.  
+ Ve výchozím nastavení uživatele můžete vybrat více řádky, sloupce nebo buňky pomocí přetažení myší, stisknutí klávesy CTRL nebo SHIFT při výběru rozšířit nebo změnit výběr, nebo kliknutím na buňku záhlaví levého horního rohu a vyberte všechny buňky v ovládacím prvku. Chcete-li toto chování zakázat, nastavte <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> vlastnost `false`.  
   
- <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> a <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> režimy povolit uživatelům odstranit řádky tak, že je vyberete a stisknutím klávesy DELETE. Uživatele můžete odstranit řádky jenom v případě, že aktuální buňky není v režimu úprav, <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> je nastavena na `true`, a na podkladový zdroj dat podporuje odstranění řádku řízené uživatele. Všimněte si, že tato nastavení nebudou bránit programovým řádek odstranění.  
+ <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> a <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> režimy uživatelům odstraňte řádky tak, že je vyberete a stisknutím klávesy DELETE. Uživatelé, mohou odstranit řádky pouze v případě, že aktuální buňka není v režimu úprav <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> je nastavena na `true`, a podkladový zdroj dat podporuje odstranění řádku řízené uživatele. Všimněte si, že toto nastavení nebrání odstranění řádku prostřednictvím kódu programu.  
   
-## <a name="programmatic-selection"></a>Programová výběr  
- Aktuální režim výběru omezuje chování programový výběr, jakož i výběr uživatele. Aktuální výběr můžete změnit prostřednictvím kódu programu nastavením `Selected` vlastnost žádné buněk, řádků nebo sloupců, které jsou součástí <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Můžete také vybrat všechny buňky v ovládacím prvku prostřednictvím <xref:System.Windows.Forms.DataGridView.SelectAll%2A> metoda, v závislosti na režimu výběru. Chcete-li zrušte zaškrtnutí políčka, použijte <xref:System.Windows.Forms.DataGridView.ClearSelection%2A> metoda.  
+## <a name="programmatic-selection"></a>Výběr prostřednictvím kódu programu  
+ Aktuální režim výběru omezuje chování výběru prostřednictvím kódu programu, stejně jako výběr uživatele. Aktuální výběr můžete změnit prostřednictvím kódu programu nastavením `Selected` vlastnosti buněk, řádků nebo sloupců v <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Můžete také vybrat všechny buňky v ovládacím prvku prostřednictvím <xref:System.Windows.Forms.DataGridView.SelectAll%2A> metoda, v závislosti na režimu výběru. Chcete-li zrušte zaškrtnutí políčka, použijte <xref:System.Windows.Forms.DataGridView.ClearSelection%2A> metody.  
   
- Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true`, můžete přidat <xref:System.Windows.Forms.DataGridView> elementů nebo je odeberte ze výběr změnou `Selected` vlastnost elementu. Jinak, nastavení `Selected` vlastnost `true` pro jeden element další prvky automaticky odebere z výběru.  
+ Pokud <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> je nastavena na `true`, můžete přidat <xref:System.Windows.Forms.DataGridView> prvků, které mají nebo je odeberte z výběru tak, že změníte `Selected` vlastnost elementu. V opačném případě nastavení `Selected` vlastnost `true` pro jeden element automaticky odstraní další elementy z výběru.  
   
- Všimněte si, že změna hodnoty <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> vlastnost nezmění aktuální výběr.  
+ Poznámka: Změna hodnoty <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> vlastnost nedojde ke změně aktuálního výběru.  
   
- Můžete načíst kolekce aktuálně vybraných buněk, řádků a sloupců v rámci <xref:System.Windows.Forms.DataGridView.SelectedCells%2A>, <xref:System.Windows.Forms.DataGridView.SelectedRows%2A>, a <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> vlastnosti <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Přístup k tyto vlastnosti je neefektivní, pokud je vybrána každých buňky v ovládacím prvku. Chcete-li v tomto případě se zabránilo snížení výkonu, použijte <xref:System.Windows.Forms.DataGridView.AreAllCellsSelected%2A> metoda první. Kromě toho přistupují k těchto kolekcí k určení počtu vybraných buněk, řádků a sloupců může být neefektivní. Místo toho používejte <xref:System.Windows.Forms.DataGridView.GetCellCount%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.GetRowCount%2A>, nebo <xref:System.Windows.Forms.DataGridViewColumnCollection.GetColumnCount%2A> předávání v případě metody <xref:System.Windows.Forms.DataGridViewElementStates.Selected> hodnotu.  
+ Kolekce aktuálně vybraných buněk, řádků nebo sloupců prostřednictvím můžete načíst <xref:System.Windows.Forms.DataGridView.SelectedCells%2A>, <xref:System.Windows.Forms.DataGridView.SelectedRows%2A>, a <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> vlastnosti <xref:System.Windows.Forms.DataGridView> ovládacího prvku. Přístup k těmto vlastnostem je neefektivní, pokud je vybrána všechny buňky v ovládacím prvku. Chcete-li v tomto případě se zabránilo snížení výkonu, použijte <xref:System.Windows.Forms.DataGridView.AreAllCellsSelected%2A> metoda první. Kromě toho přístup k těmto kolekcím k určení počtu vybraných buněk, řádků nebo sloupců může být neefektivní. Místo toho používejte <xref:System.Windows.Forms.DataGridView.GetCellCount%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.GetRowCount%2A>, nebo <xref:System.Windows.Forms.DataGridViewColumnCollection.GetColumnCount%2A> metodu <xref:System.Windows.Forms.DataGridViewElementStates.Selected> hodnotu.  
   
 > [!TIP]
->  Příklad kódu, která demonstruje použití programový vybraných buněk najdete v <xref:System.Windows.Forms.DataGridView> přehledu třídy.  
+>  Příklad kódu, který ukazuje programová použití vybraných buněk najdete v <xref:System.Windows.Forms.DataGridView> přehledu třídy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>  
- <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>  
- <xref:System.Windows.Forms.DataGridViewSelectionMode>  
- [Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)  
- [Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.DataGridView.MultiSelect%2A>
+- <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>
+- <xref:System.Windows.Forms.DataGridViewSelectionMode>
+- [Výběr a používání schránky s ovládacím prvkem Windows Forms DataGridView](../../../../docs/framework/winforms/controls/selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)
+- [Postupy: Nastavení režimu výběru ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)

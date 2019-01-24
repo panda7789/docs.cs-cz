@@ -2,18 +2,18 @@
 title: Serializace ve formátu Json s programováním na úrovni zpráv
 ms.date: 03/30/2017
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
-ms.openlocfilehash: 2652b13cc350049cf96716eb754101001d08c64c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 39e6eaf138ee4f4946a876f492457831cbbbf80a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186983"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663047"
 ---
 # <a name="serializing-in-json-with-message-level-programming"></a>Serializace ve formátu Json s programováním na úrovni zpráv
 WCF podporuje serializaci dat ve formátu JSON. Toto téma popisuje, jak zjistit WCF k serializaci typů pomocí <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
 ## <a name="typed-message-programming"></a>Zadanou zprávu programování  
- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Se používá při <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> se použije pro operaci služby. Obě tyto atributy umožňují určit `RequestFormat` a `ResponseFormat`. Chcete použít JSON pro požadavky a odpovědi nastavte oba z těchto `WebMessageFormat.Json`.  Chcete-li použít JSON je nutné použít <xref:System.ServiceModel.WebHttpBinding> který automaticky nakonfiguruje <xref:System.ServiceModel.Description.WebHttpBehavior>. Další informace o serializaci WCF najdete v tématu: [serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md), [serializace ve službě Windows Communication Foundation](https://msdn.microsoft.com/magazine/cc163569.aspx). Další informace o JSON a WCF najdete v části [Úvod do služby RESTfull s použitím technologie WCF](https://msdn.microsoft.com/magazine/dd315413.aspx), [podporou JSON pro vytváření služeb WCF v rozhraní .NET 3.5](https://www.pluralsight-training.net/community/blogs/fritz/archive/2008/01/31/50121.aspx), a [přehled REST ve službě WCF](https://msdn.microsoft.com/netframework/dd547388).  
+ <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> Se používá při <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> se použije pro operaci služby. Obě tyto atributy umožňují určit `RequestFormat` a `ResponseFormat`. Chcete použít JSON pro požadavky a odpovědi nastavte oba z těchto `WebMessageFormat.Json`.  Chcete-li použít JSON je nutné použít <xref:System.ServiceModel.WebHttpBinding> který automaticky nakonfiguruje <xref:System.ServiceModel.Description.WebHttpBehavior>. Další informace o serializaci WCF najdete v tématu: [Serializace a deserializace](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md), [serializace ve službě Windows Communication Foundation](https://msdn.microsoft.com/magazine/cc163569.aspx). Další informace o JSON a WCF najdete v části [Úvod do služby RESTfull s použitím technologie WCF](https://msdn.microsoft.com/magazine/dd315413.aspx), [podporou JSON pro vytváření služeb WCF v rozhraní .NET 3.5](https://www.pluralsight-training.net/community/blogs/fritz/archive/2008/01/31/50121.aspx), a [přehled REST ve službě WCF](https://msdn.microsoft.com/netframework/dd547388).  
   
 > [!IMPORTANT]
 >  Pomocí formátu JSON, vyžaduje použití <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior> který nepodporuje komunikaci protokolu SOAP. Služby, které komunikují <xref:System.ServiceModel.WebHttpBinding> nepodporují zpřístupňuje metadata služby, takže nebudete moci generovat proxy server na straně klienta pomocí funkce Přidat odkaz na službu sady Visual Studio nebo nástroj příkazového řádku svcutil. Další informace, jak můžete programově volat služby, které používají <xref:System.ServiceModel.WebHttpBinding>, naleznete v tématu [jak využívat služby REST s použitím technologie WCF](https://blogs.msdn.com/b/pedram/archive/2008/04/21/how-to-consume-rest-services-with-wcf.aspx).  
@@ -31,7 +31,7 @@ WCF podporuje serializaci dat ve formátu JSON. Toto téma popisuje, jak zjistit
                     new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Integrace jazyka AJAX a podpora JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
- [Samostatná serializace JSON](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
- [Serializace JSON](../../../../docs/framework/wcf/samples/json-serialization.md)
+## <a name="see-also"></a>Viz také:
+- [Integrace jazyka AJAX a podpora JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)
+- [Samostatná serializace JSON](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)
+- [Serializace JSON](../../../../docs/framework/wcf/samples/json-serialization.md)

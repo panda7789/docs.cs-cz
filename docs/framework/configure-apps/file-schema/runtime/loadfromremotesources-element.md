@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3070e293fc335bb24dd1234007307773d152ceee
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 2b2a5301defabde44c4f5a98e57bd302fe390d53
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611396"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671873"
 ---
 # <a name="ltloadfromremotesourcesgt-element"></a>&lt;loadFromRemoteSources&gt; – element
 Určuje, zda sestavení načtená ze vzdáleného zdroje by měly být udělena úplná důvěryhodnost v rozhraní .NET Framework 4 nebo novější.
@@ -22,7 +22,7 @@ Určuje, zda sestavení načtená ze vzdáleného zdroje by měly být udělena 
   
  \<Konfigurace >  
 \<modul runtime >  
-\<loadFromRemoteSources >  
+\<loadFromRemoteSources>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -117,8 +117,8 @@ Následující příklad ukazuje, jak udělit úplný vztah důvěryhodnosti k s
 
 ## <a name="see-also"></a>Viz také:
 
-- [Více implicitní používá zásady CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)  
-- [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
+- [Více implicitní používá zásady CAS: loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)
+- [Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: e02eda66ab9fadbc7b5b042c8940096c70ef6a03
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 056207185f89aa219faf1b721598d372394e1061
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746124"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725698"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (možnosti kompilátoru C#)
 Vloží zadaný prostředek do výstupního souboru.  
@@ -67,7 +67,7 @@ Vloží zadaný prostředek do výstupního souboru.
 csc -resource:rf.resource in.cs  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -8,25 +8,25 @@ helpviewer_keywords:
 - event handling, troubleshooting
 - event handlers, troubleshooting
 ms.assetid: e1c8759f-5370-4308-8476-8c48b73509bf
-ms.openlocfilehash: f6355cf7fc2e43651c1112d048220a8179968c76
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7c56757d18a22a65b4ef8e81d2a05e5f4f4dffc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33646304"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680194"
 ---
 # <a name="troubleshooting-inherited-event-handlers-in-visual-basic"></a>Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic
-V tomto tématu jsou uvedeny běžné problémy, které nastat u obslužné rutiny událostí v zděděné součásti.  
+Toto téma obsahuje seznam běžných problémů, které vznikají u obslužných rutin událostí v zděděné součásti.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Spustí kód v obslužné rutiny události dvakrát pro každé volání  
+#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Spustí kód v obslužné rutině události dvakrát za každé volání  
   
--   Obslužné rutiny události zděděné nesmí obsahovat [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzule. Metoda v základní třídě je již přidruženo k události a bude odpovídajícím způsobem platit. Odeberte `Handles` klauzule z zděděné metody.  
+-   Nesmí obsahovat obslužnou rutinu zděděné události [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli. Metodu v základní třídě je již přidruženo k události a odpovídajícím způsobem se aktivuje. Odeberte `Handles` klauzule z zděděné metody.  
   
      [!code-vb[VbVbalrEvents#32](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/troubleshooting-inherited-event-handlers_1.vb)]  
   
--   Není-li metodu zděděné `Handles` – klíčové slovo, ověřte, zda kód neobsahuje další [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) nebo jakékoli další metody, které zpracovávají stejnou událost.  
+-   Pokud nemá žádné zděděné metody `Handles` – klíčové slovo, ověřte, že váš kód neobsahuje speciální [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) nebo jakékoli další metody, které zpracovávají stejné události.  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a>Viz také:
+- [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)

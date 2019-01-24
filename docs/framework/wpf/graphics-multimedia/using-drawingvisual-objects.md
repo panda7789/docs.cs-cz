@@ -8,12 +8,12 @@ helpviewer_keywords:
 - visual layer [WPF], DrawingVisual objects
 - DrawingVisual objects in visual layer [WPF]
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
-ms.openlocfilehash: 799892424f92782d71b9a35e76d722d1725815ea
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0d4ba3939a95b665684713f3b1775bacd3d028b9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861842"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675065"
 ---
 # <a name="using-drawingvisual-objects"></a>Použití objektů DrawingVisual
 Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.DrawingVisual> objekty v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy.  
@@ -23,7 +23,7 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
  <xref:System.Windows.Media.DrawingVisual> Představuje jednoduché kreslení třídu, která se použije k vykreslení obrazce, Image nebo text. Tato třída se považuje za jednoduché, protože neposkytuje rozložení nebo událostí zpracování, což zvyšuje výkon. Z tohoto důvodu jsou ideální pro pozadí a klipart kreslení.  
   
 <a name="drawingvisual_host_container"></a>   
-## <a name="drawingvisual-host-container"></a>DrawingVisual hostitele kontejneru  
+## <a name="drawingvisual-host-container"></a>DrawingVisual Host Container  
  Chcete-li použít <xref:System.Windows.Media.DrawingVisual> objekty, je potřeba vytvořit hostitele kontejner pro objekty. Objekt kontejneru hostitele musí být odvozen od <xref:System.Windows.FrameworkElement> třídu, která poskytuje rozložení a zpracování událostí, které podporují <xref:System.Windows.Media.DrawingVisual> třídy chybí. Objekt kontejneru hostitele nezobrazuje viditelných vlastností, protože jejich hlavním účelem je tak, aby obsahovala podřízené objekty. Ale <xref:System.Windows.UIElement.Visibility%2A> vlastnost kontejneru hostitele musí být nastavena na <xref:System.Windows.Visibility.Visible>; v opačném případě žádný z jejích podřízených elementů se nebude zobrazovat.  
   
  Při vytváření objektu kontejneru hostitele pro vizuální objekty potřebujete ukládat odkazy na vizuální objekty v <xref:System.Windows.Media.VisualCollection>. Použití <xref:System.Windows.Media.VisualCollection.Add%2A> způsob, jak přidat vizuální objekt kontejneru hostitele. V následujícím příkladu je vytvořen objekt kontejneru hostitele a tři vizuální objekty jsou přidány do jeho <xref:System.Windows.Media.VisualCollection>.  
@@ -51,7 +51,7 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
   
  Následující seznam popisuje dva členy, které je nutné přepsat:  
   
--   <xref:System.Windows.FrameworkElement.GetVisualChild%2A>: Vrací podřízenou položku v zadaném indexu z kolekce podřízených elementů.  
+-   <xref:System.Windows.FrameworkElement.GetVisualChild%2A>: Vrací podřízeného v zadaném indexu z kolekce podřízených elementů.  
   
 -   <xref:System.Windows.FrameworkElement.VisualChildrenCount%2A>: Získá počet visual podřízených elementů v rámci tohoto elementu.  
   
@@ -69,8 +69,8 @@ Toto téma obsahuje přehled o tom, jak používat <xref:System.Windows.Media.Dr
  [!code-csharp[DrawingVisualSample#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DrawingVisualSample/CSharp/Window1.xaml.cs#103)]
  [!code-vb[DrawingVisualSample#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.DrawingVisual>  
- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.DrawingVisual>
+- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)

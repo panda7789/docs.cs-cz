@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: e42e6f17a395edd8c765950832f2829a1aea1fe5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 30585263b4c7c9e1f5e593dde15b19e37d5da6a0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199656"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54494441"
 ---
 # <a name="choosing-a-transport"></a>Volba přenosu
 Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jsou zahrnuté ve Windows Communication Foundation (WCF): HTTP, TCP a pojmenované kanály. Zahrnuje také WCF přenosu služby Řízení front zpráv (MSMQ), ale tento dokument nepopisuje služby Řízení front zpráv.  
@@ -45,32 +45,32 @@ Toto téma popisuje kritéria pro výběr mezi tři hlavní přenosy, které jso
  Při komunikaci se vyžaduje mezi různými aplikacemi WCF v jednom počítači a chcete zabránit libovolné komunikaci z jiného počítače, potom pomocí pojmenovaných kanálů přenosu. Další omezení je, že procesy spouštěné z vzdálené plochy Windows může být omezena na stejné relace vzdálené plochy Windows, pokud jste se zvýšenými oprávněními.  
   
 > [!WARNING]
->  Pokud používáte pojmenovaný kanál přenosu slabé zástupné rezervaci adresy URL na více weby hostované ve službě IIS, může dojít k následující chybě: došlo k chybě v aktivační službě "NetPipeActivator" protokolu "net.pipe" při pokusu o naslouchání serveru '2' proto protokolu je zakázaná pro web dočasně. Zobrazit zpráva o výjimce pro další podrobnosti. Adresa URL: WeakWildcard:net.pipe:/\<název počítače > / Stav: výjimka ConflictingRegistration: název procesu: SMSvcHost ID procesu: 1076\  
+>  Pokud používáte pojmenovaný kanál přenosu slabé zástupné rezervaci adresy URL na více weby hostované ve službě IIS, může dojít k následující chybě: Došlo k chybě v aktivační službě "NetPipeActivator" protokolu "net.pipe" při pokusu o naslouchání serveru '2', tedy protokolu je zakázaná pro web dočasně. Zobrazit zpráva o výjimce pro další podrobnosti. URL: WeakWildcard:net.pipe:/\<název počítače > / Stav: ConflictingRegistration výjimka:  Název procesu: ID procesu SMSvcHost: 1076\  
   
 ## <a name="decision-points-for-choosing-a-transport"></a>Rozhodovací body pro volba přenosu  
  Následující tabulka popisuje běžné rozhodovací body používané k výběru přenos. Měli byste zvážit všechny další atributy a přenosy, které se vztahují k vaší aplikaci. Určení atributů, které jsou důležité pro vaši aplikaci, identifikovat přenosy, které spojují příznivě s jednotlivými svoje atributy a vyberte přenosy, které fungují nejlépe s sady atributů.  
   
 |Atribut|Popis|Dána přenosy|  
 |---------------|-----------------|------------------------|  
-|Diagnostika|Diagnostika umožňují automaticky detekovat potíže s připojením k přenosu. Všechny přenosy podporují schopnost posílání informací zpět selhání, který popisuje připojení. WCF nezahrnuje diagnostické nástroje pro zkoumání problémů se sítí.|Žádné|  
+|Diagnostika|Diagnostika umožňují automaticky detekovat potíže s připojením k přenosu. Všechny přenosy podporují schopnost posílání informací zpět selhání, který popisuje připojení. WCF nezahrnuje diagnostické nástroje pro zkoumání problémů se sítí.|Žádná|  
 |Hostování|Všechny koncové body WCF musí být hostovaný uvnitř aplikace. [!INCLUDE[iis601](../../../../includes/iis601-md.md)] a starší podporují pouze hostitelské aplikace, které používají přenos pomocí protokolu HTTP. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], podpora bude přidána pro hostování všechny přenosy WCF, včetně TCP a pojmenované kanály. Další informace najdete v tématu [hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) a [hostování v aktivační službě procesů Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
 |Kontrola|Kontrola je schopnost extrahování a zpracování informací od zpráv během přenosu. Protokol HTTP odděluje směrování a ovládací prvek informace z dat, což usnadňuje vytváření buildů, které kontrolovat a analyzovat zprávy. Přenosy, které se dají snadno ke kontrole, budete možná muset méně výpočetní výkon v síťových zařízení. Úroveň zabezpečení používá dopady, zda zprávy můžete prozkoumat.|HTTP|  
-|Latence|Latence je minimální množství dobu potřebnou k provedení výměny zpráv. Všechny síťové operace mají vyšší nebo nižší latenci v závislosti na výběru přenosu. Duplexní nebo jednosměrnou komunikaci pomocí přenosu, jehož vzoru výměny zpráv nativní je požadavek odpověď, jako je například HTTP, může způsobit další latence kvůli vynucené korelace zprávy. V takovém případě zvažte použití přenosu, jehož vzoru výměny zpráv nativní je duplexní, jako je například TCP.|TCP, s názvem<br /><br /> Kanál|  
+|Latence|Latence je minimální množství dobu potřebnou k provedení výměny zpráv. Všechny síťové operace mají vyšší nebo nižší latenci v závislosti na výběru přenosu. Duplexní nebo jednosměrnou komunikaci pomocí přenosu, jehož vzoru výměny zpráv nativní je požadavek odpověď, jako je například HTTP, může způsobit další latence kvůli vynucené korelace zprávy. V takovém případě zvažte použití přenosu, jehož vzoru výměny zpráv nativní je duplexní, jako je například TCP.|TCP, Named<br /><br /> Kanál|  
 |Dosah|Dosah přenos odráží, jak podporující přenos je na propojení s jinými systémy. Pojmenovaný kanál přenosu má velmi malé dosah; můžete připojit jenom na služby spuštěné na stejném počítači. Přenosy TCP nebo HTTP mají vynikající dosah a umožňuje pronikat branami některé konfigurace překladu adres a brány firewall. Další informace najdete v tématu [práce s NAT a brány firewall](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|HTTP, TCP|  
 |Zabezpečení|Zabezpečení je schopnost zadáním důvěrnost, integritu nebo ověřování ochrana zprávy během přenosu. Důvěrnost zkoumají chrání zprávu, chrání integritu zprávu nebylo možné měnit a ověřování poskytuje záruky týkající se odesílatel nebo příjemce zprávy.<br /><br /> WCF podporuje zabezpečení přenosu i na úrovni zpráv a úrovni přenosu. Zabezpečení zpráv lze kombinovat s přenosu, zda přenos podporuje režim přenosu ve vyrovnávací paměti. Podpora pro zabezpečení přenosu se liší v závislosti na zvolené přenosu. HTTP, TCP a přenosy pojmenovaného kanálu mají přiměřené parity v podpoře pro zabezpečení přenosu.|Všechny|  
 |Propustnost|Propustnost se měří množství dat, která můžou přenášet a zpracovány v zadaném časovém období. Třeba latence mohou ovlivnit zvolené přenosu propustnosti pro operace služby. Maximální využití propustnosti pro přenos vyžaduje, minimalizovat nároky odesílání obsahu, stejně jako minimalizovat čas strávený čekání na dokončení výměny zpráv. TCP i přenosy pojmenovaného kanálu přidat nízkou režií text zprávy a podporují nativní duplexní obrazce, která organizacím snižuje čekat na zprávy odpovědi.|TCP, pojmenovaného kanálu|  
 |Nástroje|Nástroje představuje podporu pro protokol pro vývoj, diagnostiky, hostování a dalších aktivit aplikaci třetí strany. Vývoj nástroje a software pro práci s protokolem HTTP označuje, že zejména velkých investic.|HTTP|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.BasicHttpBinding>  
- <xref:System.ServiceModel.WSHttpBinding>  
- <xref:System.ServiceModel.WSDualHttpBinding>  
- <xref:System.ServiceModel.WSFederationHttpBinding>  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
- <xref:System.ServiceModel.NetTcpBinding>  
- <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
- <xref:System.ServiceModel.NetNamedPipeBinding>  
- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
- [Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.BasicHttpBinding>
+- <xref:System.ServiceModel.WSHttpBinding>
+- <xref:System.ServiceModel.WSDualHttpBinding>
+- <xref:System.ServiceModel.WSFederationHttpBinding>
+- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
+- <xref:System.ServiceModel.NetTcpBinding>
+- <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
+- <xref:System.ServiceModel.NetNamedPipeBinding>
+- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>
+- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
+- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [Vytváření uživatelem definovaných vazeb](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md)

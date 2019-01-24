@@ -2,15 +2,15 @@
 title: Rozšiřitelnost syndikace
 ms.date: 03/30/2017
 ms.assetid: 4d941175-74a2-4b15-81b3-086e8a95d25f
-ms.openlocfilehash: 8182aee9d8a526d995ab1266e5c654f29f4af3d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eaa3c3644dc6ad6a749a24051064b04bfa43e284
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54705875"
 ---
 # <a name="syndication-extensibility"></a>Rozšiřitelnost syndikace
-Rozhraní API syndikace určená k poskytování formátu jazykově neutrální programovací model, který umožňuje syndikovaný obsah k zápisu do sítě v různých formátech. Abstraktní datového modelu se skládá z následujících tříd:  
+Rozhraní API syndikace je navržené pro poskytování formátu neutrální programovací model, který umožňuje syndikovaný obsah k zápisu do přenosu v různých formátech. Abstraktní datový model obsahuje následující třídy:  
   
 -   <xref:System.ServiceModel.Syndication.SyndicationCategory>  
   
@@ -22,28 +22,28 @@ Rozhraní API syndikace určená k poskytování formátu jazykově neutrální 
   
 -   <xref:System.ServiceModel.Syndication.SyndicationPerson>  
   
- Tyto třídy mapovat úzce konstrukce definované specifikací Atom 1.0, i když některé z názvů se liší.  
+ Tyto třídy mapování úzce konstrukce definované ve specifikaci Atom 1.0, i když některé názvy se liší.  
   
- Klíčovou funkcí syndikace protokoly je rozšíření. Atom 1.0 a RSS 2.0, přidejte do informační kanály syndikace, které nejsou definovány v specifikacích atributy a elementy. Programovací model Windows Communication Foundation (WCF) syndikace nabízí tyto způsoby práce s vlastní atributy a rozšíření, volného typu přístup a odvozování novou třídu.  
+ Klíčovou funkcí služby syndikace protokolů je rozšíření. Atom 1.0 i RSS 2.0, přidejte atributy a elementy pro informační kanály syndikace, které nejsou definovány ve specifikaci. Programovací model Windows Communication Foundation (WCF) syndikace nabízí tyto způsoby práce s vlastní atributy a rozšíření volného typu přístup a odvození nové třídy.  
   
 ## <a name="loosely-typed-access"></a>Přístup volného typu  
- Přidání rozšíření odvozením novou třídu vyžaduje zápis další kód. Další možností je přístup k rozšíření volného typu způsobem. Všechny typy definované v modelu abstraktní data syndikace obsahovat vlastností s názvem `AttributeExtensions` a `ElementExtensions` (s jedinou výjimkou <xref:System.ServiceModel.Syndication.SyndicationContent> má `AttributeExtensions` vlastnost, ale ne `ElementExtensions` vlastnost). Tyto vlastnosti jsou kolekce rozšíření nejsou zpracovávány `TryParseAttribute` a `TryParseElement` metody v uvedeném pořadí. Tato nezpracované rozšíření můžete přejít pomocí volání <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> na `ElementExtensions` vlastnost <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson>, a <xref:System.ServiceModel.Syndication.SyndicationCategory>. Tato sada metod vyhledá všechna rozšíření se zadaným názvem a obor názvů, deserializuje jednotlivě do instance `TExtension` a vrací je jako kolekce `TExtension` objekty.  
+ Přidání rozšíření podle odvození nové třídy vyžaduje psaním dalšího kódu. Další možností je přístup k rozšíření volného typu způsobem. Všechny typy definované v modelu syndikace abstraktní data obsahují vlastnosti s názvem `AttributeExtensions` a `ElementExtensions` (s jedinou výjimkou <xref:System.ServiceModel.Syndication.SyndicationContent> má `AttributeExtensions` vlastnost, ale ne `ElementExtensions` vlastnost). Tyto vlastnosti jsou kolekce rozšíření, které nejsou zpracovány `TryParseAttribute` a `TryParseElement` metody v uvedeném pořadí. Tato nezpracované rozšíření se zpřístupní po volání <xref:System.ServiceModel.Syndication.SyndicationElementExtensionCollection.ReadElementExtensions%2A?displayProperty=nameWithType> na `ElementExtensions` vlastnost <xref:System.ServiceModel.Syndication.SyndicationFeed>, <xref:System.ServiceModel.Syndication.SyndicationItem>, <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationPerson>, a <xref:System.ServiceModel.Syndication.SyndicationCategory>. Tuto sadu metod najde všechna rozšíření se zadaným názvem a oborem názvů, deserializuje jednotlivě do instance `TExtension` a vrátí je jako kolekci `TExtension` objekty.  
   
 ## <a name="deriving-a-new-class"></a>Odvození nové třídy  
- Novou třídu můžete odvozen z jakéhokoli z existujících tříd abstraktní data modelu. K tomu při implementaci aplikace, ve kterém mají většinu informační kanály, které pracujete s konkrétní rozšíření. V tomto tématu obsahují většinu informační kanály, které pracoval s `MyExtension` rozšíření. Zajistit lepší programovací prostředí, proveďte následující kroky:  
+ Novou třídu lze odvodit z jakékoli existující třídy abstraktní datový model. Proveďte při implementaci ve kterém většinu informační kanály, které pracujete, mají příponu konkrétní aplikace. V tomto tématu obsahují většinu informační kanály, které program pracuje s `MyExtension` rozšíření. Pro zajištění vylepšené programovací prostředí, proveďte následující kroky:  
   
--   Vytvořte třídu, pro uložení dat rozšíření. V takovém případě vytvoření třídy s názvem MyExtension.  
+-   Vytvoření třídy k umístění dat rozšíření. V takovém případě vytvořte třídu s názvem MyExtension.  
   
--   Odvození třídy s názvem MyExtensionItem z <xref:System.ServiceModel.Syndication.SyndicationItem> vystavit vlastnost typu MyExtension pro účely programovatelnosti.  
+-   Odvodit třídu s názvem MyExtensionItem z <xref:System.ServiceModel.Syndication.SyndicationItem> vystavit vlastnost typu MyExtension pro účely programování.  
   
--   Přepsání <xref:System.ServiceModel.Syndication.SyndicationItem.TryParseElement%28System.Xml.XmlReader%2CSystem.String%29> ve třídě MyExtensionItem instanci nové MyExtension při MyExtension se čtou v.  
+-   Přepsat <xref:System.ServiceModel.Syndication.SyndicationItem.TryParseElement%28System.Xml.XmlReader%2CSystem.String%29> ve třídě MyExtensionItem instanci nové MyExtension při MyExtension je určen pro čtení.  
   
--   Přepsání <xref:System.ServiceModel.Syndication.SyndicationItem.WriteElementExtensions%28System.Xml.XmlWriter%2CSystem.String%29> ve třídě MyExtensionItem zapsat obsah vlastnosti MyExtension do zapisovače XML.  
+-   Přepsat <xref:System.ServiceModel.Syndication.SyndicationItem.WriteElementExtensions%28System.Xml.XmlWriter%2CSystem.String%29> ve třídě MyExtensionItem zapsat obsah vlastnosti MyExtension do zapisovače XML.  
   
--   Odvození třídy s názvem MyExtensionFeed z <xref:System.ServiceModel.Syndication.SyndicationFeed>.  
+-   Odvodit třídu s názvem MyExtensionFeed z <xref:System.ServiceModel.Syndication.SyndicationFeed>.  
   
--   Přepsání <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateItem> ve třídě MyExtensionFeed k vytváření instancí MyExtensionItem místo výchozího <xref:System.ServiceModel.Syndication.SyndicationItem>. Řady metod jsou definovány v <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> , můžete vytvořit <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationCategory>, a <xref:System.ServiceModel.Syndication.SyndicationPerson> objekty (například <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateLink>, <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateCategory>, a <xref:System.ServiceModel.Syndication.SyndicationFeed.CreatePerson>). Všechny z nich může být potlačena za účelem vytvoření vlastní třídy odvozené.  
+-   Přepsat <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateItem> ve třídě MyExtensionFeed pro vytvoření instance MyExtensionItem místo výchozího <xref:System.ServiceModel.Syndication.SyndicationItem>. Řady metod, které jsou definovány v <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem> dokáže vytvořit <xref:System.ServiceModel.Syndication.SyndicationLink>, <xref:System.ServiceModel.Syndication.SyndicationCategory>, a <xref:System.ServiceModel.Syndication.SyndicationPerson> objektů (například <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateLink>, <xref:System.ServiceModel.Syndication.SyndicationFeed.CreateCategory>, a <xref:System.ServiceModel.Syndication.SyndicationFeed.CreatePerson>). Všechny z nich může být potlačena za účelem vytvořit vlastní odvozenou třídu.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
- [Architektura syndikace](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
+- [Architektura syndikace](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)

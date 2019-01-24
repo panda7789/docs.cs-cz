@@ -6,12 +6,12 @@ helpviewer_keywords:
 - attributes [Windows Forms], application settings
 - wrapper classes [Windows Forms], application settings
 ms.assetid: 53caa66c-a9fb-43a5-953c-ad092590098d
-ms.openlocfilehash: 9ed549cb1e10b22c4fa34d984133a6be11dfab44
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 09fb5c26f7ecccd427155836c3864773153dddfa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525109"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668948"
 ---
 # <a name="application-settings-attributes"></a>Atributy nastavení aplikace
 Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít buď pro obálkovou třídu nastavení aplikace nebo jeho jednotlivé vlastnosti. Tyto atributy jsou zkoumány za běhu aplikace nastavení infrastruktury, často konkrétně poskytovatel nastavení, aby bylo možné přizpůsobit jejich fungování stanovených potřebám vlastní obálku.  
@@ -19,9 +19,9 @@ Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít 
  V následující tabulce jsou uvedeny atributy, které můžete použít pro obálkovou třídu nastavení aplikace nebo jednotlivé vlastnosti této třídy. Podle definice pouze jeden atribut –**UserScopedSettingAttribute** nebo **atribut ApplicationScopedSettingAttribute**– musí použít u každého nastavení vlastnosti.  
   
 > [!NOTE]
->  Vlastní nastavení poskytovatele, odvozený z <xref:System.Configuration.SettingsProvider> třídy, je potřeba jenom k rozpoznání následující tři atributy: **atribut ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, a **DefaultSettingValueAttribute**.  
+>  Vlastní nastavení poskytovatele, odvozený z <xref:System.Configuration.SettingsProvider> třídy, je potřeba jenom k rozpoznání následující tři atributy: **Atribut ApplicationScopedSettingAttribute**, **UserScopedSettingAttribute**, a **DefaultSettingValueAttribute**.  
   
-|Atribut|Cíl|Popis|  
+|Atribut|Target|Popis|  
 |---------------|------------|-----------------|  
 |<xref:System.Configuration.SettingsProviderAttribute>|Obojí|Určuje krátký název nastavení zprostředkovatele má být použit pro trvalost.<br /><br /> Pokud tento atribut není zadán, výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, předpokládá se.|  
 |<xref:System.Configuration.UserScopedSettingAttribute>|Obojí|Definuje vlastnost jako nastavení rozsahu uživatele aplikace.|  
@@ -37,8 +37,8 @@ Architektura nastavení aplikace poskytuje mnoho atributů, které lze použít 
   
  *Třída* označuje, že atribut lze použít pouze pro třídu obálky nastavení aplikace. *Vlastnost* znamená, že atribut může být použitý jenom nastavení vlastnosti. *Obě* označuje, že atribut je možné použít na obou úrovní.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Configuration.ApplicationSettingsBase>  
- <xref:System.Configuration.SettingsProvider>  
- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
- [Postupy: Vytváření nastavení aplikace](https://msdn.microsoft.com/library/53b3af80-1c02-4e35-99c6-787663148945)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.ApplicationSettingsBase>
+- <xref:System.Configuration.SettingsProvider>
+- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Postupy: Vytvořit nastavení aplikace](https://msdn.microsoft.com/library/53b3af80-1c02-4e35-99c6-787663148945)

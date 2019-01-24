@@ -5,41 +5,41 @@ helpviewer_keywords:
 - security [XAML Services], .NET XAML services
 - XAML security [XAML Services]
 ms.assetid: 544296d4-f38e-4498-af49-c9f4dad28964
-ms.openlocfilehash: ef47e7e370082a2050406710edcb62d0967df8ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6cd09295f9dac26011652d6b0a33318841b04072
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562359"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648359"
 ---
 # <a name="xaml-security-considerations"></a>Důležité informace o zabezpečení pro jazyk XAML
-Toto téma popisuje osvědčené postupy pro zabezpečení v aplikacích, když používáte XAML a rozhraní .NET Framework XAML Services API.  
+Toto téma popisuje doporučené postupy pro zabezpečení v aplikacích při použití XAML a rozhraní .NET Framework XAML Services API.  
   
 ## <a name="untrusted-xaml-in-applications"></a>Nedůvěryhodné XAML v aplikacích  
- V nejobecnější smysl je nedůvěryhodný XAML libovolný zdroj XAML, který aplikace není specificky zahrnout nebo emitování.  
+ V nejvíce obecném smyslu tento pojem nedůvěryhodné XAML je jakýkoli zdroj XAML, který aplikace nejsou výslovně zahrnout nebo generování.  
   
- XAML, který se zkompiluje do nebo uložené jako `resx`-typu prostředku v rámci důvěryhodné a podepsané sestavení není ze své podstaty nedůvěryhodné. XAML můžete důvěřovat tolik, kolik důvěřujete sestavení jako celek. Ve většině případů se pouze důvěryhodnosti aspektů přijít XAML, který je zdrojem XAML, který načítat z datového proudu nebo jiných vstupně-výstupní operace. Uvolněná XAML není konkrétní součást nebo funkce model aplikací s infrastruktury balení a nasazení. Sestavení však může implementovat chování, které zahrnuje načítání přijít XAML.  
+ XAML, který je zkompilován nebo uložené jako `resx`– typ prostředku v rámci důvěryhodné a podepsané sestavení není ze své podstaty nedůvěryhodný. XAML může důvěřovat míře důvěryhodnosti sestavení jako celek. Ve většině případů se pouze důvěryhodnosti aspektů volný XAML, který je zdroje XAML, který můžete načíst z datového proudu nebo jiné vstupně-výstupních operací. Volný XAML není konkrétní komponenta nebo funkce aplikačního modelu nasazení a balení infrastrukturu. Sestavení však může implementovat chování, které zahrnuje načtení volný XAML.  
   
- Pro nedůvěryhodné XAML, můžete by měly zpracovávat je obecně stejná jako by šlo nedůvěryhodnými. Použít sandboxing nebo jiných metaphors pravděpodobně nedůvěryhodné XAML zabránit v přístupu k důvěryhodný kód.  
+ Pro nedůvěryhodné XAML, můžete by měly zpracovávat je obecně stejná jako by šlo nedůvěryhodného kódu. Pomocí izolace (sandbox) nebo jiné metaphors pravděpodobně nedůvěryhodné XAML zabránit v přístupu k důvěryhodným kódem.  
   
- Povaha XAML možnosti dává XAML práva k vytváření objektů a nastavte jejich vlastnosti. Tyto schopnosti zahrnují také přístup k převaděče typů, mapování a přístup k sestavení v doméně aplikace pomocí rozšíření značek `x:Code` bloky a tak dále.  
+ Povaha funkce XAML poskytuje XAML práva k vytvoření objektů a nastavte jejich vlastnosti. Tyto možnosti zahrnují také přístup k převaděče typů, mapování a přístup k sestavení v aplikační doméně, pomocí rozšíření značek, `x:Code` bloky a tak dále.  
   
- Kromě možnosti úroveň jazyka XAML slouží pro definici uživatelského rozhraní v mnoha technologií. Načítání nedůvěryhodné XAML může znamenat načítání škodlivý falšováním uživatelského rozhraní.  
+ Kromě možnosti úrovni jazyka XAML slouží k definici uživatelského rozhraní v mnoha technologií. Načítání nedůvěryhodné XAML může znamenat načtení škodlivých falšováním identity uživatelského rozhraní.  
   
-## <a name="sharing-context-between-readers-and-writers"></a>Sdílení kontextu mezi čtení a zápis  
- Architektura rozhraní .NET Framework XAML Services XAML čtení a zápis XAML často vyžaduje sdílení čtečku XAML zapisovač XAML nebo sdílené kontext schématu XAML. Pokud píšete logiky smyčky uzlu XAML nebo poskytování vlastní Uložit cestu může být potřeba sdílení objekty nebo kontextů. Nesmí sdílet instance čtečky XAML, kontext schématu XAML nevýchozí nebo nastavení pro třídy čtečky nebo zapisovač XAML mezi důvěryhodné a nedůvěryhodné kódu.  
+## <a name="sharing-context-between-readers-and-writers"></a>Sdílení kontextu mezi čtečky a zapisovače  
+ Architektura rozhraní .NET Framework XAML Services XAML čtečky a zapisovače XAML často vyžaduje sdílení XAML čtečky zapisovač XAML nebo sdílené kontext schématu XAML. Sdílení objekty nebo kontexty může být vyžadováno, pokud vytváříte logiky smyčky uzlu XAML nebo poskytnutí vlastní Uložit cestu. By neměly sdílet XAML čtečky instancí, jiný než výchozí kontext schématu XAML nebo nastavení pro čtení/zápis třídy XAML mezi důvěryhodné a nedůvěryhodné kódu.  
   
- Většina scénářů a operací zahrnujících XAML objekt zápis pro zálohování typu CLR na základě jednoduše použít výchozí kontext schématu XAML. Výchozí kontext schématu XAML explicitně neobsahuje nastavení, které by mohly ohrozit úplný vztah důvěryhodnosti. Proto je bezpečně sdílet kontextu mezi důvěryhodné a nedůvěryhodné součásti XAML čtečky nebo zapisovač. Pokud to uděláte, je však stále osvědčeným postupem takové čtení a zápis mějte samostatné <xref:System.AppDomain> oborů s jedním z nich speciálně určený nebo v izolovaném prostoru částečného vztahu důvěryhodnosti.  
+ Většina scénářů a operace, které zahrnují objektu XAML zápis pro typ na základě CLR zálohování můžete použít jenom výchozí kontext schématu XAML. Výchozí kontext schématu XAML nezahrnuje explicitně nastavení, které by mohly ohrozit úplný vztah důvěryhodnosti. Je tedy bezpečně sdílet kontext mezi důvěryhodné a nedůvěryhodné součásti čtení/zápis XAML. Pokud to uděláte, je však stále osvědčeným postupem je ponechat takové čtečky a zapisovače samostatné <xref:System.AppDomain> oborů s jedním z nich speciálně určené/řešeními v izolovaném prostoru pro částečnou důvěryhodností.  
   
-## <a name="xaml-namespaces-and-assembly-trust"></a>Obory názvů jazyka XAML a vztah důvěryhodnosti sestavení  
- Základní nekvalifikované syntaxe a definice Interpretace jazyka XAML: vlastní mapování oboru názvů jazyka XAML k sestavení nerozlišuje mezi důvěryhodné a nedůvěryhodné sestavení jako načteno do domény aplikace. Z toho důvodu je technicky možné nedůvěryhodné sestavení zfalšovat mapování oboru názvů jazyka XAML určený důvěryhodné sestavení a zachycení deklarované objekt zdroji XAML a informace o vlastnosti. Pokud máte požadavky na zabezpečení k této situaci vyhnout, třeba vaše určený mapování oboru názvů jazyka XAML provést pomocí jedné z následujících postupů:  
+## <a name="xaml-namespaces-and-assembly-trust"></a>Obory názvů XAML a sestavení důvěryhodnosti  
+ Základní syntaxe nekvalifikovaného a definice interpretace vlastní mapování oboru názvů XAML do sestavení XAML nerozlišuje mezi důvěryhodné a nedůvěryhodné sestavení jako načteno do domény aplikace. Proto je technicky možné nedůvěryhodného sestavení zfalšovat mapování oboru názvů XAML určené důvěryhodná sestavení a zachycení deklarovanému objektu XAML zdroje a informace o vlastnosti. Pokud máte požadavky na zabezpečení, abyste předešli této situaci vaše zamýšlený mapování oboru názvů XAML je třeba pomocí jedné z následujících postupů:  
   
--   Použijte plně kvalifikovaný název sestavení se silným názvem v žádné mapování oboru názvů jazyka XAML provedené XAML vaší aplikace.  
+-   Použijte plně kvalifikovaný název s silný název v žádné mapování oboru názvů XAML provedené při vaší aplikace XAML.  
   
--   Omezit sestavení mapování na pevnou sadu referenční sestavení, vytvořením konkrétní <xref:System.Xaml.XamlSchemaContext> pro váš jazyk XAML čtečky a XAML objekt zapisovače. V tématu <xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>.  
+-   Omezit mapování na pevnou sadu referenčních sestavení tak, že vytváří konkrétní sestavení <xref:System.Xaml.XamlSchemaContext> pro vaše XAML čtečky a XAML objektu zapisovače. Viz <xref:System.Xaml.XamlSchemaContext.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.Reflection.Assembly%7D%29>.  
   
-## <a name="xaml-type-mapping-and-type-system-access"></a>Mapování typu XAML a typ systému přístup  
- XAML podporuje svůj vlastní systém typ, který v mnoha směrech je rovnocenný na tom, jak CLR implementuje systému základní typ CLR. Pro některé aspekty typ sledování, kde jsou při důvěryhodnosti rozhodování o typu, na základě jeho typu informací, však musí odložit na informace o typu CLR zálohování typy. Je to proto, že některé specifické možnosti vytváření sestav systému typ XAML jsou ponechány otevřené jako virtuální metody a nejsou proto plně pod kontrolou původní implementace rozhraní .NET Framework XAML Services. Tyto body rozšiřitelnosti existovat, protože systém typů XAML je rozšiřitelný, tak, aby odpovídaly rozšiřitelnosti jazyka XAML sám a možné alternativní strategie mapování typu versus výchozí implementace zálohovaná CLR a výchozí kontext schématu XAML. Další informace najdete v tématu konkrétní poznámky na několik vlastností <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>.  
+## <a name="xaml-type-mapping-and-type-system-access"></a>Mapování typů XAML a přístup k systému typu  
+ XAML podporuje svůj vlastní typ systém, který se ve spoustě ohledů je partnera, který způsob implementace CLR systému základní typ CLR. Však pro některé aspekty typ povědomí, kde provádíte rozhodnutí o důvěryhodnosti o typu na základě jeho typu informací, by měl odložit na informace o typu v prostředí CLR typy zálohování. Je to proto, že některé konkrétní možnosti vytváření sestav typu systému XAML jsou ponechány otevřené jako virtuální metody a nejsou proto plně pod kontrolou původní implementace rozhraní .NET Framework XAML Services. Těmto rozšiřujícím bodům existovat, protože systém typů XAML je možné rozšířit tak, aby odpovídaly rozšiřitelnosti XAML samotného a možná alternativní strategii mapování typů a výchozí implementace podporou modulu CLR a výchozí kontext schématu XAML. Další informace najdete v tématu poznámky ke konkrétní na některé z vlastností <xref:System.Xaml.XamlType> a <xref:System.Xaml.XamlMember>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xaml.Permissions.XamlAccessLevel>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xaml.Permissions.XamlAccessLevel>

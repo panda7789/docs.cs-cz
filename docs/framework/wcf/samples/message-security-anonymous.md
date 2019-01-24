@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: c321cbf9-8c05-4cce-b5a5-4bf7b230ee03
-ms.openlocfilehash: 2e8b17b22a55556615f2df7ab97295657da8a981
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 9ac411cd13869b70edc46724219776ec411a23dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222347"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680747"
 ---
 # <a name="message-security-anonymous"></a>Zabezpečení zpráv s anonymní metodou
 Zpráva zabezpečení anonymní Ukázka předvádí, jak implementovat aplikace Windows Communication Foundation (WCF), který používá zabezpečení na úrovni zpráv bez ověřování klienta, ale, který vyžaduje ověření serveru pomocí serveru X.509 certifikát. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) vzorku. Tento příklad se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.
@@ -239,4 +239,4 @@ Press <ENTER> to terminate client.
 > [!NOTE]
 >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky na počítačích. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty na počítačích, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com.`
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

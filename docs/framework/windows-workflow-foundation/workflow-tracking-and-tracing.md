@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], tracking and tracing
 ms.assetid: b965ded6-370a-483d-8790-f794f65b137e
-ms.openlocfilehash: 5358a3abe84c7fe7d753560611f0c7338b060826
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 4510ac86cec556734d3d238ba1f02b00074e2609
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200292"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687164"
 ---
 # <a name="workflow-tracking-and-tracing"></a>Pracovní postup sledování a trasování
 Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] funkce poskytují přehled o provádění pracovního postupu. Poskytuje sledování infrastruktury pro sledování spuštění instance pracovního postupu. Sledování infrastruktury WF nástroje transparentně pracovního postupu pro vydávání záznamy, které odráží klíče události během provádění. Tato funkce je k dispozici ve výchozím nastavení pro všechny [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Nejsou potřeba k tomu žádné změny [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] pracovního postupu pro sledování na výskyt. Je jenom pár rozhodování o tom, kolik dat sledování chcete dostávat. Při spuštění instance pracovního postupu nebo dokončí zpracování sledování jsou emitovány záznamy. Sledování lze rovněž extrahovat obchodní relevantní data přidružená k proměnné pracovního postupu. Například, pokud pracovní postup představuje pořadí zpracování systému, ID objednávky může být extrahována spolu s <xref:System.Activities.Tracking.TrackingRecord> objektu. Obecně platí povolení WF sledování zajišťuje diagnostiky nebo obchodní data analytics přistupovat z pracovního postupu provádění.  
@@ -51,5 +51,5 @@ Sledování pracovního postupu Windows je [!INCLUDE[netfx_current_long](../../.
  [Trasování pracovních postupů](../../../docs/framework/windows-workflow-foundation/workflow-tracing.md)  
  Popisuje dva způsoby, jak povolit trasování ladění pracovního postupu.  
   
-## <a name="see-also"></a>Viz také  
- [Sledování SQL](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)
+## <a name="see-also"></a>Viz také:
+- [Sledování SQL](../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)

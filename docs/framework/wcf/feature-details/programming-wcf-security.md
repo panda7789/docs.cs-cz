@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - message security [WCF], programming overview
 ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
-ms.openlocfilehash: 1cb18f1be8e418ace4c9f9f71b7f97ac37ff8074
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 2b49031b0001ddba01a888806206360c1cbdbacb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193887"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699464"
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezpečenou webovou aplikaci Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integrita, souhrnně označované jako *přenos zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  
@@ -35,7 +35,7 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
   
     1.  `Transport`  
   
-         Zabezpečení přenosu závisí mechanismus, který používá vazba, kterou jste vybrali. Například, pokud používáte `WSHttpBinding` mechanismus zabezpečení, který je vrstva SSL (Secure Sockets) (taky mechanismus pro protokol HTTPS). Obecně řečeno hlavní výhodou zabezpečení přenosu je, že poskytuje dobrou propustnost bez ohledu na to, které přenosu, kterou používáte. Však obsahuje dvě omezení: první možností je, že mechanismus přenosu Určuje typ přihlašovacích údajů pro ověření uživatele. Nevýhodou jde jenom v případě, že služba potřebuje pro spolupráci s ostatními službami, které vyžadují různé typy přihlašovacích údajů. Druhým je, že, protože není zabezpečení na úrovni zprávy, zabezpečení je implementována v hop-by-hop způsobem spíše než začátku do konce. Toto druhé omezení je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje zprostředkovatelů. Další informace o přenosu, které používat, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o použití zabezpečení přenosu, naleznete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
+         Zabezpečení přenosu závisí mechanismus, který používá vazba, kterou jste vybrali. Například, pokud používáte `WSHttpBinding` mechanismus zabezpečení, který je vrstva SSL (Secure Sockets) (taky mechanismus pro protokol HTTPS). Obecně řečeno hlavní výhodou zabezpečení přenosu je, že poskytuje dobrou propustnost bez ohledu na to, které přenosu, kterou používáte. Však obsahuje dvě omezení: První je, že mechanismus přenosu Určuje typ přihlašovacích údajů pro ověření uživatele. Nevýhodou jde jenom v případě, že služba potřebuje pro spolupráci s ostatními službami, které vyžadují různé typy přihlašovacích údajů. Druhým je, že, protože není zabezpečení na úrovni zprávy, zabezpečení je implementována v hop-by-hop způsobem spíše než začátku do konce. Toto druhé omezení je problém pouze v případě, že cesta zpráv mezi klientem a službou obsahuje zprostředkovatelů. Další informace o přenosu, které používat, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md). Další informace o použití zabezpečení přenosu, naleznete v tématu [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md).  
   
     2.  `Message`  
   
@@ -101,6 +101,6 @@ Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezp
  [!code-csharp[c_TcpClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_tcpclient/cs/source.cs#1)]
  [!code-vb[c_TcpClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_tcpclient/vb/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)  
- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
+## <a name="see-also"></a>Viz také:
+- [Základní programování WCF](../../../../docs/framework/wcf/basic-wcf-programming.md)
+- [Běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - overriding XML serialization
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
-ms.openlocfilehash: 7deec91f605555cff94fa882c887a4adf97db58a
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: d4af79920e38f0e3db8265256a9a7a706048d7e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415062"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54697540"
 ---
 # <a name="how-to-override-encoded-soap-xml-serialization"></a>Postupy: Přepsat kódovaný protokol SOAP serializace XML
   
@@ -279,9 +279,9 @@ public class Run
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)  
-- [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)  
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
-- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
+- [Serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
 - [Postupy: Serializace objektu jako XML kódováním protokolu SOAP Stream](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

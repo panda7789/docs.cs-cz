@@ -1,37 +1,37 @@
 ---
-title: Určit, zda některé nebo všechny elementy v pořadí nesplňuje podmínku
+title: Pokud některé nebo všechny elementy v sekvenci vyhovují podmínce
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 339ec145-826c-46d2-8cf2-3acd252cd072
-ms.openlocfilehash: cd910b35f82f816158cb686a283e44e3b8b6b33b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d3c343d3cf5068e473efbd62de019a25cf19dc10
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359969"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702571"
 ---
-# <a name="determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition"></a>Určit, zda některé nebo všechny elementy v pořadí nesplňuje podmínku
-<xref:System.Linq.Enumerable.All%2A> Vrátí operátor `true` Pokud všechny elementy v pořadí splňují podmínku.  
+# <a name="determine-if-any-or-all-elements-in-a-sequence-satisfy-a-condition"></a>Pokud některé nebo všechny elementy v sekvenci vyhovují podmínce
+<xref:System.Linq.Enumerable.All%2A> Operátor vrátí `true` Pokud všechny prvky v sekvenci splňují podmínku.  
   
- <xref:System.Linq.Queryable.Any%2A> Vrátí operátor `true` Pokud libovolný prvek v pořadí splňuje podmínku.  
+ <xref:System.Linq.Queryable.Any%2A> Operátor vrátí `true` Pokud libovolný prvek v sekvenci splňuje podmínku.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrací posloupnost zákazníků, kteří mají alespoň jednu objednávku. `Where` / `where` Klauzule se vyhodnocuje `true` Pokud v dané `Customer` obsahuje některý `Order`.  
+ Následující příklad vrátí sekvenci zákazníky, kteří mají alespoň jednu objednávku. `Where` / `where` Vyhodnotí jako klauzuli `true` -li daného `Customer` obsahuje některý `Order`.  
   
  [!code-csharp[DLinqQueryExamples#37](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#37)]
  [!code-vb[DLinqQueryExamples#37](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#37)]  
   
 ## <a name="example"></a>Příklad  
- Následující kód jazyka Visual Basic určuje seznamu zákazníků, kteří nejsou umístěny objednávky a zajišťuje, že pro každý zákazník v tomto seznamu, jméno kontaktní osoby je k dispozici.  
+ Následující kód jazyka Visual Basic určuje seznam zákazníků, kteří nejsou umístěny objednávky a zajistí, že pro každý zákazník v tomto seznamu jméno kontaktní osoby je k dispozici.  
   
  [!code-vb[DLinqQueryExamples#37v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#37v)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad jazyka C# vrací posloupnost zákazníků, jejichž objednávky mají `ShipCity` počínaje "C". Také součástí návratový jsou zákazníci, kteří nemají žádnou objednávku. (Standardně <xref:System.Linq.Queryable.All%2A> vrátí operátor `true` pro prázdnou sekvencí.) Zákazníci bez objednávek se eliminovala ve výstupu konzoly pomocí `Count` operátor.  
+ Následující C# příkladu vrátí sekvenci zákazníků, jejichž objednávky `ShipCity` počínaje "C". Obsahuje taky návratový jsou zákazníci, kteří mají žádné objednávky. (Podle návrhu, <xref:System.Linq.Queryable.All%2A> operátor vrátí `true` pro prázdnou sekvencí.) Zákazníci s žádné objednávky se eliminovala ve výstupu konzoly pomocí `Count` operátor.  
   
  [!code-csharp[DLinqQueryExamples#38](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#38)]  
   
-## <a name="see-also"></a>Viz také  
- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+## <a name="see-also"></a>Viz také:
+- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 2a372ba995f409fc3dd12492e21af80b93d20b8c
-ms.sourcegitcommit: deb9225a55485a5a6e6c7914deb30ccfceb69d3f
+ms.openlocfilehash: 20676b53d21931987139288e29c009c8348ce6ca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/05/2019
-ms.locfileid: "54058591"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690888"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
@@ -140,10 +140,10 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 ## <a name="see-also"></a>Viz také:
 
-- [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
-- [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
-- [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
-- [Binární serializace](binary-serialization.md)  
-- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
-- [Serializace XML a SOAP](xml-and-soap-serialization.md)  
+- [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
+- [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [Binární serializace](binary-serialization.md)
+- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)
 - [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

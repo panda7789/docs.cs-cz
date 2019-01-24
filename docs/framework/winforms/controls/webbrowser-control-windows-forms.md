@@ -6,49 +6,50 @@ helpviewer_keywords:
 - Web pages [Windows Forms], hosting in applications
 - Web pages [Windows Forms], Windows Forms controls
 ms.assetid: 12667861-5b5b-46bc-8fb5-675e25264c9f
-ms.openlocfilehash: 2a39e1332625d1614ea9e0243f2ac610e1f9287c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca4e4beed068d47bef7a5cd4f7b05bde0a19de23
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510791"
 ---
 # <a name="webbrowser-control-windows-forms"></a>WebBrowser – ovládací prvek (Windows Forms)
-Windows Forms `WebBrowser` řízení hostuje webové stránky a poskytuje funkce, které vaše aplikace procházení webu.  
+Windows Forms `WebBrowser` ovládací prvek hostuje webové stránky a poskytuje funkce pro vaše aplikace na procházení webu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/webbrowser-control-overview.md)  
  Vysvětluje, co je tento ovládací prvek a jeho klíčové funkce a vlastnosti.  
   
  [WebBrowser – zabezpečení](../../../../docs/framework/winforms/controls/webbrowser-security.md)  
- Vysvětluje potíže související ovládací prvek.  
+ Popisuje problémy se zabezpečením související s ovládacího prvku.  
   
- [Postupy: Přechod na adresu URL pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
- Ukazuje, jak pomocí ovládacího prvku můžete přejít do konkrétní adresy URL.  
+ [Postupy: Přejděte na adresu URL pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-navigate-to-a-url-with-the-webbrowser-control.md)  
+ Ukazuje, jak přejít na konkrétní adresu URL pomocí ovládacího prvku.  
   
  [Postupy: Tisk pomocí ovládacího prvku WebBrowser](../../../../docs/framework/winforms/controls/how-to-print-with-a-webbrowser-control.md)  
- Ukazuje, jak tisk bez zobrazení webové stránky.  
+ Ukazuje, jak vytisknout bez zobrazení webové stránky.  
   
- [Postupy: Přidání schopností webového prohlížeče do aplikace Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
- Popisuje, jak se inicializovat ovládací prvek pro použití jako webový prohlížeč.  
+ [Postupy: Přidání schopností webového prohlížeče do formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-add-web-browser-capabilities-to-a-windows-forms-application.md)  
+ Popisuje, jak inicializovat ovládací prvek pro použití jako webový prohlížeč.  
   
- [Postupy: Vytvoření prohlížeče dokumentu HTML v aplikaci Windows Forms](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
- Popisuje, jak se inicializovat ovládací prvek pro použití jako prohlížeč formátu HTML.  
+ [Postupy: Vytvoření prohlížeče dokumentu HTML ve formulářové aplikaci Windows](../../../../docs/framework/winforms/controls/how-to-create-an-html-document-viewer-in-a-windows-forms-application.md)  
+ Popisuje, jak inicializovat ovládací prvek pro použití jako prohlížeč formátu HTML.  
   
  [Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace](../../../../docs/framework/winforms/controls/implement-two-way-com-between-dhtml-and-client.md)  
- Popisuje, jak nastavit obousměrné komunikace mezi kódu aplikace a DHTML na webové stránce, který je hostitelem ovládacího prvku.  
+ Popisuje, jak nastavit obousměrnou komunikaci mezi kódu aplikace a DHTML ve webové stránky hostované v ovládacím prvku.  
   
  [Použití spravovaného modelu DOM (Document Object Model) HTML](../../../../docs/framework/winforms/controls/using-the-managed-html-document-object-model.md)  
- Obsahuje témata, která popisují, jak pracovat s nebo vytvoření stránky HTML, které jsou hostované <xref:System.Windows.Forms.WebBrowser> ovládacího prvku.  
+ Obsahuje témata, které popisují, jak pracovat s nebo vytvoření stránky HTML, které jsou hostovány <xref:System.Windows.Forms.WebBrowser> ovládacího prvku.  
   
 ## <a name="reference"></a>Odkaz  
- <xref:System.Windows.Forms.WebBrowser> – Třída  
+ <xref:System.Windows.Forms.WebBrowser> Třída  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventArgs>  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserDocumentCompletedEventHandler>  
- Popisuje tohoto delegáta.  
+ Popisuje tento delegát.  
   
  <xref:System.Windows.Forms.WebBrowserEncryptionLevel>  
  Popisuje tento výčet a všechny jeho hodnoty.  
@@ -57,19 +58,19 @@ Windows Forms `WebBrowser` řízení hostuje webové stránky a poskytuje funkce
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatedEventHandler>  
- Popisuje tohoto delegáta.  
+ Popisuje tento delegát.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventArgs>  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserNavigatingEventHandler>  
- Popisuje tohoto delegáta.  
+ Popisuje tento delegát.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs>  
  Tato třída popisuje a obsahuje odkazy na všechny její členy.  
   
  <xref:System.Windows.Forms.WebBrowserProgressChangedEventHandler>  
- Popisuje tohoto delegáta.  
+ Popisuje tento delegát.  
   
  <xref:System.Windows.Forms.WebBrowserReadyState>  
  Popisuje tento výčet a všechny jeho hodnoty.  
@@ -77,5 +78,5 @@ Windows Forms `WebBrowser` řízení hostuje webové stránky a poskytuje funkce
  <xref:System.Windows.Forms.WebBrowserRefreshOption>  
  Popisuje tento výčet a všechny jeho hodnoty.  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

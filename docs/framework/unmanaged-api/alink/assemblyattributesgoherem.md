@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 075f0ce7001573bb4e61a3e059e699d15275ea0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bbd5428039144fd38796ed6865c24a605f236ccd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733802"
 ---
 # <a name="assemblyattributesgoherem"></a>AssemblyAttributesGoHereM
-Používá ALink jako zástupný znak k uložení informací o vlastní atributy.  
+Používá ALink jako zástupný symbol pro ukládání informací o vlastní atributy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +34,16 @@ AssemblyAttributesGoHereM
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Odkazy na tento typ může vložit do netmodules, jejichž zdroje obsahovat vlastní atributy sestavení. Při sestavování manifest sestavení z jednoho nebo více netmodules, které obsahují odkazy na tyto typy, ALink používá informace, které jsou připojené k tyto odkazy pro vydávání skutečných vlastní atributy. Jako takový je nikdy vytvořena instance tohoto typu a na ni odkazují se používají pouze jako součást procesu sestavení a mají žádné účely v posledním sestavení.  
+ Odkazy na tento typ může být vložená do netmodules, jejichž zdroje obsahovat vlastní atributy sestavení. Při vytváření manifestu sestavení z jednoho nebo více netmodules, které obsahují odkazy na tyto typy, používá ALink informace, které jsou připojené k tyto odkazy vygenerovat reálné vlastní atributy. V důsledku toho je nikdy vytvořena instance tohoto typu, a odkazy na něj slouží pouze jako součást procesu sestavení a dodávat žádný účel v konečném sestavení.  
   
- Odkazy na tento typ znamenat vlastních atributů, které nejsou zabezpečení související s ale jsou více použití.  
+ Odkazy na tento typ označení vlastních atributů, které nejsou týkající se zabezpečení, ale jsou více použití.  
   
- Tyto typy jsou označeny "internal" v rozhraní .NET Framework a jsou umístěny v <xref:System.Runtime.CompilerServices>.  
+ Tyto typy jsou označeny "vnitřní" v rámci rozhraní .NET Framework a jsou umístěny v <xref:System.Runtime.CompilerServices>.  
   
 ## <a name="requirements"></a>Požadavky  
  mscorlib.dll  
   
-## <a name="see-also"></a>Viz také  
- [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)  
- [AssemblyAttributesGoHereS](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheres.md)  
- [AssemblyAttributesGoHereSM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)
+## <a name="see-also"></a>Viz také:
+- [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)
+- [AssemblyAttributesGoHereS](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheres.md)
+- [AssemblyAttributesGoHereSM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)

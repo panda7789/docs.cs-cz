@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)'
+title: 'Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: 0984b8fc42a8f242f6adc33e1f3c38d4f6ae94b8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5fb954bee6433d28ffb47f789b41492349f7ab42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43741614"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698411"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)
 
 Tento příklad ukazuje, jak propojit data ze dvou souborů oddělených čárkami, které sdílejí společné hodnoty, který se používá jako odpovídajícího klíče. Tato technika může být užitečné, pokud máte kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru. Příklad pro práci s jakýmkoli strukturovaných textových můžete upravit.  
   
@@ -132,7 +132,7 @@ Vytvoření a kompilace projektu, který cílí na jednu z následujících mož
 - Rozhraní .NET framework verze 4.0 nebo vyšší.
 - Verze .NET core 1.0 nebo vyšší.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

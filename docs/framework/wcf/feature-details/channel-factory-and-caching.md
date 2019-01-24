@@ -2,12 +2,12 @@
 title: Postup kanálu a mezipaměť
 ms.date: 03/30/2017
 ms.assetid: 954f030e-091c-4c0e-a7a2-10f9a6b1f529
-ms.openlocfilehash: fa333d3ffa0063e226405eb8e715f9ee99f68432
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 055c9d1412338bb444ca33556f3c94b1ffc4c6a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151327"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745335"
 ---
 # <a name="channel-factory-and-caching"></a>Postup kanálu a mezipaměť
 Pomocí klientských aplikací WCF <xref:System.ServiceModel.ChannelFactory%601> třídy za účelem vytvoření komunikačního kanálu službou WCF.  Vytváření <xref:System.ServiceModel.ChannelFactory%601> instance způsobuje zvýšení zatížení, protože zahrnuje následující operace:  
@@ -111,9 +111,9 @@ public partial class TestClient : System.ServiceModel.ClientBase, ITest {}
   
  V příkladu výše, všechny výskyty `TestClient` byste použili jiný kanál továren. To je užitečné, když každý koncový bod má jiné požadavky na zabezpečení a nemá žádný smysl do mezipaměti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.ClientBase%601>  
- [Sestavování klientů](../../../../docs/framework/wcf/building-clients.md)  
- [Klienti](../../../../docs/framework/wcf/feature-details/clients.md)  
- [Přístup ke službám pomocí klienta WCF](../../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
- [Jak: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.ClientBase%601>
+- [Sestavování klientů](../../../../docs/framework/wcf/building-clients.md)
+- [Klienti](../../../../docs/framework/wcf/feature-details/clients.md)
+- [Přístup ke službám pomocí klienta WCF](../../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
+- [Postupy: Používání ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)

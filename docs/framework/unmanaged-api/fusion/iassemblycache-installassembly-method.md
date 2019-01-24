@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 726a4ed8ee3d451687e0af671d948eb7648f7f58
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 112c42f15b39c72ba8519877e5ee6a8700953ba5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625854"
 ---
 # <a name="iassemblycacheinstallassembly-method"></a>IAssemblyCache::InstallAssembly – metoda
-Nainstaluje zadaný sestavení v globální mezipaměti sestavení.  
+Nainstaluje zadané sestavení v globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT InstallAssembly (
   
 #### <a name="parameters"></a>Parametry  
  `dwFlags`  
- [v] Příznaky definované v Fusion.idl. Podporovány jsou následující hodnoty:  
+ [in] Příznaky definované v Fusion.idl. Podporovány jsou následující hodnoty:  
   
--   IASSEMBLYCACHE_INSTALL_FLAG_REFRESH (0X00000001)  
+-   IASSEMBLYCACHE_INSTALL_FLAG_REFRESH (0x00000001)  
   
 -   IASSEMBLYCACHE_INSTALL_FLAG_FORCE_REFRESH (0X00000002)  
   
  `pszManifestFilePath`  
- [v] Cesta k manifestu pro sestavení pro instalaci.  
+ [in] Cesta k manifestu pro sestavení určené k instalaci.  
   
  `pRefData`  
- [v] A [fusion_install_reference –](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md) struktura, která obsahuje data pro instalaci.  
+ [in] A [fusion_install_reference –](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md) strukturu, která obsahuje data pro instalaci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

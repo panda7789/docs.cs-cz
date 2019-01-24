@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42033
 ms.assetid: 4575554d-3615-46e4-9c6a-18e9c338e4ed
-ms.openlocfilehash: e682c2c23dd6fe80aee87d2a86b3df2dae66b802
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 211f07e7c9dbc7e0583272d46c493ad99628d283
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45677497"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724106"
 ---
 # <a name="bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits"></a>Nesprávná hodnota kontrolního součtu. Číslice nejsou v šestnáctkové soustavě nebo je zadán lichý počet číslic v šestnáctkové soustavě.
 Hodnota kontrolního součtu obsahuje neplatné hexadecimální číslice nebo má lichý počet číslic.  
@@ -33,5 +33,5 @@ Hodnota kontrolního součtu obsahuje neplatné hexadecimální číslice nebo m
   
 ## <a name="see-also"></a>Viz také:
 
-- [ASP.NET: Přehled](/aspnet/overview)  
+- [ASP.NET: Přehled](/aspnet/overview)
 - [Kontaktujte nás](/visualstudio/ide/talk-to-us)

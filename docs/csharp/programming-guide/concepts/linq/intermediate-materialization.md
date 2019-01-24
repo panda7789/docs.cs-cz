@@ -2,15 +2,15 @@
 title: Přechodná Materializace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-ms.openlocfilehash: 56c4bb57a931362b3e14f6a8da917ae6907565d6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 065a7e0ffadaa48d400d4f4e3e045014b3658213
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516540"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686007"
 ---
 # <a name="intermediate-materialization-c"></a>Přechodná Materializace (C#)
-Pokud si nejste pozor, v některých situacích je možné výrazně změnit profil paměti a výkonu vaší aplikace tak, že předčasné materializace kolekce v dotazech. Některé operátory standardního dotazu způsobit materializace kolekce zdroje před získávání jeden element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve Iteruje přes kolekci jeho celý zdrojový pak seřadí všechny položky a nakonec vrací první položky. To znamená, že se jedná o nákladné získat první položku uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: by bylo možné pro daný operátor dotazu postupovat jinak.  
+Pokud si nejste pozor, v některých situacích je možné výrazně změnit profil paměti a výkonu vaší aplikace tak, že předčasné materializace kolekce v dotazech. Některé operátory standardního dotazu způsobit materializace kolekce zdroje před získávání jeden element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve Iteruje přes kolekci jeho celý zdrojový pak seřadí všechny položky a nakonec vrací první položky. To znamená, že se jedná o nákladné získat první položku uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: Bylo by možné pro daný operátor dotazu postupovat jinak.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad upravuje předchozí příklad. `AppendString` Volání metody <xref:System.Linq.Enumerable.ToList%2A> před provede iterace přes zdrojové. To způsobí, že materializace.  
@@ -86,6 +86,6 @@ Main: str >GHI!!!<
   
 -   [Zřetězení standardních dotazovacích operátorů pohromadě (C#)](../../../../csharp/programming-guide/concepts/linq/chaining-standard-query-operators-together.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kurz: Zřetězení dotazů společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

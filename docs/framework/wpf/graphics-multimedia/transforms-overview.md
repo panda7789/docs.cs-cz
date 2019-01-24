@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Transforms [WPF], about Transforms
 - FrameworkElement objects [WPF], scaling
 ms.assetid: 8f153d5e-ed61-4aa5-a7cd-286f0c427a13
-ms.openlocfilehash: 4fd846502fd348222bc1da1c8746f037e9f237fe
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 9e28f95b58481a5cb7b2fbf92fd20545a3f0fdc5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864573"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503115"
 ---
 # <a name="transforms-overview"></a>Přehled transformace
 Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] <xref:System.Windows.Media.Transform> třídy otočit, škálování, přesuňte (přeložit) a zkosení <xref:System.Windows.FrameworkElement> objekty.  
@@ -36,9 +36,9 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
   
 ||||  
 |-|-|-|  
-|<xref:System.Windows.Media.Matrix.M11%2A><br /><br /> Výchozí: 1.0|<xref:System.Windows.Media.Matrix.M12%2A><br /><br /> Výchozí: 0,0|0.0|  
-|<xref:System.Windows.Media.Matrix.M21%2A><br /><br /> Výchozí: 0,0|<xref:System.Windows.Media.Matrix.M22%2A><br /><br /> Výchozí: 1.0|0.0|  
-|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> Výchozí: 0,0|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> Výchozí: 0,0|1.0|  
+|<xref:System.Windows.Media.Matrix.M11%2A><br /><br /> Výchozí hodnota: 1.0|<xref:System.Windows.Media.Matrix.M12%2A><br /><br /> Výchozí hodnota: 0.0|0.0|  
+|<xref:System.Windows.Media.Matrix.M21%2A><br /><br /> Výchozí hodnota: 0.0|<xref:System.Windows.Media.Matrix.M22%2A><br /><br /> Výchozí hodnota: 1.0|0.0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A><br /><br /> Výchozí hodnota: 0.0|<xref:System.Windows.Media.Matrix.OffsetY%2A><br /><br /> Výchozí hodnota: 0.0|1.0|  
   
  Manipulací matice hodnoty můžete otočit, škálování, zkosení a přesunout (přeložit) objektu. Například, pokud změníte hodnotu v prvním sloupci třetího řádku ( <xref:System.Windows.Media.Matrix.OffsetX%2A> hodnota) do 100, můžete ho přesunout objekt 100 jednotek podél osy x. Pokud změníte hodnotu v druhém sloupci druhého řádku na 3, můžete ji roztáhnout třikrát aktuální výšku objektu. Pokud změníte obě hodnoty, přesunout objekt 100 jednotek podél osy x a roztažení výšku faktorem 3. Protože Windows Presentation Foundation (WPF) podporuje pouze afinní transformace, hodnoty v pravém sloupci je vždy 0, 0, 1.  
   
@@ -52,8 +52,8 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
 |-----------|-----------------|-------------|------------------|  
 |<xref:System.Windows.Media.RotateTransform>|Otočí element zadanou <xref:System.Windows.Media.RotateTransform.Angle%2A>.|[Otočení objektu](../../../../docs/framework/wpf/graphics-multimedia/how-to-rotate-an-object.md)|![Otočení obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-rotate.png "graphicsmm_thumbnails_rotate")|  
 |<xref:System.Windows.Media.ScaleTransform>|Element se škáluje podle zadaného <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> a <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> částky.|[Změna velikosti elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-scale-an-element.md)|![Změnit měřítko obrázku](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-scale.png "graphicsmm_thumbnails_scale")|  
-|<xref:System.Windows.Media.SkewTransform>|Zkosí prvek k zadanému <xref:System.Windows.Media.SkewTransform.AngleX%2A> a <xref:System.Windows.Media.SkewTransform.AngleY%2A> částky.|[Zkosení elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)|![Zkosení obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")|  
-|<xref:System.Windows.Media.TranslateTransform>|Přesune (přeloží) elementu podle zadaného <xref:System.Windows.Media.TranslateTransform.X%2A> a <xref:System.Windows.Media.TranslateTransform.Y%2A> částky.|[Překlad elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)|![Převede obrázek](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")|  
+|<xref:System.Windows.Media.SkewTransform>|Zkosí prvek k zadanému <xref:System.Windows.Media.SkewTransform.AngleX%2A> a <xref:System.Windows.Media.SkewTransform.AngleY%2A> částky.|[Zkosení elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-skew-an-element.md)|![Skew illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-skew.png "graphicsmm_thumbnails_skew")|  
+|<xref:System.Windows.Media.TranslateTransform>|Přesune (přeloží) elementu podle zadaného <xref:System.Windows.Media.TranslateTransform.X%2A> a <xref:System.Windows.Media.TranslateTransform.Y%2A> částky.|[Překlad elementu](../../../../docs/framework/wpf/graphics-multimedia/how-to-translate-an-element.md)|![Translate illustration](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-thumbnails-translate.png "graphicsmm_thumbnails_translate")|  
   
  Pro vytvoření složitější transformace Windows Presentation Foundation (WPF) obsahuje následující třídy, dvě:  
   
@@ -80,7 +80,7 @@ Toto téma popisuje způsob použití [!INCLUDE[TLA#tla_2d](../../../../includes
   
 <a name="transformcenter"></a>   
 ## <a name="transformations-and-coordinate-systems"></a>Transformace a souřadnicových systémů  
- Při transformaci objekt je právě netransformují objektu, transformovali souřadnicového prostoru, ve které tento objekt existuje. Ve výchozím nastavení, transformace je zarovnaný na střed v původní cílový objekt souřadnicový systém: (0; 0). Jedinou výjimkou je <xref:System.Windows.Media.TranslateTransform>; <xref:System.Windows.Media.TranslateTransform> nemá žádné vlastnosti center nastavit, protože výsledek překladu je stejný bez ohledu na to, kde je na střed.  
+ Při transformaci objekt je právě netransformují objektu, transformovali souřadnicového prostoru, ve které tento objekt existuje. Ve výchozím nastavení je transformace zaměřené na počátek cílový objekt souřadnicový systém: (0,0). Jedinou výjimkou je <xref:System.Windows.Media.TranslateTransform>; <xref:System.Windows.Media.TranslateTransform> nemá žádné vlastnosti center nastavit, protože výsledek překladu je stejný bez ohledu na to, kde je na střed.  
   
  V následujícím příkladu <xref:System.Windows.Media.RotateTransform> otočíte <xref:System.Windows.Shapes.Rectangle> elementu, typu <xref:System.Windows.FrameworkElement>, o 45 stupňů o jeho výchozí centrum (0, 0). Následující obrázek znázorňuje vliv otočení.  
   
@@ -149,8 +149,8 @@ LayoutTransform – používá k otočení tlačítka
 ## <a name="freezable-features"></a>Freezable – funkce  
  Protože dědí sám od <xref:System.Windows.Freezable> třídy, <xref:System.Windows.Media.Transform> třídy poskytují několik speciálních funkcí: <xref:System.Windows.Media.Transform> objekty mohou být deklarovány jako [prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md), sdíleny mezi více objektů, jen pro čtení ke zlepšení výkon, klonování a provedli bezpečné pro vlákna. Další informace o různých funkcí, které jsou poskytovány <xref:System.Windows.Freezable> objekty, najdete [přehled Zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Transform>  
- <xref:System.Windows.Media.Matrix>  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)  
- [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Transform>
+- <xref:System.Windows.Media.Matrix>
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
+- [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

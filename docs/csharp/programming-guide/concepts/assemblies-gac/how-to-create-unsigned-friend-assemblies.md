@@ -2,12 +2,12 @@
 title: 'Postupy: Vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 16699d827aa168f2392a78ddbc7556bc5af864e8
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: 4281aa4d507b2150f65d7d7ff05dd2a2fa8aacd3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362142"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703221"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: Vytváření nepodepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.  
@@ -90,10 +90,10 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `internal` typy a členy.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
-- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
-- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
-- [Postupy: Vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
+- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
+- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)
+- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)
+- [Postupy: Vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

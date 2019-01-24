@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
-ms.openlocfilehash: b73d7cf694e7bce5d055f8a3c9f78c27bb8cd5b9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3316f3b292f6a9597b62a802b489459ee2f0a952
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196223"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743514"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Postupy: Přidání instalačních programů do aplikace služby
 Visual Studio se dodáván instalace součásti, které můžete nainstalovat prostředky spojené s aplikací služeb. Součásti instalace registraci jednotlivých služeb v systému, na který se instaluje a umožní správci řízení služeb vědět, jestli existuje služba. Při práci s aplikací služby, můžete vybrat odkaz v okně Vlastnosti na příslušné instalační programy automaticky přidat do projektu.  
@@ -47,11 +47,11 @@ Visual Studio se dodáván instalace součásti, které můžete nainstalovat pr
   
     |Hodnota|Výsledek|  
     |-----------|------------|  
-    |<xref:System.ServiceProcess.ServiceStartMode.Manual>|Tuto službu musí ručně spustit po instalaci. Další informace najdete v tématu [postupy: spuštění služby](../../../docs/framework/windows-services/how-to-start-services.md).|  
+    |<xref:System.ServiceProcess.ServiceStartMode.Manual>|Tuto službu musí ručně spustit po instalaci. Další informace najdete v tématu [jak: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md).|  
     |<xref:System.ServiceProcess.ServiceStartMode.Automatic>|Služba se spustí sám o sobě pokaždé, když se počítač se restartuje.|  
     |<xref:System.ServiceProcess.ServiceStartMode.Disabled>|Službu nelze spustit.|  
   
-6.  K určení kontextu zabezpečení, ve kterém se spustí vaše služba, klikněte na tlačítko <xref:System.ServiceProcess.ServiceProcessInstaller> komponenty a nastavte vlastnost odpovídající hodnoty. Další informace najdete v tématu [postupy: určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md).  
+6.  K určení kontextu zabezpečení, ve kterém se spustí vaše služba, klikněte na tlačítko <xref:System.ServiceProcess.ServiceProcessInstaller> komponenty a nastavte vlastnost odpovídající hodnoty. Další informace najdete v tématu [jak: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md).  
   
 7.  Přepište všechny metody, pro které je potřeba provést vlastní zpracování.  
   
@@ -60,8 +60,8 @@ Visual Studio se dodáván instalace součásti, které můžete nainstalovat pr
     > [!NOTE]
     >  U každé další služby ve vašem projektu, je nutné přidat další <xref:System.ServiceProcess.ServiceInstaller> komponentu do projektu `ProjectInstaller` třídy. <xref:System.ServiceProcess.ServiceProcessInstaller> Komponenty přidali v kroku 3 funguje se všemi instalační programy jednotlivé služby v projektu.  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
- [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
- [Postupy: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do aplikací služby systému Windows](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)
+- [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
+- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Určení kontextu zabezpečení pro služby](../../../docs/framework/windows-services/how-to-specify-the-security-context-for-services.md)

@@ -8,23 +8,23 @@ helpviewer_keywords:
 - child forms [Windows Forms], arranging
 - MDI [Windows Forms], arranging child forms
 ms.assetid: a0786378-3206-4ccc-898e-7d3b38cc5089
-ms.openlocfilehash: d5c0d24ff8a7188a669c218ce8b0dc66ffa56c47
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e1e4f22aa70d8ee4d4122f9e77427c101b6713f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33521024"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540738"
 ---
 # <a name="how-to-arrange-mdi-child-forms"></a>Postupy: Uspořádání podřízených formulářů MDI
-Aplikace často, bude mít příkazy nabídky pro akce, například dlaždice Cascade a uspořádat, které řídí rozložení otevřete podřízených formulářů MDI. Můžete použít <xref:System.Windows.Forms.Form.LayoutMdi%2A> metoda s jedním z <xref:System.Windows.Forms.MdiLayout> hodnot výčtu ke změně uspořádání podřízených formulářů v MDI nadřazené formuláře.  
+Aplikace se mají často, příkazy nabídky pro akce, například dlaždice, Cascade a uspořádat, které řídit rozložení otevřít podřízené formuláře MDI. Můžete použít <xref:System.Windows.Forms.Form.LayoutMdi%2A> metody s jedním z <xref:System.Windows.Forms.MdiLayout> hodnot výčtu, chcete-li uspořádat podřízené formuláře MDI na nadřazený formulář.  
   
- <xref:System.Windows.Forms.MdiLayout> Hodnot výčtu zobrazení podřízených formulářů jako kaskádových jako vodorovně nebo svisle vedle sebe, nebo jako podřízené formuláře ikony uspořádané podél dolní části formuláře MDI. Tyto hodnoty mají stejný účinek jako příkazy Windows **sebe**, **zobrazit windows vedle sebe**, **zobrazit windows skládaný**, a **zobrazení plochy** , v uvedeném pořadí.  
+ <xref:System.Windows.Forms.MdiLayout> Hodnot výčtu zobrazit podřízené formuláře jako CSS, protože vodorovně nebo svisle vedle sebe, nebo jako podřízené formuláře ikony uspořádané podél dolní části formuláře MDI. Tyto hodnoty mají stejný účinek jako příkazy Windows **sebe**, **zobrazit okna vedle sebe**, **zobrazit okna skládaný**, a **zobrazení plochy** v uvedeném pořadí.  
   
- Tyto metody se často používají jako obslužné rutiny událostí, které jsou volány položku nabídky <xref:System.Windows.Forms.Control.Click> událostí. Tímto způsobem může mít položku nabídky s textem "Cascade Windows" požadované vliv na podřízených oken MDI.  
+ Tyto metody se často používají jako obslužné rutiny událostí, které jsou volány položku nabídky <xref:System.Windows.Forms.Control.Click> událostí. Tímto způsobem může mít položku nabídky s textem "Cascade Windows" požadovaný účinek na podřízených oken MDI.  
   
-### <a name="to-arrange-child-forms"></a>K uspořádání podřízených formulářů  
+### <a name="to-arrange-child-forms"></a>Chcete-li uspořádat podřízené formuláře  
   
-1.  Metoda, použijte <xref:System.Windows.Forms.Form.LayoutMdi%2A> metodu a nastavit <xref:System.Windows.Forms.MdiLayout> výčet nadřazeného formuláře MDI. Následující příklad používá <xref:System.Windows.Forms.MdiLayout.Cascade?displayProperty=nameWithType> hodnota výčtu pro podřízených oken MDI nadřazeného formuláře (`Form1`). Výčtu se používá v kódu během obslužné rutiny události pro <xref:System.Windows.Forms.Control.Click> události **sebe** položku nabídky.  
+1.  V metodě, použijte <xref:System.Windows.Forms.Form.LayoutMdi%2A> metody nastavte <xref:System.Windows.Forms.MdiLayout> výčtu pro nadřazený formulář MDI. V následujícím příkladu <xref:System.Windows.Forms.MdiLayout.Cascade?displayProperty=nameWithType> hodnotu výčtu pro okny podřízenými nadřazený formulář MDI (`Form1`). Výčet se používá v kódu během obslužnou rutinu události pro <xref:System.Windows.Forms.Control.Click> událost **Cascade Windows** položky nabídky.  
   
     ```vb  
     Protected Sub CascadeWindows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)  
@@ -39,17 +39,17 @@ Aplikace často, bude mít příkazy nabídky pro akce, například dlaždice Ca
     ```  
   
     > [!NOTE]
-    >  Vám může také dlaždici windows a windows uspořádáním jako ikony změnou <xref:System.Windows.Forms.MdiLayout> použít hodnotu výčtu.  
+    >  Můžete také uspořádat windows a uspořádáním windows jako ikony tak, že změníte <xref:System.Windows.Forms.MdiLayout> použít hodnotu výčtu.  
   
-2.  Pokud používáte Visual C#, vložte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
+2.  Pokud používáte Visual C#, umístěte následující kód v konstruktoru formuláře k registraci obslužné rutiny události.  
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)
+## <a name="see-also"></a>Viz také:
+- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)
+- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)
+- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)

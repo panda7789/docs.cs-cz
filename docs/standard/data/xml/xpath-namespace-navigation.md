@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 06cc7abb-7416-415c-9dd6-67751b8cabd5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e6d4f63dacc09208176b47dbca38783f1e9bc0a1
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 373d1e4e5089b23ecaeffd10fd167b701b75760c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45743979"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702896"
 ---
 # <a name="xpath-namespace-navigation"></a>Navigace XPath Namespace
 Používat dotazy jazyka XPath dokumentů XML, budete muset správnému adresování obory názvů XML a elementů obsažených ve obory názvů. Obory názvů zabraňují nejasnostem, které může dojít, když názvy se používají ve více než jednom kontextu; například název `ID` mohou odkazovat na více než jeden identifikátor přidružený k jiné prvky dokumentu XML. Syntaxe Namespace určuje identifikátory URI, názvů a předpony, které rozlišení prvků dokumentu XML.  
@@ -20,7 +20,7 @@ Používat dotazy jazyka XPath dokumentů XML, budete muset správnému adresov�
 ## <a name="namespace-declarations"></a>Deklarace Namespace  
  Deklarací Namespace zkontrolujte elementů dokumentu XML odlišitelným a adresovatelný při použití instance <xref:System.Xml.XPath.XPathNavigator>. Namespace předpony poskytují stručné syntaxe pro adresování obory názvů.  
   
- Předpony, které jsou definovány pomocí formuláře: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` v této syntaxe předponu "`e`" je zkratka pro formální identifikátor URI oboru názvů. Můžete určit `Body` element jako člen `Envelope` oboru názvů pomocí syntaxe: `e:Body`.  
+ Předpony jsou definované ve formuláři: `<e:Envelope xmlns:e=http://schemas.xmlsoap.org/soap/envelope/>.` V této syntaxe předponu "`e`" je zkratka pro formální identifikátor URI oboru názvů. Můžete určit `Body` element jako člen `Envelope` oboru názvů pomocí syntaxe: `e:Body`.  
   
  Následujícího dokumentu XML se bude odkazovat jako `response.xml` v příkladu navigace v další části.  
   
@@ -72,5 +72,5 @@ using (XmlReader reader = XmlReader.Create("response.xml"))
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přístup k datům XML pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+- [Přístup k datům XML pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
 - [Výběr, vyhodnocení a spárování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)

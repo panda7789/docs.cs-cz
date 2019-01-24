@@ -3,12 +3,12 @@ title: Identity and Access Tool for Visual Studio 2012
 ms.date: 03/30/2017
 ms.assetid: 87b8f8f2-4074-44fd-9fd6-08278e877390
 author: BrucePerlerMS
-ms.openlocfilehash: 1177048d8124c955220605e52dde539b84510cba
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: a1b5456f9081d807a3c9e29e1010cbfbf91e637f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584156"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678548"
 ---
 # <a name="identity-and-access-tool-for-visual-studio-2012"></a>Identity and Access Tool for Visual Studio 2012
 Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11. Tento nástroj si můžete stáhnout z následující adresy URL: [ https://go.microsoft.com/fwlink/?LinkID=245849 ](https://go.microsoft.com/fwlink/?LinkID=245849) nebo přímo v rámci sady Visual Studio 11 tak, že "identity" ve Správci rozšíření.  
@@ -25,7 +25,7 @@ Toto téma popisuje nový nástroj Identity and Access Tool for Visual Studio 11
   
 -   Můžete vytvořit federaci se službou Active Directory Federation Services (AD FS) 2.0 (nebo jinými poskytovateli identit podporujícími protokol WS-Federation) na jedné obrazovce.  
   
--   Nástroj využívá funkce Služby řízení přístupu Microsoft Azure (ACS) prostřednictvím jednoduchého seznamu zaškrtávacích políček pro všechny poskytovatele identit, které chcete používat: Facebook, Google, Live ID, Yahoo!, jakýkoli poskytovatel OpenID a jakýkoli poskytovatel podporující protokol WS-Federation. Vyberte poskytovatele identity, klikněte na tlačítko OK a poté stiskněte klávesu F5. Vaše aplikace i služba ACS budou automaticky nakonfigurovány a vaše testovaná aplikace bude pracovat se službou ACS.  
+-   Nástroj využívá funkce sady Windows Azure Access Control Service (ACS) prostřednictvím jednoduchého seznamu zaškrtávacích políček pro všechny poskytovatele identit, které chcete použít: Facebook, Google, Live ID, Yahoo!, jakýkoli poskytovatel OpenID a jakýkoli poskytovatel WS-Federation. Vyberte poskytovatele identity, klikněte na tlačítko OK a poté stiskněte klávesu F5. Vaše aplikace i služba ACS budou automaticky nakonfigurovány a vaše testovaná aplikace bude pracovat se službou ACS.  
   
-## <a name="see-also"></a>Viz také  
- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)
+## <a name="see-also"></a>Viz také:
+- [Funkce technologie WIF](../../../docs/framework/security/wif-features.md)

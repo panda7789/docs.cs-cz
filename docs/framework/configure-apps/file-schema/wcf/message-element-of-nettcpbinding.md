@@ -2,21 +2,21 @@
 title: element &lt;message&gt; – &lt;netTcpBinding&gt;
 ms.date: 03/30/2017
 ms.assetid: 1d71edd9-c085-4c2e-b6d3-980c313366f9
-ms.openlocfilehash: 7af8cd9d36b56093eee2b53873c0fe0775a33430
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 018cd6797b730bc5469cc68dd23fcf8315716588
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146157"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677389"
 ---
 # <a name="ltmessagegt-element-of-ltnettcpbindinggt"></a>element &lt;message&gt; – &lt;netTcpBinding&gt;
 Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfigurovaným s [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<netTcpBinding >  
+\<netTcpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<Zpráva >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -57,7 +57,7 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
 |Basic256Sha256Rsa15|Pomocí Aes256 pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
 |TripleDesSha256Rsa15|TripleDes použijte pro šifrování zpráv pro hodnota hash Sha256 a Rsa15 pro zabalení klíče.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -79,13 +79,13 @@ Definuje typ požadavky zabezpečení na úrovni zpráva koncovým bodem nakonfi
 ## <a name="remarks"></a>Poznámky  
  Zprávy používá zabezpečení na úrovni zprávy pro integritu a důvěrnost zpráv SOAP a pro vzájemné ověřování partnerských uzlů komunikace. Vybrali tento režim zabezpečení u vazby kanálu zásobníku je nakonfigurována s elementy vazby zabezpečení zpráv a zabezpečené zprávy protokolu SOAP v souladu s WS-Security * standardy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.MessageSecurityOverTcp>  
- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>  
- <xref:System.ServiceModel.NetTcpSecurity.Message%2A>  
- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.MessageSecurityOverTcp>
+- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Message%2A>
+- <xref:System.ServiceModel.NetTcpSecurity.Message%2A>
+- <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

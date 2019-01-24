@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9831212cf65e3913bae2431e4746b5def03430b6
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 5ae6f76ba358d07101f56de321a9453b3eee1bf2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674034"
 ---
 # <a name="when-to-use-generic-collections"></a>Kdy použít generické kolekce
 Použitím obecných kolekcí se obecně nedoporučuje, protože výhod získáte tak okamžitý bezpečnosti typů bez nutnosti odvozen od typu základní kolekce a implementovat typ konkrétní členy. Obecné typy kolekcí také obecně poskytují vyšší výkon než odpovídající kolekci neobecné typy (a lepší než u typů, které jsou odvozeny ze základních typů neobecných kolekcí) při elementy z kolekce jsou typy hodnot, protože u obecných typů už není potřeba pole prvků.  
@@ -55,6 +55,6 @@ Použitím obecných kolekcí se obecně nedoporučuje, protože výhod získát
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kolekce a datové struktury](../../../docs/standard/collections/index.md)  
-- [Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)  
+- [Kolekce a datové struktury](../../../docs/standard/collections/index.md)
+- [Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)
 - [Obecné typy](../../../docs/standard/generics/index.md)

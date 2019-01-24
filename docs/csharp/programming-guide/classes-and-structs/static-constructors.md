@@ -6,12 +6,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: fabcbb084a74334a7a1bcddb9a04cc6705caeb29
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 74932c9a080a077a60ecbc45c997108afa176956
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53234926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676884"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Statické konstruktory (Průvodce programováním v C#)
 Statický konstruktor slouží k inicializaci žádný [statické](../../../csharp/language-reference/keywords/static.md) data, nebo k provedení konkrétní akce, kterou je potřeba provést pouze jednou. Je volána automaticky před první instance je vytvořena nebo jsou odkazovány jakékoli statické členy.  
@@ -39,10 +39,10 @@ Statický konstruktor slouží k inicializaci žádný [statické](../../../csha
   
  [!code-csharp[csProgGuideObjects#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/static-constructors_2.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
-- [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Statické třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
 - [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)

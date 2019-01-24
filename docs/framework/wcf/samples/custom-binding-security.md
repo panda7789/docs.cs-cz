@@ -2,12 +2,12 @@
 title: Zabezpečení vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: 56c3ed4be894a265635c747373e0b79599ce129d
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 5ed4b124fb5150974bcbe334e3fec627e027498f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221697"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584896"
 ---
 # <a name="custom-binding-security"></a>Zabezpečení vlastních vazeb
 Tento příklad ukazuje, jak nakonfigurovat zabezpečení a použití vlastní vazby. Ukazuje, jak povolit zabezpečení na úrovni zprávy spolu s zabezpečeného přenosu pomocí vlastní vazby. To je užitečné, když zabezpečeného přenosu je potřebná pro přenos zpráv mezi klientem a službou a současně zprávy musí být zabezpečení na úrovni zprávy. Tato konfigurace není podporována vazeb poskytovaných systémem.
@@ -186,4 +186,4 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
 -   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

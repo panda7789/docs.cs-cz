@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: 5e31bfafdc321bb514ecdadd49b7e2c6adf53948
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 68e750fccd988a9cf7e08b4e7169bd2385d48e1f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664589"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734854"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
 Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních komponentách a k hostování aplikací. Zatímco objekty modelu COM byly nezbytné k programování po mnoho let Windows, aplikací navržených pro modul common language runtime (CLR) nabízí celou řadu výhod.  
@@ -53,12 +53,12 @@ Modelu COM (Component Object) umožňuje objektu jeho funkcionalitu, ostatních 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
-- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
-- [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)  
-- [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
-- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
-- [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
-- [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)  
-- [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)  
+- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
+- [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)
+- [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)
+- [Tlbexp.exe (exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
+- [Zařazování spolupráce](../../../framework/interop/interop-marshaling.md)
 - [Bezregistrační zprostředkovatel komunikace s objekty COM](../../../framework/interop/registration-free-com-interop.md)

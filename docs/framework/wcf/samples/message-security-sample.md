@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-ms.openlocfilehash: 8982e896f6ac383a1fd850bc5814bf99e5c3961d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a6a8fe40cfbd2297b8bd56b8b23db19216c9a72e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193744"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655788"
 ---
 # <a name="message-security-sample"></a>Ukázka zabezpečení zpráv
 Tato ukázka předvádí, jak implementovat aplikaci, která se používá `basicHttpBinding` a zabezpečení zpráv. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -29,7 +29,8 @@ Tato ukázka předvádí, jak implementovat aplikaci, která se používá `basi
                bindingConfiguration="Binding1"   
                contract="Microsoft.ServiceModel.Samples.ICalculator" />  
     </service>  
-  </services>   …  
+  </services>  
+  ...  
 </system.serviceModel>  
 ```  
   
@@ -167,7 +168,7 @@ Press <ENTER> to terminate client.
 -   Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
     > [!NOTE]
-    >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty mezi počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` například: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`  
+    >  Tento skript neodebere certifikáty služeb v klientském počítači při spuštění této ukázky napříč počítači. Pokud jste provedli ukázky Windows Communication Foundation (WCF), které používají certifikáty mezi počítači, je potřeba vymazat certifikáty služeb, které jsou nainstalovány v CurrentUser - TrustedPeople úložiště. Chcete-li to provést, použijte následující příkaz: `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>` Příklad: `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -178,4 +179,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\MessageSecurity`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

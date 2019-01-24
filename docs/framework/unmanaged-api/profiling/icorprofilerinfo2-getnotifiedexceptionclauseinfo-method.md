@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 07606bf58709f088db486e0263e5cb519ab5b4cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 736fde9de1a7d4fa50d6a07bf17eacd742a6b86d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456664"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683882"
 ---
 # <a name="icorprofilerinfo2getnotifiedexceptionclauseinfo-method"></a>ICorProfilerInfo2::GetNotifiedExceptionClauseInfo – metoda
-Získá nativní adresy a rámce informace pro klauzuli výjimky (`catch`/`finally`/`filter`), má být spuštěna, nebo byla právě spuštěna.  
+Získá nativní rámce informace o adrese a pro klauzuli výjimky (`catch`/`finally`/`filter`), který má být spuštěna, nebo jenom nebyly spuštěny.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +36,15 @@ HRESULT GetNotifiedExceptionClauseInfo(
   
 #### <a name="parameters"></a>Parametry  
  `pinfo`  
- [out] Ukazatel [cor_prf_ex_clause_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md) struktura, která popisuje aktuální instance klauzule výjimky a jeho přidružené rámečku.  
+ [out] Ukazatel [cor_prf_ex_clause_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-ex-clause-info-structure.md) struktura, která popisuje aktuální klauzuli instance výjimky a jeho přidružené rámce.  
   
 ## <a name="remarks"></a>Poznámky  
- Po přijetí oznámení o výjimce `GetNotifiedExceptionClauseInfo` lze použít k získání nativní adresy a rámce informací pro klauzuli výjimky (`catch`/`finally`/`filter`) se bude spuštěný ([ Icorprofilercallback::exceptioncatcherenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md), [icorprofilercallback::exceptionunwindfinallyenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md), nebo [icorprofilercallback::exceptionsearchfilterenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)zpětné volání je přijatých profileru) nebo má stačí spustit ([icorprofilercallback::exceptioncatcherleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md), [icorprofilercallback::exceptionunwindfinallyleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md), nebo [ Icorprofilercallback::exceptionsearchfilterleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md) zpětné volání je přijatých profileru).  
+ Po přijetí oznámení o výjimce `GetNotifiedExceptionClauseInfo` můžete použít k získání nativní rámce informace o adrese a pro klauzuli výjimky (`catch`/`finally`/`filter`), který se spustí ([ Icorprofilercallback::exceptioncatcherenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md), [icorprofilercallback::exceptionunwindfinallyenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md), nebo [icorprofilercallback::exceptionsearchfilterenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)přijme zpětného volání profileru) nebo pouze nebyly spuštěny ([icorprofilercallback::exceptioncatcherleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md), [icorprofilercallback::exceptionunwindfinallyleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md), nebo [ Icorprofilercallback::exceptionsearchfilterleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md) přijme zpětného volání profileru).  
   
- Toto volání lze provést kdykoli po jednu z výše uvedených zpětná volání Enter, dokud je přijatých odpovídající zpětného volání ponechejte nebo vnořené výjimce dojde v aktuální klauzuli, ve kterém je případě, že existuje žádná ponechejte oznámení pro tuto klauzuli. Všimněte si, že není možné, abyste se vyhnuli vyvolaná výjimka `filter` klauzule výjimky, takže je vždy oznámení ponechejte v takovém případě.  
+ Toto volání lze provést kdykoli po jednu z výše uvedených zpětná volání Enter, dokud nebude odpovídající zpětnému volání nechte přijetí nebo vnořená výjimka je vyvolána v aktuální klauzuli, ve kterém je případě, že existuje žádné nechte oznámení pro tuto klauzuli. Mějte na paměti, že není možné pro vyvolanou výjimku k návratu `filter` výjimka klauzule, takže je vždy nechte oznámení v takovém případě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -52,6 +52,6 @@ HRESULT GetNotifiedExceptionClauseInfo(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

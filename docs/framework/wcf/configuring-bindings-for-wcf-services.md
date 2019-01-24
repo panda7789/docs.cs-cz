@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-ms.openlocfilehash: 7b5a91091a0902928eb2b72bdf69612f2e3f2f48
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 52f93acacec434ce6f7ba93678615c104aa94b24
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029408"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704040"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Konfigurace vazeb pro služby Windows Communication Foundation
 Při vytváření aplikace, často chcete odložit rozhodnutí, která správci po nasazení aplikace. Například není často předem vědět, co adresu služby, nebo identifikátor URI (Uniform Resource), budou. Místo pevného kódování adresu, je vhodnější umožňují správcům udělat po vytvoření služby. Díky této flexibilitě se provádí prostřednictvím konfigurace.  
@@ -17,7 +17,7 @@ Při vytváření aplikace, často chcete odložit rozhodnutí, která správci 
 > [!NOTE]
 >  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) s `/config` přepínač tak, aby rychle vytvořit konfigurační soubory.  
   
-## <a name="major-sections"></a>Hlavní části  
+## <a name="major-sections"></a>Major Sections  
  Schéma konfigurace Windows Communication Foundation (WCF) zahrnuje následující tři hlavní části (`serviceModel`, `bindings`, a `services`):  
   
 ```xml  
@@ -161,8 +161,8 @@ Při vytváření aplikace, často chcete odložit rozhodnutí, která správci 
 </bindings>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)  
- [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)  
- [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
+- [Vazby poskytované systémem](../../../docs/framework/wcf/system-provided-bindings.md)
+- [Přehled vytváření koncových bodů](../../../docs/framework/wcf/endpoint-creation-overview.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b2f0ceced1749f42d57094a09f768c192b49ff4e
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ad74b9e23c65209c8084588d09670e3c64e44213
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131531"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493726"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Zabalení a nasazení prostředků v aplikacích .NET
 Aplikací spoléhá v rozhraní .NET Framework Resource Manageru, reprezentovaný <xref:System.Resources.ResourceManager> třídy načíst lokalizované prostředky. Správce prostředků se předpokládá, že model střed a paprsek slouží k zabalení a nasazení prostředků. Centrum je hlavní sestavení, která obsahuje spustitelný kód nelokalizovatelné a prostředky pro jediné jazykové verze, volá se, neutrální nebo výchozí jazykovou verzi. Výchozí jazykovou verzi je záložní jazykovou verzi pro aplikaci. je jazykovou verzi, jehož prostředky se použijí, pokud nelze najít lokalizované prostředky. Každého paprsku se připojí k satelitní sestavení, která obsahuje prostředky pro jediné jazykové verze, ale neobsahuje žádný kód.  
@@ -188,11 +188,11 @@ Greeting=Добрый день
   
  Soubory .resources jsou vloženy do knihoven DLL spuštěním [programu assembly linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) z příkazu řádek pro francouzštinu prostředek následujícím způsobem:  
   
- **Al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll**  
+ **al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll**  
   
  a pro prostředek Ruskou jazykovou následujícím způsobem:  
   
- **Al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll**  
+ **al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll**  
   
  Zdrojový kód aplikace se nachází v souboru s názvem Example1.cs nebo Example1.vb. Její součástí <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut označuje, že výchozí prostředek aplikace v podadresáři fr. Vytvoří instanci Resource Manageru, načte hodnotu `Greeting` prostředků a zobrazí ji do konzoly.  
   
@@ -221,8 +221,8 @@ Bon jour!
 ## <a name="suggested-packaging-alternative"></a>Navrhovaná alternativní balení  
  Vytvoření sady prostředků pro každou subkulturu, kterou podporuje vaše aplikace může zabránit omezení času a rozpočtu. Místo toho můžete vytvořit jeden satelitní sestavení pro nadřazenou jazykovou verzi, že všechny související subkultury můžete použít. Například může poskytovat jednotné anglické satelitní sestavení (cs), která jsou načítána uživatelů, kteří požadují anglické prostředky specifické pro oblast a jedno německé satelitní sestavení (de) pro uživatele, kteří žádají o německý prostředky specifické pro oblast. Například požadavky pro němčinu jako používaný v Německu (de-DE), Rakousko (de-AT) a Švýcarska (de-CH) by vrátit zpět k německé satelitní sestavení (de). Výchozí prostředky jsou poslední použití náhradní lokality a proto musí být prostředky, které bude vyžádána většinou uživatelé vaší aplikace, takže pečlivě tyto prostředky. Tento přístup nasazuje prostředky, které jsou méně jazykově specifické, ale může výrazně snížit náklady na lokalizaci vaší aplikace.  
   
-## <a name="see-also"></a>Viz také  
- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)  
- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
+## <a name="see-also"></a>Viz také:
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
+- [Vytváření zdrojových souborů](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)
+- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

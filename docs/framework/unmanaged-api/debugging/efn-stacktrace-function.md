@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39a249108d10e5dc382775378e2d6b84bba87356
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28e270be8f16de9558e5d5440d621056a3114967
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408083"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636388"
 ---
 # <a name="efnstacktrace-function"></a>_EFN_StackTrace – funkce
-Poskytuje textové reprezentace trasování spravované zásobníku a pole `CONTEXT` zaznamenává, jednu pro každý přechod mezi nespravované a spravované kódu.  
+Poskytuje textové vyjádření spravovaného zásobníku a pole `CONTEXT` záznamy, jeden pro každý přechod mezi nespravované a spravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,40 +42,40 @@ HRESULT CALLBACK _EFN_StackTrace(
   
 #### <a name="parameters"></a>Parametry  
  `Client`  
- [v] Klient laděné.  
+ [in] Klient, který se právě ladí.  
   
  `wszTextOut`  
- [out] Reprezentace textu trasování zásobníku.  
+ [out] Textové vyjádření trasování zásobníku.  
   
  `puiTextLength`  
  [out] Ukazatel na počet znaků v `wszTextOut`.  
   
  `pTransitionContexts`  
- [out] Pole kontexty přechodu.  
+ [out] Pole přechod kontexty.  
   
  `puiTransitionContextCount`  
- [out] Ukazatel na počet přechod kontexty v poli.  
+ [out] Ukazatel na počet kontextů přechodu v poli.  
   
  `uiSizeOfContext`  
- [v] Velikost strukturu kontextu.  
+ [in] Velikost struktury kontextu.  
   
  `Flags`  
- [v] Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01) pro zobrazení EBP registrace a ukazatel zásobníku enter (ESP) před každou `module!functionname` řádku.  
+ [in] Nastavte na hodnotu 0 nebo SOS_STACKTRACE_SHOWADDRESSES (0x01) zobrazíte registru EBP a ukazatel zásobníku enter (ESP) před každou `module!functionname` řádku.  
   
 ## <a name="remarks"></a>Poznámky  
- `_EFN_StackTrace` Struktura lze volat z WinDbg programovací rozhraní. Parametry se používají následujícím způsobem:  
+ `_EFN_StackTrace` Struktura může být volána z WinDbg programové rozhraní. Se používají následující parametry:  
   
--   Pokud `wszTextOut` má hodnotu null a `puiTextLength` je hodnotou not null, funkce vrátí hodnotu délka řetězce v `puiTextLength`.  
+-   Pokud `wszTextOut` má hodnotu null a `puiTextLength` není null, funkce vrátí délku řetězce v `puiTextLength`.  
   
--   Pokud `wszTextOut` je hodnotou not null, funkce ukládá textu v `wszTextOut` až do umístění určeného v `puiTextLength`. Vrátí úspěšně Pokud byl dostatek místa ve vyrovnávací paměti nebo vrátí E_OUTOFMEMORY Pokud vyrovnávací paměť nebylo dost dlouhé.  
+-   Pokud `wszTextOut` je nenulová, uloží funkce text v `wszTextOut` až umístění indikován `puiTextLength`. Vrátí úspěšně Pokud byl dostatek volného místa ve vyrovnávací paměti nebo vrátí E_OUTOFMEMORY Pokud vyrovnávací paměť nebylo dostatečně dlouhé.  
   
--   Část přechod funkce je ignorována, pokud `pTransitionContexts` a `puiTransitionContextCount` jsou oba hodnotu null. V takovém případě funkce poskytuje volající s textového výstupu pouze názvy funkcí.  
+-   Přechod část funkce se ignoruje, pokud `pTransitionContexts` a `puiTransitionContextCount` mají obě hodnotu null. V tomto případě poskytuje funkci volajícím s textový výstup pouze názvy funkcí.  
   
--   Pokud `pTransitionContexts` má hodnotu null a `puiTransitionContextCount` je hodnotou not null, funkce vrátí hodnotu potřebný počet položek kontextu v `puiTransitionContextCount`.  
+-   Pokud `pTransitionContexts` má hodnotu null a `puiTransitionContextCount` není null, funkce vrátí potřebný počet položek kontextu v `puiTransitionContextCount`.  
   
--   Pokud `pTransitionContexts` je hodnotou not null, funkce považuje se za pole struktury délky `puiTransitionContextCount`. Je dán velikost struktury `uiSizeOfContext`, a musí být velikost [simplecontext –](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
+-   Pokud `pTransitionContexts` není null, funkce zpracovává jako pole struktury délky `puiTransitionContextCount`. Velikost struktury je dán `uiSizeOfContext`, a musí mít velikost [simplecontext –](../../../../docs/framework/unmanaged-api/debugging/stacktrace-simplecontext-structure.md) nebo `CONTEXT` pro architekturu.  
   
--   `wszTextOut` je napsána v následujícím formátu:  
+-   `wszTextOut` je zapsán v následujícím formátu:  
   
     ```  
     "<ModuleName>!<Function Name>[+<offset in hex>]  
@@ -84,22 +84,22 @@ HRESULT CALLBACK _EFN_StackTrace(
     ..."  
     ```  
   
--   Pokud posun v šestnáctkové soustavě 0x0, je zapsán posunutí.  
+-   Pokud posun šestnáctkově 0x0, je zapsán bez posunutí.  
   
--   Pokud je spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí hodnotu SOS_E_NOMANAGEDCODE.  
+-   Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí SOS_E_NOMANAGEDCODE.  
   
--   `Flags` Parametru se 0 nebo SOS_STACKTRACE_SHOWADDRESSES zobrazíte EBP a ESP před každou `module!functionname` řádku. Ve výchozím nastavení je 0.  
+-   `Flags` Parametru je 0 nebo SOS_STACKTRACE_SHOWADDRESSES zobrazíte EBP a ESP před každou `module!functionname` řádku. Ve výchozím nastavení je 0.  
   
     ```  
     #define SOS_STACKTRACE_SHOWADDRESSES   0x00000001  
     ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** SOS_Stacktrace.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

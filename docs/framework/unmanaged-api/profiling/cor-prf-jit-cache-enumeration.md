@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b8c972bcace3ba3d855a3b5eebc16e6b76994eb7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6aaa334c83aff18886c0c2db4462d6baaa4cd70f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450701"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687411"
 ---
 # <a name="corprfjitcache-enumeration"></a>COR_PRF_JIT_CACHE – výčet
-Určuje výsledky hledání v mezipaměti funkce.  
+Určuje výsledky hledání funkce uložené v mezipaměti.  
   
 > [!NOTE]
->  `COR_PRF_CACHED_FUNCTION_FOUND` má hodnotu nula, takže `COR_PRF_JIT_CACHE` nelze použít jako logická hodnota náhradní.  
+>  `COR_PRF_CACHED_FUNCTION_FOUND` má hodnotu nula, takže `COR_PRF_JIT_CACHE` nelze použít jako logická náhrady.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,10 +43,10 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_FUNCTION_FOUND`|Při hledání nebyly nalezeny funkce.|  
-|`COR_PRF_FUNCTION_NOT_FOUND`|Funkce hledání nebyl nalezen.|  
+|`COR_PRF_FUNCTION_NOT_FOUND`|Hledání nebyly nalezeny funkce.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,5 +54,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

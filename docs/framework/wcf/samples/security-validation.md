@@ -2,12 +2,12 @@
 title: Ověřování zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 16a12a031845a8898c32ac43bbb2e2a44fd7c7ea
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 594f7588f81ce04cef9e1f7f04a7ad9d75ce7a19
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54699763"
 ---
 # <a name="security-validation"></a>Ověřování zabezpečení
 Tento příklad ukazuje, jak použít vlastní chování k ověření služby v počítači a ujistěte se, že splňují určitá kritéria. V této ukázce jsou služby ověřený vlastní chování prohledáním prostřednictvím každého koncového bodu služby a zkontroluje, zda obsahují prvky zabezpečené vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -77,7 +77,7 @@ public void Validate(ServiceDescription serviceDescription,
 > [!NOTE]
 >  Při přidávání chování ke všem službám, doporučujeme, abyste zálohování před provedením jakékoli změny souboru Machine.config.  
   
- Nyní spusťte klienta v adresáři client\bin této ukázky. Má výjimku vyvolá s následující zprávou: "požadovanou službu"http://localhost/servicemodelsamples/service.svc"nebylo možné aktivovat." To je očekáváno, protože koncový bod se považuje za nezabezpečené koncový bod ověřování chování a zabrání spuštění služby. Chování také vyvolá vnitřní výjimka, která popisuje, který koncový bod není bezpečné a zapíše zprávu do systému prohlížeč událostí v části "System.ServiceModel 4.0.0.0" zdroje a kategorie "WebHost". Je také možné zapnout trasování služby v této ukázce. To umožňuje uživateli zobrazit výjimky vyvolané ověřování chování koncového bodu tak, že otevřete výsledné trasování služby pomocí nástroje prohlížeče trasování služeb.  
+ Nyní spusťte klienta v adresáři client\bin této ukázky. Má výjimku vyvolá s následující zprávou: "Požadovanou službu"http://localhost/servicemodelsamples/service.svc"nebylo možné aktivovat." To je očekáváno, protože koncový bod se považuje za nezabezpečené koncový bod ověřování chování a zabrání spuštění služby. Chování také vyvolá vnitřní výjimka, která popisuje, který koncový bod není bezpečné a zapíše zprávu do systému prohlížeč událostí v části "System.ServiceModel 4.0.0.0" zdroje a kategorie "WebHost". Je také možné zapnout trasování služby v této ukázce. To umožňuje uživateli zobrazit výjimky vyvolané ověřování chování koncového bodu tak, že otevřete výsledné trasování služby pomocí nástroje prohlížeče trasování služeb.  
   
 #### <a name="to-view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>Chcete-li zobrazit zprávy o neúspěchu v koncový bod ověření výjimky v prohlížeči událostí  
   
@@ -106,5 +106,5 @@ public void Validate(ServiceDescription serviceDescription,
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ServiceValidation`  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

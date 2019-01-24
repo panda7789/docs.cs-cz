@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 33900f40aab85fd67540ecd6004a46e13e8eb8c2
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: c0060115360cd077fd1e390be916f2f8afbadd9a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612033"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713990"
 ---
 # <a name="ltassemblybindinggt-element-for-ltruntimegt"></a>&lt;assemblybinding –&gt; – Element pro &lt;modulu runtime&gt;
 Obsahuje informace o přesměrování verze sestavení a umístění sestavení.  
@@ -39,17 +39,17 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**xmlns.**|Požadovaný atribut.<br /><br /> Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu.|  
-|**AppliesTo –**|Určuje verzi modulu runtime, přesměrování sestavení rozhraní .NET Framework se týká. Tento volitelný atribut používá pro určení verze, se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán,  **\<assemblyBinding >** element platí pro všechny verze rozhraní .NET Framework. **AppliesTo** atribut byla zavedena v rozhraní .NET Framework verze 1.1; je ignorován v rozhraní .NET Framework verze 1.0. To znamená, že všechny  **\<assemblyBinding >** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.|  
+|**xmlns**|Požadovaný atribut.<br /><br /> Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu.|  
+|**appliesTo**|Určuje verzi modulu runtime, přesměrování sestavení rozhraní .NET Framework se týká. Tento volitelný atribut používá pro určení verze, se vztahuje na číslo verze rozhraní .NET Framework. Pokud ne **appliesTo** atribut zadán,  **\<assemblyBinding >** element platí pro všechny verze rozhraní .NET Framework. **AppliesTo** atribut byla zavedena v rozhraní .NET Framework verze 1.1; je ignorován v rozhraní .NET Framework verze 1.0. To znamená, že všechny  **\<assemblyBinding >** prvky se použijí při použití rozhraní .NET Framework verze 1.0, i když **appliesTo** je zadán atribut.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<dependentAssembly >](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|Zapouzdřuje umístění zásad a sestavení vazby pro sestavení. Použijte jednu  **\<dependentAssembly >** značky pro každé sestavení.|  
+|[\<dependentAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md)|Zapouzdřuje umístění zásad a sestavení vazby pro sestavení. Použijte jednu  **\<dependentAssembly >** značky pro každé sestavení.|  
 |[\<zjišťování >](../../../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md)|Určuje modul common language runtime prohledá při načítání sestavení podadresářů.|  
 |[\<publisherPolicy>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md)|Určuje, zda modul runtime použije zásady vydavatele.|  
-|[\<qualifyassembly – >](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.|  
+|[\<qualifyAssembly>](../../../../../docs/framework/configure-apps/file-schema/runtime/qualifyassembly-element.md)|Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -92,7 +92,7 @@ Obsahuje informace o přesměrování verze sestavení a umístění sestavení
 </runtime>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

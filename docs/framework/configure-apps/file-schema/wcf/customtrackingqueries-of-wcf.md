@@ -2,12 +2,12 @@
 title: '&lt;customTrackingQueries&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 14cfe47e-9935-4120-84f1-8f38de8ca4c1
-ms.openlocfilehash: f75c6bf50d30da5a136137c858a5cd96ce0783ff
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: f4f6186aa51ef1656f31fb0035f58a07e5c2447b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700790"
 ---
 # <a name="ltcustomtrackingqueriesgt-of-wcf"></a>&lt;customTrackingQueries&gt; služby WCF
 
@@ -17,10 +17,10 @@ Představuje kolekci dotazů, které se používají ke sledování událostí, 
   
 \<system.serviceModel>  
 \<sledování >  
-\<profily >  
-\<profil trackingProfile >  
+\<profiles>  
+\<trackingProfile>  
 \<pracovní postup >  
-\<customTrackingQueries >  
+\<customTrackingQueries>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,17 +51,17 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<customTrackingQuery >](customtrackingquery-of-wcf.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
+|[\<customTrackingQuery>](customtrackingquery-of-wcf.md)|Dotaz, který se používá ke sledování událostí, které definujete své kód aktivity.|  
   
 ### <a name="parent-elements"></a>Nadřazené prvky  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<pracovní postup >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný `activityDefinitionId` vlastnost.|  
+|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný `activityDefinitionId` vlastnost.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>       
-- <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>       
-- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>
+- <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>
+- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
 - [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

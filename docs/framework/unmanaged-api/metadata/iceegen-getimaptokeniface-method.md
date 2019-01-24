@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 627ae1f3da053af9a1bf9962e5b46cfb8b5046cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 02665d2a00a779ac73a19ec5513790f3862833b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442744"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735009"
 ---
 # <a name="iceegengetimaptokeniface-method"></a>ICeeGen::GetIMapTokenIface – metoda
 Získá rozhraní odkazuje zadaný token.  
   
- Tato metoda je zastaralá a by se neměla používat.  
+ Tato metoda je zastaralý a neměl by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ HRESULT GetIMapTokenIface (
   
 #### <a name="parameters"></a>Parametry  
  `pIMapToken`  
- [ve out] Token metadat pro rozhraní má být vrácen.  
+ [out v] Token metadat pro rozhraní, který se má vrátit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

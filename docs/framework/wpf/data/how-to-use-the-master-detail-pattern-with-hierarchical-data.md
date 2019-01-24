@@ -5,37 +5,37 @@ helpviewer_keywords:
 - data binding [WPF], Master-Detail data paradigm
 - Master-Detail data paradigm
 ms.assetid: 11429b9e-058d-4084-bfb6-2cf209c8ddf7
-ms.openlocfilehash: 46733b462861bdac3381cdacb8f2fbe0536d12eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 36eded28085aec3aaea1a2351ae3babc6ad6c700
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689637"
 ---
 # <a name="how-to-use-the-master-detail-pattern-with-hierarchical-data"></a>Postupy: Použití vzoru seznam-podrobnosti s hierarchickými daty
-Tento příklad ukazuje, jak implementovat scénář seznam podrobnosti.  
+Tento příklad ukazuje, jak implementovat scénář hlavní podrobnosti.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `LeagueList` je kolekce `Leagues`. Každý `League` má `Name` a kolekce `Divisions`a každou `Division` má název a kolekci `Teams`. Každý `Team` má název týmu.  
+ V tomto příkladu `LeagueList` je kolekce `Leagues`. Každý `League` má `Name` a kolekce `Divisions`a každý `Division` má název a kolekci `Teams`. Každý `Team` má název týmu.  
   
  [!code-xaml[MasterDetail#HowTo1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MasterDetail/VisualBasic/Page1.xaml#howto1)]  
 [!code-xaml[MasterDetail#HowTo2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MasterDetail/VisualBasic/Page1.xaml#howto2)]  
   
- Zde je snímek obrazovky v příkladu. `Divisions` <xref:System.Windows.Controls.ListBox> Automaticky sleduje výběrů v `Leagues` <xref:System.Windows.Controls.ListBox> a zobrazit odpovídající data. `Teams` <xref:System.Windows.Controls.ListBox> Sleduje výběrů v další dvě <xref:System.Windows.Controls.ListBox> ovládací prvky.  
+ Zde je snímek obrazovky v příkladu. `Divisions` <xref:System.Windows.Controls.ListBox> Automaticky sleduje požadovaná nastavení `Leagues` <xref:System.Windows.Controls.ListBox> a zobrazí se odpovídající data. `Teams` <xref:System.Windows.Controls.ListBox> Sleduje výběry do dalších dvou <xref:System.Windows.Controls.ListBox> ovládacích prvků.  
   
- ![Hlavní&#45;příklad podrobnosti](../../../../docs/framework/wpf/data/media/databindingmasterdetailsample.png "DataBindingMasterDetailSample")  
+ ![Hlavní&#45;podrobný příklad](../../../../docs/framework/wpf/data/media/databindingmasterdetailsample.png "DataBindingMasterDetailSample")  
   
- Dvě věci Všimněte v tomto příkladu jsou:  
+ Jsou dvě věci v tomto příkladu si všimněte:  
   
-1.  Tří <xref:System.Windows.Controls.ListBox> ovládací prvky vazby ke stejnému zdroji. Můžete nastavit <xref:System.Windows.Data.Binding.Path%2A> vlastnost vazby k určení, kterou úroveň dat chcete <xref:System.Windows.Controls.ListBox> k zobrazení.  
+1.  Tři <xref:System.Windows.Controls.ListBox> ke stejnému zdroji vytvoření vazby ovládacích prvků. Můžete nastavit <xref:System.Windows.Data.Binding.Path%2A> vlastnost vazby, kterou úroveň dat má být <xref:System.Windows.Controls.ListBox> k zobrazení.  
   
-2.  Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` na <xref:System.Windows.Controls.ListBox> ovládací prvky, které na výběr jsou sledování. Nastavení této vlastnosti zajistí, že vybraná položka je vždycky nastavený jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a měny.  
+2.  Je nutné nastavit <xref:System.Windows.Controls.Primitives.Selector.IsSynchronizedWithCurrentItem%2A> vlastnost `true` na <xref:System.Windows.Controls.ListBox> ovládací prvky, které sledujete výběr. Nastavení této vlastnosti se zajistí, že je vybraná položka vždy nastavena jako <xref:System.Windows.Controls.ItemCollection.CurrentItem%2A>. Případně pokud <xref:System.Windows.Controls.ListBox> ho načte data z <xref:System.Windows.Data.CollectionViewSource>, automaticky synchronizuje výběr a Měna.  
   
- Při použití se mírně liší technika [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Příklad, naleznete v části [použití vzoru seznam-podrobnosti s hierarchické Data XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md).  
+ Postup se mírně liší, když používáte [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data. Příklad najdete v tématu [použití vzoru seznam-podrobnosti s hierarchickými daty XML](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.HierarchicalDataTemplate>  
- [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.HierarchicalDataTemplate>
+- [Vytvoření vazby ke kolekci a zobrazení informací podle výběru](../../../../docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Přehled datových šablon](../../../../docs/framework/wpf/data/data-templating-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

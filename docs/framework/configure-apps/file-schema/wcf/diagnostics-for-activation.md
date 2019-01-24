@@ -2,12 +2,12 @@
 title: '&lt;diagnostics&gt; pro aktivaci'
 ms.date: 03/30/2017
 ms.assetid: 1486e0eb-fe2a-46c3-b584-c924889477dd
-ms.openlocfilehash: 28f051a7ab06dbc1b40f804c56071818eb37e88b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5d8fcce28182dcac945655a52d829945a432a9b3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54144974"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54723911"
 ---
 # <a name="ltdiagnosticsgt-for-activation"></a>&lt;diagnostics&gt; pro aktivaci
 Nakonfiguruje funkce diagnostiky Windows Communication Foundation (WCF) naslouchacího procesu.  
@@ -46,5 +46,5 @@ Nakonfiguruje funkce diagnostiky Windows Communication Foundation (WCF) naslouch
 |-------------|-----------------|  
 |[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Obsahuje nastavení konfigurace pro naslouchací proces SMSvcHost.exe.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activation.Configuration.DiagnosticSection>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activation.Configuration.DiagnosticSection>

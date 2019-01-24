@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24b01fecc7947d14e36b4411a58d200667b0f2a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8abe1b63aad7b73b3260553550112ded75b77bb9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415539"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537735"
 ---
 # <a name="icordebugmanagedcallbackexitthread-method"></a>ICorDebugManagedCallback::ExitThread – metoda
-Upozorní ladicí program, aby byl ukončen vláken, která byla spuštěna spravovaného kódu.  
+Upozorní ladicího programu, že vlákno, které se spouští spravovaný kód byl ukončen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT ExitThread (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace obsahující spravovaných vláken.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující spravované vlákno.  
   
  `thread`  
- [v] Ukazatel ICorDebugThread objektu, která představuje spravované vlákno.  
+ [in] Ukazatel na objekt ICorDebugThread, která představuje spravované vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Jednou `ExitThread` zpětné volání je aktivována, vlákno se nebude zobrazovat v výčty přístup z více vláken.  
+ Jakmile `ExitThread` zpětné volání se aktivuje, vlákno se nebude zobrazovat ve vlákno výčtech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +55,5 @@ HRESULT ExitThread (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

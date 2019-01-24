@@ -14,21 +14,21 @@ helpviewer_keywords:
 - DynamicRenderer objects [WPF]
 - StylusPlugIn objects [WPF]
 ms.assetid: c31f3a67-cb3f-4ded-af9e-ed21f6575b26
-ms.openlocfilehash: 3113b953c1c547035883a4f4b51f53e4aefdf0a6
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: c49dfb8eaf5a91c7ebdf10833b229c4b05a7ce56
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085770"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664808"
 ---
 # <a name="creating-an-ink-input-control"></a>Vytvoření ovládacího prvku vstupu inkoustu
 Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykreslí rukopis. To znamená vykreslení inkoustu jako uživatel nakreslí tah, způsobí rukopisu se zobrazí "tok" z pera a zobrazit inkoustu po jeho přidání do ovládacího prvku, buď prostřednictvím pera, vložili ze schránky nebo načtena ze souboru. Dynamicky vykreslit rukopisu, musíte použít ovládací prvek <xref:System.Windows.Input.StylusPlugIns.DynamicRenderer>. Staticky vykreslení inkoustu, je nutné přepsat stylus metody událostí (<xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusMove%2A>, a <xref:System.Windows.UIElement.OnStylusUp%2A>) ke shromažďování <xref:System.Windows.Input.StylusPoint> data, vytvářet tahy a přidat je do <xref:System.Windows.Controls.InkPresenter> (která vykreslí rukopis na ovládací prvek).  
   
  Toto téma obsahuje následující témata:  
   
--   [Postupy: shromažďování dat bodu Stylus a vytvořit inkoustových tahů](#CollectingStylusPointDataAndCreatingInkStrokes)  
+-   [Postupy: Shromažďování dat bodu Stylus a vytvořit inkoustových tahů](#CollectingStylusPointDataAndCreatingInkStrokes)  
   
--   [Postupy: povolení ovládacího prvku tak, aby přijímal vstup z myši](#EnablingYourControlToAcceptInputTromTheMouse)  
+-   [Postupy: Povolení ovládacího prvku tak, aby přijímal vstup z myši](#EnablingYourControlToAcceptInputTromTheMouse)  
   
 -   [Jeho uvedení společně](#PuttingItTogether)  
   
@@ -37,7 +37,7 @@ Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykres
 -   [Závěr](#AdvancedInkHandling_Conclusion)  
   
 <a name="CollectingStylusPointDataAndCreatingInkStrokes"></a>   
-## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a>Postupy: shromažďování dat bodu Stylus a vytvořit inkoustových tahů  
+## <a name="how-to-collect-stylus-point-data-and-create-ink-strokes"></a>Postupy: Shromažďování dat bodu Stylus a vytvořit inkoustových tahů  
  Chcete-li vytvořit ovládací prvek, který shromažďuje a spravuje inkoustu tahy takto:  
   
 1.  Odvodit třídu z <xref:System.Windows.Controls.Control> nebo jedné ze tříd odvozených z <xref:System.Windows.Controls.Control>, jako například <xref:System.Windows.Controls.Label>.  
@@ -68,7 +68,7 @@ Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykres
      [!code-csharp[AdvancedInkTopicsSamples#10](../../../../samples/snippets/csharp/VS_Snippets_Wpf/AdvancedInkTopicsSamples/CSharp/StylusControl.cs#10)]  
   
 <a name="EnablingYourControlToAcceptInputTromTheMouse"></a>   
-## <a name="how-to-enable-your-control-to-accept-input-from-the-mouse"></a>Postupy: povolení ovládacího prvku tak, aby přijímal vstup z myši  
+## <a name="how-to-enable-your-control-to-accept-input-from-the-mouse"></a>Postupy: Povolení ovládacího prvku tak, aby přijímal vstup z myši  
  Pokud přidáte předchozí ovládací prvek do vaší aplikace, spusťte ji a pomocí myši jako vstupní zařízení, si všimnete, že nejsou trvalé strokes. Zachování tahy, když ukazatel myši se používá jako vstupní zařízení, postupujte takto:  
   
 1.  Přepsat <xref:System.Windows.UIElement.OnMouseLeftButtonDown%2A> a vytvořte nový <xref:System.Windows.Input.StylusPointCollection> získat polohu myši při výskytu události a vytvořit <xref:System.Windows.Input.StylusPoint> datový bod a přidat <xref:System.Windows.Input.StylusPoint> k <xref:System.Windows.Input.StylusPointCollection>.  
@@ -98,6 +98,6 @@ Můžete vytvořit vlastní ovládací prvek, který dynamicky a staticky vykres
 ## <a name="conclusion"></a>Závěr  
  Můžete vytvořit ovládací prvek, který shromažďuje a vykreslí rukopis přepsáním metody událostí stylus. Tím, že vytvoříte vlastní ovládací prvek odvozený vlastní <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a jejich vložení do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection>, můžete implementovat prakticky jakoukoli vůbec pomocí digitálních inkoust chování. Máte přístup k <xref:System.Windows.Input.StylusPoint> dat, jako je generováno, získáte tak možnost přizpůsobit <xref:System.Windows.Input.Stylus> vstup a vykreslit ho na obrazovce v závislosti na vaší aplikace. Protože máte takový přístup nízké úrovně ke <xref:System.Windows.Input.StylusPoint> data, můžete implementovat kolekce inkoustů a vykreslit poskytovaly optimální výkon pro vaši aplikaci.  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
- [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+- [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

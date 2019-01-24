@@ -14,47 +14,47 @@ helpviewer_keywords:
 - sizing [Windows Forms], automatic
 - automatic sizing
 ms.assetid: b6706efb-d7a4-45ec-8cf4-08fa993e3afb
-ms.openlocfilehash: 40322dc6c5facd4167a4c9ac5c12fdf2a8831b7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6be6d0904d5b52e5188f0a5a16aaefa08265379c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526449"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674190"
 ---
 # <a name="best-practices-for-the-tablelayoutpanel-control"></a>Doporučené postupy pro ovládací prvek TableLayoutPanel
-<xref:System.Windows.Forms.TableLayoutPanel> Rozložení výkonné funkce, které byste měli pečlivě zvážit před použitím v aplikaci Windows Forms poskytuje ovládací prvek.  
+<xref:System.Windows.Forms.TableLayoutPanel> Ovládacího prvku poskytuje výkonné rozložení funkce, které byste měli pečlivě zvážit před použitím ve formulářích Windows.  
   
 ## <a name="recommendations"></a>Doporučení  
- Následující doporučení vám pomůže používat <xref:System.Windows.Forms.TableLayoutPanel> řízení k jeho nejlepší výhodou.  
+ Následující doporučení vám pomůže s použitím <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek na jeho přinášelo maximální výhody.  
   
 ### <a name="targeted-use"></a>Cílové použití  
- Použití <xref:System.Windows.Forms.TableLayoutPanel> řízení opatrně. Byste neměli používat ve všech situacích, které vyžadují s možností změny velikosti rozložení. Následující seznam popisuje rozložení využívající většinu z použití <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
+ Použití <xref:System.Windows.Forms.TableLayoutPanel> řídit opatrně. Nepoužívejte ho ve všech situacích, které vyžadují umožňující změnu velikosti rozložení. Následující seznam popisuje rozložení, která je nejužitečnější u použití <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
   
--   Rozložení, ve kterých existuje více částí formuláře, které proporcionálně navzájem.  
+-   Rozložení, ve kterém se více částí formuláře, které proporcionálně k sobě navzájem.  
   
--   Rozložení, které bude upravena nebo generována dynamicky za běhu, jako jsou formuláře položku dat, které mají uživatele přizpůsobitelné pole přidány nebo odečítat podle preferencí.  
+-   Rozložení, které budou změněny nebo dynamicky generované v době běhu, jako je například formulářích pro zadávání dat, které mají uživatelsky přizpůsobitelnými pole přičíst nebo odečíst podle preferencí.  
   
--   Rozložení, které by měla zůstat na celkové pevné velikosti. Například můžete mít dialogu, který by měla zůstat menší než 800 × 600, ale budete potřebovat k podpoře lokalizovaných řetězců.  
+-   Rozložení, které by měla zůstat na celkové pevné velikosti. Například můžete mít dialogové okno, které by měla zůstat menší než 800 × 600, ale budete potřebovat k podpoře lokalizovaných řetězců.  
   
- Následující seznam popisuje rozložení, které nejsou výrazně nijak přínosné pomocí <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
+ Následující seznam popisuje rozložení, které nejsou nijak přínosné výrazně pomocí <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku:  
   
--   Jednoduché formuláře pro zadávání dat s jedním sloupcem popisků a zadání textu oblastí jeden sloupec.  
+-   Jednoduchá datová položka formy s jedním sloupcem popisky a jedním sloupcem textového vstupu oblastí.  
   
--   Zobrazení formulářů s jedním velké oblasti, která by měl vyplnit veškeré dostupné místo v případě změny velikosti. Příkladem je formulář, který zobrazuje jeden <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku. V takovém případě použijte ukotvení, protože nic jiného by měl rozbalit, pokud se změnila velikost formuláře.  
+-   Formuláře pomocí jediného velké zobrazit oblast, která by měla zaplnit veškeré dostupné místo, když dojde k Změna velikosti. Příkladem je formulář, který se zobrazí jedna <xref:System.Windows.Forms.PropertyGrid> ovládacího prvku. V takovém případě použijte ukotvení, protože nic jiného by měli rozbalit při změně velikosti formuláře.  
   
- Pečlivě zvolte ovládacích prvků, které musí být v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Pokud máte místo pro text růst o 30 % pomocí ukotvení, zvažte použití <xref:System.Windows.Forms.Control.Anchor%2A> pouze vlastnost. Pokud chcete-li odhadnout místo vyžadované vaší rozložení, použití <xref:System.Windows.Forms.Control.Dock%2A> a <xref:System.Windows.Forms.Control.Anchor%2A> je jednodušší než odhadnout podrobnosti zbývajícího místa a <xref:System.Windows.Forms.Control.AutoSize%2A> chování.  
+ Pečlivě zvolit, jaké ovládací prvky musí být v <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Pokud máte místo pro text zvětší o 30 % pomocí ukotvení, zvažte použití <xref:System.Windows.Forms.Control.Anchor%2A> pouze vlastnost. Pokud chcete-li odhadnout místo vyžadované rozložení, použijte <xref:System.Windows.Forms.Control.Dock%2A> a <xref:System.Windows.Forms.Control.Anchor%2A> je snazší než odhad podrobnosti zbývajícího místa a <xref:System.Windows.Forms.Control.AutoSize%2A> chování.  
   
- Obecně platí, že při navrhování vaší rozložení s <xref:System.Windows.Forms.TableLayoutPanel> řídit, zachovat návrh co nejjednodušší.  
+ Obecně platí, že při návrhu rozložení s <xref:System.Windows.Forms.TableLayoutPanel> řídit, zachovat návrhu co nejjednodušší.  
   
-### <a name="use-the-document-outline-window"></a>Použití Osnova dokumentu – okno  
- Okno Osnova dokumentu vám rozložení, který můžete použít k manipulaci s pořadí z-order a nadřazený podřízený vztahy pro vaše ovládací prvky zobrazení stromu. Z **nabídka Zobrazit**, vyberte **ostatní okna**, pak vyberte **Osnova dokumentu**.  
+### <a name="use-the-document-outline-window"></a>Použijte okno osnovy dokumentu  
+ Osnova dokumentu – okno nabízí stromového zobrazení rozložení, který můžete použít k manipulaci s pořadí vykreslování a hierarchické vztahy své ovládací prvky. Z **nabídka zobrazení**vyberte **ostatní Windows**a pak vyberte **Osnova dokumentu**.  
   
-### <a name="avoid-nesting"></a>Vyhněte se vnoření  
- Vyhněte se vnoření jiných <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky v rámci <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Ladění rozložení vnořené může být obtížné.  
+### <a name="avoid-nesting"></a>Avoid Nesting  
+ Vyhnout se vnoření jiných <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvky v rámci <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku. Ladění rozložení vnořeného může být obtížné.  
   
-### <a name="avoid-visual-inheritance"></a>Vyhněte se dědičnost vizuálních prvků  
- <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek nepodporuje dědičnost vizuálních prvků v Návrháři formulářů. A <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek v odvozené třídě se zobrazí jako "vyřazené" v době návrhu.  
+### <a name="avoid-visual-inheritance"></a>Vyhněte se vizuálního dědění  
+ <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek nepodporuje vizuálního dědění v Návrháři formulářů Windows. A <xref:System.Windows.Forms.TableLayoutPanel> ovládací prvek v odvozené třídě se zobrazí jako "uzamčená" v době návrhu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.TableLayoutPanel>  
- <xref:System.Windows.Forms.FlowLayoutPanel>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.TableLayoutPanel>
+- <xref:System.Windows.Forms.FlowLayoutPanel>

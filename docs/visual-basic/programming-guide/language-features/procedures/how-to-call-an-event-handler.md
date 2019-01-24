@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání obslužné rutiny události (Visual Basic)'
+title: 'Postupy: Volání obslužné rutiny událostí v jazyce Visual Basic'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -8,54 +8,54 @@ helpviewer_keywords:
 - procedures [Visual Basic], event handlers
 - procedures [Visual Basic], calling
 ms.assetid: 72e18ef8-144e-40df-a1f4-066a57271e28
-ms.openlocfilehash: 4e6aeaee8027e462dcdf80cae34b4b246fd58cf7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6fc08e9f16753dc853daff0120661603571d9db4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652679"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54717967"
 ---
-# <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny události (Visual Basic)
-*Událostí* je akce nebo výskyt – například myši klikněte na tlačítko nebo platební limit překročen – některých součástí programu, a který můžete napsat kód je rozpoznán reagovat. *Obslužné rutiny události* je kód, který vytváříte reagovat na událost.  
+# <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny událostí v jazyce Visual Basic
+*Události* je akce nebo výskyt – například myši klikněte na tlačítko nebo kreditního limitu překročil – v některých součástí programu, a pro která můžete napsat kód, který je rozpoznán reagovat. *Obslužná rutina události* se psaní kódu pro reakci na událost.  
   
- Obslužné rutiny události v jazyce Visual Basic je `Sub` postupu. Však můžete normálně ho nevolají stejný způsobem jako ostatní `Sub` postupy. Místo toho identifikujete postupu jako obslužná rutina události. To provedete buď pomocí [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzule a [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) proměnnou, nebo se [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md). Použití `Handles` klauzule je způsob výchozí deklarace obslužné rutiny události v jazyce Visual Basic. Toto je způsob, jakým obslužné rutiny událostí se zapisují návrháři, když budete programu v integrované vývojové prostředí (IDE). `AddHandler` Příkaz je vhodný pro vyvolávání událostí dynamicky za běhu.  
+ Obslužné rutiny události v jazyce Visual Basic je `Sub` postup. Však můžete normálně ho nevolají stejný způsobem jako ostatní `Sub` postupy. Místo toho postup identifikovat jako obslužnou rutinu pro událost. Uděláte to buď s [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzule a [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) proměnnou, nebo s [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md). Použití `Handles` klauzule je výchozí způsob, jak deklarovat obslužné rutiny události v jazyce Visual Basic. Toto je způsob, jakým obslužné rutiny událostí jsou zapsány pomocí návrhářů, když je program v integrovaném vývojovém prostředí (IDE). `AddHandler` Příkaz je vhodný pro vyvolání události dynamicky za běhu.  
   
- Při výskytu události, Visual Basic automaticky volá proceduru obslužná rutina události. Kód, který má přístup k události může způsobit tak, aby spuštěním [RaiseEvent – příkaz](../../../../visual-basic/language-reference/statements/raiseevent-statement.md).  
+ Při výskytu události, Visual Basic automaticky volá proceduru obslužné rutiny události. Veškerý kód, který má přístup k této události může způsobit, že dojde k spuštěním [RaiseEvent – příkaz](../../../../visual-basic/language-reference/statements/raiseevent-statement.md).  
   
- Více než jeden obslužné rutiny události můžete přidružit jednu událost. V některých případech můžete zrušit přidružení obslužnou rutinu z události. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).  
+ Více než jednu obslužnou rutinu události můžete přidružit stejné události. V některých případech můžete zrušit přidružení obslužné rutiny z události. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).  
   
-### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>K volání obslužné rutiny události pomocí obslužných rutin a WithEvents  
+### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>Pro volání obslužné rutiny události pomocí obslužné rutiny a WithEvents  
   
-1.  Ujistěte se, že událost je deklarovaný s [Event – příkaz](../../../../visual-basic/language-reference/statements/event-statement.md).  
+1.  Ujistěte se, že událost je deklarována pomocí [Event – příkaz](../../../../visual-basic/language-reference/statements/event-statement.md).  
   
-2.  Deklarace proměnné objektu v modulu nebo třída úrovně, pomocí [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) – klíčové slovo. `As` Klauzuli pro tato proměnná musí být zadána třída, která vyvolá událost.  
+2.  Deklarace proměnné objektu v modulu nebo třídy úrovni pomocí [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md) – klíčové slovo. `As` Klauzuli pro tuto proměnnou musí být zadána třída, která vyvolává událost.  
   
-3.  V deklaraci zpracování událostí `Sub` postupu přidat [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli, která určuje, `WithEvents` proměnné a z názvu události.  
+3.  V prohlášení o zpracování událostí `Sub` postupu přidat [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli, která určuje, `WithEvents` proměnné a název události.  
   
-4.  Když dojde k události, Visual Basic automaticky zavolá `Sub` postupu. Váš kód můžete použít `RaiseEvent` příkaz a ujistěte se, dojde k události.  
+4.  Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
   
-     V následujícím příkladu definuje události a `WithEvents` proměnné, která odkazuje na třídu, která vyvolává událost. Zpracování událostí `Sub` postup používá `Handles` klauzule zadat třídu a zpracovává události.  
+     Následující příklad definuje události a `WithEvents` proměnné, která odkazuje na třídu, která vyvolává událost. Zpracování událostí `Sub` postup používá `Handles` klauzule k určení třídy a zpracovává události.  
   
      [!code-vb[VbVbcnProcedures#4](./codesnippet/VisualBasic/how-to-call-an-event-handler_1.vb)]  
   
-### <a name="to-call-an-event-handler-using-addhandler"></a>K volání obslužné rutiny události pomocí AddHandler  
+### <a name="to-call-an-event-handler-using-addhandler"></a>Pro volání obslužné rutiny události pomocí AddHandler  
   
-1.  Ujistěte se, že událost je deklarovaný s `Event` příkaz.  
+1.  Ujistěte se, že událost je deklarována pomocí `Event` příkazu.  
   
-2.  Spuštění [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) dynamicky připojit zpracování událostí `Sub` postup k události.  
+2.  Spuštění [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) dynamicky připojit zpracování událostí `Sub` procedury s událostí.  
   
-3.  Když dojde k události, Visual Basic automaticky zavolá `Sub` postupu. Váš kód můžete použít `RaiseEvent` příkaz a ujistěte se, dojde k události.  
+3.  Při výskytu události, Visual Basic automaticky volá `Sub` postup. Váš kód může použít `RaiseEvent` příkaz, ujistěte se, dojde k události.  
   
-     V následujícím příkladu definuje `Sub` postup zpracování <xref:System.Windows.Forms.Form.Closing> událost formuláře. Poté použije [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) přidružit `catchClose` postupu jako obslužné rutiny události pro <xref:System.Windows.Forms.Form.Closing>.  
+     Následující příklad definuje `Sub` postupu ke zpracování <xref:System.Windows.Forms.Form.Closing> událost formuláře. Poté použije [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) přidružení `catchClose` postupu jako obslužná rutina události <xref:System.Windows.Forms.Form.Closing>.  
   
      [!code-vb[VbVbcnProcedures#5](./codesnippet/VisualBasic/how-to-call-an-event-handler_2.vb)]  
   
-     Obslužné rutiny události z události můžete zrušit přidružení spuštěním [RemoveHandler – příkaz](../../../../visual-basic/language-reference/statements/removehandler-statement.md).  
+     Obslužná rutina události z události můžete oddělit pomocí provádí [RemoveHandler – příkaz](../../../../visual-basic/language-reference/statements/removehandler-statement.md).  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Operátor AddressOf](../../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [Postupy: Vytvoření procedury](./how-to-create-a-procedure.md)  
- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Operátor AddressOf](../../../../visual-basic/language-reference/operators/addressof-operator.md)
+- [Postupy: Vytvoření procedury](./how-to-create-a-procedure.md)
+- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)

@@ -1,51 +1,51 @@
 ---
-title: Objekt Materialization (služby WCF Data Services)
+title: Materializace objektů (WCF Data Services)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-ms.openlocfilehash: 54f8cc876b373fcfa8e8e514abf50111942de88c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e818f3d5a7dfa85bf361d7de0cbd5bcb2dfe63b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365459"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665588"
 ---
-# <a name="object-materialization-wcf-data-services"></a>Objekt Materialization (služby WCF Data Services)
-Při použití **přidat odkaz na službu** dialogovém okně můžete využívat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v aplikaci klienta na základě rozhraní .NET Framework, ke každému typu entity v datovém modelu, který je zveřejněný prostřednictvím informačního kanálu se generují ekvivalentní datové třídy. Další informace najdete v tématu [generování dat služby klientské knihovny](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Data entity, který je vrácen dotazu je vyhodnocena do instance jednoho z těchto tříd služby data generovaného klienta. Informace o možnostech sloučení a řešení identity sledovaných objektů najdete v tématu [Správa služby kontextu dat](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).  
+# <a name="object-materialization-wcf-data-services"></a>Materializace objektů (WCF Data Services)
+Při použití **přidat odkaz na službu** dialogové okno k využívání [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu v aplikaci klienta na základě rozhraní .NET Framework, ekvivalentní datové třídy jsou generovány pro každý typ entity v datovém modelu, který je zveřejněn prostřednictvím informačního kanálu. Další informace najdete v tématu [generování klientské knihovny datové služby](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Entity dat vrácených dotazem je vyhodnocena na instanci jednoho z těchto tříd generované klientské datové služby. Informace o možnosti sloučení a řešení identity u sledovaných objektů najdete v tématu [Správa kontextu datové služby](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také umožňuje definovat vaše vlastní třídy klienta dat služby místo použití tříd nástroj generovaná data. To umožňuje používat vlastní datové třídy, také známé jako "prostý starý CLR objektu" (objektů POCO) datových tříd. Při použití těchto typů vlastních datových tříd, má atribut třída dat pomocí <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a ujistěte se, že typ názvy na názvy typů shody klienta v datovém modelu datové služby.  
+ [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také vám umožní definovat vlastní tříd klientské datové služby spíše než použití tříd nástroj generovaná data. To vám umožní použít vaše vlastní třídy dat, označované také jako "prostý starého objektu CLR" datových tříd (POCO). Při použití těchto typů vlastních datových tříd, by měl atribut datové třídy s oběma <xref:System.Data.Services.Common.DataServiceKeyAttribute> nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a ujistěte se, že typ názvy pro názvy typů shoda klientů v datovém modelu datové služby.  
   
- Po knihovny obdrží zprávu odpovědi dotazu, se bude realizována vrácená data z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu do instance dat klienta třídy služeb, které jsou typu dotazu. Obecný postup pro vyhodnocování tyto objekty vypadá takto:  
+ Po knihovny obdrží odpověď dotaz, to bude realizována vrácená data z [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu do instancí klientská data třídy služeb, které nejsou typu dotazu. Obecný postup pro materializaci tyto objekty je následujícím způsobem:  
   
-1.  Klientská knihovna čte serializovaných typu z `entry` element v kanálu zprávu odpovědi a pokusy o vytvoření nové instance správného typu, v jednom z následujících způsobů:  
+1.  Klientská knihovna načte serializovaný typ z `entry` element v kanálu zprávy s odpovědí a pokusí se vytvořit novou instanci správný typ, v jednom z následujících způsobů:  
   
-    -   Pokud typ deklarován v informačním kanálu má stejný název jako typ <xref:System.Data.Services.Client.DataServiceQuery%601>, je vytvořena nová instance tohoto typu pomocí prázdného konstruktoru.  
+    -   Pokud typ deklarovaný v informačním kanálu má stejný název jako typ <xref:System.Data.Services.Client.DataServiceQuery%601>, s použitím prázdného konstruktoru je vytvořena nová instance tohoto typu.  
   
-    -   Pokud typ deklarován v informačním kanálu má stejný název jako typ, který je odvozen z typu <xref:System.Data.Services.Client.DataServiceQuery%601>, pomocí prázdného konstruktoru je vytvořena nová instance tohoto odvozeného typu.  
+    -   Pokud typ deklarovaný v informačním kanálu má stejný název jako typ, který je odvozen z typu <xref:System.Data.Services.Client.DataServiceQuery%601>, s použitím prázdného konstruktoru je vytvořena nová instance tohoto typu odvozený.  
   
-    -   Pokud typ deklarován v informačním kanálu nelze namapovat na typ <xref:System.Data.Services.Client.DataServiceQuery%601> nebo všechny odvozené typy, novou instanci třídy dotazovaný typ je vytvořená pomocí prázdného konstruktoru.  
+    -   Pokud typ deklarovaný v informačním kanálu nejde spárovat typu <xref:System.Data.Services.Client.DataServiceQuery%601> nebo všechny odvozené typy, je vytvořena nová instance typu poslal dotaz s použitím prázdného konstruktoru.  
   
-    -   Když <xref:System.Data.Services.Client.DataServiceContext.ResolveType%2A> vlastnost nastavena, zadaný delegát nazývá přepsat výchozí mapování na základě názvu typu a novou instanci třídy typ vrácený <xref:System.Func%602> místo toho je vytvořena. Pokud tento delegát vrátí hodnotu null, místo toho je vytvořena nová instance typu předmětem dotazu. Může být nezbytné přepsat výchozí mapování názvu na základě názvu typu pro podporu dědičnosti scénářů.  
+    -   Když <xref:System.Data.Services.Client.DataServiceContext.ResolveType%2A> je hodnota nastavena, zadaný delegát se nazývá přepsat výchozí mapování typu založeného na názvu a novou instanci typu vrácené <xref:System.Func%602> místo toho se vytvoří. Pokud tento delegát vrátí hodnotu null, místo toho je vytvořena nová instance typu poslal dotaz. Může být nezbytné pro přepsání výchozí mapování názvu typu založeného na názvu pro zajištění podpory scénářů dědičnosti.  
   
-2.  Klientská knihovna čte hodnota z identifikátoru URI `id` element `entry`, což je hodnota identity entity. Pokud <xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> hodnotu <xref:System.Data.Services.Client.MergeOption.NoTracking> se používá, hodnotu identity slouží ke sledování objektu ve <xref:System.Data.Services.Client.DataServiceContext>. Zaručit, že pouze jedna entita instance je vytvořen i v případě, že entita je v odpovědi na dotaz vrátil více než jednou. je také použít hodnotu identity.  
+2.  Klientská knihovna přečte hodnotu identifikátoru URI z `id` elementu `entry`, což je hodnota identity entity. Pokud <xref:System.Data.Services.Client.DataServiceContext.MergeOption%2A> hodnotu <xref:System.Data.Services.Client.MergeOption.NoTracking> je použít, hodnotu identity se používá ke sledování objektů v <xref:System.Data.Services.Client.DataServiceContext>. Hodnota identity slouží také k zajištění, že pouze jedné entity je vytvořena instance, i v případě, že entity je v odpovědi na dotaz vrátil více než jednou.  
   
-3.  Klientská knihovna načte vlastnosti ze zadaného informačního kanálu a nastavte odpovídající vlastnosti na nově vytvořený objekt. Pokud objekt, který už má stejnou hodnotu identity dojde v <xref:System.Data.Services.Client.DataServiceContext>, vlastnosti jsou nastavené na základě <xref:System.Data.Services.Client.MergeOption> nastavit <xref:System.Data.Services.Client.DataServiceContext>. Odpovědi může obsahovat hodnoty vlastností, pro které nedojde odpovídající vlastnosti v typu klienta. V takovém případě akce závisí na hodnotu <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Pokud je tato vlastnost nastavená na `true`, chybí vlastnost je ignorována. Jinak je vyvolána k chybě. Vlastnosti jsou nastaveny takto:  
+3.  Klientská knihovna čtení vlastností z položky informačního kanálu a nastavte odpovídající vlastnosti na nově vytvořený objekt. Pokud objekt, který má stejnou hodnotu identity již probíhá <xref:System.Data.Services.Client.DataServiceContext>, jsou nastaveny na základě vlastnosti <xref:System.Data.Services.Client.MergeOption> nastavení <xref:System.Data.Services.Client.DataServiceContext>. Odpověď může obsahovat hodnoty vlastností, u kterých nedojde odpovídající vlastnost v typu klienta. Když k tomu dojde, akce závisí na hodnotě <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> vlastnost <xref:System.Data.Services.Client.DataServiceContext>. Pokud je tato vlastnost nastavena na `true`, chybí vlastnost se ignoruje. V opačném případě je vyvolána k chybě. Vlastnosti nastavené takto:  
   
     -   Skalární vlastnosti jsou nastaveny na odpovídající hodnotu v položce ve zprávě s odpovědí.  
   
-    -   Komplexní vlastnosti jsou nastaveny na novou instanci komplexního typu, které lze nastavit s vlastnostmi komplexní typ z odpovědi.  
+    -   Komplexní vlastnosti jsou nastaveny na novou instanci komplexní typ, které se nastavují s vlastností komplexního typu z odpovědi.  
   
-    -   Navigační vlastnosti, které vrací kolekce entit v relaci jsou nastaveny na nový nebo existující instanci systému <xref:System.Collections.Generic.ICollection%601>, kde `T` je typ entity v relaci. Tato kolekce je prázdný, pokud souvisejících objektů, které byly načteny do <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [načítání odložení obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).  
+    -   Navigační vlastnosti, které vracejí kolekce související entity jsou nastavené na nový nebo stávající instance systému <xref:System.Collections.Generic.ICollection%601>, kde `T` je typ entity v relaci. Tato kolekce je prázdné, pokud byly načteny související objekty do <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).  
   
         > [!NOTE]
-        >  Při datové třídy generovaného klienta podporovat datové vazby, navigačních vlastností vrátit instanci <xref:System.Data.Services.Client.DataServiceCollection%601> třídy místo. Další informace najdete v tématu [vazby dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  
+        >  Když data třídy generovaného klienta podporují vytváření datových vazeb, navigačních vlastností vrátit instanci <xref:System.Data.Services.Client.DataServiceCollection%601> namísto třídy. Další informace najdete v tématu [vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  
   
 4.  <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> Událost se vyvolá.  
   
 5.  Klientská knihovna připojí objekt, který má <xref:System.Data.Services.Client.DataServiceContext>. Objekt není připojený, kdy <xref:System.Data.Services.Client.MergeOption> je <xref:System.Data.Services.Client.MergeOption.NoTracking>.  
   
-## <a name="see-also"></a>Viz také  
- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
+- [Projekce dotazů](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)

@@ -10,58 +10,58 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-ms.openlocfilehash: 104fa906fecc5a5bb8704fe3ab839f9f200cf73b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4761a3ebc3e1271846c2415d8f629500a515ed2f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649422"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54721945"
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
-Po deklarování programovací element v modulu jazyka Visual Basic zvýší úroveň jeho oboru do oboru názvů, který obsahuje modul. To se označuje jako *zadejte povýšení*.  
+Při deklaraci programovací element v modulu jazyka Visual Basic podporuje jeho obor názvů obsahující modul. To se označuje jako *zadejte povýšení*.  
   
- Následující příklad ukazuje definici kostru modulu a dva členové tohoto modulu.  
+ Následující příklad ukazuje definici kostru modulu a dva členy tohoto modulu.  
   
  [!code-vb[VbVbalrDeclaredElements#1](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_1.vb)]  
   
- V rámci `projModule`, programovací elementy deklarovat na úrovni modulu povýšené na `projNamespace`. V předchozím příkladu `basicEnum` a `innerClass` povýšené, ale `numberSub` není, protože nemá na úrovni modulu.  
+ V rámci `projModule`, programovací elementy deklarované na úrovni modulu jsou povýšeny do `projNamespace`. V předchozím příkladu `basicEnum` a `innerClass` jsou povýšeny, ale `numberSub` není, protože nemá nastavenou deklaraci na úrovni modulu.  
   
 ## <a name="effect-of-type-promotion"></a>Účinek propagace typu  
- Účinek povýšení typ je řetězec kvalifikace nemusí obsahovat název modulu. Následující příklad volá dvě podle postupu v předchozím příkladu.  
+ Efekt propagace typu je, že řetězec kvalifikace nemusí obsahovat název modulu. Následující příklad provede dvě volání do procedury v předchozím příkladu.  
   
  [!code-vb[VbVbalrDeclaredElements#2](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_2.vb)]  
   
- V předchozím příkladu použije první volání dokončení kvalifikace řetězce. Je to ale není nutné z důvodu propagace typu. Druhý volání také přístupů modulu členy bez zahrnutí `projModule` v řetězcích kvalifikaci.  
+ V předchozím příkladu používá první volání řetězce úplný kvalifikace. Ale to není nezbytné z důvodu propagace typu. Druhý také přístup k modulu členy volat bez zahrnutí `projModule` v řetězcích kvalifikace.  
   
 ## <a name="defeat-of-type-promotion"></a>Odpojovací propagace typu  
- Pokud obor názvů již obsahuje člena se stejným názvem jako člena modulu, typu povýšení se nepotlačí pro tento člen modulu. Následující příklad ukazuje definici kostru výčet a modul v rámci stejného oboru názvů.  
+ Pokud obor názvů již obsahuje člena se stejným názvem jako členský modul, propagace typu není zrušena pro tohoto člena modulu. Následující příklad ukazuje definici kostru výčet a modul v rámci stejného oboru názvů.  
   
  [!code-vb[VbVbalrDeclaredElements#3](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_3.vb)]  
   
- V předchozím příkladu, Visual Basic nelze povýšit třída `abc` k `thisNameSpace` protože výčet na úrovni oboru názvů se stejným názvem již existuje. Pro přístup k `abcSub`, musíte použít úplnou kvalifikace řetězec `thisNamespace.thisModule.abc.abcSub`. Ale třídy `xyz` je stále povýšit, a dostanete `xyzSub` s kratší řetězec kvalifikace `thisNamespace.xyz.xyzSub`.  
+ V předchozím příkladu, Visual Basic nelze zvýšit úroveň třídy `abc` k `thisNameSpace` protože výčet na úrovni oboru názvů se stejným názvem již existuje. Pro přístup k `abcSub`, je nutné použít úplnou kvalifikace řetězec `thisNamespace.thisModule.abc.abcSub`. Však třídy `xyz` stále povýšen, a také zpřístupnit `xyzSub` s kratší řetězec kvalifikace `thisNamespace.xyz.xyzSub`.  
   
 ### <a name="defeat-of-type-promotion-for-partial-types"></a>Odpojovací propagace typu pro částečné typy  
- Pokud třídu nebo strukturu uvnitř modul používá [částečné](../../../../visual-basic/language-reference/modifiers/partial.md) – klíčové slovo, propagace typu je automaticky nepotlačí pro tuto třídu nebo strukturu, zda obor názvů obsahuje člena se stejným názvem. Další prvky v modulu jsou stále vhodné pro typ akce.  
+ Pokud třída nebo struktura uvnitř modul používá [částečné](../../../../visual-basic/language-reference/modifiers/partial.md) – klíčové slovo, propagace typu není automaticky zrušena třídy nebo struktury, zda je obor názvů obsahuje člena se stejným názvem. Další prvky v modulu jsou i dál nárok pro povýšení typu.  
   
- **Důsledky.** Odpojovací propagace typu částečné definice může způsobit neočekávané výsledky a i chyby kompilátoru. Následující příklad ukazuje kostru částečné definice třídy, z nichž jeden je uvnitř modul.  
+ **Důsledky.** Odpojovací propagace typu Částečná definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Následující příklad ukazuje kostru částečné definice třídy, z nichž jeden je uvnitř modulu.  
   
  [!code-vb[VbVbalrDeclaredElements#4](../../../../visual-basic/programming-guide/language-features/declared-elements/codesnippet/VisualBasic/type-promotion_4.vb)]  
   
- V předchozím příkladu může vývojář očekávat kompilátoru sloučit dva částečné definice `sampleClass`. Ale kompilátor nebere v úvahu povýšení pro definici částečné uvnitř `sampleModule`. V důsledku toho pokusí zkompilovat dvě samostatné a jiné třídy, i s názvem `sampleClass` , ale s jinou kvalifikace cesty.  
+ V předchozím příkladu, vývojář může očekávat kompilátoru sloučit dva Částečná definice `sampleClass`. Však kompilátor nebere v úvahu propagační akce pro částečnou definici uvnitř `sampleModule`. V důsledku toho se pokusí zkompilovat dvě samostatné a odlišné třídy, oba s názvem `sampleClass` , ale s jinou kvalifikace cesty.  
   
- Kompilátor sloučí částečné definice jenom v případě, že jsou identické jejich plně kvalifikované cesty.  
+ Kompilátor sloučí částečné definice pouze v případě jejich úplné cesty jsou identické.  
   
 ## <a name="recommendations"></a>Doporučení  
- Následující doporučení představují vhodné programování.  
+ Následující doporučení představují dobrý postup programování.  
   
--   **Jedinečné názvy.** Když máte plnou kontrolu nad názvů programovací elementy, vždycky je vhodné použít všude, kde jedinečné názvy. Identické názvy vyžadovat další kvalifikace a mohl provádět kódu těžší ke čtení. Také mohou vést k jemně chyb a neočekávané výsledky.  
+-   **Jedinečné názvy.** Až budete mít plnou kontrolu nad pojmenování programovací prvky, je vždy vhodné použít všude, kde jedinečné názvy. Identické názvy vyžadovat dodatečné kvalifikace a mohou znesnadnit kódu ke čtení. Může se také vést k drobným chybám a neočekávané výsledky.  
   
--   **Úplné kvalifikaci.** Při práci s moduly a další prvky v o stejný obor názvů, nejbezpečnější způsob je vždy nutné použít úplnou kvalifikaci pro všechny programovací elementy. Pokud je propagace typu nepotlačí pro člena modulu a které nemohou být plně tohoto člena, může nechtěně přístup různé programovací element.  
+-   **Úplné kvalifikace.** Při práci s moduly a další prvky v stejný obor názvů nejbezpečnější přístup je vždycky potřeba použít úplnou kvalifikace pro všechny programovací prvky. Propagace typu není zrušena pro člena modulu a nemáte kvalifikovanou plně tohoto člena, může nechtěně přístup různé programovací element.  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)  
- [Příkaz Namespace](../../../../visual-basic/language-reference/statements/namespace-statement.md)  
- [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)  
- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
+- [Příkaz Namespace](../../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
+- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

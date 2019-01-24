@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: dotaz pro soubory s konkrétním atributem či názvem (Visual Basic)'
+title: 'Postupy: Dotaz pro soubory s konkrétním atributem či názvem (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 7a8314ba6109f25b4bc5f5952b358695844eadab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ad3ec0c18d142e8db3eddce8902b023ff00ca4d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642906"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54733148"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>Postupy: dotaz pro soubory s konkrétním atributem či názvem (Visual Basic)
-Tento příklad ukazuje, jak najít všechny soubory, které mají příponu názvu zadaný soubor (například ".txt") v zadané adresářovém stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu podle času vytvoření.  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>Postupy: Dotaz pro soubory s konkrétním atributem či názvem (Visual Basic)
+Tento příklad ukazuje, jak vyhledat všechny soubory, které mají příponu názvu souboru (například ".txt") v zadaném adresáři stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
   
 ## <a name="example"></a>Příklad  
   
@@ -61,8 +61,8 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ na objekty (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

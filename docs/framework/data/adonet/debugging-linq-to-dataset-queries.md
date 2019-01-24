@@ -2,12 +2,12 @@
 title: Ladění dotazech LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-ms.openlocfilehash: c1014db4cad54420b917585becd2a2031638c1d9
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 6c7b8c6cec39adfd5b7456d94cfae5622649e5a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123602"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680504"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
 
@@ -27,6 +27,6 @@ Visual Studio podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/li
   
  V jazyce Visual Basic v sadě Visual Studio, můžete použít funkce upravit a pokračovat na jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód v metodě, která obsahuje i [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. Můžete přidat nebo odebrat kód před [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] prohlášení, i v případě, že změny ovlivní počet řádků [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazu. V jazyce Visual Basic prostředí ladění pro jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kód zůstane stejné, jako byl před [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] byla zavedena. Nejde změnit, přidat nebo odebrat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dotazování, ale pokud zastavíte ladění, aby se změny projevily.  
   
-## <a name="see-also"></a>Viz také  
- [Ladění spravovaného kódu](/visualstudio/debugger/debugging-managed-code)  
- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
+## <a name="see-also"></a>Viz také:
+- [Ladění spravovaného kódu](/visualstudio/debugger/debugging-managed-code)
+- [Průvodce programováním](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)

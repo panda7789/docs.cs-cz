@@ -2,12 +2,12 @@
 title: Ochrana informací o připojení
 ms.date: 03/30/2017
 ms.assetid: 1471f580-bcd4-4046-bdaf-d2541ecda2f4
-ms.openlocfilehash: 6cd27f2bce1879301e80c7a8ec689971705a45b0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4c96861afc47c67c8e8c1f3721b09672ca3f48ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513474"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662215"
 ---
 # <a name="protecting-connection-information"></a>Ochrana informací o připojení
 Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů při zabezpečování aplikace. Připojovací řetězec představuje potenciální ohrožení zabezpečení, není-li zabezpečena. Ukládání informací o připojení ve formátu prostého textu nebo uchování v paměti rizika porušení zabezpečení celého systému. Připojovací řetězce vloženy do zdrojového kódu, lze jej číst pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zobrazíte jazyk Microsoft intermediate language (MSIL) v kompilovaném sestavení.  
@@ -39,8 +39,8 @@ Zabezpečení přístupu ke zdroji dat je jedním z nejdůležitějších cílů
 ## <a name="encrypt-configuration-files"></a>Šifrování konfiguračních souborů  
  Můžete také uložit připojovací řetězce v konfiguračních souborech, není potřeba, k vložení do kódu vaší aplikace. Konfigurační soubory jsou standardní soubory XML, pro které má definované rozhraní .NET Framework společnou sadu elementů. Připojovací řetězce v konfiguračních souborech jsou obvykle uložena v  **\<connectionStrings >** prvek **app.config** pro aplikace Windows nebo  **soubor Web.config** soubor pro aplikaci ASP.NET. Další informace o základní ukládání, načítání a šifrování připojovacího řetězce z konfiguračních souborů, najdete v části [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Informace o konfiguraci chráněných konfigurace šifrování](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)  
- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Informace o konfiguraci chráněných konfigurace šifrování](https://msdn.microsoft.com/library/51cdfe5b-9d82-458c-94ff-c551c4f38ed1)
+- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

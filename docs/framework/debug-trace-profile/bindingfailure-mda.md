@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d6cf0c944fc904a50a5b652f666f50c457a60204
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 663ceda1c0621e1152e795db79c3953be0090d5d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130830"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681791"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure – pomocník spravovaného ladění (MDA)
 `bindingFailure` Pomocníka spravovaného ladění (MDA) se aktivuje, když sestavení se nepodaří načíst.  
@@ -24,7 +24,7 @@ ms.locfileid: "53130830"
 ## <a name="symptoms"></a>Příznaky  
  Kód se pokusil o načtení sestavení pomocí statický odkaz nebo jednu z metod zavaděč, jako například <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. Sestavení není načteno a <xref:System.IO.FileNotFoundException> nebo <xref:System.IO.FileLoadException> je vyvolána výjimka.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Když nelze načíst sestavení modulu runtime dojde k selhání vazby. Selhání vazby může být výsledkem jednoho z následujících situací:  
   
 -   Modul CLR (CLR) nejde najít požadované sestavení. Existuje mnoho důvodů, že tato situace může nastat, jako je například sestavení není nainstalován nebo není správně nakonfigurován k vyhledání sestavení aplikace.  
@@ -98,5 +98,5 @@ namespace ConsoleApplication1
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

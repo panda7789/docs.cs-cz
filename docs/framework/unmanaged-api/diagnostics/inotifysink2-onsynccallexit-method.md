@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3fe2ebecdacd3b848d5de7eecca4753a89a58f35
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9cff5d2dd2cf13e8626d1cca7f66c976dad6d90f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620916"
 ---
 # <a name="inotifysink2onsynccallexit-method"></a>INotifySink2::OnSyncCallExit – metoda
-Získá vyvolá při ukončení volání.  
+Získá vyvolána při ukončení volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT OnSyncCallExit
   
 #### <a name="parameters"></a>Parametry  
  `in_CallID`  
- [v] ID volání probíhá byl ukončen. V tématu [CALL_ID – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ [in] ID volání se ukončil. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   
  `out_ppBuffer`  
  [out] Volání vyrovnávací paměti.  
@@ -49,12 +49,12 @@ HRESULT OnSyncCallExit
  [out] Velikost vyrovnávací paměti volání, v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda bude úspěšná.  
+ S_OK, pokud metoda uspěje.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
+- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

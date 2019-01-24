@@ -10,70 +10,70 @@ helpviewer_keywords:
 - aligning [WPF], TileBrushes
 - horizontal alignment of Tilebrushes [WPF]
 ms.assetid: 65ae89bd-9246-4c9e-bde4-2fb991d4060d
-ms.openlocfilehash: 4352067f149a1af25cd0a04a12596693188445fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 232323d42f9380409274bbd375aa0bc3515e52e3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563594"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689491"
 ---
 # <a name="how-to-set-the-horizontal-and-vertical-alignment-of-a-tilebrush"></a>Postupy: Nastavení vodorovného a svislého zarovnání TileBrush
-Tento příklad ukazuje, jak řídit vodorovného a svislého zarovnání obsahu v dlaždici. K řízení zarovnání vodorovného a svislého <xref:System.Windows.Media.TileBrush>, použijte jeho <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti.  
+Tento příklad ukazuje, jak ovládací prvek vodorovné a svislé zarovnání obsahu v bloku. K řízení vodorovného a svislého zarovnání <xref:System.Windows.Media.TileBrush>, použijte jeho <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti.  
   
- <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti <xref:System.Windows.Media.TileBrush> se používají při je splněna jedna z následujících podmínek:  
+ <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti <xref:System.Windows.Media.TileBrush> se používají Pokud je splněna jedna z následujících podmínek:  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost je <xref:System.Windows.Media.Stretch.Uniform> nebo <xref:System.Windows.Media.Stretch.UniformToFill> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> mají různé poměrům stran.  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.Uniform> nebo <xref:System.Windows.Media.Stretch.UniformToFill> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> mají různé poměry stran.  
   
--   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost je <xref:System.Windows.Media.Stretch.None> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> mají různé velikosti.  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A> Vlastnost <xref:System.Windows.Media.Stretch.None> a <xref:System.Windows.Media.TileBrush.Viewbox%2A> a <xref:System.Windows.Media.TileBrush.Viewport%2A> jsou různých velikostí.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zarovnává obsah <xref:System.Windows.Media.DrawingBrush>, který je typem <xref:System.Windows.Media.TileBrush>, do levého horního rohu jeho dlaždici. Chcete-li zarovnat obsah v příkladu je nastavena <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.DrawingBrush> k <xref:System.Windows.Media.AlignmentX.Left> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost, která má <xref:System.Windows.Media.AlignmentY.Top>. Tento příklad vytvoří následující výstup.  
+ Následující příklad Zarovná obsah <xref:System.Windows.Media.DrawingBrush>, což je typ <xref:System.Windows.Media.TileBrush>, do levého horního rohu jeho dlaždice. Zarovnání obsahu v příkladu je nastavena <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.DrawingBrush> k <xref:System.Windows.Media.AlignmentX.Left> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Top>. Tento příklad vytvoří následující výstup.  
   
- ![Objekt TileBrush s horní&#45;zarovnání vlevo](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")  
-Levém horním rohu zarovnán TileBrush s obsahem  
+ ![TileBrush s horní&#45;zarovnání vlevo](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletopleft.png "graphicsmm_TileBrushAlignmentExampleTopLeft")  
+Zarovnání TileBrush se obsah do levého horního rohu  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmentinline)]
  [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmentinline)]  
   
 ## <a name="example"></a>Příklad  
- Další příklad zarovnává obsah <xref:System.Windows.Media.DrawingBrush> do pravého dolního rohu jeho dlaždici nastavením <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Right> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Bottom>. Tento příklad vytvoří následující výstup.  
+ Následující příklad Zarovná obsah <xref:System.Windows.Media.DrawingBrush> do pravého dolního rohu jeho dlaždici tak, že nastavíte <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Right> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Bottom>. Tento příklad vytvoří následující výstup.  
   
- ![Objekt TileBrush se dolní&#45;pravým zarovnání](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")  
-Pravém dolním rohu, zarovnán TileBrush s obsahem  
+ ![TileBrush s dolní&#45;klikněte pravým tlačítkem myši zarovnání](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomright.png "graphicsmm_TileBrushAlignmentExampleBottomRight")  
+Zarovnání TileBrush se obsah do pravého dolního rohu  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
  [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
 ## <a name="example"></a>Příklad  
- Další příklad zarovnává obsah <xref:System.Windows.Media.DrawingBrush> do levého horního rohu jeho dlaždici nastavením <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Left> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Top>. Nastaví taky <xref:System.Windows.Media.TileBrush.Viewport%2A> a <xref:System.Windows.Media.TileBrush.TileMode%2A> z <xref:System.Windows.Media.DrawingBrush> k vytvoření vzoru dlaždice. Tento příklad vytvoří následující výstup.  
+ Následující příklad Zarovná obsah <xref:System.Windows.Media.DrawingBrush> do levého horního rohu jeho dlaždici tak, že nastavíte <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Left> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Top>. Také nastaví <xref:System.Windows.Media.TileBrush.Viewport%2A> a <xref:System.Windows.Media.TileBrush.TileMode%2A> z <xref:System.Windows.Media.DrawingBrush> k vytvoření vzorku dlaždice. Tento příklad vytvoří následující výstup.  
   
- ![A TileBrush rozložen formou dlaždic s horní&#45;zarovnání vlevo](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")  
-Vzor dlaždice s obsahem zarovnán levém základní dlaždice  
+ ![A tiled horní TileBrush&#45;zarovnání vlevo](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexampletoplefttiled.png "graphicsmm_TileBrushAlignmentExampleTopLeftTiled")  
+Dlaždice vzoru se obsahu zarovnána na levou horní v základní dlaždice  
   
- Označuje obrázek abase dlaždice, aby mohli zobrazit, jakým způsobem je zarovnán jeho obsah. Všimněte si, že <xref:System.Windows.Media.TileBrush.AlignmentX%2A> nastavení nemá žádný vliv, protože obsah <xref:System.Windows.Media.DrawingBrush> úplně vodorovně vyplní celé základní dlaždice.  
+ Nejdůležitější funkce obsahuje obrázek abase dlaždice tak, abyste viděli, jak se jeho obsah je zarovnán. Všimněte si, že <xref:System.Windows.Media.TileBrush.AlignmentX%2A> nastavení nemá žádný vliv, protože obsah <xref:System.Windows.Media.DrawingBrush> nesplňuje kompletně základní dlaždice vodorovně.  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushtopleftalignmenttiledinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushtopleftalignmenttiledinline)]
  [!code-xaml[brushoverviewexamples_snip#TileBrushTopLeftAlignmentTiledInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushtopleftalignmenttiledinline)]  
   
 ## <a name="example"></a>Příklad  
- Poslední příklad zarovnává obsah vedle sebe <xref:System.Windows.Media.DrawingBrush> do dolní části jeho základní dlaždice nastavením <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Right> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Bottom>. Tento příklad vytvoří následující výstup.  
+ V posledním příkladu Zarovná obsah dlaždicového <xref:System.Windows.Media.DrawingBrush> na pravém dolním rohu jeho základní dlaždice tak, že nastavíte <xref:System.Windows.Media.TileBrush.AlignmentX%2A> vlastnost <xref:System.Windows.Media.AlignmentX.Right> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnost <xref:System.Windows.Media.AlignmentY.Bottom>. Tento příklad vytvoří následující výstup.  
   
- ![A TileBrush rozložen formou dlaždic s dolní&#45;pravým zarovnání](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")  
-Vzor dlaždice s obsahem zarovnán pravém základní dlaždici  
+ ![A tiled dolní TileBrush&#45;klikněte pravým tlačítkem myši zarovnání](../../../../docs/framework/wpf/graphics-multimedia/media/graphicsmm-tilebrushalignmentexamplebottomrighttiled.png "graphicsmm_TileBrushAlignmentExampleBottomRightTiled")  
+Dlaždice vzoru se obsahu zarovnána na pravém v základní dlaždice  
   
- Znovu <xref:System.Windows.Media.TileBrush.AlignmentX%2A> nastavení nemá žádný vliv, protože obsah <xref:System.Windows.Media.DrawingBrush> úplně vodorovně vyplní celé základní dlaždice.  
+ Znovu <xref:System.Windows.Media.TileBrush.AlignmentX%2A> nastavení nemá žádný vliv, protože obsah <xref:System.Windows.Media.DrawingBrush> nesplňuje kompletně základní dlaždice vodorovně.  
   
  [!code-csharp[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_snip/CSharp/TileBrushAlignmentExample.cs#tilebrushbottomrightalignmentinline)]
  [!code-vb[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_snip/visualbasic/tilebrushalignmentexample.vb#tilebrushbottomrightalignmentinline)]
  [!code-xaml[brushoverviewexamples_snip#TileBrushBottomRightAlignmentInline](../../../../samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/TileBrushAlignmentExample.xaml#tilebrushbottomrightalignmentinline)]  
   
- Příklady používají <xref:System.Windows.Media.DrawingBrush> objekty, které se ukazují, jak <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti se používají. Tyto vlastnosti chovají stejně jako pro všechny dlaždice štětce: <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush>, a <xref:System.Windows.Media.VisualBrush>. Další informace o dlaždici štětce najdete v tématu [vykreslování s obrázky, kresby a vizuální prvky](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
+ V příkladech se používá <xref:System.Windows.Media.DrawingBrush> objekty k předvedení jak <xref:System.Windows.Media.TileBrush.AlignmentX%2A> a <xref:System.Windows.Media.TileBrush.AlignmentY%2A> vlastnosti jsou používány. Tyto vlastnosti se chovají stejně jako pro všechny dlaždice štětce: <xref:System.Windows.Media.DrawingBrush>, <xref:System.Windows.Media.ImageBrush>, a <xref:System.Windows.Media.VisualBrush>. Další informace o štětcích dlaždice najdete v tématu [Malování pomocí obrázků, kreseb a vizuálních](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.DrawingBrush>  
- <xref:System.Windows.Media.ImageBrush>  
- <xref:System.Windows.Media.VisualBrush>  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.DrawingBrush>
+- <xref:System.Windows.Media.ImageBrush>
+- <xref:System.Windows.Media.VisualBrush>
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)

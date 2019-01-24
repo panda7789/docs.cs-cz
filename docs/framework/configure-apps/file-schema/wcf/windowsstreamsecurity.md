@@ -1,22 +1,22 @@
 ---
-title: '&lt;zabezpečení windowsstreamsecurity iniciuje&gt;'
+title: '&lt;windowsStreamSecurity&gt;'
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
-ms.openlocfilehash: 6cce178910767d7fd197aff0d007b7cc3f4e60f3
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 4218072f63cabe511ca9d30c77395f734d961eca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151121"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745178"
 ---
-# <a name="ltwindowsstreamsecuritygt"></a>&lt;zabezpečení windowsstreamsecurity iniciuje&gt;
+# <a name="ltwindowsstreamsecuritygt"></a>&lt;windowsStreamSecurity&gt;
 Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení windowsstreamsecurity iniciuje >  
+\<windowsStreamSecurity>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,11 +45,11 @@ Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.
 ## <a name="remarks"></a>Poznámky  
  Na základě datového proudu přenosu inovace podporují přenosy, které používají protokol orientovaný na stream jako je například TCP a pojmenované kanály. Konkrétně WCF poskytuje upgradů zabezpečení. Konfigurace tohoto zabezpečení přenosu jsou zapouzdřena objektem tento prvek konfigurace a také zobrazením [ \<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), které se konfigurují a přidat do vlastní vazby  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>  
- <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>
+- <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -2,12 +2,12 @@
 title: Scénáře zabezpečení aplikací v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 0164f3a4-406e-4693-bec3-03c8e18b46d7
-ms.openlocfilehash: bf4f4adfd5f49bd210026e40bd5fa4e67da10d75
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 42afe27c11eadff935e162128b3d5f18c1cba8a5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994040"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687450"
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénáře zabezpečení aplikací v systému SQL Server
 Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečené klientské aplikace SQL Server. Každá aplikace je jedinečný v jeho požadavky na nasazení prostředí a uživatelům. Aplikace, který je přiměřeně zabezpečené při prvotním nasazení může být méně zabezpečené v čase. Není možné předpovědět jakékoli přesnost co hrozeb mohou vzniknout v budoucnu.  
@@ -56,8 +56,8 @@ Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečené klients
  [Povolení přístupu mezi databázemi na SQL Serveru](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
  Popisuje postup povolení přístupu mezi databázemi bez ohrožující zabezpečení.  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)
+- [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

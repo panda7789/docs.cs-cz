@@ -2,18 +2,18 @@
 title: '&lt;comContract&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: 8e0e18c934589e89ff5e10b14ba02f8daee11c66
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 2cab52b09b5cc8455531b5f76b088fd4d835ee3e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146872"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734893"
 ---
 # <a name="ltcomcontractgt"></a>&lt;comContract&gt;
 Určuje kontrakt služby integrace modelu COM +.  
   
  \<system.ServiceModel>  
-\<comContracts >  
+\<comContracts>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -88,10 +88,10 @@ Určuje kontrakt služby integrace modelu COM +.
   
  Při inicializaci služby zadaných oborů názvů trasy a názvy kontraktů se použijí na popis generované služeb.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
- <xref:System.ServiceModel.Configuration.ComContractElement>  
- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
- [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
- [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ComContractElementCollection>
+- <xref:System.ServiceModel.Configuration.ComContractElementCollection>
+- <xref:System.ServiceModel.Configuration.ComContractElement>
+- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
+- [Integrace s aplikacemi modelu COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Postupy: Konfigurace nastavení služby modelu COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

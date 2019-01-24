@@ -8,28 +8,28 @@ helpviewer_keywords:
 - credential validation [WCF]
 - credentials [WCF], validation
 ms.assetid: da831bec-e281-4d44-b343-437b5eef688e
-ms.openlocfilehash: 9b340c01a9eb4ce4007e93f2b38e292cd6543ba1
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 731131d4bc967aa3ae95eca1f9e9cbb2770f8f7c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33803450"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746567"
 ---
 # <a name="custom-credential-and-credential-validation"></a>Vlastní pověření a ověřování pověření
-Zabezpečení ve Windows Communication Foundation (WCF) je založena na výměnu přihlašovacích údajů mezi služeb a klientů. Většina scénářů zabezpečení může obsloužit pomocí běžné typy přihlašovacích údajů, jako jsou Windows (Kerberos), uživatelského jména a hesla a certifikáty. Ale pokud nový typ pověření je zapotřebí, témata v této části popisují, jak ke zpracování a ověření nové typy.  
+Zabezpečení Windows Communication Foundation (WCF) je založeno na výměnou přihlašovacích údajů mezi služeb a klientů. Většina scénářů zabezpečení je možné splnit pomocí běžných typů přihlašovacích údajů, jako jsou Windows (Kerberos), uživatelského jména a hesla a certifikáty. Ale pokud se vyžaduje nový typ přihlašovacích údajů, témata v této části popisují, jak zpracovat a nové typy ověření.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Vytvoření služby, která používá vlastní validátor certifikátů](../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
- Vysvětluje, jak přizpůsobit WCF ověření, která dědí z <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
+ Vysvětluje, jak přizpůsobit WCF ověření děděním z <xref:System.IdentityModel.Selectors.X509CertificateValidator> třídy.  
   
- [Návod: Vytvoření vlastních přihlašovacích údajů klienta a služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
- Ukazuje, jak rozšířit <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy pro uložení nové přihlašovací údaje typy. Toto je první v řadě témata, které umožňují vytváření typů vlastní pověření.  
+ [Návod: Vytvoření vlastního klienta a pověření služby](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
+ Ukazuje, jak rozšířit <xref:System.ServiceModel.Description.ClientCredentials> a <xref:System.ServiceModel.Description.ServiceCredentials> třídy tak, aby vyhovovaly nových přihlašovacích údajů typy. Toto je první v řadě témat, které umožňují vytváření typů vlastních přihlašovacích údajů.  
   
  [Postupy: Vytvoření vlastního zprostředkovatele tokenů zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
- Vysvětluje, jak vytvořit poskytovatele tokenu zabezpečení ke zpracování nových typů přihlašovacích údajů a vrátí nové tokeny pro přihlašovací údaje. Toto je druhý téma v řadě.  
+ Vysvětluje, jak vytvořit poskytovatele tokenu zabezpečení ke zpracování nových typů přihlašovacích údajů a vrátí nové tokeny pro přihlašovací údaje. Toto je druhá téma v řadě.  
   
- [Postupy: Vytvoření vlastních ověřovacích dat tokenu zabezpečení](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
- Vysvětluje, jak vytvořit vlastní ověřovací k ověření nový typ přihlašovacích údajů. Toto je třetí téma v řadě.  
+ [Postupy: Vytvořit vlastní bezpečnostní ověřovací data tokenu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)  
+ Vysvětluje, jak vytvořit vlastní ověřovací data k ověření nový typ přihlašovacích údajů. Toto je třetí téma v řadě.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel.Security>  
@@ -55,5 +55,5 @@ Zabezpečení ve Windows Communication Foundation (WCF) je založena na výměnu
   
  [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení](../../../../docs/framework/wcf/feature-details/security.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8c4a5c8efc87940b7df0bfd532beaa67931a8c81
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 98a58c5e686a0650fa62752f6d1d50706d58e8d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442115"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698658"
 ---
 # <a name="corfieldoffset-structure"></a>COR_FIELD_OFFSET – struktura
 Ukládá posun v rámci třídy, zadaného pole.  
@@ -39,20 +39,20 @@ typedef struct COR_FIELD_OFFSET {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ridOfField`|`mdFieldDef` Metadata token, který představuje pole.|  
+|`ridOfField`|`mdFieldDef` Token metadat, který představuje pole.|  
 |`ulOffset`|Pole Posun v rámci své třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
  [Imetadataimport::getclasslayout –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) a [imetadataemit::setclasslayout –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setclasslayout-method.md) metody přijímají parametr typu `COR_FIELD_OFFSET`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h, CorProf.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

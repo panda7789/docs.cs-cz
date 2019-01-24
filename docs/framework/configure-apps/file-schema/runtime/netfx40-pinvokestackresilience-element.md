@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 49dc991fd1f30bce6c328725a794750c753145cd
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 3742ab7c69b6c4870d00428ea7da9fee2a719925
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613281"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684850"
 ---
 # <a name="ltnetfx40pinvokestackresiliencegt-element"></a>&lt;Netfx40_pinvokestackresilience –&gt; – Element
 Určuje, zda modul runtime automaticky opravy nesprávné volání nespravovaného kódu deklarace v době běhu, za cenu pomalejší přechody mezi spravováno a nespravovaný kód.  
@@ -76,7 +76,7 @@ Určuje, zda modul runtime automaticky opravy nesprávné volání nespravované
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [pInvokeStackImbalance](../../../../../docs/framework/debug-trace-profile/pinvokestackimbalance-mda.md)

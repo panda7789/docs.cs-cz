@@ -17,14 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 974879b854f7a4c18aa4625ea88abb4953123f3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc33936735c40e2f30189066d80444b9fcb075ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671886"
 ---
 # <a name="icorprofilermoduleenumnext-method"></a>ICorProfilerModuleEnum::Next – metoda
-Získá zadaný počet souvislý moduly z sekvenční kolekce modulů, začínající na enumerátor na aktuální pozici v pořadí.  
+Získá zadaný počet souvislých moduly ze sekvenčního kolekce modulů, od aktuální pozice čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +38,24 @@ HRESULT Next([in]  ULONG      celt,
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet modulů pro načtení.  
+ [in] Počet modulů pro načtení.  
   
  `ids`  
- [out] Pole `ModuleID` hodnoty, z nichž každý představuje modul načtena.  
+ [out] Pole `ModuleID` hodnot, z nichž každý představuje načíst modul.  
   
  `pceltFetched`  
- [out] Ukazatel na počet elementů ve skutečnosti, vrátí se v `ids` pole.  
+ [out] Ukazatel na počet skutečně vrácených v prvků `ids` pole.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|`celt` elementy byly vráceny.|  
-|S_FALSE|Méně než `celt` byly vráceny elementy, které označuje, že výčtu je kompletní.|  
+|S_FALSE|Méně než `celt` prvky byly vráceny, což znamená, že dokončení výčtu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,6 +63,6 @@ HRESULT Next([in]  ULONG      celt,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerModuleEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

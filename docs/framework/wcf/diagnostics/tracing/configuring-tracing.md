@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: c5064d90c8601ee44be593446b0fd5ad483e57f2
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: f80d89d66253df310395cdfa3139e8765da24edb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45649995"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584909"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
 Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování generoval trasování a úrovně trasování sady, trasování sady aktivit a šíření pro podporu korelace trasování začátku do konce a nastavit naslouchacích procesů trasování pro přístup k trasování.  
@@ -68,7 +68,7 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
   
 -   System.IO.Log: Protokolování pro rozhraní .NET Framework do Common Log File System (CLFS).  
   
--   System.Runtime.Serialization: Pokud jsou objekty čteným nebo zapsaným protokoly.  
+-   System.Runtime.Serialization: Pokud jsou objekty čteným nebo zapsaným ukládá do protokolu.  
   
 -   Služba CardSpace.  
   
@@ -142,7 +142,7 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
   
  Můžete nakonfigurovat vlastní naslouchací k odesílání trasování na lince, například ke vzdálené databázi. Jako občasným aplikace měla vynutit, vhodné řízení přístupu na protokoly trasování ve vzdáleném počítači.  
   
- Můžete také nakonfigurovat naslouchací proces trasování prostřednictvím kódu programu. Další informace najdete v tématu [postupy: vytváření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648) a [vytvořením Custom TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239).  
+ Můžete také nakonfigurovat naslouchací proces trasování prostřednictvím kódu programu. Další informace najdete v tématu [jak: Vytvoření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648) a [vytváření vlastních TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
 >  Protože `System.Diagnostics.XmlWriterTraceListener` není bezpečná pro vlákno, zdroj trasování může zamknutí prostředků, výhradně při výstupu trasování. Po několika vlákny výstup trasování do zdroje trasování konfigurován pro použití tímto naslouchacím procesem, může dojít k sporu prostředků, výsledkem problému s výkonem významné. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečná pro vlákno.  
@@ -157,7 +157,7 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
 |Chyba|"Záporné" události: událostí, které označují neočekávané zpracování nebo chybový stav.|Došlo k neočekávané zpracování. Aplikace nebyla schopna provést úlohu podle očekávání. Aplikace je však stále zprovozněný.|Všechny výjimky jsou protokolovány.|Správci<br /><br /> Vývojáři aplikací|  
 |Upozornění|"Záporné" události: událostí, které označují neočekávané zpracování nebo chybový stav.|Možný problém došlo k chybě nebo může dojít, ale stále funkce aplikace správně. Nemusí ale dál správně fungovat.|-Aplikace přijímá více požadavků než umožní její nastavení omezení šířky pásma.<br />-Přijímající fronty se blíží maximální kapacitě nakonfigurované.<br />– Byla překročena časový limit.<br />-Credentials odmítají.|Správci<br /><br /> Vývojáři aplikací|  
 |Informace o|"Pozitivní" události: událostí, které označují úspěšné milníky|Důležité a úspěšné milníky spuštění aplikace, bez ohledu na to, zda aplikace funguje správně.|Obecně platí zprávy, které jsou užitečné pro monitorování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Tyto informace můžete použít pro správu výkon a plánování kapacity:<br /><br /> -Kanály jsou vytvořeny.<br />-Koncového bodu naslouchací procesy jsou vytvořeny.<br />-Zpráva zadá/ponechá přenosu.<br />-Načte token zabezpečení.<br />– Nastavení konfigurace je pro čtení.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
-|verbose|"Pozitivní" události: událostí, které označují úspěšné milníky.|Jsou emitovány nízké událostí na úrovni pro uživatelský kód a údržbu.|Obecně platí můžete použít tuto úroveň optimalizace pro ladění nebo aplikace.<br /><br /> -Záhlaví zprávy bylo porozuměno.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
+|Podrobnosti|"Pozitivní" události: událostí, které označují úspěšné milníky.|Jsou emitovány nízké událostí na úrovni pro uživatelský kód a údržbu.|Obecně platí můžete použít tuto úroveň optimalizace pro ladění nebo aplikace.<br /><br /> -Záhlaví zprávy bylo porozuměno.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
 |ActivityTracing||Tok událostí mezi zpracování aktivit a komponent.|Tato úroveň umožňuje vývojářům a správcům ke korelaci aplikací ve stejné doméně aplikace:<br /><br /> -Trasování pro hranice aktivity, jako je například spuštění/zastavení.<br />-Trasování pro přenosy.|Všechny|  
 |Všechny||Aplikace může fungovat správně. Všechny události se vysílají.|Všechny předchozí události.|Všechny|  
   
@@ -180,8 +180,8 @@ Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje traso
   
  Nelze použít `propagateActivity` atribut s uživatelem definované trasování zdrojů. Pro šíření ID aktivity uživatele kódu, ujistěte se, že nenastavíte ServiceModel `ActivityTracing`, přitom stále má ServiceModel `propagateActivity` atribut nastaven na `true`.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)  
- [Postupy: Vytváření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648)  
- [Vytváření vlastních TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [Postupy: Vytvoření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648)
+- [Vytváření vlastních TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239)

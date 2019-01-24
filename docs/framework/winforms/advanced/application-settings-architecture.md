@@ -7,52 +7,52 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: 769077ddbe42d4d774d359de75417bdca6bcaeb5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e26684933ee2e35dfb0daa52588c2c87505f3f9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687242"
 ---
 # <a name="application-settings-architecture"></a>Architektura nastavení aplikace
-Toto téma popisuje, jak funguje architektura nastavení aplikace a jsou zde popsány pokročilé funkce architektury, jako jsou seskupené nastavení a nastavení klíče.  
+Toto téma popisuje, jak funguje nastavení aplikace architektury a zkoumá možnosti pokročilých funkcích sady architektury, jako jsou seskupené nastavení a nastavení klíče.  
   
- Architektura nastavení aplikace podporuje definující silného typu nastavení s aplikací nebo oboru uživatele a uložením nastavení mezi relacemi aplikace. Architektura poskytuje výchozí trvalost modul pro ukládání nastavení a jejich načtení z místního systému souborů. Architektura také definuje rozhraní pro zadávání vlastního modulu.  
+ Architektura nastavení aplikace podporuje definující silného typu nastavení aplikace nebo oboru uživatele, a uložením nastavení mezi relacemi aplikace. Tato architektura poskytuje výchozí web trvalosti pro nastavení pro ukládání a načítání z místního systému souborů. Tato architektura také definuje rozhraní pro zadávání vlastního modulu.  
   
- Rozhraní jsou k dispozici, které umožňují vlastní součásti se zachovat jejich vlastní nastavení, když jsou hostované v aplikaci. Pomocí nastavení klíčů součásti můžete oddělit nastavení pro více instancí součásti.  
+ Rozhraní jsou k dispozici, které umožňují vlastní komponenty se zachovat své vlastní nastavení, když jsou hostované v aplikaci. Pomocí nastavení klíče součásti můžete oddělit nastavení pro víc instancí komponenty.  
   
 ## <a name="defining-settings"></a>Definování nastavení  
- Architektura nastavení aplikace se používá v rámci obě [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a Windows Forms a obsahuje počet základní třídy, které se sdílí v obou prostředích. Nejdůležitější je <xref:System.Configuration.SettingsBase>, který poskytuje přístup k nastavení v kolekci a poskytuje metody, nízké úrovně pro načítání a ukládá se nastavení. Každé prostředí implementuje vlastní třídy odvozené od <xref:System.Configuration.SettingsBase> nabízí funkce další nastavení pro prostředí. V aplikaci na základě formulářů Windows, musí být definovaný všechna nastavení aplikace pro třídy odvozené od <xref:System.Configuration.ApplicationSettingsBase> třída, která přidá následující funkce základní třídy:  
+ Architektura nastavení aplikace se používá v rámci obou [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a Windows Forms, který obsahuje řadu základních tříd, které jsou sdíleny mezi oběma prostředími. Nejdůležitější je <xref:System.Configuration.SettingsBase>, který poskytuje přístup k nastavení prostřednictvím kolekce a poskytuje nízké úrovně metody pro načítání a ukládání nastavení. Každé prostředí implementuje své vlastní třídy odvozené od <xref:System.Configuration.SettingsBase> nakonfigurovánu další nastavení pro toto prostředí. V aplikaci na základě formulářů Windows, všechna nastavení aplikace musí být definován ve třídě odvozené z <xref:System.Configuration.ApplicationSettingsBase> třídu, která přidá následující funkce na základní třídu:  
   
--   Načítání vyšší úrovně a ukládání operace  
+-   Vyšší úrovně načítání a ukládání operace  
   
 -   Podpora pro nastavení rozsahu uživatele  
   
--   Vrácení nastavení uživatele na předdefinované výchozí hodnoty  
+-   Při vrácení nastavení uživatele do předdefinované nastavení  
   
 -   Upgrade nastavení z předchozí verze aplikace  
   
--   Ověření nastavení, než jsou změněna nebo před jsou uloženy  
+-   Ověřují se nastavení, než se mění nebo před jejich uložením  
   
- Nastavení lze popsat pomocí několik atributů, které jsou definované v rámci <xref:System.Configuration> obor názvů; tyto možnosti jsou popsány v [atributy nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-attributes.md). Při definování nastavení, musíte ho použít s buď <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, který popisuje, zda nastavení platí v celé aplikaci nebo jenom pro aktuálního uživatele.  
+ Tato nastavení můžete popsaná s počtem atributů definovaných v rámci <xref:System.Configuration> obor názvů; tyto možnosti jsou popsány v [atributy nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-attributes.md). Při definování nastavení, musí ho použít s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>, která popisuje, zda nastavení platí pro celou aplikaci nebo jenom pro aktuálního uživatele.  
   
- Následující příklad kódu definuje třídu vlastní nastavení s jedním nastavením `BackgroundColor`.  
+ Následující příklad kódu definuje vlastní nastavení třída s atributem jedno nastavení `BackgroundColor`.  
   
  [!code-csharp[ApplicationSettings.Create#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Create/CS/MyAppSettings.cs#1)]
  [!code-vb[ApplicationSettings.Create#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Create/VB/MyAppSettings.vb#1)]  
   
-## <a name="settings-persistence"></a>Trvalost nastavení  
- <xref:System.Configuration.ApplicationSettingsBase> Třída není samotné zachovat nebo načíst nastavení; tato úloha se k nastavení poskytovatele, třída odvozená z <xref:System.Configuration.SettingsProvider>. Pokud odvozené třídy z <xref:System.Configuration.ApplicationSettingsBase> neurčuje nastavení zprostředkovatele prostřednictvím <xref:System.Configuration.SettingsProviderAttribute>, pak výchozího zprostředkovatele, <xref:System.Configuration.LocalFileSettingsProvider>, se používá.  
+## <a name="settings-persistence"></a>Nastavení trvalosti  
+ <xref:System.Configuration.ApplicationSettingsBase> Třída nemá sama zachovat nebo načíst nastavení; tato úloha přejde k nastavení zprostředkovatele, třídy, která je odvozena z <xref:System.Configuration.SettingsProvider>. Pokud odvozenou třídu <xref:System.Configuration.ApplicationSettingsBase> neurčuje zprostředkovatele nastavení prostřednictvím <xref:System.Configuration.SettingsProviderAttribute>, pak výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, se používá.  
   
- Konfigurace systému, původně vydaná s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] podporuje poskytuje data konfigurace statických aplikace pomocí souboru machine.config v místním počítači nebo v `app.`exe.config souboru, který nasazujete s vaše aplikace. <xref:System.Configuration.LocalFileSettingsProvider> Třída rozšíří tato nativní podpora následujícími způsoby:  
+ Konfigurační systém, který byl poprvé uveden s [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] podporuje poskytování statických aplikace konfigurační data místním počítači během procházení souboru machine.config nebo v rámci `app.`exe.config soubor, který nasazujete s vaše aplikace. <xref:System.Configuration.LocalFileSettingsProvider> Třída rozšiřuje tato nativní podpora následujícími způsoby:  
   
--   Nastavení rozsahu aplikace se dá uložit buď souboru machine.config nebo `app.`exe.config soubory. Souboru Machine.config je vždy jen pro čtení, při `app`. exe.config je omezené na základě aspekty zabezpečení jen pro čtení pro většinu aplikací.  
+-   Nastavení oboru aplikace mohou být uloženy v obou souboru machine.config nebo `app.`exe.config soubory. Machine.config je vždy jen pro čtení, při `app`. exe.config omezil aspekty zabezpečení jen pro čtení pro většinu aplikací.  
   
--   Nastavení rozsahu uživatele mohou být uloženy ve `app`. exe.config souborů, v takovém případě jsou považovány za statickou výchozí hodnoty.  
+-   Nastavení rozsahu uživatele mohou být uloženy v `app`. exe.config souborů, v takovém případě jsou považovány za statické výchozí hodnoty.  
   
--   Jiné než výchozí nastavení uživatele nastavení ukládají do nového souboru *uživatele*.config, kde *uživatele* je uživatelské jméno osoby, které jsou aktuálně spuštěné aplikace. Můžete zadat výchozí hodnoty pro nastavení rozsahu uživatele s <xref:System.Configuration.DefaultSettingValueAttribute>. Protože uživatelských nastavení při spuštění aplikace, často mění `user`.config je vždy pro čtení a zápis.  
+-   Nestandardní nastavení rozsahu uživatele jsou uloženy v novém souboru *uživatele*.config, kde *uživatele* je uživatelské jméno osoby, běžící aplikaci. Můžete určit výchozí hodnoty pro nastavení rozsahu uživatele s <xref:System.Configuration.DefaultSettingValueAttribute>. Protože nastavení rozsahu uživatele při spuštění aplikace, často mění `user`.config je vždy čtení a zápisu.  
   
- Všechny tři konfigurační soubory uložit nastavení ve formátu XML. Element XML nejvyšší úrovně pro nastavení rozsahu aplikace je `<appSettings>`, zatímco `<userSettings>` se používá pro nastavení rozsahu uživatele. `app`. Exe.config soubor, který obsahuje nastavení pro obor aplikace a výchozí hodnoty pro nastavení rozsahu uživatele bude vypadat takto:  
+ Všechny tři konfigurační soubory uložit nastavení je ve formátu XML. Element XML nejvyšší úrovně pro nastavení oboru aplikace je `<appSettings>`, zatímco `<userSettings>` se používá pro nastavení rozsahu uživatele. `app`. Exe.config soubor, který obsahuje nastavení oboru aplikace a výchozí hodnoty pro nastavení rozsahu uživatele bude vypadat takto:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -88,69 +88,69 @@ Toto téma popisuje, jak funguje architektura nastavení aplikace a jsou zde pop
 </configuration>  
 ```  
   
- Definice elementů v rámci část konfiguračního souboru pro nastavení aplikace, najdete v části [aplikace – schéma nastavení](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md).  
+ Definice prvků v sekci nastavení aplikace konfiguračního souboru, naleznete v tématu [schéma nastavení aplikace](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md).  
   
 ### <a name="settings-bindings"></a>Nastavení vazby  
- Nastavení aplikace používá architektuře Windows Forms datové vazby k poskytnutí obousměrné komunikace aktualizace nastavení mezi objekt nastavení a součásti. Pokud používáte Visual Studio k vytvoření nastavení aplikace a přiřadit k vlastnosti součásti, jsou automaticky generovány těchto vazeb.  
+ Nastavení aplikace používá architekturu vazby Windows Forms data pro zajištění obousměrná komunikace aktualizace nastavení mezi objekt nastavení a komponenty. Pokud používáte sadu Visual Studio můžete vytvořit nastavení aplikace a přiřadit je k vlastnosti komponenty, tyto vazby automaticky generovány.  
   
- Nastavení aplikace můžete vázat jen na komponenty, která podporuje <xref:System.Windows.Forms.IBindableComponent> rozhraní. Navíc musí implementovat událost změny pro konkrétní vázaný vlastnost komponentu, nebo oznámit nastavení aplikace, která má vlastnost změnit prostřednictvím <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Pokud komponentu neimplementuje <xref:System.Windows.Forms.IBindableComponent> a vytváříte vazbu pomocí sady Visual Studio, nastaví se poprvé vázané vlastnosti, ale nebude aktualizovat. Pokud komponentu implementuje <xref:System.Windows.Forms.IBindableComponent> , ale nemá vlastnost podpora upozornění na změnu, vazba nebude aktualizovat v souboru nastavení při změně vlastnosti.  
+ Nastavení aplikace lze vázat jenom na komponentu, která podporuje <xref:System.Windows.Forms.IBindableComponent> rozhraní. Navíc komponenty musí implementovat událost změny pro konkrétní vázat vlastnosti nebo nastavení aplikace, která je změněna vlastnost prostřednictvím oznámení <xref:System.ComponentModel.INotifyPropertyChanged> rozhraní. Pokud součást neimplementuje <xref:System.Windows.Forms.IBindableComponent> a připojujete pomocí sady Visual Studio, nastaví se při prvním vázané vlastnosti, ale nebude aktualizovat. Pokud komponenta implementuje <xref:System.Windows.Forms.IBindableComponent> , ale nezmění není vlastnost podpora oznámení, vazba se nebude aktualizovat v souboru s nastaveními, když je změněna vlastnost.  
   
- Některé součásti Windows Forms, jako například <xref:System.Windows.Forms.ToolStripItem>, nepodporují nastavení vazby.  
+ Některé součásti Windows Forms, jako například <xref:System.Windows.Forms.ToolStripItem>, nepodporuje nastavení vazby.  
   
 ### <a name="settings-serialization"></a>Nastavení serializace  
  Když <xref:System.Configuration.LocalFileSettingsProvider> nastavení musíte uložit na disk, provede následující akce:  
   
-1.  Zkontrolujte všechna vlastnosti definované na pomocí reflexe vaše <xref:System.Configuration.ApplicationSettingsBase> odvozené třídy, ty, které se použijí s buď hledání <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>.  
+1.  Používá reflexi ke kontrole všechny vlastnosti definované ve vašich <xref:System.Configuration.ApplicationSettingsBase> odvozené třídy, jak najít ty, které se použijí s oběma <xref:System.Configuration.ApplicationScopedSettingAttribute> nebo <xref:System.Configuration.UserScopedSettingAttribute>.  
   
-2.  Serializuje vlastnost na disk. Nejprve pokusí zavolat <xref:System.ComponentModel.TypeConverter.ConvertToString%2A> nebo <xref:System.ComponentModel.TypeConverter.ConvertFromString%2A> na typ přidruženému <xref:System.ComponentModel.TypeConverter>. Pokud to nebude úspěšná, používá serializace XML místo.  
+2.  Serializuje vlastnost na disk. Prvním pokusu o volání <xref:System.ComponentModel.TypeConverter.ConvertToString%2A> nebo <xref:System.ComponentModel.TypeConverter.ConvertFromString%2A> na typ přidružený k tomuto <xref:System.ComponentModel.TypeConverter>. Pokud se to nezdaří, pomocí serializace XML místo.  
   
-3.  Určuje nastavení, které v které soubory, přejděte na základě atributu název nastavení.  
+3.  Určuje které nastavení přejděte v které soubory na základě nastavení atributu.  
   
- Pokud budete implementovat vlastní třída nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> označit nastavení buď pomocí binary nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytvoření vlastní třídy nastavení v kódu najdete v tématu [postupy: vytvoření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).  
+ Pokud se rozhodnete implementovat vlastní třídu nastavení, můžete použít <xref:System.Configuration.SettingsSerializeAsAttribute> k označení nastavení buď pomocí binární nebo vlastní serializace <xref:System.Configuration.SettingsSerializeAs> výčtu. Další informace o vytváření vlastních nastavení třídy v kódu, naleznete v tématu [jak: Vytvořit nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-create-application-settings.md).  
   
-### <a name="settings-file-locations"></a>Nastavení umístění souborů  
- Umístění `app`. exe.config a *uživatele*soubory .config se liší podle toho, jak je aplikace nainstalována. Pro aplikaci na základě formulářů Windows zkopírovali do místního počítače `app`. exe.config se bude nacházet ve stejném adresáři jako základního adresáře aplikace hlavní spustitelný soubor, a *uživatele*.config se bude nacházet v umístění, které <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A?displayProperty=nameWithType> vlastnost. Pro aplikaci nainstalovat prostřednictvím [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], oba tyto soubory se bude nacházet v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat pod %InstallRoot%\Documents a nastavení\\*uživatelské jméno*\Local nastavení.  
+### <a name="settings-file-locations"></a>Umístění souboru nastavení  
+ Umístění `app`. exe.config a *uživatele*souborech .config se liší v závislosti na tom, jak se aplikace nainstaluje. Pro aplikace založené na formulářích Windows zkopírovat do místního počítače `app`. exe.config se bude nacházet ve stejném adresáři jako základní adresář aplikace hlavní spustitelný soubor, a *uživatele*.config se bude nacházet v umístění určeného proměnnou <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A?displayProperty=nameWithType> vlastnost. Pro aplikace nainstalované prostřednictvím [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], oba tyto soubory se bude nacházet v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat pod %InstallRoot%\Documents a nastavení\\*uživatelské jméno*\Local nastavení.  
   
- Umístění úložiště těchto souborů se mírně liší, pokud uživatel aktivoval cestovní profily, díky čemuž by uživatelé k definování různých Windows a nastavení aplikace, když uživatel používá jiné počítače v rámci domény. V takovém případě obě [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace a jiných-[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace bude mít jejich `app`. exe.config a *uživatele*.config soubory uložené v části Nastavení a %InstallRoot%\Documents\\ *uživatelské jméno*\Application Data.  
+ Umístění úložiště těchto souborů se mírně liší, pokud uživatel má povolen cestovní profily, díky čemuž by uživatelé k definování různých Windows a nastavení aplikace, když uživatel používá jiné počítače v rámci domény. V takovém případě obě [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace a bez-[!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace budou mít jejich `app`. exe.config a *uživatele*.config soubory uložené v části Nastavení a %InstallRoot%\Documents\\ *uživatelské jméno*\Application Data.  
   
- Další informace o fungování funkce nastavení aplikace s novou technologií nasazení najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings). Další informace o [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat najdete v části [přístup k místním a vzdáleným datům v aplikacích ClickOnce](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications).  
+ Další informace o tom, jak funguje funkce nastavení aplikace s novou technologií nasazení najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings). Další informace o [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] adresář dat, naleznete v tématu [Accessing Local and Remote Data in ClickOnce Applications](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications).  
   
 ## <a name="application-settings-and-security"></a>Nastavení aplikace a zabezpečení  
- Nastavení aplikace jsou navrženy pro práci v částečné důvěryhodnosti, prostředí s omezeným přístupem, které je výchozí nastavení pro aplikace Windows Forms hostované prostřednictvím Internetu nebo intranetu. Žádná zvláštní oprávnění nad rámec částečné důvěryhodnosti jsou potřeba k použití nastavení aplikace pomocí výchozího nastavení zprostředkovatele.  
+ Nastavení aplikace jsou navrženy pro práci v částečném vztahu důvěryhodnosti, prostředí s omezeným přístupem, které je výchozí nastavení pro aplikace Windows Forms hostovaná přes Internet nebo intranet. K použití nastavení aplikace se ve výchozím nastavení jsou požadována žádná zvláštní oprávnění nad rámec částečným vztahem důvěryhodnosti.  
   
- Při použití nastavení aplikace v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace, `user`.config soubor je uložen v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] datový adresář. Velikost aplikace `user`souboru .config nesmí překročit kvótu directory data, která nastavuje [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]. Další informace najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings).  
+ Při použití nastavení aplikace v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] aplikace, `user`soubor .config je uložený v [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] datový adresář. Velikost aplikace `user`soubor .config nesmí překročit kvóta adresáře data nastavením [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)]. Další informace najdete v tématu [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings).  
   
-## <a name="custom-settings-providers"></a>Vlastní nastavení zprostředkovatele  
- V architektuře nastavení aplikace je volné párování mezi nastavení aplikací obálkovou třídu, odvozené od <xref:System.Configuration.ApplicationSettingsBase>, a související nastavení poskytovatele nebo poskytovatelů, odvozené z <xref:System.Configuration.SettingsProvider>. Toto přidružení je definována pouze pomocí <xref:System.Configuration.SettingsProviderAttribute> použít pro třídu obálky nebo jeho jednotlivé vlastnosti. Pokud zadaný zprostředkovatel není explicitně nastavení, výchozího zprostředkovatele, <xref:System.Configuration.LocalFileSettingsProvider>, se používá. V důsledku toho tato architektura podporuje vytváření a používání zprostředkovatelů vlastní nastavení.  
+## <a name="custom-settings-providers"></a>Vlastní nastavení zprostředkovatelů  
+ V nastavení aplikace architektury, je volné párování mezi nastavení aplikace obálkovou třídu odvozenou z <xref:System.Configuration.ApplicationSettingsBase>, a související nastavení zprostředkovatele nebo zprostředkovatele, odvozený z <xref:System.Configuration.SettingsProvider>. Toto přidružení je definována pouze <xref:System.Configuration.SettingsProviderAttribute> použitý pro obálkovou třídu nebo jeho jednotlivé vlastnosti. Pokud nastavení poskytovatele není explicitně zadán, výchozí zprostředkovatel <xref:System.Configuration.LocalFileSettingsProvider>, se používá. V důsledku toho tato architektura podporuje vytváření a používání vlastních nastavení zprostředkovatele.  
   
- Předpokládejme například, že chcete pro vývoj a použít `SqlSettingsProvider`, zprostředkovatele, který se uloží všechna nastavení data v databázi Microsoft SQL Server. Vaše <xref:System.Configuration.SettingsProvider>-odvozené třídy by se zobrazit tyto informace v jeho `Initialize` metoda jako parametr typu <xref:System.Collections.Specialized.NameValueCollection?displayProperty=nameWithType>. Potom by implementovat <xref:System.Configuration.SettingsProvider.GetPropertyValues%2A> metoda pro načtení nastavení z úložiště dat a <xref:System.Configuration.SettingsProvider.SetPropertyValues%2A> o jejich uložení. Můžete použít poskytovatele <xref:System.Configuration.SettingsPropertyCollection> zadané <xref:System.Configuration.SettingsProvider.GetPropertyValues%2A> k určení názvu vlastnosti, typ a oboru, stejně jako všechny ostatní atributy nastavení definované pro tuto vlastnost.  
+ Předpokládejme například, chcete-li k vývoji a použít `SqlSettingsProvider`, zprostředkovatel, který uloží všechna nastavení data v databázi Microsoft SQL Server. Vaše <xref:System.Configuration.SettingsProvider>-odvozené třídy získá tuto informaci v jeho `Initialize` metodu jako parametr typu <xref:System.Collections.Specialized.NameValueCollection?displayProperty=nameWithType>. Pak byste implementovali <xref:System.Configuration.SettingsProvider.GetPropertyValues%2A> metodu pro načtení z úložiště dat, nastavení a <xref:System.Configuration.SettingsProvider.SetPropertyValues%2A> k jejich uložení. Můžete použít poskytovatele <xref:System.Configuration.SettingsPropertyCollection> předaná <xref:System.Configuration.SettingsProvider.GetPropertyValues%2A> k určení názvu vlastnosti, typ a oboru, stejně jako ostatní nastavení atributy definované pro tuto vlastnost.  
   
- Poskytovatel bude nutné implementovat jednu vlastnost a jedna metoda, jejíž implementace nemusí být samozřejmé. <xref:System.Configuration.SettingsProvider.ApplicationName%2A> Vlastnost je abstraktní vlastnosti <xref:System.Configuration.SettingsProvider>; by ho vrátit následující program:  
+ Váš poskytovatel bude nutné implementovat jednou vlastností a metod, jejichž implementace nemusí být samozřejmé. <xref:System.Configuration.SettingsProvider.ApplicationName%2A> Je abstraktní vlastnost z <xref:System.Configuration.SettingsProvider>; by se vrátit následující program:  
   
  [!code-csharp[ApplicationSettings.Architecture#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#2)]
  [!code-vb[ApplicationSettings.Architecture#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#2)]  
   
- Odvozené třídy musí také implementovat `Initialize` metodu, která nezadávaly žádné argumenty a nevrací žádnou hodnotu. Tato metoda není definované <xref:System.Configuration.SettingsProvider>.  
+ Odvozené třídy musí implementovat taky `Initialize` metodu, která nepřijímá žádné argumenty a nevrací žádnou hodnotu. Tato metoda není definována <xref:System.Configuration.SettingsProvider>.  
   
- Nakonec implementovat <xref:System.Configuration.IApplicationSettingsProvider> na svého poskytovatele kvůli zajištění podpory pro aktualizaci nastavení vrácení nastavení na výchozí nastavení a nastavení upgrade z verze jednu aplikaci do jiného.  
+ Nakonec můžete implementovat <xref:System.Configuration.IApplicationSettingsProvider> ve zprostředkovateli k poskytování podpory pro aktualizaci nastavení vracení nastavení na výchozí nastavení a nastavení upgrade z verze jednu aplikaci do jiného.  
   
- Po implementovat a zkompilovat svého poskytovatele, budete muset pokyn třídu pro tohoto zprostředkovatele použijte místo výchozího nastavení. Můžete dosáhnout pomocí <xref:System.Configuration.SettingsProviderAttribute>. Pokud pro celou třídu nastavení, je pro každé nastavení, která definuje třídu; používá zprostředkovatele Pokud pro jednotlivá nastavení, architektura nastavení aplikace používá tohoto zprostředkovatele pro taková nastavení pouze a <xref:System.Configuration.LocalFileSettingsProvider> pro zbytek. Následující příklad kódu ukazuje, jak se udělit pokyny třídu nastavení vlastního zprostředkovatele.  
+ Po implementovat a kompilaci vašeho poskytovatele, je potřeba dát pokyn k používání tohoto poskytovatele místo výchozího nastavení třídu. Toho dosáhnete pomocí <xref:System.Configuration.SettingsProviderAttribute>. Pokud se použije pro celou třídu nastavení zprostředkovatele se používá pro každé nastavení, která definuje třídu; Pokud individuální nastavení, použije architektura nastavení aplikace používá zprostředkovatele pro tato nastavení jenom a používá <xref:System.Configuration.LocalFileSettingsProvider> pro ostatní. Následující příklad kódu ukazuje, jak dát pokyn třídu nastavení vlastního zprostředkovatele.  
   
  [!code-csharp[ApplicationSettings.Architecture#1](../../../../samples/snippets/csharp/VS_Snippets_Winforms/ApplicationSettings.Architecture/CS/DummyClass.cs#1)]
  [!code-vb[ApplicationSettings.Architecture#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ApplicationSettings.Architecture/VB/DummyProviderClass.vb#1)]  
   
- Zprostředkovatel může být volána z více vláken současně, ale bude vždy zapisovat do stejného umístění úložiště; Architektura nastavení aplikace vytvoří instanci proto vždy jen jednu instanci třídě zprostředkovatele.  
+ Zprostředkovatel může být volána z více vláken současně, ale bude vždy zapisovat do stejného umístění úložiště; Architektura nastavení aplikace, proto vytvoří instanci vždy jen jednu instanci třídy zprostředkovatele.  
   
 > [!IMPORTANT]
->  Můžete by měl zkontrolujte, zda poskytovatel je bezpečné pro přístup z více vláken a umožňuje pouze jedno vlákno současně zapisovat do konfigurační soubory.  
+>  Měli byste zajistit, že váš poskytovatel je bezpečná pro vlákno a povoluje pouze jedno vlákno v době zapisovat do konfigurační soubory.  
   
- Poskytovatel nemusí podporovat všechny atributy definované v nastavení <xref:System.Configuration?displayProperty=nameWithType> obor názvů, i když se musí nacházet na minimální podporu <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute>a musí taky podporovat <xref:System.Configuration.DefaultSettingValueAttribute>. Pro tyto atributy, které nejsou podporovány má poskytovatel právě selhat bez oznámení; nesmí se vyvolat výjimku. Pokud třída nastavení používá neplatnou kombinaci atributů, ale – například použití <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute> na stejnou hodnotu nastavení – poskytovatel by měla vyvolat výjimku a ukončení provádění operace.  
+ Váš poskytovatel nemusí podporovat všechny atributy definované v nastavení <xref:System.Configuration?displayProperty=nameWithType> obor názvů, ale musí být minimální podpory <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute>a také podporovat <xref:System.Configuration.DefaultSettingValueAttribute>. Pro tyto atributy, které nepodporuje váš poskytovatel by měl pouze selhat a oznámení; ji by neměla vyvolávat výjimky. Pokud třída nastavení používá neplatnou kombinaci atributů, ale – například při použití <xref:System.Configuration.ApplicationScopedSettingAttribute> a <xref:System.Configuration.UserScopedSettingAttribute> stejné nastavení, váš poskytovatel by měl vyvolat výjimku a zastavit provádění operací.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Configuration.ApplicationSettingsBase>  
- <xref:System.Configuration.SettingsProvider>  
- <xref:System.Configuration.LocalFileSettingsProvider>  
- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Nastavení aplikace pro vlastní ovládací prvky](../../../../docs/framework/winforms/advanced/application-settings-for-custom-controls.md)  
- [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings)  
- [Schéma nastavení aplikace](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.ApplicationSettingsBase>
+- <xref:System.Configuration.SettingsProvider>
+- <xref:System.Configuration.LocalFileSettingsProvider>
+- [Přehled nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Nastavení aplikace pro vlastní ovládací prvky](../../../../docs/framework/winforms/advanced/application-settings-for-custom-controls.md)
+- [ClickOnce a nastavení aplikace](/visualstudio/deployment/clickonce-and-application-settings)
+- [Schéma nastavení aplikace](../../../../docs/framework/configure-apps/file-schema/application-settings-schema.md)

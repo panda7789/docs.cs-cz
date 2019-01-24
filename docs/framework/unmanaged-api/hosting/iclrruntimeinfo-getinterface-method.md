@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4924f373270a30b593e27c334d383963fc4a7cf0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 770901d5461d2092ce5f2862624a038caf03e1f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435848"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678655"
 ---
 # <a name="iclrruntimeinfogetinterface-method"></a>ICLRRuntimeInfo::GetInterface – metoda
 Načte modul CLR do aktuální proces a vrátí runtime ukazatele rozhraní, jako například [iclrruntimehost –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md), [iclrstrongname –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md), a [imetadatadispenserex –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md).  
   
- Tato metoda nahrazuje všechny `CorBindTo`* funkce [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) části.  
+ Tato metoda nahrazuje všechny `CorBindTo`* funkce v [zastaralé funkce hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md) oddílu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetInterface(
   
 #### <a name="parameters"></a>Parametry  
  `rclsid`  
- [v] Rozhraní CLSID coclass.  
+ [in] Identifikátor CLSID rozhraní pro coclass.  
   
  `riid`  
- [v] Identifikátory IID požadované `rclsid` rozhraní.  
+ [in] Požadovaný identifikátor IID `rclsid` rozhraní.  
   
  `ppUnk`  
- [out] Ukazatel rozhraní předmětem dotazu.  
+ [out] Ukazatel na rozhraní poslal dotaz.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
 |E_POINTER|`ppUnk` má hodnotu null.|  
-|E_OUTOFMEMORY|Je k dispozici pro zpracování požadavku není dostatek paměti.|  
-|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime byl již vázána na starší verzi zásad 2 aktivace verze CLR.|  
+|E_OUTOFMEMORY|Nedostatek paměti je k dispozici pro zpracování požadavku.|  
+|CLR_E_SHIM_LEGACYRUNTIMEALREADYBOUND|Jiný modul runtime je již vázán na starší verze 2 Aktivace zásady CLR verze.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda způsobí, že CLR do být načtena, avšak nebyla inicializována.  
+ Tato metoda způsobí, že modul CLR do načtena, avšak nebyla inicializována.  
   
- Následující tabulka uvádí podporované kombinace pro `rclsid` a `riid`.  
+ V následující tabulce jsou uvedeny podporované kombinace pro `rclsid` a `riid`.  
   
 |`rclsid`|`riid`|  
 |--------------|------------|  
@@ -75,15 +75,15 @@ HRESULT GetInterface(
 |CLSID_CLRStrongName|IID_ICLRStrongName|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

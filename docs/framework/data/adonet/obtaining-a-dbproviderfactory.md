@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: fdda1bd4d3aca440558998231f411b614bd5542e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: daaa93c4da16ac67b7f7018fdafdc2b2d9f0784a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506173"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692779"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
 Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o zprostředkovateli dat k <xref:System.Data.Common.DbProviderFactories> třídy. Na základě těchto informací, <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří objekt pro vytváření zprostředkovatele silného typu. Například, chcete-li vytvořit <xref:System.Data.SqlClient.SqlClientFactory>, můžete předat `GetFactory` řetězec s názvem zprostředkovatele zadán jako "System.Data.SqlClient". Další přetížení `GetFactory` přijímá <xref:System.Data.DataRow>. Jakmile vytvoříte objekt pro vytváření zprostředkovatele, pak můžete jeho metody vytvářet další objekty. Některé z metod `SqlClientFactory` zahrnují <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -41,10 +41,10 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
   
 |Pořadí sloupce|Název sloupce|Příklad výstupu|Popis|  
 |--------------------|-----------------|--------------------|-----------------|  
-|0|**Jméno**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
+|0|**Název**|Zprostředkovatel dat SqlClient|Čitelný název pro poskytovatele dat.|  
 |1|**Popis**|.NET framework Data Provider pro SqlServer|Čitelný Popis zprostředkovatele dat|  
 |2|**InvariantName**|System.Data.SqlClient|Název, který je možné prostřednictvím kódu programu k odkazování na poskytovatele dat|  
-|3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory System.Data, verze = 2.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089|Plně kvalifikovaný název třídy factory, který obsahuje dostatek informací pro vytvoření instance objektu|  
+|3|**AssemblyQualifiedName**|System.Data.SqlClient.SqlClientFactory, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Plně kvalifikovaný název třídy factory, který obsahuje dostatek informací pro vytvoření instance objektu|  
   
  To `DataTable` je možné povolit uživateli, aby vybral <xref:System.Data.DataRow> v době běhu. Vybrané `DataRow` je pak možné předat do <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metodu pro vytvoření silného typu <xref:System.Data.Common.DbProviderFactory>. Vybrané <xref:System.Data.DataRow> mohou být předány `GetFactory` metodu pro vytvoření požadované `DbProviderFactory` objektu.  
   
@@ -95,8 +95,8 @@ Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předáv�
  [!code-csharp[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/CS/source.cs#1)]
  [!code-vb[DataWorks DbProviderFactories.GetFactory#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories.GetFactory/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
- [Použití tříd konfigurace](https://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
+- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
+- [Použití tříd konfigurace](https://msdn.microsoft.com/library/98d2b386-baf6-4a17-974b-76e3b4c87acc)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

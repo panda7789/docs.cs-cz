@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: f977ebdc-1b55-475a-bc3d-3376470b08ae
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9aecf7aef9023439e145d408e40fb4adf5c0e986
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 59a89aa354941b7ff22a125a980c2d9c75ac37ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47192219"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491517"
 ---
 # <a name="how-to-read-and-write-to-files-in-isolated-storage"></a>Postupy: Čtení a zápis do souborů v izolovaném úložišti
 Ke čtení nebo zápis do souboru v izolovaném úložišti, použijte <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> objekt s čtečku datového proudu (<xref:System.IO.StreamReader> objekt) nebo zapisovač datového proudu (<xref:System.IO.StreamWriter> objekt).  
@@ -36,11 +36,11 @@ Ke čtení nebo zápis do souboru v izolovaném úložišti, použijte <xref:Sys
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>  
-- <xref:System.IO.FileMode?displayProperty=nameWithType>  
-- <xref:System.IO.FileAccess?displayProperty=nameWithType>  
-- <xref:System.IO.StreamReader?displayProperty=nameWithType>  
-- <xref:System.IO.StreamWriter?displayProperty=nameWithType>  
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>
+- <xref:System.IO.FileMode?displayProperty=nameWithType>
+- <xref:System.IO.FileAccess?displayProperty=nameWithType>
+- <xref:System.IO.StreamReader?displayProperty=nameWithType>
+- <xref:System.IO.StreamWriter?displayProperty=nameWithType>
+- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
 - [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)

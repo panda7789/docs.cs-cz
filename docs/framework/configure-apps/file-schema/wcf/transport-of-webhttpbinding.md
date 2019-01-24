@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;webHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-ms.openlocfilehash: 70145678048b3e7843d9d458f80d3d149544447a
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 657de92129d27e70834cb401cde42d24b633f7ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149472"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677014"
 ---
 # <a name="lttransportgt-of-ltwebhttpbindinggt"></a>&lt;transport&gt; – &lt;webHttpBinding&gt;
 Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby nakonfigurovaný tak, aby přijímal požadavky HTTP.  
@@ -16,7 +16,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 \<vazby >  
 \<webHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -54,7 +54,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 |`realm`|Řetězec určující sféru ověřování hodnotou hash nebo základní ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověření určuje nejméně název hostitele, který provádí ověřování. Můžete také určit kolekci uživatelů, který má přístup. Sféra ověření pro ověření, který z nich několik možných uživatelská jména a hesla je možné dotazovat uživatele.|  
 |`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -65,7 +65,7 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 |`Ntlm`|Ověřování protokolem NTLM se používá jako nouzové řešení pomocí domény Windows.|  
 |`Windows`|Používá integrované ověřování Windows.|  
   
-## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
+## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -84,14 +84,14 @@ Definuje nastavení zabezpečení na úrovni přenosu pro koncový bod služby n
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-webhttpbinding.md)|Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.HttpTransportSecurity>  
- <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>  
- <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>  
- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)  
- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.HttpTransportSecurity>
+- <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
+- <xref:System.ServiceModel.WebHttpSecurity.Transport%2A>
+- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+- [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

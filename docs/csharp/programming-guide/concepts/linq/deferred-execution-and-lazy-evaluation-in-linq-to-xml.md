@@ -2,12 +2,12 @@
 title: Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
-ms.openlocfilehash: baf6a26b1579c17adfc60b27b485ba3af66c67d7
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 83fdc73b583a2c8aba5383f4a5b3af11a1f6f9c4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085339"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709686"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Odložené provedení a opožděné vyhodnocení v LINQ to XML (C#)
 Operace dotazů a osy jsou často implementována pomocí odloženého provedení. Toto téma popisuje požadavky a výhody odložené provedení a některé důležité informace o implementaci.  
@@ -33,9 +33,9 @@ Operace dotazů a osy jsou často implementována pomocí odloženého proveden�
   
 -   [Příklad odloženého provedení (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-example.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kurz: Zřetězení dotazů společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)  
-- [Koncepty a terminologie (funkční transformace) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)  
-- [Agregační operace (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)  
+- [Kurz: Zřetězení dotazů (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+- [Koncepty a terminologie (funkční transformace) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)
+- [Agregační operace (C#)](../../../../csharp/programming-guide/concepts/linq/aggregation-operations.md)
 - [yield](../../../../csharp/language-reference/keywords/yield.md)

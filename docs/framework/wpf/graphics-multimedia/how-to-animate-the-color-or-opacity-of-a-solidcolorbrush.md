@@ -9,12 +9,12 @@ helpviewer_keywords:
 - animation [WPF], opacity of SolidColorBrush
 - SolidColorBrush [WPF], animating opacity of
 ms.assetid: d9154354-843f-4713-bad1-35bb0ba6eaeb
-ms.openlocfilehash: 194f01d3d5aa4c2b5a08a6c3fdb3dc195b0e9e3e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a6bd7f27f1cce6169181640bb52edad4a493c228
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500326"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738690"
 ---
 # <a name="how-to-animate-the-color-or-opacity-of-a-solidcolorbrush"></a>Postupy: Animace barvy a krytí štětce SolidColorBrush
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> a <xref:System.Windows.Media.Brush.Opacity%2A> z <xref:System.Windows.Media.SolidColorBrush>.  
@@ -34,7 +34,7 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush
   
  Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objekt jejich animace. Při použití jedné animace v kódu, je ale jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)
+## <a name="see-also"></a>Viz také:
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+- [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973)

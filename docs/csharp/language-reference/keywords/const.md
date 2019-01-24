@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C#]
 ms.assetid: 79eb447c-117b-4418-933f-97c50aa472db
-ms.openlocfilehash: 63fb86ed24dd4e30d3783d70e3249b9f8e5e20bd
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: f0b2b3632e767710bd31f5f6edaccaf0c2ef8c85
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245519"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526974"
 ---
 # <a name="const-c-reference"></a>const (Referenční dokumentace jazyka C#)
 
@@ -65,8 +65,8 @@ Tento příklad ukazuje, jak použít konstanty jako lokální proměnné.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Modifikátory](../../../csharp/language-reference/keywords/modifiers.md)
 - [readonly](../../../csharp/language-reference/keywords/readonly.md)

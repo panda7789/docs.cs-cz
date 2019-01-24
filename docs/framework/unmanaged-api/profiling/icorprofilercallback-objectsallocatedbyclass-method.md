@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 78dde5c50666333c02c8c1a9a167e17af3f40341
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1200ca14b91c101a8145a3aed8023002ddb9298b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454340"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746632"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass – metoda
-Informuje o počtu instancí každé zadané třídy, které byly vytvořeny od poslední uvolňování profileru.  
+Informuje o počtu instancí každé zadané třídy, které byly vytvořeny od posledního shromažďování dat paměti profilerem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT ObjectsAllocatedByClass(
   
 #### <a name="parameters"></a>Parametry  
  `cClassCount`  
- [v] Velikost `classIds` a `cObjects` pole.  
+ [in] Velikost `classIds` a `cObjects` pole.  
   
  `classIds`  
- [v] Pole ID, kde každý ID Určuje třídu s jednu nebo více instancí tříd.  
+ [in] Pole ID, kde každé ID Určuje třídu s jednu nebo víc instancí tříd.  
   
  `cObjects`  
- [v] Pole celých čísel, kde každý celé číslo určuje počet instancí pro odpovídající třídu v `classIds` pole.  
+ [in] Pole celých čísel, kde každé celé číslo určuje počet instancí pro odpovídající třídu v `classIds` pole.  
   
 ## <a name="remarks"></a>Poznámky  
- `classIds` a `cObjects` pole jsou paralelní pole. Například `classIds[i]` a `cObjects[i]` odkazovat na stejnou třídu. Pokud od předchozí uvolňování byla vytvořena žádná instance třídy, třída je vynechán. `ObjectsAllocatedByClass` Zpětného volání, nebudou podávat objekty přidělené v haldě velkého objektu.  
+ `classIds` a `cObjects` pole jsou paralelní pole. Například `classIds[i]` a `cObjects[i]` odkazovat na stejnou třídu. Pokud od předchozí uvolňování paměti kolekce byla vytvořena žádná instance třídy, třída je vynechán. `ObjectsAllocatedByClass` Zpětné volání, nebudou podávat objekty přidělené ve velkých objektových haldách.  
   
- Čísla hlášené `ObjectsAllocatedByClass` jsou jenom odhadované. Pro přesné počty použít [icorprofilercallback::objectallocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ Čísla hlášených `ObjectsAllocatedByClass` jsou pouze odhady. Přesný počet, použijte [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
   
  `classIds` Pole může obsahovat jeden nebo více položky s hodnotou null, pokud odpovídající `cObjects` pole obsahuje typy, které jsou uvolnění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,5 +62,5 @@ HRESULT ObjectsAllocatedByClass(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

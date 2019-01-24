@@ -8,12 +8,12 @@ helpviewer_keywords:
 - width properties [WPF]
 - Panel control [WPF], width properties of elements
 ms.assetid: 6ee04a9d-63f0-4f5b-a406-0a8cd4c35729
-ms.openlocfilehash: 261318e3d1433a47eeec2069f484124efd14653f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 739b041d8ca89abb9bd1934abb997d1154f08c95
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523808"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54673982"
 ---
 # <a name="how-to-set-the-width-properties-of-an-element"></a>Postupy: Nastavení vlastností šířky elementu
 ## <a name="example"></a>Příklad  
@@ -33,13 +33,13 @@ ms.locfileid: "43523808"
   
  Úplnou ukázku najdete v tématu [ukázkové porovnání vlastnosti Šířka](https://go.microsoft.com/fwlink/?LinkID=160050).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.ListBox>  
- <xref:System.Windows.FrameworkElement>  
- <xref:System.Windows.FrameworkElement.ActualWidth%2A>  
- <xref:System.Windows.FrameworkElement.MaxWidth%2A>  
- <xref:System.Windows.FrameworkElement.MinWidth%2A>  
- <xref:System.Windows.FrameworkElement.Width%2A>  
- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)  
- [Nastavení vlastností výšky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  
- [Ukázkové porovnání vlastnosti šířky](https://go.microsoft.com/fwlink/?LinkID=160050)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.ListBox>
+- <xref:System.Windows.FrameworkElement>
+- <xref:System.Windows.FrameworkElement.ActualWidth%2A>
+- <xref:System.Windows.FrameworkElement.MaxWidth%2A>
+- <xref:System.Windows.FrameworkElement.MinWidth%2A>
+- <xref:System.Windows.FrameworkElement.Width%2A>
+- [Přehled panelu](../../../../docs/framework/wpf/controls/panels-overview.md)
+- [Nastavení vlastností výšky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)
+- [Ukázkové porovnání vlastnosti šířky](https://go.microsoft.com/fwlink/?LinkID=160050)

@@ -10,15 +10,15 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Subclass attribute
 - Subclass attribute in XAML [XAML Services]
 ms.assetid: 99f66072-8107-4362-ab99-8171dc83b469
-ms.openlocfilehash: b04982ff0b7685b4e4b809255e3bbe541b42cb9e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 67d699782cd2ce2b13e159d2b7218b4868a8794c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566415"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670924"
 ---
 # <a name="xsubclass-directive"></a>x:Subclass – direktiva
-Mění chování kompilace kódu XAML při `x:Class` k dispozici je také. Místo vytváření částečné třídu, která je založena na `x:Class`, poskytnutého `x:Class` je vytvořen jako zprostředkující třída, a pak se očekává založeny na vaše zadané odvozené třídy `x:Class`.  
+Upravuje chování kompilace kódu XAML při `x:Class` je také k dispozici. Místo vytváření částečnou třídu, která je založena na `x:Class`, poskytnutého `x:Class` je vytvořen jako zprostředkující třída, a pak se očekává na základě zadané odvozené třídy `x:Class`.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -32,30 +32,30 @@ Mění chování kompilace kódu XAML při `x:Class` k dispozici je také. Míst
   
 |||  
 |-|-|  
-|`namespace`|Volitelné. Určuje CLR obor názvů, který obsahuje `classname`. Pokud `namespace` není zadaný, tečku (.) odděluje `namespace` a `classname`.|  
-|`classname`|Požadováno. Určuje název CLR částečné třídy, který se připojuje načíst XAML a vaše kódu pro tento jazyk XAML. V části poznámky.|  
-|`subclassNamespace`|Volitelné. Může lišit od `namespace` pokud každý obor názvů můžete vyřešit dalších. Určuje CLR obor názvů, který obsahuje `subclassName`. Pokud `subclassName` není zadaný, tečku (.) odděluje `subclassNamespace` a `subclassName`.|  
-|`subclassName`|Požadováno. Určuje název CLR podtřídy.|  
+|`namespace`|Volitelné. Určuje obor názvů CLR, který obsahuje `classname`. Pokud `namespace` není zadána, tečku (.) odděluje `namespace` a `classname`.|  
+|`classname`|Povinný parametr. Určuje název CLR částečné třídy, která se připojuje načíst XAML a vašeho kódu na pozadí pro tento XAML. Viz poznámky.|  
+|`subclassNamespace`|Volitelné. Může se lišit od `namespace` pokud každý obor názvů lze vyřešit druhé. Určuje obor názvů CLR, který obsahuje `subclassName`. Pokud `subclassName` není zadána, tečku (.) odděluje `subclassNamespace` a `subclassName`.|  
+|`subclassName`|Povinný parametr. Určuje název CLR podtřídy.|  
   
 ## <a name="dependencies"></a>Závislosti  
- [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md) musí být poskytovány na stejný objekt, a tento objekt musí být kořenový element provozních XAML.  
+ [x: Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md) musí se poskytnout i na stejný objekt, a tento objekt musí být kořenovým prvkem produkční XAML.  
   
 ## <a name="remarks"></a>Poznámky  
- `x:Subclass` využití je primárně určený pro jazyky, které nepodporují deklarace třídu.  
+ `x:Subclass` využití je primárně určena pro jazyky, které nepodporují deklarace částečné třídy.  
   
  Třída, která slouží jako `x:Subclass` nemůže být vnořené třídy a `x:Subclass` musí odkazovat na kořenový objekt, jak je popsáno v části "Závislosti".  
   
- V opačném koncepční význam `x:Subclass` není definována implementací rozhraní .NET Framework XAML Services. Je to proto, že rozhraní .NET Framework XAML Services chování neurčuje celkové programovací model, ve které XAML značek a kódu zálohování připojeni. Implementace další koncepty související s `x:Class` a `x:Subclass` provádí konkrétní architektury, kterých programovací modely nebo modely aplikace a definovat, jak připojit kód XAML, zkompilovaný kód a na základě CLR kódu. Každý framework může mít svůj vlastní akce sestavení, které povolit některé chování nebo konkrétní součásti, které musí být součástí prostředí sestavení. V rámci rozhraní akce sestavení může také lišit v závislosti na konkrétní jazyk CLR, který se používá pro modelu code-behind.  
+ V opačném případě koncepční význam `x:Subclass` není definovaná implementací rozhraní .NET Framework XAML Services. Je to proto, že rozhraní .NET Framework XAML Services chování neurčuje celkový programovací model, ve které XAML jsou připojené značek a kódu zálohování. Implementace další koncepty související s `x:Class` a `x:Subclass` provádí určité rozhraní, které používají programovací modely nebo aplikačních modelů pro definování připojení značky XAML, zkompilovaný kód a na základě CLR kódu na pozadí. Každé rozhraní, může mít svůj vlastní akce sestavení, které umožňují některé chování nebo konkrétní součásti, které musí být součástí prostředí pro sestavení. V rámci akce sestavení může také záviset na konkrétní jazyk CLR, který se používá pro modelu code-behind.  
   
-## <a name="wpf-usage-notes"></a>Poznámky pro použití WPF  
- `x:Subclass` může být v kořenovém adresáři stránku nebo na <xref:System.Windows.Application> kořenové v definici aplikace, která už má `x:Class`. Deklarování `x:Subclass` u libovolného elementu jiného než kořenové stránky nebo aplikace, nebo ho zadáte, kde ne `x:Class` existuje, dojde k chybě kompilace.  
+## <a name="wpf-usage-notes"></a>Poznámky k použití WPF  
+ `x:Subclass` může být na kořenovém adresáři stránku nebo na <xref:System.Windows.Application> kořen v definici aplikace, která už má `x:Class`. Deklarování `x:Subclass` u libovolného elementu než kořenové stránky nebo aplikace, nebo pokud jeho zadáním `x:Class` existuje, způsobí chybu kompilace.  
   
- Vytváření odvozené třídy, které pracují správně pro `x:Subclass` scénář je poměrně složitá. Možná bude muset prozkoumat zprostředkující soubory (soubory .g vyprodukované kompilace kódu, s názvy, které zahrnují názvy souborů XAML ve složce obj. projektu). Tyto soubory zprostředkující vám pomohou určit původ určité programovací konstrukce v připojené k částečné třídy kompilované aplikace.  
+ Vytváření odvozené třídy, které pracují správně `x:Subclass` scénář je poměrně složitý. Můžete potřebovat k prozkoumání zprostředkující soubory (soubory .g vytvářených značky kompilace s názvy, které zahrnují názvy souborů XAML v složku obj projektu). Tyto zprostředkující soubory můžete určit původ některé programovací konstrukce v připojeném k částečné třídy v kompilované aplikaci.  
   
- Obslužné rutiny událostí v odvozené třídě musí být `internal override` (`Friend Overrides` v aplikaci Microsoft Visual Basic) Chcete-li přepsat zástupných procedur u obslužných rutin, jako vytvoří ve třídě zprostředkující během kompilace. Jinak hodnota implementace odvozené třídy skrýt (stínové) implementaci zprostředkující třídy a nejsou volání zprostředkující třídu obslužné rutiny.  
+ Obslužné rutiny událostí v odvozené třídě musí být `internal override` (`Friend Overrides` v aplikaci Microsoft Visual Basic) za účelem přepsání zástupné procedury pro obslužné rutiny, jak ho vytvořila zprostředkující třída během kompilace. V opačném případě implementace odvozené třídy skryje (stínové) zprostředkující třída implementace a nejsou vyvolány zprostředkující třída obslužné rutiny.  
   
- Když definujete obě `x:Class` a `x:Subclass`, není nutné k zajištění všech implementace pro třídu, která je odkazován objektem `x:Class`. Potřebujete pojmenujte ho pomocí `x:Class` atributů tak, aby kompilátor má některé pokyny pro třídu, která vytváří v zprostředkující soubory (kompilátor není vyberte výchozí název v tomto případě). Můžete udělit `x:Class` třídy implementace; je to ale není Typický scénář použití obě `x:Class` a `x:Subclass`.  
+ Při definování obě `x:Class` a `x:Subclass`, není potřeba poskytovat žádné implementace třídy, který je odkazován `x:Class`. Je potřeba jenom s názvem prostřednictvím `x:Class` atribut tak, aby kompilátor má některé pokyny pro třídu, která vytvoří v mezilehlé soubory (kompilátor není vyberte výchozí název v tomto případě). Můžete poskytnout `x:Class` třídy implementace, ale to není Typický scénář použití obou `x:Class` a `x:Subclass`.  
   
-## <a name="see-also"></a>Viz také  
- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
- [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
+- [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)

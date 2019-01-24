@@ -9,14 +9,14 @@ helpviewer_keywords:
 - application event logs, output location
 - applications [Visual Basic], output location
 ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
-ms.openlocfilehash: fa177fa1f07c52d900f57e5bf61c967f06203c4f
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: bafb307eff6a5ce6fd6dff823abe2f68b7725f51
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42908222"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662670"
 ---
-# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Zjištění, kam objekt My.Application.Log zapisuje informace (Visual Basic)
+# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Průvodce: Určení, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 `My.Application.Log` Objektu lze zapsat informace na několik součástí naslouchajících protokolům. Součásti naslouchající protokolům jsou nakonfigurované pomocí konfiguračního souboru počítače a lze přepsat pomocí konfiguračního souboru aplikace. Toto téma popisuje výchozí nastavení a jak určit nastavení pro vaši aplikaci.  
   
  Další informace o výchozích umístění výstupu najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  
@@ -62,17 +62,17 @@ ms.locfileid: "42908222"
   
     -   Informace o tom, kde psát jiných typů součástí naslouchajících protokolům informace najdete v dokumentaci tohoto typu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
- <xref:System.Diagnostics.DefaultTraceListener>  
- <xref:System.Diagnostics.EventLogTraceListener>  
- <xref:System.Diagnostics.DelimitedListTraceListener>  
- <xref:System.Diagnostics.XmlWriterTraceListener>  
- <xref:System.Diagnostics.ConsoleTraceListener>  
- <xref:System.Diagnostics>  
- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)  
- [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)  
- [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)  
- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
- [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../../framework/performance/etw-events.md)  
- [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
+- <xref:System.Diagnostics.DefaultTraceListener>
+- <xref:System.Diagnostics.EventLogTraceListener>
+- <xref:System.Diagnostics.DelimitedListTraceListener>
+- <xref:System.Diagnostics.XmlWriterTraceListener>
+- <xref:System.Diagnostics.ConsoleTraceListener>
+- <xref:System.Diagnostics>
+- [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
+- [Postupy: Výjimky protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [Návod: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../../framework/performance/etw-events.md)
+- [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

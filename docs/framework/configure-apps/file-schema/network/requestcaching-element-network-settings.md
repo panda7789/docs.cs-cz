@@ -8,31 +8,31 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: fecb3c71e0686a557b8a4b0c85b7d91a9846204f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e5d74a033b14d5f1b523422d0afd360206c0cb48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194966"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685010"
 ---
 # <a name="ltrequestcachinggt-element-network-settings"></a>&lt;requestCaching –&gt; – Element (nastavení sítě)
 Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.  
   
  \<Konfigurace >  
 \<system.net>  
-\<requestCaching – >  
+\<requestCaching>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
-      <requestCaching>  
-        isPrivateCache ="true|false"  
-        disableAllCaching="true|false"  
-        defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
-        unspecifiedMaximumAge= "d.hh.mm.ss">  
-          <defaultHttpCachePolicy> … </defaultHttpCachePolicy>  
-          <defaultFtpCachePolicy> … </defaultFtpCachePolicy>  
-      </requestCaching>
+<requestCaching  
+  isPrivateCache ="true|false"  
+  disableAllCaching="true|false"  
+  defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
+  unspecifiedMaximumAge= "d.hh.mm.ss">  
+    <defaultHttpCachePolicy>...</defaultHttpCachePolicy>  
+    <defaultFtpCachePolicy>...</defaultFtpCachePolicy>  
+</requestCaching>
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -64,14 +64,14 @@ Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[defaulthttpcachepolicy –](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
-|[\<defaultftpcachepolicy – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[defaultHttpCachePolicy](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
+|[\<defaultFtpCachePolicy> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Volitelný element.<br /><br /> Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak zakázat ukládání do mezipaměti.  
@@ -86,6 +86,6 @@ Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.Cache?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.Cache?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

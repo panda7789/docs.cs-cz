@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 628d6fac45b046d9e8f26ad8777c38450da27a1d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86c28cdfe171b0b2bde1d28fa4c06ceaf7b26e18
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427415"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667026"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfo-method"></a>ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfo – metoda
-Získá informace o vyhledávání symbolu.  
+Získá informace hledání symbolu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetSymbolSearchInfo(
   
 #### <a name="parameters"></a>Parametry  
  `cSearchInfo`  
- [v] A `ULONG32` určující velikost `rgpSearchInfo`.  
+ [in] A `ULONG32` , který označuje velikost `rgpSearchInfo`.  
   
  `pcSearchInfo`  
- [out] Ukazatel na `ULONG32` která přijme velikost vyrovnávací paměti musí obsahovat informace o vyhledávání.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat informace o vyhledávání.  
   
  `rgpSearchInfo`  
- [out] Ukazatele, který je nastavený s vráceným [isymunmanagedsymbolsearchinfo –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md) rozhraní.  
+ [out] Ukazatel, který je nastaven na vrácenou [isymunmanagedsymbolsearchinfo –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md) rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReaderSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReaderSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)

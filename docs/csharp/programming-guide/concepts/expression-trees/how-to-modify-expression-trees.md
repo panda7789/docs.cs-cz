@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: úpravy stromů výrazů (C#)'
+title: 'Postupy: Úpravy stromů výrazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: 97a8ea0d66edf5d084c442deae32e04bdeb63c32
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1cdc6eb4017495fc7486025dd868352eb9d04892
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528748"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735607"
 ---
-# <a name="how-to-modify-expression-trees-c"></a>Postupy: úpravy stromů výrazů (C#)
+# <a name="how-to-modify-expression-trees-c"></a>Postupy: Úpravy stromů výrazů (C#)
 Toto téma ukazuje, jak upravit strom výrazu. Stromy výrazů jsou neměnné, což znamená, že nejde změnit napřímo. Chcete-li změnit strom výrazu, musíte vytvořit kopie stávající strom výrazu a při vytváření kopie, proveďte požadované změny. Můžete použít <xref:System.Linq.Expressions.ExpressionVisitor> třídy k procházení stávající strom výrazu a zkopírovat každý uzel, který ho navštíví.  
   
 ### <a name="to-modify-an-expression-tree"></a>Chcete-li změnit strom výrazu.  
@@ -70,7 +70,7 @@ Toto téma ukazuje, jak upravit strom výrazu. Stromy výrazů jsou neměnné, c
   
 6.  Kompilace a spuštění aplikace.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Postupy: provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
+- [Postupy: Provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
 - [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)

@@ -4,31 +4,31 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - claims [WCF], creation and resource values
 ms.assetid: 30431f76-cbe7-4bad-bad7-8e43e23a82d4
-ms.openlocfilehash: cfa697023ca9d4c0b6f43c90c382816993dccc5d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca1bb8ccbc77e2b026a65a9cef56118e8b86dbb3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488049"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704066"
 ---
 # <a name="claim-creation-and-resource-values"></a>Vytvoření nároku a hodnoty prostředků
-<xref:System.IdentityModel.Claims.Claim> Třída poskytuje několik metod, vytváření instancí předdefinované typy deklarací identity. Z těchto metod následující provést žádné sémantického nebo formátu kontrola na zadaný prostředek:  
+<xref:System.IdentityModel.Claims.Claim> Třída poskytuje několik metod pro vytváření instancí vestavěné typy deklarací identity. Z těchto metod následující provést žádné sémantické nebo formátování kontrolujeme zadaného prostředku:  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateDnsClaim%2A>  
   
--   <xref:System.IdentityModel.Claims.Claim.CreateHashClaim%2A> (nekontroluje délku nebo obsah pole bajtů)  
+-   <xref:System.IdentityModel.Claims.Claim.CreateHashClaim%2A> (nekontroluje délku nebo obsahu objektu pole bajtů)  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateNameClaim%2A>  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateSpnClaim%2A>  
   
--   <xref:System.IdentityModel.Claims.Claim.CreateThumbprintClaim%2A> (nekontroluje délku nebo obsah pole bajtů)  
+-   <xref:System.IdentityModel.Claims.Claim.CreateThumbprintClaim%2A> (nekontroluje délku nebo obsahu objektu pole bajtů)  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateUpnClaim%2A>  
   
- Potřeba dát pozor při volání metody výše aby prostředek, který předané hodnoty jsou ve správném formátu nebo obsahují správný druh informací (nebo obě).  
+ By měl být věnovat pozornost při volání metody výše zajistit, že prostředek, který předané hodnoty jsou ve správném formátu nebo obsahují správný druh informací (nebo obojí).  
   
- Tyto metody přijímají konkrétní typy:  
+ Následující metody provést určité typy:  
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateDenyOnlyWindowsSidClaim%2A>  
   
@@ -42,7 +42,7 @@ ms.locfileid: "33488049"
   
 -   <xref:System.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim%2A>  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Claims.Claim>  
- <xref:System.IdentityModel.Claims.ClaimSet>  
- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Claims.Claim>
+- <xref:System.IdentityModel.Claims.ClaimSet>
+- [Správa deklarací identity a autorizace pomocí modelu identit](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)

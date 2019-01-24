@@ -1,19 +1,19 @@
 ---
-title: 'Návod: Hostování obsahu WPF v Win32'
+title: 'Průvodce: Hostování obsahu WPF v Win32'
 ms.date: 03/30/2017
 dev_langs:
 - cpp
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 692105d464c005109cbf1ff704045efa7d1e9173
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: c56ef33d1a44b263466a293b06aa988885b2008d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842798"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725594"
 ---
-# <a name="walkthrough-hosting-wpf-content-in-win32"></a>Návod: Hostování obsahu WPF v Win32
+# <a name="walkthrough-hosting-wpf-content-in-win32"></a>Průvodce: Hostování obsahu WPF v Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo přepsání původní kód. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje jednoduchý mechanismus pro hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsah [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
  Tento kurz popisuje, jak psát ukázkovou aplikaci, [hostování obsahu WPF v ukázce okně Win32](https://go.microsoft.com/fwlink/?LinkID=160004), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Můžete rozšířit tuto ukázku pro hostování všech [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Protože se týká kombinace spravovaného a nespravovaného kódu, je aplikace napsaná v [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)].  
@@ -180,7 +180,7 @@ ms.locfileid: "48842798"
 
 <a name="page_layout"></a>
 ### <a name="layout"></a>Rozložení
- [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Prvky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu se skládá z pěti <xref:System.Windows.Controls.TextBox> ovládací prvky, s přidruženými <xref:System.Windows.Controls.Label> ovládacích prvků: název, adresu, Město, stát a Zip. Jsou zde také dva <xref:System.Windows.Controls.Button> ovládací prvky, **OK** a **zrušit**
+ [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Prvky [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu se skládá z pěti <xref:System.Windows.Controls.TextBox> ovládací prvky, s přidruženými <xref:System.Windows.Controls.Label> ovládacích prvků: Název, adresu, Město, stát a Zip. Jsou zde také dva <xref:System.Windows.Controls.Button> ovládací prvky, **OK** a **zrušit**
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Obsah je implementována v `WPFPage` třídy. Zpracovává rozložení s <xref:System.Windows.Controls.Grid> element rozložení. Třída dědí z <xref:System.Windows.Controls.Grid>, což účinně vytvoří [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obsahu kořenový element.
 
@@ -224,11 +224,11 @@ ms.locfileid: "48842798"
 
  [!code-cpp[Win32HostingWPFPage#WPFPageFontFamilyProperty](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.h#wpfpagefontfamilyproperty)]
 
- Z WPFPage.cpp:
+ From WPFPage.cpp:
 
  [!code-cpp[Win32HostingWPFPage#WPFPageSetFontFamily](../../../../samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/WPFPage.cpp#wpfpagesetfontfamily)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Interop.HwndSource>
 - [Vzájemná spolupráce grafického subsystému WPF a systému Win32](../../../../docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: e10b23c311e4e7debf228c01c898f3582e2ac8d4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: b71bf1123461e4b0c0db5024eac3330bcf666ecc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646760"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)
 Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název. Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.  
   
  Výraz XPath je:  
@@ -19,7 +19,7 @@ Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý n
 ## <a name="example"></a>Příklad  
  V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`. Výsledný kolekce obsahuje uzel kontextu.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -74,6 +74,6 @@ Results are identical
 </Book>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

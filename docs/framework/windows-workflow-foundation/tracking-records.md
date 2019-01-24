@@ -2,12 +2,12 @@
 title: Sledování záznamů
 ms.date: 03/30/2017
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-ms.openlocfilehash: 2be8dbcdd740dee1c5cddd1121716058bfa5c175
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 753541814497b62cf05f0c22cc4e08c0d127e91b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527036"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676104"
 ---
 # <a name="tracking-records"></a>Sledování záznamů
 Modul runtime pracovního postupu je instrumentováno pro vydávání záznamy sledování, sledovat spuštění instance pracovního postupu.  
@@ -60,6 +60,6 @@ Modul runtime pracovního postupu je instrumentováno pro vydávání záznamy s
   
 5.  <xref:System.Activities.Tracking.WorkflowInstanceRecord> Označuje, že je dokončení pracovního postupu.  
   
-## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+## <a name="see-also"></a>Viz také:
+- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
+- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

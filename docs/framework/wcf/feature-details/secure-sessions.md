@@ -2,12 +2,12 @@
 title: Zabezpečené relace
 ms.date: 03/30/2017
 ms.assetid: 7b50602f-d7b5-42e9-8e92-1f0413df0d8b
-ms.openlocfilehash: 1f3a1e23f7cac2540216365acfca5c23cddfce71
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 63e363e90a656c918b68d3f86d8b6ad3b7a540e0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126689"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715709"
 ---
 # <a name="secure-sessions"></a>Zabezpečené relace
 Funkce služby Windows Communication Foundation (WCF) je spolehlivé relace, které zaručuje, že jsou zprávy přijímány v pořadí, ve kterém byly odeslány. Témata v této části popisují vliv zabezpečení můžete zvážit při vytváření spolehlivé relace. Další informace o spolehlivých relací najdete v tématu [s využitím relací](../../../../docs/framework/wcf/using-sessions.md).  
@@ -20,8 +20,8 @@ Funkce služby Windows Communication Foundation (WCF) je spolehlivé relace, kte
 |||  
 |-|-|  
 |[Zabezpečené konverzace a zabezpečené relace](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md)|Zabezpečené konverzace a zabezpečené relace je shodný. Toto téma popisuje způsob, jakým funguje zabezpečené konverzace a kdy a proč k použití vzoru.|  
-|[Jak: Vytvoření zabezpečené relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md)|Vás provede základy práce vytváření zabezpečenou relaci.|  
-|[Jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci tokenu](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)|Vás provede kroky k vytvoření webové farmy, která bude spravovat stav a relace s klienty.|  
+|[Postupy: Vytvoření zabezpečené relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-secure-session.md)|Vás provede základy práce vytváření zabezpečenou relaci.|  
+|[Postupy: Vytvoření kontextu zabezpečení pro zabezpečenou relaci tokenu](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)|Vás provede kroky k vytvoření webové farmy, která bude spravovat stav a relace s klienty.|  
 |[Důležité informace o zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)|Popisuje důležité informace pro zabezpečené relace.|  
   
 ## <a name="reference"></a>Odkaz  
@@ -34,7 +34,7 @@ Funkce služby Windows Communication Foundation (WCF) je spolehlivé relace, kte
   
  [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)  
   
-## <a name="see-also"></a>Viz také  
- [Jak: Povolení zjišťování opakování zpráv](../../../../docs/framework/wcf/feature-details/how-to-enable-message-replay-detection.md)  
- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- [Jak: Vytvoření služby vyžadující relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Povolení zjišťování opakování zpráv](../../../../docs/framework/wcf/feature-details/how-to-enable-message-replay-detection.md)
+- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Postupy: Vytvoření služby vyžadující relace](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)

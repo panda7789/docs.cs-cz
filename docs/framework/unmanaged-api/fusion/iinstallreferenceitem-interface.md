@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fd3c19bbbcb5b1a5f0e89b9df86f87beca32cd00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0dfc1535338f45ac812c089203f2ae13a500ceec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689166"
 ---
 # <a name="iinstallreferenceitem-interface"></a>IInstallReferenceItem – rozhraní
 Představuje položku nainstalované v globální mezipaměti sestavení.  
@@ -30,15 +30,15 @@ Představuje položku nainstalované v globální mezipaměti sestavení.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetReference – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Získá odkazy `FUSION_INSTALL_REFERENCE` struktura reprezentována to `IInstallReferenceItem`.|  
+|[GetReference – metoda](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceitem-getreference-method.md)|Získá ukazatel `FUSION_INSTALL_REFERENCE` struktura představovaného tímto rozhraním `IInstallReferenceItem`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [FUSION_INSTALL_REFERENCE – struktura](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [FUSION_INSTALL_REFERENCE – struktura](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md)

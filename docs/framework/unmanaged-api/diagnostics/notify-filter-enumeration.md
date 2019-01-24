@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98c3e1ed3da209cbded5d76d938d2420fce606be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fcd1d7fb1fdcd8b1ad1abf159a7828e51be392a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431012"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735763"
 ---
 # <a name="notifyfilter-enumeration"></a>NOTIFY_FILTER – výčet
-Identifikuje zpětných volání pro funkce ladicího programu. Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metoda.  
+Identifikuje zpětná volání pro funkce ladicího programu. Další informace najdete v tématu [inotifysource2::setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,16 +45,16 @@ enum tagNOTIFY_FILTER
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`NOTIFY_FILTER_ONSYNCCALLOUT`|Určuje, že [inotifysink2::onsynccallout –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md) metoda by měla být volána.|  
-|`NOTIFY_FILTER_ONSYNCCALLENTER`|Určuje, že [inotifysink2::onsynccallenter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md) metoda by měla být volána.|  
-|`NOTIFY_FILTER_ONSYNCCALLEXIT`|Určuje, že [inotifysink2::onsynccallexit –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md) metoda by měla být volána.|  
-|`NOTIFY_FILTER_ONSYNCCALLRETURN`|Určuje, že [inotifysink2::onsynccallreturn –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md) metoda by měla být volána.|  
-|`NOTIFY_FILTER_ALLSYNC`|Určuje, že všechny [inotifysink2 –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) metody by měla být volána.|  
-|`NOTIFY_FILTER_ALL`|Aktivuje všechny stávající a budoucí oznámení.|  
-|`NOTIFY_FILTER_NONE`|Označuje, že žádné oznámení metody by měla být volána.|  
+|`NOTIFY_FILTER_ONSYNCCALLOUT`|Označuje, že [inotifysink2::onsynccallout –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md) by měl vyvolat metodu.|  
+|`NOTIFY_FILTER_ONSYNCCALLENTER`|Označuje, že [inotifysink2::onsynccallenter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md) by měl vyvolat metodu.|  
+|`NOTIFY_FILTER_ONSYNCCALLEXIT`|Označuje, že [inotifysink2::onsynccallexit –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md) by měl vyvolat metodu.|  
+|`NOTIFY_FILTER_ONSYNCCALLRETURN`|Označuje, že [inotifysink2::onsynccallreturn –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md) by měl vyvolat metodu.|  
+|`NOTIFY_FILTER_ALLSYNC`|Označuje, že všechny [inotifysink2 –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) metody by mělo být vyvoláno.|  
+|`NOTIFY_FILTER_ALL`|Aktivuje všechny existující a budoucí oznámení.|  
+|`NOTIFY_FILTER_NONE`|Označuje, že by měl vyvolat metody žádná oznámení.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

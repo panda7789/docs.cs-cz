@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)'
+title: 'Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: c9243d98c73571fcde009cddb2d5435365f20760
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8cfa86aa3750b7a102bfe6787bf589b5662efa15
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643155"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667177"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
-Někdy může nacházet ve více než jednu složku soubory, které mají stejný název. Například v sadě Visual Studio instalační složce mít několik složky souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak se dotázat na soubory, jejíž aktuální velikost a času vytvoření také shodovat.  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)
+Někdy může nacházet v více složek soubory, které mají stejný název. Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.  
   
 ## <a name="example"></a>Příklad  
   
@@ -98,11 +98,11 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- První dotaz používá jednoduchý klíč k určení shodu. to vyhledá soubory, které mají stejný název, ale jejichž obsah se mohou lišit. Druhý dotaz používá složené klíče tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu. Tento dotaz je mnohem pravděpodobnější nalézt soubory, které mají stejný název a podobné nebo stejné jako obsah.  
+ První dotaz pomocí jednoduchého klíče k určení shody to vyhledá soubory, které mají stejný název, ale jehož obsah se může lišit. Druhý dotaz používá složený klíč tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu. Tento dotaz je mnohem pravděpodobnější k vyhledání souborů, které mají stejný název a obsah podobné nebo identické.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ na objekty (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

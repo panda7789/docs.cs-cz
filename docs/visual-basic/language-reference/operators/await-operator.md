@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: 2094ba308ba384feb8542e896cb1eafcf645947c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: eb6e2c0e59ae0c29937fb5542e3b4638dd2b7b8d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524463"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671444"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
 Můžete použít `Await` operátor operandem v asynchronní metodě nebo výrazu lambda výraz k pozastavení provádění metody až do dokončení očekávané úlohy. Úloha představuje probíhající práci.  
@@ -43,7 +43,7 @@ End Function
 ```  
   
 > [!IMPORTANT]
->  Kompletní příklad naleznete v tématu [návod: přístup k webu pomocí Async a Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
+>  Kompletní příklad naleznete v tématu [názorný postup: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete stáhnout ukázku z [ukázky kódu vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu společnosti Microsoft. V příkladu je v projektu AsyncWalkthrough_HttpClient.  
   
  Pokud `Await` se použije na výsledek volání metody, která vrací `Task(Of TResult)`, typ `Await` výraz je TResult. Pokud `Await` se použije na výsledek volání metody, která vrací `Task`, `Await` výraz nevrací hodnotu. Následující příklad ukazuje rozdíl.  
   
@@ -103,7 +103,7 @@ Public Async Function WaitSynchronously() As Task(Of String)
 End Function  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)  
- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [Async](../../../visual-basic/language-reference/modifiers/async.md)
+## <a name="see-also"></a>Viz také:
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Async](../../../visual-basic/language-reference/modifiers/async.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-ms.openlocfilehash: d44d8d0143d366117a24495df3fa8a18f893ebb3
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: b1d99b0c5241a99ba7f621faff7c39d20776b2ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244736"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496254"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Znalost, kdy použít klíčová slova override a new (Průvodce programováním v C#)
 V jazyce C# metoda v odvozené třídě, může mít stejný název jako metodu v základní třídě. Můžete určit, jak interagovat pomocí metody [nové](../../../csharp/language-reference/keywords/new.md) a [přepsat](../../../csharp/language-reference/keywords/override.md) klíčová slova. `override` Modifikátor *rozšiřuje* metodu základní třídy a `new` modifikátor *skryje* ho. Rozdíl je znázorněn v příkladech v tomto tématu.  
@@ -542,10 +542,10 @@ namespace OverrideAndNew2
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
-- [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)  
-- [base](../../../csharp/language-reference/keywords/base.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [Správa verzí pomocí klíčových slov override a new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
+- [base](../../../csharp/language-reference/keywords/base.md)
 - [abstract](../../../csharp/language-reference/keywords/abstract.md)

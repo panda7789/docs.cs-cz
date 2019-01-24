@@ -1,5 +1,5 @@
 ---
-title: Icordebuginternalframe – Interface1
+title: ICorDebugInternalFrame – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugInternalFrame
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45a710e6d8be4a041d9852585ea83fea85376f66
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1fab8221bd160a74bb44c3ed0721ad4620e93419
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413823"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692792"
 ---
-# <a name="icordebuginternalframe-interface1"></a>Icordebuginternalframe – Interface1
-Představuje modul runtime interní rámce v zásobníku. Toto rozhraní je podtřídou třídy rozhraní ICorDebugFrame.  
+# <a name="icordebuginternalframe-interface1"></a>ICorDebugInternalFrame – rozhraní 1
+Představuje modul runtime interní rámec v zásobníku. Toto rozhraní je podtřídou třídy icordebugframe – rozhraní.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetFrameType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|Získá typ této interní rámce.|  
+|[GetFrameType – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md)|Získá typ této vnitřní rámec.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,5 +46,5 @@ Představuje modul runtime interní rámce v zásobníku. Toto rozhraní je podt
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

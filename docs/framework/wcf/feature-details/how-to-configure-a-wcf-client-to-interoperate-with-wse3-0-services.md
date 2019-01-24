@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 5cbe982049d1df6e2c714ca0b63de0db7577452e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 52793b6d077f1da33d2d675be3284ce134beb2d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187306"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730955"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>Postupy: Konfigurace klienta WCF na vzájemnou spolupráci se službami WSE3.0
 Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení 3.0 služby rozhraní Microsoft .NET (Najít), když klienti WCF umožňují použít verzi specifikace WS-Addressing ze srpna 2004.  
@@ -21,7 +21,7 @@ Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s
   
      WSE webové služby je vytvořená třída klienta WCF.  
   
-     Podrobnosti o vytvoření klienta WCF najdete v tématu [postupy: vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+     Podrobnosti o vytvoření klienta WCF najdete v tématu [jak: Vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Vytvořte třídu, která představuje vazbu, která může komunikovat s WSE 3.0 Web services.  
   
@@ -62,6 +62,6 @@ Klientů Windows Communication Foundation (WCF) jsou přenosový kompatibilní s
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>  
- [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>
+- [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)

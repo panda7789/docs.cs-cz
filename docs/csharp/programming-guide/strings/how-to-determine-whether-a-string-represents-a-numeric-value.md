@@ -7,12 +7,12 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: a20850e6fc34b28975dbb2b6be819bf2e88f1f27
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 77673256caba640f1340fc8218bea020f5fc04f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244554"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696370"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu (C# Průvodce programováním v)
 Chcete-li zjistit, zda je řetězec reprezentaci platná zadané číselného typu, použijte statické `TryParse` metodu, která je implementována všechny primitivní číselné typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak zjistit, jestli "108" je platný [int](../../../csharp/language-reference/keywords/int.md).  
@@ -39,10 +39,10 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Vždy používat `TryParse` nebo `Parse` metody k ověření uživatelského vstupu z ovládacích prvků, jako je například textová pole a pole se seznamem.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Postupy: Převedení pole bajtů na typ int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)  
-- [Postupy: Převod řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)  
-- [Postupy: Převod mezi hexadecimálními řetězci a číselnými typy](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)  
-- [Analýza číselných řetězců](../../../standard/base-types/parsing-numeric.md)  
+- [Postupy: Převedení pole bajtů na typ int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)
+- [Postupy: Převod řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)
+- [Postupy: Převod mezi hexadecimálními řetězci a číselnými typy](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)
+- [Analýza číselných řetězců](../../../standard/base-types/parsing-numeric.md)
 - [Typy formátování](../../../standard/base-types/formatting-types.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: d5a9b08188e346fdea5b155149dee1ef8368c2a0
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 55e10a929be9c76bd8b33771945cf84f6228980f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54679315"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Více zabezpečený přístup k souborům a datům ve Windows Forms
 [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Používá oprávnění k ochraně prostředkům a datům. Pokud vaše aplikace může číst nebo zapisovat data závisí na oprávněních udělených aplikaci. Když aplikace běží v prostředí částečným vztahem důvěryhodnosti, možná nebudete mít přístup k datům nebo budete muset změnit způsob, jak přistupovat k datům.  
@@ -358,10 +358,10 @@ public void Write()
   
  Protože nelze získat přístup k registru v částečném vztahu důvěryhodnosti, budete muset najít jiné metody ukládání dat. Při ukládání nastavení aplikace používání izolovaného úložiště namísto registru. Izolované úložiště lze také ukládat další soubory specifické pro aplikaci. Můžete také ukládat informace o globální aplikace o server nebo server původu, protože ve výchozím nastavení aplikace jsou udělena oprávnění k přístupu k původnímu serveru.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)  
- [Dodatečné informace o zabezpečení ve Windows Forms](../../../docs/framework/winforms/additional-security-considerations-in-windows-forms.md)  
- [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)  
- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)  
- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)  
- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečenější tisk ve Windows Forms](../../../docs/framework/winforms/more-secure-printing-in-windows-forms.md)
+- [Dodatečné informace o zabezpečení ve Windows Forms](../../../docs/framework/winforms/additional-security-considerations-in-windows-forms.md)
+- [Přehled zabezpečení ve Windows Forms](../../../docs/framework/winforms/security-in-windows-forms-overview.md)
+- [Windows Forms – zabezpečení](../../../docs/framework/winforms/windows-forms-security.md)
+- [Mage.exe (Manifest Generation and Editing Tool)](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md)
+- [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md)

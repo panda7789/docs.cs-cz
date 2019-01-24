@@ -1,36 +1,36 @@
 ---
-title: Řetězení dvě pořadí
+title: Zřetězení dvou sekvencí
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 76767e7c-0607-4e1d-9ca2-a94f311f45eb
-ms.openlocfilehash: c0a6dde667c4f858d8177dc80a726619f463f3a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 831905ca5a712bcb80d5bab1aef61a81d2ade1b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354050"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734272"
 ---
-# <a name="concatenate-two-sequences"></a>Řetězení dvě pořadí
-Použití <xref:System.Linq.Queryable.Concat%2A> operátor ke zřetězení dvě pořadí.  
+# <a name="concatenate-two-sequences"></a>Zřetězení dvou sekvencí
+Použití <xref:System.Linq.Queryable.Concat%2A> operátoru pro zřetězení dvou sekvencí.  
   
- <xref:System.Linq.Queryable.Concat%2A> Operátor je definována pro seřazené multisets kde objednávky příjemce a argument jsou stejné.  
+ <xref:System.Linq.Queryable.Concat%2A> Operátor je definován pro uspořádaný multisets kde objednávky příjemce a argument jsou stejné.  
   
- Řazení v systému SQL je v posledním kroku, před vytváří výsledky. Z tohoto důvodu <xref:System.Linq.Queryable.Concat%2A> operátor je implementována pomocí `UNION ALL` a nezachovává pořadí argumentů. Ujistěte se, že řazení je správný ve výsledcích, zajistěte, aby explicitně řazení výsledků.  
+ Řazení v SQL je posledním krokem předtím, než se produkují výsledky. Z tohoto důvodu <xref:System.Linq.Queryable.Concat%2A> operátor je implementovaný s využitím `UNION ALL` a nezachovávat hodnotu pořadí z jejích argumentů. Ujistěte se, že pořadí je správné výsledky, ujistěte se, že explicitně řazení výsledků.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Queryable.Concat%2A> vrátit pořadí všech `Customer` a `Employee` číslo telefonu a faxu.  
+ Tento příklad používá <xref:System.Linq.Queryable.Concat%2A> k vrácení sekvence všech `Customer` a `Employee` číslo telefonu a faxu.  
   
  [!code-csharp[DLinqQueryExamples#39](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#39)]
  [!code-vb[DLinqQueryExamples#39](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#39)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Queryable.Concat%2A> vrátit pořadí všech `Customer` a `Employee` název a telefonní číslo mapování.  
+ Tento příklad používá <xref:System.Linq.Queryable.Concat%2A> k vrácení sekvence všech `Customer` a `Employee` pojmenujte a telefonní číslo mapování.  
   
  [!code-csharp[DLinqQueryExamples#40](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#40)]
  [!code-vb[DLinqQueryExamples#40](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#40)]  
   
-## <a name="see-also"></a>Viz také  
- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+## <a name="see-also"></a>Viz také:
+- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)

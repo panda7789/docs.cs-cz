@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-ms.openlocfilehash: 0101f9c06c5461c0008ba72c67fc5a49c1f09b4d
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5457acd38a0fa1a52d5819516b88d9682076b458
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151846"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671457"
 ---
 # <a name="ltwsfederationhttpbindinggt"></a>&lt;wsFederationHttpBinding&gt;
 Definuje vazbu, která podporuje WS-Federation.  
@@ -121,7 +121,7 @@ wsFederationBinding – element
 |proxyAddress|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud `useDefaultWebProxy` je `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
 |receiveTimeout|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
 |SendTimeout|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|textEncoding|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>...|  
+|textEncoding|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-   UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>...|  
 |transactionFlow|Logická hodnota určující, zda vazba podporuje průchodu WS-transakce. Výchozí hodnota je `false`.|  
 |useDefaultWebProxy|Logická hodnota, která určuje, jestli se používá v systému automaticky nakonfigurovaný proxy HTTP. Adresa proxy musí být `null` (to znamená, není nastavený) Pokud tento atribut je `true`. Výchozí hodnota je `true`.|  
   
@@ -137,7 +137,7 @@ wsFederationBinding – element
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  Federace se nachází taky možnost podělit identity mezi různými systémy pro ověřování a autorizaci. Pro uživatele nebo počítače mohou odkazovat tyto identity. Federované HTTP podporuje zabezpečení protokolu SOAP, stejně jako ve smíšeném režimu zabezpečení, ale nepodporuje výhradně pomocí zabezpečení přenosu. Tato vazba poskytuje podporu Windows Communication Foundation (WCF) pro protokol WS-Federation. Nakonfigurované s touto vazbou služby musíte použít přenos pomocí protokolu HTTP.  
@@ -191,11 +191,11 @@ wsFederationBinding – element
 </configuration>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.WSFederationHttpBinding>  
- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>  
- [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.WSFederationHttpBinding>
+- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>
+- [Postupy: Vytvoření instance WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

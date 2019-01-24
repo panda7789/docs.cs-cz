@@ -4,12 +4,12 @@ description: Doporučené osvědčené postupy pro vytváření balíčků nuget
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 6c3c7feb95f0ebe6b348f42cdd243ce1d14b9c50
-ms.sourcegitcommit: 5c36aaa8299a2437c155700c810585aff19edbec
+ms.openlocfilehash: 2ad8d2ed77610a3acead69b7c864785261ea5e7f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54333418"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724301"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -112,11 +112,14 @@ Alternativa k vytvoření balíčku symbolů je vložení soubory symbolů do hl
 </Project>
 ```
 
-**✔️ ZVAŽTE** vložení soubory symbolů do hlavního balíčku NuGet.
+Nevýhodou vnoření soubory symbolů se zvyšují velikost balíčku o 30 % knihovnám .NET kompilováno s použitím projekty založenými na sadě SDK. Pokud velikost balíčku je problém, jste měli publikovat symboly místo toho v balíčku symbolů.
 
-> Vložení souborů symbolů do hlavního balíčku NuGet vývojářům poskytuje lepší možnosti ladění ve výchozím nastavení. Nepotřebují najít a nakonfigurujte server symbolů NuGet v jejich prostředí IDE se má získat soubory symbolů.
+**✔️ ZVAŽTE** publikování symbolů jako balíček symbolů (`*.snupkg`) na NuGet.org
+
+> Balíčky symbolů (`*.snupkg`) vývojářům poskytuje dobré ladicího prostředí na vyžádání bez nadměrnému nárůstu velikosti velikost hlavního balíčku a dopadu na zvyšuje výkon pro ty, kteří nechcete ladit balíček NuGet.
 >
-> Nevýhodou souborů vložený symbolů je že velikost balíčku zvyšují o 30 % knihovnám .NET kompilováno s použitím projekty založenými na sadě SDK. Pokud velikost balíčku je problém, jste měli publikovat symboly místo toho v balíčku symbolů.
+> Výstrahou je, že by potřebují najít a nakonfigurujte server symbolů NuGet v jejich prostředí IDE (jako jednorázová nastavení) Chcete-li získat soubory symbolů. Visual Studio 2019 plánuje zadejte server symbolů NuGet.org jako jednu z možností úprav. 
+
 
 >[!div class="step-by-step"]
 >[Předchozí](strong-naming.md)

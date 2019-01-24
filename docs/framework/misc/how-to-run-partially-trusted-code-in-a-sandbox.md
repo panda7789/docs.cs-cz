@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d5728bac27ae7de649806a3e026bb16560fffefa
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: b33750e5792dcc83e261bc9bb8d1c5dbe35808aa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627223"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Postupy: Spuštění částečně důvěryhodného kódu v izolovaném prostoru
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -273,5 +273,5 @@ class Sandboxer : MarshalByRefObject
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

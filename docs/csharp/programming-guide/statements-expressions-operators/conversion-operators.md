@@ -8,12 +8,12 @@ helpviewer_keywords:
 - operators [C#], conversion
 - user-defined conversions [C#]
 ms.assetid: c5ad73a3-d57b-4d2b-b4c9-24e3c2856efc
-ms.openlocfilehash: 927640b63773d24be93cc90427668f9568a39652
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: 071eb75d9bab2b91b9cdb8ecc33df249b01e7ac6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362727"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619759"
 ---
 # <a name="conversion-operators-c-programming-guide"></a>Operátory převodu (C# Programming Guide)
 
@@ -49,6 +49,6 @@ C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak,
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Convert>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- <xref:System.Convert>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Zřetězit uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)

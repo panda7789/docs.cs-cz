@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 381fdecfb2cb194cd1eb00a5b55db6fb89eeebbc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1df57e82309d42092c38dfcdd8b65ccc2797f9a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413914"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743280"
 ---
 # <a name="icordebugmanagedcallbackbreakpoint-method"></a>ICorDebugManagedCallback::Breakpoint – metoda
-Ladicí program upozorní, když je došlo zarážky.  
+Ladicí program upozorní, když zarážky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ HRESULT Breakpoint (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, která obsahuje bod přerušení.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje zarážku.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který představuje vlákno, která obsahuje bod přerušení.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje podproces, který obsahuje zarážku.  
   
  `pBreakpoint`  
- [v] Ukazatel na ICorDebugBreakpoint objekt, který představuje bod přerušení.  
+ [in] Ukazatel na objekt ICorDebugBreakpoint představující zarážku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -56,5 +56,5 @@ HRESULT Breakpoint (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

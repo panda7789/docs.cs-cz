@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bce005a677dcb74c176a6dddfb2726f6b1fd0e8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f911d99470b9870f5c42d4170a4024123c10e7f3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436904"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54511118"
 ---
 # <a name="igchostcollect-method"></a>IGCHost::Collect – metoda
-Vynutí kolekci vyskytují pro danou generaci, bez ohledu na stav v aktuální kolekci paměti.  
+Vynutí kolekce vyskytují pro danou generaci bez ohledu na stav v aktuální kolekci uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT Collect (
   
 #### <a name="parameters"></a>Parametry  
  `Generation`  
- [v] Generování, na které se má provést uvolnění paměti. Hodnota -1 označuje, že všechny generace určitým uvolnění paměti.  
+ [in] Generování, na kterém chcete provést uvolnění paměti. Hodnota -1 označuje, že všech generací projdou uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** GCHost.idl, GCHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IGCHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IGCHost – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - TypeOf...Is expression
 - Is operator [Visual Basic]
 ms.assetid: 8045a6c8-2a83-45b6-ad47-d09a704c656d
-ms.openlocfilehash: 8beca1dc8788514224f70cacc5b8ede0974f5230
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a78189a6b82100665ac07b9d7c89590613ec1e1f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33601947"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745620"
 ---
 # <a name="is-operator-visual-basic"></a>Is – operátor (Visual Basic)
 Porovná dvě proměnné objektových referencí.  
@@ -27,33 +27,33 @@ result = object1 Is object2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Všechny `Boolean` hodnotu.  
+ Povinný parametr. Žádné `Boolean` hodnotu.  
   
  `object1`  
- Požadováno. Všechny `Object` název.  
+ Povinný parametr. Žádné `Object` název.  
   
  `object2`  
- Požadováno. Všechny `Object` název.  
+ Povinný parametr. Žádné `Object` název.  
   
 ## <a name="remarks"></a>Poznámky  
- `Is` Operátor určuje, pokud dva odkazy na objekty odkazují na stejný objekt. Neprovede však porovnání hodnot. Pokud `object1` a `object2` odkazují na přesně stejnou instanci objektu, `result` je `True`; Pokud ne, `result` je `False`.  
+ `Is` Určuje operátor, pokud dva odkazy na objekty odkazují na stejný objekt. Neprovádí však porovnání hodnot. Pokud `object1` a `object2` odkazují na přesně stejnou instanci objektu, `result` je `True`; Pokud ne, `result` je `False`.  
   
- `Is` Můžete také použít s `TypeOf` – klíčové slovo, aby `TypeOf`... `Is` výraz, který testuje, zda je kompatibilní s datovým typem proměnné objektu.  
+ `Is` Můžete také použít s `TypeOf` – klíčové slovo, aby `TypeOf`... `Is` výraz, který testuje, jestli je kompatibilní s datovým typem proměnné objektu.  
   
 > [!NOTE]
->  `Is` – Klíčové slovo je používán také [vyberte... Příkaz případ](../../../visual-basic/language-reference/statements/select-case-statement.md).  
+>  `Is` – Klíčové slovo se používá také v [vyberte... Case – příkaz](../../../visual-basic/language-reference/statements/select-case-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Is` operátor k porovnání páry odkazy na objekty. Výsledky jsou přiřazeny k `Boolean` hodnotu udávající, zda dva objekty jsou identické.  
+ V následujícím příkladu `Is` operátor porovnání dvojice odkazů na objekty. Výsledky jsou přiřazeny k `Boolean` hodnotu udávající, zda dva objekty jsou identické.  
   
  [!code-vb[VbVbalrOperators#27](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/is-operator_1.vb)]  
   
- Jak ukazuje předchozí příklad, můžete použít `Is` operátor k testování obě časné a pozdní vazba objekty.  
+ Jak ukazuje předchozí příklad, můžete použít `Is` operátor testování obou časné a pozdní vazby objektů.  
   
-## <a name="see-also"></a>Viz také  
- [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)  
- [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)  
- [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+## <a name="see-also"></a>Viz také:
+- [Operátor Typeof](../../../visual-basic/language-reference/operators/typeof-operator.md)
+- [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
+- [Operátory porovnání v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

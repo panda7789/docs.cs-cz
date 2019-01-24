@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d8a87fb05a49c2813cf4d299c3663419be1640b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb31da8b3fb9148bb41cf7216b44e7cbf610eaee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450827"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671613"
 ---
 # <a name="icorprofilercallbackexceptioncatcherenter-method"></a>ICorProfilerCallback::ExceptionCatcherEnter – metoda
-Upozorní profileru, který je předáván ovládacího prvku na příslušné `catch` bloku.  
+Oznámí profileru, který ovládací prvek je předávaný do příslušné `catch` bloku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT ExceptionCatcherEnter(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] Identifikátor obsahující funkce `catch` bloku.  
+ [in] Funkce obsahující identifikátor `catch` bloku.  
   
  `objectId`  
- [v] Identifikátor výjimku zpracovanou.  
+ [in] Identifikátor zpracovávanou výjimku.  
   
 ## <a name="remarks"></a>Poznámky  
- `ExceptionCatcherEnter` Metoda je volána, pouze pokud je bod catch v kódu kompilovat s kompilátoru v běhu (JIT). Výjimka, která je zachycena v nespravovaném kódu nebo v interní kódu modulu runtime nebude volat toto oznámení. `objectId` Hodnota, je předaná znovu, protože kolekce paměti může mít přesunout objekt od `ExceptionThrown` oznámení.  
+ `ExceptionCatcherEnter` Metoda je volána, pouze pokud je bod catch v kódu zkompilovaném pomocí kompilátor just-in-time (JIT). Výjimka, která je zachycena v nespravovaném kódu nebo vnitřní kód modulu runtime nebude volat toto oznámení. `objectId` Hodnota předána znovu, protože uvolňování paměti může mít přesunout objekt od `ExceptionThrown` oznámení.  
   
- Profileru by neměly blokovat v jeho implementace této metody, protože zásobník nemusí být ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit preemptivní uvolňování paměti. Pokud zde blokuje profileru a dojde k pokusu o uvolňování paměti, modul runtime se zablokuje, dokud se vrátí tato zpětného volání.  
+ Profiler by neměla blokovat v rámci příslušné implementace této metody, protože zásobníku nemusí být ve stavu, která umožňuje uvolňování paměti, a proto není možné preemptive uvolňování paměti. Pokud profiler blokuje tady a dojde k pokusu o uvolnění paměti, modul runtime bude blokovat, dokud tento zpětného volání vrátí.  
   
- Okna profilování implementace této metody by neměla volání do spravovaného kódu nebo v žádné příčina způsob přidělení spravované paměti.  
+ Okna profilování implementace této metody by neměla volat do spravovaného kódu nebo v jakékoli příčina způsob přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -58,6 +58,6 @@ HRESULT ExceptionCatcherEnter(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ExceptionCatcherLeave – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ExceptionCatcherLeave – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)

@@ -3,12 +3,12 @@ title: Spojení pomocí složených klíčů (LINQ v JAZYKU C#)
 description: Zjistěte, jak spojení pomocí složených klíčů v technologii LINQ.
 ms.date: 12/1/2016
 ms.assetid: da70b54d-3213-45eb-8437-fbe75cbcf935
-ms.openlocfilehash: ae37d03f996f0b0cc184a86663f16d62e6c29c69
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
-ms.translationtype: MT
+ms.openlocfilehash: 742338c01746966170551693e8c6b00b964446b8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080101"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668610"
 ---
 # <a name="join-by-using-composite-keys"></a>Spojení pomocí složených klíčů
 
@@ -38,6 +38,6 @@ Složené klíče můžete také použít v `group` klauzuli.
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ (Language Integrated Query)](index.md)  
-- [join – klauzule](../language-reference/keywords/join-clause.md)  
-- [group – klauzule](../language-reference/keywords/group-clause.md)  
+- [LINQ (Language Integrated Query)](index.md)
+- [join – klauzule](../language-reference/keywords/join-clause.md)
+- [group – klauzule](../language-reference/keywords/group-clause.md)

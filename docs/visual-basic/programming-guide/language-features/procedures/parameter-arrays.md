@@ -10,59 +10,59 @@ helpviewer_keywords:
 - procedures [Visual Basic], indefinite number of argument values
 - arrays [Visual Basic], parameter arrays
 ms.assetid: c43edfae-9114-4096-9ebc-8c5c957a1067
-ms.openlocfilehash: a91da0d9e16ff11fdd4980588fee64b3e4a603c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eac637c0fcaaded25a54332b2f1188876ef5f29a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652374"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711879"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Pole parametrů (Visual Basic)
-Obvykle nelze volání procedury s další argumenty, než určuje postup deklarace. Pokud budete potřebovat nekonečný počet argumentů, můžou deklarovat *parametr pole*, což umožňuje postupu tak, aby přijímal pole hodnot parametru. Nemusíte vědět počet prvků v poli parametrů, když definujete postup. Velikost pole je určena jednotlivě každý volání k postupu.  
+Obvykle nelze volat proceduru s více argumentů, než určuje deklaraci procedury. Když budete potřebovat nekonečný počet argumentů, je možné deklarovat *pole parametrů*, který umožňuje procedury tak, aby přijímal pole hodnot pro parametr. Není nutné znát počet prvků v poli parametrů při definování procesu. Velikost pole je samostatně určeno každé volání do procedury.  
   
 ## <a name="declaring-a-paramarray"></a>Deklarace ParamArray  
- Můžete použít [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) – klíčové slovo k označení parametr pole v seznamu parametrů. Platí následující pravidla:  
+ Můžete použít [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) – klíčové slovo k označení pole parametrů. v seznamu parametrů. Platí následující pravidla:  
   
--   Procedury můžete definovat jenom jeden parametr pole a musí být poslední parametr v definici postupu.  
+-   Postup lze definovat pouze jeden parametr pole a musí být poslední parametr v definici procedury.  
   
--   Hodnotou musí být předán pole parametrů. Je dobrým zvykem explicitně zahrnovat programování [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) – klíčové slovo v definici postupu.  
+-   Pole parametrů musí být předán podle hodnoty. To při programování je dobrým zvykem zahrnout explicitně [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) – klíčové slovo v definici procedury.  
   
--   Pole parametrů je automaticky volitelné. Výchozí hodnota je prázdná jednorozměrné pole typu prvku pole parametrů.  
+-   Pole parametrů je automaticky volitelné. Výchozí hodnota je prázdné jednorozměrné pole typu prvku pole parametrů.  
   
--   Všechny parametry předcházející pole parametrů je nutné zadat. Pole parametrů musí být pouze volitelný parametr.  
+-   Všechny parametry předchozí pole parametrů musí být povinné. Pole parametrů musí být pouze volitelný parametr.  
   
-## <a name="calling-a-paramarray"></a>Volání metody ParamArray  
- Při volání procedury, která definuje pole parametrů můžete zadat argument v některém z následujících způsobů:  
+## <a name="calling-a-paramarray"></a>Volání ParamArray  
+ Při volání procedury, která definuje pole parametrů můžete zadat argument do některého z následujících způsobů:  
   
--   Nothing – to znamená, můžete vynechat [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) argument. V takovém případě je prázdné pole předaný postupu. Také můžete předat [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo pomocí stejného efektu.  
+-   Nothing – to znamená, můžete vynechat [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) argument. V takovém případě prázdné pole je předán do procedury. Můžete také předat [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo se stejný účinek.  
   
--   Seznam libovolný počet argumentů, oddělených čárkami. Datový typ jednotlivých argumentu musí být implicitně převést na `ParamArray` typ elementu.  
+-   Seznam libovolný počet argumentů, oddělené čárkami. Datový typ každého argumentu musí být implicitně převeditelný na `ParamArray` typ elementu.  
   
--   Pole s stejný typ elementu jako parametr pole typu elementu.  
+-   Pole se stejným typem elementu jako typ elementu pole parametrů.  
   
- Ve všech případech se kód v rámci procesu považuje za jednorozměrné pole s prvky stejný datový typ jako parametr pole `ParamArray` datového typu.  
+ Ve všech případech se kód v rámci postupu považuje za jednorozměrné pole s prvky stejného datového typu jako pole parametrů `ParamArray` datového typu.  
   
 > [!IMPORTANT]
->  Vždy, když budete pracovat s pole to může být velký, bez omezení, existuje riziko překročení některé interní kapacitu vaší aplikace. Pokud přijmete pole parametrů, měli byste otestovat pro velikost pole, které do ní předán volající kód. Proveďte příslušné kroky, pokud je příliš velká pro vaši aplikaci. Další informace najdete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+>  Pokaždé, když budete pracovat s polem, které mohou být po neomezenou dobu velké, existuje riziko přetečení vnitřní nějakým vaší aplikace. Pokud souhlasíte s polem parametrů, měli byste otestovat pro velikost pole, které do něho předaný volajícímu kódu. Přijmout vhodná opatření, pokud je příliš velký pro vaši aplikaci. Další informace najdete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje a volá funkci `calcSum`. `ParamArray` Modifikátor pro parametr `args` umožňuje funkci tak, aby přijímal proměnný počet argumentů.  
+ Následující příklad definuje a volá funkci `calcSum`. `ParamArray` Modifikátor parametru `args` umožňuje funkci tak, aby přijímal proměnný počet argumentů.  
   
  [!code-vb[VbVbalrStatements#26](../../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/parameter-arrays_1.vb)]  
   
- V následujícím příkladu definuje procedura se pole parametrů a výstupy hodnoty všechny elementy pole Předaný parametr pole.  
+ Následující příklad definuje proceduru s polem parametrů a vypíše hodnoty ze všech prvků pole předat pole parametrů.  
   
  [!code-vb[VbVbcnProcedures#48](./codesnippet/VisualBasic/parameter-arrays_2.vb)]  
   
  [!code-vb[VbVbcnProcedures#49](./codesnippet/VisualBasic/parameter-arrays_3.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Information.UBound%2A>  
- [Procedury](./index.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
- [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)  
- [Nepovinné parametry](./optional-parameters.md)  
- [Přetížení procedury](./procedure-overloading.md)  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Information.UBound%2A>
+- [Procedury](./index.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
+- [Nepovinné parametry](./optional-parameters.md)
+- [Přetížení procedury](./procedure-overloading.md)
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)

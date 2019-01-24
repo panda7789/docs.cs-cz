@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c56685e2b9bef811f0fa987be976790eca83e91c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 6732eef46f87d9e2e3aeada138ea28853d3f0479
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386404"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663157"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Editor lokalizace prostředků Windows)
 
@@ -137,7 +137,7 @@ Měli byste použít verzi nástroje Winres.exe vydanou s rozhraním .NET Framew
 
    Nástroj uloží soubor pomocí zásady vytváření názvů, který očekává, že čas spuštění pro lokalizované soubory prostředků. Například, pokud lokalizujete `TestApp.resources` do němčiny, nástroj uloží soubor jako `TestApp.de-DE.resources`. Pokud lokalizujete `TestApp.resx` do němčiny, nástroj uloží soubor jako `TestApp.de-DE.resx`. Další informace o vytváření názvů prostředků najdete v tématu [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md). Seznam předdefinovaných názvů jazykových používá čas spuštění, najdete v článku <xref:System.Globalization.CultureInfo> třídy.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.ComponentModel.LocalizableAttribute>
 - <xref:System.Globalization.CultureInfo>

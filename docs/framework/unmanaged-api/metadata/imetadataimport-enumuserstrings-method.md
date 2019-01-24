@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 98b99493e54b123d37eb281455180b9a25baddd4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79e65d86eda2f01e1d6f2af46c5ee8e15ff03ccb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446827"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730240"
 ---
 # <a name="imetadataimportenumuserstrings-method"></a>IMetaDataImport::EnumUserStrings – metoda
-Vytvoří výčet tokeny řetězec představující pevně řetězce v aktuálním oboru metadat.  
+Vytvoří výčet řetězec tokeny představující pevně zakódované řetězce v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ HRESULT EnumUserStrings (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `rStrings`  
- [out] Pole používá k ukládání tokeny řetězec.  
+ [out] Pole pro ukládání tokenů řetězec.  
   
  `cMax`  
- [v] Maximální velikost `rStrings` pole.  
+ [in] Maximální velikost `rStrings` pole.  
   
  `pcStrings`  
- [out] Počet řetězec tokeny, vrátí se v `rStrings`.  
+ [out] Počet tokenů řetězec vrácený v `rStrings`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUserStrings` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcStrings` je nulová.|  
+|`S_OK`|`EnumUserStrings` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcStrings` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězec tokeny jsou vytvořené pomocí [imetadataemit::defineuserstring –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) metoda. Tato metoda je určena pro použití prohlížečem metadata, a nikoli kompilátor.  
+ Řetězec tokeny jsou vytvářeny [imetadataemit::defineuserstring –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md) metody. Tato metoda je určena pro použití podle Prohlížeč metadat, nikoli podle kompilátoru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

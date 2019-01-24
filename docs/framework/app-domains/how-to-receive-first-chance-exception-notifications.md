@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 875cdb2837109e922233f42d6241a7e1888e0693
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: ed8aaa12e91654dcf0b688b14d7d2f38bc9096ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49452271"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54677737"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Postupy: Přijímání oznámení o první odpovídající výjimce
 <xref:System.AppDomain.FirstChanceException> Událost <xref:System.AppDomain> třída umožňuje dostávat oznámení, že byla vyvolána výjimka, před common language runtime začne hledat obslužné rutiny výjimek.
@@ -102,5 +102,5 @@ ms.locfileid: "49452271"
 
 -   V tomto příkladu je aplikace příkazového řádku. Chcete-li zkompilovat a spustit tento kód v sadě Visual Studio, přidejte kód jazyka C# `Console.ReadLine();` (v jazyce Visual Basic `Console.ReadLine()`) na konci `Main()`, zabránit ukončit dříve, než si můžete přečíst výstup příkazového okna.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 - <xref:System.AppDomain.FirstChanceException>

@@ -2,21 +2,21 @@
 title: '&lt;mtomMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 7865d171-cd1e-430a-8421-39cc13541d1b
-ms.openlocfilehash: a59f4f4ca5024b492a1e99b50776870032077818
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: b9fe4a9eb0176c97920c0dde5cb003c8ca1ae989
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149610"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54697436"
 ---
 # <a name="ltmtommessageencodinggt"></a>&lt;mtomMessageEncoding&gt;
 Určuje kódování a správu verzí zpráv protokolu SOAP zprávy přenosu optimalizace mechanismus (MTOM) na základě zpráv.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<mtomMessageEncoding >  
+\<mtomMessageEncoding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,10 +35,10 @@ Určuje kódování a správu verzí zpráv protokolu SOAP zprávy přenosu opti
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Třída maxBufferSize|Celé číslo, které určuje maximální velikost vyrovnávací paměti, kterou lze použít.|  
+|maxBufferSize|Celé číslo, které určuje maximální velikost vyrovnávací paměti, kterou lze použít.|  
 |maxReadPoolSize|Celé číslo, které určuje, kolik zpráv lze souběžně číst bez přidělení nových čtecích zařízení. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 64.|  
 |maxWritePoolSize|Celé číslo, které určuje, kolik zpráv lze souběžně odesílat bez přidělení nových modulů pro zápis. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 16.|  
-|verze messageVersion|Určuje verzi protokolu SOAP zprávy odesílané pomocí vazby. Platné hodnoty jsou<br /><br /> -Soap11Addressing1<br />-Soap12Addressing10<br /><br /> Výchozí hodnota je Soap12Addressing10. Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion>.|  
+|messageVersion|Určuje verzi protokolu SOAP zprávy odesílané pomocí vazby. Platné hodnoty jsou<br /><br /> -Soap11Addressing1<br />-Soap12Addressing10<br /><br /> Výchozí hodnota je Soap12Addressing10. Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion>.|  
 |writeEncoding|Určuje znakovou sadu kódování pro vysílání zpráv z vazby. Platné hodnoty jsou<br /><br /> -UnicodeFffeTextEncoding: Kódování Unicode BigEndian kódování<br />-Utf16TextEncoding: Kódování Unicode<br />-Utf8TextEncoding: 8bitové kódování<br /><br /> Výchozí hodnota je Utf8TextEncoding. Tento atribut je typu <xref:System.Text.Encoding>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -67,14 +67,14 @@ Určuje kódování a správu verzí zpráv protokolu SOAP zprávy přenosu opti
                      textEncoding="utf-8" />
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.MtomMessageEncodingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.MtomMessageEncodingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>
+- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
+- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7e8a623107e5e03ca36137c253c9bdf0a722d385
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1013913b62c77714d3cc24eace83272834eecce7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456034"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54706258"
 ---
 # <a name="icorprofilerobjectenumclone-method"></a>ICorProfilerObjectEnum::Clone – metoda
-Získá ukazatele rozhraní v kopii [icorprofilerobjectenum –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) rozhraní.  
+Získá ukazatel rozhraní na kopii této [icorprofilerobjectenum –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +36,10 @@ HRESULT Clone (
   
 #### <a name="parameters"></a>Parametry  
  `ppEnum`  
- [out] Ukazatel na ukazatel rozhraní, která naopak odkazuje na kopii této `ICorProfilerObjectEnum` rozhraní. Kopie udržuje svou vlastní stav výčtu odděleně od této. Pozice kurzoru počáteční vytvoření kopie však bude stejná jako tento enumerátor aktuálním umístěním kurzoru.  
+ [out] Ukazatel na ukazatel rozhraní, které zase odkazuje na kopii této `ICorProfilerObjectEnum` rozhraní. Tuto kopii udržuje svůj vlastní stav výčtu odděleně od tohoto objektu. Pozice kurzoru počáteční kopie však budou stejné jako tento enumerátor aktuálním umístěním kurzoru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -47,5 +47,5 @@ HRESULT Clone (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerObjectEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerObjectEnum – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d97ce4da-f09c-4d1e-85b7-a0ccedd7246a
-ms.openlocfilehash: b46c763e7cddfc7617c9a6a23428f83a54955ba0
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 1cd6962a02a50ecd9f9b634148eeb38ad0a45e05
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838896"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664041"
 ---
 # <a name="sql-xml-column-values"></a>Hodnoty pro sloupce SQL XML
 Systém SQL Server podporuje `xml` datový typ, a vývojáři mohou načítat sad výsledků dotazu, včetně tohoto typu pomocí standardní chování <xref:System.Data.SqlClient.SqlCommand> třídy. `xml` Sloupec se dá načíst stejně, jako je načten žádný sloupec (do <xref:System.Data.SqlClient.SqlDataReader>, například), ale pokud chcete pracovat s obsahem sloupci ve formátu XML, musíte použít <xref:System.Xml.XmlReader>.  
@@ -24,7 +24,7 @@ Systém SQL Server podporuje `xml` datový typ, a vývojáři mohou načítat sa
  [!code-csharp[DataWorks SqlClient.GetXmlDataReader#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetXmlDataReader/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetXmlDataReader#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetXmlDataReader/VB/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.SqlTypes.SqlXml>  
- [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.SqlTypes.SqlXml>
+- [Data XML na SQL Serveru](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

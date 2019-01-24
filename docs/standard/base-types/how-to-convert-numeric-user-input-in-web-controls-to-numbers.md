@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 663f9d88315f396b187cca874c930179f1dea523
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: c66235d866bd7c276d049d9415015dd6f9aa9fb6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722358"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Postupy: Převod číselného vstupu uživatele ve webových ovládacích prvcích na čísla
 Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, můžete uživatele zadat číselná data do <xref:System.Web.UI.WebControls.TextBox> ovládacího prvku v téměř neomezené množství formátů. V důsledku toho je velmi důležité určit národní prostředí a jazykovou verzi uživatele webové stránky. Při analýze uživatelský vstup, lze následně použít formátovací úmluvy určené národní prostředí a jazykovou verzi uživatele.  
@@ -73,5 +73,5 @@ Vzhledem k tomu, že na webové stránce můžete zobrazit kdekoli na světě, m
   
 ## <a name="see-also"></a>Viz také:
 
-- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
+- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)
 - [Analýza číselných řetězců](../../../docs/standard/base-types/parsing-numeric.md)

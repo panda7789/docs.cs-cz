@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d4e07fb3d0988838fde662f4bb7d4719cc2d50f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b905d3b5de39057cba384ea7bca917bc3476623f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408337"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700647"
 ---
 # <a name="cortypeid-structure"></a>COR_TYPEID – struktura
 Obsahuje identifikátor typu.  
@@ -43,12 +43,12 @@ typedef struct COR_TYPEID{
 |`token2`|Druhý token.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_TYPEID` Struktura je vrácen počet ladění metody, které obsahují informace o objektech být uvolňování paměti. Ho můžete poté předat jako argument jiné ladění metody, které poskytují další informace o této položce. Například vytyčením [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objekt, je možné získat jednotlivé [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekty, které představují jednotlivé objekty na spravované haldě. Potom můžete předat `COR_TYPEID` z hodnoty `COR_HEAPOBJECT.type` do [icordebugprocess5::gettypefortypeid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md) metoda pro načtení ICorDebugType objektu, který obsahuje informace o typu o objektu.  
+ `COR_TYPEID` Struktura je vrácen počet ladění metody, které poskytují informace o objektech být uvolněna. Může pak být předán jako argument jiné ladění metody, které poskytují další informace o této položce. Například vytyčením [icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) objektu, je možné získat jednotlivé [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekty, které představují jednotlivé objekty na spravované haldě. Můžete předat `COR_TYPEID` hodnotu `COR_HEAPOBJECT.type` pole [icordebugprocess5::gettypefortypeid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md) metodu pro načtení ICorDebugType objekt, který poskytuje typ informace o objektu.  
   
- A `COR_TYPEID` objekt má být neprůhledné. Jeho jednotlivých polí by neměly přístup ani s nimi manipulovat. Jeho jedinou použijte je jako identifikátor, který je k dispozici jako `out` parametr ve volání metody a který může být naopak předaný do jiné metody, které poskytují další informace.  
+ A `COR_TYPEID` objektu má být neprůhledné. Jednotlivých polí by neměl být přistupovat ani s nimi manipulovat. Jako identifikátor, který je k dispozici jako je výhradní použití `out` parametr ve volání metody a, který může být předán do jiné metody, které poskytují další informace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -56,6 +56,6 @@ typedef struct COR_TYPEID{
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

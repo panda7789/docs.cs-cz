@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], about exceptions
 ms.assetid: 71472c62-320a-470a-97d2-67995180389d
-ms.openlocfilehash: 64e62d9c6cfcffb9ea5c0b0e05a546753278e186
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 8ad664f5b689a2305afc17f4b480fdc445d64e25
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240187"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583457"
 ---
 # <a name="using-exceptions-c-programming-guide"></a>Použití výjimek (Průvodce programováním v C#)
 V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí mechanizmu nazývány výjimkami. Výjimky jsou vyvolaných kódem, který dojde k chybě a zachytit kód, který můžete chybu opravit. Výjimky mohou být vyvolány pomocí rozhraní .NET Framework common language runtime (CLR) nebo kód v programu. Jakmile je vyvolána výjimka, rozšíří zásobníkem volání do `catch` se nachází příkaz pro výjimku. Nezachycených výjimek jsou zpracovány rutinou obecná výjimka poskytuje systém, který se zobrazí dialogové okno.  
@@ -44,7 +44,7 @@ V jazyce C# jsou chyby v programu v době běhu šířena přes program pomocí 
   
 -   Pokud je dosaženo začátku vlákno, vlákno ukončeno.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)

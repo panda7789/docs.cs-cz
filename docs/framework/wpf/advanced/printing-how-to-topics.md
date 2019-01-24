@@ -5,12 +5,12 @@ helpviewer_keywords:
 - printing [WPF]
 - print system management [WPF]
 ms.assetid: 5f3d391a-4afd-49ee-ad99-ceb737c0c8a8
-ms.openlocfilehash: e9b54cd7e59a5a410bfc5c0fb1ba4973c5e482af
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 0bf581155bb32951a4614818edb50837f608939e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837112"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726439"
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce pro správu tisku systému součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také novou [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] cesta tisku.  
@@ -31,7 +31,7 @@ Témata v této části ukazují, jak používat tisk a funkce pro správu tisku
  [Výčet dílčí sady tiskové fronty](../../../../docs/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues.md)  
  Pokyny pro generování seznamu sad tiskárny, které mají určité charakteristické vlastnosti.  
   
- [NOTINBUILD: Postupy: rozšíření schématu, tisku a vytvářet nové třídy tiskovém systému](https://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
+ [NOTINBUILD: Postupy: Rozšíření schématu, tisku a vytvářet nové třídy tiskovém systému](https://msdn.microsoft.com/library/a3600218-1ea5-478a-9853-6560464f2885)  
  Rozšířené informace o jak spravovaný kód programátoři můžete rozšířit schéma tisku pro tisková zařízení speciální nebo tiskárny s neobvyklé nebo nové funkce.  
   
  [Načtení vlastností systémového objektu tisku bez reflexe](../../../../docs/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection.md)  
@@ -46,10 +46,10 @@ Témata v této části ukazují, jak používat tisk a funkce pro správu tisku
  [Ověření a sloučení PrintTickets](../../../../docs/framework/wpf/advanced/how-to-validate-and-merge-printtickets.md)  
  Pokyny pro kontrolu platnost lístku tisku a, že ho neuvede v požadavku cokoli, co se nepodporuje pro tiskárnu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Printing>  
- <xref:System.Printing.IndexedProperties>  
- <xref:System.Printing.Interop>  
- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)  
- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [XPS](https://www.microsoft.com/xps)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Printing>
+- <xref:System.Printing.IndexedProperties>
+- <xref:System.Printing.Interop>
+- [Přehled tisku](../../../../docs/framework/wpf/advanced/printing-overview.md)
+- [Dokumenty v platformě WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [XPS](https://www.microsoft.com/xps)

@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledání uzly na stejné úrovni (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 73082738-2113-4438-8545-98d5df0927cb
-ms.openlocfilehash: ded92d8cb7cb2d2aa6c6342c3ddec347e25ff79a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 740123077c24dd27fe1a4810d0cb45c4775894aa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642862"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622634"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání uzly na stejné úrovni (XPath-technologie LINQ to XML) (Visual Basic)
-Můžete chtít najít všechny úroveň uzlu, které mají určitý název. Výsledné kolekce mohou zahrnovat uzlu kontextu, pokud kontext uzel má také určitý název.  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (Visual Basic)
+Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název. Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.  
   
  Výraz XPath je:  
   
  `../Book`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve najde `Book` elementu a najde všechny elementy na stejné úrovni jako s názvem `Book`. Výsledný kolekce obsahuje uzel kontextu.  
+ V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`. Výsledný kolekce obsahuje uzel kontextu.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: knihy (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```vb  
 Dim books As XDocument = XDocument.Load("Books.xml")  
@@ -67,5 +67,5 @@ Results are identical
 </Book>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

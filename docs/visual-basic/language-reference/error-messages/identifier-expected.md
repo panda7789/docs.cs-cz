@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30203
 ms.assetid: c05162ee-55d0-4d7f-84bb-e7758d4c5081
-ms.openlocfilehash: ddbb0481ed51d9daad1eedff72fbdb9f6b4a9a35
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 56d405bfe1079e9862d47bc64566fee62a573be0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33586127"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731033"
 ---
 # <a name="identifier-expected"></a>Byl očekáván identifikátor.
-Programovací element, který není deklarovaný element rozpoznatelném název dojde, pokud kontext nevyžaduje název elementu. Možnou příčinou je, aby atribut jiný než byl zadán někde na začátku prohlášení.  
+Programový element, který není rozpoznaný element deklarovaný název nastane, pokud kontext vyžaduje název elementu. Jednou z možných příčin je, že atribut jiný než nebyl zadán někde na začátku prohlášení.  
   
  **ID chyby:** BC30203  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Ověřte, že všechny atributy v příkazu jsou všechny umístěny na začátku.  
+-   Ověřte, že všechny atributy v příkazu jsou umístěny na začátku.  
   
--   Ověřte, jestli jsou správně zadané všechny názvy elementu v příkazu.  
+-   Ověřte, jestli jsou všechny názvy elementů v příkazu napsaný správně.  
   
-## <a name="see-also"></a>Viz také  
- [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
- 
+## <a name="see-also"></a>Viz také:
+- [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+

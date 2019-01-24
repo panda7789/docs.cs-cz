@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: 492542743b27c709901267d5fd4e066a65158b85
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3f3c7e96f1c372bb05aba9bef81192aec47b3cde
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129633"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678288"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Přehled asynchronních vzorů založených na událostech
 Aplikace, které provádějí celou řadu úloh současně, ale stále reagovat na interakci uživatele, často vyžadují návrh, který používá více vláken. <xref:System.Threading> Obor názvů poskytuje všechny nástroje potřebné k vytvoření vysoce výkonné aplikace s více vlákny, ale efektivně pomocí těchto nástrojů vyžaduje významné prostředí s více vlákny softwarového inženýrství. Pro vícevláknové aplikace s poměrně jednoduché <xref:System.ComponentModel.BackgroundWorker> součást poskytuje jednoduché řešení. Pro složitější asynchronní aplikace zvažte implementaci třídy, která dodržuje asynchronního vzoru založeného na událostech.  
@@ -133,12 +133,12 @@ public class AsyncExample
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.ComponentModel.ProgressChangedEventArgs>  
-- <xref:System.ComponentModel.BackgroundWorker>  
-- <xref:System.ComponentModel.AsyncCompletedEventArgs>  
-- [Jak: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
-- [Jak: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
-- [Jak: Implementace formuláře, který používá operaci na pozadí](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
-- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
-- [Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
+- <xref:System.ComponentModel.ProgressChangedEventArgs>
+- <xref:System.ComponentModel.BackgroundWorker>
+- <xref:System.ComponentModel.AsyncCompletedEventArgs>
+- [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [Postupy: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
+- [Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [Rozhodování, kdy implementovat asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)

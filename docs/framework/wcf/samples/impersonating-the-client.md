@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: 9e1c38abd1c9cacfd4db953d9fb875437b2f1093
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9902333b892c6961a93bb3be6918c042cb72d70c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199614"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672159"
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
 Ukázka zosobnění ukazuje, jak zosobnit volající aplikace na službu tak, aby službě můžete získat přístup k systémovým prostředkům jménem volající.  
@@ -125,4 +125,4 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
   
 5.  Když spustíte klienta, si povšimněte identity před a po spuštění s jinými přihlašovacími údaji.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

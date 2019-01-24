@@ -2,12 +2,12 @@
 title: Vlastnictví a oddělení uživatelských schémat na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
-ms.openlocfilehash: 7b1cda211fdc89732afa8eed1eaaf2c98309a969
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: adeed5ff4961a33d8f7d330941a5680f11a88b96
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45649117"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694799"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Vlastnictví a oddělení uživatelských schémat na SQL serveru
 Základním konceptem zabezpečení SQL serveru je, že vlastníci objekty mají neodvolatelnou oprávnění ke správě je. Nelze odebrat oprávnění z objektu vlastníka a z databáze nelze vyřadit uživatele, pokud vlastní objekty v ní.  
@@ -57,10 +57,10 @@ Server.Database.DatabaseSchema.DatabaseObject
 |--------------|-----------------|  
 |[Oddělení uživatelských schémat](https://msdn.microsoft.com/library/ms190387.aspx) v Online knihách serveru SQL|Jsou zde popsány změny zavedené oddělení uživatelských schémat. Zahrnuje nové chování, jeho dopad na vlastnictví, zobrazení katalogu a oprávnění.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  
- [Serverové a databázové role na SQL Serveru](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)  
- [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
+- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)
+- [Serverové a databázové role na SQL Serveru](../../../../../docs/framework/data/adonet/sql/server-and-database-roles-in-sql-server.md)
+- [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

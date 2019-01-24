@@ -23,12 +23,12 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-ms.openlocfilehash: ce45e4df7f74cd68bde0fb2adba10197a11edb1b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: e45ca7eeca9ce178abf3ab5cab6d791f799f1d09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394311"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678834"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>Postupy: Deklarace konstanty (Visual Basic)
 Můžete použít `Const` příkazu deklarace konstanty a nastavení jeho hodnoty. Deklarací konstantu, přiřaďte k hodnotě smysluplný název. Jakmile je deklarována konstanta, nelze změnit ani přiřazena nová hodnota.  
@@ -65,14 +65,25 @@ Můžete použít `Const` příkazu deklarace konstanty a nastavení jeho hodnot
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)  
- [Datové typy konstanty a literálu](constant-and-literal-data-types.md)  
- [Přehled konstant](constants-overview.md) [postupy: deklarace konstanty](how-to-declare-a-constant.md) [uživatelem definované konstanty](user-defined-constants.md) [datové typy konstanty a literálu](constant-and-literal-data-types.md) [jak: skupina Souvisejících hodnot konstant](how-to-group-related-constant-values-together.md) [přehled výčtů](enumerations-overview.md) [postupy: deklarace výčtů](how-to-declare-enumerations.md) [postupy: odkazování na člena výčtu](how-to-refer-to-an-enumeration-member.md) [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md) [postupy: iterace ve výčtu](how-to-iterate-through-an-enumeration.md) [postupy: určení řetězce spojeného s hodnotou výčtu](how-to-determine-the-string-associated-with-an-enumeration-value.md) [Kdy použít výčet](when-to-use-an-enumeration.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)
+- [Datové typy konstanty a literálu](constant-and-literal-data-types.md)
+- [Přehled konstant](constants-overview.md)
+- [Postupy: Deklarace konstanty](how-to-declare-a-constant.md)
+- [Uživatelem definované konstanty](user-defined-constants.md)
+- [Datové typy konstanty a literálu](constant-and-literal-data-types.md)
+- [Postupy: Seskupení souvisejících hodnot konstant](how-to-group-related-constant-values-together.md)
+- [Přehled výčtů](enumerations-overview.md)
+- [Postupy: Deklarace výčtů](how-to-declare-enumerations.md)
+- [Postupy: Odkazování na člena výčtu](how-to-refer-to-an-enumeration-member.md)
+- [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md)
+- [Postupy: Iterace ve výčtu](how-to-iterate-through-an-enumeration.md)
+- [Postupy: Určení řetězce spojeného s hodnotou výčtu](how-to-determine-the-string-associated-with-an-enumeration-value.md)
+- [Kdy použít výčet](when-to-use-an-enumeration.md)
 
- [Přehled výčtů](enumerations-overview.md)  
- [Přehled konstant](constants-overview.md)  
- [Postupy: deklarace výčtů](how-to-declare-enumerations.md)  
- [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md)  
- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)
+- [Přehled výčtů](enumerations-overview.md)
+- [Přehled konstant](constants-overview.md)
+- [Postupy: Deklarace výčtů](how-to-declare-enumerations.md)
+- [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md)
+- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

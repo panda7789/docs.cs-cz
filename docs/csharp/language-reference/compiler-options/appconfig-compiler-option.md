@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -appconfig compiler option [C#]
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
-ms.openlocfilehash: 33f79967c34736f2175e0bb6e2b5b88d211545c2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 102ed3977d56ace0dab63b1f066cc10a6fc5dfbf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698118"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514059"
 ---
 # <a name="-appconfig-c-compiler-options"></a>-appconfig (možnosti kompilátoru C#)
 **- Appconfig** – možnost kompilátoru umožňuje aplikaci v C# k určení umístění sestavení aplikace konfiguračního souboru (app.config) do common language runtime (CLR) v době vazby sestavení.  
@@ -26,7 +26,7 @@ ms.locfileid: "45698118"
   
 ## <a name="arguments"></a>Arguments  
  `file`  
- Požadováno. Konfigurační soubor aplikace obsahující nastavení vazeb sestavení.  
+ Povinný parametr. Konfigurační soubor aplikace obsahující nastavení vazeb sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
  Jedno použití **- appconfig** je pokročilé scénáře, ve kterých má sestavení tak, aby odkazovaly na verzi rozhraní .NET Framework a .NET Framework programu Silverlight daného sestavení ve stejnou dobu. Například Návrhář XAML, zapsán ve Windows Presentation Foundation (WPF) pravděpodobně tak, aby odkazovaly na WPF plochu, pro návrháře uživatelské rozhraní a na podmnožinu WPF, která je součástí Silverlightu. Stejného návrháře sestavení má přístup k obě sestavení. Ve výchozím nastavení samostatné odkazy zapříčiní chybu kompilátoru, protože vazba sestavení chápe daná dvě sestavení jako ekvivalentní.  
@@ -54,7 +54,7 @@ ms.locfileid: "45698118"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [\<supportPortability > – Element](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)  
+- [\<supportPortability > – Element](../../../framework/configure-apps/file-schema/runtime/supportportability-element.md)
 - [Možnosti kompilátoru jazyka C# (abecední pořadí)](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)

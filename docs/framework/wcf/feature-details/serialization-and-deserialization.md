@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: be2cf6c550ab8778a42f33fa2cb1b109abeea5e9
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 7ddad36c05d9972b9fc613403b68b7c793b6701d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873823"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54707569"
 ---
 # <a name="serialization-and-deserialization"></a>Serializace a deserializace
 Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:System.Runtime.Serialization.DataContractSerializer>. <xref:System.Runtime.Serialization.DataContractSerializer> Překládá [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] objekty a XML v obou směrech. Toto téma vysvětluje, jak funguje serializátor.  
@@ -260,9 +260,9 @@ Windows Communication Foundation (WCF) zahrnuje Serializační stroj, <xref:Syst
   
  Všimněte si také, že `NetDataContractSerializer` není výstup kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typ a název sestavení pro každý uzel v grafu objektů. Tyto informace, jenom Pokud je nejednoznačný výstupu. To znamená výstupy na kořenové úrovni objekt a pro polymorfní případy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Runtime.Serialization.NetDataContractSerializer>  
- <xref:System.Runtime.Serialization.XmlObjectSerializer>  
- [Binární serializace](../../../../docs/standard/serialization/binary-serialization.md)  
- [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Runtime.Serialization.NetDataContractSerializer>
+- <xref:System.Runtime.Serialization.XmlObjectSerializer>
+- [Binární serializace](../../../../docs/standard/serialization/binary-serialization.md)
+- [Typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání (s bezpečným vlákny) ovládacích prvků Windows Forms'
+title: 'Postupy: Bezpečné pro vlákna volání ovládacích prvků Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - threading [Windows Forms], cross-thread calls
 - controls [Windows Forms], multithreading
 ms.assetid: 138f38b6-1099-4fd5-910c-390b41cbad35
-ms.openlocfilehash: f2716db441380138e6058ec45d9ae9c07f0e21a7
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 60a71aefbf6d180ffe8d68f54d438e5b58a603fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664719"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54710466"
 ---
-# <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: Volání (s bezpečným vlákny) ovládacích prvků Windows Forms
+# <a name="how-to-make-thread-safe-calls-to-windows-forms-controls"></a>Postupy: Bezpečné pro vlákna volání ovládacích prvků Windows Forms
 
 Pokud používáte multithreading můžete zvýšit výkon vašich aplikací Windows Forms, je nutné provést volání k ovládacím prvkům způsobem bezpečným pro vlákno.
 
@@ -406,7 +406,7 @@ private:
  Následující příklad kódu je dokončené aplikace Windows Forms, který se skládá z formuláře s tři tlačítka a textová pole. Ukazuje na první tlačítko nezabezpečený přístup mezi vlákny, druhé tlačítko ukazuje bezpečný přístup s použitím <xref:System.Windows.Forms.Control.Invoke%2A>, a na třetí tlačítko ukazuje bezpečný přístup s použitím <xref:System.ComponentModel.BackgroundWorker>.
 
 > [!NOTE]
-> Pokyny o tom, jak spustit v příkladu najdete v tématu [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/cc447f7e-4c3b-4397-9d05-aeba3ca49416). Tento příklad vyžaduje odkazy na sestavení System.Drawing a System.Windows.Forms.
+> Pokyny o tom, jak spustit v příkladu najdete v tématu [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/cc447f7e-4c3b-4397-9d05-aeba3ca49416). Tento příklad vyžaduje odkazy na sestavení System.Drawing a System.Windows.Forms.
 
 ```csharp
 using System;
@@ -1048,7 +1048,7 @@ Při spuštění aplikace a klikněte na tlačítko **nebezpečné volat** tlač
 > [!CAUTION]
 > Pokud používáte multithreading jakéhokoli druhu, váš kód může být vystavena velmi závažných a složitých chyb. Další informace najdete v tématu [spravovaných vláken osvědčené postupy](../../../../docs/standard/threading/managed-threading-best-practices.md) před implementací jakéhokoli řešení, které používá multithreadingu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.ComponentModel.BackgroundWorker>
 - [Postupy: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)

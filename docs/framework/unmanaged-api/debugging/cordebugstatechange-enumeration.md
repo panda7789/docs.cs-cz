@@ -12,15 +12,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 841108457293e3377ee87f9c7d7c6898340e51b5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f0f692b692628d50755ce813c66823f940dccb8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513782"
 ---
 # <a name="cordebugstatechange-enumeration"></a>Výčet CorDebugStateChange
-Popisuje množství uložené v mezipaměti dat, která musí být odstraněn podle změn do procesu.  
+Popisuje množství dat uložených v mezipaměti, který musí být odstraněn podle změn do procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,17 +36,17 @@ typedef enum CorDebugStateChange
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`PROCESS_RUNNING`|Proces dosaženo nový stav paměti prostřednictvím dopředného provádění.|  
-|`SET_CONTEXT_FLAG_UNWIND_FRAME`|Paměť se proces může být nahodile jiný než dříve.|  
+|`PROCESS_RUNNING`|Proces byl dosažen nový stav paměti prostřednictvím dopředné spuštění.|  
+|`SET_CONTEXT_FLAG_UNWIND_FRAME`|Paměť procesu může být libovolně jiný než dříve.|  
   
 ## <a name="remarks"></a>Poznámky  
- Člen `CorDebugStateChange` výčtu je zadaný jako argument při volání ladicí program [ProcessStateChanged](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-processstatechanged-method.md) – metoda  
+ Člen `CorDebugStateChange` výčtu je zadaný jako argument při volání ladicího programu [ProcessStateChanged](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-processstatechanged-method.md) – metoda  
   
 > [!NOTE]
->  Tento výčet je určena pro použití v rozhraní .NET nativní ladění pouze scénáře.  
+>  Tento výčet je určena pro použití v .NET Native ladění pouze scénáře.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -54,6 +54,6 @@ typedef enum CorDebugStateChange
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

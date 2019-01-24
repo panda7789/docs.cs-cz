@@ -36,12 +36,12 @@ helpviewer_keywords:
 - UL literal type characters [Visual Basic]
 - literal types [Visual Basic], default
 ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
-ms.openlocfilehash: 1922282ece4dd90c8f55c8dea20ef2866d8b357c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a469a08ebadd77d5abbfa95b270784c9ef534691
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181392"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734867"
 ---
 # <a name="type-characters-visual-basic"></a>Zadejte znaky (Visual Basic)
 
@@ -140,12 +140,12 @@ Dim number As Integer = &H_C305_F860
 
 [!INCLUDE [supporting-underscores](../../../../../includes/vb-separator-langversion.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)

@@ -7,14 +7,14 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 6c5f7d288d805a6a25afa9a5b32a4550aaa76ec3
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: c3639070ddbb3c0eb41707d5cc5fbc7a46555a65
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46480653"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666576"
 ---
-# <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů ve Visual Basic
+# <a name="walkthrough-writing-queries-in-visual-basic"></a>Průvodce: Zápis dotazů v jazyce Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  
   
  Po dokončení tohoto návodu budete připraveni přejít ukázky a dokumentaci pro konkrétní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele, které vás zajímají. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé zahrnují [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)], a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -23,7 +23,7 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 #### <a name="to-create-a-console-application-project"></a>Vytvoření projektu konzolové aplikace  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  Na **souboru** nabídky, přejděte k **nový**a potom klikněte na tlačítko **projektu**.  
   
@@ -43,11 +43,11 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
 -   Definování `Student` třídy a vytvoří seznam instancí třídy.  
   
     > [!IMPORTANT]
-    >  Kód potřebný k definování `Student` třídy a vytvořit seznam použitý v tomto návodu je součástí příklady [postupy: vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). Můžete zkopírovat z něj a vložte ho do projektu. Nový kód nahradí kódu, které se zobrazovalo při vytváření projektu.  
+    >  Kód potřebný k definování `Student` třídy a vytvořit seznam použitý v tomto návodu je součástí příklady [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). Můžete zkopírovat z něj a vložte ho do projektu. Nový kód nahradí kódu, které se zobrazovalo při vytváření projektu.  
   
 #### <a name="to-add-a-new-student-to-the-students-list"></a>Přidání nového studenta do seznamu studentů  
   
--   Podle tohoto vzoru vytvořené v `getStudents` způsob, jak přidat další instanci `Student` třídy do seznamu. Přidání studenta vás seznámí s inicializátory objektů. Další informace najdete v tématu [inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
+-   Podle tohoto vzoru vytvořené v `getStudents` způsob, jak přidat další instanci `Student` třídy do seznamu. Přidání studenta vás seznámí s inicializátory objektů. Další informace najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="create-a-query"></a>Vytvořit dotaz  
  Při spuštění dotaz přidaný v této části vytváří seznam studentů, jehož academic pořadí umístí je do prvních deset. Vzhledem k tomu, že dotaz vybere kompletní `Student` objekt pokaždé, když, typ výsledku dotazu je `IEnumerable(Of Student)`. Nicméně dotazu obvykle není zadaný typ v definicích dotazů. Místo toho používá kompilátor odvození místního typu k určení typu. Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md). Proměnná rozsahu v dotazu, `currentStudent`, slouží jako odkaz na každé `Student` instance ve zdroji, `students`, díky přístupu k vlastnosti jednotlivých objektů v `students`.  
@@ -144,11 +144,11 @@ Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLU
   
 ## <a name="see-also"></a>Viz také:
 
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)  
-- [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
-- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
-- [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
-- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

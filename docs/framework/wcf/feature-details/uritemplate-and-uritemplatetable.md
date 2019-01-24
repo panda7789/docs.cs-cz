@@ -2,12 +2,12 @@
 title: UriTemplate a UriTemplateTable
 ms.date: 03/30/2017
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-ms.openlocfilehash: 66463248f66457aa61ceea22afd003f7b93717e1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3fd60325d2264a2ddeaabef7b0998844ca8c8cd6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198407"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722605"
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate a UriTemplateTable
 Weboví vývojáři potřebují popisují tvaru a rozložení identifikátorů URI, která odpovídají jejich služby. Windows Communication Foundation (WCF) přidali dvě nové třídy poskytovat vývojářům kontrolu nad jejich identifikátorů URI. <xref:System.UriTemplate> a <xref:System.UriTemplateTable> představují základ pro modul na základě identifikátoru URI odeslání ve službě WCF. Tyto třídy lze také na své vlastní, umožňuje vývojářům využívat šablon a identifikátor URI mechanismu mapování bez implementace služby WCF.  
@@ -15,7 +15,7 @@ Weboví vývojáři potřebují popisují tvaru a rozložení identifikátorů U
 ## <a name="templates"></a>Šablony  
  Šablona je způsob, jak popisují sadu relativní identifikátory URI. Sadu šablon identifikátor URI v následující tabulce ukazuje, jak může být definovaná systémem, který načte různé typy informací o počasí.  
   
-|Data|Šablony|  
+|Data|Šablona|  
 |----------|--------------|  
 |Národní prognózy|počasí/national|  
 |Stav prognózy|počasí / {state}|  
@@ -85,15 +85,15 @@ Weboví vývojáři potřebují popisují tvaru a rozložení identifikátorů U
   
 - "bot / {lodních}"  
   
-- "bot / {lodních} /\*"  
+- "shoe/{boat}/\*"  
   
-- "bot/loď? x = 2"  
+- "shoe/boat?x=2"  
   
-- "bot / {lodních}? x = {základnu}"  
+- "shoe/{boat}?x={bed}"  
   
-- "bot / {lodních}? x = {základnu} & y = obsluhy vzdálené správy"  
+- "shoe/{boat}?x={bed}&y=band"  
   
-- "? x = {bot}"  
+- "?x={shoe}"  
   
 - "bot? x = 3 & y = {var}  
   
@@ -129,7 +129,7 @@ Weboví vývojáři potřebují popisují tvaru a rozložení identifikátorů U
 - / {bot} {loď} - proměnné musí být odděleny literál.  
   
 ### <a name="matching-and-compound-path-segments"></a>Odpovídající a složené segmenty cesty  
- Segmenty cesty složené umožňují definovat šablony UriTemplate, který má více proměnných v rámci segmentu jednu cestu. Například v následujícím řetězci šablony: "adresy / {state}. {Město} "v rámci stejné segmentu jsou definovány dvě proměnné (státu a města). Tato šablona odpovídají, jako adresa URL `http://example.com/Washington.Redmond` ale budou se také shodovat s adresu URL jako `http://example.com/Washington.Redmond.Microsoft`. V takovém případě proměnné stavu bude obsahovat "Washington", a proměnnou město bude obsahovat "Redmond.Microsoft". V tomto případě žádný text (s výjimkou "/") bude odpovídat proměnné {město}. Pokud chcete šablonu, která se nebudou shodovat s textem "navíc", umístěte proměnné v samostatné šablony segmentu, například: "adresy / {state} / {město}.  
+ Segmenty cesty složené umožňují definovat šablony UriTemplate, který má více proměnných v rámci segmentu jednu cestu. Například v následujícím řetězci šablony: "Adresy / {state}. {Město} "v rámci stejné segmentu jsou definovány dvě proměnné (státu a města). Tato šablona odpovídají, jako adresa URL `http://example.com/Washington.Redmond` ale budou se také shodovat s adresu URL jako `http://example.com/Washington.Redmond.Microsoft`. V takovém případě proměnné stavu bude obsahovat "Washington", a proměnnou město bude obsahovat "Redmond.Microsoft". V tomto případě žádný text (s výjimkou "/") bude odpovídat proměnné {město}. Pokud chcete šablonu, která se nebudou shodovat s textem "navíc", vložte proměnnou samostatné šablony segmentu, například: "Addresses/{state}/{city}.  
   
 ### <a name="named-wildcard-segments"></a>Segmenty pojmenované zástupných znaků  
  Pojmenované zástupný segment, který je segment pro proměnnou cesty, název proměnné začíná zástupný znak "\*". Následující šablony řetězec obsahuje pojmenované zástupný segment s názvem "bot".  
@@ -246,7 +246,7 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
   
 - a/{x}/b%20b/{var1}?y=2&x=1  
   
-- a/{y}/B%20B/{z}/?y=2 & x = 1  
+- a/{y}/B%20B/{z}/?y=2&x=1  
   
  Všimněte si, že několik věcí:  
   
@@ -256,7 +256,7 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
   
 - Neuspořádaný řetězce dotazu.  
   
-## <a name="uritemplatetable"></a>Třída UriTemplateTable  
+## <a name="uritemplatetable"></a>UriTemplateTable  
  <xref:System.UriTemplateTable> Třída reprezentuje asociativní tabulku <xref:System.UriTemplate> objekty vázané na uživatele výběr objektu vývojáře. A <xref:System.UriTemplateTable> musí obsahovat alespoň jeden <xref:System.UriTemplate> před voláním <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29>. Obsah <xref:System.UriTemplateTable> můžete změnit, dokud nebude <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> je volána. Provede se ověření, když <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> je volána. Typ ověřování, závisí na hodnotu `allowMultiple` parametr <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29>.  
   
  Když <xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> je volána při předávání v `false`, <xref:System.UriTemplateTable> kontroluje, ujistěte se, že v tabulce nejsou žádné šablony. Pokud najde všechny šablony, strukturálně ekvivalentní, dojde k výjimce. To se používá ve spojení s <xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> kdy budete chtít zajistit pouze jedna šablona odpovídá příchozí identifikátor URI.  
@@ -273,19 +273,19 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
   
  Následující sady řetězce dotazu jsou jednoznačné v rámci samotné:  
   
-- ? x = 1  
+- ?x=1  
   
-- ? x = 2  
+- ?x=2  
   
-- ? x = 3  
+- ?x=3  
   
 - ? x = 1 & y = {var}  
   
-- ? x = 2 & z = {var}  
+- ?x=2&z={var}  
   
-- ? x = 3  
+- ?x=3  
   
-- ? x = 1  
+- ?x=1  
   
 - ?  
   
@@ -293,29 +293,29 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
   
 - ?  
   
-- ? m = get & c = rss  
+- ?m=get&c=rss  
   
-- ? m = put & c = rss  
+- ?m=put&c=rss  
   
-- ? m = get & c = atom  
+- ?m=get&c=atom  
   
-- ? m = put & c = atom  
+- ?m=put&c=atom  
   
  Následující sady šablony řetězců dotazu je nejednoznačný v rámci samotných:  
   
-- ? x = 1  
+- ?x=1  
   
-- ? x = {var}  
+- ?x={var}  
   
  "x = 1"-odpovídá obě šablony.  
   
-- ? x = 1  
+- ?x=1  
   
 - ? y = 2  
   
  "x = 1 & y = 2" odpovídá obě šablony. Je to proto, že řetězec dotazu může obsahovat další proměnné řetězce dotazu, pak odpovídá šabloně.  
   
-- ? x = 1  
+- ?x=1  
   
 - ? x = 1 & y = {var}  
   
@@ -328,9 +328,9 @@ Když je proměnné předána výchozí hodnotu `null` existují některé dalš
 > [!NOTE]
 > Á znaků a Á považují za různých znaků, když se zobrazí jako součást cesty identifikátoru URI nebo <xref:System.UriTemplate> segment cesty literálu (ale a znaků a A jsou považovány za stejný). Á znaků a Á považují za stejné znaky, pokud se zobrazují jako součást <xref:System.UriTemplate> {variableName} nebo řetězec dotazu (a a a A také považují za stejné znaky).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)  
- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)  
- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)  
- [Tabulka UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)  
- [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [Programovací objektový model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
+- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)
+- [Tabulka UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)
+- [Dispečer tabulky UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)

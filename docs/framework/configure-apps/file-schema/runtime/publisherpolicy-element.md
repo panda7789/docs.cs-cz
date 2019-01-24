@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4613407e-d0a8-4ef2-9f81-a6acb9fdc7d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4c81b403fa4d633428946d36960d5df32df76d21
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: cc33405d8fbb3e5f66be9ea2deb4545bd4ca0971
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613775"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620588"
 ---
 # <a name="ltpublisherpolicygt-element"></a>&lt;publisherPolicy&gt; – Element
 Určuje, zda modul runtime použije zásady vydavatele.  
@@ -26,7 +26,7 @@ Určuje, zda modul runtime použije zásady vydavatele.
 \<modul runtime >  
 \<assemblybinding – >  
 \<dependentAssembly >  
-\<publisherPolicy >  
+\<publisherPolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -85,8 +85,8 @@ Určuje, zda modul runtime použije zásady vydavatele.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
 - [Přesměrování verzí sestavení](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

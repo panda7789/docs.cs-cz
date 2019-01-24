@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-ms.openlocfilehash: 694b4faaafea62799a96aabe8f023a0d495f8d50
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9257a16b1f15290a8b997e8d12d5570349d88dde
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47192807"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720545"
 ---
 # <a name="custom-bindings"></a>Vlastní vazby
 Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pokud jedna z vazeb poskytovaných systémem nesplňuje požadavky na vaši službu. Všechny vazby jsou konstruovány ze seřazené sady elementů vazby. Vlastní vazby se dají ze sady prvků vazeb poskytovaných systémem nebo může obsahovat elementy uživatelem definované vlastní vazby. Můžete použít vlastní vazby prvky, například umožní použít nové přenosy nebo kodérů na koncový bod služby. Příklady práce, naleznete v tématu [vlastní vazby ukázky](https://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08). Další informace najdete v tématu [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
@@ -62,7 +62,7 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
   
  Následující tabulka shrnuje možnosti pro každou vrstvu.  
   
-|Vrstvy|Možnosti|Požadováno|  
+|Vrstva|Možnosti|Požadováno|  
 |-----------|-------------|--------------|  
 |Transakce|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ne|  
 |Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ne|  
@@ -72,10 +72,10 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
   
  Kromě toho můžete definovat vlastní elementy vazby a vložit mezi všechny předchozí definované vrstvy.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
- [Postupy: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)  
- [\<třídě customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [Vlastní vazba](../../../../docs/framework/wcf/samples/custom-binding.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [Postupy: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)
+- [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Vlastní vazba](../../../../docs/framework/wcf/samples/custom-binding.md)

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 50a7e1b08c31b5d0fb779dabf617a08bbb4c6cf4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7214304d8575fb6ef8774d55eaf29ad714235123
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54634581"
 ---
 # <a name="wpf-architecture"></a>Architektura WPF
 Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentation Foundation (WPF). Zabírá většinu hlavních subsystémy [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]a popisuje způsob, jakým interagují. Je také podrobné informace o některých volby provedené architektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -141,14 +141,14 @@ Toto téma obsahuje prohlídku s průvodcem hierarchie tříd Windows Presentati
   
  Když začnete vyvíjet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] na základě aplikací, by měl mít pocit povědomý. Můžete nastavit vlastnosti, používat objekty, a vytvořit datovou vazbu s: téměř stejným způsobem můžete pomocí [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nebo [!INCLUDE[TLA#tla_aspnet](../../../../includes/tlasharptla-aspnet-md.md)]. Pomocí hlubší šetření architektuře [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], zjistíte, že existuje možnost vytváření mnohem bohatší aplikací, které jsou v podstatě zacházet s daty jako základní ovladač aplikace.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Visual>  
- <xref:System.Windows.UIElement>  
- <xref:System.Windows.Input.ICommand>  
- <xref:System.Windows.FrameworkElement>  
- <xref:System.Windows.Threading.DispatcherObject>  
- <xref:System.Windows.Input.CommandBinding>  
- <xref:System.Windows.Controls.Control>  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Visual>
+- <xref:System.Windows.UIElement>
+- <xref:System.Windows.Input.ICommand>
+- <xref:System.Windows.FrameworkElement>
+- <xref:System.Windows.Threading.DispatcherObject>
+- <xref:System.Windows.Input.CommandBinding>
+- <xref:System.Windows.Controls.Control>
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Shared
 - BC30369
 ms.assetid: 39d9466b-c1f3-4406-91a5-3d6c52d23a3d
-ms.openlocfilehash: 368539ed24d9819c8d1ddbbb9e3e0dff21d27c32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da3aa17c55a4ccc95e5f4c98d0f12712ef77d5c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590180"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54729220"
 ---
 # <a name="cannot-refer-to-an-instance-member-of-a-class-from-within-a-shared-method-or-shared-member-initializer-without-an-explicit-instance-of-the-class"></a>V rámci sdílené metody nebo inicializační procedury sdíleného člena nelze odkazovat na instanci členu, aniž by byla k dispozici explicitní instance třídy.
-Pokusili jste se k odkazování na člena nesdílené třídy z v rámci sdílené procedury. Následující příklad ukazuje taková situace.  
+Pokusili jste se odkazovat na nesdílený člen třídy z v rámci sdílené procedury. Následující příklad ukazuje takovou situaci.  
   
 ```  
 Class sample  
@@ -27,21 +27,21 @@ Class sample
 End Class  
 ```  
   
- V předchozím příkladu příkaz přiřazení `x = 10` tuto chybovou zprávu. Je to proto, že sdílený postup se pokouší o přístup k proměnné instance.  
+ V předchozím příkladu přiřazovací příkaz `x = 10` tuto chybovou zprávu. Je to proto, sdílený postup se pokouší o přístup k proměnné instance.  
   
- Proměnná `x` je členem instance, protože není deklarovaný jako [sdílené](../../../visual-basic/language-reference/modifiers/shared.md). Každá instance třídy `sample` obsahuje vlastní jednotlivé proměnné `x`. Když jedna instance Nastaví nebo změní hodnotu `x`, nemá vliv na hodnotu `x` v jeho ostatní instance.  
+ Proměnná `x` je členem instance, protože není deklarován jako [Shared](../../../visual-basic/language-reference/modifiers/shared.md). Každá instance třídy `sample` obsahuje vlastní jednotlivých proměnnou `x`. Když jedna instance nastavuje nebo mění hodnotu `x`, nemá vliv na hodnotu `x` v jiné instanci.  
   
- Však postup `setX` je `Shared` mezi všechny instance třídy `sample`. To znamená, že není přidružen k žádné jedna instance třídy, ale spíš funguje nezávisle na jednotlivých instancí. Protože nemá žádné připojení s konkrétní instanci `setX` nelze přistupovat k proměnné instance. Ho musí fungovat jenom na `Shared` proměnné. Když `setX` nastaví změny nebo změny hodnoty sdílené proměnné, nová hodnota je k dispozici pro všechny instance třídy.  
+ Nicméně postup `setX` je `Shared` mezi všemi instancemi třídy `sample`. To znamená, že není spojen s jakoukoli jednu instanci třídy, ale místo toho pracuje nezávisle jednotlivých instancí. Protože nemá žádné připojení s konkrétní instancí `setX` nelze přistupovat k proměnné instance. Musíte pouze na provoz `Shared` proměnné. Když `setX` nastavuje nebo mění hodnotu sdíleného proměnné, nová hodnota je k dispozici pro všechny instance třídy.  
   
  **ID chyby:** BC30369  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Rozhodněte, zda chcete, aby člen sdílen všech instancí třídy, nebo zachovány jednotlivých pro každou instanci.  
+1.  Rozhodněte, jestli chcete, aby člen sdílí mezi všemi instancemi třídy, nebo se uchovávají jednotlivé pro každou instanci.  
   
-2.  Pokud chcete, aby jedna kopie člena na všechny instance, přidejte `Shared` – klíčové slovo k deklarace členů. Zachovat `Shared` – klíčové slovo v postupu deklaraci.  
+2.  Pokud chcete jednu kopii členu, který chcete sdílet mezi všemi instancemi, přidejte `Shared` – klíčové slovo do deklarace člena. Zachovat `Shared` – klíčové slovo v deklaraci procedury.  
   
-3.  Pokud chcete, aby každá instance mít svůj vlastní jednotlivá kopie člena, nezadávejte `Shared` pro deklarace členů. Odeberte `Shared` – klíčové slovo z deklarace procedury.  
+3.  Pokud chcete, aby každá instance má svůj vlastní jednotlivá kopie člena, nezadávejte `Shared` pro deklarace člena. Odeberte `Shared` – klíčové slovo z deklarace procedury.  
   
-## <a name="see-also"></a>Viz také  
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
+## <a name="see-also"></a>Viz také:
+- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)

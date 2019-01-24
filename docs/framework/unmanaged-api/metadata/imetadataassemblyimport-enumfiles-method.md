@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a1995ed0b281978b45b01dbeda54b02094a30412
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 43a895446e0070476bde3d15d332f010265176e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445736"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515034"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles – metoda
-Vytvoří výčet souborů v aktuální manifest sestavení odkazuje.  
+Vytvoří výčet souborů odkazovat v aktuálním manifest sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,32 +40,32 @@ HRESULT EnumFiles (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí být pro první volání této metody hodnotu null.  
+ [out v] Ukazatel na enumerátor. Musí to být hodnota null pro první volání této metody.  
   
  `rFiles`  
- [out] Pole používá k ukládání `mdFile` tokenů metadat.  
+ [out] Pole používá k ukládání `mdFile` tokeny metadat.  
   
  `cMax`  
- [v] Maximální počet `mdFile` tokeny, které mohou být umístěny v `rFiles`.  
+ [in] Maximální počet `mdFile` tokeny, které mohou být umístěny v `rFiles`.  
   
  `pcTokens`  
- [out] Počet `mdFile` tokeny umístěna v `rFiles`.  
+ [out] Počet `mdFile` tokeny ve skutečnosti umístěny do `rFiles`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nastaven na hodnotu nula.|  
+|`S_OK`|`EnumFiles` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nastavena na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

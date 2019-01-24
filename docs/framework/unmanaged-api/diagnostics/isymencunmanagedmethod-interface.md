@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 575c732cf1b1caf4700568a9d168463359d1ad7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f46aeed0a303278fd67265e471bfa13b43cede12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425500"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680181"
 ---
 # <a name="isymencunmanagedmethod-interface"></a>ISymENCUnmanagedMethod – rozhraní
 Obsahuje informace o funkci upravit a pokračovat.  
@@ -32,12 +32,12 @@ Obsahuje informace o funkci upravit a pokračovat.
 |------------|-----------------|  
 |[GetDocumentsForMethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getdocumentsformethod-method.md)|Získá dokumenty, které tato metoda má řádky v.|  
 |[GetDocumentsForMethodCount – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getdocumentsformethodcount-method.md)|Získá počet dokumentů, které tato metoda má řádky v.|  
-|[GetFileNameFromOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getfilenamefromoffset-method.md)|Získá název souboru pro přidružené posun řádku.|  
-|[GetLineFromOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getlinefromoffset-method.md)|Získá související s posunem informace řádku.|  
-|[GetSourceExtentInDocument – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getsourceextentindocument-method.md)|Získá spusťte nejmenší číslo řádku a největší na konci řádku pro metodu v konkrétní dokumentu.|  
+|[GetFileNameFromOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getfilenamefromoffset-method.md)|Získá název souboru pro řádek spojený s posunem.|  
+|[GetLineFromOffset – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getlinefromoffset-method.md)|Získá informace o řádku, které jsou spojené s posunem.|  
+|[GetSourceExtentInDocument – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-getsourceextentindocument-method.md)|Získá spuštění nejmenší číslo řádku a největší na konci řádku pro metodu v určitého dokumentu.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

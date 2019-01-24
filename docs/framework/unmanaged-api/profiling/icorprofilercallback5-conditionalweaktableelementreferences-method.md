@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ee3c3302d77bcc7b807c01ccb5bab172153ddda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ad192f753cd1977c9ca68e147d23375ce092b66f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459948"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708230"
 ---
 # <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a>ICorProfilerCallback5::ConditionalWeakTableElementReferences – metoda
-Identifikuje přechodné uzavření objekty odkazují tyto kořenové adresáře prostřednictvím i odkazy na pole přímé členy a prostřednictvím `ConditionalWeakTable` závislosti.  
+Identifikuje přechodné uzavření objekty odkazují tyto kořenové adresáře prostřednictvím oba odkazy na pole přímé členy a prostřednictvím `ConditionalWeakTable` závislosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,18 +35,18 @@ HRESULT ConditionalWeakTableElementReferences(     [in]                     ULON
   
 #### <a name="parameters"></a>Parametry  
  `cRootRefs`  
- [v] Počet elementů ve `keyRefIds`, `valueRefIds`, a `rootIds` pole.  
+ [in] Počet prvků v `keyRefIds`, `valueRefIds`, a `rootIds` pole.  
   
  `keyRefIds`  
- [v] Pole ID objektů, z nichž každý obsahuje `ObjectID` primární elementu v páru závislé popisovač.  
+ [in] ID objektů, z nichž každý obsahuje pole `ObjectID` pro primární element v páru závislý popisovač.  
   
  `valueRefIds`  
- [v] Pole ID objektů, z nichž každý obsahuje `ObjectID` sekundární elementu v páru závislé popisovač. (`keyRefIds[i]` udržuje `valueRefIds[i]` zachování připojení.)  
+ [in] ID objektů, z nichž každý obsahuje pole `ObjectID` pro sekundární element v páru závislý popisovač. (`keyRefIds[i]` udržuje `valueRefIds[i]` zachování připojení.)  
   
  `rootIds`  
- [v] Pole `GCHandleID` hodnoty, které odkazují na celé číslo, které obsahuje další informace o kořenové kolekce paměti.  
+ [in] Pole `GCHandleID` hodnoty, které odkazují na celé číslo, které obsahuje další informace o kořenové kolekce uvolnění paměti.  
   
- Žádná z `ObjectID` hodnot vrácených `ConditionalWeakTableElementReferences` metoda jsou platné během zpětného volání sebe, protože uvolňování paměti může být přesouvá objekty ze starého na nové umístění. Proto profilery neměli zkontrolovat objekty během `ConditionalWeakTableElementReferences` volání. V `GarbageCollectionFinished`, všechny objekty byly přesunuty do nového umístění a může provést kontroly.  
+ Žádná z `ObjectID` hodnot vrácených `ConditionalWeakTableElementReferences` metoda jsou platné během zpětného volání, protože probíhá přesun objektů ze starého do nového umístění může být systému uvolňování paměti. Proto by se neměly pokoušet profilery pro kontrolu objektů během `ConditionalWeakTableElementReferences` volání. Na `GarbageCollectionFinished`přesunuly taky všechny objekty do nového umístění a se obvykle provádí kontroly.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak implementovat [icorprofilercallback5 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md) a použít tuto metodu.  
@@ -73,14 +73,14 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Profileru pro [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] nebo novější verze implementuje [icorprofilercallback5 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md) rozhraní a záznamy závislosti určeného `ConditionalWeakTableElementReferences` metoda. `ICorProfilerCallback5` poskytuje kompletní sadu závislosti mezi živé objekty reprezentována `ConditionalWeakTable` položky. Tyto závislosti a člen pole určeného odkazy [icorprofilercallback::objectreferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) metoda povolit spravované profileru ke generování grafu úplné objektu objektů za provozu.  
+ Profiler pro [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] nebo novější verze implementuje [icorprofilercallback5 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md) rozhraní a záznamů závislosti určené `ConditionalWeakTableElementReferences` metoda. `ICorProfilerCallback5` poskytuje kompletní sadu závislosti mezi živé objekty reprezentována `ConditionalWeakTable` položky. Tyto závislosti a člena pole určené odkazy [ICorProfilerCallback::ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md) metoda povolit spravovaný profiler se vygenerovat graf úplný objekt živých objektů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback5 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback5 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-interface.md)

@@ -2,21 +2,21 @@
 title: '&lt;textMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-ms.openlocfilehash: 0ee50a4b5adeede2dd531ba734ac9fb420f3b713
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 68b5c9f1f158f7f78f4ea31dedb9b72eab409e05
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150237"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540699"
 ---
 # <a name="lttextmessageencodinggt"></a>&lt;textMessageEncoding&gt;
 Určuje kódování znaků a verzování zprávy použité pro textově založené zprávy XML.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<textMessageEncoding >  
+\<textMessageEncoding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ Určuje kódování znaků a verzování zprávy použité pro textově založen
 |---------------|-----------------|  
 |maxReadPoolSize|Celé číslo, které určuje, kolik zpráv lze souběžně číst bez přidělení nových čtecích zařízení. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 64.|  
 |maxWritePoolSize|Celé číslo, které určuje, kolik zpráv lze souběžně odesílat bez přidělení nových modulů pro zápis. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 16.|  
-|verze messageVersion|Určuje verzi protokolu SOAP zprávy odesílané pomocí vazby. Platné hodnoty jsou<br /><br /> -Soap11Addressing10<br />-Soap12Addressing10<br /><br /> Výchozí hodnota je Soap12Addressing10. Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion>.|  
+|messageVersion|Určuje verzi protokolu SOAP zprávy odesílané pomocí vazby. Platné hodnoty jsou<br /><br /> -Soap11Addressing10<br />-Soap12Addressing10<br /><br /> Výchozí hodnota je Soap12Addressing10. Tento atribut je typu <xref:System.ServiceModel.Channels.MessageVersion>.|  
 |writeEncoding|Určuje znakovou sadu kódování pro vysílání zpráv z vazby. Platné hodnoty jsou<br /><br /> -UnicodeFffeTextEncoding: Kódování Unicode BigEndian kódování<br />-Utf16TextEncoding: Kódování Unicode<br />-Utf8TextEncoding: 8bitové kódování<br /><br /> Výchozí hodnota je Utf8TextEncoding. Tento atribut je typu <xref:System.Text.Encoding>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -65,14 +65,14 @@ Určuje kódování znaků a verzování zprávy použité pro textově založen
                      textEncoding="utf-8" />
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
+- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

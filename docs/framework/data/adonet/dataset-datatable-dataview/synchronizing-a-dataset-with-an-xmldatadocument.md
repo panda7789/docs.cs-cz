@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: 5aeb5fc3ad1008871b6c54d6c096cb3a76c3416e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: ef0518bfd53ea5696c9369fe78e4ceccd3c6260c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082458"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708126"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace datové sady s datovým dokumentem XML
 V této části ukazuje jeden krok zpracování nákupní objednávka, použitím silného typu <xref:System.Data.DataSet> synchronizovat se službou <xref:System.Xml.XmlDataDocument>. Následující příklady vytvoření **datovou sadu** minimalizované schématu, která odpovídá pouze část zdrojovém dokumentu XML. V příkladech se používá **objektu XmlDataDocument** zachovat věrnost zdrojovém dokumentu XML, povolíte **datovou sadu** se použije k vystavení podmnožinu dokumentů XML.  
@@ -231,6 +231,6 @@ public class Sample
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

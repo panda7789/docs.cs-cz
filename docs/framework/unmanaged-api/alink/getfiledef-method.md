@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b772ae37baed44b90e4f5420e0f7724201a56abe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c6a8a9aedc5c2b09c6e6f6014142bce44f3a8297
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401808"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668597"
 ---
 # <a name="getfiledef-method"></a>GetFileDef – metoda
-Načte skutečné FileDef tokenu používaného v metadatech (na rozdíl od token přiřadila ALink).  
+Získá skutečný FileDef tokenu používaného v metadatech (na rozdíl od token přiřadil ALink).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,18 +41,18 @@ HRESULT GetFileDef(
  ID sestavení.  
   
  `TargetFile`  
- Token souboru přidané jako načítají AddFile – metoda nebo addimport – metoda.  
+ Token přidaný soubor jako získaných AddFile – metoda nebo addimport – metoda.  
   
  `pScope`  
  Přijme FileDef token.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

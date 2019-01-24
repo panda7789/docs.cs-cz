@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc98641085591feaaa5c97c7ee04885ef79d39f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e367ab3c966cea2d875b1de5b4244db5c4b813e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429434"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702220"
 ---
 # <a name="createiceefilegen-function"></a>CreateICeeFileGen – funkce
-Vytvoří [iceefilegen –](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
+Vytvoří [ICeeFileGen](../../../../docs/framework/unmanaged-api/hosting/iceefilegen-class.md) objektu.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -40,18 +40,18 @@ HRESULT CreateICeeFileGen (
   
 #### <a name="parameters"></a>Parametry  
  `ceeFileGen`  
- [out] Ukazatel na adresu nového `ICeeFileGen` objektu.  
+ [out] Ukazatel na novou adresu `ICeeFileGen` objektu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb COM.  
+ Tato metoda vrací standardní kódy chyb COM.  
   
 ## <a name="remarks"></a>Poznámky  
- `ICeeFileGen` Objekt se používá k vytvoření common language runtime (CLR) přenosné spustitelný soubor (PE) souborů.  
+ `ICeeFileGen` Objektu se používá k vytvoření common language runtime (CLR) souborů (PE portable executable).  
   
- Volání [destroyiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) funkce zrušení `ICeeFileGen` objektu po dokončení.  
+ Volání [destroyiceefilegen –](../../../../docs/framework/unmanaged-api/hosting/destroyiceefilegen-function.md) funkce zrušení `ICeeFileGen` objekt po dokončení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ICeeFileGen.h  
   
@@ -59,5 +59,5 @@ HRESULT CreateICeeFileGen (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

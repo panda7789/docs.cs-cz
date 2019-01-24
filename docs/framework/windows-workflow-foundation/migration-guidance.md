@@ -2,12 +2,12 @@
 title: Pokyny k migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 73488354a807d8bf7d90c97b95f1021d884efd27
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: a07fac293c6e598ff60c635286f8ab808e057b9c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676871"
 ---
 # <a name="migration-guidance"></a>Pokyny k migraci
 V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost Microsoft vydává druhý hlavní verze Windows Workflow Foundation (WF). [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla vydána v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (to zahrnuté typy v oborech názvů System.Workflow.* barvy; dnes označovány jako WF3) a vylepšení v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. WF3 je také součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], ale existuje souběžně s novou technologií pracovního postupu (typy v System.Activities.\* oborů názvů; označuje jako WF4). Při zvažování, kdy se má přijmout WF4, je potřeba nejprve uznávají řídit načasování.  
@@ -29,31 +29,31 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
  [Migrace pracovního postupu: Osvědčené postupy pro vývoj WF3](https://go.microsoft.com/fwlink/?LinkId=153852)  
  Tento článek popisuje postup návrhu WF3 artefakty, takže je možné snadno migrovat do WF4.  
   
- [Pokyny k Bráně: pravidla](https://go.microsoft.com/fwlink/?LinkId=153854)  
+ [WF pokyny: pravidla](https://go.microsoft.com/fwlink/?LinkId=153854)  
  Popisuje, jak přenést související pravidla investice vpřed do [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] řešení.  
   
- [Pracovního postupu pokyny: Stavového stroje](https://go.microsoft.com/fwlink/?LinkId=153855)  
+ [WF pokyny: Stavového stroje](https://go.microsoft.com/fwlink/?LinkId=153855)  
  Tento článek popisuje tok řízení WF4 modelování chybí aktivit stavového stroje.  
   
  Všimněte si, že tyto pokyny platí jenom pro projekty pracovního postupu, které jsou cíleny na rozhraní .NET Framework 4. Pracovní postupy stavového stroje byly přidány ve verzi Update 1 platformy .NET 4.0.1 a byly součástí rozhraní .NET Framework 4.5. Další informace o pracovní postupy stavu počítače v prostředí .NET 4.0.1 - 4.0.3 a rozhraní .NET Framework 4.5, naleznete v tématu [aktualizace 4.0.1 pro funkce rozhraní Microsoft .NET Framework 4](https://msdn.microsoft.com/library/de3297bd-c3e1-4126-95be-2ed7fe2a98fc) a [pracovní postupy stavu počítače](../../../docs/framework/windows-workflow-foundation/state-machine-workflows.md).  
   
- [WF kuchařka migrace: Vlastní aktivity](https://go.microsoft.com/fwlink/?LinkId=153856)  
+ [Kuchařka pro migraci pracovního postupu: Vlastní aktivity](https://go.microsoft.com/fwlink/?LinkId=153856)  
  Poskytuje příklady a pokyny pro změnu návrhu WF3 na WF4 vlastní aktivity.  
   
- [WF kuchařka migrace: Pokročilé vlastní aktivity](https://go.microsoft.com/fwlink/?LinkId=275560)  
+ [Kuchařka pro migraci pracovního postupu: Pokročilé vlastní aktivity](https://go.microsoft.com/fwlink/?LinkId=275560)  
  Obsahuje pokyny pro změnu návrhu pokročilé WF3 vlastní, které používají fronty WF3 a plán podřízené aktivity jako WF4 vlastní aktivity.  
   
- [Kuchařka pro migraci WF: pracovních postupů](https://go.microsoft.com/fwlink/?LinkId=153858)  
+ [Kuchařka pro migraci pracovního postupu: Pracovní postupy](https://go.microsoft.com/fwlink/?LinkId=153858)  
  Poskytuje příklady a pokyny pro změnu návrhu pracovních postupů WF3 na WF4.  
   
- [WF kuchařka migrace: Hostování pracovního postupu](https://go.microsoft.com/fwlink/?LinkId=275561)  
+ [Kuchařka pro migraci pracovního postupu: Workflow Hosting](https://go.microsoft.com/fwlink/?LinkId=275561)  
  Obsahuje pokyny pro změnu návrhu WF3 hostitelský kód jako kód WF4 hostování. Cílem je pokrývají klíčové rozdíly mezi WF3 a WF4 hostování pracovního postupu.  
   
- [WF kuchařka migrace: Sledování pracovních postupů](https://go.microsoft.com/fwlink/?LinkId=275562)  
+ [Kuchařka pro migraci pracovního postupu: Sledování pracovního postupu](https://go.microsoft.com/fwlink/?LinkId=275562)  
  Obsahuje pokyny pro změnu návrhu WF3 sledování kódu a konfigurace pomocí ekvivalentní WF4 sledování kódu a konfigurace.  
   
  [WF pokyny: Služby pracovních postupů](https://go.microsoft.com/fwlink/?LinkId=275564)  
  Obsahuje příklad objektově orientovaný podrobné pokyny pro změnu návrhu pracovních postupů, které implementují Windows Communication Foundation (WCF) webové služby (obvykle označuje jako služeb pracovních postupů) vytvořené v WF3 WF4, použít pro běžné scénáře pro out-of-box aktivity.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Activities.Statements.Interop>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Activities.Statements.Interop>

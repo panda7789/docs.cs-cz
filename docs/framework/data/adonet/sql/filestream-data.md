@@ -2,12 +2,12 @@
 title: FILESTREAM Data
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
-ms.openlocfilehash: 843aa890ba80ab2816af0726170eacb77f419d50
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4002f95e47b3c1ac7d8415d590b8c4c8a5d95a91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197025"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701089"
 ---
 # <a name="filestream-data"></a>FILESTREAM Data
 Atribut úložiště FILESTREAM je binárních (objektů BLOB) data uložená v sloupce varbinary(max). Před FILESTREAM ukládání binárních dat vyžaduje speciální zacházení. Nestrukturovaných dat, jako jsou textové dokumenty, obrázky a videa, je často uložená mimo databázi kvůli tomu obtížné spravovat.  
@@ -37,7 +37,7 @@ Values(1, 0x00, default)
 GO  
 ```  
   
-### <a name="example-reading-overwriting-and-inserting-filestream-data"></a>Příklad: Pro čtení, přepsání a vkládání dat FILESTREAM  
+### <a name="example-reading-overwriting-and-inserting-filestream-data"></a>Příklad: Čtení, přepsání a vkládání dat FILESTREAM  
  Následující příklad ukazuje, jak přečíst data z FILESTREAM. Kód získá logickou cestu k souboru nastavení `FileAccess` k `Read` a `FileOptions` k `SequentialScan`. Kód poté načte bajtů z SqlFileStream do vyrovnávací paměti. Bajty jsou pak zapsány do okna konzoly.  
   
  Ukázka také ukazuje, jak zapisovat data FILESTREAM, ve kterém všechna existující data přepsána. Kód získá logickou cestu k souboru a vytvoří `SqlFileStream`a nastavte `FileAccess` k `Write` a `FileOptions` k `SequentialScan`. Jeden bajt je zapsán do `SqlFileStream`, nahraďte všechna data v souboru.  
@@ -178,9 +178,9 @@ namespace FileStreamTest
 |[Vytvoření klientské aplikace pro FILESTREAM Data](/sql/relational-databases/blob/create-client-applications-for-filestream-data)|Popisuje funkce rozhraní Win32 API pro práci s daty FILESTREAM.|  
 |[FILESTREAM a další funkce SQL serveru](/sql/relational-databases/blob/filestream-compatibility-with-other-sql-server-features)|Obsahuje důležité informace, pokyny a omezení pro používání dat FILESTREAM s jinými funkcemi systému SQL Server.|  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [Zabezpečení přístupu ke kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)  
- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [Zabezpečení přístupu ke kódu a ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md)
+- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
+- [Přehled ADO.NET](../../../../../docs/framework/data/adonet/ado-net-overview.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - best practices, data requests
 - receiving data, best practices
 ms.assetid: 716decc6-5952-47b7-9c5a-ba6fc5698684
-ms.openlocfilehash: ce365d088c01ae4a89c77713b6970ae3389b3f0e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0ed97626d86b380565453191f7840c1d1a180dfe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190943"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689075"
 ---
 # <a name="best-practices-for-systemnet-classes"></a>Osvědčené postupy pro třídy System.Net
 Následující doporučení vám pomůže s použitím třídy obsažené v <xref:System.Net> k jejich přinášelo maximální výhody:  
@@ -32,5 +32,5 @@ Následující doporučení vám pomůže s použitím třídy obsažené v <xre
   
 -   Pokud přístup k serverům, které vyžadují přihlašovací údaje, použijte <xref:System.Net.CredentialCache> třídy za účelem vytvoření mezipaměti přihlašovacích údajů namísto zadávání při každé žádosti. **CredentialCache** třídy vyhledá mezipaměti k vyhledání příslušné přihlašovací údaje prezentovat s žádostí, můžete homogenního odpovědnosti, vytváření a prezentování přihlašovací údaje podle zadané adresy URL.  
   
-## <a name="see-also"></a>Viz také  
- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)
+## <a name="see-also"></a>Viz také:
+- [Síťové programování v rozhraní .NET Framework](../../../docs/framework/network-programming/index.md)

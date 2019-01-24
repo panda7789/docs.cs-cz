@@ -9,26 +9,26 @@ helpviewer_keywords:
 - images [WPF], loading as thumbnails
 - thumbnails [WPF], loading images as
 ms.assetid: 02e055a0-54df-499a-b8b6-ab6ff7535cff
-ms.openlocfilehash: 349a602a10b89931701e24334bf5ac5536f26400
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d92a489f19f8c7160bed5ec83535bdc33cfe561b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562320"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54735984"
 ---
 # <a name="how-to-load-an-image-as-a-thumbnail"></a>Postupy: Načtení obrázku jako miniatury
-Následující příklady ukazují, jak načíst <xref:System.Windows.Controls.Image> jako miniaturu pro konzervaci paměti aplikace.  
+Následující příklady ukazují, jak načíst <xref:System.Windows.Controls.Image> jako miniatury pro konzervaci paměti aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastavuje <xref:System.Windows.Media.Imaging.BitmapImage.DecodePixelWidth%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage> v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] snížit velikost paměti vyžadované pro načtení bitovou kopii.  
+ Následující příklad nastaví <xref:System.Windows.Media.Imaging.BitmapImage.DecodePixelWidth%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage> v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] snížit velikost paměti, které jsou nutné k načtení obrázku.  
   
  [!code-xaml[ImageElementExample_snip#ImageSimpleExampleInlineMarkup](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml#imagesimpleexampleinlinemarkup)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastavuje <xref:System.Windows.Media.Imaging.BitmapImage.DecodePixelWidth%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage> v kódu snížit velikost paměti vyžadované pro načtení bitovou kopii.  
+ Následující příklad nastaví <xref:System.Windows.Media.Imaging.BitmapImage.DecodePixelWidth%2A> vlastnost <xref:System.Windows.Media.Imaging.BitmapImage> v kód pro omezení paměti potřebných k načtení obrázku.  
   
  [!code-csharp[ImageElementExample_snip#ImageSimpleExampleInlineCode1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml.cs#imagesimpleexampleinlinecode1)]
  [!code-vb[ImageElementExample_snip#ImageSimpleExampleInlineCode1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample_snip/VB/ImageSimpleExample.xaml.vb#imagesimpleexampleinlinecode1)]  
   
-## <a name="see-also"></a>Viz také  
- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled obrázků](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)

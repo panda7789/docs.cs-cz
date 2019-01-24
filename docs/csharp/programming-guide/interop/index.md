@@ -1,19 +1,13 @@
 ---
-title: Vzájemná funkční spolupráce – C# Průvodce programováním
+title: 'Vzájemná funkční spolupráce – C# Průvodce programováním'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-- COM interop
-- interoperability
-- platform invoke, accessing APIs with C#
-- C# language, interoperability
+  - COM interop
+  - interoperability
+  - 'platform invoke, accessing APIs with C#'
+  - 'C# language, interoperability'
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: f3cbfe564fb5820c9e0fa77b75f76be36dd718a4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235004"
 ---
 # <a name="interoperability-c-programming-guide"></a>Interoperabilita (Průvodce programováním v C#)
 Interoperabilita umožňuje zachovat a využít stávající investice do nespravovaného kódu. Je volána kód, který běží v rámci ovládacího prvku modulu common language runtime (CLR) *spravovaného kódu*, a je volána kód, který běží mimo rámec platformy CLR *nespravovaný kód*. COM, modelu COM +, komponenty C++, součásti ActiveX a rozhraní Microsoft Win32 API jsou příkladem nespravovaného kódu.  
@@ -43,9 +37,9 @@ Interoperabilita umožňuje zachovat a využít stávající investice do nespra
 
 Další informace najdete v tématu [základní koncepty](~/_csharplang/spec/unsafe-code.md) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
+- <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)
 - [Návod: Programování pro systém Office](../../../csharp/programming-guide/interop/walkthrough-office-programming.md)

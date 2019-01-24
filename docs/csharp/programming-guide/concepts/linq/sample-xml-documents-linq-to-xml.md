@@ -2,12 +2,12 @@
 title: Ukázkové dokumenty XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 9ec89809-41a1-484c-b1e3-6c4ecdca7b8d
-ms.openlocfilehash: 2d13b1e42cd41d4ea54cdf1f585c29ddf71f6396
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 69c49718b7d257aedcf7c0140f139547be37774b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45640917"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509623"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Ukázkové dokumenty XML (LINQ to XML)
 Následující příklad soubory se používají v ukázky kódu a fragmenty kódu v průběhu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.  
@@ -20,19 +20,19 @@ Následující příklad soubory se používají v ukázky kódu a fragmenty kó
 |Téma|Popis|  
 |-----------|-----------------|  
 |[Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)|Dokument XML, který obsahuje Typická nákupní objednávka.|  
-|[Ukázkový soubor XML: Typická nákupní objednávka v názvovém prostoru](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje Typická nákupní objednávka.|  
+|[Ukázkový soubor XML: Typická nákupní objednávka v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje Typická nákupní objednávka.|  
 |[Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)|Dokument XML, který obsahuje více nákupních objednávek.|  
-|[Ukázkový soubor XML: Více nákupních objednávek v názvovém prostoru](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje více nákupních objednávek.|  
-|[Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md)|Dokument XML, který obsahuje některé pseudo test konfigurační data.|  
-|[Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace1.md)|Dokument XML v oboru názvů, který obsahuje některé pseudo test konfigurační data.|  
+|[Ukázkový soubor XML: Více nákupních objednávek v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje více nákupních objednávek.|  
+|[Ukázkový soubor XML: Konfigurace testu (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md)|Dokument XML, který obsahuje některé pseudo test konfigurační data.|  
+|[Ukázkový soubor XML: Konfigurace testu v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace1.md)|Dokument XML v oboru názvů, který obsahuje některé pseudo test konfigurační data.|  
 |[Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md)|Dokument XML, který obsahuje zákazníci a objednávky.|  
 |[Ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md)|Definice schématu Xml (XSD), která ověřuje [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).|  
-|[Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje zákazníci a objednávky.|  
-|[Ukázkový soubor XML: Numerická data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)|Dokument XML, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  
-|[Ukázkový soubor XML: Numerická data v názvovém prostoru](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  
+|[Ukázkový soubor XML: Zákazníci a objednávky v Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje zákazníci a objednávky.|  
+|[Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)|Dokument XML, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  
+|[Ukázkový soubor XML: Číselná Data ve Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  
 |[Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)|Dokument XML, který obsahuje katalog knih.|  
 |[Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md)|Představuje dokument XML, který obsahuje nákupních objednávek, které jsou v různých oborech názvů.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

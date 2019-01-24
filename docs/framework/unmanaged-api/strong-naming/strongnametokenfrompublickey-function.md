@@ -20,15 +20,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb8ff76da288975ef291d226bb1f205e73a64252
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a5c9336d571fb392fbed9fed2196fca813bc7d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33460285"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674661"
 ---
 # <a name="strongnametokenfrompublickey-function"></a>StrongNameTokenFromPublicKey – funkce
-Získá token představující veřejný klíč. Zkrácený tvar veřejný klíč je token silným názvem.  
+Získá token představující veřejný klíč. Zkráceným tvarem veřejný klíč je token silného názvu.  
   
  Tato funkce je zastaralá. Použití [iclrstrongname::strongnametokenfrompublickey –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md) metoda místo.  
   
@@ -45,35 +45,35 @@ BOOLEANStrongNameTokenFromPublicKey (
   
 #### <a name="parameters"></a>Parametry  
  `pbPublicKeyBlob`  
- [v] Struktura typu [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů sloužící ke generování podpis silného názvu.  
+ [in] Strukturu typu [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) obsahující veřejnou část páru klíčů podpis silného názvu.  
   
  `cbPublicKeyBlob`  
- [v] Velikost v bajtech z `pbPublicKeyBlob`.  
+ [in] Velikost v bajtech, z `pbPublicKeyBlob`.  
   
  `ppbStrongNameToken`  
- [out] Silný název tokenu odpovídající klíč předaná `pbPublicKeyBlob`. Modul common language runtime přidělí paměť k vrácení tokenu. Volající musí uvolněte tuto paměť pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.  
+ [out] Silný název tokenu odpovídající klíči předaný `pbPublicKeyBlob`. Modul common language runtime přiděluje paměť ke vrácení tokenu. Volající musí uvolnit tato paměť pomocí [strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) funkce.  
   
  `pcbStrongNameToken`  
- [out] Velikost v bajtech, vrácený silný název tokenu.  
+ [out] Velikost v bajtech, token vrácený silného názvu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` Při úspěšném dokončení; v opačném `false`.  
+ `true` Při úspěšném dokončení; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Silný název tokenu je zkrácený tvar veřejný klíč používaný ušetřit místo na při ukládání informací o klíči v metadatech. Konkrétně silným názvem tokeny se používají v odkazy na sestavení odkazovat na závislého sestavení.  
+ Token silného názvu je zkrácený tvar veřejný klíč používaný pro úsporu místa při ukládání informací o klíči v metadatech. Konkrétně tokeny silným názvem se používají v odkazy na sestavení odkázat na závislého sestavení.  
   
- Pokud `StrongNameTokenFromPublicKey` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce načíst poslední generované chyba.  
+ Pokud `StrongNameTokenFromPublicKey` není úspěšně dokončit, volání funkce [strongnameerrorinfo –](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) funkce k načtení poslední chyby generované.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** StrongName.h  
   
- **Knihovna:** zahrnuty jako prostředek v mscoree.dll  
+ **Knihovna:** Zahrnuté jako prostředek v mscoree.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)  
- [StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)  
- [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)
+## <a name="see-also"></a>Viz také:
+- [StrongNameTokenFromPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)
+- [StrongNameGetPublicKey – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)
+- [PublicKeyBlob – struktura](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)

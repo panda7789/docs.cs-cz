@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4051c3f8300b02581c86642455954615d920c3ba
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1909b7123bde23058e42394db86af83d08e2354
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685383"
 ---
 # <a name="icordebugmanagedcallback2functionremapcomplete-method"></a>ICorDebugManagedCallback2::FunctionRemapComplete – metoda
-Upozorní ladicí program, že provádění kódu přepnul na novou verzi upravená funkce.  
+Upozorní ladicího programu, že spuštění kódu se přepnulo na novou verzi funkce se upravila.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT FunctionRemapComplete (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace obsahující upravená funkce.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující funkce se upravila.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vláken, na kterém byl zjištěn bod přemapování přerušení.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, na kterém byla zjištěna zarážka přemapování.  
   
  `pFunction`  
- [v] Ukazatel na ICorDebugFunction objekt, který představuje verzi funkce aktuálně spuštěné na vlákno.  
+ [in] Ukazatel na objekt ICorDebugFunction, který představuje verzi funkce aktuálně spuštěné vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Tento zpětného volání dává příležitost znovu vytvořit všechny steppers, které dříve existoval ladicího programu.  
+ Toto zpětné volání umožní ladicího programu znovu vytvořit všechny prvky krokování, které dříve existoval.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,6 +59,6 @@ HRESULT FunctionRemapComplete (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

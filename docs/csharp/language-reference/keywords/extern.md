@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DllImport attribute
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
-ms.openlocfilehash: 89c5ec7713c6420060310b5df90acec0cc3b088b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d860f1a3c6917238a529093672dc5f2abc5ae066
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237865"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620189"
 ---
 # <a name="extern-c-reference"></a>extern (Referenční dokumentace jazyka C#)
 
@@ -90,8 +90,8 @@ SampleMethod() returns 50.
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=nameWithType>  
-- [Referenční dokumentace jazyka C#](../index.md)  
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
-- [Klíčová slova jazyka C#](index.md)  
-- [Modifikátory](modifiers.md)  
+- <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=nameWithType>
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Modifikátory](modifiers.md)

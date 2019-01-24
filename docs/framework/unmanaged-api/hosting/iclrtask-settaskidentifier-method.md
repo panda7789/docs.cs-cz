@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05a561c54f2d004d073fdfffffdb59cb2b5189e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c57ac26fd08f585af7ff92f700c6cdd60815675
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435677"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734298"
 ---
 # <a name="iclrtasksettaskidentifier-method"></a>ICLRTask::SetTaskIdentifier – metoda
-Dá pokyn, modul CLR (CLR) pro přidružení hodnota zadaného identifikátoru úlohy reprezentována aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance.  
+Dá pokyn, modul CLR (CLR), která přidružit hodnota zadaného identifikátoru úlohy reprezentované aktuální [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,33 +37,33 @@ HRESULT SetTaskIdentifier (
   
 #### <a name="parameters"></a>Parametry  
  `Asked`  
- [v] Jedinečný identifikátor pro modul common language runtime pro přidružení úlohy reprezentována aktuální `ICLRTask` instance.  
+ [in] Jedinečný identifikátor pro modul common language runtime pro přidružení k úkolu reprezentované aktuální `ICLRTask` instance.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetTaskIdentifier` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`SetTaskIdentifier` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitele možné přidružit identifikátor úlohu usnadňuje integraci modulu CLR a hostitele v prostředí ladění. Identifikátor nemá žádný význam pro modulu CLR. Modul CLR předá podél aplikace ladicího programu. Ladicí program můžete použít tento identifikátor zásobník volání CLR přidružit zásobník volání hostitele a povolit jejich odpovídajících trasování informace, které se unified při zobrazení v uživatelském rozhraní ladicího programu.  
+ Hostitel možné přidružit identifikátor úlohu k integraci modulu CLR a hostitele v prostředí ladění. Identifikátor nemá žádný význam pro modul CLR. Modul CLR podél předává do aplikace ladicího programu. Ladicí program můžete použít tento identifikátor pro přidružení k hostiteli zásobník volání zásobníku volání modulu CLR a povolit jejich odpovídajících trasovací informace na unified, při zobrazení v uživatelském rozhraní ladicího programu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)
+- [ICLRTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)
+- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+- [IHostTaskManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

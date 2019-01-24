@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: f2439bb955f821b58acc818ede308c379d5b68a6
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 768d8da320022a686f2ecfe5222880eccacee7dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243553"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727635"
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 
@@ -98,11 +98,11 @@ Pokud odeberete `Flags`, v příkladu se zobrazí následující hodnoty:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../index.md)  
-- [Výčtové typy](../../programming-guide/enumeration-types.md)  
-- [Klíčová slova jazyka C#](index.md)  
-- [Tabulka celočíselných typů](integral-types-table.md)  
-- [Tabulka předdefinovaných typů](built-in-types-table.md)  
-- [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)  
-- [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)  
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Výčtové typy](../../programming-guide/enumeration-types.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Tabulka celočíselných typů](integral-types-table.md)
+- [Tabulka předdefinovaných typů](built-in-types-table.md)
+- [Tabulka implicitních číselných převodů](implicit-numeric-conversions-table.md)
+- [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)
 - [Zásady vytváření názvů výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)

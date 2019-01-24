@@ -12,12 +12,12 @@ helpviewer_keywords:
 - vectors [WPF], drawing
 - Shape objects [WPF]
 ms.assetid: 66d7a6d6-e3b6-47bc-8dfe-8a1b26f7d901
-ms.openlocfilehash: 47df352c3b001f088f34ea057b34698efc4f4b53
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: e3a18d1cf788dfa8f2a9b05077b30af7eeabe584
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086801"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665900"
 ---
 # <a name="shapes-and-basic-drawing-in-wpf-overview"></a>Tvary a základní kresby v přehledu WPF
 Toto téma poskytuje přehled o tom, jak kreslení pomocí <xref:System.Windows.Shapes.Shape> objekty. A <xref:System.Windows.Shapes.Shape> je typ <xref:System.Windows.UIElement> , která umožňuje nakreslit obrazec na obrazovku. Protože jsou prvky uživatelského rozhraní, <xref:System.Windows.Shapes.Shape> objekty mohou být použity uvnitř <xref:System.Windows.Controls.Panel> elementy a většina ovládacích prvků.  
@@ -214,9 +214,9 @@ myPolygon.StrokeThickness = 2;
   
  V předchozích příkladech byla použita jeden transformace každého objektu shape. Použití několika transformací na tvar (nebo jiný prvek uživatelského rozhraní), použijte <xref:System.Windows.Media.TransformGroup>.  
   
-## <a name="see-also"></a>Viz také  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  
- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+## <a name="see-also"></a>Viz také:
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
+- [Návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

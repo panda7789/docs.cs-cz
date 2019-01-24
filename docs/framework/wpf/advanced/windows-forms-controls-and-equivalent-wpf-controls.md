@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Forms [WPF], WPF interoperation
 - interoperability [WPF], Windows Forms
 ms.assetid: 8a157e6b-8054-46db-a5cf-a78966acc7a1
-ms.openlocfilehash: 0daa399e2d000a228773ee20f157af7439f7acbb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 591831898ebb1fb699dd9f87231d5861884132ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502035"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602989"
 ---
 # <a name="windows-forms-controls-and-equivalent-wpf-controls"></a>Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF
 Mnoho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky mají ekvivalentní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovládacích prvků, ale některé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky nemají ekvivalent v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Toto téma srovnává typy ovládacích prvků, které jsou k dispozici ve dvou technologií.  
@@ -84,10 +84,10 @@ Mnoho [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.m
 |<xref:System.Windows.Forms.VScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Posouvání je integrovaná do kontejnerů ovládacích prvků.|  
 |<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|<xref:System.Windows.Controls.Frame> Ovládací prvek může být hostitelem stránek HTML.<br /><br /> Počínaje [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> ovládací prvek může být hostitelem stránky HTML a také zpětných <xref:System.Windows.Controls.Frame> ovládacího prvku.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Integration.ElementHost>  
- <xref:System.Windows.Forms.Integration.WindowsFormsHost>  
- [WPF Designer pro Windows Forms vývojáře](https://msdn.microsoft.com/library/47ad0909-e89b-4996-b4ac-874d929f94ca)  
- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)  
- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)  
- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Integration.ElementHost>
+- <xref:System.Windows.Forms.Integration.WindowsFormsHost>
+- [WPF Designer pro Windows Forms vývojáře](https://msdn.microsoft.com/library/47ad0909-e89b-4996-b4ac-874d929f94ca)
+- [Návod: Hostování ovládacího prvku Windows Forms v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Návod: Hostování složeného ovládacího prvku WPF ve Windows Forms](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Migrace a interoperabilita](../../../../docs/framework/wpf/advanced/migration-and-interoperability.md)

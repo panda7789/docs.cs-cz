@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e5d06988330b9ec83463165661ea5425d8563c60
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6a12e747344f4943dafced2402e0f08a08ac6e7b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459052"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498229"
 ---
 # <a name="icorprofilerinfo3getfunctionenter3info-method"></a>ICorProfilerInfo3::GetFunctionEnter3Info – metoda
-Poskytuje informace zásobníku rámec a argument funkce, která je hlášena profileru pomocí [functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) funkce. Tuto metodu lze volat pouze během `FunctionEnter3WithInfo` zpětného volání.  
+Poskytuje informace zásobníku rámce a argumentů funkce, která se hlásí do profileru pomocí [functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) funkce. Tuto metodu lze volat pouze během `FunctionEnter3WithInfo` zpětného volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +41,25 @@ HRESULT GetFunctionEnter3Info(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] `FunctionID` Funkce, který jste právě zadali.  
+ [in] `FunctionID` Funkce, která je právě zadán.  
   
  `eltInfo`  
- [v] Neprůhledného popisovače, který představuje informace o daném zásobníku. Profileru by měl poskytovat stejné `eltInfo` se určí podle [functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) funkce.  
+ [in] Neprůhledný popisovač, který představuje informace o daném zásobníku. Profiler by měl poskytovat stejné `eltInfo` , který byl zadán ve [functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) funkce.  
   
  `pFrameInfo`  
- [out] Neprůhledného popisovače, který představuje obecné informace o daném zásobníku. Tento popisovač je platný pouze během `FunctionEnter3WithInfo` zpětného volání, ve kterém se nazývá profileru `GetFunctionEnter3Info` metoda.  
+ [out] Neprůhledný popisovač, který představuje obecné informace o daném zásobníku. Tento popisovač je platný pouze během `FunctionEnter3WithInfo` zpětné volání, ve kterém profiler volal `GetFunctionEnter3Info` metoda.  
   
  `pcbArgumentInfo`  
- [ve out] Ukazatel na celkovou velikost v bajtech z [cor_prf_function_argument_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) strukturu (a všechny další [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) struktury pro argument rozsahy, na kterou odkazuje`pArgumentInfo`). Pokud po zadanou velikost není dost, je vrácen ERROR_INSUFFICIENT_BUFFER a očekávané velikosti je uložen v `pcbArgumentInfo`. K volání `GetFunctionEnter3Info` jenom k načtení očekávaná hodnota pro `*pcbArgumentInfo`, nastavte `*pcbArgumentInfo`= 0 a `pArgumentInfo`= NULL.  
+ [out v] Ukazatel na celkovou velikost v bajtech, z [cor_prf_function_argument_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) strukturu (a všechny další [cor_prf_function_argument_range –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) struktur pro argument rozsahy, na které odkazuje `pArgumentInfo`). Pokud zadané velikosti není dostatek, je vrácena ERROR_INSUFFICIENT_BUFFER a očekávaná velikost je uložena v `pcbArgumentInfo`. Pro volání `GetFunctionEnter3Info` jenom k načtení očekávanou hodnotou pro `*pcbArgumentInfo`, nastavte `*pcbArgumentInfo`= 0 a `pArgumentInfo`= NULL.  
   
  `pArgumentInfo`  
  [out] Ukazatel [cor_prf_function_argument_info –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-info-structure.md) struktura, která popisuje umístění argumenty v paměti, v pořadí zleva doprava.  
   
 ## <a name="remarks"></a>Poznámky  
- Profileru přidělíte dostatek místa pro `COR_PRF_FUNCTION_ARGUMENT_INFO` Struktura funkce, která je ke kontrole a musí označovat velikost v `pcbArgumentInfo` parametr.  
+ Profiler musí přidělit dostatek místa pro `COR_PRF_FUNCTION_ARGUMENT_INFO` struktury funkce, která je kontrolován a musíte uvést velikost v `pcbArgumentInfo` parametru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -67,10 +67,10 @@ HRESULT GetFunctionEnter3Info(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)  
- [Functionleave3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)  
- [Functiontailcall3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)  
- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [FunctionEnter3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)
+- [FunctionLeave3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)
+- [FunctionTailcall3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)
+- [ICorProfilerInfo3 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

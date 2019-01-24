@@ -2,12 +2,12 @@
 title: Konfigurace služeb WCF v kódu
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
-ms.openlocfilehash: 96bd9af7fcf22789b95b2efabbed6a19401b2d97
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d55c4994dfa322619f7e5e5911c23d68b439646a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718764"
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, pokud je potřeba nakonfigurovat po nasazení služby. Při použití konfiguračních souborů, odborníci na IT jenom je potřeba aktualizovat konfigurační soubor, žádné rekompilace je povinný. Konfigurační soubory, ale lze komplexní a obtížné na správu. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurační prvky, které je odkazováno dle názvy, které umožňuje vytváření konfigurační soubory obtížné a náchylné k chybě. WCF můžete také nakonfigurovat v kódu. V dřívějších verzích konfigurace služby WCF (4.0 a starší) v kódu bylo snadné v místním prostředí scénáře <xref:System.ServiceModel.ServiceHost> třída je možné nakonfigurovat koncové body a chování před voláním ServiceHost.Open povolená. Ve scénářích hostovaná na webu, ale nemáte přímý přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webového hostovaná služba byla potřeba k vytvoření `System.ServiceModel.ServiceHostFactory` vytvořený <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedení všech potřebných konfigurace. Počínaje .NET 4.5 WCF poskytuje snadný způsob, jak nakonfigurovat i v místním prostředí a web hostované služby v kódu.  
@@ -93,15 +93,15 @@ public class Service1 : IService1
 > [!IMPORTANT]
 >  Všimněte si, že <xref:System.ServiceModel.ServiceConfiguration.LoadFromConfiguration%2A> ignoruje <`host`> Nastavení v rámci <`service`> značky <`system.serviceModel`>. Koncepčně <`host`> je o konfiguraci hostitele, není konfigurace služby a it získá načtené před provedením metody konfigurace.  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)  
- [Konfigurace chování klienta](../../../docs/framework/wcf/configuring-client-behaviors.md)  
- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)  
- [Konfigurace](../../../docs/framework/wcf/samples/configuration-sample.md)  
- [Aktivace založená na konfiguraci v IIS a WAS](../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)  
- [Konfigurace a podpora metadat](../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)  
- [Konfigurace](../../../docs/framework/wcf/diagnostics/exceptions-reference/configuration.md)  
- [Postupy: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)  
- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)  
- [Postupy: Zadání klientské vazby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md)
+- [Konfigurace chování klienta](../../../docs/framework/wcf/configuring-client-behaviors.md)
+- [Zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md)
+- [Konfigurace](../../../docs/framework/wcf/samples/configuration-sample.md)
+- [Aktivace založená na konfiguraci v IIS a WAS](../../../docs/framework/wcf/feature-details/configuration-based-activation-in-iis-and-was.md)
+- [Konfigurace a podpora metadat](../../../docs/framework/wcf/extending/configuration-and-metadata-support.md)
+- [Konfigurace](../../../docs/framework/wcf/diagnostics/exceptions-reference/configuration.md)
+- [Postupy: Zadání vazby služby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
+- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
+- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Postupy: Zadání klientské vazby v konfiguraci](../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md)

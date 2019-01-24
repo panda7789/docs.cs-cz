@@ -2,12 +2,12 @@
 title: Zprostředkovatel tokenů zabezpečení SAML
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 59bd76c99adf778f2aa2a2d891ca79657033296e
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 28b36b4f66d131f966c2c52e9003e48c237dc404
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222912"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513682"
 ---
 # <a name="saml-token-provider"></a>Zprostředkovatel tokenů zabezpečení SAML
 Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel tokenů SAML. Poskytovatel tokenu ve Windows Communication Foundation (WCF) slouží k poskytnutí přihlašovacích údajů k zabezpečení infrastruktury. Poskytovatel tokenu obecně zkontroluje cíl a problémů příslušné přihlašovací údaje tak, aby infrastruktura zabezpečení se dají zabezpečit zprávy. WCF se dodává s výchozí poskytovatel tokenu přihlašovacích údajů správce. WCF se také dodává se [!INCLUDE[infocard](../../../../includes/infocard-md.md)] zprostředkovatele tokenu. Vlastní poskytovatele tokenů jsou užitečné v následujících případech:
@@ -399,4 +399,4 @@ Tento příklad ukazuje, jak implementovat vlastní klienta zprostředkovatel to
   
 1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

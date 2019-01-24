@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -noconfig compiler option [Visual Basic]
 - /noconfig compiler option [Visual Basic]
 ms.assetid: a7405067-bd21-4171-adf4-a126fa3ad6c3
-ms.openlocfilehash: bce2d98a8915e80cdecd7b67029b0c872cf70140
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: a5663fff6f7351272a78947d364458c83e5b8af1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37959576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54687593"
 ---
 # <a name="-noconfig"></a>-noconfig
 Určuje, že kompilátor by neměl odkazovat automaticky běžně používaných [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] sestavení nebo import `System` a `Microsoft.VisualBasic` obory názvů.  
@@ -35,8 +35,8 @@ Určuje, že kompilátor by neměl odkazovat automaticky běžně používaných
 > [!NOTE]
 >  `-noconfig` Možnost není k dispozici v rámci vývojového prostředí sady Visual Studio; je k dispozici jenom při kompilaci z příkazového řádku.  
   
-## <a name="see-also"></a>Viz také  
- [-nostdlib (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nostdlib.md)  
- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
- [@ (určení souboru odezvy)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)  
- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+## <a name="see-also"></a>Viz také:
+- [-nostdlib (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nostdlib.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [@ (určení souboru odezvy)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)
+- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)

@@ -9,20 +9,20 @@ helpviewer_keywords:
 - DataFormats class [WPF], retrieving data
 - DataObject class [WPF], retrieving data
 ms.assetid: a625acf3-1144-44cd-add7-456aefc3859f
-ms.openlocfilehash: 405fff1b586207249fbabafb28791ffa2901cf49
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d11374cbc70210e648e93a385c4a9fbca112c09f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545104"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718292"
 ---
 # <a name="how-to-retrieve-data-in-a-particular-data-format"></a>Postupy: Načtení dat v konkrétním datovém formátu
-Následující příklady ukazují, jak k načtení dat z objektu dat v zadaném formátu.  
+Následující příklady ukazují, jak načíst data z objektu dat v zadaném formátu.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad kódu používá <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> přetížení nejdřív zkontrolovat, pokud zadaná data formátu je k dispozici (nativně nebo automatický převod), pokud zadaný formát je k dispozici, příklad načte data pomocí <xref:System.Windows.DataObject.GetData%28System.String%29> metoda.  
+ Následující příklad kódu používá <xref:System.Windows.DataObject.GetDataPresent%28System.String%29> přetížení nejdřív zkontrolovat, pokud zadaná data naformátovat je k dispozici (nativní nebo automatický převod), pokud zadaný formát je k dispozici, příklad načte data s využitím <xref:System.Windows.DataObject.GetData%28System.String%29> metody.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetSpecificDataFormat](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getspecificdataformat)]
@@ -31,12 +31,12 @@ Následující příklady ukazují, jak k načtení dat z objektu dat v zadaném
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad kódu používá <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> přetížení nejdřív zkontrolujte, jestli je zadaná data formátu nativně dostupná (formáty automaticky převoditelné dat jsou filtrovány); Pokud zadaný formát je k dispozici, příklad načte data pomocí <xref:System.Windows.DataObject.GetData%28System.String%29>metoda.  
+ Následující příklad kódu používá <xref:System.Windows.DataObject.GetDataPresent%28System.String%2CSystem.Boolean%29> nejprve zkontrolujte, jestli je zadaný datový formát nativně dostupná přetížení (převoditelné automaticky datových formátů jsou filtrovány); Pokud zadaný formát je k dispozici, příklad načte data s využitím <xref:System.Windows.DataObject.GetData%28System.String%29>metody.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[DragDrop_DragDropMiscCode#_DragDrop_GetSpecificDataFormat_Native](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/CSharp/Window1.xaml.cs#_dragdrop_getspecificdataformat_native)]
  [!code-vb[DragDrop_DragDropMiscCode#_DragDrop_GetSpecificDataFormat_Native](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DragDrop_DragDropMiscCode/visualbasic/window1.xaml.vb#_dragdrop_getspecificdataformat_native)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.IDataObject>  
- [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.IDataObject>
+- [Přehled přetažení](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md)

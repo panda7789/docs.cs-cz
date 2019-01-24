@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ad0649f3cebbd9adf04bdaf0f06d4c5f5797a84f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 18244ab0473ca4de97e8b6e4eb84151d3a1a5b6e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038741"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692961"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Kovariance a kontravariance v obecných typech
 <a name="top"></a> Kovariance a kontravariance jsou pojmy, které označují schopnost používat více odvozeného typu (konkrétnější) nebo méně odvozeného typu (specifické pro less) než byl původně zadán. Parametry obecného typu podporují kovarianci a kontravarianci za účelem zvýšení flexibility při přiřazování a používání obecných typů. Pokud hovoříme o typu systému, pak jsou pojmy kovariance, kontravariance a invariance definovány následovně: V příkladech se předpokládá základní třídu s názvem `Base` a odvozenou třídu s názvem `Derived`.  
@@ -190,6 +190,6 @@ ms.locfileid: "44038741"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kovariance a kontravariance (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)  
-- [Kovariance a kontravariance (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)    
+- [Kovariance a kontravariance (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/index.md)
+- [Kovariance a kontravariance (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
 - [Odchylky v delegátech](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)

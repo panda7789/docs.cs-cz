@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [Windows Forms], defining in code
 - custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-ms.openlocfilehash: c21aee867fc78c55e62eb183bb1a12ebf1c472e8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b1e9fc0b0acdc3ba2cfab2b9ca705739c6c71516
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744827"
 ---
 # <a name="defining-a-property-in-windows-forms-controls"></a>Definování vlastnosti v ovládacích prvcích Windows Forms
 Přehled vlastností naleznete v tématu [přehled vlastností](https://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). Při definování vlastnosti se několik důležité aspekty:  
@@ -120,8 +120,8 @@ public int Value {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
- [Definování výchozích hodnot pomocí metod ShouldSerialize a Reset](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)  
- [Události změny vlastnosti](../../../../docs/framework/winforms/controls/property-changed-events.md)  
- [Atributy v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+- [Definování výchozích hodnot pomocí metod ShouldSerialize a Reset](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)
+- [Události změny vlastnosti](../../../../docs/framework/winforms/controls/property-changed-events.md)
+- [Atributy v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)

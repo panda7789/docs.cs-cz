@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - PrintForm component [Visual Basic]
 ms.assetid: 03de98b8-b54c-4764-91d7-83c64e974750
-ms.openlocfilehash: 879d31c5a572689d84af6b2e46f3d33e1a8841c8
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: a093dbb674a0d182b9a981cf39668d9ca11d0e8c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47172151"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54746192"
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm – součást (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty v jazyce Visual Basic umožňuje tisk formuláře Windows obrázku za běhu. Své chování nahradí `PrintForm` metodu ve starších verzích jazyka Visual Basic.  
@@ -66,10 +66,10 @@ pf.PrintAction = PrintToPrinter
 pf.Print()  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A>  
- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A>  
- [Postupy: Tisk formuláře pomocí komponenty PrintForm](../../../visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)  
- [Postupy: Tisk klientské oblasti formuláře](../../../visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)  
- [Postupy: Tisk klientských i neklientských oblastí formuláře](../../../visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)  
- [Postupy: Tisk posuvného formuláře](../../../visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A>
+- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A>
+- [Postupy: Tisk formuláře pomocí komponenty PrintForm](../../../visual-basic/developing-apps/printing/how-to-print-a-form-by-using-the-printform-component.md)
+- [Postupy: Tisk klientské oblasti formuláře](../../../visual-basic/developing-apps/printing/how-to-print-the-client-area-of-a-form.md)
+- [Postupy: Tisk klientských a neklientských oblastí formuláře](../../../visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)
+- [Postupy: Tisk posuvného formuláře](../../../visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)

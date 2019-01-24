@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2af0eacbff8220be7f2286f7f345f14126972261
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6962824551c108907929e19d75fc4a31f7001f03
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33458520"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727154"
 ---
 # <a name="icorprofilerinfo2getclassidinfo2-method"></a>ICorProfilerInfo2::GetClassIDInfo2 – metoda
-Získá nadřazený modulu a metadata token pro definici otevřený obecný pro zadanou třídu, `ClassID` ze své nadřízené třídy a `ClassID` pro každý typ argumentu, pokud existuje, třídy.  
+Získá nadřazený modulu a metadata token pro definici otevřený obecný zadanou třídu, `ClassID` své nadřazené třídy a `ClassID` pro každý typ argumentu, pokud jsou k dispozici třídy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT GetClassIDInfo2(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy, pro které budou načteny informace.  
+ [in] ID třídy, pro kterou budou načteny informace.  
   
  `pModuleId`  
- [out] Ukazatel na ID nadřazeného modulu pro definici otevřený obecný pro zadanou třídu.  
+ [out] Ukazatel na ID nadřazeného modulu pro definici otevřený obecný dané třídy.  
   
  `pTypeDefToken`  
- [out] Ukazatel na token metadata pro definici otevřený obecný pro zadanou třídu.  
+ [out] Ukazatel na token metadat pro definici otevřený obecný dané třídy.  
   
  `pParentClassId`  
  [out] Ukazatel na ID nadřazené třídy.  
   
  `cNumTypeArgs`  
- [v] Velikost `typeArgs` pole.  
+ [in] Velikost `typeArgs` pole.  
   
  `pcNumTypeArgs`  
  [out] Ukazatel na celkový počet elementů k dispozici.  
   
  `typeArgs`  
- [out] Pole `ClassID` hodnoty, z nichž každý představuje ID argument typu třídy. Po návratu metody `typeArgs` bude obsahovat některé nebo všechny dostupných `ClassID` hodnoty.  
+ [out] Pole `ClassID` hodnot, z nichž každý představuje ID argument typu třídy. Po návratu metody `typeArgs` bude obsahovat některé nebo všechny dostupné `ClassID` hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetClassIDInfo2` Metoda je podobná [icorprofilerinfo::getclassidinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md) metoda, ale `GetClassIDInfo2` získá další informace o obecného typu.  
+ `GetClassIDInfo2` Metoda je podobná [icorprofilerinfo::getclassidinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md) metody, ale `GetClassIDInfo2` získá další informace o obecném typu.  
   
- Můžete volat kód profileru [icorprofilerinfo::getmodulemetadata –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) získat [metadata](../../../../docs/framework/unmanaged-api/metadata/index.md) rozhraní pro daného modulu. Metadata token, který je vrácen do umístění odkazuje `pTypeDefToken` pak lze získat přístup k metadatům pro třídu.  
+ Profiler kódu může volat [icorprofilerinfo::getmodulemetadata –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) získat [metadat](../../../../docs/framework/unmanaged-api/metadata/index.md) rozhraní pro daný modul. Token metadat, který je vrácen do umístění odkazuje `pTypeDefToken` lze použít k přístupu k metadatům pro třídu.  
   
- Po `GetClassIDInfo2` vrátí, musíte ověřit, že `typeArgs` vyrovnávací paměť byla dostatečně velký pro obsahovat všechny `ClassID` hodnoty. K tomuto účelu porovnat hodnotu, `pcNumTypeArgs` body s hodnotou `cNumTypeArgs` parametr. Pokud `pcNumTypeArgs` odkazuje na hodnotu, která je větší než `cNumTypeArgs`, přidělit větší `typeArgs` vyrovnávací paměti, aktualizujte `cNumTypeArgs` s novou, větší velikost a volání `GetClassIDInfo2` znovu.  
+ Po `GetClassIDInfo2` vrátí, musíte ověřit, že `typeArgs` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny `ClassID` hodnoty. K tomuto účelu porovnat hodnoty, které `pcNumTypeArgs` odkazuje na hodnotu `cNumTypeArgs` parametru. Pokud `pcNumTypeArgs` odkazuje na hodnotu, která je větší než `cNumTypeArgs`, přidělte větší `typeArgs` vyrovnávací paměti, aktualizujte `cNumTypeArgs` nové, větší velikosti a volání `GetClassIDInfo2` znovu.  
   
- Alternativně můžete nejdřív volat `GetClassIDInfo2` s nulovou délkou `typeArgs` vyrovnávací paměti se získat velikost správné vyrovnávací paměti. Pak můžete nastavit `typeArgs` velikost k hodnotě vrácené ve vyrovnávací paměti `pcNumTypeArgs` a volání `GetClassIDInfo2` znovu.  
+ Alternativně můžete nejprve volat `GetClassIDInfo2` s nulovou délkou `typeArgs` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit `typeArgs` velikost k hodnotě vrácené ve vyrovnávací paměti `pcNumTypeArgs` a volat `GetClassIDInfo2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -80,8 +80,8 @@ HRESULT GetClassIDInfo2(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

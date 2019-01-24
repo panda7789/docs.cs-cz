@@ -3,12 +3,12 @@ title: Základy výrazů dotazů (LINQ v JAZYKU C#)
 description: Představuje koncepty související s výrazy dotazu
 ms.date: 11/30/2016
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 68f338381e354f4944539d63ca3a3cc3500031c1
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 96ef75fe702e60eaa38acef77a73a5ea7f2076f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45625501"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709114"
 ---
 # <a name="query-expression-basics"></a>Základy výrazů dotazů
 
@@ -174,7 +174,7 @@ Další informace najdete v tématu [postupy: provádění poddotazů na operace
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programovacího jazyka C#](../programming-guide/index.md)  
-- [LINQ (Language Integrated Query)](index.md)  
-- [Klíčová slova dotazu (LINQ)](../language-reference/keywords/query-keywords.md)  
-- [Přehled standardních operátorů dotazu](../programming-guide/concepts/linq/standard-query-operators-overview.md)  
+- [Průvodce programovacího jazyka C#](../programming-guide/index.md)
+- [LINQ (Language Integrated Query)](index.md)
+- [Klíčová slova dotazu (LINQ)](../language-reference/keywords/query-keywords.md)
+- [Přehled standardních operátorů dotazu](../programming-guide/concepts/linq/standard-query-operators-overview.md)

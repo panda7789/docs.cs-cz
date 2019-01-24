@@ -2,21 +2,21 @@
 title: '&lt;security&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
-ms.openlocfilehash: 870694eae832dd603e511d0b6817c07b08c50614
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 9e6a0e864dcb83a529a5ac457e2fcffe0435376f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150263"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701167"
 ---
 # <a name="ltsecuritygt-of-ltbasichttpbindinggt"></a>&lt;security&gt; – &lt;basicHttpBinding&gt;
 Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
-\<basicHttpBinding >  
+\<basicHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,8 +53,8 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md)|Definuje nastavení zabezpečení přenosu pro základní služba HTTP. Tento element odpovídá <xref:System.ServiceModel.HttpTransportSecurity>.|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-basichttpbinding.md)|Definuje nastavení zabezpečení zpráv pro základní služba HTTP. Tento element odpovídá <xref:System.ServiceModel.BasicHttpMessageSecurity>.|  
+|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md)|Definuje nastavení zabezpečení přenosu pro základní služba HTTP. Tento element odpovídá <xref:System.ServiceModel.HttpTransportSecurity>.|  
+|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-basichttpbinding.md)|Definuje nastavení zabezpečení zpráv pro základní služba HTTP. Tento element odpovídá <xref:System.ServiceModel.BasicHttpMessageSecurity>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -65,14 +65,14 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
 ## <a name="remarks"></a>Poznámky  
  Ve výchozím nastavení není zabezpečen zprávu protokolu SOAP a klient není ověřený. Tento prvek umožňuje konfigurovat nastavení dalšího ověření zabezpečení pro `basicHttpBinding` elementu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.BasicHttpBinding.Security%2A>  
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>  
- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>  
- <xref:System.ServiceModel.BasicHttpSecurity>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.BasicHttpBinding.Security%2A>
+- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>
+- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>
+- <xref:System.ServiceModel.BasicHttpSecurity>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

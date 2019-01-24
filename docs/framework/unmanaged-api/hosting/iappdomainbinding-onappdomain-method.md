@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5db040f6db078b211043c547eed823c9b495ac97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8dfd396568424c3a2300ed5d982e766afd5f925f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431319"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725490"
 ---
 # <a name="iappdomainbindingonappdomain-method"></a>IAppDomainBinding::OnAppDomain – metoda
-Voláno rozhraním modul CLR (CLR) oznámit hostitele vytvořený domény aplikace.  
+Volána modulem common language runtime (CLR), aby upozornil hostitele Vytvoření domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT OnAppDomain (
   
 #### <a name="parameters"></a>Parametry  
  `pAppdomain`  
- [v] Ukazatel na [IUnknown](https://msdn.microsoft.com/library/94as6ehy(v=vs.110).aspx) rozhraní objekt, který představuje novou doménu aplikace.  
+ [in] Ukazatel [IUnknown](https://msdn.microsoft.com/library/94as6ehy(v=vs.110).aspx) rozhraní objektu, který představuje nové aplikační doméně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAppDomainBinding – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAppDomainBinding – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iappdomainbinding-interface.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1126842a30f19831cc845bcfccc0e08f4bf5f6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 306eee3c0ce4689d1d6295aba1ef7584841dcc72
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422669"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731046"
 ---
 # <a name="icordebugstackwalkgetcontext-method"></a>ICorDebugStackWalk::GetContext – metoda
 Vrátí kontext pro aktuální rámec v [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) objektu.  
@@ -38,34 +38,34 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
   
 #### <a name="parameters"></a>Parametry  
  `contextFlags`  
- [v] Příznaky, které indikují požadovaný obsah vyrovnávací paměti kontextu (definovanou v souboru WinNT.h).  
+ [in] Příznaky, které určují požadovaný obsah vyrovnávací paměti kontextu (definované v souboru WinNT.h).  
   
  `contextBufSize`  
- [v] Přidělená velikost vyrovnávací paměti kontextu.  
+ [in] Přidělená velikost vyrovnávací paměti kontextu.  
   
  `contextSize`  
- [out] Skutečná velikost kontextu. Tato hodnota musí být menší než nebo rovna velikosti vyrovnávací paměti kontextu.  
+ [out] Skutečná velikost kontextu. Tato hodnota musí být menší než nebo roven velikosti vyrovnávací paměti kontextu.  
   
  `contextBuf`  
  [out] Vyrovnávací paměti kontextu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Kontext pro aktuální rámec byla úspěšně vrácena.|  
-|E_FAIL|Kontext nejde vrátit.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT BUFFER)|Vyrovnávací paměti kontextu je příliš malá.|  
-|CORDBG_E_PAST_END_OF_STACK|Ukazatel na rámec je již na konec zásobníku; Proto je přístupná žádné další snímky.|  
+|E_FAIL|Nebylo možné vrátit kontext.|  
+|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT BUFFER)|Kontext vyrovnávací paměť je příliš malá.|  
+|CORDBG_E_PAST_END_OF_STACK|Už na konec zásobníku; ukazatel na rámec Proto je možný žádné další rámce.|  
   
 ## <a name="exceptions"></a>Výjimky  
   
 ## <a name="remarks"></a>Poznámky  
- Protože unwinding obnoví pouze podmnožinu registrů, jako je například nezávislé registry, kontext nemusí přesně odpovídat stav registrace v čase volání.  
+ Protože odvíjení obnoví pouze podmnožinu registrů, jako je například stálé registrů kontextu nemusí přesně odpovídat stav registru v době volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -73,6 +73,6 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

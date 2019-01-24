@@ -1,18 +1,12 @@
 ---
-title: Stromy výrazů (C#)
+title: 'Stromy výrazů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: f17b4fba92c502ca6d53fef7ac6d01f2fdefc02e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526862"
 ---
 # <a name="expression-trees-c"></a>Stromy výrazů (C#)
 Stromy výrazů představují kódu ve stromu jako datová struktura, kde každý uzel pracuje, výrazem, například, volání metody nebo binární operace, jako `x < y`.  
   
- Můžete zkompilovat a spustit kód reprezentována stromy výrazů. To umožňuje dynamickou změnu spustitelného kódu, provádění LINQ dotazy v různých databází a vytvoření dynamických dotazů. Další informace o stromů výrazů v technologii LINQ, naleznete v tématu [postupy: použití stromů výrazů k vytváření dynamických dotazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
+ Můžete zkompilovat a spustit kód reprezentována stromy výrazů. To umožňuje dynamickou změnu spustitelného kódu, provádění LINQ dotazy v různých databází a vytvoření dynamických dotazů. Další informace o stromů výrazů v technologii LINQ, naleznete v tématu [jak: Použití stromů výrazů k sestavování dynamických dotazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
   
  Stromy výrazů se také používají v dynamické jazykovým modulem runtime (DLR) k poskytování vzájemná funkční spolupráce mezi dynamické jazyky a rozhraní .NET Framework a umožňuje autorům generování stromů výrazů místo jazyk Microsoft intermediate language (MSIL). Další informace o DLR najdete v tématu [přehled dynamického modulu Runtime jazyka](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
@@ -118,7 +112,7 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
 ```  
   
 ## <a name="immutability-of-expression-trees"></a>Neměnnost stromů výrazů  
- Stromy výrazů by měl být neměnitelný. To znamená, že pokud chcete upravit strom výrazu, musí vytvořit nové stromu výrazů zkopírováním existující a nahraďte v ní uzly. Návštěvníka stromu výrazu můžete použít k procházení na stávající strom výrazu. Další informace najdete v tématu [postupy: Změna stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
+ Stromy výrazů by měl být neměnitelný. To znamená, že pokud chcete upravit strom výrazu, musí vytvořit nové stromu výrazů zkopírováním existující a nahraďte v ní uzly. Návštěvníka stromu výrazu můžete použít k procházení na stávající strom výrazu. Další informace najdete v tématu [jak: Úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
   
 ## <a name="compiling-expression-trees"></a>Kompilování stromů výrazů  
  <xref:System.Linq.Expressions.Expression%601> Typ poskytuje <xref:System.Linq.Expressions.Expression%601.Compile%2A> metodu, která se kompiluje kód reprezentována strom výrazu na spustitelný soubor delegáta.  
@@ -145,13 +139,13 @@ Console.WriteLine(expr.Compile()(4));
 // Also prints True.  
 ```  
   
- Další informace najdete v tématu [postupy: spuštění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
+ Další informace najdete v tématu [jak: Provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Linq.Expressions>  
-- [Postupy: provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)  
-- [Postupy: úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)  
-- [Výrazy lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
-- [Přehled DLR (Dynamic Language Runtime)](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
+- <xref:System.Linq.Expressions>
+- [Postupy: Provádění stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Postupy: Úpravy stromů výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [Výrazy lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+- [Přehled DLR (Dynamic Language Runtime)](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Koncepty programování (C#)](../../../../csharp/programming-guide/concepts/index.md)

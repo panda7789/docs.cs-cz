@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: 00cfda489feb468c7e3c140ab63369b408b09152
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 08b09a762a62e758c1c396b80b46648725b835b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698257"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500561"
 ---
 # <a name="-link-c-compiler-options"></a>-link (možnosti kompilátoru C#)
 Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v zadaném sestavení pro projekt, který je aktuálně kompilován.  
@@ -31,10 +31,10 @@ Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v z
   
 ## <a name="arguments"></a>Arguments  
  `fileList`  
- Požadováno. Čárkami oddělený seznam názvů souborů sestavení. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek.  
+ Povinný parametr. Čárkami oddělený seznam názvů souborů sestavení. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek.  
   
 ## <a name="remarks"></a>Poznámky  
- `-link` Možnost můžete nasazovat aplikace, která obsahuje vložené informace o typu. Aplikace pak můžete použít typy v sestavení modulu runtime, které implementují informace o vloženém typu bez nutnosti odkaz na sestavení modulu runtime. Pokud různé verze sestavení modulu runtime jsou publikovány, aplikace, která obsahuje informace o vloženém typu můžete pracovat se různé verze, aniž byste museli být překompilovány. Příklad najdete v tématu [návod: vložení typů ze spravovaných sestavení](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
+ `-link` Možnost můžete nasazovat aplikace, která obsahuje vložené informace o typu. Aplikace pak můžete použít typy v sestavení modulu runtime, které implementují informace o vloženém typu bez nutnosti odkaz na sestavení modulu runtime. Pokud různé verze sestavení modulu runtime jsou publikovány, aplikace, která obsahuje informace o vloženém typu můžete pracovat se různé verze, aniž byste museli být překompilovány. Příklad najdete v tématu [názorný postup: Vložení typů ze spravovaných sestavení](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
   
  Použití `-link` volba je užitečná při práci se spoluprací COM. Můžete vložit typy modelu COM, tak, aby vaše aplikace vyžaduje již primární definiční sestavení (PIA) na cílovém počítači. `-link` Možnost dává pokyn kompilátoru k vložení informací o typu modelu COM z odkazované sestavení vzájemné spolupráce do výsledné zkompilovaného kódu. Typ modelu COM je identifikován hodnota CLSID (GUID). V důsledku toho může vaše aplikace spouštět na cílovém počítači, který má nainstalovanou stejné typy modelu COM se stejnými hodnotami identifikátoru CLSID. Dobrým příkladem jsou aplikace, které automatizují Microsoft Office. Protože aplikace, jako je Office obvykle ponechat stejnou hodnotu CLSID napříč různými verzemi, aplikace může používat odkazované typy modelu COM v cílovém počítači je nainstalované rozhraní .NET Framework 4 nebo vyšší a vaše aplikace používá metody, vlastnosti, nebo události, které jsou zahrnuty v odkazovaných typů modelu COM.  
   
@@ -81,11 +81,11 @@ Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v z
 csc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.cs  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
-- [Návod: Vložení typů ze spravovaných sestavení](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
-- [-reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)  
-- [-noconfig (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)  
-- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Návod: Vložení typů ze spravovaných sestavení](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
+- [-reference (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+- [-noconfig (možnosti kompilátoru C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)
+- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
 - [Přehled interoperability](../../../csharp/programming-guide/interop/interoperability-overview.md)

@@ -2,12 +2,12 @@
 title: Zajištění zabezpečení pro protokolování zpráv
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: 5ed2529d82c3994a245d2132909cd1e88b6ed62d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0bee1543a6c29dc34abcb2af08ee520923766175
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188804"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54731995"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokolů zpráv, jakož i události generované modulem protokolování zpráv.  
@@ -99,16 +99,16 @@ Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokol
 ## <a name="events-triggered-by-message-logging"></a>Události aktivované protokolování zpráv  
  Následující seznam obsahuje všechny události, protože ho vygeneroval protokolování zpráv.  
   
--   Zpráva přihlášení: Tato událost je vygenerován při protokolování zpráv je povolená v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je "zprávy bylo zapnuto protokolování. Citlivá informace může být přihlášena v podobě prostého textu, i v případě, že byly šifrované na lince, například zpráv."  
+-   Přihlášení se zobrazí zpráva: Tato událost je vygenerován při protokolování zpráv je povolená v konfiguraci nebo prostřednictvím rozhraní WMI. Obsah události je "zprávy bylo zapnuto protokolování. Citlivá informace může být přihlášena v podobě prostého textu, i v případě, že byly šifrované na lince, například zpráv."  
   
--   Zpráva odhlášení: Tato událost je vygenerován při protokolování zpráv je zakázán prostřednictvím rozhraní WMI. Obsah události je "Zpráva protokolování vypnuté."  
+-   Zpráva o odhlášení: Tato událost je vygenerován při protokolování zpráv je zakázán prostřednictvím rozhraní WMI. Obsah události je "Zpráva protokolování vypnuté."  
   
--   Protokol známé PII na: Tato událost je vygenerován, pokud je povoleno přihlášení známého PII. K tomu dojde při `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `true`a `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`.  
+-   Přihlášení známého PII: Tato událost je vygenerován, pokud je povoleno přihlášení známého PII. K tomu dojde při `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `true`a `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`.  
   
--   Protokolovat známé PII není povoleno: Tato událost je vygenerován při přihlášení známého PII není povoleno. K tomu dojde při `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`, ale `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `false`. Není vyvolána žádná výjimka.  
+-   Přihlášení známého PII není povoleno: Tato událost je vygenerován při přihlášení známého PII není povoleno. K tomu dojde při `logKnownPii` atribut `source` je prvek v souboru App.config nebo Web.config nastaven na `true`, ale `enableLoggingKnownPii` atribut `machineSettings` prvek souboru Machine.config je nastaven na `false`. Není vyvolána žádná výjimka.  
   
  Tyto události můžete zobrazit v nástroji Prohlížeč událostí, který je součástí Windows. Další informace najdete v části [protokolování událostí](../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
-## <a name="see-also"></a>Viz také  
- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [Otázky zabezpečení a užitečné tipy pro trasování](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)
+## <a name="see-also"></a>Viz také:
+- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
+- [Otázky zabezpečení a užitečné tipy pro trasování](../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)

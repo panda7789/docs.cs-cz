@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
-ms.openlocfilehash: 092f073a138a09fc25b96fbddde5b73992056981
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: db802e127cacec2243741310b8a885c7ffcd24e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087780"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54736991"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Použití datové služby v klientské aplikaci (WCF Data Services)
 Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] kanálu zadáním identifikátor URI pro webový prohlížeč. Identifikátor URI poskytuje adresu prostředku a zpráv žádostí se odesílají na tyto adresy k přístupu nebo změnám podkladová data, která představuje prostředek. Prohlížeč vydá příkaz HTTP GET a vrátí jako požadovaný prostředek [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Další informace najdete v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
@@ -33,16 +33,16 @@ Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../..
   
 -   **Sloučit HTTP** – z důvodu nedostatečné efektivity při provádění delete, za nímž následuje vložení ve zdroji dat stejně, chcete-li změnit entity data [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] zavádí novou akci HTTP SLOUČENÍ. Datová část požadavku obsahuje vlastnosti, které musí být změněny na prostředek adresovaný entity. Protože sloučit HTTP není definováno ve specifikaci protokolu HTTP, může vyžadovat další zpracování směrovat žádost HTTP sloučit prostřednictvím jinou hodnotu než[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] clustery serverů.  
   
- Další informace najdete v tématu [OData: operace](https://go.microsoft.com/fwlink/?LinkId=185792).  
+ Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkId=185792).  
   
 ### <a name="payload-formats"></a>Formáty datových částí  
  Pro HTTP PUT, POST protokolu HTTP nebo HTTP SLOUČENÍ žádosti datovou část zprávy požadavku obsahuje data entity, která odesíláte do datové služby. Obsah datové části závisí na formát dat zprávy. Odpovědí HTTP na všechny akce s výjimkou odstranění, také obsahovat tyto datové části. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] podporuje následující formáty datové části pro přístup k a změna dat uložených ve službě:  
   
--   **Atom** – kódování zpráv na základě jazyka XML, který je definován [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření Atom publikování protokol (AtomPub) umožňující výměny dat prostřednictvím protokolu HTTP webové informační kanály, podcasty, wikiweby a založený na formátu XML internetové funkce. Další informace najdete v tématu [OData: formát Atom](https://go.microsoft.com/fwlink/?LinkId=185794).  
+-   **Atom** – kódování zpráv na základě jazyka XML, který je definován [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jako rozšíření Atom publikování protokol (AtomPub) umožňující výměny dat prostřednictvím protokolu HTTP webové informační kanály, podcasty, wikiweby a založený na formátu XML internetové funkce. Další informace najdete v tématu [OData: Formát Atom](https://go.microsoft.com/fwlink/?LinkId=185794).  
   
--   **JSON** – zápis JSON (JavaScript Object) je formát pro výměnu zjednodušené data, která je založena na podmnožinu programovací jazyk JavaScript. Další informace najdete v tématu [OData: formát JSON](https://go.microsoft.com/fwlink/?LinkId=185795).  
+-   **JSON** – zápis JSON (JavaScript Object) je formát pro výměnu zjednodušené data, která je založena na podmnožinu programovací jazyk JavaScript. Další informace najdete v tématu [OData: Formát JSON](https://go.microsoft.com/fwlink/?LinkId=185795).  
   
- Formát zprávy datové části je požadováno v záhlaví zprávy s požadavkem HTTP. Další informace najdete v tématu [OData: operace](https://go.microsoft.com/fwlink/?LinkID=185792).  
+ Formát zprávy datové části je požadováno v záhlaví zprávy s požadavkem HTTP. Další informace najdete v tématu [OData: Operace](https://go.microsoft.com/fwlink/?LinkID=185792).  
   
 ## <a name="accessing-and-changing-data-using-client-libraries"></a>Přístup a změnu dat s využitím klientské knihovny  
  [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které vám umožní snadněji využívat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] obálek rozhraní .NET Framework a klienta založeného na technologii Silverlight aplikace. Tyto knihovny zjednodušují posílat a přijímat zprávy HTTP. Převede uzel se také datovou část zprávy do CLR objektů, které představují entity data. Tyto klientské knihovny funkce dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy umožňují dotazování datové služby a poté pracovat s daty vrácenou entitu jako objekty CLR. Další informace najdete v tématu [klientské knihovny WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md) a [služeb WCF Data Services (Silverlight)](https://msdn.microsoft.com/library/c0cd9f4b-1372-48e4-9935-c8421239da30).  
@@ -51,6 +51,6 @@ Můžete přístup ke službě, která zveřejňuje [!INCLUDE[ssODataFull](../..
   
  Nejsou k dispozici, můžete využívat programovací knihovny [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu do jiných typů klientských aplikací. Další informace najdete v tématu [OData SDK](https://go.microsoft.com/fwlink/?LinkId=185796).  
   
-## <a name="see-also"></a>Viz také  
- [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)  
- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)
+## <a name="see-also"></a>Viz také:
+- [Přístup k prostředkům datové služby](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)
+- [Rychlý start](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

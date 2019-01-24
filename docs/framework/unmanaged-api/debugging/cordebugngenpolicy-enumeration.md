@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc5a06e6b3cc1e9338d860cdb110bf7d516080be
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ae40916807a86d1c9828080a6cb9e5c1d14c2ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671223"
 ---
 # <a name="cordebugngenpolicy-enumeration"></a>CorDebugNGenPolicy – výčet
-Obsahuje hodnotu, která určuje, zda ladicí program načte nativní bitové kopie (NGen) z mezipaměť nativních bitových kopií.  
+Poskytuje hodnotu, která určuje, zda ladicí program načítá nativní bitové kopie (NGen) z mezipaměti nativních bitových kopií.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ enum CorDebugNGENPolicy {
   
 |Název členu|Popis|  
 |-----------------|-----------------|  
-|`DISABLE_LOCAL_NIC`|V [!INCLUDE[win8_appname_long](../../../../includes/win8-appname-long-md.md)] aplikace, použijte bitových kopií z mezipaměti v místní nativních bitových kopií je zakázána. V aplikace na ploše toto nastavení nemá žádný vliv.|  
+|`DISABLE_LOCAL_NIC`|V [!INCLUDE[win8_appname_long](../../../../includes/win8-appname-long-md.md)] aplikaci, používání imagí z mezipaměti nativní bitové kopie místní aplikace je zakázaná. V desktopové aplikaci toto nastavení nemá žádný vliv.|  
   
 ## <a name="remarks"></a>Poznámky  
- `CorDebugNGENPolicy` Výčet je používán [icordebugprocess5::enablengenpolicy –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md) metoda. Zákaz použití bitové kopie z mezipaměti v místní nativních bitových kopií poskytuje pro ladění konzistentního prostředí tím, že zajistí, že ladicí program načte debuggable kompilována bitové kopie místo optimalizované nativní bitové kopie.  
+ `CorDebugNGENPolicy` Výčet je používán [icordebugprocess5::enablengenpolicy –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md) metody. Zákaz použití obrázky z místní mezipaměti zajišťující konzistentní možnosti ladění tím, že zajišťuje, že ladicí program načte laditelné zkompilovaný pomocí kompilátoru JIT obrázky místo optimalizované nativní bitové kopie.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -54,5 +54,5 @@ enum CorDebugNGENPolicy {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

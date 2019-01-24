@@ -25,84 +25,84 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c308c7e16f106d00e5fd1b5ad820f8b330f4bbbf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 719f71f42ac7b0c376525ab3a316a986af0b0f43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399174"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678795"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Vytváření satelitních sestavení pro aplikace klasické pracovní plochy
-Soubory prostředků hrají roli centrální v lokalizovaných aplikací. Umožňují aplikace k zobrazení řetězce, obrázky a další data ve vlastních jazyce a jazykové verzi a zadejte alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Rozhraní .NET Framework používá model střed a paprsek najít a načíst lokalizované prostředky. Rozbočovače je hlavní sestavení, které obsahuje nepřekládá spustitelného kódu a prostředků pro jednu jazykovou verzi, která se nazývá neutrální nebo výchozí jazykovou verzi. Představuje výchozí jazykovou verzi záložní jazykovou verzi pro aplikaci. používá se při žádné lokalizované prostředky jsou k dispozici. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut a nastavit jazykovou verzi aplikace výchozí jazykovou verzi. Každý paprsek připojí k satelitní sestavení, které obsahuje prostředky pro jeden lokalizované jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykové verze bez nahrazení hlavního sestavení pro aplikaci.  
+Soubory prostředků přehrát hlavní roli v lokalizovaných aplikacích. Umožňují aplikaci zobrazíte řetězce, obrázky a další data v vlastněných uživateli jazyk a jazykovou verzi a poskytnout alternativní dat, pokud nejsou k dispozici prostředky pro uživatele vlastní jazyk nebo jazykovou verzi. Model střed a paprsek rozhraní .NET Framework používá k vyhledání a načtení lokalizovaných prostředků. Centrum je hlavní sestavení, která obsahuje spustitelný kód bez možnosti lokalizace a prostředky pro jediné jazykové verze, která se nazývá neutrální nebo výchozí jazykovou verzi. Výchozí jazykovou verzi je záložní jazykovou verzi pro aplikaci. používá se, když jsou k dispozici žádné lokalizované prostředky. Můžete použít <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut k určení jazykovou verzi aplikace výchozí jazykovou verzi. Každého paprsku se připojí k satelitní sestavení, která obsahuje prostředky pro jeden lokalizovanou jazykovou verzi, ale neobsahuje žádný kód. Protože satelitní sestavení nejsou součástí hlavní sestavení, můžete snadno aktualizovat nebo nahradit prostředky, které odpovídají konkrétní jazykovou verzi, bez nutnosti vyměnit hlavní sestavení pro aplikaci.  
   
 > [!NOTE]
->  Prostředky aplikace výchozí jazykovou verzi je možné ukládat i v satelitní sestavení. Chcete-li to provést, přiřaďte <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut hodnotu <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.  
+>  Prostředky aplikace výchozí jazykovou verzi mohou být uloženy také v satelitním sestavení. Chcete-li to provést, přiřaďte <xref:System.Resources.NeutralResourcesLanguageAttribute> atribut hodnotu <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.  
   
 ## <a name="satellite-assembly-name-and-location"></a>Satelitní sestavení název a umístění  
- Model střed a paprsek vyžaduje umístit prostředky v určitých umístění tak, aby bylo možné snadno umístěný a použít. Pokud provedete kompilace a název prostředky podle očekávání, nebo pokud není umístit na správné místo, modul common language runtime nebude možné je vyhledat a místo ní použije prostředků výchozí jazykovou verzi. Rozhraní .NET Framework Resource Manager reprezentována <xref:System.Resources.ResourceManager> objektu, se používá k automatickému přístupu k lokalizované prostředky. Resource Manager vyžaduje následující:  
+ Model střed a paprsek vyžaduje umístit prostředky v konkrétní umístění tak, aby bylo možné snadno nachází a použít. Pokud tak učiníte kompilace a název prostředky podle očekávání nebo je umístit není ve správném umístění, modul common language runtime nebudete moct umisťovat a místo toho použije prostředků výchozí jazykové verze. Rozhraní .NET Framework Resource Manageru reprezentována <xref:System.Resources.ResourceManager> objektu, se používá k automatickému přístupu k lokalizované prostředky. Resource Manageru vyžaduje následující:  
   
--   Jedno satelitní sestavení musí zahrnovat všechny prostředky pro konkrétní jazykové verzi. Jinými slovy by měl kompilaci víc souborů s příponou TXT nebo RESX do souboru .resources jeden binární.  
+-   Jedno satelitní sestavení musí zahrnovat všechny prostředky pro konkrétní jazykovou verzi. Jinými slovy byste měli kompilovat více souborů .txt nebo .resx do jediné binární soubor .resources.  
   
--   V adresáři aplikace pro jednotlivé lokalizované jazykové verze, obsahující tuto jazykovou verzi prostředky musí být samostatné podadresáři. Název podadresáře musí být stejný jako název jazykové verze. Alternativně můžete uložit satelitní sestavení v globální mezipaměti sestavení. V takovém případě komponenta informace o jazykové verzi sestavení silným názvem musí označovat jeho jazykovou verzi. (Viz [instalaci satelitní sestavení v globální mezipaměti sestavení](#SN) později v tomto tématu.)  
+-   Musí být samostatné podadresář v adresáři aplikace pro každou lokalizovanou jazykovou verzi, která ukládá danou jazykovou verzi prostředků. Název podadresáře musí být stejný jako název jazykové verze. Alternativně můžete uložit satelitní sestavení v globální mezipaměti sestavení. V takovém případě součást informací o jazykové verzi sestavení silným názvem musíte uvést jeho jazykovou verzi. (Viz [instalace satelitní sestavení v globální mezipaměti sestavení](#SN) později v tomto tématu.)  
   
     > [!NOTE]
-    >  Pokud vaše aplikace obsahuje prostředky pro subkultury, umístěte každou subkulturu v samostatných podadresáře v adresáři aplikace. Neumísťujte subkultury v podadresářích adresáře jejich hlavní jazykové verze.  
+    >  Pokud vaše aplikace obsahuje prostředky pro subkultury, umístěte každou subkulturu v samostatném podadresáři adresáře aplikace. Neumísťujte subkultury v podadresářích adresáře jejich hlavní jazykové verze.  
   
--   Satelitní sestavení musí mít stejný název jako aplikace a musí používat příponu názvu souboru ". resources.dll". Například pokud Example.exe název aplikace, název každé satelitní sestavení by měl být Example.resources.dll. Všimněte si, že název sestavení satelitní neindikuje jazykovou verzi jeho souborů prostředků. Satelitní sestavení se však zobrazí v adresáři, který zadat jazykovou verzi.  
+-   Satelitní sestavení musí mít stejný název jako aplikace a musíte použít příponu názvu souboru ". resources.dll". Například pokud aplikace jmenuje Example.exe, název každé satelitní sestavení by měl být Example.resources.dll. Všimněte si, že název sestavení satelitních neznamená jazykovou verzi jeho souborů prostředků. Satelitní sestavení se však zobrazí do adresáře, který zadat jazykovou verzi.  
   
--   Informace o jazykové verzi satelitní sestavení musí být součástí metadat sestavení. K uložení název jazykové verze v metadatech satelitní sestavení, zadejte `/culture` možnost při použití [Linker sestavení](../../../docs/framework/tools/al-exe-assembly-linker.md) na prostředky v satelitní sestavení pro vložení.  
+-   Informace o jazykové verzi satelitního sestavení musí obsahovat metadata sestavení. Chcete-li uložit název jazykové verze v metadatech satelitní sestavení, zadejte `/culture` možnost při použití [Assembly Linker](../../../docs/framework/tools/al-exe-assembly-linker.md) pro vložení prostředkům v satelitním sestavení.  
   
- Následující obrázek znázorňuje directory strukturu a umístění požadavky ukázkového pro aplikace, které nejsou instalace v [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md). Položky s příponami .txt a .resources nebude dodávají spolu s posledním aplikace. Jedná se o zprostředkující prostředků soubory použít k vytvoření konečné satelitní sestavení prostředků. V tomto příkladu můžete nahradit soubory RESX soubory s příponou TXT. Další informace najdete v tématu [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).  
+ Následující obrázek znázorňuje ukázka directory struktuře a umístění požadavky pro aplikace, které nejsou instalace v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md). Položky s příponami TXT a .resources nebude dodání pomocí konečné aplikace. Jsou to soubory zprostředkující prostředek použitý k vytvoření konečného satelitní sestavení prostředků. V tomto příkladu můžete nahradit souborů .resx pro soubory TXT. Další informace najdete v tématu [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).  
   
  ![Satelitní sestavení](../../../docs/framework/resources/media/satelliteassemblydir.gif "satelliteassemblydir")  
-Directory satelitní sestavení  
+Adresář satelitního sestavení  
   
 ## <a name="compiling-satellite-assemblies"></a>Kompilování satelitních sestavení  
- Používáte [Generátor zdrojových souborů (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) zkompilovat textové soubory nebo soubory XML (RESX), které obsahují prostředky pro binární soubory RESOURCES. Pak použijete [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) kompilace soubory .resources do satelitní sestavení. Al.exe vytvoří sestavení z soubory .resources, které zadáte. Satelitní sestavení může obsahovat pouze prostředky; nemohou obsahovat žádný spustitelný kód.  
+ Použijete [Resource File Generator (Resgen.exe)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) ke kompilaci textové soubory nebo soubory XML (.resx), které obsahují prostředky do binárních souborů .resources. Pak použijete [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) ke kompilaci souborů .resources do satelitních sestavení. Vytvoří Al.exe sestavení ze souborů .resources, které zadáte. Satelitní sestavení může obsahovat pouze prostředky; nesmí obsahovat žádný spustitelný kód.  
   
- Následující příkaz pro Al.exe vytvoří satelitní sestavení pro aplikaci `Example` ze souboru strings.de.resources německé prostředky.  
+ Následující příkaz Al.exe vytvoří satelitní sestavení pro aplikaci `Example` ze souboru strings.de.resources německé prostředky.  
   
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll  
 ```  
   
- Následující příkaz pro Al.exe také vytvoří satelitní sestavení pro aplikaci `Example` ze souboru strings.de.resources. **/Template** možnost způsobí, že satelitní sestavení dědí všechny metadata sestavení s výjimkou jeho informace o jazykové verzi z nadřazeného sestavení (Example.dll).  
+ Následující příkaz Al.exe také vytvoří satelitní sestavení pro aplikaci `Example` ze souboru strings.de.resources. **/Template** možnost způsobí, že satelitní sestavení dědí všechna metadata sestavení s výjimkou jeho informace o jazykové verzi z nadřazeného sestavení (Example.dll).  
   
 ```console
 al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dll -template:Example.dll  
 ```  
   
- Následující tabulka popisuje možnosti Al.exe používané v těchto příkazech podrobněji.  
+ Následující tabulka popisuje možnosti Al.exe použité v příkazech podrobněji.  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**-target:** lib|Určuje, že satelitní sestavení kompiluje soubor knihovny (DLL.dll). Protože satelitní sestavení neobsahuje spustitelného kódu a není hlavní sestavení aplikace, je nutné uložit satelitní sestavení jako knihovny DLL.|  
-|**-vložení:** strings.de.resources|Určuje název souboru prostředků pro vložení při Al.exe kompiluje sestavení. Můžete vložit více RESOURCES souborů v satelitní sestavení, ale pokud postupujete podle modelu střed a paprsek, je nutné kompilovat jedno satelitní sestavení pro každou jazykovou verzi. Můžete však vytvořit samostatné RESOURCES soubory pro řetězce a objekty.|  
-|**-jazyková verze:** de|Určuje jazykovou verzi prostředku ke kompilaci. Modul CLR používá tyto informace při vyhledávání pro prostředky pro zadanou jazykovou verzi. Pokud tento parametr vynecháte, Al.exe stále zkompiluje prostředek, ale modul runtime nebude možné najít, když uživatel požaduje.|  
-|**-out:** Example.resources.dll|Určuje název souboru výstupního souboru. Název musí splňovat standardní pojmenování *baseName*.resources. *rozšíření*, kde *baseName* je název hlavní sestavení a *rozšíření* je platná přípona názvu souboru název (například .dll). Všimněte si, že modul runtime není schopna určit jazykovou verzi na základě jeho názvu souboru výstup; satelitní sestavení je nutné použít **/culture** možnost k jeho zadání.|  
-|**-šablony:** Example.dll|Určuje, ze kterého satelitní sestavení zdědí všechny metadata sestavení s výjimkou pole jazykovou verzi sestavení. Tato možnost ovlivní satelitní sestavení pouze v případě, že zadáte sestavení, který má [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|  
+|**-target:** lib|Určuje, že satelitní sestavení je kompilováno do souboru knihovny (DLL.dll). Protože satelitní sestavení neobsahuje žádná spustitelný kód a není sestavení hlavní aplikace, je nutné uložit jako knihovny DLL satelitních sestavení.|  
+|**-embed:** strings.de.resources|Určuje název souboru prostředků pro vložení při Al.exe zkompiluje sestavení. Můžete vložit několik souborů .resources v satelitním sestavení, ale pokud postupujete model střed a paprsek, musíte zkompilovat jedno satelitní sestavení pro každou jazykovou verzi. Můžete však vytvořit oddělených souborů .resources pro řetězce a objekty.|  
+|**-jazykové verze:** de|Určuje jazykovou verzi prostředků pro kompilaci. Modul common language runtime používá tyto informace při vyhledávání prostředků pro zadanou jazykovou verzi. Pokud tento parametr vynecháte, Al.exe se stále zkompiluje prostředek, ale modul runtime nebude možné najít, když uživatel požaduje.|  
+|**-out:** Example.resources.dll|Určuje název výstupního souboru. Název musí splňovat standardní pojmenování *baseName*.resources. *rozšíření*, kde *baseName* je název hlavního sestavení a *rozšíření* je platnou příponu (například .dll). Všimněte si, že modul runtime nedokáže určit jazykovou verzi satelitního sestavení založené na jeho název výstupního souboru; je nutné použít **/culture** možnost k jeho zadání.|  
+|**– Šablona:** Example.dll|Určuje sestavení, ze kterého se satelitní sestavení dědí všechna metadata sestavení s výjimkou pole jazykové verze. Tato možnost se týká satelitní sestavení pouze v případě, že při zadání sestavení, který má [silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).|  
   
- Úplný seznam možností, které jsou k dispozici s Al.exe, najdete v části [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md).  
+ Úplný seznam možností, které jsou s Al.exe najdete v tématu [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md).  
   
 ## <a name="satellite-assemblies-an-example"></a>Satelitní sestavení: Příklad  
- Zde je jednoduchý příklad "Hello, world", který se zobrazí okno obsahující lokalizované pozdrav. V příkladu obsahuje zdroje informací pro angličtinu (Spojené státy), francouzština (Francie) a ruskými jazykové verze, a její záložní jazykové verze je angličtina. Pokud chcete vytvořit v příkladu, postupujte takto:  
+ Níže je jednoduchý příklad "Hello world", který se zobrazí okno se zprávou obsahující lokalizované pozdrav. V příkladu obsahuje prostředky pro angličtinu (Spojené státy), francouzština (Francie) a jazykové verze ruština (Rusko) a jeho záložní jazykovou verzi je angličtina. Chcete-li vytvořit příklad, postupujte takto:  
   
-1.  Vytvořte soubor prostředků s názvem Greeting.resx nebo Greeting.txt tak, aby obsahovala prostředků pro výchozí jazykovou verzi. Uložte jeden řetězec s názvem `HelloString` jehož hodnota je "Hello, world!" v tomto souboru.  
+1.  Vytvoření souboru prostředků s názvem Greeting.resx nebo Greeting.txt tak, aby obsahovala prostředků pro výchozí jazykovou verzi. Jeden řetězec s názvem Store `HelloString` jehož hodnota je "Hello world!" v tomto souboru.  
   
-2.  K označení, že angličtina (cs) je výchozí jazykovou verzi aplikace, přidejte následující <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atribut souboru AssemblyInfo aplikace nebo souboru hlavní zdrojového kódu, který se zkompiluje do hlavní sestavení aplikace.  
+2.  K označení, že je angličtina (en) výchozí jazykovou verzi aplikace, přidejte následující <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atribut souboru AssemblyInfo aplikace nebo souboru hlavní zdrojového kódu, který se zkompiluje do sestavení hlavní aplikace.  
   
      [!code-csharp[Conceptual.Resources.Locating#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
      [!code-vb[Conceptual.Resources.Locating#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
   
-3.  Přidání podpory pro další jazykové verze (en US, fr-FR a ru-RU) do aplikace takto:  
+3.  Přidání podpory pro další jazykové verze (en US, fr-FR a ru-RU) aplikace následujícím způsobem:  
   
-    -   Pro podporu en US nebo jazykové verze Angličtina (Spojené státy), vytvořte soubor prostředků s názvem Greeting.en-US.resx nebo Greeting.en US.txt a uložte do něj jeden řetězec s názvem `HelloString` jehož hodnota je "Hi world!"  
+    -   Pro podporu en US nebo jazykové verze Angličtina (Spojené státy), vytvořit soubor prostředků s názvem Greeting.en US.resx nebo Greeting.en US.txt a do ní uložte jednoho řetězce s názvem `HelloString` jehož hodnota je "Ahoj světe!"  
   
-    -   Pro podporu fr-FR nebo Francouzština (Francie) jazykovou verzi, vytvořte soubor prostředků s názvem Greeting.fr-FR.resx nebo Greeting.fr FR.txt a uložte do něj jeden řetězec s názvem `HelloString` jehož hodnota je "Salut včetně the World!"  
+    -   Pro podporu fr-FR nebo jazykovou verzi francouzština (Francie), vytvořit soubor prostředků s názvem Greeting.fr-FR.resx nebo Greeting.fr FR.txt a do ní uložte jednoho řetězce s názvem `HelloString` jehož hodnota je "Salut včetně the World!"  
   
-    -   Pro podporu ru-RU nebo ruskými jazykovou verzi, vytvořte soubor prostředků s názvem Greeting.ru-RU.resx nebo Greeting.ru RU.txt a uložte do něj jeden řetězec s názvem `HelloString` jehož hodnota je "Всем привет!"  
+    -   Pro podporu, ru-RU nebo ruština (Rusko) jazykovou verzi, vytvořit soubor prostředků s názvem Greeting.ru RU.resx nebo Greeting.ru RU.txt a do ní uložte jednoho řetězce s názvem `HelloString` jehož hodnota je "Всем привет!"  
   
-4.  Použití [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) zkompilovat každé textu nebo prostředku soubor XML do souboru .resources binární. Výstupem je sada souborů, které mají stejný název kořenové jako soubory RESX nebo .txt, ale .resources rozšíření. Pokud v příkladu vytvoříte pomocí sady Visual Studio, se automaticky zpracovává proces kompilace. Pokud nepoužíváte Visual Studio, spusťte následující příkazy pro kompilaci souborů RESX na soubory .resources:  
+4.  Použití [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) kompilace jednotlivých textu nebo XML souboru prostředků do binárního souboru .resources. Výstupem je sada souborů, které mají stejný název kořenového souboru jako soubory RESX a txt, ale s příponou .resources. Pokud v příkladu vytvoříte pomocí sady Visual Studio, je automaticky zpracována proces kompilace. Pokud nepoužíváte Visual Studio, spusťte následující příkazy pro kompilaci souborů .resx na soubory .resources:  
   
     ```console
     resgen Greeting.resx  
@@ -111,17 +111,17 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
     resgen Greeting.ru-RU.resx  
     ```  
   
-     Pokud vaše prostředky v textových souborů místo soubory XML, nahraďte RESX příponu .txt.  
+     Pokud jsou vaše prostředky v textových souborech místo souborů XML, nahraďte příponou .resx .txt.  
   
-5.  Zkompilujte následující zdrojový kód společně s prostředky pro výchozí jazykovou verzi do hlavní sestavení aplikace:  
+5.  Zkompilujte následující kód zdroj spolu s prostředky pro výchozí jazykovou verzi do sestavení hlavní aplikace:  
   
     > [!IMPORTANT]
-    >  Pokud používáte příkazového řádku místo sady Visual Studio k vytvoření v příkladu, měli byste je upravit volání <xref:System.Resources.ResourceManager> konstruktoru třídy pro následující: `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`  
+    >  Pokud používáte příkazového řádku namísto Visual Studio k vytvoření příkladu, byste měli upravit volání <xref:System.Resources.ResourceManager> konstruktoru třídy takto: `ResourceManager rm = new ResourceManager("Greetings", typeof(Example).Assembly);`  
   
      [!code-csharp[Conceptual.Resources.Locating#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/program.cs#1)]
      [!code-vb[Conceptual.Resources.Locating#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/module1.vb#1)]  
   
-     Pokud aplikace jmenuje například a jsou kompilace z příkazového řádku, je příkaz pro kompilátor jazyka C#:  
+     Pokud aplikace jmenuje například a při kompilaci z příkazového řádku pro příkaz C# kompilátoru je:  
   
     ```console  
     csc Example.cs -res:Greeting.resources  
@@ -133,121 +133,121 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
     vbc Example.vb -res:Greeting.resources  
     ```  
   
-6.  Vytvořte podadresáře v adresáři hlavní aplikace pro jednotlivé lokalizované jazykové verze aplikací podporováno. Měli byste vytvořit en US, fr-FR a podadresáři ru-RU. Visual Studio vytvoří tyto podadresáře automaticky jako součást procesu kompilace.  
+6.  Vytvořte podadresář v adresáři hlavní aplikace pro každou lokalizovanou jazykovou verzi podporováno v aplikaci. Měli byste vytvořit en US, fr-FR a podadresář ru-RU. Tyto podsložky Visual Studio automaticky vytvoří jako součást procesu kompilace.  
   
-7.  Vložit soubory .resources jednotlivých specifické pro jazykovou verzi na satelitní sestavení a uložit je do příslušného adresáře. Příkaz k tomu pro každý soubor .resources je:  
+7.  Vložení souborů .resources jednotlivých specifické pro jazykovou verzi do satelitních sestavení a uložit je do příslušného adresáře. Příkaz pro každý soubor .resources je:  
   
     ```console
     al -target:lib -embed:Greeting.culture.resources -culture:culture -out:culture\Example.resources.dll  
     ```  
   
-     kde *jazykovou verzi* je název jazykové verze, jejíž prostředky satelitní sestavení obsahuje. Visual Studio zpracovává tento proces automaticky.  
+     kde *jazykovou verzi* je název jazykové verze, jejíž prostředků obsahuje satelitní sestavení. Visual Studio automaticky zpracovává tento proces.  
   
- Potom můžete spustit v příkladu. Náhodně to bude dávat mezi podporovaném jazykových verzí aktuální jazykovou verzi a zobrazí lokalizované pozdrav.  
+ Potom můžete spustit v příkladu. Náhodně bude jeden z podporovaných jazykových verzí aktuální jazykové verze a zobrazit lokalizované pozdrav.  
   
 <a name="SN"></a>   
 ## <a name="installing-satellite-assemblies-in-the-global-assembly-cache"></a>Instalace satelitní sestavení v globální mezipaměti sestavení  
- Místo instalace sestavení v podadresáři místní aplikace, můžete je nainstalovat v globální mezipaměti sestavení. To je zvlášť užitečné, pokud máte knihovny tříd a třída knihovna prostředků sestavení, které používají více aplikací.  
+ Místo instalace sestavení v podadresáři místní aplikace, můžete je nainstalovat do globální mezipaměti sestavení. To je zvlášť užitečné, pokud máte sestavení prostředků knihovny tříd, které jsou používány více aplikací a knihoven tříd.  
   
- Instalace sestavení do globální mezipaměti sestavení vyžaduje, aby měli silné názvy. Sestavení se silným názvem jsou podepsané platný pár veřejného a privátního klíče. Obsahují informace o verzi, která modul runtime používá k určení sestavení pro použití, které by vyhovovaly žádosti vazby. Další informace o silné názvy a verze najdete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md). Další informace o silné názvy najdete v tématu [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).  
+ Instalace sestavení do globální mezipaměti sestavení vyžaduje, ke kterým mají silných názvů. Sestavení se silným názvem jsou podepsány pomocí platný dvojice veřejného/soukromého klíče. Obsahují informace o verzi, která modul runtime používá k určení sestavení, které by vyhovovaly žádosti o vazbu pomocí. Další informace o silné názvy a správy verzí, naleznete v tématu [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md). Další informace o silných názvů najdete v tématu [sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md).  
   
- Při vývoji aplikace, není pravděpodobné, že budete mít přístup k posledním pár veřejného a privátního klíče. Abyste mohli nainstalovat satelitní sestavení v globální mezipaměti sestavení a ujistěte se, že funguje podle očekávání, můžete použít techniku zvanou zpožděné podepisování. Pokud jste zpoždění podepsání sestavení, v okamžiku sestavení můžete rezervovat místo v souboru pro podpis silného názvu. Podepisování je objevit až později, pokud není k dispozici poslední pár veřejného a privátního klíče. Další informace o zpožděné podepisování najdete v tématu [zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md).  
+ Když vyvíjíte aplikaci, je pravděpodobné, že budete mít přístup k poslední dvojice veřejného/soukromého klíče. Pokud chcete nainstalovat satelitní sestavení v globální mezipaměti sestavení a ujistěte se, že funguje podle očekávání, můžete použít techniky označované jako zpožděného podepisování. Pokud jste zpoždění podepsání sestavení, v okamžiku sestavení můžete rezervovat místo v souboru pro podpis silného názvu. Podepisování je zpožděna, dokud později, když je k dispozici konečná dvojice veřejného/soukromého klíče. Další informace o zpožděného podepisování naleznete v tématu [zpožděné podepisování sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md).  
   
 ### <a name="obtaining-the-public-key"></a>Získání veřejného klíče  
- Zpoždění podepsání sestavení, musí mít přístup k veřejný klíč. Buď můžete získat reálný veřejný klíč z organizace ve vaší společnosti, který bude případné podepsání nebo vytvořit veřejný klíč pomocí [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
+ Zpoždění podepsání sestavení, musí mít přístup k veřejnému klíči. Můžete buď získat reálné veřejný klíč z organizace ve vaší společnosti, která provede konečnou podepisování, nebo vytvořit veřejný klíč pomocí [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
   
- Následující příkaz pro Sn.exe vytvoří testovací dvojici veřejného a privátního klíče. **– K** možnost určuje, že by měl vytvořit nový pár klíčů a uložit ho do souboru s názvem TestKeyPair.snk Sn.exe.  
+ Následující příkaz Sn.exe vytvoří pár test veřejného/soukromého klíče. **– K** možnost určuje, zda by měl vytvořit nový pár klíčů a uložte ho do souboru s názvem TestKeyPair.snk Sn.exe.  
   
 ```console
 sn –k TestKeyPair.snk   
 ```  
   
- Veřejný klíč lze extrahovat ze souboru, který obsahuje pár klíčů testu. Následující příkaz extrahuje veřejný klíč z TestKeyPair.snk a uloží ho do PublicKey.snk:  
+ Extrahujte veřejný klíč ze souboru, který obsahuje pár klíčů testu. Následující příkaz extrahuje veřejný klíč z TestKeyPair.snk a uloží ho do PublicKey.snk:  
   
 ```console
 sn –p TestKeyPair.snk PublicKey.snk  
 ```  
   
 ### <a name="delay-signing-an-assembly"></a>Zpoždění podepsání sestavení  
- Když Získejte nebo vytvořte veřejný klíč, můžete použít [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) pro kompilaci sestavení a určení odložené podepisování.  
+ Po Získejte nebo vytvořte veřejný klíč, můžete použít [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) pro kompilaci sestavení a určení zpožděného podepisování.  
   
- Následující příkaz pro Al.exe vytvoří silným názvem satelitní sestavení pro aplikaci StringLibrary ze souboru strings.ja.resources:  
+ Následující příkaz Al.exe vytvoří silným názvem satelitní sestavení pro aplikaci StringLibrary ze souboru strings.ja.resources:  
   
 ```console 
 al -target:lib -embed:strings.ja.resources -culture:ja -out:StringLibrary.resources.dll -delay+ -keyfile:PublicKey.snk  
 ```  
   
- **-Zpoždění +** možnost určuje, že by měl Linker sestavení zpoždění podepsání sestavení. **- Keyfile** možnost určuje název souboru klíče, který obsahuje veřejný klíč sloužící k zpoždění podepsání sestavení.  
+ **– Zpoždění +** možnost určuje, že propojovací program sestavení by měl zpoždění podepsání sestavení. **- Keyfile** Určuje název souboru s klíčem, který obsahuje veřejný klíč sloužící k odložení podepsání sestavení.  
   
 ### <a name="re-signing-an-assembly"></a>Znovu podepisování sestavení  
- Před nasazením aplikace, musíte znovu podepsat zpoždění podepsané satelitní sestavení s reálné dvojice klíčů. To provedete pomocí Sn.exe.  
+ Před nasazením aplikace ji musíte znovu podepsat zpoždění podepsané satelitní sestavení s reálné dvojice klíčů. Můžete to provést pomocí Sn.exe.  
   
- Následující příkaz pro Sn.exe podepisuje StringLibrary.resources.dll s pár klíčů, které jsou uložené v souboru RealKeyPair.snk. **– R** možnost určuje, že dříve podepsaný nebo zpoždění podepsané sestavení je znovu podepsat.  
+ Následující příkaz Sn.exe podepíše StringLibrary.resources.dll párem klíčů uložených v souboru RealKeyPair.snk. **– R** možnost určuje, že dříve podepsaný nebo zpoždění je podepsané sestavení znovu podepsat.  
   
 ```console
 sn –R StringLibrary.resources.dll RealKeyPair.snk   
 ```  
   
 ### <a name="installing-a-satellite-assembly-in-the-global-assembly-cache"></a>Instalace satelitní sestavení v globální mezipaměti sestavení  
- Když modul runtime hledá prostředky v nouzové procesy prostředků, se hledá v [globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md) první. (Další informace najdete v části "Proces nouzového prostředku" [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) tématu.) Jakmile satelitní sestavení je podepsáno silným názvem, může být nainstalovat v globální mezipaměti sestavení pomocí [Global Assembly Cache Tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
+ Když modul runtime hledá prostředky v procesu nalezení záložního prostředku, hledá v [globální mezipaměti sestavení](../../../docs/framework/app-domains/gac.md) první. (Další informace najdete v tématu v části "Proces záložního prostředku" [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) tématu.) Co nejdříve satelitní sestavení je podepsáno silným názvem, ho můžete nainstalovat v globální mezipaměti sestavení pomocí [Global Assembly Cache Tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
   
- Následující příkaz pro Gacutil.exe nainstaluje StringLibrary.resources.dll v globální mezipaměti sestavení:  
+ Následující příkaz Gacutil.exe nainstaluje StringLibrary.resources.dll v globální mezipaměti sestavení:  
   
 ```console
 gacutil -i:StringLibrary.resources.dll  
 ```  
   
- **/I** možnost určuje, že Gacutil.exe nainstalovat zadané sestavení do globální mezipaměti sestavení. Po satelitní sestavení nainstalováno v mezipaměti, které obsahuje prostředky k dispozici pro všechny aplikace, které jsou určeny k použití satelitní sestavení.  
+ **/I** možnost určuje, že Gacutil.exe nainstalujte zadané sestavení do globální mezipaměti sestavení. Po satelitní sestavení je nainstalováno v mezipaměti, které obsahuje prostředky budou k dispozici pro všechny aplikace, které jsou určeny k použití satelitní sestavení.  
   
-### <a name="resources-in-the-global-assembly-cache-an-example"></a>Prostředky v globální mezipaměti sestavení: příklad  
- Následující příklad používá metodu v knihovně tříd rozhraní .NET Framework extrahovat a vrátí lokalizované pozdravu ze zdrojového souboru. Knihovnu a její prostředky je zaregistrovaný v globální mezipaměti sestavení. V příkladu obsahuje zdroje informací pro angličtinu (Spojené státy), francouzština (Francie), ruština (Rusko) a anglické jazykové verze. Je angličtina výchozí jazykovou verzi; jeho prostředky jsou uloženy v hlavní sestavení. V příkladu zpoždění začátku přihlásí knihovnu a její satelitní sestavení s veřejným klíčem, pak znovu podepíše je pomocí pár veřejného a privátního klíče. Pokud chcete vytvořit v příkladu, postupujte takto:  
+### <a name="resources-in-the-global-assembly-cache-an-example"></a>Prostředky v globální mezipaměti sestavení: Příklad  
+ Následující příklad používá metodu v knihovně tříd rozhraní .NET Framework pro extrakci a vrátit lokalizované pozdrav ze souboru prostředků. Knihovny a její prostředky jsou registrovány v globální mezipaměti sestavení. Příklad obsahuje prostředky pro angličtinu (Spojené státy), francouzština (Francie), ruština (Rusko) a anglické jazykové verze. Je výchozí jazykovou verzi, angličtina její prostředky jsou uloženy v hlavním sestavení. V příkladu nejdřív zpoždění příznaky knihovny a jeho satelitních sestavení s veřejným klíčem, pak znovu podepíše je pomocí dvojice veřejného/soukromého klíče. Chcete-li vytvořit příklad, postupujte takto:  
   
-1.  Pokud nepoužíváte Visual Studio, použijte následující [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) příkaz pro vytvoření páru veřejného a privátního klíče RSA s názvem ResKey.snk:  
+1.  Pokud nepoužíváte Visual Studio, použijte následující [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) příkaz pro vytvoření páru veřejného a privátního klíče s názvem ResKey.snk:  
   
     ```console
     sn –k ResKey.snk  
     ```  
   
-     Pokud používáte Visual Studio, použijte **podpisování** Karta projektu **vlastnosti** dialogové okno pro vytvoření souboru klíče.  
+     Pokud používáte Visual Studio, použijte **podepisování** kartu projektu **vlastnosti** dialogové okno pro vytvoření souboru klíče.  
   
-2.  Použijte následující [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) příkazu vytvořte soubor veřejného klíče s názvem PublicKey.snk:  
+2.  Pomocí následujících [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) příkaz pro vytvoření souboru veřejného klíče s názvem PublicKey.snk:  
   
     ```console
     sn –p ResKey.snk PublicKey.snk  
     ```  
   
-3.  Vytvořte soubor prostředků s názvem Strings.resx tak, aby obsahovala prostředků pro výchozí jazykovou verzi. Uložte jeden řetězec s názvem `Greeting` jehož hodnota je "Jak proveďte vám proveďte?" v tomto souboru.  
+3.  Vytvoření souboru prostředků s názvem Strings.resx tak, aby obsahovala prostředků pro výchozí jazykovou verzi. Jeden řetězec s názvem Store `Greeting` jehož hodnota je "Jak proveďte vám?" v tomto souboru.  
   
-4.  K označení, že "en" je výchozí jazykovou verzi aplikace, přidejte následující <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atribut souboru AssemblyInfo aplikace nebo souboru hlavní zdrojového kódu, který se zkompiluje do hlavní sestavení aplikace:  
+4.  Označuje, že "en" výchozí jazykovou verzi aplikace, přidejte následující <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> atribut souboru AssemblyInfo aplikace nebo souboru hlavní zdrojového kódu, který se zkompiluje do sestavení hlavní aplikace:  
   
      [!code-csharp[Conceptual.Resources.Satellites#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#2)]
      [!code-vb[Conceptual.Resources.Satellites#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#2)]  
   
-5.  Přidáte podporu pro další jazykové verze (kultur en US, fr-FR a ru-RU) do aplikace takto:  
+5.  Přidání podpory pro další jazykové verze (en US, fr-FR a ru-RU jazykové verze) aplikace následujícím způsobem:  
   
-    -   Pro podporu "en US" nebo jazykové verze Angličtina (Spojené státy), vytvořte soubor prostředků s názvem Strings.en-US.resx nebo Strings.en US.txt a uložte do něj jeden řetězec s názvem `Greeting` jehož hodnota je "Hello!".  
+    -   Pro podporu "en US" nebo jazykové verze Angličtina (Spojené státy), vytvořit soubor prostředků s názvem Strings.en US.resx nebo Strings.en US.txt a do ní uložte jednoho řetězce s názvem `Greeting` jehož hodnota je "Hello!".  
   
-    -   Pro podporu "fr-FR" nebo Francouzština (Francie) jazykovou verzi, vytvořte soubor prostředků s názvem Strings.fr-FR.resx nebo Strings.fr FR.txt a uložte do něj jeden řetězec s názvem `Greeting` jehož hodnota je "Pozvánka jour!"  
+    -   Pro podporu "fr-FR" nebo jazykovou verzi francouzština (Francie), vytvořit soubor prostředků s názvem Strings.fr-FR.resx nebo Strings.fr FR.txt a do ní uložte jednoho řetězce s názvem `Greeting` jehož hodnota je "Šťastnou jour!"  
   
-    -   Pro podporu "ru-RU" nebo ruskými jazykovou verzi, vytvořte soubor prostředků s názvem Strings.ru RU.resx nebo Strings.ru RU.txt a uložte do něj jeden řetězec s názvem `Greeting` jehož hodnota je "Привет!"  
+    -   Pro podporu "ru-RU" nebo ruština (Rusko) jazykovou verzi, vytvořit soubor prostředků s názvem Strings.ru RU.resx nebo Strings.ru RU.txt a do ní uložte jednoho řetězce s názvem `Greeting` jehož hodnota je "Привет!"  
   
-6.  Použití [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) zkompilovat každé textu nebo prostředku soubor XML do souboru .resources binární. Výstupem je sada souborů, které mají stejný název kořenové jako soubory RESX nebo .txt, ale .resources rozšíření. Pokud v příkladu vytvoříte pomocí sady Visual Studio, se automaticky zpracovává proces kompilace. Pokud nepoužíváte Visual Studio, spusťte následující příkaz pro kompilaci souborů RESX na soubory .resources:  
+6.  Použití [Resgen.exe](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) kompilace jednotlivých textu nebo XML souboru prostředků do binárního souboru .resources. Výstupem je sada souborů, které mají stejný název kořenového souboru jako soubory RESX a txt, ale s příponou .resources. Pokud v příkladu vytvoříte pomocí sady Visual Studio, je automaticky zpracována proces kompilace. Pokud nepoužíváte Visual Studio, spusťte následující příkaz pro kompilaci souborů .resx na soubory .resources:  
   
     ```console
     resgen filename  
     ```  
   
-     kde *filename* je volitelná cesta, název souboru a příponu souboru RESX nebo text.  
+     kde *filename* je volitelná cesta, název souboru a příponu souboru .resx nebo text.  
   
-7.  Kompilace následující zdrojový kód pro StringLibrary.vb nebo StringLibrary.cs spolu s prostředky pro výchozí jazykovou verzi do zpoždění podepsané sestavení knihovny s názvem StringLibrary.dll:  
+7.  Kompilace následující zdrojový kód z důvodu StringLibrary.vb nebo StringLibrary.cs spolu s prostředky pro výchozí jazykovou verzi na zpoždění podepsané sestavení knihovny s názvem StringLibrary.dll:  
   
     > [!IMPORTANT]
-    >  Pokud používáte příkazového řádku místo sady Visual Studio k vytvoření v příkladu, měli byste je upravit volání <xref:System.Resources.ResourceManager> konstruktoru třídy k `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
+    >  Pokud používáte příkazového řádku namísto Visual Studio k vytvoření příkladu, byste měli upravit volání <xref:System.Resources.ResourceManager> konstruktor třídy, aby `ResourceManager rm = new ResourceManager("Strings",` `typeof(Example).Assembly);`.  
   
      [!code-csharp[Conceptual.Resources.Satellites#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/stringlibrary.cs#1)]
      [!code-vb[Conceptual.Resources.Satellites#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/stringlibrary.vb#1)]  
   
-     Příkaz pro kompilátor jazyka C# je:  
+     Příkaz pro C# kompilátoru je:  
   
     ```console
     csc -t:library -resource:Strings.resources -delaysign+ -keyfile:publickey.snk StringLibrary.cs  
@@ -259,9 +259,9 @@ gacutil -i:StringLibrary.resources.dll
     vbc -t:library -resource:Strings.resources -delaysign+ -keyfile:publickey.snk StringLibrary.vb  
     ```  
   
-8.  Vytvořte podadresáře v adresáři hlavní aplikace pro jednotlivé lokalizované jazykové verze aplikací podporováno. Měli byste vytvořit en US, fr-FR a podadresáři ru-RU. Visual Studio vytvoří tyto podadresáře automaticky jako součást procesu kompilace. Vzhledem k tomu, že všechny satelitní sestavení se stejným názvem, podadresáře se používají k ukládání jednotlivých specifické pro jazykovou verzi satelitní sestavení, dokud jsou podepsané s pár veřejného a privátního klíče.  
+8.  Vytvořte podadresář v adresáři hlavní aplikace pro každou lokalizovanou jazykovou verzi podporováno v aplikaci. Měli byste vytvořit en US, fr-FR a podadresář ru-RU. Tyto podsložky Visual Studio automaticky vytvoří jako součást procesu kompilace. Vzhledem k tomu, že všechny satelitní sestavení se stejným názvem, podadresáře se používají k ukládání jednotlivé specifické pro jazykovou verzi satelitní sestavení, dokud jsou podepsány pomocí dvojice veřejného/soukromého klíče.  
   
-9. Vložení jednotlivých soubory .resources specifické pro jazykovou verzi do zpoždění podepsané satelitní sestavení a uložit je do příslušného adresáře. Příkaz k tomu pro každý soubor .resources je:  
+9. Vkládání jednotlivých souborů .resources specifické pro jazykovou verzi do podepisováno satelitní sestavení a uloží je do příslušného adresáře. Příkaz pro každý soubor .resources je:  
   
     ```console
     al -target:lib -embed:Strings.culture.resources -culture:culture -out:culture\StringLibrary.resources.dll -delay+ -keyfile:publickey.snk  
@@ -269,19 +269,19 @@ gacutil -i:StringLibrary.resources.dll
   
      kde *jazykovou verzi* je název jazykové verze. V tomto příkladu jsou názvy jazykové verze en US, fr-FR a ru-RU.  
   
-10. Znovu podepsat pomocí StringLibrary.dll [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) následujícím způsobem:  
+10. Znovu podepsat pomocí StringLibrary.dll [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) následujícím způsobem:  
   
     ```console
     sn –R StringLibrary.dll RealKeyPair.snk  
     ```  
   
-11. Znovu podepíšete jednotlivých satelitní sestavení. Chcete-li to provést, použijte [Strong Name Tool (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) takto pro každé satelitní sestavení:  
+11. Znovu podepište jednotlivé satelitních sestavení. Chcete-li to provést, použijte [nástroj Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) následujícím způsobem pro každou satelitní sestavení:  
   
     ```console
     sn –R StringLibrary.resources.dll RealKeyPair.snk  
     ```  
   
-12. Registrace StringLibrary.dll a každý z jeho satelitních sestavení v globální mezipaměti sestavení pomocí následujícího příkazu:  
+12. Zaregistrujte StringLibrary.dll a každá z jeho satelitních sestavení v globální mezipaměti sestavení pomocí následujícího příkazu:  
   
     ```console
     gacutil -i filename  
@@ -289,18 +289,18 @@ gacutil -i:StringLibrary.resources.dll
   
      kde *filename* je název souboru k registraci.  
   
-13. Pokud používáte Visual Studio, vytvořte novou **konzolové aplikace** projektu s názvem `Example`do ní přidejte odkaz na StringLibrary.dll a následující zdrojový kód a zkompilovat.  
+13. Pokud používáte Visual Studio, vytvořte nový **konzolovou aplikaci** projekt s názvem `Example`, přidejte do ní odkaz na StringLibrary.dll a následující zdrojový kód a zkompilovat.  
   
      [!code-csharp[Conceptual.Resources.Satellites#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.satellites/cs/example.cs#3)]
      [!code-vb[Conceptual.Resources.Satellites#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.satellites/vb/example.vb#3)]  
   
-     Kompilace z příkazového řádku, použijte následující příkaz pro kompilátor jazyka C#:  
+     Pro kompilaci z příkazového řádku, použijte následující příkaz pro C# kompilátoru:  
   
     ```console
     csc Example.cs -r:StringLibrary.dll   
     ```  
   
-     Příkazový řádek kompilátoru jazyka Visual Basic je:  
+     Příkazového řádku pro kompilátor jazyka Visual Basic je:  
   
     ```console
     vbc Example.vb -r:StringLibrary.dll   
@@ -308,10 +308,10 @@ gacutil -i:StringLibrary.resources.dll
   
 14. Spusťte Example.exe.  
   
-## <a name="see-also"></a>Viz také  
- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)  
- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
- [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)  
- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+## <a name="see-also"></a>Viz také:
+- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)
+- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
+- [Gacutil.exe (nástroj globální mezipaměti sestavení)](../../../docs/framework/tools/gacutil-exe-gac-tool.md)
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)

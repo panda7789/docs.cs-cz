@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)'
+title: 'Postupy: Skupiny souborů podle přípony (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: 61b4ebee03511df8bb06b792ecfd700959d0696b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c52debf2e40c6ed6da2d7f3c7dbdb16e1f7396f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728223"
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Postupy: seskupování souborů podle přípony (LINQ) (Visual Basic)
-Tento příklad ukazuje, jak lze pomocí LINQ provádět pokročilé seskupení a řazení v seznamech soubory nebo složky. Také ukazuje, jak na stránku výstup v okně konzoly pomocí <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody.  
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Postupy: Skupiny souborů podle přípony (LINQ) (Visual Basic)
+Tento příklad ukazuje, jak lze provádět pokročilé seskupování a řazení v seznamech soubory nebo složky LINQ. Také ukazuje, jak pomocí stránky výstup v okně konzoly <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody.  
   
 ## <a name="example"></a>Příklad  
- Následující dotaz ukazuje, jak seskupit obsah zadaného adresářovém stromu příponu názvu souboru.  
+ Následující dotaz ukazuje, jak seskupit obsah určený adresářový strom podle přípony názvu souboru.  
   
 ```vb  
 Module GroupByExtension  
@@ -91,11 +91,11 @@ Module GroupByExtension
 End Module  
 ```  
   
- Výstup z tento program může být dlouhý, v závislosti na podrobnosti o místní systém souborů a co `startFolder` je nastaven na. Povolit zobrazování všechny výsledky, tento příklad ukazuje, jak na stránku prostřednictvím výsledky. Stejné postupy lze použít k systému Windows a webové aplikace. Všimněte si, že vzhledem k tomu, že kód stránky položky ve skupině vnořený `For Each` smyčka je požadovaná. Je také některé další logiku výpočetní aktuální pozici v seznamu a zajistit, aby uživatel stránkování zastavení a ukončení programu. V tomto konkrétním případě stránkování spuštění dotazu s výsledky uložené v mezipaměti z původní dotaz. V jiných kontextech, jako je například technologie LINQ to SQL takové ukládání do mezipaměti se nevyžaduje.  
+ Výstup z tohoto programu může být dlouhý, v závislosti na podrobnosti o místního systému souborů a co `startFolder` nastavena. Chcete-li povolit zobrazení všech výsledků, tento příklad ukazuje, jak stránkovat výsledky. Stejné postupy můžete použít pro Windows a webových aplikací. Všimněte si, že protože kód stránky položky ve skupině, vnořený `For Each` smyčky je povinný. Je také některé další logiku pro výpočet aktuální pozici v seznamu a umožňuje uživateli zastavit stránkování a ukončit program. V tomto konkrétním případě dotazu stránkování spustit pro výsledky uložené v mezipaměti z původního dotazu. V jiných kontextech, jako je například technologie LINQ to SQL tyto ukládání do mezipaměti se nevyžaduje.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ na objekty (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

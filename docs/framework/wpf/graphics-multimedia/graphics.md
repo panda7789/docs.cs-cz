@@ -7,15 +7,15 @@ helpviewer_keywords:
 - visual effects [WPF]
 - graphics [WPF], effects
 ms.assetid: 3bfc652e-91b7-4697-a4f4-83ff0e98327e
-ms.openlocfilehash: 5d3a19460fa2a2a8269887df0e97a3ad18654607
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a8dcc98b6d201825e4880edc2ad77f9e0406586
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556845"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662384"
 ---
 # <a name="graphics"></a>Grafika
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí integrovaná podpora pro multimédia, vektorové grafiky, animace a obsahu složení, a usnadňuje vývojářům tvorbu zajímavé uživatelská rozhraní a obsahu.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabídky integrovaná podpora pro multimédia, vektorovou grafiku, animace a obsahu složení, a usnadňuje vývojářům umožní tvořit zajímavou uživatelská rozhraní a obsah.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Bitmapové efekty](../../../../docs/framework/wpf/graphics-multimedia/bitmap-effects.md)  
@@ -28,14 +28,14 @@ ms.locfileid: "33556845"
  [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
  [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/graphics-how-to-topics.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Shapes.Shape>  
- <xref:System.Windows.Media.Transform>  
- <xref:System.Windows.Media.Imaging.BitmapImage>  
- <xref:System.Windows.Media.Geometry>  
- <xref:System.Windows.Media.Drawing>  
- <xref:System.Windows.Media.Brush>  
- <xref:System.Windows.Media.Effects.BitmapEffect>  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Shapes.Shape>
+- <xref:System.Windows.Media.Transform>
+- <xref:System.Windows.Media.Imaging.BitmapImage>
+- <xref:System.Windows.Media.Geometry>
+- <xref:System.Windows.Media.Drawing>
+- <xref:System.Windows.Media.Brush>
+- <xref:System.Windows.Media.Effects.BitmapEffect>
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)

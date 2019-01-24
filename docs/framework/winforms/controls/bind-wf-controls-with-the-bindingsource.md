@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře'
+title: 'Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], binding
 - BindingSource component [Windows Forms], binding controls
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
-ms.openlocfilehash: 95f375d8845c60441aa5eefdd37e32541ea2d5a7
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 1a9baa5a602edd0ef91ef7dff5cdc42832bd7532
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042306"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633313"
 ---
-# <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí Návrháře
+# <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Postupy: Vytvoření vazby ovládacích prvků Windows Forms ke komponentě BindingSource pomocí návrháře
 Po přidání ovládacích prvků do formuláře a určit uživatelského rozhraní pro vaši aplikaci, lze svázat ovládací prvky zdroje dat, tak, aby v době běhu, uživatelé mohou změnit a uložit data související s aplikací.  
   
  Vytvoření vazby ovládacího prvku nebo řadu ovládacích prvků ve Windows Forms nejsnadněji využívá se při něm <xref:System.Windows.Forms.BindingSource> ovládací prvek jako most mezi ovládacími prvky ve formuláři a zdroj dat.  
@@ -59,8 +59,8 @@ Po přidání ovládacích prvků do formuláře a určit uživatelského rozhra
   
      **DataSource** typ uživatelského rozhraní editoru zavře a datové sady, <xref:System.Windows.Forms.BindingSource> a specifické pro datové připojení jsou přidaná do svého formuláře tabulku adaptéru.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.BindingSource>  
- <xref:System.Windows.Forms.BindingNavigator>  
- [Přidání nových zdrojů dat](/visualstudio/data-tools/add-new-data-sources)  
- [Okno zdroje dat](https://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.BindingSource>
+- <xref:System.Windows.Forms.BindingNavigator>
+- [Přidání nových zdrojů dat](/visualstudio/data-tools/add-new-data-sources)
+- [Okno zdroje dat](https://msdn.microsoft.com/library/0d20f699-cc95-45b3-8ecb-c7edf1f67992)

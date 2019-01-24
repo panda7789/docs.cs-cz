@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: asynchronní volání operací pomocí objektu pro vytváření kanálů'
+title: 'Postupy: Asynchronní volání operací pomocí ChannelFactory'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: cc17dd47-b9ad-451c-a362-e36e0aac7ba0
-ms.openlocfilehash: a45ba48408fd98c89db8664aec679a437ce8af24
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c57b5ccd81a8a2123ac2269adbd75a3a656ba51e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749129"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695709"
 ---
-# <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Postupy: asynchronní volání operací pomocí objektu pro vytváření kanálů
-Toto téma popisuje, jak má přístup klient operace služby asynchronně při použití <xref:System.ServiceModel.ChannelFactory%601>– klientské aplikace. (Při použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> objektu, abyste mohli vyvolat službu, můžete použít založený na událostech asynchronní volání model. Další informace najdete v tématu [postupy: asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o založený na událostech asynchronní volání modelu najdete v tématu [události asynchronní vzor založený (EAP)](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
+# <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Postupy: Asynchronní volání operací pomocí ChannelFactory
+Toto téma popisuje, jak má přístup klient operace služby asynchronně při použití <xref:System.ServiceModel.ChannelFactory%601>– klientské aplikace. (Při použití <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> objektu, abyste mohli vyvolat službu, můžete použít založený na událostech asynchronní volání model. Další informace najdete v tématu [jak: Asynchronní volání operací služby](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md). Další informace o založený na událostech asynchronní volání modelu najdete v tématu [události asynchronní vzor založený (EAP)](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
   
- Implementuje služby v tomto tématu `ICalculator` rozhraní. Klient může asynchronní volání operací na tomto rozhraní, což znamená, že operace jako `Add` jsou rozděleny do dvou metod `BeginAdd` a `EndAdd`, o které zahájí volání a druhý z nich načítá výsledek Po dokončení operace. Příklad ukazuje, jak implementace operace asynchronní služby najdete v tématu [postupy: implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Podrobnosti o synchronní a asynchronní operace, najdete v článku [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+ Implementuje služby v tomto tématu `ICalculator` rozhraní. Klient může asynchronní volání operací na tomto rozhraní, což znamená, že operace jako `Add` jsou rozděleny do dvou metod `BeginAdd` a `EndAdd`, o které zahájí volání a druhý z nich načítá výsledek Po dokončení operace. Příklad ukazuje, jak implementace operace asynchronní služby najdete v tématu [jak: Implementace operace asynchronní služby](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md). Podrobnosti o synchronní a asynchronní operace, najdete v článku [synchronní a asynchronní operace](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 ## <a name="procedure"></a>Postup  
   
@@ -47,5 +47,5 @@ Toto téma popisuje, jak má přístup klient operace služby asynchronně při 
  [!code-csharp[C_How_To_CF_Async#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_how_to_cf_async/cs/service.cs#4)]
  [!code-vb[C_How_To_CF_Async#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_how_to_cf_async/vb/service.vb#4)]  
   
-## <a name="see-also"></a>Viz také  
- [Kontraktu služby: Asynchronní vzorek](https://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)
+## <a name="see-also"></a>Viz také:
+- [Kontrakt služby: Asynchronní vzorek](https://msdn.microsoft.com/library/833db946-f511-4f64-a26f-2759a11217c7)

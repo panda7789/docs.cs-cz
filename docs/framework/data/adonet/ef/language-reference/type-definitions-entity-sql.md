@@ -1,33 +1,33 @@
 ---
-title: Definice typů (entita SQL)
+title: Typ definice (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 306b204a-ade5-47ef-95b5-c785d2da4a7e
-ms.openlocfilehash: 7abbe5dfed005a10955a385cadf12725a9450512
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 7ac27c3dd43cb83272bff991dbd713e8269ccbb5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761152"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743527"
 ---
-# <a name="type-definitions-entity-sql"></a>Definice typů (entita SQL)
-Definice typu se používá v deklaraci prohlášení o [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vložená funkce.  
+# <a name="type-definitions-entity-sql"></a>Typ definice (Entity SQL)
+Definice typu se používá v příkazu deklarace [!INCLUDE[esql](../../../../../../includes/esql-md.md)] vložená funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz deklarace pro vložená funkce se skládá z [funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) – klíčové slovo, za nímž následuje identifikátor reprezentující název funkce (například "MyAvg"), za nímž následuje seznam parametrů definice do závorek (pro například "poplatky Collection(Decimal)").  
+ Příkaz deklarace pro vložené funkce se skládá z [funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/function-entity-sql.md) – klíčové slovo, za nímž následuje identifikátor reprezentující název – funkce (například "MyAvg"), za nímž následuje seznam parametrů definice v závorkách (pro například "poplatky Collection(Decimal)").  
   
- Definice seznam parametrů se skládá z počtu nula či více definicemi parametrů. Každý definici parametru se skládá z identifikátor (název parametru funkce, například "poplatky") a potom podle definice typu (například "Collection(Decimal)").  
+ Definice seznamu parametrů se skládá z nuly nebo více definic parametrů. Každá definice parametru se skládá z identifikátor (název parametru funkce, například "poplatky") následovaný definicí typu (například "Collection(Decimal)").  
   
- Typ definice může být buď:  
+ Definice typu může být buď:  
   
 -   Typ identifikátoru (například "Int32" nebo "AdventureWorks.Order").  
   
--   Klíčové slovo `COLLECTION` následuje jiné definice typu v závorkách (například "Collection(AdventureWorks.Order)").  
+-   Klíčové slovo `COLLECTION` za nímž následuje jiné definice typu v závorkách (například "Collection(AdventureWorks.Order)").  
   
--   Klíčové slovo řádek následovaný seznam definic vlastností do závorek (například "Row(x AdventureWorks.Order)"). Definice vlastností mít formátu jako "`identifier type_definition`, `identifier type_definition`,...".  
+-   Klíčové slovo řádek následovaného seznamem definice vlastností v závorkách (například "Row(x AdventureWorks.Order)"). Definice vlastností, jako mají formát "`identifier type_definition`, `identifier type_definition`;...".  
   
--   Klíčové slovo REF následovaný typem identifikátoru v závorkách (například "Ref(AdventureWorks.Order)"). Operátor definice typu REF vyžaduje jako argument typ entity. Primitivní typ nelze zadat jako argument.  
+-   Klíčovým slovem REF, za nímž následuje typ identifikátoru v závorkách (například "Ref(AdventureWorks.Order)"). Operátor pro definici typu REF vyžaduje jako argument typu entity. Primitivní typ nelze zadat jako argument.  
   
- Můžete také vnořovat definic typů (například "kolekce (Row(x Ref(AdventureWorks.Order)))").  
+ Lze také vnořit definice typů (například "kolekce (Row(x Ref(AdventureWorks.Order)))").  
   
  Typ definice možnosti jsou:  
   
@@ -39,14 +39,14 @@ Definice typu se používá v deklaraci prohlášení o [!INCLUDE[esql](../../..
   
 -   `IdentifierName` REF (`supported_entity_type`)  
   
- Možnost definice vlastnost je `IdentifierName type_definition`.  
+ Možnost definice vlastnosti je `IdentifierName type_definition`.  
   
- Podporované typy jsou všechny typy v aktuálním oboru názvů. Mezi ně patří entity i primitivní typy.  
+ Podporované typy jsou všechny typy v aktuálním oboru názvů. Patří mezi ně typy primitivem a entity.  
   
- Podporované entity, které typy odkazovat jenom typy entit v aktuálním oboru názvů. Nezahrnujte primitivní typy.  
+ Podporované entitu, kterou najdete typy pouze typy entit v aktuálním oboru názvů. Neobsahují primitivní typy.  
   
 ## <a name="examples"></a>Příklady  
- Následuje příklad definici jednoduchého typu.  
+ Následuje příklad definicí jednoduchého typu.  
   
 ```  
 USING Microsoft.Samples.Entity  
@@ -56,7 +56,7 @@ Function MyRound(p1 EDM.Decimal) AS (
 MyRound(CAST(1.7 as EDM.Decimal))  
 ```  
   
- Následuje příklad definici typu KOLEKCE.  
+ Následuje příklad definice typu KOLEKCE.  
   
 ```  
 USING Microsoft.Samples.Entity  
@@ -66,7 +66,7 @@ Function MyRound(p1 Collection(EDM.Decimal)) AS (
 MyRound({CAST(1.7 as EDM.Decimal), CAST(2.7 as EDM.Decimal)})  
 ```  
   
- Následuje příklad definici typ řádku.  
+ Následuje příklad definice typu řádku.  
   
 ```  
 USING Microsoft.Samples.Entity  
@@ -76,7 +76,7 @@ Function MyRound(p1 Row(x EDM.Decimal)) AS (
 select MyRound(row(a as x)) from {CAST(1.7 as EDM.Decimal), CAST(2.7 as EDM.Decimal)} as a  
 ```  
   
- Následuje příklad definici typu REF.  
+ Následuje příklad definice typu odkazu.  
   
 ```  
 USING Microsoft.Samples.Entity  
@@ -86,6 +86,6 @@ Function UnReference(p1 Ref(AdventureWorks.Order)) AS (
 select Ref(x) from AdventureWorksEntities.SalesOrderHeaders as x  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

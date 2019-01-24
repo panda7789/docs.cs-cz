@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: a8272f5ae1df8e076bebc0d368364806535b34d3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 837a94f716c87a1671b5577f8a21a520d4314ec1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507063"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526756"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>Postupy: Vyhledání sjednocení dvou cest k umístění (XPath – LINQ to XML) (C#)
 Výraz XPath umožňuje najít sjednocení výsledky ze dvou možných cest umístění XPath.  
   
  Výraz XPath je:  
@@ -21,7 +21,7 @@ Výraz XPath umožňuje najít sjednocení výsledky ze dvou možných cest umí
 ## <a name="example"></a>Příklad  
  Tento příklad vyhledá všechny `Category` elementy a všechny `Price` elementy a zřetězí do jedné kolekce. Všimněte si, že [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazování volání <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> řazení výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: numerická Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XDocument data = XDocument.Load("Data.xml");  
@@ -68,6 +68,6 @@ Results are identical
 <Price>6.99</Price>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d7f000b6e944be7bd2e38f97e40176952cb19605
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f76a3cb232042ba6b91046d1f7b6e1d46ad6faef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450629"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54634854"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished – metoda
-Upozorní profileru, že sestavení dokončil načítání.  
+Oznámí profileru, že sestavení bylo dokončeno načítání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT AssemblyLoadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `assemblyId`  
- [v] Identifikuje sestavení, která byla načtena.  
+ [in] Určuje sestavení, který byl načten.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda je sestavení načítání dokončeno úspěšně.  
+ [in] HRESULT, která určuje, zda sestavení bylo dokončeno načítání úspěšně.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `assemblyId` není platná pro požadavek informace, dokud `AssemblyLoadFinished` metoda je volána.  
+ Hodnota `assemblyId` není platná pro požadavek informace do `AssemblyLoadFinished` metoda je volána.  
   
- Některé části načítání sestavení může pokračovat po `AssemblyLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část načítání sestavení proběhl úspěšně.  
+ Některé části načítání sestavení může pokračovat po `AssemblyLoadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část načítání sestavení byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,5 +56,5 @@ HRESULT AssemblyLoadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
