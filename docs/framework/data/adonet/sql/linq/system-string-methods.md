@@ -1,27 +1,27 @@
 ---
-title: System.String metody
+title: Metody System.String
 ms.date: 03/30/2017
 ms.assetid: ce307f14-87e6-4816-8694-8a4147f6b784
-ms.openlocfilehash: a6a8ce897cc6ac15f3452d2ba98b1b12bee544c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 569010c36296e18487eb52527d3df0cc0b97cf06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618115"
 ---
-# <a name="systemstring-methods"></a>System.String metody
+# <a name="systemstring-methods"></a>Metody System.String
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje následující <xref:System.String> metody.  
   
-## <a name="unsupported-systemstring-methods-in-general"></a>Nepodporované metody System.String obecně  
- Nepodporované <xref:System.String> metody v obecné:  
+## <a name="unsupported-systemstring-methods-in-general"></a>Obecně nepodporované metody System.String  
+ Nepodporovaná <xref:System.String> v obecné metody:  
   
--   Podporující jazykové verze přetížení (metod, které berou `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).  
+-   Zohledňující jazykovou verzi přetížení (metody, které přebírají `CultureInfo`  /  `StringComparison`  /  `IFormatProvider`).  
   
--   Metody, které trvat nebo vytvořit `char` pole.  
+-   Metody, které trvat nebo vytvářet `char` pole.  
   
-## <a name="unsupported-systemstring-static-methods"></a>Nepodporované System.String statické metody  
+## <a name="unsupported-systemstring-static-methods"></a>Nepodporovaná System.String statické metody  
   
-|Nepodporované System.String statické metody|  
+|Nepodporovaná System.String statické metody|  
 |----------------------------------------------|  
 |<xref:System.String.Copy%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType>|  
@@ -34,9 +34,9 @@ ms.locfileid: "33360067"
 |<xref:System.String.Format%2A?displayProperty=nameWithType>|  
 |<xref:System.String.Join%2A?displayProperty=nameWithType>|  
   
-## <a name="unsupported-systemstring-non-static-methods"></a>Nepodporované System.String nestatické metody  
+## <a name="unsupported-systemstring-non-static-methods"></a>Nepodporovaná System.String nestatických metod  
   
-|Nepodporované System.String nestatické metody|  
+|Nepodporovaná System.String nestatických metod|  
 |---------------------------------------------------|  
 |<xref:System.String.IndexOfAny%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
 |<xref:System.String.Split%2A?displayProperty=nameWithType>|  
@@ -45,15 +45,15 @@ ms.locfileid: "33360067"
 |<xref:System.String.TrimEnd%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
 |<xref:System.String.TrimStart%28System.Char%5B%5D%29?displayProperty=nameWithType>|  
   
-## <a name="differences-from-net"></a>Rozdíl oproti rozhraní .NET  
+## <a name="differences-from-net"></a>Rozdíl oproti .NET  
   
--   Dotazy nespadá kolace systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat zohledňující jazykovou verzi, bez rozlišování velikosti písmen porovnání ve výchozím nastavení. Toto chování se liší od výchozí, malá a velká písmena sémantiku rozhraní .NET Framework.  
+-   Dotazy nespadá kolací systému SQL Server, které může být výsledkem bude na serveru a proto bude poskytovat Porovnání zohledňující jazykovou verzi, velká a malá písmena ve výchozím nastavení. Toto chování se liší od výchozí malá a velká písmena sémantiku rozhraní .NET Framework.  
   
--   Když `LastIndexOf` vrátí hodnotu 0, buď řetězec je `NULL` nebo se nachází pozice 0.  
+-   Když `LastIndexOf` vrátí hodnotu 0, řetězec je `NULL` nebo nalezený pozice je 0.  
   
--   Neočekávané výsledky může být vrácena z zřetězení nebo jiné operace v řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy automaticky mají odsazení použité v databázi.  
+-   Může vrátit neočekávané výsledky ze zřetězení nebo jiné operace na řetězce pevné délky (`CHAR`, `NCHAR`), protože tyto typy mají automaticky odsazení použijí v databázi.  
   
--   Protože mnoho způsobů, například `Replace`, `ToLower`, `ToUpper`a znak indexeru, mít žádné platné překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud přeložit normálně. Toto chování se považuje za přijatelné pro tyto typy. Ale musí být všechny operace s řetězci stejný běžné sémantiku language runtime (CLR) pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.  
+-   Protože mnoho metod, jako `Replace`, `ToLower`, `ToUpper`a indexeru znaků, obsahovat žádný platný překlad pro `TEXT` nebo `NTEXT` sloupce a XML, `SqlExceptions` dojít, pokud obvykle přeložit. Toto chování se považuje za přijatelné pro tyto typy. Nicméně všechny operace s řetězci musí odpovídat common language runtime (CLR) Sémantika pro `VARCHAR`, `NVARCHAR`, `VARCHAR(max)`, a `NVARCHAR(max)`.  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: 6b7db8182b5764e3df65ccbdef3b54330c1ee64a
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 3d658d0dfb07a636a7338c69cae93b7e8a54383e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54223002"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613867"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Průvodce: Lokalizace hybridní aplikace
 
@@ -172,7 +172,7 @@ Lokalizovaný obsah uložený v pouze prostředky *satelitní sestavení*. Pomoc
 
      Aplikace se zobrazí lokalizované řetězce místo anglické řetězce.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>

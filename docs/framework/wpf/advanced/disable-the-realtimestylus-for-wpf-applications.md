@@ -2,20 +2,20 @@
 title: Zákaz RealTimeStylus pro aplikace WPF
 ms.date: 03/30/2017
 ms.assetid: e0525309-5ede-4782-837d-dbf6e5554859
-ms.openlocfilehash: ddf4a7f4488f957b2f413d61ad02aa59beba30f6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b97a451c52b72ee1ddcec5c58e1848a0b10fb7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545659"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616907"
 ---
 # <a name="disable-the-realtimestylus-for-wpf-applications"></a>Zákaz RealTimeStylus pro aplikace WPF
-Windows Presentation Foundation (WPF) má integrovanou podporu pro zpracování dotykové ovládání Windows 7. Podpora přicházejí vstup v reálném čase pera tablet platformy jako <xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusUp%2A>, a <xref:System.Windows.UIElement.OnStylusMove%2A> události. Windows 7 také poskytuje více dotykové ovládání jako Win32 WM_TOUCH okno zprávy. Tato dvě rozhraní API se vzájemně vylučují na stejné HWND. Povolení touch vstup přes tablet platformy (výchozí nastavení pro aplikace WPF) zakáže WM_TOUCH zprávy. V důsledku toho pokud chcete použít WM_TOUCH a přijímat zprávy touch z grafického subsystému WPF okna, je nutné zakázat podporu předdefinované pera v grafickém subsystému WPF. To se vztahuje, třeba okno WPF hostování komponenty, která používá WM_TOUCH v situaci.  
+Windows Presentation Foundation (WPF) má vestavěnou podporou pro zpracování dotykové ovládání Windows 7. Podpora prochází tablet platforma v reálném čase tužkou jako <xref:System.Windows.UIElement.OnStylusDown%2A>, <xref:System.Windows.UIElement.OnStylusUp%2A>, a <xref:System.Windows.UIElement.OnStylusMove%2A> události. Windows 7 také poskytuje více dotykové ovládání jako Win32 WM_TOUCH zprávy okna. Tato dvě rozhraní API se vzájemně vylučují na stejné HWND. Povolení touch vstupních přes tablet platformy (výchozí nastavení pro aplikace WPF) zakáže WM_TOUCH zprávy. V důsledku toho použít WM_TOUCH pro příjem zpráv touch z okna WPF, musíte zakázat podporu integrovanou stylus v subsystému WPF. To platí ve scénáři, jako je například okno WPF, který je hostitelem součásti, která používá WM_TOUCH.  
   
- Zakázat WPF naslouchání vstup pera, odeberte všechny tablet podporu přidal okno WPF.  
+ Zakázat WPF naslouchání na vstup pomocí pera, odeberte všechny tablet podporu přidal okno WPF.  
   
 ## <a name="example"></a>Příklad  
- Následující vzorový kód ukazuje, jak odebrat podporu platformy tablet výchozí pomocí reflexe.  
+ Následující ukázkový kód ukazuje, jak odebrat výchozí podporu platformy tabletu pomocí reflexe.  
   
 ```  
 public static void DisableWPFTabletSupport()  
@@ -52,5 +52,5 @@ public static void DisableWPFTabletSupport()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přijetí vstupu z pera](../../../../docs/framework/wpf/advanced/intercepting-input-from-the-stylus.md)
+## <a name="see-also"></a>Viz také:
+- [Přijetí vstupu z pera](../../../../docs/framework/wpf/advanced/intercepting-input-from-the-stylus.md)

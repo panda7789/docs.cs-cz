@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], paths
 - path animations [WPF]
 ms.assetid: 979c732c-df74-47a6-be96-8e07b3707d53
-ms.openlocfilehash: 0f795ad00823e7b1c37221f7417b09d3982c4c18
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 610ef2721bef18e1cb1e87500a9dc9cf2729c867
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266828"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614244"
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
 <a name="introduction"></a> Toto téma představuje animace cesty, které vám umožní používat geometrické cesty k vygenerování výstupní hodnoty. Animace cesty jsou užitečné pro přesun a otočení objekty podél cest složité.  
@@ -89,9 +89,9 @@ ms.locfileid: "48266828"
   
  Další informace o syntaxi cestu, která se používá v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] příkladu najdete v článku [syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md) Přehled.  
   
-## <a name="see-also"></a>Viz také  
- [Ukázka animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028)  
- [Syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)  
- [Postupy: Témata animace cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Ukázka animace cesty](https://go.microsoft.com/fwlink/?LinkID=160028)
+- [Syntaxe značek cesty](../../../../docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)
+- [Postupy: Témata animace cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animation-how-to-topics.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)

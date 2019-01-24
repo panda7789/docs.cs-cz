@@ -22,12 +22,12 @@ helpviewer_keywords:
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
-ms.openlocfilehash: d0a16ee6f627ecc062fcad5f5216dda9855e430e
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: b26186ccf4a773297db89026797e89f194db2aa4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036062"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614416"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Představení aplikací spouštěných jako služby systému Windows
 Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytvářet dlouhodobé spustitelné aplikace spouštěné ve vlastních relacích Windows. Tyto služby mohou být automaticky spuštěny při spuštění počítače, mohou být pozastaveny a restartovány a nezobrazují žádné uživatelské rozhraní. Tyto funkce jsou služby ideální pro použití na serveru nebo kdykoliv potřebujete dlouhodobé funkčnosti, která nebude v konfliktu s jinými uživateli, kteří pracují na stejném počítači. Služby můžete také spustit v kontextu zabezpečení konkrétního uživatelského účtu, který se liší od přihlášeného uživatele nebo výchozího účtu počítače. Další informace o službách a relacích Windows najdete v dokumentaci Windows SDK.  
@@ -41,9 +41,9 @@ Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytv
 ## <a name="service-applications-vs-other-visual-studio-applications"></a>Aplikace služeb vs. Jiné aplikace Visual Studio  
  Aplikace služeb fungují jinak než mnoho jiných typů projektů v několika ohledech:  
   
--   Kompilovaný spustitelný soubor, který vytvoří projekt aplikace služby musí nainstalovat na serveru, než projekt může fungovat srozumitelným způsobem. Nelze ladit nebo spustit aplikaci služby stisknutím klávesy F5 nebo F11; nelze spustit okamžitě službu nebo přejít do jejího kódu. Místo toho musíte nainstalovat a spusťte svoji službu a potom připojit ladicí program k procesu služby. Další informace najdete v tématu [postupy: ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md).  
+-   Kompilovaný spustitelný soubor, který vytvoří projekt aplikace služby musí nainstalovat na serveru, než projekt může fungovat srozumitelným způsobem. Nelze ladit nebo spustit aplikaci služby stisknutím klávesy F5 nebo F11; nelze spustit okamžitě službu nebo přejít do jejího kódu. Místo toho musíte nainstalovat a spusťte svoji službu a potom připojit ladicí program k procesu služby. Další informace najdete v tématu [jak: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md).  
   
--   Na rozdíl od některých typů projektů je třeba vytvořit instalační komponenty pro aplikace služby. Součásti instalace nainstalujte a zaregistrují službu na serveru a vytvořte záznam pro vaši službu s Windows **správce řízení služeb**. Další informace najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+-   Na rozdíl od některých typů projektů je třeba vytvořit instalační komponenty pro aplikace služby. Součásti instalace nainstalujte a zaregistrují službu na serveru a vytvořte záznam pro vaši službu s Windows **správce řízení služeb**. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
 -   `Main` Metoda pro aplikaci služby musí vydat příkaz spustit pro služby, váš projekt obsahuje. `Run` Metoda načte služby do **správce řízení služeb** na příslušném serveru. Pokud používáte **služby Windows** šablony projektu, tato metoda je zapsána automaticky. Všimněte si, že načtení služby není totéž jako spuštění služby. Viz "Doba platnosti služby" níže pro další informace.  
   
@@ -78,14 +78,14 @@ Služby Microsoft Windows, dřív označované jako služby NT, umožňují vytv
   
 -   Služby musí být vytvořeny v **Windows Service** projektu aplikace nebo jiný projekt podporující rozhraní .NET Framework, který vytvoří soubor s příponou .exe při sestavení a dědí z <xref:System.ServiceProcess.ServiceBase> třídy.  
   
--   Projekty obsahující služby Windows musí mít instalační komponenty pro projekt a jeho služeb. Můžete to snadno provést z **vlastnosti** okna. Další informace najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+-   Projekty obsahující služby Windows musí mít instalační komponenty pro projekt a jeho služeb. Můžete to snadno provést z **vlastnosti** okna. Další informace najdete v tématu [jak: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-## <a name="see-also"></a>Viz také  
- [Aplikace služby systému Windows](../../../docs/framework/windows-services/index.md)  
- [Architektura programování aplikace služby](../../../docs/framework/windows-services/service-application-programming-architecture.md)  
- [Postupy: Vytváření služeb systému Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
- [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)  
- [Postupy: Ladění aplikací služby systému Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
- [Návod: Vytvoření aplikace služby systému Windows v návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)
+## <a name="see-also"></a>Viz také:
+- [Aplikace služby systému Windows](../../../docs/framework/windows-services/index.md)
+- [Architektura programování aplikace služby](../../../docs/framework/windows-services/service-application-programming-architecture.md)
+- [Postupy: Vytvoření služeb Windows](../../../docs/framework/windows-services/how-to-create-windows-services.md)
+- [Postupy: Instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)
+- [Postupy: Spuštění služeb](../../../docs/framework/windows-services/how-to-start-services.md)
+- [Postupy: Ladění aplikace služby Windows](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)
+- [Návod: Vytvoření aplikace služby Windows v Návrháři součástí](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)
+- [Postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

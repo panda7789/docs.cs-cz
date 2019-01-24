@@ -10,35 +10,35 @@ helpviewer_keywords:
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 60fd5c29f716aa55f35c520794fbc9a0f673b9f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a3338595e8b541fcda93b091eeddf17919a483c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387169"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614390"
 ---
 # <a name="failedqi-mda"></a>failedQI – pomocník spravovaného ladění (MDA)
-`failedQI` Pomocník spravovaného ladění (MDA) se aktivuje při volání modulu runtime `QueryInterface` na ukazatel rozhraní COM jménem obálka volatelná aplikacemi runtime (RCW) a `QueryInterface` volání selže.  
+`failedQI` Pomocníka spravovaného ladění (MDA) se aktivuje, když modul runtime volá `QueryInterface` na ukazatele rozhraní modelu COM jménem obálka volatelná aplikacemi běhu (RCW) a `QueryInterface` volání selže.  
   
 ## <a name="symptoms"></a>Příznaky  
- Přetypování na RCW selže nebo volání COM z RCW neočekávaně selže.  
+ Přetypování na obálky RCW selže nebo volání COM z obálky RCW dojde k neočekávanému selhání.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
   
--   Přišla z nesprávného kontextu.  
+-   Při volání z nesprávného kontextu.  
   
--   Registrovaný proxy selhává `QueryInterface` volat, protože došlo k pokusu o volání v chybě kontextu.  
+-   Registrovaný server proxy se nedaří `QueryInterface` volat, protože došlo k pokusu o volání v chybném kontextu.  
   
--   Proxy služby vlastněných OLE vrátila chybu HRESULT.  
+-   Proxy služby vlastnictví OLE vrátí selhání hodnoty HRESULT.  
   
 ## <a name="resolution"></a>Rozlišení  
- V MSDN dokumentaci na COM pravidla.  
+ Pravidla modelu COM naleznete v dokumentaci MSDN.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Pokud `QueryInterface` volání selže, kontext se přepnul a `QueryInterface` volání je opakovat pokus o chcete zobrazit, pokud byl nesprávný kontextu při selhání.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Pokud `QueryInterface` volání selže, kontext se přepnul a `QueryInterface` volání se opakovat pokus o zobrazíte, pokud byl nesprávný kontextu 2!s!(0x%3!s!).  
   
 ## <a name="output"></a>Výstup  
- Název spravovaného rozhraní, identifikátor GUID rozhraní a HRESULT selhání.  
+ Název spravovaného rozhraní, GUID rozhraní a hodnota HRESULT chyby.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -50,7 +50,7 @@ ms.locfileid: "33387169"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

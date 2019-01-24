@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 852e6cbd666441b92afb583b15b72d50d26eff8c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e83dbb234cf1cacc0e18d4e42bccb427eb54f14c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449781"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617249"
 ---
 # <a name="corprfcodeinfo-structure"></a>COR_PRF_CODE_INFO – struktura
-Představuje jeden souvislý blok nativního kódu, které jsou uložené v paměti.  
+Představuje jeden souvislý blok nativní kód uložen v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,11 +39,11 @@ typedef struct _COR_PRF_CODE_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`startAddress`|Počáteční adresa souvislý blok kódu.|  
+|`startAddress`|Počáteční adresa souvislém bloku kódu.|  
 |`size`|Velikost bloku.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl  
   
@@ -51,5 +51,5 @@ typedef struct _COR_PRF_CODE_INFO {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

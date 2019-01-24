@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fd5d35cb13bb55fc73e160089cbc1050cb3d5c0e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e7a51d1ddf7a5a65ce8713161c53c1c54a5d8861
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449215"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617691"
 ---
 # <a name="imetadataimport2enumgenericparamconstraints-method"></a>IMetaDataImport2::EnumGenericParamConstraints – metoda
-Získá enumerátor pro pole obecný parametr omezení spojené s obecný parametr reprezentována zadaný token.  
+Získá enumerátor pro celou řadu omezeních obecných parametrů, které jsou přidružené k obecný parametr reprezentována zadaného tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT EnumGenericParamConstraints (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor.  
+ [out v] Ukazatel na enumerátor.  
   
  `tk`  
- [v]   Token, který reprezentuje obecný parametr, jehož omezení mají být ve výčtu.  
+ [in]   Token, který představuje obecný parametr, jehož omezení jsou pro provedení výčtu.  
   
  `rGenericParamConstraints`  
- [out] Pole omezení obecný parametr k vytvoření výčtu.  
+ [out] Pole omezeních obecných parametrů k vytvoření výčtu.  
   
  `cMax`  
- [v]   Požadovaný maximální počet tokeny umístit `rGenericParamConstraints`.  
+ [in]   Maximální požadovaný počet tokenů, které mají být umístěny `rGenericParamConstraints`.  
   
  `pcGenericParamConstraints`  
- [out] Ukazatel na počet tokeny umístit do `rGenericParamConstraints`.  
+ [out] Ukazatel na počet tokenů umístěny do `rGenericParamConstraints`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParameterConstraints` úspěšně vrácena.|  
-|`S_FALSE`|`phEnum` nemá žádné elementy člen. V takovém případě `pcGenericParameterConstraints` je nastaven na hodnotu 0 (nula).|  
+|`S_OK`|`EnumGenericParameterConstraints` bylo úspěšně vráceno.|  
+|`S_FALSE`|`phEnum` nemá žádné elementy člena. V takovém případě `pcGenericParameterConstraints` je nastavena na hodnotu 0 (nula).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7673d6fac2626bc0059204ea77a23686b11638cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb93dbf35501d44bb21d3d689aebeba3acd19f79
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616798"
 ---
 # <a name="icorprofilercallbackruntimethreadsuspended-method"></a>ICorProfilerCallback::RuntimeThreadSuspended – metoda
-Profileru upozorní, že zadaný vlákno byla pozastavena, nebo se pozastaví.  
+Profiler upozorní, že zadaného vlákna se pozastavilo, nebo se pozastaví.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,15 +36,15 @@ HRESULT RuntimeThreadSuspended(
   
 #### <a name="parameters"></a>Parametry  
  `threadId`  
- [v] ID vlákno, které bylo pozastaveno.  
+ [in] ID vlákna, které bylo pozastaveno.  
   
 ## <a name="remarks"></a>Poznámky  
- `RuntimeThreadSuspended` Oznámení může dojít kdykoliv mezi [icorprofilercallback::runtimesuspendstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) a přidružené [icorprofilercallback::runtimeresumestarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) zpětných volání. Oznámení, ke kterým dochází mezi [icorprofilercallback::runtimesuspendfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a `RuntimeResumeStarted` jsou pro vláken, které byly spuštěny v nespravovaného kódu a bylo pozastaveno při vstupu do runtime.  
+ `RuntimeThreadSuspended` Oznámení může dojít kdykoliv mezi [icorprofilercallback::runtimesuspendstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) a přidružené [ICorProfilerCallback::RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) zpětná volání. Oznámení, ke kterým dochází mezi [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a `RuntimeResumeStarted` jsou vlákna, které byly spuštěny v nespravovaného kódu a pozastavené při vstupu do modulu runtime.  
   
- Obecně platí tento zpětného volání nastane hned po vlákno je pozastaveno. Ale pokud aktuálně prováděné vlákno (podproces, který volá tento zpětného volání) je ten, který bylo pozastaveno, tento zpětné volání se provedou těsně před vlákno je pozastaveno.  
+ Obecně platí tato zpětné volání nastane bezprostředně po vlákno je pozastaveno. Nicméně pokud aktuálně spuštěné vlákno (podproces, který volá tento zpětného volání) je ten, který je pozastavená, tato zpětné volání dojde k těsně před plánovaným začátkem vlákno je pozastaveno.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -52,6 +52,6 @@ HRESULT RuntimeThreadSuspended(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [RuntimeThreadResumed – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [RuntimeThreadResumed – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md)

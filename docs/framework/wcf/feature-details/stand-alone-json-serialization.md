@@ -2,19 +2,19 @@
 title: Samostatná serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: b84e7dbb91c4f1e94ae0701dffcca50b7834df6c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 29c7dd6ebde07632ef7742b5e9bdd846fc632258
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841041"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618419"
 ---
 # <a name="stand-alone-json-serialization"></a>Samostatná serializace JSON
 JSON (JavaScript Object Notation) je formát dat, která je navržená speciálně pro kód jazyka JavaScript na webových stránkách spuštěná v prohlížeči. Je výchozí formát dat používaný službou ASP.NET AJAX vytvořené ve Windows Communication Foundation (WCF).  
   
  Tento formát je také možné při vytváření služeb AJAX bez integrace s ASP.NET – v tomto případě XML je výchozí nastavení, ale JSON je možné zvolit.  
   
- Nakonec, pokud nepožadujete podporu JSON, ale nejsou vytvoření služby AJAX <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> díky tomu je možné přímo serializaci objektů .NET do JSON data a deserializuje taková data zpět do instance typů .NET. Popis toho, jak to provést, naleznete v tématu [postupy: serializace a deserializace dat JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
+ Nakonec, pokud nepožadujete podporu JSON, ale nejsou vytvoření služby AJAX <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> díky tomu je možné přímo serializaci objektů .NET do JSON data a deserializuje taková data zpět do instance typů .NET. Popis toho, jak to provést, naleznete v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
   
  Při práci s JSON je stejné typy .NET jsou podporovány, s několika výjimkami, jako jsou podporovány <xref:System.Runtime.Serialization.DataContractSerializer>. Seznam typů, které jsou podporovány, naleznete v tématu [typy podporované serializátorem kontraktu dat](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md). Jedná se o nejvíce primitivní typy, většina pole a typy kolekcí, stejně jako komplexní typy, které používají <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute>.  
   
@@ -260,6 +260,6 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 ### <a name="valid-json-key-names"></a>Názvy klíčů platný kód JSON  
  Serializátor XML kóduje názvy klíčů, které nejsou platné názvy XML. Datový člen s názvem "123" byste mít například kódovaného názvu, jako "\_x0031\_\_x0032\_\_x0033\_" protože "123" je neplatný název elementu XML (začíná číslice). Podobná situace může nastat některých mezinárodních znakových sad v názvu XML není platný. Vysvětlení tohoto efektu XML na zpracování JSON najdete v tématu [mapování mezi JSON a XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md).  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 
 - [Podpora JSON a dalších formátů přenosu dat](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

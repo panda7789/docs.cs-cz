@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a7561a09b1b47827b3476b5525863503765064f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: cb44fad991c8184686fcda90878bae2ec53260c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842655"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617912"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
 Při více vláken mohl provádět volání k vlastnostem a metodám jednoho objektu, je důležité, že tato volání synchronizovat. V opačném případě jedno vlákno může dojít k přerušení činnosti jiné vlákno a objekt může zůstat v neplatném stavu. Třídy, jejíž členové jsou chráněny i před přerušení práce se nazývá bezpečné pro vlákna.  
@@ -69,8 +69,8 @@ Při více vláken mohl provádět volání k vlastnostem a metodám jednoho obj
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>  
-- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)  
-- [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)  
-- [Příkaz SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md)  
+- <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
+- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)
+- [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [Příkaz SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md)
 - [lock – příkaz](~/docs/csharp/language-reference/keywords/lock-statement.md)

@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 10cdf5b8cf475c95e086b447b36a569da2173fa9
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fa23595359bc210edfd1d55486158a71420699c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195670"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54615069"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje vývojářům zobrazit, transformaci a formátu Image.  
@@ -133,9 +133,9 @@ Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlashar
 #### <a name="stretching-images"></a>Roztažení obrázků  
  <xref:System.Windows.Controls.Image.Stretch%2A> Vlastnost určuje, jak je obrázek roztažený tak, aby vyplnil svého kontejneru. <xref:System.Windows.Controls.Image.Stretch%2A> Vlastnost přijímá následující hodnoty, které jsou definované <xref:System.Windows.Media.Stretch> výčtu:  
   
--   <xref:System.Windows.Media.Stretch.None>: Vyplnit výstupní oblasti není roztažená bitovou kopii. Pokud je větší než výstupní oblast bitovou kopii, bitovou kopii linie výstupní oblasti oříznutí, co se nevejde.  
+-   <xref:System.Windows.Media.Stretch.None>: Obrázek není roztažená tak, aby vyplnil výstupní oblasti. Pokud je větší než výstupní oblast bitovou kopii, bitovou kopii linie výstupní oblasti oříznutí, co se nevejde.  
   
--   <xref:System.Windows.Media.Stretch.Fill>: Obrázek přizpůsobí výstupní oblasti. Protože jsou nezávisle image výšku a šířku, nemusí být zachovaná původní poměr stran obrázku. To znamená může být pokřivení bitovou kopii pro úplně naplnění výstupní kontejner.  
+-   <xref:System.Windows.Media.Stretch.Fill>: Na obrázku se přizpůsobí výstupní oblasti. Protože jsou nezávisle image výšku a šířku, nemusí být zachovaná původní poměr stran obrázku. To znamená může být pokřivení bitovou kopii pro úplně naplnění výstupní kontejner.  
   
 -   <xref:System.Windows.Media.Stretch.Uniform>: Na obrázku je škálovat tak, aby zcela v rámci výstupní oblasti. Poměr stran obrázku je zachován.  
   
@@ -153,7 +153,7 @@ Různá nastavení stretch
 ### <a name="painting-with-images"></a>Malování s použitím obrázků  
  Image můžete také zobrazit v aplikaci můžete Malování <xref:System.Windows.Media.Brush>. Štětce umožňují vykreslení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] objekty se vše od jednoduchých, plné barvy pro komplexní sady vzorce a Image. Malování pomocí obrázků, použijte <xref:System.Windows.Media.ImageBrush>. <xref:System.Windows.Media.ImageBrush> k typu <xref:System.Windows.Media.TileBrush> jeho obsah, který definuje jako rastrový obrázek. <xref:System.Windows.Media.ImageBrush> Zobrazí jedné image, která je určená jeho <xref:System.Windows.Media.ImageBrush.ImageSource%2A> vlastnost. Můžete určit, jak je roztažená bitovou kopii, zarovnané a vedle sebe, umožňuje nedošlo ke zkreslení a vytvářet modely a další efekty. Následující obrázek znázorňuje některé efekty, které lze nastavit pomocí <xref:System.Windows.Media.ImageBrush>.  
   
- ![Příklady výstup ImageBrush](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")  
+ ![ImageBrush output examples](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-imagebrushexamples.gif "wcpsdk_mmgraphics_imagebrushexamples")  
 Štětce Image můžete přejít k vyplnění obrazců, ovládacích prvků, textu a další  
   
  Následující příklad ukazuje, jak se má Vymalovat pozadí tlačítka pomocí image pomocí <xref:System.Windows.Media.ImageBrush>.  
@@ -189,10 +189,10 @@ Různá nastavení stretch
 > [!NOTE]
 >  Kodek musí být digitálně podepsané, systém ho.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Imaging.BitmapSource>  
- <xref:System.Windows.Media.Imaging.BitmapImage>  
- <xref:System.Windows.Controls.Image>  
- <xref:System.Windows.Media.Imaging.BitmapMetadata>  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Ukázka kodek Win32](https://go.microsoft.com/fwlink/?LinkID=160052)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Imaging.BitmapSource>
+- <xref:System.Windows.Media.Imaging.BitmapImage>
+- <xref:System.Windows.Controls.Image>
+- <xref:System.Windows.Media.Imaging.BitmapMetadata>
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Ukázka kodek Win32](https://go.microsoft.com/fwlink/?LinkID=160052)

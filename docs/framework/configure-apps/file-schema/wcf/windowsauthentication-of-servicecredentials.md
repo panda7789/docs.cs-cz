@@ -2,22 +2,22 @@
 title: '&lt;windowsAuthentication&gt; – &lt;serviceCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-ms.openlocfilehash: acbb4f788d805d72dedcc7be711a38d1f1e82687
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 3077baf49c13c91c6293823aa841525bf07ca7f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148341"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616261"
 ---
 # <a name="ltwindowsauthenticationgt-of-ltservicecredentialsgt"></a>&lt;windowsAuthentication&gt; – &lt;serviceCredentials&gt;
 Určuje nastavení přihlašovacích údajů služby Windows.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
-\<serviceCredentials >  
-\<windowsAuthentication >  
+\<serviceCredentials>  
+\<windowsAuthentication>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +43,13 @@ Určuje nastavení přihlašovacích údajů služby Windows.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
+|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento element slouží k určení, jestli se má povolit přístup anonymní uživatelé Windows tak, že nastavíte `allowAnonymousLogons` atribut. Můžete také určit, zda mají být zahrnuty informace o skupinách, ke kterému uživatelé patří AuthorizationContext tak, že nastavíte `includeWindowsGroups` atribut. Pokud je nastavena na `true` (výchozí nastavení), službu můžete určit skupiny Windows, na které klient patří.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.WindowsServiceElement>  
- <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>  
- <xref:System.ServiceModel.Description.ServiceCredentials.WindowsAuthentication%2A>  
- <xref:System.ServiceModel.Security.WindowsServiceCredential>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.WindowsServiceElement>
+- <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>
+- <xref:System.ServiceModel.Description.ServiceCredentials.WindowsAuthentication%2A>
+- <xref:System.ServiceModel.Security.WindowsServiceCredential>

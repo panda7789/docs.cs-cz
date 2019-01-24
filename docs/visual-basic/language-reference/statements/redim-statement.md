@@ -26,15 +26,15 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-ms.openlocfilehash: 9536ea8a6274e0b4a2589caf5aefa271a3567d32
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1252c9a93d9c37923b1fd2940a42f1a33b575b8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33605391"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617313"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim – příkaz (Visual Basic)
-Přidělí prostor úložiště pro proměnné pole.  
+Znovu alokuje prostor úložiště pro proměnné pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,64 +46,64 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |Termín|Definice|  
 |----------|----------------|  
-|`Preserve`|Volitelné. Modifikátor umožňuje zachovat data v existující pole, když změníte velikost pouze poslední dimenze.|  
-|`name`|Požadováno. Název proměnné pole. V tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`boundlist`|Požadováno. Seznam mezí Každá dimenze Předefinovaná pole.|  
+|`Preserve`|Volitelné. Modifikátor se používá k zachování dat v existujícím poli, když změníte velikost jenom poslední dimenze.|  
+|`name`|Povinný parametr. Název proměnné pole. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`boundlist`|Povinný parametr. Seznam mezí jednotlivých rozměrů pole Předefinovaná.|  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `ReDim` příkaz ke změně velikosti jeden nebo více rozměry pole, které již byl deklarován. Pokud máte velké pole a některé jeho elementy již nepotřebujete `ReDim` můžete uvolnit paměť snížením velikost pole. Na druhé straně, pokud další prvky, musí vaše pole `ReDim` je přidat.  
+ Můžete použít `ReDim` příkaz ke změně velikosti jednu nebo více dimenzí pole, které je už deklarovaný. Pokud máte velké pole a které už nepotřebujete, některé z jeho prvků `ReDim` může uvolnit paměť snížením velikosti pole. Na druhou stranu, pokud další prvky, musí vaše pole `ReDim` můžete je přidat.  
   
- `ReDim` Příkaz je určena pouze pro pole. Není platný na skalárních hodnot (proměnné, které obsahují pouze jednu hodnotu), kolekce nebo struktury. Všimněte si, že pokud deklarovat proměnnou být typu `Array`, `ReDim` příkaz nemá dostatek informací o typu vytvořte nové pole.  
+ `ReDim` Příkaz je určena pouze pro pole. Není platný v skaláry (proměnné, které obsahují jenom jedna hodnota), kolekce nebo struktury. Všimněte si, že pokud deklarujete proměnnou typu `Array`, `ReDim` příkaz nemá dostatek informací o typu k vytvoření nové pole.  
   
- Můžete použít `ReDim` jenom na úrovni postupu. Kontext deklarace proměnné proto musí být procedury; nemůže být zdrojový soubor, obor názvů, rozhraní, třídy, struktury, modul nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ Můžete použít `ReDim` pouze na úrovni postup. Místní deklarace proměnné proto musí být postup; ho nemůže být zdrojový soubor, obor názvů, rozhraní, třídy, struktury, modul nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Více proměnných.** Můžete změnit velikost několik proměnné pole v jednom příkazu deklarace a určit, `name` a `boundlist` částí pro každou proměnnou. Více proměnných jsou oddělené čárkami.  
+-   **Více proměnných.** Můžete změnit velikost několik proměnných ve stejném příkazu deklarace a určit, `name` a `boundlist` částí pro každou proměnnou. Více proměnných jsou odděleny čárkami.  
   
--   **Meze pole.** Každá položka v `boundlist` můžete určit, dolní a horní meze této dimenze. Dolní hranice je vždy 0 (nula). Horní mez je hodnota nejvyšší možné indexu pro daná dimenze, není délka dimenze (což je horní mez plus jedna). Index pro Každá dimenze se může lišit od 0 do jeho horní mez hodnoty.  
+-   **Array Bounds.** Každá položka v `boundlist` můžete zadat, dolní a horní hranice této dimenze. Dolní mez je vždy 0 (nula). Horní mez je nejvyšší hodnota možný index pro tuto dimenzi, nikoli velikost rozměru (což je horní mez plus jedna). Index každé dimenze se může lišit od 0 do jeho hodnotu horní mez.  
   
-     Počet dimenzí v `boundlist` původní počet rozměrů (pořadí) pole se musí shodovat.  
+     Počet dimenzí v `boundlist` musí odpovídat původní počet rozměrů (pořadí) pole.  
   
--   **Datové typy.** `ReDim` Příkaz nelze změnit datový typ proměnné pole nebo jeho prvky.  
+-   **Datové typy.** `ReDim` Příkaz nelze změnit datový typ proměnné pole nebo jeho elementů.  
   
--   **Inicializace.** `ReDim` Příkaz nelze zadat nové inicializace hodnoty pro elementy pole.  
+-   **Inicializace.** `ReDim` Příkaz nelze zadat nové inicializace hodnoty pro prvky pole.  
   
--   **Pořadí.** `ReDim` Příkaz nelze změnit pořadí pole (počet dimenzí).  
+-   **Pořadí.** `ReDim` Příkaz nelze změnit pořadí (počet rozměrů) v poli.  
   
--   **Změna velikosti s zachovat.** Pokud používáte `Preserve`, můžete změnit velikost pouze poslední dimenze pole. Pro každý další dimenze je nutné zadat mez existující pole.  
+-   **Změna velikosti se zachová.** Pokud používáte `Preserve`, změníte velikost jenom poslední dimenze pole. Pro každou dimenzi je nutné zadat mez existujícího pole.  
   
-     Například pokud vaše pole má jenom jednu dimenzi, můžete změnit velikost daná dimenze a současně zachovat veškerý obsah pole, protože měníte jenom dimenze a poslední. Ale pokud vaše pole má dvě nebo více dimenzí, je možné změnit velikost pouze poslední dimenze používáte `Preserve`.  
+     Například pokud vaše pole má pouze jednu dimenzi, můžete změnit velikost daná dimenze a zároveň zachovat veškerý obsah pole, protože se mění poslední a pouze dimenze. Nicméně pokud vaše pole má dvě nebo více dimenzí, můžete změnit velikost jenom poslední dimenze používáte `Preserve`.  
   
--   **Vlastnosti.** Můžete použít `ReDim` u vlastnosti, která obsahuje pole hodnot.  
+-   **Vlastnosti.** Můžete použít `ReDim` na vlastnost, která obsahuje pole hodnot.  
   
 ## <a name="behavior"></a>Chování  
   
--   **Pole nahrazení.** `ReDim` uvolní existující pole a vytvoří nové pole s stejné pořadí. Nové pole nahrazuje pole vydaných v proměnné pole.  
+-   **Nahrazení pole.** `ReDim` uvolní existujícího pole a vytvoří nové pole obsahující stejné pořadí. Nové pole nahradí vydané pole v proměnné pole.  
   
--   **Inicializace bez zachovat.** Pokud nezadáte `Preserve`, `ReDim` inicializuje prvky nové pole pomocí výchozí hodnota pro datového typu.  
+-   **Inicializace bez zachování.** Pokud nezadáte `Preserve`, `ReDim` inicializuje elementy nové pole pomocí výchozí hodnota pro jejich datové typy.  
   
--   **Inicializace se zachovat.** Pokud zadáte `Preserve`, Visual Basic zkopíruje elementy ze stávající pole do nové pole.  
+-   **Inicializace pomocí zachovat.** Pokud zadáte `Preserve`, Visual Basic zkopíruje prvky z existujícího pole do nového pole.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zvyšuje velikost poslední dimenze dynamické pole bez ztráty jakákoli stávající data v poli a potom snižuje velikost ztráty částečná data. Nakonec snižuje velikost zpět na původní hodnotu a znovu inicializuje všechny elementy pole.  
+ Následující příklad zvyšuje velikost poslední dimenze dynamické pole bez ztráty všechna existující data v poli a pak snižuje velikost ztráty částečná data. Nakonec se zmenší velikost zpět na původní hodnotu a znovu inicializuje všechny prvky pole.  
   
  [!code-vb[VbVbalrStatements#52](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/redim-statement_1.vb)]  
   
- `Dim` Příkaz vytvoří nové pole s tři dimenze. Každá dimenze je deklarovaný s mez 10, takže index pole pro každý dimenze může být v rozsahu od 0 až 10. V následující diskusi tři dimenze jsou označovány jako vrstvy, řádků a sloupců.  
+ `Dim` Příkaz vytvoří nové pole s tři dimenze. Každé dimenze je deklarován s hranicí 10, takže index pole pro jednotlivé rozměry v rozsahu 0 až 10. V následující diskuse tři dimenze jsou označovány jako vrstva, řádků a sloupců.  
   
- První `ReDim` vytvoří nové pole, které nahradí stávající pole v proměnné `intArray`. `ReDim` zkopíruje všechny elementy z existující pole do nové pole. Také přidá na konec každý řádek v každé vrstvě 10 více sloupců a inicializuje elementů v tyto nové sloupce na hodnotu 0 (výchozí hodnota `Integer`, což je typ elementu pole).  
+ První `ReDim` vytvoří nové pole, která nahradí stávající pole v proměnné `intArray`. `ReDim` zkopíruje všechny prvky z existujícího pole do nového pole. Také přidá 10 další sloupce na konci každého řádku v každé vrstvě a inicializuje prvky v těchto nových sloupců na hodnotu 0 (výchozí hodnota `Integer`, což je typ prvku pole).  
   
- Druhý `ReDim` vytvoří jiné nové pole a zkopíruje všechny prvky, které vyhovují. Pět sloupce jsou však ztraceny od konce každý řádek v každé vrstvě. To není problém, pokud dokončíte používání těchto sloupců. Zmenšení velikosti velké pole můžete uvolnit paměť, která již nepotřebujete.  
+ Druhá `ReDim` vytvoří další nové pole a zkopíruje všechny prvky, které vyhovují. Pět sloupců se ale ztratí z konci každého řádku v každé vrstvě. To není problém, pokud jste dokončili pomocí těchto sloupců. Zmenšit velké pole můžete uvolnit paměť, která už nepotřebujete.  
   
- Třetí `ReDim` vytvoří jiné nové pole a odebere jiné pět sloupců z konce každý řádek v každé vrstvě. Tentokrát ho nekopíruje existující prvky. Tento příkaz vrátí pole pro její původní velikost. Vzhledem k tomu, že neobsahuje příkaz `Preserve` modifikátor, nastaví všechny elementy pole na původní výchozí hodnoty.  
+ Třetí `ReDim` vytvoří další nové pole a odebere jiného pět sloupců z konci každého řádku v každé vrstvě. Tentokrát nekopíruje jakýchkoli prvků. Tento příkaz vrátí pole původní velikost. Protože neobsahuje příkaz `Preserve` modifikátor, nastaví všechny prvky pole na původní výchozí hodnoty.  
   
  Další příklady najdete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IndexOutOfRangeException>  
- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)  
- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
- [Příkaz Erase](../../../visual-basic/language-reference/statements/erase-statement.md)  
- [Nothing](../../../visual-basic/language-reference/nothing.md)  
- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IndexOutOfRangeException>
+- [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)
+- [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Příkaz Erase](../../../visual-basic/language-reference/statements/erase-statement.md)
+- [Nothing](../../../visual-basic/language-reference/nothing.md)
+- [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)

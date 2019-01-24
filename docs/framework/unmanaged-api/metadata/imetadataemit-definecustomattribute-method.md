@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a11e9919dc1338c4b67c3c4b0f082e330c29d9eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7cf2fec56da39a0e3e076be37df185ff2bce5e3c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445079"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616664"
 ---
 # <a name="imetadataemitdefinecustomattribute-method"></a>IMetaDataEmit::DefineCustomAttribute – metoda
-Vytvoří definici pro vlastní atribut podpisem Zadaná metadata, připojí se k zadaný objekt a získá token tuto definici vlastních atributů.  
+Vytvoří definici vlastního atributu podpisem Zadaná metadata, připojí se k zadaný objekt a získá token pro tuto definici vlastního atributu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,29 +41,29 @@ HRESULT DefineCustomAttribute (
   
 #### <a name="parameters"></a>Parametry  
  `tkObj`  
- [v] Token pro položku vlastníka.  
+ [in] Token pro položku vlastníka.  
   
  `tkType`  
- [v] Token, který identifikuje vlastních atributů.  
+ [in] Token, který identifikuje vlastního atributu.  
   
  `pCustomAttribute`  
- [v] Ukazatel na vlastních atributů.  
+ [in] Ukazatel na vlastní atribut.  
   
  `cbCustomAttribute`  
- [v] Počet bajtů v `pCustomAttribute`.  
+ [in] Počet bajtů v `pCustomAttribute`.  
   
  `pcv`  
  [out] `mdCustomAttribute` Token přiřazený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

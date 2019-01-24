@@ -2,12 +2,12 @@
 title: Podporované scénáře nasazení
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: a86fd9d50b2bdfa2daafa3bec98802d10a1efef5
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 605521cb91945812db178db3a82883b4d13bc636
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44183376"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614481"
 ---
 # <a name="supported-deployment-scenarios"></a>Podporované scénáře nasazení
 Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro použití v částečně důvěryhodné aplikace je navržená pro splnění požadavků některé, ale ne všechny scénáře použití WCF. Na serveru, sdíleného WCF splňuje požadavky na internetovém měřítku poskytovatelé hostitelských služeb, kteří používají aplikace třetích stran v [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] oprávnění na úrovni Medium Trust nastavit z bezpečnostních důvodů. Na straně klienta WCF částečným vztahem důvěryhodnosti podpory je navržená pro splnění požadavků nasazení technologií, jako [nasazení ClickOnce](https://go.microsoft.com/fwlink/?LinkId=83712) nebo [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]vaší aplikace prohlížeče XAML technologie, která jim umožňují bezproblémové a zabezpečené nasazení aplikací klasické pracovní plochy z nedůvěryhodné weby.  
@@ -32,15 +32,15 @@ Dílčí sadu funkcí Windows Communication Foundation (WCF) podporovaných pro 
   
  Služby pracovních postupů, vyžadují oprávnění plné důvěryhodnosti a nelze použít v částečně důvěryhodné aplikace.  
   
- Další informace najdete v tématu [postupy: použití úrovni Medium Trust v technologii ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=84603).  
+ Další informace najdete v tématu [jak: Použití střední důvěryhodnosti v technologii ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=84603).  
   
 ## <a name="partial-trust-on-the-client"></a>Částečné důvěryhodnosti na straně klienta  
  Při stahování a spouštění kódu z nedůvěryhodné weby na Internetu, musí být přijata určité bezpečnostní opatření. Obě [nasazení ClickOnce](https://go.microsoft.com/fwlink/?LinkId=83712) a [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]XAML aplikace prohlížeče (XBAP) ujistěte se, technologie využití částečným vztahem důvěryhodnosti udělit omezená oprávnění (zóny Internet) nedůvěryhodného kódu.  
   
  WCF slouží ke komunikaci se vzdálenými servery z v rámci částečně důvěryhodné aplikace nasazené buď [nasazení ClickOnce](https://go.microsoft.com/fwlink/?LinkId=83712) nebo XBAP. Zahrnuje sadu oprávnění zóny Internet <xref:System.Net.WebPermission> původního hostitele, který umožňuje tyto aplikace ke komunikaci s jejich zdrojový server pomocí kteréhokoli z podporovaných vazby WCF je popsáno v [Kompatibilita funkce částečné důvěryhodnosti ](../../../../docs/framework/wcf/feature-details/partial-trust-feature-compatibility.md).  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení přístupu kódu](https://go.microsoft.com/fwlink/?LinkId=83717)  
- [Přehled Windows Presentation Foundation aplikace hostované prohlížečem](https://go.microsoft.com/fwlink/?LinkId=98397)  
- [Částečná důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust.md)  
- [Střední ASP.Net důvěryhodnosti](https://go.microsoft.com/fwlink/?LinkId=69328)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení přístupu kódu](https://go.microsoft.com/fwlink/?LinkId=83717)
+- [Přehled Windows Presentation Foundation aplikace hostované prohlížečem](https://go.microsoft.com/fwlink/?LinkId=98397)
+- [Částečná důvěryhodnost](../../../../docs/framework/wcf/feature-details/partial-trust.md)
+- [ASP.Net Medium Trust](https://go.microsoft.com/fwlink/?LinkId=69328)

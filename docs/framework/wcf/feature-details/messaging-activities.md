@@ -2,12 +2,12 @@
 title: Aktivity zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 8498f215-1823-4aba-a6e1-391407f8c273
-ms.openlocfilehash: 3391f7442ef4922a847a58b6316eb177cbcfbd5e
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 839e9225db7b5d76cf05f148811634389e81502a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086338"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617626"
 ---
 # <a name="messaging-activities"></a>Aktivity zasílání zpráv
 Zasílání zpráv aktivity umožňují pracovní postupy pro odesílání a příjem zpráv WCF. Přidáním zasílání zpráv aktivity do pracovního postupu lze modelovat žádné vzory libovolně složité zpráv exchange (MEP).
@@ -103,6 +103,6 @@ Request = rcv
 ## <a name="messaging-activities-and-transactions"></a>Aktivity zasílání zpráv a transakce
  Pokud je provedeno volání služby pracovního postupu můžete chtít transakce pro operace služby. Provedete toto místo <xref:System.ServiceModel.Activities.Receive> aktivitu v rámci <xref:System.ServiceModel.Activities.TransactedReceiveScope> aktivity. <xref:System.ServiceModel.Activities.TransactedReceiveScope> Obsahuje aktivity `Receive` aktivity a tělo. Byly převedeny do služby zůstane během provádění těla okolí transakce <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Transakce je dokončena, když text dokončí provádění. Další informace o pracovních postupů a transakcích najdete v části [pracovního postupu transakce](../../../../docs/framework/windows-workflow-foundation/workflow-transactions.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 - [Postup při odesílání a přijímání chyb ve službách pracovních postupů](https://go.microsoft.com/fwlink/?LinkId=189151)
 - [Vytvoření dlouhodobé služby pracovního postupu](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)
