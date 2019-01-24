@@ -2,21 +2,21 @@
 title: '&lt;add&gt; – &lt;scopes&gt;'
 ms.date: 03/30/2017
 ms.assetid: 0563a7d8-fc84-4c85-9066-af32665857c2
-ms.openlocfilehash: e2bf649259d6ccb0e55428ab3619fe561d051ff7
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 961fb3e388e3ae756bd7511ea6c65df6dd2a1486
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54705570"
 ---
 # <a name="ltaddgt-of-ltscopesgt"></a>&lt;add&gt; – &lt;scopes&gt;
 Přidá vlastní rozsahy identifikátoru Uri, který můžete použít k filtrování koncových bodů služby během dotazu.  
   
 \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<endpointDiscovery >  
+\<endpointDiscovery>  
 \<obory >  
 \<add>  
   
@@ -52,7 +52,7 @@ Přidá vlastní rozsahy identifikátoru Uri, který můžete použít k filtrov
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<obory >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifikátoru URI, který lze použít k fitrování koncových bodů služby během dotazu.|  
+|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Obsahuje kolekci prvků konfigurace, které určují vlastní rozsahy identifikátoru URI, který lze použít k fitrování koncových bodů služby během dotazu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

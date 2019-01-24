@@ -12,22 +12,23 @@ helpviewer_keywords:
 - examples [Windows Forms], event handling
 - Button control [Windows Forms], event handlers
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
-ms.openlocfilehash: 38453c751e6cc63827f3f1e9d20ad2ebdfc841d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4e02fec0a131523059f88d4f12f62398d80fddf0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632046"
 ---
 # <a name="how-to-create-event-handlers-at-run-time-for-windows-forms"></a>Postupy: Vytváření obslužných rutin událostí v době běhu pro Windows Forms
-Kromě vytváření událostí pomocí Návrhář formulářů Windows, můžete také vytvořit obslužnou rutinu události za běhu. Tato akce umožňuje připojit obslužné rutiny událostí na základě podmínek v kódu v době běhu rozdíl od toho, aby připojení při počátečním spuštění programu.  
+Kromě vytváření událostí pomocí Návrháře formulářů Windows, můžete také vytvořit obslužnou rutinu události v době běhu. Tato akce umožňuje připojit obslužné rutiny události na základě podmínek v kódu v době běhu na rozdíl od toho připojení při počátečním spuštění programu.  
   
-### <a name="to-create-an-event-handler-at-run-time"></a>Pro vytvoření obslužné rutiny událostí v době běhu  
+### <a name="to-create-an-event-handler-at-run-time"></a>Chcete-li vytvořit obslužnou rutinu události v době běhu  
   
-1.  Otevřete v editoru kódu, kterou chcete přidat obslužné rutiny události pro formulář.  
+1.  Otevřete v editoru kódu, který chcete přidat obslužnou rutinu události pro formulář.  
   
-2.  Přidání metody do svého formuláře s podpis metody pro událost, která chcete zpracovat.  
+2.  Přidání metody do svého formuláře s podpis metody pro události, ke které chcete zpracovat.  
   
-     Například, pokud byly zpracování <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> řízení, by vytvoření metody, jako jsou následující:  
+     Například, pokud byly zpracování <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku, vytvořili byste metodu, jako je následující:  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs)  
@@ -51,11 +52,11 @@ Kromě vytváření událostí pomocí Návrhář formulářů Windows, můžete
        }  
     ```  
   
-3.  Přidejte kód pro obslužnou rutinu události v závislosti na vaší aplikace.  
+3.  Přidejte kód do obslužné rutiny události jako vhodné pro vaši aplikaci.  
   
-4.  Určí, které tvoří nebo chcete vytvořit obslužnou rutinu události pro ovládací prvek.  
+4.  Určete, které tvoří nebo chcete vytvořit obslužnou rutinu události pro ovládací prvek.  
   
-5.  Metoda v rámci svého formuláře třídy přidejte kód, který určuje obslužné rutiny události ke zpracování události. Například následující kód určuje obslužné rutiny události `button1_Click` obslužné rutiny <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku:  
+5.  V metodě v rámci třídy formuláře přidejte kód, který určuje chcete zpracovat událost obslužné rutiny události. Například následující kód určuje obslužná rutina události `button1_Click` obslužné rutiny <xref:System.Windows.Forms.Control.Click> události <xref:System.Windows.Forms.Button> ovládacího prvku:  
   
     ```vb  
     AddHandler Button1.Click, AddressOf Button1_Click  
@@ -69,9 +70,9 @@ Kromě vytváření událostí pomocí Návrhář formulářů Windows, můžete
     button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-     <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> Metoda ukázán ve výše uvedeném kódu jazyka Visual Basic vytvoří obslužnou rutinu události kliknutí na tlačítko o velikosti.  
+     <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> Metoda jsme vám ukázali ve výše uvedeném kódu jazyka Visual Basic vytvoří obslužnou rutinu události kliknutí pro tlačítko.  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
- [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)  
- [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
+## <a name="see-also"></a>Viz také:
+- [Vytváření obslužných rutin událostí ve Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)
+- [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)
+- [Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)

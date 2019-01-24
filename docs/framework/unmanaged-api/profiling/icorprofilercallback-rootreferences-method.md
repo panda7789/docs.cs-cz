@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 467d065ab4d47e698c7043697ebe2ccf5f98a3cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94b736a8e3250f4d208d4a9a46a022140b676318
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452582"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631350"
 ---
 # <a name="icorprofilercallbackrootreferences-method"></a>ICorProfilerCallback::RootReferences – metoda
-Upozorní profileru s informacemi o odkazů na kořenový po uvolnění paměti.  
+Upozornění profileru s informacemi o odkazů na kořenový po uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT RootReferences(
   
 #### <a name="parameters"></a>Parametry  
  `cRootRefs`  
- [v] Počet odkazů v `rootRefIds` pole.  
+ [in] Počet odkazů v `rootRefIds` pole.  
   
  `rootRefIds`  
- [v] Pole ID objektů, které odkazují na statický objekt nebo objekt v zásobníku.  
+ [in] Pole ID objektů, které odkazují na statický objekt nebo objekt v zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Obě `RootReferences` a [icorprofilercallback2::rootreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) se nazývají oznámit profileru. Profilery bude obvykle implementovat jednu nebo druhou, ale ne pomocí obou, protože předaná informace `RootReferences2` je nadmnožinou, je předaná `RootReferences`.  
+ Obě `RootReferences` a [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) jsou volány pro oznámení profileru. Profilery obvykle implementuje jednu z nich, ale nikoli oba současně, protože předaným informace `RootReferences2` je nadstavbou jazyka, které předáno `RootReferences`.  
   
- Je možné `rootRefIds` pole tak, aby obsahovala objekt s hodnotou null. Například všechny odkazy na objekty deklarované v zásobníku se považují za kořeny modulem garbage collector a bude vždy hlášena.  
+ Je možné, `rootRefIds` pole tak, aby obsahovala objekt s hodnotou null. Například všechny odkazy na objekty deklarované v zásobníku jsou považovány za kořeny uvolnění paměti a vždy se ohlásí.  
   
- Vrácený objekt ID `RootReferences` nejsou platné během zpětného volání sebe, protože kolekce paměti může být uprostřed přesun objektů z původní adresy na nové adresy. Proto se profilery nesmíte pokoušet zkontrolovat objekty během `RootReferences` volání. Když [icorprofilercallback2::garbagecollectionfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána, všechny objekty byly přesunuty do nového umístění a může být prověřovány bezpečně.  
+ ID objektů vrácených `RootReferences` nejsou platné během zpětného volání, protože kolekce uvolnění paměti může být uvnitř přesun objektů ze staré adresy k nové adresy. Proto se nesmíte pokoušet profilery pro kontrolu objektů během `RootReferences` volání. Když [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) je volána, všechny objekty se přesunuly na jejich nových umístění a můžete ho bezpečně zkontrolovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -58,5 +58,5 @@ HRESULT RootReferences(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

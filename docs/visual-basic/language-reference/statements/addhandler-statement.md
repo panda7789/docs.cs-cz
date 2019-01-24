@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
-ms.openlocfilehash: f731ff150bd901e325726fca5aa682ff1770f979
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6ed6f3d4fd77d714ab554d641c0c0fc4f403bbf8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502947"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715099"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz
 Přidruží událost k obslužné rutiny události v době běhu.  
@@ -44,8 +44,8 @@ AddHandler event, AddressOf eventhandler
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrEvents#17](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/addhandler-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)
+- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
+- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

@@ -2,12 +2,12 @@
 title: Odvozování sloupců
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-ms.openlocfilehash: 56de4b4d6cf704473ec46957625ad1c376f595c2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: f3edd09b1fb8169e8f609514de38b3c37574079b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891350"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655228"
 ---
 # <a name="inferring-columns"></a>Odvozování sloupců
 Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulka pro <xref:System.Data.DataSet>, pak odvodí sloupce pro tyto tabulky. ADO.NET 2.0 zavedl nový modul odvození schématu, která odvodí typ dat silného typu pro každou **simpleType** elementu. V předchozích verzích, datový typ vyvozeným **simpleType** element se vždy **XSD: String**.  
@@ -35,13 +35,13 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
   
  Procesu odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **attr1** a **attr2**. **ColumnMapping** vlastnost obou sloupců bude nastavena na **MappingType.Attribute**.  
   
- **Datová sada:** prvek DocumentElement  
+ **DataSet:** Prvek DocumentElement  
   
- **Tabulka:** Element1  
+ **Tabulka:** element1  
   
 |attr1|attr2|  
 |-----------|-----------|  
-|Hodnota1|Hodnota2|  
+|value1|value2|  
   
 ## <a name="elements-without-attributes-or-child-elements"></a>Prvky bez atributy nebo podřízené prvky  
  Pokud element nemá žádné podřízené prvky a atributy, se odvodit jako sloupec. **ColumnMapping** vlastnost sloupec bude nastavena na **MappingType.Element**. Text pro podřízené prvky je uložen v řádku v tabulce. Zvažte například následující kód XML:  
@@ -57,18 +57,18 @@ Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulk
   
  Procesu odvození vytvoří tabulku s názvem **Element1** se dvěma sloupci, **ChildElement1** a **ChildElement2**. **ColumnMapping** vlastnost obou sloupců bude nastavena na **MappingType.Element**.  
   
- **Datová sada:** prvek DocumentElement  
+ **DataSet:** Prvek DocumentElement  
   
- **Tabulka:** Element1  
+ **Tabulka:** element1  
   
 |ChildElement1|ChildElement2|  
 |-------------------|-------------------|  
 |Text1|Text2|  
   
-## <a name="see-also"></a>Viz také  
- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
+- [Načtení datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
+- [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
+- [Použití XML v datové sadě](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

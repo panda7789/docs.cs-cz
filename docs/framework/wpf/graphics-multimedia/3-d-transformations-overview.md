@@ -8,12 +8,12 @@ helpviewer_keywords:
 - 3-D transformations
 - transformations [WPF], 3-D
 ms.assetid: e45e555d-ac1e-4b36-aced-e433afe7f27f
-ms.openlocfilehash: d27e1bda296a153343b450c84c65fa35d55d72f2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 427840430a37f675ccc0f0ee4f423370f2a55550
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520589"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646367"
 ---
 # <a name="3-d-transformations-overview"></a>Přehled 3D transformací
 Toto téma popisuje způsob použití transformací na 3D modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] grafiky systému. Transformace umožňuje vývojářům změnit umístění, velikost a orientaci modely beze změny základní hodnoty, které jejich definování.  
@@ -50,7 +50,7 @@ Překlad s posunem
 ## <a name="scale-transformations"></a>Transformace měřítka  
  <xref:System.Windows.Media.Media3D.ScaleTransform3D> Změní měřítko modelu pomocí zadaného rozsahu vektoru s odkazem na středový bod. Zadejte jednotné škálování, které se škáluje podle stejné hodnoty v OS X, Y a ke změně velikosti modelu proporcionálně modelu. Například nastavení transformace <xref:System.Windows.Media.ScaleTransform.ScaleX%2A>, <xref:System.Windows.Media.ScaleTransform.ScaleY%2A>, a <xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A> vlastnosti 0,5, znamená poloviny velikostí modelu; nastavení stejných vlastností na 2 zdvojnásobuje její škálování do všech tří OS.  
   
- ![Jednotné objekt ScaleTransform3D](../../../../docs/framework/wpf/graphics-multimedia/media/threecubes-uniformscale-1.png "threecubes_uniformscale_1")  
+ ![Uniform ScaleTransform3D](../../../../docs/framework/wpf/graphics-multimedia/media/threecubes-uniformscale-1.png "threecubes_uniformscale_1")  
 Příklad ScaleVector  
   
  Zadáním nerovnoměrné škálování transformace – škálování transformace, jehož hodnoty X, Y a nejsou všechny stejné – může způsobit modelu roztažení nebo smlouvy v jedné nebo dvou dimenzích, aniž by to ovlivnilo ostatní. Například nastavení <xref:System.Windows.Media.ScaleTransform.ScaleX%2A> na hodnotu 1, <xref:System.Windows.Media.ScaleTransform.ScaleY%2A> na 2, a <xref:System.Windows.Media.Media3D.ScaleTransform3D.ScaleZ%2A> na hodnotu 1 způsobí transformovaný modelu poklikejte na výšku, ale zůstanou nezměněné podél osy X a Z.  
@@ -105,7 +105,7 @@ Příklad otočení
   
  Vzhledem k tomu kamery také modely, je možné transformovat také vlastnosti kamery.  Zatímco určitě můžete změnit vzhled scény pomocí transformace fotoaparátu umístění nebo rovině vzdálenosti – v důsledku toho transformace projekce celý scény – mějte na paměti, že mnoho účinky dosáhnout tímto způsobem nemusí mít tolik "visual smysl" do prohlížeče jako transformace použít pro umístění nebo umístění modelů ve scéně.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)  
- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
- [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)
+## <a name="see-also"></a>Viz také:
+- [Přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md)
+- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
+- [Ukázka 2D transformace](https://go.microsoft.com/fwlink/?LinkID=158252)

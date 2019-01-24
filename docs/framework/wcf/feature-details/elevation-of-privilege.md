@@ -5,59 +5,59 @@ helpviewer_keywords:
 - elevation of privilege [WCF]
 - security [WCF], elevation of privilege
 ms.assetid: 146e1c66-2a76-4ed3-98a5-fd77851a06d9
-ms.openlocfilehash: c71936d087ef046848c75d1fa0638aaafbe43c9a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf67f3c68acc4cd8838be56d7c814f9e287ce62c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496191"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658041"
 ---
 # <a name="elevation-of-privilege"></a>Zvýšení oprávnění
-*Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto původně udělí oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvyšuje sadu "pro čtení a zápisu."  
+*Zvýšení úrovně oprávnění* výsledkem udělení povolení útočník nad rámec těchto zpočátku udělená oprávnění. Například útočník se sadou oprávnění "jen pro čtení" oprávnění nějakým způsobem zvýší oprávnění set "pro čtení a zápisu."  
   
-## <a name="trusted-sts-should-sign-saml-token-claims"></a>Důvěryhodné služby tokenů zabezpečení by měl přihlásit deklarací tokenu SAML  
- Token zabezpečení kontrolní výrazy Markup Language (SAML) je obecný token XML, který je výchozím typem pro vydané tokeny. SAML token lze sestavit pomocí zabezpečení tokenu služby (STS), end webová služba vztahy důvěryhodnosti v typické systému exchange. Tokeny SAML obsahují deklarace identity v příkazech. Útočník může kopírovat deklarace identity z platný token, vytvořit nový token SAML a podepište ho pomocí různých vystavitele. Je cílem zjistit, zda server ověřuje vystavitelů a pokud ne, využívat slabinu vytvořit tokeny SAML, které umožňují oprávnění nad rámec těchto určený pomocí důvěryhodné služby tokenů zabezpečení.  
+## <a name="trusted-sts-should-sign-saml-token-claims"></a>Důvěryhodné služby STS musí podepsat deklarací identity tokenu SAML  
+ Token zabezpečení kontrolní výrazy SAML (Markup Language) je obecný XML token, který je výchozím typem vydávaných tokenů. SAML token lze sestavit pomocí tokenu služby zabezpečení (STS), která důvěřuje end webové služby v typické exchange. Tokeny SAML obsahují deklarace identity v příkazech. Útočník může kopírovat platný token deklarace identity, vytvořte nový token SAML a podepište ho pomocí různých vystavitele. Cílem je zjistit, jestli server ověřuje vydavatelů a pokud ne, využívat slabé stránky k sestavení kompletních tokeny SAML, které umožňují oprávnění nad rámec těchto určených podle důvěryhodné služby tokenů zabezpečení.  
   
- <xref:System.IdentityModel.Tokens.SamlAssertion> Třída ověřuje digitální podpis obsažených v tokenu SAML a ve výchozím nastavení <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> vyžaduje, aby tokeny SAML být podepsány certifikátem X.509, který je platný, kdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třída je nastaven na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>. `ChainTrust` režim samostatně je nedostatečná pro určení, zda je důvěryhodného vystavitele tokenu SAML. Služby, které vyžadují podrobnější model důvěryhodnosti můžete buď použít ověřování a vynucování zásad pro kontrolu vystavitele deklarace identity sady vyprodukované vydaných tokenů ověřování nebo nastavení ověření X.509 na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> omezit sadu povoleno, podpisové certifikáty. Další informace najdete v tématu [správa deklarací a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) a [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> Třídy ověří digitální podpis obsažených v tokenu SAML a ve výchozím nastavení <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> vyžaduje, aby byly podepsány tokeny SAML certifikátem X.509, který je platný, kdy <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A> z <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> třídy je nastavena na <xref:System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust>. `ChainTrust` režim pouze není dostatečná k určení, zda je důvěryhodného vystavitele tokenu SAML. Služby, které vyžadují podrobnější model důvěryhodnosti můžete buď používat ověřování a vynucování zásad pro kontrolu vystavitele deklarace identity sady produkované vystavený ověřovací token nebo použít nastavení pro ověření X.509 na <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> omezit sadu povolené, podpisové certifikáty. Další informace najdete v tématu [správa deklarací identity a autorizace s modelem Identity](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md) a [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
   
-## <a name="switching-identity-without-a-security-context"></a>Přepínání Identity bez kontextu zabezpečení  
- Následující se vztahují pouze na [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
+## <a name="switching-identity-without-a-security-context"></a>Přepnutí Identity bez kontextu zabezpečení  
+ Platí jenom pro následující [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
   
- Po navázání připojení mezi klientem a serverem, identita klienta nezmění, kromě jednoho situaci: Po otevření klienta WCF, pokud jsou splněny všechny následující podmínky:  
+ Když se vytvoří připojení mezi klientem a serverem a identity klienta se nezmění, s výjimkou jednoho situaci: Po otevření klienta WCF, pokud jsou splněny všechny následující podmínky:  
   
--   Postup vytvoření kontextu zabezpečení (pomocí zabezpečení přenosu nebo relaci zabezpečení zpráv) je vypnuté (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> je nastavena na `false` v případě zabezpečení zpráv nebo není schopen vytvořit zabezpečení přenosu relace se používá v případě zabezpečení přenosu. Příkladem takových přenosu je HTTPS).  
+-   Postupy k vytvoření kontextu zabezpečení (pomocí zabezpečení přenosu, nebo relaci zabezpečení zprávu) je vypnout (<xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> je nastavena na `false` v případě zabezpečení zpráv nebo nebyl schopen vytvořit zabezpečení přenosu relace se používá v případě zabezpečení přenosu. HTTPS je jedním z takových transport).  
   
--   Používáte ověřování systému Windows.  
+-   Používáte ověřování Windows.  
   
--   Přihlašovací údaje není explicitně nastavena.  
+-   Přihlašovací údaje, které explicitně nenastavíte.  
   
--   Při volání služby v kontextu zosobněného zabezpečení.  
+-   Jsou volání služby za zosobněného kontextu.  
   
- Pokud jsou splněné tyto podmínky, může dojít ke změně identity použít k ověřování klienta ke službě (nemusí být zosobněnou identitou ale identitě procesu místo) po otevření klienta WCF. K tomu dochází, protože pověření systému Windows používá k ověření klienta ke službě se přenáší s každou zprávu a pověření použité pro ověřování se získávají z aktuální vlákno identitu systému Windows. Pokud se změní identitu Windows aktuální vlákno (například zosobněním různých volající), mohou také změnit pověření, které je připojen ke zprávě a použít k ověření klienta ke službě.  
+ Pokud jsou splněné tyto podmínky, může změnit identity použité k ověření klienta ke službě (nemusí být zosobněnou identitou, ale identitu procesu místo) po otevření klienta WCF. K tomu dochází, protože přihlašovací údaje Windows používá k ověření klienta ke službě se přenášejí se všechny zprávy a pověření pro ověřování se získávají z identita Windows aktuálního vlákna. Pokud se identita Windows aktuálního vlákna změní (například zosobněním různých volajícího), může také změnit přihlašovací údaj, který je připojen ke zprávě a použít k ověření klienta ke službě.  
   
- Pokud budete chtít mít deterministické chování při použití ověřování systému Windows společně s zosobnění je třeba explicitně nastavit pověření systému Windows nebo budete muset vytvořit kontext zabezpečení se službou. K tomu použijte relace zabezpečení zprávy nebo relace přenosu zabezpečení. Přenos net.tcp můžete například zadat relaci zabezpečení přenosu. Kromě toho musíte použít synchronní verzi klientské operace, při volání služby. Pokud vytvoříte kontextu zabezpečení zprávy, by neměl necháte připojení ke službě otevřete delší než interval obnovování nakonfigurované relace, protože identita můžete také změnit během procesu obnovení relace.  
+ Pokud chcete mít deterministické chování při použití ověřování Windows společně s zosobnění je nutné explicitně nastavit přihlašovací údaje Windows nebo je potřeba vytvořit kontext zabezpečení ve službě. K tomuto účelu použijte relaci zabezpečení zprávy nebo relace zabezpečení přenosu. Například net.tcp přenosu může poskytnout relace zabezpečení přenosu. Kromě toho musí používat pouze synchronní verzi klientské operace při volání služby. Pokud vytvoříte vztah kontextu zabezpečení zprávy, by neměl uchováváte připojení ke službě otevřít déle než nakonfigurované relace období obnovení, protože identita můžete také změnit během procesu obnovení relace.  
   
-### <a name="credentials-capture"></a>Zachycení přihlašovacích údajů  
- Toto se vztahuje na [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]a další verze.  
+### <a name="credentials-capture"></a>Snímek přihlašovací údaje  
+ Toto se vztahuje na [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]a následné verze.  
   
- Pověření používaná klientem nebo služby jsou založené na aktuální vlákno kontextu. Přihlašovací údaje byly získány při `Open` – metoda (nebo `BeginOpen`, pro asynchronní volání) se nazývá klienta nebo služby. Pro obě <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ClientBase%601> třídy, `Open` a `BeginOpen` metody dědit z <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> a <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> metody <xref:System.ServiceModel.Channels.CommunicationObject> třídy.  
+ Klient používá přihlašovací údaje nebo služby, které jsou založeny na aktuální kontext vlákna. Přihlašovací údaje jsou získané `Open` – metoda (nebo `BeginOpen`, pro asynchronní volání) se nazývá klienta nebo služby. Pro obě <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ClientBase%601> třídy, `Open` a `BeginOpen` dědí metody <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> a <xref:System.ServiceModel.Channels.CommunicationObject.BeginOpen%2A> metody <xref:System.ServiceModel.Channels.CommunicationObject> třídy.  
   
 > [!NOTE]
->  Při použití `BeginOpen` metoda, přihlašovací údaje zachytit nemůže zaručit jako přihlašovací údaje proces, který volá metodu.  
+>  Při použití `BeginOpen` metody zachycené přihlašovací údaje nelze zaručit pověření proces, který volá metodu.  
   
-## <a name="token-caches-allow-replay-using-obsolete-data"></a>Token mezipamětí povolit opětovného přehrání pomocí zastaralá Data  
- WCF používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověření uživatele podle uživatelského jména a hesla. Funkce přihlášení je nákladná operace, a proto WCF umožňuje, abyste mezipaměť tokeny, které představují ověřeného uživatele, pokud chcete zvýšit výkon. Ukládání do mezipaměti mechanismus uloží výsledky z `LogonUser` pro další použití. Tento mechanismus vypnutá ve výchozím nastavení; Chcete-li ji povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
+## <a name="token-caches-allow-replay-using-obsolete-data"></a>Token mezipamětí povolit jejich přehrání pomocí zastaralá Data  
+ WCF používá místní autority zabezpečení (LSA) `LogonUser` funkce k ověřování uživatelů pomocí uživatelského jména a hesla. Protože funkci přihlášení je nákladná operace, WCF umožňuje, abyste mezipaměť tokenů, které představují ověřeným uživatelům ke zvýšení výkonu. Mechanizmus ukládání do mezipaměti ukládá výsledky z `LogonUser` pro další použití. Tento mechanismus je ve výchozím nastavení; zakázané. ji Pokud chcete povolit, nastavte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CacheLogonTokens%2A> vlastnost `true`, nebo použijte `cacheLogonTokens` atribut [ \<userNameAuthentication >](../../../../docs/framework/configure-apps/file-schema/wcf/usernameauthentication.md).  
   
- Můžete nastavit dobu to Live (TTL) pro uložené v mezipaměti tokeny pomocí nastavení <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> vlastnosti <xref:System.TimeSpan>, nebo použijte `cachedLogonTokenLifetime` atribut `userNameAuthentication` element; výchozí hodnota je 15 minut. Všimněte si, že i když token se uloží do mezipaměti, libovolného klienta, který představuje stejné uživatelské jméno a heslo lze použít s tokenem, i v případě, že uživatelský účet je odstraněn ze systému Windows, nebo došlo ke změně jeho heslo. Dokud hodnota TTL nevyprší a token se odebere z mezipaměti, WCF umožňuje ověření (potenciálně škodlivý) uživatele.  
+ Můžete nastavit čas to Live (TTL) pro tokeny v mezipaměti tak, že nastavíte <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.CachedLogonTokenLifetime%2A> vlastnost <xref:System.TimeSpan>, nebo použijte `cachedLogonTokenLifetime` atribut `userNameAuthentication` element; výchozí hodnota je 15 minut. Všimněte si, že token je uložené v mezipaměti, libovolného klienta, který zobrazí stejné uživatelské jméno a heslo můžete použít i token, i v případě, že uživatelský účet je odstraněn z Windows, nebo pokud se změnila jeho heslo. Dokud hodnota TTL nevyprší a token, který se odebere z mezipaměti, WCF umožňuje (potenciálně škodlivý) uživatele ověřit.  
   
- Toto riziko lze snížit: snížit okno útoku nastavením `cachedLogonTokenLifetime` hodnotu na nejkratší dobu span uživatelé potřebují.  
+ Chcete-li tento problém zmírnit: Snížit tak, že nastavíte okno útoku `cachedLogonTokenLifetime` hodnotu na nejkratší dobu span uživatelé potřebují.  
   
-## <a name="issued-token-authorization-expiration-reset-to-large-value"></a>Vystavený Token autorizace: Vypršení platnosti se resetování velké hodnoty  
- Za určitých podmínek <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> může být nastaven na hodnotu neočekávaně větší ( <xref:System.DateTime.MaxValue> pole hodnotu minus jeden den, nebo 20 prosince 9999).  
+## <a name="issued-token-authorization-expiration-reset-to-large-value"></a>Vydaný Token autorizace: Vypršení platnosti obnovit velké hodnoty  
+ Za určitých podmínek <xref:System.IdentityModel.Policy.AuthorizationContext.ExpirationTime%2A> vlastnost <xref:System.IdentityModel.Policy.AuthorizationContext> může být nastaven na hodnotu neočekávaně větší ( <xref:System.DateTime.MaxValue> pole hodnota minus jeden den, nebo 20. prosince 9999).  
   
- K tomu dojde při použití <xref:System.ServiceModel.WSFederationHttpBinding> a některé z vazby poskytované systémem, které mají token vydaných jako klient typ přihlašovacích údajů.  
+ K tomu dojde při použití <xref:System.ServiceModel.WSFederationHttpBinding> a některé z vazeb poskytovaných systémem, které mají vydaný token jako klient typ přihlašovacích údajů.  
   
- Také k tomu dojde, když vytvoříte vlastní vazby pomocí jedné z následujících metod:  
+ Tato situace nastane také při vytváření vlastní vazby pomocí jedné z následujících metod:  
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenBindingElement%2A>  
   
@@ -67,25 +67,25 @@ ms.locfileid: "33496191"
   
 -   <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement%2A>  
   
- Toto riziko lze snížit musí zkontrolujte zásady autorizace, akci a čas vypršení platnosti, každá zásada autorizace.  
+ Chcete-li tento problém zmírnit, musíte zkontrolovat zásady autorizace pro akce a čas vypršení platnosti jednotlivých zásad autorizace.  
   
-## <a name="the-service-uses-a-different-certificate-than-the-client-intended"></a>Služba používá jiný certifikát než zamýšleného klienta  
- Za určitých podmínek můžete klienta digitálnímu podepisování zpráv společně s certifikátem X.509 a službu načíst jiný certifikát než zamýšlené.  
+## <a name="the-service-uses-a-different-certificate-than-the-client-intended"></a>Služba používá jiný certifikát než zamýšlené klienta  
+ Za určitých podmínek lze klienta digitálně podepsat zprávy pomocí certifikátu X.509 a službu načíst jiný certifikát než zamýšlené.  
   
  Tato situace může nastat v následujících případech:  
   
--   Klient digitálně podepíše zprávu pomocí certifikátu X.509. certifikát a nepřipojí certifikátu X.509 na zprávu, ale spíš jenom odkazuje na základě jeho identifikátoru klíče subjektu certifikátu.  
+-   Klient digitálně podepíše zprávu pomocí certifikátu X.509 nepřipojí certifikát X.509 na zprávu, ale spíš jenom odkazuje na certifikát s použitím jeho identifikátor klíče subjektu.  
   
--   Služby počítače obsahuje dva nebo víc certifikátů se stejný veřejný klíč, ale obsahují různé informace.  
+-   Počítač služby obsahuje dva nebo více certifikátů se stejným klíčem veřejné, ale obsahují rozdílné informace.  
   
--   Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale není ten, který má klient použít. Když WCF obdrží zprávu a ověří podpis, WCF mapuje informace v nezamýšleným certifikátu X.509 sadu deklarací identity, které jsou jiné a potenciálně zvýšenými z co očekává klienta.  
+-   Služba načte certifikát, který odpovídá identifikátoru klíče subjektu, ale to není ten, který klient chtěli použít. Když WCF obdrží zprávu a ověří podpis, WCF mapuje informace v neúmyslnému certifikát X.509 na sadu deklarací identity, které jsou rozdílné a potenciálně se zvýšenými oprávněními z co očekává klienta.  
   
- Toto riziko lze snížit odkaz X.509 certifikátu dalším způsobem, například pomocí <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.  
+ Chcete-li tento problém zmírnit, odkaz X.509 certifikátu dalším způsobem, jako je třeba použití <xref:System.ServiceModel.Security.Tokens.X509KeyIdentifierClauseType.IssuerSerial>.  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
+- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
+- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
+- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)
+- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

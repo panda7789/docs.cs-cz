@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d3cf8b8735fc10b741d13b041eedc3e96607bef4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6576dc19ed092ca12846a9780236e041daa64956
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450112"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727128"
 ---
 # <a name="corprfexclauseinfo-structure"></a>COR_PRF_EX_CLAUSE_INFO – struktura
-Obsahuje informace o instanci klauzule určité výjimky a jeho přidružené rámečku.  
+Ukládá informace o instanci klauzule specifickou výjimku a jeho přidružené rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,30 +41,30 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`clauseType`|Hodnota [COR_PRF_CLAUSE_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) výčet, který určuje typ výjimky klauzuli právě zadaný kód nebo doleva.|  
+|`clauseType`|Hodnota [cor_prf_clause_type –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) výčet, který určuje typ výjimky klauzule kód zadali nebo doleva.|  
 |`programCounter`|Nativní vstupní bod obslužné rutiny klauzule – například obsah X86 EIP registru.|  
-|`framePointer`|Ukazatel na logické rámce pro obslužnou rutinu klauzule – například obsah X86 EBP registru.|  
-|`shadowStackPointer`|Ukazatel zásobníku stínové. Tato hodnota je obsah registru BSP a se vztahuje pouze na IA64.|  
+|`framePointer`|Ukazatel na logický rámec pro obslužnou rutinu klauzule – například obsah X86 EBP registru.|  
+|`shadowStackPointer`|Ukazatel na stínového zásobníku. Tato hodnota je obsah registru BSP a platí jenom pro IA64.|  
   
 ## <a name="remarks"></a>Poznámky  
- Po přijetí oznámení o výjimce [ICorProfilerInfo2::getnotifiedexceptionclauseinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) lze použít k získání nativní adresy a rámce informací pro klauzuli výjimky (`catch` / `finally`/filter), má být spuštěna, nebo byla právě spuštěna.  
+ Po přijetí oznámení o výjimce [ICorProfilerInfo2::getnotifiedexceptionclauseinfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) můžete použít k získání nativní rámce informace o adrese a pro klauzuli výjimky (`catch` / `finally`/filtrování), který má být spuštěna, nebo jenom nebyly spuštěny.  
   
- Provádění klauzule výjimka zahrnuje tyto zpětná volání z common language runtime (CLR):  
+ Spuštění klauzule výjimka zahrnuje tato zpětná volání z common language runtime (CLR):  
   
--   [Icorprofilercallback::exceptioncatcherenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)  
+-   [ICorProfilerCallback::ExceptionCatcherEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)  
   
--   [Icorprofilercallback::exceptionunwindfinallyenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)  
+-   [ICorProfilerCallback::ExceptionUnwindFinallyEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)  
   
--   [Icorprofilercallback::exceptionsearchfilterenter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)  
+-   [ICorProfilerCallback::ExceptionSearchFilterEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)  
   
--   [Icorprofilercallback::exceptioncatcherleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)  
+-   [ICorProfilerCallback::ExceptionCatcherLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)  
   
--   [Icorprofilercallback::exceptionunwindfinallyleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md)  
+-   [ICorProfilerCallback::ExceptionUnwindFinallyLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md)  
   
--   [Icorprofilercallback::exceptionsearchfilterleave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md)  
+-   [ICorProfilerCallback::ExceptionSearchFilterLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl  
   
@@ -72,5 +72,5 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

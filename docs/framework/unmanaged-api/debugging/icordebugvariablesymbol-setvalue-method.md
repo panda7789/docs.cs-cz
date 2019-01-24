@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 4609418d-71fa-44bc-9618-4d529d25cabb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ccdb78e522cb037821135c52bf762707f7de76c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 427c885dc1d7cbf535656a7db3f40da28c55a9b2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422354"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630762"
 ---
 # <a name="icordebugvariablesymbolsetvalue-method"></a>ICorDebugVariableSymbol::SetValue – metoda
-Proměnné přiřazuje hodnoty bajtové pole.  
+Přiřadí hodnotu pole bajtů na proměnnou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,30 +29,30 @@ HRESULT SetValue(
   
 #### <a name="parameters"></a>Parametry  
  `offset`  
- [v] Počáteční odsazení v proměnné, pro kterou chcete nastavit hodnotu. Tento parametr je použit při zápisu do pole člena v objektu.  
+ [in] Počáteční posun v proměnné, ve kterém se má nastavit hodnotu. Tento parametr se používá při zápisu do pole člena v objektu.  
   
  `threadID`  
- [v] Identifikátor vlákno vlákna, jehož kontext musí být aktualizovány tak, aby odrážely novou hodnotu.  
+ [in] Identifikátor vlákna, jehož kontext musí být aktualizovány tak, aby odrážely novou hodnotu.  
   
  `cbContext`  
- [v] Velikost v bajtech kontextu přístup z více vláken.  
+ [in] Velikost v bajtech kontext vlákna.  
   
  `context`  
- [v] Vlákno kontext, který používá pro zápis hodnoty.  
+ [in] Kontext vlákna používá pro zápis hodnoty.  
   
  `cbValue`  
- [v] Velikost v bajtech `pValue` vyrovnávací paměti.  
+ [in] Velikost v bajtech `pValue` vyrovnávací paměti.  
   
  `pValue`  
- [v] Vyrovnávací paměť, která obsahuje hodnotu pro nastavení.  
+ [in] Vyrovnávací paměť, která obsahuje hodnotu pro nastavení.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ HRESULT SetValue(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugVariableSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugVariableSymbol – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

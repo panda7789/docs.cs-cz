@@ -18,12 +18,12 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic], Event statements
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
-ms.openlocfilehash: 14e70a07469d6bb2701884d8646d161c78e65dc0
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3a13b1a3d3e44f2c309e031e23972a5326ed3faa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126273"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653616"
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definovanou událost.  
@@ -62,15 +62,15 @@ End Event
 |`accessmodifier`|Volitelné. Určuje, jaký kód může přistupovat k události. Může být jedna z následujících akcí:<br /><br /> -   [Veřejné](../../../visual-basic/language-reference/modifiers/public.md)– jakýkoli kód, který můžete přístup k elementu, který deklaruje se k němu přístup.<br />-   [Chráněné](../../../visual-basic/language-reference/modifiers/protected.md)– pouze pro kód v rámci své třídy nebo z odvozené třídy k němu přístup.<br />-   [Friend –](../../../visual-basic/language-reference/modifiers/friend.md)– pouze pro kód ve stejném sestavení k němu přístup.<br />-   [Privátní](../../../visual-basic/language-reference/modifiers/private.md)– pouze kód v elementu, který deklaruje se k němu přístup.<br /> -   [Protected Friend](../../language-reference/modifiers/protected-friend.md)– pouze pro kód v události, třídy odvozené třídy nebo stejného sestavení k němu přístup. <br />- [Privátní chráněné](../../language-reference/modifiers/private-protected.md)– pouze pro kód ve třídě události nebo z odvozené třídy ve stejném sestavení k němu přístup.|  
 |`Shared`|Volitelné. Určuje, že tato událost není přidružen k určité instanci třídy nebo struktury.|  
 |`Shadows`|Volitelné. Označuje, že tato událost se znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě. Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu.<br /><br /> Stínovaný element je k dispozici v rámci odvozené třídy, která zastiňuje, s výjimkou z kde stínového provozu prvek je přístupný. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.|  
-|`eventname`|Požadováno. Název události. splňuje standardní zásady vytváření názvů proměnných.|  
+|`eventname`|Povinný parametr. Název události. splňuje standardní zásady vytváření názvů proměnných.|  
 |`parameterlist`|Volitelné. Seznam místních proměnných, které představují parametry této události. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
 |`Implements`|Volitelné. Označuje, že tato událost implementuje události rozhraní.|  
 |`implementslist`|Požadováno pokud `Implements` pochází. Seznam `Sub` postupy se implementuje. Několik procedur se oddělují čárkami:<br /><br /> *implementedprocedure* [, *implementedprocedure* ...]<br /><br /> Každý `implementedprocedure` má následující syntaxi a části:<br /><br /> `interface`.`definedname`<br /><br /> -   `interface` -Vyžaduje. Název rozhraní, třídy nebo struktury obsahující tento postup je implementace.<br />-   `Definedname` -Vyžaduje. Název, podle kterého postupu je definován v `interface`. To nemusí být stejné jako `name`, název, který tento postup používá při implementaci definovaný postupem.|  
 |`Custom`|Povinný parametr. Události deklarované jako `Custom` musí definovat vlastní `AddHandler`, `RemoveHandler`, a `RaiseEvent` přistupující objekty.|  
 |`delegatename`|Volitelné. Název delegáta, který určuje podpis obslužné rutiny události.|  
-|`AddHandler`|Požadováno. Deklaruje `AddHandler` přístupový objekt, který určuje příkazy ke spuštění při přidání obslužné rutiny události, buď explicitně pomocí `AddHandler` příkazu nebo implicitně pomocí `Handles` klauzuli.|  
+|`AddHandler`|Povinný parametr. Deklaruje `AddHandler` přístupový objekt, který určuje příkazy ke spuštění při přidání obslužné rutiny události, buď explicitně pomocí `AddHandler` příkazu nebo implicitně pomocí `Handles` klauzuli.|  
 |`End AddHandler`|Povinný parametr. Ukončuje `AddHandler` bloku.|  
-|`value`|Požadováno. Název parametru.|  
+|`value`|Povinný parametr. Název parametru.|  
 |`RemoveHandler`|Povinný parametr. Deklaruje `RemoveHandler` přístupový objekt, který určuje příkazy ke spuštění při odebrání obslužné rutiny události pomocí `RemoveHandler` příkazu.|  
 |`End RemoveHandler`|Povinný parametr. Ukončuje `RemoveHandler` bloku.|  
 |`RaiseEvent`|Povinný parametr. Deklaruje `RaiseEvent` přístupový objekt, který určuje příkazy ke spuštění, když se vyvolá událost pomocí `RaiseEvent` příkazu. Tím se obvykle vyvolá seznam delegátů udržuje `AddHandler` a `RemoveHandler` přistupující objekty.|  
@@ -117,15 +117,15 @@ End Event
 > [!NOTE]
 >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem jako formulář nemá. Chcete-li povolit tento formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [dělení na spravovaná vlákna](../../../standard/threading/index.md).  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)  
- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)  
- [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)  
- [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)  
- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)  
- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Jak: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)  
- [Jak: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)  
- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)
+- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)
+- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)
+- [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)
+- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+- [Postupy: Deklarování vlastních událostí k zabránění blokování](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)
+- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
+- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)

@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 830e3e6e98be2eaaff2af6c0bdac650732833ab7
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: d4bce84d26e8f498f065c887b583e18d8ea7c786
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864418"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651198"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Převádění mezi DateTime a DateTimeOffset
 
@@ -131,4 +131,4 @@ Všimněte si, že tento kód vytvoří dva předpoklady, které v závislosti n
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)

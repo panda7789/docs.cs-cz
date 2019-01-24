@@ -2,21 +2,21 @@
 title: '&lt;wsdlImporter&gt;'
 ms.date: 03/30/2017
 ms.assetid: 986b2165-8430-4dba-b1b8-00396841bb96
-ms.openlocfilehash: 43c1a50c740cd9c75ee641e4ac4d0fa8ea3ca36b
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5f3d53111c4d303146701b03d7e7b32833cd9edd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54144987"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651042"
 ---
 # <a name="ltwsdlimportergt"></a>&lt;wsdlImporter&gt;
 Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy.  
   
 \<system.ServiceModel>  
-\<klient >  
+\<client>  
 \<metadata >  
-\<wsdlImporters >  
-\<wsdlImporter >  
+\<wsdlImporters>  
+\<wsdlImporter>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,16 +44,16 @@ Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<wsdlImporters >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)|Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy.|  
+|[\<wsdlImporters>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md)|Určuje všechny importers WSDL, které Importuje metadata webové služby WSDL (Description Language) 1.1 s přílohami WS-Policy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Programu pro import WSDL umožňuje importovat metadata a také převést, které informace do různých tříd, které představují smlouvy a informace o koncovém bodu. Selektivně mohl importovat informace o smlouvě a koncový bod a vlastnosti, které zveřejnit jakékoli chyby importu a přijímat informace o typu relevantní pro import a převod balíčků. Podporuje také importovat informace o vazbě a vlastnosti, které poskytují přístup k dokumentům zásad, dokumenty WSDL, rozšíření WSDL a dokumentů schématu XML.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.WsdlImporterElement>  
- <xref:System.ServiceModel.Configuration.MetadataElement>  
- <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>  
- <xref:System.ServiceModel.Description.MetadataImporter>  
- <xref:System.ServiceModel.Description.WsdlImporter>  
- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.WsdlImporterElement>
+- <xref:System.ServiceModel.Configuration.MetadataElement>
+- <xref:System.ServiceModel.Configuration.WsdlImporterElementCollection>
+- <xref:System.ServiceModel.Description.MetadataImporter>
+- <xref:System.ServiceModel.Description.WsdlImporter>
+- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
+- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)

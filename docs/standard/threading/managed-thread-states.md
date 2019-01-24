@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 63890d5e-6025-4a7c-aaf0-d8bfd54b455f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a55409cd2c3bed2bc09db10622de1cceab934112
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cbf7db4d9369eade62767e55035df4118d5248ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646643"
 ---
 # <a name="managed-thread-states"></a>Stavy spravovaných vláken
 Vlastnost <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithType> poskytuje bitová maska, která označuje aktuální stav vlákna. Vlákno je vždy alespoň jedním z možných stavů v <xref:System.Threading.ThreadState> výčtu a může být ve více státech ve stejnou dobu.  
@@ -50,7 +50,7 @@ if ((state & (Unstarted | Stopped)) == 0)   // implies Running
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.ThreadAbortException>  
-- <xref:System.Threading.Thread>  
-- <xref:System.Threading.ThreadState>  
+- <xref:System.Threading.ThreadAbortException>
+- <xref:System.Threading.Thread>
+- <xref:System.Threading.ThreadState>
 - [Dělení na vlákna](../../../docs/standard/threading/index.md)

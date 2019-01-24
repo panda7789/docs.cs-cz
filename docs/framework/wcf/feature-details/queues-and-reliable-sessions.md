@@ -2,44 +2,44 @@
 title: Fronty a spolehlivé relace
 ms.date: 03/30/2017
 ms.assetid: 7e794d03-141c-45ed-b6b1-6c0e104c1464
-ms.openlocfilehash: a60f409a0f5c237c372fe3303d67ef979950eab4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2f79e1eac469dc1d9d775cbca0f06046f10dfb20
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494667"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642906"
 ---
 # <a name="queues-and-reliable-sessions"></a>Fronty a spolehlivé relace
-Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Témata obsažené v této části popisují funkce spolehlivého zasílání zpráv WCF.  
+Fronty a spolehlivé relace jsou funkce Windows Communication Foundation (WCF), které implementují spolehlivé zasílání zpráv. Témata obsažené v této části popisují funkce spolehlivé zasílání zpráv WCF.  
   
- Spolehlivé zasílání zpráv je, jak zdroj spolehlivého zasílání zpráv (označovaný jako zdroj) přenáší zprávy spolehlivě do spolehlivého zasílání zpráv cíl (označované jako cíl).  
+ Spolehlivé zasílání zpráv je, jak zdroj spolehlivé zasílání zpráv (označované jako zdroj) přenáší zprávy spolehlivě do spolehlivého zasílání zpráv cíle (označované jako cíl).  
   
  Spolehlivé zasílání zpráv má následující klíčové aspekty:  
   
--   Záruky přenosu zpráv odeslaných z zdroje do cílového umístění, bez ohledu na to, chyba přenosu zprávy nebo přenosu chyb.  
+-   Přenos záruky pro zprávy odeslané ze zdroje do cíle bez ohledu na selhání přenosu zpráv nebo selhání přenosu.  
   
--   Oddělení zdroj a cíl z vzájemně, která poskytuje nezávislé selhání a obnovení zdroj a cíl jako dobře stejně spolehlivá přenos a doručování zpráv Přestože zdroj nebo cíl nedostupný.  
+-   Oddělení zdroj a cíl z ostatních, které poskytuje nezávislé selhání a obnovení zdroje a cíle jako dobře spolehlivé doručování zpráv a přenosu i v případě, že zdroj nebo cíl nedostupný.  
   
- Spolehlivé zasílání zpráv se často dodává za cenu vysokou latencí. Latence je doba, která je potřebná pro zprávu, která se přenos dat ze zdroje do cíle. WCF, proto poskytuje následující typy spolehlivého zasílání zpráv:  
+ Spolehlivé zasílání zpráv je často za cenu vysokou latenci. Latence je doba, která je potřebná pro zprávy k dosažení cíle ze zdroje. WCF, proto poskytuje spolehlivé zasílání zpráv následující typy:  
   
--   [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md), která nabízí spolehlivé přenosu bez nákladů vysokou latencí  
+-   [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md), která nabízí spolehlivé přenos bez nákladů vysokou latencí  
   
--   [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md), která nabízí spolehlivé přenosů a oddělení mezi zdrojovým a cílovým.  
+-   [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md), která nabízí spolehlivé přenosů a oddělení mezi zdrojem a cílem.  
   
 ## <a name="reliable-sessions"></a>Spolehlivé relace  
- Spolehlivé relace zadejte začátku do konce spolehlivé přenosu zpráv mezi zdrojem a cílem pomocí protokolu WS-ReliableMessaging bez ohledu na počet a typ prostředníci, které oddělují koncové body zasílání zpráv (zdrojové a cílové). To zahrnuje všechny prostředníci přenosu, které nepoužívají protokolu SOAP (například HTTP proxy) nebo prostředníci používající SOAP (například založený na protokolu SOAP směrovače nebo mosty), které jsou požadovány pro zprávy tok mezi koncových bodů. Spolehlivé relace použijte okno s přenosy v paměti na selhání úroveň zprávy protokolu SOAP maska a znovu vytvořte připojení v případě selhání přenosu.  
+ Spolehlivé relace poskytují začátku do konce spolehlivé přenos zpráv mezi zdroj a cíl pomocí protokolu WS-ReliableMessaging bez ohledu na počet a typ zprostředkovatelů, které oddělují koncových bodů pro zasílání zpráv (zdrojové a cílové). To zahrnuje všechny přenosu zprostředkovatelů, které nevyužívají protokol SOAP (například proxy protokolu HTTP) nebo zprostředkovatelů, které používají protokol SOAP (například založený na protokolu SOAP směrovače nebo mosty), které jsou požadovány pro zprávy, které jsou předávány mezi koncovými body. Spolehlivé relace okno přenosu v paměti na selhání úroveň zprávy protokolu SOAP maska a znovu vytvořit připojení v případě selhání přenosu.  
   
- Spolehlivé relace poskytují spolehlivé zpráv s nízkou latencí přenosů. Poskytují protokolu SOAP zprávy přes všechny proxy servery nebo prostředníci, ekvivalent jaké TCP poskytuje pro pakety prostřednictvím mostů IP. Další informace o spolehlivé relace najdete v tématu [spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
+ Spolehlivé relace poskytují spolehlivé zprávy s nízkou latencí přenosy. Poskytují pro zprávy protokolu SOAP přes všechny proxy servery nebo prostředníci, ekvivalent jaké TCP poskytuje pro pakety přes mosty IP. Další informace o spolehlivých relací najdete v tématu [spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
   
-### <a name="queues"></a>Fronty  
- Fronty ve WCF zadejte oba spolehlivé přenosu zpráv a oddělení mezi zdroje a cíle za cenu vysokou latencí. Ve frontě WCF je nástavbou komunikaci služby Řízení front zpráv (MSMQ).  
+### <a name="queues"></a>fronty  
+ Fronty ve WCF poskytují obě reliable přenos zpráv a oddělení mezi zdroje a cíle za cenu vysokou latenci. Ve frontě WCF je nástavbou komunikaci služby Řízení front zpráv (MSMQ).  
   
- MSMQ je dodáván jako možnost s Windows, který běží jako služba NT. Se zaznamená zprávy k přenosu v přenosové frontě jménem zdroji a doručí do cílové fronty. Cílová fronta přijímá zprávy jménem cíl pro pozdější doručení vždy, když cíl požadavky pro zprávy. Správci frontu MSMQ implementovat protokol spolehlivého přenos zpráv tak, aby zprávy nejsou ztrátě při přenosu. Protokol může být nativní nebo založený na protokolu SOAP, jako je například Soap spolehlivého zasílání zpráv SRMP (Protocol).  
+ Služba MSMQ je dodáván jako možnost s Windows, na kterém běží jako služba NT. Zaznamenává zprávy pro předávání v přenosové frontě jménem zdroji a doručí ho do cílové fronty. Cílová fronta přijímá zprávy jménem cíl pro pozdější doručení pokaždé, když cíl žádosti o zprávy. Správci fronty MSMQ implementovat spolehlivé přenos zpráv protokolu, aby se zprávy nejsou ztraceno v přenosu. Protokol může být nativní nebo založený na protokolu SOAP, jako je například spolehlivé zasílání zpráv protokolu (SRMP Soap).  
   
- Oddělení, spolu s spolehlivé zpráva přenosy mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojové a cílové nemusí být spuštěna ve stejnou dobu. Implicitně to umožňuje scénáře, kde fronty, ve skutečnosti slouží jako vhodný mechanismus Vyrovnávání zatížení při došlo k neshodě mezi zpráva výroby zdrojem a rychlost spotřeby zpráva podle cílové. Další informace o frontách najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
+ Oddělení, spolu s přenosy spolehlivých zpráv mezi front, umožňuje aplikacím, které jsou volně vázány spolehlivě komunikovat. Na rozdíl od spolehlivé relace zdrojových a cílových nemusí běžet ve stejnou dobu. To umožňuje implicitně scénáře, kde fronty, v důsledku toho slouží jako mechanismus pro vyrovnávání zatížení při došlo k neshodě mezi výroby zprávy ve zdroji a frekvence zpráv konzumace cíl. Další informace o frontách najdete v tématu [fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md).  
   
-## <a name="see-also"></a>Viz také  
- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
- [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)  
- [Přehled spolehlivých relací](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Fronty ve WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)
+- [Přehled spolehlivých relací](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)

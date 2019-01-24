@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Konfigurace nastavení služby modelu COM +'
+title: 'Postupy: Konfigurace nastavení služby modelu COM+'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 9cbeb03e21ed3b8ec272d47815ac7e9c48d77499
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 8deb7be51cdf3273a57d6777b103123636a2d2f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348767"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637395"
 ---
-# <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby modelu COM +
+# <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby modelu COM+
 Když rozhraním aplikace přidá nebo odebere pomocí nástroje Konfigurace služby COM +, aktualizuje se konfigurace webové služby v konfiguračním souboru aplikace. V režimu hostovány COM +, souboru Application.config nachází v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  
   
 > [!NOTE]
@@ -96,5 +96,5 @@ public interface IFinancesContract : IDisposable
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-* [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+## <a name="see-also"></a>Viz také:
+- [Integrace s aplikacemi modelu COM+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)

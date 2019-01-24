@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, schema import and export
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
-ms.openlocfilehash: 0d18ee811763a1a3db6905bdbd18540ab5c97c05
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e12b4967a84797432ec30cdc88863f8530ea9afd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197368"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620523"
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Chcete-li generovat třídy ze schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a odchylky.  
@@ -91,7 +91,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
  [!code-csharp[C_SchemaImportExport#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#5)]
  [!code-vb[C_SchemaImportExport#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#5)]  
   
-### <a name="import-options-choosing-collection-types"></a>Možnosti importu: Výběr typy kolekcí  
+### <a name="import-options-choosing-collection-types"></a>Možnosti importu: Když zvolíte typy kolekcí  
  Kolekce položek představují dva speciální vzory v kódu XML: seznam položek a přidružení mezi jednu položku a další. Následuje příklad seznamu řetězců.  
   
  [!code-xml[C_SchemaImportExport#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#11)]  
@@ -129,7 +129,7 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
   
  `ReferencedCollectionTypes` Odpovídá vlastnosti **/collectionType** zapnout nástroje SvcUtil.exe. Všimněte si, že odkazují na více typy kolekcí **/collectionType** přepínač musí být zadán více než jednou. Pokud typ není v knihovnu MsCorLib.dll, jeho sestavení musí také být odkazovány **/reference** přepnout.  
   
-#### <a name="import-options-referencing-existing-types"></a>Možnosti importu: Odkazující na existující typy  
+#### <a name="import-options-referencing-existing-types"></a>Možnosti importu: Odkazování na existující typy  
  V některých případech odpovídají existující typy ve schématu [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů, a není nutné ke generování těchto typů úplně od začátku. (Tato část platí pouze pro typy noncollection. Typy kolekcí najdete v předchozí části.)  
   
  Například může mít standardní pořádaného microsoftem "Osoba" typ kontraktu dat, který chcete vždy použít při vyjadřování osoby. Pokaždé, když některé služby díky použití tohoto typu a jeho schématu se zobrazí v metadata služby, můžete chtít znovu použít existující `Person` zadejte při importu tohoto schématu namísto generování nové pro každou službu.  
@@ -172,20 +172,20 @@ Chcete-li generovat třídy ze schémat, které lze použít s Windows Communica
 > [!NOTE]
 >  <xref:System.Runtime.Serialization.XmlSerializableServices> Typ existuje výhradně na podporu této konkrétní funkce. To se nedoporučuje používat za žádným jiným účelem.  
   
-#### <a name="import-options-advanced-options"></a>Volby importu: Rozšířené možnosti  
+#### <a name="import-options-advanced-options"></a>Možnosti importu: Rozšířené možnosti  
  Následující jsou rozšířené možnosti importu:  
   
 -   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> Vlastnost. Zadejte <xref:System.CodeDom.Compiler.CodeDomProvider> pro generování kódu pro vygenerované třídy. Pokusy o mechanismu import, aby funkce, které <xref:System.CodeDom.Compiler.CodeDomProvider> nepodporuje. Pokud <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> není nastavena, kompletní [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] funkce se používá bez omezení.  
   
 -   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> Vlastnost. <xref:System.Runtime.Serialization.IDataContractSurrogate> Implementace se dá nastavit pomocí této vlastnosti. <xref:System.Runtime.Serialization.IDataContractSurrogate> Přizpůsobí proces importu. Další informace najdete v tématu [náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). Ve výchozím nastavení je použít žádné náhrady.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- <xref:System.Runtime.Serialization.XsdDataContractImporter>  
- <xref:System.Runtime.Serialization.XsdDataContractExporter>  
- <xref:System.Runtime.Serialization.ImportOptions>  
- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
- [Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)  
- [Import a export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)  
- [Export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)  
- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- <xref:System.Runtime.Serialization.XsdDataContractImporter>
+- <xref:System.Runtime.Serialization.XsdDataContractExporter>
+- <xref:System.Runtime.Serialization.ImportOptions>
+- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
+- [Náhrady kontraktů dat](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)
+- [Import a export schémat](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)
+- [Export schémat ze tříd](../../../../docs/framework/wcf/feature-details/exporting-schemas-from-classes.md)
+- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)

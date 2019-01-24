@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 1b5bada61a9d6374a1b961603fcf575199dee591
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 2252214a8ec217c30842995ea7d4d141e127d5f3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121399"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640443"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -187,7 +187,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
  Všimněte si, že rozhraní .NET Framework umožňuje důvěryhodného kódu k rozšíření [!INCLUDE[TLA2#tla_winfxwebapp](../../../includes/tla2sharptla-winfxwebapp-md.md)] izolovaného prostoru zóny Internetu tím, že vývojářům umožňuje psát spravovaná sestavení, které jsou označeny <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) a nasadili pro uživatele globální mezipaměti sestavení (GAC). Označení sestavení APTCA je operace vysoce citlivé a zabezpečení, protože povoluje libovolný kód k volání tohoto sestavení, včetně škodlivý kód z Internetu. Extrémně opatrní a osvědčené postupy a musí být při tomto postupu uživatele musíte se rozhodnout důvěřovat softwaru v pořadí, aby byl nainstalován.  
   
 <a name="Microsoft_Internet_Explorer_Security"></a>   
-## <a name="microsoft-internet-explorer-security"></a>Zabezpečení aplikace Microsoft Internet Explorer  
+## <a name="microsoft-internet-explorer-security"></a>Microsoft Internet Explorer Security  
  Nad rámec omezení problémy se zabezpečením a zjednodušení konfigurace zabezpečení [!INCLUDE[TLA#tla_ie6sp2](../../../includes/tlasharptla-ie6sp2-md.md)] obsahuje několik funkcí, které zvyšují zabezpečení pro uživatele zlepšení zabezpečení [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)]. Síla tyto funkce se pokusí povolit uživatelům větší kontrolu nad komfortem při jejich procházení.  
   
  Před verzí [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)], uživatele může být v souladu s některou z následujících akcí:  
@@ -208,12 +208,12 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
   
  [!INCLUDE[TLA2#tla_ie7](../../../includes/tla2sharptla-ie7-md.md)] zahrnuje a přesahuje možnosti zabezpečení [!INCLUDE[TLA2#tla_ie6sp2](../../../includes/tla2sharptla-ie6sp2-md.md)] jako součást dlouhodobě zaměřuje na zabezpečení.  
   
-## <a name="see-also"></a>Viz také  
- [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)  
- [Porozumění a práci v chráněném režimu, Internet Explorer](https://msdn.microsoft.com/library/bb250462.aspx)  
- [Windows XP Service Pack 3](https://www.microsoft.com/windows/products/windowsxp/sp3/default.mspx)  
- [Průvodce zabezpečením Windows Vista](https://www.microsoft.com/downloads/details.aspx?familyid=a3d1bbed-7f35-4e72-bfb5-b84a526c1565&displaylang=en)  
- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)  
- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)  
- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)
+## <a name="see-also"></a>Viz také:
+- [Principy zabezpečení v Microsoft Internet Explorer 6 ve Windows XP s aktualizací SP2](https://www.microsoft.com/downloads/details.aspx?FamilyId=E550F940-37A0-4541-B5E2-704AB386C3ED&displaylang=en)
+- [Porozumění a práci v chráněném režimu, Internet Explorer](https://msdn.microsoft.com/library/bb250462.aspx)
+- [Windows XP Service Pack 3](https://www.microsoft.com/windows/products/windowsxp/sp3/default.mspx)
+- [Průvodce zabezpečením Windows Vista](https://www.microsoft.com/downloads/details.aspx?familyid=a3d1bbed-7f35-4e72-bfb5-b84a526c1565&displaylang=en)
+- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
+- [Zabezpečení](../../../docs/framework/wpf/security-wpf.md)
+- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)

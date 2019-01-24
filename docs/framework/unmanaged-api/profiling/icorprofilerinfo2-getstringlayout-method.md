@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d1bd732a82028afe809f4c2141e1d61668eae1c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b87444165f0504964b6489beb562ca2e8bd4697e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454915"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524283"
 ---
 # <a name="icorprofilerinfo2getstringlayout-method"></a>ICorProfilerInfo2::GetStringLayout – metoda
-Získá informace o rozložení objektu řetězce. Tato metoda je zastaralá ve [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]a je nahrazena [icorprofilerinfo3::getstringlayout2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) metoda.  
+Získá informace o rozložení objektu string. Tato metoda je zastaralá ve [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]a je nahrazen technologií [icorprofilerinfo3::getstringlayout2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,30 +38,30 @@ HRESULT GetStringLayout(
   
 #### <a name="parameters"></a>Parametry  
  `pBufferLengthOffset`  
- [out] Ukazatel na posun umístění relativně k `ObjectID` ukazatele, který ukládá délka řetězce. Délka se ukládají jako `DWORD`.  
+ [out] Ukazatel na posun umístění vzhledem ke `ObjectID` ukazatel, který ukládá délku řetězce. Délka se ukládá jako `DWORD`.  
   
 > [!NOTE]
->  Tento parametr vrátí délku řetězce samostatně, není délka vyrovnávací paměti. Délka vyrovnávací paměti je již k dispozici.  
+>  Tento parametr vrátí délku řetězce, nikoli délka vyrovnávací paměti. Délka vyrovnávací paměti je už k dispozici.  
   
  `PStringLengthOffset`  
- [out] Ukazatel na posun umístění relativně k `ObjectID` ukazatele, uchovávající délky řetězce sám sebe. Délka se ukládají jako `DWORD`.  
+ [out] Ukazatel na posun umístění vzhledem ke `ObjectID` ukazatel, který ukládá délku samotný řetězec. Délka se ukládá jako `DWORD`.  
   
  `pBufferOffset`  
- [out] Ukazatel na posun vyrovnávací paměti, relativně k `ObjectID` ukazatele, který ukládá řetězec široké znaky.  
+ [out] Ukazatel na posun vyrovnávací paměti, relativní k `ObjectID` ukazatel, který ukládá řetězec širokých znaků.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetStringLayout` Metoda získá posun, vzhledem k `ObjectID` ukazatele, umístění, ve kterých se ukládají následující:  
+ `GetStringLayout` Metoda získá posuny, vzhledem k `ObjectID` ukazatele z umístění, ve kterých se ukládají následující:  
   
--   Délka vyrovnávací paměti řetězec.  
+-   Délka vyrovnávací paměti řetězce.  
   
--   Délka řetězce sám sebe.  
+-   Délka samotný řetězec.  
   
--   Vyrovnávací paměť, která obsahuje konkrétní řetězec široké znaky.  
+-   Vyrovnávací paměť, která obsahuje skutečné řetězec širokých znaků.  
   
- Řetězce může být ukončené hodnotou null.  
+ Řetězce můžou být zakončený hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -69,6 +69,6 @@ HRESULT GetStringLayout(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

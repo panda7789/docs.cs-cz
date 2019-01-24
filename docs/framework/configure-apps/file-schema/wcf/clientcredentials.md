@@ -1,22 +1,22 @@
 ---
-title: '&lt;Třídu ClientCredentials&gt;'
+title: '&lt;clientCredentials&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1e6eef0d-a34e-4d74-b0f7-f65d2181858d
-ms.openlocfilehash: 3f70a4e6e27507c3820e1b67f49664e538ac736f
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: d8171254fed64a2d9ba526d5714d5707aa1b1c1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145742"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646052"
 ---
-# <a name="ltclientcredentialsgt"></a>&lt;Třídu ClientCredentials&gt;
+# <a name="ltclientcredentialsgt"></a>&lt;clientCredentials&gt;
 Určuje pověření pro ověření klienta ke službě.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<názvy endpointBehaviors >  
+\<endpointBehaviors>  
 \<chování >  
-\<třídu clientCredentials >  
+\<clientCredentials>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,24 +52,24 @@ Určuje pověření pro ověření klienta ke službě.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<clientCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateClientElement>.|  
-|[\<httpDigest >](../../../../../docs/framework/configure-apps/file-schema/wcf/httpdigest-element.md)|Určuje algoritmu digest pro ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.HttpDigestClientElement>.|  
-|[\<třídy issuedToken >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní typ tokenu pro ověření klienta k zabezpečení tokenu služby (STS). Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>.|  
+|[\<clientCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509InitiatorCertificateClientElement>.|  
+|[\<httpDigest>](../../../../../docs/framework/configure-apps/file-schema/wcf/httpdigest-element.md)|Určuje algoritmu digest pro ověření klienta ke službě. Tento prvek je typu <xref:System.ServiceModel.Configuration.HttpDigestClientElement>.|  
+|[\<issuedToken>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní typ tokenu pro ověření klienta k zabezpečení tokenu služby (STS). Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>.|  
 |[\<peer>](../../../../../docs/framework/configure-apps/file-schema/wcf/peer-of-clientcredentials-element.md)|Určuje aktuální peer pověření. Tento prvek je typu <xref:System.ServiceModel.Configuration.PeerCredentialElement>.|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověřování klienta a poskytuje strukturu pro nastavení možnosti certifikátu. Tento certifikát musí být zadaný out-of-band ze služby ke klientovi. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>.|  
-|[\<Windows >](../../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)|Určuje přihlašovací údaje Windows. Výchozí hodnota je přihlašovacích údajů aktuálního vlákna. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsClientElement>.|  
+|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný k ověřování klienta a poskytuje strukturu pro nastavení možnosti certifikátu. Tento certifikát musí být zadaný out-of-band ze služby ke klientovi. Tento prvek je typu <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement>.|  
+|[\<windows>](../../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)|Určuje přihlašovací údaje Windows. Výchozí hodnota je přihlašovacích údajů aktuálního vlákna. Tento prvek je typu <xref:System.ServiceModel.Configuration.WindowsClientElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování koncového bodu.|  
   
 ## <a name="remarks"></a>Poznámky  
  Přihlašovací údaje pro klienta se používají k ověření klienta ke službám v případech, kdy je vyžaduje vzájemné ověřování. Tento oddíl konfigurace lze také určení certifikátů služby pro scénáře, ve kterém musí klient zabezpečené zprávy do služby pomocí certifikátu služby.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
- <xref:System.ServiceModel.Description.ClientCredentials>  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
+- <xref:System.ServiceModel.Description.ClientCredentials>
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)

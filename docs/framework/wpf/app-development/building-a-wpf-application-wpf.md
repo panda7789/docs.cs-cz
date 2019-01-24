@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 89ceb39b08250bc400eed6ca8f8c24013446b453
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3bae07f8b72225ccb502a32fbc03fb4651c80d63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084082"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654279"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] spustitelné soubory (.exe), knihovny (DLL), nebo kombinací obou typů sestavení. Toto téma popisuje, jak vytvořit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací a popisuje klíčové kroky v procesu sestavení.  
@@ -29,7 +29,7 @@ Aplikace Windows Presentation Foundation (WPF) může být sestaven jako [!INCLU
 -   Visual Studio. Visual Studio je integrované vývojové prostředí, které aplikace WPF pomocí nástroje MSBuild zkompiluje a obsahuje vizuálního návrháře pro vytvoření uživatelského rozhraní. Další informace najdete v tématu [vývoj aplikací v sadě Visual Studio](https://msdn.microsoft.com/library/97490c1b-a247-41fb-8f2c-bc4c201eff68) a [návrh XAML v sadě Visual Studio](/visualstudio/designers/designing-xaml-in-visual-studio).  
   
 <a name="The_Windows_Presentation_Foundation_Build_Pipeline"></a>   
-## <a name="wpf-build-pipeline"></a>Kanál sestavení WPF  
+## <a name="wpf-build-pipeline"></a>WPF Build Pipeline  
  Když [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projekt se vytvořil, kombinace specifické pro jazyk a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]– jsou vyvolány určité cíle. Proces provedení tyto cíle se nazývá kanálu sestavení, a jsou klíčové kroky návodu na následujícím obrázku.  
   
  ![Proces sestavení WPF](../../../../docs/framework/wpf/app-development/media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")  
@@ -166,8 +166,8 @@ End Sub
   
 -   Nic přepsán (Pokud se nic v projektu nezměnilo).  
   
-## <a name="see-also"></a>Viz také  
- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
- [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)  
- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+## <a name="see-also"></a>Viz také:
+- [Nasazení aplikace WPF](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)
+- [Referenční dokumentace WPF MSBuild](/visualstudio/msbuild/wpf-msbuild-reference)
+- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)

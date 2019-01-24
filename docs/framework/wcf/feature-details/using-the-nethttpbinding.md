@@ -2,12 +2,12 @@
 title: Používání vazeb NetHttpBinding
 ms.date: 03/30/2017
 ms.assetid: fe134acf-ceca-49de-84a9-05a37e3841f1
-ms.openlocfilehash: cd4a50798ff709c32db056c6aa7289993431f40e
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: b00b4ed24d15519baf91ce38678fd91056eff521
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696739"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658725"
 ---
 # <a name="using-the-nethttpbinding"></a>Používání vazeb NetHttpBinding
 <xref:System.ServiceModel.NetHttpBinding> Vazba určená pro použití protokolu HTTP nebo objektu websocket na straně služby a používá binární kódování ve výchozím nastavení. <xref:System.ServiceModel.NetHttpBinding> zjistí, jestli se používá s kontraktů požadavek odpověď nebo duplexní kontrakt a změnit její chování tak, aby odpovídaly – použije HTTP pro kontraktů požadavek odpověď a protokoly Websocket pro duplexní kontrakty. Toto chování lze přepsat pomocí <xref:System.ServiceModel.Channels.WebSocketTransportUsage> nastavení:  
@@ -45,7 +45,7 @@ ms.locfileid: "46696739"
         </binding>  
       </netHttpBinding>  
     </bindings>  
-    <!- ... -->   
+    ...
   </system.serviceModel>  
 ```  
   
@@ -58,8 +58,8 @@ ServiceHost svchost = new ServiceHost(typeof(Service1), baseAddress);
         }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace vazeb pro služby](../../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)  
- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)  
- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
- [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace vazeb pro služby](../../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md)
+- [Vazby](../../../../docs/framework/wcf/feature-details/bindings.md)
+- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
+- [Duplexní služby](../../../../docs/framework/wcf/feature-details/duplex-services.md)

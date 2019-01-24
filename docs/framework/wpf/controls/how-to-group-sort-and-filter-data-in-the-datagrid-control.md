@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: skupiny, třídění a filtrování dat v objektu DataGrid řízení'
+title: 'Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,69 +9,69 @@ helpviewer_keywords:
 - DataGrid [WPF], group
 - DataGrid [WPF], filter
 ms.assetid: 03345e85-89e3-4aec-9ed0-3b80759df770
-ms.openlocfilehash: 49ed0f43f0ebebe1aff7ef2f12f667ca656a774a
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.openlocfilehash: f0f80afd982092248bc52590e072c92784dbcbce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028003"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650454"
 ---
-# <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>Postupy: skupina, řazení a filtrování dat v ovládacím prvku DataGrid
+# <a name="how-to-group-sort-and-filter-data-in-the-datagrid-control"></a>Postupy: Seskupení, řazení a filtrování dat v ovládacím prvku DataGrid
 
-Je často užitečné k zobrazení dat v <xref:System.Windows.Controls.DataGrid> seskupování, řazení a filtrování dat různými způsoby. Skupina, řazení a filtrování dat v <xref:System.Windows.Controls.DataGrid>, navázat jej na <xref:System.Windows.Data.CollectionView> , která podporuje tyto funkce. Potom můžete pracovat s daty v <xref:System.Windows.Data.CollectionView> bez ovlivnění základní zdrojová data. Změny v zobrazení kolekce se projeví v <xref:System.Windows.Controls.DataGrid> uživatelské rozhraní (UI).
+Často je užitečné, chcete-li zobrazit data <xref:System.Windows.Controls.DataGrid> seskupení, řazení a filtrování dat různými způsoby. Seskupení, řazení a filtrování dat v <xref:System.Windows.Controls.DataGrid>, umožňuje vytvořit vazbu <xref:System.Windows.Data.CollectionView> , který podporuje tyto funkce. Pak můžete pracovat s daty v <xref:System.Windows.Data.CollectionView> bez ovlivnění základního zdrojová data. V zobrazení kolekce se projeví v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní (UI).
 
-<xref:System.Windows.Data.CollectionView> Třída poskytuje seskupení a řazení funkce pro zdroj dat, který implementuje <xref:System.Collections.IEnumerable> rozhraní. <xref:System.Windows.Data.CollectionViewSource> Vám umožňuje nastavit vlastnosti <xref:System.Windows.Data.CollectionView> z XAML.
+<xref:System.Windows.Data.CollectionView> Třída poskytuje seskupování a řazení funkce pro zdroj dat, která implementuje <xref:System.Collections.IEnumerable> rozhraní. <xref:System.Windows.Data.CollectionViewSource> Třída umožňuje nastavit vlastnosti <xref:System.Windows.Data.CollectionView> z XAML.
 
-V tomto příkladu kolekce `Task` objektů je vázána <xref:System.Windows.Data.CollectionViewSource>. <xref:System.Windows.Data.CollectionViewSource> Slouží jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.DataGrid>. Seskupování, řazení a filtrování se provádí na <xref:System.Windows.Data.CollectionViewSource> a jsou zobrazeny v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní.
+V tomto příkladu kolekce `Task` objektům svázaným s <xref:System.Windows.Data.CollectionViewSource>. <xref:System.Windows.Data.CollectionViewSource> Slouží jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.DataGrid>. Seskupení, řazení a filtrování se provádí na <xref:System.Windows.Data.CollectionViewSource> a jsou zobrazeny v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní.
 
-![Seskupené data v DataGrid](./media/wpf-datagridgroups.png "WPF_DataGridGroups") seskupené data v DataGrid
+![Seskupená data do ovládacího prvku DataGrid](./media/wpf-datagridgroups.png "WPF_DataGridGroups") seskupená data do ovládacího prvku DataGrid
 
-## <a name="using-a-collectionviewsource-as-an-itemssource"></a>Použití CollectionViewSource jako ItemsSource
+## <a name="using-a-collectionviewsource-as-an-itemssource"></a>Pomocí kolekce CollectionViewSource jako vlastnost ItemsSource.
 
-Ke skupině, řazení a filtrování dat v <xref:System.Windows.Controls.DataGrid> řízení, vytvoření vazby <xref:System.Windows.Controls.DataGrid> k <xref:System.Windows.Data.CollectionView> , která podporuje tyto funkce. V tomto příkladu <xref:System.Windows.Controls.DataGrid> je vázána <xref:System.Windows.Data.CollectionViewSource> , který poskytuje tyto funkce pro <xref:System.Collections.Generic.List%601> z `Task` objekty.
+Pro seskupení, řazení a filtrování dat v <xref:System.Windows.Controls.DataGrid> ovládacího prvku, je vytvořit vazbu <xref:System.Windows.Controls.DataGrid> k <xref:System.Windows.Data.CollectionView> , který podporuje tyto funkce. V tomto příkladu <xref:System.Windows.Controls.DataGrid> je vázán na <xref:System.Windows.Data.CollectionViewSource> , který poskytuje tyto funkce pro <xref:System.Collections.Generic.List%601> z `Task` objekty.
 
-### <a name="to-bind-a-datagrid-to-a-collectionviewsource"></a>K vytvoření vazby ovládacího prvku DataGrid CollectionViewSource
+### <a name="to-bind-a-datagrid-to-a-collectionviewsource"></a>Kolekce CollectionViewSource vytvořit vazbu ovládacího prvku DataGrid
 
-1. Vytvořte kolekci dat, který implementuje <xref:System.Collections.IEnumerable> rozhraní.
+1. Vytvořit kolekci dat, která implementuje <xref:System.Collections.IEnumerable> rozhraní.
 
-    Pokud používáte <xref:System.Collections.Generic.List%601> k vytvoření kolekce, měli byste vytvořit novou třídu, která dědí z <xref:System.Collections.Generic.List%601> místo konkretizaci instance <xref:System.Collections.Generic.List%601>. To vám umožní k vazbě dat na kolekce v jazyce XAML.
+    Pokud používáte <xref:System.Collections.Generic.List%601> k vytvoření kolekce, měli byste vytvořit novou třídu, která dědí z <xref:System.Collections.Generic.List%601> namísto vytvoření instance instance <xref:System.Collections.Generic.List%601>. To vám umožní vytvořit vazbu na data do kolekce v XAML.
 
     > [!NOTE]
-    > Objekty v kolekci musí implementovat <xref:System.ComponentModel.INotifyPropertyChanged> změněné rozhraní a <xref:System.ComponentModel.IEditableObject> rozhraní, aby <xref:System.Windows.Controls.DataGrid> správně reakce na změny vlastností a úpravy. Další informace najdete v tématu [oznámení o změně vlastnost implementace](../data/how-to-implement-property-change-notification.md).
+    > Objekty v kolekci musí implementovat <xref:System.ComponentModel.INotifyPropertyChanged> změněné rozhraní a <xref:System.ComponentModel.IEditableObject> rozhraní, aby <xref:System.Windows.Controls.DataGrid> správně reagovat na změny vlastností a úpravy. Další informace najdete v tématu [implementace oznámení změn vlastností](../data/how-to-implement-property-change-notification.md).
 
     [!code-csharp[DataGrid_GroupSortFilter#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#101)]
     [!code-vb[DataGrid_GroupSortFilter#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#101)]
 
-2. V jazyce XAML, vytvoření instance třídy kolekce a nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md).
+2. V XAML, vytvoření instance třídy kolekce a nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md).
 
-3. V jazyce XAML, vytvořte instanci <xref:System.Windows.Data.CollectionViewSource> třídy, nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)a nastavte instance třídy kolekce jako <xref:System.Windows.Data.CollectionViewSource.Source%2A>.
+3. V XAML, vytvořte instanci <xref:System.Windows.Data.CollectionViewSource> třídy, nastavte [x: Key – direktiva](../../../../docs/framework/xaml-services/x-key-directive.md)a nastavte instance třídy kolekce jako <xref:System.Windows.Data.CollectionViewSource.Source%2A>.
 
     [!code-xaml[DataGrid_GroupSortFilter#201](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml#201)]
 
-4. Vytvoření instance <xref:System.Windows.Controls.DataGrid> třídy a nastavte <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost, která má <xref:System.Windows.Data.CollectionViewSource>.
+4. Vytvoření instance <xref:System.Windows.Controls.DataGrid> třídy a nastavit <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> vlastnost <xref:System.Windows.Data.CollectionViewSource>.
 
     [!code-xaml[DataGrid_GroupSortFilter#002](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#002)]
 
-5. Pro přístup k <xref:System.Windows.Data.CollectionViewSource> z vašeho kódu pomocí <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A> metodu k získání odkazu na <xref:System.Windows.Data.CollectionViewSource>.
+5. Pro přístup <xref:System.Windows.Data.CollectionViewSource> z vašeho kódu, použijte <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A> metodu k získání odkazu na <xref:System.Windows.Data.CollectionViewSource>.
 
     [!code-csharp[DataGrid_GroupSortFilter#102](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#102)]
     [!code-vb[DataGrid_GroupSortFilter#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#102)]
 
-## <a name="grouping-items-in-a-datagrid"></a>Seskupení položek v DataGrid
+## <a name="grouping-items-in-a-datagrid"></a>Seskupení položek do ovládacího prvku DataGrid
 
-Chcete-li určit způsob seskupení položek v <xref:System.Windows.Controls.DataGrid>, můžete použít <xref:System.Windows.Data.PropertyGroupDescription> typu chcete seskupit položky v zobrazení zdroje.
+K určení způsobu seskupení položek v <xref:System.Windows.Controls.DataGrid>, je použít <xref:System.Windows.Data.PropertyGroupDescription> typ seskupení položek v zobrazení zdroje.
 
-### <a name="to-group-items-in-a-datagrid-using-xaml"></a>Seskupit položky v DataGrid pomocí jazyka XAML
+### <a name="to-group-items-in-a-datagrid-using-xaml"></a>Seskupit položky v DataGrid pomocí XAML
 
-1. Vytvoření <xref:System.Windows.Data.PropertyGroupDescription> , určuje vlastnost do skupiny podle. Vlastnost můžete zadat v jazyce XAML, nebo v kódu.
+1. Vytvoření <xref:System.Windows.Data.PropertyGroupDescription> , který určuje vlastnost, která má Seskupit podle. V XAML nebo v kódu, můžete zadat vlastnost.
 
-   1. V jazyce XAML, nastavte <xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A> na název vlastnosti, která má Seskupit podle.
+   1. V XAML, nastavte <xref:System.Windows.Data.PropertyGroupDescription.PropertyName%2A> na název vlastnosti, které chcete seskupit podle.
 
-   2. V kódu předejte název vlastnost do skupiny pomocí konstruktoru.
+   2. V kódu předejte název vlastnosti Seskupit podle do konstruktoru.
 
 2. Přidat <xref:System.Windows.Data.PropertyGroupDescription> k <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A?displayProperty=nameWithType> kolekce.
 
-3. Přidat další instance <xref:System.Windows.Data.PropertyGroupDescription> k <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A> kolekce, které chcete přidat další úrovně seskupení.
+3. Přidat další instance <xref:System.Windows.Data.PropertyGroupDescription> k <xref:System.Windows.Data.CollectionViewSource.GroupDescriptions%2A> kolekce přidejte další úrovně seskupení.
 
     [!code-xaml[DataGrid_GroupSortFilter#012](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#012)]
     [!code-csharp[DataGrid_GroupSortFilter#112](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#112)]
@@ -84,45 +84,45 @@ Chcete-li určit způsob seskupení položek v <xref:System.Windows.Controls.Dat
     [!code-csharp[DataGrid_GroupSortFilter#114](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#114)]
     [!code-vb[DataGrid_GroupSortFilter#114](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#114)]
 
-Pokud budou seskupeny položky v <xref:System.Windows.Controls.DataGrid>, můžete definovat <xref:System.Windows.Controls.GroupStyle> určující vzhled každé skupiny. Můžete použít <xref:System.Windows.Controls.GroupStyle> přidáním jeho <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> kolekci DataGrid. Pokud máte více úrovní seskupení, můžete použít různé styly pro každou úroveň skupiny. Styly jsou použity v pořadí, ve kterém jsou definovány. Například pokud definujete dvě styly, první se použijí na nejvyšší úrovni řádek skupiny. Druhý styl bude použit na všechny skupiny řádků na úrovni druhé a nižší. <xref:System.Windows.FrameworkElement.DataContext%2A> z <xref:System.Windows.Controls.GroupStyle> je <xref:System.Windows.Data.CollectionViewGroup> představující skupině.
+Po seskupení položek v <xref:System.Windows.Controls.DataGrid>, můžete definovat <xref:System.Windows.Controls.GroupStyle> , který určuje vzhled každou skupinu. Můžete použít <xref:System.Windows.Controls.GroupStyle> tak, že ji přidáte <xref:System.Windows.Controls.ItemsControl.GroupStyle%2A> kolekce v prvku DataGrid. Pokud máte více úrovní seskupení můžete použít různé styly pro každou úroveň skupiny. Styly použijí v pořadí, ve kterém jsou definovány. Například pokud definujete dvě styly, první se použije u skupin nejvyšší úrovně řádku. Druhý styl bude platí pro všechny skupiny řádku na druhé úrovni a nižší. <xref:System.Windows.FrameworkElement.DataContext%2A> z <xref:System.Windows.Controls.GroupStyle> je <xref:System.Windows.Data.CollectionViewGroup> , který představuje skupiny.
 
-### <a name="to-change-the-appearance-of-row-group-headers"></a>Chcete-li změnit vzhled záhlaví skupiny řádků
+### <a name="to-change-the-appearance-of-row-group-headers"></a>Chcete-li změnit vzhled hlaviček skupiny řádků
 
-1. Vytvoření <xref:System.Windows.Controls.GroupStyle> , který definuje vzhled skupiny řádků.
+1. Vytvoření <xref:System.Windows.Controls.GroupStyle> , která definuje vzhled elementů skupinu řádků.
 
-2. Umístit <xref:System.Windows.Controls.GroupStyle> uvnitř `<DataGrid.GroupStyle>` značky.
+2. Vložit <xref:System.Windows.Controls.GroupStyle> uvnitř `<DataGrid.GroupStyle>` značky.
 
     [!code-xaml[DataGrid_GroupSortFilter#003](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#003)]
 
-## <a name="sorting-items-in-a-datagrid"></a>Řazení položek v DataGrid
+## <a name="sorting-items-in-a-datagrid"></a>Řazení položek do ovládacího prvku DataGrid
 
-Chcete-li určit, jak jsou položky seřazeny v <xref:System.Windows.Controls.DataGrid>, použijete <xref:System.ComponentModel.SortDescription> typ seřadíte položky v zobrazení zdroje.
+Chcete-li určit, jak jsou položky seřazeny v <xref:System.Windows.Controls.DataGrid>, použijete <xref:System.ComponentModel.SortDescription> typ řazení položek v zobrazení zdroje.
 
-### <a name="to-sort-items-in-a-datagrid"></a>Chcete-li řadit položky v DataGrid
+### <a name="to-sort-items-in-a-datagrid"></a>Chcete-li seřadit položky ovládacího prvku DataGrid
 
-1. Vytvoření <xref:System.ComponentModel.SortDescription> , určuje vlastnost, která má seřadit. Vlastnost můžete zadat v jazyce XAML, nebo v kódu.
+1. Vytvoření <xref:System.ComponentModel.SortDescription> , který určuje vlastnost, která má řadit. V XAML nebo v kódu, můžete zadat vlastnost.
 
-    1. V jazyce XAML, nastavte <xref:System.ComponentModel.SortDescription.PropertyName%2A> na název vlastnosti, která má seřadit.
+    1. V XAML, nastavte <xref:System.ComponentModel.SortDescription.PropertyName%2A> název vlastnosti, která má řadit.
 
-    2. V kódu předat název vlastnosti pro řazení podle a <xref:System.ComponentModel.ListSortDirection> konstruktoru.
+    2. V kódu, předejte název vlastnosti seřadit podle a <xref:System.ComponentModel.ListSortDirection> konstruktoru.
 
 2. Přidat <xref:System.ComponentModel.SortDescription> k <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A?displayProperty=nameWithType> kolekce.
 
-3. Přidat další instance <xref:System.ComponentModel.SortDescription> k <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A> kolekce seřadit podle další vlastnosti.
+3. Přidat další instance <xref:System.ComponentModel.SortDescription> k <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A> kolekce seřadíte položky podle další vlastnosti.
 
     [!code-xaml[DataGrid_GroupSortFilter#011](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml#011)]
     [!code-csharp[DataGrid_GroupSortFilter#211](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/WindowSnips1.xaml.cs#211)]
     [!code-vb[DataGrid_GroupSortFilter#211](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#211)]
 
-## <a name="filtering-items-in-a-datagrid"></a>Filtrování položek v DataGrid
+## <a name="filtering-items-in-a-datagrid"></a>Filtrování položek do ovládacího prvku DataGrid
 
-Filtrování položek v <xref:System.Windows.Controls.DataGrid> pomocí <xref:System.Windows.Data.CollectionViewSource>, poskytovat logiku filtrování obslužné rutiny pro <xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=nameWithType> událostí.
+Pro filtrování položek v <xref:System.Windows.Controls.DataGrid> pomocí <xref:System.Windows.Data.CollectionViewSource>, poskytuje logiku filtrování v obslužné rutině <xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=nameWithType> událostí.
 
-### <a name="to-filter-items-in-a-datagrid"></a>Filtrovat položky v DataGrid
+### <a name="to-filter-items-in-a-datagrid"></a>K filtrování položek do ovládacího prvku DataGrid
 
 1. Přidání obslužné rutiny <xref:System.Windows.Data.CollectionViewSource.Filter?displayProperty=nameWithType> událostí.
 
-2. V <xref:System.Windows.Data.CollectionViewSource.Filter> obslužné rutiny události, definovat filtrování logiku.
+2. V <xref:System.Windows.Data.CollectionViewSource.Filter> obslužná rutina události definujte logiku filtrování.
 
     Filtr se použijí pokaždé, když je zobrazení aktualizovat.
 
@@ -130,13 +130,13 @@ Filtrování položek v <xref:System.Windows.Controls.DataGrid> pomocí <xref:Sy
     [!code-csharp[DataGrid_GroupSortFilter#113](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#113)]
     [!code-vb[DataGrid_GroupSortFilter#113](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#113)]
 
-Alternativně můžete filtrovat položky v <xref:System.Windows.Controls.DataGrid> vytvořením metodu, která poskytuje filtrování logiku a nastavení <xref:System.Windows.Data.CollectionView.Filter%2A?displayProperty=nameWithType> vlastnost použít filtr. Příklad této metody naleznete v tématu [filtrování dat v zobrazení](../data/how-to-filter-data-in-a-view.md).
+Alternativně můžete filtrovat položky v <xref:System.Windows.Controls.DataGrid> vytvořením metodu, která poskytuje logiku filtrování a nastavení <xref:System.Windows.Data.CollectionView.Filter%2A?displayProperty=nameWithType> vlastnosti použijte filtr. Příklad této metody naleznete v tématu [filtrování dat v zobrazení](../data/how-to-filter-data-in-a-view.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje seskupování, řazení a filtrování `Task` data v <xref:System.Windows.Data.CollectionViewSource> a zobrazování seskupené, třídění a filtrování `Task` data <xref:System.Windows.Controls.DataGrid>. <xref:System.Windows.Data.CollectionViewSource> Slouží jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.DataGrid>. Seskupování, řazení a filtrování se provádí na <xref:System.Windows.Data.CollectionViewSource> a jsou zobrazeny v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní.
+Následující příklad ukazuje seskupení, řazení a filtrování `Task` data v <xref:System.Windows.Data.CollectionViewSource> a zobrazení skupinových, seřazený a filtrovaný `Task` data v <xref:System.Windows.Controls.DataGrid>. <xref:System.Windows.Data.CollectionViewSource> Slouží jako <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> pro <xref:System.Windows.Controls.DataGrid>. Seskupení, řazení a filtrování se provádí na <xref:System.Windows.Data.CollectionViewSource> a jsou zobrazeny v <xref:System.Windows.Controls.DataGrid> uživatelského rozhraní.
 
-K testování v tomto příkladu, musíte upravit název DGGroupSortFilterExample tak, aby odpovídaly název projektu. Pokud používáte Visual Basic, budete muset změnit název třídy pro <xref:System.Windows.Window> pro následující.
+K otestování v tomto příkladu, je potřeba upravit název DGGroupSortFilterExample tak, aby odpovídaly název vašeho projektu. Pokud používáte Visual Basic, bude nutné změnit název třídy pro <xref:System.Windows.Window> následující.
 
 `<Window x:Class="MainWindow"`
 
@@ -146,8 +146,8 @@ K testování v tomto příkladu, musíte upravit název DGGroupSortFilterExampl
 
 ## <a name="see-also"></a>Viz také:
 
-[Přehled datových vazeb](../data/data-binding-overview.md)  
-[Vytvoření a vytvoření vazby ke kolekci ObservableCollection](../data/how-to-create-and-bind-to-an-observablecollection.md)  
-[Filtrování dat v zobrazení](../data/how-to-filter-data-in-a-view.md)  
-[Řazení dat v zobrazení](../data/how-to-sort-data-in-a-view.md)  
-[Řazení a seskupení dat pomocí zobrazení XAML](../data/how-to-sort-and-group-data-using-a-view-in-xaml.md)  
+- [Přehled datových vazeb](../data/data-binding-overview.md)
+- [Vytvoření a vytvoření vazby ke kolekci ObservableCollection](../data/how-to-create-and-bind-to-an-observablecollection.md)
+- [Filtrování dat v zobrazení](../data/how-to-filter-data-in-a-view.md)
+- [Řazení dat v zobrazení](../data/how-to-sort-data-in-a-view.md)
+- [Řazení a seskupení dat pomocí zobrazení XAML](../data/how-to-sort-and-group-data-using-a-view-in-xaml.md)

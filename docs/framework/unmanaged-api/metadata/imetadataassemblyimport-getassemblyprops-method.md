@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 911d0d1444e2cf3cb8241eeeff63a5a86b4ab806
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bcf1dca8799ac082c025e602e5d82c99d42650d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446271"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659602"
 ---
 # <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps – metoda
 Získá sadu vlastností pro sestavení s podpisem Zadaná metadata.  
@@ -45,40 +45,40 @@ HRESULT GetAssemblyProps (
   
 #### <a name="parameters"></a>Parametry  
  `mda`  
- [v]. `mdAssembly` Metadata token, který představuje sestavení, pro které chcete získat vlastnosti.  
+ [in]. `mdAssembly` Token metadat, který představuje sestavení, pro které chcete-li získat vlastnosti.  
   
  `ppbPublicKey`  
- [out] Ukazatel na veřejný klíč, nebo token pro metadata.  
+ [out] Ukazatel na veřejný klíč nebo token metadat.  
   
  `pcbPublicKey`  
- [out] Počet bajtů vrácených veřejný klíč.  
+ [out] Počet bajtů vrácených veřejného klíče.  
   
  `pulHashAlgId`  
- [out] Ukazatel na algoritmus použitý k hodnoty hash souborů v sestavení.  
+ [out] Ukazatel na algoritmus použitý k vytvoření hodnoty hash souborů v sestavení.  
   
  `szName`  
  [out] Jednoduchý název sestavení.  
   
  `cchName`  
- [v] Velikost v široké znaků, z `szName`.  
+ [in] Velikost v široké znaky z `szName`.  
   
  `pchName`  
- [out] Počet široké znaků ve skutečnosti, vrátí se v `szName`.  
+ [out] Počet skutečně vrácených v široké znaky `szName`.  
   
  `pMetaData`  
  [out] Ukazatel na assemblymetadata – struktura, která obsahuje metadata sestavení.  
   
  `pdwAssemblyFlags`  
- [out] Příznaky, které popisují metadata použijí k sestavení. Tato hodnota je kombinací jednoho nebo více [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty.  
+ [out] Příznaky, které popisují metadata použité u sestavení. Tato hodnota je kombinace jedné nebo více [corassemblyflags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) hodnoty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

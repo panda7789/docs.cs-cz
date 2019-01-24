@@ -11,41 +11,41 @@ helpviewer_keywords:
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 81d09188ade29b0cac8985da218494f5373980cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8086a512d117767127260bcf779fc11555cd67dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397150"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632826"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Postupy: Vytváření souborů dokumentace XML pomocí modelu CodeDOM
-CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Proces zahrnuje vytvoření grafu modelu CodeDOM, který obsahuje dokumentační komentáře XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstupní dokumentace XML.  
+CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Tento proces zahrnuje vytvoření grafu CodeDOM, který obsahuje komentáře dokumentace XML, generování kódu a kompilace generovaného kódu s možností kompilátoru, která vytvoří výstup dokumentaci XML.  
   
-### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a>K vytvoření grafu modelu CodeDOM, který obsahuje XML – dokumentační komentáře  
+### <a name="to-create-a-codedom-graph-that-contains-xml-documentation-comments"></a>Chcete-li vytvořit grafu CodeDOM, který obsahuje komentáře dokumentace XML  
   
-1.  Vytvoření <xref:System.CodeDom.CodeCompileUnit> obsahující grafu modelu CodeDOM pro ukázkovou aplikaci.  
+1.  Vytvoření <xref:System.CodeDom.CodeCompileUnit> obsahuje graf CodeDOM pro ukázkovou aplikaci.  
   
-2.  Použití <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> konstruktor s `docComment` parametr nastaven na `true` vytvoříte elementy komentáře dokumentace XML a text.  
+2.  Použití <xref:System.CodeDom.CodeCommentStatement.%23ctor%2A> konstruktor s `docComment` parametr nastaven na `true` vytvořit prvky komentářů dokumentace XML a text.  
   
      [!code-csharp[CodeDomHelloWorldSample#4](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#4)]
      [!code-vb[CodeDomHelloWorldSample#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#4)]  
   
-### <a name="to-generate-the-code-from-the-codecompileunit"></a>Ke generování kódu z vlastnosti CodeCompileUnit  
+### <a name="to-generate-the-code-from-the-codecompileunit"></a>Ke generování kódu z CodeCompileUnit  
   
-1.  Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu pro generování kódu a vytvoření zdrojového souboru mají být zkompilovány, do.  
+1.  Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit%2A> metodu pro generování kódu a vytvořte zdrojový soubor ke kompilaci.  
   
      [!code-csharp[CodeDomHelloWorldSample#5](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#5)]
      [!code-vb[CodeDomHelloWorldSample#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#5)]  
   
-### <a name="to-compile-the-code-and-generate-the-documentation-file"></a>Ke kompilaci kódu a generování souborů dokumentace  
+### <a name="to-compile-the-code-and-generate-the-documentation-file"></a>Pro zkompilování kódu a generovat soubor dokumentace  
   
-1.  Přidat **/doc** – možnost kompilátoru k <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> vlastnost <xref:System.CodeDom.Compiler.CompilerParameters> objektu a předat objekt, který má <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> metodu pro vytvoření souborů dokumentace XML při kompilaci kódu.  
+1.  Přidat **/doc** – možnost kompilátoru do <xref:System.CodeDom.Compiler.CompilerParameters.CompilerOptions%2A> vlastnost <xref:System.CodeDom.Compiler.CompilerParameters> objektu a předejte objekt, který má <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A> metodu pro vytvoření souboru dokumentace XML, pokud kód je zkompilován.  
   
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří grafu modelu CodeDOM s dokumentační komentáře, vygeneruje soubor kódu z grafu a zkompiluje soubor a vytvoří přidružené souborů dokumentace XML.  
+ Následující příklad kódu vytvoří graf CodeDOM se komentáře k dokumentaci, generuje soubor kódu z grafu a kompiluje soubor a vytvoří přidružený soubor dokumentace XML.  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
  [!code-vb[CodeDomHelloWorldSample#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#1)]  
@@ -77,9 +77,9 @@ CodeDOM lze použít k vytvoření kód, který generuje dokumentace XML. Proces
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Tento příklad kódu vyžaduje `FullTrust` nastavit oprávnění při spuštění.  
+-   Tento příklad kódu vyžaduje `FullTrust` oprávnění nastaveno na hodnotu úspěšně vykonat.  
   
-## <a name="see-also"></a>Viz také  
- [Dokumentace kódu s XML](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)  
- [Dokumentační komentáře XML](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
- [Dokumentace XML](/cpp/ide/xml-documentation-visual-cpp)
+## <a name="see-also"></a>Viz také:
+- [Dokumentace kódu s XML](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+- [Dokumentační komentáře XML](~/docs/csharp/programming-guide/xmldoc/xml-documentation-comments.md)
+- [Dokumentace XML](/cpp/ide/xml-documentation-visual-cpp)

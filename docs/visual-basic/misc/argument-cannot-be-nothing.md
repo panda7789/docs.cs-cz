@@ -4,21 +4,21 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrGeneral_ArgumentNullException
 ms.assetid: 2abd995b-36a5-45f0-b3c1-6e0c3b31a875
-ms.openlocfilehash: 7b08dd41f638138df4c2f92fbe9f05f1312c2d03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 157329c74e9c300f8d4d60d96980f9cb77d0e550
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33600061"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656125"
 ---
 # <a name="argument-cannot-be-nothing"></a>Argument nemůže být Nothing
-Byl zadán hodnotu null pro argument, který musí mít hodnotu.  
+Hodnota null byl zadán pro argument, který musí mít hodnotu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Možná jste se pokusili použít objekt bez zadání instance objektu. V takovém případě použijte `New` – klíčové slovo se vytvořit instanci.  
+-   Možná jste se pokusili použít objekt bez zadání instance objektu. V takovém případě použijte `New` – klíčové slovo pro vytvoření instance.  
   
--   Zkontrolujte, že tato hodnota se vypočítá správně.  
+-   Zkontrolujte, že hodnota se vypočítá správně.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.NullReferenceException>
+## <a name="see-also"></a>Viz také:
+- <xref:System.NullReferenceException>

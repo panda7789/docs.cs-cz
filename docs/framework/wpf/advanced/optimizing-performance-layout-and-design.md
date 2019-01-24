@@ -9,74 +9,74 @@ helpviewer_keywords:
 - design considerations [WPF]
 - layout pass [WPF]
 ms.assetid: 005f4cda-a849-448b-916b-38d14d9a96fe
-ms.openlocfilehash: 9c9921e664d69038480e73ee6779ca9e48b81c7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c5dd567fa9f5db69c52072a1cc67b5c574f8e1f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33547833"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623869"
 ---
 # <a name="optimizing-performance-layout-and-design"></a>Optimalizace výkonu: Rozložení a návrh
-Návrh vašeho [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace může mít vliv na jeho výkon vytvořením nárokům v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu může ovlivnit výkonové charakteristiky vaší aplikace.  
+Návrh vašich [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikaci může ovlivnit její výkon tak, že vytvoříte zbytečnou režii v Výpočet rozložení a ověření odkazy na objekty. Konstrukce objektů, zejména v době běhu, mohou ovlivnit charakteristiky výkonu vaší aplikace.  
   
- Toto téma obsahuje doporučení pro optimální výkon v těchto oblastech.  
+ Toto téma obsahuje doporučení k výkonu v těchto oblastech.  
   
 ## <a name="layout"></a>Rozložení  
- Termín "rozložení průchodu" popisuje proces měření a uspořádání členů <xref:System.Windows.Controls.Panel>-odvozené kolekce objektu podřízené objekty a pak kreslení je na obrazovce. Rozložení průchodu je proces matematicky náročných – větší počet podřízených prvků v kolekci, tím větší je počet výpočty potřebné. Například pokaždé, když podřízené <xref:System.Windows.UIElement> objekt v kolekci změní pozici, má potenciál k aktivaci nového průchodu systémem rozložení. Z důvodu zavřít vztah mezi objekt charakteristiky a chování rozložení je důležité si uvědomit, typ události, které můžete vyvolat rozložení systému. Aplikace budou líp fungovat snížením co nejvíce že předat všechny nepotřebné volání rozložení.  
+ Termín "předání rozložení" popisuje proces měření a uspořádání členů <xref:System.Windows.Controls.Panel>-odvozené objektu kolekce podřízené prvky a nakreslením je na obrazovce. Předání rozložení je proces matematicky náročné – Čím větší počet podřízených položek v kolekci, tím větší počet vyžaduje výpočty. Například pokaždé, když podřízený <xref:System.Windows.UIElement> objekt v kolekci změní pozici, má potenciál pro aktivaci nové předáván systém rozložení. Z důvodu zavřít vztah mezi objekt charakteristiky a chování rozložení je důležité pochopit, typu události, které můžete vyvolat systém rozložení. Vaše aplikace budou líp fungovat snížením co nejvíc že předávat všechny nepotřebné volání rozložení.  
   
- Rozložení systému dokončení dva předává pro každý podřízený člen v kolekci: průchodu měr a předejte uspořádání. Každý podřízený objekt poskytuje vlastní přepsaného implementaci <xref:System.Windows.UIElement.Measure%2A> a <xref:System.Windows.UIElement.Arrange%2A> metody s cílem poskytnout vlastní rozložení konkrétní chování. V nejjednodušším rozložení je rekurzivní systém, který vede k element stal velikosti, umístěný a vykreslovány na obrazovce.  
+ Systém rozložení dokončení dva průchody pro každý podřízený člen v kolekci: míra pass a průchodu uspořádat. Každý podřízený objekt poskytuje vlastní přepsané provádění <xref:System.Windows.UIElement.Measure%2A> a <xref:System.Windows.UIElement.Arrange%2A> metody za účelem zajišťují vlastní chování specifické rozložení. V nejjednodušším rozložení je rekurzivní, která vede k elementu se velikost, umístěn a vykreslit na obrazovce.  
   
--   Podřízená <xref:System.Windows.UIElement> objekt zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
+-   Podřízený <xref:System.Windows.UIElement> objekt zahájí proces rozložení tak, že první jeho základní vlastnosti měří.  
   
--   Objektu <xref:System.Windows.FrameworkElement> vlastnosti, které souvisí s velikostí, jako například <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>, jsou vyhodnocovány.  
+-   Objektu <xref:System.Windows.FrameworkElement> vlastnosti, které se vztahují na velikost, například <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.FrameworkElement.Height%2A>, a <xref:System.Windows.FrameworkElement.Margin%2A>, jsou vyhodnocovány.  
   
--   <xref:System.Windows.Controls.Panel>-určitou logiku platí, jako <xref:System.Windows.Controls.DockPanel.Dock%2A> vlastnost <xref:System.Windows.Controls.DockPanel>, nebo <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost <xref:System.Windows.Controls.StackPanel>.  
+-   <xref:System.Windows.Controls.Panel>– Logika specifická pro použití, jako <xref:System.Windows.Controls.DockPanel.Dock%2A> vlastnost <xref:System.Windows.Controls.DockPanel>, nebo <xref:System.Windows.Controls.StackPanel.Orientation%2A> vlastnost <xref:System.Windows.Controls.StackPanel>.  
   
--   Obsah je uspořádané nebo umístěný po měří všechny podřízené objekty.  
+-   Obsah je uspořádat nebo po změření všechny podřízené objekty umístěny.  
   
--   Kolekce podřízených objektů je znázorněna na obrazovku.  
+-   Kolekce podřízených objektů vykreslením na obrazovku.  
   
- Proces průchodu rozložení je volána znovu, pokud dojde k některé z následujících akcí:  
+ Proces průchodu rozložení je znovu vyvolána, pokud kterákoli z následujících akcí:  
   
 -   Podřízený objekt se přidá do kolekce.  
   
--   A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije pro podřízený objekt.  
+-   A <xref:System.Windows.FrameworkElement.LayoutTransform%2A> se použije na podřízený objekt.  
   
 -   <xref:System.Windows.UIElement.UpdateLayout%2A> Metoda je volána pro podřízený objekt.  
   
--   Když dojde ke změně na hodnotu vlastnosti závislosti, které je označené jako metadat, které mají vliv na míru nebo uspořádat předává.  
+-   Když dojde k hodnotě vlastnosti závislosti, která je označená pomocí metadat by to mělo dopad měření nebo uspořádání předá ke změně.  
   
-### <a name="use-the-most-efficient-panel-where-possible"></a>Použijte nejúčinnější Panel, kde je to možné  
- Složitost proces rozložení přímo podle chování rozložení <xref:System.Windows.Controls.Panel>-odvozené elementy, které používáte. Například <xref:System.Windows.Controls.Grid> nebo <xref:System.Windows.Controls.StackPanel> řízení poskytuje mnohem více funkcí než <xref:System.Windows.Controls.Canvas> ovládacího prvku. Ceny pro toto větší zvýšení funkce je větší zvýšení výkonu nákladů. Ale pokud nechcete, aby funkce, <xref:System.Windows.Controls.Grid> poskytuje ovládací prvek, byste měli používat levněji alternativy, jako například <xref:System.Windows.Controls.Canvas> nebo vlastní panel.  
+### <a name="use-the-most-efficient-panel-where-possible"></a>Použít Panel nejúčinnější, kde je to možné  
+ Složitost procesu rozložení je přímo založena na chování rozložení <xref:System.Windows.Controls.Panel>-odvozené elementy, které používáte. Například <xref:System.Windows.Controls.Grid> nebo <xref:System.Windows.Controls.StackPanel> řízení poskytuje výrazně víc funkcí než <xref:System.Windows.Controls.Canvas> ovládacího prvku. Cena za toto větší zvýšení funkce je větší zvýšení nákladů na výkon. Ale pokud nechcete, aby funkce, která <xref:System.Windows.Controls.Grid> poskytuje ovládací prvek, jako byste měli použít méně nákladnější alternativy <xref:System.Windows.Controls.Canvas> nebo vlastní panel.  
   
  Další informace najdete v tématu [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md).  
   
-### <a name="update-rather-than-replace-a-rendertransform"></a>Aktualizovat spíše než náhradou RenderTransform  
- Může být možné aktualizovat <xref:System.Windows.Media.Transform> místo nahrazení jako hodnotu <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost. To platí hlavně v situacích, které obsahují animace. Při aktualizaci existující <xref:System.Windows.Media.Transform>, se vyhnout inicializaci výpočtu nepotřebné rozložení.  
+### <a name="update-rather-than-replace-a-rendertransform"></a>Místo nahrazení RenderTransform – aktualizovat  
+ Je možné aktualizovat <xref:System.Windows.Media.Transform> místo nahrazení jako hodnoty <xref:System.Windows.UIElement.RenderTransform%2A> vlastnost. To platí hlavně v situacích, které se týkají animace. Stačí aktualizovat existující <xref:System.Windows.Media.Transform>, byste se vyhnout zahájení výpočtu zbytečné rozložení aplikace.  
   
-### <a name="build-your-tree-top-down"></a>Sestavení vaší shora dolů stromu  
- Pokud uzel je přidat nebo odebrat z logického stromu, vlastnost invalidations jsou vyvolané nadřazeného uzlu a všechny její podřízené položky. Vzor konstrukce shora dolů v důsledku toho by měla vždycky dodržet předejdete náklady nepotřebné invalidations na uzly, které již byly ověřeny. Následující tabulka ukazuje rozdíl v provádění rychlost mezi vytváření stromu shora dolů a zdola nahoru, kde je stromu 150 úrovní do hloubky s jedním <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Controls.DockPanel> na každé úrovni.  
+### <a name="build-your-tree-top-down"></a>Vytvoření stromu nahoru dolů  
+ Při přidání nebo odebrání z logického stromu uzel vlastnost invalidations jsou vyvolány na nadřazeného uzlu a všechny jeho podřízené položky. Vzor konstrukce shora dolů v důsledku toho vždy byste měli dodržet, aby náklady zbytečné invalidations na uzly, které již byly ověřeny. Následující tabulka ukazuje rozdíl v rychlost provádění mezi sestavením stromu shora dolů a zdola nahoru, kde stromu je 150 úrovní do hloubky pomocí jediného <xref:System.Windows.Controls.TextBlock> a <xref:System.Windows.Controls.DockPanel> na každé úrovni.  
   
-|**Akce**|**Strom sestavování (v ms)**|**Vykreslení – zahrnuje stromu sestavování (v ms)**|  
+|**Akce**|**Strom sestavování (v ms)**|**Vykreslení – obsahuje strom sestavování (v ms)**|  
 |----------------|---------------------------------|-------------------------------------------------|  
 |Zdola nahoru|366|454|  
 |Shora dolů|11|96|  
   
- Následující příklad kódu ukazuje, jak vytvořit top stromu dolů.  
+ Následující příklad kódu ukazuje, jak vytvořit horní části stromu dolů.  
   
  [!code-csharp[Performance#PerformanceSnippet1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml.cs#performancesnippet1)]
  [!code-vb[Performance#PerformanceSnippet1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Performance/visualbasic/window1.xaml.vb#performancesnippet1)]  
   
- Další informace o logickém stromu najdete v tématu [stromy v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
+ Další informace o logickém stromu, naleznete v tématu [stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
   
-## <a name="see-also"></a>Viz také  
- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)  
- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)
+## <a name="see-also"></a>Viz také:
+- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+- [Plánování výkonu aplikace](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)
+- [Využití výhod hardwaru](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Chování objektu](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)
+- [Prostředky aplikace](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)
+- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)
+- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [Další výkonnostní doporučení](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)
+- [Rozložení](../../../../docs/framework/wpf/advanced/layout.md)

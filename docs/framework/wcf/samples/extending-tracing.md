@@ -2,12 +2,12 @@
 title: Rozšíření trasování
 ms.date: 03/30/2017
 ms.assetid: 2b971a99-16ec-4949-ad2e-b0c8731a873f
-ms.openlocfilehash: 02dfcc099883ed1d5e97b4f7b1a1f76d49b27a20
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.openlocfilehash: ff110a4b293a987ac07c29e3e4c1d52fe2d08294
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44494197"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653892"
 ---
 # <a name="extending-tracing"></a>Rozšíření trasování
 Tato ukázka předvádí, jak rozšířit funkci trasování Windows Communication Foundation (WCF) zápisem aktivit uživatelem definované trasy v kódu klienta a služby. To umožňuje uživateli vytvořit trasování aktivity a seskupit trasování do logických jednotek práce. Také je možné korelovat aktivity prostřednictvím převody (v rámci stejný koncový bod) a šíření (napříč koncovými body). V této ukázce je povoleno trasování klienta a služby. Další informace o tom, jak povolit trasování v konfiguračních souborů klienta a služby, najdete v části [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
@@ -96,5 +96,5 @@ Tato ukázka předvádí, jak rozšířit funkci trasování Windows Communicati
   
 3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], arranging items
 - ToolStripMenuItems [Windows Forms], cutting and pasting
 ms.assetid: cab9e03e-4edd-4c25-b3e3-bd1edc602bd9
-ms.openlocfilehash: 69ef2bbaa05155532887897a0aef79a778594169
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 12554ee2225dbb186392b910ddfd7c2f69695e7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384897"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660213"
 ---
 # <a name="how-to-move-toolstripmenuitems"></a>Postupy: Přesouvání ToolStripMenuItems
 V době návrhu, můžete přesunout celou nabídek nejvyšší úrovně a jejich položky nabídky na jiné místo <xref:System.Windows.Forms.MenuStrip>. Můžete také přesunout jednotlivé položky nabídky mezi nabídek nejvyšší úrovně nebo změní pozici položky nabídky v nabídce.  
@@ -50,7 +50,7 @@ V době návrhu, můžete přesunout celou nabídek nejvyšší úrovně a jejic
   
 4.  Klikněte na tlačítko klávesy se šipkami nahoru a dolů přesunout položku nabídky v rámci nabídky.  
   
-5.  Klikněte na tlačítko **OK**.  
+5.  Klikněte na **OK**.  
   
 ### <a name="to-move-a-menu-item-within-a-menu-using-the-keyboard"></a>Chcete-li přesunout položku nabídky v nabídce pomocí klávesnice  
   
@@ -70,7 +70,7 @@ V době návrhu, můžete přesunout celou nabídek nejvyšší úrovně a jejic
   
      Položka nabídky, která můžete vyjmout vkládá vybranou položku nabídky.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.MenuStrip>  
- <xref:System.Windows.Forms.ToolStripMenuItem>  
- [Přehled ovládacího prvku MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.MenuStrip>
+- <xref:System.Windows.Forms.ToolStripMenuItem>
+- [Přehled ovládacího prvku MenuStrip](../../../../docs/framework/winforms/controls/menustrip-control-overview-windows-forms.md)

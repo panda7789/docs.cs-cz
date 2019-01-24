@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 22574df77250479250f1ce1369c4bfb59c456d26
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f2e9ed6ee23367e6ef3cd035ef5a485105da8a27
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525682"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653746"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -44,7 +44,7 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |-přírůstkové|Umožňuje přírůstkové kompilace [zastaralé].|
 |[-keycontainer](keycontainer-compiler-option.md)|Určuje kontejner klíče se silným názvem.|
 |[-keyfile](keyfile-compiler-option.md)|Určuje soubor klíče se silným názvem.|
-|[-langversion:\<řetězec >](langversion-compiler-option.md)|Určení jazykové verze: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější |
+|[-langversion:\<řetězec >](langversion-compiler-option.md)|Určení jazykové verze: Výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější verzi |
 |[-lib](lib-compiler-option.md)|Určuje další adresáře, ve kterém chcete hledat odkazy.|
 |[-link](link-compiler-option.md)|Zpřístupní informace o typu modelu COM v zadaném sestavení do projektu.|
 |[-linkresource](linkresource-compiler-option.md)|Propojí zadaný prostředek s tímto sestavením.|
@@ -80,9 +80,9 @@ Následující možnosti kompilátoru jsou seřazená podle abecedy. Seznam kate
 |[-win32manifest](win32manifest-compiler-option.md)|Určuje soubor manifestu win32 vlastní.|
 |[-win32res](win32res-compiler-option.md)|Určuje soubor prostředku win32 (.res).|
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](index.md)  
-- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](listed-by-category.md)  
-- [Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)  
+- [Možnosti kompilátoru jazyka C#](index.md)
+- [Možnosti kompilátoru jazyka C# uvedené podle kategorie](listed-by-category.md)
+- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [\<Kompilátor > – Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

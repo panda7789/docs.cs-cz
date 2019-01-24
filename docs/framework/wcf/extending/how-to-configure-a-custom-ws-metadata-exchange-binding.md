@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Konfigurace vlastního protokolu WS-Metadata Exchange vazby'
+title: 'Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: 3d6f74d88dc9db775718c0098eccced4750d3b75
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4328306a6b67d2eac498ec48d1769bdf4bd5f81e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184501"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642461"
 ---
-# <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastního protokolu WS-Metadata Exchange vazby
+# <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Postupy: Konfigurace vlastních vazeb protokolu WS-Metadata Exchange
 Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. Zahrnuje čtyři vazby metadata definovaná uživatelem systému Windows Communication Foundation (WCF), ale můžete publikovat metadat pomocí všechny vazby, který chcete. V tomto tématu ukazují, jak publikovat pomocí metadat `wsHttpBinding`. Tato vazba získáte možnost bezpečně doručovat jestli vystavuje metadata. Kód v tomto článku je založený na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 ### <a name="using-a-configuration-file"></a>Použití konfiguračního souboru  
@@ -113,9 +113,9 @@ Toto téma vysvětluje, jak nakonfigurovat vlastní WS-Metadata exchange vazby. 
     Console.WriteLine("Metadata section: " + section.Dialect.ToString());  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Chování při publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
- [Načítání metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  
- [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
- [Publikování koncových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)
+## <a name="see-also"></a>Viz také:
+- [Chování při publikování metadat](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)
+- [Načítání metadat](../../../../docs/framework/wcf/samples/retrieve-metadata.md)
+- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
+- [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)
+- [Publikování koncových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)

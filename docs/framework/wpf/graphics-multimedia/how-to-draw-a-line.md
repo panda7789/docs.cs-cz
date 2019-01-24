@@ -6,12 +6,12 @@ helpviewer_keywords:
 - graphics [WPF], lines
 - lines [WPF], drawing
 ms.assetid: 0513ee01-6b27-4bb3-85f3-3a3e6710d80e
-ms.openlocfilehash: bee343676175098493df347823a3bdbdf17b205f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 54152b6b68dd453c565afa2ffb23edfe8132a441
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45963767"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629017"
 ---
 # <a name="how-to-draw-a-line"></a>Postupy: Vykreslení čáry
 Tento příklad ukazuje, jak s použitím kreslení čar <xref:System.Windows.Shapes.Line> elementu.  
@@ -27,6 +27,6 @@ Tento příklad ukazuje, jak s použitím kreslení čar <xref:System.Windows.Sh
   
  V tomto příkladu je součástí větší ukázky; úplnou ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Shapes.Line>  
- [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Shapes.Line>
+- [Ukázka elementy obrazce](https://go.microsoft.com/fwlink/?LinkID=160037)

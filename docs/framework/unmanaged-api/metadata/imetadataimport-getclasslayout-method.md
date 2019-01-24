@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b031fc35a4687a8535e3cb5e9ef2a53bab9fe376
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52136426be9e8f220d8eb5fc93659f588f007498
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445504"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625098"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout – metoda
-Získá informace o třídě odkazuje zadaný TypeDef rozložení token.  
+Získá informace o rozložení třídy odkazuje zadaný TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,32 +42,32 @@ HRESULT GetClassLayout  (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] Token TypeDef pro třídu pro rozložení vrátit.  
+ [in] Token TypeDef pro třídu s rozložením se vraťte.  
   
  `pdwPackSize`  
- [out] Jeden z hodnoty 1, 2, 4, 8 nebo 16, představující velikost pack třídy.  
+ [out] Jedna z hodnot 1, 2, 4, 8 nebo 16, představující velikosti balíčku třídy.  
   
  `rFieldOffset`  
  [out] Pole [cor_field_offset –](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) hodnoty.  
   
  `cMax`  
- [v] Maximální velikost `rFieldOffset` pole.  
+ [in] Maximální velikost `rFieldOffset` pole.  
   
  `pcFieldOffset`  
- [out] Počet elementů, vrátí se v `rFieldOffset`.  
+ [out] Počet prvků vrácených v `rFieldOffset`.  
   
  `pulClassSize`  
- [out] Velikost v bajtech třídy reprezentována `td`.  
+ [out] Velikost v bajtech třída představovaná typem `td`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 078fac7f21ac31b21e5ac442ef81a1c0f496db93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e90f2b7b81bbf6401313209170ea65186c38d4e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430399"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711038"
 ---
 # <a name="icatalogservices-interface"></a>ICatalogServices – rozhraní
 Poskytuje metody pro vytváření katalogu služeb.  
   
- Toto rozhraní podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo z vašeho kódu.  
+ Toto rozhraní podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.  
   
 ## <a name="methods"></a>Metody  
   
@@ -35,5 +35,5 @@ Poskytuje metody pro vytváření katalogu služeb.
 |[Autodone – metoda](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-autodone-method.md)|Vyhrazeno pouze pro interní použití.|  
 |[NotAutodone – metoda](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-notautodone-method.md)|Vyhrazeno pouze pro interní použití.|  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

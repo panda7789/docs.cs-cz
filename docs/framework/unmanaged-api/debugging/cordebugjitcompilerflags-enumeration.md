@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5835da6ee20673c2662f1166d304a45ca3e9daeb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 512122d264e0817b89e8a371f57f11d31f7c4380
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405317"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54639630"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags – výčet
-Obsahuje hodnoty, které ovlivňují chování objektu spravovaného kompilátoru za běhu (JIT).  
+Obsahuje hodnoty, které ovlivňují chování spravované kompilátor just-in-time (JIT).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,12 +42,12 @@ typedef enum CorDebugJITCompilerFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`CORDEBUG_JIT_DEFAULT`|Určuje, že by měl sledovat data kompilace kompilátor a umožňuje optimalizace.|  
-|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Určuje, že by měl kompilátor sledovat kompilace data, ale zakáže optimalizace.|  
-|`CORDEBUG_JIT_ENABLE_ENC`|Určuje, že kompilátor by měl kompilace data, zakáže optimalizace, sledovat a umožňuje upravit a pokračovat technologie.|  
+|`CORDEBUG_JIT_DEFAULT`|Určuje, že kompilátor by měl sledovat kompilace data a umožňuje optimalizace.|  
+|`CORDEBUG_JIT_DISABLE_OPTIMIZATION`|Určuje, že kompilátor by měl sledovat data kompilace, ale zakáže optimalizace.|  
+|`CORDEBUG_JIT_ENABLE_ENC`|Určuje, že kompilátor by měl sledovat data kompilace, zakáže optimalizace, a umožňuje upravit a pokračovat technologie.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +55,5 @@ typedef enum CorDebugJITCompilerFlags {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: použití nástroje definice schématu XML ke generování třídy a dokumentů schématu XML'
+title: 'Postupy: Použijte nástroj definici schématu XML ke generování třídy a dokumentech schémat XML.'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - generating XML classes using XML Schema Definition tool
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - XML Schema Definition tool, using to generate classes that conform to specific schema
 - XML Schema Definition tool, using to generate XML Schema Document
 ms.assetid: 51f0edc3-993d-4051-b7f2-77753694d3d1
-ms.openlocfilehash: 2edaf7ba540035fbf2f49ba78b41ab99f8889391
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 645d6290ec16a772d8c188e8781097e1d67b14ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583045"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501537"
 ---
-# <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: použití nástroje definice schématu XML ke generování třídy a dokumentů schématu XML
+# <a name="how-to-use-the-xml-schema-definition-tool-to-generate-classes-and-xml-schema-documents"></a>Postupy: Použijte nástroj definici schématu XML ke generování třídy a dokumentech schémat XML.
 Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML, která popisuje třídu nebo ke generování třídy definované ve schématu XML. Následující postupy ukazují, jak provádět tyto operace.  
   
 ### <a name="to-generate-classes-that-conform-to-a-specific-schema"></a>Chcete-li generovat třídy, které odpovídají určité schéma  
@@ -54,10 +54,10 @@ Nástroj definici schématu XML (Xsd.exe) slouží ke generování schématu XML
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Data.DataSet>  
-- [Nástroj pro definici schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)  
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
-- [Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)  
-- <xref:System.Xml.Serialization.XmlSerializer>  
-- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- <xref:System.Data.DataSet>
+- [Nástroj pro definici schématu XML a serializace XML](../../../docs/standard/serialization/the-xml-schema-definition-tool-and-xml-serialization.md)
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
+- [Nástroj XML Schema Definition (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

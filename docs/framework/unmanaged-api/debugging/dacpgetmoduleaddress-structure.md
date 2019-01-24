@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ca9ce04e9a4770d46f88e10785f4dafd044c9212
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: c0a12ab638adfccfb6406aa495bd3568911ee969
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416072"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619776"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>Struktura DacpGetModuleAddress
 
@@ -59,6 +59,6 @@ Tato struktura se nachází uvnitř modulu runtime a není dostupná záhlaví n
 **Knihovna:** Žádná  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

@@ -2,12 +2,12 @@
 title: Behavior – třída
 ms.date: 03/30/2017
 ms.assetid: 75d117f5-87f9-40fb-84c6-9e2fef6da6af
-ms.openlocfilehash: bf7d7f4ae4340cd8aee9a200015255820ac140f4
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5d988ae32684bb3ef7ba3dc2ee8c1d749126bcc6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197129"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54743566"
 ---
 # <a name="behavior-class"></a>Behavior – třída
 ## <a name="syntax"></a>Syntaxe  
@@ -28,7 +28,7 @@ class Behavior
 ### <a name="type"></a>Typ  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Typ vlastnosti.  
   
@@ -38,5 +38,5 @@ class Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-ms.openlocfilehash: 86ded7351d435b3a7077f0354d8a923b33a3f2b6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2f48f9486c5d29fc0b70e4487a12a1c499235cba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216500"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732645"
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření klientské aplikace rozhraní .NET Framework (WCF Data Services – rychlý start)
 
@@ -23,7 +23,7 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení, klikněte na tlačítko **přidat**a potom klikněte na tlačítko **nový projekt**.
 
-2.  V levém podokně vyberte **nainstalováno** > [**Visual C#** nebo **jazyka Visual Basic**] > **Windows Desktop**a pak vyberte **Aplikace WPF** šablony.
+2.  V levém podokně vyberte **nainstalováno** > [**Visual C#**  nebo **jazyka Visual Basic**] > **Windows Desktop**a pak vyberte  **Aplikace WPF** šablony.
 
 3.  Zadejte `NorthwindClient` pro název projektu a pak klikněte na tlačítko **OK**.
 
@@ -86,7 +86,7 @@ Toto je poslední úkol rychlého startu služby WCF Data Services. V této úlo
 
 Další informace o přístupu k OData informačního kanálu ze [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikace, najdete v článku [klientské knihovny WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Začínáme](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
 - [Prostředky](../../../../docs/framework/data/wcf/wcf-data-services-resources.md)

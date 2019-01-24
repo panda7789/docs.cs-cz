@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
-ms.openlocfilehash: ffdc1dc0f9b5c2ed3b9898d0c71c9b384723fe05
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: a2d51e8052c839ea4cd11dec07a3aef95d59d0f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200551"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546959"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>Vrácení sjednocení množin mezi dvěma sekvencemi
 Použití <xref:System.Linq.Queryable.Union%2A> operátor vrácení sjednocení množin mezi dvěma sekvencemi.  
@@ -25,6 +25,6 @@ Použití <xref:System.Linq.Queryable.Union%2A> operátor vrácení sjednocení 
 
 Další informace a příklady najdete v tématu <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>.
   
-## <a name="see-also"></a>Viz také  
- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)  
- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+## <a name="see-also"></a>Viz také:
+- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+- [Převod standardních operátorů dotazů](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)

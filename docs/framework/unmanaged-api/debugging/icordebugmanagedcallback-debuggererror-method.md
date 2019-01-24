@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 436be84ad91bb20bfd88a51f2d6c2b760c4a4c3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31a554fc57611f4abd5322fdc0c147e5dc110fb7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654942"
 ---
 # <a name="icordebugmanagedcallbackdebuggererror-method"></a>ICorDebugManagedCallback::DebuggerError – metoda
-Upozorní ladicí program, že došlo k chybě při pokusu o zpracování události z common language runtime (CLR).  
+Upozorní ladicího programu, že došlo k chybě při pokusu o zpracování události z common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,21 +39,21 @@ HRESULT DebuggerError (
   
 #### <a name="parameters"></a>Parametry  
  `pProcess`  
- [v] Ukazatel na objekt "ICorDebugProcess", který představuje proces, ve které došlo k události.  
+ [in] Ukazatel na objekt "ICorDebugProcess", který představuje proces, ve kterém došlo k události.  
   
  `errorHR`  
- [v] Hodnota HRESULT, která byla vrácena z obslužné rutiny události.  
+ [in] Hodnota HRESULT, která byla vrácena z obslužné rutiny události.  
   
  `errorCode`  
- [v] Celé číslo, které určuje chyba CLR.  
+ [in] Celé číslo, které určuje chyba CLR.  
   
 ## <a name="remarks"></a>Poznámky  
- Proces může být zařazen do průchozí režimu, v závislosti na povaze chyby.  
+ Proces můžete umístit do režimu průchodu, v závislosti na povaze chyby.  
   
- `DebugError` Zpětného volání označuje, že ladění služby byly zakázány kvůli chybě, takže ladicí programy měli chybová zpráva k dispozici pro uživatele. [Icordebugprocess::getid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getid-method.md) bude bezpečné volání, ale všechny ostatní způsoby, včetně [icordebug::Terminate –](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md), by neměl být volán. Ladicí program měli použít zařízení pro operační systém pro ukončení procesy.  
+ `DebugError` Zpětného volání znamená, že ladění služby z důvodu chyby, byly zakázány, ladicí programy musí zpřístupnit chybová zpráva pro uživatele. [Icordebugprocess::getid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getid-method.md) budou bezpečné i volání, ale všechny ostatní metody, včetně [icordebug::Terminate –](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md), by neměla být volána. Ladicí program používejte operačního systému zařízení ukončování procesů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -61,5 +61,5 @@ HRESULT DebuggerError (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

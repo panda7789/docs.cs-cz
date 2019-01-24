@@ -9,12 +9,12 @@ helpviewer_keywords:
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
 author: KrzysztofCwalina
-ms.openlocfilehash: d1b9d8bc1f5f6f83a50dbd798894f94937320d2b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 441dc2777cd8d221300c526b6b31a647af60ca71
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152133"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646575"
 ---
 # <a name="operator-overloads"></a>Přetížení operátoru
 Přetížení operátoru povolit rozhraní framework typy zobrazení, jako kdyby byly integrované primitivní.  
@@ -108,11 +108,11 @@ Přetížení operátoru povolit rozhraní framework typy zobrazení, jako kdyby
   
  **✓ DO** throw <xref:System.InvalidCastException?displayProperty=nameWithType> Pokud volání operátor přetypování výsledkem míru ztrát převod a kontrakt operátoru neumožňuje míru ztrát převody.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, private constructors
 - private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
-ms.openlocfilehash: a0ff8f69f7725b40eaac01acef74857c2a99247c
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e406b72e5d2932464c407dce014dd8eceee59fb0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240499"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577292"
 ---
 # <a name="private-constructors-c-programming-guide"></a>Soukromé konstruktory (Průvodce programováním v C#)
 Soukromý konstruktor je speciální instanci konstruktoru. Obecně se používá ve třídách, které obsahují pouze statické členy. Pokud třída obsahuje jeden nebo více privátních konstruktorů a žádné veřejné konstruktory, jiné třídy (s výjimkou vnořené třídy) nelze vytvořit instance této třídy. Příklad:  
@@ -35,11 +35,11 @@ Soukromý konstruktor je speciální instanci konstruktoru. Obecně se použív�
 
 Další informace najdete v tématu [soukromé konstruktory](~/_csharplang/spec/classes.md#private-constructors) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
-- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
-- [private](../../../csharp/language-reference/keywords/private.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+- [private](../../../csharp/language-reference/keywords/private.md)
 - [public](../../../csharp/language-reference/keywords/public.md)

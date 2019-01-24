@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], as objects
 ms.assetid: f76d4403-bd0a-42a0-9bc8-694c55b2c926
-ms.openlocfilehash: 0bbbf7ecc5eff650f7a2edc73546833afd2be094
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 0c4b5dcbd9e227e4edd5f549b687e3ded90ee9bc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53242331"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740486"
 ---
 # <a name="arrays-as-objects-c-programming-guide"></a>Pole jako objekty (Průvodce programováním v C#)
 
@@ -26,10 +26,10 @@ V jazyce C# pole jsou ve skutečnosti objekty a právě adresovatelný oblastech
   
  [!code-csharp[csProgGuideArrays#2](../../../csharp/programming-guide/arrays/codesnippet/CSharp/arrays-as-objects_2.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Pole](../../../csharp/programming-guide/arrays/index.md)  
-- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)  
-- [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Pole](../../../csharp/programming-guide/arrays/index.md)
+- [Jednorozměrná pole](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
+- [Vícerozměrná pole](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)
 - [Vícenásobná pole](../../../csharp/programming-guide/arrays/jagged-arrays.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], From/to/by
 - From/to/by animation
 ms.assetid: 516fce0a-e7f8-49b8-b018-53b3d409a8a3
-ms.openlocfilehash: c1aaaca83b8631a87a8987b9676b53161e821117
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 39a3cd059c0fa9aad1ef2c1ae50fa37b95df52d8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502513"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650441"
 ---
 # <a name="fromtoby-animations-overview"></a>Přehled animace od/komu/kým
 Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnosti závislosti. Od/Komu/kým animace vytvoří přechod mezi dvěma hodnotami.  
@@ -103,10 +103,10 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
  [!code-csharp[basicvalues_snip#ToAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#toanimationinline)]
  [!code-vb[basicvalues_snip#ToAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#toanimationinline)]  
   
-### <a name="by"></a>Podle  
+### <a name="by"></a>Od společnosti  
  Při nastavení jenom <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost animace, animace postupuje od základní hodnoty, který je animované vlastnosti nebo z výstupu vytváření animací na součet dané hodnoty a hodnotu, která je zadána <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> Vlastnost.  
   
- Následující příklad nastaví jenom <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost <xref:System.Windows.Media.Animation.DoubleAnimation> do 300. Protože příklad neurčuje počáteční hodnotu <xref:System.Windows.Media.Animation.DoubleAnimation> používá základní hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastnost, 100, jako svou výchozí hodnotu. Koncová hodnota se určí tak, že přidáte <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> hodnoty animace, 300, jeho počáteční hodnotu 100:400. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> je animovaný od 100 do 400.  
+ Následující příklad nastaví jenom <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost <xref:System.Windows.Media.Animation.DoubleAnimation> do 300. Protože příklad neurčuje počáteční hodnotu <xref:System.Windows.Media.Animation.DoubleAnimation> používá základní hodnotu <xref:System.Windows.FrameworkElement.Width%2A> vlastnost, 100, jako svou výchozí hodnotu. Koncová hodnota se určí tak, že přidáte <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> hodnoty animace, 300, jeho počáteční hodnotu 100: 400. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> je animovaný od 100 do 400.  
   
  [!code-csharp[basicvalues_snip#ByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#byanimationinline)]
  [!code-vb[basicvalues_snip#ByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#byanimationinline)]  
@@ -114,7 +114,7 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
 ### <a name="fromby"></a>Od/kým  
  Při nastavení <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti animace, animace postupuje od hodnoty, která je zadána <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost na hodnotu, která je určená součtem <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> a <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnosti.  
   
- Následující příklad nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost <xref:System.Windows.Media.Animation.DoubleAnimation> až 50 a jeho <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost 300. Koncová hodnota se určí tak, že přidáte <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> hodnoty animace, 300, jeho počáteční hodnotu 50:350. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> je animovaný z 50 na 350.  
+ Následující příklad nastaví <xref:System.Windows.Media.Animation.DoubleAnimation.From%2A> vlastnost <xref:System.Windows.Media.Animation.DoubleAnimation> až 50 a jeho <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> vlastnost 300. Koncová hodnota se určí tak, že přidáte <xref:System.Windows.Media.Animation.DoubleAnimation.By%2A> hodnoty animace, 300, jeho počáteční hodnotu 50: 350. V důsledku toho <xref:System.Windows.FrameworkElement.Width%2A> z <xref:System.Windows.Shapes.Rectangle> je animovaný z 50 na 350.  
   
  [!code-csharp[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicvalues_snip/CSharp/AnimationTargetValuesExample.cs#frombyanimationinline)]
  [!code-vb[basicvalues_snip#FromByAnimationInline](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicvalues_snip/VisualBasic/AnimationTargetValuesExample.vb#frombyanimationinline)]  
@@ -140,12 +140,12 @@ Toto téma popisuje způsob použití animace od/Komu/kým pro animaci vlastnost
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Můžete také vytvořit vlastní typy vlastní animace. Další informace najdete v tématu [Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Animation.Timeline>  
- <xref:System.Windows.Media.Animation.Storyboard>  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
- [Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)  
- [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Animation.Timeline>
+- <xref:System.Windows.Media.Animation.Storyboard>
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)
+- [Přehled vlastních animací](../../../../docs/framework/wpf/graphics-multimedia/custom-animations-overview.md)
+- [Od, Komu a kdo ukázkové cílové hodnoty animace](https://go.microsoft.com/fwlink/?LinkID=159988)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c8c82b3ace19d4b1d79fbfd296ce239e6da99ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5aceed6fa662f090dfe360ddca51da1381b12a2b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409554"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631490"
 ---
 # <a name="icordebugappdomain3getcachedwinrttypesforiids-method"></a>ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs – metoda
-Získá enumerátor pro uložené v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typy v doméně aplikace podle jejich identifikátory rozhraní.  
+Získá enumerátor pro uložené v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typy v doméně aplikace podle jejich identifikátorů rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ HRESULT GetCachedWinRTTypesForIIDs (
   
 #### <a name="parameters"></a>Parametry  
  `cReqTypes`  
- [v] Počet požadovaných typů.  
+ [in] Počet požadovaných typů.  
   
  `iidsToResolve`  
- [v] Ukazatel na pole, které obsahuje identifikátory rozhraní odpovídající spravované reprezentace [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typy, které mají být načteny.  
+ [in] Ukazatel na pole, které obsahuje rozhraní identifikátory odpovídající spravované reprezentace [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typy, které se mají načíst.  
   
  `ppTypesEnum`  
- [out] Ukazatel na adresu "ICorDebugTypeEnum" rozhraní objekt, který umožňuje výčet v mezipaměti spravované reprezentace [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typy načíst, založené na rozhraní identifikátory v `iidsToResolve`.  
+ [out] Spravované reprezentace ukazatele na adresu objektu rozhraní "icordebugtypeenum –", která umožňuje vytvoření výčtu v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] načíst typy založené na rozhraní identifikátory v `iidsToResolve`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud metoda se nepodaří načíst informace pro identifikátor určité rozhraní, odpovídající položku v kolekci "ICorDebugTypeEnum" bude mít typ `ELEMENT_TYPE_END` chyby kvůli problémům s načítání dat, nebo `ELEMENT_TYPE_VOID` pro neznámé rozhraní identifikátory.  
+ Jestliže metoda selže načíst informace pro konkrétní rozhraní identifikátor, odpovídající položku v kolekci "Icordebugtypeenum –" bude mít typ `ELEMENT_TYPE_END` chyby kvůli problémům s načítání dat, nebo `ELEMENT_TYPE_VOID` pro neznámé rozhraní identifikátory.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]  
@@ -59,5 +59,5 @@ HRESULT GetCachedWinRTTypesForIIDs (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugAppDomain3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugAppDomain3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-interface.md)

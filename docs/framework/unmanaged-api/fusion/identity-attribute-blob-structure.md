@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59b4c832a4bbc915749aadf435b204e084828698
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb2c560f8f906f20de752e5dfad995e2082caaea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654669"
 ---
 # <a name="identityattributeblob-structure"></a>IDENTITY_ATTRIBUTE_BLOB – struktura
-Obsahuje informace o jeden atribut v sestavení a se skládá ze tří `DWORD`s. Každý `DWORD` je posun do vyrovnávací paměti znak vyprodukované `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní  
+Obsahuje informace o jediný atribut v sestavení a se skládá ze tří `DWORD`s. Každý `DWORD` je posun do vyrovnávací paměti znak vytvářených `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,20 +42,20 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ofsNamespace`|První posunutí do vyrovnávací paměti znak. Tento posun nedodržíte podle oboru názvů atributu, nikoli podle řadu znaky null. Proto se nepoužije.|  
-|`ofsName`|Druhý posun do vyrovnávací paměti znak. Toto umístění označuje začátek název atributu.|  
-|`ofsValue`|Třetí posun do vyrovnávací paměti znak. Toto umístění označuje začátek hodnoty atributu.|  
+|`ofsNamespace`|První odsazení do vyrovnávací paměti pro znaky. Tento posun nedodrží atributu oboru názvů, ale pomocí posloupnosti znaků null. Proto není použit.|  
+|`ofsName`|Druhý odsazení do vyrovnávací paměti pro znaky. Toto umístění označuje začátek název atributu.|  
+|`ofsValue`|Třetí odsazení do vyrovnávací paměti pro znaky. Toto umístění označuje začátek hodnotu atributu.|  
   
 ## <a name="sample"></a>Ukázka  
- Následující příklad ilustruje několik základní kroky, které se nakonec za následek vyplněná `IDENTITY_ATTRIBUTE_BLOB` strukturu:  
+ Následující příklad ukazuje několik základních kroků, které nakonec vést mají údaj vyplněný `IDENTITY_ATTRIBUTE_BLOB` struktury:  
   
 1.  Získat [ireferenceidentity –](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) pro sestavení.  
   
 2.  Volání `IReferenceIdentity::EnumAttributes` metoda a získat [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md).  
   
-3.  Vytvoření znak vyrovnávací paměti a převést jej jako `IDENTITY_ATTRIBUTE_BLOB` struktura.  
+3.  Vytvoření vyrovnávací paměti pro znaky a přetypujte ji jako `IDENTITY_ATTRIBUTE_BLOB` struktury.  
   
-4.  Volání `CurrentIntoBuffer` metodu `IEnumIDENTITY_ATTRIBUTE` rozhraní. Tato metoda zkopíruje atributy `Namespace`, `Name`, a `Value` do vyrovnávací paměti znak. Tři posuny na tyto řetězce bude k dispozici v `IDENTITY_ATTRIBUTE_BLOB` struktura.  
+4.  Volání `CurrentIntoBuffer` metodu `IEnumIDENTITY_ATTRIBUTE` rozhraní. Tato metoda zkopíruje atributy `Namespace`, `Name`, a `Value` do vyrovnávací paměti pro znaky. Budou k dispozici ve třech posuny do těchto řetězců `IDENTITY_ATTRIBUTE_BLOB` struktury.  
   
 ```  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -225,25 +225,25 @@ Exit:
  C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll  
   
 ### <a name="sample-output"></a>Ukázkový výstup  
- Culture = neutral  
+ Jazyková verze = neutrální  
   
- název = System  
+ Název = systém  
   
- processorArchitecture = MSIL  
+ Vlastnost processorArchitecture = MSIL  
   
  PublicKeyToken = b77a5c561934e089  
   
- Verzi = 2.0.0.0  
+ Verze = 2.0.0.0  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Isolation.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IReferenceIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)  
- [IEnumIDENTITY_ATTRIBUTE – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)  
- [IDENTITY_ATTRIBUTE – struktura](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)  
- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+## <a name="see-also"></a>Viz také:
+- [IReferenceIdentity – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)
+- [IEnumIDENTITY_ATTRIBUTE – rozhraní](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)
+- [IDENTITY_ATTRIBUTE – struktura](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)
+- [Struktury pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)

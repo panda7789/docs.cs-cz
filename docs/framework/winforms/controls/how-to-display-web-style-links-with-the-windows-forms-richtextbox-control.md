@@ -10,30 +10,30 @@ helpviewer_keywords:
 - examples [Windows Forms], text boxes
 - RichTextBox control [Windows Forms], linking to Web pages
 ms.assetid: 95089a37-a202-4f7a-94ee-6ee312908851
-ms.openlocfilehash: bd813d479cd4dfb61a08d9a8c4a4e7612084e878
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e32dfc394f91ed44b702136d3177f6307f3991ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532604"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727583"
 ---
 # <a name="how-to-display-web-style-links-with-the-windows-forms-richtextbox-control"></a>Postupy: Zobrazení webových odkazů pomocí ovládacího prvku Windows Forms RichTextBox
-Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek může zobrazit webové odkazy jako barevný a podtržený. Můžete napsat kód, který se otevře okno prohlížeče zobrazující Web zadaný text odkazu, při kliknutí na odkaz.  
+Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek mohl zobrazit webové odkazy jako barevný a podtržené. Můžete napsat kód, který se otevře okno prohlížeče zobrazující webu zadané v textu odkazu, po kliknutí na odkaz.  
   
-### <a name="to-link-to-a-web-page-with-the-richtextbox-control"></a>Chcete-li odkaz na webovou stránku pomocí ovládacího prvku RichTextBox  
+### <a name="to-link-to-a-web-page-with-the-richtextbox-control"></a>Odkaz na webovou stránku pomocí ovládacího prvku RichTextBox  
   
-1.  Nastavte <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/").  
+1.  Nastavte <xref:System.Windows.Forms.RichTextBox.Text%2A> nastavte na řetězec, který obsahuje platnou adresu URL (například "http://www.microsoft.com/").  
   
-2.  Zajistěte, aby <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> je nastavena na `true` (výchozí).  
+2.  Ujistěte se, <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A> je nastavena na `true` (výchozí).  
   
 3.  Vytvořit novou globální instanci <xref:System.Diagnostics.Process> objektu.  
   
-4.  Zápis obslužné rutiny události pro <xref:System.Windows.Forms.RichTextBox.LinkClicked> událost, která se odešle do prohlížeče požadovaný text.  
+4.  Zápis obslužné rutiny události <xref:System.Windows.Forms.RichTextBox.LinkClicked> událost, která se odešle do prohlížeče požadovaný text.  
   
-     V následujícím příkladu <xref:System.Windows.Forms.RichTextBox.LinkClicked> událostí otevře instance Internet Exploreru, aby adresa URL zadaná v <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
+     V následujícím příkladu <xref:System.Windows.Forms.RichTextBox.LinkClicked> události otevírá instanci aplikace Internet Explorer na adrese URL zadané v <xref:System.Windows.Forms.RichTextBox.Text%2A> vlastnost <xref:System.Windows.Forms.RichTextBox> ovládacího prvku. Tento příklad předpokládá formulář s <xref:System.Windows.Forms.RichTextBox> ovládacího prvku.  
   
     > [!IMPORTANT]
-    >  Ve volání <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> metoda, se setkají <xref:System.Security.SecurityException> výjimka, pokud používáte kód v kontextu částečným vztahem důvěryhodnosti z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Ve volání funkce <xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType> metoda, se setkají <xref:System.Security.SecurityException> výjimku, pokud používáte kód v kontextu částečným vztahem důvěryhodnosti z důvodu dostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
   
     ```vb  
     Public p As New System.Diagnostics.Process  
@@ -74,7 +74,7 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek může zo
        }  
     ```  
   
-     ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Musí inicializovat proces `p`, což lze provést tak, že začleníte následující příkaz v konstruktoru formuláře:  
+     ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) Musí inicializovat proces `p`, což lze provést zahrnutím následujícího příkazu v konstruktoru formuláře:  
   
     ```cpp  
     p = gcnew System::Diagnostics::Process();  
@@ -94,7 +94,7 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek může zo
        (this, &Form1::richTextBox1_LinkClicked);  
     ```  
   
-     Je důležité okamžitě zastavit proces, který jste vytvořili po dokončení práce s ním. Odkazy na kód uvedený výše, kódu se zastavit proces může vypadat například takto:  
+     Je důležité ihned zastavte sledovací proces, který jste vytvořili po dokončení práce s ní. Odkazující na kód uvedený výše, váš kód zastavte sledovací proces může vypadat takto:  
   
     ```vb  
     Public Sub StopWebProcess()  
@@ -116,9 +116,9 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek může zo
     }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>  
- <xref:System.Windows.Forms.RichTextBox.LinkClicked>  
- <xref:System.Windows.Forms.RichTextBox>  
- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.RichTextBox.DetectUrls%2A>
+- <xref:System.Windows.Forms.RichTextBox.LinkClicked>
+- <xref:System.Windows.Forms.RichTextBox>
+- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

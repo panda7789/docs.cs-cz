@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 202737692bae14ada229ee2c92a6630a3ed71344
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: a417c94106988e07e2b2ab2766c691f081ca7006
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030071"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734513"
 ---
 # <a name="how-to-migrate-managed-code-dcom-to-wcf"></a>Postupy: Migrace spravovaného kódu DCOM do WCF
 Windows Communication Foundation (WCF) je volba doporučené a zabezpečené přes distribuované DCOM Component Object Model () pro spravovaný kód volání mezi servery a klienty v distribuovaném prostředí. Tento článek popisuje, jak vám migrace kódu z modelu DCOM do WCF v následujících scénářích.  
@@ -421,8 +421,8 @@ if (sessionBoundObject.GetCurrentValue() == "Hello")
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)  
- [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)  
- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
- [Duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md)
+## <a name="see-also"></a>Viz také:
+- [Základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md)
+- [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)
+- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)
+- [Duplexní služby](../../../docs/framework/wcf/feature-details/duplex-services.md)

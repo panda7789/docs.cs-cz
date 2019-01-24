@@ -2,12 +2,12 @@
 title: Podrobnosti implementace protokolu služeb WCF Data Services
 ms.date: 03/30/2017
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
-ms.openlocfilehash: 1d68e278fbac0137d1a5b2dca2daedba2294a7ee
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: fdaaa95bdcffa3ae053cc856753faa1a224eebc7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195677"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728749"
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>Podrobnosti implementace protokolu služeb WCF Data Services
 ## <a name="odata-protocol-implementation-details"></a>Podrobnosti implementace protokolu OData  
@@ -22,6 +22,6 @@ ms.locfileid: "47195677"
 ### <a name="default-sorting-behavior"></a>Výchozí chování řazení  
  Pokud dotaz odeslaný do služby data obsahuje `$top` nebo `$skip` systému možnosti dotazu a nezahrnuje `$orderby` možností dotazu systému, vrácené informační kanál je seřazený podle klíčové vlastnosti ve vzestupném pořadí. Je to proto, že pořadí je potřeba zajistit správné stránkování výsledků. K tomuto účelu data service přidá výraz řazení v dotazu. K tomuto chování dochází také při zapnutém stránkování řízené serverem ve službě data. Další informace najdete v tématu [konfigurace datové služby](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md). Pro ovládání řazení vrácené informačního kanálu, měli byste zahrnout `$orderby` v dotazu identifikátoru URI.  
   
-## <a name="see-also"></a>Viz také  
- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+## <a name="see-also"></a>Viz také:
+- [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
+- [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

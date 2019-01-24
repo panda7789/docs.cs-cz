@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Static markup extension in XAML [XAML Services]
 - XAML [XAML Services], x:Static markup extension
 ms.assetid: 056aee79-7cdd-434f-8174-dfc856cad343
-ms.openlocfilehash: 8a14b00fe762d325028072cd0ea3eecf9b9206e3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5dd454cb323d4dc2ab9b4ebd8b233ffda3e77820
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181274"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619318"
 ---
 # <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)]– kompatibilní způsobem. Statická vlastnost, která je popsána slouží k poskytnutí hodnoty vlastností v XAML.  
@@ -31,8 +31,8 @@ Odkazuje na entitu kód statickou hodnotou, která je definována v [!INCLUDE[TL
 | | |  
 |-|-|  
 |`prefix`|Volitelné. Předpona, která odkazuje na mapovanou, jiné než výchozí obor názvů XAML. `prefix` je zobrazena explicitně ve využití vzhledem k tomu, že odkazujete zřídka statické vlastnosti, které pocházejí z výchozí obor názvů XAML. Viz poznámky.|  
-|`typeName`|Požadováno. Název typu, který definuje požadovaný statický člen.|  
-|`staticMemberName`|Požadováno. Jméno člena požadovanou statickou hodnotu (konstantu, statické vlastnosti, pole nebo hodnoty výčtu).|  
+|`typeName`|Povinný parametr. Název typu, který definuje požadovaný statický člen.|  
+|`staticMemberName`|Povinný parametr. Jméno člena požadovanou statickou hodnotu (konstantu, statické vlastnosti, pole nebo hodnoty výčtu).|  
   
 ## <a name="remarks"></a>Poznámky  
 
@@ -82,6 +82,6 @@ V implementaci rozhraní .NET Framework XAML Services zpracování tohoto rozš�
   
  Další informace o tom, jak používat předpony a obory názvů XAML pro WPF naleznete v tématu [obory názvů XAML a mapování Namespace pro WPF XAML](../../../docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
-## <a name="see-also"></a>Viz také  
- [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)
+- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

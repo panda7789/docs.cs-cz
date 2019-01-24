@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Výběr rozsahu dat v ovládacím prvku Windows Forms MonthCalendar'
+title: 'Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,17 +11,17 @@ helpviewer_keywords:
 - calendars [Windows Forms], selecting date range
 - MonthCalendar control [Windows Forms], selecting date range
 ms.assetid: 95d9ab95-b0f8-4c19-9f63-b5cd4593a5d0
-ms.openlocfilehash: 8b6d64fcffb02c4496cff3f2821861117b0062fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4c7100f77c313d219cfd4cceff5ae3015eae4c18
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534057"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558446"
 ---
-# <a name="how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control"></a>Postupy: Výběr rozsahu dat v ovládacím prvku Windows Forms MonthCalendar
-Důležitou součást Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je, že si uživatel může vybrat rozsah kalendářních dat. Tato funkce představuje vylepšení funkce výběru data <xref:System.Windows.Forms.DateTimePicker> řízení, které pouze umožňuje uživateli vybrat hodnotu jedné datum a čas. Můžete nastavit rozsah kalendářních dat nebo získat výběr rozsahu nastavená uživatelem pomocí vlastnosti <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku. Následující příklad kódu ukazuje, jak nastavit výběr rozsahu.  
+# <a name="how-to-select-a-range-of-dates-in-the-windows-forms-monthcalendar-control"></a>Postupy: Vyberte rozsah dat v ovládacím prvku Windows Forms MonthCalendar
+Důležitou funkcí Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je, že uživatel může vybrat rozsah. Tato funkce je vylepšením oproti funkci Výběr data <xref:System.Windows.Forms.DateTimePicker> ovládací prvek, který pouze umožňuje uživateli vybrat hodnotu jednoho data a času. Můžete nastavit rozsah kalendářních dat nebo získat oblast výběru nastaven uživatelem s použitím vlastnosti <xref:System.Windows.Forms.MonthCalendar> ovládacího prvku. Následující příklad kódu ukazuje, jak nastavit oblast výběru.  
   
-### <a name="to-select-a-range-of-dates"></a>Chcete-li vybrat rozsah kalendářních dat  
+### <a name="to-select-a-range-of-dates"></a>Vybrat rozsah kalendářních dat  
   
 1.  Vytvoření <xref:System.DateTime> objekty, které představují první a poslední datum v rozsahu.  
   
@@ -74,8 +74,8 @@ Důležitou součást Windows Forms <xref:System.Windows.Forms.MonthCalendar> ov
     monthCalendar1->SelectionEnd = projectEnd;  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvek MonthCalendar](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  
- [Postupy: Změna vzhledu ovládacího prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)  
- [Postupy: Tučné zobrazení konkrétních dnů pomocí ovládacího prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)  
- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvek MonthCalendar](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)
+- [Postupy: Změna vzhledu Windows Forms MonthCalendar ovládacího prvku](../../../../docs/framework/winforms/controls/how-to-change-monthcalendar-control-appearance.md)
+- [Postupy: Zobrazení konkrétních dnů Bold s Windows Forms MonthCalendar – ovládací prvek](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md)
+- [Postupy: Zobrazení více než jednoho měsíce v ovládacím prvku Windows Forms MonthCalendar](../../../../docs/framework/winforms/controls/display-more-than-one-month-wf-monthcalendar-control.md)

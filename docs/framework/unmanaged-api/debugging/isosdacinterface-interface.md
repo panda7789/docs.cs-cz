@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 745ecfbffaad841e1ceb9216802644ba9dd5b94e
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 5e037cf6fb88fff4886733ff4152dca0a827e0a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416068"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491025"
 ---
 # <a name="isosdacinterface-interface"></a>ISOSDacInterface rozhraní
 
@@ -45,7 +45,7 @@ Toto rozhraní se nachází uvnitř modulu runtime a není dostupná záhlaví n
 **Knihovna:** Žádná  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
 - [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -2,21 +2,21 @@
 title: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: e9158f91d8df74cc9fd871567d854d32353d16e1
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 5ce2c4839d4b59fdc0f5fcd55ffe91d3adbcadcc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653694"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Postupy: Přístup ke službě z aplikace pracovního postupu
-Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikace pracovního postupu. To závisí na dokončení [postupy: vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje, jak volat z aplikace pracovního postupu služby pracovního postupu, stejně jako je možné volat jakékoli služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.
+Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikace pracovního postupu. To závisí na dokončení [jak: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje, jak volat z aplikace pracovního postupu služby pracovního postupu, stejně jako je možné volat jakékoli služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.
 
 ### <a name="create-a-workflow-console-application-project"></a>Vytvoření projektu konzolové aplikace pracovního postupu
 
-1.  Spusťte sadu Visual Studio 2012.
+1.  Start Visual Studio 2012.
 
-2.  Načtení projektu MyWFService, kterou jste vytvořili v [postupy: vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu.
+2.  Načtení projektu MyWFService, kterou jste vytvořili v [jak: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu.
 
 3.  Klikněte pravým tlačítkem myši **MyWFService** řešení **Průzkumníka řešení** a vyberte **přidat**, **nový projekt**. Vyberte **pracovního postupu** v **nainstalované šablony** a **Konzolová aplikace pracovního postupu** ze seznamu typů projektů. Pojmenujte projekt MyWFClient a použijte výchozí umístění, jak je znázorněno na následujícím obrázku.
 
@@ -62,7 +62,7 @@ Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikac
 
 12. Stiskněte kombinaci kláves Ctrl + F5 spusťte službu a klienta. Vývojový Server ASP.NET je hostitelem služby, aplikace Internet Explorer zobrazí na stránce nápovědy WCF a klientská aplikace pracovního postupu se spustí v okně konzoly a zobrazí řetězec vrácený ze služby ("Hello, world").
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Postupy: Vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md)

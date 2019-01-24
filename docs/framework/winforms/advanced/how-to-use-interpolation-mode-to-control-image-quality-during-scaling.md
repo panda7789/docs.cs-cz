@@ -9,15 +9,15 @@ helpviewer_keywords:
 - images [Windows Forms], scaling
 - images [Windows Forms], controlling quality
 ms.assetid: fde9bccf-8aa5-4b0d-ba4b-788740627b02
-ms.openlocfilehash: 72a9cb3a19f0d449dcb376a65f1734b79ed61ab9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c295411418dabac74626c3c4ab43fb8210bbfa4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522356"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631422"
 ---
 # <a name="how-to-use-interpolation-mode-to-control-image-quality-during-scaling"></a>Postupy: Použití režimu interpolace pro řízení kvality obrázku během změny měřítka
-Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Image měřítka (úsecích a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimy interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
+Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob, jakým [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] imagí škálování (úseky a zmenší). <xref:System.Drawing.Drawing2D.InterpolationMode> Výčet definuje několik režimů interpolace, z nichž některé jsou uvedeny v následujícím seznamu:  
   
 -   <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor>  
   
@@ -29,23 +29,23 @@ Režim interpolace <xref:System.Drawing.Graphics> objekt ovlivňuje způsob [!IN
   
 -   <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic>  
   
- K roztažení obrázku, každý pixelů v původní bitové kopie musí být namapovaný na skupinu pixelů na větší obrázku. Zmenšení bitovou kopii, skupiny pixelů v původní bitové kopie musí být mapován na jednom pixelů na menší obrázku. Efektivita algoritmů, které provádějí tato mapování určuje kvalitu škálovat bitové kopie. Algoritmy, které produkují Kvalitnější škálovat obrazy většinou vyžaduje více času na zpracování. V předchozím seznamu <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor> je režim nejnižší kvality a <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic> je režim nejvyšší kvality.  
+ Roztáhnout obrázek, každý pixel v původní bitové kopie musí být namapován na skupinu větší obrázku v pixelech. Zmenšení bitovou kopii, skupiny pixelů v původní bitové kopie musí být namapován na jeden pixelů v menším obrázkem. Účinnost algoritmy, které provádějí tato mapování určuje kvalitu obrazu se změněnou velikostí. Algoritmy, které vytvářejí škálován imagí kvalitnější většinou vyžaduje více času na zpracování. V předchozím seznamu <xref:System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor> je režim nejnižší kvality a <xref:System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic> je režim nejvyšší kvality.  
   
- Nastavení režimu interpolace, přiřadit jeden ze členů <xref:System.Drawing.Drawing2D.InterpolationMode> výčet <xref:System.Drawing.Graphics.InterpolationMode%2A> vlastnost <xref:System.Drawing.Graphics> objektu.  
+ Nastavení režimu interpolace, přiřadit jeden z členů <xref:System.Drawing.Drawing2D.InterpolationMode> výčet <xref:System.Drawing.Graphics.InterpolationMode%2A> vlastnost <xref:System.Drawing.Graphics> objektu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu nakreslí obrázek a pak zmenšuje bitové kopie s tři interpolace různé režimy.  
+ V následujícím příkladu nakreslí obrázek a potom zmenšuje bitová kopie se tři interpolace různé režimy.  
   
- Následující obrázek znázorňuje původní bitové kopie a tři menší bitové kopie.  
+ Následující obrázek znázorňuje původní bitové kopie a tři menší Image.  
   
- ![Bitové kopie s různým interpolace nastavení](../../../../docs/framework/winforms/advanced/media/csgrapes1.png "csgrapes1")  
+ ![Obrázek s proměnlivým nastavením interpolace](../../../../docs/framework/winforms/advanced/media/csgrapes1.png "csgrapes1")  
   
  [!code-csharp[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/CS/Class1.cs#81)]
  [!code-vb[System.Drawing.WorkingWithImages#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.WorkingWithImages/VB/Class1.vb#81)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)  
- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)
+## <a name="see-also"></a>Viz také:
+- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
+- [Práce s obrázky, rastrovými obrázky, ikonami a metasoubory](../../../../docs/framework/winforms/advanced/working-with-images-bitmaps-icons-and-metafiles.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dbf447e1325b4acaa26c9bb16d7d1a736eb20a29
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d2e75d357b1f56df676163744015a1a3f77c17b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453548"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530749"
 ---
 # <a name="icorprofilercallbackjitcompilationfinished-method"></a>ICorProfilerCallback::JITCompilationFinished – metoda
-Upozorní profileru, že kompilování funkce kompilátoru za běhu (JIT) byla dokončena.  
+Oznámí profileru, že byla dokončena kompilátor just-in-time (JIT) kompilaci funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT JITCompilationFinished(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, která byla zkompilovat.  
+ [in] ID funkce, která byla zkompilována.  
   
  `hrStatus`  
- [v] Hodnota, která určuje, zda kompilace byla úspěšná.  
+ [in] Hodnota označující, zda kompilace byla úspěšná.  
   
  `fIsSafeToBlock`  
- [v] Hodnotu, která určuje profileru, zda blokování ovlivní operaci modulu runtime. Hodnota je `true` Pokud blokování může způsobit počkejte volající vlákno k návratu z této zpětného volání; modulu runtime, jinak hodnota `false`.  
+ [in] Hodnotu, která k profileru, zda blokování bude mít vliv na operace modulu runtime. Hodnota je `true` Pokud blokování může způsobit, že modul runtime počká pro volajícího vlákna má vrátit z této zpětné volání; v opačném případě `false`.  
   
- I když hodnota `true` nebude poškodit modul runtime, zkreslit profilování výsledky.  
+ I když hodnota `true` nepoškodí modul runtime, je zkosení výsledků profilace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -57,6 +57,6 @@ HRESULT JITCompilationFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [JITCompilationStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [JITCompilationStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)

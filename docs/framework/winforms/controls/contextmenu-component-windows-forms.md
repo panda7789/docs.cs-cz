@@ -10,34 +10,34 @@ helpviewer_keywords:
 - context menus [Windows Forms], for Windows Forms
 - shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 9b93ccbc-c0fe-44a2-968e-faac25971831
-ms.openlocfilehash: 35806d14701169206b1ce29ea8b0b6e5993ba3c8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f24bfceaf4e2e21916624da6d970dd90a0fdbd0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552811"
 ---
 # <a name="contextmenu-component-windows-forms"></a>ContextMenu – komponenta (Windows Forms)
 > [!NOTE]
->  I když `MenuStrip` a `ContextMenuStrip` nahradit a přidání funkce do <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> ovládací prvky předchozí verze, <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud si zvolíte.  
+>  I když `MenuStrip` a `ContextMenuStrip` nahradit a přidání funkce, které <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> ovládací prvky z předchozích verzí <xref:System.Windows.Forms.MainMenu> a <xref:System.Windows.Forms.ContextMenu> se zachovají pro zpětnou kompatibilitu a budoucí použití, pokud se rozhodnete.  
   
- Windows Forms `ContextMenu` komponenta se používá k uživatelům poskytnout snadno dostupný místní nabídce často používané příkazy, které jsou přidruženy vybraný objekt. Položky v místní nabídce jsou často podmnožinou položky z hlavní nabídky, které se zobrazují jinde v aplikaci. Kliknutím pravým tlačítkem myši jsou většinou k dispozici místní nabídky. V rozhraní Windows Forms jsou spojeny s dalšími kontrolami.  
+ Windows Forms `ContextMenu` komponenty se používá k uživatelům poskytnout snadno k dispozici nabídku s často používanými příkazy, které jsou spojeny s vybraným objektem. Položky v místní nabídce jsou často podmnožinou položky z hlavní nabídky, které jsou zobrazeny jinde v aplikaci. Kliknutím pravým tlačítkem myši jsou obvykle k dispozici místní nabídky. Ve Windows Forms jsou přidruženy k další ovládací prvky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty ContextMenu](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md)  
- Představuje obecné koncepty `ContextMenu` komponenta, která umožňuje uživatelům vytvářet nabídky často používané příkazy, které jsou spojené s vybraným objektem.  
+ Představuje obecné koncepty `ContextMenu` komponenta, která umožňuje uživatelům vytvářet nabídky s často používanými příkazy, které jsou spojené s vybraným objektem.  
   
  [Postupy: Přidání a odebrání položek nabídky s komponentou Windows Forms ContextMenu](../../../../docs/framework/winforms/controls/add-and-remove-menu-items-with-wf-contextmenu-component.md)  
- Vysvětluje, jak přidávat a odebírat položky místní nabídky v systému Windows Forms.  
+ Vysvětluje, jak přidávat a odebírat položky místní nabídky do formulářů Windows.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.ContextMenu>  
- Referenční informace týkající se <xref:System.Windows.Forms.ContextMenu> třídy a její členy.  
+ Referenční informace týkající <xref:System.Windows.Forms.ContextMenu> třídu a její členy.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.MenuStrip>  
- <xref:System.Windows.Forms.ContextMenuStrip>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.MenuStrip>
+- <xref:System.Windows.Forms.ContextMenuStrip>

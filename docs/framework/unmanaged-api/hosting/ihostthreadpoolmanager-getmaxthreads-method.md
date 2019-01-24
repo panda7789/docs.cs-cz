@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa6e0e2447cc3ff6766bb33bb603388f37ec3ce0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 887197af49a402df73005906e539791f6d7f7be4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443764"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623856"
 ---
 # <a name="ihostthreadpoolmanagergetmaxthreads-method"></a>IHostThreadPoolManager::GetMaxThreads – metoda
-Získá maximální počet vláken, která udržuje hostitele současně ve fondu vláken.  
+Získá maximální počet vláken, která udržuje hostiteli současně ve fondu vláken.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,31 +43,31 @@ HRESULT GetMaxThreads (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetMaxThreads` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul common language runtime (CLR (nebyla načtena do procesu, nebo CLR je ve stavu, ve kterém it nelze spravovaného kódu nebo proces volání úspěšně spustit.|  
+|S_OK|`GetMaxThreads` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul common language runtime (CLR (nebyl načten do procesu, nebo CLR je ve stavu, ve kterém na ni nelze spustit, spravovaný kód nebo proces volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_NOTIMPL|Hostitel neposkytuje implementace `GetMaxThreads`.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_NOTIMPL|Hostitel neposkytuje implementaci `GetMaxThreads`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volání CLR `GetMaxThreads` můžete určit celkový počet vláken ve fondu vláken. [Getavailablethreads –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md) metoda získá počet vláken, která nejsou aktuálně zpracování pracovní položky. Všechny požadavky výše vrácená hodnota `pdwMaxWorkerThreads` parametr zůstanou ve frontě, dokud vláken k dispozici.  
+ Volání CLR `GetMaxThreads` k určení celkového počtu vláken ve fondu vláken. [Getavailablethreads –](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md) metoda získá počet vláken, které nejsou aktuálně zpracování pracovní položky. Všechny požadavky nad vrácenou hodnotou `pdwMaxWorkerThreads` parametr zůstanou ve frontě, dokud vlákna budou k dispozici.  
   
- Pokud hostitel neposkytne implementace `GetMaxThreads`, má hodnotu HRESULT E_NOTIMPL má být vrácen.  
+ Pokud hostitel neposkytuje implementaci `GetMaxThreads`, měla by vrátit hodnotu HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.ThreadPool.GetMaxThreads%2A>  
- <xref:System.Threading.ThreadPool>  
- [GetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getminthreads-method.md)  
- [SetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setmaxthreads-method.md)  
- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Threading.ThreadPool.GetMaxThreads%2A>
+- <xref:System.Threading.ThreadPool>
+- [GetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getminthreads-method.md)
+- [SetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setmaxthreads-method.md)
+- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

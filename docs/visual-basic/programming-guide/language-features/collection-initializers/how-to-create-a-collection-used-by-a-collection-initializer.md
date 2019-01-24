@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Vytvoření kolekce používané inicializátorem kolekce (Visual Basic)'
+title: 'Postupy: Vytvoření kolekce používané Inicializátorem kolekce (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: c858db10-424d-47e0-92cd-e08087cc5ebc
-ms.openlocfilehash: 6158b6f02d95260e2955e77d732fae8b8d9d5e04
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aaa367e5a1739f26e9b0458d8f2fc44462b73b7b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33654158"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631721"
 ---
-# <a name="how-to-create-a-collection-used-by-a-collection-initializer-visual-basic"></a>Postupy: Vytvoření kolekce používané inicializátorem kolekce (Visual Basic)
-Když použijete inicializátoru kolekce k vytvoření kolekce, Visual Basic – kompilátor vyhledá `Add` metoda typu kolekce, pro který parametry `Add` metoda odpovídají typům hodnot v inicializátoru kolekce. To `Add` metoda se používá k naplnění kolekce hodnotami z inicializátoru kolekce.  
+# <a name="how-to-create-a-collection-used-by-a-collection-initializer-visual-basic"></a>Postupy: Vytvoření kolekce používané Inicializátorem kolekce (Visual Basic)
+Při vytvoření kolekce pomocí inicializátoru kolekce, hledá kompilátor jazyka Visual Basic `Add` metoda typu kolekce, pro kterou parametry `Add` metoda shodovat s typy hodnot v inicializátoru kolekce. To `Add` metoda se používá k naplnění kolekce s hodnotami z inicializátoru kolekce.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje `OrderCollection` kolekce, která obsahuje veřejné `Add` metoda, která pomocí inicializátoru kolekce můžete přidat objekty typu `Order`. `Add` Metoda umožňuje pomocí syntaxe inicializátoru zkrácení kolekce.  
+ Následující příklad ukazuje `OrderCollection` kolekce, která obsahuje veřejnou `Add` metodou, chcete-li přidat objekty typu můžete použít inicializátor kolekce `Order`. `Add` Metoda vám umožní použít syntaxi inicializátoru kolekce zkrácený.  
   
  [!code-vb[VbVbalrCollectionInitializersHowTo2#4](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_1.vb)]  
   
@@ -25,6 +25,6 @@ Když použijete inicializátoru kolekce k vytvoření kolekce, Visual Basic –
   
  [!code-vb[VbVbalrCollectionInitializersHowTo2#3](../../../../visual-basic/programming-guide/language-features/collection-initializers/codesnippet/VisualBasic/how-to-create-a-collection-used-by-a-collection-initializer_4.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Inicializátory kolekcí](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
- [Postupy: Vytvoření metody přidání rozšíření používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)
+## <a name="see-also"></a>Viz také:
+- [Inicializátory kolekcí](../../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [Postupy: Vytvoření metody přidání rozšíření používané Inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)

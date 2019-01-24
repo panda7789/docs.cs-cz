@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 489fdf87f973de6137587fc2280ef0fa72ab78ba
-ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
+ms.openlocfilehash: ab0cf58bec2d9072fbc3af78e477a84726dd7a81
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286452"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659641"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově orientované programování po zapouzdření a dědičnosti. Polymorfismus řecké slovo, které znamená "mnoho ve tvaru" a má dva různé aspekty:  
@@ -95,13 +95,13 @@ Polymorfismus se často označuje jako třetí ze čtyř pilířů objektově or
   
 -   [Postupy: Potlačení metody ToString](../../../csharp/programming-guide/classes-and-structs/how-to-override-the-tostring-method.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
-- [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
-- [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
-- [Události](../../../csharp/programming-guide/events/index.md)  
-- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Dědičnost](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
+- [Abstraktní a uzavřené třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [Události](../../../csharp/programming-guide/events/index.md)
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)
 - [Typy](../../../csharp/programming-guide/types/index.md)

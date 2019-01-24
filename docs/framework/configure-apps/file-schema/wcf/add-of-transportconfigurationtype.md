@@ -2,19 +2,19 @@
 title: '&lt;add&gt; – &lt;transportConfigurationType&gt;'
 ms.date: 03/30/2017
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-ms.openlocfilehash: 1079b25ce137dc89fc31f46a11f3720486462021
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 2a72fe8cfa78c7e6edfec9f9f6ff8f1f55eceb15
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656814"
 ---
 # <a name="ltaddgt-of-lttransportconfigurationtypegt"></a>&lt;add&gt; – &lt;transportConfigurationType&gt;
 Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní přenos.  
   
  \<system.ServiceModel>  
-\<serviceHostingEnvironment >  
-\<transportConfigurationTypes >  
+\<ServiceHostingEnvironment>  
+\<transportConfigurationTypes>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,7 +45,7 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<transportConfigurationTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce typů, které implementují konkrétní přenos.|  
+|[\<transportConfigurationTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce typů, které implementují konkrétní přenos.|  
   
 ## <a name="example"></a>Příklad  
   
@@ -58,8 +58,8 @@ Tento element je dvojice klíč/hodnota, která identifikuje typ konkrétní př
 </serviceHostingEnvironment>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
- <xref:System.ServiceModel.ServiceHostingEnvironment>  
- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>
+- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>
+- <xref:System.ServiceModel.ServiceHostingEnvironment>
+- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)

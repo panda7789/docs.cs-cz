@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e4ab2c4c-9433-4eba-9e9a-096de406cafb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0d3a9039c6dc5d72ca740d6eaaf8a4d565e2647
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: e5a6d69b121827c3ee4f55714dcf3d4628706ce2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415270"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737894"
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>Běžné typy dat (referenční dokumentace nespravovaného rozhraní API)
 Toto téma obsahuje seznam jednoduché datové typy používají nespravované rozhraní API pro rozhraní .NET Framework, které jsou definovány pomocí jazyka C/C++ `typedef` příkazy. Tyto datové typy jsou obvykle aliasy pro C/C++ primitivní datové typy. Obvykle jsou neprůhledné; hodnoty těchto datových typů To znamená že jsou vrácené konkrétní funkce nebo metoda tak, aby se mohou být předány jiné funkce nebo metody bez úprav.  
@@ -37,5 +37,5 @@ Toto téma obsahuje seznam jednoduché datové typy používají nespravované r
 |TASKID|`typedef UINT64 TASKID;`|cordebug.h, mscoree.h|Identifikátor [iclrtask –](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance.|  
 |Idvlákna|`typedef UINT_PTR ThreadID;`|corprof.h|Identifikátor spravované vlákno.|  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [Referenční informace o nespravovaném rozhraní API](../../../docs/framework/unmanaged-api/index.md)

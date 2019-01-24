@@ -8,54 +8,54 @@ helpviewer_keywords:
 - WCF, security
 - ProtectionLevel property
 ms.assetid: 0c034608-a1ac-4007-8287-b1382eaa8bf2
-ms.openlocfilehash: 157e660a8b4d3866b9ab1994c409f82f16ac8359
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 8ca003257f9e16075262a715aec4941d9aa4073b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809778"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564627"
 ---
 # <a name="understanding-protection-level"></a>Princip úrovně ochrany
-`ProtectionLevel` Vlastnost nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost řídí, jak je chráněný část (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  
+`ProtectionLevel` Vlastnosti se nachází na mnoha různých tříd, jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy. Vlastnost určuje, jak je chráněné části (nebo celé) zprávy. Toto téma popisuje funkci Windows Communication Foundation (WCF) a jak to funguje.  
   
- Pokyny k nastavení úroveň ochrany, najdete v části [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md).  
+ Pokyny k nastavení úrovně ochrany, naleznete v tématu [jak: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md).  
   
 > [!NOTE]
->  Úrovně ochrany lze nastavit pouze v kódu není v konfiguraci.  
+>  Úrovně ochrany lze nastavit pouze v kódu, není v konfiguraci.  
   
 ## <a name="basics"></a>Základy  
- Pochopit funkce úroveň ochrany, platí následující základní příkazy:  
+ Informace o tom funkce úrovně ochrany, platí následující základní příkazy:  
   
--   Existují tři základní úrovně ochrany pro libovolnou část zprávy. Vlastnost (kdekoli se objeví) je nastavena na jednu z <xref:System.Net.Security.ProtectionLevel> hodnot výčtu. Ve vzestupném pořadí ochrany, patří:  
+-   Existují tři základní úrovně ochrany pro žádnou část zprávy. Vlastnost (všude, kde k němu dojde) je nastavena na jednu z <xref:System.Net.Security.ProtectionLevel> hodnot výčtu. Ve vzestupném pořadí ochrany, patří mezi ně:  
   
     -   `None`.  
   
-    -   `Sign`. Chráněné část digitálně podepsané. Tím se zajistí zjišťování manipulaci s částí chráněné zprávy.  
+    -   `Sign`. Chráněná část je digitálně podepsané. Tím se zajistí detekce manipulace s částí chráněné zprávy.  
   
-    -   `EncryptAndSign`. K zajištění důvěrnosti, než je podepsaný se šifrují část zprávy.  
+    -   `EncryptAndSign`. Část zprávy se šifrují k zajištění důvěrnosti dříve, než je podepsán.  
   
--   Můžete nastavit jenom pro požadavky na ochranu *data aplikací* s touto funkcí. Například WS-Addressing hlavičky jsou data infrastruktury a, proto nemá vliv `ProtectionLevel`.  
+-   Můžete nastavit požadavky na ochranu pouze pro *data aplikací* s touto funkcí. Například WS-Addressing záhlaví dat infrastruktury a, proto se nevztahují `ProtectionLevel`.  
   
--   Když je režim zabezpečení nastavená na `Transport`, celé zprávy je chráněný přenosový mechanismus. Nastavení úrovně ochrany samostatné pro různé části zprávu proto nemá žádný vliv.  
+-   Když je režim zabezpečení nastavený na `Transport`, celá zpráva je chráněn přenosový mechanismus. Nastavení úrovně ochrany samostatné pro různé části zprávy, proto nemá žádný vliv.  
   
--   `ProtectionLevel` Je způsob, jak vývojáři nastavit *minimální úroveň stanovenou* které musí dodržovat vazbu. Po nasazení služby se skutečná vazba zadaný v konfiguraci může nebo nemusí podporovat minimální úroveň. Ve výchozím nastavení, například <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení (i když může být povoleno). Proto pomocí kontrakt, který má jakékoli nastavení jiné než `None` způsobí výjimku, která je vyvolána.  
+-   `ProtectionLevel` Je způsob, jak vývojáři nastavit *minimální úroveň* , které musí dodržovat vazbu. Při nasazení služby skutečná vazba určená v konfiguraci může nebo nemusí podporovat minimální úroveň. Ve výchozím nastavení, například <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení (i když může být povoleno). Proto pomocí kontrakt, který má jakékoli nastavení jiné než `None` způsobí vyvolání výjimky.  
   
--   Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klient (možná vytvořené technologie bez WCF) můžete šifrovat a podepsat všechny zprávy (což je více než požadované minimum). V takovém případě nebude WCF vyvolat výjimku, protože klient má více než minimální provádějí. Všimněte si však, že nebude přepsání zabezpečeného Pokud je to možné část zprávy aplikací služby WCF (služby nebo klientů), ale bude splňovat minimální úroveň. Také Upozorňujeme, že pokud pomocí `Transport` jako režim zabezpečení, přenos může přepsání zabezpečení datového proudu zpráv protože ze své podstaty nelze zabezpečit na podrobnější úrovni.  
+-   Pokud služba vyžaduje, aby minimální `ProtectionLevel` pro všechny zprávy je `Sign`, klienta (například vytvořený technologií jiných WCF) můžete zašifrovat a podepsat všechny zprávy (což je více než požadované minimum). V takovém případě nebude WCF vyvolat výjimku, protože klient má provést více než požadované minimum. Všimněte si však, že nebude over-pass-the secure Pokud je to možné část zprávy aplikací služby WCF (služby nebo klienty), ale bude splňovat minimální úroveň. Všimněte si také, jestli používáte `Transport` jako režim zabezpečení, přenos může over-pass-the secure datového proudu zpráv vzhledem k tomu, že je ze své podstaty nelze zabezpečit na podrobnější úrovni.  
   
--   Pokud nastavíte `ProtectionLevel` explicitně buď na kteroukoli `Sign` nebo `EncryptAndSign`, pak musíte použít vazbu s povoleným zabezpečením nebo k výjimce.  
+-   Pokud jste nastavili `ProtectionLevel` explicitně, abyste buď `Sign` nebo `EncryptAndSign`, musíte použít vazbu s povoleným zabezpečením, nebo bude vyvolána výjimka.  
   
--   Pokud vyberete vazbu, která umožňuje zabezpečení a není nastaveno `ProtectionLevel` vlastnost kdekoli v kontrakt, všechny aplikační data budou šifrovaný a podepsaný.  
+-   Pokud vyberete vazbu, která umožňuje využívat zabezpečení, a nenastavíte `ProtectionLevel` vlastnost odkudkoli na kontrakt, všechny aplikace, data budou zašifrovaná a podepsaná.  
   
--   Pokud vyberete vazbu, která nemá povoleno zabezpečení (například `BasicHttpBinding` třída má ve výchozím nastavení zakázaná zabezpečení) a `ProtectionLevel` není explicitně nastavena, pak žádná data, aplikace budou chráněné.  
+-   Pokud vyberete vazbu, která nemá povoleno zabezpečení (třeba `BasicHttpBinding` třída má ve výchozím nastavení zakázané zabezpečení) a `ProtectionLevel` není explicitně nastavena, pak žádná z dat aplikací, budou chráněné.  
   
--   Pokud používáte vazbu, která se použije zabezpečení na úrovni přenosu, všechna data aplikace nebude zabezpečené podle možnosti přenosu.  
+-   Pokud používáte vazbu, která se týká zabezpečení na úrovni přenosu, všechna data aplikací budou zabezpečené podle možnosti přenosu.  
   
--   Pokud používáte vazbu, která se použije zabezpečení na úrovni zpráv, bude podle úrovně ochrany nastavte na kontrakt zabezpečená data aplikací. Pokud nezadáte úroveň ochrany, a všechna data aplikací v zprávy budou šifrovaný a podepsaný.  
+-   Pokud používáte vazbu, která se týká zabezpečení na úrovni zprávy, se podle úrovně ochrany, nastavte ve smlouvě šifrují data aplikace. Pokud nezadáte úroveň ochrany, všechna data aplikací ve zprávách budou zašifrovaná a podepsaná.  
   
--   `ProtectionLevel` Lze nastavit na různých úrovních oboru. Existuje hierarchie přidružená k rozsahu, který je vysvětlen v další části.  
+-   `ProtectionLevel` Lze nastavit na různých úrovních oboru. Je přidružený k určení oboru, hierarchie, což je vysvětleno v další části.  
   
-## <a name="scoping"></a>Obor  
- Nastavení `ProtectionLevel` na volání rozhraní API nejhornější nastaví úroveň pro všechny úrovně pod ním. Pokud `ProtectionLevel` nastavena na jinou hodnotu na nižší úrovni, všechna rozhraní API níže že úrovně v hierarchii bude nyní restartován na novou úroveň (rozhraní API výše, ale stále ovlivní nejvyšší úrovni). V hierarchii je následující. Atributy na stejné úrovni jsou partnerské uzly.  
+## <a name="scoping"></a>Vytváření oborů  
+ Nastavení `ProtectionLevel` na nejvyšší API nastaví úroveň pro všechny úrovně pod ním. Pokud `ProtectionLevel` je nastavena na jinou hodnotu na nižší úrovni, všechna rozhraní API níže, že úroveň v hierarchii nyní se resetuje na novou úroveň (rozhraní API výše, ale stále ovlivňuje nejvyšší úroveň). Hierarchie je následujícím způsobem. Partnerské uzly jsou atributy na stejné úrovni.  
   
  <xref:System.ServiceModel.ServiceContractAttribute>  
   
@@ -70,39 +70,39 @@ ms.locfileid: "33809778"
  <xref:System.ServiceModel.MessageBodyMemberAttribute>  
   
 ## <a name="programming-protectionlevel"></a>Programování ProtectionLevel  
- Programu `ProtectionLevel` v libovolném bodě v hierarchii, jednoduše nastavte vlastnost na hodnotu odpovídající při použití atributu. Příklady najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md).  
+ Do programu `ProtectionLevel` kdekoli v hierarchii, stačí nastavit vlastnost na hodnotu odpovídající při použití atributu. Příklady najdete v tématu [jak: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md).  
   
 > [!NOTE]
->  Nastavení vlastnosti na chyb a zpráva kontrakty vyžaduje pochopení, jak tyto funkce fungují. Další informace najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md) a [pomocí kontrakty zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
+>  Nastavení vlastnosti u chyb a zprávy kontrakty vyžaduje pochopení, jak tyto funkce fungují. Další informace najdete v tématu [jak: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md) a [použití kontraktů zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
   
-## <a name="ws-addressing-dependency"></a>Adresování WS závislostí  
- Ve většině případů pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování klienta zajišťuje, aby byly identické kontrakty klienta a služby. Však zdánlivě identické kontrakty může způsobit, že klient vyvolá výjimku. K tomu dochází vždy, když vazbu nepodporuje specifikaci WS-Addressing a zadávají se na kontrakt několik úrovní ochrany. Například <xref:System.ServiceModel.BasicHttpBinding> třída nepodporuje specifikace, nebo pokud vytvoříte vlastní vazby, který nepodporuje adresování WS. `ProtectionLevel` Funkce závisí na specifikaci WS-Addressing povolit různých úrovních ochrany na jeden kontrakt. Pokud vazba nepodporuje specifikaci WS-Addressing, všechny úrovně se nastaví na stejnou úroveň ochrany. Úroveň účinnou ochranu pro všechny obory ve smlouvě bude nastavena na nejvyšší úroveň ochrany použít na kontrakt.  
+## <a name="ws-addressing-dependency"></a>WS-Addressing závislostí  
+ Ve většině případů použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vygenerovat klienta zajistí, že jsou identické kontrakty klienta a služby. Však zdánlivě identické kontrakty může způsobit, že klient vyvolá výjimku. K tomu dochází vždy, když vazbu nepodporuje specifikaci WS-Addressing a několik úrovní ochrany jsou určeny na kontrakt. Například <xref:System.ServiceModel.BasicHttpBinding> třída nepodporuje specifikaci, nebo pokud vytvoříte vlastní vazby, která nepodporuje WS-Addressing. `ProtectionLevel` Funkce závisí na specifikaci WS-Addressing umožňující různých úrovních ochrany na jeden kontrakt. Pokud se vazba nepodporuje specifikaci WS-Addressing, všechny úrovně se nastaví na stejnou úroveň ochrany. Úroveň účinnou ochranu pro všechny obory ve smlouvě bude nastavena na nejvyšší úroveň ochrany použít u kontraktu.  
   
- Může dojít k problémům, které je obtížné ladění na první pohled. Je možné vytvořit kontraktu klienta (rozhraní), která obsahuje metody pro více než jedna služba. To znamená stejné rozhraní se používá k vytvoření klienta, který komunikuje s mnoha služeb a rozhraní jeden obsahuje metody pro všechny služby. Vývojář musí postará v tomto scénáři výjimečných volat pouze metody, které platí pro každou konkrétní službu. Pokud je vazba <xref:System.ServiceModel.BasicHttpBinding> třídy, více ochrany úrovně nemůže být podporováno. Odeslání odpovědi klientovi služby však může odpovídat na klienta s nižší úroveň ochrany, než nezbytné. V tomto případě klient vyvolá výjimku, protože se očekává, že vyšší úroveň ochrany.  
+ To může způsobit problém, který je obtížné ladit na první pohled. Je možné k vytvoření klienta kontraktu (rozhraní), která obsahuje metody pro více než jedna služba. To znamená, že stejné rozhraní se používá k vytvoření klienta, který komunikuje s řadou služeb a jednotné rozhraní obsahuje metody pro všechny služby. Vývojář musí postará v tomto scénáři výjimečných volat pouze metody, které se dají použít u každé konkrétní služby. Je-li vazba <xref:System.ServiceModel.BasicHttpBinding> třídy, více ochrany nelze podporuje úrovně. Odpověď na klienta služby však může odpovídat na klienta s nižší úrovní ochrany než požadované. V tomto případě klient vyvolá výjimku, protože ji očekává, že vyšší úroveň ochrany.  
   
- Příklad kódu ukazuje tento problém. Následující příklad ukazuje, služby a kontraktu klienta. Předpokládejme, že je vazba [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element. Všechny operace v kontraktu tedy mít stejnou úroveň ochrany. Tato úroveň ochrany uniform je určen jako úroveň maximální ochrany mezi všechny operace.  
+ Příklad kódu ukazuje tento problém. Následující příklad ukazuje, služby a kontrakt klienta. Předpokládejme, že vazba platí [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) elementu. Proto všechny operace v kontraktu a mít stejnou úroveň ochrany. Tato úroveň jednotného ochrany je vyhodnoceno jako úroveň ochrany maximální ve všech operacích.  
   
  Kontrakt služby je:  
   
  [!code-csharp[c_ProtectionLevel#7](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#7)]
  [!code-vb[c_ProtectionLevel#7](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#7)]  
   
- Následující kód ukazuje klienta rozhraní kontraktu. Všimněte si, že obsahuje `Tax` metoda, která je určena pro použití s jinou službu:  
+ Následující kód ukazuje klienta rozhraní kontraktu. Všimněte si, že obsahuje `Tax` metodu, která je určena pro použití s jinou službu:  
   
  [!code-csharp[c_ProtectionLevel#8](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#8)]
  [!code-vb[c_ProtectionLevel#8](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#8)]  
   
- Když klient zavolá `Price` metody se vyvolá výjimku, pokud neobdrží odpověď ze služby. K tomu dochází, protože klient neurčuje `ProtectionLevel` na `ServiceContractAttribute`, a proto klient používá výchozí (<xref:System.Net.Security.ProtectionLevel.EncryptAndSign>) pro všechny metody, včetně `Price` metoda. Služba ale vrátí se hodnota pomocí <xref:System.Net.Security.ProtectionLevel.Sign> protože kontrakt služby definuje jednu metodu, kterou má úrovně ochrany nastavena na <xref:System.Net.Security.ProtectionLevel.Sign>. V takovém případě bude klient vyvolá chybu, při ověření odpověď ze služby.  
+ Když klient volá `Price` metody se vyvolá výjimku, když obdrží odpověď ze služby. K tomu dochází, klient neurčuje `ProtectionLevel` na `ServiceContractAttribute`, a proto klient použije výchozí (<xref:System.Net.Security.ProtectionLevel.EncryptAndSign>) pro všechny metody, včetně `Price` – metoda. Ale služba vrátí hodnotu používanou <xref:System.Net.Security.ProtectionLevel.Sign> protože kontrakt služby definuje jedinou metodu, která se má nastavit na úrovni ochrany <xref:System.Net.Security.ProtectionLevel.Sign>. V tomto případě klient vyvolá chybu při ověřování odpověď ze služby.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.ServiceContractAttribute>  
- <xref:System.ServiceModel.OperationContractAttribute>  
- <xref:System.ServiceModel.FaultContractAttribute>  
- <xref:System.ServiceModel.MessageContractAttribute>  
- <xref:System.ServiceModel.MessageHeaderAttribute>  
- <xref:System.ServiceModel.MessageBodyMemberAttribute>  
- <xref:System.Net.Security.ProtectionLevel>  
- [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)  
- [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
- [Určování a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)  
- [Použití kontraktů zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.ServiceContractAttribute>
+- <xref:System.ServiceModel.OperationContractAttribute>
+- <xref:System.ServiceModel.FaultContractAttribute>
+- <xref:System.ServiceModel.MessageContractAttribute>
+- <xref:System.ServiceModel.MessageHeaderAttribute>
+- <xref:System.ServiceModel.MessageBodyMemberAttribute>
+- <xref:System.Net.Security.ProtectionLevel>
+- [Zabezpečení služeb](../../../docs/framework/wcf/securing-services.md)
+- [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)
+- [Určování a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
+- [Použití kontraktů zpráv](../../../docs/framework/wcf/feature-details/using-message-contracts.md)

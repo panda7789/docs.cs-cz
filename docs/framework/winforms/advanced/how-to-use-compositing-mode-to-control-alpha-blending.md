@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Řízení alfa míchání pomocí režimu skládání'
+title: 'Postupy: Pomocí řízení funkce alfa Blending pomocí režimu skládání'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,44 +9,44 @@ helpviewer_keywords:
 - colors [Windows Forms], blending
 - colors [Windows Forms], controlling transparency
 ms.assetid: f331df2d-b395-4b0a-95be-24fec8c9bbb5
-ms.openlocfilehash: 55c6db1029c6823652ac29fca46f6f8dc4ec40d0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e00b0b9b22bc8dcdd1c63494f1bc5854bc4f033
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526999"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632007"
 ---
-# <a name="how-to-use-compositing-mode-to-control-alpha-blending"></a>Postupy: Řízení alfa míchání pomocí režimu skládání
-Mohou nastat situace, kdy budete chtít vytvořit mimo obrazovku rastrový obrázek, který má následující vlastnosti:  
+# <a name="how-to-use-compositing-mode-to-control-alpha-blending"></a>Postupy: Pomocí řízení funkce alfa Blending pomocí režimu skládání
+Může nastat situace, kdy budete chtít vytvořit mimo obrazovku rastrový obrázek, který má následující vlastnosti:  
   
--   Barvy mají alfanumerické hodnoty, které jsou menší než 255.  
+-   Barvy mají hodnoty alfa, které jsou kratší než 255.  
   
--   Barvy nejsou alfa smíšení mezi sebou, jako je vytváření bitové mapy.  
+-   Barvy nejsou alfa prolnuty mezi sebou při vytváření rastrového obrázku.  
   
--   Při zobrazení dokončení rastrového obrázku jsou barvy v souboru bitové mapy s barvy pozadí v zobrazení zařízení smíšení alfa.  
+-   Když zobrazíte dokončená rastrového obrázku jsou barvy rastrového obrázku nastaven barvy pozadí na zobrazovací zařízení smíšení alfa.  
   
- K vytvoření takové rastrového obrázku, vytvořit prázdnou <xref:System.Drawing.Bitmap> objektu a pak vytvořit <xref:System.Drawing.Graphics> objektu podle této bitové mapy. Nastavení režimu skládání <xref:System.Drawing.Graphics> do objektu <xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy?displayProperty=nameWithType>.  
+ Chcete-li vytvořit takové rastrový obrázek, vytvořit prázdnou hodnotu <xref:System.Drawing.Bitmap> objektu a pak vytvořit <xref:System.Drawing.Graphics> objektu podle tento rastrový obrázek. Nastavení režimu skládání <xref:System.Drawing.Graphics> objektu <xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Drawing.Graphics> na základě objektu <xref:System.Drawing.Bitmap> objektu. Kód používá <xref:System.Drawing.Graphics> objekt spolu se dvěma poloprůhledných štětců (alpha = 160) pro malování bitové mapy. Kód doplní red elipsy a zelené elipsy pomocí poloprůhledných štětců. Zelené elipsy překrývá red elipsy, ale není zeleným smíšení s červeným, protože režimu skládání <xref:System.Drawing.Graphics> objektu na hodnotu <xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy>.  
+ Následující příklad vytvoří <xref:System.Drawing.Graphics> objektu na základě <xref:System.Drawing.Bitmap> objektu. Tento kód použije <xref:System.Drawing.Graphics> objekt spolu se dvěma poloprůhledných štětců (alfa = 160) k vykreslení na rastrový obrázek. Kód vyplní red tři tečky a zelená elipsa pomocí poloprůhledných štětců. Zelené elipsy překrývá red elipsy, ale zelené není v kombinaci s červeným protože skládání režim <xref:System.Drawing.Graphics> je nastaven na <xref:System.Drawing.Drawing2D.CompositingMode.SourceCopy>.  
   
- Kód nevykresluje bitmapy na obrazovce dvakrát: jednou na bílé pozadí a jednou na barevné pozadí. Pixelů v souboru bitové mapy, které jsou součástí na dva výpustky mají alfa součást 160, takže na symbol tří teček jsou smíšené s barvy pozadí na obrazovce.  
+ Kód vykreslí rastrového obrázku na obrazovce dvakrát: jednou na bílém pozadí a jakmile na barevné pozadí. Pixely rastrového obrázku nastaven, které jsou součástí dvou symbol tří teček mít alfa složkou 160, proto se tři tečky v kombinaci s barvy pozadí na obrazovce.  
   
- Následující obrázek znázorňuje příklad kódu výstup. Všimněte si, že jsou na symbol tří teček smíšený s na pozadí, ale nejsou smíšení mezi sebou.  
+ Následující obrázek znázorňuje výstup v příkladu kódu. Všimněte si, že jsou na symbol tří teček v kombinaci s na pozadí, ale nejsou prolnuty mezi sebou.  
   
- ![Zdroj kopírování](../../../../docs/framework/winforms/advanced/media/sourcecopy.png "sourcecopy")  
+ ![Zdroj kopie](../../../../docs/framework/winforms/advanced/media/sourcecopy.png "sourcecopy")  
   
  Příklad kódu obsahuje tento příkaz:  
   
  [!code-csharp[System.Drawing.AlphaBlending#41](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#41)]
  [!code-vb[System.Drawing.AlphaBlending#41](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#41)]  
   
- Pokud chcete na symbol tří teček, chcete-li být smíšení mezi sebou můžou mít na pozadí, změňte na následující tento příkaz:  
+ Pokud chcete na symbol tří teček, chcete-li být smíšené mezi sebou můžou mít na pozadí, změňte, který tento příkaz takto:  
   
  [!code-csharp[System.Drawing.AlphaBlending#42](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlphaBlending/CS/Class1.cs#42)]
  [!code-vb[System.Drawing.AlphaBlending#42](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#42)]  
   
- Následující obrázek znázorňuje výstup revidovaný kód.  
+ Následující obrázek znázorňuje výstup revidovaného kódu.  
   
  ![Zdroj přes](../../../../docs/framework/winforms/advanced/media/sourceover.png "sourceover")  
   
@@ -54,8 +54,8 @@ Mohou nastat situace, kdy budete chtít vytvořit mimo obrazovku rastrový obrá
  [!code-vb[System.Drawing.AlphaBlending#43](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#43)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Color.FromArgb%2A>  
- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Color.FromArgb%2A>
+- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)

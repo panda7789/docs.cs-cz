@@ -3,18 +3,13 @@ title: Začínáme s rozhraním .NET Framework
 ms.custom: updateeachrelease
 ms.date: 04/10/2018
 helpviewer_keywords:
-- .NET Framework, getting started
-- getting started [.NET Framework]
+  - '.NET Framework, getting started'
+  - 'getting started [.NET Framework]'
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6d241f0f0c10be4a73c7ac55930e5dd24ef0b1e2
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453132"
 ---
+
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
 Rozhraní .NET Framework je spouštěcí běhové prostředí, který spravuje aplikace, které se zaměřují rozhraní .NET Framework. Zahrnuje modul common language runtime, která poskytuje správu paměti a jiných služeb system a rozsáhlé knihovny tříd umožňující programátorům využívat robustní spolehlivý kód pro všechny hlavní oblasti vývoje aplikací.
@@ -69,7 +64,7 @@ K vývoji aplikací rozhraní .NET Framework nebo součástí, postupujte takto:
 
 1. Pokud není předinstalován v operačním systému, instalace verze rozhraní .NET Framework, které vaše aplikace bude cílit. Nejnovější verze výroby je rozhraní .NET Framework 4.7.2. Je předinstalován v systému Windows 10. dubna 2018 Update a Windows 10. října 2018 aktualizací a je k dispozici ke stažení ve starších verzích operačního systému Windows. Požadavky na systém rozhraní .NET Framework, naleznete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md). Informace o instalaci jiných verzí rozhraní .NET Framework najdete v tématu [Průvodce instalací](../../../docs/framework/install/guide-for-developers.md). Další balíčky rozhraní .NET Framework jsou vydány mimo pásmo, což znamená, že jejich uvedení na trh na základě postupné mimo jakékoli pravidelné ani do plánovaných vývojového cyklu. Informace týkající se těchto balíčků naleznete v tématu [The .NET Framework a vydání Out-of-Band](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).
 
-2. Vyberte jazyk nebo jazyky podporované rozhraním .NET Framework, kterou chcete použít pro vývoj aplikací. Počet jazyků, jsou k dispozici, včetně [jazyka Visual Basic](../../visual-basic/index.md), [jazyka C#](../../csharp/index.md), [F #](../../fsharp/index.md)a C + +/ CLI od Microsoftu. (Programovací jazyk, který umožňuje vývoj aplikací pro rozhraní .NET Framework používá [společné jazykové infrastruktury (CLI) specifikace](https://go.microsoft.com/fwlink/?LinkId=199862).)
+2. Vyberte jazyk nebo jazyky podporované rozhraním .NET Framework, kterou chcete použít pro vývoj aplikací. Počet jazyků, jsou k dispozici, včetně [jazyka Visual Basic](../../visual-basic/index.md), [ C# ](../../csharp/index.md), [ F# ](../../fsharp/index.md)a C + +/ CLI od Microsoftu. (Programovací jazyk, který umožňuje vývoj aplikací pro rozhraní .NET Framework používá [společné jazykové infrastruktury (CLI) specifikace](https://go.microsoft.com/fwlink/?LinkId=199862).)
 
 3. Vybrat a nainstalovat vývojové prostředí pro použití k vytvoření své aplikace a, který podporuje vybraný programovací jazyk nebo jazyky. Microsoft integrované vývojové prostředí (IDE) pro aplikace rozhraní .NET Framework je [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Je k dispozici v různých edicích.
 
@@ -89,7 +84,7 @@ Další informace o vývoji aplikací určených pro rozhraní .NET Framework, n
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce rozhraním .NET Framework](../../../docs/framework/index.md)   
-- [Co je nového](../../../docs/framework/whats-new/index.md)   
-- [Prohlížeč rozhraní API .NET](/dotnet/api/)   
+- [Průvodce rozhraním .NET Framework](../../../docs/framework/index.md)
+- [Co je nového](../../../docs/framework/whats-new/index.md)
+- [Prohlížeč rozhraní API .NET](/dotnet/api/)
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 46ee8c62861a62ac044f295f7da082756d87347b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 88b8f874400d68110fa5e8fb66ca910b8e7231e1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447630"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54645961"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers – metoda
 Vytvoří výčet MemberDef tokeny představující členů zadaného typu.  
@@ -41,39 +41,39 @@ HRESULT EnumMembers (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor.  
+ [out v] Ukazatel na enumerátor.  
   
  `cl`  
- [v] TypeDef token představující typ, jejíž členové jsou výčet.  
+ [in] Token TypeDef představující typ, jejíž členové jsou pro provedení výčtu.  
   
  `rMembers`  
- [out] Pole používané pro udržení MemberDef tokenů.  
+ [out] Pole sloužící k uchování MemberDef tokeny.  
   
  `cMax`  
- [v] Maximální velikost `rMembers` pole.  
+ [in] Maximální velikost `rMembers` pole.  
   
  `pcTokens`  
- [out] Skutečný počet MemberDef tokeny, vrátí se v `rMembers`.  
+ [out] Skutečný počet tokenů MemberDef vrácené v `rMembers`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMembers` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné MemberDef tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumMembers` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny MemberDef výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při vytváření výčtů kolekcí členů pro třídu, `EnumMembers` vrátí pouze členové definované přímo na třídu. I v případě, že třída poskytuje implementaci pro tyto zděděné členy nevrátí žádné členy, které třídy dědí. Výčet zděděné členy, volající musí explicitně provede řetězu dědičnosti. Všimněte si, že pravidla pro řetězu dědičnosti se mohou lišit v závislosti na jazyce nebo kompilátoru, která vygenerované původní metadata.  
+ Při vytváření výčtů kolekcí členů v případě třídy `EnumMembers` vrací pouze členy definované přímo ve třídě. I v případě, že třída poskytuje implementaci pro členy zděděné nevrací žádné členy, které dědí třídu. Výčet zděděné členy, volající musí explicitně provedou řetězu dědičnosti. Všimněte si, že pravidla pro řetězec dědičnosti mohou lišit v závislosti na jazyk nebo kompilátor, který původní metadata, protože ho.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

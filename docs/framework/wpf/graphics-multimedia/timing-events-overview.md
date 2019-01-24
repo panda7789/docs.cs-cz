@@ -8,75 +8,75 @@ helpviewer_keywords:
 - timelines [WPF]
 - timing events [WPF]
 ms.assetid: 597e3280-0867-4359-a97b-5b2f4149e350
-ms.openlocfilehash: a48d1621e5568d556a1177578cc662813d70a283
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58861a036d95fcef41da455b25ad71d6e6afaef5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565484"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726816"
 ---
 # <a name="timing-events-overview"></a>Přehled událostí časování
-Toto téma popisuje, jak používat k dispozici na pět časování události <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty.  
+Toto téma popisuje, jak používat k dispozici na pěti události časování <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> objekty.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Zjistit, v tomto tématu, musíte vědět, jak vytvořit a používat animace. Začínáme s animace, najdete v článku [animace přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+ V tomto tématu informace o tom, by měl pochopit, jak vytvořit a používat animace. Abyste mohli začít s animací, najdete v článku [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
- Animace vlastnosti v několika způsoby [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
+ Existuje několik způsobů animace vlastností v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:  
   
--   **Použití objektů storyboard** (značek a kódu): můžete použít <xref:System.Windows.Media.Animation.Storyboard> objekty, které chcete uspořádat a distribuovat animací na jeden nebo více objektů. Příklad, naleznete v části [animace vlastnost pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md).  
+-   **Použití objektů scénáře** (značek a kódu): Můžete použít <xref:System.Windows.Media.Animation.Storyboard> objektů můžete uspořádat a distribuovat animací na jeden nebo více objektů. Příklad najdete v tématu [animace vlastnosti pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-a-storyboard.md).  
   
--   **Pomocí místní animací** (pouze kód): můžete použít <xref:System.Windows.Media.Animation.AnimationTimeline> objekty přímo pro vlastnosti se animace. Příklad, naleznete v části [animace vlastnosti bez použití scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).  
+-   **Pomocí místní animace** (jenom kód): Můžete použít <xref:System.Windows.Media.Animation.AnimationTimeline> objekty přímo k vlastnostem, animace. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).  
   
--   **Pomocí hodiny** (pouze kód): můžete explicitně správě vytváření hodiny a distribuovat hodiny animace sami.  Příklad, naleznete v části [animace vlastnost pomocí AnimationClock](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-an-animationclock.md).  
+-   **Pomocí hodiny** (jenom kód): Můžete explicitně spravovat vytváření hodiny a distribuovat hodiny animace sami.  Příklad najdete v tématu [animace vlastnosti pomocí AnimationClock](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-by-using-an-animationclock.md).  
   
- Vzhledem k tomu, že je lze využít v značek a kódu, příklady v tomto přehledu použít <xref:System.Windows.Media.Animation.Storyboard> objekty. Konceptů popsaných však můžete použít jiné metody animace vlastnosti.  
+ Vzhledem k tomu, že lze využít v značek a kódu, příklady v tomto přehledu používají <xref:System.Windows.Media.Animation.Storyboard> objekty. Koncepty popsané však můžete použít pro jiné metody animace vlastností.  
   
-### <a name="what-is-a-clock"></a>Co je čase?  
- Časová osa, samostatně, nic se neděje ve skutečnosti jiné než popisují segment času. Je časové ose <xref:System.Windows.Media.Animation.Clock> objekt, který funguje skutečné: udržuje s časováním stavu spuštění pro časovou osu. Ve většině případů, například při použití scénářů hodiny, které vytvoří automaticky časové osy. Můžete také vytvořit <xref:System.Windows.Media.Animation.Clock> explicitně pomocí <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A> metoda. Další informace o <xref:System.Windows.Media.Animation.Clock> objekty, najdete [animace a přehled systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
+### <a name="what-is-a-clock"></a>Co je ve formátu?  
+ Časová osa, samostatně, nic nedělá skutečně jiné než popisují část času. Je na časové ose <xref:System.Windows.Media.Animation.Clock> objekt, který odvádí skutečnou práci: udržuje pro časovou osu s časováním běhový stav. Ve většině případů, jako je například pomocí scénářů při se automaticky vytvoří hodin pro vaši časovou osu. Můžete také vytvořit <xref:System.Windows.Media.Animation.Clock> explicitně pomocí <xref:System.Windows.Media.Animation.Timeline.CreateClock%2A> metody. Další informace o <xref:System.Windows.Media.Animation.Clock> objekty, najdete [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
   
 ## <a name="why-use-events"></a>Proč používat události?  
- S výjimkou jeden (Hledat zarovnaný na poslední značek), všechny operace interaktivní časování jsou asynchronní. Neexistuje žádný způsob nevíte, přesně když se spustí. Pokud máte jiný kód, který závisí na vaší časování operaci, která může být problém. Předpokládejme, že jste chtěli zastavit osy, která animovaný obdélníku. Po časovou osu zastaví, změníte barvu rámečku.  
+ S výjimkou jednoho (hledání zarovnané posledního impulzu), všechny operace interaktivní časování jsou asynchronní. Neexistuje žádný způsob, jak budete vědět, přesně tak když se spustí. Pokud máte jiný kód, který je závislý na vaše operace časování, který může být problém. Předpokládejme, že byste chtěli zastavit časovou osu, která animace obdélníku. Po ukončení na časové ose, změnit barvu obdélníku.  
   
  [!code-csharp[events_procedural#NeedForEventsFragment](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#needforeventsfragment)]
  [!code-vb[events_procedural#NeedForEventsFragment](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#needforeventsfragment)]  
   
- V předchozím příkladu druhý řádek kódu může spustit před storyboard zastaví. Je to způsobeno zastavením je asynchronní operace. Že časová osa nebo hodiny zastavit vytvoří "žádost o zastavení" typů které nejsou předmětem zpracování, dokud modul časování další značky.  
+ V předchozím příkladu druhý řádek kódu může spustit před zastaví scénáře. Důvodem je skutečnost zastavení je asynchronní operace. "Požadavek na zastavení" typů, která není zpracována až do další značky modul časování oznamovat časové osy nebo hodiny zastavit vytvoří.  
   
- Chcete-li po dokončení časový horizont spuštěním příkazů, použijte časování události. V následujícím příkladu obslužné rutiny události umožňuje změnit barvu obdélníku po scénáři zastaví přehrávání.  
+ Provádět příkazy po dokončení časové osy, použijte události časování. V následujícím příkladu se používá obslužnou rutinu události a změňte barvu obdélník po scénář se zastaví přehrávání.  
   
  [!code-csharp[events_procedural#RegisterForStoryboardCurrentStateInvalidatedEvent](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#registerforstoryboardcurrentstateinvalidatedevent)]
  [!code-vb[events_procedural#RegisterForStoryboardCurrentStateInvalidatedEvent](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#registerforstoryboardcurrentstateinvalidatedevent)]  
 [!code-csharp[events_procedural#StoryboardCurrentStateInvalidatedEvent2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/events_procedural/CSharp/EventExample.cs#storyboardcurrentstateinvalidatedevent2)]
 [!code-vb[events_procedural#StoryboardCurrentStateInvalidatedEvent2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/events_procedural/VisualBasic/EventExample.vb#storyboardcurrentstateinvalidatedevent2)]  
   
- Více kompletní příklad najdete v tématu [změny stavu přijímat oznámení při hodiny na](../../../../docs/framework/wpf/graphics-multimedia/how-to-receive-notification-when-clock-state-changes.md).  
+ Podrobnější příklad naleznete v tématu [změny stavu dostávat oznámení při hodin](../../../../docs/framework/wpf/graphics-multimedia/how-to-receive-notification-when-clock-state-changes.md).  
   
 ## <a name="public-events"></a>Veřejné události  
- <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> třídy obou poskytují pět časování události. Následující tabulka uvádí tyto události a podmínky, které je.  
+ <xref:System.Windows.Media.Animation.Timeline> a <xref:System.Windows.Media.Animation.Clock> obě třídy poskytují pět události časování. V následující tabulce jsou uvedeny tyto události a podmínky, které je.  
   
-|Událost|Spouštěcí interaktivní operace|Další aktivační události|  
+|Událost|Aktivace interaktivní operace|Jiné triggery|  
 |-----------|--------------------------------------|--------------------|  
-|**byla dokončena**|Přeskočit k vyplnění|Hodiny dokončí.|  
-|**CurrentGlobalSpeedInvalidated**|Pozastavit, pokračovat, Hledat, nastavit rychlost poměr, přejděte k vyplnění, zastavte|Hodiny obrátí, zrychluje, spuštění nebo zastavení.|  
-|**CurrentStateInvalidated**|Začít, přejděte k vyplnění, zastavte|Hodiny spustí, zastaví, nebo doplní.|  
-|**CurrentTimeInvalidated**|Začít, Hledat, přejděte k vyplnění, zastavte|Postupuje hodiny.|  
-|**RemoveRequested**|Odebrat||  
+|**Dokončeno**|Přejít k vyplnění|Hodiny se dokončí.|  
+|**CurrentGlobalSpeedInvalidated**|Pozastavit, obnovit, hledání, nastavit poměr rychlost, přejděte k vyplnění, zastavit|Hodiny obrátí, zrychluje doručování, spuštění nebo zastavení.|  
+|**CurrentStateInvalidated**|Začněte tím, že přeskočit na to, zastavit|Hodiny spustí, zastaví, nebo vyplní.|  
+|**CurrentTimeInvalidated**|Začít, hledání, přejděte k vyplnění, zastavit|Postupuje hodiny.|  
+|**RemoveRequested**|odebrat||  
   
-## <a name="ticking-and-event-consolidation"></a>A obaly a konsolidaci událostí  
- Když animace objektů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], časování stroj, který spravuje vaše animace. Modul časování sleduje průběh čas a vypočítá stav každého animace. Umožňuje mnoho takové předává vyhodnocení za sekundu. Tyto zkušební předává se označují jako "rysky."  
+## <a name="ticking-and-event-consolidation"></a>Tikání a konsolidaci událostí  
+ Když animace objektů v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], je modul časování, který spravuje animace. Časování stroj sleduje průběh čas a vypočítá stavu každou animaci. Nezáleží na počtu průchodů takové vyhodnocení za sekundu. Tyto zkušební předá jsou označovány jako "taktů."  
   
- Pokud ke rysky často dochází, je možné pro mnoho kroků k mezi značky. Například časové osy může být zastavena, spustit a zastavit znovu, v takovém případě jejím aktuálním stavu se změnily třikrát. Teoreticky události je možné zvýšit více než jednou. v jedné značky; modul časování však konsoliduje události, tak, aby všechny události mohou být vyvolány nejvíce jednou za značek.  
+ Zatímco značky docházet často, je možné pro mnoho věcí, které se provedou mezi značkami. Například časovou osu může být zastavit, spustit a zastavit znovu, v takovém případě jejím aktuálním stavu se změnili třikrát. Teoreticky vzato události může být vyvolána více než jednou v jedné značky; modul časování však konsoliduje události, tak, aby každé události může být vyvolána oznámením nejvýše jednou za značek.  
   
-## <a name="registering-for-events"></a>Registrace pro události  
- Existují dva způsoby registrace pro časování události: můžete zaregistrovat s časovou osu nebo hodiny vytvořené z časovou osu. Registrace pro událost přímo s hodinami je poměrně jasné, i když lze provést pouze z kódu. Můžete zaregistrovat pro události se časové osy z kód. Další část popisuje postup registrace pro události hodiny s časovou osu.  
+## <a name="registering-for-events"></a>Registrace k událostem  
+ Existují dva způsoby, jak zaregistrovat pro události časování: můžete zaregistrovat pomocí časové osy nebo s hodinami vytvořené z časové osy. Registrace pro události přímo s hodinami je celkem jasné, i když lze provést pouze z kódu. Můžete se zaregistrovat pro události se časovou osu z značek nebo kódu. Další část popisuje postup registrace pro události hodiny se časové osy.  
   
 <a name="registeringforclockeventswithatimeline"></a>   
-## <a name="registering-for-clock-events-with-a-timeline"></a>Registrace pro události hodiny se časové osy  
- I když časové osy <xref:System.Windows.Media.Animation.Timeline.Completed>, <xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>, <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>, <xref:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated>, a <xref:System.Windows.Media.Animation.Timeline.RemoveRequested> události se zobrazí přidruženi k registraci pro tyto události ve skutečnosti přidruží obslužné rutiny události s časovou osu <xref:System.Windows.Media.Animation.Clock> vytvoří pro časovou osu.  
+## <a name="registering-for-clock-events-with-a-timeline"></a>Registrace k událostem hodiny s časovou osu  
+ I když časové osy <xref:System.Windows.Media.Animation.Timeline.Completed>, <xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>, <xref:System.Windows.Media.Animation.Timeline.CurrentStateInvalidated>, <xref:System.Windows.Media.Animation.Timeline.CurrentTimeInvalidated>, a <xref:System.Windows.Media.Animation.Timeline.RemoveRequested> události se zobrazí k časové ose, registrace pro tyto události ve skutečnosti přidruží obslužné rutiny události s <xref:System.Windows.Media.Animation.Clock> vytvoří pro časovou osu.  
   
- Když si zaregistrujete <xref:System.Windows.Media.Animation.Timeline.Completed> událostí na časové ose, například můžete jste ve skutečnosti informuje systém k registraci pro <xref:System.Windows.Media.Animation.Clock.Completed> událostí každé hodiny, který se vytvoří pro časovou osu. V kódu, je třeba zaregistrovat pro tuto událost před <xref:System.Windows.Media.Animation.Clock> se vytvoří pro tuto časovou osu; jinak nebude přijímat oznámení. K tomu dojde automaticky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; analyzátor automaticky zaregistruje událost před <xref:System.Windows.Media.Animation.Clock> je vytvořena.  
+ Když si zaregistrujete <xref:System.Windows.Media.Animation.Timeline.Completed> událostí na časové ose, například je skutečně tím rozdílem, systém a zaregistrujte se <xref:System.Windows.Media.Animation.Clock.Completed> události každé hodiny, který je vytvořen pro časovou osu. V kódu, musíte zaregistrovat pro tuto událost před <xref:System.Windows.Media.Animation.Clock> se vytvoří pro tento osu; v opačném případě nebude přijímat oznámení. K tomu dojde automaticky v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; analyzátor automaticky zaregistruje událost před <xref:System.Windows.Media.Animation.Clock> se vytvoří.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 35a7d481cf82818054a852f7c2e142f615022fcb
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 351daa2a13c4a8c4b1551ce74d2eaa6d032f1f17
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848150"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622728"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>Postupy: Otevření a připojení k souboru protokolu
 <xref:System.IO.StreamWriter> a <xref:System.IO.StreamReader> znaků pro zápis a čtení znaků z datových proudů. Následující příklad kódu otevře `log.txt` souboru pro vstup a vytvoří soubor, pokud ještě neexistuje a přidá informace do konce souboru. Obsah souboru jsou pak zapsány do standardního výstupu pro zobrazení. Jako alternativu k v tomto příkladu může být informace uložené jako jeden řetězec nebo pole řetězců a <xref:System.IO.File.WriteAllText%2A> nebo <xref:System.IO.File.WriteAllLines%2A> metodu lze použít k dosažení stejné funkce.  
@@ -32,15 +32,15 @@ ms.locfileid: "48848150"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.StreamWriter>  
-- <xref:System.IO.StreamReader>  
-- <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType>  
-- <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  
-- <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>  
-- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
-- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
-- [Postupy: Zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
+- <xref:System.IO.StreamWriter>
+- <xref:System.IO.StreamReader>
+- <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType>
+- <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>
+- <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>
+- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
+- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
+- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)
+- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)
+- [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)
+- [Postupy: Zápis znaků do řetězce](../../../docs/standard/io/how-to-write-characters-to-a-string.md)
 - [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)

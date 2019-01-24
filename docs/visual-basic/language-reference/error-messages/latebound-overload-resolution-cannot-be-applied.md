@@ -1,5 +1,5 @@
 ---
-title: Rozpoznání přetížené nelze použít pro &#39; &lt;procedurename&gt; &#39; protože přistupující instance je typ rozhraní
+title: Přetížení rozpoznání s pozdní vazbou nelze použít pro &#39; &lt;název_procedury&gt; &#39; protože přistupující instance je typu rozhraní
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30933
@@ -8,28 +8,28 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: e41cbf30f06547ef39553e31542e4e8b6df49a3b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db0ce88f63be8d58cc1c1abf91eda6a0e56456c6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589877"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651512"
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>Rozpoznání přetížené nelze použít pro &#39; &lt;procedurename&gt; &#39; protože přistupující instance je typ rozhraní
-Kompilátor se pokouší vyřešit odkaz na vlastnost přetížené nebo postup, ale odkaz nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Způsobí, že kompilátoru vyřešit jako pozdní vazbou odkaz.  
+# <a name="latebound-overload-resolution-cannot-be-applied-to-39ltprocedurenamegt39-because-the-accessing-instance-is-an-interface-type"></a>Přetížení rozpoznání s pozdní vazbou nelze použít pro &#39; &lt;název_procedury&gt; &#39; protože přistupující instance je typu rozhraní
+Kompilátor se pokouší rozpoznat odkaz na přetížená vlastnost nebo procedura, ale odkaz se nezdaří, protože argument je typu `Object` a odkazující objekt má datový typ rozhraní. `Object` Argument vynutí, aby kompilátor přeložit odkaz na jako s pozdní vazbou.  
   
- Za těchto okolností přeloží kompilátor přetížení prostřednictvím implementující třídu místo prostřednictvím základní rozhraní. Pokud třída přejmenuje jednu z verzí přetížené, kompilátor nebere v úvahu této verze být přetížení, protože se její název liší. To způsobí, že kompilátoru ignorovat přejmenovat verze při by mohlo být nejvhodnější odkaz na řešení.  
+ Za těchto okolností přeloží kompilátor přetížení prostřednictvím implementující třídu namísto prostřednictvím základní rozhraní. Pokud třída přejmenuje některou z přetížených verzí, kompilátor nebere v úvahu tuto verzi si přetížení, protože se její název liší. To pak způsobí, že kompilátor bude ignorovat přejmenované verze, když ho mohla se přeložit odkaz na správnou volbu.  
   
  **ID chyby:** BC30933  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Použití `CType` přetypovat argument z `Object` na typ určený podpis přetížení, které chcete volat.  
+-   Použití `CType` přetypovat argument od `Object` na typ určený signatura přetížení, které chcete volat.  
   
-     Všimněte si, že nepomůže přetypovat odkazující objekt, který má základní rozhraní. Argumentem této chybě zabráníte tak musíte vysílat.  
+     Mějte na paměti, že to nepomůže objekt přetypujte na odkazující na základní rozhraní. Musíte přetypovat argument lze vyvarovat této chyby.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje volání přetížené `Sub` procedury, která způsobí, že tato chyba při kompilaci.  
+ Následující příklad ukazuje volání přetížený `Sub` proceduru, která způsobí, že tuto chybu v době kompilace.  
   
 ```  
 Module m1  
@@ -53,18 +53,18 @@ Module m1
 End Module  
 ```  
   
- V předchozím příkladu, pokud je povoleno volání do kompilátoru `s1` jako zapsána, řešení by proběhnout prostřednictvím třídy `c1` místo rozhraní `i1`. To znamená, když nebude zvážit kompilátor `s2` protože se její název liší v `c1`, i když je nejvhodnější podle definice `i1`.  
+ V předchozím příkladu, pokud kompilátor může volání `s1` jak je uvedená, řešení by proběhnout prostřednictvím třídy `c1` namísto rozhraní `i1`. To znamená, že by kompilátor zvažte `s2` vzhledem k tomu, že je její název liší `c1`, i když je správnou volbu podle definice `i1`.  
   
- Chybu můžete vyřešit změnou volání na jednu z následujících řádků kódu:  
+ Opravte chybu tak, že změníte volání na buď následující řádky kódu:  
   
 ```  
 refer.s1(CType(o1, Integer))  
 refer.s1(CType(o1, Double))  
 ```  
   
- Každý předchozí řádek kódu explicitně vrhá `Object` proměnná `o1` na jeden z typů parametrů definovaný pro přetížení.  
+ Jednotlivé řádky kódu, předchozí explicitní přetypování `Object` proměnnou `o1` na jeden z typů parametrů definovaných pro přetížení.  
   
-## <a name="see-also"></a>Viz také  
- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)  
- [Řešení přetížení](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)  
- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)
+## <a name="see-also"></a>Viz také:
+- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
+- [Řešení přetížení](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
+- [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)

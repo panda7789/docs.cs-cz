@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
+title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: d0dd742f599a6acee4928239aab79cc7b1b66d4b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bba3cf5e1e6d4aa7b88ddbb7f3454be511982f74
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512250"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54626047"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)
 Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů a potom vytvořit nové soubory, které uspořádání dat novým způsobem.  
   
 ### <a name="to-create-the-data-files"></a>K vytvoření datových souborů  
@@ -29,7 +29,7 @@ Tento příklad ukazuje jeden způsob, jak sloučit obsah těchto dvou souborů 
     Garcia, Debra  
     ```  
   
-2.  Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložte ho do složky projektu: Všimněte si, že dva soubory mají některé názvy v běžných.  
+2.  Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu: Mějte na paměti, že dva soubory mají společnou některé názvy.  
   
     ```  
     Liu, Jinghao  
@@ -128,7 +128,7 @@ class SplitWithGroups
 
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

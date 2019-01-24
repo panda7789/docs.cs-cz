@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e60f542f-6271-495b-a9e4-48553481c2a3
-ms.openlocfilehash: 7588b2b4592a5298a69eb4adfbc06edb6913ef76
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1b13d1e3e210964331a710512876bd1f8503069e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648073"
 ---
 # <a name="performing-catalog-operations"></a>Provádění operací katalogu
 K provedení příkazu k úpravě databáze nebo katalog, jako například výkaz CREATE TABLE nebo CREATE PROCEDURE vytvořit **příkaz** pomocí odpovídající příkazy SQL a **připojení** objektu. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
@@ -45,7 +45,7 @@ SqlCommand command = new SqlCommand(queryString, connection);
 command.ExecuteNonQuery();  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

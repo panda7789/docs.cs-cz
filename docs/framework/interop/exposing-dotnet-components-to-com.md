@@ -8,48 +8,48 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f11928388dba9b0e9b442578bfb7b6f751c2e172
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b5c80ba473b0080a1368c82949c765820239ef25
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33387429"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54715735"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Vystavení komponent architektury .NET Framework pro COM
-Zápis typ formátu .NET a využívání tohoto typu z nespravovaného kódu jsou odlišné aktivity pro vývojáře. Tato část popisuje několik tipy pro vytvoření spravovaného kódu, které spolupracuje s klienty COM:  
+Zápis typ formátu .NET a použití typu z nespravovaného kódu jsou různé aktivity pro vývojáře. Tato část popisuje několik tipů pro vytváření spravovaného kódu, který spolupracuje s klienty modelu COM:  
   
--   [Kvalifikace typů .NET pro spolupráci](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md).  
+-   [Kvalifikace typů .NET pro součinnost](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md).  
   
-     Všechny spravované typy, metody, vlastnosti, pole a události, které chcete vystavit do modelu COM musí být veřejné. Typy musí mít veřejný výchozí konstruktor, který je jediný konstruktor, který lze vyvolat prostřednictvím modelu COM.  
+     Všechny spravované typy, metody, vlastnosti, pole a události, které chcete vystavit rozhraní COM musí být veřejné. Typy musí mít veřejný výchozí konstruktor, který je jediný konstruktor, který lze vyvolat pomocí modelu COM.  
   
 -   [Použití atributů spolupráce](../../../docs/framework/interop/applying-interop-attributes.md).  
   
-     Vlastní atributy v rámci spravovaného kódu můžete zlepšení interakce komponenty.  
+     Vlastní atributy v rámci spravovaného kódu můžete vylepšit spolupráci komponenty.  
   
--   [Balení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md).  
+-   [Zabalení sestavení pro model COM](../../../docs/framework/interop/packaging-an-assembly-for-com.md).  
   
-     Vývojáři COM může vyžadovat, je vytvořit shrnutí jednotlivými kroky při odkazování na a nasazení vaší sestavení.  
+     Vývojáři modelu COM může vyžadovat vytvořit souhrn kroky při odkazování na a nasazení vašeho sestavení.  
   
- Kromě toho tato část popisuje úlohy související s využívání spravovaný typ z modelu COM klienta.  
+ Kromě toho tato část identifikuje úlohy týkající se používání spravovaného typu z modelu COM klienta.  
   
-#### <a name="to-consume-a-managed-type-from-com"></a>Chcete-li využívat spravovaný typ z modelu COM  
+#### <a name="to-consume-a-managed-type-from-com"></a>Chcete-li využívají spravovaného typu z modelu COM  
   
-1.  [Zaregistrovat sestavení modelu COM](../../../docs/framework/interop/registering-assemblies-with-com.md).  
+1.  [Registrace sestavení s modelem COM](../../../docs/framework/interop/registering-assemblies-with-com.md).  
   
-     Typy v sestavení (a knihovny typů) musí být zaregistrován v době návrhu. Pokud instalační program nezaregistruje sestavení, požádejte COM vývojářům používat Regasm.exe.  
+     Typy v sestavení (a knihovny typů) musí být zaregistrovaný v době návrhu. Pokud instalační program nezaregistruje sestavení, dáte pokyn, aby vývojářům modelu COM pomocí Regasm.exe.  
   
-2.  [Referenční typy .NET z modelu COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md).  
+2.  [Odkazování na typy .NET z modelu COM](../../../docs/framework/interop/how-to-reference-net-types-from-com.md).  
   
-     Vývojáři COM můžete odkazovat typy v sestavení pomocí stejné nástroje a techniky, které používají ještě dnes.  
+     Vývojáři modelu COM může odkazovat na typy v sestavení pomocí stejné nástroje a techniky, které jeho tým dnes používá.  
   
 3.  [Volání objektu .NET](https://msdn.microsoft.com/library/40c9626c-aea6-4bad-b8f0-c1de462efd33(v=vs.100)).  
   
-     Vývojáři COM můžete volat metody pro objekt .NET stejným způsobem jako volání metody v libovolném nespravované typu. Například COM **CoCreateInstance** aktivuje objekty .NET API.  
+     Vývojáři modelu COM může volat metody u objektu rozhraní .NET stejným způsobem jako volání metody v libovolném nespravovaného typu. Například COM **CoCreateInstance** API aktivuje objektů .NET.  
   
 4.  [Nasazení aplikace pro přístup COM](https://msdn.microsoft.com/library/fb63564c-c1b9-4655-a094-a235625882ce(v=vs.100)).  
   
-     Sestavení se silným názvem může být nainstalována v globální mezipaměti sestavení a vyžaduje podpis vydavatele. Sestavení, které nejsou silné s názvem musí být nainstalován v adresáři aplikace klienta.  
+     Sestavení se silným názvem může být nainstalována v globální mezipaměti sestavení a vyžaduje podpis od vydavatele. Sestavení, která nejsou silný název musí být nainstalována v adresáři aplikace klienta.  
   
-## <a name="see-also"></a>Viz také  
- [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
- [Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)
+## <a name="see-also"></a>Viz také:
+- [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)
+- [Ukázka zprostředkovatele s objekty COM: Klient COM a .NET Server](../../../docs/framework/interop/com-interop-sample-com-client-and-net-server.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 781111db30ae664c9dd45744f88387e161f2716f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d0e1b764691fd2582e1225cb90003e2a644061f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426796"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643686"
 ---
 # <a name="isymunmanagedscopegetlocals-method"></a>ISymUnmanagedScope::GetLocals – metoda
-Získá místní proměnné definované v tomto rozsahu.  
+Získá místní proměnné definované v rámci tohoto oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT GetLocals(
   
 #### <a name="parameters"></a>Parametry  
  `cLocals`  
- [v] A `ULONG32` určující velikost `locals` pole.  
+ [in] A `ULONG32` , který označuje velikost `locals` pole.  
   
  `pcLocals`  
- [out] Ukazatel na `ULONG32` která přijme velikost vyrovnávací paměti musí obsahovat místní proměnné.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat místní proměnné.  
   
  `locals`  
  [out] Pole, která přijímá místní proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)

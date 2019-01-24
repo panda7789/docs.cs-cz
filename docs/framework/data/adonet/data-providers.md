@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 03a9fc62-2d24-491a-9fe6-d6bdb6dcb131
-ms.openlocfilehash: af7b444a391de56f516d84620b4dbd2eba3497fc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d96be73fc63856e317b129c1fdd8c381c9df6c07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521411"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627262"
 ---
 # <a name="net-framework-data-providers"></a>Zprostředkovatelé dat .NET framework
 A [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatel dat slouží k připojení k databázi, provádění příkazů a načíst výsledky. Tyto výsledky se buď zpracovávají přímo, umístí do <xref:System.Data.DataSet> aby bylo možné vystavit uživateli podle potřeby, kombinované s daty z více zdrojů nebo vzdálený mezi vrstvami. [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatelé dat jsou zjednodušené, vytvoření minimální vrstvy mezi zdrojem dat a kódu, aniž byste museli obětovat funkčnost zvýšit výkon.  
@@ -76,9 +76,9 @@ using System.Data.SqlClient;
   
  V následující tabulce jsou uvedeny zprostředkovatelů, které byly testovány pomocí [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  
   
-|Ovladač|Zprostředkovatel|  
+|Ovladač|Poskytovatel|  
 |------------|--------------|  
-|ZPROSTŘEDKOVATEL SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro SQL Server|  
+|SQLOLEDB|Zprostředkovatel Microsoft OLE DB pro SQL Server|  
 |MSDAORA|Zprostředkovatel Microsoft OLE DB pro Oracle|  
 |Microsoft.Jet.OLEDB.4.0|Zprostředkovatel OLE DB pro Microsoft Jet|  
   
@@ -147,7 +147,7 @@ using System.Data.OracleClient;
 ## <a name="choosing-a-net-framework-data-provider"></a>Výběr zprostředkovatele dat .NET Framework  
  V závislosti na zdroji návrhu a data pro vaši aplikaci podle vaší volby [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat může zlepšit výkon, možnosti a integrita vaší aplikace. Následující tabulka popisuje výhody a omezení jednotlivých [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb.  
   
-|Zprostředkovatel|Poznámky|  
+|Poskytovatel|Poznámky|  
 |--------------|-----------|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro SQL Server|Doporučuje se pro aplikace střední vrstvy, které používají Microsoft SQL Server.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají Microsoft Database Engine (MSDE) nebo SQL Server.<br /><br /> Doporučuje namísto použití zprostředkovatele OLE DB pro SQL Server (SQLOLEDB) s používat [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatele dat pro OLE DB.|  
 |[!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zprostředkovatel dat pro OLE DB|Pro SQL Server [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Data Provider pro SQL Server se doporučuje namísto tohoto zprostředkovatele.<br /><br /> Doporučuje se pro jednovrstvou aplikace, které používají databáze aplikace Microsoft Access. Použití databáze aplikace Access pro aplikace střední vrstvy se nedoporučuje.|  
@@ -157,7 +157,7 @@ using System.Data.OracleClient;
 ## <a name="entityclient-provider"></a>Zprostředkovatel EntityClient  
  Zprostředkovatel EntityClient se používá pro přístup k datům na základě na Entity Data Model (EDM). Na rozdíl od jiných rozhraní .NET Framework data zprostředkovatele nelze pracovat přímo se zdrojem dat. Místo toho používá Entity SQL ke komunikaci se příslušný prostředkovatel data. Další informace najdete v tématu [zprostředkovatel EntityClient a Entity SQL](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

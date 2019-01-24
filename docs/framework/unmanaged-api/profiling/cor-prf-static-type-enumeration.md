@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fc610f4cc34b256867396a3390d5ccd0822f6454
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34a2ca5b505c504115af47402c3d92a05ec0676f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450385"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737630"
 ---
 # <a name="corprfstatictype-enumeration"></a>COR_PRF_STATIC_TYPE – výčet
-Určuje, jestli je statická pole a pokud ano, statické kvality, která platí pro pole. Tyto hodnoty lze spojovat pomocí bitové operace OR indikující, zda má pole víc různých statických vlastností.  
+Určuje, jestli je statická pole, a pokud ano, statické kvality platí pro pole. Tyto hodnoty lze spojovat pomocí bitová operace OR k označení, že pole má několik různých statických kvality.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,14 +42,14 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_NOT_A_STATIC`|Pole nejsou statické.|  
-|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|Toto pole je aplikace statické domény.|  
-|`COR_PRF_FIELD_THREAD_STATIC`|Pole je statická přístup z více vláken.|  
-|`COR_PRF_FIELD_CONTEXT_STATIC`|Pole je statická kontextu.|  
-|`COR_PRF_FIELD_RVA_STATIC`|Toto pole je relativní virtuální adresy (RVA)-statické.|  
+|`COR_PRF_FIELD_NOT_A_STATIC`|Pole není statická.|  
+|`COR_PRF_FIELD_APP_DOMAIN_STATIC`|Toto pole je statická domény aplikace.|  
+|`COR_PRF_FIELD_THREAD_STATIC`|Toto pole je statická na úrovni vlákna.|  
+|`COR_PRF_FIELD_CONTEXT_STATIC`|Toto pole je statického kontextu.|  
+|`COR_PRF_FIELD_RVA_STATIC`|Pole je relativní virtuální adresu (RVA) – statické.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -57,5 +57,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

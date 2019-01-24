@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)'
+title: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-ms.openlocfilehash: 0e27a72fcb5789ac9a067091aeb150d33f646708
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 565e4497e362e82528aea850dc86d20c9983259b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641983"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54632800"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)
-Následující příklad ukazuje, jak k seřazení řádků strukturovaných text, například hodnot oddělených čárkami, podle libovolného pole v řádku. Pole může zadat dynamicky za běhu. Předpokládejme, že pole v scores.csv představují číslo ID Studentova, následované řadu čtyři výsledků testu.  
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (Visual Basic)
+Následující příklad ukazuje způsob řazení řádků strukturovaných textu, jako je například textový soubor s oddělovači, podle libovolného pole v řádku. Pole může být určen dynamicky za běhu. Předpokládejme, že pole v scores.csv představují student získal identifikační číslo, za nímž následuje řadu čtyři skóre v testech.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Chcete-li vytvořit soubor, který obsahuje data  
   
-1.  Kopírování dat scores.csv z tématu [postupy: připojení k obsahu z odlišných typů souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uložte ho do složky řešení.  
+1.  Kopírování dat scores.csv z tématu [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md) a uloží ho do složky vašeho řešení.  
   
 ## <a name="example"></a>Příklad  
   
@@ -69,10 +69,10 @@ End Class
 ' 115, 35, 72, 91, 70  
 ```  
   
- Tento příklad také ukazuje, jak vrátit proměnné dotazu z funkce.  
+ Tento příklad také ukazuje, jak vrácení z funkce proměnné dotazu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `Imports` příkaz pro obor názvů System.Linq.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

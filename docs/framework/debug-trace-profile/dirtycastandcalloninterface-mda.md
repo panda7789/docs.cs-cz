@@ -12,32 +12,32 @@ helpviewer_keywords:
 ms.assetid: aa388ed3-7e3d-48ea-a0b5-c47ae19cec38
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b5c54b8c2600dca1c7b24ac663a6ed506ca8ef24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8a1d8aa391b546d02c813e1f719601b9bff198be
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33390507"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657230"
 ---
 # <a name="dirtycastandcalloninterface-mda"></a>dirtyCastAndCallOnInterface – pomocník spravovaného ladění (MDA)
-`dirtyCastAndCallOnInterface` Pomocník spravovaného ladění (MDA) se aktivuje, když dojde k pokusu o třídy rozhraní, které bylo označeno jako pozdní vazbou pouze volání časné vazby prostřednictvím vtable.  
+`dirtyCastAndCallOnInterface` Pomocníka spravovaného ladění (MDA) se aktivuje, když dojde k pokusu o volání časnou vazbou prostřednictvím tabulku vtable na třídy rozhraní, která byla označena s pozdní vazbou pouze.  
   
 ## <a name="symptoms"></a>Příznaky  
- Aplikace vyvolá porušení pravidel přístupu nebo má neočekávanému chování při umísťování volání časné vazby prostřednictvím COM do modulu CLR.  
+ Aplikace vyvolá narušení přístupu, nebo obsahuje neočekávané chování při volání časnou vazbou prostřednictvím modelu COM do CLR.  
   
-## <a name="cause"></a>příčina  
- Kód se pokouší volání časné vazby prostřednictvím vtable prostřednictvím třídy rozhraní, které je pouze pozdní vazbou. Všimněte si, že třídou výchozí rozhraní považujete za probíhá pozdní vazbou jenom. Můžete také možné identifikovat jako pozdní vazbu s <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> atribut s <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch> hodnotu (`[ClassInterface(ClassInterfaceType.AutoDispatch)]`).  
+## <a name="cause"></a>Příčina  
+ Kód se pokouší o volání časné vazby prostřednictvím vtable prostřednictvím třídy rozhraní, které je pouze s pozdní vazbou. Všimněte si, že výchozí třídou rozhraní považujete za se s pozdní vazbou pouze. Je také možné identifikovat jako s pozdní vazbou pomocí <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> atributem <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch> hodnotu (`[ClassInterface(ClassInterfaceType.AutoDispatch)]`).  
   
 ## <a name="resolution"></a>Rozlišení  
- Doporučené řešení je definovat explicitní rozhraní pro použití v modelu COM a máte klienty volání COM prostřednictvím tohoto rozhraní místo přes rozhraní automaticky vygenerované třídy. Alternativně lze je transformovat volání z modelu COM do volání pozdní vazbou prostřednictvím `IDispatch`.  
+ Doporučené řešení je definovat explicitní rozhraní pro použití modelem COM a mít volání klienty modelu COM prostřednictvím tohoto rozhraní místo přes rozhraní automaticky generovanou třídu. Alternativně je možné transformovat volání z modelu COM do volání s pozdní vazbou prostřednictvím `IDispatch`.  
   
- Nakonec je možné k identifikaci třídy jako <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual> (`[ClassInterface(ClassInterfaceType.AutoDual)]`) Chcete-li povolit volání časné umístit z modelu COM; však pomocí <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual> se důrazně nedoporučuje kvůli Správa verzí omezení popsaná v <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>.  
+ Nakonec je možné identifikovat třídu jako <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual> (`[ClassInterface(ClassInterfaceType.AutoDual)]`) Chcete-li povolit volání časné umístit z modelu COM; však pomocí <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual> se důrazně nedoporučuje kvůli omezení správy verzí je popsáno v <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR. Pouze sestavy data o volání časné vazby na rozhraní pozdní vazbu.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR. Sestavy pouze data o volání časné vazby na rozhraní s pozdní vazbou.  
   
 ## <a name="output"></a>Výstup  
- Název metody nebo název pole přistupuje časné vazby.  
+ Název metody nebo název pole, ke kterému přistupujete časné vazby.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -49,6 +49,6 @@ ms.locfileid: "33390507"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

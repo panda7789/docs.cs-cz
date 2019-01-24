@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kopírování pixelů pro omezení blikání v rozhraní Windows Forms'
+title: 'Postupy: Kopírování pixelů pro omezení blikání v modelu Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,22 +13,22 @@ helpviewer_keywords:
 - flicker
 - bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-ms.openlocfilehash: dc5f05ff4ea9f3c2b828cbe37860e1bd241fc604
-ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
+ms.openlocfilehash: cdcb64588f91ece02f1e7f446d4020d68262c93d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36270432"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559447"
 ---
-# <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Postupy: Kopírování pixelů pro omezení blikání v rozhraní Windows Forms
-Při animaci jednoduchý obrázek uživatelů může někdy dojít blikání nebo jiných nežádoucího vizuálních efektů. Jeden způsob, jak omezit tento problém je použití procesu "přenos bitových bloků" na na obrázku. Přenos bitových bloků je "bitového bloku přenos" Barva dat z počátku obdélníku pixelů na cílovém obdélník pixelů.  
+# <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Postupy: Kopírování pixelů pro omezení blikání v modelu Windows Forms
+Při animaci jednoduchý obrázek uživatele může někdy dojít blikání nebo jiné nežádoucí vizuálních efektů. Jeden způsob, jak omezit tento problém je použití procesu "přenos bitových bloků" na obrázku. Přenos bitových bloků je "bitového bloku přenos" barvy dat ze původu obdélník pixelů do cílového obdélníku v pixelech.  
   
- S Windows Forms přenos bitových bloků se provádí pomocí <xref:System.Drawing.Graphics.CopyFromScreen%2A> metodu <xref:System.Drawing.Graphics> třída. Parametry metody zadejte zdrojový a cílový (jako body), velikost oblasti, které se mají zkopírovat a grafiky objekt použitý k vykreslení nový tvar.  
+ Pomocí Windows Forms, přenos bitových bloků využívá se při něm <xref:System.Drawing.Graphics.CopyFromScreen%2A> metodu <xref:System.Drawing.Graphics> třídy. V parametrech metody je třeba zadat zdroj a cíl (jako body), velikost oblasti, které se mají zkopírovat a grafiky objekt použitý k vykreslení nový tvar.  
   
- V následujícím příkladu se nevykreslí obrazce na formuláři v jeho <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Potom, <xref:System.Drawing.Graphics.CopyFromScreen%2A> metoda se používá k duplicitní tvaru.  
+ V následujícím příkladu je vykreslen obrazec na formulář v nástrojích pro jeho <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Pak, bude <xref:System.Drawing.Graphics.CopyFromScreen%2A> metoda se používá k duplicitní tvaru.  
   
 > [!NOTE]
->  Nastavení formuláře <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost, která má `true` bude na základě grafiky kód <xref:System.Windows.Forms.Control.Paint> událostí být dvojitou vyrovnávací pamětí. Pokud to nebude mít žádné zvýšení výkonu a jasně při použití kódu níže, je něco třeba vzít v úvahu při práci s kódem složitější grafiky manipulaci.  
+>  Nastavení formuláře <xref:System.Windows.Forms.Control.DoubleBuffered%2A> vlastnost `true` způsobí, že kód založený na grafickém v <xref:System.Windows.Forms.Control.Paint> událost být dvojitou vyrovnávací pamětí. Při použití níže uvedeného kódu to nebude mít žádné zvýšení výkonu a jasně, je něco, co vzít v úvahu při práci s složitější grafiky manipulace s kódem.  
   
 ## <a name="example"></a>Příklad  
   
@@ -60,11 +60,11 @@ private void Form1_Paint(System.Object sender,
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Výše uvedený kód běží v formuláře <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události tak, aby grafiky zachována, když bude překreslen formuláře. Jako takový Nevolejte související grafika metody <xref:System.Windows.Forms.Form.Load> obslužné rutiny události, protože vykresleného obsah nebude překreslen, pokud formuláře je po změně velikosti nebo po jiného formuláře skryt.  
+ Výše uvedený kód běží v formuláře <xref:System.Windows.Forms.Control.Paint> obslužná rutina události tak, aby grafiky zachovat při překreslení formuláře. V důsledku toho nebude volat metody související grafiky <xref:System.Windows.Forms.Form.Load> obslužná rutina události, protože vykreslený obsah nebude překreslení, pokud je velikost nebo zakryto jiný formulář. formuláře.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.CopyPixelOperation>  
- <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=nameWithType>  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.CopyPixelOperation>
+- <xref:System.Drawing.Graphics.FillRectangle%2A?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.Control.OnPaint%2A?displayProperty=nameWithType>
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)

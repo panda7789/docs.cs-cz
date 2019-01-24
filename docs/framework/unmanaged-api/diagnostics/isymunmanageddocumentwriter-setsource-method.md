@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f25f66d7092c50247e24051280eaa7b714297c20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da19a77637e64fec676fdaac7ba56d47b5b07769
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424414"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549886"
 ---
 # <a name="isymunmanageddocumentwritersetsource-method"></a>ISymUnmanagedDocumentWriter::SetSource – metoda
-Nastaví vložený zdroj pro dokument, který se připravuje.  
+Nastaví vložený zdroj pro dokument, u kterého probíhá zápis.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT SetSource(
   
 #### <a name="parameters"></a>Parametry  
  `sourceSize`  
- [v] A `ULONG32` obsahující velikost `source` vyrovnávací paměti.  
+ [in] A `ULONG32` , který obsahuje velikost `source` vyrovnávací paměti.  
   
  `source`  
- [v] Vyrovnávací paměť, která ukládá vložený zdroj.  
+ [in] Vyrovnávací paměť, která ukládá vloženého zdroje.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)

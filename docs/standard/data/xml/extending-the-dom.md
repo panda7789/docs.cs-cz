@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 70e13893cf350a193411f1833e2e3b21c9b64182
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ced76a0bb28a91824676f496b28143a921b987de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559495"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 
@@ -225,7 +225,7 @@ public class Test {
 
 #### <a name="input"></a>Vstup
 
-Book.XML
+book.xml
 
 ```xml
 <!--sample XML fragment-->
@@ -255,4 +255,4 @@ Pokud vám přepsání <xref:System.Xml.XmlDocument.CreateElement%2A> metoda v o
 
 ## <a name="see-also"></a>Viz také:
 
-- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)  
+- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

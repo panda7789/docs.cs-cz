@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 91e64bb2e1c8a7b11fe70024eb4a4fa1717c06e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34b02dfa3fb0f1e5f4cfadc297194dc4f3160c8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407346"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628471"
 ---
 # <a name="corheapobject-structure"></a>COR_HEAPOBJECT – struktura
-Poskytuje informace o objekt na spravované haldě.  
+Poskytuje informace o objektu na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,18 +45,18 @@ typedef struct _COR_HEAPOBJECT {
 |`type`|A [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) token, který představuje typ objektu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_HEAPOBJECT` může načíst vytváření výčtu instancí [ICorDebugHeapEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) rozhraní objekt, který je vyplněný voláním [icordebugprocess5::enumerateheap –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheap-method.md) metoda.  
+ `COR_HEAPOBJECT` instance je možné načíst podle výčet [icordebugheapenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md) rozhraní objektu, který je vyplněný voláním [icordebugprocess5::enumerateheap –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerateheap-method.md) metody.  
   
- A `COR_HEAPOBJECT` instance poskytuje informace o objekt za provozu na spravovaná halda nebo o objekt, který není root pomocí libovolného objektu, ale nebyla ještě zjištěna modulem garbage collector.  
+ A `COR_HEAPOBJECT` instance obsahuje informace o objektu na spravované haldě za provozu nebo o objekt, který není uveden do kořene s jakýmkoli objektem, ale nebyl dosud shromažďuje systému uvolňování paměti.  
   
- Pro lepší výkon `COR_HEAPOBJECT.address` pole `CORDB_ADDRESS` hodnota než ICorDebugValue rozhraní hodnoty používané prakticky rozhraní API pro ladění. Pokud chcete získat objekt ICorDebugValue pro daný objekt adresu, můžete předat `CORDB_ADDRESS` hodnotu [icordebugprocess5::GetObject –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getobject-method.md) metoda.  
+ Pro zajištění lepšího výkonu `COR_HEAPOBJECT.address` je pole `CORDB_ADDRESS` hodnotu, nikoli icordebugvalue – rozhraní hodnota použitá v velkou část rozhraní API pro ladění. K získání objektu ICorDebugValue pro daný objekt adresu, můžete předat `CORDB_ADDRESS` hodnota, která se [icordebugprocess5::GetObject –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getobject-method.md) metody.  
   
- Pro lepší výkon `COR_HEAPOBJECT.type` pole `COR_TYPEID` hodnota než ICorDebugType rozhraní hodnoty používané prakticky rozhraní API pro ladění. Získat ICorDebugType objekt daného typu ID, abyste mohli předávat `COR_TYPEID` hodnotu [icordebugprocess5::gettypefortypeid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md) metoda.  
+ Pro zajištění lepšího výkonu `COR_HEAPOBJECT.type` je pole `COR_TYPEID` hodnotu, nikoli icordebugtype – rozhraní hodnota použitá v velkou část rozhraní API pro ladění. Získat ICorDebugType objekt daného typu ID, můžete předat `COR_TYPEID` hodnota, která se [icordebugprocess5::gettypefortypeid –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md) metody.  
   
- `COR_HEAPOBJECT` Struktura zahrnuje rozhraní modelu COM počítá odkaz. Pokud je načíst `COR_HEAPOBJECT` instance z enumerátor voláním [icordebugheapenum::Next –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-next-method.md) metoda, je nutné uvolnit následně odkaz na.  
+ `COR_HEAPOBJECT` Struktura zahrnuje rozhraní modelu COM počítaného odkazy. Pokud načtete `COR_HEAPOBJECT` instanci z výčtu voláním [icordebugheapenum::Next –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-next-method.md) metoda, následně nutné uvolnit odkaz.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -64,6 +64,6 @@ typedef struct _COR_HEAPOBJECT {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

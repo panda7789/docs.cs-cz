@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6ac1ecb73257782888c963082953ed243177a86b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9d156d7c7ada8309e501ba44720dfa285ce50d2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448801"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552356"
 ---
 # <a name="imetadataimportgeteventprops-method"></a>IMetaDataImport::GetEventProps – metoda
-Získá informace metadat pro událost reprezentována token zadanou událost, včetně deklarující typ, přidat a odebrat metody pro Delegáti a všechny příznaky a další související data.  
+Získá informace metadat pro událost reprezentována token zadané události, včetně deklarující typ, přidat a odebrat metody pro delegáty a všechny příznaky a další související data.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,50 +49,50 @@ HRESULT GetEventProps (
   
 #### <a name="parameters"></a>Parametry  
  `ev`  
- [v] Metadata události token představující události se získat metadata pro.  
+ [in] Událost metadat token reprezentující události se získat metadata pro.  
   
  `pClass`  
- [out] Ukazatel na TypeDef token představující třídu, který deklaruje události.  
+ [out] Ukazatel na token TypeDef představující třídu, která deklaruje událost.  
   
  `szEvent`  
  [out] Název události odkazuje `ev`.  
   
  `pchEvent`  
- [v] Požadovaná délka v široké znaky `szEvent`.  
+ [in] Požadovaná délka širokých znaků `szEvent`.  
   
  `pdwEventFlags`  
- [out] Vrácená délka ve znacích široké `szEvent`.  
+ [out] Vrácená délka v širokých znaků `szEvent`.  
   
  `ptkEventType`  
- [out] Ukazatel Odkaz TypeRef nebo TypeDef metadata token reprezentující <xref:System.Delegate> typ události.  
+ [out] Ukazatel Odkaz TypeRef nebo TypeDef metadat token představující <xref:System.Delegate> typ události.  
   
  `pmdAddOn`  
- [out] Ukazatel na metadata token představující metodu, která přidá obslužné rutiny události.  
+ [out] Ukazatel na token metadat reprezentující metodu, která přidá obslužné rutiny události.  
   
  `pmdRemoveOn`  
- [out] Ukazatel na metadata token představující metodu, která odebere obslužné rutiny události.  
+ [out] Ukazatel na token metadat reprezentující metodu, která odebere obslužné rutiny události.  
   
  `pmdFire`  
- [out] Ukazatel na metadata token představující metodu, která vyvolává událost.  
+ [out] Ukazatel na token metadat reprezentující metodu, která vyvolává událost.  
   
  `rmdOtherMethod`  
- [out] Pole tokenu ukazatele na další metody přidružený k události.  
+ [out] Pole ukazatelů token jiným metodám přidružený k události.  
   
  `cMax`  
- [v] Maximální velikost `rmdOtherMethod` pole.  
+ [in] Maximální velikost `rmdOtherMethod` pole.  
   
  `pcOtherMethod`  
- [out] Počet tokeny, vrátí se v `rmdOtherMethod`.  
+ [out] Počet tokenů vrátil v `rmdOtherMethod`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: ICorDebugBreakpointEnum Interface1
+title: ICorDebugBreakpointEnum – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugBreakpointEnum
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8299be7189522c1b508e647ae227de5d5dd68c73
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 508cb9b4b2ff13a58f1313b958acd7b043741848
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403315"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642932"
 ---
-# <a name="icordebugbreakpointenum-interface1"></a>ICorDebugBreakpointEnum Interface1
-Implementuje metody ICorDebugEnum a vytvoří výčet ICorDebugBreakpoint pole.  
+# <a name="icordebugbreakpointenum-interface1"></a>ICorDebugBreakpointEnum – rozhraní 1
+Implementuje metody ICorDebugEnum a vytváří výčet polí ICorDebugBreakpoint.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-next-method.md)|Získá zadaný počet `ICorDebugBreakpoint` instancí z výčtu, počínaje na aktuální pozici.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-next-method.md)|Získá zadaný počet `ICorDebugBreakpoint` instancí z výčtu od aktuální pozice.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,5 +46,5 @@ Implementuje metody ICorDebugEnum a vytvoří výčet ICorDebugBreakpoint pole.
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

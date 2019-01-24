@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5605f7b2ad9ba42a340906559838de22ac79f789
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa9e168b36c8408583ca23dee070fc36b2cb076c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416677"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572991"
 ---
 # <a name="icordebugnativeframegetlocalregistermemoryvalue-method"></a>ICorDebugNativeFrame::GetLocalRegisterMemoryValue – metoda
-Získá hodnotu argumentu nebo místní proměnné, které nízkou word a vysokou word jsou uložené v umístění v paměti a zadat registrace, v uvedeném pořadí, pro tento nativní rámce.  
+Získá hodnotu argumentu nebo místní proměnné, které s nízkou word a vysokou word jsou uloženy v umístění v paměti a zadaný registr, v uvedeném pořadí, tato nativní rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,22 +41,22 @@ HRESULT GetLocalRegisterMemoryValue (
   
 #### <a name="parameters"></a>Parametry  
  `highWordReg`  
- [v] Hodnota výčtu "CorDebugRegister", který určuje registrace obsahující slovo vysoké hodnoty.  
+ [in] Hodnota, která určuje do registru, které obsahují slovo vysoké hodnoty výčtu "cordebugregister –".  
   
  `lowWordAddress`  
- [v] A `CORDB_ADDRESS` hodnotu, která určuje umístění v paměti obsahující slovo nízké hodnoty.  
+ [in] A `CORDB_ADDRESS` hodnota, která určuje umístění v paměti obsahují slovo nízké hodnoty.  
   
  `cbSigBlob`  
- [v] Celé číslo, které určuje velikost podpis binární metadat, který se odkazuje `pvSigBlob` parametr.  
+ [in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.  
   
  `pvSigBlob`  
- [v] A `PCCOR_SIGNATURE` hodnotu, která ukazuje na binární metadata podpis hodnotu typu.  
+ [in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty, který je uložený v zadaném umístění registru a paměti.  
+ [out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena v zadaném umístění registru a paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -64,5 +64,5 @@ HRESULT GetLocalRegisterMemoryValue (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

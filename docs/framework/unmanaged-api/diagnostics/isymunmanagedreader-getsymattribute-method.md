@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9f22f23835f01022d5d62596b2cf63425759193
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d43467a0f3ff94eb7903b808e192230e6c0ff1e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561063"
 ---
 # <a name="isymunmanagedreadergetsymattribute-method"></a>ISymUnmanagedReader::GetSymAttribute – metoda
-Získá vlastní atribut na základě jeho názvu. Na rozdíl od metadata vlastní atributy jsou tyto vlastní atributy uložené v úložišti symbol.  
+Získá vlastní atribut na základě jeho názvu. Na rozdíl od vlastních atributů metadat jsou tyto vlastní atributy uložené v úložišti symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,25 +41,25 @@ HRESULT GetSymAttribute (
   
 #### <a name="parameters"></a>Parametry  
  `parent`  
- [v] Token metadata pro objekt, pro který je požadovaný atribut.  
+ [in] Token metadat pro objekt, pro který je požadovaný atribut.  
   
  `name`  
- [v] Ukazatel na proměnnou, která určuje atribut, který se načíst.  
+ [in] Ukazatel na proměnnou, která určuje atribut, který chcete načíst.  
   
  `cBuffer`  
- [v] Velikost `buffer` pole.  
+ [in] Velikost `buffer` pole.  
   
  `pcBuffer`  
- [out] Ukazatel na proměnnou, která přijímá délka data atributu.  
+ [out] Ukazatel na proměnnou, která přijímá délka dat atribut.  
   
  `buffer`  
  [out] Ukazatel na proměnnou, která přijímá data atributu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby...  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby...  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

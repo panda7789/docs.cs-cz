@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3d4609d79bb424cabc011122480f952f0f877f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b383c322f1119ff13ac4df9a8dc0563d26dcf895
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411231"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499706"
 ---
 # <a name="icordebugcodegetversionnumber-method"></a>ICorDebugCode::GetVersionNumber – metoda
-Získá počet základem jedna, která identifikuje verzi kód, který představuje tuto "ICorDebugCode".  
+Získá počet založen na jedničce, která identifikuje verzi kódu, který představuje tento "ICorDebugCode".  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,10 +40,10 @@ HRESULT GetVersionNumber (
  [out] Ukazatel na číslo verze kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Číslo verze se zvýší pokaždé, když probíhá operace upravit a pokračovat (Šif) kódu.  
+ Číslo verze se zvýší pokaždé, když operace edit-and-continue (EnC) je prováděno v kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ HRESULT GetVersionNumber (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

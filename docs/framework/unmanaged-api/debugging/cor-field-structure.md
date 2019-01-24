@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0898936665b3b337f2fd4e4d53bcc9f6071469b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d570f9392bbd66f0d9031c776b139ee3b30541b1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405356"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698216"
 ---
 # <a name="corfield-structure"></a>COR_FIELD – struktura
 Poskytuje informace o pole v objektu.  
@@ -42,14 +42,14 @@ typedef struct COR_FIELD{
 |Člen|Popis|  
 |------------|-----------------|  
 |`token`|`mdFieldDef` Token, který můžete použít k získání informací o poli.|  
-|`offset`|Posun v bajtech dat pole v objektu.|  
+|`offset`|Posun v bajtech pro data polí v objektu.|  
 |`id`|A [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) hodnotu, která určuje typ tohoto pole.|  
-|`fieldType`|CorElementType – výčet hodnotu, která určuje typ pole.|  
+|`fieldType`|Corelementtype – hodnotu výčtu, která určuje typ pole.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,6 +57,6 @@ typedef struct COR_FIELD{
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

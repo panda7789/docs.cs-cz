@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 80d852dd08e935d4c06e9b6d2e52b0a075849ef5
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: f57385b930ce533de3ff12b0dbd363690f04082d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085146"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54636011"
 ---
 # <a name="configuring-message-logging"></a>Konfigurace protokolování zpráv
 Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scénáře.  
@@ -104,7 +104,7 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
   
 ||Odeslání požadavku|Požadavku přijetí|Odeslání odpovědi|Přijmout odpověď|  
 |-|------------------|---------------------|----------------|-------------------|  
-|Vrstva modelu služby|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Požadavek|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Požadavek|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Odpověď|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Odpověď|  
+|Vrstva modelu služby|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Žádost|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Žádost|Služba<br /><br /> úroveň<br /><br /> Odeslat<br /><br /> Odpověď|Služba<br /><br /> úroveň<br /><br /> Zobrazit<br /><br /> Odpověď|  
 |přenosové vrstvy|Přenos<br /><br /> Odeslat|Přenos<br /><br /> Zobrazit|Přenos<br /><br /> Odeslat|Přenos<br /><br /> Zobrazit|  
   
  Pro jednosměrný požadavek  
@@ -163,7 +163,7 @@ Toto téma popisuje, jak nakonfigurovat protokolování zpráv pro různé scén
   
  Byste měli vědět, `type` atribut by měl být nastaven na kvalifikovaný název typu.  
   
-## <a name="see-also"></a>Viz také  
- [\<messageLogging >](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)  
- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)  
- [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)
+## <a name="see-also"></a>Viz také:
+- [\<messageLogging>](../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
+- [Protokolování zpráv](../../../../docs/framework/wcf/diagnostics/message-logging.md)
+- [Doporučené nastavení pro trasování a protokolování zpráv](../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Konfigurace služby WCF hostované v IIS se SSL'
 ms.date: 03/30/2017
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
-ms.openlocfilehash: 2d6e367748222d7401bec6dc919815399b63b1d9
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: ca7343f14215d89b29636776437f5e4a6a8089a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086216"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54639975"
 ---
 # <a name="how-to-configure-an-iis-hosted-wcf-service-with-ssl"></a>Postupy: Konfigurace služby WCF hostované v IIS se SSL
 Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití zabezpečení přenosu HTTP. Zabezpečení přenosu HTTP vyžaduje certifikát SSL pro službu IIS zaregistrovat. Pokud není certifikát SSL služby IIS můžete vygenerovat zkušební certifikát. Dále musíte přidat vazbu SSL na webovou stránku a nakonfigurovat vlastnosti ověřování na webu. Nakonec musíte nakonfigurovat službu WCF pro použití protokolu HTTPS.  
@@ -24,7 +24,7 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
   
 3.  Zadejte popisný název certifikátu podepsaného svým držitelem a klikněte na tlačítko **OK**.  
   
-     ![Vytvořit vlastní&#45;dialogové okno certifikát podepsaný](../../../../docs/framework/wcf/feature-details/media/mg-mycert.jpg "mg_MyCert")  
+     ![Create Self&#45;Signed Certificate Dialog](../../../../docs/framework/wcf/feature-details/media/mg-mycert.jpg "mg_MyCert")  
   
      Podrobnosti nově vytvořeného certifikátu podepsaného svým držitelem se teď zobrazují v **certifikáty serveru** okna.  
   
@@ -32,7 +32,7 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
   
      Vygenerovaný certifikát nainstalován v důvěryhodné kořenové certifikační autority úložiště.  
   
-### <a name="add-ssl-binding"></a>Přidat vazbu SSL  
+### <a name="add-ssl-binding"></a>Add SSL Binding  
   
 1.  Stále v Správce Internetové informační služby, rozbalte **lokality** složku a potom **výchozí webový server** složky ve stromovém zobrazení na levé straně obrazovky.  
   
@@ -144,8 +144,8 @@ Toto téma popisuje postup nastavení služby WCF hostované IIS pro použití z
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-* [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
-* [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
-* [Osvědčené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
-* [Hostování IIS pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)
+## <a name="see-also"></a>Viz také:
+- [Hostování v Internetové informační službě](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)
+- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+- [Osvědčené postupy hostování Internetové informační služby](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)
+- [Hostování IIS pomocí vloženého kódu](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)

@@ -1,14 +1,8 @@
 ---
 title: Průvodce ML.NET obsahem
-description: Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.
-ms.date: 11/06/2018
+description: 'Zjistěte, jak vytvářet vlastní řešení AI a integrovat do aplikací .NET pomocí ML.NET.'
+ms.date: 01/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0ba32490e30051616ae5270a050d8666490c9eef
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126247"
 ---
 # <a name="mlnet-content-guide"></a>Průvodce ML.NET obsahem
 
@@ -28,6 +22,8 @@ Základní informace najdete v tématu [základní koncepty k tréninku modelu v
 ## <a name="tutorials"></a>Kurzy
 
 [Analýza sentimentu pomocí binární klasifikační model](tutorials/sentiment-analysis.md) se dozvíte, jak vytvořit aplikaci, která určuje, zda je pozitivní nebo negativní zabarvení.
+
+[Klasifikaci problémy s úložištěm GitHub pomocí klasifikace víc tříd modelu](tutorials/github-issue-classification.md) ukazuje, jak vytvořit aplikaci, která určuje popisek oblasti pro problém na Githubu.
 
 [Předpověď taxislužby tarif pomocí regresní model](tutorials/taxi-fare.md) se dozvíte, jak vytvořit prediktivní aplikaci, která používá mnoho faktorů, z historických dat. Chcete-li zjistit odpověď.
 

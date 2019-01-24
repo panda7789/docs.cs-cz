@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9a35f35d7aea34c0ef08c30415fde75fe71e645
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf6528e8fe6a979db26ae44819bf34a36592ed6b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426047"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623622"
 ---
 # <a name="isymunmanagedmethodgetsequencepoints-method"></a>ISymUnmanagedMethod::GetSequencePoints – metoda
-Získá všechny body pořadí v rámci této metody.  
+Získá všechny body sekvence v rámci této metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +43,34 @@ HRESULT GetSequencePoints(
   
 #### <a name="parameters"></a>Parametry  
  `cPoints`  
- [v] A `ULONG32` která přijme velikost `offsets`, `documents`, `lines`, `columns`, `endLines`, a `endColumns` pole.  
+ [in] A `ULONG32` , která obdrží velikost `offsets`, `documents`, `lines`, `columns`, `endLines`, a `endColumns` pole.  
   
  `pcPoints`  
- [out] Ukazatel na `ULONG32` která přijme délka vyrovnávací paměti musí obsahovat body sekvence.  
+ [out] Ukazatel `ULONG32` , která obdrží délka vyrovnávací paměti musí obsahovat body sekvence.  
   
  `offsets`  
- [v] Pole pro uložení zprostředkující Microsoft jazyk MSIL posun od začátku metodu pro body sekvence.  
+ [in] Pole pro uložení Microsoft intermediate language (MSIL) posun od začátku metody pro body sekvence.  
   
  `documents`  
- [v] Pole, do kterého chcete ukládat dokumenty, ve které se nacházejí body sekvence.  
+ [in] Pole ve kterých se mají ukládat dokumenty, ve kterých jsou umístěny body sekvence.  
   
  `lines`  
- [v] Pole pro uložení řádky v dokumentech, na kterých jsou umístěny body sekvence.  
+ [in] Pole pro uložení řádky v dokumentech, na kterých jsou umístěny body sekvence.  
   
  `columns`  
- [v] Pole, do které chcete uložit v dokumentech, na kterých jsou umístěny body pořadí sloupců.  
+ [in] Pole pro uložení sloupce v dokumentech, na kterých jsou umístěny body sekvence.  
   
  `endLines`  
- [v] Pole řádků v dokumentech, na kterých je pořadí body end.  
+ [in] Pole řádků v dokumentech, na které odkazuje sekvence end.  
   
  `endColumns`  
- [v] Pole sloupců v dokumentech, na kterých je pořadí body end.  
+ [in] Pole sloupců v dokumentech, na které odkazuje sekvence end.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

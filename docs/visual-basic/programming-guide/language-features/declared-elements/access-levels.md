@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Private access modifier
 - declared elements [Visual Basic], access level
 ms.assetid: 6e06c1ab-fd78-47f0-83a8-1152780b5e1a
-ms.openlocfilehash: 433d5dfd4bb3af9b6fbd0dfc951bb0448eb7efcd
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: df65749156543f72d07a464b50a7934908cd533a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183135"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704651"
 ---
 # <a name="access-levels-in-visual-basic"></a>Úrovně přístupu v jazyce Visual Basic
 *Úroveň přístupu* deklarované elementu je rozsah schopnost k němu přístup, to znamená, jaký kód má oprávnění k jeho čtení nebo zápis do něj. To je určen pouze tak, jak deklarovat samotného elementu, ale také podle úrovně přístupu k elementu kontejneru. Kód, který nemá přístup k elementu s obsahem nelze použít žádnou z jeho elementů obsažených, včetně těch deklarován jako `Public`. Například `Public` v proměnné `Private` struktury lze přistupovat z uvnitř třídy, která obsahuje strukturu, ale ne z vně třídy.  
@@ -113,14 +113,14 @@ Další informace najdete v části [nastavení verze jazyka Visual Basic](../..
 |`Private`|Kontext deklarace:<br /><br /> Kód v typu, který deklaruje element privátní, včetně kódu v rámci omezením typů, můžete získat přístup k elementu|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Členové struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Členské proměnné<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáty|Modul<br /><br /> Třída<br /><br /> Struktura|
 |`Private Protected`|Kód ve třídě, která deklaruje element privátní chráněný, nebo kód v odvozené třídě nalezen ve stejném sestavení jako třída bas.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Členské proměnné<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáty|Třída|
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)  
- [Static](../../../../visual-basic/language-reference/modifiers/static.md)  
- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
- [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Postupy: Řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)  
- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Static](../../../../visual-basic/language-reference/modifiers/static.md)
+- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
+- [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Postupy: Řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md)
+- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
+- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

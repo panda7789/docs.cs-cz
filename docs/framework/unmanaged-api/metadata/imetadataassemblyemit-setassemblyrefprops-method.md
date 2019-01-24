@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6667812ab7f9acff2a66e458f68d77a0d670bc2f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a4f0fd100397fc52ca917c54f0276598d714640
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446904"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642841"
 ---
 # <a name="imetadataassemblyemitsetassemblyrefprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyRefProps – metoda
-Upraví zadaný `AssemblyRef` strukturu metadat.  
+Upraví zadaný `AssemblyRef` struktury metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,40 +44,40 @@ HRESULT SetAssemblyRefProps (
   
 #### <a name="parameters"></a>Parametry  
  `ar`  
- [v] Metadata token, který určuje `AssemblyRef` strukturu metadat má být změněn.  
+ [in] Token metadat, který určuje `AssemblyRef` struktury metadat má být upraven.  
   
  `pbPublicKeyOrToken`  
- [v] Veřejný klíč vydavatele odkazované sestavení.  
+ [in] Veřejný klíč vydavatele odkazovaných sestavení.  
   
  `cbPublicKeyOrToken`  
- [v] Velikost v bajtech `pbPublicKeyOrToken`.  
+ [in] Velikost v bajtech `pbPublicKeyOrToken`.  
   
  `szName`  
- [v] Čitelný text název sestavení.  
+ [in] Uživatelsky čitelná textová název sestavení.  
   
  `pMetaData`  
- [v] Ukazatel na instanci assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.  
+ [in] Ukazatel na instanci assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.  
   
  `pbHashValue`  
- [v] Ukazatel na hodnotu hash data přidružená k sestavení.  
+ [in] Ukazatel na hodnotu hash dat přidružené k sestavení.  
   
  `cbHashValue`  
- [v] Velikost v bajtech `pbHashValue`.  
+ [in] Velikost v bajtech `pbHashValue`.  
   
  `dwAssemblyRefFlags`  
- [v] Bitovou kombinaci [AssemblyRefFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md) hodnoty, které určují atributy odkazované sestavení.  
+ [in] Bitová kombinace hodnot [assemblyrefflags –](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md) hodnoty, které určují atributy odkazovaného sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li vytvořit `AssemblyRef` strukturu metadat, použijte [imetadataassemblyemit::defineassemblyref –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md) metoda.  
+ K vytvoření `AssemblyRef` struktury metadat, použijte [imetadataassemblyemit::defineassemblyref –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md) metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

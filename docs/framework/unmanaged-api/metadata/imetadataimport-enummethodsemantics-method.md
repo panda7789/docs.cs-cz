@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 00a28e0f7ab03af8d5f2fc0dda5274f9aaa4dca2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3c20e2787eb8071b10e06b980572c347959fe3c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449092"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619445"
 ---
 # <a name="imetadataimportenummethodsemantics-method"></a>IMetaDataImport::EnumMethodSemantics – metoda
-Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým je související zadanou metodu.  
+Vytvoří výčet vlastností a změnu vlastnosti události, ke kterým se vztahuje zadanou metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,39 +41,39 @@ HRESULT EnumMethodSemantics (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `mb`  
- [v] MethodDef token, který omezuje obor výčtu.  
+ [in] Token MethodDef, která omezuje rozsah výčtu.  
   
  `rEventProp`  
- [out] Pole používá k ukládání událostí nebo vlastnosti.  
+ [out] Pole používá k ukládání vlastnosti nebo události.  
   
  `cMax`  
- [v] Maximální velikost `rEventProp` pole.  
+ [in] Maximální velikost `rEventProp` pole.  
   
  `pcEventProp`  
- [out] Počet událostí nebo vlastnosti, vrátí se v `rEventProp`.  
+ [out] Počet událostí nebo vlastnosti, které jsou vráceny v `rEventProp`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSemantics` úspěšně vrácena.|  
-|`S_FALSE`|Nejsou žádné události nebo vlastnosti, které chcete vytvořit výčet. V takovém případě `pcEventProp` je nulová.|  
+|`S_OK`|`EnumMethodSemantics` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné události nebo vlastnosti, které chcete zobrazit výčet. V takovém případě `pcEventProp` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Definování mnoho běžných typů runtime jazyka *vlastnost* `Changed` události a `On` *vlastnost* `Changed` metody související s jejich vlastnosti. Například <xref:System.Windows.Forms.Control?displayProperty=nameWithType> definuje typ <xref:System.Windows.Forms.Control.Font%2A> vlastnost, <xref:System.Windows.Forms.Control.FontChanged> události a <xref:System.Windows.Forms.Control.OnFontChanged%2A> metoda. Metody přistupující objekt set <xref:System.Windows.Forms.Control.Font%2A> vlastnost volání <xref:System.Windows.Forms.Control.OnFontChanged%2A> metodu, která zase vyvolá <xref:System.Windows.Forms.Control.FontChanged> událostí. By volání `EnumMethodSemantics` pomocí MethodDef pro <xref:System.Windows.Forms.Control.OnFontChanged%2A> získat odkazy na <xref:System.Windows.Forms.Control.Font%2A> vlastnost a <xref:System.Windows.Forms.Control.FontChanged> událostí.  
+ Mnoho běžných typů modulu runtime jazyka definovat *vlastnost* `Changed` události a `On` *vlastnost* `Changed` metody související s jejich vlastností. Například <xref:System.Windows.Forms.Control?displayProperty=nameWithType> definuje typ <xref:System.Windows.Forms.Control.Font%2A> vlastnost, <xref:System.Windows.Forms.Control.FontChanged> události a <xref:System.Windows.Forms.Control.OnFontChanged%2A> metoda. Metodu přístupového objektu set <xref:System.Windows.Forms.Control.Font%2A> vlastnost volání <xref:System.Windows.Forms.Control.OnFontChanged%2A> metodu, která postupně vyvolá <xref:System.Windows.Forms.Control.FontChanged> událostí. By volat `EnumMethodSemantics` pomocí MethodDef pro <xref:System.Windows.Forms.Control.OnFontChanged%2A> zobrazíte odkazy na <xref:System.Windows.Forms.Control.Font%2A> vlastnost a <xref:System.Windows.Forms.Control.FontChanged> událostí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - key frames [WPF], about key-frame animations
 - multiple animation target values [WPF]
 ms.assetid: 10028f97-bb63-41fc-b8ad-663dac7ea203
-ms.openlocfilehash: f163b71d7a33aa115a2a4600cac08b7e4b2e80e7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5891887ea0df4addc828dd617c9fce63bb9096ea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517403"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661591"
 ---
 # <a name="key-frame-animations-overview"></a>Přehled animací klíčových snímků
 Toto téma vás seznámí s animací klíčových snímků. Animace klíčových snímků vám umožní pomocí více než dva cílových hodnot animace a řídit metodu interpolace animace společnosti.  
@@ -122,7 +122,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 ### <a name="linear-interpolation"></a>Lineární interpolace  
  Pomocí lineární interpolace animace průběhu tempu trvání segmentu. Například, pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
   
-|čas|Výstupní hodnota|  
+|Čas|Výstupní hodnota|  
 |----------|------------------|  
 |0|0|  
 |1|2|  
@@ -136,7 +136,7 @@ Toto téma vás seznámí s animací klíčových snímků. Animace klíčových
 ### <a name="discrete-interpolation"></a>Diskrétní interpolace  
  Diskrétní interpolace animace funkce přejde z jednu hodnotu na další bez interpolace. Pokud segment klíčový snímek přechází od 0 do 10 průběhu 5 sekund, animace bude výstup následujících hodnot v zadaném časy:  
   
-|čas|Výstupní hodnota|  
+|Čas|Výstupní hodnota|  
 |----------|------------------|  
 |0|0|  
 |1|0|  
@@ -283,13 +283,13 @@ Klíče křivky s ovládacím prvkem body (0,25; 0,5) a (0,75, 1.0)
   
 8.  Řazení klíčových snímků v pořadí doby vyřešení (primární klíč) a pořadí deklarace (sekundární klíč), to znamená, použijte stabilní řazení podle přeložit klíčový snímek <xref:System.Windows.Media.Animation.KeyTime> hodnoty.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Animation.KeyTime>  
- <xref:System.Windows.Media.Animation.KeySpline>  
- <xref:System.Windows.Media.Animation.Timeline>  
- [Ukázka animace klíčových křivky](https://go.microsoft.com/fwlink/?LinkID=160011)  
- [Ukázka animace klíčových snímků](https://go.microsoft.com/fwlink/?LinkID=160012)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)  
- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)  
- [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Animation.KeyTime>
+- <xref:System.Windows.Media.Animation.KeySpline>
+- <xref:System.Windows.Media.Animation.Timeline>
+- [Ukázka animace klíčových křivky](https://go.microsoft.com/fwlink/?LinkID=160011)
+- [Ukázka animace klíčových snímků](https://go.microsoft.com/fwlink/?LinkID=160012)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled scénářů](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)
+- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+- [Přehled chování časování](../../../../docs/framework/wpf/graphics-multimedia/timing-behaviors-overview.md)

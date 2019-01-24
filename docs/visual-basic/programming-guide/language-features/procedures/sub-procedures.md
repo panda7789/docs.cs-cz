@@ -11,60 +11,60 @@ helpviewer_keywords:
 - procedures [Visual Basic], Sub
 - syntax [Visual Basic], Sub procedures
 ms.assetid: 6a0a4958-ed0a-4d3d-8d31-0772c82bda58
-ms.openlocfilehash: 3286df1a5babfcf7d6b759ff5c9a920bb44f51ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f558c61d2e81471e167e97816ff47bc4465c5f51
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33652562"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638116"
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
-A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `End Sub` příkazy. `Sub` Postup provede úlohu a vrátí ovládací prvek pro volací kód, ale nevrací hodnotu volání kódu.  
+A `Sub` postup je řadu příkazů jazyka Visual Basic ohraničená `Sub` a `End Sub` příkazy. `Sub` Postupu provede úlohu a potom vrátí řízení volajícímu kódu, ale nevrací hodnotu volajícímu kódu.  
   
- Při každém volání procedury, jeho příkazy jsou spouštěny, počínaje prvním příkazem spustitelný soubor po `Sub` prohlášení a ukončuje se první `End Sub`, `Exit Sub`, nebo `Return` byl zjištěn příkaz.  
+ Pokaždé, když volání procedury, jeho příkazy jsou spouštěny, počínaje první spustitelný příkaz po `Sub` příkazu a končí prvním `End Sub`, `Exit Sub`, nebo `Return` byl zjištěn příkaz.  
   
- Můžete definovat `Sub` postup v moduly, třídy a struktury. Ve výchozím nastavení, je `Public`, což znamená, že ji volat z libovolného místa ve vaší aplikaci, která má přístup k modulu, třídu nebo strukturu, ve kterém jste ji definovali. Termín, *metoda*, popisuje `Sub` nebo `Function` procedury, která je k němu přistupovat z mimo jeho definování modulu, třídu nebo strukturu. Další informace najdete v tématu [postupy](./index.md).  
+ Můžete definovat `Sub` postupu na portále moduly, třídy a struktury. Ve výchozím nastavení je to `Public`, což znamená, že ji volat z libovolného místa v aplikaci, která má přístup k modulu, třídy nebo struktury, ve kterém jste ji definovali. Termín, *metoda*, popisuje `Sub` nebo `Function` proceduru, která přistupuje z mimo jeho definování modulu, třídy nebo struktury. Další informace najdete v tématu [postupy](./index.md).  
   
- A `Sub` postup může trvat argumenty, jako jsou konstanty, proměnné nebo výrazy, které jsou k němu předaná volající kód.  
+ A `Sub` postupu můžete převzít argumenty, jako jsou konstanty, proměnné a výrazy, které jsou předávány do ní volající kód.  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- Syntaxe deklarace `Sub` postup je následující:  
+ Syntaxe pro deklarování `Sub` postup je následující:  
   
- `[` *Modifikátory* `] Sub` *subname* `[(` *parameterlist* `)]`  
+ `[` *Modifikátory* `] Sub` *subname* `[(` *seznam_parametrů*  `)]`  
   
  `' Statements of the Sub procedure.`  
   
  `End Sub`  
   
- `modifiers` Můžete zadat úroveň přístupu a informace o přetížení, přepsání, sdílení a stínový provoz. Další informace najdete v tématu [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ `modifiers` Můžete určit úroveň přístupu a informací o přetížení, přepsání, sdílení a stínování. Další informace najdete v tématu [příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="parameter-declaration"></a>Deklarace parametru  
- Je deklarovat každý parametr postup podobně a jak je deklarovat proměnnou, zadat název a datový typ parametru. Můžete také určit mechanismus předávání a zda se jedná o volitelný parametr nebo pole parametrů.  
+ Deklarujete každý parametr procedury podobně a jak můžete deklarovat proměnnou, zadáte název a datový typ parametru. Můžete také určit mechanismu předávání a určuje, zda se jedná o volitelný parametr, nebo pole parametrů.  
   
  Syntaxe pro každý parametr v seznamu parametrů je následující:  
   
- `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*  
+ `[Optional] [ByVal | ByRef] [ParamArray]`  *Název parametru*`As`*datový typ*   
   
- Pokud se jedná o volitelný parametr, musíte také zadat výchozí hodnotu v rámci jeho deklaraci. Syntaxe pro určení výchozí hodnota je následující:  
+ Pokud se jedná o volitelný parametr, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnota je následujícím způsobem:  
   
- `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*  
+ `Optional [ByVal | ByRef]`  *Název parametru*`As`*datový typ*`=`*defaultvalue*   
   
 ### <a name="parameters-as-local-variables"></a>Parametry jako lokální proměnné  
- Pokud ovládací prvek předává do procesu, každý parametr je považovat za místní proměnné. To znamená, že jeho životnost je stejný jako postup, a její obor je celý postup.  
+ Při řízení se předá podle postupu, každý parametr je zpracováván jako místní proměnná. To znamená, že jeho životnost je stejný jako postup a jeho rozsah je celý postup.  
   
 ## <a name="calling-syntax"></a>Syntaxe volání  
- Vyvolání `Sub` postup explicitně příkazem samostatné volání. Ji nelze volat pomocí jeho názvu ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné a seznam argumentů je nutné uzavřít do závorek. Pokud jsou zadány žádné argumenty, můžete volitelně vynechat závorkách. Použití `Call` – klíčové slovo je volitelné, ale nedoporučuje se.  
+ Vyvolání `Sub` postup explicitně pomocí samostatné volání příkazu. Ji nelze volat pomocí jeho názvu ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou nepovinné a je nutné uzavřít do závorek seznamu argumentů. Pokud nejsou dodány žádné argumenty, můžete volitelně vynechejte závorky. Použití `Call` – klíčové slovo je volitelné, ale nedoporučuje se.  
   
- Syntaxe volání `Sub` postup je následující:  
+ Syntaxe pro volání `Sub` postup je následující:  
   
- `[Call]`  *subname* `[(` *argumentlist* `)]`  
+ `[Call]`  *subname* `[(` *seznam_argumentů* `)]`  
   
- Můžete volat `Sub` metody z mimo třídu, která ho definuje. Nejprve budete muset použít `New` – klíčové slovo k vytvoření instance třídy nebo volání metody, které vrací instanci třídy. Další informace najdete v tématu [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md). Pak použijte následující syntaxi pro volání `Sub` metoda instance objektu:  
+ Můžete volat `Sub` metodu z vně třídy, který ji definuje. Nejprve je nutné použít `New` – klíčové slovo k vytvoření instance třídy, nebo volat metodu, která vrací instanci třídy. Další informace najdete v tématu [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md). Potom použijte následující syntaxi pro volání `Sub` metodu na instanci objektu:  
   
- *Objekt*. *methodName*`[(`*argumentlist*`)]`  
+ *Objekt*. *methodName*`[(`*seznam_argumentů*`)]`  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
- Následující `Sub` postup informuje operátor počítače úloh, které aplikace se chystáte provést a také zobrazuje časové razítko. Místo duplikování tento kód na začátku každé úloze, aplikace právě volá `tellOperator` z různých umístění. Každé volání předá řetězec `task` argument, který identifikuje úkol spuštění.  
+ Následující `Sub` postup říká operátor počítače úloh, které aplikace se chystáte provést a také zobrazuje časové razítko. Namísto duplikování tento kód na začátku každé úlohy, aplikace jen volá `tellOperator` z různých umístění. Každé volání předává řetězcový v `task` argument, který identifikuje úlohy se spouští.  
   
  [!code-vb[VbVbcnProcedures#2](./codesnippet/VisualBasic/sub-procedures_1.vb)]  
   
@@ -72,12 +72,12 @@ A `Sub` postup je řada příkazů jazyka Visual Basic uzavřené do `Sub` a `En
   
  [!code-vb[VbVbcnProcedures#3](./codesnippet/VisualBasic/sub-procedures_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Procedury funkce](./function-procedures.md)  
- [Procedury vlastnosti](./property-procedures.md)  
- [Procedury operátoru](./operator-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)  
- [Postupy: volání obslužné rutiny událostí v jazyce Visual Basic](./how-to-call-an-event-handler.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Procedury funkce](./function-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury operátoru](./operator-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)
+- [Postupy: Volání obslužné rutiny událostí v jazyce Visual Basic](./how-to-call-an-event-handler.md)

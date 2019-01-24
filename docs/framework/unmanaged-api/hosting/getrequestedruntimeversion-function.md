@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 977f63b58ccbc709fb9383acf64686fc92808da4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4cdcee35f92fb79177caf7d00a99027fa179334e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433299"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651520"
 ---
 # <a name="getrequestedruntimeversion-function"></a>GetRequestedRuntimeVersion – funkce
-Získá číslo verze common language runtime (CLR) potřebný pro zadanou aplikaci. Pokud není nainstalovaná této verze, získá nejnovější verzi, který se nainstaloval před požadovanou verzi.  
+Získá číslo verze common language runtime (CLR) požadované určenou aplikací. Pokud není nainstalována verze, získá nejnovější verzi, která je nainstalována před požadovanou verzí.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -42,28 +42,28 @@ HRESULT GetRequestedRuntimeVersion (
   
 #### <a name="parameters"></a>Parametry  
  `pExe`  
- [v] Název aplikace.  
+ [in] Název aplikace.  
   
  `pVersion`  
- [out] Vyrovnávací paměť, která obsahuje řetězec číslo verze po úspěšném dokončení.  
+ [out] Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení.  
   
  `cchBuffer`  
- [v] Délka vyrovnávací paměti verze.  
+ [in] Délka vyrovnávací paměti verze.  
   
  `pdwLength`  
  [out] Ukazatel na délku řetězce číslo verze.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb modelu COM (Component Object), jak jsou definovány v WinError.h, kromě následující hodnoty.  
+ Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|ERROR_INSUFFICIENT_BUFFER|Verze vyrovnávací paměť není dostatečně velký pro uložení řetězec verze.|  
+|ERROR_INSUFFICIENT_BUFFER|Verze vyrovnávací paměť není dostatečně velký pro uložení řetězce verze.|  
 |E_POINTER|`pdwLength` má hodnotu null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -71,7 +71,7 @@ HRESULT GetRequestedRuntimeVersion (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)  
- [GetVersionFromProcess – funkce](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [GetRequestedRuntimeInfo – funkce](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)
+- [GetVersionFromProcess – funkce](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

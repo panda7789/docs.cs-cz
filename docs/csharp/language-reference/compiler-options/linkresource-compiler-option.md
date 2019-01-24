@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: feca4713fe0e704799e2abbae3818edd0f3a5c84
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 699ae27df2423638f38a22cc17dc83b828383394
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523172"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54711342"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (možnosti kompilátoru C#)
 Ve výstupním souboru vytvoří odkaz na prostředek rozhraní .NET Framework. Soubor prostředků se nepřidal do výstupního souboru. Tím se liší od [-prostředků](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložit soubor prostředků do výstupního souboru.  
@@ -74,9 +74,9 @@ al -out:A.dll A.netmodule -link:N.dll
 gacutil -i A.dll  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
-- [Al.exe (linker sestavení)](../../../framework/tools/al-exe-assembly-linker.md)  
-- [Práce se sestaveními a s globální pamětí sestavení](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Al.exe (linker sestavení)](../../../framework/tools/al-exe-assembly-linker.md)
+- [Práce se sestaveními a s globální pamětí sestavení](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

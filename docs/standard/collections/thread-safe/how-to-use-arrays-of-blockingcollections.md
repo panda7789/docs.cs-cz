@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Použití polí blokujících kolekcí v datovém kanálu'
+title: 'Postupy: Použití polí blokujících kolekcí v kanálu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: a39c7ec3-3ad7-4f4d-8fe4-b3e9dbabe2ed
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2e2e312668a7cf4fe39596ae018adaf62cd850e4
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a4667d78fdf91a3e62c22d88c7cbe9effaae57d5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187543"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54627197"
 ---
-# <a name="how-to-use-arrays-of-blocking-collections-in-a-pipeline"></a>Postupy: Použití polí blokujících kolekcí v datovém kanálu
+# <a name="how-to-use-arrays-of-blocking-collections-in-a-pipeline"></a>Postupy: Použití polí blokujících kolekcí v kanálu
 Následující příklad ukazuje způsob použití pole <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> objekty se statickými metodami, jako <xref:System.Collections.Concurrent.BlockingCollection%601.TryAddToAny%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTakeFromAny%2A> implementovat rychlé a flexibilní přenos dat mezi součástmi.  
   
 ## <a name="example"></a>Příklad  
@@ -28,5 +28,5 @@ Následující příklad ukazuje způsob použití pole <xref:System.Collections
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+- <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)
