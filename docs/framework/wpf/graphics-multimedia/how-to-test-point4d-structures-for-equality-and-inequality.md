@@ -9,22 +9,22 @@ helpviewer_keywords:
 - testing [WPF], Point4D structures for inequality
 - Point4D structures [WPF], testing for equality
 ms.assetid: e004a67e-db7f-4af8-a31f-e6b2a44ccf34
-ms.openlocfilehash: 1ec844c8fb0aceaaec6030c2e9d5cb30cf984f43
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1366f66a54266aaae61baf1cf6eee9792da732f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33559811"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724525"
 ---
-# <a name="how-to-test-point4d-structures-for-equality-and-inequality"></a><span data-ttu-id="45225-102">Postupy: Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="45225-102">How to: Test Point4D structures for equality and inequality</span></span>
-<span data-ttu-id="45225-103">Tento příklad ukazuje postup testování <xref:System.Windows.Media.Media3D.Point4D> struktury rovnosti a nerovnosti.</span><span class="sxs-lookup"><span data-stu-id="45225-103">This example shows how to test <xref:System.Windows.Media.Media3D.Point4D> structures for equality and inequality.</span></span>  
+# <a name="how-to-test-point4d-structures-for-equality-and-inequality"></a><span data-ttu-id="70f4b-102">Postupy: Testování struktur Point4D na rovnost a nerovnost</span><span class="sxs-lookup"><span data-stu-id="70f4b-102">How to: Test Point4D structures for equality and inequality</span></span>
+<span data-ttu-id="70f4b-103">Tento příklad ukazuje, jak otestovat <xref:System.Windows.Media.Media3D.Point4D> struktury rovnost a nerovnost.</span><span class="sxs-lookup"><span data-stu-id="70f4b-103">This example shows how to test <xref:System.Windows.Media.Media3D.Point4D> structures for equality and inequality.</span></span>  
   
- <span data-ttu-id="45225-104">Následující kód ukazuje, jak otestovat <xref:System.Windows.Media.Media3D.Point4D> struktury rovnosti a nerovnosti pomocí <xref:System.Windows.Media.Media3D.Point4D> metody rovnosti.</span><span class="sxs-lookup"><span data-stu-id="45225-104">The following code illustrates how to test <xref:System.Windows.Media.Media3D.Point4D> structures for equality and inequality using the <xref:System.Windows.Media.Media3D.Point4D> equality methods.</span></span>  <span data-ttu-id="45225-105"><xref:System.Windows.Media.Media3D.Point4D> Struktury jsou testovány rovnosti pomocí přetížené rovnosti (`==`) operátor pak nerovnost pomocí přetížené nerovnosti (`!=`) operátor a nakonec <xref:System.Windows.Media.Media3D.Point3D> struktura a <xref:System.Windows.Media.Media3D.Point4D> struktura jsou zaškrtnutá políčka rovnosti pomocí statické <xref:System.Windows.Media.Media3D.Point4D.Equals%2A> metoda.</span><span class="sxs-lookup"><span data-stu-id="45225-105">The <xref:System.Windows.Media.Media3D.Point4D> structures are tested for equality using the overloaded equality (`==`) operator, then for inequality using the overloaded inequality (`!=`) operator, and finally a <xref:System.Windows.Media.Media3D.Point3D> structure and a <xref:System.Windows.Media.Media3D.Point4D> structure are checked for equality using the static <xref:System.Windows.Media.Media3D.Point4D.Equals%2A> method.</span></span>  
+ <span data-ttu-id="70f4b-104">Následující kód ukazuje, jak otestovat <xref:System.Windows.Media.Media3D.Point4D> struktur rovnost a nerovnost pomocí <xref:System.Windows.Media.Media3D.Point4D> rovnosti metody.</span><span class="sxs-lookup"><span data-stu-id="70f4b-104">The following code illustrates how to test <xref:System.Windows.Media.Media3D.Point4D> structures for equality and inequality using the <xref:System.Windows.Media.Media3D.Point4D> equality methods.</span></span>  <span data-ttu-id="70f4b-105"><xref:System.Windows.Media.Media3D.Point4D> Struktury jsou testovány z hlediska rovnosti pomocí přetížených rovnosti (`==`) operátor, pak pro nerovnost pomocí přetížených nerovnosti (`!=`) operátor a nakonec <xref:System.Windows.Media.Media3D.Point3D> strukturu a <xref:System.Windows.Media.Media3D.Point4D> Struktura nebyly zvoleny na rovnost pomocí statické <xref:System.Windows.Media.Media3D.Point4D.Equals%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="70f4b-105">The <xref:System.Windows.Media.Media3D.Point4D> structures are tested for equality using the overloaded equality (`==`) operator, then for inequality using the overloaded inequality (`!=`) operator, and finally a <xref:System.Windows.Media.Media3D.Point3D> structure and a <xref:System.Windows.Media.Media3D.Point4D> structure are checked for equality using the static <xref:System.Windows.Media.Media3D.Point4D.Equals%2A> method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="45225-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="45225-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="70f4b-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="70f4b-106">Example</span></span>  
  [!code-csharp[3DGallery_procedural_snip#Point4DEqualityExample_csharp](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_procedural_snip/CSharp/Misc3DOperationsExample.cs#point4dequalityexample_csharp)]  
   
-## <a name="see-also"></a><span data-ttu-id="45225-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="45225-107">See Also</span></span>  
- <xref:System.Windows.Media.Media3D.Point4D.op_Equality%2A>  
- <xref:System.Windows.Media.Media3D.Point4D.op_Inequality%2A>  
- <xref:System.Windows.Media.Media3D.Point4D.Equals%2A>
+## <a name="see-also"></a><span data-ttu-id="70f4b-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="70f4b-107">See also</span></span>
+- <xref:System.Windows.Media.Media3D.Point4D.op_Equality%2A>
+- <xref:System.Windows.Media.Media3D.Point4D.op_Inequality%2A>
+- <xref:System.Windows.Media.Media3D.Point4D.Equals%2A>

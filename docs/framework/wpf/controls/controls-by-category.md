@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 93512ab00fe05a4166125c5e319ce91a5cc04573
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b056f52879c4309db0cbb33ecc789d25439a8c68
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33551996"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576847"
 ---
-# <a name="controls-by-category"></a><span data-ttu-id="87a9f-102">Řízení podle kategorie</span><span class="sxs-lookup"><span data-stu-id="87a9f-102">Controls by Category</span></span>
-<span data-ttu-id="87a9f-103">Ovládací prvky Windows Presentation Foundation (WPF) je možné logicky seskupit do několika kategorií.</span><span class="sxs-lookup"><span data-stu-id="87a9f-103">Windows Presentation Foundation (WPF) controls can be logically grouped into several categories.</span></span> <span data-ttu-id="87a9f-104">Tyto kategorie lze zvolit vhodný ovládací prvek pro váš scénář tím, že pomáhá můžete zjistit ovládacích prvků, které mají podobné vzorce používání nebo funkce.</span><span class="sxs-lookup"><span data-stu-id="87a9f-104">These categories can be used to select the appropriate control for your scenario by helping you see which controls have similar usage patterns or functionality.</span></span>  
+# <a name="controls-by-category"></a><span data-ttu-id="3e6c4-102">Řízení podle kategorie</span><span class="sxs-lookup"><span data-stu-id="3e6c4-102">Controls by Category</span></span>
+<span data-ttu-id="3e6c4-103">Ovládacích prvků Windows Presentation Foundation (WPF) může být logicky seskupeny do několika kategorií.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-103">Windows Presentation Foundation (WPF) controls can be logically grouped into several categories.</span></span> <span data-ttu-id="3e6c4-104">Tyto kategorie je možné vybrat příslušný ovládací prvek pro váš scénář tím, že pomáhá můžete zjistit, jaké ovládací prvky mají podobné vzory využití nebo funkce.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-104">These categories can be used to select the appropriate control for your scenario by helping you see which controls have similar usage patterns or functionality.</span></span>  
   
-## <a name="layout"></a><span data-ttu-id="87a9f-105">Rozložení</span><span class="sxs-lookup"><span data-stu-id="87a9f-105">Layout</span></span>  
- <span data-ttu-id="87a9f-106">Rozložení ovládacích prvků se používají ke správě velikosti, dimenze, umístění a uspořádání podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="87a9f-106">Layout controls are used to manage the size, dimensions, position, and arrangement of child elements.</span></span>  
+## <a name="layout"></a><span data-ttu-id="3e6c4-105">Rozložení</span><span class="sxs-lookup"><span data-stu-id="3e6c4-105">Layout</span></span>  
+ <span data-ttu-id="3e6c4-106">Ovládací prvky rozložení se používají ke správě velikost, rozměry, pozice a uspořádání podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-106">Layout controls are used to manage the size, dimensions, position, and arrangement of child elements.</span></span>  
   
 -   <xref:System.Windows.Controls.Border>  
   
@@ -55,15 +55,15 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="buttons"></a><span data-ttu-id="87a9f-107">Tlačítka</span><span class="sxs-lookup"><span data-stu-id="87a9f-107">Buttons</span></span>  
- <span data-ttu-id="87a9f-108">Tlačítka jsou jedním z nejzákladnější ovládacích prvků uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="87a9f-108">Buttons are one of the most basic user interface controls.</span></span> <span data-ttu-id="87a9f-109">Aplikace obvykle provedení některých úkolů v <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, když uživatel klikne na ně.</span><span class="sxs-lookup"><span data-stu-id="87a9f-109">Applications typically perform some task in the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event when a user clicks on them.</span></span>  
+## <a name="buttons"></a><span data-ttu-id="3e6c4-107">Tlačítka</span><span class="sxs-lookup"><span data-stu-id="3e6c4-107">Buttons</span></span>  
+ <span data-ttu-id="3e6c4-108">Tlačítka jsou jedním z nejzákladnějších ovládacích prvků uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-108">Buttons are one of the most basic user interface controls.</span></span> <span data-ttu-id="3e6c4-109">Aplikace obvykle provádět určité operace v <xref:System.Windows.Controls.Primitives.ButtonBase.Click> událost, když uživatel klikne na ně.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-109">Applications typically perform some task in the <xref:System.Windows.Controls.Primitives.ButtonBase.Click> event when a user clicks on them.</span></span>  
   
 -   <xref:System.Windows.Controls.Button>  
   
 -   <xref:System.Windows.Controls.Primitives.RepeatButton>  
   
-## <a name="data-display"></a><span data-ttu-id="87a9f-110">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="87a9f-110">Data Display</span></span>  
- <span data-ttu-id="87a9f-111">Ovládací prvky zobrazení dat se používají k zobrazují informace ze zdroje dat.</span><span class="sxs-lookup"><span data-stu-id="87a9f-111">Data display controls are used to show information from a data source.</span></span>  
+## <a name="data-display"></a><span data-ttu-id="3e6c4-110">Zobrazení dat</span><span class="sxs-lookup"><span data-stu-id="3e6c4-110">Data Display</span></span>  
+ <span data-ttu-id="3e6c4-111">Ovládací prvky zobrazení dat se používají k zobrazení informací ze zdroje dat.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-111">Data display controls are used to show information from a data source.</span></span>  
   
 -   <xref:System.Windows.Controls.DataGrid>  
   
@@ -71,15 +71,15 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.TreeView>  
   
-## <a name="date-display-and-selection"></a><span data-ttu-id="87a9f-112">Zobrazení data a výběr</span><span class="sxs-lookup"><span data-stu-id="87a9f-112">Date Display and Selection</span></span>  
- <span data-ttu-id="87a9f-113">Ovládací prvky data se používají k zobrazení a vyberte informací z kalendáře.</span><span class="sxs-lookup"><span data-stu-id="87a9f-113">Date controls are used to display and select calendar information.</span></span>  
+## <a name="date-display-and-selection"></a><span data-ttu-id="3e6c4-112">Výběr a zobrazení data</span><span class="sxs-lookup"><span data-stu-id="3e6c4-112">Date Display and Selection</span></span>  
+ <span data-ttu-id="3e6c4-113">Ovládací prvky data slouží k zobrazení a výběr informací z kalendáře.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-113">Date controls are used to display and select calendar information.</span></span>  
   
 -   <xref:System.Windows.Controls.Calendar>  
   
 -   <xref:System.Windows.Controls.DatePicker>  
   
-## <a name="menus"></a><span data-ttu-id="87a9f-114">Nabídky</span><span class="sxs-lookup"><span data-stu-id="87a9f-114">Menus</span></span>  
- <span data-ttu-id="87a9f-115">Nabídky se používají k seskupení souvisejících akcích nebo kontextové pomoc.</span><span class="sxs-lookup"><span data-stu-id="87a9f-115">Menus are used to group related actions or to provide contextual assistance.</span></span>  
+## <a name="menus"></a><span data-ttu-id="3e6c4-114">Nabídky</span><span class="sxs-lookup"><span data-stu-id="3e6c4-114">Menus</span></span>  
+ <span data-ttu-id="3e6c4-115">Nabídky se používají k seskupení souvisejících akcí nebo poskytovat kontextové pomoc.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-115">Menus are used to group related actions or to provide contextual assistance.</span></span>  
   
 -   <xref:System.Windows.Controls.ContextMenu>  
   
@@ -87,8 +87,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.ToolBar>  
   
-## <a name="selection"></a><span data-ttu-id="87a9f-116">Výběr</span><span class="sxs-lookup"><span data-stu-id="87a9f-116">Selection</span></span>  
- <span data-ttu-id="87a9f-117">Ovládací prvky pro výběr slouží k povolení uživatele vyberte jeden nebo více možností.</span><span class="sxs-lookup"><span data-stu-id="87a9f-117">Selection controls are used to enable a user to select one or more options.</span></span>  
+## <a name="selection"></a><span data-ttu-id="3e6c4-116">Výběr</span><span class="sxs-lookup"><span data-stu-id="3e6c4-116">Selection</span></span>  
+ <span data-ttu-id="3e6c4-117">Ovládací prvky výběru se používají a povolit tak uživateli vybrat jednu nebo více možností.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-117">Selection controls are used to enable a user to select one or more options.</span></span>  
   
 -   <xref:System.Windows.Controls.CheckBox>  
   
@@ -100,8 +100,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.Slider>  
   
-## <a name="navigation"></a><span data-ttu-id="87a9f-118">Navigace</span><span class="sxs-lookup"><span data-stu-id="87a9f-118">Navigation</span></span>  
- <span data-ttu-id="87a9f-119">Ovládací prvky pro navigaci vylepšit nebo rozšířit používání aplikací navigační vytvořením cílení rámce nebo na kartách vzhled aplikace.</span><span class="sxs-lookup"><span data-stu-id="87a9f-119">Navigation controls enhance or extend the application navigation experience by creating targeting frames or tabbed application appearance.</span></span>  
+## <a name="navigation"></a><span data-ttu-id="3e6c4-118">Navigace</span><span class="sxs-lookup"><span data-stu-id="3e6c4-118">Navigation</span></span>  
+ <span data-ttu-id="3e6c4-119">Ovládací prvky pro navigaci vylepšit nebo rozšířit navigační prostředí aplikace tak, že vytvoříte cílení snímků nebo vzhledu aplikace s kartami.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-119">Navigation controls enhance or extend the application navigation experience by creating targeting frames or tabbed application appearance.</span></span>  
   
 -   <xref:System.Windows.Controls.Frame>  
   
@@ -113,8 +113,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.TabControl>  
   
-## <a name="dialog-boxes"></a><span data-ttu-id="87a9f-120">Dialogová okna</span><span class="sxs-lookup"><span data-stu-id="87a9f-120">Dialog Boxes</span></span>  
- <span data-ttu-id="87a9f-121">Dialogová okna poskytují cílové podporu pro běžné scénáře interakci s uživatelem, jako je například tisku.</span><span class="sxs-lookup"><span data-stu-id="87a9f-121">Dialog boxes provide targeted support for common user-interaction scenarios such as printing.</span></span>  
+## <a name="dialog-boxes"></a><span data-ttu-id="3e6c4-120">Dialogová okna</span><span class="sxs-lookup"><span data-stu-id="3e6c4-120">Dialog Boxes</span></span>  
+ <span data-ttu-id="3e6c4-121">Dialogová okna poskytují cílené podporu pro běžné scénáře zásahu uživatele, jako je například tisk.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-121">Dialog boxes provide targeted support for common user-interaction scenarios such as printing.</span></span>  
   
 -   <xref:Microsoft.Win32.OpenFileDialog>  
   
@@ -122,8 +122,8 @@ ms.locfileid: "33551996"
   
 -   <xref:Microsoft.Win32.SaveFileDialog>  
   
-## <a name="user-information"></a><span data-ttu-id="87a9f-122">Informace o uživateli</span><span class="sxs-lookup"><span data-stu-id="87a9f-122">User Information</span></span>  
- <span data-ttu-id="87a9f-123">Uživatelské ovládací prvky informace kontextové svůj názor nebo vysvětlení uživatelské rozhraní aplikace.</span><span class="sxs-lookup"><span data-stu-id="87a9f-123">User information controls provide contextual feedback or clarify an application's user interface.</span></span> <span data-ttu-id="87a9f-124">Uživatel obvykle nemůže komunikovat s tyto ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="87a9f-124">The user typically cannot interact with these controls.</span></span>  
+## <a name="user-information"></a><span data-ttu-id="3e6c4-122">Informace o uživateli</span><span class="sxs-lookup"><span data-stu-id="3e6c4-122">User Information</span></span>  
+ <span data-ttu-id="3e6c4-123">Informace o uživatelských ovládacích prvků kontextové svůj názor nebo ujasněte uživatelské rozhraní aplikace.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-123">User information controls provide contextual feedback or clarify an application's user interface.</span></span> <span data-ttu-id="3e6c4-124">Uživateli obvykle nelze pracovat s tyto ovládací prvky.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-124">The user typically cannot interact with these controls.</span></span>  
   
 -   <xref:System.Windows.Controls.AccessText>  
   
@@ -139,8 +139,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.ToolTip>  
   
-## <a name="documents"></a><span data-ttu-id="87a9f-125">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="87a9f-125">Documents</span></span>  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="87a9f-126"> zahrnuje několik specializované ovládací prvky pro zobrazování dokumentů.</span><span class="sxs-lookup"><span data-stu-id="87a9f-126"> includes several specialized controls for viewing documents.</span></span> <span data-ttu-id="87a9f-127">Tyto ovládací prvky optimalizovat pro čtení, závislosti na scénáři cílové uživatele.</span><span class="sxs-lookup"><span data-stu-id="87a9f-127">These controls optimize the reading experience, based on the targeted user scenario.</span></span>  
+## <a name="documents"></a><span data-ttu-id="3e6c4-125">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="3e6c4-125">Documents</span></span>  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] <span data-ttu-id="3e6c4-126">zahrnuje několik specializovaných ovládacích prvků pro zobrazení dokumentů.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-126">includes several specialized controls for viewing documents.</span></span> <span data-ttu-id="3e6c4-127">Tyto ovládací prvky optimalizaci prostředí pro čtení, na základě scénáře cíloví uživatelé.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-127">These controls optimize the reading experience, based on the targeted user scenario.</span></span>  
   
 -   <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -152,8 +152,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.StickyNoteControl>  
   
-## <a name="input"></a><span data-ttu-id="87a9f-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="87a9f-128">Input</span></span>  
- <span data-ttu-id="87a9f-129">Vstupní ovládací prvky povolit uživateli vyžadovat zadání textu a jiný obsah.</span><span class="sxs-lookup"><span data-stu-id="87a9f-129">Input controls enable the user to input text and other content.</span></span>  
+## <a name="input"></a><span data-ttu-id="3e6c4-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="3e6c4-128">Input</span></span>  
+ <span data-ttu-id="3e6c4-129">Vstupní ovládací prvky umožňují uživateli vyžadovat zadání textu a další obsah.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-129">Input controls enable the user to input text and other content.</span></span>  
   
 -   <xref:System.Windows.Controls.TextBox>  
   
@@ -161,8 +161,8 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="media"></a><span data-ttu-id="87a9f-130">Média</span><span class="sxs-lookup"><span data-stu-id="87a9f-130">Media</span></span>  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]<span data-ttu-id="87a9f-131"> zahrnuje integrovanou podporu pro hostování audio a video obsahu, jakož i [kodeky] pro nejoblíbenější formátů obrázku.</span><span class="sxs-lookup"><span data-stu-id="87a9f-131"> includes integrated support for hosting both audio and video content, as well as [codecs] for most popular image formats.</span></span>  
+## <a name="media"></a><span data-ttu-id="3e6c4-130">Média</span><span class="sxs-lookup"><span data-stu-id="3e6c4-130">Media</span></span>  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] <span data-ttu-id="3e6c4-131">zahrnuje integrovanou podporu pro hostování audio a video obsahu, jakož i [kodeky] nejoblíbenějších formátů obrázku.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-131">includes integrated support for hosting both audio and video content, as well as [codecs] for most popular image formats.</span></span>  
   
 -   <xref:System.Windows.Controls.Image>  
   
@@ -170,12 +170,12 @@ ms.locfileid: "33551996"
   
 -   <xref:System.Windows.Controls.SoundPlayerAction>  
   
-## <a name="digital-ink"></a><span data-ttu-id="87a9f-132">Digitální inkoust</span><span class="sxs-lookup"><span data-stu-id="87a9f-132">Digital Ink</span></span>  
- <span data-ttu-id="87a9f-133">Ovládací prvky digitálního poskytují integrovanou podporu pro [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] funkcí, například zobrazení rukopisu a vstup rukopisu.</span><span class="sxs-lookup"><span data-stu-id="87a9f-133">Digital ink controls provide integrated support for [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] features, such as ink viewing and ink input.</span></span>  
+## <a name="digital-ink"></a><span data-ttu-id="3e6c4-132">Digitální inkoust</span><span class="sxs-lookup"><span data-stu-id="3e6c4-132">Digital Ink</span></span>  
+ <span data-ttu-id="3e6c4-133">Digitální inkoust ovládací prvky poskytují integrovanou podporu pro [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] funkce, jako je zobrazení inkoustu a vstupu rukopisu.</span><span class="sxs-lookup"><span data-stu-id="3e6c4-133">Digital ink controls provide integrated support for [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)] features, such as ink viewing and ink input.</span></span>  
   
 -   <xref:System.Windows.Controls.InkCanvas>  
   
 -   <xref:System.Windows.Controls.InkPresenter>  
   
-## <a name="see-also"></a><span data-ttu-id="87a9f-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="87a9f-134">See Also</span></span>  
- [<span data-ttu-id="87a9f-135">Knihovna ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="87a9f-135">Control Library</span></span>](../../../../docs/framework/wpf/controls/control-library.md)
+## <a name="see-also"></a><span data-ttu-id="3e6c4-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3e6c4-134">See also</span></span>
+- [<span data-ttu-id="3e6c4-135">Knihovna ovládacích prvků</span><span class="sxs-lookup"><span data-stu-id="3e6c4-135">Control Library</span></span>](../../../../docs/framework/wpf/controls/control-library.md)

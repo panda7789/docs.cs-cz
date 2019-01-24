@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: naplnění strom XML ze systému souborů (Visual Basic)'
+title: 'Postupy: Naplnění stromu XML ze systému souborů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 34eec79e-7945-4ba8-9f74-d05bb8ec67f6
-ms.openlocfilehash: 158a6c5c6734f0aa11e22b5cbea35c960c7a1c40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: babb8f835e8320b637f131bdc2e242c460c0548c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642557"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559785"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a><span data-ttu-id="ec955-102">Postupy: naplnění strom XML ze systému souborů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ec955-102">How to: Populate an XML Tree from the File System (Visual Basic)</span></span>
-<span data-ttu-id="ec955-103">Běžné a užitečné aplikace stromů XML je jako úložiště dat hierarchické název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="ec955-103">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="ec955-104">Můžete naplnit strom XML hierarchické daty a pak dotaz ho, transformovat je a v případě potřeby serializovat.</span><span class="sxs-lookup"><span data-stu-id="ec955-104">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="ec955-105">V tomto scénáři použití řadu konkrétní sémantiku XML, například obory názvů a chování mezer nejsou důležité.</span><span class="sxs-lookup"><span data-stu-id="ec955-105">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="ec955-106">Místo toho používají stromu XML jako malá, v paměti, hierarchické databázi jednoho uživatele.</span><span class="sxs-lookup"><span data-stu-id="ec955-106">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a><span data-ttu-id="722b9-102">Postupy: Naplnění stromu XML ze systému souborů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="722b9-102">How to: Populate an XML Tree from the File System (Visual Basic)</span></span>
+<span data-ttu-id="722b9-103">Je běžné použití užitečné stromů XML jako úložiště dat hierarchické název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="722b9-103">A common and useful application of XML trees is as a hierarchical name/value data store.</span></span> <span data-ttu-id="722b9-104">Můžete naplnění stromu XML s hierarchickými daty a pak ji dotazovat, transformují je a v případě potřeby ho serializovat.</span><span class="sxs-lookup"><span data-stu-id="722b9-104">You can populate an XML tree with hierarchical data, and then query it, transform it, and if necessary, serialize it.</span></span> <span data-ttu-id="722b9-105">V tomto scénáři použití mnoha specifické sémantiku XML, například obory názvů a chování mezer, nejsou důležité.</span><span class="sxs-lookup"><span data-stu-id="722b9-105">In this usage scenario, many of the XML specific semantics, such as namespaces and white space behavior, are not important.</span></span> <span data-ttu-id="722b9-106">Místo toho používají stromu XML jako malé, v paměti, hierarchické databázi jednoho uživatele.</span><span class="sxs-lookup"><span data-stu-id="722b9-106">Instead, you are using the XML tree as a small, in memory, single user hierarchical database.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ec955-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="ec955-107">Example</span></span>  
- <span data-ttu-id="ec955-108">Následující příklad naplní strom XML z místního systému souborů pomocí rekurze.</span><span class="sxs-lookup"><span data-stu-id="ec955-108">The following example populates an XML tree from the local file system using recursion.</span></span> <span data-ttu-id="ec955-109">Následně se dotazuje stromu výpočet celkové velikosti všech souborů ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="ec955-109">It then queries the tree, calculating the total of the sizes of all files in the tree.</span></span>  
+## <a name="example"></a><span data-ttu-id="722b9-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="722b9-107">Example</span></span>  
+ <span data-ttu-id="722b9-108">V následujícím příkladu se naplní stromu XML z místního systému souborů pomocí rekurze.</span><span class="sxs-lookup"><span data-stu-id="722b9-108">The following example populates an XML tree from the local file system using recursion.</span></span> <span data-ttu-id="722b9-109">Následně se dotazuje stromu výpočtu celkové velikosti všech souborů ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="722b9-109">It then queries the tree, calculating the total of the sizes of all files in the tree.</span></span>  
   
 ```vb  
 Module Module1  
@@ -44,7 +44,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="ec955-110">Tento příklad vytvoří výstup podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="ec955-110">This example produces output similar to the following:</span></span>  
+ <span data-ttu-id="722b9-110">Tento příklad vytvoří výstup podobný následujícímu:</span><span class="sxs-lookup"><span data-stu-id="722b9-110">This example produces output similar to the following:</span></span>  
   
 ```xml  
 <Dir Name="Tmp">  
@@ -114,5 +114,5 @@ End Module
 Total File Size:59089  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ec955-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="ec955-111">See Also</span></span>  
- [<span data-ttu-id="ec955-112">Pokročilé techniky dotazu (technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ec955-112">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="722b9-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="722b9-111">See also</span></span>
+- [<span data-ttu-id="722b9-112">Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="722b9-112">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

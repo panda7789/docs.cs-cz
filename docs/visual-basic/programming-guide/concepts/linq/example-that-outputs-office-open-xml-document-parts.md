@@ -1,21 +1,21 @@
 ---
-title: Příklad, který produkuje části dokumentu Office Open XML (Visual Basic)
+title: Příklad, jejichž výstupem jsou části dokumentu Office Open XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-ms.openlocfilehash: 2e4b03d89a5b1eabb5751d807ef78442a960389d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0ad7dc9d6f68ecde88888b0f0250632f3f946f92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33640264"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670248"
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a><span data-ttu-id="01513-102">Příklad, který produkuje části dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01513-102">Example that Outputs Office Open XML Document Parts (Visual Basic)</span></span>
-<span data-ttu-id="01513-103">Toto téma ukazuje, jak otevřít dokument Office otevřít XML a přístup k části v něm.</span><span class="sxs-lookup"><span data-stu-id="01513-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
+# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a><span data-ttu-id="fe492-102">Příklad, jejichž výstupem jsou části dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fe492-102">Example that Outputs Office Open XML Document Parts (Visual Basic)</span></span>
+<span data-ttu-id="fe492-103">Toto téma ukazuje, jak otevření dokumentu Office Open XML a přístup k částem v rámci ho.</span><span class="sxs-lookup"><span data-stu-id="fe492-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="01513-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="01513-104">Example</span></span>  
- <span data-ttu-id="01513-105">Následující příklad otevře dokument Office Open XML a vytiskne části dokumentů a část styl ke konzole.</span><span class="sxs-lookup"><span data-stu-id="01513-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
+## <a name="example"></a><span data-ttu-id="fe492-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="fe492-104">Example</span></span>  
+ <span data-ttu-id="fe492-105">Následující příklad otevře dokumentu Office Open XML a vytiskne část dokumentu a část stylu do konzoly.</span><span class="sxs-lookup"><span data-stu-id="fe492-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
   
- <span data-ttu-id="01513-106">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="01513-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="01513-107">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="01513-107">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="fe492-106">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="fe492-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="fe492-107">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="fe492-107">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Const fileName As String = "SampleDoc.docx"  
@@ -64,5 +64,5 @@ Using wdPackage As Package = Package.Open(fileName, FileMode.Open, FileAccess.Re
 End Using  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="01513-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="01513-108">See Also</span></span>  
- [<span data-ttu-id="01513-109">Podrobnosti o Office otevřít dokumenty WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="01513-109">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a><span data-ttu-id="fe492-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fe492-108">See also</span></span>
+- [<span data-ttu-id="fe492-109">Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fe492-109">Details of Office Open XML WordprocessingML Documents (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

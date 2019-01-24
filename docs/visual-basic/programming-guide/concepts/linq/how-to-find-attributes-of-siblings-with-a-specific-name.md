@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledání atributů na stejné úrovni s konkrétním názvem (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 83b3ddca-830a-4b71-9756-9e4bdf907302
-ms.openlocfilehash: 467a9a5f529111b45fccda79437ccc6538f1372a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ce97cbc4b8b1105e8431016a9c296c158cf0091c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643600"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596186"
 ---
-# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="d05db-102">Postupy: vyhledání atributů na stejné úrovni s konkrétním názvem (XPath-technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d05db-102">How to: Find Attributes of Siblings with a Specific Name (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="d05db-103">Toto téma ukazuje, jak najít všechny atributy stejné úrovně uzlu.</span><span class="sxs-lookup"><span data-stu-id="d05db-103">This topic shows how to find all attributes of the siblings of the context node.</span></span> <span data-ttu-id="d05db-104">Pouze atributy s konkrétním názvem jsou vráceny v kolekci.</span><span class="sxs-lookup"><span data-stu-id="d05db-104">Only attributes with a specific name are returned in the collection.</span></span>  
+# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="52a32-102">Postupy: Vyhledání atributů elementů na stejné úrovni s konkrétním názvem (XPath – LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52a32-102">How to: Find Attributes of Siblings with a Specific Name (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="52a32-103">Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu.</span><span class="sxs-lookup"><span data-stu-id="52a32-103">This topic shows how to find all attributes of the siblings of the context node.</span></span> <span data-ttu-id="52a32-104">Pouze atributy s konkrétním názvem jsou vráceny v kolekci.</span><span class="sxs-lookup"><span data-stu-id="52a32-104">Only attributes with a specific name are returned in the collection.</span></span>  
   
- <span data-ttu-id="d05db-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="d05db-105">The XPath expression is:</span></span>  
+ <span data-ttu-id="52a32-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="52a32-105">The XPath expression is:</span></span>  
   
  `../Book/@id`  
   
-## <a name="example"></a><span data-ttu-id="d05db-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="d05db-106">Example</span></span>  
- <span data-ttu-id="d05db-107">Tento příklad nejprve najde `Book` elementu a najde všechny elementy na stejné úrovni jako s názvem `Book`a potom vyhledá všechny atributy s názvem `id`.</span><span class="sxs-lookup"><span data-stu-id="d05db-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`, and then finds all attributes named `id`.</span></span> <span data-ttu-id="d05db-108">Výsledkem je kolekce atributů.</span><span class="sxs-lookup"><span data-stu-id="d05db-108">The result is a collection of attributes.</span></span>  
+## <a name="example"></a><span data-ttu-id="52a32-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="52a32-106">Example</span></span>  
+ <span data-ttu-id="52a32-107">V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`a následně vyhledá všechny atributy s názvem `id`.</span><span class="sxs-lookup"><span data-stu-id="52a32-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`, and then finds all attributes named `id`.</span></span> <span data-ttu-id="52a32-108">Výsledkem je kolekce atributů.</span><span class="sxs-lookup"><span data-stu-id="52a32-108">The result is a collection of attributes.</span></span>  
   
- <span data-ttu-id="d05db-109">Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: knihy (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="d05db-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="52a32-109">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="52a32-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim books as XDocument = XDocument.Load("Books.xml")  
@@ -46,7 +46,7 @@ For Each el As XAttribute In list1
 Next  
 ```  
   
- <span data-ttu-id="d05db-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="d05db-110">This example produces the following output:</span></span>  
+ <span data-ttu-id="52a32-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="52a32-110">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -54,5 +54,5 @@ id="bk101"
 id="bk102"  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d05db-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="d05db-111">See Also</span></span>  
- [<span data-ttu-id="d05db-112">Technologie LINQ to XML pro uživatele XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d05db-112">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="52a32-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="52a32-111">See also</span></span>
+- [<span data-ttu-id="52a32-112">LINQ to XML pro uživatele jazyka XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="52a32-112">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

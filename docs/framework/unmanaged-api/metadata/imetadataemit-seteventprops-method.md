@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 42dc78ff3c58b67801cd99512781d8c8509dd272
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ab479aab56b429c104a44b1fae192bc7f20a389d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447337"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656918"
 ---
-# <a name="imetadataemitseteventprops-method"></a><span data-ttu-id="31e1c-102">IMetaDataEmit::SetEventProps – metoda</span><span class="sxs-lookup"><span data-stu-id="31e1c-102">IMetaDataEmit::SetEventProps Method</span></span>
-<span data-ttu-id="31e1c-103">Nastaví nebo aktualizuje určenou funkci události definované předchozí volání [imetadataemit::defineevent –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).</span><span class="sxs-lookup"><span data-stu-id="31e1c-103">Sets or updates the specified feature of an event defined by a prior call to [IMetaDataEmit::DefineEvent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).</span></span>  
+# <a name="imetadataemitseteventprops-method"></a><span data-ttu-id="eaae3-102">IMetaDataEmit::SetEventProps – metoda</span><span class="sxs-lookup"><span data-stu-id="eaae3-102">IMetaDataEmit::SetEventProps Method</span></span>
+<span data-ttu-id="eaae3-103">Nastaví nebo aktualizuje zadanou funkci události definované v předchozím volání [imetadataemit::defineevent –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).</span><span class="sxs-lookup"><span data-stu-id="eaae3-103">Sets or updates the specified feature of an event defined by a prior call to [IMetaDataEmit::DefineEvent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="31e1c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31e1c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eaae3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eaae3-104">Syntax</span></span>  
   
 ```  
 HRESULT SetEventProps (  
@@ -41,37 +41,37 @@ HRESULT SetEventProps (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="31e1c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="31e1c-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="eaae3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="eaae3-105">Parameters</span></span>  
  `ev`  
- <span data-ttu-id="31e1c-106">[v] Token událostí.</span><span class="sxs-lookup"><span data-stu-id="31e1c-106">[in] The event token.</span></span>  
+ <span data-ttu-id="eaae3-106">[in] Token, který událost.</span><span class="sxs-lookup"><span data-stu-id="eaae3-106">[in] The event token.</span></span>  
   
  `dwEventFlags`  
- <span data-ttu-id="31e1c-107">[v] Příznaky událostí.</span><span class="sxs-lookup"><span data-stu-id="31e1c-107">[in] Event flags.</span></span> <span data-ttu-id="31e1c-108">Toto je bitová maska s `CorEventAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="31e1c-108">This is a bitmask of `CorEventAttr` values.</span></span>  
+ <span data-ttu-id="eaae3-107">[in] Příznaky událostí.</span><span class="sxs-lookup"><span data-stu-id="eaae3-107">[in] Event flags.</span></span> <span data-ttu-id="eaae3-108">To je bitová maska z `CorEventAttr` hodnoty.</span><span class="sxs-lookup"><span data-stu-id="eaae3-108">This is a bitmask of `CorEventAttr` values.</span></span>  
   
  `tkEventType`  
- <span data-ttu-id="31e1c-109">[v] Token pro třídy události.</span><span class="sxs-lookup"><span data-stu-id="31e1c-109">[in] The token for the event class.</span></span> <span data-ttu-id="31e1c-110">To znamená buď `mdTypeDef` nebo `mdTypeRef` tokenu.</span><span class="sxs-lookup"><span data-stu-id="31e1c-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
+ <span data-ttu-id="eaae3-109">[in] Token pro třídy události.</span><span class="sxs-lookup"><span data-stu-id="eaae3-109">[in] The token for the event class.</span></span> <span data-ttu-id="eaae3-110">Je to `mdTypeDef` nebo `mdTypeRef` token.</span><span class="sxs-lookup"><span data-stu-id="eaae3-110">This is either a `mdTypeDef` or a `mdTypeRef` token.</span></span>  
   
  `mdAddOn`  
- <span data-ttu-id="31e1c-111">[v] Metoda použitá k odběru události, nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="31e1c-111">[in] The method used to subscribe to the event, or null.</span></span>  
+ <span data-ttu-id="eaae3-111">[in] Metoda použitá k přihlášení k odběru událostí, nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="eaae3-111">[in] The method used to subscribe to the event, or null.</span></span>  
   
  `mdRemoveOn`  
- <span data-ttu-id="31e1c-112">[v] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="31e1c-112">[in] The method used to unsubscribe to the event, or null.</span></span>  
+ <span data-ttu-id="eaae3-112">[in] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="eaae3-112">[in] The method used to unsubscribe to the event, or null.</span></span>  
   
  `mdFire`  
- <span data-ttu-id="31e1c-113">[v] Metoda použitá k vyvolání události (podle odvozené třídy).</span><span class="sxs-lookup"><span data-stu-id="31e1c-113">[in] The method used (by a derived class) to raise the event.</span></span>  
+ <span data-ttu-id="eaae3-113">[in] Metoda použitá pro vyvolání události (prostřednictvím odvozené třídy).</span><span class="sxs-lookup"><span data-stu-id="eaae3-113">[in] The method used (by a derived class) to raise the event.</span></span>  
   
  `rmdOtherMethods[]`  
- <span data-ttu-id="31e1c-114">[v] Pole tokeny pro jiné metody přidružený k události.</span><span class="sxs-lookup"><span data-stu-id="31e1c-114">[in] An array of tokens for other methods associated with the event.</span></span> <span data-ttu-id="31e1c-115">Musí být posledním prvkem pole `mdMethodDefNil`.</span><span class="sxs-lookup"><span data-stu-id="31e1c-115">The last element of the array must be `mdMethodDefNil`.</span></span>  
+ <span data-ttu-id="eaae3-114">[in] Pole tokenů pro jiné metody přidružené k události.</span><span class="sxs-lookup"><span data-stu-id="eaae3-114">[in] An array of tokens for other methods associated with the event.</span></span> <span data-ttu-id="eaae3-115">Poslední element pole musí být `mdMethodDefNil`.</span><span class="sxs-lookup"><span data-stu-id="eaae3-115">The last element of the array must be `mdMethodDefNil`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="31e1c-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="31e1c-116">Requirements</span></span>  
- <span data-ttu-id="31e1c-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="31e1c-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="eaae3-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eaae3-116">Requirements</span></span>  
+ <span data-ttu-id="eaae3-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eaae3-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="31e1c-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="31e1c-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="eaae3-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="eaae3-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="31e1c-119">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="31e1c-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="eaae3-119">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="eaae3-119">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="31e1c-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="31e1c-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="eaae3-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eaae3-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="31e1c-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="31e1c-121">See Also</span></span>  
- [<span data-ttu-id="31e1c-122">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="31e1c-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [<span data-ttu-id="31e1c-123">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="31e1c-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="eaae3-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eaae3-121">See also</span></span>
+- [<span data-ttu-id="eaae3-122">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eaae3-122">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="eaae3-123">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eaae3-123">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
