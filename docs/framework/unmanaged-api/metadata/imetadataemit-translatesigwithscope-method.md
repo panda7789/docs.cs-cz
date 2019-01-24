@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0ddaddbbd050dc079fcf20551e90c895d2f4ef59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e03572a4eaa0251866e8bfc6ae2d01d955d7b8f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446340"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516184"
 ---
-# <a name="imetadataemittranslatesigwithscope-method"></a><span data-ttu-id="fc84f-102">IMetaDataEmit::TranslateSigWithScope – metoda</span><span class="sxs-lookup"><span data-stu-id="fc84f-102">IMetaDataEmit::TranslateSigWithScope Method</span></span>
-<span data-ttu-id="fc84f-103">Importuje sestavení do aktuální obor a získá nové podpis metadata pro sloučené obor.</span><span class="sxs-lookup"><span data-stu-id="fc84f-103">Imports an assembly into the current scope and gets a new metadata signature for the merged scope.</span></span>  
+# <a name="imetadataemittranslatesigwithscope-method"></a><span data-ttu-id="14019-102">IMetaDataEmit::TranslateSigWithScope – metoda</span><span class="sxs-lookup"><span data-stu-id="14019-102">IMetaDataEmit::TranslateSigWithScope Method</span></span>
+<span data-ttu-id="14019-103">Importuje sestavení do aktuální obor a získá nový podpis metadat pro sloučený obor.</span><span class="sxs-lookup"><span data-stu-id="14019-103">Imports an assembly into the current scope and gets a new metadata signature for the merged scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fc84f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fc84f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="14019-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="14019-104">Syntax</span></span>  
   
 ```  
 HRESULT TranslateSigWithScope (   
@@ -45,52 +45,52 @@ HRESULT TranslateSigWithScope (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="fc84f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fc84f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="14019-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="14019-105">Parameters</span></span>  
  `pAssemImport`  
- <span data-ttu-id="fc84f-106">[v] Rozhraní pro import sestavení (kde je definován podpis).</span><span class="sxs-lookup"><span data-stu-id="fc84f-106">[in] The interface for import assembly (where the signature is defined).</span></span>  
+ <span data-ttu-id="14019-106">[in] Rozhraní pro import sestavení (kde je definován podpis).</span><span class="sxs-lookup"><span data-stu-id="14019-106">[in] The interface for import assembly (where the signature is defined).</span></span>  
   
  `pbHashValue`  
- <span data-ttu-id="fc84f-107">[v] Hodnota hash objektu blob pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc84f-107">[in] The hash blob for the assembly.</span></span>  
+ <span data-ttu-id="14019-107">[in] Objekt blob algoritmu hash pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="14019-107">[in] The hash blob for the assembly.</span></span>  
   
  `cbHashValue`  
- <span data-ttu-id="fc84f-108">[v] Počet bajtů v `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="fc84f-108">[in] The count of bytes in `pbHashValue`.</span></span>  
+ <span data-ttu-id="14019-108">[in] Počet bajtů v `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="14019-108">[in] The count of bytes in `pbHashValue`.</span></span>  
   
  `import`  
- <span data-ttu-id="fc84f-109">[v] Rozhraní pro import metadat obor.</span><span class="sxs-lookup"><span data-stu-id="fc84f-109">[in] The interface for import metadata scope.</span></span>  
+ <span data-ttu-id="14019-109">[in] Rozhraní pro oboru importu metadat.</span><span class="sxs-lookup"><span data-stu-id="14019-109">[in] The interface for import metadata scope.</span></span>  
   
  `pbSigBlob`  
- <span data-ttu-id="fc84f-110">[v] Podpis určených k importu.</span><span class="sxs-lookup"><span data-stu-id="fc84f-110">[in] The signature to be imported.</span></span>  
+ <span data-ttu-id="14019-110">[in] Podpis k importu.</span><span class="sxs-lookup"><span data-stu-id="14019-110">[in] The signature to be imported.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="fc84f-111">[v] Velikost v bajtech z `pbSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="fc84f-111">[in] The size, in bytes, of `pbSigBlob`.</span></span>  
+ <span data-ttu-id="14019-111">[in] Velikost v bajtech, z `pbSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="14019-111">[in] The size, in bytes, of `pbSigBlob`.</span></span>  
   
  `pAssemEmit`  
- <span data-ttu-id="fc84f-112">[v] Rozhraní pro export sestavení.</span><span class="sxs-lookup"><span data-stu-id="fc84f-112">[in] The interface for export assembly.</span></span>  
+ <span data-ttu-id="14019-112">[in] Rozhraní pro export sestavení.</span><span class="sxs-lookup"><span data-stu-id="14019-112">[in] The interface for export assembly.</span></span>  
   
  `emit`  
- <span data-ttu-id="fc84f-113">[v] Rozhraní pro export metadat obor.</span><span class="sxs-lookup"><span data-stu-id="fc84f-113">[in] The interface for export metadata scope.</span></span>  
+ <span data-ttu-id="14019-113">[in] Rozhraní pro export metadat obor.</span><span class="sxs-lookup"><span data-stu-id="14019-113">[in] The interface for export metadata scope.</span></span>  
   
  `pvTranslatedSig`  
- <span data-ttu-id="fc84f-114">[out] Vyrovnávací paměti pro uložení objektů blob přeložený podpis.</span><span class="sxs-lookup"><span data-stu-id="fc84f-114">[out] The buffer to hold the translated signature blob.</span></span>  
+ <span data-ttu-id="14019-114">[out] Vyrovnávací paměť pro uložení objektů blob přeložené podpis.</span><span class="sxs-lookup"><span data-stu-id="14019-114">[out] The buffer to hold the translated signature blob.</span></span>  
   
  `cbTranslatedSigMax`  
- <span data-ttu-id="fc84f-115">[v] Kapacitu, v bajtech z `pvTranslatedSig`.</span><span class="sxs-lookup"><span data-stu-id="fc84f-115">[in] The capacity, in bytes, of `pvTranslatedSig`.</span></span>  
+ <span data-ttu-id="14019-115">[in] Kapacita, v bajtech, z `pvTranslatedSig`.</span><span class="sxs-lookup"><span data-stu-id="14019-115">[in] The capacity, in bytes, of `pvTranslatedSig`.</span></span>  
   
  `pcbTranslatedSig`  
- <span data-ttu-id="fc84f-116">[out] Počet skutečného bajtů přeložený podpis.</span><span class="sxs-lookup"><span data-stu-id="fc84f-116">[out] The number of actual bytes in the translated signature.</span></span>  
+ <span data-ttu-id="14019-116">[out] Počet skutečný počet bajtů v přeložené podpisu.</span><span class="sxs-lookup"><span data-stu-id="14019-116">[out] The number of actual bytes in the translated signature.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fc84f-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fc84f-117">Requirements</span></span>  
- <span data-ttu-id="fc84f-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fc84f-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="14019-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="14019-117">Requirements</span></span>  
+ <span data-ttu-id="14019-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="14019-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fc84f-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="fc84f-119">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="14019-119">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="14019-119">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="fc84f-120">**Knihovna:** používat jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="fc84f-120">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="14019-120">**Knihovna:** Použít jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="14019-120">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="fc84f-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fc84f-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="14019-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="14019-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fc84f-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="fc84f-122">See Also</span></span>  
- [<span data-ttu-id="fc84f-123">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc84f-123">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  
- [<span data-ttu-id="fc84f-124">IMetaDataAssemblyImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc84f-124">IMetaDataAssemblyImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)  
- [<span data-ttu-id="fc84f-125">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc84f-125">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [<span data-ttu-id="fc84f-126">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc84f-126">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
- [<span data-ttu-id="fc84f-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fc84f-127">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+## <a name="see-also"></a><span data-ttu-id="14019-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="14019-122">See also</span></span>
+- [<span data-ttu-id="14019-123">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14019-123">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="14019-124">IMetaDataAssemblyImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14019-124">IMetaDataAssemblyImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [<span data-ttu-id="14019-125">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14019-125">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="14019-126">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14019-126">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="14019-127">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="14019-127">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

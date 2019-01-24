@@ -13,29 +13,29 @@ helpviewer_keywords:
 - BMP decoding [WPF]
 - decoding image formats [WPF]
 ms.assetid: feb5ef27-28ac-40ab-bfc2-e0456990d32c
-ms.openlocfilehash: d8815a6f52a4033ec2d7dc19b0f97c5e65f1e2b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dfdadfb7175342199099a1549008197b8d42551c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33558835"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530703"
 ---
-# <a name="how-to-encode-and-decode-a-bmp-image"></a><span data-ttu-id="aa349-102">Postupy: Kódování a dekódování obrázku BMP</span><span class="sxs-lookup"><span data-stu-id="aa349-102">How to: Encode and Decode a BMP Image</span></span>
-<span data-ttu-id="aa349-103">Následující příklady ukazují, jak kódování a dekódování [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] bitovou kopii pomocí konkrétní <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objekty.</span><span class="sxs-lookup"><span data-stu-id="aa349-103">The following examples show how to decode and encode a [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] image using the specific <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> and <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objects.</span></span>  
+# <a name="how-to-encode-and-decode-a-bmp-image"></a><span data-ttu-id="6b71c-102">Postupy: Kódování a dekódování obrázku BMP</span><span class="sxs-lookup"><span data-stu-id="6b71c-102">How to: Encode and Decode a BMP Image</span></span>
+<span data-ttu-id="6b71c-103">Následující příklady ukazují, jak kódovat a dekódovat [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] image pomocí konkrétní <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objekty.</span><span class="sxs-lookup"><span data-stu-id="6b71c-103">The following examples show how to decode and encode a [!INCLUDE[TLA#tla_bmp](../../../../includes/tlasharptla-bmp-md.md)] image using the specific <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> and <xref:System.Windows.Media.Imaging.BmpBitmapEncoder> objects.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="aa349-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="aa349-104">Example</span></span>  
- <span data-ttu-id="aa349-105">Tento příklad ukazuje, jak k dekódování [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] bitovou kopii pomocí <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> z <xref:System.Uri>.</span><span class="sxs-lookup"><span data-stu-id="aa349-105">This example demonstrates how to decode a [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image using a <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> from a <xref:System.Uri>.</span></span>  
+## <a name="example"></a><span data-ttu-id="6b71c-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="6b71c-104">Example</span></span>  
+ <span data-ttu-id="6b71c-105">Tento příklad ukazuje, jak se dekódovat [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image pomocí <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> z <xref:System.Uri>.</span><span class="sxs-lookup"><span data-stu-id="6b71c-105">This example demonstrates how to decode a [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image using a <xref:System.Windows.Media.Imaging.BmpBitmapDecoder> from a <xref:System.Uri>.</span></span>  
   
  [!code-cpp[BmpBitmapDecoderEncoder#5](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CPP/anotherfile.cpp#5)]
  [!code-csharp[BmpBitmapDecoderEncoder#5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CSharp/BitmapFrame.cs#5)]
  [!code-vb[BmpBitmapDecoderEncoder#5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/VB/BitmapFrame.vb#5)]  
   
-## <a name="example"></a><span data-ttu-id="aa349-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="aa349-106">Example</span></span>  
- <span data-ttu-id="aa349-107">Tento příklad ukazuje, jak ke kódování <xref:System.Windows.Media.Imaging.BitmapSource> do [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] bitovou kopii pomocí <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>.</span><span class="sxs-lookup"><span data-stu-id="aa349-107">This example demonstrates how to encode a <xref:System.Windows.Media.Imaging.BitmapSource> into a [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image using a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>.</span></span>  
+## <a name="example"></a><span data-ttu-id="6b71c-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="6b71c-106">Example</span></span>  
+ <span data-ttu-id="6b71c-107">Tento příklad ukazuje, jak kódovat <xref:System.Windows.Media.Imaging.BitmapSource> do [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image pomocí <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>.</span><span class="sxs-lookup"><span data-stu-id="6b71c-107">This example demonstrates how to encode a <xref:System.Windows.Media.Imaging.BitmapSource> into a [!INCLUDE[TLA2#tla_bmp](../../../../includes/tla2sharptla-bmp-md.md)] image using a <xref:System.Windows.Media.Imaging.BmpBitmapEncoder>.</span></span>  
   
  [!code-cpp[BmpBitmapDecoderEncoder#4](../../../../samples/snippets/cpp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CPP/anotherfile.cpp#4)]
  [!code-csharp[BmpBitmapDecoderEncoder#4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/CSharp/BitmapFrame.cs#4)]
  [!code-vb[BmpBitmapDecoderEncoder#4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/BmpBitmapDecoderEncoder/VB/BitmapFrame.vb#4)]  
   
-## <a name="see-also"></a><span data-ttu-id="aa349-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="aa349-108">See Also</span></span>  
- [<span data-ttu-id="aa349-109">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="aa349-109">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+## <a name="see-also"></a><span data-ttu-id="6b71c-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6b71c-108">See also</span></span>
+- [<span data-ttu-id="6b71c-109">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="6b71c-109">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
