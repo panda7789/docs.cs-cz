@@ -2,20 +2,20 @@
 title: System.ServiceModel.Security.NegotiationTokenProviderAttached
 ms.date: 03/30/2017
 ms.assetid: f5602e5e-aaaf-42ca-9afc-d2c699447db7
-ms.openlocfilehash: 591d870660eaa47fbf4e25eaff69c3c5c1c86958
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 11c4df7463589ac82cbd6e2a06e7c1d244b9c764
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50180209"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685922"
 ---
-# <a name="systemservicemodelsecuritynegotiationtokenproviderattached"></a><span data-ttu-id="2a41b-102">System.ServiceModel.Security.NegotiationTokenProviderAttached</span><span class="sxs-lookup"><span data-stu-id="2a41b-102">System.ServiceModel.Security.NegotiationTokenProviderAttached</span></span>
-<span data-ttu-id="2a41b-103">System.ServiceModel.Security.NegotiationTokenProviderAttached</span><span class="sxs-lookup"><span data-stu-id="2a41b-103">System.ServiceModel.Security.NegotiationTokenProviderAttached</span></span>  
+# <a name="systemservicemodelsecuritynegotiationtokenproviderattached"></a><span data-ttu-id="ef240-102">System.ServiceModel.Security.NegotiationTokenProviderAttached</span><span class="sxs-lookup"><span data-stu-id="ef240-102">System.ServiceModel.Security.NegotiationTokenProviderAttached</span></span>
+<span data-ttu-id="ef240-103">System.ServiceModel.Security.NegotiationTokenProviderAttached</span><span class="sxs-lookup"><span data-stu-id="ef240-103">System.ServiceModel.Security.NegotiationTokenProviderAttached</span></span>  
   
-## <a name="description"></a><span data-ttu-id="2a41b-104">Popis</span><span class="sxs-lookup"><span data-stu-id="2a41b-104">Description</span></span>  
- <span data-ttu-id="2a41b-105">Byl připojen poskytovatel NegotiationTokenProvider.</span><span class="sxs-lookup"><span data-stu-id="2a41b-105">NegotiationTokenProvider was attached.</span></span>  
+## <a name="description"></a><span data-ttu-id="ef240-104">Popis</span><span class="sxs-lookup"><span data-stu-id="ef240-104">Description</span></span>  
+ <span data-ttu-id="ef240-105">Byl připojen poskytovatel NegotiationTokenProvider.</span><span class="sxs-lookup"><span data-stu-id="ef240-105">NegotiationTokenProvider was attached.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2a41b-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="2a41b-106">See Also</span></span>  
- [<span data-ttu-id="2a41b-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="2a41b-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [<span data-ttu-id="2a41b-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="2a41b-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [<span data-ttu-id="2a41b-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="2a41b-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a><span data-ttu-id="ef240-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ef240-106">See also</span></span>
+- [<span data-ttu-id="ef240-107">Trasování</span><span class="sxs-lookup"><span data-stu-id="ef240-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [<span data-ttu-id="ef240-108">Řešení problémů s aplikací pomocí trasování</span><span class="sxs-lookup"><span data-stu-id="ef240-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="ef240-109">Správa a diagnostika</span><span class="sxs-lookup"><span data-stu-id="ef240-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)

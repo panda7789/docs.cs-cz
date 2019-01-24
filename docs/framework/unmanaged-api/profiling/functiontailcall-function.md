@@ -16,20 +16,20 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 11cf96f5957d41e0647c309a7b0bb08fc9b31c91
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a38d4858d248ef4eefbcb9d97c13e68d9507fb12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452101"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665029"
 ---
-# <a name="functiontailcall-function"></a><span data-ttu-id="dbe72-102">FunctionTailcall – funkce</span><span class="sxs-lookup"><span data-stu-id="dbe72-102">FunctionTailcall Function</span></span>
-<span data-ttu-id="dbe72-103">Upozorní profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.</span><span class="sxs-lookup"><span data-stu-id="dbe72-103">Notifies the profiler that the currently executing function is about to perform a tail call to another function.</span></span>  
+# <a name="functiontailcall-function"></a><span data-ttu-id="15e28-102">FunctionTailcall – funkce</span><span class="sxs-lookup"><span data-stu-id="15e28-102">FunctionTailcall Function</span></span>
+<span data-ttu-id="15e28-103">Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.</span><span class="sxs-lookup"><span data-stu-id="15e28-103">Notifies the profiler that the currently executing function is about to perform a tail call to another function.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="dbe72-104">`FunctionTailcall` Funkce je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="dbe72-104">The `FunctionTailcall` function is deprecated in the .NET Framework version 2.0.</span></span> <span data-ttu-id="dbe72-105">Bude nadále fungovat, ale bude způsobit snížení výkonu.</span><span class="sxs-lookup"><span data-stu-id="dbe72-105">It will continue to work, but will incur a performance penalty.</span></span> <span data-ttu-id="dbe72-106">Použití [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) funkce místo.</span><span class="sxs-lookup"><span data-stu-id="dbe72-106">Use the [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) function instead.</span></span>  
+>  <span data-ttu-id="15e28-104">`FunctionTailcall` Funkce je zastaralé v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="15e28-104">The `FunctionTailcall` function is deprecated in the .NET Framework version 2.0.</span></span> <span data-ttu-id="15e28-105">Bude nadále fungovat, ale bude mít za následek snížení výkonu.</span><span class="sxs-lookup"><span data-stu-id="15e28-105">It will continue to work, but will incur a performance penalty.</span></span> <span data-ttu-id="15e28-106">Použití [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) namísto toho funkci.</span><span class="sxs-lookup"><span data-stu-id="15e28-106">Use the [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) function instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="dbe72-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dbe72-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="15e28-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="15e28-107">Syntax</span></span>  
   
 ```  
 void __stdcall FunctionTailcall (  
@@ -37,36 +37,36 @@ void __stdcall FunctionTailcall (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="dbe72-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="dbe72-108">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="15e28-108">Parametry</span><span class="sxs-lookup"><span data-stu-id="15e28-108">Parameters</span></span>  
  `funcID`  
- <span data-ttu-id="dbe72-109">[v] Identifikátor aktuálně prováděné funkce, která se chystáte provést, tail volání.</span><span class="sxs-lookup"><span data-stu-id="dbe72-109">[in] The identifier of the currently executing function that is about to make a tail call.</span></span>  
+ <span data-ttu-id="15e28-109">[in] Identifikátor aktuálně prováděné funkci, která se chystá provést tail volání.</span><span class="sxs-lookup"><span data-stu-id="15e28-109">[in] The identifier of the currently executing function that is about to make a tail call.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="dbe72-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="dbe72-110">Remarks</span></span>  
- <span data-ttu-id="dbe72-111">Cíl funkce volání funkce tail použije aktuální rámec zásobníku a vrátí přímo do volající funkce, který vytvořil tail volání.</span><span class="sxs-lookup"><span data-stu-id="dbe72-111">The target function of the tail call will use the current stack frame, and will return directly to the caller of the function that made the tail call.</span></span> <span data-ttu-id="dbe72-112">To znamená, že [functionleave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) zpětného volání nebude vydán pro funkci, která je cílem volání funkce tail.</span><span class="sxs-lookup"><span data-stu-id="dbe72-112">This means that a [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) callback will not be issued for a function that is the target of a tail call.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="15e28-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="15e28-110">Remarks</span></span>  
+ <span data-ttu-id="15e28-111">Cílová funkce volání funkce tail použije aktuální rámec zásobníku a vrátí přímo do volajícího, který vytvořil tail volání funkce.</span><span class="sxs-lookup"><span data-stu-id="15e28-111">The target function of the tail call will use the current stack frame, and will return directly to the caller of the function that made the tail call.</span></span> <span data-ttu-id="15e28-112">To znamená, že [functionleave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) zpětného volání nebude vydán pro funkci, která je cílem volání funkce tail.</span><span class="sxs-lookup"><span data-stu-id="15e28-112">This means that a [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) callback will not be issued for a function that is the target of a tail call.</span></span>  
   
- <span data-ttu-id="dbe72-113">`FunctionTailcall` Je funkce zpětného volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="dbe72-113">The `FunctionTailcall` function is a callback; you must implement it.</span></span> <span data-ttu-id="dbe72-114">Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="dbe72-114">The implementation must use the `__declspec`(`naked`) storage-class attribute.</span></span>  
+ <span data-ttu-id="15e28-113">`FunctionTailcall` Funkce je zpětné volání, je nutné implementovat.</span><span class="sxs-lookup"><span data-stu-id="15e28-113">The `FunctionTailcall` function is a callback; you must implement it.</span></span> <span data-ttu-id="15e28-114">Musíte použít implementaci `__declspec`(`naked`) atribut třídy úložiště.</span><span class="sxs-lookup"><span data-stu-id="15e28-114">The implementation must use the `__declspec`(`naked`) storage-class attribute.</span></span>  
   
- <span data-ttu-id="dbe72-115">Spouštěcí modul neukládá žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="dbe72-115">The execution engine does not save any registers before calling this function.</span></span>  
+ <span data-ttu-id="15e28-115">Prováděcí modul nelze uložit žádné registry před voláním této funkce.</span><span class="sxs-lookup"><span data-stu-id="15e28-115">The execution engine does not save any registers before calling this function.</span></span>  
   
--   <span data-ttu-id="dbe72-116">Na záznam je nutné uložit všechny registrů, které používáte, včetně těch, které v jednotce s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="dbe72-116">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
+-   <span data-ttu-id="15e28-116">Při vstupu je nutné uložit všechny registrů, které používáte, včetně těch v jednotku s plovoucí desetinnou čárkou (FPU).</span><span class="sxs-lookup"><span data-stu-id="15e28-116">On entry, you must save all registers that you use, including those in the floating-point unit (FPU).</span></span>  
   
--   <span data-ttu-id="dbe72-117">Při ukončení je nutné obnovit zásobníku tím, že odebere vypnout všechny parametry, které byly nabídnutých jeho volající.</span><span class="sxs-lookup"><span data-stu-id="dbe72-117">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
+-   <span data-ttu-id="15e28-117">Při ukončení je nutné obnovit zásobníku pomocí automaticky otevíraného vypnout všechny parametry, které byly nahrány jeho volajícím.</span><span class="sxs-lookup"><span data-stu-id="15e28-117">On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.</span></span>  
   
- <span data-ttu-id="dbe72-118">Implementace `FunctionTailcall` by neměly blokovat, protože zpozdí uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="dbe72-118">The implementation of `FunctionTailcall` should not block because it will delay garbage collection.</span></span> <span data-ttu-id="dbe72-119">Implementace neměli uvolnění paměti, protože zásobník nemusí být ve stavu paměti procházející kolekci.</span><span class="sxs-lookup"><span data-stu-id="dbe72-119">The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="dbe72-120">Pokud dojde k pokusu o uvolnění paměti, až bude blokovat modulu runtime `FunctionTailcall` vrátí.</span><span class="sxs-lookup"><span data-stu-id="dbe72-120">If a garbage collection is attempted, the runtime will block until `FunctionTailcall` returns.</span></span>  
+ <span data-ttu-id="15e28-118">Provádění `FunctionTailcall` by neměla blokovat, protože způsobí zpoždění uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="15e28-118">The implementation of `FunctionTailcall` should not block because it will delay garbage collection.</span></span> <span data-ttu-id="15e28-119">Implementace by se neměly pokoušet uvolňování paměti, protože zásobník nemusí být ve stavu přívětivá kolekce uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="15e28-119">The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state.</span></span> <span data-ttu-id="15e28-120">Při pokusu o uvolnění modulu runtime bude blokovat až do `FunctionTailcall` vrátí.</span><span class="sxs-lookup"><span data-stu-id="15e28-120">If a garbage collection is attempted, the runtime will block until `FunctionTailcall` returns.</span></span>  
   
- <span data-ttu-id="dbe72-121">Navíc `FunctionTailcall` funkce nesmějí provádět volání do spravovaného kódu nebo v jakékoli příčina způsob přidělení spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="dbe72-121">Also, the `FunctionTailcall` function must not call into managed code or in any way cause a managed memory allocation.</span></span>  
+ <span data-ttu-id="15e28-121">Také `FunctionTailcall` funkce nesmí volat do spravovaného kódu nebo v jakékoli příčina způsob přidělování spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="15e28-121">Also, the `FunctionTailcall` function must not call into managed code or in any way cause a managed memory allocation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="dbe72-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dbe72-122">Requirements</span></span>  
- <span data-ttu-id="dbe72-123">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="dbe72-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="15e28-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="15e28-122">Requirements</span></span>  
+ <span data-ttu-id="15e28-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="15e28-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="dbe72-124">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="dbe72-124">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="15e28-124">**Záhlaví:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="15e28-124">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="dbe72-125">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="dbe72-125">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="15e28-125">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="15e28-125">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="dbe72-126">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="dbe72-126">**.NET Framework Versions:** 1.1, 1.0</span></span>  
+ <span data-ttu-id="15e28-126">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="15e28-126">**.NET Framework Versions:** 1.1, 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="dbe72-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="dbe72-127">See Also</span></span>  
- [<span data-ttu-id="dbe72-128">FunctionEnter2 – funkce</span><span class="sxs-lookup"><span data-stu-id="dbe72-128">FunctionEnter2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)  
- [<span data-ttu-id="dbe72-129">FunctionLeave2 – funkce</span><span class="sxs-lookup"><span data-stu-id="dbe72-129">FunctionLeave2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
- [<span data-ttu-id="dbe72-130">SetEnterLeaveFunctionHooks2 – metoda</span><span class="sxs-lookup"><span data-stu-id="dbe72-130">SetEnterLeaveFunctionHooks2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)  
- [<span data-ttu-id="dbe72-131">Globální statické funkce pro profilaci</span><span class="sxs-lookup"><span data-stu-id="dbe72-131">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+## <a name="see-also"></a><span data-ttu-id="15e28-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="15e28-127">See also</span></span>
+- [<span data-ttu-id="15e28-128">FunctionEnter2 – funkce</span><span class="sxs-lookup"><span data-stu-id="15e28-128">FunctionEnter2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
+- [<span data-ttu-id="15e28-129">FunctionLeave2 – funkce</span><span class="sxs-lookup"><span data-stu-id="15e28-129">FunctionLeave2 Function</span></span>](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
+- [<span data-ttu-id="15e28-130">SetEnterLeaveFunctionHooks2 – metoda</span><span class="sxs-lookup"><span data-stu-id="15e28-130">SetEnterLeaveFunctionHooks2 Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [<span data-ttu-id="15e28-131">Globální statické funkce pro profilaci</span><span class="sxs-lookup"><span data-stu-id="15e28-131">Profiling Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

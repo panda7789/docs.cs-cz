@@ -8,73 +8,73 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: fecb3c71e0686a557b8a4b0c85b7d91a9846204f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e5d74a033b14d5f1b523422d0afd360206c0cb48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194966"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685010"
 ---
-# <a name="ltrequestcachinggt-element-network-settings"></a><span data-ttu-id="923a1-102">&lt;requestCaching –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="923a1-102">&lt;requestCaching&gt; Element (Network Settings)</span></span>
-<span data-ttu-id="923a1-103">Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="923a1-103">Controls the caching mechanism for network requests.</span></span>  
+# <a name="ltrequestcachinggt-element-network-settings"></a><span data-ttu-id="dd890-102">&lt;requestCaching –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="dd890-102">&lt;requestCaching&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="dd890-103">Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="dd890-103">Controls the caching mechanism for network requests.</span></span>  
   
- <span data-ttu-id="923a1-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="923a1-104">\<configuration></span></span>  
-<span data-ttu-id="923a1-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="923a1-105">\<system.net></span></span>  
-<span data-ttu-id="923a1-106">\<requestCaching – ></span><span class="sxs-lookup"><span data-stu-id="923a1-106">\<requestCaching></span></span>  
+ <span data-ttu-id="dd890-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="dd890-104">\<configuration></span></span>  
+<span data-ttu-id="dd890-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="dd890-105">\<system.net></span></span>  
+<span data-ttu-id="dd890-106">\<requestCaching></span><span class="sxs-lookup"><span data-stu-id="dd890-106">\<requestCaching></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="923a1-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="923a1-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dd890-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dd890-107">Syntax</span></span>  
   
 ```xml  
-      <requestCaching>  
-        isPrivateCache ="true|false"  
-        disableAllCaching="true|false"  
-        defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
-        unspecifiedMaximumAge= "d.hh.mm.ss">  
-          <defaultHttpCachePolicy> … </defaultHttpCachePolicy>  
-          <defaultFtpCachePolicy> … </defaultFtpCachePolicy>  
-      </requestCaching>
+<requestCaching  
+  isPrivateCache ="true|false"  
+  disableAllCaching="true|false"  
+  defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
+  unspecifiedMaximumAge= "d.hh.mm.ss">  
+    <defaultHttpCachePolicy>...</defaultHttpCachePolicy>  
+    <defaultFtpCachePolicy>...</defaultFtpCachePolicy>  
+</requestCaching>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="923a1-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="923a1-108">Attributes and Elements</span></span>  
- <span data-ttu-id="923a1-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="923a1-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="dd890-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="dd890-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="dd890-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="dd890-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="923a1-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="923a1-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="dd890-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="dd890-110">Attributes</span></span>  
   
-|<span data-ttu-id="923a1-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="923a1-111">Attribute</span></span>|<span data-ttu-id="923a1-112">Popis</span><span class="sxs-lookup"><span data-stu-id="923a1-112">Description</span></span>|  
+|<span data-ttu-id="dd890-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="dd890-111">Attribute</span></span>|<span data-ttu-id="dd890-112">Popis</span><span class="sxs-lookup"><span data-stu-id="dd890-112">Description</span></span>|  
 |---------------|-----------------|  
-|`isPrivateCache`|<span data-ttu-id="923a1-113">Určuje, zda mezipaměti zajišťuje izolaci mezi informace o různé uživatele.</span><span class="sxs-lookup"><span data-stu-id="923a1-113">Specifies whether the cache provides isolation between the information of different users.</span></span> <span data-ttu-id="923a1-114">Výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="923a1-114">The default value is `true`.</span></span> <span data-ttu-id="923a1-115">Tato hodnota by měla být `false` pro aplikace střední vrstvy.</span><span class="sxs-lookup"><span data-stu-id="923a1-115">This value should be `false` for middle tier applications.</span></span>|  
-|`disableAllCaching`|<span data-ttu-id="923a1-116">Určuje, že ukládání do mezipaměti je zakázaná pro všechny odpovědi na webu a nedají se přepsat prostřednictvím kódu programu.</span><span class="sxs-lookup"><span data-stu-id="923a1-116">Specifies that caching is disabled for all Web responses, and cannot be overridden programmatically.</span></span>|  
-|`defaultPolicyLevel`|<span data-ttu-id="923a1-117">Jedna z hodnot v <xref:System.Net.Cache.RequestCacheLevel> výčtu.</span><span class="sxs-lookup"><span data-stu-id="923a1-117">One of the values in the <xref:System.Net.Cache.RequestCacheLevel> enumeration.</span></span> <span data-ttu-id="923a1-118">Výchozí hodnota je `BypassCache`.</span><span class="sxs-lookup"><span data-stu-id="923a1-118">The default value is `BypassCache`.</span></span>|  
-|`unspecifiedMaximumAge`|<span data-ttu-id="923a1-119">Určuje výchozí dobu, po jejímž uplynutí obsah označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="923a1-119">Specifies the default time after which content is marked as expired.</span></span>|  
+|`isPrivateCache`|<span data-ttu-id="dd890-113">Určuje, zda mezipaměti zajišťuje izolaci mezi informace o různé uživatele.</span><span class="sxs-lookup"><span data-stu-id="dd890-113">Specifies whether the cache provides isolation between the information of different users.</span></span> <span data-ttu-id="dd890-114">Výchozí hodnota je `true`.</span><span class="sxs-lookup"><span data-stu-id="dd890-114">The default value is `true`.</span></span> <span data-ttu-id="dd890-115">Tato hodnota by měla být `false` pro aplikace střední vrstvy.</span><span class="sxs-lookup"><span data-stu-id="dd890-115">This value should be `false` for middle tier applications.</span></span>|  
+|`disableAllCaching`|<span data-ttu-id="dd890-116">Určuje, že ukládání do mezipaměti je zakázaná pro všechny odpovědi na webu a nedají se přepsat prostřednictvím kódu programu.</span><span class="sxs-lookup"><span data-stu-id="dd890-116">Specifies that caching is disabled for all Web responses, and cannot be overridden programmatically.</span></span>|  
+|`defaultPolicyLevel`|<span data-ttu-id="dd890-117">Jedna z hodnot v <xref:System.Net.Cache.RequestCacheLevel> výčtu.</span><span class="sxs-lookup"><span data-stu-id="dd890-117">One of the values in the <xref:System.Net.Cache.RequestCacheLevel> enumeration.</span></span> <span data-ttu-id="dd890-118">Výchozí hodnota je `BypassCache`.</span><span class="sxs-lookup"><span data-stu-id="dd890-118">The default value is `BypassCache`.</span></span>|  
+|`unspecifiedMaximumAge`|<span data-ttu-id="dd890-119">Určuje výchozí dobu, po jejímž uplynutí obsah označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="dd890-119">Specifies the default time after which content is marked as expired.</span></span>|  
   
-## <a name="policylevel-attribute"></a><span data-ttu-id="923a1-120">PolicyLevel, který atribut</span><span class="sxs-lookup"><span data-stu-id="923a1-120">policyLevel Attribute</span></span>  
+## <a name="policylevel-attribute"></a><span data-ttu-id="dd890-120">PolicyLevel, který atribut</span><span class="sxs-lookup"><span data-stu-id="dd890-120">policyLevel Attribute</span></span>  
   
-|<span data-ttu-id="923a1-121">Hodnota</span><span class="sxs-lookup"><span data-stu-id="923a1-121">Value</span></span>|<span data-ttu-id="923a1-122">Popis</span><span class="sxs-lookup"><span data-stu-id="923a1-122">Description</span></span>|  
+|<span data-ttu-id="dd890-121">Hodnota</span><span class="sxs-lookup"><span data-stu-id="dd890-121">Value</span></span>|<span data-ttu-id="dd890-122">Popis</span><span class="sxs-lookup"><span data-stu-id="dd890-122">Description</span></span>|  
 |-----------|-----------------|  
-|`Default`|<span data-ttu-id="923a1-123">Vrátí uložený v mezipaměti prostředků, pokud je prostředek čerstvé, délka obsahu je správná, a vypršení platnosti, úpravu a délka obsahu atributy jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="923a1-123">Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.</span></span>|  
-|`BypassCache`|<span data-ttu-id="923a1-124">Vrátí prostředek ze serveru.</span><span class="sxs-lookup"><span data-stu-id="923a1-124">Returns the resource from the server.</span></span>|  
-|`CacheOnly`|<span data-ttu-id="923a1-125">Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikosti položky.</span><span class="sxs-lookup"><span data-stu-id="923a1-125">Returns the cached resource if the content length is present and matches the entry size.</span></span>|  
-|`CacheIfAvailable`|<span data-ttu-id="923a1-126">Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikost položky; v opačném případě zdroj se stáhne ze serveru a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="923a1-126">Returns the cached resource if the content length is provided and matches the entry size; otherwise, the resource is downloaded from the server and is returned to the caller.</span></span>|  
-|`Revalidate`|<span data-ttu-id="923a1-127">Vrátí uložený v mezipaměti prostředků, pokud časové razítko v mezipaměti prostředku je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj se stáhne ze serveru, uloží se do mezipaměti a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="923a1-127">Returns the cached resource if the timestamp of the cached resource is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, stored in the cache, and is returned to the caller.</span></span>|  
-|`Reload`|<span data-ttu-id="923a1-128">Soubory ke stažení prostředku ze serveru, ukládá do mezipaměti a vrátí řízení volajícímu prostředku.</span><span class="sxs-lookup"><span data-stu-id="923a1-128">Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.</span></span>|  
-|`NoCacheNoStore`|<span data-ttu-id="923a1-129">Pokud existuje prostředek v mezipaměti, je odstranit.</span><span class="sxs-lookup"><span data-stu-id="923a1-129">If a cached resource exists, it is deleted.</span></span> <span data-ttu-id="923a1-130">Zdroj se stáhne ze serveru a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="923a1-130">The resource is downloaded from the server and is returned to the caller.</span></span>|  
-|`Revalidate`|<span data-ttu-id="923a1-131">Splňuje požadavek s použitím uložené v mezipaměti kopie prostředku časové razítko je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj se stáhne ze serveru, zobrazí volajícímu a je uložen v mezipaměti,</span><span class="sxs-lookup"><span data-stu-id="923a1-131">Satisfies a request by using the cached copy of the resource if the timestamp is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, presented to the caller, and is stored in the cache,</span></span>|  
+|`Default`|<span data-ttu-id="dd890-123">Vrátí uložený v mezipaměti prostředků, pokud je prostředek čerstvé, délka obsahu je správná, a vypršení platnosti, úpravu a délka obsahu atributy jsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="dd890-123">Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.</span></span>|  
+|`BypassCache`|<span data-ttu-id="dd890-124">Vrátí prostředek ze serveru.</span><span class="sxs-lookup"><span data-stu-id="dd890-124">Returns the resource from the server.</span></span>|  
+|`CacheOnly`|<span data-ttu-id="dd890-125">Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikosti položky.</span><span class="sxs-lookup"><span data-stu-id="dd890-125">Returns the cached resource if the content length is present and matches the entry size.</span></span>|  
+|`CacheIfAvailable`|<span data-ttu-id="dd890-126">Vrátí uložený v mezipaměti prostředků, pokud délka obsahu je k dispozici a odpovídá velikost položky; v opačném případě zdroj se stáhne ze serveru a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="dd890-126">Returns the cached resource if the content length is provided and matches the entry size; otherwise, the resource is downloaded from the server and is returned to the caller.</span></span>|  
+|`Revalidate`|<span data-ttu-id="dd890-127">Vrátí uložený v mezipaměti prostředků, pokud časové razítko v mezipaměti prostředku je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj se stáhne ze serveru, uloží se do mezipaměti a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="dd890-127">Returns the cached resource if the timestamp of the cached resource is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, stored in the cache, and is returned to the caller.</span></span>|  
+|`Reload`|<span data-ttu-id="dd890-128">Soubory ke stažení prostředku ze serveru, ukládá do mezipaměti a vrátí řízení volajícímu prostředku.</span><span class="sxs-lookup"><span data-stu-id="dd890-128">Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.</span></span>|  
+|`NoCacheNoStore`|<span data-ttu-id="dd890-129">Pokud existuje prostředek v mezipaměti, je odstranit.</span><span class="sxs-lookup"><span data-stu-id="dd890-129">If a cached resource exists, it is deleted.</span></span> <span data-ttu-id="dd890-130">Zdroj se stáhne ze serveru a je vrátit zpět volajícímu.</span><span class="sxs-lookup"><span data-stu-id="dd890-130">The resource is downloaded from the server and is returned to the caller.</span></span>|  
+|`Revalidate`|<span data-ttu-id="dd890-131">Splňuje požadavek s použitím uložené v mezipaměti kopie prostředku časové razítko je stejný jako časové razítko prostředků na serveru. v opačném případě zdroj se stáhne ze serveru, zobrazí volajícímu a je uložen v mezipaměti,</span><span class="sxs-lookup"><span data-stu-id="dd890-131">Satisfies a request by using the cached copy of the resource if the timestamp is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, presented to the caller, and is stored in the cache,</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="923a1-132">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="923a1-132">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="dd890-132">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="dd890-132">Child Elements</span></span>  
   
-|<span data-ttu-id="923a1-133">Prvek</span><span class="sxs-lookup"><span data-stu-id="923a1-133">Element</span></span>|<span data-ttu-id="923a1-134">Popis</span><span class="sxs-lookup"><span data-stu-id="923a1-134">Description</span></span>|  
+|<span data-ttu-id="dd890-133">Prvek</span><span class="sxs-lookup"><span data-stu-id="dd890-133">Element</span></span>|<span data-ttu-id="dd890-134">Popis</span><span class="sxs-lookup"><span data-stu-id="dd890-134">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="923a1-135">defaulthttpcachepolicy –</span><span class="sxs-lookup"><span data-stu-id="923a1-135">defaultHttpCachePolicy</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|<span data-ttu-id="923a1-136">Volitelný element.</span><span class="sxs-lookup"><span data-stu-id="923a1-136">Optional element.</span></span><br /><br /> <span data-ttu-id="923a1-137">Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="923a1-137">Describes whether HTTP caching is active and describes the default caching policy.</span></span>|  
-|[<span data-ttu-id="923a1-138">\<defaultftpcachepolicy – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="923a1-138">\<defaultFtpCachePolicy> Element (Network Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|<span data-ttu-id="923a1-139">Volitelný element.</span><span class="sxs-lookup"><span data-stu-id="923a1-139">Optional element.</span></span><br /><br /> <span data-ttu-id="923a1-140">Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="923a1-140">Describes whether FTP caching is active and describes the default caching policy.</span></span>|  
+|[<span data-ttu-id="dd890-135">defaultHttpCachePolicy</span><span class="sxs-lookup"><span data-stu-id="dd890-135">defaultHttpCachePolicy</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|<span data-ttu-id="dd890-136">Volitelný element.</span><span class="sxs-lookup"><span data-stu-id="dd890-136">Optional element.</span></span><br /><br /> <span data-ttu-id="dd890-137">Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="dd890-137">Describes whether HTTP caching is active and describes the default caching policy.</span></span>|  
+|[<span data-ttu-id="dd890-138">\<defaultFtpCachePolicy> Element (Network Settings)</span><span class="sxs-lookup"><span data-stu-id="dd890-138">\<defaultFtpCachePolicy> Element (Network Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|<span data-ttu-id="dd890-139">Volitelný element.</span><span class="sxs-lookup"><span data-stu-id="dd890-139">Optional element.</span></span><br /><br /> <span data-ttu-id="dd890-140">Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="dd890-140">Describes whether FTP caching is active and describes the default caching policy.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="923a1-141">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="923a1-141">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="dd890-141">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="dd890-141">Parent Elements</span></span>  
   
-|<span data-ttu-id="923a1-142">Prvek</span><span class="sxs-lookup"><span data-stu-id="923a1-142">Element</span></span>|<span data-ttu-id="923a1-143">Popis</span><span class="sxs-lookup"><span data-stu-id="923a1-143">Description</span></span>|  
+|<span data-ttu-id="dd890-142">Prvek</span><span class="sxs-lookup"><span data-stu-id="dd890-142">Element</span></span>|<span data-ttu-id="dd890-143">Popis</span><span class="sxs-lookup"><span data-stu-id="dd890-143">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="923a1-144">System.NET</span><span class="sxs-lookup"><span data-stu-id="923a1-144">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="923a1-145">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="923a1-145">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
+|[<span data-ttu-id="dd890-144">system.net</span><span class="sxs-lookup"><span data-stu-id="dd890-144">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="dd890-145">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="dd890-145">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="923a1-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="923a1-146">Example</span></span>  
- <span data-ttu-id="923a1-147">Následující příklad ukazuje, jak zakázat ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="923a1-147">The following example shows how to disable all caching.</span></span>  
+## <a name="example"></a><span data-ttu-id="dd890-146">Příklad</span><span class="sxs-lookup"><span data-stu-id="dd890-146">Example</span></span>  
+ <span data-ttu-id="dd890-147">Následující příklad ukazuje, jak zakázat ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="dd890-147">The following example shows how to disable all caching.</span></span>  
   
 ```xml  
 <configuration>  
@@ -86,6 +86,6 @@ ms.locfileid: "50194966"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="923a1-148">Viz také</span><span class="sxs-lookup"><span data-stu-id="923a1-148">See Also</span></span>  
-- <xref:System.Net.Cache?displayProperty=nameWithType>  
-- [<span data-ttu-id="923a1-149">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="923a1-149">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="dd890-148">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dd890-148">See also</span></span>
+- <xref:System.Net.Cache?displayProperty=nameWithType>
+- [<span data-ttu-id="dd890-149">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="dd890-149">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

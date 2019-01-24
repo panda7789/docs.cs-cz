@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: e10b23c311e4e7debf228c01c898f3582e2ac8d4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: b71bf1123461e4b0c0db5024eac3330bcf666ecc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54646760"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="f4dfa-102">Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="f4dfa-102">How to: Find Sibling Nodes (XPath-LINQ to XML) (C#)</span></span>
-<span data-ttu-id="f4dfa-103">Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název.</span><span class="sxs-lookup"><span data-stu-id="f4dfa-103">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="f4dfa-104">Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.</span><span class="sxs-lookup"><span data-stu-id="f4dfa-104">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a><span data-ttu-id="45b50-102">Postupy: Vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="45b50-102">How to: Find Sibling Nodes (XPath-LINQ to XML) (C#)</span></span>
+<span data-ttu-id="45b50-103">Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název.</span><span class="sxs-lookup"><span data-stu-id="45b50-103">You might want to find all siblings of a node that have a specific name.</span></span> <span data-ttu-id="45b50-104">Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.</span><span class="sxs-lookup"><span data-stu-id="45b50-104">The resulting collection might include the context node if the context node also has the specific name.</span></span>  
   
- <span data-ttu-id="f4dfa-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="f4dfa-105">The XPath expression is:</span></span>  
+ <span data-ttu-id="45b50-105">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="45b50-105">The XPath expression is:</span></span>  
   
  `../Book`  
   
-## <a name="example"></a><span data-ttu-id="f4dfa-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="f4dfa-106">Example</span></span>  
- <span data-ttu-id="f4dfa-107">V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`.</span><span class="sxs-lookup"><span data-stu-id="f4dfa-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="f4dfa-108">Výsledný kolekce obsahuje uzel kontextu.</span><span class="sxs-lookup"><span data-stu-id="f4dfa-108">The resulting collection includes the context node.</span></span>  
+## <a name="example"></a><span data-ttu-id="45b50-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="45b50-106">Example</span></span>  
+ <span data-ttu-id="45b50-107">V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`.</span><span class="sxs-lookup"><span data-stu-id="45b50-107">This example first finds a `Book` element, and then finds all sibling elements named `Book`.</span></span> <span data-ttu-id="45b50-108">Výsledný kolekce obsahuje uzel kontextu.</span><span class="sxs-lookup"><span data-stu-id="45b50-108">The resulting collection includes the context node.</span></span>  
   
- <span data-ttu-id="f4dfa-109">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="f4dfa-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="45b50-109">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="45b50-109">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -49,7 +49,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- <span data-ttu-id="f4dfa-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="f4dfa-110">This example produces the following output:</span></span>  
+ <span data-ttu-id="45b50-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="45b50-110">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -74,6 +74,6 @@ Results are identical
 </Book>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f4dfa-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="f4dfa-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="45b50-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="45b50-111">See also</span></span>
 
-- [<span data-ttu-id="f4dfa-112">LINQ to XML pro uživatele jazyka XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="f4dfa-112">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="45b50-112">LINQ to XML pro uživatele jazyka XPath (C#)</span><span class="sxs-lookup"><span data-stu-id="45b50-112">LINQ to XML for XPath Users (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

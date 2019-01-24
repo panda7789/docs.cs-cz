@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataTables::GetUserStringHeapSize – metoda"
-ms.custom: 
+title: IMetaDataTables::GetUserStringHeapSize – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataTables.GetUserStringHeapSize
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: cba9e4d6-9461-4420-9614-96ff7039ec9c
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 4b1f4f1b8c3cafb28c2b84867dbe5ac3f8424e8a
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 64634f961064feb3d2db11d421fea920f1e2d16b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669052"
 ---
-# <a name="imetadatatablesgetuserstringheapsize-method"></a><span data-ttu-id="78eb6-102">IMetaDataTables::GetUserStringHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="78eb6-102">IMetaDataTables::GetUserStringHeapSize Method</span></span>
-<span data-ttu-id="78eb6-103">Získá velikost v bajtech haldě řetězec uživatele.</span><span class="sxs-lookup"><span data-stu-id="78eb6-103">Gets the size, in bytes, of the user string heap.</span></span>  
+# <a name="imetadatatablesgetuserstringheapsize-method"></a><span data-ttu-id="9e9ff-102">IMetaDataTables::GetUserStringHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="9e9ff-102">IMetaDataTables::GetUserStringHeapSize Method</span></span>
+<span data-ttu-id="9e9ff-103">Získá velikost v bajtech, řetězec haldy uživatele.</span><span class="sxs-lookup"><span data-stu-id="9e9ff-103">Gets the size, in bytes, of the user string heap.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="78eb6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="78eb6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9e9ff-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9e9ff-104">Syntax</span></span>  
   
 ```  
 HRESULT GetUserStringHeapSize (  
@@ -46,19 +35,19 @@ HRESULT GetUserStringHeapSize (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="78eb6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="78eb6-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="9e9ff-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9e9ff-105">Parameters</span></span>  
  `pcbBlobs`  
- <span data-ttu-id="78eb6-106">[out] Ukazatel na velikost v bajtech haldě řetězec uživatele.</span><span class="sxs-lookup"><span data-stu-id="78eb6-106">[out] A pointer to the size, in bytes, of the user string heap.</span></span>  
+ <span data-ttu-id="9e9ff-106">[out] Ukazatel na velikost v bajtech, řetězec haldy uživatele.</span><span class="sxs-lookup"><span data-stu-id="9e9ff-106">[out] A pointer to the size, in bytes, of the user string heap.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="78eb6-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="78eb6-107">Requirements</span></span>  
- <span data-ttu-id="78eb6-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="78eb6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9e9ff-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9e9ff-107">Requirements</span></span>  
+ <span data-ttu-id="9e9ff-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9e9ff-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="78eb6-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="78eb6-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="9e9ff-109">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9e9ff-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="78eb6-110">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="78eb6-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="9e9ff-110">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9e9ff-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="78eb6-111">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="78eb6-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9e9ff-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9e9ff-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="78eb6-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="78eb6-112">See Also</span></span>  
- [<span data-ttu-id="78eb6-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="78eb6-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [<span data-ttu-id="78eb6-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="78eb6-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9e9ff-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9e9ff-112">See also</span></span>
+- [<span data-ttu-id="9e9ff-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9e9ff-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [<span data-ttu-id="9e9ff-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9e9ff-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

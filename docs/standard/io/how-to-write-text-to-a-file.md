@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Zápis textu do souboru'
-ms.date: 03/30/2017
+ms.date: 01/04/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -13,86 +13,62 @@ helpviewer_keywords:
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9c637d9842c05f47bfcaa0431dd2f9f1ee29cc09
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 93d87dc98284fad6b8159f681f7d99ce460d60d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524192"
 ---
-# <a name="how-to-write-text-to-a-file"></a><span data-ttu-id="40207-102">Postupy: Zápis textu do souboru</span><span class="sxs-lookup"><span data-stu-id="40207-102">How to: Write Text to a File</span></span>
-<span data-ttu-id="40207-103">Toto téma ukazuje různé způsoby můžete napsat text do souboru pro aplikace .NET Framework nebo [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="40207-103">This topic shows different ways you can write text to a file for .NET Framework applications or [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps.</span></span> <span data-ttu-id="40207-104">Následující třídy a metody se obvykle používají k zápisu textu do souboru:</span><span class="sxs-lookup"><span data-stu-id="40207-104">The following classes and methods are typically used to write text to a file:</span></span>  
-  
--   <span data-ttu-id="40207-105"><xref:System.IO.StreamWriter> -obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> nebo <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).</span><span class="sxs-lookup"><span data-stu-id="40207-105"><xref:System.IO.StreamWriter> - it contains methods to write to a file synchronously (<xref:System.IO.StreamWriter.Write%2A> or <xref:System.IO.TextWriter.WriteLine%2A>) or asynchronously (<xref:System.IO.StreamWriter.WriteAsync%2A> and <xref:System.IO.StreamWriter.WriteLineAsync%2A>).</span></span>  
-  
--   <span data-ttu-id="40207-106"><xref:System.IO.File> – pro použití s aplikací využívajících rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="40207-106"><xref:System.IO.File> – to be used with .NET Framework applications.</span></span> <span data-ttu-id="40207-107">Poskytuje statické metody pro zápis textu do souboru jako <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru (<xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A> nebo <xref:System.IO.File.AppendText%2A>).</span><span class="sxs-lookup"><span data-stu-id="40207-107">It provides static methods to write text to a file such as <xref:System.IO.File.WriteAllLines%2A> and <xref:System.IO.File.WriteAllText%2A>, or to append text to a file (<xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A> or <xref:System.IO.File.AppendText%2A>).</span></span>  
-  
--   <span data-ttu-id="40207-108"><xref:Windows.Storage.FileIO> -pro použití s [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="40207-108"><xref:Windows.Storage.FileIO> - to be used with [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps.</span></span> <span data-ttu-id="40207-109">Obsahuje asynchronní metody zápisu textu do souboru (<xref:Windows.Storage.FileIO.WriteLinesAsync%2A> nebo <xref:Windows.Storage.FileIO.WriteTextAsync%2A>) nebo přidat text do souboru (<xref:Windows.Storage.FileIO.AppendLinesAsync%2A> nebo <xref:Windows.Storage.FileIO.AppendTextAsync%2A>).</span><span class="sxs-lookup"><span data-stu-id="40207-109">It contains asynchronous methods to write text to a file (<xref:Windows.Storage.FileIO.WriteLinesAsync%2A> or <xref:Windows.Storage.FileIO.WriteTextAsync%2A>) or to append text to a file (<xref:Windows.Storage.FileIO.AppendLinesAsync%2A> or <xref:Windows.Storage.FileIO.AppendTextAsync%2A>).</span></span>  
+# <a name="how-to-write-text-to-a-file"></a><span data-ttu-id="ad794-102">Postupy: Zápis textu do souboru</span><span class="sxs-lookup"><span data-stu-id="ad794-102">How to: Write text to a file</span></span>
+<span data-ttu-id="ad794-103">Toto téma ukazuje různé způsoby zápisu textu do souborů pro aplikace .NET.</span><span class="sxs-lookup"><span data-stu-id="ad794-103">This topic shows different ways to write text to a file for a .NET app.</span></span> 
 
-- <span data-ttu-id="40207-110"><xref:System.IO.Path> -pro použití na řetězce, které obsahují informace o cestě souboru nebo adresáře.</span><span class="sxs-lookup"><span data-stu-id="40207-110"><xref:System.IO.Path> - to be used on strings that contain file or directory path information.</span></span> <span data-ttu-id="40207-111">Obsahuje <xref:System.IO.Path.Combine%2A> metodu, která umožňuje zřetězení řetězců k sestavení cesty k souboru nebo adresáře.</span><span class="sxs-lookup"><span data-stu-id="40207-111">It contains the <xref:System.IO.Path.Combine%2A> method, which allows concatenation of strings to build a file or directory path.</span></span>
+<span data-ttu-id="ad794-104">Následující třídy a metody se obvykle používají k zápisu textu do souboru:</span><span class="sxs-lookup"><span data-stu-id="ad794-104">The following classes and methods are typically used to write text to a file:</span></span>  
+  
+-   <span data-ttu-id="ad794-105"><xref:System.IO.StreamWriter> obsahuje metody pro zápis do souboru synchronně (<xref:System.IO.StreamWriter.Write%2A> a <xref:System.IO.TextWriter.WriteLine%2A>) nebo asynchronně (<xref:System.IO.StreamWriter.WriteAsync%2A> a <xref:System.IO.StreamWriter.WriteLineAsync%2A>).</span><span class="sxs-lookup"><span data-stu-id="ad794-105"><xref:System.IO.StreamWriter> contains methods to write to a file synchronously (<xref:System.IO.StreamWriter.Write%2A> and <xref:System.IO.TextWriter.WriteLine%2A>) or asynchronously (<xref:System.IO.StreamWriter.WriteAsync%2A> and <xref:System.IO.StreamWriter.WriteLineAsync%2A>).</span></span>  
+  
+-   <span data-ttu-id="ad794-106"><xref:System.IO.File> poskytuje statické metody pro zápis textu do souboru, například <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru, například <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>, a <xref:System.IO.File.AppendText%2A>.</span><span class="sxs-lookup"><span data-stu-id="ad794-106"><xref:System.IO.File> provides static methods to write text to a file, such as <xref:System.IO.File.WriteAllLines%2A> and <xref:System.IO.File.WriteAllText%2A>, or to append text to a file, such as <xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A>, and <xref:System.IO.File.AppendText%2A>.</span></span>  
+  
+- <span data-ttu-id="ad794-107"><xref:System.IO.Path> slouží k řetězci, které obsahují informace o cestě souboru nebo adresáře.</span><span class="sxs-lookup"><span data-stu-id="ad794-107"><xref:System.IO.Path> is for strings that have file or directory path information.</span></span> <span data-ttu-id="ad794-108">Obsahuje <xref:System.IO.Path.Combine%2A> metoda a, v .NET Core 2.1 a později, <xref:System.IO.Path.Join%2A> a <xref:System.IO.Path.TryJoin%2A> metody, které umožňují zřetězení řetězců k sestavení cesty k souboru nebo adresáře.</span><span class="sxs-lookup"><span data-stu-id="ad794-108">It contains the <xref:System.IO.Path.Combine%2A> method and, in .NET Core 2.1 and later, the <xref:System.IO.Path.Join%2A> and <xref:System.IO.Path.TryJoin%2A> methods, which allow concatenation of strings to build a file or directory path.</span></span>
 
+> [!NOTE]
+> <span data-ttu-id="ad794-109">Následující příklady ukazují jenom minimální množství kódu, které jsou potřeba.</span><span class="sxs-lookup"><span data-stu-id="ad794-109">The following examples show only the minimum amount of code needed.</span></span> <span data-ttu-id="ad794-110">Reálné aplikace obvykle poskytuje robustnější kontroly chyb a zpracování výjimek.</span><span class="sxs-lookup"><span data-stu-id="ad794-110">A real-world app usually provides more robust error checking and exception handling.</span></span>  
+  
+## <a name="example-synchronously-write-text-with-streamwriter"></a><span data-ttu-id="ad794-111">Příklad: Synchronně napsat text pomocí třídy StreamWriter</span><span class="sxs-lookup"><span data-stu-id="ad794-111">Example: Synchronously write text with StreamWriter</span></span>
 
- <span data-ttu-id="40207-112">Ukázky jsou jednoduché abychom se mohli zaměřit na úloze prováděné.</span><span class="sxs-lookup"><span data-stu-id="40207-112">The samples have been kept simple in order to focus on the task being performed.</span></span> <span data-ttu-id="40207-113">Z tohoto důvodu ukázky provést kontrolu minimální chyb a zpracování výjimek, případné.</span><span class="sxs-lookup"><span data-stu-id="40207-113">For this reason, the samples perform minimal error checking and exception handling, if any.</span></span> <span data-ttu-id="40207-114">Reálné aplikaci obvykle poskytuje robustnější kontroly chyb a zpracování výjimek.</span><span class="sxs-lookup"><span data-stu-id="40207-114">A real-world application generally provides more robust error checking and exception handling.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="40207-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="40207-115">Example</span></span>  
- <span data-ttu-id="40207-116">Následující příklad ukazuje, jak synchronně zápis textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy, jeden řádek v čase.</span><span class="sxs-lookup"><span data-stu-id="40207-116">The following example shows how to synchronously write text to a new file using the <xref:System.IO.StreamWriter> class, one line at a time.</span></span> <span data-ttu-id="40207-117">Nový textový soubor se uloží do složky Dokumenty uživatele.</span><span class="sxs-lookup"><span data-stu-id="40207-117">The new text file is saved to the user's My Documents folder.</span></span> <span data-ttu-id="40207-118">Protože <xref:System.IO.StreamWriter> objekt je deklarovaný a instance v `using` příkaz, <xref:System.IO.StreamWriter.Dispose%2A> vyvolání metody, které automaticky vyprázdní a zavře datový proud.</span><span class="sxs-lookup"><span data-stu-id="40207-118">Because the <xref:System.IO.StreamWriter> object is declared and instantiated in a `using` statement, the <xref:System.IO.StreamWriter.Dispose%2A> method is invoked which automatically flushes and closes the stream.</span></span>  
-  
- [!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writeline)] 
- [!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writeline)]  
-  
-## <a name="example"></a><span data-ttu-id="40207-119">Příklad</span><span class="sxs-lookup"><span data-stu-id="40207-119">Example</span></span>  
- <span data-ttu-id="40207-120">Následující příklad ukazuje, jak připojit text k existující soubor pomocí <xref:System.IO.StreamWriter> třídy.</span><span class="sxs-lookup"><span data-stu-id="40207-120">The following example shows how to append text to an existing file using the <xref:System.IO.StreamWriter> class.</span></span> <span data-ttu-id="40207-121">Používá stejný textový soubor z předchozího příkladu.</span><span class="sxs-lookup"><span data-stu-id="40207-121">It uses the same text file from the previous example.</span></span>  
-  
- [!code-csharp[Conceptual.BasicIO.TextFiles#AppendText](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#appendtext)] 
- [!code-vb[Conceptual.BasicIO.TextFiles#AppendText](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#appendtext)]     
-  
-## <a name="example"></a><span data-ttu-id="40207-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="40207-122">Example</span></span>  
- <span data-ttu-id="40207-123">Následující příklad ukazuje způsob asynchronního zápisu textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy.</span><span class="sxs-lookup"><span data-stu-id="40207-123">The following example shows how to asynchronously write text to a new file using the <xref:System.IO.StreamWriter> class.</span></span> <span data-ttu-id="40207-124">Aby bylo možné vyvolat <xref:System.IO.StreamWriter.WriteAsync%2A> metody volání metody, které musí být v rámci `async` metoda.</span><span class="sxs-lookup"><span data-stu-id="40207-124">In order to invoke the <xref:System.IO.StreamWriter.WriteAsync%2A> method, the method call needs to be within an `async` method.</span></span> <span data-ttu-id="40207-125">Nový textový soubor se uloží do složky Dokumenty uživatele.</span><span class="sxs-lookup"><span data-stu-id="40207-125">The new text file is saved to the user's My Documents folder.</span></span>  
-  
- [!code-csharp[Conceptual.BasicIO.TextFiles#WriteAsync](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writeasync)] 
- [!code-vb[Conceptual.BasicIO.TextFiles#WriteAsync](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writeasync)]  
-  
-## <a name="example"></a><span data-ttu-id="40207-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="40207-126">Example</span></span>  
- <span data-ttu-id="40207-127">Následující příklad ukazuje, jak zápis textu do nového souboru a přidávat nové řádky textu do stejného souboru pomocí <xref:System.IO.File> třídy.</span><span class="sxs-lookup"><span data-stu-id="40207-127">The following example shows how to write text to a new file and append new lines of text to the same file using the <xref:System.IO.File> class.</span></span> <span data-ttu-id="40207-128"><xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> metod otevřete a zavřete soubor automaticky.</span><span class="sxs-lookup"><span data-stu-id="40207-128">The <xref:System.IO.File.WriteAllText%2A> and <xref:System.IO.File.AppendAllLines%2A> methods open and close the file automatically.</span></span> <span data-ttu-id="40207-129">Pokud ji zadáte do <xref:System.IO.File.WriteAllText%2A> metoda již existuje, soubor se přepíše.</span><span class="sxs-lookup"><span data-stu-id="40207-129">If the path you provide to the <xref:System.IO.File.WriteAllText%2A> method already exists, the file will be overwritten.</span></span>  
-  
- [!code-csharp[Conceptual.BasicIO.TextFiles#WriteFile](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source.cs#writefile)] 
- [!code-vb[Conceptual.BasicIO.TextFiles#WriteFile](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writefile)]  
-  
-## <a name="example"></a><span data-ttu-id="40207-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="40207-130">Example</span></span>  
- <span data-ttu-id="40207-131">Následující příklad ukazuje, jak asynchronního zápisu vstupu uživatele do textového souboru v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="40207-131">The following example shows how to asynchronously write user input to a text file in a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] app.</span></span> <span data-ttu-id="40207-132">Kvůli zabezpečení, otevřete soubor z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace obvykle vyžaduje použití <xref:Windows.Storage.Pickers.FileOpenPicker> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="40207-132">Because of security considerations, opening a file from a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] app typically requires the use of a <xref:Windows.Storage.Pickers.FileOpenPicker> control.</span></span> <span data-ttu-id="40207-133">V tomto příkladu `FileOpenPicker` se vyfiltruje a zobrazí textové soubory.</span><span class="sxs-lookup"><span data-stu-id="40207-133">In this example, the `FileOpenPicker` is filtered to show text files.</span></span>  
-  
-```xaml  
-<Page  
-    x:Class="OpenFileWindowsStore.MainPage"  
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
-    xmlns:local="using:OpenFileWindowsStore"  
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
-    mc:Ignorable="d">  
-  
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">  
-        <Button Content="save text to a file" HorizontalAlignment="Left" Margin="103,417,0,0" VerticalAlignment="Top"   
-                Width="329" Height="86" FontSize="35" Click="Button_Click"/>  
-        <TextBox Name="UserInputTextBox"  FontSize="18" HorizontalAlignment="Left" Margin="106,146,0,0"   
-                 TextWrapping="Wrap" Text="Write some text here, and select a file to write it to." VerticalAlignment="Top"   
-                 Height="201" Width="558" AcceptsReturn="True"/>  
-        <TextBlock Name="StatusTextBox" HorizontalAlignment="Left" Margin="106,570,0,147" TextWrapping="Wrap" Text="Status:"   
-                   VerticalAlignment="Center" Height="51" Width="1074" FontSize="18" />  
-    </Grid>  
-</Page>  
-```  
-  
- [!code-csharp[OpenFileWindowsStore#Code](../../../samples/snippets/csharp/VS_Snippets_CLR/openfilewindowsstore/cs/mainpage.xaml.cs#code)]
- [!code-vb[OpenFileWindowsStore#Code](../../../samples/snippets/visualbasic/VS_Snippets_CLR/openfilewindowsstore/vb/mainpage.xaml.vb#code)]  
-  
-## <a name="see-also"></a><span data-ttu-id="40207-134">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40207-134">See also</span></span>
+<span data-ttu-id="ad794-112">Následující příklad ukazuje způsob použití <xref:System.IO.StreamWriter> tříd synchronně zápisu textu na nový řádek jeden soubor současně.</span><span class="sxs-lookup"><span data-stu-id="ad794-112">The following example shows how to use the <xref:System.IO.StreamWriter> class to synchronously write text to a new file one line at a time.</span></span> <span data-ttu-id="ad794-113">Protože <xref:System.IO.StreamWriter> objekt je deklarovaný a instance v `using` příkaz, <xref:System.IO.StreamWriter.Dispose%2A> je vyvolána metoda, která automaticky vyprázdní a zavře datový proud.</span><span class="sxs-lookup"><span data-stu-id="ad794-113">Because the <xref:System.IO.StreamWriter> object is declared and instantiated in a `using` statement, the <xref:System.IO.StreamWriter.Dispose%2A> method is invoked, which automatically flushes and closes the stream.</span></span>  
 
-- <xref:System.IO.StreamWriter>  
-- <xref:System.IO.Path>  
-- <xref:System.IO.File.CreateText%2A?displayProperty=nameWithType>  
-- [<span data-ttu-id="40207-135">Postupy: Vytvoření výčtu adresářů a souborů</span><span class="sxs-lookup"><span data-stu-id="40207-135">How to: Enumerate Directories and Files</span></span>](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
-- [<span data-ttu-id="40207-136">Postupy: Čtení a zápis do nově vytvořeného datového souboru</span><span class="sxs-lookup"><span data-stu-id="40207-136">How to: Read and Write to a Newly Created Data File</span></span>](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [<span data-ttu-id="40207-137">Postupy: Otevření a připojení k souboru protokolu</span><span class="sxs-lookup"><span data-stu-id="40207-137">How to: Open and Append to a Log File</span></span>](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [<span data-ttu-id="40207-138">Postupy: Čtení textu ze souboru</span><span class="sxs-lookup"><span data-stu-id="40207-138">How to: Read Text from a File</span></span>](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [<span data-ttu-id="40207-139">Vstup/výstup souborů a streamů</span><span class="sxs-lookup"><span data-stu-id="40207-139">File and Stream I/O</span></span>](../../../docs/standard/io/index.md)
+[!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/write.cs)] 
+[!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/write.vb)]  
+
+## <a name="example-synchronously-append-text-with-streamwriter"></a><span data-ttu-id="ad794-114">Příklad: Synchronně připojit text pomocí třídy StreamWriter</span><span class="sxs-lookup"><span data-stu-id="ad794-114">Example: Synchronously append text with StreamWriter</span></span>
+
+<span data-ttu-id="ad794-115">Následující příklad ukazuje způsob použití <xref:System.IO.StreamWriter> tříd synchronně přidat text do textového souboru vytvořeného v prvním příkladu.</span><span class="sxs-lookup"><span data-stu-id="ad794-115">The following example shows how to use the <xref:System.IO.StreamWriter> class to synchronously append text to the text file created in the first example.</span></span>   
+
+[!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/append.cs)] 
+[!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/append.vb)]  
+
+## <a name="example-asynchronously-write-text-with-streamwriter"></a><span data-ttu-id="ad794-116">Příklad: Asynchronně napsat text pomocí třídy StreamWriter</span><span class="sxs-lookup"><span data-stu-id="ad794-116">Example: Asynchronously write text with StreamWriter</span></span>
+
+<span data-ttu-id="ad794-117">Následující příklad ukazuje způsob asynchronního zápisu textu do nového souboru pomocí <xref:System.IO.StreamWriter> třídy.</span><span class="sxs-lookup"><span data-stu-id="ad794-117">The following example shows how to asynchronously write text to a new file using the <xref:System.IO.StreamWriter> class.</span></span> <span data-ttu-id="ad794-118">K vyvolání <xref:System.IO.StreamWriter.WriteAsync%2A> metody volání metody, které musí být v rámci `async` metody.</span><span class="sxs-lookup"><span data-stu-id="ad794-118">To invoke the <xref:System.IO.StreamWriter.WriteAsync%2A> method, the method call must be within an `async` method.</span></span> <span data-ttu-id="ad794-119">C# Příklad vyžaduje C# 7.1 nebo novější, který přidává podporu pro `async` modifikátor na vstupní bod programu.</span><span class="sxs-lookup"><span data-stu-id="ad794-119">The C# example requires C# 7.1 or later, which adds support for the `async` modifier on the program entry point.</span></span> 
+
+[!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/async.cs)] 
+[!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/async.vb)]  
+
+## <a name="example-write-and-append-text-with-the-file-class"></a><span data-ttu-id="ad794-120">Příklad: Zapsat a připojit text pomocí třídy souboru</span><span class="sxs-lookup"><span data-stu-id="ad794-120">Example: Write and append text with the File class</span></span>
+
+<span data-ttu-id="ad794-121">Následující příklad ukazuje, jak zápis textu do nového souboru a přidávat nové řádky textu do stejného souboru pomocí <xref:System.IO.File> třídy.</span><span class="sxs-lookup"><span data-stu-id="ad794-121">The following example shows how to write text to a new file and append new lines of text to the same file using the <xref:System.IO.File> class.</span></span> <span data-ttu-id="ad794-122"><xref:System.IO.File.WriteAllText%2A> a <xref:System.IO.File.AppendAllLines%2A> metod otevřete a zavřete soubor automaticky.</span><span class="sxs-lookup"><span data-stu-id="ad794-122">The <xref:System.IO.File.WriteAllText%2A> and <xref:System.IO.File.AppendAllLines%2A> methods open and close the file automatically.</span></span> <span data-ttu-id="ad794-123">Pokud cesta poskytnete <xref:System.IO.File.WriteAllText%2A> metoda již existuje, přepíše se.</span><span class="sxs-lookup"><span data-stu-id="ad794-123">If the path you provide to the <xref:System.IO.File.WriteAllText%2A> method already exists, the file is overwritten.</span></span>  
+
+[!code-csharp[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/file.cs)] 
+[!code-vb[Conceptual.BasicIO.TextFiles#WriteLine](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/file.vb)]  
+
+## <a name="see-also"></a><span data-ttu-id="ad794-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ad794-124">See also</span></span>
+
+- <xref:System.IO.StreamWriter>
+- <xref:System.IO.Path>
+- <xref:System.IO.File.CreateText%2A?displayProperty=nameWithType>
+- [<span data-ttu-id="ad794-125">Postupy: Vytvoření výčtu adresářů a souborů</span><span class="sxs-lookup"><span data-stu-id="ad794-125">How to: Enumerate directories and files</span></span>](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
+- [<span data-ttu-id="ad794-126">Postupy: Čtení a zápis do nově vytvořeného datového souboru</span><span class="sxs-lookup"><span data-stu-id="ad794-126">How to: Read and write to a newly-created data file</span></span>](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
+- [<span data-ttu-id="ad794-127">Postupy: Otevření a připojení k souboru protokolu</span><span class="sxs-lookup"><span data-stu-id="ad794-127">How to: Open and append to a log file</span></span>](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
+- [<span data-ttu-id="ad794-128">Postupy: Čtení textu ze souboru</span><span class="sxs-lookup"><span data-stu-id="ad794-128">How to: Read text from a file</span></span>](../../../docs/standard/io/how-to-read-text-from-a-file.md)
+- [<span data-ttu-id="ad794-129">Vstupně-výstupních operací souborů a datových proudů</span><span class="sxs-lookup"><span data-stu-id="ad794-129">File and stream I/O</span></span>](../../../docs/standard/io/index.md)

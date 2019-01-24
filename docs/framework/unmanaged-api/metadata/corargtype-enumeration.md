@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5803f958c9340c068d6ce6e7fc0b1d6846d67876
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3fa71b15a5e4852bc87ad2088edb343704df6ca9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441572"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734322"
 ---
-# <a name="corargtype-enumeration"></a><span data-ttu-id="9c0dd-102">CorArgType – výčet</span><span class="sxs-lookup"><span data-stu-id="9c0dd-102">CorArgType Enumeration</span></span>
-<span data-ttu-id="9c0dd-103">Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="9c0dd-103">Contains values that describe the native type of a runtime handle.</span></span>  
+# <a name="corargtype-enumeration"></a><span data-ttu-id="47252-102">CorArgType – výčet</span><span class="sxs-lookup"><span data-stu-id="47252-102">CorArgType Enumeration</span></span>
+<span data-ttu-id="47252-103">Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="47252-103">Contains values that describe the native type of a runtime handle.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9c0dd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c0dd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="47252-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="47252-104">Syntax</span></span>  
   
 ```  
 typedef enum CorArgType {  
@@ -46,12 +46,12 @@ typedef enum CorArgType {
 } CorArgType;  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="9c0dd-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9c0dd-105">Requirements</span></span>  
- <span data-ttu-id="9c0dd-106">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9c0dd-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="47252-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="47252-105">Requirements</span></span>  
+ <span data-ttu-id="47252-106">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="47252-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9c0dd-107">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="9c0dd-107">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="47252-107">**Záhlaví:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="47252-107">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="9c0dd-108">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9c0dd-108">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="47252-108">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="47252-108">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9c0dd-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="9c0dd-109">See Also</span></span>  
- [<span data-ttu-id="9c0dd-110">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="9c0dd-110">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="47252-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="47252-109">See also</span></span>
+- [<span data-ttu-id="47252-110">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="47252-110">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

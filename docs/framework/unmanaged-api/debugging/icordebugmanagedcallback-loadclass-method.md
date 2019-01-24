@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1d920a97338bba3e90ec8f0c440f6dd2a93e722
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f3c430e18864c0352b43641bce9a7d52af69cc80
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416202"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718218"
 ---
-# <a name="icordebugmanagedcallbackloadclass-method"></a><span data-ttu-id="52c81-102">ICorDebugManagedCallback::LoadClass – metoda</span><span class="sxs-lookup"><span data-stu-id="52c81-102">ICorDebugManagedCallback::LoadClass Method</span></span>
-<span data-ttu-id="52c81-103">Načtení třídy upozorní ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="52c81-103">Notifies the debugger that a class has been loaded.</span></span>  
+# <a name="icordebugmanagedcallbackloadclass-method"></a><span data-ttu-id="68930-102">ICorDebugManagedCallback::LoadClass – metoda</span><span class="sxs-lookup"><span data-stu-id="68930-102">ICorDebugManagedCallback::LoadClass Method</span></span>
+<span data-ttu-id="68930-103">Načtení třídy upozorní ladicí program.</span><span class="sxs-lookup"><span data-stu-id="68930-103">Notifies the debugger that a class has been loaded.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="52c81-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="52c81-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="68930-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68930-104">Syntax</span></span>  
   
 ```  
 HRESULT LoadClass (  
@@ -36,27 +36,27 @@ HRESULT LoadClass (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="52c81-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="52c81-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="68930-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="68930-105">Parameters</span></span>  
  `pAppDomain`  
- <span data-ttu-id="52c81-106">[v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, do kterého se načetl třídy.</span><span class="sxs-lookup"><span data-stu-id="52c81-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain into which the class has been loaded.</span></span>  
+ <span data-ttu-id="68930-106">[in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, do kterého se načetl třídy.</span><span class="sxs-lookup"><span data-stu-id="68930-106">[in] A pointer to an ICorDebugAppDomain object that represents the application domain into which the class has been loaded.</span></span>  
   
  `c`  
- <span data-ttu-id="52c81-107">[v] Ukazatel na ICorDebugClass objekt, který představuje třídu.</span><span class="sxs-lookup"><span data-stu-id="52c81-107">[in] A pointer to an ICorDebugClass object that represents the class.</span></span>  
+ <span data-ttu-id="68930-107">[in] Ukazatel na objekt ICorDebugClass, který představuje třídu.</span><span class="sxs-lookup"><span data-stu-id="68930-107">[in] A pointer to an ICorDebugClass object that represents the class.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="52c81-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="52c81-108">Remarks</span></span>  
- <span data-ttu-id="52c81-109">Tato zpětného volání dojde pouze v případě, že třída načítání je povoleno modul, který obsahuje třídu.</span><span class="sxs-lookup"><span data-stu-id="52c81-109">This callback occurs only if class loading has been enabled for the module that contains the class.</span></span> <span data-ttu-id="52c81-110">Načtení třídy je vždy povolena pro dynamické moduly.</span><span class="sxs-lookup"><span data-stu-id="52c81-110">Class loading is always enabled for dynamic modules.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="68930-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="68930-108">Remarks</span></span>  
+ <span data-ttu-id="68930-109">Toto zpětné volání dojde pouze v případě, že se povolila načítání třídy pro modul, který obsahuje třídu.</span><span class="sxs-lookup"><span data-stu-id="68930-109">This callback occurs only if class loading has been enabled for the module that contains the class.</span></span> <span data-ttu-id="68930-110">Načtení třídy je vždy povolena pro dynamické moduly.</span><span class="sxs-lookup"><span data-stu-id="68930-110">Class loading is always enabled for dynamic modules.</span></span>  
   
- <span data-ttu-id="52c81-111">`LoadClass` Zpětné volání poskytuje příslušnou dobu pro vazbu na nově vygenerované třídy v dynamických modulech zarážky.</span><span class="sxs-lookup"><span data-stu-id="52c81-111">The `LoadClass` callback provides an appropriate time to bind breakpoints to newly generated classes in dynamic modules.</span></span>  
+ <span data-ttu-id="68930-111">`LoadClass` Zpětného volání obsahuje správný čas vytvořit vazbu zarážky na nově vygenerované třídy v dynamických modulech.</span><span class="sxs-lookup"><span data-stu-id="68930-111">The `LoadClass` callback provides an appropriate time to bind breakpoints to newly generated classes in dynamic modules.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="52c81-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="52c81-112">Requirements</span></span>  
- <span data-ttu-id="52c81-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="52c81-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="68930-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="68930-112">Requirements</span></span>  
+ <span data-ttu-id="68930-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="68930-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="52c81-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="52c81-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="68930-114">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="68930-114">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="52c81-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="52c81-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="68930-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="68930-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="52c81-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="52c81-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="68930-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="68930-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="52c81-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="52c81-117">See Also</span></span>  
- [<span data-ttu-id="52c81-118">UnloadClass – metoda</span><span class="sxs-lookup"><span data-stu-id="52c81-118">UnloadClass Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md)  
- [<span data-ttu-id="52c81-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="52c81-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="68930-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="68930-117">See also</span></span>
+- [<span data-ttu-id="68930-118">UnloadClass – metoda</span><span class="sxs-lookup"><span data-stu-id="68930-118">UnloadClass Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md)
+- [<span data-ttu-id="68930-119">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="68930-119">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

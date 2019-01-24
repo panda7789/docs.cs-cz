@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f37be8e3d2e92147e9f13954ab64396062ade2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51cd834b92dd595b5b3e7f668ef252462f4287de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434978"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695280"
 ---
-# <a name="getrequestedruntimeinfo-function"></a><span data-ttu-id="731a3-102">GetRequestedRuntimeInfo – funkce</span><span class="sxs-lookup"><span data-stu-id="731a3-102">GetRequestedRuntimeInfo Function</span></span>
-<span data-ttu-id="731a3-103">Získá informace o modul CLR (CLR) požadoval aplikace verzi a adresáře.</span><span class="sxs-lookup"><span data-stu-id="731a3-103">Gets version and directory information about the common language runtime (CLR) requested by an application.</span></span>  
+# <a name="getrequestedruntimeinfo-function"></a><span data-ttu-id="d09bb-102">GetRequestedRuntimeInfo – funkce</span><span class="sxs-lookup"><span data-stu-id="d09bb-102">GetRequestedRuntimeInfo Function</span></span>
+<span data-ttu-id="d09bb-103">Získá informace o common language runtime (CLR) požadovaný aplikací verzi a adresář.</span><span class="sxs-lookup"><span data-stu-id="d09bb-103">Gets version and directory information about the common language runtime (CLR) requested by an application.</span></span>  
   
- <span data-ttu-id="731a3-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="731a3-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
+ <span data-ttu-id="d09bb-104">Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span><span class="sxs-lookup"><span data-stu-id="d09bb-104">This function has been deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="731a3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="731a3-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d09bb-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d09bb-105">Syntax</span></span>  
   
 ```  
 HRESULT GetRequestedRuntimeInfo (  
@@ -47,83 +47,83 @@ HRESULT GetRequestedRuntimeInfo (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="731a3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="731a3-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="d09bb-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d09bb-106">Parameters</span></span>  
  `pExe`  
- <span data-ttu-id="731a3-107">[v] Název aplikace.</span><span class="sxs-lookup"><span data-stu-id="731a3-107">[in] The name of the application.</span></span>  
+ <span data-ttu-id="d09bb-107">[in] Název aplikace.</span><span class="sxs-lookup"><span data-stu-id="d09bb-107">[in] The name of the application.</span></span>  
   
  `pwszVersion`  
- <span data-ttu-id="731a3-108">[v] Řetězec určující číslo verze modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="731a3-108">[in] A string specifying the version number of the runtime.</span></span>  
+ <span data-ttu-id="d09bb-108">[in] Řetězec určující číslo verze modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="d09bb-108">[in] A string specifying the version number of the runtime.</span></span>  
   
  `pConfigurationFile`  
- <span data-ttu-id="731a3-109">[v] Název konfiguračního souboru, který je spojen s `pExe`.</span><span class="sxs-lookup"><span data-stu-id="731a3-109">[in] The name of the configuration file that is associated with `pExe`.</span></span>  
+ <span data-ttu-id="d09bb-109">[in] Název konfiguračního souboru, který je přidružen `pExe`.</span><span class="sxs-lookup"><span data-stu-id="d09bb-109">[in] The name of the configuration file that is associated with `pExe`.</span></span>  
   
  `startupFlags`  
- <span data-ttu-id="731a3-110">[v] Jeden nebo více [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) hodnot výčtu.</span><span class="sxs-lookup"><span data-stu-id="731a3-110">[in] One or more of the [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) enumeration values.</span></span>  
+ <span data-ttu-id="d09bb-110">[in] Jeden nebo více následujících [startup_flags –](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) hodnot výčtu.</span><span class="sxs-lookup"><span data-stu-id="d09bb-110">[in] One or more of the [STARTUP_FLAGS](../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) enumeration values.</span></span>  
   
  `runtimeInfoFlags`  
- <span data-ttu-id="731a3-111">[v] Jeden nebo více [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) hodnot výčtu.</span><span class="sxs-lookup"><span data-stu-id="731a3-111">[in] One or more of the [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) enumeration values.</span></span>  
+ <span data-ttu-id="d09bb-111">[in] Jeden nebo více následujících [runtime_info_flags –](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) hodnot výčtu.</span><span class="sxs-lookup"><span data-stu-id="d09bb-111">[in] One or more of the [RUNTIME_INFO_FLAGS](../../../../docs/framework/unmanaged-api/hosting/runtime-info-flags-enumeration.md) enumeration values.</span></span>  
   
  `pDirectory`  
- <span data-ttu-id="731a3-112">[out] Vyrovnávací paměť, která obsahuje cestu k adresáři modulu runtime po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="731a3-112">[out] A buffer that contains the directory path to the runtime upon successful completion.</span></span>  
+ <span data-ttu-id="d09bb-112">[out] Vyrovnávací paměť, která obsahuje cestu k adresáři modulu runtime po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="d09bb-112">[out] A buffer that contains the directory path to the runtime upon successful completion.</span></span>  
   
  `dwDirectory`  
- <span data-ttu-id="731a3-113">[v] Délka vyrovnávací paměti adresáře.</span><span class="sxs-lookup"><span data-stu-id="731a3-113">[in] The length of the directory buffer.</span></span>  
+ <span data-ttu-id="d09bb-113">[in] Délka vyrovnávací paměti adresáře.</span><span class="sxs-lookup"><span data-stu-id="d09bb-113">[in] The length of the directory buffer.</span></span>  
   
  `dwDirectoryLength`  
- <span data-ttu-id="731a3-114">[out] Ukazatel na délku řetězce cestu adresáře.</span><span class="sxs-lookup"><span data-stu-id="731a3-114">[out] A pointer to the length of the directory path string.</span></span>  
+ <span data-ttu-id="d09bb-114">[out] Ukazatel na délku řetězce cestu adresáře.</span><span class="sxs-lookup"><span data-stu-id="d09bb-114">[out] A pointer to the length of the directory path string.</span></span>  
   
  `pVersion`  
- <span data-ttu-id="731a3-115">[out] Vyrovnávací paměť, která obsahuje číslo verze modulu runtime po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="731a3-115">[out] A buffer that contains the version number of the runtime upon successful completion.</span></span>  
+ <span data-ttu-id="d09bb-115">[out] Vyrovnávací paměť, která obsahuje číslo verze modulu runtime po úspěšném dokončení.</span><span class="sxs-lookup"><span data-stu-id="d09bb-115">[out] A buffer that contains the version number of the runtime upon successful completion.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="731a3-116">[v] Délka vyrovnávací paměti řetězec verze.</span><span class="sxs-lookup"><span data-stu-id="731a3-116">[in] The length of the version string buffer.</span></span>  
+ <span data-ttu-id="d09bb-116">[in] Délka vyrovnávací paměti pro řetězec verze.</span><span class="sxs-lookup"><span data-stu-id="d09bb-116">[in] The length of the version string buffer.</span></span>  
   
  `dwlength`  
- <span data-ttu-id="731a3-117">[out] Ukazatel na délku řetězec verze.</span><span class="sxs-lookup"><span data-stu-id="731a3-117">[out] A pointer to the length of the version string.</span></span>  
+ <span data-ttu-id="d09bb-117">[out] Ukazatel na délku řetězce verze.</span><span class="sxs-lookup"><span data-stu-id="d09bb-117">[out] A pointer to the length of the version string.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="731a3-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="731a3-118">Return Value</span></span>  
- <span data-ttu-id="731a3-119">Tato metoda vrátí standardní kódy chyb modelu COM (Component Object), jak jsou definovány v WinError.h, kromě následující hodnoty.</span><span class="sxs-lookup"><span data-stu-id="731a3-119">This method returns standard Component Object Model (COM) error codes, as defined in WinError.h, in addition to the following values.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="d09bb-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d09bb-118">Return Value</span></span>  
+ <span data-ttu-id="d09bb-119">Tato metoda vrací standardní kódy chyb modelu COM (Component Object), jak je definovaný ve WinError.h, kromě následujících hodnot.</span><span class="sxs-lookup"><span data-stu-id="d09bb-119">This method returns standard Component Object Model (COM) error codes, as defined in WinError.h, in addition to the following values.</span></span>  
   
-|<span data-ttu-id="731a3-120">Návratový kód</span><span class="sxs-lookup"><span data-stu-id="731a3-120">Return code</span></span>|<span data-ttu-id="731a3-121">Popis</span><span class="sxs-lookup"><span data-stu-id="731a3-121">Description</span></span>|  
+|<span data-ttu-id="d09bb-120">Návratový kód</span><span class="sxs-lookup"><span data-stu-id="d09bb-120">Return code</span></span>|<span data-ttu-id="d09bb-121">Popis</span><span class="sxs-lookup"><span data-stu-id="d09bb-121">Description</span></span>|  
 |-----------------|-----------------|  
-|<span data-ttu-id="731a3-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="731a3-122">S_OK</span></span>|<span data-ttu-id="731a3-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="731a3-123">The method completed successfully.</span></span>|  
-|<span data-ttu-id="731a3-124">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="731a3-124">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="731a3-125">Directory vyrovnávací paměť není dostatečně velký pro uložení cesta k adresáři.</span><span class="sxs-lookup"><span data-stu-id="731a3-125">The directory buffer is not large enough to store the directory path.</span></span><br /><br /> <span data-ttu-id="731a3-126">- nebo -</span><span class="sxs-lookup"><span data-stu-id="731a3-126">- or -</span></span><br /><br /> <span data-ttu-id="731a3-127">Verze vyrovnávací paměť není dostatečně velký pro uložení řetězec verze.</span><span class="sxs-lookup"><span data-stu-id="731a3-127">The version buffer is not large enough to store the version string.</span></span>|  
+|<span data-ttu-id="d09bb-122">S_OK</span><span class="sxs-lookup"><span data-stu-id="d09bb-122">S_OK</span></span>|<span data-ttu-id="d09bb-123">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="d09bb-123">The method completed successfully.</span></span>|  
+|<span data-ttu-id="d09bb-124">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="d09bb-124">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="d09bb-125">Adresář vyrovnávací paměť není dostatečně velký pro uložení cesta k adresáři.</span><span class="sxs-lookup"><span data-stu-id="d09bb-125">The directory buffer is not large enough to store the directory path.</span></span><br /><br /> <span data-ttu-id="d09bb-126">- nebo -</span><span class="sxs-lookup"><span data-stu-id="d09bb-126">- or -</span></span><br /><br /> <span data-ttu-id="d09bb-127">Verze vyrovnávací paměť není dostatečně velký pro uložení řetězce verze.</span><span class="sxs-lookup"><span data-stu-id="d09bb-127">The version buffer is not large enough to store the version string.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="731a3-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="731a3-128">Remarks</span></span>  
- <span data-ttu-id="731a3-129">`GetRequestedRuntimeInfo` Metoda vrátí běhu informace o verzi načtena do procesu, který není nutně v počítači nainstalována nejnovější verze.</span><span class="sxs-lookup"><span data-stu-id="731a3-129">The `GetRequestedRuntimeInfo` method returns run-time information about the version loaded into the process, which is not necessarily the latest version installed on the computer.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d09bb-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d09bb-128">Remarks</span></span>  
+ <span data-ttu-id="d09bb-129">`GetRequestedRuntimeInfo` Metoda vrátí běhových informací o verzi načten do procesu, což není nutně v počítači nainstalovanou nejnovější verzi.</span><span class="sxs-lookup"><span data-stu-id="d09bb-129">The `GetRequestedRuntimeInfo` method returns run-time information about the version loaded into the process, which is not necessarily the latest version installed on the computer.</span></span>  
   
- <span data-ttu-id="731a3-130">V rozhraní .NET Framework verze 2.0, můžete získat informace o nejnovější nainstalované verzi pomocí `GetRequestedRuntimeInfo` metoda následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="731a3-130">In the .NET Framework version 2.0, you can get information about the latest installed version by using the `GetRequestedRuntimeInfo` method as follows:</span></span>  
+ <span data-ttu-id="d09bb-130">V rozhraní .NET Framework verze 2.0, můžete získat informace o nejnovější verze pomocí `GetRequestedRuntimeInfo` metodu následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="d09bb-130">In the .NET Framework version 2.0, you can get information about the latest installed version by using the `GetRequestedRuntimeInfo` method as follows:</span></span>  
   
--   <span data-ttu-id="731a3-131">Zadejte `pExe`, `pwszVersion`, a `pConfigurationFile` parametry jako hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="731a3-131">Specify the `pExe`, `pwszVersion`, and `pConfigurationFile` parameters as null.</span></span>  
+-   <span data-ttu-id="d09bb-131">Zadejte `pExe`, `pwszVersion`, a `pConfigurationFile` parametry jako hodnota null.</span><span class="sxs-lookup"><span data-stu-id="d09bb-131">Specify the `pExe`, `pwszVersion`, and `pConfigurationFile` parameters as null.</span></span>  
   
--   <span data-ttu-id="731a3-132">Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION v `RUNTIME_INFO_FLAGS` výčty pro `runtimeInfoFlags` parametr.</span><span class="sxs-lookup"><span data-stu-id="731a3-132">Specify the RUNTIME_INFO_UPGRADE_VERSION flag in the `RUNTIME_INFO_FLAGS` enumerations for the `runtimeInfoFlags` parameter.</span></span>  
+-   <span data-ttu-id="d09bb-132">Zadejte příznak RUNTIME_INFO_UPGRADE_VERSION v `RUNTIME_INFO_FLAGS` výčty pro `runtimeInfoFlags` parametru.</span><span class="sxs-lookup"><span data-stu-id="d09bb-132">Specify the RUNTIME_INFO_UPGRADE_VERSION flag in the `RUNTIME_INFO_FLAGS` enumerations for the `runtimeInfoFlags` parameter.</span></span>  
   
- <span data-ttu-id="731a3-133">`GetRequestedRuntimeInfo` Metoda nevrátí nejnovější verze CLR v následujících případech:</span><span class="sxs-lookup"><span data-stu-id="731a3-133">The `GetRequestedRuntimeInfo` method does not return the latest CLR version in the following circumstances:</span></span>  
+ <span data-ttu-id="d09bb-133">`GetRequestedRuntimeInfo` Metoda nevrací na nejnovější verzi modulu CLR v následujících případech:</span><span class="sxs-lookup"><span data-stu-id="d09bb-133">The `GetRequestedRuntimeInfo` method does not return the latest CLR version in the following circumstances:</span></span>  
   
--   <span data-ttu-id="731a3-134">Existuje konfigurační soubor aplikace, která určuje načtení určité verze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="731a3-134">An application configuration file that specifies loading a particular CLR version exists.</span></span> <span data-ttu-id="731a3-135">Upozorňujeme, že rozhraní .NET Framework se použít konfigurační soubor i v případě, že zadáte hodnotu null pro `pConfigurationFile` parametr.</span><span class="sxs-lookup"><span data-stu-id="731a3-135">Note that the .NET Framework will use the configuration file even if you specify null for the `pConfigurationFile` parameter.</span></span>  
+-   <span data-ttu-id="d09bb-134">Existuje konfigurační soubor aplikace, která určuje načtení konkrétní verze modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="d09bb-134">An application configuration file that specifies loading a particular CLR version exists.</span></span> <span data-ttu-id="d09bb-135">Všimněte si, že rozhraní .NET Framework se použít konfigurační soubor i v případě, že zadáte hodnotu null pro `pConfigurationFile` parametru.</span><span class="sxs-lookup"><span data-stu-id="d09bb-135">Note that the .NET Framework will use the configuration file even if you specify null for the `pConfigurationFile` parameter.</span></span>  
   
--   <span data-ttu-id="731a3-136">[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána metoda zadání starší verze CLR.</span><span class="sxs-lookup"><span data-stu-id="731a3-136">The [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) method was called specifying an earlier CLR version.</span></span>  
+-   <span data-ttu-id="d09bb-136">[CorBindToRuntimeEx –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) byla volána metoda zadání starší verzi modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="d09bb-136">The [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) method was called specifying an earlier CLR version.</span></span>  
   
--   <span data-ttu-id="731a3-137">Aktuálně je spuštěna aplikace, který byl sestaven pro starší verze CLR.</span><span class="sxs-lookup"><span data-stu-id="731a3-137">An application that was compiled for an earlier CLR version is currently running.</span></span>  
+-   <span data-ttu-id="d09bb-137">Aplikace, která byla zkompilována pro starší verzi modulu CLR je právě spuštěna.</span><span class="sxs-lookup"><span data-stu-id="d09bb-137">An application that was compiled for an earlier CLR version is currently running.</span></span>  
   
- <span data-ttu-id="731a3-138">Pro `runtimeInfoFlags` parametr, můžete zadat pouze jeden konstant architekturu systému `RUNTIME_INFO_FLAGS` výčtu současně:</span><span class="sxs-lookup"><span data-stu-id="731a3-138">For the `runtimeInfoFlags` parameter, you can specify only one of the architecture constants of the `RUNTIME_INFO_FLAGS` enumeration at a time:</span></span>  
+ <span data-ttu-id="d09bb-138">Pro `runtimeInfoFlags` parametr, můžete zadat jenom jednu z konstant architektury `RUNTIME_INFO_FLAGS` výčtu v čase:</span><span class="sxs-lookup"><span data-stu-id="d09bb-138">For the `runtimeInfoFlags` parameter, you can specify only one of the architecture constants of the `RUNTIME_INFO_FLAGS` enumeration at a time:</span></span>  
   
--   <span data-ttu-id="731a3-139">RUNTIME_INFO_REQUEST_IA64</span><span class="sxs-lookup"><span data-stu-id="731a3-139">RUNTIME_INFO_REQUEST_IA64</span></span>  
+-   <span data-ttu-id="d09bb-139">RUNTIME_INFO_REQUEST_IA64</span><span class="sxs-lookup"><span data-stu-id="d09bb-139">RUNTIME_INFO_REQUEST_IA64</span></span>  
   
--   <span data-ttu-id="731a3-140">RUNTIME_INFO_REQUEST_AMD64</span><span class="sxs-lookup"><span data-stu-id="731a3-140">RUNTIME_INFO_REQUEST_AMD64</span></span>  
+-   <span data-ttu-id="d09bb-140">RUNTIME_INFO_REQUEST_AMD64</span><span class="sxs-lookup"><span data-stu-id="d09bb-140">RUNTIME_INFO_REQUEST_AMD64</span></span>  
   
--   <span data-ttu-id="731a3-141">RUNTIME_INFO_REQUEST_X86</span><span class="sxs-lookup"><span data-stu-id="731a3-141">RUNTIME_INFO_REQUEST_X86</span></span>  
+-   <span data-ttu-id="d09bb-141">RUNTIME_INFO_REQUEST_X86</span><span class="sxs-lookup"><span data-stu-id="d09bb-141">RUNTIME_INFO_REQUEST_X86</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="731a3-142">Požadavky</span><span class="sxs-lookup"><span data-stu-id="731a3-142">Requirements</span></span>  
- <span data-ttu-id="731a3-143">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="731a3-143">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d09bb-142">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d09bb-142">Requirements</span></span>  
+ <span data-ttu-id="d09bb-143">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d09bb-143">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="731a3-144">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="731a3-144">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="d09bb-144">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="d09bb-144">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="731a3-145">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="731a3-145">**Library:** MSCorEE.dll</span></span>  
+ <span data-ttu-id="d09bb-145">**Knihovna:** MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d09bb-145">**Library:** MSCorEE.dll</span></span>  
   
- <span data-ttu-id="731a3-146">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="731a3-146">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
+ <span data-ttu-id="d09bb-146">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d09bb-146">**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="731a3-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="731a3-147">See Also</span></span>  
- [<span data-ttu-id="731a3-148">GetRequestedRuntimeVersion – funkce</span><span class="sxs-lookup"><span data-stu-id="731a3-148">GetRequestedRuntimeVersion Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)  
- [<span data-ttu-id="731a3-149">GetVersionFromProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="731a3-149">GetVersionFromProcess Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)  
- [<span data-ttu-id="731a3-150">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="731a3-150">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a><span data-ttu-id="d09bb-147">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d09bb-147">See also</span></span>
+- [<span data-ttu-id="d09bb-148">GetRequestedRuntimeVersion – funkce</span><span class="sxs-lookup"><span data-stu-id="d09bb-148">GetRequestedRuntimeVersion Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)
+- [<span data-ttu-id="d09bb-149">GetVersionFromProcess – funkce</span><span class="sxs-lookup"><span data-stu-id="d09bb-149">GetVersionFromProcess Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)
+- [<span data-ttu-id="d09bb-150">Zastaralé funkce pro hostování CLR</span><span class="sxs-lookup"><span data-stu-id="d09bb-150">Deprecated CLR Hosting Functions</span></span>](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
