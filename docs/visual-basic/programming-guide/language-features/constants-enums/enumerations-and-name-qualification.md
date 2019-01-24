@@ -17,12 +17,12 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - declarations [Visual Basic], namespaces
 ms.assetid: 08ba2738-df52-4140-bc55-f57c871c9b73
-ms.openlocfilehash: cd07c883c576e917cf1aa5072505854bc906eb3f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 0336ac54c6a0dadeb9758bcb15477fe96dbfcc65
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513695"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a>Výčty a kvalifikace názvu (Visual Basic)
 Za normálních okolností při odkazování na člena výčtu, musí kvalifikovat název člena s názvem výčtu. Například k odkazování na `Sunday` členem vaší `Days` výčet, použijte následující syntaxi:  
@@ -48,14 +48,14 @@ Za normálních okolností při odkazování na člena výčtu, musí kvalifikov
   
  [!code-vb[VbEnumsTask#32](../../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/enumerations-and-name-qualification_5.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)  
- [Postupy: deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)  
- [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)  
- [Postupy: iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)  
- [Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)  
- [Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)  
- [Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)  
- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)  
- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+## <a name="see-also"></a>Viz také:
+- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)
+- [Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
+- [Postupy: Iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
+- [Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
+- [Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)
+- [Datové typy konstanty a literálu](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)
+- [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)
+- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)

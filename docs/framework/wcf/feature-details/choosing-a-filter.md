@@ -2,12 +2,12 @@
 title: Výběr filtru
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: 377d4f5c221ad37acf954b1dafc8712a388122ff
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f634363a3f8b69b38fd4d313c42de4d742d94acc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514190"
 ---
 # <a name="choosing-a-filter"></a>Výběr filtru
 Při konfiguraci služby směrování, je důležité vybrat správnou zprávu filtry a nakonfigurujete je, aby bylo možné provést přesné shody proti přijímaných zpráv. Pokud filtry, které jste vybrali příliš rozsáhlá v jejich odpovídá nebo jsou nakonfigurovány nesprávně, zprávy jsou směrovány nesprávně. Pokud jsou příliš omezující filtry, pravděpodobně nemáte všechny platné trasy, které jsou k dispozici pro některé zprávy.  
@@ -135,6 +135,6 @@ XPathMessageFilter xpath1=new XPathMessageFilter("//ns:element");
   
  Další informace o navrhování dotazů XPath, naleznete v tématu [syntaxi XPath](https://go.microsoft.com/fwlink/?LinkId=164592).  
   
-## <a name="see-also"></a>Viz také  
- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)  
- [Postupy: Používání filtrů](../../../../docs/framework/wcf/feature-details/how-to-use-filters.md)
+## <a name="see-also"></a>Viz také:
+- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)
+- [Postupy: Použití filtrů](../../../../docs/framework/wcf/feature-details/how-to-use-filters.md)

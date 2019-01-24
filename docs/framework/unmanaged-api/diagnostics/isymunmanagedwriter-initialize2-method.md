@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ac76ef58badcc8e443279415b7239c0b6017af3e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f65262a9b9850d93e934a77f154bb625a55e1e82
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427126"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514241"
 ---
 # <a name="isymunmanagedwriterinitialize2-method"></a>ISymUnmanagedWriter::Initialize2 – metoda
-Nastaví rozhraní vysílače metadata, pomocí kterého bude tento zapisovač spojený a název výstupního souboru, ke kterému se zapíšou symboly pro ladění. Tato metoda také umožňuje nastavit konečného umístění souboru databáze (PDB).  
+Nastaví rozhraní vysílače metadat, díky které bude tento zapisovač přidružené a nastaví název výstupního souboru, do kterého budou zapsány symboly ladění. Tato metoda také umožňuje nastavit konečné umístění souboru databáze (PDB) programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT Initialize2(
   
 #### <a name="parameters"></a>Parametry  
  `emitter`  
- [v] Ukazatel rozhraní vysílače metadat.  
+ [in] Ukazatel na rozhraní vysílače metadat.  
   
  `tempfilename`  
- [v] Ukazatel na `WCHAR` obsahující název souboru, do které se zapisují symboly pro ladění. Pokud název souboru je zadán pro zapisovač, který nepoužívá názvy souborů, tento parametr je ignorován.  
+ [in] Ukazatel `WCHAR` , který obsahuje název souboru, do kterého se zapisují symboly ladění. Pokud je název souboru zadaný pro zapisovače, který nepoužívá názvy souborů, tento parametr je ignorován.  
   
  `pIStream`  
- [v] -Li zadána, zapisovač symbol vysílá symboly do danou <xref:System.Runtime.InteropServices.ComTypes.IStream> spíše než do zadaného v souboru `filename` parametr. `pIStream` Parametr je nepovinný.  
+ [in] Pokud zadaná, zapisovač symbol vydává symboly do dané <xref:System.Runtime.InteropServices.ComTypes.IStream> , nikoli do souboru zadaného v `filename` parametr. `pIStream` Parametr je nepovinný.  
   
  `fFullBuild`  
- [v] `true` Pokud je to úplné opětovné sestavení; `false` Pokud je to přírůstkové kompilace.  
+ [in] `true` Pokud se jedná úplné opětovné sestavení; `false` Pokud přírůstková kompilace.  
   
  `finalfilename`  
- [v] Ukazatel na `WCHAR` tedy řetězec cesty do konečného umístění souboru PDB.  
+ [in] Ukazatel `WCHAR` řetězec cesty, který je do konečného umístění souboru PDB.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- [Initialize – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [Initialize – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize-method.md)

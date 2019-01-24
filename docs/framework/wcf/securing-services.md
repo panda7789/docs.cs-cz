@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-ms.openlocfilehash: 39b8a44629af42e358d550e0dd7eb6a8895de0ed
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6e5ede5141d2edb24a688bf700c22870c8886906
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524881"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primárních požadavků: přenos zabezpečení a autorizace. (Třetí požadavek auditování událostí zabezpečení, je popsaná v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno přenos zabezpečení zahrnuje ověření (ověření identity klienta a služby), důvěrnosti (šifrování zpráv) a integritu (digitální podpis umožňuje zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení pouze uživatelé s oprávněním ke čtení souboru. Pomocí funkce služby WCF, dva primární požadavky se snadno implementují.  
@@ -38,13 +38,13 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
  Infrastruktura WCF je navržen pro použití tyto mechanismy zabezpečení Windows. Proto pokud vytváříte službu, která je nasazena na intranetu a jejichž klienti jsou omezeny na členy domény Windows, zabezpečení je snadno implementovat. Pouze platní uživatelé můžou přihlásit k doméně. Po přihlášení uživatele, umožňuje kontroleru Kerberos každý uživatel k navázání zabezpečené kontexty pomocí libovolného počítače nebo aplikace. Na místním počítači můžete snadno vytvořit skupiny a při ochraně určitých složek, tyto skupiny je možné přiřadit přístupová oprávnění v počítači.  
   
 ## <a name="implementing-windows-security-on-intranet-services"></a>Implementace zabezpečení Windows na intranetu služby  
- Pro zabezpečení aplikace, na kterém běží výhradně v doméně Windows, můžete použít výchozí nastavení zabezpečení buď <xref:System.ServiceModel.WSHttpBinding> nebo <xref:System.ServiceModel.NetTcpBinding> vazby. Ve výchozím nastavení všem uživatelům ve stejné doméně Windows mají přístup ke službám WCF. Tito uživatelé mají přihlášení k síti, že jsou důvěryhodná. Zprávy mezi službou a klienta jsou šifrované utajení a zaregistrovali integrity. Další informace o tom, jak vytvořit službu, která používá zabezpečení Windows, naleznete v tématu [postupy: zabezpečení služby pomocí pověření Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
+ Pro zabezpečení aplikace, na kterém běží výhradně v doméně Windows, můžete použít výchozí nastavení zabezpečení buď <xref:System.ServiceModel.WSHttpBinding> nebo <xref:System.ServiceModel.NetTcpBinding> vazby. Ve výchozím nastavení všem uživatelům ve stejné doméně Windows mají přístup ke službám WCF. Tito uživatelé mají přihlášení k síti, že jsou důvěryhodná. Zprávy mezi službou a klienta jsou šifrované utajení a zaregistrovali integrity. Další informace o tom, jak vytvořit službu, která používá zabezpečení Windows, naleznete v tématu [jak: Zabezpečení služby pomocí pověření Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md).  
   
 ### <a name="authorization-using-the-principalpermissionattribute-class"></a>Autorizace pomocí třídy PrincipalPermissionAttribute  
- Pokud potřebujete omezit přístup k prostředkům v počítači, nejjednodušší způsob je použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy. Tento atribut umožňuje omezit volání operací služby tak náročné, které bude uživatel v zadané skupině Windows nebo role, nebo na konkrétního uživatele. Další informace najdete v tématu [postupy: omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
+ Pokud potřebujete omezit přístup k prostředkům v počítači, nejjednodušší způsob je použít <xref:System.Security.Permissions.PrincipalPermissionAttribute> třídy. Tento atribut umožňuje omezit volání operací služby tak náročné, které bude uživatel v zadané skupině Windows nebo role, nebo na konkrétního uživatele. Další informace najdete v tématu [jak: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).  
   
 ### <a name="impersonation"></a>Zosobnění  
- Zosobnění je jiný mechanismus, který můžete použít k řízení přístupu k prostředkům. Ve výchozím nastavení poběží služby hostované službou IIS v části identita účtu ASPNET. Účtu ASPNET přístupná pouze na prostředky, pro které má oprávnění. Nicméně je možné nastavit seznam ACL pro složku vyloučit ASPNET účet služby, ale povolit některé jiné identity pro přístup do složky. Pak dotaz se změní na tom, jak povolit uživatelům přístup ke složce, pokud k tomu nemá povolené účtu ASPNET. Odpověď je použití zosobnění, kterým služba může používat přihlašovací údaje klienta pro přístup k určitému prostředku. Dalším příkladem je při přístupu k databázi serveru SQL Server, ke kterým pouze určití uživatelé mají oprávnění. Další informace o použití zosobnění naleznete v tématu [postupy: zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md) a [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Zosobnění je jiný mechanismus, který můžete použít k řízení přístupu k prostředkům. Ve výchozím nastavení poběží služby hostované službou IIS v části identita účtu ASPNET. Účtu ASPNET přístupná pouze na prostředky, pro které má oprávnění. Nicméně je možné nastavit seznam ACL pro složku vyloučit ASPNET účet služby, ale povolit některé jiné identity pro přístup do složky. Pak dotaz se změní na tom, jak povolit uživatelům přístup ke složce, pokud k tomu nemá povolené účtu ASPNET. Odpověď je použití zosobnění, kterým služba může používat přihlašovací údaje klienta pro přístup k určitému prostředku. Dalším příkladem je při přístupu k databázi serveru SQL Server, ke kterým pouze určití uživatelé mají oprávnění. Další informace o použití zosobnění naleznete v tématu [jak: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md) a [delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="security-on-the-internet"></a>Zabezpečení na Internetu  
  Zabezpečení na Internetu se skládá ze stejné požadavky na zabezpečení v intranetu. Služba potřebuje prezentovat svoje přihlašovací údaje k prokázání své pravosti a klienti se musí k prokázání své identity ve službě. Jakmile prokazuje identity klienta služby můžete řídit vyjadřuje rozsah přístupu k prostředkům má klient. Ale protože heterogenní potřebujeme Internetu přihlašovací údaje se liší od používaných v doméně Windows. Že Kerberos kontroler obsluhuje ověřování uživatelů v doméně s lístky pro přihlašovací údaje na Internetu, služeb a klientů závisí na některou z několika různými způsoby prezentovat přihlašovací údaje. Cílem tohoto tématu, ale prezentovat běžným přístupem, která umožňuje vytvoření služby WCF, který je přístupný na Internetu.  
@@ -65,7 +65,7 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
   
  Je třetí režimu, který kombinuje sémantiku oba hlavní režimy *přenosu s režimem pověření zprávy*.  
   
- Režim zabezpečení určuje, jak jsou zabezpečené zprávy, a každou volbu má své výhody a nevýhody, jak je popsáno níže. Další informace o nastavení režimu zabezpečení rozhraní najdete v tématu [postupy: nastavení režimu zabezpečení rozhraní](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
+ Režim zabezpečení určuje, jak jsou zabezpečené zprávy, a každou volbu má své výhody a nevýhody, jak je popsáno níže. Další informace o nastavení režimu zabezpečení rozhraní najdete v tématu [jak: Nastavení režimu zabezpečení rozhraní](../../../docs/framework/wcf/how-to-set-the-security-mode.md).  
   
 #### <a name="transport-mode"></a>Režim přenosu  
  Existuje několik vrstev mezi sítě a aplikace. Jedním z nich je *přenosu* vrstvy *,* která spravuje přenos zpráv mezi koncovými body. Pro tento účel k dispozici je jenom nutné pochopit, WCF, používá několik protokolů přenosu, z nichž každá může zabezpečený přenos zpráv. (Další informace o přenosech najdete v tématu [přenosy](../../../docs/framework/wcf/feature-details/transports.md).)  
@@ -85,34 +85,34 @@ Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou
   
  Pokud vytváříte službu, která vyžaduje ověření klienta, podle vašeho výběru typu pověření klienta závisí na přenos a vybrán režim. Například použití přenosového protokolu HTTP a výběru režimu přepravy poskytuje několik možností, jako je například Basic, Digest a další. (Další informace o těchto typů přihlašovacích údajů naleznete v tématu [Princip ověřování HTTP](../../../docs/framework/wcf/feature-details/understanding-http-authentication.md).)  
   
- Při vytváření služby v doméně Windows, které budou k dispozici pouze pro jiné uživatele v síti, je nejjednodušší použití typu pověření klienta Windows. Však budete také muset poskytovat služby pomocí certifikátu. To je ukázáno v [postupy: určení hodnot přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Při vytváření služby v doméně Windows, které budou k dispozici pouze pro jiné uživatele v síti, je nejjednodušší použití typu pověření klienta Windows. Však budete také muset poskytovat služby pomocí certifikátu. To je ukázáno v [jak: Zadání hodnot přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
   
 #### <a name="credential-values"></a>Hodnot přihlašovacích údajů  
  A *přihlašovacích údajů hodnotu* je skutečná služba používá přihlašovacích údajů. Po zadání typu přihlašovacích údajů, můžete také nakonfigurovat samotné přihlašovací údaje služby. Pokud jste vybrali Windows (a služba se spustí v doméně Windows), nelze zadat hodnotu skutečné přihlašovací údaje.  
   
 ## <a name="identity"></a>Identita  
- Ve službě WCF termín *identity* má různé významy k serveru a klienta. Stručně řečeno při spuštění služby, identitu, která se přiřadí kontextu zabezpečení po ověření. Chcete-li zobrazit skutečnou identitu, zkontrolujte <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> a <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy. Další informace najdete v tématu [postupy: prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md).  
+ Ve službě WCF termín *identity* má různé významy k serveru a klienta. Stručně řečeno při spuštění služby, identitu, která se přiřadí kontextu zabezpečení po ověření. Chcete-li zobrazit skutečnou identitu, zkontrolujte <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> a <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy. Další informace najdete v tématu [jak: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md).  
   
  Naproti tomu na klientovi, identita se používá k ověření služby. V době návrhu, můžete nastavit určitého vývojáře klienta [ \<identity >](../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element hodnotou získanou ze služby. V době běhu klient zkontroluje hodnotu prvku na skutečnou identitu služby. Pokud kontrola selže, klient ukončí komunikace. Hodnota může být hlavní název uživatele (UPN), pokud je služba spuštěna pod identitou konkrétní uživatele nebo hlavní název služby (SPN), pokud je služba spuštěna pod účtem počítače. Další informace najdete v tématu [identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md). Přihlašovací údaje, které mohou být také certifikát nebo pole na certifikát, který identifikuje tento certifikát.  
   
 ## <a name="protection-levels"></a>Úrovně ochrany  
- `ProtectionLevel` Vlastnost probíhá na několika třídy atributů (jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy). Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo částí zprávy), které podporují službu jsou podepsané, podepsaný a zašifrovaný nebo odeslán bez informace o podpisy nebo šifrování. Další informace o vlastnosti najdete v tématu [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md)a programovací příklady najdete v tématu [postupy: nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md). Další informace o navrhování kontrakt služby s `ProtectionLevel` v kontextu, najdete v článku [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
+ `ProtectionLevel` Vlastnost probíhá na několika třídy atributů (jako <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> třídy). Úroveň ochrany je hodnota, která určuje, zda zprávy (nebo částí zprávy), které podporují službu jsou podepsané, podepsaný a zašifrovaný nebo odeslán bez informace o podpisy nebo šifrování. Další informace o vlastnosti najdete v tématu [úroveň ochrany Principy](../../../docs/framework/wcf/understanding-protection-level.md)a programovací příklady najdete v tématu [jak: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md). Další informace o navrhování kontrakt služby s `ProtectionLevel` v kontextu, najdete v článku [navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel>  
- <xref:System.ServiceModel.Description.ServiceCredentials>  
- <xref:System.ServiceModel.ServiceContractAttribute>  
- <xref:System.ServiceModel.OperationContractAttribute>  
- [Identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [Princip úrovně ochrany](../../../docs/framework/wcf/understanding-protection-level.md)  
- [Delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  
- [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)  
- [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)  
- [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)  
- [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)  
- [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)  
- [Postupy: Určení typu přihlašovacích údajů klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)  
- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)  
- [Postupy: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
- [Postupy: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel>
+- <xref:System.ServiceModel.Description.ServiceCredentials>
+- <xref:System.ServiceModel.ServiceContractAttribute>
+- <xref:System.ServiceModel.OperationContractAttribute>
+- [Identita a ověřování služby](../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Princip úrovně ochrany](../../../docs/framework/wcf/understanding-protection-level.md)
+- [Delegace a zosobnění](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
+- [Navrhování kontraktů služby](../../../docs/framework/wcf/designing-service-contracts.md)
+- [Zabezpečení](../../../docs/framework/wcf/feature-details/security.md)
+- [Přehled zabezpečení](../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Postupy: Nastavení vlastnosti ProtectionLevel](../../../docs/framework/wcf/how-to-set-the-protectionlevel-property.md)
+- [Postupy: Zabezpečení služby pomocí přihlašovacích údajů Windows](../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
+- [Postupy: Nastavení režimu zabezpečení](../../../docs/framework/wcf/how-to-set-the-security-mode.md)
+- [Postupy: Určení typu pověření klienta](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
+- [Postupy: Omezení přístupu pomocí třídy PrincipalPermissionAttribute](../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+- [Postupy: Zosobnění klienta ve službě](../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
+- [Postupy: Prozkoumání kontextu zabezpečení](../../../docs/framework/wcf/how-to-examine-the-security-context.md)

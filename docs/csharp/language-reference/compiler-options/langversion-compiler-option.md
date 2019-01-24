@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 9ebc90b3d4f610aec58f950f375d97fd2abf3617
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: ee23c962d8ea9adecabc5146af75419c87fcc75a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857268"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516795"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (možnosti kompilátoru C#)
 
@@ -63,26 +63,26 @@ Způsobí, že kompilátor tak, aby přijímal pouze syntaxi, která je součás
   
  Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.LanguageVersion%2A>.  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](index.md)  
-- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
+- [Možnosti kompilátoru jazyka C#](index.md)
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
 
 ### <a name="c-language-specification"></a>Specifikace jazyka C#
 
 |Version|Odkaz|Popis|
 |-------|----|-----------|
-|C# 1.0|[Stažení dokumentu](https://download.microsoft.com/download/a/9/e/a9e229b9-fee5-4c3e-8476-917dee385062/csharp%20language%20specification%20v1.0.doc)|Verze jazyka C# specifikace 1.0: Microsoft Corporation|
-|C# 1.2|[Stažení dokumentu](https://download.microsoft.com/download/5/e/5/5e58be0a-b02b-41ac-a4a3-7a22286214ff/csharp%20language%20specification%20v1.2.doc)|Verze jazyka C# specifikace 1.2: Microsoft Corporation|
+|C# 1.0|[Stažení dokumentu](https://download.microsoft.com/download/a/9/e/a9e229b9-fee5-4c3e-8476-917dee385062/csharp%20language%20specification%20v1.0.doc)|C#Jazyk specifikace verze 1.0: Microsoft Corporation|
+|C# 1.2|[Stažení dokumentu](https://download.microsoft.com/download/5/e/5/5e58be0a-b02b-41ac-a4a3-7a22286214ff/csharp%20language%20specification%20v1.2.doc)|C#Jazyk specifikace verze 1.2: Microsoft Corporation|
 |C# 2.0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/Ecma-334%204th%20edition%20June%202006.pdf)|4. edice Standard ECMA-334|
-|C# 3.0|[Stažení dokumentu](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|Verze jazyka C# specifikace 3.0: Microsoft Corporation|
+|C# 3.0|[Stažení dokumentu](https://download.microsoft.com/download/3/8/8/388e7205-bc10-4226-b2a8-75351c669b09/CSharp%20Language%20Specification.doc)|C#Jazyk specifikace verze 3.0: Microsoft Corporation|
 |C# 5.0|[Stáhnout PDF](https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf)|Standard ECMA-334 5th Edition|
 |C# 6.0|[Odkaz](../language-specification/index.md)|Verze jazyka C# specifikace 6 - neoficiální koncept: .NET Foundation|
 |C# 7.0 a novější||není aktuálně k dispozici|
 
 ### <a name="minimum-compiler-version-needed-to-support-all-language-features"></a>Verze kompilátoru minimální potřebné pro podporu všech funkcí jazyka
 
-[↩](#TISO1)<a name="FISO1">ISO1</a>: nástroje sady Microsoft Visual Studio/sestavení .net 2002 nebo jako součást balíčku rozhraní .net Framework 1.0 kompilátoru [↩](#TISO2)<a name="FISO2">ISO2</a>: Microsoft Visual Studio/Build Tools 2005 nebo jako součást balíčku rozhraní .net Framework 2.0 kompilátor [↩](#TCS3)<a name="FCS3">CS3</a>: Microsoft Visual Studio/Build Tools 2008 nebo jako součást balíčku rozhraní .net Framework 3.5 kompilátoru [↩](#TCS4) <a name="FCS4">CS4</a>: Microsoft Visual Studio/Build Tools 2010 nebo jako součást balíčku rozhraní .net Framework 4.0 kompilátoru [↩](#TCS5)<a name="FCS5">CS5</a>: Microsoft Visual Studio/Build Tools 2012 nebo jako součást balíčku .net Kompilátor Framework 4.5 [↩](#TCS6)<a name="FCS6">CS6</a>: Microsoft Visual Studio/Build Tools 2015 [↩](#TCS7)<a name="FCS7">CS7</a>: Microsoft Visual Studio / Sestavení nástroje 2017 [↩](#TCS71)<a name="FCS71">CS71</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.3 [↩](#TCS72)<a name="FCS72">CS72</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.5 [↩](#TCS73)<a name="FCS73">CS73</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.7
+[↩](#TISO1)<a name="FISO1">ISO1</a>: Microsoft Visual Studio/Build Tools .net 2002 nebo jako součást balíčku rozhraní .net Framework 1.0 kompilátoru [↩](#TISO2)<a name="FISO2">ISO2</a>: Microsoft Visual Studio/Build Tools 2005 nebo jako součást balíčku rozhraní .net Framework 2.0 kompilátor [↩](#TCS3)<a name="FCS3">CS3</a>: Microsoft Visual Studio/Build Tools 2008 nebo jako součást balíčku rozhraní .net Framework 3.5 kompilátoru [↩](#TCS4)<a name="FCS4">CS4</a>: Microsoft Visual Studio/Build Tools 2010 nebo jako součást balíčku rozhraní .net Framework 4.0 kompilátoru [↩](#TCS5)<a name="FCS5">CS5</a>: Microsoft Visual Studio/Build Tools 2012 nebo jako součást balíčku rozhraní .net Framework 4.5 kompilátoru [↩](#TCS6)<a name="FCS6">CS6</a>: Microsoft Visual Studio/Build Tools 2015 [↩](#TCS7)<a name="FCS7">CS7</a>: Microsoft Visual Studio/Build Tools 2017 [↩](#TCS71)<a name="FCS71">CS71</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.3 [↩](#TCS72)<a name="FCS72">CS72</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.5 [↩](#TCS73)<a name="FCS73">CS73</a>: Microsoft Visual Studio/Build Tools 2017 verze 15.7
 
 <!--- Uncomment and add to the above when they become officially released
 [↩](#TCS8)<a name="FCS8">CS8</a>: Microsoft Visual Studio/Build Tools 20??    

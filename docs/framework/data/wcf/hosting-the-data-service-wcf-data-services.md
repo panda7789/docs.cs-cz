@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-ms.openlocfilehash: 89f9cc572a6613efba19a93c8d5e441c46a660ac
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 1464880e92753d2774b1ca60d55c71a88d8e9b15
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864734"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519373"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
 Pomocí služeb WCF Data Services, můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definován jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv požadavků, provádění aktualizací na zdroji dat a vygenerování zprávy odpovědi, podle požadavků OData. Datové služby však nelze svázat a síťových soketů naslouchat příchozím požadavkům HTTP. Pro tato požadované funkce, která využívá datová služba hostitelská komponenta.
@@ -73,7 +73,7 @@ Při použití **přidat novou položku** dialogového okna v sadě Visual Studi
 
 -   Ověření parametrů v řetězci dotazu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)

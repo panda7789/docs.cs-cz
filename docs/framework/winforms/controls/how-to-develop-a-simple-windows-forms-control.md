@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms'
+title: 'Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - custom controls [Windows Forms], creating simple controls using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 86cbe435-45b7-4cb4-9b5a-47418369758d
-ms.openlocfilehash: 07a4de944e36b0be1a6196d08df33c4f3ab24bcc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4afa4b9e2c92569df4c8023d7dbfdfb025bf94b5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856673"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527624"
 ---
-# <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms
+# <a name="how-to-develop-a-simple-windows-forms-control"></a>Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms
 Tato část vás provede základní kroky pro vytváření vlastního ovládacího prvku Windows Forms. Jednoduché ovládací prvek vytvořili v tomto návodu umožňuje zarovnání jeho <xref:System.Windows.Forms.Control.Text%2A> vlastnost změnit. Nelze vyvolat nebo zpracování událostí.  
   
 ### <a name="to-create-a-simple-custom-control"></a>Chcete-li vytvořit jednoduché vlastního ovládacího prvku  
@@ -102,6 +102,6 @@ Tato část vás provede základní kroky pro vytváření vlastního ovládací
  [!code-csharp[System.Windows.Forms.FirstControl#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/CS/SimpleForm.cs#10)]
  [!code-vb[System.Windows.Forms.FirstControl#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FirstControl/VB/SimpleForm.vb#10)]  
   
-## <a name="see-also"></a>Viz také  
- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
- [Události v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Vlastnosti v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)
+- [Události v ovládacích prvcích Windows Forms](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)

@@ -17,35 +17,35 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: 1e34245ac528e9e2463afbfd07dff91bf693830b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb0ea5ce52effad4df541e6a9196b1faf279262e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603402"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54522505"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements – klauzule (Visual Basic)
-Označuje, že členem třídu nebo strukturu poskytuje implementaci pro člena definované v rozhraní.  
+Označuje, že člen třídy nebo struktury poskytuje implementaci pro člena definovaného v rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
-`Implements` – Klíčové slovo není stejný jako [Implements – příkaz](../../../visual-basic/language-reference/statements/implements-statement.md). Můžete použít `Implements` lze zadat třídu nebo strukturu implementuje jedno nebo více rozhraní, a pak použít pro každého člena `Implements` – klíčové slovo k určení, které rozhraní a které člen implementuje.
+`Implements` – Klíčové slovo není stejný jako [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md). Můžete použít `Implements` příkaz určíte, že třída nebo struktura, jeden nebo více rozhraní implementuje, a pak použít pro každého člena `Implements` – klíčové slovo k určení, které rozhraní a který člen implementuje.
 
-Pokud třídu nebo strukturu implementuje rozhraní, musí obsahovat `Implements` příkaz ihned po [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md) nebo [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md), a musí implementovat všechny členy definované rozhraní.
+Pokud třída nebo struktura implementuje rozhraní, musí zahrnovat `Implements` příkaz ihned po [Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md) nebo [Structure – příkaz](../../../visual-basic/language-reference/statements/structure-statement.md), a musí implementovat všechny členy definované rozhraní.
 
-## <a name="reimplementation"></a>Opětovná implementace  
-V odvozené třídě můžete přeimplementovat člena rozhraní, která základní třídy již implementována. To se liší od přepsání člen základní třídy v těchto ohledech:
+## <a name="reimplementation"></a>Patřící třídě  
+V odvozené třídě můžete znovu implementovat člen rozhraní, která je již implementováno základní třídy. Tím se liší od přepsání člena základní třídy v těchto ohledech:
 
-- Člen základní třídy nemusí být [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) k být reimplemented.
-- Můžete přeimplementovat člena s jiným názvem.
+- Členu základní třídy nemusí být [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) chcete být reimplemented.
+- Můžete znovu implementovat člena s jiným názvem.
 
-`Implements` – Klíčové slovo lze použít v kontextech následující:
+`Implements` – Klíčové slovo lze použít v následujících kontextů:
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)  
- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)  
- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md)
+- [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
+- [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
+- [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2064f134d83e6d410e851d8ea9498b45e36aea37
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8010ac602c82c7da2af9d0678227a6ce1c91391a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442264"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521462"
 ---
 # <a name="ihostthreadpoolmanagergetminthreads-method"></a>IHostThreadPoolManager::GetMinThreads – metoda
-Získá minimální počet nečinných vláken, která udržuje hostitele ve fondu vláken v předvídání požadavků.  
+Získá minimální počet nečinných vláken, které udržuje hostitele ve fondu vláken čekat na případná požadavků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,35 +37,35 @@ HRESULT GetMinThreads (
   
 #### <a name="parameters"></a>Parametry  
  `MinThreads`  
- [out] Ukazatel na minimální počet nečinnosti pracovních vláken, které aktuálně udržuje hostitele.  
+ [out] Ukazatel na minimální počet nečinných pracovních vláken, které aktuálně uchovává hostitele.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetMinThreads` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`GetMinThreads` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_NOTIMPL|Hostitel neposkytuje implementace `GetMinThreads`.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_NOTIMPL|Hostitel neposkytuje implementaci `GetMinThreads`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel není potřeba poskytnout implementaci `GetMinThreads`. V takovém případě má být vrácen při použití hodnoty HRESULT E_NOTIMPL.  
+ Hostitel není potřeba zajišťovat implementaci rozhraní `GetMinThreads`. V tomto případě měla by vrátit hodnotu HRESULT E_NOTIMPL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.ThreadPool.GetMinThreads%2A>  
- <xref:System.Threading.ThreadPool>  
- [GetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)  
- [SetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)  
- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Threading.ThreadPool.GetMinThreads%2A>
+- <xref:System.Threading.ThreadPool>
+- [GetMaxThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)
+- [SetMinThreads – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)
+- [IHostThreadPoolManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

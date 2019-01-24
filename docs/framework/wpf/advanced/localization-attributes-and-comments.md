@@ -5,41 +5,41 @@ helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-ms.openlocfilehash: 7cfcc9fa4dc3bc1450febb39500b7d96f92beac6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3032a0ca19f919344a3f73ea8689a222896093f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33547264"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523712"
 ---
 # <a name="localization-attributes-and-comments"></a>Atributy a komentáře lokalizace
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, poskytuje vývojářům poskytovat pravidly a tipy pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahovat dvě sady informace: atributy lokalizovatelnost a lokalizace vlastní komentáře. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které jsou lokalizovat. Vlastní komentáře jsou veškeré informace, které chce zahrnují vytváření aplikací.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] komentáře lokalizace jsou vlastnosti, uvnitř [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód, získáte ho od vývojářům poskytuje pravidla a pokyny pro lokalizaci. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] lokalizace komentáře obsahují dvě sady informace: lokalizovatelnosti atributy a komentáře lokalizace volného tvaru. Lokalizovatelnost atributy jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace rozhraní API k označení prostředků, které mají být lokalizována. Komentáře volného tvaru jsou veškeré informace, které autor aplikace chce zahrnovat.  
   
 
   
 <a name="Localizer_Comments_"></a>   
-## <a name="localization-comments"></a>Lokalizace komentáře  
- Pokud kód aplikace autoři mít požadavky na konkrétní elementy v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], jako je například omezení délka textu, rodinu písem a velikost písma, se může nesou tyto informace k překladatelům při lokalizaci s komentáři v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] kódu. Proces přidávání komentářů ke zdrojovému kódu vypadá takto:  
+## <a name="localization-comments"></a>Komentáře lokalizace  
+ Pokud kód aplikace Autoři mají požadavky na konkrétní prvky v [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], jako je například omezení na délku textu rodinu písem a velikost písma sdělují Lokalizátoři s komentáři v těchto informací [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] kódu. Proces pro přidávání komentářů ke zdrojovému kódu vypadá takto:  
   
-1.  Vývojář aplikace přidá lokalizace komentáře [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód.  
+1.  Vývojář aplikace přidá komentáře lokalizace [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] zdrojový kód.  
   
-2.  Během procesu sestavení můžete určit, v souboru .proj zda psát komentáře volného formátu lokalizace v sestavení, pruhu se součástí komentáře nebo pruhu se všechny komentáře. Odstraní se na komentáře jsou umístěny v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značka, např:  
+2.  Během procesu sestavení můžete určit v souboru souborů .proj, jestli se má zanechávat komentáře lokalizace volného tvaru v sestavení, pásků si část poznámky nebo pruhu si všechny komentáře. Komentáře odebrána navýšením kapacity jsou umístěné v samostatném souboru. Zadejte vaše možnost použití `LocalizationDirectivesToLocFile` značku, třeba:  
   
      `<LocalizationDirectivesToLocFile>` *Hodnota* `</LocalizationDirectivesToLocFile>`  
   
-3.  Hodnoty, které mohou být přiřazeny jsou:  
+3.  Je možné přiřadit hodnoty jsou:  
   
-    -   **Žádný** – jak komentářů a atributů zůstane uvnitř sestavení a je generována žádný samostatný soubor.  
+    -   **Žádný** – jak komentářů a atributů zůstávají uvnitř sestavení a vygeneruje se žádný samostatný soubor.  
   
-    -   **CommentsOnly** – odstraní pouze komentáře od sestavení a umístí je do samostatné LocFile.  
+    -   **CommentsOnly** – odebere jenom komentářů ze sestavení a umístí je do samostatné LocFile.  
   
-    -   **Všechny** – odstraní komentářů a atributů ze sestavení a umístí je i v samostatných LocFile.  
+    -   **Všechny** – odstraní komentářů a atributů ze sestavení a umístí je do samostatné LocFile.  
   
-4.  Když lokalizovatelný prostředky se extrahují z [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], atributy lokalizovatelnost dodržovaly [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] lokalizace rozhraní API.  
+4.  Když lokalizovatelné prostředky se extrahují z [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], jsou dodržovány lokalizovatelnosti atributy [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)] lokalizace rozhraní API.  
   
-5.  Lokalizační soubory komentář, obsahuje pouze vlastní poznámky, jsou součástí procesu lokalizace později.  
+5.  Soubory komentáře lokalizace, obsahující pouze volného tvaru komentáře, jsou začleněny do proces lokalizace později.  
   
- Následující příklad ukazuje, jak přidat lokalizace komentáře [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] souboru.  
+ Následující příklad ukazuje, jak přidat komentáře lokalizace [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)] souboru.  
   
  `<TextBlock x:Id = "text01"`  
   
@@ -59,48 +59,48 @@ ms.locfileid: "33547264"
   
  `</TextBlock>`  
   
- V předchozí ukázce Localization.Attributes oddíl obsahuje atributů lokalizace a komentáře Localization.Comments části vlastní. Následující tabulky ukazují na lokalizátora atributy a komentářů a jejich význam.  
+ V předchozí ukázce Localization.Attributes oddíl obsahuje lokalizace atributy a komentáře Localization.Comments části volného tvaru. Následující tabulky popisují atributy a komentáře a jejich význam pro lokalizátora.  
   
 |Lokalizace atributy|Význam|  
 |-----------------------------|-------------|  
-|$Content (unmodifiable čitelný Text)|Obsah elementu TextBlock nemůže být upraven. Překladatelům při lokalizaci nelze změnit, je slovo "Microsoft". Obsah je lokalizátora viditelné (parametr Readable). Kategorie obsahu je text.|  
-|FontFamily (Unmodifiable čitelné)|Nelze změnit vlastnost rodiny písem TextBlock elementu, ale se zobrazí lokalizátora.|  
+|$Content (neupravitelných čitelný Text)|Obsah prvku TextBlock nelze upravit. Lokalizátoři nelze změní celé slovo "Microsoft". Obsah je lokalizátora viditelné (přístupné pro čtení). Kategorie obsahu je text.|  
+|FontFamily (neupravitelných čitelné)|Nelze změnit vlastnost rodiny písem prvku TextBlock, ale je viditelný lokalizátora.|  
   
-|Lokalizace vlastní komentáře|Význam|  
+|Komentáře lokalizace volného tvaru|Význam|  
 |--------------------------------------|-------------|  
-|$Content (ochranná známka)|Vytváření aplikací informuje lokalizátora, že je obsah v elementu TextBlock ochrannou známku.|  
-|Velikost písma (velikost písma ochranná známka)|Vytváření aplikací označuje, že vlastnost velikost písma postupujte podle velikosti standardní ochranná známka.|  
+|$Content (Trademark)|Vytváření aplikací říká lokalizátora, že obsah prvku TextBlock je ochranná známka.|  
+|Velikost písma (ochranná známka písmo)|Autor aplikace znamená, že vlastnost velikost písma by měly dodržovat standardní ochranná známka velikost.|  
   
 ### <a name="localizability-attributes"></a>Atributy lokalizovatelnosti  
- Informace v Localization.Attributes obsahuje seznam dvojic: název cílové hodnoty a lokalizovatelnost přidružené hodnoty. Název cílové může být název vlastnosti nebo speciální $Content název. Pokud je název vlastnosti, cílová hodnota je hodnota vlastnosti. Pokud je $Content, cílová hodnota je obsah elementu.  
+ Informace v Localization.Attributes obsahuje seznam dvojic, přičemž: název cílové hodnoty a lokalizovatelnosti přidružené hodnoty. Název cílové může být název vlastnosti nebo speciální $Content název. Pokud je název vlastnosti, cílová hodnota je hodnota vlastnosti. Pokud je $Content, cílová hodnota je obsah elementu.  
   
  Existují tři typy atributů:  
   
--   **Kategorie**. Určuje, zda má být upravitelnými z nástroje lokalizátora hodnotu. V tématu <xref:System.Windows.LocalizabilityAttribute.Category%2A>.  
+-   **Kategorie**. Určuje, zda má být hodnota z nástroje lokalizátora lze měnit. Viz <xref:System.Windows.LocalizabilityAttribute.Category%2A>.  
   
--   **Čitelnost**. Určuje, zda má nástroj lokalizátora čtení (a zobrazení) hodnotu. V tématu <xref:System.Windows.LocalizabilityAttribute.Readability%2A>.  
+-   **Lepší čitelnost**. Určuje, zda by měl nástroj lokalizátora čtení (a zobrazení) hodnotu. Viz <xref:System.Windows.LocalizabilityAttribute.Readability%2A>.  
   
--   **Modifiability**. Určuje, zda nástroj lokalizátora umožňuje hodnota má být změněn. V tématu <xref:System.Windows.LocalizabilityAttribute.Modifiability%2A>.  
+-   **Modifiability**. Určuje, zda nástroj lokalizátora umožňuje hodnota má být upraven. Viz <xref:System.Windows.LocalizabilityAttribute.Modifiability%2A>.  
   
- Tyto atributy lze zadat v libovolném pořadí oddělené mezerou. V případě, že jsou zadány duplicitní atributy, přepíše poslední atribut bývalé ty. Například Localization.Attributes = "Unmodifiable upravitelnými" sady Modifiability k Modifiable, protože se jedná o poslední hodnotu.  
+ Tyto atributy můžete zadat v libovolném pořadí oddělené mezerou. V případě, že jsou zadány duplicitní atributy, přepíše atribut posledních ty dřívější. Například Localization.Attributes = "Neupravitelných upravitelná" Nastaví Modifiability k Modifiable, protože se jedná o poslední hodnotu.  
   
- Modifiability a přehlednosti je zřejmých. Atribut kategorie poskytuje předdefinovaných kategorií, které pomáhají lokalizátora při překladu textu. Kategorie, jako je Text, Label a název udělení lokalizátora informace o tom, jak převede text. Existují také speciální kategorie: None, zděděné, ignorovat a NeverLocalize.  
+ Modifiability a čitelnost není potřeba vysvětlovat. Kategorie atributu poskytuje předdefinované kategorie, které pomáhají lokalizátora při překladu textu. Kategorie, jako jsou například Text, popisek a název dávající lokalizátora informace o tom, jak převést text. Existují také speciální kategorie: NONE, dědění, ignorovat a NeverLocalize.  
   
- V následující tabulce jsou uvedeny význam speciální kategorie.  
+ V následující tabulce jsou uvedeny význam zvláštních kategoriích.  
   
 |Kategorie|Význam|  
 |--------------|-------------|  
-|Žádné|Cílová hodnota nemá žádné definované kategorie.|  
+|Žádná|Cílová hodnota nemá žádné definované kategorie.|  
 |Dědění|Cílová hodnota dědí z nadřazeného jeho kategorie.|  
-|Ignorovat|Cílová hodnota je ignorován v procesu lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. Nebude to mít vliv podřízené uzly.|  
-|NeverLocalize|Aktuální hodnota nelze lokalizovat. Tuto kategorii zdědí podřízené objekty daného elementu.|  
+|Ignorovat|Cílová hodnota je ignorována v proces lokalizace. Ignorovat ovlivní pouze aktuální hodnotu. To nebude mít vliv na podřízené uzly.|  
+|NeverLocalize|Aktuální hodnota nemůže být lokalizována. Tato kategorie dědí podřízené objekty daného elementu.|  
   
 <a name="Localization_Comments"></a>   
-## <a name="localization-comments"></a>Lokalizace komentáře  
- Localization.Comments obsahuje řetězce volného formátu týkající se cílové hodnoty. Vývojáři aplikací můžete přidat informace, které poskytují překladatelům při lokalizaci pomocné parametry o tom, jak překladu textu aplikace. Formát komentáře může být libovolný řetězec obklopená "("). Použití "\\, abyste se vyhnuli znaků.  
+## <a name="localization-comments"></a>Komentáře lokalizace  
+ Localization.Comments obsahuje týkající se cílová hodnota řetězce volného tvaru. Vývojáři aplikací mohou přidat informace, které poskytují Lokalizátoři nápovědu, jak by měl přeložit text žádosti. Formát komentářů může být libovolný řetězec ohraničený "()". Použití "\\" řídicí znaky.  
   
-## <a name="see-also"></a>Viz také  
- [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  
- [Vytvoření tlačítka pomocí automatického rozložení](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)  
- [Automatické rozložení použitím mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)  
- [Lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)
+## <a name="see-also"></a>Viz také:
+- [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)
+- [Vytvoření tlačítka pomocí automatického rozložení](../../../../docs/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button.md)
+- [Automatické rozložení použitím mřížky](../../../../docs/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout.md)
+- [Lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md)

@@ -1,15 +1,15 @@
 ---
-title: '&lt;Diagnostika&gt;'
+title: '&lt;diagnostics&gt;'
 ms.date: 03/30/2017
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
-ms.openlocfilehash: 3ee611d3903ba36748837d2743cd03d54670befd
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: de11145620e8fdf96785908df85ab5ecdfd2e25e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149342"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524587"
 ---
-# <a name="ltdiagnosticsgt"></a>&lt;Diagnostika&gt;
+# <a name="ltdiagnosticsgt"></a>&lt;diagnostics&gt;
 `diagnostics` Prvek definuje nastavení, které můžete použít správce pro řízení a kontrolu za běhu.  
   
  \<system.ServiceModel>  
@@ -47,15 +47,15 @@ ms.locfileid: "54149342"
 |Atribut|Popis|  
 |---------------|-----------------|  
 |etwProviderId|Řetězec určující identifikátor poskytovatele trasování událostí, která zapisuje události do relací ETW.|  
-|Čítače výkonu|Určuje, zda jsou povoleny čítače výkonu pro sestavení. Platné hodnoty jsou<br /><br /> -Vypnuto: Čítače výkonu jsou zakázány.<br />-ServiceOnly: Je povoleno pouze čítače výkonu relevantní pro tuto službu.<br />-Všechny: Čítače výkonu lze zobrazit v době běhu.<br />– Výchozí hodnota: Je vytvořen _WCF_Admin instance čítače výkonu jediné. Tato instance se používá k povolení shromažďování dat technologie SQM pro používá infrastrukturu. Žádné hodnoty čítače pro tuto instanci se aktualizují a proto bude i nadále na nule. Toto je výchozí hodnota, pokud není k dispozici pro službu WCF žádná konfigurace.|  
+|performanceCounters|Určuje, zda jsou povoleny čítače výkonu pro sestavení. Platné hodnoty jsou<br /><br /> -Vypnuto: Čítače výkonu jsou zakázány.<br />-ServiceOnly: Je povoleno pouze čítače výkonu relevantní pro tuto službu.<br />-Všechny: Čítače výkonu lze zobrazit v době běhu.<br />– Výchozí hodnota: Je vytvořen _WCF_Admin instance čítače výkonu jediné. Tato instance se používá k povolení shromažďování dat technologie SQM pro používá infrastrukturu. Žádné hodnoty čítače pro tuto instanci se aktualizují a proto bude i nadále na nule. Toto je výchozí hodnota, pokud není k dispozici pro službu WCF žádná konfigurace.|  
 |wmiProviderEnabled|Logická hodnota, která určuje, zda je povolen zprostředkovatel rozhraní WMI pro sestavení. Zprostředkovatel rozhraní WMI pro uživatele je potřeba k získání přístupu za běhu k řízení a kontrolu funkce služby Windows Communication Foundation (WCF). Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<endToEndTracing >](../../../../../docs/framework/configure-apps/file-schema/wcf/endtoendtracing.md)|Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty začátku do konce trasování za běhu aplikace služby.|  
-|[\<messageLogging >](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)|Popisuje nastavení pro protokolování zpráv WCF.|  
+|[\<endToEndTracing>](../../../../../docs/framework/configure-apps/file-schema/wcf/endtoendtracing.md)|Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty začátku do konce trasování za běhu aplikace služby.|  
+|[\<messageLogging>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)|Popisuje nastavení pro protokolování zpráv WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -84,6 +84,6 @@ ms.locfileid: "54149342"
 </diagnostics>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>  
- <xref:System.ServiceModel.Diagnostics>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.DiagnosticSection>
+- <xref:System.ServiceModel.Diagnostics>

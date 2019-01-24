@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření tvarovaných formulářů Windows'
+title: 'Postupy: Vytvoření formuláře Windows tvaru'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - Windows Forms, circular
 - forms [Windows Forms], custom shapes
 ms.assetid: 6e6041e0-8e67-4487-b1e9-e410dbd1ef6c
-ms.openlocfilehash: 4a799baa2732b4d2a28a9d8d67fa54d8b48dd191
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 937b785078e58026a5360155805f9cf37031cec6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522214"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527273"
 ---
-# <a name="how-to-create-a-shaped-windows-form"></a>Postupy: Vytváření tvarovaných formulářů Windows
-Tento příklad dává formuláře eliptické tvar, který změní s formuláři.  
+# <a name="how-to-create-a-shaped-windows-form"></a>Postupy: Vytvoření formuláře Windows tvaru
+V tomto příkladu obsahuje formulář elipsy tvar, který mění svou velikost formuláře.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.Drawing.ConceptualHowTos#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ConceptualHowTos/cpp/form1.cpp#10)]
@@ -36,14 +36,14 @@ Tento příklad dává formuláře eliptické tvar, který změní s formuláři
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na <xref:System.Windows.Forms> a <xref:System.Drawing> obory názvů.  
+-   Odkazy <xref:System.Windows.Forms> a <xref:System.Drawing> obory názvů.  
   
- Tento příklad přepíše <xref:System.Windows.Forms.Control.OnPaint%2A> metoda změnit tvar formuláře. Chcete-li použít tento kód, zkopírujte deklarace metody, jakož i kód výkresu uvnitř metody.  
+ Tento příklad přepíše <xref:System.Windows.Forms.Control.OnPaint%2A> metoda ke změně tvaru formě. Chcete-li tento kód použít, zkopírujte deklarace metody, stejně jako kód výkresu uvnitř metody.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Control.OnPaint%2A>  
- <xref:System.Drawing.Region>  
- <xref:System.Drawing>  
- <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>  
- <xref:System.Windows.Forms.Control.Region%2A>  
- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Control.OnPaint%2A>
+- <xref:System.Drawing.Region>
+- <xref:System.Drawing>
+- <xref:System.Drawing.Drawing2D.GraphicsPath.AddEllipse%2A>
+- <xref:System.Windows.Forms.Control.Region%2A>
+- [Začínáme s programováním grafiky](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)

@@ -8,22 +8,22 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic], contexts
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-ms.openlocfilehash: f88020c7407fb9c91e06bc2ee177773171e344fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7db5f8afdfe61709aba9569bcee8c0d3aa6ee44f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33599301"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527039"
 ---
 # <a name="optional-visual-basic"></a>Nepovinné (Visual Basic)
-Určuje, že při volání procedury lze vynechat argumentu procedury.  
+Určuje, že argumentu procedury může při volání procedury vynechat.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro každý volitelný parametr je nutné určit konstantní výraz jako výchozí hodnota tohoto parametru. Pokud je výsledkem výrazu [nic](../../../visual-basic/language-reference/nothing.md), výchozí hodnota typu dat, hodnota se používá jako výchozí hodnota parametru.  
+ Pro každý volitelný parametr musíte zadat konstantní výraz jako výchozí hodnota tohoto parametru. Pokud je výraz vyhodnocen [nic](../../../visual-basic/language-reference/nothing.md), je použita výchozí hodnota datového typu hodnoty jako výchozí hodnotu parametru.  
   
- Pokud seznam parametrů obsahuje volitelný parametr, musí být každý parametr, který následuje také volitelné.  
+ Pokud seznam parametrů obsahuje volitelný parametr, každý parametr, která ji následuje musí být také volitelný.  
   
- `Optional` Modifikátor lze použít v těchto kontexty:  
+ `Optional` Modifikátor lze použít v těchto kontextech:  
   
 -   [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
@@ -34,13 +34,13 @@ Určuje, že při volání procedury lze vynechat argumentu procedury.
 -   [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 > [!NOTE]
->  Při volání procedury s nebo bez volitelné parametry, můžete předat argumentů podle pozice nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  
+>  Při volání procedury s nebo bez něj volitelné parametry, můžete předat argumenty podle umístění nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).  
   
 > [!NOTE]
->  Procedura se volitelné parametry můžete také definovat pomocí přetížení. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze postup, který přijme parametr a ten, který není. Další informace najdete v tématu [přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+>  Proceduru s volitelnými parametry lze definovat také pomocí přetížení. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury, ten, který přijímá parametr a ten, který nepodporuje. Další informace najdete v tématu [přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje procedury, která je volitelný parametr.  
+ Následující příklad definuje proceduru, která je volitelný parametr.  
   
 ```  
 Public Function FindMatches(ByRef values As List(Of String),  
@@ -62,11 +62,11 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob volání procedury s argumenty předávané podle pozice a argumentů předaných podle názvu. Postup má dva volitelné parametry.  
+ Následující příklad ukazuje, jak volání procedury s argumenty předány podle pozice a s argumenty předány podle názvu. Postup má dva volitelné parametry.  
   
  [!code-vb[VbVbalrKeywords#21](../../../visual-basic/language-reference/codesnippet/VisualBasic/optional_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)
+- [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

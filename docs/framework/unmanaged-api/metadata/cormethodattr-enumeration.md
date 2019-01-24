@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8f144426996583d5058f70daed99d8a37cfb6bfb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a69ca889e226168adb1b84ab64dc0f882c27606
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520529"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr – výčet
 Obsahuje hodnoty, které popisují funkce metody.  
@@ -69,36 +69,36 @@ typedef enum CorMethodAttr {
 |Člen|Popis|  
 |------------|-----------------|  
 |`mdMemberAccessMask`|Určuje přístup ke členu.|  
-|`mdPrivateScope`|Určuje, že člena nelze odkazovat.|  
-|`mdPrivate`|Určuje, že je přístupná jenom pro nadřazený typ člena.|  
-|`mdFamANDAssem`|Určuje, že je člen přístupný podtypů pouze v tomto sestavení.|  
-|`mdAssem`|Určuje, že je člen v accessibly každému uživateli v sestavení.|  
-|`mdFamily`|Určuje, že je dostupný pouze podle typu a podtypů člena.|  
-|`mdFamORAssem`|Určuje, že je člen přístupný odvozené třídy a dalších typů v jeho sestavení.|  
-|`mdPublic`|Určuje, že je člen přístupné všechny typy s přístupem k oboru.|  
-|`mdStatic`|Určuje, zda člen je definován v rámci typu, nikoli jako člen instance.|  
-|`mdFinal`|Určuje, že metoda nelze přepsat.|  
+|`mdPrivateScope`|Určuje, že člen se nedá odkazovat.|  
+|`mdPrivate`|Určuje, že člen je přístupný pouze pomocí nadřazeného typu.|  
+|`mdFamANDAssem`|Určuje, že člen je přístupný pro podtypy pouze v tomto sestavení.|  
+|`mdAssem`|Určuje, zda člen accessibly kdokoli v sestavení.|  
+|`mdFamily`|Určuje, že člen je přístupný pouze podle typu a podtypy.|  
+|`mdFamORAssem`|Určuje, že člen je přístupný z odvozených tříd a další typy v sestavení.|  
+|`mdPublic`|Určuje, že člen je přístupné pro všechny typy s přístupem k oboru.|  
+|`mdStatic`|Určuje, že člen je definovaný v rámci typu, nikoli jako člena instance.|  
+|`mdFinal`|Určuje, že metoda nemůže být přepsána.|  
 |`mdVirtual`|Určuje, zda lze přepsat metodu.|  
-|`mdHideBySig`|Určuje, že metoda skryje podle názvu a podpis, nikoli jen název.|  
+|`mdHideBySig`|Určuje, že metoda skrývá podle názvu a podpisu, nikoli pouze podle názvu.|  
 |`mdVtableLayoutMask`|Určuje rozložení virtuální tabulky.|  
 |`mdReuseSlot`|Určuje, že slotu použít pro tuto metodu v tabulce virtuální znovu použít. Toto nastavení je výchozí.|  
-|`mdNewSlot`|Určuje, že metoda vždy získá nový slot v tabulce virtuálních.|  
-|`mdCheckAccessOnOverride`|Určuje, že metoda se dá přepsat stejné typy, pro které je viditelná.|  
+|`mdNewSlot`|Určuje, že metoda vždy získá nový slot v tabulce virtuální.|  
+|`mdCheckAccessOnOverride`|Určuje, že metoda se dá přepsat stejné typy, na které je viditelné.|  
 |`mdAbstract`|Určuje, že metoda není implementována.|  
-|`mdSpecialName`|Určuje, že metoda je speciální a že její název popisuje jak.|  
-|`mdPinvokeImpl`|Určuje, že metoda implementace je dál pomocí služby PInvoke.|  
-|`mdUnmanagedExport`|Určuje, že metoda je spravovaný metoda exportovat na nespravovaný kód.|  
+|`mdSpecialName`|Určuje, že metoda je speciální a že jeho název popisuje jak.|  
+|`mdPinvokeImpl`|Určuje, že implementace metody je dál pomocí služby PInvoke.|  
+|`mdUnmanagedExport`|Určuje, že metoda je spravované metody exportovat do nespravovaného kódu.|  
 |`mdReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`mdRTSpecialName`|Určuje, že by měl modul common language runtime kontrolovat kódování název metody.|  
-|`mdHasSecurity`|Určuje, že metoda má zabezpečení s ním spojená.|  
+|`mdRTSpecialName`|Určuje, že modul common language runtime by měla kontrolovat kódování název metody.|  
+|`mdHasSecurity`|Určuje, že tato metoda má přidruženo zabezpečení.|  
 |`mdRequireSecObject`|Určuje, že metoda volá jinou metodu obsahující zabezpečovací kód.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

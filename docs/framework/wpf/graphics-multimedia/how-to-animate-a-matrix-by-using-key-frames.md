@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Matrix properties [WPF], animating with key frames
 - key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-ms.openlocfilehash: 8f58b43a870f2c85ae4349965f586a33e2f75a2a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: fff550a5a3a85575fe86c5290aa604ab00f1437f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485847"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518510"
 ---
 # <a name="how-to-animate-a-matrix-by-using-key-frames"></a>Postupy: Animace matice použitím klíčových snímků
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.MatrixTransform.Matrix%2A> vlastnost <xref:System.Windows.Media.MatrixTransform> použitím klíčových snímků.  
@@ -34,8 +34,8 @@ Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.MatrixTransform
   
  Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.MatrixTransform.Matrix%2A>  
- <xref:System.Windows.Media.MatrixTransform>  
- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.MatrixTransform.Matrix%2A>
+- <xref:System.Windows.Media.MatrixTransform>
+- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Témata s postupy ke klíčovým snímkům](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animation-how-to-topics.md)

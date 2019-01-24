@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;wsHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: 4bd385e8c4fee1ea340e1d9df9816e25760efb02
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: a759f74e923c9d81391abf82fa08491f3b31c990
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148627"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517946"
 ---
 # <a name="lttransportgt-of-ltwshttpbindinggt"></a>&lt;transport&gt; – &lt;wsHttpBinding&gt;
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
@@ -16,7 +16,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 \<vazby >  
 \<wsHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -54,7 +54,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 |`realm`|Řetězec určující sféru ověřování hodnotou hash nebo základní ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověření určuje nejméně název hostitele, který provádí ověřování. Můžete také určit kolekci uživatelů, který má přístup. Sféra ověření pro ověření, který z nich několik možných uživatelská jména a hesla je možné dotazovat uživatele.|  
 |`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -65,7 +65,7 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 |`Windows`|Používá integrované ověřování Windows.|  
 |`Certificate`|Certifikáty X.509 používá k ověření klienta.|  
   
-## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
+## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
@@ -85,13 +85,13 @@ Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Představuje možnosti zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.HttpTransportSecurity>  
- <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>  
- <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Transport%2A>  
- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.HttpTransportSecurity>
+- <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>
+- <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Transport%2A>
+- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

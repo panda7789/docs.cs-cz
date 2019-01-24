@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24efa08e9c4b2e242af95112b7f055e9173aaa7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7693111427f3181adcd2127ad5ecb2a317e30921
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414674"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515612"
 ---
 # <a name="icordebugmanagedcallbackcreateprocess-method"></a>ICorDebugManagedCallback::CreateProcess – metoda
-Ladicí program upozorní, když proces byl připojen nebo při prvním spuštění.  
+Ladicí program upozorní, když proces byl připojen nebo první spuštění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +37,13 @@ HRESULT CreateProcess (
   
 #### <a name="parameters"></a>Parametry  
  `pProcess`  
- [v] Ukazatel na ICorDebugProcess objekt, který představuje proces, který se má připojit nebo spustit.  
+ [in] Ukazatel na objekt ICorDebugProcess, který představuje proces, který se má připojit nebo spustit.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda není volána, dokud se neinicializuje modul common language runtime. Většina [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody vrátí CORDBG_E_NOTREADY před `CreateProcess` zpětného volání.  
+ Tato metoda není volána, dokud se inicializovat modul common language runtime. Většina [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) metody vrátí CORDBG_E_NOTREADY před `CreateProcess` zpětného volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ HRESULT CreateProcess (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

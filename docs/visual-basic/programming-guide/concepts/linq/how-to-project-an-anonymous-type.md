@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: projektu anonymní typ (Visual Basic)'
+title: 'Postupy: Projektování anonymního typu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 30b42987-0e0e-4b2b-adb1-5255ddfbcd7b
-ms.openlocfilehash: 13500bc606cb99a4264e04657f4a0a8090f07174
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 613bf97556306503c427a70720272dd985495b13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643566"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527754"
 ---
-# <a name="how-to-project-an-anonymous-type-visual-basic"></a>Postupy: projektu anonymní typ (Visual Basic)
-V některých případech můžete chtít projektu dotaz pro nový typ, i když víte, že použijete tento typ se pouze na krátkou dobu. Je velké množství práce navíc k vytvoření nového typu jenom pro použití v projekci. V takovém případě má efektivnější přístup projekt anonymního typu. Anonymní typy umožňují definovat třídu, pak deklarovat a inicializovat objekt třídy, bez nutnosti poskytnutí název třídy.  
+# <a name="how-to-project-an-anonymous-type-visual-basic"></a>Postupy: Projektování anonymního typu (Visual Basic)
+V některých případech můžete chtít dotaz na nový typ projektu i v případě, že víte, že použijete tento typ se jenom na krátkou dobu. Je hodně práce navíc k vytvoření nového typu pouze pro použití v projekci. V tomto případě je efektivnější přístup k projektu anonymního typu. Anonymní typy umožňují definovat třídu, pak deklarovat a inicializovat objekt této třídy bez názvu třídy.  
   
- Anonymní typy jsou implementace C# matematickém koncept *řazené kolekce členů*. Matematický výraz řazené kolekce členů, pochází z pořadí jednoho, double, triple, čtyřikrát, pětkrát, n řazené kolekce členů. Odkazuje na konečné pořadí objektů, každý z konkrétního typu. To se někdy říká seznam dvojic název hodnota. Například obsah adresy [ukázkový soubor XML: typické nákupní objednávka (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) dokumentu XML může být vyjádřena takto:  
+ Anonymní typy jsou implementace jazyka C# matematické konceptu *řazené kolekce členů*. Matematický výraz řazené kolekce členů, pochází z pořadí jeden, double, triple, čtyřikrát, pětkrát, n řazené kolekce členů. Odkazuje na konečnou sekvenci objektů, každý z určitého typu. To se říká se jim seznam dvojic název/hodnota. Například obsah adresy [ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) dokument XML může být vyjádřen takto:  
   
 ```  
 Name: Ellen Adams  
@@ -23,12 +23,12 @@ Zip: 90952
 Country: USA  
 ```  
   
- Když vytvoříte instanci anonymního typu, je vhodné si ho představit jako vytváření pořadí n řazené kolekce členů. Pokud píšete dotaz, který vytvoří řazené kolekce členů v `Select` klauzule, dotaz vrátí `IEnumerable` řazené kolekce členů.  
+ Když vytvoříte instanci anonymního typu, je vhodné si ho představit jako vytvoření n-tice n pořadí. Pokud píšete dotaz, který vytvoří řazenou kolekci členů v `Select` klauzule, dotaz vrátí `IEnumerable` řazené kolekce členů.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `Select` klauzule projekty anonymního typu. V příkladu se pak použije `Dim` vytvořit `IEnumerable` objektu. V rámci `For Each` smyčky, proměnné iterace stane instanci anonymního typu vytvořen ve výrazu dotazu.  
+ V tomto příkladu `Select` klauzule projekty anonymního typu. Příklad poté použije `Dim` vytvořit `IEnumerable` objektu. V rámci `For Each` smyčky, iterační proměnná stane instanci anonymního typu vytvořené ve výrazu dotazu.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -53,5 +53,5 @@ LAZYK:Lazy K Kountry Store:John Steel
 LETSS:Let's Stop N Shop:Jaime Yorres  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

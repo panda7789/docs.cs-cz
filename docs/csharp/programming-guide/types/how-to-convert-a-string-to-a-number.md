@@ -8,12 +8,12 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: a75d6dd5fdb74ca3cb6fe28db7415aeb478e2237
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: d7971bfb4b6f96a2d8efb9c09f96c0bd2856b9d0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243215"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54528716"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převod řetězce na číslo (C# Průvodce programováním v)
 Můžete převést [řetězec](../../../csharp/language-reference/keywords/string.md) na číslo pomocí metod v <xref:System.Convert> třídy nebo pomocí `TryParse` nalezena metoda u různých číselných typů (int, long, float, atd.).  
@@ -54,8 +54,8 @@ Můžete převést [řetězec](../../../csharp/language-reference/keywords/strin
  [!code-csharp[csProgGuideTypes#5555](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_1.cs)]  
 [!code-csharp[csProgGuideTypes#24](../../../csharp/programming-guide/nullable-types/codesnippet/CSharp/how-to-convert-a-string-to-a-number_7.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Typy](../../../csharp/programming-guide/types/index.md)  
-- [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)  
+- [Typy](../../../csharp/programming-guide/types/index.md)
+- [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 - [Nástroj pro formátování rozhraní .NET framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

@@ -2,12 +2,12 @@
 title: Trvanlivý kontext instance
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: f5c066ae06e44f6cac4b9a7b98487aa6226b969f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ec01f83e25eb003e194424bbfa247011701dc1bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524423"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527485"
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
 Tento příklad ukazuje, jak přizpůsobit modul runtime Windows Communication Foundation (WCF) umožňuje trvalý instance kontexty. Jako svůj záložní úložiště (SQL Server 2005 Express v tomto případě) používá SQL Server 2005. Ale také poskytuje způsob, jak přistupovat k mechanismy vlastního úložiště.  
@@ -460,4 +460,4 @@ Press ENTER to shut down client
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
 author: KrzysztofCwalina
-ms.openlocfilehash: c9ed52c5a313676baeba66f5cb79c7a56927babb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3609d6ac4847cb081740fd698869df4976f83f8f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154421"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525479"
 ---
 # <a name="events-and-callbacks"></a>Události a zpětná volání
 Zpětná volání nejsou body rozšiřitelnosti, které umožňují rozhraní pro zpětné volání do uživatelského kódu prostřednictvím delegáta. Jsou tyto delegáty rozhraní Framework obvykle předat prostřednictvím parametru metody.  
@@ -39,11 +39,11 @@ Zpětná volání nejsou body rozšiřitelnosti, které umožňují rozhraní pr
   
  **✓ DO** pochopit, jsou prováděny voláním delegáta libovolný kód a který může mít dopad na zabezpečení, správnost a kompatibility.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -1,60 +1,60 @@
 ---
-title: 'Postupy: Určení, zda dva objekty jsou identické (Visual Basic).'
+title: 'Postupy: Určení, zda dva objekty jsou identické (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - testing [Visual Basic], objects
 - objects [Visual Basic], comparing
 - object variables [Visual Basic], determining identity
 ms.assetid: 7829f817-0d1f-4749-a707-de0b95e0cf5c
-ms.openlocfilehash: bbcac2fc51e57427b125ec2f5e68f017a60186d8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 62d73b6c3d706d9990be7783f0f3461fc0783d9f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650095"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512967"
 ---
-# <a name="how-to-determine-whether-two-objects-are-identical-visual-basic"></a>Postupy: Určení, zda dva objekty jsou identické (Visual Basic).
-V jazyce Visual Basic dva odkazy na proměnné jsou považovány za shodné, pokud jejich ukazatele jsou stejné, to znamená, pokud obě proměnné bodu na stejnou instanci třídy v paměti. Například v aplikaci Windows Forms, můžete chtít provést porovnání Chcete-li určit, zda aktuální instance (`Me`) je stejný jako konkrétní instanci, například `Form2`.  
+# <a name="how-to-determine-whether-two-objects-are-identical-visual-basic"></a>Postupy: Určení, zda dva objekty jsou identické (Visual Basic)
+V jazyce Visual Basic odkazy na dvě proměnné jsou považovány za shodné, pokud jejich ukazatele jsou stejné, to znamená, pokud obě proměnné odkazovat na stejnou instanci třídy v paměti. Například v aplikaci Windows Forms, můžete chtít provést porovnání k určení, zda aktuální instance (`Me`) je stejný jako konkrétní instance, jako například `Form2`.  
   
- Visual Basic poskytuje dva operátory k porovnání ukazatele. [Je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) vrátí `True` případě objekty jsou identické a [IsNot – operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md) vrátí `True` Pokud tomu tak není.  
+ Visual Basic poskytuje dva operátory porovnání ukazatele. [Je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) vrátí `True` Pokud objekty jsou identické a [IsNot – operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md) vrátí `True` Pokud tomu tak není.  
   
 ## <a name="determining-if-two-objects-are-identical"></a>Určení, zda dva objekty jsou identické  
   
 #### <a name="to-determine-if-two-objects-are-identical"></a>Chcete-li zjistit, zda dva objekty jsou identické  
   
-1.  Nastavení `Boolean` výraz k testování dva objekty.  
+1.  Nastavení `Boolean` výrazem, který testuje dva objekty.  
   
-2.  Do výrazu testování pomocí `Is` operátor s dva objekty jako operandy.  
+2.  Ve výrazu testování, použijte `Is` se tyto dva objekty jako operandy operátoru.  
   
-     `Is` Vrátí `True` Pokud objekty bodu na stejnou instanci třídy.  
+     `Is` Vrátí `True` Pokud objekty odkazovat na stejnou instanci třídy.  
   
-## <a name="determining-if-two-objects-are-not-identical"></a>Určení, pokud dva objekty nejsou identické  
- Občas můžete chtít k provedení akce, pokud dva objekty nejsou identické, a může být nevhodných kombinovat `Not` a `Is`, například `If Not obj1 Is obj2`. V takovém případě můžete použít `IsNot` operátor.  
+## <a name="determining-if-two-objects-are-not-identical"></a>Určení, pokud dva objekty nejsou stejné  
+ Někdy chcete provést akci, pokud dva objekty nejsou stejné, a může být nevhodnou zkombinovat `Not` a `Is`, například `If Not obj1 Is obj2`. V takovém případě můžete použít `IsNot` operátor.  
   
-#### <a name="to-determine-if-two-objects-are-not-identical"></a>Chcete-li zjistit, pokud dva objekty nejsou identické  
+#### <a name="to-determine-if-two-objects-are-not-identical"></a>Chcete-li zjistit, pokud dva objekty nejsou stejné  
   
-1.  Nastavení `Boolean` výraz k testování dva objekty.  
+1.  Nastavení `Boolean` výrazem, který testuje dva objekty.  
   
-2.  Do výrazu testování pomocí `IsNot` operátor s dva objekty jako operandy.  
+2.  Ve výrazu testování, použijte `IsNot` se tyto dva objekty jako operandy operátoru.  
   
      `IsNot` Vrátí `True` Pokud objekty neodkazují na stejnou instanci třídy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad testy dvojici `Object` proměnné, které chcete zobrazit, pokud se bod na stejnou instanci třídy.  
+ Následující příklad testuje dvojice `Object` proměnné zobrazíte, pokud ukazují na stejnou instanci třídy.  
   
  [!code-vb[VbVbalrKeywords#14](../../../../visual-basic/language-reference/codesnippet/VisualBasic/how-to-determine-whether-two-objects-are-identical_1.vb)]  
   
- V předchozím příkladu zobrazí následující výstup.  
+ V předchozím příkladu se zobrazí následující výstup.  
   
  `objA different from objB? True`  
   
  `objA identical to objC? True`  
   
-## <a name="see-also"></a>Viz také  
- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
- [Operátor Is](../../../../visual-basic/language-reference/operators/is-operator.md)  
- [Operátor IsNot](../../../../visual-basic/language-reference/operators/isnot-operator.md)  
- [Postupy: Určení, zda dva objekty spolu souvisí](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)  
- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+## <a name="see-also"></a>Viz také:
+- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
+- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
+- [Operátor Is](../../../../visual-basic/language-reference/operators/is-operator.md)
+- [Operátor IsNot](../../../../visual-basic/language-reference/operators/isnot-operator.md)
+- [Postupy: Určení, zda dva objekty souvisejí](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)
+- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)

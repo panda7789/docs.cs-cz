@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4fd6102b65137a06009428c1245b80c0d44924a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4dd08afba664a491b3ba398f3da4c6a73cda5378
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445488"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517133"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName – metoda
-Získá token metadat pro typ, který je definován v zadaném oboru, který není v aktuálním oboru.  
+Získá token metadat pro typ, který je definován v zadaném rozsahu, který se nenachází v aktuálním oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +39,33 @@ HRESULT DefineTypeRefByName (
   
 #### <a name="parameters"></a>Parametry  
  `tkResolutionScope`  
- [v] Token zadání oboru rozlišení. Platné jsou následující typy tokenů:  
+ [in] Token určující rozlišovací obor. Platné jsou následující typy tokenů:  
   
--   `mdModuleRef`, pokud typ je definovaná ve stejném sestavení, ve kterém je definovaný volající.  
+-   `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definována volající.  
   
--   `mdAssemblyRef`, pokud typ je definována v sestavení než ten, ve kterém je definovaný volající.  
+-   `mdAssemblyRef`, pokud je typ definovaný v jiném sestavení než ten, ve kterém je definována volající.  
   
 -   `mdTypeRef`, pokud je typ vnořeného typu.  
   
--   `mdModule`, pokud typ je definovaná ve stejném modulu, ve kterém je definovaný volající.  
+-   `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definována volající.  
   
--   Hodnota Null, pokud typ je definována globálně.  
+-   Hodnota Null, pokud je typ definován globálně.  
   
  `szName`  
- [v] Název cílového typu ve formátu Unicode.  
+ [in] Název cílového typu v kódování Unicode.  
   
  `ptr`  
  [out] Ukazatel `mdTypeRef` token, který je přiřazen k typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

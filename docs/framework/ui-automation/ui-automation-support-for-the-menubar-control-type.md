@@ -8,16 +8,16 @@ helpviewer_keywords:
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 7b73b4bf8887e5828e6341e55f48bbc867ed7268
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cb78c9463093789023a3f62b7bbf3083705ce59a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196866"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524322"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma obsahuje informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu <xref:System.Windows.Automation.ControlType.MenuBar> ovládací prvek typu. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], typ ovládacího prvku je představují sadu podmínek, které ovládací prvek musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny ke [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzorů ovládacích prvků.  
   
@@ -31,7 +31,7 @@ ms.locfileid: "47196866"
   
 |Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
-|Řádek nabídek<br /><br /> -MenuItem (1 nebo více)<br />-Další ovládací prvky (0 nebo řada)|Řádek nabídek<br /><br /> -MenuItem (1 nebo více)<br />-Další ovládací prvky (0 nebo řada)|  
+|MenuBar<br /><br /> -MenuItem (1 nebo více)<br />-Další ovládací prvky (0 nebo řada)|MenuBar<br /><br /> -MenuItem (1 nebo více)<br />-Další ovládací prvky (0 nebo řada)|  
   
  Ovládací prvky stavového řádku nabídky může obsahovat další ovládací prvky, jako jsou textová pole a pole se seznamem v rámci struktury. Tyto další ovládací prvky odpovídají "ostatní ovládací prvky" výše uvedené v zobrazení ovládacího prvku a obsah.  
   
@@ -44,13 +44,13 @@ ms.locfileid: "47196866"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Hodnota vystavené této vlastnosti musí zahrnovat všechny ovládací prvky, které jsou v něm obsaženy.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Ovládací prvek panel nabídky nemusí název, pokud má aplikace více než jeden řádek nabídek. Pokud existuje více než jeden řádek nabídek v aplikaci, pak tato vlastnost by měla být používá k vystavení rozlišující názvy, například "Formát" nebo "Osnova".|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Ovládací prvky stavového řádku nabídky nikdy mít popisek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Řádek nabídek|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|MenuBar|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"nabídek"|Lokalizovaný řetězec odpovídající typu ovládacího prvku na řádku nabídek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Hodnota TRUE|Ovládací prvek panel nabídky je vždy součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Ovládací prvek panel nabídky je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|Pravda|Ovládací prvek panel nabídky je vždy součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Pravda|Ovládací prvek panel nabídky je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty>|V části poznámky.|Hodnota této vlastnosti závisí na tom, zda ovládací prvek viditelný na obrazovce.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.OrientationProperty>|Závisí|Tato vlastnost udává, jestli je ovládací prvek nabídky panelu vodorovně nebo svisle.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Hodnota TRUE|Ovládací prvky stavového řádku nabídky jsou může získat fokus klávesnice, protože ovládací prvky, které obsahují může trvat fokus klávesnice.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Pravda|Ovládací prvky stavového řádku nabídky jsou může získat fokus klávesnice, protože ovládací prvky, které obsahují může trvat fokus klávesnice.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|V části poznámky.|Žádné scénáře při textu nápovědy je vyžadováno pro ovládací prvek panel nabídky.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AcceleratorKeyProperty>|`Null`|Panel nabídek nemají nikdy přístupové klávesy.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AccessKeyProperty>|"ALT"|Stisknutím klávesy ALT by měla vždy umístěte fokus na panelu nabídek v aplikaci.|  
@@ -71,14 +71,14 @@ ms.locfileid: "47196866"
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora/hodnota|Poznámky|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> události změny vlastnosti.|Závisí|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádná|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádná|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádná|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> události změny vlastnosti.|Závisí|Žádná|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádná|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádná|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Automation.ControlType.MenuBar>  
- [Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
- [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Automation.ControlType.MenuBar>
+- [Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)
+- [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)

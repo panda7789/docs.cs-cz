@@ -8,12 +8,12 @@ helpviewer_keywords:
 - animation [WPF], custom classes
 - custom animation classes [WPF]
 ms.assetid: 9be69d50-3384-4938-886f-08ce00e4a7a6
-ms.openlocfilehash: a18898f340c68b7890c56b586c87870c50fd4686
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.openlocfilehash: 20bf15040d22d334800d6a163937c22928499f3d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44511890"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527637"
 ---
 # <a name="custom-animations-overview"></a>Přehled vlastních animací
 Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animace systém tak, že vytvoříte vlastní klíčové snímky animace třídy, nebo pomocí zpětného volání za rámce se.  
@@ -123,13 +123,13 @@ Toto téma popisuje, jak a kdy k rozšíření [!INCLUDE[TLA2#tla_winclient](../
   
  Další informace najdete v tématu <xref:System.Windows.Media.CompositionTarget.Rendering> stránky.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Animation.AnimationTimeline>  
- <xref:System.Windows.Media.Animation.IKeyFrame>  
- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)  
- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)  
- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)  
- [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)  
- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)  
- [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Animation.AnimationTimeline>
+- <xref:System.Windows.Media.Animation.IKeyFrame>
+- [Přehled způsobů animace vlastností](../../../../docs/framework/wpf/graphics-multimedia/property-animation-techniques-overview.md)
+- [Přehled zablokovatelných objektů](../../../../docs/framework/wpf/advanced/freezable-objects-overview.md)
+- [Přehled animací klíčových snímků](../../../../docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)
+- [Přehled animací cesty](../../../../docs/framework/wpf/graphics-multimedia/path-animations-overview.md)
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+- [Přehled animace a systému časování](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md)
+- [Ukázka vlastních animací](https://go.microsoft.com/fwlink/?LinkID=159981)

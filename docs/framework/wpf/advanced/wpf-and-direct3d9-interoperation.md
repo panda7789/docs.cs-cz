@@ -7,130 +7,130 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
-ms.openlocfilehash: a66f37e26d8d86e29e81161ea4585737140441ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9fd5cc270074a3a2845147bcad8baef8d1f8ba2a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33549432"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529408"
 ---
 # <a name="wpf-and-direct3d9-interoperation"></a>Vzájemná spolupráce grafického subsystému WPF a systému Direct3D9
-Můžete zahrnout procesu Direct3D9 obsahu v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření procesu Direct3D9 obsah tak, aby se efektivně spolupracuje s WPF.  
+Můžete zahrnout obsahu Direct3D9 v aplikaci Windows Presentation Foundation (WPF). Toto téma popisuje postup vytvoření obsahu Direct3D9 tak, aby efektivně spolupracuje s WPF.  
   
 > [!NOTE]
->  Při použití procesu Direct3D9 obsah v grafickém subsystému WPF, budete také muset myslíte o výkonu. Další informace o optimalizaci výkonu najdete v tématu [otázky výkonu při procesu Direct3D9 a interoperabilita WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+>  Při použití obsahu Direct3D9 v subsystému WPF, musíte také uvažovat o výkonu. Další informace o tom, jak optimalizovat výkon, naleznete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
 ## <a name="display-buffers"></a>Vyrovnávací paměti zobrazení  
- <xref:System.Windows.Interop.D3DImage> Třída spravuje dva vyrovnávací paměti zobrazení, které se nazývají *back vyrovnávací paměti* a *front vyrovnávací paměti*. Back vyrovnávací paměť je váš prostor procesu Direct3D9. Změny zpět vyrovnávací paměti se zkopírují předat do front vyrovnávací paměti při volání <xref:System.Windows.Interop.D3DImage.Unlock%2A> metoda.  
+ <xref:System.Windows.Interop.D3DImage> Třída spravuje dvě vyrovnávací paměti zobrazení, které se volají *přípravné vyrovnávací paměti* a *front-vyrovnávací paměti*. Přípravné vyrovnávací paměti je vaše plocha Direct3D9. Změny přípravné vyrovnávací paměti jsou zkopírovány vpřed na front-vyrovnávací paměti při volání <xref:System.Windows.Interop.D3DImage.Unlock%2A> metody.  
   
- Následující obrázek znázorňuje vztahy mezi back vyrovnávací paměti a front vyrovnávací paměti.  
+ Následující ilustrace znázorňuje vztah mezi přípravné vyrovnávací paměti a front-vyrovnávací paměti.  
   
  ![Vyrovnávací paměti zobrazení D3DImage](../../../../docs/framework/wpf/advanced/media/d3dimage-buffers.png "D3DImage_buffers")  
   
-## <a name="direct3d9-device-creation"></a>Vytvoření procesu Direct3D9 zařízení  
- K vykreslení procesu Direct3D9 obsahu, musíte vytvořit procesu Direct3D9 zařízení. Existují dva procesu Direct3D9 objekty, které můžete použít k vytvoření zařízení, `IDirect3D9` a `IDirect3D9Ex`. Použít tyto objekty k vytvoření `IDirect3DDevice9` a `IDirect3DDevice9Ex` zařízení, v uvedeném pořadí.  
+## <a name="direct3d9-device-creation"></a>Vytvoření zařízení Direct3D9  
+ K vykreslení obsahu Direct3D9, musíte vytvořit Direct3D9 zařízení. Existují dva Direct3D9 objekty, které můžete použít k vytvoření zařízení, `IDirect3D9` a `IDirect3D9Ex`. Můžete vytvořit tyto objekty `IDirect3DDevice9` a `IDirect3DDevice9Ex` zařízení, v uvedeném pořadí.  
   
- Vytvoření zařízení voláním jednu z následujících metod.  
+ Vytvoření zařízení voláním jedné z následujících metod.  
   
 -   `IDirect3D9 * Direct3DCreate9(UINT SDKVersion);`  
   
 -   `HRESULT Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D);`  
   
- Ve Windows Vista nebo novějšího operačního systému, použijte `Direct3DCreate9Ex` metoda s zobrazení, který je nakonfigurován pro použití Windows zobrazit ovladač WDDM (Model). Použití `Direct3DCreate9` metoda na jiné platformě.  
+ Ve Windows Vista nebo novějšího operačního systému, použijte `Direct3DCreate9Ex` metodu s zobrazení, který je nakonfigurován pro použití Windows zobrazit ovladač WDDM (Model). Použití `Direct3DCreate9` metoda na libovolné platformě.  
   
-### <a name="availability-of-the-direct3dcreate9ex-method"></a>Dostupnost Direct3DCreate9Ex metody  
- Má d3d9.dll `Direct3DCreate9Ex` metoda pouze v systému Windows Vista nebo novějšího operačního systému. Pokud vytváříte přímo odkaz funkce v systému Windows XP, aplikace se nepodaří načíst. Chcete-li určit, zda `Direct3DCreate9Ex` metoda je podporovaná, načíst knihovnu DLL a vyhledejte adresu proc. Následující kód ukazuje, jak chcete otestovat `Direct3DCreate9Ex` metoda. Úplný příklad, naleznete v tématu [návod: vytváření obsahu procesu Direct3D9 pro hostitelský v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
+### <a name="availability-of-the-direct3dcreate9ex-method"></a>Dostupnost Direct3DCreate9Ex – metoda  
+ Má d3d9.dll `Direct3DCreate9Ex` metoda pouze u Windows Vista nebo novějším operačním systémem. Pokud připojíte přímo funkce ve Windows XP, vaše aplikace se nepodaří načíst. Chcete-li zjistit, zda `Direct3DCreate9Ex` metoda je podporována, načíst knihovnu DLL a vyhledejte adresu proc. Následující kód ukazuje, jak otestovat `Direct3DCreate9Ex` metody. Příklad úplného kódu, naleznete v tématu [názorný postup: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md).  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureD3DObjects](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensured3dobjects)]  
   
-### <a name="hwnd-creation"></a>Vytvoření HWND  
- Vytvoření zařízení vyžaduje, aby popisovačem HWND. Obecně platí můžete vytvořit fiktivní HWND pro procesu Direct3D9 používat. Následující příklad kódu ukazuje, jak vytvořit fiktivní HWND.  
+### <a name="hwnd-creation"></a>Vytvoření prvku HWND  
+ Vytvoření zařízení vyžaduje popisovačem HWND. Obecně platí vytvořte fiktivního HWND pro Direct3D9 používat. Následující příklad kódu ukazuje, jak vytvořit fiktivního HWND.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_EnsureHWND](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_ensurehwnd)]  
   
-### <a name="present-parameters"></a>Existuje parametry  
- Vytváření zařízení taky vyžaduje `D3DPRESENT_PARAMETERS` struktura, ale pouze několik parametrů, které jsou důležité. Tyto parametry se rozhodli minimalizovat nároky na paměť.  
+### <a name="present-parameters"></a>K dispozici parametry  
+ Vytvoření zařízení také vyžaduje `D3DPRESENT_PARAMETERS` struktury, ale pouze několik parametrů, které jsou důležité. Tyto parametry se rozhodli minimalizovat nároky na paměť.  
   
- Nastavte `BackBufferHeight` a `BackBufferWidth` pole na hodnotu 1. Jejich nastavením na hodnotu 0 způsobí je nastaven do dimenze HWND.  
+ Nastavte `BackBufferHeight` a `BackBufferWidth` pole na hodnotu 1. Nastavení na hodnotu 0 způsobí, že se jejich nastavení na dimenze HWND.  
   
- Vždy nastaven `D3DCREATE_MULTITHREADED` a `D3DCREATE_FPU_PRESERVE` příznaky, aby se zabránilo poškozování paměti procesu Direct3D9 a zabránit procesu Direct3D9 změna FPU nastavení.  
+ Vždycky nastavený `D3DCREATE_MULTITHREADED` a `D3DCREATE_FPU_PRESERVE` příznaky zabránit poškození paměti používá Direct3D9 a systému Direct3D9 zabránit ve změně nastavení FPU.  
   
- Následující kód ukazuje, jak k chybě při inicializaci `D3DPRESENT_PARAMETERS` struktura.  
+ Následující kód ukazuje, jak inicializovat `D3DPRESENT_PARAMETERS` struktury.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_Init](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_init)]  
   
-## <a name="creating-the-back-buffer-render-target"></a>Vytvořením cíle vykreslení Back vyrovnávací paměti  
- Zobrazit obsah procesu Direct3D9 <xref:System.Windows.Interop.D3DImage>, vytvořte procesu Direct3D9 prostor a přiřaďte ho voláním <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metoda.  
+## <a name="creating-the-back-buffer-render-target"></a>Vytvoření cíle vykreslování přípravné vyrovnávací paměti  
+ K zobrazení obsahu Direct3D9 v <xref:System.Windows.Interop.D3DImage>, vytvořte Direct3D9 plochu a přiřaďte ho voláním <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metody.  
   
-### <a name="verifying-adapter-support"></a>Podpora ověřování adaptéru  
- Před vytvořením prostor, ověřte, zda všechny adaptéry podporovat prostor vlastnosti, které vyžadujete. I v případě, že jste vykreslovat jenom jeden adaptér, může se zobrazit okno WPF na každého adaptéru v systému. Vždy byste měli zapsat procesu Direct3D9 kód, který zpracovává konfigurací s více adaptérů a měli byste zkontrolovat všechny adaptéry pro podporu, protože WPF může přesunout na povrch mezi dostupných adaptérů.  
+### <a name="verifying-adapter-support"></a>Ověřuje se, jestli adaptér podpory  
+ Před vytvořením povrch, ověřte, že všechny adaptéry podporují surface vlastnosti, které potřebujete. I v případě, že vykreslovat jenom jeden adaptér může zobrazit okno WPF na všech adaptérů v systému. Měli byste vždy psát Direct3D9 kód, který zpracovává konfigurací s více adaptérů a byste měli počítač zkontrolovat všechny adaptéry pro podporu, protože WPF může přejít na plochu mezi jsou k dispozici adaptéry.  
   
- Následující příklad kódu ukazuje, jak můžete zjistit všechny adaptéry v systému procesu Direct3D9 podporují.  
+ Následující příklad kódu ukazuje, jak můžete zkontrolovat všechny adaptéry v systému pro Direct3D9 podporují.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_TestSurfaceSettings](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_testsurfacesettings)]  
   
-### <a name="creating-the-surface"></a>Vytváření na povrch  
- Před vytvořením prostor, ověřte, zda možnosti zařízení podporovat dobrý výkon na cílovém operačním systému. Další informace najdete v tématu [otázky výkonu při procesu Direct3D9 a interoperabilita WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
+### <a name="creating-the-surface"></a>Vytváření na plochu  
+ Před vytvořením povrch, ověřte, zda možnosti zařízení podporovat dobrý výkon na cílovém operačním systému. Další informace najdete v tématu [důležité informace o výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md).  
   
- Po ověření možnosti zařízení, můžete vytvořit na povrch. Následující příklad kódu ukazuje, jak vytvořit cíl vykreslení.  
+ Po ověření schopnosti zařízení, můžete vytvořit na plochu. Následující příklad kódu ukazuje, jak vytvořit cíl vykreslování.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#Renderer_CreateSurface](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderer.cpp#renderer_createsurface)]  
   
 ### <a name="wddm"></a>WDDM  
- Na Windows Vista a novějších operačních systémech, které jsou nakonfigurovány pro použití WDDM, můžete vytvořit texturou cíl vykreslování a předat povrch úroveň 0 <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metoda. Tento přístup se nedoporučuje v systému Windows XP, protože nelze vytvořit cílový texturou možno zablokovat vykreslování a bude snížit výkon.  
+ Ve Windows Vista a novějších operačních systémech, které jsou nakonfigurovány pro použití WDDM, vytvořte textur cíl vykreslování a předat povrch úroveň 0 <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> metody. Tento přístup není doporučen na Windows XP, protože nelze vytvořit cílovou texturu možno zablokovat vykreslování a sníží výkon.  
   
-## <a name="handling-device-state"></a>Zpracování stavu zařízení  
- <xref:System.Windows.Interop.D3DImage> Třída spravuje dva vyrovnávací paměti zobrazení, které se nazývají *back vyrovnávací paměti* a *front vyrovnávací paměti*. Back vyrovnávací paměť je váš prostor Direct3D.  Změny zpět vyrovnávací paměti se zkopírují předat do front vyrovnávací paměti při volání <xref:System.Windows.Interop.D3DImage.Unlock%2A> metoda, kde se zobrazí na hardware. V některých případech nedostupný front vyrovnávací paměti. Kvůli chybějící dostupnosti může být způsobeno zámek obrazovky, přes celou obrazovku výhradní Direct3D – aplikace, přepínání uživatelů nebo dalšími aktivitami systému. V takovém případě aplikace WPF proběhne zpracování <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> událostí.  Jak aplikace odpovídá do front vyrovnávací paměti k dispozici závisí na tom, jestli je WPF povolena a vrátit zpět k vykreslování softwaru. <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> Metoda má přetížení, které přebírá parametr, který určuje, zda WPF spadne zpět na vykreslování softwaru.  
+## <a name="handling-device-state"></a>Stav zařízení  
+ <xref:System.Windows.Interop.D3DImage> Třída spravuje dvě vyrovnávací paměti zobrazení, které se volají *přípravné vyrovnávací paměti* a *front-vyrovnávací paměti*. Přípravné vyrovnávací paměti je vaše plocha rozhraní Direct3D.  Změny přípravné vyrovnávací paměti jsou zkopírovány vpřed na front-vyrovnávací paměti při volání <xref:System.Windows.Interop.D3DImage.Unlock%2A> metody, kde se zobrazí na hardwaru. V některých případech front-vyrovnávací paměť k dispozici. Tato nedostatečná dostupnosti může být způsobeno uzamčení obrazovky, exkluzivní aplikace Direct3D celou obrazovku, přepínání uživatelů nebo jiných aktivit systému. Pokud k tomu dojde, vaše aplikace WPF proběhne zpracování <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> událostí.  Jak vaše aplikace reaguje na front-vyrovnávací paměť k dispozici závisí na tom, zda je povoleno WPF náhradní softwarové vykreslování. <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> Metoda má přetížení přijímající parametr, který určuje, zda WPF spadne zpět na softwarové vykreslování.  
   
- Při volání <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29> přetížení nebo volejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> přetížení s `enableSoftwareFallback` parametr nastaven na `false`, systém vykreslování uvolní jeho odkaz na pozadí vyrovnávací paměti při nedostupný front vyrovnávací paměti a nic se zobrazí. Když front vyrovnávací paměť je opět k dispozici, vyvolá systému vykreslování <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> události pro upozornění aplikace WPF.  Můžete vytvořit obslužnou rutinu události pro <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> událostí restartovat vykreslování znovu s platnou Direct3D – prostor. Pokud chcete restartovat vykreslování, musí volat <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>.  
+ Při volání <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%29> přetížení nebo volání <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> přetížení s `enableSoftwareFallback` parametr nastaven na `false`, systém vykreslování uvolní svůj odkaz na přípravné vyrovnávací paměti při front-vyrovnávací paměti přestane být k dispozici a nic není zobrazí. Když front-vyrovnávací paměti je opět k dispozici, systém vykreslování vyvolá <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> události upozornit aplikaci WPF.  Můžete vytvořit obslužná rutina události <xref:System.Windows.Interop.D3DImage.IsFrontBufferAvailableChanged> události restartovat vykreslování znovu s platnou povrch rozhraní Direct3D. Pokud chcete restartovat vykreslování, musí volat <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A>.  
   
- Při volání <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> přetížení s `enableSoftwareFallback` parametr nastaven na `true`, vykreslování systému zachová jeho odkaz na pozadí vyrovnávací paměti při front vyrovnávací paměť není k dispozici, takže není nutné volat <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> při před vyrovnávací paměť je opět k dispozici.  
+ Při volání <xref:System.Windows.Interop.D3DImage.SetBackBuffer%28System.Windows.Interop.D3DResourceType%2CSystem.IntPtr%2CSystem.Boolean%29> přetížení s `enableSoftwareFallback` parametr nastaven na `true`, vykreslování systému zachová svůj odkaz na přípravné vyrovnávací paměti při front-vyrovnávací paměti stane nedostupným, takže není nutné volat <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> při front vyrovnávací paměť je opět k dispozici.  
   
- Při vykreslování softwaru je povoleno, mohou nastat situace, kdy zařízení uživatele přestane být dostupný, ale vykreslování systému zachová odkaz na povrch Direct3D –. Chcete-li zkontrolovat, jestli má zařízení procesu Direct3D9 není k dispozici, zavolejte `TestCooperativeLevel` metoda. Zkontrolujte zařízení volání Direct3D9Ex `CheckDeviceState` metoda, protože `TestCooperativeLevel` metoda je zastaralá a vždy vrátí hodnotu úspěch. Pokud zařízení uživatele již není dostupná, zavolejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> k uvolnění WPF na odkaz na pozadí vyrovnávací paměti.  Pokud potřebujete obnovit v zařízení, zavolejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> s `backBuffer` parametr nastaven na `null`a pak zavolají <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> znovu s `backBuffer` nastavena na platný Direct3D – prostor.  
+ Když je povoleno vykreslování části softwaru, může být situacích, kdy zařízení uživatele k dispozici, ale systém vykreslování uchovává odkaz na povrchu Direct3D. Chcete-li zkontrolovat, zda Direct3D9 zařízení není k dispozici, zavolejte `TestCooperativeLevel` metody. Ke kontrole Direct3D9Ex zařízení volání `CheckDeviceState` metody, protože `TestCooperativeLevel` metoda je zastaralá a vždy vrátí hodnotu úspěch. Pokud uživatel zařízení je nedostupné, zavolejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> uvolnit odkaz na WPF na přípravné vyrovnávací paměti.  Pokud potřebujete obnovit v zařízení, zavolejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> s `backBuffer` parametr nastaven na `null`a pak vyvolejte <xref:System.Windows.Interop.D3DImage.SetBackBuffer%2A> znovu s `backBuffer` nastavena na platný povrch rozhraní Direct3D.  
   
- Volání `Reset` metoda obnovení ze zařízení s neplatnou pouze v případě, že budete implementovat podporu více adaptéru. Jinak verze všech rozhraní procesu Direct3D9 a úplně je znovu vytvořit. Pokud došlo ke změně rozložení adaptéru se neaktualizují procesu Direct3D9 objekty vytvořené před provedením změny.  
+ Volání `Reset` metoda obnovení ze zařízení s neplatnou pouze v případě, že implementujete podporu více adaptérů. V opačném případě uvolnit všechna rozhraní pro Direct3D9 a znovu je vytvořte zcela. Pokud došlo ke změně rozložení adaptér, se neaktualizují Direct3D9 objekty vytvořené před provedením změny.  
   
-## <a name="handling-resizing"></a>Zpracování Změna velikosti  
- Pokud <xref:System.Windows.Interop.D3DImage> se zobrazí s rozlišením než jeho nativní velikost je škálovat podle aktuální <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>kromě toho, že <xref:System.Windows.Media.Effects.SamplingMode.Bilinear> je nahrazena pro <xref:System.Windows.Media.BitmapScalingMode.Fant>.  
+## <a name="handling-resizing"></a>Zpracování změny velikosti  
+ Pokud <xref:System.Windows.Interop.D3DImage> se zobrazí v řešení než jeho nativní velikost se škálovat podle aktuální <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>, s tím rozdílem, že <xref:System.Windows.Media.Effects.SamplingMode.Bilinear> nahrazuje <xref:System.Windows.Media.BitmapScalingMode.Fant>.  
   
- Pokud požadujete vyšší věrnost, musíte vytvořit nový surface kdy kontejner <xref:System.Windows.Interop.D3DImage> změny velikosti.  
+ Pokud budete potřebovat vyšší přesnosti, je třeba vytvořit nové zařízení surface, kdy kontejner <xref:System.Windows.Interop.D3DImage> změní velikost.  
   
- Existují tři možných přístupů pro zpracování, změnu velikosti.  
+ Existují tři možné přístupy k zpracování změny velikosti.  
   
--   Účast v systému rozložení a vytvořte nový prostor při změně velikosti. Nevytvářejte příliš mnoho povrchy, protože může vyčerpat nebo fragmentu grafické paměti.  
+-   Součástí systému rozložení a vytvořte novou plochu při změně velikosti. Nevytvářejte příliš mnoho zařízení Surface, protože může vyčerpat nebo fragment grafické paměti.  
   
--   Počkejte, dokud událost změny velikosti nedošlo k pro určitou dobu, chcete-li vytvořit nový prostor.  
+-   Počkejte, až událost změny velikosti nedošlo k pro určitou dobu, chcete-li vytvořit novou plochu.  
   
--   Vytvoření <xref:System.Windows.Threading.DispatcherTimer> , zkontroluje dimenze kontejneru několikrát za sekundu.  
+-   Vytvoření <xref:System.Windows.Threading.DispatcherTimer> , která zkontroluje dimenze kontejneru několikrát za sekundu.  
   
-## <a name="multi-monitor-optimization"></a>Optimalizace více monitorování  
- Výrazně snížený výkon může dojít při vykreslování systém přesune <xref:System.Windows.Interop.D3DImage> na jiné monitorování.  
+## <a name="multi-monitor-optimization"></a>Optimalizace více monitorů  
+ Výrazně nižší výkon může dojít při vykreslování systém přesune <xref:System.Windows.Interop.D3DImage> na jiný monitor.  
   
- Na WDDM, také monitorování jsou na stejné grafické karty a použijete `Direct3DCreate9Ex`, neexistuje žádný snížení výkonu. Pokud monitorování jsou v samostatných videokaret, se snižuje výkon. V systému Windows XP je vždy snížit výkon.  
+ Na WDDM, za předpokladu monitorování jsou na stejném videa karty a použijete `Direct3DCreate9Ex`, neexistuje žádné snížení výkonu. Pokud monitorování na samostatné grafické karty, se snižuje výkon. Na Windows XP je vždy snížení výkonu.  
   
- Když <xref:System.Windows.Interop.D3DImage> přesune na jiné monitorování, můžete vytvořit nový prostor na odpovídající adaptér, který má obnovit dobrý výkon.  
+ Když <xref:System.Windows.Interop.D3DImage> přesune na jiný monitor, vytvoříte novou plochu na odpovídající adaptér, který má obnovit dobrého výkonu.  
   
- Aby se zabránilo snížení výkonu, napište kód speciálně pro případ, více monitorování. Následující seznam obsahuje jeden způsob, jak napsat kód více monitorování.  
+ Aby se zabránilo snížení výkonu, napište kód speciálně pro případ více monitorů. Následující seznam ukazuje jeden ze způsobů vytvoření kódu více monitorů.  
   
-1.  Hledání bodu služby <xref:System.Windows.Interop.D3DImage> v prostoru obrazovky s `Visual.ProjectToScreen` metoda.  
+1.  Najít bod <xref:System.Windows.Interop.D3DImage> v prostor na obrazovce s `Visual.ProjectToScreen` metody.  
   
-2.  Použití `MonitorFromPoint` GDI metody k vyhledání monitorování, které je zobrazení bodem.  
+2.  Použití `MonitorFromPoint` GDI metody k vyhledání monitorování, které se zobrazuje bod.  
   
-3.  Použití `IDirect3D9::GetAdapterMonitor` metody k vyhledání monitorování procesu Direct3D9 adaptéru, který je na.  
+3.  Použití `IDirect3D9::GetAdapterMonitor` metody k vyhledání adaptéru, pro který Direct3D9 monitorování zapnutý.  
   
-4.  Pokud adaptér není stejná jako na adaptér s back vyrovnávací paměť, vyrovnávací paměť nového back vytvořit na nové monitorování a přiřadit ji ke <xref:System.Windows.Interop.D3DImage> back vyrovnávací paměti.  
+4.  Pokud adaptér není stejný jako adaptér s přípravné vyrovnávací paměti, vytvořte nový přípravné vyrovnávací paměti na nové monitorování a přiřaďte ho k <xref:System.Windows.Interop.D3DImage> přípravné vyrovnávací paměti.  
   
 > [!NOTE]
->  Pokud <xref:System.Windows.Interop.D3DImage> přechází monitorování výkonu bude pomalé, s výjimkou v případě WDDM a `IDirect3D9Ex` stejný adaptér. Neexistuje žádný způsob, jak zlepšit výkon v této situaci.  
+>  Pokud <xref:System.Windows.Interop.D3DImage> přechází monitorování výkonu bude pomalé, s výjimkou v případě WDDM a `IDirect3D9Ex` na stejný adaptér. Neexistuje žádný způsob, jak zlepšit výkon v této situaci.  
   
- Následující příklad kódu ukazuje, jak najít aktuálního monitorování.  
+ Následující příklad kódu ukazuje, jak najít aktuální monitorování.  
   
  [!code-cpp[System.Windows.Interop.D3DImage#RendererManager_SetAdapter](../../../../samples/snippets/cpp/VS_Snippets_Wpf/System.Windows.Interop.D3DImage/cpp/renderermanager.cpp#renderermanager_setadapter)]  
   
- Aktualizace monitorování při <xref:System.Windows.Interop.D3DImage> změny velikosti nebo umístění kontejneru nebo aktualizace monitorování pomocí `DispatcherTimer` , aktualizuje několikrát za sekundu.  
+ Aktualizovat monitorování při <xref:System.Windows.Interop.D3DImage> kontejneru velikost nebo pozice změny nebo aktualizace monitorování s využitím `DispatcherTimer` , která aktualizuje několikrát za sekundu.  
   
-## <a name="wpf-software-rendering"></a>Vykreslování Software grafického subsystému WPF  
- WPF vykreslí synchronně ve vlákně UI v softwaru v následujících situacích.  
+## <a name="wpf-software-rendering"></a>WPF softwarové vykreslování  
+ WPF vykreslí synchronně ve vlákně uživatelského rozhraní v softwaru v následujících situacích.  
   
 -   Tisk  
   
@@ -138,17 +138,17 @@ Můžete zahrnout procesu Direct3D9 obsahu v aplikaci Windows Presentation Found
   
 -   <xref:System.Windows.Media.Imaging.RenderTargetBitmap>  
   
- Při jedné z těchto situací, systém vykreslování zavolá <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> metoda kopírování vyrovnávací paměti hardwaru do softwaru. Výchozí implementace volá `GetRenderTargetData` metoda s váš prostor. Protože k tomuto volání mimo uzamčení nebo odemčení vzor, může dojít k selhání. V takovém případě `CopyBackBuffer` metoda vrátí `null` a zobrazí se žádný obrázek.  
+ Při jedné z těchto situací vykreslování systém volá <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> metoda kopírování vyrovnávací paměti hardware software. Výchozí implementace volá `GetRenderTargetData` metodu s vaší povrchu. Protože toto volání dochází mimo vzor Zamknout/odemknout, může dojít k selhání. V takovém případě `CopyBackBuffer` vrátí metoda `null` a zobrazí se žádný obrázek.  
   
- Můžete přepsat <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> metody volat základní implementaci, a vrátí-li `null`, můžete se vrátit zástupný symbol <xref:System.Windows.Media.Imaging.BitmapSource>.  
+ Můžete přepsat <xref:System.Windows.Interop.D3DImage.CopyBackBuffer%2A> metody volat základní implementaci a vrátí-li `null`, můžete se vrátit zástupný symbol <xref:System.Windows.Media.Imaging.BitmapSource>.  
   
- Můžete také implementovat vlastní software vykreslování namísto volání základní implementaci.  
+ Můžete také implementovat vlastní softwarové vykreslování namísto volání základní implementaci.  
   
 > [!NOTE]
->  Pokud úplně vykreslování grafického subsystému WPF v softwaru, <xref:System.Windows.Interop.D3DImage> není zobrazena, protože WPF nemá front vyrovnávací paměti.  
+>  Pokud WPF je zcela vykreslování v softwaru, <xref:System.Windows.Interop.D3DImage> neuvádíme, protože WPF nemá front-vyrovnávací paměti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Interop.D3DImage>  
- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Interop.D3DImage>
+- [Předpoklady výkonu pro Direct3D9 a interoperabilitu WPF](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)
+- [Návod: Vytvoření obsahu Direct3D9 pro hostování v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)
+- [Návod: Hostování obsahu Direct3D9 v subsystému WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: d4f7ebf784ab02ecdd0203423157da5bef968a87
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: bc209d184ac330b112d17c34f0bf1c479a8b5f7e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198697"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516158"
 ---
 # <a name="denial-of-service"></a>Útok DoS
 Útok DoS nastane, pokud je systém zahltil tak, že zprávy nelze zpracovat, nebo se zpracovávají velmi pomalu.  
@@ -69,21 +69,21 @@ ms.locfileid: "47198697"
 ## <a name="protect-configuration-files-with-acls"></a>Chránit konfigurační soubory společně se seznamy ACL  
  Povinné a nepovinné deklarace identity můžete zadat v kódu a konfigurační soubory pro [!INCLUDE[infocard](../../../../includes/infocard-md.md)] vydané tokeny. Výsledkem je odpovídající elementy probíhá emitovány v `RequestSecurityToken` zprávy odeslané bezpečnostní token služby. Útočník můžete upravit kódu nebo konfigurace odebrat požadované nebo nepovinné deklarace identity, potenciálně získávání služby tokenů zabezpečení k vydání tokenu, který neumožňuje přístup k cílové službě.  
   
- Zmírnění: vyžadují přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL pro konfigurační soubory zabezpečení. WCF vyžaduje, aby kód v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který se má načíst z konfigurace. Pro zabezpečení adresáře, použijte seznamy ACL adresáře.  
+ Zmírnit: Vyžadovat přístup k počítači a upravte konfigurační soubor. Řízení přístupu pomocí souboru seznamy ACL pro konfigurační soubory zabezpečení. WCF vyžaduje, aby kód v adresáři aplikace nebo v globální mezipaměti sestavení předtím, než bude možné takový kód, který se má načíst z konfigurace. Pro zabezpečení adresáře, použijte seznamy ACL adresáře.  
   
 ## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>Dosažen maximální počet zabezpečených relací pro službu  
  Po klienta úspěšně ověřen službou a vytvoření zabezpečené relace ve službě, službu uchovává informace o relaci, dokud ho ruší klienta nebo vypršení platnosti relace. Každý navázanou relaci počítat limit pro maximální počet aktivních souběžných relací se službou. Při dosažení tohoto limitu, klienti, kteří se pokusí vytvořit novou relaci s touto službou odmítají do jedné nebo víc aktivních relací vypršení platnosti nebo zrušení klientem. Klient může mít několik relací s využitím služby a jedna z těchto relací se počítá směrem k omezení.  
   
 > [!NOTE]
->  Při použití stavové relací se nevztahuje předchozím odstavci. Další informace o relacích stavové najdete v tématu [postupy: vytvoření Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Při použití stavové relací se nevztahuje předchozím odstavci. Další informace o relacích stavové najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
  Toto riziko lze snížit nastavením limitu pro maximální počet aktivních relací a maximální doba života pro relaci <xref:System.ServiceModel.Channels.SecurityBindingElement> vlastnost <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
+- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
+- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
+- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
+- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)
+- [Nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

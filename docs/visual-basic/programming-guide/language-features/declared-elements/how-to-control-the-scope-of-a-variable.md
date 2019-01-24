@@ -12,53 +12,53 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 6e8d1178398711226b88fee7e6defd5162b91fcb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 656bfa6fa9b3445d91cd8ac39b83bccf3e44758e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649188"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521410"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
-Za normálních okolností je proměnná v *oboru*, nebo viditelné pro referenci v celé oblasti, ve kterém je deklarovat. V některých případech proměnnou na *úroveň přístupu* mohou mít vliv na svém oboru.  
+Za normálních okolností je proměnná v *oboru*, nebo viditelné pro použití v rámci oblasti, ve kterém se deklaruje. V některých případech je proměnná společnosti *úroveň přístupu* mohou mít vliv na svém oboru.  
   
- Další informace najdete v tématu [oboru v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
+ Další informace najdete v tématu [obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
 ## <a name="scope-at-block-or-procedure-level"></a>Obor bloku nebo úroveň procedury  
   
-#### <a name="to-make-a-variable-visible-only-within-a-block"></a>Chcete-li zobrazit pouze v rámci bloku proměnné  
+#### <a name="to-make-a-variable-visible-only-within-a-block"></a>Aby byla proměnná viditelná pouze v rámci bloku  
   
--   Místní [Dim – příkaz](../../../../visual-basic/language-reference/statements/dim-statement.md) pro proměnnou mezi zahájení a ukončení deklarační příkazy bloku, například mezi `For` a `Next` příkazů `For` smyčky.  
+-   Místo [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) proměnné mezi zahájení a ukončení příkazy deklarace tohoto bloku, například mezi `For` a `Next` prohlášení o `For` smyčky.  
   
-     Může být pouze z proměnné v bloku.  
+     Mohou odkazovat na proměnné pouze z v rámci bloku.  
   
-#### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Chcete-li zobrazit pouze v rámci procedury proměnné  
+#### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Aby byla proměnná viditelná pouze v rámci procedury  
   
--   Místní `Dim` příkaz pro proměnnou uvnitř postup, ale mimo všechny bloky (například `With`... `End With` bloku).  
+-   Místo `Dim` příkaz pro proměnnou uvnitř procesu, ale mimo všechny bloky (například `With`... `End With` bloku).  
   
-     Najdete v postupu, včetně uvnitř bloku, všechny obsažené v postupu proměnnou pouze z.  
+     Mohou odkazovat na proměnné pouze z v rámci procedury, stejně jako dovnitř všechny bloky obsažené v postupu.  
   
-## <a name="scope-at-module-or-namespace-level"></a>Obor na úrovni Namespace nebo modulu  
- Pro usnadnění práce jeden termín *úroveň modulu* vztahuje stejnou měrou na moduly, třídy a struktury. Úroveň přístupu tohoto modulu úrovně proměnné určuje její obor. Obor názvů, který obsahuje modul, třídu nebo strukturu vliv také oboru.  
+## <a name="scope-at-module-or-namespace-level"></a>Obor na úrovni Namespace nebo modul  
+ Pro usnadnění práce, jeden výraz *úroveň modulu* vztahuje stejnou měrou na moduly, třídy a struktury. Úroveň přístupu modulu úrovně proměnné určuje její obor. Obor názvů obsahující modulu, třídy nebo struktury také ovlivňuje oboru.  
   
-#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Chcete-li zobrazit v rámci modulu, třídu nebo strukturu proměnné  
+#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Ke zviditelnění proměnné v rámci modulu, třídy nebo struktury  
   
-1.  Místo `Dim` příkaz pro proměnnou uvnitř modulu, třídu nebo strukturu, ale mimo jakéhokoli postupu.  
+1.  Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
-2.  Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkaz.  
+2.  Zahrnout [privátní](../../../../visual-basic/language-reference/modifiers/private.md) – klíčové slovo v `Dim` příkazu.  
   
-3.  Můžete se podívat do proměnné z kamkoli v modulu, třídu nebo strukturu, ale nikoli z mimo něj.  
+3.  Můžete se podívat do proměnné z kamkoli v modulu, třídy nebo struktury, ale ne z mimo něj.  
   
-#### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Chcete-li zobrazit v rámci oboru názvů proměnné  
+#### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Aby byla proměnná viditelná v celém oboru názvů  
   
-1.  Místo `Dim` příkaz pro proměnnou uvnitř modulu, třídu nebo strukturu, ale mimo jakéhokoli postupu.  
+1.  Místo `Dim` příkaz pro proměnné v modulu, třídy nebo struktury, ale mimo všechny procedury.  
   
 2.  Zahrnout [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [veřejné](../../../../visual-basic/language-reference/modifiers/public.md) – klíčové slovo v `Dim` příkaz.  
   
-3.  Můžete se podívat do proměnné z libovolného místa v rámci oboru názvů, který obsahuje modul, třídu nebo strukturu.  
+3.  Můžete se podívat do proměnné z libovolného místa v rámci oboru názvů obsahujícím modulu, třídy nebo struktury.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad deklaruje proměnné na úrovni modulu a omezuje jeho viditelnost kódu v rámci modulu.  
+ Následující příklad deklaruje proměnnou na úrovni modulu a omezuje viditelnost kódu v rámci modulu.  
   
 ```  
 Module demonstrateScope  
@@ -72,24 +72,24 @@ Module demonstrateScope
 End Module  
 ```  
   
- V předchozím příkladu, všechny postupy definované v modulu `demonstrateScope` najdete `String` proměnná `strMsg`. Když `usePrivateVariable` procedura je volána, zobrazí se obsah proměnnou řetězce `strMsg` v dialogovém okně.  
+ V předchozím příkladu všechny postupy definované v modulu `demonstrateScope` může odkazovat `String` proměnnou `strMsg`. Když `usePrivateVariable` volání procedury, zobrazí se obsah proměnné řetězce `strMsg` v dialogovém okně.  
   
- S následující změnou v předcházejícím příkladu proměnnou řetězce `strMsg` lze odkazovat kódem kdekoli v oboru názvů jeho deklaraci.  
+ S následující změnou v předchozím příkladu, Řetězcová hodnota `strMsg` lze odkazovat pomocí kódu kdekoli v deklaraci oboru názvů.  
   
 ```  
 Public strMsg As String  
 ```  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Čím užší rozsah proměnnou, méně možností, které jsou na omylem odkazující na jeho místo jiné proměnné se stejným názvem. Také můžete minimalizovat problémy odpovídajících odkaz.  
+ Čím užší obor proměnné, méně možností, které máte pro omylem odkazující na jeho místo další proměnnou se stejným názvem. Můžete také minimalizovat problémy odpovídající odkaz.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Čím užší obor proměnné, tím menší pravděpodobnost, že škodlivý kód způsobit nesprávné použijte ho.  
+ Čím užší obor proměnné, čím menší pravděpodobnost, že škodlivý kód může být nesprávné použití ho.  
   
-## <a name="see-also"></a>Viz také  
- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
- [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Doba platnosti v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Úrovně přístupu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
+- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+- [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)

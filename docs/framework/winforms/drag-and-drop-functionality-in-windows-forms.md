@@ -5,12 +5,12 @@ helpviewer_keywords:
 - drag and drop [Windows Forms], Windows Forms
 - Windows Forms, drag and drop
 ms.assetid: 65cd2c03-8782-474e-b958-cbe43eeb902c
-ms.openlocfilehash: b1189da9fa0b76ede3261cf6da5305a09147bba5
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 29ed138f80705539b96f82898e50e80dd0e3cb16
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865082"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527026"
 ---
 # <a name="drag-and-drop-functionality-in-windows-forms"></a>Přetažení funkce ve Windows Forms 
 Windows Forms obsahuje sadu metod, událostí a třídy, které implementují chování a přetažení. Toto téma poskytuje přehled podpory a přetažení ve Windows Forms.  Viz také [operace a přetažení a podpora schránky](https://msdn.microsoft.com/library/fe5ebfwe\(v=vs.110\)).  
@@ -43,5 +43,5 @@ Windows Forms obsahuje sadu metod, událostí a třídy, které implementují ch
   
  <xref:System.Windows.Forms.QueryContinueDragEventArgs> Třída poskytuje aktuální stav myši tlačítka a modifikační klávesy na klávesnici, hodnotu určující, zda byla stisknuta klávesa ESC a <xref:System.Windows.Forms.DragAction> hodnotu, která lze použít k určení, zda by měla pokračovat v operaci přetažení myší.  
   
-## <a name="see-also"></a>Viz také  
- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)
+## <a name="see-also"></a>Viz také:
+- [Vstup z myši v aplikaci Windows Forms](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)

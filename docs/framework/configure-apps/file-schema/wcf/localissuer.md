@@ -2,12 +2,12 @@
 title: '&lt;localIssuer&gt;'
 ms.date: 03/30/2017
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
-ms.openlocfilehash: 7a48cbb3a1e17ac1fc9fa9f43301ef153cdb866c
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 893ac2cb0e6c54beae68e2607c31564baafd95fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151867"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527546"
 ---
 # <a name="ltlocalissuergt"></a>&lt;localIssuer&gt;
 Určuje adresu a vazbu lokálního vystavitele, který se má použít k získání tokenu zabezpečení.  
@@ -16,9 +16,9 @@ Určuje adresu a vazbu lokálního vystavitele, který se má použít k získá
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<třídu clientCredentials >  
-\<třídy issuedToken >  
-\<localIssuer >  
+\<clientCredentials>  
+\<issuedToken>  
+\<localIssuer>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,14 +43,14 @@ Určuje adresu a vazbu lokálního vystavitele, který se má použít k získá
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje informace o identitě pro lokálního vystavitele.|  
-|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres nutných ke správnému adresování lokálního vystavitele. Můžete použít `add` – klíčové slovo do této kolekce přidat hlavičku.|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje informace o identitě pro lokálního vystavitele.|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres nutných ke správnému adresování lokálního vystavitele. Můžete použít `add` – klíčové slovo do této kolekce přidat hlavičku.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<třídy issuedToken >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní token pro ověření klienta ke službě.|  
+|[\<issuedToken>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní token pro ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
  Při získávání vydaný token z tokenu služby zabezpečení (STS), klientská aplikace musí být nakonfigurované s adresou a vazba k použití pro komunikaci pomocí služby STS. Když <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenů zabezpečení, nebo když je adresa vystavitele federované vazby `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` nebo `null`, kanálu klienta Windows Communication Foundation (WCF) používá hodnoty zadané ve `address`a `binding` ke komunikaci s služby STS pro získání vydaný token. Další informace týkající se konfigurace místního vystavitele najdete v tématu [jak: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
@@ -77,16 +77,16 @@ Určuje adresu a vazbu lokálního vystavitele, který se má použít k získá
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.LocalIssuer%2A>  
- <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>  
- <xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Postupy: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)  
- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.LocalIssuer%2A>
+- <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>
+- <xref:System.ServiceModel.Security.IssuedTokenClientCredential>
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Postupy: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)
+- [Identita a ověřování služby](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Postupy: Vytvoření federovaného klienta](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
+- [Federace a vystavené tokeny](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

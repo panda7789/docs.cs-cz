@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 48aa7452373f83465b3e5ec8a09a9a00c902a22c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 746b61a303869ff03d41cd6005ca0f5635ac0fd5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437931"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521716"
 ---
 # <a name="idebuggerthreadcontrolstartblockingfordebugger-method"></a>IDebuggerThreadControl::StartBlockingForDebugger – metoda
-Upozorní hostitele, že ladění služby se chystáte se spustit blokování všechna vlákna.  
+Upozorňuje hostitele, spustí blokující všechna vlákna jsou ladění služby.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT StartBlockingForDebugger (
   
 #### <a name="parameters"></a>Parametry  
  `dwUnused`  
- [v] Vyhrazeno pro budoucí použití.  
+ [in] Vyhrazeno pro budoucí použití.  
   
 ## <a name="remarks"></a>Poznámky  
- `StartBlockingForDebugger` Metoda může být volána v podprocesu modulu runtime.  
+ `StartBlockingForDebugger` Metoda může být volána ve vlákně modulu runtime.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IDebuggerThreadControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IDebuggerThreadControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/idebuggerthreadcontrol-interface.md)

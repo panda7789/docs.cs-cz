@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ae532b20ec3486fe56e2dff340a5ad89941a8df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c31f9bda2f1dfdb5d1f78055f53304352c5a660
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424372"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515336"
 ---
 # <a name="isymunmanagedconstantgetname-method"></a>ISymUnmanagedConstant::GetName – metoda
 Získá název konstanty.  
@@ -39,21 +39,21 @@ HRESULT GetName(
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Délka vyrovnávací paměti, která `szName` parametr odkazuje na.  
+ [in] Délka vyrovnávací paměti, která `szName` parametr odkazuje na.  
   
  `pcchName`  
- [out] Ukazatel na `ULONG32` velikostí, která přijme ve znacích vyrovnávací paměti musí obsahovat název, včetně ukončení hodnotu null.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat název, včetně ukončení hodnotu null.  
   
  `szName`  
  [out] Vyrovnávací paměť, která ukládá název.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedConstant – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)  
- [GetSignature – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)  
- [GetValue – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedConstant – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
+- [GetSignature – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
+- [GetValue – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)

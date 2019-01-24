@@ -14,12 +14,12 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], aggregate queries
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 238b763b-7dcd-4b14-8050-b65500a4f71c
-ms.openlocfilehash: 252601b12e21e122c316952f8e10ce04cbe3f78e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: e4a7215afdfbfc7653247ad0286a36dd2ab50ba2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924479"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514267"
 ---
 # <a name="how-to-find-the-minimum-or-maximum-value-in-a-query-result-by-using-linq-visual-basic"></a>Postupy: Hledání minimální nebo maximální hodnoty ve výsledku dotazu pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  
@@ -44,7 +44,7 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 2.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **třídy LINQ to SQL** šablony položky.  
   
-3.  Název souboru `northwind.dbml`. Klikněte na tlačítko **přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
+3.  Pojmenujte soubor `northwind.dbml`. Klikněte na **Přidat**. Návrhář relací objektů (O/R Designer), je otevřené northwind.dbml souboru.  
   
 ### <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek do dotazu do Návrháře relací objektů  
   
@@ -76,8 +76,8 @@ Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi 
   
 4.  Stisknutím klávesy F5 spusťte váš projekt a prohlédněte si výsledky.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+## <a name="see-also"></a>Viz také:
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
+- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)

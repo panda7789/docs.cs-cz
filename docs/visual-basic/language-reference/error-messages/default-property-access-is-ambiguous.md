@@ -1,5 +1,5 @@
 ---
-title: Přístup k výchozí vlastnosti je nejednoznačný mezi členy zděděné rozhraní &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename2&gt;&#39;
+title: Přístup k výchozím vlastnostem je nejednoznačné mezi členy zděděné rozhraní &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename2&gt;&#39;
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30686
@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30686
 ms.assetid: 784fefec-ef57-48cf-b960-957df419b439
-ms.openlocfilehash: 65a10067284cad3bf56ecdc441ebefa0a740ef53
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1fae63506a35eb046676214a2b6c52977f24645d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590852"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518641"
 ---
-# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Přístup k výchozí vlastnosti je nejednoznačný mezi členy zděděné rozhraní &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename2&gt;&#39;
-Rozhraní dědí od dvě rozhraní, z nichž každý deklaruje výchozí vlastnost se stejným názvem. Kompilátor nelze vyřešit přístup k této vlastnosti výchozí bez kvalifikace. Toto dokládá následující příklad.  
+# <a name="default-property-access-is-ambiguous-between-the-inherited-interface-members-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename1gt39-and-39ltdefaultpropertynamegt39-of-interface-39ltinterfacename2gt39"></a>Přístup k výchozím vlastnostem je nejednoznačné mezi členy zděděné rozhraní &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename1&gt; &#39; a &#39; &lt;defaultpropertyname&gt; &#39; rozhraní &#39; &lt;interfacename2&gt;&#39;
+Rozhraní se dědí z dvě rozhraní, z nichž každý deklaruje výchozí vlastnost se stejným názvem. Kompilátor nelze vyřešit přístup k této vlastnosti výchozí bez kvalifikace. Toto dokládá následující příklad.  
   
 ```  
 Public Interface Iface1  
@@ -35,13 +35,13 @@ Public Class testClass
 End Class  
 ```  
   
- Pokud zadáte `testObj(1)`, kompilátor pokusí přeložit na výchozí vlastnost. Nicméně existují dvě možné výchozí vlastnosti kvůli zděděné rozhraní, tak tato chyba signalizuje kompilátoru.  
+ Pokud zadáte `testObj(1)`, kompilátor se pokusí přeložit na výchozí vlastnost. Nicméně existují dva možné výchozí vlastnosti z důvodu zděděných rozhraních, tak tato chyba signalizuje kompilátoru.  
   
  **ID chyby:** BC30686  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Vyhněte se dědí všechny členy se stejným názvem. V předchozím příkladu Pokud `testObj` není třeba žádné členy, Řekněme, `Iface2`, deklarovat následujícím způsobem:  
+-   Vyhněte se dědí všechny členy se stejným názvem. V předchozím příkladu Pokud `testObj` nemusí některé členy, například `Iface2`, deklarujte následujícím způsobem:  
   
     ```  
     Dim testObj As Iface1  
@@ -49,7 +49,7 @@ End Class
   
      -nebo-  
   
--   Implementujte rozhraní dědičných v třídě. Poté můžete implementovat každé vlastnosti zděděné s různými názvy. Však jen jeden z nich může být výchozí vlastnost implementující třídu. Toto dokládá následující příklad.  
+-   Implementujte rozhraní dědičné ve třídě. Potom můžete implementovat všechny zděděné vlastnosti s různými názvy. Pouze jeden z nich však může být výchozí vlastnost implementující třídu. Toto dokládá následující příklad.  
   
     ```  
     Public Class useIface3  
@@ -63,5 +63,5 @@ End Class
     End Class  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

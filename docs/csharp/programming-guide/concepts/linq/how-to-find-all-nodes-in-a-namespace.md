@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyhledání všech uzlů v Namespace (C#)'
+title: 'Postupy: Vyhledání všech uzlů v Namespace (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: 0675795da7c190e6d105ac61027c28f161961099
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 3d9a2780a5241bdc535938cb182441418346755f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524647"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: vyhledání všech uzlů v Namespace (C#)
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: Vyhledání všech uzlů v Namespace (C#)
 Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  
   
 ## <a name="example"></a>Příklad  
@@ -46,7 +46,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>Příklad  
  Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů. Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -95,6 +95,6 @@ Console.WriteLine(newTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

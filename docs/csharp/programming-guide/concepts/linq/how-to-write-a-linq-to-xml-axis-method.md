@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: zápis metody osy XML (C#) LINQ'
+title: 'Postupy: Zápis do XML metody osy LINQ (C#)'
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 74ed60fa3c78bcbc233e27868b1abe357a85c62a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7e00ba6ba2880ab4f26f59a0b8543ac9f58dfbb0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510530"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529746"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Postupy: zápis metody osy XML (C#) LINQ
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Postupy: Zápis do XML metody osy LINQ (C#)
 Můžete napsat vlastní metody osy pro načtení kolekce ze stromu XML. Jedním z nejlepších způsobů je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy. Můžete napsat metodu rozšíření k vrácení konkrétním podmnožinám elementy nebo atributy, na základě požadavků vaší aplikace.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad používá dvě metody rozšíření. První metoda rozšíření `GetXPath`, pracuje <xref:System.Xml.Linq.XObject>a vrátí výraz XPath, který při vyhodnocování vrátí uzlu nebo atributu. Druhá metoda rozšíření `Find`, pracuje <xref:System.Xml.Linq.XElement>. Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objekty a <xref:System.Xml.Linq.XElement> objektů, které obsahují některé zadaný text.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 public static class MyExtensions  
@@ -291,6 +291,6 @@ class Program
 1999-10-22  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

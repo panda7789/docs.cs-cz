@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [C#]
 ms.assetid: 62e52cd7-9597-4e4a-acf9-1315f5cdbf05
-ms.openlocfilehash: 498f266597032a4c35dbc8783994095b5c08fc3d
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 3e6c08050186642ceec4e2301524919379e12aaa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53240239"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527702"
 ---
 # <a name="how-to-copy-delete-and-move-files-and-folders-c-programming-guide"></a>Postupy: Kopírování, odstraňování a přesouvání souborů a složek (C# Průvodce programováním v)
 Následující příklady ukazují, jak zkopírovat, přesunout a odstranit soubory a složky v synchronním způsobem pomocí <xref:System.IO.File?displayProperty=nameWithType>, <xref:System.IO.Directory?displayProperty=nameWithType>, <xref:System.IO.FileInfo?displayProperty=nameWithType>, a <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> třídy z <xref:System.IO?displayProperty=nameWithType> oboru názvů. Tyto příklady neposkytují indikátor průběhu nebo jiných uživatelské rozhraní. Pokud chcete poskytnout dialogového okna průběhu standardní, přečtěte si téma [jak: Poskytnutí dialogového okna průběhu pro operace se soubory](how-to-provide-a-progress-dialog-box-for-file-operations.md).  
@@ -32,11 +32,11 @@ Následující příklady ukazují, jak zkopírovat, přesunout a odstranit soub
   
  [!code-csharp[csFilesandFolders#9](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-copy-delete-and-move-files-and-folders_3.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO?displayProperty=nameWithType>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Systém souborů a registr (C# Programming Guide)](index.md)  
-- [Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory](how-to-provide-a-progress-dialog-box-for-file-operations.md)  
-- [Vstup/výstup souborů a streamů](../../../standard/io/index.md)  
+- <xref:System.IO?displayProperty=nameWithType>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Systém souborů a registr (C# Programming Guide)](index.md)
+- [Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory](how-to-provide-a-progress-dialog-box-for-file-operations.md)
+- [Vstup/výstup souborů a streamů](../../../standard/io/index.md)
 - [Obecné vstupně-výstupní úlohy](../../../standard/io/common-i-o-tasks.md)

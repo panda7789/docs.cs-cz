@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 9e8bcd4503ec840e46022a55cc08dc0610eaa60b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c86ab6c7d5113f95b0fd93d194465c4af701f78a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512463"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513646"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  
@@ -54,7 +54,7 @@ ms.locfileid: "43512463"
  <xref:System.Windows.Threading.Dispatcher> Řadí prvky podle priority v příslušné fronty. Existují deset úrovně, které může být určen při přidávání element, který má <xref:System.Windows.Threading.Dispatcher> fronty. Tyto priority jsou zachována ve <xref:System.Windows.Threading.DispatcherPriority> výčtu. Podrobné informace o <xref:System.Windows.Threading.DispatcherPriority> úrovních najdete v [!INCLUDE[TLA2#tla_winfxsdk](../../../../includes/tla2sharptla-winfxsdk-md.md)] dokumentaci.  
   
 <a name="samples"></a>   
-## <a name="threads-in-action-the-samples"></a>Vlákna v akci: ukázky  
+## <a name="threads-in-action-the-samples"></a>Vlákna v akci: Ukázky  
   
 <a name="prime_number"></a>   
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Aplikace s jedním vláknem s dlouhotrvající výpočtu  
@@ -217,5 +217,5 @@ ms.locfileid: "43512463"
   
  Úloha pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je vyhnout se neočekávaným opětovný vstup bez opětovného zavedení nevracení paměti, což je důvod, proč nedošlo k blokování opětovný vstup všude, kde.  
   
-## <a name="see-also"></a>Viz také  
- [Aplikace s jedním vláknem s ukázkou dlouhotrvající výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)
+## <a name="see-also"></a>Viz také:
+- [Aplikace s jedním vláknem s ukázkou dlouhotrvající výpočtu](https://go.microsoft.com/fwlink/?LinkID=160038)

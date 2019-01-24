@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 44f0763aa09b2a9d036d13c9995d7ea978908d4c
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 3eb18a3e48c185d59879e86801a7df5e6080d7a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529158"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závisí na vazby a přenosu používána. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy, je přenos protokolu HTTP a hlavní mechanismus pro zabezpečení přenosu je vrstva SSL (Secure Sockets) přes protokol HTTP, říká protokolu HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenosu používána vazeb poskytovaných systémem WCF.  
@@ -120,5 +120,5 @@ Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závi
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding a NetMsmqBinding  
  Úplné informace o přenosu zabezpečení pomocí služby Řízení front zpráv (dříve nazývané služby MSMQ), najdete v části [zabezpečení zabezpečení zprávy přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md).  
   
-## <a name="see-also"></a>Viz také  
- [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
+## <a name="see-also"></a>Viz také:
+- [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)

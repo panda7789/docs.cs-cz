@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 0a2ac22bfb5f84235d34a554df8cc1ad43ddc489
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 3aa32e54643ffb8e2e4e40f730ab3f5c084b8cd9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521712"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>Postupy: Konfigurace portu s certifikátem SSL
 Při vytváření služby Windows Communication Foundation (WCF) v místním prostředí s <xref:System.ServiceModel.WSHttpBinding> třídy zabezpečení přenosu používá, musíte také nakonfigurovat port pomocí certifikátu X.509. Pokud vytváříte nejsou v místním prostředí služby, můžete hostovat vaše služba v Internetové informační služby (IIS). Další informace najdete v tématu [zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md).  
@@ -55,9 +55,9 @@ Při vytváření služby Windows Communication Foundation (WCF) v místním pro
   
 ### <a name="to-get-a-certificates-thumbprint"></a>Chcete-li získat kryptografický otisk certifikátu  
   
-1.  Pomocí modulu snap-in Certifikáty konzoly MMC se najít certifikát X.509, který má zamýšleným účelem ověření klienta. Další informace najdete v tématu [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+1.  Pomocí modulu snap-in Certifikáty konzoly MMC se najít certifikát X.509, který má zamýšleným účelem ověření klienta. Další informace najdete v tématu [jak: Zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
-2.  Přístup k kryptografický otisk certifikátu. Další informace najdete v tématu [postupy: načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
+2.  Přístup k kryptografický otisk certifikátu. Další informace najdete v tématu [jak: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
   
 3.  Zkopírujte kryptografický otisk certifikátu do textového editoru, jako je například Poznámkový blok.  
   
@@ -129,5 +129,5 @@ Při vytváření služby Windows Communication Foundation (WCF) v místním pro
  [!code-csharp[c_WsHttpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wshttpservice/cs/source.cs#3)]
  [!code-vb[c_WsHttpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#3)]  
   
-## <a name="see-also"></a>Viz také  
-* [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

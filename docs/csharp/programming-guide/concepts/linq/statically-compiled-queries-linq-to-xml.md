@@ -2,12 +2,12 @@
 title: Staticky zkompilován dotazy (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 3bf558fe-0705-479d-86d4-00188f5fcf9c
-ms.openlocfilehash: 0febb0c1ccae544e9767b472f2be8bd4eef7f4c2
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 842f8c1c2fa07e1658992e94e5163222f38f80ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514787"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-c"></a>Staticky zkompilován dotazy (LINQ to XML) (C#)
 Jeden z vašich nejdůležitějších výkonu výhody LINQ to XML, nikoli <xref:System.Xml.XmlDocument>, dotazy v LINQ to XML nejsou staticky zkompilován, zatímco v době běhu musí být interpretován dotazy XPath. Tato funkce je založená na technologii LINQ to XML, takže není potřeba provést další kroky pro jejich výhod, ale je vhodné pochopit v čem při volbě mezi tyto technologie. Toto téma vysvětluje rozdíl.  
@@ -93,6 +93,6 @@ reader.Close();
   
  To je mnohem větší než práce provádí odpovídající dotazu LINQ to XML. Rozdíl měřené liší pro jednotlivé typy dotazů, ale v obecné LINQ to XML dotazy méně práci a proto fungoval lépe, než vyhodnocení výrazů XPath pomocí <xref:System.Xml.XmlDocument>.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Výkon (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/performance-linq-to-xml.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06bdc3605d981acad68a97901627f361da4061c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: efc46a0128a4fb9a0edaa86ad20689fda0c2710b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423316"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521774"
 ---
 # <a name="icordebugremotecreateprocessex-method"></a>ICorDebugRemote::CreateProcessEx – metoda
-Spustí proces ve vzdáleném počítači v rámci ladicího programu.  
+Spustí nějaký proces ve vzdáleném počítači v ladicím programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,56 +49,56 @@ HRESULT CreateProcessEx (
   
 #### <a name="parameters"></a>Parametry  
  `pRemoteTarget`  
- [v] Ukazatel na [ICorDebugRemoteTarget rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Použít k určení vzdáleného počítače, na kterém se spustí proces.  
+ [in] Ukazatel [icordebugremotetarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md). Slouží k určení vzdáleného počítače, na kterém se spustí proces.  
   
  `lpApplicationName`  
- [v] Ukazatel na řetězec ukončené hodnotou null, který určuje modulu provést spuštěného procesem. V modulu se spouštějí v kontextu zabezpečení volajícího procesu.  
+ [in] Ukazatel na řetězec zakončený hodnotou null, který určuje modulu je spuštěn proces provést. Modul provádí v kontextu zabezpečení volajícího procesu.  
   
  `lpCommandLine`  
- [v] Ukazatel na řetězec ukončené hodnotou null, který určuje příkazový řádek, který má být proveden spuštěného procesem.  
+ [in] Ukazatel na řetězec zakončený hodnotou null, který určuje příkazový řádek, který se spustí proces spuštěný.  
   
  `lpProcessAttributes`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `lpThreadAttributes`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `bInheritHandles`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `dwCreationFlags`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `lpEnvironment`  
- [v] Ukazatel na blok prostředí pro nový proces.  
+ [in] Ukazatele na blok prostředí nového procesu.  
   
  `lpCurrentDirectory`  
- [v] Ukazatel na řetězec ukončené hodnotou null, který určuje úplnou cestu k aktuálnímu adresáři pro proces. Pokud tento parametr hodnotu null, nový proces bude mít stejný aktuální jednotku a adresář jako volající proces.  
+ [in] Ukazatel na řetězec zakončený hodnotou null, který určuje úplnou cestu k adresáři aktuální proces. Pokud má parametr hodnotu null, nový proces bude mít stejný aktuální jednotku a adresář jako volající proces.  
   
  `lpStartupInfo`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `lpProcessInformation`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `debuggingFlags`  
- [v] Nepoužívá se pro vzdálené ladění.  
+ [in] Nepoužitý pro vzdálené ladění.  
   
  `ppProcess`  
- [out] Ukazatel na adresu "ICorDebugProcess rozhraní" objekt, který představuje proces.  
+ [out] Ukazatel na adresu "Icordebugprocess – rozhraní" objekt, který představuje proces.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  S_OK  
- Úspěšně spustit proces na vzdáleném počítači a vrácený "ICorDebugProcess rozhraní" pro ladění.  
+ Byl úspěšně spuštěn proces na vzdáleném počítači a vrácené "icordebugprocess – rozhraní" pro ladění.  
   
- E_FAIL (nebo ostatní návratové kódy E_)  
- Nelze spustit proces ve vzdáleném počítači a vrátí "ICorDebugProcess rozhraní" pro ladění.  
+ E_FAIL (nebo jiné E_ návratové kódy)  
+ Nelze spustit proces na vzdáleném počítači a vrátit "Icordebugprocess – rozhraní" pro ladění.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladění ve smíšeném režimu není podporována v programu Silverlight.  
+ Ladění ve smíšeném režimu není v Silverlightu podporovaný.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl  
   
@@ -106,8 +106,8 @@ HRESULT CreateProcessEx (
   
  **Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRemote – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)  
- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
-    
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRemote – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugremote-interface.md)
+- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

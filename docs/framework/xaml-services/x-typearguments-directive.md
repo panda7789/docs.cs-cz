@@ -10,12 +10,12 @@ helpviewer_keywords:
 - TypeArguments attribute in XAML [XAML Services]
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
-ms.openlocfilehash: 28eda94914125f2c5849a471671c8e283475c82c
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: ef08a550ebd1784514bc47ae02089847c6f1b578
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46321389"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520175"
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
 Předá omezení argumentů obecného konstruktoru obecného typu.  
@@ -64,7 +64,7 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
 -   Kořenový element souboru XAML může podporovat obecný využití XAML, který odkazuje na obecném typu.  
   
--   Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příkladem je <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénáře pro podporu obecných využití XAML v subsystému WPF.  
+-   Kořenový element musí být namapovaný na obecný typ s alespoň jeden argument typu. Příklad: <xref:System.Windows.Navigation.PageFunction%601>. Funkce stránky jsou primární scénáře pro podporu obecných využití XAML v subsystému WPF.  
   
 -   Kořenový prvek XAML objekt elementu obecné musí také deklarovat částečné třídy pomocí `x:Class`. To platí i v případě, že definice WPF akci sestavení.  
   
@@ -81,8 +81,8 @@ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
   
  V grafickém subsystému WPF a při cílení na [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], je možné použít funkce XAML 2009 spolu s `x:TypeArguments` , ale pouze pro volný XAML (XAML, který není kompilována značka). Kompilována značka XAML pro WPF a BAML formu XAML aktuálně nepodporují klíčová slova XAML 2009 a funkce. Pokud třeba do kódu kompilaci XAML, musí pracovat v rámci omezení, které jste si poznamenali v části "XAML 2006 a WPF obecný XAML použití".  
   
-## <a name="see-also"></a>Viz také  
- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)  
- [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)  
- [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)  
- [Obecné typy v jazyku XAML](../../../docs/framework/xaml-services/generics-in-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [x:Class – direktiva](../../../docs/framework/xaml-services/x-class-directive.md)
+- [x:Type – rozšíření značek](../../../docs/framework/xaml-services/x-type-markup-extension.md)
+- [Předdefinované typy obecných primitiv jazyka XAML](../../../docs/framework/xaml-services/built-in-types-for-common-xaml-language-primitives.md)
+- [Obecné typy v jazyku XAML](../../../docs/framework/xaml-services/generics-in-xaml.md)

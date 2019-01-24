@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 3674b5e8f54735010da901c76b77bd617218891e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0d1db0e3d2a423c4ba21311b6b9deb0d2565c103
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209178"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523152"
 ---
 # <a name="ltcleargt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Vymazat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;zdroje&gt;
 Vymaže `Listeners` kolekci pro zdroj trasování.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
+\<system.diagnostics>  
 \<zdroje >  
 \<zdroj >  
 \<naslouchací procesy >  
-\<Vymazat >  
+\<clear>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -86,8 +86,8 @@ Vymaže `Listeners` kolekci pro zdroj trasování.
 </configuration>   
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.TraceSource>  
- <xref:System.Diagnostics.TraceListener>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.TraceSource>
+- <xref:System.Diagnostics.TraceListener>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Moduly naslouchání trasování](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

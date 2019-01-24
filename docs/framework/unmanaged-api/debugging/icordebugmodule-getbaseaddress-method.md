@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10e7da7711cd63579589fda416d0d3a4f777eefe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ad6c8bd59f62bc7b0a96e1ef5e545fe15610c91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516977"
 ---
 # <a name="icordebugmodulegetbaseaddress-method"></a>ICorDebugModule::GetBaseAddress – metoda
 Získá základní adresu modulu.  
@@ -37,13 +37,13 @@ HRESULT GetBaseAddress(
   
 #### <a name="parameters"></a>Parametry  
  `pAddress`  
- [out] A `CORDB_ADDRESS` určující základní adresu modulu.  
+ [out] A `CORDB_ADDRESS` , která určuje základní adresu modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud modul je nativní bitové kopie (to znamená, pokud modul bylo vytvořeno pomocí Generátor nativních bitových kopií, NGen.exe), jeho základní adresa bude nula.  
+ Pokud modul je nativní obrázek (tj. Pokud modul se vytvořil parametrem Generátor nativních bitových kopií, NGen.exe), jeho základní adresa bude nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +51,6 @@ HRESULT GetBaseAddress(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- 
+## <a name="see-also"></a>Viz také:
+
+

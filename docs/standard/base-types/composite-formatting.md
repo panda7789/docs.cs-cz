@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60ccf478e974e24b437aa75bc9452033bd19a00f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: f68c1f2f888f340488c3cbec4c2384f6dce58077
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126858"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517679"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
@@ -57,7 +57,7 @@ Funkce složeného formátování je podporována například následujícími m
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{` *Index*[`,`*zarovnání*] [`:`*formatString*]`}`  
+ `{` *index*[`,`*alignment*][`:`*formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
@@ -161,15 +161,15 @@ Funkce složeného formátování je podporována například následujícími m
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Console.WriteLine%2A>  
-- <xref:System.String.Format%2A?displayProperty=nameWithType>  
-- [Interpolace řetězců (C#)](../../csharp/language-reference/tokens/interpolated.md)  
-- [Interpolace (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
-- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)  
-- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)  
-- [Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)  
-- [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)  
+- <xref:System.Console.WriteLine%2A>
+- <xref:System.String.Format%2A?displayProperty=nameWithType>
+- [Interpolace řetězců (C#)](../../csharp/language-reference/tokens/interpolated.md)
+- [Interpolace (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
+- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
+- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Standardní řetězce formátu TimeSpan](../../../docs/standard/base-types/standard-timespan-format-strings.md)
+- [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)
 - [Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)

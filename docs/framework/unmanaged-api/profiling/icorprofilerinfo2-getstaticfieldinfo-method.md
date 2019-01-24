@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f2ab0d482366b037f92a55f00dd33df8a312e84b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6711d0e0423534744de1ee4b8a734ed2f8eab24d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454426"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514280"
 ---
 # <a name="icorprofilerinfo2getstaticfieldinfo-method"></a>ICorProfilerInfo2::GetStaticFieldInfo – metoda
-Získá hodnotu, která určuje druh static, která platí pro zadané pole.  
+Získá hodnotu, která označuje druh statické, které platí pro zadané pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT GetStaticFieldInfo (
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy, ve kterém je definovaný statické pole.  
+ [in] ID třídy, ve kterém je definována statické pole.  
   
  `fieldToken`  
- [v] Token metadata pro statické pole.  
+ [in] Token metadat pro statické pole.  
   
  `pFieldInfo`  
- [out] Ukazatel na hodnotu [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) výčet určující, zda je zadané pole statické, a pokud ano, druh static, platí pro pole.  
+ [out] Ukazatel na hodnotu [cor_prf_static_type –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) výčet určující, zda je zadané pole statické, a pokud ano, druh statické, která platí pro pole.  
   
 ## <a name="remarks"></a>Poznámky  
- Tyto informace slouží k určení, které slouží k volání k získání adresy statického pole.  
+ Tyto informace slouží k určení funkce volání za účelem získání adresy statické pole.  
   
- Kód profileru, měli byste zkontrolovat metadata pro statické pole zajistit, že je ve skutečnosti adresu. Statické literály (konstanty) existují pouze v metadatech a nemají adresu.  
+ Profiler kódu, měli byste zkontrolovat metadata pro statické pole k zajištění, že ve skutečnosti má adresu. Statických literálů (to znamená, konstanty) existují pouze v metadatech a nemají adresu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -60,6 +60,6 @@ HRESULT GetStaticFieldInfo (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

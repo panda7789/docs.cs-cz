@@ -17,14 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d73fe16720248d541bac64a432bb6f35d6873b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54c38f9a9abc9a02ba4d84c9a41b2ef6b1f7cb69
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54528560"
 ---
 # <a name="imethodmallocalloc-method"></a>IMethodMalloc::Alloc – metoda
-Pokusí se přidělit zadanou velikost paměti pro nový tělo funkce (MSIL intermediate language) společnosti Microsoft.  
+Pokusí se přidělit zadanou velikost paměti pro nové tělo funkce Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,12 +37,12 @@ PVOID Alloc (
   
 #### <a name="parameters"></a>Parametry  
  `cb`  
- [v] Počet bajtů k přidělení pro tělo metoda.  
+ [in] Počet bajtů k přidělení pro tělo metody.  
   
 ## <a name="remarks"></a>Poznámky  
- Přidělenou paměť bude zahájena v adresu větší než bázové adresy modul, který je přidružen toto přidělení. Jinými slovy každý allocator se vytvoří pro konkrétního modulu a pokusí se přidělit paměť na kladné posunu z jeho základní adresu. Pokud `Alloc` nepodaří přidělit požadovaný počet bajtů na adresu větší než základní adresu modulu, vrátí E_OUTOFMEMORY, bez ohledu na skutečné množství paměti místa.  
+ Přidělená paměť se začne na adrese větší než základní adresy modulu, který je přidružený k této alokátoru. Jinými slovy každý alokátoru pro konkrétního modulu se vytvoří a se pokusí o přidělení paměti na kladné posunu od jeho základní adresa. Pokud `Alloc` se nepodařilo přidělit požadovaný počet bajtů na adrese větší než základní adresy modulu, vrátí E_OUTOFMEMORY, bez ohledu na skutečné množství paměti k dispozici.  
   
- `Alloc` Metoda má být použita ve spojení s [icorprofilerinfo::setilfunctionbody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) metoda.  
+ `Alloc` Metoda byste měli použít ve spojení s [ICorProfilerInfo::SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** WindSee [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
@@ -52,5 +53,5 @@ PVOID Alloc (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMethodMalloc – rozhraní](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMethodMalloc – rozhraní](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md)

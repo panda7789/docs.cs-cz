@@ -3,19 +3,19 @@ title: '&lt;wsFederation&gt;'
 ms.date: 03/30/2017
 ms.assetid: c537f770-68bd-4f82-96ad-6424ad91369f
 author: BrucePerlerMS
-ms.openlocfilehash: 66596bbc7171a33318b835a552b7fb364d6833f7
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: fced46560263a030430c04bd550c9ad66f2e1972
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838543"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521894"
 ---
 # <a name="ltwsfederationgt"></a>&lt;wsFederation&gt;
 Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM).  
   
-\<system.identityModel.services >  
-\<federationConfiguration >  
-\<wsFederation >  
+\<system.identityModel.services>  
+\<federationConfiguration>  
+\<wsFederation>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,30 +51,30 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthen
 |Atribut|Popis|  
 |---------------|-----------------|  
 |authenticationType.|Identifikátor URI, který určuje typ ověřování. Nastaví parametr wauth požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wauth není zahrnutý v požadavku.|  
-|aktuálnost|Požadovaný maximální dobu žádosti o ověření během několika minut. Nastaví parametr wfresh požadavek WS-Federation. Volitelné. Výchozí hodnota je nula. Volitelné. **Upozornění:** v příští vydané verzi rozhraní .NET Framework 4.5 `freshness` atribut budou typu `xs:string` a její výchozí hodnotu bude `null`.|  
+|aktuálnost|Požadovaný maximální dobu žádosti o ověření během několika minut. Nastaví parametr wfresh požadavek WS-Federation. Volitelné. Výchozí hodnota je nula. Volitelné. **Upozornění:**  V další vydané verzi rozhraní .NET Framework 4.5 `freshness` atribut budou typu `xs:string` a její výchozí hodnotu bude `null`.|  
 |homeRealm|Domovské sféry zprostředkovatele identity (IP) pro účely ověření. Nastaví parametr Wh požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr Wh není zahrnutý v požadavku.|  
 |issuer|Identifikátor URI zamýšlený vydavatel tokenu. Nastaví základní adresu URL WS-Federation žádostí o přihlášení a odhlášení požadavky vyžaduje.|  
 |persistentCookiesOnPassiveRedirects|Určuje, zda jsou trvalé soubory cookie vydala na ověřování. Volitelné. Výchozí hodnota je "false", nejsou vysílány soubory cookie.|  
 |passiveRedirectEnabled|Určuje, zda je povoleno WSFAM automaticky přesměrovat neoprávněné požadavky služby tokenů zabezpečení. Volitelné. Výchozí hodnota je "true", se automaticky přesměrují neoprávněné požadavky.|  
 |Zásady|Adresa URL, která určuje umístění odpovídající zásady pro použití na žádostí o přihlášení. Výchozí hodnota je prázdný řetězec. Nastaví parametr wp požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wp není zahrnutý v požadavku.|  
-|Sféra|Identifikátor URI žádající sféru. (Identifikátor URI identifikující předávající strany (RP) do služby tokenů zabezpečení (STS).) Nastaví parametr, který požadavek wtrealm přihlášení WS-Federation požadavku. Požadováno.|  
+|Sféra|Identifikátor URI žádající sféru. (Identifikátor URI identifikující předávající strany (RP) do služby tokenů zabezpečení (STS).) Nastaví parametr, který požadavek wtrealm přihlášení WS-Federation požadavku. Povinný parametr.|  
 |Odpověď|Adresa URL, která identifikuje adresu, na který aplikaci předávající stranu chtějí dostávat odpovědi z tokenu služba zabezpečení (STS). Nastaví parametr wreply požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wreply není zahrnutý v požadavku.|  
 |Požadavek|Požadavek na vystavení tokenu. Nastaví parametr wreq požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wreq není zahrnutý v požadavku. Nezahrnuje v požadavku wreq nebo parametrem wreqptr znamená, že služba tokenů zabezpečení ví, jaký druh tokenu k vydávání.|  
 |requestPtr|Adresa URL, která určuje umístění vystavování tokenů požadavku. Nastaví parametr wreqptr požadavku. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametrem wreqptr není zahrnutý v požadavku. Nezahrnuje v požadavku wreq nebo parametrem wreqptr znamená, že služba tokenů zabezpečení ví, jaký druh tokenu k vydávání.|  
-|atribut requireHttps|Určuje, jestli komunikaci se službou tokenů zabezpečení (STS) musí používat protokol HTTPS. Volitelné. Výchozí hodnota je "true", musíte použít HTTPS.|  
+|requireHttps|Určuje, jestli komunikaci se službou tokenů zabezpečení (STS) musí používat protokol HTTPS. Volitelné. Výchozí hodnota je "true", musíte použít HTTPS.|  
 |prostředek|Identifikátor URI, který identifikuje prostředek přistupuje, předávající strany (RP), položky na službu tokenů zabezpečení (STS). Volitelné. Nastaví parametr wres požadavek WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že parametr wres není zahrnutý v požadavku. **Poznámka:** wres je parametr starší verze. Zadejte `realm` atribut místo toho použít parametr wtrealm.|  
-|signInQueryString|Představuje rozšíření bod k určení aplikací definované parametry dotazu v adrese URL žádosti o přihlášení WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku. Parametry jsou zadané jako fragment řetězce dotazu pomocí následujícího formuláře: `"param1=value1&param2=value2&param3=value3"` a tak dále. **Poznámka:** v konfiguračním souboru "&" znak v řetězci dotazu musí být zadán pomocí jeho odkaz na entitu, `&`.|  
-|signOutQueryString|Představuje rozšíření bod k určení aplikací definované parametry dotazu v adrese URL žádosti o přihlášení WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku. Parametry jsou zadané jako fragment řetězce dotazu pomocí následujícího formuláře: `"param1=value1&param2=value2&param3=value3"` a tak dále. **Poznámka:** v konfiguračním souboru "&" znak v řetězci dotazu musí být zadán pomocí jeho odkaz na entitu, `&`.|  
+|signInQueryString|Představuje rozšíření bod k určení aplikací definované parametry dotazu v adrese URL žádosti o přihlášení WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku. Parametry jsou zadané jako fragment řetězce dotazu pomocí následujícího formuláře: `"param1=value1&param2=value2&param3=value3"` a tak dále. **Poznámka:**  V konfiguračním souboru "&" znak v řetězci dotazu musí být zadán pomocí jeho odkaz na entitu, `&`.|  
+|signOutQueryString|Představuje rozšíření bod k určení aplikací definované parametry dotazu v adrese URL žádosti o přihlášení WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku. Parametry jsou zadané jako fragment řetězce dotazu pomocí následujícího formuláře: `"param1=value1&param2=value2&param3=value3"` a tak dále. **Poznámka:**  V konfiguračním souboru "&" znak v řetězci dotazu musí být zadán pomocí jeho odkaz na entitu, `&`.|  
 |signOutReply|Určuje adresu URL, ke kterému by měla být klient přesměruje pomocí služby tokenů zabezpečení (STS) během pasivní odhlašování přes protokol WS-Federation. Nastaví parametr wreply na žádost o odhlašování přes protokol WS-Federation. Volitelné. Výchozí hodnota je prázdný řetězec, který určuje, že žádné další parametry, měly by být součástí požadavku.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
+|[\<federationConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
 ## <a name="remarks"></a>Poznámky  
  Můžete použít `<wsFederation>` prvek, který chcete konfigurovat výchozí nastavení parametrů WS-Federation a výchozí chování pro WSFAM. Nastavení parametrů WS-Federation definované v části `<wsFederation>` element nastaven rovnocenné vlastností vystavovaných třídami <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy. Tyto vlastnosti zůstávají stejné pro každý požadavek vystavil WSFAM. Můžete změnit parametry WS-Federation dynamicky během zpracování tak, že přidáte obslužné rutiny událostí pro události vystavené WSFAM; požadavku například <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider> událostí. Další informace najdete v tématu v dokumentaci <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> třídy.  
@@ -98,6 +98,6 @@ Poskytuje konfiguraci pro <xref:System.IdentityModel.Services.WSFederationAuthen
               persistentCookiesOnPassiveRedirects="true" />
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>  
- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>
+- <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>

@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: c2caaf45-e59c-42a1-bc9b-77a6de520171
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 16bc9475599510a5e55f246d49aaa0be19314979
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 23b1b92c52988761aa67eb2de16a1b9141a0de30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208682"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524858"
 ---
 # <a name="obtaining-ui-automation-elements"></a>Získání elementů automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma popisuje různé způsoby, jak se dá získat <xref:System.Windows.Automation.AutomationElement> objekty pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy.  
   
@@ -98,7 +98,7 @@ ms.locfileid: "47208682"
 ### <a name="from-the-focused-control"></a>Z ovládacího prvku fokusem  
  Můžete načíst <xref:System.Windows.Automation.AutomationElement> cílené ovládací prvek, který představuje ze statické <xref:System.Windows.Automation.AutomationElement.FocusedElement%2A> vlastnost.  
   
-## <a name="see-also"></a>Viz také  
- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
- [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)  
- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)
+- [Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker](../../../docs/framework/ui-automation/navigate-among-ui-automation-elements-with-treewalker.md)
+- [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)

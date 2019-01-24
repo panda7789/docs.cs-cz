@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel'
+title: 'Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 - child controls [Windows Forms], anchoring and docking
 - TableLayoutPanel control [Windows Forms], child controls
 ms.assetid: 0d267c35-25f1-49b8-8976-c64e8f0ddc0b
-ms.openlocfilehash: ad09c30b2118a08f4249433c4f531e5bcef4acd5
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4da793b8836b2bbb5cadbfbe6f2652e965d1c444
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749067"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524153"
 ---
-# <a name="how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control"></a>Postupy: Ukotvení podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel
+# <a name="how-to-anchor-and-dock-child-controls-in-a-tablelayoutpanel-control"></a>Postupy: Ukotvení a podřízených ovládacích prvků v ovládacím prvku TableLayoutPanel
 <xref:System.Windows.Forms.TableLayoutPanel> Podporuje ovládací prvek <xref:System.Windows.Forms.Control.Anchor%2A> a <xref:System.Windows.Forms.Control.Dock%2A> vlastnosti v jeho podřízených ovládacích prvků.  
   
 ### <a name="to-align-a-child-control-in-a-tablelayoutpanel-cell"></a>Chcete-li zarovnat podřízeného ovládacího prvku v buňce kontejneru TableLayoutPanel  
@@ -82,8 +82,8 @@ ms.locfileid: "43749067"
   
 -   Odkazy na sestavení systému, System.Data, System.Drawing a System.Windows.Forms.  
   
- Informace o vytváření použijeme příklad z příkazového řádku pro visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření použijeme příklad z příkazového řádku pro visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [jak: Kompilace a spuštění příkladu kódu dokončení Windows Forms pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.TableLayoutPanel>  
- [Ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.TableLayoutPanel>
+- [Ovládací prvek TableLayoutPanel](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-windows-forms.md)

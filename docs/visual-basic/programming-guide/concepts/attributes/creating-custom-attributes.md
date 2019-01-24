@@ -2,15 +2,15 @@
 title: Vytváření vlastních atributů (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5c9ef584-6c7c-496b-92a9-6e42f8d9ca28
-ms.openlocfilehash: 9af0832e04308bf1942fc955afe5a67161096465
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4bc60e20d163c6aec231152940f548fcb58442f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642875"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526350"
 ---
 # <a name="creating-custom-attributes-visual-basic"></a>Vytváření vlastních atributů (Visual Basic)
-Můžete vytvořit vlastní atributy definováním třídy atributu, třídu odvozenou z přímo nebo nepřímo <xref:System.Attribute>, které díky Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značky s názvem programátory, kteří napsali typu. Můžete třeba definovat vlastní `Author` třídy atributů:  
+Můžete vytvořit vlastní atributy definováním třídy atributu, třídu, která je odvozena přímo nebo nepřímo z <xref:System.Attribute>, díky kterému budou Identifikace definice atributu v metadatech rychlé a snadné. Předpokládejme, že chcete typy značek s názvem programátora, který napsal typu. Můžete třeba definovat vlastní `Author` třídy atributů:  
   
 ```vb  
 <System.AttributeUsage(System.AttributeTargets.Class Or   
@@ -26,7 +26,7 @@ Public Class Author
 End Class  
 ```  
   
- Název třídy je název atributu, `Author`. Je odvozený od `System.Attribute`, takže je třídu vlastního atributu. V konstruktoru parametry jsou vlastní atribut poziční parametry. V tomto příkladu `name` je parametr poziční. Všechny vlastnosti nebo veřejná pole pro čtení a zápis jsou pojmenované parametry. V takovém případě `version` je jediným s názvem parametru. Všimněte si použití `AttributeUsage` atribut, aby `Author` atribut platná pouze pro třídy a `Structure` deklarace.  
+ Název třídy je název atributu, `Author`. Je odvozen z `System.Attribute`, tak, aby byl třídu vlastního atributu. Vlastní atribut poziční parametry jsou parametry konstruktoru. V tomto příkladu `name` je poziční parametr. Žádné vlastnosti nebo pole veřejné čtení a zápis jsou pojmenované parametry. V takovém případě `version` je pouze s názvem parametru. Všimněte si použití `AttributeUsage` atribut, aby `Author` atribut je platný pouze pro třídy a `Structure` deklarace.  
   
  Tento nový atribut můžete použít takto:  
   
@@ -37,7 +37,7 @@ Class SampleClass
 End Class  
 ```  
   
- `AttributeUsage` má parametr s názvem `AllowMultiple`, pomocí kterého můžete nastavit vlastní atribut jedno použití nebo multiuse. V následujícím příkladu kódu je vytvořen multiuse atribut.  
+ `AttributeUsage` nemá parametr pojmenovaný `AllowMultiple`, pomocí které můžete vytvořit vlastní atribut jedno použití nebo multiuse. V následujícím příkladu kódu je vytvořen multiuse atribut.  
   
 ```vb  
 ' multiuse attribute  
@@ -48,7 +48,7 @@ Public Class Author
     Inherits System.Attribute  
 ```  
   
- V následujícím příkladu kódu je na třídu použít víc atributů stejného typu.  
+ V následujícím příkladu kódu se více atributů stejného typu aplikován na třídu.  
   
 ```vb  
 <Author("P. Ackerman", Version:=1.1),   
@@ -60,13 +60,13 @@ End Class
 ```  
   
 > [!NOTE]
->  Pokud vaše třídy atributů obsahuje vlastnost, vlastnosti musí být pro čtení a zápis.  
+>  Pokud vaše třída atributů obsahuje vlastnost, musí být tuto vlastnost pro čtení i zápis.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection>  
- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)  
- [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)  
- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)  
- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)  
- [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)  
- [AttributeUsage (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/attributeusage.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Reflection>
+- [Průvodce programováním v jazyce Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Zápis vlastních atributů](../../../../standard/attributes/writing-custom-attributes.md)
+- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
+- [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [AttributeUsage (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/attributeusage.md)

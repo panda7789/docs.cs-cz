@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b3e48d5a088fc6cff3dbdaaa77e6fa561c33f400
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 7f41a61fe929bb3eaf691deb75749777c0880aea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865518"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530685"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
 Dešifrování se zpětná operace šifrování. K šifrování tajného klíče musíte znát klíč a vektor IV použitý k šifrování dat. Pro šifrování s veřejným klíčem je třeba znát veřejného klíče (Pokud byla data zašifrována pomocí soukromého klíče) nebo privátní klíč (Pokud byla data zašifrována pomocí veřejného klíče).  
@@ -174,7 +174,7 @@ class Class1
 ## <a name="asymmetric-decryption"></a>Asymetrické dešifrování  
  Strana (stran A) obvykle generuje i veřejného a privátního klíče a uloží klíč v paměti nebo v kontejneru kryptografických klíčů.  Party, A poté odešle veřejný klíč do jiného (strana B).  Pomocí veřejného klíče, strana B šifruje data a odešle data zpět do strany A.  Po přijetí dat, strana A dešifruje ji pomocí soukromého klíče, který odpovídá.  Dešifrování bude úspěšné pouze v případě, že strana A privátní klíč, který odpovídá veřejnému klíči stran B používá k šifrování dat používá.  
   
- Informace o způsobu uložení asymetrického klíče v kontejneru zabezpečené kryptografické klíče a jak později načíst asymetrického klíče, naleznete v tématu [jak: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).  
+ Informace o způsobu uložení asymetrického klíče v kontejneru zabezpečené kryptografické klíče a jak později načíst asymetrického klíče, naleznete v tématu [jak: Store asymetrického klíče v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).  
   
  Následující příklad ukazuje dešifrování dvě pole bajtů, která představuje symetrický klíč a vektor IV.  Informace o tom, jak extrahovat asymetrického veřejný klíč z <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu ve formátu, který můžete snadno odesílat žádné třetí straně, přečtěte si téma [šifrování dat](../../../docs/standard/security/encrypting-data.md).  
   
@@ -204,6 +204,6 @@ SymmetricIV = RSA.Decrypt( EncryptedSymmetricIV , false);
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
-- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)  
+- [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
+- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)
 - [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)

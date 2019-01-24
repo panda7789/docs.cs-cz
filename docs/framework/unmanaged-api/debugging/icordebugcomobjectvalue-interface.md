@@ -16,28 +16,28 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 11afee9c2a84999ccad2cdc12e2a14a4dc17d542
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4db005e1de043e60ffe958de732a5280fcccbea7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412513"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529944"
 ---
 # <a name="icordebugcomobjectvalue-interface"></a>ICorDebugComObjectValue – rozhraní
-Poskytuje metody k načtení informací, které jsou přidružené obálka volatelná na za běhu (RCW).  
+Poskytuje metody pro načtení informací o související s obálka volatelná aplikacemi běhu (RCW).  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetCachedInterfacePointers – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Získá ukazatele nezpracovaná rozhraní v aktuální RCW mezipaměti.|  
-|[GetCachedInterfaceTypes – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Poskytuje enumerátor pro typy rozhraní, aby byla použita k nebo použít jako aktuální objekt.|  
+|[GetCachedInterfacePointers – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacepointers-method.md)|Získá ukazatele raw rozhraní ukládat do mezipaměti na aktuální objekt RCW.|  
+|[GetCachedInterfaceTypes – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-getcachedinterfacetypes-method.md)|Poskytuje enumerátor pro typy rozhraní, že byla malá a velká použita k nebo použít jako aktuální objekt.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud chcete zkontrolovat, zda instanci rozhraní "ICorDebugValue" představuje RCW, ladicí program volá `QueryInterface` na "ICorDebugValue" s `IID_ICorDebugComObjectValue`.  
+ Pokud chcete zkontrolovat, zda instanci rozhraní "ICorDebugValue" představuje obálky RCW, ladicí program volá `QueryInterface` na "ICorDebugValue" s `IID_ICorDebugComObjectValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -45,6 +45,6 @@ Poskytuje metody k načtení informací, které jsou přidružené obálka volat
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

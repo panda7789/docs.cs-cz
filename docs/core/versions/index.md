@@ -1,16 +1,11 @@
 ---
 title: Jak se systémovou správou verzí modulu Runtime .NET Core a sady SDK
-description: V tomto článku se naučíte, jak .NET Core SDK a modulu Runtime se systémovou správou verzí (podobně jako sémantické správy verzí).
+description: 'V tomto článku se naučíte, jak .NET Core SDK a modulu Runtime se systémovou správou verzí (podobně jako sémantické správy verzí).'
 author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: e4ab5e3a6dd487437e267aec042639c70fdc61ad
-ms.sourcegitcommit: 8598d446303b545eed2d520a6ccd061c1a7d00cb
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53334805"
 ---
+
 # <a name="overview-of-how-net-core-is-versioned"></a>Přehled, jak se systémovou správou verzí .NET Core
 
 .NET core odkazuje na modul Runtime .NET Core a .NET Core SDK, který obsahuje nástroje, které potřebujete k vývoji aplikací. .NET core SDK jsou navrženy pro práci s jakékoli předchozí verzi modulu Runtime .NET Core. Tento článek vysvětluje strategii verze sady SDK a modulu runtime. Vysvětlení čísla verzí pro .NET Standard najdete v článku Představujeme [.NET Standard](../../standard/net-standard.md#net-implementation-support).
@@ -25,7 +20,7 @@ Modulu Runtime .NET Core a .NET Core SDK přidávání nových funkcí v různý
 
 Třetí pozici číslo verze sady SDK komunikuje i menší a opravu. Dílčí verze je vynásobené číslem 100. Dílčí verze 1, verze 2 opravy by být vyjádřena jako 102. Poslední dvě číslice představovat číslo opravy. Verze rozhraní .NET Core 2.2 může například vytvořit verze jako v následující tabulce:
 
-| Změna                | .NET core Runtime | .NET core SDK (*) |
+| Změna                | .NET Core Runtime | .NET core SDK (*) |
 |-----------------------|-------------------|-------------------|
 | Původní vydaná verze       | 2.2.0             | 2.2.100           |
 | Oprava sady SDK             | 2.2.0             | 2.2.101           |
@@ -106,8 +101,8 @@ Implementuje každou verzi .NET Core na verzi .NET Standard. Implementace verze 
 
 ## <a name="see-also"></a>Viz také:
 
-* [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)  
-* [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)  
-* [.NET core podpory životního cyklu fakt list](https://www.microsoft.com/net/core/support)  
-* [Vázání verze rozhraní .NET core 2 +](https://github.com/dotnet/designs/issues/3)  
-* [Image dockeru pro .NET Core](https://hub.docker.com/r/microsoft/dotnet/)
+- [Cílové verze rozhraní .NET Framework](../../standard/frameworks.md)
+- [Vytváření distribučních balíčků .NET Core](../build/distribution-packaging.md)
+- [.NET core podpory životního cyklu fakt list](https://www.microsoft.com/net/core/support)
+- [Vázání verze rozhraní .NET core 2 +](https://github.com/dotnet/designs/issues/3)
+- [Image dockeru pro .NET Core](https://hub.docker.com/r/microsoft/dotnet/)

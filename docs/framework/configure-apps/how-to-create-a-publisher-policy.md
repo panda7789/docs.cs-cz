@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: e7cac3c7e6c588a82e9dfff169ba7b7aa72c35f8
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 3969f066c0a17424d2c4527d2b4661b30f5bb6d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838467"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530522"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější verze sestavení zahrnutím souboru zásad vydavatele s upgradovaný sestavení. Soubor zásad vydavatele, který určuje přesměrování sestavení a nastavení základní kód a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele, který je zkompilován sestavení a umístěn v globální mezipaměti sestavení.  
@@ -63,7 +63,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
     -   *PublisherPolicyAssemblyFile* argumentem je název sestavení zásad vydavatele, která je výsledkem tohoto příkazu. Název souboru sestavení musí vyhovovat formátu:  
   
-         **zásady.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
+         **policy.** *majorNumber* **.** *minorNumber* **.** *mainAssemblyName* **.dll**  
   
     -   *KeyPairFile* argumentem je název souboru, který obsahuje pár klíčů. Musíte podepsat sestavení a sestavení zásad vydavatele s stejného páru klíčů.  
   
@@ -102,11 +102,11 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
     > [!IMPORTANT]
     >  Sestavení zásad vydavatele nelze přidat do globální mezipaměti sestavení, pokud původní soubor zásad vydavatele se nachází ve stejném adresáři jako sestavení.  
   
-## <a name="see-also"></a>Viz také  
- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)  
- [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
- [Schéma nastavení běhového prostředí](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+## <a name="see-also"></a>Viz také:
+- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Konfigurace aplikací](../../../docs/framework/configure-apps/index.md)
+- [Konfigurace aplikací .NET Framework](https://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)
+- [Schéma nastavení běhového prostředí](../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)
+- [Přesměrování verzí sestavení](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

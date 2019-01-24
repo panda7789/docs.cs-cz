@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8b9eedfab68dc6aeacf9ed51ffc7205b73c062ca
-ms.sourcegitcommit: 82a3f7882bc03ed733af91fc2a0b113195bf5dc7
+ms.openlocfilehash: 224e4f3db31e4818833eb8411f44f547538534fc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "45698336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517250"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>Vložení dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod pro vložení na stejné úrovni, podřízený a atribut uzly v dokumentu XML. Chcete-li používat tyto metody <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí být vlastnost `true`.  
@@ -332,9 +332,9 @@ document.Save("book.xml");
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.XmlDocument>  
-- <xref:System.Xml.XPath.XPathDocument>  
-- <xref:System.Xml.XPath.XPathNavigator>  
-- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
-- [Změna dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)  
+- <xref:System.Xml.XmlDocument>
+- <xref:System.Xml.XPath.XPathDocument>
+- <xref:System.Xml.XPath.XPathNavigator>
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
+- [Změna dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)
 - [Odebrání dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)

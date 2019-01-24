@@ -7,19 +7,19 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: 587c70a7b583c99e66eebac4055415e1e6a635b2
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: dd5972c2bb25367f2566bcf77e53e7a3341d89b4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146105"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519460"
 ---
 # <a name="ltaddgt-of-ltdeclaredtypesgt-element"></a>&lt;add&gt; elementu &lt;declaredTypes&gt;
 Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializer> během deserializace. Každý deklarovaný typ obsahuje známé typy, které budou vráceny jako pole nebo vlastnost deklarovaného typu.  
   
  system.runtime.serialization  
-\<dataContractSerializer >  
-\<declaredTypes >  
+\<dataContractSerializer>  
+\<declaredTypes>  
 \<Přidat > z \<declaredTypes >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,13 +46,13 @@ Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializ
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Třída knownType >](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|Určuje známý typ deklarovaný typ, který je přidáván. Pokud je deklarovaný typ obecného typu, pak musíte taky přidat prvek parametru, který se `<knownType>` element k určení, které obecný parametr se používá k vrácení známého typu.|  
+|[\<knownType>](../../../../../docs/framework/configure-apps/file-schema/wcf/knowntype.md)|Určuje známý typ deklarovaný typ, který je přidáván. Pokud je deklarovaný typ obecného typu, pak musíte taky přidat prvek parametru, který se `<knownType>` element k určení, které obecný parametr se používá k vrácení známého typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Obsahuje typy, které vyžadují během deserializace za pomocí známých typů <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<declaredTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/declaredtypes.md)|Obsahuje typy, které vyžadují během deserializace za pomocí známých typů <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Další informace o známých typů najdete v tématu [známé typy kontraktů dat.](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md) a <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -75,8 +75,8 @@ Přidá typ používaný <xref:System.Runtime.Serialization.DataContractSerializ
 </add>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.DataContractSerializer>  
- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
- [\<dataContractSerializer >](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
- [\<Přidat > z \<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.DataContractSerializer>
+- [Známé typy kontraktů dat](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)
+- [\<Přidat > z \<declaredTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)

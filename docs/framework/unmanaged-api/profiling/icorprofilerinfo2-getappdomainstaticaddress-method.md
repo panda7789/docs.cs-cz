@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8e1886a3e33b533eb525f5b35480a8a7d326da0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f3c5e89057ef4c88d7c5e78120aca9841d731eda
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454589"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524712"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress – metoda
-Získá adresu domény statické pole určená aplikace, které je v oboru domény zadané aplikace.  
+Získá adresu zadané aplikace domény statická pole, které je v oboru zadanou doménu aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ RESULT GetAppDomainStaticAddress(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy třídy, která obsahuje pole domény statické požadovaná aplikace.  
+ [in] ID třídy třídy, která obsahuje doménu statické pole požadovaná aplikace.  
   
  `fieldToken`  
- [v] Token metadata pro domény statické pole požadovaná aplikace.  
+ [in] Token metadat pro domény statické pole požadované aplikace.  
   
  `appDomainId`  
- [v] ID domény aplikace, které je v rozsahu pro požadovaný statické pole.  
+ [in] ID domény aplikace, která je v oboru pro požadovaný statické pole.  
   
  `ppAddress`  
- [out] Ukazatel na adresu statického pole, která je v rámci domény zadané aplikace.  
+ [out] Ukazatel na adresu statické pole, která je určená aplikační domény.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetAppDomainStaticAddress` Metoda může vrátit jednu z následujících:  
+ `GetAppDomainStaticAddress` Metoda může vrátit jednu z následujících akcí:  
   
--   HRESULT CORPROF_E_DATAINCOMPLETE, pokud daný statické pole nebyla přiřazena adresu v zadaném kontextu.  
+-   CORPROF_E_DATAINCOMPLETE HRESULT, pokud daný statické pole nebyla přiřazena adresa v zadaném kontextu.  
   
--   Adresy objekty, které mohou být v kolekci halda paměti. Tyto adresy může zneplatní po uvolňování paměti, takže po uvolnění paměti by neměl profilery předpokládá platnými.  
+-   Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy mohou stát neplatnými po uvolnění paměti, takže po uvolnění paměti, profilovací programy by neměl se předpokládá, že jsou platné.  
   
- Před dokončením konstruktoru třídy třídy `GetAppDomainStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna její statické pole, i když některé statických polí mohou již být inicializován a vytvoření kořenového adresáře objekty kolekce paměti.  
+ Před dokončením konstruktoru třídy třídy `GetAppDomainStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechny jeho statická pole, i když některé statická pole může již být inicializován a kořenová objekty uvolnění paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -68,6 +68,6 @@ RESULT GetAppDomainStaticAddress(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

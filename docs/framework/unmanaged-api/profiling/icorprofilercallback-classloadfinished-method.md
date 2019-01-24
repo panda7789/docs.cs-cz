@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 671f6743915ae4b7e7f4147f9fcddb1a623916ea
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b7415809912b7cb56fb2d0bebae196233c45477
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451266"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514576"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished – metoda
-Upozorní profileru, že třídu dokončil načítání.  
+Třída dokončení načítání oznámí profileru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT ClassLoadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] Určuje třídu, která byla načtena.  
+ [in] Určuje třídu, která byla načtena.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda třída úspěšně načten.  
+ [in] HRESULT, která určuje, zda třída úspěšně načten.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `classId` není platná pro požadavek informace, dokud `ClassLoadFinished` metoda je volána.  
+ Hodnota `classId` není platná pro požadavek informace do `ClassLoadFinished` metoda je volána.  
   
- Některé části načítání třída může pokračovat po `ClassLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část načítání třída proběhl úspěšně.  
+ Některé části načítání třídy může pokračovat po `ClassLoadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část načítání třídy proběhla úspěšně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,6 +56,6 @@ HRESULT ClassLoadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ClassLoadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ClassLoadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)

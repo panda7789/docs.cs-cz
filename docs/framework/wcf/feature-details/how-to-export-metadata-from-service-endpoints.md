@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: Export metadat z koncových bodů služby'
+title: 'Postupy: Export metadat z koncových bodů služeb'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b6c4dfd0-f270-43ec-961a-e16eb6af2f2c
-ms.openlocfilehash: 9235498956f53d69b3024d1db023f3eb0908d2aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86ad062f7b7ee3dd2927f8b5b103adfd719a963d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491537"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529986"
 ---
-# <a name="how-to-export-metadata-from-service-endpoints"></a>Postupy: Export metadat z koncových bodů služby
+# <a name="how-to-export-metadata-from-service-endpoints"></a>Postupy: Export metadat z koncových bodů služeb
 Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.  
   
 ### <a name="to-export-metadata-from-service-endpoints"></a>Pro export metadat z koncových bodů služby  
   
-1.  Vytvořte nový projekt aplikace konzoly Visual Studio. Přidejte uvedeném v následujících krocích v vygenerovaný soubor Program.cs v rámci metody main() kódu.  
+1.  Vytvoření nového projektu aplikace konzoly Visual Studio. Přidejte kód je znázorněno v následujícím postupu v generovaném souboru Program.cs v rámci metody main().  
   
 2.  Vytvoření <xref:System.ServiceModel.Description.WsdlExporter>.  
   
      [!code-csharp[S_UEWsdlExporter#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#1)]
      [!code-vb[S_UEWsdlExporter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#1)]  
   
-3.  Nastavte <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost na jednu z hodnot z <xref:System.ServiceModel.Description.PolicyVersion> výčtu. Tato ukázka nastaví na hodnotu <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> která odpovídá WS-Policy 1.5.  
+3.  Nastavte <xref:System.ServiceModel.Description.MetadataExporter.PolicyVersion%2A> vlastnost na jednu z hodnot <xref:System.ServiceModel.Description.PolicyVersion> výčtu. Tento příklad nastaví hodnotu <xref:System.ServiceModel.Description.PolicyVersion.Policy15%2A> který odpovídá 1.5 WS-Policy.  
   
      [!code-csharp[S_UEWsdlExporter#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#2)]
      [!code-vb[S_UEWsdlExporter#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#2)]  
@@ -34,20 +34,20 @@ Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.
      [!code-csharp[S_UEWsdlExporter#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#3)]
      [!code-vb[S_UEWsdlExporter#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#3)]  
   
-5.  Exportujte metadat pro každý koncový bod služby.  
+5.  Exportujte metadat pro každého koncového bodu služby.  
   
      [!code-csharp[S_UEWsdlExporter#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#4)]
      [!code-vb[S_UEWsdlExporter#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#4)]  
   
-6.  Zkontrolujte a ujistěte se, že během procesu exportu nedošlo k žádným chybám načtení metadat.  
+6.  Zkontrolujte, ujistěte se, že nedošlo k žádným chybám během procesu exportu a načtení metadat.  
   
      [!code-csharp[S_UEWsdlExporter#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#5)]
      [!code-vb[S_UEWsdlExporter#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#5)]  
   
-7.  Teď můžete použít metadata, například zapisovat do souboru voláním <xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29> metoda.  
+7.  Teď můžete pomocí metadat, jako je zápis do souboru pomocí volání <xref:System.ServiceModel.Description.MetadataSet.WriteTo%28System.Xml.XmlWriter%29> metody.  
   
 ## <a name="example"></a>Příklad  
- Zde je úplný výpis pro tento příklad kódu.  
+ Následuje úplný výpis v tomto příkladu kódu.  
   
  [!code-csharp[S_UEWsdlExporter#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#0)]
  [!code-vb[S_UEWsdlExporter#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#0)]  
@@ -55,7 +55,7 @@ Toto téma vysvětluje, jak pro export metadat z koncových bodů služby.
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Při kompilaci souboru Program.cs odkaz System.ServiceModel.dll.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)  
- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled architektury metadat](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
+- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
+- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)

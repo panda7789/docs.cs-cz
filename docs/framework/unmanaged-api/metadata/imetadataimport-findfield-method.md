@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ac69bab45ccd39b6a055fe4d2f74950ab47da779
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b07d75b6a8839f9a223ef2c0be52830e107e4088
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447029"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527598"
 ---
 # <a name="imetadataimportfindfield-method"></a>IMetaDataImport::FindField – metoda
-Získá ukazatel na FieldDef token pole, která je uzavřena k zadanému <xref:System.Type> a má zadaný název a metadata podpis.  
+Získá ukazatel FieldDef token pro pole, který je uzavřen parametrem <xref:System.Type> a, který má zadaný název a metadata podpis.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT FindField (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] Token TypeDef pro třídy nebo rozhraní, která obklopuje pole pro vyhledávání. Pokud je tato hodnota `mdTokenNil`, globální proměnné se provádí vyhledávání.  
+ [in] Token TypeDef pro třídu nebo rozhraní, který obklopuje pole pro hledání. Pokud je tato hodnota `mdTokenNil`, vyhledávání se provádí pro globální proměnné.  
   
  `szName`  
- [v] Název pole, které chcete vyhledat.  
+ [in] Název pole, které chcete vyhledat.  
   
  `pvSigBlob`  
- [v] Ukazatel na binární metadata podpis pole.  
+ [in] Ukazatel na binární metadat podpis pole.  
   
  `cbSigBlob`  
- [v] Velikost v bajtech `pvSigBlob`.  
+ [in] Velikost v bajtech `pvSigBlob`.  
   
  `pmb`  
- [out] Ukazatel na odpovídající FieldDef token.  
+ [out] Ukazatel na odpovídající token FieldDef.  
   
 ## <a name="remarks"></a>Poznámky  
- Zadejte pole, které používá jeho nadřazených třídy nebo rozhraní (`td`), jeho název (`szName`) a volitelně jeho podpis (`pvSigBlob`).  
+ Zadejte pole pomocí jeho nadřazené třídu nebo rozhraní (`td`), jeho název (`szName`) a volitelně jeho podpis (`pvSigBlob`).  
   
- Podpis předaný `FindField` musí být vygenerováno v aktuálním oboru, protože podpis je vázána na konkrétní rozsah. Podpis můžete vložit token, který identifikuje nadřazeného typu třídy nebo hodnota. (Token je index do místní tabulky TypeDef). Nelze vytvořit podpis běhu mimo kontext aktuálního oboru a použít jako vstup pro tento podpis `FindField`.  
+ Podpis předán `FindField` musí byly vytvořeny v aktuálním oboru, protože podpisy jsou vázány na určitém rozsahu. Podpis můžete vložit token, který identifikuje nadřazeného class nebo hodnotového typu. (Token je index do místní tabulky TypeDef). Nelze sestavit podpis za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup pro `FindField`.  
   
- `FindField` Vyhledá pouze pole, které byly definovány přímo v třídy nebo rozhraní; zděděné pole nenajde.  
+ `FindField` Vyhledá pouze pole, které byly definovány přímo v dané třídy nebo rozhraní; Nelze najít zděděného pole.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

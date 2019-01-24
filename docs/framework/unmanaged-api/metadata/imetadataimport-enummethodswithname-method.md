@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cea47f8300c57362abae0c10223559319ecb2469
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 901603da64502c994f625be609f5a6e21a1db1c0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519239"
 ---
 # <a name="imetadataimportenummethodswithname-method"></a>IMetaDataImport::EnumMethodsWithName – metoda
-Vytvoří výčet metod, které jsou definovány podle typu, který odkazuje zadaný token TypeDef, které mají zadaný název.  
+Podává výčet metod, které mají se zadaným názvem a typem odkazuje zadaný token TypeDef, která jsou definována.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,42 +42,42 @@ HRESULT EnumMethodsWithName (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
   
  `cl`  
- [v] TypeDef token představující jejichž metody pro výčet typu.  
+ [in] Token TypeDef představující typ, jehož metody pro výčet.  
   
  `szName`  
- [v] Název, který omezuje obor výčtu.  
+ [in] Název, který omezuje rozsah výčtu.  
   
  `rMethods`  
- [out] Pole používá k ukládání MethodDef tokenů.  
+ [out] Pole pro ukládání tokenů MethodDef.  
   
  `cMax`  
- [v] Maximální velikost `rMethods` pole.  
+ [in] Maximální velikost `rMethods` pole.  
   
  `pcTokens`  
- [out] Počet MethodDef tokeny, vrátí se v `rMethods`.  
+ [out] Počet tokenů MethodDef vrácené v `rMethods`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda zobrazí pole a metody, ale ne vlastnosti nebo události. Na rozdíl od [imetadataimport::enummethods –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md), `EnumMethodsWithName` zahodí všechny metoda tokeny, které nemají zadaný název.  
+ Tato metoda vytváří výčet polí a metod, ale nikoli vlastnosti nebo události. Na rozdíl od [imetadataimport::enummethods –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md), `EnumMethodsWithName` zahodí všechny tokeny metody, které nemají se zadaným názvem.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodsWithName` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumMethodsWithName` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

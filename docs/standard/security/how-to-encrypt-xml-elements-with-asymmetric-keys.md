@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 61984d4778e42abf378a1369a86ba599d78980af
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 4a38c2264bac92e9c2c0627718bf53539e6bec72
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121321"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518264"
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>Postupy: Šifrování elementů XML pomocí asymetrických klíčů
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v <https://www.w3.org/TR/xmldsig-core/>.  
@@ -33,7 +33,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
  V tomto příkladu šifruje elementu XML s použitím dva klíče.  Generuje pár veřejného a privátního klíče RSA a uloží pár klíčů zabezpečeného kontejneru klíčů.  Příklad poté vytvoří samostatné relaci klíče pomocí algoritmus Advanced Encryption (Standard AES), také nazývané algoritmu Rijndael.  V příkladu používá klíč relace AES pro šifrování dokumentů XML a pak pomocí veřejného klíče RSA pro šifrování s klíčem relace AES.  Nakonec příklad uloží zašifrovaný klíč relace a šifrovaná data XML v dokumentu XML v rámci nového <`EncryptedData`> element.  
   
- K dešifrování elementu XML, načíst privátní klíč RSA v kontejneru klíčů, použít ho k dešifrování klíče relace a pak použít klíč relace k dešifrování dokumentu.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [postupy: dešifrování elementů XML pomocí asymetrických klíčů](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md).  
+ K dešifrování elementu XML, načíst privátní klíč RSA v kontejneru klíčů, použít ho k dešifrování klíče relace a pak použít klíč relace k dešifrování dokumentu.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [jak: Dešifrování elementů XML pomocí asymetrických klíčů](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md).  
   
  Tento příklad je vhodný pro situace, kdy je potřeba šifrovaná data sdílet více aplikací nebo pokud aplikace potřebuje k uložení šifrovaná data mezi časem, které běží.  
   
@@ -144,5 +144,5 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názv�
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Security.Cryptography.Xml>  
+- <xref:System.Security.Cryptography.Xml>
 - [Postupy: Dešifrování elementů XML pomocí asymetrických klíčů](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md)

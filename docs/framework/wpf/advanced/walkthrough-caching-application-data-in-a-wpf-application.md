@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF'
+title: 'Průvodce: Ukládání dat aplikací v aplikaci WPF'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: 1eddf3ad52bab6ef4665d7c3691353fa9c54574c
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: c9602599be0dd9fc262a7809348ef2642d6b4ebe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087346"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513721"
 ---
-# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
+# <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Průvodce: Ukládání dat aplikací v aplikaci WPF
 Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přístup. Když je znovu přístupu k datům, aplikacím můžete získat data z mezipaměti namísto načítání z původního zdroje. Tím lze vylepšit výkon a škálovatelnost. Navíc umožňuje ukládání dat do mezipaměti k dispozici při zdroj dat je dočasně nedostupný.
 
  [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Poskytuje třídy, které vám umožní používat ukládání do mezipaměti v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací. Tyto třídy se nacházejí v <xref:System.Runtime.Caching> oboru názvů.
@@ -56,7 +56,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 #### <a name="to-create-a-wpf-application"></a>Vytvoření aplikace WPF
 
-1.  Spusťte sadu Visual Studio.
+1.  Spusťte Visual Studio.
 
 2.  V **souboru** nabídky, klikněte na tlačítko **nový**a potom klikněte na tlačítko **nový projekt**.
 
@@ -73,7 +73,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 6.  Vyberte **vytvořit adresář pro řešení** zaškrtávací políčko.
 
-7.  Klikněte na tlačítko **OK**.
+7.  Klikněte na **OK**.
 
      Otevře se Návrhář WPF v **návrhu** zobrazení a zobrazí soubor MainWindow.xaml. Visual Studio vytvoří **Můj projekt** složka, soubor Application.xaml a souboru MainWindow.xaml.
 
@@ -99,7 +99,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
 
 4.  V **cílového rozhraní (všechny konfigurace)** seznamu vyberte [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. (Nesmí být zvolen [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
 
-5.  Klikněte na tlačítko **OK**.
+5.  Klikněte na **OK**.
 
      **Změnit cílový rámec** se zobrazí dialogové okno.
 
@@ -325,7 +325,7 @@ Ukládání do mezipaměti umožňuje uložit data do paměti pro rychlý přís
  [!code-csharp[CachingWPFApplications#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CachingWPFApplications/CSharp/MainWindow.xaml.cs#1)]
  [!code-vb[CachingWPFApplications#1](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CachingWPFApplications/VisualBasic/MainWindow.xaml.vb#1)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.Caching.MemoryCache>
 - <xref:System.Runtime.Caching.ObjectCache>

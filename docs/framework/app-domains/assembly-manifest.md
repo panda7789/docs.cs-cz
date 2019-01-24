@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a0b68eaefcd2901f9cf05d491459b18f94a2614a
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 8422c0b22f2286df98acbed874344f7664cb8903
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49415065"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529759"
 ---
 # <a name="assembly-manifest"></a>Manifest sestavení
 Všechna sestavení, zda statickou nebo dynamickou, obsahuje kolekci dat, která popisuje, jak prvky v sestavení vzájemně souvisí. Manifest sestavení obsahuje metadata toto sestavení. Manifest sestavení obsahuje všechna metadata potřebná k určení požadavky na verzi sestavení a zabezpečení identity a všechna metadata potřebná k určení oboru sestavení a odkazy na prostředky a třídy. Manifest sestavení mohou být uloženy v obou přenositelném Spustitelném souboru (příponou .exe nebo .dll) s kód Microsoft intermediate language (MSIL) nebo v samostatné přenositelného Spustitelného souboru, který obsahuje jenom informace o manifestu sestavení.  
@@ -54,8 +54,8 @@ Typy sestavení
   
  Můžete přidat nebo změnit některé informace v manifestu sestavení s použitím atributů sestavení ve vašem kódu. Můžete změnit informační atributy, včetně ochranné známky, autorská práva, produktu, společnosti a informační verze a informace o verzi. Úplný seznam atributů sestavení, naleznete v tématu [nastavení atributů sestavení](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   
-## <a name="see-also"></a>Viz také  
-- [Obsah sestavení](../../../docs/framework/app-domains/assembly-contents.md)  
-- [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)  
-- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)  
+## <a name="see-also"></a>Viz také:
+- [Obsah sestavení](../../../docs/framework/app-domains/assembly-contents.md)
+- [Správa verzí sestavení](../../../docs/framework/app-domains/assembly-versioning.md)
+- [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)
 - [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
