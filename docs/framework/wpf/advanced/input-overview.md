@@ -24,12 +24,12 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 4492b92268828943d222fbf624781bc0b9ce7901
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 481d19ca8a7222f26b8d22864c790031c14ffa8c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842785"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592585"
 ---
 # <a name="input-overview"></a>Přehled vstupu
 <a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
@@ -243,7 +243,7 @@ ms.locfileid: "48842785"
 
  Až způsobíte reagovat na manipulaci s objekty, budete mít objekt pravděpodobně nečinnost. Díky tomu se objekty simulovat fyzického světa. Například při vkládání knize napříč tabulku, pak možné nabídnout pevné dostatečně adresáře bude dál přecházejí po jeho uvolnění. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje simulovat toto chování vyvolání manipulace s událostí po uživatele prsty uvolní objekt.
 
- Informace o tom, jak vytvořit aplikaci, která umožňuje uživateli přesunutí, změna velikosti a otočení objektu najdete v tématu [návod: vytvoření první dotykové aplikace](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md).
+ Informace o tom, jak vytvořit aplikaci, která umožňuje uživateli přesunutí, změna velikosti a otočení objektu najdete v tématu [názorný postup: Vytvoření vaší první aplikace Touch](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md).
 
  <xref:System.Windows.UIElement> Definuje následující manipulace s událostmi.
 
@@ -390,5 +390,9 @@ ms.locfileid: "48842785"
 
  Jsou k dispozici další prostředky, které popisují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky rozhraní framework a směrování událostí podrobněji. Následující přehledy pro další informace najdete v tématu [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md), [detailní přehled](../../../../docs/framework/wpf/advanced/focus-overview.md), [základní prvky přehled](../../../../docs/framework/wpf/advanced/base-elements-overview.md), [stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md), a [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).
 
-## <a name="see-also"></a>Viz také
- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md) [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md) [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md) [základní přehled elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md) [vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)
+- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)
+- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)
+- [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)

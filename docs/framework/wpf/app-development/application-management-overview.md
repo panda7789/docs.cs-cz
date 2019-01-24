@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: ba8d07a26b7e6abc511e5b24db26162b46a2b0a1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 39e78be4806a58d8e274d1e6ce58a1f1ee46ce1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042254"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592030"
 ---
 # <a name="application-management-overview"></a>Přehled správy aplikací
 Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vztahuje na aplikace implementaci a správu. Toto téma obsahuje přehled funkcí v <xref:System.Windows.Application> třídy pro vytváření a správu aplikací.  
@@ -365,11 +365,11 @@ Všechny aplikace mají tendenci sdílejí společnou sadu funkcí, které se vz
   
  ![XBAP &#45; události aplikačního objektu](../../../../docs/framework/wpf/app-development/media/applicationmodeloverview-applicationobjectevents-xbap.png "ApplicationModelOverview_ApplicationObjectEvents_xbap")  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Application>  
- [Přehled Windows ve WPF](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)  
- [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)  
- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)  
- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
- [Aplikačního modelu: Postupy: témata](https://msdn.microsoft.com/library/76771b09-3688-4d1c-8818-9b3f4cf39a30)  
- [Vývoj aplikací](../../../../docs/framework/wpf/app-development/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Application>
+- [Přehled Windows ve WPF](../../../../docs/framework/wpf/app-development/wpf-windows-overview.md)
+- [Přehled navigace](../../../../docs/framework/wpf/app-development/navigation-overview.md)
+- [Prostředek, obsah a datové soubory aplikace WPF](../../../../docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)
+- [Sbalení URI v technologii WPF](../../../../docs/framework/wpf/app-development/pack-uris-in-wpf.md)
+- [Aplikační Model: Postupy: témata](https://msdn.microsoft.com/library/76771b09-3688-4d1c-8818-9b3f4cf39a30)
+- [Vývoj aplikací](../../../../docs/framework/wpf/app-development/index.md)

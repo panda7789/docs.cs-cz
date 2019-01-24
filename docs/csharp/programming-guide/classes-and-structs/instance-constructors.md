@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: 5cc7c06a763c4b274b154afc581e495a7e2aa09b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e3ba825fcbf40e08a2cb4488de2bbed9257c2508
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241652"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592832"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Konstruktory instancí (Průvodce programováním v C#)
 Konstruktory instancí se používají k vytváření a inicializace žádné proměnné členů instance při použití [nové](../../../csharp/language-reference/keywords/new.md) výraz, který se vytvoří objekt [třídy](../../../csharp/language-reference/keywords/class.md). Inicializace [statické](../../../csharp/language-reference/keywords/static.md) třídy nebo statické proměnné v nestatické třídy, je nutné definovat statický konstruktor. Další informace najdete v tématu [statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md).  
@@ -23,7 +23,7 @@ Konstruktory instancí se používají k vytváření a inicializace žádné pr
 > [!NOTE]
 >  Pro přehlednost Tato třída obsahuje veřejná pole. Použití veřejná pole není doporučený postup programování, protože umožňuje libovolné metody kdekoli v programu neomezený i neověřených přístup k objektu vnitřní fungování. Datové členy obecně by měly být privátní a by měl mít přístup jenom prostřednictvím metody třídy a vlastnosti.  
   
- Tento konstruktor instance je volána pokaždé, když se na základě objektu `CoOrds` je vytvořená třída. Jako tohoto objektu, která nepřijímá žádné argumenty, se nazývá konstruktor *výchozí konstruktor*. Často je však užitečný k zadání dalších konstruktory. Například můžeme přidat konstruktoru `CoOrds` třídu, která umožňuje zadat počáteční hodnoty pro datové členy:  
+ Tento konstruktor instance je volána pokaždé, když se na základě objektu `Coords` je vytvořená třída. Jako tohoto objektu, která nepřijímá žádné argumenty, se nazývá konstruktor *výchozí konstruktor*. Často je však užitečný k zadání dalších konstruktory. Například můžeme přidat konstruktoru `Coords` třídu, která umožňuje zadat počáteční hodnoty pro datové členy:  
   
  [!code-csharp[csProgGuideObjects#76](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_2.cs)]  
   
@@ -31,7 +31,7 @@ Konstruktory instancí se používají k vytváření a inicializace žádné pr
   
  [!code-csharp[csProgGuideObjects#77](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/instance-constructors_3.cs)]  
   
- Pokud třída nemá konstruktor, výchozí konstruktor není automaticky vygenerován a výchozí hodnoty se používají k inicializaci pole objektů. Například [int](../../../csharp/language-reference/keywords/int.md) je inicializován na hodnotu 0. Další informace o výchozí hodnoty, najdete v části [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Proto protože `CoOrds` výchozí konstruktor třídy inicializuje všechny datové členy na hodnotu nula, je možné odebrat úplně beze změny, jak funguje třídy. V příkladu 1 dále v tomto tématu poskytuje kompletní příklad použití více konstruktorů a příklad o automaticky generovaný konstruktor je k dispozici v příkladu 2.  
+ Pokud třída nemá konstruktor, výchozí konstruktor není automaticky vygenerován a výchozí hodnoty se používají k inicializaci pole objektů. Například [int](../../../csharp/language-reference/keywords/int.md) je inicializován na hodnotu 0. Další informace o výchozí hodnoty, najdete v části [tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md). Proto protože `Coords` výchozí konstruktor třídy inicializuje všechny datové členy na hodnotu nula, je možné odebrat úplně beze změny, jak funguje třídy. V příkladu 1 dále v tomto tématu poskytuje kompletní příklad použití více konstruktorů a příklad o automaticky generovaný konstruktor je k dispozici v příkladu 2.  
   
  Konstruktory instancí lze také volat konstruktor instance základní třídy. Konstruktor třídy lze vyvolat konstruktor základní třídy pomocí inicializátoru, následujícím způsobem:  
   
@@ -58,10 +58,10 @@ Konstruktory instancí se používají k vytváření a inicializace žádné pr
   
  Další příklady vyvolání konstruktory základní třídy naleznete v tématu [virtuální](../../../csharp/language-reference/keywords/virtual.md), [přepsat](../../../csharp/language-reference/keywords/override.md), a [základní](../../../csharp/language-reference/keywords/base.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
-- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)
 - [static](../../../csharp/language-reference/keywords/static.md)

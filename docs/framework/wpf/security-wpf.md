@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 970fd0483d7e0126b258afd5ac5c3607cbc6aa0a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 699c03d379d105806292a23b09a63d0634a7a2e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44202229"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592682"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a> Při vývoji, nasazení samostatné služby Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči, je nutné zvážit modelu zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními ( [!INCLUDE[TLA2#tla_cas](../../../includes/tla2sharptla-cas-md.md)] **FullTrust** sada oprávnění), ať už nasazeným v rámci Windows Installer (MSI), příkazu XCopy, nebo [!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]. Nasazení částečným vztahem důvěryhodnosti, samostatné aplikace WPF s ClickOnce se nepodporuje. Však vytvořit hostitele úplného vztahu důvěryhodnosti aplikace s částečnou důvěryhodností <xref:System.AppDomain> pomocí modelu doplňku rozhraní .NET Framework. Další informace najdete v tématu [přehled doplňků WPF](../../../docs/framework/wpf/app-development/wpf-add-ins-overview.md).  
@@ -103,7 +103,7 @@ ms.locfileid: "44202229"
   
  Kolekce funkcí, které je možné svázat tímto způsobem je nakonfigurována na základě na zóny pro **Internet**, **intranetu**, **Důvěryhodné servery**, a  **Servery s omezeným přístupem** zóny. Následující kroky popisují, jak nakonfigurovat nastavení zabezpečení:  
   
-1.  Otevřít **ovládací panely**.  
+1.  Otevřete **Ovládací panely**.  
   
 2.  Klikněte na tlačítko **síť a Internet** a potom klikněte na tlačítko **Možnosti Internetu**.  
   
@@ -184,7 +184,7 @@ ms.locfileid: "44202229"
  Ovládací prvky funkcí se použijí v procesu vytváření instance objektu WebBrowser ActiveX. Proto pokud vytváříte samostatné aplikace, které můžete přejít na nedůvěryhodný obsah, byste měli vážně zvážit povolení dalších funkcí ovládacích prvků.  
   
 > [!NOTE]
->  Toto doporučení je založeno na obecná doporučení pro zabezpečení MSHTML a SHDOCVW hostitele. Další informace najdete v tématu [The MSHTML hostitele zabezpečení – nejčastější dotazy: část I II](https://go.microsoft.com/fwlink/?LinkId=179396) a [The MSHTML hostitele zabezpečení – nejčastější dotazy: část II II](https://go.microsoft.com/fwlink/?LinkId=179415).  
+>  Toto doporučení je založeno na obecná doporučení pro zabezpečení MSHTML a SHDOCVW hostitele. Další informace najdete v tématu [The MSHTML hostitele zabezpečení – nejčastější dotazy: Část II](https://go.microsoft.com/fwlink/?LinkId=179396) a [zabezpečení hostitele MSHTML – nejčastější dotazy: Část II II](https://go.microsoft.com/fwlink/?LinkId=179415).  
   
  Spustitelný soubor zvažte následující ovládací prvky funkce povolíte nastavením hodnoty registru na 1.  
   
@@ -271,11 +271,11 @@ ms.locfileid: "44202229"
 |[!INCLUDE[TLA2#tla_clickonce](../../../includes/tla2sharptla-clickonce-md.md)]|[ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)|  
 |[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)|  
   
-## <a name="see-also"></a>Viz také  
- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)  
- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)  
- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)  
- [Vzory a postupy pro doprovodné materiály zabezpečení pro aplikace](https://go.microsoft.com/fwlink/?LinkId=117426)  
- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)  
- [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)  
- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+## <a name="see-also"></a>Viz také:
+- [Částečné zabezpečení důvěryhodnosti WPF](../../../docs/framework/wpf/wpf-partial-trust-security.md)
+- [Strategie zabezpečení WPF – zabezpečení platformy](../../../docs/framework/wpf/wpf-security-strategy-platform-security.md)
+- [Strategie zabezpečení WPF – engineering zabezpečení](../../../docs/framework/wpf/wpf-security-strategy-security-engineering.md)
+- [Vzory a postupy pro doprovodné materiály zabezpečení pro aplikace](https://go.microsoft.com/fwlink/?LinkId=117426)
+- [Zabezpečení přístupu kódu](../../../docs/framework/misc/code-access-security.md)
+- [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
+- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

@@ -5,41 +5,41 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
-ms.openlocfilehash: cc299e26316b1a3a6fd9b475dcdb8e3911bcf2e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 12d7dd8d47262f8eefe8f71f144c5648f089be45
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356325"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593573"
 ---
 # <a name="serialization"></a>Serializace
-Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možnosti serializace. Odstavce, které následují poskytují informace o tom, jak přidat serializace během generování kódu v době návrhu a chování běhové serializace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] třídy.  
+Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] možnosti serializace. Odstavců, které následují poskytují informace o tom, jak přidat serializace při generování kódu v době návrhu a chování za běhu serializace [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] třídy.  
   
- Můžete přidat serializace kódu v době návrhu a to buď z následujících metod:  
+ Můžete přidat serializačního kódu v době návrhu jeden z následujících metod:  
   
--   V [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], změnit **serializace režimu** vlastnost **Unidirectional**.  
+-   V [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], změnit **režim serializace** vlastnost **jednosměrný**.  
   
--   Na SQLMetal příkazového řádku, přidejte **/serialization** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+-   Na příkazovém řádku SQLMetal přidejte **/serialization** možnost. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Přehled  
- Kód vygenerovaný [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje odložené načítání možnosti ve výchozím nastavení. Odložené načtení je velmi vhodné na střední vrstvě pro transparentní načítání dat na vyžádání. Je však problematické pro serializaci, protože serializátor aktivuje odložené načítání, zda je určený odložené načítání, nebo ne. Platí když je objekt serializován, jeho přechodné uzavření v seznamu všechny odchozí odkazy odložení načíst serializován.  
+ Kód vygenerovaný [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje možnosti pro odložené načítání ve výchozím nastavení. Odložené načítání je velmi vhodné na střední vrstvě pro transparentní načtení dat na vyžádání. Je však problematické pro serializaci, protože serializátoru, který se aktivuje odložené načítání, jestli je určený pro odložené načítání, nebo ne. V důsledku toho pokud je objekt serializován, jeho tranzitivní uzavření v seznamu všechny odchozí odkazy pozdržet načtené serializován.  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Serializace funkce řeší tento problém, primárně prostřednictvím dvou mechanismů:  
   
--   A <xref:System.Data.Linq.DataContext> režim pro vypnutí odložené načítání (<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>). Další informace naleznete v tématu <xref:System.Data.Linq.DataContext>.  
+-   A <xref:System.Data.Linq.DataContext> režimu pro vypnutí odloženého načítání (<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>). Další informace naleznete v tématu <xref:System.Data.Linq.DataContext>.  
   
--   Generování kódu přepínač ke generování <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> atributy u vygenerované entit. Tento aspekt, včetně chování odložené načítání tříd pod serializace, je hlavní téma tohoto tématu.  
+-   Generování kódu přepínače ke generování <xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType> a <xref:System.Runtime.Serialization.DataMemberAttribute?displayProperty=nameWithType> atributy u vygenerované entit. Tento aspekt, včetně chování odložit načítání tříd v části serializace, je hlavní předmětem tohoto tématu.  
   
 ### <a name="definitions"></a>Definice  
   
--   *Serializátor kontraktu*: výchozí serializátor používaný připojením komponenta Windows Communication Framework (WCF) na rozhraní .NET Framework 3.0 nebo novější verze.  
+-   *Serializátor kontraktu dat DataContract*: Výchozí serializátor používaný připojením komponentu Windows Communication Framework (WCF) na rozhraní .NET Framework 3.0 nebo novější verze.  
   
--   *Jednosměrný serializace*: serializovaná verze třídu, která obsahuje jenom jednosměrný přidružení vlastnost (aby se zabránilo cyklus). Podle konvence je vlastnost na straně nadřazené primární cizího klíče relace označen pro serializaci. Druhá strana přidružení obousměrného není serializovat.  
+-   *Jednosměrný serializace*: Serializovaná verze třídu, která obsahuje pouze jednosměrná přidružení vlastnosti (aby se zabránilo cyklus). Vlastnost u nadřazené straně vztahu primární cizího klíče je podle konvence označen pro serializaci. Druhé straně obousměrné přidružení není provedena.  
   
-     Jednosměrný serializace je pouze typ serializace nepodporuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+     Jednosměrný serializace je jediný typ serializace nepodporuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
 ## <a name="code-example"></a>Příklad kódu  
- Následující kód používá tradiční `Customer` a `Order` třídy z ukázková databáze Northwind a ukazuje, jak jsou tyto třídy dekorované s atributy serializace.  
+ Následující kód používá tradiční `Customer` a `Order` třídy z ukázkové databáze Northwind a ukazuje, jak tyto třídy jsou vybaveny atributy serializace.  
   
  [!code-csharp[DLinqSerialization#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#1)]
  [!code-vb[DLinqSerialization#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#1)]  
@@ -50,7 +50,7 @@ Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-
  [!code-csharp[DLinqSerialization#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#3)]
  [!code-vb[DLinqSerialization#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#3)]  
   
- Pro `Order` třídy v následujícím příkladu pouze vlastnosti zpětné přidružení odpovídající `Customer` třídy se zobrazí jako stručný výtah. Nemá `DataMember` atribut, aby se zabránilo cyklický odkaz.  
+ Pro `Order` třídy v následujícím příkladu, pouze vlastnost reverzní přidružení odpovídající `Customer` je například pro zkrácení. Nemá `DataMember` atribut, aby se zabránilo cyklus.  
   
  [!code-csharp[DLinqSerialization#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#4)]
  [!code-vb[DLinqSerialization#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#4)]  
@@ -58,21 +58,21 @@ Toto téma popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-
  [!code-csharp[DLinqSerialization#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#5)]
  [!code-vb[DLinqSerialization#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#5)]  
   
-### <a name="how-to-serialize-the-entities"></a>Tom, jak serializovat entity  
- Může serializovat entity v kódy, které jsou uvedeny v předchozí části takto:  
+### <a name="how-to-serialize-the-entities"></a>Jak k serializaci entit  
+ Může serializovat entit v kódu je znázorněno v předchozí části takto:  
   
  [!code-csharp[DLinqSerialization#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/Program.cs#6)]
  [!code-vb[DLinqSerialization#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/Module1.vb#6)]  
   
-### <a name="self-recursive-relationships"></a>Samoobslužné rekurzivní relace  
- Samoobslužné rekurzivní relace postupují stejným způsobem. Vlastnosti přidružení odpovídající cizí klíč nemá `DataMember` atribut, zatímco nemá nadřazený klíč.  
+### <a name="self-recursive-relationships"></a>Self rekurzivní relace  
+ Self rekurzivní relace postupují stejným způsobem. Vlastnost přidružení cizího klíče odpovídající nemá `DataMember` atribut, že nadřazená vlastnost nepodporuje.  
   
- Vezměte v úvahu následující třídy, která má dvě relace samoobslužné rekurzivní: Employee.Manager/Reports a Employee.Mentor/Mentees.  
+ Vezměte v úvahu následující třídy, která obsahuje dvě self rekurzivní relace: Employee.Manager/Reports a Employee.Mentor/Mentees.  
   
  [!code-csharp[DLinqSerialization#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#7)]
  [!code-vb[DLinqSerialization#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#7)]  
   
-## <a name="see-also"></a>Viz také  
- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)  
- [Postupy: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)
+## <a name="see-also"></a>Viz také:
+- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+- [Postupy: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)

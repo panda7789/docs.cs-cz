@@ -2,14 +2,8 @@
 title: Čítače výkonu WCF
 ms.date: 03/30/2017
 helpviewer_keywords:
-- performance counters [WCF]
+  - 'performance counters [WCF]'
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: d0ad7ee0bc3ea1d15197e6b8d9888d60b21a2f15
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48846213"
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 Windows Communication Foundation (WCF) obsahuje velké sady čítače výkonu umožňují měřit výkon vaší aplikace.  
@@ -27,7 +21,7 @@ Windows Communication Foundation (WCF) obsahuje velké sady čítače výkonu um
   
  `performanceCounters` Atribut můžete nastavit pro povolení konkrétní typ čítače výkonu. Platné hodnoty jsou  
   
--   All: Všechny kategorie čítače (ServiceModelService, ServiceModelEndpoint a ServiceModelOperation) jsou povoleny.  
+-   Všechny: Jsou povoleny všechny kategorie čítače (ServiceModelService, ServiceModelEndpoint a ServiceModelOperation).  
   
 -   ServiceOnly: Jsou povoleny pouze ServiceModelService kategorie čítače. Jedná se o výchozí hodnotu.  
   
@@ -59,7 +53,7 @@ config.Save();
 ## <a name="increasing-memory-size-for-performance-counters"></a>Zvětšení velikosti paměti pro čítače výkonu  
  WCF používá samostatné sdílené paměti pro své kategorie čítače výkonu.  
   
- Ve výchozím nastavení je samostatnou sdílenou paměť nastavit čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globálního výkonu čítače paměti je 524,288 bajtů. Proto se tři kategorie čítače výkonu WCF mají výchozí velikost přibližně 128 kB. V závislosti na vlastnosti modul runtime WCF aplikací na počítači, může být vyčerpání paměti čítače výkonu. Pokud k tomu dojde, WCF zapíše chybu do protokolu událostí aplikace. Obsah chyba uvádí, že čítač výkonu nebyl načten a položka obsahuje výjimku "System.InvalidOperationException: zobrazení souboru vlastních čítačů je nedostatek paměti." Pokud je povoleno trasování na úrovni chyby, je také sledovat toto selhání. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování a spouštění aplikací WCF pomocí čítačů výkonu povolena by mohlo způsobit snížení výkonu. Pokud jste správcem počítače, měli byste nakonfigurovat ji přidělit dostatek paměti pro podporu maximální počet čítačů výkonu, které mohou existovat v každém okamžiku.  
+ Ve výchozím nastavení je samostatnou sdílenou paměť nastavit čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globálního výkonu čítače paměti je 524,288 bajtů. Proto se tři kategorie čítače výkonu WCF mají výchozí velikost přibližně 128 kB. V závislosti na vlastnosti modul runtime WCF aplikací na počítači, může být vyčerpání paměti čítače výkonu. Pokud k tomu dojde, WCF zapíše chybu do protokolu událostí aplikace. Obsah chyba uvádí, že čítač výkonu nebyl načten a položka obsahuje výjimku "System.InvalidOperationException: Zobrazení souboru vlastních čítačů není dostatek paměti." Pokud je povoleno trasování na úrovni chyby, je také sledovat toto selhání. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování a spouštění aplikací WCF pomocí čítačů výkonu povolena by mohlo způsobit snížení výkonu. Pokud jste správcem počítače, měli byste nakonfigurovat ji přidělit dostatek paměti pro podporu maximální počet čítačů výkonu, které mohou existovat v každém okamžiku.  
   
  Můžete změnit velikost paměti čítače výkonu WCF kategorií v registru. Uděláte to tak, budete muset přidat novou hodnotu DWORD s názvem `FileMappingSize` do tří následujících umístění a nastavte ji na požadovanou hodnotu v bajtech. Po restartování počítače, aby tyto změny jsou přijata platit.  
   
@@ -72,7 +66,7 @@ config.Save();
  Když jsou odstraněny velký počet objektů (například hostitel služby) ale čeká na prováděno uvolnění paměti `PrivateBytes` čítače výkonu se registrují neobvykle velký počet. Chcete-li vyřešit tento problém, můžete buď přidat čítače specifické pro aplikaci nebo použijte `performanceCounters` atribut pro povolení pouze SLA čítače.  
   
 ## <a name="types-of-performance-counters"></a>Typy čítačů výkonu  
- Čítače výkonu jsou omezená na třech různých úrovních: služba, koncový bod a operace.  
+ Čítače výkonu jsou nastavit rozsah na třech různých úrovních: Služba, koncový bod a operace.  
   
  Chcete-li načíst název instance čítače výkonu můžete použít rozhraní WMI. Například  
   
@@ -138,5 +132,5 @@ ServiceName@ServiceBaseAddress
   
  Další informace o tom, jak programově přístup k čítačům najdete v tématu [programovací architektura čítače výkonu](https://go.microsoft.com/fwlink/?LinkId=95179).  
   
-## <a name="see-also"></a>Viz také  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

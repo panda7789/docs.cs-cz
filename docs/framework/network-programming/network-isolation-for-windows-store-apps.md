@@ -2,12 +2,12 @@
 title: Izolace sítě pro aplikace Windows Store
 ms.date: 03/30/2017
 ms.assetid: b064497c-d956-46b8-838d-7a0223c7e200
-ms.openlocfilehash: 537d94201b3e0ae92707c858f10032848a690004
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0209bd57bfa98fec8a3057490502081c4c20554f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50182668"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594262"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Izolace sítě pro aplikace Windows Store
 Třídy v <xref:System.Net>, <xref:System.Net.Http>, a <xref:System.Net.Http.Headers> obory názvů slouží k vývoji aplikací Windows Store a desktopové aplikace. Při použití v aplikaci Windows Store, třídy v těchto oborech názvů jsou ovlivněny izolace sítě, součástí modelu zabezpečení aplikace používané [!INCLUDE[win8](../../../includes/win8-md.md)]. Musí být povoleno příslušné síťové funkce v manifestu aplikace pro Windows Store aplikaci pro systém umožňující přístup k síti.  
@@ -25,10 +25,10 @@ Třídy v <xref:System.Net>, <xref:System.Net.Http>, a <xref:System.Net.Http.Hea
   
  Podrobnější informace o tom, jak nakonfigurovat síťové funkce a nástroje pro izolaci používají k řešení potíží izolace sítě najdete v tématu [konfiguraci schopnosti izolace sítě](https://go.microsoft.com/fwlink/?LinkID=228265) v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pro vývojáře dokumentace ke službě.  
   
-## <a name="see-also"></a>Viz také  
- [Připojení k webové službě](https://go.microsoft.com/fwlink/?LinkID=245696)  
- [Pokyny a kontrolní seznam pro izolaci sítě](https://go.microsoft.com/fwlink/?LinkID=228265)  
- [Rychlý start: Připojení pomocí položky HttpClient](https://go.microsoft.com/fwlink/?LinkId=245697)  
- [Jak používat HttpClient obslužné rutiny](https://go.microsoft.com/fwlink/?LinkId=245699)  
- [Jak zabezpečit HttpClient připojení](https://go.microsoft.com/fwlink/?LinkId=245698)  
- [Ukázka třídy HttpClient](https://go.microsoft.com/fwlink/?LinkId=242550)
+## <a name="see-also"></a>Viz také:
+- [Připojení k webové službě](https://go.microsoft.com/fwlink/?LinkID=245696)
+- [Pokyny a kontrolní seznam pro izolaci sítě](https://go.microsoft.com/fwlink/?LinkID=228265)
+- [Rychlý start: Připojení pomocí položky HttpClient](https://go.microsoft.com/fwlink/?LinkId=245697)
+- [Jak používat HttpClient obslužné rutiny](https://go.microsoft.com/fwlink/?LinkId=245699)
+- [Jak zabezpečit HttpClient připojení](https://go.microsoft.com/fwlink/?LinkId=245698)
+- [Ukázka třídy HttpClient](https://go.microsoft.com/fwlink/?LinkId=242550)

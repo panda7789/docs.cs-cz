@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: 3a419fb38d3b97b08c8aaa094265d8b426429ae4
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: b69fc668a63d1b4f834d5aa65ae8e27854d73e63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266580"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54595575"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -59,7 +59,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
   
  Teď můžete použít `stringQ` pracovat pouze s `String` hodnoty. Protože `stringQ` je specifické pro `String` místo se zobecnit pro `Object` hodnoty, není nutné pozdní vazby nebo typ převodu. Tím ušetříte čas spuštění a snižuje chyby za běhu.  
   
- Další informace o použití obecného typu, najdete v části [postupy: použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md).  
+ Další informace o použití obecného typu, najdete v části [jak: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md).  
   
 ## <a name="example-of-a-generic-class"></a>Příklad obecné třídy  
  Následující příklad ukazuje definici kostru obecné třídy.  
@@ -74,7 +74,7 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
   
  [!code-vb[VbVbalrDataTypes#4](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-types_4.vb)]  
   
- Podrobnější příklad naleznete v tématu [postupy: definování třídy, může poskytovat stejné funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
+ Podrobnější příklad naleznete v tématu [jak: Definujte třídu, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Oprávněné programovací elementy  
  Můžete definovat a použití obecné třídy, struktury, rozhraní, postupy a delegáti. Všimněte si, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] definuje několik obecných tříd, struktur a rozhraní, která představuje běžně používané obecné elementy. <xref:System.Collections.Generic?displayProperty=nameWithType> Obor názvů poskytuje slovníky, seznamů, front a zásobníků. Než začnete definovat vlastní obecného prvku, zjistěte, zda je již k dispozici v <xref:System.Collections.Generic?displayProperty=nameWithType>.  
@@ -149,14 +149,14 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
-- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
-- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
-- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
-- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
-- [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
-- [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
-- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
-- [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)  
+- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [z](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [jako](../../../../visual-basic/language-reference/statements/as-clause.md)
+- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)
 - [Iterátory](../../../../visual-basic/programming-guide/concepts/iterators.md)

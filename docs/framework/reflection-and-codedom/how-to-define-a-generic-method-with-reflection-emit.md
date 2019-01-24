@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definování obecné metody pomocí generování reflexe'
+title: 'Postupy: Definování obecné metody pomocí reflexe generování'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 49531945b073a909ba49b2b0865b96f9658fba50
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9c0b6ee6fc789b2586d76b5ec8f10815e543e1d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396802"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596852"
 ---
-# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí generování reflexe
+# <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Postupy: Definování obecné metody pomocí reflexe generování
 První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma parametry typu a jak použít omezení třídy, omezení rozhraní a zvláštní omezení pro parametry typu.  
   
  Druhý postup ukazuje, jak vygenerovat tělo metody, jak používat parametry typu obecné metody k vytvoření instance obecných typů a jak volat jejich metody.  
@@ -26,7 +26,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
  Třetí postup ukazuje, jak zavolat obecnou metodu.  
   
 > [!IMPORTANT]
->  Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Obecná metoda se může objevit v neobecném typu, jako je tomu v následujícím příkladu. Příklad neobecnou metodu pro obecný typ, naleznete v části [postupy: definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
+>  Metoda není obecná jen proto, že patří obecnému typu a používá parametry typu daného typu. Metoda je obecná pouze v případě, že má svůj vlastní seznam parametrů typu. Obecná metoda se může objevit v neobecném typu, jako je tomu v následujícím příkladu. Příklad neobecné metody v obecném typu, najdete v části [jak: Definování obecného typu pomocí reflexe generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
   
 ### <a name="to-define-a-generic-method"></a>Definice obecné metody  
   
@@ -35,7 +35,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
      [!code-csharp[GenericMethodHowTo#20](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#20)]
      [!code-vb[GenericMethodHowTo#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#20)]  
   
-2.  Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) zkontrolujte DemoMethodBuilder1.dll a porovnat do převodního jazyka Microsoft (MSIL) v případě metody uvedené v kroku 1.  
+2.  Definujte dynamické sestavení a dynamický modul obsahující typ, ke kterému tato obecná metoda patří. V tomto případě má sestavení pouze jeden modul s názvem `DemoMethodBuilder1` a název tohoto modulu je stejný jako název sestavení s příponou souboru. V tomto příkladu je sestavení uloženo na disk a také spuštěno, takže je zadáno <xref:System.Reflection.Emit.AssemblyBuilderAccess.RunAndSave?displayProperty=nameWithType>. Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) prozkoumat DemoMethodBuilder1.dll a má být porovnán s Microsoft intermediate language (MSIL) pro metodu uvedenou v kroku 1.  
   
      [!code-csharp[GenericMethodHowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#2)]
      [!code-vb[GenericMethodHowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#2)]  
@@ -88,7 +88,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
 <a name="procedureSection1"></a>   
 ### <a name="to-emit-the-method-body"></a>Vygenerování těla metody  
   
-1.  Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. `Factory` Metoda má čtyři lokální proměnné: `retVal` pro uložení nové `TOutput` je vrácený v případě metody `ic` k uchování `TOutput` když je převést na `ICollection(Of TInput)` (`ICollection<TInput>` v jazyce C#), `input` na uložení vstupní pole `TInput` objekty, a `index` k iteraci v rámci pole. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.  
+1.  Získejte generátor kódu a deklarujte místní proměnné a popisky. Metoda <xref:System.Reflection.Emit.ILGenerator.DeclareLocal%2A> se používá při deklarování lokálních proměnných. `Factory` Metoda má čtyři místní proměnné: `retVal` pro uložení nového `TOutput` , který je vrácen touto metodou, `ic` pro uchování `TOutput` když je přetypován na `ICollection(Of TInput)` (`ICollection<TInput>` v C#), `input`pro uložení vstupního pole `TInput` objekty, a `index` k iteraci v rámci pole. Tato metoda má také dva popisky, jeden pro vstup do smyčky (`enterLoop`) a jeden pro začátek smyčky (`loopAgain`), definované pomocí metody <xref:System.Reflection.Emit.ILGenerator.DefineLabel%2A>.  
   
      První věc, kterou metoda provede, je načtení jejího argumentu pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Ldarg_0> a jeho uložení do místní proměnné `input` pomocí operačního kódu <xref:System.Reflection.Emit.OpCodes.Stloc_S>.  
   
@@ -117,7 +117,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
   
 6.  Vygenerujte kód smyčky. Prvním krokem je označit začátek smyčky voláním metody <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> s popiskem `loopAgain`. Příkazy větvení, které používají tento popisek, se budou nyní větvit do tohoto bodu kódu. Dalším krokem je vložení objektu `TOutput`, přetypovaného na rozhraní `ICollection(Of TInput)`, do zásobníku. To není nutné provádět okamžitě, ale objekt musí být vložen pro volání metody `Add`. Příště, když je vstupní pole vloženo do zásobníku, bude proměnná `index` obsahovat aktuální index pole. Operační kód <xref:System.Reflection.Emit.OpCodes.Ldelem> vyjme index a pole ze zásobníku a vloží indexovaný prvek pole do zásobníku. Zásobník je nyní připraven pro volání metody <xref:System.Collections.Generic.ICollection%601.Add%2A?displayProperty=nameWithType>, která vyjme kolekci a nový prvek ze zásobníku a přidá prvek do kolekce.  
   
-     Zbytek kódu ve smyčce zvýší index a testuje, zda je smyčka dokončena. Index a 32bitové celé číslo 1 se vloží do zásobníku a jsou přičteny, což v zásobníku zanechá součet. Tento součet je uložen v proměnné `index`. Voláním metody <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> je tento bod nastaven jako vstupní bod smyčky. Index je znovu načten. Vstupní pole je vloženo do zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Ldlen> je vygenerován pro získání jeho délky. Index a délka jsou nyní v zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Clt> je vygenerován pro jejich porovnání. Pokud je index menší než délka, operační kód <xref:System.Reflection.Emit.OpCodes.Brtrue_S> provede větvení zpět na začátek smyčky.  
+     Zbytek kódu ve smyčce zvýší index a otestuje, zda je smyčka dokončena: Index a 32bitové celé číslo 1 jsou vloženy do zásobníku a jsou přičteny, zanechá součet. v zásobníku; Součet je uložen v `index`. Voláním metody <xref:System.Reflection.Emit.ILGenerator.MarkLabel%2A> je tento bod nastaven jako vstupní bod smyčky. Index je znovu načten. Vstupní pole je vloženo do zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Ldlen> je vygenerován pro získání jeho délky. Index a délka jsou nyní v zásobníku a operační kód <xref:System.Reflection.Emit.OpCodes.Clt> je vygenerován pro jejich porovnání. Pokud je index menší než délka, operační kód <xref:System.Reflection.Emit.OpCodes.Brtrue_S> provede větvení zpět na začátek smyčky.  
   
      [!code-csharp[GenericMethodHowTo#13](../../../samples/snippets/csharp/VS_Snippets_CLR/GenericMethodHowTo/CS/source.cs#13)]
      [!code-vb[GenericMethodHowTo#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/GenericMethodHowTo/VB/source.vb#13)]  
@@ -152,7 +152,7 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
   
  Tato metoda má jeden formální parametr, což je pole `TInput`. Metoda vrací instanci typu `TOutput`, která obsahuje všechny prvky vstupního pole. Parametr `TOutput` může být libovolný typ obecné kolekce, která implementuje obecné rozhraní <xref:System.Collections.Generic.ICollection%601>.  
   
- Po provedení kód je uloženo jako DemoGenericMethod1.dll dynamické sestavení a může být prověřen pomocí [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
+ Když je kód spuštěn, dynamické sestavení uloženo jako DemoGenericMethod1.dll a lze jej prozkoumat pomocí [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
   
 > [!NOTE]
 >  Vhodný způsob, jak se naučit generovat kód, je napsat program v jazyce Visual Basic, C# nebo Visual C++ provádějící úlohy, které chcete vygenerovat, a použít disassembler ke kontrole kódu produkovaného kompilátorem jazyka MSIL.  
@@ -164,12 +164,12 @@ První procedura ukazuje, jak vytvořit jednoduchou obecnou metodu se dvěma par
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) potřebné pro kompilaci.  
+-   Obsahuje kód jazyka C# `using` příkazy (`Imports` v jazyce Visual Basic) nezbytné pro kompilaci.  
   
 -   Nejsou vyžadovány žádné odkazy na další sestavení.  
   
--   Kompilace kódu na příkazovém řádku pomocí csc.exe, vbc.exe nebo cl.exe. Kompilace kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
+-   Kompilace kódu do příkazového řádku pomocí csc.exe a vbc.exe, cl.exe. Ke kompilaci kódu v sadě Visual Studio, umístěte ho do šablony projektu konzolové aplikace.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection.Emit.MethodBuilder>  
- [Postupy: Definování obecného typu pomocí generování reflexe](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Reflection.Emit.MethodBuilder>
+- [Postupy: Definování obecného typu pomocí reflexe generování](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)

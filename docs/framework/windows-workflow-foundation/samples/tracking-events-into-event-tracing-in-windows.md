@@ -2,12 +2,12 @@
 title: Sledování událostí v trasování událostí ve Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: 70c75be09528b31572bdf0dc322af5bcd7e3ca5d
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: ceb981f4fac70155f740ac482bf9d49a51ed7970
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837281"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592858"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Sledování událostí v trasování událostí ve Windows
 Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Windows Workflow Foundation (WF) a generovat sledování událostí v trasování událostí pro Windows (ETW). Vygenerovat pracovní postup do ETW sledování záznamů, ukázka používá účastník sledování ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
@@ -149,5 +149,5 @@ Tento příklad ukazuje, jak povolit sledování služby pracovních postupů Wi
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)
+## <a name="see-also"></a>Viz také:
+- [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

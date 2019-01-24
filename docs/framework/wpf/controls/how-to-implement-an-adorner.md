@@ -7,27 +7,27 @@ dev_langs:
 helpviewer_keywords:
 - adorners [WPF], implementing
 ms.assetid: 56ae32b6-0599-455c-b52f-2ff97e6f1ec2
-ms.openlocfilehash: f5b0ed080a413546a3b985055858e209f9f347eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f34bdeb87d0bf34a998f9b2e2fb6c42aedec5063
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33552962"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54591679"
 ---
 # <a name="how-to-implement-an-adorner"></a>Postupy: Implementace doplňku
-Tento příklad ukazuje implementaci minimální adorner.  
+Tento příklad ukazuje implementaci minimální doplněk pro úpravy.  
   
 ## <a name="notes-for-implementers"></a>Poznámky pro implementátory  
- Je důležité si uvědomit, že ozdobného prvku neobsahují žádné vyplývajících vykreslování chování; zajištění, že adorner vykreslí má na starosti implementátor adorner.   Běžný způsob implementace vykreslování chování je přepsat <xref:System.Windows.UIElement.OnRender%2A> metoda a používat jednu nebo více <xref:System.Windows.Media.DrawingContext> pro vykreslení adorner vizuály podle potřeby (jak je uvedeno v tomto příkladu).  
+ Je důležité si uvědomit, že doplňky pro úpravy neobsahují žádné vlastní vykreslování chování; zajištění, že pro úpravy vykreslí zodpovídá za implementátora doplněk pro úpravy.   Běžný způsob implementace chování vykreslování je k přepsání <xref:System.Windows.UIElement.OnRender%2A> metoda a používat jednu nebo více <xref:System.Windows.Media.DrawingContext> objekty k vykreslení doplněk pro úpravy vizuály podle potřeby (jak je znázorněno v tomto příkladu).  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Vlastní adorner je vytvořen pomocí implementace třídy, která dědí z abstraktní <xref:System.Windows.Documents.Adorner> třídy.  Příklad adorner jednoduše adorns rozích <xref:System.Windows.UIElement> s kroužky přepsáním <xref:System.Windows.UIElement.OnRender%2A> metoda.  
+ Vlastní doplněk pro úpravy je vytvořen pomocí implementace, která dědí z abstraktní třídy <xref:System.Windows.Documents.Adorner> třídy.  Doplněk pro úpravy příklad jednoduše adorns rohů <xref:System.Windows.UIElement> s kruhy tak, že přepíšete <xref:System.Windows.UIElement.OnRender%2A> metody.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/CSharp/Window1.xaml.cs#_simplecircleadornerbody)]
  [!code-vb[Adorners_SimpleCircleAdorner#_SimpleCircleAdornerBody](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Adorners_SimpleCircleAdorner/VisualBasic/Window1.xaml.vb#_simplecircleadornerbody)]  
   
-## <a name="see-also"></a>Viz také  
- [Přehled doplňků pro úpravy](../../../../docs/framework/wpf/controls/adorners-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled doplňků pro úpravy](../../../../docs/framework/wpf/controls/adorners-overview.md)

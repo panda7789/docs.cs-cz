@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf2c343db459879ca95372e104aee68b22dee6b0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 03a8bf7e215794f4a2951fe4e2d54a791bda20e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33440613"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594054"
 ---
 # <a name="ivalidatorvalidate-method"></a>IValidator::Validate – metoda
-Ověří zadaný přenosné spustitelný soubor (PE) nebo soubor Microsoft (MSIL intermediate language).  
+Ověří zadaný (PE portable executable) nebo soubor Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +44,37 @@ HRESULT Validate (
   
 #### <a name="parameters"></a>Parametry  
  `veh`  
- [v] Ukazatel na `IVEHandler` instanci, která zpracovává chyby ověření.  
+ [in] Ukazatel `IVEHandler` instanci, která zpracovává chyby ověření.  
   
  `pAppDomain`  
- [v] Ukazatel na doménu aplikace, ve kterém je načíst soubor.  
+ [in] Ukazatel aplikační doménu, ve kterém je soubor načten.  
   
  `ulFlags`  
- [v] Bitovou kombinaci [ValidatorFlags](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) hodnoty, označující objasňuje ověření, která má být provedena.  
+ [in] Bitová kombinace hodnot [validatorflags –](../../../../docs/framework/unmanaged-api/hosting/validatorflags-enumeration.md) hodnoty určující, které by se měla provést ověření.  
   
  `ulMaxError`  
- [v] Maximální počet chyb umožňující před ukončením ověření.  
+ [in] Maximální počet chyb, aby před ukončením ověření.  
   
  `token`  
- [v] Nepoužívá se.  
+ [in] Nepoužívá se.  
   
  `fileName`  
- [v] Řetězec, který určuje název souboru, který má být ověřen.  
+ [in] Řetězec, který určuje název souboru, který má být ověřen.  
   
  `pe`  
- [v] Ukazatel na vyrovnávací paměť, ve kterém je soubor uložený.  
+ [in] Ukazatel do vyrovnávací paměti, ve kterém je soubor uložený.  
   
  `ulSize`  
- [v] Velikost v bajtech, soubor, který má být ověřen.  
+ [in] Velikost v bajtech, soubor, který má být ověřen.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** IValidator.idl, IValidator.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

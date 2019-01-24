@@ -2,12 +2,12 @@
 title: Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 ms.date: 03/30/2017
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
-ms.openlocfilehash: b43c7f3d8018c119dbabf8f55ec115a00e1ac077
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: c54585ab8e9d9fc039858b07ab75068e984b78db
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188791"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594805"
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použití prohlížeče trasování služeb k řešení problémů s aplikací.  
@@ -119,7 +119,7 @@ Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použ
   
 -   Přidat akci zpracování.  
   
--   Nastavte zabezpečenou relaci (Tento došlo k na první žádost o) a zpracovat tři odpovědích zabezpečení infrastruktury: RVNÍ RSTR, SCT (proces zpráva 1, 2, 3).  
+-   Nastavte zabezpečenou relaci (Tento došlo k na první požadavek) a infrastruktura zpracovaných tři zabezpečení zprávy s odezvami: RVNÍ RSTR, SCT (proces zpráva 1, 2, 3).  
   
 -   Zpracování Subtract, násobit a požádá o dělení.  
   
@@ -138,7 +138,7 @@ Uvedený čas vytvoření (levý panel) a jejich vnořené aktivity a trasován�
  Když dvakrát kliknete na Přidat aktivitu na levém panelu Akce proces, můžeme vidět grafická reprezentace klienta WCF aktivity související s přidat. První aktivitu na levé straně je kořenová aktivita (0000), což je výchozí aktivita. Přenosy WCF mimo okolí aktivity. Pokud není definována, mimo 0000 přenosy WCF. Druhá aktivita zpracovat přidání akce, tady, přenáší z 0. Potom jsme naleznete v tématu Instalace zabezpečenou relaci.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace5.gif "e2eTrace5")  
-Graf přehled činnosti klienta WCF: okolí aktivity (zde 0), proces akce a nastavte si zabezpečenou relaci  
+Zobrazení grafu aktivit klienta WCF: Okolí aktivity (zde 0), proces akce a nastavte si zabezpečenou relaci  
   
  V pravém horním rohu panelu vidět všechna trasování týkající se činnosti proces přidání akce. Konkrétně jsme poslali žádost ("odeslaná zpráva přes kanál") a přijaté odpovědi ("přijatá zpráva přes kanál") do stejné aktivity. To je ukázáno v následujícím grafu. Pro přehlednost je sbalený nastavte zabezpečenou relaci aktivity v grafu.  
   
@@ -198,7 +198,7 @@ Rozbalení aktivity pro sledování hlavní příčinu problému
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace11.gif "e2eTrace11")  
 Proces řešení potíží, můžete také vybrat žluté nebo červené zprávy trasování a dvojím kliknutím ho sledujte hlavní příčinu  
   
-## <a name="see-also"></a>Viz také  
- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+## <a name="see-also"></a>Viz také:
+- [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
+- [Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
