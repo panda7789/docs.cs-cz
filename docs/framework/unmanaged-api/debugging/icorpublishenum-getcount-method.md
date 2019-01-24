@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f191c31ec5333fbea52c298f477c8c624beb92b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4355300d302e51a777d11855a023c1b56bf04a86
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424505"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495315"
 ---
-# <a name="icorpublishenumgetcount-method"></a><span data-ttu-id="f1224-102">ICorPublishEnum::GetCount – metoda</span><span class="sxs-lookup"><span data-stu-id="f1224-102">ICorPublishEnum::GetCount Method</span></span>
-<span data-ttu-id="f1224-103">Získá počet položek ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="f1224-103">Gets the number of items in the enumeration.</span></span>  
+# <a name="icorpublishenumgetcount-method"></a><span data-ttu-id="6f376-102">ICorPublishEnum::GetCount – metoda</span><span class="sxs-lookup"><span data-stu-id="6f376-102">ICorPublishEnum::GetCount Method</span></span>
+<span data-ttu-id="6f376-103">Získá počet položek ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="6f376-103">Gets the number of items in the enumeration.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f1224-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f1224-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6f376-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6f376-104">Syntax</span></span>  
   
 ```  
 HRESULT GetCount (  
@@ -35,18 +35,18 @@ HRESULT GetCount (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="f1224-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f1224-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="6f376-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6f376-105">Parameters</span></span>  
  `pcelt`  
- <span data-ttu-id="f1224-106">[out] Ukazatel na počet položek ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="f1224-106">[out] A pointer to the number of items in the enumeration.</span></span>  
+ <span data-ttu-id="6f376-106">[out] Ukazatel na počet položek ve výčtu.</span><span class="sxs-lookup"><span data-stu-id="6f376-106">[out] A pointer to the number of items in the enumeration.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f1224-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f1224-107">Requirements</span></span>  
- <span data-ttu-id="f1224-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f1224-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6f376-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6f376-107">Requirements</span></span>  
+ <span data-ttu-id="6f376-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6f376-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f1224-109">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="f1224-109">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="6f376-109">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="6f376-109">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="f1224-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f1224-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="6f376-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6f376-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f1224-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f1224-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="6f376-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6f376-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f1224-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="f1224-112">See Also</span></span>  
- [<span data-ttu-id="f1224-113">ICorPublishEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f1224-113">ICorPublishEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)
+## <a name="see-also"></a><span data-ttu-id="6f376-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6f376-112">See also</span></span>
+- [<span data-ttu-id="6f376-113">ICorPublishEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6f376-113">ICorPublishEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)

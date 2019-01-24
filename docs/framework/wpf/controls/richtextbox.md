@@ -7,21 +7,21 @@ helpviewer_keywords:
 - controls [WPF], RichTextBox
 - RichTextBox control [WPF]
 ms.assetid: a177374d-ee54-4d00-aaae-c983481cae9b
-ms.openlocfilehash: 201dd8cfc76191fefb45ff01dd42f26fd8454f20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c521c5c5d4ecb2b20954b5b6e303bbbda0a26418
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54508637"
 ---
-# <a name="richtextbox"></a><span data-ttu-id="9586b-102">RichTextBox</span><span class="sxs-lookup"><span data-stu-id="9586b-102">RichTextBox</span></span>
-<span data-ttu-id="9586b-103"><xref:System.Windows.Controls.RichTextBox> Element definuje ovládací prvek úprav s integrovanou podporu pro funkce, jako je vyjmutí a vložení, prezentace bohaté dokumentu a obsahu výběr.</span><span class="sxs-lookup"><span data-stu-id="9586b-103">The <xref:System.Windows.Controls.RichTextBox> element defines an editing control with built-in support for features such as cut and paste, rich document presentation, and content selection.</span></span>  
+# <a name="richtextbox"></a><span data-ttu-id="8e72e-102">RichTextBox</span><span class="sxs-lookup"><span data-stu-id="8e72e-102">RichTextBox</span></span>
+<span data-ttu-id="8e72e-103"><xref:System.Windows.Controls.RichTextBox> Element definuje ovládací prvek úprav s integrovanou podporou pro funkce, jako je vyjmutí a vložení, prezentace dokumentů s bohatým formátováním a výběr obsahu.</span><span class="sxs-lookup"><span data-stu-id="8e72e-103">The <xref:System.Windows.Controls.RichTextBox> element defines an editing control with built-in support for features such as cut and paste, rich document presentation, and content selection.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="9586b-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="9586b-104">In This Section</span></span>  
- [<span data-ttu-id="9586b-105">RichTextBox – přehled</span><span class="sxs-lookup"><span data-stu-id="9586b-105">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
- [<span data-ttu-id="9586b-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="9586b-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="8e72e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8e72e-104">In This Section</span></span>  
+ [<span data-ttu-id="8e72e-105">RichTextBox – přehled</span><span class="sxs-lookup"><span data-stu-id="8e72e-105">RichTextBox Overview</span></span>](../../../../docs/framework/wpf/controls/richtextbox-overview.md)  
+ [<span data-ttu-id="8e72e-106">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8e72e-106">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="9586b-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="9586b-107">See Also</span></span>  
- <xref:System.Windows.Controls.TextBox>  
- [<span data-ttu-id="9586b-108">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="9586b-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [<span data-ttu-id="9586b-109">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="9586b-109">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+## <a name="see-also"></a><span data-ttu-id="8e72e-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8e72e-107">See also</span></span>
+- <xref:System.Windows.Controls.TextBox>
+- [<span data-ttu-id="8e72e-108">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="8e72e-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [<span data-ttu-id="8e72e-109">Přehled toku dokumentů</span><span class="sxs-lookup"><span data-stu-id="8e72e-109">Flow Document Overview</span></span>](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0bcb0efab3b61f55bd5fdd3405799c7ac78ee521
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 68f2cc471a33d2c0ea92ceab59d5ba9ecb86e7f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424648"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54509574"
 ---
-# <a name="isymunmanagedreadergetdocuments-method"></a><span data-ttu-id="3160d-102">ISymUnmanagedReader::GetDocuments – metoda</span><span class="sxs-lookup"><span data-stu-id="3160d-102">ISymUnmanagedReader::GetDocuments Method</span></span>
-<span data-ttu-id="3160d-103">Vrátí pole všech dokumentů, které jsou definované v úložišti symbol.</span><span class="sxs-lookup"><span data-stu-id="3160d-103">Returns an array of all the documents defined in the symbol store.</span></span>  
+# <a name="isymunmanagedreadergetdocuments-method"></a><span data-ttu-id="c9d88-102">ISymUnmanagedReader::GetDocuments – metoda</span><span class="sxs-lookup"><span data-stu-id="c9d88-102">ISymUnmanagedReader::GetDocuments Method</span></span>
+<span data-ttu-id="c9d88-103">Vrací pole všech dokumentů, které jsou definovány v úložišti symbolů.</span><span class="sxs-lookup"><span data-stu-id="c9d88-103">Returns an array of all the documents defined in the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3160d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3160d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c9d88-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c9d88-104">Syntax</span></span>  
   
 ```  
 HRESULT GetDocuments (  
@@ -37,21 +37,21 @@ HRESULT GetDocuments (
         length_is (*pcDocs)] ISymUnmanagedDocument *pDocs[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3160d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3160d-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c9d88-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c9d88-105">Parameters</span></span>  
  `cDocs`  
- <span data-ttu-id="3160d-106">[v] Velikost `pDocs` pole.</span><span class="sxs-lookup"><span data-stu-id="3160d-106">[in] The size of the `pDocs` array.</span></span>  
+ <span data-ttu-id="c9d88-106">[in] Velikost `pDocs` pole.</span><span class="sxs-lookup"><span data-stu-id="c9d88-106">[in] The size of the `pDocs` array.</span></span>  
   
  `pcDocs`  
- <span data-ttu-id="3160d-107">[out] Ukazatel na proměnnou, která přijímá délka pole.</span><span class="sxs-lookup"><span data-stu-id="3160d-107">[out] A pointer to a variable that receives the array length.</span></span>  
+ <span data-ttu-id="c9d88-107">[out] Ukazovat na proměnnou, která přijímá délka pole.</span><span class="sxs-lookup"><span data-stu-id="c9d88-107">[out] A pointer to a variable that receives the array length.</span></span>  
   
  `pDocs`  
- <span data-ttu-id="3160d-108">[out] Ukazatel na proměnnou, která přijímá pole dokumentu.</span><span class="sxs-lookup"><span data-stu-id="3160d-108">[out] A pointer to a variable that receives the document array.</span></span>  
+ <span data-ttu-id="c9d88-108">[out] Ukazovat na proměnnou, která přijímá pole dokumentu.</span><span class="sxs-lookup"><span data-stu-id="c9d88-108">[out] A pointer to a variable that receives the document array.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3160d-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3160d-109">Return Value</span></span>  
- <span data-ttu-id="3160d-110">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="3160d-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c9d88-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c9d88-109">Return Value</span></span>  
+ <span data-ttu-id="c9d88-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="c9d88-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3160d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3160d-111">Requirements</span></span>  
- <span data-ttu-id="3160d-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="3160d-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c9d88-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c9d88-111">Requirements</span></span>  
+ <span data-ttu-id="c9d88-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="c9d88-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3160d-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="3160d-113">See Also</span></span>  
- [<span data-ttu-id="3160d-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3160d-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="c9d88-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c9d88-113">See also</span></span>
+- [<span data-ttu-id="c9d88-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c9d88-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 00c0f83f2c67b28fdcf9eca3866c9fc31e150afe
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
-ms.translationtype: HT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416037"
----
 # [Vítejte](welcome.md)
 
 <!-- Start of .NET Guide -->

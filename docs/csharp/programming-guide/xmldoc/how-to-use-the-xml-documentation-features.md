@@ -6,22 +6,22 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: ce14de1f5aef4703a0c9b3868852104dc313e728
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 893dc726f7b4ee2d2afa69f63d13d1f11a4692db
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241665"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54491633"
 ---
-# <a name="how-to-use-the-xml-documentation-features"></a><span data-ttu-id="c1df3-102">Postupy: Použití funkcí dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="c1df3-102">How to: Use the XML documentation features</span></span>
+# <a name="how-to-use-the-xml-documentation-features"></a><span data-ttu-id="10d29-102">Postupy: Použití funkcí dokumentace XML</span><span class="sxs-lookup"><span data-stu-id="10d29-102">How to: Use the XML documentation features</span></span>
 
-<span data-ttu-id="c1df3-103">Následující příklad obsahuje základní přehled o typ, který má zdokumentované.</span><span class="sxs-lookup"><span data-stu-id="c1df3-103">The following sample provides a basic overview of a type that has been documented.</span></span>
+<span data-ttu-id="10d29-103">Následující příklad obsahuje základní přehled o typ, který má zdokumentované.</span><span class="sxs-lookup"><span data-stu-id="10d29-103">The following sample provides a basic overview of a type that has been documented.</span></span>
 
-## <a name="example"></a><span data-ttu-id="c1df3-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c1df3-104">Example</span></span>
+## <a name="example"></a><span data-ttu-id="10d29-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="10d29-104">Example</span></span>
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
-<span data-ttu-id="c1df3-105">Tento příklad generuje soubor .xml s následujícím obsahem:</span><span class="sxs-lookup"><span data-stu-id="c1df3-105">The example generates an .xml file with the following contents:</span></span>
+<span data-ttu-id="10d29-105">Tento příklad generuje soubor .xml s následujícím obsahem:</span><span class="sxs-lookup"><span data-stu-id="10d29-105">The example generates an .xml file with the following contents:</span></span>
 
 ```xml
 <?xml version="1.0"?>
@@ -107,33 +107,33 @@ ms.locfileid: "53241665"
 </doc>
 ```
 
-## <a name="compiling-the-code"></a><span data-ttu-id="c1df3-106">Kompilování kódu</span><span class="sxs-lookup"><span data-stu-id="c1df3-106">Compiling the code</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="10d29-106">Kompilování kódu</span><span class="sxs-lookup"><span data-stu-id="10d29-106">Compiling the code</span></span>
 
-<span data-ttu-id="c1df3-107">Chcete-li příklad zkompilovat, zadejte na příkazovém řádku následující:</span><span class="sxs-lookup"><span data-stu-id="c1df3-107">To compile the example, type the following command line:</span></span>
+<span data-ttu-id="10d29-107">Chcete-li příklad zkompilovat, zadejte na příkazovém řádku následující:</span><span class="sxs-lookup"><span data-stu-id="10d29-107">To compile the example, type the following command line:</span></span>
 
 `csc XMLsample.cs /doc:XMLsample.xml`
 
-<span data-ttu-id="c1df3-108">Tento příkaz vytvoří soubor XML *XMLsample.xml*, který můžete zobrazit v prohlížeči nebo pomocí příkazu typu.</span><span class="sxs-lookup"><span data-stu-id="c1df3-108">This command creates the XML file *XMLsample.xml*, which you can view in your browser or by using the TYPE command.</span></span>
+<span data-ttu-id="10d29-108">Tento příkaz vytvoří soubor XML *XMLsample.xml*, který můžete zobrazit v prohlížeči nebo pomocí příkazu typu.</span><span class="sxs-lookup"><span data-stu-id="10d29-108">This command creates the XML file *XMLsample.xml*, which you can view in your browser or by using the TYPE command.</span></span>
 
-## <a name="robust-programming"></a><span data-ttu-id="c1df3-109">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="c1df3-109">Robust programming</span></span>
+## <a name="robust-programming"></a><span data-ttu-id="10d29-109">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="10d29-109">Robust programming</span></span>
 
-<span data-ttu-id="c1df3-110">Dokumentace XML začíná / / / / /.</span><span class="sxs-lookup"><span data-stu-id="c1df3-110">XML documentation starts with ///.</span></span> <span data-ttu-id="c1df3-111">Když vytvoříte nový projekt, umístěte průvodců starter / / / / / řádků v za vás.</span><span class="sxs-lookup"><span data-stu-id="c1df3-111">When you create a new project, the wizards put some starter /// lines in for you.</span></span> <span data-ttu-id="c1df3-112">Zpracování tyto poznámky platí některá omezení:</span><span class="sxs-lookup"><span data-stu-id="c1df3-112">The processing of these comments has some restrictions:</span></span>
+<span data-ttu-id="10d29-110">Dokumentace XML začíná / / / / /.</span><span class="sxs-lookup"><span data-stu-id="10d29-110">XML documentation starts with ///.</span></span> <span data-ttu-id="10d29-111">Když vytvoříte nový projekt, umístěte průvodců starter / / / / / řádků v za vás.</span><span class="sxs-lookup"><span data-stu-id="10d29-111">When you create a new project, the wizards put some starter /// lines in for you.</span></span> <span data-ttu-id="10d29-112">Zpracování tyto poznámky platí některá omezení:</span><span class="sxs-lookup"><span data-stu-id="10d29-112">The processing of these comments has some restrictions:</span></span>
 
-- <span data-ttu-id="c1df3-113">V dokumentaci k musí být ve správném formátu XML.</span><span class="sxs-lookup"><span data-stu-id="c1df3-113">The documentation must be well-formed XML.</span></span> <span data-ttu-id="c1df3-114">Pokud kód XML není ve správném formátu, je vygenerováno upozornění a dokumentaci soubor bude obsahovat komentář, který říká, že došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="c1df3-114">If the XML is not well-formed, a warning is generated and the documentation file will contain a comment that says that an error was encountered.</span></span>
+- <span data-ttu-id="10d29-113">V dokumentaci k musí být ve správném formátu XML.</span><span class="sxs-lookup"><span data-stu-id="10d29-113">The documentation must be well-formed XML.</span></span> <span data-ttu-id="10d29-114">Pokud kód XML není ve správném formátu, je vygenerováno upozornění a dokumentaci soubor bude obsahovat komentář, který říká, že došlo k chybě.</span><span class="sxs-lookup"><span data-stu-id="10d29-114">If the XML is not well-formed, a warning is generated and the documentation file will contain a comment that says that an error was encountered.</span></span>
 
-- <span data-ttu-id="c1df3-115">Vývojáři jsou zdarma vytvořit vlastní sadu značek.</span><span class="sxs-lookup"><span data-stu-id="c1df3-115">Developers are free to create their own set of tags.</span></span> <span data-ttu-id="c1df3-116">Je doporučené sady značek (viz [doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)).</span><span class="sxs-lookup"><span data-stu-id="c1df3-116">There is a recommended set of tags (see [Recommended tags for documentation comments](recommended-tags-for-documentation-comments.md)).</span></span> <span data-ttu-id="c1df3-117">Některé doporučené značky mají zvláštní význam:</span><span class="sxs-lookup"><span data-stu-id="c1df3-117">Some of the recommended tags have special meanings:</span></span>
+- <span data-ttu-id="10d29-115">Vývojáři jsou zdarma vytvořit vlastní sadu značek.</span><span class="sxs-lookup"><span data-stu-id="10d29-115">Developers are free to create their own set of tags.</span></span> <span data-ttu-id="10d29-116">Je doporučené sady značek (viz [doporučené značky pro dokumentační komentáře](recommended-tags-for-documentation-comments.md)).</span><span class="sxs-lookup"><span data-stu-id="10d29-116">There is a recommended set of tags (see [Recommended tags for documentation comments](recommended-tags-for-documentation-comments.md)).</span></span> <span data-ttu-id="10d29-117">Některé doporučené značky mají zvláštní význam:</span><span class="sxs-lookup"><span data-stu-id="10d29-117">Some of the recommended tags have special meanings:</span></span>
 
-  - <span data-ttu-id="c1df3-118">\<Param > Značka se používá k popisu parametrů.</span><span class="sxs-lookup"><span data-stu-id="c1df3-118">The \<param> tag is used to describe parameters.</span></span> <span data-ttu-id="c1df3-119">Pokud použijete, kompilátor ověří, že parametr existuje a že všechny parametry jsou popsané v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="c1df3-119">If used, the compiler verifies that the parameter exists and that all parameters are described in the documentation.</span></span> <span data-ttu-id="c1df3-120">Pokud ověření se nezdařilo, kompilátor vyvolá upozornění.</span><span class="sxs-lookup"><span data-stu-id="c1df3-120">If the verification failed, the compiler issues a warning.</span></span>
+  - <span data-ttu-id="10d29-118">\<Param > Značka se používá k popisu parametrů.</span><span class="sxs-lookup"><span data-stu-id="10d29-118">The \<param> tag is used to describe parameters.</span></span> <span data-ttu-id="10d29-119">Pokud použijete, kompilátor ověří, že parametr existuje a že všechny parametry jsou popsané v dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="10d29-119">If used, the compiler verifies that the parameter exists and that all parameters are described in the documentation.</span></span> <span data-ttu-id="10d29-120">Pokud ověření se nezdařilo, kompilátor vyvolá upozornění.</span><span class="sxs-lookup"><span data-stu-id="10d29-120">If the verification failed, the compiler issues a warning.</span></span>
 
-  - <span data-ttu-id="c1df3-121">`cref` Atribut lze připojit ke každé značce poskytnout odkaz na prvek kódu.</span><span class="sxs-lookup"><span data-stu-id="c1df3-121">The `cref` attribute can be attached to any tag to provide a reference to a code element.</span></span> <span data-ttu-id="c1df3-122">Kompilátor ověří, zda tento prvek kódu existuje.</span><span class="sxs-lookup"><span data-stu-id="c1df3-122">The compiler verifies that this code element exists.</span></span> <span data-ttu-id="c1df3-123">Pokud ověření se nezdařilo, kompilátor vyvolá upozornění.</span><span class="sxs-lookup"><span data-stu-id="c1df3-123">If the verification failed, the compiler issues a warning.</span></span> <span data-ttu-id="c1df3-124">Kompilátor respektuje žádné `using` příkazy při typu je popsáno v `cref` atribut.</span><span class="sxs-lookup"><span data-stu-id="c1df3-124">The compiler respects any `using` statements when it looks for a type described in the `cref` attribute.</span></span>
+  - <span data-ttu-id="10d29-121">`cref` Atribut lze připojit ke každé značce poskytnout odkaz na prvek kódu.</span><span class="sxs-lookup"><span data-stu-id="10d29-121">The `cref` attribute can be attached to any tag to provide a reference to a code element.</span></span> <span data-ttu-id="10d29-122">Kompilátor ověří, zda tento prvek kódu existuje.</span><span class="sxs-lookup"><span data-stu-id="10d29-122">The compiler verifies that this code element exists.</span></span> <span data-ttu-id="10d29-123">Pokud ověření se nezdařilo, kompilátor vyvolá upozornění.</span><span class="sxs-lookup"><span data-stu-id="10d29-123">If the verification failed, the compiler issues a warning.</span></span> <span data-ttu-id="10d29-124">Kompilátor respektuje žádné `using` příkazy při typu je popsáno v `cref` atribut.</span><span class="sxs-lookup"><span data-stu-id="10d29-124">The compiler respects any `using` statements when it looks for a type described in the `cref` attribute.</span></span>
 
-  - <span data-ttu-id="c1df3-125">\<Summary > Značka se používá technologie IntelliSense v sadě Visual Studio zobrazíte další informace o typu nebo členu.</span><span class="sxs-lookup"><span data-stu-id="c1df3-125">The \<summary> tag is used by IntelliSense inside Visual Studio to display additional information about a type or member.</span></span>
+  - <span data-ttu-id="10d29-125">\<Summary > Značka se používá technologie IntelliSense v sadě Visual Studio zobrazíte další informace o typu nebo členu.</span><span class="sxs-lookup"><span data-stu-id="10d29-125">The \<summary> tag is used by IntelliSense inside Visual Studio to display additional information about a type or member.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="c1df3-126">Soubor XML neposkytuje úplné informace o typu a členů (například neobsahuje žádné informace o typu).</span><span class="sxs-lookup"><span data-stu-id="c1df3-126">The XML file does not provide full information about the type and members (for example, it does not contain any type information).</span></span> <span data-ttu-id="c1df3-127">Pokud chcete získat úplné informace o typu nebo členu, musí použít soubor dokumentace společně reflexe na skutečný typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="c1df3-127">To get full information about a type or member, the documentation file must be used together with reflection on the actual type or member.</span></span>
+    > <span data-ttu-id="10d29-126">Soubor XML neposkytuje úplné informace o typu a členů (například neobsahuje žádné informace o typu).</span><span class="sxs-lookup"><span data-stu-id="10d29-126">The XML file does not provide full information about the type and members (for example, it does not contain any type information).</span></span> <span data-ttu-id="10d29-127">Pokud chcete získat úplné informace o typu nebo členu, musí použít soubor dokumentace společně reflexe na skutečný typ nebo člen.</span><span class="sxs-lookup"><span data-stu-id="10d29-127">To get full information about a type or member, the documentation file must be used together with reflection on the actual type or member.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c1df3-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="c1df3-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="10d29-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="10d29-128">See also</span></span>
 
-- [<span data-ttu-id="c1df3-129">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="c1df3-129">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="c1df3-130">/ DOC (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="c1df3-130">/doc (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)  
-- [<span data-ttu-id="c1df3-131">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="c1df3-131">XML Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)  
+- [<span data-ttu-id="10d29-129">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="10d29-129">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="10d29-130">/ DOC (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="10d29-130">/doc (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)
+- [<span data-ttu-id="10d29-131">Dokumentační komentáře XML</span><span class="sxs-lookup"><span data-stu-id="10d29-131">XML Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/xml-documentation-comments.md)

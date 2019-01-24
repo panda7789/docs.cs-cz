@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57cf4e9f79be8e705869cf986a586fcfb3359584
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1b0f4b184a11e769291c64d83d11d57b5b3d19c7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435336"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498801"
 ---
-# <a name="iclrassemblyidentitymanagergetbindingidentityfromstream-method"></a><span data-ttu-id="221e4-102">ICLRAssemblyIdentityManager::GetBindingIdentityFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="221e4-102">ICLRAssemblyIdentityManager::GetBindingIdentityFromStream Method</span></span>
-<span data-ttu-id="221e4-103">Získá data identit kanonický sestavení pro sestavení v zadaného datového proudu.</span><span class="sxs-lookup"><span data-stu-id="221e4-103">Gets the canonical assembly identity data for the assembly in the specified stream.</span></span>  
+# <a name="iclrassemblyidentitymanagergetbindingidentityfromstream-method"></a><span data-ttu-id="4011b-102">ICLRAssemblyIdentityManager::GetBindingIdentityFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="4011b-102">ICLRAssemblyIdentityManager::GetBindingIdentityFromStream Method</span></span>
+<span data-ttu-id="4011b-103">Získá data identit canonical sestavení pro sestavení v zadaného datového proudu.</span><span class="sxs-lookup"><span data-stu-id="4011b-103">Gets the canonical assembly identity data for the assembly in the specified stream.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="221e4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="221e4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4011b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4011b-104">Syntax</span></span>  
   
 ```  
 HRESULT GetBindingIdentityFromStream (  
@@ -38,41 +38,41 @@ HRESULT GetBindingIdentityFromStream (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="221e4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="221e4-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="4011b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4011b-105">Parameters</span></span>  
  `pStream`  
- <span data-ttu-id="221e4-106">[v] Sestavení datový proud, který se má vyhodnotit.</span><span class="sxs-lookup"><span data-stu-id="221e4-106">[in] The assembly stream to be evaluated.</span></span>  
+ <span data-ttu-id="4011b-106">[in] Sestavení datový proud, který se má vyhodnotit.</span><span class="sxs-lookup"><span data-stu-id="4011b-106">[in] The assembly stream to be evaluated.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="221e4-107">[v] K dispozici pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="221e4-107">[in] Provided for future extensibility.</span></span> <span data-ttu-id="221e4-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je jediná hodnota, která podporuje verzí common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="221e4-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT is the only value that the current version of the common language runtime (CLR) supports.</span></span>  
+ <span data-ttu-id="4011b-107">[in] K dispozici pro budoucí rozšíření.</span><span class="sxs-lookup"><span data-stu-id="4011b-107">[in] Provided for future extensibility.</span></span> <span data-ttu-id="4011b-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT je hodnota, která podporuje aktuální verzi modulu common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="4011b-108">CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT is the only value that the current version of the common language runtime (CLR) supports.</span></span>  
   
  `pwzBuffer`  
- <span data-ttu-id="221e4-109">[out] Vyrovnávací paměť obsahující data identit neprůhledného sestavení.</span><span class="sxs-lookup"><span data-stu-id="221e4-109">[out] A buffer containing the opaque assembly identity data.</span></span>  
+ <span data-ttu-id="4011b-109">[out] Vyrovnávací paměť obsahující data identit neprůhledné sestavení.</span><span class="sxs-lookup"><span data-stu-id="4011b-109">[out] A buffer containing the opaque assembly identity data.</span></span>  
   
  `pcchBufferSize`  
- <span data-ttu-id="221e4-110">[ve out] Velikost `pwzBuffer`.</span><span class="sxs-lookup"><span data-stu-id="221e4-110">[in, out] The size of `pwzBuffer`.</span></span>  
+ <span data-ttu-id="4011b-110">[out v] Velikost `pwzBuffer`.</span><span class="sxs-lookup"><span data-stu-id="4011b-110">[in, out] The size of `pwzBuffer`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="221e4-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="221e4-111">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="4011b-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="4011b-111">Return Value</span></span>  
   
-|<span data-ttu-id="221e4-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="221e4-112">HRESULT</span></span>|<span data-ttu-id="221e4-113">Popis</span><span class="sxs-lookup"><span data-stu-id="221e4-113">Description</span></span>|  
+|<span data-ttu-id="4011b-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="4011b-112">HRESULT</span></span>|<span data-ttu-id="4011b-113">Popis</span><span class="sxs-lookup"><span data-stu-id="4011b-113">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="221e4-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="221e4-114">S_OK</span></span>|<span data-ttu-id="221e4-115">Metoda úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="221e4-115">The method returned successfully.</span></span>|  
-|<span data-ttu-id="221e4-116">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="221e4-116">E_INVALIDARG</span></span>|<span data-ttu-id="221e4-117">Zadaných `pStream` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="221e4-117">The supplied `pStream` is null.</span></span>|  
-|<span data-ttu-id="221e4-118">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="221e4-118">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="221e4-119">Velikost `pwzBuffer` je příliš malá.</span><span class="sxs-lookup"><span data-stu-id="221e4-119">The size of `pwzBuffer` is too small.</span></span>|  
-|<span data-ttu-id="221e4-120">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="221e4-120">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="221e4-121">Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="221e4-121">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="221e4-122">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="221e4-122">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="221e4-123">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="221e4-123">The call timed out.</span></span>|  
-|<span data-ttu-id="221e4-124">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="221e4-124">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="221e4-125">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="221e4-125">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="221e4-126">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="221e4-126">HOST_E_ABANDONED</span></span>|<span data-ttu-id="221e4-127">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="221e4-127">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="221e4-128">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="221e4-128">E_FAIL</span></span>|<span data-ttu-id="221e4-129">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="221e4-129">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="221e4-130">Pokud metoda vrátí E_FAIL, modul CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="221e4-130">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="221e4-131">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="221e4-131">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="4011b-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="4011b-114">S_OK</span></span>|<span data-ttu-id="4011b-115">Metoda vrátila úspěšně.</span><span class="sxs-lookup"><span data-stu-id="4011b-115">The method returned successfully.</span></span>|  
+|<span data-ttu-id="4011b-116">E_INVALIDARG</span><span class="sxs-lookup"><span data-stu-id="4011b-116">E_INVALIDARG</span></span>|<span data-ttu-id="4011b-117">Zadané `pStream` má hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="4011b-117">The supplied `pStream` is null.</span></span>|  
+|<span data-ttu-id="4011b-118">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="4011b-118">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="4011b-119">Velikost `pwzBuffer` je příliš malá.</span><span class="sxs-lookup"><span data-stu-id="4011b-119">The size of `pwzBuffer` is too small.</span></span>|  
+|<span data-ttu-id="4011b-120">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="4011b-120">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="4011b-121">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="4011b-121">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="4011b-122">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="4011b-122">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="4011b-123">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="4011b-123">The call timed out.</span></span>|  
+|<span data-ttu-id="4011b-124">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="4011b-124">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="4011b-125">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="4011b-125">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="4011b-126">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="4011b-126">HOST_E_ABANDONED</span></span>|<span data-ttu-id="4011b-127">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="4011b-127">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="4011b-128">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="4011b-128">E_FAIL</span></span>|<span data-ttu-id="4011b-129">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="4011b-129">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="4011b-130">Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="4011b-130">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="4011b-131">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="4011b-131">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="221e4-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="221e4-132">Requirements</span></span>  
- <span data-ttu-id="221e4-133">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="221e4-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4011b-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4011b-132">Requirements</span></span>  
+ <span data-ttu-id="4011b-133">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4011b-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="221e4-134">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="221e4-134">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="4011b-134">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="4011b-134">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="221e4-135">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="221e4-135">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="4011b-135">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4011b-135">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="221e4-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="221e4-136">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4011b-136">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4011b-136">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="221e4-137">Viz také</span><span class="sxs-lookup"><span data-stu-id="221e4-137">See Also</span></span>  
- [<span data-ttu-id="221e4-138">ICLRAssemblyIdentityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="221e4-138">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
- [<span data-ttu-id="221e4-139">ICLRAssemblyReferenceList – rozhraní</span><span class="sxs-lookup"><span data-stu-id="221e4-139">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+## <a name="see-also"></a><span data-ttu-id="4011b-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4011b-137">See also</span></span>
+- [<span data-ttu-id="4011b-138">ICLRAssemblyIdentityManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4011b-138">ICLRAssemblyIdentityManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)
+- [<span data-ttu-id="4011b-139">ICLRAssemblyReferenceList – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4011b-139">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)

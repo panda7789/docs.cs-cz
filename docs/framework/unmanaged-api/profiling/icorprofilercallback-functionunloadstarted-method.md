@@ -17,38 +17,38 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e28aef4916d06218953236e3b29e19c68822bd6b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 351fa8d1ec144a1861ef152ba6b02d9bbfb78df0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451185"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501660"
 ---
-# <a name="icorprofilercallbackfunctionunloadstarted-method"></a><span data-ttu-id="e2966-102">ICorProfilerCallback::FunctionUnloadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="e2966-102">ICorProfilerCallback::FunctionUnloadStarted Method</span></span>
-<span data-ttu-id="e2966-103">Upozorní profileru, že modul runtime bylo zahájeno Unload funkce.</span><span class="sxs-lookup"><span data-stu-id="e2966-103">Notifies the profiler that the runtime has started to unload a function.</span></span>  
+# <a name="icorprofilercallbackfunctionunloadstarted-method"></a><span data-ttu-id="74d53-102">ICorProfilerCallback::FunctionUnloadStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="74d53-102">ICorProfilerCallback::FunctionUnloadStarted Method</span></span>
+<span data-ttu-id="74d53-103">Oznámí profileru, modul runtime byla spuštěna uvolnit funkci.</span><span class="sxs-lookup"><span data-stu-id="74d53-103">Notifies the profiler that the runtime has started to unload a function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e2966-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e2966-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="74d53-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="74d53-104">Syntax</span></span>  
   
 ```  
 HRESULT FunctionUnloadStarted(  
     [in] FunctionID functionId);   
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="e2966-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e2966-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="74d53-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="74d53-105">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="e2966-106">[v] ID funkce, která odpojení.</span><span class="sxs-lookup"><span data-stu-id="e2966-106">[in] The ID of the function that is being unloaded.</span></span>  
+ <span data-ttu-id="74d53-106">[in] ID funkce, která uvolňován.</span><span class="sxs-lookup"><span data-stu-id="74d53-106">[in] The ID of the function that is being unloaded.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e2966-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e2966-107">Remarks</span></span>  
- <span data-ttu-id="e2966-108">Hodnota `functionId` parametr je platný už po návratu tato metoda volajícímu.</span><span class="sxs-lookup"><span data-stu-id="e2966-108">The value of the `functionId` parameter is no longer valid after this method returns to the caller.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="74d53-107">Poznámky</span><span class="sxs-lookup"><span data-stu-id="74d53-107">Remarks</span></span>  
+ <span data-ttu-id="74d53-108">Hodnota `functionId` parametr již není platný po návratu tato metoda volajícímu.</span><span class="sxs-lookup"><span data-stu-id="74d53-108">The value of the `functionId` parameter is no longer valid after this method returns to the caller.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e2966-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e2966-109">Requirements</span></span>  
- <span data-ttu-id="e2966-110">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e2966-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="74d53-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="74d53-109">Requirements</span></span>  
+ <span data-ttu-id="74d53-110">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="74d53-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e2966-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="e2966-111">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="74d53-111">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="74d53-111">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="e2966-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e2966-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="74d53-112">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="74d53-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e2966-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e2966-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="74d53-113">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="74d53-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2966-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="e2966-114">See Also</span></span>  
- [<span data-ttu-id="e2966-115">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e2966-115">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="74d53-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="74d53-114">See also</span></span>
+- [<span data-ttu-id="74d53-115">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="74d53-115">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

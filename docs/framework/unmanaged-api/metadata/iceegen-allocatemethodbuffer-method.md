@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f56376d4400f4e24aefe2d1e5d4ad504b1d281cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd51f9c05c49fefc790ce69dcdc3117680c8e6b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446001"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54500027"
 ---
-# <a name="iceegenallocatemethodbuffer-method"></a><span data-ttu-id="f2077-102">ICeeGen::AllocateMethodBuffer – metoda</span><span class="sxs-lookup"><span data-stu-id="f2077-102">ICeeGen::AllocateMethodBuffer Method</span></span>
-<span data-ttu-id="f2077-103">Vytvoří vyrovnávací paměti zadaná velikost pro metodu a získá relativní virtuální adresu metody.</span><span class="sxs-lookup"><span data-stu-id="f2077-103">Creates a buffer of the specified size for a method, and gets the relative virtual address of the method.</span></span>  
+# <a name="iceegenallocatemethodbuffer-method"></a><span data-ttu-id="a53b2-102">ICeeGen::AllocateMethodBuffer – metoda</span><span class="sxs-lookup"><span data-stu-id="a53b2-102">ICeeGen::AllocateMethodBuffer Method</span></span>
+<span data-ttu-id="a53b2-103">Vytvoří vyrovnávací paměti o zadané velikosti pro metodu a získá relativní virtuální adresu metody.</span><span class="sxs-lookup"><span data-stu-id="a53b2-103">Creates a buffer of the specified size for a method, and gets the relative virtual address of the method.</span></span>  
   
- <span data-ttu-id="f2077-104">Tato metoda je zastaralá a by se neměla používat.</span><span class="sxs-lookup"><span data-stu-id="f2077-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="a53b2-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="a53b2-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f2077-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f2077-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a53b2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a53b2-105">Syntax</span></span>  
   
 ```  
 HRESULT AllocateMethodBuffer (   
@@ -39,24 +39,24 @@ HRESULT AllocateMethodBuffer (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="f2077-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f2077-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a53b2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a53b2-106">Parameters</span></span>  
  `cchBuffer`  
- <span data-ttu-id="f2077-107">[v] Délka vyrovnávací paměti k vytvoření.</span><span class="sxs-lookup"><span data-stu-id="f2077-107">[in] The length of the buffer to create.</span></span>  
+ <span data-ttu-id="a53b2-107">[in] Délka vyrovnávací paměti k vytvoření.</span><span class="sxs-lookup"><span data-stu-id="a53b2-107">[in] The length of the buffer to create.</span></span>  
   
  `lpBuffer`  
- <span data-ttu-id="f2077-108">[out] Vrácený vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="f2077-108">[out] The returned buffer.</span></span>  
+ <span data-ttu-id="a53b2-108">[out] Vrácené vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="a53b2-108">[out] The returned buffer.</span></span>  
   
  `RVA`  
- <span data-ttu-id="f2077-109">[out] Relativní virtuální adresa metodu.</span><span class="sxs-lookup"><span data-stu-id="f2077-109">[out] The relative virtual address of the method.</span></span>  
+ <span data-ttu-id="a53b2-109">[out] Relativní virtuální adresu metody.</span><span class="sxs-lookup"><span data-stu-id="a53b2-109">[out] The relative virtual address of the method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f2077-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f2077-110">Requirements</span></span>  
- <span data-ttu-id="f2077-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f2077-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a53b2-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a53b2-110">Requirements</span></span>  
+ <span data-ttu-id="a53b2-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a53b2-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f2077-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f2077-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="a53b2-112">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a53b2-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f2077-113">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f2077-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="a53b2-113">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a53b2-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="f2077-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f2077-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="a53b2-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a53b2-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f2077-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="f2077-115">See Also</span></span>  
- [<span data-ttu-id="f2077-116">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f2077-116">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a53b2-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a53b2-115">See also</span></span>
+- [<span data-ttu-id="a53b2-116">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a53b2-116">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

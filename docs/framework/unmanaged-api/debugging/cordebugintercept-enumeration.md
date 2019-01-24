@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3ee2272a43d9f71cd49754a7f4233868b8bb9134
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d15f34c55f0ee261c65649e9d431944201c546f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406589"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506027"
 ---
-# <a name="cordebugintercept-enumeration"></a><span data-ttu-id="f7260-102">CorDebugIntercept – výčet</span><span class="sxs-lookup"><span data-stu-id="f7260-102">CorDebugIntercept Enumeration</span></span>
-<span data-ttu-id="f7260-103">Určuje typy kód, který mohou být zachyceny (které se do stupeň).</span><span class="sxs-lookup"><span data-stu-id="f7260-103">Indicates the types of code that can be intercepted (that is, stepped into).</span></span>  
+# <a name="cordebugintercept-enumeration"></a><span data-ttu-id="266df-102">CorDebugIntercept – výčet</span><span class="sxs-lookup"><span data-stu-id="266df-102">CorDebugIntercept Enumeration</span></span>
+<span data-ttu-id="266df-103">Určuje typy kód, který může být zachycen (které je, vkročili).</span><span class="sxs-lookup"><span data-stu-id="266df-103">Indicates the types of code that can be intercepted (that is, stepped into).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f7260-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7260-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="266df-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="266df-104">Syntax</span></span>  
   
 ```  
 typedef enum CorDebugIntercept {  
@@ -40,29 +40,29 @@ typedef enum CorDebugIntercept {
 } CorDebugIntercept;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="f7260-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f7260-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="266df-105">Členové</span><span class="sxs-lookup"><span data-stu-id="266df-105">Members</span></span>  
   
-|<span data-ttu-id="f7260-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f7260-106">Member</span></span>|<span data-ttu-id="f7260-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f7260-107">Description</span></span>|  
+|<span data-ttu-id="266df-106">Člen</span><span class="sxs-lookup"><span data-stu-id="266df-106">Member</span></span>|<span data-ttu-id="266df-107">Popis</span><span class="sxs-lookup"><span data-stu-id="266df-107">Description</span></span>|  
 |------------|-----------------|  
-|`INTERCEPT_NONE`|<span data-ttu-id="f7260-108">Mohou být zachyceny žádný kód.</span><span class="sxs-lookup"><span data-stu-id="f7260-108">No code can be intercepted.</span></span>|  
-|`INTERCEPT_CLASS_INIT`|<span data-ttu-id="f7260-109">Mohou být zachyceny konstruktor.</span><span class="sxs-lookup"><span data-stu-id="f7260-109">A constructor can be intercepted.</span></span>|  
-|`INTERCEPT_EXCEPTION_FILTER`|<span data-ttu-id="f7260-110">Mohou být zachyceny filtru výjimek.</span><span class="sxs-lookup"><span data-stu-id="f7260-110">An exception filter can be intercepted.</span></span>|  
-|`INTERCEPT_SECURITY`|<span data-ttu-id="f7260-111">Kód, který vynucuje zabezpečení mohou být zachyceny.</span><span class="sxs-lookup"><span data-stu-id="f7260-111">Code that enforces security can be intercepted.</span></span>|  
-|`INTERCEPT_CONTEXT_POLICY`|<span data-ttu-id="f7260-112">Mohou být zachyceny zásadu kontextu.</span><span class="sxs-lookup"><span data-stu-id="f7260-112">A context policy can be intercepted.</span></span>|  
-|`INTERCEPT_INTERCEPTION`|<span data-ttu-id="f7260-113">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="f7260-113">Not used.</span></span>|  
-|`INTERCEPT_ALL`|<span data-ttu-id="f7260-114">Mohou být zachyceny veškerý kód.</span><span class="sxs-lookup"><span data-stu-id="f7260-114">All code can be intercepted.</span></span>|  
+|`INTERCEPT_NONE`|<span data-ttu-id="266df-108">Žádný kód může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-108">No code can be intercepted.</span></span>|  
+|`INTERCEPT_CLASS_INIT`|<span data-ttu-id="266df-109">Konstruktor může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-109">A constructor can be intercepted.</span></span>|  
+|`INTERCEPT_EXCEPTION_FILTER`|<span data-ttu-id="266df-110">Filtru výjimky může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-110">An exception filter can be intercepted.</span></span>|  
+|`INTERCEPT_SECURITY`|<span data-ttu-id="266df-111">Kód, který vynucuje zabezpečení může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-111">Code that enforces security can be intercepted.</span></span>|  
+|`INTERCEPT_CONTEXT_POLICY`|<span data-ttu-id="266df-112">Kontext zásad může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-112">A context policy can be intercepted.</span></span>|  
+|`INTERCEPT_INTERCEPTION`|<span data-ttu-id="266df-113">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="266df-113">Not used.</span></span>|  
+|`INTERCEPT_ALL`|<span data-ttu-id="266df-114">Veškerý kód může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-114">All code can be intercepted.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f7260-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f7260-115">Remarks</span></span>  
- <span data-ttu-id="f7260-116">Použití [icordebugstepper::setinterceptmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) metodu pro vytvoření typy kód, který může být zachycen.</span><span class="sxs-lookup"><span data-stu-id="f7260-116">Use the [ICorDebugStepper::SetInterceptMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) method to establish the types of code that can be intercepted.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="266df-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="266df-115">Remarks</span></span>  
+ <span data-ttu-id="266df-116">Použití [icordebugstepper::setinterceptmask –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) metodu pro vytvoření typy kódu, který může být zachycena.</span><span class="sxs-lookup"><span data-stu-id="266df-116">Use the [ICorDebugStepper::SetInterceptMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md) method to establish the types of code that can be intercepted.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f7260-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f7260-117">Requirements</span></span>  
- <span data-ttu-id="f7260-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f7260-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="266df-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="266df-117">Requirements</span></span>  
+ <span data-ttu-id="266df-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="266df-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f7260-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f7260-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="266df-119">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="266df-119">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="f7260-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f7260-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="266df-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="266df-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f7260-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f7260-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="266df-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="266df-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f7260-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="f7260-122">See Also</span></span>  
- [<span data-ttu-id="f7260-123">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="f7260-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="266df-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="266df-122">See also</span></span>
+- [<span data-ttu-id="266df-123">Výčty pro ladění</span><span class="sxs-lookup"><span data-stu-id="266df-123">Debugging Enumerations</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
