@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: vytvoření hierarchie pomocí seskupení (C#)'
+title: 'Postupy: Vytvoření hierarchie pomocí seskupení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: 8fa384ced04a90002f8f721266f163c874d6e0ff
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: bd2e8ab9fb0ed1fee68cb51d2d032b202b14ba88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585557"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54560851"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a><span data-ttu-id="d599c-102">Postupy: vytvoření hierarchie pomocí seskupení (C#)</span><span class="sxs-lookup"><span data-stu-id="d599c-102">How to: Create Hierarchy Using Grouping (C#)</span></span>
-<span data-ttu-id="d599c-103">Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.</span><span class="sxs-lookup"><span data-stu-id="d599c-103">This example shows how to group data, and then generate XML based on the grouping.</span></span>  
+# <a name="how-to-create-hierarchy-using-grouping-c"></a><span data-ttu-id="642a1-102">Postupy: Vytvoření hierarchie pomocí seskupení (C#)</span><span class="sxs-lookup"><span data-stu-id="642a1-102">How to: Create Hierarchy Using Grouping (C#)</span></span>
+<span data-ttu-id="642a1-103">Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.</span><span class="sxs-lookup"><span data-stu-id="642a1-103">This example shows how to group data, and then generate XML based on the grouping.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d599c-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="d599c-104">Example</span></span>  
- <span data-ttu-id="d599c-105">Tento příklad první seskupuje data podle kategorie, poté vygeneruje nový soubor XML, ve kterém odráží hierarchii XML seskupení.</span><span class="sxs-lookup"><span data-stu-id="d599c-105">This example first groups data by a category, then generates a new XML file in which the XML hierarchy reflects the grouping.</span></span>  
+## <a name="example"></a><span data-ttu-id="642a1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="642a1-104">Example</span></span>  
+ <span data-ttu-id="642a1-105">Tento příklad první seskupuje data podle kategorie, poté vygeneruje nový soubor XML, ve kterém odráží hierarchii XML seskupení.</span><span class="sxs-lookup"><span data-stu-id="642a1-105">This example first groups data by a category, then generates a new XML file in which the XML hierarchy reflects the grouping.</span></span>  
   
- <span data-ttu-id="d599c-106">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: numerická Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="d599c-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="642a1-106">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Číselná Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="642a1-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  
@@ -35,7 +35,7 @@ var newData =
 Console.WriteLine(newData);  
 ```  
   
- <span data-ttu-id="d599c-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="d599c-107">This example produces the following output:</span></span>  
+ <span data-ttu-id="642a1-107">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="642a1-107">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -74,6 +74,6 @@ Console.WriteLine(newData);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d599c-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="d599c-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="642a1-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="642a1-108">See also</span></span>
 
-- [<span data-ttu-id="d599c-109">Pokročilé techniky dotazování (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="d599c-109">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [<span data-ttu-id="642a1-109">Pokročilé techniky dotazování (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="642a1-109">Advanced Query Techniques (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

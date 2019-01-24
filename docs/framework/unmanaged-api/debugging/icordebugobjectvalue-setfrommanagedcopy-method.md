@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7a2905caa011df4f0699445bafb8523c6b7e9eb8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 04eff6ba8b284a26b9b3ee55c7f323aef52f1208
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413862"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612603"
 ---
-# <a name="icordebugobjectvaluesetfrommanagedcopy-method"></a><span data-ttu-id="7c7d7-102">ICorDebugObjectValue::SetFromManagedCopy – metoda</span><span class="sxs-lookup"><span data-stu-id="7c7d7-102">ICorDebugObjectValue::SetFromManagedCopy Method</span></span>
-<span data-ttu-id="7c7d7-103">`SetFromManagedCopy` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="7c7d7-103">`SetFromManagedCopy` is obsolete.</span></span> <span data-ttu-id="7c7d7-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="7c7d7-104">Do not call this method.</span></span>  
+# <a name="icordebugobjectvaluesetfrommanagedcopy-method"></a><span data-ttu-id="29d3e-102">ICorDebugObjectValue::SetFromManagedCopy – metoda</span><span class="sxs-lookup"><span data-stu-id="29d3e-102">ICorDebugObjectValue::SetFromManagedCopy Method</span></span>
+<span data-ttu-id="29d3e-103">`SetFromManagedCopy` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="29d3e-103">`SetFromManagedCopy` is obsolete.</span></span> <span data-ttu-id="29d3e-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="29d3e-104">Do not call this method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c7d7-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c7d7-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="29d3e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="29d3e-105">Syntax</span></span>  
   
 ```  
 HRESULT SetFromManagedCopy (  
@@ -35,9 +35,9 @@ HRESULT SetFromManagedCopy (
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="7c7d7-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c7d7-106">Requirements</span></span>  
- <span data-ttu-id="7c7d7-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="7c7d7-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="29d3e-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="29d3e-106">Requirements</span></span>  
+ <span data-ttu-id="29d3e-107">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="29d3e-107">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c7d7-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="7c7d7-108">See Also</span></span>  
-    
- 
+## <a name="see-also"></a><span data-ttu-id="29d3e-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="29d3e-108">See also</span></span>
+
+

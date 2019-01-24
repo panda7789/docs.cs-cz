@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aed553a3a8d54b5229a122e76b61e3e58d4af3c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 65d6e929a0a6fb5e1933a6c9216dfc5b56342113
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401963"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54560643"
 ---
-# <a name="setassemblyprops-method"></a><span data-ttu-id="17be7-102">SetAssemblyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="17be7-102">SetAssemblyProps Method</span></span>
-<span data-ttu-id="17be7-103">Přiřadí vlastnosti úrovni sestavení.</span><span class="sxs-lookup"><span data-stu-id="17be7-103">Assigns assembly-level properties.</span></span>  
+# <a name="setassemblyprops-method"></a><span data-ttu-id="845fe-102">SetAssemblyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="845fe-102">SetAssemblyProps Method</span></span>
+<span data-ttu-id="845fe-103">Přiřadí vlastností na úrovni sestavení.</span><span class="sxs-lookup"><span data-stu-id="845fe-103">Assigns assembly-level properties.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="17be7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="17be7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="845fe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="845fe-104">Syntax</span></span>  
   
 ```  
 HRESULT SetAssemblyProps(  
@@ -37,26 +37,26 @@ HRESULT SetAssemblyProps(
 ) PURE;  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="17be7-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="17be7-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="845fe-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="845fe-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="17be7-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="17be7-106">ID of the assembly.</span></span>  
+ <span data-ttu-id="845fe-106">ID sestavení.</span><span class="sxs-lookup"><span data-stu-id="845fe-106">ID of the assembly.</span></span>  
   
  `FileToken`  
- <span data-ttu-id="17be7-107">Soubor, který definuje vlastnost.</span><span class="sxs-lookup"><span data-stu-id="17be7-107">File that defines the property.</span></span> <span data-ttu-id="17be7-108">Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.</span><span class="sxs-lookup"><span data-stu-id="17be7-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
+ <span data-ttu-id="845fe-107">Soubor, který definuje vlastnost.</span><span class="sxs-lookup"><span data-stu-id="845fe-107">File that defines the property.</span></span> <span data-ttu-id="845fe-108">Může mít hodnotu NULL, pokud `AssemblyID` neznamená odvázat netmodule.</span><span class="sxs-lookup"><span data-stu-id="845fe-108">Can be NULL if `AssemblyID` does not indicate an unbound netmodule.</span></span>  
   
  `Option`  
- <span data-ttu-id="17be7-109">Určuje možnost upravit.</span><span class="sxs-lookup"><span data-stu-id="17be7-109">Indicates the option to modify.</span></span>  
+ <span data-ttu-id="845fe-109">Určuje možnost upravit.</span><span class="sxs-lookup"><span data-stu-id="845fe-109">Indicates the option to modify.</span></span>  
   
  `Value`  
- <span data-ttu-id="17be7-110">Nová hodnota možnosti.</span><span class="sxs-lookup"><span data-stu-id="17be7-110">New value of the option.</span></span>  
+ <span data-ttu-id="845fe-110">Nová hodnota možnosti.</span><span class="sxs-lookup"><span data-stu-id="845fe-110">New value of the option.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="17be7-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="17be7-111">Return Value</span></span>  
- <span data-ttu-id="17be7-112">Vrátí S_OK, pokud metoda bude úspěšná.</span><span class="sxs-lookup"><span data-stu-id="17be7-112">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="845fe-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="845fe-111">Return Value</span></span>  
+ <span data-ttu-id="845fe-112">Pokud metoda uspěje, vrátí hodnotu S_OK.</span><span class="sxs-lookup"><span data-stu-id="845fe-112">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="17be7-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="17be7-113">Requirements</span></span>  
- <span data-ttu-id="17be7-114">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="17be7-114">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="845fe-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="845fe-113">Requirements</span></span>  
+ <span data-ttu-id="845fe-114">Vyžaduje alink.h.</span><span class="sxs-lookup"><span data-stu-id="845fe-114">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17be7-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="17be7-115">See Also</span></span>  
- [<span data-ttu-id="17be7-116">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17be7-116">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [<span data-ttu-id="17be7-117">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="17be7-117">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [<span data-ttu-id="17be7-118">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="17be7-118">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a><span data-ttu-id="845fe-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="845fe-115">See also</span></span>
+- [<span data-ttu-id="845fe-116">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="845fe-116">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [<span data-ttu-id="845fe-117">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="845fe-117">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [<span data-ttu-id="845fe-118">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="845fe-118">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

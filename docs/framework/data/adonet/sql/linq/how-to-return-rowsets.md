@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: vrácení sady řádků'
+title: 'Postupy: Vrácení sad řádků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 725718f5-da29-4841-9f53-aafef64ba977
-ms.openlocfilehash: a2666b752d936e10d377113d5bf18111393df3ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9fcbd8aa74740a66fa6caca18067ac473891f4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587213"
 ---
-# <a name="how-to-return-rowsets"></a><span data-ttu-id="90e2a-102">Postupy: vrácení sady řádků</span><span class="sxs-lookup"><span data-stu-id="90e2a-102">How to: Return Rowsets</span></span>
-<span data-ttu-id="90e2a-103">Tento příklad vrací sadu řádků z databáze a zahrnuje vstupní parametr filtrovat výsledek.</span><span class="sxs-lookup"><span data-stu-id="90e2a-103">This example returns a rowset from the database, and includes an input parameter to filter the result.</span></span>  
+# <a name="how-to-return-rowsets"></a><span data-ttu-id="a4500-102">Postupy: Vrácení sad řádků</span><span class="sxs-lookup"><span data-stu-id="a4500-102">How to: Return Rowsets</span></span>
+<span data-ttu-id="a4500-103">V tomto příkladu vrátí sadu řádků z databáze a zahrnuje vstupní parametr a filtrovat výsledky.</span><span class="sxs-lookup"><span data-stu-id="a4500-103">This example returns a rowset from the database, and includes an input parameter to filter the result.</span></span>  
   
- <span data-ttu-id="90e2a-104">Při spuštění uložené procedury, jež vrací sadu řádků, je použít *výsledek* třídu, která ukládá vrátí z uložené procedury.</span><span class="sxs-lookup"><span data-stu-id="90e2a-104">When you execute a stored procedure that returns a rowset, you use a *result* class that stores the returns from the stored procedure.</span></span> <span data-ttu-id="90e2a-105">Další informace najdete v tématu [analýza technologie LINQ to SQL zdrojový kód](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).</span><span class="sxs-lookup"><span data-stu-id="90e2a-105">For more information, see [Analyzing LINQ to SQL Source Code](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).</span></span>  
+ <span data-ttu-id="a4500-104">Při spouštění uložené procedury, která vrací sadu řádků, je použít *výsledek* třída, která obsahuje tato vrátí hodnotu z úložné procedury.</span><span class="sxs-lookup"><span data-stu-id="a4500-104">When you execute a stored procedure that returns a rowset, you use a *result* class that stores the returns from the stored procedure.</span></span> <span data-ttu-id="a4500-105">Další informace najdete v tématu [analýza LINQ to SQL zdrojový kód](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).</span><span class="sxs-lookup"><span data-stu-id="a4500-105">For more information, see [Analyzing LINQ to SQL Source Code](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="90e2a-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="90e2a-106">Example</span></span>  
- <span data-ttu-id="90e2a-107">V následujícím příkladu představuje uložené procedury, jež vrací řádky zákazníků a používá vstupní parametr vrátit pouze řádky tohoto seznamu "Praha" jako město zákazníka.</span><span class="sxs-lookup"><span data-stu-id="90e2a-107">The following example represents a stored procedure that returns rows of customers and uses an input parameter to return only those rows that list "London" as the customer city.</span></span> <span data-ttu-id="90e2a-108">Příklad předpokládá Výčtový `CustomersByCityResult` třídy.</span><span class="sxs-lookup"><span data-stu-id="90e2a-108">The example assumes an enumerable `CustomersByCityResult` class.</span></span>  
+## <a name="example"></a><span data-ttu-id="a4500-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="a4500-106">Example</span></span>  
+ <span data-ttu-id="a4500-107">Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků a vrátit pouze řádky tohoto seznamu "Londýn" jako název města zákazníka pomocí vstupního parametru.</span><span class="sxs-lookup"><span data-stu-id="a4500-107">The following example represents a stored procedure that returns rows of customers and uses an input parameter to return only those rows that list "London" as the customer city.</span></span> <span data-ttu-id="a4500-108">Příklad předpokládá Výčtový objekt `CustomersByCityResult` třídy.</span><span class="sxs-lookup"><span data-stu-id="a4500-108">The example assumes an enumerable `CustomersByCityResult` class.</span></span>  
   
 ```  
 CREATE PROCEDURE [dbo].[Customers By City]  
@@ -36,6 +36,6 @@ END
  [!code-csharp[DLinqSprox#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/northwind-sprox.cs#1)]
  [!code-vb[DLinqSprox#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="90e2a-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="90e2a-109">See Also</span></span>  
- [<span data-ttu-id="90e2a-110">Uložené procedury</span><span class="sxs-lookup"><span data-stu-id="90e2a-110">Stored Procedures</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
- [<span data-ttu-id="90e2a-111">Stažení ukázkových databází</span><span class="sxs-lookup"><span data-stu-id="90e2a-111">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+## <a name="see-also"></a><span data-ttu-id="a4500-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a4500-109">See also</span></span>
+- [<span data-ttu-id="a4500-110">Uložené procedury</span><span class="sxs-lookup"><span data-stu-id="a4500-110">Stored Procedures</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [<span data-ttu-id="a4500-111">Stažení ukázkových databází</span><span class="sxs-lookup"><span data-stu-id="a4500-111">Downloading Sample Databases</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

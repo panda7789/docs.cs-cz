@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 427d93a9aff527d36720c4199782fa104a66f8d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6bfa846aa66345e23e085ca148c7e3f492c529f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455030"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576340"
 ---
-# <a name="gethashfromblob-function"></a><span data-ttu-id="729a2-102">GetHashFromBlob – funkce</span><span class="sxs-lookup"><span data-stu-id="729a2-102">GetHashFromBlob Function</span></span>
-<span data-ttu-id="729a2-103">Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadaný algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="729a2-103">Gets a hash of the assembly at the specified memory address, using the specified hash algorithm.</span></span>  
+# <a name="gethashfromblob-function"></a><span data-ttu-id="6a18a-102">GetHashFromBlob – funkce</span><span class="sxs-lookup"><span data-stu-id="6a18a-102">GetHashFromBlob Function</span></span>
+<span data-ttu-id="6a18a-103">Získá hodnotu hash sestavení na adrese zadaná paměťová, pomocí zadané hashovacího algoritmu.</span><span class="sxs-lookup"><span data-stu-id="6a18a-103">Gets a hash of the assembly at the specified memory address, using the specified hash algorithm.</span></span>  
   
- <span data-ttu-id="729a2-104">Tato funkce je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="729a2-104">This function has been deprecated.</span></span> <span data-ttu-id="729a2-105">Použití [ICLRStronName::GetHashFromBlob](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="729a2-105">Use the [ICLRStronName::GetHashFromBlob](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md) method instead.</span></span>  
+ <span data-ttu-id="6a18a-104">Tato funkce je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="6a18a-104">This function has been deprecated.</span></span> <span data-ttu-id="6a18a-105">Použití [ICLRStronName::GetHashFromBlob](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md) metoda místo.</span><span class="sxs-lookup"><span data-stu-id="6a18a-105">Use the [ICLRStronName::GetHashFromBlob](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="729a2-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="729a2-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6a18a-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6a18a-106">Syntax</span></span>  
   
 ```  
 HRESULT GetHashFromBlob (  
@@ -41,34 +41,34 @@ HRESULT GetHashFromBlob (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="729a2-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="729a2-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="6a18a-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="6a18a-107">Parameters</span></span>  
  `pbBlob`  
- <span data-ttu-id="729a2-108">[v] Ukazatel na adresu paměti blok, který má být použita hodnota hash.</span><span class="sxs-lookup"><span data-stu-id="729a2-108">[in] A pointer to the address of the memory block to be hashed.</span></span>  
+ <span data-ttu-id="6a18a-108">[in] Ukazatel na adresu blok paměti určený k hashovat.</span><span class="sxs-lookup"><span data-stu-id="6a18a-108">[in] A pointer to the address of the memory block to be hashed.</span></span>  
   
  `cchBlob`  
- <span data-ttu-id="729a2-109">[v] Délka v bajtech bloku paměti.</span><span class="sxs-lookup"><span data-stu-id="729a2-109">[in] The length, in bytes, of the memory block.</span></span>  
+ <span data-ttu-id="6a18a-109">[in] Délka v bajtech, bloku paměti.</span><span class="sxs-lookup"><span data-stu-id="6a18a-109">[in] The length, in bytes, of the memory block.</span></span>  
   
  `piHashAlg`  
- <span data-ttu-id="729a2-110">[ve out] Konstanta, která určuje algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="729a2-110">[in, out] A constant that specifies the hash algorithm.</span></span> <span data-ttu-id="729a2-111">Používejte nula pro výchozí algoritmus.</span><span class="sxs-lookup"><span data-stu-id="729a2-111">Use zero for the default algorithm.</span></span>  
+ <span data-ttu-id="6a18a-110">[out v] Konstanta, která určuje algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="6a18a-110">[in, out] A constant that specifies the hash algorithm.</span></span> <span data-ttu-id="6a18a-111">Použít nulu pro výchozí algoritmus.</span><span class="sxs-lookup"><span data-stu-id="6a18a-111">Use zero for the default algorithm.</span></span>  
   
  `pbHash`  
- <span data-ttu-id="729a2-112">[out] Vrácená hodnota hash vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="729a2-112">[out] The returned hash buffer.</span></span>  
+ <span data-ttu-id="6a18a-112">[out] Vrácená hodnota hash vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="6a18a-112">[out] The returned hash buffer.</span></span>  
   
  `cchHash`  
- <span data-ttu-id="729a2-113">[v] Požadovaný maximální velikost `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="729a2-113">[in] The requested maximum size of `pbHash`.</span></span>  
+ <span data-ttu-id="6a18a-113">[in] Požadovaná maximální velikost `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="6a18a-113">[in] The requested maximum size of `pbHash`.</span></span>  
   
  `pchHash`  
- <span data-ttu-id="729a2-114">[out] Velikost v bajtech vrácený `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="729a2-114">[out] The size, in bytes, of the returned `pbHash`.</span></span>  
+ <span data-ttu-id="6a18a-114">[out] Velikost v bajtech, vráceného `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="6a18a-114">[out] The size, in bytes, of the returned `pbHash`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="729a2-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="729a2-115">Requirements</span></span>  
- <span data-ttu-id="729a2-116">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="729a2-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6a18a-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6a18a-115">Requirements</span></span>  
+ <span data-ttu-id="6a18a-116">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6a18a-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="729a2-117">**Záhlaví:** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="729a2-117">**Header:** StrongName.h</span></span>  
+ <span data-ttu-id="6a18a-117">**Záhlaví:** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="6a18a-117">**Header:** StrongName.h</span></span>  
   
- <span data-ttu-id="729a2-118">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="729a2-118">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="6a18a-118">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="6a18a-118">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="729a2-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="729a2-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="6a18a-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6a18a-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="729a2-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="729a2-120">See Also</span></span>  
- [<span data-ttu-id="729a2-121">GetHashFromBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="729a2-121">GetHashFromBlob Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md)  
- [<span data-ttu-id="729a2-122">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="729a2-122">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="6a18a-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6a18a-120">See also</span></span>
+- [<span data-ttu-id="6a18a-121">GetHashFromBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="6a18a-121">GetHashFromBlob Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromblob-method.md)
+- [<span data-ttu-id="6a18a-122">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6a18a-122">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

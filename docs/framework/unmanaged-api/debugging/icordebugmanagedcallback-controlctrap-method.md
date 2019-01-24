@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a9758de5c2801f2c55b7eca149569016ec5b9243
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f13800bcecbf6e7bdc5fede4e11c2ea15ecdec93
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412750"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603895"
 ---
-# <a name="icordebugmanagedcallbackcontrolctrap-method"></a><span data-ttu-id="7a66b-102">ICorDebugManagedCallback::ControlCTrap – metoda</span><span class="sxs-lookup"><span data-stu-id="7a66b-102">ICorDebugManagedCallback::ControlCTrap Method</span></span>
-<span data-ttu-id="7a66b-103">Do pasti CTRL + C v procesu, který je právě laděn upozorní ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="7a66b-103">Notifies the debugger that a CTRL+C is trapped in the process that is being debugged.</span></span>  
+# <a name="icordebugmanagedcallbackcontrolctrap-method"></a><span data-ttu-id="2a5f4-102">ICorDebugManagedCallback::ControlCTrap – metoda</span><span class="sxs-lookup"><span data-stu-id="2a5f4-102">ICorDebugManagedCallback::ControlCTrap Method</span></span>
+<span data-ttu-id="2a5f4-103">Upozorní ladicí program, CTRL + C je zachycena v procesu, který je právě laděna.</span><span class="sxs-lookup"><span data-stu-id="2a5f4-103">Notifies the debugger that a CTRL+C is trapped in the process that is being debugged.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7a66b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7a66b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2a5f4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2a5f4-104">Syntax</span></span>  
   
 ```  
 HRESULT ControlCTrap (  
@@ -35,28 +35,28 @@ HRESULT ControlCTrap (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="7a66b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7a66b-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="2a5f4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2a5f4-105">Parameters</span></span>  
  `pProcess`  
- <span data-ttu-id="7a66b-106">[v] Ukazatel na ICorDebugProcess objekt, který představuje proces, ve kterém je do pasti CTRL + C.</span><span class="sxs-lookup"><span data-stu-id="7a66b-106">[in] A pointer to an ICorDebugProcess object that represents the process in which the CTRL+C is trapped.</span></span>  
+ <span data-ttu-id="2a5f4-106">[in] Ukazatel na objekt ICorDebugProcess, který představuje proces, ve kterém je kombinace kláves CTRL + C zachycena.</span><span class="sxs-lookup"><span data-stu-id="2a5f4-106">[in] A pointer to an ICorDebugProcess object that represents the process in which the CTRL+C is trapped.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="7a66b-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="7a66b-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="2a5f4-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2a5f4-107">Return Value</span></span>  
   
-|<span data-ttu-id="7a66b-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="7a66b-108">HRESULT</span></span>|<span data-ttu-id="7a66b-109">Popis</span><span class="sxs-lookup"><span data-stu-id="7a66b-109">Description</span></span>|  
+|<span data-ttu-id="2a5f4-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="2a5f4-108">HRESULT</span></span>|<span data-ttu-id="2a5f4-109">Popis</span><span class="sxs-lookup"><span data-stu-id="2a5f4-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="7a66b-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="7a66b-110">S_OK</span></span>|<span data-ttu-id="7a66b-111">Ladicí program, bude zpracovávat depeše CTRL + C.</span><span class="sxs-lookup"><span data-stu-id="7a66b-111">The debugger will handle the CTRL+C trap.</span></span>|  
-|<span data-ttu-id="7a66b-112">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="7a66b-112">S_FALSE</span></span>|<span data-ttu-id="7a66b-113">Ladicí program nebude zpracování depeše CTRL + C.</span><span class="sxs-lookup"><span data-stu-id="7a66b-113">The debugger will not handle the CTRL+C trap.</span></span>|  
+|<span data-ttu-id="2a5f4-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="2a5f4-110">S_OK</span></span>|<span data-ttu-id="2a5f4-111">Ladicí program zpracuje depeše CTRL + C.</span><span class="sxs-lookup"><span data-stu-id="2a5f4-111">The debugger will handle the CTRL+C trap.</span></span>|  
+|<span data-ttu-id="2a5f4-112">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="2a5f4-112">S_FALSE</span></span>|<span data-ttu-id="2a5f4-113">Ladicí program nebude zpracovávat depeše CTRL + C.</span><span class="sxs-lookup"><span data-stu-id="2a5f4-113">The debugger will not handle the CTRL+C trap.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7a66b-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7a66b-114">Remarks</span></span>  
- <span data-ttu-id="7a66b-115">Všechny aplikační domény v rámci procesu se zastaví pro tento zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="7a66b-115">All application domains within the process are stopped for this callback.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2a5f4-114">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2a5f4-114">Remarks</span></span>  
+ <span data-ttu-id="2a5f4-115">Pro toto zpětné volání se zastaví všechny domény aplikace uvnitř procesu.</span><span class="sxs-lookup"><span data-stu-id="2a5f4-115">All application domains within the process are stopped for this callback.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7a66b-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7a66b-116">Requirements</span></span>  
- <span data-ttu-id="7a66b-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7a66b-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2a5f4-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2a5f4-116">Requirements</span></span>  
+ <span data-ttu-id="2a5f4-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2a5f4-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7a66b-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="7a66b-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="2a5f4-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2a5f4-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="7a66b-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7a66b-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="2a5f4-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2a5f4-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="7a66b-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7a66b-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="2a5f4-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2a5f4-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7a66b-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="7a66b-121">See Also</span></span>  
- [<span data-ttu-id="7a66b-122">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7a66b-122">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="2a5f4-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2a5f4-121">See also</span></span>
+- [<span data-ttu-id="2a5f4-122">ICorDebugManagedCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2a5f4-122">ICorDebugManagedCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

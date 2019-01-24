@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: efad3c6e566ab35a8ba4fbbacf09931e844ce8ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 257c6856b54d77c4df0012880c9eac59884b52d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33438348"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570995"
 ---
-# <a name="ihostassemblymanagergetassemblystore-method"></a><span data-ttu-id="734e3-102">IHostAssemblyManager::GetAssemblyStore – metoda</span><span class="sxs-lookup"><span data-stu-id="734e3-102">IHostAssemblyManager::GetAssemblyStore Method</span></span>
-<span data-ttu-id="734e3-103">Získá ukazatele rozhraní k [ihostassemblystore –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) , která představuje seznam sestavení načíst pro hostitele.</span><span class="sxs-lookup"><span data-stu-id="734e3-103">Gets an interface pointer to an [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) that represents the list of assemblies loaded by the host.</span></span>  
+# <a name="ihostassemblymanagergetassemblystore-method"></a><span data-ttu-id="546cc-102">IHostAssemblyManager::GetAssemblyStore – metoda</span><span class="sxs-lookup"><span data-stu-id="546cc-102">IHostAssemblyManager::GetAssemblyStore Method</span></span>
+<span data-ttu-id="546cc-103">Získá ukazatel rozhraní k [ihostassemblystore –](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) , která představuje seznam sestavení zavedených od hostitele.</span><span class="sxs-lookup"><span data-stu-id="546cc-103">Gets an interface pointer to an [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) that represents the list of assemblies loaded by the host.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="734e3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="734e3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="546cc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="546cc-104">Syntax</span></span>  
   
 ```  
 HRESULT GetAssemblyStore (  
@@ -35,37 +35,37 @@ HRESULT GetAssemblyStore (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="734e3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="734e3-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="546cc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="546cc-105">Parameters</span></span>  
  `ppAssemblyStore`  
- <span data-ttu-id="734e3-106">[out] Ukazatel na `IHostAssemblyStore` instanci, nebo hodnotu null, pokud hostitel neimplementuje `IHostAssemblyStore`.</span><span class="sxs-lookup"><span data-stu-id="734e3-106">[out] A function pointer to an `IHostAssemblyStore` instance, or null, if the host does not implement `IHostAssemblyStore`.</span></span>  
+ <span data-ttu-id="546cc-106">[out] Ukazatel na funkci na `IHostAssemblyStore` instanci, nebo hodnotu null, pokud hostitel neimplementuje `IHostAssemblyStore`.</span><span class="sxs-lookup"><span data-stu-id="546cc-106">[out] A function pointer to an `IHostAssemblyStore` instance, or null, if the host does not implement `IHostAssemblyStore`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="734e3-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="734e3-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="546cc-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="546cc-107">Return Value</span></span>  
   
-|<span data-ttu-id="734e3-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="734e3-108">HRESULT</span></span>|<span data-ttu-id="734e3-109">Popis</span><span class="sxs-lookup"><span data-stu-id="734e3-109">Description</span></span>|  
+|<span data-ttu-id="546cc-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="546cc-108">HRESULT</span></span>|<span data-ttu-id="546cc-109">Popis</span><span class="sxs-lookup"><span data-stu-id="546cc-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="734e3-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="734e3-110">S_OK</span></span>|<span data-ttu-id="734e3-111">`GetAssemblyStore` úspěšně vrácena.</span><span class="sxs-lookup"><span data-stu-id="734e3-111">`GetAssemblyStore` returned successfully.</span></span>|  
-|<span data-ttu-id="734e3-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="734e3-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="734e3-113">Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="734e3-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="734e3-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="734e3-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="734e3-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="734e3-115">The call timed out.</span></span>|  
-|<span data-ttu-id="734e3-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="734e3-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="734e3-117">Volající není vlastníkem zámek.</span><span class="sxs-lookup"><span data-stu-id="734e3-117">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="734e3-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="734e3-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="734e3-119">Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.</span><span class="sxs-lookup"><span data-stu-id="734e3-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="734e3-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="734e3-120">E_FAIL</span></span>|<span data-ttu-id="734e3-121">Došlo k neznámému závažné selhání.</span><span class="sxs-lookup"><span data-stu-id="734e3-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="734e3-122">Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="734e3-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="734e3-123">Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="734e3-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="734e3-124">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="734e3-124">E_NOINTERFACE</span></span>|<span data-ttu-id="734e3-125">Hostitel neposkytuje implementace `IHostAssemblyStore`.</span><span class="sxs-lookup"><span data-stu-id="734e3-125">The host does not provide an implementation of `IHostAssemblyStore`.</span></span>|  
+|<span data-ttu-id="546cc-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="546cc-110">S_OK</span></span>|<span data-ttu-id="546cc-111">`GetAssemblyStore` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="546cc-111">`GetAssemblyStore` returned successfully.</span></span>|  
+|<span data-ttu-id="546cc-112">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="546cc-112">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="546cc-113">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="546cc-113">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="546cc-114">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="546cc-114">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="546cc-115">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="546cc-115">The call timed out.</span></span>|  
+|<span data-ttu-id="546cc-116">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="546cc-116">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="546cc-117">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="546cc-117">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="546cc-118">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="546cc-118">HOST_E_ABANDONED</span></span>|<span data-ttu-id="546cc-119">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="546cc-119">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="546cc-120">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="546cc-120">E_FAIL</span></span>|<span data-ttu-id="546cc-121">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="546cc-121">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="546cc-122">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="546cc-122">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="546cc-123">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="546cc-123">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="546cc-124">E_NOINTERFACE</span><span class="sxs-lookup"><span data-stu-id="546cc-124">E_NOINTERFACE</span></span>|<span data-ttu-id="546cc-125">Hostitel neposkytuje implementaci `IHostAssemblyStore`.</span><span class="sxs-lookup"><span data-stu-id="546cc-125">The host does not provide an implementation of `IHostAssemblyStore`.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="734e3-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="734e3-126">Remarks</span></span>  
- <span data-ttu-id="734e3-127">`IHostAssemblyStore` poskytuje metody, které umožňují pro hostitele a vytvořit vazbu k sestavení a moduly nezávisle na modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="734e3-127">`IHostAssemblyStore` provides methods that allow a host to bind to assemblies and modules independently of the CLR.</span></span> <span data-ttu-id="734e3-128">Hostitelé obvykle poskytují sestavení úložiště umožňující sestavení načíst z formátu než systému souborů.</span><span class="sxs-lookup"><span data-stu-id="734e3-128">Hosts typically provide assembly stores to allow assemblies to be loaded from formats other than the file system.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="546cc-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="546cc-126">Remarks</span></span>  
+ <span data-ttu-id="546cc-127">`IHostAssemblyStore` poskytuje metody, které umožňují hostitele, který k vytvoření vazby na sestavení a modulů nezávisle na modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="546cc-127">`IHostAssemblyStore` provides methods that allow a host to bind to assemblies and modules independently of the CLR.</span></span> <span data-ttu-id="546cc-128">Hostitelé obvykle poskytují úložiště sestavení umožňující sestavení, který se má načíst z formátů než v systému souborů.</span><span class="sxs-lookup"><span data-stu-id="546cc-128">Hosts typically provide assembly stores to allow assemblies to be loaded from formats other than the file system.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="734e3-129">Pokud hostitel neimplementuje `IHostAssemblyStore`, `GetAssemblyStore` by měla vrátit má hodnotu HRESULT E_NOINTERFACE a měli nastavit `ppAssemblyStore` na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="734e3-129">If the host does not implement `IHostAssemblyStore`, `GetAssemblyStore` should return an HRESULT value of E_NOINTERFACE, and should set `ppAssemblyStore` to null.</span></span>  
+>  <span data-ttu-id="546cc-129">Pokud hostitel neimplementuje `IHostAssemblyStore`, `GetAssemblyStore` by měl vrátit hodnotu HRESULT E_NOINTERFACE a nastavte `ppAssemblyStore` na hodnotu null.</span><span class="sxs-lookup"><span data-stu-id="546cc-129">If the host does not implement `IHostAssemblyStore`, `GetAssemblyStore` should return an HRESULT value of E_NOINTERFACE, and should set `ppAssemblyStore` to null.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="734e3-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="734e3-130">Requirements</span></span>  
- <span data-ttu-id="734e3-131">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="734e3-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="546cc-130">Požadavky</span><span class="sxs-lookup"><span data-stu-id="546cc-130">Requirements</span></span>  
+ <span data-ttu-id="546cc-131">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="546cc-131">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="734e3-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="734e3-132">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="546cc-132">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="546cc-132">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="734e3-133">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="734e3-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="546cc-133">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="546cc-133">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="734e3-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="734e3-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="546cc-134">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="546cc-134">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="734e3-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="734e3-135">See Also</span></span>  
- [<span data-ttu-id="734e3-136">IHostAssemblyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="734e3-136">IHostAssemblyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
- [<span data-ttu-id="734e3-137">IHostAssemblyStore – rozhraní</span><span class="sxs-lookup"><span data-stu-id="734e3-137">IHostAssemblyStore Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)
+## <a name="see-also"></a><span data-ttu-id="546cc-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="546cc-135">See also</span></span>
+- [<span data-ttu-id="546cc-136">IHostAssemblyManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="546cc-136">IHostAssemblyManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)
+- [<span data-ttu-id="546cc-137">IHostAssemblyStore – rozhraní</span><span class="sxs-lookup"><span data-stu-id="546cc-137">IHostAssemblyStore Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

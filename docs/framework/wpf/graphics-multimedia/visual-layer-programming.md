@@ -9,25 +9,25 @@ helpviewer_keywords:
 - rendering support with Visual objects [WPF]
 - visual layer [WPF]
 ms.assetid: d82c89db-077f-4c3c-a4f8-310ebfbe0fe2
-ms.openlocfilehash: 13957e60c92a90624882e126fe66aca789b6835a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3bf3e718b1253348030c0ddf3ac52ed8aa79b37d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580782"
 ---
-# <a name="visual-layer-programming"></a><span data-ttu-id="4d615-102">Programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="4d615-102">Visual Layer Programming</span></span>
-<span data-ttu-id="4d615-103"><xref:System.Windows.Media.Visual> Objekt je jádro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytovat podporu pro vykreslování.</span><span class="sxs-lookup"><span data-stu-id="4d615-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="4d615-104">Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, jsou odvozeny od <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="4d615-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
+# <a name="visual-layer-programming"></a><span data-ttu-id="8d73c-102">Programování vizuální vrstvy</span><span class="sxs-lookup"><span data-stu-id="8d73c-102">Visual Layer Programming</span></span>
+<span data-ttu-id="8d73c-103"><xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování.</span><span class="sxs-lookup"><span data-stu-id="8d73c-103">The <xref:System.Windows.Media.Visual> object is a core [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] object, whose primary role is to provide rendering support.</span></span> <span data-ttu-id="8d73c-104">Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.</span><span class="sxs-lookup"><span data-stu-id="8d73c-104">User interface controls, such as <xref:System.Windows.Controls.Button> and <xref:System.Windows.Controls.TextBox>, derive from the <xref:System.Windows.Media.Visual> class, and use it for persisting their rendering data.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="4d615-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="4d615-105">In This Section</span></span>  
- [<span data-ttu-id="4d615-106">Ověřování pozice ve vizuální vrstvě</span><span class="sxs-lookup"><span data-stu-id="4d615-106">Hit Testing in the Visual Layer</span></span>](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
- [<span data-ttu-id="4d615-107">Použití objektů DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="4d615-107">Using DrawingVisual Objects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)  
- [<span data-ttu-id="4d615-108">Kurz: Hostování vizuální objektů v aplikaci Win32</span><span class="sxs-lookup"><span data-stu-id="4d615-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
- [<span data-ttu-id="4d615-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="4d615-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/visual-layer-programming-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="8d73c-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8d73c-105">In This Section</span></span>  
+ [<span data-ttu-id="8d73c-106">Ověřování pozice ve vizuální vrstvě</span><span class="sxs-lookup"><span data-stu-id="8d73c-106">Hit Testing in the Visual Layer</span></span>](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
+ [<span data-ttu-id="8d73c-107">Použití objektů DrawingVisual</span><span class="sxs-lookup"><span data-stu-id="8d73c-107">Using DrawingVisual Objects</span></span>](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)  
+ [<span data-ttu-id="8d73c-108">Kurz: Hostování vizuální objektů v aplikaci Win32</span><span class="sxs-lookup"><span data-stu-id="8d73c-108">Tutorial: Hosting Visual Objects in a Win32 Application</span></span>](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
+ [<span data-ttu-id="8d73c-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="8d73c-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/visual-layer-programming-how-to-topics.md)  
   
-## <a name="see-also"></a><span data-ttu-id="4d615-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d615-110">See Also</span></span>  
- <xref:System.Windows.Media.Visual>  
- <xref:System.Windows.Media.VisualTreeHelper>  
- <xref:System.Windows.Media.DrawingVisual>  
- [<span data-ttu-id="4d615-111">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="4d615-111">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [<span data-ttu-id="4d615-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="4d615-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="see-also"></a><span data-ttu-id="8d73c-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8d73c-110">See also</span></span>
+- <xref:System.Windows.Media.Visual>
+- <xref:System.Windows.Media.VisualTreeHelper>
+- <xref:System.Windows.Media.DrawingVisual>
+- [<span data-ttu-id="8d73c-111">Přehled vykreslování grafiky WPF</span><span class="sxs-lookup"><span data-stu-id="8d73c-111">WPF Graphics Rendering Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [<span data-ttu-id="8d73c-112">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="8d73c-112">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)

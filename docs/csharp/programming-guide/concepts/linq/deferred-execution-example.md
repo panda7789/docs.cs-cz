@@ -2,18 +2,18 @@
 title: Příklad odloženého provedení (C#)
 ms.date: 07/20/2015
 ms.assetid: 50f4fbac-81fe-4f26-aedf-506e21419b19
-ms.openlocfilehash: 0ad1ed2998cfbd612f7f2b60a0d15c7ffcef0daf
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9697f3e4c120c7d8bc184181ad99df08634e791e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518472"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54598877"
 ---
-# <a name="deferred-execution-example-c"></a><span data-ttu-id="aa5ed-102">Příklad odloženého provedení (C#)</span><span class="sxs-lookup"><span data-stu-id="aa5ed-102">Deferred Execution Example (C#)</span></span>
-<span data-ttu-id="aa5ed-103">Toto téma ukazuje, jak odložené provedení a opožděné vyhodnocení vliv na spuštění vašich dotazech LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-103">This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.</span></span>  
+# <a name="deferred-execution-example-c"></a><span data-ttu-id="c3ae9-102">Příklad odloženého provedení (C#)</span><span class="sxs-lookup"><span data-stu-id="c3ae9-102">Deferred Execution Example (C#)</span></span>
+<span data-ttu-id="c3ae9-103">Toto téma ukazuje, jak odložené provedení a opožděné vyhodnocení vliv na spuštění vašich dotazech LINQ to XML.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-103">This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="aa5ed-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="aa5ed-104">Example</span></span>  
- <span data-ttu-id="aa5ed-105">Následující příklad ukazuje pořadí provádění, když použijete metodu rozšíření, která používá odloženého provedení.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-105">The following example shows the order of execution when using an extension method that uses deferred execution.</span></span> <span data-ttu-id="aa5ed-106">V příkladu deklaruje pole tří řetězců.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-106">The example declares an array of three strings.</span></span> <span data-ttu-id="aa5ed-107">Pak Iteruje přes kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-107">It then iterates through the collection returned by `ConvertCollectionToUpperCase`.</span></span>  
+## <a name="example"></a><span data-ttu-id="c3ae9-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c3ae9-104">Example</span></span>  
+ <span data-ttu-id="c3ae9-105">Následující příklad ukazuje pořadí provádění, když použijete metodu rozšíření, která používá odloženého provedení.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-105">The following example shows the order of execution when using an extension method that uses deferred execution.</span></span> <span data-ttu-id="c3ae9-106">V příkladu deklaruje pole tří řetězců.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-106">The example declares an array of three strings.</span></span> <span data-ttu-id="c3ae9-107">Pak Iteruje přes kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-107">It then iterates through the collection returned by `ConvertCollectionToUpperCase`.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -44,7 +44,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="aa5ed-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="aa5ed-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="c3ae9-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="c3ae9-108">This example produces the following output:</span></span>  
   
 ```  
 ToUpper: source abc  
@@ -55,14 +55,14 @@ ToUpper: source ghi
 Main: str GHI  
 ```  
   
- <span data-ttu-id="aa5ed-109">Všimněte si, že při procházení kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`, každá položka je načten z řetězcového pole zdroje a převedený na velká písmena před další položky se načtou ze zdrojového pole řetězce.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-109">Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.</span></span>  
+ <span data-ttu-id="c3ae9-109">Všimněte si, že při procházení kolekci vrácené poskytovatelem `ConvertCollectionToUpperCase`, každá položka je načten z řetězcového pole zdroje a převedený na velká písmena před další položky se načtou ze zdrojového pole řetězce.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-109">Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.</span></span>  
   
- <span data-ttu-id="aa5ed-110">Uvidíte, že celého pole řetězce není před každou položku v kolekci vrácené, jsou zpracovávána v převedený na velká písmena `foreach` smyčky v `Main`.</span><span class="sxs-lookup"><span data-stu-id="aa5ed-110">You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.</span></span>  
+ <span data-ttu-id="c3ae9-110">Uvidíte, že celého pole řetězce není před každou položku v kolekci vrácené, jsou zpracovávána v převedený na velká písmena `foreach` smyčky v `Main`.</span><span class="sxs-lookup"><span data-stu-id="c3ae9-110">You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.</span></span>  
   
- <span data-ttu-id="aa5ed-111">Další téma v tomto kurzu ukazuje řetězení dotazů dohromady:</span><span class="sxs-lookup"><span data-stu-id="aa5ed-111">The next topic in this tutorial illustrates chaining queries together:</span></span>  
+ <span data-ttu-id="c3ae9-111">Další téma v tomto kurzu ukazuje řetězení dotazů dohromady:</span><span class="sxs-lookup"><span data-stu-id="c3ae9-111">The next topic in this tutorial illustrates chaining queries together:</span></span>  
   
--   [<span data-ttu-id="aa5ed-112">Příklad řetězení dotazů (C#)</span><span class="sxs-lookup"><span data-stu-id="aa5ed-112">Chaining Queries Example (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/chaining-queries-example.md)  
+-   [<span data-ttu-id="c3ae9-112">Příklad řetězení dotazů (C#)</span><span class="sxs-lookup"><span data-stu-id="c3ae9-112">Chaining Queries Example (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/chaining-queries-example.md)  
   
-## <a name="see-also"></a><span data-ttu-id="aa5ed-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="aa5ed-113">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3ae9-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3ae9-113">See also</span></span>
 
-- [<span data-ttu-id="aa5ed-114">Kurz: Zřetězení dotazů společně (C#)</span><span class="sxs-lookup"><span data-stu-id="aa5ed-114">Tutorial: Chaining Queries Together (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+- [<span data-ttu-id="c3ae9-114">Kurz: Zřetězení dotazů (C#)</span><span class="sxs-lookup"><span data-stu-id="c3ae9-114">Tutorial: Chaining Queries Together (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

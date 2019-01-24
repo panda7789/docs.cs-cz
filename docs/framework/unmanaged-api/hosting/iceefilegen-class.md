@@ -16,22 +16,22 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f0ab07377b9e5db36ca9e4f1fd93aacd3464df4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f833c19da1199528dceee3a4f34dea7180380023
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436306"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576431"
 ---
-# <a name="iceefilegen-class"></a><span data-ttu-id="a4679-102">ICeeFileGen – třída</span><span class="sxs-lookup"><span data-stu-id="a4679-102">ICeeFileGen Class</span></span>
-<span data-ttu-id="a4679-103">Poskytuje funkce pro vytváření nativní přenosné spustitelného souboru (PE).</span><span class="sxs-lookup"><span data-stu-id="a4679-103">Provides functionality for creating a native portable executable (PE) file.</span></span> <span data-ttu-id="a4679-104">Rozhraní se obvykle používá kompilátory k vygenerování jejich kompilované výstup spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="a4679-104">The interface will typically be used by compilers to generate their compiled output executable.</span></span>  
+# <a name="iceefilegen-class"></a><span data-ttu-id="cc7e0-102">ICeeFileGen – třída</span><span class="sxs-lookup"><span data-stu-id="cc7e0-102">ICeeFileGen Class</span></span>
+<span data-ttu-id="cc7e0-103">Poskytuje funkce pro vytváření nativní přenosný spustitelný soubor (PE).</span><span class="sxs-lookup"><span data-stu-id="cc7e0-103">Provides functionality for creating a native portable executable (PE) file.</span></span> <span data-ttu-id="cc7e0-104">Rozhraní se obvykle používá kompilátory k vygenerování jejich kompilovaný výstup spustitelného souboru.</span><span class="sxs-lookup"><span data-stu-id="cc7e0-104">The interface will typically be used by compilers to generate their compiled output executable.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="a4679-105">`ICeeFileGen` podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo z vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="a4679-105">`ICeeFileGen` supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+>  <span data-ttu-id="cc7e0-105">`ICeeFileGen` podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="cc7e0-105">`ICeeFileGen` supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
- <span data-ttu-id="a4679-106">Toto rozhraní se už nepoužívá a bude v budoucí verzi odebrána.</span><span class="sxs-lookup"><span data-stu-id="a4679-106">This interface has been deprecated and will be removed in a future release.</span></span>  
+ <span data-ttu-id="cc7e0-106">Toto rozhraní se už nepoužívá a bude v budoucí verzi odebrána.</span><span class="sxs-lookup"><span data-stu-id="cc7e0-106">This interface has been deprecated and will be removed in a future release.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a4679-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a4679-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cc7e0-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cc7e0-107">Syntax</span></span>  
   
 ```  
 class ICeeFileGen {  
@@ -236,12 +236,12 @@ public:
 };  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="a4679-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a4679-108">Requirements</span></span>  
- <span data-ttu-id="a4679-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a4679-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cc7e0-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cc7e0-108">Requirements</span></span>  
+ <span data-ttu-id="cc7e0-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cc7e0-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a4679-110">**Záhlaví:** ICeeFileGen.h</span><span class="sxs-lookup"><span data-stu-id="a4679-110">**Header:** ICeeFileGen.h</span></span>  
+ <span data-ttu-id="cc7e0-110">**Záhlaví:** ICeeFileGen.h</span><span class="sxs-lookup"><span data-stu-id="cc7e0-110">**Header:** ICeeFileGen.h</span></span>  
   
- <span data-ttu-id="a4679-111">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="a4679-111">**.NET Framework Version:** 1.0</span></span>  
+ <span data-ttu-id="cc7e0-111">**Verze rozhraní .NET framework:** 1.0</span><span class="sxs-lookup"><span data-stu-id="cc7e0-111">**.NET Framework Version:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a4679-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="a4679-112">See Also</span></span>  
- [<span data-ttu-id="a4679-113">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="a4679-113">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="cc7e0-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cc7e0-112">See also</span></span>
+- [<span data-ttu-id="cc7e0-113">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="cc7e0-113">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
