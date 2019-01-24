@@ -17,27 +17,27 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d4b5f94bdbb7319cef14c8b86f8ea995df7ff21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6a4a0bac056c7c88a491ac05a17b662ace833df1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424479"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614455"
 ---
-# <a name="isymunmanageddisposedestroy-method"></a><span data-ttu-id="262eb-102">ISymUnmanagedDispose::Destroy – metoda</span><span class="sxs-lookup"><span data-stu-id="262eb-102">ISymUnmanagedDispose::Destroy Method</span></span>
-<span data-ttu-id="262eb-103">Způsobí, že základní objekt, který chcete uvolnit všechny odkazy interní a vrátí hodnotu Neúspěch na všechny následné metoda volání.</span><span class="sxs-lookup"><span data-stu-id="262eb-103">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>  
+# <a name="isymunmanageddisposedestroy-method"></a><span data-ttu-id="023ef-102">ISymUnmanagedDispose::Destroy – metoda</span><span class="sxs-lookup"><span data-stu-id="023ef-102">ISymUnmanagedDispose::Destroy Method</span></span>
+<span data-ttu-id="023ef-103">Způsobí, že základní objekt a uvolnit všechny vnitřní odkazy na všechna volání další metody, vrátí hodnotu neúspěch.</span><span class="sxs-lookup"><span data-stu-id="023ef-103">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="262eb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="262eb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="023ef-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="023ef-104">Syntax</span></span>  
   
 ```  
 HRESULT Destroy();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="262eb-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="262eb-105">Return Value</span></span>  
- <span data-ttu-id="262eb-106">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="262eb-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="023ef-105">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="023ef-105">Return Value</span></span>  
+ <span data-ttu-id="023ef-106">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="023ef-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="262eb-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="262eb-107">Requirements</span></span>  
- <span data-ttu-id="262eb-108">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="262eb-108">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="023ef-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="023ef-107">Requirements</span></span>  
+ <span data-ttu-id="023ef-108">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="023ef-108">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="262eb-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="262eb-109">See Also</span></span>  
- [<span data-ttu-id="262eb-110">ISymUnmanagedDispose – rozhraní</span><span class="sxs-lookup"><span data-stu-id="262eb-110">ISymUnmanagedDispose Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-interface.md)
+## <a name="see-also"></a><span data-ttu-id="023ef-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="023ef-109">See also</span></span>
+- [<span data-ttu-id="023ef-110">ISymUnmanagedDispose – rozhraní</span><span class="sxs-lookup"><span data-stu-id="023ef-110">ISymUnmanagedDispose Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-interface.md)

@@ -11,40 +11,40 @@ helpviewer_keywords:
 - serialization [WCF], setting default values
 - OnSerializedAttribute [WCF]
 ms.assetid: aa4a3a6f-05ec-4efd-bdbf-2181e13e6468
-ms.openlocfilehash: 84e38451f10acc341642c0bf0923cc73b79d771f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fdd9108417068204b6d7ec2e4cc9ae54a160d7fa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33497929"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616345"
 ---
-# <a name="version-tolerant-serialization-callbacks"></a><span data-ttu-id="80e92-102">Zpětná volání serializace tolerantní k verzím</span><span class="sxs-lookup"><span data-stu-id="80e92-102">Version-Tolerant Serialization Callbacks</span></span>
-<span data-ttu-id="80e92-103">Programovací model kontraktu dat plně podporuje metody zpětného volání serializace tolerantní k verzi, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy podpory.</span><span class="sxs-lookup"><span data-stu-id="80e92-103">The data contract programming model fully supports the version-tolerant serialization callback methods that the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> and <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> classes support.</span></span>  
+# <a name="version-tolerant-serialization-callbacks"></a><span data-ttu-id="3fd13-102">Zpětná volání serializace tolerantní k verzím</span><span class="sxs-lookup"><span data-stu-id="3fd13-102">Version-Tolerant Serialization Callbacks</span></span>
+<span data-ttu-id="3fd13-103">Programovací model kontraktu dat plně podporuje metody zpětného volání serializace tolerantní, který <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> a <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> třídy podporu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-103">The data contract programming model fully supports the version-tolerant serialization callback methods that the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> and <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> classes support.</span></span>  
   
-## <a name="version-tolerant-attributes"></a><span data-ttu-id="80e92-104">Verze proti chybám atributy</span><span class="sxs-lookup"><span data-stu-id="80e92-104">Version-Tolerant Attributes</span></span>  
- <span data-ttu-id="80e92-105">Existují čtyři atributy zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="80e92-105">There are four callback attributes.</span></span> <span data-ttu-id="80e92-106">Každý atribut je použít pro metodu, která volá modul serializaci nebo deserializaci v různé časy.</span><span class="sxs-lookup"><span data-stu-id="80e92-106">Each attribute can be applied to a method that the serialization/deserialization engine calls at various times.</span></span> <span data-ttu-id="80e92-107">Následující tabulka vysvětluje, kdy použít každý atribut.</span><span class="sxs-lookup"><span data-stu-id="80e92-107">The table below explains when to use each attribute.</span></span>  
+## <a name="version-tolerant-attributes"></a><span data-ttu-id="3fd13-104">Verze chybám atributy</span><span class="sxs-lookup"><span data-stu-id="3fd13-104">Version-Tolerant Attributes</span></span>  
+ <span data-ttu-id="3fd13-105">Existují čtyři atributy zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="3fd13-105">There are four callback attributes.</span></span> <span data-ttu-id="3fd13-106">Každý atribut lze použít pro metodu, která volá modul pro serializaci nebo deserializaci v různých časech.</span><span class="sxs-lookup"><span data-stu-id="3fd13-106">Each attribute can be applied to a method that the serialization/deserialization engine calls at various times.</span></span> <span data-ttu-id="3fd13-107">Následující tabulka vysvětluje, kdy používat jednotlivé atributy.</span><span class="sxs-lookup"><span data-stu-id="3fd13-107">The table below explains when to use each attribute.</span></span>  
   
-|<span data-ttu-id="80e92-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="80e92-108">Attribute</span></span>|<span data-ttu-id="80e92-109">Pokud odpovídající metoda je volána</span><span class="sxs-lookup"><span data-stu-id="80e92-109">When the corresponding method is called</span></span>|  
+|<span data-ttu-id="3fd13-108">Atribut</span><span class="sxs-lookup"><span data-stu-id="3fd13-108">Attribute</span></span>|<span data-ttu-id="3fd13-109">Když je volána odpovídající – metoda</span><span class="sxs-lookup"><span data-stu-id="3fd13-109">When the corresponding method is called</span></span>|  
 |---------------|---------------------------------------------|  
-|<xref:System.Runtime.Serialization.OnSerializingAttribute>|<span data-ttu-id="80e92-110">Volá se před serializace typu.</span><span class="sxs-lookup"><span data-stu-id="80e92-110">Called before serializing the type.</span></span>|  
-|<xref:System.Runtime.Serialization.OnSerializedAttribute>|<span data-ttu-id="80e92-111">Volá se po serializace typu.</span><span class="sxs-lookup"><span data-stu-id="80e92-111">Called after serializing the type.</span></span>|  
-|<xref:System.Runtime.Serialization.OnDeserializingAttribute>|<span data-ttu-id="80e92-112">Volá se před deserializaci typu.</span><span class="sxs-lookup"><span data-stu-id="80e92-112">Called before deserializing the type.</span></span>|  
-|<xref:System.Runtime.Serialization.OnDeserializedAttribute>|<span data-ttu-id="80e92-113">Volá se po deserializaci typu.</span><span class="sxs-lookup"><span data-stu-id="80e92-113">Called after deserializing the type.</span></span>|  
+|<xref:System.Runtime.Serialization.OnSerializingAttribute>|<span data-ttu-id="3fd13-110">Volá se před serializací typu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-110">Called before serializing the type.</span></span>|  
+|<xref:System.Runtime.Serialization.OnSerializedAttribute>|<span data-ttu-id="3fd13-111">Volá se po serializaci typu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-111">Called after serializing the type.</span></span>|  
+|<xref:System.Runtime.Serialization.OnDeserializingAttribute>|<span data-ttu-id="3fd13-112">Volá se před deserializace typu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-112">Called before deserializing the type.</span></span>|  
+|<xref:System.Runtime.Serialization.OnDeserializedAttribute>|<span data-ttu-id="3fd13-113">Volá se po deserializace typu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-113">Called after deserializing the type.</span></span>|  
   
- <span data-ttu-id="80e92-114">Metody musí přijmout <xref:System.Runtime.Serialization.StreamingContext> parametr.</span><span class="sxs-lookup"><span data-stu-id="80e92-114">The methods must accept a <xref:System.Runtime.Serialization.StreamingContext> parameter.</span></span>  
+ <span data-ttu-id="3fd13-114">Metody, musíte přijmout <xref:System.Runtime.Serialization.StreamingContext> parametru.</span><span class="sxs-lookup"><span data-stu-id="3fd13-114">The methods must accept a <xref:System.Runtime.Serialization.StreamingContext> parameter.</span></span>  
   
- <span data-ttu-id="80e92-115">Tyto metody jsou primárně určený pro použití se službou Správa verzí nebo inicializace.</span><span class="sxs-lookup"><span data-stu-id="80e92-115">These methods are primarily intended for use with versioning or initialization.</span></span> <span data-ttu-id="80e92-116">Během deserializace se nazývají žádné konstruktory.</span><span class="sxs-lookup"><span data-stu-id="80e92-116">During deserialization, no constructors are called.</span></span> <span data-ttu-id="80e92-117">Proto datové členy není možné správně inicializovat (pro určený výchozí hodnoty) Pokud data pro tyto členy chybí v příchozím datovém proudu, například pokud data pocházejí z předchozí verze typ, který chybí některé datové členy.</span><span class="sxs-lookup"><span data-stu-id="80e92-117">Therefore, data members may not be correctly initialized (to intended default values) if the data for these members is missing in the incoming stream, for example, if the data comes from a previous version of a type that is missing some data members.</span></span> <span data-ttu-id="80e92-118">Chcete-li vyřešit tento problém, použijte metoda zpětného volání, které jsou označené jako <xref:System.Runtime.Serialization.OnDeserializingAttribute>, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="80e92-118">To correct this, use the callback method marked with the <xref:System.Runtime.Serialization.OnDeserializingAttribute>, as shown in the following example.</span></span>  
+ <span data-ttu-id="3fd13-115">Tyto metody jsou primárně určeny pro použití se službou správy verzí nebo inicializace.</span><span class="sxs-lookup"><span data-stu-id="3fd13-115">These methods are primarily intended for use with versioning or initialization.</span></span> <span data-ttu-id="3fd13-116">Během deserializace nejsou volány žádné konstruktory.</span><span class="sxs-lookup"><span data-stu-id="3fd13-116">During deserialization, no constructors are called.</span></span> <span data-ttu-id="3fd13-117">Proto se datové členy nemusí být správně inicializován (na určený výchozí hodnoty) Pokud jsou data pro tyto členy, chybí v příchozím datovém proudu, například pokud data pocházejí z předchozí verze typu, který chybí některé datové členy.</span><span class="sxs-lookup"><span data-stu-id="3fd13-117">Therefore, data members may not be correctly initialized (to intended default values) if the data for these members is missing in the incoming stream, for example, if the data comes from a previous version of a type that is missing some data members.</span></span> <span data-ttu-id="3fd13-118">Když to pokud chcete opravit, použijte metodu zpětného volání označenou pomocí <xref:System.Runtime.Serialization.OnDeserializingAttribute>, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="3fd13-118">To correct this, use the callback method marked with the <xref:System.Runtime.Serialization.OnDeserializingAttribute>, as shown in the following example.</span></span>  
   
- <span data-ttu-id="80e92-119">Můžete označit pouze jednu metodu podle typu k jednotlivým atributům předchozí zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="80e92-119">You can mark only one method per type with each of the preceding callback attributes.</span></span>  
+ <span data-ttu-id="3fd13-119">Můžete označit jenom jednu metodu na typ s každým z předchozí atributy zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="3fd13-119">You can mark only one method per type with each of the preceding callback attributes.</span></span>  
   
-### <a name="example"></a><span data-ttu-id="80e92-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="80e92-120">Example</span></span>  
+### <a name="example"></a><span data-ttu-id="3fd13-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="3fd13-120">Example</span></span>  
  [!code-csharp[C_DataContract#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#9)]
  [!code-vb[C_DataContract#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#9)]  
   
-## <a name="see-also"></a><span data-ttu-id="80e92-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="80e92-121">See Also</span></span>  
- <xref:System.Runtime.Serialization.OnSerializingAttribute>  
- <xref:System.Runtime.Serialization.OnSerializedAttribute>  
- <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
- <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
- <xref:System.Runtime.Serialization.StreamingContext>  
- [<span data-ttu-id="80e92-122">Serializace tolerantní vůči verzím (VTS)</span><span class="sxs-lookup"><span data-stu-id="80e92-122">Version Tolerant Serialization</span></span>](../../../../docs/standard/serialization/version-tolerant-serialization.md)
+## <a name="see-also"></a><span data-ttu-id="3fd13-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3fd13-121">See also</span></span>
+- <xref:System.Runtime.Serialization.OnSerializingAttribute>
+- <xref:System.Runtime.Serialization.OnSerializedAttribute>
+- <xref:System.Runtime.Serialization.OnDeserializingAttribute>
+- <xref:System.Runtime.Serialization.OnDeserializedAttribute>
+- <xref:System.Runtime.Serialization.StreamingContext>
+- [<span data-ttu-id="3fd13-122">Serializace tolerantní vůči verzím (VTS)</span><span class="sxs-lookup"><span data-stu-id="3fd13-122">Version Tolerant Serialization</span></span>](../../../../docs/standard/serialization/version-tolerant-serialization.md)
