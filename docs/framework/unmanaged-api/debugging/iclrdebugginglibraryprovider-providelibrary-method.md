@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0644258eb1622f388f55d0657c8922079fe4dc1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f9cac9e00c8cb6a13e2acc62b5f314b7bc0cf9e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407229"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629114"
 ---
-# <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a><span data-ttu-id="67775-102">ICLRDebuggingLibraryProvider::ProvideLibrary – metoda</span><span class="sxs-lookup"><span data-stu-id="67775-102">ICLRDebuggingLibraryProvider::ProvideLibrary Method</span></span>
-<span data-ttu-id="67775-103">Získá zprostředkovatele knihovny rozhraní zpětné volání, které umožňuje common language runtime (CLR) specifické pro verzi ladění lze knihoven najít a načíst na vyžádání.</span><span class="sxs-lookup"><span data-stu-id="67775-103">Gets a library provider callback interface that allows common language runtime (CLR) version-specific debugging libraries to be located and loaded on demand.</span></span>  
+# <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a><span data-ttu-id="317f5-102">ICLRDebuggingLibraryProvider::ProvideLibrary – metoda</span><span class="sxs-lookup"><span data-stu-id="317f5-102">ICLRDebuggingLibraryProvider::ProvideLibrary Method</span></span>
+<span data-ttu-id="317f5-103">Získá zprostředkovatele knihovny, rozhraní zpětného volání, které umožňuje knihovnám ladění specifickým pro verzi modulu runtime (CLR) k vyhledání a načtení na požádání.</span><span class="sxs-lookup"><span data-stu-id="317f5-103">Gets a library provider callback interface that allows common language runtime (CLR) version-specific debugging libraries to be located and loaded on demand.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="67775-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="67775-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="317f5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="317f5-104">Syntax</span></span>  
   
 ```  
 HRESULT ProvideLibrary(  
@@ -37,47 +37,47 @@ HRESULT ProvideLibrary(
      [out] HMODULE* hModule);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="67775-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="67775-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="317f5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="317f5-105">Parameters</span></span>  
  `pwszFilename`  
- <span data-ttu-id="67775-106">[v] Název modulu požadováno.</span><span class="sxs-lookup"><span data-stu-id="67775-106">[in] The name of the module being requested .</span></span>  
+ <span data-ttu-id="317f5-106">[in] Název modulu žádá.</span><span class="sxs-lookup"><span data-stu-id="317f5-106">[in] The name of the module being requested .</span></span>  
   
  `dwTimestamp`  
- <span data-ttu-id="67775-107">[v] Časové razítko uložené v záhlaví souboru COFF PE souborů.</span><span class="sxs-lookup"><span data-stu-id="67775-107">[in] The date time stamp stored in the COFF file header of PE files.</span></span>  
+ <span data-ttu-id="317f5-107">[in] Časové razítko uložené v hlavičce souboru COFF soubory PE.</span><span class="sxs-lookup"><span data-stu-id="317f5-107">[in] The date time stamp stored in the COFF file header of PE files.</span></span>  
   
  `pLibraryProvider`  
- <span data-ttu-id="67775-108">[v] `SizeOfImage` Pole, které jsou uložené v hlavičce COFF volitelný soubor PE souborů.</span><span class="sxs-lookup"><span data-stu-id="67775-108">[in] The `SizeOfImage` field stored in the COFF optional file header of PE files.</span></span>  
+ <span data-ttu-id="317f5-108">[in] `SizeOfImage` Pole uloženo v hlavičce souboru COFF volitelný soubor PE souborů.</span><span class="sxs-lookup"><span data-stu-id="317f5-108">[in] The `SizeOfImage` field stored in the COFF optional file header of PE files.</span></span>  
   
  `hModule`  
- <span data-ttu-id="67775-109">[out] Popisovač požadovaný modul.</span><span class="sxs-lookup"><span data-stu-id="67775-109">[out] The handle to the requested module.</span></span>  
+ <span data-ttu-id="317f5-109">[out] Popisovač na požadovaný modul.</span><span class="sxs-lookup"><span data-stu-id="317f5-109">[out] The handle to the requested module.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="67775-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="67775-110">Return Value</span></span>  
- <span data-ttu-id="67775-111">Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="67775-111">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="317f5-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="317f5-110">Return Value</span></span>  
+ <span data-ttu-id="317f5-111">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="317f5-111">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="67775-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="67775-112">HRESULT</span></span>|<span data-ttu-id="67775-113">Popis</span><span class="sxs-lookup"><span data-stu-id="67775-113">Description</span></span>|  
+|<span data-ttu-id="317f5-112">HRESULT</span><span class="sxs-lookup"><span data-stu-id="317f5-112">HRESULT</span></span>|<span data-ttu-id="317f5-113">Popis</span><span class="sxs-lookup"><span data-stu-id="317f5-113">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="67775-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="67775-114">S_OK</span></span>|<span data-ttu-id="67775-115">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="67775-115">The method completed successfully.</span></span>|  
+|<span data-ttu-id="317f5-114">S_OK</span><span class="sxs-lookup"><span data-stu-id="317f5-114">S_OK</span></span>|<span data-ttu-id="317f5-115">Metoda byla úspěšně dokončena.</span><span class="sxs-lookup"><span data-stu-id="317f5-115">The method completed successfully.</span></span>|  
   
-## <a name="exceptions"></a><span data-ttu-id="67775-116">Výjimky</span><span class="sxs-lookup"><span data-stu-id="67775-116">Exceptions</span></span>  
+## <a name="exceptions"></a><span data-ttu-id="317f5-116">Výjimky</span><span class="sxs-lookup"><span data-stu-id="317f5-116">Exceptions</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="67775-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="67775-117">Remarks</span></span>  
- <span data-ttu-id="67775-118">`ProvideLibrary` umožňuje zajistit moduly, které jsou potřebné pro ladění konkrétní soubory CLR například mscordbi.dll a souboru mscordacwks.dll ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="67775-118">`ProvideLibrary` allows the debugger to provide modules that are needed for debugging specific CLR files such as mscordbi.dll and mscordacwks.dll.</span></span> <span data-ttu-id="67775-119">Obslužné rutiny modulu muset nadále platné dokud volání [iclrdebugging::canunloadnow –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) metoda označuje, že může být uvolněno na bod, který je odpovědností volajícího k bezplatným obslužné rutiny pro zpracování.</span><span class="sxs-lookup"><span data-stu-id="67775-119">The module handles have to remain valid until a call to the [ICLRDebugging::CanUnloadNow](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) method indicates that they may be freed, at which point it is the caller’s responsibility to free the handles.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="317f5-117">Poznámky</span><span class="sxs-lookup"><span data-stu-id="317f5-117">Remarks</span></span>  
+ <span data-ttu-id="317f5-118">`ProvideLibrary` Umožňuje ladicí program poskytuje moduly, které jsou potřeba pro ladění konkrétní soubory CLR, jako je například knihovna mscordbi.dll a souboru mscordacwks.dll.</span><span class="sxs-lookup"><span data-stu-id="317f5-118">`ProvideLibrary` allows the debugger to provide modules that are needed for debugging specific CLR files such as mscordbi.dll and mscordacwks.dll.</span></span> <span data-ttu-id="317f5-119">Obslužné rutiny modulu musí zůstat platný až do volání [iclrdebugging::canunloadnow –](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) metoda naznačuje, že může být uvolněna, v tomto okamžiku je odpovědností volajícího uvolnit úchyty.</span><span class="sxs-lookup"><span data-stu-id="317f5-119">The module handles have to remain valid until a call to the [ICLRDebugging::CanUnloadNow](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) method indicates that they may be freed, at which point it is the caller’s responsibility to free the handles.</span></span>  
   
- <span data-ttu-id="67775-120">Ladicí program může používat všechny dostupné prostředky sami nebo můžete pořídit ladění modulu.</span><span class="sxs-lookup"><span data-stu-id="67775-120">The debugger may use any available means to locate or procure the debugging module.</span></span>  
+ <span data-ttu-id="317f5-120">Ladicí program může použít všechny dostupné prostředky vyhledejte nebo pořídit modulu ladění.</span><span class="sxs-lookup"><span data-stu-id="317f5-120">The debugger may use any available means to locate or procure the debugging module.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="67775-121">Tato funkce umožňuje rozhraní API volajícímu zadat modulů, které obsahují spustitelný soubor a potenciálně škodlivý kód.</span><span class="sxs-lookup"><span data-stu-id="67775-121">This feature allows the API caller to provide modules that contain executable, and possibly malicious, code.</span></span> <span data-ttu-id="67775-122">Jako bezpečnostní opatření, neměli používat volající `ProvideLibrary` distribuovat žádný kód, že není chtěl provést sám sebe.</span><span class="sxs-lookup"><span data-stu-id="67775-122">As a security precaution, the caller should not use `ProvideLibrary` to distribute any code that it is not willing to execute itself.</span></span>  
+>  <span data-ttu-id="317f5-121">Tato funkce umožňuje rozhraní API volajícímu zadat moduly, které obsahují spustitelný soubor a potenciálně škodlivý kód.</span><span class="sxs-lookup"><span data-stu-id="317f5-121">This feature allows the API caller to provide modules that contain executable, and possibly malicious, code.</span></span> <span data-ttu-id="317f5-122">Jako bezpečnostní opatření, nepoužívejte, volající `ProvideLibrary` distribuovat veškerý kód, že není natolik, abyste spuštění samotný.</span><span class="sxs-lookup"><span data-stu-id="317f5-122">As a security precaution, the caller should not use `ProvideLibrary` to distribute any code that it is not willing to execute itself.</span></span>  
 >   
->  <span data-ttu-id="67775-123">Pokud je zjištěno porušení zabezpečení závažné již vydaných knihovny, například mscordbi.dll nebo souboru mscordacwks.dll, dá shimu opravit rozpoznat chybná verze souborů.</span><span class="sxs-lookup"><span data-stu-id="67775-123">If a serious security issue is discovered in an already released library, such as mscordbi.dll or mscordacwks.dll, the shim can be patched to recognize the bad versions of the files.</span></span> <span data-ttu-id="67775-124">Shim lze vydávat žádosti pro nainstalovanou opravou verze souborů a odmítnout chybná verze, pokud se poskytnou v reakci na žádnou žádostí.</span><span class="sxs-lookup"><span data-stu-id="67775-124">The shim can then issue requests for the patched versions of the files and reject the bad versions if they are provided in response to any request.</span></span> <span data-ttu-id="67775-125">Tato situace může nastat, pouze v případě, že uživatel má opravit na novou verzi shim.</span><span class="sxs-lookup"><span data-stu-id="67775-125">This can occur only if the user has patched to a new version of the shim.</span></span> <span data-ttu-id="67775-126">Neopravené verze zůstane ohrožen.</span><span class="sxs-lookup"><span data-stu-id="67775-126">Unpatched versions will remain vulnerable.</span></span>  
+>  <span data-ttu-id="317f5-123">Pokud je zjištěno závažný bezpečnostní problém již vydané knihovny, jako je například knihovna mscordbi.dll nebo souboru mscordacwks.dll, nejde opravit shimu rozpoznat chybná verze souborů.</span><span class="sxs-lookup"><span data-stu-id="317f5-123">If a serious security issue is discovered in an already released library, such as mscordbi.dll or mscordacwks.dll, the shim can be patched to recognize the bad versions of the files.</span></span> <span data-ttu-id="317f5-124">Překrytí pak můžete vydávat žádosti pro nainstalovanou verzí souborů a odmítnout chybná verze, pokud nejsou zadány žádné požadavku.</span><span class="sxs-lookup"><span data-stu-id="317f5-124">The shim can then issue requests for the patched versions of the files and reject the bad versions if they are provided in response to any request.</span></span> <span data-ttu-id="317f5-125">Tato situace může nastat, pouze v případě, že uživatel má použít pro novou verzi shimu.</span><span class="sxs-lookup"><span data-stu-id="317f5-125">This can occur only if the user has patched to a new version of the shim.</span></span> <span data-ttu-id="317f5-126">Verze bez opravy zabezpečení se nadále zranitelné.</span><span class="sxs-lookup"><span data-stu-id="317f5-126">Unpatched versions will remain vulnerable.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="67775-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="67775-127">Requirements</span></span>  
- <span data-ttu-id="67775-128">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="67775-128">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="317f5-127">Požadavky</span><span class="sxs-lookup"><span data-stu-id="317f5-127">Requirements</span></span>  
+ <span data-ttu-id="317f5-128">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="317f5-128">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="67775-129">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="67775-129">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="317f5-129">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="317f5-129">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="67775-130">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="67775-130">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="317f5-130">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="317f5-130">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="67775-131">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="67775-131">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="317f5-131">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="317f5-131">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="67775-132">Viz také</span><span class="sxs-lookup"><span data-stu-id="67775-132">See Also</span></span>  
- [<span data-ttu-id="67775-133">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="67775-133">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [<span data-ttu-id="67775-134">Ladění</span><span class="sxs-lookup"><span data-stu-id="67775-134">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="317f5-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="317f5-132">See also</span></span>
+- [<span data-ttu-id="317f5-133">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="317f5-133">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="317f5-134">Ladění</span><span class="sxs-lookup"><span data-stu-id="317f5-134">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

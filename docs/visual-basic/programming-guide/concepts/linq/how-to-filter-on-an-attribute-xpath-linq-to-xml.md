@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: ffefb9d6-45ec-4677-a396-dd9c2b36298f
-ms.openlocfilehash: ed9869045270cdc51388b192e8d6ab38005eba8e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac494b2e453d48a40c2a9be6505d5deebc4a1235
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641080"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535863"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="983c1-102">Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="983c1-102">How to: Filter on an Attribute (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="983c1-103">Toto téma ukazuje, jak získat následnickým elementům se zadaným názvem a atribut se zadanou hodnotou.</span><span class="sxs-lookup"><span data-stu-id="983c1-103">This topic shows how to get the descendant elements with a specified name, and with an attribute with a specified value.</span></span>  
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="9fd9d-102">Postupy: Filtrovat podle atributu (XPath – LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9fd9d-102">How to: Filter on an Attribute (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="9fd9d-103">Toto téma ukazuje, jak získat Následnické prvky se zadaným názvem a atribut se zadanou hodnotou.</span><span class="sxs-lookup"><span data-stu-id="9fd9d-103">This topic shows how to get the descendant elements with a specified name, and with an attribute with a specified value.</span></span>  
   
- <span data-ttu-id="983c1-104">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="983c1-104">The XPath expression is:</span></span>  
+ <span data-ttu-id="9fd9d-104">Výraz XPath je:</span><span class="sxs-lookup"><span data-stu-id="9fd9d-104">The XPath expression is:</span></span>  
   
  `.//Address[@Type='Shipping']`  
   
-## <a name="example"></a><span data-ttu-id="983c1-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="983c1-105">Example</span></span>  
- <span data-ttu-id="983c1-106">Tento příklad vyhledá všech potomků elementů s názvem `Address`a s `Type` atributu s hodnotou "Přesouvání".</span><span class="sxs-lookup"><span data-stu-id="983c1-106">This example finds all descendants elements with the name of `Address`, and with a `Type` attribute with a value of "Shipping".</span></span>  
+## <a name="example"></a><span data-ttu-id="9fd9d-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="9fd9d-105">Example</span></span>  
+ <span data-ttu-id="9fd9d-106">Tento příklad vyhledá všechny následníky elementů s názvem `Address`a `Type` atributu s hodnotou "Dodací".</span><span class="sxs-lookup"><span data-stu-id="9fd9d-106">This example finds all descendants elements with the name of `Address`, and with a `Type` attribute with a value of "Shipping".</span></span>  
   
- <span data-ttu-id="983c1-107">Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="983c1-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="9fd9d-107">Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="9fd9d-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -45,7 +45,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- <span data-ttu-id="983c1-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="983c1-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="9fd9d-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9fd9d-108">This example produces the following output:</span></span>  
   
 ```  
 Results are identical  
@@ -75,5 +75,5 @@ Results are identical
 </Address>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="983c1-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="983c1-109">See Also</span></span>  
- [<span data-ttu-id="983c1-110">Technologie LINQ to XML pro uživatele XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="983c1-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a><span data-ttu-id="9fd9d-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9fd9d-109">See also</span></span>
+- [<span data-ttu-id="9fd9d-110">LINQ to XML pro uživatele jazyka XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9fd9d-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

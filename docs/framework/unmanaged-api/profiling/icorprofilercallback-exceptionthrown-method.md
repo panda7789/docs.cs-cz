@@ -1,14 +1,6 @@
 ---
-title: "ICorProfilerCallback::ExceptionThrown – metoda"
-ms.custom: 
+title: ICorProfilerCallback::ExceptionThrown – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorProfilerCallback.ExceptionThrown
 api_location:
@@ -23,48 +15,45 @@ helpviewer_keywords:
 ms.assetid: f1a23f3b-ac21-4905-8abf-8ea59f15af53
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 65fdd8f2912dc2854ba7801244ba489426d05e47
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: aec3ddc8b2a0fd527a5cf9b48286f0e8bca14636
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618984"
 ---
-# <a name="icorprofilercallbackexceptionthrown-method"></a><span data-ttu-id="111d4-102">ICorProfilerCallback::ExceptionThrown – metoda</span><span class="sxs-lookup"><span data-stu-id="111d4-102">ICorProfilerCallback::ExceptionThrown Method</span></span>
-<span data-ttu-id="111d4-103">Upozorní profileru, že byla vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="111d4-103">Notifies the profiler that an exception has been thrown.</span></span>  
+# <a name="icorprofilercallbackexceptionthrown-method"></a><span data-ttu-id="a5d9b-102">ICorProfilerCallback::ExceptionThrown – metoda</span><span class="sxs-lookup"><span data-stu-id="a5d9b-102">ICorProfilerCallback::ExceptionThrown Method</span></span>
+<span data-ttu-id="a5d9b-103">Oznámí profileru, že byla vyvolána výjimka.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-103">Notifies the profiler that an exception has been thrown.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="111d4-104">Tato funkce je volána, pouze v případě, že výjimka dosáhne spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="111d4-104">This function is called only if the exception reaches managed code.</span></span>  
+>  <span data-ttu-id="a5d9b-104">Tato funkce je volána, pouze v případě, že výjimka dosáhne spravovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-104">This function is called only if the exception reaches managed code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="111d4-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="111d4-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a5d9b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a5d9b-105">Syntax</span></span>  
   
 ```  
 HRESULT ExceptionThrown(  
     [in] ObjectID thrownObjectId);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="111d4-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="111d4-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a5d9b-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a5d9b-106">Parameters</span></span>  
  `thrownObjectId`  
- <span data-ttu-id="111d4-107">[v] ID objektu, který způsobil výjimku, která je vyvolána.</span><span class="sxs-lookup"><span data-stu-id="111d4-107">[in] The ID of the object that caused the exception to be thrown.</span></span>  
+ <span data-ttu-id="a5d9b-107">[in] ID objektu, která způsobila vyvolání výjimky.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-107">[in] The ID of the object that caused the exception to be thrown.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="111d4-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="111d4-108">Remarks</span></span>  
- <span data-ttu-id="111d4-109">Profileru by neměly blokovat v jeho implementace této metody, protože zásobník nemusí být ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit preemptivní uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="111d4-109">The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled.</span></span> <span data-ttu-id="111d4-110">Pokud zde blokuje profileru a dojde k pokusu o uvolňování paměti, modul runtime se zablokuje, dokud se vrátí tato zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="111d4-110">If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a5d9b-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a5d9b-108">Remarks</span></span>  
+ <span data-ttu-id="a5d9b-109">Profiler by neměla blokovat v rámci příslušné implementace této metody, protože zásobníku nemusí být ve stavu, která umožňuje uvolňování paměti, a proto není možné preemptive uvolňování paměti.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-109">The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled.</span></span> <span data-ttu-id="a5d9b-110">Pokud profiler blokuje tady a dojde k pokusu o uvolnění paměti, modul runtime bude blokovat, dokud tento zpětného volání vrátí.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-110">If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.</span></span>  
   
- <span data-ttu-id="111d4-111">Okna profilování implementace této metody by neměla volání do spravovaného kódu nebo v žádné příčina způsob přidělení spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="111d4-111">The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.</span></span>  
+ <span data-ttu-id="a5d9b-111">Okna profilování implementace této metody by neměla volat do spravovaného kódu nebo v jakékoli příčina způsob přidělení spravované paměti.</span><span class="sxs-lookup"><span data-stu-id="a5d9b-111">The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="111d4-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="111d4-112">Requirements</span></span>  
- <span data-ttu-id="111d4-113">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="111d4-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a5d9b-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a5d9b-112">Requirements</span></span>  
+ <span data-ttu-id="a5d9b-113">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a5d9b-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="111d4-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="111d4-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="a5d9b-114">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="a5d9b-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="111d4-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="111d4-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="a5d9b-115">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="a5d9b-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="111d4-116">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="111d4-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="a5d9b-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a5d9b-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="111d4-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="111d4-117">See Also</span></span>  
- [<span data-ttu-id="111d4-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="111d4-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a5d9b-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a5d9b-117">See also</span></span>
+- [<span data-ttu-id="a5d9b-118">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a5d9b-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

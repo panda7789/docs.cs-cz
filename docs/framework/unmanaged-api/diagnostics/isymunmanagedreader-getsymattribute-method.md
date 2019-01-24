@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c9f22f23835f01022d5d62596b2cf63425759193
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d43467a0f3ff94eb7903b808e192230e6c0ff1e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561063"
 ---
-# <a name="isymunmanagedreadergetsymattribute-method"></a><span data-ttu-id="d7c2f-102">ISymUnmanagedReader::GetSymAttribute – metoda</span><span class="sxs-lookup"><span data-stu-id="d7c2f-102">ISymUnmanagedReader::GetSymAttribute Method</span></span>
-<span data-ttu-id="d7c2f-103">Získá vlastní atribut na základě jeho názvu.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-103">Gets a custom attribute based upon its name.</span></span> <span data-ttu-id="d7c2f-104">Na rozdíl od metadata vlastní atributy jsou tyto vlastní atributy uložené v úložišti symbol.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-104">Unlike metadata custom attributes, these custom attributes are held in the symbol store.</span></span>  
+# <a name="isymunmanagedreadergetsymattribute-method"></a><span data-ttu-id="dba2a-102">ISymUnmanagedReader::GetSymAttribute – metoda</span><span class="sxs-lookup"><span data-stu-id="dba2a-102">ISymUnmanagedReader::GetSymAttribute Method</span></span>
+<span data-ttu-id="dba2a-103">Získá vlastní atribut na základě jeho názvu.</span><span class="sxs-lookup"><span data-stu-id="dba2a-103">Gets a custom attribute based upon its name.</span></span> <span data-ttu-id="dba2a-104">Na rozdíl od vlastních atributů metadat jsou tyto vlastní atributy uložené v úložišti symbolů.</span><span class="sxs-lookup"><span data-stu-id="dba2a-104">Unlike metadata custom attributes, these custom attributes are held in the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d7c2f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7c2f-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="dba2a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="dba2a-105">Syntax</span></span>  
   
 ```  
 HRESULT GetSymAttribute (  
@@ -39,27 +39,27 @@ HRESULT GetSymAttribute (
         length_is (*pcBuffer)] BYTE buffer[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d7c2f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d7c2f-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="dba2a-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="dba2a-106">Parameters</span></span>  
  `parent`  
- <span data-ttu-id="d7c2f-107">[v] Token metadata pro objekt, pro který je požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-107">[in] The metadata token for the object for which the attribute is requested.</span></span>  
+ <span data-ttu-id="dba2a-107">[in] Token metadat pro objekt, pro který je požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="dba2a-107">[in] The metadata token for the object for which the attribute is requested.</span></span>  
   
  `name`  
- <span data-ttu-id="d7c2f-108">[v] Ukazatel na proměnnou, která určuje atribut, který se načíst.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-108">[in] A pointer to the variable that indicates the attribute to retrieve.</span></span>  
+ <span data-ttu-id="dba2a-108">[in] Ukazatel na proměnnou, která určuje atribut, který chcete načíst.</span><span class="sxs-lookup"><span data-stu-id="dba2a-108">[in] A pointer to the variable that indicates the attribute to retrieve.</span></span>  
   
  `cBuffer`  
- <span data-ttu-id="d7c2f-109">[v] Velikost `buffer` pole.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-109">[in] The size of the `buffer` array.</span></span>  
+ <span data-ttu-id="dba2a-109">[in] Velikost `buffer` pole.</span><span class="sxs-lookup"><span data-stu-id="dba2a-109">[in] The size of the `buffer` array.</span></span>  
   
  `pcBuffer`  
- <span data-ttu-id="d7c2f-110">[out] Ukazatel na proměnnou, která přijímá délka data atributu.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-110">[out] A pointer to the variable that receives the length of the attribute data.</span></span>  
+ <span data-ttu-id="dba2a-110">[out] Ukazatel na proměnnou, která přijímá délka dat atribut.</span><span class="sxs-lookup"><span data-stu-id="dba2a-110">[out] A pointer to the variable that receives the length of the attribute data.</span></span>  
   
  `buffer`  
- <span data-ttu-id="d7c2f-111">[out] Ukazatel na proměnnou, která přijímá data atributu.</span><span class="sxs-lookup"><span data-stu-id="d7c2f-111">[out] A pointer to the variable that receives the attribute data.</span></span>  
+ <span data-ttu-id="dba2a-111">[out] Ukazatel na proměnnou, která přijímá data atributu.</span><span class="sxs-lookup"><span data-stu-id="dba2a-111">[out] A pointer to the variable that receives the attribute data.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="d7c2f-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d7c2f-112">Return Value</span></span>  
- <span data-ttu-id="d7c2f-113">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby...</span><span class="sxs-lookup"><span data-stu-id="d7c2f-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code..</span></span>  
+## <a name="return-value"></a><span data-ttu-id="dba2a-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="dba2a-112">Return Value</span></span>  
+ <span data-ttu-id="dba2a-113">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby...</span><span class="sxs-lookup"><span data-stu-id="dba2a-113">S_OK if the method succeeds; otherwise, E_FAIL or some other error code..</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d7c2f-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d7c2f-114">Requirements</span></span>  
- <span data-ttu-id="d7c2f-115">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="d7c2f-115">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="dba2a-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="dba2a-114">Requirements</span></span>  
+ <span data-ttu-id="dba2a-115">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="dba2a-115">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d7c2f-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="d7c2f-116">See Also</span></span>  
- [<span data-ttu-id="d7c2f-117">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d7c2f-117">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="dba2a-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dba2a-116">See also</span></span>
+- [<span data-ttu-id="dba2a-117">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="dba2a-117">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

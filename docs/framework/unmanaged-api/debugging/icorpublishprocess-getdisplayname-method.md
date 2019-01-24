@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 815f2e2f695837c973210a21ab3631ef307c23d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f2d3624d130c005f9ed9109863b052e3272797ea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423634"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496816"
 ---
-# <a name="icorpublishprocessgetdisplayname-method"></a><span data-ttu-id="b9800-102">ICorPublishProcess::GetDisplayName – metoda</span><span class="sxs-lookup"><span data-stu-id="b9800-102">ICorPublishProcess::GetDisplayName Method</span></span>
-<span data-ttu-id="b9800-103">Získá úplnou cestu ke spustitelnému souboru procesu, který odkazuje toto [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).</span><span class="sxs-lookup"><span data-stu-id="b9800-103">Gets the full path of the executable for the process referenced by this [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).</span></span>  
+# <a name="icorpublishprocessgetdisplayname-method"></a><span data-ttu-id="66136-102">ICorPublishProcess::GetDisplayName – metoda</span><span class="sxs-lookup"><span data-stu-id="66136-102">ICorPublishProcess::GetDisplayName Method</span></span>
+<span data-ttu-id="66136-103">Získá úplnou cestu ke spustitelnému souboru pro proces odkazuje toto [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).</span><span class="sxs-lookup"><span data-stu-id="66136-103">Gets the full path of the executable for the process referenced by this [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b9800-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b9800-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="66136-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="66136-104">Syntax</span></span>  
   
 ```  
 HRESULT GetDisplayName (  
@@ -38,24 +38,24 @@ HRESULT GetDisplayName (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b9800-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b9800-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="66136-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="66136-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="b9800-106">[v] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="b9800-106">[in] The size of the `szName` array.</span></span>  
+ <span data-ttu-id="66136-106">[in] Velikost `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="66136-106">[in] The size of the `szName` array.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="b9800-107">[out] Číslo, vrátí se v široké znaky `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="b9800-107">[out] The number of wide characters returned in the `szName` array.</span></span>  
+ <span data-ttu-id="66136-107">[out] Počet širokých znaků, které jsou vráceny v `szName` pole.</span><span class="sxs-lookup"><span data-stu-id="66136-107">[out] The number of wide characters returned in the `szName` array.</span></span>  
   
  `szName`  
- <span data-ttu-id="b9800-108">[out] Pole k uložení názvu, včetně úplná cesta ke spustitelnému souboru.</span><span class="sxs-lookup"><span data-stu-id="b9800-108">[out] An array to store the name, including the full path, of the executable.</span></span> <span data-ttu-id="b9800-109">Název je ukončené hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="b9800-109">The name is null-terminated.</span></span>  
+ <span data-ttu-id="66136-108">[out] Pole pro uložení názvu, včetně úplné cesty ke spustitelnému souboru.</span><span class="sxs-lookup"><span data-stu-id="66136-108">[out] An array to store the name, including the full path, of the executable.</span></span> <span data-ttu-id="66136-109">Název je zakončený hodnotou null.</span><span class="sxs-lookup"><span data-stu-id="66136-109">The name is null-terminated.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b9800-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b9800-110">Requirements</span></span>  
- <span data-ttu-id="b9800-111">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b9800-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="66136-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="66136-110">Requirements</span></span>  
+ <span data-ttu-id="66136-111">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="66136-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b9800-112">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="b9800-112">**Header:** CorPub.idl, CorPub.h</span></span>  
+ <span data-ttu-id="66136-112">**Záhlaví:** CorPub.idl, CorPub.h</span><span class="sxs-lookup"><span data-stu-id="66136-112">**Header:** CorPub.idl, CorPub.h</span></span>  
   
- <span data-ttu-id="b9800-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b9800-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="66136-113">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="66136-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b9800-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b9800-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="66136-114">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="66136-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b9800-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="b9800-115">See Also</span></span>  
- [<span data-ttu-id="b9800-116">ICorPublishProcess – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b9800-116">ICorPublishProcess Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+## <a name="see-also"></a><span data-ttu-id="66136-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="66136-115">See also</span></span>
+- [<span data-ttu-id="66136-116">ICorPublishProcess – rozhraní</span><span class="sxs-lookup"><span data-stu-id="66136-116">ICorPublishProcess Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)

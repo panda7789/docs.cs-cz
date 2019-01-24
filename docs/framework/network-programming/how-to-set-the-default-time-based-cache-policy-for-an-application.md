@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: nastavení výchozích zásad mezipaměti na základě času pro aplikaci'
+title: 'Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,26 +9,26 @@ helpviewer_keywords:
 - cache [.NET Framework], time-based policies
 - default time-based cache policy
 ms.assetid: 6bfce066-a2e7-4add-a05e-85c12ec9f07f
-ms.openlocfilehash: cdb93f802d313c0812bb50236ff5962c44251b4e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d40b0ffbe514429ed24eaa5d0c2ce2d52c80d37d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50182908"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608950"
 ---
-# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a><span data-ttu-id="c64c7-102">Postupy: nastavení výchozích zásad mezipaměti na základě času pro aplikaci</span><span class="sxs-lookup"><span data-stu-id="c64c7-102">How to: Set the Default Time-Based Cache Policy for an Application</span></span>
-<span data-ttu-id="c64c7-103">Umožňuje aplikaci mít své mezipaměti chování definované hlavičky posílané s prostředkem v mezipaměti a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 výchozích zásad mezipaměti na základě času [(Internet Engineering Task Force Sdružení IETF)](https://www.ietf.org/) webu.</span><span class="sxs-lookup"><span data-stu-id="c64c7-103">The default time-based cache policy allows an application to have its cache behavior defined by the headers sent with the cached resource and the cache behavior defined in sections 13 and 14 of RFC 2616, available at [Internet Engineering Task Force (IETF)](https://www.ietf.org/) website.</span></span> <span data-ttu-id="c64c7-104">Toto je chování mezipaměti vhodné pro většinu aplikací.</span><span class="sxs-lookup"><span data-stu-id="c64c7-104">This is the appropriate cache behavior for most applications.</span></span>  
+# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a><span data-ttu-id="006c6-102">Postupy: Nastavení výchozích zásad mezipaměti na základě času pro aplikaci</span><span class="sxs-lookup"><span data-stu-id="006c6-102">How to: Set the Default Time-Based Cache Policy for an Application</span></span>
+<span data-ttu-id="006c6-103">Umožňuje aplikaci mít své mezipaměti chování definované hlavičky posílané s prostředkem v mezipaměti a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 výchozích zásad mezipaměti na základě času [(Internet Engineering Task Force Sdružení IETF)](https://www.ietf.org/) webu.</span><span class="sxs-lookup"><span data-stu-id="006c6-103">The default time-based cache policy allows an application to have its cache behavior defined by the headers sent with the cached resource and the cache behavior defined in sections 13 and 14 of RFC 2616, available at [Internet Engineering Task Force (IETF)](https://www.ietf.org/) website.</span></span> <span data-ttu-id="006c6-104">Toto je chování mezipaměti vhodné pro většinu aplikací.</span><span class="sxs-lookup"><span data-stu-id="006c6-104">This is the appropriate cache behavior for most applications.</span></span>  
   
-### <a name="to-set-the-default-automatic-policy-for-an-application"></a><span data-ttu-id="c64c7-105">Chcete-li nastavit automatické výchozí zásady pro aplikace</span><span class="sxs-lookup"><span data-stu-id="c64c7-105">To set the default automatic policy for an application</span></span>  
+### <a name="to-set-the-default-automatic-policy-for-an-application"></a><span data-ttu-id="006c6-105">Chcete-li nastavit automatické výchozí zásady pro aplikace</span><span class="sxs-lookup"><span data-stu-id="006c6-105">To set the default automatic policy for an application</span></span>  
   
-1.  <span data-ttu-id="c64c7-106">Vytvořte objekt výchozí zásady založené na čase.</span><span class="sxs-lookup"><span data-stu-id="c64c7-106">Create a default time-based policy object.</span></span>  
+1.  <span data-ttu-id="006c6-106">Vytvořte objekt výchozí zásady založené na čase.</span><span class="sxs-lookup"><span data-stu-id="006c6-106">Create a default time-based policy object.</span></span>  
   
-2.  <span data-ttu-id="c64c7-107">Nastavte jako výchozí pro doménu aplikace objektu zásad.</span><span class="sxs-lookup"><span data-stu-id="c64c7-107">Set the policy object as the default for the application domain.</span></span>  
+2.  <span data-ttu-id="006c6-107">Nastavte jako výchozí pro doménu aplikace objektu zásad.</span><span class="sxs-lookup"><span data-stu-id="006c6-107">Set the policy object as the default for the application domain.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="c64c7-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="c64c7-108">Example</span></span>  
- <span data-ttu-id="c64c7-109">Tyto dva příklady v této části vytvořit identickými zásadami.</span><span class="sxs-lookup"><span data-stu-id="c64c7-109">The two examples in this section produce identical policies.</span></span>  
+## <a name="example"></a><span data-ttu-id="006c6-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="006c6-108">Example</span></span>  
+ <span data-ttu-id="006c6-109">Tyto dva příklady v této části vytvořit identickými zásadami.</span><span class="sxs-lookup"><span data-stu-id="006c6-109">The two examples in this section produce identical policies.</span></span>  
   
- <span data-ttu-id="c64c7-110">Následující příklad vytvoří výchozí zásady založené na čase a nastaví jej jako výchozí pro doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="c64c7-110">The following example creates a default time-based policy and sets it as the default for the application domain.</span></span>  
+ <span data-ttu-id="006c6-110">Následující příklad vytvoří výchozí zásady založené na čase a nastaví jej jako výchozí pro doménu aplikace.</span><span class="sxs-lookup"><span data-stu-id="006c6-110">The following example creates a default time-based policy and sets it as the default for the application domain.</span></span>  
   
 ```csharp  
 public static void SetDefaultTimeBasedPolicy ()  
@@ -45,7 +45,7 @@ Public Shared Sub SetDefaultTimeBasedPolicy ()
 End Sub  
 ```  
   
- <span data-ttu-id="c64c7-111">Můžete také vytvořit pomocí zásad mezipaměti na základě času výchozí <xref:System.Net.Cache.RequestCachePolicy> třídy, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="c64c7-111">You can also create the default time-based cache policy using the <xref:System.Net.Cache.RequestCachePolicy> class as shown in the following example:</span></span>  
+ <span data-ttu-id="006c6-111">Můžete také vytvořit pomocí zásad mezipaměti na základě času výchozí <xref:System.Net.Cache.RequestCachePolicy> třídy, jak je znázorněno v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="006c6-111">You can also create the default time-based cache policy using the <xref:System.Net.Cache.RequestCachePolicy> class as shown in the following example:</span></span>  
   
 ```csharp  
 public static void SetDefaultTimeBasedPolicy2()  
@@ -62,9 +62,9 @@ Public Shared Sub SetDefaultTimeBasedPolicy2()
 End Sub  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c64c7-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="c64c7-112">See Also</span></span>  
- [<span data-ttu-id="c64c7-113">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="c64c7-113">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [<span data-ttu-id="c64c7-114">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="c64c7-114">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
- [<span data-ttu-id="c64c7-115">Zásady mezipaměti na základě místa</span><span class="sxs-lookup"><span data-stu-id="c64c7-115">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- [<span data-ttu-id="c64c7-116">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="c64c7-116">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [<span data-ttu-id="c64c7-117">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="c64c7-117">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a><span data-ttu-id="006c6-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="006c6-112">See also</span></span>
+- [<span data-ttu-id="006c6-113">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="006c6-113">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
+- [<span data-ttu-id="006c6-114">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="006c6-114">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)
+- [<span data-ttu-id="006c6-115">Zásady mezipaměti na základě místa</span><span class="sxs-lookup"><span data-stu-id="006c6-115">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [<span data-ttu-id="006c6-116">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="006c6-116">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)
+- [<span data-ttu-id="006c6-117">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="006c6-117">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

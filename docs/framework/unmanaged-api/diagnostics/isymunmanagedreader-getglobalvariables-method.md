@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6574c4d30b963ce571343d1a584bfccb48ffd195
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 61dd9f8a668904bb9b9e0b6b4d1d84d1ed07045d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430448"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737881"
 ---
-# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="ce2c1-102">ISymUnmanagedReader::GetGlobalVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="ce2c1-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
-<span data-ttu-id="ce2c1-103">Vrátí všechny globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="ce2c1-103">Returns all global variables.</span></span>  
+# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="fef64-102">ISymUnmanagedReader::GetGlobalVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="fef64-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
+<span data-ttu-id="fef64-103">Vrátí všechny globální proměnné.</span><span class="sxs-lookup"><span data-stu-id="fef64-103">Returns all global variables.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ce2c1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ce2c1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fef64-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fef64-104">Syntax</span></span>  
   
 ```  
 HRESULT GetGlobalVariables(  
@@ -37,21 +37,21 @@ HRESULT GetGlobalVariables(
         length_is(*pcVars)] ISymUnmanagedVariable *pVars[]);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ce2c1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ce2c1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="fef64-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="fef64-105">Parameters</span></span>  
  `cVars`  
- <span data-ttu-id="ce2c1-106">[v] Délka vyrovnávací paměti na kterou odkazuje `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="ce2c1-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
+ <span data-ttu-id="fef64-106">[in] Délka vyrovnávací paměti na které odkazuje `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="fef64-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
   
  `pcVars`  
- <span data-ttu-id="ce2c1-107">[out] Ukazatel na `ULONG32` která přijme velikost vyrovnávací paměti musí obsahovat proměnné.</span><span class="sxs-lookup"><span data-stu-id="ce2c1-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
+ <span data-ttu-id="fef64-107">[out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat proměnné.</span><span class="sxs-lookup"><span data-stu-id="fef64-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
   
  `pVars`  
- <span data-ttu-id="ce2c1-108">[out] Vyrovnávací paměť, která obsahuje proměnné.</span><span class="sxs-lookup"><span data-stu-id="ce2c1-108">[out] A buffer that contains the variables.</span></span>  
+ <span data-ttu-id="fef64-108">[out] Vyrovnávací paměť obsahující proměnné.</span><span class="sxs-lookup"><span data-stu-id="fef64-108">[out] A buffer that contains the variables.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ce2c1-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ce2c1-109">Return Value</span></span>  
- <span data-ttu-id="ce2c1-110">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="ce2c1-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="fef64-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="fef64-109">Return Value</span></span>  
+ <span data-ttu-id="fef64-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="fef64-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ce2c1-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ce2c1-111">Requirements</span></span>  
- <span data-ttu-id="ce2c1-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ce2c1-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fef64-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="fef64-111">Requirements</span></span>  
+ <span data-ttu-id="fef64-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="fef64-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ce2c1-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="ce2c1-113">See Also</span></span>  
- [<span data-ttu-id="ce2c1-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ce2c1-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a><span data-ttu-id="fef64-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fef64-113">See also</span></span>
+- [<span data-ttu-id="fef64-114">ISymUnmanagedReader – rozhraní</span><span class="sxs-lookup"><span data-stu-id="fef64-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

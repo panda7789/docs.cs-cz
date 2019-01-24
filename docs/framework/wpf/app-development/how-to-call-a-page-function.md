@@ -9,28 +9,28 @@ helpviewer_keywords:
 - page functions [WPF], calling
 - functions [WPF], calling
 ms.assetid: a4808397-c6d5-406a-83e0-0091f0c15ae4
-ms.openlocfilehash: b6bae149ad56c9a0b56a6ae80cc1e62cd091f75f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4cd839cc959c1e3730418d2feab80b9aef642161
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545721"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54542818"
 ---
-# <a name="how-to-call-a-page-function"></a><span data-ttu-id="b0b2c-102">Postupy: Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="b0b2c-102">How to: Call a Page Function</span></span>
-<span data-ttu-id="b0b2c-103">Tento příklad ukazuje, jak volat funkci stránky z [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="b0b2c-103">This example shows how to call a page function from a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] page.</span></span>  
+# <a name="how-to-call-a-page-function"></a><span data-ttu-id="79fc1-102">Postupy: Volání funkce stránky</span><span class="sxs-lookup"><span data-stu-id="79fc1-102">How to: Call a Page Function</span></span>
+<span data-ttu-id="79fc1-103">Tento příklad ukazuje, jak volat z funkce stránky [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="79fc1-103">This example shows how to call a page function from a [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] page.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b0b2c-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b0b2c-104">Example</span></span>  
- <span data-ttu-id="b0b2c-105">Můžete přejít na stránku pomocí funkce [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], stejným způsobem jako když přejdete na stránku.</span><span class="sxs-lookup"><span data-stu-id="b0b2c-105">You can navigate to a page function using a [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], just as you can when you navigate to a page.</span></span> <span data-ttu-id="b0b2c-106">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="b0b2c-106">This is shown in the following example.</span></span>  
+## <a name="example"></a><span data-ttu-id="79fc1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="79fc1-104">Example</span></span>  
+ <span data-ttu-id="79fc1-105">Můžete přejít na stránku pomocí funkce [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], stejně jako když přejdete na stránku.</span><span class="sxs-lookup"><span data-stu-id="79fc1-105">You can navigate to a page function using a [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)], just as you can when you navigate to a page.</span></span> <span data-ttu-id="79fc1-106">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="79fc1-106">This is shown in the following example.</span></span>  
   
  [!code-csharp[HOWTOPageFunctionSnippets#NavigateToAPageFunctionLikeAPageCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml.cs#navigatetoapagefunctionlikeapagecodebehind)]
  [!code-vb[HOWTOPageFunctionSnippets#NavigateToAPageFunctionLikeAPageCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/VisualBasic/CallingPage.xaml.vb#navigatetoapagefunctionlikeapagecodebehind)]  
   
- <span data-ttu-id="b0b2c-107">Pokud potřebujete k předávání dat na stránce funkce, můžete vytvořit její instanci a předat data nastavením vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="b0b2c-107">If you need to pass data to the page function, you can create an instance of it and pass the data by setting a property.</span></span> <span data-ttu-id="b0b2c-108">Nebo, jak ukazuje následující příklad, můžete předat data pomocí jiné než výchozí konstruktor.</span><span class="sxs-lookup"><span data-stu-id="b0b2c-108">Or, as the following example shows, you can pass the data using a non-default constructor.</span></span>  
+ <span data-ttu-id="79fc1-107">Pokud je potřeba předat data do funkce stránky, můžete vytvořit její instanci a předejte data tak, že nastavíte vlastnost.</span><span class="sxs-lookup"><span data-stu-id="79fc1-107">If you need to pass data to the page function, you can create an instance of it and pass the data by setting a property.</span></span> <span data-ttu-id="79fc1-108">Nebo, jak ukazuje následující příklad, můžete předat data pomocí jiného než výchozího konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="79fc1-108">Or, as the following example shows, you can pass the data using a non-default constructor.</span></span>  
   
  [!code-xaml[HOWTOPageFunctionSnippets#CallAPageFunctionXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml#callapagefunctionxaml)]  
   
  [!code-csharp[HOWTOPageFunctionSnippets#CallAPageFunctionCODEBEHIND](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/CSharp/CallingPage.xaml.cs#callapagefunctioncodebehind)]
  [!code-vb[HOWTOPageFunctionSnippets#CallAPageFunctionCODEBEHIND](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOPageFunctionSnippets/VisualBasic/CallingPage.xaml.vb#callapagefunctioncodebehind)]  
   
-## <a name="see-also"></a><span data-ttu-id="b0b2c-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="b0b2c-109">See Also</span></span>  
- <xref:System.Windows.Navigation.PageFunction%601>
+## <a name="see-also"></a><span data-ttu-id="79fc1-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="79fc1-109">See also</span></span>
+- <xref:System.Windows.Navigation.PageFunction%601>

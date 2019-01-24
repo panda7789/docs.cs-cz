@@ -18,17 +18,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 59b4c832a4bbc915749aadf435b204e084828698
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb2c560f8f906f20de752e5dfad995e2082caaea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54654669"
 ---
-# <a name="identityattributeblob-structure"></a><span data-ttu-id="aed8c-102">IDENTITY_ATTRIBUTE_BLOB – struktura</span><span class="sxs-lookup"><span data-stu-id="aed8c-102">IDENTITY_ATTRIBUTE_BLOB Structure</span></span>
-<span data-ttu-id="aed8c-103">Obsahuje informace o jeden atribut v sestavení a se skládá ze tří `DWORD`s.</span><span class="sxs-lookup"><span data-stu-id="aed8c-103">Contains information about a single attribute in an assembly, and consists of three `DWORD`s.</span></span> <span data-ttu-id="aed8c-104">Každý `DWORD` je posun do vyrovnávací paměti znak vyprodukované `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní</span><span class="sxs-lookup"><span data-stu-id="aed8c-104">Each `DWORD` is an offset into a character buffer produced by the `CurrentIntoBuffer` method of the [IEnumIDENTITY_ATTRIBUTE](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) interface</span></span>  
+# <a name="identityattributeblob-structure"></a><span data-ttu-id="ee096-102">IDENTITY_ATTRIBUTE_BLOB – struktura</span><span class="sxs-lookup"><span data-stu-id="ee096-102">IDENTITY_ATTRIBUTE_BLOB Structure</span></span>
+<span data-ttu-id="ee096-103">Obsahuje informace o jediný atribut v sestavení a se skládá ze tří `DWORD`s.</span><span class="sxs-lookup"><span data-stu-id="ee096-103">Contains information about a single attribute in an assembly, and consists of three `DWORD`s.</span></span> <span data-ttu-id="ee096-104">Každý `DWORD` je posun do vyrovnávací paměti znak vytvářených `CurrentIntoBuffer` metodu [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee096-104">Each `DWORD` is an offset into a character buffer produced by the `CurrentIntoBuffer` method of the [IEnumIDENTITY_ATTRIBUTE](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) interface</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="aed8c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="aed8c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ee096-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ee096-105">Syntax</span></span>  
   
 ```  
 typedef struct _IDENTITY_ATTRIBUTE_BLOB {  
@@ -38,24 +38,24 @@ typedef struct _IDENTITY_ATTRIBUTE_BLOB {
 }   IDENTITY_ATTRIBUTE_BLOB;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="aed8c-106">Členové</span><span class="sxs-lookup"><span data-stu-id="aed8c-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="ee096-106">Členové</span><span class="sxs-lookup"><span data-stu-id="ee096-106">Members</span></span>  
   
-|<span data-ttu-id="aed8c-107">Člen</span><span class="sxs-lookup"><span data-stu-id="aed8c-107">Member</span></span>|<span data-ttu-id="aed8c-108">Popis</span><span class="sxs-lookup"><span data-stu-id="aed8c-108">Description</span></span>|  
+|<span data-ttu-id="ee096-107">Člen</span><span class="sxs-lookup"><span data-stu-id="ee096-107">Member</span></span>|<span data-ttu-id="ee096-108">Popis</span><span class="sxs-lookup"><span data-stu-id="ee096-108">Description</span></span>|  
 |------------|-----------------|  
-|`ofsNamespace`|<span data-ttu-id="aed8c-109">První posunutí do vyrovnávací paměti znak.</span><span class="sxs-lookup"><span data-stu-id="aed8c-109">The first offset into the character buffer.</span></span> <span data-ttu-id="aed8c-110">Tento posun nedodržíte podle oboru názvů atributu, nikoli podle řadu znaky null.</span><span class="sxs-lookup"><span data-stu-id="aed8c-110">This offset is not followed by the attribute's namespace, but by a series of null characters.</span></span> <span data-ttu-id="aed8c-111">Proto se nepoužije.</span><span class="sxs-lookup"><span data-stu-id="aed8c-111">Therefore, it is not used.</span></span>|  
-|`ofsName`|<span data-ttu-id="aed8c-112">Druhý posun do vyrovnávací paměti znak.</span><span class="sxs-lookup"><span data-stu-id="aed8c-112">The second offset into the character buffer.</span></span> <span data-ttu-id="aed8c-113">Toto umístění označuje začátek název atributu.</span><span class="sxs-lookup"><span data-stu-id="aed8c-113">This location marks the start of the attribute's name.</span></span>|  
-|`ofsValue`|<span data-ttu-id="aed8c-114">Třetí posun do vyrovnávací paměti znak.</span><span class="sxs-lookup"><span data-stu-id="aed8c-114">The third offset into the character buffer.</span></span> <span data-ttu-id="aed8c-115">Toto umístění označuje začátek hodnoty atributu.</span><span class="sxs-lookup"><span data-stu-id="aed8c-115">This location marks the start of the attribute's value.</span></span>|  
+|`ofsNamespace`|<span data-ttu-id="ee096-109">První odsazení do vyrovnávací paměti pro znaky.</span><span class="sxs-lookup"><span data-stu-id="ee096-109">The first offset into the character buffer.</span></span> <span data-ttu-id="ee096-110">Tento posun nedodrží atributu oboru názvů, ale pomocí posloupnosti znaků null.</span><span class="sxs-lookup"><span data-stu-id="ee096-110">This offset is not followed by the attribute's namespace, but by a series of null characters.</span></span> <span data-ttu-id="ee096-111">Proto není použit.</span><span class="sxs-lookup"><span data-stu-id="ee096-111">Therefore, it is not used.</span></span>|  
+|`ofsName`|<span data-ttu-id="ee096-112">Druhý odsazení do vyrovnávací paměti pro znaky.</span><span class="sxs-lookup"><span data-stu-id="ee096-112">The second offset into the character buffer.</span></span> <span data-ttu-id="ee096-113">Toto umístění označuje začátek název atributu.</span><span class="sxs-lookup"><span data-stu-id="ee096-113">This location marks the start of the attribute's name.</span></span>|  
+|`ofsValue`|<span data-ttu-id="ee096-114">Třetí odsazení do vyrovnávací paměti pro znaky.</span><span class="sxs-lookup"><span data-stu-id="ee096-114">The third offset into the character buffer.</span></span> <span data-ttu-id="ee096-115">Toto umístění označuje začátek hodnotu atributu.</span><span class="sxs-lookup"><span data-stu-id="ee096-115">This location marks the start of the attribute's value.</span></span>|  
   
-## <a name="sample"></a><span data-ttu-id="aed8c-116">Ukázka</span><span class="sxs-lookup"><span data-stu-id="aed8c-116">Sample</span></span>  
- <span data-ttu-id="aed8c-117">Následující příklad ilustruje několik základní kroky, které se nakonec za následek vyplněná `IDENTITY_ATTRIBUTE_BLOB` strukturu:</span><span class="sxs-lookup"><span data-stu-id="aed8c-117">The following example illustrates several basic steps, which eventually result in a populated `IDENTITY_ATTRIBUTE_BLOB` structure:</span></span>  
+## <a name="sample"></a><span data-ttu-id="ee096-116">Ukázka</span><span class="sxs-lookup"><span data-stu-id="ee096-116">Sample</span></span>  
+ <span data-ttu-id="ee096-117">Následující příklad ukazuje několik základních kroků, které nakonec vést mají údaj vyplněný `IDENTITY_ATTRIBUTE_BLOB` struktury:</span><span class="sxs-lookup"><span data-stu-id="ee096-117">The following example illustrates several basic steps, which eventually result in a populated `IDENTITY_ATTRIBUTE_BLOB` structure:</span></span>  
   
-1.  <span data-ttu-id="aed8c-118">Získat [ireferenceidentity –](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="aed8c-118">Obtain an [IReferenceIdentity](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) for the assembly.</span></span>  
+1.  <span data-ttu-id="ee096-118">Získat [ireferenceidentity –](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="ee096-118">Obtain an [IReferenceIdentity](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) for the assembly.</span></span>  
   
-2.  <span data-ttu-id="aed8c-119">Volání `IReferenceIdentity::EnumAttributes` metoda a získat [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md).</span><span class="sxs-lookup"><span data-stu-id="aed8c-119">Call the `IReferenceIdentity::EnumAttributes` method, and obtain an [IEnumIDENTITY_ATTRIBUTE](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md).</span></span>  
+2.  <span data-ttu-id="ee096-119">Volání `IReferenceIdentity::EnumAttributes` metoda a získat [ienumidentity_attribute –](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md).</span><span class="sxs-lookup"><span data-stu-id="ee096-119">Call the `IReferenceIdentity::EnumAttributes` method, and obtain an [IEnumIDENTITY_ATTRIBUTE](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md).</span></span>  
   
-3.  <span data-ttu-id="aed8c-120">Vytvoření znak vyrovnávací paměti a převést jej jako `IDENTITY_ATTRIBUTE_BLOB` struktura.</span><span class="sxs-lookup"><span data-stu-id="aed8c-120">Create a character buffer, and cast it as an `IDENTITY_ATTRIBUTE_BLOB` structure.</span></span>  
+3.  <span data-ttu-id="ee096-120">Vytvoření vyrovnávací paměti pro znaky a přetypujte ji jako `IDENTITY_ATTRIBUTE_BLOB` struktury.</span><span class="sxs-lookup"><span data-stu-id="ee096-120">Create a character buffer, and cast it as an `IDENTITY_ATTRIBUTE_BLOB` structure.</span></span>  
   
-4.  <span data-ttu-id="aed8c-121">Volání `CurrentIntoBuffer` metodu `IEnumIDENTITY_ATTRIBUTE` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="aed8c-121">Call the `CurrentIntoBuffer` method of the `IEnumIDENTITY_ATTRIBUTE` interface.</span></span> <span data-ttu-id="aed8c-122">Tato metoda zkopíruje atributy `Namespace`, `Name`, a `Value` do vyrovnávací paměti znak.</span><span class="sxs-lookup"><span data-stu-id="aed8c-122">This method copies the attributes `Namespace`, `Name`, and `Value` into the character buffer.</span></span> <span data-ttu-id="aed8c-123">Tři posuny na tyto řetězce bude k dispozici v `IDENTITY_ATTRIBUTE_BLOB` struktura.</span><span class="sxs-lookup"><span data-stu-id="aed8c-123">The three offsets to those strings will become available in the `IDENTITY_ATTRIBUTE_BLOB` structure.</span></span>  
+4.  <span data-ttu-id="ee096-121">Volání `CurrentIntoBuffer` metodu `IEnumIDENTITY_ATTRIBUTE` rozhraní.</span><span class="sxs-lookup"><span data-stu-id="ee096-121">Call the `CurrentIntoBuffer` method of the `IEnumIDENTITY_ATTRIBUTE` interface.</span></span> <span data-ttu-id="ee096-122">Tato metoda zkopíruje atributy `Namespace`, `Name`, a `Value` do vyrovnávací paměti pro znaky.</span><span class="sxs-lookup"><span data-stu-id="ee096-122">This method copies the attributes `Namespace`, `Name`, and `Value` into the character buffer.</span></span> <span data-ttu-id="ee096-123">Budou k dispozici ve třech posuny do těchto řetězců `IDENTITY_ATTRIBUTE_BLOB` struktury.</span><span class="sxs-lookup"><span data-stu-id="ee096-123">The three offsets to those strings will become available in the `IDENTITY_ATTRIBUTE_BLOB` structure.</span></span>  
   
 ```  
 // EnumAssemblyAttributes.cpp : main project file.  
@@ -221,29 +221,29 @@ Exit:
 }  
 ```  
   
-### <a name="to-run-the-sample"></a><span data-ttu-id="aed8c-124">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="aed8c-124">To run the sample</span></span>  
- <span data-ttu-id="aed8c-125">C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll</span><span class="sxs-lookup"><span data-stu-id="aed8c-125">C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll</span></span>  
+### <a name="to-run-the-sample"></a><span data-ttu-id="ee096-124">Chcete-li spustit ukázku</span><span class="sxs-lookup"><span data-stu-id="ee096-124">To run the sample</span></span>  
+ <span data-ttu-id="ee096-125">C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll</span><span class="sxs-lookup"><span data-stu-id="ee096-125">C:\\> EnumAssemblyAttributes.exe C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll</span></span>  
   
-### <a name="sample-output"></a><span data-ttu-id="aed8c-126">Ukázkový výstup</span><span class="sxs-lookup"><span data-stu-id="aed8c-126">Sample output</span></span>  
- <span data-ttu-id="aed8c-127">Culture = neutral</span><span class="sxs-lookup"><span data-stu-id="aed8c-127">Culture = neutral</span></span>  
+### <a name="sample-output"></a><span data-ttu-id="ee096-126">Ukázkový výstup</span><span class="sxs-lookup"><span data-stu-id="ee096-126">Sample output</span></span>  
+ <span data-ttu-id="ee096-127">Jazyková verze = neutrální</span><span class="sxs-lookup"><span data-stu-id="ee096-127">Culture = neutral</span></span>  
   
- <span data-ttu-id="aed8c-128">název = System</span><span class="sxs-lookup"><span data-stu-id="aed8c-128">name = System</span></span>  
+ <span data-ttu-id="ee096-128">Název = systém</span><span class="sxs-lookup"><span data-stu-id="ee096-128">name = System</span></span>  
   
- <span data-ttu-id="aed8c-129">processorArchitecture = MSIL</span><span class="sxs-lookup"><span data-stu-id="aed8c-129">processorArchitecture = MSIL</span></span>  
+ <span data-ttu-id="ee096-129">Vlastnost processorArchitecture = MSIL</span><span class="sxs-lookup"><span data-stu-id="ee096-129">processorArchitecture = MSIL</span></span>  
   
- <span data-ttu-id="aed8c-130">PublicKeyToken = b77a5c561934e089</span><span class="sxs-lookup"><span data-stu-id="aed8c-130">PublicKeyToken = b77a5c561934e089</span></span>  
+ <span data-ttu-id="ee096-130">PublicKeyToken = b77a5c561934e089</span><span class="sxs-lookup"><span data-stu-id="ee096-130">PublicKeyToken = b77a5c561934e089</span></span>  
   
- <span data-ttu-id="aed8c-131">Verzi = 2.0.0.0</span><span class="sxs-lookup"><span data-stu-id="aed8c-131">Version = 2.0.0.0</span></span>  
+ <span data-ttu-id="ee096-131">Verze = 2.0.0.0</span><span class="sxs-lookup"><span data-stu-id="ee096-131">Version = 2.0.0.0</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="aed8c-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="aed8c-132">Requirements</span></span>  
- <span data-ttu-id="aed8c-133">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="aed8c-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ee096-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ee096-132">Requirements</span></span>  
+ <span data-ttu-id="ee096-133">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ee096-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="aed8c-134">**Záhlaví:** Isolation.h</span><span class="sxs-lookup"><span data-stu-id="aed8c-134">**Header:** Isolation.h</span></span>  
+ <span data-ttu-id="ee096-134">**Záhlaví:** Isolation.h</span><span class="sxs-lookup"><span data-stu-id="ee096-134">**Header:** Isolation.h</span></span>  
   
- <span data-ttu-id="aed8c-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="aed8c-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="ee096-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ee096-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="aed8c-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="aed8c-136">See Also</span></span>  
- [<span data-ttu-id="aed8c-137">IReferenceIdentity – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aed8c-137">IReferenceIdentity Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)  
- [<span data-ttu-id="aed8c-138">IEnumIDENTITY_ATTRIBUTE – rozhraní</span><span class="sxs-lookup"><span data-stu-id="aed8c-138">IEnumIDENTITY_ATTRIBUTE Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)  
- [<span data-ttu-id="aed8c-139">IDENTITY_ATTRIBUTE – struktura</span><span class="sxs-lookup"><span data-stu-id="aed8c-139">IDENTITY_ATTRIBUTE Structure</span></span>](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)  
- [<span data-ttu-id="aed8c-140">Struktury pro fúze</span><span class="sxs-lookup"><span data-stu-id="aed8c-140">Fusion Structures</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+## <a name="see-also"></a><span data-ttu-id="ee096-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ee096-136">See also</span></span>
+- [<span data-ttu-id="ee096-137">IReferenceIdentity – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee096-137">IReferenceIdentity Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)
+- [<span data-ttu-id="ee096-138">IEnumIDENTITY_ATTRIBUTE – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee096-138">IEnumIDENTITY_ATTRIBUTE Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)
+- [<span data-ttu-id="ee096-139">IDENTITY_ATTRIBUTE – struktura</span><span class="sxs-lookup"><span data-stu-id="ee096-139">IDENTITY_ATTRIBUTE Structure</span></span>](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)
+- [<span data-ttu-id="ee096-140">Struktury pro fúze</span><span class="sxs-lookup"><span data-stu-id="ee096-140">Fusion Structures</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)

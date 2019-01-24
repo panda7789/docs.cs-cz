@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: řízení Namespace předpony (Visual Basic) (technologie LINQ to XML)'
+title: 'Postupy: Ovládací prvek Namespace předpony (Visual Basic) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2fcf28a5-31b6-409d-84ea-27c22f71fc9f
-ms.openlocfilehash: f60f90ef6742dfd725f51ff7e760436117346e85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 91117307caf7e55bd8b512fbd841760616f0b2c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641677"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623739"
 ---
-# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a><span data-ttu-id="884f1-102">Postupy: řízení Namespace předpony (Visual Basic) (technologie LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="884f1-102">How to: Control Namespace Prefixes (Visual Basic) (LINQ to XML)</span></span>
-<span data-ttu-id="884f1-103">Toto téma popisuje, jak můžete řídit předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="884f1-103">This topic describes how you can control namespace prefixes.</span></span>  
+# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a><span data-ttu-id="28b60-102">Postupy: Ovládací prvek Namespace předpony (Visual Basic) (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="28b60-102">How to: Control Namespace Prefixes (Visual Basic) (LINQ to XML)</span></span>
+<span data-ttu-id="28b60-103">Toto téma popisuje, jak můžete řídit předpony oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="28b60-103">This topic describes how you can control namespace prefixes.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="884f1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="884f1-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="28b60-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="28b60-104">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="884f1-105">Popis</span><span class="sxs-lookup"><span data-stu-id="884f1-105">Description</span></span>  
- <span data-ttu-id="884f1-106">Tento příklad deklaruje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="884f1-106">This example declares two namespaces.</span></span> <span data-ttu-id="884f1-107">Určuje, že `http://www.adventure-works.com` obor názvů se předponou `aw`a že `www.fourthcoffee.com` má předponu oboru názvů `fc`.</span><span class="sxs-lookup"><span data-stu-id="884f1-107">It specifies that the `http://www.adventure-works.com` namespace has the prefix `aw`, and that the `www.fourthcoffee.com` namespace has the prefix of `fc`.</span></span>  
+### <a name="description"></a><span data-ttu-id="28b60-105">Popis</span><span class="sxs-lookup"><span data-stu-id="28b60-105">Description</span></span>  
+ <span data-ttu-id="28b60-106">V tomto příkladu deklaruje dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="28b60-106">This example declares two namespaces.</span></span> <span data-ttu-id="28b60-107">Určuje, že `http://www.adventure-works.com` má předponu oboru názvů `aw`a že `www.fourthcoffee.com` obor názvů má předponu `fc`.</span><span class="sxs-lookup"><span data-stu-id="28b60-107">It specifies that the `http://www.adventure-works.com` namespace has the prefix `aw`, and that the `www.fourthcoffee.com` namespace has the prefix of `fc`.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="884f1-108">Kód</span><span class="sxs-lookup"><span data-stu-id="884f1-108">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="28b60-108">Kód</span><span class="sxs-lookup"><span data-stu-id="28b60-108">Code</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -40,8 +40,8 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a><span data-ttu-id="884f1-109">Komentáře</span><span class="sxs-lookup"><span data-stu-id="884f1-109">Comments</span></span>  
- <span data-ttu-id="884f1-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="884f1-110">This example produces the following output:</span></span>  
+### <a name="comments"></a><span data-ttu-id="28b60-109">Komentáře</span><span class="sxs-lookup"><span data-stu-id="28b60-109">Comments</span></span>  
+ <span data-ttu-id="28b60-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="28b60-110">This example produces the following output:</span></span>  
   
 ```xml  
 <aw:Root xmlns:fc="www.fourthcoffee.com" xmlns:aw="http://www.adventure-works.com">  
@@ -53,5 +53,5 @@ End Module
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="884f1-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="884f1-111">See Also</span></span>  
- [<span data-ttu-id="884f1-112">Práce s obory názvů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="884f1-112">Working with XML Namespaces (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a><span data-ttu-id="28b60-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28b60-111">See also</span></span>
+- [<span data-ttu-id="28b60-112">Práce s názvovými prostory XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="28b60-112">Working with XML Namespaces (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
