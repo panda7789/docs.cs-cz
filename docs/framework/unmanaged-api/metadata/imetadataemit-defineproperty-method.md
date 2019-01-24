@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c250a577f2ccdbbfefb35225b880c0e4317db36
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 71cdfc6b05288fef020e1aed1870a9a155588d47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448104"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543078"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty – metoda
-Vytvoří definici vlastnosti pro zadaný typ se zadaným `get` a `set` metody přístupových objektů a získá token pro tuto definici vlastnosti.  
+Vytvoří definici vlastností pro zadaný typ se zadaným `get` a `set` metoda přístupové objekty a získá token pro tuto definici vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,50 +48,50 @@ HRESULT DefineProperty (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] Token pro třídy nebo rozhraní, na kterém je definována vlastnost.  
+ [in] Token pro třídu nebo rozhraní, na kterém je definována vlastnost.  
   
  `szProperty`  
- [v] Název vlastnosti.  
+ [in] Název vlastnosti.  
   
  `dwPropFlags`  
- [v] Příznaky vlastnost.  
+ [in] Vlastnost příznaky.  
   
  `pvSig`  
- [v] Vlastnost podpis.  
+ [in] Signatura vlastnosti.  
   
  `cbSig`  
- [v] Počet bajtů v `pvSig`.  
+ [in] Počet bajtů v `pvSig`.  
   
  `dwCPlusTypeFlag`  
- [v] Typ vlastnosti na výchozí hodnotu.  
+ [in] Typ vlastnosti na výchozí hodnotu.  
   
  `pValue`  
- [v] Výchozí hodnota pro vlastnost.  
+ [in] Výchozí hodnota pro vlastnost.  
   
  `cchValue`  
- [v] Počet (Unicode) znaků v `pValue`.  
+ [in] Počet (Unicode) znaky v `pValue`.  
   
  `mdSetter`  
- [v] Metoda, která nastavuje hodnoty vlastnosti.  
+ [in] Metoda, která nastaví hodnotu vlastnosti.  
   
  `mdGetter`  
- [v] Metoda, která se získá hodnotu vlastnosti.  
+ [in] Metoda, která vrací hodnotu vlastnosti.  
   
  `rmdOtherMethods[]`  
- [v] Pole jiné metody související s vlastností. Terminate – pole se `mdTokenNil`.  
+ [in] Pole jiné metody přidružený k vlastnosti. Ukončit pole pomocí `mdTokenNil`.  
   
  `pmdProp`  
  [out] `mdProperty` Token přiřazený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

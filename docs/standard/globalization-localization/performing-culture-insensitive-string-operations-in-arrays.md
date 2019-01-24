@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f12922e1-6234-4165-8896-63f0653ab478
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22815b5ab993b36bc8bcb91f89f346cb6d812e19
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ba02333aaafbadc85e4d3c547659f4ce4d2740c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698244"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670274"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-arrays"></a>Provádění řetězcových operací nezávislých na jazykové verzi v polích
 Přetížení <xref:System.Array.Sort%2A?displayProperty=nameWithType> a <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> provedení řazení zohledňující jazykovou verzi pomocí výchozí metody <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Zohledňující jazykovou verzi výsledky vrácené tyto metody se může lišit podle jazykové verze kvůli rozdílům v pořadí řazení. Chcete-li odstranit chování závislé na jazykové verzi, použijte jednu z přetížení této metody, které přijímá `comparer` parametru. `comparer` Určuje parametr <xref:System.Collections.IComparer> implementace pro použití při porovnávání prvků v poli. Pro parametr, zadejte vlastní výchozí porovnávací metody třídu, která používá <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Příklad vlastní výchozí porovnávací metody třídy je k dispozici v dílčím tématu "Používání SortedList – třída", které se nachází [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) tématu.  
@@ -23,7 +23,7 @@ Přetížení <xref:System.Array.Sort%2A?displayProperty=nameWithType> a <xref:S
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Array.Sort%2A?displayProperty=nameWithType>  
-- <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType>  
-- <xref:System.Collections.IComparer>  
+- <xref:System.Array.Sort%2A?displayProperty=nameWithType>
+- <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType>
+- <xref:System.Collections.IComparer>
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

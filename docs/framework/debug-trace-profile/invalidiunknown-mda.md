@@ -10,27 +10,27 @@ helpviewer_keywords:
 ms.assetid: c7924771-a16b-40fe-b337-ce51dcdf6a12
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: db360a3b7c5f70596d5d5855b8e38dae5d484c42
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5fead50c42c0d686492459829f7629654c20a0f3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33390172"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582666"
 ---
 # <a name="invalidiunknown-mda"></a>invalidIUnknown – pomocník spravovaného ladění (MDA)
-`invalidIUnknown` Pomocník spravovaného ladění (MDA) se aktivuje, když neplatný `IUnknown` ukazatel je předán do spravovaného kódu z nativního kódu. `IUnknown` Nevrátí úspěch při dotázána ohledně `IUnknown` rozhraní.  
+`invalidIUnknown` Pomocníka spravovaného ladění (MDA) se aktivuje, když neplatný `IUnknown` předán ukazatel do spravovaného kódu z nativního kódu. `IUnknown` Nevrátí úspěch, když se dotázali `IUnknown` rozhraní.  
   
 ## <a name="symptoms"></a>Příznaky  
- Při zařazování ukazatele rozhraní COM při zařazování argument dojde k neočekávané chybě.  
+ Při zařazování při zařazování argument ukazatele rozhraní modelu COM, dojde k neočekávané chybě.  
   
-## <a name="cause"></a>příčina  
- Nesprávné `QueryInterface` implementace na rozhraní COM předaný modulu CLR.  
+## <a name="cause"></a>Příčina  
+ Nesprávné `QueryInterface` implementace na rozhraní COM předán modulu CLR.  
   
 ## <a name="resolution"></a>Rozlišení  
  Opravte `QueryInterface` implementace.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Tato MDA nemá žádný vliv na modulu CLR.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Toto MDA nemá žádný vliv na CLR.  
   
 ## <a name="output"></a>Výstup  
  Popis chyby.  
@@ -45,7 +45,7 @@ ms.locfileid: "33390172"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

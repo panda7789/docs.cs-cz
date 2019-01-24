@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: 9fb24e13ab684170baf5ac3001d3a2d4bcd6df7e
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 85631433534a2cd962e398fe435275aa293405a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086034"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543851"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízení se systémem [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -56,7 +56,7 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
   
  V následující tabulce jsou uvedeny rozdíly v grafickém požadavky na hardware pro vykreslování vrstvy 1 a vykreslování vrstvy 2:  
   
-|Funkce|Vrstvy 1|Úroveň 2|  
+|Funkce|Úroveň 1|Úroveň 2|  
 |-------------|------------|------------|  
 |[!INCLUDE[TLA2#tla_dx](../../../../includes/tla2sharptla-dx-md.md)] Verze|Musí být větší než nebo rovna hodnotě 9.0.|Musí být větší než nebo rovna hodnotě 9.0.|  
 |Video paměti RAM|Musí být větší než nebo rovno 60MB.|Musí být větší než nebo roven 120MB.|  
@@ -129,10 +129,10 @@ Vrstvy vykreslování definuje úroveň hardwaru grafiky a výkonu pro zařízen
  ![Screenhot: Nástroje pro diagnostiku DirectX](../../../../docs/framework/wpf/advanced/media/directxdiagnostictool-01.png "DirectXDiagnosticTool_01")  
 Hlavní okno diagnostické nástroje DirectX  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.RenderCapability>  
- <xref:System.Windows.Media.RenderOptions>  
- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
- [WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)  
- [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)  
- [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.RenderCapability>
+- <xref:System.Windows.Media.RenderOptions>
+- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+- [WPF – výkonnostní sada](https://msdn.microsoft.com/library/67cafaad-57ad-4ecb-9c08-57fac144393e)
+- [Nastavení registru pro vykreslení grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings.md)
+- [Tipy a triky animace](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

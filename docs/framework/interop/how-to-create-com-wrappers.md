@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14bf011c3711a267b8cf5a1fc0497a347468387d
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 58b7ca910f8f8c751f03b25459bc83efb8086923
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121750"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540972"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 
@@ -73,7 +73,7 @@ Tento nástroj načte metadata sestavení a přidá nezbytné položky registru.
   
 Můžete spustit Regasm.exe na sestavení se nenachází v žádné adresáře a spusťte [Gacutil.exe (Global Assembly Cache Tool)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) ji přesunout do globální mezipaměti sestavení. Přesun sestavení nedojde k zneplatnění umístění položky registru, protože globální mezipaměti sestavení je vždy zkontrolován, pokud se sestavení nenajde jinde.  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 
-- [Obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md)  
+- [Obálka volatelná za běhu](../../../docs/framework/interop/runtime-callable-wrapper.md)
 - [Obálka volatelná aplikacemi COM](../../../docs/framework/interop/com-callable-wrapper.md)

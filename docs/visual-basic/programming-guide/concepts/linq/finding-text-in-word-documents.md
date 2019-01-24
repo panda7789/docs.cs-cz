@@ -1,21 +1,21 @@
 ---
-title: Vyhledávání textu v dokumentech aplikace Word (Visual Basic)
+title: Hledání textu v dokumentech aplikace Word (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: d9f9b0066a1f9b1fbe25c52f5bc23721b9e813c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ab6d337fdf20684027cef3a41fe367bbedd4ee2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643481"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720860"
 ---
-# <a name="finding-text-in-word-documents-visual-basic"></a>Vyhledávání textu v dokumentech aplikace Word (Visual Basic)
-Toto téma rozšiřuje předchozí dotazy užitečné něco udělat: najít všechny výskyty řetězce v dokumentu.  
+# <a name="finding-text-in-word-documents-visual-basic"></a>Hledání textu v dokumentech aplikace Word (Visual Basic)
+Toto téma je rozšířením předchozího dotazy něco užitečné: vyhledání všech výskytů řetězce v dokumentu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracuje WordprocessingML dokument, najít všechny výskyty určitou část textu v dokumentu. K tomu můžeme použít dotaz, který vyhledá text "Hello". Tento příklad vychází v předchozích příkladech v tomto kurzu. Nový dotaz se nazývá v komentáře v kódu níže.  
+ V tomto příkladu zpracovává dokumentu WordprocessingML, chcete-li vyhledat všechny výskyty určitou část textu v dokumentu. K tomuto účelu použijeme dotaz, který najde řetězec "Hello". Tento příklad je založen na předchozí příklady v tomto kurzu. Nový dotaz je uvedeny v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojový dokument v tomto příkladu najdete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
  Tento příklad používá třídy v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -158,7 +158,7 @@ StyleName:Code >        Console.WriteLine("Hello World")<
 StyleName:Code >Hello World<  
 ```  
   
- Hledání můžete, samozřejmě upravit tak, aby vyhledávání pro řádky s konkrétní styl. Následující dotaz hledá všechny prázdné řádky, které mají styl kódu:  
+ Hledání můžete, samozřejmě, upravte, aby prohledá řádky s konkrétním stylu. Následující dotaz hledá všechny prázdné řádky, které mají styl kódu:  
   
 ```vb  
 Imports System.IO.Packaging  
@@ -298,16 +298,16 @@ End Module
 StyleName:Code ><  
 ```  
   
- Tento příklad samozřejmě tarifech lze vylepšit v mnoha různými způsoby. Například pokud chcete hledat text jsme může použití regulárních výrazů, jsme iterovat všechny soubory aplikace Word v adresáři a tak dále.  
+ V tomto příkladu samozřejmě tarifech lze vylepšit různými způsoby. Například může používáme regulárních výrazů pro hledání textu, jsme může iterovat přes všechny soubory aplikace Word v určitém adresáři a tak dále.  
   
- Pamatujte, že v tomto příkladu přibližně také jako kdyby byly napsány jako jeden dotaz. Protože každý dotaz se implementuje opožděné, odložené způsobem, není yield každý dotaz své výsledky, dokud je vstupní dotaz. Další informace o provádění a opožděné vyhodnocení najdete v tématu [odložené provedení a opožděné vyhodnocení v technologii LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
+ Všimněte si, že v tomto příkladu provede přibližně stejně jako by byl zapsán jako jeden dotaz. Protože každý dotaz je implementovat opožděné odložené způsobem, každý dotaz nevydává jeho výsledky až do dotazu je provést iteraci. Další informace o provedení a opožděné vyhodnocení najdete v tématu [odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).  
   
 ## <a name="next-steps"></a>Další kroky  
- Následující část obsahuje informace o WordprocessingML dokumenty:  
+ Další část obsahuje další informace o dokumentů WordprocessingML:  
   
--   [Podrobnosti o Office otevřít dokumenty WordprocessingML XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
+-   [Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Manipulace se obsah v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [Refaktoring pomocí čistý funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
- [Odložené provedení a opožděné vyhodnocení v technologii LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
+- [Odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

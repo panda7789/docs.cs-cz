@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28f6bdbc3e382f82b7fdd632b9fc8c4d422629c8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e17f88cf7f0d8572e65d00d8500a1fd83aa44eeb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429729"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663911"
 ---
 # <a name="esymbolreadingpolicy-enumeration"></a>ESymbolReadingPolicy – výčet
-Obsahuje hodnoty, které nastavit zásady pro soubory databáze (PDB) program pro čtení.  
+Obsahuje hodnoty, které nastavení zásad pro čtení souborů databáze (PDB) programu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,15 +40,15 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`eSymbolReadingAlways`|Určuje, že ladicí program vždy číst soubory PDB.|  
-|`eSymbolReadingFullTrustOnly`|Určuje, že ladicí program by měl číst pouze soubory PDB, které jsou přidruženy sestavení plné důvěryhodnosti.|  
-|`eSymbolReadingNever`|Určuje, že ladicího programu nikdy číst soubory PDB.|  
+|`eSymbolReadingAlways`|Určuje, že ladicí program by měl vždy číst soubory PDB.|  
+|`eSymbolReadingFullTrustOnly`|Určuje, že by měl ladicí program číst pouze soubory PDB, které jsou spojeny s plnou důvěryhodností sestavení.|  
+|`eSymbolReadingNever`|Určuje, že ladicí program nikdy číst soubory PDB.|  
   
 ## <a name="remarks"></a>Poznámky  
- `ESymbolReadingPolicy` Výčtu se používá s [iclrdebugmanager::setsymbolreadingpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) metoda.  
+ `ESymbolReadingPolicy` Výčtu se používá s [iclrdebugmanager::setsymbolreadingpolicy –](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -56,5 +56,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

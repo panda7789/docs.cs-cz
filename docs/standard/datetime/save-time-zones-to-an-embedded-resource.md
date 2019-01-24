@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: ukládání časových pásem do vloženého prostředku'
+title: 'Postupy: Ukládání časových pásem do vloženého prostředku'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 921874e774d18751c29db495dac1bc53d10cc8ad
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c67a97193d186275e6a788f6b18bbc17c535f367
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45653338"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592871"
 ---
-# <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Postupy: ukládání časových pásem do vloženého prostředku
+# <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Postupy: Ukládání časových pásem do vloženého prostředku
 
 S ohledem na časové pásmo aplikace často vyžaduje přítomnost konkrétní časové pásmo. Ale protože dostupnost jednotlivých <xref:System.TimeZoneInfo> objekty závisí na informace uložené v registru místního systému, dokonce i běžně k dispozici časových pásem nemusí být k dispozici. Kromě toho vytvořit instanci pomocí informací o vlastní časových pásmech <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody není uložen s další informace o časovém pásmu v registru. Aby se zajistilo, že tato časová pásma jsou k dispozici, když jsou potřeba, můžete uložit pomocí serializace je a později je obnovit pomocí jejich deserializaci.
 
@@ -37,9 +37,9 @@ Kromě zdrojového souboru, který je zkompilován s aplikací lze použít něk
 
 1. Načíst existující časové pásmo nebo vytvořte nové časové pásmo.
 
-   Pokud chcete načíst existující časové pásmo, přečtěte si [postupy: přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md) a [postupy: vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md).
+   Pokud chcete načíst existující časové pásmo, najdete v článku [jak: Přístup k předdefinované objekty UTC a lokálního časového pásma](../../../docs/standard/datetime/access-utc-and-local.md) a [jak: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md).
 
-   Chcete-li vytvořit nové časové pásmo, zavoláním jednoho z přetížení <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody. Další informace najdete v tématu [postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md) a [postupy: vytváření časových pásem s pravidly úpravy](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).
+   Chcete-li vytvořit nové časové pásmo, zavoláním jednoho z přetížení <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metody. Další informace najdete v tématu [jak: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md) a [jak: Vytváření časových pásem s pravidly úpravy](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).
 
 2. Volání <xref:System.TimeZoneInfo.ToSerializedString%2A> metodu pro vytvoření řetězec obsahující časové pásmo data.
 
@@ -85,6 +85,6 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
-* [Postupy: Obnovení časových pásem z integrovaného prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
+- [Postupy: Obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)

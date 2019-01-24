@@ -2,12 +2,12 @@
 title: Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)
 ms.date: 07/20/2015
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
-ms.openlocfilehash: 46923b34fce08a9ddb8152e51a5308aa7d557ca3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 232793e63673ef51b650d8188fea5733d02fd1b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514458"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54501769"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>Syntaxe výrazu dotazu pro standardní operátory dotazu (C#)
 Některé častěji používané operátory standardního dotazu mít vyhrazené C# – klíčové slovo syntaxi jazyka, díky kterým má být volána v rámci *výrazu dotazu*. Výraz dotazu je lépe čitelný, jinou formu vyjádření dotazu než jeho *založených na volání metody* ekvivalentní. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace.  
@@ -29,9 +29,9 @@ Některé častěji používané operátory standardního dotazu mít vyhrazené
 |<xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`orderby …, … descending`<br /><br /> (Další informace najdete v tématu [klauzule orderby](../../../../csharp/language-reference/keywords/orderby-clause.md).)|  
 |<xref:System.Linq.Enumerable.Where%2A>|`where`<br /><br /> (Další informace najdete v tématu [kde klauzule](../../../../csharp/language-reference/keywords/where-clause.md).)|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Linq.Enumerable>  
-- <xref:System.Linq.Queryable>  
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+- <xref:System.Linq.Enumerable>
+- <xref:System.Linq.Queryable>
+- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klasifikace standardních operátorů dotazu podle metody provedení (C#)](../../../../csharp/programming-guide/concepts/linq/classification-of-standard-query-operators-by-manner-of-execution.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 20f65218928ee07d67ea742154469ac3cbea9241
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 163704bf9a71ceda04bdfd73f9ca676c19d8a62c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421762"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526637"
 ---
 # <a name="icordebugvariablehomegetargumentindex-method"></a>ICorDebugVariableHome::GetArgumentIndex – metoda
-Získá index argument funkce.  
+Získá index argumentu funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ HRESULT GetArgumentIndex(
   
 #### <a name="parameters"></a>Parametry  
  `pArgumentIndex`  
- [out] Ukazatel na argument index.  
+ [out] Ukazatel na index argumentu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Metoda vrátí následující hodnoty.  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`S_OK`|Volání metody, které vrátil platný argument indexu.|  
-|`E_FAIL`|Aktuální [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance představuje místní proměnné.|  
+|`S_OK`|Volání metody, které vrátí index platný argument.|  
+|`E_FAIL`|Aktuální [icordebugvariablehome –](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance představuje místní proměnné.|  
   
 ## <a name="remarks"></a>Poznámky  
- Argument indexu lze načíst metadata pro tento argument.  
+ Argument index je možné načíst metadata pro tento argument.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +59,5 @@ HRESULT GetArgumentIndex(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugVariableHome – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

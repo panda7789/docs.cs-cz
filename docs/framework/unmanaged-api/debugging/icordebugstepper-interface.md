@@ -1,5 +1,5 @@
 ---
-title: ICorDebugStepper Interface1
+title: ICorDebugStepper – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugStepper
@@ -16,47 +16,47 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 339b823e5e9f38ffd175c79e379e28ccc3565c11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1f796e665a4e403d2d2b5a15837dd8bb8bf47ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423283"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631358"
 ---
-# <a name="icordebugstepper-interface1"></a>ICorDebugStepper Interface1
+# <a name="icordebugstepper-interface1"></a>ICorDebugStepper – rozhraní 1
 Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího programu, slouží jako identifikátor mezi vydáním a dokončením příkazu a umožňuje krok zrušit.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Deactivate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md)|To způsobí, že `ICorDebugStepper` zrušení poslední krok příkazu přijala.|  
+|[Deactivate – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md)|To způsobí, že `ICorDebugStepper` zrušení poslední krok příkazu získala.|  
 |[IsActive – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-isactive-method.md)|Získá hodnotu, která určuje, jestli to `ICorDebugStepper` právě probíhá krok.|  
-|[SetInterceptMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md)|Nastaví CorDebugIntercept hodnotu, která určuje typy kód, který se stupeň do.|  
-|[SetRangeIL – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md)|Nastaví hodnotu určující, zda volá, aby se [icordebugstepper::steprange –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) předat hodnoty argumentu relativně k nativní kód nebo kód (MSIL intermediate language) Microsoft metody, která je se provedl.|  
-|[SetUnmappedStopMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md)|Nastaví CorDebugUnmappedStop hodnotu, která určuje typ nenamapovaný kódu, ve kterém se zastaví provádění.|  
-|[Step – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md)|To způsobí, že `ICorDebugStepper` jedním krokem přes jeho obsahující vláken a volitelně můžete do pokračovat jedním procházení funkce, které se nazývají vlákna.|  
-|[StepOut – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-stepout-method.md)|To způsobí, že `ICorDebugStepper` krokování prostřednictvím jeho obsahující vláken a dokončení v případě aktuální rámec vrátí prvek na snímek, volání.|  
-|[StepRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)|To způsobí, že `ICorDebugStepper` jedním krokem přes jeho obsahující vláken a vrátit, když dorazí do kódu nad rámec poslední zadaný rozsah.|  
+|[SetInterceptMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md)|Cordebugintercept – hodnota, která určuje typy kódu, které jsou vkročili nastaví.|  
+|[SetRangeIL – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md)|Nastaví hodnotu určující, zda volání [icordebugstepper::steprange –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) předání hodnoty argumentu vzhledem k nativní kód nebo kód Microsoft intermediate language (MSIL) metody, která je právě prošli.|  
+|[SetUnmappedStopMask – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md)|Nastaví hodnotu cordebugunmappedstop –, který určuje typ nenamapované kódu, ve kterém se zastaví provádění.|  
+|[Step – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md)|To způsobí, že `ICorDebugStepper` jedním krokem prostřednictvím jeho nadřazeného vlákna a volitelně do pokračujte v jedné krokování funkcí, které jsou volány vlákna.|  
+|[StepOut – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-stepout-method.md)|To způsobí, že `ICorDebugStepper` krokování jeho nadřazeného vlákna a v případě kompletní aktuální rámec vrátí řízení volající rámec.|  
+|[StepRange – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)|To způsobí, že `ICorDebugStepper` jedním krokem prostřednictvím jeho nadřazeného vlákna a vrátit se při dosažení kód za poslední zadaný rozsah.|  
   
 ## <a name="remarks"></a>Poznámky  
  `ICorDebugStepper` Rozhraní slouží k těmto účelům:  
   
--   Jedná jako identifikátor mezi krok příkaz, který je vydán a tento příkaz dokončit.  
+-   Funguje jako identifikátor mezi kroku příkaz, který je vydaný a dokončení tohoto příkazu.  
   
--   Poskytuje centrální rozhraní pro zapouzdření všechny krokování, které lze provést.  
+-   Poskytuje centrální rozhraní k zapouzdření všech krokování, které lze provést.  
   
--   Poskytuje způsob, jak předčasně zrušit taktování operaci.  
+-   Poskytuje způsob, jak předčasně krokování operaci zrušit.  
   
- Může existovat více než jeden krokovač na vlákno. Například zarážky narazit při krokování přes funkci a uživatel může chtít spustit operaci nového taktování uvnitř této funkce. Je ladicího programu určit, jak tuto situaci můžete vyřešit. Ladicí program chtít zrušte původní taktování operaci nebo vnořit těchto dvou operací. `ICorDebugStepper` Rozhraní podporuje obě možnosti.  
+ Může existovat více než jeden krokovač na vlákno. Například zarážky narazit při krokování přes funkci a uživatel chtít spustit nový krokování operaci uvnitř této funkce. Záleží ladicí program určit, jak tuto situaci. Ladicí program může chtít zrušit původní krokování nebo vnořené dvě operace. `ICorDebugStepper` Rozhraní podporuje obě možnosti.  
   
- Je-li krokovač může migrovat mezi vlákny, pokud modul CLR (CLR) zavolá cross-threaded, zařazené.  
+ Pokud modul CLR (CLR) provede volání více vláken, zařazené krokovač migrovat mezi vlákny.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -64,5 +64,5 @@ Představuje krok ve spuštění kódu, který je prováděn pomocí ladicího p
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

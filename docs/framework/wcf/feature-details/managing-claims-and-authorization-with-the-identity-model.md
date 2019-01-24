@@ -8,174 +8,174 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: 84f4485a85f83e910cc75b04282e1ad04aee72c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f9881cd1a63e00aaf414f93c91885e57ea0b145
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33497023"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540559"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>Správa deklarací a autorizace s modelem identity
-Autorizace je proces zjišťování entit, které mají oprávnění změnit, zobrazení nebo jinak přístup k prostředkům počítače. Například v obchodu, pouze správci mohou mít přístup k soubory své zaměstnance. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus vám umožňuje řídit autorizaci s použitím stávající společné jazykové konstrukty runtime (CLR). Druhá je model na základě deklarace označuje jako *modelu Identity*. WCF pomocí modelu Identity vytvoří deklarace identity ze příchozí zprávy; Třídy modelu identity lze rozšířit pro podporu nových typů deklarací identity pro schémata autorizace. Toto téma obsahuje přehled hlavní koncepty programování modelu Identity funkce, jakož i seznam nejdůležitější tříd, které používá funkci.  
+Autorizace je proces určování entit, které mají oprávnění změnit, zobrazit nebo jinak přístupu k prostředkům počítače. Například ve firmě, pouze správci mohou bude moct získat přístup k souborům svým zaměstnancům. Windows Communication Foundation (WCF) podporuje dva mechanismy pro provádění zpracování autorizace. První mechanismus umožňuje řídit autorizaci s použitím existujícího běžné konstrukce jazyka runtime (CLR). Druhý je známý jako model založené na deklaracích *modelem Identity*. WCF používá Model identit k vytvoření deklarace identity z příchozí zprávy. Třídy modelu identity je možné rozšířit na podporu nových typů deklarací identity pro vlastní autorizace schémata. Toto téma obsahuje přehled hlavní koncepty programování funkce modelu identit, jakož i seznam vašich nejdůležitějších tříd, které používá funkci.  
   
-## <a name="identity-model-scenarios"></a>Scénáře modelu identity  
- Následující scénáře představují použití modelu Identity.  
+## <a name="identity-model-scenarios"></a>Scénáře modelu identit  
+ Následující scénáře představují pomocí modelu identit.  
   
-### <a name="scenario-1-supporting-identity-role-and-group-claims"></a>Scénář 1: Podpora identitu, Role a deklarace skupiny  
- Uživatelé posílat zprávy k webové službě. Požadavky řízení přístupu webové služby pomocí identity, role nebo skupiny. Odesílatel zprávy je namapována na sadu role nebo skupiny. Role nebo skupiny informace slouží k provádění kontrol přístupu.  
+### <a name="scenario-1-supporting-identity-role-and-group-claims"></a>Scénář 1: Podpora identit, Role a deklarace skupiny  
+ Uživatelé odesílat zprávy do webové služby. Požadavky na řízení přístupu webové služby pomocí identit, role nebo skupiny. Odesílatel zprávy je namapována na sadu role nebo skupiny. Role nebo skupiny informace slouží k provádění kontroly přístupu.  
   
-### <a name="scenario-2-supporting-rich-claims"></a>Scénář 2: Podpora deklarací identity formátováním  
- Uživatelé posílat zprávy k webové službě. Požadavky řízení přístupu webové služby vyžadují model širší než identit, role nebo skupiny. Webová služba určuje, zda daný uživatel má přístup k určitému prostředku chráněné pomocí bohaté modelu na základě deklarace. Jeden uživatel může být například moct číst konkrétní informace, jako jsou informace o mzda, které jiní uživatelé nemají přístup k.  
+### <a name="scenario-2-supporting-rich-claims"></a>Scénář 2: Podpora deklarací identity ve formátu RTF  
+ Uživatelé odesílat zprávy do webové služby. Požadavky na řízení přístupu webové služby vyžadují modelu širší než identit, role nebo skupiny. Webová služba určuje, zda daný uživatel má přístup k určitému prostředku chráněné pomocí bohatých modelu založené na deklaracích. Jeden uživatel může být například moct číst konkrétní informace, například informace o mzda, který ostatní uživatelé nebudou mít přístup k.  
   
-### <a name="scenario-3-mapping-disparate-claims"></a>Scénář 3: Mapování různorodých deklarace identity  
- Uživatel odešle zprávu do webové služby. Uživatel může zadat své přihlašovací údaje do několika různými způsoby: certifikát X.509, název token uživatele nebo token protokolu Kerberos. Webová služba je nutné provést kontroly řízení přístupu stejným způsobem, bez ohledu na typ přihlašovacích údajů uživatele. Pokud další pověření typy jsou podporovány v čase, by se měl systém vyvíjet odpovídajícím způsobem.  
+### <a name="scenario-3-mapping-disparate-claims"></a>Scénář 3: Mapování různorodých deklarací identity  
+ Uživatel odešle zprávu do webové služby. Uživatel může zadat své přihlašovací údaje v několika různými způsoby: Certifikát X.509, název token uživatele nebo token protokolu Kerberos. Webová služba je nutné provést kontroly řízení přístupu stejným způsobem bez ohledu na typ přihlašovacích údajů uživatele. Pokud další pověření typy jsou podporovány v čase, by měl systém vyvíjí odpovídajícím způsobem.  
   
 ### <a name="scenario-4-determining-access-to-multiple-resources"></a>Scénář 4: Určení přístup k více prostředkům  
- Webová služba se pokusí získat přístup k více prostředkům. Služba Určuje, které chráněným prostředkům daného uživatele tak, že porovnáte deklarace identity přidružené k uživateli s deklaracemi identity má přístup k požadované pro přístup k prostředku.  
+ Webová služba se pokusí o přístup k více prostředkům. Služba Určuje určitý uživatel má přístup k porovnáním deklarací identity přidružené k uživateli se deklarace identity, která chránila prostředky vyžadované pro přístup k prostředku.  
   
-## <a name="identity-model-terms"></a>Podmínky modelu identity  
- V následujícím seznamu definuje klíčových termínů používaných k popisu koncepty modelu Identity.  
+## <a name="identity-model-terms"></a>Podmínky modelu identit  
+ V následujícím seznamu definuje klíčové pojmy používané k popisu koncepty modelu identit.  
   
  Zásady autorizace  
- Sada pravidel pro mapování sadu deklarací identity vstupní sadu deklarací identity výstup. Vyhodnocování výsledků zásad autorizace v deklarace identity se přidává do kontextu vyhodnocení a následně autorizační kontext sady.  
+ Sada pravidel pro mapování sadu vstupních deklarací identity k sadě výstupní deklarace identit. Vyhodnocení výsledků zásad autorizace v deklarace identity se přidávají do kontext vyhodnocení a následně autorizační kontext sady.  
   
  Autorizační kontext  
- Sada sad deklarací identity a nula nebo více vlastností. Výsledek vyhodnocení jedné nebo více zásad autorizace.  
+ Sada sad deklarací identity a nula nebo více vlastností. Výsledek vyhodnocení výrazu jedné nebo více zásad autorizace.  
   
  Deklarace  
- Kombinace typ deklarace identity, práva a hodnotu.  
+ Kombinace typu deklarace identity, vpravo, a hodnotu.  
   
- Sady deklarací.  
- Sadu deklarací identity vystavený konkrétní vystavitele.  
+ Sada deklarací identity  
+ Sadu deklarací identity vystavených konkrétní vystavitelem.  
   
  Typ deklarace identity  
- Typ deklarace identity. Vlastnosti jsou deklarace identity definované rozhraní API modelu Identity <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> třídy. Příklady typů deklarací identity poskytované systémem <xref:System.IdentityModel.Claims.ClaimTypes.Dns%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Email%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Hash%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Sid%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Spn%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.System%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Uri%2A>, a <xref:System.IdentityModel.Claims.ClaimTypes.X500DistinguishedName%2A>.  
+ Typ deklarace identity. Vlastnosti jsou deklarace identity definované rozhraní API modelu Identity <xref:System.IdentityModel.Claims.Claim.ClaimType%2A> třídy. Příklady typů deklarací poskytovaných systémem <xref:System.IdentityModel.Claims.ClaimTypes.Dns%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Email%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Hash%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Name%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Rsa%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Sid%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Spn%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.System%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Thumbprint%2A>, <xref:System.IdentityModel.Claims.ClaimTypes.Uri%2A>, a <xref:System.IdentityModel.Claims.ClaimTypes.X500DistinguishedName%2A>.  
   
- kontext vyhodnocení  
- Kontext, ve kterém je vyhodnocena zásad autorizace. Obsahuje sady vlastností a deklarace identity. Po dokončení testování se změní na základě kontextu autorizace.  
+ Kontext vyhodnocení  
+ Kontext, ve kterém je vyhodnocen zásad autorizace. Obsahuje vlastnosti a deklarace identity sady. Po dokončení testování se změní na základě autorizační kontext.  
   
  Deklarace identity  
- Deklarace identity, jehož práva je identita.  
+ Deklarace identity, jehož doprava je identita.  
   
  Vystavitel  
- Sada deklarací identity, která obsahuje alespoň jedna deklarace identity a považuje se vystavily jiné sady deklarací.  
+ Sada deklarací identity, který obsahuje alespoň jednu deklaraci identity a se považuje za vydali další sadu deklarací.  
   
  Vlastnosti  
- Sada informace spojené s kontext vyhodnocení nebo autorizační kontext.  
+ Sada informace související s kontext vyhodnocení nebo autorizační kontext.  
   
  Chráněného prostředku  
- V systému, který lze použít pouze, něco přístupné, nebo jinak s nimi manipulovat, pokud nejprve splnění určitých požadavků.  
+ Něco v systému, který jde použít jenom, získat přístup nebo jinak manipulovat, pokud nejprve splnění určitých požadavků.  
   
- Vpravo  
- Funkce na prostředku. Práva definované rozhraní API modelu Identity jsou vlastnosti <xref:System.IdentityModel.Claims.Rights> třídy. Příklady poskytované systémem rights <xref:System.IdentityModel.Claims.Rights.Identity%2A> a <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>.  
+ Pravé  
+ Funkce na prostředku. Definice rozhraní API modelu Identity práv jsou vlastnosti <xref:System.IdentityModel.Claims.Rights> třídy. Příklady poskytované systémem rights <xref:System.IdentityModel.Claims.Rights.Identity%2A> a <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>.  
   
  Hodnota  
- Něco, za které je požadováno doprava.  
+ Něco, nad tím, které je požadováno práva.  
   
-## <a name="claims"></a>Deklarace identity  
- Modelem Identity je systém založené na deklaracích identity. Deklarace identity popisují možnosti související s některé entity v systému, často uživatel tohoto systému. Obsahuje sadu deklarací spojené s danou entitu můžete představit jako klíč. Konkrétních deklarací identit definovat obrazec tomuto klíči, podobně jako fyzický klíč použitý k otevření zámek v dveří. Deklarace identity se používají k získání přístupu k prostředkům. Přístup k danému chráněného prostředku je určen podle porovnávání deklarací identity potřebné pro přístup k prostředku s deklaracemi identity přidružené k přístup při pokusu entity.  
+## <a name="claims"></a>deklarace identity  
+ Model identit je systém založené na deklaracích. Deklarace identity popisují možnosti přidružené nějaké entity v systému, často uživatele systému. Sadu deklarací identity přidružené k dané entitě můžete představit jako klíč. Konkrétních deklarací identit definovat tvar tohoto klíče, podobně jako na fyzických klíč použitý k otevření zámku v dveří. Deklarace identity se používají k získání přístupu k prostředkům. Přístup k dané chráněnému prostředku se určuje podle porovnávání deklarací potřebné pro přístup k tomuto prostředku díky deklaracím identity přidružené k pokusu o přístup entity.  
   
- Deklarace identity je výraz práva s ohledem na konkrétní hodnotu. Právo může být něco jako "Číst", "Zápisu" nebo "Spustit". Hodnota může být databáze, soubor, poštovní schránku nebo vlastnost. Deklarace identity také mít typ deklarace identity. Kombinace typ deklarace identity a pravé poskytuje mechanismus pro zadání možnosti s ohledem na hodnotu. Deklarace typu "Soubor" vpravo "čtení" přes hodnotu "Biography.doc", například označuje, že entita, ke které taková deklarace identity je přidružena má přístup pro čtení do souboru Biography.doc. Deklarace identity typu "Název", s vpravo "PossessProperty" nad hodnotou "Martin" označuje, zda má entit, ke které taková deklarace identity přidružena vlastnost Name s hodnotou "Martin".  
+ Deklarace identity je výraz práva s ohledem na určitou hodnotu. Právo může být něco jako "Čtení", "Write" nebo "Spustit". Hodnota může být databáze, soubor, poštovní schránku nebo vlastnost. Deklarace také mít typ deklarace identity. Kombinace typu deklarace identity a pravá poskytuje mechanismus pro určení možnosti s ohledem na hodnoty. Deklarace typu "File" vpravo "čtení" hodnotou "Biography.doc", například znamená, že entity, které takové deklarace identity je přidružené má oprávnění ke čtení souboru Biography.doc. Deklarace typu "Name", s správné "PossessProperty" hodnotou "Novák" označuje, že entity, které takové deklarace identity je přidružené má vlastnost Name s hodnotou "Novák".  
   
- I když se různé typy deklarací identity a práva jsou definované jako součást modelu Identity, systém je rozšiřitelný, což různých systémů, vytváření modelu Identity infrastruktuře, můžete definovat další typy a práv podle potřeby.  
+ I když různé typy deklarací identity a práva jsou definované jako součást modelu Identity, systém je rozšiřitelný, umožňuje různé systémy vytváření nad infrastrukturou Identity Model, chcete-li definovat typy další deklarace identity a přístupových práv podle potřeby.  
   
 ### <a name="identity-claims"></a>Deklarace identity  
- Jedno konkrétní právo je identity. Deklarace identity, které měl tato práva proveďte příkaz o identitě entity. Například deklarace identity typu "hlavní název uživatele" (UPN) s hodnotou "someone@example.com" a napravo od Identity označuje konkrétní identity v konkrétní doméně.  
+ Jedno konkrétní právo je, že identity. Deklarace identity, které se mají tato práva provést příkaz o identitě entity. Například, deklarace identity typu "hlavní název uživatele" (UPN) s hodnotou "someone@example.com" a vpravo od Identity označuje konkrétní identity v určité doméně.  
   
 #### <a name="system-identity-claim"></a>Deklarace Identity systému  
- Modelem Identity definuje jednu deklaraci identity: systému. Deklarace identity systému označuje, že je entita aktuální aplikace nebo systému.  
+ Identity Model definuje jedna deklarace identity: Systém. Deklarace identity systému označuje, že entita je aktuální aplikace nebo systému.  
   
-### <a name="sets-of-claims"></a>Sady deklarací identity  
- Model deklarace identity, které reprezentuje identitu je důležité, protože deklarace identity jsou vždy vydané některé entity v systému, i když je dané entity nakonec některé konceptu "vlastní". Deklarace identity jsou seskupeny dohromady jako sada a má každá sada vystavitele. Vystavitele je právě sadu deklarací identity. Nakonec musí končit rekurzivní relaci a všechny deklarace identity, že nastavení může být vlastní vystavitele.  
+### <a name="sets-of-claims"></a>Sadu deklarací identity  
+ Model deklarací identity, které reprezentuje identitu je důležité, protože deklarace identity jsou vždy vystavované některé entity v systému, i v případě, že dané entitě v konečném důsledku je některé pojmu "vlastní". Deklarace identity jsou seskupeny jako sada a má každá sada vystavitele. Vystavitele je právě sadu deklarací identity. Nakonec musí být ukončen rekurzivní relaci a všechny deklarace identity, že sada může být vlastní vystavitele.  
   
- Následující obrázek znázorňuje příklad tři sady deklarací, kde má jedna sada deklarací identity, jako jeho vydavatel jinou sadu deklarací identity, která naopak má systém sady jako vystavitele deklarací identity. Proto sady deklarací identity tvoří hierarchii, která může být nahodile hloubkové.  
+ Následující obrázek znázorňuje příklad tři sady deklarací identity, kde jednu sadu deklarací identity má, jako její Vystavitel jinou sadu deklarací identity, která naopak má systém sadu jako její Vystavitel deklarací. Proto sady deklarací, které tvoří hierarchii, která může být libovolné hloubky.  
   
- ![Správa deklarací a autorizace](../../../../docs/framework/wcf/feature-details/media/claimshierarchy.gif "claimshierarchy")  
+ ![Správa deklarací identity a autorizace](../../../../docs/framework/wcf/feature-details/media/claimshierarchy.gif "claimshierarchy")  
   
- Několik sad deklarací identity může mít stejné vydávající deklarace sady, jak je znázorněno na následujícím obrázku.  
+ Několik sad deklarací, které mohou mít stejný vydávání deklarací identity sady, jak je znázorněno na následujícím obrázku.  
   
- ![Správa deklarací a autorizace](../../../../docs/framework/wcf/feature-details/media/multiplesetsofclaims.gif "multiplesetsofclaims")  
+ ![Správa deklarací identity a autorizace](../../../../docs/framework/wcf/feature-details/media/multiplesetsofclaims.gif "multiplesetsofclaims")  
   
- S výjimkou sady deklarací, který je jeho vlastní vystavitele modelem Identity neposkytuje žádné podporu pro sady deklarací identity a vytvořit smyčku. Proto mohou nikdy nastat situace, kdy vydání sady deklarací identity A sadou deklarací identity B, který je sám vystavený sady deklarací identity A. Navíc modelem Identity neposkytuje žádné podporu pro sady deklarací identity tak, aby měl více vystavitelů. Pokud dva nebo více vystavitelů musí vystavit danou sadu deklarací identity, pak musíte použít několik sad deklarací identity, každý obsahující stejné deklarace identity, ale s jinou vystavitelů.  
+ S výjimkou sadu deklarací identity, která je vlastní vystavitele neposkytuje modelem Identity podporuje deklarace identity sad a vytvoří smyčku. Proto nastat situace, ve kterém sada deklarací identity A vydává sady deklarací B, která sama o sobě vydala sadu deklarací identity A, můžete nikdy. Navíc Model identit neposkytuje podporuje sady deklarací, aby více vystavitelů. Pokud dva nebo více vystavitelů musíte vydat danou sadu deklarací identity, pak je nutné použít více sad deklarací identity, každá obsahující deklarace pro stejný, ale s jinou vystavitelů.  
   
-### <a name="the-origin-of-claims"></a>Původ deklarace identity  
- Deklarace identity mohou pocházet z různých zdrojů. Jeden společný zdroj deklarací identity je přihlašovací údaje předkládaných uživatelem, například jako součást zprávy odeslané do webové služby. Systém ověří taková deklarace identity a se stávají součástí sadu deklarací identity přidružené k uživateli. Zdroje deklarací identity, včetně operačního systému, síťových protokolů, běhové prostředí nebo aplikace mohou být také dalších komponent systému. Vzdálené kromě toho může být zdrojem deklarací identity.  
+### <a name="the-origin-of-claims"></a>Zdroje deklarací identity  
+ Deklarace identity můžou pocházet z různých zdrojů. Běžné příčiny deklarace identity se přihlašovací údaje předkládaných uživatelem, například jako součást zpráva odeslaná do webové služby. Systém ověří tyto deklarace identity a stanou součástí sadu deklarací identity přidružené k uživateli. Zdroje deklarací identity, včetně operačního systému, zásobníku sítě, běhové prostředí nebo aplikace může být také dalších komponent systému. Vzdálené kromě toho může být zdrojem deklarací identity.  
   
 ### <a name="authorization-policies"></a>Zásady autorizace  
- V modelu Identity deklarace identity jsou generovány jako součást procesu hodnocení zásad autorizace. Zásad autorizace prozkoumá (pravděpodobně prázdná) sadu existující deklarací identity a rozhodnout, přidejte další deklarace identity založené na deklaracích identity, které jsou již existuje a další informace k dispozici. To poskytuje základ pro mapování mezi deklarací identity. Existenci nebo neexistenci těchto deklarací identity v systému vliv chování zásad autorizace s ohledem na tom, jestli ho přidá další deklarace identity.  
+ V modelu Identity jako součást procesu hodnocení zásady autorizace pro generování deklarací identity. Zásad autorizace zkontroluje sada (pravděpodobně prázdná) existující deklarace identity a můžete přidat další deklarace identity založené na deklaracích identity, které jsou už k dispozici a další informace k dispozici. To poskytuje základ pro mapování mezi deklarací identity. Přítomnosti nebo nepřítomnosti deklarací identity v systému ovlivní chování zásad autorizace s ohledem na tom, jestli ho přidá další deklarace identity.  
   
- Například má zásady autorizace pro přístup k databázi, která zahrnuje birthdates různých entit pomocí systému. Zásady autorizace používá tyto informace k přidání deklaraci identity "Over18" do kontextu. Všimněte si, že tuto deklaraci Over18 nesmí vyzradit žádné informace o entita, než na skutečnost, že je více než 18 let. Všimněte si, že výklad deklarace identity, Over18, závisí na pochopení Sémantika této deklarace identity. Zásady autorizace, který přidán deklarace rozumí těchto sémantiku na určité úrovni. Kód, který je následně prozkoumá deklarace identity, které jsou výsledkem vyhodnocení zásad také být informováni o těchto sémantiku.  
+ Například zásady autorizace pro má přístup k databázi, která zahrnuje birthdates různých entit pomocí systému. Zásady autorizace používá tyto informace přidat deklaraci identity "Over18" v kontextu. Všimněte si, že tato deklarace identity Over18 neposkytují žádné informace o entitě, než je skutečnost, že je za 18 let. Všimněte si, že výklad deklarace identity "Over18" závisí na principy sémantiku tuto žádost. Zásady autorizace, který přidá deklaraci identity rozumí těchto sémantiku na určité úrovni. Kód, který se následně prozkoumá deklarace identity, které jsou výsledkem vyhodnocení zásad se také informace o těchto sémantiku.  
   
- Zásady daného autorizace může vyžadovat vícekrát ho možné vyhodnotit, protože, jako ostatní zásady autorizace přidání deklarací identity, zásad autorizace může přidat ještě více deklarací identity. Modelu identity je určena pro pokračovat vyhodnocení, dokud žádné další deklarace identity se nepřidají do kontextu podle těchto zásad autorizace v platnost. Toto trvalé hodnocení zásady autorizace zabrání požadavku k vynucení pořadí žádné konkrétní vyhodnocení s ohledem na zásady autorizace; může být vyhodnocen v libovolném pořadí. Například pokud zásady X deklarace identity Z přidá pouze, pokud zásady A přidala B deklarace identity, pak pokud nejprve vyhodnotí X ho původně nepřidá Z deklarací identity. A následně je vyhodnocena a přidá X B. deklarace identity je následně vyhodnocovaná ještě jednou a tentokrát přidá Z deklarací identity.  
+ Zásady autorizace pro dané může vyžadovat více než jednou ji možné vyhodnotit, protože jako ostatní zásady autorizace přidání deklarace identity, tuto zásadu autorizace může přidat ještě více deklarací identity. Model identit slouží k vyhodnocení pokračovat, dokud nebudou přidány žádné další deklarace identity ke kontextu podle těchto zásad autorizace v platnost. Tuto trvalou hodnocení zásad autorizace zabrání požadavku k vynucení pořadí žádné konkrétní vyhodnocení s ohledem na zásady autorizace; mohou být vyhodnoceny v libovolném pořadí. Například pokud zásada X deklarace identity Z přidá pouze, pokud zásady A přidal B deklarace identity, pak pokud X je vyhodnocen jako první, je zpočátku nepřidá Z deklarací identity. A následně je vyhodnocen a přidá X B. deklarace identity se pak vyhodnocuje podruhé a tentokrát ho přidá Z deklarací identity.  
   
- Daný systém může mít mnoho zásady autorizace v platnost.  
+ Daný systém může mít mnoho zásad autorizace v platnost.  
   
-### <a name="a-key-making-machine"></a>Provádění klíč počítače  
- Vyhodnocení skupinu zásady přidružené autorizace je jako počítač, který umožňuje klíče. Zásady autorizace se každý vyhodnotit a jsou generovány sady deklarací identity, vytváření tvaru klíče. Po dokončení tvaru klíče může sloužit k pokusu o otevření některé zámky. Tvar klíče jsou uloženy v "autorizace kontextu," vytvořený serverem Správce autorizací.  
+### <a name="a-key-making-machine"></a>Vytváření klíč počítače  
+ Vyhodnocení skupiny zásad přidružených autorizace je například počítač, který vytvoří klíče. Zásady autorizace se každý vyhodnocen a sady deklarací, které jsou generovány, vytvářejí tvar klíče. Po dokončení tvar klíč lze použít k pokusu o otevření některé zámky. Tvar klíče jsou uloženy v "kontextu autorizace,", který je vytvořil Správce autorizací.  
   
 ### <a name="authorization-context"></a>Autorizační kontext  
- Správce autorizací vyhodnotí různé zásady autorizace, jak je popsáno a výsledkem je kontextu autorizace (sada sady deklarací a některé vlastnosti). Autorizační kontext můžete prověřit, abyste zjistili, jaké deklarace identity se nacházejí v tomto kontextu vztahy mezi tyto různé deklarace identity (například vydávající sady deklarací) a nakonec je porovnán některé požadavky, musí splňovat pro přístup prostředek.  
+ Správce autorizací vyhodnotí různé zásady autorizace, jak je popsáno a výsledkem je objekt context autorizace (sadu sady deklarací a některé vlastnosti). Autorizační kontext se dají prozkoumat a určit, jaké deklarace identity jsou k dispozici v tomto kontextu, vztahy mezi těmito různých deklarací (například vydávající sadě deklarací), takže v konečném důsledku je porovnán některé požadavky musí splňovat pro přístup prostředek.  
   
-### <a name="locks"></a>Zámky.  
- Pokud autorizační kontext (sadu deklarací identity) je klíč, požadavky, které je nutné splnit k udělení přístupu k určitému chráněného prostředku tvoří uzamčení, které se musí vejít klíč. Modelu identity není formalizovat, jak tyto požadavky jsou vyjádřeny ale, vzhledem k povaze systému, na základě deklarací identity představují-porovnávání deklarací identity ve autorizační kontext proti některé sady deklarací identity, vyžaduje.  
+### <a name="locks"></a>Zámky  
+ Pokud objekt context autorizace (sadu deklarací identity) je klíč, požadavky, které pokud chcete udělit přístup pro konkrétní chráněný prostředek, musí být splněny tvoří zámek, který klíč se musí vejít. Model identit není formalizujte, jak jsou vyjádřeny tyto požadavky, ale, vzhledem k povaze systému, na základě deklarace identity zahrnují porovnávání deklarací identity v kontextu autorizace některé sady požadované deklarace identit.  
   
 ### <a name="a-recap"></a>Rekapitulace  
- Identity Model je založen kolem koncept deklarací identity. Deklarace identity jsou seskupené do sad a agregovat do autorizační kontext. Autorizační kontext obsahuje sadu deklarací identity a je výsledkem vyhodnocení jeden nebo více zásad autorizace, které jsou přidružené Správce autorizací. Tyto deklarace identity, že nastaví můžete prověřit, abyste zjistili, pokud byly splněny požadavky na přístup. Následující obrázek znázorňuje vztahy mezi tyto různé koncepty modelu Identity.  
+ Identity Model je založený kolem koncepce deklarací identity. Deklarace identity jsou seskupeny do sad a agregovat v kontextu autorizace. Autorizační kontext obsahuje sadu deklarací identity a je výsledek vyhodnocení výrazu nejméně jedny zásady autorizace přidružené Správce autorizací. Tyto deklarací sady můžete prověřit, abyste zjistili, pokud byly splněny požadavky na přístup. Následující obrázek znázorňuje vztahy mezi tyto různé koncepty modelu identit.  
   
- ![Správa deklarací a autorizace](../../../../docs/framework/wcf/feature-details/media/xsi-recap.gif "xsi_recap")  
+ ![Správa deklarací identity a autorizace](../../../../docs/framework/wcf/feature-details/media/xsi-recap.gif "xsi_recap")  
   
-## <a name="wcf-and-identity-model"></a>WCF a modelu Identity  
- WCF používá infrastrukturu modelu Identity jako základ pro provádění autorizace. Ve službě WCF <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> třída umožňuje určit *autorizace* zásady jako součást služby. Tyto zásady autorizace se označují jako *zásady autorizace externí*, a mohou provádět zpracování deklarace identity založené na místní zásady nebo interakci s vzdálené služby. Správce autorizací, reprezentována <xref:System.ServiceModel.ServiceAuthorizationManager> třída vyhodnotí zásady autorizace externí společně s zásady autorizace, které rozpoznají různých přihlašovacích údajů typy (tokeny) a naplní, co se nazývá  *autorizační kontext* s deklaracemi identity vhodné pro příchozí zprávy. Autorizační kontext je reprezentována <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
+## <a name="wcf-and-identity-model"></a>WCF a modelem Identity  
+ WCF používá infrastrukturu identit modelu jako základ pro autorizaci. Ve službě WCF <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> třída umožňuje určit *autorizace* zásady jako součást služby. Tyto zásady autorizace se označují jako *externí autorizační zásady*, a mohou provádět zpracování deklarace identity založené na místní zásady nebo interakci se vzdálenou službou. Správce autorizací, reprezentovaný <xref:System.ServiceModel.ServiceAuthorizationManager> třídy vyhodnotí zásady autorizace externí spolu s zásady autorizace, které rozpoznají různých přihlašovacích údajů typy (tokeny) a naplní, co je volána  *autorizační kontext* díky deklaracím identity pro příchozí zprávy. Autorizační kontext je reprezentována <xref:System.IdentityModel.Policy.AuthorizationContext> třídy.  
   
-## <a name="identity-model-programming"></a>Identity modelu programování  
- Následující tabulka popisuje model objektu použít k rozšíření modelu Identity programu. Všechny tyto třídy existovat buď <xref:System.IdentityModel.Policy> nebo <xref:System.IdentityModel.Claims> obory názvů.  
+## <a name="identity-model-programming"></a>Model programování identity  
+ Následující tabulka popisuje objektový model pro rozšíření modelu identit. Všechny tyto třídy existovat v jednom <xref:System.IdentityModel.Policy> nebo <xref:System.IdentityModel.Claims> obory názvů.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|Součást autorizace|Třídu modelu Identity, který implementuje <xref:System.IdentityModel.Policy.IAuthorizationComponent> rozhraní.|  
-|<xref:System.IdentityModel.Policy.IAuthorizationComponent>|Rozhraní, které poskytuje vlastnosti jeden řetězec jen pro čtení: ID. Hodnota této vlastnosti je jedinečný pro každou instanci v systému, které toto rozhraní implementuje.|  
-|<xref:System.IdentityModel.Policy.AuthorizationContext>|*Autorizace součást* obsahující sadu `ClaimSet` instance nula nebo více vlastností; výsledek vyhodnocení jedné nebo více zásad autorizace.|  
-|<xref:System.IdentityModel.Claims.Claim>|Kombinace typ deklarace identity, práva a hodnotu. Typ deklarace identity jsou omezené části práva a hodnotu.|  
-|<xref:System.IdentityModel.Claims.ClaimSet>|Abstraktní základní třídu. Kolekce `Claim` instance.|  
-|<xref:System.IdentityModel.Claims.DefaultClaimSet>|Zapečetěné třídy. Implementace `ClaimSet` třídy.|  
-|<xref:System.IdentityModel.Policy.EvaluationContext>|Abstraktní základní třídu. Byl předán zásad autorizace během hodnocení zásad.|  
-|<xref:System.IdentityModel.Policy.IAuthorizationPolicy>|Rozhraní odvozené z `IAuthorizationComponent` a implementované třídy zásad autorizace.|  
+|Komponenta autorizace|Třídu s modelem Identity, který implementuje <xref:System.IdentityModel.Policy.IAuthorizationComponent> rozhraní.|  
+|<xref:System.IdentityModel.Policy.IAuthorizationComponent>|Rozhraní, která poskytuje jeden řetězec jen pro čtení vlastnosti: Id. Hodnota této vlastnosti je jedinečný pro každou instanci v systému, který implementuje toto rozhraní.|  
+|<xref:System.IdentityModel.Policy.AuthorizationContext>|*Autorizace součástí* , který obsahuje sadu `ClaimSet` instancí se nula nebo více vlastností, výsledek vyhodnocení výrazu jedné nebo více zásad autorizace.|  
+|<xref:System.IdentityModel.Claims.Claim>|Kombinace typ deklarace identity, vpravo a hodnotu. Typ deklarace identity jsou omezeny částí doprava a hodnotu.|  
+|<xref:System.IdentityModel.Claims.ClaimSet>|Abstraktní základní třídu. Kolekce `Claim` instancí.|  
+|<xref:System.IdentityModel.Claims.DefaultClaimSet>|Zapečetěná třída. Implementace `ClaimSet` třídy.|  
+|<xref:System.IdentityModel.Policy.EvaluationContext>|Abstraktní základní třídu. Předaný zásad autorizace během vyhodnocení zásad.|  
+|<xref:System.IdentityModel.Policy.IAuthorizationPolicy>|Rozhraní je odvozena z `IAuthorizationComponent` a implementované třídami zásad autorizace.|  
 |<xref:System.IdentityModel.Claims.Rights>|Statická třída, která obsahuje předdefinované správné hodnoty.|  
   
- Následující třídy se používají i pro programování modelu Identity, ale nejsou k dispozici v <xref:System.IdentityModel.Policy> nebo <xref:System.IdentityModel.Claims> obory názvů.  
+ Následující třídy jsou také používány pro programovací Model identit, ale nejsou součástí <xref:System.IdentityModel.Policy> nebo <xref:System.IdentityModel.Claims> obory názvů.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.ServiceModel.ServiceAuthorizationManager>|Třídu, která poskytuje metodu – <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>– k provedení ověření na základě deklarace identity ověří jednotlivých operací ve službě. Musí být odvozen od třídy a přepsat metodu.|  
-|<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>|Zapečetěné třídu, která poskytuje různé vlastnosti související s chování služby, jak se vztahuje k autorizaci.|  
-|<xref:System.ServiceModel.ServiceSecurityContext>|Třídu, která poskytuje kontext zabezpečení, včetně autorizační kontext, pro aktuálně spuštěné (nebo bude spuštěný) operaci. Instance této třídy je součástí <xref:System.ServiceModel.OperationContext>.|  
+|<xref:System.ServiceModel.ServiceAuthorizationManager>|Třída, která poskytuje metodu – <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>– provádět ověřování na základě deklarace identity ověří jednotlivých operací ve službě. Musíte odvodit z třídy a přepsat metodu.|  
+|<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>|Zapečetěná třída, která poskytuje různé vlastnosti související s chování služby, protože se týkají autorizace.|  
+|<xref:System.ServiceModel.ServiceSecurityContext>|Třída, která poskytuje kontext zabezpečení, včetně autorizační kontext, pro aktuálně spuštěné (nebo být spuštěn) operace. Instance této třídy je součástí <xref:System.ServiceModel.OperationContext>.|  
   
-### <a name="significant-members"></a>Významné členy  
- Následující členy se běžně používají k vytvoření nové typy deklarací identity.  
+### <a name="significant-members"></a>Důležité členy  
+ Následující členy se běžně používají k vytvoření nových typů deklarací identity.  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>|Odvozené třídy implementovat tuto metodu za účelem provádění kontrol přístupu na základě deklarace identity před spuštěním operace ve službě. Veškeré informace v zadaných <xref:System.ServiceModel.OperationContext>, nebo jinde, může být prověřen při provádění přístup, zkontrolujte rozhodnutí. Pokud <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> vrátí `true`, udělí přístup, a operaci se může spustit. Pokud `CheckAccessCore` vrátí `false`, byl odepřen přístup a nejde spustit operaci. Příklad, naleznete v části [postupy: vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md).|  
+|<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>|Odvozené třídy Implementujte tuto metodu za účelem provádění kontrol přístupu na základě deklarace identity před spuštěním operace ve službě. Všechny informace do zadané <xref:System.ServiceModel.OperationContext>, nebo jinde, se dají prozkoumat při provádění přístup, zkontrolujte rozhodnutí. Pokud <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> vrátí `true`, se udělí přístup k a operace se může spustit. Pokud `CheckAccessCore` vrátí `false`, přístup se odepře a operace se nespustí. Příklad najdete v tématu [jak: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md).|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>|Vrátí <xref:System.ServiceModel.ServiceAuthorizationManager> pro službu. <xref:System.ServiceModel.ServiceAuthorizationManager> Zodpovídá za při autorizačním rozhodování.|  
-|<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>|Kolekce, které vlastní autorizační zásady pro služby je zadaný. Kromě toho tyto zásady přidružené přihlašovací údaje v příchozí zprávy vyhodnocují se tyto zásady.|  
+|<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>|Kolekce zadaná pro službu Zásady autorizace. Tyto zásady jsou vyhodnocovány kromě tyto zásady přidružené k přihlašovacím údajům příchozí zprávy.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IdentityModel.Policy.AuthorizationContext>  
- <xref:System.IdentityModel.Claims.Claim>  
- <xref:System.IdentityModel.Policy.EvaluationContext>  
- <xref:System.IdentityModel.Policy.IAuthorizationComponent>  
- <xref:System.IdentityModel.Policy.IAuthorizationPolicy>  
- <xref:System.IdentityModel.Claims.Rights>  
- <xref:System.IdentityModel.Claims>  
- <xref:System.IdentityModel.Policy>  
- <xref:System.IdentityModel.Tokens>  
- <xref:System.IdentityModel.Selectors>  
- [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)  
- [Deklarace identity a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)  
- [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)  
- [Postupy: Vytvoření vlastní deklarace identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)  
- [Postupy: Porovnávání deklarací identity](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)  
- [Postupy: Vytvoření vlastních zásad autorizace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)  
- [Postupy: Vytvoření vlastního správce autorizace pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IdentityModel.Policy.AuthorizationContext>
+- <xref:System.IdentityModel.Claims.Claim>
+- <xref:System.IdentityModel.Policy.EvaluationContext>
+- <xref:System.IdentityModel.Policy.IAuthorizationComponent>
+- <xref:System.IdentityModel.Policy.IAuthorizationPolicy>
+- <xref:System.IdentityModel.Claims.Rights>
+- <xref:System.IdentityModel.Claims>
+- <xref:System.IdentityModel.Policy>
+- <xref:System.IdentityModel.Tokens>
+- <xref:System.IdentityModel.Selectors>
+- [Deklarace identity a tokeny](../../../../docs/framework/wcf/feature-details/claims-and-tokens.md)
+- [Deklarace identity a odepření přístupu k prostředkům](../../../../docs/framework/wcf/feature-details/claims-and-denying-access-to-resources.md)
+- [Vytvoření deklarace identity a hodnoty prostředků](../../../../docs/framework/wcf/feature-details/claim-creation-and-resource-values.md)
+- [Postupy: Vytvoření vlastní deklarace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+- [Postupy: Porovnání deklarací](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)
+- [Postupy: Vytvoření vlastní zásady autorizace](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-policy.md)
+- [Postupy: Vytvoření vlastního Správce autorizací pro službu](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)

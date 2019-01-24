@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: pomocí uložených procedur, které provést parametry'
+title: 'Postupy: Použití uložených procedur, které přijímají parametry'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b935fd84-cb9c-4205-8c48-658d5db2ec93
-ms.openlocfilehash: d1c9337f59b8cf218b9d2ab8fe4cf21afd2da689
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b81cb3b7428ba2ed4e958e18e9368f6f774e8ee3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353508"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604230"
 ---
-# <a name="how-to-use-stored-procedures-that-take-parameters"></a>Postupy: pomocí uložených procedur, které provést parametry
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje výstupní parametry tak, aby odkazovaly parametry a u typů hodnot deklaruje parametr jako s možnou hodnotou Null.  
+# <a name="how-to-use-stored-procedures-that-take-parameters"></a>Postupy: Použití uložených procedur, které přijímají parametry
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapuje výstupní parametry k odkazování parametrů a typů hodnot deklaruje parametr jako s možnou hodnotou Null.  
   
- Příklad použití vstupní parametr v dotazu, který vrací sadu řádků, naleznete v části [postupy: vrácení sady řádků](../../../../../../docs/framework/data/adonet/sql/linq/how-to-return-rowsets.md).  
+ Příklad použití jako vstupní parametr v dotazu, který vrátí sadu řádků, naleznete v tématu [jak: Vrácení sad řádků](../../../../../../docs/framework/data/adonet/sql/linq/how-to-return-rowsets.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu má jeden vstupní parametr (ID zákazníka) a vrátí parametr typu out (celkový prodej tohoto zákazníka).  
+ V následujícím příkladu má jeden vstupní parametr (ID zákazníka) a vrátí parametr out (celkový prodej daného zákazníka).  
   
 ```  
 CREATE PROCEDURE [dbo].[CustOrderTotal]   
@@ -34,13 +34,13 @@ where O.CUSTOMERID = @CustomerID AND O.ORDERID = OD.ORDERID
  [!code-vb[DLinqSprox#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- Tuto uloženou proceduru by volání následujícím způsobem:  
+ Tuto uloženou proceduru by volat následujícím způsobem:  
   
  [!code-csharp[DLinqSprox#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/Program.cs#3)]
  [!code-vb[DLinqSprox#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/Module1.vb#3)]  
   
-## <a name="see-also"></a>Viz také  
- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
- [Použití typů s povolenou hodnotou Null](~/docs/csharp/programming-guide/nullable-types/using-nullable-types.md)  
- [Typy hodnot s povolenou hodnotou Null](~/docs/visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
+## <a name="see-also"></a>Viz také:
+- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Použití typů s povolenou hodnotou Null](~/docs/csharp/programming-guide/nullable-types/using-nullable-types.md)
+- [Typy hodnot s povolenou hodnotou Null](~/docs/visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)

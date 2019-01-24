@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-ms.openlocfilehash: 0dd06aead738bb5ea1dcee7e7dade99be80582b6
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 1bf3eb97d633322f6bd04f8e975ae3fc8ec54329
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236424"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651800"
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Rozdíly mezi šablonami C++ a obecnými typy C# (Průvodce programováním v C#)
 Šablony obecnými typy C# a C++ jsou obě vlastnosti jazyka, které poskytují podporu pro parametrizované typy. Existují však mnoho rozdíly mezi nimi. Na úrovni syntaxe obecnými typy C# jsou jednodušší přístup k parametrizované typy bez složitosti šablon jazyka C++. Kromě toho C# nepokouší poskytují všechny funkce, které poskytují šablony jazyka C++. Na úrovni implementace základní rozdíl je, že nahrazení obecného typu C# jsou prováděny v době běhu a instance objektů se tak zachovají informace obecného typu. Další informace najdete v tématu [obecné typy v čase spuštění](../../../csharp/programming-guide/generics/generics-in-the-run-time.md).  
@@ -33,8 +33,8 @@ ms.locfileid: "53236424"
   
 -   Jazyk C++ umožňuje kód, který nemusí platit pro všechny parametry typu v šabloně, která se pak kontroluje u konkrétní typ použitý jako parametr typu. C# vyžaduje kód ve třídě má být zapsán tak, že bude fungovat s jakýmkoli typem, který splňuje omezení. Například v jazyce C++ je možné psát funkce, která používá aritmetické operátory `+` a `-` u objektů parametru typu, který vygeneruje chybu v době vytváření instancí šablony s typem, který nepodporuje tyto operátory. C# zakazuje pouze jazykové konstrukce povolené jsou ty, které je možné odvodit z omezení.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)
 - [Šablony](/cpp/cpp/templates-cpp)

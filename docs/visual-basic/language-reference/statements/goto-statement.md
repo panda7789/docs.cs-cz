@@ -13,12 +13,12 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: adb7668b6a818b2042a38f9458685a6f93085dc8
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 729ff2a9cbeacaefdf0452a6c5868c229a8d05b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332984"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582523"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
 Rozvětví se nepodmíněně na určený řádek v proceduře.  
@@ -31,10 +31,10 @@ GoTo line
   
 ## <a name="part"></a>Část  
  `line`  
- Požadováno. Žádné čáry popisku.  
+ Povinný parametr. Žádné čáry popisku.  
   
 ## <a name="remarks"></a>Poznámky  
- `GoTo` Příkaz větvit pouze pro řádky v postupu, ve kterém se zobrazí. Na řádku musí mít popisek, který řádek `GoTo` mohou odkazovat na. Další informace najdete v tématu [jak: popisek příkazy](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ `GoTo` Příkaz větvit pouze pro řádky v postupu, ve kterém se zobrazí. Na řádku musí mít popisek, který řádek `GoTo` mohou odkazovat na. Další informace najdete v tématu [jak: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
   
 > [!NOTE]
 >  `GoTo` příkazy může ztěžovat kód ke čtení a udržovat. Kdykoli je to možné, použijte řídicí struktura. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
@@ -62,12 +62,12 @@ Platné a neplatné větve v konstrukcích Try
   
  [!code-vb[VbVbalrStatements#31](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/goto-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)  
- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
- [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)  
- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)  
- [Příkaz With...End With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)
+- [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
+- [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
+- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
+- [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)
+- [Příkaz Try...Catch...Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
+- [Příkaz While...End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md)
+- [Příkaz With...End With](../../../visual-basic/language-reference/statements/with-end-with-statement.md)

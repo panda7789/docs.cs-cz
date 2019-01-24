@@ -14,12 +14,12 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: fafc80cc4847e9ec05f19fc7f3d31d2d5b11197a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 92aadfe851514dcba713455664cf8f7b0aa1c17b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44194577"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597538"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
 Při prohlížení příklady kódu, můžete často narazit na symbol komentáře (`'`). Tento symbol instruuje kompilátor jazyka Visual Basic, aby ignoroval text ním následuje nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
@@ -59,9 +59,9 @@ Při prohlížení příklady kódu, můžete často narazit na symbol komentá�
 > [!NOTE]
 >  Můžete také přidat komentáře do kódu tak, že text uvodíte `REM` – klíčové slovo. Ale `'` symbolů a **komentář**/**zrušit komentář** tlačítka jsou snadněji používají a vyžadují méně místa a paměti.  
   
-## <a name="see-also"></a>Viz také  
- [Dokumentace kódu pomocí komentářů XML](https://msdn.microsoft.com/magazine/dd722812.aspx)  
- [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)  
- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- [Příkaz REM](../../../visual-basic/language-reference/statements/rem-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Dokumentace kódu pomocí komentářů XML](https://msdn.microsoft.com/magazine/dd722812.aspx)
+- [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
+- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+- [Příkaz REM](../../../visual-basic/language-reference/statements/rem-statement.md)

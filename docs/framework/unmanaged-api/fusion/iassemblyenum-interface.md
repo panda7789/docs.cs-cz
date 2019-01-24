@@ -16,31 +16,31 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4af4d0a6049c789db371d84b564d261453968b1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e3b49654252ad18e9ad4d9e5128b78bd23baee6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431136"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602855"
 ---
 # <a name="iassemblyenum-interface"></a>IAssemblyEnum – rozhraní
-Představuje enumerátor pro pole `IAssemblyName` objekty.  
+Představuje enumerátor pro celou řadu `IAssemblyName` objekty.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Clone – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|Vytvoří kopii bez podstruktury tohoto `IAssemblyEnum` objektu.|  
+|[Clone – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|Vytvoří Mělkou kopii to `IAssemblyEnum` objektu.|  
 |[GetNextAssembly – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|Získá ukazatel na další `IAssemblyName` obsažené v tomto `IAssemblyEnum` objektu.|  
-|[Reset – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|To obnoví `IAssemblyEnum` objekt, který má počáteční pozici.|  
+|[Reset – metoda](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|To obnoví `IAssemblyEnum` objektu na jeho výchozí pozici.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)

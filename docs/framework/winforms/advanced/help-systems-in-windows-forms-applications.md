@@ -8,24 +8,24 @@ helpviewer_keywords:
 - Help [Windows Forms], Windows Forms
 - HelpProvider component [Windows Forms], providing Help in Windows applications
 ms.assetid: 2a96a278-432c-41fc-9e3c-5bfedf5e1267
-ms.openlocfilehash: 293e6ecda3d763a4526349ee164d87da62f5e36d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0b5b9622eaa2dc9f4ade615f1c538db0bd15bc47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520718"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602270"
 ---
 # <a name="help-systems-in-windows-forms-applications"></a>Systémy nápovědy ve formulářových aplikacích Windows
-Jeden z nejdůležitějších courtesies, jako vývojář aplikací, můžete poskytnout uživatelům bez je příslušný systém nápovědy. Toto je, kde bude zapnout když stát nerozumíte nebo disoriented. Poskytnutí systému nápovědy v aplikaci systému Windows se snadno provádí pomocí [HelpProvider – komponenta](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md).  
+Jeden z vašich nejdůležitějších courtesies, jak pro vývojáře aplikací, můžete poskytnout uživatelům s je příslušný systém nápovědy. Je to, kde se změní při stát zaměňovat nebo disoriented. Poskytuje systém nápovědy v aplikaci založené na Windows se snadno provádí pomocí [HelpProvider – komponenta](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md).  
   
-## <a name="different-types-of-help"></a>Různé typy nápovědy  
- Windows Forms <xref:System.Windows.Forms.HelpProvider> součást je použit k přidružení soubor nápovědy HTML – Nápověda 1.x (soubor CHM. vytvořeného s pracoviště Nápověda HTML nebo soubor HTM) s vaší aplikací systému Windows. <xref:System.Windows.Forms.HelpProvider> Součást lze použít pro zajištění Kontextová nápověda ve Windows Forms – ovládací prvky nebo konkrétní ovládací prvky. Kromě toho <xref:System.Windows.Forms.HelpProvider> součást můžete otevřít soubor nápovědy pro konkrétní oblasti, například na hlavní stránku tabulky obsahu, indexu nebo funkce vyhledávání. Obecné informace o <xref:System.Windows.Forms.HelpProvider> součást, najdete v části [HelpProvider – přehled komponenty](../../../../docs/framework/winforms/controls/helpprovider-component-overview-windows-forms.md). Informace o tom, jak používat <xref:System.Windows.Forms.HelpProvider> součásti pro zobrazení místní nápovědy v aplikaci Windows Forms, najdete v části [postupy: zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md). Informace o používání <xref:System.Windows.Forms.ToolTip> součást zobrazit nápovědu specifické pro ovládací prvek, najdete v části [ToolTips pomoci pomocí ovládacího prvku](../../../../docs/framework/winforms/advanced/control-help-using-tooltips.md).  
+## <a name="different-types-of-help"></a>Různé druhy nápovědy  
+ Windows Forms <xref:System.Windows.Forms.HelpProvider> součást slouží k přidružení souboru nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) s vaší aplikací se systémem Windows. <xref:System.Windows.Forms.HelpProvider> Komponenty lze použít k poskytnutí kontextové nápovědy pro ovládacích prvků ve Windows Forms nebo konkrétní ovládací prvky. Kromě toho <xref:System.Windows.Forms.HelpProvider> součásti můžete otevřít soubor nápovědy pro konkrétní oblasti, jako je hlavní stránky tabulku z obsahu, index nebo vyhledávací funkci. Obecné informace o <xref:System.Windows.Forms.HelpProvider> komponenty, naleznete v tématu [HelpProvider – přehled komponenty](../../../../docs/framework/winforms/controls/helpprovider-component-overview-windows-forms.md). Informace o tom, jak používat <xref:System.Windows.Forms.HelpProvider> součásti k zobrazení místní nápovědy v aplikaci Windows Forms, naleznete v tématu [jak: Zobrazení místní nápovědy](../../../../docs/framework/winforms/advanced/how-to-display-pop-up-help.md). Informace o používání <xref:System.Windows.Forms.ToolTip> komponenta zobrazit nápovědu pro konkrétní správu, najdete v článku [popisky pomáhají pomocí ovládacího prvku](../../../../docs/framework/winforms/advanced/control-help-using-tooltips.md).  
   
- Soubory nápovědy HTML 1.x s pracoviště Nápověda HTML můžete vygenerovat. Další informace o HTML – Nápověda najdete v části "HTML pomůže pracoviště" nebo na další témata "HTML – Nápověda" na webu MSDN.  
+ Můžete generovat soubory nápovědy HTML 1.x s HTML Help Workshop. Další informace o Nápověda jazyka HTML naleznete v tématu "HTML Help Workshop" nebo v jiných tématech "HTML Help" na webu MSDN.  
   
-## <a name="see-also"></a>Viz také  
- [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)  
- [Komponenta HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)  
- [Komponenta ToolTip](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)  
- [Přehled produktu Windows Forms](../../../../docs/framework/winforms/windows-forms-overview.md)  
- [Windows Forms](../../../../docs/framework/winforms/index.md)
+## <a name="see-also"></a>Viz také:
+- [Integrace uživatelské nápovědy v modelu Windows Forms](../../../../docs/framework/winforms/advanced/integrating-user-help-in-windows-forms.md)
+- [Komponenta HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-windows-forms.md)
+- [Komponenta ToolTip](../../../../docs/framework/winforms/controls/tooltip-component-windows-forms.md)
+- [Přehled produktu Windows Forms](../../../../docs/framework/winforms/windows-forms-overview.md)
+- [Windows Forms](../../../../docs/framework/winforms/index.md)

@@ -2,12 +2,12 @@
 title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: 9aeceff9dc2b714016d2f7c379e538d885489bb9
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 96fdf00b5d64f1ed588907fc2717388b30ae1d92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521384"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  
@@ -53,15 +53,15 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
   
 |Specifikace/dokumentu|Odkaz|  
 |-----------------------------|----------|  
-|DOPLNĚK WSS: Zabezpečení zpráv SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)|  
-|DOPLNĚK WSS: Token uživatelského jména profilu 1.0|[Webové služby UsernameToken profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|DOPLNĚK WSS: Token profilu X.509 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](https://go.microsoft.com/fwlink/?LinkId=95335)|  
-|DOPLNĚK WSS: SAML 1.1 Token profilu 1.0|[Zabezpečení webové služby: Profil tokenu SAML](https://go.microsoft.com/fwlink/?LinkId=96693)|  
-|DOPLNĚK WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=91240)|  
+|WSS: Zabezpečení zpráv SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)|  
+|WSS: Token uživatelského jména profilu 1.0|[Webové služby UsernameToken profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
+|WSS: Token profilu X.509 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](https://go.microsoft.com/fwlink/?LinkId=95335)|  
+|WSS: SAML 1.1 Token profilu 1.0|[Zabezpečení webové služby: Profil tokenu SAML](https://go.microsoft.com/fwlink/?LinkId=96693)|  
+|WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=91240)|  
 |Doplněk WSS uživatelské jméno Token Profile 1.1|[Webové služby zabezpečení UsernameToken Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> neimplementují založené na heslech odvození klíče;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|DOPLNĚK WSS: X509 token Profile 1.1|[Webové služby zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)|  
-|DOPLNĚK WSS: Token protokolu Kerberos Profile 1.1|[Webové služby Security Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)|  
-|DOPLNĚK WSS: SAML 1.1 Token Profile 1.1|[Webové služby zabezpečení SAML Token Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=96694)|  
+|WSS: X509 token Profile 1.1|[Webové služby zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)|  
+|WSS: Token protokolu Kerberos Profile 1.1|[Webové služby Security Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)|  
+|WSS: SAML 1.1 Token Profile 1.1|[Webové služby zabezpečení SAML Token Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=96694)|  
 |WS-Secure Conversation|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)|  
 |WS-Trust 1.4|[Důvěřovat webových služeb jazyka](https://go.microsoft.com/fwlink/?LinkId=169514)|  
 |WS-SecurityPolicy 2005/07|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Ve znění chyby odeslání technického výboru OASIS WS-SX.<br /><br /> [zprávy ws-sx](https://go.microsoft.com/fwlink/?LinkId=96700)|  
@@ -100,13 +100,13 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
   
 -   [1.0 pracovní profil základní zabezpečení návrhu](https://go.microsoft.com/fwlink/?LinkId=96711)  
   
-## <a name="see-also"></a>Viz také  
- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
- [Protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)  
- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
- [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)  
- [Protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md)  
- [Protokol spolehlivého zasílání zpráv verze 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)  
- [Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)  
- [Protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)  
- [Protokol kontextové výměny](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)
+## <a name="see-also"></a>Viz také:
+- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
+- [Protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)
+- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
+- [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)
+- [Protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md)
+- [Protokol spolehlivého zasílání zpráv verze 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)
+- [Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)
+- [Protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)
+- [Protokol kontextové výměny](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)

@@ -2,12 +2,12 @@
 title: Rozšířená ochrana pro ověřování – přehled
 ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-ms.openlocfilehash: 6063aa7093ed6c70e835364fdf5dd1c4293dd2eb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5eb9e07bfd80e325a5223e6a7c6108134c4a3faa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149741"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54647806"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Rozšířená ochrana pro ověřování – přehled
 Rozšířená ochrana ověřování pomáhá chránit před útoky (typu MITM) man-in-the-middle, při které útočník zachycuje přihlašovací údaje klienta a předává je na serveru.  
@@ -32,5 +32,5 @@ Rozšířená ochrana ověřování pomáhá chránit před útoky (typu MITM) m
   
  Další informace najdete v ukázce Win7 CBT/Rozšířená ochrana.  
   
-## <a name="see-also"></a>Viz také  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

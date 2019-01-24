@@ -8,17 +8,17 @@ helpviewer_keywords:
 - signature confirmation
 - WCF, security
 ms.assetid: 2424c137-c7c2-4aa9-8d5d-a066e12fefda
-ms.openlocfilehash: d7076917e48124b2501826ecb0ac7599c663ba7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5163436f75e403ee7f682cdbe378922657116063
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491985"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513614"
 ---
 # <a name="how-to-set-up-a-signature-confirmation"></a>Postupy: Nastavení potvrzení podpisu
-*Potvrzení podpisu* mechanismus pro zprávu iniciátor zajistit, že byla přijata odpověď byla vygenerována v reakci na původní zprávu o odesílatele. Potvrzení podpisu je definována ve specifikaci WS-zabezpečení 1.1. Pokud koncový bod podporuje WS-Security 1.0, nemůžete použít potvrzení podpisu.  
+*Potvrzení podpisu* sítí je mechanismus pro iniciátor zprávy k zajištění, že byla přijata odpověď byla vygenerována v reakci na původní zprávu o odesílatele. Potvrzení podpisu je definováno ve specifikaci WS-Security 1.1. Pokud koncový bod podporuje WS-Security 1.0, nemůžete použít potvrzení podpisu.  
   
- Následující postupy, určete, jak povolit pomocí potvrzení podpisu <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Můžete použít stejný postup s <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>. Postup staví na základní kroky, které jsou součástí [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+ Následující postupy, určete, jak povolit potvrzení podpisu pomocí <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. Můžete použít stejný postup se <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>. Postup staví na základních kroků v [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
 ### <a name="to-enable-signature-confirmation-in-code"></a>Chcete-li povolit potvrzení podpisu v kódu  
   
@@ -30,21 +30,21 @@ ms.locfileid: "33491985"
   
 4.  Přidáte element zabezpečení do kolekce vazby.  
   
-5.  Vytvoření vlastní vazby, jak je uvedeno v [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
+5.  Vytvoření vlastní vazby, jak je uvedeno v [jak: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
   
 ### <a name="to-enable-signature-confirmation-in-configuration"></a>Chcete-li povolit potvrzení podpisu v konfiguraci  
   
-1.  Přidat `<customBinding>` elementu, který chcete `<bindings>` oddíl konfiguračního souboru.  
+1.  Přidat `<customBinding>` elementu `<bindings>` oddílu konfiguračního souboru.  
   
-2.  Přidat `<binding>` elementu a sadu název atributu na odpovídající hodnotu.  
+2.  Přidat `<binding>` elementu a nastavte název atributu na odpovídající hodnotu.  
   
 3.  Přidáte odpovídající element kódování. Následující příklad přidá `<TextMessageEncoding>` elementu.  
   
-4.  Přidat `<security>` podřízený element a sadu `requireSignatureConfirmation` atribut `true`.  
+4.  Přidat `<security>` podřízený element a nastavte `requireSignatureConfirmation` atribut `true`.  
   
-5.  Volitelné. Chcete-li povolit potvrzení podpisu během službou bootstrap nástroje, přidejte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element a sadu `equireSignatureConfirmation` atribut `true`.  
+5.  Volitelné. Chcete-li povolit potvrzení podpisu během spuštění, přidejte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element a nastavte `equireSignatureConfirmation` atribut `true`.  
   
-6.  Přidáte element odpovídající přenosu. Následující příklad přidá [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):  
+6.  Přidáte element přenosu odpovídající. Následující příklad přidá [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):  
   
     ```xml  
     <bindings>  
@@ -61,14 +61,14 @@ ms.locfileid: "33491985"
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastaví <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> vlastnost `true`. Všimněte si, že v tomto příkladu se nepoužívá `<secureConversationBootstrap>` element v předchozím příkladu. Tento příklad ukazuje potvrzení podpisu při použití tokenu systému Windows (protokol Kerberos). V takovém případě podpis klienta je vrácený v všechny odpovědi ze služby a je potvrzen klientem.  
+ Následující kód vytvoří instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a nastaví <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation%2A> vlastnost `true`. Všimněte si, že v tomto příkladu nepoužívá `<secureConversationBootstrap>` element je znázorněno v předchozím příkladu. Tento příklad ukazuje potvrzení podpisu při použití token Windows (protokol Kerberos). V tomto případě podpis klienta se vrátí ve všech odpovědí od služby a potvrdí klientem.  
   
  [!code-csharp[c_SignatureConfirmation#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_signatureconfirmation/cs/source.cs#1)]
  [!code-vb[c_SignatureConfirmation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_signatureconfirmation/vb/source.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
- <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>  
- [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Postupy: Vytvoření SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
+- <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>
+- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Postupy: Vytvoření elementu SecurityBindingElement pro zadaný režim ověřování](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

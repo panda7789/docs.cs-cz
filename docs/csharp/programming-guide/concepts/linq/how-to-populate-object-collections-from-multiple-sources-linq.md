@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)'
+title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)'
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: 377b4a21c78be2b53d2bcd0e88d39d06609c462b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a40ff5ddcf606b0de8a1f41d96523526dc849462
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216090"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54571334"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (C#)
 
 Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
 
@@ -18,7 +18,7 @@ Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nový
 
 ## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [postupy: spojení obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
+Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
@@ -147,8 +147,8 @@ Vytvoření a kompilace projektu, který cílí na jednu z následujících mož
 - Rozhraní .NET framework verze 4.0 nebo vyšší.
 - Verze .NET core 1.0 nebo vyšší.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
-- [Inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
-- [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
+- [Inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

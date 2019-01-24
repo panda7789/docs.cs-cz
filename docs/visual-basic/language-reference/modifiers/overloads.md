@@ -10,26 +10,26 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - signature, hiding by
 ms.assetid: 0c6820b8-25b2-4664-bc59-5ca93c99c042
-ms.openlocfilehash: b68c13d192845fc4bedf1b34a40165ccc1a5ff75
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b20dbf20c580d08553ae22f6a62ee33a7354db74
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33601911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624911"
 ---
 # <a name="overloads-visual-basic"></a>Přetížení (Visual Basic)
-Určuje, že vlastnost nebo postup redeclares existující vlastnosti nebo postupy se stejným názvem.  
+Určuje, že se vlastnost nebo procedura znovu deklaruje jednu nebo více existujících vlastností nebo procedur se stejným názvem.  
   
 ## <a name="remarks"></a>Poznámky  
- *Přetížení* je postupem poskytnutí více než jednu definici pro danou vlastnost nebo postup název ve stejném oboru. Redeclaring vlastnosti nebo postup pomocí různých podpisu se někdy označuje jako *skrytí podle podpisu*.  
+ *Přetížení* je zvyk poskytování více než jednu definici pro danou vlastnost nebo procedura názvu ve stejném oboru. Změně deklarace se vlastnost nebo procedura s jiným podpisem se někdy označuje jako *skrytí podle podpisu*.  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Kontext deklarace.** Můžete použít `Overloads` jenom v příkazu deklarace vlastnosti nebo postupu.  
+-   **Místní deklarace.** Můžete použít `Overloads` pouze v příkazu deklarace vlastnost nebo procedura.  
   
--   **Kombinovaná parametrů.** Nelze zadat `Overloads` společně s [stínů](../../../visual-basic/language-reference/modifiers/shadows.md) v deklaraci stejný postup.  
+-   **Kombinované modifikátory.** Nelze zadat `Overloads` spolu s [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) ve stejné deklaraci procedury.  
   
--   **Vyžaduje rozdíly.** *Podpis* v tomto prohlášení musí být odlišný od podpis každé vlastnosti nebo procedury, která ho přetížení. Podpis zahrnuje název vlastnosti nebo postup společně s následující:  
+-   **Požadované rozdíly.** *Podpis* v této deklaraci musí být odlišný od podpis každou vlastnost nebo proceduru, která ji přetíží. Podpis se skládá z názvu vlastnost nebo procedura spolu s následující:  
   
     -   počet parametrů  
   
@@ -39,31 +39,31 @@ Určuje, že vlastnost nebo postup redeclares existující vlastnosti nebo postu
   
     -   počet parametrů typu (pro obecný postup)  
   
-    -   Návratový typ (pouze pro proceduru operátor převodu)  
+    -   Návratový typ (pouze pro procedury operátoru převodu)  
   
-     Všechny přetížení musí mít stejný název, ale každý se musí lišit od všech ostatních počítačů v jedné nebo více předchozích ohledech. To umožňuje kompilátoru k rozlišení, kterou verzi má použijte, pokud kód volá vlastnost nebo postupu.  
+     Všechna přetížení musí mít stejný název, ale každý se musí lišit od všech ostatních počítačů v jedné nebo více předchozích ohledech. To umožňuje kompilátoru k rozlišení, které verze se má použít, když kód volá vlastnost nebo procedura.  
   
--   **Nepovolené rozdíly.** Změna jednoho nebo více následujících není platný pro přetížení vlastnosti nebo postupu, protože nejsou součástí podpis:  
+-   **Nepovolené rozdíly.** Změna jeden nebo více z následujících akcí není platná pro přetížení se vlastnost nebo procedura, protože nejsou součástí podpisu:  
   
-    -   zda vrátí hodnotu (pro proceduru)  
+    -   Určuje, jestli vrací hodnotu (postup)  
   
-    -   datový typ vrácené hodnoty (s výjimkou operátora převodu)  
+    -   Datový typ vrácené hodnoty (s výjimkou operátoru převodu)  
   
     -   názvy parametrů nebo parametry typu  
   
     -   omezení parametrů typů (pro obecný postup)  
   
-    -   klíčová slova – modifikátor parametrů (například `ByRef` nebo `Optional`)  
+    -   klíčová slova modifikátor parametrů (jako například `ByRef` nebo `Optional`)  
   
-    -   Vlastnost nebo postup modifikátor klíčová slova (například `Public` nebo `Shared`)  
+    -   Vlastnost nebo procedura modifikátor klíčová slova (jako například `Public` nebo `Shared`)  
   
--   **Volitelné modifikátor.** Není nutné použít `Overloads` modifikátor při definování více přetížené vlastnosti nebo postupy ve stejné třídě. Ale pokud používáte `Overloads` v jednom z deklarací, musíte použít ji ve všech z nich.  
+-   **Volitelný modifikátor.** Není nutné používat `Overloads` modifikátor při definování více přetížených vlastností nebo procedur ve stejné třídě. Nicméně pokud používáte `Overloads` v jednom z deklarací, je nutné je použít pro všechny z nich.  
   
--   **Stínový provoz a přetížení.** `Overloads` Můžete také použít stínové existujícího člena nebo sadu přetěžované členy v základní třídě. Při použití `Overloads` tímto způsobem je deklarovat vlastnosti nebo metody se stejným názvem a stejný seznam parametrů jako člen základní třídy a nezadáte `Shadows` – klíčové slovo.  
+-   **Stínový provoz a přetížení.** `Overloads` Můžete také použít stínové existujícího člena nebo sadu přetížených členů v základní třídě. Při použití `Overloads` tímto způsobem můžete deklarovat vlastnosti nebo metody se stejným názvem a seznamu parametrů jako člena základní třídy a nezadáte `Shadows` – klíčové slovo.  
   
  Pokud používáte `Overrides`, kompilátor implicitně přidá `Overloads` tak, aby vaše knihovna rozhraní API pro práci s C# snadněji.  
   
- `Overloads` Modifikátor lze použít v těchto kontexty:  
+ `Overloads` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
@@ -73,9 +73,9 @@ Určuje, že vlastnost nebo postup redeclares existující vlastnosti nebo postu
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)  
- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)  
- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+## <a name="see-also"></a>Viz také:
+- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
+- [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
+- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
+- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
