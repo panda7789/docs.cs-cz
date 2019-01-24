@@ -10,12 +10,12 @@ helpviewer_keywords:
 - region directive (#region)
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
-ms.openlocfilehash: 204b53751fce4f9a3e038ae7c44634522d54657c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: db8063cf06ad0735bb4d9290c60548f7ff9af217
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45617218"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611940"
 ---
 # <a name="region-directive"></a>#Region – direktiva
 Sbalí a skryje části kódu v souborech Visual Basicu.  
@@ -31,7 +31,7 @@ Sbalí a skryje části kódu v souborech Visual Basicu.
   
 |Termín|Definice|  
 |---|---|  
-|`identifier_string`|Požadováno. Řetězec, který funguje jako název oblasti, když je sbalené. Ve výchozím nastavení je sbalený oblastech.|  
+|`identifier_string`|Povinný parametr. Řetězec, který funguje jako název oblasti, když je sbalené. Ve výchozím nastavení je sbalený oblastech.|  
 |`#End Region`|Ukončuje `#Region` bloku.|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -42,7 +42,7 @@ Sbalí a skryje části kódu v souborech Visual Basicu.
   
  [!code-vb[VbVbalrConditionalComp#4](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/region-directive_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
- [Sbalení](/visualstudio/ide/outlining)  
- [Postupy: Sbalení a skrytí sekcí kódu](../../../visual-basic/programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)
+## <a name="see-also"></a>Viz také:
+- [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
+- [Sbalení](/visualstudio/ide/outlining)
+- [Postupy: Sbalení a skrytí sekcí kódu](../../../visual-basic/programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)

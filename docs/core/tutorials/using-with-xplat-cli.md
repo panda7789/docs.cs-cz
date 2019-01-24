@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 09/10/2018
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 11d8a4d1841a1d161c4aed233a025813374556d6
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: eaa2bd3327cf76522c74dad07a5a9e0e268a3b55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169986"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605952"
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -20,7 +20,7 @@ Pokud nejste obeznámeni s sada nástrojů .NET Core CLI, přečtěte si [.NET C
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET core SDK 2.1](https://www.microsoft.com/net/download/core).
+- [.NET Core SDK 2.1](https://www.microsoft.com/net/download/core).
 - Textového editoru nebo editoru kódu podle vašeho výběru.
 
 ## <a name="hello-console-app"></a>Dobrý den, konzolová aplikace!
@@ -157,4 +157,4 @@ Všimněte si, že příkazy a postupy v tomto kurzu ke spuštění aplikace se 
 
 ## <a name="see-also"></a>Viz také:
 
-* [Uspořádání a testování projektů pomocí nástroje příkazového řádku .NET Core](testing-with-cli.md)
+- [Uspořádání a testování projektů pomocí nástroje příkazového řádku .NET Core](testing-with-cli.md)

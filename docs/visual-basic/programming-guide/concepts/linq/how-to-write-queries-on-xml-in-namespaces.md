@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: zápis dotazů na XML v oborech názvů (Visual Basic)'
+title: 'Postupy: Vytváření dotazů na XML v oborech názvů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-ms.openlocfilehash: f4e895e560d0fb11c128248e4f42d1d5124bc124
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00dfc4e14c38357deb3efc4a32fd00a97f6010b8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33645561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609926"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Postupy: zápis dotazů na XML v oborech názvů (Visual Basic)
-Pokud chcete napsat dotaz na XML, který je v oboru názvů, je nutné použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
+# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Postupy: Vytváření dotazů na XML v oborech názvů (Visual Basic)
+Chcete-li napsat dotaz na XML, který je v oboru názvů, musíte použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
   
- Nejběžnější přístupem v jazyce Visual Basic je definovat globální obor názvů a pak použijte literály XML a vlastnosti XML, které používají globální obor názvů. Můžete definovat výchozí globální obor názvů, v takovém případě se v oboru názvů ve výchozím nastavení bude elementy v literálech XML. Alternativně můžete definovat globální obor názvů s předponou a pak použijte předponu podle potřeby v literálech XML a vlastnosti XML. Stejně jako u jiných forem XML atributy se vždycky nacházejí v žádný obor názvů ve výchozím nastavení.  
+ V jazyce Visual Basic je nejběžnější přístup k definování globální obor názvů a pak použijte literály XML a vlastnosti XML, které používají globální obor názvů. Můžete definovat globální výchozí obor názvů, v takovém případě se v oboru názvů ve výchozím nastavení bude prvků v literálech XML. Alternativně můžete definovat globální obor názvů s předponou a pak použijte předponu podle potřeby literály XML a vlastnosti XML. Stejně jako u jiných forem XML atributy se vždycky nacházejí v žádný obor názvů, ve výchozím nastavení.  
   
- První sadu příklady v tomto tématu ukazuje, jak vytvořit strom XML ve výchozí obor názvů. Druhá sada ukazuje, jak vytvořit strom XML v oboru názvů s předponou.  
+ První sada příklady v tomto tématu ukazuje, jak vytvořit stromu XML ve výchozím oboru názvů. Druhá sada ukazuje postup vytvoření stromu XML v oboru názvů s předponou.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří ve stromu XML, který je ve výchozí obor názvů. Potom načte kolekci elementů.  
+ Následující příklad vytvoří stromu XML, který je ve výchozím oboru názvů. Potom načte kolekci elementů.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -52,9 +52,9 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- V jazyce Visual Basic ale zápis dotazů ve stromové struktuře XML, který používá obor názvů s předponou se poměrně liší od dotazování strom XML v výchozí obor názvů. Obvykle použijete `Imports` příkaz pro import oboru názvů s předponou. Pak použijete předponu v názvech elementu a atributu při vytvoření stromové struktuře XML. Můžete také používat předponu při dotazování strom XML pomocí vlastností XML.  
+ V jazyce Visual Basic však zápis dotazů ve stromu XML, který používá obor názvů s předponou je značně odlišná z dotazu stromu XML ve výchozím oboru názvů. Obvykle použijete `Imports` smlouvu pro import oboru názvů s předponou. Pak použijete předponu v názvech prvků a atributů při vytváření stromu XML. Použijete také předponu, při dotazování stromu XML pomocí vlastnosti XML.  
   
- Následující příklad vytvoří strom XML, který je v oboru názvů s předponou. Potom načte kolekci elementů.  
+ Následující příklad vytvoří stromu XML, který je v oboru názvů s předponou. Potom načte kolekci elementů.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -88,5 +88,5 @@ End Module
 3  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a>Viz také:
+- [Práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)

@@ -2,12 +2,12 @@
 title: Architektura a návrh
 ms.date: 03/30/2017
 ms.assetid: bd738d39-00e2-4bab-b387-90aac1a014bd
-ms.openlocfilehash: 281f321e45b019178aa82946eb451e56f5c04841
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8b3515fac9ae7f9302ba607fcf842719718f6c55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154259"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576327"
 ---
 # <a name="architecture-and-design"></a>Architektura a návrh
 Modul generování SQL v [zprostředkovateli ukázek](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) je implementovaný jako návštěvníky na strom výrazu, který představuje strom příkazů. Generování se provádí v jednom průchodu přes strom výrazu.  
@@ -240,7 +240,7 @@ private bool IsParentAJoin{get}
   
 -   DbFilterExpression  
   
--   Dbgroupaggregate  
+-   DbGroupByExpression  
   
 -   DbLimitExpession  
   
@@ -289,11 +289,11 @@ ORDER BY sk1, sk2, ...
 ### <a name="join-expressions"></a>Připojte se k výrazy  
  Následující považují spojení výrazů a jejich zpracování v běžným způsobem metodou VisitJoinExpression:  
   
--   Objektu DbApplyExpression  
+-   DbApplyExpression  
   
 -   DbJoinExpression  
   
--   Objekt DbCrossJoinExpression  
+-   DbCrossJoinExpression  
   
  Tady jsou kroky najdete:  
   
@@ -370,7 +370,7 @@ UNION ALL …
 UNION ALL SELECT <visit-result-argN> as X  
 ```  
   
-### <a name="dbfunctionexpression"></a>Objektu DbFunctionExpression  
+### <a name="dbfunctionexpression"></a>DbFunctionExpression  
  Canonical a integrované funkce jsou zpracovány stejně: Pokud se vyžadují speciální zacházení (TRIM(string) k LTRIM(RTRIM(string), například), je vyvolána odpovídající obslužná rutina. V opačném případě jsou přeloženy na FunctionName (arg1, arg2,..., argn).  
   
  Slovníky se používají k udržovat přehled o funkcích, které potřebují zvláštní zacházení a jejich odpovídající obslužné rutiny.  
@@ -388,7 +388,7 @@ Any(input, x) => Exists(Filter(input,x))
 All(input, x) => Not Exists(Filter(input, not(x))  
 ```  
   
-### <a name="dbnotexpression"></a>Třída DbNotExpression  
+### <a name="dbnotexpression"></a>DbNotExpression  
  V některých případech je možné sbalit překladu třída DbNotExpression s jeho vstupní výraz. Příklad:  
   
 ```  
@@ -414,5 +414,5 @@ IsEmpty(inut) = Not Exists(input)
   
  Vytvořit jedinečné názvy pro aliasy rozsahu a pro sloupce, použijte _n < existing_name >, kde n je nejmenší alias, který nebyl dosud použit. Globální seznam všechny aliasy zvyšuje potřebu kaskádové přejmenuje.  
   
-## <a name="see-also"></a>Viz také  
- [Generování SQL ve zprostředkovateli ukázek](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)
+## <a name="see-also"></a>Viz také:
+- [Generování SQL ve zprostředkovateli ukázek](../../../../../docs/framework/data/adonet/ef/sql-generation-in-the-sample-provider.md)

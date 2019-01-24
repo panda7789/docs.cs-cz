@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6f8132296035e9ddcdcad76d93ed05358beb0b81
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 37d91ca7935e114504864683075f4809de7270fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448230"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599111"
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps – metoda
-Upraví zadaný `Assembly` strukturu metadat.  
+Upraví zadaný `Assembly` struktury metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,37 +43,37 @@ HRESULT SetAssemblyProps (
   
 #### <a name="parameters"></a>Parametry  
  `pma`  
- [v] Metadata token, který určuje `Assembly` strukturu metadat má být změněn.  
+ [in] Token metadat, který určuje `Assembly` struktury metadat má být upraven.  
   
  `pbPublicKey`  
- [v] Ukazatel na veřejný klíč vydavatele sestavení.  
+ [in] Ukazatel na veřejný klíč sestavení vydavatele.  
   
  `cbPublicKey`  
- [v] Velikost v bajtech `pbPublicKey`.  
+ [in] Velikost v bajtech `pbPublicKey`.  
   
  `ulHashAlgId`  
- [v] Identifikátor algoritmu hash používaného hodnoty hash souborů sestavení.  
+ [in] Identifikátor algoritmu hash používá k vytvoření hodnoty hash souborů sestavení.  
   
  `szName`  
- [v] Čitelný text název sestavení.  
+ [in] Uživatelsky čitelná textová název sestavení.  
   
  `pMetaData`  
- [v] Ukazatel na assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.  
+ [in] Ukazatel na assemblymetadata –, který obsahuje informace o verzi, platformy a národní prostředí pro sestavení.  
   
  `dwAssemblyFlags`  
- [v] Bitovou kombinaci [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) hodnoty, které určují různé atributy sestavení.  
+ [in] Bitová kombinace hodnot [assemblyflags –](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) hodnoty, které určují různé atributy sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Chcete-li vytvořit `Assembly` strukturu metadat, použijte [imetadataassemblyemit::defineassembly –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) metoda.  
+ K vytvoření `Assembly` struktury metadat, použijte [imetadataassemblyemit::defineassembly –](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) metoda.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

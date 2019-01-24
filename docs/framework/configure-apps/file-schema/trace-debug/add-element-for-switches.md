@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 0a1a2c9ec34c43eb1b9559d90a8da0d70193c19e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b0ac45c9d2c5b7ff9630bbeaed4bfcee5ec46fcd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209123"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609986"
 ---
 # <a name="ltaddgt-element-for-ltswitchesgt"></a>&lt;Přidat&gt; – Element pro &lt;přepínače&gt;
 Určuje úroveň, kde je nastaven přepínač trasování.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
-\<přepínače >  
+\<system.diagnostics>  
+\<switches>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -69,8 +69,8 @@ Určuje úroveň, kde je nastaven přepínač trasování.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Switch>  
- <xref:System.Diagnostics.TraceSwitch>  
- <xref:System.Diagnostics.BooleanSwitch>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Switch>
+- <xref:System.Diagnostics.TraceSwitch>
+- <xref:System.Diagnostics.BooleanSwitch>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

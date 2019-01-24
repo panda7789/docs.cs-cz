@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c1874b5bea465eb31bcaad2d912b90d35cfc711b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 67ec3bf10638538b49f1ec44ff583bdf4ba4ef9e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454098"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572250"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage – metoda
-Upozorní profileru, že proces přijal žádost o vzdálené metody vyvolání nebo aktivace.  
+Oznámí profileru, že proces přijal žádost o vzdálené metody volání nebo aktivace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ HRESULT RemotingClientSendingMessage(
   
 #### <a name="parameters"></a>Parametry  
  `pCookie`  
- [v] Hodnota, která bude odpovídat s hodnota zadaná v [icorprofilercallback::remotingclientsendingmessage –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) za těchto podmínek:  
+ [in] Hodnotu, která bude odpovídat s hodnotou v [icorprofilercallback::remotingclientsendingmessage –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) za těchto podmínek:  
   
 -   Vzdálená komunikace GUID soubory cookie jsou aktivní.  
   
--   Kanál úspěšně přenosu zprávy.  
+-   Kanál úspěšně odesílá zprávu.  
   
 -   Identifikátor GUID soubory cookie jsou aktivní na straně klienta procesu.  
   
- To umožňuje snadno párování Vzdálená volání a vytvoření zásobníku logické volání.  
+ To umožňuje snadno párování tvorby logické volání zásobníku a Vzdálená volání.  
   
  `fIsAsync`  
- [v] Hodnotu, která je `true` Pokud volání je asynchronní, jinak hodnota `false`.  
+ [in] Hodnotu, která je `true` Pokud je volání asynchronní; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud požadavek zprávy je asynchronní, žádost může obsluhovány pomocí libovolného libovolný vlákna.  
+ Pokud požadavek zprávy je asynchronní, žádost lze udržovat z žádného libovolného vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,5 +62,5 @@ HRESULT RemotingClientSendingMessage(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

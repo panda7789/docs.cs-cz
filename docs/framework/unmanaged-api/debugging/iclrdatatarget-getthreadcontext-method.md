@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a4ce7b90b417e0126337283ff16790f136cb16fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5bac7e46bd499a680906e67b41175e099f96ecc3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407685"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604441"
 ---
 # <a name="iclrdatatargetgetthreadcontext-method"></a>ICLRDataTarget::GetThreadContext – metoda
-Získá aktuální kontext spuštění pro dané vlákno v tento cílový proces. Tato metoda je volána běžné data přístupu služby modulu runtime jazyka.  
+Získá aktuální kontext spuštění pro dané vlákno v cílovém procesu. Tato metoda je volána službami common language runtime přístup k datům.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,24 +41,24 @@ HRESULT GetThreadContext (
   
 #### <a name="parameters"></a>Parametry  
  `threadID`  
- [v] Identifikátor operačního systému vlákna v tento cílový proces.  
+ [in] Operační systém identifikátor vlákna v cílovém procesu.  
   
  `contextFlags`  
- [v] Příznaky, které určují, které části kontext, který má vrátit. Implementace vrátí alespoň tyto části kontextu.  
+ [in] Příznaky, které určují, které části kontext, který má vrátit. Implementace vrátí aspoň tyto části kontextu.  
   
  `contextSize`  
- [v] Velikost kontextu.  
+ [in] Velikost kontext.  
   
  `context`  
- [out] Ukazatel na vyrovnávací paměť, do níž umístíte kontextu.  
+ [out] Ukazatel do vyrovnávací paměti, do které se má umístit kontextu.  
   
- Data v `context` vyrovnávací paměti musí být ve formátu Win32 `CONTEXT` struktura. Kontext určuje data registrace specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru. Naleznete v souboru WinNT.h hlavičky souboru pro danou definici Win32 `CONTEXT` struktura.  
+ Data v `context` vyrovnávací paměti musí být ve formátu Win32 `CONTEXT` struktury. Kontext určuje data registru specifické pro procesor, takže definice Win32 `CONTEXT` struktura závisí na architektuře procesoru. Najdete v souboru WinNT.h hlavičkový soubor pro definici Win32 `CONTEXT` struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -66,5 +66,5 @@ HRESULT GetThreadContext (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

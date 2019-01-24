@@ -19,23 +19,23 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b305158ac87f01044bae5455cea07ca3b3a2e491
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae4dd9adbdad313afa53721e83d7b7d5212df91e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398206"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564289"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Vytváření prototypů ve spravovaném kódu
-Toto téma popisuje, jak přistupovat k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace, který se má použít s platformou vyvolání najdete v tématu [zařazování dat s vyvolání platformy](marshaling-data-with-platform-invoke.md).  
+Toto téma popisuje, jak získat přístup k nespravovaným funkcím a zavádí několik polí atributů, které opatřit poznámkami definici metody ve spravovaném kódu. Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](marshaling-data-with-platform-invoke.md).  
   
- Než se dostanete k nespravované funkce knihoven DLL ze spravovaného kódu, musíte znát název funkce a název knihovny DLL, která vyexportuje ji. Pomocí těchto informací můžete začít zapisovat spravované definici nespravované funkci, která je implementovaná v knihovny DLL. Kromě toho můžete upravit způsob, jakým této platformě vyvolání vytvoří funkci a zařazuje dat do a z funkce.  
+ Abyste mohli nespravovanou funkci knihovny DLL ze spravovaného kódu, musíte znát název funkce a název knihovny DLL, která se exportuje. Pomocí těchto informací můžete začít psát spravované definici pro nespravovanou funkci, která je implementována v knihovně DLL. Kromě toho můžete upravit způsob, aby voláním nespravovaného kódu vytvoří funkci a zařadí data do a z funkce.  
   
 > [!NOTE]
->  Funkce rozhraní API Win32, které přidělují řetězec umožňují volné řetězec pomocí metody `LocalFree`. Vyvolání platformy zpracovává tyto parametry jiným způsobem. Pro platformu vyvolat volání, zkontrolujte parametr `IntPtr` zadejte místo `String` typu. Pomocí metody, které jsou poskytovány <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídy ručně převést na řetězec typu a volné ji ručně.  
+>  Funkce rozhraní Win32 API, které přidělují řetězec umožňují zdarma řetězec pomocí metody `LocalFree`. Vyvolání platformy zpracovává jinak tyto parametry. Voláními vyvolání platformy, ujistěte se, parametr `IntPtr` zadejte místo `String` typu. Použít metody, které jsou poskytovány <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> třídy na typ ručně převést na řetězec a ručně ji zdarma.  
   
-## <a name="declaration-basics"></a>Základy deklarace  
- Spravované definice k nespravovaným funkcím jsou závislá, jak můžete vidět v následujících příkladech. Příklady kódu pro více dokončení, najdete v části [příklady vyvolání platformy](platform-invoke-examples.md).  
+## <a name="declaration-basics"></a>Základní informace o deklaraci  
+ Definice spravované na nespravované funkce jsou závislá na jazyku, jak je vidět v následujícím příkladu. Kompletní příklady kódu naleznete v tématu [příklady vyvolání platformy](platform-invoke-examples.md).  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -47,7 +47,7 @@ Public Class Win32
 End Class  
 ```  
   
- Použít <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> polí k [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] prohlášení, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut místo `Declare` příkaz.  
+ Použít <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>, <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>, <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>, <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>, <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>, nebo <xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar> polím [!INCLUDE[vbprvbext](../../../includes/vbprvbext-md.md)] prohlášení, je nutné použít <xref:System.Runtime.InteropServices.DllImportAttribute> atribut místo `Declare` příkazu.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -75,28 +75,28 @@ using namespace System::Runtime::InteropServices;
 ```  
   
 ## <a name="adjusting-the-definition"></a>Úprava definice  
- Jestli jste nastavili, je explicitně nebo Ne, polí atributů jsou v práci definování chování spravovaného kódu. Vyvolání platformy pracuje podle výchozí hodnoty nastavené na různá pole, které existují jako metadata v sestavení. Toto výchozí chování lze změnit úpravou hodnoty jeden nebo více polí. V mnoha případech použijete <xref:System.Runtime.InteropServices.DllImportAttribute> nastavte hodnotu.  
+ Ať už jste nastavili, je explicitně nebo Ne, atribut pole jsou v práci, která definuje chování spravovaného kódu. Vyvolání platformy pracuje podle výchozí hodnoty nastavené v různých polí, která jsou jako metadata do sestavení. Toto výchozí chování můžete změnit úpravou hodnoty jednoho nebo více polí. V mnoha případech můžete použít <xref:System.Runtime.InteropServices.DllImportAttribute> nastavit hodnotu.  
   
- V následující tabulce jsou uvedené kompletní sadu atribut, který vyvolání polí, které se vztahují na platformu. Pro každé pole tabulka obsahuje výchozí hodnotu a obsahuje odkazy na informace o tom, jak definovat nespravovaných funkcí knihovny DLL pomocí těchto polí.  
+ Následující tabulka uvádí kompletní sadu u atributu pole, které se vztahují na platformu vyvolání. Pro každé pole v tabulce obsahuje výchozí hodnoty a obsahuje odkazy na informace o tom, jak použít tato pole k definování nespravovaných funkcí DLL.  
   
 |Pole|Popis|  
 |-----------|-----------------|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|Povolí nebo zakáže přizpůsobený mapování.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Určuje konvence volání pro použití v předání argumentů metoda. Výchozí hodnota je `WinAPI`, která odpovídá `__stdcall` pro 32bitové platformy Intel platformy.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Ovládací prvky úprava názvu a způsobu, jakým řetězec argumenty by měl být zařazen do funkce. Výchozí hodnota je `CharSet.Ansi`.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|Určuje vstupní bod knihovny DLL k volání.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|Určuje, zda vstupní bod by měl být upraven tak, aby odpovídaly znaková sada. Výchozí hodnota se liší podle programovací jazyk.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|Určuje, zda podpis spravované metoda by měla převede na nespravované podpisu, který vrátí HRESULT a má další [out, retval] argument návratovou hodnotu.<br /><br /> Výchozí hodnota je `true` (podpis by neměl Transformovat).|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|Umožňuje volajícímu použít `Marshal.GetLastWin32Error` funkce rozhraní API k určení, zda došlo k chybě při provádění metody. V jazyce Visual Basic, výchozí hodnota je `true`; v C# a C++, výchozí hodnota je `false`.|  
-|<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>|Ovládací prvky vyvolání výjimky na unmappable znak Unicode, která je převedena na ANSI "?" znak.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>|Povolí nebo zakáže nejlepšího mapování.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>|Určuje konvenci volání pro použití v předávání argumentů metody. Výchozí hodnota je `WinAPI`, která odpovídá `__stdcall` pro 32-bit Intel podle platformy.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>|Ovládací prvky pozměnění názvu a způsobu, jakým řetězec argumenty by měly být zařazeny do funkce. Výchozí hodnota je `CharSet.Ansi`.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>|Určuje vstupní bod knihovny DLL, která se má volat.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>|Určuje, zda vstupní bod by měl být upraven tak, aby odpovídaly znakovou sadu. Výchozí hodnota se liší podle programovacího jazyka.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>|Určuje, zda by měl podpis spravované metody transformuje na nespravovanému podpisu, který vrací HRESULT a obsahuje další [out, retval] argument pro návratovou hodnotu.<br /><br /> Výchozí hodnota je `true` (podpis by neměl transformuje).|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>|Umožňuje volajícímu použít `Marshal.GetLastWin32Error` – funkce rozhraní API k určení, zda došlo k chybě při provádění metody. V jazyce Visual Basic, výchozí hodnota je `true`; v C# a C++, výchozí hodnota je `false`.|  
+|<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>|Ovládací prvky vyvolání výjimky na nemapovatelný znak Unicode, který je převeden na ANSI "?" znak.|  
   
  Podrobné referenční informace najdete v tématu <xref:System.Runtime.InteropServices.DllImportAttribute>.  
   
-## <a name="platform-invoke-security-considerations"></a>Aspekty zabezpečení vyvolání platformy  
- `Assert`, `Deny`, A `PermitOnly` členy <xref:System.Security.Permissions.SecurityAction> výčtu se označují jako *zásobníku modifikátory průchodu*. Tito členové jsou ignorovány, když jsou použity jako deklarativní atributy na platformě vyvolání deklarace a příkazy COM definice jazyka IDL (Interface).  
+## <a name="platform-invoke-security-considerations"></a>Důležité informace o zabezpečení vyvolání platformy  
+ `Assert`, `Deny`, A `PermitOnly` členy <xref:System.Security.Permissions.SecurityAction> výčtu jsou označovány jako *modifikátory procházení zásobníku*. Tyto členy jsou ignorovány, pokud jsou použity jako deklarativních atributů na platformě vyvolat deklarace a příkazy COM rozhraní Definition Language (IDL).  
   
 ### <a name="platform-invoke-examples"></a>Příklady vyvolání platformy  
- Nespravovaného ukázky v tomto tématu ilustrují použití `RegistryPermission` atribut s modifikátory procházení zásobníku.  
+ Nespravovaného vzorků v této části ilustrují použití `RegistryPermission` atribut modifikátory procházení zásobníku.  
   
  V následujícím příkladu kódu <xref:System.Security.Permissions.SecurityAction> `Assert`, `Deny`, a `PermitOnly` modifikátory jsou ignorovány.  
   
@@ -114,7 +114,7 @@ using namespace System::Runtime::InteropServices;
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- Ale `Demand` modifikátor v následujícím příkladu je přijmout.  
+ Ale `Demand` modifikátor v následujícím příkladu je přijat.  
   
 ```  
 [DllImport("MyClass.dll", EntryPoint = "CallRegistryPermission")]  
@@ -122,7 +122,7 @@ using namespace System::Runtime::InteropServices;
     private static extern bool CallRegistryPermissionDeny();  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction> Modifikátory fungují správně, pokud jsou uvedeny na třídu, která obsahuje (zabalí) platformu vyvolání volání.  
+ <xref:System.Security.Permissions.SecurityAction> Modifikátory správně fungovat, pokud jsou umístěny na třídu, která obsahuje (zabalí) platforma volání funkce invoke.  
   
 ```cpp  
       [RegistryPermission(SecurityAction.Demand, Unrestricted = true)]  
@@ -143,7 +143,7 @@ class PInvokeWrapper
 }  
 ```  
   
- <xref:System.Security.Permissions.SecurityAction> Modifikátory také fungují správně vnořené scénář, kde jsou umístěny na volající platformy vyvolat volání:  
+ <xref:System.Security.Permissions.SecurityAction> volání funkce invoke modifikátory také fungovat správně v vnořené scénář, kde jsou umístěny na volajícím platformy:  
   
 ```cpp  
       {  
@@ -174,10 +174,10 @@ class PInvokeScenario
 }  
 ```  
   
-#### <a name="com-interop-examples"></a>Příklady zprostředkovatele komunikace s objekty COM  
- Ukázky zprostředkovatele komunikace s objekty COM v této části ilustrují použití `RegistryPermission` atribut s modifikátory procházení zásobníku.  
+#### <a name="com-interop-examples"></a>Příklady vzájemné spolupráce COM  
+ COM interop vzorků v této části ilustrují použití `RegistryPermission` atribut modifikátory procházení zásobníku.  
   
- Ignorovat následující deklarace spolupráce rozhraní COM `Assert`, `Deny`, a `PermitOnly` modifikátory, podobně jako na platformu vyvolání příklady v předchozí části.  
+ Ignorovat následující deklarace vzájemné spolupráce rozhraní modelu COM `Assert`, `Deny`, a `PermitOnly` modifikátory, podobně jako na platformu vyvolání příklady v předchozí části.  
   
 ```  
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
@@ -208,7 +208,7 @@ interface IAssertStubsItf
 }  
 ```  
   
- Kromě toho `Demand` modifikátor nebyla přijata ve scénářích deklarace spolupráce rozhraní modelu COM, jak je znázorněno v následujícím příkladu.  
+ Kromě toho `Demand` modifikátor nebyla přijata ve scénářích deklarace vzájemné spolupráce rozhraní modelu COM, jak je znázorněno v následujícím příkladu.  
   
 ```  
 [ComImport, Guid("12345678-43E6-43c9-9A13-47F40B338DE0")]  
@@ -221,12 +221,12 @@ interface IDemandStubsItf
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)  
- [Určení vstupního bodu](specifying-an-entry-point.md)  
- [Určení znakové sady](specifying-a-character-set.md)  
- [Příklady vyvolání platformy](platform-invoke-examples.md)  
- [Aspekty zabezpečení vyvolání platformy](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))  
- [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)  
- [Vytvoření třídy k umístění funkcí DLL](creating-a-class-to-hold-dll-functions.md)  
- [Volání funkce DLL](calling-a-dll-function.md)
+## <a name="see-also"></a>Viz také:
+- [Používání nespravovaných funkcí DLL](consuming-unmanaged-dll-functions.md)
+- [Určení vstupního bodu](specifying-an-entry-point.md)
+- [Určení znakové sady](specifying-a-character-set.md)
+- [Příklady vyvolání platformy](platform-invoke-examples.md)
+- [Důležité informace o zabezpečení vyvolání platformy](https://msdn.microsoft.com/library/bbcc67f7-50b5-4917-88ed-cb15470409fb(v=vs.100))
+- [Identifikace funkcí ve knihovnách DLL](identifying-functions-in-dlls.md)
+- [Vytvoření třídy k umístění funkcí DLL](creating-a-class-to-hold-dll-functions.md)
+- [Volání funkce DLL](calling-a-dll-function.md)

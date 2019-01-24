@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8283139566050b1858a003316dc46581822a9bbb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15bd3ed8f1642e44ecf9c4df49feebd72eeac8c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450151"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590130"
 ---
 # <a name="corprfgcgeneration-enumeration"></a>COR_PRF_GC_GENERATION – výčet
-Identifikuje generace kolekce paměti.  
+Identifikuje uvolnění paměti generace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,19 +42,19 @@ typedef enum {
 |Člen|Popis|  
 |------------|-----------------|  
 |`COR_PRF_GC_GEN_0`|Objekt se uloží jako 0. generace.|  
-|`COR_PRF_GC_GEN_1`|Objekt se uloží jako generace 1.|  
-|`COR_PRF_GC_GEN_2`|Objekt se uloží jako generace 2.|  
-|`COR_PRF_GC_LARGE_OBJECT_HEAP`|Objekt se uloží v haldě velkého objektu.|  
+|`COR_PRF_GC_GEN_1`|Objekt se uloží jako 1. generace.|  
+|`COR_PRF_GC_GEN_2`|Objekt se uloží jako 2. generace.|  
+|`COR_PRF_GC_LARGE_OBJECT_HEAP`|Objekt se uloží ve velkých objektových haldách.|  
   
 ## <a name="remarks"></a>Poznámky  
- Uvolňování paměti zlepšuje výkon správy paměti dělicí objekty do generace podle stáří. Garbage collector v současné době používá tři generace, číslované 0, 1 a 2 a speciální haldy segment, který se používá pro velké objekty. Objekty, jejichž velikost je větší než určitou hodnotu jsou uloženy v haldě velkého objektu. Další přidělené objekty spustí patřící do generace 0. Všechny objekty, které existují po dojde k uvolnění paměti v generaci 0 povýšené na 1. generace. Objekty, které existují po dojde k uvolnění paměti v generaci 1, přesuňte do 2. generace.  
+ Systému uvolňování paměti zlepšuje výkon správy paměti dělicí objekty do generací podle věku. Uvolňování paměti aktuálně používá tři generace číslované 0, 1 a 2 plus zvláštní haldy segment, který se používá pro velké objekty. Objekty, jejichž velikost je větší než konkrétní hodnoty jsou uloženy v velkých objektových haldách. Další přidělené objekty se začínají patřící do 0. generace. Všechny objekty, které existují, jakmile dojde k uvolnění paměti generace 0 jsou povýšeny do generace 1. Objekty, které existují, jakmile dojde k uvolnění paměti v generaci 1 přesunout do 2. generace.  
   
- Použití generace znamená, že má kolekce uvolňování paměti pro práci s jenom podmnožinu přidělené objekty v daném okamžiku.  
+ Použití generace znamená, že má systému uvolňování paměti pro práci s pouze podmnožinu přidělených objektů v daný okamžik.  
   
- `COR_PRF_GC_GENERATION` Výčet je používán [cor_prf_gc_generation_range –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) struktura.  
+ `COR_PRF_GC_GENERATION` Výčet je používán [cor_prf_gc_generation_range –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) struktury.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -62,5 +62,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

@@ -22,12 +22,12 @@ helpviewer_keywords:
 - argument passing [Visual Basic], by position
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
-ms.openlocfilehash: bdaa0351e288b85a3e35818c0f53ef4d772932e5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 78c5303461ecf25a1487e072f4f6be25bde98dca
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151305"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587460"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
 Při volání `Sub` nebo `Function` postup, můžete předat argumenty *umístěním* – v pořadí, v jakém jsou uvedeny v definici procedury – nebo můžete předat je *podle názvu*, bez ohledem na pozici.  
@@ -94,12 +94,12 @@ Argumenty nelze předávat podle názvu myslet povinnými argumenty. Vynechat je
   
 Pole parametrů nelze předat podle názvu. Je to proto, že při volání postupu zadáte nekonečný počet oddělovači argumentů pole parametrů a kompilátor nelze přidružit k více než jeden argument jeden název.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Jak: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)  
- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)  
- [Nepovinné parametry](./optional-parameters.md)  
- [Pole parametrů](./parameter-arrays.md)  
- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)  
- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
+- [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
+- [Nepovinné parametry](./optional-parameters.md)
+- [Pole parametrů](./parameter-arrays.md)
+- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)
+- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)

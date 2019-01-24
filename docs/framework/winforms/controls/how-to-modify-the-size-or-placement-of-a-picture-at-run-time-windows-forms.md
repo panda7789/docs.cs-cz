@@ -11,31 +11,31 @@ helpviewer_keywords:
 - PictureBox control [Windows Forms], picture size and alignment
 - pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
-ms.openlocfilehash: 9e6e114e0a9d7e5e9c17ba21ef941703cd108784
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fa8bdf17f7dc7f6d09059e54b208acaec6207e48
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534771"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604779"
 ---
 # <a name="how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms"></a>Postupy: Změna velikosti či umístění obrázku za běhu (Windows Forms)
-Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládací prvek na formuláři, můžete nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> vlastnost na jeho:  
+Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládací prvek ve formuláři, můžete nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> vlastnost ji:  
   
--   Zarovnat na obrázku levém horním rohu s levém horním rohu ovládacího prvku  
+-   Zarovnání obrázku levý horní roh s levého horního rohu ovládacího prvku  
   
--   Center obrázků v ovládacím prvku  
+-   System Center na obrázku v ovládacím prvku  
   
--   Upravit velikost přizpůsobit obrázek, který se zobrazí ovládacího prvku  
+-   Upravte velikost ovládacího prvku obrázek, který se zobrazí podle  
   
--   Funkce Stretch jakýkoli obrázek zobrazuje podle ovládacího prvku  
+-   Roztáhnout obrázek se zobrazí podle ovládacího prvku  
   
- Roztažení obrázku (zejména jeden ve formátu rastrového obrázku) může vytvářet ztráty bitové kopie kvality. Metasoubory, které jsou seznamy grafiky pokyny pro vykreslování obrázků za běhu, se hodí pro roztažení než jsou.  
+ Roztažení obrázku (zejména jedna ve formát rastrového obrázku) může způsobit ztrátu v kvality obrázku. Metasoubory, což jsou seznamy grafiky pokyny pro vykreslování obrázků za běhu, se lépe hodí pro roztažení než rastrové obrázky mají.  
   
-### <a name="to-set-the-sizemode-property-at-run-time"></a>Chcete-li nastavit vlastnost Režim velikosti za běhu  
+### <a name="to-set-the-sizemode-property-at-run-time"></a>Chcete-li nastavit vlastnosti SizeMode za běhu  
   
-1.  Nastavit <xref:System.Windows.Forms.PictureBox.SizeMode%2A> k <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> (výchozí), <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>, <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>, nebo <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> znamená, že obrázek je umístěn v levém horním rohu ovládacího prvku; Pokud bitovou kopii je větší než ovládacího prvku, jsou oříznut jeho dolní a pravé hrany. <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> znamená, že bitovou kopii je umístěn na střed ovládacího prvku; Pokud bitovou kopii je větší než ovládacího prvku, jsou oříznut na obrázku mimo okraje. <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> znamená, že velikost ovládacího prvku je nastavena velikost bitové kopie. <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> je naopak a znamená, že se upraví velikost obrázku velikosti ovládacího prvku.  
+1.  Nastavte <xref:System.Windows.Forms.PictureBox.SizeMode%2A> k <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> (výchozí), <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>, <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>, nebo <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> znamená, že v levém horním rohu ovládacího prvku; je umístěn na obrázku Pokud na obrázku je větší než ovládací prvek, jeho dolní a pravé hrany se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> znamená to, že na obrázku je vycentrován ovládacího prvku; Pokud na obrázku je větší než ovládací prvek, na obrázku vnějšími hranami se oříznou. <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> znamená to, že velikost ovládacího prvku je nastavena velikost obrázku. <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> je naopak a znamená, že se upraví velikost obrázku velikosti ovládacího prvku.  
   
-     V následujícím příkladu je cesta pro umístění bitové kopie nastavit složky Dokumenty. Důvodem je, protože můžete předpokládat, že většina počítačů s operačním systémem Windows budou obsahovat tento adresář. To také umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
+     V následujícím příkladu je cesta pro umístění bitové kopie složky Dokumenty. Je to, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat tento adresář. Také to umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. Následující příklad předpokládá formulář s <xref:System.Windows.Forms.PictureBox> ovládací prvek již přidán.  
   
     ```vb  
     Private Sub StretchPic()  
@@ -82,9 +82,9 @@ Pokud používáte Windows Forms <xref:System.Windows.Forms.PictureBox> ovládac
        }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.PictureBox>  
- [Postupy: Načtení obrázku pomocí Návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  
- [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)  
- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.PictureBox>
+- [Postupy: Načtení obrázku pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)
+- [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)
+- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)

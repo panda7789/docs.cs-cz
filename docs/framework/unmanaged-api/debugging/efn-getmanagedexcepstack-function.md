@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44f3604e3c12cd4b9781876d2d412d942353061e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c1c05918965e40801757462ce53257bc36a5d8c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404151"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587710"
 ---
 # <a name="efngetmanagedexcepstack-function"></a>_EFN_GetManagedExcepStack – funkce
-Zadaný objekt adresu spravovaného výjimka vrátí řetězec verzi nachází v trasování zásobníku.  
+Zadaný objekt na spravované výjimky adresu vrátí řetězec verzi obsažena v trasování zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ HRESULT _EFN_GetManagedExcepStack(
   
 #### <a name="parameters"></a>Parametry  
  `Client`  
- [v] Klient laděné.  
+ [in] Klient, který se právě ladí.  
   
  `StackObjAddr`  
- [v] Ukazatel spravovaného objektu, odvozené od <xref:System.Exception>.  
+ [in] Ukazatel spravovaný objekt, odvozený z <xref:System.Exception>.  
   
  szStackString  
  [out] Vrácený řetězec.  
   
  `cbString`  
- [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězců.  
+ [out] Počet znaků, které jsou k dispozici ve vyrovnávací paměti řetězce.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a chybový kód 0x1000.  
+ Pokud neexistuje žádný spravovaný kód ve vlákně aktuálně v kontextu, funkce vrátí HRESULT SOS_E_NOMANAGEDCODE s hodnotou zařízení 0xa0 a 0x1000 kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** SOS_Stacktrace.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Globální statické funkce pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-global-static-functions.md)

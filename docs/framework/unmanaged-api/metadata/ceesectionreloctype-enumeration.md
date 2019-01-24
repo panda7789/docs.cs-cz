@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: babd7d87f1bb6f238c347d68814a3ecdaef64b40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c1541c6fa2b1d307fc8e854a67b7cc3068b7bb4d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442868"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580717"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType – výčet
-Poskytuje hodnoty k ovlivnění typ `reloc` instrukce vygenerované v volání [iceegen::addsectionreloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
+Poskytuje hodnoty k ovlivnění typu `reloc` instrukci, protože ho ve volání [iceegen::addsectionreloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,32 +54,32 @@ typedef enum  {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`srRelocAbsolute`|Generuje pouze část – relativní `reloc`, odesílání nic do části .reloc.|  
-|`srRelocHighLow`|Generuje `reloc` pro umístění velikost ukazatele. To je převede na BASED_HIGHLOW nebo BASED_DIR64 v závislosti na platformu.|  
-|`srRelocHighAdj`|Generuje `reloc` pro horní 16 bitů 32bitové číslo, kde další aplikace word v tabulce .reloc součástí dolní 16 bitů.|  
+|`srRelocAbsolute`|Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu.|  
+|`srRelocHighLow`|Generuje `reloc` pro umístění velikosti ukazatele. To se transformuje na BASED_HIGHLOW nebo BASED_DIR64 podle platformy.|  
+|`srRelocHighAdj`|Generuje `reloc` pro horní 16 bitů 32bitová čísla, kde další slovo v tabulce .reloc součástí dolní 16 bitů.|  
 |`srRelocMapToken`|Generuje token mapy přemístění, odesílání nic do části .reloc.|  
-|`srRelocRelative`|Označuje, že hodnota je relativní adresu opravit.|  
-|`srRelocFilePos`|Generuje pouze část – relativní `reloc`, odesílání nic do části .reloc. To `reloc` je relativní vzhledem ke pozice v souboru oddílu, není v části virtuální adresa.|  
-|`srRelocCodeRelative`|Určuje kód relativní adresu opravit.|  
-|`srRelocIA64Imm64`|Generuje `reloc` pro 64bitové adresu ve ia64 `movl` instrukcí.|  
-|`srRelocDir64`|Generuje `reloc` pro adresu 64-bit.|  
-|`srRelocIA64PcRel25`|Generování `reloc` pro počítač relativní adresu 25 bitů ve ia64 `br.call` instrukcí.|  
-|`srRelocIA64PcRel64`|Generuje `reloc` pro počítač relativní adresu 64-bit ve ia64 `brl.call` instrukcí.|  
-|`srRelocAbsoluteTagged`|Generuje 30bitového části – relativní `reloc`používané k hodnot s příznakem ukazatele.|  
-|`srRelocSentinel`|Hodnotu sentinel k zajištění všech doplňky tento výčet, se projeví na interní `reloc` název pole.|  
-|`srNoBaseReloc`|Určuje, že emitování na základní `reloc`.|  
-|`srRelocPtr`|Hodnota označující, že jsou pre oprava obsah paměti ukazatele, nikoli oddíl posun.|  
+|`srRelocRelative`|Označuje, že hodnota je relativní adresa opravy.|  
+|`srRelocFilePos`|Generuje pouze část – relativní `reloc`Nastěhovat nic do .reloc oddílu. To `reloc` je relativní vzhledem k umístění souboru oddílu, ne v části virtuální adresy.|  
+|`srRelocCodeRelative`|Určuje kód relativní adresa opravy.|  
+|`srRelocIA64Imm64`|Generuje `reloc` 64bitových adres v ia64 `movl` instrukce.|  
+|`srRelocDir64`|Generuje `reloc` 64-bit adresy.|  
+|`srRelocIA64PcRel25`|Generování `reloc` pro PC relativní adresu 25-bit ia64 `br.call` instrukce.|  
+|`srRelocIA64PcRel64`|Generuje `reloc` pro PC relativní adresu 64-bit ia64 `brl.call` instrukce.|  
+|`srRelocAbsoluteTagged`|Generuje vláknům části 30-bit `reloc`, která se používá pro hodnoty příznakem ukazatele.|  
+|`srRelocSentinel`|Hodnotu sentinel k zajištění jakékoli dodatky na tento výčet se projeví na vnitřní `reloc` název pole.|  
+|`srNoBaseReloc`|Určuje, že generování základní `reloc`.|  
+|`srRelocPtr`|Hodnota označující, že jsou pre oprava obsah paměti ukazatel, nikoli oddíl posun.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)  
- [AddSectionReloc – metoda](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [ICeeGen – rozhraní](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [AddSectionReloc – metoda](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)

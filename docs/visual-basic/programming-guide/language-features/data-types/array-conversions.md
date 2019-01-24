@@ -12,12 +12,12 @@ helpviewer_keywords:
 - conversions [Visual Basic], array types
 - object arrays
 ms.assetid: fceff7d2-a1b7-44c7-b9aa-8bd831d8a444
-ms.openlocfilehash: 93e6365a70f52f730b016cd4d4ac9382baeeba55
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4170ca53252fef3afda026393300e34b99e9d018
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43784878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583081"
 ---
 # <a name="array-conversions-visual-basic"></a>Převody pole (Visual Basic)
 Typ pole lze převést na typ jiné pole, za předpokladu splnění následujících podmínek:  
@@ -59,12 +59,12 @@ students = New Student(3) {}
 students = names  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
- [Postupy: převedení objektu na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+## <a name="see-also"></a>Viz také:
+- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)
+- [Postupy: Převést objekt na jiný typ v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e99cafe39a030a412bf33aeb9d96d5006ca02df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9db6853d3bd4bb7faae54b746a5a940c7dec8a8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415958"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561788"
 ---
 # <a name="icordebugevalnewobjectnoconstructor-method"></a>ICorDebugEval::NewObjectNoConstructor – metoda
-Bez pokus o volání metody konstruktoru přiděluje novou instanci objektu zadaného typu.  
+Přidělí novou instanci objektu zadaného typu, bez pokusu o volání metody konstruktoru.  
   
  Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0. Použití [icordebugeval2::newparameterizedobjectnoconstructor –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) místo.  
   
@@ -39,10 +39,10 @@ HRESULT NewObjectNoConstructor (
   
 #### <a name="parameters"></a>Parametry  
  `pClass`  
- [v] Ukazatel na ICorDebugClass objekt, který představuje typ objekt, který má být vytvořena instance.  
+ [in] Ukazatel na objekt ICorDebugClass, který představuje typ objektu, který má být vytvořena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -50,5 +50,5 @@ HRESULT NewObjectNoConstructor (
   
  **Verze rozhraní .NET framework:** 1.1, 1.0  
   
-## <a name="see-also"></a>Viz také  
- [NewParameterizedObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)
+## <a name="see-also"></a>Viz také:
+- [NewParameterizedObjectNoConstructor – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)

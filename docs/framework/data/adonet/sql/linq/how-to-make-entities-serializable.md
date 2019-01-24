@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Zkontrolujte serializovatelný entity'
+title: 'Postupy: Nastavení entit jako serializovatelných'
 ms.date: 03/30/2017
 ms.assetid: a6c5bf6e-064a-4f77-b74c-76b3a5dec309
-ms.openlocfilehash: c3b877df9707e0f98dbc2238d910842649def07f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9b4ff81b4a779b474097de1a69e65f4864e08691
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354943"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604211"
 ---
-# <a name="how-to-make-entities-serializable"></a>Postupy: Zkontrolujte serializovatelný entity
-Při generování kódu, můžete provést entity serializable. Třídy entity jsou označených pomocí <xref:System.Runtime.Serialization.DataContractAttribute> atribut a sloupce s <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
+# <a name="how-to-make-entities-serializable"></a>Postupy: Nastavení entit jako serializovatelných
+Je možné nastavení entit jako serializovatelných při generování kódu. Jsou vybaveny tříd entit <xref:System.Runtime.Serialization.DataContractAttribute> atribut a sloupce s <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
   
- Vývojáři pomocí sady Visual Studio můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro tento účel.  
+ Pomocí sady Visual Studio mohou vývojáři [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pro tento účel.  
   
- Pokud používáte nástroj příkazového řádku na SQLMetal, použijte **/serialization** možnost s `unidirectional` argument. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+ Pokud používáte nástroj příkazového řádku SQLMetal, použijte **/serialization** spolu s možností `unidirectional` argument. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="example"></a>Příklad  
- Na příkazovém řádku následující SQLMetal vytvářet soubory, které mají serializovatelný entity.  
+ Následujících příkazových řádků SQLMetal vytvoří soubory, které se mají serializovat entity.  
   
 ```  
 sqlmetal /code:nwserializable.vb /language:vb "c:\northwnd.mdf" /sprocs /functions /pluralize /serialization:unidirectional  
@@ -27,6 +27,6 @@ sqlmetal /code:nwserializable.vb /language:vb "c:\northwnd.mdf" /sprocs /functio
 sqlmetal /code:nwserializable.cs /language:csharp "c:\northwnd.mdf" /sprocs /functions /pluralize /serialization:unidirectional  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+## <a name="see-also"></a>Viz také:
+- [Serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)
+- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

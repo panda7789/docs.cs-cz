@@ -13,12 +13,12 @@ helpviewer_keywords:
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
 author: KrzysztofCwalina
-ms.openlocfilehash: 650acf0efaa88120678819b77b03fab61107c630
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a47e43b2387362500d46c8e531f16d004d823c4c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131323"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54565862"
 ---
 # <a name="choosing-between-class-and-struct"></a>Volba mezi třídou a strukturou
 Jeden základní rozhodnutí o návrhu, který čelí každý framework designer je, zda navrhnout typu třídy (odkaz na typ) nebo jako – struktura (typu hodnoty). Je velmi důležité při vytvoření tato volba dostatečné povědomí o rozdíly v chování typy odkazů a typy hodnot.  
@@ -49,11 +49,11 @@ Jeden základní rozhodnutí o návrhu, který čelí každý framework designer
   
  Ve všech ostatních případech byste měli definovat vaše typy jako třídy.  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)
 - [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -6,14 +6,14 @@ helpviewer_keywords:
 - My.Application.Log object, filtering output
 - application event logs, output filtering
 ms.assetid: 2c0a457a-38a4-49e1-934d-a51320b7b4ca
-ms.openlocfilehash: 8a299ba0bfb2d6f49b449e2f1e567a06d09da49e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e17f332365aeeb26601763f9459dccc8d6a078af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500014"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572510"
 ---
-# <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
+# <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Průvodce: Filtrování výstupu My.Application.Log (Visual Basic)
 Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My.Application.Log` objekt řídit, jaké informace jsou předány z `Log` objektu pro naslouchací procesy a jaké informace jsou zapsány pomocí naslouchací procesy. Protokolování chování můžete změnit i po vytvoření aplikace, protože informace o konfiguraci jsou uložena v konfiguračním souboru aplikace.  
   
 ## <a name="getting-started"></a>Začínáme  
@@ -41,7 +41,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
 6.  Ukončete aplikaci.  
   
-     Informace o tom, jak zobrazit okno výstupu ladění vaší aplikace najdete v tématu [okno výstup](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v tématu [názorný postup: určující, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+     Informace o tom, jak zobrazit okno výstupu ladění vaší aplikace najdete v tématu [okno výstup](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v tématu [názorný postup: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
   
     > [!NOTE]
     >  Ve výchozím nastavení vyprázdní aplikace výstupní soubor protokolu po zavření aplikace.  
@@ -81,7 +81,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
     2.  Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na tlačítko **přidat**.  
+    3.  Klikněte na **Přidat**.  
   
 2.  Vyhledejte `<switches>` oddíl, což je v `<system.diagnostics>` oddíl, což je na nejvyšší úrovni `<configuration>` oddílu.  
   
@@ -156,7 +156,7 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
     2.  Z **přidat novou položku** dialogového okna zvolte **konfiguračního souboru aplikace**.  
   
-    3.  Klikněte na tlačítko **přidat**.  
+    3.  Klikněte na **Přidat**.  
   
 2.  Klikněte pravým tlačítkem na app.config **Průzkumníka řešení**. Zvolte **otevřít**.  
   
@@ -247,10 +247,10 @@ Tento návod ukazuje, jak změnit výchozí filtrování pro protokolování `My
   
  Další informace o změnách nastavení protokolu po nasazení najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)  
- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)  
- [Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)  
- [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)  
- [Přepínače trasování](../../../../framework/debug-trace-profile/trace-switches.md)  
- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)
+## <a name="see-also"></a>Viz také:
+- [Návod: Určení, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Návod: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)
+- [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
+- [Přepínače trasování](../../../../framework/debug-trace-profile/trace-switches.md)
+- [Protokolování informací z aplikace](../../../../visual-basic/developing-apps/programming/log-info/index.md)

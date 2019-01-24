@@ -1,23 +1,24 @@
 ---
-title: 'Postupy: vrácení sady řádků'
+title: 'Postupy: Vrácení sad řádků'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 725718f5-da29-4841-9f53-aafef64ba977
-ms.openlocfilehash: a2666b752d936e10d377113d5bf18111393df3ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9fcbd8aa74740a66fa6caca18067ac473891f4e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587213"
 ---
-# <a name="how-to-return-rowsets"></a>Postupy: vrácení sady řádků
-Tento příklad vrací sadu řádků z databáze a zahrnuje vstupní parametr filtrovat výsledek.  
+# <a name="how-to-return-rowsets"></a>Postupy: Vrácení sad řádků
+V tomto příkladu vrátí sadu řádků z databáze a zahrnuje vstupní parametr a filtrovat výsledky.  
   
- Při spuštění uložené procedury, jež vrací sadu řádků, je použít *výsledek* třídu, která ukládá vrátí z uložené procedury. Další informace najdete v tématu [analýza technologie LINQ to SQL zdrojový kód](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).  
+ Při spouštění uložené procedury, která vrací sadu řádků, je použít *výsledek* třída, která obsahuje tato vrátí hodnotu z úložné procedury. Další informace najdete v tématu [analýza LINQ to SQL zdrojový kód](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu představuje uložené procedury, jež vrací řádky zákazníků a používá vstupní parametr vrátit pouze řádky tohoto seznamu "Praha" jako město zákazníka. Příklad předpokládá Výčtový `CustomersByCityResult` třídy.  
+ Následující příklad představuje uloženou proceduru, která vrací řádky zákazníků a vrátit pouze řádky tohoto seznamu "Londýn" jako název města zákazníka pomocí vstupního parametru. Příklad předpokládá Výčtový objekt `CustomersByCityResult` třídy.  
   
 ```  
 CREATE PROCEDURE [dbo].[Customers By City]  
@@ -35,6 +36,6 @@ END
  [!code-csharp[DLinqSprox#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSprox/cs/northwind-sprox.cs#1)]
  [!code-vb[DLinqSprox#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSprox/vb/northwind-sprox.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+## <a name="see-also"></a>Viz také:
+- [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Stažení ukázkových databází](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6ed8bbbd9699fe707d638bb8d07064e508b6f2fb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 58c6e6685cc5c268d9313457469369d9df25e13b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447769"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564143"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName – metoda
 Vytvoří výčet FieldDef tokeny zadaného typu se zadaným názvem.  
@@ -42,42 +42,42 @@ HRESULT EnumFieldsWithName (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor.  
+ [out v] Ukazatel na enumerátor.  
   
  `cl`  
- [v] Token typu, jehož pole jsou na vytvoření výčtu.  
+ [in] Token typu, jehož pole jsou pro provedení výčtu.  
   
  `szName`  
- [v] Název pole, která omezuje obor výčtu.  
+ [in] Název pole, která omezuje rozsah výčtu.  
   
  `rFields`  
- [out] Pole používá k ukládání FieldDef tokenů.  
+ [out] Pole pro ukládání tokenů FieldDef.  
   
  `cMax`  
- [v] Maximální velikost `rFields` pole.  
+ [in] Maximální velikost `rFields` pole.  
   
  `pcTokens`  
- [out] Skutečný počet FieldDef tokeny, vrátí se v `rFields`.  
+ [out] Skutečný počet tokenů FieldDef vrácené v `rFields`.  
   
 ## <a name="remarks"></a>Poznámky  
- Na rozdíl od [imetadataimport::enumfields –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` zahodí všechny tokeny pole, které nemají zadaný název.  
+ Na rozdíl od [imetadataimport::enumfields –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` zahodí všechny tokeny pole, které nemají se zadaným názvem.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádná pole pro vytvoření výčtu. V takovém případě `pcTokens` je nulová.|  
+|`S_OK`|`EnumFieldsWithName` bylo úspěšně vráceno.|  
+|`S_FALSE`|Nejsou žádná pole pro zobrazení výčtu. V takovém případě `pcTokens` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

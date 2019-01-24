@@ -9,42 +9,42 @@ helpviewer_keywords:
 - dependency properties [WPF], XAML loading and
 - loading XML data [WPF]
 ms.assetid: 6eea9f4e-45ce-413b-a266-f08238737bf2
-ms.openlocfilehash: 28e121e73ad4bd8ab70aed5f651418eb309b0c03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3cce6e09cd2dbb02a07487ade781b03406fcad96
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33547723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580275"
 ---
 # <a name="xaml-loading-and-dependency-properties"></a>Vlastnost závislostí a načítání XAML
-Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty vědět vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesoru používá metody systému vlastností vlastností závislostí při načítání binární [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a zpracování atributy, které jsou vlastnosti závislosti. To efektivně obchází obálky vlastnost. Při implementaci vlastní závislosti vlastnosti, musí účet pro toto chování a byste neměli umístění jakýkoli jiný kód ve vaší vlastnost obálku než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  
+Aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru je ze své podstaty používající vlastnost závislosti. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Procesor při načítání binární soubor používá metody vlastností systému pro vlastnosti závislosti [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a při zpracovávání atributů, které jsou vlastnosti závislosti. To efektivně obchází vlastnost obálky. Pokud implementujete vlastní vlastnosti závislosti, musí odpovídat tomuto chování a by měl předejde jakýkoli jiný kód v vaši Obálka vlastnosti než metody vlastností systému <xref:System.Windows.DependencyObject.GetValue%2A> a <xref:System.Windows.DependencyObject.SetValue%2A>.  
   
   
 <a name="prerequisites"></a>   
 ## <a name="prerequisites"></a>Požadavky  
- Toto téma předpokládá, že pochopit vlastností závislostí jak jako příjemce a autora a přečetli [přehled vlastností závislostí](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md) a [vlastní závislosti vlastnosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md). Měli byste také mít si přečíst [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) a [XAML syntaxe v podrobností](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
+ Toto téma předpokládá, že pochopit vlastnosti závislostí i jako příjemce a Autor a přečetl [přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md) a [vlastní vlastnosti závislosti](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md). Doporučujeme mít přečíst [přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md) a [syntaxe XAML v podrobnosti o](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md).  
   
 <a name="implementation"></a>   
 ## <a name="the-wpf-xaml-loader-implementation-and-performance"></a>Implementace zavaděč WPF XAML a výkonu  
- Z důvodů implementace, je u levnější identifikovat vlastnost jako vlastnost závislosti a přístup k systému vlastnost <xref:System.Windows.DependencyObject.SetValue%2A> metodu a nastavit ho, místo obálku vlastnost a její setter. Důvodem je, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor musí odvodit celý objekt modelu kódu zálohování na základě pouze na znalost typu a členu vztahy, které jsou označeny strukturu kód a různé řetězců.  
+ Z důvodu implementace, je výpočetně levnější k identifikaci vlastnost jako vlastnost závislosti a přístupu v systému vlastností <xref:System.Windows.DependencyObject.SetValue%2A> metody nastavte ho, spíš než obálka vlastnosti a její metody setter. Důvodem je, že [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru musí odvodit celý objekt modelu kódu zálohování založen pouze na vztahy, které jsou označeny konstrukcí kódu a různých řetězců znalost typů a členů.  
   
- Typ je prohledávat pomocí kombinace xmlns a atributů sestavení, ale identifikace členů, určení, která by mohla podporovat, je nastaven jako atribut, a řešení, jaké typy podporují hodnoty vlastností by jinak vyžadovat rozsáhlé reflexe pomocí <xref:System.Reflection.PropertyInfo>. Vzhledem k tomu, že jsou dostupné jako tabulku úložiště pomocí vlastnosti systému, vlastností závislostí na daný typ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesoru na základě této tabulky a odvodí, že jakékoli zadána vlastnost *ABC* můžete nastavit efektivněji voláním <xref:System.Windows.DependencyObject.SetValue%2A> na obsahující <xref:System.Windows.DependencyObject> odvozeného typu pomocí identifikátoru vlastnosti závislosti *ABCProperty*.  
+ Typ se hledá pomocí kombinace xmlns a atributy sestavení, ale členů určující, které můžou podporovat i nastavena jako atribut, identifikace a řešení, jaké typy, které podporují hodnoty vlastností by jinak vyžadují rozsáhlé reflexe pomocí <xref:System.Reflection.PropertyInfo>. Protože jsou k dispozici jako úložiště tabulky prostřednictvím vlastnosti systému, vlastnosti závislosti na daný typ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění jeho [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor používá tuto tabulku a odvodí z něj všechny zadané vlastnosti *ABC* můžete nastavit efektivněji voláním <xref:System.Windows.DependencyObject.SetValue%2A> obsahující <xref:System.Windows.DependencyObject> odvozeného typu, pomocí identifikátoru vlastnosti závislosti *ABCProperty*.  
   
 <a name="implications"></a>   
-## <a name="implications-for-custom-dependency-properties"></a>Důsledky pro vlastní závislosti vlastnosti  
- Protože aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] chování procesoru pro nastavení vlastnosti obchází obálky zcela a veškeré další logiky nesmí put do sady definice obálku pro vlastnost vaše vlastní závislosti. Pokud vložíte tuto logiku v definici sady, pak logiku nebudou provedeny, když je vlastnost nastavena [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] spíše než v kódu.  
+## <a name="implications-for-custom-dependency-properties"></a>Důsledky pro vlastní vlastnosti závislosti  
+ Protože aktuální [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] chování procesoru pro nastavení vlastnosti obchází obálkami úplně, žádná další logika by neměl umístit do definice sady obálky pro vaše vlastní závislost vlastnost. Pokud vložíte tuto logiku v definici sady a potom logiku nebude provedeno, když je nastavena [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] spíše než v kódu.  
   
- Podobně další aspekty [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, který získat hodnoty vlastností z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zpracování taky použití <xref:System.Windows.DependencyObject.GetValue%2A> místo pomocí obálku. Proto byste neměli také všechny další implementace v `get` definice nad rámec <xref:System.Windows.DependencyObject.GetValue%2A> volání.  
+ Podobně, pracovat s dalšími aspekty [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] procesor, který získat hodnoty vlastností z [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] zpracování také použití <xref:System.Windows.DependencyObject.GetValue%2A> místo použití obálky. Proto byste se měli také vyhnout jakékoli další použití v `get` definice nad rámec <xref:System.Windows.DependencyObject.GetValue%2A> volání.  
   
- Následující příklad je definice vlastnosti doporučené závislostí s obálky, se uloží identifikátor vlastnosti jako `public` `static` `readonly` pole a `get` a `set` definice neobsahují žádný kód nad rámec metody systému nezbytné vlastnosti, které definují vlastnosti závislosti zálohování.  
+ V následujícím příkladu je definice vlastnosti doporučené závislostí s obálky, identifikátor vlastnosti se mají ukládat jako `public` `static` `readonly` pole a `get` a `set` definice neobsahují žádný kód nad rámec metod systém nezbytné vlastnosti, které definují vlastnosti závislosti zálohování.  
   
  [!code-csharp[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#agwithwrapper)]
  [!code-vb[WPFAquariumSln#AGWithWrapper](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#agwithwrapper)]  
   
-## <a name="see-also"></a>Viz také  
- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
- [Vlastnosti závislostí typu kolekce](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
- [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
- [Zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Metadata vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)
+- [Vlastnosti závislostí typu kolekce](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)
+- [Zabezpečení vlastností závislosti](../../../../docs/framework/wpf/advanced/dependency-property-security.md)
+- [Zabezpečené vzory konstruktoru pro DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)

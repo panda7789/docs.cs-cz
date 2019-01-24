@@ -2,12 +2,12 @@
 title: Zabezpečené klientské aplikace
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: a3b035d59a39ca20f6a81fbd40d39069a7cc43c2
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 4233ce4edc788f3129043c5a1ef1acb26dd1d899
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397891"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599610"
 ---
 # <a name="secure-client-applications"></a>Zabezpečené klientské aplikace
 Aplikace se obvykle skládají z mnoho částí, které musí ochránit před chybami zabezpečení, které by mohly způsobit ztrátu dat nebo jinak ohrozit zabezpečení systému. Vytváření zabezpečených uživatelské rozhraní může zabránit mnoho problémů zákonné zodpovědnosti organizací blokováním útočníci před získáním přístupu dat nebo dostatek systémových prostředků.  
@@ -47,7 +47,7 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
   
  Webové služby XML obsahuje data, která mohou být spotřebovány aplikaci ASP.NET, aplikace modelu Windows Forms nebo jiné webové služby. Potřebujete spravovat zabezpečení pro samotnou webovou službu, jakož i zabezpečení pro klientské aplikace.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -65,9 +65,9 @@ Aplikace se obvykle skládají z mnoho částí, které musí ochránit před ch
 |[Zabezpečení vzdálené komunikace](https://msdn.microsoft.com/library/9574262c-d4b1-41c5-8600-24ff147c0add)|Popisuje, ověřování a šifrování, jakož i další bezpečnostní témata, které jsou relevantní pro vzdálenou komunikaci.|  
 |[Zabezpečení a důležité informace o vzdálené komunikace](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Popisuje problémy se zabezpečením pomocí chráněných objektů a křížení domén aplikace.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)  
- [Zabezpečování aplikací](/visualstudio/ide/securing-applications)  
- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)
+- [Zabezpečování aplikací](/visualstudio/ide/securing-applications)
+- [Ochrana informací o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

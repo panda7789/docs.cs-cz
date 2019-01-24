@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 1b7d5aca6b2c992e4f1d6bdef2a687d1ff43bf71
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 34d49416bb7d0da60624a1f60e4dbd01a1dff9cd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584542"
 ---
 # <a name="date-and-time-data"></a>Kalendářní a časová Data
 SQL Server 2008 zavádí nové datové typy pro zpracování informací o datu a času. Nové datové typy zahrnují rozšířené datové typy s větší rozsah, přesnost a časové pásmo a samostatné typy pro datum a čas. Od verze rozhraní .NET Framework 3.5 Service Pack (SP) 1, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje plnou podporu pro všechny nové funkce databázového stroje SQL Server 2008. Musíte nainstalovat rozhraní .NET Framework 3.5 SP1 (nebo novější) pro použití těchto nových funkcí s SqlClient.  
@@ -77,10 +77,10 @@ Můžete zadat datový typ <xref:System.Data.SqlClient.SqlParameter> pomocí jed
 |Datový typ SQL serveru|Typ rozhraní .NET Framework|System.Data.SqlDbType|System.Data.DbType|  
 |--------------------------|-------------------------|---------------------------|------------------------|  
 |Datum|System.DateTime|Datum|Datum|  
-|čas|Hodnota System.TimeSpan|čas|čas|  
+|čas|System.TimeSpan|Čas|Čas|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
 |DateTimeOffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
-|Datum a čas|System.DateTime|DateTime|DateTime|  
+|datetime|System.DateTime|DateTime|DateTime|  
 |smalldatetime|System.DateTime|DateTime|DateTime|  
   
 ### <a name="sqlparameter-properties"></a>Vlastnosti SqlParameter  
@@ -237,10 +237,10 @@ command.Parameters.AddWithValue( _
 |-----------|-----------------|  
 |[Datum a čas Data typy a funkce (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98360)|Poskytuje přehled příkazů jazyka Transact-SQL data a času datové typy a funkce.|  
 |[Pomocí kalendářní a časová Data](https://go.microsoft.com/fwlink/?LinkId=98361)|Poskytuje informace o datum a čas datové typy a funkce a příklady jejich použití.|  
-|[Datové typy (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje datové typy systému SQL Server 2008.|  
+|[Data Types (Transact-SQL)](https://go.microsoft.com/fwlink/?LinkId=98362)|Popisuje datové typy systému SQL Server 2008.|  
   
-## <a name="see-also"></a>Viz také  
- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
+- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
+- [Datové typy SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

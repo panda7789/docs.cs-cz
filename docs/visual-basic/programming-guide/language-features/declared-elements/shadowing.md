@@ -18,48 +18,48 @@ helpviewer_keywords:
 - objects [Visual Basic], names
 - names [Visual Basic], shadowing
 ms.assetid: 54bb4c25-12c4-4181-b4a0-93546053964e
-ms.openlocfilehash: fde6259b67a8d963ed8c30b87c94029fb2658664
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6ac973493b67fa15ca935f61bbb8e5c07bda1e0f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656068"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580860"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic
-Když dva programovací elementy sdílet stejný název, jednu z nich můžete skrýt, nebo *stínové*, jiný. V takové situaci stíněné element není k dispozici pro referenci; Místo toho že pokud váš kód používá název elementu, Visual Basic – kompilátor ho přeloží na stínového provozu elementu.  
+Když dva programovací prvky sdílí se stejným názvem, jeden z nich můžete skrýt, nebo *stínové*, druhou. V takové situaci stínovaný prvek není k dispozici pro referenci; Místo toho se při váš kód používá název elementu, kompilátor jazyka Visual Basic se přeloží na elementu stínového provozu.  
   
 ## <a name="purpose"></a>Účel  
- Hlavním účelem stínový provoz je k ochraně definici členy vaší třídy. Základní třída může podstoupit změnu, která vytvoří element se stejným názvem jako jeden, který je již definován. V takovém případě `Shadows` modifikátor vynutí odkazuje prostřednictvím vaší třídy přeloží na člen definované, místo do nového elementu základní třídy.  
+ Stínový provoz hlavním účelem je chránit definice členů třídy. Základní třídy může být změnu, která vytvoří element se stejným názvem jako ten, který je již definován. Pokud k tomu dojde, `Shadows` modifikátor vynutí odkazuje prostřednictvím vaší třídy, které je potřeba vyřešit členovi definované, namísto nový prvek základní třídy.  
   
-## <a name="types-of-shadowing"></a>Typy stínováním  
- Element můžete stínové jiný element dvěma různými způsoby. Element stínového provozu může být deklarována uvnitř podoblasti oblasti obsahující stíněné elementu, ve kterém se provádí stínový provoz – případ *prostřednictvím oboru*. Nebo odvozující třídě lze znovu definovat členem základní třídu, ve kterém se provádí stínový provoz – případ *prostřednictvím dědičnosti*.  
+## <a name="types-of-shadowing"></a>Typy stínování  
+ Element můžete stínové jiný element dvěma různými způsoby. Element stínového provozu mohou být deklarovány uvnitř podoblasti oblasti obsahující stínovaný element, ve kterém se provádí případ, stínováním *prostřednictvím oboru*. Nebo odvozená třída může předefinovat člena základní třídy, ve kterém se provádí případ, stínováním *prostřednictvím dědičnosti*.  
   
 ### <a name="shadowing-through-scope"></a>Stínový provoz prostřednictvím oboru  
- Je možné pro programování elementů ve stejném modulu, třídu nebo strukturu, do mají stejný název, ale jiný rozsah. Pokud jsou dva elementy deklarované tímto způsobem a kód odkazuje na název sdílejí, element s oboru užší shadows jiného elementu (je nejbližší rozsah bloku).  
+ Je možné pro vaše programovací prvky ve stejném modulu, třídy nebo struktury mají stejný název, ale jiného oboru. Když kód odkazuje na název sdílejí tímto způsobem jsou deklarovány dva prvky, element s oborem užší zastiňuje jiného elementu (rozsah bloku je nejbližší).  
   
- Například můžete definovat modul `Public` proměnné s názvem `temp`, a postupu v modulu můžou deklarovat místní proměnné také s názvem `temp`. Odkazuje na `temp` uvnitř postup přístup k místní proměnné, při odkazy na `temp` z mimo přístup procedur `Public` proměnné. V tomto případě proměnnou postup `temp` shadows proměnnou modulu `temp`.  
+ Například můžete definovat modulu `Public` proměnnou s názvem `temp`, a postup v rámci modulu lze deklarovat lokální proměnná i s názvem `temp`. Odkazy na `temp` v rámci postupu přístup k místní proměnné při odkazy na `temp` z mimo řízení přístupu `Public` proměnné. V takovém případě proměnnou postup `temp` zastiňuje proměnná modulu `temp`.  
   
- Následující obrázek znázorňuje dvě proměnné, jak s názvem `temp`. Místní proměnná `temp` shadows členské proměnné `temp` přistupováno z v rámci vlastní procedury `p`. Ale `MyClass` – klíčové slovo stínový provoz obchází a přistupuje k členské proměnné.  
+ Následující obrázek znázorňuje dvě proměnné, oba s názvem `temp`. Lokální proměnná `temp` zastiňuje členskou proměnnou `temp` při přístupu z v rámci své vlastní procedury `p`. Ale `MyClass` – klíčové slovo stínový provoz obchází a přistupuje k členské proměnné.  
   
- ![Grafický diagram stínování prostřednictvím oboru](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowscope.gif "ShadowScope")  
+ ![Stínový provoz prostřednictvím oboru Grafický diagram](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowscope.gif "ShadowScope")  
 Stínový provoz prostřednictvím oboru  
   
- Příklad stínování prostřednictvím rozsahu, naleznete v části [postupy: skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
+ Příklad stínování prostřednictvím oboru, naleznete v tématu [jak: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
   
 ### <a name="shadowing-through-inheritance"></a>Stínový provoz prostřednictvím dědičnosti  
- Pokud odvozené třídy znovu definuje programovací element zděděn ze základní třídy, stín redefining element původní elementu. Žádný druh deklarovaný element nebo sadu přetížené elementů můžete stínové s žádným jiným typem. Například `Integer` můžete stínové proměnné `Function` postupu. Pokud jste stínové procedury s jinou proceduru, můžete seznam různých parametrů a jiné návratový typ.  
+ Pokud odvozené třídy předefinuje programovací element zděděné ze základní třídy, prvku redefining zastiňuje původní elementu. Jakýkoli element deklarovaný typ nebo sadu přetížených elementů můžete stínové s žádným jiným typem. Například `Integer` můžete stínové proměnné `Function` postup. Pokud jste stínové procedury s jinou proceduru, můžete použít seznam různých parametrů a jiným návratovým typem.  
   
- Následující obrázek ukazuje základní třídu `b` a odvozená třída `d` který dědí z `b`. Definuje základní třídu s názvem procedury `proc`, a odvozené třídy jej shadows s jinou proceduru se stejným názvem. První `Call` příkaz přistupuje stínováním `proc` v odvozené třídě. Ale `MyBase` – klíčové slovo stínový provoz obchází a přistupuje k procesu stíněné v základní třídě.  
+ Následující obrázek ukazuje základní třídu `b` a odvozená třída `d` , která dědí z `b`. Základní třída definuje proceduru s názvem `proc`, a odvozená třída zastiňuje ho pomocí jiné proceduře se stejným názvem. První `Call` příkaz přistupuje stínováním `proc` v odvozené třídě. Ale `MyBase` – klíčové slovo stínový provoz obchází a budou k dispozici stínovaný postup v základní třídě.  
   
- ![Grafický diagram stínování prostřednictvím dědičnosti](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowinherit.gif "ShadowInherit")  
+ ![Stínový provoz prostřednictvím dědičnosti Grafický diagram](../../../../visual-basic/programming-guide/language-features/declared-elements/media/shadowinherit.gif "ShadowInherit")  
 Stínový provoz prostřednictvím dědičnosti  
   
- Příklad stínování prostřednictvím dědičnosti, naleznete v části [postupy: skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) a [postupy: skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
+ Příklad stínový provoz prostřednictvím dědičnosti, naleznete v tématu [jak: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) a [jak: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
   
 #### <a name="shadowing-and-access-level"></a>Stínový provoz a úroveň přístupu  
- Element stínového provozu není vždy přístupné z kódu pomocí odvozené třídy. Například může deklarovat `Private`. V takovém případě stínový provoz je nepotlačí a kompilátor vyřeší všechny odkazy na stejný element by měla mít pokud by došlo bez stínový provoz. Tento element je přístupný element nejmenším počtem derivational kroky zpátky ze třídy stínového provozu. Pokud element stíněné procedury, řešení je na nejbližší dostupný verzi se stejným názvem, seznam parametrů a návratovým typem.  
+ Element stínového provozu vždy není přístupné z kódu pomocí odvozené třídy. Například může být deklarován `Private`. V takovém případě stínováním není zrušena a přeloží kompilátor všechny odkazy na stejný prvek by měl mít pokud byla žádné stínováním. Tento prvek je přístupný prvek derivational nejmenším počtem kroků zpět ze třídy stínového provozu. Postup při stínovaný element řešení je nejbližší dostupné verze se stejným názvem, seznam parametrů a návratový typ.  
   
- Následující příklad ukazuje hierarchie dědičnosti tří tříd. Každá třída definuje `Sub` postup `display`, a všechny odvozené třídy stínů `display` postup v její základní třída.  
+ Následující příklad ukazuje tři třídy hierarchie dědičnosti. Každá třída definuje `Sub` postup `display`, a každý odvozené třídy stínů `display` postup v její základní třídě.  
   
 ```  
 Public Class firstClass  
@@ -94,23 +94,23 @@ Module callDisplay
 End Module  
 ```  
   
- V předchozím příkladu, odvozené třídy `secondClass` stínů `display` s `Private` postupu. Pokud modul `callDisplay` volání `display` v `secondClass`, volající kód je mimo `secondClass` a proto nemá přístup k privátní `display` postupu. Stínový provoz je nepotlačí a kompilátor přeloží odkaz na základní třídu `display` postupu.  
+ V předchozím příkladu, odvozené třídy `secondClass` stíny `display` s `Private` postup. Pokud modul `callDisplay` volání `display` v `secondClass`, volající kód je mimo `secondClass` a proto nemůže přistupovat k privátní `display` postup. Stínový provoz není zrušena a přeloží kompilátor odkaz na základní třídu `display` postup.  
   
- Další však odvozené třídy `thirdClass` deklaruje `display` jako `Public`, takže kód v `callDisplay` k němu přístup.  
+ Však další odvozené třídy `thirdClass` deklaruje `display` jako `Public`, takže kód v `callDisplay` k němu máte přístup.  
   
 ## <a name="shadowing-and-overriding"></a>Stínováním a přepsáním  
- Nezaměňujte stínový provoz s přepsání. Jak se používají při odvozené třídy dědí vlastnosti ze základní třídy a obě znovu definovat jeden deklarovaný element s jinou. Ale existují významné rozdíly mezi nimi. Porovnání najdete v tématu [rozdíly mezi stínováním a přepíše](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
+ Nepleťte si stínový provoz pomocí přepsání. Jak se používají při odvozená třída dědí ze základní třídy, a obě znovu definovat jeden element deklarovaný s jiným. Ale existují významné rozdíly mezi nimi. Porovnání najdete v tématu [rozdíly mezi stínováním a přepíše](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
   
 ## <a name="shadowing-and-overloading"></a>Stínový provoz a přetížení  
- Pokud jste v odvozené třídě stínové stejnou základní třídu element s více než jeden element, stanou se stínového provozu elementy přetížené verzích tohoto prvku. Další informace najdete v tématu [přetížení procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+ Pokud stínové prvek základní třídy s více než jeden prvek v odvozené třídě, stanou se stínového provozu prvky přetížené verze daného prvku. Další informace najdete v tématu [přetížení procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
   
-## <a name="accessing-a-shadowed-element"></a>Přístup k stíněné Element  
- Při přístupu k elementu z odvozené třídy, je obvykle k tomu prostřednictvím aktuální instancí třídy odvozené třídy, kvalifikující název elementu s `Me` – klíčové slovo. Pokud odvozené třídy shadows element v základní třídě, dostanete prvku základní třídy kvalifikováním její `MyBase` – klíčové slovo.  
+## <a name="accessing-a-shadowed-element"></a>Přístup k prvku stínovaný  
+ Při přístupu k elementu z odvozené třídy, obvykle tak učiníte prostřednictvím aktuální instanci odvozené třídy, kvalifikaci pomocí názvu elementu `Me` – klíčové slovo. Pokud odvozené třídy zastiňuje elementu v základní třídě, dostanete základní třída prvku kvalifikaci s `MyBase` – klíčové slovo.  
   
- Příklad přístup k prvku stíněné, naleznete v části [postupy: přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
+ Příklad přístup k prvku stínovaný, naleznete v tématu [jak: Přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
   
 ### <a name="declaration-of-the-object-variable"></a>Deklarace proměnné objektu  
- Jak vytvořit proměnné objektu může ovlivnit také zda stínového provozu element nebo element stíněné přistupuje k odvozené třídy. Následující příklad vytvoří dva objekty z odvozené třídy, ale jeden objekt je deklarován jako základní třídy a další jako odvozené třídy.  
+ Jak vytvořit objektové proměnné může ovlivnit také, zda stínového provozu element nebo element stínovaný přistupuje k odvozené třídě. Následující příklad vytvoří dva objekty z odvozené třídy, ale jeden objekt je deklarován jako základní třídu a druhá jako odvozené třídy.  
   
 ```  
 Public Class baseCls  
@@ -137,13 +137,13 @@ Public Class useClasses
 End Class  
 ```  
   
- V předchozím příkladu, proměnná `basObj` je deklarován jako základní třídy. Přiřazení `dervCls` objektu k němu rozšiřující převod se považuje za a je proto platný. Základní třída však nelze přístup stínového provozu verzi proměnnou `z` v odvozené třídě, takže kompilátor přeloží `basObj.z` na původní hodnotu základní třídy.  
+ V předchozím příkladu je proměnná `basObj` je deklarován jako základní třídy. Přiřazení `dervCls` objektu představuje rozšiřující převod a proto je platná. Však základní třídy nedaří stínového provozu verze proměnné `z` v odvozené třídě, takže přeloží kompilátor `basObj.z` na původní hodnotu základní třídy.  
   
-## <a name="see-also"></a>Viz také  
- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [Rozsah v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
- [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)  
- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)  
- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)  
- [Základní informace o dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+## <a name="see-also"></a>Viz také:
+- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Obor v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
+- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
+- [Me, My, MyBase a MyClass](../../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [Základní informace o dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)

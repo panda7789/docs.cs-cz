@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 133e056663b208f2a0d12f05f31daaca95676dc5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 5a405c5e245558e6b8d1b389bfc143faae4550a5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152315"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577591"
 ---
 # <a name="getmethod-function"></a>Funkce GetMethod
 Načte informace o zadané metodě.
@@ -86,5 +86,5 @@ V `ppInSignature` a `ppOutSignature` popisují ani výstupní parametry, v uvede
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -2,22 +2,22 @@
 title: System.ServiceModel.ManualFlowThrottleLimitReached
 ms.date: 03/30/2017
 ms.assetid: 9aba851f-1830-493b-8e3e-60f454eb923e
-ms.openlocfilehash: a6b4e369d2d22d2441b3896321b7c152e21d967b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86d47ab0a83ff3e4a68bfa8ccf1349cf2b345b23
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33483328"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597733"
 ---
 # <a name="systemservicemodelmanualflowthrottlelimitreached"></a>System.ServiceModel.ManualFlowThrottleLimitReached
 System.ServiceModel.ManualFlowThrottleLimitReached  
   
 ## <a name="description"></a>Popis  
- Systém dosažen limit nastavený pro ManualFlowControlLimit omezení. Hodnota omezení lze změnit úpravou vlastnosti ManualFlowControlLimit na hostiteli služby nebo objekt InstanceContext, podle vhodnosti.  
+ Systém dosáhl limitu nastaveného pro omezení ManualFlowControlLimit. Hodnotu omezení lze změnit upravením vlastnosti ManualFlowControlLimit ServiceHost nebo třída InstanceContext, podle potřeby.  
   
- Trasování jsou vydávány po limit ruční toku řízení původně zmenšení na hodnotu 0. Následné změny 0 nejsou trasovat. Tok řízení limit pro daný kontext instance trasovaný jednou pro každý kontext.  
+ Trasování je vygenerován při limit ruční toku řízení je zpočátku omezená na 0. Následné změny 0 nebudou trasovány. Tok řízení omezený kontext instance trasován jednou pro každý kontext.  
   
-## <a name="see-also"></a>Viz také  
- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)
+## <a name="see-also"></a>Viz také:
+- [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [Řešení problémů s aplikací pomocí trasování](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
+- [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

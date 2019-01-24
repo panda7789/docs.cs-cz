@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 78fdcb69e73bc7238972d1a6ffb37b5ba91c7953
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e73afa7ef33e12d6bc658c944c79ce1bc4f94f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459082"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572412"
 ---
 # <a name="stacksnapshotcallback-function"></a>StackSnapshotCallback – funkce
-Poskytuje informace o každé spravované rámečkem a každé spuštění nespravované rámce v zásobníku při procházení zásobníku, který je inicializován nástrojem profileru [ICorProfilerInfo2::dostacksnapshot –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metoda.  
+Poskytuje informace o každý spravovaný rámec a každé spuštění nespravované rámce v zásobníku během procházení zásobníku, která inicializuje profiler [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT __stdcall StackSnapshotCallback (
   
 #### <a name="parameters"></a>Parametry  
  `funcId`  
- [v] Pokud je tato hodnota nulová, je tato zpětné volání pro spouštění funkce nespravované rámce; jinak je identifikátor spravované funkce a je tento zpětné volání pro spravované rámce.  
+ [in] Pokud tato hodnota je nula, je tato zpětné volání pro spuštění nespravované snímky. v opačném případě je to identifikátor spravované funkce a je tato zpětné volání pro spravovaný rámec.  
   
  `ip`  
- [v] Hodnota ukazatel instrukce nativního kódu v rámečku.  
+ [in] Hodnota ukazatele na instrukci nativního kódu v rámci.  
   
  `frameInfo`  
- [v] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o rámce zásobníku. Tato hodnota je platná pouze během této zpětného volání.  
+ [in] A `COR_PRF_FRAME_INFO` hodnotu, která odkazuje na informace o zásobníku. Tato hodnota je platná pro použití pouze během tohoto zpětného volání.  
   
  `contextSize`  
- [v] Velikost `CONTEXT` strukturu, která odkazuje `context` parametr.  
+ [in] Velikost `CONTEXT` strukturu, která odkazuje `context` parametru.  
   
  `context`  
- [v] Ukazatel na Win32 `CONTEXT` struktura, která představuje stav procesoru pro tento snímek.  
+ [in] Ukazatel na Win32 `CONTEXT` struktura, která představuje stav procesoru pro tento rámec.  
   
- `context` Parametr je platný pouze v případě, že byla předána příznak COR_PRF_SNAPSHOT_CONTEXT `ICorProfilerInfo2::DoStackSnapshot`.  
+ `context` Parametr je platný jenom v případě, že byla předána příznak COR_PRF_SNAPSHOT_CONTEXT `ICorProfilerInfo2::DoStackSnapshot`.  
   
  `clientData`  
- [v] Ukazatel na klienta data, která je předána přímo z `ICorProfilerInfo2::DoStackSnapshot`.  
+ [in] Ukazatel na data klienta, který se předává přímo z `ICorProfilerInfo2::DoStackSnapshot`.  
   
 ## <a name="remarks"></a>Poznámky  
- `StackSnapshotCallback` Funkce je implementována pro zápis profileru. Je nutné omezit složitosti práci `StackSnapshotCallback`. Například při použití `ICorProfilerInfo2::DoStackSnapshot` v asynchronním režimu, může být cílový vlákno podržíte zámky. Pokud kódu v rámci `StackSnapshotCallback` vyžaduje stejné zámků, by mohly vzájemné zablokování.  
+ `StackSnapshotCallback` Funkce je implementováno tvůrci profileru. Je třeba omezit složitost práci v `StackSnapshotCallback`. Například při použití `ICorProfilerInfo2::DoStackSnapshot` v asynchronním režimu cílové vlákno může být zámky. Pokud kódu v rámci `StackSnapshotCallback` vyžaduje stejné uzamčení, zablokování může následovat.  
   
- `ICorProfilerInfo2::DoStackSnapshot` Volání metod `StackSnapshotCallback` funkce jednou za spravované snímek nebo jednou za spuštění nespravované rámce. Pokud `StackSnapshotCallback` je volána pro běh nespravované rámce, může použít profileru kontext registrace (odkazuje `context` parametr) k provedení vlastní procházení nespravované zásobníku. V tomto případě Win32 `CONTEXT` struktura představuje stav procesoru pro nedávno stisknutí rámečku v rámci spustit nespravované snímků. I když Win32 `CONTEXT` struktura zahrnuje hodnoty pro všechny registrů, spoléhat na hodnoty registru ukazatel zásobníku, rámec ukazatel registru, registrace ukazatel instrukce a permanentní (ke které se zachovají) zaregistruje celé číslo.  
+ `ICorProfilerInfo2::DoStackSnapshot` Volání metod `StackSnapshotCallback` funkce jednou pro každý spravovaný snímek nebo jednou za běhu nespravované snímků. Pokud `StackSnapshotCallback` je volána pro spuštění nespravované snímků, profiler může použít kontext registr (odkazuje `context` parametr) provádět vlastní nespravovaná zásobníku. V takovém případě Win32 `CONTEXT` struktura představuje stav procesoru pro nedávno vložené rámce v rámci běhu nespravované snímků. I když Win32 `CONTEXT` struktura obsahuje hodnoty pro všechny registrů, by se neměla spoléhat jenom na hodnoty registru ukazatel zásobníku, registr ukazatelů rámce, registr ukazatele instrukcí a stálé (který se zachovají) celočíselné registry.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl  
   
@@ -74,6 +74,6 @@ HRESULT __stdcall StackSnapshotCallback (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [DoStackSnapshot – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)  
- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+## <a name="see-also"></a>Viz také:
+- [DoStackSnapshot – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md)
+- [Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)

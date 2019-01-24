@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 72020b72-9611-4bc3-b1e7-5a16b023bfa3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 71b70118d77deb7ad6879ed4bd48b1cd37122820
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f77871c8547f250d4b46c11c1a0be25b6ef68a88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414005"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54581933"
 ---
 # <a name="icordebugmergedassemblyrecordgetpublickeytoken-method"></a>ICorDebugMergedAssemblyRecord::GetPublicKeyToken – metoda
-Získá token veřejného klíče je sestavení.  
+Získá token veřejného klíče sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,22 +26,22 @@ HRESULT GetPublicKeyToken(
   
 #### <a name="parameters"></a>Parametry  
  `cbPublicKeyToken`  
- [v] Maximální počet bajtů `pbPublicKeyToken` pole.  
+ [in] Maximální počet bajtů `pbPublicKeyToken` pole.  
   
  `pcbPublicKeyToken`  
- [out] Ukazatel na skutečný počet bajtů zapsaných do `pbPublicKeyToken` pole.  
+ [out] Ukazatel na skutečný počet bajtů zapsaný na `pbPublicKeyToken` pole.  
   
  `pbPublicKeyToken`  
- [out] Ukazatel na bajtové pole, která obsahuje toto sestavení tokenu veřejného klíče.  
+ [out] Ukazatel na bajtové pole, který obsahuje token veřejného klíče sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Token veřejného klíče sestavení je poslední osm bajtů algoritmus hash SHA1 svůj veřejný klíč.  
+ Token veřejného klíče sestavení je posledních osm bajtů hash SHA1 svůj veřejný klíč.  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -49,6 +49,6 @@ HRESULT GetPublicKeyToken(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMergedAssemblyRecord – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMergedAssemblyRecord – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

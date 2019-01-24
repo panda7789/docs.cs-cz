@@ -1,26 +1,26 @@
 ---
-title: 'Úloha 3: Vytvoření sady nástrojů a PropertyGrid podokna'
+title: 'Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
-ms.openlocfilehash: 9bfce22e9de1d6115cb88daddcd2dca355b6bae8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8e332c2caa43e1c9703272d7f2be16b545c44fd3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519747"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558420"
 ---
-# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úloha 3: Vytvoření sady nástrojů a PropertyGrid podokna
-V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a přidat je do opětovné hostování nástroje [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].  
+# <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Úloha 3: Vytvořit panel nástrojů a PropertyGrid podokna
+V této úloze vytvoříte **nástrojů** a **PropertyGrid** podokna a přidat je do změněným hostováním [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].  
   
- Pro odkaz, kód, který by měl být v souboru MainWindow.xaml.cs po dokončení tří úloh v [opětovného hostování návrháře pracovních postupů](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md) řady témat je k dispozici na konci tohoto tématu.  
+ Pro srovnání kód, který by měl být v souboru MainWindow.xaml.cs po dokončení tři úkoly v [změna hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md) řady témat najdete na konci tohoto tématu.  
   
-### <a name="to-create-the-toolbox-and-add-it-to-the-grid"></a>Vytvoření sady nástrojů a přidejte ho k mřížce.  
+### <a name="to-create-the-toolbox-and-add-it-to-the-grid"></a>Vytvořit panel nástrojů a přidat do mřížky  
   
-1.  Otevřete projekt HostingApplication jste získali podle postupu popsaného v [úloha 2: hostování návrháře pracovních postupů](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md).  
+1.  Otevřete projekt HostingApplication můžete získat pomocí následujícího postupu popsaného v [úloha 2: Hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md).  
   
-2.  V **Průzkumníku řešení** podokně klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **kód zobrazení**.  
+2.  V **Průzkumníka řešení** podokně klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**.  
   
-3.  Přidat `GetToolboxControl` metodu `MainWindow` třídu, která vytvoří <xref:System.Activities.Presentation.Toolbox.ToolboxControl>, přidá nový **sada nástrojů** kategorii, která se **sada nástrojů**a přiřadí <xref:System.Activities.Statements.Assign> a <xref:System.Activities.Statements.Sequence> typy aktivit do této kategorie spadají.  
+3.  Přidat `GetToolboxControl` metodu `MainWindow` třídu, která vytvoří <xref:System.Activities.Presentation.Toolbox.ToolboxControl>, přidá nový **nástrojů** kategorii **nástrojů**a přiřadí <xref:System.Activities.Statements.Assign> a <xref:System.Activities.Statements.Sequence> typy aktivit do této kategorie spadají.  
   
     ```csharp  
     private ToolboxControl GetToolboxControl()  
@@ -49,7 +49,7 @@ V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a př
     }  
     ```  
   
-4.  Přidat privátního `AddToolbox` metodu `MainWindow` třídu, která umístí **sada nástrojů** v levém sloupci v mřížce.  
+4.  Přidat soukromé `AddToolbox` metodu `MainWindow` třídu, která umístí **nástrojů** v levém sloupci mřížky.  
   
     ```csharp  
     private void AddToolBox()  
@@ -60,7 +60,7 @@ V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a př
     }  
     ```  
   
-5.  Přidejte volání `AddToolBox` metoda v `MainWindow()` konstruktoru třídy, jak je znázorněno v následujícím kódu.  
+5.  Přidejte volání `AddToolBox` metoda ve `MainWindow()` konstruktoru třídy, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
     public MainWindow()  
@@ -73,13 +73,13 @@ V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a př
     }  
     ```  
   
-6.  Stisknutím klávesy F5 sestavení a spuštění řešení. **Sada nástrojů** obsahující <xref:System.Activities.Statements.Assign> a <xref:System.Activities.Statements.Sequence> aktivity mají být zobrazeny.  
+6.  Stisknutím klávesy F5 sestavte a spusťte řešení. **Nástrojů** obsahující <xref:System.Activities.Statements.Assign> a <xref:System.Activities.Statements.Sequence> má být zobrazena činnosti.  
   
 ### <a name="to-create-the-propertygrid"></a>Vytvoření ovládacího prvku PropertyGrid  
   
-1.  V **Průzkumníku řešení** podokně klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **kód zobrazení**.  
+1.  V **Průzkumníka řešení** podokně klikněte pravým tlačítkem na soubor MainWindow.xaml a vyberte **zobrazit kód**.  
   
-2.  Přidat `AddPropertyInspector` metodu `MainWindow` třída umístit **PropertyGrid** podokně ve sloupci úplně vpravo v mřížce.  
+2.  Přidat `AddPropertyInspector` metodu `MainWindow` třídy k umístění **PropertyGrid** podokně ve sloupci úplně vpravo v mřížce.  
   
     ```csharp  
     private void AddPropertyInspector()  
@@ -89,7 +89,7 @@ V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a př
     }  
     ```  
   
-3.  Přidejte volání `AddPropertyInspector` metoda v `MainWindow()` konstruktoru třídy, jak je znázorněno v následujícím kódu.  
+3.  Přidejte volání `AddPropertyInspector` metoda ve `MainWindow()` konstruktoru třídy, jak je znázorněno v následujícím kódu.  
   
     ```csharp  
     public MainWindow()  
@@ -103,10 +103,10 @@ V této úloze se vytvoří **sada nástrojů** a **PropertyGrid** podokna a př
     }  
     ```  
   
-4.  Stisknutím klávesy F5 sestavení a spuštění řešení. **Sada nástrojů**, plátno návrhu pracovního postupu, a **PropertyGrid** podokna by měly být zobrazeny všechny a při přetažení <xref:System.Activities.Statements.Assign> aktivity nebo <xref:System.Activities.Statements.Sequence> aktivity na plátno návrhu v závislosti na zvýrazněné aktivity by měl aktualizovat mřížkou vlastností.  
+4.  Stisknutím klávesy F5 sestavte a spusťte řešení. **Nástrojů**, plátno s návrhem pracovního postupu, a **PropertyGrid** podokna by měly být zobrazeny všechny a při přetažení <xref:System.Activities.Statements.Assign> aktivity nebo <xref:System.Activities.Statements.Sequence> aktivity na plátno návrhu v závislosti na aktivitě zvýrazněné by měl aktualizovat mřížku vlastností.  
   
 ## <a name="example"></a>Příklad  
- Soubor MainWindow.xaml.cs teď by měla obsahovat následující kód.  
+ Soubor MainWindow.xaml.cs by měl nyní obsahovat následující kód.  
   
 ```  
 using System;  
@@ -212,7 +212,7 @@ namespace HostingApplication
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
- [Úkol 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
- [Úkol 2: Hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md)
+## <a name="see-also"></a>Viz také:
+- [Změna hostování Návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)
+- [Úloha 1: Vytvoření nové aplikace Windows Presentation Foundation](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)
+- [Úloha 2: Hostování návrháře postupu provádění](../../../docs/framework/windows-workflow-foundation/task-2-host-the-workflow-designer.md)

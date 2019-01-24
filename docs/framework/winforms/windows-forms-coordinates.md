@@ -7,26 +7,27 @@ helpviewer_keywords:
 - client coordinates
 - coordinates [Windows Forms], Windows Forms
 ms.assetid: cc06e61f-43b6-4408-a676-2542dcfcd96e
-ms.openlocfilehash: ba6bf8c1a8ae5ab14a9b33ae431e34310046b2a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a6f082eb57a9cfe1af0d4207cbf5226637191c90
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556048"
 ---
 # <a name="windows-forms-coordinates"></a>Windows Forms – souřadnice
-Souřadnicový systém pro formuláře Windows je založený na zařízení souřadnice a základní měrná jednotka služby při kreslení v systému Windows Forms je jednotka zařízení (obvykle pixelů). Bodů na obrazovce jsou popsané podle dvojic souřadnice x a y s souřadnice x zvýšení souřadnice y zvýšení shora dolů a doprava. Umístění počátek, relativně k obrazovce, budou lišit v závislosti na tom, jestli jsou zadání souřadnice obrazovky nebo klienta.  
+Systém souřadnic pro formulář Windows je založen na souřadnice zařízení a základní jednotka měření při kreslení v modelu Windows Forms je jednotka zařízení (obvykle pixelů). Body na obrazovce jsou popsány pomocí dvojice souřadnice x a y, s souřadnice x zvýšení souřadnice y zvýšení shora dolů a doprava. Umístění zdroje, vzhledem k obrazovce, se bude lišit v závislosti na tom, zda jsou určení souřadnice obrazovky nebo klienta.  
   
 ## <a name="screen-coordinates"></a>Souřadnice obrazovky  
- Aplikace Windows Forms určuje pozici okna na obrazovce souřadnice obrazovky. Souřadnice obrazovky pochází levého horního rohu obrazovky. Úplné pozici okno je často popsán <xref:System.Drawing.Rectangle> struktura obsahující souřadnice obrazovky dva body, které definují rozích levém horním a pravém dolním rohu okna.  
+ Aplikace modelu Windows Forms určuje pozici okna na obrazovce v souřadnicovém systému obrazovky. Souřadnice obrazovky původ levého horního rohu obrazovky. Úplné pozice okna je často popsal <xref:System.Drawing.Rectangle> struktury obsahující souřadnice obrazovky dva body, které definují levém horním a pravém dolním rohu okna.  
   
 ## <a name="client-coordinates"></a>Souřadnice klienta  
- Aplikace Windows Forms určuje pozici bodů ve formuláři nebo ovládacího prvku s použitím souřadnice klienta. Počátek souřadnice klienta je levém horním rohu klientské oblasti formuláře nebo ovládací prvek. Souřadnice klienta Ujistěte se, že aplikace můžete použít konzistentní souřadnic hodnoty při vykreslování ve formuláři nebo ovládací prvek, bez ohledu na pozici formuláře nebo ovládacího prvku na obrazovce.  
+ Aplikace modelu Windows Forms určuje pozici body formuláře nebo ovládacího prvku pomocí klienta souřadnic. Počátek souřadnic klienta je levém horním rohu klientské oblasti formuláře nebo ovládacího prvku. Souřadnice klienta Ujistěte se, že aplikace může používat konzistentní hodnoty souřadnic při kreslení v formulář nebo ovládací prvek, bez ohledu na umístění na formulář nebo ovládací prvek na obrazovce.  
   
- Dimenze klientské oblasti jsou také popsány podle <xref:System.Drawing.Rectangle> struktura, která obsahuje souřadnice klienta pro oblast. Ve všech případech je souřadnice levého horního obdélníku součástí klientské oblasti, zatímco je vyloučen souřadnice pravého dolního. Grafické operace nezahrnují dolní a pravé hrany klientské oblasti. Například <xref:System.Drawing.Graphics.FillRectangle%2A> metoda bude zaplnit vpravo a dolní hrany zadaný obdélníku, ale nebude obsahovat tyto okraje.  
+ Dimenze v oblasti klienta jsou také popsány pomocí <xref:System.Drawing.Rectangle> strukturu, která obsahuje klientské souřadnice pro oblasti. Ve všech případech je souřadnice levého horního rohu obdélníku součástí klientské oblasti, zatímco vyloučené souřadnici pravého dolního rohu. Grafické operace nezahrnují okraje pravé a nižší klientské oblasti. Například <xref:System.Drawing.Graphics.FillRectangle%2A> metoda zaplní vpravo a nižší okraj zadané obdélník, ale nebude obsahovat tyto hrany.  
   
 ## <a name="mapping-from-one-type-of-coordinate-to-another"></a>Mapování z jednoho typu souřadnice  
- Potřebujete v některých případech mapování z souřadnice obrazovky na souřadnice klienta. Toho lze snadno dosáhnout pomocí <xref:System.Windows.Forms.Control.PointToClient%2A> a <xref:System.Windows.Forms.Control.PointToScreen%2A> metody, které jsou k dispozici v <xref:System.Windows.Forms.Control> třídy. Například <xref:System.Windows.Forms.Control.MousePosition%2A> vlastnost <xref:System.Windows.Forms.Control> je uvedený v souřadnice obrazovky, ale můžete chtít převést do souřadnice klienta.  
+ V některých případech budete muset mapování z obrazovky souřadnice na souřadnice klienta. Můžete to snadno provést pomocí <xref:System.Windows.Forms.Control.PointToClient%2A> a <xref:System.Windows.Forms.Control.PointToScreen%2A> metody, které jsou k dispozici v <xref:System.Windows.Forms.Control> třídy. Například <xref:System.Windows.Forms.Control.MousePosition%2A> vlastnost <xref:System.Windows.Forms.Control> se použije v hlášení v souřadnicovém systému obrazovky, ale můžete chtít převést na souřadnice klienta.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Control.PointToClient%2A>  
- <xref:System.Windows.Forms.Control.PointToScreen%2A>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Control.PointToClient%2A>
+- <xref:System.Windows.Forms.Control.PointToScreen%2A>

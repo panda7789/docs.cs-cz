@@ -11,20 +11,20 @@ helpviewer_keywords:
 - methods [Visual Basic], partial methods
 - inserting custom logic into code
 ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
-ms.openlocfilehash: a1708c1d953a60429c1bd87fd858da5c50a3e759
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a974a68010fe80a07e83ac31e109bbf1c2b955e2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33651593"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568774"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
-Částečné metody umožňují vývojářům vložení vlastní logiky do kódu. Kód je obvykle součástí návrháře generované třídy. Částečné metody jsou definovány v konkrétní třídu, který byl vytvořený generátor kódu a běžně se používají k poskytování oznámení, že něco došlo ke změnám. Umožňují vývojáři určit vlastní chování v reakci na změny.  
+Částečné metody umožňují vývojářům k vložení vlastní logiky do kódu. Kód je obvykle součástí třídy generovaný návrhářem. Částečné metody jsou definovány v dílčí třídě vytvořený generátor kódu a běžně se používají k poskytování oznámení, něco se změnila. Umožňují vývojářům určit vlastní chování v reakci na změnu.  
   
- Návrhář generátoru kódu definuje pouze podpis metody a jeden nebo více volání metody. Vývojáři jim pak můžou implementace pro metodu, aby bylo možné přizpůsobit chování generovaného kódu. Pokud je k dispozici žádné implementace, se odeberou volání do metody kompilátorem, což vede k žádné další zatížení.  
+ Návrhář generátoru kódu definuje podpis metody a jeden nebo více volání metody. Vývojáři jim pak můžou implementace metody, pokud je to vyžadováno k přizpůsobení chování generovaného kódu. Pokud je k dispozici žádná implementace, odeberou se volání metody kompilátorem, což vede k žádné dalším výkonnostním režiím.  
   
 ## <a name="declaration"></a>Deklarace  
- Generovaný kód označí definici částečné metody tím, že umístíte klíčové slovo `Partial` na začátku řádku podpisu.  
+ Generovaný kód označí definicí částečné metody tak, že klíčové slovo `Partial` na začátku řádku podpisu.  
   
 ```vb  
 Partial Private Sub QuantityChanged()  
@@ -35,12 +35,12 @@ End Sub
   
 -   Metoda musí být `Sub`, nikoli `Function`.  
   
--   Tělo metody musí být prázdné.  
+-   Tělo metody musí být prázdná.  
   
 -   Modifikátor přístupu musí být `Private`.  
   
 ## <a name="implementation"></a>Implementace  
- Implementace se primárně skládá z naplnění v těle částečné metody. Implementace je obvykle v samostatné částečné třídy z definice a je zapsán vývojáři, kteří chtějí rozšířit generovaného kódu.  
+ Implementace sestává především z vyplnění textu částečné metody. Implementace je obvykle v samostatné částečné třídy z definice a je vytvořená systémem pro vývojáře, kteří chtějí rozšířit generovaného kódu.  
   
 ```vb  
 Private Sub QuantityChanged()  
@@ -48,32 +48,32 @@ Private Sub QuantityChanged()
 End Sub  
 ```  
   
- Předchozí příklad duplikuje podpis v deklaraci přesně, ale je možné, variace. Konkrétně jiných modifikátory lze přidat, jako například `Overloads` nebo `Overrides`. Pouze jeden `Overrides` Modifikátor je povoleno. Další informace o metoda modifikátory najdete v tématu [Sub – příkaz](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ V předchozím příkladu přesně duplikuje podpisu v deklaraci, ale změny jsou možné. Zejména jiných modifikátory lze přidat, jako například `Overloads` nebo `Overrides`. Pouze jeden `Overrides` smí obsahovat modifikátor. Další informace o modifikátory metodu, najdete v části [příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="use"></a>Použití  
- Při volání metody částečné, jako by všechny další volání `Sub` postupu. Pokud byl implementován metodu, argumenty, které se vyhodnocují a je proveden těla metody. Nezapomeňte však, že implementace částečné metoda je volitelné. Pokud metoda není implementována, volání k ní nemá žádný vliv, a nejsou vyhodnotí výrazy předány jako argumenty metodě.  
+ Částečná metoda zavoláte jako jakýkoli jiný zavolal `Sub` postup. Pokud byl implementován metody, jsou vyhodnoceny argumenty a provede se tělo metody. Nezapomeňte však, že implementace částečné metody je volitelné. Pokud metoda není implementována, volání k němu nemá žádný vliv, a není u nich vyhodnoceno výrazy předané jako argumenty metody.  
   
 ## <a name="example"></a>Příklad  
- V souboru s názvem Product.Designer.vb, definovat `Product` třídu, která má `Quantity` vlastnost.  
+ Do souboru s názvem Product.Designer.vb definovat `Product` třídu, která má `Quantity` vlastnost.  
   
  [!code-vb[VbVbalrPartialMeths#4](./codesnippet/VisualBasic/partial-methods_1.vb)]  
   
- V souboru s názvem Product.vb, poskytovat implementaci `QuantityChanged`.  
+ Do souboru s názvem Product.vb poskytnout implementaci pro `QuantityChanged`.  
   
  [!code-vb[VbVbalrPartialMeths#5](./codesnippet/VisualBasic/partial-methods_2.vb)]  
   
- Nakonec v metodě hlavní projektu deklarovat `Product` instance a zadat počáteční hodnotu pro jeho `Quantity` vlastnost.  
+ Nakonec do metody Main projektu deklarovat `Product` instance a zadejte počáteční hodnotu pro jeho `Quantity` vlastnost.  
   
  [!code-vb[VbVbalrPartialMeths#6](./codesnippet/VisualBasic/partial-methods_3.vb)]  
   
- Okno se zprávou by měla vypadat, zobrazí tato zpráva:  
+ Okno se zprávou by měl vypadat, který se zobrazí tato zpráva:  
   
  `Quantity was changed to 100`  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Nepovinné parametry](./optional-parameters.md)  
- [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)  
- [Generování kódu v LINQ to SQL](../../../../framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)  
- [Přidání obchodní logiky pomocí částečných metod](../../../../framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Nepovinné parametry](./optional-parameters.md)
+- [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)
+- [Generování kódu v LINQ to SQL](../../../../framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
+- [Přidání obchodní logiky pomocí částečných metod](../../../../framework/data/adonet/sql/linq/adding-business-logic-by-using-partial-methods.md)

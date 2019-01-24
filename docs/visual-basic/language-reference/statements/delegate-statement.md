@@ -7,12 +7,12 @@ helpviewer_keywords:
 - delegate keyword [Visual Basic]
 - Delegate statement [Visual Basic]
 ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
-ms.openlocfilehash: 4718c0a6e332d644a7f54c79246df95f841058d0
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1ed2dc91d1a2ea9bade11902aac553e24c0607ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199770"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583662"
 ---
 # <a name="delegate-statement"></a>Delegate – příkaz
 Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared` metodu typu nebo metodě instance objektu. Všechny procedury s parametry a návratovým typem odpovídajícím lze použít k vytvoření instance této třídy delegáta. Postup lze poté později vyvolat prostřednictvím instance delegátu.  
@@ -33,7 +33,7 @@ Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared`
 |`Shadows`|Volitelné. Označuje, že tento delegát znovu deklaruje a skryje identicky pojmenovanou programovací prvek, nebo sadu přetížených elementů v základní třídě. Můžete stínové jakýkoli druh element deklarovaný pomocí jakéhokoli druhu.<br /><br /> Stínovaný element je k dispozici v rámci odvozené třídy, která zastiňuje, s výjimkou z kde stínového provozu prvek je přístupný. Například pokud `Private` element zastiňuje prvek základní třídy, kód, který nemá oprávnění k přístupu `Private` element má přístup k elementu základní třídy místo toho.|  
 |`Sub`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Deklaruje tento postup jako delegát `Sub` proceduru, která nevrací hodnotu.|  
 |`Function`|Volitelné, ale buď `Sub` nebo `Function` musí být uvedena. Deklaruje tento postup jako delegát `Function` proceduru, která vrací hodnotu.|  
-|`name`|Požadováno. Název typu delegáta; splňuje standardní zásady vytváření názvů proměnných.|  
+|`name`|Povinný parametr. Název typu delegáta; splňuje standardní zásady vytváření názvů proměnných.|  
 |`typeparamlist`|Volitelné. Seznam parametrů typu pro tohoto delegáta. Více typy parametrů jsou odděleny čárkami. Volitelně můžete každý parametr typu lze deklarovat typ variant pomocí `In` a `Out` obecných parametrů. Je nutné uzavřít [seznam typů](../../../visual-basic/language-reference/statements/type-list.md) v závorkách a zavést ji `Of` – klíčové slovo.|  
 |`parameterlist`|Volitelné. Seznam parametrů, které jsou předány na postup, když je volána. Je nutné uzavřít [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md) v závorkách.|  
 |`type`|Povinné, pokud zadáte `Function` postup. Datový typ vrácené hodnoty.|  
@@ -64,12 +64,12 @@ Slouží k deklaraci delegáta. Delegát je typ odkazu, který odkazuje `Shared`
   
  [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)  
- [z](../../../visual-basic/language-reference/statements/of-clause.md)  
- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)  
- [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
- [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+## <a name="see-also"></a>Viz také:
+- [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
+- [z](../../../visual-basic/language-reference/statements/of-clause.md)
+- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
+- [V](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

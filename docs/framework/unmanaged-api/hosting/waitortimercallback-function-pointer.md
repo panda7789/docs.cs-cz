@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1455ce7c3b07809d1dead8e98019c991475eb02
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d36ae3ef63c1324f77786ad55674bbdc257d984
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442144"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607131"
 ---
 # <a name="waitortimercallback-function-pointer"></a>WAITORTIMERCALLBACK – ukazatel na funkci
-Odkazuje na funkci, která upozorní na hostitele, počkejte zpracování (<xref:System.Threading.WaitHandle>) buď byla signál nebo vypršel časový limit.  
+Odkazuje na funkci, která upozorňuje hostitele, popisovače čekání (<xref:System.Threading.WaitHandle>) buď byl signalizován nebo vypršel časový limit.  
   
- Tento ukazatel na funkci se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
   
 #### <a name="parameters"></a>Parametry  
  `lpParameter`  
- [v] Ukazatel na objekt, který obsahuje informace definované pro hostitele.  
+ [in] Ukazatel na objekt, který obsahuje informace stanovené hostitelem.  
   
  `TimerOrWaitFired`  
- [v] `true` Pokud popisovač čekání vypršení časového limitu, nebo `false` Pokud byl signál.  
+ [in] `true` Pokud popisovač čekání vypršel časový limit, nebo `false` Pokud bylo signalizováno.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce, ke kterému `WAITORTIMERCALLBACK` body je funkce zpětného volání a musí být implementována zapisovačem hostitelskou aplikaci.  
+ Funkce, které `WAITORTIMERCALLBACK` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -56,5 +56,5 @@ typedef VOID (__stdcall *WAITORTIMERCALLBACK) (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

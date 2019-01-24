@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2df33e3edebbf558bf78986e737c4f7bb9b2f0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db1572c035242a4a143ee435957409e5d16fca1f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437154"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607170"
 ---
 # <a name="igchostcontrolrequestvirtualmemlimit-method"></a>IGCHostControl::RequestVirtualMemLimit – metoda
-Požadavky na hostiteli a změnit omezení virtuální paměti.  
+Požadavky hostitele, chcete-li změnit omezení virtuální paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT RequestVirtualMemLimit (
   
 #### <a name="parameters"></a>Parametry  
  `sztMaxVirtualMemMB`  
- [v] Požadovaná velikost paměti, která bude přidělena.  
+ [in] Požadovaná velikost paměti, která bude přidělena.  
   
  `psztNewMaxVirtualMemMB`  
- [ve out] Ukazatel na skutečnou velikost přidělenou paměť.  
+ [out v] Ukazatel na skutečnou velikost přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IGCHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IGCHostControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchostcontrol-interface.md)

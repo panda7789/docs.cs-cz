@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: deaeb4e244a4f9c1e8582d9bea26c2ae5cfde818
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee56a7f343de999d68a71d9eac04eed6e06b444e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421347"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568891"
 ---
 # <a name="icordebugregistersetgetregisters-method"></a>ICorDebugRegisterSet::GetRegisters – metoda
-Získá hodnotu každý registrace (v počítači, který je aktuálně provádění kódu), který je určen podle bit masky.  
+Získá hodnotu každý registr (na počítači, který aktuálně spouští kód), která je určená bitová maska.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ HRESULT GetRegisters (
   
 #### <a name="parameters"></a>Parametry  
  `mask`  
- [v] Bitová maska, která určuje registrace, které se mají načíst hodnoty. Každý bit odpovídá registraci. Pokud je trochu nastaven na jednu, je načíst hodnoty registru; jinak není načíst hodnoty registru.  
+ [in] Bitová maska, která určuje, které registru jsou hodnoty, který se má načíst. Každý bit odpovídá registru. Pokud je o něco nastavená na jednu, načte do registru hodnota; v opačném případě se načíst hodnotu do registru.  
   
  `regCount`  
- [v] Počet hodnot registru, které mají být načteny.  
+ [in] Počet hodnot registru, který se má načíst.  
   
  `regBuffer`  
- [out] Pole `CORDB_REGISTER` objekty, z nichž každý obdrží hodnotu registru.  
+ [out] Pole `CORDB_REGISTER` objektů, z nichž každý přijímá hodnotu z registru.  
   
 ## <a name="remarks"></a>Poznámky  
- Velikost pole musí být roven počtu bitů, které jsou nastavené na jednu v bitová maska. `regCount` Parametr určuje počet elementů ve vyrovnávací paměti, která bude přijímat hodnot registru. Pokud `regCount` hodnota je příliš malý počet registry indikován maska, vyšší číslem registry bude zkrácen ze sady. Pokud `regCount` hodnota je příliš velký, nepoužívané `regBuffer` elementy bude beze změny.  
+ Velikost pole by měl být roven počtu bitů nastavena na jednu v bitové masce. `regCount` Parametr určuje počet prvků ve vyrovnávací paměti, která bude dostávat hodnot registru. Pokud `regCount` hodnota je příliš malý počet registrů indikován maska, vyšší číslované registrů se zkrátí ze sady. Pokud `regCount` hodnota je příliš velká, nepoužívané `regBuffer` prvky bude bez úprav.  
   
- Pokud bitová maska určuje registrace, který je k dispozici, `GetRegisters` vrací neurčitém hodnotu pro tento registrace.  
+ Pokud bit masky určuje registru, který je k dispozici, `GetRegisters` vrátí neurčitá hodnota pro tento registr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,6 +62,6 @@ HRESULT GetRegisters (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)  
- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)

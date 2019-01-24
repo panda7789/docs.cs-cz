@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 5db72a6e5970a2c10e0dd1fb62339efd9b69138c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 35eeab5daec6f63f4d3bed85442ffe6ca28dc38b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840104"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583400"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Internetové informační služby (IIS) a spustit z běžných virtuální adresář. Tento postup jednorázová nastavení vytvoří složku na disk. také přidá virtuální adresář služby IIS s názvem **ServiceModelSamples**.
@@ -40,11 +40,11 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
   
 5.  Postupujte podle [pokyny k bráně Firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md) umožňující použití portů používaných ukázky.  
   
-6.  Vyhledejte následující výchozí adresář: \<InstallDrive >:**\WF_WCF_Samples**. Pokud byly dříve nainstalovány ukázky, toto je výchozí adresář.  
+6.  Zkontrolujte následující výchozí adresář: \<InstallDrive>:**\WF_WCF_Samples**. Pokud byly dříve nainstalovány ukázky, toto je výchozí adresář.  
   
 7.  Pokud nejsou nainstalovány ukázky, je nainstalovat z umístění pro stažení ukázky [Visual C#](https://go.microsoft.com/fwlink/?LinkId=190939) nebo [jazyka Visual Basic](https://go.microsoft.com/fwlink/?LinkID=193373).  
   
-8.  Po instalaci ukázky, přejděte na: \<InstallDrive >:**\WF_WCF_Samples\WCF\Setup\\**  
+8.  Po instalaci ukázky, přejděte na: \<InstallDrive>:**\WF_WCF_Samples\WCF\Setup\\**  
   
 9. Spustit **Setupvroot.bat** dávkového souboru. Jsou prováděny následovně:  
   
@@ -86,4 +86,4 @@ Většina ukázek Windows Communication Foundation (WCF) jsou hostované v Inter
 
 15. Některé ukázky vyžadují certifikáty. Zobrazit [Internetové informační služby (IIS) pokyny k instalaci certifikátu serveru](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

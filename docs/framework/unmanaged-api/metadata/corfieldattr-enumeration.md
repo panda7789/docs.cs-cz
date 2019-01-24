@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a57318103fd875d6f2f2fe4ca54c776da86c0e53
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b07388b7f7385e93a6ca891e8ea98a2ce69763c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446617"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576012"
 ---
 # <a name="corfieldattr-enumeration"></a>CorFieldAttr – výčet
 Obsahuje hodnoty, které popisují metadata o pole.  
@@ -63,31 +63,31 @@ typedef enum CorFieldAttr {
 |Člen|Popis|  
 |------------|-----------------|  
 |`fdFieldAccessMask`|Určuje informace o usnadnění.|  
-|`fdPrivateScope`|Určuje, že se nemůže odkazovat pole.|  
-|`fdPrivate`|Určuje, že je dostupný pouze pomocí jeho nadřazený typ pole.|  
-|`fdFamANDAssem`|Určuje, že pole je přístupné odvozené třídy v jeho sestavení.|  
-|`fdAssembly`|Určuje, že pole je přístupný pro všechny typy v sestavení.|  
-|`fdFamily`|Určuje, že pole je přístupné pouze její typ a odvozených třídách.|  
-|`fdFamORAssem`|Určuje, že pole je přístupný odvozené třídy a všechny typy v sestavení.|  
-|`fdPublic`|Určuje, že pole je přístupný pro všechny typy pomocí viditelnost tento obor.|  
-|`fdStatic`|Určuje, že je pole členem její typ a nikoli instanci členu.|  
+|`fdPrivateScope`|Určuje, že pole se nedá odkazovat.|  
+|`fdPrivate`|Určuje, že pole je přístupná jenom pro jeho nadřazeného typu.|  
+|`fdFamANDAssem`|Určuje, že pole je přístupné z odvozených tříd v jeho sestavení.|  
+|`fdAssembly`|Určuje, že pole je přístupné pro všechny typy v sestavení.|  
+|`fdFamily`|Určuje, že pole je přístupná jenom pro její typ a odvozené třídy.|  
+|`fdFamORAssem`|Určuje, že pole je přístupný z odvozených tříd a všechny typy v sestavení.|  
+|`fdPublic`|Určuje, že pole je přístupné pro všechny typy s viditelnost tohoto rozsahu.|  
+|`fdStatic`|Určuje, že pole je členem jeho typu, nikoli člena instance.|  
 |`fdInitOnly`|Určuje, že pole nelze změnit po inicializaci.|  
-|`fdLiteral`|Určuje, že hodnota pole je konstanta kompilaci.|  
-|`fdNotSerialized`|Určuje, zda pole není serializovat, když jeho typ je vzdálený.|  
-|`fdSpecialName`|Určuje, že pole je speciální a, jeho název popisuje jak.|  
-|`fdPinvokeImpl`|Určuje, že je pomocí služby PInvoke dál implementace pole.|  
+|`fdLiteral`|Určuje, že hodnota pole je konstantu kompilace.|  
+|`fdNotSerialized`|Určuje, že pole není serializovat, když je její typ je vzdálený.|  
+|`fdSpecialName`|Určuje, že pole je speciální a který odpovídá názvu jak.|  
+|`fdPinvokeImpl`|Určuje, že implementace pole je dál prostřednictvím PInvoke.|  
 |`fdReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`fdRTSpecialName`|Určuje, že běžná metadata modulu runtime jazyka interní rozhraní API měli kontrolovat kódování názvu.|  
-|`fdHasFieldMarshal`|Určuje, že pole obsahuje zařazování informace.|  
-|`fdHasDefault`|Určuje, zda pole má výchozí hodnotu.|  
-|`fdHasFieldRVA`|Určuje, zda má pole relativní virtuální adresu.|  
+|`fdRTSpecialName`|Určuje, že common language runtime metadata interních rozhraních API by měla kontrolovat kódování názvu.|  
+|`fdHasFieldMarshal`|Určuje, zda pole obsahuje zařazovací informace.|  
+|`fdHasDefault`|Určuje, že pole má výchozí hodnotu.|  
+|`fdHasFieldRVA`|Určuje, že pole má relativní virtuální adresu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 68c98b3b4effbe7cea1a3c4443d2222e6bbcd43c
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 5c57f8964172d351ddae048ea36e63a13cf2578d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584250"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563428"
 ---
 # <a name="xslt-stylesheet-scripting-using-ltmsxslscriptgt"></a>Šablona stylů XSLT skriptování pomocí &lt;msxsl: Script&gt;
 <xref:System.Xml.Xsl.XslTransform> Třída podporuje vložené skriptování pomocí `script` elementu.  
@@ -31,7 +31,7 @@ ms.locfileid: "46584250"
   
  kde `msxsl` je vázán předponu pro obor názvů `urn:schemas-microsoft-com:xslt`.  
   
- `language` Atribut není povinné, ale pokud je zadán, její hodnota musí být jeden z následujících: C#, VB, JScript, JavaScript, VisualBasic nebo CSharp. Pokud není zadán, výchozí jazyk JScript. `language-name` Není malá a velká písmena, a proto jsou ekvivalentní 'Jazyka JavaScript' a "javascript".  
+ `language` Atribut není povinné, ale pokud je zadán, její hodnota musí být jeden z následujících: C#, VB, JScript, JavaScript, VisualBasic, or CSharp. Pokud není zadán, výchozí jazyk JScript. `language-name` Není malá a velká písmena, a proto jsou ekvivalentní 'Jazyka JavaScript' a "javascript".  
   
  `implements-prefix` Atribut je povinný. Tento atribut se používá k deklarování oboru názvů a přidružte jej k bloku skriptu. Hodnota tohoto atributu je předpona, která představuje obor názvů. Tento obor názvů lze definovat někde v šabloně stylů.  
   
@@ -72,7 +72,7 @@ ms.locfileid: "46584250"
 |Fragment stromu výsledek|System.Xml.XPath.XPathNavigator|XSLT|  
 |Sada uzlů.|System.Xml.XPath.XPathNodeIterator|XPath|  
   
- Pokud funkce skriptu využívá jednu z následujících číselných typů: Int16, UInt16, Int32, UInt32, Int64, UInt64, jedním nebo desetinné číslo, budou ukončeny do dvakrát, která se mapuje na typ Číslo W3C XPath. Všechny ostatní typy jsou vynutit na řetězec volání `ToString` metody.  
+ Pokud funkce skriptu využívá jednu z následujících číselné typy: Int16, UInt16, Int32, UInt32, Int64, UInt64, jedním nebo desetinné číslo, budou ukončeny do dvakrát, která se mapuje na typ Číslo W3C XPath. Všechny ostatní typy jsou vynutit na řetězec volání `ToString` metody.  
   
  Pokud funkce skriptu využívá typ jiný než uvedených výše, nebo pokud funkci nejde zkompilovat při šablony stylů je načten do <xref:System.Xml.Xsl.XslTransform> objektu, je vyvolána výjimka.  
   
@@ -89,9 +89,10 @@ ms.locfileid: "46584250"
  Důrazně doporučujeme, aby veškerý obsah skriptu umístit do oddílu CDATA, protože operátory, identifikátory nebo oddělovače pro daný jazyk mají potenciál je špatně interpretována jako XML. Následující příklad ukazuje použití logického operátoru AND ve skriptu.  
   
 ```xml  
-<msxsl:script implements-prefix='yourprefix' language='CSharp>  
+<msxsl:script implements-prefix='yourprefix' language='CSharp'>  
     public string book(string abc, string xyz)  
-    {  if ((abc== abc)&&(abc== xyz)) return bar+xyz;  
+    {  
+        if ((abc == bar) && (abc == xyz)) return bar + xyz;  
         else return null;  
     }  
 </msxsl:script>  
@@ -146,8 +147,8 @@ public class Sample
    private const String filename = "number.xml";  
    private const String stylesheet = "calc.xsl";  
   
-   public static void Main() {  
-  
+   public static void Main()  
+   {  
     //Create the XslTransform and load the style sheet.  
     XslTransform xslt = new XslTransform();  
     xslt.Load(stylesheet);  
@@ -162,7 +163,7 @@ public class Sample
     //Transform the file.  
     xslt.Transform(doc, null, writer, null);  
     writer.Close();  
-  }   
+  }  
 }  
 ```  
   
@@ -190,7 +191,8 @@ public class Sample
   
   <msxsl:script language="C#" implements-prefix="user">  
      <![CDATA[  
-     public double circumference(double radius){  
+     public double circumference(double radius)  
+     {  
        double pi = 3.14;  
        double circ = pi*radius*2;  
        return circ;  

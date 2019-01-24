@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7512795e678f66c97185a499e602e99f51188117
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 47819740207ae94b814b3009708c2fd247688661
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564001"
 ---
 # <a name="cordeclsecurity-enumeration"></a>CorDeclSecurity – výčet
-Určuje akce zabezpečení, které je možné provést pomocí deklarativních zabezpečení.  
+Určuje akce zabezpečení, které je možné provádět pomocí deklarativní zabezpečení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,34 +60,34 @@ typedef enum CorDeclSecurity {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dclActionMask`|Vyhrazena.|  
-|`dclActionNil`|Vyhrazena.|  
-|`dclRequest`|Vyhrazena.|  
-|`dclDemand`|Všechny volající vyšší v zásobníku volání je potřeba bylo uděleno oprávnění určeného aktuálního objektu oprávnění.|  
-|`dclAssert`|Volání kódu přístup i v případě, že volající vyšší v zásobníku nebylo uděleno oprávnění pro přístup k prostředku v prostředku označeném identifikátorem aktuálního objektu oprávnění|  
-|`dclDeny`|Umožňuje přístup k prostředku zadaného parametrem aktuální oprávnění objektu je odepřen volající, i v případě, že bylo uděleno oprávnění k přístupu.|  
-|`dclPermitOnly`|Pouze prostředky určeného objektu toto oprávnění lze přistupovat, i v případě, že kód byla udělena oprávnění k přístupu k dalším prostředkům.|  
-|`dclLinktimeCheck`|Je potřeba mít nebylo uděleno oprávnění k zadané pro dané časové období bezprostředního volajícího.|  
-|`dclInheritanceCheck`|Odvozené třídy dědí jiné třídy nebo přepsání metody je potřeba mít nebylo uděleno oprávnění k zadané.|  
-|`dclRequestMinimum`|Volající můžete žádost o minimální oprávnění potřebná pro spuštění kódu. Tuto akci lze použít pouze v rámci oboru sestavení.|  
-|`dclRequestOptional`|Volající může požádat o další oprávnění, které jsou volitelné (není požadováno ke spuštění). Tento požadavek implicitně odmítá další oprávnění, které nejsou výslovně požadována. Tuto akci lze použít pouze v rámci oboru sestavení.|  
-|`dclRequestRefuse`|Neposkytuje volajícího žádost o oprávnění, která může došlo ke zneužití. Tuto akci lze použít pouze v rámci oboru sestavení.|  
-|`dclPrejitGrant`|Vyhrazena.|  
-|`dclPrejitDenied`|Vyhrazena.|  
-|`dclNonCasDemand`|Vyhrazena.|  
-|`dclNonCasLinkDemand`|Je potřeba mít nebylo uděleno oprávnění k zadané bezprostředního volajícího.|  
-|`dclNonCasInheritance`|Vyhrazena.|  
-|`dclLinkDemandChoice`|Vyhrazena.|  
-|`dclInheritanceDemandChoice`|Vyhrazena.|  
-|`dclDemandChoice`|Vyhrazena.|  
-|`dclMaximumValue`|Vyhrazena.|  
+|`dclActionMask`|Vyhrazená.|  
+|`dclActionNil`|Vyhrazená.|  
+|`dclRequest`|Vyhrazená.|  
+|`dclDemand`|Všichni volající v zásobníku volání vyšší se vyžadují bylo uděleno oprávnění zadané pomocí aktuálního objektu oprávnění.|  
+|`dclAssert`|Volající kód může přístup k prostředku označeném identifikátorem aktuálního objektu oprávnění, i v případě, že volajících výše v zásobníku byla udělena oprávnění pro přístup k prostředku|  
+|`dclDeny`|Možnost přístupu k prostředku zadaného parametrem aktuálního objektu oprávnění je odepřen volající, i v případě, že bylo uděleno oprávnění k přístupu.|  
+|`dclPermitOnly`|Pouze prostředků zadaných pomocí tohoto oprávnění objektu je možný i v případě, že kód bylo uděleno oprávnění pro přístup k dalším prostředkům.|  
+|`dclLinktimeCheck`|Okamžitého volajícího je nutné bylo uděleno oprávnění k zadané pro dané časové období.|  
+|`dclInheritanceCheck`|Odvozená třída dědí jiné třídy nebo přepsání metody je potřeba zadané oprávnění udělil.|  
+|`dclRequestMinimum`|Volající mohl požadovat pro minimální oprávnění potřebná pro spuštění kódu. Tato akce jde použít jenom v rámci oboru sestavení.|  
+|`dclRequestOptional`|Volající mohl požadovat další oprávnění, které jsou volitelné (není vyžadované ke spuštění). Tento požadavek implicitně odmítá všechny další oprávnění, která nejsou výslovně požadována. Tato akce jde použít jenom v rámci oboru sestavení.|  
+|`dclRequestRefuse`|Volajícího žádost o oprávnění, která může být potenciálně nebezpečného nebudou udělena. Tato akce jde použít jenom v rámci oboru sestavení.|  
+|`dclPrejitGrant`|Vyhrazená.|  
+|`dclPrejitDenied`|Vyhrazená.|  
+|`dclNonCasDemand`|Vyhrazená.|  
+|`dclNonCasLinkDemand`|Okamžitého volajícího je nutné k zadané oprávnění udělil.|  
+|`dclNonCasInheritance`|Vyhrazená.|  
+|`dclLinkDemandChoice`|Vyhrazená.|  
+|`dclInheritanceDemandChoice`|Vyhrazená.|  
+|`dclDemandChoice`|Vyhrazená.|  
+|`dclMaximumValue`|Vyhrazená.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

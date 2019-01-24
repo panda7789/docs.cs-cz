@@ -1,5 +1,5 @@
 ---
-title: ICorDebugValueEnum Interface1
+title: ICorDebugValueEnum – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugValueEnum
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a1bd85e8cde2b05d5f1ba0075fb761d73907373a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54d6878e29e340a975593f9e04aeb6d2a18adf0d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420076"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557380"
 ---
-# <a name="icordebugvalueenum-interface1"></a>ICorDebugValueEnum Interface1
-Implementuje metody "ICorDebugEnum" a zobrazí pole "ICorDebugValue".  
+# <a name="icordebugvalueenum-interface1"></a>ICorDebugValueEnum – rozhraní 1
+Implementuje metody "ICorDebugEnum" a vytváří výčet polí "ICorDebugValue".  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-next-method.md)|Získá zadaný počet `ICorDebugValue` instancí z výčtu, počínaje na aktuální pozici.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-next-method.md)|Získá zadaný počet `ICorDebugValue` instancí z výčtu od aktuální pozice.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,7 +46,7 @@ Implementuje metody "ICorDebugEnum" a zobrazí pole "ICorDebugValue".
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
-    
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+
+
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

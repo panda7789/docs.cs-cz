@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7edfc7cf3a55dc8d789b20540af6a4ad9b91299
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 963923951b3f3c288506cf339cd8a15f27792af3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221255"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599215"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
@@ -54,7 +54,7 @@ Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného n
      *assemblyName*  
      Název silně podepsaného sestavení (soubor .dll nebo .exe), který vygeneruje program Assembly Linker.  
   
-     *Název modulu:*  
+     *moduleName*  
      Název modulu kódu rozhraní .NET Framework (soubor .netmodule), který obsahuje jeden nebo několik typů. Soubor .netmodule můžete vytvořit kompilací kódu pomocí `/target:module` přepínače v C# nebo Visual Basic.  
   
      *keyfileName*  
@@ -97,10 +97,10 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
     csc /t:library UtilityLibrary.cs /keyfile:sgKey.snk  
     ```  
   
-## <a name="see-also"></a>Viz také  
-- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
-- [Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
-- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
-- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)  
-- [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)  
+## <a name="see-also"></a>Viz také:
+- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
+- [Postupy: Vytvoření páru veřejného a privátního klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)
+- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)
+- [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)
 - [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)

@@ -10,20 +10,20 @@ helpviewer_keywords:
 - alpha blending [Windows Forms], brush
 - brushes [Windows Forms], using semi-transparent
 ms.assetid: a4f6f6b8-3bc8-440a-84af-d62ef0f8ff40
-ms.openlocfilehash: 91aa3e89e2ff6d20432dbc5e988f2877059b4cdd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 922cf6f9fd506e6095d87c3e0ee9eff85f920eba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54586960"
 ---
 # <a name="how-to-draw-with-opaque-and-semitransparent-brushes"></a>Postupy: Kreslení pomocí neprůhledných a poloprůhledných štětců
-Po vyplnění obrazce, je nutné předat <xref:System.Drawing.Brush> objektu na jednu z metod výplně <xref:System.Drawing.Graphics> třídy. Jeden parametr <xref:System.Drawing.SolidBrush.%23ctor%2A> konstruktor je <xref:System.Drawing.Color> objektu. K vyplnění neprůhledného tvaru, nastavte komponentu alfa barvy na 255. K vyplnění obrazce poloprůhledných, nastavte na jakoukoli hodnotu od 1 do 254 komponentu alfa.  
+Po vyplnění obrazce, je nutné předat <xref:System.Drawing.Brush> objektu do jedné z metod výplň <xref:System.Drawing.Graphics> třídy. Jeden parametr <xref:System.Drawing.SolidBrush.%23ctor%2A> je konstruktor <xref:System.Drawing.Color> objektu. K vyplnění obrazce neprůhledný, nastavte alfa barvy na 255. K vyplnění poloprůhledných tvar, nastavte na libovolnou hodnotu od 1 do 254 alfa složkou.  
   
- Jakmile zadáte poloprůhledných obrazce, barva obrazce je smíšený s barvy pozadí. Komponentu alfa Určuje, jak jsou kombinované barvy tvar a pozadí; hodnoty alfa téměř 0 umístěte další váhy barvy pozadí a hodnoty alfa téměř 255 umístit další váhy na barvou obrazce.  
+ Po vyplnění poloprůhledných tvar, barvu tvaru jsou prolnuty barvy pozadí. Hodnota alfa Určuje, jak barvy tvar a pozadí směšování; hodnoty alfa téměř 0 umístěte větší váhu na barvy pozadí a alfa hodnot v 255 ustaví větší váhu barvou obrazce.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nevykresluje rastrový obrázek a pak vyplní tři výpustky, které se překrývají bitové mapy. První elipsy používá alfa součást 255, takže je plné krytí. Druhý a třetí výpustky použít alfa součást 128, tak, aby byly poloprůhledných; Zobrazí se obrázek pozadí prostřednictvím na symbol tří teček. Volání, které se nastaví <xref:System.Drawing.Graphics.CompositingQuality%2A> vlastnost způsobí, že prolnutí pro třetí elipsy provést ve spojení s korekce gama.  
+ V následujícím příkladu nakreslí rastrový obrázek a potom naplní tři symbol tří teček, které se překrývají rastrového obrázku. První tři tečky používá alfa složkou 255, proto je skrytá. Druhý a třetí symbol tří teček použít alfa složkou 128, tak, aby byly poloprůhledných; Zobrazí se obrázek pozadí prostřednictvím symbol tří teček. Volání, které nastaví <xref:System.Drawing.Graphics.CompositingQuality%2A> vlastnosti způsobí, že míchání třetí elipsy ve spojení s gama korekce udělat.  
   
  Následující obrázek znázorňuje výstup následující kód.  
   
@@ -33,10 +33,10 @@ Po vyplnění obrazce, je nutné předat <xref:System.Drawing.Brush> objektu na 
  [!code-vb[System.Drawing.AlphaBlending#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlphaBlending/VB/Class1.vb#31)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)  
- [Postupy: Zajištění průhledného pozadí pro vlastní ovládací prvek](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)  
- [Postupy: Kreslení neprůhledných a poloprůhledných čar](../../../../docs/framework/winforms/advanced/how-to-draw-opaque-and-semitransparent-lines.md)
+## <a name="see-also"></a>Viz také:
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Alfa míchání čar a výplní](../../../../docs/framework/winforms/advanced/alpha-blending-lines-and-fills.md)
+- [Postupy: Zadejte svůj ovládací prvek průhledné pozadí](../../../../docs/framework/winforms/controls/how-to-give-your-control-a-transparent-background.md)
+- [Postupy: Kreslení neprůhledných a poloprůhledných čar](../../../../docs/framework/winforms/advanced/how-to-draw-opaque-and-semitransparent-lines.md)

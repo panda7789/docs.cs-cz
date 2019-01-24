@@ -7,16 +7,16 @@ helpviewer_keywords:
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 6beeec86ba8bf16be432bc2ae2de20aa08a0d2d9
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 7552db2b0d1f9063733ddac29612057e0475570e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113118"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597194"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: Automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Toto téma uvádí typy ovládacích prvků a jejich přidružený ovládací prvek vzorce.  
   
@@ -36,47 +36,47 @@ ms.locfileid: "47113118"
   
 |Typ ovládacího prvku|Podporováno|Podpora podmíněného|Nepodporováno|  
 |------------------|---------------|-------------------------|-------------------|  
-|Tlačítko|Žádné|Vyvolání přepínací tlačítko, Rozbalit/sbalit|Žádné|  
+|Tlačítko|Žádná|Vyvolání přepínací tlačítko, Rozbalit/sbalit|Žádná|  
 |Kalendář|Mřížka tabulky|Výběr, posuňte|Hodnota|  
-|Zaškrtávací políčko|Přepnout|Žádné|Žádné|  
+|Zaškrtávací políčko|Přepnout|Žádná|Žádná|  
 |Pole se seznamem|Rozbalit/sbalit|Výběr, hodnota|Posuv|  
-|Datová mřížka|Mřížka|Posunout výběr tabulky|Žádné|  
-|Datová položka|Položka výběru|Rozbalte sbalit položky mřížky, Posunout položku, tabulky, přepínací tlačítko, hodnota|Žádné|  
-|Dokument|Text|Posouvání, hodnota|Žádné|  
-|Upravit|Žádné|Textová hodnota rozsahu, hodnota|Žádné|  
-|Skupina|Žádné|Rozbalit/sbalit|Žádné|  
-|Záhlaví|Žádné|Transformace|Žádné|  
-|Položka hlavičky|Žádné|Transformace, vyvolají|Žádné|  
-|Hypertextový odkaz|Vyvolat|Hodnota|Žádné|  
-|Image|Žádné|Mřížky nebo položky tabulky|Vyvolání, výběr položky|  
-|Seznam|Žádné|Mřížka, více zobrazení posuvníku, výběr|Tabulka|  
-|Položka seznamu|Položka výběru|Rozbalit/sbalit položky mřížky vyvolání, posuňte se položky, přepnout, hodnota|Žádné|  
-|Nabídka|Žádné|Žádné|Žádné|  
-|Řádek nabídek|Žádné|Rozbalte sbalit Dock transformace|Žádné|  
-|Položka nabídky|Žádné|Rozbalit/sbalit, vyvolají, výběr položky přepínací tlačítko|Žádné|  
-|Podokno|Žádné|Ukotvěte. Posouvání, transformace|Okno|  
-|Indikátor průběhu|Žádné|Hodnota rozsahu|Žádné|  
-|Přepínač|Položka výběru|Žádné|Přepnout|  
-|Posuvník|Žádné|Hodnota v rozsahu|Posuv|  
-|Oddělovač|Žádné|Žádné|Žádné|  
-|Posuvník|Žádné|Rozsah, výběr, hodnota|Žádné|  
-|Číselník|Žádné|Rozsah, výběr, hodnota|Žádné|  
-|Tlačítko rozdělení|Vyvolání, Rozbalit/sbalit|Žádné|Žádné|  
-|Stavový řádek|Žádné|Mřížka|Žádné|  
-|Tabulátor|Výběr|Posuv|Žádné|  
-|Položka tabulátoru|Položka výběru|Žádné|Vyvolat|  
-|Tabulka|Mřížka položky mřížky, tabulky, položka tabulky|Žádné|Žádné|  
-|Text|Žádné|Text položky, položka tabulky mřížky|Hodnota|  
-|Jezdec|Transformace|Žádné|Žádné|  
-|Záhlaví|Žádné|Žádné|Žádné|  
-|Panel nástrojů|Žádné|Ukotvit, Rozbalit/sbalit, transformace|Žádné|  
-|Popis tlačítka|Žádné|Text okna|Žádné|  
-|Strom|Žádné|Posunout výběr|Žádné|  
-|Položka stromu|Rozbalit/sbalit|Vyvolání, Posunout položku výběru položek, přepínací tlačítko|Žádné|  
-|Okno|Transformace, okno|Ukotvení|Žádné|  
+|Datová mřížka|Mřížka|Posunout výběr tabulky|Žádná|  
+|Datová položka|Položka výběru|Rozbalte sbalit položky mřížky, Posunout položku, tabulky, přepínací tlačítko, hodnota|Žádná|  
+|Dokument|Text|Posouvání, hodnota|Žádná|  
+|Upravit|Žádná|Textová hodnota rozsahu, hodnota|Žádná|  
+|Skupina|Žádná|Rozbalit/sbalit|Žádná|  
+|Záhlaví|Žádná|Transformace|Žádná|  
+|Položka hlavičky|Žádná|Transformace, vyvolají|Žádná|  
+|Hypertextový odkaz|Vyvolat|Hodnota|Žádná|  
+|Image|Žádná|Mřížky nebo položky tabulky|Vyvolání, výběr položky|  
+|Seznam|Žádná|Mřížka, více zobrazení posuvníku, výběr|Tabulka|  
+|Položka seznamu|Položka výběru|Rozbalit/sbalit položky mřížky vyvolání, posuňte se položky, přepnout, hodnota|Žádná|  
+|Nabídka|Žádná|Žádný|Žádná|  
+|Řádek nabídek|Žádná|Rozbalte sbalit Dock transformace|Žádná|  
+|Položka nabídky|Žádná|Rozbalit/sbalit, vyvolají, výběr položky přepínací tlačítko|Žádná|  
+|Podokno|Žádná|Ukotvěte. Posouvání, transformace|Okno|  
+|Indikátor průběhu|Žádná|Hodnota rozsahu|Žádná|  
+|Přepínač|Položka výběru|Žádná|Přepnout|  
+|Posuvník|Žádná|Hodnota v rozsahu|Posuv|  
+|Oddělovač|Žádná|Žádný|Žádná|  
+|Posuvník|Žádná|Rozsah, výběr, hodnota|Žádná|  
+|Číselník|Žádná|Rozsah, výběr, hodnota|Žádná|  
+|Tlačítko rozdělení|Vyvolání, Rozbalit/sbalit|Žádná|Žádná|  
+|Stavový řádek|Žádná|Mřížka|Žádná|  
+|Tabulátor|Výběr|Posuv|Žádná|  
+|Položka tabulátoru|Položka výběru|Žádná|Vyvolat|  
+|Tabulka|Mřížka položky mřížky, tabulky, položka tabulky|Žádná|Žádná|  
+|Text|Žádná|Text položky, položka tabulky mřížky|Hodnota|  
+|Jezdec|Transformace|Žádná|Žádná|  
+|Záhlaví|Žádná|Žádný|Žádná|  
+|Panel nástrojů|Žádná|Ukotvit, Rozbalit/sbalit, transformace|Žádná|  
+|Popis tlačítka|Žádná|Text okna|Žádná|  
+|Strom|Žádná|Posunout výběr|Žádná|  
+|Položka stromu|Rozbalit/sbalit|Vyvolání, Posunout položku výběru položek, přepínací tlačítko|Žádná|  
+|Okno|Transformace, okno|Ukotvení|Žádná|  
   
 > [!NOTE]
 >  Pokud typ ovládacího prvku nemá žádné vzory podporovaných ovládacích prvků uvedené, ale má jeden nebo více podmíněně podporováno vzorů ovládacích prvků pro, pak jednu z těchto vzorů ovládacích prvků podmíněné bude podporovat ve všech vícekrát.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-overview.md)

@@ -8,22 +8,22 @@ helpviewer_keywords:
 - rectangles [Windows Forms], drawing
 - pens [Windows Forms], drawing rectangles
 ms.assetid: 54a7fa14-3ad8-4d64-b424-2a12005b250c
-ms.openlocfilehash: ad5b436f7162c282198c7a9d3cce4d3ce3fd3c6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cd009a66cb106f98727191037d8eef5bafe4d0c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590049"
 ---
 # <a name="how-to-use-a-pen-to-draw-rectangles"></a>Postupy: Kreslení obdélníků pomocí pera
-Kreslení obdélníků, musíte <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt poskytuje <xref:System.Drawing.Graphics.DrawRectangle%2A> metody a <xref:System.Drawing.Pen> objekt ukládá funkce na řádku, jako je například barva a šířka.  
+Kreslení obdélníků, je nutné <xref:System.Drawing.Graphics> objektu a <xref:System.Drawing.Pen> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje <xref:System.Drawing.Graphics.DrawRectangle%2A> metody a <xref:System.Drawing.Pen> ukládá funkce na řádku, jako je barva a šířka.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nevykresluje obdélníku s jeho levého horního rohu v (10, 10). Rámeček má šířky 100 a výška 50. Druhý argument předaný <xref:System.Drawing.Pen.%23ctor%2A> konstruktor značí, že šířku pera 5 pixelů.  
+ Kreslení obdélníku s jeho levého horního rohu v následujícím příkladu (10, 10). Obdélník má 100 šířku a výšku 50. Druhý argument předaný do <xref:System.Drawing.Pen.%23ctor%2A> konstruktor znamená, že šířka pera je 5 pixelů.  
   
- Při sestavování rámeček pera se jedná o obdélníku hranic. Vzhledem k šířce pera je 5, jsou stran obdélníku vykresleného 5 pixelů široké, například tento 1 pixel vykreslením na samotná hranice jsou vykreslovány 2 pixelů uvnitř a 2 pixelů jsou vykreslovány na povrchu. Další informace o pera zarovnání v [postupy: nastavení šířky a pera a zarovnání](../../../../docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md).  
+ Při vykreslení obdélníku pera je zarovnaný na střed v obdélníku hranice. Vzhledem k tomu, že šířka pera je 5, strany pravoúhelníku se vykreslený 5 pixelů široký, například je vykreslen této 1 pixelu na dané hranice lze na samotný jsou vykreslovány 2 pixelů uvnitř, a jsou vykreslovány 2 pixelů na povrchu. Podrobné informace o psaní perem zarovnání naleznete v tématu [jak: Nastavení šířky a pera a zarovnání](../../../../docs/framework/winforms/advanced/how-to-set-pen-width-and-alignment.md).  
   
- Následující obrázek znázorňuje výsledné rámeček. Zobrazit čáry s koncovými body, kde rámeček by byly pokud šířku pera je jeden pixel. Práce se zvětšeným zobrazením levého horního rohu obdélníku ukazuje, že se na tyto řádky tečkovaná na silné černé čáry.  
+ Výsledný obdélníku na následujícím obrázku. Zobrazit tečkované čáry, kde obdélník by byl nakreslen diagram Pokud šířku pera je jeden pixel. Zvětšeným zobrazením levého horního rohu obdélníku ukazuje, že se na tyto tečkované čáry na silný černý řádky.  
   
  ![Pera](../../../../docs/framework/winforms/advanced/media/pens1.gif "pens1")  
   
@@ -31,7 +31,7 @@ Kreslení obdélníků, musíte <xref:System.Drawing.Graphics> objektu a <xref:S
  [!code-vb[System.Drawing.UsingAPen#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingAPen/VB/Class1.vb#21)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)
+## <a name="see-also"></a>Viz také:
+- [Kreslení čar a obrazců pomocí pera](../../../../docs/framework/winforms/advanced/using-a-pen-to-draw-lines-and-shapes.md)

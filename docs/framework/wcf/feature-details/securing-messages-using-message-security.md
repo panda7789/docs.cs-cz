@@ -2,12 +2,12 @@
 title: Zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: ff1d488e58be64f31836587c8893ba608ccd821b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4432540bfb6238be5b3e102283d6b67bebad07bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50202026"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610946"
 ---
 # <a name="securing-messages-using-message-security"></a>Zabezpečení zpráv
 Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.ServiceModel.NetMsmqBinding>.  
@@ -63,8 +63,8 @@ Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.Servic
 ## <a name="using-transport-and-message-security"></a>Pomocí přenosu a zabezpečení zpráv  
  Při použití zabezpečení přenosů a zpráv zabezpečení, musí být certifikát používaný k zabezpečení i na úrovni zprávy protokolu SOAP a přenos zprávy stejná.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
- [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení zpráv pomocí zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
+- [Zabezpečení zprávy pomocí služby Řízení front zpráv](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

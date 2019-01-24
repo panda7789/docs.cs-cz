@@ -4,19 +4,19 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID380
 ms.assetid: 38540ad2-e02c-49aa-a2b7-b4c82d719cf1
-ms.openlocfilehash: 560f632f30467e8f94862f15b48e9664c37a5e4c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 64a02b93dc3390c66041ecbb91088318aad27bbe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33635941"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582867"
 ---
 # <a name="property-value-is-not-valid"></a>Hodnota vlastnosti není platná
-Jedna z vlastností objektu nebo ovládací prvek byl nastaven na hodnotu mimo rozsah jeho.  
+Jedna z vlastností objektu nebo ovládací prvek byl nastaven na hodnotu mimo rozsah.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
 -   Změňte hodnotu vlastnosti na platné nastavení.  
   
-## <a name="see-also"></a>Viz také  
- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)
+## <a name="see-also"></a>Viz také:
+- [Typy chyb](../../visual-basic/programming-guide/language-features/error-types.md)

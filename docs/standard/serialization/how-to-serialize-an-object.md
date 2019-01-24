@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: serializace objektu'
+title: 'Postupy: Serializace objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
 ms.assetid: a1207d05-32b2-4953-8582-959607991227
-ms.openlocfilehash: e4d6e3edb15dbf5ba4b7ec7f8658fec1a618d315
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 0924d8038edf70cd493b94c165edda607fc0027b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45748572"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600645"
 ---
-# <a name="how-to-serialize-an-object"></a>Postupy: serializace objektu
+# <a name="how-to-serialize-an-object"></a>Postupy: Serializace objektu
 K serializaci objektu, nejprve vytvořte objekt, který má být serializován a nastavíte jeho veřejné vlastnosti a pole. Chcete-li to provést, je třeba určit přenos formát, ve kterém má být uložena jako datový proud nebo jako soubor XML datového proudu. Například pokud datový proud XML musí být uložen ve formě trvalé, vytvořit <xref:System.IO.FileStream> objektu.  
   
 > [!NOTE]
@@ -52,5 +52,5 @@ K serializaci objektu, nejprve vytvořte objekt, který má být serializován a
   
 ## <a name="see-also"></a>Viz také:
 
-- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)
 - [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

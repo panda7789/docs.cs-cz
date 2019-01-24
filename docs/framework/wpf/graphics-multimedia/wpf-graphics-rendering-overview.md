@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering
 - rendering graphics [WPF]
 ms.assetid: 6dec9657-4d8c-4e46-8c54-40fb80008265
-ms.openlocfilehash: cbbaba8cbdaf6dfd7b7c18447d425298b4911e94
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 6323d27158855e5ded1698401835b35632bedebe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260123"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603834"
 ---
 # <a name="wpf-graphics-rendering-overview"></a>Přehled vykreslování grafiky WPF
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vizuální vrstvy. Zaměřuje se na roli <xref:System.Windows.Media.Visual> třídy pro vykreslování podpora v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] modelu.  
@@ -25,15 +25,15 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  <xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování. Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení. <xref:System.Windows.Media.Visual> Objekt, který poskytuje podporu pro:  
   
--   Zobrazení výstupu: vykreslování trvalý, serializovat výkresu vykreslovaného vizuálního obsahu.  
+-   Zobrazení výstupu: Vykreslování trvalý, serializovat výkresu vykreslovaného vizuálního obsahu.  
   
 -   Transformace: Provádění transformací ve vizuálu.  
   
--   Výstřižek: Poskytuje podporu oblasti výstřižek vizuálu.  
+-   Omezení: Poskytuje podporu oblasti výstřižek vizuálu.  
   
--   Testování průchodu: určení, zda souřadnice nebo geometrie je obsažen v mezích vizuálu.  
+-   Testování průchodu: Určení, zda souřadnice nebo geometrie je obsažen v mezích vizuálu.  
   
--   Ohraničující pole výpočty: určení ohraničující obdélník vizuálu.  
+-   Ohraničující pole výpočty: Určení ohraničující obdélník vizuálu.  
   
  Ale <xref:System.Windows.Media.Visual> objekt nezahrnuje podporu pro jiné vykreslovací funkce, jako například:  
   
@@ -52,7 +52,7 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
  ![Diagram tříd odvozených z Visual objektu](../../../../docs/framework/wpf/graphics-multimedia/media/visualclass01.png "VisualClass01")  
 Hierarchie Visual – třída  
   
-### <a name="drawingvisual-class"></a>Třída DrawingVisual  
+### <a name="drawingvisual-class"></a>DrawingVisual Class  
  <xref:System.Windows.Media.DrawingVisual> Představuje jednoduché kreslení třídu, která se použije k vykreslení obrazce, Image nebo text. Tato třída se považuje za jednoduché, protože neposkytuje rozložení nebo událostí zpracování, což zvyšuje výkon modulu runtime. Z tohoto důvodu jsou ideální pro pozadí a klipart kreslení. <xref:System.Windows.Media.DrawingVisual> Slouží k vytvoření vlastní vizuální objekty. Další informace najdete v tématu [použití objektů DrawingVisual](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md).  
   
 ### <a name="viewport3dvisual-class"></a>Třída Viewport3DVisual  
@@ -159,7 +159,7 @@ Diagram hierarchie vizuální strom
 Diagram pořadí vykreslování vizuální strom  
   
 ### <a name="root-visual"></a>Kořenové Vizuálu  
- **Kořenové visual** je nejvyšší element v hierarchii vizuálního stromu. Ve většině aplikací základní třídy visual kořenový adresář je buď <xref:System.Windows.Window> nebo <xref:System.Windows.Navigation.NavigationWindow>. Pokud byly hostování vizuální objektů v aplikaci Win32, ale kořenové visual by vizuálu úplně nahoře, které byly hostování v okně Win32. Další informace najdete v tématu [kurz: hostování vizuální objektů v aplikaci Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md).  
+ **Kořenové visual** je nejvyšší element v hierarchii vizuálního stromu. Ve většině aplikací základní třídy visual kořenový adresář je buď <xref:System.Windows.Window> nebo <xref:System.Windows.Navigation.NavigationWindow>. Pokud byly hostování vizuální objektů v aplikaci Win32, ale kořenové visual by vizuálu úplně nahoře, které byly hostování v okně Win32. Další informace najdete v tématu [kurzu: Hostování vizuální objektů v aplikaci Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md).  
   
 ### <a name="relationship-to-the-logical-tree"></a>Relaci logického stromu  
  V logickém stromu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] představuje prvky aplikace v době běhu. I když není tento strom manipulovat přímo, je důležité pochopit vlastnosti a směrování událostí toto zobrazení aplikace. Na rozdíl od vizuálního stromu, Logická stromová struktura představují nevizuálních datové objekty, jako například <xref:System.Windows.Documents.ListItem>. V mnoha případech Logická stromová struktura úzce mapuje na definice kódu aplikace. Následující kód ukazuje <xref:System.Windows.Controls.DockPanel> element definovaný v kódu.  
@@ -257,12 +257,12 @@ Grafika a textu v jiné nastavení DPI
  [!code-csharp[VisualsOverview#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#102)]
  [!code-vb[VisualsOverview#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#102)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Visual>  
- <xref:System.Windows.Media.VisualTreeHelper>  
- <xref:System.Windows.Media.DrawingVisual>  
- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)  
- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
- [Použití objektů DrawingVisual](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)  
- [Kurz: Hostování vizuální objektů v aplikaci Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Visual>
+- <xref:System.Windows.Media.VisualTreeHelper>
+- <xref:System.Windows.Media.DrawingVisual>
+- [2D grafika a obrázky](../../../../docs/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging.md)
+- [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)
+- [Použití objektů DrawingVisual](../../../../docs/framework/wpf/graphics-multimedia/using-drawingvisual-objects.md)
+- [Kurz: Hostování vizuální objektů v aplikaci Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)
+- [Optimalizace výkonu aplikace WPF](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)

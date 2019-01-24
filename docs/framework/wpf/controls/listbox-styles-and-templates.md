@@ -9,51 +9,51 @@ helpviewer_keywords:
 - parts [WPF], ListBox
 - ListBox [WPF], styles and templates
 ms.assetid: fc5764cb-c27b-495b-88d4-d969a8213ccb
-ms.openlocfilehash: f1e651914530fe847bb411a79ff39e3b15be7784
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 552df5df6bdf8d9cdd8241c3e68cae671a24c6a2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457811"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577760"
 ---
 # <a name="listbox-styles-and-templates"></a>ListBox – styly a šablony
-Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ListBox> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhledu ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku tak, že vytvoříte ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ListBox> ovládacího prvku. Můžete upravit výchozí <xref:System.Windows.Controls.ControlTemplate> poskytnout jedinečný vzhled ovládacího prvku. Další informace najdete v tématu [přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
-## <a name="listbox-parts"></a>ListBox – součásti  
- <xref:System.Windows.Controls.ListBox> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="listbox-parts"></a>Části ovládacího prvku ListBox  
+ <xref:System.Windows.Controls.ListBox> Ovládací prvek nemá žádné pojmenované součásti.  
   
- Při vytváření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListBox>, může vaše šablona obsahovat <xref:System.Windows.Controls.ItemsPresenter> v rámci <xref:System.Windows.Controls.ScrollViewer>. ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazí jednotlivé položky <xref:System.Windows.Controls.ListBox>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v ovládacím prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není přímými podřízenými z <xref:System.Windows.Controls.ScrollViewer>, musíte <xref:System.Windows.Controls.ItemsPresenter> název, `ItemsPresenter`.  
+ Při vytváření <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListBox>, šablona může obsahovat <xref:System.Windows.Controls.ItemsPresenter> v rámci <xref:System.Windows.Controls.ScrollViewer>. ( <xref:System.Windows.Controls.ItemsPresenter> Zobrazuje každou položku v <xref:System.Windows.Controls.ListBox>; <xref:System.Windows.Controls.ScrollViewer> umožňuje posouvání v ovládacím prvku).  Pokud <xref:System.Windows.Controls.ItemsPresenter> není za přímé podřízeného člena <xref:System.Windows.Controls.ScrollViewer>, je třeba zadat <xref:System.Windows.Controls.ItemsPresenter> názvu, `ItemsPresenter`.  
   
 ## <a name="listbox-states"></a>ListBox – stavy  
- Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.ListBox> ovládacího prvku.  
+ V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.ListBox> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Platné|ValidationStates|Ovládací prvek je platný.|  
-|InvalidFocused|ValidationStates|Ovládací prvek není platný a má právě fokus.|  
+|InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
   
-## <a name="listboxitem-parts"></a>ListBoxItem částí  
- <xref:System.Windows.Controls.ListBoxItem> Ovládací prvek nemá žádné pojmenované částí.  
+## <a name="listboxitem-parts"></a>Části objektu ListBoxItem  
+ <xref:System.Windows.Controls.ListBoxItem> Ovládací prvek nemá žádné pojmenované součásti.  
   
-## <a name="listboxitem-states"></a>ListBoxItem stavy  
- Následující tabulka uvádí visual stavy pro <xref:System.Windows.Controls.ListBox> ovládacího prvku.  
+## <a name="listboxitem-states"></a>Stavy objektu ListBoxItem  
+ V následující tabulce jsou uvedeny vizuálních stavů pro <xref:System.Windows.Controls.ListBox> ovládacího prvku.  
   
-|Název VisualState|Název VisualStateGroup|Popis|  
+|Název vizuálního stavu|Název VisualStateGroup|Popis|  
 |-|-|-|  
 |Normální|CommonStates|Ve výchozím stavu.|  
-|Myš nad|CommonStates|Ukazatel myši je umístěn nad ovládacího prvku.|  
-|zakázáno|CommonStates|Položka je zakázána.|  
-|Zaměřuje|FocusStates|Položka má právě fokus.|  
-|Nezaostřená|FocusStates|Položka nemá fokus.|  
-|Nezaškrtnuté|SelectionStates|Položka není vybrána.|  
-|Vybrané|SelectionStates|Položka se currentlyplate vybrané.|  
-|SelectedUnfocused|SelectionStates|Položka je vybrána, ale nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je přidružená vlastnost `false`.|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek má právě fokus.|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je přidružená vlastnost `true` má ovládací prvek nemá fokus.|  
+|Myš nad|CommonStates|Je ukazatel myši umístěn nad ovládací prvek.|  
+|Zakázáno|CommonStates|Položka je zakázaná.|  
+|Fokus|FocusStates|Položka má fokus.|  
+|Bez fokusu|FocusStates|Položka nemá fokus.|  
+|Nevybrané|SelectionStates|Není vybraná položka.|  
+|Vybráno|SelectionStates|Položka je currentlyplate vybrali.|  
+|SelectedUnfocused|SelectionStates|Položka vybrána, ale nemá fokus.|  
+|Platné|ValidationStates|Ovládací prvek používá <xref:System.Windows.Controls.Validation> třídy a <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> je připojená vlastnost `false`.|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek má fokus.|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> Je připojená vlastnost `true` má ovládací prvek nemá fokus.|  
   
-## <a name="listbox-controltemplate-example"></a>Příklad ControlTemplate ListBox  
+## <a name="listbox-controltemplate-example"></a>Příklad šablony ControlTemplate ListBox  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListBoxItem> ovládací prvky.  
   
  [!code-xaml[ControlTemplateExamples#ListBox](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/listbox.xaml#listbox)]  
@@ -62,12 +62,12 @@ Toto téma popisuje styly a šablony pro <xref:System.Windows.Controls.ListBox> 
   
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
   
- Kompletní příklad, najdete v části [styly s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
+ Úplnou ukázku najdete v tématu [stylu s ukázkou ControlTemplates](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.Style%2A>  
- <xref:System.Windows.Controls.ControlTemplate>  
- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)  
- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.Style%2A>
+- <xref:System.Windows.Controls.ControlTemplate>
+- [Styly a šablony ovládacích prvků](../../../../docs/framework/wpf/controls/control-styles-and-templates.md)
+- [Přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)

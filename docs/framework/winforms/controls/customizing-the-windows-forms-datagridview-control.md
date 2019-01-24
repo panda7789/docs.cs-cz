@@ -5,33 +5,33 @@ helpviewer_keywords:
 - data grids [Windows Forms], customization
 - DataGridView control [Windows Forms], customization
 ms.assetid: 01ea5d4c-a736-4596-b0e9-a67a1b86e15f
-ms.openlocfilehash: 92bbace4d0869aca67025f1e4ac8c451fe073219
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 901b221f74fa76221ed3f19e9eb4c5f17c6534fa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529841"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559551"
 ---
 # <a name="customizing-the-windows-forms-datagridview-control"></a>Přizpůsobení ovládacího prvku Windows Forms DataGridView
-`DataGridView` Řízení nabízí několik vlastností, které můžete upravit vzhled a chování základní (vzhled a chování) jeho buněk, řádků a sloupců. Pokud máte speciální požadavky nad rámec možností <xref:System.Windows.Forms.DataGridViewCellStyle> třídy, ale můžete také implementovat kreslení pro ovládací prvek vlastníka nebo rozšířit možnosti tak, že vytvoříte vlastní buněk, sloupce a řádky.  
+`DataGridView` Ovládací prvek obsahuje několik vlastností, které vám umožní upravit vzhled a chování základní (vzhled a chování) jeho buněk, řádků a sloupců. Pokud máte zvláštní požadavky, které jde nad rámec možností <xref:System.Windows.Forms.DataGridViewCellStyle> třídy, ale můžete také implementovat kreslení pro ovládací prvek vlastníka nebo rozšířit její schopnosti tak, že vytvoříte vlastní buňky, sloupce a řádky.  
   
- Chcete-li malovat buněk a řádky, sami, může zpracovávat různé `DataGridView` Malování události. Chcete-li upravit stávající funkce nebo přinášejí nové funkce, můžete vytvořit vlastní typy odvozené z existující `DataGridViewCell`, `DataGridViewColumn`, a `DataGridViewRow` typy. Můžete zadat také nové možnosti úprav vytvořením odvozené typy, které zobrazení ovládacího prvku dle vlastního výběru, když je buňku v režimu úprav.  
+ Má Vymalovat buňky a řádky sami, můžete zpracovávat různé `DataGridView` Malování události. K úpravě stávajících funkcí nebo přinášejí nové funkce, můžete vytvořit vlastní typy odvozené z existující `DataGridViewCell`, `DataGridViewColumn`, a `DataGridViewRow` typy. Nové funkce pro úpravy můžete zadat taky tak, že vytvoříte odvozené typy, které zobrazení ovládacího prvku, které si vyberete, pokud je buňka v režimu úprav.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Přizpůsobení vzhledu buněk v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customize-the-appearance-of-cells-in-the-datagrid.md)  
- Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.CellPainting> událostí k vyplnění buněk ručně.  
+ Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.CellPainting> událost k vykreslení buňky ručně.  
   
  [Postupy: Přizpůsobení vzhledu řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customize-the-appearance-of-rows-in-the-datagrid.md)  
- Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.RowPrePaint> a <xref:System.Windows.Forms.DataGridView.RowPostPaint> události k vykreslení řádky s vlastní, barevného přechodu pozadí nebo obsahu, který zahrnuje několik sloupců.  
+ Popisuje způsob zpracování <xref:System.Windows.Forms.DataGridView.RowPrePaint> a <xref:System.Windows.Forms.DataGridView.RowPostPaint> události k vykreslení řádky s vlastní, barevného přechodu pozadí a obsah, který zahrnuje několik sloupců.  
   
  [Postupy: Přizpůsobení buněk a sloupců v ovládacím prvku Windows Forms DataGridView rozšířením jejich chování a vzhledu](../../../../docs/framework/winforms/controls/customize-cells-and-columns-in-the-datagrid-by-extending-behavior.md)  
- Popisuje, jak vytvořit vlastní typy odvozené od `DataGridViewCell` a `DataGridViewColumn` Chcete-li zvýraznění buněk při umístění ukazatele myši na ně.  
+ Popisuje, jak vytvořit vlastní typy odvozené z `DataGridViewCell` a `DataGridViewColumn` informují buňky při umístění ukazatele myši na ně.  
   
- [Postupy: Zákaz tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/disable-buttons-in-a-button-column-in-the-datagrid.md)  
- Popisuje, jak vytvořit vlastní typy odvozené od <xref:System.Windows.Forms.DataGridViewButtonCell> a <xref:System.Windows.Forms.DataGridViewButtonColumn> aby bylo možné zobrazit zakázané tlačítek ve sloupci tlačítek.  
+ [Postupy: Zakázat tlačítek ve sloupci tlačítek v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/disable-buttons-in-a-button-column-in-the-datagrid.md)  
+ Popisuje, jak vytvořit vlastní typy odvozené z <xref:System.Windows.Forms.DataGridViewButtonCell> a <xref:System.Windows.Forms.DataGridViewButtonColumn> mohla zobrazit zakázané tlačítek ve sloupci tlačítek.  
   
- [Postupy: Hostování ovládacích prvků v buňkách Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)  
- Popisuje, jak implementovat `IDataGridViewEditingControl` rozhraní a vytvořit vlastní typy odvozené z `DataGridViewCell` a `DataGridViewColumn` aby bylo možné zobrazit <xref:System.Windows.Forms.DateTimePicker> řídit, kdy buňku je v režimu úprav.  
+ [Postupy: Hostitelské ovládací prvky v buňkách Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-host-controls-in-windows-forms-datagridview-cells.md)  
+ Popisuje, jak implementovat `IDataGridViewEditingControl` rozhraní a vytvořit vlastní typy odvozené z `DataGridViewCell` a `DataGridViewColumn` mohla zobrazit <xref:System.Windows.Forms.DateTimePicker> řídit, kdy je buňka v režimu úprav.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.DataGridView>  
@@ -51,8 +51,8 @@ ms.locfileid: "33529841"
   
 ## <a name="related-sections"></a>Související oddíly  
  [Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
- Obsahuje témata, která popisují, jak upravit základní vzhled ovládacího prvku a formátování zobrazení dat v buňce.  
+ Obsahuje témata, které popisují, jak změnit základní vzhled ovládacího prvku a formátování zobrazení dat v buňce.  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)  
- [Typy sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+- [Typy sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/column-types-in-the-windows-forms-datagridview-control.md)

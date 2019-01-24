@@ -1,20 +1,20 @@
 ---
-title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
+title: ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod Method
 ms.date: 03/30/2017
 ms.assetid: b933dfe6-7833-40cb-aad8-40842dc3034f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 564f3b1cdfab2a3020b6bb5ac8d9af03c6532c8b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 07b1c905e587708336ce690bbf3d187b2d21e5b9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459668"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568150"
 ---
-# <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod – metoda
+# <a name="icorprofilerinfo6enumngenmodulemethodsinliningthismethod-method"></a>ICorProfilerInfo6::EnumNgenModuleMethodsInliningThisMethod Method
 [Podporované v rozhraní .NET Framework 4.6 a novějších verzích]  
   
- Vrátí enumerátor pro všechny metody, které jsou definovány v daném modulu NGen a vložené dané metody.  
+ Vrátí enumerátor pro všechny metody, které jsou definovány v zadaném modulu NGen a vložené dané metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,22 +30,22 @@ HRESULT EnumNgenModuleMethodsInliningThisMethod(
   
 #### <a name="parameters"></a>Parametry  
  `inlinersModuleId`  
- [v] Identifikátor modul NGen.  
+ [in] Identifikátor modulu technologie NGen.  
   
  `inlineeModuleId`  
- [v] Identifikátor modul, který definuje `inlineeMethodId`. Další informace naleznete v části Poznámky.  
+ [in] Identifikátor modulu, který definuje `inlineeMethodId`. Další informace naleznete v části Poznámky.  
   
  `inlineeMethodId`  
- [v] Identifikátor vložená metoda. Další informace naleznete v části Poznámky.  
+ [in] Identifikátor je vložená metoda. Další informace naleznete v části Poznámky.  
   
  `incompleteData`  
- [out] Příznak, který určuje, zda `ppEnum` obsahuje všechny metody vložené dané metody.  Další informace naleznete v části Poznámky.  
+ [out] Příznak označující, zda `ppEnum` obsahuje všechny metody vkládání dané metody.  Další informace naleznete v části Poznámky.  
   
  `ppEnum`  
  [out] Ukazatel na adresu enumerátor  
   
 ## <a name="remarks"></a>Poznámky  
- `inlineeModuleId` a `inlineeMethodId` společně tvoří úplný identifikátor metodu, která může být vložená. Předpokládejme například, modul `A` definuje metodu `Simple.Add`:  
+ `inlineeModuleId` a `inlineeMethodId` společně tvoří úplný identifikátor pro metodu, která mohou být vložená. Předpokládejme například, modul `A` definuje metodu `Simple.Add`:  
   
 ```csharp  
 Simple.Add(int a, int b)   
@@ -59,21 +59,21 @@ Fancy.AddTwice(int a, int b)
 { return Simple.Add(a,b) + Simple.Add(a,b); }  
 ```  
   
- Umožňuje také předpokládají, že `Fancy.AddTwice` inlines volání do `SimpleAdd`. Profileru použít tento enumerátor najít všechny metody definované v modulu B, který vložené `Simple.Add`, a výsledkem by výčet `AddTwice`.  `inlineeModuleId` je identifikátor modulu `A`, a `inlineeeMethodId` je identifikátor `Simple.Add(int a, int b)`.  
+ Umožňuje taky se předpokládá, že `Fancy.AddTwice` inlines volání do `SimpleAdd`. Profiler může použít výčet najít všechny metody definované v modulu B které vložené `Simple.Add`, a výsledek by výčet `AddTwice`.  `inlineeModuleId` identifikátor modulu `A`, a `inlineeeMethodId` je identifikátor `Simple.Add(int a, int b)`.  
   
- Pokud `incompleteData` platí po funkce vrátí enumerátor neobsahuje všechny metody vložené dané metody. K tomu může dojít, pokud jeden nebo dosud nebyla načtena přímý nebo nepřímý závislosti inliners modulu. Pokud profileru potřebuje přesná data, jeho pokus opakovat později. Pokud další moduly jsou načteny, pokud možno na každém načtení modulu.  
+ Pokud `incompleteData` platí za funkci vrací enumerátor neobsahuje všechny metody vkládání dané metody. K tomu může dojít v případě, že jedna nebo přímou nebo nepřímou závislostmi inliners modulu nebyly dosud načteny. Pokud profiler přesná data, je při další moduly se načítají, pokud možno na každého modulu zatížení opakovat později.  
   
- `EnumNgenModuleMethodsInliningThisMethod` Metoda lze obejít omezení na vložené pro ReJIT. ReJIT umožňuje profileru změňte implementaci metody a pak vytvořte nový kód pro něj za chodu. Například nám změnit `Simple.Add` následujícím způsobem:  
+ `EnumNgenModuleMethodsInliningThisMethod` Metodu je možné obejít omezení na vkládání pro ReJIT. ReJIT umožňuje profileru, změňte implementaci metody a pak vytvořte nový kód pro něj v reálném čase. Můžeme například změnit `Simple.Add` následujícím způsobem:  
   
 ```csharp  
 Simple.Add(int a, int b)   
 { return 42; }  
 ```  
   
- Ale protože `Fancy.AddTwice` má již vložená `Simple.Add`, pokračuje tak, aby měl stejné chování jako předtím. Toto omezení obejít, má vyhledat všechny metody ve všech modulech přímo tady volající `Simple.Add` a používat `ICorProfilerInfo5::RequestRejit` na každé z těchto metod. Pokud se metody znovu kompilované, budou mít nové chování `Simple.Add` místo staré chování.  
+ Ale protože `Fancy.AddTwice` má již vložených `Simple.Add`, nadále mají stejné chování jako předtím. Toto omezení obejít, volající musí vyhledat všechny metody ve všech modulech přímo tady `Simple.Add` a použít `ICorProfilerInfo5::RequestRejit` na každé z těchto metod. Pokud metody jsou znovu zkompilovány, mají nové chování `Simple.Add` místo staré chování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -81,5 +81,5 @@ Simple.Add(int a, int b)
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v46plus](../../../../includes/net-current-v46plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo6-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo6 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo6-interface.md)

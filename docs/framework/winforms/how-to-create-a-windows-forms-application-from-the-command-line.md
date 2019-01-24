@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření aplikace Windows Forms z příkazového řádku'
+title: 'Postupy: Vytvoření aplikace Windows Forms z příkazového řádku'
 ms.date: 03/14/2018
 dev_langs:
 - csharp
@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7cfd90c5d38be788125af3bafe1e9ba034e9b957
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b37c57093662c94f5ad20bf9d01c63223b5901fb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43804786"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54581978"
 ---
-# <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: vytvoření aplikace Windows Forms z příkazového řádku
-Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace modelu Windows Forms z příkazového řádku. Není k dispozici rozsáhlou podporu pro tyto postupy v sadě Visual Studio.  Viz také [návod: vytvoření jednoduchého formuláře Windows](https://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
+# <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Postupy: Vytvoření aplikace Windows Forms z příkazového řádku
+Následující postupy popisují základní kroky, které je třeba provést k vytvoření a spuštění aplikace modelu Windows Forms z příkazového řádku. Není k dispozici rozsáhlou podporu pro tyto postupy v sadě Visual Studio.  Viz také [názorný postup: Vytvoření formuláře Windows jednoduché](https://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
   
 ## <a name="procedure"></a>Postup  
   
@@ -113,9 +113,9 @@ Následující postupy popisují základní kroky, které je třeba provést k v
   
 -   Chcete-li kód zkompilovat, postupujte podle pokynů v postupu budete pokračovat, které popisují, jak kompilace a spuštění aplikace.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Form>  
- <xref:System.Windows.Forms.Control>  
- [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)  
- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Form>
+- <xref:System.Windows.Forms.Control>
+- [Změna vzhledu Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)
+- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)
+- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)

@@ -2,16 +2,10 @@
 title: Začínáme (WPF)
 ms.date: 01/26/2018
 helpviewer_keywords:
-- getting started [WPF]
-- introduction [WPF]
-- WPF [WPF], getting started
+  - 'getting started [WPF]'
+  - 'introduction [WPF]'
+  - 'WPF [WPF], getting started'
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
-ms.openlocfilehash: f4c4c4a19c1919a27c15c623bcb30a119a560c75
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46702865"
 ---
 # <a name="getting-started-wpf"></a>Začínáme (WPF)
 Windows Presentation Foundation (WPF) je architekturu uživatelského rozhraní, která vytvoří aplikace klasické pracovní plochy klienta. Vývojová platforma WPF podporuje širokou škálu funkce pro vývoj aplikací, včetně aplikačního modelu, prostředky, ovládací prvky, grafiky, rozložení, datové vazby, dokumenty a zabezpečení. Je podmnožinou rozhraní .NET Framework, takže pokud jste dříve vytvořili aplikací s použitím rozhraní .NET Framework pomocí technologie ASP.NET nebo Windows Forms, by mělo být známé programovací prostředí. WPF využívá rozšiřitelné aplikace Markup Language (XAML) a poskytuje deklarativní model pro programování aplikací. Tato část obsahuje témata, které představují a pomůžou vám začít s WPF.  
@@ -26,7 +20,7 @@ Windows Presentation Foundation (WPF) je architekturu uživatelského rozhraní,
 |Další informace o rozhraní WPF...|[Úvod k použití WPF v sadě Visual Studio](../../../../docs/framework/wpf/getting-started/introduction-to-wpf-in-vs.md)<br /><br /> [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)<br /><br /> [Ovládací prvky](../../../../docs/framework/wpf/controls/index.md)<br /><br /> [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)|  
 |Jste si pro vývojáře Windows Forms|[Ovládací prvky Windows Forms a ekvivalentní ovládací prvky WPF](../../../../docs/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls.md)<br /><br /> [Vzájemná spolupráce subsystémů WPF a Windows Forms](../../../../docs/framework/wpf/advanced/wpf-and-windows-forms-interoperation.md)|  
   
-## <a name="see-also"></a>Viz také  
- [Knihovna tříd](../../../../docs/framework/wpf/class-library-wpf.md)  
- [Vývoj aplikací](../../../../docs/framework/wpf/app-development/index.md)  
- [Středisko pro vývojáře rozhraní .NET framework](https://www.microsoft.com/net)
+## <a name="see-also"></a>Viz také:
+- [Knihovna tříd](../../../../docs/framework/wpf/class-library-wpf.md)
+- [Vývoj aplikací](../../../../docs/framework/wpf/app-development/index.md)
+- [Středisko pro vývojáře rozhraní .NET framework](https://www.microsoft.com/net)

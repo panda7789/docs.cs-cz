@@ -1,19 +1,19 @@
 ---
-title: '&lt;koncového bodu workflowControlEndpoint&gt;'
+title: '&lt;workflowControlEndpoint&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6c89e76c-643b-4b6a-9b25-628f753d7027
-ms.openlocfilehash: 178ccc8ac35b0ac76d74c818dce43dcffc5c0835
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 9c641d4081d88b059e1d778f6383f85c064af7f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54144948"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558667"
 ---
-# <a name="ltworkflowcontrolendpointgt"></a>&lt;koncového bodu workflowControlEndpoint&gt;
+# <a name="ltworkflowcontrolendpointgt"></a>&lt;workflowControlEndpoint&gt;
 Tento prvek konfigurace definuje standardní koncový bod pro řízení spouštění instance pracovního postupu (vytvoření, spuštění, pozastavení, ukončit atd).  
   
 \<system.ServiceModel>  
-\<standardEndpoints >  
+\<standardEndpoints>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Tento prvek konfigurace definuje standardní koncový bod pro řízení spoušt�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
+|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Kolekce standardních koncových bodů, které jsou předem definované koncové body s jedním nebo více z jejich vlastností (adresu, vazbu, kontrakt) pevné.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>

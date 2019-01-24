@@ -2,21 +2,15 @@
 title: Nasazení .NET Framework a aplikací
 ms.date: 03/30/2017
 helpviewer_keywords:
-- deploying applications [.NET Framework], packaging
-- deploying applications [.NET Framework]
-- deploying applications [.NET Framework], features
-- deploying applications [.NET Framework], distribution
-- .NET Framework, deploying
-- .NET Framework application deployment
+  - 'deploying applications [.NET Framework], packaging'
+  - 'deploying applications [.NET Framework]'
+  - 'deploying applications [.NET Framework], features'
+  - 'deploying applications [.NET Framework], distribution'
+  - '.NET Framework, deploying'
+  - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a650fa0340ce63a573074746eef60994e2254c86
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453226"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 Tento článek pomůže začít nasazení rozhraní .NET Framework s vaší aplikací. Většina informací je určená pro vývojáře, výrobci OEM a enterprise administrators. Uživatelé, kteří chtějí nainstalovat rozhraní .NET Framework na svých počítačích byste si přečíst [instalace rozhraní .NET Framework](~/docs/framework/install/index.md).  
@@ -166,5 +160,5 @@ Tento článek pomůže začít nasazení rozhraní .NET Framework s vaší apli
 |[Nasazení aplikace spolupráce](../../../docs/framework/interop/deploying-an-interop-application.md)|Vysvětluje způsob dodání a nainstalujte spolupráce – aplikace, které sestavení klienta rozhraní .NET Framework, obvykle zahrnují jeden nebo více sestavení vzájemné spolupráce reprezentující různé knihovny typů modelu COM, a jeden nebo víc registrovaných komponent COM.|  
 |[Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.|  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 - [Průvodce vývojem](../../../docs/framework/development-guide.md)

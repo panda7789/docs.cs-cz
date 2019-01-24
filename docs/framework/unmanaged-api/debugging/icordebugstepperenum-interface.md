@@ -1,5 +1,5 @@
 ---
-title: ICorDebugStepperEnum Interface1
+title: ICorDebugStepperEnum – rozhraní 1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugStepperEnum
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af99bd165386f86d2045a7f5a5a7708c7b0d0b8c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4d9585fc3d10f7f58c7949eaef517e545d51010e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33419719"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572133"
 ---
-# <a name="icordebugstepperenum-interface1"></a>ICorDebugStepperEnum Interface1
-Implementuje metody ICorDebugEnum a vytvoří výčet ICorDebugStepper pole.  
+# <a name="icordebugstepperenum-interface1"></a>ICorDebugStepperEnum – rozhraní 1
+Implementuje metody ICorDebugEnum a vytváří výčet polí icordebugstepper –.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Získá zadaný počet `ICorDebugStepper` instancí z výčtu, počínaje na aktuální pozici.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-next-method.md)|Získá zadaný počet `ICorDebugStepper` instancí z výčtu od aktuální pozice.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,5 +46,5 @@ Implementuje metody ICorDebugEnum a vytvoří výčet ICorDebugStepper pole.
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: fa09c8e5-c2b9-49d2-bb0d-40330cd13e4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fc8df722acd5c9547833cb4fe3051e1590c6c627
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: e2cf9e1b4349d83a378f6b17e8740c95546bbe4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087670"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573960"
 ---
 # <a name="editing-xml-schemas"></a>Úpravy schémat XML
 Úprava schématu XML je jednou z vašich nejdůležitějších funkcí z modelu objektu schématu (SOM). Všechny vlastnosti vedlejší schema kompilace SOM lze použít ke změně existujícího hodnot ve schématu XML. Schéma XML můžete pak překompilovány tak, aby odrážely změny.  
@@ -137,10 +137,10 @@ ms.locfileid: "44087670"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
-- [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
-- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
-- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
-- [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
-- [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
+- [Čtení ze schémat XML a zápis do nich](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
+- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
+- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
+- [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
+- [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
 - [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)

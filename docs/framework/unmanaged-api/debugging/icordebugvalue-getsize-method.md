@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0023b8ad815b9204ed56791698c7242dfe90bec4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb0030a25dd48ab4236ec2b51891e0ac41aac902
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421655"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612616"
 ---
 # <a name="icordebugvaluegetsize-method"></a>ICorDebugValue::GetSize – metoda
 Získá velikost v bajtech tohoto objektu "ICorDebugValue".  
@@ -37,15 +37,15 @@ HRESULT GetSize (
   
 #### <a name="parameters"></a>Parametry  
  `pSize`  
- [out] Velikost v bajtech, tato hodnota objektu.  
+ [out] Velikost v bajtech, tento objekt hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je typ hodnotu typu odkazu, tato metoda vrátí velikost ukazatele spíše než velikost objektu.  
+ Pokud typ hodnoty je odkazový typ, vrátí tato metoda velikosti ukazatele, nikoli velikost objektu.  
   
- `ICorDebugValue::GetSize` Metoda vrátí `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Použití [icordebugvalue3::getsize64 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) metoda místo pro objekty, které jsou větší než 4 GB.  
+ `ICorDebugValue::GetSize` Vrátí metoda `COR_E_OVERFLOW` pro objekty, které jsou větší než 4 GB na 64bitových platformách. Použití [icordebugvalue3::getsize64 –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) metoda místo pro objekty, které jsou větší než 4 GB.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -53,6 +53,6 @@ HRESULT GetSize (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- [GetSize64 – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)
+## <a name="see-also"></a>Viz také:
+
+- [GetSize64 – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)

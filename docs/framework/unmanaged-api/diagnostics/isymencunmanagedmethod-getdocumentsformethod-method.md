@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8efcd62f39a7de397ef93231fd125a17c7e513e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cd294037774721839b0c4f1f09bdc2a6e3b87841
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425074"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562671"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethod-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethod – metoda
 Získá dokumenty, které tato metoda má řádky v.  
@@ -38,19 +38,19 @@ HRESULT GetDocumentsForMethod(
   
 #### <a name="parameters"></a>Parametry  
  `cDocs`  
- [v] Délka vyrovnávací paměti na kterou odkazuje `pcDocs`.  
+ [in] Délka vyrovnávací paměti na které odkazuje `pcDocs`.  
   
  `pcDocs`  
- [out] Ukazatel na `ULONG32` velikostí, která přijme ve znacích vyrovnávací paměti musí obsahovat dokumenty.  
+ [out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat dokumenty.  
   
  `documents`  
- [v] Vyrovnávací paměť, která obsahuje dokumenty.  
+ [in] Vyrovnávací paměť, která obsahuje dokumenty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. jinak kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě chybový kód.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)

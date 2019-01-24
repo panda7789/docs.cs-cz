@@ -2,12 +2,12 @@
 title: Konfigurace Služby sdílení portů Net.TCP
 ms.date: 03/30/2017
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
-ms.openlocfilehash: 3afc4cf50ac0dda0198ca8986177fd3028f9837e
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 9bc625f9e998f27b6227a5951f11c7d85220ae7f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029356"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585520"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Konfigurace Služby sdílení portů Net.TCP
 Několik upřesňující nastavení, můžete řídit, jako v místním prostředí služby, které používají přenos Net.TCP `ListenBacklog` a `MaxPendingAccepts`, které řídí chování základní soket TCP používá pro síťovou komunikaci. Však tato nastavení pro každý soket použije pouze na úrovni vazby Pokud vazby přenosu se vypne sdílení portů, která je ve výchozím nastavení povolené.  
@@ -61,5 +61,5 @@ Několik upřesňující nastavení, můžete řídit, jako v místním prostře
 > [!WARNING]
 >  Výchozí konfigurace SMSvcHost.exe.config soubor Určuje vlastní `etwProviderId` chcete zakázat SMSvcHost.exe trasování z zasahovala do trasování služby.  
   
-## <a name="see-also"></a>Viz také  
- [\<NET.TCP >](../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)
+## <a name="see-also"></a>Viz také:
+- [\<net.tcp>](../../../../docs/framework/configure-apps/file-schema/wcf/net-tcp.md)

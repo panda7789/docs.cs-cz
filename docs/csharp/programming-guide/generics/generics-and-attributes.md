@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], attributes
 - attributes [C#], with generics
 ms.assetid: da9fc326-4648-454a-8e13-3911a2edefd7
-ms.openlocfilehash: 35244ce33902760c2a0d3d8bda3181097f7ca38e
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 5b65ae794e99602fc84f674be5ec0502d4588a59
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53245178"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607699"
 ---
 # <a name="generics-and-attributes-c-programming-guide"></a>Obecné typy a atributy (Průvodce programováním v C#)
 Atributy lze použít na obecných typech stejným způsobem jako obecné typy. Další informace o použití atributů naleznete v tématu [atributy](../../../csharp/programming-guide/concepts/attributes/index.md).  
@@ -44,8 +44,8 @@ Atributy lze použít na obecných typech stejným způsobem jako obecné typy. 
   
  Pokud chcete získat informace o obecném typu nebo parametr typu v době běhu, můžete použít metody <xref:System.Reflection>. Další informace najdete v tématu [obecné typy a reflexe](../../../csharp/programming-guide/generics/generics-and-reflection.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Obecné typy](../../../csharp/programming-guide/generics/index.md)
 - [Atributy](../../../../docs/standard/attributes/index.md)

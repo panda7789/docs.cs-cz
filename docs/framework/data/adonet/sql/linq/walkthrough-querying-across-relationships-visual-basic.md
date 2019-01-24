@@ -1,46 +1,46 @@
 ---
-title: 'Návod: Dotazování napříč relacemi (Visual Basic)'
+title: 'Průvodce: Dotazování napříč relacemi (Visual Basic)'
 ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: a7da43e3-769f-4e07-bcd6-552b8bde66f4
-ms.openlocfilehash: aa98a823a5d97d86144ea2f76953e990cde8edec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2246ad1f9f36af2f8f4383647ccb97ee7be3b64b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33355201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585468"
 ---
-# <a name="walkthrough-querying-across-relationships-visual-basic"></a>Návod: Dotazování napříč relacemi (Visual Basic)
-Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
+# <a name="walkthrough-querying-across-relationships-visual-basic"></a>Průvodce: Dotazování napříč relacemi (Visual Basic)
+Tento návod demonstruje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *přidružení* představují relace cizího klíče v databázi.  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
- Tento názorný postup napsané pomocí jazyka Visual Basic – vývojové nastavení.  
+ Tento návod byl napsán s použitím vývojového nastavení jazyka Visual Basic.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Je nutné provést [návod: jednoduché objektový Model a dotazů (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md). Tento návod vytvoří na něm, včetně přítomnost souboru northwnd.mdf v c:\linqtest.  
+ Je nutné dokončit [názorný postup: Jednoduchý objektový Model a dotaz (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md). Tento návod vychází, že jedna, včetně přítomnost souboru northwnd.mdf c:\linqtest.  
   
 ## <a name="overview"></a>Přehled  
- Tento názorný postup se skládá z tři hlavní cíle:  
+ Tento názorný postup se skládá ze tří hlavních úloh:  
   
--   Přidání třídy entity představují objednávky tabulky v ukázkové databázi Northwind.  
+-   Přidání entity třídy představující v tabulce objednávky v ukázkové databázi Northwind.  
   
--   Poznámky k dodávání `Customer` třída k vylepšení vztah mezi `Customer` a `Order` třídy.  
+-   Poznámky k doplnění `Customer` třídy k vylepšení vztah mezi `Customer` a `Order` třídy.  
   
--   Vytváření a spouštění dotazu otestovat proces získání `Order` informace pomocí `Customer` třídy.  
+-   Vytváření a spouštění dotazů otestovat proces získávání `Order` informace s použitím `Customer` třídy.  
   
-## <a name="mapping-relationships-across-tables"></a>Mapování vazeb v rámci tabulky  
- Po `Customer` definici třídy, vytvořte `Order` definice třídy entity, která zahrnuje následující kód, který označuje, že `Orders.Customer` má vztah jako cizí klíč k `Customers.CustomerID`.  
+## <a name="mapping-relationships-across-tables"></a>Mapování relací mezi tabulkami  
+ Po `Customer` definici třídy, vytvořte `Order` definici třídy, která obsahuje následující kód, což znamená, že `Orders.Customer` souvisí jako cizí klíč k `Customers.CustomerID`.  
   
-#### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat třídy entita pořadí  
+#### <a name="to-add-the-order-entity-class"></a>Chcete-li přidat pořadí třída entity  
   
--   Zadejte nebo vložte následující kód po `Customer` třídy:  
+-   Zadejte nebo vložte následující kód za `Customer` třídy:  
   
      [!code-vb[DLinqWalk2VB#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#1)]  
   
-## <a name="annotating-the-customer-class"></a>Zadávání poznámek k třídě zákazníka  
- V tomto kroku přidávat poznámky `Customer` třída indikující její vztah k `Order` třídy. (Přidání není nezbytně nutné, protože definováním relace v obou směrech je dostačující k vytvoření propojení. Ale přidávání tato anotace umožňují snadno přejít objekty v obou směrech.)  
+## <a name="annotating-the-customer-class"></a>Zadávání poznámek ke třídě zákazníka  
+ V tomto kroku přidáte poznámky `Customer` třídy k jeho vztah k označení `Order` třídy. (Toto přidání není nezbytně nutné, protože definováním relace v obou směrech je dostatečná pro vytvoření odkazu. Ale přidání tato poznámka umožňují snadno procházet objekty v obou směrech.)  
   
 #### <a name="to-annotate-the-customer-class"></a>K přidání poznámek ke třídě zákazníka  
   
@@ -48,29 +48,29 @@ Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/
   
      [!code-vb[DLinqWalk2VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#2)]  
   
-## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Vytvoření a spuštění dotazu pro odběratele objednávku relace  
- Nyní máte přístup `Order` objekty přímo z `Customer` objekty, nebo v opačném pořadí. Není nutné explicitního *spojení* mezi zákazníci a objednávky.  
+## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Vytvoření a spuštění dotazu v relaci Zákazník objednávky  
+ Teď umožňuje přistupovat k `Order` objekty přímo `Customer` objektů, nebo v opačném pořadí. Není nutné explicitně *spojení* mezi zákazníci a objednávky.  
   
-#### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí zákaznických objektů  
+#### <a name="to-access-order-objects-by-using-customer-objects"></a>Pro přístup k objektům pořadí pomocí objektů zákazníka  
   
-1.  Změnit `Sub Main` metoda zadáním nebo vložením následující kód do metody:  
+1.  Upravit `Sub Main` metoda zadáním nebo vložením následujícího kódu do metody:  
   
      [!code-vb[DLinqWalk2VB#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#3)]  
   
-2.  Stisknutím klávesy F5 ladění aplikace.  
+2.  Stisknutím klávesy F5 pro ladění vaší aplikace.  
   
-     Dva názvy se zobrazí v okně zprávy a v okně konzoly zobrazí generovaného kódu SQL.  
+     Dva názvy se zobrazí v okně se zprávou a v okně konzoly se zobrazí generovaného kódu SQL.  
   
-3.  Okno zprávy k zastavení ladění zavřete.  
+3.  Zavřete okno zpráv Zastavit ladění.  
   
-## <a name="creating-a-strongly-typed-view-of-your-database"></a>Vytvoření zobrazení se silnými typy databáze  
- Je mnohem snazší začínat zobrazení se silnými typy vaší databáze. Důrazně zadáním <xref:System.Data.Linq.DataContext> objektu, není nutné volání <xref:System.Data.Linq.DataContext.GetTable%2A>. Můžete použít silného typu tabulky do vašich dotazů při použití silného typu <xref:System.Data.Linq.DataContext> objektu.  
+## <a name="creating-a-strongly-typed-view-of-your-database"></a>Vytvoření zobrazení se silnými typy vaší databáze  
+ Je mnohem jednodušší začínat zobrazení se silnými typy vaší databáze. Důrazně zadáním <xref:System.Data.Linq.DataContext> objektu, není nutné volání <xref:System.Data.Linq.DataContext.GetTable%2A>. Můžete použít silného typu tabulky ve všech dotazů při použití silného typu <xref:System.Data.Linq.DataContext> objektu.  
   
- V následujících krocích vytvoříte `Customers` jako silného typu tabulku, která se mapuje na tabulku zákazníků v databázi.  
+ V následujících krocích vytvoříte `Customers` jako tabulku silného typu, který se mapuje na tabulku Customers v databázi.  
   
-#### <a name="to-strongly-type-the-datacontext-object"></a>Na typově DataContext objektu  
+#### <a name="to-strongly-type-the-datacontext-object"></a>Chcete-li silného typu DataContext object  
   
-1.  Přidejte následující kód výše `Customer` deklarace třídy.  
+1.  Přidejte následující kód nad `Customer` deklarace třídy.  
   
      [!code-vb[DLinqWalk2VB#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#4)]  
   
@@ -78,18 +78,18 @@ Tento návod ukazuje použití [!INCLUDE[vbtecdlinq](../../../../../../includes/
   
      [!code-vb[DLinqWalk2VB#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk2VB/vb/Module1.vb#5)]  
   
-3.  Stisknutím klávesy F5 ladění aplikace.  
+3.  Stisknutím klávesy F5 pro ladění vaší aplikace.  
   
-     Okno výstup konzoly je:  
+     Výstup okna konzoly je:  
   
      `ID=WHITC`  
   
-4.  Stisknutím klávesy Enter v okně konzoly aplikace se zavře.  
+4.  Stisknutím klávesy Enter ukončete aplikaci v okně konzoly.  
   
-5.  Na **soubor** nabídky, klikněte na tlačítko **Uložit vše** Pokud chcete uložit tuto aplikaci.  
+5.  Na **souboru** nabídky, klikněte na tlačítko **Uložit vše** Pokud chcete uložit této aplikace.  
   
 ## <a name="next-steps"></a>Další kroky  
- Další návod ([návod: manipulace dat (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)) ukazuje, jak pracovat s daty. Tento návod nevyžaduje, abyste uložili dva postupy z této série, která jste už dokončili.  
+ Dalšího názorného postupu ([názorný postup: Manipulace s daty (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)) ukazuje, jak pracovat s daty. Tento názorný postup nevyžaduje uložit dva postupy v této sérii, které již byly dokončeny.  
   
-## <a name="see-also"></a>Viz také  
- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+## <a name="see-also"></a>Viz také:
+- [Učení podle návodů](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)

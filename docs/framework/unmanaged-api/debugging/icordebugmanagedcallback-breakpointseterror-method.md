@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8cc437f63621c451c0af796513d4646fe0668c00
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ae0838dd5f4dcfe95cd516b23fef3d5ca429031
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418376"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54586361"
 ---
 # <a name="icordebugmanagedcallbackbreakpointseterror-method"></a>ICorDebugManagedCallback::BreakpointSetError – metoda
-Upozorní ladicí program nemohl modul common language runtime pro vazbu přesně zarážku nastavený před funkci v běhu (JIT) zkompilovat.  
+Upozorní ladicí program nemohl modul common language runtime přesně svázat zarážku, která byla nastavena před funkci just-in-time (JIT) zkompilována.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ HRESULT BreakpointSetError (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, která obsahuje nevázaný zarážek.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, který obsahuje nevázaného zarážku.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který představuje vlákno, které obsahuje nevázaný zarážek.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, které obsahuje nevázaného zarážku.  
   
  `pBreakpoint`  
- [v] Ukazatel na ICorDebugBreakpoint objekt, který reprezentuje nevázaný zarážek.  
+ [in] Ukazatel na objekt ICorDebugBreakpoint představující odvázat zarážku.  
   
  `dwError`  
- [v] Celé číslo, které označuje chybu.  
+ [in] Celé číslo, které označuje chybu.  
   
 ## <a name="remarks"></a>Poznámky  
- Daný zarážek se nikdy se setkají. Ladicí program by měl deaktivovat a znovu ji svázat.  
+ Daném bude nikdy dosaženo zarážkou. Ladicí program by měl deaktivovat a znovu se připojit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -63,5 +63,5 @@ HRESULT BreakpointSetError (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

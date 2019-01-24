@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 480fedc8ae63ffa3222a74e39297cc64b6812e97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f1d62c55df410d284fe050b805cf465718ab112
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444488"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576148"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap – metoda
 Nastaví funkce PInvoke podpis metody odkazuje zadaný token.  
@@ -40,26 +40,26 @@ HRESULT DefinePinvokeMap (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Token pro cílové metody.  
+ [in] Token pro cílové metody.  
   
  `dwMappingFlags`  
- [v] Příznaky použité PInvoke udělat mapování.  
+ [in] Příznaky používá u PInvoke k proveďte mapování.  
   
  `szImportName`  
- [v] Název cílového exportovat metoda v nespravované knihovny DLL.  
+ [in] Název cíle metoda export ve nespravovaná knihovna DLL.  
   
  `mrImportDLL`  
- [v] Token pro cíl nativní knihovny DLL.  
+ [in] Token pro cíl nativní knihovnu DLL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

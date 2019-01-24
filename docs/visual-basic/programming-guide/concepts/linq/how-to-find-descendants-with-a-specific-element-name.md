@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání následníky s konkrétní Element názvu (Visual Basic)'
+title: 'Postupy: Vyhledání potomků s konkrétním názvem elementu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 78915518-0d25-4051-ab55-929779989510
-ms.openlocfilehash: c6f702c121f6a8b9aa5750b4c5ff70c00e681b82
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4311eb0a4062c01b2c8e1c19355c5284298e39dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643156"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557156"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Postupy: vyhledání následníky s konkrétní Element názvu (Visual Basic)
-Někdy budete chtít vyhledání všech potomků s konkrétním názvem. Můžete napsat kód, k iteraci v rámci všech následníky, ale je jednodušší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
+# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Postupy: Vyhledání potomků s konkrétním názvem elementu (Visual Basic)
+Někdy budete chtít vyhledání všech potomků s konkrétním názvem. Můžete napsat kód k iteraci v rámci všechny následníky, ale je jednodušší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak najít následníků na základě názvu elementu.  
+ Následující příklad ukazuje, jak vyhledání potomků vycházet z názvu elementu.  
   
 ```vb  
 Dim root As XElement = _  
@@ -54,7 +54,7 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -100,6 +100,6 @@ End Module
 Some text that is broken up into multiple segments.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
- [Základní dotazy (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XContainer.Descendants%2A>
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

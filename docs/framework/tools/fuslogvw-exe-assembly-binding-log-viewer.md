@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 17e8e00afd759a3408ca54930c15d0b8797ff947
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 57f62f6d03a95860e06e0a457884dd30d186643a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54222334"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574154"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (prohlížeč protokolu vazby sestavení)
 Nástroj Assembly Binding Log Viewer zobrazuje podrobnosti o vazbách sestavení. Tyto informace vám pomohou diagnostikovat, proč rozhraní .NET Framework nemůže najít sestavení v době běhu. Tyto chyby jsou obvykle výsledkem nasazení sestavení na nesprávné místo, neplatné nativní bitové kopie nebo neshody čísel verzí nebo jazykových verzí. Modul common language runtime nepodařilo najít sestavení obvykle zobrazí jako <xref:System.TypeLoadException> ve vaší aplikaci.  
@@ -228,9 +228,9 @@ Discarding native image.
     > [!NOTE]
     >  Toto pole je povoleno pouze v systému Windows 8 nebo novějším.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.TypeLoadException>  
- [Nástroje](../../../docs/framework/tools/index.md)  
- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.TypeLoadException>
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
+- [Jak běhové prostředí vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

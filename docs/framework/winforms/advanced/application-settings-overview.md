@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: e38be762fbfdaccc7d5ba01a1f24f5f3086ca8bf
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b30203aaf36d4fa6c0b06d54da1abc1f99d22afc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503594"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576899"
 ---
 # <a name="application-settings-overview"></a>Přehled nastavení aplikace
 Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace i vaše uživatele.  
@@ -47,14 +47,14 @@ Toto téma popisuje, jak vytvářet a ukládat nastavení data jménem aplikace 
   
  Můžete také použít <xref:System.Windows.Forms.Binding> třídy prostřednictvím kódu programu vytvořit vazbu nastavení s vlastnostmi formuláře a ovládací prvky.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Configuration.ApplicationSettingsBase>  
- <xref:System.Configuration.SettingsProvider>  
- <xref:System.Configuration.LocalFileSettingsProvider>  
- <xref:System.Configuration.IPersistComponentSettings>  
- [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)  
- [Správa nastavení aplikace (.NET)](https://msdn.microsoft.com/library/35254321-ad14-47d9-b8c6-39ab3203c5d9)  
- [Postupy: Čtení uživatelských nastavení při běhu pomocí C#](../../../../docs/framework/winforms/advanced/how-to-read-settings-at-run-time-with-csharp.md)  
- [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  
- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)  
- [Nastavení aplikace pro vlastní ovládací prvky](../../../../docs/framework/winforms/advanced/application-settings-for-custom-controls.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.ApplicationSettingsBase>
+- <xref:System.Configuration.SettingsProvider>
+- <xref:System.Configuration.LocalFileSettingsProvider>
+- <xref:System.Configuration.IPersistComponentSettings>
+- [Postupy: Ověření nastavení aplikace](../../../../docs/framework/winforms/advanced/how-to-validate-application-settings.md)
+- [Správa nastavení aplikace (.NET)](https://msdn.microsoft.com/library/35254321-ad14-47d9-b8c6-39ab3203c5d9)
+- [Postupy: Čtení uživatelských nastavení při běhu pomocíC#](../../../../docs/framework/winforms/advanced/how-to-read-settings-at-run-time-with-csharp.md)
+- [Použití nastavení aplikace a uživatelských nastavení](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)
+- [Architektura nastavení aplikace](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Nastavení aplikace pro vlastní ovládací prvky](../../../../docs/framework/winforms/advanced/application-settings-for-custom-controls.md)

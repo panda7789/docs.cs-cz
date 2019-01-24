@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 65fbf0bf42f7312ad80b61bf452b62a4d0ff93c9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 276f83ff95d4f63f9a26807fe2601c68e3f6b063
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436121"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574908"
 ---
 # <a name="iclrgcmanager2setgcstartuplimitsex-method"></a>ICLRGCManager2::SetGCStartupLimitsEx – metoda
-Nastaví velikost segment kolekce paměti a maximální velikost systém kolekce paměti generace 0.  
+Nastaví velikost segmentu kolekce uvolnění paměti a maximální velikost systému kolekce uvolnění paměti generace 0.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,12 +38,12 @@ HRESULT SetGCStartupLimitsEx (
   
 #### <a name="parameters"></a>Parametry  
  `SegmentSize`  
- [v] Zadaná velikost paměti segment kolekce.  
+ [in] Zadaná velikost segmentu kolekce uvolnění paměti.  
   
- Velikost minimální segmentu je 4 MB volného místa. Segmenty může být vyšší v přírůstcích po 1 MB nebo větší.  
+ Segment minimální velikost je 4 MB. Segmenty může být větší nebo vyšší v krocích po 1 MB.  
   
  `MaxGen0Size`  
- [v] Zadaná maximální velikost pro generování 0.  
+ [in] Zadaná maximální velikost 0. generace.  
   
  Velikost minimální generace 0 je 64 KB.  
   
@@ -51,29 +51,29 @@ HRESULT SetGCStartupLimitsEx (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetGCStartupLimitsEx` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`SetGCStartupLimitsEx` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, `SetGCStartupLimitsEx` sady lze zadat pouze, před zahájením hostitele. Novější volá, aby se `SetGCStartupLimitsEx` jsou ignorovány.  
+ Hodnoty, které `SetGCStartupLimitsEx` sady se dá nastavit pouze před spuštěním hostitele. Pozdější volání `SetGCStartupLimitsEx` jsou ignorovány.  
   
- Nastavit buď parametr bez ovlivnění dalších, zadejte 0 (nula) pro parametr, které nechcete změnit.  
+ Pokud chcete nastavit buď parametr bez vlivu jiné, zadejte 0 (nula) pro parametr, který nechcete změnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)  
- [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)  
- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [ICLRGCManager2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Automatická správa paměti](../../../../docs/standard/automatic-memory-management.md)
+- [Uvolňování paměti](../../../../docs/standard/garbage-collection/index.md)
+- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [ICLRGCManager2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-interface.md)

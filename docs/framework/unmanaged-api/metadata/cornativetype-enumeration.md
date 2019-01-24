@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b28fe8e8fd8b602a01b6358f46f60cdf792ced0d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15226e6efc468974c32c11adec48a35764bc8446
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448622"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612252"
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType – výčet
-Obsahuje hodnoty, které popisují nativní nespravované typy.  
+Obsahuje hodnoty, které popisují nativní nespravovaných typů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -93,59 +93,59 @@ typedef enum CorNativeType {
 |------------|-----------------|  
 |`NATIVE_TYPE_END`|Zastaralé.|  
 |`NATIVE_TYPE_VOID`|Zastaralé.|  
-|`NATIVE_TYPE_BOOLEAN`|4bajtový logickou hodnotu, kde TRUE je nulová a FALSE je nulová.|  
-|`NATIVE_TYPE_I1`|Hodnota podepsaný 8bitové celé číslo.|  
-|`NATIVE_TYPE_U1`|Hodnota typu bez znaménka 8bitové celé číslo.|  
-|`NATIVE_TYPE_I2`|Hodnota podepsaný 16bitové celé číslo.|  
-|`NATIVE_TYPE_U2`|Hodnota typu bez znaménka 16bitové celé číslo.|  
-|`NATIVE_TYPE_I4`|Hodnota podepsaný 32bitové celé číslo.|  
-|`NATIVE_TYPE_U4`|Hodnota typu bez znaménka 32bitové celé číslo.|  
-|`NATIVE_TYPE_I8`|Hodnota podepsaný 64bitové celé číslo.|  
+|`NATIVE_TYPE_BOOLEAN`|4 bajty. logická hodnota, kde hodnota TRUE je nenulová a FALSE je nula.|  
+|`NATIVE_TYPE_I1`|Podepsané 8bitovou celočíselnou hodnotu.|  
+|`NATIVE_TYPE_U1`|Hodnota typu celé číslo bez znaménka 8 bitů.|  
+|`NATIVE_TYPE_I2`|Hodnota, celé číslo se znaménkem 16 bitů.|  
+|`NATIVE_TYPE_U2`|Hodnota typu celé číslo bez znaménka 16 bitů.|  
+|`NATIVE_TYPE_I4`|Hodnota, celé číslo se znaménkem 32-bit.|  
+|`NATIVE_TYPE_U4`|Hodnota typu celé číslo bez znaménka 32-bit.|  
+|`NATIVE_TYPE_I8`|Hodnota, celé číslo se znaménkem 64-bit.|  
 |`NATIVE_TYPE_U8`|Hodnota typu celé číslo bez znaménka 64-bit.|  
-|`NATIVE_TYPE_R4`|4bajtový s plovoucí desetinnou čárkou číselná hodnota.|  
+|`NATIVE_TYPE_R4`|4bajtový s plovoucí desetinnou čárkou číselnou hodnotu.|  
 |`NATIVE_TYPE_R8`|8bajtový s plovoucí desetinnou čárkou číselnou hodnotu.|  
 |`NATIVE_TYPE_SYSCHAR`|Zastaralé.|  
 |`NATIVE_TYPE_VARIANT`|Zastaralé.|  
-|`NATIVE_TYPE_CURRENCY`|Číselného typu modelu COM, která odpovídá spravovaný <xref:System.Decimal> typu.|  
+|`NATIVE_TYPE_CURRENCY`|Číselný typ modelu COM, která odpovídá spravovanou <xref:System.Decimal> typu.|  
 |`NATIVE_TYPE_PTR`|Zastaralé.|  
 |`NATIVE_TYPE_DECIMAL`|Zastaralé.|  
 |`NATIVE_TYPE_DATE`|Zastaralé.|  
-|`NATIVE_TYPE_BSTR`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_LPSTR`|LPSTR řetězcovou hodnotu.|  
+|`NATIVE_TYPE_BSTR`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_LPSTR`|Hodnota řetězce typem LPSTR.|  
 |`NATIVE_TYPE_LPWSTR`|LPWSTR řetězcovou hodnotu.|  
 |`NATIVE_TYPE_LPTSTR`|LPTSTR řetězcovou hodnotu.|  
-|`NATIVE_TYPE_FIXEDSYSSTRING`|Hodnotu řetězce pevné, definovaná systémem.|  
+|`NATIVE_TYPE_FIXEDSYSSTRING`|Hodnotu řetězce pevné, definované v systému.|  
 |`NATIVE_TYPE_OBJECTREF`|Zastaralé.|  
-|`NATIVE_TYPE_IUNKNOWN`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_IDISPATCH`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_STRUCT`|Nativní struktura hodnota.|  
-|`NATIVE_TYPE_INTF`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_SAFEARRAY`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_IUNKNOWN`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_IDISPATCH`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_STRUCT`|Hodnota nativní struktury.|  
+|`NATIVE_TYPE_INTF`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_SAFEARRAY`|Komunikace s objekty COM|  
 |`NATIVE_TYPE_FIXEDARRAY`|Hodnota pole s pevnou délkou.|  
-|`NATIVE_TYPE_INT`|Hodnota nativní 16bitové číslo se znaménkem.|  
+|`NATIVE_TYPE_INT`|Hodnota nativní 16bitové celé číslo se znaménkem.|  
 |`NATIVE_TYPE_UINT`|Hodnota nativní 16bitové celé číslo bez znaménka.|  
 |`NATIVE_TYPE_NESTEDSTRUCT`|Zastaralé.<br /><br /> Použijte NATIVE_TYPE_STRUCT.|  
-|`NATIVE_TYPE_BYVALSTR`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_ANSIBSTR`|Zprostředkovatel komunikace s objekty COM.|  
-|`NATIVE_TYPE_TBSTR`|Zprostředkovatel komunikace s objekty COM.<br /><br /> Vyberte BSTR nebo ANSIBSTR v závislosti na platformu.|  
-|`NATIVE_TYPE_VARIANTBOOL`|2bajtový logická hodnota, kde PRAVDA. je -1 a FALSE je nulová.|  
+|`NATIVE_TYPE_BYVALSTR`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_ANSIBSTR`|Komunikace s objekty COM|  
+|`NATIVE_TYPE_TBSTR`|Komunikace s objekty COM<br /><br /> Vyberte, BSTR nebo ANSIBSTR podle platformy.|  
+|`NATIVE_TYPE_VARIANTBOOL`|2bajtový logická hodnota, kde nastavena hodnota TRUE je -1 a hodnota FALSE je nula.|  
 |`NATIVE_TYPE_FUNC`|Ukazatel na funkci.|  
-|`NATIVE_TYPE_ASANY`|Odkaz na všechny nativní typu.|  
-|`NATIVE_TYPE_ARRAY`|Odkaz na pole se členy neurčeného typu.|  
+|`NATIVE_TYPE_ASANY`|Odkaz na jakékoli nativního typu.|  
+|`NATIVE_TYPE_ARRAY`|Odkaz na pole s členy neurčeného typu.|  
 |`NATIVE_TYPE_LPSTRUCT`|32bitové celé číslo ukazatel na strukturu.|  
-|`NATIVE_TYPE_CUSTOMMARSHALER`|Vlastní vláken nativního typu.<br /><br /> Toto musí být následováno řetězec následující formát: "nativní typ název nebo 0Custom vláken zadejte název nebo 0Optional soubor cookie nebo 0" nebo "{nativní zadejte GUID} / 0Custom vláken zadejte název nebo 0Optional soubor cookie nebo 0"|  
-|`NATIVE_TYPE_ERROR`|Zprostředkovatel komunikace s objekty COM.<br /><br /> Tento typ s ELEMENT_TYPE_I4 mapuje VT_HRESULT.|  
+|`NATIVE_TYPE_CUSTOMMARSHALER`|Vlastní zařazování nativního typu.<br /><br /> Toto musí následovat řetězec následující formát: "Název/0Custom nativní typ zařazovacího modulu typu název/0Optional souboru cookie/0" nebo "{nativní typ GUID} / 0Custom zařazování zadejte název/0Optional souboru cookie/0"|  
+|`NATIVE_TYPE_ERROR`|Komunikace s objekty COM<br /><br /> Tento typ s ELEMENT_TYPE_I4 mapuje VT_HRESULT.|  
 |`NATIVE_TYPE_IINSPECTABLE`|Nativní `IInspectable` typu.|  
 |`NATIVE_TYPE_HSTRING`|Nativní `HString`.|  
 |`NATIVE_TYPE_MAX`|Neplatná hodnota.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.UnmanagedType>  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.UnmanagedType>
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

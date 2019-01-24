@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření sestavení s jediným souborem'
+title: 'Postupy: Sestavení s jediným souborem'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: a6063221-43a5-4d3e-814c-288a4ec69aec
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fff84266dd99b84cc99c1996a3063dc962fa2e94
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b5c0b5dc2e001121ab54447bae4a5eed3290a580
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841135"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597837"
 ---
-# <a name="how-to-build-a-single-file-assembly"></a>Postupy: Vytváření sestavení s jediným souborem
+# <a name="how-to-build-a-single-file-assembly"></a>Postupy: Sestavení s jediným souborem
 
 Jeden soubor sestavení, které se o nejjednodušší typ sestavení, obsahuje informace o typu a implementaci, jakož i [manifestu sestavení](../../../docs/framework/app-domains/assembly-manifest.md). Kompilátory příkazového řádku nebo Visual Studio můžete použít k vytvoření jednosouborového sestavení. Ve výchozím nastavení kompilátor vytvoří sestavení soubor s příponou .exe.
 
@@ -88,7 +88,7 @@ csc -out:myCodeLibrary.dll -t:library myCode.cs
 vbc -out:myCodeLibrary.dll -t:library myCode.vb
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)
 - [Vícesouborová sestavení](../../../docs/framework/app-domains/multifile-assemblies.md)

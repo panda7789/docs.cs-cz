@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cd4b7ffef9c0ba3aba54387245b2d5c9ec1ae906
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2c3040adddabee716976d778c29d1f6729efc39
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441753"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576925"
 ---
 # <a name="lpoverlappedcompletionroutine-function-pointer"></a>LPOVERLAPPED_COMPLETION_ROUTINE – ukazatel na funkci
-Odkazuje na funkci, která upozorní hostitele, když překryté (tedy asynchronní) vstupně-výstupních operací na zařízení byla dokončena.  
+Odkazuje na funkci, která upozorňuje hostitele, pokud překrytí (tj, asynchronní) vstupně-výstupních operací na zařízení byla dokončena.  
   
- Tento ukazatel na funkci se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Tento ukazatel na funkci se už nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,21 +40,21 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
   
 #### <a name="parameters"></a>Parametry  
  `dwErrorCode`  
- [v] Hodnotu, která je kód chyby, pokud bylo ukončeno zařízení; Tato hodnota je, jinak hodnota nula.  
+ [in] Hodnotu, která je kód chyby, pokud bylo ukončeno zařízení; v opačném případě tato hodnota je nula.  
   
- Zavření zařízení způsobí, že všechna nevyřízená vstupně-výstupních operací na zařízení provést okamžitě.  
+ Zavření zařízení způsobí, že všechny čekající vstupně-výstupních operací zařízení okamžitě provést.  
   
  `dwNumberOfBytesTransfered`  
- [v] Počet bajtů přenesených vstupně-výstupní operace.  
+ [in] Počet bajtů přenesených vstupně-výstupní operace.  
   
  `lpOverlapped`  
- [v] Ukazatel na strukturu, která obsahuje informace, které umožňuje dokončit požadavek na vstupně-výstupní operace.  
+ [in] Ukazatel na strukturu, která obsahuje informace, které se dá použít k dokončení žádosti o vstupně-výstupních operací.  
   
 ## <a name="remarks"></a>Poznámky  
- Funkce, ke kterému `LPOVERLAPPED_COMPLETION_ROUTINE` body je funkce zpětného volání a musí být implementována zapisovačem hostitelskou aplikaci. Funkce zpětného volání umožňuje hostiteli zpracovat dokončenou žádost vstupně-výstupní operace.  
+ Funkce, které `LPOVERLAPPED_COMPLETION_ROUTINE` body je funkce zpětného volání a musí být implementováno tvůrci hostitelské aplikace. Funkce zpětného volání umožňuje hostiteli zpracování dokončenou žádost vstupně-výstupních operací.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -62,5 +62,5 @@ typedef VOID (*LPOVERLAPPED_COMPLETION_ROUTINE) (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

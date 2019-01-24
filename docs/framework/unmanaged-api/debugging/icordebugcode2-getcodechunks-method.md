@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdfcd45b15ddc1491b12de0fa42901b6d3f7fe9b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf8bc747f643819eb82448b4ad6b7fab696c9c91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413150"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572497"
 ---
 # <a name="icordebugcode2getcodechunks-method"></a>ICorDebugCode2::GetCodeChunks – metoda
 Získá bloky kódu, ze kterých je tento objekt kódu sestaven.  
@@ -40,19 +40,19 @@ HRESULT GetCodeChunks (
   
 #### <a name="parameters"></a>Parametry  
  `cbufSize`  
- [v] Velikost `chunks` pole.  
+ [in] Velikost `chunks` pole.  
   
  `pcnumChunks`  
- [out] Číslo, vrátí se v bloků dat `chunks` pole.  
+ [out] Počet bloků, které jsou vráceny v `chunks` pole.  
   
  `chunks`  
- [out] Pole "Codechunkinfo –" struktury, z nichž každý představuje jeden blok kódu. Pokud hodnota `cbufSize` je 0, tento parametr může mít hodnotu null.  
+ [out] Pole struktur "codechunkinfo –", z nichž každý představuje jediný neodkazovaný blok kódu. Pokud hodnota `cbufSize` je 0, tento parametr může mít hodnotu null.  
   
 ## <a name="remarks"></a>Poznámky  
- Bloky kódu se nikdy překrývají a jejich bude postupovat podle pořadí, ve kterém se by mít byla zřetězených podle [icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md). Objekt Microsoft (MSIL intermediate language) kódu v rozhraní .NET Framework verze 2.0 bude tvoří jeden kód bloku.  
+ Bloky kódu nikdy se překrývají a jejich brzo bude následovat pořadí, ve kterém jsou by mít byla zřetězených podle [icordebugcode::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md). Objekt Microsoft intermediate language (MSIL) kódu v rozhraní .NET Framework verze 2.0 bude tvořit jeden blok.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,5 +60,5 @@ HRESULT GetCodeChunks (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

@@ -2,12 +2,12 @@
 title: Názvy identifikátorů
 description: Další pravidla pro názvy platný identifikátor v programovacím jazyce C#.
 ms.date: 08/21/2018
-ms.openlocfilehash: e5ff83661c9a86273760f32a795f7de6dbc7bf1d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 2147b3846d4ba6d5471b81448489c6d716e3cd61
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877886"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606949"
 ---
 # <a name="identifier-names"></a>Názvy identifikátorů
 
@@ -32,7 +32,7 @@ Kromě pravidel, existuje mnoho identifikátoru [zásady vytváření názvů](.
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [V programu v jazyce C#](../inside-a-program/index.md)

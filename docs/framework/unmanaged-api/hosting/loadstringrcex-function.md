@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38c942b9a94c83f5a3316cf3ae3ccbbad2b0ec69
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ec8e5dfc92a818bfc23c28f3058086c3bd1a8ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444314"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597941"
 ---
 # <a name="loadstringrcex-function"></a>LoadStringRCEx – funkce
-Přeloží hodnotou HRESULT odpovídající chybové zprávy pro zadanou jazykovou verzi.  
+Převede hodnotu HRESULT na příslušnou chybovou zprávu pro zadanou jazykovou verzi.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -43,25 +43,25 @@ HRESULT LoadStringRCEx (
   
 #### <a name="parameters"></a>Parametry  
  `lcid`  
- [v] Identifikátor jazykové verze. Předat hodnotu -1 pro `lcid` používat výchozí jazykovou verzi.  
+ [in] Identifikátor jazykové verze. Předejte hodnotu -1 `lcid` používat výchozí jazykovou verzi.  
   
  `iResourceID`  
- [v] HRESULT.  
+ [in] HRESULT.  
   
  `szBuffer`  
  [out] Vyrovnávací paměti, který obsahuje chybovou zprávu po úspěšném dokončení.  
   
  `iMax`  
- [v] Velikost vyrovnávací paměti chybová zpráva.  
+ [in] Velikost vyrovnávací paměti zpráv chyby.  
   
  `bQuiet`  
- [v] Ignorovat.  
+ [in] Ignorovat.  
   
  `pcwchUsed`  
- [out] Ukazatel na délku chybové zprávy.  
+ [out] Ukazatel na délku chybová zpráva.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí standardní kódy chyb COM, jak jsou definovány v WinError.h, kromě následující hodnoty.  
+ Tato metoda vrací standardní kódy chyb modelu COM, jak je definovaný ve WinError.h, kromě následujících hodnot.  
   
 |Návratový kód|Popis|  
 |-----------------|-----------------|  
@@ -72,7 +72,7 @@ HRESULT LoadStringRCEx (
  Pokud metoda nedokončí úspěšně, `szBuffer` obsahuje prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -80,7 +80,7 @@ HRESULT LoadStringRCEx (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>  
- [LoadStringRC – funkce](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Globalization.CultureInfo.LCID%2A?displayProperty=nameWithType>
+- [LoadStringRC – funkce](../../../../docs/framework/unmanaged-api/hosting/loadstringrc-function.md)
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

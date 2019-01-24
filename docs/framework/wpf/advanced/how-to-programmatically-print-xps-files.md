@@ -8,12 +8,12 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-ms.openlocfilehash: a42f9b2101266857e56dee6836f4c3b27b3c6f96
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: fbef6aef11917a4e8f0a098c523ec2b542664681
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188322"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556610"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
@@ -50,7 +50,7 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
   
  Protože zpočátku bude několik XPSDrv tiskárny k dispozici ihned po vydání [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] a Microsoft .NET Framework, může být vhodné skrýt bez XPSDrv tiskárny jako XPSDrv tiskárny. Uděláte to tak, přidejte do seznamu souborů v následujícím klíči registru počítače se systémem aplikace Pipelineconfig.xml:  
   
- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter >* \DependentFiles  
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Drivers\Version-3\\*\<PseudoXPSPrinter>* \DependentFiles  
   
  kde  *\<PseudoXPSPrinter >* je jakékoli tiskové fronty. Je pak nutné počítač restartovat.  
   
@@ -58,14 +58,14 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
   
  **Poznámka:** pro zjednodušení výše uvedený příklad používá přítomnost \*XPS rozšíření jako jeho test, který je soubor [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]. Ale [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory nemusí mít toto rozšíření. [IsXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100)) je jeden ze způsobů, jak soubor pro testování [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] platnosti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Printing.PrintQueue>  
- <xref:System.Printing.PrintQueue.AddJob%2A>  
- <xref:System.Threading.ApartmentState>  
- <xref:System.STAThreadAttribute>  
- [XPS](https://www.microsoft.com/xps)  
- [Tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90))  
- [Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))  
- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))  
- [Dokumenty v platformě WPF](documents-in-wpf.md)  
- [Přehled tisku](printing-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Printing.PrintQueue>
+- <xref:System.Printing.PrintQueue.AddJob%2A>
+- <xref:System.Threading.ApartmentState>
+- <xref:System.STAThreadAttribute>
+- [XPS](https://www.microsoft.com/xps)
+- [Tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90))
+- [Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))
+- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))
+- [Dokumenty v platformě WPF](documents-in-wpf.md)
+- [Přehled tisku](printing-overview.md)

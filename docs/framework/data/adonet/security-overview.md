@@ -2,12 +2,12 @@
 title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: db7b45fef28b0b28e7da550c24d510da73c02aa9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 24da83af6876e9bbb23c7978db6b9413ec00d8ba
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183526"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570483"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -24,7 +24,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Modelování ohrožení je iteračního postupu pro posouzení ohrožení zabezpečení v aplikaci najít ty, které jsou nejvíce nebezpečné, protože zveřejňovaly nejcitlivější data. Po identifikování chyb zabezpečení Ohodnoťte je podle závažnosti a vytvořit seřazený podle priority sadu protiopatření čítači hrozby.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -62,7 +62,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
  Chcete-li minimalizovat množství škody, které může dojít, pokud útok úspěšně, zvolte kontext zabezpečení pro kód, který uděluje přístup jenom na prostředky, které potřebuje ke své práci Hotovo a nesmí mít víc.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -84,7 +84,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
   
 -   Povolte zabezpečení, auditování a protokolování pro databáze, kterou používáte tak, aby se zobrazí upozornění na jakékoli porušením zabezpečení.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
@@ -94,15 +94,15 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 ## <a name="security-policy-and-administration"></a>Zásady zabezpečení a Správa  
  Nesprávně správu zásad zabezpečení (CAS) pro přístup kód by mohl vytvořit slabé stránky zabezpečení. Jakmile je aplikace nasazená, se má použít techniky pro monitorování zabezpečení a tom rizika vyhodnotí jako nové hrozby.  
   
- Další informace najdete v tématu následující prostředky.  
+ Další informace najdete v následujících materiálech.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Obsahuje informace o vytváření a správě zásad zabezpečení.|  
-|[NIB: Osvědčené postupy pro zásady zabezpečení](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
+|[NIB: Doporučené postupy zabezpečení pro zásady](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
- [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)
+- [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

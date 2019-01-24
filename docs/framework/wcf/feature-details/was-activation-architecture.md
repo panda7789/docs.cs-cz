@@ -2,12 +2,12 @@
 title: Architektura aktivace WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: 64219649e7b743b7dd3a67673c3f2409aeeba486
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 2dd11ec9d642f5bfdd08c71487e82a8cb5133520
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197302"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54557104"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
 V tomto tématu najdete výčet a tento článek popisuje komponenty služby Aktivace procesu Windows (WAS).  
@@ -32,13 +32,13 @@ V tomto tématu najdete výčet a tento článek popisuje komponenty služby Akt
 ### <a name="listener-adapters"></a>Adaptéry naslouchací proces  
  Naslouchací proces adaptéry jsou jednotlivé služby Windows, které implementují logiku komunikace sítě používá pro příjem zpráv pomocí síťového protokolu se naslouchat. V následující tabulce jsou uvedeny adaptéry naslouchací proces pro protokoly Windows Communication Foundation (WCF).  
   
-|Název služby adaptér naslouchací proces|Protokol|Poznámky|  
+|Název služby adaptér naslouchací proces|Protocol (Protokol)|Poznámky|  
 |-----------------------------------|--------------|-----------|  
 |W3SVC|http|Běžné komponenty, která poskytuje Aktivace protokolem HTTP pro internetové informační služby 7.0 nebo WCF.|  
 |NetTcpActivator|net.tcp|Závisí na konfiguraci služby NetTcpPortSharing službě.|  
 |NetPipeActivator|net.pipe||  
-|NetMsmqActivator|NET.MSMQ|Pro použití s aplikací na základě WCF služby Řízení front zpráv.|  
-|NetMsmqActivator|MSMQ.formatname|Poskytuje zpětné kompatibilitě se stávajícími aplikacemi služby Řízení front zpráv.|  
+|NetMsmqActivator|net.msmq|Pro použití s aplikací na základě WCF služby Řízení front zpráv.|  
+|NetMsmqActivator|msmq.formatname|Poskytuje zpětné kompatibilitě se stávajícími aplikacemi služby Řízení front zpráv.|  
   
  Adaptéry naslouchací proces pro konkrétní protokoly jsou registrovány během instalace v souboru applicationHost.config, jak je znázorněno v následujícím příkladu XML.  
   
@@ -85,6 +85,6 @@ V tomto tématu najdete výčet a tento článek popisuje komponenty služby Akt
 </system.web>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace WAS pro použití s WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
+- [Hostování funkcí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201276)

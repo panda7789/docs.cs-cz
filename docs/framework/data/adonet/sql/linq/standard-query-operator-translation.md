@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: fb4910e48af58463c5c851173f8e3caf4594cc3a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: a94c2e2ffc3ae3fa5406daeae97e31cfc3fdd1bd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004429"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588571"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Standardní operátory dotazu se přeloží na příkazy jazyka SQL. Procesor dotazů databáze určuje sémantika provádění SQL překladu.  
@@ -147,14 +147,14 @@ ORDER BY [t0].[CustomerID]
 ## <a name="inheritance-support"></a>Podpora dědičnosti  
   
 ### <a name="inheritance-mapping-restrictions"></a>Omezení pro mapování dědičnosti  
- Další informace najdete v tématu [postupy: mapování hierarchií dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md).  
+ Další informace najdete v tématu [jak: Mapování hierarchií dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-inheritance-hierarchies.md).  
   
 ### <a name="inheritance-in-queries"></a>Dědičnost v dotazech  
  Přetypování C# jsou podporovány pouze v projekci. Přetypování, které se používají jinde nepřekládá a budou ignorovány. Kromě SQL názvy funkcí, SQL ve skutečnosti provádí pouze ekvivalent modulu common language runtime (CLR) <xref:System.Convert>. To znamená SQL, můžete změnit hodnoty jednoho typu na jiný. Neexistuje žádný ekvivalent přetypování, protože neexistuje žádný koncept opětovná interpretace bity stejné jako u jiného typu CLR. To je důvod, proč a C# přetypování funguje jenom místně. Není vzdálený.  
   
  Operátory, `is` a `as`a `GetType` metoda nejsou omezeni `Select` operátor. Jejich lze použít v jiných operátorů dotazu také.  
   
-## <a name="sql-server-2008-support"></a>Podpora serveru SQL Server 2008  
+## <a name="sql-server-2008-support"></a>SQL Server 2008 Support  
  Počínaje rozhraním .NET Framework 3.5 SP1, LINQ to SQL podporuje mapování na nové datum a čas typy zavedena v systému SQL Server 2008. Existují ale určitá omezení do technologie LINQ to SQL operátorů dotazu, které můžete použít při práci s hodnotami, které jsou namapované na tyto nové typy.  
   
 ### <a name="unsupported-query-operators"></a>Dotaz se nepodporuje operátory  
@@ -172,7 +172,7 @@ ORDER BY [t0].[CustomerID]
   
  Další informace o mapování pro tyto typy data a času systému SQL Server najdete v tématu [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
   
-## <a name="sql-server-2005-support"></a>Podpora SQL serveru 2005  
+## <a name="sql-server-2005-support"></a>SQL Server 2005 Support  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nepodporuje následující funkce SQL Server 2005:  
   
 -   Uložené procedury napsané pro SQL CLR.  
@@ -181,7 +181,7 @@ ORDER BY [t0].[CustomerID]
   
 -   Funkce dotazu XML.  
   
-## <a name="sql-server-2000-support"></a>Podpora serveru SQL Server 2000  
+## <a name="sql-server-2000-support"></a>SQL Server 2000 Support  
  Následující [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] omezení (ve srovnání s [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)]) ovlivnit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporovat.  
   
 ### <a name="cross-apply-and-outer-apply-operators"></a>Křížové použití a vnější použít operátory  
@@ -225,10 +225,10 @@ ORDER BY [t0].[CustomerID]
   
     -   <xref:System.Linq.Enumerable.ToArray%2A>  
   
-## <a name="see-also"></a>Viz také  
- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
- [Vrácení nebo přeskočení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)  
- [Zřetězení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)  
- [Vrácení rozdílů množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)  
- [Vrácení průniku množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)  
- [Vrácení sjednocení množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)
+## <a name="see-also"></a>Viz také:
+- [Referenční informace](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Vrácení nebo přeskočení prvků v posloupnosti](../../../../../../docs/framework/data/adonet/sql/linq/return-or-skip-elements-in-a-sequence.md)
+- [Zřetězení dvou sekvencí](../../../../../../docs/framework/data/adonet/sql/linq/concatenate-two-sequences.md)
+- [Vrácení rozdílů množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-difference-between-two-sequences.md)
+- [Vrácení průniku množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-intersection-of-two-sequences.md)
+- [Vrácení sjednocení množin mezi dvěma sekvencemi](../../../../../../docs/framework/data/adonet/sql/linq/return-the-set-union-of-two-sequences.md)

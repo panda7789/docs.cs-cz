@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: fcc3329d6e02a77bf54b5b9f08fddba1bc95ff54
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 33327a8d5e7ce7676ffda6245f3e4f9cccc8b1fb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562630"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573306"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Konstanty a výčty (Visual Basic)
 Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojáře. Konstanty ukládání hodnot, které zůstávají neměnný po celou dobu spuštění aplikace. Výčty poskytují pohodlný způsob pro práci se sadami související s konstantami a přidružení konstantních hodnot s názvy.  
@@ -77,8 +77,8 @@ Visual Basic poskytuje řadu předdefinovaných konstanty a výčty pro vývojá
 |<xref:Microsoft.VisualBasic.VariantType>|Určuje typ objektu variant, vrátí <xref:Microsoft.VisualBasic.Information.VarType%2A> funkce.|  
 |<xref:Microsoft.VisualBasic.VbStrConv>|Určuje, jaký typ převodu se provede při volání <xref:Microsoft.VisualBasic.Strings.StrConv%2A> funkce.|  
   
-## <a name="see-also"></a>Viz také  
- [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
- [Visual Basic](../../visual-basic/index.md)  
- [Přehled konstant](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)  
- [Přehled výčtů](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)
+- [Visual Basic](../../visual-basic/index.md)
+- [Přehled konstant](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
+- [Přehled výčtů](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8609857f142000245aef4326c8ef7490e6d4c95
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 59fdc3d4682fe3c1967c8153043dc1bfe0668c35
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430593"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610536"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType – výčet
 Obsahuje hodnoty, které označují typ úlohy, která je reprezentována buď [iclrtask –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) nebo [ihosttask –](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) rozhraní.  
@@ -48,20 +48,20 @@ typedef enum ETaskType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`TT_ADUNLOAD`|Rozhraní představuje úkol uvolnění domény aplikace aplikace.|  
-|`TT_DEBUGGERHELPER`|Rozhraní představuje úlohu pomocná ladicí program.|  
+|`TT_ADUNLOAD`|Rozhraní představuje úlohu uvolňování domény aplikace.|  
+|`TT_DEBUGGERHELPER`|Rozhraní představuje pomocné rutiny úkol ladicího programu.|  
 |`TT_FINALIZER`|Rozhraní představuje úlohu finalizační metodu.|  
-|`TT_GC`|Rozhraní představuje kolekci úlohu uvolňování paměti.|  
-|`TT_THREADPOOL_GATE`|Rozhraní představuje úlohu brány přístup z více vláken.|  
-|`TT_THREADPOOL_IOCOMPLETION`|Rozhraní představuje vstupně-výstupních operací vlákno úlohy nebo úlohu dokončení port přístup z více vláken.|  
+|`TT_GC`|Rozhraní představuje úlohu uvolňování paměti kolekce.|  
+|`TT_THREADPOOL_GATE`|Rozhraní představuje úlohu vlákno brány.|  
+|`TT_THREADPOOL_IOCOMPLETION`|Rozhraní představuje úlohu vláken vstupně-výstupních operací nebo úkol vlákno port dokončení.|  
 |`TT_THREADPOOL_TIMER`|Rozhraní představuje úlohu časovače vláken.|  
-|`TT_THREADPOOL_WAIT`|Rozhraní představuje úlohu čekání přístup z více vláken.|  
-|`TT_THREADPOOL_WORKER`|Rozhraní představuje úlohu pracovní vlákno.|  
-|`TT_UNKNOWN`|Tato úloha neznámý.|  
-|`TT_USER`|Rozhraní představuje úlohu uživatele.|  
+|`TT_THREADPOOL_WAIT`|Rozhraní představuje vlákno úkol čekání.|  
+|`TT_THREADPOOL_WORKER`|Rozhraní představuje úlohy vlákna pracovního procesu.|  
+|`TT_UNKNOWN`|Úloha neznámý.|  
+|`TT_USER`|Rozhraní představuje uživatelského úkolu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -69,5 +69,5 @@ typedef enum ETaskType {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

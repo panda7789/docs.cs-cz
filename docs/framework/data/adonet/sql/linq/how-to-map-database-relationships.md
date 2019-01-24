@@ -1,42 +1,42 @@
 ---
-title: 'Postupy: mapování relace databáze'
+title: 'Postupy: Mapování databázových relace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
-ms.openlocfilehash: c3ae138134682f35ae42c99cc6434dae9ec1103d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 907ed58e9828921585135f2319d0db9559b606d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33364294"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556378"
 ---
-# <a name="how-to-map-database-relationships"></a>Postupy: mapování relace databáze
-Můžete zakódovat jako odkazuje vlastnost v třídě entity žádné vztahy dat, které budou vždy stejné. Ukázková databáze Northwind například vzhledem k tomu, že zákazníci obvykle umístit objednávky, je vždy vztah v modelu mezi zákazníků a jejich objednávky.  
+# <a name="how-to-map-database-relationships"></a>Postupy: Mapování databázových relace
+Můžete kódovat jako vlastnost odkazuje ve své třídě entity žádné relace mezi daty, které budou vždy stejné. V ukázkové databázi Northwind třeba protože zákazníkům obvykle zadávat objednávky, není vždy relace v modelu mezi zákazníky a jejich objednávky.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut pomohou představují takové vztahy. Tento atribut slouží společně s <xref:System.Data.Linq.EntitySet%601> a <xref:System.Data.Linq.EntityRef%601> typy představují, co by relace cizího klíče v databázi. Další informace najdete v tématu části přidružení atribut [na základě atributů mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] definuje <xref:System.Data.Linq.Mapping.AssociationAttribute> atribut nápovědy, představují tyto vztahy. Tento atribut se používá spolu s <xref:System.Data.Linq.EntitySet%601> a <xref:System.Data.Linq.EntityRef%601> typů k vyjádření, co by se vztahu cizího klíče v databázi. Další informace najdete v části atribut přidružení v [založených na atributech mapování](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
   
 > [!NOTE]
->  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště rozlišují malá a velká písmena. Například zajistěte, že hodnoty atributu pro vlastnost AssociationAttribute.Storage malá a velká písmena pro odpovídající vlastnost názvy používá někde v kódu. To platí pro všechny programovacích jazyků .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
+>  Hodnoty vlastností AssociationAttribute a ColumnAttribute úložiště jsou malá a velká písmena. Například Ujistěte se, že hodnoty atributu pro vlastnost AssociationAttribute.Storage rozlišovat velikost písmen pro odpovídající názvy vlastností používá jinde v kódu. To platí pro všechny programovací jazyky .NET, včetně těch, které nejsou obvykle velká a malá písmena, včetně jazyka Visual Basic. Další informace o vlastnosti úložiště najdete v tématu <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
- Jeden mnoho, jako v příkladu dále v tomto tématu se většina vztahy. Můžete také představovat relace 1: 1 a m: n následujícím způsobem:  
+ Většina relací jsou 1 n, stejně jako v příkladu dále v tomto tématu. Relace 1: 1 a many-to-many může také představovat následujícím způsobem:  
   
--   1: 1: Tento typ vztahu představují zahrnutím <xref:System.Data.Linq.EntitySet%601> na obou stranách.  
+-   1: 1: Tento typ relace představují zahrnutím <xref:System.Data.Linq.EntitySet%601> na obou stranách.  
   
-     Představte si třeba `Customer` - `SecurityCode` relace vytvořená tak, aby zákazníka bezpečnostní kód nebude nalezeno v `Customer` tabulky a lze k němu přístup pouze oprávněných osob.  
+     Představte si třeba `Customer` - `SecurityCode` relace vytvořená tak, aby zákazníka bezpečnostní kód nebude nalezena instančním `Customer` tabulky a je přístupný jenom autorizované osoby.  
   
--   M m: V relace m: n, primární klíč tabulky odkaz (také s názvem *spojení* tabulky) je často formátu složeného cizího klíče z obou tabulek.  
+-   Many-to-many: Ve vztazích many-to-many, primární klíč tabulky odkaz (také s názvem *spojení* tabulky) je často vytvořené metodou složeného cizích klíčů z dalších dvou tabulek.  
   
-     Představte si třeba `Employee` - `Project` relace m: n vytvořená pomocí tabulky odkaz `EmployeeProject`. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyžaduje, aby takové relace modelovat pomocí tří tříd: `Employee`, `Project`, a `EmployeeProject`. V takovém případě změna vztah mezi `Employee` a `Project` můžete zobrazit tak, aby vyžadovala aktualizace primární klíč `EmployeeProject`. Však tato situace je nejlépe modelován jako odstranění existující `EmployeeProject` a vytvoření nové `EmployeeProject`.  
+     Představte si třeba `Employee` - `Project` many-to-many relace vytvořená s použitím vazební tabulka `EmployeeProject`. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vyžaduje, aby takové relace modelovat pomocí tří tříd: `Employee`, `Project`, a `EmployeeProject`. V tomto případě změny vztahů mezi `Employee` a `Project` můžete zobrazit tak, aby vyžadovala aktualizace primárního klíče `EmployeeProject`. Ale je tato situace nejlépe modelovaná jako odstranění existující `EmployeeProject` a vytvoření nového `EmployeeProject`.  
   
     > [!NOTE]
-    >  Vztahy v relačních databází jsou obvykle modelován jako hodnoty cizího klíče, které odkazují na primárních klíčů v jiné tabulky. Umožňují přecházet mezi jednotlivými je explicitně přidružíte dvě tabulky pomocí relační *spojení* operaci.  
+    >  Relace v relačních databázích jsou obvykle nemodelují jako hodnoty cizího klíče, které odkazují na primárních klíčů v jiných tabulkách. K navigaci mezi nimi explicitně přidružíte dvě tabulky s využitím relační *spojení* operace.  
     >   
-    >  Objekty v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], na dalším ruční, odkazovat navzájem pomocí vlastnosti odkazy nebo kolekce odkazy, které přejdete pomocí *tečkou* zápis.  
+    >  Objekty v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], na druhé straně, odkazovat na sebe navzájem pomocí odkazy na vlastnosti nebo kolekce odkazů, které můžete procházet pomocí *tečkou* zápis.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu jeden mnoho `Customer` třída obsahuje vlastnosti, který deklaruje vztah mezi zákazníků a jejich objednávky.  `Orders` Vlastnost je typu <xref:System.Data.Linq.EntitySet%601>. Tento typ označuje, že je tento vztah jeden mnoho (jedno zákazníka na mnoho objednávky). <xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A> Vlastnost se používá k popisu, jak toto přidružení se provádí, konkrétně, tak, že zadáte název vlastnosti v související třídy, který se má porovnat s Tato. V tomto příkladu `CustomerID` vlastnost porovnání, stejně jako databázi *spojení* by porovnat hodnotě sloupce.  
+ V následujícím příkladu 1 n `Customer` třída obsahuje vlastnosti, která deklaruje vztah mezi zákazníky a jejich objednávky.  `Orders` Vlastnost je typu <xref:System.Data.Linq.EntitySet%601>. Tento typ označuje, že je tento vztah jeden mnoho (jednoho zákazníka na velké množství objednávek). <xref:System.Data.Linq.Mapping.AssociationAttribute.OtherKey%2A> Vlastnost se používá k popisu, jak se provádí toto přidružení, konkrétně tak, že zadáte název vlastnosti ve třídě související k porovnání s touto verzí. V tomto příkladu `CustomerID` se porovnává vlastnost, stejně jako databázi *spojení* by porovnání hodnotě sloupce.  
   
 > [!NOTE]
 >  Pokud používáte Visual Studio, můžete použít [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] k vytvoření přidružení mezi třídami.  
@@ -45,14 +45,14 @@ Můžete zakódovat jako odkazuje vlastnost v třídě entity žádné vztahy da
  [!code-vb[DlinqCustomize#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Můžete také nechat provést zpětnou situaci. Místo použití `Customer` třídy k popisu přidružení mezi zákazníci a objednávky, můžete použít `Order` třídy. `Order` Třídy používá <xref:System.Data.Linq.EntityRef%601> typu, který popisuje relace zpět k zákazníka, jako v následujícím příkladu kódu.  
+ Lze také zrušit situace. Namísto použití `Customer` tříd k popisu přidružení mezi zákazníci a objednávky, můžete použít `Order` třídy. `Order` Třídy používá <xref:System.Data.Linq.EntityRef%601> typu, který popisuje relace zpět na zákazníka, jako v následujícím příkladu kódu.  
   
 > [!NOTE]
->  <xref:System.Data.Linq.EntityRef%601> Třídy podporuje *odložené načítání*. Další informace najdete *najdete v části* [odložení versus okamžitou načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+>  <xref:System.Data.Linq.EntityRef%601> Třídy podporuje *odložené načítání*. Další informace najdete *naleznete v tématu* [odložené versus okamžité načítání](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
   
  [!code-csharp[DLinqCustomize#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#5)]
  [!code-vb[DLinqCustomize#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#5)]  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)  
- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Přizpůsobení tříd entit pomocí editoru kódu](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)

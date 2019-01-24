@@ -9,15 +9,15 @@ helpviewer_keywords:
 - rendering support with Visual objects [WPF]
 - visual layer [WPF]
 ms.assetid: d82c89db-077f-4c3c-a4f8-310ebfbe0fe2
-ms.openlocfilehash: 13957e60c92a90624882e126fe66aca789b6835a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3bf3e718b1253348030c0ddf3ac52ed8aa79b37d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580782"
 ---
 # <a name="visual-layer-programming"></a>Programování vizuální vrstvy
-<xref:System.Windows.Media.Visual> Objekt je jádro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytovat podporu pro vykreslování. Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, jsou odvozeny od <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.  
+<xref:System.Windows.Media.Visual> Objekt je základní [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekt, jehož primární role je poskytnout podporu vykreslování. Ovládací prvky uživatelského rozhraní, jako například <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.TextBox>, odvozovat <xref:System.Windows.Media.Visual> třídy a použít jej pro zachování jejich datech pro vykreslení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)  
@@ -25,9 +25,9 @@ ms.locfileid: "33561732"
  [Kurz: Hostování vizuální objektů v aplikaci Win32](../../../../docs/framework/wpf/graphics-multimedia/tutorial-hosting-visual-objects-in-a-win32-application.md)  
  [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/visual-layer-programming-how-to-topics.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Visual>  
- <xref:System.Windows.Media.VisualTreeHelper>  
- <xref:System.Windows.Media.DrawingVisual>  
- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Visual>
+- <xref:System.Windows.Media.VisualTreeHelper>
+- <xref:System.Windows.Media.DrawingVisual>
+- [Přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)
+- [Grafika a multimédia](../../../../docs/framework/wpf/graphics-multimedia/index.md)

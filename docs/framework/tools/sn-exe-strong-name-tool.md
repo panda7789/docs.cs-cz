@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 127a059865250642c604288b0296b4152cf91f52
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: d6db5b3d56c9dd4998625098b9868b276238a978
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221645"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558641"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
 Nástroj Strong Name (Sn.exe) pomáhá podepsat sestavení se [silných názvů](../../../docs/framework/app-domains/strong-named-assemblies.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
@@ -44,7 +44,7 @@ sn [-quiet][option [parameter(s)]]
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**-** *identityKeyPairFile* *signaturePublicKeyFile*|Generuje <xref:System.Reflection.AssemblySignatureKeyAttribute> dat k migraci klíče identity na klíč podpisu ze souboru.|  
+|**-a** *identityKeyPairFile* *signaturePublicKeyFile*|Generuje <xref:System.Reflection.AssemblySignatureKeyAttribute> dat k migraci klíče identity na klíč podpisu ze souboru.|  
 |**-ac** *identityPublicKeyFile* *identityKeyPairContainer* *signaturePublicKeyFile*|Generuje <xref:System.Reflection.AssemblySignatureKeyAttribute> dat k migraci klíče identity na klíč podpisu z kontejneru klíčů.|  
 |**-c** [*csp*]|Nastaví výchozího zprostředkovatele kryptografických služeb (CSP) pro použití k podepisování se silným názvem. Toto nastavení platí pro celý počítač. Pokud název CSP nezadáte, nástroj Sn.exe vymaže aktuální nastavení.|  
 |**-d** *kontejneru*|Odstraní zadaný kontejner klíče z CSP silného názvu.|  
@@ -69,7 +69,7 @@ sn [-quiet][option [parameter(s)]]
 |**-v** *sestavení*|Ověří silný název v *sestavení*, kde *sestavení* je název souboru obsahujícího manifest sestavení.|  
 |**-vf**  *sestavení*|Ověří silný název v *sestavení.* Na rozdíl od **- v** možnost **-vf** vynutí ověření i v případě, že je zakázané, pomocí **- Vr** možnost.|  
 |**-Vk**  *regfile.reg* *sestavení* [*userlist*] [*infile*]|Vytvoří soubor registračních položek (.reg), které lze použít k registraci zadaného sestavení pro vynechání ověření. Pravidla pojmenovávání sestavení, které se vztahují **- Vr** možnost použít **– Vk** také. Informace o *userlist* a *infile* možnosti, najdete v článku **– Vr** možnost.|  
-|**-– Multilicence**|Vypíše aktuální nastavení pro ověřování silných názvů v tomto počítači.|  
+|**-Vl**|Vypíše aktuální nastavení pro ověřování silných názvů v tomto počítači.|  
 |**-Vr**  *sestavení* [*userlist*] [*infile*]|Zaregistruje *sestavení* pro přeskočení ověření. Volitelně lze také zadat čárkou oddělený seznam uživatelských jmen, pro která by vynechání ověřování mělo platit. Pokud zadáte *infile*, zůstane ověřování povoleno, ale veřejný klíč v *infile* je použit. Můžete zadat *sestavení* ve formě  *\*, strongname* zaregistrovat všechna sestavení se zadaným silným názvem. Pro *strongname*, zadejte řetězec šestnáctkových číslic představující tokenizovanou formu veřejného klíče. Zobrazit **-t** a **-T** možnosti Zobrazit token veřejného klíče. **Upozornění:**  Tuto možnost používejte pouze během vývoje. Přidání sestavení na seznam pro přeskočení ověření vytvoří ohrožení zabezpečení. Škodlivé sestavení by mohlo použít plně zadaný název sestavení (název sestavení, verze, jazyková verze a token veřejného klíče), které je přidáno do seznamu pro přeskočení ověření, k falšování identity. To by také umožnilo škodlivému sestavení přeskočit ověření.|  
 |||  
 |**-Vu**  *sestavení*|Zruší registraci *sestavení* pro přeskočení ověření. Pravidla pojmenovávání sestavení platná pro **- Vr** platí pro **- Vu**.|  
@@ -124,8 +124,8 @@ sn -v MyAsm.dll
 sn -d MyContainer  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Nástroje](../../../docs/framework/tools/index.md)  
- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)  
- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+## <a name="see-also"></a>Viz také:
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

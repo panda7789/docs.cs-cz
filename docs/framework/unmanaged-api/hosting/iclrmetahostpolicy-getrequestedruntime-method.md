@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e01affb5edb8b0766edf8548ae34cf8220bcc62d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9820ddff742e66743d6ad6b2a8abab0bd8b4e09e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436043"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555905"
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime – metoda
-Poskytuje rozhraní pro upřednostňované verzí common language runtime (CLR) na základě hostování zásad, spravované sestavení, řetězec verze a konfiguraci datového proudu. Ve skutečnosti není načíst nebo aktivovat modulu CLR, ale jednoduše vrátí tato metoda [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje výsledek zásad. Tato metoda nahrazuje [getrequestedruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md), [getrequestedruntimeversion –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md), [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md), [corbindtoruntimebycfg –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md), a [getcorrequiredversion –](../../../../docs/framework/unmanaged-api/hosting/getcorrequiredversion-function.md) metody.  
+Poskytuje rozhraní pro preferovanou verzi modulu common language runtime (CLR) na základě hostování zásad, spravované sestavení, řetězec verze a konfiguraci datového proudu. Ve skutečnosti načíst nebo aktivovat CLR, ale jednoduše vrátí tato metoda [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, které představuje výsledek zásad. Tato metoda nahrazuje [getrequestedruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md), [getrequestedruntimeversion –](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md), [corbindtoruntimehost –](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md), [CorBindToRuntimeByCfg](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md), a [getcorrequiredversion –](../../../../docs/framework/unmanaged-api/hosting/getcorrequiredversion-function.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,19 +47,19 @@ HRESULT GetRequestedRuntime(
   
 |Název|Popis|  
 |----------|-----------------|  
-|`dwPolicyFlags`|[v] Vyžaduje se. Určuje členem [METAHOST_POLICY_FLAGS](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md) výčtu představující zásadu vazby a libovolný počet modifikátory. Pouze zásady, které aktuálně nejsou k dispozici je [METAHOST_POLICY_HIGHCOMPAT](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md).<br /><br /> Modifikátory zahrnují [METAHOST_POLICY_EMULATE_EXE_LAUNCH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_APPLY_UPGRADE_POLICY](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_SHOW_ERROR_DIALOG](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_USE_PROCESS_IMAGE_PATH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), a [METAHOST_POLICY_ENSURE_SKU_SUPPORTED](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md).|  
-|`pwzBinary`|[v] Volitelný parametr. Určuje cestu k souboru sestavení.|  
-|`pCfgStream`|[v] Volitelný parametr. Určuje konfiguračním souboru jako <xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=nameWithType>.|  
-|`pwzVersion`|[ve out] Volitelný parametr. Určuje nebo vrátí upřednostňovaný verze CLR má být načten.|  
-|`pcchVersion`|[ve out] Vyžaduje se. Určuje očekávanou velikost `pwzVersion` jako vstup, aby se zabránilo přetečení vyrovnávací paměti. Pokud `pwzVersion` má hodnotu null, `pcchVersion` obsahuje očekávané velikosti `pwzVersion` při `GetRequestedRuntime` vrátí umožnit předběžné přidělení; v opačném `pcchVersion` obsahuje počet znaků, které jsou zapsány do `pwzVersion`.|  
-|`pwzImageVersion`|[out] Volitelný parametr. Když `GetRequestedRuntime` vrátí, obsahuje odpovídající verze CLR do [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, která je vrácena.|  
-|`pcchImageVersion`|[ve out] Volitelný parametr. Určuje velikost `pwzImageVersion` jako vstup, aby se zabránilo přetečení vyrovnávací paměti. Pokud `pwzImageVersion` má hodnotu null, `pcchImageVersion` obsahuje požadovaná velikost `pwzImageVersion` při `GetRequestedRuntime` vrátí umožnit předběžné přidělení.|  
-|`pdwConfigFlags`|[out] Volitelný parametr. Pokud `GetRequestedRuntime` použije konfigurační soubor během procesu vázání, až se obnoví, `pdwConfigFlags` obsahuje [METAHOST_CONFIG_FLAGS](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md) hodnotu, která určuje, zda [ \<spuštění >](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) má element `useLegacyV2RuntimeActivationPolicy` atribut sady a hodnota atributu. Použít [METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md) maskování na `pdwConfigFlags` získat hodnoty relevantní pro `useLegacyV2RuntimeActivationPolicy`.|  
-|`riid`|[v] Určuje identifikátor rozhraní IID_ICLRRuntimeInfo požadované [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.|  
-|`ppRuntime`|[out] Když `GetRequestedRuntime` vrátí, obsahuje odkazy odpovídající [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.|  
+|`dwPolicyFlags`|[in] Povinné. Určuje členem [metahost_policy_flags –](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md) výčet představující zásady vazeb a libovolný počet modifikátory. Pouze zásady, které jsou aktuálně dostupné [METAHOST_POLICY_HIGHCOMPAT](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md).<br /><br /> Modifikátory zahrnují [METAHOST_POLICY_EMULATE_EXE_LAUNCH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_APPLY_UPGRADE_POLICY](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_SHOW_ERROR_DIALOG](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), [METAHOST_POLICY_USE_PROCESS_IMAGE_PATH](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md), a [METAHOST_POLICY_ENSURE_SKU_SUPPORTED](../../../../docs/framework/unmanaged-api/hosting/metahost-policy-flags-enumeration.md).|  
+|`pwzBinary`|[in] Volitelné. Určuje cestu k souboru sestavení.|  
+|`pCfgStream`|[in] Volitelné. Určuje konfigurační soubor jako <xref:System.Runtime.InteropServices.ComTypes.IStream?displayProperty=nameWithType>.|  
+|`pwzVersion`|[out v] Volitelné. Určuje nebo vrátí upřednostňovanou verzi CLR, který se má načíst.|  
+|`pcchVersion`|[out v] Povinné. Určuje očekávanou velikost `pwzVersion` jako vstup, aby se zabránilo přetečení vyrovnávací paměti. Pokud `pwzVersion` má hodnotu null, `pcchVersion` obsahuje očekávané velikosti `pwzVersion` při `GetRequestedRuntime` povolit předběžné přidělení; v opačném případě vrátí hodnotu `pcchVersion` obsahuje počet znaků, které jsou zapsány do `pwzVersion`.|  
+|`pwzImageVersion`|[out] Volitelné. Když `GetRequestedRuntime` vrátí, obsahuje odpovídající verzi CLR na [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní, která je vrácena.|  
+|`pcchImageVersion`|[out v] Volitelné. Určuje velikost `pwzImageVersion` jako vstup, aby se zabránilo přetečení vyrovnávací paměti. Pokud `pwzImageVersion` má hodnotu null, `pcchImageVersion` obsahuje požadované velikosti `pwzImageVersion` při `GetRequestedRuntime` vrátí povolit předběžné přidělení.|  
+|`pdwConfigFlags`|[out] Volitelné. Pokud `GetRequestedRuntime` používá konfigurační soubor během vazby, když vrátí, `pdwConfigFlags` obsahuje [metahost_config_flags –](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md) hodnotu, která určuje, zda [ \<spuštění >](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md) element má `useLegacyV2RuntimeActivationPolicy` atribut sady a hodnota atributu. Použít [METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](../../../../docs/framework/unmanaged-api/hosting/metahost-config-flags-enumeration.md) maskování na `pdwConfigFlags` abyste získali hodnoty pro relevantní `useLegacyV2RuntimeActivationPolicy`.|  
+|`riid`|[in] Určuje identifikátor rozhraní IID_ICLRRuntimeInfo pro požadovanou [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.|  
+|`ppRuntime`|[out] Když `GetRequestedRuntime` vrátí, obsahuje ukazatel na odpovídající [iclrruntimeinfo –](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) rozhraní.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když tato metoda bude úspěšná, má vedlejším účinkem kombinace další příznaky s aktuální příznaky spuštění výchozí vrácený runtime rozhraní, pokud jeden nebo více následujících prvků existovat v datovém proudu konfigurace v rámci `<configuration><runtime>` části:  
+ Když tato metoda bude úspěšná, nemá vliv na straně kombinace další příznaky se aktuální výchozí spuštění příznaky vrácené modul runtime rozhraní a pouze v případě jeden nebo více z následujících prvků existovat v datovém proudu konfigurace v rámci `<configuration><runtime>` části:  
   
 -   `<gcServer enabled="true"/>` způsobí, že `STARTUP_SERVER_GC` nastavit.  
   
@@ -67,30 +67,30 @@ HRESULT GetRequestedRuntime(
   
 -   `<appDomainResourceMonitoring enabled="true"/>` způsobí, že `STARTUP_ARM` nastavit.  
   
- Výsledný výchozí `STARTUP_FLAGS` hodnota je bitová kombinace OR hodnot, které jsou nastavené v předchozím seznamu s příznaky spuštění výchozí.  
+ Výsledný výchozí `STARTUP_FLAGS` bitová kombinace OR hodnot, které jsou nastavené v předchozím seznamu spuštění Flags výchozí hodnotu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_POINTER|`pwzVersion` není null a `pcchVersion` má hodnotu null.<br /><br /> -nebo-<br /><br /> `pwzImageVersion` není null a `pcchImageVersion` má hodnotu null.|  
+|E_POINTER|`pwzVersion` není rovno hodnotě null a `pcchVersion` má hodnotu null.<br /><br /> -nebo-<br /><br /> `pwzImageVersion` není rovno hodnotě null a `pcchImageVersion` má hodnotu null.|  
 |E_INVALIDARG|`dwPolicyFlags` neurčuje `METAHOST_POLICY_HIGHCOMPAT`.|  
-|ERROR_INSUFFICIENT_BUFFER|Paměť přidělit `pwzVerison` je k dispozici.<br /><br /> -nebo-<br /><br /> Paměť přidělit `pwzImageVerison` je k dispozici.|  
-|CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags` zahrnuje METAHOST_POLICY_APPLY_UPGRADE_POLICY a obě `pwzVersion` a `pcchVersion` mají hodnotu null.|  
+|ERROR_INSUFFICIENT_BUFFER|Paměť přidělená k `pwzVerison` je nedostatečné.<br /><br /> -nebo-<br /><br /> Paměť přidělená k `pwzImageVerison` je nedostatečné.|  
+|CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags` zahrnuje METAHOST_POLICY_APPLY_UPGRADE_POLICY a obě `pwzVersion` a `pcchVersion` má hodnotu Null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRMetaHostPolicy – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)  
- [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRMetaHostPolicy – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)
+- [Rozhraní pro hostování CLR přidaná do .NET Framework 4 a 4.5](../../../../docs/framework/unmanaged-api/hosting/clr-hosting-interfaces-added-in-the-net-framework-4-and-4-5.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

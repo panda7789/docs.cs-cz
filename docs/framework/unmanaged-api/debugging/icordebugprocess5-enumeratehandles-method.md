@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2f2177702c6c5999033d0852a932e52c0725fb8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b8c3f102405c9b9fa9af2597658b728e618cabb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422656"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559369"
 ---
 # <a name="icordebugprocess5enumeratehandles-method"></a>ICorDebugProcess5::EnumerateHandles – metoda
-Získá enumerátor pro objekt popisovače v procesu.  
+Získá enumerátor pro objekt popisovače procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
   
 #### <a name="parameters"></a>Parametry  
  `types`  
- [v] Bitovou kombinaci [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnoty, které určuje typ obslužné rutiny, které chcete zahrnout do kolekce.  
+ [in] Bitová kombinace hodnot [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) hodnoty, které určuje typ obslužné rutiny, které chcete zahrnout do kolekce.  
   
  `ppENum`  
- [out] Ukazatel na adresu [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) tedy enumerátor pro objekty být uvolňování paměti.  
+ [out] Ukazatel na adresu [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) , který je enumerátor pro objekty být uvolněna.  
   
 ## <a name="remarks"></a>Poznámky  
- `EnumerateHandles` je pomocné funkce, která podporuje kontroly tabulky popisovače. Je podobná [icordebugprocess5::enumerategcreferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) metoda, vyjma toho, že místo naplnění [ICorDebugGCReferenceEnum](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) kolekce se všemi objekty být uklizeny, ho obsahuje pouze objekty, které mají obslužné rutiny z tabulky popisovače.  
+ `EnumerateHandles` je pomocná funkce, která podporuje kontrolu tabulku. Se podobá [icordebugprocess5::enumerategcreferences –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enumerategcreferences-method.md) metody, s výjimkou, že místo naplnění [icordebuggcreferenceenum –](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md) kolekci všech objektů, aby byly uklizeny, ho zahrnuje pouze objekty, které mají obslužné rutiny z tabulky popisovače.  
   
- `types` Parametr určuje typy popisovač pro zahrnutí do kolekce. `types` může být libovolná z následujících tří členů [CorGCReferenceType](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) výčtu:  
+ `types` Parametr určuje typy popisovač chcete zahrnout do kolekce. `types` může být kterýkoli z následujících tří členů [corgcreferencetype –](../../../../docs/framework/unmanaged-api/debugging/corgcreferencetype-enumeration.md) výčtu:  
   
--   `CorHandleStrongOnly` (zpracovává jenom silné odkazů na).  
+-   `CorHandleStrongOnly` (popisovače pouze odkazy na silné).  
   
--   `CorHandleWeakOnly` (zpracovává jenom slabé odkazy).  
+-   `CorHandleWeakOnly` (popisovače jenom slabé odkazy).  
   
--   `CorHandleAll` (všechny obslužné rutiny).  
+-   `CorHandleAll` (všechny popisovače).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -61,6 +61,6 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

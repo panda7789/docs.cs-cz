@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ToolStripContainer control [Windows Forms]
 - ToolStrip control [Windows Forms], ToolStripContainer
 ms.assetid: 378fa5b4-38e1-46f4-8e5c-d0c19dcd0200
-ms.openlocfilehash: eb05627925534820544edc15e1fe06bf57f0ae84
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 260d79b7c6432c3dede5b593eaa3f1e52ed35c5e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087174"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588298"
 ---
 # <a name="toolstripcontainer-control"></a>ToolStripContainer – ovládací prvek
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky funkce vestavěný rafting (sdílení vodorovný nebo svislý prostor v rámci oblasti nástroje, pokud je ukotven) s použitím <xref:System.Windows.Forms.ToolStripContainer>.  
@@ -41,5 +41,5 @@ ms.locfileid: "44087174"
  <xref:System.Windows.Forms.ToolStripPanel>  
  Poskytuje referenční dokumentaci pro <xref:System.Windows.Forms.ToolStripPanel> ovládacího prvku.  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

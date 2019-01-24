@@ -10,12 +10,12 @@ helpviewer_keywords:
 - delegate keyword [C#]
 - function pointers [C#]
 ms.assetid: 0bb8cb6d-2f87-47c7-9d1f-d65c1cd01e9f
-ms.openlocfilehash: 233b0255121cf6e7a5283041d594e2d843f105fb
-ms.sourcegitcommit: d6e419f9d9cd7e8f21ebf5acde6d016c16332579
+ms.openlocfilehash: f9df40c3ca721ca97b575a05377bbac29a29aec9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53286465"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54560604"
 ---
 # <a name="delegate-c-reference"></a>delegate (Referenční dokumentace jazyka C#)
 
@@ -46,12 +46,12 @@ Delegát musí být vytvořena pomocí metody nebo lambda výraz, který je komp
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)  
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
-- [Události](../../../csharp/programming-guide/events/index.md)  
-- [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md) 
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
+- [Události](../../../csharp/programming-guide/events/index.md)
+- [Delegáti s pojmenovanými vs. anonymními metodami](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)
 - [Anonymní metody](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md)
 - [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

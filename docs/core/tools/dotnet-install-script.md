@@ -2,12 +2,12 @@
 title: DotNet – instalačních skriptů
 description: Další informace o dotnet instalačních skriptů k instalaci nástroje rozhraní příkazového řádku .NET Core a sdílený modul runtime.
 ms.date: 01/16/2019
-ms.openlocfilehash: 5b266d484aae482d79674660417a834f03d53e4c
-ms.sourcegitcommit: 542aa405b295955eb055765f33723cb8b588d0d0
+ms.openlocfilehash: f796ac494c0be5458b3ea192e809a4d875bcc6dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54362819"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608786"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 
@@ -200,5 +200,5 @@ Můžete nainstalovat konkrétní verzi pomocí `--version` argument. Verze mus�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Verze .NET core](https://github.com/dotnet/core/releases)
-* [.NET core Runtime a sadu SDK stáhněte archiv](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)
+- [Verze .NET core](https://github.com/dotnet/core/releases)
+- [.NET core Runtime a sadu SDK stáhněte archiv](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md)

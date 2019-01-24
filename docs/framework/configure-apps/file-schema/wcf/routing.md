@@ -2,18 +2,18 @@
 title: '&lt;Směrování&gt;'
 ms.date: 03/30/2017
 ms.assetid: a210c209-3940-4288-9a8e-39b1e62606bc
-ms.openlocfilehash: 220c18ab8ea6222fcf7d9fb8a93950281c9de796
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 855faedfd2e9523e939174441b0cfa50e052b375
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145143"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54565875"
 ---
 # <a name="ltroutinggt"></a>&lt;Směrování&gt;
 
 Představuje konfigurační oddíl pro definování sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definujjí koncové body do odesílání zpráv do při shodě s filtrem.
 
-[**\<system.serviceModel >**](system-servicemodel.md)   
+[**\<system.serviceModel>**](system-servicemodel.md)   
 &nbsp;&nbsp;**\<směrování >**
   
 ## <a name="syntax"></a>Syntaxe  
@@ -59,8 +59,8 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |     | Popis |
 | --- | ----------- |
-| **\<systém. ServiceModel >** | Kořenový element všechny elementy konfigurace WCF. |
+| **\<system.ServiceModel>** | Kořenový element všechny elementy konfigurace WCF. |
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>

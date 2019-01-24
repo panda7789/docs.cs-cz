@@ -9,38 +9,38 @@ helpviewer_keywords:
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0f15c3bc097bc034db41c95cd168104b8435aaf0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8425b294328d4fc7546a372b329d8fa834a088d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394137"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54567019"
 ---
 # <a name="security-transparent-code-level-2"></a>Transparentní kód pro zabezpečení, úroveň 2
 <a name="top"></a>
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Průhlednost úrovně 2 byla zavedena v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Tři zásady tohoto modelu jsou transparentní kód, bezpečné a kritické pro zabezpečení kód a kód kritický pro zabezpečení.  
+ Průhlednost úrovně 2 byla zavedena v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Tři zásady tohoto modelu jsou transparentní kód, bezpečný a kritický pro zabezpečení kód a kód kritický pro zabezpečení.  
   
--   Transparentní kód, včetně kódu, který je spuštěný jako úplný vztah důvěryhodnosti, můžete volat jiný transparentní kód nebo pouze bezpečné a kritické pro zabezpečení kód. Může provádět jenom akce povolené oprávnění částečné důvěryhodnosti domény nastavené (pokud existuje). Kód transparentní nelze provést následující akce:  
+-   Transparentní kód, včetně kód, který je spuštěn při úplném vztahu důvěryhodnosti, můžete volat jiný transparentní kód nebo bezpečný a kritický pro zabezpečení pouze kód. Může pouze provádět akce povolené oprávnění částečným vztahem důvěryhodnosti domény nastavení (pokud existuje). Transparentní kód nemůže provádět následující:  
   
-    -   Provést <xref:System.Security.CodeAccessPermission.Assert%2A> nebo zvýšení úrovně oprávnění.  
+    -   Provést <xref:System.Security.CodeAccessPermission.Assert%2A> nebo zvýšení oprávnění.  
   
     -   Obsahovat nebezpečný nebo neověřitelný kód.  
   
-    -   Kód kritický pro volejte přímo.  
+    -   Přímo volejte kritický kód.  
   
-    -   Volání nativního kódu nebo kód s <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> atribut.  
+    -   Volat nativní kód nebo kód s <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> atribut.  
   
-    -   Volání člena, který je chráněn <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
+    -   Volat člen, který je chráněn <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
   
-    -   Typy kritické dědí.  
+    -   Dědit z kritických typů.  
   
      Kromě toho transparentní metody nelze přepsat kritické virtuální metody nebo implementovat kritické metody rozhraní.  
   
--   Kritická kód je plně důvěryhodný, ale je volatelné transparentní kód. Zpřístupňuje omezenou oblast povrchu plné důvěryhodnosti kódu; dojde k ověření správnosti a zabezpečení v kritickém kódu.  
+-   Bezpečný a kritický kód je plně důvěryhodný, ale je volatelný transparentním kódem. Zpřístupňuje omezenou oblast povrchu plně důvěryhodného kódu; ověření správnosti a zabezpečení dojde v bezpečný a kritický kód.  
   
--   Kód kritický pro zabezpečení můžete volat žádný kód a je plně důvěryhodný, ale ji nelze volat kód transparentní.  
+-   Kód kritický pro zabezpečení může volat libovolný kód a je plně důvěryhodný, ale nemůže být volán transparentním kódem.  
   
  Toto téma obsahuje následující oddíly:  
   
@@ -54,58 +54,58 @@ ms.locfileid: "33394137"
   
 <a name="examples"></a>   
 ## <a name="usage-examples-and-behaviors"></a>Příklady použití a chování  
- Chcete-li určit [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] pravidla (průhlednost úrovně 2), použijte následující anotaci pro sestavení:  
+ Chcete-li určit [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] pravidla (transparentnosti úrovně 2), použijte následující poznámce pro sestavení:  
   
 ```  
 [assembly: SecurityRules(SecurityRuleSet.Level2)]  
 ```  
   
- Pokud chcete uzamknout na rozhraní .NET Framework 2.0 pravidla (úroveň 1 průhlednost), použijte následující poznámky:  
+ Uzavřít se do pravidel rozhraní .NET Framework 2.0 (transparentnosti úrovně 1), použijte následující poznámky:  
   
 ```  
 [assembly: SecurityRules(SecurityRuleSet.Level1)]  
 ```  
   
- Pokud není opatřit poznámkami sestavení, [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] pravidla se používají ve výchozím nastavení. Doporučený osvědčený postup je však používat <xref:System.Security.SecurityRulesAttribute> atribut místo v závislosti na výchozí.  
+ Pokud není opatřit poznámkami sestavení, [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ve výchozím nastavení jsou použita pravidla. Nicméně doporučený osvědčeným postupem je použít <xref:System.Security.SecurityRulesAttribute> atribut místo v závislosti na výchozí.  
   
-### <a name="assembly-wide-annotation"></a>Sestavení celou poznámky  
- Následující pravidla platí při použití atributů na úrovni sestavení:  
+### <a name="assembly-wide-annotation"></a>Celé sestavení poznámky  
+ Použití atributů na úrovni sestavení platí následující pravidla:  
   
--   Žádné atributy: Pokud nezadáte žádné atributy, modul runtime interpretuje všechny kód jako kritické pro zabezpečení, s výjimkou případů, kdy se kritický pro zabezpečení porušuje pravidlo dědičnosti (například v případě, že přepsání nebo implementace transparentní virtuální nebo rozhraní – metoda ). V takových případech jsou kritická metody. Určení žádný atribut způsobí, že modul common language runtime k určení pravidel průhlednost.  
+-   Žádné atributy: Pokud nezadáte žádné atributy, modul runtime interpretuje celý kód jako kritické pro zabezpečení, s výjimkou případů, kde jsou kritické pro zabezpečení porušuje pravidlo dědičnosti (například když přepisuje nebo implementuje transparentní metoda rozhraní nebo virtuální). V takových případech metody jsou bezpečné a kritické. Určení žádný atribut způsobí, že modul common language runtime k určení pravidla transparentnosti za vás.  
   
--   `SecurityTransparent`: Všechna kód je transparentní; celé sestavení nebude dělat nic privilegovaného nebo unsafe.  
+-   `SecurityTransparent`: Všechny kódy jsou transparentní; celé sestavení nespustí žádnou akci privilegovaných nebo unsafe.  
   
--   `SecurityCritical`: Všechna kód, který je zavedený typy v tomto sestavení je velmi důležité; všechny ostatní kód je transparentní. Tento scénář je podobná nespecifikuje žádné atributy; však modul common language runtime automaticky neurčuje pravidla průhlednost. Například pokud přepíšete metodu virtuální nebo abstraktní nebo implementovat metodu rozhraní, ve výchozím nastavení, že metoda je transparentní. Musíte explicitně označit jako metodu `SecurityCritical` nebo `SecuritySafeCritical`, jinak hodnota <xref:System.TypeLoadException> při načítání, bude vyvolána. Toto pravidlo platí i v případě základní třída a odvozené třídy jsou ve stejném sestavení.  
+-   `SecurityCritical`: Veškerý kód, který je zavedený typy v tomto sestavení je velmi důležité; všechny ostatní kód je transparentní. Tento scénář je podobný bez zadání jakékoli atributů Nicméně modul common language runtime automaticky nezjišťuje pravidla transparentnosti. Například pokud přepsat virtuální nebo abstraktní metody nebo implementaci metody rozhraní, ve výchozím nastavení tato metoda je transparentní. Musíte explicitně označit metody jako `SecurityCritical` nebo `SecuritySafeCritical`; v opačném případě <xref:System.TypeLoadException> bude vyvolána v okamžiku načtení. Toto pravidlo platí také, pokud základní třída a odvozené třídy jsou ve stejném sestavení.  
   
--   `AllowPartiallyTrustedCallers` (úroveň 2 pouze): všechny code automaticky transparentní. Jednotlivé typy a členy však mohou mít jiné atributy.  
+-   `AllowPartiallyTrustedCallers` (pouze pro úroveň 2): Všechny výchozí hodnoty pro transparentní kód. Nicméně jednotlivé typy a členy mohou mít jiné atributy.  
   
- Následující tabulka porovnává chování úrovně sestavení úroveň 2 s úrovně 1.  
+ Následující tabulka porovnává chování úrovně sestavení pro úrovně 2 s 1. úrovně.  
   
 |Atribut sestavení|Úroveň 2|úroveň 1|  
 |------------------------|-------------|-------------|  
-|Žádný atribut v částečně důvěryhodné sestavení|Typy a členové jsou ve výchozím nastavení transparentní, ale může být kritické pro zabezpečení nebo bezpečné a kritické pro zabezpečení.|Všechny typy a členy jsou transparentní.|  
-|Žádný atribut|Určení žádný atribut způsobí, že modul common language runtime k určení pravidel průhlednost. Všechny typy a členy jsou kritické pro zabezpečení, s výjimkou případů, kdy se kritický pro zabezpečení porušuje pravidlo dědičnosti.|Ve plně důvěryhodný pro sestavení (v globální mezipaměti sestavení nebo identifikován jako úplný vztah důvěryhodnosti v `AppDomain`) jsou všechny typy transparentní a bezpečné a kritické pro zabezpečení se všichni její členové.|  
+|Žádný atribut pro částečně důvěryhodná sestavení|Typy a členy jsou ve výchozím nastavení transparentní, ale může být kritické pro zabezpečení nebo bezpečný a kritický pro zabezpečení.|Všechny typy a členy jsou transparentní.|  
+|Žádný atribut|Určení žádný atribut způsobí, že modul common language runtime k určení pravidla transparentnosti za vás. Všechny typy a členy jsou kritické pro zabezpečení, s výjimkou případů, kde jsou kritické pro zabezpečení porušuje pravidlo dědičnosti.|Pro plně důvěryhodná sestavení (v globální mezipaměti sestavení nebo označen jako úplný vztah důvěryhodnosti v `AppDomain`) jsou všechny typy transparentní a všichni členové jsou bezpečné a kritické pro zabezpečení.|  
 |`SecurityTransparent`|Všechny typy a členy jsou transparentní.|Všechny typy a členy jsou transparentní.|  
 |`SecurityCritical(SecurityCriticalScope.Everything)`|Nelze použít.|Všechny typy a členy jsou kritické pro zabezpečení.|  
-|`SecurityCritical`|Všechny kód, který je zavedený typy v tomto sestavení je velmi důležité; všechny ostatní kód je transparentní. Pokud přepíšete metodu virtuální nebo abstraktní nebo implementovat metodu rozhraní, musíte explicitně označit jako metodu `SecurityCritical` nebo `SecuritySafeCritical`.|Všechny kódu automaticky transparentní. Jednotlivé typy a členy však mohou mít jiné atributy.|  
+|`SecurityCritical`|Veškerý kód, který je zavedený typy v tomto sestavení je velmi důležité; všechny ostatní kód je transparentní. Je-li přepsat virtuální nebo abstraktní metody nebo implementovat metodu rozhraní, musíte explicitně označit metody jako `SecurityCritical` nebo `SecuritySafeCritical`.|Všechny výchozí hodnoty pro transparentní kód. Nicméně jednotlivé typy a členy mohou mít jiné atributy.|  
   
-### <a name="type-and-member-annotation"></a>Typ a člen poznámky  
- Atributy zabezpečení, které se použijí na typ platí také pro členy, které jsou zavedené podle typu. Ale nelze je použít na virtuální nebo přepsání abstraktní základní implementace třídy nebo rozhraní. Následující pravidla platí při použití atributů na úrovni typu a členu:  
+### <a name="type-and-member-annotation"></a>Typ a člen poznámek  
+ Atributy zabezpečení, které se použijí na typ. platí také pro členy, které vznikají zavlečením typu. Nicméně se nevztahují na virtuální nebo abstraktní přepíše z implementací základní třídy nebo rozhraní. Použití atributů na úrovni typů a členů platí následující pravidla:  
   
--   `SecurityCritical`: Typ nebo člen je velmi důležité a lze volat pouze ve plně důvěryhodný kód. Metody, které jsou zavedené v kritické pro zabezpečení typu jsou důležité.  
+-   `SecurityCritical`: Tento typ nebo člen je velmi důležité a může být volána pouze pomocí plně důvěryhodného kódu. Metody, které jsou součástí typu kritické pro zabezpečení jsou kritické.  
   
     > [!IMPORTANT]
-    >  Virtuální a abstraktní metody, které jsou zavedené v rozhraní nebo základní třídy a přepsat nebo implementována ve třídě kritické pro zabezpečení jsou transparentní ve výchozím nastavení. Musí být identifikovány jako `SecuritySafeCritical` nebo `SecurityCritical`.  
+    >  Virtuální a abstraktní metody, které jsou součástí základní třídy nebo rozhraní a přepsat nebo implementována ve třídě kritické z hlediska zabezpečení je ve výchozím nastavení transparentní. Musí být určen buď `SecuritySafeCritical` nebo `SecurityCritical`.  
   
--   `SecuritySafeCritical`: Typ nebo člen je kritický. Typ nebo člen lze volat z kódu transparentní (částečně důvěryhodné) a je umožňující jako jakýkoli jiný kód, kritické. Kód musí být auditován pro zabezpečení.  
+-   `SecuritySafeCritical`: Tento typ nebo člen je kritický. Tento typ nebo člen lze volat z transparentního kódu (částečně důvěryhodným) a je možností, jako jakýkoli jiný kritický kód. Musí být auditován kód pro zabezpečení.  
   
  [Zpět na začátek](#top)  
   
 <a name="override"></a>   
 ## <a name="override-patterns"></a>Vzory přepsání  
- V následující tabulce jsou uvedeny přepsání metody povolené pro průhlednost úrovně 2.  
+ V následující tabulce jsou uvedeny přepsání metody, které jsou povolené pro transparentnosti úrovně 2.  
   
-|Základní virtuální/rozhraní člen|Přepsání/rozhraní|  
+|Základní virtuálního člena/člena rozhraní|Přepsání a interface|  
 |------------------------------------|-------------------------|  
 |`Transparent`|`Transparent`|  
 |`Transparent`|`SafeCritical`|  
@@ -121,13 +121,13 @@ ms.locfileid: "33394137"
   
  `Transparent` < `SafeCritical` < `Critical`  
   
--   Pravidla pro typy: přejdete zleva doprava, bude přístup k více omezující. Odvozené typy musí být nejméně omezující jako základního typu.  
+-   Pravidla pro typy: Přechod zleva doprava, bude přístup více omezující. Odvozené typy musí být alespoň tak omezující jako základního typu.  
   
--   Pravidla pro metody: odvozené metody nelze změnit usnadnění ze základní metody. Výchozí chování, jsou všechny odvozené metody, které nejsou poznámkou `Transparent`. Odvozené typy kritické způsobují výjimku, která je vyvolána, pokud přepsaná metoda není explicitně označena jako `SecurityCritical`.  
+-   Pravidla pro metody: Odvozené metody nemůže změnit přístupnost ze základní metody. Pro výchozí chování, jsou všechny odvozené metody, která nejsou označena `Transparent`. Odvozené typy kritických typů způsobit výjimku, která je vyvolána, pokud přepsané metody není explicitně označena jako `SecurityCritical`.  
   
- Následující tabulka zobrazuje typ povolené vzory dědičnosti.  
+ V následující tabulce jsou uvedeny povolený typ vzory dědičnosti.  
   
-|Base – třída|Odvozená třída může být|  
+|Základní třída|Odvozená třída může být|  
 |----------------|--------------------------|  
 |`Transparent`|`Transparent`|  
 |`Transparent`|`SafeCritical`|  
@@ -136,17 +136,17 @@ ms.locfileid: "33394137"
 |`SafeCritical`|`Critical`|  
 |`Critical`|`Critical`|  
   
- Následující tabulka zobrazuje typ nepovoleném vzory dědičnosti.  
+ Následující tabulka ukazuje zakázaného typ vzory dědičnosti.  
   
-|Base – třída|Nemůže být odvozené třídy|  
+|Základní třída|Odvozená třída nemůže být|  
 |----------------|-----------------------------|  
 |`SafeCritical`|`Transparent`|  
 |`Critical`|`Transparent`|  
 |`Critical`|`SafeCritical`|  
   
- Následující tabulka zobrazuje povolené metoda vzory dědičnosti.  
+ V následující tabulce jsou uvedeny povolené metody vzory dědičnosti.  
   
-|Base – metoda|Může být odvozené – metoda|  
+|Base – metoda|Může být Odvozená metoda|  
 |-----------------|---------------------------|  
 |`Transparent`|`Transparent`|  
 |`Transparent`|`SafeCritical`|  
@@ -154,9 +154,9 @@ ms.locfileid: "33394137"
 |`SafeCritical`|`SafeCritical`|  
 |`Critical`|`Critical`|  
   
- Následující tabulka zobrazuje metodu nepovoleném vzory dědičnosti.  
+ Následující tabulka ukazuje zakázaného metodu vzory dědičnosti.  
   
-|Base – metoda|Nemůže být odvozené – metoda|  
+|Base – metoda|Nemůže být Odvozená metoda|  
 |-----------------|------------------------------|  
 |`Transparent`|`Critical`|  
 |`SafeCritical`|`Critical`|  
@@ -164,7 +164,7 @@ ms.locfileid: "33394137"
 |`Critical`|`SafeCritical`|  
   
 > [!NOTE]
->  Tato pravidla dědičnosti se vztahují na úroveň 2 typy a členy. Typy v sestavení úroveň 1 může dědit vlastnosti z typy kritické pro zabezpečení na úrovni 2 a členy. Typy na úrovni 2 a členy proto musí mít samostatné dědičnost požadavků pro dědice úroveň 1.  
+>  Tato pravidla dědičnosti se vztahují na typy a členy úrovně 2. Typy v sestaveních úroveň 1 může dědit z typy kritické pro zabezpečení úrovně 2 a členy. Typy a členy úrovně 2 proto musí mít samostatné dědičnost požadavků pro dědice úrovně 1.  
   
  [Zpět na začátek](#top)  
   
@@ -172,25 +172,25 @@ ms.locfileid: "33394137"
 ## <a name="additional-information-and-rules"></a>Další informace a pravidla  
   
 ### <a name="linkdemand-support"></a>Podpora LinkDemand  
- Nahradí model průhlednost úrovně 2 <xref:System.Security.Permissions.SecurityAction.LinkDemand> s <xref:System.Security.SecurityCriticalAttribute> atribut. V kódu starší verze (úroveň 1) <xref:System.Security.Permissions.SecurityAction.LinkDemand> automaticky považován za <xref:System.Security.Permissions.SecurityAction.Demand>.  
+ Nahradí modelu transparentnosti úrovně 2 <xref:System.Security.Permissions.SecurityAction.LinkDemand> s <xref:System.Security.SecurityCriticalAttribute> atribut. V kódu starší verze (úroveň 1) <xref:System.Security.Permissions.SecurityAction.LinkDemand> je automaticky považováno za <xref:System.Security.Permissions.SecurityAction.Demand>.  
   
 ### <a name="reflection"></a>Reflexe  
- Vyvolání kritické metody nebo čtení kritické položky spustí požadavek na úplný vztah důvěryhodnosti (stejně, jako kdyby byly vyvolání soukromá metoda nebo pole). Kód plné důvěryhodnosti tedy můžete vyvolat kritickou metodu, zatímco nelze částečně důvěryhodný kód.  
+ Vyvolání kritické metody nebo čtení kritickému poli spustí požadavek pro úplný vztah důvěryhodnosti (tak, jako kdyby byly vyvolání soukromou metodu nebo pole). Proto plně důvěryhodného kódu můžete vyvolat na kritickou metodu, že nelze částečně důvěryhodného kódu.  
   
- Následující vlastnosti jsou přidané do <xref:System.Reflection> oboru názvů určete, zda je typ, metoda nebo pole `SecurityCritical`, `SecuritySafeCritical`, nebo `SecurityTransparent`: <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, a <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>. Použijte tyto vlastnosti k určení transparentnosti pomocí reflexe místo kontroly na přítomnost atribut. Pravidla transparentnosti jsou komplexní a kontrola atributu nemusí být plně dostačující.  
+ Následující vlastnosti byly přidány do <xref:System.Reflection> obor názvů pro určení, zda je typ, metodu nebo pole `SecurityCritical`, `SecuritySafeCritical`, nebo `SecurityTransparent`: <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, a <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>. Tyto vlastnosti lze použijte k určení transparentnosti pomocí reflexe namísto kontroly na přítomnost atributu. Pravidla transparentnosti jsou komplexní a kontrola pro atribut nemusí být dostatečné.  
   
 > [!NOTE]
->  A `SafeCritical` metoda vrátí `true` pro obě <xref:System.Type.IsSecurityCritical%2A> a <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, protože `SafeCritical` je skutečně kritická (má stejné schopnosti jako kód kritický pro, ale může být volána z transparentní kód).  
+>  A `SafeCritical` vrátí metoda `true` pro obě <xref:System.Type.IsSecurityCritical%2A> a <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, protože `SafeCritical` je skutečně důležité (má stejné funkce jako kritický kód, ale mohou být volány transparentní kód).  
   
- Dynamické metody dědí transparentnost modulů, které jsou připojené k; nedědí transparentnost typu (pokud jsou připojené k typu).  
+ Průhlednost modulů, které jsou připojeny k; dědit dynamických metod nedědí průhlednost typu (pokud jsou připojeny k typu).  
   
-### <a name="skip-verification-in-full-trust"></a>Přeskočit ověření v režimu plné důvěryhodnosti  
- Můžete přeskočit ověření pro plně důvěryhodná transparentní sestavení pomocí nastavení <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> vlastnost `true` v <xref:System.Security.SecurityRulesAttribute> atribut:  
+### <a name="skip-verification-in-full-trust"></a>Přeskočit ověřování v režimu plné důvěryhodnosti  
+ Můžete přeskočit ověření pro plně důvěryhodná transparentní sestavení tak, že nastavíte <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> vlastnost `true` v <xref:System.Security.SecurityRulesAttribute> atribut:  
   
  `[assembly: SecurityRules(SecurityRuleSet.Level2, SkipVerificationInFullTrust = true)]`  
   
- <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> Vlastnost je `false` ve výchozím nastavení, takže vlastnost musí být nastavená `true` pro přeskočení ověření. To by mělo být provedeno pouze pro účely optimalizace. Měli byste zajistit, že transparentní kód v sestavení je ověřitelný pomocí `transparent` možnost [Nástroj PEVerify](../../../docs/framework/tools/peverify-exe-peverify-tool.md).  
+ <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> Vlastnost `false` ve výchozím nastavení, tak vlastnost musí být nastavena na `true` pro přeskočení ověření. To by mělo být provedeno za účelem optimalizace pouze. Měli byste zajistit, že transparentní kód v sestavení je ověřit pomocí `transparent` možnost [Nástroj PEVerify](../../../docs/framework/tools/peverify-exe-peverify-tool.md).  
   
-## <a name="see-also"></a>Viz také  
- [Kód transparentní pro zabezpečení, úroveň 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
- [Změny zabezpečení](../../../docs/framework/security/security-changes.md)
+## <a name="see-also"></a>Viz také:
+- [Kód transparentní pro zabezpečení, úroveň 1](../../../docs/framework/misc/security-transparent-code-level-1.md)
+- [Změny zabezpečení](../../../docs/framework/security/security-changes.md)

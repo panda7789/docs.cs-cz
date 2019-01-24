@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf6152c643395fe52a43424cab33f527d577b5bd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: db4f0bbef1ce0e6e4a2a0e904bfe8ebb997d5f4d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413881"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54586589"
 ---
 # <a name="icordebugmanagedcallbackexception-method"></a>ICorDebugManagedCallback::Exception – metoda
-Upozorní ladicí program, že byla vyvolána výjimka ze spravovaného kódu.  
+Upozorní ladicího programu, že byla vyvolána výjimka ze spravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT Exception (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, ve kterém byla výjimka vydána.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, ve kterém byla výjimka vydána.  
   
  `pThread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vláken, ve kterém byla výjimka vydána.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno, ve kterém byla výjimka vydána.  
   
  `unhandled`  
- [v] Pokud je tato hodnota `false`, výjimka nebyl dosud byla zpracovaná aplikace; jinak, výjimka neošetřených a proces ukončí.  
+ [in] Pokud je tato hodnota `false`, výjimky nebyl dosud byl zpracovaná aplikace; v opačném případě, výjimka neošetřená a bude ukončen proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Konkrétní výjimky mohou být načteny z objektu přístup z více vláken.  
+ Specifické výjimky mohou být načteny z objektu vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +59,5 @@ HRESULT Exception (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

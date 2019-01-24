@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e0d0a2a8d8c7fd75da7f2109619d588eac7b4a6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 9c316ec79b519e1580f1d5dc7e122d770fb5b82e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863017"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583155"
 ---
 # <a name="xml-processing-options"></a>Možnosti zpracování XML
 Najdete v následujících tabulkách seznam technologie Microsoftu, které lze použít ke zpracování dat XML.  
@@ -30,11 +30,11 @@ Najdete v následujících tabulkách seznam technologie Microsoftu, které lze 
   
 |**Možnost**|**Popis**|  
 |----------------|---------------------|  
-|[Analyzátor XmlLite](https://msdn.microsoft.com/library/ms752872.aspx)|-Rychlé a zabezpečené, bez ukládání do mezipaměti, dopředné analyzátoru XML, který vám pomůže vytvářet výkonné při XML aplikace.<br />– Funguje v libovolném jazyce, který můžete použít dynamické knihovny (DLL); Doporučujeme, abyste pomocí jazyka C++.|  
+|[XmlLite](https://msdn.microsoft.com/library/ms752872.aspx)|-Rychlé a zabezpečené, bez ukládání do mezipaměti, dopředné analyzátoru XML, který vám pomůže vytvářet výkonné při XML aplikace.<br />– Funguje v libovolném jazyce, který můžete použít dynamické knihovny (DLL); Doporučujeme, abyste pomocí jazyka C++.|  
 |[MSXML](https://msdn.microsoft.com/library/ms763742.aspx)|-Založené na modelu COM. technologii ke zpracování jazyka XML, který je součástí operačního systému Windows.<br />-Poskytuje nativní implementaci modelu DOM s podporou jazyka XPath a XSLT.<br />-Obsahuje SAX2 Analyzátor založený na událostech.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
-- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+- [Zpracování dat XML pomocí modelu DOM](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
 - [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)

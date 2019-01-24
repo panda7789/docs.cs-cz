@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b8c7616a3187cd5fa28f231dffd15b0bfeea4b7f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: c5b74f2608022d48dbd7e63e4ddf6112c333e3f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025503"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54604398"
 ---
 # <a name="principal-and-identity-objects"></a>Objekty zabezpečení a identity
 Spravovaný kód může zjišťovat identitu nebo role objekt zabezpečení prostřednictvím <xref:System.Security.Principal.IPrincipal> objektu, který obsahuje odkaz na <xref:System.Security.Principal.IIdentity> objektu. Může být užitečné k porovnání objektů identity a zabezpečení na známé koncepty, jako jsou účty uživatelů a skupin. Ve většině prostředí sítě představují uživatelské účty uživatele nebo programy, zatímco skupinových účtů představují určité kategorie uživatelů a práv, které mohou mít. Obdobně objekty rozhraní .NET Framework identity představují uživatele, zatímco role představují členství ve skupinách a kontext zabezpečení. V rozhraní .NET Framework zapouzdří objekt zabezpečení identity objektu a rolí. Aplikace rozhraní .NET framework udělit práva k objektu zabezpečení na základě své identity nebo častěji, členství v roli.  
@@ -44,9 +44,9 @@ Spravovaný kód může zjišťovat identitu nebo role objekt zabezpečení pros
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření objektu WindowsPrincipal](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)  
-- [Postupy: Vytváření objektů GenericPrincipal a GenericIdentity](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)  
-- [Nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md)  
-- [Zosobnění a návrat](../../../docs/standard/security/impersonating-and-reverting.md)  
-- [Zabezpečení na základě rolí](../../../docs/standard/security/role-based-security.md)  
+- [Postupy: Vytvoření objektu WindowsPrincipal](../../../docs/standard/security/how-to-create-a-windowsprincipal-object.md)
+- [Postupy: Vytváření objektů GenericPrincipal a GenericIdentity – objekty](../../../docs/standard/security/how-to-create-genericprincipal-and-genericidentity-objects.md)
+- [Nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md)
+- [Zosobnění a návrat](../../../docs/standard/security/impersonating-and-reverting.md)
+- [Zabezpečení na základě rolí](../../../docs/standard/security/role-based-security.md)
 - [Klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md)

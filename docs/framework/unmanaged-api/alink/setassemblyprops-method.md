@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aed553a3a8d54b5229a122e76b61e3e58d4af3c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 65d6e929a0a6fb5e1933a6c9216dfc5b56342113
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401963"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54560643"
 ---
 # <a name="setassemblyprops-method"></a>SetAssemblyProps – metoda
-Přiřadí vlastnosti úrovni sestavení.  
+Přiřadí vlastností na úrovni sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ HRESULT SetAssemblyProps(
  ID sestavení.  
   
  `FileToken`  
- Soubor, který definuje vlastnost. Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.  
+ Soubor, který definuje vlastnost. Může mít hodnotu NULL, pokud `AssemblyID` neznamená odvázat netmodule.  
   
  `Option`  
  Určuje možnost upravit.  
@@ -51,12 +51,12 @@ HRESULT SetAssemblyProps(
  Nová hodnota možnosti.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

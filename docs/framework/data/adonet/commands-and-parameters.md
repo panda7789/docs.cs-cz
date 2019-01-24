@@ -2,12 +2,12 @@
 title: Příkazy a parametry
 ms.date: 03/30/2017
 ms.assetid: b623f810-d871-49a5-b0f5-078cc3c34db6
-ms.openlocfilehash: 8e476d68b60272d944eecfe585fd77d8a7a8f08c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0f90e45a9679e76a38621f6e3ae19de0e7591098
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197874"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612778"
 ---
 # <a name="commands-and-parameters"></a>Příkazy a parametry
 Po navázání připojení ke zdroji dat, můžete spouštět příkazy a vracení výsledků z zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí jednoho z konstruktorů příkaz pro zprostředkovatele dat .NET Framework, kterou pracujete. Konstruktory může trvat volitelné argumenty, jako je například příkazu SQL ke spuštění ve zdroji dat <xref:System.Data.Common.DbConnection> objektu, nebo <xref:System.Data.Common.DbTransaction> objektu. Tyto objekty lze také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metodu `DbConnection` objektu. Příkaz jazyka SQL prováděný pomocí příkazu lze konfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnost.  
@@ -30,8 +30,8 @@ Po navázání připojení ke zdroji dat, můžete spouštět příkazy a vracen
  [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
  Popisuje, jak zprostředkovatel dat slouží ke spuštění uložené procedury nebo data (příkazy DDL definition language).  
   
-## <a name="see-also"></a>Viz také  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

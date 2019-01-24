@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: d30fe7c5-8469-46e2-b804-e3eec7b24256
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8a3984d594d0739d4b8f2b7b165aab434e10ab80
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 80f67502c61df13b17cfb3b75564d710e5fad2f9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611006"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579938"
 ---
 # <a name="ltthreaduseallcpugroupsgt-element"></a>&lt;Thread_UseAllCpuGroups&gt; – Element
 Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech skupinách procesoru.  
   
  \<Konfigurace >  
 \<modul runtime >  
-< Thread_UseAllCpuGroups >  
+<Thread_UseAllCpuGroups>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,7 +67,7 @@ Určuje, zda modul runtime provádí distribuci spravovaných vláken ve všech 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [\<Gccpugroup – > – Element](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [\<GCCpuGroup> Element](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)

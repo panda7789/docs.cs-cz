@@ -12,12 +12,12 @@ helpviewer_keywords:
 - generics [Visual Basic], procedures
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-ms.openlocfilehash: 9a88a979a6b46f897e5f04f4481d4a23e245b165
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 0f2a0c646b5af91d5296bafb01f5261d7ee6b9fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969769"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574310"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
 A *obecný postup*, označované také jako *obecnou metodu*, postup definované s alespoň jedním parametrem typu. To umožňuje volajícímu kódu pro datové typy na své požadavky na přizpůsobení pokaždé, když volá proceduru.  
@@ -64,11 +64,11 @@ End Sub
   
  Předchozí volání `MsgBox` zobrazení "0", "1" a "-1" v uvedeném pořadí.  
   
-## <a name="see-also"></a>Viz také  
- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)  
- [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)  
- [Procedury](../../../../visual-basic/programming-guide/language-features/procedures/index.md)  
- [Parametry a argumenty procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)  
- [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)  
- [Seznam parametrů](../../../../visual-basic/language-reference/statements/parameter-list.md)
+## <a name="see-also"></a>Viz také:
+- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
+- [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Procedury](../../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Parametry a argumenty procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)
+- [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)
+- [Seznam parametrů](../../../../visual-basic/language-reference/statements/parameter-list.md)

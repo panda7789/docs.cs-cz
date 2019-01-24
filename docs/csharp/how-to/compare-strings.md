@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 0eb8669e52099e35553d9e7842371045bd88a643
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 479e6d9250c546943da3ddd837f2f03a5c4e7b1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415881"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563987"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Jak bude probíhat porovnávání řetězců v jazyce C\#
 
@@ -133,8 +133,8 @@ Můžete intern řetězec nebo načtěte odkaz na existující interned řetěze
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>  
-- <xref:System.StringComparer?displayProperty=nameWithType>  
-- [Řetězce](../programming-guide/strings/index.md)  
-- [Porovnávání řetězců](../../standard/base-types/comparing.md)  
+- <xref:System.Globalization.CultureInfo?displayProperty=nameWithType>
+- <xref:System.StringComparer?displayProperty=nameWithType>
+- [Řetězce](../programming-guide/strings/index.md)
+- [Porovnávání řetězců](../../standard/base-types/comparing.md)
 - [Globalizace a lokalizace aplikací](/visualstudio/ide/globalizing-and-localizing-applications)

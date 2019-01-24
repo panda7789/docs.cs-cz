@@ -2,12 +2,12 @@
 title: instalační příkaz DotNet nástroj
 description: Nástroj dotnet nainstalovat příkaz nainstaluje zadaný globální nástroji .NET Core na počítači.
 ms.date: 05/29/2018
-ms.openlocfilehash: 251e7b04be96ac2340727fa03dbaa2d548110fa9
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 1348eb1165c77376a885fdcbf094bd17b2aa3514
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53168712"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563701"
 ---
 # <a name="dotnet-tool-install"></a>Instalace nástrojů DotNet
 
@@ -33,7 +33,7 @@ Globální nástroje jsou nainstalovány v následujících adresářích ve vý
 
 | Operační systém          | Cesta                          |
 |-------------|-------------------------------|
-| Linux nebo macOS | `$HOME/.dotnet/tools`         |
+| Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
 ## <a name="arguments"></a>Arguments
@@ -96,4 +96,4 @@ Nainstaluje verzi 2.0.0 [dotnetsay](https://www.nuget.org/packages/dotnetsay/) g
 
 ## <a name="see-also"></a>Viz také:
 
-* [Globální nástroje .NET core](global-tools.md)
+- [.NET Core Global Tools](global-tools.md)

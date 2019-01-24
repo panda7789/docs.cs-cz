@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 660da82f1e6d6d3ea8ba084885331c895bc64542
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 406fdfcfc0b6db988b317245aaaa4f4a643b2079
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54561397"
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum – metoda
-Získá kontrolního součtu.  
+Získá kontrolní součet.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT GetCheckSum(
   
 #### <a name="parameters"></a>Parametry  
  `cData`  
- [v] Délka vyrovnávací paměti poskytované `data` parametr  
+ [in] Délka vyrovnávací paměti poskytované `data` parametr  
   
  `pcData`  
- [out] Velikost a délka kontrolního součtu v bajtech.  
+ [out] Velikost a délce kontrolní součet v bajtech.  
   
  `data`  
  [out] Vyrovnávací paměť, která přijímá kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. jinak kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě chybový kód.  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

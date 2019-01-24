@@ -1,18 +1,12 @@
 ---
-title: C# direktivy preprocesoru
+title: 'C# direktivy preprocesoru'
 ms.date: 07/20/2015
 f1_keywords:
-- cs.preprocessor
+  - cs.preprocessor
 helpviewer_keywords:
-- preprocessor directives [C#]
-- keywords [C#], preprocessor directives
+  - 'preprocessor directives [C#]'
+  - 'keywords [C#], preprocessor directives'
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
-ms.openlocfilehash: 1c0a97cabce347be0bc9367f3d090a1fc699db19
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036090"
 ---
 # <a name="c-preprocessor-directives"></a>C# direktivy preprocesoru
 Tato část obsahuje informace o následujících C# direktivy preprocesoru:
@@ -40,5 +34,5 @@ Direktivy preprocesoru musí být pouze instrukce na řádek.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

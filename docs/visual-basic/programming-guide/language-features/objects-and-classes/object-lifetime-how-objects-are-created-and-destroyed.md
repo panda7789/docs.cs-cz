@@ -1,5 +1,5 @@
 ---
-title: 'Doba života objektu: Vytváření a zničení objektů (Visual Basic)'
+title: 'Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Constructor
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 1782748749df171ec8d6e3bc8873b4a42c83c0e6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 319d606bcd19397932c05f1d5b808f2f5d8923ff
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864494"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610328"
 ---
-# <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Vytváření a zničení objektů (Visual Basic)
+# <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Jak objekty jsou vytvořeny a zničen (Visual Basic)
 Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inicializace úlohy často je nutné provádět na nové objekty před jejich použití. Běžné úlohy inicializace zahrnují otevírání souborů, připojení k databázím a čtení hodnoty z klíče registru. Visual Basic řídí Inicializace nové objekty pomocí procedury volané *konstruktory* (speciální metody, které umožňují kontrolu nad inicializace).  
   
  Objekt odešel oboru, se uvolní modulem common language runtime (CLR). Visual Basic určuje verzi systémové prostředky pomocí procedury volané *destruktory*. Konstruktory a destruktory společně, podporu vytváření knihoven tříd robustní a předvídatelné.  
@@ -74,7 +74,7 @@ Instance třídy objektu, je vytvořen pomocí `New` – klíčové slovo. Inici
   
  Pokud objekt je už nepotřebujete, kterou volá CLR <xref:System.Object.Finalize%2A> metodu pro tento objekt před uvolněním paměti. <xref:System.Object.Finalize%2A> Metoda je volána `destructor` protože provádí úlohy čištění, jako je například ukládání informací o stavu, zavírání souborů a připojení k databázím a dalších úlohách, které je třeba provést před uvolněním objektu.  
   
- ![Konstruktory Inheritance2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/media/vaconstructorsinheritance_2.gif "vaConstructorsInheritance_2")  
+ ![Constructors Inheritance2](../../../../visual-basic/programming-guide/language-features/objects-and-classes/media/vaconstructorsinheritance_2.gif "vaConstructorsInheritance_2")  
   
 ## <a name="idisposable-interface"></a>Rozhraní IDisposable  
  Instance třídy často řídit prostředky, které nejsou spravované přes modul CLR, jako jsou popisovače Windows a připojení k databázi. Tyto prostředky musí být odstraněny v `Finalize` metoda třídy, tak, aby se bude vydána při zničení objektu pomocí systému uvolňování paměti. Ale systému uvolňování paměti odstraní objekty pouze v případě, že modul CLR vyžaduje další volné paměti. To znamená, že prostředky nesmí uvolnit dokud dlouho po objekt dostane mimo rozsah.  
@@ -146,9 +146,9 @@ End Sub
   
  Další rozdíl mezi systémy uvolnění paměti zahrnuje použití `Nothing`. Výhod počítání referencí v jazyce Visual Basic verze 6.0 a starší, někdy programátoři přiřazené `Nothing` objektu proměnné k uvolnění odkazy na tyto proměnné uchovávat. Pokud je proměnná uložena poslední odkaz na objekt, objektu prostředky byly vydány okamžitě. V pozdějších verzích jazyka Visual Basic zatímco můžou nastat případy, ve kterých je tento postup hodnotný, provádění se nikdy způsobí, že odkazovaného objektu k uvolnění její prostředky okamžitě. K uvolnění prostředků okamžitě, použijte objektu <xref:System.IDisposable.Dispose%2A> metodu, pokud je k dispozici. Jenom byste měli nastavit proměnnou na `Nothing` je, když je jeho životnost dlouho relativní k době systému uvolňování paměti používá ke zjišťování osamocených objektů.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IDisposable.Dispose%2A>  
- [Inicializace a ukončování komponent](https://msdn.microsoft.com/library/58444076-a9d2-4c91-b3f6-0e180dc0695d)  
- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
- [Vymazání nespravovaných prostředků](../../../../standard/garbage-collection/unmanaged.md)  
- [Nothing](../../../../visual-basic/language-reference/nothing.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.IDisposable.Dispose%2A>
+- [Inicializace a ukončování komponent](https://msdn.microsoft.com/library/58444076-a9d2-4c91-b3f6-0e180dc0695d)
+- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)
+- [Vymazání nespravovaných prostředků](../../../../standard/garbage-collection/unmanaged.md)
+- [Nothing](../../../../visual-basic/language-reference/nothing.md)

@@ -2,12 +2,12 @@
 title: Stažení ukázkových databází (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: eb42a7af-d410-4b7f-b4a8-13c72ce6fd09
-ms.openlocfilehash: a98dd4e3d2ff113d3a5374d97fe30cec9524c095
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: f0fc3e8d447f82c89b3b558d95b45120db0a876d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53125558"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573331"
 ---
 # <a name="downloading-sample-databases-linq-to-dataset"></a>Stažení ukázkových databází (LINQ to DataSet)
 Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentaci použít ukázkovou databází AdventureWorks. Tento produkt zdarma si můžete stáhnout z webu společnosti Microsoft ke stažení. Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] dokumentace ke službě použít jako úložiště dat serveru SQL Server. SQL Server Express Edition, která je k dispozici bez poplatků, může také sloužit jako úložiště dat místo SQL serveru.  
@@ -46,7 +46,7 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
   
 7.  Z **výběr součástí**, rozbalte **dokumentaci, ukázky a ukázkových databází** uzlu.  
   
-8.  Vyberte **ukázkový kód a aplikace**. Rozbalte **ukázkových databází**, vybrat ukázkovou databázi chcete odebrat, vyberte **celé funkce bude k dispozici**. Klikněte na tlačítko **Další**.  
+8.  Vyberte **ukázkový kód a aplikace**. Rozbalte **ukázkových databází**, vybrat ukázkovou databázi chcete odebrat, vyberte **celé funkce bude k dispozici**. Klikněte na **Další**.  
   
 9. Klikněte na tlačítko **nainstalovat** a dokončení Průvodce instalací.  
   
@@ -73,5 +73,5 @@ Ukázky a návody v [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md
   
 3.  Postupujte podle pokynů k instalaci na webové stránce.  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)

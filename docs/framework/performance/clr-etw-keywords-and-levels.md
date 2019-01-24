@@ -9,81 +9,81 @@ helpviewer_keywords:
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8332eba909c3ebe475e3f364f81a676733e4e3d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d45a8bdebb296a33862f018308a7ef876e0cd64c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397059"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572354"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Klíčová slova a úrovně ETW CLR
-<a name="top"></a> Trasování událostí pro Windows (ETW) události lze filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) povolit filtrování událostí podle kategorie; se používají v kombinacích runtime a rundown zprostředkovatele. [Úrovně událostí](#levels) jsou identifikovány příznaky.  
+<a name="top"></a> Trasování událostí pro Windows (ETW) se dá filtrovat podle kategorie a úroveň. Událost [CLR ETW – klíčová slova](#keywords) možnost filtrovat události podle kategorie; se používají v kombinacích pro zprostředkovatele běhového prostředí a doběhu. [Událostí úrovně](#levels) jsou označeny příznaky.  
   
 <a name="keywords"></a>   
 ## <a name="clr-etw-keywords"></a>CLR ETW – klíčová slova  
- Klíčová slova jsou příznaky, které mohou být kombinovány ke generování hodnot. V praxi použijte při volání nástroje příkazového řádku hexadecimální hodnoty klíčových slov namísto názvů – klíčové slovo.  
+ Klíčová slova jsou příznaky, které mohou být kombinovány pro generování hodnot. V praxi šestnáctkové hodnoty klíčových slov použít místo názvů – klíčové slovo při volání nástroje příkazového řádku.  
   
  Klíčová slova jsou popsány v následujících tabulkách:  
   
--   [CLR ETW – klíčová slova modulu runtime](#runtime)  
+-   [Modul runtime CLR ETW – klíčová slova](#runtime)  
   
--   [CLR ETW – sekvence daneho klíčová slova](#rundown)  
+-   [Doběhu klíčová slova CLR ETW](#rundown)  
   
--   [Kombinace – klíčové slovo pro překlad symbol pro zprostředkovatele modulu runtime](#runtime_combo)  
+-   [Kombinace – klíčové slovo pro rozlišení symbolů pro zprostředkovatel běhového prostředí](#runtime_combo)  
   
--   [Kombinace – klíčové slovo pro překlad symbol pro sekvence daneho zprostředkovatele](#rundown_combo)  
+-   [Kombinace – klíčové slovo pro rozlišení symbolů pro zprostředkovatele doběhu](#rundown_combo)  
   
 <a name="runtime"></a>   
-### <a name="clr-etw-runtime-keywords"></a>CLR ETW – klíčová slova modulu Runtime  
- Následující tabulka uvádí runtime CLR ETW – klíčová slova, jejich hodnot a jejich použití.  
+### <a name="clr-etw-runtime-keywords"></a>Modul Runtime CLR ETW – klíčová slova  
+ V následující tabulce jsou uvedeny klíčová slova CLR ETW runtime, jejich hodnoty a jejich použití.  
   
 |Název modulu runtime – klíčové slovo|Hodnota|Účel|  
 |--------------------------|-----------|-------------|  
-|`GCKeyword`|0x00000001|Povoluje shromažďování [události uvolňování paměti](../../../docs/framework/performance/garbage-collection-etw-events.md).|  
+|`GCKeyword`|0x00000001|Povoluje shromažďování [události kolekce paměti](../../../docs/framework/performance/garbage-collection-etw-events.md).|  
 |`LoaderKeyword`|0x00000008|Povoluje shromažďování [události zavaděče](../../../docs/framework/performance/loader-etw-events.md).|  
-|`JITKeyword`|0x00000010|Povoluje shromažďování [události v běhu (JIT)](../../../docs/framework/performance/jit-tracing-etw-events.md).|  
-|`NGenKeyword`|0x00000020|Povoluje shromažďování událostí pro metody nativních bitových kopií (metody zpracovávaných generátor, Ngen.exe); použít s `StartEnumerationKeyword` a `EndEnumerationKeyword`. This – klíčové slovo má vysoké režijní náklady. Vygeneruje pro každou metodu uvnitř každých načíst modul NGen události. Kdykoli je to možné, nepoužívejte toto klíčové slovo, doporučujeme načíst informace o metodách z modulů NGen pomocí generované nástroje pro profilaci databáze programu (PDB). Viz také `OverrideAndSuppressNGenEventsKeyword` dál v této tabulce.|  
-|`StartEnumerationKeyword`|0x00000040|Umožňuje výčet všech metod v modulu runtime; používá ve spojení s `NGenKeyword`.|  
-|`EndEnumerationKeyword`|0x00000080|Umožňuje výčet všech metod zničen v modulu runtime; používá ve spojení s `JITKeyword` a `NGenKeyword`.|  
+|`JITKeyword`|0x00000010|Povoluje shromažďování [just-in-time (JIT) události](../../../docs/framework/performance/jit-tracing-etw-events.md).|  
+|`NGenKeyword`|0x00000020|Umožňuje shromažďování událostí pro nativní bitové kopie metody (metody zpracovány Native Image Generator Ngen.exe); použít s `StartEnumerationKeyword` a `EndEnumerationKeyword`. Toto klíčové slovo má vysoké režijní náklady. Generuje události pro každou metodu uvnitř všechny načtené moduly NGen. Pokaždé, když je to možné, namísto použití toto klíčové slovo, doporučujeme použít databáze programu (PDB) generovaných nástroje pro profilaci k načtení informací o metodách z modulů technologie NGen. Viz také `OverrideAndSuppressNGenEventsKeyword` dále v této tabulce.|  
+|`StartEnumerationKeyword`|0x00000040|Umožňuje výčet všech metod v modulu runtime; použít ve spojení s `NGenKeyword`.|  
+|`EndEnumerationKeyword`|0x00000080|Umožňuje výčet všech metod, které jsou zničeny v modulu runtime; použít ve spojení s `JITKeyword` a `NGenKeyword`.|  
 |`SecurityKeyword`|0x00000400|Povoluje shromažďování [události zabezpečení](../../../docs/framework/performance/security-etw-events.md).|  
-|`AppDomainResourceManagementKeyword`|0x00000800|Umožňuje kolekci prostředků sledování událostí na úrovni domény aplikace.|  
+|`AppDomainResourceManagementKeyword`|0x00000800|Umožňuje kolekci prostředků, monitorování událostí na úrovni domény aplikace.|  
 |`JITTracingKeyword`|0x00001000|Povoluje shromažďování [JIT – události trasování](../../../docs/framework/performance/jit-tracing-etw-events.md).|  
 |`InteropKeyword`|0x00002000|Povoluje shromažďování [události interoperability](../../../docs/framework/performance/interop-etw-events.md).|  
 |`ContentionKeyword`|0x00004000|Povoluje shromažďování [kolizní události](../../../docs/framework/performance/contention-etw-events.md).|  
-|`ExceptionKeyword`|0x00008000|Povoluje shromažďování [událostí výjimky](../../../docs/framework/performance/exception-thrown-v1-etw-event.md).|  
+|`ExceptionKeyword`|0x00008000|Povoluje shromažďování [události výjimky](../../../docs/framework/performance/exception-thrown-v1-etw-event.md).|  
 |`ThreadingKeyword`|0x00010000|Povoluje shromažďování [události fondu vláken](../../../docs/framework/performance/thread-pool-etw-events.md).|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysokou `NGenKeyword` – klíčové slovo a brání generování událostí pro metody, které jsou uvnitř NGen moduly. Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci by měl používat `OverrideAndSuppressNGenEventsKeyword` a `NGenKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje efektivnější PDB NGen slouží k získání informací o metodách v modulech NGen profilování nástroje. Modul CLR v rozhraní .NET Framework 4 a dřívějších verzích nepodporuje vytvoření NGen soubory PDB. V těchto starších verzí nebudou rozpoznat modulu CLR `OverrideAndSuppressNGenEventsKeyword` a zpracuje `NGenKeyword` generovat události pro metody v modulech NGen.|  
+|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysoce `NGenKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsKeyword` a `NGenKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsKeyword` a zpracuje `NGenKeyword` generovat události pro metody v modulech NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Povoluje shromažďování `ModuleLoad` a `ModuleRange` události.|  
-|`StackKeyword`|0x40000000|Povoluje shromažďování CLR [události trasování zásobníku](../../../docs/framework/performance/stack-etw-event.md).|  
+|`StackKeyword`|0x40000000|Povolí shromažďování CLR [události trasování zásobníku](../../../docs/framework/performance/stack-etw-event.md).|  
   
  [Zpět na začátek](#top)  
   
 <a name="rundown"></a>   
-### <a name="clr-etw-rundown-keywords"></a>CLR ETW – sekvence daneho klíčová slova  
- Následující tabulka uvádí CLR ETW sekvence daneho klíčová slova, jejich hodnot a jejich použití.  
+### <a name="clr-etw-rundown-keywords"></a>Doběhu klíčová slova CLR ETW  
+ V následující tabulce jsou uvedeny doběhu klíčová slova CLR ETW, jejich hodnoty a jejich použití.  
   
-|Název sekvence daneho – klíčové slovo|Hodnota|Účel|  
+|Název doběhu – klíčové slovo|Hodnota|Účel|  
 |--------------------------|-----------|-------------|  
-|`LoaderRundownKeyword`|0x00000008|Povoluje shromažďování události zavaděče při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  
-|`JitRundownKeyword`|0x00000010|Povoluje shromažďování metoda `DCStart` a `DCEnd` události pro metody kompilována při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  
-|`NGenRundownKeyword`|0x00000020|Povoluje shromažďování metoda `DCStart` a `DCEnd` události pro NGen nativních bitových kopií metody při použití s `StartRundownKeyword` a `EndRundownKeyword`. This – klíčové slovo má vysoké režijní náklady. Vygeneruje pro každou metodu uvnitř každých načíst modul NGen události. Kdykoli je to možné, nepoužívejte toto klíčové slovo, doporučujeme načíst informace o metodách z modulů NGen pomocí generované nástroje pro profilaci databáze programu (PDB). Viz také `OverrideAndSuppressNGenEventsRundownKeyword` dál v této tabulce.|  
-|`StartRundownKeyword`|0x00000040|Umožňuje výčet stavu systému při spuštění rundown.|  
-|`EndRundownKeyword`|0x00000100|Umožňuje výčet stavu systému během rundown end.|  
-|`AppDomainResourceManagementRundownKeyword`|0x00000800|Povoluje shromažďování událostí pro sledování prostředků v <xref:System.AppDomain> úrovně při použití s `StartRundownKeyword` nebo `EndRundownKeyword`.|  
+|`LoaderRundownKeyword`|0x00000008|Umožňuje shromažďování událostí zavaděče při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  
+|`JitRundownKeyword`|0x00000010|Povolí shromažďování metoda `DCStart` a `DCEnd` události pro metody zkompilované JIT při použití s `StartRundownKeyword` a `EndRundownKeyword`.|  
+|`NGenRundownKeyword`|0x00000020|Povolí shromažďování metoda `DCStart` a `DCEnd` události pro metody nativních bitových kopií technologie NGen při použití s `StartRundownKeyword` a `EndRundownKeyword`. Toto klíčové slovo má vysoké režijní náklady. Generuje události pro každou metodu uvnitř všechny načtené moduly NGen. Pokaždé, když je to možné, namísto použití toto klíčové slovo, doporučujeme použít databáze programu (PDB) generovaných nástroje pro profilaci k načtení informací o metodách z modulů technologie NGen. Viz také `OverrideAndSuppressNGenEventsRundownKeyword` dále v této tabulce.|  
+|`StartRundownKeyword`|0x00000040|Umožňuje výčet stavu systému během začátek doběhu.|  
+|`EndRundownKeyword`|0x00000100|Umožňuje výčet stavu systému během konec doběhu.|  
+|`AppDomainResourceManagementRundownKeyword`|0x00000800|Umožňuje shromažďování událostí pro sledování prostředků na <xref:System.AppDomain> úroveň při použití s `StartRundownKeyword` nebo `EndRundownKeyword`.|  
 |`ThreadingKeyword`|0x00010000|Povoluje shromažďování události fondu vláken.|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysokou `NGenRundownKeyword` – klíčové slovo a brání generování událostí pro metody, které jsou uvnitř NGen moduly. Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci by měl používat `OverrideAndSuppressNGenEventsRundownKeyword` a `NGenRundownKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje efektivnější PDB NGen slouží k získání informací o metodách v modulech NGen profilování nástroje. Modul CLR v rozhraní .NET Framework 4 a dřívějších verzích nepodporuje vytvoření NGen soubory PDB. V těchto starších verzí nebudou rozpoznat modulu CLR `OverrideAndSuppressNGenEventsRundownKeyword` a zpracuje `NGenRundownKeyword` generovat události pro metody v modulech NGen.|  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(K dispozici v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a novější.) Potlačí nároky na vysoce `NGenRundownKeyword` – klíčové slovo a brání generování události pro metody, které jsou uvnitř modulů technologie NGen. Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], nástroje pro profilaci používejte `OverrideAndSuppressNGenEventsRundownKeyword` a `NGenRundownKeyword` společně má potlačit generování událostí pro metody v modulech NGen. To umožňuje profilování nástroje můžete získat informace o metodách v modulech NGen efektivnější souborů PDB pro NGen. V rozhraní .NET Framework 4 a dřívějších verzích CLR nepodporuje vytváření souborů PDB pro NGen. V těchto starších verzí modulu CLR nerozpozná `OverrideAndSuppressNGenEventsRundownKeyword` a zpracuje `NGenRundownKeyword` generovat události pro metody v modulech NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Povoluje shromažďování `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`, a `ModuleRangeDCEnd` události.|  
   
  [Zpět na začátek](#top)  
   
 <a name="runtime_combo"></a>   
-### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>Kombinace – klíčové slovo pro překlad Symbol pro zprostředkovatele modulu Runtime  
+### <a name="keyword-combinations-for-symbol-resolution-for-the-runtime-provider"></a>Kombinace – klíčové slovo pro rozlišení symbolů pro zprostředkovatel běhového prostředí  
   
-|Klíčová slova a značky|Aplikační domény, sestavení, zatížení a vyřadit události modulu|Zavést a vyřadit události metod (s výjimkou dynamické události)|Události zatížení/odstranění dynamických metod|  
+|Klíčová slova a příznaky|Aplikační domény, sestavení, události načtení/uvolnění modulu|Metoda načtení/uvolnění události (s výjimkou dynamického události)|Dynamická metoda load/odstranění události|  
 |------------------------|--------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------|  
-|`LoaderKeyword`|Zavedení a uvolnění události.|Žádné|Žádné|  
-|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` nepřidává NIC)|Žádné|Načíst události.|Zavedení a uvolnění události.|  
-|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Žádné|Zavedení a uvolnění události.|Zavedení a uvolnění události.|  
+|`LoaderKeyword`|Načtení a uvolnění události.|Žádné|Žádné|  
+|`JITKeyword`<br /><br /> (+ `StartEnumerationKeyword` nepřidává NIC)|Žádné|Načíst události.|Načtení a uvolnění události.|  
+|`JITKeyword` +<br /><br /> `EndEnumerationKeyword`|Žádné|Načtení a uvolnění události.|Načtení a uvolnění události.|  
 |`NGenKeyword`|Žádné|Žádné|Nelze použít.|  
 |`NGenKeyword` +<br /><br /> `StartEnumerationKeyword`|Žádné|Načíst události.|Nelze použít.|  
 |`NGenKeyword` +<br /><br /> `EndEnumerationKeyword`|Žádné|Uvolnění události.|Nelze použít.|  
@@ -91,9 +91,9 @@ ms.locfileid: "33397059"
  [Zpět na začátek](#top)  
   
 <a name="rundown_combo"></a>   
-### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>Kombinace – klíčové slovo pro překlad Symbol pro sekvence daneho zprostředkovatele  
+### <a name="keyword-combinations-for-symbol-resolution-for-the-rundown-provider"></a>Kombinace – klíčové slovo pro rozlišení symbolů pro zprostředkovatele doběhu  
   
-|Klíčová slova a značky|Aplikační domény, sestavení, DCStart/DCEnd události modulu|Metoda DCStart/DCEnd události (včetně dynamických metoda události)|  
+|Klíčová slova a příznaky|Aplikační domény, sestavení, události modulu DCStart/DCEnd|Metoda DCStart/DCEnd události (včetně dynamickou metodu události)|  
 |------------------------|----------------------------------------------------------------|----------------------------------------------------------------------|  
 |`LoaderRundownKeyword` +<br /><br /> `StartRundownKeyword`|`DCStart` události.|Žádné|  
 |`LoaderRundownKeyword` +<br /><br /> `EndRundownKeyword`|`DCEnd` události.|Žádné|  
@@ -105,24 +105,24 @@ ms.locfileid: "33397059"
  [Zpět na začátek](#top)  
   
 <a name="levels"></a>   
-## <a name="etw-event-levels"></a>Události ETW – úrovně  
- Události trasování událostí je také možné filtrovat podle úrovně. Pokud úroveň je nastavená na hodnotu 0x5, jsou vyvolány události všech úrovních, včetně 0x5 a pod (které jsou události, které patří do kategorií, které zajišťuje klíčová slova). Pokud úroveň je nastavená na 0x2, jenom události, které patří do úrovně 0x2 a níže jsou vyvolány.  
+## <a name="etw-event-levels"></a>Úrovně událostí trasování událostí pro Windows  
+ Události trasování událostí pro Windows je také možné filtrovat podle úrovně. Pokud úroveň je nastavená na 0x5, jsou vyvolány události všech úrovní, včetně 0x5 a pod (které jsou události, které patří do kategorií pomocí klíčových slov povolena). Pokud úroveň je nastavená na 0x2, jsou vyvolány pouze události, které patří do úrovně 0x2 a níže.  
   
- Úrovní záznamu do mají následující významy:  
+ Úrovně mají následující význam:  
   
  0x5 - verbose  
   
- 0x4 - informační  
+ 0x4 – informační  
   
  0x3 – upozornění  
   
  0x2 – chyba  
   
- 0x1 – kritická  
+ 0x1 – kritické  
   
  0x0 - LogAlways  
   
-## <a name="see-also"></a>Viz také  
- [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)  
- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+## <a name="see-also"></a>Viz také:
+- [Poskytovatelé Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-providers.md)
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

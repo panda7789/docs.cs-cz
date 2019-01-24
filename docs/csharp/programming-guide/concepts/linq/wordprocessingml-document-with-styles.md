@@ -2,12 +2,12 @@
 title: Dokument WordprocessingML se Styles3
 ms.date: 07/20/2015
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
-ms.openlocfilehash: 8b21c9e8be957ea2b43405a96e343cea78197f68
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 1dc7f30bfdef66c31b5c262fd6d1a2c3f4365634
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603921"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>Dokument WordprocessingML se styly
 Složitější dokumentů WordprocessingML mít odstavců, které jsou naformátované se styly.  
@@ -17,7 +17,7 @@ Složitější dokumentů WordprocessingML mít odstavců, které jsou naformát
  Při přístupu k balíčků, je důležité, můžete to udělat prostřednictvím vztahy mezi částmi, nikoli pomocí libovolného cesty. Tento problém je nad rámec manipulace s obsahu v dokumentu WordprocessingML kurzu, ale příklad programy, které jsou zahrnuty v tomto kurzu ukazují správný přístup.  
   
 ## <a name="a-document-that-uses-styles"></a>Dokument, který používá styly  
- Příklad WordML zobrazen [tvar WordprocessingML dokumenty (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) téma je velmi jednoduchý. Následující dokument je složitější: má odstavců, které jsou naformátované se styly. Nejjednodušší způsob, jak zobrazit, XML, které tvoří dokumentu Office Open XML je spustit [příklad této výstupy Office Open XML části dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md).  
+ Příklad WordML zobrazen [tvar WordprocessingML dokumenty (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) téma je velmi jednoduchý. Následující dokument je složitější: Má odstavců, které jsou naformátované se styly. Nejjednodušší způsob, jak zobrazit, XML, které tvoří dokumentu Office Open XML je spustit [příklad této výstupy Office Open XML části dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md).  
   
  V následujícím dokumentu, je prvním odstavci styl `Heading1`. Existuje několik bodů, které mají výchozí styl. Je také několik bodů, které mají styl `Code`. Z důvodu této relativní složitost jde zajímavější dokumentu má být analyzován pomocí LINQ to XML.  
   
@@ -137,6 +137,6 @@ Složitější dokumentů WordprocessingML mít odstavců, které jsou naformát
 </w:document>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

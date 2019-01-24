@@ -2,12 +2,12 @@
 title: XmlDictionaryReaderQuotas
 ms.date: 03/30/2017
 ms.assetid: 9b4ca8b4-0a89-4758-97ab-528a8ce18f07
-ms.openlocfilehash: 9bc519509b00383be333ac605688950d2709117c
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: f24865fb0affa7b4516a14fc05b905995826e82e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597668"
 ---
 # <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 XmlDictionaryReaderQuotas  
@@ -72,6 +72,6 @@ class XmlDictionaryReaderQuotas
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.XmlDictionaryReaderQuotas>  
- <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.XmlDictionaryReaderQuotas>
+- <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>

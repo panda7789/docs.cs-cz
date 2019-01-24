@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: e69d1dba59858ff0988806dd3ed0dd22e5213313
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 4ba5c28f6d4842846c55f47b3b40628ec57c9702
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236593"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607014"
 ---
 # <a name="inheritance-c-programming-guide"></a>Dědičnost (Průvodce programováním v C#)
 
@@ -54,9 +54,9 @@ Dědičnost tříd
 ## <a name="derived-class-hiding-of-base-class-members"></a>Skrývání odvozená třída členy základní třídy  
  Odvozené třídy lze skrýt členy základní třídy deklarací členů s týmž názvem a podpisem. [Nové](../../../csharp/language-reference/keywords/new.md) modifikátor lze explicitně určit, že člen není určena pro se přepíše základního člena. Použití [nové](../../../csharp/language-reference/keywords/new.md) není vyžadováno, ale upozornění kompilátoru se vygeneruje, pokud [nové](../../../csharp/language-reference/keywords/new.md) se nepoužívá. Další informace najdete v tématu [Správa verzí pomocí nových klíčových slov Override a](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) a [vědět, když pro použití přepsání a nových klíčových slov](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
-- [class](../../../csharp/language-reference/keywords/class.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+- [class](../../../csharp/language-reference/keywords/class.md)
 - [struct](../../../csharp/language-reference/keywords/struct.md)

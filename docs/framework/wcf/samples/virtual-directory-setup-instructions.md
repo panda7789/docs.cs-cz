@@ -2,151 +2,151 @@
 title: Pokyny pro instalaci virtuálního adresáře
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: 3ff578b69590071ef2135e777b3105e7c226563e
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 0f32fd6d65db529ba1015dedd98f99efd7f408c4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806910"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588103"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Pokyny pro instalaci virtuálního adresáře
-Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společný virtuální adresář s názvem servicemodelsamples, který je namapovaný na %SystemDrive%\inetpub\wwwroot\servicemodelsamples složky.  
+Ukázky Windows Communication Foundation (WCF) jsou určené ke sdílení běžné virtuální adresář s názvem servicemodelsamples, která je namapována na složku %SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
   
 > [!NOTE]
->  % SystemDrive % je obvykle C: nebo D:, v závislosti na umístění jednotky, kde je nainstalován Internetové informační služby (IIS).  
+>  Jednotka % SystemDrive % je obvykle C: a D:, v závislosti na umístění disku instalaci Internetové informační služby (IIS).  
   
- Můžete spouštět soubory Setupvroot.bat a Cleanupvroot.bat z [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) se vytvořit virtuální adresář. Pokud ale chcete ručně vytvořit virtuální adresář, použijte následující postupy.  
+ Můžete spouštět Setupvroot.bat a Cleanupvroot.bat soubory z [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) vytvořit virtuální adresář. Pokud chcete ručně vytvořit virtuální adresář, použijte následující postupy.  
   
 ## <a name="procedures"></a>Procedury  
   
 #### <a name="to-create-a-virtual-directory-in-iis-70-or-75"></a>Chcete-li vytvořit virtuální adresář ve službě IIS 7.0 nebo 7.5  
   
-1.  Z **spustit** nabídky, klikněte na tlačítko **spustit**, pak zadejte **inetmgr** otevřete modul snap-in konzoly MMC Internetové informační služby (IIS).  
+1.  Z **Start** nabídky, klikněte na tlačítko **spustit**, zadejte **inetmgr** otevřete modul snap-in konzoly MMC Internetové informační služby (IIS).  
   
-2.  V levém podokně rozbalte uzel s názvem počítače a pak rozbalte **lokality** uzlu.  
+2.  V levém podokně rozbalte uzel s názvem počítače a potom rozbalte **lokality** uzlu.  
   
-3.  Klikněte pravým tlačítkem na **Default Web Site**a potom vyberte **přidat aplikaci** otevřete **okna Přidat aplikaci**.  
+3.  Klikněte pravým tlačítkem na **výchozí webový server**a pak vyberte **přidat aplikaci** otevřít **okna Přidat aplikaci**.  
   
-4.  V okně zadejte `servicemodelsamples` jako alias pro virtuální adresář, který vytvoříte.  
+4.  V okně zadejte `servicemodelsamples` jako alias pro virtuální adresář, který vytváříte.  
   
-5.  Vytvořte na následující adresář: %SystemDrive%\inetpub\wwwroot\servicemodelsamples  
+5.  Vytvořit následující složku: %SystemDrive%\inetpub\wwwroot\servicemodelsamples  
   
-6.  Nastavte na % SystemDrive%\inetpub\wwwroot\servicemodelsamples fyzickou cestu.  Většina Ukázky WCF zkopírujte služby spustitelné soubory do tohoto umístění při sestavení.  
+6.  Nastavte na % SystemDrive%\inetpub\wwwroot\servicemodelsamples fyzickou cestu.  Většina Ukázky WCF zkopírujte do tohoto umístění při vytváření služby spustitelné soubory.  
   
-7.  Click **OK**. Webová aplikace je nyní vytvořen pro ukázky WCF.  
-  
-    > [!NOTE]
-    >  Tato úloha je nutné provést jenom jednou, protože všechny ukázky WCF používají stejné servicemodelsamples webové aplikace.  
+7.  Klikněte na **OK**. Webová aplikace je vytvořený pro ukázky WCF.  
   
     > [!NOTE]
-    >  Pro účely této dokumentace termín `virtual directory` je totožná s `Web application`.  
+    >  Tato úloha musí pouze jednou provést, protože všechny ukázky WCF používají stejné servicemodelsamples webové aplikace.  
   
-     Kromě vytvoření virtuálního adresáře, musíte taky nastavit jeho vlastnosti, chcete-li povolit spuštění služeb WCF. Níže naleznete podrobnosti.  
+    > [!NOTE]
+    >  Pro účely této dokumentace termín `virtual directory` je synonymní s `Web application`.  
   
-#### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>Chcete-li vytvořit virtuální adresář v IIS 5.1 nebo 6.0  
+     Kromě vytvoření virtuálního adresáře, musíte také nastavit jeho vlastnosti umožňující spuštění služeb WCF. Podrobnosti najdete níže.  
+  
+#### <a name="to-create-a-virtual-directory-in-iis-51-or-60"></a>Chcete-li vytvořit virtuální adresář v IIS 5.1 a 6.0  
   
 1.  Otevřete okno příkazového řádku a zadejte `start inetmgr` otevřete modul snap-in konzoly MMC Internetové informační služby (IIS).  
   
-2.  V levém podokně rozbalte uzel s názvem počítače a pak rozbalte **weby** uzlu.  
+2.  V levém podokně rozbalte uzel s názvem počítače a potom rozbalte **weby** uzlu.  
   
-3.  Klikněte pravým tlačítkem na **Default Web Site** a vyberte **nový, virtuální adresář** otevřete Průvodce vytvořením virtuálního adresáře.  
+3.  Klikněte pravým tlačítkem na **výchozí webový server** a vyberte **nový, virtuální adresář** otevřete Průvodce vytvořením virtuálního adresáře.  
   
-4.  V průvodci zadejte `servicemodelsamples` jako alias pro virtuální adresář, který vytvoříte.  
+4.  V průvodci zadejte `servicemodelsamples` jako alias pro virtuální adresář, který vytváříte.  
   
-5.  Nastavte cestu k % SystemDrive%\inetpub\wwwroot\servicemodelsamples. Většina Ukázky WCF zkopírujte služby spustitelné soubory do tohoto umístění při sestavení.  
+5.  Nastavení cesty k % SystemDrive%\inetpub\wwwroot\servicemodelsamples. Většina Ukázky WCF zkopírujte do tohoto umístění při vytváření služby spustitelné soubory.  
   
-6.  Klikněte na tlačítko **Další**.  
+6.  Klikněte na **Další**.  
   
-7.  Ve výchozím nastavení jsou vybrány následující zaškrtávací políčka:  
+7.  Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Pro čtení**  
+    -   **Read**  
   
     -   **Spouštění skriptů (například ASP)**  
   
-8.  Klikněte na tlačítko **Další**a potom klikněte na **Dokončit** dokončete průvodce.  
+8.  Klikněte na tlačítko **Další**a potom klikněte na tlačítko **Dokončit** kroky průvodce dokončete.  
   
     > [!NOTE]
-    >  Tato úloha musí provést pouze jednou, protože všechny ukázky WCF používají stejné servicemodelsamples virtuální adresář.  
+    >  Tato úloha musí pouze jednou provést, protože všechny ukázky WCF používají servicemodelsamples virtuální adresář.  
   
-#### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>Chcete-li nastavit další virtuální adresář vlastnosti ve službě IIS 7.0 nebo 7.5  
+#### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>Chcete-li nastavit vlastnosti další virtuální adresáře ve službě IIS 7.0 nebo 7.5  
   
-1.  Klikněte na uzel servicemodelsamples. Ve spodní části okna jsou uvedeny dvě zobrazení. Vyberte **zobrazení funkcí** Pokud již není vybrána.  
+1.  Klikněte na uzel servicemodelsamples. V dolní části okna jsou uvedeny dvě zobrazení. Vyberte **zobrazení funkcí** Pokud ještě není vybraná.  
   
 2.  Dvakrát klikněte na položku **procházení adresářů**.  
   
-3.  V podokně Akce vyberte **povolit** možnost. To umožňuje přístup k adresáři adresáře v aplikaci Internet Explorer, která pomáhá při ladění služby.  
+3.  V podokně Akce, vyberte **povolit** možnost. Umožňuje získat přístup k adresáři adresáře pomocí aplikace Internet Explorer, který pomáhá při ladění služby.  
   
- Nakonec musíte nastavit vlastnosti zabezpečení servicemodelsamples složky, aby mělo přístup ostatní uživatelé. Níže naleznete podrobnosti.  
+ Nakonec musíte nastavit vlastnosti zabezpečení servicemodelsamples složky, aby mohla být přístup i jiní. Podrobnosti najdete níže.  
   
-#### <a name="to-set-additional-virtual-directory-properties-in-iis-51-or-60"></a>Chcete-li nastavit vlastnosti další virtuální adresář v IIS 5.1 a 6.0  
+#### <a name="to-set-additional-virtual-directory-properties-in-iis-51-or-60"></a>Chcete-li nastavit vlastnosti další virtuální adresář IIS 5.1 a 6.0  
   
-1.  Klikněte pravým tlačítkem na uzel servicemodelsamples a pak klikněte na tlačítko **vlastnosti**.  
+1.  Klikněte pravým tlačítkem na uzel servicemodelsamples a potom klikněte na tlačítko **vlastnosti**.  
   
-2.  Ve výchozím nastavení jsou vybrány následující zaškrtávací políčka:  
+2.  Ve výchozím nastavení jsou vybrány následující políčka:  
   
-    -   **Pro čtení**  
+    -   **Read**  
   
     -   **Navštíví protokolu**  
   
-    -   **Index tento prostředek**  
+    -   **Xovat tento prostředek**  
   
-3.  Vyberte **procházení adresářů** zaškrtávací políčko. To umožňuje přístup k adresáři adresáře v aplikaci Internet Explorer, která pomáhá při ladění služby.  
+3.  Vyberte **procházení adresářů** zaškrtávací políčko. Umožňuje získat přístup k adresáři adresáře pomocí aplikace Internet Explorer, který pomáhá při ladění služby.  
   
 #### <a name="to-set-security-properties-of-the-folder-in-iis-70-or-75"></a>Chcete-li nastavit vlastnosti zabezpečení složky ve službě IIS 7.0 nebo 7.5  
   
 1.  Přejděte na % SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
   
-2.  Klikněte pravým tlačítkem na složku servicemodelsamples a klikněte na tlačítko **sdílené složky** nebo **sdílenou složku s**.  
+2.  Klikněte pravým tlačítkem na složku servicemodelsamples a klikněte na tlačítko **sdílenou složku** nebo **sdílenou složku s**.  
   
-3.  Klikněte na šipku nalevo od **přidat** tlačítko.  
+3.  Klikněte na šipku dolů nalevo od **přidat** tlačítko.  
   
-4.  Vyberte **najít** položku. **Vybrat uživatele nebo skupiny** otevře se okno.  
+4.  Vyberte **najít** položka. **Vybrat uživatele nebo skupiny** otevře se okno.  
   
-5.  Klikněte na tlačítko **rozšířené**.  
+5.  Klikněte na tlačítko **Advanced**.  
   
-6.  Klikněte na tlačítko **umístění**. **Umístění** je nyní otevřené okno.  
+6.  Klikněte na tlačítko **umístění**. **Umístění** okna je teď otevřené.  
   
-7.  Vyberte položku pro počítač používá. Je důležité vybrat místní počítač a ne položka pro všechny domény nebo sítě, které jsou uvedeny. Po výběru počítače, klikněte na tlačítko **OK**.  
+7.  Vyberte položku pro počítač používá. Je důležité vybrat místním počítači a ne položka pro všechny domény nebo sítě, které jsou uvedeny. Jakmile vyberete počítač, klikněte na tlačítko **OK**.  
   
-8.  Klikněte na tlačítko **najít**. Tím vyplníte výsledků hledání s objekty přidružené k místním počítači.  
+8.  Klikněte na tlačítko **najít**. Tím vyplníte výsledky hledání s objekty přidružené k místnímu počítači.  
   
-9. Najít **IIS_IUSRS** položku **název (relativní rozlišující název)** sloupce. Vyberte tuto položku a klikněte na **OK** hledání zavřete okno výsledků.  
+9. Najít **IIS_IUSRS** položku **název (relativní rozlišující název)** sloupec. Vyberte tuto položku a klikněte na tlačítko **OK** hledání zavřete okno výsledků.  
   
-10. Klikněte na tlačítko **OK** zavřete **vybrat uživatele nebo skupiny** okno.  
+10. Klikněte na tlačítko **OK** zavřete **vybrat uživatele nebo skupiny** okna.  
   
-11. Klikněte na tlačítko **sdílenou složku** a zachová tak změny.  
+11. Klikněte na tlačítko **sdílené složky** a zachová tak změny.  
   
-12. Po dokončení se změny povolit sdílení, klikněte na tlačítko **provádí** zavřete **sdílení souborů** okno.  
+12. Po povolení sdílení změn se dokončí, klikněte na tlačítko **provádí** zavřete **sdílení souborů** okna.  
   
-#### <a name="to-set-security-properties-of-the-folder-in-iis-51-or-60"></a>Nastavit vlastnosti zabezpečení složky v IIS 5.1 nebo 6.0  
+#### <a name="to-set-security-properties-of-the-folder-in-iis-51-or-60"></a>Chcete-li nastavit vlastnosti zabezpečení složky v IIS 5.1 a 6.0  
   
 1.  Přejděte na % SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
   
 2.  Klikněte pravým tlačítkem myši **servicemodelsamples** složku a pak klikněte na tlačítko **sdílení a zabezpečení.**  
   
-3.  Klikněte **zabezpečení** kartě.  
+3.  Klikněte na tlačítko **zabezpečení** kartu.  
   
-4.  Pokud používáte služby IIS 6.0, **skupiny nebo jméno uživatele** zaškrtněte políčko zda **účtu Guest Internet** je uveden.  
+4.  Pokud používáte IIS 6.0 v **skupiny nebo jméno uživatele** zaškrtněte políčko, zda **účet Guest Internet** je uvedena.  
   
-     Pokud v seznamu není:  
+     Pokud není uvedená:  
   
-    1.  Klikněte na tlačítko **spustit** a pak klikněte na **ovládací panely**.  
+    1.  Klikněte na tlačítko **Start** a potom klikněte na tlačítko **ovládací panely**.  
   
     2.  Pokud se nezobrazí **uživatelské účty** ikonu, klikněte na tlačítko **přepnout na zobrazení kategorií**.  
   
-    3.  Klikněte **uživatelské účty** ikonu.  
+    3.  Klikněte na tlačítko **uživatelské účty** ikonu.  
   
-    4.  V části "nebo vyberte ikonu Ovládací panely," klikněte na tlačítko **uživatelské účty**.  
+    4.  V části "nebo vyberte ikonu ovládacího prvku panelu," klikněte na tlačítko **uživatelské účty**.  
   
-    5.  V **uživatelské účty** dialogové okno, klikněte **Upřesnit** kartě.  
+    5.  V **uživatelské účty** dialogové okno, klikněte na tlačítko **Upřesnit** kartu.  
   
-    6.  Klikněte na tlačítko **rozšířené**.  
+    6.  Klikněte na tlačítko **Advanced**.  
   
     7.  V **místní uživatelé a skupiny** dialogové okno, rozbalte kliknutím **uživatelé** složky.  
   
-    8.  V pravém podokně klikněte dvakrát na **účtu Guest Internet**.  
+    8.  V pravém podokně klikněte dvakrát na **účet Guest Internet**.  
   
-    9. V **vlastnosti** dialogové okno, kopie tento název používá jako účet guest Internetu. Ve výchozím nastavení název začíná řetězcem "USR_" a název počítače.  
+    9. V **vlastnosti** dialogové okno, zkopírujte název použit jako účet guest Internet. Ve výchozím nastavení název začíná řetězcem "USR_", za nímž následuje název počítače.  
   
     10. Zavřít **vlastnosti** dialogové okno.  
   
@@ -154,41 +154,41 @@ Ukázky Windows Communication Foundation (WCF) jsou určeny k sdílejí společn
   
     12. Zavřít **uživatelské účty** dialogové okno.  
   
-    13. Zavřete dalších **uživatelské účty** dialogové okno.  
+    13. Zavřete druhou **uživatelské účty** dialogové okno.  
   
-    14. V **servicemodelsamples vlastnosti** v dialogovém **zabezpečení** , klikněte na **přidat**.  
+    14. V **servicemodelsamples vlastnosti** dialogovém okně **zabezpečení** klikněte na tlačítko **přidat**.  
   
-    15. Zadejte název počítače, za nímž následuje zpětné lomítko, pak vložit název účtu uživatele Internetu, například myMachineName\\InternetGuestAccountName %  
+    15. Zadejte název počítače, za nímž následuje zpětné lomítko a poté vložte název účtu uživatele Internet, například myMachineName\\InternetGuestAccountName %  
   
-    16. Klikněte na tlačítko **Kontrola názvů** ověření přidání. Pokud je platný, název je v velkými písmeny a jsou podtržené.  
+    16. Klikněte na tlačítko **Kontrola názvů** aby se ověřilo přidání. Pokud je platný, je název velkými písmeny a podtržené.  
   
-5.  Pro služby IIS 6.0, také zkontrolujte, jestli síťové služby je uvedený v **skupiny nebo jméno uživatele** pole.  
+5.  Pro službu IIS 6.0, zkontrolujte také, že síťová služba je uveden v **skupiny nebo jméno uživatele** pole.  
   
-     Pokud není uvedené síťové služby:  
+     Pokud není uvedená síť služby:  
   
-    1.  Klikněte na tlačítko **přidat**.  
+    1.  Klikněte na **Přidat**.  
   
-    2.  V **vybrat uživatele nebo skupiny** dialogové okno, zadejte název počítače, následuje zpětné lomítko.  
+    2.  V **vybrat uživatele nebo skupiny** dialogové okno, zadejte název počítače, a potom je zpětným lomítkem.  
   
-    3.  Typ **služby** po zpětné lomítko (bez mezery).  
+    3.  Typ **služby** za zpětným lomítkem (bez mezer).  
   
-    4.  Klikněte na tlačítko **Zkontrolujte názvy**.  
+    4.  Klikněte na tlačítko **zkontrolovat názvy**.  
   
-    5.  Pokud je nalezeno více jmen, vyberte **síťové služby** a klikněte na tlačítko **OK**.  
+    5.  Pokud je nalezeno více jmen, vyberte **síťová služba** a klikněte na tlačítko **OK**.  
   
     6.  Klikněte na tlačítko **OK** zavřete **vybrat uživatele nebo skupiny** dialogové okno.  
   
-6.  Pokud používáte systém Windows XP SP2 se služba IIS 5.1, zkontrolujte, jestli jsou v uvedený účet Guest Internet a ASPNET **skupiny nebo jméno uživatele** pole.  
+6.  Pokud používáte Windows XP SP2 se služba IIS 5.1, zkontrolujte, že jsou v uvedené Internet účet Guest a ASPNET **skupiny nebo jméno uživatele** pole.  
   
-     Upozorňujeme, že uživatel ASPNET může být člen předdefinované **uživatelé** skupiny zabezpečení. Pokud ano, pak pokud **uživatelé** skupina je uvedena v dialogovém okně, není potřeba ji přidat jako samostatný položky do seznamu povolených uživatelů.  
+     Všimněte si, že uživatel ASPNET může být členem předdefinované **uživatelé** skupiny zabezpečení. Pokud ano, pak v případě **uživatelé** skupina je uvedena v dialogovém okně, není potřeba ho přidat jako samostatné položky do seznamu povolených uživatelů.  
   
-     Zkontrolujte, zda ASPNET je součástí **uživatelé** skupiny zabezpečení:  
+     Chcete-li zkontrolovat, jestli ASPNET je součástí **uživatelé** skupiny zabezpečení:  
   
-    1.  Na **spustit** nabídky, klikněte na tlačítko **ovládací panely**.  
+    1.  Na **Start** nabídky, klikněte na tlačítko **ovládací panely**.  
   
-    2.  Klikněte **uživatelské účty** ikonu.  
+    2.  Klikněte na tlačítko **uživatelské účty** ikonu.  
   
-    3.  V **skupiny** sloupce, zkontrolujte, zda hodnota **ASPNET** je "Uživatelé."  
+    3.  V **skupiny** sloupce, zkontrolujte, že hodnota **ASPNET** "uživatelů."  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)
+## <a name="see-also"></a>Viz také:
+- [Pokyny k hostování Internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)

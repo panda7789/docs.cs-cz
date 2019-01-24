@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30506
 ms.assetid: 5b66f6a8-f050-4e03-a57f-a64e85f80cb5
-ms.openlocfilehash: 99901432375c02e6a0e500cb772f8fd029276b2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e018f4babd3ec6b212673494c6ae30f13c49737
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33587430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608846"
 ---
 # <a name="handles-clause-requires-a-withevents-variable-defined-in-the-containing-type-or-one-of-its-base-types"></a>Klauzule Handles vyžaduje proměnnou WithEvents definovanou v nadřazeném typu nebo v některém z jeho základních typů.
-Není poskytnut `WithEvents` proměnné ve vaší `Handles` klauzule. `Handles` – Klíčové slovo na konci tohoto postupu deklarace způsobí, že okno zpracování událostí vyvolaných proměnné objektu deklarováno s použitím `WithEvents` – klíčové slovo.  
+Jste nezadali `WithEvents` proměnné ve vaší `Handles` klauzuli. `Handles` Klíčového slova na konci deklaraci procedury způsobí, že okno zpracovávají události vyvolané proměnná deklarovaná pomocí objektu `WithEvents` – klíčové slovo.  
   
  **ID chyby:** BC30506  
   
@@ -23,5 +23,5 @@ Není poskytnut `WithEvents` proměnné ve vaší `Handles` klauzule. `Handles` 
   
 -   Zadejte nezbytné `WithEvents` proměnné.  
   
-## <a name="see-also"></a>Viz také  
- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md)

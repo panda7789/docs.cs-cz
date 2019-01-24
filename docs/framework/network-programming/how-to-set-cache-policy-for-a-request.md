@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-ms.openlocfilehash: f2e3e7ccc16dc24cf79574f8607245b66ea53cb1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 11f36065c02c5ec513e66bff2541536e9290b5c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155009"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563558"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: Nastavení zásad mezipaměti pro žádost
 Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI `http://www.contoso.com/`.  
@@ -105,9 +105,9 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)
+- [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)
+- [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)
+- [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)
+- [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

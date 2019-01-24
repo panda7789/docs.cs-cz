@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 5693b92ac35a357ff1f8643d0eb9ec2105acecb4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 64985d4ed2c6a82c54a7623df4b13d7ec54bff33
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193353"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599345"
 ---
 # <a name="assemblybinding-element-for-configuration"></a>\<assemblybinding – > – element pro \<configuration >
 
 Určuje zásady vazeb sestavení na úrovni konfigurace.
 
 [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<assemblybinding – >**
+&nbsp;&nbsp;**\<assemblyBinding>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,7 +35,7 @@ Určuje zásady vazeb sestavení na úrovni konfigurace.
 
 |           | Popis |
 | --------- | ----------- |
-| **xmlns.** | Požadovaný atribut.<br><br>Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu. |
+| **xmlns** | Požadovaný atribut.<br><br>Určuje obor názvů XML, vyžaduje se pro vazby sestavení. Použijte řetězec "urn: schémata-microsoft-com:asm.v1" jako hodnotu. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
@@ -47,14 +47,14 @@ Určuje zásady vazeb sestavení na úrovni konfigurace.
 
 |     | Popis |
 | --- | ----------- |
-| [**\<linkedconfiguration – >**](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Určuje konfigurační soubor, který chcete zahrnout. |
+| [**\<linkedConfiguration>**](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Určuje konfigurační soubor, který chcete zahrnout. |
 
 ## <a name="remarks"></a>Poznámky
 
 [  **\<Linkedconfiguration – >** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) element zjednodušuje správu sestavení komponent tím, že konfigurační soubory v konfiguračních souborech aplikace, které chcete zahrnout sestavení dobře známé umístění, spíše než duplikace nastavení konfigurace sestavení.
 
 > [!NOTE]
-> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
+>  **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
 ## <a name="example"></a>Příklad
 
@@ -70,4 +70,4 @@ Následující příklad ukazuje, jak zahrnout konfigurační soubor na místní
 
 ## <a name="see-also"></a>Viz také:
 
-[Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

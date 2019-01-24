@@ -1,5 +1,5 @@
 ---
-title: -Optimalizace
+title: – Optimalizace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - optimize compiler option [Visual Basic]
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - optimization [Visual Basic], enabling
 - -optimize compiler option [Visual Basic]
 ms.assetid: fcba4a97-3622-4b87-a891-0f77deab4998
-ms.openlocfilehash: 2f066835c5f864538f281d4c58772e0e60c132f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ddb12eb473ce53e60835acb8f1076655f78fafd1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649942"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574375"
 ---
-# <a name="-optimize"></a>-Optimalizace
+# <a name="-optimize"></a>– Optimalizace
 Povolí nebo zakáže optimalizace kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -27,28 +27,28 @@ Povolí nebo zakáže optimalizace kompilátoru.
   
 |Termín|Definice|  
 |---|---|  
-|`+` &#124; `-`|Volitelné. `-optimize-` Možnost zakáže optimalizace kompilátoru. `-optimize+` Možnost umožňuje optimalizace. Ve výchozím nastavení jsou zakázány optimalizace.|  
+|`+` &#124; `-`|Volitelné. `-optimize-` Možnost zakáže optimalizace kompilátoru. `-optimize+` Možnost povolí optimalizace. Ve výchozím nastavení jsou zakázané optimalizace.|  
   
 ## <a name="remarks"></a>Poznámky  
- Optimalizace kompilátoru byl výstupní soubor menší, rychlejší a efektivnější. Nicméně, protože optimalizace mít za následek změny uspořádání kódu ve výstupním souboru `-optimize+` mohou ztížit ladění.  
+ Optimalizace kompilátoru zkontrolujte výstupní soubor menší, rychlejší a efektivnější. Nicméně, protože optimalizace změnou kódu ve výstupním souboru `-optimize+` mohou ztížit ladění.  
   
- Všechny moduly, které vygeneroval s `-target:module` pro sestavení musíte použít stejné `-optimize` nastavení jako sestavení. Další informace najdete v tématu [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
+ Všechny moduly, které generuje s použitím `-target:module` pro sestavení musíte použít stejné `-optimize` nastavení jako sestavení. Další informace najdete v tématu [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md).  
   
  Můžete kombinovat `-optimize` a `-debug` možnosti.  
   
-|Chcete-li nastavit - Optimalizujte v integrovaném vývojovém prostředí sady Visual Studio|  
+|Chcete-li nastavit – optimalizace v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.<br />     <br />2.  Klikněte **zkompilovat** kartě.<br />3.  Klikněte **Upřesnit** tlačítko.<br />4.  Změnit **povolit optimalizace** zaškrtávací políčko.|  
+|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**.<br />     <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Upřesnit** tlačítko.<br />4.  Upravit **povolit optimalizace** zaškrtávací políčko.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `T2.vb` a umožňuje optimalizace kompilátoru.  
+ Následující kód zkompiluje `T2.vb` a povolí optimalizace kompilátoru.  
   
 ```console
 vbc t2.vb -optimize  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)

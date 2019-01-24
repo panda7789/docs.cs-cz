@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)'
+title: 'Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: cbdf02b8c3035b8db58238113debb273c6c9dc35
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 20453c754c792d4f5c59fde481e1fec56dcd0e09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506105"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564126"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Postupy: dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Postupy: Dotazování na největší soubor či soubory v adresářovém stromu (LINQ) (C#)
 Tento příklad ukazuje pět dotazů souvisejících s velikostí souboru v bajtech:  
   
 -   Jak načíst velikost v bajtech největší soubor.  
@@ -145,7 +145,7 @@ class QueryBySize
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
 - [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

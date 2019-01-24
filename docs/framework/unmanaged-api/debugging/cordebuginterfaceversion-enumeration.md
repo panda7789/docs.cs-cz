@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fac90699cf217aff926003aa545b9cceb11bf58d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4bc72b9c5687654c17a01ee9b4fa9d31dcf50b56
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33410004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556113"
 ---
 # <a name="cordebuginterfaceversion-enumeration"></a>CorDebugInterfaceVersion – výčet
-Určuje rozhraní, verze rozhraní .NET Framework nebo verzi rozhraní .NET Framework, ve kterém byla zavedena rozhraní.  
+Určuje rozhraní, verze rozhraní .NET Framework nebo verzi rozhraní .NET Framework, ve kterém byl zaveden rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -133,112 +133,112 @@ typedef enum CorDebugInterfaceVersion {
 ```  
   
 ## <a name="members"></a>Členové  
- Následující tabulka obsahuje odkazy od každé hodnoty výčtu odpovídající rozhraní. Kromě toho tabulka udává první verzi rozhraní .NET Framework, který rozhraní je podporován v.  
+ Následující tabulka obsahuje odkazy od všech hodnot výčtu na odpovídající rozhraní. Kromě toho v tabulce označuje první verze, který rozhraní je podporován v rozhraní .NET Framework.  
   
 |Člen|Určuje|Verze rozhraní .NET Framework|  
 |------------|---------------|----------------------------|  
-|`CorDebugInvalidVersion`|Verze rozhraní .NET Framework je neplatný.|-|  
+|`CorDebugInvalidVersion`|Verze rozhraní .NET Framework je neplatná.|-|  
 |`CorDebugVersion_1_0`|Verze rozhraní .NET Framework, včetně všech jeho aktualizace service Pack, je 1.0.|1.0|  
 |`CorDebugVersion_1_1`|Verze rozhraní .NET Framework, včetně všech aktualizací service Pack, je 1.1.|1.1|  
 |`CorDebugVersion_2_0`|Verze rozhraní .NET Framework, včetně všech aktualizací service Pack, je 2.0.|2.0|  
 |`CorDebugVersion_4_0`|Verze rozhraní .NET Framework, včetně všech aktualizací service Pack, je 4.|4|  
 |`CorDebugVersion_4_5`|Verze rozhraní .NET Framework, včetně všech aktualizací service Pack, je 4.5.|4.5|  
 |`ver_ICorDebugManagedCallback`|[ICorDebugManagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)|1.0|  
-|`ver_ICorDebugUnmanagedCallback`|[Icordebugunmanagedcallback –](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-interface.md)|1.0|  
-|`ver_ICorDebug`|[ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)|1.0|  
+|`ver_ICorDebugUnmanagedCallback`|[ICorDebugUnmanagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-interface.md)|1.0|  
+|`ver_ICorDebug`|[Icordebug –](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)|1.0|  
 |`ver_ICorDebugController`|[ICorDebugController](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-interface.md)|1.0|  
 |`ver_ICorDebugAppDomain`|[ICorDebugAppDomain](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-interface.md)|1.0|  
-|`ver_ICorDebugAssembly`|[ICorDebugAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-interface.md)|1.0|  
+|`ver_ICorDebugAssembly`|[Icordebugassembly –](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-interface.md)|1.0|  
 |`ver_ICorDebugProcess`|[ICorDebugProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-interface.md)|1.0|  
-|`ver_ICorDebugBreakpoint`|[ICorDebugBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-interface.md)|1.0|  
+|`ver_ICorDebugBreakpoint`|[Icordebugbreakpoint –](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-interface.md)|1.0|  
 |`ver_ICorDebugFunctionBreakpoint`|[ICorDebugFunctionBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugfunctionbreakpoint-interface.md)|1.0|  
 |`ver_ICorDebugModuleBreakpoint`|[ICorDebugModuleBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugmodulebreakpoint-interface.md)|1.0|  
 |`ver_ICorDebugValueBreakpoint`|[ICorDebugValueBreakpoint](../../../../docs/framework/unmanaged-api/debugging/icordebugvaluebreakpoint-interface.md)|1.0|  
 |`ver_ICorDebugStepper`|[ICorDebugStepper](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-interface.md)|1.0|  
 |`ver_ICorDebugRegisterSet`|[ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)|1.0|  
-|`ver_ICorDebugThread`|[ICorDebugThread](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-interface.md)|1.0|  
+|`ver_ICorDebugThread`|[Icordebugthread –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-interface.md)|1.0|  
 |`ver_ICorDebugChain`|[ICorDebugChain](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-interface.md)|1.0|  
-|`ver_ICorDebugFrame`|[ICorDebugFrame](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-interface.md)|1.0|  
+|`ver_ICorDebugFrame`|[Icordebugframe –](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-interface.md)|1.0|  
 |`ver_ICorDebugILFrame`|[ICorDebugILFrame](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-interface.md)|1.0|  
-|`ver_ICorDebugNativeFrame`|[ICorDebugNativeFrame](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-interface.md)|1.0|  
+|`ver_ICorDebugNativeFrame`|[Icordebugnativeframe –](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-interface.md)|1.0|  
 |`ver_ICorDebugModule`|[ICorDebugModule](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-interface.md)|1.0|  
 |`ver_ICorDebugFunction`|[ICorDebugFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction-interface1.md)|1.0|  
-|`ver_ICorDebugCode`|[ICorDebugCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)|1.0|  
+|`ver_ICorDebugCode`|[Icordebugcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)|1.0|  
 |`ver_ICorDebugClass`|[ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-interface.md)|1.0|  
-|`ver_ICorDebugEval`|[ICorDebugEval](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-interface.md)|1.0|  
+|`ver_ICorDebugEval`|[Icordebugeval –](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-interface.md)|1.0|  
 |`ver_ICorDebugValue`|[ICorDebugValue](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-interface.md)|1.0|  
 |`ver_ICorDebugGenericValue`|[ICorDebugGenericValue](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-interface.md)|1.0|  
-|`ver_ICorDebugReferenceValue`|[ICorDebugReferenceValue](../../../../docs/framework/unmanaged-api/debugging/icordebugreferencevalue-interface.md)|1.0|  
-|`ver_ICorDebugHeapValue`|[Icordebugheapvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-interface.md)|1.0|  
-|`ver_ICorDebugObjectValue`|[ICorDebugObjectValue](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-interface.md)|1.0|  
+|`ver_ICorDebugReferenceValue`|[Icordebugreferencevalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugreferencevalue-interface.md)|1.0|  
+|`ver_ICorDebugHeapValue`|[ICorDebugHeapValue](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue-interface.md)|1.0|  
+|`ver_ICorDebugObjectValue`|[Icordebugobjectvalue –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectvalue-interface.md)|1.0|  
 |`ver_ICorDebugBoxValue`|[ICorDebugBoxValue](../../../../docs/framework/unmanaged-api/debugging/icordebugboxvalue-interface.md)|1.0|  
 |`ver_ICorDebugStringValue`|[ICorDebugStringValue](../../../../docs/framework/unmanaged-api/debugging/icordebugstringvalue-interface.md)|1.0|  
 |`ver_ICorDebugArrayValue`|[ICorDebugArrayValue](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-interface.md)|1.0|  
-|`ver_ICorDebugContext`|[Icordebugcontext –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontext-interface.md)|1.0|  
-|`ver_ICorDebugEnum`|[ICorDebugEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)|1.0|  
-|`ver_ICorDebugObjectEnum`|[ICorDebugObjectEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-interface.md)|1.0|  
-|`ver_ICorDebugBreakpointEnum`|[ICorDebugBreakpointEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-interface.md)|1.0|  
-|`ver_ICorDebugStepperEnum`|[ICorDebugStepperEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-interface.md)|1.0|  
+|`ver_ICorDebugContext`|[ICorDebugContext](../../../../docs/framework/unmanaged-api/debugging/icordebugcontext-interface.md)|1.0|  
+|`ver_ICorDebugEnum`|[Icordebugenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-interface1.md)|1.0|  
+|`ver_ICorDebugObjectEnum`|[Icordebugobjectenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-interface.md)|1.0|  
+|`ver_ICorDebugBreakpointEnum`|[Icordebugbreakpointenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpointenum-interface.md)|1.0|  
+|`ver_ICorDebugStepperEnum`|[Icordebugstepperenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepperenum-interface.md)|1.0|  
 |`ver_ICorDebugProcessEnum`|[ICorDebugProcessEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugprocessenum-interface.md)|1.0|  
-|`ver_ICorDebugThreadEnum`|[ICorDebugThreadEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugthreadenum-interface1.md)|1.0|  
-|`ver_ICorDebugFrameEnum`|[ICorDebugFrameEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugframeenum-interface.md)|1.0|  
+|`ver_ICorDebugThreadEnum`|[Icordebugthreadenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugthreadenum-interface1.md)|1.0|  
+|`ver_ICorDebugFrameEnum`|[Icordebugframeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugframeenum-interface.md)|1.0|  
 |`ver_ICorDebugChainEnum`|[ICorDebugChainEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugchainenum-interface.md)|1.0|  
-|`ver_ICorDebugModuleEnum`|[ICorDebugModuleEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugmoduleenum-interface.md)|1.0|  
-|`ver_ICorDebugValueEnum`|[ICorDebugValueEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-interface.md)|1.0|  
+|`ver_ICorDebugModuleEnum`|[Icordebugmoduleenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugmoduleenum-interface.md)|1.0|  
+|`ver_ICorDebugValueEnum`|[Icordebugvalueenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugvalueenum-interface.md)|1.0|  
 |`ver_ICorDebugCodeEnum`|[Icordebugcodeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugcodeenum-interface.md)|1.0|  
-|`ver_ICorDebugTypeEnum`|[ICorDebugTypeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugtypeenum-interface.md)|1.0|  
-|`ver_ICorDebugErrorInfoEnum`|[ICorDebugErrorInfoEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugerrorinfoenum-interface.md)|1.0|  
+|`ver_ICorDebugTypeEnum`|[Icordebugtypeenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugtypeenum-interface.md)|1.0|  
+|`ver_ICorDebugErrorInfoEnum`|[Icordebugerrorinfoenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugerrorinfoenum-interface.md)|1.0|  
 |`ver_ICorDebugAppDomainEnum`|[ICorDebugAppDomainEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-interface.md)|1.0|  
-|`ver_ICorDebugAssemblyEnum`|[ICorDebugAssemblyEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugassemblyenum-interface.md)|1.0|  
+|`ver_ICorDebugAssemblyEnum`|[Icordebugassemblyenum –](../../../../docs/framework/unmanaged-api/debugging/icordebugassemblyenum-interface.md)|1.0|  
 |`ver_ICorDebugEditAndContinueErrorInfo`|[ICorDebugEditAndContinueErrorInfo](../../../../docs/framework/unmanaged-api/debugging/icordebugeditandcontinueerrorinfo-interface.md)|1.0|  
 |`ver_ICorDebugEditAndContinueSnapshot`|[Icordebugeditandcontinuesnapshot –](../../../../docs/framework/unmanaged-api/debugging/icordebugeditandcontinuesnapshot-interface.md)|1.0|  
 |`ver_ICorDebugManagedCallback2`|[ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)|2.0|  
-|`ver_ICorDebugAppDomain2`|[Icordebugappdomain2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-interface.md)|2.0|  
-|`ver_ICorDebugProcess2`|[Icordebugprocess2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-interface1.md)|2.0|  
+|`ver_ICorDebugAppDomain2`|[ICorDebugAppDomain2](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain2-interface.md)|2.0|  
+|`ver_ICorDebugProcess2`|[ICorDebugProcess2](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-interface1.md)|2.0|  
 |`ver_ICorDebugStepper2`|[Icordebugstepper2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper2-interface1.md)|2.0|  
 |`ver_ICorDebugRegisterSet2`|[ICorDebugRegisterSet2](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)|2.0|  
 |`ver_ICorDebugThread2`|[Icordebugthread2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interface.md)|2.0|  
 |`ver_ICorDebugILFrame2`|[ICorDebugILFrame2](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-interface.md)|2.0|  
 |`ver_ICorDebugModule2`|[ICorDebugModule2](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-interface.md)|2.0|  
 |`ver_ICorDebugFunction2`|[ICorDebugFunction2](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-interface.md)|2.0|  
-|`ver_ICorDebugCode2`|[Icordebugcode2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-interface.md)|2.0|  
+|`ver_ICorDebugCode2`|[ICorDebugCode2](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-interface.md)|2.0|  
 |`ver_ICorDebugClass2`|"ICorDebugClass2"|2.0|  
 |`ver_ICorDebugValue2`|Icordebugvalue2 "–"|2.0|  
-|`ver_ICorDebugEval2`|"ICorDebugEval2".|2.0|  
+|`ver_ICorDebugEval2`|Icordebugeval2 "–".|2.0|  
 |`ver_ICorDebugObjectValue2`|Icordebugobjectvalue2 "–"|2.0|  
 |`ver_ICorDebugThread3`|[Icordebugthread3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread3-interface.md)|4|  
 |`ver_ICorDebugThread4`|[Icordebugthread4 –](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)|4|  
 |`ver_ICorDebugStackWalk`|[ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)|4|  
-|`ver_ICorDebugNativeFrame2`|[Icordebugnativeframe2 –](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)|4|  
-|`ver_ICorDebugInternalFrame2`|[Icordebuginternalframe2 –](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)|4|  
-|`ver_ICorDebugRuntimeUnwindableFrame`|[Icordebugruntimeunwindableframe –](../../../../docs/framework/unmanaged-api/debugging/icordebugruntimeunwindableframe-interface.md)|4|  
+|`ver_ICorDebugNativeFrame2`|[ICorDebugNativeFrame2](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-interface.md)|4|  
+|`ver_ICorDebugInternalFrame2`|[ICorDebugInternalFrame2](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-interface.md)|4|  
+|`ver_ICorDebugRuntimeUnwindableFrame`|[ICorDebugRuntimeUnwindableFrame](../../../../docs/framework/unmanaged-api/debugging/icordebugruntimeunwindableframe-interface.md)|4|  
 |`ver_ICorDebugHeapValue3`|[ICorDebugHeapValue3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugheapvalue3-interface.md)|4|  
 |`ver_ICorDebugBlockingObjectEnum`|[ICorDebugBlockingObjectEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-interface.md)|4|  
 |`ver_ICorDebugValue3`|[ICorDebugValue3](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)|4|  
 |`ver_ICorDebugComObjectValue`|[ICorDebugComObjectValue](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-interface.md)|4.5|  
 |`ver_ICorDebugAppDomain3`|[ICorDebugAppDomain3](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-interface.md)|4.5|  
-|`ver_ICorDebugCode3`|[Icordebugcode3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)|4.5|  
-|`ver_ICorDebugILFrame3`|[Icordebugilframe3 –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-interface.md)|4.5|  
+|`ver_ICorDebugCode3`|[ICorDebugCode3](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)|4.5|  
+|`ver_ICorDebugILFrame3`|[ICorDebugILFrame3](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-interface.md)|4.5|  
 |`CorDebugLatestVersion`|Verze rozhraní .NET Framework, včetně všech jeho aktualizace service Pack, je na nejnovější verzi.|-|  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program můžete použít `CorDebugInterfaceVersion` výčet ve [createdebugginginterfacefromversion –](../../../../docs/framework/unmanaged-api/hosting/createdebugginginterfacefromversion-function.md) funkce určit nejvyšší verzi rozhraní .NET Framework, který podporuje ladicího programu.  
+ Ladicí program můžete použít `CorDebugInterfaceVersion` výčtu v [createdebugginginterfacefromversion –](../../../../docs/framework/unmanaged-api/hosting/createdebugginginterfacefromversion-function.md) funkce k zadání nejvyšší verze rozhraní .NET Framework, který ladicí program podporuje.  
   
 ## <a name="interface-names"></a>Názvy rozhraní  
- Číslo, které se zobrazí na konci rozhraní názvů v rozhraní API pro ladění (například "3" v `ICorDebugThread3`) určuje verzi rozhraní, nikoli na verzi rozhraní .NET Framework. Názvy všech rozhraní v rozhraní API pro ladění obsahují čísla verzí, s výjimkou rozhraní, které byly zavedeny v rozhraní .NET Framework verze 1. Všechny propojeni čísla verzí rozhraní verze čísla and.NET Framework je náhodný.  
+ Číslo, které se zobrazí na konci názvů rozhraní v rozhraní API pro ladění (například "3" v `ICorDebugThread3`) určuje verzi rozhraní, nikoli na verzi rozhraní .NET Framework. Názvy všech rozhraní v rozhraní API pro ladění obsahují čísla verzí s výjimkou rozhraní, která byla zavedena v rozhraní .NET Framework verze 1. Jakékoli propojeni rozhraní verze číslice čísla verzí and.NET Framework je náhodný.  
   
--   Rozhraní, které byly zavedeny v rozhraní .NET Framework verze 1.0 nebudou obsahovat čísla, protože jsou všechny implicitně verze 1.  
+-   Rozhraní, která byla zavedena v rozhraní .NET Framework verze 1.0 nezahrnují čísel, protože jsou implicitně všechny verze 1.  
   
--   Rozhraní .NET Framework verze 1.1 používá verzi 1.0 rozhraní a nezavádí žádné nové ladění rozhraní.  
+-   Rozhraní .NET Framework verze 1.1 používá verzi 1.0 rozhraní a ne provádět žádné nové ladění rozhraní.  
   
--   14 ladění rozhraní byla zavedená v rozhraní .NET Framework verze 2.0 jsou logické rozšíření jejich verze 1 svými protějšky a zahrnout číslo "2" do jejich názvy.  
+-   14. ladění rozhraní zavedené v rozhraní .NET Framework verze 2.0 jsou logické rozšíření jejich verze 1 protějšky a obsahovat číslo "2" v názvu.  
   
--   Verze rozhraní .NET Framework 3.0 a 3.5 použít existující rozhraní .NET Framework 2.0 a Nezavádět žádné nové rozhraní.  
+-   Verze rozhraní .NET Framework 3.0 a 3.5 použít existující rozhraní .NET Framework 2.0 a ne provádět žádné nové rozhraní.  
   
--   [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Zavádí směs verze rozhraní. Například pro obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako verze třetí a čtvrtý `ICorDebugThread` rozhraní. [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Také představuje první verzi `ICorDebugStackWalk` rozhraní a druhá verze `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
+-   [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje kombinaci různých verzí rozhraní. Například obě `ICorDebugThread3` a `ICorDebugThread4` zobrazí jako třetí a čtvrtý verze `ICorDebugThread` rozhraní. [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] Také představuje první verzi `ICorDebugStackWalk` rozhraní a druhou verzi `ICorDebugNativeFrame` rozhraní (`ICorDebugNativeFrame2`).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -246,5 +246,5 @@ typedef enum CorDebugInterfaceVersion {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

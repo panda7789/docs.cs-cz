@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0ce3793d-54b2-47e4-8cf7-b0591cc4dd21
-ms.openlocfilehash: 54991234d4eaa9edab218d3b0d221a6e477d2be5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5360a7bce1b5470271bc6b512484964ebb9fd8d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530083"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587775"
 ---
 # <a name="dataset-and-xmldatadocument-synchronization"></a>Datová sada a objekt XmlDataDocument synchronizace
 ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. Hierarchický přístup k datům můžete použít třídy XML, který je k dispozici v rozhraní .NET Framework. Tyto dvě reprezentace dat v minulosti, již byly použity samostatně. Ale rozhraní .NET Framework umožňuje v reálném čase, která je synchronní přístup k relačních a hierarchických reprezentace dat prostřednictvím **datovou sadu** objektu a <xref:System.Xml.XmlDataDocument> objektu v uvedeném pořadí.  
   
  Při **datovou sadu** synchronizována s **XmlDataDocument**, oba objekty pracujete jediné datové sady. To znamená, že pokud je provedena změna **datovou sadu**, změna se projeví ve **XmlDataDocument**a naopak. Vztah mezi **datovou sadu** a **XmlDataDocument** vytvoří velkou flexibilitu tím, že jednu aplikaci, pro přístup k celé sadě služeb vytvořených pomocí jediné sady dat kolem **datovou sadu** (jako je například ovládací prvky webových formulářů a Windows Forms a návrháři Visual Studio .NET), a také sadu XML služeb včetně XML Path, šablony stylů XSL (Extensible Language) a transformace XSL (XSLT) Jazyk (XPath). Není potřeba vybrat sadu služeb k cílové aplikaci; obě jsou k dispozici.  
   
- Existuje několik způsobů, které můžete synchronizovat **datovou sadu** s **XmlDataDocument**. Můžeš:  
+ Existuje několik způsobů, které můžete synchronizovat **datovou sadu** s **XmlDataDocument**. Můžete:  
   
 -   Naplnit **datovou sadu** schéma (tedy relační struktury) a data a pak je synchronizovat s novou **XmlDataDocument**. To poskytuje hierarchické zobrazení stávajících relačních dat. Příklad:  
   
@@ -112,5 +112,5 @@ ADO.NET <xref:System.Data.DataSet> vám poskytuje relační vyjádření data. H
  <xref:System.Xml.XmlDataDocument>  
  Obsahuje referenční informace o **XmlDataDocument** třídy.  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c95788bf-90a6-4e96-b7bc-58e36a228cc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83451af25006e9da396a3e6618cbecee036e9fe2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 29383d0b7f125111071ac131d8a822dba811032e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603310"
 ---
 # <a name="attached-and-detached-child-tasks"></a>Připojené a odpojené podřízené úlohy
 A *podřízená úloha* (nebo *vnořená úloha*) je <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> instanci, která je vytvořena v uživatelském delegátu jiného úkolu, který se označuje jako *nadřazená úloha*. Podřízená úloha může odpojit nebo připojen. A *odpojenou podřízenou úlohu* je úkol, který se spustí bez ohledu na jejich svého nadřazeného objektu. *Připojená podřízená úloha* je vnořená úloha, která se vytvoří s <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost, jejíž nadřazený prvek není explicitně nebo implicitně zakazují, aby ho z přímého připojení. Úkol může vytvořit libovolný počet připojené a odpojené podřízené úlohy, omezen pouze systémovými prostředky.  
@@ -58,7 +58,7 @@ A *podřízená úloha* (nebo *vnořená úloha*) je <xref:System.Threading.Task
  Pokud odpojená podřízená úloha vyvolá výjimku, musí být tato výjimka zjištěnými nebo zpracovávána přímo v nadřazené úloze, stejně jako u jakékoli úlohy bez vnoření. Pokud připojená podřízená úloha vyvolá výjimku, výjimka se automaticky šíří do nadřazené úlohy a zpět k vláknu, které čeká nebo se pokusí o přístup k úkolu <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost. Proto pomocí připojené podřízené úlohy můžete zpracovávat všechny výjimky v jednom místě ve volání <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> na volajícím vlákně. Další informace najdete v tématu [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
   
 ## <a name="cancellation-and-child-tasks"></a>Zrušení a podřízené úlohy  
- Zrušení úlohy je kooperativní. To znamená aby se úloha zrušila, každá připojená nebo odpojená podřízená úloha musí sledovat stav token zrušení. Pokud chcete zrušit nadřazenou položku a všechny jeho podřízené objekty s použitím pouze jedné žádosti, předejte stejný token jako argument pro všechny úlohy a poskytují v jednotlivých úkolech logiku odpovědi na žádost v každé úloze. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [postupy: zrušení úlohy a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+ Zrušení úlohy je kooperativní. To znamená aby se úloha zrušila, každá připojená nebo odpojená podřízená úloha musí sledovat stav token zrušení. Pokud chcete zrušit nadřazenou položku a všechny jeho podřízené objekty s použitím pouze jedné žádosti, předejte stejný token jako argument pro všechny úlohy a poskytují v jednotlivých úkolech logiku odpovědi na žádost v každé úloze. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [jak: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
 ### <a name="when-the-parent-cancels"></a>Při zrušení nadřazeného  
  Pokud nadřazená úloha zruší sama sebe, před spuštěním jeho podřízené úloze, nikdy spouštěna. Pokud nadřazená úloha zruší sama sebe, po její podřízená úloha je již spuštěna, podřízená úloha poběží do konce ledaže má svojí vlastní logiku zrušení. Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md).  
@@ -76,9 +76,9 @@ A *podřízená úloha* (nebo *vnořená úloha*) je <xref:System.Threading.Task
   
  Chcete-li zabránit podřízené úloze v připojení k nadřazené úloze, zadejte <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> při vytváření nadřazeného možnost <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> objektu. Při pokusí připojit k nadřazenému úkolu a ten specifikuje <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> možnost, podřízená úloha nebude možné se připojit k nadřazené a spustí stejně jako <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> nebyla zadána možnost.  
   
- Můžete také chtít zabránit podřízené úloze v připojení k nadřazené úloze, pokud podřízená úloha neskončí v časovém limitu. Protože nadřazenou úlohu nedokončí až do dokončení všech podřízených úloh, může způsobit dlouhotrvající podřízená úloha celkový nízký výkon aplikace. Příklad, který ukazuje, jak zlepšit výkon aplikace zabráněním úlohu se připojuje k nadřazené úloze, naleznete v tématu [postupy: zabránění připojení podřízené úlohy ke své nadřazené úloze](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
+ Můžete také chtít zabránit podřízené úloze v připojení k nadřazené úloze, pokud podřízená úloha neskončí v časovém limitu. Protože nadřazenou úlohu nedokončí až do dokončení všech podřízených úloh, může způsobit dlouhotrvající podřízená úloha celkový nízký výkon aplikace. Příklad, který ukazuje, jak zlepšit výkon aplikace zabráněním úlohu se připojuje k nadřazené úloze, naleznete v tématu [jak: Zabránění podřízené úloze připojení k nadřazené úloze](../../../docs/standard/parallel-programming/how-to-prevent-a-child-task-from-attaching-to-its-parent.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
 - [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)

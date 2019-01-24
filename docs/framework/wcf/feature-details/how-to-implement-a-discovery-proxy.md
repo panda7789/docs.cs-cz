@@ -2,12 +2,12 @@
 title: 'Postupy: Implementace zjišťování proxy'
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-ms.openlocfilehash: 2d76a2df0541dfd64058d61ca687a2749d745e8a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 12adc7215e929bb56aafe104546eb6e58af52ddb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839115"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54608911"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Postupy: Implementace zjišťování proxy
 Toto téma vysvětluje, jak implementace zjišťování proxy. Další informace o funkci zjišťování v Windows Communication Foundation (WCF) najdete v tématu [přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Zjišťování proxy můžete implementovat tak, že vytvoříte třídu, která rozšiřuje <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstraktní třídy. Existuje mnoho z jiné třídy, které podporují definovaný a použít v této ukázce. `OnResolveAsyncResult`, `OnFindAsyncResult`, a `AsyncResult`. Tyto třídy implementace <xref:System.IAsyncResult> rozhraní. Další informace o <xref:System.IAsyncResult> naleznete v tématu [rozhraní System.IAsyncResult](xref:System.IAsyncResult).
@@ -22,7 +22,7 @@ Toto téma vysvětluje, jak implementace zjišťování proxy. Další informace
 
 ### <a name="to-create-a-new-console-application-project"></a>Chcete-li vytvořit nový projekt konzolové aplikace
 
-1.  Spusťte sadu Visual Studio 2012.
+1.  Start Visual Studio 2012.
 
 2.  Vytvořte nový projekt konzolové aplikace. Pojmenujte projekt `DiscoveryProxy` a název řešení `DiscoveryProxyExample`.
 
@@ -548,7 +548,7 @@ Toto téma vysvětluje, jak implementace zjišťování proxy. Další informace
               }
     ```
 
- Dokončili jste implementace proxy zjišťování. Pokračovat k [postupy: implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).
+ Dokončili jste implementace proxy zjišťování. Pokračovat k [jak: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).
 
 ## <a name="example"></a>Příklad
  Toto je úplný přehled kód použitý v tomto tématu.
@@ -977,9 +977,9 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Přehled zjišťování WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Postupy: Implementace zjistitelné služby, která se registruje pomocí proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [Postupy: Implementace klientské aplikace používající proxy zjišťování k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
-- [Postupy: Test proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
+- [Postupy: Implementace zjistitelné služby, která se registruje pomocí Proxy zjišťování](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Postupy: Implementace klientské aplikace používající zjišťování Proxy k vyhledání služby](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [Postupy: Test Proxy zjišťování](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)

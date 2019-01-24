@@ -2,18 +2,18 @@
 title: Chování auditování služby
 ms.date: 03/30/2017
 ms.assetid: 59bf0cda-e496-4418-a3a1-2f0f6e85f8ce
-ms.openlocfilehash: ae190be48a20af5c108e56c6b0fd7965e39f8b66
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e92f50005870b1c02571cebe0f532bd1810a40dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33504303"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54574947"
 ---
 # <a name="service-auditing-behavior"></a>Chování auditování služby
-Tento příklad znázorňuje způsob použití <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> povolení auditování událostí zabezpečení během operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Klienta a služby jsou nakonfigurované pomocí [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). `mode` Atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) byla nastavena na `Message` a `clientCredentialType` byla nastavena na `Windows`. V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).  
+Tato ukázka předvádí, jak používat <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> povolení auditování událostí zabezpečení během operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Klienta a služby byly nakonfigurovány pomocí [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). `mode` Atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) byla nastavena na `Message` a `clientCredentialType` byla nastavena na `Windows`. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
  Konfigurační soubor služby používá `serviceSecurityAudit` element konfigurace auditování.  
   
@@ -32,24 +32,24 @@ Tento příklad znázorňuje způsob použití <xref:System.ServiceModel.Descrip
 </behaviors>  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně konzoly vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně konzoly vypnutí klient.  
   
- Výsledný protokoly auditu je možné zobrazit pomocí prohlížeče událostí. Ve výchozím nastavení se zobrazí události auditu v protokolu aplikace při na Windows Server 2003 a Windows Vista, Windows XP se zobrazí události auditu v protokolu zabezpečení. Na Windows Server 2008 a Windows 7 se zobrazí události auditu v protokoly aplikací a služeb. Umístění události auditu lze zadat nastavením `auditLogLocation` atribut "Aplikace" nebo "Zabezpečení". Další informace najdete v tématu [postup: události auditu zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md). Pokud události se zapisují do protokolu zabezpečení LocalSecurityPolicy -> Povolit přístup k objektu by měla být nastavena pro "ÚSPĚCH" a "Selhání".  
+ Výsledný protokoly auditu lze zobrazit pomocí prohlížeče událostí. Ve výchozím nastavení Windows XP událostí auditu, které lze zobrazit v protokolu aplikací při na Windows Server 2003 a Windows Vista událostí auditu, které vidíte v protokolu zabezpečení. Na Windows Server 2008 a Windows 7 událostí auditu, které najdete v protokolech aplikací a služeb. Umístění události auditu se dá nastavit tak, že nastavíte `auditLogLocation` atribut "Aplikace" nebo "Zabezpečení". Další informace najdete v tématu [jak: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md). Pokud události se zapisují do protokolu zabezpečení LocalSecurityPolicy -> Povolit přístup k objektům by měl být nastavena pro "Success" a "Selhání".  
   
- Při vyhledávání v protokolu událostí, zdroj událostí auditu je "ServiceModel auditu 3.0.0.0". Záznamů zprávy o auditu ověřování vlastní kategorie "MessageAuthentication", zatímco záznamy auditu autorizace služby, vlastní kategorie "ServiceAuthorization".  
+ Při hledání v protokolu událostí, je zdrojem událostí auditu "ServiceModel auditu 3.0.0.0". Záznamy auditu ověřování zprávy mají kategorii "MessageAuthentication" záznamy auditu autorizace služby mají kategorii "ServiceAuthorization".  
   
- Události auditu ověřování zpráv tématech, zda zpráva bylo manipulováno, jestli vypršela platnost zprávu, a zda může klient ověřit ve službě. Poskytují informace o tom, jestli je ověřování byla úspěšná nebo neúspěšná spolu s identitou klienta a koncový bod zpráva byla odeslána spolu s akce přidružené ke zprávě.  
+ Zprávy ověřovacích událostí auditu pokrytí, zda zpráva je porušené, zda vypršela platnost zprávy a určuje, zda se klient může ověřit ve službě. Poskytují informace o tom, jestli ověření úspěšné nebo neúspěšné spolu s identitou klienta a koncového bodu zpráva byla odeslána spolu s akce spojený se zprávou.  
   
- Události auditu autorizace služby zahrnují rozhodnutí o autorizaci provedené správcem autorizace služby. Poskytují informace o tom, jestli ověření bylo úspěšné, nebo se nezdařilo spolu s identitou klienta, koncový bod zpráva byla odeslána k akci spojený se zprávou, identifikátor autorizační kontext, který se vygeneroval ze příchozí zprávy a typ Správce autorizací, který se rozhodnete přístup.  
+ Události auditu autorizace služby zahrnují rozhodnutí o autorizaci, které správce autorizace služby. Poskytují informace o tom, jestli byla úspěšná autorizace nebo se nepodařilo spolu s identitou klienta, koncový bod zprávy odeslané do akce spojený se zprávou, identifikátor autorizační kontext, který byl vytvořen příchozí zprávy a typ správce autorizace, který vytvořil rozhodnutí přístupu.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také  
- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Postupy: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
+## <a name="see-also"></a>Viz také:
+- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
+- [Postupy: Auditování událostí zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -checked compiler option [C#]
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
-ms.openlocfilehash: cf6fa0e87654d0f9d61f34ea9b29ad80921a5720
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 44a86a2e1ab9346280f655d4ee75e7282c6c9cd5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084852"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54578382"
 ---
 # <a name="-checked-c-compiler-options"></a>-checked (možnosti kompilátoru C#)
 **– Zaškrtnutí** možnost určuje, zda příkaz aritmetické celé číslo, jehož výsledkem hodnotu, která je mimo rozsah datového typu a, který není v oboru [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) nebo [ unchecked](../../../csharp/language-reference/keywords/unchecked.md) – klíčové slovo, způsobí, že výjimka za běhu.  
@@ -52,7 +52,7 @@ ms.locfileid: "44084852"
 csc t2.cs -checked  
 ```  
   
-## <a name="see-also"></a>Viz také  
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
-- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

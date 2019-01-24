@@ -2,12 +2,12 @@
 title: Koncepty a terminologie (funkční transformace) (C#)
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: e42c14965ba3341c812811f6c27ece386c42d7c2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 83c2f531f5747047c60ddbcedabc0747641d80c1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526992"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583360"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>Koncepty a terminologie (funkční transformace) (C#)
 Toto téma představuje koncepty a terminologie čistě funkční transformace. Funkční transformace přístup k transformaci dat vrací kód, který je často rychlejší program, více výrazovými možnostmi a jednodušší vyladit a udržovat než tradiční, imperativní programování.  
@@ -31,7 +31,7 @@ Toto téma představuje koncepty a terminologie čistě funkční transformace. 
 ### <a name="functional-programming"></a>Funkční programování  
  *Funkční programování* je programovací přístup, který přímo podporuje čistě funkční transformace.  
   
- Pro obecné účely funkčních programovacích jazycích, jako je například ML, schéma, Haskell a F #, v minulosti byly primárně zájmu academic komunitě. I když bylo vždy možné psát v jazyce C# čistě funkčním transformacím, problémy s dokončením udělat proto nebyla dostal atraktivní možnosti většiny programátorům. V poslední verze jazyka C# ale nový jazyk vytvoří jako výrazy lambda a odvození typu proměnné, aby funkční programování mnohem jednodušší a produktivnější.  
+ V minulosti pro obecné účely funkčních programovacích jazycích, jako je například ML, schéma, Haskell, a F#, byla primárně zájmu academic komunitě. I když bylo vždy možné psát v jazyce C# čistě funkčním transformacím, problémy s dokončením udělat proto nebyla dostal atraktivní možnosti většiny programátorům. V poslední verze jazyka C# ale nový jazyk vytvoří jako výrazy lambda a odvození typu proměnné, aby funkční programování mnohem jednodušší a produktivnější.  
   
  Další informace o funkční programování, naleznete v tématu [funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md).  
   
@@ -51,7 +51,7 @@ Toto téma představuje koncepty a terminologie čistě funkční transformace. 
   
  Další informace najdete v tématu [výrazy Lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
- – kolekce  
+  – kolekce  
  Strukturovaného sady dat, obvykle jednotného typu. Aby byl kompatibilní s jazykem LINQ, musí implementovat kolekce <xref:System.Collections.IEnumerable> rozhraní nebo <xref:System.Linq.IQueryable> rozhraní (nebo jeden z jejich obecné protějšky <xref:System.Collections.Generic.IEnumerator%601> nebo <xref:System.Linq.IQueryable%601>).  
   
  řazené kolekce členů (anonymní typy)  
@@ -71,7 +71,7 @@ Toto téma představuje koncepty a terminologie čistě funkční transformace. 
   
  Tyto funkce jazyka se použije v ukázky kódu v celé této části.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+- [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

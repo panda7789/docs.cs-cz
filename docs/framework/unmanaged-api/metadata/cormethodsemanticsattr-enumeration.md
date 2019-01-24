@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de467c98dfa7ad3eac69502f2afe311b301e1ec5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f888c39160e52e550d07f58b9c5bcd11fd625658
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444806"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54564078"
 ---
 # <a name="cormethodsemanticsattr-enumeration"></a>CorMethodSemanticsAttr – výčet
 Obsahuje hodnoty, které popisují vztah mezi metodu a přidružené vlastnosti nebo události.  
@@ -45,19 +45,19 @@ typedef enum CorMethodSemanticsAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`msSetter`|Určuje, že je metoda `set` přistupujícího objektu vlastnosti.|  
-|`msGetter`|Určuje, že je metoda `get` přistupujícího objektu vlastnosti.|  
-|`msOther`|Určuje, že metoda má vztah k vlastnost nebo událost, než jsou zde definované.|  
-|`msAddOn`|Určuje, že metoda přidá metody obslužné rutiny pro událost.|  
-|`msRemoveOn`|Určuje, že metoda odebere metody obslužné rutiny pro událost.|  
+|`msSetter`|Určuje, že metoda je `set` přistupujícího objektu vlastnosti.|  
+|`msGetter`|Určuje, že metoda je `get` přistupujícího objektu vlastnosti.|  
+|`msOther`|Určuje, že tato metoda má vztah k vlastnosti nebo události než ty, které jsou zde definovány.|  
+|`msAddOn`|Určuje, že metoda přidá metody obslužné rutiny události.|  
+|`msRemoveOn`|Určuje, že metoda odebere metody obslužné rutiny události.|  
 |`msFire`|Určuje, že metoda vyvolá událost.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

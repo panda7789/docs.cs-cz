@@ -2,20 +2,20 @@
 title: '&lt;httpListener&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: 58228eed71dd6a5f5af8e26c02db9633da6ceef6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 896b6633ef4a741b9a7460d8ce3d879253d542da
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197779"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577695"
 ---
 # <a name="lthttplistenergt-element-network-settings"></a>&lt;httpListener&gt; – Element (nastavení sítě)
 Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.  
   
  \<Konfigurace >  
 \<system.net>  
-\<Nastavení >  
-\<httpListener >  
+\<settings>  
+\<httpListener>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +43,7 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  **UnescapeRequestUrl** atribut označuje, zda <xref:System.Net.HttpListener> používá nezpracovaná neuvozené identifikátor URI namísto převedený identifikátor URI, kde všechny procentuálně zakódovaný hodnoty se převedou a ostatní kroky normalizace pocházejí.  
@@ -137,8 +137,8 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
 |Soubor ověření||  
 |Může být prázdné.||  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.Configuration.HttpListenerElement>  
-- <xref:System.Net.HttpListener>  
-- <xref:System.Net.HttpListenerRequest.Url%2A>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.Configuration.HttpListenerElement>
+- <xref:System.Net.HttpListener>
+- <xref:System.Net.HttpListenerRequest.Url%2A>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

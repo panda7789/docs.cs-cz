@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ccf60d067af356dda1870a2fb1dcca21966f16a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e5698e5555e82fd8f64fd029f78cda361a367ca7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401483"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585221"
 ---
 # <a name="getassemblyrefhash-method"></a>GetAssemblyRefHash – metoda
-Načte hodnotu hash objektu blob pro zadaného sestavení.  
+Načte objekt blob algoritmu hash pro dané sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,21 +38,21 @@ HRESULT GetAssemblyRefHash(
   
 #### <a name="parameters"></a>Parametry  
  `FileToken`  
- ID sestavení, ke které se budou vztahovat hodnotu hash.  
+ ID sestavení, na který bude odkazovat-the-hash.  
   
  `ppvHash`  
- Získá výsledný objekt blob hash.  
+ Získá výsledný objekt blob algoritmu hash.  
   
  `pcbHash`  
- Obdrží velikost v bajtech hash objektů blob.  
+ Přijímá velikost v bajtech, objekt blob algoritmu hash.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

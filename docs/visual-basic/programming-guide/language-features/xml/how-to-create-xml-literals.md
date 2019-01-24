@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML literals [Visual Basic], creating
 ms.assetid: 573a6db5-b14d-4e42-b356-8cc7e2d77745
-ms.openlocfilehash: e5f8429b3ff02678bf8bf3e9e32bef6eb1a56831
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0e74dccac0b3528fe73d091670a3368328baeaab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43483616"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54560591"
 ---
 # <a name="how-to-create-xml-literals-visual-basic"></a>Postupy: Vytváření literálů XML (Visual Basic)
 Dokument XML, fragment nebo element můžete vytvořit přímo v kódu pomocí literálů XML. Příklady v tomto tématu ukazují, jak vytvořit element XML, který obsahuje tři podřízené prvky a vytvořit dokument XML.  
@@ -52,8 +52,8 @@ Dokument XML, fragment nebo element můžete vytvořit přímo v kódu pomocí l
   
      `</books>`  
   
-## <a name="see-also"></a>Viz také  
- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
+## <a name="see-also"></a>Viz také:
+- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)

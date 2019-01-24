@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f205040e0f044ab04112683c7bdb8edccdfb9f71
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: ac2b0eafa64b809d2b40ac6471806dc9ab3c8c53
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45641505"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609626"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
 <xref:System.IO> Obor názvů poskytuje několik tříd, které umožňují nejrůznější akce, jako je čtení a zápis, pro soubory, adresáře a datové proudy. Další informace najdete v tématu [Souborová služba a vstupně-výstupní operace Stream](../../../docs/standard/io/index.md).  
@@ -22,7 +22,7 @@ ms.locfileid: "45641505"
 |Postup...|Další informace naleznete v příkladu v tomto tématu...|  
 |-------------------|--------------------------------------|  
 |Vytvoření textového souboru|<xref:System.IO.File.CreateText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.CreateText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.File.Create%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.Create%2A?displayProperty=nameWithType> – Metoda|  
-|Zápis do textového souboru|[Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)<br /><br /> [Postupy: Zápis do textového souboru (C++/CLI)](/cpp/dotnet/how-to-write-a-text-file-cpp-cli)|  
+|Zápis do textového souboru|[Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)<br /><br /> [Postupy: Zápis do textového souboru (C + +/ CLI)](/cpp/dotnet/how-to-write-a-text-file-cpp-cli)|  
 |Čtení z textového souboru|[Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)|  
 |Připojení textu k souboru|[Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType> – Metoda|  
 |Přejmenování nebo přesunutí souboru|<xref:System.IO.File.Move%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.FileInfo.MoveTo%2A?displayProperty=nameWithType> – Metoda|  
@@ -55,6 +55,6 @@ ms.locfileid: "45641505"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
-- [Skládání streamů](../../../docs/standard/io/composing-streams.md)  
+- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
+- [Skládání streamů](../../../docs/standard/io/composing-streams.md)
 - [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)

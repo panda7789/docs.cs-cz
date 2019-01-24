@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: dbfcd7ea7b8422c79274e7bc65929080da6f11af
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4b94bfd92cf586088316b03222e0bbe5c1728bc5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153420"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573553"
 ---
 # <a name="message-security-with-a-windows-client"></a>Zabezpečení zprávy s klientem Windows
 Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serverem zabezpečené pomocí režim zabezpečených zpráv. Klient a služba ověření pomocí přihlašovacích údajů Windows.  
@@ -25,7 +25,7 @@ Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serve
 |Ověření (klient)|Vzájemné ověřování klienta a serveru|  
 |Integrita|Ano, pomocí sdíleného bezpečnostní kontext|  
 |Důvěrnost|Ano, pomocí sdíleného bezpečnostní kontext|  
-|Přenos|SÍŤ. TCP|  
+|Přenos|NET.TCP|  
 |Vazba|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>Služba  
@@ -116,6 +116,6 @@ Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serve
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

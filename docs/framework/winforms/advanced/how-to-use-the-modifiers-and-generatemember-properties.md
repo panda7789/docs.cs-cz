@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Používání modifikátorů a vlastností GenerateMember'
+title: 'Postupy: Používání modifikátorů a vlastností generatemember – vlastnosti'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - form inheritance
 - Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
-ms.openlocfilehash: 9bb6e6568822f3edcabf50a4fceb7cc6386f05ef
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 890290d75c6690f467e565a3d75a4b75102d7875
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45666509"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558382"
 ---
-# <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>Postupy: Používání modifikátorů a vlastností GenerateMember
+# <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>Postupy: Používání modifikátorů a vlastností generatemember – vlastnosti
 Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí jsou k dispozici dvě vlastnosti: `GenerateMember` a `Modifiers`. `GenerateMember` Vlastnost určuje, když Návrhář formulářů Windows generuje členské proměnné pro komponentu. `Modifiers` Vlastnost je modifikátor přístupu, které jsou přiřazeny k této členské proměnné. Pokud hodnota `GenerateMember` vlastnost `false`, hodnota `Modifiers` vlastnost nemá žádný vliv.  
   
 > [!NOTE]
@@ -59,8 +59,8 @@ Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí
 > [!NOTE]
 >  Ve výchozím nastavení, Návrhář formulářů Windows přiřadí `private` (`Friend` v jazyce Visual Basic) modifikátor pro ovládací prvky kontejneru jako <xref:System.Windows.Forms.Panel>. Pokud základním <xref:System.Windows.Forms.UserControl> nebo <xref:System.Windows.Forms.Form> má ovládací prvek kontejneru, nebude přijímat nové podřízené položky v zděděný ovládací prvky a formuláře. Řešením je změnit modifikátor základní kontejneru ovládacího prvku na `protected` nebo `public`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.Button>  
- [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)  
- [Návod: Demonstrace vizuálního dědění](../../../../docs/framework/winforms/advanced/walkthrough-demonstrating-visual-inheritance.md)  
- [Postupy: Dědění v modelu Windows Forms](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.Button>
+- [Vizuální dědění modelu Windows Forms](../../../../docs/framework/winforms/advanced/windows-forms-visual-inheritance.md)
+- [Návod: Demonstrace vizuálního dědění](../../../../docs/framework/winforms/advanced/walkthrough-demonstrating-visual-inheritance.md)
+- [Postupy: Dědění formulářů Windows](../../../../docs/framework/winforms/advanced/how-to-inherit-windows-forms.md)

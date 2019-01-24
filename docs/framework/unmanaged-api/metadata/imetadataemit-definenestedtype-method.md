@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0d105679a749b8c87099af871bdb42874d440b1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ee8e0dec469c7389a69c70567d7b2cb98d3404e6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603908"
 ---
 # <a name="imetadataemitdefinenestedtype-method"></a>IMetaDataEmit::DefineNestedType – metoda
-Vytvoří metadata podpis definice typu, vrátí `mdTypeDef` token pro tento typ a určuje, že je definovaný typ člena typu odkazuje `tdEncloser` parametr.  
+Vytvoří metadata podpis definici typu, vrátí `mdTypeDef` token pro daný typ a určí, že definovaný typ je členem typu odkazuje `tdEncloser` parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,32 +42,32 @@ HRESULT DefineNestedType (
   
 #### <a name="parameters"></a>Parametry  
  `szTypeDef`  
- [v] Název typu ve formátu Unicode.  
+ [in] Název typu v kódování Unicode.  
   
  `dwTypeDefFlags`  
- [v] `TypeDef` atributy. Toto je bitová maska s `CorTypeAttr` hodnoty.  
+ [in] `TypeDef` atributy. To je bitová maska z `CorTypeAttr` hodnoty.  
   
  `tkExtends`  
- [v] Token základní třídy. To znamená buď `mdTypeDef` nebo `mdTypeRef` tokenu.  
+ [in] Token základní třídy. Je to `mdTypeDef` nebo `mdTypeRef` token.  
   
  `rtkImplements`[]  
- [v] Pole tokeny, které určují, rozhraní, která implementuje této třídě nebo rozhraní.  
+ [in] Pole tokeny, které určují, které tuto třídu nebo rozhraní implementuje rozhraní.  
   
  `tdEncloser`  
- [v] Token nadřazených typů. Musí být posledním prvkem pole `mdTokenNil`.  
+ [in] Token nadřazeného typu. Poslední element pole musí být `mdTokenNil`.  
   
  `ptd`  
  [out] `mdTypeDef` Token přiřazený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

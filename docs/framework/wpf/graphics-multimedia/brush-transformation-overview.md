@@ -9,12 +9,12 @@ helpviewer_keywords:
 - properties [WPF], transformation
 - transformation properties of brushes [WPF]
 ms.assetid: 8b9bfc09-12fd-4cd5-b445-99949f27bc39
-ms.openlocfilehash: 8b5a7f7d428925590236351d56073024f6ad32b7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2cfa796d40fad35077c3d7b55e36bc7336c5d26b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506817"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562762"
 ---
 # <a name="brush-transformation-overview"></a>Přehled transformace štětce
 Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Media.Brush.Transform%2A> a <xref:System.Windows.Media.Brush.RelativeTransform%2A>. Vlastnosti umožňují otočit, škálování a zkosení a převede štětec obsah. Toto téma popisuje rozdíly mezi těmito dvěma vlastnostmi a poskytuje příklady jejich použití.  
@@ -97,11 +97,11 @@ Třída štětce poskytuje dvě vlastnosti transformace: <xref:System.Windows.Me
   
  V tomto příkladu je součástí větší ukázky. Úplnou ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973). Další informace o štětcích, najdete v článku [přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Brush.Transform%2A>  
- <xref:System.Windows.Media.Brush.RelativeTransform%2A>  
- <xref:System.Windows.Media.Transform>  
- <xref:System.Windows.Media.Brush>  
- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Brush.Transform%2A>
+- <xref:System.Windows.Media.Brush.RelativeTransform%2A>
+- <xref:System.Windows.Media.Transform>
+- <xref:System.Windows.Media.Brush>
+- [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)
+- [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)
+- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)

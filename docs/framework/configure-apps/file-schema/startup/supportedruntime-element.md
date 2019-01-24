@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b6303f765d1cc4a17fe19261c7326d8961ac1080
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 93084b34e5795ef35e8c433f50646e5da088adfd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129244"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54600515"
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
 
 Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. Tento prvek by měl být použit všemi aplikacemi sestavenými pomocí rozhraní .NET Framework 1.1 a staršími verzemi.  
   
-[\<Konfigurace >](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
-&nbsp;&nbsp;[\<Po spuštění >](../../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
+[\<configuration>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+&nbsp;&nbsp;[\<startup>](../../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)  
 &nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime >**  
   
 ## <a name="syntax"></a>Syntaxe
@@ -43,7 +43,7 @@ Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje. T
 
 Pokud  **\<supportedRuntime >** prvek není k dispozici v konfiguračním souboru aplikace, je použita verze modulu runtime používá k sestavení aplikace.  
 
-**\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít [ \<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) elementu.  
+ **\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít [ \<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md) elementu.  
   
 > [!NOTE]
 >  Pokud používáte [CorBindToRuntimeByCfg](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md) funkce zadejte konfigurační soubor, je nutné použít `<requiredRuntime>` – element pro všechny verze modulu runtime. `<supportedRuntime>` Prvek je ignorován při použití [CorBindToRuntimeByCfg](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md).  
@@ -66,7 +66,7 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |2.0|"v2.0.50727"|  
 |3.0|"v2.0.50727"|  
 |3.5|"v2.0.50727"|  
-|4.0 4.7.2|"v4.0"|  
+|4.0-4.7.2|"v4.0"|  
 
 <a name="sku"></a>   
 ## <a name="sku-id-values"></a>"sku id" hodnot
@@ -77,14 +77,14 @@ Doporučujeme aplikaci otestovat se všemi verzemi .NET Framework, na kterých b
 |----------------------------|---------------------|  
 |4.0|". NETFramework, verze = v4.0 "|  
 |4.0 client Profile|". NETFramework, verze = v4.0 profilu klienta = "|  
-|4.0, aktualizace platformy 1|". NETFramework, verze = v4.0.1 "|  
+|4.0, aktualizace platformy 1|".NETFramework,Version=v4.0.1"|  
 |4.0 client Profile, aktualizace 1|". NETFramework, verze = v4.0.1 profilu klienta = "|  
-|4.0, aktualizace platformy 2|". NETFramework, Version = verze 4.0.2 "|  
+|4.0, aktualizace platformy 2|".NETFramework,Version=v4.0.2"|  
 |4.0 client Profile update 2|". NETFramework, Version = verze 4.0.2 profilu klienta = "|  
-|4.0, aktualizace platformy 3|". NETFramework, Version = verze 4.0.3 "|  
+|4.0, aktualizace platformy 3|".NETFramework,Version=v4.0.3"|  
 |4.0 client Profile update 3|". NETFramework, Version = verze 4.0.3 profilu klienta = "|  
 |4.5|". NETFramework, verze = v4.5 "|  
-|4.5.1|". NETFramework, verze = v4.5.1 "|  
+|4.5.1|".NETFramework,Version=v4.5.1"|  
 |4.5.2|". NETFramework, verze = v4.5.2 "|  
 |4.6|". NETFramework, verze = v4.6 "|  
 |4.6.1|". NETFramework, verze = v4.6.1 "|  
@@ -110,6 +110,6 @@ Tento element lze použít v konfiguračním souboru aplikace.
 
 ## <a name="see-also"></a>Viz také:
 
- [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)  
+- [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)

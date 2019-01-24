@@ -2,12 +2,12 @@
 title: Referenční dokumentace klíčových slov
 description: Odkazy na informace o všech F# klíčová slova jazyka.
 ms.date: 05/16/2016
-ms.openlocfilehash: 75adc609dc6feeda2be9aa76bbb50b47b3d738ea
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
-ms.translationtype: MT
+ms.openlocfilehash: 20592c57e09c6e0f09bb3acae021369ac5e511d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611747"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579835"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -20,7 +20,7 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |Klíčové slovo|Odkaz|Popis|
 |-------|----|-----------|
 |`abstract`|[Členové](members/index.md)<br /><br />[Abstraktní třídy](abstract-classes.md)|Určuje metodu, která buď nemá implementaci v typu, ve kterém je deklarovaná, nebo že je virtuální a má výchozí implementaci.|
-|`and`|[`let` Vazby](functions/let-bindings.md)<br /><br />[Členové](members/index.md)<br /><br />[Omezení](generics/constraints.md)|Používá se ve vzájemně rekurzivních vazbách, v deklaracích vlastností a s několika omezeními u generických parametrů.|
+|`and`|[`let` Vazby](functions/let-bindings.md)<br /><br />[Záznamy](records.md)<br /><br />[Členové](members/index.md)<br /><br />[Omezení](generics/constraints.md)|Použít ve vzájemně rekurzivních vazbách a záznamy, v deklaracích vlastností a s několika omezeními u generických parametrů.|
 |`as`|[Třídy](classes.md)<br /><br />[Porovnávání vzorů](Pattern-Matching.md)|Umožňuje poskytnout název objektu objektu aktuální třídy. Také použít k pojmenování celého vzoru v rámci porovnávání.|
 |`assert`|[Kontrolní výrazy](assertions.md)|Slouží k ověření kódu během ladění.|
 |`base`|[Třídy](classes.md)<br /><br />[Dědičnost](inheritance.md)|Použít jako název objektu základní třídy.|

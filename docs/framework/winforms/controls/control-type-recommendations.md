@@ -7,12 +7,12 @@ helpviewer_keywords:
 - custom controls [Windows Forms], types
 - controls [Windows Forms], creating
 ms.assetid: 5235fe9d-c36a-4c08-ae76-6cb90b50085e
-ms.openlocfilehash: 5ce801a96bc4ef48934b983838dcf8578a5bc6e6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5e3337dddcc39517558cf85af76223306d20d2bb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503014"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599696"
 ---
 # <a name="control-type-recommendations"></a>Doporučení ohledně typu ovládacího prvku
 Rozhraní .NET Framework vám dává možnost vytvořit a implementovat nové ovládací prvky. Kromě známé uživatelský ovládací prvek nyní zjistíte, že budete moci napsat vlastní ovládací prvky, které vlastní vykreslení a budou moct i rozšiřovat funkce existujících ovládacích prvků prostřednictvím dědičnosti. Rozhodování o tom, jaký typ ovládacího prvku k vytvoření může být matoucí. Tato část ukazuje rozdíly mezi různé typy ovládacích prvků, ze kterého může dědit vlastnosti a poskytuje důležité informace týkající se typu vybrat pro váš projekt.  
@@ -45,7 +45,7 @@ Rozhraní .NET Framework vám dává možnost vytvořit a implementovat nové ov
   
 -   Potřebujete implementovat vlastní funkce, které nejsou k dispozici prostřednictvím standardní ovládací prvky.  
   
--   [Postupy: Zobrazení ovládacího prvku v dialogovém okně Zvolit položky nástrojů](https://msdn.microsoft.com/library/9yxtkx75\(v=vs.110\))  
+-   [Postupy: Zobrazení ovládacího prvku v zvolit položky panelu nástrojů – dialogové okno](https://msdn.microsoft.com/library/9yxtkx75\(v=vs.110\))  
   
 -   [Návod: Serializace kolekcí standardních typů s DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)  
   
@@ -53,32 +53,32 @@ Rozhraní .NET Framework vám dává možnost vytvořit a implementovat nové ov
   
 -   [Postupy: Poskytnutí rastrového obrázku panelu nástrojů pro ovládací prvek](https://msdn.microsoft.com/library/4wk1wc0a\(v=vs.110\))  
   
--   [Postupy: Dědění ze stávajících ovládacích prvků Windows Forms](https://msdn.microsoft.com/library/7h62478z\(v=vs.110\))  
+-   [Postupy: Dědění z existujících Windows Forms ovládacích prvků](https://msdn.microsoft.com/library/7h62478z\(v=vs.110\))  
   
--   [Návod: Ladění vlastních ovládacích prvků Windows Forms během návrhu](https://msdn.microsoft.com/library/5ytx0z24\(v=vs.110\))  
+-   [Návod: Ovládací prvky ladění vlastního Windows Forms v době návrhu](https://msdn.microsoft.com/library/5ytx0z24\(v=vs.110\))  
   
--   [Postupy: Dědění ze třídy Control](https://msdn.microsoft.com/library/skcysbt2\(v=vs.110\))  
+-   [Postupy: Dědit ze třídy Control](https://msdn.microsoft.com/library/skcysbt2\(v=vs.110\))  
   
--   [Postupy: Otestování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)  
+-   [Postupy: Testování běhového chování UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)  
   
 -   [Postupy: Zarovnání ovládacího prvku k okrajům formulářů během návrhu](https://msdn.microsoft.com/library/1fxyb15b\(v=vs.110\))  
   
--   [Postupy: Dědění ze třídy UserControl](https://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
+-   [Postupy: Dědit ze třídy UserControl](https://msdn.microsoft.com/library/00ctb4z0\(v=vs.110\))  
   
--   [Postupy: Vytváření ovládacích prvků pro Windows Forms](https://msdn.microsoft.com/library/bs3yhkh7\(v=vs.110\))  
+-   [Postupy: Autor ovládacích prvků Windows Forms](https://msdn.microsoft.com/library/bs3yhkh7\(v=vs.110\))  
   
 -   [Postupy: Vytváření složených ovládacích prvků](https://msdn.microsoft.com/library/3sf86w5h\(v=vs.110\))  
   
--   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](https://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
+-   [Návod: Vytvoření složeného ovládacího prvku s jazykem Visual Basic](https://msdn.microsoft.com/library/c316f119\(v=vs.110\))  
   
 -   [Návod: Vytvoření složeného ovládacího prvku pomocí Visual C#](https://msdn.microsoft.com/library/a6h7e207\(v=vs.110\))  
   
--   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basicu](https://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
+-   [Návod: Dědění z ovládacího prvku Windows Forms pomocí Visual Basic](https://msdn.microsoft.com/library/w2a8y03d\(v=vs.110\))  
   
--   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.110\))  
+-   [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.110\))  
   
--   [Postupy: vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
+-   [Postupy: Vytvoření ovládacího prvku Windows Forms, který využívá funkce návrhu aplikace](https://msdn.microsoft.com/library/307hck25\(v=vs.120\))  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vývoj jednoduchého ovládacího prvku Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)  
- [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vývoj ovládacího prvku jednoduchého Windows Forms](../../../../docs/framework/winforms/controls/how-to-develop-a-simple-windows-forms-control.md)
+- [Typy vlastních ovládacích prvků](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)

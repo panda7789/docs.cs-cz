@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d8e104b5d32c07c4730154ff3fc69b452a024b7
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: a7435d68635e2a1066b143c28b5662364326ac8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347900"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607235"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Měření zlepšení spuštění pomocí .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] výrazně zlepšuje dobu spuštění aplikace. Toto vylepšení je patrné v na přenosných a s nízkou spotřebou zařízení a s komplexní aplikace. Toto téma vám pomůže začít pracovat s základní instrumentací potřebné k měření zlepšení toto spuštění.  
@@ -47,7 +47,7 @@ ms.locfileid: "49347900"
   
 -   Vaše aplikace má po dokončení synchronizace nových příběhů.  
   
- Instrumentace aplikace je jednoduché: stačí zavolat vhodnou metodu v odvozené třídě. Pomocí `AppEventSource` z předchozího příkladu, vám umožňuje instrumentovat aplikaci následujícím způsobem:  
+ Instrumentace aplikace je jednoduchý: Stačí zavoláte vhodnou metodu v odvozené třídě. Pomocí `AppEventSource` z předchozího příkladu, vám umožňuje instrumentovat aplikaci následujícím způsobem:  
   
  [!code-csharp[ProjectN_ETW#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw2.cs#2)]  
   
@@ -97,5 +97,5 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Zopakováním postupu pro původní aplikace a verze, který jste vytvořili pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)] nástroj řetězec, můžete porovnat rozdíl ve výkonu.   [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace obvykle je dobré začít rychleji než jinou hodnotu než[!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace. Pokud vás zajímají podrobnější si PerfView můžete také určit části kódu, které trvá nejdéle. Další informace, podívejte se [PerfView kurzy](https://channel9.msdn.com/Series/PerfView-Tutorial) nebo si přečtěte [daňové Morrison blogu](https://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Tracing.EventSource>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Tracing.EventSource>

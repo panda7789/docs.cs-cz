@@ -2,12 +2,12 @@
 title: Důležité informace o zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 25d313f9c6f71d946ed8d9cc5db2e99dc84983b3
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 41812dab1f92e20e3742661d13c9f0e4fb81b46e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591945"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612824"
 ---
 # <a name="security-considerations-entity-framework"></a>Důležité informace o zabezpečení (Entity Framework)
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikací. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] aplikací. Další informace najdete v tématu [Přehled zabezpečení](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -46,7 +46,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
   
 -   Tvůrci připojovacích řetězců používejte pro dynamicky vytváření připojení.  
   
-     Pokud je nutné vytvořit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídy. Tato třída Tvůrce řetězec pomáhá zabránit útoky prostřednictvím injektáže připojovací řetězec tak, že ověřování a uvozovací znaky neplatné vstupní informace. Další informace najdete v tématu [postupy: sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md). Třídu Tvůrce příslušného řetězcového také použít k vytvoření připojovacího řetězce datového zdroje, který je součástí [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] připojovací řetězec. Informace o tvůrci připojovacích řetězců pro poskytovatele ADO.NET, naleznete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
+     Pokud je nutné vytvořit připojovací řetězce za běhu, použijte <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídy. Tato třída Tvůrce řetězec pomáhá zabránit útoky prostřednictvím injektáže připojovací řetězec tak, že ověřování a uvozovací znaky neplatné vstupní informace. Další informace najdete v tématu [jak: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md). Třídu Tvůrce příslušného řetězcového také použít k vytvoření připojovacího řetězce datového zdroje, který je součástí [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] připojovací řetězec. Informace o tvůrci připojovacích řetězců pro poskytovatele ADO.NET, naleznete v tématu [tvůrci připojovacích řetězců](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
   
  Další informace najdete v tématu [chrání informace o připojení](../../../../../docs/framework/data/adonet/protecting-connection-information.md).  
   
@@ -152,7 +152,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="verify-the-path-length-before-deployment"></a>Ověřte délku cesty před nasazením.  
  Před nasazením [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] aplikace, ujistěte se, že hodnoty kořenové – operátor (~) a `DataDirectory` náhradní řetězec nepřekračují omezení délky cesty v operačním systému. [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Zprostředkovatelé dat není jisté, že délka cesty je v mezích limitů platný.  
   
-## <a name="security-considerations-for-adonet-metadata"></a>Důležité informace o zabezpečení pro ADO.NET Metadata  
+## <a name="security-considerations-for-adonet-metadata"></a>Security Considerations for ADO.NET Metadata  
  Při vytváření a práci s modelu a souborů mapování, platí následující aspekty zabezpečení.  
   
 #### <a name="do-not-expose-sensitive-information-through-logging"></a>Nezveřejňujte citlivé informace přes protokolování.  
@@ -161,7 +161,7 @@ Toto téma popisuje důležité informace o zabezpečení, které jsou specifick
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>Nepřijmout objektu MetadataWorkspace objekty z nedůvěryhodných zdrojů.  
  Aplikace by neměla přijímat instance <xref:System.Data.Metadata.Edm.MetadataWorkspace> třídy z nedůvěryhodných zdrojů. By měl místo toho explicitně vytvořit a naplnit pracovní prostor z tyto zdroje.  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
- [Důležité informace o migraci](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
+- [Důležité informace o migraci](../../../../../docs/framework/data/adonet/ef/migration-considerations.md)

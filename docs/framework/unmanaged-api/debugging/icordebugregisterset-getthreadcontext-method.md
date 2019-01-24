@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 632d3912bae28da22e701078bb47d2d8dbfd3644
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 668b3849af9be24e019dc472a0b80067f0e1e0c1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423400"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54612733"
 ---
 # <a name="icordebugregistersetgetthreadcontext-method"></a>ICorDebugRegisterSet::GetThreadContext – metoda
 Získá kontext aktuálního vlákna.  
@@ -39,18 +39,18 @@ HRESULT GetThreadContext(
   
 #### <a name="parameters"></a>Parametry  
  `contextSize`  
- [v] Velikost v bajtech z `context` pole.  
+ [in] Velikost v bajtech, nástroje `context` pole.  
   
  `context`  
- [ve out] Pole bajtů, které tvoří Win32 `CONTEXT` strukturu pro aktuální platformě.  
+ [out v] Pole bajtů, které tvoří Win32 `CONTEXT` strukturu pro aktuální platformu.  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program by měly volat tuto funkci místo Win32 `GetThreadContext` fungovat, protože vlákno může být ve stavu "napadenému", kde byl dočasně změnit jeho kontextu. Je s daty vrácenými Win32 `CONTEXT` strukturu pro aktuální platformě.  
+ Ladicí program by měly volat tuto funkci místo Win32 `GetThreadContext` fungovat, protože vlákno může být ve stavu "napadenému", kde byl dočasně změní jeho kontextu. Data vrácená je Win32 `CONTEXT` strukturu pro aktuální platformu.  
   
- Pro snímky mimo úroveň listu, klienti kontrolou která registruje jsou platné pomocí [icordebugregisterset::getregistersavailable –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregistersavailable-method.md).  
+ Pro snímky mimo úroveň listu, klienti s kontrolou registrů, které jsou platné pomocí [icordebugregisterset::getregistersavailable –](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-getregistersavailable-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -58,6 +58,6 @@ HRESULT GetThreadContext(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)  
- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)

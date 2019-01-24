@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: auditování událostí zabezpečení aplikace Windows Communication Foundation'
+title: 'Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-ms.openlocfilehash: 90169aac0c0c2cac8860b2809467ffa3a27d0e91
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f3d4ed8ea9a3c0f45185cd0f631cd983b0e364c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50184735"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566824"
 ---
-# <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: auditování událostí zabezpečení aplikace Windows Communication Foundation
+# <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation
 Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí Windows, který lze zobrazit pomocí prohlížeče událostí Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoly událostí zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ### <a name="to-audit-security-events-in-code"></a>Auditování událostí zabezpečení v kódu  
@@ -81,14 +81,14 @@ Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpe
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Nastavení <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true`, potlačí všechny chyby Generovat audity zabezpečení (Pokud nastavena na `false`, je vyvolána výjimka). Nicméně pokud povolíte následující Windows **místní nastavení zabezpečení** vlastnost, nepovedlo se generovat události auditu způsobí, že Windows vypnout okamžitě:  
   
- **Audit: Vypněte okamžitě systém schopen protokolovat audity zabezpečení**  
+ **Audit: Vypnout systém okamžitě, je-li možno protokolovat audity zabezpečení**  
   
  Chcete-li nastavena vlastnost, otevřete **místní nastavení zabezpečení** dialogové okno. V části **nastavení zabezpečení**, klikněte na tlačítko **místní zásady**. Pak klikněte na tlačítko **možnosti zabezpečení**.  
   
  Pokud <xref:System.ServiceModel.AuditLogLocation> je nastavena na <xref:System.ServiceModel.AuditLogLocation.Security> a **auditování přístupu k objektům** kódu není nastavený **místní zásady zabezpečení**, události auditu se zapisují do protokolu zabezpečení. Všimněte si, že se vrátí bez chyby, ale položky auditu se zapisují do protokolu zabezpečení.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A>  
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
- <xref:System.ServiceModel.AuditLogLocation>  
- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A>
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
+- <xref:System.ServiceModel.AuditLogLocation>
+- [Auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
