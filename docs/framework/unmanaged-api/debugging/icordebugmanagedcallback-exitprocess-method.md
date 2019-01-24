@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42330296defe90980dd431ce39765a549057b82a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4e7b62b7eb038d553b28fbd6422175d511df88d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540543"
 ---
 # <a name="icordebugmanagedcallbackexitprocess-method"></a>ICorDebugManagedCallback::ExitProcess – metoda
-Upozorní ladicího programu, proces byl ukončen.  
+Upozorní ladicího programu, že proces byl ukončen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +37,17 @@ HRESULT ExitProcess (
   
 #### <a name="parameters"></a>Parametry  
  `pProcess`  
- [v] Ukazatel na ICorDebugProcess objekt, který představuje proces.  
+ [in] Ukazatel na objekt ICorDebugProcess, který představuje proces.  
   
 ## <a name="remarks"></a>Poznámky  
- Nelze pokračovat od `ExitProcess` událostí. Tato událost může aktivovat asynchronně s ostatními událostmi během procesu se zobrazí zastavení. Tato situace může nastat, pokud se proces ukončí při zastavená, obvykle kvůli některé externí force.  
+ Nejde pokračovat od `ExitProcess` událostí. Tato událost může aktivovat asynchronně s ostatními událostmi během procesu se zdá být zastaven. Tato situace může nastat, pokud se proces ukončí při zastavení, obvykle kvůli některé externí platnost.  
   
- Pokud modul CLR (CLR) je již odeslání spravované zpětné volání, tato událost bude opožděno až po vrátila že zpětné volání.  
+ Pokud common language runtime (CLR) je již odesílání spravované zpětné volání, tato událost bude odložena až do po vrátila tohoto zpětného volání.  
   
- `ExitProcess` Událostí je pouze ukončení a vyřadit událost, který zaručeně zavolána na vypnutí.  
+ `ExitProcess` Událostí je jediná událost výstupu/uvolnění, která je zaručeně získat volat pro vypnutí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +55,5 @@ HRESULT ExitProcess (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

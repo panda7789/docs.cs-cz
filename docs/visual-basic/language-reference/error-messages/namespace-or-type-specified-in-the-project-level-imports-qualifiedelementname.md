@@ -1,5 +1,5 @@
 ---
-title: Namespace nebo typ zadaný v importech úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; nemá&#39;t obsahovat všechny veřejné člen nebo nebyla nalezena
+title: Namespace nebo typ zadaný v příkazu Imports na úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; kódu&#39;t obsahovat žádný veřejný člen nebo nebyl nalezen
 ms.date: 07/20/2015
 f1_keywords:
 - vbc40057
@@ -7,39 +7,39 @@ f1_keywords:
 helpviewer_keywords:
 - BC40057
 ms.assetid: 4ae3506e-2ebe-4ff3-995d-14ac60db5e9f
-ms.openlocfilehash: d6d0c931262d892ec3e65888a76f25218b23d868
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 215d8d301317f711aecb88167030e70ed01408aa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33595810"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552460"
 ---
-# <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v importech úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; nemá&#39;t obsahovat všechny veřejné člen nebo nebyla nalezena
-Namespace nebo typ zadaný v úrovni projektu Imports\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyla nalezena. Zajistěte, aby obor názvů nebo typ je definovaný a obsahuje nejméně jeden člen veřejné. Ujistěte se, že název aliasu neobsahuje jiné aliasy.  
+# <a name="namespace-or-type-specified-in-the-project-level-imports-39ltqualifiedelementnamegt39-doesn39t-contain-any-public-member-or-cannot-be-found"></a>Namespace nebo typ zadaný v příkazu Imports na úrovni projektu &#39; &lt;qualifiedelementname&gt; &#39; kódu&#39;t obsahovat žádný veřejný člen nebo nebyl nalezen
+Namespace nebo typ zadaný v příkazu Imports na úrovni projektu'\<qualifiedelementname >' neobsahuje žádný veřejný člen nebo nebyl nalezen. Ujistěte se, že obor názvů nebo typ definován a obsahuje nejméně jeden veřejný člen. Ujistěte se, že název aliasu neobsahuje další aliasy.  
   
- Importu vlastnost projektu určuje obsahující element, který nelze nalézt nebo nejsou definovány žádné `Public` členy.  
+ Vlastnost importu projektu určuje nadřazeného elementu, který nemůže být nalezen nebo nedefinuje žádné `Public` členy.  
   
- A *obsahující element* můžou být obor názvů, třída, struktura, modulu, rozhraní nebo výčet. Element obsahující obsahuje členy, jako jsou proměnné, postupy nebo jiné obsahující prvky.  
+ A *obsahující element* může být obor názvů, třída, struktura, modul, rozhraní nebo výčet. Obsahující element obsahuje členy, jako jsou proměnné, postupy a další obsahující prvky.  
   
- Účelem importu je umožnit kódu členům přístup k oboru názvů nebo typ bez nutnosti jejich kvalifikaci. Projekt může být také nutné přidat odkaz na obor názvů nebo typu. Další informace najdete v tématu "Import obsahující prvků" v [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ Účelem importu je umožnit váš kód získat přístup ke členům obor názvů nebo typ bez nutnosti je vyfiltrovat. Váš projekt může být také nutné přidat odkaz na obor názvů nebo typ. Další informace najdete v tématu "Import obsahující prvky" [odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
- Pokud kompilátor nemůže najít zadaný element obsahující, nelze ho přeložit odkazy, které ho používají. Pokud najde elementu, ale element nevystavuje žádné `Public` členy, pak žádný odkaz může být úspěšné. V obou případech je smysl pro import elementu.  
+ Pokud kompilátor nemůže najít zadaný nadřazený prvek, nelze ho přeložit odkazy, které ji používají. Vyhledá prvek ale elementu nevystavuje žádné `Public` členové, pak žádný odkaz může být úspěšné. V obou případech je importovat element nemá význam.  
   
- Můžete použít **Návrhář projektu** k určení elementy pro import. Použití **importovat obory názvů** části **odkazy** stránky. Můžete získat **Návrhář projektu** dvojitým kliknutím **Můj projekt** ikonu v **Průzkumníku řešení**.  
+ Můžete použít **Návrháře projektu** k určení prvků k importu. Použití **importovat obory názvů** část **odkazy** stránky. Můžete získat **Návrháře projektu** dvojitým kliknutím **Můj projekt** ikonu **Průzkumníku řešení**.  
   
  **ID chyby:** BC40057  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Otevřete **Návrhář projektu** a přepněte do **odkaz** stránky.  
+1.  Otevřít **Návrháře projektu** a přepněte se na **odkaz** stránky.  
   
-2.  V **importovat obory názvů** části, ověřte, zda je přístupný z projektu obsahující element.  
+2.  V **importovat obory názvů** části, ověřte, zda je přístupný z projektu nadřazeného elementu.  
   
-3.  Ověřte, zda obsahující element zpřístupňuje alespoň jeden `Public` člen.  
+3.  Ověřte, že nadřazeného elementu zpřístupňuje alespoň jeden `Public` člena.  
   
-## <a name="see-also"></a>Viz také  
- [Stránka Odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)  
- [Public](../../../visual-basic/language-reference/modifiers/public.md)  
- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)  
- [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+## <a name="see-also"></a>Viz také:
+- [Stránka Odkazy, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic)
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+- [Public](../../../visual-basic/language-reference/modifiers/public.md)
+- [Obory názvů v jazyce Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+- [Odkazy na deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

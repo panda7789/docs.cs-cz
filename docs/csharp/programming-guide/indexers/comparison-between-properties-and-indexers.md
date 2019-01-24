@@ -6,12 +6,12 @@ helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
-ms.openlocfilehash: 053eb7ee0fe9333f049e5b4f8a8e709e42aa2119
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 41b27905edb8a0e00a6af5a4cce38988161326d0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53234458"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537722"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>Porovnání mezi vlastnostmi a indexery (Průvodce programováním v C#)
 Indexery jsou stejné jako vlastnosti. S výjimkou rozdílů je znázorněno v následující tabulce všechna pravidla, které jsou definovány pro přistupující objekty vlastnosti platí pro přistupující objekty indexer také.  
@@ -25,8 +25,8 @@ Indexery jsou stejné jako vlastnosti. S výjimkou rozdílů je znázorněno v n
 |A [nastavit](../../../csharp/language-reference/keywords/set.md) přistupující objekt vlastnosti obsahuje implicitní `value` parametru.|A `set` přistupující objekt indexeru má stejného seznamu formálních parametrů jako indexeru a také [hodnotu](../../../csharp/language-reference/keywords/value.md) parametru.|  
 |Podporuje zkrátila syntaxe [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).|Nepodporuje zkrácený syntaxi.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)
 - [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)

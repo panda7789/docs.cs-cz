@@ -2,12 +2,12 @@
 title: Vedle sebe spouštění v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 9f9ba96d-9f89-4f65-bb2f-6860879f4393
-ms.openlocfilehash: f69a269e5f6370cf7c5a60920b3d5a47ce1079cb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 122cb33f4cca203f09104c5a40a1ad5d13326c57
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126611"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538632"
 ---
 # <a name="side-by-side-execution-in-adonet"></a>Vedle sebe spouštění v ADO.NET
 Spuštění vedle sebe v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] je schopnost spouští aplikaci, která v počítači, který má více verzí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] nainstalovat, výhradně pomocí verze, pro kterou byla aplikace zkompilována. Podrobné informace o konfiguraci spuštění vedle sebe, naleznete v tématu [spuštění vedle sebe](../../../../docs/framework/deployment/side-by-side-execution.md).  
@@ -64,7 +64,7 @@ SELECT * FROM dbo.Customers;
 SET NOCOUNT OFF;  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Přehled ADO.NET](../../../../docs/framework/data/adonet/ado-net-overview.md)
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

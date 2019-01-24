@@ -1,5 +1,5 @@
 ---
-title: Výraz rekurzivně volá vlastnost obsahující &#39; &lt;propertyname&gt;&#39;
+title: Výraz rekurzivně volá nadřazenou vlastnost &#39; &lt;propertyname&gt;&#39;
 ms.date: 07/20/2015
 f1_keywords:
 - vbc42026
@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: f14e2645772b22a8f6ff2385dcd316a42d1d5cf0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 88dbecfe6e63248e07b3fdb9102a5cbba4b1b628
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553071"
 ---
-# <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>Výraz rekurzivně volá vlastnost obsahující &#39; &lt;propertyname&gt;&#39;
-Příkaz v `Set` postup definici vlastnosti ukládá hodnotu do názvu vlastnosti.  
+# <a name="expression-recursively-calls-the-containing-property-39ltpropertynamegt39"></a>Výraz rekurzivně volá nadřazenou vlastnost &#39; &lt;propertyname&gt;&#39;
+Příkaz v `Set` postup definice vlastnosti uloží hodnotu do názvu vlastnosti.  
   
- Je doporučeným přístupem k hodnota vlastnosti, která uchovává k definování `Private` proměnné v kontejneru vlastnosti a použít ho v obou `Get` a `Set` postupy. `Set` Postup by pak uložení příchozí hodnoty v tomto `Private` proměnné.  
+ Doporučený postup pro drží hodnotu vlastnosti je definování `Private` proměnné ve vlastnosti kontejneru a jeho použití v obou `Get` a `Set` postupy. `Set` Postup by měl pak ukládání příchozích hodnoty v tomto `Private` proměnné.  
   
- `Get` Postup chová jako `Function` postup, takže se můžete přiřadit hodnotu pro název vlastnosti a vrátit řízení podle zjištění `End Get` příkaz. Doporučený postup je však zahrnout `Private` jako hodnota v proměnné [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
+ `Get` Postup se chová stejně jako `Function` postup, abyste mohli přiřadit hodnotu názvu vlastnosti a vrátit ovládací prvek podle zjištění `End Get` příkazu. Doporučený postup je však chcete zahrnout `Private` jako hodnota v proměnné [příkaz Return](../../../visual-basic/language-reference/statements/return-statement.md).  
   
- `Set` Postupu se chová stejně jako `Sub` postup, který nevrací hodnotu. Proto název postupu nebo vlastnost nemá žádný speciální význam v rámci `Set` postup a nelze uložit do ní hodnotu.  
+ `Set` Postup se chová stejně jako `Sub` proceduru, která nevrací hodnotu. Proto se název procedury nebo vlastnost nemá žádný speciální význam v rámci `Set` postupu a nejde uložit hodnotu do něj.  
   
- Následující příklad ukazuje postup, který může způsobit, že tato chyba, za nímž následuje o doporučený postup.  
+ Následující příklad ukazuje postup, který může způsobit, že tato chyba, za nímž následuje doporučený postup.  
   
 ```  
 Public Class illustrateProperties  
@@ -55,15 +55,15 @@ Public Class illustrateProperties
 End Class  
 ```  
   
- Ve výchozím nastavení je tato zpráva upozornění. Další informace o zobrazení nebo skrytí upozornění práce upozornění jako chyby najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42026  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Přepisování definice vlastnosti, která použijte doporučený postup, jak je ukázáno v předchozím příkladu.  
+-   Přepsání definice vlastnosti použít doporučený postup, jak je znázorněno v předchozím příkladu.  
   
-## <a name="see-also"></a>Viz také  
- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)  
- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
+- [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)

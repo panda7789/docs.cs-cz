@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d80e3206f74c3c50c8436563b0e39d1229a963b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c8a4d3b7014d0da88e83b507c39c039d39ba93d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446366"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54542675"
 ---
 # <a name="imetadataemitsetpermissionsetprops-method"></a>IMetaDataEmit::SetPermissionSetProps – metoda
-Nastaví nebo aktualizuje funkce metadata podpis sadu oprávnění definovanou před voláním [imetadataemit::definepermissionset –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
+Nastaví nebo aktualizuje podpis metadat sady oprávnění určené předchozím volání funkce [imetadataemit::definepermissionset –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,29 +41,29 @@ HRESULT SetPermissionSetProps (
   
 #### <a name="parameters"></a>Parametry  
  `tk`  
- [v] Metadata token, který představuje objekt, který má být doplněný o atribut.  
+ [in] Token metadat, který představuje objekt, který má být upravena.  
   
  `dwAction`  
- [v] A [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) hodnotu, která určuje typ deklarativní zabezpečení, který se má použít.  
+ [in] A [cordeclsecurity –](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) hodnotu, která určuje typ deklarativní zabezpečení, který se má použít.  
   
  `pvPermission`  
- [v] Oprávnění objektu BLOB.  
+ [in] Zabezpečovací BLOB.  
   
  `cbPermission`  
- [v] Velikost v bajtech z `pvPermission`.  
+ [in] Velikost v bajtech, z `pvPermission`.  
   
  `ppm`  
- [out] `mdPermission` Metadata token, který představuje aktualizované oprávnění.  
+ [out] `mdPermission` Token metadat, který představuje aktualizovanými oprávněními.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 25d083b730117a791fb8ab550b36f7b2e6c5f5be
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 6f4d135bc74a753b3968baaccf3e35633c8ba253
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613710"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535798"
 ---
 # <a name="ltgccpugroupgt-element"></a>&lt;Gccpugroup –&gt; – Element
 Určuje, zda uvolňování podporuje více skupin procesorů.  
@@ -72,8 +72,8 @@ Určuje, zda uvolňování podporuje více skupin procesorů.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
-- [Postupy: Zakázat souběžné uvolňování paměti](https://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Postupy: Zakázat souběžné uvolňování paměti](https://msdn.microsoft.com/library/ba2c6c67-5778-497c-9fac-5f793b5500c7)
 - [Uvolňování paměti pracovní stanice a serveru](../../../../../docs/standard/garbage-collection/fundamentals.md#workstation_and_server_garbage_collection)

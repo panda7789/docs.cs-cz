@@ -2,12 +2,12 @@
 title: Použití odchylek pro delegáty Func a Action obecný (C#)
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-ms.openlocfilehash: 903926bc86b1b96cea25b91314e35ed4771bbcb9
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: f517eea07588bb01ef903c8311126eab872bd735
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970354"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540595"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Použití odchylek pro delegáty Func a Action obecný (C#)
 Tyto příklady ukazují, jak používat kovariance a kontravariance v `Func` a `Action` obecné delegáty umožňují opakované použití metod a poskytují větší flexibilitu v kódu.  
@@ -81,7 +81,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kovariance a kontravariance (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)  
+- [Kovariance a kontravariance (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

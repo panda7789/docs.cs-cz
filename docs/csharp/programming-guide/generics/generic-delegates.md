@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 56e715aa0be91c250e243a3a37195e7ee037de82
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 43163e0402166c8b1b604b1b80d71763bf82bcea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53241071"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546053"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>Obecní delegáti (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) můžete definovat vlastní parametry typu. Kód, že odkazy obecného delegátu možné zadat argument typu k vytvoření uzavřený konstruovaný typ., stejně jako při vytvoření instance generické třídy nebo volání obecné metody, jak je znázorněno v následujícím příkladu:  
@@ -34,13 +34,13 @@ A [delegovat](../../../csharp/language-reference/keywords/delegate.md) můžete 
   
  [!code-csharp[csProgGuideGenerics#40](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-delegates_5.cs)]  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Generic>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)  
-- [Obecné metody](../../../csharp/programming-guide/generics/generic-methods.md)  
-- [Obecné třídy](../../../csharp/programming-guide/generics/generic-classes.md)  
-- [Obecná rozhraní](../../../csharp/programming-guide/generics/generic-interfaces.md)  
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- <xref:System.Collections.Generic>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+- [Obecné metody](../../../csharp/programming-guide/generics/generic-methods.md)
+- [Obecné třídy](../../../csharp/programming-guide/generics/generic-classes.md)
+- [Obecná rozhraní](../../../csharp/programming-guide/generics/generic-interfaces.md)
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
 - [Obecné typy](~/docs/standard/generics/index.md)

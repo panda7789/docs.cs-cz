@@ -4,59 +4,60 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-ms.openlocfilehash: b6322bada88c6aef65b609f43fe92dda8dbab206
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0664dbb70df61c0f68d34c4ab364db6623805bfa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54542766"
 ---
 # <a name="transport-quotas"></a>Přenosové kvóty
-Přenosové kvóty jsou mechanismus zásad rozhodování, kdy připojení spotřebovává nadměrné prostředky. Kvótu je pevný limit, který brání použití další prostředky, jakmile dojde k překročení kvóty hodnota. Přenosové kvóty zabránit škodlivý nebo neúmyslnému útoku DOS.  
+Přenosové kvóty slouží jako mechanismus pro zásady pro rozhodování o tom, kdy připojení spotřebovává přemíru prostředků. Kvóta je pevný limit, který brání použití další zdroje informací po překročení hodnoty kvóty. Přenosové kvóty zabránit škodlivým nebo neúmyslným útoky s cílem odepření služby.  
   
- Přenosy Windows Communication Foundation (WCF) mají výchozí hodnoty kvóty, které jsou založeny na konzervativní přidělení prostředků. Tyto výchozí hodnoty jsou vhodné pro vývojové prostředí a scénáře malé instalace. Správci služeb zkontrolujte přenosové kvóty a ladit jednotlivé hodnoty kvót, pokud instalace může být nedostatek prostředků, nebo pokud jsou právě připojení omezený navzdory dostupnost další prostředky.  
+ Přenosy Windows Communication Foundation (WCF) mají výchozí kvótu hodnoty, které jsou založeny na konzervativní přidělení prostředků. Tyto výchozí hodnoty jsou vhodné pro vývojové prostředí a scénářů malé instalace. Správci služeb by měl přenosové kvóty ověřit a odladit hodnoty individuální diskových kvót, pokud instalace může být nedostatek prostředků, nebo pokud připojení jsou omezeno bez ohledu na dostupnost další prostředky.  
   
 ## <a name="types-of-transport-quotas"></a>Typy přenosové kvóty  
- Přenosy WCF mít tři typy kvót:  
+ Přenosy WCF mají tři typy kvót:  
   
--   *Časové limity* zmírnit útok na dostupnost služby útoků, které jsou závislé na příkazů systémové prostředky pro delší dobu.  
+-   *Vypršení časových limitů* zmírnit útoky na dostupnost služby, které využívají obsadit prostředků delší dobu.  
   
--   *Omezení přidělení paměti* zabránit jednoho připojení z vyčerpáním systémové paměti a odepření služby do jiné připojení.  
+-   *Omezení přidělení paměti* zabránit jediné připojení z vyčerpáním systémové paměti a odepření služby do jiné připojení.  
   
--   *Limity velikosti kolekce* vázaný spotřeby prostředků, které nepřímo přidělit paměť nebo jsou v omezenou nabídkou.  
+-   *Limity velikosti kolekce* vázán spotřebu prostředků, která nepřímo alokovat paměť nebo jsou v nějak omezený.  
   
-## <a name="transport-quota-descriptions"></a>Popisy kvóty přenosu  
- Tato část popisuje přenosové kvóty, které jsou k dispozici pro standardní přenosy WCF: HTTP (S), protokolu TCP/IP a pojmenované kanály. Vlastní přenosy můžou zpřístupnit vlastní konfigurovat kvóty, které nejsou uvedené v tomto seznamu. Najdete v dokumentaci pro vlastní přenos informace o jeho kvóty.  
+## <a name="transport-quota-descriptions"></a>Přenosové kvóty popisy  
+ Tato část popisuje, k dispozici pro standardní přenosy WCF přenosové kvóty: HTTP (S), protokolu TCP/IP a pojmenovaných kanálů. Vlastní přenosy můžete zveřejnit své vlastní konfigurovatelné kvóty nejsou zahrnuty v tomto seznamu. V dokumentaci pro vlastní přenos najdete informace o jeho kvóty.  
   
- Každé nastavení kvót má typ, minimální hodnota a výchozí hodnota. Maximální hodnota, která kvótu je omezena její typ. Vzhledem k omezením počítače není vždy možné nastavit kvótu na maximální hodnotu.  
+ Každé nastavení kvóty má typ, minimální hodnota a výchozí hodnota. Jeho typ je omezená maximální hodnota kvóty. Vzhledem k omezením počítač není vždy možné nastavit kvótu pro maximální hodnota.  
   
 |Název|Typ|Min.<br /><br /> value|Výchozí<br /><br /> value|Popis|  
 |----------|----------|--------------------|-----------------------|-----------------|  
-|`ChannelInitializationTimeout`|Časový interval|1 značek|5 s|Maximální doba čekání na připojení k odeslání preambule během počáteční čtení. Tato data byl přijat, než dojde k ověřování. Toto nastavení je obvykle mnohem menší, než `ReceiveTimeout` hodnota kvóty.|  
-|`CloseTimeout`|Časový interval|0|1 min|Maximální doba čekání na připojení k zavřete před přenos vyvolá výjimku.|  
-|`ConnectionBufferSize`|Integer|1|8 KB|Velikost v bajtech odesílání a příjmu vyrovnávací paměti základní přenosu. Zvýšení velikosti vyrovnávací paměti může zvýšit propustnost při odesílání zpráv velké.|  
-|`IdleTimeout`|Časový interval|0|2 min.|Maximální doba ve fondu připojení zůstat v nečinnosti před dochází k uzavření.<br /><br /> Toto nastavení platí pouze pro ve fondu připojení.|  
-|`LeaseTimeout`|Časový interval|0|5 minut|Maximální doba života aktivního připojení ve fondu. Po uplynutí určité doby, připojení zavře, jakmile je servis aktuální požadavek.<br /><br /> Toto nastavení platí pouze pro ve fondu připojení.|  
-|`ListenBacklog`|Integer|1|10|Maximální počet připojení, která může mít unserviced naslouchací proces před další připojení do tohoto koncového bodu je odepřen.|  
-|`MaxBufferPoolSize`|dlouhá|0|512 KB|Maximální velikost paměti v bajtech, které přenos věnoval sdružování opakovaně použitelné zpráva vyrovnávací paměti. Když fondu nelze zadat zprávu vyrovnávací paměť, vyrovnávací paměť nového je přidělen pro dočasné použití.<br /><br /> Instalace vytvořit mnoho objektů factory kanálu nebo naslouchací procesy, které můžete přidělit velké množství paměti pro fondy vyrovnávací paměti. Zmenšení velikosti této vyrovnávací paměti může výrazně snížit využití paměti v tomto scénáři.|  
-|`MaxBufferSize`|Integer|1|64 KB|Maximální velikost v bajtech vyrovnávací paměť pro datový proud. Pokud není nastavena tato kvóta přenosu, nebo není přenosu pomocí vysílání datového proudu, pak hodnota kvóty je stejný jako menší z `MaxReceivedMessageSize` hodnota kvóty a <xref:System.Int32.MaxValue>.|  
-|`MaxOutboundConnectionsPerEndpoint`|Integer|1|10|Maximální počet odchozí připojení, které může být spojeno s konkrétní koncový bod.<br /><br /> Toto nastavení platí pouze pro ve fondu připojení.|  
-|`MaxOutputDelay`|Časový interval|0|200 ms|Maximální doba čekání po operaci odeslání pro dávkování další zprávy v rámci jedné operace. Zprávy jsou odesílány dříve, pokud vyrovnávací paměť základní přenos plný. Doba zpoždění neprovádí vynulování odesláním další zprávy.|  
-|`MaxPendingAccepts`|Integer|1|1|Maximální počet přijme pro kanály, naslouchací proces můžou mít čekání.<br /><br /> Je interval mezi dokončení přijmout a nové spuštění přijmout. Zvýšit velikost této kolekce můžete zabránit klienti, kteří připojují během tohoto intervalu z probíhá vyřazování.|  
-|`MaxPendingConnections`|Integer|1|10|Maximální počet připojení, která naslouchací proces může mít čeká se na aplikace akceptovat. Při překročení této hodnoty kvóty na nový příchozí připojení zahozených místo čekání na přijmout.<br /><br /> Funkce připojení jako zabezpečení zpráv může způsobit klienta otevřít víc než jedno připojení. Správci služeb by měl účet pro tyto další připojení při nastavování této hodnoty kvóty.|  
-|`MaxReceivedMessageSize`|dlouhá|1|64 KB|Maximální velikost v bajtech přijaté zprávy, včetně hlavičky, než se přenos vyvolá výjimku.|  
-|`OpenTimeout`|Časový interval|0|1 min|Maximální doba čekání připojení lze navázat před přenos vyvolá výjimku.|  
-|`ReceiveTimeout`|Časový interval|0|10 min.|Maximální doba čekání na dokončení před přenos čtení operace vyvolá výjimku.|  
-|`SendTimeout`|Časový interval|0|1 min|Maximální doba čekání na dokončení před přenos operace zápisu vyvolá výjimku.|  
+|`ChannelInitializationTimeout`|Časový interval|1 značek|5 s|Maximální doba čekání na připojení k odesílání preambule během počáteční pro čtení. Přijetí tato data předtím, než dojde k ověření. Toto nastavení je obvykle mnohem menší, než `ReceiveTimeout` hodnota kvóty.|  
+|`CloseTimeout`|Časový interval|0|1 min.|Maximální doba čekání na připojení k zavřete, než přenos vyvolá výjimku.|  
+|`ConnectionBufferSize`|Integer|1|VELIKOSTI 8 KB|Velikost v bajtech, odesílání a příjem základní přenos. Zvýšení velikosti vyrovnávací paměti může zvýšit propustnost, při odesílání velkých zpráv.|  
+|`IdleTimeout`|Časový interval|0|2 min|Maximální doba připojení z fondu může zůstat nečinné, než jeho uzavírání.<br /><br /> Toto nastavení platí jenom pro připojení ve fondu.|  
+|`LeaseTimeout`|Časový interval|0|5 min|Maximální doba života aktivní ve fondu připojení. Po uplynutí určité doby, zavře po Údržba aktuálního požadavku.<br /><br /> Toto nastavení platí jenom pro připojení ve fondu.|  
+|`ListenBacklog`|Integer|1|10|Maximální počet připojení, které můžou mít unserviced naslouchací proces před další připojení do tohoto koncového bodu byl odepřen.|  
+|`MaxBufferPoolSize`|Dlouhé|0|512 KB|Maximální velikost paměti v bajtech, která se věnuje přenos sdružování vyrovnávací paměti zpráv opakovaně použitelné. Pokud vyrovnávací paměť zpráv nelze zadat fond, nové vyrovnávací paměti přidělené dočasné.<br /><br /> Zařízení, které vytvoří velký počet objektů pro vytváření kanálů nebo naslouchacích procesů můžete přidělit velké množství paměti pro fondy vyrovnávací paměti. Zmenšení velikosti této vyrovnávací paměti může výrazně snížit využití paměti v tomto scénáři.|  
+|`MaxBufferSize`|Integer|1|64 KB|Maximální velikost v bajtech pro datový proud vyrovnávací paměti. Tato kvóta přenos není nastavená, nebo přenos nepoužívá, streamování a potom hodnoty kvóty je stejné jako menší z `MaxReceivedMessageSize` hodnoty kvóty na a <xref:System.Int32.MaxValue>.|  
+|`MaxOutboundConnectionsPerEndpoint`|Integer|1|10|Maximální počet odchozích připojení, které mohou být spojeny s konkrétní koncový bod.<br /><br /> Toto nastavení platí jenom pro připojení ve fondu.|  
+|`MaxOutputDelay`|Časový interval|0|200 ms|Maximální doba čekání, po operaci odeslání pro dávkové zpracování dalších zpráv v rámci jedné operace. Zprávy se odešlou dříve, pokud vyrovnávací paměť základní přenos zaplní. Odesláním další zprávy není resetovaný dobu zpoždění.|  
+|`MaxPendingAccepts`|Integer|1|1|Maximální počet kanálů přijme, mohou v naslouchacím čekání.<br /><br /> Je interval mezi dokončení přijmout a nové počáteční přijmout. Zvýšit velikost této kolekce mohou zabránit klientům, které během tohoto intervalu z probíhá vyřazování připojit.|  
+|`MaxPendingConnections`|Integer|1|10|Maximální počet připojení, která mohou v naslouchacím čekat na přijetí aplikací. Při překročení této kvóty hodnoty nové příchozí připojení jsou vynechány místo čekat na přijetí.<br /><br /> Připojení funkce, jako je zabezpečení zpráv můžete donutit klienta k otevření více než jedno připojení. Správci služeb by měl účet pro tyto další připojení při nastavování této hodnoty kvóty.|  
+|`MaxReceivedMessageSize`|Dlouhé|1|64 KB|Maximální velikost v bajtech přijaté zprávy, včetně záhlaví, než přenos vyvolá výjimku.|  
+|`OpenTimeout`|Časový interval|0|1 min.|Maximální doba čekání na připojení k navázat před přenos vyvolá výjimku.|  
+|`ReceiveTimeout`|Časový interval|0|10 minut|Maximální doba čekání na operaci čtení až po dokončení přenosu vyvolá výjimku.|  
+|`SendTimeout`|Časový interval|0|1 min.|Maximální doba čekání na operaci zápisu až po dokončení přenosu vyvolá výjimku.|  
   
- Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosu kvóty s názvem `MaxConnections` Pokud nastavíte prostřednictvím vazby nebo konfigurace. Pouze prvku vazby umožňuje nastavení tyto hodnoty kvóty jednotlivě. `MaxConnections` Kvóty přenosu má stejné minimální a výchozí hodnoty.  
+ Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosové kvóty s názvem `MaxConnections` při nastavení prostřednictvím vazby nebo konfigurace. Pouze prvek vazby umožňuje nastavení tyto hodnoty kvóty zvlášť. `MaxConnections` Kvóty přenosu má stejné minimální a výchozí hodnoty.  
   
 ## <a name="setting-transport-quotas"></a>Nastavení přenosové kvóty  
- Přenosové kvóty se konfigurují pomocí prvku vazby přenosu, přenos vazby, konfigurace aplikace nebo zásad. Tento dokument nepopisuje nastavení přenosy prostřednictvím zásad. Naleznete v dokumentaci k základní přenos ke zjištění nastavení zásad kvót hostitele. [Konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md) téma popisuje nastavení kvót pro ovladač Http.sys. Vyhledejte další informace o konfiguraci omezení systému Windows na protokolu HTTP, protokolu TCP/IP a pojmenovaný kanál připojení ve znalostní bázi Microsoft Knowledge Base.  
+ Přenosové kvóty jsou nastavené přes element vazby přenosu, vazby přenosu, konfiguraci aplikací nebo zásad. Tento dokument nepopisuje nastavení přenosy prostřednictvím zásad. V dokumentaci pro základní přenos zjistit nastavení pro hostitele zásady kvót. [Konfigurace HTTP a HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md) téma popisuje nastavení kvót pro ovladač Http.sys. Vyhledejte další informace o konfiguraci Windows omezení na HTTP, protokolu TCP/IP a pojmenovaných rour ve znalostní bázi Microsoft Knowledge Base.  
   
- Jiné typy kvót nepřímo týkají přenosy. Kodér zpráv, který přenos používá k transformaci zprávu do bajtů může mít svůj vlastní nastavení kvót. Ale tyto kvóty jsou nezávislé na typ přenosu, které používá.  
+ Jiné typy kvót nepřímo platí pro přenosy. Kodér zprávy, která používá přenos pro transformaci zprávy do bajtů může mít svůj vlastní nastavení kvót. Tyto kvóty jsou však nezávisle na typ přenosu, které se používají.  
   
-### <a name="controlling-transport-quotas-from-the-binding-element"></a>Řízení přenosové kvóty z prvku vazby  
- Nastavení přenosové kvóty prostřednictvím prvku vazby nabízí nejvyšší flexibilitu při řízení chování je přenos. Výchozí vypršení časových limitů pro zavřít, otevřete, Receive a odešlete operations jsou převzaty z vazby, když je sestavena kanál.  
+### <a name="controlling-transport-quotas-from-the-binding-element"></a>Přenosové kvóty z elementu vazby řízení  
+ Nastavení přenosové kvóty prostřednictvím element vazby nabízí nejvyšší flexibilitu při řízení chování přenosu. Výchozí časové limity pro zavřít, otevřít, přijetí a odešlete operace pocházejí z vazby při vytváření kanálu.  
   
 |Název|HTTP|TCP/IP|Pojmenovaný kanál|  
 |----------|----------|-------------|----------------|  
@@ -77,8 +78,8 @@ Přenosové kvóty jsou mechanismus zásad rozhodování, kdy připojení spotř
 |`ReceiveTimeout`||||  
 |`SendTimeout`||||  
   
-### <a name="controlling-transport-quotas-from-the-binding"></a>Řízení přenosové kvóty z vazby  
- Nastavení přenosové kvóty prostřednictvím vazby nabízí zjednodušené sadu kvóty, které se vybírat a přitom dál udělíte přístup k nejběžnější hodnoty kvóty.  
+### <a name="controlling-transport-quotas-from-the-binding"></a>Přenosové kvóty z vazby řízení  
+ Nastavení přenosové kvóty prostřednictvím vazby nabízí zjednodušené sadu kvót vybírat a přitom stále poskytují přístup k nejběžnějších hodnot kvóty.  
   
 |Název|HTTP|TCP/IP|Pojmenovaný kanál|  
 |----------|----------|-------------|----------------|  
@@ -99,17 +100,17 @@ Přenosové kvóty jsou mechanismus zásad rozhodování, kdy připojení spotř
 |`ReceiveTimeout`|X|X|X|  
 |`SendTimeout`|X|X|X|  
   
-1.  `MaxBufferSize` Kvóty přenosu je dostupná pouze na `BasicHttp` vazby. `WSHttp` Vazby jsou pro scénáře, které nepodporují režimy přenášené datovými proudy přenosu.  
+1.  `MaxBufferSize` Kvóty přenosu je dostupný jenom u `BasicHttp` vazby. `WSHttp` Vazby jsou určené pro scénáře, které nepodporují streamovaná dopravy.  
   
-2.  Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosu kvóty s názvem `MaxConnections`.  
+2.  Přenosové kvóty `MaxPendingConnections` a `MaxOutboundConnectionsPerEndpoint` jsou sloučeny do jednoho přenosové kvóty s názvem `MaxConnections`.  
   
-### <a name="controlling-transport-quotas-from-configuration"></a>Řízení přenosové kvóty z konfigurace  
- Konfigurace aplikace můžete nastavit stejné přenosové kvóty jako přímý přístup k vlastnosti u vazby. V konfiguračních souborech název kvóty přenosu vždy začíná malým písmenem. Například `CloseTimeout` vlastnost u vazby odpovídá `closeTimeout` nastavení v konfiguraci a `MaxConnections` vlastnost u vazby odpovídá `maxConnections` nastavení v konfiguraci.  
+### <a name="controlling-transport-quotas-from-configuration"></a>Přenosové kvóty z konfigurace řízení  
+ Konfigurace aplikace můžete nastavit stejnou přenosové kvóty na přímo přístup k vlastnostem na vazbu. V konfiguračních souborech název kvóty přenosu vždy začíná malým písmenem. Například `CloseTimeout` odpovídá vlastnosti u vazby `closeTimeout` nastavení v konfiguraci a `MaxConnections` odpovídá vlastnosti u vazby `maxConnections` nastavení v konfiguraci.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
- <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
- <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
- <xref:System.ServiceModel.Channels.TransportBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
+- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
+- <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
+- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>
+- <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>
+- <xref:System.ServiceModel.Channels.TransportBindingElement>

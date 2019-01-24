@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b408654f367bc846dc878fb8412eb3e896dd192a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9794a44bfb0bd1b4739689359832ba8500c6e2ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417083"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539607"
 ---
 # <a name="icordebugnativeframegetlocalregistervalue-method"></a>ICorDebugNativeFrame::GetLocalRegisterValue – metoda
-Získá hodnotu argumentu nebo místní proměnné, které jsou uloženy v zadané registrace pro tento nativní rámce.  
+Získá hodnotu argumentu nebo místní proměnná, která je uložena do zadaného registru pro tuto nativní rámce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,22 +40,22 @@ HRESULT GetLocalRegisterValue (
   
 #### <a name="parameters"></a>Parametry  
  `reg`  
- [v] Hodnota výčtu "CorDebugRegister", který určuje registrace, který obsahuje hodnotu.  
+ [in] Hodnota výčtu "cordebugregister –", který určuje do registru, který obsahuje hodnotu.  
   
  `cbSigBlob`  
- [v] Celé číslo, které určuje velikost podpis binární metadat, který se odkazuje `pvSigBlob` parametr.  
+ [in] Celé číslo, které určuje velikost podpisu binární metadat, který se odkazuje `pvSigBlob` parametru.  
   
  `pvSigBlob`  
- [v] A `PCCOR_SIGNATURE` hodnotu, která ukazuje na binární metadata podpis hodnotu typu.  
+ [in] A `PCCOR_SIGNATURE` hodnotu, která odkazuje na podpis metadat binární typ hodnoty.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty uložené v zadané registrace.  
+ [out] Ukazatel na adresu "ICorDebugValue" objekt představující získanou hodnotu, která je uložena do zadaného registru.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetLocalRegisterValue` Metodu lze použít buď v nativní rámce nebo v běhu (JIT)-zkompilovat rámce.  
+ `GetLocalRegisterValue` Metodu je možné použít ve službě je nativní rámec nebo just-in-time (JIT)-zkompilován rámce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -63,5 +63,5 @@ HRESULT GetLocalRegisterValue (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

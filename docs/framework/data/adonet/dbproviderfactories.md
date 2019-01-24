@@ -2,12 +2,12 @@
 title: DbProviderFactories
 ms.date: 03/30/2017
 ms.assetid: 2a8e2640-3a49-42a1-a3a9-b43026907ae1
-ms.openlocfilehash: 403c7a50bcb802140bb008bd18db0a6f16663942
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 255ef115e6851b5f1d93744b54ec88990746d9cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504727"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543537"
 ---
 # <a name="dbproviderfactories"></a>DbProviderFactories
 <xref:System.Data.Common> Obor názvů obsahuje třídy pro vytváření <xref:System.Data.Common.DbProviderFactory> instance pro práci s konkrétní zdroje. Když vytvoříte <xref:System.Data.Common.DbProviderFactory> instance a předávat informace o poskytovateli dat `DbProviderFactory` můžete určit objekt správný, silného typu připojení se vraťte na základě informací byl poskytnut.  
@@ -27,6 +27,6 @@ ms.locfileid: "43504727"
  [Úpravy dat přes DbDataAdapter](../../../../docs/framework/data/adonet/modifying-data-with-a-dbdataadapter.md)  
  Ukazuje, jak používat <xref:System.Data.Common.DbCommandBuilder> s <xref:System.Data.Common.DbDataAdapter> načtení a upravovat data.  
   
-## <a name="see-also"></a>Viz také  
- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Načítání a úpravy dat v ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

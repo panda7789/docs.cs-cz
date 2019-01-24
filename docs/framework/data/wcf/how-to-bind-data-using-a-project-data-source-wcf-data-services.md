@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)'
+title: 'Postupy: Vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - data binding, WCF Data Services
 - WCF Data Services, data binding
 ms.assetid: 2477af0a-676f-44f7-b73d-e66208785509
-ms.openlocfilehash: 62a7e3bf7caf60c6a532dbffeb8aac8b6c59deb9
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 465585d93d7bb20208720dc360b2cf8e6bb5f0e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216526"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540751"
 ---
-# <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)
+# <a name="how-to-bind-data-using-a-project-data-source-wcf-data-services"></a>Postupy: Vytvoření vazby dat pomocí zdroje dat projektu (WCF Data Services)
 
 Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná data v aplikaci klienta WCF Data Services. Když přidáte odkaz na datovou službu s použitím **přidat odkaz na službu** dialogového okna, zdroje dat projektu se vytvoří společně s datových tříd generovaného klienta. Jeden zdroj dat se vytvoří pro každou sadu entit, které data služba zpřístupňuje. Můžete vytvářet formuláře, které zobrazují data ze služby přetažením položky zdroje těchto dat z **zdroje dat** okna do návrháře. Tyto položky budou ovládací prvky, které jsou vázány na zdroj dat. Během provádění je vázán tento zdroj dat na instanci <xref:System.Data.Services.Client.DataServiceCollection%601> třídu, která je vyplněna objekty, které jsou vrácené dotazem do datové služby. Další informace najdete v tématu [vazba dat k ovládacím prvkům](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).
 
@@ -23,7 +23,7 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
 ## <a name="use-a-project-data-source-in-a-wpf-window"></a>Použijte zdroje dat projektu v okně WPF
 
-1.  V rámci projektu WPF v sadě Visual Studio, přidejte odkaz na datová služba Northwind. Další informace najdete v tématu [postupy: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).
+1.  V rámci projektu WPF v sadě Visual Studio, přidejte odkaz na datová služba Northwind. Další informace najdete v tématu [jak: Přidání odkazu na datovou službu](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).
 
 2.  V **zdroje dat** okna, rozbalte `Customers` uzlu **NorthwindEntities** zdroje dat projektu.
 
@@ -117,7 +117,7 @@ Můžete vytvořit zdroje dat, které jsou založené na objektech generovaná d
 
 10. Tento kód vytvoří instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro `Customers` na provedení na základě typu <xref:System.Data.Services.Client.DataServiceQuery%601> , který vrátí <xref:System.Collections.Generic.IEnumerable%601> z `Customers` z Northwind dat služby a provádí vazbu na `customersBindingSource`.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Klientská knihovna pro WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
 - [Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation](../../../../docs/framework/data/wcf/bind-data-to-wpf-elements-wcf-data-services.md)

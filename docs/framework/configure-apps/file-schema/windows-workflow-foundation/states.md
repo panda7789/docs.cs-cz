@@ -3,25 +3,25 @@ title: '&lt;stavy&gt;'
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: ebea5e7c-ad58-43c5-8f2d-cca25ae1b721
-ms.openlocfilehash: fe02106d8d7f70cb328214c7e464d80a41b75528
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d1ec35b1c434b8188fde7b546e2dee42a93f5c91
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757275"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550575"
 ---
 # <a name="ltstatesgt"></a>&lt;stavy&gt;
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  
   
- Další informace o sledování profil dotazů najdete v tématu [sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<sledování >  
-\<trackingProfile >  
+\<trackingProfile>  
 \<pracovní postup >  
-\<workflowInstanceQueries >  
-\<workflowInstanceQuery >  
-\<stavy >  
+\<workflowInstanceQueries>  
+\<workflowInstanceQuery>  
+\<states>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,13 +51,13 @@ Představuje kolekci předplacenému stavy z instance sledovaných pracovního p
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Stav >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Odebírané stavu z instance sledovaných pracovního postupu, pokud je vytvořena položka sledování.|  
+|[\<state>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Odebírané stavu z instance sledovaných pracovního postupu, pokud je vytvořena položka sledování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<workflowInstanceQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|Dotaz, který sleduje změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.|  
+|[\<workflowInstanceQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|Dotaz, který sleduje změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.|  
   
 ## <a name="remarks"></a>Poznámky  
  Vrácené záznamy jsou filtrovány státy v této kolekci.  
@@ -93,9 +93,9 @@ Představuje kolekci předplacenému stavy z instance sledovaných pracovního p
 </workflowInstanceQueries>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>       
- <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>       
- <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>       
- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>
+- <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
+- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

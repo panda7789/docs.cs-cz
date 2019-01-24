@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -res compiler option [Visual Basic]
 - resource compiler option [Visual Basic]
 ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
-ms.openlocfilehash: ca9aea526d1039c09883696ed2a35ed930c92872
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 46122eaa7ca54679c9a52b939f9100c9a0747e7b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199016"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550354"
 ---
 # <a name="-resource-visual-basic"></a>-prostředku (Visual Basic)
 Vloží spravovaný prostředek sestavení.  
@@ -31,7 +31,7 @@ Vloží spravovaný prostředek sestavení.
   
 |Termín|Definice|  
 |---|---|  
-|`filename`|Požadováno. Název souboru prostředků pro vložení do výstupního souboru. Ve výchozím nastavení `filename` veřejnou v sestavení. Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.|  
+|`filename`|Povinný parametr. Název souboru prostředků pro vložení do výstupního souboru. Ve výchozím nastavení `filename` veřejnou v sestavení. Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.|  
 |`identifier`|Volitelné. Logický název prostředku. Název používaný k načtení. Výchozí hodnota je název souboru. Volitelně můžete určit, zda je prostředek veřejné nebo soukromé v manifestu sestavení, stejně jako u následující: `-res:filename.res, myname.res, public`|  
   
 ## <a name="remarks"></a>Poznámky  
@@ -52,8 +52,8 @@ vbc -res:rf.resource in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
-- [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)  
-- [-linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md)  
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)
+- [-linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md)
+- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

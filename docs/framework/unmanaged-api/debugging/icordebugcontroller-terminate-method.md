@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7a95f09d1baebed65bae994550431d88ba0dfc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 362ae813846ab31f170ae49288735996eb1e9555
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412468"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531756"
 ---
 # <a name="icordebugcontrollerterminate-method"></a>ICorDebugController::Terminate – metoda
-Ukončí proces uvedený ukončovací kód.  
+Ukončí proces s uvedený ukončovací kód.  
   
 > [!NOTE]
->  Tato metoda je obálka pro Win32 `TerminateProcess` funkce. Proto `Terminate` používá ukončovací kód ve stejném způsobem Win32 `TerminateProcess` funkce používá je.  
+>  Tato metoda je obálka pro Win32 `TerminateProcess` funkce. Proto `Terminate` používá ukončovací kód procesu ve stejném způsobu, jakým Win32 `TerminateProcess` funkce použije.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Terminate (
   
 #### <a name="parameters"></a>Parametry  
  `exitCode`  
- [v] Číselnou hodnotu, která je v něm ukončovací kód. Platné číselné hodnoty jsou definovány v Winbase.h.  
+ [in] Číselná hodnota, která je ukončovací kód. Platné číselné hodnoty jsou definovány v Winbase.h.  
   
 ## <a name="remarks"></a>Poznámky  
- Po zastavení procesu, při `Terminate` je volána, by měly pokračovat proces, pomocí [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) metoda tak, aby ladicí program obdržel potvrzení ukončení prostřednictvím [ Icordebugmanagedcallback::exitprocess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) nebo [icordebugmanagedcallback::exitappdomain –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) zpětného volání.  
+ Zastavení procesu, kdy `Terminate` je volána, proces by měly pokračovat s použitím [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) metodu tak, aby ladicí program přijímá potvrzení ukončení prostřednictvím [ Icordebugmanagedcallback::exitprocess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) nebo [icordebugmanagedcallback::exitappdomain –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitappdomain-method.md) zpětného volání.  
   
 > [!NOTE]
->  Tato metoda není implementována podle domény aplikace. To znamená, není implementována v <xref:System.AppDomain> úroveň.  
+>  Tato metoda není implementována podle domény aplikace. To znamená, že není implementovaná v <xref:System.AppDomain> úroveň.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,5 +57,5 @@ HRESULT Terminate (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

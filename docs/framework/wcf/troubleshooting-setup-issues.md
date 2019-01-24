@@ -2,12 +2,12 @@
 title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 13828bee07dd455cd2b94d20d4afa7ea416ce186
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 69cc6bce08f3d98d3d63570005582bc6f50240bf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840544"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532549"
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Foundation (WCF).  
@@ -23,7 +23,7 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
   
 -   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SMSvcHost 3.0.0.0  
   
--   Most HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC 3.0.0.0  
+-   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC Bridge 3.0.0.0  
   
  Klíče znovu nevytvoří Pokud nespustíte opravu pomocí spustit z instalačního programu .NET Framework 3.0 **přidat nebo odebrat programy** aplet v **ovládací panely**. Uživatel musí znovu vytvořit tyto klíče správně, odinstalujte a znovu nainstalovat rozhraní .NET Framework 3.0.  
   
@@ -38,17 +38,17 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
   
 4.  Například následující výjimku mohou být uvedeny v souboru protokolu událostí nebo nastavení protokolu trasování:  
   
-     ServiceModelReg [11:09:59:046]: System.ApplicationException: neočekávaný výsledek 3 provádění E:\WINDOWS\system32\wbem\mofcomp.exe s "Foundation\ServiceModel.mof E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows komunikaci"  
+     ServiceModelReg [11:09:59:046]: System.ApplicationException: Neočekávaný výsledek 3 provádění E:\WINDOWS\system32\wbem\mofcomp.exe s "Foundation\ServiceModel.mof E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows komunikaci"  
   
      nebo:  
   
-     ServiceModelReg [07:19:33:843]: System.TypeInitializationException: Typ obsahuje inicializační proceduru "System.Management.ManagementPath" došlo k výjimce. ---> System.Runtime.InteropServices.COMException (0x80040154): načítání vytváření tříd modelu COM pro komponentu s identifikátorem CLSID {CF4CC405-E2C5-4DDD-B3CE-5E7582D8C9FA} se nezdařilo kvůli následující chybě: 80040154.  
+     ServiceModelReg [07:19:33:843]: System.TypeInitializationException: Inicializační metoda typu 'System.Management.ManagementPath' došlo k výjimce. ---> System.Runtime.InteropServices.COMException (0x80040154): Načítání vytváření tříd modelu COM pro komponentu s identifikátorem CLSID {CF4CC405-E2C5-4DDD-B3CE-5E7582D8C9FA} se nezdařilo kvůli následující chybě: 80040154.  
   
      nebo:  
   
-     ServiceModelReg [07:19:32:750]: System.IO.FileNotFoundException: nepovedlo se načíst soubor nebo sestavení 'C:\WINDOWS\system32\wbem\mofcomp.exe' nebo některou z jeho závislostí. Systém nemůže najít zadaný soubor.  
+     ServiceModelReg [07:19:32:750]: System.IO.FileNotFoundException: Nepovedlo se načíst soubor nebo sestavení 'C:\WINDOWS\system32\wbem\mofcomp.exe' nebo některou z jeho závislostí. Systém nemůže najít zadaný soubor.  
   
-     Název souboru: "C:\WINDOWS\system32\wbem\mofcomp.exe  
+     Název souboru: 'C:\WINDOWS\system32\wbem\mofcomp.exe  
   
  Následující kroky musí následovat problém, jak je popsáno výše.  
   
@@ -73,5 +73,5 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
 aspnet_regiis.exe -i -enable  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k instalaci](../../../docs/framework/wcf/samples/set-up-instructions.md)
+## <a name="see-also"></a>Viz také:
+- [Pokyny k instalaci](../../../docs/framework/wcf/samples/set-up-instructions.md)

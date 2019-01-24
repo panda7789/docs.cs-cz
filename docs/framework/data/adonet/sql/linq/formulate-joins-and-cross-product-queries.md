@@ -1,68 +1,68 @@
 ---
-title: Formulovali spojení a dotazy smíšený produkt
+title: Formulování spojení a dotazů napříč produkty
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
-ms.openlocfilehash: 20b46ce37d93119330e336f583ac68b5c1dc4c4b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a06c7d451d9ad2856092910065f1195a86c737ab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33360258"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548514"
 ---
-# <a name="formulate-joins-and-cross-product-queries"></a>Formulovali spojení a dotazy smíšený produkt
-Následující příklady ukazují, jak kombinují výsledky z více tabulek.  
+# <a name="formulate-joins-and-cross-product-queries"></a>Formulování spojení a dotazů napříč produkty
+Následující příklady znázorňují způsob kombinace výsledků z více tabulek.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá cizího klíče navigace ve `From` klauzule v jazyce Visual Basic (`from` klauzule v jazyce C#) a vyberte všechny objednávky zákazníků v Londýně.  
+ Následující příklad používá cizího klíče navigace ve `From` klauzule v jazyce Visual Basic (`from` klauzuli v C#) Chcete-li vybrat všechny objednávky pro zákazníky, kteří v Londýně.  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá cizího klíče navigace ve `Where` klauzule v jazyce Visual Basic (`where` klauzule v jazyce C#) Chcete-li filtrovat na více systémů stock `Products` jehož `Supplier` je ve Spojených státech amerických.  
+ Následující příklad používá cizího klíče navigace v `Where` klauzule v jazyce Visual Basic (`where` klauzuli v C#) Chcete-li filtrovat mimo akcie `Products` jehož `Supplier` je ve Spojených státech.  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá cizího klíče navigace ve `From` klauzule v jazyce Visual Basic (`from` klauzule v jazyce C#) k filtrování pro zaměstnance v Praze tak, aby jejich teritoria.  
+ Následující příklad používá cizího klíče navigace v `From` klauzule v jazyce Visual Basic (`from` klauzuli v C#) Chcete-li filtrovat zaměstnanci v Praze a seznam jejich území.  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá cizího klíče navigace ve `Select` klauzule v jazyce Visual Basic (`select` klauzule v jazyce C#) Chcete-li filtrovat páry zaměstnanců, kde jeden zaměstnanec sestavy na druhý a kde jsou obě zaměstnanci ze stejné `City`.  
+ Následující příklad používá cizího klíče navigace ve `Select` klauzule v jazyce Visual Basic (`select` klauzuli v C#) Chcete-li filtrovat páry zaměstnanců, kde sestavy jeden ze zaměstnanců na druhý a kde jsou obě zaměstnanci ze stejné `City`.  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad jazyka Visual Basic vypadá pro všechny zákazníky a objednávky, zajišťuje, že budou odpovídat objednávky zákazníků a zaručuje, že pro každý zákazník v tomto seznamu, jméno kontaktní osoby je k dispozici.  
+ Následující příklad jazyka Visual Basic vyhledá všechny zákazníci a objednávky, zajišťuje, že zákazníci budou odpovídat objednávky a zaručuje, že pro každý zákazník v tomto seznamu jméno kontaktní osoby je k dispozici.  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad explicitně spojení dvou tabulek a projekty výsledky z obou tabulek.  
+ Následující příklad připojí explicitně dvě tabulky a projekty výsledky z obou tabulek.  
   
  [!code-csharp[DLinqQueryExamples#51](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#51)]
  [!code-vb[DLinqQueryExamples#51](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#51)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad explicitně spojí tři tabulky a projekty výsledky z každého z nich.  
+ Následující příklad explicitně sloučí tři tabulky a projekty výsledky z každé z nich.  
   
  [!code-csharp[DLinqQueryExamples#52](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#52)]
  [!code-vb[DLinqQueryExamples#52](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#52)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak dosáhnout `LEFT OUTER JOIN` pomocí `DefaultIfEmpty()`. `DefaultIfEmpty()` Metoda vrátí hodnotu null, pokud není žádná `Order` pro `Employee`.  
+ Následující příklad ukazuje, jak dosáhnout `LEFT OUTER JOIN` pomocí `DefaultIfEmpty()`. `DefaultIfEmpty()` Metoda vrátí hodnotu null, pokud neexistuje žádný `Order` pro `Employee`.  
   
  [!code-csharp[DLinqQueryExamples#53](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#53)]
  [!code-vb[DLinqQueryExamples#53](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#53)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad projekty `let` výraz výsledkem spojení.  
+ Následující vzorové projekty `let` výraz vyplývající z spojení.  
   
  [!code-csharp[DLinqQueryExamples#54](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#54)]
  [!code-vb[DLinqQueryExamples#54](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#54)]  
@@ -74,10 +74,10 @@ Následující příklady ukazují, jak kombinují výsledky z více tabulek.
  [!code-vb[DLinqQueryExamples#55](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#55)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit `join` kde jedné straně může mít hodnotu Null a druhý není.  
+ Následující příklad ukazuje, jak vytvořit `join` kde na jedné straně může mít hodnotu Null a druhá ne.  
   
  [!code-csharp[DLinqQueryExamples#56](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#56)]
  [!code-vb[DLinqQueryExamples#56](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#56)]  
   
-## <a name="see-also"></a>Viz také  
- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+## <a name="see-also"></a>Viz také:
+- [Příklady dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)

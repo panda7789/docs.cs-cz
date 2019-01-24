@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Překlad barev obrázků'
+title: 'Postupy: Translate Image Colors'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,47 +9,47 @@ helpviewer_keywords:
 - images [Windows Forms], changing colors
 - image colors [Windows Forms]
 ms.assetid: 2106fb9a-4d60-4dcf-9220-9f189a6c4d19
-ms.openlocfilehash: 48f506f76ff6e9ca648822d073b6f6a852b9ca8e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a3ed1f3f6b3e89c8df160b7e753839e20acd877
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522533"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549756"
 ---
-# <a name="how-to-translate-image-colors"></a>Postupy: Překlad barev obrázků
-Překlad přidá hodnotu na jeden nebo více součástí čtyři barev. V následující tabulce jsou uvedeny položek matice barev, které představují překladů.  
+# <a name="how-to-translate-image-colors"></a>Postupy: Translate Image Colors
+Překlad přidá hodnotu na jeden nebo více součástí čtyři barvy. Matice položek barev, které představují překlady jsou uvedeny v následující tabulce.  
   
-|Součásti, které mají být převedeny|Položka matice|  
+|Součást, kterou přeložit|Přehled vstupu|  
 |--------------------------------|------------------|  
-|červená|[4][0]|  
-|zelená|[4][1]|  
-|modrá|[4][2]|  
+|Červená|[4][0]|  
+|Zelená|[4][1]|  
+|Modrá|[4][2]|  
 |Alpha|[4][3]|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Drawing.Image> objektu ze souboru ColorBars.bmp. Potom kód přidá 0,75 red součást každý pixelů v bitové kopii. Původní bitové kopie vykreslením spolu s transformovaných bitové kopie.  
+ Následující příklad vytvoří <xref:System.Drawing.Image> objekt ze souboru ColorBars.bmp. Potom kód přidá 0,75 červené každý pixel na obrázku. Původní bitové kopie nakreslen spolu s transformovaný bitové kopie.  
   
- Následující obrázek znázorňuje původní bitové kopie na levé straně a bitovou kopii transformovaných na pravé straně.  
+ Následující obrázek znázorňuje původní obrázek na levé straně a transformovaná image na pravé straně.  
   
- ![Převede barvy](../../../../docs/framework/winforms/advanced/media/colortrans2.png "colortrans2")  
+ ![Translate Colors](../../../../docs/framework/winforms/advanced/media/colortrans2.png "colortrans2")  
   
- Následující tabulka uvádí vektory barvu pro pruhy čtyři před a po red překlad. Všimněte si, že vzhledem k tomu, že pro složku barvy maximální hodnota je 1, komponentu red ve druhém řádku nezmění. (Podobně, minimální hodnota pro součást barva je 0.)  
+ Následující tabulka uvádí vektory barvu pro čtyři pruhy před a po červenou překladu. Mějte na paměti, protože maximální hodnota složky barvy je 1, červené ve druhém řádku nezmění. (Podobně, minimální hodnota složky barvy je 0.)  
   
 |Původní|Přeložit|  
 |--------------|----------------|  
 |Černé (0, 0, 0, 1)|(0.75, 0, 0, 1)|  
-|Červený (1, 0, 0, 1)|(1, 0, 0, 1)|  
-|Zelený (0, 1, 0, 1)|(0.75, 1, 0, 1)|  
-|Modrá (0, 0, 1, 1)|(0.75, 0, 1, 1)|  
+|Červená (1, 0, 0, 1)|(1, 0, 0, 1)|  
+|Zelená (0, 1, 0, 1)|(0.75, 1, 0, 1)|  
+|Modré (0, 0, 1, 1)|(0.75, 0, 1, 1)|  
   
  [!code-csharp[System.Drawing.RecoloringImages#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.RecoloringImages/CS/Class1.cs#11)]
  [!code-vb[System.Drawing.RecoloringImages#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.RecoloringImages/VB/Class1.vb#11)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozím příkladu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` s název souboru obrázku a cestu, která jsou platné ve vašem systému.  
+ V předchozím příkladu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události. Nahraďte `ColorBars.bmp` název souboru bitové kopie a cestu, která jsou platné ve vašem systému.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Imaging.ColorMatrix>  
- <xref:System.Drawing.Imaging.ImageAttributes>  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Imaging.ColorMatrix>
+- <xref:System.Drawing.Imaging.ImageAttributes>
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Přebarvení obrázků](../../../../docs/framework/winforms/advanced/recoloring-images.md)

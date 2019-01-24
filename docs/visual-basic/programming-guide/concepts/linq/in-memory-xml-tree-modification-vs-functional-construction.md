@@ -2,12 +2,12 @@
 title: Změna stromu XML v paměti vs. Funkční konstrukce (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d91c4ebf-6549-43cc-9961-26d4a82f722b
-ms.openlocfilehash: 71b8799d4da2f8f4fb10bdec6ca7cfcec76e036a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0f33775656e92f4ca9d6158ea2a065bb533a944b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43452778"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538593"
 ---
 # <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-visual-basic"></a>Změna stromu XML v paměti vs. Funkční konstrukce (LINQ to XML) (Visual Basic)
 Změna stromu XML v místě je tradiční přístup na měnící tvar dokumentu XML. Typická aplikace načte dokument do úložiště dat, jako je například modelu DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; používá programovací rozhraní pro vložení uzlů, odstraňovat uzly nebo změnit obsah uzlů a pak uloží do souboru XML nebo přenáší přes síť.  
@@ -74,5 +74,5 @@ Console.WriteLine(newTree)
   
  To je velmi jednoduchý příklad, ale funguje zobrazíte filozofie rozdíl mezi dvěma přístupy. Funkční přístup poskytuje větší zvýšení produktivity pro transformaci větší dokumentů XML.  
   
-## <a name="see-also"></a>Viz také  
- [Změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cec2b85c55871c8a21a74e79cfcdd041fa063bec
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 56b5b51848858b7f1240059ca30eb48474650b73
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555125"
 ---
 # <a name="conversion-of-xml-data-types"></a>Převod datových typů XML
 Většina metod součástí **XmlConvert** třída slouží k převedení dat mezi řetězci a formáty silného typu. Metody jsou nezávislé národní prostředí. To znamená, že není berou v úvahu žádné nastavení národního prostředí při provádění převodu.  
@@ -68,5 +68,5 @@ writer.WriteElementString("TestInt32",XmlConvert.ToString(vInt32));
   
 ## <a name="see-also"></a>Viz také:
 
-- [Převádění řetězců na datové typy rozhraní .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)  
+- [Převádění řetězců na datové typy rozhraní .NET Framework](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
 - [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

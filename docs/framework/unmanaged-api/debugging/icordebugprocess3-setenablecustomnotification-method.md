@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a84061cff7cc5dbdeba1e0e66396e04a8f345cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7501a8a0f8368049c87b3c90e1e707e12773a853
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531639"
 ---
 # <a name="icordebugprocess3setenablecustomnotification-method"></a>ICorDebugProcess3::SetEnableCustomNotification – metoda
-Povolí nebo zakáže oznámení vlastní ladicí program zadaného typu.  
+Povolí nebo zakáže vlastní oznámení ladicího programu zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,18 +36,18 @@ HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,
   
 #### <a name="parameters"></a>Parametry  
  `pClass`  
- [v] Typ, který určuje vlastní ladicí program oznámení.  
+ [in] Typ, který určuje vlastní oznámení ladicího programu.  
   
  `fEnable`  
- [v] `true` povolit vlastní ladicí program oznámení; `false` zakázat oznámení. Výchozí hodnota je `false`.  
+ [in] `true` povolit vlastní oznámení ladicího programu; `false` zakázat oznámení. Výchozí hodnota je `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- Když `fEnable` je nastaven na `true`, volá, aby se <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> metoda aktivační událost [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) zpětného volání. Oznámení jsou zakázané ve výchozím nastavení; ladicí program proto musíte zadat všechny typy oznámení, že zná a chce zpracovat. Protože [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) třída má obor doménu aplikace, musí volat ladicího programu `SetEnableCustomNotification` pro každou doménu aplikace v procesu, pokud chcete dostávat oznámení napříč celý proces.  
+ Při `fEnable` je nastavena na `true`, volání <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> metoda triggeru [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) zpětného volání. Oznámení jsou ve výchozím nastavení; zakázána. ladicí program, proto musíte zadat všechny typy upozornění ví o a chce zpracovat. Protože [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) třídy je omezené podle domény aplikace, ladicí program musí volat `SetEnableCustomNotification` pro každou doménu aplikace v procesu, pokud chce, abyste dostávali oznámení napříč celým procesem.  
   
- Od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], jen podporované oznámení je závislost mezi vlákny oznámení.  
+ Počínaje [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], jen podporované oznámení, je oznámení závislostí mezi vlákny.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,7 +55,7 @@ HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugProcess3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugProcess3 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

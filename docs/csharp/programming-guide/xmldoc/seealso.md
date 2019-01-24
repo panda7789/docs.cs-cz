@@ -13,12 +13,12 @@ helpviewer_keywords:
 - cross-references [C#], tags
 - <seealso> C# XML tag
 ms.assetid: 8e157f3f-f220-4fcf-9010-88905b080b18
-ms.openlocfilehash: eec4a0c2041d7d10b5887950bfec03ec8847c82b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e75480db9aebdeb2199694168abf4f774773b9c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244788"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543549"
 ---
 # <a name="ltseealsogt-c-programming-guide"></a>&lt;Viz také&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +41,7 @@ ms.locfileid: "53244788"
 ## <a name="example"></a>Příklad  
  Zobrazit [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md) pro příklad použití \<seealso >.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

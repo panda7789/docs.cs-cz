@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-ms.openlocfilehash: 25cc1a1e4c6e7e7d3f695c06eade8be546ee6c05
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1c615e2bdff0f361bef305157f635c86782c6039
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205253"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531964"
 ---
 # <a name="best-practices-for-security-in-wcf"></a>Doporučené postupy pro zabezpečení ve WCF
 V následujících částech jsou osvědčené postupy, které je třeba zvážit při vytváření zabezpečených aplikací pomocí služby Windows Communication Foundation (WCF). Další informace o zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md), [aspekty zabezpečení pro Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md), a [informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md).  
@@ -45,7 +45,7 @@ V následujících částech jsou osvědčené postupy, které je třeba zváži
  Ujistěte se, že důvěřujete jeho zdroji metadata a ujistěte se, že nikdo nemanipuloval s metadaty. Metadata načten pomocí protokolu HTTP se odesílá ve formátu prostého textu a mohou být změněny. Pokud služba používá <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> a <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> vlastnosti, použijte adresu URL poskytnutou Tvůrce služby ke stahování dat pomocí protokolu HTTPS.  
   
 ## <a name="publish-metadata-using-security"></a>Publikování metadat pomocí zabezpečení  
- Chcete-li zabránit manipulaci s publikovaných metadat služby, zabezpečený koncový bod metadat exchange s přenosu nebo zabezpečení na úrovni zprávy. Další informace najdete v tématu [publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md) a [postupy: publikování metadat služby pomocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
+ Chcete-li zabránit manipulaci s publikovaných metadat služby, zabezpečený koncový bod metadat exchange s přenosu nebo zabezpečení na úrovni zprávy. Další informace najdete v tématu [publikování kocových bodů metadat](../../../../docs/framework/wcf/publishing-metadata-endpoints.md) a [jak: Publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
   
 ## <a name="ensure-use-of-local-issuer"></a>Zkontrolujte použití místního vystavitele  
  Případného vystavitele adresu a vazbu jsou pro danou vazbu lokálního vystavitele se nepoužije pro koncové body, které tuto vazbu používají. Klienti, kteří očekávají, že vždy používejte lokálního vystavitele zajistil nepoužívají takovou vazbu nebo jejich změňte vazbu tak, aby adresa Vystavitel je null.  
@@ -56,7 +56,7 @@ V následujících částech jsou osvědčené postupy, které je třeba zváži
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>SecurityBindingElement.IncludeTimestamp nastavena na hodnotu True na vlastních vazeb  
  Při vytváření vlastní vazby, je nutné nastavit <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> k `true`. Jinak, pokud <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> je nastavena na `false`, a že klient používá asymetrické na základě klíčů token jako je například x X509 certifikát, zprávy nebude podepsán.  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)  
- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
+- [Důležité informace o zabezpečení dat](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)
+- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)

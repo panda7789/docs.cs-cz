@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93c430bb7e4d14c5f6f4e0563adfd387a1900ee6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d16f1c7d4b56da93b2f2f0a91d889bde72ec94f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415734"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530126"
 ---
 # <a name="icordebugheapenumnext-method"></a>ICorDebugHeapEnum::Next – metoda
-Získá zadaný počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které obsahují informace o objektech v haldě spravované.  
+Získá zadaný počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které obsahují informace o objektech na spravované haldě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT Next(
   
 #### <a name="parameters"></a>Parametry  
  celt  
- [v] Počet objektů, které mají být načteny.  
+ [in] Počet objektů, které se mají načíst.  
   
- – objekty  
- [out] Ukazatele, každý z nich odkazuje na pole [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekt, který obsahuje informace o objekt na spravovaná halda.  
+  – objekty  
+ [out] Pole ukazatelů, každý z nich odkazuje [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekt, který poskytuje informace o objektu na spravované haldě.  
   
  pceltFetched  
- [out] Ukazatel na počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekty ve skutečnosti, vrátí se v `objects`. Tato hodnota může být `null` Pokud `celt` je 1.  
+ [out] Ukazatel na počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objektů skutečně vrácených v `objects`. Tato hodnota může být `null` Pokud `celt` 1.  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_HEAPOBJECT.type` Pole je identifikátor vnořené rozhraní modelu COM počítá odkaz. Tento odkaz musí být vydán volající `ICorDebugHeapEnum::Next`.  
+ `COR_HEAPOBJECT.type` Pole je identifikátor vnořené rozhraní modelu COM počítaného odkazy. Tento odkaz musí být vydán volající `ICorDebugHeapEnum::Next`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -58,6 +58,6 @@ HRESULT Next(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugHeapEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugHeapEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

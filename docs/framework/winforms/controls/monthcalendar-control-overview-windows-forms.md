@@ -8,23 +8,23 @@ helpviewer_keywords:
 - calendar controls [Windows Forms], Windows Forms
 - MonthCalendar control [Windows Forms], setting the first day of the week
 ms.assetid: 788c5325-b721-44ec-95bf-9b680ba0f6a2
-ms.openlocfilehash: 7ed917afe2640fe2ffef4904a3795c5f0e84ded9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e243ef17425384d7eb7690aa121b58a6bf9354c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537405"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554228"
 ---
 # <a name="monthcalendar-control-overview-windows-forms"></a>MonthCalendar – přehled ovládacího prvku (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.MonthCalendar> řízení uvede intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu. Tento ovládací prvek zobrazí kalendář: Mřížka obsahující číslem dny v měsíci, uspořádané ve sloupcích pod dny v týdnu, s vybraný rozsah kalendářních dat zvýrazněná. Kliknutím na tlačítko se šipkou na obou stranách titulek měsíc můžete vybrat jiný měsíc. Na rozdíl od podobné <xref:System.Windows.Forms.DateTimePicker> ovládací prvek, můžete vybrat více než jeden data pro tento ovládací prvek. Další informace o <xref:System.Windows.Forms.DateTimePicker> řízení najdete v tématu [DateTimePicker – ovládací prvek](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md).  
+Windows Forms <xref:System.Windows.Forms.MonthCalendar> ovládací prvek zobrazí intuitivní grafické rozhraní pro uživatele k zobrazení a nastavit informace o datu. Ovládací prvek zobrazuje kalendář: Mřížka obsahující číslované dny v měsíci, uspořádané do sloupce pod dny v týdnu, s vybraný rozsah kalendářních dat, zvýrazněn. Můžete vybrat jiného měsíce kliknutím na tlačítka se šipkami na obou stranách titulek měsíce. Na rozdíl od podobný <xref:System.Windows.Forms.DateTimePicker> ovládací prvek, vyberete více než jeden den s tímto ovládacím prvkem. Další informace o <xref:System.Windows.Forms.DateTimePicker> řídí, najdete v článku [DateTimePicker – ovládací prvek](../../../../docs/framework/winforms/controls/datetimepicker-control-windows-forms.md).  
   
-## <a name="configuring-the-monthcalendar-control"></a>Konfigurace MonthCalendar – ovládací prvek  
- <xref:System.Windows.Forms.MonthCalendar> Vzhledu ovládacího prvku je vysoce konfigurovatelné. Ve výchozím nastavení dnešní datum zobrazí jako v kroužku a je také jsou uvedené v dolní části mřížky. Tuto funkci můžete změnit nastavením <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> a <xref:System.Windows.Forms.MonthCalendar.ShowTodayCircle%2A> vlastnosti, které chcete `false`. Čísla týdnů můžete také přidat do kalendáře nastavením <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Nastavením <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> vlastnost, může mít několik měsíců zobrazovat vodorovně a svisle. Ve výchozím nastavení, je zobrazena neděli jako první den v týdnu, avšak kterýkoli den, mohou být za použití <xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A> vlastnost.  
+## <a name="configuring-the-monthcalendar-control"></a>Konfigurace ovládacího prvku MonthCalendar  
+ <xref:System.Windows.Forms.MonthCalendar> Vzhled ovládacího prvku je vysoce konfigurovatelné. Ve výchozím nastavení dnešní datum se zobrazí v kruhu a je také jste si poznamenali v dolní části mřížky. Tuto funkci můžete změnit nastavením <xref:System.Windows.Forms.MonthCalendar.ShowToday%2A> a <xref:System.Windows.Forms.MonthCalendar.ShowTodayCircle%2A> vlastností `false`. Čísla týdnů můžete také přidat do kalendáře nastavením <xref:System.Windows.Forms.MonthCalendar.ShowWeekNumbers%2A> vlastnost `true`. Tím, že nastavíte <xref:System.Windows.Forms.MonthCalendar.CalendarDimensions%2A> vlastnost, může mít několik měsíců zobrazeny vodorovně a svisle. Ve výchozím nastavení, se zobrazí neděli jako první den v týdnu, ale každý den, mohou být označeny pomocí <xref:System.Windows.Forms.MonthCalendar.FirstDayOfWeek%2A> vlastnost.  
   
- Můžete také nastavit určitá data, která se zobrazí v tučné jednorázově, ročně nebo každý měsíc, přidáním <xref:System.DateTime> objekty ke <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>, <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>, a <xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> vlastnosti. Další informace najdete v tématu [postupy: zobrazení konkrétních dnů pomocí ovládacího prvku Windows Forms MonthCalendar Bold](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md).  
+ Můžete také nastavit určitých dat, který se má zobrazit tučně jednorázově, roční nebo měsíční, tak, že přidáte <xref:System.DateTime> objektů <xref:System.Windows.Forms.MonthCalendar.BoldedDates%2A>, <xref:System.Windows.Forms.MonthCalendar.AnnuallyBoldedDates%2A>, a <xref:System.Windows.Forms.MonthCalendar.MonthlyBoldedDates%2A> vlastnosti. Další informace najdete v tématu [jak: Zobrazení konkrétních dnů Bold s Windows Forms MonthCalendar – ovládací prvek](../../../../docs/framework/winforms/controls/display-specific-days-in-bold-with-wf-monthcalendar-control.md).  
   
- Klíčové vlastnosti <xref:System.Windows.Forms.MonthCalendar> ovládací prvek je <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>, rozsah dat vybraný v ovládacím prvku. <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> Hodnota nemůže být větší než maximální počet dní, které je možné vybrat, nastavte v <xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A> vlastnost. Nejdřívější a nejnovější data, můžete vybrat uživatele byla určena <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> a <xref:System.Windows.Forms.MonthCalendar.MinDate%2A> vlastnosti.  
+ Klíčové vlastnosti <xref:System.Windows.Forms.MonthCalendar> je ovládací prvek <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A>, rozsahu dat vybraného v ovládacím prvku. <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> Hodnota nemůže být delší než maximální počet dní, které lze vybrat, nastavte <xref:System.Windows.Forms.MonthCalendar.MaxSelectionCount%2A> vlastnost. Nejstarší a nejnovější data, může uživatel vybrat jsou určeny <xref:System.Windows.Forms.MonthCalendar.MaxDate%2A> a <xref:System.Windows.Forms.MonthCalendar.MinDate%2A> vlastnosti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.MonthCalendar>  
- [Ovládací prvek MonthCalendar](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.MonthCalendar>
+- [Ovládací prvek MonthCalendar](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)

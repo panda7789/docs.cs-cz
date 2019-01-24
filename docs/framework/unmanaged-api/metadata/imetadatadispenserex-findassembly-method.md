@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0b4caf27fe45ce0a85b7e1800827a1e5cd0893ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b35abe6a11b96a88bdd610a4018469bf747fe90
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550705"
 ---
 # <a name="imetadatadispenserexfindassembly-method"></a>IMetaDataDispenserEx::FindAssembly – metoda
 Tato metoda není implementována. Pokud je volána, vrátí E_NOTIMPL.  
@@ -43,35 +43,35 @@ HRESULT FindAssembly(
   
 #### <a name="parameters"></a>Parametry  
  `szAppBase`  
- [v] Nepoužívá se.  
+ [in] Nepoužívá se.  
   
  `szPrivateBin`  
- [v] Nepoužívá se.  
+ [in] Nepoužívá se.  
   
  `szGlobalBin`  
- [v] Nepoužívá se.  
+ [in] Nepoužívá se.  
   
  `szAssemblyName`  
- [v] Sestavení, která se má najít.  
+ [in] Sestavení, která se má najít.  
   
  `szName`  
  [out] Jednoduchý název sestavení.  
   
  `cchName`  
- [v] Velikost v bajtech z `szName`.  
+ [in] Velikost v bajtech, z `szName`.  
   
  `pcName`  
- [out] Počet znaků, které jsou ve skutečnosti, vrátí se v `szName`.  
+ [out] Počet znaků ve skutečnosti vrátí v `szName`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
+- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

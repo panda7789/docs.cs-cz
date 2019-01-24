@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2fdace527194228dd6004a991950a80d23275650
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 74b9ef2cdd48c403eb5a50d357a673eee3102106
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413293"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548238"
 ---
 # <a name="icordebugmdagetdescription-method"></a>ICorDebugMDA::GetDescription – metoda
-Získá řetězec, který obsahuje popis Pomocník spravovaného ladění (MDA) reprezentována [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Získá řetězec obsahující popis Pomocník spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT GetDescription (
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost vyrovnávací paměti řetězců, které se uloží popis.  
+ [in] Velikost vyrovnávací paměti pro řetězec, ve kterém bude uložený popis.  
   
  `pcchName`  
- [out] Ukazatel na počet bajtů vrácených ve vyrovnávací paměti řetězců.  
+ [out] Ukazatel na počet bajtů vrácených ve vyrovnávací paměti řetězce.  
   
  `szName`  
- [out] Vyrovnávací paměť řetězec obsahující popis (mda).  
+ [out] Vyrovnávací paměti řetězce obsahující popis MDA.  
   
 ## <a name="remarks"></a>Poznámky  
- Řetězec může být nula. délka.  
+ Řetězec může být nulovou délku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ HRESULT GetDescription (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

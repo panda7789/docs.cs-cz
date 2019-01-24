@@ -9,24 +9,24 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - custom controls [Windows Forms]
 ms.assetid: fddbe951-4485-459d-a5fd-665ea346dbc1
-ms.openlocfilehash: 629a08a090178ffb1df1e9905182c9f246537533
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ab1fa9ccbffc7ca9621e32e00455a9b75a91126
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537359"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533085"
 ---
 # <a name="overview-of-using-controls-in-windows-forms"></a>Přehled používání ovládacích prvků ve Windows Forms
-Toto téma popisuje základní prvky aplikace Windows Forms a poskytuje jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.  
+Toto téma popisuje základní prvky aplikace modelu Windows Forms a nabízí jednoduchý příklad, který používá ovládací prvky a zpracovává události v aplikaci Windows Forms.  
   
-## <a name="simple-windows-forms-applications"></a>Aplikace jednoduché Windows Forms  
- Minimálně aplikace Windows Forms zahrnuje následující prvky:  
+## <a name="simple-windows-forms-applications"></a>Aplikací jednoduché Windows Forms  
+ Minimálně aplikace modelu Windows Forms obsahuje následující prvky:  
   
--   Jeden nebo více tříd, které jsou odvozeny od <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.  
+-   Jeden nebo více tříd, které jsou odvozeny z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>.  
   
--   A `Main` metoda, která volá `static` (`shared` v jazyce Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> metoda a předává <xref:System.Windows.Forms.Form> instance k němu. <xref:System.Windows.Forms.Application.Run%2A> Metoda zpracovává zprávy z operačního systému do aplikace.  
+-   A `Main` metody, která vyvolá `static` (`shared` v jazyce Visual Basic) <xref:System.Windows.Forms.Application.Run%2A> metoda a předá <xref:System.Windows.Forms.Form> instance k němu. <xref:System.Windows.Forms.Application.Run%2A> Metoda zpracovává zprávy z operačního systému do aplikace.  
   
- Následující příklad kódu ukazuje základní prvky aplikace Windows Forms.  
+ Následující příklad kódu ukazuje základní prvky aplikace modelu Windows Forms.  
   
 ```vb  
 Option Explicit  
@@ -74,8 +74,8 @@ public class MyForm : Form {
 }  
 ```  
   
-## <a name="using-controls-in-a-windows-forms-application"></a>Použití ovládacích prvků v aplikaci Windows Forms  
- Následující příklad kódu ukazuje jednoduchou aplikaci, která ukazuje, jak aplikace Windows Forms pomocí ovládacích prvků a zpracování událostí. V příkladu se skládá ze tří tlačítka ve formuláři; každé tlačítko změní barvu pozadí při kliknutí na.  
+## <a name="using-controls-in-a-windows-forms-application"></a>Použití ovládacích prvků ve formulářové aplikaci Windows  
+ Následující příklad kódu ukazuje jednoduchou aplikaci, která ukazuje, jak aplikace Windows Forms pomocí ovládacích prvků a zpracování událostí. V příkladu se skládá ze tří tlačítek na formuláři; každé tlačítko změní barvu pozadí při kliknutí na.  
   
 ```vb  
 Option Explicit  
@@ -223,6 +223,6 @@ public class MyForm : Form {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
- [Základní informace o vývoji ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)
+## <a name="see-also"></a>Viz také:
+- [Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)
+- [Základní informace o vývoji ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/windows-forms-control-development-basics.md)

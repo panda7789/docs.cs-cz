@@ -2,21 +2,21 @@
 title: Element &lt;localServiceSettings&gt;
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 5d5150590bc0a8a0d21662eadc7dda67aad872ef
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 6427f28bfbaa38df20696911f5f72c73d992c971
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150276"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535226"
 ---
 # <a name="ltlocalservicesettingsgt-element"></a>Element &lt;localServiceSettings&gt;
 Určuje nastavení zabezpečení místní služby pro tuto vazbu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -69,7 +69,7 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
-|[\<secureConversationBootstrap >](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
+|[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.|  
   
 ## <a name="remarks"></a>Poznámky  
  Nastavení jsou místní, protože nejsou publikované jako součást zásady zabezpečení služby a nemají vliv na vazby.  
@@ -86,15 +86,15 @@ Určuje nastavení zabezpečení místní služby pro tuto vazbu.
   
  V relaci zabezpečené konverzace, Všimněte si, že oba `inactivityTimeout` a `receiveTimeout` ovlivňují atributy ve vazbě časový limit relace. Čím kratší je časový z nich určuje, když dojde k vypršení časového limitu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
- <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>  
- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  
- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
+- <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>
+- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>
+- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

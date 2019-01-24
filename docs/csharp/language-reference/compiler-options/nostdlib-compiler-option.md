@@ -1,5 +1,5 @@
 ---
-title: -nostdlib (možnosti kompilátoru C#)
+title: -nostdlib (C# Compiler Options)
 ms.date: 07/20/2015
 f1_keywords:
 - /nostdlib
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-ms.openlocfilehash: 70007c74efe9a41bdfc15e8fa7daf3c8fc0221ed
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cf87d8d2ac4531142288a8637f7fbeb9139382ea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506692"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545826"
 ---
-# <a name="-nostdlib-c-compiler-options"></a>-nostdlib (možnosti kompilátoru C#)
+# <a name="-nostdlib-c-compiler-options"></a>-nostdlib (C# Compiler Options)
 
 **-nostdlib** brání import mscorlib.dll, která definuje obor názvů celého systému.
 
@@ -48,6 +48,6 @@ Pokud nezadáte **- nostdlib**, soubor mscorlib.dll je importována do programu 
 
 Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A>.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)

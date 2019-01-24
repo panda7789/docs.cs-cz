@@ -14,30 +14,30 @@ helpviewer_keywords:
 ms.assetid: 7417f837-805e-4fed-a430-ca919c8421dc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9be8165af499729c7b3a95c480cb64d0200e23fd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: add5ba59f8f59fc013f8c04a186b34e711c1490c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33386610"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537930"
 ---
 # <a name="gcmanagedtounmanaged-mda"></a>gcManagedToUnmanaged – pomocník spravovaného ladění (MDA)
-`gcManagedToUnmanaged` Pomocník spravovaného ladění (MDA) způsobí, že kolekce paměti vždy, když vlákno přejde ze spravovaného na nespravovaný kód.  
+`gcManagedToUnmanaged` Pomocníka spravovaného ladění (MDA) způsobí, že uvolňování paměti pokaždé, když vlákno přejde ze spravovaného do nespravovaného kódu.  
   
 ## <a name="symptoms"></a>Příznaky  
- Při pokusu o použití spravovaný objekt, který byl vystaven COM., vyvolá komponentu nespravované uživatele porušení přístupu Zdá se, že objekt COM byly vydány. Narušení přístupu není deterministický.  
+ Jako součást nespravovaný uživatelský vyvolá narušení přístupu při pokusu o použití spravovaný objekt, který měl byly vystaveny objektům modelu COM. Zdá se, že objekt modelu COM byly vydány. Porušení přístupu je nedeterministická.  
   
-## <a name="cause"></a>příčina  
- Pokud komponentu nespravované není správně spravovaného objektu COM při počítání referencí, může shromažďovat modulu runtime spravovaného objektu vystaven objektům modelu COM, když komponentu nespravované dál obsahuje odkaz na objekt. Volání modulu runtime <xref:System.Runtime.InteropServices.Marshal.Release%2A> během kolekce, takže pokud komponentu uživatel používá objekt předtím, než dojde k uvolnění paměti, pak jej nebude ještě byly shromážděny. Toto je zdroj nondeterminism.  
+## <a name="cause"></a>Příčina  
+ Pokud nespravované součásti není správně spravovaný objekt modelu COM pro počítání odkazů, modul runtime může shromažďovat vystavit rozhraní COM při nespravované součásti dál obsahuje odkaz na objekt spravovaný objekt. Modul runtime zavolá <xref:System.Runtime.InteropServices.Marshal.Release%2A> během uvolnění paměti, takže pokud uživatel součást používá objekt, než dojde k uvolnění paměti, pak ji nebude ještě byly shromážděny. Toto je zdroj nondeterminism.  
   
 ## <a name="resolution"></a>Rozlišení  
- Povolení tohoto pomocníka zkracuje čas mezi když je objekt v vhodné pro kolekce a <xref:System.Runtime.InteropServices.Marshal.Release%2A> je volána, pomáhá sledovat, která nespravované komponenta nejprve pokusí o přístup k objektu shromažďovat.  
+ Povolení tohoto Pomocníka s nastavením zkracuje dobu mezi při objekt je vhodné pro kolekci a <xref:System.Runtime.InteropServices.Marshal.Release%2A> je volána, pomáhá sledovat, jaká součást nespravované se nejprve pokusí o přístup k shromážděné objekty.  
   
-## <a name="effect-on-the-runtime"></a>Vliv na modulu Runtime  
- Vždy, když přechodů přístup z více vláken ze spravovaného na nespravovaný kód způsobí, že uvolnění paměti.  
+## <a name="effect-on-the-runtime"></a>Vliv na modul Runtime  
+ Pokaždé, když vlákno přechody ze spravovaného do nespravovaného kódu způsobí, že uvolňování paměti.  
   
 ## <a name="output"></a>Výstup  
- Tato MDA neprodukuje žádný výstup.  
+ Toto MDA negeneruje žádný výstup.  
   
 ## <a name="configuration"></a>Konfigurace  
   
@@ -49,8 +49,8 @@ ms.locfileid: "33386610"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)  
- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+- [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)

@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: čtení a zápis dokument kódovaného (Visual Basic)'
+title: 'Postupy: Čtení a zápis kódovaného dokumentu (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 159d868f-5ac8-40f2-95ca-07dd925f35c6
-ms.openlocfilehash: 6e768f26313da93076807f5fabe18a26333ebab8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52360b465e40a015e2cddee62ed4197d827bc560
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33641325"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538697"
 ---
-# <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>Postupy: čtení a zápis dokument kódovaného (Visual Basic)
-Chcete-li vytvořit dokument XML kódovaného, je přidat <xref:System.Xml.Linq.XDeclaration> do stromu XML nastavení kódování, které má název požadované kódu stránky.  
+# <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>Postupy: Čtení a zápis kódovaného dokumentu (Visual Basic)
+Chcete-li vytvořit kódovaného dokumentu XML, přidáte <xref:System.Xml.Linq.XDeclaration> do stromu XML nastavení kódování, které má název stránky požadovaný kód.  
   
- Všechny hodnoty vrácené <xref:System.Text.Encoding.WebName%2A> platná hodnota.  
+ Libovolnou hodnotu vrácenou <xref:System.Text.Encoding.WebName%2A> platná hodnota.  
   
- Pokud si přečíst dokument kódovaného <xref:System.Xml.Linq.XDeclaration.Encoding%2A> vlastnost bude nastavena na název stránky kód.  
+ Pokud načtete kódovaného dokumentu <xref:System.Xml.Linq.XDeclaration.Encoding%2A> vlastnost bude nastavena na název stránky kódu.  
   
- Pokud nastavíte <xref:System.Xml.Linq.XDeclaration.Encoding%2A> k názvu stránky platný kód [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] bude serializovat s zadanému kódování.  
+ Pokud nastavíte <xref:System.Xml.Linq.XDeclaration.Encoding%2A> k názvu stránky platný kód [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] bude ukončena serializace s určeným kódováním.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dva dokumenty, jeden s kódováním utf-8 a jednu s kódování utf-16. Potom načte dokumenty a vytiskne kódování ke konzole.  
+ Následující příklad vytvoří dva dokumenty, jeden s kódováním utf-8 a jeden s kódováním utf-16. Potom načte dokumenty a vytiskne kódování do konzoly.  
   
 ```vb  
 Console.WriteLine("Creating a document with utf-8 encoding")  
@@ -76,6 +76,6 @@ Encoded document:
 Encoding of loaded document is:utf-16  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>  
- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>
+- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -2,12 +2,12 @@
 title: Uložené procedury CLR
 ms.date: 03/30/2017
 ms.assetid: fd7eea9b-218a-4988-8c9a-8abcc6031c66
-ms.openlocfilehash: 1f8aa6fb9243706d07caa4527af0c4c880aa70a6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a1a37ac1257594913c6d06cb08df2882e8773da8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503108"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554631"
 ---
 # <a name="clr-stored-procedures"></a>Uložené procedury CLR
 Uložené procedury jsou rutiny, které nelze použít v skalární výrazy. Můžete vrácena klientovi tabulkové výsledky a zprávy, vyvolání jazyka pro definici dat (DDL) a příkazy jazyka (DML) zpracování dat a vrátí výstupní parametry.  
@@ -25,6 +25,6 @@ Další informace najdete v tématu verzi [dokumentaci k SQL serveru](/sql) pro 
 
 1. [Uložené procedury CLR](https://go.microsoft.com/fwlink/?LinkId=115400)  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](https://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Vytváření objektů serveru SQL Server 2005 ve spravovaném kódu](https://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

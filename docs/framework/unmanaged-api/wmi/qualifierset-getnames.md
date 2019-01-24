@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84059c5e5542e13b1d4fc4efcfc4c7f418db391e
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 2da6bc87a175851aa7b23b67075ce61e39f0b937
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002590"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555085"
 ---
-# <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames – funkce
+# <a name="qualifiersetgetnames-function"></a>QualifierSet_GetNames function
 Načte názvy všech kvalifikátory nebo určitých kvalifikátorů, které jsou k dispozici z aktuální objekt nebo vlastnost. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -53,8 +53,8 @@ HRESULT QualifierSet_GetNames (
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 |  | 0 | Vrátí názvy všech kvalifikátory. |
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy kvalifikátory konkrétní aktuální vlastnost nebo objekt. <br/> Pro vlastnost: vracet jenom v kvalifikátorech specifické pro vlastnost (včetně potlačení), a ne těchto kvalifikátory rozšířena z definice třídy. <br/> Pro instanci: vrátit pouze názvy instancí kvalifikátoru. <br/> Pro třídu: vracet jenom kvalifikátory jsou specifické pro beiong třída odvozena.
-|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Vrátit pouze názvy kvalifikátory rozšířena z jiného objektu. <br/> Pro vlastnost: vrátit jenom v kvalifikátorech rozšíří na tuto vlastnost z definice třídy a ne ty ze samotné vlastnosti. <br/> Pro instanci: vrátit pouze ty kvalifikátory rozšířena z definice třídy. <br/> Pro třídu: vrátit pouze názvy kvalifikátor zděděná z nadřazené třídy. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Vrátíte pouze názvy kvalifikátory konkrétní aktuální vlastnost nebo objekt. <br/> Pro vlastnost: Vrátí jenom v kvalifikátorech specifické pro vlastnost (včetně potlačení) a ne kvalifikátory, rozšířena z definice třídy. <br/> Pro instanci: Vrátíte pouze názvy instancí kvalifikátoru. <br/> Pro třídu: Vrátíte pouze kvalifikátory konkrétní beiong třída odvozena.
+|`WBEM_FLAG_PROPAGATED_ONLY` | 0x20 | Vrátit pouze názvy kvalifikátory rozšířena z jiného objektu. <br/> Pro vlastnost: Vrátit se rozšířit jenom v kvalifikátorech k této vlastnosti z definice třídy a ne ty ze samotné vlastnosti. <br/> Pro instanci: Vrátit pouze ty kvalifikátory rozšířena z definice třídy. <br/> Pro třídu: Vrátit pouze názvy kvalifikátor zděděná z nadřazené třídy. |
 
 `pstrNames` [out] Nový `SAFEARRAY` , který obsahuje požadované názvy. Pole může mít 0 prvků. Pokud dojde k chybě, nový `SAFEARRAY` nevrátí.
 
@@ -77,11 +77,11 @@ Až jsme načíst názvy kvalifikátor, voláním dostanete každý kvalifikáto
 Není chybu pro daný objekt má nulovou kvalifikátory tak počet řetězců v `pstrNames` návratu může být 0, i když funkce vrátí `WBEM_S_NO_ERROR`.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

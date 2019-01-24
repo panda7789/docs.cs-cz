@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f22d9d86e2b943a8825e1ec271a401b03f73fb6c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 91e4967d6820f8f059262e7a18add072332c509d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407011"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532782"
 ---
 # <a name="icordebugblockingobjectenum-interface"></a>ICorDebugBlockingObjectEnum – rozhraní
-Poskytuje enumerátor pro seznam [cordebugblockingobject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury. Toto rozhraní je podtřídou třídy rozhraní ICorDebugEnum.  
+Poskytuje enumerátor pro seznam [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury. Toto rozhraní je podtřídou třídy icordebugenum – rozhraní.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-next-method.md)|Vytvoří výčet prostřednictvím seznam [cordebugblockingobject –](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.|  
+|[Next – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugblockingobjectenum-next-method.md)|Vytvoří výčet prostřednictvím seznamu [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) struktury.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každý `CorDebugBlockingObject` struktura představuje objekt, který je blokování vlákna.  
+ Každý `CorDebugBlockingObject` struktura představuje objekt, který blokuje vlákno.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -47,6 +47,6 @@ Poskytuje enumerátor pro seznam [cordebugblockingobject –](../../../../docs/f
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

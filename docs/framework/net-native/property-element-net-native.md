@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1b4541bc5a878739c17179576739fbe33384445d
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 74fd4fa1387836e12d186a604f6996254eabf956
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205204"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549415"
 ---
 # <a name="ltpropertygt-element-net-native"></a>Element &lt;Property&gt; (.NET Native)
 Vlastnost se týká zásady reflexe modulu runtime.  
@@ -54,8 +54,8 @@ Vlastnost se týká zásady reflexe modulu runtime.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
-|[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud nejsou výslovně definované vlastnosti zásady, dědí zásady modulu runtime objektů svého nadřízeného elementu.  
@@ -99,7 +99,7 @@ Vlastnost se týká zásady reflexe modulu runtime.
     </Directives>  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+## <a name="see-also"></a>Viz také:
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb7475623961fe2ee5fc821c5f237f0a2acfae1a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cd85ac8b98d8613924a4acd73ac74a69f3d9b41d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507659"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535343"
 ---
 # <a name="get-function"></a>Get – funkce
 Načte hodnotu zadané vlastnosti, pokud existuje.
@@ -64,8 +64,8 @@ HRESULT Get (
 |Konstanta  |Hodnota  |Popis  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | Vlastnost je standardní systém vlastnost. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: vlastnost je zděděná z nadřazené třídy. </br> Pro instanci: vlastnost, zatímco zděděná z nadřazené třídy nebyl změněn instancí.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pro třídu: vlastnost patří k odvozené třídě. </br> Instance: instance; je změněna vlastnost To znamená, že byla zadána hodnota nebo kvalifikátor byla přidána nebo upravena. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pro třídu: Vlastnost se dědí z nadřazené třídy. </br> Pro instanci: Vlastnost, zatímco zděděná z nadřazené třídy nebyl změněn instancí.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pro třídu: Vlastnost patří k odvozené třídě. </br> Pro instanci: Instance; je změněna vlastnost To znamená, že byla zadána hodnota nebo kvalifikátor byla přidána nebo upravena. |
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -88,11 +88,11 @@ Tato funkce zalamuje volání na [IWbemClassObject::Get](/windows/desktop/api/wb
 `pVal` Argument je přiřazena správný typ a hodnota pro kvalifikátor a modelu COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) – funkce
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

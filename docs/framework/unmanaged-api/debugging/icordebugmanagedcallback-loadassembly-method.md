@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1d05914004d3c1fcc5ff109e854d01661367835
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2143524b92ca34299877fe935ae5a603c3e86563
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33413115"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540504"
 ---
 # <a name="icordebugmanagedcallbackloadassembly-method"></a>ICorDebugManagedCallback::LoadAssembly – metoda
-Běžné sestavení modulu runtime (CLR) jazyk byl úspěšně načíst upozorní ladicího programu.  
+Upozorní ladicího programu, že sestavení common language runtime (CLR) byl úspěšně načten.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT LoadAssembly (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, do kterého má sestavení bylo načteno.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, do které sestavení bylo načteno.  
   
  `pAssembly`  
- [v] Ukazatel na ICorDebugAssembly objekt, který představuje sestavení.  
+ [in] Ukazatel na objekt icordebugassembly –, který představuje sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -52,6 +52,6 @@ HRESULT LoadAssembly (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [UnloadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [UnloadAssembly – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

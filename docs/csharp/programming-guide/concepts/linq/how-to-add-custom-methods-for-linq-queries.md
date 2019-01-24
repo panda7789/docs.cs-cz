@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: přidávání vlastních metod do dotazů LINQ (C#)'
+title: 'Postupy: Přidávání vlastních metod do dotazů LINQ (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1a500f60-2e10-49fb-8b2a-d8d08e4817cb
-ms.openlocfilehash: 2e843f64a8556b110bc96126ddbbd760b6093270
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0c90e869c3d56696a072585cca7282b459b39e07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510420"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540725"
 ---
-# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Postupy: přidávání vlastních metod do dotazů LINQ (C#)
+# <a name="how-to-add-custom-methods-for-linq-queries-c"></a>Postupy: Přidávání vlastních metod do dotazů LINQ (C#)
 Můžete rozšířit sadu metod, které můžete použít pro LINQ dotazy přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Kromě standardní průměr nebo maximální operace, například můžete vytvořit vlastní agregační metody pro výpočet jednu hodnotu ze sekvence hodnot. Můžete také vytvořit metodu, která funguje jako vlastní filtr a transformovat data specifická pro sekvenci hodnot a vrátí novou sekvenci. Příklady těchto metod jsou <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>, a <xref:System.Linq.Enumerable.Reverse%2A>.  
   
  Když rozšíříte <xref:System.Collections.Generic.IEnumerable%601> rozhraní, vlastních metod můžete použít na jakékoli vyčíslitelné kolekce. Další informace najdete v tématu [rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md).  
@@ -205,7 +205,7 @@ foreach (var element in query)
 */  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Generic.IEnumerable%601>  
+- <xref:System.Collections.Generic.IEnumerable%601>
 - [Rozšiřující metody](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)

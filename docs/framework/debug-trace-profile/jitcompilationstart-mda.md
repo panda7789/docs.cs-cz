@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d73c299231a588a5ae0b252dd2b5a0a834685f2d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: cd4d1be3ec3c64c7c6669a2c85ba6bf68db6da68
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53150664"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536760"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart – pomocník spravovaného ladění (MDA)
 `jitCompilationStart` Pomocníka spravovaného ladění (MDA) je aktivován do sestavy, když začne kompilátor just-in-time (JIT) kompilaci funkce.  
@@ -22,7 +22,7 @@ ms.locfileid: "53150664"
 ## <a name="symptoms"></a>Příznaky  
  Pracovní sada pro program, který je již ve formátu nativní bitové kopie, protože mscorjit.dll je načten do procesu se zvětší.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Ne všechna sestavení, které program závisí na byly vytvořeny v nativním formátu, nebo ty, které mají nejsou správně registrovány.  
   
 ## <a name="resolution"></a>Rozlišení  
@@ -157,7 +157,7 @@ namespace ns2
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

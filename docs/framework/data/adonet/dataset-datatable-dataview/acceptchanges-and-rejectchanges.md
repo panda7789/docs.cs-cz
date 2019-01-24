@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e2d1a6fe-31f9-4b83-9728-06c406a3394e
-ms.openlocfilehash: 30b2c303b1823430c480f0706500f8f7e7053c4c
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 84381a9a71ae85baad618684ebf783039456854f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873135"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538385"
 ---
 # <a name="acceptchanges-and-rejectchanges"></a>Metody AcceptChanges a RejectChanges
 Po ověření správnosti změny provedené v datech <xref:System.Data.DataTable>, může přijmout změny pomocí <xref:System.Data.DataRow.AcceptChanges%2A> metodu <xref:System.Data.DataRow>, <xref:System.Data.DataTable>, nebo <xref:System.Data.DataSet>, který bude nastaven **aktuální** řádek hodnoty, které mají být **původní** hodnoty a nastaví **RowState** vlastnost **Unchanged**. Přijetí nebo zamítnutí změn vymaže si některé **RowError** informace a nastaví **HasErrors** vlastnost **false**. Aktualizace dat ve zdroji dat může také ovlivnit přijetí nebo zamítnutí změn. Další informace najdete v tématu [aktualizace zdroje dat pomocí adaptérů dat](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
@@ -56,9 +56,9 @@ if (workTable.HasErrors)
 workTable.AcceptChanges();  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataRow>  
- <xref:System.Data.DataSet>  
- <xref:System.Data.DataTable>  
- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataRow>
+- <xref:System.Data.DataSet>
+- <xref:System.Data.DataTable>
+- [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

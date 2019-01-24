@@ -1,15 +1,15 @@
 ---
-title: Optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jedné fáze oznámení
+title: Optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: 093dfb793d5a8c8dc59eaabab09f2e5b6c81c352
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b63c0a54fda54306891bdec0edd8d2e3dc65b595
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363283"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553058"
 ---
-# <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí jednoho potvrdit fáze a možné zvýšit jedné fáze oznámení
+# <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimalizace pomocí Jednofázového potvrzení a možné zařazení Jednofázového oznámení
 Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastruktury za účelem optimalizace výkonu.  
   
 ## <a name="promotable-single-phase-enlistment"></a>Zařazení možné jedna fáze  
@@ -30,9 +30,9 @@ Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastru
  Pokud <xref:System.Transactions> transakce musí být eskalován (například pro podporu více RMs), <xref:System.Transactions> oznámí správci prostředků voláním <xref:System.Transactions.ITransactionPromoter.Promote%2A> metodu na <xref:System.Transactions.ITransactionPromoter> rozhraní, ze kterého <xref:System.Transactions.IPromotableSinglePhaseNotification> rozhraní je odvozena. Správce prostředků potom převede transakce interně z místní transakce (která nevyžaduje protokolování) transakce objekt, který je schopen účasti na transakci DTC a přidruží ji k práci prováděné. Při transakci je vyzván k potvrzení, správce transakcí stále odešle <xref:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit%2A> oznámení, aby správce zdrojů, který potvrdí distribuovaných transakcí, který je vytvořen při eskalace.  
   
 > [!NOTE]
->  **TransactionCommitted** trasování (které jsou generovány při vyvolání potvrzení změn v eskalované transakci) obsahovat ID aktivity transakci koordinátoru DTC.  
+>  **TransactionCommitted** trasování (které jsou generovány při vyvolání svěření na eskalované transakci) obsahují ID aktivity DTC transakce.  
   
- Další informace o eskalaci management, najdete v části [transakce správu eskalace](../../../../docs/framework/data/transactions/transaction-management-escalation.md).  
+ Další informace o eskalaci správy, naleznete v tématu [eskalace správy transakce](../../../../docs/framework/data/transactions/transaction-management-escalation.md).  
   
 ## <a name="transaction-management-escalation-scenario"></a>Eskalace scénář pro správu transakce  
  Následující scénář ukazuje eskalaci distribuovaných transakcí pomocí <xref:System.Data> oboru názvů jako proxy "server" pro správce prostředků. Tento scénář předpokládá, že již existuje jedna <xref:System.Data> připojení k databázi, CN1, jejich zapojení do transakce a aplikace chce zahrnovat další <xref:System.Data> připojení, CN2. Transakce musí být rozšířena na DTC, jako dvoufázového úplná distribuované transakce.  
@@ -54,12 +54,12 @@ Toto téma popisuje mechanismy poskytované <xref:System.Transactions> infrastru
 7.  Nyní jak jsou uveden v transakci DTC distribuované.  
   
 ## <a name="single-phase-commit-optimization"></a>Optimalizace potvrzení jedna fáze  
- Protokol potvrzení jedné fáze je efektivnější za běhu jako všechny aktualizace jsou provedeno bez explicitního koordinace. Chcete-li využít výhod této optimalizace, měli byste implementovat pomocí Správce prostředků <xref:System.Transactions.ISinglePhaseNotification> rozhraní pro daný prostředek a zařadit do transakce pomocí <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody. Konkrétně *EnlistmentOptions* parametr musí být rovna <xref:System.Transactions.EnlistmentOptions.None> zajistit, že by se provedla jediné fázi potvrzení.  
+ Protokol potvrzení jedné fáze je efektivnější za běhu jako všechny aktualizace jsou provedeno bez explicitního koordinace. Chcete-li využít výhod této optimalizace, měli byste implementovat pomocí Správce prostředků <xref:System.Transactions.ISinglePhaseNotification> rozhraní pro daný prostředek a zařadit do transakce pomocí <xref:System.Transactions.Transaction.EnlistDurable%2A> nebo <xref:System.Transactions.Transaction.EnlistVolatile%2A> metody. Konkrétně *EnlistmentOptions* parametr musí být rovna <xref:System.Transactions.EnlistmentOptions.None> zajistit, že by byla prováděna jedna fáze potvrzení.  
   
- Vzhledem k tomu <xref:System.Transactions.ISinglePhaseNotification> rozhraní je odvozena z <xref:System.Transactions.IEnlistmentNotification> rozhraní, není-li váš správce prostředků nárok na jediné fázi potvrzení, pak může i nadále přijímat dvě fáze potvrzení oznámení.  Pokud váš správce prostředků přijme <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> oznámení ze Správce TM, by měl akci k provedení práce, které jsou nezbytné k potvrzení a odpovídajícím způsobem informovat správce transakcí, pokud má být potvrzena nebo vrácena zpět voláním transakce <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>, <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>, nebo <xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> metodu na <xref:System.Transactions.SinglePhaseEnlistment> parametru. Odpověď z <xref:System.Transactions.Enlistment.Done%2A> na zařazení v této fázi znamená sémantiku jen pro čtení. Proto by neměl Odpovědět <xref:System.Transactions.Enlistment.Done%2A> spolu s některou z ostatních metod.  
+ Vzhledem k tomu <xref:System.Transactions.ISinglePhaseNotification> rozhraní je odvozena z <xref:System.Transactions.IEnlistmentNotification> rozhraní, není-li váš správce prostředků nárok na jediné fázi potvrzení, pak může i nadále přijímat dvě fáze potvrzení oznámení.  Pokud váš správce prostředků přijme <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> oznámení ze Správce TM, by měl akci k provedení práce, které jsou nezbytné k potvrzení a odpovídajícím způsobem informovat správce transakcí, pokud má být potvrzena nebo vrácena zpět voláním transakce <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>, <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>, nebo <xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> metodu na <xref:System.Transactions.SinglePhaseEnlistment> parametru. Odpověď <xref:System.Transactions.Enlistment.Done%2A> na zařazení v této fázi zahrnuje sémantiku jen pro čtení. Proto by neměl Odpovědět <xref:System.Transactions.Enlistment.Done%2A> spolu s některou z ostatních metod.  
   
- Pokud existuje jenom jeden volatile zařazení a žádné trvanlivý zařazení, volatile zařazení obdrží oznámení SPC.  Pokud existují jakékoli Nestálá zařazení a pouze jeden trvanlivý zařazení, zobrazí se Nestálá zařazení 2PC. Po dokončení, trvalý zařazení obdrží certifikát SPC.  
+ Pokud existuje pouze jeden těkavých zařazení a žádný trvalý zařazení, obdrží těkavých zařazení SPC oznámení.  Pokud neexistují žádné Nestálá zařazení a pouze jeden trvalý zařazení, Nestálá zařazení 2PC. Po dokončení, trvalý zařazení obdrží certifikát SPC.  
   
-## <a name="see-also"></a>Viz také  
- [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
- [Potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)
+## <a name="see-also"></a>Viz také:
+- [Uvedení prostředků jako účastníků v transakci](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)
+- [Potvrzení transakce v jedné fázi a více fázích](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

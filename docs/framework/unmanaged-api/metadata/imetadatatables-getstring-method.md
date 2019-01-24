@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3ed3501930b94eae59cf38355f8255ecf4165bcc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c457d8a6b3ab187b7d02c9c9be800c4ef1f0f58c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449579"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537982"
 ---
 # <a name="imetadatatablesgetstring-method"></a>IMetaDataTables::GetString – metoda
 Získá řetězec v zadaném indexu ze sloupce tabulky v aktuálním oboru odkaz.  
@@ -38,20 +38,20 @@ HRESULT GetString (
   
 #### <a name="parameters"></a>Parametry  
  `ixString`  
- [v] Index, od kterého má začít k vyhledání další hodnoty.  
+ [in] Index, na kterém spustíte hledání další hodnotu.  
   
  `ppString`  
- [out] Ukazatel na ukazatel na hodnotu vrácený řetězec.  
+ [out] Ukazatel na ukazatel na hodnotu vráceného řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

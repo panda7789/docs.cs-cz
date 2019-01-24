@@ -21,15 +21,15 @@ helpviewer_keywords:
 - End keyword [Visual Basic], Select Case statements
 - Case statement [Visual Basic], Select...Case
 ms.assetid: 68877b65-5419-4bf0-a465-20cd0e4c7d44
-ms.openlocfilehash: 9d24b455d92cbd00b268df26283aab082b7703a1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc0b5037dc4e728a45dfdeb97c1b6aff449fcf2b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604572"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551014"
 ---
 # <a name="selectcase-statement-visual-basic"></a>Select...Case – příkaz (Visual Basic)
-Používá jednu z několika skupin příkazů, v závislosti na hodnotě výrazu.  
+Spustí jednu z několika skupin příkazů, v závislosti na hodnotě výrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,45 +46,45 @@ End Select
   
 |Termín|Definice|  
 |---|---|  
-|`testexpression`|Požadováno. Výraz. Musí být vyhodnocen jako jeden z základní datové typy (`Boolean`, `Byte`, `Char`, `Date`, `Double`, `Decimal`, `Integer`, `Long`, `Object`, `SByte`, `Short`, `Single`, `String`, `UInteger`, `ULong`, a `UShort`).|  
-|`expressionlist`|V požadován `Case` příkaz. Seznam výraz klauzule představující shody hodnoty pro `testexpression`. Více klauzulí výraz se oddělují čárkami. Každý klauzule můžete provést jednu z následujících podob:<br /><br /> -   *Expression1* `To` *Výraz2*<br />-[ `Is` ] *porovnávací operátor* *výraz*<br />-   *výraz*<br /><br /> Použití `To` – klíčové slovo hranice rozsahu odpovídal zadat hodnoty pro `testexpression`. Hodnota `expression1` musí být menší než nebo rovna hodnotě `expression2`.<br /><br /> Použití `Is` – klíčové slovo pomocí operátoru porovnání (`=`, `<>`, `<`, `<=`, `>`, nebo `>=`) nastavit omezení u shody hodnoty pro `testexpression`. Pokud `Is` – klíčové slovo není zadána, bude automaticky vložen před *porovnávací operátor*.<br /><br /> Formulář zadání pouze `expression` je považován za zvláštní případ `Is` formuláři kde *porovnávací operátor* je znak rovná se (`=`). Tento formulář je vyhodnoceno jako `testexpression`  =  `expression`.<br /><br /> Výrazy v `expressionlist` mohou být jakéhokoli typu dat předpokladu, že jsou implicitně převést na typ `testexpression` a odpovídající `comparisonoperator` je platný pro dva typy je používán s.|  
-|`statements`|Volitelné. Jeden nebo více následujících příkazů `Case` že spuštění Pokud `testexpression` odpovídá všechny klauzule v `expressionlist`.|  
-|`elsestatements`|Volitelné. Jeden nebo více následujících příkazů `Case Else` že spuštění Pokud `testexpression` neodpovídá žádné klauzule v `expressionlist` každého `Case` příkazy.|  
-|`End Select`|Ukončí definice `Select`... `Case` konstrukce.|  
+|`testexpression`|Povinný parametr. výraz. Se musí vyhodnotit na jednu základní datové typy (`Boolean`, `Byte`, `Char`, `Date`, `Double`, `Decimal`, `Integer`, `Long`, `Object`, `SByte`, `Short`, `Single`, `String`, `UInteger`, `ULong`, a `UShort`).|  
+|`expressionlist`|Vyžaduje `Case` příkazu. Seznam klauzulí výraz představující shody hodnoty pro `testexpression`. Více klauzulí výrazu jsou odděleny čárkami. Každá klauzule můžete provést jednu z následujících forem:<br /><br /> -   *Expression1* `To` *expression2*<br />-[ `Is` ] *comparisonoperator* *výraz*<br />-   *Výraz*<br /><br /> Použití `To` – klíčové slovo k určení hranic rozsahu shody hodnoty `testexpression`. Hodnota `expression1` musí být menší nebo rovna hodnotě `expression2`.<br /><br /> Použití `Is` – klíčové slovo operátoru porovnání (`=`, `<>`, `<`, `<=`, `>`, nebo `>=`) k určení omezení pro porovnání hodnoty `testexpression`. Pokud `Is` – klíčové slovo není zadán, je automaticky vložen před *comparisonoperator*.<br /><br /> Formulář, určete pouze `expression` je považován za zvláštní případ `Is` tvoří where *comparisonoperator* je znak rovná se (`=`). Tento formulář je vyhodnocen jako `testexpression`  =  `expression`.<br /><br /> Výrazy v `expressionlist` může být libovolného datového typu, pokud jsou implicitně převést na typ `testexpression` a odpovídající `comparisonoperator` je platný pro tyto dva typy se používá se.|  
+|`statements`|Volitelné. Jeden nebo více následujících příkazů `Case` , že pokud spuštění `testexpression` odpovídá jakékoli klauzule `expressionlist`.|  
+|`elsestatements`|Volitelné. Jeden nebo více následujících příkazů `Case Else` , že pokud spuštění `testexpression` se neshoduje s žádnou klauzuli v `expressionlist` u všech `Case` příkazy.|  
+|`End Select`|Ukončí definici `Select`... `Case` konstrukce.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `testexpression` odpovídá některému `Case` `expressionlist` klauzuli, která následující příkazy `Case` příkaz spustit na další `Case`, `Case Else`, nebo `End Select` příkaz. Řízení potom předává pro následující příkaz `End Select`. Pokud `testexpression` odpovídá `expressionlist` klauzule ve více než jeden `Case` klauzuli spustit jenom příkazy následující na první shodu.  
+ Pokud `testexpression` odpovídá některému `Case` `expressionlist` klauzule, příkazy po `Case` příkaz provozovat až do dalšího `Case`, `Case Else`, nebo `End Select` příkazu. Ovládací prvek pak předá do příkaz následující `End Select`. Pokud `testexpression` odpovídá `expressionlist` klauzule ve více než jeden `Case` klauzule, spusťte jenom příkazy po první shoda.  
   
- `Case Else` Příkaz se používá k zavedení `elsestatements` ke spouštění, pokud není nalezena žádná shoda mezi `testexpression` a `expressionlist` klauzule některý z dalších `Case` příkazy. Ačkoli to není vyžadováno, je vhodné mít `Case Else` příkaz v vaše `Select Case` konstrukce pro zpracování nepředpokládaného `testexpression` hodnoty. Pokud žádné `Case` `expressionlist` klauzule odpovídá `testexpression` a neexistuje žádné `Case Else` prohlášení, předává řízení pro následující příkaz `End Select`.  
+ `Case Else` Prohlášení se používá k uvození `elsestatements` ke spouštění, pokud není nalezena žádná shoda mezi `testexpression` a `expressionlist` klauzule v některé z nich `Case` příkazy. Ačkoli není vyžadována, je dobré mít `Case Else` příkaz v vaše `Select Case` konstrukce pro zpracování nepředvídaných `testexpression` hodnoty. Pokud ne `Case` `expressionlist` klauzule odpovídá `testexpression` a neexistuje žádná `Case Else` příkazu, předá řízení následující příkaz `End Select`.  
   
- Můžete použít více výrazů ani rozsahů v každé `Case` klauzule. Například následující řádek je platný.  
+ Můžete použít několik rozsahů nebo výrazy v každém `Case` klauzuli. Například následující řádek je platný.  
   
  `Case 1 To 4, 7 To 9, 11, 13, Is > maxNumber`  
   
 > [!NOTE]
->  `Is` Klíčové slovo používané v `Case` a `Case Else` příkazy není stejný jako [je operátor](../../../visual-basic/language-reference/operators/is-operator.md), který se používá pro porovnání odkaz na objekt.  
+>  `Is` – Klíčové slovo používané `Case` a `Case Else` příkazů není stejný jako [je operátor](../../../visual-basic/language-reference/operators/is-operator.md), který se používá pro objekt k porovnání.  
   
- Můžete určit rozsahy a více výrazů pro řetězce znaků. V následujícím příkladu `Case` odpovídá jakémukoli řetězci, který se rovná "jablka", má hodnotu mezi "nuts" a "polévky" v abecedním pořadí nebo obsahuje přesně stejnou hodnotu jako aktuální hodnota `testItem`.  
+ Můžete určit rozsahy a několik výrazů pro řetězce znaků. V následujícím příkladu `Case` odpovídá jakémukoliv řetězci, který se rovná "apples", má hodnotu mezi "nuts" a "polévky" v abecedním pořadí nebo obsahuje přesně stejnou hodnotu jako aktuální hodnota `testItem`.  
   
  `Case "apples", "nuts" To "soup", testItem`  
   
- Nastavení `Option Compare` může ovlivnit porovnání řetězců. V části `Option Compare Text`, porovnat řetězce "Jablka" a "jablka" jako rovnocenné, ale v části `Option Compare Binary`, ne.  
+ Nastavení `Option Compare` může ovlivnit porovnávání řetězců. V části `Option Compare Text`, porovnat řetězce "Apples" a "apples" jako rovnocenné, ale v nabídce `Option Compare Binary`, tomu tak není.  
   
 > [!NOTE]
->  A `Case` příkaz s více klauzulí může vykazovat chování známé jako *krátká smyčka*. Visual Basic vyhodnotí klauzule zleva doprava a pokud vytváří shody s `testexpression`, zbývající klauzule nevyhodnocují. Krátká smyčka může zlepšit výkon, ale může způsobit neočekávaný výsledek, pokud očekáváte každých výrazu v `expressionlist` k vyhodnocení. Další informace o krátká smyčka najdete v tématu [logické výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md).  
+>  A `Case` příkazu s více klauzulemi může chovat říká *zkrácenou*. Visual Basic vyhodnotí klauzule zleva doprava a pokud vytváří a najděte shody s `testexpression`, není u nich vyhodnoceno zbývající klauzule. Krátký cyklus může zlepšit výkon, ale mohou způsobit neočekávané výsledky, pokud očekáváte každý výraz v `expressionlist` k vyhodnocení. Další informace o zkrácenou najdete v tématu [logické výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md).  
   
- Pokud kód v rámci `Case` nebo `Case Else` blok příkazu není nutné spustit všechny více příkazy v bloku, blok ho můžete ukončit pomocí `Exit Select` příkaz. Toto okamžitě převede řízení pro následující příkaz `End Select`.  
+ Pokud kód v rámci `Case` nebo `Case Else` blok příkazů není nutné ke spuštění všech dalších příkazů v bloku, blok ho můžete ukončit pomocí `Exit Select` příkazu. Tento ovládací prvek okamžitě přenese příkaz následující `End Select`.  
   
- `Select Case` konstrukce mohou být použity. Všechny vnořené `Select Case` konstrukce musí mít odpovídající `End Select` příkaz a musí být zcela obsažen v rámci jednoho `Case` nebo `Case Else` příkaz blok vnější `Select Case` konstrukce, ve kterém je vnořený.  
+ `Select Case` mohou být vnořené konstrukce. Každá vnořená `Select Case` konstrukce musí mít odpovídající `End Select` příkazu a musí být zcela obsažen v jednom `Case` nebo `Case Else` vnější blok příkazu `Select Case` konstrukce, ve kterém je vnořená.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Select Case` konstrukce k zápisu řádku odpovídající hodnotě proměnné `number`. Druhý `Case` příkaz obsahuje hodnotu, která odpovídá aktuální hodnota `number`, takže příkaz, který zapíše "6 až 8, včetně" spustí.  
+ Následující příklad používá `Select Case` konstrukce zapsat řádek odpovídající hodnotě proměnné `number`. Druhá `Case` příkaz obsahuje hodnotu, která odpovídá aktuální hodnotě `number`, takže příkaz, který zapíše "mezi 6 a 8, včetně" spustí.  
   
  [!code-vb[VbVbalrStatements#54](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/select-case-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Interaction.Choose%2A>  
- [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)  
- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Interaction.Choose%2A>
+- [Příkaz End](../../../visual-basic/language-reference/statements/end-statement.md)
+- [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
+- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [Příkaz Exit](../../../visual-basic/language-reference/statements/exit-statement.md)

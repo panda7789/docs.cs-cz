@@ -8,12 +8,12 @@ helpviewer_keywords:
 - errors [Windows Forms Designer]
 - design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
-ms.openlocfilehash: ec1801a1b695867a7edcd99394feebe1d0f6853a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 26f57b039b8e2fb3c56af926eeb63dc3c4c33b55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196002"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54542402"
 ---
 # <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby v rámci doby návrhu v Návrháři formulářů Windows
 Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se zobrazí v sadě Microsoft Visual Studio, když Návrhář formulářů Windows nepodaří načíst. Pokud se zobrazí tento seznam chyb, by neměla interpretovat jako chyba v návrháři, ale jako pomůcka pro opravu chyb v kódu.  
@@ -52,8 +52,8 @@ Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se 
 ### <a name="ignore-and-continue"></a>Ignorovat a pokračovat  
  Můžete ignorovat chybovou podmínku a pokračovat v načítání návrháře. Výběrem této akce může způsobit neočekávané chování. Například ovládací prvky se nemusí zobrazit na návrhové ploše.  
   
-## <a name="see-also"></a>Viz také  
- [Řešení potíží s vývojem během návrhu](https://msdn.microsoft.com/library/e048d08e-fa7c-4be8-b238-4abaa199a0a6)  
- [Řešení potíží s vytvářením ovládacích prvků a komponent](../../../../docs/framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
- [Vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)  
- [Chybové zprávy Návrháře formulářů Windows](https://msdn.microsoft.com/library/cf610bf4-5fe4-471c-bce7-6a05ece07bd2)
+## <a name="see-also"></a>Viz také:
+- [Řešení potíží s vývojem během návrhu](https://msdn.microsoft.com/library/e048d08e-fa7c-4be8-b238-4abaa199a0a6)
+- [Řešení potíží s vytvářením ovládacích prvků a komponent](../../../../docs/framework/winforms/controls/troubleshooting-control-and-component-authoring.md)
+- [Vývoj ovládacích prvků Windows Forms v době návrhu](../../../../docs/framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)
+- [Chybové zprávy Návrháře formulářů Windows](https://msdn.microsoft.com/library/cf610bf4-5fe4-471c-bce7-6a05ece07bd2)

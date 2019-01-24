@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení obrázku pomocí Návrháře (Windows Forms)'
+title: 'Postupy: Načtení obrázku pomocí návrháře (Windows Forms)'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - picture formats
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - forms [Windows Forms], displaying images
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 4dc7b973-afb1-4276-8322-20825af96655
-ms.openlocfilehash: e01e5d1dc0fad8171e705e85debc2b15d6a506eb
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 6142474c2009e0998852dc28d346e73f4abbf1b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855956"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54539087"
 ---
-# <a name="how-to-load-a-picture-using-the-designer-windows-forms"></a>Postupy: Načtení obrázku pomocí Návrháře (Windows Forms)
+# <a name="how-to-load-a-picture-using-the-designer-windows-forms"></a>Postupy: Načtení obrázku pomocí návrháře (Windows Forms)
 Pomocí Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku, lze načíst a zobrazit obrázek na formulář v době návrhu tak, že nastavíte <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnost platný obrázek. Následující tabulka uvádí typy souborů přijatelné.  
   
 |Typ|Přípona názvu souboru|  
@@ -43,9 +43,9 @@ Pomocí Windows Forms <xref:System.Windows.Forms.PictureBox> ovládacího prvku,
   
 1.  Na **vlastnosti** okna, vyberte <xref:System.Windows.Forms.PictureBox.Image%2A> vlastnosti a kliknutím pravým tlačítkem na malé miniaturu, která se zobrazí nalevo od názvu objektu bitové kopie. Zvolte **resetování**.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.PictureBox>  
- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  
- [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)  
- [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)  
- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.PictureBox>
+- [Přehled ovládacího prvku PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)
+- [Postupy: Změna velikosti či umístění obrázku za běhu](../../../../docs/framework/winforms/controls/how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Postupy: Nastavení obrázků za běhu](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)
+- [Ovládací prvek PictureBox](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;defaultftpcachepolicy –&gt; – Element (nastavení sítě)'
+title: '&lt;defaultFtpCachePolicy&gt; Element (Network Settings)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultFtpCachePolicy
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: a8c71551adc2b88b5300994134eaec329a083709
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f237831befab627ec603a9000a7cef6184e0ae65
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188284"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546106"
 ---
-# <a name="ltdefaultftpcachepolicygt-element-network-settings"></a>&lt;defaultftpcachepolicy –&gt; – Element (nastavení sítě)
+# <a name="ltdefaultftpcachepolicygt-element-network-settings"></a>&lt;defaultFtpCachePolicy&gt; Element (Network Settings)
 Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
   
  \<Konfigurace >  
 \<system.net>  
-\<requestCaching – >  
-\<defaultftpcachepolicy – >  
+\<requestCaching>  
+\<defaultFtpCachePolicy>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,7 +60,7 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[requestCaching –](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
+|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
   
@@ -79,8 +79,8 @@ Popisuje, zda ukládání do mezipaměti serveru FTP je aktivní a popisuje výc
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.Cache>  
-- <xref:System.Net.WebRequest>  
-- <xref:System.Net.Cache.RequestCacheLevel>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.Cache>
+- <xref:System.Net.WebRequest>
+- <xref:System.Net.Cache.RequestCacheLevel>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

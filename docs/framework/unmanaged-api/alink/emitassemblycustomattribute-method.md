@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: daf2c3dcaf16e949f8770121d8324cbfe6c7d05b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b4909ae23d077ee079e062d0252dbf1ee11663c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404076"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538827"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute – metoda
-Volání nastavení úrovně sestavení vlastní atributy.  
+Volání k nastavení vlastní atributy úrovně sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,7 +46,7 @@ HRESULT EmitAssemblyCustomAttribute(
  ID sestavení.  
   
  `FileToken`  
- Soubor, který defiles atribut. Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.  
+ Soubor, který defiles atribut. Může mít hodnotu NULL, pokud `AssemblyID` neznamená odvázat netmodule.  
   
  `tkType`  
  Typ vlastního atributu.  
@@ -55,21 +55,21 @@ HRESULT EmitAssemblyCustomAttribute(
  Vlastní hodnota data.  
   
  `cbCustomValue`  
- Délka dat vlastní hodnotu.  
+ Délka dat s vlastní hodnotou.  
   
  `bSecurity`  
- Hodnota TRUE, pokud vlastní atribut má vztah k podepsání sestavení.  
+ TRUE, pokud je vlastní atribut má vztah k podepsání sestavení.  
   
  `bAllowMulti`  
- Hodnota TRUE, pokud mají být vygenerované více atributů.  
+ TRUE, pokud mají být vygenerován více atributů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

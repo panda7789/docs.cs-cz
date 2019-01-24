@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 4c04c00c5392d8ba363346b06c806ec79041c439
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: b49475bf7aea8d28ce057c7d4376cf7ad8285a0a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109089"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506248"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v vyhrazené dotazovací jazyk. V průběhu času různé jazyky byly vyvinuty pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Díky tomu je nezbytné pro vývojáře aplikací získat nový dotazovací jazyk pro každý typ zdroje dat nebo formát dat, která je podporována.  
@@ -60,7 +60,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  Další informace o tom, jak vytváření určitých typů zdrojů dat, najdete v dokumentaci pro různé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelů. (Seznam z těchto zprostředkovatelů najdete v tématu [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) Základní pravidlo je jednoduchý: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat je libovolný objekt, který podporuje Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo rozhraní, které z něj dědí.  
   
 > [!NOTE]
->  Typy, jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní může také sloužit jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdrojů. Příklad, který se používá <xref:System.Collections.ArrayList>, naleznete v tématu [postupy: vytvoření dotazu na ArrayList pomocí LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
+>  Typy, jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní může také sloužit jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdrojů. Příklad, který se používá <xref:System.Collections.ArrayList>, naleznete v tématu [jak: Vytvoření dotazu na ArrayList pomocí LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
   
 ## <a name="the-query"></a>Dotaz  
  V dotazu určete, jaké informace, které chcete načíst ze zdroje dat nebo zdroje. Máte také možnost určení, jak tyto informace by měl být seřazeny, seskupeny nebo strukturované před vrácením. Pokud chcete povolit vytvoření dotazu, Visual Basic má součástí novou syntaxi dotazu jazyka.  
@@ -120,9 +120,9 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme s dotazy LINQ v jazyce Visual Basic](getting-started-with-linq.md)  
-- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
-- [Přehled standardních operátorů dotazu (Visual Basic)](standard-query-operators-overview.md)  
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
+- [Začínáme s dotazy LINQ v jazyce Visual Basic](getting-started-with-linq.md)
+- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Přehled standardních operátorů dotazu (Visual Basic)](standard-query-operators-overview.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

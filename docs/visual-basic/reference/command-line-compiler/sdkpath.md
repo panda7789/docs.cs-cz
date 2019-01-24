@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /sdkpath compiler option [Visual Basic]
 - sdkpath compiler option [Visual Basic]
 ms.assetid: fec8a3f1-b791-4a37-8af7-344859f8212d
-ms.openlocfilehash: bf665082f079901ec45122ce7797090b7519fafe
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f9910a332aa7c08f822efaaa253033d43e6075aa
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200846"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547826"
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Určuje umístění knihovny mscorlib.dll a Microsoft.VisualBasic.dll.  
@@ -44,8 +44,8 @@ Určuje umístění knihovny mscorlib.dll a Microsoft.VisualBasic.dll.
 vbc -netcf -sdkpath:"c:\Program Files\Microsoft Visual Studio .NET 2003\CompactFrameworkSDK\v1.0.5000\Windows CE " myfile.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)  
- [-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)  
- [-vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)
+- [-vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)

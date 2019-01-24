@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 420ae24e-762b-4e09-b4c3-2112c470ee49
-ms.openlocfilehash: a57bf400288c11e5ba651515feba42437b93148f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 259b8e6df9b302ec50fe84a3b57d4597821bdcc8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861985"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54533465"
 ---
 # <a name="large-udts"></a>Velké uživatelsky definované typy
 Uživatelem definované typy (UDT) umožňují vývojářům rozšířit systém skalárního typu na server uložením common language runtime (CLR) objekty v databázi serveru SQL Server. Uživatelsky definovaný typ může obsahovat několik elementů a může mít chování, na rozdíl od tradičních alias datové typy, které se skládají z jednoho typ dat systému SQL Server.  
@@ -44,7 +44,7 @@ Uživatelem definované typy (UDT) umožňují vývojářům rozšířit systém
 |`DataTypeName`|`SqlDbType.VarBinary`|Tři části názvu určenému jako *Database.SchemaName.TypeName*.|  
 |`IsLong`|Se liší|Se liší|  
   
-## <a name="sqldatareader-considerations"></a>Důležité informace o SqlDataReader  
+## <a name="sqldatareader-considerations"></a>SqlDataReader Considerations  
  <xref:System.Data.SqlClient.SqlDataReader> Se prodloužila, od SQL Server 2008 pro podporu načítání velkých hodnot UDT. Jak velké hodnoty UDT jsou zpracovány <xref:System.Data.SqlClient.SqlDataReader> závisí na verzi systému SQL Server používáte, stejně jako na `Type System Version` zadaná v připojovacím řetězci. Další informace naleznete v tématu <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
   
  Tyto metody <xref:System.Data.SqlClient.SqlDataReader> vrátí <xref:System.Data.SqlTypes.SqlBinary> místo UDT při `Type System Version` je nastavena na SQL Server 2005:  
@@ -131,9 +131,9 @@ Using connection As New SqlConnection( _
 End Using  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
- [Načítání informací o databázovém schématu](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Konfigurace parametrů a datové typy parametrů](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
+- [Načítání informací o databázovém schématu](../../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
+- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
+- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

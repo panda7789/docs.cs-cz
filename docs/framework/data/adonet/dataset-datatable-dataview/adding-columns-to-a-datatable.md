@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: d5031136b48b50ef7ad34b97942b7f6d8054d340
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 892c0488588e9a5b59650f4a815ba9819493a610
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522313"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54538264"
 ---
 # <a name="adding-columns-to-a-datatable"></a>Přidávání sloupců do DataTable
 A <xref:System.Data.DataTable> obsahuje kolekci <xref:System.Data.DataColumn> objekty odkazují **sloupce** vlastnost tabulky. Tuto sadu sloupců, společně s omezeními, definuje schéma a struktura tabulky.  
@@ -51,10 +51,10 @@ workTable.Columns.Add("Purchases", typeof(Double));
   
  Pokud používáte <xref:System.Xml.Linq.XElement> jako <xref:System.Data.DataColumn.DataType%2A> z <xref:System.Data.DataColumn> v <xref:System.Data.DataTable>, serializace XML nebude fungovat, pokud čtení v datech. Například, pokud je vypsat <xref:System.Xml.XmlDocument> pomocí `DataTable.WriteXml` metoda po serializace za účelem je do další nadřazeného uzlu v XML <xref:System.Xml.Linq.XElement>. Chcete-li tento problém obejít, použijte <xref:System.Data.SqlTypes.SqlXml> zadejte místo <xref:System.Xml.Linq.XElement>. `ReadXml` a `WriteXml` fungují správně s <xref:System.Data.SqlTypes.SqlXml>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataColumn>  
- <xref:System.Data.DataColumnCollection>  
- <xref:System.Data.DataTable>  
- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataColumn>
+- <xref:System.Data.DataColumnCollection>
+- <xref:System.Data.DataTable>
+- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
+- [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

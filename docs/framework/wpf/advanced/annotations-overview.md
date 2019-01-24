@@ -9,12 +9,12 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: 690ec5f2bca7c10aba291cdde6e8bc455e7fd43a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b3b009d7c25e813a73fe4f32c3eced632b052f13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861699"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543471"
 ---
 # <a name="annotations-overview"></a>Přehled poznámek
 Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou aktivitu, že jsme téměř jít samozřejmost. Tyto poznámky nebo komentáře jsou "Poznámky" přidáme do dokumentu označit, že informace nebo chcete zvýraznit položky relevantní pro pozdější použití. I když zápis poznámky na dokumenty tištěné je snadné a běžné, možnost přidávat vlastní komentář elektronických dokumentů je obvykle velmi omezená, pokud je k dispozici ve všech.  
@@ -64,15 +64,15 @@ Zápis poznámky nebo komentáře k dokumentu dokumentů je takový běžnou akt
   
  Jiný ukázkový scénář zahrnuje aplikace, které umožňují výměny poznámky a rychlých poznámek čtenářů dokumentu e-mailem. Tato funkce umožňuje tyto aplikace pro navigaci čtenáře na stránce, která obsahuje poznámky, které se vyměňují.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.Primitives.DocumentViewerBase>  
- <xref:System.Windows.Controls.DocumentViewer>  
- <xref:System.Windows.Controls.FlowDocumentPageViewer>  
- <xref:System.Windows.Controls.FlowDocumentScrollViewer>  
- <xref:System.Windows.Controls.FlowDocumentReader>  
- <xref:System.Windows.Annotations.IAnchorInfo>  
- [Schéma poznámek](../../../../docs/framework/wpf/advanced/annotations-schema.md)  
- [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)  
- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Postupy: přidání příkazu do položku nabídky](https://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.Primitives.DocumentViewerBase>
+- <xref:System.Windows.Controls.DocumentViewer>
+- <xref:System.Windows.Controls.FlowDocumentPageViewer>
+- <xref:System.Windows.Controls.FlowDocumentScrollViewer>
+- <xref:System.Windows.Controls.FlowDocumentReader>
+- <xref:System.Windows.Annotations.IAnchorInfo>
+- [Schéma poznámek](../../../../docs/framework/wpf/advanced/annotations-schema.md)
+- [ContextMenu – přehled](../../../../docs/framework/wpf/controls/contextmenu-overview.md)
+- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)
+- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+- [Postupy: Přidání příkazu do položku nabídky](https://msdn.microsoft.com/library/013d68a0-5373-4a68-bd91-5de574307370)

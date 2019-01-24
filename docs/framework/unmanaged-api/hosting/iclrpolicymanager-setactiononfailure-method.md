@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bc3616b2cec0fa951df745e3c5f0468f74ab82bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 535a0cbfd3224c13b42a69d01876867297b218d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33435926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54544218"
 ---
 # <a name="iclrpolicymanagersetactiononfailure-method"></a>ICLRPolicyManager::SetActionOnFailure – metoda
-Určuje akci zásady, které modul CLR (CLR) má provést, pokud dojde k selhání zadané.  
+Určuje akci zásad by měl trvat common language runtime (CLR), když dojde k selhání zadané.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT SetActionOnFailure (
   
 #### <a name="parameters"></a>Parametry  
  `failure`  
- [v] Jeden z [EClrFailure](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty, která určuje typ selhání, pro které chcete provést akci.  
+ [in] Jeden z [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty určující typ selhání, pro které chcete provést akci.  
   
  `action`  
- [v] Jeden z [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, který udává akci, která mají být provedeny, když dojde k chybě. Seznam podporovaných hodnot najdete v části poznámky.  
+ [in] Jeden z [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty indikující akce, která má být provedeny, když dojde k chybě. Seznam podporovaných hodnot naleznete v části poznámky.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`SetActionOnFailure` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`SetActionOnFailure` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
-|E_INVALIDARG|Akce zásad nelze nastavit pro zadanou operaci, nebo pro operaci byla zadána neplatná zásada akce.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
+|E_INVALIDARG|Akce zásad nelze nastavit pro zadanou operaci, nebo byla zadána neplatná zásada akci pro tuto operaci.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím modulu CLR vyvolá výjimku, když se nepodaří přidělení prostředků, třeba paměť. `SetActionOnFailure` umožňuje hostiteli, aby toto chování potlačit zadáním zásad akce provést při selhání. V následující tabulce jsou uvedeny kombinace [EClrFailure](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) a [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které jsou podporovány. (Je vynechaný předponu FAIL_ [EClrFailure](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty.)  
+ Ve výchozím nastavení CLR vyvolá výjimku, pokud se nezdaří pro přidělení prostředků, jako je paměť. `SetActionOnFailure` umožňuje hostiteli toto chování lze přepsat zadáním zásad akce má být provedena po selhání. V následující tabulce jsou uvedeny kombinace [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) a [epolicyaction –](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) hodnoty, které jsou podporovány. (Předpona FAIL_ je vynecháno z [eclrfailure –](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md) hodnoty.)  
   
 ||NonCriticalResource|CriticalResource|FatalRuntime|OrphanedLock|StackOverflow|AccessViolation|CodeContract|  
 |-|-------------------------|----------------------|------------------|------------------|-------------------|---------------------|------------------|  
@@ -72,16 +72,16 @@ HRESULT SetActionOnFailure (
 |`eDisableRuntime`|X|X|X|X|X|Není k dispozici||  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
- [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [EClrFailure – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)
+- [EPolicyAction – výčet](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)
+- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [ICLRPolicyManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)

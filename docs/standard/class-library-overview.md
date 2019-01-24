@@ -39,12 +39,12 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b00d08f43874518e117739d4a9502bf9463db5c1
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: ab7d64a9c7f0b1a080fdf82ed2662c7256f16132
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029869"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555177"
 ---
 # <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
@@ -72,7 +72,7 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
   
  Toto schéma pojmenování usnadňuje vývojářům knihovna rozšíření [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] vytvářet hierarchické skupiny typů a pojmenujte je konzistentní a informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle jejich úplného názvu (to znamená podle názvu oboru názvů a typ), což zabraňuje kolize názvů typu. Se očekává, že vývojáři knihovny použijte následující konvence při vytváření názvů pro své obory názvů:  
   
- *CompanyName*. *TechnologyName*  
+ *CompanyName*.*TechnologyName*  
   
  Například obor názvů `Microsoft.Word` odpovídá tomuto.  
   
@@ -90,12 +90,12 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
 |Integer|<xref:System.Byte>|Celé číslo bez znaménka 8 bitů.|**Bajtů**|**byte**|**unsigned char**|**byte**|  
 ||<xref:System.SByte>|8bitové celé číslo se znaménkem.<br /><br /> Není kompatibilní se Specifikací CLS.|**SByte –**|**sbyte**|**char**<br /> -nebo-<br /> **podepsané** **char**|**sbyte**|  
-||<xref:System.Int16>|16bitové celé číslo se znaménkem.|**krátké**|**short**|**short**|**Int16**|  
-||<xref:System.Int32>|32bitové celé číslo se znaménkem.|**celé číslo**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
-||<xref:System.Int64>|64bitové celé číslo se znaménkem.|**Long**|**long**|**__int64**|**Int64**|  
-||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**UInt16**|  
-||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**Uinteger –**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**UInt32**|  
-||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**UInt64**|  
+||<xref:System.Int16>|16bitové celé číslo se znaménkem.|**krátké**|**short**|**short**|**int16**|  
+||<xref:System.Int32>|32bitové celé číslo se znaménkem.|**Integer**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
+||<xref:System.Int64>|64bitové celé číslo se znaménkem.|**Long**|**long**|**__int64**|**int64**|  
+||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**uint16**|  
+||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UInteger**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**uint32**|  
+||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**uint64**|  
 |Číslo s plovoucí desetinnou čárkou|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**</br> or</br>**single**|  
 ||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**</br> or </br> **double**|  
 |Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Datový typ Boolean**|**bool**|**bool**|**bool**|  
@@ -112,6 +112,6 @@ Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Obecný systém typů](../../docs/standard/base-types/common-type-system.md)  
-- [Prohlížeč rozhraní API .NET](../../api/index.md)  
+- [Obecný systém typů](../../docs/standard/base-types/common-type-system.md)
+- [Prohlížeč rozhraní API .NET](../../api/index.md)
 - [Přehled](../../docs/framework/get-started/overview.md)

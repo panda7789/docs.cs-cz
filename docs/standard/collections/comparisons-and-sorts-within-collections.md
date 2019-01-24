@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 48838a90939899fc1e7e91cdb7bbe98019591416
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 45f0e30efac32dec42cf0687fa0da40f4d6dca4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44210296"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54551823"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Porovnávání a řazení v kolekcích
 <xref:System.Collections> Třídy proveďte porovnání v téměř všech procesů zapojených do Správa kolekcí, zda hledání elementu, který chcete odebrat nebo vrátí hodnotu z dvojice klíč hodnota.  
@@ -61,8 +61,8 @@ ms.locfileid: "44210296"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.IComparer>  
-- <xref:System.IEquatable%601>  
-- <xref:System.Collections.Generic.IComparer%601>  
-- <xref:System.IComparable>  
+- <xref:System.Collections.IComparer>
+- <xref:System.IEquatable%601>
+- <xref:System.Collections.Generic.IComparer%601>
+- <xref:System.IComparable>
 - <xref:System.IComparable%601>

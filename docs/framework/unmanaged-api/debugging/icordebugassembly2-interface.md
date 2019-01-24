@@ -1,5 +1,5 @@
 ---
-title: Icordebugassembly2 – Interface1
+title: ICorDebugAssembly2 Interface1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugAssembly2
@@ -16,29 +16,29 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 90ad74a3b9dd26d0a6e390a777e862f4274f86d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3746717bdf62c59103374f74bbabdb3a7ae1ad61
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403839"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554017"
 ---
-# <a name="icordebugassembly2-interface1"></a>Icordebugassembly2 – Interface1
-Představuje sestavení. Toto rozhraní je rozšíření rozhraní ICorDebugAssembly.  
+# <a name="icordebugassembly2-interface1"></a>ICorDebugAssembly2 Interface1
+Představuje sestavení. Toto rozhraní je rozšířením icordebugassembly – rozhraní.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsFullyTrusted – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly2-isfullytrusted-method.md)|Získá hodnotu, která určuje, zda je sestavení bylo uděleno úplný vztah důvěryhodnosti v systému zabezpečení modulu runtime.|  
+|[IsFullyTrusted – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly2-isfullytrusted-method.md)|Získá hodnotu určující, zda sestavení byla udělena úplná důvěryhodnost systém zabezpečení modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -46,5 +46,5 @@ Představuje sestavení. Toto rozhraní je rozšíření rozhraní ICorDebugAsse
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

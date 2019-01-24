@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f37bbe7d9e76d76bfe4c0f80b6f2343a5598bbfb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ec7e303e5145e16f4c17074d557410ffe4521c20
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431747"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54549834"
 ---
 # <a name="iclrerrorreportingmanagergetbucketparametersforcurrentexception-method"></a>ICLRErrorReportingManager::GetBucketParametersForCurrentException – metoda
-Získá Watson sady pro aktuální výjimky na volající vlákno.  
+Získá Watson kbelíku pro aktuální výjimky na volajícím vlákně.  
   
- A *sady* je kolekce dat chyby, která souvisí se stejnou vadou kódu. *Watson* odkazuje na sadu technologií pro shromažďování a analýzy dat, který je přidružen k výjimce.  
+ A *kbelíku* je kolekce data chyby týkající se stejnou chybu v kódu. *Watson* odkazuje na sadu technologií pro shromažďování a analýza dat, který je spojen s výjimkou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,16 +39,16 @@ HRESULT GetBucketParametersForCurrentException(
   
 #### <a name="parameters"></a>Parametry  
  `pParams`  
- [out] Ukazatel [bucketparameters –](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) struktura, která obsahuje data o chybách pro výjimku.  
+ [out] Ukazatel [bucketparameters –](../../../../docs/framework/unmanaged-api/hosting/bucketparameters-structure.md) strukturu, která obsahuje data o chybách pro výjimku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)

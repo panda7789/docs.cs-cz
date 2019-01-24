@@ -2,12 +2,12 @@
 title: Indexované vlastnosti
 description: Další informace o indexované vlastnosti v F#, které umožňují pro přístup jako pole k datům seřazené.
 ms.date: 10/17/2018
-ms.openlocfilehash: 3817290505339803814e981cd5408cd4df6bd283
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: a092da753acacf80807d145051a719df2d3e1520
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611773"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550965"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 
@@ -58,13 +58,29 @@ ONE first two second three third four fourth five fifth six 6th
 seven seventh eight eighth nine ninth ten tenth
 ```
 
-## <a name="indexed-properties-with-multiple-index-variables"></a>Indexované vlastnosti v případě více proměnných indexu
+## <a name="indexed-properties-with-multiple-index-values"></a>Indexované vlastnosti s více hodnotami indexu
 
-Indexované vlastnosti můžou mít více než jeden indexovaná proměnná. Proměnné v takovém případě jsou odděleny čárkami, pokud se vlastnost používá. Metoda set v těchto vlastností musí mít dva curryfikované argumenty, první z nich je řazená kolekce členů obsahující klíče a druhý z nich je hodnota nastavena.
+Indexované vlastnosti můžou mít více než jedna hodnota indexu. V takovém případě hodnoty jsou oddělené čárkami, když se vlastnost používá. Metoda set v těchto vlastností musí mít dva curryfikované argumenty, první z nich řazené kolekce členů obsahující klíče a druhá z nich hodnota k nastavení.
 
-Následující kód ukazuje použití indexovaná vlastnost s několika proměnnými indexu.
+Následující kód ukazuje použití indexovaná vlastnost s více hodnotami indexu.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3302.fs)]
+```fsharp
+open System.Collections.Generic
+
+/// Basic implementation of a sparse matrix basedon a dictionary
+type SparseMatrix() =
+    let table = new Dictionary<(int * int), float>()
+    member __.Item
+        // Because the key is comprised of two values, 'get' has two index values
+        with get(key1, key2) = table.[(key1, key2)]
+
+        // 'set' has two index values and a new value to place in the key's position
+        and set (key1, key2) value = table.[(key1, key2)] <- value
+
+let sm = new SparseMatrix()
+for i in 1..1000 do
+    sm.[i, i] <- float i * float i
+```
 
 ## <a name="see-also"></a>Viz také:
 

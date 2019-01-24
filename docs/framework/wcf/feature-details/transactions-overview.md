@@ -6,40 +6,40 @@ helpviewer_keywords:
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-ms.openlocfilehash: 63f3826215f24a4bab6d84709c2f9da6a9c8f4f9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c58a5ebc033f75413a975e6b1de4ed71d23a141b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498553"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548479"
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Transakce ve Windows Communication Foundation – přehled
-Transakce poskytují způsob k seskupení sady akcí nebo operací do jedné jednotky nedělitelných provádění. Transakce je soubor operací s následujícími vlastnostmi:  
+Transakce poskytují způsob seskupení sady akcí nebo operací do jedné jednotky nedělitelných spuštění. Transakce je soubor operací s následujícími vlastnostmi:  
   
--   Nedělitelnost. To zajišťuje, že buď všechny aktualizace byla dokončena v rámci konkrétní transakce se potvrdí a provedené trvanlivý nebo jsou všechny přerušena a vrácena zpět do jejich předchozího stavu.  
+-   Atomicitu. Tím se zajistí, že všechny aktualizace dokončeno v rámci konkrétní transakce potvrzena a chrání nebo jsou všechny přerušena a vrátit zpět do jejich předchozího stavu.  
   
--   Konzistence. To zaručuje, že změny provedené v rámci transakce představují transformaci z jednoho konzistentního stavu do jiného. Například transakci, která převádí peníze z účtu kontroluje účet nezmění množství peníze na celkové bankovní účet.  
+-   Konzistence. Zaručí se tak, že změny provedené v rámci transakce představují transformace z jednoho konzistentní stavu do druhého. Například transakce, které se přenese z účtu kontroluje peníze účet nezmění množství peníze celkové bankovním účtu.  
   
--   Izolace. Tím se zabrání transakce z sledování nepotvrzené změny, které patří do dalších souběžných transakcí. Izolace poskytuje abstrakci souběžnosti při zajišťovat jednu transakci nelze mít neočekávané dopad na provádění jiné transakci.  
+-   Izolace. To zabraňuje transakce pozorovat nepotvrzené změny, které patří do jiných souběžných transakcí. Izolace poskytuje abstrakci souběžnosti přitom zajistit jedna transakce nemůže mít neočekávané vliv na provádění jiné transakci.  
   
--   Odolnost. To znamená, že jakmile potvrzené, aktualizace spravované prostředky (například záznam databáze) bude trvalé při krátkodobém selhání.  
+-   Odolnost. To znamená, že po potvrzení aktualizací pro spravované prostředky (například záznam v databázi) bude trvalé i v případě selhání.  
   
- Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které vám umožní vytvořit distribuovaných transakcí v aplikace webové služby.  
+ Windows Communication Foundation (WCF) poskytuje bohatou sadu funkcí, které umožňují vytvářet distribuované transakce ve webové aplikaci služby.  
   
- WCF implementuje podporu pro protokol WS-AtomicTransaction (WS-AT), která umožňuje aplikacím toku transakcí umožňuje vzájemnou spolupráci aplikace, jako je například umožňuje vzájemnou spolupráci webové služby vytvořené pomocí jiných výrobců technologie WCF. WCF také implementuje podporu protokolu OLE transakce, který můžete použít ve scénářích, kde není nutné spolupráce funkci, která umožní toku transakcí.  
+ WCF implementuje podporu protokolu WS-AtomicTransaction (WS-AT), která umožňuje aplikacím WCF tok transakcí, které interoperabilní aplikací, jako je například interoperabilní webové služby vytvořené pomocí technologií jiných výrobců. WCF také implementuje podporu pro protokol transakcí OLE, který můžete použít ve scénářích, kdy není nutné spolupráce funkce, které umožňují tok transakcí.  
   
- Konfigurační soubor aplikace můžete použít ke konfiguraci vazby na povolit nebo zakázat toku transakcí stejně jako nastavit požadovanou transakčního protokolu u vazby. Kromě toho můžete nastavit časové limity transakce na úrovni služby pomocí konfiguračního souboru. Další informace najdete v tématu [povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md).  
+ Konfigurační soubor aplikace můžete použít ke konfiguraci vazby na povolit nebo zakázat tok transakcí a také jako nastavte požadovaný transakčního protokolu na vazbu. Kromě toho můžete nastavit časové limity transakcí na úrovni služby, který je používán konfigurační soubor. Další informace najdete v tématu [povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md).  
   
  Atributy transakce v <xref:System.ServiceModel> oboru názvů umožňují postupujte takto:  
   
--   Konfigurace transakce vypršení časových limitů a úroveň izolace filtrování pomocí <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut.  
+-   Nakonfigurujte časové limity transakcí a úroveň izolace filtrování pomocí <xref:System.ServiceModel.ServiceBehaviorAttribute> atribut.  
   
--   Povolení funkce transakce a konfigurace pomocí chování dokončení transakce <xref:System.ServiceModel.OperationBehaviorAttribute> atribut.  
+-   Povolit funkci transakce a nakonfigurujte pomocí chování dokončení transakce <xref:System.ServiceModel.OperationBehaviorAttribute> atribut.  
   
--   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributů na metodu kontrakt tak, aby vyžadovala, povolit nebo odepřít toku transakcí.  
+-   Použití <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.OperationContractAttribute> atributů pro metodu smlouvy tak, aby vyžadovala, povolit nebo odepřít tok transakcí.  
   
  Další informace najdete v tématu [atributy transakce ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md).  
   
-## <a name="see-also"></a>Viz také  
- [Atributy transakce ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)  
- [Povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)
+## <a name="see-also"></a>Viz také:
+- [Atributy transakce ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)
+- [Povolení toku transakcí](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)

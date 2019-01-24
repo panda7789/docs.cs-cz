@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: 6b1a61ac7566f624f44480ffed2337dba5e51ca2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3930453e2ba3594e19d8eb7c3dfbceb49c3a1e80
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540530"
 ---
 # <a name="how-to-configure-network-tracing"></a>Postupy: Konfigurace trasování sítě
 Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která určují formát a obsah trasování sítě. Před provedením tohoto postupu zkontrolujte, zda je povoleno trasování. Informace o povolení trasování najdete v tématu [Enabling Network Tracing](../../../docs/framework/network-programming/enabling-network-tracing.md).  
@@ -97,8 +97,8 @@ Konfigurační soubor aplikace nebo počítače obsahuje nastavení, která urč
 |`maxdatasize`|Volitelné <xref:System.Int32> atribut. Nastavuje maximální počet bajtů dat sítě zahrnutých na každém řádku trasování. Výchozí hodnota je 1024.<br /><br /> Tento atribut musí být nastaven na \<zdroj > element, jak je znázorněno v příkladu. Výjimka je vyvolána, pokud tento atribut je nastaven pro element v rámci \<přepínače > element.|  
 |`Tracemode`|Volitelné <xref:System.String> atribut. Nastavte na `includehex` chcete protokol trasování zobrazit v šestnáctkovém a textovém formátu. Nastavte na `protocolonly` chcete zobrazit pouze text. Výchozí hodnota je `includehex`.<br /><br /> Tento atribut musí být nastaven na \<přepínače > element, jak je znázorněno v příkladu. Výjimka je vyvolána, pokud tento atribut je nastaven pro element v rámci \<zdroj > element.|  
   
-## <a name="see-also"></a>Viz také  
- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)  
- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)  
- [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)  
- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
+## <a name="see-also"></a>Viz také:
+- [Interpretace trasování sítě](../../../docs/framework/network-programming/interpreting-network-tracing.md)
+- [Trasování sítě v rozhraní .NET Framework](../../../docs/framework/network-programming/network-tracing.md)
+- [Povolení trasování sítě](../../../docs/framework/network-programming/enabling-network-tracing.md)
+- [Trasování a instrumentace aplikací](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-ms.openlocfilehash: 3b031c6e3dc04637128f95ca8e922d3298981287
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5ede86cca1bddb15cab6518e17405837bda008f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536890"
 ---
 # <a name="character-data-types-visual-basic"></a>Datové typy znaků (Visual Basic)
 Visual Basic poskytuje *znakové datové typy* řešit tisknutelný a zobrazitelný znaků. Přestože oba vypořádat se znaky Unicode, `Char` obsahuje jeden znak, zatímco `String` obsahuje nekonečný počet znaků.  
@@ -39,11 +39,11 @@ Visual Basic poskytuje *znakové datové typy* řešit tisknutelný a zobrazitel
   
  Další informace najdete v tématu [datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
-## <a name="see-also"></a>Viz také  
- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)  
- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
+## <a name="see-also"></a>Viz také:
+- [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
+- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
+- [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
+- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

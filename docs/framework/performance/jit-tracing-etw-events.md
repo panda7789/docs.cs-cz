@@ -7,128 +7,128 @@ helpviewer_keywords:
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aeb0415395a59e59b4d5dc78c11d8b8f0902bad8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 04c4e1db35b59748067b76cc037c0def6437c531
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536643"
 ---
 # <a name="jit-tracing-etw-events"></a>Události Trasování událostí pro Windows trasování JIT
-<a name="top"></a> Tyto události shromažďovat údaje o úspěch nebo Chyba v běhu (JIT) vložené a volání tail JIT.  
+<a name="top"></a> Tyto události shromažďování informací týkajících se úspěchu nebo neúspěchu just-in-time (JIT) vkládání a volání funkce tail JIT.  
   
- JIT – události trasování se skládají z následujících dvou kategorií:  
+ JIT – události trasování se skládají z těchto dvou kategorií:  
   
--   [JIT vložené události](#jit_inlining_events)  
+-   [JIT vkládání události](#jit_inlining_events)  
   
--   [JIT – události volání Tail](#jit_tail_call_events)  
+-   [JIT – události volání funkce Tail](#jit_tail_call_events)  
   
 <a name="jit_inlining_events"></a>   
-## <a name="jit-inlining-events"></a>JIT vložené události  
+## <a name="jit-inlining-events"></a>JIT vkládání události  
   
-### <a name="methodjitinliningfailed-event"></a>MethodJitInliningFailed událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+### <a name="methodjitinliningfailed-event"></a>MethodJitInliningFailed události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`MethodJitInliningFailed`|186|Vložené JIT se nezdařilo.|  
+|`MethodJitInliningFailed`|186|Vkládání JIT se nezdařilo.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|Win: UnicodeString|Namespace metody, která se bude kompilovat.|  
-|MethodBeingCompiledName|Win: UnicodeString|Název metody, která se bude kompilovat.|  
-|MethodBeingCompiledNameSignature|Win: UnicodeString|Podpis metody, která se bude kompilovat.|  
-|InlinerNamespace|Win: UnicodeString|Obor názvů metody kompilátoru za běhu je pokusu o generování kódu pro.|  
-|InlinerName|Win: UnicodeString|Název metody kompilátor se pokouší o generování kódu pro. Toto nemusí být stejný jako `MethodBeingCompiledName` Pokud kompilátor se pokouší vloženého kódu do `MethodBeingCompiledName` místo aby generovala volání `InlinerName`.|  
-|InlinerNameSignature|Win: UnicodeString|Podpis pro inliner.|  
-|InlineeNamespace|Win: UnicodeString|Obor názvů inlinee.|  
-|InlineeName|Win: UnicodeString|Metoda kompilátor pokouší vložené (ne generovat volání).|  
-|InlineeNameSignature|Win: UnicodeString|Podpis pro inlinee.|  
-|FailAlways|Win: logická hodnota|Nápovědu pro to vložené JIT kompilátoru se vždy nepodaří inlinee.|  
-|FailReason|Win: UnicodeString|INLINE_NEVER znamená předchozí pokus o vložené určit, že vložené se nikdy úspěšné z jiného důvodu; v opačném případě vlastní text.|  
-|ClrInstanceID|Win: UnicodeString|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodBeingCompiledNameSpace|win:UnicodeString|Namespace metody, která je kompilován.|  
+|MethodBeingCompiledName|win:UnicodeString|Název metody, která je kompilován.|  
+|MethodBeingCompiledNameSignature|win:UnicodeString|Podpis metody, která je kompilován.|  
+|InlinerNamespace|win:UnicodeString|Obor názvů metody kompilátor JIT je pokusu o generování kódu pro.|  
+|InlinerName|win:UnicodeString|Název metody, kompilátor se pokouší o generování kódu pro. To nemusí být stejný jako `MethodBeingCompiledName` Pokud kompilátor se pokouší vloženého kódu do `MethodBeingCompiledName` místo aby generovala volání `InlinerName`.|  
+|InlinerNameSignature|win:UnicodeString|Podpis pro inliner.|  
+|InlineeNamespace|win:UnicodeString|Obor názvů inlinee.|  
+|InlineeName|win:UnicodeString|Kompilátor se pokouší vložené metody (ne generovat volání).|  
+|InlineeNameSignature|win:UnicodeString|Podpis pro inlinee.|  
+|FailAlways|Windows: datový typ Boolean|Nápovědu pro vkládání, který kompilátor JIT vždy se nezdaří inlinee.|  
+|FailReason|win:UnicodeString|INLINE_NEVER znamená, že předchozí pokus o vkládání určit se vkládání bude z nějakého důvodu; nikdy úspěšné text, v opačném případě volného tvaru.|  
+|ClrInstanceID|win:UnicodeString|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-### <a name="methodjitinliningsucceeded-event"></a>MethodJitInliningSucceeded událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+### <a name="methodjitinliningsucceeded-event"></a>MethodJitInliningSucceeded události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`MethodJitInliningSucceeded`|185|Vložené metoda byla úspěšná.|  
+|`MethodJitInliningSucceeded`|185|Metoda vkládání byla úspěšná.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|Win: UnicodeString|Obor názvů metody, která se bude kompilovat.|  
-|MethodBeingCompiledName|Win: UnicodeString|Název metody, které se je zkompilovat.|  
-|MethodBeingCompiledNameSignature|Win: UnicodeString|Podpis metody, která se bude kompilovat.|  
-|InlinerNamespace|Win: UnicodeString|Obor názvů metody do kompilátoru JIT se pokouší o generování kódu pro.|  
-|InlinerName|Win: UnicodeString|Název metody kompilátor se pokouší o generování kódu pro. Toto nemusí být stejný jako `MethodBeingCompiledName` Pokud kompilátor se pokouší vloženého kódu do `MethodBeingCompiledName` místo aby generovala volání `InlinerName`.|  
-|InlinerNameSignature|Win: UnicodeString|Podpis pro inliner.|  
-|InlineeNamespace|Win: UnicodeString|Obor názvů inlinee.|  
-|InlineeName|Win: UnicodeString|Metoda kompilátor pokouší vložené (ne generovat volání).|  
-|InlineeNameSignature|Win: UnicodeString|Podpis pro inlinee.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodBeingCompiledNameSpace|win:UnicodeString|Obor názvů metody, která je kompilován.|  
+|MethodBeingCompiledName|win:UnicodeString|Název metody, které se je zkompilován.|  
+|MethodBeingCompiledNameSignature|win:UnicodeString|Podpis metody, která je kompilován.|  
+|InlinerNamespace|win:UnicodeString|Obor názvů metody kompilátor JIT se pokouší o generování kódu pro.|  
+|InlinerName|win:UnicodeString|Název metody, kompilátor se pokouší o generování kódu pro. To nemusí být stejný jako `MethodBeingCompiledName` Pokud kompilátor se pokouší vloženého kódu do `MethodBeingCompiledName` místo aby generovala volání `InlinerName`.|  
+|InlinerNameSignature|win:UnicodeString|Podpis pro inliner.|  
+|InlineeNamespace|win:UnicodeString|Obor názvů inlinee.|  
+|InlineeName|win:UnicodeString|Kompilátor se pokouší vložené metody (ne generovat volání).|  
+|InlineeNameSignature|win:UnicodeString|Podpis pro inlinee.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="jit_tail_call_events"></a>   
-## <a name="jit-tail-call-events"></a>JIT – události volání Tail  
+## <a name="jit-tail-call-events"></a>JIT – události volání funkce Tail  
   
-### <a name="methodjittailcallfailed-event"></a>MethodJITTailCallFailed událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+### <a name="methodjittailcallfailed-event"></a>MethodJITTailCallFailed události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`MethodJitTailCallFailed`|189|Volání metody, které poškozené databáze se nezdařilo.|  
+|`MethodJitTailCallFailed`|189|Volání funkce tail metody se nezdařilo.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|Win: UnicodeString|Namespace metody, která se bude kompilovat.|  
-|MethodBeingCompiledName|Win: UnicodeString|Název metody, která se bude kompilovat.|  
-|MethodBeingCompiledNameSignature|Win: UnicodeString|Podpis metody, která se bude kompilovat.|  
-|CallerNamespace|Win: UnicodeString|Obor názvů metody do kompilátoru JIT se pokouší o generování kódu pro.|  
-|CallerName|Win: UnicodeString|Název metody kompilátor se pokouší o generování kódu pro.|  
-|CallerNameSignature|Win: UnicodeString|Podpis pro volajícího.|  
-|CalleeNamespace|Win: UnicodeString|Obor názvů volaného.|  
-|CalleeName|Win: UnicodeString|Metoda kompilátor se pokouší o volání tail (ne generovat volání).|  
-|CalleeNameSignature|Win: UnicodeString|Podpis pro volaného.|  
-|TailPrefix|Win: logická hodnota|Předpona pro volání funkce tail|  
-|FailReason|Win: UnicodeString|Důvod volání funkce tail se nezdařilo.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodBeingCompiledNameSpace|win:UnicodeString|Namespace metody, která je kompilován.|  
+|MethodBeingCompiledName|win:UnicodeString|Název metody, která je kompilován.|  
+|MethodBeingCompiledNameSignature|win:UnicodeString|Podpis metody, která je kompilován.|  
+|CallerNamespace|win:UnicodeString|Obor názvů metody kompilátor JIT se pokouší o generování kódu pro.|  
+|CallerName|win:UnicodeString|Název metody, kompilátor se pokouší o generování kódu pro.|  
+|CallerNameSignature|win:UnicodeString|Podpis pro volajícího.|  
+|CalleeNamespace|win:UnicodeString|Obor názvů volaný.|  
+|CalleeName|win:UnicodeString|Metoda kompilátor se pokouší o volání tail (ne generovat volání).|  
+|CalleeNameSignature|win:UnicodeString|Podpis pro volaný.|  
+|TailPrefix|Windows: datový typ Boolean|Předpona pro volání funkce tail|  
+|FailReason|win:UnicodeString|Volání funkce tail důvod se nezdařilo.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-### <a name="methodjittailcallsucceeded-event"></a>MethodJITTailCallSucceeded událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+### <a name="methodjittailcallsucceeded-event"></a>MethodJITTailCallSucceeded události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
 |`MethodJitTailCallSucceeded`|188|Volání funkce tail metoda byla úspěšná.|  
   
@@ -136,18 +136,18 @@ ms.locfileid: "33397556"
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodBeingCompiledNameSpace|Win: UnicodeString|Namespace metody, která se bude kompilovat.|  
-|MethodBeingCompiledName|Win: UnicodeString|Název metody, která se bude kompilovat.|  
-|MethodBeingCompiledNameSignature|Win: UnicodeString|Podpis metody, která se bude kompilovat.|  
-|CallerNamespace|Win: UnicodeString|Obor názvů metody do kompilátoru JIT se pokouší o generování kódu pro.|  
-|CallerName|Win: UnicodeString|Název metody kompilátor se pokouší o generování kódu pro.|  
-|CallerNameSignature|Win: UnicodeString|Podpis pro volajícího.|  
-|CalleeNamespace|Win: UnicodeString|Obor názvů volaného.|  
-|CalleeName|Win: UnicodeString|Metoda kompilátor se pokouší o volání tail (ne generovat volání).|  
-|CalleeNameSignature|Win: UnicodeString|Podpis pro volaného.|  
-|TailPrefix|Win: logická hodnota|Předpona pro volání funkce tail.|  
-|TailCallType|Win: UnicodeString|Druh volání funkce tail.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodBeingCompiledNameSpace|win:UnicodeString|Namespace metody, která je kompilován.|  
+|MethodBeingCompiledName|win:UnicodeString|Název metody, která je kompilován.|  
+|MethodBeingCompiledNameSignature|win:UnicodeString|Podpis metody, která je kompilován.|  
+|CallerNamespace|win:UnicodeString|Obor názvů metody kompilátor JIT se pokouší o generování kódu pro.|  
+|CallerName|win:UnicodeString|Název metody, kompilátor se pokouší o generování kódu pro.|  
+|CallerNameSignature|win:UnicodeString|Podpis pro volajícího.|  
+|CalleeNamespace|win:UnicodeString|Obor názvů volaný.|  
+|CalleeName|win:UnicodeString|Metoda kompilátor se pokouší o volání tail (ne generovat volání).|  
+|CalleeNameSignature|win:UnicodeString|Podpis pro volaný.|  
+|TailPrefix|Windows: datový typ Boolean|Předpona pro volání funkce tail.|  
+|TailCallType|win:UnicodeString|Druh volání funkce tail.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

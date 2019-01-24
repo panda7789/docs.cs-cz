@@ -1,18 +1,12 @@
 ---
-title: Začínáme – průvodce v C#
-description: Najdete krátký, jednoduché kurzy, které vám umožní rychle zjistěte základní koncepty jazyka C# a psát aplikace .NET Core.
+title: 'Začínáme – průvodce v C#'
+description: 'Najdete krátký, jednoduché kurzy, které vám umožní rychle zjistěte základní koncepty jazyka C# a psát aplikace .NET Core.'
 helpviewer_keywords:
-- Visual C#, getting started
-- getting started, Visual C#
+  - 'Visual C#, getting started'
+  - 'getting started, Visual C#'
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/23/2017
-ms.openlocfilehash: 73bf7ca1f05bd388239d970fcc6e33bf30810111
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
-ms.translationtype: MT
-ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837890"
 ---
 # <a name="get-started-with-c"></a>Začínáme s C\#
 
@@ -64,4 +58,4 @@ Jsou k dispozici v následujících tématech:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Začínáme s Visual C# a Visual Basic pomocí sady Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [Začínáme s Visual C# a Visual Basic pomocí sady Visual Studio](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)

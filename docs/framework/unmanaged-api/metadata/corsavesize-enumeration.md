@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 66f9f95b0cf19acb677daf7f7401d21cc81864a0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f756e8688299fbe9d53822851be83703f4aa6348
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447604"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550627"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize – výčet
-Obsahuje hodnoty označující úroveň přesnost potřebné při dotazování na velikost uložení operace.  
+Obsahuje hodnoty určující úroveň přesnosti se vyžaduje při dotazování na velikost uložení operace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,18 +40,18 @@ typedef enum CorSaveSize {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`cssAccurate`|Určuje, že návratová hodnota by měla být přesná.|  
-|`cssQuick`|Určuje, že návratová hodnota by měla odhadované.|  
-|`cssDiscardTransientCAs`|Určuje, že má být odebrána discardable typy.|  
+|`cssAccurate`|Určuje, že návratová hodnota by měla být přesné.|  
+|`cssQuick`|Určuje, že návratová hodnota by měla odhad.|  
+|`cssDiscardTransientCAs`|Určuje, zda má být odebrána discardable typy.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

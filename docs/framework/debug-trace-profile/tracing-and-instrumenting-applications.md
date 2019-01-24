@@ -15,36 +15,36 @@ helpviewer_keywords:
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 33d940a051c3185d8a3a04e77ea5899de0475ffc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5947f1e84bc5b1f35f0bd479a9fc879dbe63c9f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392954"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547813"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Trasování a instrumentace aplikací
-Trasování je způsob, jak můžete monitorovat aplikace, když je spuštěná. Trasování a ladění instrumentace můžete přidat do vaší aplikace rozhraní .NET Framework při jeho vývoji a že instrumentace můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiné zařízení pro pozdější analýzu.  
+Trasování je způsob, jak můžete monitorovat provádění aplikace během jejího běhu. Instrumentace trasování a ladění můžete přidat do vaší aplikace rozhraní .NET Framework při při vývoji a instrumentaci můžete použít při vývoji aplikace i po jeho nasazení. Můžete použít <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, a <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> třídy k zaznamenání informací o chybách a spuštění aplikace v protokolech, textové soubory nebo jiná pro pozdější analýzu.  
   
- Termín *instrumentace* odkazuje na funkce pro monitorování a měření úroveň výkonu produktu a diagnostikovat chyby. Při programování, to znamená možnost aplikace, abyste zapracovali:  
+ Termín *instrumentace* odkazuje na schopnost, monitorovat nebo úroveň výkonu produktu měření a diagnostikovat chyby. Při programování, to znamená možnost aplikace začlenit:  
   
--   **Trasování kódu** -přijetí informativní zprávy o spuštění aplikace v době běhu.  
+-   **Trasování kódu** -příjem informativní zprávy o spuštění aplikace v době běhu.  
   
--   **Ladění** – sledování a opravy chyb programování v aplikaci ve vývoji. Další informace najdete v tématu [ladění](/visualstudio/debugger/debugging-in-visual-studio).  
+-   **Ladění** – sledováním a oprava programovacích chyb v aplikaci ve vývoji. Další informace najdete v tématu [ladění](/visualstudio/debugger/debugging-in-visual-studio).  
   
--   **Čítače výkonu** -součásti, které umožňují sledovat výkon aplikace. Další informace najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
+-   **Čítače výkonu** – komponenty, které umožňují sledovat výkon aplikace. Další informace najdete v tématu [čítače výkonu](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   
--   **Protokoly událostí** -součásti, které umožní přijímat a sledovat hlavní události při spuštění aplikace. Další informace najdete v tématu <xref:System.Diagnostics.EventLog> třídy.  
+-   **Protokoly událostí** – komponenty, které vám umožní získáte a můžete sledovat důležité události v provádění aplikace. Další informace najdete v tématu <xref:System.Diagnostics.EventLog> třídy.  
   
- Instrumentace umístěním trasovacích příkazů na strategická místa v kódu aplikace je užitečné zejména pro distribuované aplikace. Pomocí příkazů trasování můžete instrumentace aplikace jenom pro zobrazení informací v případě problémů, ale taky k monitorování, jak dobře fungují aplikace.  
+ Instrumentace vaší aplikace tak, že příkazy trasování na strategická místa v kódu je užitečné zejména pro distribuované aplikace. Pomocí příkazů trasování vám umožňuje instrumentovat aplikaci pouze pro zobrazení informací, když něco selže, ale také k monitorování, jak dobře fungují aplikace.  
   
- <xref:System.Diagnostics.TraceSource> Třída poskytuje pokročilé funkce, trasování a jde použít místo statických metod starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy jsou stále používají, ale <xref:System.Diagnostics.TraceSource> třídy se doporučuje pro nové příkazy trasování, například <xref:System.Diagnostics.TraceSource.TraceEvent%2A> a <xref:System.Diagnostics.TraceSource.TraceData%2A>.  
+ <xref:System.Diagnostics.TraceSource> Třída poskytuje vylepšené funkce trasování a dá se použít místo statické metody starší <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy trasování. Známé <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy jsou stále používá, ale <xref:System.Diagnostics.TraceSource> třídu se doporučuje pro nové příkazy trasování, například <xref:System.Diagnostics.TraceSource.TraceEvent%2A> a <xref:System.Diagnostics.TraceSource.TraceData%2A>.  
   
- <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy jsou stejné, s výjimkou této procedury a funkce <xref:System.Diagnostics.Trace> třída kompilovány ve výchozím nastavení do sestavení pro vydání, ale těch, které <xref:System.Diagnostics.Debug> třídy nejsou.  
+ <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy jsou identické, s výjimkou této procedury a funkce <xref:System.Diagnostics.Trace> třídy jsou kompilovány ve výchozím nastavení do sestavení pro vydání, ale u <xref:System.Diagnostics.Debug> třídy nejsou.  
   
- <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy poskytují způsob, jak sledovat a analýze výkonu aplikace během vývoje nebo po nasazení. Například můžete použít <xref:System.Diagnostics.Trace> třídy ke sledování konkrétní typy akcí v nasazení aplikace v jejich výskytu (například vytvoření nového připojení databáze) a proto můžete monitorovat aplikace efektivitu.  
+ <xref:System.Diagnostics.Trace> a <xref:System.Diagnostics.Debug> třídy poskytují způsob, jak monitorovat a zjištění výkonu aplikace při vývoji nebo po nasazení. Například můžete použít <xref:System.Diagnostics.Trace> třídy můžete sledovat konkrétní typy akcí v nasazené aplikaci tak, jak dojde k (třeba vytvoření nového připojení k databázi) a proto můžete sledovat efektivitu vaší aplikace.  
   
-## <a name="code-tracing-and-debugging"></a>Kód trasování a ladění  
- Během vývoje, můžete použít výstup metody <xref:System.Diagnostics.Debug> třída pro zobrazení zpráv v okně výstupu sady Visual Studio integrované vývojové prostředí (IDE). Příklad:  
+## <a name="code-tracing-and-debugging"></a>Ladění a trasování kódu  
+ Během vývoje, můžete použít metod výstupu <xref:System.Diagnostics.Debug> třídy mají zobrazovat zprávy v okně výstupu sady Visual Studio integrované vývojové prostředí (IDE). Příklad:  
   
 ```vb  
 Trace.WriteLine("Hello World!")  
@@ -56,100 +56,100 @@ System.Diagnostics.Trace.WriteLine("Hello World!");
 System.Diagnostics.Debug.WriteLine("Hello World!");  
 ```  
   
- Každý z těchto příkladech se zobrazí "Hello, World!" v okně výstupu, když je aplikace spuštěna v ladicím programu.  
+ Každá z těchto příkladech se zobrazí "Hello World!" v okně výstup při spuštění aplikace v ladicím programu.  
   
- To umožňuje ladit aplikace a optimalizaci výkonu na základě jejich chování v testovacím prostředí. Můžete ladit aplikaci v buildu ladění pomocí <xref:System.Diagnostics.Debug> podmíněný atribut zapnutý, aby se zobrazí všechny ladění výstupu. Když je aplikace připravená pro vydání, můžete zkompilovat sestavení pro vydání bez zapnutí <xref:System.Diagnostics.Debug> podmíněného atributů tak, aby kompilátor nebude obsahovat ladění kódu v posledním spustitelný soubor. Další informace najdete v tématu [postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Další informace o konfiguracích různých sestavení pro aplikaci najdete v tématu [kompilaci a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio).  
+ To umožňuje ladit aplikace a optimalizaci výkonu na základě jejich chování ve vašem testovacím prostředí. Můžete ladit svoji aplikaci v sestavení ladění s <xref:System.Diagnostics.Debug> atribut conditional zapnuté, abyste dostávali veškerý výstup ladění. Pokud vaše aplikace je připraven k vydání, můžete vaše sestavení pro vydání kompilovat bez zapnete <xref:System.Diagnostics.Debug> podmíněný atribut, tak, aby kompilátor nebude zahrnut do konečného spustitelného souboru ladění kódu. Další informace najdete v tématu [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Další informace o různé konfigurace sestavení pro vaši aplikaci najdete v tématu [kompilování a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio).  
   
- Můžete také sledovat spuštění kódu v aplikaci nainstalované pomocí metody <xref:System.Diagnostics.Trace> třídy. Tím, že umístíte [trasování – přepínače](../../../docs/framework/debug-trace-profile/trace-switches.md) ve vašem kódu můžete ovládat, zda dojde k trasování a jak rozsáhlé je. To vám umožňuje monitorovat stav aplikace v provozním prostředí. To je obzvláště důležité v obchodní aplikace, která používá několik součástí běžící na více počítačích. Můžete řídit, jak se používají přepínače po nasazení prostřednictvím konfiguračního souboru. Další informace najdete v tématu [postupy: vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+ Můžete také sledovat spuštění kódu v nainstalovaná aplikace, pomocí metody <xref:System.Diagnostics.Trace> třídy. Tím, že umístíte [přepínačů trasování](../../../docs/framework/debug-trace-profile/trace-switches.md) ve vašem kódu, můžete řídit, jestli dojde k trasování a jak rozsáhlé je. To vám umožňuje monitorovat stav vaší aplikace v produkčním prostředí. To je obzvláště důležité v obchodních aplikací, které používá více součástí, které běží na několika počítačích. Můžete řídit, jak se používají přepínače po nasazení prostřednictvím konfiguračního souboru. Další informace najdete v tématu [jak: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
- Pokud vyvíjíte aplikaci, pro který chcete používat trasování, je obvykle zahrnout trasování a ladění zprávy v kódu aplikace. Jakmile budete připraveni k nasazení aplikace, můžete zkompilovat sestavení pro vydání bez zapnutí **ladění** podmíněný atribut. Však můžete zapnout **trasování** podmíněného atributů tak, že kompilátor obsahují kódu trasování ve spustitelném souboru. Další informace najdete v tématu [postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  
+ Když vyvíjíte aplikaci, pro který máte v úmyslu použít trasování, je obvykle zahrnout trasování a ladění zprávy v kódu aplikace. Jakmile budete připraveni k nasazení aplikace, můžete vaše sestavení pro vydání kompilovat bez zapnete **ladění** atribut conditional. Ale můžete zapnout **trasování** podmíněný atribut tak, aby kompilátor obsahuje trasování kódu ve spustitelném souboru. Další informace najdete v tématu [jak: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md).  
   
 ### <a name="phases-of-code-tracing"></a>Fáze trasování kódu  
  Existují tři fáze kód trasování:  
   
-1.  **Instrumentace** – přidání kódu trasování do aplikace.  
+1.  **Instrumentace** – přidání kódu trasování pro aplikaci.  
   
-2.  **Trasování** – kód trasování do zadaného cíle zapisuje informace.  
+2.  **Trasování** – trasování kódu zapisuje informace do zadaného cíle.  
   
-3.  **Analýza** – vyhodnotit trasování informace k identifikaci a pochopit problémy v aplikaci.  
+3.  **Analýza** – vyhodnocení trasovací informace k identifikaci a informace o problémech v aplikaci.  
   
- Během vývoje všechny trasování a ladění výstupu metody zápisu informací do okna výstupu v sadě Visual Studio ve výchozím nastavení. V nasazení aplikace metody zapsat informace trasování do cíle, které zadáte. Další informace o zadání cíl výstupu trasování nebo ladění, najdete v části [trasování – moduly naslouchání](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
+ Během vývoje výstup všech ladění a trasování, že metody zapsat informace do okna výstup v sadě Visual Studio ve výchozím nastavení. V nasazené aplikaci metody zapsat informace trasování do cíle, které zadáte. Další informace o zadání cíl výstupu pro trasování a ladění, naleznete v tématu [naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
   
- Toto je celkový přehled o hlavní kroky obvykle pomocí trasování k analýze a opravte potenciální problémy v nasazené aplikace. Další informace o tom, jak provést tyto kroky v tématu na příslušný odkaz.  
+ Následuje celkový přehled hlavních kroků, které jsou obvykle součástí pomocí trasování k analýze a opravte potenciální problémy v nasazené aplikace. Další informace o tom, jak tyto kroky provést najdete v článku na příslušný odkaz.  
   
 ##### <a name="to-use-tracing-in-an-application"></a>Chcete-li použít trasování v aplikaci  
   
-1.  Zvažte, které trasování výstup, že budete chtít přijímat dohlížející na bezpečný po nasazení aplikace.  
+1.  Zvažte, které trasování výstupu, že který chcete přijímat získáte po nasazení aplikace.  
   
-2.  Vytvořte sadu přepínače. Další informace najdete v tématu [postupy: Konfigurace trasování – přepínače](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+2.  Vytvoření sady přepínačů. Další informace najdete v tématu [jak: Konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
 3.  Přidání příkazů trasování do kódu aplikace.  
   
-4.  Určete, kam chcete zobrazit, a přidejte příslušné posluchače výstup trasování. Další informace najdete v tématu [vytváření a inicializace modulů naslouchání trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners.md).  
+4.  Určete, kam chcete výstup trasování objevit a přidejte odpovídající naslouchacích procesů. Další informace najdete v tématu [vytváření a inicializace naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-listeners.md).  
   
-5.  Testování a ladění aplikace a kód trasování, které obsahuje.  
+5.  Testování a ladění vaší aplikace a trasování kódu, které obsahuje.  
   
-6.  Kompilace aplikace do spustitelného kódu pomocí jedné z následujících postupů:  
+6.  Zkompilujte aplikaci do spustitelného kódu pomocí jedné z následujících postupů:  
   
-    -   Použití **sestavení** nabídky spolu s **ladění** stránky **stránky vlastností** dialogovém okně **Průzkumníku řešení**. Používejte při kompilaci v sadě Visual Studio.  
+    -   Použití **sestavení** nabídky spolu s **ladění** stránku **stránky vlastností** dialogové okno v **Průzkumníka řešení**. Použijte při kompilaci v sadě Visual Studio.  
   
          \- nebo –  
   
-    -   Použití **trasování** a **ladění** direktivy kompilátoru příkazového řádku metody kompilace. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Používejte při kompilaci z příkazového řádku.  
+    -   Použití **trasování** a **ladění** direktivy kompilátoru pro kompilaci metodu příkazového řádku. Další informace najdete v tématu [Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). Použijte při kompilaci z příkazového řádku.  
   
-7.  Pokud dojde k potížím při běhu, zapněte přepínač odpovídající trasování. Další informace najdete v tématu [Konfigurace trasování – přepínače](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
+7.  Pokud dojde k potížím při běhu, zapněte trasování odpovídající přepínač. Další informace najdete v tématu [konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
-     Trasování kódu zapíše zprávy trasování do zadaného cíle, například na obrazovce, do textového souboru nebo protokolu událostí. Typ naslouchací proces je součástí **Trace.Listeners** kolekce Určuje cíl.  
+     Trasování kódu zapisuje zprávy trasování do zadaného cíle, například obrazovku, do textového souboru nebo protokolu událostí. Typ naslouchací proces jste zahrnuli **Trace.listeners –** kolekce Určuje cíl.  
   
-8.  Analýza trasování zprávy k identifikaci a pochopit problém v aplikaci.  
+8.  Analyzujte trasování zprávy k identifikaci a porozumět danému problému v aplikaci.  
   
-## <a name="trace-instrumentation-and-distributed-applications"></a>Trasování instrumentace a distribuovaných aplikací  
- Při vytváření distribuované aplikace, může být obtížné testování aplikace způsobem, který se použije. Několik vývojové týmy mít možnost otestovat všechny možné kombinace operačních systémů nebo webových prohlížečů (včetně všech možností lokalizovaném jazyce) nebo k simulaci vysoký počet uživatelů, kteří budou přistupovat k aplikaci ve stejnou dobu. Za těchto okolností nelze testovat, jak bude odpovídat distribuované aplikace k velkému vytížení, jiné nastavení a chování jedinečný koncového uživatele. Mnoho částí distribuované aplikace také mít žádné uživatelské rozhraní pracovat přímo nebo zobrazit aktivitu z těchto částí.  
+## <a name="trace-instrumentation-and-distributed-applications"></a>Pro trasovacího instrumentaci a distribuovaných aplikací  
+ Při vytváření distribuované aplikace, možná pro vás bude obtížné otestovat aplikaci způsobem, který se použije. Několik vývojové týmy mají možnost vyzkoušet všechny možné kombinace operačních systémů nebo webových prohlížečů (včetně všech možností lokalizovaném jazyce) nebo simulace velkého počtu uživatelů, kteří se k aplikaci ve stejnou dobu. Za těchto okolností nemůže testovat, jak distribuované aplikace bude reagovat na velké objemy, jiné nastavení a chování koncových uživatelů jedinečný. Také mnoho částí distribuované aplikace mít žádné uživatelské rozhraní pracovat přímo nebo zobrazit aktivitu z těchto částí.  
   
- Však můžete kompenzovat to povolením distribuované aplikace k popisu určité události důležité pro správce systému, zejména věcí, které dojít k chybě, ve *instrumentace* aplikace – tj pomocí umístění příkazy trasování na strategická místa v kódu. Poté neočekávané případě za běhu (například nadměrně dlouhá doba odezvy), můžete určit pravděpodobnou příčinou.  
+ Však můžete kompenzovat to tím, že distribuované aplikace při určitých událostí, abyste správci systému, zejména věcí, které se pokazí, podle popisu *instrumentace* aplikace – to znamená podle umístění příkazy trasování strategická místa v kódu. A pokud se něco neočekávaného dojde za běhu (například nadměrně dlouhá doba odezvy), můžete určit pravděpodobnou příčinou.  
   
- Pomocí příkazů trasování se můžete vyhnout snadné zkoumání původní zdrojový kód, provádění úprav, nutnosti rekompilace a pokus o vytvoření Chyba spuštění v prostředí ladění. Mějte na paměti, že můžete instrumentace aplikace nejen pro zobrazení chyb, ale také kvůli sledování výkonu.  
+ Pomocí příkazů trasování se můžete vyhnout těžký úkol zkoumání původní zdrojový kód, úpravách, rekompilace a pokus o této chybě za běhu v prostředí ladění. Mějte na paměti, že instrumentovat můžete nejenom k zobrazení chyb, ale také k monitorování výkonu aplikace.  
   
-## <a name="strategic-placement-of-trace-statements"></a>Strategické umístění příkazy trasování  
- Zvláštní pozornost musí výkonu při umísťování vaše příkazy trasování pro použití při běhu. Musíte zvážit, jaké informace trasování bude pravděpodobně potřeba v nasazení aplikace, tak, aby všechny scénáře pravděpodobně trasování jsou adekvátní popsané. Vzhledem k tomu, že aplikace, které používají trasování lišit, často, ale neexistují žádné obecné pokyny pro strategické umístění trasování. Další informace o umístění trasovacích příkazů najdete v tématu [postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
+## <a name="strategic-placement-of-trace-statements"></a>Strategické umístění příkazů trasování  
+ Zvláštní pozornost musí uplatňovat při umísťování výpisy trasování pro použití za běhu. Musíte zvážit, jaké informace vektorizace by mohla být potřeba v nasazené aplikaci tak, aby všechny pravděpodobně trasování scénáře jsou popsané odpovídajícím způsobem. Protože aplikace, které používají trasování se liší běžně, ale nejsou žádné obecné pokyny pro strategické umístění trasování. Další informace o umístění příkazů trasování najdete v tématu [jak: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
   
 ## <a name="output-from-tracing"></a>Výstup trasování  
- Výstup trasování se shromažďují objekty názvem *naslouchací procesy*. Naslouchací proces je objekt, který přijímá výstup trasování a zapíše ho do zařízení se systémem výstup (obvykle soubor okno, protokolu nebo text). Když je vytvořen naslouchací proces trasování, je obvykle přidán do <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> kolekce, což naslouchací proces pro příjem všech výstup trasování.  
+ Trasování shromáždí výstup podřízeného runbooku objekty volá *naslouchacích procesů*. Naslouchací proces je objekt, který přijímá výstup trasování a zapisuje je do výstupní zařízení (obvykle okna, protokolu nebo textový soubor). Když se vytvoří naslouchací proces trasování, je obvykle přidá do <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> kolekce, což naslouchací proces pro příjem všech výstupu trasování.  
   
- Informace o trasování je vždy zapisovány alespoň na výchozí <xref:System.Diagnostics.Trace> cíl výstupu, <xref:System.Diagnostics.DefaultTraceListener>. Pokud z nějakého důvodu jste odstranili <xref:System.Diagnostics.DefaultTraceListener> bez přidání jakékoli naslouchací procesy na <xref:System.Diagnostics.Trace.Listeners%2A> kolekce, všechny zprávy trasování se nezobrazí. Další informace najdete v tématu [trasování – moduly naslouchání](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
+ Trasovací informace je vždy napsané alespoň na výchozí hodnotu <xref:System.Diagnostics.Trace> cíl výstupu <xref:System.Diagnostics.DefaultTraceListener>. Pokud z nějakého důvodu jste odstranili <xref:System.Diagnostics.DefaultTraceListener> bez nutnosti přidávat další naslouchacích procesů k <xref:System.Diagnostics.Trace.Listeners%2A> kolekce, neobdržíte žádné zprávy trasování. Další informace najdete v tématu [naslouchacích procesů trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
   
- Šesti <xref:System.Diagnostics.Debug> členy a <xref:System.Diagnostics.Trace> metody, které zapsat informace trasování jsou uvedeny v následující tabulce.  
+ Všech šest <xref:System.Diagnostics.Debug> členy a <xref:System.Diagnostics.Trace> metody, které zapsat informace trasování jsou uvedeny v následující tabulce.  
   
 |Metoda|Výstup|  
 |------------|------------|  
-|**Assert**|Zadaný text; nebo, pokud není zadaný žádný zásobníku volání. Výstup se zapíše pouze pokud podmínka zadaný jako argument **Assert** příkaz **false**.|  
-|**Selhání**|Zadaný text; nebo, pokud není zadaný žádný zásobníku volání.|  
-|**zápis**|Zadaný text.|  
-|**Writeif –**|Zadaný text, pokud podmínky zadané jako argument **writeif –** příkaz je splněné.|  
-|**WriteLine**|Zadaný text a návrat.|  
-|**Writelineif –**|Zadaný text a znak konce řádku vrátit, pokud podmínky zadané jako argument **writelineif –** příkaz je splněné.|  
+|**Kontrolní výraz**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání. Výstup bude zapsán pouze pokud je podmínka zadaný jako argument v **Assert** příkaz je **false**.|  
+|**Selhání**|Zadaný text; nebo, pokud není zadaný žádný zásobník volání.|  
+|**Zápis**|Zadaný text.|  
+|**Writeif –**|Zadaný text, pokud podmínka zadaný jako argument v **writeif –** příkazu není splněna.|  
+|**WriteLine**|Zadaný text a zalomení řádku.|  
+|**WriteLineIf**|Zadaný text a zalomení řádku vrátit, pokud podmínka zadaný jako argument v **writelineif –** příkazu není splněna.|  
   
- Všechny moduly pro naslouchání v <xref:System.Diagnostics.Trace.Listeners%2A> kolekce přijímat zprávy popsané v předchozí tabulce, ale akce prováděné se mohou lišit v závislosti na tom, jaký druh naslouchací proces obdrží zprávu. Například <xref:System.Diagnostics.DefaultTraceListener> zobrazí dialogové okno kontrolní výraz při přijetí **nezdaří** nebo se nezdařilo **Assert** oznámení, ale <xref:System.Diagnostics.TextWriterTraceListener> jednoduše výstup zapíše do jeho datového proudu.  
+ Všechny moduly pro naslouchání v <xref:System.Diagnostics.Trace.Listeners%2A> kolekce přijímat zprávy popsané v tabulce výše, ale akce prováděné se mohou lišit v závislosti na tom, jaký druh naslouchací proces obdrží zprávu. Například <xref:System.Diagnostics.DefaultTraceListener> zobrazí dialogové okno výraz, když přijme **selhání** nebo se nezdařilo **Assert** oznámení, ale <xref:System.Diagnostics.TextWriterTraceListener> jednoduše zapíše výstup do jeho datového proudu.  
   
- Můžete vytvořit vlastní výsledky implementací vlastní naslouchací proces. Vlastní naslouchací může, například zobrazit okno se zprávou zprávy nebo připojení k databázi, chcete-li přidat zprávy do tabulky. Všechny vlastní naslouchací procesy by měly podporovat šesti metody uvedené výše. Další informace o vytváření definované vývojáře naslouchací procesy najdete v tématu <xref:System.Diagnostics.TraceListener> v referenci rozhraní .NET Framework.  
+ Můžete vytvářet vlastní výsledky implementací vlastní naslouchací proces. Vlastní naslouchací může například zobrazit zprávy do okna se zprávou a připojení k databázi a přidává zprávy do tabulky. Všechny vlastní naslouchací procesy by měly podporovat šest metod uvedených výše. Další informace o vytvoření naslouchacích procesů definované pro vývojáře najdete v tématu <xref:System.Diagnostics.TraceListener> v referenční dokumentaci rozhraní .NET Framework.  
   
 > [!NOTE]
->  V [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], **Debug.Write –**, **Debug.WriteIf**, **Debug.WriteLine**, a **Debug.WriteLineIf** nahradit metody **Debug.Print –** metoda, která byla k dispozici v dřívějších verzích jazyka Visual Basic.  
+>  V [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], **Debug.Write –**, **Debug.WriteIf**, **Debug.WriteLine**, a **Debug.WriteLineIf** nahradil metody **Debug.Print** metodu, která byla k dispozici v dřívějších verzích sady Visual Basic.  
   
- **Zápisu** a **WriteLine** zápisu vždy metody text, zda jste zadali. **Assert –**, **writeif –**, a **writelineif –** vyžadují Boolean argument, který určuje, zda budou zapisovat zadaný text; zapíší zadaný text pouze pokud ve výrazu je **true** (pro **writeif –** a **writelineif –**), nebo **false** (pro **Assert**). **Nezdaří** metoda vždy zapíše zadaný text. Další informace najdete v tématu [postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) a odkaz na rozhraní .NET Framework.  
+ **Zápisu** a **WriteLine** metody vždy vypsání textu, že zadáte. **Assert –**, **writeif –**, a **writelineif –** vyžadují logický argument, který určuje, zda zapisovaly zadaný text; zapisovaly zadaný text pouze pokud má výraz hodnotu **true** (pro **writeif –** a **writelineif –**), nebo **false** (pro **Assert**). **Selhání** metoda vždy zapíše zadaný text. Další informace najdete v tématu [jak: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) a odkaz na rozhraní .NET Framework.  
   
-## <a name="security-concerns"></a>Aspekty zabezpečení  
- Pokud nezakážete trasování a ladění před nasazením aplikace ASP.NET, vaše aplikace může odhalit informace o sobě, který může zneužít škodlivý program. Další informace najdete v tématu [postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [kompilaci a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio), a [postupy: vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md) . Ladění je také možné konfigurovat pomocí Internetové informační služby (IIS).  
+## <a name="security-concerns"></a>Zajištění zabezpečení  
+ Pokud zakážete nikoli trasování a ladění před nasazením aplikace technologie ASP.NET, aplikace může zobrazit informace o sobě, který by mohl zneužít škodlivý program. Další informace najdete v tématu [jak: Kompilace podmíněně s Trace a Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [kompilování a sestavování](/visualstudio/ide/compiling-and-building-in-visual-studio), a [jak: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md). Ladění je také možné konfigurovat pomocí Internetové informační služby (IIS).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Trace>  
- <xref:System.Diagnostics.TraceSource>  
- [Kontrakty kódu](../../../docs/framework/debug-trace-profile/code-contracts.md)  
- [C#, F # a typy projektů jazyka Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)  
- [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
- [Postupy: Podmíněná kompilace pomocí atributu Trace a Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
- [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
- [Postupy: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
- [Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)  
- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
- [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Trace>
+- <xref:System.Diagnostics.TraceSource>
+- [Kontrakty kódu](../../../docs/framework/debug-trace-profile/code-contracts.md)
+- [Typy projektů jazyka C#, F# a Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
+- [Postupy: Přidání příkazů trasování do kódu aplikace](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Postupy: Podmíněná kompilace pomocí trasování a ladění](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Postupy: Vytváření, inicializace a konfigurace přepínačů trasování](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
+- [Postupy: Vytváření a inicializace zdrojů trasování](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)
+- [Postupy: Použití třídy TraceSource a filtrů s naslouchacími procesy trasování](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)
+- [Moduly naslouchání trasování](../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Přepínače trasování](../../../docs/framework/debug-trace-profile/trace-switches.md)

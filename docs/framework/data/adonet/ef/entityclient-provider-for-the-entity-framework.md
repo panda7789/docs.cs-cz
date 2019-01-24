@@ -2,12 +2,12 @@
 title: Zprostředkovatel EntityClient pro Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 8c5db787-78e6-4a34-8dc1-188bca0aca5e
-ms.openlocfilehash: 1bafdc250c7edc009352d668e8ee7962a86fe8bf
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 33ad1e89260296f09426e335450d9d8ba3461d7d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43806170"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541193"
 ---
 # <a name="entityclient-provider-for-the-entity-framework"></a>Zprostředkovatel EntityClient pro Entity Framework
 Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entity Framework pro přístup k datům je popsáno v konceptuálním modelu. Informace o konceptuálních modelů najdete v tématu [modelování a mapování](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md). Zprostředkovatel EntityClient používá pro přístup ke zdroji dat jiné zprostředkovatele dat .NET Framework. Například zprostředkovatel EntityClient používá zprostředkovatele dat .NET Framework pro SQL Server (SqlClient) při přístupu k databázi serveru SQL Server. Informace o poskytovateli SqlClient najdete v tématu [SqlClient pro Entity Framework](../../../../../docs/framework/data/adonet/ef/sqlclient-for-the-entity-framework.md). Zprostředkovatel EntityClient je implementována v <xref:System.Data.EntityClient> oboru názvů.  
@@ -17,7 +17,7 @@ Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entit
   
  Můžete zadat připojovací řetězec v souboru app.config.  
   
- <xref:System.Data.EntityClient> Zahrnuje také <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídy. Tato třída umožňuje vývojářům pro programové vytváření syntakticky správný připojovací řetězce a analyzovat a znovu vytvořit existující připojovací řetězce, pomocí vlastností a metod této třídy. Další informace najdete v tématu [postupy: sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
+ <xref:System.Data.EntityClient> Zahrnuje také <xref:System.Data.EntityClient.EntityConnectionStringBuilder> třídy. Tato třída umožňuje vývojářům pro programové vytváření syntakticky správný připojovací řetězce a analyzovat a znovu vytvořit existující připojovací řetězce, pomocí vlastností a metod této třídy. Další informace najdete v tématu [jak: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
   
 ## <a name="creating-queries"></a>Vytváření dotazů  
  [!INCLUDE[esql](../../../../../includes/esql-md.md)] Jazyk je nezávislý na úložišti dialekt SQL, který pracuje přímo s konceptuálními schématy entity a podporuje koncepty modelu Entity Data Model, jako je dědičnost a vztahy. <xref:System.Data.EntityClient.EntityCommand> Třída se používá ke spuštění [!INCLUDE[esql](../../../../../includes/esql-md.md)] příkaz proti modelu entity. Při sestavování <xref:System.Data.EntityClient.EntityCommand> objekty, můžete zadat název uložené procedury nebo text dotazu. [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Spolupracuje s poskytovateli data specifická pro úložiště pro převod obecný [!INCLUDE[esql](../../../../../includes/esql-md.md)] do konkrétní úložiště dotazů. Další informace o psaní [!INCLUDE[esql](../../../../../includes/esql-md.md)] dotazy, naleznete v tématu [jazyk Entity SQL](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md).  
@@ -40,30 +40,30 @@ Zprostředkovatel EntityClient je poskytovatel dat používané aplikacemi Entit
 ## <a name="managing-transactions"></a>Správa transakcí  
  V rozhraní Entity Framework, existují dva způsoby, jak používat transakce: automatické a explicitní. Použít automatické transakce <xref:System.Transactions> obor názvů a explicitní transakce pomocí <xref:System.Data.EntityClient.EntityTransaction> třídy.  
   
- Chcete-li aktualizovat data, která je k dispozici prostřednictvím konceptuálního modelu; Zobrazit [postupy: Správa transakcí v rozhraní Entity Framework](https://msdn.microsoft.com/library/4a55eb7f-f826-4a48-9df1-aebe2352ebef).  
+ Chcete-li aktualizovat data, která je k dispozici prostřednictvím konceptuálního modelu; Zobrazit [jak: Správa transakcí v rozhraní Entity Framework](https://msdn.microsoft.com/library/4a55eb7f-f826-4a48-9df1-aebe2352ebef).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
+ [Postupy: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md)  
   
- [Postup: Provedení dotazu, který vrátí výsledky typu PrimitiveType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)  
+ [Postupy: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)  
   
- [Postup: Provedení dotazu, který vrátí výsledky typu StructuralType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)  
+ [Postupy: Spustit dotaz, který vrátí výsledky typu StructuralType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)  
   
- [Postup: Provedení dotazu, který vrátí výsledky typu RefType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-reftype-results.md)  
+ [Postupy: Spustit dotaz, který vrátí výsledky typu RefType](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-reftype-results.md)  
   
- [Postup: Provedení dotazu, který vrátí komplexní typy](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-complex-types.md)  
+ [Postupy: Provedení dotazu, který vrátí komplexní typy](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-complex-types.md)  
   
- [Postup: Provedení dotazu, který vrátí vnořené kolekce](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-nested-collections.md)  
+ [Postupy: Provedení dotazu, který vrátí vnořené kolekce](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-nested-collections.md)  
   
- [Postupy: Spuštění parametrizovaného dotazu Entity SQL pomocí EntityCommand](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
+ [Postupy: Provést parametrizovaného dotazu Entity SQL pomocí EntityCommand](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-entity-sql-query-using-entitycommand.md)  
   
  [Postupy: Spuštění parametrizované uložené procedury pomocí EntityCommand](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-parameterized-stored-procedure-using-entitycommand.md)  
   
- [Postup: Spuštění polymorfního dotazu](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-polymorphic-query.md)  
+ [Postupy: Spuštění Polymorfního dotazu](../../../../../docs/framework/data/adonet/ef/how-to-execute-a-polymorphic-query.md)  
   
- [Postupy: Procházení relací pomocí navigačního operátoru](../../../../../docs/framework/data/adonet/ef/how-to-navigate-relationships-with-the-navigate-operator.md)  
+ [Postupy: Procházení vztahů pomocí navigačního operátoru](../../../../../docs/framework/data/adonet/ef/how-to-navigate-relationships-with-the-navigate-operator.md)  
   
-## <a name="see-also"></a>Viz také  
- [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)  
- [Referenční dokumentace jazyka](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)
+## <a name="see-also"></a>Viz také:
+- [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)
+- [ADO.NET Entity Framework](../../../../../docs/framework/data/adonet/ef/index.md)
+- [Referenční dokumentace jazyka](../../../../../docs/framework/data/adonet/ef/language-reference/index.md)

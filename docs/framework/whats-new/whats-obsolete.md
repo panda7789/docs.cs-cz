@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 58ef462fdccc31a7694721b3ab9c3bec52d66abe
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 8af9d0f3c31e9178e815dc8fb00f192b8da3e5de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183474"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541258"
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá nové typy a členy typů, které přinášejí nové funkce. Existující typy a členové také v průběhu času měnit. Například některé typy se stanou méně důležité technologie, které podporují je nahrazena novou technologii a některé metody jsou nahrazena novější metody, které jsou vhodnější nebo více plně funkční.  
@@ -64,8 +64,8 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
 |4|V4.0|  
 |3.5|v2.0.50727|  
 |2.0|v2.0.50727|  
-|1.1|V1.1.4322|  
-|1.0|V1.0.3705|  
+|1.1|v1.1.4322|  
+|1.0|v1.0.3705|  
   
 ## <a name="obsolete-lists-for-the-net-framework-45-and-later-versions"></a>Zastaralé seznamy pro rozhraní .NET Framework 4.5 a novější verze  
  [Zastaralé typy](../../../docs/framework/whats-new/obsolete-types.md)  
@@ -81,5 +81,5 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
   
  [Seznam zastaralých rozhraní .NET framework 2.0](https://go.microsoft.com/fwlink/?LinkID=125264)  
   
-## <a name="see-also"></a>Viz také  
- [\<supportedRuntime > – Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)
+## <a name="see-also"></a>Viz také:
+- [\<supportedRuntime > – Element](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)

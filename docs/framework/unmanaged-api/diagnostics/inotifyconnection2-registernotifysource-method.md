@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3b4731a9503ab29a7d90ddd28c7ac0a5a761c1e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5895dc3cb64b72380dead1e048c012b586c4f48e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432492"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550718"
 ---
 # <a name="inotifyconnection2registernotifysource-method"></a>INotifyConnection2::RegisterNotifySource – metoda
-Nainstaluje zadaný oznámení zdroj.  
+Nainstaluje zdroj zadaného oznámení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ HRESULT RegisterNotifySource
   
 #### <a name="parameters"></a>Parametry  
  `in_pNotifySource`  
- [v] Určuje objekt, který se má použít jako zdroj pro oznámení.  
+ [in] Určuje objekt, který chcete použít jako zdroj pro oznámení.  
   
  `out_ppNotifySink`  
- [out] Získá objekt, který má být použit jako jímku oznámení.  
+ [out] Přijímá objekt, který chcete použít jako jímka oznámení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda bude úspěšná.  
+ S_OK, pokud metoda uspěje.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** ProtocolNotify2.idl  
   
-## <a name="see-also"></a>Viz také  
- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- [UnregisterNotifySource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-unregisternotifysource-method.md)
+## <a name="see-also"></a>Viz také:
+- [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)
+- [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)
+- [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [UnregisterNotifySource – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-unregisternotifysource-method.md)

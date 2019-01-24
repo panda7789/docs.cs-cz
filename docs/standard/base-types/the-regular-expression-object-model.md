@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 856b7c8a842b173fbf3e31323ce7224fc05a4f12
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 1dc0570bedb1e7dbe02994b7df943609a42ca092
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535305"
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
 <a name="introduction"></a> Toto téma popisuje objektový model používaný při práci s regulárními výrazy v rozhraní .NET. Obsahuje následující oddíly:  
@@ -284,7 +284,7 @@ ms.locfileid: "45664732"
 |`:`|Porovná dvojtečka.|  
 |`(?<value>\w+)`|Porovná jeden nebo více znaků slova. Je název zachytávající skupiny `value`.|  
   
- Vlastnosti <xref:System.Text.RegularExpressions.Group> třídy poskytují informace o zachycenou skupinou: `Group.Value` vlastnost obsahuje zachycené podřetězce `Group.Index` vlastnost určuje počáteční pozici zachycené skupině ve vstupním textu `Group.Length` vlastnost obsahuje délka zachycený text a `Group.Success` vlastnost určuje, zda je dílčí řetězec shoduje se vzorem určené zachytávající skupina.  
+ Vlastnosti <xref:System.Text.RegularExpressions.Group> třídy poskytují informace o zachycené skupiny: `Group.Value` Vlastnost obsahuje zachycené podřetězce `Group.Index` vlastnost určuje počáteční pozici zachycené skupině ve vstupním textu `Group.Length` vlastnost obsahuje délka zachycený text a `Group.Success` vlastnost určuje, zda je dílčí řetězec shoduje se vzorem určené zachytávající skupina.  
   
  Použití kvantifikátory do skupiny (Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) upraví vztah jednoho zachycení za zachytávající skupinou dvěma způsoby:  
   
@@ -301,7 +301,7 @@ ms.locfileid: "45664732"
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
--   Kvantifikátory může odpovídat více výskytů typů vzor, který je definován zachytávající skupina. V takovém případě `Value` a `Length` vlastnosti <xref:System.Text.RegularExpressions.Group> objekt obsahovat informace pouze o poslední zachycené podřetězce. Například následující regulární výraz odpovídá jedné věty, které končí tečkou. Používá dva seskupovací konstrukce: první zachycuje jednotlivá slova spolu s prázdný znak; Druhá zachytává jednotlivých slov. Jak výstup z příkladu ukazuje, i když proběhne úspěšně regulárních výrazů v zachytávání celé věty, druhá zachytávající skupina zaznamená pouze poslední slovo.  
+-   Kvantifikátory může odpovídat více výskytů typů vzor, který je definován zachytávající skupina. V takovém případě `Value` a `Length` vlastnosti <xref:System.Text.RegularExpressions.Group> objekt obsahovat informace pouze o poslední zachycené podřetězce. Například následující regulární výraz odpovídá jedné věty, které končí tečkou. Používá dva seskupovací konstrukce: Jednotlivá slova spolu s prázdným znakem; zaznamená první Druhá zachytává jednotlivých slov. Jak výstup z příkladu ukazuje, i když proběhne úspěšně regulárních výrazů v zachytávání celé věty, druhá zachytávající skupina zaznamená pouze poslední slovo.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
@@ -353,6 +353,6 @@ ms.locfileid: "45664732"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Text.RegularExpressions>  
-- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)  
+- <xref:System.Text.RegularExpressions>
+- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

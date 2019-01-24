@@ -15,15 +15,15 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-ms.openlocfilehash: 9c50d03454860979e3475cb381fefc2acc07cece
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a3762e3bf0978feeb1155f8cc8249a77f0a497df
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535266"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With – příkaz (Visual Basic)
-Vykoná řadu příkazů, které opakovaně odkazují na jeden objekt nebo strukturu, takže příkazy mohou při přístupu k členům tohoto objektu nebo struktury použít zjednodušenou syntaxi.  Při použití strukturou, můžou jenom číst hodnoty členů, nebo volat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty členů struktury používán `With...End With` příkaz.  
+Vykoná řadu příkazů, které opakovaně odkazují na jeden objekt nebo strukturu, takže příkazy mohou při přístupu k členům tohoto objektu nebo struktury použít zjednodušenou syntaxi.  Při použití struktury lze pouze číst hodnoty členů nebo vyvolávat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty k členům struktury použité v `With...End With` příkazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,50 +37,50 @@ End With
   
 |Termín|Definice|  
 |---|---|  
-|`objectExpression`|Požadováno. Výraz, který se vyhodnotí na objekt. Výraz může být libovolně složitý a vyhodnotí se pouze jednou. Výraz lze vyhodnotit na libovolný datový typ včetně základních typů.|  
-|`statements`|Volitelné. Jeden nebo více příkazů mezi `With` a `End With` , mohou odkazovat na objekt, který je produkovaný vyhodnocení členů `objectExpression`.|  
-|`End With`|Požadováno. Ukončí definice `With` bloku.|  
+|`objectExpression`|Povinný parametr. Výraz, který se vyhodnotí na objekt. Výraz může být libovolně složitý a vyhodnotí se pouze jednou. Výraz lze vyhodnotit na libovolný datový typ včetně základních typů.|  
+|`statements`|Volitelné. Jeden nebo více příkazů mezi `With` a `End With` , které mohou odkazovat na členy objektu vzniklého vyhodnocením `objectExpression`.|  
+|`End With`|Povinný parametr. Ukončí definici `With` bloku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí `With...End With`, můžete provádět řadu příkazů na zadaný objekt bez určení názvu objektu vícekrát. V rámci `With` příkaz blok, můžete zadat členem objektu spouštění s dobou, jako kdyby `With` příkaz objekt před jeho.  
+ S použitím `With...End With`, můžete provádět řadu příkazů pro zadaný objekt bez zadání názvu objektu více než jednou. V rámci `With` blok příkazů, můžete určit člen objektu začínající tečkou, jako kdyby `With` ním byl objekt příkazu.  
   
- Například pokud chcete změnit víc vlastností na jeden objekt, umístěte příkazy přiřazení vlastnosti uvnitř `With...End With` bloku, odkaz na objekt pouze jednou místo jednou pro každou vlastnost přiřazení.  
+ Chcete-li změnit více vlastností jednoho objektu, například umístit příkazy pro přiřazení vlastnosti uvnitř `With...End With` bloku, odkazující na tento objekt pouze jednou ne u každého přiřazení vlastnosti.  
   
- Pokud váš kód odkazuje na stejný objekt ve více příkazů, získáte následující výhody pomocí `With` příkaz:  
+ Pokud váš kód přistupuje ke stejným objektu ve více příkazech, získáte následující výhody pomocí `With` – příkaz:  
   
 -   Nemusíte vyhodnocovat složitý výraz vícekrát ani přiřazovat výsledek k dočasné proměnné, chcete-li na jeho členy odkazovat vícekrát.  
   
 -   Odstraněním opakovaných kvalifikačních výrazů zlepšíte přehlednost kódu.  
   
- Datový typ `objectExpression` může být jakákoli třída nebo struktura typ nebo i základní typ jazyka Visual Basic, jako `Integer`.  Pokud `objectExpression` výsledky v jakoukoli jinou hodnotu než objekt, můžete pouze číst hodnoty svých členů nebo volat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty členů struktury používá v `With...End With` příkaz.  Toto je ke stejné chybě, které byste získali, pokud je vyvolána metoda, která vrátí strukturu a okamžitě získat přístup a přiřazenou hodnotu na člena, výsledku funkce, jako například `GetAPoint().x = 1`.  Problémem je v obou případech to, že tato struktura existuje pouze v zásobníku volání a neexistuje žádný způsob, jak člena změněné struktury v těchto situacích zapsat někam tak, aby jakýkoli jiný kód v programu tuto změnu zpozoroval.  
+ Datový typ `objectExpression` může být libovolné třídy nebo typ struktury nebo dokonce základní typ jazyka Visual Basic například `Integer`.  Pokud `objectExpression` výsledky v nic jiného než objekt, můžete pouze číst hodnoty jeho členů nebo vyvolávat metody a dojde k chybě, pokud se pokusíte přiřadit hodnoty k členům struktury použité v `With...End With` příkazu.  Toto je ke stejné chybě kdyby jste vyvolali metodu, která vrátila strukturu a okamžitě získat přístup a přiřadili hodnotu člena výsledku této funkce, jako například `GetAPoint().x = 1`.  Problémem je v obou případech to, že tato struktura existuje pouze v zásobníku volání a neexistuje žádný způsob, jak člena změněné struktury v těchto situacích zapsat někam tak, aby jakýkoli jiný kód v programu tuto změnu zpozoroval.  
   
- `objectExpression` Jednou, vyhodnotí při vstupu do bloku. Nelze přiřadit `objectExpression` uvnitř `With` bloku.  
+ `objectExpression` Se vyhodnotí jednou při vstupu do bloku. Přiřazení nemůžete nastavit `objectExpression` v rámci `With` bloku.  
   
- V rámci `With` bloku, dostanete metod a vlastností zadaného objektu bez kvalifikace je. Můžete použít metody a vlastnosti jiného objektu, musíte je ale kvalifikovat pomocí názvů jejich objektů.  
+ V rámci `With` bloku, máte přístup bez kvalifikování metody a vlastnosti pouze zadaného objektu. Můžete použít metody a vlastnosti jiného objektu, musíte je ale kvalifikovat pomocí názvů jejich objektů.  
   
- Můžete umístit jeden `With...End With` příkaz v rámci jiného. Vnořené `With...End With` příkazy může být matoucí, pokud nejsou objekty, které jsou právě uvedených vymazat z kontextu. Je nutné zadat plně kvalifikovaný odkaz na objekt, který je v vnější `With` blokovat, pokud objekt se odkazuje z v rámci vnitřní `With` bloku.  
+ Můžete umístit jeden `With...End With` příkaz v rámci jiného. Vnořené `With...End With` příkazy mohou být matoucí, pokud objekty, které se odkazuje, nejsou zřejmé z kontextu. Je nutné zadat plně kvalifikovaný odkaz na objekt, který je ve vnějším `With` blokovat, pokud objekt odkazován z vnitřního `With` bloku.  
   
- Můžete nemůže provést větvení do `With` blok příkazu z mimo blok.  
+ Nelze větvit do `With` blok příkazů z mimo blok.  
   
  Pokud blok neobsahuje cyklus, spustí se příkazy pouze jednou. Je možné vnořovat různé druhy řídicích struktur. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 > [!NOTE]
->  Můžete použít `With` – klíčové slovo v objektu inicializátory také. Další informace a příklady naleznete v tématu [inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) a [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+>  Můžete použít `With` – klíčové slovo v inicializátorech objektu také. Další informace a příklady najdete v tématu [inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) a [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
 >   
->  Pokud používáte `With` blok jenom k inicializaci vlastnosti nebo pole objektu, který jste právě instanci, zvažte namísto toho použití inicializátoru objektu.  
+>  Pokud používáte `With` blok jenom k inicializaci vlastností nebo polí objektu, který jste právě vytvořena, zvažte místo toho použít inicializátor objektu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu každý `With` bloku provede řadu příkazů na jednoho objektu.  
+ V následujícím příkladu každý `With` blok se spustí řadu příkazů u jednoho objektu.  
   
  [!code-vb[VbVbalrWithStatement#2](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/with-end-with-statement_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vnoří `With…End With` příkazy. V rámci vnořeného `With` příkaz, syntaxe odkazuje na vnitřní objekt.  
+ Následující příklad používá vnořené `With…End With` příkazy. Uvnitř vnořeného `With` prohlášení, odkazuje syntaxe na vnitřní objekt.  
   
  [!code-vb[VbVbalrWithStatement#1](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/with-end-with-statement_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Generic.List%601>  
- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)  
- [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
- [Anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Collections.Generic.List%601>
+- [Vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
+- [Inicializátory objektů: Pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

@@ -2,12 +2,12 @@
 title: příkaz DotNet test
 description: Příkaz dotnet test slouží ke spuštění testů jednotek v daném projektu.
 ms.date: 05/29/2018
-ms.openlocfilehash: 2cfe96b24e5f46ae679c970a1df028d38ebf6037
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 1b2a3917a930db0c0a49ebea41f568aaf4a58ee3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53170839"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535279"
 ---
 # <a name="dotnet-test"></a>DotNet test
 
@@ -19,7 +19,7 @@ ms.locfileid: "53170839"
 
 ## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
@@ -29,7 +29,7 @@ dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] 
 dotnet test [-h|--help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
@@ -38,7 +38,7 @@ dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect
 dotnet test [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
@@ -64,7 +64,7 @@ Cesta k projektu testů. Pokud není zadán, použije se výchozí aktuální ad
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -138,7 +138,7 @@ Příklad: `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusive
 
 Další informace o nastavení běhu, naleznete v tématu [vstest.console.exe: Předávání argumentů RunSettings](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
-# <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -200,7 +200,7 @@ Seznam všech zjištěných testů v aktuálním projektu.
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -304,5 +304,5 @@ Další informace a příklady o tom, jak použít selektivní jednotky filtrov�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Architektury a cíle](../../standard/frameworks.md)  
-* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
+- [Architektury a cíle](../../standard/frameworks.md)
+- [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)

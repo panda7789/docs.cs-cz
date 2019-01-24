@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 45e45abd531c779b77c1f0a4b3946420037ee02b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f5ec72380493a88dc5b411ef195484cdb1c58c62
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443401"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543393"
 ---
 # <a name="imetadatafilterunmarkall-method"></a>IMetaDataFilter::UnmarkAll – metoda
-Odebere všechny tokeny, které jsou v aktuálním oboru metadata značky ve zpracování.  
+Odstraní značky zpracování ze všech tokenů v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +34,16 @@ HRESULT UnmarkAll ();
 ```  
   
 #### <a name="parameters"></a>Parametry  
- `UnmarkAll` nepřijímá žádné parametry.  
+ `UnmarkAll` nemá žádné parametry.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataFilter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataFilter – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatafilter-interface.md)

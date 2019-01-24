@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60145611981b53d4778e7c52c6138b6a9b58a592
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 557b8a91c969a4c7e7b7a10c2117659a75ef9008
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394631"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537287"
 ---
 # <a name="ltapplicationgt-element-net-native"></a>Element &lt;Application&gt; (.NET Native)
-Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat je k dispozici pro reflexi v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  
+Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadat je k dispozici pro účely reflexe v době běhu a platí zásady reflexe modulu runtime pro všechny prvky programu v aplikaci.  
   
- \<Direktivy > elementu  
-\<Aplikace > elementu (rd.xml)  
+ \<Direktivy > – Element  
+\<Aplikace > – Element (rd.xml)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,22 +33,22 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat j
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené prvky. V tabulce podřízené elementy policy odkazuje na druh metadata, která je k dispozici pro elementy určitého programu za běhu.  
+ Následující části popisují atributy, podřízené prvky a nadřazené prvky. V tabulce podřízených elementů zásad odkazuje na typ, který metadata, která je k dispozici pro určitých prvků programu za běhu.  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory povolit aktivace instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o nebo vytváření výčtu typy, ale neumožňuje žádné dynamické přístup za běhu.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory, pole a vlastnosti, aby instance typu serializovat a deserializovat pomocí knihovny například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Volitelný atribut. Zásady pro serializaci, který používá ovládací prvky <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Volitelný atribut. Zásady pro serializaci JSON, který používá ovládací prvky <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Volitelný atribut. Zásady pro serializaci XML, který používá ovládací prvky <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Ovládací prvky zásady pro zařazování odkazové typy prostředí Windows Runtime a COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Ovládací prvky zásady pro zařazování delegáta typy jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Ovládací prvky zásady pro zařazování struktur nativního kódu.|  
+|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Určuje dotazování na informace o nebo vytváření výčtů typy, ale neumožňuje dynamické přístup za běhu.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
+|`DataContractSerializer`|Serializace|Volitelný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
+|`DataContractJsonSerializer`|Serializace|Volitelný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
+|`XmlSerializer`|Serializace|Volitelný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
+|`MarshalObject`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Volitelný atribut. Určuje zásady pro zařazování struktur do nativního kódu.|  
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
@@ -60,33 +60,33 @@ Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadat j
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Zásady platí pro všechny typy v určitém sestavení.|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Zásady platí pro všechny typy v konkrétní oboru názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Platí pro konkrétní typ, jako je například třídu nebo strukturu zásad.|  
-|[\<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Zásada se vztahuje na vytvořený obecného typu. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může definovat zásady pro `List<String>` typu.|  
-|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Zásady se vztahují k metodě na konkrétní typ.|  
-|[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Zásada se vztahuje na sestavené obecné metody.|  
-|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Platí pro vlastnost na konkrétní typ zásad.|  
-|[\<Pole >](../../../docs/framework/net-native/field-element-net-native.md)|Zásada se vztahuje na pole, podle konkrétního typu.|  
-|[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)|Platí pro událost na konkrétní typ zásad.|  
+|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady na všechny typy v konkrétním sestavení.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady na všechny typy v konkrétním oboru názvů.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady na konkrétní typ, jako je například třídy nebo struktury.|  
+|[\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md)|Použije zásady na Konstruovaný obecný typ. Například [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element může použít k definování zásad pro `List<String>` typu.|  
+|[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady na metoda u určitého typu.|  
+|[\<MethodInstantiation>](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady na konstruovanou obecnou metodu.|  
+|[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady na vlastnost určitého typu.|  
+|[\<pole >](../../../docs/framework/net-native/field-element-net-native.md)|Použije zásady na pole určitého typu.|  
+|[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady na událost u určitého typu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Direktivy jazyka >](../../../docs/framework/net-native/directives-element-net-native.md)|Kořenový element souboru direktivy modulu runtime.|  
+|[\<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md)|Kořenový prvek souboru direktiv modulu runtime.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ \<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md) element může obsahovat nula nebo jedna `<Application>` elementu. Více `<Application>` elementy do jednoho reflexe direktivy souboru nejsou podporovány.  
+ [ \<Direktivy >](../../../docs/framework/net-native/directives-element-net-native.md) element může obsahovat nula nebo jedna `<Application>` elementu. Více `<Application>` elementy v souboru direktivy jeden reflexe nejsou podporovány.  
   
- `<Application>` Element lze v jednom ze dvou způsobů:  
+ `<Application>` Elementu lze použít v jednom ze dvou způsobů:  
   
--   Jako kontejner pro definování program elementy, jejichž metadat je vyžadována v době běhu. V takovém případě `<Application>` prvek nemusí mít žádné atributy. Při kompilaci, kompilátoru nástrojů pro vyhledávání všech knihoven, včetně rozhraní .NET Framework základní knihovny pro program prvky identifikovaná podřízených elementů `<Application>` elementu. Naopak nástrojů kompilátoru vyhledávat pouze v knihovně, které jsou určené, které [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) element pro program prvky identifikovaná podřízených elementů [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md).  
+-   Jako kontejner pro definování prvky programu, jejichž metadat je potřeba v době běhu. V takovém případě `<Application>` element nemusí mít žádné atributy. V době kompilace kompilátor nástroje hledání všech knihoven, včetně základní knihovny rozhraní .NET Framework, pro prvky programu identifikovaný podřízených elementů `<Application>` elementu. Naproti tomu kompilačních nástrojů hledání pouze v knihovně, které jsou určené [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) – element pro prvky programu identifikovaný podřízených elementů [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md).  
   
--   Jako element, který nastaví celou aplikaci zásad reflexe, serializace a zprostředkovatel komunikace s objekty. Atributy `<Application>` element definovat zásady celé aplikace, které může být přepsána podřízené elementy definované `<Application>` nebo [ \<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md) element.  
+-   Jako element, který nastaví zásadu platnou v celé aplikaci pro reflexi, serializace a zprostředkovatele komunikace s objekty. Atributy `<Application>` element definovat celou aplikaci zásady, které mohou být přepsána podřízené prvky definované `<Application>` nebo [ \<knihovny >](../../../docs/framework/net-native/library-element-net-native.md) elementu.  
   
-## <a name="see-also"></a>Viz také  
- [\<Knihovna > elementu](../../../docs/framework/net-native/library-element-net-native.md)  
- [\<Direktivy > elementu](../../../docs/framework/net-native/directives-element-net-native.md)  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+## <a name="see-also"></a>Viz také:
+- [\<Knihovna > – Element](../../../docs/framework/net-native/library-element-net-native.md)
+- [\<Direktivy > – Element](../../../docs/framework/net-native/directives-element-net-native.md)
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)

@@ -2,12 +2,12 @@
 title: Režim kompatibility ASP.NET
 ms.date: 03/30/2017
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
-ms.openlocfilehash: eeb09914fc90848c987127c789379549917063f6
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 1128183e990567d15b133bf8aa4ff5d32f10c663
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43800177"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541089"
 ---
 # <a name="aspnet-compatibility"></a>Režim kompatibility ASP.NET
 Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Communication Foundation (WCF). Služby spuštěné v režimu plně účastnit kanálu aplikace ASP.NET a mohl provádět režim kompatibility ASP.NET používat funkce technologie ASP.NET, jako je soubor nebo adresa URL autorizační, stav relace a <xref:System.Web.HttpContext> třídy. <xref:System.Web.HttpContext> Třída umožňuje přístup k souborů cookie, relace a další funkce technologie ASP.NET. Tento režim vyžaduje, že vazby pomocí přenos pomocí protokolu HTTP a samotné služby musí být hostovaný ve službě IIS.  
@@ -19,7 +19,7 @@ Tato ukázka předvádí, jak povolit režim kompatibility ASP.NET ve Windows Co
   
 Tato ukázka vyžaduje [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] fond aplikací tak, aby bylo možné spustit. Chcete-li vytvořit nový fond aplikací nebo změnit výchozí fond aplikací, postupujte podle těchto kroků.  
 
-1.  Otevřít **ovládací panely**.  Otevřít **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřít **Správce Internetové informační služby (IIS)** aplet.  
+1.  Otevřete **Ovládací panely**.  Otevřít **nástroje pro správu** aplet pod **systém a zabezpečení** záhlaví. Otevřít **Správce Internetové informační služby (IIS)** aplet.  
 
 2.  Ve stromovém zobrazení rozbalte **připojení** podokně. Vyberte **fondy aplikací** uzlu.  
 
@@ -127,5 +127,5 @@ Press <ENTER> to terminate client.
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také  
- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Viz také:
+- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

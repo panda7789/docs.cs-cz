@@ -8,12 +8,12 @@ helpviewer_keywords:
 - data binding [WPF], making data available for binding
 - binding data [WPF], making data available for
 ms.assetid: 7103c2e8-0e31-4a13-bf12-ca382221a8d5
-ms.openlocfilehash: 09a6fca48c06efca6f06b9e0617de9095197bd17
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 95871b6a8d11ad4086735bd3315c360885d027dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261469"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555463"
 ---
 # <a name="how-to-make-data-available-for-binding-in-xaml"></a>Postupy: Zpřístupnění dat pro připojení v jazyku XAML
 Toto téma popisuje různé způsoby, jak můžete zpřístupnit data pro vazbu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], v závislosti na potřebách vaší aplikace.  
@@ -42,6 +42,6 @@ Toto téma popisuje různé způsoby, jak můžete zpřístupnit data pro vazbu 
   
  Informace o mnoha způsoby, jak je možné určit data, vytváříte vazbu s najdete v tématu [určení zdroje připojení](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md). Informace o tom, jaké typy dat lze svázat nebo jak implementovat vlastní [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty pro vazbu, naleznete v tématu [Přehled zdrojů vazby](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled datových vazeb](../../../../docs/framework/wpf/data/data-binding-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)

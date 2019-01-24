@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1933fad8ea87351a56fcc7dd4a4fd67e890b58f5
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 3aa3ca9c9d0e64b2290b503f09b83140b4d029b4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613892"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534792"
 ---
 # <a name="ltrelativebindforresourcesgt-element"></a>&lt;relativebindforresources –&gt; – Element
 Optimalizuje sondy pro satelitní sestavení.  
   
  \<Konfigurace > – Element  
 \<modul runtime > – Element  
-\<relativebindforresources – > – Element  
+\<relativeBindForResources> Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -71,7 +71,7 @@ Optimalizuje sondy pro satelitní sestavení.
   
 -   Nevyvolával <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
-## <a name="see-also"></a>Viz také  
-- [Zabalení a nasazení prostředků](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Zabalení a nasazení prostředků](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

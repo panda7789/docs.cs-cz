@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)'
+title: 'Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
-ms.openlocfilehash: 3b9d3c45168020f22f7e263fdf59454e3789dd9e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: eefb6ccfabdb7897874ae4e5a8abc8c2d9cc8e35
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194654"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534771"
 ---
-# <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
+# <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: Vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
 Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
   
--   `MathLibrary.DLL`: Knihovna soubor, který obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
+-   `MathLibrary.DLL`: Soubor knihovny, která obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
   
 -   `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet svých parametrů. Třída `AddClass` , který obsahuje metodu `Add` patří do oboru názvů `UtilityMethods`.  
   
@@ -117,7 +117,7 @@ vbc -out:TestCode.exe -reference:MathLibrary.DLL TestCode.vb
   
  Další informace o sestavování z příkazového řádku najdete v tématu a [sestavení z příkazového řádku](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
-## <a name="see-also"></a>Viz také  
- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)  
- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Vytvoření třídy k umístění funkcí DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
+- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Vytvoření třídy k umístění funkcí DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

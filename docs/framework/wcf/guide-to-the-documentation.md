@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: f77864d827ce12d40971dd7f7159e985ab4096ae
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b6c509bd150ec2443762134079427ebd2de8ba09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520971"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552618"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication Foundation (WCF). Odkazované dokumenty se doporučuje počáteční body seskupený podle konkrétní zájmech a úrovně odborných znalostí.  
@@ -44,7 +44,7 @@ Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication
   
 ## <a name="using-windows-communication-foundation-with-other-technologies"></a>Pomocí Windows Communication Foundation s dalšími technologiemi  
   
--   Pokud chcete vytvořit službu, která komunikuje s klienty technologie ASP.NET, naleznete v tématu [postupy: Konfigurace služby WCF pro Interoperate s klienty webové služby ASP.NET](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).  
+-   Pokud chcete vytvořit službu, která komunikuje s klienty technologie ASP.NET, naleznete v tématu [jak: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET](../../../docs/framework/wcf/feature-details/config-wcf-service-with-aspnet-web-service.md).  
   
 -   Integrace s [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] vzdálené komunikace je podrobně [migrace aplikací vzdálené komunikace .NET na WCF](../../../docs/framework/wcf/feature-details/migrating-net-remoting-applications-to-wcf.md).  
   
@@ -52,17 +52,17 @@ Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication
   
 -   Integrovat existující aplikace modelu COM s WCF služby ani klienta, najdete v článku [integrace s aplikacemi modelu COM](../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md).  
   
--   Existující aplikaci služby MSMQ integrovat se službou WCF služby ani klienta, najdete v článku [postupy: výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) a [postupy: výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
+-   Existující aplikaci služby MSMQ integrovat se službou WCF služby ani klienta, najdete v článku [jak: Výměna zpráv pomocí koncových bodů WCF zařazených do fronty](../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md) a [jak: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
   
 -   Pomocí Internetové informační služby (IIS) pro hostování služby naleznete v části [hostování služeb](../../../docs/framework/wcf/hosting-services.md).  
   
--   Pomocí WCF využívají webové služby rozšíření (WSE) 3.0 service, najdete v článku [postupy: přístup ke službě WSE 3.0](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
+-   Pomocí WCF využívají webové služby rozšíření (WSE) 3.0 service, najdete v článku [jak: Přístup k WSE 3.0 Service](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md).  
   
 ## <a name="ws--protocols-supported-in-windows-communication-foundation"></a>WS-* protokoly podporované ve Windows Communication Foundation  
  Seznam podporované v vazeb poskytovaných systémem protokoly najdete v tématu [webové služby protokoly podporované vazbami Interoperability System-Provided](../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md). V seznamu vazeb poskytovaných systémem najdete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md).  
   
-## <a name="see-also"></a>Viz také  
- [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)  
- [Koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md)  
- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)
+## <a name="see-also"></a>Viz také:
+- [Ukázky Windows Communication Foundation](../../../docs/framework/wcf/samples/index.md)
+- [Koncepční přehled](../../../docs/framework/wcf/conceptual-overview.md)
+- [Pokyny a osvědčené postupy](../../../docs/framework/wcf/guidelines-and-best-practices.md)
+- [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)

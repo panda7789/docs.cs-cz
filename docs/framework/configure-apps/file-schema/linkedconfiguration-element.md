@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: c5186aa94993ba551252db6fef55853b5b554789
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e5c8449e72414775c40ced2c344e12d5137ac03f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200955"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546410"
 ---
 # <a name="linkedconfiguration-element"></a>\<linkedconfiguration – > – element
 
@@ -26,7 +26,7 @@ Určuje konfigurační soubor, který chcete zahrnout.
 
 [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
 &nbsp;&nbsp;[**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedconfiguration – >**
+&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -48,14 +48,14 @@ Určuje konfigurační soubor, který chcete zahrnout.
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádná
 
 ## <a name="remarks"></a>Poznámky
 
-**\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent. Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci. Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.
+ **\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent. Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci. Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.
 
 > [!NOTE]
-> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
+>  **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
 Následující pravidla určují, použití propojené konfigurační soubory:
 
@@ -67,7 +67,7 @@ Následující pravidla určují, použití propojené konfigurační soubory:
 
 - Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako chování `#include` direktiva v jazyce C/C++.
 
-- **\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.
+-  **\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.
 
 - Cyklické odkazy jsou zjištěny a byla ukončena. To znamená pokud  **\<linkedconfiguration – >** prvky z řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.
 
@@ -85,5 +85,5 @@ Následující příklad ukazuje, jak zahrnout konfigurační soubor z místníh
 
 ## <a name="see-also"></a>Viz také:
 
-[**\<assemblybinding – >** – Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
-[Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [**\<assemblybinding – >** – Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

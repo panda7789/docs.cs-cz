@@ -2,101 +2,102 @@
 title: Diagnostikování transakčních aplikací
 ms.date: 03/30/2017
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
-ms.openlocfilehash: 4fa85fea0651d7a31c5a50bbc9c1226421b976b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4cc42e7ac6847d8320b96fce5198d55df303de2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550276"
 ---
 # <a name="diagnosing-transactional-applications"></a>Diagnostikování transakčních aplikací
-Toto téma popisuje, jak používat správu Windows Communication Foundation (WCF) a diagnostické funkce k řešení potíží s transakční aplikace.  
+Toto téma popisuje postup řešení potíží s transakční aplikace pomocí správy služby Windows Communication Foundation (WCF) a funkce Diagnostika.  
   
 ## <a name="performance-counters"></a>Čítače výkonu  
- WCF poskytuje standardní sadu čítačů výkonu pro vás k měření výkonu transakcí aplikace. Další informace najdete v tématu [čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
+ WCF poskytuje standardní sadu čítačů výkonu pro vás k měření výkonu transakční aplikace. Další informace najdete v tématu [čítače výkonu](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
   
- Čítače výkonu jsou omezená na tři různé úrovně: služby, koncový bod a operace, jak je popsáno v následujících tabulkách.  
+ Čítače výkonu jsou omezená na třech různých úrovních: služba, koncový bod a operace, jak je popsáno v následujících tabulkách.  
   
 ### <a name="service-performance-counters"></a>Čítače výkonu služby  
   
-|Čítače výkonu|Popis|  
+|Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
-|Počet plynoucích transakcí|Počet transakcí plynoucích do operace v rámci této služby. Tento čítač se zvýší, když je součástí zprávu, která je odeslána do služby transakce.|  
-|Počet plynoucích transakcí za sekundu|Počet transakcí plynoucích do operace v rámci této služby v rámci každou sekundu. Tento čítač se zvýší, když je součástí zprávu, která je odeslána do služby transakce.|  
-|Počet potvrzených zpracovaných operací|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výstupem potvrzené v rámci této služby. Práci v takových operacích je plně potvrdit. Prostředky jsou aktualizovány v souladu s práci v operaci.|  
-|Počet potvrzených zpracovaných operací za sekundu|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výstupem potvrzené v rámci této služby v rámci každou sekundu. Práci v takových operacích je plně potvrdit. Prostředky jsou aktualizovány v souladu s práci v operaci.|  
-|Počet přerušených transakčních operací|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výstupem přerušena v rámci této služby. Práci v takových operacích je vrácena zpět. Zdroje jsou vráceny do jejich předchozího stavu.|  
-|Počet zrušených zpracovaných operací za sekundu|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výstupem přerušena v rámci této služby v rámci každou sekundu. Práci v takových operacích je vrácena zpět. Zdroje jsou vráceny do jejich předchozího stavu.|  
-|Počet nejistých zpracovaných operací|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výstupem nejistých v rámci této služby. Práci s výstupem nejistých se nacházejí v neurčitém stavu. Prostředky jsou uložené čekající na vyřízení výsledek.|  
-|Počet nejistých zpracovaných operací za sekundu|Počet zpracovaných operací provést, jejichž transakce byla dokončena s výsledek nejistých v rámci této služby v rámci každou sekundu. Práci s výstupem nejistých se nacházejí v neurčitém stavu. Prostředky jsou uložené čekající na vyřízení výsledek.|  
+|Počet plynoucích transakcí|Počet transakcí, které byly převedeny do operací v této službě. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do služby.|  
+|Počet plynoucích transakcí za sekundu|Počet transakcí, které byly převedeny do operací v rámci této služby v rámci každou sekundu. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do služby.|  
+|Počet potvrzených zpracovaných operací|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s výsledkem v této službě potvrzen. Práce s takovými operacemi jsou zcela potvrzeny. Prostředky jsou aktualizovány v souladu s provedenými během operace.|  
+|Počet potvrzených zpracovaných operací za sekundu|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s výsledkem v této službě potvrzen v rámci každou sekundu. Práce s takovými operacemi jsou zcela potvrzeny. Prostředky jsou aktualizovány v souladu s provedenými během operace.|  
+|Počet přerušených transakčních operací|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s výsledkem v této službě přerušen. Práce s takovými operacemi je vrácena zpět. Prostředky jsou vráceny do jejich předchozího stavu.|  
+|Počet zrušených zpracovaných operací za sekundu|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s výsledkem v této službě přerušen v rámci každou sekundu. Práce s takovými operacemi je vrácena zpět. Prostředky jsou vráceny do jejich předchozího stavu.|  
+|Počet nejistých zpracovaných operací|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s nejistým v této službě. Činnosti provedené s nejistým výsledkem je v neurčitém stavu. Prostředky jsou podrženy.|  
+|Počet nejistých zpracovaných operací za sekundu|Provést, počet operací s podporou transakcí, jejichž transakce byla dokončena s nejistým nejistým výsledkem v této služby v rámci každou sekundu. Činnosti provedené s nejistým výsledkem je v neurčitém stavu. Prostředky jsou podrženy.|  
   
 ### <a name="endpoint-performance-counters"></a>Čítače výkonu koncového bodu  
   
-|Čítače výkonu|Popis|  
+|Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
-|Počet plynoucích transakcí|Počet transakcí plynoucích do operací na tento koncový bod. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
-|Počet plynoucích transakcí za sekundu|Počet transakcí plynoucích do operací na tento koncový bod v rámci každou sekundu. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
+|Počet plynoucích transakcí|Počet transakcí, které byly převedeny do operací v tomto koncovém bodu. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do koncového bodu.|  
+|Počet plynoucích transakcí za sekundu|Počet transakcí, které byly převedeny do operací v tomto koncovém bodu v rámci každou sekundu. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do koncového bodu.|  
   
 ### <a name="operation-performance-counters"></a>Čítače provozního výkonu  
   
-|Čítače výkonu|Popis|  
+|Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
-|Počet plynoucích transakcí|Počet transakcí plynoucích do operací na tento koncový bod. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
-|Počet plynoucích transakcí za sekundu|Počet transakcí plynoucích do operací na tento koncový bod v rámci každou sekundu. Tento čítač se zvýší, když transakce je součástí zprávu, která je odeslána koncovému bodu.|  
+|Počet plynoucích transakcí|Počet transakcí, které byly převedeny do operací v tomto koncovém bodu. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do koncového bodu.|  
+|Počet plynoucích transakcí za sekundu|Počet transakcí, které byly převedeny do operací v tomto koncovém bodu v rámci každou sekundu. Hodnota tohoto čítače se zvýší pokaždé, když transakce je zpráva odeslaná do koncového bodu.|  
   
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation  
- WCF zpřístupní dat kontroly služby za běhu prostřednictvím poskytovatele WCF Windows Management Instrumentation (WMI). Další informace o přístup k datům WMI najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ WCF zpřístupňuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI). Další informace o přístup k datům služby WMI najdete v tématu [pomocí Windows Management Instrumentation k diagnostice](../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
- Počet jen pro čtení vlastnosti WMI znamenat nastavení transakcí na použité pro službu. V následujících tabulkách najdete tato nastavení.  
+ Počet WMI vlastnosti jen pro čtení označení transakce použitá nastavení pro službu. Následující tabulky uvádí všechny z těchto nastavení.  
   
- Na službě `ServiceBehaviorAttribute` má následující vlastnosti.  
+ V rámci služby `ServiceBehaviorAttribute` má následující vlastnosti.  
   
 |Název|Typ|Popis|  
 |----------|----------|-----------------|  
-|ReleaseServiceInstanceOnTransactionComplete|Boolean|Určuje, jestli je objekt služby recykluje po dokončení aktuální transakci.|  
+|ReleaseServiceInstanceOnTransactionComplete|Boolean|Určuje, zda je objekt služby vrácen, pokud je aktuální transakce dokončena.|  
 |TransactionAutoCompleteOnSessionClose|Boolean|Určuje, zda jsou nevyřízené transakce dokončeny zavře aktuální relaci.|  
-|TransactionIsolationLevel|Řetězec, který obsahuje platná hodnota <xref:System.Transactions.IsolationLevel> výčtu.|Určuje úroveň izolace transakce, která podporuje tuto službu.|  
-|Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje časový interval, ve kterém musíte dokončit transakci.|  
+|Úroveň TransactionIsolationLevel|Řetězec, který obsahuje platnou hodnotou <xref:System.Transactions.IsolationLevel> výčtu.|Určuje úroveň izolace transakce, který podporuje tuto službu.|  
+|Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje interval, ve kterém musí být transakce dokončena.|  
   
- `ServiceTimeoutsBehavior` Má následující vlastnosti.  
+ `ServiceTimeoutsBehavior` Má následující vlastnost.  
   
 |Název|Typ|Popis|  
 |----------|----------|-----------------|  
-|Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje časový interval, ve kterém musíte dokončit transakci.|  
+|Vlastnost TransactionTimeout|<xref:System.DateTime>|Určuje interval, ve kterém musí být transakce dokončena.|  
   
  U vazby, `TransactionFlowBindingElement` má následující vlastnosti.  
   
 |Název|Typ|Popis|  
 |----------|----------|-----------------|  
-|TransactionProtocol|Řetězec, který obsahuje platná hodnota <xref:System.ServiceModel.TransactionProtocol> typu.|Určuje protokol transakcí pro použití v toku transakce.|  
-|TransactionFlow|Boolean|Určuje, zda je povolena příchozí tok transakcí.|  
+|transactionProtocol|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionProtocol> typu.|Určuje protokol transakce pro použití v toku transakce.|  
+|TransactionFlow|Boolean|Určuje, zda je povolen tok příchozích transakcí.|  
   
  U určité operace `OperationBehaviorAttribute` má následující vlastnosti:  
   
 |Název|Typ|Popis|  
 |----------|----------|-----------------|  
-|Vlastnost TransactionAutoComplete|Boolean|Určuje, zda chcete automaticky potvrzení aktuální transakce, pokud dojde k žádné neošetřených výjimek.|  
+|TransactionAutoComplete|Boolean|Určuje, jestli aktuální transakce potvrzena automaticky, pokud se nevyskytnou žádné nezpracované výjimky.|  
 |Vlastností TransactionScopeRequired|Boolean|Určuje, zda operace vyžaduje transakci.|  
   
  U určité operace `TransactionFlowAttribute` má následující vlastnosti.  
   
 |Název|Typ|Popis|  
 |----------|----------|-----------------|  
-|TransactionFlowOption|Řetězec, který obsahuje platná hodnota <xref:System.ServiceModel.TransactionFlowOption> výčtu.|Určuje rozsah toku transakci, která je potřeba.|  
+|TransactionFlowOption|Řetězec, který obsahuje platnou hodnotou <xref:System.ServiceModel.TransactionFlowOption> výčtu.|Určuje rozsah na transakci, která tok je povinný.|  
   
 ## <a name="tracing"></a>Trasování  
- Trasování umožňují monitorovat a analyzovat chyb v transakčních aplikací. Můžete povolit trasování pomocí těchto způsobů:  
+ Trasování umožňují monitorovat a analyzovat chyby v transakční aplikace. Můžete povolit trasování pomocí následujícími způsoby:  
   
 -   Standardní trasování WCF  
   
-     Tento typ trasování je stejný jako trasování všechny aplikace WCF. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+     Tento typ trasování je stejný jako trasování všech aplikací WCF. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
--   Trasování WS-AtomicTransaction  
+-   WS-AtomicTransaction trasování  
   
-     WS-AtomicTransaction trasování je možné zapnout pomocí [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Tyto funkce trasování poskytuje přehled o stavu transakce a účastníky v systému. Také povolit trasování interní Model služby, můžete nastavit `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klíč registru na platnou hodnotu <xref:System.Diagnostics.SourceLevels> výčtu. Můžete povolit protokolování stejným způsobem jako ostatní aplikace WCF zpráv.  
+     Trasování WS-AtomicTransaction se dá nastavit pomocí [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md). Tyto funkce trasování poskytuje přehled o stavu transakce a účastníků v rámci systému. Umožňuje také interní trasování Model služby, můžete nastavit `HKLM\SOFTWARE\Microsoft\WSAT\3.0\ServiceModelDiagnosticTracing` klíč registru, který platnou hodnotou <xref:System.Diagnostics.SourceLevels> výčtu. Můžete povolit protokolování stejným způsobem jako ostatní aplikace WCF.  
   
 -   `System.Transactions` trasování  
   
-     Pokud používáte protokol OleTransactions, nemohou být nalezeny zprávy protokolu. Podpora trasování <xref:System.Transactions> poskytuje infrastrukturu (který používá OleTransactions) umožňuje uživatelům zobrazit události, které do transakce došlo k chybě. Povolení trasování pro <xref:System.Transactions> aplikace, zahrnují následující kód `App.config` konfigurační soubor.  
+     Při použití protokolu OleTransactions, nelze protokol zprávy trasovány. Podpora trasování <xref:System.Transactions> poskytuje infrastrukturu (využívající OleTransactions) umožňuje uživatelům zobrazit události, ke kterým došlo na transakce. Povolení trasování pro <xref:System.Transactions> aplikace, zahrnují následující kód `App.config` konfigurační soubor.  
   
     ```xml  
     <configuration>  
@@ -119,7 +120,7 @@ Toto téma popisuje, jak používat správu Windows Communication Foundation (WC
   
      To také umožňuje trasování WCF, protože také využívá WCF <xref:System.Transactions> infrastruktury.  
   
-## <a name="see-also"></a>Viz také  
- [Správa a diagnostika](../../../../docs/framework/wcf/diagnostics/index.md)  
- [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Správa a diagnostika](../../../../docs/framework/wcf/diagnostics/index.md)
+- [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
+- [Nástroj pro konfiguraci WS-AtomicTransaction (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

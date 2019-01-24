@@ -2,18 +2,18 @@
 title: '&lt;Služba&gt;'
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: ef0ae70440323c1ede5deca60e88f29861760e68
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: e91e04c602fd867e329477015fc0a8354ae26a05
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145507"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535005"
 ---
 # <a name="ltservicegt"></a>&lt;Služba&gt;
 `service` Element obsahuje nastavení pro službu Windows Communication Foundation (WCF). Obsahuje také koncové body, které zpřístupňují služby.  
   
  \<system.ServiceModel>  
-\<služby >  
+\<services>  
 \<služby >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,13 +39,13 @@ ms.locfileid: "54145507"
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Kolekce `endpoint` prvky, které zpřístupňují této služby.|  
-|[\<Hostitel >](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Určuje řadu tato instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
+|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Určuje řadu tato instance služby. Tento prvek je typu <xref:System.ServiceModel.Configuration.HostElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Kořenový element všechny elementy konfigurace WCF.|  
+|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Kořenový element všechny elementy konfigurace WCF.|  
   
 ## <a name="remarks"></a>Poznámky  
  Služby jsou definovány v `services` oddílu konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má svůj vlastní `service` konfigurační oddíl. V této části a její obsah definování kontraktu služby, chování a koncové body konkrétní služby.  
@@ -68,6 +68,6 @@ ms.locfileid: "54145507"
 </service>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ServiceElement>  
- [Konfigurace služeb](../../../../../docs/framework/wcf/configuring-services.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ServiceElement>
+- [Konfigurace služeb](../../../../../docs/framework/wcf/configuring-services.md)

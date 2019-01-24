@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Implementace formuláře, který používá operaci na pozadí'
+title: 'Průvodce: Implementace formuláře, který používá operaci na pozadí'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-ms.openlocfilehash: 81c7f21e7e331b60d41330c8239893332dbea5a1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fa9f35fd5ecd1c6761f363ea2a1e1a67996ecb77
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44253127"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543523"
 ---
-# <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
+# <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Průvodce: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.  
   
  Tento návod ukazuje, jak používat <xref:System.ComponentModel.BackgroundWorker> pro provádění časově náročné výpočty "v pozadí," při stále poměrně rychle reaguje uživatelské rozhraní.  Pokud jste si prostřednictvím, budete mít aplikaci, která vypočítá Fibonacciho čísla asynchronně. Přestože výpočetní že hodně Fibonacciho může trvat určitou dobu, hlavní vlákno uživatelského rozhraní nebude možné přerušit toto zpoždění a formulář bude responzivní během výpočtu.  
@@ -37,7 +37,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 -   Přidání vytváření sestav průběhu a podporu pro zrušení  
   
- Úplný seznam všech kód použitý v tomto příkladu najdete v části [postupy: implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
+ Úplný seznam všech kód použitý v tomto příkladu najdete v části [jak: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -57,7 +57,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 5.  Přejmenování prvního <xref:System.Windows.Forms.Button> ovládací prvek `startAsyncButton` a nastavit <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Start Async`. Přejmenujte druhý <xref:System.Windows.Forms.Button> ovládací prvek `cancelAsyncButton`a nastavte <xref:System.Windows.Forms.Control.Text%2A> vlastnost `Cancel Async`. Nastavte jeho <xref:System.Windows.Forms.Control.Enabled%2A> vlastnost `false`.  
   
-6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+6.  Vytvořte obslužnou rutinu události pro obě <xref:System.Windows.Forms.Button> ovládacích prvků <xref:System.Windows.Forms.Control.Click> události. Podrobnosti najdete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 7.  Přetáhněte <xref:System.Windows.Forms.Label> ovládacího prvku **nástrojů** do formuláře a přejmenujte jej `resultLabel`.  
   
@@ -75,7 +75,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 #### <a name="to-implement-asynchronous-event-handlers"></a>K implementaci asynchronní obslužné rutiny  
   
-1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [postupy: vytváření událostí obslužné rutiny pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
+1.  V **vlastnosti** okně s <xref:System.ComponentModel.BackgroundWorker> stále vybranou možností komponenty, klikněte na tlačítko **události** tlačítko. Dvakrát klikněte <xref:System.ComponentModel.BackgroundWorker.DoWork> a <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> událostí pro vytváření obslužných rutin událostí. Další informace o tom, jak používat obslužné rutiny událostí, naleznete v tématu [jak: Vytváření obslužných rutin událostí pomocí návrháře](https://msdn.microsoft.com/library/8461e9b8-14e8-406f-936e-3726732b23d2).  
   
 2.  Vytvoření nové metody, volá `ComputeFibonacci`, ve formuláři. Tato metoda provádí samotnou práci, a tok se spustí na pozadí. Tento kód ukazuje implementaci rekurzivní Fibonacciho algoritmu, který je zejména, přičemž exponenciálně delší dobu pro velké objemy. Používá se tady pro ilustraci, chcete-li zobrazit operace, která můžete zavést dlouhá zpoždění ve vaší aplikaci.  
   
@@ -140,7 +140,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
     [!code-csharp[System.ComponentModel.BackgroundWorker#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/CS/fibonacciform.cs#12)]
     [!code-vb[System.ComponentModel.BackgroundWorker#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker/VB/fibonacciform.vb#12)]  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete zkompilujete a spustíte aplikaci Fibonacciho kalkulačku.  
   
 #### <a name="to-test-your-project"></a>K otestování vašeho projektu  
@@ -156,7 +156,7 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
   
 -   Použití více <xref:System.ComponentModel.BackgroundWorker> objekty pro několik souběžných operací.  
   
--   Ladění aplikace s více vlákny, naleznete v tématu [postupy: použití okna vláken](/visualstudio/debugger/how-to-use-the-threads-window).  
+-   Ladění aplikace s více vlákny, naleznete v tématu [jak: Použití okna vláken](/visualstudio/debugger/how-to-use-the-threads-window).  
   
 -   Implementujte vlastní komponenty, která podporuje asynchronní programovací model. Další informace najdete v tématu [založený na událostech přehled asynchronních vzorů](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
@@ -169,6 +169,6 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
 - [Dělení na spravovaná vlákna](../../../../docs/standard/threading/index.md)
 - [Doporučené postupy dělení na spravovaná vlákna](../../../../docs/standard/threading/managed-threading-best-practices.md)
 - [Přehled asynchronních vzorů založených na událostech](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
-- [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)  
+- [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)
 - [Návod: Spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md)
 - [Komponenta BackgroundWorker](backgroundworker-component.md)

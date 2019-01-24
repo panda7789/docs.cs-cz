@@ -2,12 +2,12 @@
 title: Sdružování
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: ee57763674d194f71c85b1318dbb116dc829bd55
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 655ef32c039014f446850376e0fe021e79c577c5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43393304"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536321"
 ---
 # <a name="pooling"></a>Sdružování
 Tato ukázka předvádí, jak rozšířit Windows Communication Foundation (WCF) pro podporu sdružování objektů. Vzorek ukazuje, jak vytvořit atribut, který je syntakticky a sémanticky podobné `ObjectPoolingAttribute` atribut funkce podnikové služby. Sdružování objektů umožňují výrazné zvýšení výkonu aplikace. Pokud se nepoužívá správně však může mít opačný efekt. Sdružování objektů pomáhá snižovat režijní náklady na opětovné vytvoření často používané objekty, které vyžadují rozsáhlé inicializace. Nicméně pokud volání metody na objektu ve fondu trvá značné množství času k dokončení, sdružování objektů zařadí do fronty dalších žádostí ihned poté, co je dosaženo maximální velikosti fondu. Proto může dojít k selhání obsluhovat požadavky na vytvoření některý objekt vyvoláním výjimka časového limitu.  
@@ -105,7 +105,7 @@ void IInstanceProvider.ReleaseInstance(InstanceContext instanceContext, object i
   
 -   `Description`: Tento argument obsahuje popis služby pro celou službu. To lze použít ke kontrole popis data o koncové body služby, kontrakty, vazby a další data.  
   
--   `ServiceHostBase`: Tento argument obsahuje <xref:System.ServiceModel.ServiceHostBase> , který je aktuálně inicializována.  
+-   `ServiceHostBase`: Poskytuje tento argument <xref:System.ServiceModel.ServiceHostBase> , který je aktuálně inicializována.  
   
  Ve vlastní <xref:System.ServiceModel.Description.IServiceBehavior> implementace novou instanci sady `ObjectPoolingInstanceProvider` vytvořena a přiřazená <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> vlastnost v každém <xref:System.ServiceModel.Dispatcher.DispatchRuntime> v objektu ServiceHostBase.  
   
@@ -255,4 +255,4 @@ Press <ENTER> to exit.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Pooling`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

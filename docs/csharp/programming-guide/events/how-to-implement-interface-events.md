@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#], event implementation in classes
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
-ms.openlocfilehash: d52d4d5140e96f81377733e39d1c36886718b706
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 47bd7184e26a643aa8ff17b3e0a0507ab7978216
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236437"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540277"
 ---
 # <a name="how-to-implement-interface-events-c-programming-guide"></a>Postupy: Implementace událostí rozhraní (C# Průvodce programováním v)
 [Rozhraní](../../../csharp/language-reference/keywords/interface.md) lze deklarovat [události](../../../csharp/language-reference/keywords/event.md). Následující příklad ukazuje, jak implementace událostí rozhraní ve třídě. V podstatě pravidla jsou stejné jako při implementaci metody rozhraní ani vlastnost.  
@@ -58,10 +58,10 @@ Poskytnutím vlastní přístupové objekty, můžete určit, zda dvě události
   
  [!code-csharp[WrapTwoInterfaceEvents](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-implement-interface-events_1.cs#everything)]
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Události](../../../csharp/programming-guide/events/index.md)  
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
-- [Implementace explicitního rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Události](../../../csharp/programming-guide/events/index.md)
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
+- [Implementace explicitního rozhraní](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)
 - [Postupy: Vyvolávání událostí třídy Base v odvozených třídách](../../../csharp/programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)

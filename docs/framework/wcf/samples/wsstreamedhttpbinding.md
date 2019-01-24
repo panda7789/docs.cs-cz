@@ -2,12 +2,12 @@
 title: WSStreamedHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
-ms.openlocfilehash: d2111639266612183630231dbd51be55ef9c1ee4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 2cee327e91eea986e78586f5ed05f7ade5205c5b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779331"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54542324"
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
 Vzorek ukazuje, jak vytvořit vazbu, která je navržena pro podporu streamování scénáře, když se používá přenos pomocí protokolu HTTP.  
@@ -142,4 +142,4 @@ public class StreamedEchoService : IStreamedEchoService
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

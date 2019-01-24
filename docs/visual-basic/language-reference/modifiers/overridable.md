@@ -16,36 +16,36 @@ helpviewer_keywords:
 - Overridable keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 612581e7-8a4c-4a5d-beff-3402fffa6f35
-ms.openlocfilehash: 4844bf7f3ecf23335715b950a96be15e54ebc601
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7002589b303c41b26b611588f339fa70dd19f959
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33603766"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537592"
 ---
 # <a name="overridable-visual-basic"></a>Overridable (Visual Basic)
-Určuje, že vlastnost nebo postupu může být přepsáno stejně jako s názvem vlastnosti nebo postup v odvozené třídě.  
+Určuje, že se vlastnost nebo procedura lze přepsat identicky pojmenovanou vlastnost nebo procedura v odvozené třídě.  
   
 ## <a name="remarks"></a>Poznámky  
- `Overridable` Modifikátor umožňuje vlastnosti nebo metody ve třídě k přepsání v odvozené třídě. [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md) modifikátor brání vlastnosti nebo metody přepsání v odvozené třídě.  Další informace najdete v tématu [základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).  
+ `Overridable` Modifikátor umožňuje vlastnosti nebo metody ve třídě k přepsání v odvozené třídě. [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md) modifikátor zabraňuje vlastnosti nebo metody přepsání v odvozené třídě.  Další informace najdete v tématu [základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).  
   
- Pokud `Overridable` nebo `NotOverridable` modifikátor nezadáte, výchozí nastavení závisí na tom, jestli jsou vlastnost nebo metoda přepsání základní třída vlastnosti nebo metody. Pokud jsou vlastnost nebo metoda přepsání základní třída vlastnosti nebo metody, výchozí nastavení je `Overridable`, jinak je `NotOverridable`.  
+ Pokud `Overridable` nebo `NotOverridable` modifikátor není zadán, výchozí nastavení závisí na tom, zda vlastnosti nebo metody přepíše vlastnost základní třídy nebo metody. Pokud vlastnost nebo metoda přepíše vlastnost základní třídy nebo metody, ve výchozím nastavení je `Overridable`; v opačném případě je `NotOverridable`.  
   
- Můžete stínové nebo přepsat znovu definovat zděděné elementu, ale existují významné rozdíly mezi dva přístupy. Další informace najdete v tématu [stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ Můžete stínové nebo přepsání nastavení za účelem znovu definovat element zděděné, ale existují významné rozdíly mezi dvěma přístupy. Další informace najdete v tématu [stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
- Element, který je možné přepsat se někdy označuje jako *virtuální* elementu. Pokud je možné přepsat, ale nemusí být, se někdy se také označuje jako *konkrétní* elementu.  
+ Element, který se dá přepsat se někdy označuje jako *virtuální* elementu. Pokud se dá přepsat, ale nemusí být, někdy nazývá se také *konkrétní* elementu.  
   
- Můžete použít `Overridable` jenom v příkazu deklarace vlastnosti nebo postupu.  
+ Můžete použít `Overridable` pouze v příkazu deklarace vlastnost nebo procedura.  
   
-## <a name="combined-modifiers"></a>Kombinovaná modifikátory  
+## <a name="combined-modifiers"></a>Kombinované modifikátory  
  Nelze zadat `Overridable` nebo `NotOverridable` pro `Private` metoda.  
   
- Nelze zadat `Overridable` společně s `MustOverride`, `NotOverridable`, nebo `Shared` ve stejné deklaraci.  
+ Nelze zadat `Overridable` spolu s `MustOverride`, `NotOverridable`, nebo `Shared` ve stejné deklaraci.  
   
- Element přepsání je implicitně přepisovatelné, a proto nelze kombinovat `Overridable` s `Overrides`.  
+ Vzhledem k tomu, že element přepsání přepsatelné, nelze kombinovat `Overridable` s `Overrides`.  
   
 ## <a name="usage"></a>Použití  
- `Overridable` Modifikátor lze použít v těchto kontexty:  
+ `Overridable` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
@@ -53,11 +53,11 @@ Určuje, že vlastnost nebo postupu může být přepsáno stejně jako s názve
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Modifikátory](../../../visual-basic/language-reference/modifiers/index.md)  
- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)  
- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)  
- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)  
- [Stínový provoz v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+## <a name="see-also"></a>Viz také:
+- [Modifikátory](../../../visual-basic/language-reference/modifiers/index.md)
+- [Základní informace o dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)
+- [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
+- [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+- [Stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

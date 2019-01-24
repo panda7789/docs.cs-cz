@@ -8,17 +8,17 @@ helpviewer_keywords:
 - graphics [Windows Forms], managing state
 - graphics [Windows Forms], clipping
 ms.assetid: 6207cad1-7a34-4bd6-bfc1-db823ca7a73e
-ms.openlocfilehash: b81c3c8b25f13ac5791b5d2116b8536575f9ebcf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e9e75876862a73be7ace08c09610923d007de4b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525116"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540855"
 ---
 # <a name="managing-the-state-of-a-graphics-object"></a>Správa stavu grafického objektu
-<xref:System.Drawing.Graphics> Třída je jádrem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. Kreslení nic, můžete získat <xref:System.Drawing.Graphics> objektu, nastavte jeho vlastnosti a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
+<xref:System.Drawing.Graphics> Třída je srdcem [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]. Chcete-li nakreslit nic, můžete získat <xref:System.Drawing.Graphics> objektu, vlastností a volat jeho metody <xref:System.Drawing.Graphics.DrawLine%2A>, <xref:System.Drawing.Graphics.DrawImage%2A>, <xref:System.Drawing.Graphics.DrawString%2A>a podobně).  
   
- Následující příklad volání <xref:System.Drawing.Graphics.DrawRectangle%2A> metodu <xref:System.Drawing.Graphics> objektu. První argument předaný <xref:System.Drawing.Graphics.DrawRectangle%2A> je metoda <xref:System.Drawing.Pen> objektu.  
+ Následující příklad volá <xref:System.Drawing.Graphics.DrawRectangle%2A> metodu <xref:System.Drawing.Graphics> objektu. První argument předaný metodě <xref:System.Drawing.Graphics.DrawRectangle%2A> je metoda <xref:System.Drawing.Pen> objektu.  
   
 ```vb  
 Dim graphics As Graphics = e.Graphics  
@@ -33,7 +33,7 @@ graphics.DrawRectangle(pen, 10, 10, 200, 100);
 ```  
   
 ## <a name="graphics-state"></a>Stav grafiky  
- A <xref:System.Drawing.Graphics> objekt více než zadejte kreslení metody, jako třeba <xref:System.Drawing.Graphics.DrawLine%2A> a <xref:System.Drawing.Graphics.DrawRectangle%2A>. A <xref:System.Drawing.Graphics> objekt také udržuje grafiky stav, který je možné rozdělit do následujících kategorií:  
+ A <xref:System.Drawing.Graphics> objekt více než zadejte výkresu metody, jako třeba <xref:System.Drawing.Graphics.DrawLine%2A> a <xref:System.Drawing.Graphics.DrawRectangle%2A>. A <xref:System.Drawing.Graphics> objekt také uchovává stav grafiky, které je možné rozdělit do těchto kategorií:  
   
 -   Nastavení kvality  
   
@@ -42,9 +42,9 @@ graphics.DrawRectangle(pen, 10, 10, 200, 100);
 -   Oblast ořezu  
   
 ### <a name="quality-settings"></a>Nastavení kvality  
- A <xref:System.Drawing.Graphics> objekt má několik vlastností, které ovlivňují kvalitu položky, které se mají vykreslovat. Například můžete nastavit <xref:System.Drawing.Graphics.TextRenderingHint%2A> vlastnosti a určit typ vyhlazení (pokud existuje) použít na text. Další vlastnosti, které ovlivňují kvality jsou <xref:System.Drawing.Graphics.SmoothingMode%2A>, <xref:System.Drawing.Graphics.CompositingMode%2A>, <xref:System.Drawing.Graphics.CompositingQuality%2A>, a <xref:System.Drawing.Graphics.InterpolationMode%2A>.  
+ A <xref:System.Drawing.Graphics> objekt má několik vlastností, které ovlivňují kvality položky, které jsou zpracovány. Například můžete nastavit <xref:System.Drawing.Graphics.TextRenderingHint%2A> vlastnosti k určení typu (pokud existuje) antialiasingu použitý pro text. Další vlastnosti, které ovlivňují kvalitu jsou <xref:System.Drawing.Graphics.SmoothingMode%2A>, <xref:System.Drawing.Graphics.CompositingMode%2A>, <xref:System.Drawing.Graphics.CompositingQuality%2A>, a <xref:System.Drawing.Graphics.InterpolationMode%2A>.  
   
- Následující příklad nevykresluje dvě výpustky, jeden s vyhlazování režim nastavený na <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> a jednu s vyhlazování režim nastavený na <xref:System.Drawing.Drawing2D.SmoothingMode.HighSpeed>:  
+ Následující příklad nakreslí dva symbol tří teček, jednu s nastavit na režim vyhlazování <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> a jeden u nastavit na režim vyhlazování <xref:System.Drawing.Drawing2D.SmoothingMode.HighSpeed>:  
   
 ```vb  
 Dim graphics As Graphics = e.Graphics  
@@ -67,9 +67,9 @@ graphics.DrawEllipse(pen, 0, 150, 200, 100);
 ```  
   
 ### <a name="transformations"></a>Transformace  
- A <xref:System.Drawing.Graphics> objekt udržuje dvě transformace (world a stránky), které se použijí pro všechny položky, které jsou vykreslovány v tomto <xref:System.Drawing.Graphics> objektu. Všechny afinní transformace mohou být uloženy ve Světové transformace. Afinní transformace zahrnují změny velikosti, otáčení, která znázorňuje, zkosení a překladu. Transformace stránky lze použít pro škálování a změna jednotky (například pixelů k palce). Další informace najdete v tématu [systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md).  
+ A <xref:System.Drawing.Graphics> objektu udržuje dvě transformace (světa a stránky), které se použijí u všech položek, které vykreslené <xref:System.Drawing.Graphics> objektu. Žádné afinní transformace mohou být uloženy v Světové transformace. Afinní transformace patří škálování, otáčení, odráží, zkreslení a překladu. Transformace stránky lze použít pro škálování a pro změnu jednotky (například pixelů cm). Další informace najdete v tématu [systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md).  
   
- Následující příklad ilustruje world a stránka transformace z <xref:System.Drawing.Graphics> objektu. Světové transformace nastavena na rotaci 30 stupňů. Transformace stránky je nastaven tak, aby souřadnice předat druhým <xref:System.Drawing.Graphics.DrawEllipse%2A> budou považovány za milimetry místo pixelů. Kód vytvoří dvě identické volání <xref:System.Drawing.Graphics.DrawEllipse%2A> metoda. Světové transformace se použije pro první <xref:System.Drawing.Graphics.DrawEllipse%2A> volání a obě transformace (world a stránka) se použijí pro druhý <xref:System.Drawing.Graphics.DrawEllipse%2A> volání.  
+ Následující příklad nastaví transformace světa a stránka <xref:System.Drawing.Graphics> objektu. Světové transformace je nastavena na otočení kolem osy 30stupňů. Transformace stránky nastavená tak, aby souřadnice předat druhé <xref:System.Drawing.Graphics.DrawEllipse%2A> , bude zacházeno jako milimetrech místo pixelů. Kód volá dva identické <xref:System.Drawing.Graphics.DrawEllipse%2A> metody. Světové transformace se použije pro první <xref:System.Drawing.Graphics.DrawEllipse%2A> volání a obě transformace (světa a stránky) se použijí k druhému <xref:System.Drawing.Graphics.DrawEllipse%2A> volání.  
   
 ```vb  
 Dim graphics As Graphics = e.Graphics  
@@ -93,14 +93,14 @@ graphics.PageUnit = GraphicsUnit.Millimeter;     // page transformation
 graphics.DrawEllipse(pen, 0, 0, 100, 50);  
 ```  
   
- Následující obrázek znázorňuje dva výpustky. Upozorňujeme, že se 30 stupeň otočení o původu souřadnicový systém (levého horního rohu klientské oblasti), nikoli o středy na symbol tří teček. Všimněte si také, že pera šířku 1 znamená 1 pixel pro první elipsy a 1 milimetru pro druhý třemi tečkami.  
+ Následující obrázek znázorňuje dvě symbol tří teček. Všimněte si, otočení kolem osy z 30stupňů o původu souřadnicovém systému (levého horního rohu oblasti klienta), ne o centrech symbol tří teček. Všimněte si také, že šířka pera 1 znamená, že 1 pixelu pro první tři tečky a 1 milimetru pro druhý elipsy.  
   
- ![Elipsy](../../../../docs/framework/winforms/advanced/media/csgraphicsascon1.png "csgraphicsascon1")  
+ ![Ovals](../../../../docs/framework/winforms/advanced/media/csgraphicsascon1.png "csgraphicsascon1")  
   
 ### <a name="clipping-region"></a>Oblast ořezu  
- A <xref:System.Drawing.Graphics> objekt udržuje oblast ořezu, která se použije pro všechny položky, které jsou vykreslovány v tomto <xref:System.Drawing.Graphics> objektu. Oblast ořezu můžete nastavit tak, že zavoláte <xref:System.Drawing.Graphics.SetClip%2A> metoda.  
+ A <xref:System.Drawing.Graphics> objektu udržuje výstřižek oblast, která se vztahuje na všechny položky, které vykreslené <xref:System.Drawing.Graphics> objektu. Můžete nastavit oblast ořezu voláním <xref:System.Drawing.Graphics.SetClip%2A> metody.  
   
- Následující příklad vytvoří oblast ve tvaru plus tvořících sjednocení dvou tvaru. Tuto oblast je určený jako oblast výstřižek <xref:System.Drawing.Graphics> objektu. Potom kód nevykresluje dva řádky, které jsou omezeny na vnitřek oblast ořezu.  
+ Následující příklad vytvoří ve tvaru plus oblast tvořící sjednocení dvou obdélníků. Tuto oblast je vyhrazená jako oblast ořezu z <xref:System.Drawing.Graphics> objektu. Kód poté nakreslí dva řádky, které jsou omezené na vnitřní oblast ořezu.  
   
 ```vb  
 Dim graphics As Graphics = e.Graphics  
@@ -146,10 +146,10 @@ graphics.DrawLine(pen, 0, 30, 150, 160);
 graphics.DrawLine(pen, 40, 20, 190, 150);  
 ```  
   
- Následující obrázek znázorňuje oříznutí řádky.  
+ Následující obrázek znázorňuje zkrácený řádky.  
   
- ![Omezené oblasti klip](../../../../docs/framework/winforms/advanced/media/graphicsascon2.png "graphicsascon2")  
+ ![Omezenou oblast Ústřižku](../../../../docs/framework/winforms/advanced/media/graphicsascon2.png "graphicsascon2")  
   
-## <a name="see-also"></a>Viz také  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)  
- [Použití vnořených grafických kontejnerů](../../../../docs/framework/winforms/advanced/using-nested-graphics-containers.md)
+## <a name="see-also"></a>Viz také:
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+- [Použití vnořených grafických kontejnerů](../../../../docs/framework/winforms/advanced/using-nested-graphics-containers.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: fb14e195-fea5-4561-b9a8-60a67283edb9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f3a7331d4488f4a0eeac71b0b866bc4b6864eed6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 7ceaa3ea9d9140c6b5df45f067558da2de80b8dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43469931"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54535408"
 ---
 # <a name="run-net-framework-11-apps-on-windows-8-windows-81-or-windows-10"></a>Spuštění rozhraní .NET Framework 1.1 aplikací pro Windows 8, Windows 8.1 nebo Windows 10
 
@@ -24,5 +24,5 @@ Není možné nainstalovat ručně rozhraní .NET Framework 1.1 [!INCLUDE[win8](
 
 ## <a name="see-also"></a>Viz také:
 
-[Migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)
-[nainstalovat rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)
+- [Migrace z rozhraní .NET Framework 1.1](../../../docs/framework/migration-guide/migrating-from-the-net-framework-1-1.md)
+- [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)

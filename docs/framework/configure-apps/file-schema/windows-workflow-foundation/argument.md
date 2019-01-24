@@ -1,28 +1,28 @@
 ---
-title: '&lt;Argument&gt;'
+title: '&lt;argument&gt;'
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: a7144d53-8023-4e90-971f-895e016fd58a
-ms.openlocfilehash: 8172093f36bd09ea33b1a447ee61dc36afb1b358
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 3744781f844d4a1728ba1e9846b2b8c56c0ad8fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154226"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554596"
 ---
-# <a name="ltargumentgt"></a>&lt;Argument&gt;
+# <a name="ltargumentgt"></a>&lt;argument&gt;
 Konfigurace element, který představuje argument přidruženého k dotazu stavu aktivity.  
   
  Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).  
   
 \<system.serviceModel>  
 \<sledování >  
-\<profil trackingProfile >  
+\<trackingProfile>  
 \<pracovní postup >  
-\<activityStateQueries >  
-\<activityStateQuery >  
-\<argumenty >  
-\<argument >  
+\<activityStateQueries>  
+\<activityStateQuery>  
+\<arguments>  
+\<argument>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,7 +57,7 @@ Konfigurace element, který představuje argument přidruženého k dotazu stavu
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md)|Kolekce argumenty přidružené k tomuto dotazu aktivity.|  
+|[\<arguments>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md)|Kolekce argumenty přidružené k tomuto dotazu aktivity.|  
   
 ## <a name="remarks"></a>Poznámky  
  Jeden jedinečné funkce ActivityStateQuery je schopnost extrahování dat při sledování provádění pracovního postupu. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. Můžete použít [ \<argumenty >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/arguments.md), [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) a [ \<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md) prvků, které mají extrahovat všechny proměnné nebo argumentu v jakékoli aktivitě v pracovním postupu. Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován. Proměnné a argumenty může být extrahována pouze pomocí ActivityStateRecord a tedy přihlášení k odběru v rámci sledovacích profilu pomocí [ \<activityStateQuery >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activitystatequery.md).  
@@ -76,8 +76,8 @@ Konfigurace element, který představuje argument přidruženého k dotazu stavu
 </activityStateQuery>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activities.Tracking.Configuration.ArgumentElement?displayProperty=nameWithType>       
- <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>       
- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.ArgumentElement?displayProperty=nameWithType>
+- <xref:System.Activities.Tracking.ActivityStateQuery?displayProperty=nameWithType>
+- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

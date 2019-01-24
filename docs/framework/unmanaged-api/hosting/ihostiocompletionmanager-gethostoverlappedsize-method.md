@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6713fdb822babf607752c1823a32dae43a7d567e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f21e25c077ae6ca837a41d3e2227d12dd517d95
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439594"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555502"
 ---
 # <a name="ihostiocompletionmanagergethostoverlappedsize-method"></a>IHostIoCompletionManager::GetHostOverlappedSize – metoda
-Získá velikost vlastní data, která hostitele chtít připojit k vstupně-výstupní požadavky.  
+Získá velikost vlastní data, která si klade za cíl hostitele pro připojení k vstupně-výstupní požadavky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,36 +43,36 @@ HRESULT GetHostOverlappedSize (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`GetHostOverlappedSize` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`GetHostOverlappedSize` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- Všechna volání asynchronní vstupně-výstupních operací do rozhraní API platformy systému Windows trvat Win32 `OVERLAPPED` objekt, který poskytuje informace, jako je ukazatel pozice v souboru. Aplikace, které obvykle provádět volání asynchronní vstupně-výstupních operací pro uchování stavu, přidejte vlastní data na strukturu. `GetHostOverlappedSize` a [ihostiocompletionmanager::initializehostoverlapped –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-initializehostoverlapped-method.md) nabízejí možnost pro hostitele zahrnout taková vlastní data.  
+ Všechna volání asynchronní vstupně-výstupních operací do rozhraní API platformy Windows trvat Win32 `OVERLAPPED` objektu, který poskytuje informace, jako je ukazatel pozice v souboru. Pro uchování stavu aplikace, které obvykle provádět volání asynchronní vstupně-výstupních operací přidání vlastních dat do struktury. `GetHostOverlappedSize` a [ihostiocompletionmanager::initializehostoverlapped –](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-initializehostoverlapped-method.md) poskytnout příležitosti pro hostitele zahrnout tyto vlastní data.  
   
- Volání CLR `GetHostOverlappedSize` metoda k určení velikosti vlastních dat, kterou chce připojit k hostiteli `OVERLAPPED` objektu.  
+ Volání CLR `GetHostOverlappedSize` metodu pro určení velikosti vlastní data, která chce připojit k hostiteli `OVERLAPPED` objektu.  
   
 > [!NOTE]
->  `GetHostOverlappedSize` je volat pouze jednou. Vlastní data hostitele musí mít stejnou velikost pro každý požadavek vstupně-výstupní operace.  
+>  `GetHostOverlappedSize` je volána pouze jednou. Vlastní data hostitele musí mít stejnou velikost pro každý požadavek vstupně-výstupních operací.  
   
 > [!IMPORTANT]
->  Velikost `OVERLAPPED` samotného objektu není zahrnutý v hodnotě `pcbSize`.  
+>  Velikost `OVERLAPPED` samotného objektu není součástí hodnoty `pcbSize`.  
   
- Další informace o `OVERLAPPED` struktury najdete v dokumentaci k platformě Windows.  
+ Další informace o `OVERLAPPED` struktury naleznete v dokumentaci k platformě Windows.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.NativeOverlapped>  
- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
- [IHostIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Threading.NativeOverlapped>
+- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+- [IHostIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

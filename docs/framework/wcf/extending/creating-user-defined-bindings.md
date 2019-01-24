@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-ms.openlocfilehash: 7be7c156ec20a15cf8d1a12d8d1f429b6c2c33a9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 6b3a5bbc93fa6465f70295cc6a3d7528039fb787
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50186054"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548791"
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
 Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:  
@@ -23,7 +23,7 @@ Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:
 ## <a name="the-order-of-binding-elements"></a>Pořadí elementů vazby  
  Každý prvek vazby představuje krok zpracování při odesílání nebo přijímání zpráv. Za běhu elementy vazby vytvořte kanály a naslouchací procesy potřebné k vývoji odchozí a příchozí zásobníky kanálu.  
   
- Existují tři hlavní typy elementů vazby: elementy vazby protokolu, kódování elementů vazby a elementů přenosové vazby.  
+ Existují tři hlavní typy elementů vazby: Vazba prvky, kódování elementů vazby a elementů vazby přenosu protokolu.  
   
  Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které mohly reagovat na zprávy. Kanály a naslouchací procesy vytvořené tyto elementy vazby můžete přidat, odebrat nebo změnit obsah zprávy. Zadaná vazba může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. Windows Communication Foundation (WCF) obsahuje několik elementů vazby protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
@@ -33,14 +33,14 @@ Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:
   
  Při vytváření nové vazby, je důležité pořadí prvků přidaných vazby. Vždy přidáte prvky vazeb v následujícím pořadí:  
   
-|Vrstvy|Možnosti|Požadováno|  
+|Vrstva|Možnosti|Požadováno|  
 |-----------|-------------|--------------|  
 |Tok transakcí|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement?displayProperty=nameWithType>|Ne|  
 |Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType>|Ne|  
 |Zabezpečení|<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType>|Ne|  
 |Kompozitní duplexní režim|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement?displayProperty=nameWithType>|Ne|  
 |Kódování|Text, binární soubor, MTOM, vlastní|Ano*|  
-|Přenos|TCP, pojmenované kanály, protokolu HTTP, HTTPS, služby MSMQ, vlastní|Ano|  
+|Přenos|TCP, Named Pipes, HTTP, HTTPS, MSMQ, Custom|Ano|  
   
  * Vzhledem k tomu kódování se vyžaduje pro každou vazbu, pokud kódování není zadán, WCF přidá výchozí kódování pro vás. Výchozí hodnota je Text/XML pro přenosy HTTP a HTTPS a binární jinak.  
   
@@ -118,6 +118,6 @@ public override BindingElementCollection CreateBindingElements()
 ## <a name="deriving-from-a-standard-binding"></a>Odvozený od standardního vazby  
  Místo vytvoření zcela nové třídy vazby, je možné si můžete rozšířit jednu existující vazby poskytované systémem. Podobně jako v předchozím případě je nutné přepsat <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metoda a <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnost.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>  
- [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>
+- [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)

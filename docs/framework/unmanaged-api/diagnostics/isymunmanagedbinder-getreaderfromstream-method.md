@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4c5d3d1b868849d17b2068eecfcfeea0f1e598f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af4e9124140c2b311fb2c10800200f5d4d8dc679
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545761"
 ---
 # <a name="isymunmanagedbindergetreaderfromstream-method"></a>ISymUnmanagedBinder::GetReaderFromStream – metoda
-Zadaný datový proud, který obsahuje úložiště symbolů a metadat rozhraní, vrátí správné [ISymUnmanagedReader](isymunmanagedreader-interface.md) struktura, která budou číst ladění symboly z obchodu daný symbol.  
+Rozhraní metadat a datový proud, který obsahuje úložiště symbolů, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) struktura, která bude číst ladění symboly z úložiště daného symbolu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetReaderFromStream(
   
 #### <a name="parameters"></a>Parametry  
  `importer`  
- [v] Ukazatel rozhraní import metadat.  
+ [in] Ukazatel na rozhraní import metadat.  
   
  `pstream`  
- [v] Ukazatel na datový proud, který obsahuje úložiště symbolů.  
+ [in] Ukazatel na datový proud, který obsahuje úložiště symbolů.  
   
  `pRetVal`  
- [out] Ukazatele, který je nastavený s vráceným [ISymUnmanagedReader](isymunmanagedreader-interface.md) rozhraní.  
+ [out] Ukazatel, který je nastaven na vrácenou [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)

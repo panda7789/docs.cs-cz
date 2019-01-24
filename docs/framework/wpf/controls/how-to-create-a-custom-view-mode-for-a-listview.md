@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - ListView controls [WPF], creating custom View mode
 ms.assetid: 71077349-eeb9-4344-ab29-b5df96df3314
-ms.openlocfilehash: d39f8829e7bdc89c05cda0f586298518908683f5
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 336e4ee911d18836eafa6f444c8d900c117acad3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53613021"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545274"
 ---
 # <a name="how-to-create-a-custom-view-mode-for-a-listview"></a>Postupy: Vytvoření vlastního režimu zobrazení pro ListView
 Tento příklad ukazuje, jak vytvořit vlastní <xref:System.Windows.Controls.ListView.View%2A> režim <xref:System.Windows.Controls.ListView> ovládacího prvku.  
@@ -42,9 +42,9 @@ Tento příklad ukazuje, jak vytvořit vlastní <xref:System.Windows.Controls.Li
   
  Úplnou ukázku najdete v tématu [ListView s více zobrazení (C#)](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/ListViewCustomView/CSharp) nebo [ListView s více Views(Visual Basic)](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/ListViewCustomView/visualbasic).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.ListView>  
- <xref:System.Windows.Controls.GridView>  
- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)  
- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)  
- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.ListView>
+- <xref:System.Windows.Controls.GridView>
+- [Témata s postupy](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)
+- [ListView – přehled](../../../../docs/framework/wpf/controls/listview-overview.md)
+- [GridView – přehled](../../../../docs/framework/wpf/controls/gridview-overview.md)

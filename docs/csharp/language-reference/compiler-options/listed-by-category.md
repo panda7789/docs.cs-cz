@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 891e5eac249f4bd22b6eadde7509de2d07cd1576
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7403b42a48413d28808b49542727c2f07d0ad026
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527184"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546985"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -95,7 +95,7 @@ Jsou následující možnosti kompilátoru seřazené podle kategorie. Abecední
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku pro všechny soubory zdrojového kódu dané kompilace.|
 |[– Nápověda](help-compiler-option.md)|Zobrazí seznam možností kompilátoru do stdout.|
 |[-highentropyva](highentropyva-compiler-option.md)|Určuje, že spustitelného souboru, který podporuje náhodného generování rozložení prostoru adres (ASLR).|
-|[-langversion](langversion-compiler-option.md)|Určení jazykové verze: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější |
+|[-langversion](langversion-compiler-option.md)|Určení jazykové verze: Výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7.1, 7.2, 7.3 nebo nejnovější verzi |
 |[-main](main-compiler-option.md)|Určuje umístění **hlavní** metody.|
 |[-noconfig](noconfig-compiler-option.md)|Instruuje kompilátor, ne pro kompilaci pomocí csc.rsp.|
 |[-nologo](nologo-compiler-option.md)|Potlačí informace kompilátoru.|
@@ -112,8 +112,8 @@ Jsou následující možnosti kompilátoru seřazené podle kategorie. Abecední
 |---|---|
 |-přírůstkové|Umožňuje přírůstkové kompilace.|
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](index.md)  
-- [Možnosti kompilátoru jazyka C# (abecední pořadí)](listed-alphabetically.md)  
-- [Postup: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Možnosti kompilátoru jazyka C#](index.md)
+- [Možnosti kompilátoru jazyka C# (abecední pořadí)](listed-alphabetically.md)
+- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)

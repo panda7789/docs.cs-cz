@@ -2,17 +2,17 @@
 title: Připojovací řetězce v ADO.NET Entity Framework
 ms.date: 10/15/2018
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
-ms.openlocfilehash: 99b6b1b7a38477dc17d3960ee5bc0b63ec0cb819
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d01218713319b84eb700b3be7ab71fe51357ac46
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50193991"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497456"
 ---
 # <a name="connection-strings-in-the-adonet-entity-framework"></a>Připojovací řetězce v ADO.NET Entity Framework
 Připojovací řetězec obsahuje informace o inicializaci, která je předána jako parametr od poskytovatele dat ke zdroji dat. Syntaxe závisí na poskytovateli dat a připojovací řetězec je analyzován při pokusu o otevření připojení. Připojovací řetězec používaný Entity Framework obsahují informace, které slouží pro připojení k podkladové zprostředkovatele dat ADO.NET, který podporuje rozhraní Entity Framework. Obsahují také informace o požadované modelu a souborů mapování.  
   
- Připojovací řetězec se používá zprostředkovatel EntityClient při přístupu k modelu a mapování metadata a připojování k objektu data source. Připojovací řetězec můžete přistupovat ani je nastavit prostřednictvím <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> vlastnost <xref:System.Data.EntityClient.EntityConnection>. <xref:System.Data.EntityClient.EntityConnectionStringBuilder> Třídy je možné programově vytvořit nebo získat přístup k parametrů v připojovacím řetězci. Další informace najdete v tématu [postupy: sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
+ Připojovací řetězec se používá zprostředkovatel EntityClient při přístupu k modelu a mapování metadata a připojování k objektu data source. Připojovací řetězec můžete přistupovat ani je nastavit prostřednictvím <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> vlastnost <xref:System.Data.EntityClient.EntityConnection>. <xref:System.Data.EntityClient.EntityConnectionStringBuilder> Třídy je možné programově vytvořit nebo získat přístup k parametrů v připojovacím řetězci. Další informace najdete v tématu [jak: Vytvoření připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
   
  [Nástroje modelu Entity Data Model](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) generovat připojovací řetězec, který je uložený v konfiguračním souboru aplikace. <xref:System.Data.Objects.ObjectContext> načte informace o tomto připojení automaticky při vytváření objektu dotazy. <xref:System.Data.EntityClient.EntityConnection> Používané <xref:System.Data.Objects.ObjectContext> instance je přístupný z <xref:System.Data.Objects.ObjectContext.Connection%2A> vlastnost. Další informace najdete v tématu [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
 
@@ -48,7 +48,7 @@ Metadata=res://<assemblyFullName>/<resourceName>.
   
 |Možnost|Popis|  
 |-|-|  
-|`assemblyFullName`|Celý název sestavení s integrovaný prostředek. Název obsahuje jednoduchý název, název verze, podporované jazykové verze a veřejný klíč, následujícím způsobem:<br /><br /> `ResourceLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`<br /><br /> Prostředky může být vložen do libovolné sestavení, která je přístupná aplikací.<br /><br /> Je-li zadat zástupný znak (\*) pro `assemblyFullName`, modul runtime rozhraní Entity Framework bude vyhledávat prostředky v těchto umístěních, v tomto pořadí:<br /><br /> 1.  Volající sestavení.<br />2.  Odkazovaná sestavení.<br />3.  Sestavení v adresáři bin aplikace.<br /><br /> Pokud soubory nejsou v jednom z těchto umístění, bude vyvolána výjimka. **Poznámka:** při použití zástupných znaků (*), musí si projít všechna sestavení prostředků s správný název Entity Framework. Ke zlepšení výkonu, zadejte název sestavení namísto zástupného znaku.|  
+|`assemblyFullName`|Celý název sestavení s integrovaný prostředek. Název obsahuje jednoduchý název, název verze, podporované jazykové verze a veřejný klíč, následujícím způsobem:<br /><br /> `ResourceLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`<br /><br /> Prostředky může být vložen do libovolné sestavení, která je přístupná aplikací.<br /><br /> Je-li zadat zástupný znak (\*) pro `assemblyFullName`, modul runtime rozhraní Entity Framework bude vyhledávat prostředky v těchto umístěních, v tomto pořadí:<br /><br /> 1.  Volající sestavení.<br />2.  Odkazovaná sestavení.<br />3.  Sestavení v adresáři bin aplikace.<br /><br /> Pokud soubory nejsou v jednom z těchto umístění, bude vyvolána výjimka. **Poznámka:**  Při použití zástupných znaků (*), musí si projít všechna sestavení prostředků s správný název Entity Framework. Ke zlepšení výkonu, zadejte název sestavení namísto zástupného znaku.|  
 |`resourceName`|Název zahrnutých prostředků, jako je například AdvendtureWorksModel.csdl. Metadatových služeb se jenom vyhledejte soubory nebo prostředkům s jedním z těchto přípon: .csdl, .ssdl nebo .msl. Pokud `resourceName` není zadán, se načtou všechny prostředky metadat. Prostředky by měly mít jedinečné názvy v rámci sestavení. Pokud se více souborů se stejným názvem, které jsou definovány v různých adresářích v sestavení, `resourceName` musí zahrnout před název prostředku, třeba FolderName.FileName.csdl strukturu složek.<br /><br /> `resourceName` není vyžadován při zadávání zástupný znak (*) pro `assemblyFullName`.|  
   
 > [!NOTE]
@@ -97,7 +97,7 @@ Metadata=.\
   
 |Termín|Popis|  
 |----------|-----------------|  
-|`&#124;DataDirectory&#124;`|Přeloží na relativní cesta k souborům mapování a metadat. Jedná se o hodnotu, která je nastavena prostřednictvím `AppDomain.SetData("DataDirectory", objValue)` metody. `DataDirectory` Náhradní řetězec musejí být uzavřeny do kanálu znaků a nesmí být žádné prázdné znaky mezi jeho jméno a znaky svislé čáry. `DataDirectory` Název není malá a velká písmena.<br /><br /> Pokud mají být předány jako člena seznamu cest metadat má fyzický adresář s názvem "DataDirectory", přidejte do jednoho nebo obou stranách název prázdné znaky. Příklad: `Metadata="DataDirectory1 &#124; DataDirectory &#124; DataDirectory2"`. Aplikace ASP.NET řeší &#124;DataDirectory&#124; k "\<kořenový adresář aplikace > / app_data" složky.|  
+|`&#124;DataDirectory&#124;`|Přeloží na relativní cesta k souborům mapování a metadat. Jedná se o hodnotu, která je nastavena prostřednictvím `AppDomain.SetData("DataDirectory", objValue)` metody. `DataDirectory` Náhradní řetězec musejí být uzavřeny do kanálu znaků a nesmí být žádné prázdné znaky mezi jeho jméno a znaky svislé čáry. `DataDirectory` Název není malá a velká písmena.<br /><br /> Pokud mají být předány jako člena seznamu cest metadat má fyzický adresář s názvem "DataDirectory", přidejte do jednoho nebo obou stranách název prázdné znaky. Například: `Metadata="DataDirectory1 &#124; DataDirectory &#124; DataDirectory2"`. Aplikace ASP.NET řeší &#124;DataDirectory&#124; k "\<kořenový adresář aplikace > / app_data" složky.|  
 |~|Přeloží na kořenový adresář webové aplikace. ~ Znak na počáteční pozici je vždy interpretováno jako operátor kořenové webové aplikace (~), i když to může představovat platný místní podadresáře. K odkazování na místní podadresáře, musí uživatel explicitně předávat `./~`.|  
   
  `DataDirectory` a ~ – operátor by měl lze zadat pouze na začátku cesty nejsou přeložit v jakékoliv pozici. Entity Framework se pokusí přeložit `~/data`, ale bude zacházet s `/data/~` jako fyzická cesta.  
@@ -108,8 +108,8 @@ Metadata=.\
   
  Rozlišení `DataDirectory` náhradní řetězec a ~ – operátor je nerekurzivní. Například když `DataDirectory` zahrnuje `~` znaků, dojde k výjimce. To zabraňuje nekonečnou rekurzi.  
   
-## <a name="see-also"></a>Viz také  
- [Práce se zprostředkovateli dat](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
- [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
+## <a name="see-also"></a>Viz také:
+- [Práce se zprostředkovateli dat](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)
+- [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)
+- [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)
+- [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)
