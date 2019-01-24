@@ -5,46 +5,46 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: f435136bb08876b759087b9cdd258f6ae7881be5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: a027577f5118f9a5b2f3eeaa29ddfde20851a8f2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130805"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530850"
 ---
-# <a name="message-security-with-a-certificate-client"></a><span data-ttu-id="445ae-102">Zabezpečení zpráv pomocí klientských certifikátů</span><span class="sxs-lookup"><span data-stu-id="445ae-102">Message Security with a Certificate Client</span></span>
-<span data-ttu-id="445ae-103">Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené používají režim zabezpečených zpráv.</span><span class="sxs-lookup"><span data-stu-id="445ae-103">The following scenario shows a Windows Communication Foundation (WCF) client and service secured using message security mode.</span></span> <span data-ttu-id="445ae-104">Klient a služba se ověří pomocí certifikátů.</span><span class="sxs-lookup"><span data-stu-id="445ae-104">Both the client and the service are authenticated with certificates.</span></span> <span data-ttu-id="445ae-105">Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).</span><span class="sxs-lookup"><span data-stu-id="445ae-105">For more information, see [Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).</span></span>  
+# <a name="message-security-with-a-certificate-client"></a><span data-ttu-id="873d9-102">Zabezpečení zpráv pomocí klientských certifikátů</span><span class="sxs-lookup"><span data-stu-id="873d9-102">Message Security with a Certificate Client</span></span>
+<span data-ttu-id="873d9-103">Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby Zabezpečené používají režim zabezpečených zpráv.</span><span class="sxs-lookup"><span data-stu-id="873d9-103">The following scenario shows a Windows Communication Foundation (WCF) client and service secured using message security mode.</span></span> <span data-ttu-id="873d9-104">Klient a služba se ověří pomocí certifikátů.</span><span class="sxs-lookup"><span data-stu-id="873d9-104">Both the client and the service are authenticated with certificates.</span></span> <span data-ttu-id="873d9-105">Další informace najdete v tématu [zabezpečení distribuované aplikace](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).</span><span class="sxs-lookup"><span data-stu-id="873d9-105">For more information, see [Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md).</span></span>  
   
- <span data-ttu-id="445ae-106">Ukázková aplikace, najdete v části [certifikát zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-certificate.md).</span><span class="sxs-lookup"><span data-stu-id="445ae-106">For a sample application, see [Message Security Certificate](../../../../docs/framework/wcf/samples/message-security-certificate.md).</span></span>  
+ <span data-ttu-id="873d9-106">Ukázková aplikace, najdete v části [certifikát zabezpečení zprávy](../../../../docs/framework/wcf/samples/message-security-certificate.md).</span><span class="sxs-lookup"><span data-stu-id="873d9-106">For a sample application, see [Message Security Certificate](../../../../docs/framework/wcf/samples/message-security-certificate.md).</span></span>  
   
- <span data-ttu-id="445ae-107">![Klient s certifikátem](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span><span class="sxs-lookup"><span data-stu-id="445ae-107">![Client with certificate](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span></span>  
+ <span data-ttu-id="873d9-107">![Klient s certifikátem](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span><span class="sxs-lookup"><span data-stu-id="873d9-107">![Client with certificate](../../../../docs/framework/wcf/feature-details/media/clientwithcertificate.gif "ClientWithCertificate")</span></span>  
   
-|<span data-ttu-id="445ae-108">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="445ae-108">Characteristic</span></span>|<span data-ttu-id="445ae-109">Popis</span><span class="sxs-lookup"><span data-stu-id="445ae-109">Description</span></span>|  
+|<span data-ttu-id="873d9-108">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="873d9-108">Characteristic</span></span>|<span data-ttu-id="873d9-109">Popis</span><span class="sxs-lookup"><span data-stu-id="873d9-109">Description</span></span>|  
 |--------------------|-----------------|  
-|<span data-ttu-id="445ae-110">Režim zabezpečení</span><span class="sxs-lookup"><span data-stu-id="445ae-110">Security Mode</span></span>|<span data-ttu-id="445ae-111">Zpráva</span><span class="sxs-lookup"><span data-stu-id="445ae-111">Message</span></span>|  
-|<span data-ttu-id="445ae-112">Interoperabilita</span><span class="sxs-lookup"><span data-stu-id="445ae-112">Interoperability</span></span>|<span data-ttu-id="445ae-113">Pouze WCF</span><span class="sxs-lookup"><span data-stu-id="445ae-113">WCF only</span></span>|  
-|<span data-ttu-id="445ae-114">Ověření (Server)</span><span class="sxs-lookup"><span data-stu-id="445ae-114">Authentication (Server)</span></span>|<span data-ttu-id="445ae-115">Pomocí certifikátu služby</span><span class="sxs-lookup"><span data-stu-id="445ae-115">Using service certificate</span></span>|  
-|<span data-ttu-id="445ae-116">Ověření (klient)</span><span class="sxs-lookup"><span data-stu-id="445ae-116">Authentication (Client)</span></span>|<span data-ttu-id="445ae-117">Pomocí klientského certifikátu</span><span class="sxs-lookup"><span data-stu-id="445ae-117">Using client certificate</span></span>|  
-|<span data-ttu-id="445ae-118">Integrita</span><span class="sxs-lookup"><span data-stu-id="445ae-118">Integrity</span></span>|<span data-ttu-id="445ae-119">Ano</span><span class="sxs-lookup"><span data-stu-id="445ae-119">Yes</span></span>|  
-|<span data-ttu-id="445ae-120">Důvěrnost</span><span class="sxs-lookup"><span data-stu-id="445ae-120">Confidentiality</span></span>|<span data-ttu-id="445ae-121">Ano</span><span class="sxs-lookup"><span data-stu-id="445ae-121">Yes</span></span>|  
-|<span data-ttu-id="445ae-122">Přenos</span><span class="sxs-lookup"><span data-stu-id="445ae-122">Transport</span></span>|<span data-ttu-id="445ae-123">HTTP</span><span class="sxs-lookup"><span data-stu-id="445ae-123">HTTP</span></span>|  
-|<span data-ttu-id="445ae-124">Vazba</span><span class="sxs-lookup"><span data-stu-id="445ae-124">Binding</span></span>|<xref:System.ServiceModel.WSHttpBinding>|  
+|<span data-ttu-id="873d9-110">Režim zabezpečení</span><span class="sxs-lookup"><span data-stu-id="873d9-110">Security Mode</span></span>|<span data-ttu-id="873d9-111">Zpráva</span><span class="sxs-lookup"><span data-stu-id="873d9-111">Message</span></span>|  
+|<span data-ttu-id="873d9-112">Interoperabilita</span><span class="sxs-lookup"><span data-stu-id="873d9-112">Interoperability</span></span>|<span data-ttu-id="873d9-113">Pouze WCF</span><span class="sxs-lookup"><span data-stu-id="873d9-113">WCF only</span></span>|  
+|<span data-ttu-id="873d9-114">Ověření (Server)</span><span class="sxs-lookup"><span data-stu-id="873d9-114">Authentication (Server)</span></span>|<span data-ttu-id="873d9-115">Pomocí certifikátu služby</span><span class="sxs-lookup"><span data-stu-id="873d9-115">Using service certificate</span></span>|  
+|<span data-ttu-id="873d9-116">Ověření (klient)</span><span class="sxs-lookup"><span data-stu-id="873d9-116">Authentication (Client)</span></span>|<span data-ttu-id="873d9-117">Pomocí klientského certifikátu</span><span class="sxs-lookup"><span data-stu-id="873d9-117">Using client certificate</span></span>|  
+|<span data-ttu-id="873d9-118">Integrita</span><span class="sxs-lookup"><span data-stu-id="873d9-118">Integrity</span></span>|<span data-ttu-id="873d9-119">Ano</span><span class="sxs-lookup"><span data-stu-id="873d9-119">Yes</span></span>|  
+|<span data-ttu-id="873d9-120">Důvěrnost</span><span class="sxs-lookup"><span data-stu-id="873d9-120">Confidentiality</span></span>|<span data-ttu-id="873d9-121">Ano</span><span class="sxs-lookup"><span data-stu-id="873d9-121">Yes</span></span>|  
+|<span data-ttu-id="873d9-122">Přenos</span><span class="sxs-lookup"><span data-stu-id="873d9-122">Transport</span></span>|<span data-ttu-id="873d9-123">HTTP</span><span class="sxs-lookup"><span data-stu-id="873d9-123">HTTP</span></span>|  
+|<span data-ttu-id="873d9-124">Vazba</span><span class="sxs-lookup"><span data-stu-id="873d9-124">Binding</span></span>|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a><span data-ttu-id="445ae-125">Služba</span><span class="sxs-lookup"><span data-stu-id="445ae-125">Service</span></span>  
- <span data-ttu-id="445ae-126">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="445ae-126">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="445ae-127">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="445ae-127">Do one of the following:</span></span>  
+## <a name="service"></a><span data-ttu-id="873d9-125">Služba</span><span class="sxs-lookup"><span data-stu-id="873d9-125">Service</span></span>  
+ <span data-ttu-id="873d9-126">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="873d9-126">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="873d9-127">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="873d9-127">Do one of the following:</span></span>  
   
--   <span data-ttu-id="445ae-128">Vytvoření samostatné služby pomocí kódu bez konfigurace.</span><span class="sxs-lookup"><span data-stu-id="445ae-128">Create a stand-alone service using the code with no configuration.</span></span>  
+-   <span data-ttu-id="873d9-128">Vytvoření samostatné služby pomocí kódu bez konfigurace.</span><span class="sxs-lookup"><span data-stu-id="873d9-128">Create a stand-alone service using the code with no configuration.</span></span>  
   
--   <span data-ttu-id="445ae-129">Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.</span><span class="sxs-lookup"><span data-stu-id="445ae-129">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
+-   <span data-ttu-id="873d9-129">Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.</span><span class="sxs-lookup"><span data-stu-id="873d9-129">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="445ae-130">Kód</span><span class="sxs-lookup"><span data-stu-id="445ae-130">Code</span></span>  
- <span data-ttu-id="445ae-131">Následující kód ukazuje, jak vytvořit koncový bod služby, který se používá k navázání zabezpečené kontextu zabezpečení zprávy.</span><span class="sxs-lookup"><span data-stu-id="445ae-131">The following code shows how to create a service endpoint that uses message security to establish a secure context.</span></span>  
+### <a name="code"></a><span data-ttu-id="873d9-130">Kód</span><span class="sxs-lookup"><span data-stu-id="873d9-130">Code</span></span>  
+ <span data-ttu-id="873d9-131">Následující kód ukazuje, jak vytvořit koncový bod služby, který se používá k navázání zabezpečené kontextu zabezpečení zprávy.</span><span class="sxs-lookup"><span data-stu-id="873d9-131">The following code shows how to create a service endpoint that uses message security to establish a secure context.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
-### <a name="configuration"></a><span data-ttu-id="445ae-132">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="445ae-132">Configuration</span></span>  
- <span data-ttu-id="445ae-133">Následující konfigurace je možné použít místo kódu.</span><span class="sxs-lookup"><span data-stu-id="445ae-133">The following configuration can be used instead of the code.</span></span>  
+### <a name="configuration"></a><span data-ttu-id="873d9-132">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="873d9-132">Configuration</span></span>  
+ <span data-ttu-id="873d9-133">Následující konfigurace je možné použít místo kódu.</span><span class="sxs-lookup"><span data-stu-id="873d9-133">The following configuration can be used instead of the code.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -84,24 +84,24 @@ ms.locfileid: "53130805"
 </configuration>  
 ```  
   
-## <a name="client"></a><span data-ttu-id="445ae-134">Klient</span><span class="sxs-lookup"><span data-stu-id="445ae-134">Client</span></span>  
- <span data-ttu-id="445ae-135">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="445ae-135">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="445ae-136">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="445ae-136">Do one of the following:</span></span>  
+## <a name="client"></a><span data-ttu-id="873d9-134">Klient</span><span class="sxs-lookup"><span data-stu-id="873d9-134">Client</span></span>  
+ <span data-ttu-id="873d9-135">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="873d9-135">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="873d9-136">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="873d9-136">Do one of the following:</span></span>  
   
--   <span data-ttu-id="445ae-137">Vytvoření samostatného klienta pomocí kódu (a kód klienta).</span><span class="sxs-lookup"><span data-stu-id="445ae-137">Create a stand-alone client using the code (and client code).</span></span>  
+-   <span data-ttu-id="873d9-137">Vytvoření samostatného klienta pomocí kódu (a kód klienta).</span><span class="sxs-lookup"><span data-stu-id="873d9-137">Create a stand-alone client using the code (and client code).</span></span>  
   
--   <span data-ttu-id="445ae-138">Vytvoření klienta, která nedefinuje žádné adresy koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="445ae-138">Create a client that does not define any endpoint addresses.</span></span> <span data-ttu-id="445ae-139">Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace.</span><span class="sxs-lookup"><span data-stu-id="445ae-139">Instead, use the client constructor that takes the configuration name as an argument.</span></span> <span data-ttu-id="445ae-140">Příklad:</span><span class="sxs-lookup"><span data-stu-id="445ae-140">For example:</span></span>  
+-   <span data-ttu-id="873d9-138">Vytvoření klienta, která nedefinuje žádné adresy koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="873d9-138">Create a client that does not define any endpoint addresses.</span></span> <span data-ttu-id="873d9-139">Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace.</span><span class="sxs-lookup"><span data-stu-id="873d9-139">Instead, use the client constructor that takes the configuration name as an argument.</span></span> <span data-ttu-id="873d9-140">Příklad:</span><span class="sxs-lookup"><span data-stu-id="873d9-140">For example:</span></span>  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
-### <a name="code"></a><span data-ttu-id="445ae-141">Kód</span><span class="sxs-lookup"><span data-stu-id="445ae-141">Code</span></span>  
- <span data-ttu-id="445ae-142">Následující kód vytvoří klienta.</span><span class="sxs-lookup"><span data-stu-id="445ae-142">The following code creates the client.</span></span> <span data-ttu-id="445ae-143">Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `Certificate`.</span><span class="sxs-lookup"><span data-stu-id="445ae-143">The binding is to message mode security, and the client credential type is set to `Certificate`.</span></span>  
+### <a name="code"></a><span data-ttu-id="873d9-141">Kód</span><span class="sxs-lookup"><span data-stu-id="873d9-141">Code</span></span>  
+ <span data-ttu-id="873d9-142">Následující kód vytvoří klienta.</span><span class="sxs-lookup"><span data-stu-id="873d9-142">The following code creates the client.</span></span> <span data-ttu-id="873d9-143">Vazba má režim zabezpečení zpráv a typu pověření klienta je nastavena na `Certificate`.</span><span class="sxs-lookup"><span data-stu-id="873d9-143">The binding is to message mode security, and the client credential type is set to `Certificate`.</span></span>  
   
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
-### <a name="configuration"></a><span data-ttu-id="445ae-144">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="445ae-144">Configuration</span></span>  
- <span data-ttu-id="445ae-145">Určuje následující konfiguraci klientského certifikátu pomocí chování koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="445ae-145">The following configuration specifies the client certificate using an endpoint behavior.</span></span> <span data-ttu-id="445ae-146">Další informace o certifikátech najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="445ae-146">For more information about certificates, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span> <span data-ttu-id="445ae-147">Kód také pomocí <`identity`> element k určení systému DNS (Domain Name) identity očekávané serveru.</span><span class="sxs-lookup"><span data-stu-id="445ae-147">The code also uses an <`identity`> element to specify a Domain Name System (DNS) of the expected server identity.</span></span> <span data-ttu-id="445ae-148">Další informace o identitě najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="445ae-148">For more information about identity, see [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span></span>  
+### <a name="configuration"></a><span data-ttu-id="873d9-144">Konfigurace</span><span class="sxs-lookup"><span data-stu-id="873d9-144">Configuration</span></span>  
+ <span data-ttu-id="873d9-145">Určuje následující konfiguraci klientského certifikátu pomocí chování koncového bodu.</span><span class="sxs-lookup"><span data-stu-id="873d9-145">The following configuration specifies the client certificate using an endpoint behavior.</span></span> <span data-ttu-id="873d9-146">Další informace o certifikátech najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="873d9-146">For more information about certificates, see [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).</span></span> <span data-ttu-id="873d9-147">Kód také pomocí <`identity`> element k určení systému DNS (Domain Name) identity očekávané serveru.</span><span class="sxs-lookup"><span data-stu-id="873d9-147">The code also uses an <`identity`> element to specify a Domain Name System (DNS) of the expected server identity.</span></span> <span data-ttu-id="873d9-148">Další informace o identitě najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="873d9-148">For more information about identity, see [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -143,8 +143,8 @@ ms.locfileid: "53130805"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="445ae-149">Viz také</span><span class="sxs-lookup"><span data-stu-id="445ae-149">See Also</span></span>  
- [<span data-ttu-id="445ae-150">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="445ae-150">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [<span data-ttu-id="445ae-151">Identita a ověřování služby</span><span class="sxs-lookup"><span data-stu-id="445ae-151">Service Identity and Authentication</span></span>](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
- [<span data-ttu-id="445ae-152">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="445ae-152">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [<span data-ttu-id="445ae-153">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="445ae-153">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="873d9-149">Viz také:</span><span class="sxs-lookup"><span data-stu-id="873d9-149">See also</span></span>
+- [<span data-ttu-id="873d9-150">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="873d9-150">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [<span data-ttu-id="873d9-151">Identita a ověřování služby</span><span class="sxs-lookup"><span data-stu-id="873d9-151">Service Identity and Authentication</span></span>](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [<span data-ttu-id="873d9-152">Práce s certifikáty</span><span class="sxs-lookup"><span data-stu-id="873d9-152">Working with Certificates</span></span>](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [<span data-ttu-id="873d9-153">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="873d9-153">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

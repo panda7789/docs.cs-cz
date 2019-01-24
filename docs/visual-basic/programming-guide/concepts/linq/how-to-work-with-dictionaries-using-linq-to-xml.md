@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: práce s slovník pomocí technologie LINQ to XML (Visual Basic)'
+title: 'Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
-ms.openlocfilehash: b6e41f61358563472f49b22df389df00e721503e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f08430aeb92b9c6e0b7b08481027fb3b5b77cad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33644820"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572341"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a><span data-ttu-id="cc425-102">Postupy: práce s slovník pomocí technologie LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cc425-102">How to: Work with Dictionaries Using LINQ to XML (Visual Basic)</span></span>
-<span data-ttu-id="cc425-103">Často je vhodnější převést zpět na jiné datové struktury typy datové struktury XML a XML.</span><span class="sxs-lookup"><span data-stu-id="cc425-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="cc425-104">Toto téma ukazuje na konkrétní implementace tento obecné přístup tím, že převedete <xref:System.Collections.Generic.Dictionary%602> do XML a zpět.</span><span class="sxs-lookup"><span data-stu-id="cc425-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a><span data-ttu-id="a1c2d-102">Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a1c2d-102">How to: Work with Dictionaries Using LINQ to XML (Visual Basic)</span></span>
+<span data-ttu-id="a1c2d-103">Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML.</span><span class="sxs-lookup"><span data-stu-id="a1c2d-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="a1c2d-104">Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.</span><span class="sxs-lookup"><span data-stu-id="a1c2d-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cc425-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="cc425-105">Example</span></span>  
- <span data-ttu-id="cc425-106">Tento příklad používá ve výrazu vložených literálech XML a dotaz.</span><span class="sxs-lookup"><span data-stu-id="cc425-106">This example uses XML literals and a query in an embedded expression.</span></span> <span data-ttu-id="cc425-107">Nový dotaz projekty <xref:System.Xml.Linq.XElement> objekty, které pak stane nový obsah `Root` <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="cc425-107">The query projects new <xref:System.Xml.Linq.XElement> objects, which then become the new content for the `Root` <xref:System.Xml.Linq.XElement> object.</span></span>  
+## <a name="example"></a><span data-ttu-id="a1c2d-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="a1c2d-105">Example</span></span>  
+ <span data-ttu-id="a1c2d-106">Tento příklad používá literály XML a dotaz v vložený výraz.</span><span class="sxs-lookup"><span data-stu-id="a1c2d-106">This example uses XML literals and a query in an embedded expression.</span></span> <span data-ttu-id="a1c2d-107">Nový dotaz projekty <xref:System.Xml.Linq.XElement> objekty, které pak budou nový obsah `Root` <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="a1c2d-107">The query projects new <xref:System.Xml.Linq.XElement> objects, which then become the new content for the `Root` <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -29,7 +29,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- <span data-ttu-id="cc425-108">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="cc425-108">This code produces the following output:</span></span>  
+ <span data-ttu-id="a1c2d-108">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a1c2d-108">This code produces the following output:</span></span>  
   
 ```xml  
           <Root>  
@@ -40,8 +40,8 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="cc425-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="cc425-109">Example</span></span>  
- <span data-ttu-id="cc425-110">Následující kód vytvoří adresář ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="cc425-110">The following code creates a dictionary from XML.</span></span>  
+## <a name="example"></a><span data-ttu-id="a1c2d-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="a1c2d-109">Example</span></span>  
+ <span data-ttu-id="a1c2d-110">Následující kód vytvoří slovník ze souboru XML.</span><span class="sxs-lookup"><span data-stu-id="a1c2d-110">The following code creates a dictionary from XML.</span></span>  
   
 ```vb  
 Dim root As XElement = _  
@@ -61,7 +61,7 @@ For Each str As String In dict.Keys
 Next  
 ```  
   
- <span data-ttu-id="cc425-111">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="cc425-111">This code produces the following output:</span></span>  
+ <span data-ttu-id="a1c2d-111">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a1c2d-111">This code produces the following output:</span></span>  
   
 ```  
 Child1:Value1  
@@ -70,5 +70,5 @@ Child3:Value3
 Child4:Value4  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="cc425-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="cc425-112">See Also</span></span>  
- [<span data-ttu-id="cc425-113">Projekce a transformace (technologie LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cc425-113">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a><span data-ttu-id="a1c2d-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a1c2d-112">See also</span></span>
+- [<span data-ttu-id="a1c2d-113">Projekce a transformace (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a1c2d-113">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
