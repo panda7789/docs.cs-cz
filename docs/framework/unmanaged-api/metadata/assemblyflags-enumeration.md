@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2fc6d08e960b0ba82c76945a318ec723546f71b9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9796dd234611fd6bbdf2b949b8a0ed66527aaba9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444903"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54521254"
 ---
-# <a name="assemblyflags-enumeration"></a><span data-ttu-id="9e920-102">AssemblyFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="9e920-102">AssemblyFlags Enumeration</span></span>
-<span data-ttu-id="9e920-103">Obsahuje hodnoty, které popisují funkce běhové sestavení.</span><span class="sxs-lookup"><span data-stu-id="9e920-103">Contains values that describe run-time features of an assembly.</span></span>  
+# <a name="assemblyflags-enumeration"></a><span data-ttu-id="31cd7-102">AssemblyFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="31cd7-102">AssemblyFlags Enumeration</span></span>
+<span data-ttu-id="31cd7-103">Obsahuje hodnoty, které popisují funkce za běhu sestavení.</span><span class="sxs-lookup"><span data-stu-id="31cd7-103">Contains values that describe run-time features of an assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9e920-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9e920-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="31cd7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="31cd7-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -38,28 +38,28 @@ typedef enum {
 } AssemblyFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="9e920-105">Členové</span><span class="sxs-lookup"><span data-stu-id="9e920-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="31cd7-105">Členové</span><span class="sxs-lookup"><span data-stu-id="31cd7-105">Members</span></span>  
   
-|<span data-ttu-id="9e920-106">Člen</span><span class="sxs-lookup"><span data-stu-id="9e920-106">Member</span></span>|<span data-ttu-id="9e920-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9e920-107">Description</span></span>|  
+|<span data-ttu-id="31cd7-106">Člen</span><span class="sxs-lookup"><span data-stu-id="31cd7-106">Member</span></span>|<span data-ttu-id="31cd7-107">Popis</span><span class="sxs-lookup"><span data-stu-id="31cd7-107">Description</span></span>|  
 |------------|-----------------|  
-|`afImplicitExportedTypes`|<span data-ttu-id="9e920-108">Určuje, že jsou definice exportovaný typu implicitní v souborech, které tvoří sestavení.</span><span class="sxs-lookup"><span data-stu-id="9e920-108">Specifies that exported type definitions are implicit within the files that comprise the assembly.</span></span> <span data-ttu-id="9e920-109">V rozhraní .NET Framework verze 1.0 a 1.1 Tato hodnota je vždy předpokládá, že pokud chcete nastavit.</span><span class="sxs-lookup"><span data-stu-id="9e920-109">In the .NET Framework versions 1.0 and 1.1, this value is always assumed to be set.</span></span>|  
-|`afImplicitResources`|<span data-ttu-id="9e920-110">Určuje, že jsou definice prostředků implicitní v souborech, které tvoří sestavení.</span><span class="sxs-lookup"><span data-stu-id="9e920-110">Specifies that resource definitions are implicit within the files that comprise the assembly.</span></span> <span data-ttu-id="9e920-111">V rozhraní .NET Framework 1.0 a 1.1 Tato hodnota je vždy předpokládá, že pokud chcete nastavit.</span><span class="sxs-lookup"><span data-stu-id="9e920-111">In the .NET Framework 1.0 and 1.1, this value is always assumed to be set.</span></span>|  
-|`afNonSideBySideAppDomain`|<span data-ttu-id="9e920-112">Určuje, že sestavení nelze provést s jinými verzemi, pokud běží ve stejné doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="9e920-112">Specifies that the assembly cannot execute with other versions if they are running in the same application domain.</span></span>|  
-|`afNonSideBySideProcess`|<span data-ttu-id="9e920-113">Určuje, že sestavení nelze provést s jinými verzemi spuštěné ve stejném procesu.</span><span class="sxs-lookup"><span data-stu-id="9e920-113">Specifies that the assembly cannot execute with other versions if they are running in the same process.</span></span>|  
-|`afNonSideBySideMachine`|<span data-ttu-id="9e920-114">Určuje, že sestavení nelze provést s jinými verzemi, pokud jsou spuštěné na stejném počítači.</span><span class="sxs-lookup"><span data-stu-id="9e920-114">Specifies that the assembly cannot execute with other versions if they are running on the same computer.</span></span>|  
+|`afImplicitExportedTypes`|<span data-ttu-id="31cd7-108">Určuje, že jsou definice exportovaný typ implicitní v souborech, které tvoří sestavení.</span><span class="sxs-lookup"><span data-stu-id="31cd7-108">Specifies that exported type definitions are implicit within the files that comprise the assembly.</span></span> <span data-ttu-id="31cd7-109">V rozhraní .NET Framework verze 1.0 a 1.1 Tato hodnota je vždy považován za nastavit.</span><span class="sxs-lookup"><span data-stu-id="31cd7-109">In the .NET Framework versions 1.0 and 1.1, this value is always assumed to be set.</span></span>|  
+|`afImplicitResources`|<span data-ttu-id="31cd7-110">Určuje, že jsou definice prostředků implicitní v souborech, které tvoří sestavení.</span><span class="sxs-lookup"><span data-stu-id="31cd7-110">Specifies that resource definitions are implicit within the files that comprise the assembly.</span></span> <span data-ttu-id="31cd7-111">V rozhraní .NET Framework 1.0 a 1.1 Tato hodnota je vždy považován za nastavit.</span><span class="sxs-lookup"><span data-stu-id="31cd7-111">In the .NET Framework 1.0 and 1.1, this value is always assumed to be set.</span></span>|  
+|`afNonSideBySideAppDomain`|<span data-ttu-id="31cd7-112">Určuje, že sestavení nelze spustit s jinými verzemi, pokud běží ve stejné doméně aplikace.</span><span class="sxs-lookup"><span data-stu-id="31cd7-112">Specifies that the assembly cannot execute with other versions if they are running in the same application domain.</span></span>|  
+|`afNonSideBySideProcess`|<span data-ttu-id="31cd7-113">Určuje, že sestavení nelze spustit s jinými verzemi, pokud jsou spuštěné v rámci stejného procesu.</span><span class="sxs-lookup"><span data-stu-id="31cd7-113">Specifies that the assembly cannot execute with other versions if they are running in the same process.</span></span>|  
+|`afNonSideBySideMachine`|<span data-ttu-id="31cd7-114">Určuje, že sestavení nelze spustit s jinými verzemi, pokud jsou spuštěné na stejném počítači.</span><span class="sxs-lookup"><span data-stu-id="31cd7-114">Specifies that the assembly cannot execute with other versions if they are running on the same computer.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="9e920-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9e920-115">Remarks</span></span>  
- <span data-ttu-id="9e920-116">Hodnoty mezi 0x0010 a 0x0070, včetně, se používají k popisu funkce kompatibility vedle sebe odkazované sestavení.</span><span class="sxs-lookup"><span data-stu-id="9e920-116">The values between 0x0010 and 0x0070, inclusive, are used to describe side-by-side compatibility features of the referenced assembly.</span></span> <span data-ttu-id="9e920-117">Pokud nejsou nastavené žádné z těchto hodnot, sestavení se považuje za kompatibilní vedle sebe.</span><span class="sxs-lookup"><span data-stu-id="9e920-117">If none of these values are set, the assembly is assumed to be side-by-side compatible.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="31cd7-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="31cd7-115">Remarks</span></span>  
+ <span data-ttu-id="31cd7-116">Hodnoty mezi 0x0010 a 0x0070, včetně, se používají k popisu funkce kompatibility vedle sebe odkazovaného sestavení.</span><span class="sxs-lookup"><span data-stu-id="31cd7-116">The values between 0x0010 and 0x0070, inclusive, are used to describe side-by-side compatibility features of the referenced assembly.</span></span> <span data-ttu-id="31cd7-117">Pokud nejsou nastavené žádné z těchto hodnot, sestavení je považován za kompatibilní vedle sebe.</span><span class="sxs-lookup"><span data-stu-id="31cd7-117">If none of these values are set, the assembly is assumed to be side-by-side compatible.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9e920-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9e920-118">Requirements</span></span>  
- <span data-ttu-id="9e920-119">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9e920-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="31cd7-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="31cd7-118">Requirements</span></span>  
+ <span data-ttu-id="31cd7-119">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="31cd7-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9e920-120">**Záhlaví:** MsCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9e920-120">**Header:** MsCorEE.h</span></span>  
+ <span data-ttu-id="31cd7-120">**Záhlaví:** MsCorEE.h</span><span class="sxs-lookup"><span data-stu-id="31cd7-120">**Header:** MsCorEE.h</span></span>  
   
- <span data-ttu-id="9e920-121">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9e920-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="31cd7-121">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="31cd7-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="9e920-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9e920-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="31cd7-122">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="31cd7-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9e920-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="9e920-123">See Also</span></span>  
- [<span data-ttu-id="9e920-124">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="9e920-124">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
- [<span data-ttu-id="9e920-125">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9e920-125">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+## <a name="see-also"></a><span data-ttu-id="31cd7-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="31cd7-123">See also</span></span>
+- [<span data-ttu-id="31cd7-124">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="31cd7-124">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="31cd7-125">IMetaDataAssemblyEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="31cd7-125">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

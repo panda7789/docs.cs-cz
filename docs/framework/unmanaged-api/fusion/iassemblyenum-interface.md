@@ -16,31 +16,31 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f4af4d0a6049c789db371d84b564d261453968b1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6e3b49654252ad18e9ad4d9e5128b78bd23baee6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431136"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602855"
 ---
-# <a name="iassemblyenum-interface"></a><span data-ttu-id="a11a9-102">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a11a9-102">IAssemblyEnum Interface</span></span>
-<span data-ttu-id="a11a9-103">Představuje enumerátor pro pole `IAssemblyName` objekty.</span><span class="sxs-lookup"><span data-stu-id="a11a9-103">Represents an enumerator for an array of `IAssemblyName` objects.</span></span>  
+# <a name="iassemblyenum-interface"></a><span data-ttu-id="7d657-102">IAssemblyEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7d657-102">IAssemblyEnum Interface</span></span>
+<span data-ttu-id="7d657-103">Představuje enumerátor pro celou řadu `IAssemblyName` objekty.</span><span class="sxs-lookup"><span data-stu-id="7d657-103">Represents an enumerator for an array of `IAssemblyName` objects.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="a11a9-104">Metody</span><span class="sxs-lookup"><span data-stu-id="a11a9-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="7d657-104">Metody</span><span class="sxs-lookup"><span data-stu-id="7d657-104">Methods</span></span>  
   
-|<span data-ttu-id="a11a9-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="a11a9-105">Method</span></span>|<span data-ttu-id="a11a9-106">Popis</span><span class="sxs-lookup"><span data-stu-id="a11a9-106">Description</span></span>|  
+|<span data-ttu-id="7d657-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="7d657-105">Method</span></span>|<span data-ttu-id="7d657-106">Popis</span><span class="sxs-lookup"><span data-stu-id="7d657-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="a11a9-107">Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="a11a9-107">Clone Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|<span data-ttu-id="a11a9-108">Vytvoří kopii bez podstruktury tohoto `IAssemblyEnum` objektu.</span><span class="sxs-lookup"><span data-stu-id="a11a9-108">Creates a shallow copy of this `IAssemblyEnum` object.</span></span>|  
-|[<span data-ttu-id="a11a9-109">GetNextAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="a11a9-109">GetNextAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|<span data-ttu-id="a11a9-110">Získá ukazatel na další `IAssemblyName` obsažené v tomto `IAssemblyEnum` objektu.</span><span class="sxs-lookup"><span data-stu-id="a11a9-110">Gets a pointer to the next `IAssemblyName` contained in this `IAssemblyEnum` object.</span></span>|  
-|[<span data-ttu-id="a11a9-111">Reset – metoda</span><span class="sxs-lookup"><span data-stu-id="a11a9-111">Reset Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|<span data-ttu-id="a11a9-112">To obnoví `IAssemblyEnum` objekt, který má počáteční pozici.</span><span class="sxs-lookup"><span data-stu-id="a11a9-112">Resets this `IAssemblyEnum` object to its starting position.</span></span>|  
+|[<span data-ttu-id="7d657-107">Clone – metoda</span><span class="sxs-lookup"><span data-stu-id="7d657-107">Clone Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-clone-method.md)|<span data-ttu-id="7d657-108">Vytvoří Mělkou kopii to `IAssemblyEnum` objektu.</span><span class="sxs-lookup"><span data-stu-id="7d657-108">Creates a shallow copy of this `IAssemblyEnum` object.</span></span>|  
+|[<span data-ttu-id="7d657-109">GetNextAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="7d657-109">GetNextAssembly Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-getnextassembly-method.md)|<span data-ttu-id="7d657-110">Získá ukazatel na další `IAssemblyName` obsažené v tomto `IAssemblyEnum` objektu.</span><span class="sxs-lookup"><span data-stu-id="7d657-110">Gets a pointer to the next `IAssemblyName` contained in this `IAssemblyEnum` object.</span></span>|  
+|[<span data-ttu-id="7d657-111">Reset – metoda</span><span class="sxs-lookup"><span data-stu-id="7d657-111">Reset Method</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-reset-method.md)|<span data-ttu-id="7d657-112">To obnoví `IAssemblyEnum` objektu na jeho výchozí pozici.</span><span class="sxs-lookup"><span data-stu-id="7d657-112">Resets this `IAssemblyEnum` object to its starting position.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="a11a9-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a11a9-113">Requirements</span></span>  
- <span data-ttu-id="a11a9-114">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a11a9-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7d657-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7d657-113">Requirements</span></span>  
+ <span data-ttu-id="7d657-114">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7d657-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a11a9-115">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="a11a9-115">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="7d657-115">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="7d657-115">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="a11a9-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a11a9-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="7d657-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7d657-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a11a9-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="a11a9-117">See Also</span></span>  
- [<span data-ttu-id="a11a9-118">Rozhraní pro fúze</span><span class="sxs-lookup"><span data-stu-id="a11a9-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
- [<span data-ttu-id="a11a9-119">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a11a9-119">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="7d657-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d657-117">See also</span></span>
+- [<span data-ttu-id="7d657-118">Rozhraní pro fúze</span><span class="sxs-lookup"><span data-stu-id="7d657-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [<span data-ttu-id="7d657-119">IAssemblyName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7d657-119">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
