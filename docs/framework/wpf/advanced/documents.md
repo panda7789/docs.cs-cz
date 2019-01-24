@@ -6,26 +6,26 @@ f1_keywords:
 helpviewer_keywords:
 - documents [WPF], features for
 ms.assetid: 7bf37ccb-5d09-4eae-9661-929582aeb259
-ms.openlocfilehash: 145c28a2f36b2d53487004af214f3c6048f0687e
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 6dba276e88f4c3dd475e3d79de43a9fca7a35206
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49415201"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546972"
 ---
-# <a name="documents"></a><span data-ttu-id="002cb-102">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="002cb-102">Documents</span></span>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="002cb-103">Poskytuje všestranné sadu součásti, které umožní vývojářům vytvářet aplikace s dokumentu pokročilé funkce a vylepšení čtení prostředí.</span><span class="sxs-lookup"><span data-stu-id="002cb-103">provides a versatile set of components that enable developers to build applications with advanced document features and an improved reading experience.</span></span> <span data-ttu-id="002cb-104">Kromě poznat široké možnosti a kvality [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje zjednodušenou správu služby pro balení dokumentů, zabezpečení a úložiště.</span><span class="sxs-lookup"><span data-stu-id="002cb-104">In addition to enhanced capabilities and quality, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] also provides simplified management services for document packaging, security, and storage.</span></span>  
+# <a name="documents"></a><span data-ttu-id="09dd8-102">Dokumenty</span><span class="sxs-lookup"><span data-stu-id="09dd8-102">Documents</span></span>
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="09dd8-103">Poskytuje všestranné sadu součásti, které umožní vývojářům vytvářet aplikace s dokumentu pokročilé funkce a vylepšení čtení prostředí.</span><span class="sxs-lookup"><span data-stu-id="09dd8-103">provides a versatile set of components that enable developers to build applications with advanced document features and an improved reading experience.</span></span> <span data-ttu-id="09dd8-104">Kromě poznat široké možnosti a kvality [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] také poskytuje zjednodušenou správu služby pro balení dokumentů, zabezpečení a úložiště.</span><span class="sxs-lookup"><span data-stu-id="09dd8-104">In addition to enhanced capabilities and quality, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] also provides simplified management services for document packaging, security, and storage.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="002cb-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="002cb-105">In This Section</span></span>  
- [<span data-ttu-id="002cb-106">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="002cb-106">Documents in WPF</span></span>](documents-in-wpf.md)  
- [<span data-ttu-id="002cb-107">Serializace a úložiště dokumentů</span><span class="sxs-lookup"><span data-stu-id="002cb-107">Document Serialization and Storage</span></span>](document-serialization-and-storage.md)  
- [<span data-ttu-id="002cb-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="002cb-108">Annotations</span></span>](annotations.md)  
- [<span data-ttu-id="002cb-109">Obsah toku</span><span class="sxs-lookup"><span data-stu-id="002cb-109">Flow Content</span></span>](flow-content.md)  
- [<span data-ttu-id="002cb-110">Typografie</span><span class="sxs-lookup"><span data-stu-id="002cb-110">Typography</span></span>](typography.md)  
- [<span data-ttu-id="002cb-111">Tisk a správa systému tisku</span><span class="sxs-lookup"><span data-stu-id="002cb-111">Printing and Print System Management</span></span>](printing-and-print-system-management.md)  
+## <a name="in-this-section"></a><span data-ttu-id="09dd8-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="09dd8-105">In This Section</span></span>  
+ [<span data-ttu-id="09dd8-106">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="09dd8-106">Documents in WPF</span></span>](documents-in-wpf.md)  
+ [<span data-ttu-id="09dd8-107">Serializace a úložiště dokumentů</span><span class="sxs-lookup"><span data-stu-id="09dd8-107">Document Serialization and Storage</span></span>](document-serialization-and-storage.md)  
+ [<span data-ttu-id="09dd8-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="09dd8-108">Annotations</span></span>](annotations.md)  
+ [<span data-ttu-id="09dd8-109">Obsah toku</span><span class="sxs-lookup"><span data-stu-id="09dd8-109">Flow Content</span></span>](flow-content.md)  
+ [<span data-ttu-id="09dd8-110">Typografie</span><span class="sxs-lookup"><span data-stu-id="09dd8-110">Typography</span></span>](typography.md)  
+ [<span data-ttu-id="09dd8-111">Tisk a správa systému tisku</span><span class="sxs-lookup"><span data-stu-id="09dd8-111">Printing and Print System Management</span></span>](printing-and-print-system-management.md)  
   
-## <a name="see-also"></a><span data-ttu-id="002cb-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="002cb-112">See Also</span></span>  
- <xref:System.Windows.Controls.DocumentViewer>  
- <xref:System.Windows.Documents.FlowDocument>  
- <xref:System.Windows.Xps>  
- <span data-ttu-id="002cb-113">[isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="002cb-113">[isXPS.exe (isXPS Conformance Tool)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))</span></span>
+## <a name="see-also"></a><span data-ttu-id="09dd8-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="09dd8-112">See also</span></span>
+- <xref:System.Windows.Controls.DocumentViewer>
+- <xref:System.Windows.Documents.FlowDocument>
+- <xref:System.Windows.Xps>
+- <span data-ttu-id="09dd8-113">[isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="09dd8-113">[isXPS.exe (isXPS Conformance Tool)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))</span></span>

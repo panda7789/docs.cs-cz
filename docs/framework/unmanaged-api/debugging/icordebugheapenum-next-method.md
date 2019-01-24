@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93c430bb7e4d14c5f6f4e0563adfd387a1900ee6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d16f1c7d4b56da93b2f2f0a91d889bde72ec94f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415734"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530126"
 ---
-# <a name="icordebugheapenumnext-method"></a><span data-ttu-id="2a2b1-102">ICorDebugHeapEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="2a2b1-102">ICorDebugHeapEnum::Next Method</span></span>
-<span data-ttu-id="2a2b1-103">Získá zadaný počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které obsahují informace o objektech v haldě spravované.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-103">Gets the specified number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances that contain information about objects on the managed heap.</span></span>  
+# <a name="icordebugheapenumnext-method"></a><span data-ttu-id="0e537-102">ICorDebugHeapEnum::Next – metoda</span><span class="sxs-lookup"><span data-stu-id="0e537-102">ICorDebugHeapEnum::Next Method</span></span>
+<span data-ttu-id="0e537-103">Získá zadaný počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instancí, které obsahují informace o objektech na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="0e537-103">Gets the specified number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances that contain information about objects on the managed heap.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2a2b1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2a2b1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0e537-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0e537-104">Syntax</span></span>  
   
 ```  
 HRESULT Next(  
@@ -36,28 +36,28 @@ HRESULT Next(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2a2b1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2a2b1-105">Parameters</span></span>  
- <span data-ttu-id="2a2b1-106">celt</span><span class="sxs-lookup"><span data-stu-id="2a2b1-106">celt</span></span>  
- <span data-ttu-id="2a2b1-107">[v] Počet objektů, které mají být načteny.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-107">[in] The number of objects to be retrieved.</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="0e537-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0e537-105">Parameters</span></span>  
+ <span data-ttu-id="0e537-106">celt</span><span class="sxs-lookup"><span data-stu-id="0e537-106">celt</span></span>  
+ <span data-ttu-id="0e537-107">[in] Počet objektů, které se mají načíst.</span><span class="sxs-lookup"><span data-stu-id="0e537-107">[in] The number of objects to be retrieved.</span></span>  
   
- <span data-ttu-id="2a2b1-108">– objekty</span><span class="sxs-lookup"><span data-stu-id="2a2b1-108">objects</span></span>  
- <span data-ttu-id="2a2b1-109">[out] Ukazatele, každý z nich odkazuje na pole [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekt, který obsahuje informace o objekt na spravovaná halda.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-109">[out] An array of pointers, each of which points to a [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) object that provides information about an object on the managed heap.</span></span>  
+ <span data-ttu-id="0e537-108"> – objekty</span><span class="sxs-lookup"><span data-stu-id="0e537-108">objects</span></span>  
+ <span data-ttu-id="0e537-109">[out] Pole ukazatelů, každý z nich odkazuje [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekt, který poskytuje informace o objektu na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="0e537-109">[out] An array of pointers, each of which points to a [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) object that provides information about an object on the managed heap.</span></span>  
   
- <span data-ttu-id="2a2b1-110">pceltFetched</span><span class="sxs-lookup"><span data-stu-id="2a2b1-110">pceltFetched</span></span>  
- <span data-ttu-id="2a2b1-111">[out] Ukazatel na počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objekty ve skutečnosti, vrátí se v `objects`.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-111">[out] A pointer to the number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objects actually returned in `objects`.</span></span> <span data-ttu-id="2a2b1-112">Tato hodnota může být `null` Pokud `celt` je 1.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-112">This value may be `null` if `celt` is 1.</span></span>  
+ <span data-ttu-id="0e537-110">pceltFetched</span><span class="sxs-lookup"><span data-stu-id="0e537-110">pceltFetched</span></span>  
+ <span data-ttu-id="0e537-111">[out] Ukazatel na počet [cor_heapobject –](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objektů skutečně vrácených v `objects`.</span><span class="sxs-lookup"><span data-stu-id="0e537-111">[out] A pointer to the number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) objects actually returned in `objects`.</span></span> <span data-ttu-id="0e537-112">Tato hodnota může být `null` Pokud `celt` 1.</span><span class="sxs-lookup"><span data-stu-id="0e537-112">This value may be `null` if `celt` is 1.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2a2b1-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2a2b1-113">Remarks</span></span>  
- <span data-ttu-id="2a2b1-114">`COR_HEAPOBJECT.type` Pole je identifikátor vnořené rozhraní modelu COM počítá odkaz.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-114">The `COR_HEAPOBJECT.type` field is the identifier of a nested reference-counted COM interface.</span></span> <span data-ttu-id="2a2b1-115">Tento odkaz musí být vydán volající `ICorDebugHeapEnum::Next`.</span><span class="sxs-lookup"><span data-stu-id="2a2b1-115">This reference must be released by the caller of `ICorDebugHeapEnum::Next`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="0e537-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0e537-113">Remarks</span></span>  
+ <span data-ttu-id="0e537-114">`COR_HEAPOBJECT.type` Pole je identifikátor vnořené rozhraní modelu COM počítaného odkazy.</span><span class="sxs-lookup"><span data-stu-id="0e537-114">The `COR_HEAPOBJECT.type` field is the identifier of a nested reference-counted COM interface.</span></span> <span data-ttu-id="0e537-115">Tento odkaz musí být vydán volající `ICorDebugHeapEnum::Next`.</span><span class="sxs-lookup"><span data-stu-id="0e537-115">This reference must be released by the caller of `ICorDebugHeapEnum::Next`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2a2b1-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2a2b1-116">Requirements</span></span>  
- <span data-ttu-id="2a2b1-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2a2b1-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0e537-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0e537-116">Requirements</span></span>  
+ <span data-ttu-id="0e537-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0e537-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2a2b1-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="2a2b1-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="0e537-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="0e537-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="2a2b1-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="2a2b1-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="0e537-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0e537-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="2a2b1-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2a2b1-120">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="0e537-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0e537-120">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2a2b1-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="2a2b1-121">See Also</span></span>  
- [<span data-ttu-id="2a2b1-122">ICorDebugHeapEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2a2b1-122">ICorDebugHeapEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
- [<span data-ttu-id="2a2b1-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="2a2b1-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="0e537-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0e537-121">See also</span></span>
+- [<span data-ttu-id="0e537-122">ICorDebugHeapEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0e537-122">ICorDebugHeapEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)
+- [<span data-ttu-id="0e537-123">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="0e537-123">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -6,22 +6,22 @@ f1_keywords:
 helpviewer_keywords:
 - fonts [WPF]
 ms.assetid: b4a97c97-7f88-4a89-b1d1-cf2c0d087955
-ms.openlocfilehash: dea203ab62ae751cf59eb299db9ea39d44f8e26d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aefae32182a7bc808ac72f053c233305da32032e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543215"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543799"
 ---
-# <a name="fonts-how-to-topics"></a><span data-ttu-id="5ed25-102">Postupy: Témata písem</span><span class="sxs-lookup"><span data-stu-id="5ed25-102">Fonts How-to Topics</span></span>
-<span data-ttu-id="5ed25-103">Témata v této části ukazují, jak používat funkce písma součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="5ed25-103">The topics in this section demonstrate how to use the font features included with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
+# <a name="fonts-how-to-topics"></a><span data-ttu-id="17e3d-102">Postupy: Témata písem</span><span class="sxs-lookup"><span data-stu-id="17e3d-102">Fonts How-to Topics</span></span>
+<span data-ttu-id="17e3d-103">Témata v této části ukazují, jak používat funkce písma, které jsou součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span><span class="sxs-lookup"><span data-stu-id="17e3d-103">The topics in this section demonstrate how to use the font features included with [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5ed25-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5ed25-104">In This Section</span></span>  
- [<span data-ttu-id="5ed25-105">Výčet systémových písem</span><span class="sxs-lookup"><span data-stu-id="5ed25-105">Enumerate System Fonts</span></span>](../../../../docs/framework/wpf/advanced/how-to-enumerate-system-fonts.md)  
- [<span data-ttu-id="5ed25-106">Použití třídy FontSizeConverter</span><span class="sxs-lookup"><span data-stu-id="5ed25-106">Use the FontSizeConverter Class</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-the-fontsizeconverter-class.md)  
+## <a name="in-this-section"></a><span data-ttu-id="17e3d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="17e3d-104">In This Section</span></span>  
+ [<span data-ttu-id="17e3d-105">Výčet systémových písem</span><span class="sxs-lookup"><span data-stu-id="17e3d-105">Enumerate System Fonts</span></span>](../../../../docs/framework/wpf/advanced/how-to-enumerate-system-fonts.md)  
+ [<span data-ttu-id="17e3d-106">Použití třídy FontSizeConverter</span><span class="sxs-lookup"><span data-stu-id="17e3d-106">Use the FontSizeConverter Class</span></span>](../../../../docs/framework/wpf/advanced/how-to-use-the-fontsizeconverter-class.md)  
   
-## <a name="see-also"></a><span data-ttu-id="5ed25-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="5ed25-107">See Also</span></span>  
- <xref:System.Windows.FontStyle>  
- <xref:System.Windows.SystemFonts>  
- [<span data-ttu-id="5ed25-108">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="5ed25-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
- [<span data-ttu-id="5ed25-109">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="5ed25-109">Typography in WPF</span></span>](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)
+## <a name="see-also"></a><span data-ttu-id="17e3d-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="17e3d-107">See also</span></span>
+- <xref:System.Windows.FontStyle>
+- <xref:System.Windows.SystemFonts>
+- [<span data-ttu-id="17e3d-108">Dokumenty v platformě WPF</span><span class="sxs-lookup"><span data-stu-id="17e3d-108">Documents in WPF</span></span>](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)
+- [<span data-ttu-id="17e3d-109">Typografie v rozhraní WPF</span><span class="sxs-lookup"><span data-stu-id="17e3d-109">Typography in WPF</span></span>](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)

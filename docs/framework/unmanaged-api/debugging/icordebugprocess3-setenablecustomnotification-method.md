@@ -17,45 +17,45 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a84061cff7cc5dbdeba1e0e66396e04a8f345cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7501a8a0f8368049c87b3c90e1e707e12773a853
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54531639"
 ---
-# <a name="icordebugprocess3setenablecustomnotification-method"></a><span data-ttu-id="30530-102">ICorDebugProcess3::SetEnableCustomNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="30530-102">ICorDebugProcess3::SetEnableCustomNotification Method</span></span>
-<span data-ttu-id="30530-103">Povolí nebo zakáže oznámení vlastní ladicí program zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="30530-103">Enables and disables custom debugger notifications of the specified type.</span></span>  
+# <a name="icordebugprocess3setenablecustomnotification-method"></a><span data-ttu-id="bacc6-102">ICorDebugProcess3::SetEnableCustomNotification – metoda</span><span class="sxs-lookup"><span data-stu-id="bacc6-102">ICorDebugProcess3::SetEnableCustomNotification Method</span></span>
+<span data-ttu-id="bacc6-103">Povolí nebo zakáže vlastní oznámení ladicího programu zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="bacc6-103">Enables and disables custom debugger notifications of the specified type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="30530-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="30530-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bacc6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bacc6-104">Syntax</span></span>  
   
 ```  
 HRESULT SetEnableCustomNotification(ICorDebugClass * pClass,  
                                     BOOL fEnable);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="30530-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="30530-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="bacc6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bacc6-105">Parameters</span></span>  
  `pClass`  
- <span data-ttu-id="30530-106">[v] Typ, který určuje vlastní ladicí program oznámení.</span><span class="sxs-lookup"><span data-stu-id="30530-106">[in] The type that specifies custom debugger notifications.</span></span>  
+ <span data-ttu-id="bacc6-106">[in] Typ, který určuje vlastní oznámení ladicího programu.</span><span class="sxs-lookup"><span data-stu-id="bacc6-106">[in] The type that specifies custom debugger notifications.</span></span>  
   
  `fEnable`  
- <span data-ttu-id="30530-107">[v] `true` povolit vlastní ladicí program oznámení; `false` zakázat oznámení.</span><span class="sxs-lookup"><span data-stu-id="30530-107">[in] `true` to enable custom debugger notifications; `false` to disable notifications.</span></span> <span data-ttu-id="30530-108">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="30530-108">The default value is `false`.</span></span>  
+ <span data-ttu-id="bacc6-107">[in] `true` povolit vlastní oznámení ladicího programu; `false` zakázat oznámení.</span><span class="sxs-lookup"><span data-stu-id="bacc6-107">[in] `true` to enable custom debugger notifications; `false` to disable notifications.</span></span> <span data-ttu-id="bacc6-108">Výchozí hodnota je `false`.</span><span class="sxs-lookup"><span data-stu-id="bacc6-108">The default value is `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="30530-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="30530-109">Remarks</span></span>  
- <span data-ttu-id="30530-110">Když `fEnable` je nastaven na `true`, volá, aby se <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> metoda aktivační událost [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="30530-110">When `fEnable` is set to `true`, calls to the <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> method trigger an [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) callback.</span></span> <span data-ttu-id="30530-111">Oznámení jsou zakázané ve výchozím nastavení; ladicí program proto musíte zadat všechny typy oznámení, že zná a chce zpracovat.</span><span class="sxs-lookup"><span data-stu-id="30530-111">Notifications are disabled by default; therefore, the debugger must specify any notification types it knows about and wants to handle.</span></span> <span data-ttu-id="30530-112">Protože [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) třída má obor doménu aplikace, musí volat ladicího programu `SetEnableCustomNotification` pro každou doménu aplikace v procesu, pokud chcete dostávat oznámení napříč celý proces.</span><span class="sxs-lookup"><span data-stu-id="30530-112">Because the [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) class is scoped by application domain, the debugger must call `SetEnableCustomNotification` for every application domain in the process if it wants to receive the notification across the entire process.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bacc6-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bacc6-109">Remarks</span></span>  
+ <span data-ttu-id="bacc6-110">Při `fEnable` je nastavena na `true`, volání <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> metoda triggeru [icordebugmanagedcallback3::customnotification –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bacc6-110">When `fEnable` is set to `true`, calls to the <xref:System.Diagnostics.Debugger.NotifyOfCrossThreadDependency%2A?displayProperty=nameWithType> method trigger an [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) callback.</span></span> <span data-ttu-id="bacc6-111">Oznámení jsou ve výchozím nastavení; zakázána. ladicí program, proto musíte zadat všechny typy upozornění ví o a chce zpracovat.</span><span class="sxs-lookup"><span data-stu-id="bacc6-111">Notifications are disabled by default; therefore, the debugger must specify any notification types it knows about and wants to handle.</span></span> <span data-ttu-id="bacc6-112">Protože [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) třídy je omezené podle domény aplikace, ladicí program musí volat `SetEnableCustomNotification` pro každou doménu aplikace v procesu, pokud chce, abyste dostávali oznámení napříč celým procesem.</span><span class="sxs-lookup"><span data-stu-id="bacc6-112">Because the [ICorDebugClass](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) class is scoped by application domain, the debugger must call `SetEnableCustomNotification` for every application domain in the process if it wants to receive the notification across the entire process.</span></span>  
   
- <span data-ttu-id="30530-113">Od verze [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], jen podporované oznámení je závislost mezi vlákny oznámení.</span><span class="sxs-lookup"><span data-stu-id="30530-113">Starting with the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], the only supported notification is a cross-thread dependency notification.</span></span>  
+ <span data-ttu-id="bacc6-113">Počínaje [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], jen podporované oznámení, je oznámení závislostí mezi vlákny.</span><span class="sxs-lookup"><span data-stu-id="bacc6-113">Starting with the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], the only supported notification is a cross-thread dependency notification.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="30530-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="30530-114">Requirements</span></span>  
- <span data-ttu-id="30530-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="30530-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bacc6-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bacc6-114">Requirements</span></span>  
+ <span data-ttu-id="bacc6-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bacc6-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="30530-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="30530-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bacc6-116">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bacc6-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="30530-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="30530-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bacc6-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bacc6-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="30530-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="30530-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="bacc6-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bacc6-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="30530-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="30530-119">See Also</span></span>  
- [<span data-ttu-id="30530-120">ICorDebugProcess3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="30530-120">ICorDebugProcess3 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md)  
- [<span data-ttu-id="30530-121">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="30530-121">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [<span data-ttu-id="30530-122">Ladění</span><span class="sxs-lookup"><span data-stu-id="30530-122">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a><span data-ttu-id="bacc6-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bacc6-119">See also</span></span>
+- [<span data-ttu-id="bacc6-120">ICorDebugProcess3 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bacc6-120">ICorDebugProcess3 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md)
+- [<span data-ttu-id="bacc6-121">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="bacc6-121">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="bacc6-122">Ladění</span><span class="sxs-lookup"><span data-stu-id="bacc6-122">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)

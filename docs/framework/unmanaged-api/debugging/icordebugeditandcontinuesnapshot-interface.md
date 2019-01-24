@@ -1,5 +1,5 @@
 ---
-title: Icordebugeditandcontinuesnapshot – Interface1
+title: ICorDebugEditAndContinueSnapshot Interface1
 ms.date: 03/30/2017
 api_name:
 - ICorDebugEditAndContinueSnapshot
@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27bec505df1db4ccbba862e81d9407d11245d449
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: adb06ec558f2d5f823d2040422a82e8b20d926a8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412370"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537891"
 ---
-# <a name="icordebugeditandcontinuesnapshot-interface1"></a><span data-ttu-id="f7a92-102">Icordebugeditandcontinuesnapshot – Interface1</span><span class="sxs-lookup"><span data-stu-id="f7a92-102">ICorDebugEditAndContinueSnapshot Interface1</span></span>
-<span data-ttu-id="f7a92-103">`ICorDebugEditAndContinueSnapshot` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="f7a92-103">`ICorDebugEditAndContinueSnapshot` is obsolete.</span></span> <span data-ttu-id="f7a92-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="f7a92-104">Do not use this interface.</span></span>  
+# <a name="icordebugeditandcontinuesnapshot-interface1"></a><span data-ttu-id="74744-102">ICorDebugEditAndContinueSnapshot Interface1</span><span class="sxs-lookup"><span data-stu-id="74744-102">ICorDebugEditAndContinueSnapshot Interface1</span></span>
+<span data-ttu-id="74744-103">`ICorDebugEditAndContinueSnapshot` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="74744-103">`ICorDebugEditAndContinueSnapshot` is obsolete.</span></span> <span data-ttu-id="74744-104">Toto rozhraní nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="74744-104">Do not use this interface.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f7a92-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="f7a92-105">See Also</span></span>  
- [<span data-ttu-id="f7a92-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="f7a92-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="74744-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="74744-105">See also</span></span>
+- [<span data-ttu-id="74744-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="74744-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

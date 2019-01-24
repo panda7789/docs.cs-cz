@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4c5d3d1b868849d17b2068eecfcfeea0f1e598f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af4e9124140c2b311fb2c10800200f5d4d8dc679
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54545761"
 ---
-# <a name="isymunmanagedbindergetreaderfromstream-method"></a><span data-ttu-id="99a3b-102">ISymUnmanagedBinder::GetReaderFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="99a3b-102">ISymUnmanagedBinder::GetReaderFromStream Method</span></span>
-<span data-ttu-id="99a3b-103">Zadaný datový proud, který obsahuje úložiště symbolů a metadat rozhraní, vrátí správné [ISymUnmanagedReader](isymunmanagedreader-interface.md) struktura, která budou číst ladění symboly z obchodu daný symbol.</span><span class="sxs-lookup"><span data-stu-id="99a3b-103">Given a metadata interface and a stream that contains the symbol store, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols from the given symbol store.</span></span>  
+# <a name="isymunmanagedbindergetreaderfromstream-method"></a><span data-ttu-id="9b673-102">ISymUnmanagedBinder::GetReaderFromStream – metoda</span><span class="sxs-lookup"><span data-stu-id="9b673-102">ISymUnmanagedBinder::GetReaderFromStream Method</span></span>
+<span data-ttu-id="9b673-103">Rozhraní metadat a datový proud, který obsahuje úložiště symbolů, vrátí správné [isymunmanagedreader –](isymunmanagedreader-interface.md) struktura, která bude číst ladění symboly z úložiště daného symbolu.</span><span class="sxs-lookup"><span data-stu-id="9b673-103">Given a metadata interface and a stream that contains the symbol store, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols from the given symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="99a3b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="99a3b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b673-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b673-104">Syntax</span></span>  
   
 ```  
 HRESULT GetReaderFromStream(  
@@ -36,21 +36,21 @@ HRESULT GetReaderFromStream(
     [out,retval] ISymUnmanagedReader **pRetVal);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="99a3b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="99a3b-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="9b673-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9b673-105">Parameters</span></span>  
  `importer`  
- <span data-ttu-id="99a3b-106">[v] Ukazatel rozhraní import metadat.</span><span class="sxs-lookup"><span data-stu-id="99a3b-106">[in] A pointer to the metadata import interface.</span></span>  
+ <span data-ttu-id="9b673-106">[in] Ukazatel na rozhraní import metadat.</span><span class="sxs-lookup"><span data-stu-id="9b673-106">[in] A pointer to the metadata import interface.</span></span>  
   
  `pstream`  
- <span data-ttu-id="99a3b-107">[v] Ukazatel na datový proud, který obsahuje úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="99a3b-107">[in] A pointer to the stream that contains the symbol store.</span></span>  
+ <span data-ttu-id="9b673-107">[in] Ukazatel na datový proud, který obsahuje úložiště symbolů.</span><span class="sxs-lookup"><span data-stu-id="9b673-107">[in] A pointer to the stream that contains the symbol store.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="99a3b-108">[out] Ukazatele, který je nastavený s vráceným [ISymUnmanagedReader](isymunmanagedreader-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="99a3b-108">[out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.</span></span>  
+ <span data-ttu-id="9b673-108">[out] Ukazatel, který je nastaven na vrácenou [isymunmanagedreader –](isymunmanagedreader-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="9b673-108">[out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="99a3b-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="99a3b-109">Return Value</span></span>  
- <span data-ttu-id="99a3b-110">S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="99a3b-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="9b673-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9b673-109">Return Value</span></span>  
+ <span data-ttu-id="9b673-110">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="9b673-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="99a3b-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="99a3b-111">Requirements</span></span>  
- <span data-ttu-id="99a3b-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="99a3b-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b673-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9b673-111">Requirements</span></span>  
+ <span data-ttu-id="9b673-112">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9b673-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="99a3b-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="99a3b-113">See Also</span></span>  
- [<span data-ttu-id="99a3b-114">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="99a3b-114">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9b673-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b673-113">See also</span></span>
+- [<span data-ttu-id="9b673-114">ISymUnmanagedBinder – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b673-114">ISymUnmanagedBinder Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)
