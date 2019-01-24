@@ -1,5 +1,5 @@
 ---
-title: '&lt;configSections&gt; element pro &lt;konfigurace&gt;'
+title: '&lt;configSections&gt; – element pro &lt;konfigurace&gt;'
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections
@@ -9,23 +9,23 @@ helpviewer_keywords:
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 33406a67389cdf857fa5030e20d8a4dec7662741
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: f46c84a1674a3e9352d0a4ccda23d44e650a70ed
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752075"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629485"
 ---
-# <a name="configsections-element-for-configuration"></a>\<configSections > elementu pro \<konfigurace >
+# <a name="configsections-element-for-configuration"></a>\<configSections > – element pro \<configuration >
 
 Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<configSections >**
+&nbsp;&nbsp;**\<configSections>**
 
 ## <a name="attributes"></a>Atributy
 
-Žádné
+Žádná
 
 ## <a name="parent-element"></a>Nadřazený element
 
@@ -37,18 +37,18 @@ Obsahuje konfigurační oddíl a deklarace oboru názvů.
 
 |     | Popis |
 | --- | ----------- |
-| [**\<část >**](~/docs/framework/configure-apps/file-schema/section-element.md) | Obsahuje deklaraci konfigurační oddíl. |
-| [**\<sectionGroup >**](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro konfigurační oddíly. |
-| [**\<Odebrat >**](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Odstraní předdefinované části nebo skupinu oddílů. |
-| [**\<Clear >**](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupiny oddílů. |
+| [**\<část >**](~/docs/framework/configure-apps/file-schema/section-element.md) | Obsahuje deklarace oddíl konfigurace. |
+| [**\<sectionGroup>**](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Definuje obor názvů pro oddíly konfigurace. |
+| [**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Odstraní předdefinované oddílu nebo skupiny oddílů. |
+| [**\<Vymazat >**](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Vymaže všechny dříve definované oddíly a skupin oddílů. |
 
 ## <a name="remarks"></a>Poznámky
 
-Pokud tento element je v konfiguračním souboru, musí být první podřízený prvek  **\<konfigurace >** element.
+Pokud tento prvek je v konfiguračním souboru, musí být první podřízený element  **\<konfigurace >** elementu.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak definovat oddíl konfigurace a nastavení pro daný oddíl:
+Následující příklad ukazuje, jak definovat konfiguračního oddílu a určit nastavení pro daný oddíl:
 
 ```xml
 <configuration>
@@ -64,8 +64,8 @@ Následující příklad ukazuje, jak definovat oddíl konfigurace a nastavení 
 
 ## <a name="configuration-file"></a>Konfigurační soubor
 
-Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresář aplikace.
+Tento element lze použít v konfiguračním souboru aplikace, konfiguračním souboru počítače (*Machine.config*), a *Web.config* soubory, které nejsou na úrovni adresáře aplikace.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

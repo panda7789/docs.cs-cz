@@ -4,22 +4,22 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrArgument_InvalidValue
 ms.assetid: dc0be8ab-b2b7-40b7-8c94-7ac9eadb5e94
-ms.openlocfilehash: 5b82d7ccd028e581a49fe1a1bd70a4d356f61d63
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1351122c0036c9b3ca281b215449ada3223880a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33599073"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530837"
 ---
 # <a name="arguments-are-not-valid"></a>Argumenty nejsou platné
-Funkce nebo podprogramu jsou předávány argumenty, které nejsou platné.  
+Funkce nebo podprogram jsou předávány argumenty, které nejsou platné.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1.  Zkontrolujte argumenty, které mají zjistěte, proč jsou neplatné.  
+1.  Zkontrolujte argumenty, které mají-li zjistit, proč jsou neplatné.  
   
-2.  Pokud argumenty, které jsou zadány ve výpočtech, zkontrolujte hodnoty, které zpracovávají výpočty.  
+2.  Pokud argumenty jsou poskytována výpočty, zkontrolujte hodnoty, které zpracovávají výpočty.  
   
-## <a name="see-also"></a>Viz také  
- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  
- 
+## <a name="see-also"></a>Viz také:
+- [Předávání argumentů podle hodnoty a reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)
+

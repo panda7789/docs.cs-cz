@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Hodnoty data a času round-trip'
+title: 'Postupy: Hodnoty operace round-trip data a času'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,14 +14,14 @@ helpviewer_keywords:
 ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55b16d135449cad8ed489a8a3e21db326be0fae0
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 045423f0393ff363b94f4c0e4fe0324c061120d4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45668415"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628185"
 ---
-# <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
+# <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty operace round-trip data a času
 V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci jediný bod v čase. Toto téma ukazuje, jak uložit a obnovit <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnotu a hodnotu data a času s časem zóna informace tak, aby se obnovená hodnota identifikuje ve stejnou dobu jako uloženou hodnotu.  
   
 ### <a name="to-round-trip-a-datetime-value"></a>Operace round-trip pro hodnoty data a času  
@@ -101,6 +101,6 @@ V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci j
   
 ## <a name="see-also"></a>Viz také:
 
-- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)  
-- [Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)  
+- [Provádění operací formátování](../../../docs/standard/base-types/performing-formatting-operations.md)
+- [Volba mezi DateTime, DateTimeOffset, TimeSpan a TimeZoneInfo](../../../docs/standard/datetime/choosing-between-datetime.md)
 - [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)

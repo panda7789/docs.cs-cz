@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 83f3abb2c77461b74e388dcb421fac6c19a43655
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0793f3688f1f6ca66d92c5a22e158aa85e5470ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205054"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631669"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 
@@ -39,17 +39,17 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
   
 |Specifikátor formátu|Název|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
-|"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [vlastní specifikátor "0"](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00" fr-FR) -> 0,46|  
-|"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že se ve výsledném řetězci nezobrazí žádná číslice, je-li odpovídající číslice ve vstupním řetězci nevýznamné 0. Například 0003 ("###") -> 3.<br /><br /> Další informace: [vlastní specifikátor "#"](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#. ##", en US) ->.46<br /><br /> 0.45678 ("#. ##", fr-FR) -> 46|  
+|"0"|Zástupný symbol nula|Nahradí nulu odpovídající číslicí, pokud je dostupná. V opačném případě se nula zobrazí ve výsledném řetězci.<br /><br /> Další informace: [Vlastní specifikátor "0"](#Specifier0).|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00" fr-FR) -> 0,46|  
+|"#"|Zástupný symbol číslice|Nahradí znak "#" odpovídající číslicí, pokud je k dispozici. V opačném případě se ve výsledném řetězci nezobrazí žádná číslice.<br /><br /> Všimněte si, že se ve výsledném řetězci nezobrazí žádná číslice, je-li odpovídající číslice ve vstupním řetězci nevýznamné 0. Například 0003 ("###") -> 3.<br /><br /> Další informace: [Vlastní specifikátor "#"](#SpecifierD).|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#. ##", en US) ->.46<br /><br /> 0.45678 ("#. ##", fr-FR) -> 46|  
 |"."|Desetinná tečka|Určuje umístění oddělovače desetinných míst ve výsledném řetězci.<br /><br /> Další informace: ["." Vlastní specifikátor](#SpecifierPt).|0.45678 ("0,00" en US) -> 0.46<br /><br /> 0.45678 ("0,00" fr-FR) -> 0,46|  
-|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: ["," vlastní specifikátor](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 ("##, #", en US) -> 2 147 483 647<br /><br /> 2147483647 ("##, #", es-ES) -> 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 ("#, #," en US) -> 2,147<br /><br /> 2147483647 ("#, #", es-ES) -> 2.147|  
-|"%"|Zástupný znak procent|Vynásobí číslo 100 a vloží do výsledného řetězce symbol procenta podle jazykové verze.<br /><br /> Další informace: [vlastní specifikátor "%"](#SpecifierPct).|0.3697 ("% #0.00" en US) -> % 36.97<br /><br /> 0.3697 (el "#0.00 %",-GR) -> % 36,97<br /><br /> 0.3697 ("##.0 %","en US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el GR) -> 37,0 %|  
-|"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: [vlastní specifikátor "‰"](#SpecifierPerMille).|0.03697 ("#0.00‰" en US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36, 97‰|  
-|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: ["E" a "e" specifikátorů vlastního](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 1.504e + 03 -> ("0.0 ##e + 00")<br /><br /> 1.8901385E – 16 ("0.0e + 00") -> 1.9e-16|  
-|"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: ["\\" řídicí znak](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|  
-|"*řetězec*.<br /><br /> "*řetězec*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [literály znaků](#character-literals).|68 ("# ' degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|  
+|","|Oddělovač skupin a číselné měřítko|Slouží jako oddělovač skupin a specifikátor číselného měřítka. Jako oddělovač skupin vloží znak oddělovače skupiny podle jazykové verze mezi jednotlivé skupiny. Jako specifikátor měřítka rozdělí číslo po 1000 pro každou zadanou čárku.<br /><br /> Další informace: [Vlastní specifikátor ","](#SpecifierTh).|Specifikátor oddělovače skupin:<br /><br /> 2147483647 ("##, #", en US) -> 2 147 483 647<br /><br /> 2147483647 ("##, #", es-ES) -> 2.147.483.647<br /><br /> Specifikátor měřítka:<br /><br /> 2147483647 ("#, #," en US) -> 2,147<br /><br /> 2147483647 ("#, #", es-ES) -> 2.147|  
+|"%"|Zástupný znak procent|Vynásobí číslo 100 a vloží do výsledného řetězce symbol procenta podle jazykové verze.<br /><br /> Další informace: [Vlastní specifikátor "%"](#SpecifierPct).|0.3697 ("% #0.00" en US) -> % 36.97<br /><br /> 0.3697 (el "#0.00 %",-GR) -> % 36,97<br /><br /> 0.3697 ("##.0 %","en US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el GR) -> 37,0 %|  
+|"‰"|Zástupný symbol promile|Vynásobí číslo 1000 a vloží do výsledného řetězce symbol promile podle jazykové verze.<br /><br /> Další informace: [Vlastní specifikátor "‰"](#SpecifierPerMille).|0.03697 ("#0.00‰" en US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36, 97‰|  
+|"E0"<br /><br /> "E+0"<br /><br /> "E-0"<br /><br /> "e0"<br /><br /> "e+0"<br /><br /> "e-0"|Exponenciální zápis|Pokud následuje alespoň jedna 0 (nula), zformátuje výsledek pomocí exponenciálního zápisu. Velikost písmen "E" nebo "e" označuje velikost symbolu exponentu ve výsledném řetězci. Počet nul následujících znak "E" nebo "e" určuje minimální počet číslic v exponentu. Znaménko plus (+) označuje, že znak znaménka vždy předchází exponent. Znaménko mínus (-) označuje, že znak znaménka předchází pouze u záporných exponentů.<br /><br /> Další informace: [Vlastní specifikátory "E" a "e"](#SpecifierExponent).|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 1.504e + 03 -> ("0.0 ##e + 00")<br /><br /> 1.8901385E – 16 ("0.0e + 00") -> 1.9e-16|  
+|"\\"|Řídicí znak|Způsobí, že následující znak je interpretován jako literál, nikoli jako specifikátor vlastního formátu.<br /><br /> Další informace: ["\\" Řídicí znak](#SpecifierEscape).|987654 ("\\###00\\#") -> #987654#|  
+|"*řetězec*.<br /><br /> "*řetězec*"|Oddělovač řetězcového literálu|Označuje, že uzavřené znaky by měly být zkopírovány do výsledného řetězce beze změny.<br/><br/>Další informace: [Znakové literály](#character-literals).|68 ("# ' degrees'") -> 68 degrees<br /><br /> 68 ("#' degrees'") -> 68 degrees|  
 |;|Oddělovač oddílů|Definuje oddíly se zvláštními formátovacími řetězci pro kladná, záporná a nulová čísla.<br /><br /> Další informace: [";" Části oddělovač](#SectionSeparator).|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|  
-|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [literály znaků](#character-literals).|68 ("# °") -> 68 °|  
+|Ostatní|Všechny ostatní znaky|Znak je zkopírován do výsledného řetězce beze změny.<br/><br/>Další informace: [Znakové literály](#character-literals).|68 ("# °") -> 68 °|  
   
  V následujících částech jsou uvedeny podrobné informace o jednotlivých vlastních specifikátorech číselného formátu.  
 
@@ -109,11 +109,11 @@ Lze vytvořit vlastní číselný formátovací řetězec, který se skládá z 
 ## <a name="the--custom-specifier"></a>Vlastní specifikátor ""  
  Znak "," slouží jako oddělovač skupin a specifikátor číselného měřítka.  
   
--   Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné znaky pro číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.  
+-   Oddělovač skupin: Pokud je zadána jedna nebo více čárek mezi dva zástupné symboly číslice (0 nebo #), které formátují integrální číslice čísla, je znak oddělovače skupin vložen mezi každou číselnou skupinu do integrální části výstupu.  
   
      <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> a <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> vlastnostmi aktuálního <xref:System.Globalization.NumberFormatInfo> objekt určí znak použitý jako oddělovač číselných skupin a velikost každé skupiny čísel. Pokud je například pro formátování čísla 1000 použit řetězec "#,#" a invariantní jazyková verze, zobrazí se výstup "1,000".  
   
--   Specifikátor číselného měřítka: Pokud je zadána jedna nebo více čárek bezprostředně vlevo od explicitní nebo implicitní desetinné tečky, pak číslo, které má být formátováno, je vyděleno hodnotou 1000 pro každou tečku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".  
+-   Specifikátor číselného měřítka: Pokud jeden nebo více čárek zadávají bezprostředně vlevo od explicitní nebo implicitní desetinné čárky, číslo má být formátováno, je vyděleno hodnotou 1000 pro každou čárku. Pokud je pro formátování čísla 100 milionů použit například řetězec "0,," , je výsledná hodnota "100".  
   
  Můžete použít oddělovač skupin a specifikátory číselného měřítka ve stejném formátovacím řetězci. Pokud je pro formátování čísla jedna miliarda použit například řetězec "#,0,," a invariantní jazyková verze, zobrazí se výstup "1,000".  
   
@@ -266,8 +266,8 @@ Následující příklad používá oba přístupy k obsahovat vyhrazené znaky 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>  
-- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
-- [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)  
+- <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
+- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
+- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Postupy: Zarovnání čísla úvodními nulami](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
 - [Ukázka: Formátovací nástroj rozhraní .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

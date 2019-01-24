@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bea51eaf11bd9d73d5a68eb09795bd9f9f143f95
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 125c8ba03c4d1006535dd1e10cbd162b32fede4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214469"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54740980"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Postupy: Zápis znaků do řetězce
 Následující příklady kódu zápis znaků synchronního a asynchronního z pole znaků do řetězce.  
@@ -37,14 +37,14 @@ Následující příklady kódu zápis znaků synchronního a asynchronního z p
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.StringWriter>  
-- <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  
-- <xref:System.Text.StringBuilder>  
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
-- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)  
-- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
-- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
+- <xref:System.IO.StringWriter>
+- <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>
+- <xref:System.Text.StringBuilder>
+- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)
+- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)
+- [Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
+- [Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
+- [Postupy: Otevření a připojení k souboru protokolu](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
+- [Postupy: Čtení textu ze souboru](../../../docs/standard/io/how-to-read-text-from-a-file.md)
+- [Postupy: Zápis textu do souboru](../../../docs/standard/io/how-to-write-text-to-a-file.md)
 - [Postupy: Čtení znaků z řetězce](../../../docs/standard/io/how-to-read-characters-from-a-string.md)

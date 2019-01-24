@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9721d88c8ce138b19c98f113d9eb034c5e1c55dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dd48fae74665f079100b128990656f3a6d002d43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417687"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54586524"
 ---
 # <a name="icordebugmanagedcallbackcreatethread-method"></a>ICorDebugManagedCallback::CreateThread – metoda
-Upozorní ladicí program, že vlákno byla spuštěna spravovaného kódu.  
+Upozorní ladicí program, vlákno se zahájilo se spuštění spravovaného kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT CreateThread (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který představuje doménu aplikace, která obsahuje vlákno.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace, která obsahuje vlákna.  
   
  `thread`  
- [v] Ukazatel na ICorDebugThread objekt, který reprezentuje vlákno.  
+ [in] Ukazatel na objekt icordebugthread –, který představuje vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlákno bude umístěný na první pokynů spravovaného kódu a provést.  
+ Vlákno bude nastavený na první instrukce pro spravovaný kód má být proveden.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,5 +55,5 @@ HRESULT CreateThread (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)'
+title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 6560f853874f9b9a9aeb53bd0678540004fdfcc1
-ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
+ms.openlocfilehash: 0228d152539abe3bf0db5a8e5bf4581eaf957b31
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37070860"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54638818"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Postupy: vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)
 
-Tento příklad ukazuje postup slučovat data z různých zdrojů do sekvence nových typů.
+Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
 
 > [!NOTE]
-> Nemáte pokusí připojit k data v paměti nebo dat v systému souborů s daty, která je stále v databázi. Takové spojení mezi doménami přispět nedefinované výsledky z důvodu různé způsoby, ve kterém může být definovaná operace spojení pro dotazy na databázi a jiné typy zdrojů. Kromě toho existuje riziko, že takovou operaci může způsobit výjimku z důvodu nedostatku paměti Pokud dostatečně velká množství dat v databázi. K připojení dat z databáze k datům v paměti, první volání `ToList` nebo `ToArray` v databázi dotazu a potom proveďte spojení na vrácená kolekce.
+> Nedoporučujeme připojení dat v paměti nebo dat v systému souborů s daty, která je stále v databázi. Takové spojení mezi doménami může přinést nedefinované výsledky z důvodu různé způsoby, ve kterém mohou být definovány operace spojení pro databázové dotazy a jiné druhy zdrojů. Kromě toho existuje riziko, že tato operace může způsobit výjimku paměti, pokud je příliš velká množství dat v databázi. K připojení dat z databáze pro data v paměti, nejprve volat `ToList` nebo `ToArray` v databázi dotaz a pak provedením příkazu join na vrácené kolekci.
 
-## <a name="to-create-the-data-file"></a>K vytvoření datového souboru
+## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-- Zkopírujte soubory names.csv a scores.csv do složky projektu, jak je popsáno v [postupy: připojení k obsahu z odlišných typů souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
+- Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak používat typ s názvem `Student` k uložení sloučenými daty z dvě kolekce v paměti řetězců, které simulují data z tabulky ve formátu CSV. První kolekce řetězců reprezentuje student názvy a ID, a druhá kolekce reprezentuje ID student (ve sloupci první) a čtyři skóre zkoušku. ID je použít jako cizí klíč.
+Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených data ze dvou kolekcích v paměti řetězců, které simulují data z tabulky ve formátu .csv. První kolekce řetězců představuje jména studentů a ID, a druhá kolekce, kterou představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušku. ID je použít jako cizí klíč.
 
 ```vb
 Imports System.Collections.Generic
@@ -100,9 +100,9 @@ End Class
 ' The average score of Tucker Michael is 92
 ```
 
-V [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md) klauzuli inicializátoru objektu se používá k vytvoření instance každé nové `Student` objekt pomocí dat z těchto dvou zdrojů.
+V [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md) klauzule inicializátoru objektu se používá k vytvoření instance každé nové `Student` s použitím data ze dvou zdrojů.
 
-Pokud nemáte k ukládání výsledků dotazu, může být vhodnější než pojmenované typy anonymní typy. Pokud předáte mimo metodu, ve kterém se spustí dotaz výsledky dotazu jsou požadovány pojmenované typy. Následující příklad provede úlohu stejný jako předchozí příklad, ale místo pojmenované typy používá anonymní typy:
+Pokud nemáte k dispozici pro ukládání výsledků dotazu, může být vhodnější než pojmenované typy anonymních typů. Pokud předáte výsledky dotazu mimo metodu spuštění dotazu, je nutné pojmenovaných typů. Následující příklad provede stejné úkoly, jako předchozí příklad, ale místo pojmenované typy používá anonymní typy:
 
 ```vb
 ' Merge the data by using an anonymous type.
@@ -128,14 +128,14 @@ For Each s In queryNamesScores2
 Next
 ```
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
-Vytvoření a kompilace projektu, jehož cílem jednu z následujících možností:
+Vytvoření a kompilace projektu, který cílí na jednu z následujících možností:
 
-- Rozhraní .NET framework verze 3.5 s odkazem na System.Core.dll.
+- Rozhraní .NET framework verze 3.5 s odkazem na knihovnu System.Core.dll.
 - Rozhraní .NET framework verze 4.0 nebo vyšší.
-- .NET core verze 1.0 nebo novější.
+- Verze .NET core 1.0 nebo vyšší.
 
 ## <a name="see-also"></a>Viz také:
 
-[LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

@@ -15,26 +15,26 @@ helpviewer_keywords:
 - coordinate systems
 - transformations [Windows Forms], world
 ms.assetid: c61ff50a-eb1d-4e6c-83cd-f7e9764cfa9f
-ms.openlocfilehash: ff53942cb90721d5411f99b261f90366d039e151
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 783e258f64633a4ddf7f3bbad858d6633256b97e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529750"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590374"
 ---
 # <a name="types-of-coordinate-systems"></a>Typy souřadnicových systémů
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá tři souřadnice mezery: world, stránky a zařízení. Souřadnice World jsou použita k modelování konkrétní grafické world souřadnice a souřadnice, které můžete předat metody v rozhraní .NET Framework. Stránka souřadnice naleznete souřadnicový systém používán kreslicí plochy, jako jsou formuláře nebo ovládacího prvku. Souřadnice zařízení jsou souřadnice používané fyzického zařízení přitahuje, jako je obrazovky nebo list papíru. Pokud provedete volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v prostoru souřadnic world. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete nakreslení čáry na obrazovce, souřadnice předávat posloupnost transformace. Jeden transformace, názvem Světové transformace převede world souřadnice jiného a jiné transformace, názvem transformace stránky převede souřadnice stránky na zařízení souřadnice.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] používá tři souřadnicových prostorech: world, stránky a zařízení. Světové souřadnice jsou souřadnice používají k modelování zvláštního grafického světa a souřadnice, které můžete předat do metody v rozhraní .NET Framework. Souřadnice stránky najdete souřadnicový systém používá povrchem výkresu, jako je například formulář nebo ovládací prvek. Souřadnice zařízení jsou souřadnice použít fyzické zařízení, které je cílem vykreslování, jako je obrazovka nebo list papíru. Když nastavíte volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, body, které můžete předat <xref:System.Drawing.Graphics.DrawLine%2A> metoda –`(0, 0)` a `(160, 80)`– jsou v souřadnicového prostoru světa. Před [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] můžete na obrazovce nakreslí čáru, souřadnice předávání sekvence transformací. Jedna transformace, volá Světové transformace převede Světové souřadnice na souřadnice stránky, a jinou transformaci, volá transformace stránky převede souřadnice stránky na souřadnice zařízení.  
   
-## <a name="transforms-and-coordinate-systems"></a>Systémy souřadnic a transformace  
- Předpokládejme, že chcete pro práci s souřadnicový systém, který má původ v těle klientské oblasti místo levého horního rohu. Řekněme například, které chcete počátek 100 pixelů od levého okraje klientské oblasti a 50 pixelů z horní části oblasti klienta. Následující obrázek znázorňuje souřadnicový systém.  
+## <a name="transforms-and-coordinate-systems"></a>Transformace a souřadnicových systémů  
+ Předpokládejme, že budete chtít pracovat s souřadnicový systém, který má původ v těle klientské oblasti spíše než levém horním rohu. Řekněme například, že chcete, aby původu 100 pixelů od levého okraje oblasti klienta a 50 pixelů od horního okraje oblasti klienta. Následující obrázek znázorňuje souřadnicový systém.  
   
- ![Systém souřadnic](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art01.gif "AboutGdip05_art01")  
+ ![Coordinate System](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art01.gif "AboutGdip05_art01")  
   
- Pokud provedete volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, získání řádku vidět na následujícím obrázku.  
+ Když nastavíte volání `myGraphics.DrawLine(myPen, 0, 0, 160, 80)`, zobrazí se řádek je znázorněno na následujícím obrázku.  
   
- ![Systém souřadnic](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art02.gif "AboutGdip05_art02")  
+ ![Coordinate System](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art02.gif "AboutGdip05_art02")  
   
- Souřadnice z koncových bodů vaší čáry v tři souřadnice prostory jsou následující:  
+ Souřadnice z koncových bodů vaší řádku v tři souřadnicových prostorech jsou následující:  
   
 |||  
 |-|-|  
@@ -42,32 +42,32 @@ ms.locfileid: "33529750"
 |Stránka|(100, 50) na (260, 130)|  
 |Zařízení|(100, 50) na (260, 130)|  
   
- Upozorňujeme, že stránka souřadnicového prostoru má původ v levém horním rohu klientské oblasti; vždy to bude v případě. Všimněte si také, že Měrná jednotka je pixelech, a proto souřadnice zařízení jsou stejné jako souřadnice stránky. Pokud nastavíte Měrná jednotka služby něco jiného než pixelů (například palce), pak budou liší od souřadnice stránky souřadnice zařízení.  
+ Mějte na paměti, že má souřadnicového prostoru stránku původu v levém horním rohu oblasti klienta; to bude vždy probíhat případu. Všimněte si také, protože je jednotka měření je pixel, souřadnice zařízení jsou stejné jako souřadnice stránky. Pokud nastavíte měrnou jednotku na něco jiného než pixelů (například palce), bude se liší od souřadnice stránky souřadnice zařízení.  
   
- Světové transformace, která se mapuje na stránce souřadnice world souřadnice, trvá v <xref:System.Drawing.Graphics.Transform%2A> vlastnost <xref:System.Drawing.Graphics> třídy. V předchozím příkladu je Světové transformace 100 jednotky překladu ve směru osy x a 50 jednotky ve směru osy y. Následující příklad ilustruje Světové transformace <xref:System.Drawing.Graphics> objektu, který používá <xref:System.Drawing.Graphics> objekt kreslení čáry vidět na předchozím obrázku:  
+ Světové transformace, která mapuje Světové souřadnice na souřadnice stránky, se nachází v <xref:System.Drawing.Graphics.Transform%2A> vlastnost <xref:System.Drawing.Graphics> třídy. V předchozím příkladu je Světové transformace 100 jednotek překladu ve směru osy x a 50 jednotek ve směru osy y. Následující příklad nastaví Světové transformace <xref:System.Drawing.Graphics> objekt a potom použije <xref:System.Drawing.Graphics> objekt nakreslení čáry je vidět na předchozím obrázku:  
   
  [!code-csharp[System.Drawing.CoordinateSystems#31](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#31)]
  [!code-vb[System.Drawing.CoordinateSystems#31](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#31)]  
   
- Transformace stránky mapuje stránky souřadnice souřadnice zařízení. <xref:System.Drawing.Graphics> Třída poskytuje <xref:System.Drawing.Graphics.PageUnit%2A> a <xref:System.Drawing.Graphics.PageScale%2A> vlastnosti pro manipulaci s transformace stránky. <xref:System.Drawing.Graphics> Třída rovněž poskytuje dvě vlastnosti jen pro čtení, <xref:System.Drawing.Graphics.DpiX%2A> a <xref:System.Drawing.Graphics.DpiY%2A>, pro zkoumání vodorovného a svislého bodů na palec zobrazení zařízení.  
+ Transformace stránky mapuje na souřadnice zařízení souřadnice stránky. <xref:System.Drawing.Graphics> Třída poskytuje <xref:System.Drawing.Graphics.PageUnit%2A> a <xref:System.Drawing.Graphics.PageScale%2A> vlastnosti pro manipulaci s transformace stránky. <xref:System.Drawing.Graphics> Třída rovněž poskytuje dvě vlastnosti jen pro čtení, <xref:System.Drawing.Graphics.DpiX%2A> a <xref:System.Drawing.Graphics.DpiY%2A>, zkoumat vodorovného a svislého bodů na palec zobrazovacího zařízení.  
   
- Můžete použít <xref:System.Drawing.Graphics.PageUnit%2A> vlastnost <xref:System.Drawing.Graphics> třídy zadejte jednotku míry než pixelech.  
+ Můžete použít <xref:System.Drawing.Graphics.PageUnit%2A> vlastnost <xref:System.Drawing.Graphics> tak, aby určovala jednotka měření, než je pixel.  
   
 > [!NOTE]
 >  Nelze nastavit <xref:System.Drawing.Graphics.PageUnit%2A> vlastnost <xref:System.Drawing.GraphicsUnit.World>, protože to není fyzické jednotky a způsobí výjimku.  
   
- Následující příklad nevykresluje řádek ze (0, 0) na (2, 1), kde je bod (2, 1) je 2 palce vpravo a 1 palec dolů z bodu (0, 0):  
+ Následující příklad nakreslí čáru z (0, 0) na (2, 1), kde je bod (2, 1) 2 palce napravo a 1 palce dolů z bodu (0, 0):  
   
  [!code-csharp[System.Drawing.CoordinateSystems#32](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#32)]
  [!code-vb[System.Drawing.CoordinateSystems#32](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#32)]  
   
 > [!NOTE]
->  Pokud nezadáte šířku při vytvoření pera, bude v předchozím příkladu nakreslit čáru, která je jeden palec široké. Můžete zadat šířku pera v druhý argument <xref:System.Drawing.Pen> konstruktor:  
+>  Pokud nezadáte Šířka pera při konstrukci pera, bude v předchozím příkladu nakreslit čáru, která je jednu palec široké. Můžete určit šířku pera v druhý argument <xref:System.Drawing.Pen> konstruktor:  
   
  [!code-csharp[System.Drawing.CoordinateSystems#33](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#33)]
  [!code-vb[System.Drawing.CoordinateSystems#33](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#33)]  
   
- Pokud předpokládáme, že má zařízení zobrazení 96 bodů na palec ve vodorovném směru a 96 bodů na palec ve svislém směru, koncové body řádek v předchozím příkladu mají následující souřadnice do prostorů tři souřadnice:  
+ Pokud předpokládáme, že zařízení má 96 přichycováním k pixelům ve vodorovném směru a 96 přichycováním k pixelům ve svislém směru, koncové body čáry v předchozím příkladu mají tyto souřadnice v tři souřadnice mezery:  
   
 |||  
 |-|-|  
@@ -75,18 +75,18 @@ ms.locfileid: "33529750"
 |Stránka|(0, 0) na (2, 1)|  
 |Zařízení|(0, 0, do (192, 96)|  
   
- Upozorňujeme, že vzhledem k tomu počátek souřadnicového prostoru world v levém horním rohu klientské oblasti, souřadnice stránky jsou stejné jako souřadnice world.  
+ Všimněte si, že v levém horním rohu klientské oblasti je počátek souřadnicového prostoru světa, souřadnice stránky jsou stejné jako Světové souřadnice.  
   
- Můžete kombinovat world a stránka transformace k dosažení různé efekty. Předpokládejme například, kterou chcete použít palce jako měrná jednotka služby a chcete původ systému souřadnice 2 palce od levého okraje klientské oblasti a 1/2 palce z horní části oblasti klienta. Následující příklad ilustruje world a stránka transformace z <xref:System.Drawing.Graphics> objektu a poté nakreslí řádek ze (0, 0) na (2, 1):  
+ Můžete kombinovat transformace světa a stránky k dosažení různé účinky. Předpokládejme například, kterou chcete použít jako jednotka měření palců a chcete počátek souřadnic systému 2 palcích od levého okraje oblasti klienta a 1/2 palce od horního okraje oblasti klienta. Následující příklad nastaví transformace světa a stránka <xref:System.Drawing.Graphics> objekt a potom nakreslí čáru z (0, 0) na (2, 1):  
   
  [!code-csharp[System.Drawing.CoordinateSystems#34](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#34)]
  [!code-vb[System.Drawing.CoordinateSystems#34](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#34)]  
   
- Následující obrázek znázorňuje řádku a souřadnicový systém.  
+ Následující obrázek znázorňuje řádku a systém souřadnic.  
   
- ![Systém souřadnic](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art03.gif "AboutGdip05_art03")  
+ ![Coordinate System](../../../../docs/framework/winforms/advanced/media/aboutgdip05-art03.gif "AboutGdip05_art03")  
   
- Pokud předpokládáme, že má zařízení zobrazení 96 bodů na palec ve vodorovném směru a 96 bodů na palec ve svislém směru, koncové body řádek v předchozím příkladu mají následující souřadnice do prostorů tři souřadnice:  
+ Pokud předpokládáme, že zařízení má 96 přichycováním k pixelům ve vodorovném směru a 96 přichycováním k pixelům ve svislém směru, koncové body čáry v předchozím příkladu mají tyto souřadnice v tři souřadnice mezery:  
   
 |||  
 |-|-|  
@@ -94,6 +94,6 @@ ms.locfileid: "33529750"
 |Stránka|(2, 0,5) na (4, 1.5)|  
 |Zařízení|(192, 48) na (384, 144)|  
   
-## <a name="see-also"></a>Viz také  
- [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)  
- [Maticové znázornění transformací](../../../../docs/framework/winforms/advanced/matrix-representation-of-transformations.md)
+## <a name="see-also"></a>Viz také:
+- [Systém souřadnic a transformace](../../../../docs/framework/winforms/advanced/coordinate-systems-and-transformations.md)
+- [Maticové znázornění transformací](../../../../docs/framework/winforms/advanced/matrix-representation-of-transformations.md)

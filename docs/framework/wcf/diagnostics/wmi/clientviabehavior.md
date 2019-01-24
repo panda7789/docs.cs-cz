@@ -2,12 +2,12 @@
 title: ClientViaBehavior
 ms.date: 03/30/2017
 ms.assetid: 594f6046-4752-4a54-9374-b256f8dd1431
-ms.openlocfilehash: 52388e81b231b625b2d6bec10ab2c0bfedadca31
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: f8bf902c001974c164b2400e7af21a0413c3823d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50197714"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54571674"
 ---
 # <a name="clientviabehavior"></a>ClientViaBehavior
 ClientViaBehavior  
@@ -27,10 +27,10 @@ class ClientViaBehavior : Behavior
 ## <a name="properties"></a>Vlastnosti  
  Třída ClientViaBehavior má následující vlastnost:  
   
-### <a name="uri"></a>Identifikátor URI  
+### <a name="uri"></a>Uri  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  ViaUri.  
   
@@ -40,5 +40,5 @@ class ClientViaBehavior : Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ClientViaBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ClientViaBehavior>

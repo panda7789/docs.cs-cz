@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8bcddc143cacc3df016e6b8dd7907a67354c4311
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a96aadcec6cb3c4f4680499585bf1c950bc5ddd4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455732"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525307"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4 – rozhraní
 Poskytuje metody zpětného volání, které modul CLR (CLR) používá ke sdělování informací profileru.  
@@ -30,17 +30,17 @@ Poskytuje metody zpětného volání, které modul CLR (CLR) používá ke sděl
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetReJITParameters – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-getrejitparameters-method.md)|Umožňuje profileru kódu nastavit alternativní kód pro nový text Rekompilované metoda příznaky generace.|  
-|[MovedReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)|Sestavy nové rozložení objektů v haldě v důsledku komprimaci uvolnění paměti.|  
-|[ReJITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)|Upozorní profileru, že kompilátoru za běhu (JIT) byla dokončena rekompilace funkce.|  
-|[ReJITCompilationStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)|Upozorní profileru, že kompilátoru za běhu (JIT) byla spuštěna znovu kompilovat funkci.|  
-|[ReJITError – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md)|Sestavy k chybě při zpracování požadavku. pak ji znovu zkompilovat.|  
-|[SurvivingReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md)|Sestavy rozložení objektů v haldě v důsledku uvolnění paměti kompresi.|  
+|[GetReJITParameters – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-getrejitparameters-method.md)|Umožňuje profileru kódu nastavit alternativní kód generování příznaky pro nové tělo překompilovanou metody.|  
+|[MovedReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)|Sestavy nové rozložení objektů v haldě jako výsledek komprimaci uvolňování paměti.|  
+|[ReJITCompilationFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)|Oznámí profileru, kompilátor just-in-time (JIT) dokončil rekompilace funkce.|  
+|[ReJITCompilationStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)|Oznámí profileru, kompilátor just-in-time (JIT) byla spuštěna znovu zkompilovat funkci.|  
+|[ReJITError – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md)|Sestavy došlo k chybě při zpracování požadavku na opětovnou kompilaci.|  
+|[SurvivingReferences2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md)|Ohlásí rozložení objektů v haldě v důsledku uvolnění nekompaktním.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -48,7 +48,7 @@ Poskytuje metody zpětného volání, které modul CLR (CLR) používá ke sděl
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

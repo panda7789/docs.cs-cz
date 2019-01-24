@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 81f9db872e9904d2297221e266be710837d0fb66
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e5ae097314a935bc06272c0e8febfbaad620f13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427379"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667632"
 ---
 # <a name="isymunmanagedreaderupdatesymbolstore-method"></a>ISymUnmanagedReader::UpdateSymbolStore – metoda
-Aktualizuje existující úložiště symbolů s úložištěm symbol delta. Tato metoda se používá ve scénářích upravit a pokračovat se aktualizovat úložiště symbolů tak, aby odpovídaly rozdílů na původní přenosné spustitelný soubor (PE).  
+Aktualizuje existující úložiště symbolů do úložiště symbolů delta. Tato metoda se používá ve scénářích edit-and-continue aktualizovat úložiště symbolů tak, aby odpovídaly rozdíly do původní přenosného spustitelného souboru (PE).  
   
 > [!NOTE]
->  Je třeba zadat pouze jeden z `filename` nebo `pIStream` parametry, nikoli oba dva. Pokud `filename` je zadán, bude úložiště symbolů aktualizována symboly v tomto souboru. Pokud `pIStream` je zadaný úložiště se aktualizuje pomocí data z <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
+>  Je nutné zadat pouze jeden z `filename` nebo `pIStream` parametrů, ne obojí. Pokud `filename` není zadán, aktualizuje úložiště symbolů se symboly v daném souboru. Pokud `pIStream` není zadána, úložiště se aktualizuje s daty z <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT UpdateSymbolStore (
   
 #### <a name="parameters"></a>Parametry  
  `filename`  
- [v] Název souboru, který obsahuje úložiště symbolů.  
+ [in] Název souboru, který obsahuje úložiště symbolů.  
   
  `pIStream`  
- [v] Datový proud souboru, používá jako alternativu k `filename` parametr.  
+ [in] Datový proud souboru použít jako alternativu k `filename` parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

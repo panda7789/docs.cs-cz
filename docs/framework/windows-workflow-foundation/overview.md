@@ -2,12 +2,12 @@
 title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: a516f454abc81ae8f6f1c15c815fe2b671ecd98f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: af5ccd47dd7b3ff35dd283f8fe659ebef912d441
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195443"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54665159"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
 Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  
@@ -41,5 +41,5 @@ Komponenty pracovní postup v hostitelském procesu
   
 -   Vlastní aktivitu, která je odvozena z <xref:System.Activities.CodeActivity> abstraktní třídy. <xref:System.Activities.CodeActivity> Můžete přístup k funkcím za běhu (například sledování a vlastnosti) pomocí <xref:System.Activities.CodeActivityContext> , který je k dispozici jako parametr <xref:System.Activities.CodeActivity.Execute%2A> metoda. Další informace o těchto funkcích za běhu, naleznete v tématu [pracovního postupu pro sledování a trasování](../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) a [běhové vlastnosti pracovního postupu](../../../docs/framework/windows-workflow-foundation/workflow-execution-properties.md).  
   
-## <a name="see-also"></a>Viz také  
- [BizTalk Server 2006 nebo pracovního postupu? Volba správného pracovního postupu nástroje pro váš projekt](https://go.microsoft.com/fwlink/?LinkId=154901)
+## <a name="see-also"></a>Viz také:
+- [BizTalk Server 2006 nebo pracovního postupu? Volba správného pracovního postupu nástroje pro váš projekt](https://go.microsoft.com/fwlink/?LinkId=154901)

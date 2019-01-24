@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c9080a588b96c5b89c280a0fb407952bd580f26
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5484f8bd5515d3a4a3cd08110cc5d48c4356a9f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404220"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590143"
 ---
 # <a name="iclrdatatargetreadvirtual-method"></a>ICLRDataTarget::ReadVirtual – metoda
-Čte data z adresy zadaný virtuální paměti do zadané vyrovnávací paměti.  
+Načte data z adresy zadaná virtuální paměti do zadané vyrovnávací paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +41,19 @@ HRESULT ReadVirtual (
   
 #### <a name="parameters"></a>Parametry  
  `address`  
- [v] CLRDATA_ADDRESS, která ukládá adres virtuální paměti.  
+ [in] CLRDATA_ADDRESS, která ukládá adresu virtuální paměti.  
   
  `buffer`  
- [out] Ukazatel na vyrovnávací paměť, která přijímá data.  
+ [out] Ukazatel do vyrovnávací paměti, která přijímá data.  
   
  `bytesRequested`  
- [v] Délka vyrovnávací paměti.  
+ [in] Délka vyrovnávací paměti.  
   
  `bytesRead`  
  [out] Ukazatel na počet bajtů vrácených.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -61,5 +61,5 @@ HRESULT ReadVirtual (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

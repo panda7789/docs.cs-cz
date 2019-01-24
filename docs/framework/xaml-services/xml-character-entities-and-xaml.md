@@ -20,12 +20,12 @@ helpviewer_keywords:
 - quotation mark (") [XAML Services]
 - less-than (<) character [XAML Services]
 ms.assetid: 6896d0ce-74f7-420a-9ab4-de9bbf390e8d
-ms.openlocfilehash: 5ef489498cdc8716f7599124138f9ecf8945ac9a
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: 03ce1645b859e9c3ebe470131ae2aee578cb366f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "33564744"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661345"
 ---
 # <a name="xml-character-entities-and-xaml"></a>Znakové entity XML a jazyk XAML
 XAML používá entity znaků, které jsou definované v kódu XML pro zvláštní znaky. Toto téma popisuje některé specifické znakové entity a obecné informace pro další koncepty XML v XAML.  
@@ -62,8 +62,8 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
 ## <a name="xml-processing-instructions"></a>Pokyny pro zpracování XML  
  XAML zpracovává pokyny pro zpracování XML podle specifikace XML, které stavu pokynů musí předává. XAML zpracování v rozhraní .NET Framework XAML Services nepoužívá žádné instrukce ke zpracování. Další stávajících architektur, které používají XAML nevyužívají pokyny pro zpracování z XAML.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [XamlName – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md)  
- [Zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [XamlName – gramatika](../../../docs/framework/xaml-services/xamlname-grammar.md)
+- [Zpracování mezerových znaků v XAML](../../../docs/framework/xaml-services/whitespace-processing-in-xaml.md)

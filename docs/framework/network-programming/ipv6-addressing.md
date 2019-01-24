@@ -26,12 +26,12 @@ helpviewer_keywords:
 - IPv6, addresses in
 - IPv6, disabling
 ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
-ms.openlocfilehash: ac8b8bae69ba20f34bb74fbff533ba53f915a150
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 2da6622fbb15e7214f928d2471d32283b87bb2f7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50183409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633849"
 ---
 # <a name="ipv6-addressing"></a>Adresování IPv6
 V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je rozdělit do hierarchie směrování domén, které odpovídají Internetu topologie dostupných adres. Dalším důvodem je mapovat adresy síťových adaptérů (nebo rozhraní), které se zařízení připojují k síti. IPv6 obsahuje schopnost přeložit adresy na nejnižší úrovni, na úrovni síťových rozhraní, a také funkce automatické konfigurace.  
@@ -39,7 +39,7 @@ V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů roz
 ## <a name="text-representation"></a>Textové vyjádření  
  Tady jsou tři běžné formuláře používá k reprezentování adresy IPv6 jako textové řetězce:  
   
--   **Formulář dvojtečkami**. To je forma upřednostňovaná n:n:n:n:n:n:n:n. Každá n představuje jeden z elementů osm 16 bitů adresy šestnáctkovou hodnotu. Příklad: `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.  
+-   **Formulář dvojtečkami**. To je forma upřednostňovaná n:n:n:n:n:n:n:n. Každá n představuje jeden z elementů osm 16 bitů adresy šestnáctkovou hodnotu. Například: `3FFE:FFFF:7654:FEDA:1245:BA98:3210:4562`.  
   
 -   **Komprimované formě**. Z důvodu délky adresy je běžné mít adres, které obsahují dlouhý řetězec nulové hodnoty. Pokud chcete zjednodušit psaní tyto adresy, použijte komprimované formě, ve kterém jeden souvislý sekvence 0 bloků jsou reprezentovány symbol dvěma dvojtečkami (::). Tento symbol se může objevit pouze jednou v adrese. Například adresu vícesměrového vysílání `FFED:0:0:0:0:BA98:3210:4562` je v komprimované formě `FFED::BA98:3210:4562`. Adresy jednosměrového vysílání `3FFE:FFFF:0:0:8:800:20C4:0` je v komprimované formě `3FFE:FFFF::8:800:20C4:0`. Na adresu zpětné smyčky `0:0:0:0:0:0:0:1` je v komprimované formě `::`1. Nespecifikovaná adresa `0:0:0:0:0:0:0:0` je v komprimované formě `::`.  
   
@@ -72,6 +72,6 @@ V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů roz
   
  Obecně platí uzel má vždy Adresa specifická pro připojení. Adresa specifická pro server a jednu nebo více globálních adres může mít.  
   
-## <a name="see-also"></a>Viz také  
- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
- [Sokety](../../../docs/framework/network-programming/sockets.md)
+## <a name="see-also"></a>Viz také:
+- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
+- [Sokety](../../../docs/framework/network-programming/sockets.md)

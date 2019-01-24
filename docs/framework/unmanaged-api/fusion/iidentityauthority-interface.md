@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 692ac4ef4fe8ea64c6a63dc2f02cc04244a842c3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ab8965ca5d6c9c96cea5f5b351547ce2d4dfacc7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432521"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546277"
 ---
 # <a name="iidentityauthority-interface"></a>IIdentityAuthority – rozhraní
 Spravuje klíče identity pro objekty kódu.  
@@ -30,31 +30,31 @@ Spravuje klíče identity pro objekty kódu.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|`IIdentityAuthority::AreDefinitionsEqual`|Získá hodnotu, která určuje, zda jsou obě zadané [idefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instance jsou stejné.|  
-|`IIdentityAuthority::AreReferencesEqual`|Získá hodnotu, která určuje, zda jsou obě zadané [ireferenceidentity –](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) instance jsou stejné.|  
-|`IIdentityAuthority::AreTextualDefinitionsEqual`|Získá hodnotu, která určuje, zda jsou dvě zadané řetězcové vyjádření identity definice stejné.|  
-|`IIdentityAuthority::AreTextualReferencesEqual`|Získá hodnotu, která určuje, zda jsou dvě zadané řetězcové vyjádření identity odkaz stejné.|  
-|`IIdentityAuthority::CreateDefinition`|Získá ukazatel na nový `IDefinitionIdentity` instance, který představuje objekt kódu v aktuálním oboru.|  
-|`IIdentityAuthority::CreateReference`|Získá ukazatel na nový `IReferenceIdentity` instance, který představuje objekt kódu v aktuálním oboru.|  
+|`IIdentityAuthority::AreDefinitionsEqual`|Získá hodnotu, která udává, zda dvě zadat [idefinitionidentity –](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instancí jsou si rovny.|  
+|`IIdentityAuthority::AreReferencesEqual`|Získá hodnotu, která udává, zda dvě zadat [ireferenceidentity –](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) instancí jsou si rovny.|  
+|`IIdentityAuthority::AreTextualDefinitionsEqual`|Získá hodnotu určující, zda jsou dvě zadané řetězcové vyjádření identity definice stejné.|  
+|`IIdentityAuthority::AreTextualReferencesEqual`|Získá hodnotu, která určuje, zda dvě zadané řetězcové vyjádření identity odkazu jsou stejné.|  
+|`IIdentityAuthority::CreateDefinition`|Získá ukazatel na novou `IDefinitionIdentity` instanci, která představuje objekt kódu v aktuálním oboru.|  
+|`IIdentityAuthority::CreateReference`|Získá ukazatel na novou `IReferenceIdentity` instanci, která představuje objekt kódu v aktuálním oboru.|  
 |`IIdentityAuthority::DefinitionToText`|Získá verzi formátovaný řetězec zadaného `IDefinitionIdentity`.|  
-|`IIdentityAuthority::DefinitionToTextBuffer`|Vyplní celé zadaný znak široké vyrovnávací paměti s verzí řetězce zadaného `IDefinitionIdentity`.|  
-|`IIdentityAuthority::DoesDefinitionMatchReference`|Získá hodnotu, která určuje, zda zadaný `IDefinitionIdentity` a `IReferenceIdentity` instance odkazovat na stejný objekt kódu.|  
-|`IIdentityAuthority::DoesTextualDefinitionMatchTextualReference`|Získá hodnotu, která určuje, zda zadaný řetězce odkazovat na stejný objekt kódu.|  
-|`IIdentityAuthority::GenerateDefinitionKey`|Získá ukazatel na nově vytvořený řetězec klíč pro zadané `IDefinitionIdentity`.|  
-|`IIdentityAuthority::GenerateReferenceKey`|Získá ukazatel na nově vytvořený řetězec klíč pro zadané `IReferenceIdentity`.|  
-|`IIdentityAuthority::HashDefinition`|Získá hodnotu hash pro zadaný `IDefinitionIdentity`.|  
-|`IIdentityAuthority::HashReference`|Získá hodnotu hash pro zadaný `IreferenceIdentity`.|  
+|`IIdentityAuthority::DefinitionToTextBuffer`|Vyplní vyrovnávací paměti zadaná široký znak s verzí řetězce zadaného `IDefinitionIdentity`.|  
+|`IIdentityAuthority::DoesDefinitionMatchReference`|Získá hodnotu určující, zda zadaný `IDefinitionIdentity` a `IReferenceIdentity` instance odkazují na stejný objekt kódu.|  
+|`IIdentityAuthority::DoesTextualDefinitionMatchTextualReference`|Získá hodnotu určující, zda jsou zadané řetězce odkazují na stejný objekt kódu.|  
+|`IIdentityAuthority::GenerateDefinitionKey`|Získá ukazatel na nově vytvořený řetězec klíče pro zadaný rozbočovač `IDefinitionIdentity`.|  
+|`IIdentityAuthority::GenerateReferenceKey`|Získá ukazatel na nově vytvořený řetězec klíče pro zadaný rozbočovač `IReferenceIdentity`.|  
+|`IIdentityAuthority::HashDefinition`|Získá hodnotu hash pro zadaná `IDefinitionIdentity`.|  
+|`IIdentityAuthority::HashReference`|Získá hodnotu hash pro zadaná `IreferenceIdentity`.|  
 |`IIdentityAuthority::ReferenceToText`|Získá verzi formátovaný řetězec zadaného `IReferenceIdentity`.|  
-|`IIdentityAuthority::ReferenceToTextBuffer`|Vyplní celé zadaný znak široké vyrovnávací paměti s verzí řetězce zadaného `IReferenceIdentity`.|  
-|`IIdentityAuthority::TextToDefinition`|Získá ukazatele rozhraní k `IDefinitionIdentity` instance generované ze zadaného řetězec ve formátu.|  
-|`IIdentityAuthority::TextToReference`|Získá ukazatele rozhraní k `IReferenceIdentity` instance generované ze zadaného řetězec ve formátu.|  
+|`IIdentityAuthority::ReferenceToTextBuffer`|Vyplní vyrovnávací paměti zadaná široký znak s verzí řetězce zadaného `IReferenceIdentity`.|  
+|`IIdentityAuthority::TextToDefinition`|Získá ukazatel rozhraní k `IDefinitionIdentity` instance generované ze zadané ve formátu řetězce.|  
+|`IIdentityAuthority::TextToReference`|Získá ukazatel rozhraní k `IReferenceIdentity` instance generované ze zadané ve formátu řetězce.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Isolation.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro fúze](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)

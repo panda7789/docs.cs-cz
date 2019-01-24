@@ -2,21 +2,21 @@
 title: '&lt;msmqIntegration&gt;'
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-ms.openlocfilehash: 6b1449ec385af2478ee278e9823a005c69ca8dc2
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 42197706a0c3f0f1940f8815fe0e41bb609a457a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54147847"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54603050"
 ---
 # <a name="ltmsmqintegrationgt"></a>&lt;msmqIntegration&gt;
 Určuje přenos služby MSMQ pro vlastní vazbu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<msmqIntegration >  
+\<msmqIntegration>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,7 +62,7 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
 |maxRetryCycles|Celé číslo, které určuje maximální počet opakovaných cyklů pokusů o doručení zpráv do přijímající aplikace. Výchozí hodnota je <xref:System.Int32.MaxValue>.<br /><br /> Jednoho opakování cyklu pokusí o doručení zprávy do aplikace zadaného počtu opakování. Počet pokusů o se nastavil `maxImmediateRetries` atribut. Pokud aplikace po vyčerpání pokusů na doručování využívat zprávy, zprávu odeslat do fronty zkuste to znovu. Dalším pokusem cykly se skládají zprávy se do fronty aplikace vrací z fronty opakování pokusu o doručení pro aplikaci znovu spustit, po době určené `retryCycleDelay` atribut. `maxRetryCycles` Atribut určuje počet cyklů opakování pokusu o doručení zprávy používá aplikace.|  
 |rejectAfterLastRetry|Logická hodnota, která určuje, jaká akce má být zprávy, která se nezdařila doručování po maximální počet opakování pokusů.<br /><br /> `true` znamená, že negativní potvrzení se vrátí do odesílatele a zprávy se zahodí; `false` znamená, že je zpráva odeslána do fronty nezpracovatelných zpráv. Výchozí hodnota je `false`.<br /><br /> Pokud je hodnota `false`, přijímající aplikace může číst nezpracovatelných zpráv fronty ke zpracování nezpracovatelných zpráv (to znamená, zprávy, které selhaly doručování).<br /><br /> Služba MSMQ 3.0 nepodporuje vrácení negativní potvrzení odesílateli, takže tento atribut se bude ignorovat ve službě MSMQ 3.0.|  
 |retryCycleDelay|A <xref:System.TimeSpan> , která určuje časovou prodlevu mezi cyklů opakování při pokusu o doručení zprávy, která nemohla být doručena okamžitě. Výchozí hodnota je 00:10:00.<br /><br /> Pro doručení zprávy do přijímající aplikace zadaného počtu opakování pokusů o jednoho opakování cyklu. Je určený počet pokusů o `maxImmediateRetries` atribut. Pokud aplikace využívat zprávy po zadaný počet okamžité opakování, je zpráva odeslána do fronty zkuste to znovu. Dalším pokusem cykly se skládají zprávy se do fronty aplikace vrací z fronty opakování pokusu o doručení pro aplikaci znovu spustit, po době určené `retryCycleDelay` atribut. Počet cyklů opakování je určená `maxRetryCycles` atribut.|  
-|třídu serializationFormat|Určuje formátování, který se používá k serializaci objektů, které jsou odeslány jako součást zprávy MSMQ. Platné hodnoty jsou<br /><br /> -ActiveX: Formátovací modul ActiveX se používá při serializaci objektů COM.<br />-Binární:  Serializuje objekt do binární paketů.<br />-ByteArray:  Serializuje objekt na pole bajtů.<br />-Stream:  Serializuje objekt do datového proudu.<br />-Xml:  Serializuje objekt, který má paket XML. Výchozí hodnota je XML.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
+|třídu serializationFormat|Určuje formátování, který se používá k serializaci objektů, které jsou odeslány jako součást zprávy MSMQ. Platné hodnoty jsou<br /><br /> -ActiveX: Formátovací modul ActiveX se používá při serializaci objektů COM.<br />-Binární:  Serializuje objekt do binární paketů.<br />-ByteArray:  Serializuje objekt na pole bajtů.<br />-Stream:  Serializuje objekt do datového proudu.<br />-   Xml:  Serializuje objekt, který má paket XML. Výchozí hodnota je XML.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
 |timeToLive|A <xref:System.TimeSpan> , která určuje, jak dlouho jsou zprávy platné předtím, než platnost a jsou vloženy do fronty nedoručených zpráv. Výchozí hodnota je 1.00:00:00, což znamená, že 1 den.<br /><br /> Tento atribut je nastaven na Ujistěte se, že časově zprávy není zastaralá předtím, než se zpracovávají přijímajícími aplikacemi. Zprávy ve frontě, které se přijímající aplikací v rámci zadaného časového intervalu se říká, že platnost. Zprávy s vypršenou platností se odesílají do speciální fronty názvem fronty nedoručených zpráv. Umístění fronty nedoručených zpráv nastavena `customDeadLetterQueue` atribut nebo na vhodné výchozí nastavení, v závislosti na záruky.|  
 |useMsmqTracing|Logická hodnota, která určuje, zda zprávy zpracované touto vazbou mají být vyvolány. Výchozí hodnota je `false`.<br /><br /> Když je povoleno trasování, zprávy se vytváří a odesílají do fronty hlášení pokaždé, když opustí zpráva nebo zpráva dorazí na počítači služby Řízení front zpráv.|  
 |useSourceJournal|Logická hodnota určující, zda kopie zpráv zpracovaných touto vazbou uskladněny ve frontě deníku zdroje. Výchozí hodnota je `false`.<br /><br /> Ve frontě aplikace, které chcete sledovat zpráv, které ještě zbývá fronty odesílaných zpráv počítače můžete zkopírovat zprávy do fronty deníku. Jakmile opustí zprávu fronty odesílaných zpráv a přijetí potvrzení, že byla přijata zpráva v cílovém počítači, kopie zprávy, zůstane ve frontě deníků odesílající počítač systému.|  
@@ -79,14 +79,14 @@ Určuje přenos služby MSMQ pro vlastní vazbu.
 |-------------|-----------------|  
 |[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>  
- <xref:System.ServiceModel.Channels.TransportBindingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)  
- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>
+- <xref:System.ServiceModel.Channels.TransportBindingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
+- [Fronty ve WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)
+- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

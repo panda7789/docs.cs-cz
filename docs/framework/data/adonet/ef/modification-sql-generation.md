@@ -2,12 +2,12 @@
 title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
-ms.openlocfilehash: bfeb4f826022d39b2a45132a5b2bf344ef4c99c6
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0bacd974c4eb9bc98851d35d574a184fde4d9468
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127066"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580054"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 Tato část popisuje, jak vyvinout úprav modulu generování SQL pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překládá úpravy stromu příkazů na příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  
@@ -78,9 +78,9 @@ The elements of the list are specified as type DbModificationClause, which speci
   
 -   DbAndExpression  
   
--   Třída DbNotExpression  
+-   DbNotExpression  
   
--   Třída DbOrExpression  
+-   DbOrExpression  
   
 ## <a name="modification-sql-generation-in-the-sample-provider"></a>Úpravy generování SQL ve zprostředkovateli ukázek  
  [Ukázka zprostředkovatele Entity Framework](https://code.msdn.microsoft.com/windowsdesktop/Entity-Framework-Sample-6a9801d0) ukazuje součástí zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Je zaměřen na databázi systému SQL Server 2005 a je implementovaný jako obálka nad zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.  
@@ -92,7 +92,7 @@ The elements of the list are specified as type DbModificationClause, which speci
   
  Následující informace popisují navštívit typy konkrétní výrazů (uzly s triviální překlady jsou vynechány).  
   
-### <a name="dbcomparisonexpression"></a>Objekt DbComparisonExpression  
+### <a name="dbcomparisonexpression"></a>DbComparisonExpression  
  Když je vytvořený ExpressionTranslator pomocí preserveMemberValues = true, a když konstanty na pravé straně je objekt DbConstantExpression (namísto DbNullExpression), přiřadí levý operand (DbPropertyExpressions) s, který DbConstantExpression. Který se používá, pokud vratky příkazu Select je potřeba vygenerovat k identifikaci ovlivněných řádků.  
   
 ### <a name="dbconstantexpression"></a>DbConstantExpression  
@@ -286,5 +286,5 @@ delete [dbo].[Categories]
 where ([CategoryID] = @p0)  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
+## <a name="see-also"></a>Viz také:
+- [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)

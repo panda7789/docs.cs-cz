@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML [WPF], TypeConverter class
 ms.assetid: f6313e4d-e89d-497d-ac87-b43511a1ae4b
-ms.openlocfilehash: 53e2d14cf331cf41b20300afbe8966538bf621ca
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 29286328c960707151fd5b6f2804346373000ad4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43407106"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54748074"
 ---
 # <a name="typeconverters-and-xaml"></a>TypeConverters a XAML
 Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka XAML. V rozhraní .NET Framework <xref:System.ComponentModel.TypeConverter> třída slouží jako součást implementace pro spravovaný vlastní třídu, která lze použít jako hodnotu vlastnosti v použití atributu XAML konkrétní účel. Pokud napíšete vlastní třída a chcete, aby instance třídy má být použitelná jako hodnoty atributů nastavitelné XAML, může být potřeba použít <xref:System.ComponentModel.TypeConverterAttribute> do vaší třídy napsat vlastní <xref:System.ComponentModel.TypeConverter> třídy, nebo obojí.  
@@ -24,7 +24,7 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
  Procesor XAML vyžaduje dva druhy údajů aby bylo možné zpracovat hodnotu atributu. První část informací je typ hodnoty vlastnosti, která je nastavena. Libovolný řetězec, který definuje hodnotu atributu a který, jsou zpracovávána v XAML musí být nakonec převést nebo přeložit hodnotu daného typu. Pokud je hodnota jednoduchého typu, který je srozumitelné pro analyzátor XAML (například číselná hodnota), dojde k pokusu o přímý převod řetězce. Pokud je hodnota výčtu, řetězec se používá ke kontrole pro porovnání název pojmenované konstanty tohoto výčtu. Pokud je hodnota ani na primitivní analyzátor rozumí ani výčet a dotyčný typ musí být schopný poskytnout instanci typu, nebo hodnotu založenou na převedený řetězec. To se provádí tak, že třída konvertor typu. Konvertor typů je v podstatě pomocnou třídu pro poskytování hodnoty jiné třídy, pro scénář XAML a potenciálně také pro kód volá v kódu .NET.  
   
 ### <a name="using-existing-type-conversion-behavior-in-xaml"></a>Pomocí stávající chování převodu typu v XAML  
- V závislosti na vaší znalost základní koncepty XAML už využíváte chování převodu typu v základní aplikaci XAML nevěděli ho. Například WPF definuje doslova stovky vlastnosti, které přijmout hodnotu typu <xref:System.Windows.Point>. A <xref:System.Windows.Point> je hodnota, která popisuje souřadnice v dvojrozměrné souřadnicového prostoru a vlastně jenom má dvě důležité vlastnosti: <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A>. Při zadávání bod v XAML můžete zadat jako řetězec s oddělovačem (obvykle čárkami) mezi <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A> hodnoty, které zadáte. Příklad: `<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">`.  
+ V závislosti na vaší znalost základní koncepty XAML už využíváte chování převodu typu v základní aplikaci XAML nevěděli ho. Například WPF definuje doslova stovky vlastnosti, které přijmout hodnotu typu <xref:System.Windows.Point>. A <xref:System.Windows.Point> je hodnota, která popisuje souřadnice v dvojrozměrné souřadnicového prostoru a vlastně jenom má dvě důležité vlastnosti: <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A>. Při zadávání bod v XAML můžete zadat jako řetězec s oddělovačem (obvykle čárkami) mezi <xref:System.Windows.Point.X%2A> a <xref:System.Windows.Point.Y%2A> hodnoty, které zadáte. Například: `<LinearGradientBrush StartPoint="0,0" EndPoint="1,1">`.  
   
  I tento jednoduchý typ <xref:System.Windows.Point> a využití jednoduché v XAML zahrnují konvertor typu. V tomto případě to je třída <xref:System.Windows.PointConverter>.  
   
@@ -114,8 +114,8 @@ Toto téma popisuje účel typu Převod z řetězce jako obecnou funkcí jazyka 
   
  Můžete také zadat konvertor typu na jednotlivých vlastností. Místo použití [!INCLUDE[TLA#tla_netframewkattr](../../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> do definice třídy, použijte ji pro definici vlastnosti (hlavní definice není `get` / `set` implementace v rámci něj). Typ vlastnosti musí odpovídat typ, který zpracovává vaše vlastní konvertor typu. Pomocí tohoto atributu se použije když XAMLprocessor zpracovává hodnoty této vlastnosti, se můžou zpracovávat vstupního řetězce a vrátí instance objektů. Na vlastnost typ převaděče technika je zvlášť užitečné, pokud se rozhodnete použít typ vlastnosti z rozhraní Microsoft .NET Framework nebo z některé jiné knihovny, kde nemůžeme mít pod kontrolou definice třídy a nejde použít <xref:System.ComponentModel.TypeConverterAttribute> existuje.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.TypeConverter>  
- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ComponentModel.TypeConverter>
+- [Přehled XAML (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Rozšíření značek a WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)
+- [Podrobná syntaxe XAML](../../../../docs/framework/wpf/advanced/xaml-syntax-in-detail.md)

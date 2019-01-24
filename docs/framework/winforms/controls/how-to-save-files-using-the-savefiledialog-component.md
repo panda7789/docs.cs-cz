@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ukládání souborů pomocí součásti SaveFileDialog'
+title: 'Postupy: Ukládání souborů pomocí komponenty SaveFileDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - files [Windows Forms], saving
 - OpenFile method [Windows Forms], saving files with SaveFileDialog component
 ms.assetid: 02e8f409-b83f-4707-babb-e71f6b223d90
-ms.openlocfilehash: 4755d950da6726f007ae3333a558f3cafdcada9b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2b84d36bd15d61fb21444e01302da86563cced9c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508157"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54615959"
 ---
-# <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí součásti SaveFileDialog
+# <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí komponenty SaveFileDialog
 <xref:System.Windows.Forms.SaveFileDialog> Komponenta umožňuje uživatelům procházet systému souborů a vyberte soubory, které se má uložit. Dialogové okno vrací cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti soubory zapisují na disk.  
   
 ### <a name="to-save-a-file-using-the-savefiledialog-component"></a>Uložte soubor pomocí komponenty SaveFileDialog  
@@ -177,6 +177,6 @@ ms.locfileid: "43508157"
     > [!NOTE]
     >  Některé ovládací prvky, jako například <xref:System.Windows.Forms.RichTextBox> řídit, se budou moct ukládat soubory. Další informace najdete v části "Komponenty SaveFileDialog" technického článku MSDN Online Library [základní kód pro Windows Forms dialogových oknech](https://go.microsoft.com/fwlink/?LinkID=102575).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.SaveFileDialog>  
- [Komponenta SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.SaveFileDialog>
+- [Komponenta SaveFileDialog](../../../../docs/framework/winforms/controls/savefiledialog-component-windows-forms.md)

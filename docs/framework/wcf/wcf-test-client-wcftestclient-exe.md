@@ -2,12 +2,12 @@
 title: WCF Test Client (WcfTestClient.exe)
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: 4e3531b91382c4d47aed73198bd8dd954ae4ca1f
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: d48caebed857a3a61842b1ea1d3e8b2977d749ab
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611381"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF Test Client (WcfTestClient.exe)
 Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) je nástroj grafického uživatelského rozhraní, který umožňuje uživatelům vstupní parametry testu, odeslat tento vstup do služby a zobrazovat odpovědi, které služba odesílá zpět. Poskytuje bezproblémové službu testování prostředí v kombinaci s hostitel služby WCF.  
@@ -17,7 +17,7 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
 ## <a name="scenarios-for-using-test-client"></a>Scénáře použití testovacího klienta  
  Následující části popisují nejběžnějších scénářů, ve kterých můžete použít klienta testu WCF pro zjednodušení procesu vývoje.  
   
-### <a name="inside-visual-studio"></a>Uvnitř sady Visual Studio  
+### <a name="inside-visual-studio"></a>Inside Visual Studio  
   
 #### <a name="wcf-service-host-starts-wcf-test-client-with-a-single-service"></a>WCF služby Hostitel spustí testovací klient WCF s jednou službou  
  Po vytvoření nového projektu služby WCF a stiskněte klávesu F5 ke spuštění ladicího programu, začne hostitel služby WCF hostování služby ve vašem projektu. Testovací klient WCF pak otevře a zobrazí seznam koncových bodů služby, které jsou definovány v konfiguračním souboru. Můžete testovat parametry a vyvolat službu a opakujte tento postup a průběžné testování a ověřování služby.  
@@ -105,7 +105,7 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
   
 ### <a name="adding-removing-and-refreshing-services"></a>Přidání, odebrání a obnovení služby  
   
-#### <a name="add-service"></a>Přidat službu  
+#### <a name="add-service"></a>Add Service  
  Klikněte na tlačítko **souboru**->**přidat službu** k přidání služby testovací klient WCF. Pak musíte zadejte identifikátor URI (adresa koncového bodu) služby mají být přidány. Adresa služby může být adresa mex nebo WSDL adresu.  
   
  Můžete také vyhledat seznam 10 naposledy přidané služeb koncových bodů v **poslední služby** podnabídka. Pokud vyberete jednu z nich, se přidá zadanou službu do testovací klient WCF.  
@@ -165,5 +165,5 @@ Windows Communication Foundation (WCF) testovacího klienta (WcfTestClient.exe) 
   
 -   Klikněte pravým tlačítkem myši **hostitel služby WCF** ikonu v oznamovací oblasti a pak klikněte na tlačítko **ukončení.** Toto vypnutí automatického hostitele služby WCF a testovací klient WCF a zastaví ladění procesu Visual Studio.  
   
-## <a name="see-also"></a>Viz také  
- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+## <a name="see-also"></a>Viz také:
+- [Hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

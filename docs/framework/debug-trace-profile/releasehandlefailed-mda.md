@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 155cf7138d4074467195bdc1302e28c0789f93cf
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 69dea1adb2d751b44f6c8bc529353ff78cad60ad
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151002"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54673043"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed – pomocník spravovaného ladění (MDA)
 `releaseHandleFailed` Spravovaného ladění (MDA) pomocníka s nastavením je aktivován je upozornit vývojáře při <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodě třídy odvozené z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> vrátí `false`.  
@@ -25,7 +25,7 @@ ms.locfileid: "53151002"
 ## <a name="symptoms"></a>Příznaky  
  Nevracení prostředku nebo paměti.  Pokud <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metoda třídy odvozené od <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle> nezdaří, pak prostředků zapouzdřena objektem třídy nemusí mít vydání nebo vyčistit.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Uživatelé musí zadat provádění <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> metodu, pokud uživatel vytvořit třídy, které jsou odvozeny z <xref:System.Runtime.InteropServices.SafeHandle> nebo <xref:System.Runtime.InteropServices.CriticalHandle>; proto okolnosti, které jsou specifické pro jednotlivé prostředky. Požadavky jsou však následujícím způsobem:  
   
 -   <xref:System.Runtime.InteropServices.SafeHandle> a <xref:System.Runtime.InteropServices.CriticalHandle> typy představují obálky prostředky důležité procesu. Nevracení paměti by mohlo způsobit nepoužitelnost procesu mraku v čase.  
@@ -90,7 +90,7 @@ bool ReleaseHandle()
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.MarshalAsAttribute>
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [Zařazování spolupráce](../../../docs/framework/interop/interop-marshaling.md)

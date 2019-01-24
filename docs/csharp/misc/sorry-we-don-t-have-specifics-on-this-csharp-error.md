@@ -882,17 +882,17 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: fa2afebdffb47e7c55ea17a485d43ee648775534
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: f172d9579e18bffdde98756bd3acf471a80e6211
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453142"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576022"
 ---
 # <a name="sorry-we-don39t-have-specifics-on-this-c-error"></a>Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě C#
 Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  
   
- [Jazyk Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
+ [Visual C# Language](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
  Poskytuje diskusní fórum pro otázky týkající se obecné diskuse o kompilátoru a syntaxi jazyka Visual C#.  
   
  [Integrované vývojové prostředí Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
@@ -901,14 +901,14 @@ Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Může
  [Visual C# obecné](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
  Poskytuje diskusní fórum pro otázky o a problémy s Visual C#, které nejsou popsány na jiných fórech.  
   
- [Přetečení zásobníku](https://stackoverflow.com/questions/tagged/c%23)  
+ [Stack Overflow](https://stackoverflow.com/questions/tagged/c%23)  
  Poskytuje diskusní fórum pro otázky o a problémy s Visual C#.  
   
  Viz také:  
  [Další zdroje informací pro programátory v jazyce Visual C#](../../csharp/getting-started/additional-resources.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)  
-- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)  
-- [Kontaktujte nás](/visualstudio/ide/talk-to-us)  
+- [Průvodce programováním v jazyce C#](../../csharp/programming-guide/index.md)
+- [Referenční dokumentace jazyka C#](../../csharp/language-reference/index.md)
+- [Kontaktujte nás](/visualstudio/ide/talk-to-us)

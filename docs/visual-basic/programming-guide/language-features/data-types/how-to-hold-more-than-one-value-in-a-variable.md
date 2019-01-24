@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Do proměnné umístit více než jednu hodnotu (Visual Basic)'
+title: 'Postupy: Umístit více než jednu hodnotu proměnné (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - arrays [Visual Basic], compilation errors
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
-ms.openlocfilehash: 781f56c7e710f5130d821ca4796398379dfa4c6e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c6cd9c61c332fc98e99334143b50e395f4eabf47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517960"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671496"
 ---
-# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Do proměnné umístit více než jednu hodnotu (Visual Basic)
+# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Umístit více než jednu hodnotu proměnné (Visual Basic)
 Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jej bude *složené datový typ*.  
   
  [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují třídy, struktury a pole. Proměnné typu složených dat může obsahovat kombinaci základní datové typy a dalších složené typy. Struktury a třídy může obsahovat kód, jakož i data.  
@@ -41,11 +41,11 @@ Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jej bude *slože
   
 5.  Postupujte podle `As` – klíčové slovo s názvem odpovídající složené datového typu.  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)  
- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+## <a name="see-also"></a>Viz také:
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
+- [Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
+- [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

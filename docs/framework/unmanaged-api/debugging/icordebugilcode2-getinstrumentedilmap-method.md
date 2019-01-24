@@ -14,17 +14,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a712ed9e3534ca6bb2962989f1ab3750a25d539
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f2abb24a319d8d3aff940ddb7eabd16b3e238862
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417899"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611745"
 ---
 # <a name="icordebugilcode2getinstrumentedilmap-method"></a>ICorDebugILCode2::GetInstrumentedILMap – metoda
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Vrátí mapu od posuny instrumentovány profileru převodní jazyk (IL) do původního metoda IL posunutí pro tuto instanci.  
+ Vrátí mapu z posunů instrumentována profiler (IL intermediate language) na původní metodu IL posunutí pro tuto instanci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,24 +37,24 @@ HRESULT GetInstrumentedILMap(
 ```  
   
 #### <a name="parameters"></a>Parametry  
- cMap  
- [v] Úložnou kapacitu `map` pole. Další informace naleznete v části Poznámky.  
+ Cmap –  
+ [in] Kapacita úložiště `map` pole. Další informace naleznete v části Poznámky.  
   
  pcMap  
- [out] Počet hodnot cor_il_map – zapsána do pole mapy.  
+ [out] Počet hodnot cor_il_map – zapsána do pole mapování.  
   
  map  
- [out] Pole cor_il_map – hodnoty, které poskytují informace o mapování z instrumentovány profileru IL IL původní metody.  
+ [out] Pole cor_il_map – hodnoty, které poskytují informace o mapování z profileru instrumentována IL IL původní metodu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je profileru nastaví mapování voláním [icorprofilerinfo::setilinstrumentedcodemap –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md) metody ladicího programu můžete volat tuto metodu pro načtení mapování a mapování interně při výpočtu IL posune pro zásobníku trasování a proměnné životnosti.  
+ Pokud profiler nastaví mapování voláním [icorprofilerinfo::setilinstrumentedcodemap –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md) metoda, ladicí program může volat tuto metodu načíst mapování a mapování používají interně při výpočtu IL dorovnání u zásobníku trasování a životnost proměnné.  
   
- Pokud `cMap` je 0 a `pcMap` jinou hodnotu než**null**, `pcMap` je nastaven na počet dostupných hodnot cor_il_map –. Pokud `cMap` je nulová, představuje kapacitu úložiště `map` pole. Po návratu metody `map` obsahuje maximálně `cMap` položky, a `pcMap` je nastaven na počet hodnot cor_il_map – ve skutečnosti zapsána do `map` pole.  
+ Pokud `cMap` je 0 a `pcMap` jinou hodnotu než**null**, `pcMap` je nastavena na počet dostupných hodnot cor_il_map –. Pokud `cMap` je nenulová, představuje kapacitu úložiště `map` pole. Po návratu metody `map` obsahuje určitý počet `cMap` položky, a `pcMap` je nastavena na počet aktuálně zapsaných do hodnoty cor_il_map – `map` pole.  
   
- Pokud IL nebyla byly instrumentovány nebo mapování nebyl poskytované profileru, tato metoda vrátí hodnotu `S_OK` a nastaví `pcMap` na hodnotu 0.  
+ Pokud nebyl byla instrumentována IL nebo pomocí profileru nebylo zadáno mapování, vrátí tato metoda `S_OK` a nastaví `pcMap` na hodnotu 0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -62,7 +62,7 @@ HRESULT GetInstrumentedILMap(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Icorprofilerinfo::setilinstrumentedcodemap –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)  
- [ICorDebugILCode2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo::SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)
+- [ICorDebugILCode2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

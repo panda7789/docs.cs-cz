@@ -2,12 +2,12 @@
 title: Vytvoření postupu kanálu
 ms.date: 03/30/2017
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
-ms.openlocfilehash: 6bf0668c6b846671db12dc20465ee70137d70b35
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6b9194e4cdfd60ea34160bf24ba571f29a83dedf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528869"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54546660"
 ---
 # <a name="channel-factory"></a>Vytvoření postupu kanálu
 Tato ukázka předvádí, jak vytvořit kanál s klientskou aplikaci <xref:System.ServiceModel.ChannelFactory> třídy namísto generovaného klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  
@@ -81,4 +81,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ChannelFactory`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

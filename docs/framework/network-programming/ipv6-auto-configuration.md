@@ -2,12 +2,12 @@
 title: Automatická konfigurace IPv6
 ms.date: 03/30/2017
 ms.assetid: 581c1d21-1013-43a3-bf3e-2d9ead62b79c
-ms.openlocfilehash: 31aaebaefa0d2682ee20ae93496aff42ae1633d8
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 2184b02f6f4c8ba4e8a79279f212ffca2cb41959
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50199133"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54726348"
 ---
 # <a name="ipv6-auto-configuration"></a>Automatická konfigurace IPv6
 Jedním z cílů důležité pro protokol IPv6 je podpora uzlu technologie Plug and Play. To znamená by měl být možné připojte uzel do sítě IPv6 a konfigurace automaticky bez zásahu člověka.  
@@ -22,8 +22,8 @@ Jedním z cílů důležité pro protokol IPv6 je podpora uzlu technologie Plug 
  Bez ohledu na to, jak se určuje adresu musí uzel ověřte, zda je jeho potenciální adresa jedinečný odkaz na místní. Uděláte to pomocí odesílání žádostí sousední zprávy na potenciální adresu. Pokud uzel přijme odpověď, ví, že adresa se už používá a musíte určit jinou adresu.  
   
 ## <a name="ipv6-mobility"></a>IPv6 Mobility  
- Růst počtu mobilních zařízení přináší nový požadavek: zařízení musí být schopen libovolně změnit umístění na Internetu s protokolem IPv6 a přitom zachovává existující připojení. Tuto funkci zajistí mobilní uzlu přiřazena adresa domů jakou můžou vždycky dostupný. Když se během chvilky mobilní uzlu, se připojí k odkaz na domovskou a používá jeho adresa domů. Když se mobilní uzlu mimo Domovská stránka, domácí agenta, který je obvykle směrovač, přenáší zprávy mezi mobilní uzlů a uzly, se kterými je komunikace.  
+ Růst počtu mobilních zařízení přináší nový požadavek: Zařízení musí být libovolně změnit umístění na Internetu s protokolem IPv6 a přitom zachovává existující připojení. Tuto funkci zajistí mobilní uzlu přiřazena adresa domů jakou můžou vždycky dostupný. Když se během chvilky mobilní uzlu, se připojí k odkaz na domovskou a používá jeho adresa domů. Když se mobilní uzlu mimo Domovská stránka, domácí agenta, který je obvykle směrovač, přenáší zprávy mezi mobilní uzlů a uzly, se kterými je komunikace.  
   
-## <a name="see-also"></a>Viz také  
- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
- [Sokety](../../../docs/framework/network-programming/sockets.md)
+## <a name="see-also"></a>Viz také:
+- [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)
+- [Sokety](../../../docs/framework/network-programming/sockets.md)

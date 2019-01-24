@@ -12,12 +12,12 @@ helpviewer_keywords:
 - queries [LINQ in Visual Basic], data changes in database
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: cf52635f-0c1b-46c3-aff1-bdf181cf19b1
-ms.openlocfilehash: 1b957fb7524b7eaf46bf321713196e90bae66b6c
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: bcc56e1f7a36c705aec6750b76a4ad5d99fe7101
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415205"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658413"
 ---
 # <a name="how-to-modify-data-in-a-database-by-using-linq-visual-basic"></a>Postupy: Změna dat v databázi pomocí LINQ (Visual Basic)
 Language-Integrated Query (LINQ) dotazy umožňují snadno přistupovat k informací o databázi a hodnot v databázi.  
@@ -160,9 +160,9 @@ Language-Integrated Query (LINQ) dotazy umožňují snadno přistupovat k inform
   
 7.  Stisknutím klávesy F5 spusťte váš projekt. Klikněte na tlačítko **přidat** přidáte nový záznam. Klikněte na tlačítko **aktualizace** Upravit nový záznam. Klikněte na tlačítko **odstranit** nový záznam odstranit.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)  
- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)  
- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)  
- [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](https://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)
+## <a name="see-also"></a>Viz také:
+- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
+- [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
+- [Metody DataContext (Návrhář relací objektů)](/visualstudio/data-tools/datacontext-methods-o-r-designer)
+- [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](https://msdn.microsoft.com/library/e88224ab-ff61-4a3a-b6b8-6f3694546cac)

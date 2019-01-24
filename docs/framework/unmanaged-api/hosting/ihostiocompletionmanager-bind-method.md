@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 89a30cf4fa95df85e3650459e356a6a82b19bcd6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c03cdb9f9205676d17d6e18b9b2e074132ee26f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439824"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594769"
 ---
 # <a name="ihostiocompletionmanagerbind-method"></a>IHostIoCompletionManager::Bind – metoda
-Zadanému popisovači váže k portu dokončení vstupně-výstupních operací, vytvořený starší voláním [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
+Vytvoří vazbu určený port dokončení vstupně-výstupních operací, který byl vytvořen v dřívějším volání [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,36 +38,36 @@ HRESULT Bind (
   
 #### <a name="parameters"></a>Parametry  
  `hPort`  
- [v] Portu dokončení vstupně-výstupních operací, do které chcete vytvořit vazbu `hHandle`. Pokud hodnota `hPort` má hodnotu null, `hHandle` je vázána výchozí port dokončení vstupně-výstupní operace.  
+ [in] Port dokončení vstupně-výstupních operací, ke kterému se vytvořit vazbu `hHandle`. Pokud hodnota `hPort` má hodnotu null, `hHandle` je vázán na výchozí port dokončení vstupně-výstupních operací.  
   
  `hHandle`  
- [v] Popisovač operačního systému vytvořit vazbu na `hPort`.  
+ [in] Popisovač operačního systému vytvořit vazbu na `hPort`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`Bind` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`Bind` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metody E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- K dokončení portu vstupně-výstupních operací je vytvořená pomocí volání `CreateIoCompletionPort`. Volání CLR `Bind` pro vazbu popisovač k tomuto portu.  
+ Port dokončení vstupně-výstupních operací je vytvořena pomocí volání `CreateIoCompletionPort`. Volání CLR `Bind` svázat popisovač na daný port.  
   
 > [!NOTE]
->  Po dokončení požadavek vstupně-výstupních operací, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) metoda.  
+>  Po dokončení se požadavek na vstupně-výstupních operací, musí volat hostitele [iclriocompletionmanager::onComplete –](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRIoCompletionManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)

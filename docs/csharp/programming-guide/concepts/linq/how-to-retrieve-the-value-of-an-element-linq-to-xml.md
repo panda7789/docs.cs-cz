@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: načtení hodnoty elementu (LINQ to XML) (C#)'
+title: 'Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
-ms.openlocfilehash: 7537c111e7d869f8a3e2458706864960820f9764
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 2cf7390dde2d0dc1ea37d2dd28f753e5d7580cd6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703328"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642604"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Postupy: načtení hodnoty elementu (LINQ to XML) (C#)
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Postupy: Načtení hodnoty elementu (LINQ to XML) (C#)
 Toto téma ukazuje, jak má být získána hodnota prvků. Chcete-li to provést dvěma způsoby. Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu. Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné. Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.  
   
  Pomocí jazyka C# ale přetypování je obecně bude vhodnější. Pokud přetypovat element nebo atribut na typ připouštějící hodnotu Null, kód je jednodušší zápis při načtení hodnoty elementu (nebo atributu), který může nebo nemusí existovat. V poslední příkladu v tomto tématu ukazuje to. Však nelze nastavit obsah elementu přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.  
@@ -145,6 +145,6 @@ v4:element does not exist
   
  Obecně platí můžete napsat kód jednodušší při použití přetypování načíst obsah elementů a atributů.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

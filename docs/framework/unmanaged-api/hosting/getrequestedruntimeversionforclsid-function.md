@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8d3a7168ce0ee3484384ae0e2d10ca00367fc9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e00bc95dd9b54d5451da65cefbfff13395e467f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432856"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54511955"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID – funkce
-Získá odpovídající běžné language runtime (CLR) verze informace pro třídu se zadaným `CLSID`.  
+Získá odpovídající common language runtime (CLR) informace o verzi pro třídu se zadaným `CLSID`.  
   
  Tato funkce se již nepoužívá v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
   
@@ -42,40 +42,40 @@ HRESULT GetRequestedRuntimeVersionForCLSID (
   
 #### <a name="parameters"></a>Parametry  
  `rclsid`  
- [v]  `CLSID` Součásti.  
+ [in]  `CLSID` Komponenty.  
   
  `pVersion`  
- [out]  Vyrovnávací paměť, která obsahuje řetězec číslo verze po úspěšném dokončení.  
+ [out]  Vyrovnávací paměť, která obsahuje řetězec, číslo verze po úspěšném dokončení.  
   
  `cchBuffer`  
- [v]  Velikost v široké znaky z `pVersion` vyrovnávací paměti.  
+ [in]  Velikost v širokých znaků, z `pVersion` vyrovnávací paměti.  
   
  `dwLength`  
- [out] Délka v bajtech vrácený vyrovnávací paměti.  
+ [out] Délka v bajtech, vrácený vyrovnávací paměti.  
   
  `dwResolutionFlags`  
- [v]  Jedna z hodnot CLSID_RESOLUTION_FLAGS. Podporovány jsou následující hodnoty:  
+ [in]  Jedna z hodnot clsid_resolution_flags –. Podporovány jsou následující hodnoty:  
   
--   CLSID_RESOLUTION_DEFAULT: (0x0) určuje výchozí chování spolupráce by měl být použit.  
+-   CLSID_RESOLUTION_DEFAULT: (0x0) určuje, že má být použito výchozí chování spolupráce.  
   
--   CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru by měl být vyhledávat a kód shim zásad by měla být použita.  
+-   CLSID_RESOLUTION_REGISTERED: (0x1) určuje, že registru vyhledávat a překrytí tato zásada použít.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Funkce vrátila úspěšně.|  
+|S_OK|Funkci bylo úspěšně vráceno.|  
 |E_INVALIDARG|Jeden z parametrů má neplatný typ nebo formát.|  
-|ERROR_INSUFFICIENT_BUFFER|`pVersion` Vyrovnávací paměť není dostatečně velký pro uložení řetězec celou verzi.|  
-|REGDB_E_CLASSNOTREG|Neexistuje žádná třída zaregistrovat se zadaným `CLSID`.|  
-|E_POINTER|`dwLength` má hodnotu null, nebo `cchBuffer` je dostatečně velký pro uložení řetězec verze, ale `pVersion` má hodnotu null.|  
+|ERROR_INSUFFICIENT_BUFFER|`pVersion` Vyrovnávací paměť není dostatečně velký pro umístění celého řetězci verze.|  
+|REGDB_E_CLASSNOTREG|Neexistuje žádná třída zaregistrován se zadaným `CLSID`.|  
+|E_POINTER|`dwLength` má hodnotu null, nebo `cchBuffer` je dostatečně velký pro uložení řetězce verze, ale `pVersion` má hodnotu null.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

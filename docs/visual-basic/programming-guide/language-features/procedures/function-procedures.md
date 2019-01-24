@@ -9,24 +9,24 @@ helpviewer_keywords:
 - procedures [Visual Basic], Function procedures
 - syntax [Visual Basic], function procedures
 ms.assetid: 1b9f632c-553b-4cb6-920a-ded117ead8c0
-ms.openlocfilehash: 887c930cb757b012542c97d64a57a62882a2eed3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8b67a6953e7788827ef1ec268f54bddf2f1392c3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655532"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662254"
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
-A `Function` postup je řada příkazů jazyka Visual Basic uzavřené do `Function` a `End Function` příkazy. `Function` Postup provede úlohu a potom se vrátí ovládací prvek volání kódu. Až se obnoví ovládací prvek, také vrátí hodnotu, voláním kódu.  
+A `Function` postup je řadu příkazů jazyka Visual Basic ohraničená `Function` a `End Function` příkazy. `Function` Postupu provede úlohu a potom vrátí řízení volajícímu kódu. Když vrátí řízení, také vrátí hodnotu volajícímu kódu.  
   
- Při každém volání procedury, jeho příkazy spustit, počínaje prvním příkazem spustitelný soubor po `Function` prohlášení a ukončuje se první `End Function`, `Exit Function`, nebo `Return` byl zjištěn příkaz.  
+ Pokaždé, když volání procedury, jeho příkazy, počínaje první spustitelný příkaz po `Function` příkazu a končí prvním `End Function`, `Exit Function`, nebo `Return` byl zjištěn příkaz.  
   
- Můžete definovat `Function` postupu v modulu, třídu nebo strukturu. Je `Public` ve výchozím nastavení, což znamená, můžete ji volat z libovolného místa ve vaší aplikaci, která má přístup k modulu, třídu nebo strukturu, ve kterém jste ji definovali.  
+ Můžete definovat `Function` postupu v modulu, třídy nebo struktury. Je `Public` ve výchozím nastavení, což znamená, že ho můžete volat z libovolného místa v aplikaci, která má přístup k modulu, třídy nebo struktury, ve kterém jste ji definovali.  
   
- A `Function` postup může trvat argumenty, jako jsou konstanty, proměnné nebo výrazy, které jsou k němu předaná volající kód.  
+ A `Function` postupu můžete převzít argumenty, jako jsou konstanty, proměnné a výrazy, které jsou předávány do ní volající kód.  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- Syntaxe deklarace `Function` postup je následující:  
+ Syntaxe pro deklarování `Function` postup je následující:  
   
 ```vb  
 [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
@@ -34,12 +34,12 @@ A `Function` postup je řada příkazů jazyka Visual Basic uzavřené do `Funct
 End Function  
 ```  
   
- *Modifikátory* můžete zadat úroveň přístupu a informací o přetížení, přepsání, sdílení a stínový provoz. Další informace najdete v tématu [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ *Modifikátory* můžete určit úroveň přístupu a informace týkající se přetížení, přepsání, sdílení a stínování. Další informace najdete v tématu [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
- Deklarovat každý parametr stejným způsobem jako u [Sub – procedury](./sub-procedures.md).  
+ Deklarujete každý parametr stejným způsobem jako u [Sub – procedury](./sub-procedures.md).  
   
 ### <a name="data-type"></a>Datový typ  
- Každý `Function` postup má datový typ, stejně jako všechny proměnné nemá. Tento typ dat je zadána `As` klauzuli v `Function` příkaz a určuje datový typ hodnoty, vrátí funkce volání kódu. Následující ukázka deklarace znázornění.  
+ Každý `Function` postupu má datový typ, stejně jako každá proměnná nemá. Tento typ dat je určená `As` klauzule `Function` příkaz který určuje datový typ hodnoty, vrátí funkce hodnotu volajícímu kódu. Následující ukázka deklarace ukazuje to.  
   
 ```vb  
 Function yesterday() As Date  
@@ -49,12 +49,12 @@ Function findSqrt(ByVal radicand As Single) As Single
 End Function  
 ```  
   
- Další informace najdete v tématu "Částí" v [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ Další informace najdete v tématu "Části" [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
-## <a name="returning-values"></a>Návrat hodnot  
- Hodnota `Function` postup odesílá zpět do volání kódu se nazývá hodnoty. Postup vrací hodnotu této v jednom ze dvou způsobů:  
+## <a name="returning-values"></a>Vrací hodnoty  
+ Hodnota `Function` postup odešle zpět volajícímu kódu nazývá jeho návratovou hodnotu. Postup vrátí tuto hodnotu v jednom ze dvou způsobů:  
   
--   Použije `Return` příkaz k určení návratovou hodnotu a vrátí řídit okamžitě k volací program. Toto dokládá následující příklad.  
+-   Používá `Return` příkaz a zadejte návratovou hodnotu a vrátí řízení okamžitě na volající program. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -64,7 +64,7 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
--   Přiřadí hodnotu svůj vlastní název funkce v jednom či více příkazech procedury. Řízení nevrátí volací program až `Exit Function` nebo `End Function` spustit příkaz. Toto dokládá následující příklad.  
+-   Přiřadí hodnotu svůj vlastní název funkce v jeden nebo více příkazů procedury. Ovládací prvek nevrací do volajícího programu do `Exit Function` nebo `End Function` je proveden příkaz. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -74,23 +74,23 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
- Výhodou přiřazení návratovou hodnotu pro název funkce je, dokud zjistí nevrací ovládací prvek v postupu `Exit Function` nebo `End Function` příkaz. To umožňuje přiřadit hodnotu předběžná a později upravit v případě potřeby.  
+ Výhodou přiřazení návratovou hodnotu pro název funkce je, dokud nenarazí nevrátí řízení z procedury `Exit Function` nebo `End Function` příkazu. To umožňuje přiřadit hodnotu předběžné a upravte ho později, v případě potřeby.  
   
- Další informace o vrácení hodnot najdete v tématu [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md). Informace o vrácení pole najdete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další informace o vrácení hodnot najdete v tématu [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md). Informace o vrácení pole najdete v tématu [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="calling-syntax"></a>Syntaxe volání  
- Vyvolání `Function` postupu včetně jeho název a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné a seznam argumentů je nutné uzavřít do závorek. Pokud jsou zadány žádné argumenty, můžete volitelně vynechat závorkách.  
+ Vyvolání `Function` proceduru včetně jejího názvu a argumenty buď na pravé straně příkazu přiřazení nebo ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou nepovinné a je nutné uzavřít do závorek seznamu argumentů. Pokud nejsou dodány žádné argumenty, můžete volitelně vynechejte závorky.  
   
- Syntaxe volání `Function` postup je následující:  
+ Syntaxe pro volání `Function` postup je následující:  
   
- *lvalue*`=`*%{FunctionName/* `[(` *argumentlist* `)]`  
+ *l-hodnoty*`=`*functionname* `[(` *seznam_argumentů*  `)]`  
   
- `If ((` *%{FunctionName/* `[(` *argumentlist* `)] / 3) <=` *výraz* `) Then`  
+ `If ((` *FunctionName* `[(` *seznam_argumentů* `)] / 3) <=` *výraz*  `) Then`  
   
- Při volání `Function` postupu, není nutné použít hodnoty. Pokud ho použít nechcete, všechny akce, které funkce jsou prováděny, ale vrácená hodnota je ignorována. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> se často nazývá tímto způsobem.  
+ Při volání `Function` procedury, není nutné používat jeho návratovou hodnotu. Pokud ho nevidíte, jsou provedeny všechny akce funkce, ale je návratová hodnota ignorována. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> se často nazývá tímto způsobem.  
   
 ### <a name="illustration-of-declaration-and-call"></a>Obrázek deklarace a volání  
- Následující `Function` postup vypočítá nejdelší straně nebo přepony trojúhelníku vpravo, pro zbývající dvě strany zadané hodnoty.  
+ Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.  
   
  [!code-vb[VbVbcnProcedures#1](./codesnippet/VisualBasic/function-procedures_1.vb)]  
   
@@ -98,13 +98,13 @@ End Function
   
  [!code-vb[VbVbcnProcedures#6](./codesnippet/VisualBasic/function-procedures_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Procedury](./index.md)  
- [Procedury Sub](./sub-procedures.md)  
- [Procedury vlastnosti](./property-procedures.md)  
- [Procedury operátoru](./operator-procedures.md)  
- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)  
- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)  
- [Postupy: Vytvoření procedury, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)  
- [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)  
- [Postupy. Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)
+## <a name="see-also"></a>Viz také:
+- [Procedury](./index.md)
+- [Procedury Sub](./sub-procedures.md)
+- [Procedury vlastnosti](./property-procedures.md)
+- [Procedury operátoru](./operator-procedures.md)
+- [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
+- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Postupy: Vytvořit proceduru, která vrací hodnotu](./how-to-create-a-procedure-that-returns-a-value.md)
+- [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)
+- [Postupy: Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)

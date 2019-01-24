@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a89474ddfe3bcde1c44271818b7e3c730469f48
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 023759ea3d1401dbc166873d14d2c51502a1a96c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152523"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744138"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
 Aplikace Windows 8.1 a Windows desktopových aplikací, které jsou cíleny na rozhraní.NET Framework jsou napsané v konkrétním programovacím jazykem a zkompilovány do (IL intermediate language). Za běhu kompilátor just-in-time (JIT) zodpovídá za kompilace IL do nativního kódu pro místní počítač, těsně před prvním je metoda spuštěna. Naproti tomu .NET Native řetězce nástrojů převede zdrojový kód do nativního kódu v době kompilace. Toto téma porovnává .NET Native s jinými technologiemi kompilace k dispozici pro aplikace rozhraní .NET Framework a také poskytuje praktické přehled jak .NET Native vytváří nativní kód, který vám pomůžou pochopit, proč výjimky, ke kterým dochází v kód zkompilovaný s .NET Nativní nedojde v kód zkompilovaný kompilátorem JIT.  
@@ -100,8 +100,8 @@ Aplikace Windows 8.1 a Windows desktopových aplikací, které jsou cíleny na r
   
 -   Obrázků NGEN bývají křehké. Třeba opravu nebo změňte na závislost obvykle vyžaduje, aby sestavení, které ho používají také re NGENed. To platí hlavně systémová sestavení v knihovně tříd rozhraní .NET Framework. .NET Native naproti tomu umožňuje aplikacím, ke zpracování nezávisle na mezi sebou.  
   
-## <a name="see-also"></a>Viz také  
- [Metadata a komponenty popisující samy sebe](../../../docs/standard/metadata-and-self-describing-components.md)  
- [Uvnitř .NET Native (Video pro kanál 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)  
- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)  
- [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)
+## <a name="see-also"></a>Viz také:
+- [Metadata a komponenty popisující samy sebe](../../../docs/standard/metadata-and-self-describing-components.md)
+- [Uvnitř .NET Native (Video pro kanál 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
+- [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)

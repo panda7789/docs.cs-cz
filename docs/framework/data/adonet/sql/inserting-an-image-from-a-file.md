@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: d3cbf4fa0eb0b261bb752370c95cdfb2bca0b7e6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8df63cb425f8e113a73fee1b0a6bd61683ed27ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54578839"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Vložení obrázku ze souboru
 Binární velkých objektů (BLOB) může zapisovat do databáze jako binární nebo znaková data, v závislosti na typu pole ve zdroji dat. Objekt BLOB je obecný termín, který odkazuje `text`, `ntext`, a `image` datové typy, které obvykle obsahují dokumenty a obrázky.  
@@ -130,9 +130,9 @@ public static byte[] GetPhoto(string filePath)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Použití příkazů pro změny dat](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
- [Načítání binárních dat](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Použití příkazů pro změny dat](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
+- [Načítání binárních dat](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)
+- [Binární a vysoké hodnoty na SQL Serveru](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
+- [Mapování datových typů SQL Serveru](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

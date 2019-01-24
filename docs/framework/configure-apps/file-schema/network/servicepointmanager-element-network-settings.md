@@ -1,5 +1,5 @@
 ---
-title: '&lt;Třída servicePointManager&gt; – Element (nastavení sítě)'
+title: '&lt;servicePointManager&gt; Element (Network Settings)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: fed2b39d92557f25c4f7427bccf28af616d1c0a3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: e30d38e3b925283b6048730aef2acc865be755b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187273"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54651614"
 ---
-# <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;Třída servicePointManager&gt; – Element (nastavení sítě)
+# <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;servicePointManager&gt; Element (Network Settings)
 Nakonfiguruje připojení k síťovým prostředkům.  
   
  \<Konfigurace >  
 \<system.net>  
-\<Nastavení >  
-\<Třída servicePointManager >  
+\<settings>  
+\<servicePointManager>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,7 +66,7 @@ Nakonfiguruje připojení k síťovým prostředkům.
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.ServicePointManager>  
-- <xref:System.Net.Security.EncryptionPolicy>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.ServicePointManager>
+- <xref:System.Net.Security.EncryptionPolicy>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

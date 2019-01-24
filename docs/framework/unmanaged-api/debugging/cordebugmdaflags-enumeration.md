@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac4a8a0c13ba6aa0d5c65ec7fa1aa3b771c964eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b7f20dec86a85be85472037f58a2bd2002d9be1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33404856"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620390"
 ---
 # <a name="cordebugmdaflags-enumeration"></a>CorDebugMDAFlags – výčet
-Určuje stav vláken, na kterém je aktivována, Pomocník spravovaného ladění (MDA).  
+Určuje stav vláken, ve kterém se spustí Pomocník spravovaného ladění (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ typedef enum CorDebugMDAFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDA_FLAG_SLIP`|Vlákno, na kterém byl MDA aktivováno opožděný vzhledem k tomu, že MDA byla aktivována.|  
+|`MDA_FLAG_SLIP`|Vlákno, na kterém se vyvolala MDA opožděný vzhledem k tomu, že se vyvolala MDA.|  
   
 ## <a name="remarks"></a>Poznámky  
- Když zásobníku volání už popisuje, kde byla původně vyvolána MDA, vlákno má mít *opožděný*. Jedná se neobvyklé okolnosti způsobené provádění vlákna na neplatnou operaci vyprázdněna.  
+ Když zásobník volání již popisuje, kde byla původně vyvolána MDA, vlákno se považuje za mít *opožděný*. Toto je neobvyklé okolnosti způsobené vlákna provádění neplatné operace ukončením.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -52,5 +52,5 @@ typedef enum CorDebugMDAFlags {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

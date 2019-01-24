@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54601bc705a8684508563ecf0682d84bcac8713f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: cf9b842243cd7b9ae244688b0da348f63b68f08a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879751"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492036"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 ## <a name="what-is-a-parallel-query"></a>Co je paralelní dotaz?  
@@ -59,7 +59,7 @@ ms.locfileid: "43879751"
  <xref:System.Linq.ParallelEnumerable.AsParallel%2A> – Metoda rozšíření váže následující operátory pro dotazování, v tomto případě `where` a `select`, možnosti <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> implementace.  
   
 ## <a name="execution-modes"></a>Režimy spuštění  
- Ve výchozím nastavení je PLINQ konzervativní. V době spuštění PLINQ infrastruktura analyzuje celkovou strukturu dotazu. Pokud je dotaz pravděpodobně zrychlen paralelizací, pak PLINQ rozdělí zdrojovou sekvenci na úlohy, které můžou běžet souběžně. Pokud není bezpečné paralelizovat dotaz, PLINQ spustí dotaz pouze postupně. Pokud se PLINQ rozhoduje mezi potencionálně nákladným paralelním algoritmem nebo levným sekvenčním algoritmem, zvolí ve výchozím nastavení sekvenční algoritmus. Můžete použít <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metoda a <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> výčet k vynucení PLINQ paralelního algoritmu. To je užitečné, když víte, testování a měření, které speciální dotaz je vyhodnocen rychleji paralelně. Další informace najdete v tématu [postupy: určení režimu spouštění v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).  
+ Ve výchozím nastavení je PLINQ konzervativní. V době spuštění PLINQ infrastruktura analyzuje celkovou strukturu dotazu. Pokud je dotaz pravděpodobně zrychlen paralelizací, pak PLINQ rozdělí zdrojovou sekvenci na úlohy, které můžou běžet souběžně. Pokud není bezpečné paralelizovat dotaz, PLINQ spustí dotaz pouze postupně. Pokud se PLINQ rozhoduje mezi potencionálně nákladným paralelním algoritmem nebo levným sekvenčním algoritmem, zvolí ve výchozím nastavení sekvenční algoritmus. Můžete použít <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metoda a <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> výčet k vynucení PLINQ paralelního algoritmu. To je užitečné, když víte, testování a měření, které speciální dotaz je vyhodnocen rychleji paralelně. Další informace najdete v tématu [jak: Určení režimu spouštění v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).  
   
 ## <a name="degree-of-parallelism"></a>Stupeň paralelismu  
  Ve výchozím nastavení PLINQ používá všechny procesory v hostitelském počítači. Můžete dát pokyn, aby PLINQ používal maximálně určený počet procesorů pomocí <xref:System.Linq.ParallelEnumerable.WithDegreeOfParallelism%2A> metody. To je užitečné, pokud chcete, abyste měli jistotu, že ostatní procesy spuštěné v počítači dostanou množství času procesoru. Následující úryvek omezuje dotaz k použití maximálně dvou procesorů.  
@@ -80,7 +80,7 @@ ms.locfileid: "43879751"
  Další informace najdete v tématu [zachování pořadí v PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).  
   
 ## <a name="parallel-vs-sequential-queries"></a>Paralelní vs. Sekvenční dotazy  
- Některé operace vyžadují doručení zdrojových dat sekvenčním způsobem. <xref:System.Linq.ParallelEnumerable> Dotazů, operátory vrátí do sekvenčního režimu automaticky pokud je to požadováno. Uživateli definované operátory pro dotazování a uživatelské delegáty, které vyžadují sekvenční provádění, poskytuje PLINQ <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metody. Při použití <xref:System.Linq.ParallelEnumerable.AsSequential%2A>, všechny následující operátory v dotazu jsou prováděny postupně až do <xref:System.Linq.ParallelEnumerable.AsParallel%2A> volána znovu. Další informace najdete v tématu [postupy: Kombinování paralelních a sekvenčních dotazů LINQ](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md).  
+ Některé operace vyžadují doručení zdrojových dat sekvenčním způsobem. <xref:System.Linq.ParallelEnumerable> Dotazů, operátory vrátí do sekvenčního režimu automaticky pokud je to požadováno. Uživateli definované operátory pro dotazování a uživatelské delegáty, které vyžadují sekvenční provádění, poskytuje PLINQ <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metody. Při použití <xref:System.Linq.ParallelEnumerable.AsSequential%2A>, všechny následující operátory v dotazu jsou prováděny postupně až do <xref:System.Linq.ParallelEnumerable.AsParallel%2A> volána znovu. Další informace najdete v tématu [jak: Kombinování paralelních a sekvenčních LINQ dotazů](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md).  
   
 ## <a name="options-for-merging-query-results"></a>Možnosti pro slučování výsledků dotazů  
  Když je PLINQ dotaz spuštěn paralelně, jeho výsledky z každého pracovního vlákna musí být sloučeny zpět do hlavního vlákna pro spotřebu `foreach` smyčky (`For Each` v jazyce Visual Basic), nebo pro vložení do seznamu nebo pole. V některých případech může být výhodné například určit konkrétní druh operace sloučení, k zahájení výroby výsledku rychleji. Za tímto účelem podporuje PLINQ <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> metody a <xref:System.Linq.ParallelMergeOptions> výčtu. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
@@ -100,14 +100,14 @@ ms.locfileid: "43879751"
   
  Je možné, že PLINQ dotaz může pokračovat ve zpracování některých prvků po nastavení tokenu zrušení.  
   
- Pro větší rychlost reakce můžete také odpovídat na požadavky zrušení v dlouhotrvajících uživatelských delegátech. Další informace najdete v tématu [postupy: zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
+ Pro větší rychlost reakce můžete také odpovídat na požadavky zrušení v dlouhotrvajících uživatelských delegátech. Další informace najdete v tématu [jak: Zrušení dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md).  
   
 ## <a name="exceptions"></a>Výjimky  
  Při spouštění PLINQ dotazu může být více výjimky vyvolána z různých vláken současně. Kód pro zpracování výjimky může být v jiném vlákně než kód, který vyvolal výjimku. PLINQ používá <xref:System.AggregateException> typ k zapouzdření všech výjimek, které byly vyvolány v dotazu a zařazení těchto výjimek zpět do volajícího vlákna. Na volajícím vlákně je pouze jeden blok try-catch – povinné. Však můžete iterovat přes všechny výjimky, které jsou zapouzdřeny v <xref:System.AggregateException> a zachytit všechny, můžete bezpečně zotavit. Ve výjimečných případech některé výjimky mohou být vyvolány, které nejsou zabaleny v <xref:System.AggregateException>, a <xref:System.Threading.ThreadAbortException>také nejsou zabaleny.  
   
  Pokud je výjimkám umožněn pokračovala zpět do spojovacího vlákna, pak je možné, že dotaz může pokračovat ve zpracování některých položek poté, co je vyvolána výjimka.  
   
- Další informace najdete v tématu [postupy: zpracování výjimek v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).  
+ Další informace najdete v tématu [jak: Zpracování výjimek v dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md).  
   
 ## <a name="custom-partitioners"></a>Vlastní dělicí metody  
  V některých případech můžete zlepšit výkon dotazu napsáním vlastního rozdělovače, který využívá některé typické vlastnosti zdrojových datech. V dotazu je vlastní rozdělovač sám vyčíslitelným objektem, který je dotazován.  
@@ -118,9 +118,9 @@ ms.locfileid: "43879751"
  PLINQ podporuje pevný počet oddílů (Ačkoli data mohou být dynamicky přeřazena do těchto oddílů během vyrovnávání zatížení.). <xref:System.Threading.Tasks.Parallel.For%2A> a <xref:System.Threading.Tasks.Parallel.ForEach%2A> podporují pouze dynamické rozdělení, což znamená, že počet oddílů se mění v době běhu. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  
   
 ## <a name="measuring-plinq-performance"></a>Měření výkonu PLINQ  
- V mnoha případech může být dotaz paralelizován, ale režie nastavení paralelního dotaz převažuje získané výhody výkonu. Jestliže dotaz neprovádí mnoho výpočtů nebo zdrojová data jsou malá, PLINQ dotazu může být pomalejší než sekvenční LINQ to Objects dotazům. Můžete použít paralelního Průvodce analýzou výkonu v aplikaci Visual Studio Team Server k porovnání výkonu různých dotazů, k vyhledání problémových místa ve zpracování a na zjištění, zda je dotaz prováděn sekvenčně nebo paralelně. Další informace najdete v tématu [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer) a [postupy: měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).  
+ V mnoha případech může být dotaz paralelizován, ale režie nastavení paralelního dotaz převažuje získané výhody výkonu. Jestliže dotaz neprovádí mnoho výpočtů nebo zdrojová data jsou malá, PLINQ dotazu může být pomalejší než sekvenční LINQ to Objects dotazům. Můžete použít paralelního Průvodce analýzou výkonu v aplikaci Visual Studio Team Server k porovnání výkonu různých dotazů, k vyhledání problémových místa ve zpracování a na zjištění, zda je dotaz prováděn sekvenčně nebo paralelně. Další informace najdete v tématu [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer) a [jak: Měření výkonu dotazu PLINQ](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
 - [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)

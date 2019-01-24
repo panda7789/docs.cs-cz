@@ -2,12 +2,12 @@
 title: Serverové a databázové role v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: 5fd706d886ea050eb578d5f889d55055665c3a44
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 57570d1879efa91dc98e41203eac9464c547af77
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643075"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Serverové a databázové role v systému SQL Server
 Všechny verze SQL serveru použít zabezpečení na základě rolí, které vám umožní přiřadit oprávnění pro roli nebo skupinu uživatelů, nikoli pro jednotlivé uživatele. Pevného serveru a pevné databázové role mají pevnou sadu oprávnění, které jsou jim přiřazeny.  
@@ -61,10 +61,10 @@ Všechny verze SQL serveru použít zabezpečení na základě rolí, které vá
 |[Řízení identit a přístupu](https://msdn.microsoft.com/library/bb510418.aspx) v Online knihách serveru SQL|Obsahuje odkazy na témata popisující objekty zabezpečení, role, přihlašovací údaje, zabezpečitelné objekty a oprávnění.|  
 |[Objekty zabezpečení](/sql/relational-databases/security/authentication-access/principals-database-engine) v Online knihách serveru SQL|Popisuje objekty zabezpečení a obsahuje odkazy na témata popisující role serveru a databáze.|  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)  
- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)  
- [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
+- [Ověřování v SQL Serveru](../../../../../docs/framework/data/adonet/sql/authentication-in-sql-server.md)
+- [Vlastnictví a oddělení uživatelských schémat na SQL Serveru](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md)
+- [Autorizace a oprávnění na SQL Serveru](../../../../../docs/framework/data/adonet/sql/authorization-and-permissions-in-sql-server.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

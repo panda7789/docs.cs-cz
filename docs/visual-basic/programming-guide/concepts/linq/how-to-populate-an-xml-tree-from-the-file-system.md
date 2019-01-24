@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: naplnění strom XML ze systému souborů (Visual Basic)'
+title: 'Postupy: Naplnění stromu XML ze systému souborů (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 34eec79e-7945-4ba8-9f74-d05bb8ec67f6
-ms.openlocfilehash: 158a6c5c6734f0aa11e22b5cbea35c960c7a1c40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: babb8f835e8320b637f131bdc2e242c460c0548c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642557"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559785"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>Postupy: naplnění strom XML ze systému souborů (Visual Basic)
-Běžné a užitečné aplikace stromů XML je jako úložiště dat hierarchické název/hodnota. Můžete naplnit strom XML hierarchické daty a pak dotaz ho, transformovat je a v případě potřeby serializovat. V tomto scénáři použití řadu konkrétní sémantiku XML, například obory názvů a chování mezer nejsou důležité. Místo toho používají stromu XML jako malá, v paměti, hierarchické databázi jednoho uživatele.  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>Postupy: Naplnění stromu XML ze systému souborů (Visual Basic)
+Je běžné použití užitečné stromů XML jako úložiště dat hierarchické název/hodnota. Můžete naplnění stromu XML s hierarchickými daty a pak ji dotazovat, transformují je a v případě potřeby ho serializovat. V tomto scénáři použití mnoha specifické sémantiku XML, například obory názvů a chování mezer, nejsou důležité. Místo toho používají stromu XML jako malé, v paměti, hierarchické databázi jednoho uživatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad naplní strom XML z místního systému souborů pomocí rekurze. Následně se dotazuje stromu výpočet celkové velikosti všech souborů ve stromové struktuře.  
+ V následujícím příkladu se naplní stromu XML z místního systému souborů pomocí rekurze. Následně se dotazuje stromu výpočtu celkové velikosti všech souborů ve stromové struktuře.  
   
 ```vb  
 Module Module1  
@@ -114,5 +114,5 @@ End Module
 Total File Size:59089  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé techniky dotazování (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -2,12 +2,12 @@
 title: Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 ms.date: 03/30/2017
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-ms.openlocfilehash: c4c07d24ba322c957aac5ba9fa6ed3a5f337fb9a
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 6bf9743410d3138efd5f3ea151b58f61e46ef683
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127365"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496790"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>Porovnání webových služeb ASP.NET Web Services s technologií WCF z hlediska vývojových požadavků
 Windows Communication Foundation (WCF) je možnost režim kompatibility ASP.NET umožňují aplikacím naprogramovat a nakonfigurované stejně jako webové služby WCF a napodobení jejich chování. Následující části porovnávají webových služeb ASP.NET a WCF založená na co je potřeba k vývoji aplikací pomocí obou technologií.  
@@ -295,10 +295,10 @@ public class Service : IEcho
 |BasicHttpBinding|Interoperabilita s Web services a klienti podporující WS-BasicProfile 1.1 a 1.0 profil základní zabezpečení.|  
 |WSHttpBinding|Interoperabilita s Web services a klienti podporující WS-* protokolů přes protokol HTTP.|  
 |WSDualHttpBinding|Duplexní komunikaci pomocí protokolu HTTP, podle kterého příjemce původní zprávu neodpovídejte přímo do počáteční odesílatele, ale může přenést libovolný počet odpovědí po určitou dobu pomocí protokolu HTTP v souladu s WS-* protokoly.|  
-|Wsfederationbinding –|Komunikaci pomocí protokolu HTTP, ve kterém lze ovládat přístup k prostředkům služby na základě přihlašovacích údajů vydané poskytovatele přihlašovacích údajů explicitně identifikovat.|  
+|WSFederationBinding|Komunikaci pomocí protokolu HTTP, ve kterém lze ovládat přístup k prostředkům služby na základě přihlašovacích údajů vydané poskytovatele přihlašovacích údajů explicitně identifikovat.|  
 |NetTcpBinding|Bezpečné, spolehlivé a vysoce výkonné komunikace mezi entitami softwaru WCF přes síť.|  
 |NetNamedPipeBinding|Bezpečné, spolehlivé a vysoce výkonné komunikace mezi entitami WCF software ve stejném počítači.|  
-|netMsmqBinding|Komunikace mezi entitami WCF software pomocí služby MSMQ.|  
+|NetMsmqBinding|Komunikace mezi entitami WCF software pomocí služby MSMQ.|  
 |MsmqIntegrationBinding|Komunikace mezi entitou softwaru WCF a jiné entity software pomocí služby MSMQ.|  
 |NetPeerTcpBinding|Komunikace mezi entitami softwaru WCF pomocí sítě Peer-to-Peer Windows.|  
   
@@ -750,5 +750,5 @@ public void Receive(Message input)
 ## <a name="globalization"></a>Globalizace  
  Konfigurace jazyka ASP.NET můžete zadat jazykovou verzi pro jednotlivé služby. WCF nepodporuje toto nastavení konfigurace s výjimkou v režim kompatibility ASP.NET. Chcete-li lokalizovat služby WCF, která nepoužívá režim kompatibility ASP.NET, kompilaci typ služby do sestavení specifické pro jazykovou verzi a mít samostatné koncové body specifické pro jazykovou verzi pro každé sestavení specifické pro jazykovou verzi.  
   
-## <a name="see-also"></a>Viz také  
- [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
+## <a name="see-also"></a>Viz také:
+- [Porovnání webových služeb ASP.NET se službou WCF na základě účelu a používaných standardů](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

@@ -13,15 +13,15 @@ helpviewer_keywords:
 - sounds [Windows Forms], playing
 - examples [Windows Forms], sounds
 ms.assetid: afb206ff-4824-4804-a8d4-185bf5ad8e7c
-ms.openlocfilehash: 4dfda2b6d73e346d85690f66a3e92858381ae7af
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1883e73f3b1937e8568b751d1cb9f3b57548c010
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33532396"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649502"
 ---
 # <a name="how-to-play-a-system-sound-from-a-windows-form"></a>Postupy: Přehrávání systémového zvuku z formuláře Windows
-Následující kód například plní `Exclamation` systémového zvuku za běhu. Další informace o systémové zvuky najdete v tématu <xref:System.Media.SystemSounds>.  
+Následující kód například jde skvěle dohromady `Exclamation` systémového zvuku v době běhu. Další informace o systémové zvuky, naleznete v tématu <xref:System.Media.SystemSounds>.  
   
 ## <a name="example"></a>Příklad  
   
@@ -43,8 +43,8 @@ public void playExclamation()
   
 -   Odkaz na <xref:System.Media?displayProperty=nameWithType> oboru názvů.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Media.SoundPlayer>  
- <xref:System.Media.SystemSounds>  
- [Postupy: Přehrání zvukového signálu z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-beep-from-a-windows-form.md)  
- [Postupy: Přehrávání zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Media.SoundPlayer>
+- <xref:System.Media.SystemSounds>
+- [Postupy: Přehrání zvukového signálu z formuláře Windows](../../../../docs/framework/winforms/controls/how-to-play-a-beep-from-a-windows-form.md)
+- [Postupy: Přehrávání zvuku z formuláře Windows](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)

@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bcfb584fc2380a7ae1567d3d4d6203b537676220
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ca2d7fe73fc749296f76e18ecce75b7fdd0795d3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429696"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585588"
 ---
 # <a name="iassemblynamesetproperty-method"></a>IAssemblyName::SetProperty – metoda
 Nastaví hodnotu vlastnosti odkazuje zadaný identifikátor vlastnosti.  
@@ -39,20 +39,20 @@ HRESULT SetProperty (
   
 #### <a name="parameters"></a>Parametry  
  `PropertyId`  
- [v] Jedinečný identifikátor vlastnosti, jehož hodnota bude nastavena.  
+ [in] Jedinečný identifikátor vlastnosti, jehož hodnota bude nastavena.  
   
  `pvProperty`  
- [v] Hodnota, pro kterou chcete nastavit vlastnost odkazuje `PropertyId`.  
+ [in] Hodnota, na kterou odkazuje vlastnost `PropertyId`.  
   
  `cbProperty`  
- [v] Velikost v bajtech z `pvProperty`.  
+ [in] Velikost v bajtech, z `pvProperty`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)

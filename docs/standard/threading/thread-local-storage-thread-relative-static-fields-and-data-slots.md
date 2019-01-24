@@ -1,5 +1,5 @@
 ---
-title: 'Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům'
+title: 'Úložiště Thread Local: Statická pole relativní vůči vláknu a datové sloty ve vztahu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bea5dfd7c53b5b5f53ddab5d4d07ec6a603b14e8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 69107cd7f1f84fa402479bb8a76c4b9b8a825d69
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042228"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54718257"
 ---
-# <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Úložiště vláken Thread Local: statická pole a datové sloty ve vztahu k vláknům
+# <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Úložiště Thread Local: Statická pole relativní vůči vláknu a datové sloty ve vztahu
 Můžete použít spravovaného úložiště thread local (TLS) k ukládání dat, který je jedinečný k doméně vlákna a aplikace. Rozhraní .NET Framework poskytuje dva způsoby, jak používat spravované TLS: statická pole a datové sloty relativní vůči vláknu.  
   
 -   Použít statická pole relativní vůči vláknu (relativní vůči vláknu `Shared` pole v jazyce Visual Basic) Pokud očekáváte vaše konkrétní požadavky v době kompilace. Statická pole relativní vůči vláknu poskytovat nejlepší výkon. Také poskytují výhody kontrola typu v době kompilace.  
@@ -59,8 +59,8 @@ Můžete použít spravovaného úložiště thread local (TLS) k ukládání da
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.ContextStaticAttribute>  
-- <xref:System.Threading.Thread.GetNamedDataSlot%2A?displayProperty=nameWithType>  
-- <xref:System.ThreadStaticAttribute>  
-- <xref:System.Runtime.Remoting.Messaging.CallContext>  
+- <xref:System.ContextStaticAttribute>
+- <xref:System.Threading.Thread.GetNamedDataSlot%2A?displayProperty=nameWithType>
+- <xref:System.ThreadStaticAttribute>
+- <xref:System.Runtime.Remoting.Messaging.CallContext>
 - [Dělení na vlákna](../../../docs/standard/threading/index.md)

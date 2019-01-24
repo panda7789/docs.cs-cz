@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: dotazu na ArrayList pomocí LINQ (Visual Basic)'
+title: 'Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 176358a9-d765-4b57-9557-7feb4428138d
-ms.openlocfilehash: 24865842d073dbd4cbb60fe4a228520e98010f4d
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 5e1a7e84c8f8789edb3f0c867986d5a5e27674c3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207242"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669026"
 ---
-# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Postupy: dotazu na ArrayList pomocí LINQ (Visual Basic)
-Při použití LINQ k dotazu neobecnou <xref:System.Collections.IEnumerable> kolekcí, jako <xref:System.Collections.ArrayList>, je potřeba explicitně deklarovat druh proměnné rozsahu tak, aby odrážela konkrétní typy objektů v kolekci. Pokud máte například <xref:System.Collections.ArrayList> z `Student` objekty, vaše [klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md) by měla vypadat takto:  
+# <a name="how-to-query-an-arraylist-with-linq-visual-basic"></a>Postupy: Vytvoření dotazu na ArrayList pomocí LINQ (Visual Basic)
+Při použití LINQ dotaz neobecnou <xref:System.Collections.IEnumerable> kolekcí, jako <xref:System.Collections.ArrayList>, musíte explicitně deklarovat typ proměnné rozsahu tak, aby odrážely konkrétní typ objektů v kolekci. Pokud máte například <xref:System.Collections.ArrayList> z `Student` objekty, vaše [klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md) by měl vypadat takto:  
   
 ```  
 Dim query = From student As Student In arrList   
 ...  
 ```  
   
- Zadáním druh proměnné rozsahu jsou přetypování jednotlivé položky <xref:System.Collections.ArrayList> k `Student`.  
+ Zadáním typu proměnné rozsahu, jsou přetypování každou položku v <xref:System.Collections.ArrayList> k `Student`.  
   
- Použití proměnné explicitně typové rozsah ve výrazu dotazu je ekvivalentní volání <xref:System.Linq.Enumerable.Cast%2A> metoda. <xref:System.Linq.Enumerable.Cast%2A> vyvolá výjimku, pokud zadané přetypování nelze provést. <xref:System.Linq.Enumerable.Cast%2A> a <xref:System.Linq.Enumerable.OfType%2A> jsou tyto dvě metody standardní – operátor dotazu, které působí na neobecnou <xref:System.Collections.IEnumerable> typy. V jazyce Visual Basic, musíte explicitně zavolat <xref:System.Linq.Enumerable.Cast%2A> metoda ve zdroji dat, aby typ proměnné určitého rozsahu. Další informace najdete v tématu [vztahy typů v operacích dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
+ Použití explicitně rozsah proměnné ve výrazu dotazu je ekvivalentní volání <xref:System.Linq.Enumerable.Cast%2A> metody. <xref:System.Linq.Enumerable.Cast%2A> vyvolá výjimku, pokud zadané přetypování nelze provést. <xref:System.Linq.Enumerable.Cast%2A> a <xref:System.Linq.Enumerable.OfType%2A> jsou dvě metody standardního operátoru dotazu, které pracují s neobecnou <xref:System.Collections.IEnumerable> typy. V jazyce Visual Basic, musíte explicitně volat <xref:System.Linq.Enumerable.Cast%2A> metodu na zdroj dat, aby typ proměnné konkrétního rozsahu. Další informace najdete v tématu [vztahy typů v operacích dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/type-relationships-in-query-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje jednoduchý dotaz přes <xref:System.Collections.ArrayList>. Všimněte si, že tento příklad používá inicializátory objektů při volání kódu <xref:System.Collections.ArrayList.Add%2A> metoda, ale to není povinné.  
+ Následující příklad ukazuje jednoduchý dotaz přes <xref:System.Collections.ArrayList>. Všimněte si, že tento příklad používá inicializátory objektů, když kód volá <xref:System.Collections.ArrayList.Add%2A> metody, ale to není povinné.  
   
 ```vb  
 Imports System.Collections  
@@ -76,5 +76,5 @@ End Module
 '   Garcia: 97  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [LINQ na objekty (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

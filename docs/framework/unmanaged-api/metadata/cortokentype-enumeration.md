@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 769802eae048427325af9807d788b1fbc5a15665
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9cc480d673648562638fbfd4a03df643dd734b9d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448429"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620614"
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType – výčet
 Určuje typ tokenu metadat.  
@@ -65,42 +65,42 @@ typedef enum CorTokenType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdtModule`|`mdModule` Tokenu.|  
-|`mdtTypeRef`|`mdTypeRef` Tokenu.|  
-|`mdtTypeDef`|`mdTypeDef` Tokenu.|  
-|`mdtFieldDef`|`mdFieldDef` Tokenu.|  
-|`mdtMethodDef`|`mdMethodDef` Tokenu.|  
-|`mdtParamDef`|`mdParamDef` Tokenu.|  
-|`mdtInterfaceImpl`|`mdInterfaceImpl` Tokenu.|  
-|`mdtMemberRef`|`mdMemberRef` Tokenu.|  
-|`mdtCustomAttribute`|`mdCustomAttribute` Tokenu.|  
-|`mdtPermission`|`mdPermission` Tokenu.|  
-|`mdtSignature`|`mdSignature` Tokenu.|  
-|`mdtEvent`|`mdEvent` Tokenu.|  
-|`mdtProperty`|`mdProperty` Tokenu.|  
-|`mdtModuleRef`|`mdModuleRef` Tokenu.|  
-|`mdtTypeSpec`|`mdTypeSpec` Tokenu.|  
-|`mdtAssembly`|`mdAssembly` Tokenu.|  
-|`mdtAssemblyRef`|`mdAssemblyRef` Tokenu.|  
-|`mdtFile`|`mdFile` Tokenu.|  
-|`mdtExportedType`|`mdExportedType` Tokenu.|  
-|`mdtManifestResource`|`mdManifestResource` Tokenu.|  
-|`mdtGenericParam`|`mdGenericParam` Tokenu.|  
-|`mdtMethodSpec`|`mdMethodSpec` Tokenu.|  
-|`mdtGenericParamConstraint`|`mdGenericParamConstraint` Tokenu.|  
-|`mdtString`|`mdString` Tokenu.|  
-|`mdtName`|`mdName` Tokenu.|  
+|`mdtModule`|`mdModule` Token.|  
+|`mdtTypeRef`|`mdTypeRef` Token.|  
+|`mdtTypeDef`|`mdTypeDef` Token.|  
+|`mdtFieldDef`|`mdFieldDef` Token.|  
+|`mdtMethodDef`|`mdMethodDef` Token.|  
+|`mdtParamDef`|`mdParamDef` Token.|  
+|`mdtInterfaceImpl`|`mdInterfaceImpl` Token.|  
+|`mdtMemberRef`|`mdMemberRef` Token.|  
+|`mdtCustomAttribute`|`mdCustomAttribute` Token.|  
+|`mdtPermission`|`mdPermission` Token.|  
+|`mdtSignature`|`mdSignature` Token.|  
+|`mdtEvent`|`mdEvent` Token.|  
+|`mdtProperty`|`mdProperty` Token.|  
+|`mdtModuleRef`|`mdModuleRef` Token.|  
+|`mdtTypeSpec`|`mdTypeSpec` Token.|  
+|`mdtAssembly`|`mdAssembly` Token.|  
+|`mdtAssemblyRef`|`mdAssemblyRef` Token.|  
+|`mdtFile`|`mdFile` Token.|  
+|`mdtExportedType`|`mdExportedType` Token.|  
+|`mdtManifestResource`|`mdManifestResource` Token.|  
+|`mdtGenericParam`|`mdGenericParam` Token.|  
+|`mdtMethodSpec`|`mdMethodSpec` Token.|  
+|`mdtGenericParamConstraint`|`mdGenericParamConstraint` Token.|  
+|`mdtString`|`mdString` Token.|  
+|`mdtName`|`mdName` Token.|  
 |`mdtBaseType`|Nepoužívá se.|  
   
 ## <a name="remarks"></a>Poznámky  
- Každá hodnota se rovná hodnotě horní byte v odpovídající tokenu metadat.  
+ Každá hodnota je rovna hodnotě horní byte v odpovídající token metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

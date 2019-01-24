@@ -21,12 +21,12 @@ helpviewer_keywords:
 - I literal type character [Visual Basic]
 - Integer data type
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
-ms.openlocfilehash: 8c349104ed566e9a663afe01da3838f0167dc74e
-ms.sourcegitcommit: 296183dbe35077b5c5e5e74d5fbe7f399bc507ee
+ms.openlocfilehash: 2eb1afb1400b8770c4c1ddb0ec90bb44979e702f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "50982760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54662800"
 ---
 # <a name="integer-data-type-visual-basic"></a>Integer – datový typ (Visual Basic)
 Obsahuje 32bitová (4bajtová) celá čísla se znaménkem v rozsahu od -2 147 483 648 do 2 147 483 647.  
@@ -95,10 +95,10 @@ k = 5.5
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Int32?displayProperty=nameWithType>   
- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
- [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)  
- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)  
- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- <xref:System.Int32?displayProperty=nameWithType>
+- [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
+- [Datový typ Long](../../../visual-basic/language-reference/data-types/long-data-type.md)
+- [Datový typ Short](../../../visual-basic/language-reference/data-types/short-data-type.md)
+- [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
+- [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

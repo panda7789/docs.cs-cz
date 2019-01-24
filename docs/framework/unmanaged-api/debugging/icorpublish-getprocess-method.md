@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 414bc1bbd3578d0707e35fa70fe196b504af9942
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c625aec5b4937ec232318e62a95a612b0e8a6cd2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33418493"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54624402"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess – metoda
-Získá [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instanci, která představuje proces se zadaným identifikátorem.  
+Získá [icorpublishprocess –](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) instanci, která představuje proces se zadaným identifikátorem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ HRESULT GetProcess(
   
 #### <a name="parameters"></a>Parametry  
  `pid`  
- [v] Identifikátor procesu.  
+ [in] Identifikátor procesu.  
   
  `ppProcess`  
  [out] Ukazatel na adresu `ICorPublishProcess` instanci, která představuje proces.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetProcess` selže, pokud proces neexistuje nebo není spravované proces, který můžete ladit podle aktuálního uživatele.  
+ `GetProcess` selže, pokud proces neexistuje nebo není spravovaný proces, který lze ladit aktuálním uživatelem.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorPub.idl, CorPub.h  
   
@@ -55,5 +55,5 @@ HRESULT GetProcess(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorPublish – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorPublish – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)

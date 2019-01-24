@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 756b0ff726c31bf096a1c1b70004c3ff82fe9979
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f0301506d591a3738ea403393236c2574d48a7cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450034"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54593963"
 ---
 # <a name="imetadatatables2getmetadatastreaminfo-method"></a>IMetaDataTables2::GetMetaDataStreamInfo – metoda
-Získá název, velikost a obsah datového proudu metadata v zadaném indexu.  
+Získá název, velikost a obsah služby stream metadat v zadaném indexu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +40,7 @@ HRESULT GetMetaDataStreamInfo (
   
 #### <a name="parameters"></a>Parametry  
  `ix`  
- [v] Index datového proudu požadovaná metadata.  
+ [in] Index datového proudu požadovaná metadata.  
   
  `ppchName`  
  [out] Ukazatel na název datového proudu.  
@@ -49,17 +49,17 @@ HRESULT GetMetaDataStreamInfo (
  [out] Ukazatel na datový proud metadat.  
   
  `pcb`  
- [out] Velikost v bajtech z `ppv`.  
+ [out] Velikost v bajtech, z `ppv`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)  
- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataTables2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [IMetaDataTables – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)

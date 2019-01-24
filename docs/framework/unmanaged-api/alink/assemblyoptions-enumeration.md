@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e3926a0d49b2db02cf52a3cc943b05edc4cc36a8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 939e815f4d3adc5f6e1c8b8fc85c9f4b89372501
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406271"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54571480"
 ---
 # <a name="assemblyoptions-enumeration"></a>AssemblyOptions – výčet
 Vytvoří výčet možností sestavení.  
@@ -61,28 +61,28 @@ typedef enum _AssemblyOptions {
 |optAssemTitle|String – představuje název sestavení.|  
 |optAssemDescription|String – obsahuje popis sestavení.|  
 |optAssemConfig|String – obsahuje konfiguraci sestavení.|  
-|optAssemOS|String – kódovaná jako: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
-|optAssemProcessor|ULONG –|  
-|optAssemLocale|String – obsahuje národnímu sestavení.|  
-|optAssemVersion|String – kódovaná jako: "Major.Minor.Build.Revision".|  
+|optAssemOS|String – zakódován jako: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
+|optAssemProcessor|ULONG|  
+|optAssemLocale|String – obsahuje národní prostředí sestavení.|  
+|optAssemVersion|String – zakódován jako: "Major.Minor.Build.Revision".|  
 |optAssemCompany|String – obsahuje společnosti.|  
 |optAssemProduct|String – obsahuje název produktu.|  
-|optAssemProductVersion|Řetězec (také označované jako InformationalVersion).|  
+|optAssemProductVersion|Řetězec (označované také jako InformationalVersion).|  
 |optAssemCopyright|String – obsahuje informace o autorských právech.|  
 |optAssemTrademark|String – obsahuje informace o ochranných známkách.|  
 |optAssemKeyFile|String (název souboru).|  
 |optAssemKeyName|String (název klíče).|  
-|optAssemAlgID|ULONG –|  
-|optAssemFlags|ULONG –|  
-|optAssemHalfSign|BOOL (také označované jako DelaySign).|  
-|optAssemFileVersion|String – kódovaná jako "Major.Minor.Build.Revision"--stejný jako ProductVersion.|  
-|optAssemSatelliteVer|String – kódovaná jako "Major.Minor.Build.Revision".|  
-|optLastAssemOption|Čítač Počet elementů.|  
+|optAssemAlgID|ULONG|  
+|optAssemFlags|ULONG|  
+|optAssemHalfSign|BOOL (označované také jako DelaySign).|  
+|optAssemFileVersion|String – kódovaný jako "Hlavníverze.podverze.Build.revize" – stejně jako ProductVersion.|  
+|optAssemSatelliteVer|String – kódovaný jako "Hlavníverze.podverze.Build.revize".|  
+|optLastAssemOption|Čítač Počet prvků.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** alink.h  
   
  **Knihovna**: alink.dll  
   
-## <a name="see-also"></a>Viz také  
- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+## <a name="see-also"></a>Viz také:
+- [Al.exe (linker sestavení)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

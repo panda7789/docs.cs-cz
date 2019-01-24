@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: vytváření podepsaných přátelských sestavení (Visual Basic)'
+title: 'Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: f2afd83d-b044-484b-a56d-56d0a8a40647
-ms.openlocfilehash: 6a9dcc65e7e496a436d81ad2d311a4174f111104
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 02acda34783afceaeb83d0d0752e5247747b5337
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50188433"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667290"
 ---
-# <a name="how-to-create-signed-friend-assemblies-visual-basic"></a>Postupy: vytváření podepsaných přátelských sestavení (Visual Basic)
+# <a name="how-to-create-signed-friend-assemblies-visual-basic"></a>Postupy: Vytváření podepsaných přátelských sestavení (Visual Basic)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
   
 ### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit podepsané sestavení a sestavení typu friend  
@@ -84,12 +84,12 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `Friend` typy a členy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Přátelská sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- [Postupy: vytváření nepodepsaných přátelských sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
- [-keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
- [Sn.exe (nástroj pro silný název)] [Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md))  
- [Vytváření a používání sestavení se silným názvem](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md)  
- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
+- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Přátelská sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/friend-assemblies.md)
+- [Postupy: Vytváření nepodepsaných přátelských sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)
+- [-keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)
+- [Sn.exe (nástroj pro silný název)] [Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md))
+- [Vytváření a používání sestavení se silným názvem](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md)
+- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)

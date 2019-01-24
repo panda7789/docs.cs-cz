@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 241ff40448c3dca2846f9e420dc7df41427dc79d
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: f80157ddf394fdd058793830bfe3052b41ad1e40
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576483"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení a zápis schémat XML
 Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápis schémata jazyk (XSD) definice schématu XML ze souborů nebo jiných zdrojů a sestavení XML schémata v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů, které mapují na struktury definované v celém světě Wide Web Consortium (W3C) doporučení schématu XML.  
@@ -49,11 +49,11 @@ Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápis sch�
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
-- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)  
-- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)  
-- [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)  
-- [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)  
-- [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
-- [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)  
+- [Přehled Modelu objektu schématu XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
+- [Sestavování schémat XML](../../../../docs/standard/data/xml/building-xml-schemas.md)
+- [Procházení schémat XML](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
+- [Úpravy schémat XML](../../../../docs/standard/data/xml/editing-xml-schemas.md)
+- [Zahrnutí nebo import schémat XML](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
+- [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+- [Informační sada po kompilaci schématu](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
 - [Správa oborů názvů v dokumentu XML](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)

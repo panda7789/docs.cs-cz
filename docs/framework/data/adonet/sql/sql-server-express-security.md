@@ -1,15 +1,15 @@
 ---
-title: Zabezpečení SQL serveru Express
+title: SQL Server Express Security
 ms.date: 03/30/2017
 ms.assetid: cf9cf6d9-4b05-43e9-ac7b-6cefbfcd6d4e
-ms.openlocfilehash: 736c450d944efe7e6a69e16e00e1c96f0a868697
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: c14548f2ff8e93c4dbbc61b946b9ed01cb62ab8a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485583"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664067"
 ---
-# <a name="sql-server-express-security"></a>Zabezpečení SQL serveru Express
+# <a name="sql-server-express-security"></a>SQL Server Express Security
 Microsoft SQL Server Express Edition (SQL Server Express) je založena na systému Microsoft SQL Server a podporuje většinu funkcí databázového stroje. Je navržen tak, aby nepotřebných funkcí a připojení k síti je vypnuto ve výchozím nastavení. To snižuje styčné plochy, které je k dispozici pro uživatele se zlými úmysly útoku.  
   
  SQL Server Express je obvykle nainstalován jako pojmenovanou instanci. Výchozí název instance je `SQLExpress`. Pojmenovaná instance je identifikován síťový název počítače a název instance, který zadáte během instalace.  
@@ -33,11 +33,11 @@ Microsoft SQL Server Express Edition (SQL Server Express) je založena na systé
 |-|-|  
 |[SQL Server Books Online](https://msdn.microsoft.com/library/bb543165.aspx)|Obsahuje dokumentaci pro SQL Server Express.|  
 |[Připojení k SQL serveru Express](https://msdn.microsoft.com/library/ms165679.aspx) v Online knihách serveru SQL|Popisuje, jak používat SQL Server Express Edition v síti.|  
-|[Microsoft SQL Server 2005 Express Edition knih Online](https://msdn.microsoft.com/library/ms165706.aspx)|Kompletní dokumentaci k SQL serveru 2005 Express Edition.|  
+|[Microsoft SQL Server 2005 Express Edition Books Online](https://msdn.microsoft.com/library/ms165706.aspx)|Kompletní dokumentaci k SQL serveru 2005 Express Edition.|  
 |[Uživatelské instance nejsou jiným uživatelům dovoleny](https://msdn.microsoft.com/library/ms143684.aspx) v Online knihách serveru SQL|Popisuje, jak vytvářet a nasazovat uživatelské instance.|  
 |[Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)|Popisuje možnosti uživatele instance v aplikaci ADO.NET. Poskytuje informace o tom, jak povolit uživatelskou instanci, připojení k uživatelské instanci pomocí <xref:System.Data.SqlClient.SqlConnection>, dobu života instance uživatele a scénáře instance pro uživatele.|  
   
-## <a name="see-also"></a>Viz také  
- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)
+- [Uživatelské instance SQL Serveru Express](../../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,12 +2,12 @@
 title: Ukázka rozšíření volného typu
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
-ms.openlocfilehash: f46cf3dfcdb60669f0a02337b54de97d4af3efdc
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 19d39e4a70022304262c5872636d3ea03a3b861b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042189"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668480"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Ukázka rozšíření volného typu
 Poskytuje objektového modelu syndikace Rozsáhlá podpora pro práci s daty rozšíření – informace, které jsou k dispozici v informačního kanálu syndikace je reprezentovaný pomocí XML, ale vystavené třídy nejsou explicitně jako <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem>. Tento příklad ukazuje základní postupy pro práci s daty rozšíření.  
@@ -155,6 +155,6 @@ foreach (SyndicationElementExtension extension in feed2.ElementExtensions.Where<
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\LooselyTypedExtensions`  
   
-## <a name="see-also"></a>Viz také  
- [Rozšíření silného typu](../../../../docs/framework/wcf/samples/strongly-typed-extensions-sample.md)  
- [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)
+## <a name="see-also"></a>Viz také:
+- [Rozšíření silného typu](../../../../docs/framework/wcf/samples/strongly-typed-extensions-sample.md)
+- [Syndikace WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)

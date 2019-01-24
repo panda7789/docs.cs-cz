@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c25304bef4d240eedea749bb2829595056f9b74d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 68cac76a83164e24c0810c9d19fa845c8580b1d2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449244"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637231"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName – metoda
-Získá vlastní atribut daného jeho název a vlastníka.  
+Získá vlastní atribut zadaný název a vlastníka.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT GetCustomAttributeByName (
   
 #### <a name="parameters"></a>Parametry  
  `tkObj`  
- [v] Metadata token představující objektu, který je vlastníkem vlastních atributů.  
+ [in] Token metadat představující objekt, který je vlastníkem vlastního atributu.  
   
  `szName`  
- [v] Název vlastního atributu.  
+ [in] Název vlastního atributu.  
   
  `ppData`  
  [out] Ukazatel na pole dat, která je hodnota vlastního atributu.  
   
  `pcbData`  
- [out] Velikost v bajtech data v *`ppData`.  
+ [out] Velikost v bajtech dat vrácených v *`ppData`.  
   
 ## <a name="remarks"></a>Poznámky  
- Je možné definovat více vlastních atributů pro stejného vlastníka; i mohou mít stejný název. Ale `GetCustomAttributeByName` vrátí pouze jedna instance. (`GetCustomAttributeByName` vrátí první instance, který nalezne.) Chcete-li vyhledáte všechny instance vlastních atributů, volejte [imetadataimport::enumcustomattributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) metoda.  
+ Je možné definovat více vlastních atributů pro téhož vlastníka; může probíhat dokonce se stejným názvem. Ale `GetCustomAttributeByName` vrátí pouze jednu instanci. (`GetCustomAttributeByName` vrátí první instance, který nalezne.) Chcete-li vyhledat všechny instance vlastního atributu, zavolejte [imetadataimport::enumcustomattributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

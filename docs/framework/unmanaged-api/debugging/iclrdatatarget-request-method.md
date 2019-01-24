@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc79277c75118b11766e66137284bd5655eed091
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 77bd3bc239d0101f02cd515b0ec2a8bec3372882
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405369"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596901"
 ---
 # <a name="iclrdatatargetrequest-method"></a>ICLRDataTarget::Request – metoda
-Voláno rozhraním běžné jazyk služby modulu runtime (CLR) data přístup požádat o operaci podle definice implementace.  
+Voláno rozhraním common language runtime (CLR) data access services požádat o operaci, jak je definováno implementací.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,27 +43,27 @@ HRESULT Request (
   
 #### <a name="parameters"></a>Parametry  
  `reqCode`  
- [v] Uživatelem definované.  
+ [in] Uživatelem definované.  
   
  `inBufferSize`  
- [v] Velikost vstupní vyrovnávací paměť, která se používá k příchozího požadavku.  
+ [in] Velikost vstupní vyrovnávací paměti, který se používá pro tento požadavek.  
   
  `inBuffer`  
- [v] Vyrovnávací paměť obsahující žádosti.  
+ [in] Vyrovnávací paměť obsahující žádost.  
   
  `outBufferSize`  
- [v] Velikost výstupní vyrovnávací paměť, která se používá k odpovědi.  
+ [in] Velikost výstupní vyrovnávací paměť, která se používá pro odpověď.  
   
  `outBuffer`  
  [out] Vyrovnávací paměť s odpovědí.  
   
 ## <a name="remarks"></a>Poznámky  
- `Request` Metoda usnadňuje přidání neurčené vlastní operace. To znamená tato metoda zajišťuje rozšiřitelnost bez nutnosti revizi definice rozhraní.  
+ `Request` Metoda usnadňuje přidávání neurčené vlastní operace. To znamená, že tato metoda poskytuje rozšiřitelnost bez nutnosti revize definici rozhraní.  
   
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -71,5 +71,5 @@ HRESULT Request (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)

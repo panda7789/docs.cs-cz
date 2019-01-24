@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přidání ikon aplikací do TaskBar se součástí Windows Forms NotifyIcon'
+title: 'Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,28 +13,28 @@ helpviewer_keywords:
 - NotifyIcon component
 - taskbar [Windows Forms], adding icons
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
-ms.openlocfilehash: c7658a3a1c72c3fed4033e644d0dd776b06ee1a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 925134e4a0317322d7a4f4cfdc9ac8e3780cf9e3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54650682"
 ---
-# <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar se součástí Windows Forms NotifyIcon
-Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazí jeden ikonu v oznamovací oblasti stav na hlavním panelu. Chcete-li zobrazit více ikony ve stavové oblasti, musíte mít více <xref:System.Windows.Forms.NotifyIcon> součásti ve formuláři. Pokud chcete nastavit ikonu zobrazí pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete napsat kód ve <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužné rutiny události tak, že něco se stane, když uživatel poklikáním na ikonu. Například můžete dokonce vytvářet dialogové okno zobrazí uživatele, pro konfiguraci reprezentována ikonu proces na pozadí.  
+# <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Postupy: Přidání ikon aplikací do TaskBar s komponentou Windows Forms NotifyIcon
+Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazuje jednu ikonu v oznamovací oblasti na hlavním panelu Stav. Chcete-li zobrazit více ikony ve stavové oblasti, musí mít více <xref:System.Windows.Forms.NotifyIcon> komponenty na formuláři. Pokud chcete nastavit ikony zobrazené pro ovládací prvek, použijte <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Můžete také napsat kód <xref:System.Windows.Forms.NotifyIcon.DoubleClick> obslužná rutina události tak, že něco se stane, když uživatel dvakrát klikne na ikonu. Například může vytvořit dialogové okno se zobrazí uživateli konfigurovat proces na pozadí, který je reprezentován ikonou.  
   
 > [!NOTE]
->  <xref:System.Windows.Forms.NotifyIcon> Součást se používá oznámení pouze pro účely, které uživatele upozorní, akci nebo událostí došlo k chybě nebo došlo ke změně stavu některé řazení. Měli byste použít nabídky, panely nástrojů a další prvky uživatelského rozhraní pro standardní interakce s aplikacemi.  
+>  <xref:System.Windows.Forms.NotifyIcon> Komponenty se používá oznámení pouze pro účely, které uživatele upozorní, akce nebo událostí došlo k chybě nebo došlo ke změně stavu nějaké. Abyste používali nabídky, panely nástrojů a další prvky uživatelského rozhraní pro standardní interakce s aplikacemi.  
   
 ### <a name="to-set-the-icon"></a>Chcete-li nastavit ikonu  
   
-1.  Přiřazení hodnoty k <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![VisualStudioEllipsesButton snímek](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost  **Vlastnosti** okna a pak vybrat soubor v **otevřete** zobrazeném dialogu.  
+1.  Přiřaďte hodnotu <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost. Hodnota musí být typu `System.Drawing.Icon` a ze souboru .ico, který lze načíst. Můžete určit soubor ikony v kódu nebo kliknutím na tlačítko se třemi tečkami (![VisualStudioEllipsesButton snímek obrazovky](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) vedle položky <xref:System.Windows.Forms.NotifyIcon.Icon%2A> vlastnost  **Vlastnosti** okna a pak vyberete soubor v **otevřít** dialogové okno, které se zobrazí.  
   
 2.  Nastavte <xref:System.Windows.Forms.NotifyIcon.Visible%2A> vlastnost `true`.  
   
-3.  Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnost na příslušné řetězec popisku.  
+3.  Nastavte <xref:System.Windows.Forms.NotifyIcon.Text%2A> vlastnosti k odpovídající řetězec popisku.  
   
-     V následujícím příkladu kódu cesta pro umístění ikony je nastavena **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběr toto umístění taky umožňuje uživatelům s minimální systém úrovně přístupu pro aplikaci bezpečně spustit. Následující příklad vyžaduje formulář s <xref:System.Windows.Forms.NotifyIcon> ovládací prvek již přidán. Také budete potřebovat soubor ikony s názvem `Icon.ico`.  
+     V následujícím příkladu kódu nastavena cesta pro umístění ikony **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů s operačním systémem Windows bude obsahovat této složky. Výběrem tohoto umístění taky umožňuje uživatelům s úrovní přístupu minimální systém bezpečně spouštět aplikace. V následujícím příkladu vyžaduje formulář s <xref:System.Windows.Forms.NotifyIcon> ovládací prvek již přidán. Také budete potřebovat soubor ikony s názvem `Icon.ico`.  
   
     ```vb  
     ' You should replace the bold icon in the sample below  
@@ -71,9 +71,9 @@ Windows Forms <xref:System.Windows.Forms.NotifyIcon> součást zobrazí jeden ik
     notifyIcon1->Text = "Antivirus program";  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.NotifyIcon>  
- <xref:System.Windows.Forms.NotifyIcon.Icon%2A>  
- [Postupy: Přidružení místní nabídky ke komponentě Windows Forms NotifyIcon](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
- [Komponenta NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)  
- [Přehled komponenty NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-overview-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.NotifyIcon>
+- <xref:System.Windows.Forms.NotifyIcon.Icon%2A>
+- [Postupy: Přidružení místní nabídky s komponentou Windows Forms NotifyIcon](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)
+- [Komponenta NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)
+- [Přehled komponenty NotifyIcon](../../../../docs/framework/winforms/controls/notifyicon-component-overview-windows-forms.md)

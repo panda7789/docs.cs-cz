@@ -1,49 +1,49 @@
 ---
-title: Obrazec stromy příkazů
+title: Tvar stromu příkazů
 ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-ms.openlocfilehash: 9084e2616ac4ea540bdf755afd011d67a5c991fa
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b859dfaa6350341b4b90753fd5dda3339e6bb584
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766033"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573021"
 ---
-# <a name="the-shape-of-the-command-trees"></a>Obrazec stromy příkazů
-Modul generování SQL je zodpovědný za generování back-end konkrétní dotaz SQL na základě výrazu stromu příkaz daný vstupní dotaz. Tato část popisuje vlastnosti, vlastnosti a struktura stromy příkazů dotazu.  
+# <a name="the-shape-of-the-command-trees"></a>Tvar stromu příkazů
+Modul generování SQL je zodpovědný za generování back-endu konkrétní dotaz SQL na základě daný vstupní dotaz příkaz stromu výrazu. Tato část popisuje vlastnosti, vlastnosti a struktuře stromu příkazů dotazů.  
   
-## <a name="query-command-trees-overview"></a>Přehled stromy příkaz dotazu  
- Dotaz stromu příkazů je reprezentaci objektu modelu dotazu. Dotazů stromy příkazů mají dva účely:  
+## <a name="query-command-trees-overview"></a>Přehled stromů příkaz dotazu  
+ Dotaz stromu příkazů je reprezentaci modelu objektu dotazu. Stromy příkazů dotazů mají dva účely:  
   
--   Vyjádřit vstupní dotaz, který je zadaný na [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
+-   Vyjádřit vstupní dotaz, který je zadán proti [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
--   Chcete-li express dotazu výstup, který je uveden na poskytovatele a popisuje dotazy na back-end.  
+-   Vyjádřit dotaz výstup, který je uveden na poskytovatele a popisuje dotazu na back-endu.  
   
- Dotaz příkaz podporu stromy bohatší sémantiku než SQL:1999 kompatibilní dotazů, včetně podpory pro práci s vnořené kolekce a typ operací, jako je kontrola, zda je entita určitého typu nebo filtrování sady založený na typu.  
+ Dotazování příkazu stromů podporu bohatší sémantiku než SQL:1999 kompatibilní s dotazy, včetně podpory pro práci s vnořené kolekce a typ operace, jako je kontrola, jestli je entita určitého typu nebo filtrování podle typu sady.  
   
- Vlastnost DBQueryCommandTree.Query je kořenem strom výrazu, která popisuje logiku dotazu. Vlastnost DBQueryCommandTree.Parameters obsahuje seznam parametrů, které se používají v dotazu. Strom výrazu se skládá z objekty od objektu DbExpression.  
+ Vlastnost DBQueryCommandTree.Query je kořenem stromu výrazů, který popisuje logiku dotazu. Vlastnost DBQueryCommandTree.Parameters obsahuje seznam parametrů, které se používají v dotazu. Strom výrazu se skládá z DbExpression objekty.  
   
- Objekt DbExpression představuje některé výpočty. Několik druhů výrazy jsou poskytovány [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pro sestavování výrazy dotazů, včetně konstanty, proměnné, funkce, konstruktory a standardní relační operátory jako filtr a připojení. Každý objekt DbExpression má hodnotu ResultType vlastnost, která představuje typ výsledku vytvořeného tento výraz. Tento typ je vyjádřen jako TypeUsage.  
+ Objekt DbExpression představuje některé výpočtu. Jsou k dispozici v několika druhů výrazy [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pro sestavení výrazy dotazu, včetně konstant, proměnné, funkce, konstruktory a standardní relační operátory, jako je filtrování a spojení. Každý objekt DbExpression má vlastnost ResultType, který představuje typ výsledku vytvořeného tento výraz. Tento typ je vyjádřen jako vlastnost TypeUsage.  
   
-## <a name="shapes-of-the-output-query-command-tree"></a>Tvary strom příkazů výstup dotazu  
- Stromy příkazů dotazu výstup úzce představují relační dotazy (SQL) a splňovat pravidla mnohem přísnější než ty, které platí pro dotazů stromy příkazů. Obvykle obsahují konstrukce, které jsou snadno převedeny na SQL.  
+## <a name="shapes-of-the-output-query-command-tree"></a>Tvary stromu příkazů výstup dotazu  
+ Stromy příkazů výstup dotazu představují relačních dotazů (SQL) a dodržovat pravidla mnohem větší než ty, které se vztahují na stromy příkaz dotazu. Obvykle obsahují konstrukce, které jsou snadno do kódu SQL.  
   
- Vstupní příkaz stromy jsou vyjádřeny proti konceptuální model, který podporuje navigační vlastnosti přidružení mezi entitami a dědičnost. Výstup příkazu stromy jsou vyjádřeny pro model úložiště. Zadejte stromy příkazů umožňují projektu vnořené kolekce, ale nechcete stromy příkazů výstup.  
+ Vstupní příkaz stromové struktury jsou vyjádřeny proti konceptuální model, který podporuje navigačních vlastností asociace mezi entitami a dědičnost. Výstup příkazu stromů jsou vyjádřeny pro model úložiště. Vstupní příkaz stromů umožňují vnořené kolekce projektů, ale výstup příkazu stromů tomu tak není.  
   
- Stromy příkazů výstup dotazu jsou vytvořeny pomocí podmnožinu dostupných objektů DbExpression a i některé výrazy v tuto podmnožinu mají omezený využití.  
+ Stromy příkazů výstup dotazu jsou sestaveny na základě podmnožinu dostupných objektů DbExpression a dokonce i některé výrazy v ní mají omezený využití.  
   
- Typ operace, jako je kontrola, zda je daný výraz určitého typu nebo filtrování podle typu, nastaví se nenacházejí v výstup stromy příkazů.  
+ Typ operace, jako je kontrola, zda je daný výraz určitého typu nebo filtrování sady na základě typu, nejsou zadány ve výstupu příkazu stromu.  
   
- Ve výstupu příkazu stromy používají pouze výrazy, které vracejí logické hodnoty pro projekce a pouze pro predikáty ve výrazech nutnosti predikátu, jako je filtr nebo příkaz case.  
+ Ve výstupu příkazu stromu se používají pouze výrazy, které vracejí logické hodnoty pro projekce a pouze pro predikáty ve výrazech vyžadující predikátu, jako je filtr nebo příkazy case.  
   
- Kořenové stromy příkazů výstupu dotazu je objekt DbProjectExpression.  
+ Kořenové stromů příkazů výstup dotazu je objekt DbProjectExpression.  
   
-### <a name="expression-types-not-present-in-output-query-command-trees"></a>Typy výrazů není k dispozici v stromy příkazů výstup dotazu  
- Následující typy výrazů nejsou platné ve stromu příkazů výstupu dotazu a není potřeba ji zpracovat zprostředkovatele:  
+### <a name="expression-types-not-present-in-output-query-command-trees"></a>Typy výrazů není k dispozici v stromů příkazů výstup dotazu  
+ Následující typy výrazů nejsou platné ve výstupu stromu příkaz dotazu a není nutné ošetřit zprostředkovatelé:  
   
  Objekt DbDerefExpression  
   
- Třída DbEntityRefExpression  
+ DbEntityRefExpression  
   
  Třída DbRefKeyExpression  
   
@@ -58,52 +58,52 @@ Modul generování SQL je zodpovědný za generování back-end konkrétní dota
  DbTreatExpression  
   
 ### <a name="expression-restrictions-and-notes"></a>Výraz omezení a poznámky  
- Mnoho výrazů lze použít pouze s omezeným přístupem způsobem v stromy příkazů výstup dotazu:  
+ Mnoho výrazů jde použít jenom s omezeným přístupem způsobem v stromů příkazů výstup dotazu:  
   
 #### <a name="dbfunctionexpression"></a>DbFunctionExpression  
- Následující typy funkce se dá předat:  
+ Je možné předat následující typy funkcí:  
   
--   Kanonické funkce, které jsou rozpoznány podle oboru názvů Edm.  
+-   Kanonické funkce, které jsou rozpoznány modulem pro obor názvů Edm.  
   
--   Funkce integrované (úložiště), které rozpoznává BuiltInAttribute.  
+-   Funkce integrované (úložiště), které jsou rozpoznány modulem BuiltInAttribute.  
   
 -   Uživatelem definované funkce.  
   
- Kanonické funkce (najdete v části [kanonické funkce](../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md) informace) jsou určené jako součást [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], a poskytovatelé měli zadat implementace pro kanonické funkce na základě těchto specifikací. Funkce úložiště jsou založená na specifikacích v manifestu zprostředkovatele, odpovídající. Uživatelem definované funkce jsou založená na specifikacích v SSDL.  
+ Kanonické funkce (naleznete v tématu [kanonické funkce](../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md) Další informace) jsou určené jako součást [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], a poskytovatelé by mělo nabízet implementace pro kanonické funkce na základě těchto specifikací. Funkce Store jsou založeny na specifikacích v manifestu zprostředkovatele, odpovídající. Uživatelem definované funkce jsou založeny na specifikacích SSDL.  
   
- Také funkce s atribut NiladicFunction nemají žádné argumenty a by měl přeložit bez závorek na konci.  To znamená, do  *\<%{FunctionName/ >* místo  *\<%{FunctionName/ > ()*.  
+ Funkce s atributem NiladicFunction také nemají žádné argumenty a bez závorky na konci by měl přeložit.  To znamená do  *\<functionName >* místo  *\<functionName > ()*.  
   
 #### <a name="dbnewinstanceexpression"></a>DbNewInstanceExpression  
- DbNewInstanceExpression může dojít pouze v těchto dvou případů:  
+ DbNewInstanceExpression může vyskytovat jenom v těchto dvou případů:  
   
--   Jako vlastnost projekce DbProjectExpression.  Pokud se používá jako takový platí následující omezení:  
+-   Jako vlastnost projekce DbProjectExpression.  Pokud se použije jako takové platí následující omezení:  
   
-    -   Výsledný typ musí být typ řádku.  
+    -   Typ výsledku musí být typu řádku.  
   
-    -   Každá jeho argumentů je výraz, který vytvoří výsledek s primitivního typu. Obvykle je každý argument skalární výraz, jako je PropertyExpression přes DbVariableReferenceExpression, volání funkce nebo aritmetické výpočet DbPropertyExpression přes DbVariableReferenceExpression nebo volání funkce . Výraz představující skalární poddotazu může také dojít v seznamu argumentů DbNewInstanceExpression. Výraz, který reprezentuje skalární poddotazu je představující poddotaz, který vrátí přesně jeden řádek a jeden sloupec s kořenové objekt DbElementExperession primitivního typu strom výrazu  
+    -   Každá z jejích argumentů je výraz, který vytváří výsledek s primitivního typu. Obvykle každý argument je skalární výraz, stejně jako PropertyExpression DbVariableReferenceExpression, volání funkce nebo pro aritmetické výpočtu DbPropertyExpression přes DbVariableReferenceExpression nebo volání funkce . Ale představující poddotaz skalární výraz může vzniknout také v seznamu argumentů DbNewInstanceExpression. Strom výrazů, který představuje poddotazu, která vrací přesně jeden řádek a jeden sloupec primitivní typ objektu kořenovou DbElementExperession je výraz, který reprezentuje skalární poddotazu  
   
 -   S návratovým typem kolekce v takovém případě definuje novou kolekci výrazů zadané jako argumenty.  
   
 #### <a name="dbvariablereferenceexpression"></a>DbVariableReferenceExpression  
- DbVariableReferenceExpression musí být podřízenou DbPropertyExpression uzlu.  
+ DbVariableReferenceExpression musí být podřízeným uzlem DbPropertyExpression uzlu.  
   
 #### <a name="dbgroupbyexpression"></a>DbGroupByExpression  
- Vlastnost agregací pro DbGroupByExpression může mít pouze elementy typu DbFunctionAggregate. Nejsou žádné jiné agregované typy.  
+ Vlastnost agregace Dbgroupaggregate může obsahovat pouze prvky typu DbFunctionAggregate. Nejsou žádné další typy agregátů.  
   
 #### <a name="dblimitexpression"></a>DbLimitExpression  
- Vlastnost omezení lze pouze objekt DbConstantExpression nebo DbParameterReferenceExpression. Také vlastnost WithTies je vždy false od verze rozhraní .NET Framework verze 3.5.  
+ Vlastnost Limit může být pouze objekt DbConstantExpression nebo DbParameterReferenceExpression. Také vlastnost WithTies má vždy hodnotu false od verze rozhraní .NET Framework verze 3.5.  
   
 #### <a name="dbscanexpression"></a>DbScanExpression  
- Při použití ve výstupu příkazu stromy, DbScanExpression efektivně představuje kontrolu nad tabulky, zobrazení nebo dotaz úložiště, reprezentována EnitySetBase::Target.  
+ Při použití ve výstupu příkazu stromu, DbScanExpression efektivně představuje kontrolu nad tabulky, zobrazení nebo dotaz úložiště, reprezentovaný EnitySetBase::Target.  
   
- Pokud vlastnost metadat "Definování dotaz" cíle jinou hodnotu než null, reprezentuje dotazu, text dotazu, pro který je součástí tuto vlastnost metadata v konkrétní jazyk poskytovatele (nebo dialektu) jako zadaný v definici schématu úložiště.  
+ Pokud vlastnost metadat "Definice dotazu" cíle je jiná než null, pak představuje dotaz, text dotazu, pro který je součástí této vlastnosti metadat v poskytovatele konkrétní jazyk (nebo dialekt), jak je uvedeno v definici schématu úložiště.  
   
- Cíl, jinak hodnota představuje tabulku nebo zobrazení. Předponu jeho schématu je buď ve vlastnosti metadat "Schématu", pokud nejsou null, jinak je název kontejneru entit.  Název tabulky nebo zobrazení je buď vlastnost metadat "Tabulka", pokud nejsou null, jinak hodnota nastavený základní vlastnost název entity.  
+ V opačném případě cíl představuje tabulku nebo zobrazení. Jeho předpona schématu je buď ve vlastnosti metadat "Schéma", pokud není null, jinak je název kontejneru entity.  Název tabulky nebo zobrazení je buď vlastnost metadat "Table", pokud není null, jinak nastavte základní vlastnosti název entity.  
   
- Tyto vlastnosti pocházejí z definice odpovídající EntitySet v souboru definice schéma úložiště (SSDL).  
+ Všechny tyto vlastnosti pocházejí z definice odpovídající objekt EntitySet v souboru definice schématu úložiště (SSDL).  
   
-### <a name="using-primitive-types"></a>Pomocí primitivní typy  
- Když jsou ve výstupu příkazu stromech primitivní typy, jsou obvykle odkazovat v primitivních typech konceptuální model. Pro určité výrazy potřebovat zprostředkovatelé primitivní typ odpovídající úložiště. Tyto příklady výrazů DbCastExpression a případně DbNullExpression, pokud je potřeba převést hodnotu null na odpovídající typ poskytovatele. V těchto případech by měl zprostředkovatelé udělat mapování, aby na základě typu primitivní typ a jeho omezující vlastnosti typu poskytovatele.  
+### <a name="using-primitive-types"></a>Primitivní typy  
+ Pokud se ve výstupu příkazu stromů odkazuje primitivní typy, jsou obvykle odkazovány v primitivních typech Koncepční model. Pro některé výrazy musí poskytovatelé primitivní typ odpovídající úložiště. Tyto výrazy příklady DbCastExpression a případně DbNullExpression, pokud zprostředkovatel potřebuje k přetypování hodnoty null na typ odpovídající. V těchto případech poskytovatelů proveďte mapování na základě typ primitivní typ a její omezující vlastnosti typu zprostředkovatele rozhraní.  
   
-## <a name="see-also"></a>Viz také  
- [Generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
+## <a name="see-also"></a>Viz také:
+- [Generování SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)

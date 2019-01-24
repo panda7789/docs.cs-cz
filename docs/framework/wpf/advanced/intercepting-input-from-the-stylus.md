@@ -10,12 +10,12 @@ helpviewer_keywords:
 - ', '
 - ', '
 ms.assetid: 791bb2f0-4e5c-4569-ac3c-211996808d44
-ms.openlocfilehash: c012eeb7ef7dad8c52b8b9a5f153582710c1fd73
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5384a49461886ba184a0a128467c864b37c0efc9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788162"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667024"
 ---
 # <a name="intercepting-input-from-the-stylus"></a>Přijetí vstupu z pera
 <xref:System.Windows.Input.StylusPlugIns> Architektura poskytuje mechanismus pro implementaci nízké úrovně řízení nad <xref:System.Windows.Input.Stylus> vstup a vytváření digitálních inkoust <xref:System.Windows.Ink.Stroke> objekty. <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> Třída poskytuje mechanismus pro implementaci vlastního chování a použít na datový proud množství dat přicházejících z stylus zařízení k zajištění optimálního výkonu.  
@@ -70,6 +70,6 @@ ms.locfileid: "43788162"
 ## <a name="conclusion"></a>Závěr  
  Odvozením vlastních <xref:System.Windows.Input.StylusPlugIns.StylusPlugIn> třídy a vkládání do <xref:System.Windows.Input.StylusPlugIns.StylusPlugInCollection> kolekcí, můžete výrazně vylepšit chování digitálních inkoust. Máte přístup k <xref:System.Windows.Input.StylusPoint> dat, jako je generováno, získáte tak možnost přizpůsobit <xref:System.Windows.Input.Stylus> vstupu. Protože máte takový přístup nízké úrovně ke <xref:System.Windows.Input.StylusPoint> data, kolekce inkoustů a vykreslování poskytovaly optimální výkon můžete implementovat pro vaši aplikaci.  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)  
- [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Pokročilé zpracování rukopisu](../../../../docs/framework/wpf/advanced/advanced-ink-handling.md)
+- [Přístup k a manipulaci s vstup pomocí pera](https://go.microsoft.com/fwlink/?LinkId=50752&clcid=0x409)

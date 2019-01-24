@@ -2,12 +2,12 @@
 title: Objemná data a vysílání datových proudů
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: a6c655e260aa75504e9a445458664b11d8e4d56d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c6514903294147671804b5b8de47fddc764b0547
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53145134"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674112"
 ---
 # <a name="large-data-and-streaming"></a>Objemná data a vysílání datových proudů
 Windows Communication Foundation (WCF) jsou infrastruktura komunikace založený na formátu XML. Protože XML data je běžně zakódován do formátu standardního textu definované v [specifikace XML 1.0](https://go.microsoft.com/fwlink/?LinkId=94838), připojené systémy vývojářům a architektům jsou obvykle, které zajímá nároky na místo při přenosu (nebo velikost) zprávy odeslané přes síť a založený na textu kódování XML představuje zvláštní výzev pro efektivní přenos binární data.  
@@ -238,5 +238,5 @@ public class UploadStreamMessage
 > [!NOTE]
 >  Rozhodnout a použít ve vyrovnávací paměti nebo streamovaná přenosy je místní rozhodnutí koncového bodu. Pro přenosy HTTP je režim přenosu nešíří přes připojení nebo proxy servery a jiných dodavatelů. Nastavení režimu převodu se neprojeví v popisu rozhraní služby. Po vygenerování klienta WCF na službu, musíte upravit konfigurační soubor služby určené pro použití s datovým proudem přenosy pro nastavení režimu. Pro protokoly TCP a přenosy pojmenovaný kanál se šíří je režim přenosu jako kontrolní výraz zásad.  
   
-## <a name="see-also"></a>Viz také  
- [Jak: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Povolení streamování](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

@@ -2,12 +2,12 @@
 title: Refaktoring pomocí rozšiřující metodu (C#)
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: 08c37923792e1ac6ee922bf052d39fb63b1685c7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 904dd558819a498bd8a3876759edaaa185be3b7f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44201047"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616950"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>Refaktoring pomocí rozšiřující metodu (C#)
 Tento příklad je založen na předchozím příkladu [načtení textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.  
@@ -246,7 +246,7 @@ StyleName:Code >Hello World<
   
 -   [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
 - [Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

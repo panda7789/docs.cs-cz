@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6be40ecbb801348ad73fb929741b5a8e8407a7ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ece5173ce2a80ceb46d535eb8cbc6eb18e18fd1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428429"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54621877"
 ---
 # <a name="iassemblycacheuninstallassembly-method"></a>IAssemblyCache::UninstallAssembly – metoda
-Odinstaluje zadaný sestavení z globální mezipaměti sestavení.  
+Odinstaluje zadané sestavení z globální mezipaměti sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT UninstallAssembly (
   
 #### <a name="parameters"></a>Parametry  
  `dwFlags`  
- [v] Příznaky definované v Fusion.idl.  
+ [in] Příznaky definované v Fusion.idl.  
   
  `pszAssemblyName`  
- [v] Název sestavení, chcete-li odinstalovat.  
+ [in] Název sestavení, chcete-li odinstalovat.  
   
  `pRefData`  
- [v] A [fusion_install_reference –](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md) struktura, která obsahuje data instalace pro sestavení.  
+ [in] A [fusion_install_reference –](../../../../docs/framework/unmanaged-api/fusion/fusion-install-reference-structure.md) strukturu, která obsahuje data o instalaci pro sestavení.  
   
  `pulDisposition`  
- [na víc systémů, volitelné] Jedna z hodnot dispozice definované v Fusion.idl. Možné hodnoty patří:  
+ [out, volitelné] Jedna z hodnot dispozice definované v Fusion.idl. Možné hodnoty patří:  
   
 -   IASSEMBLYCACHE_UNINSTALL_DISPOSITION_UNINSTALLED (1)  
   
@@ -64,11 +64,11 @@ HRESULT UninstallAssembly (
 -   IASSEMBLYCACHE_UNINSTALL_DISPOSITION_REFERENCE_NOT_FOUND (6)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAssemblyCache – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)

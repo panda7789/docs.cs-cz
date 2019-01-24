@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 94ba2b0cf7d88104eaadd434732edf3c1d4060e2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc0dde4f2455ed45ddf8ca1efefa7ab67ba04f6f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33422698"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660772"
 ---
 # <a name="icordebugprocess2setdesiredngencompilerflags-method"></a>ICorDebugProcess2::SetDesiredNGENCompilerFlags – metoda
-Nastaví příznaky, které je třeba myslet ve předkompilovaných bitové kopie v pořadí pro modul runtime k načtení této bitové kopie do aktuální proces.  
+Nastaví příznaky, které musí být vložen do předkompilované bitové kopie v pořadí pro modul runtime k načtení této bitové kopie do aktuální proces.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +37,17 @@ HRESULT SetDesiredNGENCompilerFlags (
   
 #### <a name="parameters"></a>Parametry  
  `pdwFlags`  
- [v] Hodnota [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) výčet, který určuje příznaky kompilátoru použit k výběru správné předem kompilovaném bitové kopie.  
+ [in] Hodnota [cordebugjitcompilerflags –](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) výčet, který určuje příznaky kompilátoru použity k výběru správné předem kompilovaných bitové kopie.  
   
 ## <a name="remarks"></a>Poznámky  
- `SetDesiredNGENCompilerFlags` Metoda určuje příznaky, které je třeba myslet ve předkompilovaných obrázku tak, aby modul runtime načte této bitové kopie do tohoto procesu. Příznaky nastavit touto metodou se používají jenom k výběru správné předkompilovaných bitové kopie. Pokud žádný takový obrázek existuje, modul runtime načíst obrázek (MSIL intermediate language) společnosti Microsoft a kompilátoru za běhu (JIT) namísto toho. V takovém případě musíte dál používat ladicí program [icordebugmodule2::setjitcompilerflags –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-setjitcompilerflags-method.md) metoda nastavit příznaky podle potřeby JIT kompilace.  
+ `SetDesiredNGENCompilerFlags` Metody určuje příznaky, které musí být vložen do předkompilované image tak, aby modul runtime bude načtení této bitové kopie do tohoto procesu. Příznaky nastavením Tato metoda slouží jenom k výběru správné předkompilované bitové kopie. Pokud neexistuje žádný takový obrázek, modul runtime načíst image Microsoft intermediate language (MSIL) a kompilátor just-in-time (JIT) místo toho. V takovém případě musíte dál používat ladicí program [icordebugmodule2::setjitcompilerflags –](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule2-setjitcompilerflags-method.md) metoda podle potřeby pro kompilaci JIT nastavit příznaky.  
   
- Pokud bitovou kopii je načtena, ale některé JIT kompilace musí proběhnout obrázku (který bude v případě, pokud bitová kopie obsahuje obecné typy), příznaky kompilátoru určeného `SetDesiredNGENCompilerFlags` metoda se použijí na navíc JIT – kompilace.  
+ Pokud je obrázek načten, ale některé JIT kompilaci musí proběhnout obrázku (což bude v případě, pokud image obsahuje obecné typy), příznaky kompilátoru určené `SetDesiredNGENCompilerFlags` metoda má platit pro další kompilace JIT.  
   
- `SetDesiredNGENCompilerFlags` Metoda musí být volána v průběhu [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání. Pokusí se volání `SetDesiredNGENCompilerFlags` metoda později selže. Rovněž, pokusí se nastavit příznaky, které jsou buď není definovaný v `CorDebugJITCompilerFlags` výčtu nebo jsou právní není pro daný proces se nezdaří.  
+ `SetDesiredNGENCompilerFlags` Metoda musí být volána v průběhu [icordebugmanagedcallback::CreateProcess –](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) zpětného volání. Pokusí se volání `SetDesiredNGENCompilerFlags` metoda později selžou. Také, pokusí se nastavit příznaky, které jsou buď není definován v `CorDebugJITCompilerFlags` výčet nebo jsou není platný pro daný proces se nezdaří.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -55,6 +55,6 @@ HRESULT SetDesiredNGENCompilerFlags (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

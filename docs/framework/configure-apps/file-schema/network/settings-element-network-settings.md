@@ -8,31 +8,31 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: 87a944eca6ea4158f15c9911c6b13fd4d3c0921d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 7db55dd9d2ca79342cadb2320d08ca9235223def
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53151197"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671848"
 ---
 # <a name="ltsettingsgt-element-network-settings"></a>&lt;nastavení&gt; – Element (nastavení sítě)
 Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=nameWithType> oboru názvů.  
   
  \<Konfigurace >  
 \<system.net>  
-\<Nastavení >  
+\<settings>  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <settings>  
-  <httpListener> … </httpListener>  
-  <httpWebRequest> … </httpWebRequest>  
-  <ipv6> … </ipv6>  
-  <performanceCounters> … </performanceCounters>  
-  <servicePointManager> … </servicePointManager>  
-  <socket> … </socket>  
-  <webProxyScript> … </webProxyScript>  
+  <httpListener>...</httpListener>  
+  <httpWebRequest>...</httpWebRequest>  
+  <ipv6>...</ipv6>  
+  <performanceCounters>...</performanceCounters>  
+  <servicePointManager>...</servicePointManager>  
+  <socket>...</socket>  
+  <webProxyScript>...</webProxyScript>  
 </settings>  
 ```  
   
@@ -46,11 +46,11 @@ Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[HttpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.|  
+|[httpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.|  
 |[httpWebRequest](../../../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md)|Přizpůsobí parametrů webové žádosti.|  
-|[protokol IPv6](../../../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)|Umožňuje Internet Protocol verze 6 (IPv6) podporují.|  
+|[ipv6](../../../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)|Umožňuje Internet Protocol verze 6 (IPv6) podporují.|  
 |[\<performanceCounter > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/performancecounter-element-network-settings.md)|Umožňuje síťovým čítače výkonu.|  
-|[Třída servicePointManager](../../../../../docs/framework/configure-apps/file-schema/network/servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
+|[servicePointManager](../../../../../docs/framework/configure-apps/file-schema/network/servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
 |[Soketu](../../../../../docs/framework/configure-apps/file-schema/network/socket-element-network-settings.md)|Určuje, zda operace soketu používat porty dokončení.|  
 |[\<webproxyscript – > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/webproxyscript-element-network-settings.md)|Konfiguruje vlastnosti souboru, který používá ke zjišťování webové proxy servery.|  
   
@@ -58,13 +58,13 @@ Nakonfiguruje možnosti základní sítě pro <xref:System.Net?displayProperty=n
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[System.NET](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
+|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

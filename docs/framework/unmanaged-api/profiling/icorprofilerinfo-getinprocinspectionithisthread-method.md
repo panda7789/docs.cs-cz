@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d603d9bc7a343a41224cf8d889a69823875d9db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 019a85d6d58c99adb7c16be5cc3b31b029b0312d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453587"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513141"
 ---
 # <a name="icorprofilerinfogetinprocinspectionithisthread-method"></a>ICorProfilerInfo::GetInprocInspectionIThisThread – metoda
-Získá objekt, který může být dotazován pro rozhraní ICorDebugThread. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  
+Získá objekt, který je možné zadávat dotazy pro icordebugthread – rozhraní. Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,13 +36,13 @@ HRESULT GetInprocInspectionIThisThread(
   
 #### <a name="parameters"></a>Parametry  
  `ppicd`  
- [out](/cpp/atl/iunknown) objekt, který může být dotázán na `ICorDebugThread` rozhraní.  
+ [navýšení kapacity](/cpp/atl/iunknown) objekt, který může být dotázán na `ICorDebugThread` rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- Modul CLR (CLR) ladění služeb podporované omezené v procesu ladění v rozhraní .NET Framework verze 1.0. V procesu ladění povoleno profileru používat části kontroly rozhraní API pro ladění. V důsledku názory zákazníků v procesu ladění bylo odstraněno z rozhraní .NET Framework verze 2.0 a nahradí sadu funkcí, které je větší souladu profilaci API.  
+ Common language runtime (CLR) ladění služeb podporované omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0. Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění. V důsledku zpětné vazby od zákazníků vnitroprocesové ladění bylo odstraněno z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -50,5 +50,5 @@ HRESULT GetInprocInspectionIThisThread(
   
  **Verze rozhraní .NET framework:** 1.0  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

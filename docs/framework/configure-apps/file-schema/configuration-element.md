@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 40c0ab5f18d5aae2c99dd66747d3435f0826af8b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 2a81e422c2e6d8c2d342821163f860c5cb54c083
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583321"
 ---
 # <a name="configuration-element"></a>\<Konfigurace > – element
 
 Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.
 
-**\<Konfigurace >**
+**\<configuration>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,21 +33,21 @@ Kořenový prvek v každém konfiguračním souboru, který je používán modu
 
 ## <a name="attributes"></a>Atributy
 
-Žádné
+Žádná
 
 ## <a name="parent-element"></a>Nadřazený element
 
-Žádné
+Žádná
 
 ## <a name="child-elements"></a>Podřízené prvky
 
 |     | Popis |
 | --- | ----------- |
-| [**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje zásady vazeb sestavení na úrovni konfigurace.|
+| [**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje zásady vazeb sestavení na úrovni konfigurace.|
 | [**\<Po spuštění >** schéma nastavení](~/docs/framework/configure-apps/file-schema/startup/index.md) | Všechny elementy ve schématu nastavení spuštění. |
 | [**\<modul runtime >** schéma nastavení](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Všechny prvky v schéma nastavení běhového prostředí. |
-| [**\<System.Runtime.Remoting >** schéma nastavení](https://msdn.microsoft.com/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) | Všechny elementy ve schématu nastavení vzdálené komunikace. |
-| [**\<system.Net >** schéma nastavení](~/docs/framework/configure-apps/file-schema/network/index.md) | Všechny elementy ve schématu nastavení sítě. |
+| [**\<system.runtime.remoting>** Settings Schema](https://msdn.microsoft.com/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e) | Všechny elementy ve schématu nastavení vzdálené komunikace. |
+| [**\<system.Net>** Settings Schema](~/docs/framework/configure-apps/file-schema/network/index.md) | Všechny elementy ve schématu nastavení sítě. |
 | [**\<cryptographySettings – >** schéma nastavení](~/docs/framework/configure-apps/file-schema/cryptography/index.md) | Všechny elementy ve schématu kryptografických nastavení. |
 | [**\<Konfigurace >** schéma oddílů](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) | Všechny elementy ve schématu oddílu nastavení konfigurace. |
 | [Trasování a ladění schématu nastavení](~/docs/framework/configure-apps/file-schema/trace-debug/index.md) | Všechny elementy ve schématu nastavení trasování a ladění. |
@@ -61,4 +61,4 @@ Každý konfigurační soubor musí obsahovat přesně jeden  **\<konfigurace >*
 
 ## <a name="see-also"></a>Viz také:
 
-[Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

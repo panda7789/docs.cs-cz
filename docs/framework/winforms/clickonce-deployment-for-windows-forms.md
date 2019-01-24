@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Forms, ClickOnce deployment
 - walkthroughs [Windows Forms], ClickOnce deployment
 ms.assetid: 1451fce9-1965-4a03-b4d3-831b5fe4ad66
-ms.openlocfilehash: 0b76e07a23b105f2c1b4fb55a0d25bb52bcb9dc2
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 0b3b92e29c5de7365cbf1196a387bc0c9c440755
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192038"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582084"
 ---
 # <a name="clickonce-deployment-for-windows-forms"></a>ClickOnce – nasazení pro Windows Forms
 Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], technologie použité pro snadné nasazení aplikací Windows Forms pro klientské počítače.  
@@ -41,13 +41,13 @@ Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptec
  [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)  
  Ukazuje použití příkazového řádku a nástroje sady SDK k nasazení [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace bez použití sady Visual Studio.  
   
- [Postupy: Přidání důvěryhodného vydavatele na klientský počítač pro aplikace ClickOnce](/visualstudio/deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications)  
+ [Postupy: Přidání důvěryhodného vydavatele do klientského počítače pro aplikace ClickOnce](/visualstudio/deployment/how-to-add-a-trusted-publisher-to-a-client-computer-for-clickonce-applications)  
  Ukazuje jednorázovou konfiguraci klientských počítačů, které jsou potřebné pro nasazení důvěryhodné aplikace.  
   
  [Postupy: Určení alternativního umístění pro aktualizace nasazení](/visualstudio/deployment/how-to-specify-an-alternate-location-for-deployment-updates)  
  Ukazuje, konfigurace [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] aplikace pomocí nástrojů sady SDK ke kontrole jiné umístění pro nové verze aplikace.  
   
- [Návod: Stahování sestavení na vyžádání pomocí rozhraní API nasazení ClickOnce](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api)  
+ [Návod: Stahování sestavení na vyžádání rozhraním API pro nasazení ClickOnce](/visualstudio/deployment/walkthrough-downloading-assemblies-on-demand-with-the-clickonce-deployment-api)  
  Ukazuje použití volání rozhraní API k načtení času sestavení první aplikace se pokusí načíst.  
   
  [Postupy: Načtení informací řetězce dotazu do online aplikace ClickOnce](/visualstudio/deployment/how-to-retrieve-query-string-information-in-an-online-clickonce-application)  
@@ -62,10 +62,10 @@ Následující témata popisují [!INCLUDE[ndptecclick](../../../includes/ndptec
  [Postupy: Zahrnutí datového souboru do aplikace ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
  Ukazuje, jak označit soubor tak, že je k dispozici [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] datový adresář.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md)  
- [Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)  
- [Vytváření aplikací ClickOnce z příkazového řádku](/visualstudio/deployment/building-clickonce-applications-from-the-command-line)  
- [Ladění aplikací ClickOnce používajících System.Deployment.Application](https://msdn.microsoft.com/library/86f31948-2ca8-47c0-8e8b-c2b817bbf79f)  
- [Nasazování komponent COM s ClickOnce](/visualstudio/deployment/deploying-com-components-with-clickonce)  
- [Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)
+## <a name="see-also"></a>Viz také:
+- [Přehled nastavení aplikace](../../../docs/framework/winforms/advanced/application-settings-overview.md)
+- [Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)
+- [Vytváření aplikací ClickOnce z příkazového řádku](/visualstudio/deployment/building-clickonce-applications-from-the-command-line)
+- [Ladění aplikací ClickOnce používajících System.Deployment.Application](https://msdn.microsoft.com/library/86f31948-2ca8-47c0-8e8b-c2b817bbf79f)
+- [Nasazování komponent COM s ClickOnce](/visualstudio/deployment/deploying-com-components-with-clickonce)
+- [Postupy: Publikování aplikace ClickOnce pomocí průvodce publikováním](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)

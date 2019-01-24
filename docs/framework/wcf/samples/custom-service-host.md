@@ -2,12 +2,12 @@
 title: Vlastní hostitel služby
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: 51256b115749aef4ed3691e49ccf36ee65f5cbf1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 09a69e489c4b4eb5d3af6e2e74316e678be3d049
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529287"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555996"
 ---
 # <a name="custom-service-host"></a>Vlastní hostitel služby
 Tato ukázka předvádí, jak používat vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> třídy pro úpravu chování za běhu služby. Tento přístup poskytuje opakovaně použitelné alternativu ke konfiguraci velkým množstvím služeb v běžným způsobem. Ukázka také ukazuje, jak používat <xref:System.ServiceModel.Activation.ServiceHostFactory> třídu použít vlastní hostitel služby v prostředí hostování internetové informační služby (IIS) nebo Windows Process Activation Service (WAS).  
@@ -174,5 +174,5 @@ public class SelfDescribingServiceHostFactory : ServiceHostFactory
   
 5.  Chcete-li odebrat [!INCLUDE[iisver](../../../../includes/iisver-md.md)] běhu Cleanup.bat aplikace.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Hostování služby WCF v IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Hostování služby WCF v IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

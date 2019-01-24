@@ -2,12 +2,12 @@
 title: 'Postupy: Výměna zpráv ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
-ms.openlocfilehash: 53e5661bf140540cd0fc7a9fcb739b67488b8491
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0b03845f9638a3646c72b1210de12dd94cf4cc9f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195733"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720051"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 
@@ -75,8 +75,8 @@ Spolehlivé relace několik vazeb poskytovaných systémem podpory ve výchozím
 
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>
 
-Příklad toho, jak vytvořit vlastní vazby, který podporuje spolehlivé relace, naleznete v tématu [postupy: vytvoření vlastní vazby pro spolehlivé relace s HTTPS](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md).
+Příklad toho, jak vytvořit vlastní vazby, který podporuje spolehlivé relace, naleznete v tématu [jak: Vytvoření vazby vlastního stabilní relaci s HTTPS](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md).
 
 ## <a name="see-also"></a>Viz také:
 
-[Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)
+- [Spolehlivé relace](../../../../docs/framework/wcf/feature-details/reliable-sessions.md)

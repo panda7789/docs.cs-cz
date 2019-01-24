@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e8bd2eaa977c9e3546758e9fd0e9fa3b4527634
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 1602479d4986109ffe89a87250297ee5687930ce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087937"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54609574"
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implementace volitelného chování ve třídě XslTransform
 
@@ -21,7 +21,7 @@ Volitelného chování, které jsou popsány jako uvedené v chování [World Wi
 
 Proto pro každou z volitelného chování dovolují W3C, následující tabulka uvádí volitelného chování pro implementované [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] provádění <xref:System.Xml.Xsl.XslTransform> třídy a jaké části v doporučení W3C XSLT 1.0, že tento problém je popsáno.
 
-|Problém|Chování|Oddíl|
+|Problém|Chování|Sekce|
 |-------------|--------------|-------------|
 |Textový uzel odpovídá obě `xsl:strip-space` a `xsl:preserve-space`.|Obnovit|3.4|
 |Zdrojový uzel odpovídá více než jedno pravidlo šablony.|Obnovit|5.5|
@@ -45,8 +45,8 @@ Proto pro každou z volitelného chování dovolují W3C, následující tabulka
 |Převod fragment stromu výsledek na číslo nebo řetězec. Pokud fragment stromu výsledek obsahuje textový uzel se výstup uvození povolena.|Ignorováno|16.4|
 |Výstup uvození je zakázaná pro znaky, které nelze reprezentovat v kódování, procesoru XSLT se používá pro výstup.|Ignorováno|16.4|
 |Přidání uzlu do oboru názvů na prvek po podřízené objekty byly přidány do ní nebo po atributy byly přidány k němu|Obnovit|E25 chyby|
-|`xsl:number` je NaN, nekonečné nebo menší než 0,5.|Obnovit|Chyby e 24|
-|Druhý argument funkce dokumentu sady uzlů je prázdný a je relativní odkaz na identifikátor URI|Obnovit|Chyby typu e14.|
+|`xsl:number` je NaN, nekonečné nebo menší než 0,5.|Obnovit|Errata e24|
+|Druhý argument funkce dokumentu sady uzlů je prázdný a je relativní odkaz na identifikátor URI|Obnovit|Errata e14|
 
 Částem chyby lze nalézt v W3C [transformace XSL (XSLT) verze 1.0 Specifikace chyby](https://www.w3.org/1999/11/REC-xslt-19991116-errata/).
 
@@ -82,10 +82,10 @@ V následující tabulce jsou uvedeny funkce, které jsou volitelné pro proceso
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Xsl.XslTransform>
-- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
-- [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)  
-- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
-- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
-- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
-- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
-- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)
+- [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)
+- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)
+- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)
+- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)
+- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)
+- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)

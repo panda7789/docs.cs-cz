@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac3c6698e4ca127257b7682f1f55acd663375280
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1492c9eac9d647c2b71c47cf758265152783d991
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423725"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54673880"
 ---
 # <a name="icorpublishappdomainenumnext-method"></a>ICorPublishAppDomainEnum::Next – metoda
-Získá zadaný počet domén aplikací, které momentálně existují v procesu, počínaje na aktuální pozici.  
+Získá zadaný počet aplikačních doménách, které momentálně existují v procesu od aktuální pozice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT Next (
   
 #### <a name="parameters"></a>Parametry  
  `celt`  
- [v] Počet prvků mají být načteny.  
+ [in] Počet prvků který se má načíst.  
   
  `objects`  
- [out] Ukazatel na pole načíst [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) objekty, z nichž každý představuje domény aplikace.  
+ [out] Načte ukazatel na pole [icorpublishappdomain –](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) objektů, z nichž každý představuje doménu aplikace.  
   
  `pceltFetched`  
- [out] Ukazatel na počet domén aplikace ve skutečnosti vrátila. Tato hodnota může být null. Pokud `celt` je jedna.  
+ [out] Ukazatel na počet skutečně vrácených domény aplikace. Tato hodnota může mít hodnotu null Pokud `celt` je jedna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorPub.idl, CorPub.h  
   
@@ -57,5 +57,5 @@ HRESULT Next (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorPublishAppDomainEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorPublishAppDomainEnum – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md)

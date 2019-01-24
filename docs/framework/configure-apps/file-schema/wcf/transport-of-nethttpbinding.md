@@ -2,21 +2,21 @@
 title: '&lt;transport&gt; – &lt;netHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: 3110a93d224ee2be078727df65b92e9987445c43
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 0195708d24e61dfee4c396518c94d5e21b7783bb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54151290"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54578884"
 ---
 # <a name="lttransportgt-of-ltnethttpbindinggt"></a>&lt;transport&gt; – &lt;netHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí protokolu HTTP.  
   
 \<system.serviceModel>  
 \<vazby >  
-\<netHttpBinding >  
+\<netHttpBinding>  
 \<Vytvoření vazby >  
-\<zabezpečení >  
+\<security>  
 \<přenos >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,30 +46,30 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|Typ clientCredentialType|: Určuje typ pověření pro použití při ověřování klientů pomocí ověřování protokolu HTTP.  Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
+|clientCredentialType|: Určuje typ pověření pro použití při ověřování klientů pomocí ověřování protokolu HTTP.  Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
 |proxyCredentialType|: Určuje typ pověření pro použití při ověřování klienta z v rámci domény pomocí proxy serveru prostřednictvím protokolu HTTP. Tento atribut je použitelné pouze tehdy, když `mode` atributu nadřazeného elementu `security` element je `Transport` nebo `TransportCredentialsOnly`. Tento atribut je typu <xref:System.ServiceModel.HttpProxyCredentialType>.|  
 |Sféra|Řetězec určující sféru, který používá schéma ověřování protokolu HTTP pro ověřování algoritmem digest nebo základní ověřování. Výchozí hodnota je prázdný řetězec.|  
 |Parametr policyenforcement na hodnotu|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
 |protectionScenario|Tento výčet určuje scénář ochrany vynucuje daná zásada.|  
   
-## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>clientCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádná|Zprávy nejsou zabezpečená při přenosu.|  
 |Základní|Určuje základní ověřování.|  
 |ověřování algoritmem Digest|Určuje, ověřování hodnotou hash.|  
-|NTLM|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
+|Ntlm|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
 |Windows|Určuje integrované ověřování Windows.|  
   
-## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
+## <a name="proxycredentialtype-attribute"></a>proxyCredentialType Attribute  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |Žádná|-Zprávy nejsou zabezpečená při přenosu.|  
 |Základní|Základní ověřování určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
 |ověřování algoritmem Digest|Ověřování algoritmem digest Určuje, jak jsou definovány v dokumentu RFC 2617 – ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest.|  
-|NTLM|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
+|Ntlm|Určuje ověřování protokolem NTLM, pokud je to možné a pokud se nezdaří ověřování Windows.|  
 |Windows|Určuje integrované ověřování Windows.|  
 |Certifikát|Provádí pomocí certifikátu ověřování klienta. Tato možnost funguje jenom v případě, `Mode` atributu nadřazeného elementu `security` element je nastavena na přenos a nebude fungovat, pokud je nastaveno na TransportCredentialOnly.|  
   
@@ -117,11 +117,12 @@ Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí 
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.BasicHttpSecurityMode.Transport><xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  
- <xref:System.ServiceModel.HttpTransportSecurity>  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>
+- <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
+- <xref:System.ServiceModel.HttpTransportSecurity>
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

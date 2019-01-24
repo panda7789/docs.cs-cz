@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 54691785e3b2619b5f4a2eecc510800b4b5cee07
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4a1da4015a202debe1d864f3c0135cc296ce6fce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446594"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605473"
 ---
 # <a name="imetadataemitdefinetypedef-method"></a>IMetaDataEmit::DefineTypeDef – metoda
-Vytvoří definici typu pro běžné typ modulu runtime jazyka a získá metadata token pro tuto definici typu.  
+Vytvoří definici typu pro společný typ modulu runtime jazyka a získá token metadat pro tuto definici typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT DefineTypeDef (
   
 #### <a name="parameters"></a>Parametry  
  `szTypeDef`  
- [v] Název typu ve formátu Unicode.  
+ [in] Název typu v kódování Unicode.  
   
  `dwTypeDefFlags`  
- [v] `TypeDef` atributy. Toto je bitová maska s `CoreTypeAttr` hodnoty.  
+ [in] `TypeDef` atributy. To je bitová maska z `CoreTypeAttr` hodnoty.  
   
  `tkExtends`  
- [v] Token základní třídy. Musí být buď `mdTypeDef` nebo `mdTypeRef` tokenu.  
+ [in] Token základní třídy. Musí se jednat buď `mdTypeDef` nebo `mdTypeRef` token.  
   
  `rtkImplements`  
- [v] Pole určující rozhraní, která implementuje této třídě nebo rozhraní tokeny.  
+ [in] Pole tokeny zadání rozhraní, které implementuje Tato třída nebo rozhraní.  
   
  `ptd`  
  [out] `mdTypeDef` Token přiřazený.  
   
 ## <a name="remarks"></a>Poznámky  
- Příznak v `dwTypeDefFlags` Určuje, jestli je typ vytváří běžné typ systému typu odkazu (třídy nebo rozhraní) nebo společné typ hodnoty systému typu.  
+ Příznak v `dwTypeDefFlags` Určuje, zda je typ vytváří společný typ systému typem odkazu (třídy nebo rozhraní) nebo na společný typ. hodnota typu systému.  
   
- V závislosti na parametry zadané, tato metoda jako vedlejším účinkem, může taky vytvořit `mdInterfaceImpl` záznamu pro každý rozhraní, které je zděděná nebo implementované tohoto typu. Však tato metoda nevrátí žádné z těchto `mdInterfaceImpl` tokeny. Pokud klient chce později přidat nebo upravit `mdInterfaceImpl` tokenu, musí používat `IMetaDataImport` rozhraní je výčet. Pokud chcete použít sémantiku COM `[default]` rozhraní, musí zadat výchozí rozhraní jako prvním elementem v `rtkImplements`; vlastních atributů, nastavte u třídy bude znamenat, že třída má výchozí rozhraní (což je vždy předpokládá, že se nejprve `mdInterfaceImpl` token deklarovaný pro třídu).  
+ V závislosti na zadaných parametrů této metody jako vedlejší účinek, může také vytvořit `mdInterfaceImpl` záznamů pro každé rozhraní, které je zděděná nebo implementovaný tímto typem. Ale tato metoda nevrátí žádnou z těchto `mdInterfaceImpl` tokeny. Pokud klient požaduje později přidat nebo upravit `mdInterfaceImpl` tokenu, je nutné použít `IMetaDataImport` rozhraní je výčet. Pokud chcete použít sémantika COM `[default]` rozhraní, by mělo nabízet výchozí rozhraní jako první prvek v `rtkImplements`; vlastní atribut nastaven na třídy bude označovat, že třída nemá výchozí rozhraní (což je vždy považován za nejprve `mdInterfaceImpl` token deklarované třídy).  
   
- Každý element `rtkImplements` pole blokování `mdTypeDef` nebo `mdTypeRef` tokenu. Musí být posledním prvkem v poli `mdTokenNil`.  
+ Každý prvek `rtkImplements` pole obsahuje `mdTypeDef` nebo `mdTypeRef` token. Poslední prvek v poli musí být `mdTokenNil`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

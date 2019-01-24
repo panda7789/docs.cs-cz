@@ -2,12 +2,12 @@
 title: PeerCustomResolverBindingElement
 ms.date: 03/30/2017
 ms.assetid: 9ccc2770-a20e-4dff-9970-f56ad8aec2b5
-ms.openlocfilehash: 62e52a1ebec8a55b51d3c918971c420fe45fdaa1
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 37984fb51fd19eb1f6c249852f120cc59b99adc2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194369"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613932"
 ---
 # <a name="peercustomresolverbindingelement"></a>PeerCustomResolverBindingElement
 PeerCustomResolverBindingElement  
@@ -30,14 +30,14 @@ class PeerCustomResolverBindingElement : PeerResolverBindingElement
 ### <a name="address"></a>Adresa  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Adresa uživatelského synchronního.  
   
 ### <a name="binding"></a>Vazba  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Název konfigurace vazby.  
   
@@ -47,5 +47,5 @@ class PeerCustomResolverBindingElement : PeerResolverBindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement>

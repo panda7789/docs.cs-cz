@@ -2,12 +2,12 @@
 title: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: 9a6a4724c7e22b15a247622c8afdd592ee4893ab
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: e139e278141a8f42cddf8103f1c5d8d3195751e4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54621809"
 ---
 # <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atributu ho.  
@@ -19,7 +19,7 @@ Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atribut
 ## <a name="example"></a>Příklad  
  V tomto příkladu nejprve vyhledá `Author` elementu. Následně vyhledá `id` atributu nadřazeného elementu.  
   
- Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -53,6 +53,6 @@ Results are identical
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -2,12 +2,12 @@
 title: Koncepty zabezpečení používané ve službě WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: 9fe27f3f63f8c7fad1a4bbb0975a5255d5a16654
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 2dd820d4b6ba38f194074465ac7c1f40289fd928
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50189586"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541791"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
 Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  
@@ -29,7 +29,7 @@ Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty j
  Certifikáty X.509 jsou formou primární přihlašovacích údajů používaných pro zabezpečení aplikace. Další informace o X.509 certifikátů najdete v části [veřejný klíč certifikátů X.509](https://go.microsoft.com/fwlink/?LinkId=210213). V úložišti certifikátů ukládají certifikáty X.509. Počítač se systémem Windows má několik druhů úložišť certifikátů, každý s jiným způsobem. Další informace o různých úložištích, naleznete v tématu [úložišť certifikátů](https://go.microsoft.com/fwlink/?LinkID=87787).  
   
 ## <a name="web-services-security-specifications"></a>Webové služby specifikace zabezpečení  
- Mnoho běžně používaných webových služeb zabezpečení specifikace podporu vazeb definovaných systémem. Kompletní seznam systémových vazeb a specifikací webových služeb, které podporují viz: [webové služby protokoly podporované vazbami Interoperability System-Provided](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ Mnoho běžně používaných webových služeb zabezpečení specifikace podporu vazeb definovaných systémem. Kompletní seznam systémových vazeb a specifikací webových služeb podporují, najdete v tématu: [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
   
 ## <a name="access-control-mechanisms"></a>Mechanismy řízení přístupu  
  WCF poskytuje několik způsobů, jak řídit přístup ke službě nebo operaci. Mezi nimi jsou  
@@ -46,6 +46,6 @@ Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty j
   
  Další informace o těchto tématech naleznete v tématu [mechanismy řízení přístupu](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md)  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [Model zabezpečení pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

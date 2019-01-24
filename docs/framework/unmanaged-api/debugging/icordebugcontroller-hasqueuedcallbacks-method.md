@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eba265b727d00690ab77c6ae831e954d59df7c50
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e650b3435bffd8d40bba24100c13f5071fa5dc5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33411607"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630837"
 ---
 # <a name="icordebugcontrollerhasqueuedcallbacks-method"></a>ICorDebugController::HasQueuedCallbacks – metoda
-Získá hodnotu, která určuje, zda všechny spravované zpětná volání jsou aktuálně ve frontě pro zadaný vlákno.  
+Získá hodnotu určující, zda všechny spravované zpětná volání jsou právě ve frontě pro zadaný podproces.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,20 +38,20 @@ HRESULT HasQueuedCallbacks (
   
 #### <a name="parameters"></a>Parametry  
  `pThread`  
- [v] Ukazatel na objekt "ICorDebugThread", který představuje vlákno.  
+ [in] Ukazatel na objekt "ICorDebugThread", který představuje vlákno.  
   
  `pbQueued`  
- [out] Ukazatel na hodnotu, která je `true` Pokud žádné spravované zpětná volání jsou aktuálně ve frontě pro zadaný vlákno, jinak hodnota `false`.  
+ [out] Ukazatel na hodnotu, která je `true` Pokud žádné spravované zpětná volání nejsou aktuálně ve frontě pro zadaný podproces; v opačném případě `false`.  
   
- Pokud je zadána hodnota null pro `pThread` parametr `HasQueuedCallbacks` vrátí `true` Pokud aktuálně nejsou k dispozici spravované zpětná volání zařazených do fronty pro všechny přístup z více vláken.  
+ Pokud je zadána hodnota null pro `pThread` parametr `HasQueuedCallbacks` vrátí `true` Pokud aktuálně spravované zpětná volání zařazených do fronty pro jakékoli vlákno.  
   
 ## <a name="remarks"></a>Poznámky  
- Zpětná volání bude odeslat jeden po druhém, pokaždé, když [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volána. Ladicí program můžete zkontrolovat tento příznak, pokud chcete ohlásit více ladění událostí, které nastat současně.  
+ Zpětná volání bude odbavované jeden po druhém, pokaždé, když [icordebugcontroller::Continue –](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md) je volána. Ladicí program můžete zkontrolovat tento příznak, pokud chce sestavy více ladění události, které probíhají souběžně.  
   
- Při ladění událostí jsou zařazeny do fronty, se již došlo, takže ladicí program musí vyprazdňování celý frontu jistotu stav ladění. (Volání `ICorDebugController::Continue` na vyprazdňování fronty.) Například, pokud fronty obsahuje dvě ladění události ve vlákně *X*, a ladicí program pozastaví vlákno *X* po první ladění událostí a volání `ICorDebugController::Continue`, druhá událost ladění pro vlákno *X* bude odeslána, i když vlákno bylo pozastaveno.  
+ Při ladění událostí se zařadí do fronty, jsou již došlo, aby ladicí program musí vyprázdnit celá fronta opravdu o stavu laděného procesu. (Volání `ICorDebugController::Continue` k vyprázdnění fronty.) Například, pokud tato fronta obsahuje dvě ladění události na vlákně *X*, a ladicí program pozastaví vlákno *X* po první ladění události a poté zavolá `ICorDebugController::Continue`, druhá událost ladění pro vlákno *X* bude odeslána, i když je pozastavená vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -59,5 +59,5 @@ HRESULT HasQueuedCallbacks (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

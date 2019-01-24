@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -out compiler option [Visual Basic]
 - out compiler option [Visual Basic]
 ms.assetid: 9f148c15-0909-4cb8-a2db-777f8a8b45ae
-ms.openlocfilehash: b619505f6e87efd1c3b18e1bed2862d3467984a7
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: e84ad094c2c7600535871b291d4dd535e667d8af
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53152595"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579573"
 ---
 # <a name="-out-visual-basic"></a>-out (Visual Basic)
 Určuje název výstupního souboru.  
@@ -26,7 +26,7 @@ Určuje název výstupního souboru.
   
 |Termín|Definice|  
 |---|---|  
-|`filename`|Požadováno. Název výstupního souboru, který kompilátor vytvoří. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek ("").|  
+|`filename`|Povinný parametr. Název výstupního souboru, který kompilátor vytvoří. Pokud název souboru obsahuje mezery, uzavřete název do uvozovek ("").|  
   
 ## <a name="remarks"></a>Poznámky  
  Zadejte úplný název a příponu souboru k vytvoření. Pokud ho nevidíte, trvá tento soubor .exe její název ze soubor obsahující zdrojový kód `Sub Main` postupu a soubor .dll trvá jeho název z prvního souboru zdrojového kódu.  
@@ -44,7 +44,7 @@ Určuje název výstupního souboru.
 vbc t2.vb -out:t3.exe  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

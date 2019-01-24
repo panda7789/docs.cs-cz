@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c9f76f2c3b2ecf3ac5805dea8f8243f0b74ad48
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0dfe2bb234631a733248066e8475c135de288e63
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417830"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737595"
 ---
 # <a name="icordebugmdagetname-method"></a>ICorDebugMDA::GetName – metoda
-Získá řetězec obsahující název Pomocník spravovaného ladění (MDA) reprezentována [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
+Získá řetězec obsahující název pomocníka spravovaného ladění (MDA) reprezentována [icordebugmda –](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT GetName (
   
 #### <a name="parameters"></a>Parametry  
  `cchName`  
- [v] Velikost `szName` pole.  
+ [in] Velikost `szName` pole.  
   
  `pcchName`  
- [out] Ukazatel na délku názvu.  
+ [out] Ukazatel na délka názvu.  
   
  `szName`  
- [out] Pole, do které chcete uložit název.  
+ [out] Pole pro uložení názvu.  
   
 ## <a name="remarks"></a>Poznámky  
- MDA názvy jsou jedinečné hodnoty. `GetName` Metoda je vhodné výkonu alternativou k získávání datový proud XML a extrahování název z datového proudu na základě schématu.  
+ MDA názvy jsou jedinečné hodnoty. `GetName` Metody je vhodné výkonu alternativou k získání datový proud XML a extrahování název z datového proudu na základě schématu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ HRESULT GetName (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMDA – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

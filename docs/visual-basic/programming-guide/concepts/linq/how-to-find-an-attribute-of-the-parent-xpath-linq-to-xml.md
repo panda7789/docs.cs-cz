@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledat atribut nadřazeného (XPath-technologie LINQ to XML) (Visual Basic)'
+title: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 9d2572fd-27d4-426c-b079-16854cb9ec7d
-ms.openlocfilehash: af2b6fc3aaebe4ba45be405c587c549ea73b3289
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15752805f35b145514d25208b6de44a7ed8ade47
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33639360"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54580535"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledat atribut nadřazeného (XPath-technologie LINQ to XML) (Visual Basic)
-Toto téma ukazuje, jak vyhledat atribut ho a přejděte do nadřazeného elementu.  
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atributu ho.  
   
  Výraz XPath je:  
   
  `../@id`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve najde `Author` elementu. Poté vyhledá `id` atribut nadřazeného elementu.  
+ V tomto příkladu nejprve vyhledá `Author` elementu. Následně vyhledá `id` atributu nadřazeného elementu.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: knihy (technologie LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```vb  
 Dim books As XDocument = XDocument.Load("Books.xml")  
@@ -47,5 +47,5 @@ Results are identical
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také:
+- [LINQ to XML pro uživatele jazyka XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

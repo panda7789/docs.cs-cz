@@ -3,12 +3,12 @@ title: Vytváření Moje první Claims-Aware WCF Service
 ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
-ms.openlocfilehash: e6324087afa62f276766c733284dc69e425b89bc
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 2102ec07a26c02c7181e3422e48939c40b86a8de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836230"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54599202"
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Vytváření Moje první Claims-Aware WCF Service
 ## <a name="applies-to"></a>Platí pro  
@@ -20,7 +20,7 @@ ms.locfileid: "48836230"
 ## <a name="overview"></a>Přehled  
  Toto téma popisuje, jak pomocí technologie WIF vytvářet webové služby WCF pracující s deklaracemi. Scénář webových služeb pracujících s deklaracemi má obvykle tři účastníky, kterými jsou samotná webová služba, koncový uživatel a služba tokenů zabezpečení (STS). Tento scénář zachycuje následující obrázek:  
   
- ![Technologie WIF Basic deklarací službu WCF používající](../../../docs/framework/security/media/wifbasicclaimsawarewcfservice.gif "WIFBasicClaimsAwareWCFService")  
+ ![WIF Basic Claims Aware WCF Service](../../../docs/framework/security/media/wifbasicclaimsawarewcfservice.gif "WIFBasicClaimsAwareWCFService")  
   
 1.  Klient služby WCF (někdy označovaný jako agent) odesílá pověření službě STS pomocí technologie WIF a po úspěšném ověření vystaví služba STS agentovi token.  
   
@@ -38,7 +38,7 @@ ms.locfileid: "48836230"
   
  Služba AD FS 2.0 je součástí systému Windows Server R2 a může sloužit jako služba STS pro místní scénáře. Azure Active Directory Access Control (označované také jako Access Control Service nebo ACS) je Cloudová služba, nabízená v rámci Microsoft Azure. Při sestavování aplikací pracujících s deklaracemi můžete pro testovací nebo vzdělávací účely použít také jinou službu STS. Například můžete použít místní službu STS, která je součástí [Identity and Access Tool for Visual Studio](https://go.microsoft.com/fwlink/?LinkID=245849) což je volně k dispozici online.  
   
- Sestavit první s deklaracemi identity služby WCF pomocí technologie WIF, najdete v článku [postupy: povolení WIF pro aplikaci webové služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md).
+ Sestavit první s deklaracemi identity služby WCF pomocí technologie WIF, najdete v tématu [How To: Povolení WIF pro aplikaci webové služby WCF](../../../docs/framework/security/how-to-enable-wif-for-a-wcf-web-service-application.md).
   
-## <a name="see-also"></a>Viz také  
- [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme s WIF](../../../docs/framework/security/getting-started-with-wif.md)

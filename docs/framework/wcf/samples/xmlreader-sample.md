@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Reader
 ms.assetid: 60e5848d-7d9c-4ea5-bed9-22758c9ac16c
-ms.openlocfilehash: 5ac97afd2efc1bb57a81f5cd2d78fed18ca3804d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: dc943f944d710e9e858827fd1a8a2e19c93c7ed3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53149299"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573410"
 ---
 # <a name="xmlreader-sample"></a>Ukázka třídy XmlReader
 Ukázka třídy XmlReader ukazuje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. Operace další službu `Sum`, byla přidána, který přijme zprávu, která obsahuje pole hodnot, které chcete přidat najednou. Služba načte zprávy pomocí <xref:System.Xml.XmlReader>.  
@@ -109,4 +109,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\XmlReader`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

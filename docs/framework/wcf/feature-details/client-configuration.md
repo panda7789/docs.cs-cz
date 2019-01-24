@@ -2,12 +2,12 @@
 title: Konfigurace klienta
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: eef3d4743c26a06bd114618522aff9f68e46628c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2e178f8b08fbadbb5549fa10631d3a57f71a7e0d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527713"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503219"
 ---
 # <a name="client-configuration"></a>Konfigurace klienta
 Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k určení adresy, vazby, chování a kontrakt, vlastnosti "ABC" koncový bod klienta, který klienti používají k připojení ke koncovým bodům služby. [ \<Klienta >](../../../../docs/framework/configure-apps/file-schema/wcf/client.md) element má [ \<koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) elementu, jejichž atributy se používají ke konfiguraci koncového bodu základních informací. Tyto atributy jsou popsány v části "Konfigurace koncových bodů" tohoto tématu.  
@@ -84,7 +84,7 @@ Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k u
   
  Každý koncový bod musí mít adresu přidruženo k vyhledání a identifikaci koncového bodu. `address` Atribut lze použít k určení adresy URL, která poskytuje umístění koncového bodu. Ale adresu koncového bodu služby můžete také zadat v kódu tak, že vytvoříte identifikátor URI (Uniform Resource) a je přidán <xref:System.ServiceModel.ServiceHost> pomocí jedné z <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metody. Další informace najdete v tématu [adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md). Protože po zavedení naznačuje, [ \<záhlaví >](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md) a [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) prvky jsou součástí <xref:System.ServiceModel.EndpointAddress> a jsou také popsány v [ Adresy](../../../../docs/framework/wcf/feature-details/endpoint-addresses.md) tématu.  
   
- `binding` Atribut určuje typ vazby koncového bodu očekává, že mají používat při připojování ke službě. Typ musí mít registrované konfigurační oddíl, pokud má odkazovat. V předchozím příkladu je to [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) části, která označuje, že koncový bod používá <xref:System.ServiceModel.WSHttpBinding>. Nicméně mohou existovat více než jednu vazbu daného typu, který můžete použít koncový bod. Každý z nich má vlastní [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu v typu elementu (vazby). `bindingconfiguration` Atribut se používá k rozlišení mezi vazby stejného typu. Její hodnota je nalezena shoda s `name` atribut [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu. Další informace o tom, jak nakonfigurovat klienta vazby pomocí konfigurace, najdete v článku [postupy: zadání klientské vazby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md).  
+ `binding` Atribut určuje typ vazby koncového bodu očekává, že mají používat při připojování ke službě. Typ musí mít registrované konfigurační oddíl, pokud má odkazovat. V předchozím příkladu je to [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) části, která označuje, že koncový bod používá <xref:System.ServiceModel.WSHttpBinding>. Nicméně mohou existovat více než jednu vazbu daného typu, který můžete použít koncový bod. Každý z nich má vlastní [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu v typu elementu (vazby). `bindingconfiguration` Atribut se používá k rozlišení mezi vazby stejného typu. Její hodnota je nalezena shoda s `name` atribut [ \<vazby >](../../../../docs/framework/misc/binding.md) elementu. Další informace o tom, jak nakonfigurovat klienta vazby pomocí konfigurace, najdete v článku [jak: Zadání klientské vazby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-client-binding-in-configuration.md).  
   
  `behaviorConfiguration` Atribut se používá k určení [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) z [ \<endpointBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) koncový bod by měl používat. Její hodnota je nalezena shoda s `name` atribut [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) elementu. Příklad použití konfigurace k určení chování klienta najdete v tématu [konfigurace chování klientů](../../../../docs/framework/wcf/configuring-client-behaviors.md).  
   
@@ -93,6 +93,6 @@ Konfigurace klienta Windows Communication Foundation (WCF) můžete použít k u
 ### <a name="configuring-metadata"></a>Konfigurace metadat  
  [ \<Metadat >](../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md) element slouží k určení nastavení použije k registraci metadat import rozšíření. Další informace o rozšíření systému metadat najdete v tématu [rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md).  
   
-## <a name="see-also"></a>Viz také  
- [Koncové body: adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
- [Konfigurace chování klienta](../../../../docs/framework/wcf/configuring-client-behaviors.md)
+## <a name="see-also"></a>Viz také:
+- [Koncové body: Adresy, vazby a kontrakty](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Konfigurace chování klienta](../../../../docs/framework/wcf/configuring-client-behaviors.md)

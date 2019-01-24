@@ -16,30 +16,30 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccb39609b37aff09ac7890df562d6c08e3c3c159
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0996fee88d37bbc826a4e012dc44ea9005008ae4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33412432"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54575512"
 ---
 # <a name="icordebugilframe2-interface1"></a>ICorDebugILFrame2 Interface1
-Logické rozšíření rozhraní ICorDebugILFrame.  
+Logické rozšíření icordebugilframe – rozhraní.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|Získá objekt ICorDebugTypeEnum, který obsahuje <xref:System.Type> parametry do tohoto rámce.|  
-|[RemapFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-remapfunction-method.md)|Zadáním nového posun MSIL znovu mapuje upravená funkce.|  
+|[EnumerateTypeParameters – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-enumeratetypeparameters-method.md)|Získá icordebugtypeenum – objekt, který obsahuje <xref:System.Type> parametry v tomto snímku.|  
+|[RemapFunction – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe2-remapfunction-method.md)|Změní funkce se upravila tak, že zadáte nové posun jazyka MSIL.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -47,5 +47,5 @@ Logické rozšíření rozhraní ICorDebugILFrame.
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

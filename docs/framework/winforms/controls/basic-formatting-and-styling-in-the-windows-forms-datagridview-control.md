@@ -5,37 +5,37 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], formatting and styling
 - data grids [Windows Forms], formatting
 ms.assetid: b9b90836-1f56-4aa9-8db8-edc78fe830e8
-ms.openlocfilehash: d38620c321fb12b9f489fd086e222b7780337ab3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 176ee23c48d8b6678cb1fd9ebbf262daa1294318
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528792"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54517783"
 ---
 # <a name="basic-formatting-and-styling-in-the-windows-forms-datagridview-control"></a>Základní formátování a práce se styly v ovládacím prvku Windows Forms DataGridView
-`DataGridView` Ovládací prvek usnadňuje definovat základní vzhledu buněk a formátování zobrazení hodnoty buněk. Můžete definovat vzhled a formátování styly jednotlivých buněk, buněk v určité sloupce a řádky nebo všechny buňky v ovládacím prvku nastavením vlastnosti `DataGridViewCellStyle` objekty přistupovat prostřednictvím různých `DataGridView` vlastností ovládacího prvku. Kromě toho můžete upravit tyto styly dynamicky založeny na faktorech, jako je například hodnotu buňky pomocí zpracování `CellFormatting` událostí.  
+`DataGridView` Ovládací prvek umožňuje snadno definovat základního vzhledu buněk a formátování zobrazení hodnot v buňkách. Můžete definovat vzhled a formátování styly pro jednotlivé buňky, buněk v určité sloupce a řádky nebo všechny buňky v ovládacím prvku nastavením vlastnosti `DataGridViewCellStyle` objekty přístupné na základě různých `DataGridView` vlastnosti ovládacího prvku. Kromě toho můžete upravit tyto styly dynamicky na základě faktorů, jako je například hodnota buňky pomocí manipulace `CellFormatting` událostí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Změna stylů ohraničení a mřížky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)  
- Popisuje, jak nastavit `DataGridView` vlastnosti, které definují vzhled ohraničení ovládacího prvku a řádky hranice mezi buněk.  
+ [Postupy: Změna ohraničení a mřížky styly v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/change-the-border-and-gridline-styles-in-the-datagrid.md)  
+ Popisuje, jak nastavit `DataGridView` vlastnosti, které definují vzhled ohraničení ovládacího prvku a hranice čar mezi buňkami.  
   
  [Styly buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/cell-styles-in-the-windows-forms-datagridview-control.md)  
- Popisuje `DataGridViewCellStyle` třídy a interakci vlastnosti daného typu k definování zobrazení buňky v ovládacím prvku.  
+ Popisuje `DataGridViewCellStyle` třídy a interakci vlastnosti tohoto typu pro definování zobrazení buňky v ovládacím prvku.  
   
  [Postupy: Nastavení výchozích stylů buňky pro ovládací prvek Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-default-cell-styles-for-the-windows-forms-datagridview-control.md)  
- Popisuje způsob použití `DataGridViewCellStyle` vlastnosti, které chcete definovat výchozí vzhledu buněk v určitých řádků a sloupců a celý ovládací prvek.  
+ Popisuje způsob použití `DataGridViewCellStyle` vlastnosti, které chcete definovat výchozí vzhledu buněk v konkrétní řádky a sloupce a celý ovládací prvek.  
   
- [Postupy: Formátování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
- Popisuje způsob zobrazení hodnot v buňkách pomocí formátování `DataGridViewCellStyle` vlastnosti.  
+ [Postupy: Formát dat v Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-format-data-in-the-windows-forms-datagridview-control.md)  
+ Popisuje, jak formátovat zobrazované hodnoty buňky pomocí `DataGridViewCellStyle` vlastnosti.  
   
  [Postupy: Nastavení písma a barevných stylů v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)  
- Popisuje postup použití `DefaultCellStyle` vlastnost nastavující základní zobrazit vlastnosti pro všechny buňky v ovládacím prvku.  
+ Popisuje způsob použití `DefaultCellStyle` vlastnosti chcete nastavit základní zobrazit vlastnosti pro všechny buňky v ovládacím prvku.  
   
- [Postupy: Nastavení střídavých stylů řádků pro ovládací prvek Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
- Popisuje, jak vytvořit efekt účetní knihy v ovládacím prvku pomocí střídavých řádků, které se zobrazují jinak.  
+ [Postupy: Nastavení stylů střídavých řádků pro ovládací prvek Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-set-alternating-row-styles-for-the-windows-forms-datagridview-control.md)  
+ Popisuje postup vytvoření účetní knihy efektu v ovládacím prvku pomocí střídavé řádky, které se zobrazují jiným způsobem.  
   
  [Postupy: Použití šablony řádku k přizpůsobení řádků v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/use-the-row-template-to-customize-rows-in-the-datagrid.md)  
- Popisuje postup použití `RowTemplate` vlastnost pro nastavení vlastností řádků, které se použijí pro všechny řádky v ovládacím prvku.  
+ Popisuje způsob použití `RowTemplate` vlastnosti chcete nastavit vlastnosti řádku, které se použijí pro všechny řádky v ovládacím prvku.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.DataGridView>  
@@ -52,10 +52,10 @@ ms.locfileid: "33528792"
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přizpůsobení ovládacího prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/customizing-the-windows-forms-datagridview-control.md)  
- Obsahuje témata, která popisují vlastní Malování <xref:System.Windows.Forms.DataGridView> buněk a řádků a vytváření odvozené buňky, sloupce a typy řádků.  
+ Obsahuje témata, které popisují vlastní Malování <xref:System.Windows.Forms.DataGridView> buňky a řádky a vytváření odvozené buňky, sloupce a typy řádků.  
   
  [Základní funkce sloupce, řádku a buňky v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/basic-column-row-and-cell-features-wf-datagridview-control.md)  
- Obsahuje témata, která popisují běžně používá vlastnosti buněk, řádků a sloupců.  
+ Obsahuje témata, která popisují běžně používané vlastnosti buněk, řádků a sloupců.  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvek DataGridView](../../../../docs/framework/winforms/controls/datagridview-control-windows-forms.md)

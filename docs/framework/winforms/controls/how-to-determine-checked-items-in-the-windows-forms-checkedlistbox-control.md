@@ -9,12 +9,12 @@ helpviewer_keywords:
 - check boxes [Windows Forms], determining checked state
 - CheckedListBox control [Windows Forms], determining checked state
 ms.assetid: 178b477d-27c9-489c-8914-44a9623a4d41
-ms.openlocfilehash: 70884051ba440c5d0f9d282b7edf189c8f52807e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e1f8f7fa1f3f351314ac1d454d591f46654d8f81
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505436"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643595"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>Postupy: Určení zaškrtnutých položek v ovládacím prvku Windows Forms CheckedListBox
 Při zobrazení dat ve Windows Forms <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku, můžete buď iterovat uložených v kolekci <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> vlastnost nebo kroku pomocí seznamu <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> metodou ke zjištění, které položky jsou kontrolovány. <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> Metoda přijímá číslo indexu položky jako svůj argument a vrátí `true` nebo `false`. Rozporu s dalo očekávat <xref:System.Windows.Forms.ListBox.SelectedItems%2A> a <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> vlastnosti neurčují položky, které zjišťována; určují, které položky jsou zvýrazněné.  
@@ -111,5 +111,5 @@ Při zobrazení dat ve Windows Forms <xref:System.Windows.Forms.CheckedListBox> 
     MessageBox::Show(s);  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)
+## <a name="see-also"></a>Viz také:
+- [Ovládací prvky Windows Forms používané k výpisu možností](../../../../docs/framework/winforms/controls/windows-forms-controls-used-to-list-options.md)

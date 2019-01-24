@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2383003012ce1f6adffe0ad78ab614323840496f
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 902414ca96d9b4bf888608bd9ad267777da92e32
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50200412"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54742312"
 ---
 # <a name="getpropertyhandle-function"></a>Funkce GetPropertyHandle
 Vrátí jedinečný popisovač identifikující vlastnosti.
@@ -77,11 +77,11 @@ Pomocí tohoto úchytu můžete identifikovat vlastnosti při použití [IWbemOb
 Obslužné rutiny mohou být získána pro vlastnosti všech datových typů jiných než `CIM_OBJECT` a `CIM_ARRAY`. Vrátí popisovače práce napříč všemi instancemi třídy.
 
 ## <a name="requirements"></a>Požadavky  
-**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

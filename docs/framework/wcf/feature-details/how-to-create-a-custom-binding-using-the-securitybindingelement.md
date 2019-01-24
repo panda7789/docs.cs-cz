@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
-ms.openlocfilehash: df40d8dbd5af9acf9e9484ee7694df2bba7ad9f1
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2c2aa5703e31b2529e0b98d909a763b8b4b23035
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155246"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54576154"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
 Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které můžete konfigurovat, ale neposkytují úplnou flexibilitu při konfiguraci všechny možnosti zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazbu přímo z elementů vazby jednotlivých a zvýrazní některá nastavení zabezpečení, které můžete nastavit při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb naleznete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
@@ -54,20 +54,20 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
 |Režim zabezpečení|Přenos|Kontrakt vzoru výměny zpráv|Kontrakt vzoru výměny zpráv|Kontrakt vzoru výměny zpráv|  
 |-------------------|---------------|---------------------------------------|---------------------------------------|---------------------------------------|  
 |||`Datagram`|`Request Reply`|`Duplex`|  
-|Přenos|protokol HTTPS||||  
+|Přenos|Https||||  
 |||OneWayBindingElement|||  
 |||HttpsTransportBindingElement|HttpsTransportBindingElement||  
 ||TCP||||  
 |||OneWayBindingElement|||  
 |||Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
-|Zpráva|http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
+|Zpráva|Http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
 |||||CompositeDuplexBindingElement|  
 |||OneWayBindingElement||OneWayBindingElement|  
 |||HttpTransportBindingElement|HttpTransportBindingElement|HttpTransportBindingElement|  
-||TCP|SecurityBindingElement|SecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
+||Tcp|SecurityBindingElement|SecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
-|Smíšená (přenosu s přihlašovacími údaji zprávy)|protokol HTTPS|TransportSecurityBindingElement|TransportSecurityBindingElement||  
+|Smíšená (přenosu s přihlašovacími údaji zprávy)|Https|TransportSecurityBindingElement|TransportSecurityBindingElement||  
 |||OneWayBindingElement|||  
 |||HttpsTransportBindingElement|HttpsTransportBindingElement||  
 ||TCP|TransportSecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
@@ -106,10 +106,10 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
  [!code-csharp[c_CustomBinding#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#20)]
  [!code-vb[c_CustomBinding#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_custombinding/vb/source.vb#20)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.SecurityBindingElement>  
- <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.SecurityBindingElement>
+- <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>
+- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Rozšíření vazeb](../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)

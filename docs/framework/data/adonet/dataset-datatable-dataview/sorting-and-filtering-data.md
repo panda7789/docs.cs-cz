@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
-ms.openlocfilehash: ade08deca909b32090b7d2d7cf8c6ba9ce9e7679
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 8733a9552787f7286ae76c77091b9833804478d8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083127"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661214"
 ---
 # <a name="sorting-and-filtering-data"></a>Řazení a filtrování dat
 <xref:System.Data.DataView> Poskytuje několik možností, jak řazení a filtrování dat v <xref:System.Data.DataTable>:  
@@ -34,7 +34,7 @@ ms.locfileid: "44083127"
     |**Odstranit**|**Původní** verze řádku všech **odstraněné** řádků.|  
     |**ModifiedCurrent**|**Aktuální** verze řádku všech **změněné** řádků.|  
     |**ModifiedOriginal**|**Původní** verze řádku všech **změněné** řádků.|  
-    |**None**|Žádné řádky.|  
+    |**Žádné**|Žádné řádky.|  
     |**OriginalRows**|**Původní** verze řádku všech **Unchanged**, **změněné**, a **odstraněné** řádků.|  
     |**beze změny**|**Aktuální** verze řádku všech **Unchanged** řádků.|  
   
@@ -56,10 +56,10 @@ DataView prodView = new DataView(prodDS.Tables["Products"],
    DataViewRowState.CurrentRows);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataViewRowState>  
- <xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType>  
- <xref:System.Data.DataTable>  
- <xref:System.Data.DataView>  
- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataViewRowState>
+- <xref:System.Data.DataColumn.Expression%2A?displayProperty=nameWithType>
+- <xref:System.Data.DataTable>
+- <xref:System.Data.DataView>
+- [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

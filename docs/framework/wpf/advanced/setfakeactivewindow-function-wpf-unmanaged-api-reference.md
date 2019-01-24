@@ -1,5 +1,5 @@
 ---
-title: Funkce SetFakeActiveWindow (WPF nespravované rozhraní API)
+title: Funkce SetFakeActiveWindow (WPF nespravovaná referenční dokumentace rozhraní API)
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,15 +8,15 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: a69118be-63b0-445c-9fb6-ab8cc958e531
-ms.openlocfilehash: 6eb8d4d4b04e80373b8bfe1ceed84694e2a8a469
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf2cdce9da4f10ca91df5a7e04ca207ba76db5a6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544583"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507288"
 ---
-# <a name="setfakeactivewindow-function-wpf-unmanaged-api-reference"></a>Funkce SetFakeActiveWindow (WPF nespravované rozhraní API)
-Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo z vašeho kódu.  
+# <a name="setfakeactivewindow-function-wpf-unmanaged-api-reference"></a>Funkce SetFakeActiveWindow (WPF nespravovaná referenční dokumentace rozhraní API)
+Toto rozhraní API podporuje infrastrukturu Windows Presentation Foundation (WPF) a není určena pro použití přímo v kódu.  
   
  Používá infrastrukturu Windows Presentation Foundation (WPF) pro správu systému windows.  
   
@@ -33,11 +33,11 @@ void __stdcall SetFakeActiveWindow(
  Popisovač okna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém rozhraní .NET Framework](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [rozhraní .NET Framework System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Knihovny DLL:** PresentationHost_v0400.dll  
+ **DLL:** PresentationHost_v0400.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Odkaz na nespravované rozhraní API subsystému WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)
+## <a name="see-also"></a>Viz také:
+- [Odkaz na nespravované rozhraní API subsystému WPF](../../../../docs/framework/wpf/advanced/wpf-unmanaged-api-reference.md)

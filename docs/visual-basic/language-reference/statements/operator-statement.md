@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Operator statement [Visual Basic]
 - CType function [Visual Basic], Operator statement
 ms.assetid: b12ec4af-1ad7-4a17-865b-c5ee96320ae5
-ms.openlocfilehash: 69dea99cf71bd1e091116e54e244abfca291ffdb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9da2fc05824fa7e412c1c4802852fd00ba2709e0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399869"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658192"
 ---
 # <a name="operator-statement"></a>Operator – příkaz
 Deklaruje symbol operátoru, operandy a kód, který definuje proceduru operátoru pro třídu nebo strukturu.  
@@ -44,13 +44,13 @@ End Operator
  Volitelné. Zobrazit [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
  `Public`  
- Požadováno. Označuje, že tento postup operátor [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup.  
+ Povinný parametr. Označuje, že tento postup operátor [veřejné](../../../visual-basic/language-reference/modifiers/public.md) přístup.  
   
  `Overloads`  
  Volitelné. Zobrazit [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md).  
   
  `Shared`  
- Požadováno. Označuje, že je tento postup operátor [Shared](../../../visual-basic/language-reference/modifiers/shared.md) postup.  
+ Povinný parametr. Označuje, že je tento postup operátor [Shared](../../../visual-basic/language-reference/modifiers/shared.md) postup.  
   
  `Shadows`  
  Volitelné. Zobrazit [stíny](../../../visual-basic/language-reference/modifiers/shadows.md).  
@@ -62,10 +62,10 @@ End Operator
  Vyžaduje se pro operátor převodu, pokud zadáte `Widening`. Označuje, že tento postup operátor definuje [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md) převodu. Na tuto stránku nápovědy naleznete v tématu "Rozšíření a zúžení převodů".  
   
  `operatorsymbol`  
- Požadováno. Symbol nebo identifikátor operátor, který definuje této procedury operátora.  
+ Povinný parametr. Symbol nebo identifikátor operátor, který definuje této procedury operátora.  
   
  `operand1`  
- Požadováno. Název a typ jeden operand unárního operátoru (včetně operátor převodu) nebo levý operand binárního operátoru.  
+ Povinný parametr. Název a typ jeden operand unárního operátoru (včetně operátor převodu) nebo levý operand binárního operátoru.  
   
  `operand2`  
  Vyžaduje se pro binární operátory. Název a typ pravý operand binárního operátoru.  
@@ -77,7 +77,7 @@ End Operator
 |Část|Popis|  
 |----------|-----------------|  
 |`ByVal`|Musí být nepovinné, ale mechanismus předávání [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).|  
-|`operandname`|Požadováno. Název proměnné představující tento operand. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`operandname`|Povinný parametr. Název proměnné představující tento operand. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`operandtype`|Volitelné Pokud `Option Strict` je `On`. Datový typ tohoto operandu.|  
   
  `type`  
@@ -87,10 +87,10 @@ End Operator
  Volitelné. Blok příkazů, které spouští procedury operátora.  
   
  `returnvalue`  
- Požadováno. Hodnota, která procedury operátora vrátí volajícímu kódu.  
+ Povinný parametr. Hodnota, která procedury operátora vrátí volajícímu kódu.  
   
  `End``Operator`  
- Požadováno. Ukončí definici této procedury operátora.  
+ Povinný parametr. Ukončí definici této procedury operátora.  
   
 ## <a name="remarks"></a>Poznámky  
  Můžete použít `Operator` pouze ve třídě nebo struktuře. To znamená, že *kontext deklarace* operátor nesmí být zdrojový soubor, obor názvů, modulu, rozhraní, procedura nebo blok. Další informace najdete v tématu [kontexty deklarace a výchozí úrovně přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
@@ -170,14 +170,14 @@ End Operator
   
  [!code-vb[VbVbalrStatements#44](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/operator-statement_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)  
- [Operátor IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)  
- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)  
- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)  
- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)  
- [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)  
- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)  
- [Postupy: Volání procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)  
- [Postupy: Použití třídy, která definuje operátory](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)
+## <a name="see-also"></a>Viz také:
+- [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)
+- [Operátor IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)
+- [Widening](../../../visual-basic/language-reference/modifiers/widening.md)
+- [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
+- [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
+- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Postupy: Volání procedury operátora](../../../visual-basic/programming-guide/language-features/procedures/how-to-call-an-operator-procedure.md)
+- [Postupy: Použití třídy, která definuje operátory](../../../visual-basic/programming-guide/language-features/procedures/how-to-use-a-class-that-defines-operators.md)

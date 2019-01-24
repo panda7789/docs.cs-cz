@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a879cce8eb429e2daeaa5db963b3d95d1e944da
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 63e1c55aa3aad1923ac34070784e8b4de7251a7c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171371"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54592754"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje asynchronní operaci. V některých ohledech úkol podobá vláknu nebo <xref:System.Threading.ThreadPool> pracovní položky, ale na vyšší úrovni abstrakce. Termín *paralelismus úloh* odkazuje na jeden nebo více nezávislých úloh, které jsou spuštěny souběžně. Úlohy poskytují dvě hlavní výhody:  
@@ -42,7 +42,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
 > [!NOTE]
 >  Počet <xref:System.Threading.Tasks.Task> instancí, které jsou vytvořeny na pozadí pomocí <xref:System.Threading.Tasks.Parallel.Invoke%2A> není nutně roven počtu zadaných delegátů. Knihovna TPL může využít různé optimalizace, zejména s velkým počtem delegátů.  
   
- Další informace najdete v tématu [postupy: použití Parallel.Invoke k provádění paralelních operací](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md).  
+ Další informace najdete v tématu [jak: Použití algoritmu Parallel.Invoke k vykonávání paralelních operací](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md).  
   
  Pro větší kontrolu nad spouštěním úloh nebo pro navrácení hodnoty z úlohy je nutné pracovat s <xref:System.Threading.Tasks.Task> objekty více explicitně.  
   
@@ -69,7 +69,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
  [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
  [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]  
   
- Další informace najdete v tématu [postupy: vrácení hodnoty z úlohy](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).  
+ Další informace najdete v tématu [jak: Vrácení hodnoty z úlohy](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md).  
   
  Při použití lambda výrazu k vytvoření delegáta máte přístup ke všem proměnným, které jsou v daném okamžiku viditelné ve zdrojovém kódu. V některých případech, zejména v rámci smyčky, však lambda nezachytí proměnnou podle očekávání. Pouze zachycuje konečnou hodnotu, nikoli mutaci hodnoty po každé iteraci. Následující příklad ukazuje tento problém. Předává smyčky pro lambda výraz, který instancuje čítač `CustomData` objektu a používá čítače smyčky jako identifikátoru objektu. Jak výstup z příkladu ukazuje, každý `CustomData` objektu má stejný identifikátor.  
   
@@ -181,7 +181,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
  Při čekání na úlohu se implicitně čeká všechny podřízené dané úlohy, které byly vytvořeny pomocí <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> možnost. <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> Vrátí hodnotu okamžitě, pokud úloha již byla dokončena. Jakékoli výjimky způsobené úlohou budou vyvolány metodou <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> , i když <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> metoda byla volána po dokončení úlohy.  
   
 ## <a name="composing-tasks"></a>Skládání úloh  
- <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> třídy poskytují několik metod, které vám pomohou vytvořit více úkolů k implementaci běžných vzorů a pro lepší využití asynchronních jazykových funkcí, které jsou k dispozici v jazyce C#, Visual Basic a F #. Tato část popisuje <xref:System.Threading.Tasks.Task.WhenAll%2A>, <xref:System.Threading.Tasks.Task.WhenAny%2A>, <xref:System.Threading.Tasks.Task.Delay%2A>, a <xref:System.Threading.Tasks.Task.FromResult%2A> metody.  
+ <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> třídy poskytují několik metod, které vám pomohou vytvořit více úkolů k implementaci běžných vzorů a pro lepší využití asynchronních jazykových funkcí, které jsou poskytovány C#, Visual Basic a F#. Tato část popisuje <xref:System.Threading.Tasks.Task.WhenAll%2A>, <xref:System.Threading.Tasks.Task.WhenAny%2A>, <xref:System.Threading.Tasks.Task.Delay%2A>, a <xref:System.Threading.Tasks.Task.FromResult%2A> metody.  
   
 ### <a name="taskwhenall"></a>Task.WhenAll  
  <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> Metoda asynchronně čeká na více <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> objekty na dokončení. Poskytuje přetížené verze, které umožňují čekání na nerovnoměrné sady úloh. Například může čekat pro více <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objektů k dokončení z jedné metody volání.  
@@ -201,7 +201,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> Metoda vytvoří <xref:System.Threading.Tasks.Task> , který je dokončen po určeném čase. Tuto metodu můžete použít k vytvoření cyklů, které občas provádějí dotazování na data, zavedení limitů, zpracování vstupu uživatele na předem stanovenou dobu zpoždění a tak dále.  
   
 ### <a name="tasktfromresult"></a>Task(T).FromResult  
- S použitím <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metodu, můžete vytvořit <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje předem vypočítaný výsledek. Tato metoda je užitečná při provádění asynchronní operace, která vrátí <xref:System.Threading.Tasks.Task%601> objektu a výsledek tohoto objektu <xref:System.Threading.Tasks.Task%601> již je vypočítán. Příklad, který používá <xref:System.Threading.Tasks.Task.FromResult%2A> k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti, naleznete v tématu [jak: Create Pre-Computed Tasks](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md).  
+ S použitím <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metodu, můžete vytvořit <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje předem vypočítaný výsledek. Tato metoda je užitečná při provádění asynchronní operace, která vrátí <xref:System.Threading.Tasks.Task%601> objektu a výsledek tohoto objektu <xref:System.Threading.Tasks.Task%601> již je vypočítán. Příklad, který používá <xref:System.Threading.Tasks.Task.FromResult%2A> k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti, naleznete v tématu [jak: Vytváření Předvypočítaných úloh](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md).  
   
 ## <a name="handling-exceptions-in-tasks"></a>Zpracování výjimek v úlohách  
  Pokud úloha vyvolá jednu nebo více výjimek, výjimky jsou obaleny do <xref:System.AggregateException> výjimky. Tato výjimka se šíří zpět k vláknu spojenému s úlohou, které je obvykle vláknem čekajícím na dokončení úloh nebo vláknem, které přistupuje k <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost. Toto chování slouží k vynucení, aby při všech neošetřených výjimkách ve výchozím nastavení zásady rozhraní .NET Framework ukončily proces. Volající kód může zpracovávat výjimky pomocí některého z následujících postupů v `try` / `catch` blok:  
@@ -223,7 +223,7 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
   
  Můžete vytvořit token a vyslat žádost zrušení později, s použitím <xref:System.Threading.CancellationTokenSource> třídy. Předat token, který má <xref:System.Threading.Tasks.Task> jako argument a také odkazovat stejný token v uživatelském delegátu, který provádí reakci na žádost o zrušení.  
   
- Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [postupy: zrušení úlohy a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+ Další informace najdete v tématu [zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md) a [jak: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
 ## <a name="the-taskfactory-class"></a>Třída TaskFactory  
  <xref:System.Threading.Tasks.TaskFactory> Třída poskytuje statické metody, které provádí zapouzdření některých běžný schémat pro vytváření a spouštění úloh a pokračujících úloh.  
@@ -258,10 +258,10 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
 |[Připojené a odpojené podřízené úlohy](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)|Popisuje rozdíl mezi připojenými a odpojenými podřízenými úlohami.|  
 |[Zrušení úlohy](../../../docs/standard/parallel-programming/task-cancellation.md)|Popisuje podporu zrušení, která je integrovaná <xref:System.Threading.Tasks.Task> objektu.|  
 |[Zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)|Popisuje způsob zpracování výjimek v souběžných vláknech.|  
-|[Postupy: Použití algoritmu Parallel.Invoke k provádění paralelních operací](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|  
+|[Postupy: Použití algoritmu Parallel.Invoke k vykonávání paralelních operací](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Parallel.Invoke%2A>.|  
 |[Postupy: Vrácení hodnoty z úlohy](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)|Popisuje, jak z úloh vracet hodnoty.|  
-|[Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|Popisuje, jak zrušit úlohy.|  
-|[Postupy: Vytváření předvypočítaných úloh](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti.|  
+|[Postupy: Zrušení úlohy a jejích potomků](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|Popisuje, jak zrušit úlohy.|  
+|[Postupy: Vytváření Předvypočítaných úloh](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti.|  
 |[Postupy: Procházení binárního stromu s paralelními úlohami](../../../docs/standard/parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md)|Popisuje, jak použít úlohy k procházení binárního stromu.|  
 |[Postupy: Rozbalení vnořené úlohy](../../../docs/standard/parallel-programming/how-to-unwrap-a-nested-task.md)|Popisuje způsob použití <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> – metoda rozšíření.|  
 |[Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|Popisuje způsob použití <xref:System.Threading.Tasks.Parallel.For%2A> a <xref:System.Threading.Tasks.Parallel.ForEach%2A> pro vytvoření paralelních cyklů nad daty.|  
@@ -269,5 +269,5 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
   
 ## <a name="see-also"></a>Viz také:
 
-- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
 - [Ukázky pro paralelní programování s rozhraním .NET Framework](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)

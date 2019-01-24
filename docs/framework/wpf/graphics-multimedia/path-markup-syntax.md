@@ -7,12 +7,12 @@ helpviewer_keywords:
 - graphics [WPF], PathGeometry class
 - XAML [WPF], object element usage
 ms.assetid: b8586241-a02d-486e-9223-e1e98e047f41
-ms.openlocfilehash: d681cd15fa3daa3698edc5e0ad3d3c2669c1dfdf
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 03f9c4f8156c5f14ff127dd47c7ade6f6ee22e5e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591929"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671262"
 ---
 # <a name="path-markup-syntax"></a>Syntaxe značek cesty
 Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md) a [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md), ale toto téma popisuje podrobně výkonná a komplexní zkrácené jazyk, slouží k určení cesty geometrie více kompaktně pomocí [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
@@ -40,20 +40,20 @@ Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](../../../../do
 ### <a name="a-note-about-white-space"></a>Poznámka k prázdné znaky  
  Pro zkrácení se zobrazí jedna mezera v oddílech syntaxe, které následují, ale více prostorů jsou přijatelné také všude, kde se zobrazí jedna mezera.  
   
- Dvě čísla nemusí ve skutečnosti být odděleny čárkami nebo mezerami, ale to jde jenom když je výsledný řetězec je jednoznačný. Například `2..3` je ve skutečnosti dvě čísla: "2". A ". 3". Obdobně `2-3` je "2" a "-3". Mezery nejsou vyžadovány před nebo po příkazech, buď.  
+ Dvě čísla nemusí ve skutečnosti být odděleny čárkami nebo mezerami, ale to jde jenom když je výsledný řetězec je jednoznačný. Například `2..3` je ve skutečnosti dvě čísla: "2." A ". 3". Obdobně `2-3` je "2" a "-3". Mezery nejsou vyžadovány před nebo po příkazech, buď.  
   
 ### <a name="syntax"></a>Syntaxe  
  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Použití syntaxe pro atribut <xref:System.Windows.Media.StreamGeometry> se skládá z volitelné <xref:System.Windows.Media.FillRule> hodnotu a jeden nebo více obrázek popisy.  
   
 |Použití atributu XAML StreamGeometry|  
 |-----------------------------------------|  
-|`<` *objekt* *vlastnost* `="`[ `fillRule`] `figureDescription`[ `figureDescription`] * `" ... />`|  
+|`<` *object* *property* `="`[ `fillRule`] `figureDescription`[ `figureDescription`]* `" ... />`|  
   
  [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] Použití syntaxe pro atribut <xref:System.Windows.Media.PathFigureCollection> se skládá z jednoho nebo více popisy obrázek.  
   
 |Použití atributu XAML PathFigureCollection|  
 |-----------------------------------------------|  
-|`<` *objekt* *vlastnost* `="` `figureDescription`[ `figureDescription`] * `" ... />`|  
+|`<` *object* *property* `="` `figureDescription`[ `figureDescription`]* `" ... />`|  
   
 |Termín|Popis|  
 |----------|-----------------|  
@@ -88,11 +88,11 @@ Cesty jsou popsány v [tvary a základní kresby v přehledu WPF](../../../../do
   
 |Syntaxe|  
 |------------|  
-|`L` *koncový bod*<br /><br /> - nebo -<br /><br /> `l` *koncový bod*|  
+|`L` *endPoint*<br /><br /> - nebo -<br /><br /> `l` *endPoint*|  
   
 |Termín|Popis|  
 |----------|-----------------|  
-|*koncový bod*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod čáry.|  
+|*endPoint*|<xref:System.Windows.Point?displayProperty=nameWithType><br /><br /> Koncový bod čáry.|  
 
 Velké `L` znamená, že `endPoint` je absolutní hodnota; malé `l` znamená, že `endPoint` je posun oproti dřívějšímu bodu, nebo (0,0), pokud žádný neexistuje.
 
@@ -224,11 +224,11 @@ Velké `V` znamená, že `y` je absolutní hodnota; malé `v` znamená, že `y` 
   
  Můžete také použít vědecký zápis. Například `+1.e17` platná hodnota.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Shapes.Path>  
- <xref:System.Windows.Media.StreamGeometry>  
- <xref:System.Windows.Media.PathGeometry>  
- <xref:System.Windows.Media.PathFigureCollection>  
- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Shapes.Path>
+- <xref:System.Windows.Media.StreamGeometry>
+- <xref:System.Windows.Media.PathGeometry>
+- <xref:System.Windows.Media.PathFigureCollection>
+- [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)
+- [Přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/geometries-how-to-topics.md)

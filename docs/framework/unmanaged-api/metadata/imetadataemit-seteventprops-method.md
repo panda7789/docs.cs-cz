@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 42dc78ff3c58b67801cd99512781d8c8509dd272
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ab479aab56b429c104a44b1fae192bc7f20a389d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447337"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656918"
 ---
 # <a name="imetadataemitseteventprops-method"></a>IMetaDataEmit::SetEventProps – metoda
-Nastaví nebo aktualizuje určenou funkci události definované předchozí volání [imetadataemit::defineevent –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
+Nastaví nebo aktualizuje zadanou funkci události definované v předchozím volání [imetadataemit::defineevent –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,35 +43,35 @@ HRESULT SetEventProps (
   
 #### <a name="parameters"></a>Parametry  
  `ev`  
- [v] Token událostí.  
+ [in] Token, který událost.  
   
  `dwEventFlags`  
- [v] Příznaky událostí. Toto je bitová maska s `CorEventAttr` hodnoty.  
+ [in] Příznaky událostí. To je bitová maska z `CorEventAttr` hodnoty.  
   
  `tkEventType`  
- [v] Token pro třídy události. To znamená buď `mdTypeDef` nebo `mdTypeRef` tokenu.  
+ [in] Token pro třídy události. Je to `mdTypeDef` nebo `mdTypeRef` token.  
   
  `mdAddOn`  
- [v] Metoda použitá k odběru události, nebo hodnotu null.  
+ [in] Metoda použitá k přihlášení k odběru událostí, nebo hodnotu null.  
   
  `mdRemoveOn`  
- [v] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.  
+ [in] Metoda použitá k odhlášení odběru událostí, nebo hodnotu null.  
   
  `mdFire`  
- [v] Metoda použitá k vyvolání události (podle odvozené třídy).  
+ [in] Metoda použitá pro vyvolání události (prostřednictvím odvozené třídy).  
   
  `rmdOtherMethods[]`  
- [v] Pole tokeny pro jiné metody přidružený k události. Musí být posledním prvkem pole `mdMethodDefNil`.  
+ [in] Pole tokenů pro jiné metody přidružené k události. Poslední element pole musí být `mdMethodDefNil`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

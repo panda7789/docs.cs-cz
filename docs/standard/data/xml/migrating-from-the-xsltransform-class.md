@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7f835cfb45848ca2790c3dcb541629564e9cc48a
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 1b764febc17258bc6d929c6d988a02b58f3e2351
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261391"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664548"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z třídy XslTransform
 
@@ -27,7 +27,7 @@ Architektura XSLT byla přepracována ve verzi Visual Studio 2005. <xref:System.
  <xref:System.Xml.Xsl.XslCompiledTransform> Třída také obsahuje další optimalizace, které usnadňují mnohem rychlejší než <xref:System.Xml.Xsl.XslTransform> třídy.
 
 > [!NOTE]
->  I když celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třída je lepší, než <xref:System.Xml.Xsl.XslTransform> třídy, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslCompiledTransform> třídy můžou provádět více pomalu než <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslTransform> třída první, když je volán na transformaci. Je to proto musí být kompilován soubor XSLT, předtím, než je načten. Další informace najdete v následujícím blogovém příspěvku: [XslCompiledTransform pomalejší než XslTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
+>  I když celkový výkon <xref:System.Xml.Xsl.XslCompiledTransform> třída je lepší, než <xref:System.Xml.Xsl.XslTransform> třídy, <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslCompiledTransform> třídy můžou provádět více pomalu než <xref:System.Xml.Xsl.XslTransform.Load%2A> metodu <xref:System.Xml.Xsl.XslTransform> třída první, když je volán na transformaci. Je to proto musí být kompilován soubor XSLT, předtím, než je načten. Další informace najdete v následujícím blogovém příspěvku: [Pomalejší než XslTransform XslCompiledTransform?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
 
 ## <a name="security"></a>Zabezpečení
  Ve výchozím nastavení <xref:System.Xml.Xsl.XslCompiledTransform> třídy zakáže podporu pro XSLT `document()` funkce a vložené skriptování. Tyto funkce se dá nastavit tak, že vytvoříte <xref:System.Xml.Xsl.XsltSettings> objekt, který má funkce povolena a předá se <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Následující příklad ukazuje, jak povolit skriptování a provedení transformace XSLT.
@@ -114,11 +114,11 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
   
 -   msxsl:Version: Tato funkce není podporována v <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
--   Funkcí rozšíření XPath: [ms:string-compare – funkce](https://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee), [ms:utc funkce](https://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f), [MS: namespace-uri funkce](https://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7), [ms:local – název funkce](https://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5), [ms:number – funkce](https://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954), [ms:format-datum funkce](https://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5), a [ms:format – čas funkce](https://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5) funkce jsou nyní podporovány.  
+-   Funkce rozšíření XPath: [Ms:string-compare – funkce](https://msdn.microsoft.com/library/20616b82-9e27-444c-b714-4f1e09b73aee), [ms:utc funkce](https://msdn.microsoft.com/library/ef26fc88-84c6-4fb9-9c3b-f2f5264b864f), [MS: namespace-uri funkce](https://msdn.microsoft.com/library/91f9cabf-ab93-4dbe-9c12-e6a75214f4c7), [ms:local – název funkce](https://msdn.microsoft.com/library/10ed60a1-17a9-4d74-8b98-7940ac97c0b5), [ms:number – funkce](https://msdn.microsoft.com/library/b94fc08e-1f31-4f48-b1a8-6d78c1b5d954), [ms:format-datum funkce](https://msdn.microsoft.com/library/51f35609-89a9-4098-a166-88bf01300bf5), a [ms:format – čas funkce](https://msdn.microsoft.com/library/e5c2df2d-e8fb-4a8f-bfc0-db84ea12a5d5) funkce jsou nyní podporovány.  
   
--   Schéma souvisejících funkcí rozšíření XPath: tyto funkce nepodporuje nativně podle <xref:System.Xml.Xsl.XslCompiledTransform>. Ale že je možné implementovat jako funkcí rozšíření.  
+-   Schéma souvisejících funkcí rozšíření XPath: Tyto funkce nepodporuje nativně podle <xref:System.Xml.Xsl.XslCompiledTransform>. Ale že je možné implementovat jako funkcí rozšíření.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
 - [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

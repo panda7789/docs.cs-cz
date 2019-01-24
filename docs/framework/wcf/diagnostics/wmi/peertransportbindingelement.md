@@ -2,12 +2,12 @@
 title: PeerTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 40bf6be2-8087-4cb3-a66c-408d53eb9269
-ms.openlocfilehash: 58bf07b0429ca2435b5aae3683ef69951a10003e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 437ccc0446e3cc05596ab12b7908177b7f78e431
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185180"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54670651"
 ---
 # <a name="peertransportbindingelement"></a>PeerTransportBindingElement
 PeerTransportBindingElement  
@@ -29,24 +29,24 @@ class PeerTransportBindingElement : TransportBindingElement
 ## <a name="properties"></a>Vlastnosti  
  Třídě PeerTransportBindingElement má následující vlastnosti:  
   
-### <a name="listenipaddress"></a>Třída listenIPAddress  
+### <a name="listenipaddress"></a>ListenIPAddress  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  IP adresa, na kterém naslouchá partnerský uzel pro zprávy.  
   
 ### <a name="port"></a>Port  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Port síťového rozhraní, na které bude tato vazba procesy navázání partnerského vztahu mezi kanálu zpráv.  
   
 ### <a name="security"></a>Zabezpečení  
  Datový typ: PeerSecuritySettings  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Nastavení zabezpečení rovnocenného přenosu.  
   
@@ -56,5 +56,5 @@ class PeerTransportBindingElement : TransportBindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.PeerTransportBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.PeerTransportBindingElement>

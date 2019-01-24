@@ -6,12 +6,12 @@ helpviewer_keywords:
 - graphics [WPF], skewing elements
 - classes [WPF], SkewTransform
 ms.assetid: 56b65f2f-dc6e-4238-923f-ca44ec53c52f
-ms.openlocfilehash: f828e4d4e59fa5ed31f81f3e83570a25add19e01
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0ba5f3645156459a711d88b7330b221a5d083e7c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877077"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611329"
 ---
 # <a name="how-to-skew-an-element"></a>Postupy: Zkreslení elementu
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.SkewTransform> zkosení elementu. Nerovnoměrná distribuce, které se taky říká zkosení je transformace, která roztáhne souřadnicového prostoru nerovnoměrné způsobem. Jeden typické použití <xref:System.Windows.Media.SkewTransform> je pro simulaci [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] hloubka v [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] objekty.  
@@ -37,13 +37,13 @@ Tento příklad ukazuje způsob použití <xref:System.Windows.Media.SkewTransfo
   
  Následující obrázek znázorňuje různé nerovnoměrné distribuce, které se používají v tomto příkladu.  
   
- ![SkewTransform – příklady](../../../../docs/framework/wpf/graphics-multimedia/media/img-wcpsdk-graphicsmm-skewtransformexample.gif "img_wcpsdk_graphicsmm_skewtransformexample")  
+ ![SkewTransform examples](../../../../docs/framework/wpf/graphics-multimedia/media/img-wcpsdk-graphicsmm-skewtransformexample.gif "img_wcpsdk_graphicsmm_skewtransformexample")  
 Tři SkewTransform – příklady jsou znázorněné  
   
  Úplnou ukázku najdete v tématu [2D transformace ukázka](https://go.microsoft.com/fwlink/?LinkID=158252).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Media.Transform>  
- <xref:System.Windows.Media.SkewTransform>  
- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)  
- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Media.Transform>
+- <xref:System.Windows.Media.SkewTransform>
+- [Přehled transformace](../../../../docs/framework/wpf/graphics-multimedia/transforms-overview.md)
+- [Témata s postupy](../../../../docs/framework/wpf/graphics-multimedia/transformations-how-to-topics.md)

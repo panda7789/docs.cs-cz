@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: bfc20837-3d02-4fc7-8a8f-c5215b6b7913
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b4dde57e03e26085d19099e749afd50ba14874a5
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: fefd9f95a669c9c0384cefe41322c7a10a96a3b7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195371"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514709"
 ---
 # <a name="hashtable-and-dictionary-collection-types"></a>Typy kolekce Hashtable a Dictionary
 <xref:System.Collections.Hashtable?displayProperty=nameWithType> Třídy a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> a <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> implementovat obecné třídy <xref:System.Collections.IDictionary?displayProperty=nameWithType> rozhraní. <xref:System.Collections.Generic.Dictionary%602> Obecnou třídu také implementuje <xref:System.Collections.Generic.IDictionary%602> obecného rozhraní. Každý prvek v těchto kolekcích tedy pár klíč hodnota.  
@@ -38,10 +38,10 @@ ms.locfileid: "44195371"
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Collections.Hashtable>  
-- <xref:System.Collections.IDictionary>  
-- <xref:System.Collections.IHashCodeProvider>  
-- <xref:System.Collections.Generic.Dictionary%602>  
-- <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>  
-- <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>  
+- <xref:System.Collections.Hashtable>
+- <xref:System.Collections.IDictionary>
+- <xref:System.Collections.IHashCodeProvider>
+- <xref:System.Collections.Generic.Dictionary%602>
+- <xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>
+- <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>
 - [Běžně používané typy kolekcí](../../../docs/standard/collections/commonly-used-collection-types.md)

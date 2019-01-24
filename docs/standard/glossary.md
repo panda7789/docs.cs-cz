@@ -5,12 +5,12 @@ author: tdykstra
 ms.author: tdykstra
 ms.date: 07/08/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 4ffcf56ba171192048a736b58ddcfa591fd3af58
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
-ms.translationtype: MT
+ms.openlocfilehash: 3c478083a2bfde1742b114a8254bf07dff01f869
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840268"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664665"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 
@@ -72,7 +72,7 @@ Zobrazit [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/m
 
 Možnost vyvíjet a spouštět aplikace, která je možné v několika různých operačních systémech, jako je Linux, Windows a iOS, aniž byste museli znovu napsat speciálně pro každý z nich. Díky tomu opakovanému použití kódu a konzistenci mezi aplikací na různých platformách.
 
-## <a name="ecosystem"></a>Ekosystém
+## <a name="ecosystem"></a>ecosystem
 
 Všechny softwarové modulu runtime, vývojové nástroje a komunitní zdroje, které se používají k vytváření a spouštění aplikací pro dané technologii.
 
@@ -115,9 +115,9 @@ Podobně jako [AOT](#aot), tento kompilátor překládá [IL](#il) do strojovéh
 
 Implementace .NET zahrnuje následující položky:
 
-- Jeden nebo více modulů runtime. Příklady: CoreRT CLR, CoreCLR.
+- Jeden nebo více modulů runtime. Příklady: CLR, CoreCLR, CoreRT.
 - Knihovna tříd, který implementuje na verzi .NET Standard a může taky obsahovat další rozhraní API. Příklady: Základní knihovny tříd .NET Framework, knihovně základních tříd .NET Core.
-- Volitelně můžete jeden nebo více aplikačních architektur. Příklady: ASP.NET, Windows Forms a WPF jsou zahrnuty v rozhraní .NET Framework.
+- Volitelně můžete jeden nebo více aplikačních architektur. Příklady: Technologie ASP.NET, Windows Forms a WPF jsou zahrnuty v rozhraní .NET Framework.
 - Volitelně můžete nástroje pro vývoj. Některé vývojové nástroje jsou sdíleny více implementací.
 
 Příklady implementace .NET:
@@ -162,13 +162,13 @@ Napříč platformami, vysoce výkonná open source implementace .NET. Zahrnuje 
 
 Zobrazit [.NET Core](../core/index.md).
 
-## <a name="net-core-cli"></a>.NET core CLI
+## <a name="net-core-cli"></a>.NET Core CLI
 
 Multiplatformní sadu nástrojů pro vývoj aplikací .NET Core.
 
 Zobrazit [nástroje rozhraní příkazového řádku (CLI) pro .NET Core](../core/tools/index.md).
 
-## <a name="net-core-sdk"></a>.NET core SDK
+## <a name="net-core-sdk"></a>.NET Core SDK
 
 Sada knihovny a nástroje, které umožňují vývojářům vytvářet aplikace .NET Core a knihovny. Zahrnuje [rozhraní příkazového řádku .NET Core](#net-core-cli) pro vývoj aplikací, knihoven .NET Core a modul runtime pro sestavování a spouštění aplikací a dotnet spustitelný soubor (*dotnet.exe*), který spouští příkazy rozhraní příkazového řádku a spuštění aplikace.
 
@@ -190,7 +190,7 @@ UPW se první aplikační platformu .NET Native nepodporují. Nyní podporujeme 
 
 Zobrazit [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
 
-## <a name="net-standard"></a>.NET standard
+## <a name="net-standard"></a>.NET Standard
 
 Formální specifikaci rozhraní API pro .NET, které jsou dostupné v jednotlivých implementace .NET.
 
@@ -272,8 +272,8 @@ Implementace .NET, která je určená k vytváření moderních, dotykově ovlá
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce technologií .NET](index.md)  
-- [Průvodce rozhraním .NET Framework](../framework/index.md)  
-- [.NET Core](../core/index.md)  
-- [ASP.NET: Přehled](/aspnet/index#pivot=aspnet)  
-- [Přehled ASP.NET Core](/aspnet/index#pivot=core)  
+- [Průvodce technologií .NET](index.md)
+- [Průvodce rozhraním .NET Framework](../framework/index.md)
+- [.NET Core](../core/index.md)
+- [ASP.NET: Přehled](/aspnet/index#pivot=aspnet)
+- [Přehled ASP.NET Core](/aspnet/index#pivot=core)

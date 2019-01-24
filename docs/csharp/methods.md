@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 7ddc79a7d9864ecd7834cb75e23c9ad3a4320a91
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 97f30838d6bd61654daa800e891e3a79dd3f1297
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54415504"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54617197"
 ---
 # <a name="methods"></a>Metody #
 
@@ -288,12 +288,12 @@ Další informace najdete v tématu [iterátory](programming-guide/concepts/iter
 
 ## <a name="see-also"></a>Viz také: ##
 
-- [Modifikátory přístupu](language-reference/keywords/access-modifiers.md)   
-- [Statické třídy a jejich členové](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)   
-- [Dědičnost](programming-guide/classes-and-structs/inheritance.md)   
-- [Abstraktní a uzavřené třídy a jejich členové](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)   
-- [params](language-reference/keywords/params.md)   
-- [out](language-reference/keywords/out-parameter-modifier.md)   
-- [ref](language-reference/keywords/ref.md)   
-- [in](language-reference/keywords/in-parameter-modifier.md)   
+- [Modifikátory přístupu](language-reference/keywords/access-modifiers.md)
+- [Statické třídy a jejich členové](programming-guide/classes-and-structs/static-classes-and-static-class-members.md)
+- [Dědičnost](programming-guide/classes-and-structs/inheritance.md)
+- [Abstraktní a uzavřené třídy a jejich členové](programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)
+- [params](language-reference/keywords/params.md)
+- [out](language-reference/keywords/out-parameter-modifier.md)
+- [ref](language-reference/keywords/ref.md)
+- [in](language-reference/keywords/in-parameter-modifier.md)
 - [Předávání parametrů](programming-guide/classes-and-structs/passing-parameters.md)

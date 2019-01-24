@@ -1,5 +1,5 @@
 ---
-title: Názorů komunity WPF
+title: Zpětná vazba komunity WPF
 ms.date: 03/01/2018
 helpviewer_keywords:
 - community resources [WPF]
@@ -8,116 +8,116 @@ helpviewer_keywords:
 ms.assetid: 468b060a-d54b-4900-a74a-9faccb554045
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6394bda1c2bcd4a42f76579d541173e65ecd2dc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f77058ac0cb87d0316395bce1dfb11401a2ce806
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557833"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585338"
 ---
-# <a name="wpf-community-feedback"></a>Názorů komunity WPF
+# <a name="wpf-community-feedback"></a>Zpětná vazba komunity WPF
 
-Microsoft zveřejňuje řadu komunitní zdroje pro další informace o, popisují a poskytnout zpětnou vazbu na Windows Presentation Foundation (WPF). Sem patří fóra a [Visual Studio Community vývojáře](https://developercommunity.visualstudio.com/) lokality. Každý prostředek, komunity nabízí jinou sadu výhody. Tyto výhody jsou tu popsané, jak jsou sady osvědčené postupy pro použití každou, abyste zajistili nejlepší odpověď z komunity ve velkém a Microsoft na konkrétní.
+Microsoft poskytuje širokou škálu materiálů community je nutné další informace o diskutovat a poskytnout zpětnou vazbu na Windows Presentation Foundation (WPF). Tyto prostředky zahrnují fóra a [komunity vývojářů v aplikaci Visual Studio](https://developercommunity.visualstudio.com/) lokality. Každý prostředek komunity nabízí různé sady výhody. Tyto výhody jsou tu popsané, jak jsou sady osvědčené postupy pro použití každou, abyste zajistili nejlepší odpověď od komunity ve velkém a Microsoft zejména.
 
 > [!NOTE]
-> Nepoužívejte části zpětnou vazbu, nachází na konci každé stránce odeslat názor produkt. Tyto odkazy jsou dokumentaci pouze zpětnou vazbu.
+> Odeslat názor na produkt nepoužívejte části zpětná vazba nachází v dolní části každé stránky. Tyto odkazy jsou pro pouze názor na dokumentaci.
 
 ## <a name="forums"></a>Diskuzní fóra
 
-[WPF fórum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=wpf) je prostředek primární komunity pro hovoříte o a řešení problémů. Fóra usnadnění řešení diskuse a problém tím, že nabízí komplexní sadu pomocných funkcí, které zahrnují:
+[WPF fórum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=wpf) je prostředek primární komunity pro diskuse a řešení problémů. Fóra usnadnění řešení diskusi a problém tím, že nabízí komplexní sadu pomocných funkcí, které zahrnují:
 
 - Hledání.
-- Diskusní sledování.
-- Bohaté formátování textu a kódu.
-- Integrace aplikace Visual Studio.
-- Většina hodnot Professional (MVP) a komunity zapojení.
-- Monitorování Ujistěte se, že jsou příspěvcích odpověděl v co nejkratším čase možné.
+- Diskuze sledování.
+- Bohatého formátování textu a kódu.
+- Integrace se sadou Visual Studio.
+- Většina zapojení Vážíme si toho Professional (MVP) a komunity.
+- Monitorování Ujistěte se, že jsou příspěvky odpověděl na nejrychlejší možné včas.
 
-Další možností pro vás k nim máte nějaké otázky komunitě WPF je [Stack Overflow](https://stackoverflow.com/questions/tagged/wpf).
+Další možností, kde můžete pokládat otázky, které komunitě o rozhraní WPF je [Stack Overflow](https://stackoverflow.com/questions/tagged/wpf).
 
 ### <a name="forum-best-practices"></a>Fórum osvědčené postupy
 
-Pomocí následujících osvědčených postupů Nápověda publikované na fóru grafického subsystému WPF v co nejkratším čase možné řešit problémy. Tyto postupy se vztahují na všechny fóra.
+Pomocí následující nejlepší postupy nápovědu pro řešení potíží s zaslaná do tohoto fóra WPF v nejrychlejší možné době. Tyto postupy platí pro všechna fóra.
 
-#### <a name="search-existing-posts"></a>Hledání existujících příspěvků
+#### <a name="search-existing-posts"></a>Hledat existující příspěvky
 
-Některé problémy s dostatečně široce dojít, že jiné mají je potýkají předtím, než. V důsledku toho vám rychle vyřešit problém, nebo můžete přidat váš vstup, aby existující diskusi.
+Některé problémy, dojde k dostatečně často, že ostatní mají jejich čelí před. V důsledku toho můžete rychle vyřešit problém, nebo můžete přidat váš vstup, aby existující diskusi.
 
-#### <a name="use-meaningful-titles"></a>Použití smysluplný názvů
+#### <a name="use-meaningful-titles"></a>Použijte smysluplné názvy
 
-Stručný a smysluplný názvy zlepšit zjistitelnost vaše příspěvky. Budou také usnadňují ostatními členy komunity fórum WPF k určení, pokud se problém vyřešit.
+Stručný a smysluplné názvy pracovalo vaše příspěvky. Jsou také usnadňují ostatních členů komunity WPF fóra, k určení, pokud se problém vyřešit.
 
 #### <a name="include-appropriate-content"></a>Zahrnout příslušný obsah
 
-Popište problém a jak jste se pokusili fungovat přes něj. Pokud je to možné patří podpora fragmenty kódu nebo nejjednodušší možné vzorku, který ukazuje problém. Všechny tyto informace pomáhají zvýšit možné, že se váš dotaz odpoví rychle.
+Popište problém a jak jste se pokusili pracovat přes něj. Pokud je to možné zahrnout podpůrné fragmenty kódu nebo nejjednodušší možný vzorku, který ukazuje problém. Tyto podrobnosti to pomoct zvýšit šance na váš dotaz se rychle odpovědi.
 
-## <a name="visual-studio-developer-community"></a>Komunity vývojářů v sadě Visual Studio
+## <a name="visual-studio-developer-community"></a>Visual Studio Developer Community
 
-Problémy může být někdy obtížné vyřešit nebo irresolvable. Tyto situace nastanou z důvodu chyby v technologii, potíží při použití technologie pro určité scénáře nebo nedostatečná podpora pro určité scénáře. Tyto informace je důležité společnosti Microsoft a lze zadat pomocí [Visual Studio Community vývojáře](https://developercommunity.visualstudio.com/) lokality.
+Problémy může být někdy obtížné vyřešit nebo nevyřešitelná. Tato situace nastat z důvodu chyby v rámci technologie potíží při použití technologie pro konkrétní scénáře nebo chybějící podpora pro určité scénáře. Tyto informace společnost Microsoft je důležité a může být poskytnuta prostřednictvím [komunity vývojářů v aplikaci Visual Studio](https://developercommunity.visualstudio.com/) lokality.
 
-Položky publikované v centru zpětnou vazbu WPF produktu jsou směrovány do týmu WPF interní chyba databáze. V důsledku toho je nejspolehlivější způsob, jak získat váš názor funkce vlastníkovi WPF. Kromě toho vám může ověřit a sledovat návrhy a chyby, stejně jako hlasovat o, což pomáhá týmem WPF k určení priority problémy.
+Položky, které jsou publikované v Centru pro zpětnou vazbu WPF produktu jsou směrovány do týmu WPF interní chyba databáze. V důsledku toho je nejspolehlivější způsob, jak získat svůj názor vlastníkovi funkce WPF. Kromě toho můžete můžete ověřit a sledovat, návrhy a chyby také hlasovat, což omezuje WPF týmu určit jejich prioritu problémů.
 
-### <a name="developer-community-best-practices"></a>Osvědčené postupy komunity vývojářů
+### <a name="developer-community-best-practices"></a>Osvědčené postupy z komunity vývojářů
 
-Při publikování na Visual Studio Developer Community, vyhledávání, existující účtuje, poskytuje smysluplný název a příslušný obsah jsou důležité osvědčených postupů, stejně, jako jsou pro příspěvků na fóru WPF. Následují další osvědčené postupy, které by také využívat.
+Při odesílání do aplikace Visual Studio Community pro vývojáře, vyhledávání, existující příspěvky, poskytují smysluplný název a příslušný obsah jsou důležité osvědčené postupy, stejně jako pro příspěvku na fóru WPF. Tady jsou další osvědčené postupy, které by měly také používat.
 
-#### <a name="search-existing-posts"></a>Hledání existujících příspěvků
+#### <a name="search-existing-posts"></a>Hledat existující příspěvky
 
-Některé problémy s dostatečně široce dojít, že jiné mají je potýkají předtím, než. V důsledku toho vám rychle vyřešit problém, nebo můžete přidat váš vstup, aby existující problém.
+Některé problémy, dojde k dostatečně často, že ostatní mají jejich čelí před. V důsledku toho můžete rychle vyřešit problém, nebo můžete přidat váš vstup, aby stávající problém.
 
-#### <a name="use-meaningful-titles"></a>Použití smysluplný názvů
+#### <a name="use-meaningful-titles"></a>Použijte smysluplné názvy
 
-Zvýšení stručný a smysluplný názvy riziko, že problém je přesměrování nejvhodnější týmu grafického subsystému WPF v nejkratší dobu. To je obzvláště důležité pro technologie jako WPF, který obsahuje mnoho vzájemně souvisejících funkcí.
+Stručný a smysluplné názvy zvýšit pravděpodobnost, že váš problém se směřuje do nejvhodnější týmu WPF v nejkratší dobu. To je zvlášť důležité pro technologie, jako jsou WPF, která obsahuje mnoho funkcí, vzájemně propojené.
 
-#### <a name="describe-how-to-reproduce-your-bug"></a>Popisuje, jak pro reprodukci vaší chyb
+#### <a name="describe-how-to-reproduce-your-bug"></a>Popisuje, jak reprodukovat chybu
 
-Při účtování o chyby, je důležité zahrnout následující, kde je to relevantní:
+Když publikujete informace o chybu, je důležité zahrnout následující, kde je to vhodné:
 
-- Zadejte výstižný popis chybě.
-- Fragmenty kódu použijte pro podporu popis chyby.
-- Zadejte seznam kroků, které ukazují, jak reprodukujte chybě.
-- Zahrnout nejmenší možné kód vzorku, který se shoduje s chybě.
-- Uvádí, zda je chyb konzistentně reprodukovatelnou nebo ne.
-- Obsahují informace relevantní výjimka.
+- Zadejte jasný popis chyby.
+- Používání fragmentů kódu pro podporu popis chyby.
+- Zadejte seznam kroků, které demonstrují, jakým způsobem pro reprodukci chyb.
+- Zahrnout nejmenší vzorový kód je to možné, který se shoduje s chyby.
+- Uvádí, zda je konzistentně reprodukovatelné chyby, nebo ne.
+- Zahrnout informace o příslušné výjimky.
 
- Pokud chyba instalace nebo instalace související, připojte protokolů relevantní instalace a snímky (soubory s předponou "dd_" umístěné ve složce % temp %).
+ Pokud instalace nebo instalace související se chyby připojení protokolů instalace relevantní a snímky (soubory s předponou "dd_", které jsou umístěny ve složce % temp %).
 
- Pro zkompilování nebo sestavení problémy, připojte protokolů o sestavení. MSBuild systému lze nakonfigurovat na podporuje protokolování s různými verbosities pomocí přepínače/v: z příkazového řádku nebo nakonfigurováním odpovídající úroveň z integrované vývojové prostředí (IDE) jako v aplikaci Visual Studio.
+ Pro kompilaci nebo vytvářet problémy, připojte protokoly sestavení. Nástroj MSBuild, který se dá nakonfigurovat systém podporuje protokolování pomocí různých verbosities s použitím přepínače/v: z příkazového řádku nebo pomocí konfigurace odpovídající úroveň z integrované vývojové prostředí (IDE) jako v aplikaci Visual Studio.
 
-#### <a name="provide-environment-information"></a>Poskytují informace o prostředí
+#### <a name="provide-environment-information"></a>Zadejte informace o prostředí
 
-Základní informace může být často užitečné pro přidání do vašeho příspěvku kontextu. Konkrétně zmínili platformu operačního systému, třídu procesoru a architektura, jako je například "Verze systému Windows 10. 1709, Intel(R) Xeon(R) x64."
+Základní informace může být často užitečné pro přidání kontextu do svého příspěvku. Zejména zmiňovat platformu operačního systému, procesorů a architektury, jako je například "Windows 10 verze 1709, Intel(R) Xeon(R) x64."
 
-Pokud se problém, který odesíláte o souvisí s vykreslování, byste měli taky zahrnout podrobnosti grafické karty a ovladače, pokud je to možné. Tyto informace je důležité, protože je prezentace rozhraní WPF.
+Pokud je týkající se problému, který chcete odeslat informace o vykreslování, byste měli také zahrnout grafiky podrobnosti karty a ovladače, pokud je to možné. Tyto informace je důležité, protože je prezentační architektura WPF.
 
-#### <a name="provide-solution-or-project-information"></a>Zadejte informace o řešení nebo produktu project
+#### <a name="provide-solution-or-project-information"></a>Zadejte informace o řešení nebo projektu
 
-Chyby může týkají nástroje používané pro vývoj a vytvářet aplikace a typy aplikací, které vytváříte. V důsledku toho může být užitečné k určení:
+Může se týkají chyb nástroje používané k vývoji a sestavení vaší aplikace a typy aplikací, které vytváříte. V důsledku toho může být užitečné k určení:
 
-- Typ aplikace, které vytváříte, jako například:
+- Typ aplikace, kterou vytváříte, jako například:
   - Aplikace (*.exe*) nebo knihovny (*.dll*)
-  - Aplikace prohlížeče rozšiřitelné aplikace Markup Language (XAML) (XBAP)
-  - Přijít aplikace XAML
+  - Aplikace prohlížeče Extensible Application Markup Language (XAML) (XBAP)
+  - Přijít o provedené aplikací XAML
   - Samostatné nainstalované aplikace
-  - Samostatné ClickOnce nasazené aplikace
-- Vývoj nástroje, jako například:
+  - Nasazení ClickOnce samostatné aplikace
+- Vývoj nástrojů, jako například:
   - MSBuild
-  - Grafický Návrhář výraz
+  - Grafický Návrhář výrazů
   - Výraz interaktivní návrháře
   - Visual Studio
 - Konfigurace řešení, jako například:
   - Řešení
   - Jeden projekt
   - Řešení s více závislých projektů
-- Jestli vaše aplikace nemá pro specifický jazyk nebo jazykově neutrální prostředky. Například se můžete zadat `UICulture` vlastnosti projektu nebo lokalizovatelný metadata pro `Application`, `Page`, a `Resource` typy?
-- Jestli jste použili neutrální jazykové nastavení v souboru AssemblyInfo.cs nebo AssemblyInfo.vb.
+- Určuje, zda má vaše aplikace specifické pro jazyk nebo neutrální jazyk prostředků. Například jste zadali `UICulture` vlastnost projektu nebo lokalizovatelné metadata pro `Application`, `Page`, a `Resource` typy?
+- Určuje, zda jste použili neutrální jazyková nastavení v souboru AssemblyInfo.cs nebo AssemblyInfo.vb.
 
 #### <a name="provide-scenario-and-impact-information"></a>Zadejte informace o scénář a dopad
 
-Zadejte informace o scénář, který manifesty chybě a její vliv. Tyto informace jsou vysoce důležité WPF týmu, když rozhoduje, pokud, kdy a jak nutné opravit problém, nebo jestli můžete místo toho použít přijatelné alternativní řešení.
+Zadání informací o scénář, který manifesty chyby a její vliv. Tyto informace jsou velmi důležité, abyste týmu WPF, pokud dospěje k závěru, kdy a jak by měl problém opravit, zda to, jestli přijatelné alternativní řešení můžete používat místo.
 
-Normálně ztrátě havárií a data jsou vysoký dopad a, proto nejjednodušší k určení priority. Některé chyby, ale pouze zobrazí v neobvyklé scénáře, které mohou být také nejdůležitějších scénáře v některých případech. Poskytuje kontext kolem scénář a dopad pomáhá týmem WPF udělat správné rozhodnutí.
+Scénářům ztráty o chybách a dat jsou obvykle vysokým dopadem a, proto nejjednodušší k určení priority. Některé chyby, ale pouze zobrazí v běžné scénáře, které mohou být také hlavní scénáře v některých případech. Poskytuje kontext kolem scénář a dopad pomáhá týmu WPF správná rozhodnutí.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Postup nahlásit problém s Visual Studio 2017](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)
+- [Postup ohlášení problému se sadou Visual Studio 2017](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)

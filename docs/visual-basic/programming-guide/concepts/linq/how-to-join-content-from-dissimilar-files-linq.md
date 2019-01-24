@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: spojení obsahu z Nepodobných souborů (LINQ) (Visual Basic)'
+title: 'Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)'
 ms.date: 06/27/2018
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-ms.openlocfilehash: d82e43449651ead5f39ec9c9442d3087b34d10ef
-ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
+ms.openlocfilehash: a3dbfc6593d838af0285d8dab73ceecf1b0340f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37072043"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54655462"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Postupy: spojení obsahu z Nepodobných souborů (LINQ) (Visual Basic)
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Postupy: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)
 
-Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělenými čárkou, které sdílejí společné hodnotu, která se používá jako odpovídající klíč. Tento postup může být užitečné, pokud budete muset kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru. Příklad pro práci s jakýkoli druh strukturovaných textových můžete upravit.  
+Tento příklad ukazuje, jak propojit data ze dvou souborů oddělených čárkami, které sdílejí společné hodnoty, který se používá jako odpovídajícího klíče. Tato technika může být užitečné, pokud máte kombinovat data ze dvou tabulek, nebo z tabulky a ze souboru, který má jiný formát do nového souboru. Příklad pro práci s jakýmkoli strukturovaných textových můžete upravit.  
   
 ## <a name="to-create-the-data-files"></a>K vytvoření datových souborů
   
-1.  Zkopírujte následující řádky do souboru, který je pojmenován scores.csv a uložte ho do složky projektu. Soubor představuje data z tabulky. Sloupec 1 je ID Studentova a sloupce 2 až 5 jsou výsledků testu.  
+1.  Zkopírujte následující řádky do souboru s názvem scores.csv a uložte ho do složky vašeho projektu. Tento soubor představuje data z tabulky. Student získal ID je sloupec 1 a sloupců 2 až 5 jsou skóre v testech.  
   
     ```  
     111, 97, 92, 81, 60  
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak propojit data z dva soubory s položkami oddělený
     122, 94, 92, 91, 91  
     ```  
   
-2.  Zkopírujte následující řádky do souboru, který je pojmenován names.csv a uložte ho do složky projektu. Soubor představuje tabulky, který obsahuje příjmení, křestní jméno a student ID. Studentova  
+2.  Zkopírujte následující řádky do souboru s názvem names.csv a uložte ho do složky vašeho projektu. Tento soubor představuje tabulku obsahující student získal příjmení, křestního jména a ID studenta.  
   
     ```  
     Omelchenko,Svetlana,111  
@@ -121,15 +121,15 @@ End Class
 ' 12 total names in list 
 ```  
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
-Vytvoření a kompilace projektu, jehož cílem jednu z následujících možností:
+Vytvoření a kompilace projektu, který cílí na jednu z následujících možností:
 
-- Rozhraní .NET framework verze 3.5 s odkazem na System.Core.dll.
+- Rozhraní .NET framework verze 3.5 s odkazem na knihovnu System.Core.dll.
 - Rozhraní .NET framework verze 4.0 nebo vyšší.
-- .NET core verze 1.0 nebo novější.
+- Verze .NET core 1.0 nebo vyšší.
   
 ## <a name="see-also"></a>Viz také:
 
- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
