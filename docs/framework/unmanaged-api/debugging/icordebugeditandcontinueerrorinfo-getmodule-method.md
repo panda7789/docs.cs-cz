@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ca6bf185297cbafb4450271ddcd6093d7e62515
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b8afa78b324e68b345ee36513f6dda9ba042f29
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415373"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629186"
 ---
-# <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a><span data-ttu-id="a910d-102">ICorDebugEditAndContinueErrorInfo::GetModule – metoda</span><span class="sxs-lookup"><span data-stu-id="a910d-102">ICorDebugEditAndContinueErrorInfo::GetModule Method</span></span>
-<span data-ttu-id="a910d-103">`GetModule` je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="a910d-103">`GetModule` is obsolete.</span></span> <span data-ttu-id="a910d-104">Tato metoda není volána.</span><span class="sxs-lookup"><span data-stu-id="a910d-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a><span data-ttu-id="e0330-102">ICorDebugEditAndContinueErrorInfo::GetModule – metoda</span><span class="sxs-lookup"><span data-stu-id="e0330-102">ICorDebugEditAndContinueErrorInfo::GetModule Method</span></span>
+<span data-ttu-id="e0330-103">`GetModule` je zastaralý.</span><span class="sxs-lookup"><span data-stu-id="e0330-103">`GetModule` is obsolete.</span></span> <span data-ttu-id="e0330-104">Nevolejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="e0330-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a910d-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="a910d-105">See Also</span></span>  
- [<span data-ttu-id="a910d-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="a910d-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="e0330-105">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e0330-105">See also</span></span>
+- [<span data-ttu-id="e0330-106">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="e0330-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

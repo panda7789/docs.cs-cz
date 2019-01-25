@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46532592057f4fa6d9883d46dcef2f8f9e5f7228
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9fc894cdd12e58689fb6b010820bb24d14a9541
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406341"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543744"
 ---
-# <a name="iclrdatatarget2allocvirtual-method"></a><span data-ttu-id="481fc-102">ICLRDataTarget2::AllocVirtual – metoda</span><span class="sxs-lookup"><span data-stu-id="481fc-102">ICLRDataTarget2::AllocVirtual Method</span></span>
-<span data-ttu-id="481fc-103">Voláno rozhraním běžné jazyk služby modulu runtime (CLR) data přístup přidělit paměť v adresním prostoru tento cílový proces.</span><span class="sxs-lookup"><span data-stu-id="481fc-103">Called by the common language runtime (CLR) data access services to allocate memory in the address space of this target process.</span></span>  
+# <a name="iclrdatatarget2allocvirtual-method"></a><span data-ttu-id="9b2f0-102">ICLRDataTarget2::AllocVirtual – metoda</span><span class="sxs-lookup"><span data-stu-id="9b2f0-102">ICLRDataTarget2::AllocVirtual Method</span></span>
+<span data-ttu-id="9b2f0-103">Je voláno common language runtime (CLR) data access services přidělení paměti v adresním prostoru cílového procesu.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-103">Called by the common language runtime (CLR) data access services to allocate memory in the address space of this target process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="481fc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="481fc-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9b2f0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b2f0-104">Syntax</span></span>  
   
 ```  
 HRESULT AllocVirtual(  
@@ -39,36 +39,36 @@ HRESULT AllocVirtual(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="481fc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="481fc-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="9b2f0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9b2f0-105">Parameters</span></span>  
  `addr`  
- <span data-ttu-id="481fc-106">[v] A `CLRDATA_ADDRESS` hodnotu, která určuje požadovanou počáteční adresa paměti, která bude přidělena.</span><span class="sxs-lookup"><span data-stu-id="481fc-106">[in] A `CLRDATA_ADDRESS` value that specifies the requested starting address of the memory to be allocated.</span></span>  
+ <span data-ttu-id="9b2f0-106">[in] A `CLRDATA_ADDRESS` hodnota, která určuje požadovanou počáteční adresu paměti, která bude přidělena.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-106">[in] A `CLRDATA_ADDRESS` value that specifies the requested starting address of the memory to be allocated.</span></span>  
   
  `size`  
- <span data-ttu-id="481fc-107">[v] Velikost v bajtech, paměti, která bude přidělena.</span><span class="sxs-lookup"><span data-stu-id="481fc-107">[in] The size, in bytes, of the memory to be allocated.</span></span>  
+ <span data-ttu-id="9b2f0-107">[in] Velikost v bajtech, která bude přidělena paměť.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-107">[in] The size, in bytes, of the memory to be allocated.</span></span>  
   
  `typeFlags`  
- <span data-ttu-id="481fc-108">[v] Příznaky, které řídí přidělení paměti.</span><span class="sxs-lookup"><span data-stu-id="481fc-108">[in] Flags that control the allocation of memory.</span></span> <span data-ttu-id="481fc-109">V tématu Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="481fc-109">See the Win32 `VirtualAlloc` function.</span></span>  
+ <span data-ttu-id="9b2f0-108">[in] Příznaky, které řídí přidělení paměti.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-108">[in] Flags that control the allocation of memory.</span></span> <span data-ttu-id="9b2f0-109">Zobrazit Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-109">See the Win32 `VirtualAlloc` function.</span></span>  
   
  `protectFlags`  
- <span data-ttu-id="481fc-110">[v] Atributy ochrany přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="481fc-110">[in] The protection attributes for the allocated memory.</span></span> <span data-ttu-id="481fc-111">V tématu Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="481fc-111">See the Win32 `VirtualAlloc` function.</span></span>  
+ <span data-ttu-id="9b2f0-110">[in] Atributy ochrany pro přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-110">[in] The protection attributes for the allocated memory.</span></span> <span data-ttu-id="9b2f0-111">Zobrazit Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-111">See the Win32 `VirtualAlloc` function.</span></span>  
   
  `virt`  
- <span data-ttu-id="481fc-112">[out] Ukazatel na `CLRDATA_ADDRESS` hodnotu, která určuje skutečné počáteční adresa přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="481fc-112">[out] A pointer to a `CLRDATA_ADDRESS` value that specifies the actual starting address of the allocated memory.</span></span>  
+ <span data-ttu-id="9b2f0-112">[out] Ukazatel `CLRDATA_ADDRESS` hodnota, která určuje skutečné počáteční adresa přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-112">[out] A pointer to a `CLRDATA_ADDRESS` value that specifies the actual starting address of the allocated memory.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="481fc-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="481fc-113">Remarks</span></span>  
- <span data-ttu-id="481fc-114">`AllocVirtual` Metoda slouží jako logické obálku pro Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="481fc-114">The `AllocVirtual` method serves as a logical wrapper for the Win32 `VirtualAlloc` function.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9b2f0-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9b2f0-113">Remarks</span></span>  
+ <span data-ttu-id="9b2f0-114">`AllocVirtual` Metody slouží jako logické obálku pro Win32 `VirtualAlloc` funkce.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-114">The `AllocVirtual` method serves as a logical wrapper for the Win32 `VirtualAlloc` function.</span></span>  
   
- <span data-ttu-id="481fc-115">Tato metoda je implementována zapisovačem ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="481fc-115">This method is implemented by the writer of the debugging application.</span></span>  
+ <span data-ttu-id="9b2f0-115">Tato metoda je implementováno tvůrci ladění aplikace.</span><span class="sxs-lookup"><span data-stu-id="9b2f0-115">This method is implemented by the writer of the debugging application.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="481fc-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="481fc-116">Requirements</span></span>  
- <span data-ttu-id="481fc-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="481fc-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9b2f0-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9b2f0-116">Requirements</span></span>  
+ <span data-ttu-id="9b2f0-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9b2f0-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="481fc-118">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="481fc-118">**Header:** ClrData.idl, ClrData.h</span></span>  
+ <span data-ttu-id="9b2f0-118">**Záhlaví:** ClrData.idl, ClrData.h</span><span class="sxs-lookup"><span data-stu-id="9b2f0-118">**Header:** ClrData.idl, ClrData.h</span></span>  
   
- <span data-ttu-id="481fc-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="481fc-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="9b2f0-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9b2f0-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="481fc-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="481fc-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="9b2f0-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9b2f0-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="481fc-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="481fc-121">See Also</span></span>  
- [<span data-ttu-id="481fc-122">ICLRDataTarget2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="481fc-122">ICLRDataTarget2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)  
- [<span data-ttu-id="481fc-123">FreeVirtual – metoda</span><span class="sxs-lookup"><span data-stu-id="481fc-123">FreeVirtual Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-freevirtual-method.md)
+## <a name="see-also"></a><span data-ttu-id="9b2f0-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b2f0-121">See also</span></span>
+- [<span data-ttu-id="9b2f0-122">ICLRDataTarget2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9b2f0-122">ICLRDataTarget2 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)
+- [<span data-ttu-id="9b2f0-123">FreeVirtual – metoda</span><span class="sxs-lookup"><span data-stu-id="9b2f0-123">FreeVirtual Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-freevirtual-method.md)
