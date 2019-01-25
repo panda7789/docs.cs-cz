@@ -1,26 +1,26 @@
 ---
-title: 'Omezení rizik: X509CertificateClaimSet.FindClaims – metoda'
+title: 'Omezení rizik: X509CertificateClaimSet.FindClaims Method'
 ms.date: 03/30/2017
 ms.assetid: ee356e3b-f932-48f5-875a-5e42340bee63
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b927ed2e68ddea537f87b692d5c3a949234f81f5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ccc24cd494866c087860144f1720988ccfc2dfa8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33388034"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536435"
 ---
-# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a><span data-ttu-id="4d4d3-102">Omezení rizik: X509CertificateClaimSet.FindClaims – metoda</span><span class="sxs-lookup"><span data-stu-id="4d4d3-102">Mitigation: X509CertificateClaimSet.FindClaims Method</span></span>
-<span data-ttu-id="4d4d3-103">Počínaje aplikací cílených [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí přiřadit `claimType` argument všechny záznamy DNS v jeho poli SAN.</span><span class="sxs-lookup"><span data-stu-id="4d4d3-103">Starting with apps that target the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)],  the <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> method will attempt to match the `claimType` argument with all the DNS entries in its SAN field.</span></span>  
+# <a name="mitigation-x509certificateclaimsetfindclaims-method"></a><span data-ttu-id="1808a-102">Omezení rizik: X509CertificateClaimSet.FindClaims Method</span><span class="sxs-lookup"><span data-stu-id="1808a-102">Mitigation: X509CertificateClaimSet.FindClaims Method</span></span>
+<span data-ttu-id="1808a-103">Počínaje aplikací, které se zaměřují [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí přiřadit `claimType` argument u všech položek DNS v jeho poli SAN.</span><span class="sxs-lookup"><span data-stu-id="1808a-103">Starting with apps that target the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)],  the <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> method will attempt to match the `claimType` argument with all the DNS entries in its SAN field.</span></span>  
   
-## <a name="impact"></a><span data-ttu-id="4d4d3-104">Dopad</span><span class="sxs-lookup"><span data-stu-id="4d4d3-104">Impact</span></span>  
- <span data-ttu-id="4d4d3-105">Tato změna ovlivní pouze aplikace, které cílové verze rozhraní .NET Framework od verze [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].</span><span class="sxs-lookup"><span data-stu-id="4d4d3-105">This change only affects apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].</span></span>  
+## <a name="impact"></a><span data-ttu-id="1808a-104">Dopad</span><span class="sxs-lookup"><span data-stu-id="1808a-104">Impact</span></span>  
+ <span data-ttu-id="1808a-105">Tato změna ovlivní pouze aplikace, které cílí rozhraní .NET Framework počínaje verzí [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].</span><span class="sxs-lookup"><span data-stu-id="1808a-105">This change only affects apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].</span></span>  
   
- <span data-ttu-id="4d4d3-106">Pro aplikace, které cílí na předchozích verzích rozhraní .NET Framework <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí o porovnání `claimType` argument pouze poslední položky DNS.</span><span class="sxs-lookup"><span data-stu-id="4d4d3-106">For apps that target previous versions of the .NET Framework, the <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> method attempts to match the `claimType` argument only with the last  DNS entry.</span></span>  
+ <span data-ttu-id="1808a-106">Pro aplikace, které cílí na předchozí verze rozhraní .NET Framework <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> metoda se pokusí porovnat `claimType` argument pouze s poslední položky DNS.</span><span class="sxs-lookup"><span data-stu-id="1808a-106">For apps that target previous versions of the .NET Framework, the <xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims%2A?displayProperty=nameWithType> method attempts to match the `claimType` argument only with the last  DNS entry.</span></span>  
   
-## <a name="mitigation"></a><span data-ttu-id="4d4d3-107">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="4d4d3-107">Mitigation</span></span>  
- <span data-ttu-id="4d4d3-108">Pokud se tato změna není žádoucí, aplikace, která cílové verze rozhraní .NET Framework, počínaje [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] můžete vyjádření výslovného nesouhlasu se přidáním následující nastavení konfigurace na [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) oddílu aplikace konfigurační soubor:</span><span class="sxs-lookup"><span data-stu-id="4d4d3-108">If this change is undesirable, apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] can opt out of it by adding the following configuration setting to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>  
+## <a name="mitigation"></a><span data-ttu-id="1808a-107">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="1808a-107">Mitigation</span></span>  
+ <span data-ttu-id="1808a-108">Pokud tuto změnu nežádoucí, aplikace, která cílit na rozhraní .NET Framework počínaje verzí [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] můžete vyjádřit výslovný nesouhlas ho tak, že přidáte následující konfigurační nastavení [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) část aplikace konfigurační soubor:</span><span class="sxs-lookup"><span data-stu-id="1808a-108">If this change is undesirable, apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] can opt out of it by adding the following configuration setting to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>  
   
 ```xml  
 <runtime>  
@@ -28,7 +28,7 @@ ms.locfileid: "33388034"
 </runtime>  
 ```  
   
- <span data-ttu-id="4d4d3-109">Kromě toho aplikace, které cílí na předchozích verzích rozhraní .NET Framework, ale běží v rámci [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a novější verze můžete vyjádřit výslovný souhlas pro toto chování přidáním následující nastavení konfigurace na [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)oddílu konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="4d4d3-109">In addition, apps that target previous versions of the .NET Framework but are running under the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] and later versions can opt in to this behavior by adding the following configuration setting to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>  
+ <span data-ttu-id="1808a-109">Kromě toho, které cílí na předchozí verze rozhraní .NET Framework, ale jsou spuštěny [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] a novější verze můžete vyjádřit výslovný souhlas pro toto chování tak, že přidáte následující konfigurační nastavení pro [ \<runtime >](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)oddílu konfiguračního souboru aplikace:</span><span class="sxs-lookup"><span data-stu-id="1808a-109">In addition, apps that target previous versions of the .NET Framework but are running under the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] and later versions can opt in to this behavior by adding the following configuration setting to the [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) section of the app’s configuration file:</span></span>  
   
 ```xml  
 <runtime>  
@@ -36,5 +36,5 @@ ms.locfileid: "33388034"
 </runtime>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4d4d3-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d4d3-110">See Also</span></span>  
- [<span data-ttu-id="4d4d3-111">Odlišnosti ve změnách cílení</span><span class="sxs-lookup"><span data-stu-id="4d4d3-111">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)
+## <a name="see-also"></a><span data-ttu-id="1808a-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1808a-110">See also</span></span>
+- [<span data-ttu-id="1808a-111">Odlišnosti ve změnách cílení</span><span class="sxs-lookup"><span data-stu-id="1808a-111">Retargeting Changes</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-1.md)
