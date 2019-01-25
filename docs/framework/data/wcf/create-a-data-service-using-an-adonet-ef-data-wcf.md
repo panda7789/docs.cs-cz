@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: vytvoření datové služby pomocí zdroji dat ADO.NET Entity Framework (WCF Data Services)'
+title: 'Postupy: Vytvoření datové služby pomocí zdroji dat ADO.NET Entity Framework (WCF Data Services)'
 ms.date: 08/24/2018
 helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: 4bccd1e4655786ae24166cdc32619b420c4a54d3
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 294c579c366c1abf0b9a328f7480d1b29e2cb8e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838998"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54675598"
 ---
-# <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření datové služby pomocí zdroji dat ADO.NET Entity Framework (WCF Data Services)
+# <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: Vytvoření datové služby pomocí zdroji dat ADO.NET Entity Framework (WCF Data Services)
 
 Služby WCF Data Services zpřístupňuje entity data jako datové služby. Tato entita poskytuje společnost [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pokud zdroj dat je relační databáze. V tomto tématu se dozvíte, jak vytvořit [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]– na základě datového modelu v aplikaci Visual Studio Web, který je založený na existující databáze a tento model dat slouží k vytvoření nové datové služby.
 
-[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Poskytuje nástroj příkazového řádku, který můžete vygenerovat také [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] model mimo projekt sady Visual Studio. Další informace najdete v tématu [postupy: použití EdmGen.exe pro generování modelu a souborů mapování](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).
+[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Poskytuje nástroj příkazového řádku, který můžete vygenerovat také [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] model mimo projekt sady Visual Studio. Další informace najdete v tématu [jak: Použití EdmGen.exe pro generování modelu a souborů mapování](../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).
 
 ## <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Chcete-li přidat model Entity Framework, která je založena na existující databázi do existující webové aplikace
 
@@ -72,9 +72,9 @@ Služby WCF Data Services zpřístupňuje entity data jako datové služby. Tato
 
 8. Pokud chcete testovat službu Northwind.svc dat pomocí webového prohlížeče, postupujte podle pokynů v tématu [přístupu ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Definování datových služeb WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)
 - [Zprostředkovatelé datových služeb](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
 - [Postupy: Vytvoření datové služby pomocí zprostředkovatel reflexe](../../../../docs/framework/data/wcf/create-a-data-service-using-rp-wcf-data-services.md)
-- [Postupy: Vytvoření datové služby pomocí zdroje dat LINQ to SQL](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md)
+- [Postupy: Vytvoření datové služby pomocí LINQ ke zdroji dat SQL](../../../../docs/framework/data/wcf/create-a-data-service-using-linq-to-sql-wcf.md)

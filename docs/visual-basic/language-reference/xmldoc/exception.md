@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <exception> XML tag
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
-ms.openlocfilehash: 047805ad91d87550da80448fd10883ae58647bd6
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c2b6e13059e3b309e4734c56bf9fd5eb7b82daa7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969493"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540894"
 ---
 # <a name="ltexceptiongt-visual-basic"></a>&lt;výjimka&gt; (Visual Basic)
 Určuje, jaké výjimky mohou být vyvolány.  
@@ -38,5 +38,5 @@ Určuje, jaké výjimky mohou být vyvolány.
   
  [!code-vb[VbVbcnXmlDocComments#3](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/exception_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
+## <a name="see-also"></a>Viz také:
+- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

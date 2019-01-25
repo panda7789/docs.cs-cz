@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerCallback7::ModuleInMemorySymbolsUpdated – metoda
+title: ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
 ms.date: 03/30/2017
 api_name:
 - ICorProfilerCallback7.ModuleInMemorySymbolsUpdated
@@ -11,17 +11,17 @@ api_type:
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9aa690378a32ffee2def672f02dc8b5582647a5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae6183f33b784a0ff79d11310b952949cf13bf58
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455811"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556191"
 ---
-# <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated – metoda
+# <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated Method
 [Podporované v rozhraní .NET Framework 4.6.1 a novějších verzích]  
   
- Upozorní profileru při každé aktualizaci symbol datový proud přidružený modul v paměti.  
+ Profiler upozorní, jakmile dojde k aktualizaci symbolu proud přidružený k modulu v paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,19 +32,19 @@ HRESULT ModuleInMemorySymbolsUpdated(
 ```  
   
 #### <a name="parameters"></a>Parametry  
- [v] `moduleId`  
- Identifikátor v paměti modulu, jehož symbol datového proudu se aktualizuje.  
+ [in] `moduleId`  
+ Identifikátor modulu v paměti aktualizaci jehož symbol streamu.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato zpětné volání je řízena nastavením [COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) příznak maska událostí při volání metody [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) metoda.  
+ Toto zpětné volání je řízena nastavením [COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) příznak masky události při volání [ICorProfilerCallback5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) metody.  
   
 > [!NOTE]
 >  Tato událost není aktuálně aktivována pro symboly implicitně vytvoření nebo úpravě prostřednictvím <xref:System.Reflection.Emit> rozhraní API.  
   
- I když symboly jsou součástí předem volání do jednoho z přetížení spravovaný <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> metody, které zahrnuje `rawSymbolStore` argument, abyste zadávali symboly pro sestavení, modul runtime nemusí ve skutečnosti přidružení symbolický dat s modulem dokud po [moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání došlo k chybě. Tato událost poskytuje novější příležitostí ke shromažďování symboly pro tyto moduly.  
+ I když symboly jsou k dispozici před jeho zahájením ve volání do jednoho z přetížení spravovanou <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> metody, které zahrnuje `rawSymbolStore` argumentu, abyste zadávali symboly pro sestavení, modul runtime nemůže ve skutečnosti přidružení symbolické dat s modulem až po [ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) zpětného volání došlo k chybě. Tato událost poskytuje vyšší moci shromažďovat symboly pro tyto moduly.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -52,7 +52,7 @@ HRESULT ModuleInMemorySymbolsUpdated(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ModuleLoadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)  
- [SetEventMask2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)  
- [ICorProfilerCallback7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ModuleLoadFinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md)
+- [SetEventMask2 – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
+- [ICorProfilerCallback7 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback7-interface.md)

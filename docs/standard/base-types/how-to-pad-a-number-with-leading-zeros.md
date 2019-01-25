@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3cc6e4d96378cfd8c065a3b04aab865f9b787438
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: b48462e79c3e8ef3fdd6e0a91f5abecffc022b5c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086719"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54673031"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>Postupy: Zarovnání čísla úvodními nulami
 Můžete přidat počáteční nuly na celé číslo pomocí "D" [řetězec standardního číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md) specifikátorem přesnosti. Můžete přidat počáteční nuly celého čísla a čísla s plovoucí desetinnou čárkou pomocí [vlastní číselný formátovací řetězec](../../../docs/standard/base-types/custom-numeric-format-strings.md). Toto téma ukazuje, jak používat obě metody k zarovnání čísla úvodními nulami.  
@@ -74,7 +74,7 @@ Můžete přidat počáteční nuly na celé číslo pomocí "D" [řetězec stan
   
 1.  Určete, kolik počátečních nul chcete číselná hodnota, která mají.  
   
-2.  Určete počet číslic nalevo od desetinné čárky v nedoplněného číselný řetězec. To uděláte takto:  
+2.  Určete počet číslic nalevo od desetinné čárky v nedoplněného číselný řetězec. Použijte následující postup:  
   
     1.  Určení, zda řetězcové vyjádření čísla zahrnuje symbol desetinné čárky.  
   
@@ -95,6 +95,6 @@ Můžete přidat počáteční nuly na celé číslo pomocí "D" [řetězec stan
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)  
-- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)  
+- [Vlastní řetězce číselného formátu](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Standardní řetězce číselného formátu](../../../docs/standard/base-types/standard-numeric-format-strings.md)
 - [Složené formátování](../../../docs/standard/base-types/composite-formatting.md)

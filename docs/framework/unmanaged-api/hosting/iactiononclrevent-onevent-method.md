@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28178cca27c257e480a7c5ec87c1925af7de4f78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7da863df03a70ed21769620c033c4c2877e01a87
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436413"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682226"
 ---
 # <a name="iactiononclreventonevent-method"></a>IActionOnCLREvent::OnEvent – metoda
-Zpětná volání provádí události, které byly zaregistrovány pomocí volání [iclroneventmanager::registeractiononevent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) metoda.  
+Provádí zpětná volání na události, které byly zaregistrovány pomocí volání [iclroneventmanager::registeractiononevent –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-registeractiononevent-method.md) metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,40 +38,40 @@ HRESULT OnEvent (
   
 #### <a name="parameters"></a>Parametry  
  `event`  
- [v] Jeden z [EClrEvent](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) hodnoty, které určuje typ události.  
+ [in] Jeden z [eclrevent –](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md) hodnoty, které určuje typ události.  
   
  `data`  
- [v] Ukazatel na objekt, který obsahuje podrobnosti o `event`.  
+ [in] Ukazatel na objekt, který obsahuje podrobnosti o `event`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`OnEvent` úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|`OnEvent` bylo úspěšně vráceno.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Pokud metoda vrátí E_FAIL, modul CLR již není použitelné v rámci procesu. Následující volání žádné hostování metoda vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Pokud metoda vrátí E_FAIL, modul CLR už nejsou použitelné v rámci procesu. Následná volání na jakoukoli metodu, hostování vrátit HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `data` Parametr je ukazatel na objekt neurčeného typu. Pokud `event` parametr `Event_DomainUnload`, `data` je číselný identifikátor <xref:System.AppDomain> , který byl odpojen. Hostitel moci provést vhodnou akci pomocí tento identifikátor jako klíč.  
+ `data` Parametrem je ukazatel na objekt neurčeného typu. Pokud `event` parametr `Event_DomainUnload`, `data` je číselný identifikátor pro <xref:System.AppDomain> , která byla uvolněna. Hostitel může přijmout vhodná opatření používá tento identifikátor jako klíč.  
   
- Pokud `event` je `Event_MDAFired`, `data` je ukazatel na [mdainfo –](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) instanci, která obsahuje zprávy výstup z a spravované ladění Assistant (MDA). Mda jsou funkce modulu CLR, který pomoci vývojářům s laděním vygenerováním XML zprávy o událostech, které jsou jinak obtížné depeše. Takové zprávy může být obzvláště užitečný při ladění přechodů mezi spravovanými a nespravovanými kódu. Další informace najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
+ Pokud `event` je `Event_MDAFired`, `data` je ukazatel [mdainfo –](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) instance, která obsahuje výstupní zprávy z na spravované ladění Assistant (MDA). Mda jsou funkce modulu CLR, který vývojářům pomoci s laděním, vygenerováním XML zprávy o událostech, které jsou jinak obtížné zachytit. Takové zprávy může být zvláště užitečné při ladění přechody mezi spravovaným a nespravovaným kódem. Další informace najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
- [EClrEvent – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md)  
- [IActionOnCLREvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)  
- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [ICLROnEventManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md)  
- [MDAInfo – struktura](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md)
+## <a name="see-also"></a>Viz také:
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+- [EClrEvent – výčet](../../../../docs/framework/unmanaged-api/hosting/eclrevent-enumeration.md)
+- [IActionOnCLREvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)
+- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [ICLROnEventManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md)
+- [MDAInfo – struktura](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md)

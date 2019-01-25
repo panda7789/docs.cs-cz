@@ -2,12 +2,12 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 2e44cbf159d5df724a5213648b28d952f49b8e8d
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 381175a95b696145df8a1e19b9a40f2e697eef1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845675"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54631257"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů Windows Communication Foundation (WCF) nepodporuje některé konkrétní bezpečnostní scénáře. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo protokolu Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním Windows na této platformě. Jiné ověřovací mechanismy, jako je například uživatelské jméno a heslo a integrované ověřování protokolu HTTP/HTTPS se nepodporuje při spuštění WCF v části Windows XP Home Edition.  
@@ -28,7 +28,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
   
 -   Vytvoří token kontextu zabezpečení na základě stavu (SCT) (ve výchozím nastavení, je zakázáno vytváření).  
   
- Základě stavu SCT lze vytvořit pouze použití vlastní vazby. Další informace najdete v tématu [postupy: vytvoření Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).) V kódu, je tak, že vytvoříte element vazby zabezpečení povoleno token (buď <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> metoda a nastavení `requireCancellation` parametr `false`. Parametr odkazuje na ukládání do mezipaměti SCT. Nastavením této hodnoty na `false` povolí tuto funkci SCT na základě stavu.  
+ Základě stavu SCT lze vytvořit pouze použití vlastní vazby. Další informace najdete v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).) V kódu, je tak, že vytvoříte element vazby zabezpečení povoleno token (buď <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> nebo <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>) pomocí <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> metoda a nastavení `requireCancellation` parametr `false`. Parametr odkazuje na ukládání do mezipaměti SCT. Nastavením této hodnoty na `false` povolí tuto funkci SCT na základě stavu.  
   
  V konfiguraci, případně token je povoleno tak, že vytvoříte <`customBinding`>, následným přidáním <`security`> element a nastavení `authenticationMode` atribut SecureConversation a `requireSecurityContextCancellation` atribut `true`.  
   
@@ -47,7 +47,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
 ### <a name="delegation-requires-credential-negotiation"></a>Delegování vyžaduje vyjednávání přihlašovacích údajů  
  Delegování používat ověřování protokolu Kerberos, musí implementovat protokol Kerberos s vyjednávání přihlašovacích údajů (říká se jim více větev nebo vícekrokové protokolu Kerberos). Pokud se rozhodnete implementovat ověřování protokolem Kerberos bez vyjednávání přihlašovacích údajů (říká se jim konečný nebo jedné fáze Kerberos), je vyvolána výjimka. Další informace o tom, jak implementovat vyjednávání přihlašovacích údajů najdete v tématu [ladění chyby s ověřováním Windows](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
   
-## <a name="cryptography"></a>Kryptografie  
+## <a name="cryptography"></a>Cryptography  
   
 ### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>SHA-256 se podporuje jenom pro použití symetrického klíče  
  WCF podporuje širokou škálu šifrování a podpis digest vytváření algoritmy, které můžete zadat pomocí sadu algoritmů v vazeb poskytovaných systémem. Pro důkladnější zabezpečení WCF podporuje algoritmy zabezpečení hashovací algoritmus (SHA) 2, konkrétně SHA-256, pro vytvoření hodnoty hash podpisu digest. Tato verze podporuje SHA-256 pouze pro použití symetrického klíče, jako jsou klíče protokolu Kerberos, a pokud se certifikát X.509, který nepoužívá k podepisování zpráv. WCF nepodporuje podpisy RSA (používá se v certifikátech X.509) při použití hodnoty hash SHA-256 kvůli aktuální chybějící podpora pro RSA-SHA256 [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
@@ -62,7 +62,7 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
  Šifrování AES kompatibilní s FIPS v duplexní zpětná volání v úrovni zosobnění identifikace nefunguje.  
   
 ### <a name="cngksp-certificates"></a>Certifikátů CNG/KSP  
- *Cryptography API: Next Generation (CNG)* dlouhodobé nahrazuje rozhraní CryptoAPI. Toto rozhraní API je k dispozici v nespravovaném kódu na [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)] a novějších verzích Windows.  
+ *Rozhraní API kryptografie: Generace (CNG)* dlouhodobé nahrazuje rozhraní CryptoAPI. Toto rozhraní API je k dispozici v nespravovaném kódu na [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)] a novějších verzích Windows.  
   
  Rozhraní .NET framework 4.6.1 a starší verze nepodporují tyto certifikáty, protože používají starší verzi rozhraní CryptoAPI pro zpracování certifikátů CNG/KSP. Použití těchto certifikátů pomocí rozhraní .NET Framework 4.6.1 a dřívějších verzích způsobí výjimku.  
   
@@ -108,10 +108,10 @@ Z různých důvodů Windows Communication Foundation (WCF) nepodporuje někter�
   
  Oprava je upravte vazbu přímo v klientovi po provedení importu.  
   
-## <a name="see-also"></a>Viz také  
- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)  
- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+## <a name="see-also"></a>Viz také:
+- [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
+- [Zpřístupnění informací](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
+- [Zvýšení oprávnění](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
+- [Útok DoS](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
+- [Falšování](../../../../docs/framework/wcf/feature-details/tampering.md)
+- [Útoky opakováním](../../../../docs/framework/wcf/feature-details/replay-attacks.md)

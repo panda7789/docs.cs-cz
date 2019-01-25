@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31bb28b5bda51fb1579021e47b8d5ec49adb644e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c278eca421020bea4f36f87eb6c8a9a8ba7d2a43
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33388830"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658283"
 ---
 # <a name="specifying-an-entry-point"></a>Určení vstupního bodu
 Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo řadový vstupní bod cílové funkce identifikuje v rámci spravovaného projektu funkci napříč hranicemi interoperability. Dále je možné namapovat vstupní bod na jiný název, a tak funkci účinně přejmenovat.  
@@ -31,7 +31,7 @@ Vstupní bod určuje umístění funkce v knihovně DLL. Původní název nebo 
  Toto téma popisuje, jakým způsobem lze přejmenovat funkci knihovny DLL ve spravovaném kódu.  
   
 ## <a name="renaming-a-function-in-visual-basic"></a>Přejmenování funkce v jazyce Visual Basic  
- Visual Basic používá **funkce** – klíčové slovo v **Declare** příkaz nastavit <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> pole. Následující příklad znázorňuje základní deklaraci.  
+ Jazyk Visual Basic používá **funkce** – klíčové slovo v **Declare** příkaz nastavit <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> pole. Následující příklad znázorňuje základní deklaraci.  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -43,7 +43,7 @@ Public Class Win32
 End Class  
 ```  
   
- Můžete nahradit **MessageBox** vstupní bod s **MsgBox** zahrnutím **Alias** – klíčové slovo v definici, jak je znázorněno v následujícím příkladu. V obou příkladech **automaticky** – klíčové slovo eliminuje nutnost zadat znakovou sadu verzi vstupní bod. Další informace o výběru znak nastavení najdete [zadání znaková sada](../../../docs/framework/interop/specifying-a-character-set.md).  
+ Můžete nahradit **MessageBox** vstupní bod s **MsgBox** zahrnutím **Alias** – klíčové slovo v definici, jak je znázorněno v následujícím příkladu. V obou příkladech **automaticky** – klíčové slovo eliminuje nutnost určit verzi znakové sady vstupního bodu. Další informace o výběru znakové sady naleznete v tématu [určení znakové sady](../../../docs/framework/interop/specifying-a-character-set.md).  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -56,7 +56,7 @@ End Class
 ```  
   
 ## <a name="renaming-a-function-in-c-and-c"></a>Přejmenování funkce v jazyce C# a C++  
- K určení funkce knihovny DLL pomocí názvu nebo řádu můžete použít pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> . Pokud název funkce v definici vaše metoda je stejný jako vstupní bod v knihovně DLL, není nutné explicitně rozpoznat funkci s **EntryPoint** pole. Jinak lze pro určení názvu nebo řádu použít jednu z těchto podob atributů:  
+ K určení funkce knihovny DLL pomocí názvu nebo řádu můžete použít pole <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> . Pokud je název funkce v definici metody stejný jako vstupní bod v knihovně DLL, není nutné explicitně identifikovat funkci pomocí **EntryPoint** pole. Jinak lze pro určení názvu nebo řádu použít jednu z těchto podob atributů:  
   
 ```  
 [DllImport("dllname", EntryPoint="Functionname")]  
@@ -65,7 +65,7 @@ End Class
   
  Je nutné poznamenat, že pro řád je třeba použít předponu v podobě znaku libry (#).  
   
- Následující příklad ukazuje, jak nahradit **MessageBoxA** s **MsgBox** v kódu pomocí **EntryPoint** pole.  
+ Následující příklad ukazuje, jak nahradit **MessageBoxA** s **MsgBox** ve vašem kódu pomocí **EntryPoint** pole.  
   
 ```csharp  
 using System.Runtime.InteropServices;  
@@ -88,8 +88,8 @@ extern "C" int MsgBox(HWND hWnd,
                       unsigned int uType);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.InteropServices.DllImportAttribute>  
- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)  
- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)  
- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.InteropServices.DllImportAttribute>
+- [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md)
+- [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)
+- [Zařazování dat s voláním platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md)

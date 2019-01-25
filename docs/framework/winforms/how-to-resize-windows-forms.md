@@ -9,15 +9,15 @@ helpviewer_keywords:
 - resizing Windows Forms
 - Windows Forms, resizing
 ms.assetid: 5d9dd47e-e68c-48c9-a0a3-a9ff34ba009d
-ms.openlocfilehash: 40a2ff3dcde9d0fbbc9a7e6c67430eb8313614e4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f9a1aae4e9a787b798d6c27f9daa597955b208a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521183"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614570"
 ---
 # <a name="how-to-resize-windows-forms"></a>Postupy: Změna velikosti Windows Forms
-Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit výšku a šířku formuláře programově tak, že nastavíte novou hodnotu <xref:System.Windows.Forms.Form.Size%2A> vlastnost, nebo upravte <xref:System.Windows.Forms.Control.Height%2A> nebo <xref:System.Windows.Forms.Control.Width%2A> vlastnosti jednotlivě. Pokud používáte Visual Studio, můžete změnit velikost pomocí Návrháře formulářů Windows. Viz také [postupy: Změna velikosti Windows Forms pomocí návrháře](https://msdn.microsoft.com/library/37k2zkwx\(v=vs.110\)).  
+Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit výšku a šířku formuláře programově tak, že nastavíte novou hodnotu <xref:System.Windows.Forms.Form.Size%2A> vlastnost, nebo upravte <xref:System.Windows.Forms.Control.Height%2A> nebo <xref:System.Windows.Forms.Control.Width%2A> vlastnosti jednotlivě. Pokud používáte Visual Studio, můžete změnit velikost pomocí Návrháře formulářů Windows. Viz také [jak: Změna velikosti Windows Forms pomocí návrháře](https://msdn.microsoft.com/library/37k2zkwx\(v=vs.110\)).  
   
 ### <a name="to-resize-a-form-programmatically"></a>Změnit velikost formuláře prostřednictvím kódu programu  
   
@@ -112,6 +112,6 @@ Velikost formuláře Windows můžete zadat několika způsoby. Můžete změnit
     f->Size->X += 100;  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme s Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)
+- [Rozšiřování aplikací Windows Forms](../../../docs/framework/winforms/advanced/index.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 96153dcc9c144df0f412678ec5c0928d4e832a40
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: e70bc27606e51d3685d4f92484f632c8fa2eba76
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235735"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54652160"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
 Finalizační metody (také nazývané **destruktory**) jsou používány k provádění všechny nezbytné konečné vyčištění při instanci třídy se shromažďují pomocí systému uvolňování paměti.  
@@ -89,7 +89,7 @@ Další informace najdete v tématu [destruktory](~/_csharplang/spec/classes.md#
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IDisposable>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+- <xref:System.IDisposable>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)
 - [Uvolňování paměti](../../../standard/garbage-collection/index.md)

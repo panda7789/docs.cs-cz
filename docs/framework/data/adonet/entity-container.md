@@ -1,34 +1,34 @@
 ---
-title: Kontejneru entit
+title: kontejner entit
 ms.date: 03/30/2017
 ms.assetid: 16e80405-2c75-42fc-b0e4-b1df53b1c584
-ms.openlocfilehash: ed2123629c61b179e07e86effa0c39d9a3222b62
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8ebb60a79fab9f60d4008e533f08ade7b3ff6e98
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32764038"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641184"
 ---
-# <a name="entity-container"></a>Kontejneru entit
-*Kontejneru entit* je logické seskupení [sad entit](../../../../docs/framework/data/adonet/entity-set.md), [přidružení sady](../../../../docs/framework/data/adonet/association-set.md), a [funkce importy](../../../../docs/framework/data/adonet/model-declared-function.md).  
+# <a name="entity-container"></a>kontejner entit
+*Kontejneru entity* je logické seskupení [sad entit](../../../../docs/framework/data/adonet/entity-set.md), [sad přidružení](../../../../docs/framework/data/adonet/association-set.md), a [importů funkci](../../../../docs/framework/data/adonet/model-declared-function.md).  
   
- Následující musí být splněné z kontejner entitu definovanou v konceptuálním modelu:  
+ Musí být splněné tyto požadavky definované v konceptuálním modelu entity kontejneru:  
   
--   Minimálně jednu entitu kontejneru musí být definován v každé konceptuálním modelu.  
+-   Minimálně jednu entitu kontejneru musí být definován v každé koncepčního modelu.  
   
--   Kontejneru entit musí mít jedinečný název v rámci každé konceptuálního modelu.  
+-   Kontejner entit musí mít jedinečný název v rámci každé koncepčního modelu.  
   
- Kontejner entity můžete definovat sady entit nebo sady přidružení, které používají typy entit a přidružení definované v jedné nebo více oborů názvů. Další informace najdete v tématu [datového modelu Entity: obory názvů](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md).  
+ Kontejner entit můžete definovat, sad entit a sad přidružení, které používají typy entit a přidružení, které jsou definovány v jedné nebo více oborů názvů. Další informace najdete v tématu [modelu Entity Data Model: Obory názvů](../../../../docs/framework/data/adonet/entity-data-model-namespaces.md).  
   
 ## <a name="example"></a>Příklad  
- Následující diagram znázorňuje Koncepční model se tři typy entit: `Book`, `Publisher`, a `Author`.  Podívejte se na další příklad další informace.  
+ Následující diagram znázorňuje Koncepční model s tři typy entit: `Book`, `Publisher`, a `Author`.  Podívejte se na další příklad pro další informace.  
   
  ![Ukázkový Model](../../../../docs/framework/data/adonet/media/examplemodel.gif "ExampleModel")  
   
- I když diagram špatně přenáší informace o kontejneru entit, musíte definovat konceptuálního modelu kontejner entity. [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá DSL, kterému se říká jazyk definice konceptuálního schématu ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelech. Následující CSDL definuje kontejner entity pro koncepční model zobrazený v diagramu výše. Všimněte si, že název kontejneru entit je definována v atribut XML.  
+ I když diagramu neznamená informací o entitách kontejneru, musí definovat konceptuálního modelu kontejnerem entity. [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) používá DSL volá Konceptuální schéma definici jazyka ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) k definování konceptuálních modelů. Následující CSDL definuje kontejneru entity pro koncepční model je vidět na obrázku výše. Všimněte si, že název kontejneru entity je definován v atributu XML.  
   
  [!code-xml[EDM_Example_Model#EntityContainerExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entitycontainerexample)]  
   
-## <a name="see-also"></a>Viz také  
- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)  
- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)
+## <a name="see-also"></a>Viz také:
+- [Koncepty modelu EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
+- [Model EDM (Entity Data Model)](../../../../docs/framework/data/adonet/entity-data-model.md)

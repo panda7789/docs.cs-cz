@@ -1,20 +1,20 @@
 ---
-title: 'Postup: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami'
+title: 'Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami'
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-ms.openlocfilehash: 12fc8706eb81df281571bb6ab54f7c2a2805f351
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: a90f525e23fcad0e46ebc378d22b8282e613643a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580419"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584974"
 ---
-# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postup: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
-Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí aktivit zasílání zpráv. Toto téma se zaměřuje na mechanismu vytvoření služby pracovního postupu, kde se skládá pouze z aktivity zasílání zpráv služby. Ve službě reálného světa pracovní postup obsahuje mnoho dalších aktivit. Služba implementuje jednu operaci volat odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Další téma [postupy: přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikace pracovního postupu, která může volat služby vytvořené v tomto tématu.  
+# <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postupy: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
+Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí aktivit zasílání zpráv. Toto téma se zaměřuje na mechanismu vytvoření služby pracovního postupu, kde se skládá pouze z aktivity zasílání zpráv služby. Ve službě reálného světa pracovní postup obsahuje mnoho dalších aktivit. Služba implementuje jednu operaci volat odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Další téma [How To: Přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikace pracovního postupu, která může volat služby vytvořené v tomto tématu.  
   
 ### <a name="to-create-a-workflow-service-project"></a>Chcete-li vytvořit projekt služby pracovního postupu  
   
-1.  Spusťte sadu Visual Studio 2012.  
+1.  Start Visual Studio 2012.  
   
 2.  Klikněte na tlačítko **souboru** nabídce vyberte možnost **nový**a potom **projektu** zobrazíte **dialogové okno nového projektu**. Vyberte **pracovního postupu** ze seznamu nainstalovaných šablon a **aplikace služeb pracovního postupu WCF** ze seznamu typů projektů. Pojmenujte projekt `MyWFService` a použijte výchozí umístění, jak je znázorněno na následujícím obrázku.  
   
@@ -81,15 +81,15 @@ Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí 
   
 3.  Stiskněte kombinaci kláves Ctrl + F5 ke spuštění služby. Ikona serveru ASP.NET Development Server se zobrazí v dolní pravé části plochy, jak je znázorněno na následujícím obrázku.  
   
-     ![Ikona serveru technologie ASP.NET pro vývojáře](../../../../docs/framework/wcf/feature-details/media/aspnetdevservericon.JPG "ASPNETDEVServerIcon")  
+     ![The ASP.NET Developer Server Icon](../../../../docs/framework/wcf/feature-details/media/aspnetdevservericon.JPG "ASPNETDEVServerIcon")  
   
      Kromě toho aplikace Internet Explorer zobrazí na stránce nápovědy služby WCF pro službu.  
   
      ![Stránka nápovědy WCF](../../../../docs/framework/wcf/feature-details/media/wcfhelppate.JPG "WCFHelpPate")  
   
-4.  Pokračovat k [postupy: přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) tématu k vytvoření klienta pracovní postup, který volá tuto službu.  
+4.  Pokračovat k [jak: Přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) tématu k vytvoření klienta pracovní postup, který volá tuto službu.  
   
-## <a name="see-also"></a>Viz také  
- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [Přehled hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)  
- [Aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-activities.md)
+## <a name="see-also"></a>Viz také:
+- [Služby pracovních postupů](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+- [Přehled hostování služeb pracovních postupů](../../../../docs/framework/wcf/feature-details/hosting-workflow-services-overview.md)
+- [Aktivity zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-activities.md)

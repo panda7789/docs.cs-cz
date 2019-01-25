@@ -2,12 +2,12 @@
 title: Referenční dokumentace klíčových slov
 description: Odkazy na informace o všech F# klíčová slova jazyka.
 ms.date: 05/16/2016
-ms.openlocfilehash: 20592c57e09c6e0f09bb3acae021369ac5e511d6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 5a94a30ca0f73538cc22e76fa75bd76741b70d99
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54579835"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857902"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -73,7 +73,7 @@ V následující tabulce jsou uvedeny všechny F# klíčová slova v abecedním 
 |`return!`|[Výpočetní výrazy](computation-expressions.md)<br /><br />[Asynchronní pracovní postupy](asynchronous-workflows.md)|Slouží k označení výrazu výpočtu, který po vyhodnocení poskytne výsledek obsahujícího výrazu výpočtu.|
 |`select`|[Výrazy dotazu](query-expressions.md)|Použít ve výrazech dotazu k určení, která pole nebo sloupce, které chcete extrahovat. Všimněte si, že se kontextové klíčové slovo, což znamená, že není ve skutečnosti o vyhrazené slovo a funguje jen jako klíčové slovo v příslušném kontextu.|
 |`static`|[Členové](members/index.md)|Slouží k označení metody nebo vlastnosti, kterou lze volat bez instance typu nebo člena hodnoty, který se sdílí mezi všemi instancemi typu.|
-|`struct`|[Struktury](structures.md)<br /><br />[Omezení](generics/constraints.md)|Slouží k deklaraci typu struktury.<br /><br />Používá se také v omezeních obecných parametrů.<br /><br />Používá kvůli kompatibilitě s OCaml v definicích modulů.|
+|`struct`|[Struktury](structures.md)<br /><br /> [Řazené kolekce členů](tuples.md)<br/><br/>[Omezení](generics/constraints.md)|Slouží k deklaraci typu struktury.<br /><br/>Slouží k určení řazené kolekce členů struktury.<br/><br />Používá se také v omezeních obecných parametrů.<br /><br />Používá kvůli kompatibilitě s OCaml v definicích modulů.|
 |`then`|[Podmíněné výrazy: `if...then...else`](conditional-expressions-if-then-else.md)<br /><br />[Konstruktory](members/constructors.md)|Používat v podmíněných výrazech.<br /><br />Také použít k provedení vedlejších efektů po konstrukci objektu.|
 |`to`|[Smyčky: `for...to` Výraz](loops-for-to-expression.md)|Použít v `for` smyček k označení rozsahu.|
 |`true`|[Primitivní typy](primitive-types.md)|Použít jako logický literál.|

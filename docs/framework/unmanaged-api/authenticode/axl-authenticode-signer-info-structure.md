@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 81c0f8b4-ce35-4716-8651-b642d40648a2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b9f54c7c57d122ac1214b9f31cc4e1d1cddd71c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: ff50ee18dc3155bf784d6b752da8efc841aa6ce5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44184321"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559434"
 ---
 # <a name="axlauthenticodesignerinfo-structure"></a>Struktura AXL_AUTHENTICODE_SIGNER_INFO
 Definuje informace o podpisu Authenticode.  
@@ -40,5 +40,5 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
 |`pwszDescriptionUrl`|Adresa URL popisu.|  
 |`pChainContext`|Kontextu řetězu podpisu. Zobrazit [CERT_CONTEXT](/windows/desktop/api/wincrypt/ns-wincrypt-_cert_context) struktury.|  
   
-## <a name="see-also"></a>Viz také  
- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)
+## <a name="see-also"></a>Viz také:
+- [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

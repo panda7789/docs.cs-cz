@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e0a506f05aac3b8335a0863c3152567fe05463a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7b66cc09eda1fe5ea46a55b6239e05b5acec851c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415877"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566902"
 ---
 # <a name="icordebugmanagedcallbackupdatemodulesymbols-method"></a>ICorDebugManagedCallback::UpdateModuleSymbols – metoda
-Upozorní ladicí program, že došlo ke změně symboly pro běžné modul runtime jazyka.  
+Upozorní ladicího programu, že jste změnili symboly pro společný jazykový modul runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT UpdateModuleSymbols (
   
 #### <a name="parameters"></a>Parametry  
  `pAppDomain`  
- [v] Ukazatel na ICorDebugAppDomain objekt, který reprezentuje obsahující modul, ve kterém symboly změnili domény aplikace.  
+ [in] Ukazatel na objekt ICorDebugAppDomain, který představuje doménu aplikace obsahující modul, ve kterém jste změnili symboly.  
   
  `pModule`  
- [v] Ukazatel na ICorDebugModule objekt, který představuje modul, ve kterém symboly změnily.  
+ [in] Ukazatel na objekt icordebugmodule –, který představuje modul, ve kterém jste změnili symboly.  
   
  `pSymbolStream`  
- [v] Ukazatel na Win32 COM `IStream` objekt, který obsahuje upravené symboly.  
+ [in] Ukazatel na Win32 COM `IStream` objekt, který obsahuje upravený symboly.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vám dává příležitost k aktualizaci zobrazení ladicího programu modul symbolů voláním [isymunmanagedreader::updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) nebo [isymunmanagedreader::replacesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).  
+ Tato metoda poskytuje příležitost k aktualizaci zobrazení ladicího programu modulu symbolů voláním [isymunmanagedreader::updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) nebo [isymunmanagedreader::replacesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-replacesymbolstore-method.md).  
   
- Tato zpětného volání může mít více než jednou. stejný modul.  
+ Toto zpětné volání může mít více než jednou stejného modulu.  
   
- Ladicí program se pokuste vytvořit vazbu nevázaný zarážky úrovně zdroje.  
+ Ladicí program se pokuste vytvořit vazbu nevázaného zarážky úroveň zdroje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -63,5 +63,5 @@ HRESULT UpdateModuleSymbols (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugManagedCallback – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

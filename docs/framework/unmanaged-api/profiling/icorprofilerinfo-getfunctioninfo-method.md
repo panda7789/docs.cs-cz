@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 19736d177639b00c9563462f10e33e4c122297c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00b20134c0134aa30d2056b634c8525f66ed8cf5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456010"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602453"
 ---
 # <a name="icorprofilerinfogetfunctioninfo-method"></a>ICorProfilerInfo::GetFunctionInfo – metoda
-Získá nadřazené třídy a metadata token pro zadanou funkci.  
+Získá nadřazené třídu a metadata token pro zadanou funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,24 +39,24 @@ HRESULT GetFunctionInfo(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, pro které chcete získat token nadřazené třídy a metadata.  
+ [in] ID funkce, pro které se získat token nadřazené třídu a metadata.  
   
  `pClassId`  
  [out] Ukazatel na nadřazené třídy funkce.  
   
  `pModuleId`  
- [out] Ukazatel na modul, ve kterém je definovaný funkce nadřazené třídy.  
+ [out] Ukazatel na modul, ve kterém je definována funkce nadřazené třídy.  
   
  `pToken`  
- [out] Ukazatel na token metadata pro funkci.  
+ [out] Ukazatel na token metadat pro funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete volat kód profileru [icorprofilerinfo::getmodulemetadata –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) k získání metadat rozhraní pro daného modulu. Metadata token, který je vrácen do umístění odkazuje `pToken` pak lze získat přístup k metadatům pro funkci.  
+ Profiler kódu může volat [icorprofilerinfo::getmodulemetadata –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) získání metadat rozhraní pro daný modul. Token metadat, který je vrácen do umístění odkazuje `pToken` lze použít k přístupu k metadatům pro funkci.  
   
- `ClassID` Funkce na obecné třídy nemusí být dosažitelný bez další kontextové informace o použití funkce. V takovém případě `pClassId` bude 0. Profileru kód by měl používat [ICorProfilerInfo2::getfunctioninfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) s hodnotou COR_PRF_FRAME_INFO zajistit další kontext.  
+ `ClassID` Funkce na obecné třídě nemusí být dosažitelný bez další kontextové informace o použití funkce. V takovém případě `pClassId` bude 0. Profiler kódu používejte [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) s hodnotou COR_PRF_FRAME_INFO poskytnout další kontext.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -64,5 +64,5 @@ HRESULT GetFunctionInfo(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

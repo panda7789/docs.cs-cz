@@ -2,21 +2,21 @@
 title: 'Postupy: Export vlastního WSDL'
 ms.date: 03/30/2017
 ms.assetid: 5c1e4b58-b76b-472b-9635-2f80d42a0734
-ms.openlocfilehash: 82f343d5e2637ff1330570a01b376e83567db4f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86c6be86febb21f3c676d28357b29db5dcca07db
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489045"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54645142"
 ---
 # <a name="how-to-export-custom-wsdl"></a>Postupy: Export vlastního WSDL
-Toto téma vysvětluje, jak exportovat vlastní informace o schématu WSDL. Uděláte to tak bude definujeme nový atribut kód volá `WsdlDocumentationAttribute` , bude přidání vlastních informací do WSDL vygenerované službou.  
+Toto téma vysvětluje, jak exportovat informace o vlastním WSDL. Provedete to nadefinujeme nový atribut kód volá `WsdlDocumentationAttribute` , který bude přidání vlastních informací do WSDL vygenerované službou.  
   
 ### <a name="to-export-custom-wsdl-information"></a>Export vlastního WSDL informace  
   
-1.  Implementace <xref:System.ServiceModel.Description.IWsdlExportExtension> rozhraní. Toto rozhraní může být implementováno na třídu, která implementuje některý z následujících rozhraní: <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, nebo <xref:System.ServiceModel.Description.IEndpointBehavior>. Můžete implementovat také na třídy odvozené od <xref:System.ServiceModel.Channels.BindingElement>. Tato ukázka implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> na třídu atributu, který implementuje <xref:System.ServiceModel.Description.IContractBehavior>.  
+1.  Implementujte rozhraní <xref:System.ServiceModel.Description.IWsdlExportExtension>. Toto rozhraní je možné implementovat na třídu, která implementuje některý z následujících rozhraní: <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, nebo <xref:System.ServiceModel.Description.IEndpointBehavior>. To může být implementováno na třídu odvozenou z <xref:System.ServiceModel.Channels.BindingElement>. Tato ukázka implementuje <xref:System.ServiceModel.Description.IWsdlExportExtension> na třídu atributu, který implementuje <xref:System.ServiceModel.Description.IContractBehavior>.  
   
-2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> definuje dvě metody <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> a <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. Tyto metody umožňují úprava nebo přidání (nebo obě upravit a přidat) Další informace o <xref:System.ServiceModel.Description.WsdlContractConversionContext>. Tato ukázka v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metoda, načte kolekci <xref:System.ServiceModel.Description.OperationDescription> objekty a pak provádí iteraci v kolekci vyhledává `WsdlDocumentationAttribute`. Pokud není nalezen, je extrahován text přidružený k atributu, elementu summary je generován a elementu summary je přidán do `DocumentationElement` operace.  
+2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> definuje dvě metody <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> a <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. Tyto metody umožňují změnit nebo přidat (nebo upravit a přidat) Další informace do <xref:System.ServiceModel.Description.WsdlContractConversionContext>. Tento ukázkový v <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> metoda, načte kolekci <xref:System.ServiceModel.Description.OperationDescription> objekty a pak Iteruje přes kolekci kontrolují `WsdlDocumentationAttribute`. Pokud není nalezen takový, přidružený k atributu text je extrahován, je generována summary element a summary element se přidá do `DocumentationElement` operace.  
   
     ```  
             public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
@@ -195,5 +195,5 @@ return lines;
   }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)
+## <a name="see-also"></a>Viz také:
+- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)

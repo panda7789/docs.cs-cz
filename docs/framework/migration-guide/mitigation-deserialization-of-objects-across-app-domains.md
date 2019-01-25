@@ -1,17 +1,17 @@
 ---
-title: 'Zmírnění: Deserializace objektů mezi doménami aplikací'
+title: 'Omezení rizik: Deserializace objektů mezi doménami aplikace'
 ms.date: 03/30/2017
 ms.assetid: 30c2d66c-04a8-41a5-ad31-646b937f61b5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be1ca715fbf4a8166385ba1985986859d91527f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5424eac20992d87542bd8a9a27d5775483d64a60
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389458"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54633948"
 ---
-# <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Zmírnění: Deserializace objektů mezi doménami aplikací
+# <a name="mitigation-deserialization-of-objects-across-app-domains"></a>Omezení rizik: Deserializace objektů mezi doménami aplikace
 V některých případech, kdy aplikace používá dvě nebo více domén aplikace s různými základy cesty aplikace, vyvolá pokus o deserializaci objektů v rámci logického kontextu volání mezi doménami aplikace výjimku.  
   
 ## <a name="diagnosing-the-issue"></a>Diagnostika problému  
@@ -48,5 +48,5 @@ V některých případech, kdy aplikace používá dvě nebo více domén aplik
     System.Configuration.ConfigurationManager.GetSection("system.xml/xmlReader");  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-5-1.md)
+## <a name="see-also"></a>Viz také:
+- [Změny v modulu runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-5-1.md)

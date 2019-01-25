@@ -7,12 +7,12 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: 3eea3d6c8a28ace0cc79cbfeb7eb3a7a52c9b8ab
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 750f054c908cd9d837a18ee6c8a537285b325288
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205162"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728350"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování mezerových znaků v XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
@@ -53,7 +53,7 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
 ## <a name="preserving-white-space"></a>Zachování prázdných znaků  
  Existuje několik postupů pro zachování prázdných znaků ve zdroji [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] pro konečné prezentace, které nejsou ovlivněny [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] normalizace procesoru prázdné znaky.  
   
- **XML: space = "zachování"**: zadejte tento atribut na úrovni elementu, kde je žádoucí zachování prázdných znaků. Tato uchovává všechny prázdné znaky, které obsahuje mezery, které mohou být přidány úpravy kódu aplikace "pretty print" Zarovnat elementy jako vizuální intuitivní vnoření. Však, zda tyto prostory vykreslení se určuje podle obsahu modelu pro nadřazeného elementu. Neurčujte `xml:space="preserve"` na kořenové úrovni protože většina objektové modely nebere v úvahu bílý prostor významné bez ohledu na to, jak nastavit atribut. Nastavení `xml:space` globálně mohou mít následky výkonu na zpracování (zejména serializace) v některých implementacích XAML. Je doporučeno nastavit pouze atribut konkrétně na úrovni prvků, které se vykreslují mezer v rámci řetězce nebo jsou prázdné místo důležité kolekce.  
+ **xml:space="preserve"**: Zadejte tento atribut na úrovni elementu, kde je žádoucí zachování prázdných znaků. Tato uchovává všechny prázdné znaky, které obsahuje mezery, které mohou být přidány úpravy kódu aplikace "pretty print" Zarovnat elementy jako vizuální intuitivní vnoření. Však, zda tyto prostory vykreslení se určuje podle obsahu modelu pro nadřazeného elementu. Neurčujte `xml:space="preserve"` na kořenové úrovni protože většina objektové modely nebere v úvahu bílý prostor významné bez ohledu na to, jak nastavit atribut. Nastavení `xml:space` globálně mohou mít následky výkonu na zpracování (zejména serializace) v některých implementacích XAML. Je doporučeno nastavit pouze atribut konkrétně na úrovni prvků, které se vykreslují mezer v rámci řetězce nebo jsou prázdné místo důležité kolekce.  
   
  **Entity a jiných pevné mezery**: [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] podporuje všechny uvedení [!INCLUDE[TLA#tla_unicode](../../../includes/tlasharptla-unicode-md.md)] entity v rámci modelu objektu text. Můžete použít vyhrazený entity jako jsou pevné mezery (&\#160; v kódování UTF-8). Můžete také použít ovládací prvky s formátovaným textem, které podporují znaky pevné. Měli byste být opatrní Pokud používáte entity pro simulaci vlastnosti rozložení, jako je například odsazení, protože za běhu výstup entity, které budou záviset na větší počet faktory než by funkce pro výsledky odsazení v typické systém rozložení, jako je například správné použití operátoru panelů a okraje. Pro instanci entity se mapují na písma a můžete změnit velikost v reakci na výběr písma uživatele.  
   
@@ -74,7 +74,7 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
   
  Navíc některé vložené prvky, které connote linebreak v modelu dokument toku by měl záměrně kritickému mezeru i v kolekci významné prázdné znaky. Například <xref:System.Windows.Documents.LineBreak> element má ke stejnému účelu jako \<BR / > značku [!INCLUDE[TLA2#tla_html](../../../includes/tla2sharptla-html-md.md)]a pro lepší čitelnost v kódu, obvykle <xref:System.Windows.Documents.LineBreak> je oddělen od všechny následující text vytvořené znak odřádkování. Tento znak odřádkování by neměl být normalizovány na stát přední místa na následujícím řádku. Povolit chování, definice třídy pro <xref:System.Windows.Documents.LineBreak> element se vztahuje <xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>, který je pak interpretována [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] procesoru k označení tohoto mezery kolem <xref:System.Windows.Documents.LineBreak> vždy oříznut.  
   
-## <a name="see-also"></a>Viz také:  
- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
- [Znakové entity XML a XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)  
- [XML: space v XAML](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)
+- [Znakové entity XML a XAML](../../../docs/framework/xaml-services/xml-character-entities-and-xaml.md)
+- [XML: space v XAML](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md)

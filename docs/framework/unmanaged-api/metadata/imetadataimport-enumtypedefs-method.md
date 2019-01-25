@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 53ed486a885514d02bf2be9c473e102c2c5f0e15
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e6314a76433276561a8b4b87a852464dae69824
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54656255"
 ---
 # <a name="imetadataimportenumtypedefs-method"></a>IMetaDataImport::EnumTypeDefs – metoda
 Vytvoří výčet TypeDef tokeny představující všechny typy v aktuálním oboru.  
@@ -40,36 +40,36 @@ HRESULT EnumTypeDefs (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [out] Ukazatel na nové enumerátor. Toto musí mít hodnotu NULL pro první volání této metody.  
+ [out] Ukazatel na nový čítač. První volání této metody musí mít hodnotu NULL.  
   
  `rTypeDefs`  
- [v] Pole používá k ukládání TypeDef tokenů.  
+ [in] Pole pro ukládání tokenů TypeDef.  
   
  `cMax`  
- [v] Maximální velikost `rTypeDefs` pole.  
+ [in] Maximální velikost `rTypeDefs` pole.  
   
  `pcTypeDefs`  
- [out] Počet TypeDef tokeny, vrátí se v `rTypeDefs`.  
+ [out] Počet tokenů TypeDef vrácené v `rTypeDefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTypeDefs` je nulová.|  
+|`S_OK`|`EnumTypeDefs` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTypeDefs` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- TypeDef token představuje typu například třídy nebo rozhraní, stejně jako jakýkoli typ přidané prostřednictvím mechanismus rozšiřitelnosti.  
+ TypeDef token představuje typ, například třídy nebo rozhraní, stejně jako libovolný typ přidány prostřednictvím mechanismem rozšiřitelnosti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

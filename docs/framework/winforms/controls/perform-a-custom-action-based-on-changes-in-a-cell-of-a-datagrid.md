@@ -9,17 +9,17 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], detecting changes in cells
 - data grids [Windows Forms], detecting changes in cells
 ms.assetid: 7fa44d01-97f4-4ccb-a149-bc72628d2c36
-ms.openlocfilehash: 3de58c1dd87d890f089366e6e85041f2983acc64
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 125da277c2db44f01e6cad8cea08fbd927234f09
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33535142"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686852"
 ---
 # <a name="how-to-perform-a-custom-action-based-on-changes-in-a-cell-of-a-windows-forms-datagridview-control"></a>Postupy: Provedení vlastní akce na základě změn v buňce ovládacího prvku Windows Forms DataGridView
-<xref:System.Windows.Forms.DataGridView> Ovládací prvek má určitý počet událostí můžete použít ke zjištění změny ve stavu <xref:System.Windows.Forms.DataGridView> buněk. Dva z nejčastěji používaných jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.  
+<xref:System.Windows.Forms.DataGridView> Ovládací prvek má několik událostí můžete použít k detekci změn stavu <xref:System.Windows.Forms.DataGridView> buňky. Dva z nejčastěji používané jsou <xref:System.Windows.Forms.DataGridView.CellValueChanged> a <xref:System.Windows.Forms.DataGridView.CellStateChanged> události.  
   
-### <a name="to-detect-changes-in-the-values-of-datagridview-cells"></a>Ke zjištění změn v hodnoty buněk DataGridView  
+### <a name="to-detect-changes-in-the-values-of-datagridview-cells"></a>Ke zjištění změny hodnoty buněk DataGridView  
   
 -   Zápis obslužné rutiny pro <xref:System.Windows.Forms.DataGridView.CellValueChanged> událostí.  
   
@@ -36,13 +36,13 @@ ms.locfileid: "33535142"
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`. Pro jazyk C# obslužné rutiny události musí být připojen k odpovídající události.  
+-   A <xref:System.Windows.Forms.DataGridView> ovládací prvek s názvem `dataGridView1`. Pro C#, obslužné rutiny událostí musí být připojený k odpovídající události.  
   
--   Odkazuje na <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
+-   Odkazy <xref:System?displayProperty=nameWithType> a <xref:System.Windows.Forms?displayProperty=nameWithType> sestavení.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.DataGridView>  
- <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType>  
- <xref:System.Windows.Forms.DataGridView.CellStateChanged?displayProperty=nameWithType>  
- [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)  
- [Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.DataGridView>
+- <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.DataGridView.CellStateChanged?displayProperty=nameWithType>
+- [Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)
+- [Návod: Ověřování dat v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/walkthrough-validating-data-in-the-windows-forms-datagridview-control.md)

@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: použití Monikeru služby Windows Communication Foundation bez registrace'
+title: 'Postupy: Použití monikeru služby Windows Communication Foundation bez registrace'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [WCF], service monikers without registration
 ms.assetid: ee3cf5c0-24f0-4ae7-81da-73a60de4a1a8
-ms.openlocfilehash: fd61528770b16b13430be3691aef19c1cc743e9c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ce388da75711ab1378ce59575c067cf828089e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33497968"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54615270"
 ---
-# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: použití Monikeru služby Windows Communication Foundation bez registrace
-Pro připojení k a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientské aplikace WCF podrobnosti o adresu služby, konfigurace vazeb a kontrakt služby.  
+# <a name="how-to-use-the-windows-communication-foundation-service-moniker-without-registration"></a>Postupy: Použití monikeru služby Windows Communication Foundation bez registrace
+K připojení a komunikovat se službou Windows Communication Foundation (WCF), musí mít klientská aplikace WCF podrobnosti adresu služby, konfigurace vazby a kontrakt služby.  
   
- Monikeru služby WCF obvykle získá požadované kontrakt prostřednictvím předchozí registrace požadovaný atribut typy, ale můžou nastat případy, kdy to není možné. Přezdívka místo registrace, můžete získat definici kontraktu ve formě dokumentem definice jazyka WSDL (Web Services) prostřednictvím `wsdl` parametr nebo prostřednictvím Metadata Exchange prostřednictvím použití `mexAddress` parametr.  
+ Monikeru služby WCF obvykle získá požadované smlouvy prostřednictvím předchozí registrace typů požadovaný atribut, ale můžou nastat případy, kdy to není proveditelné. Zástupný název místo registrace, můžete získat definici kontraktu ve formě dokumentem definice jazyka WSDL (Web Services) prostřednictvím `wsdl` parametr nebo prostřednictvím výměny metadat prostřednictvím použití `mexAddress` parametr.  
   
- To umožňuje scénáře, jako je rozdělení tabulky aplikace Excel, kde některé hodnoty buněk se počítá pomocí interakce webové služby. V tomto scénáři nemusí být vhodný k registraci sestavení kontraktu služby ve všech klientech, které může otevřít dokument. `wsdl` Parametr nebo `mexAddress` parametr povoluje samostatná řešení.  
+ To umožňuje scénáře, jako je distribuce tabulky aplikace Excel, kde některé z hodnot buňky se počítají prostřednictvím interakce webové služby. V tomto scénáři nemusí být možné zaregistrovat sestavení kontraktu služby ve všech klientech, které může otevřít dokument. `wsdl` Parametr nebo `mexAddress` parametr povoluje samostatná řešení.  
   
 > [!NOTE]
->  Vzájemné ověřování musí použít také k ochraně proti požadavku a odpovědi manipulaci nebo falšování identity. Konkrétně je důležité, aby klienti mohli být jistí, že koncový bod metadat systému Exchange, který odpovídá je určený důvěryhodná strana.  
+>  Vzájemné ověřování musí použít pro ochranu před žádostí a odpovědí, manipulaci nebo falšování identity. Konkrétně je důležité pro klienty být jistí, že je koncový bod výměny metadat, který odpovídá určené důvěryhodná strana.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje použití monikeru služby s MEX kontrakt. Služba je následující kontrakt je vystaven s wsHttpBinding.  
+ Tento příklad ukazuje použití monikeru služby s kontraktem MEX. Služba s tímto kontraktem je vystavena s wsHttpBinding.  
   
 ```  
 using System.ServiceModel;  
@@ -43,7 +43,7 @@ public interface IAffiliate
 }  
 ```  
   
- Lze použít k vytvoření klienta WCF pro službu vzdáleného následující příklad Přezdívka řetězec.  
+ Lze použít k vytvoření klienta WCF pro vzdálené služby řetězce monikeru následující příklad.  
   
 ```  
 service4:mexAddress="http://servername/Affiliates/service.svc/mex",  
@@ -52,10 +52,10 @@ contract=IAffiliate, contractNamespace=http://Microsoft.ServiceModel.Demo,
 binding=WSHttpBinding_IAffiliate, bindingNamespace=http://tempuri.org/  
 ```  
   
- Během provádění klientská aplikace, klient provede `WS-MetadataExchange` poskytnutým `mexAddress`. To může vrátit adresy, vazby a podrobnosti smlouvy pro několik služeb. `address`, `contract`, `contractNamespace`, `binding` a `bindingNamespace` parametry slouží k identifikaci zamýšlené služby. Jakmile tyto parametry byly spárovány, přezdívka vytvoří klienta WCF s definicí příslušné smlouvy a volání pak lze pomocí klienta WCF, stejně jako u typu kontraktu.  
+ Při spuštění klientské aplikace, klient provádí `WS-MetadataExchange` za poskytnutý `mexAddress`. To může vrátit adresy, vazby a podrobnosti o kontraktu pro celou řadou služeb. `address`, `contract`, `contractNamespace`, `binding` a `bindingNamespace` parametry slouží k identifikaci určené služby. Jakmile tyto parametry pravá složená závorka, zástupný název vytvoří klienta WCF s definicí příslušné smlouvy a volání je pak možné provádět pomocí klienta WCF stejně jako u typu kontraktu.  
   
 > [!NOTE]
->  Pokud Přezdívka je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, kterou používáte Přezdívka je správný a služba není k dispozici.  
+>  Pokud je moniker je poškozený nebo pokud služba není dostupná, volání `GetObject` vrátí chyba s oznámením "Neplatná syntaxe". Pokud se zobrazí tato chyba, ujistěte se, že zástupný název, který používáte, je správná a služba není k dispozici.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Registrace a konfigurace monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Registrace a konfigurace Monikeru služby](../../../../docs/framework/wcf/feature-details/how-to-register-and-configure-a-service-moniker.md)

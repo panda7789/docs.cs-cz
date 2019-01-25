@@ -8,12 +8,12 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: c7775de75ddbf274f3a1555c9f0daaf63bbee713
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: dfa3b60e0c76e377a52243c534139d6c9025d46e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235342"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54573323"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  
@@ -66,9 +66,9 @@ Výjimky jsou slouží k označení, že došlo k chybě při spuštění progra
 
 Další informace najdete v tématu [výjimky](~/_csharplang/spec/exceptions.md) a [příkazu throw](~/_csharplang/spec/statements.md#the-throw-statement) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
-- [Hierarchie výjimek](../../../standard/exceptions/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)
+- [Hierarchie výjimek](../../../standard/exceptions/index.md)
 - [Zpracování výjimek](../../../csharp/programming-guide/exceptions/exception-handling.md)
