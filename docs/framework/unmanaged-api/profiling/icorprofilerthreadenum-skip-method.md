@@ -17,47 +17,47 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af6aab2483f0e92dc20936fe2b01e12590d99ca7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f94ce2f5e19636f581918550ee1f651dc1d2d253
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455367"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526571"
 ---
-# <a name="icorprofilerthreadenumskip-method"></a><span data-ttu-id="b4d8d-102">ICorProfilerThreadEnum::Skip – metoda</span><span class="sxs-lookup"><span data-stu-id="b4d8d-102">ICorProfilerThreadEnum::Skip Method</span></span>
-<span data-ttu-id="b4d8d-103">Posune kurzor enumerátor z aktuálního umístění tak, aby přeskočil zadaný počet elementů.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-103">Advances the enumerator's cursor from its current position to skip the specified number of elements.</span></span>  
+# <a name="icorprofilerthreadenumskip-method"></a><span data-ttu-id="69c48-102">ICorProfilerThreadEnum::Skip – metoda</span><span class="sxs-lookup"><span data-stu-id="69c48-102">ICorProfilerThreadEnum::Skip Method</span></span>
+<span data-ttu-id="69c48-103">Posune kurzor čítače výčtu ze své aktuální pozici pro přeskočení zadaný počet prvků.</span><span class="sxs-lookup"><span data-stu-id="69c48-103">Advances the enumerator's cursor from its current position to skip the specified number of elements.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b4d8d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b4d8d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="69c48-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="69c48-104">Syntax</span></span>  
   
 ```  
 HRESULT Skip (    [in] ULONG celt  
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b4d8d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b4d8d-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="69c48-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="69c48-105">Parameters</span></span>  
  `celt`  
- <span data-ttu-id="b4d8d-106">[v] Počet elementů lze vynechat.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-106">[in] The number of elements to be skipped.</span></span>  
+ <span data-ttu-id="69c48-106">[in] Počet prvků, které mají být přeskočeny.</span><span class="sxs-lookup"><span data-stu-id="69c48-106">[in] The number of elements to be skipped.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b4d8d-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b4d8d-107">Return Value</span></span>  
- <span data-ttu-id="b4d8d-108">Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-108">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="69c48-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="69c48-107">Return Value</span></span>  
+ <span data-ttu-id="69c48-108">Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.</span><span class="sxs-lookup"><span data-stu-id="69c48-108">This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.</span></span>  
   
-|<span data-ttu-id="b4d8d-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="b4d8d-109">HRESULT</span></span>|<span data-ttu-id="b4d8d-110">Popis</span><span class="sxs-lookup"><span data-stu-id="b4d8d-110">Description</span></span>|  
+|<span data-ttu-id="69c48-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="69c48-109">HRESULT</span></span>|<span data-ttu-id="69c48-110">Popis</span><span class="sxs-lookup"><span data-stu-id="69c48-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="b4d8d-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="b4d8d-111">S_OK</span></span>|<span data-ttu-id="b4d8d-112">`celt` elementy byly vynechány.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-112">`celt` elements were skipped.</span></span>|  
-|<span data-ttu-id="b4d8d-113">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="b4d8d-113">S_FALSE</span></span>|<span data-ttu-id="b4d8d-114">Méně než `celt` elementy byly přeskočeny, což naznačuje, že neexistují žádné další prvky.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-114">Fewer than `celt` elements were skipped, which indicates that there are no more elements.</span></span>|  
+|<span data-ttu-id="69c48-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="69c48-111">S_OK</span></span>|<span data-ttu-id="69c48-112">`celt` elementy byly vynechány.</span><span class="sxs-lookup"><span data-stu-id="69c48-112">`celt` elements were skipped.</span></span>|  
+|<span data-ttu-id="69c48-113">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="69c48-113">S_FALSE</span></span>|<span data-ttu-id="69c48-114">Méně než `celt` prvky byly přeskočeny, což znamená, že neexistují žádné další prvky.</span><span class="sxs-lookup"><span data-stu-id="69c48-114">Fewer than `celt` elements were skipped, which indicates that there are no more elements.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="b4d8d-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b4d8d-115">Remarks</span></span>  
- <span data-ttu-id="b4d8d-116">Nové pozice kurzoru tento výčet je (aktuální pozici) + `celt`.</span><span class="sxs-lookup"><span data-stu-id="b4d8d-116">The new position of this enumerator's cursor is (current position) + `celt`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="69c48-115">Poznámky</span><span class="sxs-lookup"><span data-stu-id="69c48-115">Remarks</span></span>  
+ <span data-ttu-id="69c48-116">Nové pozice kurzoru tento výčet je (aktuální pozici) + `celt`.</span><span class="sxs-lookup"><span data-stu-id="69c48-116">The new position of this enumerator's cursor is (current position) + `celt`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b4d8d-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b4d8d-117">Requirements</span></span>  
- <span data-ttu-id="b4d8d-118">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b4d8d-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="69c48-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="69c48-117">Requirements</span></span>  
+ <span data-ttu-id="69c48-118">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="69c48-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b4d8d-119">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="b4d8d-119">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="69c48-119">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="69c48-119">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="b4d8d-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="b4d8d-120">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="69c48-120">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="69c48-120">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="b4d8d-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b4d8d-121">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="69c48-121">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="69c48-121">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b4d8d-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="b4d8d-122">See Also</span></span>  
- [<span data-ttu-id="b4d8d-123">ICorProfilerThreadEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b4d8d-123">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
- [<span data-ttu-id="b4d8d-124">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="b4d8d-124">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="69c48-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="69c48-122">See also</span></span>
+- [<span data-ttu-id="69c48-123">ICorProfilerThreadEnum – rozhraní</span><span class="sxs-lookup"><span data-stu-id="69c48-123">ICorProfilerThreadEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
+- [<span data-ttu-id="69c48-124">Rozhraní pro profilaci</span><span class="sxs-lookup"><span data-stu-id="69c48-124">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

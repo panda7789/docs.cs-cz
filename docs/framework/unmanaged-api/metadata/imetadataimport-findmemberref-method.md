@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c3736d604b7e77028a2b99d462d88ae207df926c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 057dd7c25821aedddeee57a31200cf35c6df1273
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33448020"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498512"
 ---
-# <a name="imetadataimportfindmemberref-method"></a><span data-ttu-id="4ce1b-102">IMetaDataImport::FindMemberRef – metoda</span><span class="sxs-lookup"><span data-stu-id="4ce1b-102">IMetaDataImport::FindMemberRef Method</span></span>
-<span data-ttu-id="4ce1b-103">Získá ukazatel na token MemberRef pro člena odkazovat na který je uzavřené do zadané <xref:System.Type> a má zadaný název a metadata podpis.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-103">Gets a pointer to the MemberRef token for the member reference that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.</span></span>  
+# <a name="imetadataimportfindmemberref-method"></a><span data-ttu-id="b884a-102">IMetaDataImport::FindMemberRef – metoda</span><span class="sxs-lookup"><span data-stu-id="b884a-102">IMetaDataImport::FindMemberRef Method</span></span>
+<span data-ttu-id="b884a-103">Získá ukazatel na token MemberRef pro člena, který je odkaz uzavřen parametrem <xref:System.Type> a, který má zadaný název a metadata podpis.</span><span class="sxs-lookup"><span data-stu-id="b884a-103">Gets a pointer to the MemberRef token for the member reference that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4ce1b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4ce1b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b884a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b884a-104">Syntax</span></span>  
   
 ```  
 HRESULT FindMemberRef (  
@@ -39,38 +39,38 @@ HRESULT FindMemberRef (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="4ce1b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4ce1b-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="b884a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b884a-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="4ce1b-106">[v] Odkaz TypeRef token pro třídu nebo rozhraní, která obklopuje odkaz na člena pro vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-106">[in] The TypeRef token for the class or interface that encloses the member reference to search for.</span></span> <span data-ttu-id="4ce1b-107">Pokud je tato hodnota `mdTokenNil`, se provádí vyhledávání pro globální proměnné nebo odkaz na globální funkce.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-107">If this value is `mdTokenNil`, the lookup is done for a global variable or a global-function reference.</span></span>  
+ <span data-ttu-id="b884a-106">[in] Token TypeRef pro třídu nebo rozhraní, který obklopuje odkaz na člena pro hledání.</span><span class="sxs-lookup"><span data-stu-id="b884a-106">[in] The TypeRef token for the class or interface that encloses the member reference to search for.</span></span> <span data-ttu-id="b884a-107">Pokud je tato hodnota `mdTokenNil`, vyhledávání se provádí pro globální proměnnou nebo odkaz na globální funkce.</span><span class="sxs-lookup"><span data-stu-id="b884a-107">If this value is `mdTokenNil`, the lookup is done for a global variable or a global-function reference.</span></span>  
   
  `szName`  
- <span data-ttu-id="4ce1b-108">[v] Název odkaz na člena pro vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-108">[in] The name of the member reference to search for.</span></span>  
+ <span data-ttu-id="b884a-108">[in] Název člena odkazu pro vyhledávání.</span><span class="sxs-lookup"><span data-stu-id="b884a-108">[in] The name of the member reference to search for.</span></span>  
   
  `pvSigBlob`  
- <span data-ttu-id="4ce1b-109">[v] Ukazatel na binární metadata podpis odkaz na člena.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-109">[in] A pointer to the binary metadata signature of the member reference.</span></span>  
+ <span data-ttu-id="b884a-109">[in] Ukazatel na binární metadat podpisu člena odkazu.</span><span class="sxs-lookup"><span data-stu-id="b884a-109">[in] A pointer to the binary metadata signature of the member reference.</span></span>  
   
  `cbSigBlob`  
- <span data-ttu-id="4ce1b-110">[v] Velikost v bajtech `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-110">[in] The size in bytes of `pvSigBlob`.</span></span>  
+ <span data-ttu-id="b884a-110">[in] Velikost v bajtech `pvSigBlob`.</span><span class="sxs-lookup"><span data-stu-id="b884a-110">[in] The size in bytes of `pvSigBlob`.</span></span>  
   
  `pmr`  
- <span data-ttu-id="4ce1b-111">[out] Ukazatel na odpovídající MemberRef token.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-111">[out] A pointer to the matching MemberRef token.</span></span>  
+ <span data-ttu-id="b884a-111">[out] Ukazatel na odpovídající token MemberRef.</span><span class="sxs-lookup"><span data-stu-id="b884a-111">[out] A pointer to the matching MemberRef token.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4ce1b-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4ce1b-112">Remarks</span></span>  
- <span data-ttu-id="4ce1b-113">Zadejte člena pomocí jeho nadřazených třídy nebo rozhraní (`td`), jeho název (`szName`) a volitelně jeho podpis (`pvSigBlob`).</span><span class="sxs-lookup"><span data-stu-id="4ce1b-113">You specify the member using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b884a-112">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b884a-112">Remarks</span></span>  
+ <span data-ttu-id="b884a-113">Zadejte členu pomocí jeho nadřazené třídu nebo rozhraní (`td`), jeho název (`szName`) a volitelně jeho podpis (`pvSigBlob`).</span><span class="sxs-lookup"><span data-stu-id="b884a-113">You specify the member using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).</span></span>  
   
- <span data-ttu-id="4ce1b-114">Podpis předaný `FindMemberRef` musí být vygenerováno v aktuálním oboru, protože podpis je vázána na konkrétní rozsah.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-114">The signature passed to `FindMemberRef` must have been generated in the current scope, because signatures are bound to a particular scope.</span></span> <span data-ttu-id="4ce1b-115">Podpis můžete vložit token, který identifikuje nadřazeného typu třídy nebo hodnota.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-115">A signature can embed a token that identifies the enclosing class or value type.</span></span> <span data-ttu-id="4ce1b-116">Token je index do místní definice typu tabulky.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-116">The token is an index into the local TypeDef table.</span></span> <span data-ttu-id="4ce1b-117">Nelze vytvořit podpis běhu mimo kontext aktuálního oboru a použít jako vstup pro tento podpis `FindMemberRef`.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-117">You cannot build a run-time signature outside the context of the current scope and use that signature as input to `FindMemberRef`.</span></span>  
+ <span data-ttu-id="b884a-114">Podpis předán `FindMemberRef` musí byly vytvořeny v aktuálním oboru, protože podpisy jsou vázány na určitém rozsahu.</span><span class="sxs-lookup"><span data-stu-id="b884a-114">The signature passed to `FindMemberRef` must have been generated in the current scope, because signatures are bound to a particular scope.</span></span> <span data-ttu-id="b884a-115">Podpis můžete vložit token, který identifikuje nadřazeného class nebo hodnotového typu.</span><span class="sxs-lookup"><span data-stu-id="b884a-115">A signature can embed a token that identifies the enclosing class or value type.</span></span> <span data-ttu-id="b884a-116">Token je index do místní tabulky TypeDef.</span><span class="sxs-lookup"><span data-stu-id="b884a-116">The token is an index into the local TypeDef table.</span></span> <span data-ttu-id="b884a-117">Nelze sestavit podpis za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup pro `FindMemberRef`.</span><span class="sxs-lookup"><span data-stu-id="b884a-117">You cannot build a run-time signature outside the context of the current scope and use that signature as input to `FindMemberRef`.</span></span>  
   
- <span data-ttu-id="4ce1b-118">`FindMemberRef` Vyhledá pouze člen odkazy, které byly definovány přímo v třídy nebo rozhraní; odkazy na zděděné členy nenajde.</span><span class="sxs-lookup"><span data-stu-id="4ce1b-118">`FindMemberRef` finds only member references that were defined directly in the class or interface; it does not find inherited member references.</span></span>  
+ <span data-ttu-id="b884a-118">`FindMemberRef` Vyhledá pouze odkazy na členy, které byly definovány přímo v dané třídy nebo rozhraní; Nelze najít odkazy zděděný člen.</span><span class="sxs-lookup"><span data-stu-id="b884a-118">`FindMemberRef` finds only member references that were defined directly in the class or interface; it does not find inherited member references.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4ce1b-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4ce1b-119">Requirements</span></span>  
- <span data-ttu-id="4ce1b-120">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4ce1b-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b884a-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b884a-119">Requirements</span></span>  
+ <span data-ttu-id="b884a-120">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b884a-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4ce1b-121">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="4ce1b-121">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b884a-121">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b884a-121">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="4ce1b-122">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4ce1b-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b884a-122">**Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b884a-122">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="4ce1b-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4ce1b-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="b884a-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b884a-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4ce1b-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="4ce1b-124">See Also</span></span>  
- [<span data-ttu-id="4ce1b-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4ce1b-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [<span data-ttu-id="4ce1b-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4ce1b-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="b884a-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b884a-124">See also</span></span>
+- [<span data-ttu-id="b884a-125">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b884a-125">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="b884a-126">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b884a-126">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
