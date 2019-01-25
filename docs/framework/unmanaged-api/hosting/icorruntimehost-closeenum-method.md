@@ -1,14 +1,6 @@
 ---
-title: "ICorRuntimeHost::CloseEnum – metoda"
-ms.custom: 
+title: ICorRuntimeHost::CloseEnum – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - ICorRuntimeHost.CloseEnum
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: f7ce7e8c-0a3e-4587-a180-063e2b85940e
 topic_type:
 - apiref
-caps.latest.revision: 
 author: rpetrusha
 ms.author: ronpet
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: 677ab3a97b7fcceccd8ceb0943c62df8bc999649
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: dd59b08537ebc49068b92d229f3ccab6e7280ace
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54591562"
 ---
-# <a name="icorruntimehostcloseenum-method"></a><span data-ttu-id="19ca1-102">ICorRuntimeHost::CloseEnum – metoda</span><span class="sxs-lookup"><span data-stu-id="19ca1-102">ICorRuntimeHost::CloseEnum Method</span></span>
-<span data-ttu-id="19ca1-103">Obnoví enumerátor domény zpět na začátek seznamu domény.</span><span class="sxs-lookup"><span data-stu-id="19ca1-103">Resets a domain enumerator back to the beginning of the domain list.</span></span>  
+# <a name="icorruntimehostcloseenum-method"></a><span data-ttu-id="18708-102">ICorRuntimeHost::CloseEnum – metoda</span><span class="sxs-lookup"><span data-stu-id="18708-102">ICorRuntimeHost::CloseEnum Method</span></span>
+<span data-ttu-id="18708-103">Obnoví domény enumerátor zpět na začátek seznamu domén.</span><span class="sxs-lookup"><span data-stu-id="18708-103">Resets a domain enumerator back to the beginning of the domain list.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="19ca1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="19ca1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="18708-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="18708-104">Syntax</span></span>  
   
 ```  
 HRESULT CloseEnum (  
@@ -46,28 +35,28 @@ HRESULT CloseEnum (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="19ca1-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="19ca1-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="18708-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="18708-105">Parameters</span></span>  
  `hEnum`  
- <span data-ttu-id="19ca1-106">[v] Enumerátor resetovat.</span><span class="sxs-lookup"><span data-stu-id="19ca1-106">[in] The enumerator to reset.</span></span>  
+ <span data-ttu-id="18708-106">[in] Enumerátor resetovat.</span><span class="sxs-lookup"><span data-stu-id="18708-106">[in] The enumerator to reset.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="19ca1-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="19ca1-107">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="18708-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="18708-107">Return Value</span></span>  
   
-|<span data-ttu-id="19ca1-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="19ca1-108">HRESULT</span></span>|<span data-ttu-id="19ca1-109">Popis</span><span class="sxs-lookup"><span data-stu-id="19ca1-109">Description</span></span>|  
+|<span data-ttu-id="18708-108">HRESULT</span><span class="sxs-lookup"><span data-stu-id="18708-108">HRESULT</span></span>|<span data-ttu-id="18708-109">Popis</span><span class="sxs-lookup"><span data-stu-id="18708-109">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="19ca1-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="19ca1-110">S_OK</span></span>|<span data-ttu-id="19ca1-111">Operace byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="19ca1-111">The operation was successful.</span></span>|  
-|<span data-ttu-id="19ca1-112">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="19ca1-112">S_FALSE</span></span>|<span data-ttu-id="19ca1-113">Operaci se nepodařilo dokončit.</span><span class="sxs-lookup"><span data-stu-id="19ca1-113">The operation failed to complete.</span></span>|  
-|<span data-ttu-id="19ca1-114">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="19ca1-114">E_FAIL</span></span>|<span data-ttu-id="19ca1-115">Došlo k neznámé, závažnou chybu.</span><span class="sxs-lookup"><span data-stu-id="19ca1-115">An unknown, catastrophic failure occurred.</span></span> <span data-ttu-id="19ca1-116">Pokud metoda vrátí E_FAIL, modul CLR (CLR) již není použitelné v procesu.</span><span class="sxs-lookup"><span data-stu-id="19ca1-116">If a method returns E_FAIL, the common language runtime (CLR) is no longer usable in the process.</span></span> <span data-ttu-id="19ca1-117">Následující volání žádné hostování rozhraní API vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="19ca1-117">Subsequent calls to any hosting APIs return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="19ca1-118">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="19ca1-118">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="19ca1-119">Modul CLR nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="19ca1-119">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="18708-110">S_OK</span><span class="sxs-lookup"><span data-stu-id="18708-110">S_OK</span></span>|<span data-ttu-id="18708-111">Operace byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="18708-111">The operation was successful.</span></span>|  
+|<span data-ttu-id="18708-112">S_FALSE</span><span class="sxs-lookup"><span data-stu-id="18708-112">S_FALSE</span></span>|<span data-ttu-id="18708-113">Operaci se nepodařilo dokončit.</span><span class="sxs-lookup"><span data-stu-id="18708-113">The operation failed to complete.</span></span>|  
+|<span data-ttu-id="18708-114">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="18708-114">E_FAIL</span></span>|<span data-ttu-id="18708-115">Došlo k neznámé, katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="18708-115">An unknown, catastrophic failure occurred.</span></span> <span data-ttu-id="18708-116">Pokud metoda vrátí E_FAIL, modul CLR (CLR) už nejsou použitelné v procesu.</span><span class="sxs-lookup"><span data-stu-id="18708-116">If a method returns E_FAIL, the common language runtime (CLR) is no longer usable in the process.</span></span> <span data-ttu-id="18708-117">Následující volání jakékoli hostitelské rozhraní API vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="18708-117">Subsequent calls to any hosting APIs return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="18708-118">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="18708-118">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="18708-119">Modul CLR se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="18708-119">The CLR has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="19ca1-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="19ca1-120">Requirements</span></span>  
- <span data-ttu-id="19ca1-121">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="19ca1-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="18708-120">Požadavky</span><span class="sxs-lookup"><span data-stu-id="18708-120">Requirements</span></span>  
+ <span data-ttu-id="18708-121">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="18708-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="19ca1-122">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="19ca1-122">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="18708-122">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="18708-122">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="19ca1-123">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="19ca1-123">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="18708-123">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="18708-123">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="19ca1-124">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="19ca1-124">**.NET Framework Versions:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="18708-124">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="18708-124">**.NET Framework Versions:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="19ca1-125">Viz také</span><span class="sxs-lookup"><span data-stu-id="19ca1-125">See Also</span></span>  
- [<span data-ttu-id="19ca1-126">CorBindToRuntimeEx – funkce</span><span class="sxs-lookup"><span data-stu-id="19ca1-126">CorBindToRuntimeEx Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)  
- [<span data-ttu-id="19ca1-127">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="19ca1-127">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+## <a name="see-also"></a><span data-ttu-id="18708-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="18708-125">See also</span></span>
+- [<span data-ttu-id="18708-126">CorBindToRuntimeEx – funkce</span><span class="sxs-lookup"><span data-stu-id="18708-126">CorBindToRuntimeEx Function</span></span>](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)
+- [<span data-ttu-id="18708-127">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="18708-127">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

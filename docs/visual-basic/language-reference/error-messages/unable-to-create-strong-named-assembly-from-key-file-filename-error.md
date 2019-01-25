@@ -1,5 +1,5 @@
 ---
-title: 'Nelze vytvořit sestavení se silným názvem ze souboru klíče &#39; &lt;filename&gt;&#39;: &lt;chyba&gt;'
+title: 'Nelze vytvořit sestavení se silným názvem z klíčového souboru &#39; &lt;filename&gt;&#39;: &lt;chyba&gt;'
 ms.date: 07/20/2015
 f1_keywords:
 - vbc31026
@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC31026
 ms.assetid: 5dd09785-bc10-4ae7-ba24-b795057aca31
-ms.openlocfilehash: 9b7a585dbe6b1da5e0f3b17e61e6407b52439601
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de0f9fabdb2b64f0d246e2d169e60b35da2a28b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33595043"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54511235"
 ---
-# <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a><span data-ttu-id="e81e6-102">Nelze vytvořit sestavení se silným názvem ze souboru klíče &#39; &lt;filename&gt;&#39;: &lt;chyba&gt;</span><span class="sxs-lookup"><span data-stu-id="e81e6-102">Unable to create strong-named assembly from key file &#39;&lt;filename&gt;&#39;: &lt;error&gt;</span></span>
-<span data-ttu-id="e81e6-103">Sestavení se silným názvem nebylo možné vytvořit ze určený soubor klíče.</span><span class="sxs-lookup"><span data-stu-id="e81e6-103">A strong-named assembly could not be created from the specified key file.</span></span>  
+# <a name="unable-to-create-strong-named-assembly-from-key-file-39ltfilenamegt39-lterrorgt"></a><span data-ttu-id="3d042-102">Nelze vytvořit sestavení se silným názvem z klíčového souboru &#39; &lt;filename&gt;&#39;: &lt;chyba&gt;</span><span class="sxs-lookup"><span data-stu-id="3d042-102">Unable to create strong-named assembly from key file &#39;&lt;filename&gt;&#39;: &lt;error&gt;</span></span>
+<span data-ttu-id="3d042-103">Ze zadaného souboru klíče nelze vytvořit sestavení se silným názvem.</span><span class="sxs-lookup"><span data-stu-id="3d042-103">A strong-named assembly could not be created from the specified key file.</span></span>  
   
- <span data-ttu-id="e81e6-104">**ID chyby:** BC31026</span><span class="sxs-lookup"><span data-stu-id="e81e6-104">**Error ID:** BC31026</span></span>  
+ <span data-ttu-id="3d042-104">**ID chyby:** BC31026</span><span class="sxs-lookup"><span data-stu-id="3d042-104">**Error ID:** BC31026</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="e81e6-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="e81e6-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="3d042-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="3d042-105">To correct this error</span></span>  
   
-1.  <span data-ttu-id="e81e6-106">Zkontrolujte, aby byl zadán správný soubor klíče a že není uzamčený jinou aplikací.</span><span class="sxs-lookup"><span data-stu-id="e81e6-106">Verify that the correct key file has been specified, and that it is not locked by another application.</span></span>  
+1.  <span data-ttu-id="3d042-106">Ověřte, že byl zadán správný soubor klíče, a že není uzamčený jinou aplikací.</span><span class="sxs-lookup"><span data-stu-id="3d042-106">Verify that the correct key file has been specified, and that it is not locked by another application.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e81e6-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="e81e6-107">See Also</span></span>  
- <span data-ttu-id="e81e6-108">[Sn.exe (nástroj pro silný název)] [Sn.exe (nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))</span><span class="sxs-lookup"><span data-stu-id="e81e6-108">[Sn.exe (Strong Name Tool)][Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md))</span></span>
+## <a name="see-also"></a><span data-ttu-id="3d042-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3d042-107">See also</span></span>
+- <span data-ttu-id="3d042-108">[Sn.exe (nástroj pro silný název)] [Sn.exe (nástroj pro silný název)](../../../framework/tools/sn-exe-strong-name-tool.md))</span><span class="sxs-lookup"><span data-stu-id="3d042-108">[Sn.exe (Strong Name Tool)][Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md))</span></span>

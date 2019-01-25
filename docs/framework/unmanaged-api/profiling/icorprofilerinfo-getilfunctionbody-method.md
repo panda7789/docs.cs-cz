@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bde194023ff6913db9a56e30eddaad8d7abc5ad1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9e1ef61271e5b413972b8ba40a8fe8bac60ceeb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452804"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566210"
 ---
-# <a name="icorprofilerinfogetilfunctionbody-method"></a><span data-ttu-id="c502e-102">ICorProfilerInfo::GetILFunctionBody – metoda</span><span class="sxs-lookup"><span data-stu-id="c502e-102">ICorProfilerInfo::GetILFunctionBody Method</span></span>
-<span data-ttu-id="c502e-103">Získá ukazatel k tělu metody v kódu (MSIL intermediate language) společnosti Microsoft, začínající na jeho záhlaví.</span><span class="sxs-lookup"><span data-stu-id="c502e-103">Gets a pointer to the body of a method in Microsoft intermediate language (MSIL) code, starting at its header.</span></span>  
+# <a name="icorprofilerinfogetilfunctionbody-method"></a><span data-ttu-id="28771-102">ICorProfilerInfo::GetILFunctionBody – metoda</span><span class="sxs-lookup"><span data-stu-id="28771-102">ICorProfilerInfo::GetILFunctionBody Method</span></span>
+<span data-ttu-id="28771-103">Získá ukazatel do těla metody v kódu Microsoft intermediate language (MSIL) začínající na jeho záhlaví.</span><span class="sxs-lookup"><span data-stu-id="28771-103">Gets a pointer to the body of a method in Microsoft intermediate language (MSIL) code, starting at its header.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c502e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c502e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="28771-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="28771-104">Syntax</span></span>  
   
 ```  
 HRESULT GetILFunctionBody(  
@@ -37,32 +37,32 @@ HRESULT GetILFunctionBody(
     [out] ULONG       *pcbMethodSize);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="c502e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c502e-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="28771-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="28771-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="c502e-106">[v] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="c502e-106">[in] The ID of the module in which the function resides.</span></span>  
+ <span data-ttu-id="28771-106">[in] ID modulu, ve kterém se funkce nachází.</span><span class="sxs-lookup"><span data-stu-id="28771-106">[in] The ID of the module in which the function resides.</span></span>  
   
  `methodId`  
- <span data-ttu-id="c502e-107">[v] Token metadata pro metodu.</span><span class="sxs-lookup"><span data-stu-id="c502e-107">[in] The metadata token for the method.</span></span>  
+ <span data-ttu-id="28771-107">[in] Token metadat pro metodu.</span><span class="sxs-lookup"><span data-stu-id="28771-107">[in] The metadata token for the method.</span></span>  
   
  `ppMethodHeader`  
- <span data-ttu-id="c502e-108">[out] Ukazatel na záhlaví metody.</span><span class="sxs-lookup"><span data-stu-id="c502e-108">[out] A pointer to the method's header.</span></span>  
+ <span data-ttu-id="28771-108">[out] Ukazatel na záhlaví metody.</span><span class="sxs-lookup"><span data-stu-id="28771-108">[out] A pointer to the method's header.</span></span>  
   
  `pcbMethodSize`  
- <span data-ttu-id="c502e-109">[out] Celé číslo, které určuje velikost metody.</span><span class="sxs-lookup"><span data-stu-id="c502e-109">[out] An integer that specifies the size of the method.</span></span>  
+ <span data-ttu-id="28771-109">[out] Celé číslo, které určuje velikost metody.</span><span class="sxs-lookup"><span data-stu-id="28771-109">[out] An integer that specifies the size of the method.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="c502e-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c502e-110">Remarks</span></span>  
- <span data-ttu-id="c502e-111">Metoda je vymezen modulu, ve kterém je umístěn.</span><span class="sxs-lookup"><span data-stu-id="c502e-111">A method is scoped by the module in which it lives.</span></span> <span data-ttu-id="c502e-112">Protože `GetILFunctionBody` metoda je navržená tak, aby poskytl přístup k nástroji kód MSIL předtím, než byl načten modulem common language runtime (CLR), použije token metadata metody najít požadované instance.</span><span class="sxs-lookup"><span data-stu-id="c502e-112">Because the `GetILFunctionBody` method is designed to give a tool access to the MSIL code before it has been loaded by the common language runtime (CLR), it uses the metadata token of the method to find the desired instance.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="28771-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="28771-110">Remarks</span></span>  
+ <span data-ttu-id="28771-111">Metoda je určeno v modulu, ve kterém se nachází.</span><span class="sxs-lookup"><span data-stu-id="28771-111">A method is scoped by the module in which it lives.</span></span> <span data-ttu-id="28771-112">Vzhledem k tomu, `GetILFunctionBody` metoda je určena poskytnout přístup k nástroji pro kód jazyka MSIL, předtím, než byl načten modulem common language runtime (CLR), použije token metadat metody k vyhledání požadovaného instance.</span><span class="sxs-lookup"><span data-stu-id="28771-112">Because the `GetILFunctionBody` method is designed to give a tool access to the MSIL code before it has been loaded by the common language runtime (CLR), it uses the metadata token of the method to find the desired instance.</span></span>  
   
- <span data-ttu-id="c502e-113">`GetILFunctionBody` CORPROF_E_FUNCTION_NOT_IL HRESULT může vrátit, pokud `methodId` odkazuje na metodu, bez jakékoli MSIL kód (například abstraktní metodu nebo platformu invoke – metoda (PInvoke)).</span><span class="sxs-lookup"><span data-stu-id="c502e-113">`GetILFunctionBody` can return a CORPROF_E_FUNCTION_NOT_IL HRESULT if the `methodId` points to a method without any MSIL code (such as an abstract method, or a platform invoke (PInvoke) method).</span></span>  
+ <span data-ttu-id="28771-113">`GetILFunctionBody` může vrátit hodnotu HRESULT CORPROF_E_FUNCTION_NOT_IL, pokud `methodId` odkazuje na metodu, bez jakékoli MSIL kód (jako abstraktní metody nebo platformu vyvolání metody (PInvoke)).</span><span class="sxs-lookup"><span data-stu-id="28771-113">`GetILFunctionBody` can return a CORPROF_E_FUNCTION_NOT_IL HRESULT if the `methodId` points to a method without any MSIL code (such as an abstract method, or a platform invoke (PInvoke) method).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c502e-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c502e-114">Requirements</span></span>  
- <span data-ttu-id="c502e-115">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c502e-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="28771-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="28771-114">Requirements</span></span>  
+ <span data-ttu-id="28771-115">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="28771-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c502e-116">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="c502e-116">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="28771-116">**Záhlaví:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="28771-116">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="c502e-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c502e-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="28771-117">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="28771-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="c502e-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c502e-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="28771-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="28771-118">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c502e-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="c502e-119">See Also</span></span>  
- [<span data-ttu-id="c502e-120">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c502e-120">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+## <a name="see-also"></a><span data-ttu-id="28771-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="28771-119">See also</span></span>
+- [<span data-ttu-id="28771-120">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="28771-120">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
