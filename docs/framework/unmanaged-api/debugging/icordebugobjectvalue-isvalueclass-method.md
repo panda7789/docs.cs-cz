@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7deab95db2e7ccfd167f3158f0f008c6b077a012
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 932d4ecbf34a636d37a60af0ba11f3fc149ffcea
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416436"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54649645"
 ---
-# <a name="icordebugobjectvalueisvalueclass-method"></a><span data-ttu-id="4b1e5-102">ICorDebugObjectValue::IsValueClass – metoda</span><span class="sxs-lookup"><span data-stu-id="4b1e5-102">ICorDebugObjectValue::IsValueClass Method</span></span>
-<span data-ttu-id="4b1e5-103">Získá hodnotu, která určuje, zda hodnota tohoto objektu je typ hodnoty.</span><span class="sxs-lookup"><span data-stu-id="4b1e5-103">Gets a value that indicates whether this object value is a value type.</span></span>  
+# <a name="icordebugobjectvalueisvalueclass-method"></a><span data-ttu-id="e9ad2-102">ICorDebugObjectValue::IsValueClass – metoda</span><span class="sxs-lookup"><span data-stu-id="e9ad2-102">ICorDebugObjectValue::IsValueClass Method</span></span>
+<span data-ttu-id="e9ad2-103">Získá hodnotu, která určuje, zda je hodnota tohoto objektu typu hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e9ad2-103">Gets a value that indicates whether this object value is a value type.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4b1e5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4b1e5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e9ad2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e9ad2-104">Syntax</span></span>  
   
 ```  
 HRESULT IsValueClass (  
@@ -35,19 +35,19 @@ HRESULT IsValueClass (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="4b1e5-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4b1e5-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="e9ad2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e9ad2-105">Parameters</span></span>  
  `pbIsValueClass`  
- <span data-ttu-id="4b1e5-106">[out] Ukazatel na logickou hodnotu, která je `true` Pokud hodnoty objektu, která je reprezentována tento "ICorDebugObjectValue", je hodnota typu místo odkazového typu; v opačném `pbIsValueClass` je `false`.</span><span class="sxs-lookup"><span data-stu-id="4b1e5-106">[out] A pointer to a Boolean value that is `true` if the object value, represented by this "ICorDebugObjectValue", is a value type rather than a reference type; otherwise, `pbIsValueClass` is `false`.</span></span>  
+ <span data-ttu-id="e9ad2-106">[out] Ukazatel na logickou hodnotu, která je `true` Pokud hodnoty objektu, která je reprezentována tento "ICorDebugObjectValue", je typ hodnoty místo odkazový typ; v opačném případě `pbIsValueClass` je `false`.</span><span class="sxs-lookup"><span data-stu-id="e9ad2-106">[out] A pointer to a Boolean value that is `true` if the object value, represented by this "ICorDebugObjectValue", is a value type rather than a reference type; otherwise, `pbIsValueClass` is `false`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4b1e5-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4b1e5-107">Requirements</span></span>  
- <span data-ttu-id="4b1e5-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4b1e5-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e9ad2-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e9ad2-107">Requirements</span></span>  
+ <span data-ttu-id="e9ad2-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e9ad2-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4b1e5-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="4b1e5-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="e9ad2-109">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e9ad2-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="4b1e5-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4b1e5-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="e9ad2-110">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e9ad2-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="4b1e5-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4b1e5-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e9ad2-111">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e9ad2-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4b1e5-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="4b1e5-112">See Also</span></span>  
-    
- 
+## <a name="see-also"></a><span data-ttu-id="e9ad2-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e9ad2-112">See also</span></span>
+
+

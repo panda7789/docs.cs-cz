@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 88323f50acac28f1f703a34213f46db82e67d5dd
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44862b96d882686bef0cc37e37252d0b7b1551e5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442725"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54737816"
 ---
-# <a name="iceegengenerateceememoryimage-method"></a><span data-ttu-id="f8faf-102">ICeeGen::GenerateCeeMemoryImage – metoda</span><span class="sxs-lookup"><span data-stu-id="f8faf-102">ICeeGen::GenerateCeeMemoryImage Method</span></span>
-<span data-ttu-id="f8faf-103">Generuje bitovou kopii v paměti pro základu kódu.</span><span class="sxs-lookup"><span data-stu-id="f8faf-103">Generates an image in memory for the code base.</span></span>  
+# <a name="iceegengenerateceememoryimage-method"></a><span data-ttu-id="91496-102">ICeeGen::GenerateCeeMemoryImage – metoda</span><span class="sxs-lookup"><span data-stu-id="91496-102">ICeeGen::GenerateCeeMemoryImage Method</span></span>
+<span data-ttu-id="91496-103">Vytvoří bitovou kopii v paměti pro základ kódu.</span><span class="sxs-lookup"><span data-stu-id="91496-103">Generates an image in memory for the code base.</span></span>  
   
- <span data-ttu-id="f8faf-104">Tato metoda je zastaralá a by se neměla používat.</span><span class="sxs-lookup"><span data-stu-id="f8faf-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="91496-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="91496-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f8faf-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f8faf-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="91496-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="91496-105">Syntax</span></span>  
   
 ```  
 HRESULT GenerateCeeMemoryImage (  
@@ -37,18 +37,18 @@ HRESULT GenerateCeeMemoryImage (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="f8faf-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="f8faf-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="91496-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="91496-106">Parameters</span></span>  
  `ppImage`  
- <span data-ttu-id="f8faf-107">[out] Ukazatel na bitovou kopii vygenerovaný.</span><span class="sxs-lookup"><span data-stu-id="f8faf-107">[out] A pointer to the generated image.</span></span>  
+ <span data-ttu-id="91496-107">[out] Ukazatel na generovaného obrázku.</span><span class="sxs-lookup"><span data-stu-id="91496-107">[out] A pointer to the generated image.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f8faf-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f8faf-108">Requirements</span></span>  
- <span data-ttu-id="f8faf-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f8faf-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="91496-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="91496-108">Requirements</span></span>  
+ <span data-ttu-id="91496-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="91496-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f8faf-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f8faf-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="91496-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="91496-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f8faf-111">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f8faf-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="91496-111">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="91496-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="f8faf-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f8faf-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="91496-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="91496-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f8faf-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="f8faf-113">See Also</span></span>  
- [<span data-ttu-id="f8faf-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f8faf-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a><span data-ttu-id="91496-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="91496-113">See also</span></span>
+- [<span data-ttu-id="91496-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="91496-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

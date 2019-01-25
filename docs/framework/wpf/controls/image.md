@@ -7,26 +7,26 @@ helpviewer_keywords:
 - controls [WPF], Image
 - Image control [WPF]
 ms.assetid: 5707e860-ee4a-4c9f-b123-80c64996af19
-ms.openlocfilehash: 0e5fc4e97457858cfbf517726a6f2904a282727d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f8a7e9adb8ca7d9e21bbc30a346b12d8b584067a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554002"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695796"
 ---
-# <a name="image"></a><span data-ttu-id="7ca2c-102">Image</span><span class="sxs-lookup"><span data-stu-id="7ca2c-102">Image</span></span>
-<span data-ttu-id="7ca2c-103"><xref:System.Windows.Controls.Image> Element se používá k zobrazení obrázků rastrový obrázek v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace.</span><span class="sxs-lookup"><span data-stu-id="7ca2c-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="image"></a><span data-ttu-id="1e08b-102">Image</span><span class="sxs-lookup"><span data-stu-id="1e08b-102">Image</span></span>
+<span data-ttu-id="1e08b-103"><xref:System.Windows.Controls.Image> Element slouží k zobrazení bitmapové obrázky v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací.</span><span class="sxs-lookup"><span data-stu-id="1e08b-103">The <xref:System.Windows.Controls.Image> element is used to display bitmap images in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="7ca2c-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="7ca2c-104">In This Section</span></span>  
- [<span data-ttu-id="7ca2c-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7ca2c-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/image-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1e08b-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1e08b-104">In This Section</span></span>  
+ [<span data-ttu-id="1e08b-105">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="1e08b-105">How-to Topics</span></span>](../../../../docs/framework/wpf/controls/image-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="7ca2c-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="7ca2c-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1e08b-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="1e08b-106">Reference</span></span>  
  <xref:System.Windows.Controls.Image>  
   
  <xref:System.Windows.Media.Imaging.BitmapImage>  
   
  <xref:System.Windows.Media.Imaging.BitmapSource>  
   
-## <a name="see-also"></a><span data-ttu-id="7ca2c-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="7ca2c-107">See Also</span></span>  
- [<span data-ttu-id="7ca2c-108">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="7ca2c-108">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)  
- [<span data-ttu-id="7ca2c-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="7ca2c-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)
+## <a name="see-also"></a><span data-ttu-id="1e08b-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1e08b-107">See also</span></span>
+- [<span data-ttu-id="1e08b-108">Přehled obrázků</span><span class="sxs-lookup"><span data-stu-id="1e08b-108">Imaging Overview</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md)
+- [<span data-ttu-id="1e08b-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="1e08b-109">How-to Topics</span></span>](../../../../docs/framework/wpf/graphics-multimedia/imaging-how-to-topics.md)

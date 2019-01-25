@@ -2,17 +2,17 @@
 title: 'Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2d29fcaa-60df-43d4-8ccc-6cdba7c013e9
-ms.openlocfilehash: f510de028198dc6ad1f86490704d1c8df6e39cf4
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 232be52bb75c6e07773c79a65f4e8e8f346a65d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44201020"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54747788"
 ---
-# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="b523f-102">Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b523f-102">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
-<span data-ttu-id="b523f-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="b523f-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="b523f-104">Tento soubor obsahuje několik nákupních objednávek.</span><span class="sxs-lookup"><span data-stu-id="b523f-104">This file contains several purchase orders.</span></span>  
+# <a name="sample-xml-file-multiple-purchase-orders-linq-to-xml"></a><span data-ttu-id="1c320-102">Ukázkový soubor XML: Více nákupních objednávek (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="1c320-102">Sample XML File: Multiple Purchase Orders (LINQ to XML)</span></span>
+<span data-ttu-id="1c320-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="1c320-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="1c320-104">Tento soubor obsahuje několik nákupních objednávek.</span><span class="sxs-lookup"><span data-stu-id="1c320-104">This file contains several purchase orders.</span></span>  
   
-## <a name="purchaseordersxml"></a><span data-ttu-id="b523f-105">PurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="b523f-105">PurchaseOrders.xml</span></span>  
+## <a name="purchaseordersxml"></a><span data-ttu-id="1c320-105">PurchaseOrders.xml</span><span class="sxs-lookup"><span data-stu-id="1c320-105">PurchaseOrders.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -109,6 +109,6 @@ ms.locfileid: "44201020"
 </PurchaseOrders>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b523f-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="b523f-106">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1c320-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1c320-106">See also</span></span>
 
-- [<span data-ttu-id="b523f-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="b523f-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="1c320-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="1c320-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d09681f97829f88bedf53af229298d5d57d764df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d057032f2a46ef29a903ae21ab13af02f9d657f1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402686"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728762"
 ---
-# <a name="icordebugcodegetcode-method"></a><span data-ttu-id="ab652-102">ICorDebugCode::GetCode – metoda</span><span class="sxs-lookup"><span data-stu-id="ab652-102">ICorDebugCode::GetCode Method</span></span>
-<span data-ttu-id="ab652-103">Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad.</span><span class="sxs-lookup"><span data-stu-id="ab652-103">Gets all the code for the specified function, formatted for disassembly.</span></span> <span data-ttu-id="ab652-104">Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="ab652-104">This method has been deprecated in the .NET Framework version 2.0.</span></span> <span data-ttu-id="ab652-105">Použití [icordebugcode2::getcodechunks –](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="ab652-105">Use [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) instead.</span></span>  
+# <a name="icordebugcodegetcode-method"></a><span data-ttu-id="f2923-102">ICorDebugCode::GetCode – metoda</span><span class="sxs-lookup"><span data-stu-id="f2923-102">ICorDebugCode::GetCode Method</span></span>
+<span data-ttu-id="f2923-103">Vrátí celý kód pro zadanou funkci, který je formátován pro zpětný překlad.</span><span class="sxs-lookup"><span data-stu-id="f2923-103">Gets all the code for the specified function, formatted for disassembly.</span></span> <span data-ttu-id="f2923-104">Tato metoda je zastaralá v rozhraní .NET Framework verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="f2923-104">This method has been deprecated in the .NET Framework version 2.0.</span></span> <span data-ttu-id="f2923-105">Použití [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) místo.</span><span class="sxs-lookup"><span data-stu-id="f2923-105">Use [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ab652-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ab652-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f2923-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f2923-106">Syntax</span></span>  
   
 ```  
 HRESULT GetCode (  
@@ -40,34 +40,34 @@ HRESULT GetCode (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ab652-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="ab652-107">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="f2923-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="f2923-107">Parameters</span></span>  
  `startOffset`  
- <span data-ttu-id="ab652-108">[v] Posun od funkce.</span><span class="sxs-lookup"><span data-stu-id="ab652-108">[in] The offset of the beginning of the function.</span></span>  
+ <span data-ttu-id="f2923-108">[in] Posun zahájení funkce.</span><span class="sxs-lookup"><span data-stu-id="f2923-108">[in] The offset of the beginning of the function.</span></span>  
   
  `endOffset`  
- <span data-ttu-id="ab652-109">[v] Posun konec funkce.</span><span class="sxs-lookup"><span data-stu-id="ab652-109">[in] The offset of the end of the function.</span></span>  
+ <span data-ttu-id="f2923-109">[in] Posun od konce funkce.</span><span class="sxs-lookup"><span data-stu-id="f2923-109">[in] The offset of the end of the function.</span></span>  
   
  `cBufferAlloc`  
- <span data-ttu-id="ab652-110">[v] Velikost `buffer` pole, do které bude vrácen kód.</span><span class="sxs-lookup"><span data-stu-id="ab652-110">[in] The size of the `buffer` array into which the code will be returned.</span></span>  
+ <span data-ttu-id="f2923-110">[in] Velikost `buffer` pole, do které bude vrácen kód.</span><span class="sxs-lookup"><span data-stu-id="f2923-110">[in] The size of the `buffer` array into which the code will be returned.</span></span>  
   
  `buffer`  
- <span data-ttu-id="ab652-111">[out] Pole, do kterého bude vrácen kód.</span><span class="sxs-lookup"><span data-stu-id="ab652-111">[out] The array into which the code will be returned.</span></span>  
+ <span data-ttu-id="f2923-111">[out] Pole, do kterého bude vrácen kód.</span><span class="sxs-lookup"><span data-stu-id="f2923-111">[out] The array into which the code will be returned.</span></span>  
   
  `pcBufferSize`  
- <span data-ttu-id="ab652-112">[out] Počet bajtů vrácených.</span><span class="sxs-lookup"><span data-stu-id="ab652-112">[out] The number of bytes returned.</span></span>  
+ <span data-ttu-id="f2923-112">[out] Počet bajtů vrácených.</span><span class="sxs-lookup"><span data-stu-id="f2923-112">[out] The number of bytes returned.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ab652-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ab652-113">Remarks</span></span>  
- <span data-ttu-id="ab652-114">Pokud kód funkce byl rozdělen do více bloků dat, jsou zřetězeny v pořadí podle zvýšení nativní posun.</span><span class="sxs-lookup"><span data-stu-id="ab652-114">If the function's code has been divided into multiple chunks, they are concatenated in order of increasing native offset.</span></span> <span data-ttu-id="ab652-115">Instrukce hranice nejsou zaškrtnutí.</span><span class="sxs-lookup"><span data-stu-id="ab652-115">Instruction boundaries are not checked.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f2923-113">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f2923-113">Remarks</span></span>  
+ <span data-ttu-id="f2923-114">Pokud funkce kód byl rozdělen do více bloků dat, jsou spojeny v pořadí podle zvýšení nativní posun.</span><span class="sxs-lookup"><span data-stu-id="f2923-114">If the function's code has been divided into multiple chunks, they are concatenated in order of increasing native offset.</span></span> <span data-ttu-id="f2923-115">Instrukce hranice nekontrolují.</span><span class="sxs-lookup"><span data-stu-id="f2923-115">Instruction boundaries are not checked.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ab652-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ab652-116">Requirements</span></span>  
- <span data-ttu-id="ab652-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ab652-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f2923-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f2923-116">Requirements</span></span>  
+ <span data-ttu-id="f2923-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f2923-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ab652-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="ab652-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="f2923-118">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f2923-118">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="ab652-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ab652-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="f2923-119">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f2923-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ab652-120">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="ab652-120">**.NET Framework Versions:** 1.1, 1.0</span></span>  
+ <span data-ttu-id="f2923-120">**Verze rozhraní .NET framework:** 1.1, 1.0</span><span class="sxs-lookup"><span data-stu-id="f2923-120">**.NET Framework Versions:** 1.1, 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ab652-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="ab652-121">See Also</span></span>  
- [<span data-ttu-id="ab652-122">GetCodeChunks – metoda</span><span class="sxs-lookup"><span data-stu-id="ab652-122">GetCodeChunks Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)  
- 
+## <a name="see-also"></a><span data-ttu-id="f2923-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f2923-121">See also</span></span>
+- [<span data-ttu-id="f2923-122">GetCodeChunks – metoda</span><span class="sxs-lookup"><span data-stu-id="f2923-122">GetCodeChunks Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)
+

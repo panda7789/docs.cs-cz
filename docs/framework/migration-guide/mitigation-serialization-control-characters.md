@@ -1,5 +1,5 @@
 ---
-title: 'Omezení rizik: Serializace s objektu DataContractJsonSerializer. řídicí znaky'
+title: 'Omezení rizik: Serializace ovládacího prvku znaků s vlastností objektu DataContractJsonSerializer'
 ms.date: 04/07/2017
 helpviewer_keywords:
 - .NET Framework 4.7 retargeting changes
@@ -9,32 +9,32 @@ helpviewer_keywords:
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a00edbf2d5833349de14986f2a57a2c943f3ea8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 31f946fa01f3d6334011098d12483445159ce54a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33388430"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738115"
 ---
-# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a><span data-ttu-id="fe664-102">Omezení rizik: Serializace s objektu DataContractJsonSerializer. řídicí znaky</span><span class="sxs-lookup"><span data-stu-id="fe664-102">Mitigation: Serialization of Control Characters with the DataContractJsonSerializer</span></span>
+# <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a><span data-ttu-id="f657e-102">Omezení rizik: Serializace ovládacího prvku znaků s vlastností objektu DataContractJsonSerializer</span><span class="sxs-lookup"><span data-stu-id="f657e-102">Mitigation: Serialization of Control Characters with the DataContractJsonSerializer</span></span>
 
-<span data-ttu-id="fe664-103">Od verze 4.7 rozhraní .NET Framework, způsob, ve které řízení znaky jsou serializovat s příznakem <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> došlo ke změně tak, aby odpovídala ECMAScript V6 a v8:.</span><span class="sxs-lookup"><span data-stu-id="fe664-103">Starting with the .NET Framework 4.7, the way in which control characters are serialized with the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> has changed to conform to ECMAScript V6 and V8.</span></span> 
+<span data-ttu-id="f657e-103">Od verze rozhraní .NET Framework 4.7, způsob, ve které ovládací prvek znaky jsou serializovat s příznakem <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> změnila tak, aby odpovídal ECMAScript V6 a V8.</span><span class="sxs-lookup"><span data-stu-id="f657e-103">Starting with the .NET Framework 4.7, the way in which control characters are serialized with the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> has changed to conform to ECMAScript V6 and V8.</span></span> 
  
-## <a name="impact"></a><span data-ttu-id="fe664-104">Dopad</span><span class="sxs-lookup"><span data-stu-id="fe664-104">Impact</span></span>
+## <a name="impact"></a><span data-ttu-id="f657e-104">Dopad</span><span class="sxs-lookup"><span data-stu-id="f657e-104">Impact</span></span>
 
-<span data-ttu-id="fe664-105">V rozhraní .NET framework 4.6.2 a dřívějších verzích <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> není serializovat například některé speciální řídicí znaky `\b`, `\f`, a `\t`, tak, aby byla kompatibilní se standardy ECMAScript V6 a v8:.</span><span class="sxs-lookup"><span data-stu-id="fe664-105">In the .NET framework 4.6.2 and earlier versions, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> did not serialize some special control characters, such as `\b`, `\f`, and `\t`, in a way that was compatible with the ECMAScript V6 and V8 standards.</span></span>
+<span data-ttu-id="f657e-105">V rozhraní .NET framework 4.6.2 a dřívějších verzích <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> není serializovat jako některé speciální řídicí znaky `\b`, `\f`, a `\t`, tak, aby byla kompatibilní se standardy ECMAScript V6 a V8.</span><span class="sxs-lookup"><span data-stu-id="f657e-105">In the .NET framework 4.6.2 and earlier versions, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> did not serialize some special control characters, such as `\b`, `\f`, and `\t`, in a way that was compatible with the ECMAScript V6 and V8 standards.</span></span>
 
-<span data-ttu-id="fe664-106">Pro aplikace, které cílové verze rozhraní .NET Framework, počínaje 4.7 rozhraní .NET Framework je kompatibilní s ECMAScript V6 a v8: serializace tyto řídicí znaky.</span><span class="sxs-lookup"><span data-stu-id="fe664-106">For apps that target versions of the .NET Framework starting with the .NET Framework 4.7, serialization of these control characters is compatible with ECMAScript V6 and V8.</span></span> <span data-ttu-id="fe664-107">Následující rozhraní API se vztahuje:</span><span class="sxs-lookup"><span data-stu-id="fe664-107">The following APIs are affected:</span></span>
+<span data-ttu-id="f657e-106">U aplikací s cílovou verzí rozhraní .NET Framework počínaje .NET Framework 4.7 je kompatibilní s ECMAScript V6 a V8 serializace tyto řídicí znaky.</span><span class="sxs-lookup"><span data-stu-id="f657e-106">For apps that target versions of the .NET Framework starting with the .NET Framework 4.7, serialization of these control characters is compatible with ECMAScript V6 and V8.</span></span> <span data-ttu-id="f657e-107">Jsou ovlivněny následující rozhraní API:</span><span class="sxs-lookup"><span data-stu-id="f657e-107">The following APIs are affected:</span></span>
 
 - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> 
 - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>
 - <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>
 
-## <a name="mitigation"></a><span data-ttu-id="fe664-108">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="fe664-108">Mitigation</span></span>
+## <a name="mitigation"></a><span data-ttu-id="f657e-108">Zmírnění</span><span class="sxs-lookup"><span data-stu-id="f657e-108">Mitigation</span></span>
 
-<span data-ttu-id="fe664-109">Pro aplikace, které cílové verze rozhraní .NET Framework, počínaje 4.7 rozhraní .NET Framework toto chování je standardně povolená.</span><span class="sxs-lookup"><span data-stu-id="fe664-109">For apps that target versions of the .NET Framework starting with the .NET Framework 4.7, this behavior is enabled by default.</span></span>
+<span data-ttu-id="f657e-109">U aplikací s cílovou verzí rozhraní .NET Framework počínaje .NET Framework 4.7 pro toto chování je standardně povolená.</span><span class="sxs-lookup"><span data-stu-id="f657e-109">For apps that target versions of the .NET Framework starting with the .NET Framework 4.7, this behavior is enabled by default.</span></span>
 
-<span data-ttu-id="fe664-110">Pokud toto chování není žádoucí, můžete zamítnutí této funkce přidáním následující řádek do `<runtime>` v souboru app.config nebo web.config:</span><span class="sxs-lookup"><span data-stu-id="fe664-110">If this behavior is not desirable, you can opt out of this feature by adding the following line to the `<runtime>` section of the app.config or web.config file:</span></span>
+<span data-ttu-id="f657e-110">Pokud toto chování není žádoucí, můžete se rozhodnout tuto funkci tak, že přidáte následující řádek, který `<runtime>` část souboru app.config nebo web.config:</span><span class="sxs-lookup"><span data-stu-id="f657e-110">If this behavior is not desirable, you can opt out of this feature by adding the following line to the `<runtime>` section of the app.config or web.config file:</span></span>
 
 ```xml
 <runtime>
@@ -42,5 +42,5 @@ ms.locfileid: "33388430"
 </runtime>
 ```
  
-## <a name="see-also"></a><span data-ttu-id="fe664-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="fe664-111">See also</span></span>
-[<span data-ttu-id="fe664-112">Změny cílení v rozhraní .NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="fe664-112">Retargeting Changes in the .NET Framework 4.7</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-7.md)
+## <a name="see-also"></a><span data-ttu-id="f657e-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f657e-111">See also</span></span>
+- [<span data-ttu-id="f657e-112">Změny cílení v rozhraní .NET Framework 4.7</span><span class="sxs-lookup"><span data-stu-id="f657e-112">Retargeting Changes in the .NET Framework 4.7</span></span>](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-7.md)

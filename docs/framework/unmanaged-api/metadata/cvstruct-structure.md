@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 195f311d58f2169d715bb33986ee6e591622f377
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb73980faa64464c572945fe5ad04e015dc8805b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445040"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720649"
 ---
-# <a name="cvstruct-structure"></a><span data-ttu-id="ac7fb-102">CVStruct – struktura</span><span class="sxs-lookup"><span data-stu-id="ac7fb-102">CVStruct Structure</span></span>
-<span data-ttu-id="ac7fb-103">Obsahuje informace, které se používá při instalaci modulu nebo složený bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="ac7fb-103">Contains information that is used when installing a module or a composite image.</span></span>  
+# <a name="cvstruct-structure"></a><span data-ttu-id="9a402-102">CVStruct – struktura</span><span class="sxs-lookup"><span data-stu-id="9a402-102">CVStruct Structure</span></span>
+<span data-ttu-id="9a402-103">Obsahuje informace, které se použijí při instalaci modulu nebo složený bitové kopie.</span><span class="sxs-lookup"><span data-stu-id="9a402-103">Contains information that is used when installing a module or a composite image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ac7fb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ac7fb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9a402-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9a402-104">Syntax</span></span>  
   
 ```  
 typedef struct {  
@@ -37,23 +37,23 @@ typedef struct {
 } CVStruct;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="ac7fb-105">Členové</span><span class="sxs-lookup"><span data-stu-id="ac7fb-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="9a402-105">Členové</span><span class="sxs-lookup"><span data-stu-id="9a402-105">Members</span></span>  
   
-|<span data-ttu-id="ac7fb-106">Člen</span><span class="sxs-lookup"><span data-stu-id="ac7fb-106">Member</span></span>|<span data-ttu-id="ac7fb-107">Popis</span><span class="sxs-lookup"><span data-stu-id="ac7fb-107">Description</span></span>|  
+|<span data-ttu-id="9a402-106">Člen</span><span class="sxs-lookup"><span data-stu-id="9a402-106">Member</span></span>|<span data-ttu-id="9a402-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9a402-107">Description</span></span>|  
 |------------|-----------------|  
-|<span data-ttu-id="ac7fb-108">Hlavní</span><span class="sxs-lookup"><span data-stu-id="ac7fb-108">Major</span></span>|<span data-ttu-id="ac7fb-109">Číslo sestavení hlavní verzi.</span><span class="sxs-lookup"><span data-stu-id="ac7fb-109">Major version build number.</span></span>|  
-|<span data-ttu-id="ac7fb-110">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="ac7fb-110">Minor</span></span>|<span data-ttu-id="ac7fb-111">Číslo sestavení podverze.</span><span class="sxs-lookup"><span data-stu-id="ac7fb-111">Minor version build number.</span></span>|  
-|<span data-ttu-id="ac7fb-112">Sub</span><span class="sxs-lookup"><span data-stu-id="ac7fb-112">Sub</span></span>|<span data-ttu-id="ac7fb-113">Číslo dílčí sestavení.</span><span class="sxs-lookup"><span data-stu-id="ac7fb-113">Sub-build number.</span></span>|  
-|<span data-ttu-id="ac7fb-114">Sestavení</span><span class="sxs-lookup"><span data-stu-id="ac7fb-114">Build</span></span>|<span data-ttu-id="ac7fb-115">Číslo sestavení.</span><span class="sxs-lookup"><span data-stu-id="ac7fb-115">Build number.</span></span>|  
+|<span data-ttu-id="9a402-108">Hlavní</span><span class="sxs-lookup"><span data-stu-id="9a402-108">Major</span></span>|<span data-ttu-id="9a402-109">Číslo hlavní verze sestavení.</span><span class="sxs-lookup"><span data-stu-id="9a402-109">Major version build number.</span></span>|  
+|<span data-ttu-id="9a402-110">Vedlejší</span><span class="sxs-lookup"><span data-stu-id="9a402-110">Minor</span></span>|<span data-ttu-id="9a402-111">Číslo podverze sestavení.</span><span class="sxs-lookup"><span data-stu-id="9a402-111">Minor version build number.</span></span>|  
+|<span data-ttu-id="9a402-112">Sub</span><span class="sxs-lookup"><span data-stu-id="9a402-112">Sub</span></span>|<span data-ttu-id="9a402-113">Dílčí číslo sestavení.</span><span class="sxs-lookup"><span data-stu-id="9a402-113">Sub-build number.</span></span>|  
+|<span data-ttu-id="9a402-114">Sestavení</span><span class="sxs-lookup"><span data-stu-id="9a402-114">Build</span></span>|<span data-ttu-id="9a402-115">Číslo sestavení.</span><span class="sxs-lookup"><span data-stu-id="9a402-115">Build number.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="ac7fb-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ac7fb-116">Requirements</span></span>  
- <span data-ttu-id="ac7fb-117">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ac7fb-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9a402-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9a402-116">Requirements</span></span>  
+ <span data-ttu-id="9a402-117">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9a402-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ac7fb-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ac7fb-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="9a402-118">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9a402-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="ac7fb-119">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ac7fb-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="9a402-119">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9a402-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="ac7fb-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ac7fb-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9a402-120">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9a402-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ac7fb-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="ac7fb-121">See Also</span></span>  
- [<span data-ttu-id="ac7fb-122">Struktury pro metadata</span><span class="sxs-lookup"><span data-stu-id="ac7fb-122">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+## <a name="see-also"></a><span data-ttu-id="9a402-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a402-121">See also</span></span>
+- [<span data-ttu-id="9a402-122">Struktury pro metadata</span><span class="sxs-lookup"><span data-stu-id="9a402-122">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)

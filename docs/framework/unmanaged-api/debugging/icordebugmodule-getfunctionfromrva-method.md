@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: db2f30001e050c1f312613c794388ffaa99d3b17
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ed9536280f64ae1400faff8d0029e5ccd51c90ee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414479"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54732437"
 ---
-# <a name="icordebugmodulegetfunctionfromrva-method"></a><span data-ttu-id="34fbe-102">ICorDebugModule::GetFunctionFromRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="34fbe-102">ICorDebugModule::GetFunctionFromRVA Method</span></span>
-<span data-ttu-id="34fbe-103">Tato metoda není implementována v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="34fbe-103">This method has not been implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugmodulegetfunctionfromrva-method"></a><span data-ttu-id="f4b84-102">ICorDebugModule::GetFunctionFromRVA – metoda</span><span class="sxs-lookup"><span data-stu-id="f4b84-102">ICorDebugModule::GetFunctionFromRVA Method</span></span>
+<span data-ttu-id="f4b84-103">Tato metoda není implementovaná v aktuální verzi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f4b84-103">This method has not been implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="34fbe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="34fbe-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f4b84-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f4b84-104">Syntax</span></span>  
   
 ```  
 HRESULT GetFunctionFromRVA(  
@@ -36,9 +36,9 @@ HRESULT GetFunctionFromRVA(
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="34fbe-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="34fbe-105">Requirements</span></span>  
- <span data-ttu-id="34fbe-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="34fbe-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f4b84-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f4b84-105">Requirements</span></span>  
+ <span data-ttu-id="f4b84-106">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="f4b84-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="34fbe-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="34fbe-107">See Also</span></span>  
-    
- 
+## <a name="see-also"></a><span data-ttu-id="f4b84-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f4b84-107">See also</span></span>
+
+

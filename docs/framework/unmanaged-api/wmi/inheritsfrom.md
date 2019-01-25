@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4784e22d5a3eec031fbee00441958a62d66b52df
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 078950b4e46ea587c2f39986963ec129f4ec1f1e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199779"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618380"
 ---
-# <a name="inheritsfrom-function"></a><span data-ttu-id="6cdb5-103">InheritsFrom – funkce</span><span class="sxs-lookup"><span data-stu-id="6cdb5-103">InheritsFrom function</span></span>
-<span data-ttu-id="6cdb5-104">Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený prvek.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-104">Determines whether the current class or instance derives from a specified parent class.</span></span>
+# <a name="inheritsfrom-function"></a><span data-ttu-id="5a7d1-103">InheritsFrom – funkce</span><span class="sxs-lookup"><span data-stu-id="5a7d1-103">InheritsFrom function</span></span>
+<span data-ttu-id="5a7d1-104">Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený prvek.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-104">Determines whether the current class or instance derives from a specified parent class.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="6cdb5-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6cdb5-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5a7d1-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5a7d1-105">Syntax</span></span>  
   
 ```
 HRESULT InheritsFrom (
@@ -38,37 +38,37 @@ HRESULT InheritsFrom (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="6cdb5-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="6cdb5-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="5a7d1-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5a7d1-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="6cdb5-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="5a7d1-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="6cdb5-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
+<span data-ttu-id="5a7d1-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszAncestor`  
-<span data-ttu-id="6cdb5-109">[in] Název třídy.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-109">[in] The name of the class.</span></span> <span data-ttu-id="6cdb5-110">`wszAncestor` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-110">`wszAncestor` must point to a valid `LPCWSTR`.</span></span>
+<span data-ttu-id="5a7d1-109">[in] Název třídy.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-109">[in] The name of the class.</span></span> <span data-ttu-id="5a7d1-110">`wszAncestor` musí odkazovat na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-110">`wszAncestor` must point to a valid `LPCWSTR`.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="6cdb5-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6cdb5-111">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="5a7d1-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5a7d1-111">Return value</span></span>
 
-<span data-ttu-id="6cdb5-112">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="6cdb5-112">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="5a7d1-112">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="5a7d1-112">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="6cdb5-113">Konstanta</span><span class="sxs-lookup"><span data-stu-id="6cdb5-113">Constant</span></span>  |<span data-ttu-id="6cdb5-114">Hodnota</span><span class="sxs-lookup"><span data-stu-id="6cdb5-114">Value</span></span>  |<span data-ttu-id="6cdb5-115">Popis</span><span class="sxs-lookup"><span data-stu-id="6cdb5-115">Description</span></span>  |
+|<span data-ttu-id="5a7d1-113">Konstanta</span><span class="sxs-lookup"><span data-stu-id="5a7d1-113">Constant</span></span>  |<span data-ttu-id="5a7d1-114">Hodnota</span><span class="sxs-lookup"><span data-stu-id="5a7d1-114">Value</span></span>  |<span data-ttu-id="5a7d1-115">Popis</span><span class="sxs-lookup"><span data-stu-id="5a7d1-115">Description</span></span>  |
 |---------|---------|---------|
-| `WBEM_S_NO_ERROR` | <span data-ttu-id="6cdb5-116">0</span><span class="sxs-lookup"><span data-stu-id="6cdb5-116">0</span></span> | <span data-ttu-id="6cdb5-117">Aktuální objekt dědí z `wszAncestor`.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-117">The current object inherits from `wszAncestor`.</span></span>  |
-| `WBEM_S_FALSE` | <span data-ttu-id="6cdb5-118">1</span><span class="sxs-lookup"><span data-stu-id="6cdb5-118">1</span></span> | <span data-ttu-id="6cdb5-119">Aktuální objekt nedědí ze `wszAncestor`.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-119">The current object does not inherit from `wszAncestor`.</span></span> |
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="6cdb5-120">0x80041008</span><span class="sxs-lookup"><span data-stu-id="6cdb5-120">0x80041008</span></span> | <span data-ttu-id="6cdb5-121">`wszAncestor` je `null`.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-121">`wszAncestor` is `null`.</span></span> |
+| `WBEM_S_NO_ERROR` | <span data-ttu-id="5a7d1-116">0</span><span class="sxs-lookup"><span data-stu-id="5a7d1-116">0</span></span> | <span data-ttu-id="5a7d1-117">Aktuální objekt dědí z `wszAncestor`.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-117">The current object inherits from `wszAncestor`.</span></span>  |
+| `WBEM_S_FALSE` | <span data-ttu-id="5a7d1-118">1</span><span class="sxs-lookup"><span data-stu-id="5a7d1-118">1</span></span> | <span data-ttu-id="5a7d1-119">Aktuální objekt nedědí ze `wszAncestor`.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-119">The current object does not inherit from `wszAncestor`.</span></span> |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="5a7d1-120">0x80041008</span><span class="sxs-lookup"><span data-stu-id="5a7d1-120">0x80041008</span></span> | <span data-ttu-id="5a7d1-121">`wszAncestor` je `null`.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-121">`wszAncestor` is `null`.</span></span> |
   
-## <a name="remarks"></a><span data-ttu-id="6cdb5-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6cdb5-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="5a7d1-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5a7d1-122">Remarks</span></span>
 
-<span data-ttu-id="6cdb5-123">Tato funkce zalamuje volání na [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) metody.</span><span class="sxs-lookup"><span data-stu-id="6cdb5-123">This function wraps a call to the [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) method.</span></span>
+<span data-ttu-id="5a7d1-123">Tato funkce zalamuje volání na [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) metody.</span><span class="sxs-lookup"><span data-stu-id="5a7d1-123">This function wraps a call to the [IWbemClassObject::InheritsFrom](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-inheritsfrom) method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6cdb5-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6cdb5-124">Requirements</span></span>  
- <span data-ttu-id="6cdb5-125">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6cdb5-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5a7d1-124">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5a7d1-124">Requirements</span></span>  
+ <span data-ttu-id="5a7d1-125">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5a7d1-125">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6cdb5-126">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="6cdb5-126">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="5a7d1-126">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="5a7d1-126">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="6cdb5-127">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="6cdb5-127">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="5a7d1-127">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="5a7d1-127">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6cdb5-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6cdb5-128">See also</span></span>  
-[<span data-ttu-id="6cdb5-129">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="6cdb5-129">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="5a7d1-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5a7d1-128">See also</span></span>
+- [<span data-ttu-id="5a7d1-129">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="5a7d1-129">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
