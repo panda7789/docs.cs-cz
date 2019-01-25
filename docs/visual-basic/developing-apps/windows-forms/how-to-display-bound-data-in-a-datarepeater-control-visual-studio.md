@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater (Visual Studio)'
+title: 'Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater (Visual Studio)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - DataRepeater, data-binding
 - DataRepeater, displaying bound controls
 ms.assetid: 56a15326-1334-4275-af4e-075cad79e6f7
-ms.openlocfilehash: b96fb33a0dcf80a86d1fcb6e219e5f35b1f7351c
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: dbcd814edb78c54ce5629a1a8761142674fe6135
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933403"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684616"
 ---
-# <a name="how-to-display-bound-data-in-a-datarepeater-control-visual-studio"></a>Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater (Visual Studio)
+# <a name="how-to-display-bound-data-in-a-datarepeater-control-visual-studio"></a>Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater (Visual Studio)
 Nejběžnější použití nástroje <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> zobrazení vázaných dat z databáze nebo jiného zdroje dat je ovládací prvek.  
   
- Kromě vázaných ovládacích prvků, můžete chtít přidat další ovládací prvky, jako je například statický popisek nebo obrázek, který se opakuje pro každou položku v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Další informace najdete v tématu [postupy: zobrazení nevázaných ovládacích prvků v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md).  
+ Kromě vázaných ovládacích prvků, můžete chtít přidat další ovládací prvky, jako je například statický popisek nebo obrázek, který se opakuje pro každou položku v <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> ovládacího prvku. Další informace najdete v tématu [jak: Zobrazení nevázaných ovládacích prvků v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md).  
   
  Můžete také navázat na zdroj dat v době běhu tak, že nastavíte <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.VirtualMode%2A> vlastnost `True` a zdrojem dat pro přiřazení <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.DataSource%2A> vlastnost. V takovém případě bude nutné spravovat veškerou interakci se zdroji dat. Další informace najdete v tématu [virtuálního režimu v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/virtual-mode-in-the-datarepeater-control-visual-studio.md).  
   
@@ -44,10 +44,10 @@ Nejběžnější použití nástroje <xref:Microsoft.VisualBasic.PowerPacks.Data
   
      Můžete určit, které typy ovládacích prvků se zobrazí pro každé pole. Další informace najdete v tématu [nastavení ovládacího prvku, který má být vytvořen při přetažení z okna zdroje dat](/visualstudio/data-tools/set-the-control-to-be-created-when-dragging-from-the-data-sources-window).  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  
- [Úvod do ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)  
- [Postupy: Zobrazení nevázaných ovládacích prvků v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)  
- [Postupy: vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků DataRepeater (Visual Studio)](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)  
- [Postupy: Změna vzhledu ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)  
- [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>
+- [Úvod do ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)
+- [Postupy: Zobrazení nevázaných ovládacích prvků v ovládacím prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)
+- [Postupy: Vytvoření hlavního/podrobného formuláře pomocí dvou ovládacích prvků DataRepeater (Visual Studio)](../../../visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)
+- [Postupy: Změna vzhledu ovládacího prvku DataRepeater](../../../visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)
+- [Řešení potíží s ovládacím prvkem DataRepeater](../../../visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f046fb51753bfa79d333d465e8850794ecc73973
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b9d775d5c386abeb100604250008ebf1bf377e8b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33453535"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550809"
 ---
 # <a name="icorprofilerinfo2getboxclasslayout-method"></a>ICorProfilerInfo2::GetBoxClassLayout – metoda
-Získá informace o tom, kde nachází typ zadané hodnoty při je zabalená.  
+Získá informace o tom, kde je zadanou hodnotu typu umístěn při je zabalená.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetBoxClassLayout(
   
 #### <a name="parameters"></a>Parametry  
  `classId`  
- [v] ID třídy, která popisuje typ hodnoty, který je zabalená.  
+ [in] ID třídy, která popisuje typ hodnoty, který je v poli.  
   
  `pBufferOffset`  
- [out] Celé číslo, které je posun vzhledem k zabalené objekt ukazatel ID typ hodnoty.  
+ [out] Celé číslo, které je posun vzhledem k ukazatel ID zabalený objekt typu hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- `pBufferOffset` Hodnota je umístění typ hodnoty v rámci pole. Po `pBufferOffset` se použije na objekt zabalené rozložení třída typ hodnoty lze interpretovat hodnota objektu.  
+ `pBufferOffset` Hodnota označuje umístění systému typ hodnoty v poli. Po `pBufferOffset` se použije na zabalený objekt rozložení třídy typ hodnoty je možné pro interpretaci hodnoty objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,6 +54,6 @@ HRESULT GetBoxClassLayout(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

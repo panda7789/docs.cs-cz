@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)'
+title: 'Průvodce: Vytváření a používání dynamických objektů (C# a Visual Basic)'
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-ms.openlocfilehash: 8134a7c7c1f2c4e6432dd19889faf796a9284553
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: ff46fcc14a8a8e3d6c6d31dcb8c922640d6478c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347965"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691748"
 ---
-# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Postupy: Vytváření a používání dynamických objektů (C# a Visual Basic)
+# <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>Průvodce: Vytváření a používání dynamických objektů (C# a Visual Basic)
 
 Dynamické objekty zveřejnit členy jako jsou vlastnosti a metody v době běhu, místo v v době kompilace. To umožňuje vytvářet objekty pro práci s struktury, které neodpovídají statický typ nebo formát. Můžete například použít dynamický objekt tak, aby odkazovaly HTML Document Object Model (DOM), který může obsahovat libovolnou kombinaci platné značky elementů a atributů HTML. Vzhledem k tomu, že každý dokument HTML je jedinečný, se určují členy u konkrétního dokumentu HTML v době běhu. Běžnou metodou chcete odkazovat na atribut elementu HTML je předat název atributu, který má `GetProperty` metoda elementu. Odkaz `id` atribut elementu HTML `<div id="Div1">`, nejprve získejte odkaz na `<div>` element a pak použijte `divElement.GetProperty("id")`. Pokud používáte dynamický objekt, můžete odkazovat `id` atribut jako `divElement.id`.  
   
@@ -43,7 +43,7 @@ První projekt, který vytvoříte v tomto názorném postupu definuje vlastní 
   
 ### <a name="to-create-a-custom-dynamic-class"></a>Pro vytvoření vlastní třídy dynamické  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  Na **souboru** nabídky, přejděte k **nový** a potom klikněte na tlačítko **projektu**.  
   
@@ -134,9 +134,9 @@ Dalším projektu, který vytvoříte v tomto názorném postupu má přístup k
   
 2.  V **nový projekt** v dialogu **typy projektů** podokno, ujistěte se, že **Windows** zaškrtnuto. Vyberte **konzolovou aplikaci** v **šablony** podokně. V **název** zadejte `DynamicIronPythonSample`a potom klikněte na tlačítko **OK**. Vytvoření nového projektu.  
   
-3.  Pokud používáte Visual Basic, klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **odkazy** kartu. Klikněte na tlačítko **přidat** tlačítko. Pokud používáte jazyk Visual C# v **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.  
+3.  Pokud používáte Visual Basic, klikněte pravým tlačítkem na projekt DynamicIronPythonSample a pak klikněte na tlačítko **vlastnosti**. Klikněte na tlačítko **odkazy** kartu. Klikněte na tlačítko **Přidat**. Pokud používáte jazyk Visual C# v **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy** složku a pak klikněte na tlačítko **přidat odkaz**.  
   
-4.  Na **Procházet** kartu, přejděte do složky, ve kterém jsou nainstalované knihovny Ironpythonu. Například C:\Program pro rozhraní .NET 4.0 2.6 Files\IronPython. Vyberte **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll**, a **Microsoft.Dynamic.dll** knihovny . Klikněte na tlačítko **OK**.  
+4.  Na **Procházet** kartu, přejděte do složky, ve kterém jsou nainstalované knihovny Ironpythonu. Například C:\Program pro rozhraní .NET 4.0 2.6 Files\IronPython. Vyberte **IronPython.dll**, **IronPython.Modules.dll**, **Microsoft.Scripting.dll**, a **Microsoft.Dynamic.dll** knihovny . Klikněte na **OK**.  
   
 5.  Pokud používáte Visual Basic, upravte soubor Module1.vb. Pokud používáte jazyk Visual C#, upravte soubor Program.cs.  
   
@@ -157,11 +157,11 @@ Dalším projektu, který vytvoříte v tomto názorném postupu má přístup k
   
 9. Uložte soubor a stiskněte klávesu CTRL + F5 sestavte a spusťte aplikaci.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Dynamic?displayProperty=nameWithType>  
-- <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>  
-- [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)  
-- [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
-- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
+- <xref:System.Dynamic?displayProperty=nameWithType>
+- <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>
+- [Použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)
+- [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)
 - [Implementovat dynamické rozhraní (ke stažení PDF z Microsoft TechNet)](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/implementing-dynamic-interfaces.pdf)

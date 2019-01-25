@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 103deb5ec46ba8c1d385c5339bc52a0c220c4c93
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33c2a244622f562c074808a78f7c57134d5a9202
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33439765"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689062"
 ---
 # <a name="ihostsemaphore-interface"></a>IHostSemaphore – rozhraní
 Představuje hostitele implementaci semaforu pro dělení na vlákna.  
@@ -30,21 +30,21 @@ Představuje hostitele implementaci semaforu pro dělení na vlákna.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ReleaseSemaphore – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|Zvyšuje počet aktuální `IHostSemaphore` instanci zadanou velikost.|  
-|[Wait – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|Způsobí, že aktuální `IHostSemaphore` instance počkat, dokud je vlastněná nebo zadaného množství času po uplynutí předem.|  
+|[ReleaseSemaphore – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-releasesemaphore-method.md)|Zvýší počet aktuální `IHostSemaphore` instance podle zadaného množství.|  
+|[Wait – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-wait-method.md)|Způsobí, že aktuální `IHostSemaphore` instance počkat, dokud je ve vlastnictví nebo zadaného množství času po uplynutí předem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
- [IHostAutoEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
- [IHostManualEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)  
- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)
+- [IHostAutoEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)
+- [IHostManualEvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)
+- [IHostSyncManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

@@ -2,15 +2,15 @@
 title: Ukázka slabě typované serializace JSON
 ms.date: 03/30/2017
 ms.assetid: 0b30e501-4ef5-474d-9fad-a9d559cf9c52
-ms.openlocfilehash: 07166b89729fed7911cb842313269e420ae401b7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 212a5ea362600e833303711b750d1c7a0f7252b6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857664"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676052"
 ---
 # <a name="weakly-typed-json-serialization-sample"></a>Ukázka slabě typované serializace JSON
-Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [postupy: serializace a deserializace dat JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
+Při serializaci uživatelem definovaný typ daného přenosový formát nebo deserializaci přenosový formát zpět do uživatelem definovaný typ, daný uživatelský typ musí být k dispozici na službu nebo klienta. Obvykle k tomu, <xref:System.Runtime.Serialization.DataContractAttribute> atribut bude použit pro tyto typy definované uživatelem a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu se použije pro jejich členy. Tento mechanismus platí i v případě práce s objekty JavaScript Object Notation (JSON), jak je popsáno v tématu [jak: Serializace a deserializace dat protokolu JSON](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md).  
   
  V některých případech musí přístup služby Windows Communication Foundation (WCF) ani klienta vygeneruje služba nebo klient, který je mimo kontrolu vývojáře objekty JSON. Jako další webové služby vystavují veřejně JSON rozhraní API, může být nepraktické pro vývojáře WCF k vytvoření místního typy definované uživatelem, do které se má deserializovat libovolného objekty JSON. Tato ukázka poskytuje mechanismus, který umožňuje vývojářům WCF pro práci s objekty JSON deserializovat, libovolného bez vytvoření uživatelem definovaných typů. To se označuje jako *slabě typovaná serializace* objektů JSON, protože typ, do kterého se deserializuje objekt JSON není známý v době kompilace.  
   
@@ -140,4 +140,4 @@ My favorite bands are Band ABC and Band XYZ.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Ajax\WeaklyTypedJson`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

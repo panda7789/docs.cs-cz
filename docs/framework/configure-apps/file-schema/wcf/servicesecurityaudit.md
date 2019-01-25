@@ -2,19 +2,19 @@
 title: '&lt;serviceSecurityAudit&gt;'
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: 3202b5055d16f0daa1bd829aa53ff6662a687b5d
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 91fe14c22dce45a89b91d9d4c20e30928acd60c4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150250"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54630694"
 ---
 # <a name="ltservicesecurityauditgt"></a>&lt;serviceSecurityAudit&gt;
 Určuje nastavení, které povoluje auditování událostí zabezpečení během operací služby.  
   
  \<system.ServiceModel>  
 \<chování >  
-\<serviceBehaviors >  
+\<serviceBehaviors>  
 \<chování >  
 \<serviceSecurityAudit>  
   
@@ -34,10 +34,10 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|AuditLogLocation|Určuje umístění protokolu auditu. Platné hodnoty patří:<br /><br /> – Výchozí hodnota: Zabezpečení události se zapisují do protokolu aplikací na Windows XP a do protokolu událostí na Windows Server 2003 a Windows Vista.<br />-Aplikace: Události auditu se zapisují do protokolu událostí aplikace.<br />-Zabezpečení: Události auditu se zapisují do protokolu událostí zabezpečení.<br /><br /> Výchozí hodnota je výchozí nastavení. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLogLocation>.|  
-|SuppressAuditFailure|Logická hodnota, která určuje vlastnosti pro zamlčené chyby psaní do auditovacího protokolu.<br /><br /> Aplikace měli obdržet upozornění pro chyby psaní do auditovacího protokolu. Pokud vaše aplikace nebyla navržena pro zpracování chyb auditu, používejte tento atribut má potlačit chyby při psaní do auditovacího protokolu.<br /><br /> Pokud tento atribut je `true`, výjimky kromě OutOfMemoryException, StackOverflowException –, výjimka ThreadAbortException a ArgumentException, které jsou výsledkem pokusy o zápis událostí auditu, které jsou zpracovány systémem a nejsou šířeny do aplikace. Pokud tento atribut je `false`, všechny výjimky, které jsou výsledkem pokusy o zápis událostí auditu, které jsou předány do aplikace.<br /><br /> Výchozí hodnota je `true`.|  
-|ServiceAuthorizationAuditLevel|Určuje typy událostí autorizace, které jsou zaznamenány v protokolu auditu. Platné hodnoty patří:<br /><br /> -Žádný: Auditování událostí autorizace služby není provedeno.<br />– Úspěch: Pouze služba úspěšné autorizaci události se auditují.<br />– Selhání: Pouze chyby událostí autorizace služby budou auditovány.<br />-SuccessOrFailure: Úspěchy a chyby služby autorizace události se auditují.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
-|MessageAuthenticationAuditLevel|Určuje typ zprávy ověřovacích událostí auditu přihlášení. Platné hodnoty patří:<br /><br /> -Žádný: Žádné události auditu jsou generovány.<br />– Úspěch: Pouze události (včetně ověřit podpis zprávy, šifrování a ověřování tokenů úplného ověření) úspěšná zabezpečení jsou protokolovány.<br />– Selhání: Pouze události chyby jsou protokolovány.<br />-SuccessOrFailure: Auditování úspěšných a neúspěšných události jsou protokolovány.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|auditLogLocation|Určuje umístění protokolu auditu. Platné hodnoty patří:<br /><br /> – Výchozí hodnota: Zabezpečení události se zapisují do protokolu aplikací na Windows XP a do protokolu událostí na Windows Server 2003 a Windows Vista.<br />-Aplikace: Události auditu se zapisují do protokolu událostí aplikace.<br />-Zabezpečení: Události auditu se zapisují do protokolu událostí zabezpečení.<br /><br /> Výchozí hodnota je výchozí nastavení. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLogLocation>.|  
+|suppressAuditFailure|Logická hodnota, která určuje vlastnosti pro zamlčené chyby psaní do auditovacího protokolu.<br /><br /> Aplikace měli obdržet upozornění pro chyby psaní do auditovacího protokolu. Pokud vaše aplikace nebyla navržena pro zpracování chyb auditu, používejte tento atribut má potlačit chyby při psaní do auditovacího protokolu.<br /><br /> Pokud tento atribut je `true`, výjimky kromě OutOfMemoryException, StackOverflowException –, výjimka ThreadAbortException a ArgumentException, které jsou výsledkem pokusy o zápis událostí auditu, které jsou zpracovány systémem a nejsou šířeny do aplikace. Pokud tento atribut je `false`, všechny výjimky, které jsou výsledkem pokusy o zápis událostí auditu, které jsou předány do aplikace.<br /><br /> Výchozí hodnota je `true`.|  
+|serviceAuthorizationAuditLevel|Určuje typy událostí autorizace, které jsou zaznamenány v protokolu auditu. Platné hodnoty patří:<br /><br /> -Žádný: Auditování událostí autorizace služby není provedeno.<br />– Úspěch: Pouze služba úspěšné autorizaci události se auditují.<br />– Selhání: Pouze chyby událostí autorizace služby budou auditovány.<br />-SuccessOrFailure: Úspěchy a chyby služby autorizace události se auditují.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
+|messageAuthenticationAuditLevel|Určuje typ zprávy ověřovacích událostí auditu přihlášení. Platné hodnoty patří:<br /><br /> -Žádný: Žádné události auditu jsou generovány.<br />– Úspěch: Pouze události (včetně ověřit podpis zprávy, šifrování a ověřování tokenů úplného ověření) úspěšná zabezpečení jsou protokolovány.<br />– Selhání: Pouze události chyby jsou protokolovány.<br />-SuccessOrFailure: Auditování úspěšných a neúspěšných události jsou protokolovány.<br /><br /> Výchozí hodnota je žádné. Další informace naleznete v tématu <xref:System.ServiceModel.AuditLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,7 +46,7 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
+|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Určuje chování element.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek konfigurace umožňuje auditovat události ověřování Windows Communication Foundation (WCF). Když je povolené auditování, dají auditovat úspěšné nebo neúspěšné ověřování pokusů o zadání (nebo obojí). Události se zapisují do jedné ze tří protokolů událostí: aplikace, zabezpečení nebo v protokolu výchozí verze operačního systému. Protokoly událostí může vše zobrazit pomocí prohlížeče událostí Windows.  
@@ -78,10 +78,10 @@ Určuje nastavení, které povoluje auditování událostí zabezpečení během
 </system.serviceModel>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>  
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
- [Auditování](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
- [Postupy: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
- [Chování při auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ServiceSecurityAuditElement>
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
+- [Chování zabezpečení](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
+- [Auditování](../../../../../docs/framework/wcf/feature-details/auditing-security-events.md)
+- [Postupy: Auditování událostí zabezpečení](../../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
+- [Chování při auditování služby](../../../../../docs/framework/wcf/samples/service-auditing-behavior.md)

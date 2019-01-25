@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0fb805e3292d90fd5f9562d9b0b8fcc31f84ec7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 905de2745be085391bef8ea32b8f82a5da78f3a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449361"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681193"
 ---
 # <a name="imetadatadispenseropenscope-method"></a>IMetaDataDispenser::OpenScope – metoda
-Otevře existujícího souboru na disku a mapuje jeho metadata do paměti.  
+Otevření existujícího souboru na disku a mapuje jeho metadata do paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,43 +40,43 @@ HRESULT OpenScope (
   
 #### <a name="parameters"></a>Parametry  
  `szScope`  
- [v] Název souboru, který se otevřít. Soubor musí obsahovat běžná metadata language runtime (CLR).  
+ [in] Název souboru, který má být otevřen. Soubor musí obsahovat metadata common language runtime (CLR).  
   
  `dwOpenFlags`  
- [v] Hodnota [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) výčtu pro otevírání zadejte režim (čtení, zápisu a tak dále).  
+ [in] Hodnota [coropenflags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) výčtu pro určení režimu (čtení, zápisu a tak dále) pro otevření.  
   
  `riid`  
- [v] Identifikátory IID rozhraní požadované metadata má být vrácen. volající se použít rozhraní pro import (čtení) nebo emitování metadata (zápisu).  
+ [in] Identifikátor IID rozhraní požadované metadat má být vrácen. volající budou používat rozhraní pro import (čtení) nebo generování metadat (zápis).  
   
- Hodnota `riid` musíte zadat jednu z "import" nebo "emitování" rozhraní. Platné hodnoty jsou IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 nebo IID_IMetaDataImport2.  
+ Hodnota `riid` musíte zadat jedno z rozhraní "import" nebo "generování". Platné hodnoty jsou IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 nebo IID_IMetaDataImport2.  
   
  `ppIUnk`  
- [out] Ukazatel rozhraní vrácená.  
+ [out] Ukazatel na vrácené rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- Kopie v paměti metadat můžete položit dotaz na metodami z jednoho z rozhraní "import", nebo přidat do pomocí metod od verze rozhraní "emitování".  
+ Kopie v paměti metadat může být dotázán pomocí metody z jednoho z rozhraní "import" nebo přidat do pomocí metod od rozhraní "generování".  
   
- Pokud cílový soubor neobsahuje CLR metadata `OpenScope` metoda se nezdaří.  
+ Pokud cílový soubor neobsahuje metadat CLR `OpenScope` metoda se nezdaří.  
   
- V rozhraní .NET Framework verze 1.0 a 1.1, pokud obor je otevřen s `dwOpenFlags` nastavení ofRead, je vhodné pro sdílení. To znamená pokud následných volání `OpenScope` průchodu názvu souboru, který byl dříve otevřen, se znovu použije stávající oboru a novou sadu datové struktury nebyl vytvořen. Problémy se však, může dojít z důvodu této sdílení.  
+ V rozhraní .NET Framework verze 1.0 a 1.1, pokud obor se otevře s `dwOpenFlags` nastavíte ofRead, je vhodné pro sdílení. To znamená pokud následných volání `OpenScope` předat mu název souboru, který byl dříve otevřen, existující obor již byl použit a není vytvořena nová sada datových struktur. Však mohou vzniknout problémy, kvůli toto sdílení.  
   
- V rozhraní .NET Framework verze 2.0, otevřené obory se `dwOpenFlags` nastaven na ofRead jsou již sdíleny. Použijte hodnotu ofReadOnly umožňující oboru ke sdílení. Pokud je sdílen obor, dotazy, které používají "pro čtení a zápis" rozhraní metadat se nezdaří.  
+ V rozhraní .NET Framework verze 2.0, otevřeného oborů s `dwOpenFlags` nastavenou na ofRead jsou již sdíleny. Hodnota ofReadOnly slouží k povolení oboru, který má být sdílené. Při sdílení obor dotazů, které používají "pro čtení a zápisu" rozhraní metadat se nezdaří.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)  
- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  
- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
+- [IMetaDataAssemblyEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [IMetaDataAssemblyImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

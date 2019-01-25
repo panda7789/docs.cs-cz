@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3a9cdb49c1a44dbc68cd4b7ccf4d4781ce5c539
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 071c9c9cbdb47372903ef418a4f21450d8071f8c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421889"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54614062"
 ---
 # <a name="icordebugregisterset2getregistersavailable-method"></a>ICorDebugRegisterSet2::GetRegistersAvailable – metoda
-Získá pole bajtů, které poskytuje rastrový obrázek k dispozici registrů.  
+Získá pole bajtů, která poskytuje rastrový obrázek do dostupných registrů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,24 +38,24 @@ HRESULT GetRegistersAvailable (
   
 #### <a name="parameters"></a>Parametry  
  `numChunks`  
- [v] Velikost `availableRegChunks` pole.  
+ [in] Velikost `availableRegChunks` pole.  
   
  `availableRegChunks`  
- [out] Pole bajtů, každý bit odpovídá registraci. Pokud do registru je k dispozici, je nastavena odpovídající bit registru.  
+ [out] Pole bajtů, každý bit odpovídá registru. Pokud je k dispozici registru, odpovídající bit do registru je nastavena.  
   
 ## <a name="remarks"></a>Poznámky  
- Zadejte hodnoty CorDebugRegister – výčet registry různé procesory. Horní pět bits každé hodnoty jsou indexem `availableRegChunks` pole bajtů. Nižší tři bits každou hodnotu identifikovat bit pozici v rámci indexované bajtů. Vzhledem `CorDebugRegister` hodnotu, která určuje konkrétní registrace, pozice registru v maska je stanoven následujícím způsobem:  
+ Hodnoty cordebugregister – výčet zadejte registrů různých mikroprocesory. Horní pět bitů jednotlivé hodnoty jsou index do `availableRegChunks` pole bajtů. Nižší tři bity každé hodnoty identifikovat bitová pozice v rámci indexované bajtů. Zadaný `CorDebugRegister` hodnota, která určuje konkrétní registru do registru pozice v maska je stanoven následujícím způsobem:  
   
-1.  Extrahování potřebné pro přístup k správné bajtů v indexu `availableRegChunks` pole:  
+1.  Rozbalte potřebné pro přístup ke správné bajt v indexu `availableRegChunks` pole:  
   
      `CorDebugRegister` Hodnota >> 3  
   
-2.  Extrahujte bit pozici v rámci indexované bajtů, kde je bit nula nejméně významný bit:  
+2.  Extrahujte bitové pozice v indexovaných byte, kde bit nula je nejméně významných bitů:  
   
      `CorDebugRegister` Hodnota & 7  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -63,6 +63,6 @@ HRESULT GetRegistersAvailable (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)  
- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugRegisterSet2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)

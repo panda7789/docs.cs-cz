@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ca6bf185297cbafb4450271ddcd6093d7e62515
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b8afa78b324e68b345ee36513f6dda9ba042f29
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33415373"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629186"
 ---
 # <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a>ICorDebugEditAndContinueErrorInfo::GetModule – metoda
-`GetModule` je zastaralá. Tato metoda není volána.  
+`GetModule` je zastaralý. Nevolejte tuto metodu.  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

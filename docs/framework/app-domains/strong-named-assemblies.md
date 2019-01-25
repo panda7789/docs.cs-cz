@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6fe3847d9ee4530a776f43c67ac17085a9cd9d7b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 681938b4893e9fe68caa142898db9b867b481bf0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50190902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54657295"
 ---
 # <a name="strong-named-assemblies"></a>Sestavení se silným názvem
 Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může zabránit konfliktům při sestavení.  
@@ -20,7 +20,7 @@ Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může 
 ## <a name="what-makes-a-strong-named-assembly"></a>Co vlastně sestavení se silným názvem?  
  Silně pojmenované sestavení je generováno pomocí privátního klíče, který odpovídá veřejnému klíči distribuovat se sestavení a samotného sestavení. Sestavení obsahuje manifest sestavení, který obsahuje názvy a hash hodnoty všech souborů, které tvoří sestavení. Sestavení, která se stejným silným názvem musí být identické.  
   
- Je možné sestavení se silným názvem pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [postupy: podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md) nebo [Sn.exe (nástroj Strong Name)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
+ Je možné sestavení se silným názvem pomocí sady Visual Studio nebo nástroje příkazového řádku. Další informace najdete v tématu [jak: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md) nebo [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md).  
   
  Když se vytvoří sestavení se silným názvem, obsahuje jednoduchý textový název sestavení, číslo verze, jazykovou verzi volitelné informace, digitální podpis a veřejný klíč, který odpovídá privátní klíč používaný k podepisování.  
   
@@ -42,8 +42,8 @@ Silné názvy sestavení vytvoří jedinečnou identitu pro sestavení a může 
   
  Pokud jsou open source vývojářů a chcete využít výhod Identita sestavení se silným názvem, je vhodné zkontrolovat v privátní klíč přidružený k sestavení do systému správy zdrojů.  
   
-## <a name="see-also"></a>Viz také  
-- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)  
-- [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)  
-- [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
+## <a name="see-also"></a>Viz také:
+- [Globální mezipaměť sestavení](../../../docs/framework/app-domains/gac.md)
+- [Postupy: Podepsání sestavení silným názvem](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)
+- [Sn.exe (nástroj pro silný název)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)
 - [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

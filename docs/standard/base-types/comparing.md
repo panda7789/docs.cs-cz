@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d8f126aa5b69c99beae740de261ac3da3c5d2544
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: df526c93c195275751c393299b0e0d80337eee44
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698559"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688893"
 ---
 # <a name="comparing-strings-in-net"></a>Porovnání řetězců v .NET
 .NET nabízí několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
@@ -93,7 +93,7 @@ ms.locfileid: "45698559"
   
  Všechna přetížení <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metoda provést porovnání citlivé na jazykovou verzi a malá a velká písmena ve výchozím nastavení. Žádné přetížení této metody jsou k dispozici, které umožňují provést porovnání nezávislá na jazykové verzi. Přehlednosti kódu doporučujeme použít **String.Compare** metoda místo toho zadáte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pro operace zohledňující jazykovou verzi nebo <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> operací nezávislých na jazykové verzi. Příklady, které ukazují, jak používat **String.Compare** metodu za účelem porovnání zohledňující jazykovou verzi a nezávislé na jazykové verzi, najdete v článku [provádění nezávislých na jazykové verzi porovnávání řetězců](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
-## <a name="equals"></a>rovná se  
+## <a name="equals"></a>Je rovno  
  **String.Equals** metoda můžete snadno zjistit, zda jsou dva řetězce stejný. Vrátí tato metoda velká a malá písmena **true** nebo **false** logickou hodnotu. To je možné z existující třídy, jak je znázorněno v následujícím příkladu. V následujícím příkladu **rovná** metodou ke zjištění, zda objekt string obsahuje frázi "Hello World".  
   
  [!code-cpp[Conceptual.String.BasicOps#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#9)]
@@ -152,7 +152,7 @@ ms.locfileid: "45698559"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
+- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
 - [Řazení váhy tabulky (pro .NET pro Windows)](https://www.microsoft.com/en-us/download/details.aspx?id=10921)
 - [Výchozí kódování Unicode kolace Element tabulky (pro .NET Core v Linuxu a macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

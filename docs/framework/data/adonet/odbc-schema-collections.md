@@ -2,12 +2,12 @@
 title: Kolekce schémat ODBC
 ms.date: 03/30/2017
 ms.assetid: 1bb126a5-ceec-4649-a4bc-8aa19e801046
-ms.openlocfilehash: bdedbb11960f02b99dcca6388abf663635238f74
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 072a9cd365031cd5660d1824bc229d459abc5af8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877528"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525830"
 ---
 # <a name="odbc-schema-collections"></a>Kolekce schémat ODBC
 Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft SQL Server, Oracle a Microsoft Jet.  
@@ -31,7 +31,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -41,7 +41,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="indexes"></a>Indexy  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -61,7 +61,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
 |TABLE_SCHEM|String|  
@@ -87,7 +87,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -100,7 +100,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -127,7 +127,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -171,7 +171,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -181,7 +181,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -199,7 +199,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -212,7 +212,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -249,7 +249,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="tables-and-views"></a>Tabulky a zobrazení  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -259,7 +259,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="columns"></a>Sloupce  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
 |TABLE_OWNER|String|  
@@ -277,7 +277,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedures"></a>Procedury  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -290,7 +290,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
 |PROCEDURE_OWNER|String|  
@@ -310,7 +310,7 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|Názevsloupce|Datový typ|  
+|Názevsloupce|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
 |PROCEDURE_SCHEM|String|  
@@ -332,5 +332,5 @@ Tato část popisuje kolekci podpora schématu pro ovladače ODBC pro Microsoft 
 |ORDINAL_POSITION|Int32|  
 |IS_NULLABLE|String|  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

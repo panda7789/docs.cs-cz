@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-ms.openlocfilehash: 040ecd8a2ce223f89601de735b77ccc81638c7af
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 7bc5f3fc1c87b8acbbfeb0bad0c7766c0a2ef1dc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688295"
 ---
 # <a name="schema-restrictions"></a>Omezení schématu
 Druhý volitelný parametr **GetSchema** metoda je vrácena omezení, které se používají a omezit tak množství informací o schématu, a je předán **GetSchema** metody jako pole řetězců . Pozice v poli určuje hodnoty, které můžete předat, a to je ekvivalentní hodnotě parametru omezení.  
@@ -20,7 +20,7 @@ Druhý volitelný parametr **GetSchema** metoda je vrácena omezení, které se 
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Name|TABLE_NAME|3|  
 |TableType|@TableType|TABLE_TYPE|4|  
   
@@ -150,7 +150,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Name|TABLE_NAME|3|  
 |TableType|@TableType|TABLE_TYPE|4|  
   
@@ -159,7 +159,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
   
@@ -168,7 +168,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
   
@@ -177,7 +177,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
   
 ### <a name="viewcolumns"></a>ViewColumns  
@@ -185,7 +185,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|VIEW_CATALOG|1|  
-|Vlastník|@Owner|VIEW_SCHEMA|2|  
+|Owner|@Owner|VIEW_SCHEMA|2|  
 |Tabulka|@Table|VIEW_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
   
@@ -194,7 +194,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
-|Vlastník|@Owner|SPECIFIC_SCHEMA|2|  
+|Owner|@Owner|SPECIFIC_SCHEMA|2|  
 |Název|@Name|SPECIFIC_NAME|3|  
 |Parametr|@Parameter|PARAMETER_NAME|4|  
   
@@ -203,7 +203,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|SPECIFIC_CATALOG|1|  
-|Vlastník|@Owner|SPECIFIC_SCHEMA|2|  
+|Owner|@Owner|SPECIFIC_SCHEMA|2|  
 |Název|@Name|SPECIFIC_NAME|3|  
 |Typ|@Type|ROUTINE_TYPE|4|  
   
@@ -212,7 +212,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|db_name()|1|  
-|Vlastník|@Owner|user_name()|2|  
+|Owner|@Owner|user_name()|2|  
 |Tabulka|@Table|o.Name|3|  
 |ConstraintName|@ConstraintName|x.Name|4|  
 |Sloupec|@Column|c.Name|5|  
@@ -222,22 +222,22 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|db_name()|1|  
-|Vlastník|@Owner|user_name()|2|  
+|Owner|@Owner|user_name()|2|  
 |Tabulka|@Table|o.Name|3|  
   
 ### <a name="userdefinedtypes"></a>UserDefinedTypes  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|název_sestavení|@AssemblyName|Assemblies.Name|1|  
-|udt_name|@UDTName|Types.assembly_class|2|  
+|název_sestavení|@AssemblyName|assemblies.name|1|  
+|udt_name|@UDTName|types.assembly_class|2|  
   
 ### <a name="foreignkeys"></a>ForeignKeys  
   
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|CONSTRAINT_CATALOG|1|  
-|Vlastník|@Owner|CONSTRAINT_SCHEMA|2|  
+|Owner|@Owner|CONSTRAINT_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Název|@Name|CONSTRAINT_NAME|4|  
   
@@ -249,7 +249,7 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
   
 ### <a name="allcolumns"></a>AllColumns  
@@ -257,9 +257,9 @@ class Program
 |Název omezení|Název parametru|Výchozí omezení|Číslo omezení|  
 |----------------------|--------------------|-------------------------|------------------------|  
 |Katalog|@Catalog|TABLE_CATALOG|1|  
-|Vlastník|@Owner|TABLE_SCHEMA|2|  
+|Owner|@Owner|TABLE_SCHEMA|2|  
 |Tabulka|@Table|TABLE_NAME|3|  
 |Sloupec|@Column|COLUMN_NAME|4|  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

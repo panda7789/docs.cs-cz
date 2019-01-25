@@ -17,12 +17,12 @@ ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 480e9a3f7d32bb891b54c7d2529affb45368545b
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: ce495ce01c970fb46cc7e7e374994fd34a7730a7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53128645"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648969"
 ---
 # <a name="changing-case-in-net"></a>Změna velikosti písmen v .NET
 Pokud píšete aplikaci, která přijímá vstup od uživatele, nikdy lze zajistit co případ uživatel použije k zadání data. Často chcete řetězců, které mají být notaci, zejména v případě, že jsou zobrazeny v uživatelském rozhraní. Následující tabulka popisuje tři metody změny velikosti písmen. První dvě metody poskytují přetížení přijímající jazykovou verzi.  
@@ -74,5 +74,5 @@ Pokud píšete aplikaci, která přijímá vstup od uživatele, nikdy lze zajist
   
 ## <a name="see-also"></a>Viz také:
 
-- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
+- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

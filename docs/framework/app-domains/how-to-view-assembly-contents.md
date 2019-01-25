@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 10ba2930dcaee6c118562e685ad49dd73c980564
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 5aff7ec439e845c4be8d43ae622fe44fa2c476c9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50191100"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597863"
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) k zobrazení informací Microsoft intermediate language (MSIL) v souboru. Pokud je soubor zkoumají sestavení, můžete tyto informace zahrnout sestavení atributy, jakož i odkazy na jiných modulů a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda soubor obsahuje odkazy na další moduly nebo sestavení.  
@@ -86,9 +86,9 @@ Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/i
 |**.Subsystem \<**  *hodnota* **>**|Určuje prostředí aplikace, které jsou potřebné pro program. V tomto příkladu hodnota 3 označuje, že je tento spustitelný soubor spustit z konzoly.|  
 |**.corflags**|Aktuálně vyhrazené pole v metadatech.|  
   
- Manifest sestavení může obsahovat několik různých direktivy, v závislosti na obsah sestavení. Rozsáhlý seznam direktivy v manifestu sestavení naleznete v dokumentaci ECMA, zejména "Oddíl II: Metadata definice a sémantika" a "Oddílu III: soubor CIL se NAČTE sadu instrukcí". Dokumentace je k dispozici online; Zobrazit [ECMA C# a společné normy jazykové infrastruktury](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [Standard ECMA-335 – společné jazykové infrastruktury (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma International.  
+ Manifest sestavení může obsahovat několik různých direktivy, v závislosti na obsah sestavení. Rozsáhlý seznam direktivy v manifestu sestavení, naleznete v dokumentaci ECMA zejména "oddíl II: Definice metadat a sémantika"a" oddílu III: Sada instrukcí soubor CIL se NAČTE". Dokumentace je k dispozici online; Zobrazit [ECMA C# a společné normy jazykové infrastruktury](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [Standard ECMA-335 – společné jazykové infrastruktury (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma International.  
   
-## <a name="see-also"></a>Viz také  
-- [Domény a sestavení aplikací](https://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)  
-- [Témata s návody k doménám a sestavením aplikací](../../../docs/framework/app-domains/application-domains-and-assemblies-how-to-topics.md)  
+## <a name="see-also"></a>Viz také:
+- [Domény a sestavení aplikací](https://msdn.microsoft.com/library/433b04ae-4ba8-4849-9dbd-79194f240346)
+- [Témata s návody k doménám a sestavením aplikací](../../../docs/framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
 - [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)

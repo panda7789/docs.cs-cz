@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46532592057f4fa6d9883d46dcef2f8f9e5f7228
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9fc894cdd12e58689fb6b010820bb24d14a9541
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33406341"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543744"
 ---
 # <a name="iclrdatatarget2allocvirtual-method"></a>ICLRDataTarget2::AllocVirtual – metoda
-Voláno rozhraním běžné jazyk služby modulu runtime (CLR) data přístup přidělit paměť v adresním prostoru tento cílový proces.  
+Je voláno common language runtime (CLR) data access services přidělení paměti v adresním prostoru cílového procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,27 +41,27 @@ HRESULT AllocVirtual(
   
 #### <a name="parameters"></a>Parametry  
  `addr`  
- [v] A `CLRDATA_ADDRESS` hodnotu, která určuje požadovanou počáteční adresa paměti, která bude přidělena.  
+ [in] A `CLRDATA_ADDRESS` hodnota, která určuje požadovanou počáteční adresu paměti, která bude přidělena.  
   
  `size`  
- [v] Velikost v bajtech, paměti, která bude přidělena.  
+ [in] Velikost v bajtech, která bude přidělena paměť.  
   
  `typeFlags`  
- [v] Příznaky, které řídí přidělení paměti. V tématu Win32 `VirtualAlloc` funkce.  
+ [in] Příznaky, které řídí přidělení paměti. Zobrazit Win32 `VirtualAlloc` funkce.  
   
  `protectFlags`  
- [v] Atributy ochrany přidělené paměti. V tématu Win32 `VirtualAlloc` funkce.  
+ [in] Atributy ochrany pro přidělené paměti. Zobrazit Win32 `VirtualAlloc` funkce.  
   
  `virt`  
- [out] Ukazatel na `CLRDATA_ADDRESS` hodnotu, která určuje skutečné počáteční adresa přidělené paměti.  
+ [out] Ukazatel `CLRDATA_ADDRESS` hodnota, která určuje skutečné počáteční adresa přidělené paměti.  
   
 ## <a name="remarks"></a>Poznámky  
- `AllocVirtual` Metoda slouží jako logické obálku pro Win32 `VirtualAlloc` funkce.  
+ `AllocVirtual` Metody slouží jako logické obálku pro Win32 `VirtualAlloc` funkce.  
   
- Tato metoda je implementována zapisovačem ladění aplikace.  
+ Tato metoda je implementováno tvůrci ladění aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** ClrData.idl, ClrData.h  
   
@@ -69,6 +69,6 @@ HRESULT AllocVirtual(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)  
- [FreeVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-freevirtual-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)
+- [FreeVirtual – metoda](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-freevirtual-method.md)

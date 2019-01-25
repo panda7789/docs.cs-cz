@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, bi-directional support
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4c572e518c84dfb230ff26049369011d8d7aa70
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9e35f097380272822e9dbcda01617cce9fed8fc1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424412"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676845"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Obousměrná podpora pro formulářové aplikace Windows
 Visual Studio můžete vytvářet aplikace pro systém Windows, které podporují obousměrné (vpravo zprava doleva) jazyků, jako je arabština nebo hebrejština. To zahrnuje standardní formuláře, dialogová okna, formuláře MDI a ovládací prvky, které můžete pracovat s tyto formy – to znamená, že všechny objekty v <xref:System.Windows.Forms.Control> oboru názvů.  
@@ -23,7 +23,7 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
  Nastavení jazykové verze uživatelského rozhraní a jazykové verze určují, jak aplikace funguje se data, časy, měny a další informace. Podpora pro jazykové verze a jazykové verze uživatelského rozhraní je stejný pro obousměrných jazycích, jako je pro ostatní jazyky.   Viz také [třídy specifické pro jazykovou verzi pro globální Windows Forms a webové formuláře](https://msdn.microsoft.com/library/94ye9x8c\(v=vs.110\)) nebo [třídy specifické pro jazykovou verzi pro globální Windows Forms a webové formuláře](https://msdn.microsoft.com/library/94ye9x8c\(v=vs.120\))  
   
 ## <a name="righttoleft-and-righttoleftlayout-properties"></a>RightToLeft a vlastnosti RightToLeftLayout  
- Základní <xref:System.Windows.Forms.Control> zahrnuje třídy, ze které jsou odvozeny formulářů, <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, která můžete nastavit, chcete-li změnit pořadí čtení formuláře a jejích ovládacích prvků. Pokud nastavíte formuláře <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, výchozí ovládací prvky ve formuláři zdědí toto nastavení. Ale můžete také nastavit <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost jednotlivě na většině ovládací prvky. Viz také [postupy: zobrazení zprava doleva textu ve formulářích Windows pro globalizaci](https://msdn.microsoft.com/library/7d3337xw\(v=vs.110\)).  
+ Základní <xref:System.Windows.Forms.Control> zahrnuje třídy, ze které jsou odvozeny formulářů, <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, která můžete nastavit, chcete-li změnit pořadí čtení formuláře a jejích ovládacích prvků. Pokud nastavíte formuláře <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost, výchozí ovládací prvky ve formuláři zdědí toto nastavení. Ale můžete také nastavit <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost jednotlivě na většině ovládací prvky. Viz také [jak: Zobrazení textu zprava doleva v modelu Windows Forms pro globalizaci](https://msdn.microsoft.com/library/7d3337xw\(v=vs.110\)).  
   
  Vliv <xref:System.Windows.Forms.Control.RightToLeft%2A> vlastnost se může lišit od jeden ovládací prvek do jiného. V některé ovládací prvky vlastnost pouze nastaví pořadí čtení, stejně jako <xref:System.Windows.Forms.Button>, <xref:System.Windows.Forms.TreeView> a <xref:System.Windows.Forms.ToolTip> ovládací prvky. V další ovládací prvky <xref:System.Windows.Forms.Control.RightToLeft%2A> změny vlastností pořadí čtení a rozložení. Jedná se o <xref:System.Windows.Forms.RadioButton>, <xref:System.Windows.Forms.ComboBox> a <xref:System.Windows.Forms.CheckBox> ovládací prvky. Další ovládací prvky vyžadují, aby <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> vlastnost jde použít pro zrcadlení její rozložení zprava doleva. Následující tabulka obsahuje podrobnosti o <xref:System.Windows.Forms.Control.RightToLeft%2A> a <xref:System.Windows.Forms.Form.RightToLeftLayout%2A> vlastnosti vliv jednotlivých ovládacích prvků Windows Forms.  
   
@@ -119,5 +119,5 @@ Visual Studio můžete vytvářet aplikace pro systém Windows, které podporuj�
   
 ## <a name="see-also"></a>Viz také:
 
-[Obousměrná podpora pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
-[Globalizace aplikací Windows Forms](globalizing-windows-forms.md)
+- [Obousměrná podpora pro webové aplikace ASP.NET](https://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)
+- [Globalizace aplikací Windows Forms](globalizing-windows-forms.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: migrace kódu XslTransform'
+title: 'Postupy: Migrace kódu XslTransform'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 71e5ae19b1e0123dc28713befef070a9cc23bdc5
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: bb8754c4e572464f139a6b072ccd542b1a302652
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44188225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54595601"
 ---
-# <a name="how-to-migrate-your-xsltransform-code"></a>Postupy: migrace kódu XslTransform
+# <a name="how-to-migrate-your-xsltransform-code"></a>Postupy: Migrace kódu XslTransform
 Byly navrženy nové třídy XSLT se velmi podobá existující třídy. <xref:System.Xml.Xsl.XslCompiledTransform> Třídy nahradí <xref:System.Xml.Xsl.XslTransform> třídy. Šablony stylů jsou kompilovány pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Transformace jsou spouštěny <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Následující postupy ukazují běžné úkoly XSLT a porovnejte kód s využitím <xref:System.Xml.Xsl.XslTransform> třídy a <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
 ### <a name="to-transform-a-file-and-output-to-a-uri"></a>Transformace souboru a výstup do identifikátoru URI  
@@ -95,5 +95,5 @@ Byly navrženy nové třídy XSLT se velmi podobá existující třídy. <xref:S
   
 ## <a name="see-also"></a>Viz také:
 
-- [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+- [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)
 - [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e3579020ce268cd59a091e685fae2e97b3191c55
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b8211e46b1a46d15befba17a52cd626d91f95fd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616781"
 ---
 # <a name="icorprofilerinfogetassemblyinfo-method"></a>ICorProfilerInfo::GetAssemblyInfo – metoda
-Přijímá ID sestavení a vrátí název sestavení a ID jeho manifestu modul.  
+Přijímá ID sestavení a vrátí název sestavení a ID jeho manifestu modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,30 +42,30 @@ HRESULT GetAssemblyInfo(
   
 #### <a name="parameters"></a>Parametry  
  `assemblyId`  
- [v] Identifikátor sestavení.  
+ [in] Identifikátor sestavení.  
   
  `cchName`  
- [v] Délka ve znacích, z `szName`.  
+ [in] Délka ve znacích, z `szName`.  
   
  `pcchName`  
  [out] Ukazatel na celkový počet znaků názvu sestavení.  
   
  `szName`  
- [out] Zadaný volající široká znaková vyrovnávací paměti. Když funkce vrátí hodnotu, bude obsahovat název sestavení.  
+ [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu funkce bude obsahovat název sestavení.  
   
  `pAppDomainId`  
- [out] Ukazatel na ID doménu aplikace, který obsahuje sestavení.  
+ [out] Ukazatel na ID domény aplikace, který obsahuje sestavení.  
   
  `pModuleId`  
- [out] Ukazatel na ID manifestu modulu sestavení.  
+ [out] Ukazatel na ID modul manifestu sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Po návratu tato metoda, musíte se ověřit, že `szName` vyrovnávací paměť byla dostatečně velký pro obsahovat úplný název sestavení. K tomuto účelu porovnat hodnotu, `pcchName` body s hodnotou `cchName` parametr. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělit větší `szName` vyrovnávací paměti, aktualizujte `cchName` s novou, větší velikost a volání `GetAssemblyInfo` znovu.  
+ Po návratu tato metoda je nutné ověřit, `szName` vyrovnávací paměť je dostatečně velký, aby obsahoval úplný název sestavení. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetAssemblyInfo` znovu.  
   
- Alternativně můžete nejdřív volat `GetAssemblyInfo` s nulovou délkou `szName` vyrovnávací paměti se získat velikost správné vyrovnávací paměti. Potom můžete upravit velikost vyrovnávací paměti na základě hodnoty, vrátí se v `pcchName` a volání `GetAssemblyInfo` znovu.  
+ Alternativně můžete nejprve volat `GetAssemblyInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Potom můžete upravit velikost vyrovnávací paměti na základě hodnoty vráceny v `pcchName` a volat `GetAssemblyInfo` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -73,7 +73,7 @@ HRESULT GetAssemblyInfo(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

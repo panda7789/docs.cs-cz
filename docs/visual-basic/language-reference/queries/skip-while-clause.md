@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Skip While clause [Visual Basic]
 - queries [Visual Basic], Skip While
 ms.assetid: 5dee8350-7520-4f1a-b00d-590cacd572d6
-ms.openlocfilehash: a3c0749560d8cea1e46d96298347ce54f0bf9185
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 7da5f50a9d0fa867244a569e03685cc637bf3ce6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863371"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692516"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While – klauzule (Visual Basic)
 Vynechává prvky v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vrací zbývající prvky.  
@@ -28,7 +28,7 @@ Skip While expression
   
 |Termín|Definice|  
 |---|---|  
-|`expression`|Požadováno. Výraz, který představuje podmínku pro prvky pro testování. Výraz musí vrátit `Boolean` hodnotu nebo funkční ekvivalent, jako `Integer` má být vyhodnocen jako `Boolean`.|  
+|`expression`|Povinný parametr. Výraz, který představuje podmínku pro prvky pro testování. Výraz musí vrátit `Boolean` hodnotu nebo funkční ekvivalent, jako `Integer` má být vyhodnocen jako `Boolean`.|  
   
 ## <a name="remarks"></a>Poznámky  
  `Skip While` Klauzule vynechává prvky od začátku výsledek dotazu do zadané `expression` vrátí `false`. Po `expression` vrátí `false`, dotaz vrátí všechny zbývající prvky. `expression` Se ignoruje pro zbývající výsledky.  
@@ -42,11 +42,11 @@ Skip While expression
   
  [!code-vb[VbSimpleQuerySamples#3](../../../visual-basic/language-reference/queries/codesnippet/VisualBasic/skip-while-clause_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Dotazy](../../../visual-basic/language-reference/queries/index.md)  
- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)  
- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)  
- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)
+## <a name="see-also"></a>Viz také:
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Dotazy](../../../visual-basic/language-reference/queries/index.md)
+- [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
+- [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
+- [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)
+- [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)
+- [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-ms.openlocfilehash: fa70af311d6b4fa4e17bb3ba6110e4cea420c34c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d0b3bd649da301c563a19450d7d9b42e9d0b29e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44200285"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54611758"
 ---
 # <a name="datatable-constraints"></a>Omezení datových tabulek
 Můžete vynutit omezení na datech z tohoto omezení <xref:System.Data.DataTable>, aby bylo možné udržovat tak integritu dat. Omezení je automatické pravidlo použít na sloupec nebo souvisejících sloupců, která určuje kurz akce při hodnota řádku je nějakým způsobem změněna. Jsou vynucena omezení při `System.Data.DataSet.EnforceConstraints` vlastnost <xref:System.Data.DataSet> je **true**. Příklad kódu, který ukazuje, jak nastavit `EnforceConstraints` vlastnost, najdete v článku <xref:System.Data.DataSet.EnforceConstraints%2A> téma referenčních informací.  
   
  Existují dva typy omezení v ADO.NET: <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint>. Ve výchozím nastavení, obě omezení se vytvoří automaticky při vytvoření vztahu mezi dvěma nebo více tabulek tak, že přidáte <xref:System.Data.DataRelation> k **datovou sadu**. Toto chování však můžete zakázat tak, že zadáte **createConstraints** = **false** při vytváření vztahu.  
   
-## <a name="foreignkeyconstraint"></a>Objekt ForeignKeyConstraint  
+## <a name="foreignkeyconstraint"></a>ForeignKeyConstraint  
  A **Objekt ForeignKeyConstraint** vynucuje pravidla týkající se aktualizací a odstraňování souvisejících tabulkách jak nerozšíří. Pokud hodnotu v řádku jednu tabulku je aktualizovat ani odstranit a stejnou hodnotu se také používá v jednom nebo více souvisejících tabulek, například **Objekt ForeignKeyConstraint** Určuje, co se stane v souvisejících tabulkách.  
   
  <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> a <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> vlastnosti **Objekt ForeignKeyConstraint** definujete akce, jež mají být provedeny, když se uživatel pokusí odstranit nebo aktualizovat řádek v související tabulce. Následující tabulka popisuje různá nastavení, které jsou k dispozici pro **DeletRule** a **UpdateRule** vlastnosti **Objekt ForeignKeyConstraint**.  
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Kaskádové**|Odstranit nebo aktualizovat související řádky.|  
+|**Cascade**|Odstranit nebo aktualizovat související řádky.|  
 |**SetNull**|Nastavení hodnot v související řádky **DBNull**.|  
 |**SetDefault**|Nastavení hodnot v související řádky na výchozí hodnotu.|  
-|**None**|Neprovádět žádnou akci na související řádky. Toto nastavení je výchozí.|  
+|**Žádné**|Neprovádět žádnou akci na související řádky. Toto nastavení je výchozí.|  
   
  A **Objekt ForeignKeyConstraint** můžete omezit, stejně jako rozšíření, změny související sloupce. V závislosti na vlastnosti nastavené pro **Objekt ForeignKeyConstraint** sloupce, pokud **EnforceConstraints** vlastnost **datovou sadu** je **true**, provádění některých operací na nadřazený řádek bude mít za následek výjimku. Například pokud **DeletRule** vlastnost **Objekt ForeignKeyConstraint** je **žádný**, nadřazený řádek nelze odstranit, pokud má všechny podřízené řádky.  
   
@@ -60,8 +60,8 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
   
 |Nastavení pravidla|Popis|  
 |------------------|-----------------|  
-|**Kaskádové**|Přijmout nebo odmítnout změny podřízených řádků.|  
-|**None**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
+|**Cascade**|Přijmout nebo odmítnout změny podřízených řádků.|  
+|**Žádné**|Neprovádět žádnou akci na podřízených řádků. Toto nastavení je výchozí.|  
   
 ### <a name="example"></a>Příklad  
  Následující příklad vytvoří <xref:System.Data.ForeignKeyConstraint>, nastaví některé jeho vlastnosti, včetně <xref:System.Data.ForeignKeyConstraint.AcceptRejectRule%2A>a přidá jej do <xref:System.Data.ConstraintCollection> z <xref:System.Data.DataTable> objektu.  
@@ -92,11 +92,11 @@ UniqueConstraint custUnique = new UniqueConstraint(new DataColumn[]
 custDS.Tables["Customers"].Constraints.Add(custUnique);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataRelation>  
- <xref:System.Data.DataTable>  
- <xref:System.Data.ForeignKeyConstraint>  
- <xref:System.Data.UniqueConstraint>  
- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataRelation>
+- <xref:System.Data.DataTable>
+- <xref:System.Data.ForeignKeyConstraint>
+- <xref:System.Data.UniqueConstraint>
+- [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
+- [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,16 +1,16 @@
 ---
-title: PŘETYPOVÁNÍ (entita SQL)
+title: CAST (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: b3ebd4a7fe9d9e1324210d9f4d1265115bd8617f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4d04347025de53add09f50646f1e2934b7959048
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761438"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568536"
 ---
-# <a name="cast-entity-sql"></a>PŘETYPOVÁNÍ (entita SQL)
-Převod výrazu jednoho datového typu.  
+# <a name="cast-entity-sql"></a>CAST (Entity SQL)
+Převede výraz jednoho datového typu na jiný.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -20,24 +20,24 @@ CAST ( expression AS data_type )
   
 ## <a name="arguments"></a>Arguments  
  `expression`  
- Libovolný platný výraz, který je převést na `data_type`.  
+ Libovolný platný výraz, který lze převést na `data_type`.  
   
  `data_type`  
- Cíl poskytnuté systémem datového typu. Musí být primitivního typu (skalární). `data_type` Používá závisí na obor dotazu. Pokud je dotaz proveden s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovanou v konceptuálním modelu. Další informace najdete v tématu [CSDL specifikace](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md). Pokud je dotaz proveden s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je stejného typu language runtime (CLR).  
+ Cíl poskytnuté systémem datového typu. Musí být primitivního typu (skalární). `data_type` Používá závisí na dotaz místa. Pokud je dotaz proveden s <xref:System.Data.EntityClient.EntityCommand>, datový typ je typ definovaný v konceptuálním modelu. Další informace najdete v tématu [specifikace CSDL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md). Pokud je dotaz proveden s <xref:System.Data.Objects.ObjectQuery%601>, datový typ je společný typ language runtime (CLR).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací stejnou hodnotu jako `data_type`.  
+ Vrátí stejnou hodnotu jako `data_type`.  
   
 ## <a name="remarks"></a>Poznámky  
- Výraz cast má podobnou sémantiku [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] převést výraz. Výraz cast je použít k převodu hodnoty jednoho typu do hodnoty jiného typu.  
+ Výraz cast má podobnou sémantiku [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] převést výraz. Výraz cast se používá k převodu hodnoty jednoho typu na hodnotu jiného typu.  
   
 ```  
 CAST( e as T )  
 ```  
   
- Pokud e je typu je převést na T S a S a potom ve výše uvedené výrazu je výrazem platnou přetypování. T musí být typu primitivní (skalární).  
+ Pokud je e nějakého typu je lze převést na T elementům a potom výše uvedeném výrazu je výraz přetypování platný. T musí být primitivního typu (skalární).  
   
- Hodnoty pro omezující vlastnosti přesnost a měřítko může volitelně zadaný při přetypování na `Edm.Decimal`. Pokud není explicitně k dispozici, výchozí hodnoty pro přesnost a měřítko jsou 18 a 0. Konkrétně, jsou podporovány následující přetížení pro `Decimal`:  
+ Hodnoty pro omezující vlastnosti hodnot precision a scale může volitelně zadat při přetypování na `Edm.Decimal`. Pokud není explicitně zadán, výchozí hodnoty pro hodnot precision a scale jsou 18 a 0. Konkrétně se podporují následující přetížení pro `Decimal`:  
   
 -   `CAST( d as Edm.Decimal );`  
   
@@ -45,19 +45,19 @@ CAST( e as T )
   
 -   `CAST( d as Edm.Decimal(precision, scale) );`  
   
- Použití výraz cast je považován za explicitní převod. Explicitní převody může zkrátit dat nebo ztratit přesnost.  
+ Použití výrazu přetypování se považuje za explicitní převod. Explicitní převody mohou zkrátit data nebo ztratit přesnost.  
   
 > [!NOTE]
->  PŘETYPOVÁNÍ je podporována pouze přes primitivní typy a typy členů výčtu.  
+>  PŘETYPOVÁNÍ je podporována pouze primitivní typy a typy členů výčtu.  
   
 ## <a name="example"></a>Příklad  
- Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor PŘETYPOVÁNÍ k přetypování výrazu jednoho datového typu na jiný. Dotaz je založen na modelu prodej AdventureWorks. Pro zkompilování a spuštění tohoto dotazu, postupujte takto:  
+ Následující [!INCLUDE[esql](../../../../../../includes/esql-md.md)] dotaz používá operátor PŘETYPOVÁNÍ k přetypování výrazu jednoho datového typu na jiný. Dotaz je založen na modelu Sales AdventureWorks. Kompilace a spuštění tohoto dotazu, postupujte podle těchto kroků:  
   
-1.  Postupujte podle pokynů v [postup: provedení dotazu tohoto vrátí výsledky PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1.  Postupujte podle pokynů v [jak: Spustit dotaz, který vrátí výsledky typu PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
   
-2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metoda:  
+2.  Předat jako argument pro následující dotaz `ExecutePrimitiveTypeQuery` metody:  
   
  [!code-csharp[DP EntityServices Concepts 2#CAST](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#cast)]  
   
-## <a name="see-also"></a>Viz také  
- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+## <a name="see-also"></a>Viz také:
+- [Reference k Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

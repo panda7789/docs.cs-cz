@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-ms.openlocfilehash: ff06fd6518e67020b4d67d4e081307b8e54bae85
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 01e4b5ef4583d30114720ffe559a342b45fe2b98
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194693"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640014"
 ---
 # <a name="ltsocketgt-element-network-settings"></a>&lt;soket&gt; – Element (nastavení sítě)
 Určuje, zda operace soketu používat porty dokončení.  
   
  \<Konfigurace >  
 \<system.net>  
-\<Nastavení >  
-\<soket >  
+\<settings>  
+\<socket>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,7 +51,7 @@ Určuje, zda operace soketu používat porty dokončení.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
+|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
  `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` atributy se používají k určení výchozí chování týkající se použití portů dokončení třídy v <xref:System.Net.Sockets?displayProperty=nameWithType>.namespace. Dokončení porty se doporučuje pro aplikace s vysokým výkonem serveru.  
@@ -103,10 +103,10 @@ Určuje, zda operace soketu používat porty dokončení.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net?displayProperty=nameWithType>  
-- <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
-- <xref:System.Net.Sockets?displayProperty=nameWithType>  
-- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
-- <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net?displayProperty=nameWithType>
+- <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>
+- <xref:System.Net.Sockets?displayProperty=nameWithType>
+- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>
+- <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

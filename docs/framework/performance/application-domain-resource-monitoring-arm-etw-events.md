@@ -7,154 +7,154 @@ helpviewer_keywords:
 ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 47ab6e52278c77156e828869dd23575561879bff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8442b8723476984b90f740beac912688719f1791
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398180"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54689832"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>Události Trasování událostí pro Windows sledování prostředků domény aplikace (ARM)
-<a name="top"></a> Tyto události poskytují podrobné diagnostické informace týkající se stavu služby domény aplikace. Můžete použít tyto události nebo pomocí prostředků domény aplikace (ARM) funkci monitorování získat stejné informace.  
+<a name="top"></a> Tyto události poskytují podrobné diagnostické informace o stavu domény aplikace. Můžete použít tyto události nebo použití prostředků domény aplikace (ARM) funkci monitorování získávat stejné informace.  
   
  Tato kategorie se skládá z následujících událostí:  
   
--   [Threadcreated – událost](#threadcreated_event)  
+-   [ThreadCreated události](#threadcreated_event)  
   
--   [AppDomainMemAllocated událostí](#appdomainmemallocated_event)  
+-   [AppDomainMemAllocated události](#appdomainmemallocated_event)  
   
--   [AppDomainMemSurvived událostí](#appdomainmemsurvived_event)  
+-   [AppDomainMemSurvived Event](#appdomainmemsurvived_event)  
   
--   [ThreadAppDomainEnter událostí](#threadappdomainenter_event)  
+-   [ThreadAppDomainEnter události](#threadappdomainenter_event)  
   
--   [ThreadTerminated událostí](#threadterminated_event)  
+-   [ThreadTerminated události](#threadterminated_event)  
   
 <a name="threadcreated_event"></a>   
-## <a name="threadcreated-event"></a>Threadcreated – událost  
- Tato událost je aktivována také v rámci sekvence daneho zprostředkovatele jako `ThreadDC` (v části `AppDomainResourceManagementRundownKeyword` – klíčové slovo). Toto je pouze událost, která se vyvolá v rámci sekvence daneho zprostředkovatele v této kategorii.  
+## <a name="threadcreated-event"></a>ThreadCreated události  
+ Tato událost se vyvolá také jako skrze zprostředkovatele doběhu `ThreadDC` (v části `AppDomainResourceManagementRundownKeyword` – klíčové slovo). Toto je jediná událost, která je vyvolána v této kategorii skrze zprostředkovatele doběhu.  
   
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`AppDomainResourceManagementKeyword` (0x800)|Informational(4)|  
 |`ThreadingKeyword` (0x10000)|Informational(4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`ThreadCreated`|85|Vlákno byl vytvořen pro doménu aplikace.|  
+|`ThreadCreated`|85|Vlákno bylo vytvořeno pro doménu aplikace.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ID podprocesu|Win: UInt64|ID vlákna, která byla vytvořena.|  
-|AppDomainID|Win: UInt64|Identifikátor doménu aplikace, pro které vlákno je hlášena aktivity.|  
-|Příznaky|Win: UInt32|Vytvoření příznaky přístup z více vláken.|  
-|ManagedThreadIndex|Win: UInt32|Spravované index vláken, která byla vytvořena.|  
-|OSThreadID|Win: UInt32|Operační systém ID vlákna, která byla vytvořena.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|Idvlákna|win:UInt64|ID vlákna, který byl vytvořen.|  
+|AppDomainID|win:UInt64|Identifikátor domény aplikace, pro které vlákno je hlášena aktivity.|  
+|Příznaky|win:UInt32|Příznaky vytváření vlákna.|  
+|ManagedThreadIndex|win:UInt32|Spravovat indexu vlákna, který byl vytvořen.|  
+|OSThreadID|win:UInt32|Operační systém ID vlákna, který byl vytvořen.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="appdomainmemallocated_event"></a>   
-## <a name="appdomainmemallocated-event"></a>AppDomainMemAllocated událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+## <a name="appdomainmemallocated-event"></a>AppDomainMemAllocated události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`AppDomainResourceManagementKeyword` (0x800)|Informational(4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`AppDomainMemAllocated`|83|Každý 4 MB paměti (přibližně) je přidělen v doméně aplikace.|  
+|`AppDomainMemAllocated`|83|Každé 4 MB paměti (přibližně) je přidělena v doméně aplikace.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|AppDomainID|Win: UInt64|Identifikátor doménu aplikace, pro který prostředek je hlášena využití.|  
-|Přidělené|Win: UInt64|Celkový počet bajtů přidělených v této doméně aplikace od vytvoření domény aplikace (množství uvolněné paměti není odečítat).|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|AppDomainID|win:UInt64|Identifikátor domény aplikace, pro který prostředek se hlásí využití.|  
+|přidělené|win:UInt64|Celkový počet bajtů alokovaných v této doméně aplikace, od vytvoření domény aplikace (množství uvolněné paměti není odečtena).|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="appdomainmemsurvived_event"></a>   
-## <a name="appdomainmemsurvived-event"></a>AppDomainMemSurvived událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+## <a name="appdomainmemsurvived-event"></a>AppDomainMemSurvived Event  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`AppDomainResourceManagementKeyword` (0x800)|Informational(4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`AppDomainMemSurvived`|84|Uvolňování paměti jednotlivých byl ukončen.|  
+|`AppDomainMemSurvived`|84|Každá kolekce uvolnění paměti bylo již ukončeno.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|AppDomainID|Win: UInt64|Identifikátor domény, pro který prostředek je hlášena využití.|  
-|Zůstal naživu|Win: UInt64|Počet bajtů, který zůstal naživu po poslední kolekce a které jsou známé uchovávat tato doména aplikace. Toto číslo je přesné a úplné po úplné kolekce, ale mohou být neúplné po dočasné kolekce.|  
-|ProcessSurvived|Win: UInt64|Celkový počet bajtů, které zůstal naživu z poslední kolekce. Po kompletní sadu toto číslo představuje počet bajtů, se uchovávat za provozu ve spravovaných haldách. Po dočasné kolekce toto číslo představuje počet bajtů uchovávat v dočasných generace za provozu.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|AppDomainID|win:UInt64|Identifikátor domény, pro který prostředek se hlásí využití.|  
+|Zůstat naživu při|win:UInt64|Počet bajtů, které zůstat naživu po poslední a, které jsou známé uchovávat podle této domény aplikace. Toto číslo je přesné a úplné po celé kolekce, ale mohou být neúplné po dočasné kolekce.|  
+|ProcessSurvived|win:UInt64|Celkový počet bajtů, které zůstat naživu z posledního kolekce. Po celé kolekce toto číslo představuje počet bajtů se konají za provozu ve spravované haldy. Po dočasné kolekce toto číslo představuje počet bajtů uložených za provozu v dočasných generací.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="threadappdomainenter_event"></a>   
-## <a name="threadappdomainenter-event"></a>ThreadAppDomainEnter událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+## <a name="threadappdomainenter-event"></a>ThreadAppDomainEnter Event  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`AppDomainResourceManagementKeyword` (0x800)|Informational(4)|  
 |`ThreadingKeyword` (0x10000)|Informational(4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
-|`ThreadAppDomainEnter`|87|Vlákno vstupuje do domény aplikace.|  
+|`ThreadAppDomainEnter`|87|Vlákno přejde do domény aplikace.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ID podprocesu|Win: UInt64|Identifikátor přístup z více vláken.|  
-|AppDomainID|Win: UInt64|Identifikátor domény aplikace.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|Idvlákna|win:UInt64|Identifikátor vlákna.|  
+|AppDomainID|win:UInt64|Identifikátor domény aplikace.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="threadterminated_event"></a>   
-## <a name="threadterminated-event"></a>ThreadTerminated událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+## <a name="threadterminated-event"></a>ThreadTerminated události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
 |`AppDomainResourceManagementKeyword` (0x800)|Informational(4)|  
 |`ThreadingKeyword` (0x10000)|Informational(4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
-|Událost|ID události|Vyvolá, když|  
+|Událost|ID události|Vyvolá se, když|  
 |-----------|--------------|-----------------|  
 |`ThreadTerminated`|86|Vlákno ukončí.|  
   
- Následující tabulka zobrazuje data událostí:  
+ V následující tabulce jsou uvedeny data události:  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ID podprocesu|Win: UInt64|Identifikátor přístup z více vláken.|  
-|AppDomainID|Win: UInt64|Identifikátor domény aplikace.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|Idvlákna|win:UInt64|Identifikátor vlákna.|  
+|AppDomainID|win:UInt64|Identifikátor domény aplikace.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

@@ -8,35 +8,35 @@ helpviewer_keywords:
 - LineShape control [Visual Basic]
 - lines, drawing
 ms.assetid: 83e71b4e-aa76-4f9b-b547-8704309fd1e5
-ms.openlocfilehash: 5e1a837578aab4b4609a58ffee46406b022b8f97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 46360c01dfaf2c6fe199725a9ecfba2248c72d6d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33587342"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596225"
 ---
 # <a name="how-to-draw-lines-with-the-lineshape-control-visual-studio"></a>Postupy: Kreslení čar pomocí ovládacího prvku LineShape (Visual Studio)
-Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.LineShape> řízení k vykreslení diagonálních, svislé nebo vodorovné čáry na formulář nebo kontejneru, v době návrhu i v době běhu.  
+Můžete použít <xref:Microsoft.VisualBasic.PowerPacks.LineShape> ovládací prvek kreslení čar vodorovné, svislé nebo úhlopříčné ve formuláři nebo kontejneru, v době návrhu i době běhu.  
   
- **Poznámka:** váš počítač může zobrazovat odlišné názvy nebo umístění pro některé uživatele, Visual Studio prvky rozhraní v následujících pokynech. Tyto prvky jsou určeny edicí sady Visual Studio a použitým nastavením. Další informace najdete v tématu [přizpůsobení prostředí Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).  
+ **Poznámka:** váš počítač může zobrazit jiné názvy nebo umístění pro některé uživatele sady Visual Studio prvky rozhraní v následujících pokynech. Tyto prvky jsou určeny edicí sady Visual Studio a použitým nastavením. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-draw-a-line-at-design-time"></a>Kreslení čáry v době návrhu  
+### <a name="to-draw-a-line-at-design-time"></a>Nakreslení čáry v době návrhu  
   
-1.  Přetáhněte <xref:Microsoft.VisualBasic.PowerPacks.LineShape> řídit z **PowerPacks jazyka Visual Basic** ve **sada nástrojů** přetáhněte do ovládacího prvku formuláře nebo kontejneru.  
+1.  Přetáhněte <xref:Microsoft.VisualBasic.PowerPacks.LineShape> ovládacího prvku **sady Visual Basic PowerPack** kartu **nástrojů** přetáhněte do ovládacího prvku formulář nebo kontejneru.  
   
-2.  Přetáhněte velikost a přesuňte velikost a umístění řádku.  
+2.  Přetažením úchytů a přesunout obslužné rutiny pro velikost a umístění řádku.  
   
-     Můžete také upravit velikost a umístění řádku změnou `X1`, `X2`, `Y1`, a `Y2` vlastnosti v **vlastnosti** okno.  
+     Můžete také změnit velikost a umístění řádku změnou `X1`, `X2`, `Y1`, a `Y2` vlastnosti **vlastnosti** okno.  
   
-3.  V **vlastnosti** okně můžete nastavit další vlastnosti, jako `BorderStyle` nebo `BorderColor` změnit vzhled čáry.  
+3.  V **vlastnosti** okno, jako například volitelně nastavit další vlastnosti `BorderStyle` nebo `BorderColor` změnit vzhled čáry.  
   
-### <a name="to-draw-a-line-at-run-time"></a>Kreslení čáry v době běhu  
+### <a name="to-draw-a-line-at-run-time"></a>Nakreslení čáry v době běhu  
   
-1.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz na**.  
+1.  Na **projektu** nabídky, klikněte na tlačítko **přidat odkaz**.  
   
-2.  V **přidat odkaz na** dialogové okno, vyberte **Microsoft.VisualBasic.PowerPacks.VS**a potom klikněte na **OK**.  
+2.  V **přidat odkaz** dialogu **Microsoft.VisualBasic.PowerPacks.VS**a potom klikněte na tlačítko **OK**.  
   
-3.  V **Editor kódu**, přidejte `Imports` nebo `using` příkaz v horní části modulu:  
+3.  V **Editor kódu**, přidejte `Imports` nebo `using` příkazu v horní části modulu:  
   
 ```vb  
 Imports Microsoft.VisualBasic.PowerPacks  
@@ -46,12 +46,12 @@ Imports Microsoft.VisualBasic.PowerPacks
 using Microsoft.VisualBasic.PowerPacks;  
 ```  
   
-4.  Přidejte následující kód v `Event` postup:  
+4.  Přidejte následující kód `Event` postup:  
   
      [!code-csharp[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
      [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.PowerPacks.LineShape>  
- [Úvod k ovládacím prvkům Čára a Tvar](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)  
- [Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.PowerPacks.LineShape>
+- [Úvod k ovládacím prvkům Čára a Tvar](../../../visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)
+- [Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape](../../../visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)

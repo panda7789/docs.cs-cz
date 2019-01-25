@@ -9,12 +9,12 @@ helpviewer_keywords:
 - size [Windows Forms], controls
 - Windows Forms controls, size
 ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
-ms.openlocfilehash: dbec87c0746962396a3088751803a6091ecfcb48
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 12112c5910291d657ae57d770667c6a20d6b966d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512930"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54659040"
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>Postupy: Změna velikosti ovládacích prvků ve formulářích Windows
 Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit velikost více ovládacích prvků stejného nebo jiného druhu, jako například <xref:System.Windows.Forms.Button> a <xref:System.Windows.Forms.GroupBox> ovládací prvky.  
@@ -32,10 +32,10 @@ Můžete změnit velikost jednotlivých ovládacích prvků a můžete změnit v
   
 2.  Na **formátu** nabídce zvolte **nastavit stejnou velikost**a vyberte jednu ze čtyř možností. První tři příkazy Změna velikosti ovládacích prvků tak, aby odpovídaly prvního vybraného ovládacího prvku.  
   
-## <a name="see-also"></a>Viz také  
- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)  
- [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)  
- [Postupy: Změna velikosti Windows Forms pomocí návrháře](https://msdn.microsoft.com/library/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)
+## <a name="see-also"></a>Viz také:
+- [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)
+- [Uspořádávání ovládacích prvků ve Windows Forms](../../../../docs/framework/winforms/controls/arranging-controls-on-windows-forms.md)
+- [Popisování jednotlivých ovládacích prvků Windows Forms a zajišťování zástupců pro tyto prvky](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+- [Ovládací prvky Windows Forms podle funkce](../../../../docs/framework/winforms/controls/windows-forms-controls-by-function.md)
+- [Postupy: Změna velikosti Windows Forms pomocí návrháře](https://msdn.microsoft.com/library/3fe57c94-851c-45d7-a6f6-6b85f3c4a104)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Class attribute
 - x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-ms.openlocfilehash: a29a645a05f0d3b0e8611dd722c5018f295f3070
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 2913782d8179fb882f8e916ed25feafcb5740a3a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856189"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690043"
 ---
 # <a name="xclass-directive"></a>x:Class – direktiva
 Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-behind částečné třídy. Kód částečná třída je definována v samostatném souboru kódu v [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] jazyka, zatímco částečné třídy kód se obvykle vytvoří pomocí generování kódu během kompilace XAML.  
@@ -33,7 +33,7 @@ Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-be
 |||  
 |-|-|  
 |`namespace`|Volitelné. Určuje [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] obor názvů obsahující částečné třídy identifikovaný `classname`. Pokud `namespace` není zadána, tečku (.) odděluje `namespace` a `classname`. Viz poznámky.|  
-|`classname`|Požadováno. Určuje, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] název částečné třídy, která se připojuje načíst XAML a vašeho kódu na pozadí pro tento XAML.|  
+|`classname`|Povinný parametr. Určuje, [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] název částečné třídy, která se připojuje načíst XAML a vašeho kódu na pozadí pro tento XAML.|  
   
 ## <a name="dependencies"></a>Závislosti  
  `x:Class` lze zadat pouze na kořenový prvek XAML výroby. `x:Class` není platný na libovolný objekt, který má nadřazený objekt v produkčním prostředí XAML. Další informace najdete v tématu [ \[MS-XAML\] části 4.3.1.6](https://go.microsoft.com/fwlink/?LinkId=114525).  
@@ -60,8 +60,8 @@ Nakonfiguruje kompilace kódu XAML pro připojení mezi značky a modelu code-be
 ## <a name="silverlight-usage-notes"></a>Poznámky k použití aplikace Silverlight  
  `x:Class` pro prostředí Silverlight je zdokumentován samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081).  
   
-## <a name="see-also"></a>Viz také  
- [x:Subclass – direktiva](../../../docs/framework/xaml-services/x-subclass-directive.md)  
- [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)  
- [x:ClassModifier – direktiva](../../../docs/framework/xaml-services/x-classmodifier-directive.md)  
- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)
+## <a name="see-also"></a>Viz také:
+- [x:Subclass – direktiva](../../../docs/framework/xaml-services/x-subclass-directive.md)
+- [XAML a vlastní třídy pro WPF](../../../docs/framework/wpf/advanced/xaml-and-custom-classes-for-wpf.md)
+- [x:ClassModifier – direktiva](../../../docs/framework/xaml-services/x-classmodifier-directive.md)
+- [Typy migrované z prostředí WPF do oboru názvů System.Xaml](../../../docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)

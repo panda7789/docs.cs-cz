@@ -2,19 +2,19 @@
 title: LINQ to XML versus. Další Technologies2 XML
 ms.date: 07/20/2015
 ms.assetid: 72ce3a82-ffc6-488c-98e7-b9b40f3591ec
-ms.openlocfilehash: 926f1a1ab49a627331a614ef68790ea289b3dcff
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 2a671e2588dfe5d325caf745d60fcb993f4d0052
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42908073"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54690319"
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML versus. Jiné technologie XML
 Toto téma srovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na následující technologie XML: <xref:System.Xml.XmlReader>, XSLT, MSXML a analyzátoru XmlLite. Tyto informace mohou pomoci při rozhodování, technologii, která má použít.  
   
  Porovnání [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k Document Object Model (DOM), najdete v článku [LINQ to XML versus. Modelu DOM (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md).  
   
-## <a name="linq-to-xml-vs-xmlreader"></a>LINQ to XML versus. Objekt XmlReader  
+## <a name="linq-to-xml-vs-xmlreader"></a>LINQ to XML versus. XmlReader  
  <xref:System.Xml.XmlReader> jedná o analyzátor rychlé, pouze vpřed, bez ukládání do mezipaměti.  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se implementuje nad <xref:System.Xml.XmlReader>, a jsou úzce integrovány. Ale můžete také použít <xref:System.Xml.XmlReader> samostatně.  
@@ -45,12 +45,12 @@ Toto téma srovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na n
   
  MSXML se nedoporučuje používat ve spravovaném kódu založené na common language runtime (CLR).  
   
-## <a name="linq-to-xml-vs-xmllite"></a>LINQ to XML versus. Analyzátor XmlLite  
+## <a name="linq-to-xml-vs-xmllite"></a>LINQ to XML versus. XmlLite  
  Analyzátor XmlLite je bez ukládání do mezipaměti, předat dál pouze o přijetí změn analyzátor. Vývojáři pomocí analyzátoru XmlLite především v jazyce C++. Není doporučeno vývojáři mohou použít analyzátor XmlLite se spravovaným kódem.  
   
  Hlavní výhodou analyzátor XmlLite je, že je jednoduché a rychlé analyzátor XML, který je ve většině případů zabezpečený. Jeho plochu hrozeb je velmi malý. Pokud potřebujete analyzovat nedůvěryhodné dokumenty a chcete pro ochranu před útoky, jako je útok DOS nebo prozrazení dat, analyzátor XmlLite může být dobrou volbou.  
   
  Analyzátor XmlLite není integrován s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Nevydává programátor vylepšení produktivity, které mají být motivačním nuceně za [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

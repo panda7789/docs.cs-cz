@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2d5dcb089074b52fc87a0bb83c7e062e7ef07b46
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4ce8fb8d9d941544982c8da852260b8018788a6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450398"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680741"
 ---
 # <a name="corprfgcrootflags-enumeration"></a>COR_PRF_GC_ROOT_FLAGS – výčet
-Určuje vlastnost kořenové kolekce paměti.  
+Označuje vlastnost kořenové kolekce uvolnění paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,16 +41,16 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_ROOT_PINNING`|Kořenové zabraňuje uvolňování z přesunutí objektu.|  
-|`COR_PRF_GC_ROOT_WEAKREF`|Kořenové nezabrání uvolňování paměti.|  
-|`COR_PRF_GC_ROOT_INTERIOR`|Kořenové odkazuje na pole objektu, nikoli samotného objektu.|  
-|`COR_PRF_GC_ROOT_REFCOUNTED`|Kořenové zabraňuje uvolňování paměti, pokud je tento počet odkaz objektu určitou hodnotu.|  
+|`COR_PRF_GC_ROOT_PINNING`|Kořen brání uvolňování získat přechodem na objekt.|  
+|`COR_PRF_GC_ROOT_WEAKREF`|Kořen nebrání uvolňování paměti.|  
+|`COR_PRF_GC_ROOT_INTERIOR`|Kořenovém adresáři odkazuje na pole objektu, nikoli samotného objektu.|  
+|`COR_PRF_GC_ROOT_REFCOUNTED`|Kořen zabrání uvolňování paměti, pokud je počet odkazů na objekt je určitou hodnotu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `COR_PRF_GC_ROOT_FLAGS` je bitová maska, která poskytuje další informace o speciální kořenových certifikačních autorit. Ne všechny kořenové adresáře jsou ale zvláštní. Například některé kořeny nejsou slabé odkazy, vnitřních ukazatelů, definovaného a započítány odkaz. U takových kořenových certifikačních autorit neexistují žádné příznaky k předání informací o tom. Proto metody, které používají tento výčet, jako [icorprofilercallback2::rootreferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) metoda, odeslání 0 bitové masky příznaky, která určuje, že všechny flags jsou vypnuté.  
+ `COR_PRF_GC_ROOT_FLAGS` je bitová maska, která poskytuje další informace o speciální kořenové adresáře. Ale ne všechny kořeny jsou speciální. Například některé kořeny nejsou slabé odkazy, vnitřních ukazatelů, připnuté nebo referenčně započítaný. Pro takové kořeny nejsou žádné příznaky vyjádřit. Proto metody, které používají tento výčet, jako [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) metody send 0 bitové masky příznaky, která udává, že všechny příznaky jsou vypnuté.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -58,5 +58,5 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

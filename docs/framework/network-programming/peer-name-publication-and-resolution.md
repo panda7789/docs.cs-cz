@@ -2,12 +2,12 @@
 title: Publikace Peer Name a řešení
 ms.date: 03/30/2017
 ms.assetid: f0370e08-9fa6-4ee5-ab78-9a58a20a7da2
-ms.openlocfilehash: 98ccfc79a25d547c751d8153d0f290860e5eb743
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 4ecdd6a4c6b52368ce8cdfe57288000631077b07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53143724"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682979"
 ---
 # <a name="peer-name-publication-and-resolution"></a>Publikace Peer Name a řešení
 
@@ -47,5 +47,5 @@ PNRP verze 2 uzly nepublikujte ID PNRP, pokud jsou pouze řeší jiné ID P2P. H
   
  V rámci <xref:System.Net.PeerToPeer> obor názvů, existuje vztah n: n mezi <xref:System.Net.PeerToPeer.PeerName> záznamy, které obsahují koncové body a cloudy PNRP nebo OK, ve kterých komunikovat. Pokud existují duplicitní nebo zastaralý položky nebo více uzlů se stejným názvem sdílené, PNRP uzly můžete získat pomocí aktuální informace <xref:System.Net.PeerToPeer.PeerNameResolver> třídy. <xref:System.Net.PeerToPeer.PeerNameResolver> Metody používají název jednoho partnerského zařízení ke zjednodušení perspektivu pro záznamy názvového jedné sdílené peer m a témuž jeden na mnoho cloudů. Toto je podobný dotaz provádí spojení relační tabulky. Po úspěšném dokončení vrátí objekt překladače <xref:System.Net.PeerToPeer.PeerNameRecordCollection> pro název zadaného partnera.  Název partnerského zařízení by tomu bylo ve všech záznamech název partnera v kolekci, například seřazené podle cloudu. Toto jsou instance název partnerského zařízení, jehož podpůrné data mohou být vyžádány aplikací založené na protokolu PNRP.  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 - <xref:System.Net.PeerToPeer>

@@ -7,159 +7,159 @@ helpviewer_keywords:
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 578aed02d5d44ae94763b6a254420a4976320f13
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1e18d64bdc67bfa5dce01c9125ee2e8585ab7db9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398102"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671951"
 ---
 # <a name="method-etw-events"></a>Události Trasování událostí pro Windows metod
-<a name="top"></a> Tyto události shromažďovat informace, které jsou specifické pro metody. Datová část tyto události je vyžadována pro symbol řešení. Kromě toho tyto události poskytují užitečné informace, jako je počet pokusů, že byla volána metoda.  
+<a name="top"></a> Tyto události shromažďovat informace, které jsou specifické pro metody. Datová část tyto události se vyžaduje pro rozlišení symbolů. Kromě toho tyto události poskytují užitečné informace, jako je například počet, kolikrát, že byla volána metoda.  
   
- Všechny události metoda mají úroveň "Informační (4)". Všechny události podrobné metoda mít úrovní "Verbose (5)".  
+ Všechny události metod úroveň "Informační (4)". Všechny události podrobné metoda úroveň "Verbose (5)".  
   
- Všechny události metod jsou vydané `JITKeyword` – klíčové slovo (0x10) nebo `NGenKeyword` – klíčové slovo (0x20) v rámci zprostředkovatele runtime, nebo `JitRundownKeyword` (0x10) nebo `NGENRundownKeyword` (0x20) v rámci sekvence daneho zprostředkovatele.  
+ Všechny metody události jsou vyvolány `JITKeyword` – klíčové slovo (0x10) nebo `NGenKeyword` – klíčové slovo (0x20) v části zprostředkovatel běhového prostředí, nebo `JitRundownKeyword` (0x10) nebo `NGENRundownKeyword` (0x20) skrze zprostředkovatele doběhu.  
   
- Události metod CLR dále dělí na následující:  
+ Události metod modulu CLR je dále rozdělená na následující:  
   
--   [Události metod CLR](#clr_method_events)  
+-   [Události CLR – metoda](#clr_method_events)  
   
 -   [CLR – metoda značky události](#clr_method_marker_events)  
   
 -   [Podrobné události CLR – metoda](#clr_method_verbose_events)  
   
--   [MethodJittingStarted událostí](#methodjittingstarted_event)  
+-   [MethodJittingStarted události](#methodjittingstarted_event)  
   
 <a name="clr_method_events"></a>   
-## <a name="clr-method-events"></a>Události metod CLR  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
+## <a name="clr-method-events"></a>Události CLR – metoda  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň. (Další informace najdete v tématu [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`JITKeyword` Poskytovatel modulu runtime (0x10)|Informativní (4)|  
-|`NGenKeyword` Poskytovatel modulu runtime (0x20)|Informativní (4)|  
-|`JitRundownKeyword` sekvence daneho zprostředkovatele (0x10)|Informativní (4)|  
-|`NGENRundownKeyword` sekvence daneho zprostředkovatele (0x20)|Informativní (4)|  
+|`JITKeyword` Zprostředkovatel běhového prostředí (0x10)|Informativní (4)|  
+|`NGenKeyword` Zprostředkovatel běhového prostředí (0x20)|Informativní (4)|  
+|`JitRundownKeyword` Zprostředkovatel doběhu (0x10)|Informativní (4)|  
+|`NGENRundownKeyword` Zprostředkovatel doběhu (0x20)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`MethodLoad_V1`|136|Vyvolá, když metoda je v běhu načíst (JIT načíst) nebo bitovou kopii NGEN je načtena. Dynamické a obecné metody pro zatížení metoda nepoužívejte tuto verzi. Pomocníci JIT nikdy nepoužívejte tuto verzi.|  
-|`MethodUnLoad_V1`|137|Vyvolá, když modul je odpojen nebo zničena domény aplikace. Dynamické metody pro metoda uvolní nikdy nepoužívejte tuto verzi.|  
-|`MethodDCStart_V1`|137|Vytvoří výčet metody během spuštění rundown.|  
-|`MethodDCEnd_V1`|138|Vytvoří výčet metod během rundown end.|  
+|`MethodLoad_V1`|136|Vyvolá, když metoda je just-in-time načíst (za běhu načíst) nebo načíst NGEN image. Dynamické a obecné metody nepoužívejte tuto verzi metoda zatížení. Pomocné rutiny JIT nikdy nepoužívejte tuto verzi.|  
+|`MethodUnLoad_V1`|137|Vyvoláno, když modul je odpojen nebo je zničen domény aplikace. Tuto verzi dynamické metody nikdy použít pro metodu uvolní.|  
+|`MethodDCStart_V1`|137|Podává výčet metod během začátek doběhu.|  
+|`MethodDCEnd_V1`|138|Podává výčet metod během konec doběhu.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodID|Win: UInt64|Jedinečný identifikátor metody. Pro JIT pomocné metody je nastavena na adresu spuštění metody.|  
-|ID modulu|Win: UInt64|Identifikátor modulu, do které patří tato metoda (0 = Pomocníci JIT).|  
-|MethodStartAddress|Win: UInt64|Počáteční adresa metody.|  
-|MethodSize|Win: UInt32|Velikost metody.|  
-|MethodToken|Win: UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
-|MethodFlags|Win: UInt32|0x1: dynamické metoda.<br /><br /> 0x2: Obecné metody.<br /><br /> 0x4: kompilována code – metoda (jinak NGEN nativních bitových kopií kód).<br /><br /> 0x8: Pomocná metoda.|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodID|win:UInt64|Jedinečný identifikátor metody. Pro metody helper JIT je nastavena na počáteční adresu metody.|  
+|ID modulu|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocné rutiny JIT).|  
+|MethodStartAddress|win:UInt64|Počáteční adresa metody.|  
+|MethodSize|win:UInt32|Velikost metody.|  
+|MethodToken|win:UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
+|MethodFlags|win:UInt32|0x1: Dynamická metoda.<br /><br /> 0x2: Obecné metody.<br /><br /> 0x4: Metoda kód zkompilovaný kompilátorem JIT (jinak NGEN nativních bitových kopií kód).<br /><br /> 0x8: Pomocná metoda.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="clr_method_marker_events"></a>   
 ## <a name="clr-method-marker-events"></a>CLR – metoda značky události  
- Tyto události jsou vyvolány pouze v rámci sekvence daneho zprostředkovatele. Jsou označují konec metoda výčtu při spuštění nebo ukončení rundown. (To znamená, že jsou vyvolány při `NGENRundownKeyword`, `JitRundownKeyword`, `LoaderRundownKeyword`, nebo `AppDomainResourceManagementRundownKeyword` – klíčové slovo je povolená.)  
+ Tyto události jsou vyvolány pouze skrze zprostředkovatele doběhu. Jsou místo na konec metody výčet při spuštění nebo ukončení doběhu. (To znamená, že jsou generovány při `NGENRundownKeyword`, `JitRundownKeyword`, `LoaderRundownKeyword`, nebo `AppDomainResourceManagementRundownKeyword` – klíčové slovo je povolená.)  
   
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`AppDomainResourceManagementRundownKeyword` sekvence daneho zprostředkovatele (0x800)|Informativní (4)|  
-|`JitRundownKeyword` sekvence daneho zprostředkovatele (0x10)|Informativní (4)|  
-|`NGENRundownKeyword` sekvence daneho zprostředkovatele (0x20)|Informativní (4)|  
+|`AppDomainResourceManagementRundownKeyword` Zprostředkovatel doběhu (0x800)|Informativní (4)|  
+|`JitRundownKeyword` Zprostředkovatel doběhu (0x10)|Informativní (4)|  
+|`NGENRundownKeyword` Zprostředkovatel doběhu (0x20)|Informativní (4)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|----------------|  
-|`DCStartInit_V1`|147|Odesílat před začátek výčtu během spuštění rundown.|  
-|`DCStartComplete_V1`|145|Odeslat na konci výčtu během spuštění rundown.|  
-|`DCEndInit_V1`|148|Odesílat před začátek výčtu během rundown end.|  
-|`DCEndComplete_V1`|146|Odeslat na konci výčtu během rundown end.|  
+|`DCStartInit_V1`|147|Před zahájením výčtu během začátek doběhu odeslány.|  
+|`DCStartComplete_V1`|145|Odeslání na konci výčtu během začátek doběhu.|  
+|`DCEndInit_V1`|148|Před zahájením výčtu během konec doběhu odeslány.|  
+|`DCEndComplete_V1`|146|Odeslání na konci výčtu během konec doběhu.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="clr_method_verbose_events"></a>   
 ## <a name="clr-method-verbose-events"></a>Podrobné události CLR – metoda  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`JITKeyword` Poskytovatel modulu runtime (0x10)|Verbose (5)|  
-|`NGenKeyword` Poskytovatel modulu runtime (0x20)|Verbose (5)|  
-|`JitRundownKeyword` sekvence daneho zprostředkovatele (0x10)|Verbose (5)|  
-|`NGENRundownKeyword` sekvence daneho zprostředkovatele (0x20)|Verbose (5)|  
+|`JITKeyword` Zprostředkovatel běhového prostředí (0x10)|Verbose (5)|  
+|`NGenKeyword` Zprostředkovatel běhového prostředí (0x20)|Verbose (5)|  
+|`JitRundownKeyword` Zprostředkovatel doběhu (0x10)|Verbose (5)|  
+|`NGENRundownKeyword` Zprostředkovatel doběhu (0x20)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`MethodLoadVerbose_V1`|143|Vyvolá, když je metoda JIT načíst nebo bitovou kopii NGEN je načtena. Dynamické a obecné metody vždy v této verzi metoda zatížení. Pomocníci JIT vždy používají tuto verzi.|  
-|`MethodUnLoadVerbose_V1`|144|Vyvolá, když je zničen dynamické metody, modul je odpojen nebo zničena domény aplikace. Dynamické metody vždy v této verzi metoda uvolní.|  
-|`MethodDCStartVerbose_V1`|141|Vytvoří výčet metody během spuštění rundown.|  
-|`MethodDCEndVerbose_V1`|142|Vytvoří výčet metod během rundown end.|  
+|`MethodLoadVerbose_V1`|143|Vyvoláno, když je metoda JIT načíst nebo načíst NGEN image. Tuto verzi dynamické a obecné metody vždy použít pro metodu načtení. Pomocné rutiny JIT vždy pomocí této verze.|  
+|`MethodUnLoadVerbose_V1`|144|Vyvolána, když je zničen dynamickou metodu, modul je odpojen nebo je zničen domény aplikace. Tuto verzi dynamické metody vždy použít pro metodu uvolní.|  
+|`MethodDCStartVerbose_V1`|141|Podává výčet metod během začátek doběhu.|  
+|`MethodDCEndVerbose_V1`|142|Podává výčet metod během konec doběhu.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodID|Win: UInt64|Jedinečný identifikátor metody. U metody helper JIT nastavte počáteční adresa metody.|  
-|ID modulu|Win: UInt64|Identifikátor modulu, do které patří tato metoda (0 = Pomocníci JIT).|  
-|MethodStartAddress|Win: UInt64|Počáteční adresa.|  
-|MethodSize|Win: UInt32|Metoda délka.|  
-|MethodToken|Win: UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
-|MethodFlags|Win: UInt32|0x1: dynamické metoda.<br /><br /> 0x2: Obecné metody.<br /><br /> 0x4: metoda kompilována (jinak, generovaný nástrojem NGen.exe)<br /><br /> 0x8: Pomocná metoda.|  
-|MethodNameSpace|Win: UnicodeString|Název úplné oboru názvů přidružené k metodě.|  
-|MethodName|Win: UnicodeString|Název úplné třídy přidružené k metodě.|  
-|MethodSignature|Win: UnicodeString|Podpis metody (čárkami oddělený seznam názvů typu).|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodID|win:UInt64|Jedinečný identifikátor metody. Pro metody helper JIT nastavte počáteční adresa metody.|  
+|ID modulu|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocné rutiny JIT).|  
+|MethodStartAddress|win:UInt64|Počáteční adresa.|  
+|MethodSize|win:UInt32|Metoda délku.|  
+|MethodToken|win:UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
+|MethodFlags|win:UInt32|0x1: Dynamická metoda.<br /><br /> 0x2: Obecné metody.<br /><br /> 0x4: Metody zkompilované JIT (jinak, vygenerované pomocí NGen.exe)<br /><br /> 0x8: Pomocná metoda.|  
+|MethodNameSpace|win:UnicodeString|Obor názvů úplný název přidružený k metodu.|  
+|methodName|win:UnicodeString|Úplný název třídy přidružené k metodě.|  
+|MethodSignature|win:UnicodeString|Podpis metody (čárkou oddělený seznam názvů typů).|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
  [Zpět na začátek](#top)  
   
 <a name="methodjittingstarted_event"></a>   
-## <a name="methodjittingstarted-event"></a>MethodJittingStarted událostí  
- V následující tabulce jsou uvedeny – klíčové slovo a úroveň.  
+## <a name="methodjittingstarted-event"></a>MethodJittingStarted události  
+ V následující tabulce jsou uvedeny klíčové slovo a úroveň.  
   
-|– Klíčové slovo za vyvolání události|úroveň|  
+|Klíčové slovo pro vyvolání události|úroveň|  
 |-----------------------------------|-----------|  
-|`JITKeyword` Poskytovatel modulu runtime (0x10)|Verbose (5)|  
-|`NGenKeyword` Poskytovatel modulu runtime (0x20)|Verbose (5)|  
-|`JitRundownKeyword` sekvence daneho zprostředkovatele (0x10)|Verbose (5)|  
-|`NGENRundownKeyword` sekvence daneho zprostředkovatele (0x20)|Verbose (5)|  
+|`JITKeyword` Zprostředkovatel běhového prostředí (0x10)|Verbose (5)|  
+|`NGenKeyword` Zprostředkovatel běhového prostředí (0x20)|Verbose (5)|  
+|`JitRundownKeyword` Zprostředkovatel doběhu (0x10)|Verbose (5)|  
+|`NGENRundownKeyword` Zprostředkovatel doběhu (0x20)|Verbose (5)|  
   
  V následující tabulce jsou uvedeny informace o události.  
   
 |Událost|ID události|Popis|  
 |-----------|--------------|-----------------|  
-|`MethodJittingStarted`|145|Vyvolá, když metoda, která má být kompilována.|  
+|`MethodJittingStarted`|145|Vyvoláno, když metoda, která má být zkompilovaný kompilátorem JIT.|  
   
  Následující tabulka zobrazuje data událostí.  
   
 |Název pole|Datový typ|Popis|  
 |----------------|---------------|-----------------|  
-|MethodID|Win: UInt64|Jedinečný identifikátor metody.|  
-|ID modulu|Win: UInt64|Identifikátor modulu, do které patří tato metoda.|  
-|MethodToken|Win: UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
-|MethodILSize|Win: UInt32|Velikost Microsoft (MSIL intermediate language) pro metodu, která se kompilována.|  
-|MethodNameSpace|Win: UnicodeString|Název úplné třídy přidružené k metodě.|  
-|MethodName|Win: UnicodeString|Název metody.|  
-|MethodSignature|Win: UnicodeString|Podpis metody (čárkami oddělený seznam názvů typu).|  
-|ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|  
+|MethodID|win:UInt64|Jedinečný identifikátor metody.|  
+|ID modulu|win:UInt64|Identifikátor modulu, ke kterému patří tato metoda.|  
+|MethodToken|win:UInt32|0 pro dynamických metod a JIT pomocné rutiny.|  
+|MethodILSize|win:UInt32|Velikost Microsoft intermediate language (MSIL) pro metodu, která je právě zkompilovaný kompilátorem JIT.|  
+|MethodNameSpace|win:UnicodeString|Úplný název třídy přidružené k metodě.|  
+|methodName|win:UnicodeString|Název metody.|  
+|MethodSignature|win:UnicodeString|Podpis metody (čárkou oddělený seznam názvů typů).|  
+|ClrInstanceID|win:UInt16|Jedinečné ID instance CLR nebo CoreCLR.|  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

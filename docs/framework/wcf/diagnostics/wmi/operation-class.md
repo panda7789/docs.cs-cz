@@ -2,12 +2,12 @@
 title: Třída Operation
 ms.date: 03/30/2017
 ms.assetid: b19d1496-ef06-4d0c-b2ae-e728ec00cca0
-ms.openlocfilehash: 16de8b25594896349ea546d3def52dd256fe5c70
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 9453d67854bb8439891661b07e3ab3aa373e23eb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50180936"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54668298"
 ---
 # <a name="operation-class"></a>Třída Operation
 Operace  
@@ -41,84 +41,84 @@ class Operation
 ### <a name="action"></a>Akce  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Akce WS-Adressing zprávy s požadavkem.  
   
 ### <a name="asyncpattern"></a>AsyncPattern  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Označuje, že operace je provedena asynchronně pomocí `Begin`[otevřít nebo zavřít ostrých závorek] a `End`dvojice metody [otevřít nebo zavřít ostrých závorek] v kontraktu služby.  
   
 ### <a name="behaviors"></a>Chování  
- Datový typ: chování pole  
+ Datový typ: Chování pole  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Chování, které jsou spojené s touto operací.  
   
 ### <a name="iscallback"></a>IsCallback  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota TRUE, pokud je operace operací zpětného volání.  
   
 ### <a name="isinitiating"></a>IsInitiating  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda metoda provádí operaci, která může iniciovat relaci na serveru.  
   
 ### <a name="isoneway"></a>IsOneWay  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda operace vrátí zprávy s odpovědí.  
   
 ### <a name="isterminating"></a>IsTerminating  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda operace vrátí zprávy s odpovědí.  
   
 ### <a name="methodsignature"></a>MethodSignature  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Označení metody operace.  
   
 ### <a name="name"></a>Název  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Název operace.  
   
 ### <a name="parametertypes"></a>ParameterTypes  
  Datový typ: pole řetězců  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Typy parametrů operace.  
   
 ### <a name="replyaction"></a>Třídu ReplyAction  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota akce SOAP pro odpověď operace.  
   
 ### <a name="returntype"></a>Vlastnost ReturnType  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Návratový typ operace.  
   
@@ -128,5 +128,5 @@ class Operation
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.OperationDescription>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.OperationDescription>

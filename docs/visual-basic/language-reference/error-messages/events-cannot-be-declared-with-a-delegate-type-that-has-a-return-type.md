@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC31084
 ms.assetid: 6111c5ca-d30b-490a-812e-dd422e221c7d
-ms.openlocfilehash: 33cef19d91445fa39c19ad1cdd6ef4f73b6b5319
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a0d7390c473b34c9a0610d1fe7e8732167645de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33586461"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54642487"
 ---
 # <a name="events-cannot-be-declared-with-a-delegate-type-that-has-a-return-type"></a>Události nelze deklarovat s typem delegáta, který má návratový typ.
-Delegát byl zadán pro proceduru funkce.  
+Pro proceduru function byla zadána delegáta.  
   
  **ID chyby:** BC31084  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Zadejte delegáta pro `Sub` postupu.  
+-   Zadejte delegát `Sub` postup.  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a>Viz také:
+- [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

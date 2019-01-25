@@ -2,12 +2,12 @@
 title: Spolehlivá relace vlastních vazeb přes HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: fb23dc6e6e2e13d759d29584ed6a990ae769ac8b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d25a59b5921484c33a2b0c94febc97a04011f8d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44253114"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54643426"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Spolehlivá relace vlastních vazeb přes HTTPS
 Tento příklad ukazuje použití zabezpečení přenosu SSL pomocí spolehlivé relace. Spolehlivé relace implementuje protokol zasílání zpráv WS-Reliable. Využitím WS-Security spolehlivých relací může mít zabezpečené stabilní relace. Ale v některých případech můžete místo toho použijte zabezpečení přenosu HTTP s protokolem SSL.  
@@ -136,4 +136,4 @@ Press <ENTER> to terminate client.
   
 5.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
