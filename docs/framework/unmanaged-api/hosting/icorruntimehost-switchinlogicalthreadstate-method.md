@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0836d47c364a815ea3de9b991fe788815a1b36c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eebfb98dfefd536998ef0c02d66b57d39414f0cc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436686"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54558732"
 ---
-# <a name="icorruntimehostswitchinlogicalthreadstate-method"></a><span data-ttu-id="9861c-102">ICorRuntimeHost::SwitchInLogicalThreadState – metoda</span><span class="sxs-lookup"><span data-stu-id="9861c-102">ICorRuntimeHost::SwitchInLogicalThreadState Method</span></span>
-<span data-ttu-id="9861c-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo z vašeho kódu.</span><span class="sxs-lookup"><span data-stu-id="9861c-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icorruntimehostswitchinlogicalthreadstate-method"></a><span data-ttu-id="e296c-102">ICorRuntimeHost::SwitchInLogicalThreadState – metoda</span><span class="sxs-lookup"><span data-stu-id="e296c-102">ICorRuntimeHost::SwitchInLogicalThreadState Method</span></span>
+<span data-ttu-id="e296c-103">Tato metoda podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.</span><span class="sxs-lookup"><span data-stu-id="e296c-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9861c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9861c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e296c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e296c-104">Syntax</span></span>  
   
 ```  
 HRESULT SwitchInLogicalThreadState(  
@@ -35,18 +35,18 @@ HRESULT SwitchInLogicalThreadState(
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="9861c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9861c-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="e296c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e296c-105">Parameters</span></span>  
  `pFiberCookie`  
- <span data-ttu-id="9861c-106">[v] Soubor cookie, který označuje fiber používat.</span><span class="sxs-lookup"><span data-stu-id="9861c-106">[in] Cookie that indicates the fiber to use.</span></span>  
+ <span data-ttu-id="e296c-106">[in] Soubor cookie, který označuje fiber používat.</span><span class="sxs-lookup"><span data-stu-id="e296c-106">[in] Cookie that indicates the fiber to use.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9861c-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9861c-107">Requirements</span></span>  
- <span data-ttu-id="9861c-108">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9861c-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e296c-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e296c-107">Requirements</span></span>  
+ <span data-ttu-id="e296c-108">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e296c-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9861c-109">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="9861c-109">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="e296c-109">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="e296c-109">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="9861c-110">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9861c-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="e296c-110">**Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="e296c-110">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="9861c-111">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="9861c-111">**.NET Framework Version:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="e296c-111">**Verze rozhraní .NET framework:** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="e296c-111">**.NET Framework Version:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9861c-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="9861c-112">See Also</span></span>  
- [<span data-ttu-id="9861c-113">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9861c-113">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+## <a name="see-also"></a><span data-ttu-id="e296c-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e296c-112">See also</span></span>
+- [<span data-ttu-id="e296c-113">ICorRuntimeHost – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e296c-113">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

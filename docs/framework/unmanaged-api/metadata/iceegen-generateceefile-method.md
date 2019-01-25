@@ -17,35 +17,35 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d82952e34195ee813d4cd0217c904a5253859f99
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 78cbede0522ce7b78f0a6518ba506b69b4b0515e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33445105"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54712963"
 ---
-# <a name="iceegengenerateceefile-method"></a><span data-ttu-id="d6bb7-102">ICeeGen::GenerateCeeFile – metoda</span><span class="sxs-lookup"><span data-stu-id="d6bb7-102">ICeeGen::GenerateCeeFile Method</span></span>
-<span data-ttu-id="d6bb7-103">Generuje soubor základu kódu, který obsahuje kód základní momentálně načtených do této [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="d6bb7-103">Generates a code-base file that contains the code base currently loaded into this [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.</span></span>  
+# <a name="iceegengenerateceefile-method"></a><span data-ttu-id="2ce89-102">ICeeGen::GenerateCeeFile – metoda</span><span class="sxs-lookup"><span data-stu-id="2ce89-102">ICeeGen::GenerateCeeFile Method</span></span>
+<span data-ttu-id="2ce89-103">Generuje soubor základu kódu, který obsahuje základní kód aktuálně načtené do tohoto [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.</span><span class="sxs-lookup"><span data-stu-id="2ce89-103">Generates a code-base file that contains the code base currently loaded into this [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.</span></span>  
   
- <span data-ttu-id="d6bb7-104">Tato metoda je zastaralá a by se neměla používat.</span><span class="sxs-lookup"><span data-stu-id="d6bb7-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="2ce89-104">Tato metoda je zastaralý a neměl by se používat.</span><span class="sxs-lookup"><span data-stu-id="2ce89-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d6bb7-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d6bb7-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2ce89-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2ce89-105">Syntax</span></span>  
   
 ```  
 HRESULT GenerateCeeFile ();  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d6bb7-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="d6bb7-106">Parameters</span></span>  
- <span data-ttu-id="d6bb7-107">`GenerateCeeFile` nepřijímá žádné parametry.</span><span class="sxs-lookup"><span data-stu-id="d6bb7-107">`GenerateCeeFile` takes no parameters.</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="2ce89-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2ce89-106">Parameters</span></span>  
+ <span data-ttu-id="2ce89-107">`GenerateCeeFile` nemá žádné parametry.</span><span class="sxs-lookup"><span data-stu-id="2ce89-107">`GenerateCeeFile` takes no parameters.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d6bb7-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d6bb7-108">Requirements</span></span>  
- <span data-ttu-id="d6bb7-109">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d6bb7-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2ce89-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2ce89-108">Requirements</span></span>  
+ <span data-ttu-id="2ce89-109">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2ce89-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d6bb7-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="d6bb7-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="2ce89-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="2ce89-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="d6bb7-111">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="d6bb7-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="2ce89-111">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2ce89-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="d6bb7-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d6bb7-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="2ce89-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2ce89-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d6bb7-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="d6bb7-113">See Also</span></span>  
- [<span data-ttu-id="d6bb7-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d6bb7-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+## <a name="see-also"></a><span data-ttu-id="2ce89-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2ce89-113">See also</span></span>
+- [<span data-ttu-id="2ce89-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2ce89-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

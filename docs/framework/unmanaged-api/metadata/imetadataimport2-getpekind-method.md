@@ -1,14 +1,6 @@
 ---
-title: "IMetaDataImport2::GetPEKind – metoda"
-ms.custom: 
+title: IMetaDataImport2::GetPEKind – metoda
 ms.date: 03/30/2017
-ms.prod: .net-framework
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- dotnet-clr
-ms.tgt_pltfrm: 
-ms.topic: reference
 api_name:
 - IMetaDataImport2.GetPEKind
 api_location:
@@ -23,22 +15,19 @@ helpviewer_keywords:
 ms.assetid: d91c3d89-8022-4a4c-a2a2-a8af2c387507
 topic_type:
 - apiref
-caps.latest.revision: 
 author: mairaw
 ms.author: mairaw
-manager: wpickett
-ms.workload:
-- dotnet
-ms.openlocfilehash: e8dc31877ba3550fa8faf610b831dfd2e7b313ff
-ms.sourcegitcommit: 16186c34a957fdd52e5db7294f291f7530ac9d24
+ms.openlocfilehash: 5ad18aaca1caef242832bbdae9a1094b2ef2d7be
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54572458"
 ---
-# <a name="imetadataimport2getpekind-method"></a><span data-ttu-id="01128-102">IMetaDataImport2::GetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="01128-102">IMetaDataImport2::GetPEKind Method</span></span>
-<span data-ttu-id="01128-103">Získá hodnotu identifikace povaha kód na přenosné spustitelný soubor (PE) souboru, obvykle DLL nebo EXE soubor, který je definován v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="01128-103">Gets a value identifying the nature of the code in the portable executable (PE) file, typically a DLL or EXE file, that is defined in the current metadata scope.</span></span>  
+# <a name="imetadataimport2getpekind-method"></a><span data-ttu-id="25237-102">IMetaDataImport2::GetPEKind – metoda</span><span class="sxs-lookup"><span data-stu-id="25237-102">IMetaDataImport2::GetPEKind Method</span></span>
+<span data-ttu-id="25237-103">Získá hodnotu určující druh kódu do přenosného spustitelného (PE) soubor, obvykle knihovny DLL nebo EXE souboru, která je definována v aktuálním oboru metadat.</span><span class="sxs-lookup"><span data-stu-id="25237-103">Gets a value identifying the nature of the code in the portable executable (PE) file, typically a DLL or EXE file, that is defined in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="01128-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="01128-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="25237-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="25237-104">Syntax</span></span>  
   
 ```  
 HRESULT GetPEKind (  
@@ -47,32 +36,32 @@ HRESULT GetPEKind (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="01128-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="01128-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="25237-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="25237-105">Parameters</span></span>  
  `pdwPEKind`  
- <span data-ttu-id="01128-106">[out] Ukazatel na hodnotu [CorPEKind](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) výčet, který popisuje PE souborů.</span><span class="sxs-lookup"><span data-stu-id="01128-106">[out] A pointer to a value of the [CorPEKind](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) enumeration that describes the PE file.</span></span>  
+ <span data-ttu-id="25237-106">[out] Ukazatel na hodnotu [corpekind –](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) výčet, který popisuje soubor PE.</span><span class="sxs-lookup"><span data-stu-id="25237-106">[out] A pointer to a value of the [CorPEKind](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) enumeration that describes the PE file.</span></span>  
   
  `pdwMachine`  
- <span data-ttu-id="01128-107">[out] Ukazatel na hodnotu, která identifikuje architektuře počítače.</span><span class="sxs-lookup"><span data-stu-id="01128-107">[out] A pointer to a value that identifies the architecture of the machine.</span></span> <span data-ttu-id="01128-108">Naleznete v části Další možné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="01128-108">See the next section for possible values.</span></span>  
+ <span data-ttu-id="25237-107">[out] Ukazatel na hodnotu, která identifikuje architektura počítače.</span><span class="sxs-lookup"><span data-stu-id="25237-107">[out] A pointer to a value that identifies the architecture of the machine.</span></span> <span data-ttu-id="25237-108">Naleznete v části Další možné hodnoty.</span><span class="sxs-lookup"><span data-stu-id="25237-108">See the next section for possible values.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="01128-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="01128-109">Remarks</span></span>  
- <span data-ttu-id="01128-110">Hodnota odkazovaná `pdwMachine` parametr může být jedna z následujících akcí.</span><span class="sxs-lookup"><span data-stu-id="01128-110">The value referenced by the `pdwMachine` parameter can be one of the following.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="25237-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="25237-109">Remarks</span></span>  
+ <span data-ttu-id="25237-110">Hodnota odkazuje `pdwMachine` parametr může být jedna z následujících akcí.</span><span class="sxs-lookup"><span data-stu-id="25237-110">The value referenced by the `pdwMachine` parameter can be one of the following.</span></span>  
   
-|<span data-ttu-id="01128-111">Hodnota</span><span class="sxs-lookup"><span data-stu-id="01128-111">Value</span></span>|<span data-ttu-id="01128-112">Architektura počítače</span><span class="sxs-lookup"><span data-stu-id="01128-112">Machine architecture</span></span>|  
+|<span data-ttu-id="25237-111">Hodnota</span><span class="sxs-lookup"><span data-stu-id="25237-111">Value</span></span>|<span data-ttu-id="25237-112">Architektura počítače</span><span class="sxs-lookup"><span data-stu-id="25237-112">Machine architecture</span></span>|  
 |-----------|--------------------------|  
-|<span data-ttu-id="01128-113">IMAGE_FILE_MACHINE_I386</span><span class="sxs-lookup"><span data-stu-id="01128-113">IMAGE_FILE_MACHINE_I386</span></span><br /><br /> <span data-ttu-id="01128-114">0x014C</span><span class="sxs-lookup"><span data-stu-id="01128-114">0x014C</span></span>|<span data-ttu-id="01128-115">x86</span><span class="sxs-lookup"><span data-stu-id="01128-115">x86</span></span>|  
-|<span data-ttu-id="01128-116">IMAGE_FILE_MACHINE_IA64</span><span class="sxs-lookup"><span data-stu-id="01128-116">IMAGE_FILE_MACHINE_IA64</span></span><br /><br /> <span data-ttu-id="01128-117">hodnotu 0x0200</span><span class="sxs-lookup"><span data-stu-id="01128-117">0x0200</span></span>|<span data-ttu-id="01128-118">Intel IPF</span><span class="sxs-lookup"><span data-stu-id="01128-118">Intel IPF</span></span>|  
-|<span data-ttu-id="01128-119">IMAGE_FILE_MACHINE_AMD64</span><span class="sxs-lookup"><span data-stu-id="01128-119">IMAGE_FILE_MACHINE_AMD64</span></span><br /><br /> <span data-ttu-id="01128-120">0x8664</span><span class="sxs-lookup"><span data-stu-id="01128-120">0x8664</span></span>|<span data-ttu-id="01128-121">x64</span><span class="sxs-lookup"><span data-stu-id="01128-121">x64</span></span>|  
+|<span data-ttu-id="25237-113">IMAGE_FILE_MACHINE_I386</span><span class="sxs-lookup"><span data-stu-id="25237-113">IMAGE_FILE_MACHINE_I386</span></span><br /><br /> <span data-ttu-id="25237-114">0x014C</span><span class="sxs-lookup"><span data-stu-id="25237-114">0x014C</span></span>|<span data-ttu-id="25237-115">x86</span><span class="sxs-lookup"><span data-stu-id="25237-115">x86</span></span>|  
+|<span data-ttu-id="25237-116">IMAGE_FILE_MACHINE_IA64</span><span class="sxs-lookup"><span data-stu-id="25237-116">IMAGE_FILE_MACHINE_IA64</span></span><br /><br /> <span data-ttu-id="25237-117">0x0200</span><span class="sxs-lookup"><span data-stu-id="25237-117">0x0200</span></span>|<span data-ttu-id="25237-118">Intel IPF</span><span class="sxs-lookup"><span data-stu-id="25237-118">Intel IPF</span></span>|  
+|<span data-ttu-id="25237-119">IMAGE_FILE_MACHINE_AMD64</span><span class="sxs-lookup"><span data-stu-id="25237-119">IMAGE_FILE_MACHINE_AMD64</span></span><br /><br /> <span data-ttu-id="25237-120">0x8664</span><span class="sxs-lookup"><span data-stu-id="25237-120">0x8664</span></span>|<span data-ttu-id="25237-121">x64</span><span class="sxs-lookup"><span data-stu-id="25237-121">x64</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="01128-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="01128-122">Requirements</span></span>  
- <span data-ttu-id="01128-123">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01128-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="25237-122">Požadavky</span><span class="sxs-lookup"><span data-stu-id="25237-122">Requirements</span></span>  
+ <span data-ttu-id="25237-123">**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="25237-123">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="01128-124">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="01128-124">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="25237-124">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="25237-124">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="01128-125">**Knihovna:** používat jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="01128-125">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="25237-125">**Knihovna:** Použít jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="25237-125">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="01128-126">**Verze rozhraní .NET framework:**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01128-126">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="25237-126">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="25237-126">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="01128-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="01128-127">See Also</span></span>  
- [<span data-ttu-id="01128-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="01128-128">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
- [<span data-ttu-id="01128-129">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="01128-129">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [<span data-ttu-id="01128-130">CorPEKind – výčet</span><span class="sxs-lookup"><span data-stu-id="01128-130">CorPEKind Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md)
+## <a name="see-also"></a><span data-ttu-id="25237-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="25237-127">See also</span></span>
+- [<span data-ttu-id="25237-128">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="25237-128">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="25237-129">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="25237-129">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="25237-130">CorPEKind – výčet</span><span class="sxs-lookup"><span data-stu-id="25237-130">CorPEKind Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md)

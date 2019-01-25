@@ -16,24 +16,24 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9a88f8b2ad1ac59cf7044ca5d7ace5a468510b6f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3492cac305370c8b9aa969dbb0a88e1d9c45af34
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424752"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54550653"
 ---
-# <a name="idebugautoattach-interface"></a><span data-ttu-id="e91b4-102">IDebugAutoAttach – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e91b4-102">IDebugAutoAttach Interface</span></span>
-<span data-ttu-id="e91b4-103">Definuje rozhraní pro připojení serveru vyvolá ladicí program automaticky.</span><span class="sxs-lookup"><span data-stu-id="e91b4-103">Defines the interface for server-invoked debugger auto attach.</span></span>  
+# <a name="idebugautoattach-interface"></a><span data-ttu-id="daaf8-102">IDebugAutoAttach – rozhraní</span><span class="sxs-lookup"><span data-stu-id="daaf8-102">IDebugAutoAttach Interface</span></span>
+<span data-ttu-id="daaf8-103">Definuje rozhraní pro server vyvolá ladicí program automaticky připojit.</span><span class="sxs-lookup"><span data-stu-id="daaf8-103">Defines the interface for server-invoked debugger auto attach.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="e91b4-104">Metody</span><span class="sxs-lookup"><span data-stu-id="e91b4-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="daaf8-104">Metody</span><span class="sxs-lookup"><span data-stu-id="daaf8-104">Methods</span></span>  
   
-|<span data-ttu-id="e91b4-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="e91b4-105">Method</span></span>|<span data-ttu-id="e91b4-106">Popis</span><span class="sxs-lookup"><span data-stu-id="e91b4-106">Description</span></span>|  
+|<span data-ttu-id="daaf8-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="daaf8-105">Method</span></span>|<span data-ttu-id="daaf8-106">Popis</span><span class="sxs-lookup"><span data-stu-id="daaf8-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="e91b4-107">AutoAttach – metoda</span><span class="sxs-lookup"><span data-stu-id="e91b4-107">AutoAttach Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|<span data-ttu-id="e91b4-108">Provede server volá ladicí program automaticky připojit.</span><span class="sxs-lookup"><span data-stu-id="e91b4-108">Performs server-invoked debugger auto attach.</span></span>|  
+|[<span data-ttu-id="daaf8-107">AutoAttach – metoda</span><span class="sxs-lookup"><span data-stu-id="daaf8-107">AutoAttach Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|<span data-ttu-id="daaf8-108">Provede automaticky serveru vyvolá ladicí program připojit.</span><span class="sxs-lookup"><span data-stu-id="daaf8-108">Performs server-invoked debugger auto attach.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="e91b4-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e91b4-109">Requirements</span></span>  
- <span data-ttu-id="e91b4-110">**Záhlaví:** DbgAutoAttach.idl</span><span class="sxs-lookup"><span data-stu-id="e91b4-110">**Header:** DbgAutoAttach.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="daaf8-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="daaf8-109">Requirements</span></span>  
+ <span data-ttu-id="daaf8-110">**Záhlaví:** DbgAutoAttach.idl</span><span class="sxs-lookup"><span data-stu-id="daaf8-110">**Header:** DbgAutoAttach.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e91b4-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="e91b4-111">See Also</span></span>  
- [<span data-ttu-id="e91b4-112">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="e91b4-112">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+## <a name="see-also"></a><span data-ttu-id="daaf8-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="daaf8-111">See also</span></span>
+- [<span data-ttu-id="daaf8-112">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="daaf8-112">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
