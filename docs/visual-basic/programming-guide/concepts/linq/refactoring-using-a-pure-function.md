@@ -1,21 +1,21 @@
 ---
-title: Refaktoring pomocí čistý funkce (Visual Basic)
+title: Refaktoring pomocí čisté funkce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: af0ea62f-4f57-4868-b624-a85524055935
-ms.openlocfilehash: fe1ad3b189891a1655e014dc49dac00c79507a7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3adaede7bce206d6018f1eb624d9ce04f53c04b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33645012"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54728278"
 ---
-# <a name="refactoring-using-a-pure-function-visual-basic"></a>Refaktoring pomocí čistý funkce (Visual Basic)
-Následující příklad refactors na předchozí příklad, [refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použije čistý funkce v tomto příkladu kód najít text odstavce je přesunuta do čistého statickou metodu `ParagraphText`.  
+# <a name="refactoring-using-a-pure-function-visual-basic"></a>Refaktoring pomocí čisté funkce (Visual Basic)
+Následující příklad refactors v předchozím příkladu [refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracuje WordprocessingML dokumentu, načítání odstavce uzly z WordprocessingML dokumentu. Také identifikuje styl jednotlivých odstavců. Tento příklad vychází v předchozích příkladech v tomto kurzu. Kód refactored nazývá v komentáře v kódu níže.  
+ V tomto příkladu zpracovává dokumentu WordprocessingML načítání uzly odstavců z dokumentu WordprocessingML. Styl k jednotlivým odstavcům také identifikuje. Tento příklad je založen na předchozí příklady v tomto kurzu. Refaktorovaný kódu je uvedeny v komentářích v následujícím kódu.  
   
- Pokyny pro vytvoření zdrojový dokument v tomto příkladu najdete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office otevřít dokument XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
  Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -147,7 +147,7 @@ Module Module1
 End Module   
 ```  
   
- Tento příklad vytvoří stejný výstup jako před refaktoring:  
+ Tento příklad vytvoří stejný výstup jako před operací refaktoringu:  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -168,11 +168,11 @@ StyleName:Code >Hello World<
 ```  
   
 ### <a name="next-steps"></a>Další kroky  
- Další příklad ukazuje, jak do projektu XML do různých tvaru:  
+ Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:  
   
--   [Promítnutí kód XML v různých tvar (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+-   [Projektování XML v odlišném tvaru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Manipulace se obsah v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [Refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
- [Refaktoring do čistého funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refaktoring pomocí metody rozšíření (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)
+- [Refaktoring do čistých funkcí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

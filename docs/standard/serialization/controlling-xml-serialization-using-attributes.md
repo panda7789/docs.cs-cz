@@ -15,16 +15,16 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: 28c7ebe1de3adb92e531597027e4b8bb7a63294c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 54660244c1b3cca8cb75539edbe23628b370afd5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47236160"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54686163"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
-Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytváření alternativní datový proud XML, naleznete v tématu [postupy: určení alternativního názvu elementu pro XML Stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
+Atributy lze použít k řízení XML serializace objektu nebo k vytvoření alternativní datový proud XML ze stejné sady tříd. Další informace o vytváření alternativní datový proud XML, naleznete v tématu [jak: Určení alternativního názvu elementu pro XML Stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md).
 
 > [!NOTE]
 > Pokud XML generované musí odpovídat část 5 World Wide Web Consortium (W3C) dokumentu s názvem [jednoduchý objekt přístup protokolu (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), použijte atributy uvedené v [atributy, že ovládací prvek kódovaný SOAP Serializace](attributes-that-control-encoded-soap-serialization.md).
@@ -70,7 +70,7 @@ Další informace o atributech najdete v tématu [atributy](../../../docs/standa
 
 ## <a name="controlling-array-serialization"></a>Řízení serializace pole
 
-<xref:System.Xml.Serialization.XmlArrayAttribute> a <xref:System.Xml.Serialization.XmlArrayItemAttribute> atributy jsou určeny k řízení serializace pole. Pomocí těchto atributů, můžete upravit název elementu, obor názvů a datový typ schématu XML (XSD) (jak jsou definovány v dokumentu W3c [www.w3.org] s názvem "XML schématu část 2: datové typy"). Můžete také určit typy, které mohou být zahrnuty do pole.
+<xref:System.Xml.Serialization.XmlArrayAttribute> a <xref:System.Xml.Serialization.XmlArrayItemAttribute> atributy jsou určeny k řízení serializace pole. Pomocí těchto atributů, můžete řídit název elementu, obor názvů a datový typ schématu XML (XSD) (jak jsou definovány v dokumentu W3c [www.w3.org] s názvem "XML schématu část 2: "Datové typy"). Můžete také určit typy, které mohou být zahrnuty do pole.
 
 <xref:System.Xml.Serialization.XmlArrayAttribute> Určí vlastnosti nadřazeného elementu XML, když je serializována pole. Například ve výchozím nastavení, serializací pole níže bude mít za následek element XML s názvem `Employees`. `Employees` Element bude obsahovat několik elementů s názvem po typ pole `Employee`.
 
@@ -317,10 +317,10 @@ Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializ
 
 ## <a name="see-also"></a>Viz také:
 
-- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)  
-- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)  
-- [Představení serializace XML](introducing-xml-serialization.md)  
-- [Příklady serializace XML](examples-of-xml-serialization.md)  
-- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
-- [Postupy: Serializace objektu](how-to-serialize-an-object.md)  
-- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)  
+- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
+- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)
+- [Představení serializace XML](introducing-xml-serialization.md)
+- [Příklady serializace XML](examples-of-xml-serialization.md)
+- [Postupy: Určení alternativního názvu elementu pro Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
-ms.openlocfilehash: 29db884a88f5150cd93571ba8fa7bf72be2b8c69
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6e3a88f7b34c64480d69df1a06a113e392d8fe53
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514565"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54619380"
 ---
 # <a name="establishing-the-connection"></a>Navazování připojení
 Pro připojení k serveru Microsoft SQL Server, použijte <xref:System.Data.SqlClient.SqlConnection> objektu zprostředkovatele dat .NET Framework pro SQL Server. Pro připojení ke zdroji dat OLE DB, použijte <xref:System.Data.OleDb.OleDbConnection> objektu zprostředkovatele dat .NET Framework pro OLE DB. Chcete-li se připojit ke zdroji dat rozhraní ODBC, použijte <xref:System.Data.Odbc.OdbcConnection> objektu zprostředkovatele dat .NET Framework pro ODBC. Chcete-li se připojit ke zdroji dat Oracle, použijte <xref:System.Data.OracleClient.OracleConnection> objektu zprostředkovatele dat .NET Framework pro Oracle. Bezpečné ukládání a načítání připojovacích řetězců najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  
@@ -51,7 +51,7 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 ### <a name="integrated-security-and-aspnet"></a>Integrované zabezpečení a ASP.NET  
  Integrované zabezpečení (označované také jako důvěryhodná připojení) pomáhá zajistit ochranu při připojování k serveru SQL Server jako jeho systému SQL Server nemůže vystavovat ID uživatele a heslo v připojovacím řetězci a je doporučenou metodou pro ověřování připojení. Integrované zabezpečení používá aktuální identita zabezpečení, nebo token spuštěného procesu. Pro desktopové aplikace je to obvykle identitu aktuálně přihlášeného uživatele.  
   
- Identita zabezpečení pro aplikace ASP.NET můžete nastavit na jedno z několika různých možností. Abyste lépe pochopili identita zabezpečení, který používá aplikace ASP.NET při připojování k serveru SQL Server, naleznete v tématu [zosobnění technologie ASP.NET](https://msdn.microsoft.com/library/a0cb3024-562f-4184-9d3c-095504787d3d), [ověřování ASP.NET](https://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1), a [postupy: přístup k SQL Integrované zabezpečení serveru pomocí Windows](https://msdn.microsoft.com/library/683f9c9f-4375-4de6-8111-943c4423fde5).  
+ Identita zabezpečení pro aplikace ASP.NET můžete nastavit na jedno z několika různých možností. Abyste lépe pochopili identita zabezpečení, který používá aplikace ASP.NET při připojování k serveru SQL Server, naleznete v tématu [zosobnění technologie ASP.NET](https://msdn.microsoft.com/library/a0cb3024-562f-4184-9d3c-095504787d3d), [ověřování ASP.NET](https://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1), a [jak: Přístup k SQL serveru pomocí Windows integrované zabezpečení](https://msdn.microsoft.com/library/683f9c9f-4375-4de6-8111-943c4423fde5).  
   
 ## <a name="connecting-to-an-ole-db-data-source"></a>Připojení ke zdroji dat OLE DB  
  Zprostředkovatel dat .NET Framework pro OLE DB poskytuje připojení ke zdrojům dat, které jsou přístupné přes OLE DB (pomocí SQLOLEDB, OLE DB Provider pro SQL Server), pomocí **OleDbConnection –** objektu.  
@@ -142,8 +142,8 @@ OracleConnection nwindConn = new OracleConnection("Data Source=MyOracleServer;In
 nwindConn.Open();  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
- [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
+- [Sdružování připojení OLE DB, ODBC a Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

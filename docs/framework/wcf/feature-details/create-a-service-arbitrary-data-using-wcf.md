@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF'
+title: 'Postupy: Vytvoření služby, která přijímá libovolná data – pomocí programovacího modelu WCF REST'
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-ms.openlocfilehash: bc2643672743971da14c8bc4c75ac113f691bf4a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8728afbe5ebfe31d619b311f521eb1012a0dc323
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494160"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666995"
 ---
-# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Postupy: vytvoření služby, je možné zadat libovolný dat pomocí programovací Model REST WCF
-Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služby. To je případ, kdy operace služby musí vracet, že data ve formátu nepodporuje byWCF. Toto téma popisuje použití programovací Model REST WCF k vytvoření služby, která přijímá libovolná data.  
+# <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>Postupy: Vytvoření služby, která přijímá libovolná data – pomocí programovacího modelu WCF REST
+Vývojáři v některých případech musí mít úplnou kontrolu nad jak se data vrácená z operace služby. To je případ, kdy operace služby musí vracet data ve formátu není podporován byWCF. Toto téma popisuje použití programovacího modelu WCF REST k vytvoření služby, která přijímá libovolná data.  
   
-### <a name="to-implement-the-service-contract"></a>K implementaci kontraktu služby  
+### <a name="to-implement-the-service-contract"></a>Implementace kontraktu služby  
   
-1.  Definování kontraktu služby. Operace, která přijímá libovolná data musí mít parametr typu <xref:System.IO.Stream>. Kromě toho tento parametr musí být jediný parametr předaný v textu požadavku. Operace popsaná v tomto příkladu také přebírá parametr filename. Tento parametr se předává v rámci adresy URL požadavku. Můžete určit, že je parametr předaný v rámci adresy URL zadáním <xref:System.UriTemplate> v <xref:System.ServiceModel.Web.WebInvokeAttribute>. V tomto případě identifikátoru URI používá k volání této metody končí na "UploadFile nebo některá – název souboru". Část "{filename}" šablony URI Určuje, že je v rámci identifikátoru URI používá k volání operace předán parametr filename pro operaci.  
+1.  Definování kontraktu služby. Operace, která přijímá libovolná data musí mít parametr typu <xref:System.IO.Stream>. Kromě toho tento parametr musí být jediným parametrem předané v textu požadavku. Operace popsané v tomto příkladu má také parametr filename. Tento parametr je předáván v rámci URL požadavku. Můžete určit, že je parametr předaný v rámci URL zadáním <xref:System.UriTemplate> v <xref:System.ServiceModel.Web.WebInvokeAttribute>. V tomto případě identifikátor URI se používá k volání této metody končí na "UploadFile/některé-název souboru". Část "{filename}" Šablona identifikátoru URI Určuje, že parametr filename pro tuto operaci je předán v rámci identifikátoru URI používá k volání operace.  
   
     ```csharp  
      [ServiceContract]  
@@ -25,7 +25,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
     }  
     ```  
   
-2.  Implementujte kontrakt služby. Smlouva obsahuje pouze jednu metodu `UploadFile` , obdrží soubor libovolná data v datovém proudu. Operaci přečte datový proud počítání počet bajtů, čtení a potom zobrazí název souboru a počet přečtených bajtů.  
+2.  Implementace kontraktu služby. Smlouva obsahuje pouze jednu metodu `UploadFile` , která obdrží soubor libovolná data v datovém proudu. Operace načte datový proud monitorovat počet bajtů čtení a potom zobrazí název souboru a počet přečtených bajtů.  
   
     ```csharp  
     public class RawDataService : IReceiveData  
@@ -46,7 +46,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
   
 ### <a name="to-host-the-service"></a>K hostování služby  
   
-1.  Vytvořte konzolovou aplikaci k hostování služby.  
+1.  Vytvořte konzolovou aplikaci pro hostování služby.  
   
     ```csharp  
     class Program  
@@ -57,13 +57,13 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
     }  
     ```  
   
-2.  Vytvořte proměnnou pro uložení základní adresa služby v rámci `Main` metoda.  
+2.  Vytvořte proměnnou pro uchování základní adresu pro službu v rámci `Main` metody.  
   
     ```csharp  
     string baseAddress = "http://" + Environment.MachineName + ":8000/Service";  
     ```  
   
-3.  Vytvoření <xref:System.ServiceModel.ServiceHost> instance služby, který určuje třída služby a základní adresu.  
+3.  Vytvoření <xref:System.ServiceModel.ServiceHost> instance služby, který určuje třídu služby a základní adresa.  
   
     ```csharp  
     ServiceHost host = new ServiceHost(typeof(RawDataService), new Uri(baseAddress));  
@@ -82,22 +82,22 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
     Console.WriteLine("Host opened");  
     ```  
   
-### <a name="to-call-the-service-programmatically"></a>Pro volání služby prostřednictvím kódu programu  
+### <a name="to-call-the-service-programmatically"></a>Volat službu prostřednictvím kódu programu  
   
-1.  Vytvoření <xref:System.Net.HttpWebRequest> se používá k volání služby identifikátorem URI. V tomto kódu je základní adresa kombinovat s `"/UploadFile/Text"`. `"UploadFile"` Část identifikátoru URI určuje operaci volat. `"Test.txt"` Část identifikátoru URI určuje parametr filename předat `UploadFile` operaci. Obě tyto položky namapovány na <xref:System.UriTemplate> u operace kontrakt.  
+1.  Vytvoření <xref:System.Net.HttpWebRequest> se identifikátor URI použitý k vyvolání služby. V tomto kódu je základní adresa kombinovat s `"/UploadFile/Text"`. `"UploadFile"` Část identifikátoru URI určuje operaci, která volání. `"Test.txt"` Část identifikátoru URI specifikuje název souboru parametr předat `UploadFile` operace. Obě tyto položky namapovat <xref:System.UriTemplate> použitý pro kontrakt.  
   
     ```csharp  
     HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(baseAddress + "/UploadFile/Test.txt");  
     ```  
   
-2.  Nastavte <xref:System.Net.HttpWebRequest.Method%2A> vlastnost <xref:System.Net.HttpWebRequest> k `POST` a <xref:System.Net.HttpWebRequest.ContentType%2A> vlastnost `"text/plain"`. Tato hodnota informuje službu zda kód je odesílání dat a dat je ve formátu prostého textu.  
+2.  Nastavte <xref:System.Net.HttpWebRequest.Method%2A> vlastnost <xref:System.Net.HttpWebRequest> k `POST` a <xref:System.Net.HttpWebRequest.ContentType%2A> vlastnost `"text/plain"`. Služba říká, že kód je odesílání dat a dat je ve formátu prostého textu.  
   
     ```csharp  
     req.Method = "POST";  
     req.ContentType = "text/plain";  
     ```  
   
-3.  Volání <xref:System.Net.HttpWebRequest.GetRequestStream%2A> datový proud požadavku získáte vytvořit data k odeslání, zápisu dat do datového proudu požadavku a zavřete datového proudu.  
+3.  Volání <xref:System.Net.HttpWebRequest.GetRequestStream%2A> zobrazíte datový proud požadavku vytvořit data odeslat, zapisovat data do datového proudu požadavku a zavřete datový proud.  
   
     ```csharp  
     Stream reqStream = req.GetRequestStream();  
@@ -110,7 +110,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
     reqStream.Close();  
     ```  
   
-4.  Získat odpověď ze služby voláním <xref:System.Net.HttpWebRequest.GetResponse%2A> a zobrazení data odpovědi ke konzole.  
+4.  Získat odpověď ze služby voláním <xref:System.Net.HttpWebRequest.GetResponse%2A> a zobrazovat data odpovědi do konzoly.  
   
     ```csharp  
     HttpWebResponse resp = (HttpWebResponse)req.GetResponse();  
@@ -124,7 +124,7 @@ Vývojáři někdy musí mít plnou kontrolu nad vrácených dat z operace služ
     ```  
   
 ## <a name="example"></a>Příklad  
- Níže je úplný seznam všech kód v tomto příkladu.  
+ Následuje úplný výpis kódu v tomto příkladu.  
   
 ```csharp  
 using System;  
@@ -191,9 +191,9 @@ namespace ReceiveRawData
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Při kompilování kódu – odkaz System.ServiceModel.dll a System.ServiceModel.Web.dll  
+-   Při kompilaci kódu – odkaz System.ServiceModel.dll a System.ServiceModel.Web.dll  
   
-## <a name="see-also"></a>Viz také  
- [UriTemplate a UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+## <a name="see-also"></a>Viz také:
+- [UriTemplate a UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
+- [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [Přehled programovacího modelu webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)

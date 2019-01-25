@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 51a7969821cb4c2367ac298c8452daf1f2a8ceab
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d4b2bab09d9ac9f14ae9d1bf78254c9c6a376677
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185898"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54691473"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Některé metody nemusí být vhodný umožňující libovolného nedůvěryhodný kód pro volání. Tyto metody představují několik rizika: metoda může poskytnout určité omezené informace; může věřit žádné informace o předán. nemusí provést kontrolu chyb na parametry. nebo se nesprávné parametry, může selhat nebo škodlivé něco udělat. By měl mít na paměti tyto případy a provedete akce vedoucí k ochraně metodu.  
+ Některé metody nemusí být vhodný umožňující libovolného nedůvěryhodný kód pro volání. Tyto metody představují několik rizika: Metoda může poskytnout určité omezené informace; může věřit žádné informace o předán. nemusí provést kontrolu chyb na parametry. nebo se nesprávné parametry, může selhat nebo škodlivé něco udělat. By měl mít na paměti tyto případy a provedete akce vedoucí k ochraně metodu.  
   
  V některých případech můžete potřebovat k omezení metody, které nejsou určeny pro veřejně přístupný, ale přesto musejí být veřejné. Například může být rozhraní, které musí být volána v rámci vlastní knihovny DLL a proto musí být veřejné, ale nechcete zveřejnit veřejně, aby se zabránilo zákazníci využívat nebo zabránit škodlivým kódem využívajícím vstupní bod do příslušné součásti. Dalším běžným důvodem k omezení metody nejsou určené pro veřejně přístupný (ale musí být veřejná) je vyhnout se nutnosti dokumentů a podpory, které mohou být velmi interní rozhraní.  
   
@@ -240,5 +240,5 @@ class Implemented : ICanCastToMe
   
  Všimněte si, že i v případě, že kompilátor jazyka zabraňuje tato přepsání kvůli chybě kompilace, je možné pro kód zapisovaný s jinými kompilátory pro přepsání.  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

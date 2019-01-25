@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e9b9bc8e364342a601c0738d5a64c5eac3cb7e7e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a4273b36ce3e761348a091df3acb41212e1df05
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33447707"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54722312"
 ---
 # <a name="imetadataimportenumtypespecs-method"></a>IMetaDataImport::EnumTypeSpecs – metoda
-Zobrazí typ TypeSpec tokeny definované v aktuálním oboru metadat.  
+Vytvoří výčet token TypeSpec tokeny definované v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ HRESULT EnumTypeSpecs (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor. Tato hodnota musí mít hodnotu NULL pro první volání této metody.  
+ [out v] Ukazatel na enumerátor. Tato hodnota musí mít hodnotu NULL pro první volání této metody.  
   
  `rTypeSpecs`  
- [out] Pole používá k ukládání typ TypeSpec tokenů.  
+ [out] Pole pro ukládání tokenů token TypeSpec.  
   
  `cMax`  
- [v] Maximální velikost `rTypeSpecs` pole.  
+ [in] Maximální velikost `rTypeSpecs` pole.  
   
  `pcTypeSpecs`  
- [out] Počet typ TypeSpec tokeny, vrátí se v `rTypeSpecs`.  
+ [out] Počet tokenů token TypeSpec vrácené v `rTypeSpecs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeSpecs` úspěšně vrácena.|  
-|`S_FALSE`|Neexistují žádné tokenů pro zobrazení výčtu. V takovém případě `pcTypeSpecs` je nulová.|  
+|`S_OK`|`EnumTypeSpecs` bylo úspěšně vráceno.|  
+|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTypeSpecs` je nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Typ TypeSpec tokeny jsou vytvořené pomocí [imetadataemit::gettokenfromtypespec –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) metoda.  
+ Token TypeSpec tokeny jsou vytvářeny [imetadataemit::gettokenfromtypespec –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

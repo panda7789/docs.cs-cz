@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd8f1adee6bbcb3b57b87a2d6c85c01c624da9ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc664d308d4db3e97597d785eda159e32255fa54
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421227"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520370"
 ---
 # <a name="icordebugnativeframe2-interface"></a>ICorDebugNativeFrame2 – rozhraní
 Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.  
@@ -30,18 +30,18 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[IsChild – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Určuje, zda je aktuální snímek podřízeného rámce.|  
-|[IsMatchingParentFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda je zadaný rámečku nadřazeného aktuální snímek.|  
-|[GetStackParameterSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Vrátí celková velikost všech parametrů v zásobníku na x86 operační systémy.|  
+|[IsChild – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Určuje, zda aktuální rámec je podřízený blok.|  
+|[IsMatchingParentFrame – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Určuje, zda zadaného rámce je nadřazeného člena aktuální rámec.|  
+|[GetStackParameterSize – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Vrátí celková velikost parametry do zásobníku na x86 operačních systémů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto rozhraní logicky rozšiřuje rozhraní "ICorDebugNativeFrame".  
+ Toto rozhraní rozšiřuje logicky "icordebugnativeframe –" rozhraní.  
   
 > [!NOTE]
->  Toto rozhraní nepodporuje volané vzdáleně, mezi počítači nebo mezi procesy.  
+>  Toto rozhraní nepodporuje vzdálené volání, mezi počítači nebo procesy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -49,7 +49,7 @@ Poskytuje metody, které testují podřízené a nadřazené vztahy rámce.
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
-    
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

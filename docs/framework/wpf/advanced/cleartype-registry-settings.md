@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: d6a121e2a95ce4005b43937f83c6c74ec7d8f1c1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ffc21ca3eed979e9b7cd419f63729d8520a54a5d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514855"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54720285"
 ---
 # <a name="cleartype-registry-settings"></a>Nastavení registru ClearType
 Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] nastavení registru, které jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
@@ -114,6 +114,6 @@ Toto téma obsahuje přehled [!INCLUDE[TLA2#tla_winclient](../../../../includes/
   
  ![Nastavení v editoru registru ClearType](../../../../docs/framework/wpf/advanced/media/cleartyperegistry01.png "ClearTypeRegistry01")  
   
-## <a name="see-also"></a>Viz také  
- [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)  
- [ClearType – vyhlazení](/windows/desktop/gdi/cleartype-antialiasing)
+## <a name="see-also"></a>Viz také:
+- [ClearType – přehled](../../../../docs/framework/wpf/advanced/cleartype-overview.md)
+- [ClearType – vyhlazení](/windows/desktop/gdi/cleartype-antialiasing)

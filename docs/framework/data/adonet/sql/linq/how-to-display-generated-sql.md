@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: zobrazení generované SQL'
+title: 'Postupy: Zobrazení generovaného SQL'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 626492c0-5ee3-4675-88e8-8c40379510b6
-ms.openlocfilehash: edc0f8fea2768391a47e12940cbe083e41852f1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9c293757b642f0a945097c4ea4299d97cadddbcc
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361705"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54725685"
 ---
-# <a name="how-to-display-generated-sql"></a>Postupy: zobrazení generované SQL
-Můžete zobrazit kód SQL vygenerované dotazy a zpracování pomocí změny <xref:System.Data.Linq.DataContext.Log%2A> vlastnost. Tento přístup může být užitečné při hledání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkcí a pro ladění konkrétních problémů.  
+# <a name="how-to-display-generated-sql"></a>Postupy: Zobrazení generovaného SQL
+Můžete zobrazit SQL kód generovaný pro dotazy a zpracování pomocí změny <xref:System.Data.Linq.DataContext.Log%2A> vlastnost. Tento přístup může být užitečné pro porozumění [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] funkce a pro specifické problémy ladění.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Data.Linq.DataContext.Log%2A> vlastnost k zobrazení SQL kódu v okně konzoly, před provedením kód.  Můžete tuto vlastnost použít s dotazu, vložení, aktualizace a odstranění příkazy.  
+ V následujícím příkladu <xref:System.Data.Linq.DataContext.Log%2A> vlastnosti k zobrazení kódu SQL v okně konzoly předtím, než je kód spuštěn.  Můžete tuto vlastnost použít dotazování, vložení, aktualizace a odstranění příkazů.  
   
- Co se zobrazí při spuštění kódu Visual Basic a C#, který následuje jsou řádky z okna konzoly.  
+ Co se zobrazí po spuštění jazyka Visual Basic jsou řádky z okna konzoly nebo C# kód, který následuje.  
   
 ```  
 SELECT [t0].[CustomerID], [t0].[CompanyName], [t0].[ContactName], [t0].[ContactT  
@@ -42,5 +42,5 @@ SEVES
  [!code-csharp[DLinqDebuggingSupport#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqDebuggingSupport/cs/Program.cs#1)]
  [!code-vb[DLinqDebuggingSupport#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqDebuggingSupport/vb/Module1.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)
+## <a name="see-also"></a>Viz také:
+- [Podpora ladění](../../../../../../docs/framework/data/adonet/sql/linq/debugging-support.md)

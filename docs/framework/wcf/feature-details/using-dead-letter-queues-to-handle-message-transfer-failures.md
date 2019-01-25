@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-ms.openlocfilehash: b70b7a7849ba0927c8ee4a4903aefc27bfa9d0c0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b8dae094655e7bf2a52848d449a5f604f846e052
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33504078"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497089"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Zpracování chyb přenosu zpráv pomocí front nedoručených zpráv
-Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno z důvodů, například selhání sítě, odstraněné fronty, plné frontě, selhání ověřování nebo selhání při doručení na času.  
+Zprávy ve frontě může selhat doručování. Tyto zprávy se nezdařilo se zaznamenávají do fronty nedoručených zpráv. Selhání doručení může být způsobeno důvodů, jako je například selhání sítě, frontu odstranil, plné frontě, ověřování se nezdařilo nebo selhání na včasném poskytnutí výsledků.  
   
- Zprávy ve frontě může zůstat ve frontě delší dobu, pokud přijímající aplikace nenačte je z fronty včas. Toto chování nemusí být vhodný pro citlivé na čas zprávy. Zprávy dobou mít dobu a vlastnost Live (TTL) nastavit vazba zařazených do fronty, který ukazuje, jak dlouho zprávy může být ve frontě než vyprší. Zprávy s vypršenou platností jsou odesílány speciální fronty s názvem frontu nedoručených zpráv. Zprávy můžete také vložit do fronty nedoručených zpráv z jiných důvodů, například překročení kvóty fronty nebo z důvodu selhání ověřování.  
+ Zprávy ve frontě může zůstat ve frontě po dlouhou dobu, pokud přijímající aplikace nenačítá je z fronty včas. Toto chování nemusí být vhodný pro zprávy s časovým počitadlem. Časově zprávy dostatek času k Live (TTL) nastavenou ve vazbě zařazených do fronty, který ukazuje, jak dlouho zprávy může být ve frontě předtím, než vyprší. Zprávy s vypršenou platností se odesílají do speciální fronty s názvem fronty nedoručených zpráv. Zprávy mohou také vložit do fronty nedoručených zpráv z jiných důvodů, jako je například překročení kvóty fronty nebo kvůli chybě ověřování.  
   
- Obecně platí aplikace zapisovat kompenzace logiku pro čtení zpráv z fronty nedoručených zpráv a důvodech selhání. Kompenzace logiku závisí na příčinu selhání. Například můžete v případě selhání ověřování, opravte certifikát přiložený se zprávou a znovu odešlete zprávu. Pokud doručení se nezdařila, protože bylo dosaženo kvóty cílové fronty, zkuste znovu provést doručení v naděje, že kvóta problém byl vyřešen.  
+ Obecně platí aplikace zapisovat kompenzační logiky ke čtení zpráv z fronty nedoručených zpráv a důvody selhání. Kompenzační logika závisí na příčinu selhání. Například v případě selhání ověření můžete opravit certifikát připojený se zprávou a znovu odeslat zprávu. Pokud doručení se nezdařilo, protože bylo dosaženo kvóty cílové fronty, zkuste znovu provést přenos v naději, že byl vyřešen problém kvóty.  
   
- Většina služby Řízení front systémy mají systémové fronty nedoručených zpráv, kde jsou uložené všechny neúspěšné zprávy z tohoto systému. Poskytuje dvě systémové fronty nedoručených zpráv služby Řízení front zpráv (MSMQ): transakční frontu nedoručených zpráv systémové ukládá zprávy, které se nezdařilo doručení a netransakční frontu nedoručených zpráv systémové ukládá transakční fronty zprávy, které doručení do netransakční fronty se nezdařilo. Pokud dva klienti jsou dvě různé služby zasílání zpráv, a proto různých fronty ve WCF sdílejí stejné služby MSMQ k odeslání, je možné, že směs zprávy do fronty nedoručených zpráv systému. Toto není vždy optimální. V několika případech (například zabezpečení) nemusí chcete jednoho klienta ke čtení jiného klienta zpráv z fronty nedoručených zpráv. Sdílené frontu nedoručených zpráv taky vyžaduje klientům procházet fronty najít zprávu, která budou odeslána, může být výtažkovými na základě počtu zpráv do fronty nedoručených zpráv. Proto ve WCF`NetMsmqBinding`, `MsmqIntegrationBinding,` a MSMQ na [!INCLUDE[wv](../../../../includes/wv-md.md)] zadejte vlastní frontu nedoručených zpráv (někdy označované jako frontu nedoručených zpráv specifické pro aplikaci).  
+ Většina zařazování do fronty systémy mají fronty nedoručených zpráv systémová ukládat všechny neúspěšné zprávy z tohoto systému. Řízení front zpráv (MSMQ) poskytuje dvě fronty nedoručených zpráv systémová: transakční frontu nedoručených zpráv celý systém, který ukládá zprávy, které se nepodařilo doručování transakční fronty a netransakční fronta nedoručených celý systém, který ukládá zprávy, které se nepodařilo doručování netransakční fronta. Pokud jsou dva klienti odesílání zpráv do dvou různých služeb, a proto různé fronty ve WCF sdílejí stejnou službu MSMQ pro odeslání, je možné mít kombinaci zprávy ve frontě nedoručených zpráv systému. To není vždycky optimální. V několika případech (například zabezpečení) možná nebudete chtít jednoho klienta číst jiného klienta zprávy z fronty nedoručených zpráv. Sdílené fronty nedoručených zpráv také vyžaduje, aby klienti procházením najít zprávu, která se odesílá, což může být nepřekonatelně drahé na základě počtu zpráv ve frontě nedoručených zpráv do fronty. Proto se ve službě WCF`NetMsmqBinding`, `MsmqIntegrationBinding,` a MSMQ na [!INCLUDE[wv](../../../../includes/wv-md.md)] poskytnout vlastní frontu nedoručených zpráv (někdy označované jako do fronty nedoručených zpráv specifické pro aplikaci).  
   
- Vlastní frontu nedoručených zpráv poskytuje izolaci mezi klienty, které sdílejí stejné služby MSMQ pro odesílání zpráv.  
+ Vlastní frontu nedoručených zpráv zajišťuje izolaci mezi klienty, které sdílejí stejné služby MSMQ pro odesílání zpráv.  
   
- Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)], Windows Communication Foundation (WCF) poskytuje systémové fronty nedoručených zpráv pro všechny aplikace ve frontě klienta. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], WCF poskytuje frontu nedoručených zpráv pro každou aplikaci ve frontě klienta.  
+ Na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)], Windows Communication Foundation (WCF) poskytuje frontu nedoručených zpráv systémová pro všechny ve frontě klientské aplikace. Na [!INCLUDE[wv](../../../../includes/wv-md.md)], WCF poskytuje fronty nedoručených zpráv pro každou aplikaci ve frontě klienta.  
   
-## <a name="specifying-use-of-the-dead-letter-queue"></a>Zadání použití fronty nedoručených zpráv  
- Ve správci fronty odesílání aplikace je frontu nedoručených zpráv. Ukládá zprávy, jejichž platnost vypršela nebo které selhaly přenos nebo doručení.  
+## <a name="specifying-use-of-the-dead-letter-queue"></a>Určení použití fronty nedoručených zpráv  
+ Fronty nedoručených zpráv je ve správci fronty odesílací aplikace. Ukládá zprávy, jejichž platnost vypršela nebo které selhaly, přenos nebo doručení.  
   
  Vazba má následující vlastnosti fronty nedoručených zpráv:  
   
@@ -34,46 +34,46 @@ Zprávy ve frontě může selhat doručení. Tyto zprávy se nezdařila se zazna
   
 -   <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>  
   
-## <a name="reading-messages-from-the-dead-letter-queue"></a>Čtení zpráv z fronty nedoručených zpráv  
- Aplikace, která čte zprávy z fronty nedoručených zpráv je podobná služby WCF, který čte z fronty zpráv aplikace, s výjimkou následujících drobné rozdíly:  
+## <a name="reading-messages-from-the-dead-letter-queue"></a>Přečte zprávy z fronty nedoručených zpráv  
+ Aplikace, která čte zprávy z fronty nedoručených zpráv je podobný služby WCF, která čte z fronty služby aplikace, s výjimkou následujících drobné rozdíly:  
   
 -   Ke čtení zpráv z fronty nedoručených zpráv transakcí systému, identifikátor URI (Uniform Resource) musí být ve tvaru: net.msmq://localhost/system$; DeadXact.  
   
--   Ke čtení zpráv z fronty nedoručených zpráv netransakční systému, musí být identifikátor URI ve tvaru: net.msmq://localhost/system$; nedoručených zpráv.  
+-   Ke čtení zpráv ze systému netransakční fronta nedoručených zpráv, identifikátor URI musí být ve tvaru: net.msmq://localhost/system$; nedoručených zpráv.  
   
--   Ke čtení zpráv z fronty nedoručených zpráv vlastní, musí být identifikátor URI formuláře: net.msmq://localhost/private/\<*Vlastní-DLQ se name*> kde *Vlastní-DLQ se name* je název vlastní frontu nedoručených zpráv.  
+-   Ke čtení zpráv z vlastní frontu nedoručených zpráv, musí být identifikátor URI formuláře: net.msmq://localhost/private/\<*Vlastní DLQ se názvy*> kde *Vlastní DLQ se názvy* je název nástroje custom fronty nedoručených zpráv.  
   
- Další informace o tom, jak adresu front najdete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
+ Další informace o tom, jak adresa fronty, naleznete v tématu [koncové body služby a adresování front](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
- Zásobník WCF na přijímač odpovídá adresy, které služba naslouchá na s adresou na zprávu. Pokud se adresy shodují, je zpráva odeslána; Pokud ne, není-li odeslat zprávu. To může způsobit problémy při čtení z fronty nedoručených zpráv, protože zprávy do fronty nedoručených zpráv jsou obvykle adresovaných službu a ne službu frontu nedoručených zpráv. Proto služba čtení z fronty nedoručených zpráv musí nainstalovat filtr adres `ServiceBehavior` , dá pokyn zásobníku tak, aby odpovídaly všechny zprávy ve frontě nezávisle na adresát. Konkrétně je nutné přidat `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr ke službě čtení zpráv z fronty nedoručených zpráv.  
+ Zásobník WCF na straně příjmu odpovídá adresy, které služba naslouchá na adresu ve zprávě. Pokud se adresy shodují, je zpráva odeslána; v opačném případě není zpráva odeslána. To může způsobovat problémy při čtení z fronty nedoručených zpráv, protože zprávy ve frontě nedoručených zpráv se obvykle tak vyřeší, služby a nikoli služba fronty nedoručených zpráv. Proto se čtením z fronty nedoručených zpráv služby musíte nainstalovat filtr adresy `ServiceBehavior` , který dává pokyn zásobníku tak, aby odpovídaly všechny zprávy ve frontě bez ohledu na jejich příjemce. Konkrétně je nutné přidat `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr ke službě přečte zprávy z fronty nedoručených zpráv.  
   
 ## <a name="poison-message-handling-from-the-dead-letter-queue"></a>Zacházení s nezpracovatelnými zprávami z fronty nedoručených zpráv  
- Zpracování poškozených zpráv je k dispozici ve frontách nedoručených zpráv s některé podmínky. Protože dílčí fronty nelze vytvořit z fronty systému při čtení z fronty nedoručených zpráv systému `ReceiveErrorHandling` nelze nastavit na `Move`. Všimněte si, že při čtení z vlastní frontu nedoručených zpráv, může mít dílčí fronty a tedy `Move` je platný dispozice pro poškozená zpráva.  
+ Je k dispozici ve frontách nedoručených zpráv, se některé podmínky manipulaci s nezpracovatelnými zprávami. Protože nelze vytvořit dílčí fronty ze systémové fronty, při čtení z fronty nedoručených zpráv systému `ReceiveErrorHandling` nelze nastavit na `Move`. Všimněte si, že při čtení z vlastní frontu nedoručených zpráv, může mít dílčí fronty a tedy `Move` je platný dispozice pro nezpracovatelných zpráv.  
   
- Když `ReceiveErrorHandling` je nastaven na `Reject`, že při čtení z fronty zpráv nedoručených zpráv vlastní nezpracovatelná zpráva je umístěna do fronty nedoručených zpráv systému. Když čtení z fronty nedoručených zpráv systému, zpráva se zahodí (vymazány). Odmítnutí z fronty nedoručených zpráv systému v vyřazuje služby MSMQ (odstraní) zprávy.  
+ Když `ReceiveErrorHandling` je nastavena na `Reject`, při čtení z fronty nedoručených zpráv vlastní nezpracovatelná zpráva je umístit do fronty nedoručených zpráv systému. Pokud se čtení z fronty nedoručených zpráv systému, se zahodí zprávy (odstraněný). Odmítnout z fronty nedoručených zpráv systému v drops služby MSMQ (odstraní) zprávy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit frontu nedoručených zpráv a způsobu jeho použití ke zpracování zprávy s vypršenou platností. V příkladu je založena na příkladu v [postup: Exchange zprávy zařazené do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md). Následující příklad ukazuje, jak napsat kód klienta pořadí zpracování službu, která používá frontu nedoručených zpráv pro každou aplikaci. Tento příklad také ukazuje, jak ke zpracování zpráv z fronty zpráv nedoručených zpráv.  
+ Následující příklad ukazuje, jak vytvořit frontu nedoručených zpráv a jak ji používat ke zpracování zprávy s vypršenou platností. V příkladu je založena na příkladu v [jak: Výměna zpráv pomocí koncových bodů WCF zařazených do fronty](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md). Následující příklad ukazuje, jak psát kód klienta pro službu, která používá fronty nedoručených zpráv pro každou aplikaci zpracování objednávek. Tento příklad také ukazuje, jak zpracovávat zprávy z fronty nedoručených zpráv.  
   
- Zde je kód pro klienta, který určuje frontu nedoručených zpráv pro každou aplikaci.  
+ Níže je kód pro klienta, který určuje fronty nedoručených zpráv pro každou aplikaci.  
   
  [!code-csharp[S_DeadLetter#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/client.cs#1)]
  [!code-vb[S_DeadLetter#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/client.vb#1)]  
   
- Zde je kód pro soubor konfigurace klienta.  
+ Níže je kód pro soubor konfigurace klienta.  
   
   
   
- Zde je kód služby zpracování zpráv z fronty nedoručených zpráv.  
+ Níže je kód služby zpracování zprávy z fronty nedoručených zpráv.  
   
  [!code-csharp[S_DeadLetter#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_deadletter/cs/dlservice.cs#3)]
  [!code-vb[S_DeadLetter#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_deadletter/vb/dlservice.vb#3)]  
   
- Zde je kód pro konfigurační soubor služby frontu nedoručených zpráv.  
+ Níže je kód pro konfigurační soubor služby fronty nedoručených zpráv.  
   
   
   
-## <a name="see-also"></a>Viz také  
- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
- [Postupy: Výměna zpráv zařazených do fronty s koncovými body WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
- [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled front](../../../../docs/framework/wcf/feature-details/queues-overview.md)
+- [Postupy: Výměna zpráv zařazených do fronty pomocí koncových bodů WCF](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)
+- [Zpracování škodlivých zpráv](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

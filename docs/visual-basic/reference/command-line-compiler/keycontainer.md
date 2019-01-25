@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: f64e47922aea35ac9ddf51428107af0d4002d33e
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 1666c7743f1116f86bc4457af53711cb6f1a6b7b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185820"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54579820"
 ---
 # <a name="-keycontainer"></a>-keycontainer
 Určuje název kontejneru klíčů pro dvojice klíčů poskytnout sestavení silným názvem.  
@@ -26,7 +26,7 @@ Určuje název kontejneru klíčů pro dvojice klíčů poskytnout sestavení si
   
 |Termín|Definice|  
 |---|---|  
-|`container`|Požadováno. Soubor kontejneru, který obsahuje klíč. Název souboru uzavřete do uvozovek ("") Pokud název obsahuje mezery.|  
+|`container`|Povinný parametr. Soubor kontejneru, který obsahuje klíč. Název souboru uzavřete do uvozovek ("") Pokud název obsahuje mezery.|  
   
 ## <a name="remarks"></a>Poznámky  
  Kompilátor vytvoří komponentu sdílet tak, že vloží veřejný klíč do manifestu sestavení a podepíše konečné sestavení soukromým klíčem. Chcete-li generovat soubor s klíčem, zadejte `sn -k file` na příkazovém řádku. `-i` Možnost nainstaluje pár klíčů do kontejneru. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)][Sn.exe (nástroj Strong Name)](../../../framework/tools/sn-exe-strong-name-tool.md)).  
@@ -49,8 +49,8 @@ Určuje název kontejneru klíčů pro dvojice klíčů poskytnout sestavení si
 vbc -keycontainer:key1 input.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
- [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

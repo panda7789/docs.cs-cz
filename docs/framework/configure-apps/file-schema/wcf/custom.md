@@ -2,21 +2,21 @@
 title: '&lt;custom&gt;'
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
-ms.openlocfilehash: 1978c898039a6ff9ab3303427951c214cde96e24
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 5180b8866d8b0155a8683ab9cb6135c26f696929
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145746"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54734984"
 ---
 # <a name="ltcustomgt"></a>&lt;custom&gt;
 Určuje nastavení pro službu překladače vlastní sdílené.  
   
 \<system.serviceModel>  
 \<vazby >  
-\<netPeerBinding >  
+\<netPeerBinding>  
 \<Vytvoření vazby >  
-\<překladač >  
+\<resolver>  
 \<vlastní >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,22 +43,22 @@ Určuje nastavení pro službu překladače vlastní sdílené.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu pro nakonfigurovaný s tímto elementem překladače vlastní partnerských uzlů. Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.|  
-|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres, který slouží pro zprávy protokolu SOAP zpracovat rozpoznávání vlastní druhé strany.|  
+|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje identitu pro nakonfigurovaný s tímto elementem překladače vlastní partnerských uzlů. Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.|  
+|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres, který slouží pro zprávy protokolu SOAP zpracovat rozpoznávání vlastní druhé strany.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<překladač >](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.|  
+|[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.|  
   
 ## <a name="remarks"></a>Poznámky  
  Tento prvek definuje základního nastavení pro vlastní sdílené překladač služby, včetně koncového bodu adresy partnerského uzlu hostování služby a nastavení konkrétní vazby. Další informace o vytvoření vlastní mechanismus rozpoznávání najdete v tématu [přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>  
- <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>  
- <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>  
- <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>  
- [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
- [Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>
+- <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>
+- <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>
+- <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>
+- [Překladače partnerských uzlů](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
+- [Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)

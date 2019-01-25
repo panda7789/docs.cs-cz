@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Name attribute
 - Name attribute in XAML [XAML Services]
 ms.assetid: b7e61222-e8cf-48d2-acd0-6df3b7685d48
-ms.openlocfilehash: 08594d9757596eed470ffba8b5b63a01c493c358
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 164b0283864cdeb60ef7b8e19c9d457f80ee4eb9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583919"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696461"
 ---
 # <a name="xname-directive"></a>x:Name – direktiva
 Jednoznačně identifikuje elementy XAML definované v XAML namescope. Obory názvů XAML a jejich modelů jedinečnost lze použít instance objektů, rozhraní poskytují rozhraní API nebo implementaci chování, které přistupují k graf objektu XAML vytvoří za běhu.  
@@ -66,7 +66,7 @@ Jednoznačně identifikuje elementy XAML definované v XAML namescope. Obory ná
 ## <a name="silverlight-usage-notes"></a>Poznámky k použití aplikace Silverlight  
  `x:Name` pro prostředí Silverlight je zdokumentován samostatně. Další informace najdete v tématu [Namespace XAML (x:) Funkce jazyka (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=199081).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>  
- <xref:System.Windows.FrameworkContentElement.Name%2A?displayProperty=nameWithType>  
- [Stromy v subsystému WPF](../../../docs/framework/wpf/advanced/trees-in-wpf.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.FrameworkElement.Name%2A?displayProperty=nameWithType>
+- <xref:System.Windows.FrameworkContentElement.Name%2A?displayProperty=nameWithType>
+- [Stromy v subsystému WPF](../../../docs/framework/wpf/advanced/trees-in-wpf.md)

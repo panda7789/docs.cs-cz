@@ -10,19 +10,19 @@ helpviewer_keywords:
 - <add> element, bypasslist
 - add element, bypasslist
 ms.assetid: a0b86e28-86b4-4497-abe8-d5fd614c7926
-ms.openlocfilehash: ca1d33b2077736a9760f65857bffe4e96c4aeab0
-ms.sourcegitcommit: 0fbd677fcdc5bf46c4d827f492eaaa970edc07b6
+ms.openlocfilehash: 3be617d53ba87c35ae44f143da15a6b647eaa0d9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54680777"
 ---
 # <a name="ltaddgt-element-for-bypasslist-network-settings"></a>&lt;Přidat&gt; – Element pro bypasslist (nastavení sítě)
 Přidá do seznamu obcházení proxy IP adresu nebo název DNS.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy >  
+\<defaultProxy>  
 \<bypasslist – >  
 \<add>  
   
@@ -41,7 +41,7 @@ Přidá do seznamu obcházení proxy IP adresu nebo název DNS.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|**Adresa**|Regulární výraz popisující IP adresu nebo název DNS.|  
+|**address**|Regulární výraz popisující IP adresu nebo název DNS.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,7 +50,7 @@ Přidá do seznamu obcházení proxy IP adresu nebo název DNS.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[atribut bypasslist bude](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
+|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
  `add` Element vloží regulární výrazy popisující IP adresy nebo názvy serverů DNS do seznamu adres, které obcházejí proxy server.  
@@ -80,6 +80,6 @@ Přidá do seznamu obcházení proxy IP adresu nebo název DNS.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

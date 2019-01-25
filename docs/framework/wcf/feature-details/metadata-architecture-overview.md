@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], overview
 ms.assetid: 1d37645e-086d-4d68-a358-f3c5b6e8205e
-ms.openlocfilehash: d0fc45b5ccabedb127061090eed1f6b63fd7acba
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 38a0eec31c4a0910048a0ed674e997d685747862
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199148"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54664197"
 ---
 # <a name="metadata-architecture-overview"></a>Přehled architektury metadat
 Windows Communication Foundation (WCF) poskytuje bohaté infrastrukturu pro export, publikování, načítání a import metadat služby. Služby WCF pomocí metadata popisují, jak pracovat s koncovými body služby tak, aby nástroje, jako je například Svcutil.exe, můžete automaticky vygenerovat kód klienta pro přístupu ke službě.  
@@ -87,12 +87,12 @@ Windows Communication Foundation (WCF) poskytuje bohaté infrastrukturu pro expo
 ## <a name="dynamic-bindings"></a>Dynamické vazby  
  Můžete dynamicky aktualizovat vazby, který použijete k vytvoření kanálu pro koncový bod služby v případě, že vazba koncového bodu změní nebo chcete vytvořit kanál pro koncový bod, který používá stejný kontrakt ale má jinou vazbou. Můžete použít <xref:System.ServiceModel.Description.MetadataResolver> statická třída pro načtení a import metadat v době běhu pro koncové body služby, které implementují konkrétní kontraktu. Pak můžete použít importovaná <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> objekty pro vytváření klienta nebo kanálu pro požadovaný koncový bod.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description>  
- [Formáty metadat](../../../../docs/framework/wcf/feature-details/metadata-formats.md)  
- [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)  
- [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
- [Načítání metadat](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)  
- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)  
- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
- [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description>
+- [Formáty metadat](../../../../docs/framework/wcf/feature-details/metadata-formats.md)
+- [Export a import metadat](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md)
+- [Publikování metadat](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)
+- [Načítání metadat](../../../../docs/framework/wcf/feature-details/retrieving-metadata.md)
+- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
+- [Informace o zabezpečení metadat](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)

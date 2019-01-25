@@ -5,18 +5,18 @@ f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel/client
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#client
 ms.assetid: bf0f7031-76c8-4e7e-a6c6-9ad9119134be
-ms.openlocfilehash: 24defe7e01603f1b1be3023d07854091335d6c60
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 32fcd9792f674d4ded466f26641690c8ae4328b9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148640"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54540400"
 ---
 # <a name="ltclientgt"></a>&lt;Klienta&gt;
 `client` Element definuje seznam koncových bodů, které se klient může připojit k.  
   
  \<system.ServiceModel>  
-\<klient >  
+\<client>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ ms.locfileid: "54148640"
 |Prvek|Popis|  
 |-------------|-----------------|  
 |[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-of-client.md)|Obsahuje kolekci prvků koncového bodu, které určovat koncové body, které tento klient může připojit k.|  
-|[\<metadata >](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
+|[\<metadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/metadata.md)|Obsahuje nastavení pro zpracování metadat.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -72,8 +72,8 @@ ms.locfileid: "54148640"
 </client>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ClientSection>  
- <xref:System.ServiceModel.Configuration.MetadataElement>  
- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ClientSection>
+- <xref:System.ServiceModel.Configuration.MetadataElement>
+- [Konfigurace klienta WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
+- [Klienti](../../../../../docs/framework/wcf/feature-details/clients.md)

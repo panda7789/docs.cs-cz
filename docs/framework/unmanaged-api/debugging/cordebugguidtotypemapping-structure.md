@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c803a805da605bd52fd50eb1e292c0e277143d7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 49290a37ca7ea101e3c8b458a5daa4995cb3beee
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405256"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54610042"
 ---
 # <a name="cordebugguidtotypemapping-structure"></a>CorDebugGuidToTypeMapping – struktura
-Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] identifikátor GUID do její odpovídající ICorDebugType objektu.  
+Mapy [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID na jeho odpovídající objekt ICorDebugType.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,8 +41,8 @@ typedef struct CorDebugGuidToTypeMapping {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`iid`|Identifikátor GUID uložená v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.|  
-|`pType`|Ukazatel na ICorDebugType objektu, který obsahuje informace o mezipaměti typu.|  
+|`iid`|Identifikátor GUID v mezipaměti [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.|  
+|`pType`|Ukazatel na objekt ICorDebugType, který poskytuje informace o typu v mezipaměti.|  
   
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** [!INCLUDE[wrt](../../../../includes/wrt-md.md)].  
@@ -53,6 +53,6 @@ typedef struct CorDebugGuidToTypeMapping {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

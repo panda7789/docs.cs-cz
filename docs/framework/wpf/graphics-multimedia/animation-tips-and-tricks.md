@@ -14,12 +14,12 @@ helpviewer_keywords:
 - performance troubleshooting [WPF], animation
 - animations [WPF], use of system resources
 ms.assetid: e467796b-d5d4-45a6-a108-8c5d7ff69a0f
-ms.openlocfilehash: df4aa7f3bf046ec871333f665ab77fa460c4095c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 6d79d3330154fff33abe5a401a70c6b9a20aad72
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842764"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660421"
 ---
 # <a name="animation-tips-and-tricks"></a>Tipy a triky animace
 Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], existuje několik tipů a triků, které můžete provést vašich animacích líp fungovat a uložit frustrace.  
@@ -105,7 +105,7 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Existují různé způsoby, jak odstranit animaci. Následující postupy slouží k odebrání animace, které patří <xref:System.Windows.Media.Animation.Storyboard>.  
   
--   Odebrat <xref:System.Windows.Media.Animation.Storyboard> začít aktivační procedura událostí naleznete v tématu [postupy: odebrání scénáře](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms749412(v=vs.90)).  
+-   Chcete-li odebrat <xref:System.Windows.Media.Animation.Storyboard> začít aktivační procedura událostí naleznete v tématu [jak: Odebrat scénáře](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms749412(v=vs.90)).  
   
 -   Při použití kódu odebrat <xref:System.Windows.Media.Animation.Storyboard>, najdete v článku <xref:System.Windows.Media.Animation.Storyboard.Remove%2A> metody.  
   
@@ -128,5 +128,5 @@ Při práci s animací v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharpt
   
  Další informace o objekty clock, naleznete v tématu [animace a časování přehledu systému](../../../../docs/framework/wpf/graphics-multimedia/animation-and-timing-system-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md)

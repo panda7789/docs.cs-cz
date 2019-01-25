@@ -1,6 +1,6 @@
 ---
 title: 'Postupy: Kopírování adresářů'
-ms.date: 03/30/2017
+ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -14,17 +14,19 @@ helpviewer_keywords:
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6f2c2fbd58b10af80a2a233cbd4211befe2dbd33
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 57e2b61fb8fef37234dc10885752f92e5f9b1330
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44216051"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54671067"
 ---
 # <a name="how-to-copy-directories"></a>Postupy: Kopírování adresářů
-Tento příklad znázorňuje, jakým způsobem lze pomocí vstupně-výstupních tříd synchronně zkopírovat obsah adresáře do jiného umístění. V tomto příkladu může uživatel zadat, zda se mají kopírovat také podadresáře. Při kopírování podadresářů kopíruje metoda uvedená v tomto příkladu rekurzivně podadresáře voláním sebe sama pro jednotlivé následné podadresáře, jsou-li k dispozici.  
-  
- Příklad asynchronního kopírování souborů naleznete v tématu [asynchronní vstupně-výstupní operace souboru](../../../docs/standard/io/asynchronous-file-i-o.md).  
+Toto téma ukazuje, jak používat vstupně-výstupních tříd synchronně zkopírovat obsah adresáře do jiného umístění. 
+
+Příklad asynchronního kopírování najdete v tématu [vstupně-výstupní asynchronní](../../../docs/standard/io/asynchronous-file-i-o.md). 
+
+Tento příklad zkopíruje podadresáře tak, že nastavíte `copySubDirs` z `DirectoryCopy` metodu `true`. `DirectoryCopy` Metoda rekurzivně zkopíruje podadresáře voláním sebe sama pro každý podadresář až nebudou existovat žádná další ke kopírování.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.IO.Directory_Copy#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory_Copy/cs/program.cs#1)]
@@ -32,9 +34,9 @@ Tento příklad znázorňuje, jakým způsobem lze pomocí vstupně-výstupních
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.IO.FileInfo>  
-- <xref:System.IO.DirectoryInfo>  
-- <xref:System.IO.FileStream>  
-- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
-- [Obecné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)  
-- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)
+- <xref:System.IO.FileInfo>
+- <xref:System.IO.DirectoryInfo>
+- <xref:System.IO.FileStream>
+- [Vstupně-výstupních operací souborů a datových proudů](../../../docs/standard/io/index.md)
+- [Běžné vstupně-výstupní úlohy](../../../docs/standard/io/common-i-o-tasks.md)
+- [Asynchronní I/O soubory](../../../docs/standard/io/asynchronous-file-i-o.md)

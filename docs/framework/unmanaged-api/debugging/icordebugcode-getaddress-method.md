@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e2de22729fd3d7a511c1105ebf810d0402bd73a9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 229bf968d21516d48468610c8f47367324fb6b13
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33402080"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54695514"
 ---
 # <a name="icordebugcodegetaddress-method"></a>ICorDebugCode::GetAddress – metoda
-Získá segmentu kódu, který toto rozhraní "ICorDebugCode" představuje relativní virtuální adresy (RVA).  
+Získá relativní virtuální adresu (RVA) segmentu kódu, který představuje toto rozhraní "ICorDebugCode".  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT GetAddress (
   
 #### <a name="parameters"></a>Parametry  
  `pStart`  
- [out] Ukazatel na RVA segmentu kódu.  
+ [out] Ukazatel na adresu RVA segmentu kódu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,5 +48,5 @@ HRESULT GetAddress (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

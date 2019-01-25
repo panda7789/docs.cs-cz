@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 7dffe56cf5593f1cd59cccd7ea9b6b0e173e0c2c
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: ccdeba2c187a255913dc6432afe5088889d32c5a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221281"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54523295"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.WS2007FederationHttpBinding>, standardní vazbu, že můžete použít k sestavení federovaných scénářích podporu verzi 1.3 specifikaci WS-Trust.  
@@ -129,4 +129,4 @@ Press <ENTER> to terminate client.
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\WS2007FederationHttp`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

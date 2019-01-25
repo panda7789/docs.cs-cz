@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 69590b0efc924132d149621c135ef0816cac7d1e
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 149597f0e34448d9c275a2cb8cd4ffc250bec619
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003052"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492117"
 ---
 # <a name="induced-collections"></a>Vyvolané kolekce
 Ve většině případů může systém uvolňování paměti určit nejvhodnější čas k provedení uvolnění paměti, které byste pak měli nechat běžet nezávisle. Existují výjimečné situace, kdy může vynucená kolekce zlepšit výkon vaší aplikace. V těchto případech můžete zahájit uvolnění pomocí <xref:System.GC.Collect%2A?displayProperty=nameWithType> metody pro vynucení uvolnění paměti.  
@@ -38,5 +38,5 @@ Ve většině případů může systém uvolňování paměti určit nejvhodněj
   
 ## <a name="see-also"></a>Viz také:
 
-- [Latentní režimy](../../../docs/standard/garbage-collection/latency.md)  
+- [Latentní režimy](../../../docs/standard/garbage-collection/latency.md)
 - [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

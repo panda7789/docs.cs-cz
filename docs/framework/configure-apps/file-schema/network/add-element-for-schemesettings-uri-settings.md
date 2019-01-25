@@ -2,19 +2,19 @@
 title: '&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)'
 ms.date: 03/30/2017
 ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
-ms.openlocfilehash: 07bcaf470c68a4d400057b0fe19e96524b2859cb
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: d64744cf3c88d5ec0f0edf1a31cdf184c3c8277e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50205175"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524101"
 ---
 # <a name="ltaddgt-element-for-schemesettings-uri-settings"></a>&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)
 Přidá nastavení schéma pro název schématu.  
   
  \<Konfigurace >  
-\<identifikátor URI >  
-\<schemeSettings >  
+\<uri>  
+\<schemeSettings>  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,7 +42,7 @@ Přidá nastavení schéma pro název schématu.
 |genericUriParserOptions|Možnosti analyzátoru pro toto schéma. Jedinou podporovanou hodnotou je genericUriParserOptions = "DontUnescapePathDotsAndSlashes".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
+ Žádná  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -81,11 +81,11 @@ Přidá nastavení schéma pro název schématu.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
-- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
-- <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
-- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
-- <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
-- <xref:System.Uri?displayProperty=nameWithType>  
+## <a name="see-also"></a>Viz také:
+- <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
+- <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
+- <xref:System.Configuration.UriSection?displayProperty=nameWithType>
+- <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>
+- <xref:System.GenericUriParserOptions?displayProperty=nameWithType>
+- <xref:System.Uri?displayProperty=nameWithType>
 - [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

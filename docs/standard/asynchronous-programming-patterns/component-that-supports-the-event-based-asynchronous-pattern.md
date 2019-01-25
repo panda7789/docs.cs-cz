@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 3fd01e19bc8aad8af709aee2fdaa020d8192d530
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 8213d3d980edc9c37b5f50545edbcd8959616963
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003812"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745464"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -48,7 +48,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 -   Implementace Start a metody Cancel  
   
- Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [postupy: implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+ Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="creating-the-component"></a>Vytvoření komponenty  
  Prvním krokem je vytvoření Komponenta, která bude implementovat asynchronní vzor založený na událostech.  
@@ -82,7 +82,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
      [!code-csharp[System.ComponentModel.AsyncOperationManager#6](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#6)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#6](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#6)]  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
@@ -153,7 +153,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
      [!code-csharp[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#26)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#26](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#26)]  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
@@ -176,7 +176,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
  `CalculateWorker` Metoda je zabalena v delegátovi a je vyvoláno asynchronně s volání `BeginInvoke`.  
   
 > [!NOTE]
->  Vykazování průběhu je implementována v `BuildPrimeNumberList` metody. Rychlé počítačích `ProgressChanged` události mohou být vyvolány rychle po sobě. Vlákna klienta, na kterém jsou tyto události vyvolány, musí být schopen tuto situaci. Kód uživatelského rozhraní může být docházet zprávy a schopen čelit, což vede k předsazení chování. Uživatelské rozhraní příklad, který zpracovává této situaci, naleznete v tématu [postupy: implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+>  Vykazování průběhu je implementována v `BuildPrimeNumberList` metody. Rychlé počítačích `ProgressChanged` události mohou být vyvolány rychle po sobě. Vlákna klienta, na kterém jsou tyto události vyvolány, musí být schopen tuto situaci. Kód uživatelského rozhraní může být docházet zprávy a schopen čelit, což vede k předsazení chování. Uživatelské rozhraní příklad, který zpracovává této situaci, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 #### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Spustit asynchronně výpočtu prime číslo:  
   
@@ -207,7 +207,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
      [!code-csharp[System.ComponentModel.AsyncOperationManager#29](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#29)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#29](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#29)]  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
@@ -233,7 +233,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
      [!code-csharp[System.ComponentModel.AsyncOperationManager#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#4)]
      [!code-vb[System.ComponentModel.AsyncOperationManager#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#4)]  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
  V tomto okamžiku můžete vytvořit komponentu.  
   
 #### <a name="to-test-your-component"></a>Chcete-li otestovat  
@@ -242,7 +242,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
  `PrimeNumberCalculator` Je nyní dokončena a připravena k použití.  
   
- Pro příklad klienta, který používá `PrimeNumberCalculator` komponenty, naleznete v tématu [postupy: implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+ Pro příklad klienta, který používá `PrimeNumberCalculator` komponenty, naleznete v tématu [jak: Implementace klienta asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 ## <a name="next-steps"></a>Další kroky  
  V tomto příkladu můžete vyplnit napsáním `CalculatePrime`, synchronní ekvivalent `CalculatePrimeAsync` metody. To způsobí, že `PrimeNumberCalculator` součást plně kompatibilní s asynchronní vzor založený na událostech.  
@@ -253,6 +253,6 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
-- [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)  
-- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
+- [Postupy: Spuštění operace na pozadí](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [Přehled asynchronních vzorů založených na událostech](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)

@@ -2,40 +2,40 @@
 title: Princip ověřování HTTP
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-ms.openlocfilehash: fa9af58f08fc54126bd055216d377a4e2b24c84c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 77fbed8cae070285925bcdc13c76fe28c3cb13cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33500139"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525791"
 ---
 # <a name="understanding-http-authentication"></a>Princip ověřování HTTP
-Ověřování je proces identifikace, zda je vhodné pro přístup k prostředkům klienta. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístup k zabezpečení prostředků.  
+Ověřování je proces určit, jestli je klient oprávnění pro přístup k prostředku. Protokol HTTP podporuje ověřování jako způsob vyjednávání přístup k zabezpečené prostředku.  
   
- Počáteční žádosti z klienta je obvykle požadavek anonymní, neobsahující žádné informace o ověřování. Aplikace serveru HTTP můžete odepřít, že je vyžadován anonymní požadavek při označující, že ověřování. Aplikace serveru odešle hlavičky WWW-ověřování k označení schémat podporované ověřování. Tento dokument popisuje několik schémat ověřování pro protokol HTTP a jejich podpora v systému Windows Communication Foundation (WCF).  
+ Počáteční žádosti od klientů je obvykle anonymní žádosti, neobsahuje informace o ověřování. Aplikace serveru HTTP můžete zakázat anonymní žádosti při označující, že ověřování je vyžadováno. Serverová aplikace odešle hlavičky WWW-ověřování k označení schémata podporované metody ověřování. Tento dokument popisuje více schémat ověřování protokolu HTTP a jejich podpora Windows Communication Foundation (WCF).  
   
-## <a name="http-authentication-schemes"></a>Schémat ověřování protokolu HTTP  
- Server můžete určit více schémat ověřování pro klienta lze vybírat. Následující tabulka popisuje některé schémat ověřování, které jsou běžně součástí aplikací systému Windows.  
+## <a name="http-authentication-schemes"></a>Schémata ověřování protokolu HTTP  
+ Server můžete určit více schémat ověřování klienta lze vybírat. Následující tabulka popisuje některé z ověřovací schémata běžně nacházejí v aplikacích Windows.  
   
 |Schéma ověřování|Popis|  
 |---------------------------|-----------------|  
-|Anonymní|Žádost o anonymní neobsahuje žádné informace o ověřování. Jde o ekvivalent udělení všem uživatelům přístup k danému prostředku.|  
-|Základní|Základní ověřování odešle řetězec s kódováním Base64, obsahující uživatelské jméno a heslo pro klienta. Base64 není šifrování a by se měly zvažovat stejná jako odesílání uživatelské jméno a heslo ve formátu prostého textu. Pokud prostředek je potřeba chránit, důrazně zvažte použití příslušné schéma ověřování než základní ověřování.|  
-|Ověřování algoritmem Digest|Ověřování hodnotou hash je výzvy a odezvy schématu, která má nahradit základní ověřování. Server odešle řetězec náhodná data názvem *hodnotu nonce* klientovi jako výzvu. Klient odpoví hodnotu hash, která obsahuje uživatelské jméno, heslo a hodnotu nonce mezi Další informace. Složitost, kterou představuje tento exchange a dat, výpočtu hodnoty hash je obtížné více ukrást a opakovaně používat přihlašovací údaje uživatele se toto schéma ověřování.<br /><br /> Ověřování algoritmem Digest vyžaduje použití účtů domény Windows. Daný výtah *sféry* je název domény systému Windows. Proto nelze použít server běžící na operační systém, který nepodporuje domény systému Windows, například Windows XP Home Edition s ověřování hodnotou hash. Naopak pokud klient se spouští na operační systém, který nepodporuje doménách systému Windows, účet domény musí být explicitně zadaná během ověřování.|  
-|NTLM|NT LAN Manager (NTLM) authentication je schéma výzvy a odezvy, který je securer varianta ověřování hodnotou hash. NTLM používá přihlašovací údaje systému Windows pro transformaci dat výzvy místo nekódovaného uživatelské jméno a heslo. Ověřování protokolem NTLM vyžaduje víc výměn mezi klientem a serverem. Server a všechny použité proxy musí podporovat trvalé připojení k úspěšnému provedení ověřování.|  
-|Vyjednávání|Vyjednávání ověřování automaticky vybere mezi protokolu Kerberos a ověřování NTLM, v závislosti na dostupnosti. Protokol Kerberos se používá, pokud je k dispozici. v opačném případě se pokus o protokolu NTLM. Ověřování protokolem Kerberos se výrazně zvyšuje na protokol NTLM. Ověřování protokolem Kerberos se rychleji než pomocí protokolu NTLM a umožňuje použití vzájemného ověření a delegování pověření na vzdálených počítačích.|  
-|Windows Live ID|Základní služba Windows HTTP zahrnuje ověřování pomocí protokolů federované. Standardní přenosy HTTP ve WCF však nepodporují použití schémat federovaného ověřování, jako je například Microsoft Windows Live ID. Podpora pro tuto funkci je aktuálně k dispozici prostřednictvím zabezpečení zpráv. Další informace najdete v tématu [federace a vystavené tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|Anonymní|Anonymní žádosti neobsahuje informace o ověřování. Jedná se o ekvivalent k poskytování všem uživatelům přístup k prostředku.|  
+|Základní|Základní ověřování odešle řetězec s kódováním Base64, který obsahuje uživatelské jméno a heslo pro tohoto klienta. Ve formátu Base64 není formu šifrování a by měl být stejný jako odesílání uživatelské jméno a heslo ve formátu prostého textu. Pokud prostředek je potřeba chránit, důkladně zvážit možnost pomocí ověřovacího schématu než základní ověřování.|  
+|ověřování algoritmem Digest|Ověřování hodnotou hash je schéma odpověď výzvy, která je určena k nahrazení základní ověřování. Server odešle řetězec náhodných dat s názvem *nonce* ke klientovi jako náročné. Klientovi jako odpověď vrátí hodnotu hash, která obsahuje uživatelské jméno, heslo a hodnota nonce, mezi Další informace. Složitost, kterou představuje tento exchange a dat hash to ztížit krádež a opakované použití přihlašovacích údajů uživatele v tomto schématu ověřování.<br /><br /> Ověřování algoritmem Digest vyžaduje použití účtů domény Windows. Algoritmus digest *sféry* je název domény Windows. Proto nelze použít server spuštěný v operačním systému, který nepodporuje domény Windows, jako jsou Windows XP Home Edition s ověřováním algoritmem Digest. Naopak pokud klienta běží na operačním systému, který nepodporuje domény Windows, účet domény musí být explicitně zadán během ověřování.|  
+|NTLM|NT LAN Manager (NTLM) authentication je – výzva odezva schéma, které je securer variantou ověřování hodnotou hash. NTLM používá přihlašovací údaje Windows k transformaci dat challenge místo nekódovaného uživatelské jméno a heslo. Ověřování protokolem NTLM vyžaduje více výměn mezi klientem a serverem. Server a všechny použité proxy musí podporovat trvalé připojení pro úspěšné dokončení ověření.|  
+|Vyjednávání|Vyjednávání automaticky vybere ověřování mezi protokolu Kerberos a ověřování protokolem NTLM, v závislosti na dostupnosti. Protokol Kerberos se používá, pokud je k dispozici. v opačném případě se pokusila NTLM. Ověřování protokolem Kerberos výrazně vylepšuje NTLM. Ověřování pomocí protokolu Kerberos je rychlejší než NTLM a umožňuje použití vzájemného ověření a delegování pověření na vzdálených počítačích.|  
+|Windows Live ID|Základní služba Windows HTTP zahrnuje ověřování s použitím federovaného protokoly. Standardní přenosy HTTP ve službě WCF však nepodporují použití metody federované ověřování, jako je například Microsoft Windows Live ID. Podpora pro tuto funkci je momentálně dostupná prostřednictvím zabezpečení zpráv. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
-## <a name="choosing-an-authentication-scheme"></a>Výběr příslušné schéma ověřování  
- Když vyberete potenciální schémat ověřování pro HTTP server, několik položek vzít v úvahu, patří:  
+## <a name="choosing-an-authentication-scheme"></a>Volba režimu ověřování  
+ Při výběru potenciální schémat ověřování pro HTTP server, několik položek, které byste měli zvážit, patří:  
   
--   Zvažte, zda prostředek je potřeba chránit. Pomocí ověřování protokolu HTTP vyžaduje přenáší další data a můžete omezit interoperability s klienty. Povolí anonymní přístup k prostředkům, které nemusí být chráněny.  
+-   Zvažte, zda prostředek, který je potřeba chránit. Použití ověřování pomocí protokolu HTTP vyžaduje přenáší další data a můžete omezte vzájemná funkční spolupráce s klienty. Povolit anonymní přístup k prostředkům, které není potřeba chránit.  
   
--   Pokud prostředek je potřeba chránit, zvažte, které schémat ověřování, zadejte požadované úrovni zabezpečení. Schéma nejslabších standardní ověřování tady popisovaných je základní ověřování. Základní ověřování nechrání přihlašovacích údajů uživatele. Nejsilnější standardní ověřování je Negotiate ověřování, což je protokol Kerberos.  
+-   Pokud prostředek je potřeba chránit, vezměte v úvahu které režimy ověřování poskytovat požadované úrovni zabezpečení. Základní ověřování je nejslabší schéma standardní ověřování zde popsané. Základní ověřování neposkytuje ochranu přihlašovacích údajů uživatele. Nejsilnější standardní ověřování je Negotiate ověřování, což vede k protokolu Kerberos.  
   
--   Server by neměl k dispozici (v hlavičky WWW-ověřování) žádné schéma, které není připraven přijímat nebo který nezabezpečuje adekvátní k chráněnému prostředku. Klienti mohou zvolit žádné ze serveru představuje schémat ověřování. Některé klienty výchozí schéma slabé ověřování nebo první schéma ověřování v seznamu serveru.  
+-   Server nesmí prezentovat (hlavičky WWW-ověřování) žádné schéma, které není připraveno přijmout nebo který nezabezpečuje adekvátní chráněnému prostředku. Klienti jsou zdarma si vybrat mezi všechny ověřovací schémata prezentuje serveru. Některé klienty výchozí schéma slabé ověřování nebo první schéma ověřování v seznamu na serveru.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)  
- [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
- [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)
+- [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)
+- [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)

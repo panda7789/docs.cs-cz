@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d057201c7d7bec3070027bb1d9de62735d583cf6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 40d05ee60d0183337e67b1f36722dff29ae9beaf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428999"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663541"
 ---
 # <a name="isymunmanagedwritersetmethodsourcerange-method"></a>ISymUnmanagedWriter::SetMethodSourceRange – metoda
-Určuje hodnotu true počáteční a koncová metody v rámci zdrojového souboru. Tuto metodu použijte k určení rozsahu metoda nezávisle na pořadí body, které existují v rámci metody.  
+Určuje hodnotu true začátku a konce metody v rámci zdrojového souboru. Tuto metodu použijte k určení rozsahu metody bez ohledu na jejich body sekvence, které existují v rámci metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ HRESULT SetMethodSourceRange(
   
 #### <a name="parameters"></a>Parametry  
  `startDoc`  
- [v] Ukazatel na dokument obsahující počáteční pozici.  
+ [in] Ukazatel na dokument obsahující počáteční pozice.  
   
  `startLine`  
- [v] Počáteční řádek číslo.  
+ [in] Počáteční řádek číslo.  
   
  `startColumn`  
- [v] Počáteční sloupec.  
+ [in] Počáteční sloupec.  
   
  `endDoc`  
- [v] Ukazatel na dokument obsahující koncovou pozici.  
+ [in] Ukazatel na dokument obsahující koncovou pozici.  
   
  `endLine`  
- [v] Koncová číslo řádku.  
+ [in] Koncové číslo řádku.  
   
  `endColumn`  
- [v] Koncová číslo sloupce.  
+ [in] Koncové číslo sloupce.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Otevírání souborů pomocí součásti OpenFileDialog'
+title: 'Postupy: Otevírání souborů pomocí komponenty OpenFileDialog'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - OpenFile method [Windows Forms], OpenFileDialog component
 - files [Windows Forms], opening with OpenFileDialog component
 ms.assetid: 9d88367a-cc21-4ffd-be74-89fd63767d35
-ms.openlocfilehash: d7e1ebb319576aa7a38d55d8cb9f3652626966b6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 87e7640da76205341b9e95310314800ac9dbfe30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542272"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678808"
 ---
-# <a name="how-to-open-files-using-the-openfiledialog-component"></a>Postupy: Otevírání souborů pomocí součásti OpenFileDialog
-<xref:System.Windows.Forms.OpenFileDialog> Součást umožňuje uživatelům procházet složky jejich počítače nebo všechny počítače v síti a vyberte jeden nebo více souborů otevřete. Dialogové okno vrátí cestu a název souboru, vyberte v dialogovém okně vyberte uživatele.  
+# <a name="how-to-open-files-using-the-openfiledialog-component"></a>Postupy: Otevírání souborů pomocí komponenty OpenFileDialog
+<xref:System.Windows.Forms.OpenFileDialog> Komponenta umožňuje uživatelům procházet složky jejich počítač nebo všechny počítače v síti a vyberte jeden nebo více souborů otevřete. Dialogové okno vrátí cestu a název souboru v dialogovém okně vyberte uživatele.  
   
- Jakmile uživatel vybral soubor otevřít, existují dva přístupy mechanismu, který otevírání tohoto souboru. Pokud dáváte přednost práci s datovými proudy souboru, můžete vytvořit instanci <xref:System.IO.StreamReader> třídy. Alternativně můžete použít <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda otevřít vybraný soubor.  
+ Jakmile uživatel vybral soubor otevřít, se používají dva přístupy mechanismu, který otevírání tohoto souboru. Pokud budete chtít pracovat s datové proudy souborů, můžete vytvořit instanci <xref:System.IO.StreamReader> třídy. Alternativně můžete použít <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda otevřít vybraný soubor.  
   
- V prvním příkladu níže zahrnuje <xref:System.Security.Permissions.FileIOPermission> zkontrolujte oprávnění (jak je popsáno v "Zabezpečení poznámku" níže), ale dává vám přístup k názvu souboru. Tento postup můžete použít z místního počítače, intranetu a Internetu zóny. Druhá metoda zajišťuje také <xref:System.Security.Permissions.FileIOPermission> kontrola oprávnění, ale je vhodnější pro aplikací do zóny intranetu nebo Internetu.  
+ V prvním příkladu níže se zahrnuje <xref:System.Security.Permissions.FileIOPermission> kontrola oprávnění (jak je popsáno v "Zabezpečení poznámku" níže), ale dává vám přístup k souboru. Tento postup můžete použít z místního počítače, intranetu a Internetu zóny. Druhá metoda také provádí <xref:System.Security.Permissions.FileIOPermission> kontrola oprávnění, ale je vhodnější pro aplikace v zóně intranetu nebo Internetu.  
   
-### <a name="to-open-a-file-as-a-stream-using-the-openfiledialog-component"></a>Otevřete soubor jako datový proud pomocí součásti OpenFileDialog  
+### <a name="to-open-a-file-as-a-stream-using-the-openfiledialog-component"></a>Pro otevření souboru jako datový proud pomocí komponenty OpenFileDialog  
   
-1.  Zobrazení **otevřít soubor** dialogové okno a volání metody k otevření souboru vybraného uživatelem.  
+1.  Zobrazení **otevřít soubor** dialogové okno a volání metody otevřít soubor vybraný uživatelem.  
   
-     Jeden z přístupů je použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> má metoda zobrazit dialogové okno otevřít soubor a použít instanci systému <xref:System.IO.StreamReader> třída k otevření souboru.  
+     Jedním z přístupů je použít <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogového okna otevřete soubor a použít instanci <xref:System.IO.StreamReader> třídy k otevření souboru.  
   
-     V příkladu níže používá <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužné rutiny události otevřete instanci <xref:System.Windows.Forms.OpenFileDialog> součásti. Pokud je soubor zvolený a uživatel klikne na tlačítko **OK**, otevře se soubor vybraný v dialogovém okně. Obsah v tomto případě se zobrazí v okně se zprávou, stačí k zobrazení byl načten datový proud souboru.  
+     V příkladu níže použití <xref:System.Windows.Forms.Button> ovládacího prvku <xref:System.Windows.Forms.Control.Click> obslužná rutina události otevřete instance <xref:System.Windows.Forms.OpenFileDialog> komponenty. Pokud je soubor zvolené a uživatel klikne na tlačítko **OK**, otevře se soubor vybrané v dialogovém okně. V takovém případě obsah se zobrazí v okně se zprávou, pouze k znázornění přečetla datový proud souboru.  
   
     > [!IMPORTANT]
-    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
   
-     Příklad předpokládá, že má formulář <xref:System.Windows.Forms.Button> řízení a <xref:System.Windows.Forms.OpenFileDialog> součásti.  
+     Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacího prvku a <xref:System.Windows.Forms.OpenFileDialog> komponenty.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -88,18 +88,18 @@ ms.locfileid: "33542272"
     ```  
   
     > [!NOTE]
-    >  Další informace o čtení ze souboru datové proudy najdete v tématu <xref:System.IO.FileStream.BeginRead%2A> a <xref:System.IO.FileStream.Read%2A>.  
+    >  Další informace o čtení ze souborů datových proudů, naleznete v tématu <xref:System.IO.FileStream.BeginRead%2A> a <xref:System.IO.FileStream.Read%2A>.  
   
-### <a name="to-open-a-file-as-a-file-using-the-openfiledialog-component"></a>Otevřete soubor jako soubor pomocí součásti OpenFileDialog  
+### <a name="to-open-a-file-as-a-file-using-the-openfiledialog-component"></a>Pro otevření souboru jako souboru pomocí komponenty OpenFileDialog  
   
-1.  Použití <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogových oken a <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda k otevření souboru.  
+1.  Použití <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> metodu pro zobrazení dialogových oken a <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metody k otevření souboru.  
   
-     <xref:System.Windows.Forms.OpenFileDialog> Součásti <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda vrátí počet bajtů, které tvoří soubor. Tyto bajtů dát číst z datového proudu. V následujícím příkladu <xref:System.Windows.Forms.OpenFileDialog> s filtrem "kurzoru", které uživateli umožňují zvolit pouze soubory s příponou názvu souboru je vytvořena instance komponenty`.cur`. Pokud`.cur` je vybrán soubor, formuláře kurzor nastavený na vybrané kurzor.  
+     <xref:System.Windows.Forms.OpenFileDialog> Komponenty <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda vrátí počet bajtů, které ho tvoří. Tyto bajtů umožňují čtení z datového proudu. V následujícím příkladu <xref:System.Windows.Forms.OpenFileDialog> s filtrem "kurzor", které uživateli umožňují vybrat pouze soubory s příponou názvu souboru je vytvořena instance komponenty`.cur`. Pokud`.cur` je vybrán soubor, kurzor formuláře je nastavena na vybrané kurzoru.  
   
     > [!IMPORTANT]
-    >  K volání <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Volání <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metody sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
   
-     Příklad předpokládá, že má formulář <xref:System.Windows.Forms.Button> ovládacího prvku.  
+     Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacího prvku.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  
@@ -173,6 +173,6 @@ ms.locfileid: "33542272"
        System::EventHandler(this, &Form1::button1_Click);  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.OpenFileDialog>  
- [Komponenta OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.OpenFileDialog>
+- [Komponenta OpenFileDialog](../../../../docs/framework/winforms/controls/openfiledialog-component-windows-forms.md)

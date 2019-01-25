@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů'
+title: 'Postupy: Použití pojmenované kanály meziprocesová síťová komunikace'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,14 +17,14 @@ helpviewer_keywords:
 ms.assetid: 4e4d7e64-9f1b-4026-98f7-20488ac7b42b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5cc481c7370a21c56daf9ce2949247e65fa33bda
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 608991878b49bf0bafe9ebf90dbfc8eaec69e0e7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836098"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698866"
 ---
-# <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Postupy: Meziprocesová síťová komunikace pomocí pojmenovaných kanálů
+# <a name="how-to-use-named-pipes-for-network-interprocess-communication"></a>Postupy: Použití pojmenované kanály meziprocesová síťová komunikace
 Pojmenované kanály poskytují meziprocesovou komunikaci mezi serverem kanálu a jedním nebo několika klienty kanálu. Nabízejí větší počet funkcí než anonymní kanály, které poskytují meziprocesovou komunikaci v místním počítači. Pojmenované kanály podporují plně duplexní komunikaci přes síť a větší počet instancí serveru, komunikaci založenou na zprávách a zosobnění klienta, což umožňuje připojujícím se procesům použít vlastní sadu oprávnění na vzdálených serverech.  
   
  Chcete-li implementovat pojmenované kanály, použijte třídu <xref:System.IO.Pipes.NamedPipeServerStream> a třídu <xref:System.IO.Pipes.NamedPipeClientStream>.  
@@ -47,7 +47,7 @@ Pojmenované kanály poskytují meziprocesovou komunikaci mezi serverem kanálu 
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Security.Principal.TokenImpersonationLevel>  
-- <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName%2A>  
-- [Pojmenované kanály](../../../docs/standard/io/pipe-operations.md)  
+- <xref:System.Security.Principal.TokenImpersonationLevel>
+- <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName%2A>
+- [Pojmenované kanály](../../../docs/standard/io/pipe-operations.md)
 - [Postupy: Místní meziprocesová komunikace pomocí anonymních kanálů](../../../docs/standard/io/how-to-use-anonymous-pipes-for-local-interprocess-communication.md)

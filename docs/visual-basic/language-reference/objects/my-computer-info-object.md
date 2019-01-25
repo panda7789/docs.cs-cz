@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Info object
 ms.assetid: 2eb2aa5f-303d-426c-918d-989c8b7b08d0
-ms.openlocfilehash: 9eabd2538d43c5a0104032c501da8cbf81b5c74d
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4d187d171aa90ae1067078f7540a18f39c3508a1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45963702"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54685652"
 ---
 # <a name="mycomputerinfo-object"></a>My.Computer.Info – objekt
 Poskytuje vlastnosti pro získání informací o paměť, načtená sestavení, název a operační systém počítače.  
@@ -22,7 +22,7 @@ Poskytuje vlastnosti pro získání informací o paměť, načtená sestavení, 
   
  **Třída:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo>  
   
- **Sestavení:** knihovny prostředí Runtime jazyka Visual Basic (v souboru Microsoft.VisualBasic.dll)  
+ **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
   
-## <a name="see-also"></a>Viz také  
- [Objekt My.Computer](../../../visual-basic/language-reference/objects/my-computer-object.md)
+## <a name="see-also"></a>Viz také:
+- [Objekt My.Computer](../../../visual-basic/language-reference/objects/my-computer-object.md)

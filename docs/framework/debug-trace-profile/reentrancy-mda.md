@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cc2e725ecb2208256f6d0e025d4cc79339f385cd
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 18189ace97238bede9ed18d1dcbae2490956fad8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130114"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498593"
 ---
 # <a name="reentrancy-mda"></a>vícenásobný přístup MDA
 `reentrancy` Pomocníka spravovaného ladění (MDA) se aktivuje, když je proveden pokus o přechod z nativní do spravovaného kódu v případech, kdy se neprovedla předchozí přepínač ze spravovaného do nativního kódu prostřednictvím uspořádání přechodu.  
@@ -30,7 +30,7 @@ ms.locfileid: "53130114"
   
  Vlákna, která přepínat mezi nativním a spravovaným kódem v obou směrech musíte provést uspořádání přechodu. Určitých bodů rozšiřitelnosti nízké úrovně v operačním systému, jako je například vektorové obslužné rutiny výjimek, ale umožní přepínače ze spravované do nativního kódu bez uspořádání přechodu.  Tyto přepínače jsou v rámci ovládacího prvku operačního systému, nikoli ovládány language runtime (CLR).  Nativní kód, který se spustí v těmto rozšiřujícím bodům musí Vyhněte se volání zpět do spravovaného kódu.  
   
-## <a name="cause"></a>příčina  
+## <a name="cause"></a>Příčina  
  Bodu rozšiřitelnosti nízké úrovně operačního systému, jako je například vektorové obslužné rutiny výjimek, je aktivován při provádění spravovaného kódu.  Kód aplikace, která je volána pomocí tohoto bodu rozšiřitelnosti se pokouší volat zpět do spravovaného kódu.  
   
  Tento problém je způsoben vždy kódem aplikace.  
@@ -104,5 +104,5 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
+## <a name="see-also"></a>Viz také:
+- [Diagnostikování chyb pomocí asistentů spravovaného ladění](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

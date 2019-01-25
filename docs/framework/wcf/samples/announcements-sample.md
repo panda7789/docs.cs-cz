@@ -2,12 +2,12 @@
 title: Ukázka oznámení
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-ms.openlocfilehash: d03f22b7dd4d9886151e61a2a846f2dc64e661c3
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 775a56f322636664b5a0ced19df7bba347002e38
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49347501"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54568566"
 ---
 # <a name="announcements-sample"></a>Ukázka oznámení
 Tento příklad ukazuje, jak používat funkci oznámení funkci zjišťování. Oznámení povolte službám posílat zprávy oznámení, které obsahují metadata týkající se služby. Ve výchozím nastavení hello oznámení se odešle, když služba po spuštění a bye oznámení se odešle, když je služba ukončena. Tato oznámení mohou být vícesměrového vysílání nebo mohou být odesílány typu point-to-point. Tento příklad se skládá z klienta a služby dva projekty.  
@@ -87,4 +87,4 @@ static void OnOfflineEvent(object sender, AnnouncementEventArgs e)
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

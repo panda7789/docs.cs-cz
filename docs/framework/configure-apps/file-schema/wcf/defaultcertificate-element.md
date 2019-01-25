@@ -2,12 +2,12 @@
 title: Element &lt;defaultCertificate&gt;
 ms.date: 03/30/2017
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
-ms.openlocfilehash: 2f6167d7b30da753d093a87753eeef3374fcc0f0
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 1e4c76ea2b3e4064f3bc14461be1729af299117b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54146989"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54676627"
 ---
 # <a name="ltdefaultcertificategt-element"></a>Element &lt;defaultCertificate&gt;
 Určuje certifikát X.509, který se má použít při služba nebo STS neposkytne pomocí protokolu vyjednávání.  
@@ -16,9 +16,9 @@ Určuje certifikát X.509, který se má použít při služba nebo STS neposkyt
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<třídu clientCredentials >  
-\<serviceCertificate >  
-\<defaultCertificate >  
+\<clientCredentials>  
+\<serviceCertificate>  
+\<defaultCertificate>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +37,7 @@ Určuje certifikát X.509, který se má použít při služba nebo STS neposkyt
 |Atribut|Popis|  
 |---------------|-----------------|  
 |findValue|řetězec. Hodnota, kterou chcete vyhledat.|  
-|X509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
+|x509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
 |storeLocation|Výčet. Jedno ze dvou systémových úložišť k prohledání.|  
 |storeName|Výčet. Jedno ze systémových úložišť k prohledání.|  
   
@@ -72,7 +72,7 @@ Určuje certifikát X.509, který se má použít při služba nebo STS neposkyt
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný při ověřování služby ke klientovi.|  
+|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný při ověřování služby ke klientovi.|  
   
 ## <a name="remarks"></a>Poznámky  
  U vazeb, které používají zabezpečení na základě certifikátů zpráv certifikát určený tento prvek konfigurace se používá k šifrování zpráv ve službě a měl by používat službu pro podepisování odpovědi klientovi. Ukládají se jeden certifikát má být použit při služby je určen žádný certifikát.  
@@ -98,11 +98,11 @@ Určuje certifikát X.509, který se má použít při služba nebo STS neposkyt
 </serviceCertificate>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>  
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.DefaultCertificate%2A>  
- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
- [\<ověřování >](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)  
- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)  
- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>
+- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>
+- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.DefaultCertificate%2A>
+- [Práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [\<authentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md)
+- [Zabezpečení klientů](../../../../../docs/framework/wcf/securing-clients.md)
+- [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

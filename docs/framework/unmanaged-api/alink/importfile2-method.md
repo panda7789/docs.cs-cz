@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 61bc7783823408164ae2b073e097a0e85e193be6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b3c145bae61922894f4893d532923319ccf16f85
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401239"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499009"
 ---
 # <a name="importfile2-method"></a>ImportFile2 – metoda
-Importuje sestavení a nevázaný moduly. Tato metoda je jako [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), ale funguje i v případě, že importovaný soubor neexistuje na disku.  
+Importuje nevázaného modulů a sestavení. Tato metoda je jako [importfile – metoda](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), ale funguje i v případě, že importovaný soubor buď neexistuje na disku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,33 +42,33 @@ HRESULT ImportFile2(
   
 #### <a name="parameters"></a>Parametry  
  `pszFilename`  
- Název soubor pro import.  
+ Název souboru k importu.  
   
  `pszTargetName`  
- Název souboru volitelný výstup, který slouží k přejmenování souboru, jako je propojena do sestavení.  
+ Volitelné výstupní název souboru, který slouží k přejmenování souboru, jako je propojený do sestavení.  
   
  `pAssemblyScopeIn`  
  Volitelné oboru [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní.  
   
  `fSmartImport`  
- V případě hodnoty TRUE je používán importtypes –, jinak se import se musí provádět ručně.  
+ Při hodnotě TRUE se používá importtypes –, jinak se import je nutné provést ručně.  
   
  `pImportToken`  
- Získá ID pro soubor nebo sestavení.  
+ Přijímá ID pro soubor nebo sestavení.  
   
  `ppAssemblyScope`  
- Přijme [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní. Hodnota NULL, pokud soubor není sestavení.  
+ Přijímá [imetadataassemblyimport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) rozhraní. Hodnota NULL, pokud soubor není sestavení.  
   
  `pdwCountOfScopes`  
- Obdrží nalezen soubory nebo obory importovat.  
+ Přijímá soubory a/nebo importovat obory nenašel.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

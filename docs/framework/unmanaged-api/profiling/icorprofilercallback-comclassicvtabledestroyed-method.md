@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 30d1e80d05344448c19c9f8f2d261442e4041487
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f60c4373410c46c5d1ea284b2cacd4b5c070ed9d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451714"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54682820"
 ---
 # <a name="icorprofilercallbackcomclassicvtabledestroyed-method"></a>ICorProfilerCallback::COMClassicVTableDestroyed – metoda
-Upozorní profileru zničena vtable zprostředkovatele komunikace s objekty COM.  
+Oznámí profileru, že se likviduje COM interop tabulku vtable.  
   
 > [!NOTE]
->  Tento zpětného volání je může nikdy dojít, protože zničení virtuálních tabulek dojde k velmi brzy bude dosaženo vypnutí.  
+>  Toto zpětné volání je nikdy mohou se vyskytnout, protože dochází ke zničení vtable velmi blízko vypnutí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,21 +41,21 @@ HRESULT COMClassicVTableDestroyed(
   
 #### <a name="parameters"></a>Parametry  
  `wrappedClasId`  
- [v] ID třídy, pro který byl vytvořen tento vtable.  
+ [in] ID třídy, pro který se vytvořil tento vtable.  
   
  `implementedIID`  
- [v] ID rozhraní implementované třídou. Tato hodnota může mít hodnotu NULL, pokud rozhraní je jenom interní.  
+ [in] ID rozhraní implementované třídy. Tato hodnota může být NULL, pokud rozhraní je pouze interní.  
   
  `pVTable`  
- [v] Ukazatel na spuštění tabulce vtable.  
+ [in] Ukazatel na začátku tabulku vtable.  
   
 ## <a name="remarks"></a>Poznámky  
- Profileru by neměly blokovat v jeho implementace této metody, protože zásobník nemusí být ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit preemptivní uvolňování paměti. Pokud zde blokuje profileru a dojde k pokusu o uvolňování paměti, modul runtime se zablokuje, dokud se vrátí tato zpětného volání.  
+ Profiler by neměla blokovat v rámci příslušné implementace této metody, protože zásobníku nemusí být ve stavu, která umožňuje uvolňování paměti, a proto není možné preemptive uvolňování paměti. Pokud profiler blokuje tady a dojde k pokusu o uvolnění paměti, modul runtime bude blokovat, dokud tento zpětného volání vrátí.  
   
- Okna profilování implementace této metody by neměla volání do spravovaného kódu nebo v žádné příčina způsob přidělení spravované paměti.  
+ Okna profilování implementace této metody by neměla volat do spravovaného kódu nebo v jakékoli příčina způsob přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -63,6 +63,6 @@ HRESULT COMClassicVTableDestroyed(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [COMClassicVTableCreated – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtablecreated-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [COMClassicVTableCreated – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtablecreated-method.md)

@@ -4,12 +4,12 @@ description: Informace o použití sady .NET Core SDK a jeho nástroje na server
 author: guardrex
 ms.date: 05/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 4c651983bb900d000de37a0e413ef9ab0f7893c9
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: c9fd9e359a22467cc8639109538522e4088df5ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611552"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54704092"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí sady .NET Core SDK a nástroje v kontinuální integrace (CI)
 
@@ -177,4 +177,4 @@ Dvě obecné metody, které provedete v strukturování proces sestavení pro k�
 
 ## <a name="see-also"></a>Viz také:
 
-* [Stažení rozhraní .NET – Linux](https://dotnet.microsoft.com/download?initial-os=linux)
+- [Stažení rozhraní .NET – Linux](https://dotnet.microsoft.com/download?initial-os=linux)

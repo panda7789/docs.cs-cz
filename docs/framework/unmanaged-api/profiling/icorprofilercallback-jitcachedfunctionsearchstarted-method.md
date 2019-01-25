@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d97b40412b6999000a601b72904a03edf2acd08
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9036746fcf0150875ab534fdb774ed3633cf96ae
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33454030"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698338"
 ---
 # <a name="icorprofilercallbackjitcachedfunctionsearchstarted-method"></a>ICorProfilerCallback::JITCachedFunctionSearchStarted – metoda
-Aby bylo zahájeno hledání pro funkce, který byl kompilován s použitím dříve generátor (NGen.exe) upozorní profileru.  
+Oznámí profileru, pro funkci, která se zkompilovala pomocí dříve Native Image Generator (NGen.exe) bylo zahájeno hledání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT JITCachedFunctionSearchStarted(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, pro které se provádí vyhledávání.  
+ [in] ID funkce, pro které se provádí vyhledávání.  
   
  `pbUseCachedFunction`  
- [out] `true` jestli modul provádění by neměl používat v mezipaměti verze funkce (Pokud je k dispozici); jinak `false`. Pokud je hodnota `false`, provádění modul JIT zkompiluje funkce místo použití na verzi, která není kompilována.  
+ [out] `true` pokud prováděcí modul by měl používat v mezipaměti verzi funkci (je-li k dispozici). v opačném `false`. Pokud je hodnota `false`, provádění modulu JIT zkompiluje funkci namísto použití verzi, která není kompilována JIT.  
   
 ## <a name="remarks"></a>Poznámky  
- V rozhraní .NET Framework verze 2.0 `JITCachedFunctionSearchStarted` a [icorprofilercallback::jitcachedfunctionsearchfinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcachedfunctionsearchfinished-method.md) zpětná volání nebude možné vytvořit pro všechny funkce v pravidelných NGen bitové kopie. Pouze NGen obrázky optimalizované pro profil vygeneruje zpětných volání pro všechny funkce v bitové kopii. Však z důvodu další režie profileru měli požádat o optimalizované profileru obrazy NGen pouze v případě, že má v úmyslu použít tyto zpětná volání, které vynutí funkce, která má být kompilované v běhu (JIT). Profileru, jinak hodnota by měla použít opožděné strategie pro shromažďování informací funkce.  
+ V rozhraní .NET Framework verze 2.0 `JITCachedFunctionSearchStarted` a [icorprofilercallback::jitcachedfunctionsearchfinished – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcachedfunctionsearchfinished-method.md) zpětná volání, nebude možné zavést pro všechny funkce v běžných bitových kopií technologie NGen. Pouze obrázků NGen optimalizovaná pro profil, který vygeneruje zpětná volání pro všechny funkce v bitové kopii. Ale z důvodu další režie profileru by měl požádat o profileru optimalizované Image NGen pouze v případě, že to chce využít tato zpětná volání k vynucení funkce kompilované just-in-time (JIT). Profiler by jinak použijte opožděné strategie pro shromažďování informací funkce.  
   
- Profilery musí podporovat případy, kdy několik vláken PROFILOVANÉHO aplikace jsou volání stejnou metodu současně. Například přístup z více vláken A volá `JITCachedFunctionSearchStarted` a profileru odpovídá nastavením *pbUseCachedFunction*na hodnotu FALSE, chcete-li vynutit JIT – kompilace. Přístup z více vláken potom volá [icorprofilercallback::jitcompilationstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) a [icorprofilercallback::jitcompilationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md).  
+ Profilovací programy musí podporovat případy, kdy více vláken profilované aplikace jsou volání stejné metody současně. Například, vlákna A zavolá `JITCachedFunctionSearchStarted` a profiler odpovídá nastavením *pbUseCachedFunction*na FALSE, pokud chcete vynutit kompilace JIT. Vlákna A poté zavolá [ICorProfilerCallback::JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) a [ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md).  
   
- Nyní vláken B volání `JITCachedFunctionSearchStarted` pro stejnou funkci. I když profileru má uvádí svůj záměr JIT – kompilace funkce, profileru obdrží druhý zpětného volání, protože vlákno B odesílá zpětné volání, než profileru reagoval na vlákno na volání `JITCachedFunctionSearchStarted`. Pořadí, ve kterém vláken volání závisí na tom, jak jsou naplánovány vláken.  
+ Nyní vlákna volání B `JITCachedFunctionSearchStarted` pro stejnou funkci. I v případě, že profiler je uvedeno podat JIT-kompilovat funkci, profiler obdrží druhý zpětné volání, protože vlákno B odesílá zpětné volání před profiler reagoval na vlákno A volání `JITCachedFunctionSearchStarted`. Pořadí, ve kterém vlákna volání závisí na plánování vláken.  
   
- Když profileru obdrží duplicitní zpětná volání, je nutné nastavit hodnotu odkazuje `pbUseCachedFunction` na stejnou hodnotu pro všechny duplicitní zpětných volání. To znamená, že pokud `JITCachedFunctionSearchStarted` je volat vícekrát, se stejným `functionId` hodnotu, profileru musí odpovědět, stejné pokaždé, když.  
+ Když profiler obdrží duplicitní zpětná volání, je nutné nastavit hodnotu odkazuje `pbUseCachedFunction` na stejnou hodnotu pro duplicitní zpětná volání. To znamená, když `JITCachedFunctionSearchStarted` je se stejným názvem více než jednou `functionId` hodnotu, profiler musí odpovědět, stejné pokaždé, když.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -60,5 +60,5 @@ HRESULT JITCachedFunctionSearchStarted(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

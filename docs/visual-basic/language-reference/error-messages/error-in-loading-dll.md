@@ -4,33 +4,33 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID48
 ms.assetid: 4226cd1f-028c-477d-88a5-cb57f7e0cdc8
-ms.openlocfilehash: ac21c4d52b248025ee26bac3e511bb5b0a0b668e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 76a0a443fd9f8a6dec5ead24bc75c97d89d6c36b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33584680"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518459"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Chyba při načítání knihovny DLL (Visual Basic)
-Dynamická knihovna (DLL) je zadána v knihovna `Lib` klauzuli `Declare` příkaz. Možné příčiny této chyby patří:  
+Dynamická knihovna (DLL) je knihovna podle `Lib` klauzuli `Declare` příkazu. Možné příčiny této chyby patří:  
   
 -   Soubor není spustitelný soubor knihovny DLL.  
   
 -   Soubor není knihovny DLL Microsoft Windows.  
   
--   Knihovny DLL odkazuje na jiné knihovny DLL, která není k dispozici.  
+-   Knihovnu DLL odkazuje na jiné knihovně DLL, která není k dispozici.  
   
--   Knihovny DLL nebo odkazované DLL není v adresáři zadaném v cestě.  
+-   Knihovna DLL nebo odkazované knihovny DLL není v adresáři uvedeném na cestu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud je soubor zdroj textového souboru a proto není spustitelný soubor knihovny DLL, musí být zkompilovány a propojené s formuláři DLL-spustitelný soubor.  
+-   Pokud je soubor zdroj textového souboru a proto není spustitelný soubor knihovny DLL, musí být zkompilovány a propojeny s DLL spustitelný soubor formuláře.  
   
--   Pokud není soubor knihovny DLL Microsoft Windows, získejte ekvivalentní Microsoft Windows.  
+-   Pokud soubor není knihovny DLL Microsoft Windows, získáte odpovídající Microsoft Windows.  
   
--   Pokud knihovnu DLL odkazuje na jiné knihovny DLL, která není k dispozici, získat odkazované DLL a zpřístupnit jej.  
+-   Pokud je knihovna DLL odkazuje na jiné knihovně DLL, která není k dispozici, získejte odkazované knihovny DLL a ji dejte k dispozici.  
   
--   Pokud knihovnu DLL nebo odkazované DLL není v zadané cestě adresáře, přesuňte knihovnu DLL odkazované adresáře.  
+-   Pokud knihovna DLL nebo odkazované knihovny DLL není v adresáři zadané cesty, přesune odkazovaný adresáře knihovny DLL.  
   
-## <a name="see-also"></a>Viz také  
- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
+## <a name="see-also"></a>Viz také:
+- [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)

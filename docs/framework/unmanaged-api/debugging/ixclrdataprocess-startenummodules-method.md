@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: a81da147c1483e7649612050f4aba29a2cc63b49
-ms.sourcegitcommit: b56d59ad42140d277f2acbd003b74d655fdbc9f1
+ms.openlocfilehash: 4a086157b27b7426cb6d5f17f13426c0f26d2b2d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54416119"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658218"
 ---
 # <a name="ixclrdataprocessstartenummodules-method"></a>IXCLRDataProcess::StartEnumModules – metoda
 
@@ -51,7 +51,7 @@ Zadaná metoda je součástí `IXCLRDataProcess` rozhraní a odpovídá 24. pozi
 **Knihovna:** Žádná  
 **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [CLRDataSourceType Enumeration](../../../../docs/framework/unmanaged-api/debugging/clrdatasourcetype-enumeration.md)
 - [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

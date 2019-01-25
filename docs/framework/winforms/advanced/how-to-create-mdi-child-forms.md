@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: bdfbe59ef779de242e32be11ca28c84f68437240
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 6ff5873fc2e0a321ad682805457be87c609972fe
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192207"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708462"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Postupy: Vytváření podřízených formulářů MDI
 Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní více dokumentů (MDI)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md), jako jsou centra interakci s uživatelem.  
@@ -106,9 +106,9 @@ Podřízené formuláře MDI jsou důležitou součástí [aplikace rozhraní v�
     > [!NOTE]
     >  Pokud má podřízený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídky) a je otevřen v rámci, který má nadřazený formulář MDI <xref:System.Windows.Forms.MainMenu> součásti (s většinou, nabídky strukturu položek nabídek), v nabídce položky budou automaticky sloučit Pokud jste nastavili <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnosti (a volitelně také <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost). Nastavte <xref:System.Windows.Forms.MenuItem.MergeType%2A> vlastnost objektu i <xref:System.Windows.Forms.MainMenu> komponenty a všechny položky nabídky podřízené formuláře <xref:System.Windows.Forms.MenuMerge.MergeItems>. Kromě toho nastavení <xref:System.Windows.Forms.MenuItem.MergeOrder%2A> vlastnost tak, aby z obou nabídek položky nabídky zobrazí do požadovaného pořadí. Kromě toho vzít v úvahu, že při zavření nadřazený formulář MDI každý podřízený formulář MDI formuláře vyvolá <xref:System.Windows.Forms.Form.Closing> události před <xref:System.Windows.Forms.Form.Closing> se vyvolá událost pro nadřazený objekt MDI. Zrušení podřízený formulář MDI <xref:System.Windows.Forms.Form.Closing> události nezabrání nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> událost vyvolána; však <xref:System.ComponentModel.CancelEventArgs> argument pro nadřazený objekt MDI <xref:System.Windows.Forms.Form.Closing> události se nastaví na `true`. Můžete vynutit nadřazený objekt MDI a všechny podřízené formuláře MDI zavřete tak, že nastavíte <xref:System.ComponentModel.CancelEventArgs> argument `false`.  
   
-## <a name="see-also"></a>Viz také  
- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)  
- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)  
- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)  
- [Postupy: Uspořádání podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Aplikace MDI (Multiple-Document Interface)](../../../../docs/framework/winforms/advanced/multiple-document-interface-mdi-applications.md)
+- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)
+- [Postupy: Určení podřízeného prvku aktivního MDI](../../../../docs/framework/winforms/advanced/how-to-determine-the-active-mdi-child.md)
+- [Postupy: Odesílání dat do aktivního podřízeného MDI](../../../../docs/framework/winforms/advanced/how-to-send-data-to-the-active-mdi-child.md)
+- [Postupy: Uspořádání podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-arrange-mdi-child-forms.md)

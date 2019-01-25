@@ -10,73 +10,73 @@ helpviewer_keywords:
 - colors [Windows Forms], creating linear gradients
 - gradients
 ms.assetid: 6c88e1cc-1217-4399-ac12-cb37592b9f01
-ms.openlocfilehash: 9eeedf1ef92bdf6e5e2724eeca5060765b0778f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d9ceb10eb5990742271c8d952d9293807c21677a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522457"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696292"
 ---
 # <a name="how-to-create-a-linear-gradient"></a>Postupy: Vytvoření lineárního přechodu
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje vodorovné, svislé a diagonálních lineární přechody. Ve výchozím nastavení změní barvu v lineárního přechodu jednotně. Lineárního přechodu však můžete přizpůsobit tak, že změní barvu způsobem neuniformní.  
+[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] poskytuje vodorovné, svislé a diagonální lineárními přechody. Ve výchozím nastavení změní barvu v lineárním přechodem jednotně. Lineární přechod však můžete přizpůsobit tak, aby se barva mění, nerovnoměrné způsobem.  
   
- Následující příklad doplní řádku, třemi tečkami a obdélníku štětcem vodorovné lineárního přechodu.  
+ Následující příklad zkopíruje řádku elipsu a obdélníku s vodorovné štětec lineárního přechodu.  
   
- <xref:System.Drawing.Drawing2D.LinearGradientBrush.%23ctor%2A> Konstruktor přijímá čtyři argumenty: dva body a dvě barvy. První bod (0, 10) je přidružen první barvy (červená) a druhý bod (200, 10) souvisí s druhou barvu (modrá). Jak by jste očekávali, řádku čerpají z (0, 10) na (200, 10) se změní z červené na modrou postupně.  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush.%23ctor%2A> Konstruktoru přijímá čtyři argumenty: dva body a dvěma barvami. První bod (0, 10) souvisí s první barvy (červená), a druhý bod (200, 10) souvisí s druhou barvou (modrá). Dle očekávání, řádku z (0, 10) na (200, 10) změní z red blue postupně.  
   
- 10s v bodech (50, 10) a (200, 10) nejsou důležité. Důležité je, že dva body mají stejné souřadnice druhý – řádek jejich připojením je vodorovné. Se třemi tečkami a rámeček také změnit postupně z červené na modrou jako souřadnici vodorovné přejde od 0 do 200.  
+ 10s v bodech (50, 10) a (200, 10) nejsou důležité. Důležité je, že dva body mají stejné souřadnice druhý – řádek je propojí je vodorovný. Elipsy a obdélníku také změnit postupně z red blue jako bod se souřadnicemi vodorovné přejde od 0 do 200.  
   
- Následující obrázek znázorňuje řádek se třemi tečkami a rámeček. Všimněte si, že barvy opakuje jako souřadnici vodorovné zvýší nad 200.  
+ Následující obrázek znázorňuje řádku, na tři tečky a obdélníku. Všimněte si, že barva přechodu opakuje jako bod se souřadnicemi vodorovné zvýší nad 200.  
   
- ![Lineárního přechodu](../../../../docs/framework/winforms/advanced/media/cslineargradient1.png "cslineargradient1")  
+ ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient1.png "cslineargradient1")  
   
-### <a name="to-use-horizontal-linear-gradients"></a>Chcete-li použít vodorovné lineární přechody  
+### <a name="to-use-horizontal-linear-gradients"></a>Určený horizontální lineárními přechody  
   
--   Předejte modře neprůhledného červené a neprůhledného jako třetí a čtvrtý argument, v uvedeném pořadí.  
+-   Předejte modře neprůhledné červené a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#21)]
      [!code-vb[System.Drawing.UsingaGradientBrush#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#21)]  
   
- V předchozím příkladu komponenty barvu změnit lineárně jako přesunout z vodorovné souřadnice 0 vodorovné souřadnice 200. Například bod, jehož první souřadnice je uprostřed mezi 0 a 200 bude mít blue komponenty, která je uprostřed mezi 0 a 255.  
+ V předchozím příkladu složky barvy změnit lineárně při přesunu z vodorovné souřadnice 0 vodorovné souřadnice 200. Bod, jehož první souřadnice je uprostřed mezi 0 a 200 bude mít například komponentu modrý uprostřed mezi 0 a 255.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Umožňuje upravit způsob, jakým barvu, která se liší od jeden okraj přechodu na druhý. Předpokládejme, že chcete vytvořit štětce přechodu, který změní z černé na červený podle následující tabulky.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Umožňuje upravit způsob, jakým barvu se liší od jednomu z okrajů přechod na druhý. Předpokládejme, že chcete vytvořit štětce přechodu od černé se změní na červený podle následující tabulky.  
   
-|Vodorovné souřadnice|RGB součásti|  
+|Vodorovné souřadnice|Součásti RGB|  
 |---------------------------|--------------------|  
 |0|(0, 0, 0)|  
 |40|(128, 0, 0)|  
 |200|(255, 0, 0)|  
   
- Upozorňujeme, že komponentu red se poloviční intenzitou jenom 20 procent způsob 200 od 0 po vodorovné souřadnice.  
+ Upozorňujeme, že červené poloviční intenzitou při vodorovné bod se souřadnicemi je pouze 20 procent způsob od 0 do 200.  
   
- Následující příklad nastavuje <xref:System.Drawing.Drawing2D.LinearGradientBrush.Blend%2A> vlastnost <xref:System.Drawing.Drawing2D.LinearGradientBrush> objekt, který chcete přidružit tři relativní intenzity tři relativní umístění. Jako v předchozí tabulce je spojeno s relativní pozici 0,2 relativní intenzitou 0,5. Kód doplní elipsy a obdélníku s štětce přechodu.  
+ Následující příklad nastaví <xref:System.Drawing.Drawing2D.LinearGradientBrush.Blend%2A> vlastnost <xref:System.Drawing.Drawing2D.LinearGradientBrush> objekt má tři relativní intenzity přidružit tři relativní pozice. Stejně jako v předchozí tabulce je přidružen k relativní pozice 0.2 relativní intenzita 0,5. Kód vyplní elipsu a obdélníku s štětce přechodu.  
   
- Následující obrázek znázorňuje výsledné elipsy a obdélník.  
+ Následující obrázek znázorňuje výsledný tři tečky a obdélník.  
   
- ![Lineárního přechodu](../../../../docs/framework/winforms/advanced/media/cslineargradient2.png "cslineargradient2")  
+ ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient2.png "cslineargradient2")  
   
-### <a name="to-customize-linear-gradients"></a>Chcete-li přizpůsobit lineární přechody  
+### <a name="to-customize-linear-gradients"></a>Chcete-li přizpůsobit lineárními přechody  
   
--   Předejte červeně neprůhledného černé a neprůhledného jako třetí a čtvrtý argument, v uvedeném pořadí.  
+-   Předejte červeně neprůhledný černý a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#22](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#22)]
      [!code-vb[System.Drawing.UsingaGradientBrush#22](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#22)]  
   
- Přechody v předchozích ukázkách byly vodorovné; To znamená barva změní postupně jako přesunout společně žádné vodorovném řádku. Můžete také definovat přechody vertikální a diagonálních přechody.  
+ Přechody v předchozích příkladech byly vodorovné; To znamená barva se změní postupně při přesunu podél jakékoli vodorovnou čáru. Můžete také definovat svislé barevné přechody a Úhlopříčný přechody.  
   
- Následující příklad předá body (0, 0) a (200, 100) <xref:System.Drawing.Drawing2D.LinearGradientBrush.%23ctor%2A> konstruktor. Je přidružen modrou barvu (0, 0), a je přidružen zelenou barvu (200, 100). Řádek (s pera šířka 10) a elipsy jsou vyplněny lineární štětce přechodu.  
+ Následující příklad předá body (0, 0) a (200, 100) <xref:System.Drawing.Drawing2D.LinearGradientBrush.%23ctor%2A> konstruktoru. Modrá barva je přidružené k (0, 0), a je asociována zelenou barvu (200, 100). Řádek (s 10 Šířka pera) a elipsa jsou vyplněny hodnotou štětec lineárního přechodu.  
   
- Následující obrázek znázorňuje řádku a se třemi tečkami. Všimněte si, že barvu v změny elipsy postupně jako přesunout společně žádné řádku, je paralelní na řádek prošla (0, 0) a (200, 100).  
+ Následující obrázek znázorňuje řádku a na tři tečky. Všimněte si, že barvu v elipsa změny postupně při přesunu podél žádný řádek, který je paralelní řádku procházející (0, 0) a (200, 100).  
   
- ![Lineárního přechodu](../../../../docs/framework/winforms/advanced/media/cslineargradient3.png "cslineargradient3")  
+ ![Linear Gradient](../../../../docs/framework/winforms/advanced/media/cslineargradient3.png "cslineargradient3")  
   
-### <a name="to-create-diagonal-linear-gradients"></a>Chcete-li vytvořit diagonálních lineární přechody  
+### <a name="to-create-diagonal-linear-gradients"></a>Chcete-li vytvořit Úhlopříčný lineárními přechody  
   
--   Předejte zeleně neprůhledného modré a neprůhledného jako třetí a čtvrtý argument, v uvedeném pořadí.  
+-   Předejte zeleně neprůhledné modré a neprůhledné jako třetí a čtvrtý argument, v uvedeném pořadí.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#23)]
      [!code-vb[System.Drawing.UsingaGradientBrush#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#23)]  
   
-## <a name="see-also"></a>Viz také  
- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)  
- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)
+- [Grafika a kreslení v modelu Windows Forms](../../../../docs/framework/winforms/advanced/graphics-and-drawing-in-windows-forms.md)

@@ -2,12 +2,12 @@
 title: Připojení ke zdroji dat v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 9abc3f92-1be3-4e1a-b360-762dc689650e
-ms.openlocfilehash: f5788b9b0b19f32d03c917575db7b3f40324c0a2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 20cf22e1c9b9bf18dd3109cb9589c05a6c27d4d8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964576"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701739"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>Připojení ke zdroji dat v ADO.NET
 V ADO.NET pomocí **připojení** objektu, který chcete připojit ke konkrétnímu zdroji dat zadáním potřebné ověřovací údaje v připojovacím řetězci. **Připojení** objektu použijete, závisí na typu zdroje dat.  
@@ -21,10 +21,10 @@ V ADO.NET pomocí **připojení** objektu, který chcete připojit ke konkrétn�
  [Události připojení](../../../../docs/framework/data/adonet/connection-events.md)  
  Popisuje způsob použití **InfoMessage** na načtení informační zprávy ze zdroje dat události.  
   
-## <a name="see-also"></a>Viz také  
- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  
- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
+- [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)
+- [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)
+- [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
+- [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

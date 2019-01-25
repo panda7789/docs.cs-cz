@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ee829893d251b536448ba2ee78ea13e0d22ae41
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
+ms.openlocfilehash: 95a060f047094d7f1336a3e1e26b34c7d47b5a42
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221736"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54495511"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (IL Disassembler)
 
@@ -39,9 +39,9 @@ Tyto možnosti jsou k dispozici pro *.exe*, *.dll*, *.obj*, *lib*, a *.winmd* so
 | Možnost | Popis |
 | ------ | ----------- |
 |**/ out =** `filename`|Vytvoří výstupní soubor se zadaným `filename`, namísto zobrazení výsledků v grafickém uživatelském rozhraní.|
-|**/RTF**|Vytvoří výstup ve formátu RTF (Rich Text Format). Neplatná s **/text** možnost.|
-|**/ text**|Zobrazí výsledky v okně konzoly namísto grafického uživatelského rozhraní nebo výstupního souboru.|
-|**/ HTML**|Vytvoří výstup ve formátu HTML. Platný s **/output** jen možnost.|
+|**/rtf**|Vytvoří výstup ve formátu RTF (Rich Text Format). Neplatná s **/text** možnost.|
+|**/text**|Zobrazí výsledky v okně konzoly namísto grafického uživatelského rozhraní nebo výstupního souboru.|
+|**/html**|Vytvoří výstup ve formátu HTML. Platný s **/output** jen možnost.|
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|
 
 K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soubory.
@@ -53,7 +53,7 @@ K dispozici pro následující další možnosti *.exe*, *.dll*, a *.winmd* soub
 |**/linenum**|Zahrne odkazy do původních zdrojových řádků.|
 |**/nobar**|Potlačí místní okno indikátoru průběhu zpětného překladu.|
 |**/noca**|Potlačí výstup vlastních atributů.|
-|**/ Project**|Zobrazí metadata tak, jak se spravovaným kódem, místo tak, jak se zobrazuje v nativní [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Pokud `PEfilename` není metadat Windows (*.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Zobrazí metadata tak, jak se spravovaným kódem, místo tak, jak se zobrazuje v nativní [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Pokud `PEfilename` není metadat Windows (*.winmd*) soubor, tato možnost nemá žádný vliv. Zobrazit [podpora rozhraní .NET Framework pro aplikace Windows Store a prostředí Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Zpětně přeloží pouze veřejné typy a členy. Ekvivalentní **/visibility:PUB**.|
 |**/quoteallnames**|Vloží všechny názvy do jednoduchých uvozovek.|
 |**/raweh**|Zobrazí klauzule zpracování výjimek v nezpracovaném tvaru.|
@@ -69,18 +69,18 @@ Následující možnosti jsou platné pro *.exe*, *.dll*, a *.winmd* soubory pro
 |**/classlist**|Zahrne seznam tříd definovaných v modulu.|
 |**/ vpřed**|Použije dopřednou deklaraci tříd.|
 |**/headers**|Zahrne do výstupu informace z hlavičky souboru.|
-|**/ Položka:** `class`[**::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: (`sig`.|
+|**/item:** `class`[**::** `member`[`(sig`]]|V závislosti na zadaných argumentech zpětně přeloží následující:<br /><br /> -Zpětně přeloží zadanou `class`.<br />-Zpětně přeloží zadanou `member` z `class`.<br />-Zpětně přeloží `member` z `class` se zadaným podpisem `sig`. Formát `sig` je:<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Poznámka:** v rozhraní .NET Framework verze 1.0 a 1.1, `sig` musí být následován pravou závorkou: `(sig)`. Počínaje rozhraním .NET Framework 2.0 pravou závorkou musí být vynechána: (`sig`.|
 |**/noil**|Potlačí výstup kódu sestavení jazyka IL.|
 |**Toto**|Vloží statistiky o bitové kopii.|
 |**/typelist**|Vytvoří úplný seznam typů pro zachování řazení typů při přenosu.|
 |**Unicode**|Použije pro výstup kódování Unicode.|
-|**/UTF8**|Použije pro výstup kódování UTF-8. Výchozím je ANSI.|
+|**/utf8**|Použije pro výstup kódování UTF-8. Výchozím je ANSI.|
 
 Následující možnosti jsou platné pro *.exe*, *.dll*, *.obj*, *lib*, a *.winmd* soubory pro soubor nebo pouze výstup konzoly.
 
 | Možnost | Popis |
 | ------ | ----------- |
-|**/ metadata**[=`specifier`]|Zobrazí metadata, kde `specifier` je:<br /><br /> **MDHEADER** – zobrazí informace hlavičky metadat a velikosti.<br /><br /> **HEXADECIMÁLNÍ** – zobrazí informace v šestnáctkové soustavě stejně jako v slova.<br /><br /> **Sdílený svazek clusteru** – zobrazí počty záznamů a velikosti hald.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **SCHÉMA** – zobrazí informace hlavičky a schéma metadat.<br /><br /> **NEZPRACOVANÁ** – zobrazí tabulky nezpracovaných metadat.<br /><br /> **HALDY** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistentnost metadat.<br /><br /> Můžete zadat **/metadata** několikrát s různými hodnotami parametru `specifier`.|
+|**/metadata**[=`specifier`]|Zobrazí metadata, kde `specifier` je:<br /><br /> **MDHEADER** – zobrazí informace hlavičky metadat a velikosti.<br /><br /> **HEXADECIMÁLNÍ** – zobrazí informace v šestnáctkové soustavě stejně jako v slova.<br /><br /> **Sdílený svazek clusteru** – zobrazí počty záznamů a velikosti hald.<br /><br /> **UNREX** – zobrazí nerozpoznané externí typy.<br /><br /> **SCHÉMA** – zobrazí informace hlavičky a schéma metadat.<br /><br /> **NEZPRACOVANÁ** – zobrazí tabulky nezpracovaných metadat.<br /><br /> **HALDY** – zobrazí nezpracované haldy.<br /><br /> **Ověřit** – ověří konzistentnost metadat.<br /><br /> Můžete zadat **/metadata** několikrát s různými hodnotami parametru `specifier`.|
 
 Následující možnosti jsou platné pro *lib* soubory pro soubor nebo pouze výstup konzoly.
 
@@ -186,7 +186,7 @@ Před vnořeným typem musí být uvedena třída, která jej obsahuje, oddělen
 
 ## <a name="see-also"></a>Viz také:
 
-[Nástroje](../../../docs/framework/tools/index.md)  
-[Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md)  
-[Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)  
-[Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [Nástroje](../../../docs/framework/tools/index.md)
+- [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md)
+- [Proces spravovaného spuštění](../../../docs/standard/managed-execution-process.md)
+- [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

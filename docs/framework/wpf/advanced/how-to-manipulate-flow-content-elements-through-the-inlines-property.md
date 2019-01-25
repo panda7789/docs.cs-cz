@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Inlines property [WPF], manipulating flow Content elements
 - properties [WPF], Inlines [WPF], manipulating flow Content elements
 ms.assetid: 510780d2-3da1-4360-8763-7054bda22ea3
-ms.openlocfilehash: 3bbeac2eda8811939be3c710a8ce28349e7f0759
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a2bf11dc3b2e8bc3658edb12edea5bd890a7929e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33545568"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661266"
 ---
 # <a name="how-to-manipulate-flow-content-elements-through-the-inlines-property"></a>Postupy: Zpracování elementů obsahu toku prostřednictvím vlastnosti Inlines
-Tyto příklady ukazují některé z nejčastěji operací, které lze provést u vložených elementů obsahu tok (a kontejnerů, které z těchto prvků, jako <xref:System.Windows.Controls.TextBlock>) prostřednictvím **Inlines** vlastnost. Tato vlastnost se používá k přidání a odebrání položek z <xref:System.Windows.Documents.InlineCollection>. Tok obsahu elementy tuto funkci **Inlines** vlastnost patří:  
+Tyto příklady ukazují některé běžné operace, které lze provést u vložených elementů obsahu toku (a kontejnery takovýchto prvků, jako například <xref:System.Windows.Controls.TextBlock>) prostřednictvím **Inlines** vlastnost. Tato vlastnost se používá k přidání a odebrání položek z <xref:System.Windows.Documents.InlineCollection>. Tok obsahu prvky dané funkce **Inlines** vlastnosti patří:  
   
 -   <xref:System.Windows.Documents.Bold>  
   
@@ -32,43 +32,43 @@ Tyto příklady ukazují některé z nejčastěji operací, které lze provést 
   
 -   <xref:System.Windows.Documents.Underline>  
   
- Tyto příklady dojít používat <xref:System.Windows.Documents.Span> jako tok obsahu elementu, ale tyto postupy platí pro všechny elementy nebo ovládací prvky, které jsou hostiteli <xref:System.Windows.Documents.InlineCollection> kolekce.  
+ Tyto příklady dojde k použití <xref:System.Windows.Documents.Span> jako daný tok obsahu elementu, ale tyto postupy platí pro všechny prvky a ovládací prvky, které hostují <xref:System.Windows.Documents.InlineCollection> kolekce.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří novou <xref:System.Windows.Documents.Span> objekt a používá **přidat** metoda pro přidání textu se spouští jako obsahu podřízené objekty <xref:System.Windows.Documents.Span>.  
+ Následující příklad vytvoří nový <xref:System.Windows.Documents.Span> a pak použije **přidat** spuštěním metody přidat textu jako obsahu podřízené objekty <xref:System.Windows.Documents.Span>.  
   
  [!code-csharp[SpanSnippets#_SpanInlinesAdd](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesadd)]
  [!code-vb[SpanSnippets#_SpanInlinesAdd](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesadd)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří novou <xref:System.Windows.Documents.Run> elementu a vloží ho od začátku <xref:System.Windows.Documents.Span>.  
+ Následující příklad vytvoří nový <xref:System.Windows.Documents.Run> elementu a vloží na začátek <xref:System.Windows.Documents.Span>.  
   
  [!code-csharp[SpanSnippets#_SpanInlinesInsert](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesinsert)]
  [!code-vb[SpanSnippets#_SpanInlinesInsert](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesinsert)]  
   
 ## <a name="example"></a>Příklad  
- Získá počet nejvyšší úrovně v následujícím příkladu <xref:System.Windows.Documents.Inline> elementů obsažených v <xref:System.Windows.Documents.Span>.  
+ Následující příklad získá počet nejvyšší úrovně <xref:System.Windows.Documents.Inline> elementů obsažených v <xref:System.Windows.Documents.Span>.  
   
  [!code-csharp[SpanSnippets#_SpanInlinesCount](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinescount)]
  [!code-vb[SpanSnippets#_SpanInlinesCount](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinescount)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odstraní poslední <xref:System.Windows.Documents.Inline> element v <xref:System.Windows.Documents.Span>.  
+ Následující příklad odstraní poslední <xref:System.Windows.Documents.Inline> prvek <xref:System.Windows.Documents.Span>.  
   
  [!code-csharp[SpanSnippets#_SpanInlinesRemoveLast](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesremovelast)]
  [!code-vb[SpanSnippets#_SpanInlinesRemoveLast](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesremovelast)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny obsahu (<xref:System.Windows.Documents.Inline> elementy) z <xref:System.Windows.Documents.Span>.  
+ Následující příklad odebere veškerý obsah (<xref:System.Windows.Documents.Inline> elementy) z <xref:System.Windows.Documents.Span>.  
   
  [!code-csharp[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_spaninlinesclear)]
  [!code-vb[SpanSnippets#_SpanInlinesClear](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_spaninlinesclear)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Documents.BlockCollection>  
- <xref:System.Windows.Documents.InlineCollection>  
- <xref:System.Windows.Documents.ListItemCollection>  
- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)  
- [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)  
- [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)  
- [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Documents.BlockCollection>
+- <xref:System.Windows.Documents.InlineCollection>
+- <xref:System.Windows.Documents.ListItemCollection>
+- [Přehled toku dokumentů](../../../../docs/framework/wpf/advanced/flow-document-overview.md)
+- [Zpracování objektu FlowDocument prostřednictvím vlastnosti Blocks](../../../../docs/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property.md)
+- [Zpracování sloupců tabulky prostřednictvím vlastnosti Columns](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property.md)
+- [Zpracování skupin řádků tabulky pomocí vlastnosti RowGroups](../../../../docs/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property.md)

@@ -2,12 +2,12 @@
 title: 'Postupy: Verze služby'
 ms.date: 03/30/2017
 ms.assetid: 4287b6b3-b207-41cf-aebe-3b1d4363b098
-ms.openlocfilehash: 5f79382eb121472ffa32d969cfaeee0e83d3375d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b02031493df1a63f62b4bdab80b56b1fb220aa92
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198394"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700595"
 ---
 # <a name="how-to-service-versioning"></a>Postupy: Verze služby
 Toto téma popisuje základní kroky potřebné pro vytvoření konfigurace směrování, která směruje zprávy na různé verze stejné službě. V tomto příkladu zprávy jsou směrovány na dvě různé verze služby Kalkulačka `roundingCalc` (v1) a `regularCalc` (v2). Obou implementacích podporují stejné operace; ale službu starší `roundingCalc`, zaokrouhlí na nejbližší celočíselnou hodnotu všech výpočtů před vrácením. Klientská aplikace musí být schopen označuje, zda chcete používat novější `regularCalc` služby.  
@@ -324,5 +324,5 @@ namespace Microsoft.Samples.AdvancedFilters
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Směrovací služby](../../../../docs/framework/wcf/samples/routing-services.md)
+## <a name="see-also"></a>Viz také:
+- [Směrovací služby](../../../../docs/framework/wcf/samples/routing-services.md)

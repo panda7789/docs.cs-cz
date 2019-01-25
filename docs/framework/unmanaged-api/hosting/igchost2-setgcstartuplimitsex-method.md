@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f92667191cad163998d233e1110365de65c0340c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f61f6ed5712f3c98f06f5fa76657f3fa7b70fe84
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33437687"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54666329"
 ---
 # <a name="igchost2setgcstartuplimitsex-method"></a>IGCHost2::SetGCStartupLimitsEx – metoda
-Nastaví velikost segmentu a maximální velikost pro generování 0.  
+Nastaví velikost segmentu a maximální velikost pro 0. generace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT SetGCStartupLimitsEx (
   
 #### <a name="parameters"></a>Parametry  
  `SegmentSize`  
- [v] Velikost segmentu používá systém uvolňování paměti kolekce.  
+ [in] Velikost segmentu používá systém uvolňování paměti kolekce.  
   
  `MaxGen0Size`  
- [v] Maximální velikost pro generování 0.  
+ [in] Maximální velikost 0. generace.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnoty, `SetGCStartupLimitsEx` sady lze zadat pouze, před zahájením hostitele. Tyto hodnoty není možné později změnit.  
+ Hodnoty, které `SetGCStartupLimitsEx` sady se dá nastavit pouze před spuštěním hostitele. Tyto hodnoty není možné později změnit.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** GCHost.idl, GCHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IGCHost2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IGCHost2 – rozhraní](../../../../docs/framework/unmanaged-api/hosting/igchost2-interface.md)

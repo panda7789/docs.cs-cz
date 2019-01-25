@@ -8,15 +8,15 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 08b78a2a6e7d27f28ddd5c9b771f690bc16b1717
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 86f7f485c289d1641605ab538f8500418b77cfd8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505414"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54663307"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
-*Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
+*Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [jak: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
   
 > [!IMPORTANT]
 >  Mějte na paměti, že při zosobnění klienta ve službě, je služba spuštěna pomocí přihlašovacích údajů klienta, které mohou mít větší oprávnění než procesu serveru.  
@@ -57,9 +57,9 @@ ms.locfileid: "43505414"
  V rozsahu, do které může služba zosobnit klienta závisí na oprávnění, která obsahuje účet služby při pokusu zosobnění, typ používá zosobnění a případně rozsah zosobnění, které je povoleno klienta.  
   
 > [!NOTE]
->  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace s stavové kontext zabezpečení tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a této stránce je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], a poté spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací použijte token kontextu zabezpečení bezstavové (SCT). Nicméně pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečené relace pomocí stavového SCTs se používají, nelze zosobnit klienta. Další informace o používání stavové SCTs v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+>  Když klient a služba běží na stejném počítači a klient je spuštěn pod účtem systému (například `Local System` nebo `Network Service`), nelze zosobnit klienta, po vytvoření zabezpečené relace s stavové kontext zabezpečení tokeny. Formuláře Windows nebo konzolové aplikace se obvykle běží pod účtem aktuálně přihlášeného tak, aby ve výchozím nastavení se můžou zosobnit účet. Nicméně, pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a této stránce je hostován v [!INCLUDE[iis601](../../../../includes/iis601-md.md)] nebo [!INCLUDE[iisver](../../../../includes/iisver-md.md)], a poté spusťte klienta v části `Network Service` účet ve výchozím nastavení. Ve výchozím nastavení všechny vazby poskytované systémem, které podporují zabezpečených relací použijte token kontextu zabezpečení bezstavové (SCT). Nicméně pokud je klient [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] stránky a zabezpečené relace pomocí stavového SCTs se používají, nelze zosobnit klienta. Další informace o používání stavové SCTs v zabezpečené relaci v tématu [jak: Vytvoření kontextu zabezpečení pro zabezpečenou relaci Token](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
-## <a name="impersonation-in-a-service-method-declarative-model"></a>Zosobnění v metodě služby: deklarativní Model  
+## <a name="impersonation-in-a-service-method-declarative-model"></a>Zosobnění v metodě služby: Deklarativní Model  
  Většina scénářů zosobnění zahrnovat spouštění metody služby v rámci volajícího. Zosobnění funkce, která usnadňuje to udělat tak, že umožňuje uživateli zadat požadavek zosobnění v poskytuje WCF <xref:System.ServiceModel.OperationBehaviorAttribute> atribut. V následujícím kódu, infrastruktura WCF zosobňuje volající před spuštěním `Hello` metody. Žádný pokus o přístup k prostředkům nativní uvnitř `Hello` metoda úspěšné pouze v případě, že seznam řízení přístupu (ACL) prostředku umožňuje volajícímu přístup k oprávnění. Chcete-li povolit zosobnění, nastavte <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> vlastnost na jednu z <xref:System.ServiceModel.ImpersonationOption> hodnot výčtu, buď <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> nebo <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, jak je znázorněno v následujícím příkladu.  
   
 > [!NOTE]
@@ -73,7 +73,7 @@ ms.locfileid: "43505414"
 > [!NOTE]
 >  Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)], zosobnění se nezdaří, pokud stavový SCT se vytvoří, což vede <xref:System.InvalidOperationException>. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
-## <a name="impersonation-in-a-service-method-imperative-model"></a>Zosobnění v metodě služby: imperativní modelu  
+## <a name="impersonation-in-a-service-method-imperative-model"></a>Zosobnění v metodě služby: Imperativní modelu  
  Volající někdy není potřeba zosobnit metodu celé služby pro funkci, ale jenom část jeho. V tomto případě získání Windows identitu volajícího uvnitř metody služby a imperativně provést zosobnění. To provést pomocí <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost <xref:System.ServiceModel.ServiceSecurityContext> vrátit instanci <xref:System.Security.Principal.WindowsIdentity> třídy a volání <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> metoda před použitím instance.  
   
 > [!NOTE]
@@ -205,21 +205,21 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
 -   [Přechod protokolu Kerberos a omezeného delegování](https://go.microsoft.com/fwlink/?LinkId=36725)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.OperationBehaviorAttribute>  
- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>  
- <xref:System.ServiceModel.ImpersonationOption>  
- <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A>  
- <xref:System.ServiceModel.ServiceSecurityContext>  
- <xref:System.Security.Principal.WindowsIdentity>  
- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>  
- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations%2A>  
- <xref:System.ServiceModel.ServiceHost>  
- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A>  
- <xref:System.ServiceModel.Security.WindowsClientCredential>  
- <xref:System.ServiceModel.ChannelFactory%601>  
- <xref:System.Security.Principal.TokenImpersonationLevel.Identification>  
- [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)  
- [Zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md)  
- [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)  
- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.OperationBehaviorAttribute>
+- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>
+- <xref:System.ServiceModel.ImpersonationOption>
+- <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A>
+- <xref:System.ServiceModel.ServiceSecurityContext>
+- <xref:System.Security.Principal.WindowsIdentity>
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations%2A>
+- <xref:System.ServiceModel.ServiceHost>
+- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A>
+- <xref:System.ServiceModel.Security.WindowsClientCredential>
+- <xref:System.ServiceModel.ChannelFactory%601>
+- <xref:System.Security.Principal.TokenImpersonationLevel.Identification>
+- [Použití zosobnění se zabezpečením přenosu](../../../../docs/framework/wcf/feature-details/using-impersonation-with-transport-security.md)
+- [Zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md)
+- [Postupy: Zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)
+- [Nástroj metadat modelu služby (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

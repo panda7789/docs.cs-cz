@@ -8,12 +8,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-ms.openlocfilehash: f99735df2512fd4b1477bab9126e18f5afbbfa8c
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: c02b6ea0895d8b22ac71d0cb3ea6950861de47df
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54678756"
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Vložené výrazy v XML (Visual Basic)
 Vložené výrazy umožňují vytváření literálů XML, které obsahují výrazy, které jsou vyhodnocovány v době běhu. Syntaxe pro vložený výraz je `<%=` `expression` `%>`, která je stejná jako syntaxe používané [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)].  
@@ -80,10 +80,10 @@ Vložené výrazy umožňují vytváření literálů XML, které obsahují výr
 > [!NOTE]
 >  Pokud deklarujete předponu oboru názvů XML s použitím `xmlns` atribut oboru názvů, hodnota atributu musí být konstanty typu řetězec. V tomto ohledu pomocí `xmlns` atribut je například `Imports` příkaz deklarujte obor názvů XML. Chcete-li určit hodnotu oboru názvů XML nelze použít vložený výraz.  
   
-## <a name="see-also"></a>Viz také  
- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)  
- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
- [Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
+- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)

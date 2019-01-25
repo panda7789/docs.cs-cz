@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7021a984f844660c45ae3e2d98569432ab64b657
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: d921c13765f5d61ce9822df0b4059b2cf93a6f6d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002993"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54744082"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Načítání informací uložených v atributech
 Načítání vlastního atributu je jednoduchý proces. Nejprve deklarujte instanci atributu, který chcete načíst. Potom použijte <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> metody k inicializaci nového atributu hodnotu atributu, který chcete načíst. Po inicializaci nový atribut jednoduše pomocí její vlastnosti k získání hodnoty.  
   
 > [!IMPORTANT]
->  Toto téma popisuje, jak načíst atributy pro kód načtený do kontextu spuštění. Načíst atributy pro kód načtený do kontextu pouze pro reflexi, je nutné použít <xref:System.Reflection.CustomAttributeData> třídy, jak je znázorněno v [postupy: načtení sestavení do kontextu Reflection](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+>  Toto téma popisuje, jak načíst atributy pro kód načtený do kontextu spuštění. Načíst atributy pro kód načtený do kontextu pouze pro reflexi, je nutné použít <xref:System.Reflection.CustomAttributeData> třídy, jak je znázorněno v [jak: Načtení sestavení do kontextu pouze pro reflexi](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
  Tato část popisuje načtení atributů následujícími způsoby:  
   
@@ -86,7 +86,7 @@ The attribute was not found.
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Type?displayProperty=nameWithType>  
-- <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>  
-- <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>  
+- <xref:System.Type?displayProperty=nameWithType>
+- <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>
+- <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>
 - [Atributy](../../../docs/standard/attributes/index.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - reading text from files [Visual Basic]
 - files [Visual Basic], reading
 ms.assetid: 384033c6-18f9-4d59-9610-36371226558f
-ms.openlocfilehash: 28ef741398b6d8c5cbbdcc3906b4845e6a2a0d86
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 829b515a6f99799e26da40aa8ee4ed41130dbc20
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44206442"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660057"
 ---
 # <a name="how-to-read-text-from-files-with-a-streamreader-visual-basic"></a>Postupy: Čtení textu ze souborů pomocí třídy StreamReader (Visual Basic)
 `My.Computer.FileSystem` Objekt, který poskytuje metody pro otevření <xref:System.IO.TextReader> a <xref:System.IO.TextWriter>. Tyto metody `OpenTextFileWriter` a `OpenTextFileReader`, pokročilé metody, které se nezobrazují v technologii IntelliSense, pokud jste vybrali **všechny** kartu.  
@@ -33,10 +33,10 @@ ms.locfileid: "44206442"
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
  Čtení ze souboru sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, kód může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md). Uživatel potřebuje také přístup k souboru. Další informace najdete v tématu [Přehled technologie ACL](https://msdn.microsoft.com/library/06fbf66d-6f02-4378-b863-b2f12e349045).  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- <xref:System.Windows.Forms.OpenFileDialog>  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>  
- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
- [Komponenta SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md)  
- [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem>
+- <xref:System.Windows.Forms.OpenFileDialog>
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>
+- <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>
+- [Komponenta SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md)
+- [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)

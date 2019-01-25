@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 20287af1c1d93bbdcfa83d88e5790284fbbff170
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 0b3d90ed756b2bb2b9bebc0ac9e36789a80df1d7
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194121"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54745438"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
@@ -18,7 +18,7 @@ Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation
 > [!NOTE]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
->  \<InstallDrive >: \WF_WCF_Samples  
+>  \<InstallDrive>:\WF_WCF_Samples  
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
@@ -305,7 +305,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     > [!WARNING]
     >  Spuštění dávkový soubor se resetuje DefaultAppPool pro spuštění pomocí rozhraní .NET Framework verze 2.0.  
   
- Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, je přijata následující chyba: "Uživatele interní zprávy služby Řízení front certifikát neexistuje".  
+ Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, je přijata následující chyba: "Certifikátu interní front uživatele neexistuje".  
   
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině  
   
@@ -330,7 +330,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
      Chcete-li změnit identitu, která poběží pracovní proces v části:  
   
-    1.  Spusťte Inetmgr.exe.  
+    1.  Run Inetmgr.exe.  
   
     2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **fondu aplikací** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
   
@@ -350,5 +350,5 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     sc sidtype netmsmqactivator unrestricted  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Viz také:
+- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

@@ -2,12 +2,12 @@
 title: Kolekce schémat Oracle
 ms.date: 03/30/2017
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
-ms.openlocfilehash: 342c4cbe994eb983713be0f258e3a029df6739f8
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 80623a1abcaeee642b9206edc106d1a4ea74d63b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217344"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54694461"
 ---
 # <a name="oracle-schema-collections"></a>Kolekce schémat Oracle
 Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolekce určité schéma kromě společné kolekce schémat:  
@@ -50,7 +50,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="columns"></a>Sloupce  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastníka tabulky, zobrazení nebo clusteru.|  
 |TABLE_NAME|String|Tabulka, zobrazení nebo název clusteru.|  
@@ -64,7 +64,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="indexes"></a>Indexy  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník indexu|  
 |INDEX_NAME|String|Název indexu.|  
@@ -107,20 +107,20 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |SEKUNDÁRNÍ|String|Určuje, zda index je sekundární objekt vytvořený metodou ODCIIndexCreate Oracle9i Datová páska (Y&#124;N).|  
 |BUFFER_POOL|String|Název fondu vyrovnávací paměti výchozí se použije pro index bloky.|  
 |USER_STATS|String|Určuje, zda byly zadány Statistika přímo uživatelem.|  
-|DOBA TRVÁNÍ|String|Určuje dobu trvání dočasnou tabulku: 1) SYS$ relace: řádky jsou zachovány po dobu trvání relace (2) SYS$ transakce: řádky budou odstraněny po potvrzení, 3) hodnotu Null pro trvalou tabulku.|  
+|DOBA TRVÁNÍ|String|Určuje dobu trvání dočasnou tabulku: (1) SYS$ relace: řádky jsou zachovány po dobu trvání relace (2) SYS$ transakce: řádky budou odstraněny po potvrzení, 3) hodnotu Null pro trvalou tabulku.|  
 |PCT_DIRECT_ACCESS|Desetinné číslo|Pro sekundární index v tabulce indexu uspořádané, procentuální podíl řádků s platnou odhad|  
 |ITYP_OWNER|String|Pro doménu index vlastníka indextype.|  
 |ITYP_NAME|String|Pro index doménu, název indextype.|  
 |PARAMETRY|String|Pro doménu index parametru řetězce.|  
 |GLOBAL_STATS|String|Pro dělené indexy označuje, zda statistiky byly shromážděny analýzou indexu jako celek (Ano) nebo byly odhadované ze statistik indexu oddíly a subpartitions (ne).|  
 |DOMIDX_STATUS|String|Odráží stav index domény. Hodnota NULL: Zadaný index není index založený na doméně. PLATNÉ: index je index platnou doménu. IDXTYP_INVLD: typ indexu indexu této domény je neplatný.|  
-|DOMIDX_OPSTATUS|String|Odráží stav operace, která byla provedena s indexem domény: NULL: Zadaný index není index založený na doméně. PLATNÉ: operaci provést bez chyb. Nezdařilo se: operace se nezdařila s chybou.|  
+|DOMIDX_OPSTATUS|String|Odráží stav operace, která byla provedena s indexem domény: Hodnota NULL: Zadaný index není index založený na doméně. PLATNÉ: operaci provést bez chyb. Nezdařilo se: operace se nezdařila s chybou.|  
 |FUNCIDX_STATUS|String|Označuje stav index založený na funkce: NULL: Nejedná se používají funkce indexování povoleno: index založený na funkce zapnutá, zakázané: index založený na funkce je zakázaná.|  
 |JOIN_INDEX|String|Určuje, zda toto připojení k indexu či nikoli.|  
   
 ## <a name="indexcolumns"></a>IndexColumns  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |INDEX_OWNER|String|Vlastník indexu.|  
 |INDEX_NAME|String|Název indexu.|  
@@ -130,11 +130,11 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |COLUMN_POSITION|Desetinné číslo|Pozice sloupce nebo atribut v indexu.|  
 |COLUMN_LENGTH|Desetinné číslo|Indexované délka sloupce.|  
 |CHAR_LENGTH|Desetinné číslo|Bod kódu maximální délka sloupce.|  
-|SESTUP|String|Určuje, zda sloupec je seřazen v sestupném pořadí.|  
+|DESCEND|String|Určuje, zda sloupec je seřazen v sestupném pořadí.|  
   
 ## <a name="procedures"></a>Procedury  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník objektu.|  
 |OBJECT_NAME|String|Název objektu.|  
@@ -145,13 +145,13 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (znak data).|  
 |STAV|String|Stav objektu (platné, neplatný nebo není k dispozici).|  
 |DOČASNÉ|String|Určuje, zda je dočasný objekt (aktuální relace můžete zobrazit pouze data, která je umístěn v tomto objektu samotného).|  
-|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
+|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
 |SEKUNDÁRNÍ|String|Zda se jedná o sekundární objekt vytvořený metodou ODCIIndexCreate Oracle9i Datová páska (Y &#124; N).|  
 |VYTVOŘENÍ|DateTime|Datum vytvoření objektu.|  
   
 ## <a name="sequences"></a>Sekvence  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |SEQUENCE_OWNER|String|Jméno vlastníka pořadí.|  
 |SEQUENCE_NAME|String|Název pořadí.|  
@@ -165,7 +165,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="synonyms"></a>Synonyma  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník synonymum.|  
 |SYNONYM_NAME|String|Název synonymum.|  
@@ -175,7 +175,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="tables"></a>Tabulky  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastníka tabulky.|  
 |TABLE_NAME|String|Název tabulky.|  
@@ -183,7 +183,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="users"></a>Uživatelé  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |NÁZEV|String|Jméno uživatele.|  
 |ID|Desetinné číslo|Identifikační číslo uživatele.|  
@@ -191,7 +191,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="views"></a>Zobrazení  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník zobrazení.|  
 |VIEW_NAME|String|Název zobrazení.|  
@@ -207,7 +207,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="functions"></a>Funkce  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník objektu.|  
 |OBJECT_NAME|String|Název objektu.|  
@@ -220,12 +220,12 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (znak data)|  
 |STAV|String|Stav objektu (platné, neplatný nebo není k dispozici).|  
 |DOČASNÉ|String|Určuje, zda je dočasný objekt (aktuální relace můžete zobrazit pouze data, která je umístěn v tomto objektu samotného).|  
-|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
+|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
 |SEKUNDÁRNÍ|String|Zda se jedná o sekundární objekt vytvořený metodou ODCIIndexCreate Oracle9i Datová páska (Y &#124; N).|  
   
 ## <a name="packages"></a>Balíčky  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník objektu.|  
 |OBJECT_NAME|String|Název objektu.|  
@@ -236,13 +236,13 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (znak data).|  
 |STAV|String|Stav objektu (platné, neplatný nebo není k dispozici).|  
 |DOČASNÉ|String|Určuje, zda je dočasný objekt (aktuální relace můžete zobrazit pouze data, která je umístěn v tomto objektu samotného).|  
-|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
+|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
 |SEKUNDÁRNÍ|String|Zda se jedná o sekundární objekt vytvořený metodou ODCIIndexCreate Oracle9i Datová páska (Y &#124; N).|  
 |VYTVOŘENÍ|DateTime|Datum vytvoření objektu.|  
   
 ## <a name="packagebodies"></a>PackageBodies  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník objektu.|  
 |OBJECT_NAME|String|Název objektu.|  
@@ -253,13 +253,13 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |ČASOVÉ RAZÍTKO|String|Časové razítko pro specifikaci objektu (znak data).|  
 |STAV|String|Stav objektu (platné, neplatný nebo není k dispozici).|  
 |DOČASNÉ|String|Určuje, zda je dočasný objekt (aktuální relace můžete zobrazit pouze data, která je umístěn v tomto objektu samotného).|  
-|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &AMP;#124; N).|  
+|VYGENERUJE|String|Název vygenerované systémem tento objekt byl? (Y &#124; N).|  
 |SEKUNDÁRNÍ|String|Zda se jedná o sekundární objekt vytvořený metodou ODCIIndexCreate Oracle9i Datová páska (Y &#124; N).|  
 |VYTVOŘENÍ|DateTime|Datum vytvoření objektu.|  
   
 ## <a name="arguments"></a>Arguments  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Jméno vlastníka objektu.|  
 |NÁZEV_BALÍČKU|String|Název balíčku.|  
@@ -277,7 +277,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="uniquekeys"></a>UniqueKeys  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník omezení definice.|  
 |CONSTRAINT_NAME|String|Název definice omezení.|  
@@ -290,7 +290,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |NEBYLA|String|Určuje, zda je nebyla omezení.|  
 |OVĚŘENÍ|String|Určuje, zda všechna data dodržuje omezení (ověřuje nebo ne).|  
 |VYGENERUJE|String|Určuje, zda je název omezení uživatele nebo vygenerované systémem.|  
-|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Aby nedocházelo k chybám vyplývající z této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Aby nedocházelo k chybám vyplývající z této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |SPOLEHNĚTE SE|String|Určuje, zda povolená omezení je vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Pokud bylo povoleno nebo zakázáno omezení poslední|  
 |INDEX_OWNER|String|Jméno uživatele, vlastnící index|  
@@ -298,7 +298,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="primarykeys"></a>PrimaryKeys  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník omezení definice.|  
 |CONSTRAINT_NAME|String|Název definice omezení.|  
@@ -311,7 +311,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |NEBYLA|String|Určuje, zda je nebyla omezení.|  
 |OVĚŘENÍ|String|Určuje, zda všechna data dodržuje omezení (ověřuje nebo ne).|  
 |VYGENERUJE|String|Určuje, zda je název omezení uživatele nebo vygenerované systémem.|  
-|ŠPATNÉ|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Aby nedocházelo k chybám vyplývající z této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
+|BAD|String|Hodnota Ano značí, že toto omezení určuje století nejednoznačný způsobem. Aby nedocházelo k chybám vyplývající z této nejednoznačnosti, přepište omezení pomocí funkce TO_DATE čtyřmístný rok.|  
 |SPOLEHNĚTE SE|String|Určuje, zda povolená omezení je vynucené nebo nevynucené.|  
 |LAST_CHANGE|DateTime|Omezení při posledního povoleno nebo zakázáno.|  
 |INDEX_OWNER|String|Jméno uživatele, vlastnící index.|  
@@ -319,7 +319,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="foreignkeys"></a>ForeignKeys  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |PRIMARY_KEY_CONSTRAINT_NAME|String|Název definice omezení.|  
 |PRIMARY_KEY_OWNER|String|Vlastník omezení definice.|  
@@ -341,7 +341,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="foreignkeycolumns"></a>ForeignKeyColumns  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník omezení definice.|  
 |CONSTRAINT_NAME|String|Název definice omezení.|  
@@ -351,7 +351,7 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
   
 ## <a name="procedureparameters"></a>ProcedureParameters  
   
-|Názevsloupce|Datový typ|Popis|  
+|Názevsloupce|DataType|Popis|  
 |----------------|--------------|-----------------|  
 |VLASTNÍK|String|Vlastník objektu.|  
 |OBJECT_NAME|String|Název procedury nebo funkce.|  
@@ -379,5 +379,5 @@ Microsoft .NET Framework Data Provider pro Oracle podporuje následující kolek
 |CHAR_LENGTH|Desetinné číslo|Omezení počtu znaků pro řetězcovými datovými typy.|  
 |CHAR_USED|String|Označuje, zda je oficiální řetězce limit bajtů (B) nebo limit char (C).|  
   
-## <a name="see-also"></a>Viz také  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

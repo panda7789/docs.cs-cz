@@ -2,12 +2,12 @@
 title: Výkon (LINQ to XML) (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 155557f6-5d7e-4784-9d00-f42092a28857
-ms.openlocfilehash: 463075dbf1b84de1af45f7644019e49bbeca6487
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 4a9353aa1dfeae749664d1ea69b0196e5f202235
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925219"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54594782"
 ---
 # <a name="performance-linq-to-xml-visual-basic"></a>Výkon (LINQ to XML) (Visual Basic)
 Tato část obsahuje informace o výkonu v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], konkrétně výkonu funkční konstrukce a dotazy.  
@@ -25,5 +25,5 @@ Tato část obsahuje informace o výkonu v [!INCLUDE[sqltecxlinq](~/includes/sql
  [Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
  Poskytuje informace o výkonu staticky kompilované dotazy, na rozdíl od analýzu a zpracování, které musíte udělat vyhodnocovače výrazů XPath.  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+## <a name="see-also"></a>Viz také:
+- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

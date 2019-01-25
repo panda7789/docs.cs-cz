@@ -10,33 +10,33 @@ helpviewer_keywords:
 - properties [Visual Basic], read-only
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-ms.openlocfilehash: e2957bf49292dfcafab8e78f4b997247c34ad279
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 741374cc375e33868239161af23a38af7680b290
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33599909"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54684064"
 ---
 # <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
-Určuje, že proměnné nebo vlastnosti lze číst, ale nebyl zapsán.  
+Určuje, že proměnné nebo vlastnosti lze číst, ale není zapsána.  
   
 ## <a name="remarks"></a>Poznámky  
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Kontext deklarace.** Můžete použít `ReadOnly` jenom na úrovni modulu. To znamená kontext deklarace `ReadOnly` element musí být třída, struktura nebo modul a nemůže být zdrojový soubor, obor názvů nebo postupu.  
+-   **Místní deklarace.** Můžete použít `ReadOnly` pouze na úrovni modulu. To znamená, že deklarace kontext `ReadOnly` elementu musí být třída, struktura nebo modulu a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
   
--   **Kombinovaná parametrů.** Nelze zadat `ReadOnly` společně s `Static` ve stejné deklaraci.  
+-   **Kombinované modifikátory.** Nelze zadat `ReadOnly` spolu s `Static` ve stejné deklaraci.  
   
--   **Přiřazení hodnoty.** Použití kódu `ReadOnly` vlastnost nelze nastavit jeho hodnotu. Ale kód, který má přístup k podkladové úložiště přiřadit, nebo změňte hodnotu kdykoli.  
+-   **Přiřazení hodnoty.** Použití kódu `ReadOnly` jeho hodnotu nelze nastavit vlastnost. Ale kód, který má přístup k podkladové úložiště můžete přiřadit nebo změňte hodnotu v každém okamžiku.  
   
-     Můžete přiřadit hodnotu na `ReadOnly` proměnné pouze v jeho deklaraci nebo v konstruktoru třídu nebo strukturu, ve kterém je definovaný.  
+     Můžete přiřadit hodnoty k `ReadOnly` proměnné pouze v jeho deklaraci nebo v konstruktoru třídy nebo struktury, ve kterém je definována.  
   
 ## <a name="when-to-use-a-readonly-variable"></a>Kdy použít proměnnou jen pro čtení  
- Existují situace, ve kterých se nedá použít [příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md) deklarovat a přiřadit konstantní hodnotu. Například `Const` příkaz nemusí přijmout datový typ chcete přiřadit, nebo není možné k výpočtu hodnoty v době kompilace s konstantní výraz. Hodnota nemusí vědět i v době kompilace. V těchto případech můžete použít `ReadOnly` proměnnou pro uložení konstantní hodnotu.  
+ Existují situace, ve kterých nelze použít [Const příkaz](../../../visual-basic/language-reference/statements/const-statement.md) k deklaraci a přiřazení konstantní hodnotu. Například `Const` příkaz nemusí přijmout typ dat, kterou chcete přiřadit, nebo nemusí být schopný vypočítat hodnotu v době kompilace konstantní výraz. Hodnota nemusí vědět i v době kompilace. V těchto případech můžete použít `ReadOnly` proměnnou pro uchování konstantní hodnotu.  
   
 > [!IMPORTANT]
->  Pokud datový typ proměnné je odkazového typu, jako je například pole nebo instance třídy, i když je proměnná samotné lze změnit její členy `ReadOnly`. Toto dokládá následující příklad.  
+>  Pokud je datový typ proměnné typu odkazu, například pole nebo instanci třídy, jejích členů lze změnit i v případě, že je proměnná samotného `ReadOnly`. Toto dokládá následující příklad.  
   
  `ReadOnly characterArray() As Char = {"x"c, "y"c, "z"c}`  
   
@@ -46,21 +46,21 @@ Určuje, že proměnné nebo vlastnosti lze číst, ale nebyl zapsán.
   
  `End Sub`  
   
- Při inicializaci, pole na kterou odkazuje `characterArray()` blokování "x", "y" a "z". Protože proměnnou `characterArray` je `ReadOnly`, jeho hodnotu nelze změnit po inicializaci; je, není možné přiřadit nové pole. Můžete však změnit hodnoty jednoho nebo více členů pole. Po výzvě k postupu `changeArrayElement`, pole na kterou odkazuje `characterArray()` blokování "x", "M" a "z".  
+ Při inicializaci pole odkazované `characterArray()` blokování "x", "y" a "z". Protože proměnné `characterArray` je `ReadOnly`, jeho hodnotu nelze změnit po inicializaci; který je, není možné přiřadit nové pole. Však můžete změnit hodnoty jedné nebo více členů pole. Následující volání do procedury `changeArrayElement`, pole odkazované `characterArray()` blokování "x", "M" a "z".  
   
- Tento název se podobně jako deklarace parametru procedury být [ByVal](../../../visual-basic/language-reference/modifiers/byval.md), což zabraňuje měnit volání samotného argumentu postup, ale umožní změnit její členy.  
+ Všimněte si, že je podobná deklaraci parametru postupu bude [ByVal](../../../visual-basic/language-reference/modifiers/byval.md), což zabrání změně samotného argumentu volajícího procesu, ale umožňuje měnit její členy.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje `ReadOnly` vlastnost pro datum přijetí zaměstnance. Třída úložiště vlastnost hodnota interně jako `Private` kód proměnnou a to pouze uvnitř třídy můžete změnit tuto hodnotu. Je však vlastnost `Public`, a kód, který může přistupovat k třídě může číst vlastnosti.  
+ Následující příklad definuje `ReadOnly` vlastnost pro datum přijetí zaměstnance. Vlastnost hodnota interně jako třídy úložiště `Private` tuto hodnotu můžete změnit proměnné a to pouze kód uvnitř třídy. Vlastnost je však `Public`, a vlastnost může přečíst jakýkoli kód, který může přistupovat k třídě.  
   
  [!code-vb[VbVbalrKeywords#4](../../../visual-basic/language-reference/codesnippet/VisualBasic/readonly_1.vb)]  
   
- `ReadOnly` Modifikátor lze použít v těchto kontexty:  
+ `ReadOnly` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

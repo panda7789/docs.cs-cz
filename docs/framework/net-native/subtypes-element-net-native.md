@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f850ec24530dd9a7d80f826461cacd9c249dd0de
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a5503e89006411887de9b0def929ac1155df5aa4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397985"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54537251"
 ---
 # <a name="ltsubtypesgt-element-net-native"></a>Element &lt;Subtypes&gt; (.NET Native)
-Modul runtime zásad platí pro všechny třídy dědí z nadřazeného typu.  
+Zásady modulu runtime se vztahuje na všechny třídy dědí z nadřazeného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ Modul runtime zásad platí pro všechny třídy dědí z nadřazeného typu.
   
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory povolit aktivace instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o programu elementů, ale nepovolí žádné přístup k modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory, pole a vlastnosti, aby instance typu serializovat a deserializovat pomocí knihovny například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci, který používá ovládací prvky <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci JSON, který používá ovládací prvky <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci XML, který používá ovládací prvky <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování odkazové typy prostředí Windows Runtime a COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování delegáta typy jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování typů hodnot do nativního kódu.|  
+|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
+|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typů hodnot do nativního kódu.|  
   
 ## <a name="all-attributes"></a>Všechny atributy  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které chcete použít pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Toto nastavení platí pro tento typ zásad. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -60,19 +60,19 @@ Modul runtime zásad platí pro všechny třídy dědí z nadřazeného typu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ a všechny její členy.|  
+|[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
- `<Subtypes>` Element platí pro všechny podtypů jeho obsahující typ zásad. Použijete jej, pokud chcete přiřadit různé zásady pro odvozené typy a jejich základních tříd.  
+ `<Subtypes>` Element použije zásady na všechny podtypy jeho nadřazeného typu. Použijete ji, pokud chcete použít jiné zásady pro odvozené typy a jejich základní třídy.  
   
- Reflexe, serializace a atributů spolupráce jsou nepovinné, ale alespoň jeden by měl být použit.  
+ Reflexe, serializace a atributů spolupráce jsou nepovinné, ale alespoň jeden by měl být k dispozici.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje třídu s názvem `BaseClass` a podtřídy s názvem `Derived1`.  
+ Následující příklad definuje třídu s názvem `BaseClass` a podtřídu s názvem `Derived1`.  
   
  [!code-csharp[ProjectN_Reflection#4](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#4)]  
   
- Jak je znázorněno v následujícím kódu, direktivy modulu runtime soubor explicitně nastaví `Dynamic` a `Activate` zásady pro `BaseClass` k `Excluded`. Z důvodu se objekty typu `BaseClass` nelze vytvořit instanci dynamicky nebo volání do `BaseClass` konstruktoru třídy. Ale `<Subtypes>` element umožňuje třídy odvozené od třídy `BaseClass` chcete vytvořit instanci dynamicky a prostřednictvím volání do jejich konstruktory třídy.  
+ Jak je znázorněno v následujícím kódu, direktivy modulu runtime explicitně souboru nastaví `Dynamic` a `Activate` zásady pro `BaseClass` k `Excluded`. Z důvodu této, objekty typu `BaseClass` nelze vytvořit instanci dynamicky nebo voláním do `BaseClass` konstruktoru třídy. Ale `<Subtypes>` element umožňuje třídy odvozené od `BaseClass` má být vytvořena dynamicky a prostřednictvím volání konstruktorů své třídy.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -85,12 +85,12 @@ Modul runtime zásad platí pro všechny třídy dědí z nadřazeného typu.
 </Directives>  
 ```  
   
- Z důvodu `<Subtypes>` – direktiva, následující kód, který vytvoří `Derived1` instance dynamicky voláním <xref:System.Activator.CreateInstance%28System.Type%29?displayProperty=nameWithType> spuštění metody.  Je zde proměnná bloku <xref:System.Windows.Controls.TextBlock> objekt v prázdnou aplikaci pro Windows Store.  
+ Z důvodu `<Subtypes>` směrnice, následující kód, který vytvoří instanci `Derived1` instance dynamicky voláním <xref:System.Activator.CreateInstance%28System.Type%29?displayProperty=nameWithType> metoda provede úspěšně.  Tady je proměnná bloku <xref:System.Windows.Controls.TextBlock> objektu v prázdnou aplikaci pro Windows Store.  
   
  [!code-csharp[ProjectN_Reflection#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/subtypes.cs#5)]  
   
-## <a name="see-also"></a>Viz také  
- [\<Typ > elementu](../../../docs/framework/net-native/type-element-net-native.md)  
- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)  
- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)
+## <a name="see-also"></a>Viz také:
+- [\<Typ > – Element](../../../docs/framework/net-native/type-element-net-native.md)
+- [Informace o konfiguračním souboru direktiv modulu runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
+- [Elementy direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
+- [Nastavení zásad direktivy modulu runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

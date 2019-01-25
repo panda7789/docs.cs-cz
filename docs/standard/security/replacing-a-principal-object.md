@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c323687e-b196-487b-beba-f38f9b3f961b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bfcd912fc16aa8d4b89a4f455d65b0294593cead
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d5193756861f407315ec82e4419f1d04495c7dd2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44205851"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54606030"
 ---
 # <a name="replacing-a-principal-object"></a>Nahrazení objektu zabezpečení
 Aplikace, které poskytují služby ověřování musí být schopen nahradit **hlavní** objektu (<xref:System.Security.Principal.IPrincipal>) pro dané vlákno. Kromě toho musí systém zabezpečení pomáhají chránit možnost nahradit **instančního objektu** objekty, protože speciálně připojený, nesprávné **instančního objektu** ohrožuje zabezpečení vaší aplikace pomocí nárokování role nebo naléhavém identity. Proto se aplikace, které vyžadují možnost nahradit **hlavní** objekty musí mít udělena <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> objektu pro kontrolu zabezpečení. (Všimněte si, že toto oprávnění se nevyžaduje k provádění kontrol zabezpečení na základě rolí nebo vytváření **hlavní** objekty.)  
@@ -36,5 +36,5 @@ Aplikace, které poskytují služby ověřování musí být schopen nahradit **
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>  
+- <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>
 - [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)

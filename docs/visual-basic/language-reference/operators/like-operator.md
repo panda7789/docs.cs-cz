@@ -22,12 +22,12 @@ helpviewer_keywords:
 - data [Visual Basic], string comparisons
 - string comparison [Visual Basic], Like operators
 ms.assetid: 966283ec-80e2-4294-baa8-c75baff804f9
-ms.openlocfilehash: c5b26bd1d3ebae5136718833c124e3c6e575e9b7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: b1621131b3f5e4669eb637c054be1548597cf252
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198163"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54703260"
 ---
 # <a name="like-operator-visual-basic"></a>Like – operátor (Visual Basic)
 Porovná řetězec oproti vzoru.  
@@ -40,13 +40,13 @@ result = string Like pattern
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Žádné `Boolean` proměnné. Výsledkem je `Boolean` hodnotu, která určuje, jestli `string` splňuje požadavky `pattern`.  
+ Povinný parametr. Žádné `Boolean` proměnné. Výsledkem je `Boolean` hodnotu, která určuje, jestli `string` splňuje požadavky `pattern`.  
   
  `string`  
- Požadováno. Žádné `String` výrazu.  
+ Povinný parametr. Žádné `String` výrazu.  
   
  `pattern`  
- Požadováno. Žádné `String` výraz vyhovující konvencím porovnávání vzorů je popsáno v "Poznámky".  
+ Povinný parametr. Žádné `String` výraz vyhovující konvencím porovnávání vzorů je popsáno v "Poznámky".  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud hodnota v `string` vyhovuje vzoru součástí `pattern`, `result` je `True`. Pokud řetězec nevyhovuje vzoru, `result` je `False`. Pokud mají oba `string` a `pattern` jsou prázdné řetězce, výsledkem je `True`.  
@@ -73,7 +73,7 @@ result = string Like pattern
 ## <a name="special-characters"></a>Speciální znaky  
  Tak, aby odpovídaly levá závorka speciální znaky (`[`), otazník (`?`), znak (`#`) a hvězdička (`*`), uzavřete do hranatých závorek. Pravá hranatá závorka (`]`) nelze použít v rámci skupiny tak, aby odpovídaly samostatně, ale můžou se používat mimo skupinu jako jednotlivé znaky.  
   
- Sekvence znaků `[]` se považuje za řetězec nulové délky (`""`). Však nemůže být součástí seznamu znak uzavřen v závorkách. Pokud chcete zkontrolovat, jestli na umístění v `string` obsahuje nejméně jednu skupinu znaky ani žádný znak na všechny, můžete použít `Like` dvakrát. Příklad najdete v tématu [postupy: porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md).  
+ Sekvence znaků `[]` se považuje za řetězec nulové délky (`""`). Však nemůže být součástí seznamu znak uzavřen v závorkách. Pokud chcete zkontrolovat, jestli na umístění v `string` obsahuje nejméně jednu skupinu znaky ani žádný znak na všechny, můžete použít `Like` dvakrát. Příklad najdete v tématu [jak: Porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md).  
   
 ## <a name="character-ranges"></a>Rozsahy znaků  
  Použitím spojovníku (`–`) k oddělení dolní a horní mez rozsahu, `charlist` můžete určit rozsah znaků. Například `[A–Z]` výsledků v shoda, pokud na odpovídající znak umístěte `string` obsahuje libovolný znak v rozsahu `A`–`Z`, a `[!H–L]` výsledkem shoda, pokud umístit na odpovídající znak obsahuje libovolný znak mimo rozsah `H`–`L`.  
@@ -102,12 +102,12 @@ result = string Like pattern
   
  [!code-vb[VbVbalrOperators#30](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/like-operator_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:Microsoft.VisualBasic.Strings.InStr%2A>  
- <xref:Microsoft.VisualBasic.Strings.StrComp%2A>  
- [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- [Postupy: Porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md)
+## <a name="see-also"></a>Viz také:
+- <xref:Microsoft.VisualBasic.Strings.InStr%2A>
+- <xref:Microsoft.VisualBasic.Strings.StrComp%2A>
+- [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
+- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
+- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Postupy: Porovnání řetězce se vzorem](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md)

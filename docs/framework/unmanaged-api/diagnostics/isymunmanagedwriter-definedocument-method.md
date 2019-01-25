@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 532f69afd949971fbb4f56a8fdbcc6eab159446f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1c214918b4a41ac989a3804c9146c4a54c5909f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33427704"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54738206"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a>ISymUnmanagedWriter::DefineDocument – metoda
-Definuje zdrojový dokument. Identifikátory GUID jsou uvedené známé jazyky, dodavateli a typů dokumentů.  
+Definuje zdrojový dokument. Identifikátory GUID jsou k dispozici pro známé jazyky, dodavatele a typů dokumentů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ HRESULT DefineDocument(
   
 #### <a name="parameters"></a>Parametry  
  `url`  
- [v] Ukazatel na `WCHAR` uniform resource locator (URL), který identifikuje dokumentu, který definuje.  
+ [in] Ukazatel `WCHAR` , který určuje adresu uniform resource locator (URL), který identifikuje dokumentu.  
   
  `language`  
- [v] Ukazatel na identifikátor GUID, který definuje jazyka dokumentu.  
+ [in] Ukazatel na identifikátor GUID, který definuje jazyk dokumentu.  
   
  `languageVendor`  
- [v] Ukazatel na identifikátor GUID, který definuje identitu dodavatele pro jazyk dokumentu.  
+ [in] Ukazatel na identifikátor GUID, který definuje totožnost dodavatele jazyka dokumentu.  
   
  `documentType`  
- [v] Ukazatel na identifikátor GUID, který definuje typ dokumentu.  
+ [in] Ukazatel na identifikátor GUID, který definuje typ dokumentu.  
   
  `pRetVal`  
- [out] Ukazatel na vrácený [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) rozhraní.  
+ [out] Ukazatel na vrácenou [isymunmanagedwriter –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

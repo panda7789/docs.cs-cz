@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b15e569ff6e42298c0a1de02f77ab7c302c70d86
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 43a3b4ea9d953d9dbb7a98c8481185ddc7e4d674
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53154239"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701947"
 ---
 # <a name="ltassertgt-element"></a>&lt;vyhodnocení&gt; – Element
 Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.  
   
  \<Konfigurace >  
-\<System.Diagnostics >  
-\<vyhodnocení >  
+\<system.diagnostics>  
+\<assert>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -71,6 +71,6 @@ Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.D
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Diagnostics.Debug>  
- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Diagnostics.Debug>
+- [Trasování a ladění schématu nastavení](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

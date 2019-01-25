@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ec8fe889885b555cbf9a95cd34b7330efff27f2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3c37bae87f56745cf75031923db820ec2439fe04
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518753"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54625767"
 ---
 # <a name="put-function"></a>PUT – funkce
 Pojmenovanou vlastnost nastaví na novou hodnotu.
@@ -72,7 +72,7 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Jeden nebo více parametrů nejsou platné. |
 |`WBEM_E_INVALID_PROPERTY_TYPE` | 0x8004102a | Typ vlastnosti nebyl rozpoznán. Tato hodnota se vrátí při vytváření instance třídy, pokud třída již existuje. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Nedostatek paměti je k dispozici k dokončení operace. |
-| `WBEM_E_TYPE_MISMATCH` | 0x80041005 | Pro instance: označuje, že `pVal` odkazuje `VARIANT` nesprávného typu pro vlastnost. <br/> Definice třídy: vlastnost již existuje v nadřazené třídě a nový typ modelu COM se liší od původní modelu COM typu. |
+| `WBEM_E_TYPE_MISMATCH` | 0x80041005 | Pro instance: Označuje, že `pVal` odkazuje `VARIANT` nesprávného typu pro vlastnost. <br/> Definice třídy: Vlastnost již existuje v nadřazené třídě a nový typ modelu COM se liší od původní modelu COM typu. |
 |`WBEM_S_NO_ERROR` | 0 | Volání funkce byla úspěšná. |
   
 ## <a name="remarks"></a>Poznámky
@@ -94,11 +94,11 @@ Použití `vtType` parametr jenom při vytvoření nové vlastnosti v definici t
 Příklad najdete v tématu [IWbemClassObject::Put](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-put) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také:  
-[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:
+- [WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

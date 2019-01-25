@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: 4be579f2000c86b3dad412b24589fa8e7024d2f0
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 5d21d2e07342d52dc438b67f9738f43fca47469a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54679890"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 
@@ -56,7 +56,7 @@ Další informace o migraci vašich projektů .NET Core 2.0 najdete v tématu [m
 
 ## <a name="language-support"></a>Podpora jazyků
 
-Kromě podpory jazyka C# a F #, .NET Core 2.0 podporuje taky Visual Basic.
+Kromě podpory C# a F#, .NET Core 2.0 podporuje i Visual Basic.
 
 ### <a name="visual-basic"></a>Visual Basic
 
@@ -163,4 +163,4 @@ Nyní můžete nainstalovat sadu .NET Core SDK nezávisle na Visual Studio. Dík
 
 ## <a name="see-also"></a>Viz také:
 
-* [Co je nového v ASP.NET Core 2.0](/aspnet/core/aspnetcore-2.0)
+- [Co je nového v ASP.NET Core 2.0](/aspnet/core/aspnetcore-2.0)

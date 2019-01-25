@@ -2,18 +2,18 @@
 title: '&lt;serviceHostingEnvironment&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-ms.openlocfilehash: eee81f774382bf9bac3caaada0ae144e933cb630
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 47e683969a62541dd48a3c7211e1edf3bb7b4038
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150315"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493843"
 ---
 # <a name="ltservicehostingenvironmentgt"></a>&lt;serviceHostingEnvironment&gt;
 Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím služby pro konkrétní přenos. Pokud tento prvek je prázdný, je použit výchozí typ. Tento prvek jde použít jenom na aplikace nebo na úrovni konfigurační soubory.  
   
  \<system.ServiceModel>  
-\<serviceHostingEnvironment >  
+\<ServiceHostingEnvironment>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,9 +50,9 @@ Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím s
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters >](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci konfiguračních elementů určujících předponu filtry pro základní adresy použité hostitelem služby.|  
-|[\<serviceActivations >](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceactivations.md)|Konfigurační oddíl, který popisuje nastavení aktivace.|  
-|[\<transportConfigurationTypes >](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce elementů konfigurace, které určují typ konkrétní přenos.|  
+|[\<baseAddressPrefixFilters>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md)|Kolekci konfiguračních elementů určujících předponu filtry pro základní adresy použité hostitelem služby.|  
+|[\<serviceActivations>](../../../../../docs/framework/configure-apps/file-schema/wcf/serviceactivations.md)|Konfigurační oddíl, který popisuje nastavení aktivace.|  
+|[\<transportConfigurationTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|Kolekce elementů konfigurace, které určují typ konkrétní přenos.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -65,11 +65,11 @@ Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím s
   
 -   Autorizace souboru nebo adresy URL technologie ASP.NET  
   
--   Zosobnění technologie ASP.NET  
+-   ASP.NET Impersonation  
   
 -   Stav relace na základě souboru cookie  
   
--   Vlastnost HttpContext.Current  
+-   HttpContext.Current  
   
 -   Kanál rozšiřitelnost prostřednictvím vlastních modulu HttpModule  
   
@@ -92,8 +92,8 @@ Tento prvek definuje typ, který vytvoří instanci hostitelským prostředím s
 <serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
- <xref:System.ServiceModel.ServiceHostingEnvironment>  
- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)  
- [Služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>
+- <xref:System.ServiceModel.ServiceHostingEnvironment>
+- [Hostování](../../../../../docs/framework/wcf/feature-details/hosting.md)
+- [Služby WCF a ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)

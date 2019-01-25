@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)'
+title: 'Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: c1c43bc47df1612be26c78351a9d30272a020160
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 93bfd77ce6bb7be1d305f20f56da67e8fb9c22f0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45987952"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667947"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Postupy: Napsat dotaz, který vyhledá elementy na základě kontextu (C#)
 V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  
   
  To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli. Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.  
@@ -98,10 +98,10 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Linq.XElement.Parse%2A>  
-- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
-- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>  
-- <xref:System.Linq.Enumerable.FirstOrDefault%2A>  
+- <xref:System.Xml.Linq.XElement.Parse%2A>
+- <xref:System.Xml.Linq.XContainer.Descendants%2A>
+- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
+- <xref:System.Linq.Enumerable.FirstOrDefault%2A>
 - [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

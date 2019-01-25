@@ -5,66 +5,66 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-ms.openlocfilehash: b6155296e264bb3ae90aac2ee6b83797e632962e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff727922aeee7aeaea801dabd842f913ce75c220
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491150"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54674778"
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Postupy: Import kontrolních výrazů vlastních zásad
-Kontrolní výrazy zásad jsou popsány možnosti a požadavky koncového bodu služby.  Klientské aplikace můžete použít výrazy zásad v metadata služby ke konfiguraci klienta vazby nebo k přizpůsobení kontrakt služby pro koncový bod služby.  
+Kontrolní výrazy zásad popisují funkce a požadavky koncového bodu služby.  Klientské aplikace můžou použít kontrolní výrazy zásad v metadata služby, abyste mohli nakonfigurovat klienta vazby nebo přizpůsobit kontraktu služby koncového bodu služby.  
   
- Kontrolních výrazů vlastních zásad importují implementací <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní a předání objektu metadat systému nebo tím, že zaregistrujete implementace zadejte v konfiguračním souboru aplikace.  Implementace <xref:System.ServiceModel.Description.IPolicyImportExtension> rozhraní musíte zadat výchozí konstruktor.  
+ Kontrolních výrazů vlastních zásad jsou importovány pomocí implementace <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní a předá tento objekt metadat systému nebo si zaregistrujte implementace typu v konfiguračním souboru aplikace.  Implementace <xref:System.ServiceModel.Description.IPolicyImportExtension> rozhraní musí poskytovat konstruktor default.  
   
 ### <a name="to-import-custom-policy-assertions"></a>Import kontrolních výrazů vlastních zásad  
   
-1.  Implementace <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní na třídu. Postupujte podle následujících pokynů.  
+1.  Implementace <xref:System.ServiceModel.Description.IPolicyImportExtension?displayProperty=nameWithType> rozhraní na třídě. Podívejte se na následující postupy.  
   
-2.  Vložit – Importér vlastní zásady buď pomocí:  
+2.  Vložit vlastní zásady pro import buď podle:  
   
-3.  Použití konfiguračního souboru. Postupujte podle následujících pokynů.  
+3.  Použití konfiguračního souboru. Podívejte se na následující postupy.  
   
-4.  Použití konfiguračního souboru s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Postupujte podle následujících pokynů.  
+4.  Použití konfiguračního souboru s [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Podívejte se na následující postupy.  
   
-5.  Prostřednictvím kódu programu vkládání – Importér zásad. Postupujte podle následujících pokynů.  
+5.  Programově vkládání programu pro import zásady. Podívejte se na následující postupy.  
   
-### <a name="to-implement-the-systemservicemodeldescriptionipolicyimportextension-interface-on-any-class"></a>Implementace rozhraní System.ServiceModel.Description.IPolicyImportExtension u jakékoli třídy  
+### <a name="to-implement-the-systemservicemodeldescriptionipolicyimportextension-interface-on-any-class"></a>K implementaci rozhraní System.ServiceModel.Description.IPolicyImportExtension u jakékoli třídy  
   
-1.  V <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=nameWithType> metoda, pro každý předmět zásad, která vás zajímá, najít výrazy zásad, které chcete importovat voláním odpovídající metodu (v závislosti na rozsahu kontrolní výraz, který chcete) na <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> byl předán objekt Metoda. Následující příklad kódu ukazuje, jak používat <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metoda vyhledat výraz vlastních zásad a jeho odebrání z kolekce v jednom kroku. Pokud používáte metodu odebrat můžete nalézt a odstranit kontrolní výraz, nemáte proveďte krok 4.  
+1.  V <xref:System.ServiceModel.Description.IPolicyImportExtension.ImportPolicy%2A?displayProperty=nameWithType> metodu, pro každé zásady předmětu, který vás zajímá, najít kontrolní výrazy zásad, které chcete importovat voláním příslušné metody (v závislosti na rozsahu výrazu, který chcete, aby) na <xref:System.ServiceModel.Description.PolicyConversionContext?displayProperty=nameWithType> předán objekt Metoda. Následující příklad kódu ukazuje, jak používat <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metody pro vyhledání vlastních zásad pro kontrolní výraz a odebrat z kolekce v jednom kroku. Pokud používáte metodu odebrat vyhledat a odebrat kontrolního výrazu, není nutné k provedení kroku 4.  
   
      [!code-csharp[CustomPolicySample#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/policyimporter.cs#9)]
      [!code-vb[CustomPolicySample#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/policyimporter.vb#9)]  
   
-2.  Zpracovat výrazy zásad. Všimněte si, že zásady systému není normalizaci vnořené zásady a `wsp:optional`. Je nutné zpracovat tyto konstrukce v implementaci zásad import rozšíření.  
+2.  Zpracování kontrolních výrazů zásad. Všimněte si, že není normalizovat systému zásad vnořené zásady a `wsp:optional`. Tyto konstruktory musí zpracovat v implementaci rozšíření importu zásady.  
   
-3.  Proveďte vlastní vazby nebo kontrakt, který podporuje schopnosti nebo požadavek určeného výraz zásad. Kontrolní výrazy obvykle označují, že vazba vyžaduje konkrétní konfigurací nebo prvku konkrétní vazby. Proveďte tyto úpravy přímým přístupem <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType> vlastnost. Další kontrolní výrazy vyžadují, že upravíte kontrakt.  Můžete používat a upravit pomocí kontrakt <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType> vlastnost.  Všimněte si, že vaše zásady – Importér může získat volat vícekrát pro stejnou vazbu a kontrakt, ale jinou zásadu alternativy, pokud Import zásady alternativní selže. Váš kód by měl být odolné vůči toto chování.  
+3.  Provedení vlastní nastavení pro vazby nebo kontrakt, který podporuje funkce nebo požadavek určený kontrolního výrazu zásad. Kontrolní výrazy obvykle signalizují, že vazba vyžaduje konkrétní konfiguraci nebo element konkrétní vazby. Proveďte tyto úpravy, díky přístupu <xref:System.ServiceModel.Description.PolicyConversionContext.BindingElements%2A?displayProperty=nameWithType> vlastnost. Další kontrolní výrazy vyžadují úpravě kontrakt.  Můžete používat a upravit pomocí kontraktu <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A?displayProperty=nameWithType> vlastnost.  Všimněte si, že vaše zásady programu pro import může volána více než jednou pro stejný kontrakt a vazby, ale nepovede alternativy jiné zásady importu zásad alternativu. Váš kód by měl být odolné vůči tomuto chování.  
   
-4.  Kontrolní výraz vlastní zásady pro odebrání z kolekce kontrolní výraz. Pokud neodeberete kontrolní výraz systému Windows Communication Foundation (WCF) předpokládá, že import zásady nebylo úspěšné a neimportuje přidružené vazby. Pokud jste použili <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metoda vyhledat výraz vlastních zásad a jeho odebrání z kolekce v jednom kroku není nutné k provedení tohoto kroku.  
+4.  Kontrolní výraz vlastní zásady pro odebrání z kolekce kontrolní výraz. Pokud nebude odstraněn kontrolního výrazu Windows Communication Foundation (WCF) předpokládá, že import zásady nebylo úspěšné a neprovede import přidružené vazby. Pokud jste použili <xref:System.ServiceModel.Description.PolicyAssertionCollection.Remove%2A?displayProperty=nameWithType> metody pro vyhledání vlastních zásad pro kontrolní výraz a odebrat z kolekce v jednom kroku není nutné k provedení tohoto kroku.  
   
-### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>Program pro import vlastních zásad pro vložení do metadat systému pomocí konfiguračního souboru  
+### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>Vložení vlastních zásad pro import do metadat systému je používán konfigurační soubor  
   
-1.  Přidat – Importér typ, který má `<extensions>` element uvnitř [ \<policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) element v souboru konfigurace klienta.  
+1.  Přidat typ programu pro import, který má `<extensions>` element v rámci [ \<policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) prvku v souboru konfigurace klienta.  
   
      [!code-xml[CustomPolicySample#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.exe.config#7)]   
   
-2.  V aplikaci klienta použít <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> řešení, se automaticky vyvolá metadata a program pro import.  
+2.  V klientské aplikaci používat <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType> nebo <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> řešení je automaticky vyvolána metadata a tabulkách.  
   
      [!code-csharp[CustomPolicySample#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.cs#10)]
      [!code-vb[CustomPolicySample#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/custompolicysample/vb/client.vb#10)]  
   
-### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-svcutilexe"></a>Program pro import vlastních zásad pro vložení do systému metadat pomocí Svcutil.exe  
+### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-svcutilexe"></a>Vložení vlastních zásad pro import do metadat systému pomocí Svcutil.exe  
   
-1.  Přidat – Importér typ, který má `<extensions>` element uvnitř [ \<policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) element v konfiguračním souboru Svcutil.exe.config. Můžete také bodu Svcutil.exe načíst zásady typů – Importér zaregistrováno v různých konfiguračním souboru pomocí `/svcutilConfig` možnost.  
+1.  Přidat typ programu pro import, který má `<extensions>` element v rámci [ \<policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) element v konfiguračním souboru Svcutil.exe.config. Můžete také bodu Svcutil.exe k načtení programu pro import typů zásad zaregistrovaný v jiné konfiguraci souboru s použitím `/svcutilConfig` možnost.  
   
-2.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) importovat metadata a – Importér vyvolán automaticky.  
+2.  Použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) importovat metadata a tabulkách je vyvolán automaticky.  
   
-### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-programmatically"></a>Vložení vlastní zásady – Importér do systém metadat prostřednictvím kódu programu  
+### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-programmatically"></a>Vložení vlastních zásad pro import do systému metadat prostřednictvím kódu programu  
   
-1.  Přidat – Importér k <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> vlastnosti (například pokud používáte <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>) před importem metadata.  
+1.  Přidat import do <xref:System.ServiceModel.Description.MetadataImporter.PolicyImportExtensions%2A?displayProperty=nameWithType> vlastnosti (například pokud použijete <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>) před importem metadata.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>  
- [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
+- [Rozšíření systému metadat](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)

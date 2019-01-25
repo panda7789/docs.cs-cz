@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0f71e59eb13321517de61315d3ba06b96c5458f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af90055c0a51e61d4032e45d6fa4a4914ddd045f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33449270"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54667934"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
 Obsahuje hodnoty, které označují typ metadat.  
@@ -79,46 +79,46 @@ typedef enum CorTypeAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`tdVisibilityMask`|Používá pro informace o typu viditelnosti.|  
+|`tdVisibilityMask`|Používá pro informace o viditelnosti typu.|  
 |`tdNotPublic`|Určuje, že typ není v oboru veřejné.|  
-|`tdPublic`|Určuje, že typ je v veřejné oboru.|  
-|`tdNestedPublic`|Určuje, že je typ vnořené veřejné Přehled.|  
-|`tdNestedPrivate`|Určuje, zda je typ vnořené s privátní viditelnost.|  
-|`tdNestedFamily`|Určuje, že je typ vnořené rodiny Přehled.|  
-|`tdNestedAssembly`|Určuje, zda je typ vnořené s viditelnosti sestavení.|  
-|`tdNestedFamANDAssem`|Určuje, že je typ vnořené s viditelnost rodiny a sestavení.|  
-|`tdNestedFamORAssem`|Určuje, že je typ vnořené s viditelnost třídu nebo sestavení.|  
-|`tdLayoutMask`|Získá informace o typu rozložení.|  
-|`tdAutoLayout`|Určuje, že pole tohoto typu jsou nastíněny automaticky.|  
-|`tdSequentialLayout`|Určuje, že pole tohoto typu jsou nastíněny postupně.|  
-|`tdExplicitLayout`|Určuje, že je explicitně zadat rozložení tohoto pole.|  
+|`tdPublic`|Určuje, že typ je ve veřejné oboru.|  
+|`tdNestedPublic`|Určuje, že typ je vnořená s veřejnou viditelností.|  
+|`tdNestedPrivate`|Určuje, že typ je vnořená s privátní viditelnost.|  
+|`tdNestedFamily`|Určuje, že typ je vnořená prostřednictvím řady viditelnosti.|  
+|`tdNestedAssembly`|Určuje, že je vnořený typ se viditelností sestavení.|  
+|`tdNestedFamANDAssem`|Určuje, že typ je vnořená family a assembly je prozkoumat.|  
+|`tdNestedFamORAssem`|Určuje, že typ je vnořená family nebo assembly je prozkoumat.|  
+|`tdLayoutMask`|Získá informace o rozložení typu.|  
+|`tdAutoLayout`|Určuje, zda jsou automaticky rozloženy pole tohoto typu.|  
+|`tdSequentialLayout`|Určuje, že pole tohoto typu jsou rozloženy postupně.|  
+|`tdExplicitLayout`|Určuje, že rozložení tohoto pole je explicitně zadán.|  
 |`tdClassSemanticsMask`|Získá sémantické informace o typu.|  
-|`tdClass`|Určuje, že je typ třídy.|  
-|`tdInterface`|Určuje, že typ je rozhraní.|  
+|`tdClass`|Určuje, že typ je třída.|  
+|`tdInterface`|Určuje, že je typem rozhraní.|  
 |`tdAbstract`|Určuje, že typ je abstraktní.|  
 |`tdSealed`|Určuje, že typ nelze rozšířit.|  
-|`tdSpecialName`|Určuje, zda název třídy je speciální. Popisuje, jeho název jak.|  
-|`tdImport`|Určuje, zda je typ naimportovány.|  
+|`tdSpecialName`|Určuje, že název třídy je speciální. Její název popisuje jak.|  
+|`tdImport`|Určuje, že typ je importovat.|  
 |`tdSerializable`|Určuje, že typ je serializovatelný.|  
-|`tdWindowsRuntime`|Určuje, že je tento typ [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.|  
-|`tdStringFormatMask`|Získá informace o tom, jak jsou řetězců kódování a formátu.|  
+|`tdWindowsRuntime`|Určuje, jestli je tento typ [!INCLUDE[wrt](../../../../includes/wrt-md.md)] typu.|  
+|`tdStringFormatMask`|Získá informace o tom, jak jsou řetězce kódování a ve formátu.|  
 |`tdAnsiClass`|Určuje, že tento typ interpretuje LPTSTR jako ANSI.|  
-|`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR jako kódování Unicode.|  
+|`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR znakové sady Unicode.|  
 |`tdAutoClass`|Určuje, že tento typ interpretuje LPTSTR automaticky.|  
-|`tdCustomFormatClass`|Určuje, že typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.|  
-|`tdCustomFormatMask`|Tato maska slouží k získání nestandardní kódování informací pro nativní zprostředkovatel komunikace s objekty. Význam hodnot těchto dvou BITS není zadáno.|  
-|`tdBeforeFieldInit`|Určuje, že typ se musí inicializovat před první pokus o přístup k statické pole.|  
-|`tdForwarder`|Určuje, že je typ exportovány a typ předávání.|  
-|`tdReservedMask`|Tento příznak a níže uvedené značky se používá interně modul common language runtime.|  
-|`tdRTSpecialName`|Určuje, že by měl modul common language runtime kontrolovat kódování názvu.|  
-|`tdHasSecurity`|Určuje, zda má tento typ zabezpečení s ním spojená.|  
+|`tdCustomFormatClass`|Určuje, zda typ má nestandardní kódování, jak je stanoveno `CustomFormatMask`.|  
+|`tdCustomFormatMask`|Použijte tuto masku nestandardní kódování informace pro nativní zprostředkovatele komunikace s objekty. Význam hodnot tyto dva bity není zadána.|  
+|`tdBeforeFieldInit`|Určuje, že typ musí být inicializován před prvním pokusu o přístup ke statickému poli.|  
+|`tdForwarder`|Určuje, že typ je exportovali a předávání typů.|  
+|`tdReservedMask`|Tento příznak a příznaky níže se používá interně modulem common language runtime.|  
+|`tdRTSpecialName`|Určuje, že modul common language runtime by měla kontrolovat název kódování.|  
+|`tdHasSecurity`|Určuje, že má typ zabezpečení, které s ním spojená.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

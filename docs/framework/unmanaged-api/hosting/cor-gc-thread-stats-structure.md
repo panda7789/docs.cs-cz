@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24a386fe82bbd004954924a573c090af7f58824a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f453867f6b46265fdbf567b4374ddc64b4efe84
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33431825"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54563892"
 ---
 # <a name="corgcthreadstats-structure"></a>COR_GC_THREAD_STATS – struktura
 Obsahuje vlákno statistiky týkající se uvolňování paměti.  
@@ -39,21 +39,21 @@ typedef struct _COR_GC_THREAD_STATS {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`PerThreadAllocation`|Počet bajtů paměti přidělené na vlákno, které souvisí s aktuálním `COR_GC_THREAD_STATS` instance. Toto číslo je zrušeno na nulu pokaždé, když dojde k nule generování uvolnění paměti.|  
-|`Flags`|Počet bajtů povýšen na vyšší generace uvolňování paměti na poslední.|  
+|`PerThreadAllocation`|Počet bajtů paměti přidělené ve vlákně, které souvisí s aktuálním `COR_GC_THREAD_STATS` instance. Toto číslo se vymaže na nulu pokaždé, když dojde k uvolnění paměti generace nula.|  
+|`Flags`|Počet bajtů povýšen na vyšší generaci uvolňování paměti na poslední.|  
   
 ## <a name="remarks"></a>Poznámky  
  [Iclrtask::getmemstats –](../../../../docs/framework/unmanaged-api/hosting/iclrtask-getmemstats-method.md) trvá výstupní parametr typu `COR_GC_THREAD_STATS`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** GCHost.idl  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)
+- [IHostTask – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)

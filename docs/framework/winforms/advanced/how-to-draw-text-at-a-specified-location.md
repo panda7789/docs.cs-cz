@@ -10,32 +10,32 @@ helpviewer_keywords:
 - drawing text [Windows Forms], specified locations [Windows Forms]
 - Windows Forms, drawing text at a specified location
 ms.assetid: 60816423-1c38-465e-980d-2c2b64d74086
-ms.openlocfilehash: e55afd0629c1b9e6d30c8b31116ec28a718fcb4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e5a1791e21981f60e008b97a51d10f88b827de8d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33523169"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54660369"
 ---
 # <a name="how-to-draw-text-at-a-specified-location"></a>Postupy: Kreslení textu v určeném umístění
-Při provádění vlastní kreslení je nakreslit text ve vodorovném jeden řádek začínající na zadaný bod. Tímto způsobem můžete nakreslit text pomocí <xref:System.Drawing.Graphics.DrawString%2A> přetížený metodu <xref:System.Drawing.Graphics> třídu, která přebírá <xref:System.Drawing.Point> nebo <xref:System.Drawing.PointF> parametr. <xref:System.Drawing.Graphics.DrawString%2A> Metoda také vyžaduje, <xref:System.Drawing.Brush> a <xref:System.Drawing.Font>  
+Při provádění vlastní kreslení můžete nakreslit text v jedné vodorovnou horizontální čáru od k určitému bodu. Tímto způsobem můžete nakreslit text pomocí <xref:System.Drawing.Graphics.DrawString%2A> přetížené metody <xref:System.Drawing.Graphics> třídu, která přijímá <xref:System.Drawing.Point> nebo <xref:System.Drawing.PointF> parametru. <xref:System.Drawing.Graphics.DrawString%2A> Také vyžaduje metodu <xref:System.Drawing.Brush> a <xref:System.Drawing.Font>  
   
- Můžete také <xref:System.Windows.Forms.TextRenderer.DrawText%2A> přetížený metodu <xref:System.Windows.Forms.TextRenderer> , která má <xref:System.Drawing.Point>. <xref:System.Windows.Forms.TextRenderer.DrawText%2A> také vyžaduje <xref:System.Drawing.Color> a <xref:System.Drawing.Font>.  
+ Můžete také použít <xref:System.Windows.Forms.TextRenderer.DrawText%2A> přetížené metody <xref:System.Windows.Forms.TextRenderer> , která přijímá <xref:System.Drawing.Point>. <xref:System.Windows.Forms.TextRenderer.DrawText%2A> také vyžaduje <xref:System.Drawing.Color> a <xref:System.Drawing.Font>.  
   
- Následující obrázek ukazuje výstup textu vykreslovat Zadaný bod při použití <xref:System.Drawing.Graphics.DrawString%2A> metodu přetížených.  
+ Následující obrázek znázorňuje výstup textu při použití vykreslit k určitému bodu <xref:System.Drawing.Graphics.DrawString%2A> přetížené metody.  
   
- ![Text písem](../../../../docs/framework/winforms/advanced/media/csfontstext1.png "csfontstext1")  
+ ![Písma textu](../../../../docs/framework/winforms/advanced/media/csfontstext1.png "csfontstext1")  
   
-### <a name="to-draw-a-line-of-text-with-gdi"></a>Kreslení na řádku textu pomocí GDI +  
+### <a name="to-draw-a-line-of-text-with-gdi"></a>Chcete-li nakreslit řádek textu pomocí GDI +  
   
-1.  Použití <xref:System.Drawing.Graphics.DrawString%2A> metodu předáním text, který má, <xref:System.Drawing.Point> nebo <xref:System.Drawing.PointF>, <xref:System.Drawing.Font>, a <xref:System.Drawing.Brush>.  
+1.  Použití <xref:System.Drawing.Graphics.DrawString%2A> předejte text, který má <xref:System.Drawing.Point> nebo <xref:System.Drawing.PointF>, <xref:System.Drawing.Font>, a <xref:System.Drawing.Brush>.  
   
      [!code-csharp[System.Drawing.AlignDrawnText#30](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#30)]
      [!code-vb[System.Drawing.AlignDrawnText#30](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#30)]  
   
-### <a name="to-draw-a-line-of-text-with-gdi"></a>Kreslení na řádku textu pomocí GDI  
+### <a name="to-draw-a-line-of-text-with-gdi"></a>Chcete-li nakreslit řádek textu pomocí GDI  
   
-1.  Použití <xref:System.Windows.Forms.TextRenderer.DrawText%2A> metodu předáním text, který má, <xref:System.Drawing.Point>, <xref:System.Drawing.Font>, a <xref:System.Drawing.Color>.  
+1.  Použití <xref:System.Windows.Forms.TextRenderer.DrawText%2A> předejte text, který má <xref:System.Drawing.Point>, <xref:System.Drawing.Font>, a <xref:System.Drawing.Color>.  
   
      [!code-csharp[System.Drawing.AlignDrawnText#40](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/CS/Form1.cs#40)]
      [!code-vb[System.Drawing.AlignDrawnText#40](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.AlignDrawnText/VB/Form1.vb#40)]  
@@ -45,8 +45,8 @@ Při provádění vlastní kreslení je nakreslit text ve vodorovném jeden řá
   
 -   <xref:System.Windows.Forms.PaintEventArgs>  `e`, což je parametr <xref:System.Windows.Forms.PaintEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)  
- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
- [Postupy: Vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)  
- [Postupy: Kreslení zalomeného textu do obdélníku](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Kreslení textu pomocí GDI](../../../../docs/framework/winforms/advanced/how-to-draw-text-with-gdi.md)
+- [Použití písem a textu](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)
+- [Postupy: Vytváření rodin písem a písem](../../../../docs/framework/winforms/advanced/how-to-construct-font-families-and-fonts.md)
+- [Postupy: Kreslení zalomeného textu do obdélníku](../../../../docs/framework/winforms/advanced/how-to-draw-wrapped-text-in-a-rectangle.md)

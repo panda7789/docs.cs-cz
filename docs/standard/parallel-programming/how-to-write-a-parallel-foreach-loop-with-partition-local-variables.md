@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu'
+title: 'Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu'
 ms.date: 06/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,17 +10,17 @@ helpviewer_keywords:
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 357cc488705ec3dab66543fa4814dbe3e6a22777
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 2f27d1f11e4517653c9beb2d868d798c215741a9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562304"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54730981"
 ---
-# <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Postupy: zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu
+# <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Postupy: Zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu
 Následující příklad ukazuje, jak psát <xref:System.Threading.Tasks.Parallel.ForEach%2A> metodu, která používá oddíl místní proměnné. Při provedení smyčky <xref:System.Threading.Tasks.Parallel.ForEach%2A> dochází k rozdělení kolekce prostředků na několik oddílů. Každý oddíl má svou vlastní kopii oddílu místní proměnné. Oddíl místní proměnné je podobný [místní proměnné vlákna](xref:System.Threading.ThreadLocal%601), s tím rozdílem, že několik oddílů můžete spustit v jednom vlákně.
   
- Kód a parametry uvedené v tomto příkladu se velmi podobají příslušné metodě <xref:System.Threading.Tasks.Parallel.For%2A>. Další informace najdete v tématu [postupy: zápis smyčky Parallel.for pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
+ Kód a parametry uvedené v tomto příkladu se velmi podobají příslušné metodě <xref:System.Threading.Tasks.Parallel.For%2A>. Další informace najdete v tématu [jak: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md).  
   
  Použití oddílu místní proměnné v <xref:System.Threading.Tasks.Parallel.ForEach%2A> smyčky, musíte volat jeden z přetížení metody, které přebírá dva parametry typu. První parametr typu `TSource`, určuje typ zdrojového prvku a druhý parametr typu `TLocal`, určuje typ oddílu místní proměnné.  
   
@@ -50,6 +50,6 @@ Následující příklad ukazuje, jak psát <xref:System.Threading.Tasks.Paralle
   
 ## <a name="see-also"></a>Viz také:
 
-- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  
-- [Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)  
+- [Datový paralelismus](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [Postupy: Zápis smyčky Parallel.for pomocí proměnných v místním vláknu](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)
 - [Výrazy lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)

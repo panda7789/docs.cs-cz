@@ -5,12 +5,12 @@ helpviewer_keywords:
 - operators [Visual Basic]
 - operators [Visual Basic], miscellaneous
 ms.assetid: 2423b3c5-fc3f-479c-bcd2-2c6ebe92814f
-ms.openlocfilehash: ac01bf81926fcf8068d1d648486cfb61fba52cf0
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: c9c5475993659fd366e6cefd1fc0bdaad3ab02d6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49453093"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513084"
 ---
 # <a name="miscellaneous-operators-visual-basic"></a>Různé operátory (Visual Basic)
 Tady jsou různé operátory definované v jazyce Visual Basic.  
@@ -31,6 +31,6 @@ Tady jsou různé operátory definované v jazyce Visual Basic.
   
  [TypeOf – operátor](../../../visual-basic/language-reference/operators/typeof-operator.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

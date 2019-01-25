@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření první aplikace'
+title: 'Průvodce: Vytvoření první aplikace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - touch-sensitive applications [WPF], creating
 - creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
-ms.openlocfilehash: 935999fd5ada93bedebb38462f9faa93b8ec923f
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 34a534653455449233c2908f4226cdb3a9bb9867
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54724236"
 ---
-# <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
+# <a name="walkthrough-creating-your-first-touch-application"></a>Průvodce: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím na dotykového ovládání. Například můžete pracovat s aplikací pomocí jedné nebo více prsty na dotyk zařízení, např. k tomu dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživateli přesunutí, změna velikosti nebo otočení jednoho objektu pomocí touch.  
   
 ## <a name="prerequisites"></a>Požadavky  
@@ -27,13 +27,13 @@ ms.locfileid: "49086723"
   
 -   Zařízení, která přijímá dotykové ovládání, jako je například k tomu dotykovou obrazovku, který podporuje Windows Touch.  
   
- Kromě toho byste měli mít základní znalosti o tom, jak vytvořit aplikaci v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], zejména jak přihlásit k odběru a zpracovat události. Další informace najdete v tématu [návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
+ Kromě toho byste měli mít základní znalosti o tom, jak vytvořit aplikaci v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], zejména jak přihlásit k odběru a zpracovat události. Další informace najdete v tématu [názorný postup: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md).  
   
 ## <a name="creating-the-application"></a>Vytvoření aplikace  
   
 #### <a name="to-create-the-application"></a>Vytvoření aplikace  
   
-1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [postupy: vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
+1.  Vytvoření nového projektu aplikace WPF v jazyce Visual Basic nebo Visual C# s názvem `BasicManipulation`. Další informace najdete v tématu [jak: Vytvoření nového projektu aplikace WPF](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
   
 2.  Obsah souboru MainWindow.xaml nahraďte následující XAML.  
   
@@ -81,7 +81,7 @@ ms.locfileid: "49086723"
 
  Způsobit nečinnost, rychle zvýšit prsty na obrazovce při provádění předchozího manipulací. <xref:System.Windows.Shapes.Rectangle> Budou i nadále přesunutí, změna velikosti nebo otočení na několik sekund, než přestane.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.UIElement.ManipulationStarting?displayProperty=nameWithType>
 - <xref:System.Windows.UIElement.ManipulationDelta?displayProperty=nameWithType>

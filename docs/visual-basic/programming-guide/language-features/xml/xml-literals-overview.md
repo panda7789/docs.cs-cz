@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-ms.openlocfilehash: 03fc8c11b5553c9c3a63bdcb69bf6135050e2c89
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c6d2600b590e01fff062828f8e0f48d9cfad0190
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507645"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54681388"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Přehled literálů XML (Visual Basic)
 *Literál XML* umožňuje začlenit XML přímo do kódu jazyka Visual Basic. Syntaxe XML literál představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objekty a je podobné syntaxi XML 1.0. To usnadňuje vytvořit XML elementů a dokumentů prostřednictvím kódu programu, protože váš kód má stejnou strukturu jako poslední XML.  
@@ -54,10 +54,10 @@ ms.locfileid: "43507645"
   
  [!code-vb[VbXMLSamples#6](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-literals-overview_2.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement>  
- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)  
- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)  
- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement>
+- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
+- [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
+- [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)

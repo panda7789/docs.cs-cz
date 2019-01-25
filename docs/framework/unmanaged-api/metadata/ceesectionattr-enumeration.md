@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b7f70162ae368934e1383683672fed86f9ce18c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5e88dd0053ec7562d6223c18479f4a4fadc68c12
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441410"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54701791"
 ---
 # <a name="ceesectionattr-enumeration"></a>CeeSectionAttr – výčet
-Poskytuje hodnoty, které určit atributy oddílu pro použití [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.  
+Obsahuje hodnoty, které určují atributy oddílu pro použití [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,18 +44,18 @@ typedef enum  {
 |Člen|Popis|  
 |------------|-----------------|  
 |`sdNone`|Oddíl nemá žádné atributy.|  
-|`sdReadOnly`|Oddíl obsahuje inicializovaného data, která může být pouze číst, neaktualizuje.|  
-|`sdReadWrite`|Oddíl obsahuje inicializovaného data, která můžou číst nebo aktualizovat.|  
-|`sdExecute`|Oddíl obsahuje spustitelného kódu, který může číst a spustit.|  
+|`sdReadOnly`|Oddíl obsahuje inicializovaná data, která lze pouze číst, nejsou aktualizována.|  
+|`sdReadWrite`|Oddíl obsahuje inicializovaná data, která může číst nebo aktualizovat.|  
+|`sdExecute`|Oddíl obsahuje spustitelný kód, který může číst a spustit.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

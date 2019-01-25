@@ -7,23 +7,23 @@ helpviewer_keywords:
 - resources [WPF], referencing
 - referencing resources [WPF]
 ms.assetid: b86b876b-0a10-489b-9a5d-581ea9b32406
-ms.openlocfilehash: 347804f0ce6dd3b907d3ac088248a64569a63695
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 39cde252ce98e55f155edfb7a4c2268219d6858e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33543491"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54692870"
 ---
 # <a name="how-to-define-and-reference-a-resource"></a>Postupy: Definice a odkaz zdroje
-Tento příklad ukazuje, jak definovat prostředku a odkazovat pomocí atributu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
+Tento příklad ukazuje, jak definovat prostředek a na něj odkazovat pomocí atributu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)].  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje dva typy prostředků: <xref:System.Windows.Media.SolidColorBrush> prostředků a několik <xref:System.Windows.Style> prostředky. <xref:System.Windows.Media.SolidColorBrush> Prostředků `MyBrush` slouží k poskytování hodnotu několik vlastností, že každý trvat <xref:System.Windows.Media.Brush> zadejte hodnotu. <xref:System.Windows.Style> Prostředky `PageBackground`, `TitleText` a `Label` každý cílí na určitý ovládací prvek typu. Styly nastavit celou řadu jiné vlastnosti na cílové ovládacích prvků, když styl prostředku je odkazován objektem klíč prostředku a slouží k nastavení <xref:System.Windows.FrameworkElement.Style%2A> vlastnost několik konkrétní ovládací prvky, které jsou definované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ Následující příklad definuje dva typy prostředků: <xref:System.Windows.Media.SolidColorBrush> prostředků a několik <xref:System.Windows.Style> prostředky. <xref:System.Windows.Media.SolidColorBrush> Prostředků `MyBrush` slouží k poskytování hodnoty několik vlastností, že každá vzít <xref:System.Windows.Media.Brush> zadejte hodnotu. <xref:System.Windows.Style> Prostředky `PageBackground`, `TitleText` a `Label` každý cílový typ konkrétní ovládací prvek. Stylů širokou škálu různých vlastností nastavit na cílový ovládací prvky, když tento prostředek stylu odkazuje klíč prostředku a slouží k nastavení <xref:System.Windows.FrameworkElement.Style%2A> vlastnost několik konkrétní ovládací prvky definované v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- Všimněte si, že jedna z vlastností v rámci nastavením `Label` styl také odkazuje `MyBrush` prostředků definovaného dříve. To je běžné technika, ale je důležité si pamatovat, že jsou analyzovat a zadán do slovník prostředků, a pořadí, které jsou uvedené prostředky. Prostředky jsou také požadoval pořadí v rámci slovníku nalezen, pokud použijete [StaticResource – rozšíření značek](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md) Chcete-li je ze v rámci jiný prostředek. Ujistěte se, že jakémukoli prostředku, který odkazujete je definována dříve v rámci kolekce prostředků než kde je pak požadovaný prostředku. Pokud potřeby můžete obejít pořadí striktní vytváření prostředků refererences pomocí [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) tak, aby odkazovaly prostředků v době běhu místo toho byste měli vědět, ale který tento DynamicResource technika má důsledky výkonu. Podrobnosti najdete v tématu [XAML prostředky](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+ V rámci elementů setter ze Poznámka, že jedna z vlastností `Label` styl také odkazuje `MyBrush` prostředek definovaný dříve. Toto je běžná technika, ale je dobré si uvědomit, že jsou analyzovány a zadat do slovníku prostředků v pořadí, ve kterém jsou uvedeny prostředky. Prostředky jsou také požadovaná podle pořadí, v rámci slovníku nebyl nalezen používáte [– rozšíření značek StaticResource](../../../../docs/framework/wpf/advanced/staticresource-markup-extension.md) odkazovat z v rámci jiného prostředku. Ujistěte se, že je prostředek, který budete odkazovat na dříve definována v rámci kolekci prostředků než ve kterém je tento prostředek pak požadovaný. Pokud nezbytné, můžete alternativně vyřešit pořadí striktní vytváření prostředků refererences pomocí [DynamicResource – rozšíření značek](../../../../docs/framework/wpf/advanced/dynamicresource-markup-extension.md) odkazovat prostředků v době běhu místo toho ale byste měli vědět, který tento DynamicResource Metoda má důsledky výkonu. Podrobnosti najdete v tématu [prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
  [!code-xaml[FEResource#XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FEResource/CS/default.xaml#xaml)]  
   
-## <a name="see-also"></a>Viz také  
- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)
+## <a name="see-also"></a>Viz také:
+- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
+- [Styly a šablony](../../../../docs/framework/wpf/controls/styling-and-templating.md)

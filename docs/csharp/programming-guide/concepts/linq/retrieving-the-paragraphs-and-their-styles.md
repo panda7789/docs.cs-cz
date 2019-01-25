@@ -2,12 +2,12 @@
 title: Načtení odstavců a jejich stylů (C#)
 ms.date: 07/20/2015
 ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
-ms.openlocfilehash: 46ffc13c9808b6186efa402bd46b75c6c1a9bbda
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 693c61e9cbf9e2027864da8d1c26e0a1af66094d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510771"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702415"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>Načtení odstavců a jejich stylů (C#)
 V tomto příkladu jsme vytvořit dotaz, který načte uzly odstavců z dokumentu WordprocessingML. Styl k jednotlivým odstavcům také identifikuje.  
@@ -132,6 +132,6 @@ StyleName:Code
 ## <a name="next-steps"></a>Další kroky  
  V dalším tématu [načtení textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), vytvoříte dotaz pro načtení textu odstavců.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

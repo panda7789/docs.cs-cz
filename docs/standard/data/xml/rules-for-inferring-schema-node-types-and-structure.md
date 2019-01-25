@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a518df5b016552de25091e7a9d89f737a1a66151
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 4153638e570bfdb7fe65e5c9cd285f56644fea3f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087655"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54683661"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Pravidla pro odvození schématu typů a struktury uzlů
 Toto téma popisuje, jak procesu odvození schématu přeloží typy uzlů v dokumentu XML pro strukturu schématu XML definice jazyk (XSD).  
@@ -148,8 +148,8 @@ Toto téma popisuje, jak procesu odvození schématu přeloží typy uzlů v dok
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Schema.XmlSchemaInference>  
-- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
-- [Odvození schématu XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
-- [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
+- <xref:System.Xml.Schema.XmlSchemaInference>
+- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
+- [Odvození schématu XML](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
+- [Odvození schémat z dokumentů XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
 - [Pravidla pro odvození jednoduchých typů](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;appdomainresourcemonitoring –&gt; – Element'
+title: '&lt;appDomainResourceMonitoring&gt; Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - appDomainResourceMonitoring element
@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 02119ab6-1e91-448e-97ad-e7b2e5c4bbbd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 32ffe48e7a65ab4ca2250eee65d188c0c7270c11
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: cc507d0cf81bf2bc11edfc0b5efb08c462726b88
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53611331"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54727869"
 ---
-# <a name="ltappdomainresourcemonitoringgt-element"></a>&lt;appdomainresourcemonitoring –&gt; – Element
+# <a name="ltappdomainresourcemonitoringgt-element"></a>&lt;appDomainResourceMonitoring&gt; Element
 Dá pokyn modulu runtime ke shromažďování statistik na všech doménách aplikace v procesu po dobu trvání procesu.  
   
  \<Konfigurace >  
 \<modul runtime >  
-\<appdomainresourcemonitoring – >  
+\<appDomainResourceMonitoring>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -72,7 +72,7 @@ Dá pokyn modulu runtime ke shromažďování statistik na všech doménách apl
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+## <a name="see-also"></a>Viz také:
+- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

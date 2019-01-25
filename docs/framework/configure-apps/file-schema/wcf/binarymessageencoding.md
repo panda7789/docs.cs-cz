@@ -2,21 +2,21 @@
 title: '&lt;binaryMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: e4ae3cd4-6b67-4ce1-af4b-9400e0a38dba
-ms.openlocfilehash: 2e29721104400c8a0352ebf5cd292689de0d6b14
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 7753340be01c407157d9a0576f31db4245c0b4f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54672837"
 ---
 # <a name="ltbinarymessageencodinggt"></a>&lt;binaryMessageEncoding&gt;
 Definuje kodér binárních zpráv, který binárně kóduje zprávy služby Windows Communication Foundation (WCF) v binárním souboru na lince.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
-\<binaryMessageEncoding >  
+\<binaryMessageEncoding>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,7 +37,7 @@ Definuje kodér binárních zpráv, který binárně kóduje zprávy služby Win
 |maxReadPoolSize|Celé číslo, které definuje počet zpráv lze souběžně číst bez přidělení nových čtecích zařízení. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 64.|  
 |maxSessionSize|Celé kladné číslo nastavující velikost v bajtech, použité pro kódování vyrovnávací paměti. Větší vyrovnávací paměť zvyšuje kódování rychlost na úkor velikost pracovní sady. Výchozí hodnota je hodnotu 2048.|  
 |maxWritePoolSize|Celé číslo, které definuje počet zpráv souběžně poslaných bez přidělení nových modulů pro zápis. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 16.|  
-|verze messageVersion|Určuje zprávu protokolu SOAP a WS-Addressing verze, které jsou používány nebo očekávání.|  
+|messageVersion|Určuje zprávu protokolu SOAP a WS-Addressing verze, které jsou používány nebo očekávání.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -64,14 +64,14 @@ Definuje kodér binárních zpráv, který binárně kóduje zprávy služby Win
                        maxSessionSize="3141" />
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.BinaryMessageEncodingElement>  
- <xref:System.ServiceModel.Channels.CustomBinding>  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.BinaryMessageEncodingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
+- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>
+- [Kódování zpráv](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
+- [Výběr kodéru zprávy](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

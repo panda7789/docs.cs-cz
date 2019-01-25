@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5d58a90901b7d7cb80ea7f25401b857b4d4875e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7e6d3f4a1c77e8b5070086e871d4d08fcf138f6f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434509"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54696920"
 ---
 # <a name="iclrerrorreportingmanagerbegincustomdump-method"></a>ICLRErrorReportingManager::BeginCustomDump – metoda
-Určuje konfiguraci výpisy vlastní haldy pro zasílání zpráv o chybách.  
+Určuje konfiguraci výpisů paměti haldy vlastní pro hlášení chyb.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,44 +40,44 @@ HRESULT BeginCustomDump (
   
 #### <a name="parameters"></a>Parametry  
  `dwFlavor`  
- [v] A [ECustomDumpFlavor](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md) hodnotu, která určuje druh haldy výpisu němž vytvářet vlastní haldy výpis.  
+ [in] A [ecustomdumpflavor –](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md) hodnotu, která označuje druh výpisu haldy paměti, na který se má sestavit vlastní haldy s výpisem paměti.  
   
  `dwNumItems`  
- [v] Délka `items` pole. Pokud `dwFlavor` není DUMP_FLAVOR_Mini, `dwNumItems` musí být nula.  
+ [in] Délka `items` pole. Pokud `dwFlavor` není DUMP_FLAVOR_Mini, `dwNumItems` musí být nula.  
   
  `items`  
- [v] Pole [customdumpitem –](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) instancí, zadáním položky, které chcete přidat do malý výpis. Pokud `dwFlavor` není DUMP_FLAVOR_Mini, `items` by měl mít hodnotu null.  
+ [in] Pole [customdumpitem –](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) instancí položky, které chcete přidat do minivýpis zadání. Pokud `dwFlavor` není DUMP_FLAVOR_Mini, `items` by měl mít hodnotu null.  
   
  `dwReserved`  
- [v] Vyhrazeno pro budoucí použití.  
+ [in] Vyhrazeno pro budoucí použití.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Metoda úspěšně vrácena.|  
-|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) nebyla načtena do procesu nebo CLR je ve stavu, ve kterém nemůže běžet spravovaného kódu nebo úspěšně zpracovat volání.|  
+|S_OK|Metoda vrátila úspěšně.|  
+|HOST_E_CLRNOTAVAILABLE|Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.|  
 |HOST_E_TIMEOUT|Vypršel časový limit volání.|  
-|HOST_E_NOT_OWNER|Volající není vlastníkem zámek.|  
-|HOST_E_ABANDONED|Událost byla zrušena při blokované vlákna nebo fiber čekal na něm.|  
-|E_FAIL|Došlo k neznámému závažné selhání. Po návratu metoda E_FAIL modulu CLR již není použitelné v rámci procesu. Následující volání hostování metody vrací HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_NOT_OWNER|Volající není vlastníkem zámku.|  
+|HOST_E_ABANDONED|Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.|  
+|E_FAIL|Došlo k neznámé katastrofických selhání. Po návratu metoda E_FAIL CLR už nejsou použitelné v rámci procesu. Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
- `BeginCustomDump` Metoda nastaví vlastní haldy výpisu konfiguraci. [Endcustomdump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-endcustomdump-method.md) metoda bude vymazána konfigurace výpisu vlastní haldy a uvolní všechny přidružený stav. By měla být volána po dokončení vlastní haldy výpis.  
+ `BeginCustomDump` Metoda nastaví konfiguraci vlastních haldy s výpisem paměti. [Endcustomdump –](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-endcustomdump-method.md) metoda vymaže výpisu stavu systému configuration vlastní haldy a uvolní všechny přidružený stav. By měla být volána po dokončení výpis paměti haldy vlastní.  
   
 > [!IMPORTANT]
->  Selhání volání `EndCustomDump` způsobí, že k úniku paměti.  
+>  Nepodařilo se zavolat `EndCustomDump` způsobí, že k únik paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [CustomDumpItem – struktura](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md)  
- [ECustomDumpFlavor – výčet](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md)  
- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)
+## <a name="see-also"></a>Viz také:
+- [CustomDumpItem – struktura](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md)
+- [ECustomDumpFlavor – výčet](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md)
+- [ICLRErrorReportingManager – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kreslení základních čar'
+title: 'Postupy: Kreslení základních křivek'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,46 +9,46 @@ helpviewer_keywords:
 - drawing [Windows Forms], cardinal splines
 - graphics [Windows Forms], cardinal splines
 ms.assetid: a4a41e80-4461-4b47-b6bd-2c5e68881994
-ms.openlocfilehash: 3ad06eb28e1d8e6b5d5f4a77e545f174d8a68d9b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f2fd0f54c95ff2185c1a1d17785d300c97f7f4f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33525057"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54739797"
 ---
-# <a name="how-to-draw-cardinal-splines"></a>Postupy: Kreslení základních čar
-Spojnice křivky je křivky, které procházejí danou sadu body bez problémů. Kreslení křivky mohutnosti, vytvořit <xref:System.Drawing.Graphics> objektu a předejte adresu v poli body <xref:System.Drawing.Graphics.DrawCurve%2A> metoda.  
+# <a name="how-to-draw-cardinal-splines"></a>Postupy: Kreslení základních křivek
+Křivky mohutnosti je křivku plynule prochází danou sadu body. K nakreslení křivky mohutnosti, vytvořit <xref:System.Drawing.Graphics> objektu a předat adresu pole odkazuje na <xref:System.Drawing.Graphics.DrawCurve%2A> metoda.  
   
-### <a name="drawing-a-bell-shaped-cardinal-spline"></a>Kreslení základních křivky ve tvaru zvonu  
+### <a name="drawing-a-bell-shaped-cardinal-spline"></a>Kreslení ve tvaru zvonu křivky mohutnosti  
   
--   Následující příklad nevykresluje mohutnosti křivkový se ve tvaru zvonu, které procházejí pět určené body. Následující obrázek znázorňuje křivku a pět bodů.  
+-   Následující příklad kreslení ve tvaru zvonu základní křivka vyhlazení, který prochází pět bodů určené. Následující obrázek znázorňuje křivky a pět bodů.  
   
-     ![Křivkový základních](../../../../docs/framework/winforms/advanced/media/cardinalspline1.png "CardinalSpline1")  
+     ![Křivky mohutnosti](../../../../docs/framework/winforms/advanced/media/cardinalspline1.png "CardinalSpline1")  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#21](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#21)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#21](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#21)]  
   
-### <a name="drawing-a-closed-cardinal-spline"></a>Kreslení uzavřené křivky základních  
+### <a name="drawing-a-closed-cardinal-spline"></a>Kreslení uzavřené křivky mohutnosti  
   
--   Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třída k vykreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivku pokračuje pomocí posledního bodu v poli a připojí s prvním bodem v poli. Následující příklad nevykresluje uzavřené křivku mohutnosti, která předá prostřednictvím šesti určené bodů. Následující obrázek znázorňuje uzavřené křivky společně s šest bodů.  
+-   Použití <xref:System.Drawing.Graphics.DrawClosedCurve%2A> metodu <xref:System.Drawing.Graphics> třídy kreslení uzavřené křivky mohutnosti. V uzavřené křivky mohutnosti křivka pokračuje přes poslední bod v poli a připojí se s prvním bodem v poli. Následující příklad kreslení uzavřené vyhlazení, který prochází šest určené body. Následující obrázek znázorňuje uzavřené křivky spolu s šest bodů.  
   
- ![Křivkový základních](../../../../docs/framework/winforms/advanced/media/cardinalspline1a.png "CardinalSpline1A")  
+ ![Křivky mohutnosti](../../../../docs/framework/winforms/advanced/media/cardinalspline1a.png "CardinalSpline1A")  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#22](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#22)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#22](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#22)]  
   
-### <a name="changing-the-bend-of-a-cardinal-spline"></a>Změna ohybem základní křivky  
+### <a name="changing-the-bend-of-a-cardinal-spline"></a>Změna ohyb křivky mohutnosti  
   
--   Změnit způsob křivky mohutnosti zatáčkách předáním pnutí argument <xref:System.Drawing.Graphics.DrawCurve%2A> metoda. Následující příklad nevykresluje tři základní křivky vyhlazení, které procházejí stejnou sadu body. Následující obrázek znázorňuje tři křivky spolu s příslušnými hodnotami pnutí. Všimněte si, že 0 po hodnotu napětí body jsou připojena linkami přímých.  
+-   Změnit způsob předáním napětí argument zatáčkách křivky mohutnosti <xref:System.Drawing.Graphics.DrawCurve%2A> metody. Následující příklad kreslení tři křivky mohutnosti, které prochází stejnou sadu body. Následující obrázek znázorňuje tři křivky spolu s příslušnými hodnotami napětí. Všimněte si, že 0 po hodnotu napětí body jsou spojeny čarami přímo.  
   
- ![Křivkový základních](../../../../docs/framework/winforms/advanced/media/cardinalspline2.png "CardinalSpline2")  
+ ![Křivky mohutnosti](../../../../docs/framework/winforms/advanced/media/cardinalspline2.png "CardinalSpline2")  
   
  [!code-csharp[System.Drawing.ConstructingDrawingCurves#23](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/CS/Class1.cs#23)]
  [!code-vb[System.Drawing.ConstructingDrawingCurves#23](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ConstructingDrawingCurves/VB/Class1.vb#23)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozích příkladech jsou navrženy pro používání s formuláři Windows a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ Předchozí příklady jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)
+## <a name="see-also"></a>Viz také:
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Sestavování a kreslení křivek](../../../../docs/framework/winforms/advanced/constructing-and-drawing-curves.md)

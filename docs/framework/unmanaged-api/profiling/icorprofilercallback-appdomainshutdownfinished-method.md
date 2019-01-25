@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3f9f8925630933e2247726f92a93cac67bdc55ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c89a7671cde9e519d0fc66751ee8f95b34fe9039
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33450486"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54669663"
 ---
 # <a name="icorprofilercallbackappdomainshutdownfinished-method"></a>ICorProfilerCallback::AppDomainShutdownFinished – metoda
-Upozorní profileru, že domény aplikace byl odpojen z procesu.  
+Oznámí profileru, že byl odpojen od procesu domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT AppDomainShutdownFinished(
   
 #### <a name="parameters"></a>Parametry  
  `appDomainId`  
- [v] Určuje doménu, ve kterém jsou uloženy sestavení aplikace.  
+ [in] Určuje doménu, ve kterém jsou uložené sestavení aplikace.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda byla domény aplikace úspěšně odpojen.  
+ [in] HRESULT, která určuje, zda byla doména aplikace úspěšně odpojen.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `appDomainId` není platná pro požadavek informace po [icorprofilercallback::appdomainshutdownstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomainshutdownstarted-method.md) metoda vrátí.  
+ Hodnota `appDomainId` není platná pro požadavek informace po [icorprofilercallback::appdomainshutdownstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomainshutdownstarted-method.md) metoda vrátí hodnotu.  
   
- Některé části uvolnění domény aplikace, může pokračovat i po `AppDomainCreationFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část uvolnění domény aplikace byl úspěšný.  
+ Některé části uvolnění domény aplikace může pokračovat po `AppDomainCreationFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že první část uvolnění domény aplikace proběhla úspěšně.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,5 +56,5 @@ HRESULT AppDomainShutdownFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

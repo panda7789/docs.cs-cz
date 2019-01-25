@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f40b99c0a81bf0f2b622c7d23157dbb5736df1ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: abc5f9350342af0439cb83f1df14979cfabcdb3e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33403289"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54601538"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
-Načte objekt blob Win32 prostředků. Tuto metodu volejte po nastavení možností sestavení.  
+Načte objekt blob prostředků Win32. Tuto metodu volejte po nastavení možností sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,27 +44,27 @@ HRESULT GetWin32ResBlob(
  ID sestavení.  
   
  `FileToken`  
- Používá se k načtení název souboru, který se má použít při vytváření prostředků Win32 verze token souboru  
+ Soubor tokenu se používá k načtení názvu souboru, který má být použit při vytváření prostředků Win32 verze  
   
  `fDll`  
- Hodnota TRUE, pokud je soubor knihovny DLL, false pro EXE.  
+ TRUE, pokud je soubor knihovny DLL, false EXE.  
   
  `pszIconFile`  
- Volitelné ikony pro vložení do objektu blob prostředků.  
+ Volitelné ikony k vložení do objektu blob prostředků.  
   
  `ppResBlob`  
- Získá objekt blob prostředků.  
+ Přijímá objekt blob prostředků.  
   
  `pcbResBlob`  
- Obdrží velikost objektu blob.  
+ Získá velikost objektu blob.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

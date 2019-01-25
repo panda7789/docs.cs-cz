@@ -2,12 +2,12 @@
 title: ServiceAuthorizationBehavior
 ms.date: 03/30/2017
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
-ms.openlocfilehash: c916d0820a1eae333384deab7b0619abfbdc8167
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 58eb2a9fd9017aaf9966644180936f5871e086d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50196814"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54613893"
 ---
 # <a name="serviceauthorizationbehavior"></a>ServiceAuthorizationBehavior
 ServiceAuthorizationBehavior  
@@ -33,28 +33,28 @@ class ServiceAuthorizationBehavior : Behavior
 ### <a name="impersonatecallerforalloperations"></a>ImpersonateCallerForAllOperations  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Hodnota, která určuje, zda se služba pokusí o zosobnění s použitím pověření poskytnutých příchozí zprávy.  
   
 ### <a name="principalpermissionmode"></a>PrincipalPermissionMode  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Objekt zabezpečení použitý k provádění operací na serveru.  
   
-### <a name="roleprovider"></a>Třída RoleProvider  
+### <a name="roleprovider"></a>RoleProvider  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Název poskytovatele rolí prostředí ASP.NET.  
   
 ### <a name="serviceauthorizationmanager"></a>ServiceAuthorizationManager  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Správce autorizace použitý pro autorizace.  
   
@@ -64,5 +64,5 @@ class ServiceAuthorizationBehavior : Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>

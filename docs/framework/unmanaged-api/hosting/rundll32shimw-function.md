@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 18247a947449ea5fd19f1882031b598086332742
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 883f987eb168bf5996baba66f5081875e67f2000
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441737"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54698723"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW – funkce
 Provede zadaný příkaz.  
@@ -41,19 +41,19 @@ HRESULT RunDll32ShimW (
   
 #### <a name="parameters"></a>Parametry  
  `hwnd`  
- [v] Popisovač pro okno, ve kterém se zobrazí výstup příkazu.  
+ [in] Popisovač okna, ve kterém se zobrazí výstup příkazu.  
   
  `hinst`  
- [v] Popisovač pro knihovnu, která obsahuje příkaz.  
+ [in] Popisovač do knihovny, který obsahuje příkaz.  
   
  `lpszCmdLine`  
- [v] Řetězec, který určuje příkaz, který má být proveden.  
+ [in] Řetězec, který určuje příkaz, který se spustí.  
   
  `nCmdShow`  
- [v] Celé číslo, které určuje režim zobrazení pro ve výstupním okně.  
+ [in] Celé číslo, které určuje režim zobrazení v okně výstup.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -61,5 +61,5 @@ HRESULT RunDll32ShimW (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)
+## <a name="see-also"></a>Viz také:
+- [Zastaralé funkce pro hostování CLR](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

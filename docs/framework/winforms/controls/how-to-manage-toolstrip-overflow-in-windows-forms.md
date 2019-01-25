@@ -10,25 +10,25 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - CanOverflow property
 ms.assetid: fa10e0ad-4cbf-4c0d-9082-359c2f855d4e
-ms.openlocfilehash: 32bbc06320f0dc7f096a4b9021bebfbefedaf8f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f26217c92aef1d568349aefb87dd5a882a0cf28
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534889"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54541154"
 ---
 # <a name="how-to-manage-toolstrip-overflow-in-windows-forms"></a>Postupy: Správa přetečení ToolStrip ve Windows Forms
-Pokud všechny položky v <xref:System.Windows.Forms.ToolStrip> ovládacího prvku nelze uložit do přidělené místo, můžete povolit funkce přetečení na <xref:System.Windows.Forms.ToolStrip> a určují chování přetečení konkrétní <xref:System.Windows.Forms.ToolStripItem>s.  
+Při všech položek na <xref:System.Windows.Forms.ToolStrip> ovládací prvek se nevejdou do přiděleného prostoru, můžete povolit funkci přetečení na <xref:System.Windows.Forms.ToolStrip> a zjistit, konkrétní chování přetečení <xref:System.Windows.Forms.ToolStripItem>s.  
   
- Když přidáte <xref:System.Windows.Forms.ToolStripItem>s, která vyžadují víc místa, než je vymezena pro <xref:System.Windows.Forms.ToolStrip> danou aktuální velikost formuláře, <xref:System.Windows.Forms.ToolStripOverflowButton> automaticky se zobrazí na <xref:System.Windows.Forms.ToolStrip>. <xref:System.Windows.Forms.ToolStripOverflowButton> Se zobrazí, a položek s povolenou přetečení přesunou do nabídky přetečení rozevíracího seznamu. To umožňuje přizpůsobit a určit jejich prioritu jak vaše <xref:System.Windows.Forms.ToolStrip> položky správně upravit pro různé typy velikosti. Můžete také změnit vzhled položek, jsou-li do oblasti přetečení pomocí <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a <xref:System.Windows.Forms.ToolStripOverflow.DisplayedItems%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> událostí. V případě více zvětšení formuláře v době návrhu nebo běhu <xref:System.Windows.Forms.ToolStripItem>s lze zobrazit v hlavním <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripOverflowButton> může zmizet i, dokud snížit velikost formuláře.  
+ Po přidání <xref:System.Windows.Forms.ToolStripItem>, které vyžadují více místa, než je přidělený <xref:System.Windows.Forms.ToolStrip> uvedeny formulářovou aktuální velikost, <xref:System.Windows.Forms.ToolStripOverflowButton> automaticky zobrazí na <xref:System.Windows.Forms.ToolStrip>. <xref:System.Windows.Forms.ToolStripOverflowButton> Se zobrazí, a položek s povolenou přetečení přesunou do nabídky přetečení rozevíracího seznamu. Díky tomu můžete k přizpůsobení a stanovení priorit jak vaše <xref:System.Windows.Forms.ToolStrip> položky správně nastavit pro různé velikosti. Můžete také změnit vzhled vašich položkách při spadají do přetečení s použitím <xref:System.Windows.Forms.ToolStripItem.Placement%2A> a <xref:System.Windows.Forms.ToolStripOverflow.DisplayedItems%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Windows.Forms.ToolStrip.LayoutCompleted> událostí. Pokud více zvětšit formuláře v době návrhu nebo běhu <xref:System.Windows.Forms.ToolStripItem>s mohou být zobrazeny v hlavním <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.ToolStripOverflowButton> můžou i zmizet, dokud snížit velikost formuláře.  
   
-### <a name="to-enable-overflow-on-a-toolstrip-control"></a>Chcete-li povolit přetečení na ovládacího prvku ToolStrip  
+### <a name="to-enable-overflow-on-a-toolstrip-control"></a>Povolit přetečení v ovládacím prvku ToolStrip  
   
--   Ujistěte se, že <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> vlastnost není nastavena na `false` pro <xref:System.Windows.Forms.ToolStrip>. Výchozí hodnota je `True`.  
+-   Ujistěte se, <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> vlastnost není nastavena na `false` pro <xref:System.Windows.Forms.ToolStrip>. Výchozí hodnota je `True`.  
   
-     Při <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> je `True` (výchozí), <xref:System.Windows.Forms.ToolStripItem> je odeslána do nabídky rozevíracího seznamu přetečení při obsah <xref:System.Windows.Forms.ToolStripItem> překračuje šířka vodorovného <xref:System.Windows.Forms.ToolStrip> nebo výšky svislého <xref:System.Windows.Forms.ToolStrip>.  
+     Když <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> je `True` (výchozí), <xref:System.Windows.Forms.ToolStripItem> je odeslána do přetečení rozevírací nabídky při obsah <xref:System.Windows.Forms.ToolStripItem> překračuje šířka vodorovného <xref:System.Windows.Forms.ToolStrip> nebo výšku a jsou odděleny svislou <xref:System.Windows.Forms.ToolStrip>.  
   
-### <a name="to-specify-overflow-behavior-of-a-specific-toolstripitem"></a>K určení chování přetečení konkrétní ToolStripItem  
+### <a name="to-specify-overflow-behavior-of-a-specific-toolstripitem"></a>Chcete-li určit chování přetečení konkrétní ovládací prvek ToolStripItem  
   
 -   Nastavte <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> vlastnost <xref:System.Windows.Forms.ToolStripItem> na požadovanou hodnotu. Možnosti jsou `Always`, `Never`, a `AsNeeded`. Defaultis `AsNeeded`.  
   
@@ -42,11 +42,11 @@ Pokud všechny položky v <xref:System.Windows.Forms.ToolStrip> ovládacího prv
     System.Windows.Forms.ToolStripItemOverflow.Never;  
     ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.ToolStrip>  
- <xref:System.Windows.Forms.ToolStripOverflowButton>  
- <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>  
- <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>  
- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.ToolStrip>
+- <xref:System.Windows.Forms.ToolStripOverflowButton>
+- <xref:System.Windows.Forms.ToolStripItem.Overflow%2A>
+- <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A>
+- [Přehled ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)
+- [Architektura ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)
+- [Shrnutí technologie ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

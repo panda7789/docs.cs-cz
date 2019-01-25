@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31b550c7b3cec999b0420fbdc06582a24f420abe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf6a08b17819e3d3cdaa62b0e209fc2064de4a4a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33425981"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54688698"
 ---
 # <a name="isymunmanagedreadergetdocumentversion-method"></a>ISymUnmanagedReader::GetDocumentVersion – metoda
-Získá určenou verzi zadaný dokument. Verze dokumentu začíná na 1 a se zvýší pokaždé, když je dokument aktualizovat pomocí [updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) metoda. Pokud `pbCurrent` parametr `true`, je to nejnovější verze dokumentu.  
+Načte zadanou verzi zadaný dokument. Verze dokumentu začíná 1 a se zvýší pokaždé, když je dokument aktualizovat pomocí [updatesymbolstore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) metody. Pokud `pbCurrent` parametr `true`, toto je nejnovější verze dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetDocumentVersion (
   
 #### <a name="parameters"></a>Parametry  
  `pDoc`  
- [v] Zadaný dokument.  
+ [in] Zadaný dokument.  
   
  `version`  
- [out] Ukazatel na proměnnou, která přijímá verzi zadaný dokument.  
+ [out] Ukazovat na proměnnou, která přijímá verzi zadaný dokument.  
   
  `pbCurrent`  
- [out] Ukazatel na proměnnou, která přijímá `true` Pokud je to nejnovější verze dokumentu, nebo `false` Pokud není na nejnovější verzi.  
+ [out] Ukazatel na proměnnou, která přijímá `true` Pokud je to nejnovější verzi dokumentu, nebo `false` Pokud ještě není na nejnovější verzi.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
