@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 663f2de5acb3aac92c29a19f5f5db16b5355fe89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ad52580fef538a6878efb0febe41dec7c9de1de
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33444780"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520630"
 ---
 # <a name="imetadataemitdeleteclasslayout-method"></a>IMetaDataEmit::DeleteClassLayout – metoda
-Zničí podpis třída rozložení metadata pro typu představovaný typem zadaný token.  
+Zničí podpis metadat rozložení třídy pro typ zastoupený zadaného tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,17 +37,17 @@ HRESULT DeleteClassLayout (
   
 #### <a name="parameters"></a>Parametry  
  `td`  
- [v] `mdTypeDef` Metadata token, který představuje typ, pro které se odstraní třída rozložení.  
+ [in] `mdTypeDef` Tokenu metadat, který představuje typ, pro který se odstraní rozložení třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MSCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataEmit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -2,12 +2,12 @@
 title: Ukázka integrace názvového prostoru SystemWebRouting
 ms.date: 03/30/2017
 ms.assetid: f1c94802-95c4-49e4-b1e2-ee9dd126ff93
-ms.openlocfilehash: 95372d6052690af30042061d623b6004699c21d9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 1724fee816ddd210ffba73159596529bd4bc803e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083725"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548241"
 ---
 # <a name="systemwebrouting-integration-sample"></a>Ukázka integrace názvového prostoru SystemWebRouting
 V této ukázce integration hostování vrstvy s třídami v <xref:System.Web.Routing> oboru názvů. Třídy v <xref:System.Web.Routing> oboru názvů umožňují aplikaci pro použití adresy URL, které neodpovídají přímo fyzické prostředky. Použití směrování webových umožňuje vývojářům vytvářet virtuální adresy pro protokol HTTP, které jsou pak mapována na skutečné služby WCF. To je užitečné, když bez nutnosti fyzického souboru nebo prostředku, musí být hostovaný ve službě WCF, nebo když služby musí přistupovat pomocí adresy URL, které neobsahují soubory, jako jsou HTML nebo .aspx. Tato ukázka předvádí, jak využívat <xref:System.Web.Routing.RouteTable> třídy za účelem vytvoření virtuální identifikátory URI, která je namapována na spuštění služby definované v souboru global.asax. 
@@ -83,5 +83,5 @@ Tato ukázka může již být nainstalováno ve vašem počítači. Před pokra�
 > [!NOTE]
 >  Je nutné aktualizovat na verzi fondu aplikací výchozí, aby [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] Pokud je nastavené na verzi 2.  
   
-## <a name="see-also"></a>Viz také  
- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Viz také:
+- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

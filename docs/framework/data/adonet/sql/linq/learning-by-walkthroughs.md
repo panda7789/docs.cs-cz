@@ -2,12 +2,12 @@
 title: Učení podle návodů
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: 1386d0e8fadddab5cd15818cb616bf331262e654
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 1ddd2b8dacaccc0911a7e5a2bd684bba0fa16012
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47401495"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54589896"
 ---
 # <a name="learning-by-walkthroughs"></a>Učení podle návodů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Dokumentace poskytuje několik návody. Toto téma řeší některé problémy obecného průvodce (včetně Poradce při potížích) a obsahuje odkazy na několik základní návody pro získání informací o [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -22,9 +22,9 @@ ms.locfileid: "47401495"
   
 |Cíl|Visual Basic|C#|  
 |---------------|------------------|---------|  
-|Vytvořte třídu entity a provedení jednoduchého dotazu.|[Návod: Jednoduchý objektový model a dotaz (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[Návod: Jednoduchý objektový model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
+|Vytvořte třídu entity a provedení jednoduchého dotazu.|[Návod: Jednoduchý objektový Model a dotaz (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[Návod: Jednoduchý objektový Model a dotaz (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
 |Přidejte druhé třídu a provedení složitějšího dotazu.<br /><br /> (Vyžaduje dokončení předchozím návodu).|[Návod: Dotazování napříč relacemi (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[Návod: Dotazování napříč relacemi (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
-|Přidat, změnit a odstraňovat položky v databázi.|[Návod: Manipulace s daty (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Návod: Manipulace s daty](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
+|Přidat, změnit a odstraňovat položky v databázi.|[Návod: Manipulace s daty (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Návod: Manipulace s daty (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
 |Použití uložených procedur.|[Návod: Použití jen uložených procedur (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[Návod: Použití jen uložených procedur (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
   
 ## <a name="general"></a>Obecné  
@@ -32,7 +32,7 @@ ms.locfileid: "47401495"
   
 -   Prostředí: Každý [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návod používá jako jeho integrované vývojové prostředí (IDE) sady Visual Studio.  
   
--   Moduly SQL: tyto postupy jsou zapsány do implementovaná pomocí systému SQL Server Express. Pokud nemáte SQL Server Express, můžete stáhnout zdarma. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+-   Moduly SQL: Tyto postupy jsou zapsány do implementovaná pomocí systému SQL Server Express. Pokud nemáte SQL Server Express, můžete stáhnout zdarma. Další informace najdete v tématu [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
     > [!NOTE]
     >  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] návody pro použití názvu souboru jako připojovací řetězec. Stačí zadat název souboru je usnadnění, které [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] poskytuje pro uživatele systému SQL Server Express. Vždy věnujte pozornost problémy se zabezpečením. Další informace najdete v tématu [zabezpečení v technologii LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
@@ -87,5 +87,5 @@ ms.locfileid: "47401495"
   
 3.  Klikněte pravým tlačítkem na **SQL serveru (SQLEXPRESS)** a potom klikněte na tlačítko **restartovat**.  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+## <a name="see-also"></a>Viz také:
+- [Začínáme](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)

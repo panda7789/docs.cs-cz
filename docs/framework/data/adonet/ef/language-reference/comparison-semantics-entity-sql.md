@@ -1,16 +1,16 @@
 ---
-title: Porovnání sémantiku (entita SQL)
+title: Sémantika porovnání (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
-ms.openlocfilehash: 2184f86ee43f88b0c4cfc1b96e42e2486c17fe5f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 371999df0fb3177ecc90f9b1fa43d457a51bfd7a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32765552"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492491"
 ---
-# <a name="comparison-semantics-entity-sql"></a>Porovnání sémantiku (entita SQL)
-Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operátory zahrnuje porovnání instance typu:  
+# <a name="comparison-semantics-entity-sql"></a>Sémantika porovnání (Entity SQL)
+Provádění kterékoli z následujících [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zahrnuje operátory porovnání instance typu:  
   
 ## <a name="explicit-comparison"></a>Explicitní porovnání  
  Operace rovnosti:  
@@ -19,7 +19,7 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
   
 -   !=  
   
- Řazení operace:  
+ Pořadí operací:  
   
 -   <  
   
@@ -33,12 +33,12 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
   
 -   MÁ HODNOTU NULL.  
   
--   NEMÁ HODNOTU NULL  
+-   NENÍ ROVNO HODNOTĚ NULL  
   
-## <a name="explicit-distinction"></a>Explicitní rozdíl  
+## <a name="explicit-distinction"></a>Explicitní rozlišení  
  Rovnost rozdíl:  
   
--   ODLIŠNÉ  
+-   DISTINCT  
   
 -   SESKUPIT PODLE  
   
@@ -46,8 +46,8 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
   
 -   ŘADIT PODLE  
   
-## <a name="implicit-distinction"></a>Implicitní rozdíl  
- Nastavit operace a predikáty (rovnosti):  
+## <a name="implicit-distinction"></a>Implicitní rozlišení  
+ Operace a predikáty (rovnost) nastavte:  
   
 -   UNION  
   
@@ -55,28 +55,28 @@ Provádění některý z těchto [!INCLUDE[esql](../../../../../../includes/esql
   
 -   S VÝJIMKOU  
   
--   NASTAVENÍ  
+-   NASTAVIT  
   
--   PŘEKRYTÍ.  
+-   PŘEKRYTÍ  
   
- Položka predikáty (rovnosti):  
+ Predikáty položky (rovnost):  
   
--   V  
+-   IN  
   
 ## <a name="supported-combinations"></a>Podporované kombinace  
- Následující tabulka uvádí podporované kombinace operátory porovnání pro jednotlivé typy typu:  
+ V následující tabulce jsou uvedeny podporované kombinace operátory porovnání pro každý druh typu:  
   
-|**Typ**|**=**<br /><br /> **!=**|**GROUP BY**<br /><br /> **ODLIŠNÉ**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**MÁ HODNOTU NULL.**<br /><br /> **NEMÁ HODNOTU NULL**|  
+|**Typ**|**=**<br /><br /> **\!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**IS NULL**<br /><br /> **NENÍ ROVNO HODNOTĚ NULL**|  
 |-|-|-|-|-|-|-|-|  
-|Typ entity|REF<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|REF<sup>1</sup>|  
-|Komplexní typ|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
-|Řádek|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Všechny vlastnosti<sup>4</sup>|Throw<sup>3</sup>|  
-|primitivní typ|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|Specifický pro zprostředkovatele|  
-|Multimnožina|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
-|REF|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Throw|Throw|Ano<sup>5</sup>|  
-|Přidružení<br /><br /> – typ|Throw<sup>3</sup>|Throw|Throw|Throw|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
+|Typ entity|REF<sup>1</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Všechny vlastnosti<sup>2</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|REF<sup>1</sup>|  
+|komplexní typ|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
+|Řádek|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Všechny vlastnosti<sup>4</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Všechny vlastnosti<sup>4</sup>|Vyvolat<sup>3</sup>|  
+|primitivní typ|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|Specifické pro zprostředkovatele|  
+|Multiset|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
+|REF|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|Ano<sup>5</sup>|vyvolání výjimky|vyvolání výjimky|Ano<sup>5</sup>|  
+|Přidružení<br /><br /> – typ|Vyvolat<sup>3</sup>|vyvolání výjimky|vyvolání výjimky|vyvolání výjimky|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|Vyvolat<sup>3</sup>|  
   
- <sup>1</sup>odkazy na danou entitu typu instancí jsou implicitně porovnání, jak je znázorněno v následujícím příkladu:  
+ <sup>1</sup>odkazy na danou entitu typu instance jsou implicitně porovnání, jak je znázorněno v následujícím příkladu:  
   
 ```  
 SELECT p1, p2   
@@ -85,7 +85,7 @@ FROM AdventureWorksEntities.Product AS p1
 WHERE p1 != p2 OR p1 IS NULL  
 ```  
   
- Entity instance nelze porovnat s explicitní odkaz. Pokud je tento pokus, je vyvolána výjimka. Například následující dotaz vyvolá výjimku:  
+ Na explicitní odkaz nelze porovnat instanci entity. Pokud se pokus o, je vyvolána výjimka. Například následující dotaz vyvolá výjimku:  
   
 ```  
 SELECT p1, p2   
@@ -94,13 +94,13 @@ FROM AdventureWorksEntities.Product AS p1
 WHERE p1 != REF(p2)  
 ```  
   
- <sup>2</sup>vlastnosti komplexních typů se sloučí před odesláním do úložiště, tak, aby se stala porovnatelný z hlediska (pokud jsou jejich vlastnosti porovnatelný z hlediska). Viz také <sup>4.</sup>  
+ <sup>2</sup>komplexní typy vlastností se sloučí před odesláním do úložiště, takže budou srovnatelné (za předpokladu, jejich vlastnosti jsou srovnatelné). Viz také <sup>4.</sup>  
   
- <sup>3</sup>Entity Framework runtime zjistí nepodporované případ a vyvolá smysluplný výjimky bez zapojení zprostředkovatele nebo úložiště.  
+ <sup>3</sup>modul runtime rozhraní Entity Framework detekuje nepodporované případ a vyvolá výjimky na smysluplný bez zapojení zprostředkovatele nebo úložiště.  
   
- <sup>4</sup>je proveden pokus o porovnat všechny vlastnosti. Pokud je vlastnost, která není porovnatelný z hlediska typu, jako je text, ntext nebo image, může být vyvolána výjimka serveru.  
+ <sup>4</sup>je proveden pokus o porovnání všech vlastností. Pokud je vlastnost, která není porovnatelný z hlediska typu, jako je například text, ntext nebo image, může být vyvolána výjimka serveru.  
   
- <sup>5</sup>všechny jednotlivé elementy odkazy jsou porovnávány (to zahrnuje název sady entit a všechny vlastnosti klíče typu entity).  
+ <sup>5</sup>z odkazů na všechny jednotlivé prvky jsou porovnány (to zahrnuje název sady entit a všechny vlastnosti klíče typu entity).  
   
-## <a name="see-also"></a>Viz také  
- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+## <a name="see-also"></a>Viz také:
+- [Přehled Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

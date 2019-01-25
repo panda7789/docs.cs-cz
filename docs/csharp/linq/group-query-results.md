@@ -1,14 +1,14 @@
 ---
 title: Seskupení výsledků dotazu (LINQ v JAZYKU C#)
 description: Zjistěte, jak seskupit výsledky pomocí jazyka LINQ v jazyce C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: 2e4ec27f-06fb-4de7-8973-0189906d4520
-ms.openlocfilehash: 42f2a483f4ff9a405152250e3961fd267861b20d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 577a358c31fcf5346e7aab7a2e2b6be10fd1beff
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54606793"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857850"
 ---
 # <a name="group-query-results"></a>Seskupení výsledků dotazu
 

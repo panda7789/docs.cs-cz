@@ -2,12 +2,12 @@
 title: Zabezpečení LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ef2c0dc9-ecf9-4c17-b24e-144184ab725f
-ms.openlocfilehash: 0c4ee8df85d6e5c6f84947dcaaeb6875bbd687de
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: e13a1db6a02ac2990624e93480e973284a0784e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584361"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54493090"
 ---
 # <a name="linq-to-xml-security-c"></a>Zabezpečení LINQ to XML (C#)
 Toto téma popisuje problémy se zabezpečením související s LINQ to XML. Kromě toho poskytuje pokyny pro snížení rizik souvisejících s ohrožení zabezpečení.  
@@ -99,6 +99,6 @@ Toto téma popisuje problémy se zabezpečením související s LINQ to XML. Kro
   
  Některé zabezpečení neposkytujeme modulem common language runtime (CLR). Například komponenta, která nezahrnuje soukromé třídy nemají přístup k poznámky označenými pomocí třídy. Ale poznámky můžete odstranit komponenty, které nelze číst. To lze použít jako zneužitím útoku.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

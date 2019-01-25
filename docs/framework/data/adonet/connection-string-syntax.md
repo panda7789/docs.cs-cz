@@ -2,12 +2,12 @@
 title: Syntaxe připojovacího řetězce
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: 3d8b37315ab3ceea2ddedd139787627e86b6a131
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f6cbfc9676c2c373ab833ac556cf04bb0ba15096
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522470"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54524543"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 Každý poskytovatel dat rozhraní .NET Framework má `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxe specifické připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. V následující tabulce jsou uvedeny zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  
@@ -35,7 +35,7 @@ Každý poskytovatel dat rozhraní .NET Framework má `Connection` objekt, kter�
 ## <a name="windows-authentication"></a>Ověřování systému Windows  
  Doporučujeme používat ověřování Windows (někdy označovány jako *integrované zabezpečení*) pro připojení ke zdrojům dat, které ho podporují. Syntaxe použijí v připojovacím řetězci se liší od poskytovatele. Následující tabulka ukazuje syntaxi ověřování Windows pomocí zprostředkovatele dat .NET Framework.  
   
-|Zprostředkovatel|Syntaxe|  
+|Poskytovatel|Syntaxe|  
 |--------------|------------|  
 |`SqlClient`|`Integrated Security=true;`<br /><br /> `-- or --`<br /><br /> `Integrated Security=SSPI;`|  
 |`OleDb`|`Integrated Security=SSPI;`|  
@@ -194,7 +194,7 @@ Data Source=Oracle9i;User ID=*****;Password=*****;
   
  Další informace o rozhraní ODBC syntaxe připojovacího řetězce, naleznete v tématu <xref:System.Data.OracleClient.OracleConnection.ConnectionString%2A>.  
   
-## <a name="see-also"></a>Viz také  
- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+## <a name="see-also"></a>Viz také:
+- [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)
+- [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
+- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

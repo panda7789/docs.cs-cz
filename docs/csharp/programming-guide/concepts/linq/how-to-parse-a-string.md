@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Analýza řetězců (C#)'
+title: 'Postupy: Analyzovat řetězec (C#)'
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: b6b955d2cc9a3ea0c6e17e68639ad7fc677c3fc7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: c4d26f534c718d69c84a30b11de22249b241e084
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43744797"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629784"
 ---
-# <a name="how-to-parse-a-string-c"></a>Postupy: Analýza řetězců (C#)
+# <a name="how-to-parse-a-string-c"></a>Postupy: Analyzovat řetězec (C#)
 Toto téma ukazuje, jak analyzovat řetězec k vytvoření stromu XML v jazyce C#.  
   
 ## <a name="example"></a>Příklad  
@@ -45,6 +45,6 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Analýza kódu XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

@@ -1,14 +1,14 @@
 ---
 title: Provedení levých vnějších spojení (LINQ v JAZYKU C#)
 description: Zjistěte, jak provedení levých vnějších spojení pomocí jazyka LINQ v jazyce C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: f542cee6-3169-4dcf-a631-3a6a79ccd473
-ms.openlocfilehash: a4e6fb73a599d0212d72a585bba98630e828e21e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: cc08a1c8670623a10d1e0bf10221d02037a8d7bc
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54528937"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857577"
 ---
 # <a name="perform-left-outer-joins"></a>Provedení levých vnějších spojení
 

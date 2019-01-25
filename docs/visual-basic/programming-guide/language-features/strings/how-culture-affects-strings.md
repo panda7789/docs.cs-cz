@@ -5,12 +5,12 @@ helpviewer_keywords:
 - locale [Visual Basic], effect on strings
 - strings [Visual Basic], locale dependence
 ms.assetid: c4664444-ee0d-47bf-bef1-eaa3c54bdd7f
-ms.openlocfilehash: 41fd612695fbeacbc7b53cb9e5dbf67939e73482
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
+ms.openlocfilehash: 9f796583e1e38c31960868b1e6f20288587fa076
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332590"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54543445"
 ---
 # <a name="how-culture-affects-strings-in-visual-basic"></a>Vliv jazykové verze na řetězce v jazyce Visual Basic
 Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace o jazykové verzi provádět převody řetězce a porovnávání řetězců.  
@@ -36,7 +36,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
  Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Conversion.Str%2A> a <xref:Microsoft.VisualBasic.Conversion.Val%2A>.  
   
 ## <a name="using-a-specific-culture"></a>Pomocí konkrétní jazykové verze  
- Představte si, že vyvíjíte aplikaci, která odesílá data (naformátovaná jako řetězec) k webové službě. V takovém případě musí aplikace použít konkrétní jazykovou verzi pro převod řetězce. Pro ilustraci, důvod, proč, vezměte v úvahu výsledek použití datum <xref:System.DateTime.ToString> metoda: Pokud vaše aplikace používá k formátování data 4. července 2005, tato metoda vrátí "7/4/2005 12:00:00 AM" při spuštění pomocí jazykové verze Angličtina-Spojené státy (en US), ale vrátí " 04.07.2005 00:00:00 "při spuštění s němčina (de-DE) jazykovou verzi.  
+ Představte si, že vyvíjíte aplikaci, která odesílá data (naformátovaná jako řetězec) k webové službě. V takovém případě musí aplikace použít konkrétní jazykovou verzi pro převod řetězce. Pro ilustraci, důvod, proč, vezměte v úvahu výsledek použití datum <xref:System.DateTime.ToString> metody: Pokud vaše aplikace používá k formátování data 4. července 2005, tato metoda vrátí "7/4/2005 12:00:00 AM" při spuštění pomocí jazykové verze Angličtina-Spojené státy (en US), ale vrátí "04.07.2005 00:00:00" při spuštění s němčina (de-DE) jazykovou verzi.  
   
  Když potřebujete provést konverzi na řetězec ve formátu konkrétní jazykové verze, byste měli použít `CultureInfo` třídu, která je integrovaná [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. Můžete vytvořit nový `CultureInfo` pro konkrétní jazykovou verzi předáním název pro jazykovou verzi <xref:System.Globalization.CultureInfo.%23ctor%2A> konstruktoru. Názvy podporované jazykové verze jsou uvedeny v <xref:System.Globalization.CultureInfo> třídy stránku nápovědy.  
   
@@ -68,7 +68,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
   
  Pro lepší kontrolu nad jak porovnání se provádí, můžete použít další přetížení <xref:System.String.Compare%2A> metody. S <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu, můžete použít `comparisonType` argument určit typ porovnání, které se použít.  
   
-|Hodnota pro `comparisonType` argument|Typ porovnání|Kdy použít|  
+|Hodnota pro `comparisonType` argument|Typ porovnání|Kdy je použít|  
 |---|---|---|  
 |`Ordinal`|Porovnání podle bajtů součást řetězců.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, nastavení související se zabezpečením nebo jiné nejazykové identifikátory, kde počet bajtů se musí přesně shodovat.|  
 |`OrdinalIgnoreCase`|Porovnání podle bajtů součást řetězců.<br /><br /> `OrdinalIgnoreCase` používá invariantní jazyková verze informace k určení, kdy dva znaky se liší pouze velikostí malá a velká písmena.|Tuto hodnotu použijte, pokud porovnávání: malá a velká písmena identifikátorů, bezpečnostních nastavení a data uložená ve Windows.|  
@@ -78,7 +78,7 @@ Tato stránka nápovědy popisuje, jak jazyka Visual Basic používá informace 
 ### <a name="security-considerations"></a>Důležité informace o zabezpečení  
  Pokud vaše aplikace provádí rozhodnutí o zabezpečení založeno na výsledku porovnání nebo operaci změny velikosti písmen, pak by měl použít operaci <xref:System.String.Compare%2A?displayProperty=nameWithType> a předáte `Ordinal` nebo `OrdinalIgnoreCase` pro `comparisonType` argument.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Globalization.CultureInfo>  
- [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Globalization.CultureInfo>
+- [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: a617e8921bed3bb4513ecce738064d502af7995b
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 79b369c8aef0e231611b99e70deb15f8a61fa715
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527559"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  
@@ -65,13 +65,13 @@ Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným ne
 
 Další informace najdete v tématu [výjimky](~/_csharplang/spec/exceptions.md) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.SystemException>  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [throw](../../../csharp/language-reference/keywords/throw.md)  
-- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
-- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
-- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)  
-- [Výjimky](../../../standard/exceptions/index.md)  
+- <xref:System.SystemException>
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)
+- [throw](../../../csharp/language-reference/keywords/throw.md)
+- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)
+- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)
+- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)
+- [Výjimky](../../../standard/exceptions/index.md)

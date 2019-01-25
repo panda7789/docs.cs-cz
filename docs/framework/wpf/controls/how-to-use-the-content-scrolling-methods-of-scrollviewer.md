@@ -9,26 +9,26 @@ helpviewer_keywords:
 - scrolling methods [WPF]
 - ScrollViewer control [WPF], scrolling methods
 ms.assetid: 4708cc65-6510-45f8-82e6-30b0d3e30045
-ms.openlocfilehash: b4da666934be7dd182838d870e54e496b2646901
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f2ed1c0ac0d29a47ab98e0329ff161fd54daba6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33552763"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54547037"
 ---
 # <a name="how-to-use-the-content-scrolling-methods-of-scrollviewer"></a>Postupy: Použití metod pro posunutí obsahu prvku ScrollViewer
-Tento příklad ukazuje, jak používat posouvání metody třídy <xref:System.Windows.Controls.ScrollViewer> elementu. Tyto metody poskytují přírůstkové posouvání obsahu, buď čára, nebo podle stránky, <xref:System.Windows.Controls.ScrollViewer>.  
+Tento příklad ukazuje způsob použití metod pro posunutí posouvání <xref:System.Windows.Controls.ScrollViewer> elementu. Tyto metody poskytují přírůstkové posouvání obsahu, řádek nebo stránky, v <xref:System.Windows.Controls.ScrollViewer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Windows.Controls.ScrollViewer> s názvem `sv1`, který je hostitelem podřízenou <xref:System.Windows.Controls.TextBlock> elementu. Protože <xref:System.Windows.Controls.TextBlock> je větší než nadřazená <xref:System.Windows.Controls.ScrollViewer>, chcete-li povolit procházení se zobrazí posuvníky. <xref:System.Windows.Controls.Button> prvky, které představují různé posouvání metody jsou ukotven na levé straně v samostatném <xref:System.Windows.Controls.StackPanel>. Každý <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru volá související vlastní metodu, která řídí chování posouvání v <xref:System.Windows.Controls.ScrollViewer>.  
+ Následující příklad vytvoří <xref:System.Windows.Controls.ScrollViewer> s názvem `sv1`, který je hostitelem podřízený <xref:System.Windows.Controls.TextBlock> elementu. Vzhledem k tomu, <xref:System.Windows.Controls.TextBlock> je větší, než může nadřazený <xref:System.Windows.Controls.ScrollViewer>, zobrazí posuvníky, chcete-li povolit posouvání. <xref:System.Windows.Controls.Button> prvky, které představují různé metody posunování jsou ukotveny na levé straně v samostatném <xref:System.Windows.Controls.StackPanel>. Každý <xref:System.Windows.Controls.Button> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor volá související vlastní metodu, která řídí chování posouvání v <xref:System.Windows.Controls.ScrollViewer>.  
   
  [!code-xaml[ScrollViewerMethods#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewerMethods/CSharp/Window1.xaml#1)]  
   
- Následující příklad používá <xref:System.Windows.Controls.ScrollViewer.LineUp%2A> a <xref:System.Windows.Controls.ScrollViewer.LineDown%2A> metody.  
+ V následujícím příkladu <xref:System.Windows.Controls.ScrollViewer.LineUp%2A> a <xref:System.Windows.Controls.ScrollViewer.LineDown%2A> metody.  
   
  [!code-csharp[ScrollViewerMethods#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ScrollViewerMethods/CSharp/Window1.xaml.cs#2)]
  [!code-vb[ScrollViewerMethods#2](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/ScrollViewerMethods/VisualBasic/Window1.xaml.vb#2)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.ScrollViewer>  
- <xref:System.Windows.Controls.StackPanel>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.ScrollViewer>
+- <xref:System.Windows.Controls.StackPanel>

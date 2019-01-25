@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 368422338f6452bf5dbe968d4798bc0d5e937c92
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 24a3ece8393fd739ff76fbe759a5572414ce5748
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50195213"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54532523"
 ---
 # <a name="control-flow-in-async-programs-visual-basic"></a>Tok řízení v asynchronních programech (Visual Basic)
 Můžete napsat a snadněji udržovat asynchronní programy pomocí `Async` a `Await` klíčová slova. Ale výsledků možná vás překvapí Pokud nevíte, jak program pracuje. Toto téma sleduje tok řízení prostřednictvím jednoduchého asynchronního programu k zobrazení, když se ovládací prvek přesune z jedné metody na jinou a jaké informace jsou pokaždé přeneseny.  
@@ -98,7 +98,7 @@ Length of the downloaded string: 33946.
 >  Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
   
 ### <a name="download-the-program"></a>Stažení programu  
- Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.  
+ Můžete stáhnout aplikaci pro toto téma z [asynchronní vzorek: Řízení toku v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující postup otevře a spustí program.  
   
 1.  Rozbalte stažený soubor a poté spusťte Visual Studio.  
   
@@ -111,7 +111,7 @@ Length of the downloaded string: 33946.
   
  Spusťte projekt, proveďte následující kroky:  
   
-1.  Spusťte sadu Visual Studio.  
+1.  Spusťte Visual Studio.  
   
 2.  V panelu nabídky zvolte **souboru**, **nový**, **projektu**.  
   
@@ -356,10 +356,10 @@ Dim contentLength As Integer = Await getLengthTask
   
  Následující obrázek znázorňuje návrat ovládacího prvku z `AccessTheWebAsync` k `startButton_Click`.  
   
- ![Krok 6](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace šest")  
+ ![Step SIX](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")  
   
-## <a name="see-also"></a>Viz také  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
- [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)  
- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [Asynchronní vzorek: Tok řízení v asynchronních programech (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)
+## <a name="see-also"></a>Viz také:
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Ukázka asynchronní metody: Řízení toku v asynchronních programech (C# a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

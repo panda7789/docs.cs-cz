@@ -1,11 +1,17 @@
 ---
-title: 'Pole - C# Průvodce programováním'
+title: Pole - C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
-  - 'arrays [C#]'
-  - 'C# language, arrays'
+- arrays [C#]
+- C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
+ms.openlocfilehash: 1b1a3d2e61507a497349deeb857e4333356f66a5
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857798"
 ---
 # <a name="arrays-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 
@@ -13,9 +19,9 @@ Ve struktuře dat pole lze uložit více proměnných stejného typu. Deklarujet
   
  `type[] arrayName;`  
   
- Následující příklady vytváří jedno/dvoudimenzionální a vícenásobná pole:  
+ Následující příklad vytváří jedno/dvoudimenzionální a vícenásobná pole:  
   
- [!code-csharp[csProgGuideArrays#1](../../../csharp/programming-guide/arrays/codesnippet/CSharp/index_1.cs)]  
+ [!code-csharp[csProgGuideArrays#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#1)]  
   
 ## <a name="array-overview"></a>Pole – přehled
 

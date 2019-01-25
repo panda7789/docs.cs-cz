@@ -6,12 +6,12 @@ helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: faf9222d7850b9859f4bc61eb2a0bbe8f4b5bbc1
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 84ac75ef35e42f50d0540ab362220117e00e02e8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53243624"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54496215"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Předávání parametrů typu odkazu (Průvodce programováním v C#)
 Proměnné [odkazovat na typ](../../../csharp/language-reference/keywords/reference-types.md) neobsahuje data přímo; obsahuje odkaz na svoje data. Při předávání parametrů typu odkazu podle hodnoty, je možné změnit data patřící do odkazovaný objekt, jako je například hodnota člena třídy. Nelze však změnit hodnotu referenční samotné; například nelze použít stejný odkaz k přidělení paměti pro novou třídu a jeho zachovat mimo metodu. Chcete-li to mohli udělat, předejte parametr pomocí [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Pro zjednodušení následující příklady používají `ref`.  
@@ -39,11 +39,11 @@ Proměnné [odkazovat na typ](../../../csharp/language-reference/keywords/refere
   
  Další informace o řetězcích naleznete v tématu [řetězec](../../../csharp/language-reference/keywords/string.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)  
-- [ref](../../../csharp/language-reference/keywords/ref.md)  
-- [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md)  
-- [out](../../../csharp/language-reference/keywords/out.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Předávání parametrů](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
+- [ref](../../../csharp/language-reference/keywords/ref.md)
+- [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md)
+- [out](../../../csharp/language-reference/keywords/out.md)
 - [Odkazové typy](../../../csharp/language-reference/keywords/reference-types.md)

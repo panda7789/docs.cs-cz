@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML child axis property [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 89a59d00-985e-4f5c-b59f-29b47bad11cb
-ms.openlocfilehash: 0b504a9e368e5179d5f91faf7256445d7da47b1d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 696d14630240dce094ace7d595232e1a210ea78e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855878"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54527143"
 ---
 # <a name="xml-child-axis-property-visual-basic"></a>Vlastnost osy podřízeného souboru XML (Visual Basic)
 Poskytuje přístup k podřízené objekty daného jednu z následujících: <xref:System.Xml.Linq.XElement> objekt, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.  
@@ -30,10 +30,10 @@ object.<child>
   
 |Termín|Definice|  
 |---|---|  
-|`object`|Požadováno. <xref:System.Xml.Linq.XElement> Objekt, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.|  
-|.<|Požadováno. Označuje začátek vlastnost osy podřízeného.|  
-|`child`|Požadováno. Název podřízené uzly, které chcete získat přístup, a to ve tvaru [`prefix``:`]`name`.<br /><br /> -   `Prefix` – Volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí se definovat globální obor názvů XML `Imports` příkazu.<br />-   `Name` -Vyžaduje. Název místní podřízeného uzlu. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
-|>|Požadováno. Označuje konec vlastnost osy podřízeného.|  
+|`object`|Povinný parametr. <xref:System.Xml.Linq.XElement> Objekt, <xref:System.Xml.Linq.XDocument> object, kolekce <xref:System.Xml.Linq.XElement> objekty nebo kolekci <xref:System.Xml.Linq.XDocument> objekty.|  
+|.<|Povinný parametr. Označuje začátek vlastnost osy podřízeného.|  
+|`child`|Povinný parametr. Název podřízené uzly, které chcete získat přístup, a to ve tvaru [`prefix``:`]`name`.<br /><br /> -   `Prefix` – Volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí se definovat globální obor názvů XML `Imports` příkazu.<br />-   `Name` -Vyžaduje. Název místní podřízeného uzlu. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|>|Povinný parametr. Označuje konec vlastnost osy podřízeného.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
  Kolekce <xref:System.Xml.Linq.XElement> objekty.  
@@ -73,9 +73,9 @@ object.<child>
   
  `Patrick Hines`  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement>  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xml.Linq.XElement>
+- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
+- [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
+- [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

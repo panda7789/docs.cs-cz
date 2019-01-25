@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e6b5281e30c48471131fa12e5106f7d0a6826e1b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff819ab67b258dbc7b5cec937863753852b1fcc1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33452556"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629316"
 ---
 # <a name="icorprofilercallbackmoduleattachedtoassembly-method"></a>ICorProfilerCallback::ModuleAttachedToAssembly – metoda
-Upozorní profileru, že se modul připojen k její nadřazené sestavení.  
+Oznámí profileru, že se modul připojen k její nadřazené sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT ModuleAttachedToAssembly(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modulu, který bude připojen.  
+ [in] ID modulu, který bude připojen.  
   
  `AssemblyId`  
- [v] ID nadřazené sestavení, ke kterému je připojený modul.  
+ [in] ID nadřazené sestavení, ke kterému je připojený modul.  
   
 ## <a name="remarks"></a>Poznámky  
- Modul lze načíst prostřednictvím tabulku importních adres (IAT), prostřednictvím volání `LoadLibrary`, nebo prostřednictvím odkazu metadat. V důsledku toho běžné zavaděč language runtime (CLR) má více cest kód pro určení sestavení, ve kterém je umístěn modul. Proto je možné, že po [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) je volána, modul nebude vědět, jaké sestavení je v a získání ID nadřazeného sestavení není možné. `ModuleAttachedToAssembly` Metoda je volána, když modul je připojen k její nadřazené sestavení a její nadřazené sestavení nelze získat ID.  
+ Modul lze načíst prostřednictvím tabulka importních adres (IAT), pomocí volání `LoadLibrary`, nebo přes odkaz na metadata. V důsledku toho běžné zavaděč jazyka runtime (CLR) má více cest kódu pro určení sestavení, ve kterém se modul nachází. Proto je možné, že po [icorprofilercallback::moduleloadfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) nazývá modul neví, jaké sestavení je v a získání ID nadřazeného sestavení není možné. `ModuleAttachedToAssembly` Metoda se volá, když modul je připojena k její nadřazené sestavení a jeho nadřazené sestavení můžete získat ID.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -54,5 +54,5 @@ HRESULT ModuleAttachedToAssembly(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)

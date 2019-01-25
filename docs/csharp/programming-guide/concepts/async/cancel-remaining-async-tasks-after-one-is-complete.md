@@ -2,12 +2,12 @@
 title: Zrušení zbývajících asynchronních úloh po dokončení (C#) jedné z nich
 ms.date: 07/20/2015
 ms.assetid: d3cebc74-c392-497b-b1e6-62a262eabe05
-ms.openlocfilehash: 969309f50f59a413e731113b6daec0c32bd1b540
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c4998733fbfe4cdc6730d2433828f5ea996ff6a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53126911"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529421"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-c"></a>Zrušení zbývajících asynchronních úloh po dokončení (C#) jedné z nich
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metoda spolu s <xref:System.Threading.CancellationToken>, můžete po dokončení jednoho úkolu zrušit všechny zbývající úkoly. `WhenAny` Metoda přebírá argument, který je kolekce úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena po dokončení libovolné úlohy v kolekci.  
@@ -257,9 +257,9 @@ namespace CancelAfterOneTask
 }  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.Tasks.Task.WhenAny%2A>  
-- [Doladění aplikace s modifikátorem Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
-- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
+- <xref:System.Threading.Tasks.Task.WhenAny%2A>
+- [Doladění aplikace s modifikátorem Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)
+- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
 - [Ukázka asynchronní metody: Vyladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: provádění transformací streamovaní textu do XML (C#)'
+title: 'Postupy: Provádění transformací streamovaní textu do XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
-ms.openlocfilehash: 98fa8bd9ae393e9c87b67ae3f2874a2c279415af
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 906150483f7f76b4429ea390d083e9f18696ac9e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526944"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54555879"
 ---
-# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Postupy: provádění transformací streamovaní textu do XML (C#)
+# <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>Postupy: Provádění transformací streamovaní textu do XML (C#)
 Jeden ze způsobů zpracování textového souboru, je zápis metody rozšíření, která jsou streamována textový soubor řádku v čase pomocí `yield return` vytvořit. Potom můžete napsat dotaz LINQ, který zpracovává textový soubor opožděné odložené způsobem. Pokud použijete <xref:System.Xml.Linq.XStreamingElement> do výstupního datového proudu, pak můžete vytvořit transformace z textového souboru XML, který používá minimální množství paměti, bez ohledu na velikost text souboru zdroje.  
   
  Existují některé upozornění týkající se datového proudu transformace. Streamování transformace platí nejlépe v situacích, kde může zpracovat celý soubor po a může zpracovat řádků v pořadí, ve kterém nastávají ve zdrojovém dokumentu. Pokud máte více než jednou zpracovat soubor, nebo pokud budete muset seřadit řádky předtím, než dokáže zpracovat, dojde ke ztrátě mnohé z výhod používání technika streamování.  
@@ -86,7 +86,7 @@ class Program
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Xml.Linq.XStreamingElement>  
+- <xref:System.Xml.Linq.XStreamingElement>
 - [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

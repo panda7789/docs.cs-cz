@@ -5,55 +5,55 @@ helpviewer_keywords:
 - troubleshooting [Visual Basic], variables
 - variables [Visual Basic], troubleshooting
 ms.assetid: 928a2dc8-e565-4ae4-8ba3-80cc0cb50090
-ms.openlocfilehash: f08a52add4e735ce794ecef2c3bd4b186b3c01a3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a8fdf11887d9ed7a52ac0d5f1abc81dcbb7932a4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655692"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618906"
 ---
 # <a name="troubleshooting-variables-in-visual-basic"></a>Řešení potíží s proměnnými v jazyce Visual Basic
-Tato stránka obsahuje některé běžné problémy, ke kterým dochází při práci s proměnnými v jazyce Visual Basic.  
+Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s proměnnými v jazyce Visual Basic.  
   
-## <a name="unable-to-access-members-of-an-object"></a>Nelze přístup členům v objektu  
- Pokud váš kód pokusí o přístup k vlastnosti nebo metody objektu, existují dvě možná chyba výsledky:  
+## <a name="unable-to-access-members-of-an-object"></a>Nelze získat přístup ke členům objektu  
+ Pokud váš kód se pokusí získat přístup k vlastnosti nebo metody pro objekt, existují dvě možná chyba výsledků:  
   
--   Kompilátor může vygenerovat chybovou zprávu, pokud deklarace proměnné objektu určitého typu a potom se podívejte na člena, není definována podle typu.  
+-   Kompilátor může generovat chybovou zprávu, pokud deklarujete proměnnou objektu určitého typu a přečtěte si informace na člen nejsou definovány parametrem typu.  
   
--   Za běhu <xref:System.MemberAccessException> nastane, když je přiřazen proměnné objektu objekt nevystavuje kódu se pokouší o přístup člena. V případě proměnná [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md), můžete také získat výjimku, pokud je člen není `Public`. Důvodem je, že pozdní vazby umožňuje přístup pouze k `Public` členy.  
+-   Za běhu <xref:System.MemberAccessException> nastane, pokud objekt přiřazen do proměnné objektu nevystavuje člen váš kód se pokouší o přístup. V případě proměnné [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md), můžete také získat tuto výjimku, pokud člen není `Public`. Důvodem je, že pozdní vazby povolí přístup pouze k `Public` členy.  
   
- Když [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) kontrola typu sady `On`, proměnné objektu získat přístup pouze k metody a vlastnosti třídy, se kterým je deklarovat. Toto dokládá následující příklad.  
+ Když [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md) kontrolu typů sad `On`, proměnné objektu přístupné pouze metody a vlastnosti třídy, se kterým se deklaruje. Toto dokládá následující příklad.  
 
  [!code-vb[VbVbalrVariables#2](../../../../visual-basic/programming-guide/language-features/variables/codesnippet/VisualBasic/troubleshooting-variables_1.vb)]  
   
- V tomto příkladu `p` můžete použít pouze členové <xref:System.Object> vlastní třídy, které nezahrnují `Left` vlastnost. Na druhé straně `q` byla deklarována jako typu <xref:System.Windows.Forms.Label>, takže můžete použít všechny metody a vlastnosti <xref:System.Windows.Forms.Label> třídy v <xref:System.Windows.Forms> oboru názvů.  
+ V tomto příkladu `p` lze použít pouze členové <xref:System.Object> třídu, která nejsou zahrnuté `Left` vlastnost. Na druhé straně `q` byl deklarován jako typ <xref:System.Windows.Forms.Label>, takže ho můžete použít všechny metody a vlastnosti <xref:System.Windows.Forms.Label> třídy v <xref:System.Windows.Forms> oboru názvů.  
   
 ### <a name="correct-approach"></a>Správný přístup  
- Abyste mohli získat přístup všichni členové objektu určité třídy, deklarujte proměnnou objektu bude typu dané třídy, pokud je to možné. Pokud nelze provést, například pokud si nejste jisti, zadejte v době kompilace objekt, je nutné nastavit `Option Strict` k `Off` a deklarovat proměnnou bude [Object – datový typ](../../../../visual-basic/language-reference/data-types/object-data-type.md). To umožňuje objekty libovolného typu přiřazení proměnnou, a můžete provést kroky k zajištění, že objekt aktuálně přiřazené je přijatelné typu. Můžete použít [typeof – operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) za účelem určení.  
+ Aby bylo možné pro přístup ke členům objektu určité třídy, deklarace proměnné objektu typu dané třídy, pokud je to možné. Pokud nelze toto provedete, například pokud si nejste jisti objektu typu v době kompilace, je nutné nastavit `Option Strict` k `Off` a deklarovat proměnnou, bude [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). To umožňuje objektů libovolného typu, který má být přiřazena k proměnné a byste měli podniknout kroky k ověření, že aktuálně přiřazené objektu je přijatelné typu. Můžete použít [TypeOf operátor](../../../../visual-basic/language-reference/operators/typeof-operator.md) za účelem určení.  
   
-## <a name="other-components-cannot-access-your-variable"></a>Ostatní součásti nelze získat přístup k vaše proměnná  
- Visual Basic názvů *velká a malá písmena*. Pokud se liší v abecedním případě pouze dva názvy, kompilátor je interpretuje jako se stejným názvem. Například považuje `ABC` a `abc` odkazovat na stejný element deklarovaný.  
+## <a name="other-components-cannot-access-your-variable"></a>Ostatní součásti nelze přistupovat k proměnné  
+ Názvy jazyka Visual Basic jsou *velkých a malých písmen*. Pokud se dva názvy liší abecední pouze velikostí písmen, je kompilátor interpretuje jako se stejným názvem. Například považuje `ABC` a `abc` odkazovat na stejný element deklarovaný.  
   
- Ale používá modul CLR (CLR) *malá a velká písmena* vazby. Proto při vytváření sestavení nebo knihovny DLL a zpřístupněte ho ostatních sestavení, názvy již nejsou velká a malá písmena. Například, pokud definice třídy s prvek s názvem `ABC`, a ujistěte se, ostatních sestavení pomocí vaší třídy prostřednictvím modul common language runtime, musí odkazovat na prvek jako `ABC`. Pokud následně znovu zkompiluje třídě a změňte název elementu `abc`, ostatních sestavení pomocí vlastní třídy již nebudou mít přístup tohoto prvku. Proto při uvolnění aktualizovanou verzi sestavení byste neměli měnit abecedním malá jakýchkoli veřejných složek.  
+ Nicméně, používá modul CLR (CLR) *malá a velká písmena* vazby. Proto se při vytvoření sestavení nebo knihovny DLL a ji dejte k dispozici pro jiná sestavení, názvy už nejsou velká a malá písmena. Například pokud definujete třídu s názvem elementu `ABC`, a jiných sestavení pomocí třídy přes modul common language runtime, musí odkazovat na prvek jako `ABC`. Pokud následně znovu zkompilovat vaší třídy a změňte název elementu na `abc`, ostatních sestavení pomocí vaší třídy už mít přístup k prvku. Proto při uvolnění aktualizovanou verzi sestavení, byste neměli měnit abecední případ veřejné elementy.  
   
- Další informace najdete v tématu [modul Common Language Runtime](../../../../standard/clr.md).  
-  
-### <a name="correct-approach"></a>Správný přístup  
- Povolit další součásti pro přístup k proměnných, považují jejich názvy, jako kdyby byly malá a velká písmena. Při testování třídy nebo modulu, zkontrolujte, zda že ostatních sestavení vazbu s proměnnými, které očekáváte. Po publikování součást neprovádějte žádné změny existujících názvy proměnných, včetně změny jejich případech.  
-  
-## <a name="wrong-variable-being-used"></a>Nesprávný proměnná používá  
- Pokud máte více než jednu proměnnou se stejným názvem, Visual Basic – kompilátor pokusí přeložit každé odkaz na tento název. Pokud proměnné jiný rozsah, kompilátor vyřeší odkaz na deklaraci s zpomalit. Pokud mají stejný obor, řešení se nezdaří a kompilátor nevydá signál k chybě. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ Další informace najdete v tématu [Common Language Runtime](../../../../standard/clr.md).  
   
 ### <a name="correct-approach"></a>Správný přístup  
- Nepoužívejte proměnné se stejným názvem, ale jiný rozsah. Pokud používáte jiné sestavení nebo projekty, nepoužívejte žádné názvy definované v těchto externích součástí co nejvíc. Pokud máte více než jednu proměnnou se stejným názvem, ujistěte se, že máte nárok všechny odkazy na ni. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+ Povolit další komponenty pro přístup k proměnných, nakládat s jejich názvy, jako by byly malá a velká písmena. Při testování třídu nebo modul, zkontrolujte, zda že jiná sestavení vazbu k proměnné, které očekáváte. Po publikování komponenty neprovádějte žádné změny existujících názvy proměnných, včetně změny jejich případy.  
   
-## <a name="see-also"></a>Viz také  
- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  
- [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)  
- [Postupy: Přístup ke členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)  
- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)  
- [Postupy: Určení, na jaký typ objektová proměnná odkazuje](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-what-type-an-object-variable-refers-to.md)  
- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+## <a name="wrong-variable-being-used"></a>Chybný používá proměnné  
+ Pokud máte více než jednu proměnnou se stejným názvem, kompilátor jazyka Visual Basic se pokusí přeložit každé odkaz na tento název. Pokud proměnné jiného oboru, přeloží kompilátor odkaz na prohlášení s zpomalit. Pokud mají stejný obor, na řešení se nezdaří a kompilátor signály chybu. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+  
+### <a name="correct-approach"></a>Správný přístup  
+ Vyhněte se použití proměnné se stejným názvem, ale jiného oboru. Pokud používáte jiné projekty nebo sestavení, nepoužívejte názvy definované v těchto externích komponent co největší míře. Pokud máte více než jednu proměnnou se stejným názvem, ujistěte se, že kvalifikovat všechny odkazy na ni. Další informace najdete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+  
+## <a name="see-also"></a>Viz také:
+- [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
+- [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
+- [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
+- [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
+- [Postupy: Přístup k členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
+- [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
+- [Postupy: Určit, jaký typ proměnná objektu odkazuje](../../../../visual-basic/programming-guide/language-features/variables/how-to-determine-what-type-an-object-variable-refers-to.md)
+- [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)

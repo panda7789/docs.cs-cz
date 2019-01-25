@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa79382d597d303d492e3a441c15a422697be279
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f7b4cf6c50d624f82a75f19b8e3f42c73910c4e5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405964"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54709296"
 ---
 # <a name="icordebuginitialize-method"></a>ICorDebug::Initialize – metoda
 Inicializuje `ICorDebug` objektu.  
@@ -34,10 +34,10 @@ HRESULT Initialize ();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Ladicí program musí volat `Initialize` při vytváření času k chybě při inicializaci ladění služeb. Tato metoda musí být volána před jinou metodu na `ICorDebug` je volána.  
+ Ladicí program musí volat `Initialize` při vytváření služby čas inicializace ladění. Tato metoda musí být volána před jakoukoli metodu na `ICorDebug` je volána.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -45,5 +45,5 @@ HRESULT Initialize ();
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebug – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)

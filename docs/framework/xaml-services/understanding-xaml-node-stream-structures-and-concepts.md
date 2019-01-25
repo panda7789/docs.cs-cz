@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: 100de0a897538527b76b1a53cf40d59a8804d3ae
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d237aa83a6bd1c6c68f96aa4fa58a88cfa23c2c8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519444"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54510140"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Principy struktur a koncepcí datových proudů uzlů XAML
 XAML čtečky a zapisovače XAML, jak je implementován v rozhraní .NET Framework XAML Services jsou založeny na konceptu návrhu datový proud uzlu XAML. Datový proud uzlu XAML je koncepci sadu uzlů XAML. V tomto koncepci procesoru XAML vás provede struktura uzel vztahů v XAML, jeden najednou. V každém okamžiku v otevřít datový proud uzlu XAML jenom jednomu záznamu v aktuální nebo current pozici existuje a mnoho aspektů rozhraní API sestavy pouze informace k dispozici z této pozici. Aktuální uzel v datovém proudu uzlu XAML lze popsat jako objekt, člen nebo hodnota. Zpracováním XAML jako datový proud uzlu XAML XAML čtenáři komunikovat se zapisovači XAML a povolit program k zobrazení, pracovat s nebo změnit obsah datový proud uzlu XAML během cesta načtení nebo uložení cesta operace, která zahrnuje XAML. Návrh XAML čtečky a zapisovače rozhraní API a koncept datový proud uzlu XAML podobají předchozí související čtečky a zapisovače návrhy a koncepty, jako [!INCLUDE[TLA#tla_xmldom](../../../includes/tlasharptla-xmldom-md.md)] a <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> třídy. Toto téma popisuje koncepty datový proud uzlu XAML a popisuje, jak může zapisovat rutiny, které pracují s reprezentací XAML na úrovni uzlu XAML.  
@@ -194,17 +194,17 @@ public class GameBoard {
   
  Následující poznámky k seznamu, které jsou všechny případy, kde je očekávána čtečku XAML zavést direktiv uzel člena XAML, a jak se tento uzel člen identifikovat v implementacích rozhraní .NET Framework XAML Services.  
   
--   **Inicializace text pro objekt uzlu:** je název tohoto uzlu člen `_Initialization`, představuje direktivu XAML a je definován v oboru názvů jazyka XAML XAML. Statické entity můžete získat z <xref:System.Xaml.XamlLanguage.Initialization%2A>.  
+-   **Inicializace text pro objekt uzlu:** Název tohoto uzlu člen je `_Initialization`představuje direktivu XAML a je definován v oboru názvů jazyka XAML XAML. Statické entity můžete získat z <xref:System.Xaml.XamlLanguage.Initialization%2A>.  
   
--   **Poziční parametry pro rozšíření značek:** je název tohoto uzlu člen `_PositionalParameters`, a je definován v oboru názvů jazyka XAML XAML. Vždy obsahuje obecný seznam objektů, z nichž každý je poziční parametr předem oddělené rozdělení na `,` oddělovací znak jako dodaného vstup XAML. Statické entity můžete získat pro direktivu poziční parametry z <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.  
+-   **Poziční parametry pro rozšíření značek:** Název tohoto uzlu člen je `_PositionalParameters`, a je definován v oboru názvů jazyka XAML XAML. Vždy obsahuje obecný seznam objektů, z nichž každý je poziční parametr předem oddělené rozdělení na `,` oddělovací znak jako dodaného vstup XAML. Statické entity můžete získat pro direktivu poziční parametry z <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.  
   
--   **Neznámá obsah:** je název tohoto uzlu člen `_UnknownContent`. Přesněji řečeno, jde <xref:System.Xaml.XamlDirective>, a je definován v oboru názvů jazyka XAML XAML. Tato direktiva se používá jako sentinel pro případy, kdy elementu objektu XAML obsahuje obsah, zdroje XAML, ale v tuto chvíli k dispozici kontext schématu XAML se dá určit bez vlastnost content. Tento případ, v datovém proudu uzlu XAML můžete zjistit kontrolou pro členy s názvem `_UnknownContent`. Pokud nebyla provedena žádná další akce v XAML uzel zatížení cesty toku, výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá pokus o `WriteEndObject` když narazí `_UnknownContent` člen libovolného objektu. Výchozí hodnota <xref:System.Xaml.XamlXmlWriter> nevyvolá a považuje za člena implicitní. Můžete získat statické entity pro `_UnknownContent` z <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.  
+-   **Neznámá obsah:** Název tohoto uzlu člen je `_UnknownContent`. Přesněji řečeno, jde <xref:System.Xaml.XamlDirective>, a je definován v oboru názvů jazyka XAML XAML. Tato direktiva se používá jako sentinel pro případy, kdy elementu objektu XAML obsahuje obsah, zdroje XAML, ale v tuto chvíli k dispozici kontext schématu XAML se dá určit bez vlastnost content. Tento případ, v datovém proudu uzlu XAML můžete zjistit kontrolou pro členy s názvem `_UnknownContent`. Pokud nebyla provedena žádná další akce v XAML uzel zatížení cesty toku, výchozí <xref:System.Xaml.XamlObjectWriter> vyvolá pokus o `WriteEndObject` když narazí `_UnknownContent` člen libovolného objektu. Výchozí hodnota <xref:System.Xaml.XamlXmlWriter> nevyvolá a považuje za člena implicitní. Můžete získat statické entity pro `_UnknownContent` z <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.  
   
 -   **Vlastnost kolekce kolekce:** i když má vyhrazené s názvem vlastnosti, která obsahuje položky kolekce základní typ CLR tohoto třídu kolekce, která se obvykle používá pro XAML, tato vlastnost není znám o typu systému XAML před zálohování typu řešení. Místo toho představuje datový proud uzlu XAML `Items` zástupný text jako člen kolekce typu XAML. V implementaci rozhraní .NET Framework XAML Services název této směrnice / člena v datovém proudu uzlu je `_Items`. Konstanty pro tuto direktivu lze získat z <xref:System.Xaml.XamlLanguage.Items%2A>.  
   
      Všimněte si, že datový proud uzlu XAML může obsahovat vlastnosti Items s položkami, které ukázat nebudou parseable podle typu řešení zálohování a kontext schématu XAML. Například  
   
--   **XML definované členy:** XML definované `xml:base`, `xml:lang` a `xml:space` členy označené jako s názvem direktivy XAML `base`, `lang`, a `space` v rozhraní .NET Framework XAML Services implementace. Obor názvů pro toto je obor názvů XML `http://www.w3.org/XML/1998/namespace`. Konstanty pro každou z nich můžete získat z <xref:System.Xaml.XamlLanguage>.  
+-   **XML definované členy:** Definice XML `xml:base`, `xml:lang` a `xml:space` členy označené jako s názvem direktivy XAML `base`, `lang`, a `space` v implementacích rozhraní .NET Framework XAML Services. Obor názvů pro toto je obor názvů XML `http://www.w3.org/XML/1998/namespace`. Konstanty pro každou z nich můžete získat z <xref:System.Xaml.XamlLanguage>.  
   
 ## <a name="node-order"></a>Uzel pořadí  
  V některých případech <xref:System.Xaml.XamlXmlReader> změní pořadí uzlů XAML v proudu uzlu XAML, a pořadí uzly zobrazí-li zobrazit v kódu nebo pokud zpracování formátu XML. To se provádí, aby bylo možné pořadí uzly tak, aby <xref:System.Xaml.XamlObjectWriter> může zpracovat datový proud uzlu dopředné způsobem.  V rozhraní .NET Framework XAML Services čtečky XAML změní pořadí uzly spíše než byste museli opustit tuto úlohu do zapisovače XAML optimalizace výkonu pro spotřebitele zapisovače objektu XAML datový proud uzlu.  
@@ -217,7 +217,7 @@ public class GameBoard {
 ### <a name="getobject"></a>Funkce GetObject  
  `GetObject` představuje uzel s XAML, kde místo vytváření nového objektu zapisovače objektu XAML by měl místo toho získat hodnoty vlastnosti nadřazeného objektu. Obvyklý případ kde `GetObject` nebude nalezen uzel v uzlu XAML je pro objekt kolekce nebo objekt slovníku při nadřazenou vlastnost je záměrně jen pro čtení v objektovém modelu základního typu. V tomto scénáři kolekci ani slovník často je vytvořen a inicializován (obvykle prázdná) logikou inicializace vlastnícího typu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xaml.XamlObjectReader>  
- [XAML Services](../../../docs/framework/xaml-services/index.md)  
- [Obory názvů jazyka XAML](../../../docs/framework/xaml-services/xaml-namespaces-for-net-framework-xaml-services.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Xaml.XamlObjectReader>
+- [XAML Services](../../../docs/framework/xaml-services/index.md)
+- [Obory názvů jazyka XAML](../../../docs/framework/xaml-services/xaml-namespaces-for-net-framework-xaml-services.md)

@@ -2,18 +2,18 @@
 title: Technologie LINQ to SQL. N-vrstvá s webovými službami
 ms.date: 03/30/2017
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
-ms.openlocfilehash: bf13c34a058d33d240e780cb1ce0e665bd1322d2
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: caa7105e4f64cce78c34237279fd357fdfe92d55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54623609"
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Technologie LINQ to SQL. N-vrstvá s webovými službami
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je navržená speciálně pro použití ve střední vrstvě. v vrstvy přístupu k datům volně spárované (DAL), jako jsou webové služby. Pokud prezentační vrstvy je webová stránka ASP.NET, pak můžete použít <xref:System.Web.UI.WebControls.LinqDataSource> ovládacího prvku webového serveru pro správu přenosu dat mezi uživatelského rozhraní a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] na střední vrstvě. Pokud prezentační vrstva není stránky ASP.NET, pak střední vrstvy a prezentační vrstvou musí provést další úkony ke správě serializace a deserializace dat.  
   
 ## <a name="setting-up-linq-to-sql-on-the-middle-tier"></a>Nastavení technologie LINQ to SQL ve střední vrstvě.  
- Ve webové služby nebo n vrstvá aplikace střední vrstvy obsahuje kontext dat a tříd entit. Tyto třídy můžete vytvořit ručně nebo pomocí obou SQLMetal.exe nebo [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] jako jinde popsaných v dokumentaci. V době návrhu máte možnost provést serializovatelné třídy entit. Další informace najdete v tématu [jak: vytvořit serializovatelné entity](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Další možností je vytvořit samostatnou sadu tříd, které provádí zapouzdření data, která mají být serializován a potom projekt do těchto Serializovatelné typy po vrácení dat ve vaší [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy.  
+ Ve webové služby nebo n vrstvá aplikace střední vrstvy obsahuje kontext dat a tříd entit. Tyto třídy můžete vytvořit ručně nebo pomocí obou SQLMetal.exe nebo [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] jako jinde popsaných v dokumentaci. V době návrhu máte možnost provést serializovatelné třídy entit. Další informace najdete v tématu [jak: Nastavení entit jako serializovatelných](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Další možností je vytvořit samostatnou sadu tříd, které provádí zapouzdření data, která mají být serializován a potom projekt do těchto Serializovatelné typy po vrácení dat ve vaší [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy.  
   
  Potom definujte rozhraní s metodami, které klienti budou volat pro načtení, vložení a aktualizovat data. Metody rozhraní zabalit vaše [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dotazy. Pro zpracování volání vzdálené metody a serializace dat můžete použít jakýkoli druh mechanismu serializace. Jediným požadavkem je, že pokud máte cyklické nebo obousměrné relace v objektovém modelu, jako je například, že mezi zákazníci a objednávky v objektovém modelu standardní Northwind pak musíte použít serializátor, která ho podporuje. Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> podporuje obousměrné relace, ale XmlSerializer, který se používá s WCF Web services nepodporuje. Pokud vyberete použití XmlSerializer, pak musí zajistíte, že objektový model nemá žádné cyklické relace.  
   
@@ -36,6 +36,6 @@ ms.locfileid: "43862235"
   
  Další informace najdete v tématu [CUD operace v N-vrstvé aplikace (LINQ to SQL) a načítání dat](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).  
   
-## <a name="see-also"></a>Viz také  
- [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
- [NIB: Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136)
+## <a name="see-also"></a>Viz také:
+- [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)
+- [NIB: Přehled ovládacího prvku zdroje dat LinqDataSource webového serveru](https://msdn.microsoft.com/library/104cfc3f-7385-47d3-8a51-830dfa791136)

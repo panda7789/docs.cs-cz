@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], overview
 ms.assetid: f4dce0fb-6f54-47e6-8054-86d7f574b91c
-ms.openlocfilehash: b72c3959b2a42c6a5abc8ef31975d5bdb9ce220e
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 0d7baacb9525e0c268ae53b0c3617324ecd0772f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086840"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548986"
 ---
 # <a name="endpoint-creation-overview"></a>Přehled vytváření koncových bodů
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím *koncové body* služby. Koncové body poskytují klientům přístup k funkci, která nabízí služby WCF. Tato část popisuje strukturu koncový bod a ukazuje, jak definovat koncový bod v konfiguraci a v kódu.  
@@ -198,5 +198,5 @@ serviceHost.Open()
   
  Pokud koncové body jsou explicitně zadán, výchozí koncové body může být přidána voláním <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> na <xref:System.ServiceModel.ServiceHost> před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Další informace o výchozí koncové body, naleznete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="see-also"></a>Viz také  
- [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)
+## <a name="see-also"></a>Viz také:
+- [Implementace kontraktů služeb](../../../docs/framework/wcf/implementing-service-contracts.md)

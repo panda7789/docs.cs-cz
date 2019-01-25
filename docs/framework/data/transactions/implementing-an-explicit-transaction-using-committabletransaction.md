@@ -1,18 +1,18 @@
 ---
-title: Implementace explicitní transakce pomocí CommittableTransaction
+title: Implementace explicitní transakce přes CommittableTransaction
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: 1edcdefeaafbee3cfbc0810a47e64f38f9f97ddc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 078102da95222d45bec82269edf1eb8e40866408
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365680"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54713129"
 ---
-# <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implementace explicitní transakce pomocí CommittableTransaction
+# <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implementace explicitní transakce přes CommittableTransaction
 <xref:System.Transactions.CommittableTransaction> Třída poskytuje explicitní způsob pro použití transakcí, na rozdíl od použití aplikacemi <xref:System.Transactions.TransactionScope> třídy implicitně. Je užitečné pro aplikace, které chcete použít stejnou transakci napříč několika volání funkce nebo více vláken volání. Na rozdíl od <xref:System.Transactions.TransactionScope> třídy pro zápis do aplikace potřebuje konkrétně volat <xref:System.Transactions.CommittableTransaction.Commit%2A> a <xref:System.Transactions.Transaction.Rollback%2A> metody za účelem potvrzení nebo přerušení transakce.  
   
 ## <a name="overview-of-the-committabletransaction-class"></a>Přehled třídy CommittableTransaction  
@@ -43,7 +43,7 @@ ms.locfileid: "33365680"
   
  Můžete volat <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> odesláním holdup potvrzení na vlákno z fondu podprocesů. Můžete také volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> k určení, pokud transakce ve skutečnosti byla. Je-li transakce se nepodařilo zapsat z jakéhokoli důvodu <xref:System.Transactions.CommittableTransaction.EndCommit%2A> vyvolá výjimka transakce. Pokud není v čase ještě potvrzené transakce <xref:System.Transactions.CommittableTransaction.EndCommit%2A> je volána, volajícího bude blokován, dokud nebude transakce potvrzena nebo zrušena.  
   
- Nejjednodušší způsob, jak provést asynchronní zápis je poskytnutím metoda zpětného volání, která se má volat po dokončení potvrzení. Je však třeba volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> metodu na původní <xref:System.Transactions.CommittableTransaction> objekt použitý k vyvolání volání. Chcete-li získat tento objekt, můžete přetypování dolů *IAsyncResult* parametru metody zpětného volání, vzhledem k tomu, <xref:System.Transactions.CommittableTransaction> třída implementuje <xref:System.IAsyncResult> třídy.  
+ Nejjednodušší způsob, jak provést asynchronní zápis je poskytnutím metoda zpětného volání, která se má volat po dokončení potvrzení. Je však třeba volat <xref:System.Transactions.CommittableTransaction.EndCommit%2A> metodu na původní <xref:System.Transactions.CommittableTransaction> objekt použitý k vyvolání volání. Chcete-li získat tento objekt, můžete přetypovat dolů *IAsyncResult* parametru metody zpětného volání, protože <xref:System.Transactions.CommittableTransaction> implementuje třída <xref:System.IAsyncResult> třídy.  
   
  Následující příklad ukazuje, jak lze provést asynchronní zápis.  
   
@@ -85,6 +85,6 @@ void OnCommitted(IAsyncResult asyncResult)
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Implementace implicitní transakce s využitím oboru transakcí](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)  
- [Zpracování transakcí](../../../../docs/framework/data/transactions/index.md)
+## <a name="see-also"></a>Viz také:
+- [Implementace implicitní transakce s využitím oboru transakcí](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)
+- [Zpracování transakcí](../../../../docs/framework/data/transactions/index.md)

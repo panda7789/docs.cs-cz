@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Vytvoření výrazu lambda (Visual Basic)'
+title: 'Postupy: Vytvoření výrazu Lambda (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-ms.openlocfilehash: f437166bc5206b4145d6508aa2131ec94d6eca95
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: e7302304fe6c44b0143d7f12ec272d597b313fdd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244891"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492410"
 ---
-# <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu lambda (Visual Basic)
+# <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu Lambda (Visual Basic)
 A *výraz lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda je možné bez ohledu na typ delegáta je platný.  
   
 ### <a name="to-create-a-single-line-lambda-expression-function"></a>Vytvořit funkci výraz lambda jednořádkového  
@@ -104,12 +104,12 @@ A *výraz lambda* je funkce nebo podprogramu, který nemá název. Výraz lambda
   
  [!code-vb[VbVbalrLambdas#11](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/how-to-create-a-lambda-expression_11.vb)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Linq.Enumerable>  
- [Výrazy lambda](./lambda-expressions.md)  
- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)  
- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)  
- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)  
- [Postupy: předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)  
- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Linq.Enumerable>
+- [Výrazy lambda](./lambda-expressions.md)
+- [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
+- [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

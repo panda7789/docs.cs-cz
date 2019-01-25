@@ -2,12 +2,12 @@
 title: 'Postupy: Vytvoření vlastní šablony aktivity'
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
-ms.openlocfilehash: 87acf0d084154c9c3e5cbc97da4af9821709f0a5
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c90721676fc5b77704ee86bcd5e98c99e3af6683
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53131440"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512707"
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: Vytvoření vlastní šablony aktivity
 
@@ -19,7 +19,7 @@ Vlastní aktivita šablony slouží k přizpůsobení konfigurace aktivit, včet
 
 ## <a name="to-create-a-template-for-the-delay-activity"></a>Vytvoření šablony aktivity Delay
 
-1.  Spusťte sadu Visual Studio 2010.
+1.  Start Visual Studio 2010.
 
 2.  Na **souboru** nabídky, přejděte k **nový**a pak vyberte **projektu**.
 
@@ -124,7 +124,7 @@ namespace DelayActivityTemplate
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Activities.Presentation.IActivityTemplateFactory>
 - [Přizpůsobení prostředí pro návrh pracovního postupu](../../../docs/framework/windows-workflow-foundation/customizing-the-workflow-design-experience.md)

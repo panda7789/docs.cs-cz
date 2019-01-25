@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fba81500749a16a59405edaaa2ee1d12d86229f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd3ccbe2b6b33e873bdb647987b38aeef74c1b2c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33461708"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552486"
 ---
 # <a name="icorprofilerinfo4getiltonativemapping2-method"></a>ICorProfilerInfo4::GetILToNativeMapping2 – metoda
-Získá mapu od společnosti Microsoft (MSIL intermediate language) posune do nativní posunutí pro kód obsažené ve verzi překompilovat JIT zadanou funkci.  
+Získá mapování z Microsoft intermediate language (MSIL) kompenzuje do nativních posunů pro kód obsažený ve verzi překompilován JIT zadanou funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetILToNativeMapping(
   
 #### <a name="parameters"></a>Parametry  
  `functionId`  
- [v] ID funkce, která obsahuje kód.  
+ [in] ID funkce, která obsahuje kód.  
   
  `pReJitId`  
- [v] Identita překompilovat JIT funkce. Identita musí být nula v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+ [in] Identita funkce překompilován JIT. Identita musí být nulová v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
  `cMap`  
- [v] Maximální velikost `map` pole.  
+ [in] Maximální velikost `map` pole.  
   
  `pcMap`  
- [out] Celkový počet dostupných cor_debug_il_to_native_map – struktury.  
+ [out] Celkový počet struktur cor_debug_il_to_native_map – k dispozici.  
   
  `map`  
- [out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, z nichž každý určuje posunutí. Po `GetILToNativeMapping2` metoda vrátí `map` bude obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.  
+ [out] Pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, z nichž každý určuje posunutí. Po `GetILToNativeMapping2` vrátí metoda `map` bude obsahovat některé nebo všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetILToNativeMapping2` je podobná [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metoda, s tím rozdílem, že bude možné profileru zadat ID Rekompilované funkce v budoucnosti uvolní.  
+ `GetILToNativeMapping2` se podobá [icorprofilerinfo::getiltonativemapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) metody, s tím rozdílem, že bude možné profiler k určení ID překompilovanou funkce v budoucích verzí.  
   
 > [!NOTE]
->  [Icorprofilerfunctioncontrol::setilinstrumentedcodemap –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setilinstrumentedcodemap-method.md) metoda není implementována v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], takže funkce, které byly překompilovat JIT nemůže mít IL nativní mapování, která se liší od původně kompilované funkce. Jako takový `GetILToNativeMapping2` nejde volat s nenulovou překompilovat JIT ID v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+>  [Icorprofilerfunctioncontrol::setilinstrumentedcodemap –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setilinstrumentedcodemap-method.md) metoda není implementovaná v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], takže se funkce, které byly překompilován JIT nemůže mít IL na nativní mapování, která se liší od původně zkompilované funkce. V důsledku toho `GetILToNativeMapping2` nelze volat s nenulovou hodnotu ID překompilován JIT v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
- `GetILToNativeMapping2` Metoda vrátí pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. Chcete-li sdělit, že určitých rozsahů nativní pokyny odpovídají speciální oblasti kódu (například prologu), může mít položku v poli jeho `ilOffset` pole nastaveno na hodnotu [CorDebugIlToNativeMappingTypes](../../../../docs/framework/unmanaged-api/debugging/cordebugiltonativemappingtypes-enumeration.md) výčet.  
+ `GetILToNativeMapping2` Metoda vrátí pole `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. Chcete-li sdělit, že určité rozsahy nativní pokyny odpovídají speciální oblasti kódu (například prologu), může mít položku v poli jeho `ilOffset` nastaveno na hodnotu [cordebugiltonativemappingtypes –](../../../../docs/framework/unmanaged-api/debugging/cordebugiltonativemappingtypes-enumeration.md) výčet.  
   
- Po `GetILToNativeMapping2` vrátí, musíte ověřit, že `map` vyrovnávací paměť byla dostatečně velký pro obsahovat všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. K tomuto účelu porovnat hodnotu `cMap` s hodnotou `pcMap` parametr. Pokud `pcMap` hodnotu, pokud se násobí velikostí `COR_DEBUG_IL_TO_NATIVE_MAP` struktury, je větší než `cMap`, přidělit větší `map` vyrovnávací paměti, aktualizujte `cMap` s novou, větší velikost a volání `GetILToNativeMapping2` znovu.  
+ Po `GetILToNativeMapping2` vrátí, musíte ověřit, že `map` vyrovnávací paměť je dostatečně velký, aby obsahovala všechny `COR_DEBUG_IL_TO_NATIVE_MAP` struktury. K tomuto účelu porovnat hodnotu `cMap` s hodnotou `pcMap` parametru. Pokud `pcMap` hodnotu, pokud se násobí velikost `COR_DEBUG_IL_TO_NATIVE_MAP` strukturu, je větší než `cMap`, přidělte větší `map` vyrovnávací paměti, aktualizujte `cMap` nové, větší velikosti a volání `GetILToNativeMapping2` znovu.  
   
- Alternativně můžete nejdřív volat `GetILToNativeMapping2` s nulovou délkou `map` vyrovnávací paměti se získat velikost správné vyrovnávací paměti. Velikost vyrovnávací paměti pak můžete nastavit na hodnotu, vrátí se v `pcMap` a volání `GetILToNativeMapping2` znovu.  
+ Alternativně můžete nejprve volat `GetILToNativeMapping2` s nulovou délkou `map` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcMap` a volat `GetILToNativeMapping2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -76,8 +76,8 @@ HRESULT GetILToNativeMapping(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [GetILToNativeMapping – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)  
- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [GetILToNativeMapping – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)
+- [ICorProfilerInfo4 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

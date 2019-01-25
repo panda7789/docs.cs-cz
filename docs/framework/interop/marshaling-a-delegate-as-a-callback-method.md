@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 579bc56a538707fd19d6d089c7f3c0c0561ea9eb
-ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
+ms.openlocfilehash: 2aa999199ddf11a1a2db57b6f7b1dd198b4ea61d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49454418"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54529841"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>Zařazování delegáta jako metody zpětného volání
 Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává ukazatele na funkce. Delegát je třída, která může obsahovat odkaz na metodu a je ekvivalentní ukazatele na funkci zajišťující bezpečnost typů nebo zpětného volání funkce.  
@@ -52,7 +52,7 @@ Tato ukázka předvádí, jak předat delegáti nespravovaná funkce očekává 
  [!code-csharp[Conceptual.Interop.Marshaling#38](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.interop.marshaling/cs/callback.cs#38)]
  [!code-vb[Conceptual.Interop.Marshaling#38](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.interop.marshaling/vb/callback.vb#38)]  
   
-## <a name="see-also"></a>Viz také  
- [Různé ukázky zařazování](https://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70(v=vs.100))  
- [Datové typy vyvolání platformy](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))  
- [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)
+## <a name="see-also"></a>Viz také:
+- [Různé ukázky zařazování](https://msdn.microsoft.com/library/a915c948-54e9-4d0f-a525-95a77fd8ed70(v=vs.100))
+- [Datové typy vyvolání platformy](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))
+- [Vytváření prototypů ve spravovaném kódu](creating-prototypes-in-managed-code.md)

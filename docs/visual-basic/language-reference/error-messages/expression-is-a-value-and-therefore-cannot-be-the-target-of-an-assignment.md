@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30068
 ms.assetid: d65141e1-f31e-4ac5-a3b8-0b2e02a71ebf
-ms.openlocfilehash: dd5618bd0533f885a6aef8229b2d8cb1bc34c237
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b2c33cb9ba0479df5e69b6979a789253f9fae565
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590235"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54597330"
 ---
 # <a name="expression-is-a-value-and-therefore-cannot-be-the-target-of-an-assignment"></a>Výraz je hodnota, a proto nemůže být cílem přiřazení.
-Příkaz se pokusí přiřadit hodnotu výrazu. V době běhu můžete přiřadit hodnotu pouze pro zápis proměnnou, vlastnost nebo pole elementu. Následující příklad ilustruje, jak této chybě může dojít.  
+Příkaz se pokusí přiřadit hodnotu výrazu. Přiřadit hodnotu pouze pro zapisovatelné proměnná, vlastnost nebo prvku pole za běhu. Následující příklad ukazuje, jak k této chybě může dojít.  
   
 ```  
 Dim yesterday As Integer  
@@ -26,9 +26,9 @@ maximum = 50
 ' The preceding line is an ERROR because maximum is declared ReadOnly.  
 ```  
   
- Podobné příklady může použít k vlastnostem a prvků pole.  
+ Podobné příklady může použít k vlastnostem a prvky pole.  
   
- **Nepřímý přístup.** Nepřímý přístup prostřednictvím typ hodnoty můžete také vygenerovat tuto chybu. Vezměte v úvahu následující příklad kódu, který se pokouší nastavit hodnotu <xref:System.Drawing.Point> díky přístupu k nepřímo přes <xref:System.Windows.Forms.Control.Location%2A>.  
+ **Nepřímý přístup.** Tuto chybu můžete vygenerovat také nepřímý přístup prostřednictvím hodnotového typu. Zvažte následující příklad kódu, která se pokusí nastavit hodnotu <xref:System.Drawing.Point> díky přístupu nepřímo prostřednictvím <xref:System.Windows.Forms.Control.Location%2A>.  
   
 ```  
 ' Assume this code runs inside Form1.  
@@ -38,7 +38,7 @@ exitButton.Location.X = 140
 ' The preceding line is an ERROR because of no storage for Location.  
 ```  
   
- Poslední příkaz v předchozím příkladu selže, protože se tím vytvoří dočasný přidělení pro <xref:System.Drawing.Point> struktura vrácený <xref:System.Windows.Forms.Control.Location%2A> vlastnost. Struktura je typ hodnoty a strukturu dočasné nezůstanou zachovány po spuštění příkazu. Deklarování a použití proměnné pro vyřešení problému <xref:System.Windows.Forms.Control.Location%2A>, která vytvoří více trvalých přidělení pro <xref:System.Drawing.Point> struktura. Následující příklad ukazuje kód, který můžete nahradit poslední příkaz v předchozím příkladu.  
+ Poslední příkaz v předchozím příkladu se nezdaří, protože se vytvoří dočasný přidělení pro <xref:System.Drawing.Point> vrácené struktury <xref:System.Windows.Forms.Control.Location%2A> vlastnost. Struktura je hodnotový typ a strukturu dočasné není zachována po spuštění příkazu. Problém je vyřešen deklarování a použití proměnné pro <xref:System.Windows.Forms.Control.Location%2A>, vytváří trvalejší přidělení pro <xref:System.Drawing.Point> struktury. Následující příklad ukazuje kód, který můžete nahradit poslední příkaz v předchozím příkladu.  
   
 ```  
 Dim exitLocation as New System.Drawing.Point(140, exitButton.Location.Y)  
@@ -49,15 +49,15 @@ exitButton.Location = exitLocation
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
--   Pokud příkaz přiřazuje hodnotu výrazu, nahraďte výraz jedné proměnné s možností zápisu, vlastnost nebo pole elementu.  
+-   Pokud příkaz přiřazuje hodnotu výrazu, nahraďte výraz jeden zapisovatelný proměnná, vlastnost nebo pole elementu.  
   
--   Pokud se příkaz provede nepřímý přístup prostřednictvím typu hodnoty (obvykle struktura), vytvořte proměnnou pro uložení typ hodnoty.  
+-   Pokud příkaz vytváří nepřímý přístup prostřednictvím typu hodnoty (obvykle struktury), vytvořte proměnnou pro uchování hodnoty typu.  
   
--   Přiřaďte proměnnou strukturu odpovídající (nebo jiný typ hodnota).  
+-   Přiřaďte proměnné vhodnou strukturou (nebo jiný typ hodnoty).  
   
--   Použijte proměnnou pro přístup k vlastnosti ji přiřadit hodnotu.  
+-   Pro přístup k vlastnosti k ní přiřadit hodnotu, použijte proměnnou.  
   
-## <a name="see-also"></a>Viz také  
- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)
+## <a name="see-also"></a>Viz také:
+- [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+- [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)

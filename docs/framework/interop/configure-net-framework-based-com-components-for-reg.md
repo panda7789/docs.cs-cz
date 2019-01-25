@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework'
+title: 'Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d9df1aa781bd54468d2273a335b3fda7d701854d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 140af66c9ea08d16aa442824ff7333eeeadf5173
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519405"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54530693"
 ---
-# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework
+# <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace Bezregistrační aktivace komponent COM založené na platformě .NET
 Bezregistrační aktivace komponent využívajících rozhraní .NET Framework je jenom o něco složitější než pro komponenty modelu COM. Instalace vyžaduje dva manifesty:  
   
 -   Aplikace modelu COM musí mít aplikace manifest Win32 – vizuální styl k identifikaci spravované součásti.  
@@ -172,8 +172,8 @@ Bezregistrační aktivace komponent využívajících rozhraní .NET Framework j
   
      Opět `myresource.res` je název souboru prostředku, který obsahuje integrovaný prostředek.  
   
-## <a name="see-also"></a>Viz také  
- [Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)  
- [Požadavky pro zprostředkovatele komunikace s objekty COM bez registrace](https://msdn.microsoft.com/library/0c43bc57-eecf-4e6c-8114-490141cce4da(v=vs.100)))  
- [Konfigurace komponent COM pro aktivaci bez registrace](https://msdn.microsoft.com/library/bfe9b02f-d964-4784-960e-a1f94692fbfe(v=vs.100)))  
- [Bezregistrační aktivace. Na základě NET součásti: Návod](https://msdn.microsoft.com/library/ms973915.aspx)
+## <a name="see-also"></a>Viz také:
+- [Bezregistrační zprostředkovatel komunikace s objekty COM](registration-free-com-interop.md)
+- [Požadavky pro zprostředkovatele komunikace s objekty COM bez registrace](https://msdn.microsoft.com/library/0c43bc57-eecf-4e6c-8114-490141cce4da(v=vs.100)))
+- [Konfigurace komponent COM pro aktivaci bez registrace](https://msdn.microsoft.com/library/bfe9b02f-d964-4784-960e-a1f94692fbfe(v=vs.100)))
+- [Bezregistrační aktivace. Na základě NET součásti: Názorný postup](https://msdn.microsoft.com/library/ms973915.aspx)

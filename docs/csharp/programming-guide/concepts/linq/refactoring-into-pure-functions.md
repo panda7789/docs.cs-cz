@@ -2,12 +2,12 @@
 title: Refaktoring do čistých funkcí (C#)
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-ms.openlocfilehash: fcb396984d58b5601d278a860b272211e785dcfb
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 3e856c1e32d4b0dc16291e1b913e9a5cc19717c2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44185555"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497128"
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refaktoring do čistých funkcí (C#)
 
@@ -24,7 +24,7 @@ Důležitou součástí čistě funkčním transformacím je učit, jak Refaktor
   
  Jeden způsob, jak přechod do funkčního programování je Refaktorujte již existující kód k odstranění nepotřebných vedlejší účinky a externích závislostí. Tímto způsobem můžete vytvořit čistě funkce verze stávajícího kódu.  
   
- Toto téma popisuje čistě funkce je a co není. [Kurz: manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) kurz ukazuje, jak pracovat s dokumentu WordprocessingML a obsahuje dva příklady toho, jak refaktorace pomocí čisté funkce.  
+ Toto téma popisuje čistě funkce je a co není. [Kurzu: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) kurz ukazuje, jak pracovat s dokumentu WordprocessingML a obsahuje dva příklady toho, jak refaktorace pomocí čisté funkce.  
   
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>Odstranění vedlejší účinky a externí závislosti  
  Následující příklady kontrastu dvě funkce čistě a čistě funkce.  
@@ -112,7 +112,7 @@ class Program
   
  Další informace najdete v tématu [přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)  
+- [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

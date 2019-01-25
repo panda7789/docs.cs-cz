@@ -2,12 +2,12 @@
 title: Povoluje se zdrojem dat pro LINQ Querying1
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-ms.openlocfilehash: 1aa3a22028b0b3d7c705076a3e16379e09323271
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: d3faeb15c5c8deedec3c3347c6317cac872224f3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122694"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54515716"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Povolení zdroje dat pro dotazy LINQ
 Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pro libovolný zdroj dat, aby se dalo dotazovat v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] vzor. Zdrojem dat může být kromě jiného například datová struktura, webová služba, systém souborů nebo databáze. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Vzor usnadňuje klientům dotazování na zdroj dat, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování je povoleno, protože syntaxe a vzor dotazu se nezmění. Způsoby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] je možné rozšířit na tyto data zdroje patří následující:  
@@ -39,10 +39,10 @@ Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbte
   
  Komplexní `IQueryable` zprostředkovatele, například [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] poskytovatele, může překládat úplné [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy na výrazový dotazovací jazyk, jako je například SQL. Složitý zprostředkovatel je obecnější než méně složitý zprostředkovatel, protože je v dotazu schopen zpracovávat širší paletu otázek. Rovněž má otevřený systém typů, a proto musí obsahovat rozsáhlou infrastrukturu k mapování typů definovaných uživatelem. Vývoj složitého zprostředkovatele vyžaduje značné úsilí.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- <xref:System.Linq.IQueryable%601>  
-- <xref:System.Collections.Generic.IEnumerable%601>  
-- <xref:System.Linq.Enumerable>  
-- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+- <xref:System.Linq.IQueryable%601>
+- <xref:System.Collections.Generic.IEnumerable%601>
+- <xref:System.Linq.Enumerable>
+- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)

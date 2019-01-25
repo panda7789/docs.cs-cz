@@ -2,12 +2,12 @@
 title: Přeskočit (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: e2139412-8ea4-451b-8f10-91af18dfa3ec
-ms.openlocfilehash: 321f6c5ae62ce21249ae4c1081b8e98427bc3df2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 467329f74304b64c7fc7ada2920751aba744f76e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500739"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54637635"
 ---
 # <a name="skip-entity-sql"></a>Přeskočit (Entity SQL)
 Fyzické stránkování můžete provádět pomocí dílčí klauzuli SKIP v klauzuli ORDER by. SKIP nelze použít samostatně z klauzule ORDER BY.  
@@ -35,8 +35,8 @@ Fyzické stránkování můžete provádět pomocí dílčí klauzuli SKIP v kla
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] Dotazování v [to](https://msdn.microsoft.com/library/bb738702\(v=vs.100\).aspx#_ESQL) příklad používá operátor klauzule ORDER BY s PŘESKOČENÍM k určení pořadí řazení použít u objektů vrácených v příkazu SELECT.  
   
-## <a name="see-also"></a>Viz také  
- [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)  
- [Postupy: výsledky stránky pomocí dotazu](https://msdn.microsoft.com/library/ffc0f920-e7de-42e0-9b12-ef356421d030)  
- [Stránkování](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)  
- [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+## <a name="see-also"></a>Viz také:
+- [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)
+- [Postupy: Stránkovat výsledky dotazu](https://msdn.microsoft.com/library/ffc0f920-e7de-42e0-9b12-ef356421d030)
+- [Stránkování](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)
+- [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)

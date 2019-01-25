@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: fe797885a9063a19efc3f35da9cdf62d7f271693
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 2af8fe5557e452db1ef3a72de35582b18117cc30
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53153381"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54553734"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Průvodce: Zpracování událostí (Visual Basic)
 Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: Deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
@@ -116,6 +116,6 @@ Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. Prvn�
 > [!NOTE]
 >  Lze deklarovat libovolný počet `WithEvents` proměnné, jako je třeba, ale pole `WithEvents` proměnné nejsou podporovány.  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
- [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
+## <a name="see-also"></a>Viz také:
+- [Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)
+- [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: 0399c89e926611b076072e6475c52bf31ae83637
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: c0e65a6286ef4756bba305d41dce6ef2a85401dd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155181"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54516128"
 ---
 # <a name="collection-types-in-data-contracts"></a>Typy kolekcí v kontraktech dat
 A *kolekce* je seznam položek určitého typu. V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], tyto seznamy můžou být vyjádřeny pomocí pole nebo celou řadu dalších typů (obecný seznam, obecný <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, nebo <xref:System.Collections.ArrayList>). Například kolekce může obsahovat seznam adres pro daného zákazníka. Těchto kolekcí se nazývají *seznamu kolekcí*, bez ohledu na jejich skutečné typu.  
@@ -395,5 +395,5 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 ## <a name="collections-and-object-reference-preservation"></a>Kolekce a zachovávání s rozlišením odkaz na objekt  
  Serializátor functions v režimu, ve kterém zachová odkazy na objekty, při zachování odkaz na objekt platí také pro kolekce. Konkrétně identity objektu je zachována kvůli celé kolekce a jednotlivé položky obsažené v kolekcích. Pro slovníky se zachovají identity objektu pro objekty dvojice klíč/hodnota a jednotlivé objekty, klíč a hodnotu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.Serialization.CollectionDataContractAttribute>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Runtime.Serialization.CollectionDataContractAttribute>

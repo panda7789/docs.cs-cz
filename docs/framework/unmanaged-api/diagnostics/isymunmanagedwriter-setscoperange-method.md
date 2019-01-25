@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 495089ca33df3b36656da149da45019c30b81d39
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: da50542d9f57e008b31ce2e6ed9698df1275d5eb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33428723"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54618804"
 ---
 # <a name="isymunmanagedwritersetscoperange-method"></a>ISymUnmanagedWriter::SetScopeRange – metoda
-Definuje rozsah pro zadaný obor lexikální posunu. Obor se stane nový aktuální obor a se posune do zásobníku oborů. Obory musí tvořit hierarchie. Položky na stejné úrovni nemohou překrývat.  
+Definuje rozsah pro zadaný obor lexikální posunu. Obor se stane novou aktuální obor a vloženo do zásobníku oborů. Obory musí tvořit hierarchii. Na stejné úrovni nemohou překrývat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT OpenScope(
   
 #### <a name="parameters"></a>Parametry  
  `scopeId`  
- [v] Identifikátor oboru pro obor.  
+ [in] Identifikátor rozsahu pro obor.  
   
  `startOffset`  
- [v] Posun v bajtech je první instrukce v oboru lexikální od začátku metody.  
+ [in] Posun v bajtech, první instrukce v lexikálním rozsahu od začátku metody.  
   
  `endOffset`  
- [v] Posun v bajtech je poslední instrukce v oboru lexikální od začátku metody.  
+ [in] Posun v bajtech, která je poslední instrukce v lexikálním rozsahu od začátku metody.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- [Isymunmanagedwriter::openscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí identifikátor neprůhledného obor, který lze použít s `ISymUnmanagedWriter::SetScopeRange` k definování oboru je počáteční a koncové posunutí později. V takovém případě posunutí předaný `ISymUnmanagedWriter::OpenScope` a [isymunmanagedwriter::closescope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closescope-method.md) jsou ignorovány. Identifikátory obor platí pouze v aktuální metoda.  
+ [Isymunmanagedwriter::openscope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openscope-method.md) vrátí neprůhledný oboru identifikátor, který lze použít s `ISymUnmanagedWriter::SetScopeRange` a určete obor je počáteční a koncové posunutí později. V takovém případě posunutí předán `ISymUnmanagedWriter::OpenScope` a [isymunmanagedwriter::closescope –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closescope-method.md) jsou ignorovány. Identifikátory obor platí pouze v aktuální metodě.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  
   
-## <a name="see-also"></a>Viz také  
- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

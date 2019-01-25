@@ -2,12 +2,12 @@
 title: ServiceSecurityAuditBehavior
 ms.date: 03/30/2017
 ms.assetid: 2c5809e7-5364-44ce-bc71-848be4672e2a
-ms.openlocfilehash: e8b24877c2d76a3f2f90c27ae83374c7bca1328b
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: dc48b8742c60714720be3cf4b22ba672f73c720a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50181157"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54570223"
 ---
 # <a name="servicesecurityauditbehavior"></a>ServiceSecurityAuditBehavior
 ServiceSecurityAuditBehavior  
@@ -33,28 +33,28 @@ class ServiceSecurityAuditBehavior : Behavior
 ### <a name="auditloglocation"></a>AuditLogLocation  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Umístění auditovacího protokolu.  
   
 ### <a name="messageauthenticationauditlevel"></a>MessageAuthenticationAuditLevel  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Typ úrovně ověření zprávy, která se používá k zaznamenání událostí auditu.  
   
 ### <a name="serviceauthorizationauditlevel"></a>ServiceAuthorizationAuditLevel  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Typy událostí autorizace, které jsou zaznamenány v protokolu auditu.  
   
 ### <a name="suppressauditfailure"></a>SuppressAuditFailure  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Logická hodnota, která určuje vlastnosti pro zamlčené chyby psaní do auditovacího protokolu.  
   
@@ -64,5 +64,5 @@ class ServiceSecurityAuditBehavior : Behavior
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>

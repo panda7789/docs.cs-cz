@@ -1,18 +1,18 @@
 ---
-title: Neshody typů SQL a CLR
+title: SQL-CLR Type Mismatches
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0a90c33f-7ed7-4501-ad5f-6224c5da8e9b
-ms.openlocfilehash: 61731c4d9590892bdae8e90717d77b4dddf1d71d
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 0abb1bd25c40ba55806fe80b39db1ac418f3f308
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53147616"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54700946"
 ---
-# <a name="sql-clr-type-mismatches"></a>Neshody typů SQL a CLR
+# <a name="sql-clr-type-mismatches"></a>SQL-CLR Type Mismatches
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] automatizuje většinu překlad mezi objektový model a systému SQL Server. Nicméně některé situace zabránit přesné překladu. Tyto klíče neshody mezi běžné typy language runtime (CLR) a typy databáze systému SQL Server jsou shrnuté v následujících částech. Můžete najít další podrobnosti o mapování určitého typu a funkce překladu na [mapování typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) a [datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md).  
   
 ## <a name="data-types"></a>Datové typy  
@@ -293,5 +293,5 @@ Where Col1 + Col2 > 4
   
  Kromě menší významové rozdíly je důležité vzít v úvahu dopad na výkon při přecházení mezi mezi SQL serverem a systémy typ CLR. Pro velké datové sady můžete tyto problémy s výkonem zjistit, zda je aplikace nasadit.  
   
-## <a name="see-also"></a>Viz také  
- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+## <a name="see-also"></a>Viz také:
+- [Základní informace](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

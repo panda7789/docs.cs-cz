@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid'
+title: 'Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,33 +12,33 @@ helpviewer_keywords:
 - columns [Windows Forms], deleting in data grids
 - DataGrid control [Windows Forms], hiding columns
 ms.assetid: bcd0dd96-6687-4c48-b0e1-d5287b93ac91
-ms.openlocfilehash: 6541ffff1149e5df13c43ee392ffa8b221c8407d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 635fbc112a241c4c8b17d2b49c22042c6bd59a21
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33534551"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54653941"
 ---
-# <a name="how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control"></a>Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid
+# <a name="how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control"></a>Postupy: Odstranit nebo skrytí sloupců v ovládacím prvku Windows Forms DataGrid
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Řízení nahrazuje a přidá funkce <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> řízení se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud si zvolíte. Další informace najdete v tématu [rozdíly mezi systému Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Prostřednictvím kódu programu můžete odstranit nebo skrytí sloupců v modelu Windows Forms <xref:System.Windows.Forms.DataGrid> ovládacího prvku pomocí vlastnosti a metody <xref:System.Windows.Forms.GridColumnStylesCollection> a <xref:System.Windows.Forms.DataGridColumnStyle> objekty (které jsou členy <xref:System.Windows.Forms.DataGridTableStyle> třídy).  
+ Programově můžete odstranit nebo skrytí sloupců v modelu Windows Forms <xref:System.Windows.Forms.DataGrid> ovládacího prvku pomocí vlastnosti a metody <xref:System.Windows.Forms.GridColumnStylesCollection> a <xref:System.Windows.Forms.DataGridColumnStyle> objekty (které jsou členy objektu <xref:System.Windows.Forms.DataGridTableStyle> třídy).  
   
- Odstraněné nebo skrytých sloupců stále existují ve zdroji dat je vázán k mřížce a stále je možné programově přistupovat. Právě již nejsou viditelné v objektu datagrid.  
+ Odstraněné nebo skryté sloupce stále existují ve zdroji dat je vázán na mřížky a i nadále přístupný prostřednictvím kódu programu. Stačí už nejsou viditelné v mřížce datagrid.  
   
 > [!NOTE]
->  Pokud vaše aplikace není přístup k určité sloupce dat, a nechcete zobrazovat v objektu datagrid, pak je pravděpodobně není potřeba zahrnout je do zdroje dat na prvním místě.  
+>  Pokud vaše aplikace není přístup k určité sloupce dat, a nechcete zobrazovat v mřížce datagrid, pak je pravděpodobně není nutné zahrnout je do zdroje dat na prvním místě.  
   
-### <a name="to-delete-a-column-from-the-datagrid-programmatically"></a>Chcete odstranit sloupec z objektu DataGrid prostřednictvím kódu programu  
+### <a name="to-delete-a-column-from-the-datagrid-programmatically"></a>Chcete-li odstranit sloupce z mřížky DataGrid prostřednictvím kódu programu  
   
-1.  V oblasti deklarace formuláře deklarovat novou instanci třídy <xref:System.Windows.Forms.DataGridTableStyle> třídy.  
+1.  V oblasti formuláře deklarace deklarovat novou instanci třídy <xref:System.Windows.Forms.DataGridTableStyle> třídy.  
   
-2.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A?displayProperty=nameWithType> do tabulky ve zdroji dat, který chcete použít styl pro vlastnost. Následující příklad používá <xref:System.Windows.Forms.DataGrid.DataMember%2A?displayProperty=nameWithType> vlastnosti, která předpokládá, že je již nastaven.  
+2.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A?displayProperty=nameWithType> vlastnost do tabulky ve zdroji dat, který chcete použít styl. V následujícím příkladu <xref:System.Windows.Forms.DataGrid.DataMember%2A?displayProperty=nameWithType> vlastnost, která předpokládá, že je již nastaven.  
   
-3.  Přidejte nové <xref:System.Windows.Forms.DataGridTableStyle> objekt, který má kolekce stylů tabulek v kolekci datagrid.  
+3.  Přidejte nové <xref:System.Windows.Forms.DataGridTableStyle> objekt kolekce stylů tabulek mřížce datagrid.  
   
-4.  Volání <xref:System.Windows.Forms.GridColumnStylesCollection.RemoveAt%2A> metodu <xref:System.Windows.Forms.DataGrid>na <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> kolekce, zadání index sloupce sloupce, který se odstranit.  
+4.  Volání <xref:System.Windows.Forms.GridColumnStylesCollection.RemoveAt%2A> metodu <xref:System.Windows.Forms.DataGrid>společnosti <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> kolekci index sloupce sloupce, který se odstranit zadání.  
   
     ```vb  
     ' Declare a new DataGridTableStyle in the  
@@ -77,15 +77,15 @@ ms.locfileid: "33534551"
     }  
     ```  
   
-### <a name="to-hide-a-column-in-the-datagrid-programmatically"></a>Skrytí sloupců v objektu DataGrid prostřednictvím kódu programu  
+### <a name="to-hide-a-column-in-the-datagrid-programmatically"></a>Chcete-li skrýt sloupec v mřížce DataGrid prostřednictvím kódu programu  
   
-1.  V oblasti deklarace formuláře deklarovat novou instanci třídy <xref:System.Windows.Forms.DataGridTableStyle> třídy.  
+1.  V oblasti formuláře deklarace deklarovat novou instanci třídy <xref:System.Windows.Forms.DataGridTableStyle> třídy.  
   
-2.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle> do tabulky ve zdroji dat, který chcete použít styl pro. Následující příklad kódu používá <xref:System.Windows.Forms.DataGrid.DataMember%2A?displayProperty=nameWithType> vlastnosti, která předpokládá, že je již nastaven.  
+2.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> vlastnost <xref:System.Windows.Forms.DataGridTableStyle> do tabulky ve zdroji dat, který chcete použít styl. Následující příklad kódu používá <xref:System.Windows.Forms.DataGrid.DataMember%2A?displayProperty=nameWithType> vlastnost, která předpokládá, že je již nastaven.  
   
-3.  Přidejte nové <xref:System.Windows.Forms.DataGridTableStyle> objekt, který má kolekce stylů tabulek v kolekci datagrid.  
+3.  Přidejte nové <xref:System.Windows.Forms.DataGridTableStyle> objekt kolekce stylů tabulek mřížce datagrid.  
   
-4.  Skrýt sloupce nastavením jeho `Width` vlastnost na hodnotu 0, zadání index sloupce sloupce, který se skrýt.  
+4.  Skrýt sloupec tak, že nastavíte její `Width` vlastnost na hodnotu 0, určení sloupcový index sloupce, který se skrýt.  
   
     ```vb  
     ' Declare a new DataGridTableStyle in the  
@@ -124,6 +124,6 @@ ms.locfileid: "33534551"
     }  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)  
- [Postupy: Přidání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Změna zobrazených dat za běhu v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/change-displayed-data-at-run-time-wf-datagrid-control.md)
+- [Postupy: Přidávání tabulek a sloupců do ovládacího prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)

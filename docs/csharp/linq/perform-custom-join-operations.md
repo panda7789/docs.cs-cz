@@ -1,14 +1,14 @@
 ---
 title: Provádění vlastních operací spojování (LINQ v JAZYKU C#)
 description: Zjistěte, jak k provádění vlastních operací spojování LINQ v jazyce C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: 56a2a4a5-7299-497d-b3c3-23c848678911
-ms.openlocfilehash: a0e08396c006f68949357c50a28b3b0982f0dd83
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 7051007c67bd64cd11ede2f4d5352ce3d497255f
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217422"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857863"
 ---
 # <a name="perform-custom-join-operations"></a>Provádění vlastních operací spojování
 
@@ -43,6 +43,6 @@ V následujícím příkladu musí dotaz spojení dvou sekvencí založené na p
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ (Language Integrated Query)](index.md)  
-- [join – klauzule](../language-reference/keywords/join-clause.md)  
-- [Řazení výsledků klauzule join](order-the-results-of-a-join-clause.md)  
+- [LINQ (Language Integrated Query)](index.md)
+- [join – klauzule](../language-reference/keywords/join-clause.md)
+- [Řazení výsledků klauzule join](order-the-results-of-a-join-clause.md)

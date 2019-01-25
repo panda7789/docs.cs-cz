@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 06c918de10f86442b10b0d85e6554bb1af0a8928
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7859beae572f05863fb24f0257aae8b0ec16bbcf
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33429608"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640872"
 ---
 # <a name="iassemblynamegetname-method"></a>IAssemblyName::GetName – metoda
-Získá název sestavení odkazuje toto jednoduché, nezašifrované [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
+Získá název jednoduchý a nešifrované sestavení odkazuje situace [iassemblyname –](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +38,17 @@ HRESULT GetName (
   
 #### <a name="parameters"></a>Parametry  
  `lpcwBuffer`  
- [ve out] Velikost `pwzName` v široké znaky, včetně null ukončovací znak.  
+ [out v] Velikost `pwzName` v široké znaky, jako je znak, který ukončovací znak null.  
   
  `pwzName`  
- [out] Vyrovnávací paměť pro název odkazované sestavení.  
+ [out] Vyrovnávací paměti, která bude uchovávat název odkazovaného sestavení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Fusion.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IAssemblyName – rozhraní](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: '&lt;shadowCopyVerifyByTimestamp&gt; – Element'
+title: '&lt;shadowCopyVerifyByTimestamp&gt; Element'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <shadowCopyTimeStampVerification> element
@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a97c8708c7d57d1a8f5335ef19e8e74cb6487276
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 9a37e41aa653fb3cd5990b75f3c5467a88660113
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610902"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54622257"
 ---
-# <a name="ltshadowcopyverifybytimestampgt-element"></a>&lt;shadowCopyVerifyByTimestamp&gt; – Element
+# <a name="ltshadowcopyverifybytimestampgt-element"></a>&lt;shadowCopyVerifyByTimestamp&gt; Element
 Určuje, zda stínové kopírování sestavení použije výchozí chování při spouštění zavedený [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], nebo se vrátí do chování při spuštění z dřívějších verzích rozhraní .NET Framework.  
   
  \<Konfigurace > – Element  
 \<modul runtime > – Element  
-\<shadowCopyVerifyByTimestamp > – Element  
+\<shadowCopyVerifyByTimestamp> Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,7 +67,7 @@ Určuje, zda stínové kopírování sestavení použije výchozí chování př
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
-- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
-- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+## <a name="see-also"></a>Viz také:
+- [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [Stínové kopírování sestavení](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)

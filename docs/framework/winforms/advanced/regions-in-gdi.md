@@ -9,37 +9,37 @@ helpviewer_keywords:
 - drawing [Windows Forms], regions
 - regions
 ms.assetid: 52184f9b-16dd-4bbd-85be-029112644ceb
-ms.openlocfilehash: dc7f10571163d447802c90cd61d71b11d0e695d4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae4931a464421639112c8f369bd27a45550fe7f8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524580"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54708269"
 ---
 # <a name="regions-in-gdi"></a>Oblasti v rozhraní GDI+
-Oblast je část v oblasti výstupní zařízení. Oblasti může být jednoduchý (jeden rámeček) nebo komplexní (kombinaci mnohoúhelníky a uzavřené křivky). Následující obrázek znázorňuje dvou oblastí: jeden zkonstruován z obdélníku a dalších vytvořený z cesty.  
+Oblast je část oblasti zobrazení výstupního zařízení. Oblasti mohou být jednoduché (jeden obdélník) nebo komplexní (kombinace mnohoúhelníků a uzavřené křivky). Následující obrázek znázorňuje dvě oblasti: jeden z obdélník, který je druhou vytvářejí na základě cesty.  
   
- ![Oblasti](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art27.gif "AboutGdip02_Art27")  
+ ![Regions](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art27.gif "AboutGdip02_Art27")  
   
 ## <a name="using-regions"></a>Použití oblastí  
- Oblasti se často používají pro výstřižek a testování průchodu. Výstřižek zahrnuje omezení kreslení v určité oblasti zobrazované oblasti, obvykle část, kterou je třeba aktualizovat. Testování přístupů zahrnuje kontroly k určení, zda kurzor se nachází v určité oblasti obrazovky při stisknutí tlačítka myši.  
+ Oblasti se často používají pro oříznutí a testování průchodu. Výstřižek zahrnuje omezení kreslení v určité oblasti zobrazované oblasti, obvykle část, kterou je potřeba aktualizovat. Přístupů testování zahrnuje kontroly k určení, zda ukazatel je v určité oblasti obrazovky, když se stiskne tlačítko myši.  
   
- Můžete vytvořit oblasti, obdélníku nebo cestu. Můžete také vytvořit komplexní oblasti kombinací existující oblasti. <xref:System.Drawing.Region> Třída poskytuje následující metody pro kombinování oblastí: <xref:System.Drawing.Region.Intersect%2A>, <xref:System.Drawing.Region.Union%2A>, <xref:System.Drawing.Region.Xor%2A>, <xref:System.Drawing.Region.Exclude%2A>, a <xref:System.Drawing.Region.Complement%2A>.  
+ Můžete vytvořit oblasti, obdélníku nebo cestu. Můžete také vytvořit komplexní oblasti kombinací stávajících oblastí. <xref:System.Drawing.Region> Třída poskytuje následující metody pro kombinování oblastí: <xref:System.Drawing.Region.Intersect%2A>, <xref:System.Drawing.Region.Union%2A>, <xref:System.Drawing.Region.Xor%2A>, <xref:System.Drawing.Region.Exclude%2A>, a <xref:System.Drawing.Region.Complement%2A>.  
   
- Průnik dvou oblastí je sada všech bodů, které patří do obou oblastí. Sjednocení je sada všech bodů patřící do jeden nebo druhý nebo obou oblastí. Doplňkovým oblasti je sada všech bodů, které nejsou v oblasti. Následující obrázek znázorňuje průsečíkem a sjednocení dvou oblastí vidět na předchozím obrázku.  
+ Průnik dvou oblastech je sada všech bodů, které patří do obou oblastech. Sjednocení je sada všech bodů, které patří do jedné nebo druhé nebo obou oblastech. Doplněk oblast je sada všech bodů, které nejsou v oblasti. Následující obrázek znázorňuje průniku a sjednocení dvou oblastech je znázorněno na předchozím obrázku.  
   
- ![Oblasti](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art28.gif "AboutGdip02_Art28")  
+ ![Regions](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art28.gif "AboutGdip02_Art28")  
   
- <xref:System.Drawing.Region.Xor%2A> Metoda, použije na pár oblastí, vytváří oblasti, která obsahuje všechny body, které patří do jedné oblasti nebo dalších, ale ne obojí. <xref:System.Drawing.Region.Exclude%2A> Metoda, použije na pár oblastí, vytváří oblasti, která obsahuje všechny body v první oblasti, které nejsou v druhé oblasti. Následující obrázek znázorňuje oblastí, které vyplývají z <xref:System.Drawing.Region.Xor%2A> a <xref:System.Drawing.Region.Exclude%2A> metody dvou oblastí zobrazí na začátku tohoto tématu.  
+ <xref:System.Drawing.Region.Xor%2A> Metoda použitá pro dvojice oblasti, vytvoří oblast, která obsahuje všechny body, které patří do jedné oblasti nebo druhé, ale ne obojí. <xref:System.Drawing.Region.Exclude%2A> Metoda použitá pro dvojice oblasti, vytvoří oblast, která obsahuje všechny body v první oblasti, které nejsou v druhé oblasti. Následující obrázek znázorňuje oblastí, které jsou výsledkem použití <xref:System.Drawing.Region.Xor%2A> a <xref:System.Drawing.Region.Exclude%2A> metody do dvou oblastí, které jsou uvedené na začátku tohoto tématu.  
   
- ![Oblasti](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art29.gif "AboutGdip02_Art29")  
+ ![Regions](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art29.gif "AboutGdip02_Art29")  
   
- K vyplnění oblasti, budete potřebovat <xref:System.Drawing.Graphics> objekt, <xref:System.Drawing.Brush> objekt a <xref:System.Drawing.Region> objektu. <xref:System.Drawing.Graphics> Objekt poskytuje <xref:System.Drawing.Graphics.FillRegion%2A> metody a <xref:System.Drawing.Brush> objekt uloží atributy výplně, jako je například barvu nebo vzorek. Následující příklad doplní oblast plnou barvou.  
+ K vyplnění oblasti, je nutné <xref:System.Drawing.Graphics> objektu, <xref:System.Drawing.Brush> objektu a <xref:System.Drawing.Region> objektu. <xref:System.Drawing.Graphics> Objekt, který poskytuje <xref:System.Drawing.Graphics.FillRegion%2A> metody a <xref:System.Drawing.Brush> ukládá atributy výplň, například barvu nebo vzorek. Následující příklad zkopíruje oblasti plnou barvou.  
   
  [!code-csharp[LinesCurvesAndShapes#61](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#61)]
  [!code-vb[LinesCurvesAndShapes#61](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#61)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Drawing.Region?displayProperty=nameWithType>  
- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
- [Použití oblastí](../../../../docs/framework/winforms/advanced/using-regions.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Drawing.Region?displayProperty=nameWithType>
+- [Čáry, křivky a obrazce](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)
+- [Použití oblastí](../../../../docs/framework/winforms/advanced/using-regions.md)

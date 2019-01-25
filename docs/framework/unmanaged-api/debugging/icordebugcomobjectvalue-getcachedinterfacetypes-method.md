@@ -15,15 +15,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: db1de215eaa0c0cc7021a119e54591caede76d3b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6d0d2c4af79a7d5a7123c5fe0ba043c2dd6302f5
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33417122"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54525804"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacetypes-method"></a>ICorDebugComObjectValue::GetCachedInterfaceTypes – metoda
-Poskytuje enumerátor pro typy rozhraní, že byla přetypovat nebo použít jako aktuální objekt.  
+Poskytuje enumerátor pro typy rozhraní, že byl přetypován na nebo použít jako aktuální objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetCachedInterfaceTypes(
   
 #### <a name="parameters"></a>Parametry  
  `bIInspectableOnly`  
- [v] Hodnotu, která určuje, zda metoda vrátí pouze [!INCLUDE[wrt](../../../../includes/wrt-md.md)] rozhraní (`IInspectable` rozhraní) nebo všech rozhraní COM mezipaměti obálka volatelná za běhu (RCW).  
+ [in] Hodnota, která určuje, zda metoda vrátí pouze [!INCLUDE[wrt](../../../../includes/wrt-md.md)] rozhraní (`IInspectable` rozhraní) nebo jen rozhraní modelu COM v mezipaměti obálka volatelná za běhu (RCW).  
   
  `ppInterfacesEnum`  
- [out] Ukazatel na adresu enumerátor ICorDebugTypeEnum, který poskytuje přístup k objektům ICorDebugType, které reprezentují typy v mezipaměti rozhraní filtrovaná podle `bIInspectableOnly`.  
+ [out] Ukazatel na adresu, která poskytuje přístup k objektům ICorDebugType, které představují typy z mezipaměti rozhraní čítače icordebugtypeenum – filtrovat podle `bIInspectableOnly`.  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +51,6 @@ HRESULT GetCachedInterfaceTypes(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugComObjectValue – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugComObjectValue – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugcomobjectvalue-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

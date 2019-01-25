@@ -2,12 +2,12 @@
 title: '&lt;netHttpsBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: ff122116-6042-4792-9f21-275b4f97a105
-ms.openlocfilehash: adcc53119c9928a9d2ad9ff850e8355dec69bf40
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: ef3e77e610230ea29d1ba410d38bfa2dade601b9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54148211"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54554254"
 ---
 # <a name="ltnethttpsbindinggt"></a>&lt;netHttpsBinding&gt;
 Představuje vazbu, která služby Windows Communication Foundation (WCF) můžete použít ke konfiguraci a zpřístupňují koncové body, které jsou schopné komunikovat přes protokol HTTPS. Při použití s duplexní kontrakt, se použije webové sokety, jinak se použije protokol HTTPS.  
@@ -75,7 +75,7 @@ Další prvek
 |`proxyAddress`|Identifikátor URI, který obsahuje adresu proxy serveru HTTP. Pokud `useSystemWebProxy` je nastavena na `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
 |`receiveTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace obdržení. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
 |`sendTimeout`|A <xref:System.TimeSpan> hodnotu, která určuje, časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší než nebo rovna hodnotě <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
-|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
+|`textEncoding`|Nastaví znakovou sadu kódování, které má být použito pro vysílání zpráv z vazby. Platné hodnoty patří:<br /><br /> -BigEndianUnicode: Kódování Unicode BigEndian.<br />-Unicode: 16bitové kódování.<br />-   UTF8: 8bitové kódování<br /><br /> Použije se UTF8. Tento atribut je typu <xref:System.Text.Encoding>.|  
 |`transferMode`|Platný <xref:System.ServiceModel.TransferMode> hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu na požadavku nebo odpovědi.|  
 |`useDefaultWebProxy`|Logická hodnota, která určuje, zda má být použita automaticky nakonfigurovaný proxy HTTP systému, pokud je k dispozici. Výchozí hodnota je `true`.|  
 |||  
@@ -91,7 +91,7 @@ Další prvek
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
+|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tento prvek obsahuje sadu standardních a vlastních vazeb.|  
   
 ## <a name="remarks"></a>Poznámky  
  NetHttpsBinding používá protokol HTTPS k přenosu pro odesílání zpráv. Při použití s duplexní kontrakt, použije se webové sokety.  Při použití s kontraktem požadavek odpověď, kterou NetHttpsBinding se chovají jako BasicHttpsBinding pomocí binárního kodéru.  
@@ -172,12 +172,12 @@ Další prvek
   
  Další informace o výchozí konfigurace a nameless vazby a chování najdete v tématu [zjednodušená konfigurace](../../../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.Binding>  
- <xref:System.ServiceModel.Channels.BindingElement>  
- <xref:System.ServiceModel.BasicHttpBinding>  
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
- [Vazby](../../../../../docs/framework/wcf/bindings.md)  
- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.Binding>
+- <xref:System.ServiceModel.Channels.BindingElement>
+- <xref:System.ServiceModel.BasicHttpBinding>
+- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
+- [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

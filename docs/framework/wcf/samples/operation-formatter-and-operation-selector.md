@@ -2,12 +2,12 @@
 title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: a814de7433f2d06491245dc1d6e6e637b514118a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 5261c082f748877505701221668b61bf7097ef06
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070889"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54661253"
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
 Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu z co WCF očekává, že body rozšiřitelnosti Windows Communication Foundation (WCF). Ve výchozím nastavení, formátování WCF očekávat parametry metody mají být zahrnuty v části `soap:body` elementu. Vzorek ukazuje, jak implementovat vlastní operace formátování, které místo toho analyzuje data parametrů z řetězce dotazu HTTP GET a volá metody pomocí tato data.  
@@ -53,7 +53,7 @@ Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu 
   
  `SelectOperation` Metoda přijímá příchozí zprávy a vyhledá `Via` identifikátor URI ve vlastnostech zprávy. Extrahuje příponu názvu operace z identifikátoru URI, vyhledá a získat tak název operace, které zpráva by měla být odesláno do interní tabulku a vrátí název této operace.  
   
-### <a name="enablehttpgetrequestsbehavior-class"></a>Třída EnableHttpGetRequestsBehavior  
+### <a name="enablehttpgetrequestsbehavior-class"></a>EnableHttpGetRequestsBehavior Class  
  `UriPathSuffixOperationSelector` Komponenty lze nastavit programově nebo prostřednictvím chování koncového bodu. Ukázka implementuje `EnableHttpGetRequestsBehavior` chování, které je určeno v konfiguračním souboru aplikace služby.  
   
  Na serveru:  
@@ -178,4 +178,4 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:

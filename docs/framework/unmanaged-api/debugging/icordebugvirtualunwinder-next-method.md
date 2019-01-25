@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 790e0426-e5cd-49fd-a792-f8c8635d72fe
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a4bacbd9ef11f6f6cb6d9952290c00f1b8ce50aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6b6b7078db058150ec39bcf82e6984a1949e7cd
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33423426"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54507132"
 ---
 # <a name="icordebugvirtualunwindernext-method"></a>ICorDebugVirtualUnwinder::Next – metoda
 Přejde k kontextu volajícího.  
@@ -24,18 +24,18 @@ HRESULT Next();
  Žádné  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud došlo k chybě unwind úspěšně, nebo `CORDBG_S_AT_END_OF_STACK` Pokud unwind nemůže být dokončena, protože nejsou k dispozici žádné další rámce.  
+ `S_OK` Pokud unwind proběhlo úspěšně, nebo `CORDBG_S_AT_END_OF_STACK` Pokud unwind nelze dokončit, protože nejsou žádné další rámce.  
   
- Pokud dojde při selhání je vrácen HRESULT ICorDebug rozhraní API vrátí `CORDBG_E_DATA_TARGET_ERROR`.  
+ Pokud se vrátí selhání HRESULT je vrácena, icordebug – rozhraní API `CORDBG_E_DATA_TARGET_ERROR`.  
   
 ## <a name="remarks"></a>Poznámky  
- Walkera zásobníku se ujistěte, že umožňuje postup směrem vpřed, takže to nakonec volání `Next` vrátí dojde při selhání HRESULT nebo `CORDBG_S_AT_END_OF_STACK`. Vrácení `S_OK` po neomezenou dobu může způsobit nekonečné smyčce.  
+ Zásobníkem byste se ujistit, že je postup směrem vpřed, takže to nakonec volání `Next` vrátí neúspěšného HRESULT nebo `CORDBG_S_AT_END_OF_STACK`. Vrací `S_OK` po neomezenou dobu, může způsobit nekonečnou smyčku.  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -43,6 +43,6 @@ HRESULT Next();
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugMemoryBuffer – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugMemoryBuffer – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

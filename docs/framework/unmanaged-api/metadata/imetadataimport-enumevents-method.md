@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 608b4a7d147124ede60e9d81f91600dfdaad0a65
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f205615db29878bcfe936e88cab26c3d5a8e3562
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446493"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54514523"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents – metoda
-Vytvoří výčet událostí definice tokeny pro zadaný token TypeDef.  
+Vytvoří výčet tokeny definice události pro konkrétní token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,16 +41,16 @@ HRESULT EnumEvents (
   
 #### <a name="parameters"></a>Parametry  
  `phEnum`  
- [ve out] Ukazatel na enumerátor.  
+ [out v] Ukazatel na enumerátor.  
   
  `td`  
- [v] Token TypeDef, jejichž definice událostí jsou výčet.  
+ [in] Token TypeDef jehož definice událostí jsou pro provedení výčtu.  
   
  `rEvents`  
  [out] Pole vrácené události.  
   
  `cMax`  
- [v] Maximální velikost `rEvents` pole.  
+ [in] Maximální velikost `rEvents` pole.  
   
  `pcEvents`  
  [out] Skutečný počet událostí vrácených v `rEvents`.  
@@ -59,18 +59,18 @@ HRESULT EnumEvents (
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumEvents` úspěšně vrácena.|  
-|`S_FALSE`|Nejsou k dispozici žádné události k zobrazení výčtu. V takovém případě `pcEvents` je nulová.|  
+|`S_OK`|`EnumEvents` bylo úspěšně vráceno.|  
+|`S_FALSE`|Nejsou žádné události k vytvoření výčtu. V takovém případě `pcEvents` je nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataImport – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

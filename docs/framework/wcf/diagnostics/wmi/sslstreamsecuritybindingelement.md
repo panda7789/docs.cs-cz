@@ -2,12 +2,12 @@
 title: SslStreamSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 18130d50-8996-4257-9c60-bc457f8654d8
-ms.openlocfilehash: f75fa33be2857904417edb78757b3d40d6efdb59
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 44a1a2db3ed8c942bb0d7d815c594ad3aa3ff4cb
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192600"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54588732"
 ---
 # <a name="sslstreamsecuritybindingelement"></a>SslStreamSecurityBindingElement
 SslStreamSecurityBindingElement  
@@ -27,10 +27,10 @@ class SslStreamSecurityBindingElement : BindingElement
 ## <a name="properties"></a>Vlastnosti  
  Třída SslStreamSecurityBindingElement má následující vlastnost:  
   
-### <a name="requireclientcertificate"></a>requireClientCertificate  
+### <a name="requireclientcertificate"></a>RequireClientCertificate  
  Datový typ: boolean  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Určuje, zda je klientský certifikát pro tuto vazbu vyžadován.  
   
@@ -40,5 +40,5 @@ class SslStreamSecurityBindingElement : BindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>

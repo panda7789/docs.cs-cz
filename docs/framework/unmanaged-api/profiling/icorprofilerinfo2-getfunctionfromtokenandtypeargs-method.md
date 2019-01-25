@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 343cedcf26112f0f2bcc7943ea5ee9f302329a15
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 60a9ba78211cd02300cccc7d150bb08fa68b0604
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33457474"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54556178"
 ---
 # <a name="icorprofilerinfo2getfunctionfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs – metoda
-Získá `FunctionID` funkce pomocí Zadaná metadata token, který obsahuje třídy, a `ClassID` argumentů hodnoty libovolného typu.  
+Získá `FunctionID` funkce s použitím Zadaná metadata token, který obsahuje třídy, a `ClassID` hodnot ve všech argumentů typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
   
 #### <a name="parameters"></a>Parametry  
  `moduleID`  
- [v] ID modulu, ve kterém se funkce nachází.  
+ [in] ID modulu, ve kterém se funkce nachází.  
   
  `funcDef`  
- [v] `mdMethodDef` Metadata token, který odkazuje na funkci.  
+ [in] `mdMethodDef` Token metadat, který odkazuje na funkci.  
   
  `classId`  
- [v] ID třídy obsahující funkce.  
+ [in] ID funkce obsahující třídy.  
   
  `cTypeArgs`  
- [v] Počet typů parametrů pro danou funkci. Tato hodnota musí být nula pro neobecný funkce.  
+ [in] Počet parametrů typu pro danou funkci. Tato hodnota musí být nula pro funkce, který není obecný.  
   
  `typeArgs`  
- [v] Pole `ClassID` hodnoty, z nichž každý je argument funkce. Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastaven na hodnotu nula.  
+ [in] Pole `ClassID` hodnot, z nichž každý je argument funkce. Hodnota `typeArgs` může mít hodnotu NULL, pokud `cTypeArgs` je nastavena na hodnotu nula.  
   
  `pFunctionID`  
  [out] Ukazatel `FunctionID` zadané funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Volání `GetFunctionFromTokenAndTypeArgs` metoda s `mdMethodRef` metadata místo `mdMethodDef` metadata token může mít vést k neočekávaným výsledkům. Volající musí se překládat `mdMethodRef` k `mdMethodDef` při předání.  
+ Volání `GetFunctionFromTokenAndTypeArgs` metodou `mdMethodRef` metadat místo `mdMethodDef` tokenu metadat může mít nepředvídatelné výsledky. Volající musí se překládat `mdMethodRef` do `mdMethodDef` při předávání ho.  
   
- Pokud funkce dosud není načtený, volání `GetFunctionFromTokenAndTypeArgs` způsobí, že dojde k, načítání, což je nebezpečné operace v mnoha kontextech. Například voláním této metody během načítání moduly nebo typů může vést k nekonečné smyčce jako modul runtime, pokusí se načíst pravidelného věcí.  
+ Pokud funkce dosud není načtený, volání `GetFunctionFromTokenAndTypeArgs` způsobí, že načítání pravděpodobnější, což je nebezpečné operace v mnoha kontextech. Například volání této metody při načítání modulů nebo typy může vést k nekonečné smyčce jak modul runtime pokusí se načíst cyklicky věci.  
   
- Obecně platí, použití `GetFunctionFromTokenAndTypeArgs` se nedoporučuje. Pokud profilery zájem o události pro určitou funkci, měli uložit `ModuleID` a `mdMethodDef` této funkce a použití [ICorProfilerInfo2::getfunctioninfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) zkontrolujte zda danou `FunctionID` je který požadované funkce.  
+ Obecně platí, využívání `GetFunctionFromTokenAndTypeArgs` se nedoporučuje. Pokud profilery zajímají události pro určitou funkci, měli uložit `ModuleID` a `mdMethodDef` této funkce a použití [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) ke kontrole, jestli daný `FunctionID` je který požadované funkce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -74,6 +74,6 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2 – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

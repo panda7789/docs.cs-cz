@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 63d79b0c1fed0178f8463174fe981f250d6f6fb5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d66e010340d186eed2222ae2ba8cfb24b8e8d7b0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33430704"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54658569"
 ---
 # <a name="eclrevent-enumeration"></a>EClrEvent – výčet
 Najdete popis obvyklých událostí modulu runtime (CLR) jazyk, pro které hostitele může registrace zpětných volání.  
@@ -41,20 +41,20 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`Event_ClrDisabled`|Určuje závažné chybě CLR.|  
+|`Event_ClrDisabled`|Určuje závažná chyba CLR.|  
 |`Event_DomainUnload`|Určuje uvolnění konkrétní <xref:System.AppDomain>.|  
-|`Event_MDAFired`|Určuje, že byla vygenerována zprávu spravované ladění Assistant (MDA).|  
-|`Event_StackOverflow`|Určuje, že došlo k chybu přetečení zásobníku.|  
+|`Event_MDAFired`|Určuje, zda byl vytvořen zprávu spravované ladění Assistant (MDA).|  
+|`Event_StackOverflow`|Určuje, že došlo k chybě přetečení zásobníku.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hostitel může registrace zpětných volání pro všechny typy událostí popsaného `EClrEvent` voláním metod [iclroneventmanager –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md) rozhraní. Hostitel voláním získá ukazatel toto rozhraní [iclrcontrol::getclrmanager –](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) metoda.  
+ Hostitel může registrace zpětných volání pro všechny typy událostí popsal `EClrEvent` voláním metod [iclroneventmanager –](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md) rozhraní. Hostitel získá ukazatel na toto rozhraní voláním [iclrcontrol::getclrmanager –](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) metody.  
   
- `Event_CLRDisabled` a `Event_DomainUnload` události mohou být vyvolány více než jednou a z různých vláknech signál uvolnění nebo zakázání modulu CLR.  
+ `Event_CLRDisabled` a `Event_DomainUnload` události mohou být vyvolány více než jednou a z různých vláken, který signalizuje, že uvolnění z paměti nebo vypnutí CLR.  
   
- `Event_MDAFired` Událost se vyvolá vytvoření [mdainfo –](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) instance, který obsahuje podrobnosti zprávy (mda). Další informace o mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
+ `Event_MDAFired` Vyvolává událost vytvoření [mdainfo –](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) instance, která obsahuje podrobnosti o zprávě MDA. Další informace o mda najdete v tématu [diagnostikování chyb pomocí asistentů spravovaného ladění](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
@@ -62,7 +62,7 @@ typedef enum {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IActionOnCLREvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)  
- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [IActionOnCLREvent – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)
+- [ICLRControl – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)
+- [Výčty pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

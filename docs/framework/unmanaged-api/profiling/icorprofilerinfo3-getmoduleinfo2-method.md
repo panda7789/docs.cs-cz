@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d461f5dc85c7107e36fc1492ac88f37d42ba9f24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 64cea7fe9bb426ee9c2e98719d57e2370cab717c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33459463"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54640898"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2 – metoda
-Zadaný modul ID vrátí název souboru modulu, ID modulu nadřazené sestavení a bitová maska, která popisuje vlastnosti modulu.  
+Dané ID modulu vrátí název souboru modulu, ID modulu nadřazené sestavení a bitová maska, která popisuje vlastnosti modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,37 +43,37 @@ HRESULT GetModuleInfo2(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modulu, pro které budou načteny informace.  
+ [in] ID modulu, pro kterou budou načteny informace.  
   
  `ppBaseLoadAddress`  
- [out] Základní adresa, kdy je načíst modul.  
+ [out] Základní adresa, načtení modulu.  
   
  `cchName`  
- [v] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
+ [in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
   
  `pcchName`  
- [out] Ukazatel na celkový počet znaků názvu souboru modulu, která je vrácena.  
+ [out] Celkový počet znaků z modulů název souboru, který je vrácen ukazatel.  
   
  `szName`  
- [out] Zadaný volající široká znaková vyrovnávací paměti. Po návratu metody obsahuje tento vyrovnávací paměť názvu souboru modulu.  
+ [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu metody obsahuje tuto vyrovnávací paměť názvu souboru modulu.  
   
  `pAssemblyId`  
  [out] Ukazatel na ID nadřazeného sestavení modulu.  
   
  `pdwModuleFlags`  
- [out] Bitová maska hodnoty z [COR_PRF_MODULE_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) výčet, který zadejte vlastnosti modulu.  
+ [out] Bitová maska hodnot z [cor_prf_module_flags –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) výčet, který určit vlastnosti modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro dynamické moduly `szName` parametr metadata název modulu a základní adresa je 0 (nula). Název metadat je hodnota ve sloupci název z tabulky modulu uvnitř metadat. To je také k dispozici jako <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> vlastnost do spravovaného kódu a jako `szName` parametr [imetadataimport::getscopeprops –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) metodu pro metadata nespravovaného kódu klienta.  
+ Pro dynamické moduly `szName` parametr je název metadata modulu a základní adresa je 0 (nula). Název metadat je hodnota ve sloupci název z tabulky modulu uvnitř metadat. To je také vystavena jako <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> vlastnost do spravovaného kódu a jako `szName` parametr [imetadataimport::getscopeprops –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) metodu pro nespravované metadat klientský kód.  
   
- I když `GetModuleInfo2` metoda může být volána při ID modulu existuje, ID nadřazeného sestavení nebudete mít k dispozici, dokud neobdrží profileru [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.  
+ I když `GetModuleInfo2` metoda může být volána jako ID modulu existuje, ID nadřazeného sestavení nebude k dispozici, dokud profiler obdrží [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.  
   
- Když `GetModuleInfo2` vrátí, musíte ověřit, že `szName` vyrovnávací paměť byla dostatečně velký pro obsahovat úplný název souboru modulu. K tomuto účelu porovnat hodnotu, `pcchName` body s hodnotou `cchName` parametr. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělit větší `szName` vyrovnávací paměti, aktualizujte `cchName` s novou, větší velikost a volání `GetModuleInfo2` znovu.  
+ Když `GetModuleInfo2` vrátí, musíte ověřit, že `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název souboru modulu. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetModuleInfo2` znovu.  
   
- Alternativně můžete nejdřív volat `GetModuleInfo2` s nulovou délkou `szName` vyrovnávací paměti se získat velikost správné vyrovnávací paměti. Velikost vyrovnávací paměti pak můžete nastavit na hodnotu, vrátí se v `pcchName` a volání `GetModuleInfo2` znovu.  
+ Alternativně můžete nejprve volat `GetModuleInfo2` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetModuleInfo2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -81,7 +81,7 @@ HRESULT GetModuleInfo2(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerInfo – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [Profilace](../../../../docs/framework/unmanaged-api/profiling/index.md)

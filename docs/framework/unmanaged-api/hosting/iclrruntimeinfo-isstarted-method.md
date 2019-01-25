@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ef6f2662-323b-4534-aa82-6d1afb7b9309
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8934a2a51ea4bc86166bf99a6087124d03ab11d9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb23a8e4237ff9b4b217458150c1f04956e439ec
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434113"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54526587"
 ---
 # <a name="iclrruntimeinfoisstarted-method"></a>ICLRRuntimeInfo::IsStarted – metoda
-Určuje, zda byla spuštěna modulu runtime (to znamená, zda [iclrruntimehost::Start – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) byla volána a proběhla úspěšně).  
+Označuje, zda modul runtime byl spuštěn (to znamená, zda [ICLRRuntimeHost::Start – metoda](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) byla volána a proběhlo úspěšně).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,32 +35,32 @@ HRESULT IsStarted(
   
 #### <a name="parameters"></a>Parametry  
  `pbStarted`  
- [out] `true` Pokud tento modul runtime je spuštěn, jinak hodnota `false`.  
+ [out] `true` Pokud tento modul runtime je spuštěna; v opačném případě `false`.  
   
  `pdwStartupFlags`  
  [out] Vrátí příznaky, které byly použity při spuštění modulu runtime.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní hodnoty HRESULT a také HRESULT chyby, které označují selhání metoda.  
+ Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
 |S_OK|Metoda byla úspěšně dokončena.|  
-|E_NOTIMPL|Společné jazykové verzi modulu runtime (CLR) je starší než verze CLR v [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].|  
+|E_NOTIMPL|Společné jazykové verzi modulu runtime (CLR) je starší než verze CLR [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].|  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda funguje pouze s CLR verze starší než verze CLR v [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
+ Tato metoda funguje pouze s CLR verze starší než verze CLR [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)
+## <a name="see-also"></a>Viz také:
+- [ICLRRuntimeInfo – rozhraní](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [Hostování](../../../../docs/framework/unmanaged-api/hosting/index.md)

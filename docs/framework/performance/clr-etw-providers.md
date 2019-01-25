@@ -7,89 +7,89 @@ helpviewer_keywords:
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e33e93ba42ad37d6a998fc80348af551aed18a4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8fd1a4d41e65ea4d39f1cfee33aa5e166eec71ce
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398154"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54628549"
 ---
 # <a name="clr-etw-providers"></a>Poskytovatelé CLR ETW
-Modul CLR (CLR) má dva poskytovatelé: Zprostředkovatel runtime a sekvence daneho zprostředkovatele.  
+Modul CLR (CLR) má dva zprostředkovatele: zprostředkovatele běhového prostředí a zprostředkovatele doběhu.  
   
- Poskytovatel modulu runtime vyvolá událostí, v závislosti na tom, které jsou povolené klíčová slova (kategorie událostí). Například můžete shromažďovat události zavaděče povolení `LoaderKeyword` – klíčové slovo.  
+ Zprostředkovatel modulu runtime vyvolává události, v závislosti na tom, které jsou povolené klíčová slova (kategorie události). Například můžete shromažďovat události načítání povolením `LoaderKeyword` – klíčové slovo.  
   
- Sledování události systému Windows (ETW) událostí se protokolují do souboru, který má příponu ETL, který lze později po zpracovat v souborech hodnot oddělených čárkami (.csv) podle potřeby. Informace o tom, jak převést soubor .etl do souboru CSV naleznete v tématu [řízení protokolování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md).  
+ Událost sledování pro Windows (ETW) jsou zaznamenány do souboru s příponou ETL, který lze později zpracovat do souborů hodnot oddělených čárkami (CSV), podle potřeby. Informace o převodu souborů ETL do souboru CSV najdete v tématu [řízení protokolování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md).  
   
-## <a name="the-runtime-provider"></a>Poskytovatel modulu Runtime  
- Modul runtime se hlavní zprostředkovatel CLR ETW.  
+## <a name="the-runtime-provider"></a>Zprostředkovatel běhového prostředí  
+ Zprostředkovatel běhového prostředí je hlavním zprostředkovatelem modulu CLR ETW.  
   
- Poskytovatel modulu runtime CLR GUID je e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
+ Identifikátor GUID zprostředkovatele CLR runtime je e13c0d23-ccbc-4e12-931b-d9cc2eee27e4.  
   
- Příklady, jak protokolování a zobrazení CLR ETW – události pomocí běžných nástrojů, najdete v části [řízení protokolování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md).  
+ Příklady protokolování a zobrazení událostí CLR ETW pomocí běžných nástrojů, naleznete v tématu [řízení protokolování rozhraní .NET Framework](../../../docs/framework/performance/controlling-logging.md).  
   
- Kromě používání klíčová slova, jako `LoaderKeyword`, možná budete muset povolit klíčová slova pro protokolování událostí, které mohou být vyvolány příliš často. `StartEnumerationKeyword` a `EndEnumerationKeyword` klíčová slova povolit tyto události a jsou shrnuty v [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).  
+ Kromě použití klíčových slov, jako `LoaderKeyword`, možná budete muset povolit klíčová slova pro protokolování událostí, které mohou být vyvolány příliš často. `StartEnumerationKeyword` a `EndEnumerationKeyword` klíčová slova povolují tyto události a jsou shrnuta v [CLR ETW – klíčová slova a úrovně](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).  
   
-## <a name="the-rundown-provider"></a>Sekvence daneho zprostředkovatele  
- Sekvence daneho zprostředkovatele musí být zapnut pro určité speciální používá. Ale pro většinu uživatelů, měla by stačit runtime zprostředkovatele.  
+## <a name="the-rundown-provider"></a>Zprostředkovatel doběhu  
+ Zprostředkovatel doběhu musí být zapnuta pro některé zvláštní účely použití. Pro většinu uživatelů však měl postačit zprostředkovatel běhového prostředí.  
   
- Sekvence daneho zprostředkovatel CLR GUID je A669021C-C450-4609-A035-5AF59AF4DF18.  
+ Identifikátor GUID zprostředkovatele doběhu modulu CLR je A669021C-C450-4609-A035-5AF59AF4DF18.  
   
- Za normálních okolností je povoleno protokolování trasování událostí pro Windows předtím, než spustí proces a po ukončení procesu, je protokolování vypnuté. Ale pokud protokolování trasování událostí pro Windows zapnutý, při procesu provádí, je potřeba další informace o procesu. Například pro překlad symbol máte protokolování událostí, metoda pro metody, které již byly načteny před protokolování zapnutý.  
+ Za normálních okolností je protokolování ETW povoleno před spustí proces a po ukončení procesu, je protokolování vypnuté. Nicméně pokud protokolování trasování událostí pro Windows je zapnuto při provádění procesu, je potřeba další informace o procesu. Například pro rozlišení symbolů máte zaznamenat události metod pro metody, které již byly zavedeny před zapnutím protokolování.  
   
- `DCStart` a `DCEnd` události zaznamenat stav procesu, při shromažďování dat byl spuštění a zastavení. (Stav odkazuje na informace na vysoké úrovni, včetně metody, které již byly v běhu (JIT) zkompilovat a sestavení, které byly načteny.) Tyto dvě události může poskytnout informace o co bylo provedeno v procesu. například, které metody byly JIT-kompilovat, a tak dále.  
+ `DCStart` a `DCEnd` události zachycují stav procesu při shromažďování dat bylo spuštění a zastavení. (Stav odkazuje na informace na vysoké úrovni, včetně metod, které již byly just-in-time (JIT) zkompilována a sestavení, která byla načtena.) Tyto dvě události mohou poskytnout informace o co se stalo již v procesu. například které metody byly zkompilovány JIT, a tak dále.  
   
- Jenom události s `DC`, `DCStart`, `DCEnd`, nebo `DCInit` jejich názvy jsou vyvolány v rámci sekvence daneho zprostředkovatele. Kromě toho tyto události jsou vyvolány pouze v rámci sekvence daneho zprostředkovatele.  
+ Pouze události, jejichž `DC`, `DCStart`, `DCEnd`, nebo `DCInit` v názvu jsou vyvolány skrze zprostředkovatele doběhu. Kromě toho tyto události jsou vyvolány pouze skrze zprostředkovatele doběhu.  
   
- Kromě události – klíčové slovo filtry, sekvence daneho zprostředkovatel také podporuje `StartRundownKeyword` a `EndRundownKeyword` klíčová slova zajistit cílové filtrování.  
+ Kromě filtrů klíčových slov událostí zprostředkovatele doběhu také podporuje `StartRundownKeyword` a `EndRundownKeyword` klíčová slova k poskytování cílení filtrování.  
   
-### <a name="start-rundown"></a>Spustit Rundown  
- Spuštění rundown se aktivuje, když je povoleno protokolování v rámci sekvence daneho zprostředkovatele s `StartRundownKeyword` – klíčové slovo. To způsobí, že `DCStart` událost, která má být vyvolána a zachytí stavu systému. Před zahájením výčtu `DCStartInit` událost se vyvolá. Na konci výčtu `DCStartComplete` událost se vyvolá, upozornit na řadič, který shromažďování dat ukončeno normálně.  
+### <a name="start-rundown"></a>Začátek doběhu  
+ Začátek doběhu je vyvolán, pokud je povoleno protokolování zprostředkovatele doběhu pomocí `StartRundownKeyword` – klíčové slovo. To způsobí, že `DCStart` událost vyvolána a zachycen stav systému. Před zahájením výčtu `DCStartInit` událost se vyvolá. Na konci výčtu `DCStartComplete` událost je vyvolávána s cílem upozornit kontroler, který sběr dat byl korektně ukončen.  
   
-### <a name="end-rundown"></a>End Rundown  
- Rundown end se aktivuje, když je povoleno protokolování v rámci sekvence daneho zprostředkovatele s `EndRundownKeyword` – klíčové slovo. Profilace v procesu, který bude pokračovat v provádění sekvence daneho zastaví end. `DCEnd` Události zaznamenání stavu systému při vytváření profilu je zastavena.  
+### <a name="end-rundown"></a>Konec doběhu  
+ Konec doběhu se aktivuje, když je povoleno protokolování zprostředkovatele doběhu pomocí `EndRundownKeyword` – klíčové slovo. Konec doběhu zastaví profilování procesu, který pokračuje v provádění. `DCEnd` Události zachycují stav systému, když je profilování zastaveno.  
   
- Před zahájením výčtu `DCEndInit` událost se vyvolá. Na konci výčtu `DCEndComplete` událost se vyvolá oznámit příjemce, který shromažďování dat ukončeno normálně. Spuštění sekvence daneho a end rundown primárně pro spravované symbol řešení. Spuštění rundown může poskytnout informace o rozsah adres pro metody, které již byly kompilována před relace profilování byla spuštěna. End rundown může poskytnout informace o rozsah adres pro všechny metody, které byly kompilována při profilace je přibližně po zapnutí vypnout.  
+ Před zahájením výčtu `DCEndInit` událost se vyvolá. Na konci výčtu `DCEndComplete` událost je vyvolávána s cílem upozornit, že sběr dat byl korektně ukončen. Začátek doběhu a konec doběhu jsou primárně určené pro rozlišení spravovaných symbolů. Začátek doběhu může poskytnout informace o metodách, které již byly zkompilovány JIT před spuštěním relace profilování se rozsahu adres. Konec doběhu může poskytnout informace o rozsahu adres pro všechny metody, které byly zkompilovány JIT profilace se vypne.  
   
- Pokud je zastavená relace profilování end rundown neprobíhá automaticky. Místo toho nástroj, který se snaží provést řešení spravované symbol má explicitně vyvolat relaci CLR sekvence daneho zprostředkovatele s `EndRundownKeyword` – klíčové slovo povoleno, těsně před profilace je zastavena.  
+ Konec doběhu neprobíhá automaticky při zastavení relace profilování. Místo toho nástroj, který se snaží provést rozlišení spravovaných symbolů musí explicitně vyvolat relaci zprostředkovatele doběhu modulu CLR s `EndRundownKeyword` – klíčové slovo povolena, pouze předtím, než je profilování zastaveno.  
   
- I když rundown počáteční nebo koncové rundown může poskytnout informace o rozsahu adres metoda pro spravované symbol řešení, doporučujeme použít `EndRundownKeyword` – klíčové slovo (které zdroje `DCEnd` události) místo `StartRundownKeyword` – klíčové slovo (který poskytuje `DCStart` událostí). Pomocí `StartRundownKeyword` způsobí, že rundown provést během relace profilování, které by mohly narušit PROFILOVANÉHO scénář.  
+ Přestože začátek doběhu a konec doběhu může poskytnout informace o rozsahu adres metody pro rozlišení spravovaných symbolů, doporučujeme použít `EndRundownKeyword` – klíčové slovo (které poskytuje `DCEnd` události) místo `StartRundownKeyword` – klíčové slovo (který poskytuje `DCStart` události). Pomocí `StartRundownKeyword` způsobí spuštění doběhu během relace profilování, což může narušit profilovaný scénář.  
   
-## <a name="etw-data-collection-using-runtime-and-rundown-providers"></a>Shromažďování dat trasování událostí pro Windows pomocí modulu Runtime a sekvence daneho zprostředkovatelé  
- Následující příklad ukazuje, jak použít poskytovatele sekvence daneho CLR způsobem, který umožňuje řešení symbol spravovaných procesů s minimálním dopadem, bez ohledu na to, zda procesy začínat nebo končit uvnitř nebo mimo okno PROFILOVANÉHO.  
+## <a name="etw-data-collection-using-runtime-and-rundown-providers"></a>Shromažďování dat trasování událostí pro Windows pomocí modulu Runtime a zprostředkovatele doběhu  
+ Následující příklad ukazuje použití zprostředkovatele doběhu modulu CLR způsobem, který umožňuje rozlišení symbolů pro spravované procesy s minimálním dopadem, bez ohledu na to, zda procesy začínají nebo končí uvnitř nebo vně profilovacího okna.  
   
-1.  Zapněte protokolování trasování událostí pro Windows pomocí zprostředkovatele runtime CLR:  
+1.  Zapnutí protokolování událostí ETW pomocí zprostředkovatele modulu CLR runtime:  
   
     ```  
     xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:0x5 -f clr1.etl      
     ```  
   
-     Protokol se uloží do souboru clr1.etl.  
+     Protokol bude uložen do souboru clr1.etl.  
   
-2.  Zastavit profilování při proces bude pokračovat v provádění, spusťte sekvence daneho zprostředkovatele, který má zaznamenat `DCEnd` události:  
+2.  K zastavení profilování, zatímco proces pokračuje v provádění, spustit zprostředkovatele doběhu zachycení `DCEnd` události:  
   
     ```  
     xperf -start clrRundown -on A669021C-C450-4609-A035-5AF59AF4DF18:0xB8:0x5 -f clr2.etl      
     ```  
   
-     To umožňuje kolekce `DCEnd` události pro spuštění sekvence daneho relace. Pravděpodobně muset počkat 30 – 60 sekund pro všechny události, které se mají shromažďovat. Protokol se uloží do souboru clr1.et2.  
+     To umožňuje shromažďování `DCEnd` události spuštění relace doběhu. Budete muset počkat 30 – 60 sekund pro všechny události, které se mají shromažďovat. Protokol bude uložen do souboru clr1.et2.  
   
-3.  Vypněte všechny profilace trasování událostí pro Windows:  
+3.  Vypnutí všech profilování ETW:  
   
     ```  
     xperf -stop clrRundown   
     xperf -stop clr  
     ```  
   
-4.  Sloučení profilů vytvořit jeden soubor protokolu:  
+4.  Je třeba sloučit profily pro vytvoření jednoho souboru protokolu:  
   
     ```  
     xperf -merge -d clr1.etl clr2.etl merged.etl  
     ```  
   
-     Soubor merged.etl bude obsahovat události z modulu runtime a relace sekvence daneho zprostředkovatele.  
+     Soubor merged.etl bude obsahovat události z modulu runtime a relace skrze zprostředkovatele doběhu.  
   
- Nástroj můžete spustit kroky 2 a 3 (spuštění sekvence daneho relace a pak ukončení profilace) namísto okamžitě vypnutí profilace, když se uživatel požadavky profilace zastavení. Nástroj můžete spustit také krok 4.  
+ Nástroj může spustit kroky 2 a 3 (spuštění relace doběhu a potom ukončení profilování) místo okamžitého vypnutí profilování, když uživatel žádostí, aby bylo profilování zastaveno. Nástroj může také spustit krok 4.  
   
-## <a name="see-also"></a>Viz také  
- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)
+## <a name="see-also"></a>Viz také:
+- [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

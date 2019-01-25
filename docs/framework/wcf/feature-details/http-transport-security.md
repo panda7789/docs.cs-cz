@@ -2,20 +2,20 @@
 title: Zabezpečení přenosu HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 043154095d4600bd824457750effe9ea5494dcf5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: bda749366b452a41a925fa36c90b3a2caa6bca32
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50201527"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54602988"
 ---
 # <a name="http-transport-security"></a>Zabezpečení přenosu HTTP
 Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace vrstvy SSL (Secure Sockets). SSL se často používá na Internetu k ověření služby ke klientovi a potom k zajištění důvěrnosti (šifrování) do kanálu. Toto téma vysvětluje, jak funguje připojení SSL a jak je implementován ve Windows Communication Foundation (WCF).  
   
-## <a name="basic-ssl"></a>Základní SSL  
+## <a name="basic-ssl"></a>Basic SSL  
  Jak funguje SSL je nejvhodnější je vysvětleno prostřednictvím typického scénáře, v tomto případě banka na webovém serveru. Webu umožňuje zákazníkovi se přihlásit pomocí uživatelského jména a hesla. Po ověřovaného, uživatel provádět transakce, jako je například zobrazení zůstatky na účtu, uhraďte a peníze přesunout z jednoho účtu do druhého.  
   
- Pokud uživatel nejprve navštíví web, mechanismus SSL zahájí řadu jednání, volá se *handshake*, s klientem uživatele (v tomto případě aplikace Internet Explorer). SSL poprvé ověří bank lokality tak, aby zákazník. To je zásadní krok, protože nejdřív musí zákazníci věděli, že komunikují s skutečné lokality a není falešného, který se pokusí přesvědčit do zadáte svoje uživatelské jméno a heslo. SSL nepodporuje ověřování pomocí certifikátu SSL poskytuje důvěryhodnou autoritou, jako je například VeriSign. Logika platí takto: VeriSign zaručuje za identitu serveru bank. Protože aplikaci Internet Explorer důvěřuje VeriSign, je důvěryhodné lokalitě. Pokud chcete zkontrolovat s VeriSign, můžete to také provést kliknutím na logo společnosti VeriSign. Příkaz pravosti, který představuje se datum vypršení platnosti a na koho se vydává (bankovní lokality).  
+ Pokud uživatel nejprve navštíví web, mechanismus SSL zahájí řadu jednání, volá se *handshake*, s klientem uživatele (v tomto případě aplikace Internet Explorer). SSL poprvé ověří bank lokality tak, aby zákazník. To je zásadní krok, protože nejdřív musí zákazníci věděli, že komunikují s skutečné lokality a není falešného, který se pokusí přesvědčit do zadáte svoje uživatelské jméno a heslo. SSL nepodporuje ověřování pomocí certifikátu SSL poskytuje důvěryhodnou autoritou, jako je například VeriSign. Logika přejde takto: VeriSign zaručuje za identitu bank lokality. Protože aplikaci Internet Explorer důvěřuje VeriSign, je důvěryhodné lokalitě. Pokud chcete zkontrolovat s VeriSign, můžete to také provést kliknutím na logo společnosti VeriSign. Příkaz pravosti, který představuje se datum vypršení platnosti a na koho se vydává (bankovní lokality).  
   
  Zahájení zabezpečené relace, klient odešle serveru spolu s seznam kryptografických algoritmů můžete použít k podepsání, generování hodnoty hash a šifrování a dešifrování s ekvivalent "hello". V odpovědi, tato lokalita odesílá zpět potvrzení a jeho výběru jednoho z algoritmů sad. Během této metody handshake počáteční obou stran odesílat a přijímat náhodně generované identifikátory. A *nonce* je náhodně generované část dat, která se používá v kombinaci s veřejným klíčem tohoto webu, vytvoří hodnotu hash. A *hash* je nové číslo, který je odvozen z daných dvou čísel pomocí standardních algoritmů, jako je například SHA1. (Klient a webu také výměnu zpráv souhlas které hashovací algoritmus k použití.) Hodnota hash je jedinečný a slouží pouze pro relaci mezi klientem a webu k šifrování a dešifrování zprávy. Klient a služba mít původní hodnota nonce a veřejný klíč certifikátu, takže obě strany mohou generovat stejnou hodnotu hash. Proto se klient ověřuje-the-hash odeslaných službou (a) pomocí dohodnutých po algoritmus pro výpočet hodnoty hash z dat, a (b) porovnání této hodnoty hash odeslaných službou; Pokud se dva shodují, má klient jistotu, že-the-hash nebylo manipulováno. Klient pak můžete použít tato hodnota hash jako klíč k šifrování zpráv, který obsahuje další nová hodnota hash. Službu můžete dešifrování zprávy pomocí-the-hash a obnovit tato druhé konečná hodnota hash. Souhrnné informace (náhodně generované identifikátory, veřejný klíč a další data) se teď označuje pro obě strany a konečná hodnota hash (nebo hlavního klíče) je možné vytvořit. Tento poslední klíč je směrován šifrovaně využitím další poslední hodnotu hash. Hlavní klíč se pak používá k šifrování a dešifrování zprávy pro resetování relace. Protože klient a služba používá stejný klíč, to se také nazývá *klíč relace*.  
   
@@ -38,7 +38,7 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
 ### <a name="using-iis-for-transport-security"></a>Pomocí služby IIS pro zabezpečení přenosu  
   
 #### <a name="iis-70"></a>Internetová informační služba 7,0  
- K nastavení [!INCLUDE[iisver](../../../../includes/iisver-md.md)] jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [IIS 7.0 Beta: Konfigurace Secure Sockets Layer ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88600).  
+ Chcete-li nastavit [!INCLUDE[iisver](../../../../includes/iisver-md.md)] jako zabezpečené hostitele (pomocí protokolu SSL), najdete v článku [IIS 7.0 Beta: Konfigurace zabezpečeného Sockets Layer ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88600).  
   
  Konfigurace certifikátů pro použití s [!INCLUDE[iisver](../../../../includes/iisver-md.md)], naleznete v tématu [IIS 7.0 Beta: Konfigurace certifikátů serveru ve službě IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
   
@@ -50,8 +50,8 @@ Pokud přenos pomocí protokolu HTTP, je zabezpečení poskytovaný implementace
 ### <a name="using-httpcfg-for-ssl"></a>Pomocí HttpCfg pro protokol SSL  
  Při vytváření aplikace v místním prostředí WCF, stáhněte si nástroj HttpCfg.exe, k dispozici na [webu podpory nástroje systému Windows XP Service Pack 2](https://go.microsoft.com/fwlink/?LinkId=29002).  
   
- Další informace o použití nástroje HttpCfg.exe nastavení portu s certifikátem X.509, naleznete v tématu [postupy: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
+ Další informace o použití nástroje HttpCfg.exe nastavení portu s certifikátem X.509, naleznete v tématu [jak: Konfigurace portu s certifikátem SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md).  
   
-## <a name="see-also"></a>Viz také  
- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)  
- [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
+## <a name="see-also"></a>Viz také:
+- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)
+- [Zabezpečení zpráv](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c0fa19841580c7cfe8902577c3f756712a35893
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b88c49ba93ff3c4cc3f5c7a656dfa5da6e82109e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33420652"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54559835"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress – metoda
-Získá adresu tohoto objektu "ICorDebugValue", který je právě probíhá ladit.  
+Získá adresu tohoto objektu "ICorDebugValue", který se právě laděn.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,13 +37,13 @@ HRESULT GetAddress (
   
 #### <a name="parameters"></a>Parametry  
  `pAddress`  
- [out] Ukazatel na `CORDB_ADDRESS` objekt, který určuje adresu tohoto objektu hodnotu.  
+ [out] Ukazatel `CORDB_ADDRESS` objekt, který určuje adresu tohoto objektu hodnotu.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud hodnota není k dispozici, je vrácena 0 (nula). To může nastat, pokud je hodnota aspoň částečně v registrech nebo uložené v popisovač systém uvolňování paměti (`GCHandle`).  
+ Pokud je hodnota není k dispozici, vrátí se 0 (nula). To může nastat, pokud je hodnota aspoň částečně v registrech do nebo popisovač systému uvolňování paměti (`GCHandle`).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,5 +51,5 @@ HRESULT GetAddress (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- 
+## <a name="see-also"></a>Viz také:
+

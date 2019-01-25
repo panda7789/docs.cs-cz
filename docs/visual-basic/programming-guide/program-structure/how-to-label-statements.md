@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytváření popisků příkazů (Visual Basic)'
+title: 'Postupy: Popisek příkazy (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - colons (:)
@@ -7,34 +7,34 @@ helpviewer_keywords:
 - ': separator character'
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
-ms.openlocfilehash: df368bdba73ca35dd70bdd2f4e88cc10af894b5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00a08bd3bd1f866cec883b6591b03ebd9d858b90
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650121"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54552255"
 ---
-# <a name="how-to-label-statements-visual-basic"></a>Postupy: Vytváření popisků příkazů (Visual Basic)
-Blok příkazu jsou tvořeny řádků kódu oddělené dvojtečkou. Řádky kódu před sebou identifikační řetězec nebo celé číslo, které jsou označeny jako *s názvem bez přípony*. Příkaz popisky slouží k označení řádku kódu pro jeho rozpoznání pro použití s příkazy, jako `On Error Goto`.  
+# <a name="how-to-label-statements-visual-basic"></a>Postupy: Popisek příkazy (Visual Basic)
+Blok příkazu jsou tvořené řádků kódu, které jsou odděleny dvojtečkami. Řádky kódu předchází identifikační řetězec nebo celé číslo se označují jako *označené*. Popisky příkazů se používá k označení řádku kódu k jeho identifikaci při použití s příkazy, jako `On Error Goto`.  
   
- Popisky může být buď platné identifikátory jazyka Visual Basic – jako jsou ty, které identifikují elementům programování – nebo literály celé číslo. Štítek musí být uvedena na začátku řádku zdrojového kódu a musí být následovaným dvojtečkou, bez ohledu na to, jestli je následovaný příkazem na stejném řádku.  
+ Popisky mohou být buď platné identifikátory jazyka Visual Basic, jako jsou ty, které identifikují programovací prvky, nebo literály celých čísel. Popisek musí být na začátku řádku zdrojového kódu a musí být následován dvojtečkou, bez ohledu na to, zda je následovaný příkazem na stejném řádku.  
   
- Kompilátor rozpoznává popisky tak, že zkontrolujete, jestli začátek řádku odpovídá žádný identifikátor již definována. Pokud ne, kompilátor předpokládá, že je štítek.  
+ Kompilátor identifikuje popisky tak, že zkontrolujete, jestli odpovídá začátku řádku žádný identifikátor již definována. Pokud tomu tak není, kompilátor předpokládá, že je popisek.  
   
- Popisky vlastní deklarace místa a nebudou v konfliktu s další identifikátory. Rozsah popisku je těla metody. Popisek deklarace má přednost před v jakékoliv jiné situaci s nejednoznačný.  
+ Popisky své vlastní prohlášení místa a nejsou v konfliktu s další identifikátory. Obor popisku je tělo metody. Deklarace popisek má přednost před v každé situaci, nejednoznačný.  
   
 > [!NOTE]
->  Popisky lze použít pouze v spustitelné příkazy uvnitř metody.  
+>  Popisky lze použít pouze na spustitelné příkazy uvnitř metody.  
   
-### <a name="to-label-a-line-of-code"></a>Pro označení řádku kódu  
+### <a name="to-label-a-line-of-code"></a>K označení řádku kódu  
   
--   Umístěte identifikátorem následovaným dvojtečkou, na začátku řádku zdrojového kódu.  
+-   Místo identifikátoru, za nímž následuje dvojtečka, na začátek řádku zdrojového kódu.  
   
-     Například následující řádky kódu jsou označeny `Jump` a `120`, v uvedeném pořadí:  
+     Například následující řádky kódu jsou označeny `Jump` a `120`v uvedeném pořadí:  
   
      [!code-vb[VbVbalrStatements#708](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/how-to-label-statements_1.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
- [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+## <a name="see-also"></a>Viz také:
+- [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
+- [Deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
+- [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)

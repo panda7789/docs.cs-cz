@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: 5e5ef095fbb982b0d37d7f44d4d57f27c20a72c1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: bd89a5fa58507528b2a70efde04ecd2a6f601b39
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511896"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54605601"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile (možnosti kompilátoru C#)
 Určuje název souboru obsahujícího kryptografický klíč.  
@@ -53,7 +53,7 @@ Určuje název souboru obsahujícího kryptografický klíč.
   
  Programově přístup k této možnosti kompilátoru s <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A>.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 0678300fca4442cf90dd15c5a4e011d80656eac6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 97340f8583ef0900645f6db5c453475e85549c55
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43478153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54620188"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>Přístup ke službám pomocí klienta WCF
 
@@ -52,7 +52,7 @@ Svcutil.exe <file1 [,file2]>
  Pokud pouze jeden název souboru je uveden, to je název výstupního souboru. Dva názvy souborů směru, je-li první soubor je soubor vstupní konfigurace, jejichž obsah jsou sloučeny s vygenerovanou konfiguraci a zapsat do druhého souboru. Další informace o konfiguraci najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md).
 
 > [!IMPORTANT]
-> Požadavky na nezabezpečenou metadata představovat určité riziko stejným způsobem, který nemá žádné zabezpečená síťová žádost: Pokud si nejste jisti, že je koncový bod, komunikují s kdo stavu je, může být informace můžete načíst metadata ze škodlivých služby.
+> Požadavky na nezabezpečenou metadata představovat určitá rizika stejným způsobem, který nemá žádné žádosti o nezabezpečené síti: Pokud si nejste jisti, že je koncový bod, které komunikují s který říká, že se že jedná, může být informace, které můžete načíst metadata ze škodlivých služby.
 
 ## <a name="add-service-reference-in-visual-studio"></a>Přidání odkazu na službu v sadě Visual Studio
 
@@ -180,20 +180,20 @@ Velký počet výjimek vyvolaných klienta WCF jsou způsobeny výjimku ve služ
 
 -   <xref:System.Net.Sockets.SocketException>: Stávající připojení vynuceně zavřel vzdálený hostitel.
 
--   <xref:System.ServiceModel.CommunicationException>: Nadřízené připojení bylo neočekávaně ukončeno.
+-   <xref:System.ServiceModel.CommunicationException>: Základní připojení bylo neočekávaně ukončeno.
 
--   <xref:System.ServiceModel.CommunicationObjectAbortedException>: Na připojení soketu bylo přerušeno. Může to být způsobeno chybou při zpracování zprávy, vypršení časového limitu příjmu, překročení vzdáleným hostitelem nebo problém prostředků základní sítě.
+-   <xref:System.ServiceModel.CommunicationObjectAbortedException>: Připojení soketu bylo přerušeno. Může to být způsobeno chybou při zpracování zprávy, vypršení časového limitu příjmu, překročení vzdáleným hostitelem nebo problém prostředků základní sítě.
 
 Pokud dojde k tyto typy výjimek, je nejlepší způsob, jak problém vyřešit zapnout trasování na straně služby a zjistit, jaké výjimky došlo k chybě došlo. Další informace o trasování najdete v tématu [trasování](../../../docs/framework/wcf/diagnostics/tracing/index.md) a [pomocí trasování řešení potíží s aplikace](../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Postupy: Vytvoření klienta](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
 - [Postupy: Přístup ke službám pomocí duplexního kontraktu](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)
 - [Postupy: Asynchronní volání operací služby](../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)
-- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů žádost-odpověď](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
-- [Postupy: Přístup ke službě WSE 3.0](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
+- [Postupy: Přístup ke službám pomocí jednosměrných kontraktů a kontraktů požadavek odpověď](../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)
+- [Postupy: Přístup k WSE 3.0 Service](../../../docs/framework/wcf/feature-details/how-to-access-a-wse-3-0-service-with-a-wcf-client.md)
 - [Principy generovaného klientského kódu](../../../docs/framework/wcf/feature-details/understanding-generated-client-code.md)
-- [Postupy: Vylepšení doby spouštění klientských aplikací WCF pomocí XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Postupy: Vylepšení spuštění čas z klientských aplikací WCF pomocí třídy XmlSerializer](../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
 - [Nastavení chování klienta za běhu](../../../docs/framework/wcf/specifying-client-run-time-behavior.md)
 - [Konfigurace chování klienta](../../../docs/framework/wcf/configuring-client-behaviors.md)

@@ -2,15 +2,15 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: dbe4408a3f2a5de92cad1cb286b9aedd963e8440
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: f60d34ba7348b75f10be326319738fd1555d42df
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583188"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54520656"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
-Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. TIS.  
+Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. k  
   
  Služba zpracovává zprávu přijatou od odesílatele a odešle odpověď zpět do odesílatele. Odesílatel koreluje odpovědí, žádost, u které původně odeslán přijaty. `MessageID` a `CorrelationID` vlastnosti zprávy jsou používány ke korelaci zprávy požadavků a odpovědí.  
   
@@ -312,6 +312,6 @@ static void DisplayOrderStatus()
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   
-## <a name="see-also"></a>Viz také  
- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
- [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)
+## <a name="see-also"></a>Viz také:
+- [Zařazování do front ve WCF](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [Služba Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)

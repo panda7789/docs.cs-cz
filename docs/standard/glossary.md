@@ -3,14 +3,14 @@ title: .NET – Glosář
 description: Přečtěte si významu vybraných termínů používaných v dokumentaci k rozhraní .NET.
 author: tdykstra
 ms.author: tdykstra
-ms.date: 07/08/2017
+ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 3c478083a2bfde1742b114a8254bf07dff01f869
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: b9654bf7f6cbc1019d00db986ba883cbab0abbb5
+ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664665"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857970"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 
@@ -21,6 +21,8 @@ Hlavním cílem tento glosář je objasnit význam vybrané podmínky a zkratky,
 Kompilátor ahead of time.
 
 Podobně jako [JIT](#jit), tento kompilátor se také přeloží [IL](#il) do strojového kódu. Na rozdíl od kompilace JIT kompilace AOT se stane, než aplikace spouští a se obvykle provádí v jiném počítači. Protože řetězce nástrojů AOT není kompilaci za běhu, nemají minimalizovat čas strávený kompilaci. To znamená, že může věnovat víc času optimalizace. Protože kontextu AOT celé aplikace, provádí kompilátor AOT také propojení mezi moduly a analýzu celého programu, což znamená, že jsou všechny odkazy a a je vytvořen jeden spustitelný soubor.
+
+Zobrazit [CoreRT](#corert) a [.NET Native](#net-native).
 
 ## <a name="aspnet"></a>ASP.NET 
 

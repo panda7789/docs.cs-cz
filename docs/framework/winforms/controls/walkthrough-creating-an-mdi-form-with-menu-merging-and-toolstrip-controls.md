@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytvoření formuláře MDI se slučováním nabídek a s ovládacími prvky ToolStrip'
+title: 'Průvodce: Vytvoření formuláře MDI se slučováním nabídek a ovládacích prvcích ToolStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - MDI forms [Windows Forms], creating
 - MDI forms [Windows Forms], walkthroughs
 ms.assetid: fbab4221-74af-42d0-bbf4-3c97f7b2e544
-ms.openlocfilehash: 6236190340833e3f8810387e51ad53e1cb10d37b
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 5924d37d946a8279297ecf479b621f6f827dd5a3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261625"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536236"
 ---
-# <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Návod: Vytvoření formuláře MDI se slučováním nabídek a s ovládacími prvky ToolStrip
+# <a name="walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls"></a>Průvodce: Vytvoření formuláře MDI se slučováním nabídek a ovládacích prvcích ToolStrip
 <xref:System.Windows.Forms?displayProperty=nameWithType> Obor názvů podporuje více dokumentů aplikace (MDI interface) a <xref:System.Windows.Forms.MenuStrip> ovládací prvek podporuje slučování nabídek. MDI formuláře můžete také <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
   
  Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStripPanel> ovládacích prvků formuláře MDI. Formulář podporuje také s nabídkami podřízené slučováním nabídek. Tyto úlohy jsou uvedené v tomto návodu:  
@@ -38,7 +38,7 @@ ms.locfileid: "48261625"
   
  Až budete hotovi, budete mít formuláře MDI, která podporuje menu merging a přesouvatelných <xref:System.Windows.Forms.ToolStrip> ovládacích prvků.  
   
- Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [postupy: vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
+ Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [jak: Vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -107,7 +107,7 @@ ms.locfileid: "48261625"
   
 1.  Přidat nový formulář s názvem `ChildForm` do projektu.  
   
-     Další informace najdete v tématu [postupy: Přidání Windows Forms do projektu](https://msdn.microsoft.com/library/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
+     Další informace najdete v tématu [jak: Přidat do projektu Windows Forms](https://msdn.microsoft.com/library/3d7bb25f-fd90-47cf-9378-fa0d764686c1).  
   
 2.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.MenuStrip> ovládací prvek na podřízeném formuláři.  
   
@@ -185,7 +185,7 @@ ms.locfileid: "48261625"
   
 6.  Vyberte různé ovládací prvky v **Osnova dokumentu** okno a přesouvat je na jinou pozici v pořadí vykreslování. Všimněte si vliv pořadí vykreslování na umístění ukotvených ovládacích prvků. Pomocí CTRL-Z nebo **zpět** na **upravit** nabídky vrátit zpět provedené změny.  
   
-## <a name="checkpoint"></a>Kontrolní bod  
+## <a name="checkpoint"></a>CheckPoint  
   
 #### <a name="to-test-your-form"></a>K otestování formuláře  
   
@@ -200,15 +200,15 @@ ms.locfileid: "48261625"
   
 -   Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).  
   
--   Vytvoření formuláře se automaticky vyplněná standardní nabídky. Další informace najdete v tématu [návod: poskytnutí standardních položek nabídky do formuláře](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).  
+-   Vytvoření formuláře se automaticky vyplněná standardní nabídky. Další informace najdete v tématu [názorný postup: Poskytnutí standardních položek nabídky formuláři](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).  
   
--   Zadejte vaše <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled. Další informace najdete v tématu [postupy: nastavení vykreslovacího modulu prvku ToolStrip pro aplikaci](../../../../docs/framework/winforms/controls/how-to-set-the-toolstrip-renderer-for-an-application.md).  
+-   Zadejte vaše <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled. Další informace najdete v tématu [jak: Nastavení vykreslovacího modulu prvku ToolStrip pro aplikaci](../../../../docs/framework/winforms/controls/how-to-set-the-toolstrip-renderer-for-an-application.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.MenuStrip>  
- <xref:System.Windows.Forms.ToolStrip>  
- <xref:System.Windows.Forms.StatusStrip>  
- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
- [Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI](../../../../docs/framework/winforms/controls/how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)  
- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.MenuStrip>
+- <xref:System.Windows.Forms.ToolStrip>
+- <xref:System.Windows.Forms.StatusStrip>
+- [Postupy: Vytváření nadřazených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)
+- [Postupy: Vytváření podřízených formulářů MDI](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)
+- [Postupy: Vložení prvku MenuStrip do rozevíracího seznamu MDI](../../../../docs/framework/winforms/controls/how-to-insert-a-menustrip-into-an-mdi-drop-down-menu-windows-forms.md)
+- [Ovládací prvek ToolStrip](../../../../docs/framework/winforms/controls/toolstrip-control-windows-forms.md)

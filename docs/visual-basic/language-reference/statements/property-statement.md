@@ -11,12 +11,12 @@ helpviewer_keywords:
 - property procedures [Visual Basic], Property statements
 - Property keyword [Visual Basic]
 ms.assetid: 3155edaf-8ebd-45c6-9cef-11d5d2dc8d38
-ms.openlocfilehash: 21ca15d6a6939d884c7e6abedc1f7919be079edd
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4c92e7b3892fa35035935d5db317c72d74814ab8
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43738143"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512980"
 ---
 # <a name="property-statement"></a>Property – příkaz
 Deklaruje název vlastnosti a procedury vlastnosti používané k ukládání a načítání hodnoty vlastnosti.  
@@ -62,9 +62,9 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
     -   [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
-    - [Chráněné typu Friend](../../language-reference/modifiers/protected-friend.md) 
+    - [Protected Friend](../../language-reference/modifiers/protected-friend.md) 
 
-    - [Privátní, chráněné](../../language-reference/modifiers/private-protected.md)
+    - [Private Protected](../../language-reference/modifiers/private-protected.md)
   
      Zobrazit [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
@@ -108,7 +108,7 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
 -   `name`  
   
-     Požadováno. Název vlastnosti Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+     Povinný parametr. Název vlastnosti Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 -   `parameterlist`  
   
@@ -134,8 +134,8 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
     |Část|Popis|  
     |---|---|  
-    |`interface`|Požadováno. Název rozhraní implementovaná touto vlastností obsahující třídy nebo struktury.|  
-    |`definedname`|Požadováno. Název, podle kterého je vlastnost definována v `interface`.|  
+    |`interface`|Povinný parametr. Název rozhraní implementovaná touto vlastností obsahující třídy nebo struktury.|  
+    |`definedname`|Povinný parametr. Název, podle kterého je vlastnost definována v `interface`.|  
   
 -   `Get`  
   
@@ -207,10 +207,10 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
   
  [!code-vb[VbVbalrStatements#51](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/property-statement_4.vb)]  
   
-## <a name="see-also"></a>Viz také  
- [Automaticky implementované vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)  
- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)  
- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)  
- [Default](../../../visual-basic/language-reference/modifiers/default.md)
+## <a name="see-also"></a>Viz také:
+- [Automaticky implementované vlastnosti](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)
+- [Příkaz Set](../../../visual-basic/language-reference/statements/set-statement.md)
+- [Seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md)
+- [Default](../../../visual-basic/language-reference/modifiers/default.md)

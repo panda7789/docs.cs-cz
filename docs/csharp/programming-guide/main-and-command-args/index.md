@@ -13,12 +13,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: e9fcee86f8a3daed73adebb1f4ce3e16f7ea2042
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 2070a7e0bb9f2731a8a292158e2f7c856d42253c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237087"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54566707"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() a argumenty příkazového řádku (C# Programming Guide)
 
@@ -42,9 +42,9 @@ Přidání `async` a `Task`, `Task<int>` vrátí typy zjednodušuje kód program
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
-- [V programu v jazyce C#](../../../csharp/programming-guide/inside-a-program/index.md)  
+- [Sestavování pomocí programu csc.exe v příkazovém řádku](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [V programu v jazyce C#](../../../csharp/programming-guide/inside-a-program/index.md)

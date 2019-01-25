@@ -11,44 +11,44 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-ms.openlocfilehash: 4f34f7f4ada3f8d61c9d855eab1b8b073a3d5ed8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6c8a05a4575c5d1ec01aa1b2badf2129c54bc2a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33599200"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54522775"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
-Určuje, že vlastnost může být zapsána ale číst.  
+Určuje, že vlastnost může zapisovat, ale nedá se číst.  
   
 ## <a name="remarks"></a>Poznámky  
   
-## <a name="rules"></a>Pravidla  
- **Kontext deklarace.** Můžete použít `WriteOnly` jenom na úrovni modulu. To znamená kontext deklarace `WriteOnly` vlastnost musí být třída, struktura nebo modul a nemůže být zdrojový soubor, obor názvů nebo postupu.  
+## <a name="rules"></a>pravidla  
+ **Místní deklarace.** Můžete použít `WriteOnly` pouze na úrovni modulu. To znamená, že deklarace kontext `WriteOnly` vlastnost musí být třída, struktura nebo modulu a nemůže být zdrojový soubor, obor názvů nebo proceduru.  
   
- Je možné deklarovat vlastnost jako `WriteOnly`, ale nikoli proměnné.  
+ Je možné deklarovat vlastnost jako `WriteOnly`, ale není proměnná.  
   
-## <a name="when-to-use-writeonly"></a>Kdy použít WriteOnly  
- Někdy budete chtít kód náročné být schopni nastavit hodnotu, ale není zjistit, co je. Například citlivých dat, jako je sociální číslo registrací nebo heslo, musí být chráněny před přístupem jakékoli součásti, která není nastavena. V těchto případech můžete použít `WriteOnly` vlastnost na hodnotu.  
+## <a name="when-to-use-writeonly"></a>Kdy použít jen pro zápis  
+ Někdy chcete být schopni nastavit hodnotu, ale ne zjistit, co to je časově náročný kód. Například citlivá data, jako jsou sociální registrační číslo nebo heslo, musí být chráněny před přístup jakékoli součásti, která nebyla nastavena. V těchto případech můžete použít `WriteOnly` vlastnosti chcete nastavit hodnotu.  
   
 > [!IMPORTANT]
->  Pokud definice a používání `WriteOnly` vlastnost, zvažte následující další ochranná opatření:  
+>  Při definování a použití `WriteOnly` vlastnost, vezměte v úvahu následující další ochranná opatření:  
   
--   **Přepsání.** Pokud vlastnost člena třídy, aby ji bylo výchozí [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)a jeho nedeklarujte `Overridable` nebo `MustOverride`. Odvozené třídy zabrání provedení nežádoucí přístup pomocí přepsání.  
+-   **Přepsání.** Pokud je vlastnost člena třídy, mohla ve výchozím nastavení [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)a ne jeho deklarace `Overridable` nebo `MustOverride`. To brání odvozené třídy v provádění nežádoucích přístup pomocí přepsání.  
   
--   **Úroveň přístupu.** Pokud v jedné nebo více proměnných obsahovat vlastnosti citlivá data, je deklarovat [privátní](../../../visual-basic/language-reference/modifiers/private.md) , aby žádný jiný kód přístup.  
+-   **Úroveň přístupu.** Pokud jste v jedné nebo více proměnných citlivých dat vlastnost, je deklarovat [privátní](../../../visual-basic/language-reference/modifiers/private.md) tak, aby k nim může přistupovat žádný kód.  
   
--   **Šifrování.** Ukládat všechny citlivá data v šifrované podobě, ne ve formátu prostého textu. Pokud škodlivý kód nějakým způsobem získá přístup k této oblasti paměti, je obtížnější Chcete-li použít data. Šifrování je také užitečné, pokud je potřeba serializovat citlivá data.  
+-   **Šifrování.** Store všechna citlivá data v zašifrované podobě, nikoli ve formátu prostého textu. Pokud škodlivý kód nějakým způsobem získá přístup k této oblasti paměti, je obtížnější, chcete-li využívají data. Šifrování je také užitečné, pokud je nutné k serializaci citlivá data.  
   
--   **Resetování.** Když je ukončovány třídy, struktury nebo modul definování vlastnosti, obnovit důvěrné osobní údaje, výchozí hodnoty nebo na jiné smysl hodnoty. To dává zvláštní ochranu při této oblasti paměti uvolněna pro obecné přístup.  
+-   **Resetuje se.** Když se ukončuje třídy, struktury nebo modul definující vlastnosti, obnovit citlivých dat na výchozí hodnoty nebo na další význam hodnoty. Díky tomu ochrany při této oblasti paměti je uvolněna obecného přístupu.  
   
--   **Trvalost.** Pokud ho se můžete vyhnout se nezachovají citlivé údaje, například na disku. Navíc Nezapisovat citlivé údaje do schránky.  
+-   **Trvalost.** Pokud ho se můžete vyhnout nezůstanou zachována citlivých dat, třeba na disku. Citlivé údaje taky nezapisujte do schránky.  
   
- `WriteOnly` Modifikátor můžete v tomto kontextu použít:  
+ `WriteOnly` Modifikátor lze použít v tomto kontextu:  
   
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a>Viz také:
+- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

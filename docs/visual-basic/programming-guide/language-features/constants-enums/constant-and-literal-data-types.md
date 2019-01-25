@@ -9,12 +9,12 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-ms.openlocfilehash: 1d030f8058cd497212c20bca8f064f2bedc99fce
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d85ff343587e8689a4859a09c8dc80932374a82e
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507814"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498645"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Datové typy konstanty a literálu (Visual Basic)
 Literál je hodnota, která je vyjádřena jako samotný, nikoli jako hodnota proměnné nebo výsledku výrazu, například číslo 3 nebo řetězec "Hello". Konstanta je smysluplný název, který probíhá literály a ponechá tato stejná hodnota v celém programu, na rozdíl od proměnné, jejíž hodnota se může změnit.  
@@ -61,14 +61,14 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
 |`Single`|(žádné)|F nebo!|  
 |`String`|"|(žádné)|  
   
-## <a name="see-also"></a>Viz také  
- [Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)  
- [Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)  
- [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)  
- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
- [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)  
- [Postupy: deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)  
- [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Uživatelem definované konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)
+- [Postupy: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)
+- [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
+- [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)
+- [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
+- [Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
+- [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Zákazníci a objednávky v Namespace2'
 ms.date: 07/20/2015
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
-ms.openlocfilehash: 1af227118f5c3c03d1559797d5977f5c71469678
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: e25017481b91f8bf4dcbbc464391c939bc672057
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217032"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54506963"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>Ukázkový soubor XML: Zákazníci a objednávky v Namespace
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje zákazníci a objednávky. XML je v oboru názvů.  
@@ -430,6 +430,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

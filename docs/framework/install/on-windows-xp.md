@@ -5,12 +5,12 @@ ms.custom: updateeachrelease
 author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
-ms.openlocfilehash: eb62bfe992e5b3774c4a8123eb9ca3f790eaf0b9
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 7c21ffbbb4feaf3b64ac454f1f00443bdb5f7227
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50192873"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536487"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Instalace rozhraní .NET Framework na Windows XP a Windows Server 2003
 
@@ -23,7 +23,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Není podporováno ve Windows XP a Windows Server 2003. Je součástí [Windows 10. října 2018 Update](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update) a [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
 
-## <a name="net-framework-403"></a>Rozhraní .NET framework 4.0.3
+## <a name="net-framework-403"></a>.NET Framework 4.0.3
 
 [Rozhraní .NET Framework 4.0.3](https://go.microsoft.com/fwlink/?LinkID=213834) je nejnovější podporovanou verzi rozhraní .NET Framework na Windows XP a Windows Server 2003. Rozhraní .NET Framework 4.0.3 vyžaduje, aby [rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=213834) je nainstalována jako první. Obě tyto verze rozhraní .NET Framework již nejsou podporovány společností Microsoft.
 
@@ -39,6 +39,6 @@ Rozhraní .NET Framework 3.5 je možné ke spouštění aplikací vytvořených 
 
 ## <a name="see-also"></a>Viz také:
 
-[Stáhnout rozhraní .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)   
-[Řešení potíží s blokované rozhraní .NET Framework instalacemi a odinstalacemi](troubleshoot-blocked-installations-and-uninstallations.md)   
-[Instalace rozhraní .NET Framework pro vývojáře](guide-for-developers.md)
+- [Stáhnout rozhraní .NET Framework](https://www.microsoft.com/net/download/framework?utm_source=ms-docs&utm_medium=referral)
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](troubleshoot-blocked-installations-and-uninstallations.md)
+- [Instalace rozhraní .NET Framework pro vývojáře](guide-for-developers.md)

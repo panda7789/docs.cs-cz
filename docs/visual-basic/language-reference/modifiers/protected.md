@@ -10,37 +10,37 @@ helpviewer_keywords:
 - Protected access modifier
 - Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
-ms.openlocfilehash: 5f279ed0a33840bb1f2321c17a1ffba412837c07
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 40dda40f68e535380a82a241e3ccd383b0c9809f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34234754"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54536292"
 ---
 # <a name="protected-visual-basic"></a>Protected (Visual Basic)
-Člen – modifikátor přístupu, která určuje, že jeden nebo více deklarované programovací elementy jsou k dispozici pouze v rámci své vlastní třídy nebo z odvozené třídy.  
+Modifikátor přístupu člena, který určuje, že jeden nebo více deklarovaný programový prvek je přístupný jenom v rámci své vlastní třídy nebo z odvozené třídy.  
   
 ## <a name="remarks"></a>Poznámky  
- Někdy programovací element deklarovaná ve třídě obsahuje citlivá data nebo kód s omezeným přístupem, a chcete omezit přístup k elementu. Ale pokud ze třídy a očekáváte, že hierarchie odvozených tříd, může být nezbytné pro tyto odvozené třídy přistupovat k datům nebo kódu. V takovém případě budete chtít elementu, který chcete být přístupné ze základní třídy a z všechny odvozené třídy. Omezit přístup k elementu tímto způsobem, můžou deklarovat její `Protected`.  
+ Někdy programovací element deklarovaný ve třídě obsahuje citlivé údaje nebo s omezeným přístupem kódu a chcete omezit přístup k elementu. Nicméně pokud je třída odvoditelný a očekáváte, že hierarchie odvozené třídy, může být nezbytné pro tyto odvozených tříd pro přístup k data nebo kód. V takovém případě má element být přístupné ze základní třídy a ze všech odvozených tříd. Omezení přístupu k elementu tímto způsobem je možné deklarovat s `Protected`.  
 
 > [!NOTE]
-> `Protected` – Modifikátor přístupu je možné kombinovat s dva další modifikátory:
-> - [Protected Friend](protected-friend.md) modifikátor zpřístupní člena třídy z v rámci třídy, v rámci odvozené třídy a do stejného sestavení, ve kterém je třída definovaná. 
-> - [Privátní chráněné](private-protected.md) modifikátor zpřístupní člena třídy odvozené typy, ale jenom v rámci jeho obsahující sestavení.
+> `Protected` Modifikátor přístupu je možné kombinovat s dvěma další modifikátory:
+> - [Protected Friend](protected-friend.md) modifikátor zpřístupňuje člen třídy z v rámci této třídy z odvozené třídy a ze stejného sestavení, ve kterém je třída definovaná. 
+> - [Private Protected](private-protected.md) modifikátor zpřístupňuje člen třídy odvozené typy, ale pouze v rámci jeho obsahujícího sestavení.
   
-## <a name="rules"></a>Pravidla  
+## <a name="rules"></a>pravidla  
   
--   **Kontext deklarace.** Můžete použít `Protected` pouze na úrovni třídy. To znamená kontext deklarace `Protected` element musí být třída a nesmí být zdrojový soubor, obor názvů, rozhraní, modul, struktura nebo postup.  
+-   **Místní deklarace.** Můžete použít `Protected` pouze na úrovni třídy. To znamená, že deklarace kontext `Protected` elementu musí být třída a nemůže být zdrojový soubor, obor názvů, rozhraní, modul, struktury nebo proceduru.  
 
 ## <a name="behavior"></a>Chování  
   
--   **Úroveň přístupu.** Všechny kódu v třídě mají přístup k jeho elementy. Kód do třídy, která je odvozena ze základní třídy mají přístup ke všem `Protected` elementy základní třídy. To platí pro všechny generací odvození. To znamená, že třídu přístup `Protected` elementy základní třídy základní třídy a tak dále.  
+-   **Úroveň přístupu.** Veškerý kód ve třídě můžete přístup k jeho prvkům. Kód do třídy, která je odvozena ze základní třídy lze přistupovat ke všem `Protected` prvky základní třídy. To platí pro všechny generací odvození. To znamená, že se třída dostanete `Protected` elementů základní třídy základní třídy a tak dále.  
   
-     Chráněného přístupu není nadmnožinou nebo podmnožinu friend přístup.  
+     Chráněného přístupu je nadmnožinou nebo podmnožinu přístup typu friend.  
   
--   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu, se nazývají *přístup modifikátory*. Porovnání modifikátory přístupu najdete v tématu [úrovně v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+-   **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
- `Protected` Modifikátor lze použít v těchto kontexty:  
+ `Protected` Modifikátor lze použít v těchto kontextech:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -66,13 +66,13 @@ ms.locfileid: "34234754"
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-## <a name="see-also"></a>Viz také  
- [Public](../../../visual-basic/language-reference/modifiers/public.md)  
- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
- [Privátní chráněný](private-protected.md)   
- [Chráněné Friend](protected-friend.md)   
- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+## <a name="see-also"></a>Viz také:
+- [Public](../../../visual-basic/language-reference/modifiers/public.md)
+- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
+- [Private](../../../visual-basic/language-reference/modifiers/private.md)
+- [Private Protected](private-protected.md)
+- [Protected Friend](protected-friend.md)
+- [Úrovně přístupu v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
+- [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
+- [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -16,43 +16,43 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3edae4cb112f46643734c5f1612d9df36ad47e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 96c2081e5ff5b716c2645fa44a24f12beaa0f8e9
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33441321"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54585455"
 ---
 # <a name="ihostmemorymanager-interface"></a>IHostMemoryManager – rozhraní
-Poskytuje metody, které povolit modul CLR (CLR) provádět požadavky na virtuální paměti prostřednictvím hostitele, místo použití standardní funkce Win32 virtuální paměti.  
+Poskytuje metody, které umožňují common language runtime (CLR) k podání žádostí o virtuální paměti prostřednictvím hostitele, namísto použití standardních funkcí virtuální paměti systému Win32.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[AcquiredVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-acquiredvirtualaddressspace-method.md)|Upozorní hostitele, modul CLR (CLR) má získat zadaná paměťová z operačního systému.|  
-|[CreateMAlloc – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md)|Získá ukazatele rozhraní k [ihostmalloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instanci, která se používá k požadavku na přidělení paměti ze haldy vytvořené hostitele.|  
-|[GetMemoryLoad – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-getmemoryload-method.md)|Získá množství fyzické paměti, který je aktuálně používá, jsou uvedeny pro hostitele.|  
-|[NeedsVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-needsvirtualaddressspace-method.md)|Aby modul CLR bude pokus o použití zadaná paměťová upozorní hostitele.|  
-|[RegisterMemoryNotificationCallback – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)|Zaregistruje ukazatel na funkci zpětného volání, která volá hostitele oznámit CLR aktuální zatížení paměti v počítači.|  
-|[ReleasedVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-releasedvirtualaddressspace-method.md)|Upozorní hostitele, že pomocí zadaná paměťová modulu CLR byla dokončena.|  
-|[VirtualAlloc – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualalloc-method.md)|Slouží jako logické obálku pro odpovídající funkci, Win32, která si vyhrazuje nebo potvrdí oblast stránek ve virtuálním adresním prostoru procesu volání.|  
-|[VirtualFree – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualfree-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, což uvolní, decommits, nebo uvolní a decommits oblast stránek ve virtuálním adresním prostoru procesu volání.|  
-|[VirtualProtect – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualprotect-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, které změní ochrany v oblasti potvrdit stránek ve virtuálním adresním prostoru procesu volání.|  
-|[VirtualQuery – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualquery-method.md)|Slouží jako logické obálku pro odpovídající funkci, Win32, která načte informace o rozsahu stránek ve virtuálním adresním prostoru procesu volání.|  
+|[AcquiredVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-acquiredvirtualaddressspace-method.md)|Upozorňuje hostitele, že modul CLR (CLR) získal zadaná paměťová z operačního systému.|  
+|[CreateMAlloc – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md)|Získá ukazatel rozhraní k [ihostmalloc –](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instanci, která slouží k vyžádání přidělení paměti z haldy vytvořené hostitele.|  
+|[GetMemoryLoad – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-getmemoryload-method.md)|Získá velikost fyzické paměti, která je aktuálně používán; podle hostitele.|  
+|[NeedsVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-needsvirtualaddressspace-method.md)|Upozorňuje hostitele, že modul CLR bude pokus o použití zadaná paměťová.|  
+|[RegisterMemoryNotificationCallback – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)|Zaregistruje ukazatel na funkci zpětného volání, která volá hostitele oznámit CLR aktuálního zatížení paměti v počítači.|  
+|[ReleasedVirtualAddressSpace – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-releasedvirtualaddressspace-method.md)|Upozorňuje hostitele, že pomocí zadané paměti modulu CLR byla dokončena.|  
+|[VirtualAlloc – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualalloc-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, který rezervuje nebo potvrdí změny v oblasti stránek v virtuálního adresového prostoru volajícího procesu.|  
+|[VirtualFree – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualfree-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, který uvolní, rozváže, nebo uvolní a rozváže oblast stránky v rámci virtuálního adresového prostoru volajícího procesu.|  
+|[VirtualProtect – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualprotect-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, která změní ochrany v oblasti potvrzené stránek v virtuálního adresového prostoru volajícího procesu.|  
+|[VirtualQuery – metoda](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-virtualquery-method.md)|Slouží jako logické obálku pro odpovídající funkci Win32, který načte informace o rozsahu stránek v virtuálního adresového prostoru volajícího procesu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `IHostMemoryManager` také poskytuje metody pro CLR získat ukazatel přes který provádět požadavky na paměť v haldě a získat úroveň přetížení paměti v procesu vykazované hostitele.  
+ `IHostMemoryManager` také poskytuje metody pro CLR získat ukazatel, pomocí kterého k podání žádostí o paměti v haldě a úroveň zatížení paměti v procesu, jak je hlásí hostitele.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MSCorEE.h  
   
- **Knihovna:** zahrnuty jako prostředek v MSCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MSCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IHostMalloc – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)  
- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [IHostMalloc – rozhraní](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)
+- [Rozhraní pro hostování](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], about data binding
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
-ms.openlocfilehash: 1b34b3369e5a045f45251d3285f10bf74b6f0d33
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4cce0d56a629ca01e0174235b1e84291e9fa2f57
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45990073"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503206"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  
@@ -111,7 +111,7 @@ ms.locfileid: "45990073"
   
  Následující tabulka uvádí příklad scénáře pro každou <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> hodnotu pomocí <xref:System.Windows.Controls.TextBox> jako příklad:  
   
-|Hodnota UpdateSourceTrigger|Pokud zdrojová hodnota aktualizována|Ukázkový scénář pro textové pole|  
+|UpdateSourceTrigger value|Pokud zdrojová hodnota aktualizována|Ukázkový scénář pro textové pole|  
 |-------------------------------|----------------------------------------|----------------------------------|  
 |LostFocus (výchozí pro <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>)|Když ovládací prvek textové pole ztratí fokus.|A <xref:System.Windows.Controls.TextBox> , který je přidružen logiku ověřování (viz část ověření dat)|  
 |PropertyChanged|Při psaní do <xref:System.Windows.Controls.TextBox>|<xref:System.Windows.Controls.TextBox> ovládací prvky v okně chatovací místnosti|  
@@ -429,11 +429,11 @@ ms.locfileid: "45990073"
 ## <a name="debugging-mechanism"></a>Mechanismus ladění  
  Připojená vlastnost lze nastavit <xref:System.Diagnostics.PresentationTraceSources.TraceLevel%2A?displayProperty=nameWithType> související vazby objektu získat informace o stavu konkrétní vazby.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Controls.DataErrorValidationRule>  
- [Novinky ve verzi 4.5 grafického subsystému WPF](../../../../docs/framework/wpf/getting-started/whats-new.md)  
- [Vytvoření vazby k výsledkům dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)  
- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
- [Ukázka vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703)  
- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
- [Vytvoření vazby ke zdroji dat ADO.NET](../../../../docs/framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Controls.DataErrorValidationRule>
+- [Novinky ve verzi 4.5 grafického subsystému WPF](../../../../docs/framework/wpf/getting-started/whats-new.md)
+- [Vytvoření vazby k výsledkům dotazu LINQ](../../../../docs/framework/wpf/data/how-to-bind-to-the-results-of-a-linq-query.md)
+- [Datová vazba](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)
+- [Ukázka vazby dat](https://go.microsoft.com/fwlink/?LinkID=163703)
+- [Témata s postupy](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)
+- [Vytvoření vazby ke zdroji dat ADO.NET](../../../../docs/framework/wpf/data/how-to-bind-to-an-ado-net-data-source.md)

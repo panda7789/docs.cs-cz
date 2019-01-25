@@ -10,12 +10,12 @@ helpviewer_keywords:
 - international applications, naming guidelines
 ms.assetid: 8b0e97f3-7877-44fd-bc76-e05d36d5d79c
 author: KrzysztofCwalina
-ms.openlocfilehash: 5331c82069bb289c282e746841f5a328e2e628f2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 44627aafd9ec779625413a0862412a8f6c408109
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130869"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54497598"
 ---
 # <a name="naming-resources"></a>Prostředky pojmenování
 Protože lokalizovatelné prostředky může být odkazováno prostřednictvím určitých objektů, jako kdyby byly vlastnosti, pokyny pro pojmenování prostředků jsou podobné pokyny pro vlastnost.  
@@ -36,11 +36,11 @@ Protože lokalizovatelné prostředky může být odkazováno prostřednictvím 
  `ArgumentExceptionInvalidName`  
  `ArgumentExceptionFileNameIsMalformed`  
   
- *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
+ *Portions © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
  *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: Konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikován 22 Oct 2008, Designing Effective části této série Microsoft Windows Development.*  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
 - [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

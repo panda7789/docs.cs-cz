@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: přiřazení uživatelských informací pro seskupení připojení'
+title: 'Postupy: Přiřazení uživatelských informací pro seskupení připojení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
-ms.openlocfilehash: 6d0be3ccfc0a0b4b032283b7ed34908f79774bb6
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 927a87b250863c4d59e630264ee11286c30deb3a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50049539"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54607995"
 ---
-# <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: přiřazení uživatelských informací pro seskupení připojení
+# <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: Přiřazení uživatelských informací pro seskupení připojení
 
   
  Následující příklad ukazuje, jak se přiřazení uživatelských informací pro seskupení připojení, za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* před voláním této části kódu a který *uživatelské jméno* je jedinečný.  
@@ -108,6 +108,6 @@ Dim myWebResponse As WebResponse = myWebRequest.GetResponse()
 MyWebResponse.Close()  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Správa připojení](../../../docs/framework/network-programming/managing-connections.md)  
- [Seskupení připojení](../../../docs/framework/network-programming/connection-grouping.md)
+## <a name="see-also"></a>Viz také:
+- [Správa připojení](../../../docs/framework/network-programming/managing-connections.md)
+- [Seskupení připojení](../../../docs/framework/network-programming/connection-grouping.md)

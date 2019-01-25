@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b88a7b0672e15097c60afbe069ce5b78bd5c38d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50fd730876f43be5da45f38fa2d4694cbb2b2d1a
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408137"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54502569"
 ---
 # <a name="cortypelayout-structure"></a>COR_TYPE_LAYOUT – struktura
 Poskytuje informace o rozložení objektu v paměti.  
@@ -42,17 +42,17 @@ typedef struct COR_TYPE_LAYOUT {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`parentID`|Identifikátor nadřazený typ pro tento typ. Toto bude s id typu NULL (token1 = 0, token2 = 0) Pokud id typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
-|`objectSize`|Základní velikost objektu tohoto typu. Toto je celková velikost pro jiný proměnnou velikostí objekty.|  
-|`numFields`|Počet polí součástí objekty tohoto typu.|  
-|`boxOffset`|Pokud je tento typ zabalená, počáteční posun objektu polí. Toto pole je platná pouze pro typy hodnot, jako je například primitivních elementů a struktury.|  
-|`type`|CorElementType, do které patří tohoto typu.|  
+|`parentID`|Identifikátor k tomuto typu nadřazeného typu. Bude jím typ id hodnotu NULL (token1 = 0, token2 = 0) Pokud id typu odpovídá <xref:System.Object?displayProperty=nameWithType>.|  
+|`objectSize`|Základní velikost objektu tohoto typu. Toto je celková velikost velkých objektů bez proměnných.|  
+|`numFields`|Počet polí, které jsou součástí objekty tohoto typu.|  
+|`boxOffset`|Pokud je tento typ v poli, počáteční posun objektu polí. Toto pole je platný pouze pro typy hodnot, jako je například primitiv a struktury.|  
+|`type`|Corelementtype –, do které tento typ patří.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud `numFields` je větší než nula, můžete zavolat [icordebugprocess5::gettypefields –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md) metodu za účelem získání informací o pole v tomto typu. Pokud `type` je `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`, nebo `ELEMENT_TYPE_SZARRAY`, velikost objekty tohoto typu je proměnná a můžete předat [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) struktury k [icordebugprocess5::getarraylayout – ](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getarraylayout-method.md) metoda.  
+ Pokud `numFields` je větší než nula, můžete volat [icordebugprocess5::gettypefields –](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md) metodu k získání informací o polích v tomto typu. Pokud `type` je `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`, nebo `ELEMENT_TYPE_SZARRAY`velikost objekty tohoto typu je proměnná a můžete předat [cor_typeid –](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) struktury na [icordebugprocess5::getarraylayout – ](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getarraylayout-method.md) metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -60,6 +60,6 @@ typedef struct COR_TYPE_LAYOUT {
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)
+## <a name="see-also"></a>Viz také:
+- [Struktury pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Ladění](../../../../docs/framework/unmanaged-api/debugging/index.md)

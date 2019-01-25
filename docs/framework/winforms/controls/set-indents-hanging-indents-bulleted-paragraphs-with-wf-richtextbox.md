@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení odsazení, ukotvených odsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox'
+title: 'Postupy: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,17 +13,17 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], setting indents and bullets
 - text boxes [Windows Forms], bullets
 ms.assetid: abfb40e6-5642-4691-8ec1-9d9ae91688dc
-ms.openlocfilehash: 95ba276f3b2682d5b5bcaaa49916e856eb580632
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ad5dd1cc3839fbe29d39f6ab38b0e865e7b0a335
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33537684"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492417"
 ---
-# <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení odsazení, ukotvených odsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox
-Windows Forms <xref:System.Windows.Forms.RichTextBox> spoustu možností pro formátování textu, zobrazí se má ovládací prvek. Vybrané odstavce dokáže formátovat jako seznamy s odrážkami nastavením <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> vlastnost. Můžete také <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>, <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>, a <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnosti, které chcete nastavit odsazení odstavce vzhledem ke levé a pravé hrany ovládacího prvku a levý okraj dalších řádků textu.  
+# <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>Postupy: Nastavení odsazení, předsazení a odstavců s odrážkami pomocí ovládacího prvku Windows Forms RichTextBox
+Windows Forms <xref:System.Windows.Forms.RichTextBox> ovládací prvek má mnoho možností pro formátování textu se zobrazí. Vybrané odstavce jako seznamy s odrážkami můžete naformátovat tak, že nastavíte <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> vlastnost. Můžete také použít <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>, <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>, a <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnosti nastavení odsazení odstavce doleva a pravého okraje ovládacího prvku a levým okrajem dalších řádků textu.  
   
-### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>Formátování odstavce jako seznam s odrážkami  
+### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>K formátování odstavce jako seznam s odrážkami  
   
 1.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> vlastnost `true`.  
   
@@ -41,11 +41,11 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> spoustu možností pro for
   
 ### <a name="to-indent-a-paragraph"></a>Odsazení odstavce  
   
-1.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi levým okrajem ovládacího prvku a levém okraji textu.  
+1.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi levým okrajem ovládacího prvku a levým okrajem text.  
   
-2.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi levý okraj prvního řádku text odstavce a levý okraj následující řádky ve stejné odstavce. Hodnota <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnost se vztahuje jenom na řádky v odstavci, které mají zabalené pod první řádek.  
+2.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi levým okrajem první řádek textu odstavce a levým okrajem následující řádky ve stejném paragraph. Hodnota <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> vlastnost platí jenom pro řádky v odstavci zabalené pod první řádek.  
   
-3.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi pravým okrajem ovládacího prvku a pravý okraj textu.  
+3.  Nastavte <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> vlastnost na celé číslo představující vzdálenost v pixelech mezi pravým okrajem ovládacího prvku a pravým okrajem text.  
   
     ```vb  
     RichTextBox1.SelectionIndent = 8  
@@ -66,9 +66,9 @@ Windows Forms <xref:System.Windows.Forms.RichTextBox> spoustu možností pro for
     ```  
   
     > [!NOTE]
-    >  Všechny tyto vlastnosti ovlivňují všechny odstavců, které obsahují vybraný text a také text, který je zadán po aktuální kurzor. Například pokud uživatel vybere možnost aplikace word v rámci odstavce a pak upraví odsazení, nové nastavení bude použito na celý odstavec, který obsahuje aplikace word a také na všechny odstavce následně zadali po vybraného odstavce. Informace o výběr textu pomocí programu najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
+    >  Všechny tyto vlastnosti ovlivňují všechny odstavce, které obsahují vybraný text a také text, který je zadán po do aktuálního místa vložení. Například když uživatel vybere slova v rámci odstavce a poté nastaví odsazení, nové nastavení bude použito celý odstavec obsahující toto slovo a také všechny odstavce následně zadaných po vybraný odstavec. Informace o výběr textu pomocí programu najdete v tématu <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.RichTextBox>  
- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)  
- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.Forms.RichTextBox>
+- [Ovládací prvek RichTextBox](../../../../docs/framework/winforms/controls/richtextbox-control-windows-forms.md)
+- [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)

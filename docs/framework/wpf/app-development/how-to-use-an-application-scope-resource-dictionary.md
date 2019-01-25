@@ -9,18 +9,18 @@ helpviewer_keywords:
 - resource dictionaries [WPF], application-scope
 - application-scope resource dictionaries
 ms.assetid: 53857682-bd2c-4f2c-8f25-1307d0b451a2
-ms.openlocfilehash: 081ce8d350995d5321acbb24d220bed229ff17ae
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 8df357d3b366a057b2a6072fb69b47a6075df5a0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801347"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54492543"
 ---
 # <a name="how-to-use-an-application-scope-resource-dictionary"></a>Postupy: Použití slovníku zdrojů rozsahu aplikace
 Tento příklad ukazuje, jak definovat a použití slovníku zdrojů rozsahu aplikace vlastní.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Application> vystavuje úložiště oboru aplikace za sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení <xref:System.Windows.Application.Resources%2A> vlastnost je inicializována s instancí <xref:System.Windows.ResourceDictionary> typu. Použít tuto instanci při získání a nastavení vlastností pro rozsah aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [postupy: získání a nastavení prostředek oboru aplikace](https://msdn.microsoft.com/library/39e0420c-c9fc-47dc-8956-fdd95b214095).
+ <xref:System.Windows.Application> vystavuje úložiště oboru aplikace za sdílené prostředky: <xref:System.Windows.Application.Resources%2A>. Ve výchozím nastavení <xref:System.Windows.Application.Resources%2A> vlastnost je inicializována s instancí <xref:System.Windows.ResourceDictionary> typu. Použít tuto instanci při získání a nastavení vlastností pro rozsah aplikace pomocí <xref:System.Windows.Application.Resources%2A>. Další informace najdete v tématu [jak: Získání a nastavení prostředek oboru aplikace](https://msdn.microsoft.com/library/39e0420c-c9fc-47dc-8956-fdd95b214095).
   
  Pokud máte různé prostředky, které jste nastavili pomocí <xref:System.Windows.Application.Resources%2A>, místo toho můžete vlastní prostředek slovníku k ukládání těchto prostředků a nastavte <xref:System.Windows.Application.Resources%2A> s ním místo. Následuje ukázka, jak deklarovat pomocí XAML slovník vlastních prostředků.
   
@@ -41,8 +41,8 @@ Tento příklad ukazuje, jak definovat a použití slovníku zdrojů rozsahu apl
   
  Existují dva aspekty při používání <xref:System.Windows.Application.Resources%2A>. První, slovníku *klíč* je objekt, takže je nutné použít přesně stejnou instanci objektu při i nastavení a získání hodnoty vlastnosti. (Všimněte si, že klíč je při použití řetězce malá a velká písmena.) Druhý, slovníku *hodnotu* je objekt, takže budete muset převést hodnotu na požadovaný typ. při získávání hodnoty vlastnosti.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.ResourceDictionary>  
- <xref:System.Windows.Application.Resources%2A>  
- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
- [Slovníky sloučených prostředků](../../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.Windows.ResourceDictionary>
+- <xref:System.Windows.Application.Resources%2A>
+- [Prostředky XAML](../../../../docs/framework/wpf/advanced/xaml-resources.md)
+- [Slovníky sloučených prostředků](../../../../docs/framework/wpf/advanced/merged-resource-dictionaries.md)

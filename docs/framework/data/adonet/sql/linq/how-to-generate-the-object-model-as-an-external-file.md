@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: generování objektový Model jako externí soubor'
+title: 'Postupy: Generování objektového modelu jako externího souboru'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 00e8563b361a36de6c31e9ff0c0fd8f3b6f46b4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44b123130b79026ed7638ccc7abeb13d8a5f55ef
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33364932"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54499168"
 ---
-# <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: generování objektový Model jako externí soubor
-Jako alternativu k mapování na základě atributů můžete pomocí nástroje příkazového řádku na SQLMetal vygenerovat objektový model jako externí soubor XML. Další informace najdete v tématu [SqlMetal.exe (nástroj pro vytváření kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Pomocí externího souboru XML mapování snížit zbytečné soubory do vašeho kódu. Můžete také změnit chování změnou externího souboru bez nutnosti rekompilace binární soubory aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+# <a name="how-to-generate-the-object-model-as-an-external-file"></a>Postupy: Generování objektového modelu jako externího souboru
+Jako alternativu k mapování založených na atributech můžete vygenerovat objektového modelu jako externího souboru XML s použitím nástroje příkazového řádku SQLMetal. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). S použitím externí soubor mapování XML, snížíte nepořádku v kódu. Chování můžete také změnit úpravou souboru externí bez opětovné kompilace binární soubory vaší aplikace. Další informace najdete v tématu [externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
 > [!NOTE]
->  [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje vzniku souboru externí mapování.  
+>  [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] Nepodporuje generování souboru mapování externí.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz vytvoří soubor externí mapování z ukázková databáze Northwind.  
+ Následující příkaz vygeneruje soubor mapování externí z ukázkové databáze Northwind.  
   
 ```  
 sqlmetal /server:myserver /database:northwind /map:externalfile.xml  
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující výňatek ze souboru externí mapování zobrazuje v ukázková databáze Northwind mapování pro tabulku zákazníků. Tato výňatek ze byl vygenerován spuštěním na SQLMetal s **/map** možnost.  
+ Následující úryvek z externí mapování souboru ukazuje mapování pro tabulku Customers v ukázkové databázi Northwind. Tento výpis vygeneroval SQLMetal pomocí provádí **/map** možnost.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -48,7 +48,7 @@ sqlmetal /server:myserver /database:northwind /map:externalfile.xml
 </Database>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)  
- [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
- [Postupy: Generování objektového modelu v jazyce Visual Basic nebo C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+## <a name="see-also"></a>Viz také:
+- [Vytvoření objektového modelu](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
+- [Externí mapování](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
+- [Postupy: Generování objektového modelu v jazyce Visual Basic neboC#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)

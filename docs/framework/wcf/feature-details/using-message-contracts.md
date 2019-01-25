@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-ms.openlocfilehash: c3f979d26c7e9c36fc242476ae5b3420b2e7d3ac
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 34f1c761a127fe00612259a79dae47d1c9d5512f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50194082"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54534417"
 ---
 # <a name="using-message-contracts"></a>Použití kontraktů zpráv
 Obvykle při vytváření aplikací Windows Communication Foundation (WCF), vývojáři pozornosti datových struktur a problémům se serializací a není nutné starat struktura zpráv, ve kterých se provádí s data. V případě těchto aplikací je jednoduché vytváření kontraktů dat pro parametry nebo návratové hodnoty. (Další informace najdete v tématu [zadání přenosu dat v kontraktech služeb](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md).)  
@@ -447,6 +447,6 @@ public class OperationDetails
   
  Pokud chcete přijímat zprávy objektu jako `Result` vlastnost a vrácené hodnoty jako vlastnosti objektu, použijte `/messageContract` možnost příkazu. Tím se vygeneruje podpis, který vrací zprávy s odpovědí jako `Result` vlastnost <xref:System.EventArgs> objektu. Všechny interní vrácené hodnoty jsou pak vlastnosti objektu zprávu odpovědi.  
   
-## <a name="see-also"></a>Viz také  
- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)
+## <a name="see-also"></a>Viz také:
+- [Použití kontraktů dat](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [Navrhování a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md)

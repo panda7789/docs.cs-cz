@@ -2,12 +2,12 @@
 title: Spolupráce peer-to-Peer
 ms.date: 03/30/2017
 ms.assetid: b6216d88-bccb-4a59-9f1c-9f751708e811
-ms.openlocfilehash: a7d382006921487ea91f82ee830c75b6355a01f3
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 81900cac9bf3c4d2fb247c36f00d4aa8413944f6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50180784"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54590537"
 ---
 # <a name="peer-to-peer-collaboration"></a>Spolupráce peer-to-peer
 
@@ -40,5 +40,5 @@ Infrastruktura spolupráce Peer-to-Peer je zjednodušenou implementaci Peer-to-P
  V doméně služby Active Directory řadiče domény poskytovaly služby ověřování pomocí protokolu Kerberos. V prostředí bez serveru peer partnerské uzly musíte zadat své vlastní ověřování. Pro Peer-to-Peer sítě může fungovat libovolný uzel jako certifikační Autorita, odebírání požadavek kořenového certifikátu v každé partnerské důvěryhodného kořenového úložiště. Ověřování je prováděno pomocí certifikátů podepsaných svým držitelem, formátovaný jako certifikáty X.509. Toto jsou certifikáty, které jsou vytvořeny pomocí každého partnera, který vygeneruje veřejný klíč/privátní klíčový pár a certifikát, který je podepsaný pomocí soukromého klíče. Certifikát podepsaný svým držitelem slouží k ověřování a k poskytnutí informací o entitě peer. Jako je například ověřování X.509 rovnocenné ověřování sítě závisí na službě řetěz certifikátů trasování zpět na veřejný klíč, který je důvěryhodný.  
   
 ## <a name="see-also"></a>Viz také:
-- <xref:System.Net.PeerToPeer.Collaboration>  
+- <xref:System.Net.PeerToPeer.Collaboration>
 - [Obor názvů System.Net.PeerToPeer.Collaboration](../../../docs/framework/network-programming/about-the-system-net-peertopeer-collaboration-namespace.md)

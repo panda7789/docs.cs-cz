@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d4e9d03dcf4603f9470f8f2509050eb6f875746a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 084f0bbab130cd4e7334184fe9baa322c0487942
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442637"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54616768"
 ---
 # <a name="corerrorifemitoutoforder-enumeration"></a>CorErrorIfEmitOutOfOrder – výčet
-Obsahuje příznak hodnoty, které označují podmínky, za kterých by měl být vygenerován chybovou zprávu, když metadata jsou vydávány mimo pořadí.  
+Obsahuje příznak hodnoty, které určují podmínky, za kterých by měl být vygenerován chybovou zprávu, když metadat je vygenerován mimo pořadí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,21 +47,21 @@ typedef enum CorErrorIfEmitOutOfOrder {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDErrorOutOfOrderDefault`|Určuje výchozí chování, který negeneruje chybové zprávy.|  
-|`MDErrorOutOfOrderNone`|Označuje, že kompilátor by neměla generovat chybové zprávy.|  
-|`MDErrorOutOfOrderAll`|Označuje, že kompilátor by měl generovat chybovou zprávu, pokud pole, vlastnost, události, metoda nebo parametr je vygenerované mimo pořadí.|  
-|`MDMethodOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, když metoda je vygenerované mimo pořadí.|  
-|`MDFieldOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, pokud je pole vygenerované mimo pořadí.|  
-|`MDParamOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, pokud je parametr vygenerované mimo pořadí.|  
-|`MDPropertyOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, pokud je vlastnost vygenerované mimo pořadí.|  
-|`MDEventOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, když je vygenerované událost mimo pořadí.|  
+|`MDErrorOutOfOrderDefault`|Určuje výchozí chování, které nejsou generovány chybové zprávy.|  
+|`MDErrorOutOfOrderNone`|Označuje, že kompilátor by neměl generovat chybové zprávy.|  
+|`MDErrorOutOfOrderAll`|Označuje, že by měl kompilátor generovat chybovou zprávu, když pole, vlastnosti, události, metody nebo parametr je vygenerován mimo pořadí.|  
+|`MDMethodOutOfOrder`|Označuje, že kompilátor by měl generovat chybovou zprávu, když metoda je vygenerován mimo pořadí.|  
+|`MDFieldOutOfOrder`|Označuje, že by měl kompilátor generovat chybovou zprávu, když pole je vygenerován mimo pořadí.|  
+|`MDParamOutOfOrder`|Označuje, že by měl kompilátor generovat chybovou zprávu, pokud parametr je vygenerován mimo pořadí.|  
+|`MDPropertyOutOfOrder`|Označuje, že by měl kompilátor generovat chybovou zprávu, když vlastnost je vygenerován mimo pořadí.|  
+|`MDEventOutOfOrder`|Označuje, že by měl kompilátor generovat chybovou zprávu při události je vygenerován mimo pořadí.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorHdr.h  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

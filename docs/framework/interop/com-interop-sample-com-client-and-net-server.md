@@ -1,5 +1,5 @@
 ---
-title: 'Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET'
+title: 'Ukázka zprostředkovatele s objekty COM: Klient COM a .NET Server'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 26963a6dc057c979b43e9697ec7a85a60fd3932d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc2cd6b59fe7d05e4973d8a9ece13d9ae7f91e7f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389552"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54548544"
 ---
-# <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele komunikace s objekty COM: klient COM a server .NET
-Tento příklad znázorňuje vzájemná spolupráce z [klient COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) který provede výpočty hypotéky. V tomto příkladu klient vytvoří a volá instanci spravovaný `Loan` třídy, předá čtyři argumenty (jeden z těchto čtyř se rovná nule) na instance a zobrazí výpočtů. Příklady kódu od této ukázky se zobrazí v této části.  
+# <a name="com-interop-sample-com-client-and-net-server"></a>Ukázka zprostředkovatele s objekty COM: Klient COM a .NET Server
+V této ukázce vzájemnou spolupráci [klient modelu COM](#cpconcominteropsamplecomclientnetserveranchor1) a [.NET Server](#cpconcominteropsamplecomclientnetserveranchor2) , který provádí výpočty na dům. V tomto příkladu vytvoří klienta a volá instance managed `Loan` třídy, předá čtyři argumenty (jedna z těchto čtyř se rovná nule) instance a zobrazí výpočtů. Příklady kódů z této ukázce se mají v této části.  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor1"></a>   
-## <a name="com-client"></a>Klient COM  
+## <a name="com-client"></a>Klient modelu COM  
   
 ```cpp  
 // ConLoan.cpp : Defines the entry point for the console application.  
@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
 ```  
   
 <a name="cpconcominteropsamplecomclientnetserveranchor2"></a>   
-## <a name="net-server"></a>Rozhraní .NET serveru  
+## <a name="net-server"></a>.NET Server  
   
 ```vb  
 Imports System  
@@ -389,5 +389,5 @@ namespace LoanLib {
 }  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
+## <a name="see-also"></a>Viz také:
+- [Vystavení komponent architektury .NET Framework pro COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)

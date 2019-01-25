@@ -2,19 +2,19 @@
 title: '&lt;namedPipeTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-ms.openlocfilehash: bf9229411143345847247f36de07b5c014d3f259
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: cdb2863ff376a92f7c4b679f4812b895ac3f2234
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54149597"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518836"
 ---
 # <a name="ltnamedpipetransportgt"></a>&lt;namedPipeTransport&gt;
 Definuje přenos, který způsobí přenos zpráv pomocí pojmenovaných kanálů, pokud je součástí vlastní vazby.  
   
 \<system.serviceModel>  
 \<vazby >  
-\<třídě customBinding >  
+\<customBinding>  
 \<Vytvoření vazby >  
 \<namePipeTransport >  
   
@@ -53,12 +53,12 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |hostNameComparisonMode|Získá nebo nastaví hodnotu určující, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.|  
 |Vlastnost manualAddressing|Získá nebo nastaví hodnotu určující, jestli je potřeba ruční adresování zprávy.|  
 |maxBufferPoolSize|Získá nebo nastaví maximální velikost v bajtech, všechny fondy vyrovnávací paměti používané přenos.|  
-|Třída maxBufferSize|Získá nebo nastaví maximální velikost vyrovnávací paměti pro použití. Pro proudu zpráv tato hodnota by měla být aspoň maximální možná velikost záhlaví zpráv, které jsou v režimu vyrovnávací paměti pro čtení.|  
+|maxBufferSize|Získá nebo nastaví maximální velikost vyrovnávací paměti pro použití. Pro proudu zpráv tato hodnota by měla být aspoň maximální možná velikost záhlaví zpráv, které jsou v režimu vyrovnávací paměti pro čtení.|  
 |maxOutputDelay|Získá nebo nastaví maximální interval času, který blok zprávy, nebo celá zpráva může zůstat ve vyrovnávací paměti v paměti před odesláním navýšení kapacity.|  
 |maxPendingAccepts|Získá nebo nastaví maximální počet kanálů služby může mít čekání na naslouchací proces pro zpracování příchozích připojení ke službě.|  
 |maxPendingConnections|Získá nebo nastaví maximální počet připojení čeká na odeslání ve službě.|  
 |maxReceivedMessageSize|Získá nebo nastaví maximální povolenou velikost zprávy, v bajtech, které může být přijata.|  
-|režim přenosu|Získá nebo nastaví hodnotu určující, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.|  
+|transferMode|Získá nebo nastaví hodnotu určující, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány připojením řízenou přepravou.|  
 |[\<connectionPoolSettings > z \<namedPipeTransport >](../../../../../docs/framework/configure-apps/file-schema/wcf/connectionpoolsettings.md)|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -72,14 +72,14 @@ Tento přenos používá identifikátory URI ve tvaru "net.pipe://hostname/path"
   
 `namedPipeTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol pojmenovaných kanálů. Tento přenos se používá pro na počítači Windows Communication Foundation (WCF) - na - WCF komunikace.  
   
-## <a name="see-also"></a>Viz také  
-<xref:System.ServiceModel.Configuration.NamedPipeTransportElement>   
-<xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>   
-<xref:System.ServiceModel.Channels.TransportBindingElement>   
-<xref:System.ServiceModel.Channels.CustomBinding>   
-[Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)   
-[Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)   
-[Vazby](../../../../../docs/framework/wcf/bindings.md)   
-[Rozšiřování vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
-[Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
-[\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.NamedPipeTransportElement>
+- <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>
+- <xref:System.ServiceModel.Channels.TransportBindingElement>
+- <xref:System.ServiceModel.Channels.CustomBinding>
+- [Přenosy](../../../../../docs/framework/wcf/feature-details/transports.md)
+- [Volba přenosu](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+- [Vazby](../../../../../docs/framework/wcf/bindings.md)
+- [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

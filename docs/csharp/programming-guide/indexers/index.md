@@ -8,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 1b3dd16cf4c12dca0bc155c478c187047caf4c25
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 08aff040720b57a8e94e1c60c22a04791d463cf0
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53236580"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54512031"
 ---
 # <a name="indexers-c-programming-guide"></a>Indexery (Průvodce programováním v C#)
 
@@ -68,7 +68,7 @@ Od verze C# 7.0, jak získat a přístupový objekt set mohou být implementovan
 
 Další informace najdete v tématu [indexery](~/_csharplang/spec/classes.md#indexers) v [ C# specifikace jazyka](../../language-reference/language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
 - [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)

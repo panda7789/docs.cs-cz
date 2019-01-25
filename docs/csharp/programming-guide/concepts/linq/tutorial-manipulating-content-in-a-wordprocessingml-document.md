@@ -2,12 +2,12 @@
 title: 'Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)'
 ms.date: 07/20/2015
 ms.assetid: bc9815f8-13d2-4f50-a4d1-b1c0d50d37b3
-ms.openlocfilehash: 2d906bb2310d4dd6c0ccd865a52ede441556dfda
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: 2d972f53b30ccd8ba8e1ffdaecb40cf7f76e7b6c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54145156"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54583463"
 ---
 # <a name="tutorial-manipulating-content-in-a-wordprocessingml-document-c"></a>Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)
 Tento kurz ukazuje, jak použít funkční transformace, jehož přístup a LINQ to XML k práci s dokumenty XML. Příklady jazyka C#, dotaz a manipulovat s informacemi v dokumentech Office Open XML WordprocessingML, které jsou uloženy v aplikaci Microsoft Word.  
@@ -29,7 +29,7 @@ Tento kurz ukazuje, jak použít funkční transformace, jehož přístup a LINQ
 |[Hledání textu v dokumentech aplikace Word (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)|Používá předchozí dotazy pro vyhledání zadaný textový řetězec v dokumentu.|  
 |[Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)|Poskytuje některé podrobnosti o dokumentech Office Open XML WordprocessingML.|  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-- [Čistě funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)  
+- [Čistě funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)
 - [Úvod k čistě funkčním transformacím (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b4c1d213c2ed87126fc5eb9995050e14f9214bd
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 8ce1c944257a1a11287b751d9a0f9eb5a88d744f
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53155337"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54596888"
 ---
 # <a name="blittable-and-non-blittable-types"></a>Přenositelné a nepřenositelné typy
 Většina datových typů mají společné reprezentaci ve spravované i nespravované paměti a nevyžadují žádná zvláštní zacházení podle interoperační zařazovač. Tyto typy jsou označovány jako *přenositelné typy* vzhledem k tomu, že když jsou předávány mezi nevyžadují převod spravovaného a nespravovaného kódu.  
@@ -73,5 +73,5 @@ Většina datových typů mají společné reprezentaci ve spravované i nesprav
   
  Typy tříd a objektů jsou podporovány pouze komunikace s objekty COM. Pro odpovídající typy v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], C#a C++, naleznete v tématu [– přehled knihovny tříd](../../../docs/standard/class-library-overview.md).  
   
-## <a name="see-also"></a>Viz také  
- [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)
+## <a name="see-also"></a>Viz také:
+- [Výchozí chování zařazování](../../../docs/framework/interop/default-marshaling-behavior.md)

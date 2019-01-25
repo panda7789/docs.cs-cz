@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 696afe71-5852-478d-a33f-b2d2dbc4b91f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6962c8063479b3b0279d771b1b0cd1df63f696b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b2d6db83f78cb76181c0b54a8e6f4157e51130b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33416413"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54648833"
 ---
 # <a name="icordebugdatatarget2getimagelocation-method"></a>ICorDebugDataTarget2::GetImageLocation – metoda
-Vrátí cestu modul z modulu základní adresu.  
+Vrátí cestu modulu z modulu Základní adresa.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,24 +26,24 @@ HRESULT GetImageLocation(    [in] CORDB_ADDRESS baseAddress,
   
 #### <a name="parameters"></a>Parametry  
  `baseAddress`  
- [v] A [CORDB_ADDRESS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) hodnotu, která představuje základní adresu modulu.  
+ [in] A [CORDB_ADDRESS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) hodnotu, která představuje základní adresu modulu.  
   
  `cchName`  
- [v] Počet znaků ve vyrovnávací paměti, který přijme modul s cestou.  
+ [in] Počet znaků ve vyrovnávací paměti, která se zobrazí cesta modulu.  
   
  `pcchName`  
  [out] Ukazatel na počet znaků, které jsou zapsány do `szName` vyrovnávací paměti.  
   
  `szName`  
- [out] Cesta k modulu.  
+ [out] Cesta modulu.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
->  Tato metoda je k dispozici s .NET Native jenom.  
+>  Tato metoda je pouze k dispozici s .NET Native.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -51,6 +51,6 @@ HRESULT GetImageLocation(    [in] CORDB_ADDRESS baseAddress,
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorDebugDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)  
- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [ICorDebugDataTarget2 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
+- [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

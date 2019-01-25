@@ -9,44 +9,44 @@ helpviewer_keywords:
 - gradients [Windows Forms], creating path
 - graphics paths [Windows Forms], creating gradient
 ms.assetid: 1948e834-e104-481c-b71d-d8aa9e4d106e
-ms.openlocfilehash: a3a23d382e199b7ec70a8605041f7e464d1bffe0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe1bdac900e64ec37ca87c35d5378ca1aba26ae3
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529158"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54513032"
 ---
 # <a name="how-to-create-a-path-gradient"></a>Postupy: Vytvoření přechodu cesty
-<xref:System.Drawing.Drawing2D.PathGradientBrush> Třída umožňuje přizpůsobit způsob vyplnění obrazce s postupně Změna barev. Můžete například zadat jeden barvu center cesty a jiné barvy hranice cesty. Můžete také zadat samostatnou barvy pro každý z několika bodů podél hranice cesty.  
+<xref:System.Drawing.Drawing2D.PathGradientBrush> Třída umožňuje přizpůsobit způsob vyplnění obrazce pomocí postupně Změna barev. Například můžete určit jednu barvu pro System center cesty a jinou barvu dané hranice lze cesty. Můžete také zadat samostatnou barvy pro každý z několika bodů podél hranici cesty.  
   
 > [!NOTE]
->  V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], cesta je posloupnost čar a křivek udržované <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Další informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] najdete v části cesty, [cesty grafiky v GDI +](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md) a [Constructing a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md).  
+>  V [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], cestu je posloupnost čar a křivek udržuje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Další informace o [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] cesty, naleznete v tématu [cesty grafiky v GDI +](../../../../docs/framework/winforms/advanced/graphics-paths-in-gdi.md) a [Constructing a kreslení cest](../../../../docs/framework/winforms/advanced/constructing-and-drawing-paths.md).  
   
-### <a name="to-fill-an-ellipse-with-a-path-gradient"></a>Vyplníte elipsy přechodu cesty  
+### <a name="to-fill-an-ellipse-with-a-path-gradient"></a>Chcete-li vyplnit elipsu přechodu cesty  
   
--   Následující příklad doplní elipsy s štětce přechodu cesty. Barva center je nastavena na hodnotu modrá a barva hranic je nastavena na hodnotu akvamarínová. Následující obrázek znázorňuje plné elipsy.  
+-   Následující příklad zkopíruje elipsu s štětce přechodu cesty. Barva center je nastavena na modrou a hranice barva je nastavena na akvamarínovou. Následující obrázek znázorňuje vyplněnou elipsu.  
   
-     ![Cesty přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient1.png "pathgradient1")  
+     ![Cesta přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient1.png "pathgradient1")  
   
-     Ve výchozím nastavení neprodlužuje štětce přechodu cesty mimo hranice cesty. Pokud používáte štětce přechodu cesty k vyplnění obrázek, který se rozpíná za hranice cesty, nebude vyplněno oblasti obrazovky mimo cestu.  
+     Ve výchozím nastavení nerozšiřuje štětce přechodu cesty mimo hranice cesty. Pokud používáte štětce přechodu cesty tak, aby vyplnil obrázek, která se rozpíná za hranice cesty, nebude vyplnění oblasti obrazovky mimo cestu.  
   
-     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A> volání v následující kód do `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`.  
+     Následující obrázek znázorňuje, co se stane, když změníte <xref:System.Drawing.Graphics.FillEllipse%2A> volání v následující kód, který `e.Graphics.FillRectangle(pthGrBrush, 0, 10, 200, 40)`.  
   
-     ![Cesty přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient2.png "pathgradient2")  
+     ![Cesta přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient2.png "pathgradient2")  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#11)]
      [!code-vb[System.Drawing.UsingaGradientBrush#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#11)]  
   
-     V předchozím příkladu kódu je určen k použití s modelem Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> e, což je parametr z <xref:System.Windows.Forms.PaintEventHandler>.  
+     V předchozím příkladu kódu je určený k použití pomocí Windows Forms a vyžaduje <xref:System.Windows.Forms.PaintEventArgs> e, což je parametr z <xref:System.Windows.Forms.PaintEventHandler>.  
   
-### <a name="to-specify-points-on-the-boundary"></a>Určete body na hranici  
+### <a name="to-specify-points-on-the-boundary"></a>K určení bodů na hranici  
   
--   Následující příklad vytvoří štětce přechodu cesty z cesty ve tvaru hvězdičky. Nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterColor%2A> vlastnost, která nastavuje barvu v těžiště na červenou hvězdičkou. Potom nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A> vlastnosti k určení různých barev (uložené v `colors` pole) v jednotlivých fázích `points` pole. Příkaz konečné kódu doplní cestu ve tvaru hvězdičky s štětce přechodu cesty.  
+-   Následující příklad vytvoří štětce přechodu cesty z cesty ve tvaru hvězdy. Nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterColor%2A> vlastnost, která nastavuje barvu na těžiště červené hvězdy. Potom nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A> vlastnosti a určit různé barvy (uložené v `colors` pole) v jednotlivých fázích `points` pole. Příkaz konečné kódu, který vyplní do cesty štětce přechodu cestu ve tvaru hvězdy.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#12)]
      [!code-vb[System.Drawing.UsingaGradientBrush#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#12)]  
   
--   Následující příklad nevykresluje přechodu cesty bez <xref:System.Drawing.Drawing2D.GraphicsPath> objektu v kódu. Konkrétní <xref:System.Drawing.Drawing2D.PathGradientBrush.%23ctor%2A> konstruktor v příkladu přijímá pole bodů, ale nevyžaduje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Rovněž Pamatujte, že <xref:System.Drawing.Drawing2D.PathGradientBrush> se používá k vyplnění obdélníku, ne cesta. Rámeček je větší než uzavřené cesty použité k definovat štětec, takže některé rámečku není vykresluje podle stopy. Následující obrázek znázorňuje obdélníku (tečkovaná čára) a část rámeček vykresluje podle štětce přechodu cesty.  
+-   Následující příklad nakreslí přechodu cesty bez <xref:System.Drawing.Drawing2D.GraphicsPath> objekt v kódu. Konkrétní <xref:System.Drawing.Drawing2D.PathGradientBrush.%23ctor%2A> konstruktor v příkladu přijímá pole bodů, ale nevyžaduje <xref:System.Drawing.Drawing2D.GraphicsPath> objektu. Všimněte si také, že <xref:System.Drawing.Drawing2D.PathGradientBrush> slouží k naplnění obdélníku, ne cestu. Obdélníku je větší než uzavřené cesty používá k definování štětce, takže některé obdélníku není kresleno stopy. Následující obrázek znázorňuje obdélník (tečkovaná čára) a část obdélník kresleno štětce přechodu cesty.  
   
      ![Přechodu](../../../../docs/framework/winforms/advanced/media/gradient4.png "gradient4")  
   
@@ -55,60 +55,60 @@ ms.locfileid: "33529158"
   
 ### <a name="to-customize-a-path-gradient"></a>Chcete-li přizpůsobit přechodu cesty  
   
--   Je možné přizpůsobit štětce přechodu cesty k nastavení jeho <xref:System.Drawing.Drawing2D.PathGradientBrush.FocusScales%2A> vlastnost. Fokus měřítka zadejte vnitřní cestu, který se nachází uvnitř hlavní cestu. Barva center se zobrazí everywhere uvnitř této vnitřní cesty a nikoli pouze v bodě center.  
+-   Jednou z možností přizpůsobení štětce přechodu cesty je nastavit jeho <xref:System.Drawing.Drawing2D.PathGradientBrush.FocusScales%2A> vlastnost. Nastaví fokus zadat vnitřní cestu, kterou najdete v hlavní cestě. V této cestě vnitřní, nikoli pouze v případě System center, zobrazí se barvě pro střední všude.  
   
-     Následující příklad vytvoří štětce přechodu cesty na základě eliptické cesty. Kód nastaví barvu hranic na modrou, nastaví barvu center akvamarínová a pak použije štětce přechodu cesty k zadání eliptické cestu.  
+     Následující příklad vytvoří štětce přechodu cestu na základě elipsy cesty. Kód nastaví barvu ohraničení na modrou, nastaví barvě pro Střední akvamarínová a poté použije štětce přechodu cesty tak, aby vyplnil elipsy cestu.  
   
-     V dalším kroku kód nastaví fokus měřítka štětce přechodu cesty. Měřítko fokus x je nastaveno na 0,3 a měřítko fokus y je nastaveno na 0,8. Volání kódu <xref:System.Drawing.Graphics.TranslateTransform%2A> metodu <xref:System.Drawing.Graphics> objektu tak, aby následných volání <xref:System.Drawing.Graphics.FillPath%2A> doplní elipsy, která se nachází vpravo od první třemi tečkami.  
+     V dalším kroku kód nastaví fokus měřítka štětce přechodu cesty. Detailní škálovací x je nastavena na 0,3 a detailní škálovací y je nastavena na 0,8. Kód volá <xref:System.Drawing.Graphics.TranslateTransform%2A> metodu <xref:System.Drawing.Graphics> objektu tak, aby následné volání <xref:System.Drawing.Graphics.FillPath%2A> vyplní elipsy, která se nachází vpravo od první tři tečky.  
   
-     Účinek měřítka fokus najdete Představte si malé elipsy, který sdílí jeho center hlavní třemi tečkami. Malé třemi tečkami (vnitřní) je hlavní elipsy škálovat (o jeho center) vodorovně faktorem 0,3 a svisle faktorem 0,8. Jak přesunout z hranice vnější elipsy na hranici vnitřní elipsy barvu změny postupně z modré akvamarínová. Když přesouváte z hranice vnitřní elipsy k centru sdílené aqua barva zůstanou.  
+     A vidět její účinek nastaví fokus, imagine malé elipsy, která sdílí jeho střed s hlavním elipsy. Malá (vnitřní) elipsa je hlavní elipsa škálovat (o jeho center) horizontálně faktorem 0,3 a svisle faktorem 0,8. Při přesunu z hranice vnější elipsa na hranici vnitřní elipsy, barva se změní postupně z modré na akvamarínovou. Při přesunu z hranice vnitřního elipsy do sdílené center akvamarínový barva zůstane.  
   
-     Následující obrázek znázorňuje výstup následující kód. Se třemi tečkami na levé straně je akvamarínová pouze v bodě center. Se třemi tečkami na pravé straně je akvamarínová everywhere uvnitř vnitřní cesty.  
+     Následující obrázek znázorňuje výstup následující kód. Tři tečky na levé straně je aqua pouze v případě System center. Se třemi tečkami na pravé straně je aqua kdekoli uvnitř vnitřní cesty.  
   
- ![Přechodu](../../../../docs/framework/winforms/advanced/media/focusscales1nogamma.png "focusscales1NoGamma")  
+ ![Gradient](../../../../docs/framework/winforms/advanced/media/focusscales1nogamma.png "focusscales1NoGamma")  
   
  [!code-csharp[System.Drawing.UsingaGradientBrush#14](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#14)]
  [!code-vb[System.Drawing.UsingaGradientBrush#14](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#14)]  
   
-### <a name="to-customize-with-interpolation"></a>Chcete-li přizpůsobit s interpolace  
+### <a name="to-customize-with-interpolation"></a>Chcete-li přizpůsobit pomocí interpolace  
   
--   Jiný způsob, jak přizpůsobit štětce přechodu cesty je zadání pole interpolace barvy a pole interpolace pozic.  
+-   Jinou možností přizpůsobení štětce přechodu cesty je zadání pole interpolační barvy a pole interpolace pozic.  
   
-     Následující příklad vytvoří podle trojúhelník štětce přechodu cesty. Nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.InterpolationColors%2A> vlastnost štětce přechodu cesty k určení pole barev interpolace (tmavý zelená, azurová, modrá) a pole interpolace pozice (0,25, 0, 1). Jak přesunout z hranice trojúhelníku středy barvu změní postupně z tmavý zelená do akvamarínová a pak z akvamarínová na modrou. Tato změna z tmavý zelená akvamarínová probíhá 25 procent vzdálenost od tmavý zelená na modrou.  
+     Následující příklad vytvoří štětce přechodu cesty, který je založen na trojúhelník. Nastaví kód <xref:System.Drawing.Drawing2D.PathGradientBrush.InterpolationColors%2A> vlastnost štětce přechodu cesty k určení pole interpolační barvy (akvamarínová, tmavě zelená, modrá) a pole interpolace pozice (0, 0,25, 1). Při přesunu do středového bodu z hranice část trojúhelníku, barva se změní postupně z tmavě zelená na akvamarínovou a pak azurová modrá. Změna tmavě zelená aqua probíhá 25 procent vzdálenost od tmavě zelená na modrou.  
   
-     Následující obrázek znázorňuje trojúhelníček vyplněnou štětce přechodu vlastní cesta.  
+     Následující obrázek znázorňuje trojúhelník vyplněny štětce přechodu na vlastní cestu.  
   
-     ![Cesty přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient4.png "pathgradient4")  
+     ![Cesta přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient4.png "pathgradient4")  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#15](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#15)]
      [!code-vb[System.Drawing.UsingaGradientBrush#15](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#15)]  
   
 ### <a name="to-set-the-center-point"></a>Chcete-li nastavit středový bod  
   
--   Ve výchozím nastavení je bod center štětce přechodu cesty na těžiště použitý k vytvoření stopy cesty. Můžete změnit umístění centrálního bodu nastavením <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint%2A> vlastnost <xref:System.Drawing.Drawing2D.PathGradientBrush> třídy.  
+-   Ve výchozím nastavení je středového bodu štětce přechodu cesty na těžiště cesty použité k sestavení kompletních stopy. Můžete změnit umístění středový bod tak, že nastavíte <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint%2A> vlastnost <xref:System.Drawing.Drawing2D.PathGradientBrush> třídy.  
   
-     Následující příklad vytvoří podle elipsy štětce přechodu cesty. Střed se třemi tečkami je na (70, 35), ale středový bod štětce přechodu cesty je nastaven na (120, 40).  
+     Následující příklad vytvoří štětce přechodu cestu podle elipsu. Centrum se třemi tečkami je na (70, 35), ale středového bodu štětce přechodu cesty je nastaven na (120, 40).  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#16](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#16)]
      [!code-vb[System.Drawing.UsingaGradientBrush#16](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#16)]  
   
-     Následující obrázek znázorňuje plné elipsy a středový bod štětce přechodu cesty.  
+     Následující obrázek znázorňuje vyplněnou elipsu a středového bodu štětce přechodu cesty.  
   
-     ![Cesty přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient5.png "pathgradient5")  
+     ![Cesta přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient5.png "pathgradient5")  
   
--   Můžete nastavit středový bod štětce přechodu cestu do umístění mimo cestu, která byla použita k vytvoření stopy. Následující příklad nahrazuje volání nastavení <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint%2A> vlastnost v předchozí kód.  
+-   Můžete nastavit středového bodu štětce přechodu cesty do umístění mimo cestu, která byla použita k sestavení kompletních stopy. Následující příklad nahradí volání nastavení <xref:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint%2A> vlastnost v předchozím kódu.  
   
      [!code-csharp[System.Drawing.UsingaGradientBrush#17](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#17)]
      [!code-vb[System.Drawing.UsingaGradientBrush#17](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#17)]  
   
-     Následující obrázek znázorňuje výstup v této změně.  
+     Následující obrázek znázorňuje výstup s touto změnou.  
   
-     ![Cesty přechodu](../../../../docs/framework/winforms/advanced/media/pathgradient6.png "pathgradient6")  
+     ![Gradient Path](../../../../docs/framework/winforms/advanced/media/pathgradient6.png "pathgradient6")  
   
-     V předchozí ilustraci nejsou body na pravém elipsy čistý blue, (i když jsou velmi podobné). Barvy v přechodu jsou umístěny, jako kdyby výplně dosáhne stavu (145, 35), kde barvu by čistý blue (0, 0, 255). Ale výplně nikdy dosáhne (145, 35) protože štětce přechodu cesty vybarví pouze uvnitř cesty.  
+     V předchozí ilustraci nejsou body úplně vpravo se třemi tečkami čistě modrá, (i když jsou velmi podobné). Barev v gradientu jsou umístěny, jako kdyby výplně dosáhne stavu (145, 35), kde barva by být čistě modré (0, 0, 255). Ale výplně nikdy dosáhne (145, 35) vzhledem k tomu, že pouze uvnitř jeho cesty jsou vykreslovány štětce přechodu cesty.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- V předchozích příkladech jsou navrženy pro používání s formuláři Windows a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
+ Předchozí příklady jsou určeny k použití pomocí Windows Forms a vyžadují <xref:System.Windows.Forms.PaintEventArgs> `e`, což je parametr <xref:System.Windows.Forms.Control.Paint> obslužné rutiny události.  
   
-## <a name="see-also"></a>Viz také  
- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)
+## <a name="see-also"></a>Viz také:
+- [Použití štětce přechodu k vyplnění obrazců](../../../../docs/framework/winforms/advanced/using-a-gradient-brush-to-fill-shapes.md)

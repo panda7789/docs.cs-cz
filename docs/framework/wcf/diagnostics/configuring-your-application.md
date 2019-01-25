@@ -2,12 +2,12 @@
 title: Konfigurace vaší aplikace
 ms.date: 03/30/2017
 ms.assetid: a2f995b0-669d-4721-b00f-4561ec7eb6a4
-ms.openlocfilehash: e9a5429ef573fdee9478b63b76d2da8005215c93
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 39d8c73809b8c2695ccebb1d69d1c016fd2313d1
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50187345"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54584633"
 ---
 # <a name="configuring-your-application"></a>Konfigurace vaší aplikace
 Windows Communication Foundation (WCF) využívá konfigurační systém .NET a umožňuje vám nakonfigurovat služby v počítači a aplikační oboru.  
@@ -29,7 +29,7 @@ Windows Communication Foundation (WCF) využívá konfigurační systém .NET a 
 > [!NOTE]
 >  Pokud upravíte kliknutím pravým tlačítkem myši v konfiguračním souboru projektu webové služby WCF v sadě Visual Studio **Průzkumníka řešení**, Všimněte si, že **upravit konfigurace WCF** chybí položka kontextové nabídky. Chcete-li vyřešit tento problém, klikněte na tlačítko **nástroje** nabídky a zvolte **Editor konfigurace služby WCF**. Poté klikněte pravým tlačítkem na konfigurační soubor a použít **upravit konfigurace WCF** položka kontextové nabídky.  
   
-## <a name="see-also"></a>Viz také  
- [Editor konfigurace (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
- [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)  
- [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)
+## <a name="see-also"></a>Viz také:
+- [Editor konfigurace (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
+- [Konfigurace služeb](../../../../docs/framework/wcf/configuring-services.md)
+- [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)

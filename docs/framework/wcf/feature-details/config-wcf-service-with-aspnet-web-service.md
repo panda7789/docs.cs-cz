@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 48e1cd90-de80-4d6c-846e-631878955762
-ms.openlocfilehash: f4c4a66de1b50f7953d76e0e9a0ab8b0e030df09
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8f7fe8c3dea700743def739de216633c8a26329b
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513896"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54498136"
 ---
 # <a name="how-to-configure-wcf-service-to-interoperate-with-aspnet-web-service-clients"></a>Postupy: Konfigurace služby WCF pro spolupráci s klienty webové služby ASP.NET
 Konfigurace koncového bodu služby Windows Communication Foundation (WCF), aby vzájemná spolupráce s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové služby klientů, použijte <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> typ jako typ vazby pro vaše koncové body služby.  
@@ -25,19 +25,19 @@ Konfigurace koncového bodu služby Windows Communication Foundation (WCF), aby 
   
 2.  Volitelně můžete povolit zabezpečení přenosu pro tuto vazbu koncového bodu služby pomocí nastavení režimu zabezpečení rozhraní pro vytvoření vazby na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>. Podrobnosti najdete v tématu [zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md).  
   
-3.  Přidáte nový koncový bod aplikace na hostitele služby pomocí vazby instanci, kterou jste právě vytvořili. Podrobnosti o tom, jak přidat koncový bod služby v kódu, najdete v článku [postupy: vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
+3.  Přidáte nový koncový bod aplikace na hostitele služby pomocí vazby instanci, kterou jste právě vytvořili. Podrobnosti o tom, jak přidat koncový bod služby v kódu, najdete v článku [jak: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md).  
   
-4.  Povolení koncového bodu HTTP/GET metadat pro vaši službu. Podrobnosti najdete v tématu [postupy: publikování metadat služby pomocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
+4.  Povolení koncového bodu HTTP/GET metadat pro vaši službu. Podrobnosti najdete v tématu [jak: Publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md).  
   
 ### <a name="to-add-a-wcf-endpoint-that-is-compatible-with-aspnet-web-service-clients-in-a-configuration-file"></a>K přidání koncového bodu WCF, který je kompatibilní s klienty webové služby ASP.NET v konfiguračním souboru  
   
-1.  Vytvořte nový <xref:System.ServiceModel.BasicHttpBinding> konfigurace vazby. Podrobnosti najdete v tématu [postupy: zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
+1.  Vytvořte nový <xref:System.ServiceModel.BasicHttpBinding> konfigurace vazby. Podrobnosti najdete v tématu [jak: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md).  
   
 2.  Volitelně můžete povolit zabezpečení přenosu pro tuto konfiguraci vazby koncového bodu služby pomocí nastavení režimu zabezpečení rozhraní pro vytvoření vazby na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>. Podrobnosti najdete v tématu [zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md).  
   
-3.  Konfigurace nového koncového bodu aplikace pro vaši službu pomocí konfigurace vazby, který jste právě vytvořili. Podrobnosti o tom, jak přidat koncový bod služby v konfiguračním souboru, najdete v článku [postupy: vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).  
+3.  Konfigurace nového koncového bodu aplikace pro vaši službu pomocí konfigurace vazby, který jste právě vytvořili. Podrobnosti o tom, jak přidat koncový bod služby v konfiguračním souboru, najdete v článku [jak: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).  
   
-4.  Povolení koncového bodu HTTP/GET metadat pro vaši službu. Podrobnosti najdete v tématu [postupy: publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
+4.  Povolení koncového bodu HTTP/GET metadat pro vaši službu. Podrobnosti najdete v tématu [jak: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu ukazuje, jak přidat koncový bod WCF, který je kompatibilní s [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových klientů služby v kódu a také v konfiguračních souborech.  
@@ -46,11 +46,11 @@ Konfigurace koncového bodu služby Windows Communication Foundation (WCF), aby 
  [!code-vb[C_HowTo-WCFServiceAndASMXClient#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/vb/program.vb#0)] 
  [!code-xml[C_HowTo-WCFServiceAndASMXClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/common/app.config#1)]     
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)  
- [Postupy: Publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)  
- [Postupy: Určení vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)  
- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)  
- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)  
- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)  
- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)
+## <a name="see-also"></a>Viz také:
+- [Postupy: Vytvoření koncového bodu služby v kódu](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-code.md)
+- [Postupy: Publikování metadat služby promocí kódu](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)
+- [Postupy: Zadání vazby služby v konfiguraci](../../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)
+- [Postupy: Vytvoření koncového bodu služby v konfiguraci](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
+- [Postupy: Publikování metadat služby promocí konfiguračního souboru](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Zabezpečení přenosu](../../../../docs/framework/wcf/feature-details/transport-security.md)
+- [Používání metadat](../../../../docs/framework/wcf/feature-details/using-metadata.md)

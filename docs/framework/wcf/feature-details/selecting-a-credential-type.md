@@ -2,12 +2,12 @@
 title: Výběr typu pověření
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: c2ee1b9062d14eaa44de0651985c2a385fe02f8e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 27e1bc4b9e4209fafd0e3707ad6674eb5db6e451
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503388"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54577110"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které státní instituce problémy prokázání citizenship v zemi nebo oblast. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například název tokeny uživatele a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v WCF a tom, jak vybrat správné přihlašovací údaje pro vaše aplikace.  
@@ -25,10 +25,10 @@ ms.locfileid: "43503388"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
-|Základní|Určuje základní ověřování klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|ověřování algoritmem Digest|Určuje ověřování algoritmem digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|NTLM|Určuje NT LAN Manager (NTLM) authentication. Používá se, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Jeho použití jako záložní můžete také zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, což způsobí, že WCF, aby se snažíme vyvolá výjimku, pokud je použit protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemůže zabránit odeslání při přenosu přihlašovacích údajů protokolů NTLM.|  
+|Žádná|Určuje, že klient není potřeba k dispozici žádné přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Základní|Určuje základní ověřování klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
+|ověřování algoritmem Digest|Určuje ověřování algoritmem digest pro klienta. Další informace najdete v tématu RFC2617 –[ověřování pomocí protokolu HTTP: Základní a ověřování algoritmem Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
+|Ntlm|Určuje NT LAN Manager (NTLM) authentication. Používá se, pokud z nějakého důvodu nelze použít ověřování pomocí protokolu Kerberos. Jeho použití jako záložní můžete také zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`, což způsobí, že WCF, aby se snažíme vyvolá výjimku, pokud je použit protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemůže zabránit odeslání při přenosu přihlašovacích údajů protokolů NTLM.|  
 |Windows|Určuje ověřování Windows. Chcete-li zadat pouze protokol Kerberos v doméně Windows, nastavte <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false` (výchozí hodnota je `true`).|  
 |Certifikát|Provádí ověření klienta pomocí certifikátu X.509.|  
 |Heslo|Uživatel musí zadat uživatelské jméno a heslo. Ověření páru jméno/heslo uživatele pomocí ověřování Windows nebo jiné vlastní řešení.|  
@@ -38,9 +38,9 @@ ms.locfileid: "43503388"
   
 |Nastavení|Popis|  
 |-------------|-----------------|  
-|Žádné|Určuje, že klient nemusí představovat přihlašovací údaje. Výsledkem je k anonymní klienta.|  
+|Žádná|Určuje, že klient nemusí představovat přihlašovací údaje. Výsledkem je k anonymní klienta.|  
 |Windows|Umožňuje výměny zpráv SOAP probíhá v kontextu zabezpečení vytvořen se přihlašovací údaje Windows.|  
-|uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generuje podpis nebo šifrovat data. WCF se zajistí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
+|Uživatelské jméno|Umožňuje službě tak, aby vyžadovala ověření klienta s pověření uživatelského jména. Všimněte si, že WCF nepovoluje žádné kryptografické operace s uživatelskými jmény, jako je například generuje podpis nebo šifrovat data. WCF se zajistí, že při použití uživatelských přihlašovacích údajů název je zabezpečený přenos.|  
 |Certifikát|Umožňuje službě tak, aby vyžadovala, ověření klienta pomocí certifikátu X.509.|  
 |Vydaný Token|Vlastní token typu nakonfigurovaný podle zásady zabezpečení. Výchozí typ tokenu je zabezpečení kontrolní výrazy SAML (Markup Language). Token, který je vystaven Služba tokenů zabezpečení. Další informace najdete v tématu [federace a vydané tokeny](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
@@ -97,20 +97,20 @@ ms.locfileid: "43503388"
   
  Další informace o přihlašovací údaje a zabezpečených relací najdete v tématu [aspekty zabezpečení pro zabezpečené relace](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  
- <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.BasicHttpMessageSecurity.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.MessageSecurityOverMsmq.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.TcpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>  
- <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>  
- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
- [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)  
- [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>
+- <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.BasicHttpMessageSecurity.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.MessageSecurityOverMsmq.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.TcpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>
+- [Koncepty zabezpečení](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+- [Zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Programování zabezpečení WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
+- [Zabezpečení přenosu HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

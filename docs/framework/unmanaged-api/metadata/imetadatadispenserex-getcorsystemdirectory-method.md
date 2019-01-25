@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cf580f6d3fb18e729f3eca300aa817036eb61e4f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3eccb42caa6fdc62b090cd60ff86ad102511883c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443427"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54629160"
 ---
 # <a name="imetadatadispenserexgetcorsystemdirectory-method"></a>IMetaDataDispenserEx::GetCORSystemDirectory – metoda
-Získá adresář, který obsahuje modul aktuální CLR (CLR). Tato metoda podporuje jenom pro použití ladicí programy mimo proces. Pokud volání z jiné komponenty, vrátí E_NOTIMPL.  
+Získá adresář, který obsahuje aktuální modul (CLR). Tato metoda je podporována pouze pro použití ladicími mimo proces. Pokud je volána z jiné součásti, vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,20 +42,20 @@ HRESULT GetCORSystemDirectory (
  [out] Vyrovnávací paměť pro příjem název adresáře.  
   
  `cchBuffer`  
- [v] Velikost v bajtech z `szBuffer`.  
+ [in] Velikost v bajtech, z `szBuffer`.  
   
  `pchBuffer`  
- [out] Počet bajtů ve skutečnosti, vrátí se v `szBuffer`.  
+ [out] Počet bajtů vrácených ve skutečnosti v `szBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** používat jako prostředek v MsCorEE.dll  
+ **Knihovna:** Použít jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+## <a name="see-also"></a>Viz také:
+- [IMetaDataDispenserEx – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
+- [IMetaDataDispenser – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

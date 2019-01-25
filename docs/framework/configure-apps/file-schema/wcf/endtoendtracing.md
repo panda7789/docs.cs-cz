@@ -2,19 +2,19 @@
 title: '&lt;endToEndTracing&gt;'
 ms.date: 03/30/2017
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
-ms.openlocfilehash: 78a69256a391e97ff1962eea923f09115c4ebadd
-ms.sourcegitcommit: 4ac80713f6faa220e5a119d5165308a58f7ccdc8
+ms.openlocfilehash: c2f5e33eff4fdc6dfa85bcc10b59a7c1436cabb6
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54150107"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519368"
 ---
 # <a name="ltendtoendtracinggt"></a>&lt;endToEndTracing&gt;
 Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty začátku do konce trasování za běhu aplikace služby.  
   
  \<system.ServiceModel>  
-\<diagnostiky >  
-\<endToEndTracing >  
+\<diagnostic>  
+\<endToEndTracing>  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,11 +46,11 @@ Konfigurace element, který umožňuje povolit nebo zakázat různé aspekty za�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Diagnostika >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Definuje nastavení kontroly runtime WCF a ovládací prvek pro správce.|  
+|[\<diagnostics>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Definuje nastavení kontroly runtime WCF a ovládací prvek pro správce.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>  
- <xref:System.ServiceModel.Diagnostics>  
- <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>  
- <xref:System.ServiceModel.Configuration.EndToEndTracingElement>  
- [Komplexní trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Configuration.DiagnosticSection>
+- <xref:System.ServiceModel.Diagnostics>
+- <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>
+- <xref:System.ServiceModel.Configuration.EndToEndTracingElement>
+- [Komplexní trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)

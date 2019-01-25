@@ -1,48 +1,48 @@
 ---
-title: Vrátí průměrnou hodnotu z číselného pořadí
+title: Vrácení průměrné hodnoty z číselné posloupnosti
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ee3b8673-a2e7-4b2d-9b5c-4972ff9e665d
-ms.openlocfilehash: 3e808b836183a23fa6bd80faeb0d3cfc5921f4cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 38b1b3ba2bd2116621de820855bb4e4b2cd12915
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33358853"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54519154"
 ---
-# <a name="return-the-average-value-from-a-numeric-sequence"></a>Vrátí průměrnou hodnotu z číselného pořadí
-<xref:System.Linq.Enumerable.Average%2A> Operátor vypočítá průměrnou hodnotu posloupnost číselné hodnoty.  
+# <a name="return-the-average-value-from-a-numeric-sequence"></a>Vrácení průměrné hodnoty z číselné posloupnosti
+<xref:System.Linq.Enumerable.Average%2A> Operátor vypočítá průměr posloupnost číselné hodnoty.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Překlad `Average` z celé číslo hodnoty se vypočítávají jako celé číslo, ne jako datový typ double.  
+>  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Překlad `Average` celého čísla je vypočítán hodnoty jako celé číslo, ne jako typ double.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrací průměr `Freight` hodnoty ve `Orders` tabulky.  
+ Následující příklad vrátí průměrnou hodnotu `Freight` hodnoty v `Orders` tabulky.  
   
- Výsledky z ukázkové databáze Northwind by měli být `78.2442`.  
+ Výsledky z ukázkové databáze Northwind budou `78.2442`.  
   
  [!code-csharp[DLinqQueryExamples#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#1)]
  [!code-vb[DLinqQueryExamples#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#1)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vrátí průměrnou hodnotu do jednotkové ceny všech `Products` v `Products` tabulky.  
+ Následující příklad vrátí průměrnou hodnotu je cena ze jednotku všech `Products` v `Products` tabulky.  
   
- Výsledky z ukázkové databáze Northwind by měli být `28.8663`.  
+ Výsledky z ukázkové databáze Northwind budou `28.8663`.  
   
  [!code-csharp[DLinqQueryExamples#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#2)]
  [!code-vb[DLinqQueryExamples#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá `Average` operátor a zjistěte, `Products` jejichž jednotkové ceny je vyšší než cena průměrná jednotky patří do kategorie. Příkladu se potom zobrazí výsledky ve skupinách.  
+ V následujícím příkladu `Average` operátor najít ty `Products` jejichž jednotková cena je větší než průměrná jednotková cena za patří do kategorie. Následně příklad zobrazí výsledky ve skupinách.  
   
- Všimněte si, že tento příklad vyžaduje použití `var` – klíčové slovo v jazyce C#, protože je návratový typ anonymní.  
+ Všimněte si, že tento příklad vyžaduje použití `var` – klíčové slovo v C#, protože návratový typ je anonymní.  
   
  [!code-csharp[DLinqQueryExamples#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#3)]
  [!code-vb[DLinqQueryExamples#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#3)]  
   
- Pokud spustíte tento dotaz proti ukázková databáze Northwind, by měl vypadat výsledky z následujících akcí:  
+ Pokud spouštíte skript v ukázkové databázi Northwind tento dotaz, výsledky by měl vypadat z následujících akcí:  
   
  `1`  
   
@@ -114,5 +114,5 @@ ms.locfileid: "33358853"
   
  `Gravad lax`  
   
-## <a name="see-also"></a>Viz také  
- [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
+## <a name="see-also"></a>Viz také:
+- [Agregační dotazy](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f67bd427c83385b2433b9f2e97f0b54e3b29a76f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d6dc245a53c9ec7cbe56e20313abc4269e33f45c
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33401060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54582315"
 ---
 # <a name="icordebugclassgettoken-method"></a>ICorDebugClass::GetToken – metoda
-Získá `TypeDef` metadata token, který odkazuje na definici této třídy.  
+Získá `TypeDef` token metadat, který odkazuje na definici této třídy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ HRESULT GetToken (
   
 #### <a name="parameters"></a>Parametry  
  `pTypeDef`  
- [out] Ukazatel na `mdTypeDef` token, který odkazuje na definici této třídy.  
+ [out] Ukazatel `mdTypeDef` token, který odkazuje na definici této třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -48,5 +48,5 @@ HRESULT GetToken (
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+## <a name="see-also"></a>Viz také:
+- [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)

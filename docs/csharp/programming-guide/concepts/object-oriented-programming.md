@@ -2,12 +2,12 @@
 title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 8e211fec25ceb2e8e42620ff3f421e6943d8b5e5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8f7a810b3f3ec74723ca5e715b7428e1b60928f4
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522152"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54702480"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 C# poskytuje plnou podporu pro objektově orientované programování včetně zapouzdření, dědičnosti a polymorfismu.  
@@ -296,7 +296,7 @@ var sampleObject =
     new { FirstProperty = "A", SecondProperty = "B" };  
 ```  
   
- Další informace najdete v tématu: [anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
+ Další informace naleznete v tématu: [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md).  
   
 ##  <a name="Inheritance"></a> Dědičnost  
  Dědičnost umožňuje vytvořit novou třídu, která opakovaně používá, rozšiřuje a upravuje chování, které je definováno v jiné třídě. Třídy, jejíž členové jsou zdědění, se nazývá *základní třída*, a názvem třídy, která dědí tyto členy *odvozené třídy*. Nicméně všechny třídy v jazyce C# implicitně dědí z <xref:System.Object> třídu, která podporuje hierarchii tříd .NET a poskytuje služby nižší úrovně všem třídám.  
@@ -434,6 +434,6 @@ class SampleClass
   
 -   [delegate](../../../csharp/language-reference/keywords/delegate.md)  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

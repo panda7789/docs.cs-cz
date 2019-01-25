@@ -1,33 +1,33 @@
 ---
-title: Obecné pole a SetField metody (LINQ na DataSet)
+title: Obecné pole a metody SetField (LINQ to DataSet)
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1883365f-9d6c-4ccb-9187-df309f47706d
-ms.openlocfilehash: 2f7d5cc5689914db2107febadf60bee6da1c2b72
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0dfc21264353ac3aa1e20c7fa7b6b8381d47480d
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767008"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54562151"
 ---
-# <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a SetField metody (LINQ na DataSet)
-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje rozšiřující metody pro <xref:System.Data.DataRow> třídy pro přístup k hodnot sloupce: <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] používá podpora s možnou hodnotou Null typu počínaje [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste návratový objekt na příslušný typ přetypování. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně zkontrolovala pro hodnotu null protože vrácení <xref:System.DBNull.Value> a ho implicitně přetypování na jiný typ vyvolává <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A> metoda nebyla použita k vyhledání hodnotu null, by být vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value> a pokusil vysílat <xref:System.String>.  
+# <a name="generic-field-and-setfield-methods-linq-to-dataset"></a>Obecné pole a metody SetField (LINQ to DataSet)
+[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] poskytuje rozšiřující metody, které <xref:System.Data.DataRow> třídy pro přístup k hodnoty ve sloupcích: <xref:System.Data.DataRowExtensions.Field%2A> – metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda. Tyto metody poskytují jednodušší přístup k hodnotám sloupce pro vývojáře, zejména pokud jde o hodnoty null. <xref:System.Data.DataSet> Používá <xref:System.DBNull.Value> k reprezentaci hodnoty null, zatímco [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] využívá podporu typ připouštějící hodnotu Null, počínaje [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Použití existující přistupující objekt sloupce v <xref:System.Data.DataRow> vyžaduje, abyste přetypovat vrácený objekt do příslušného typu. Pokud konkrétní pole v <xref:System.Data.DataRow> může mít hodnotu null, musí explicitně kontrola hodnot null protože vrací <xref:System.DBNull.Value> a implicitně přetypování na jiný typ vyvolá <xref:System.InvalidCastException>. V následujícím příkladu Pokud <xref:System.Data.DataRow.IsNull%2A> metoda nebyl použit ke kontrole hodnot null, bude vyvolána výjimka, pokud indexer vrátil <xref:System.DBNull.Value> a pokusili přetypovat na <xref:System.String>.  
   
  [!code-csharp[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#whereisnull)]
  [!code-vb[DP LINQ to DataSet Examples#WhereIsNull](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#whereisnull)]  
   
- <xref:System.Data.DataRowExtensions.Field%2A> Metoda poskytuje přístup k hodnotám sloupce <xref:System.Data.DataRow> a <xref:System.Data.DataRowExtensions.SetField%2A> nastaví hodnoty ve sloupcích v <xref:System.Data.DataRow>. Obě <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda zpracovat typy s možnou hodnotou Null, takže není nutné explicitně zkontrolovala hodnot null jako v předchozím příkladu. Obě metody jsou obecné metody navíc, takže nemusíte návratový typ přetypování.  
+ <xref:System.Data.DataRowExtensions.Field%2A> Metoda poskytuje přístup k hodnoty sloupce <xref:System.Data.DataRow> a <xref:System.Data.DataRowExtensions.SetField%2A> nastaví hodnoty ve sloupcích v <xref:System.Data.DataRow>. Oba <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda zpracování typy připouštějící hodnotu Null, takže není potřeba explicitně kontrola hodnot null jako v předchozím příkladu. Obě metody jsou obecné metody, také, takže není nutné přetypovat návratový typ.  
   
- Následující příklad používá <xref:System.Data.DataRowExtensions.Field%2A> metoda.  
+ V následujícím příkladu <xref:System.Data.DataRowExtensions.Field%2A> metody.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where3)]
  [!code-vb[DP LINQ to DataSet Examples#Where3](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where3)]  
   
- Všimněte si, že datový typ zadaný v parametru Obecné `T` z <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda musí shodovat s typem základní hodnoty. Jinak <xref:System.InvalidCastException> dojde k výjimce. Zadaný název sloupce taky musí shodovat s názvem sloupce v <xref:System.Data.DataSet>, nebo <xref:System.ArgumentException> bude vyvolána. V obou případech je vyvolána výjimka v průběhu výčtu dat při spuštění dotazu.  
+ Všimněte si, že datový typ zadaný v parametru obecného `T` z <xref:System.Data.DataRowExtensions.Field%2A> metoda a <xref:System.Data.DataRowExtensions.SetField%2A> metoda musí odpovídat typu zdrojovou hodnotu. V opačném případě <xref:System.InvalidCastException> , bude vyvolána výjimka. Zadaný název sloupce musí taky shodovat s názvem sloupce v <xref:System.Data.DataSet>, nebo <xref:System.ArgumentException> bude vyvolána výjimka. V obou případech je vyvolána výjimka za běhu během výčtu dat při spuštění dotazu.  
   
- <xref:System.Data.DataRowExtensions.SetField%2A> Metoda sama neprovede všechny převody typů. To neznamená, ale, že nedojde, převod typů. <xref:System.Data.DataRowExtensions.SetField%2A> Metoda zpřístupňuje [!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)] chování <xref:System.Data.DataRow> třídy. Převod typů může provést <xref:System.Data.DataRow> objekt a převedená hodnota by pak uložena do <xref:System.Data.DataRow> objektu.  
+ <xref:System.Data.DataRowExtensions.SetField%2A> Metoda sám neprovádí žádné převody typů. To neznamená, ale, že nedojde k převodu typu. <xref:System.Data.DataRowExtensions.SetField%2A> Zpřístupňuje metodu [!INCLUDE[ado_whidbey_long](../../../../includes/ado-whidbey-long-md.md)] chování <xref:System.Data.DataRow> třídy. Může provádět převod typu <xref:System.Data.DataRow> objektu a převedená hodnota by pak se uložila <xref:System.Data.DataRow> objektu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Data.DataRowExtensions>
+## <a name="see-also"></a>Viz také:
+- <xref:System.Data.DataRowExtensions>

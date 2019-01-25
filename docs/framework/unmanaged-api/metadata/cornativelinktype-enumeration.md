@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2bf8848851dc99c60b8c151ed34cd536fa9a8fed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f946179fc31adebc8e8fc67c394e0b55a876f49
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33443258"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54641327"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType – výčet
 Obsahuje hodnoty, které označují typ propojené v nativním kódu.  
@@ -44,21 +44,21 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`nltNone`|Označuje, že žádný z klíčová slova nejsou zadány.|  
-|`nltAnsi`|Označuje, že je zadané klíčové slovo ANSI.|  
+|`nltNone`|Označuje, že jsou zadána žádná klíčová slova.|  
+|`nltAnsi`|Určuje, zda je zadán ANSI – klíčové slovo.|  
 |`nltUnicode`|Určuje, zda je zadán Unicode – klíčové slovo|  
-|`nltAuto`|Určuje, zda je zadán auto – klíčové slovo.|  
-|`nltOle`|Označuje, že je zadané klíčové slovo OLE.|  
+|`nltAuto`|Určuje, zda je zadán klíčovým slovem auto.|  
+|`nltOle`|Označuje, zda je zadán klíčovým slovem OLE.|  
 |`nltMaxValue`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** Cor.h  
   
- **Knihovna:** zahrnuty jako prostředek v MsCorEE.dll  
+ **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+## <a name="see-also"></a>Viz také:
+- [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

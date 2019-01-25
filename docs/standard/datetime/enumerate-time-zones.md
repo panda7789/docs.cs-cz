@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření výčtu časových pásem přítomných na počítači'
+title: 'Postupy: Vytvoření výčtu časových pásem přítomných na počítači'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c012b10f43a45699605e2d87a5b4a814c7dae28
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 697cd40482aee73fd150359acb710ffc258c3df2
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698299"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54518407"
 ---
-# <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: vytvoření výčtu časových pásem přítomných na počítači
+# <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: Vytvoření výčtu časových pásem přítomných na počítači
 
 Úspěšně spolupracuje s určeným časovým pásmem vyžaduje systém k dispozici informace o tomto časovém pásmu. Operační systémy Windows XP a Windows Vista ukládání příslušných informací v registru. Však sice velký počet časových pásem, které existují po celém světě, registr obsahuje informace o jenom část z nich. Kromě toho samotného registru je dynamické strukturu, jejíž obsah se můžou rozhodnout vědomě a záměrně, náhodné změnit. V důsledku toho aplikace nemůže vždy předpokládat, že konkrétní časové pásmo je definované a dostupné v systému. Prvním krokem pro mnoho aplikací, které používají aplikace informace o časovém pásmu je určit, zda jsou k dispozici v místním systému vyžaduje časových pásem nebo poskytnout seznam časových pásem, ze kterého chcete vybrat uživatele. To vyžaduje, aby aplikace vytvoření výčtu časových pásem definovaných v lokálním systému.
 
 > [!NOTE]
-> Pokud aplikace závisí na přítomnosti určitého časového pásma, které nemusí být definováno v lokálním systému, můžete aplikaci zajistit jeho přítomnost serializaci a deserializaci informace o časovém pásmu. Časové pásmo je potom možné přidat do ovládacího prvku seznam, tak, aby uživatel aplikace můžete vybrat. Podrobnosti najdete v tématu [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
+> Pokud aplikace závisí na přítomnosti určitého časového pásma, které nemusí být definováno v lokálním systému, můžete aplikaci zajistit jeho přítomnost serializaci a deserializaci informace o časovém pásmu. Časové pásmo je potom možné přidat do ovládacího prvku seznam, tak, aby uživatel aplikace můžete vybrat. Podrobnosti najdete v tématu [jak: Ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [jak: Obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
 
 ### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>K vytvoření výčtu časových pásem přítomných v místním systému
 
@@ -73,6 +73,6 @@ Tento příklad vyžaduje:
 
 ## <a name="see-also"></a>Viz také:
 
-* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-* [Postupy: Ukládání časových pásem do integrovaného prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
-* [Postupy: Obnovení časových pásem z integrovaného prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)
+- [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+- [Postupy: Ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
+- [Postupy: Obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)

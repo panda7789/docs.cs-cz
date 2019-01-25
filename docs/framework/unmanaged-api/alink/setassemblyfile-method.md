@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1e557cc0da7bc684843ae3969242ffb84d811c44
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 006360203518f74adb964634af52505a71d51473
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33405343"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54587096"
 ---
 # <a name="setassemblyfile-method"></a>SetAssemblyFile – metoda
-Přiřadí název sestavení, která má být sestaven. Není pro použití při vytváření nevázaných moduly.  
+Přiřadí název sestavení, které má být sestaven. Není pro použití při vytváření nevázaných moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,18 +45,18 @@ HRESULT SetAssemblyFile(
  Ukazatel na [imetadataemit – rozhraní](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) rozhraní.  
   
  `afFlags`  
- Flags – jak jsou definovány v [AssemblyFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md).  
+ Označí příznakem, jak jsou definovány v [assemblyflags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md).  
   
  `pAssemblyID`  
  Ukazatel na ID výsledné sestavení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrátí S_OK, pokud metoda bude úspěšná.  
+ Pokud metoda uspěje, vrátí hodnotu S_OK.  
   
 ## <a name="requirements"></a>Požadavky  
  Vyžaduje alink.h.  
   
-## <a name="see-also"></a>Viz také  
- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+## <a name="see-also"></a>Viz také:
+- [IALink – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [IALink2 – rozhraní](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [Rozhraní API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)

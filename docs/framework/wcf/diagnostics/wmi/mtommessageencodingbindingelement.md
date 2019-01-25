@@ -2,12 +2,12 @@
 title: MtomMessageEncodingBindingElement
 ms.date: 03/30/2017
 ms.assetid: 4a9c6c3d-e561-4b2d-a693-7e84bdd3534a
-ms.openlocfilehash: 49a640a666131491366646d6d486d25a515e35bf
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: ad4f2cc3b03111854d10d6a1c1128f090a629a07
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50185703"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54490973"
 ---
 # <a name="mtommessageencodingbindingelement"></a>MtomMessageEncodingBindingElement
 MtomMessageEncodingBindingElement  
@@ -33,28 +33,28 @@ class MtomMessageEncodingBindingElement : MessageEncodingBindingElement
 ### <a name="encoding"></a>Kódování  
  Datový typ: řetězec  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Kódování znakové sady, chcete-li být použito pro vysílání zpráv z vazby.  
   
-### <a name="maxreadpoolsize"></a>maxReadPoolSize  
+### <a name="maxreadpoolsize"></a>MaxReadPoolSize  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Celé číslo, které definuje počet zpráv lze souběžně číst bez přidělení nových čtecích zařízení.  
   
 ### <a name="maxwritepoolsize"></a>maxWritePoolSize  
  Datový typ: sint32  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Celé číslo, které definuje počet zpráv souběžně poslaných bez přidělení nových modulů pro zápis.  
   
-### <a name="readerquotas"></a>readerQuotas  
- Datový typ: XmlDictionaryReaderQuotas, který  
+### <a name="readerquotas"></a>ReaderQuotas  
+ Datový typ: XmlDictionaryReaderQuotas  
   
- Přístup k typu: jen pro čtení  
+ Typ přístupu: jen pro čtení  
   
  Kvóty čtecích zařízení.  
   
@@ -64,5 +64,5 @@ class MtomMessageEncodingBindingElement : MessageEncodingBindingElement
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>
+## <a name="see-also"></a>Viz také:
+- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>

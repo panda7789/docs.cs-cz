@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 14f918a312031359043076be0b739f9b7e0e9f2a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d15656079c087026a905d9268edf4966d8ef4034
+ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33451640"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54503557"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished – metoda
-Aby modul dokončil načítání upozorní profileru.  
+Upozorní profiler modulu dokončení načítání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,18 +37,18 @@ HRESULT ModuleLoadFinished(
   
 #### <a name="parameters"></a>Parametry  
  `moduleId`  
- [v] ID modul, který dokončil načítání.  
+ [in] ID modulu, který se dokončila načítání.  
   
  `hrStatus`  
- [v] HRESULT, která určuje, zda modul byl úspěšně načten.  
+ [in] HRESULT, která určuje, jestli byl modul načten úspěšně.  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `moduleId` není platná pro požadavek informace, dokud `ModuleLoadFinished` metoda je volána.  
+ Hodnota `moduleId` není platná pro požadavek informace do `ModuleLoadFinished` metoda je volána.  
   
- Některé části načítání modulu může pokračovat po `ModuleLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` znamená chybu. Ale úspěšné HRESULT v `hrStatus` pouze označuje, že první část načítání modulu proběhl úspěšně.  
+ Některé části načítání modulu může pokračovat po `ModuleLoadFinished` zpětného volání. Selhání hodnoty HRESULT v `hrStatus` naznačuje chybu. Ale úspěch HRESULT v `hrStatus` značí pouze, že má první část načítání modulu bylo úspěšné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorProf.idl, CorProf.h  
   
@@ -56,6 +56,6 @@ HRESULT ModuleLoadFinished(
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
- [ModuleLoadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)
+## <a name="see-also"></a>Viz také:
+- [ICorProfilerCallback – rozhraní](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ModuleLoadStarted – metoda](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)
